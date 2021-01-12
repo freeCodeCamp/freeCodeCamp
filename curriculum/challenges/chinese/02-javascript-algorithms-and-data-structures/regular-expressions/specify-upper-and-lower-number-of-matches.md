@@ -69,5 +69,20 @@ assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 assert(!ohRegex.test('Ohhhhhhh no'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let ohStr = "Ohhh no";
+let ohRegex = /change/; // Change this line
+let result = ohRegex.test(ohStr);
+```
+
 # --solutions--
 
+```js
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result = ohRegex.test(ohStr);
+```

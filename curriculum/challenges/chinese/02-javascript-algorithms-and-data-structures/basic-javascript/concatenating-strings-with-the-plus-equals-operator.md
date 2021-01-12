@@ -35,5 +35,31 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){
+  if(typeof myStr === 'string') {
+    return 'myStr = "' + myStr + '"';
+  } else {
+    return 'myStr is not a string';
+  }
+})();
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+
+var myStr;
+```
+
 # --solutions--
 
+```js
+var myStr = "This is the first sentence. ";
+myStr += "This is the second sentence.";
+```

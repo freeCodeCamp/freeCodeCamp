@@ -29,5 +29,21 @@ videoUrl: ''
 assert.strictEqual(necklace(1000000000), 747215561862);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function necklace(n) {
+
+  return true;
+}
+
+necklace(1000000000)
+```
+
 # --solutions--
 
+```js
+// solution required
+```

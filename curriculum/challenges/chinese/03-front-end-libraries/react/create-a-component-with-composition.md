@@ -67,5 +67,67 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<ParentComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+        <ChildComponent />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```

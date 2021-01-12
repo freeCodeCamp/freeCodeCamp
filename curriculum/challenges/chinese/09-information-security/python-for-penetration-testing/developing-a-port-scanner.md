@@ -26,8 +26,3 @@ If there is an error or if no host is found, `.connect()` raises an exception wh
 
 3
 
-# --hints--
-
-
-# --solutions--
-

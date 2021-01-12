@@ -41,5 +41,23 @@ assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
 assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myArray);
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+var myArray = [];
+```
+
 # --solutions--
 
+```js
+var myArray = ["The Answer", 42];
+```

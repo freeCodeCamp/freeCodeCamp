@@ -35,5 +35,26 @@ redux store 的 state 的值为 5。
 assert(store.getState() === 5);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const reducer = (state = 5) => {
+  return state;
+}
+
+// Redux methods are available from a Redux object
+// For example: Redux.createStore()
+// Define the store here:
+```
+
 # --solutions--
 
+```js
+const reducer = (state = 5) => {
+  return state;
+}
+
+const store = Redux.createStore(reducer);
+```

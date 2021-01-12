@@ -21,5 +21,21 @@ T（7）= 77-7！= 818503。
 assert.strictEqual(euler458(), 423341841);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler458() {
+
+  return true;
+}
+
+euler458();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

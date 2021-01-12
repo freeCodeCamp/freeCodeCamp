@@ -23,5 +23,21 @@ n123456789101112131415 ... G（n）的122334445556666 ...
 assert.strictEqual(euler341(), 56098610614277016);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler341() {
+
+  return true;
+}
+
+euler341();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

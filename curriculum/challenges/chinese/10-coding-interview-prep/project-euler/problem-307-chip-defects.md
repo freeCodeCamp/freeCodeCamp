@@ -21,5 +21,21 @@ k个缺陷随机分布在一家工厂生产的n个集成电路芯片中（在芯
 assert.strictEqual(euler307(), 0.7311720251);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler307() {
+
+  return true;
+}
+
+euler307();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

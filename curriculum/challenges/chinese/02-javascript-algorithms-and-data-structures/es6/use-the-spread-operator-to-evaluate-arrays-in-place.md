@@ -56,5 +56,24 @@ assert((arr1, arr2) => {
 });
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [];  // Change this line
+
+console.log(arr2);
+```
+
 # --solutions--
 
+```js
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];
+```

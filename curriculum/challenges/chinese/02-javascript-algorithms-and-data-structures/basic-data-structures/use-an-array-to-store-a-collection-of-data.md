@@ -78,5 +78,16 @@ assert(yourArray.filter((el) => typeof el === 'number').length >= 1);
 assert(yourArray.filter((el) => typeof el === 'string').length >= 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let yourArray; // Change this line
+```
+
 # --solutions--
 
+```js
+let yourArray = ['a string', 100, true, ['one', 2], 'another string'];
+```

@@ -51,5 +51,39 @@ assert.deepEqual(smallestCommons([1, 13]), 360360);
 assert.deepEqual(smallestCommons([23, 18]), 6056820);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function smallestCommons(arr) {
+  return arr;
+}
+
+
+smallestCommons([1,5]);
+```
+
 # --solutions--
 
+```js
+function gcd(a, b) {
+    while (b !== 0) {
+        a = [b, b = a % b][0];
+    }
+    return a;
+}
+
+function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+}
+
+function smallestCommons(arr) {
+  arr.sort(function(a,b) {return a-b;});
+  var rng = [];
+  for (var i = arr[0]; i <= arr[1]; i++) {
+    rng.push(i);
+  }
+  return rng.reduce(lcm);
+}
+```

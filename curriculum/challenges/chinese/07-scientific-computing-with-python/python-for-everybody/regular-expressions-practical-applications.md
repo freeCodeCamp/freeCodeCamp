@@ -30,8 +30,3 @@ $
 
 3
 
-# --hints--
-
-
-# --solutions--
-

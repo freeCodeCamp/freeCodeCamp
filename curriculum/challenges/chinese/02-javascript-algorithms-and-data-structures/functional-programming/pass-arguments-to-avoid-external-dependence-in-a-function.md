@@ -45,5 +45,34 @@ assert(incrementer.length === 1);
 assert(newValue === 5);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// The global variable
+var fixedValue = 4;
+
+// Only change code below this line
+function incrementer () {
+
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+// The global variable
+var fixedValue = 4;
+
+// Only change code below this line
+function incrementer (fixedValue) {
+  return fixedValue + 1;
+
+  // Only change code above this line
+}
+
+  
+```

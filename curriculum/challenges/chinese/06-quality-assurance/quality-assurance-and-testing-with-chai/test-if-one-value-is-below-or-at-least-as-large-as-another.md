@@ -101,3 +101,10 @@ Use `assert.isBelow()` (i.e. less than) or `assert.isAtLeast()` (i.e. greater th
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

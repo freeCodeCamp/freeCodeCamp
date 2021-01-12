@@ -36,8 +36,3 @@ My figure will have one row, two columns, and I am going to start drawing in the
 
 3
 
-# --hints--
-
-
-# --solutions--
-

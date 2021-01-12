@@ -42,8 +42,3 @@ All of the above.
 
 5
 
-# --hints--
-
-
-# --solutions--
-

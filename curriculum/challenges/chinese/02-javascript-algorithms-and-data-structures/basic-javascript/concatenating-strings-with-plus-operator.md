@@ -49,5 +49,28 @@ assert(/var\s+myStr/.test(code));
 assert(/myStr\s*=/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){
+  if(typeof myStr === 'string') {
+    return 'myStr = "' + myStr + '"';
+  } else {
+    return 'myStr is not a string';
+  }
+})();
+```
+
+## --seed-contents--
+
+```js
+var myStr; // Change this line
+```
+
 # --solutions--
 
+```js
+var myStr = "This is the start. " + "This is the end.";
+```

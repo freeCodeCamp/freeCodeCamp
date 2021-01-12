@@ -61,8 +61,3 @@ Name: certificates_earned dtype: int64
 
 1
 
-# --hints--
-
-
-# --solutions--
-

@@ -31,5 +31,21 @@ n = a12 + b12n = a22 + 2 b22n = a32 + 3 b32n = a72 + 7 b72，
 assert.strictEqual(euler229(), 11325263);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler229() {
+
+  return true;
+}
+
+euler229();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

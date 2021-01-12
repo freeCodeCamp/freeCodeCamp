@@ -62,5 +62,29 @@ assert(testNotEqual('bob') === 'Not Equal');
 assert(code.match(/(?!!==)!=/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+function testNotEqual(val) {
+  if (val) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testNotEqual(10);
+```
+
 # --solutions--
 
+```js
+function testNotEqual(val) {
+  if (val != 99) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
+```

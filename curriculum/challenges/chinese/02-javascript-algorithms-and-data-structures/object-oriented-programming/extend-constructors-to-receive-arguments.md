@@ -65,5 +65,24 @@ assert(new Dog('Clifford').numLegs === 4);
 assert(terrier instanceof Dog);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog() {
+
+}
+```
+
 # --solutions--
 
+```js
+function Dog (name, color) {
+  this.numLegs = 4;
+  this.name = name;
+  this.color = color;
+}
+
+const terrier = new Dog();
+```

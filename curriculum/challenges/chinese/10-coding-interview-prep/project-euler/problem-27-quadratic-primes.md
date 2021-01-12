@@ -39,5 +39,21 @@ assert(quadraticPrimes(800) == -43835);
 assert(quadraticPrimes(1000) == -59231);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function quadraticPrimes(range) {
+
+  return range;
+}
+
+quadraticPrimes(1000);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

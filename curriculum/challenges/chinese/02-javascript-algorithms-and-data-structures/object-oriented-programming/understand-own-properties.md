@@ -61,5 +61,41 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+function getOwnProps (obj) {
+  const props = [];
+
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      props.push(prop);
+    }
+  }
+
+  return props;
+}
+
+const ownProps = getOwnProps(canary);
+```

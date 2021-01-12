@@ -37,5 +37,21 @@ s0 = 14025256 sn + 1 = sn2 mod 20300713
 assert.strictEqual(euler238(), 9922545104535660);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler238() {
+
+  return true;
+}
+
+euler238();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

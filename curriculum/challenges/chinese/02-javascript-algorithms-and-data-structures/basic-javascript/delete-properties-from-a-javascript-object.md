@@ -30,5 +30,38 @@ assert(typeof myDog === 'object' && myDog.tails === undefined);
 assert(code.match(/"tails": 1/g).length > 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myDog);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+delete myDog.tails;
+```

@@ -65,5 +65,20 @@ assert(timRegex.test('Timmmmber'));
 assert(!timRegex.test('Ti' + 'm'.repeat(30) + 'ber'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let timStr = "Timmmmber";
+let timRegex = /change/; // Change this line
+let result = timRegex.test(timStr);
+```
+
 # --solutions--
 
+```js
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
+```

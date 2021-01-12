@@ -21,5 +21,21 @@ OOOOO OOOO O OOO OO OOO O O OO OO O O O O O O O O O O O O O O O O O O O O O O O 
 assert.strictEqual(euler78(), 55374);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function coinPartitions() {
+
+  return true;
+}
+
+coinPartitions();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

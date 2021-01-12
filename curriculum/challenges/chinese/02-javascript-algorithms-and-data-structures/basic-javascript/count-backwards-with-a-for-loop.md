@@ -47,5 +47,28 @@ assert(code.match(/myArray.push/));
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [];
+for (var i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+```

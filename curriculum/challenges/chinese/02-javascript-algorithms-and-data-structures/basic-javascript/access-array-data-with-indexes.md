@@ -60,5 +60,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [50,60,70];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [50,60,70];
+var myData = myArray[0];
+```

@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler100(), 756872327473);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function arrangedProbability() {
+
+  return true;
+}
+
+arrangedProbability();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

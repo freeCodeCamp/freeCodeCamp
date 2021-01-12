@@ -71,5 +71,64 @@ assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
 assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```
+
 # --solutions--
 
+```html
+<style type='text/scss'>
+
+  @each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+  }
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```
+
+---
+
+```html
+<style type='text/scss'>
+
+  $colors: (color1: blue, color2: black, color3: red);
+
+  @each $key, $color in $colors {
+    .#{$color}-bg {background-color: $color;}
+  }
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```

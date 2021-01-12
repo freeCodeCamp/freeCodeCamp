@@ -80,5 +80,22 @@ assert(add(11)(22)(33) === 66);
 assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function add(x) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+add(10)(20)(30);
+```
+
 # --solutions--
 
+```js
+const add = x => y => z => x + y + z
+```

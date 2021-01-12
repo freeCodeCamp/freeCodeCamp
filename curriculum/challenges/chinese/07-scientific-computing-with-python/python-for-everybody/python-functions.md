@@ -34,8 +34,3 @@ None of the above.
 
 4
 
-# --hints--
-
-
-# --solutions--
-

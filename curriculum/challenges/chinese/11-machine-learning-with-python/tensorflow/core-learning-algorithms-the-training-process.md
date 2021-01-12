@@ -26,8 +26,3 @@ The number of elements you feed to the model at once.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

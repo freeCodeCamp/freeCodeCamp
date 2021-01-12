@@ -42,5 +42,27 @@ assert.strictEqual(sumFactorialDigits(75), 432);
 assert.strictEqual(sumFactorialDigits(100), 648);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sumFactorialDigits(n) {
+
+  return n;
+}
+
+sumFactorialDigits(100);
+```
+
 # --solutions--
 
+```js
+let factorial = (n) => n <= 1 ? BigInt(n) : BigInt(n) * BigInt(factorial(--n));
+
+let sumDigits = n => n.toString().split('').map(x => parseInt(x)).reduce((a,b) => a + b);
+
+function sumFactorialDigits(n) {
+  return sumDigits(factorial(n));
+}
+```

@@ -32,8 +32,3 @@ contain a duplicate, where the value for the row contains either the first or se
 
 2
 
-# --hints--
-
-
-# --solutions--
-

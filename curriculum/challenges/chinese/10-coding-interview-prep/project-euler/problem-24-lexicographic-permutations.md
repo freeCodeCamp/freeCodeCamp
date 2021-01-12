@@ -39,5 +39,21 @@ assert(lexicographicPermutations(900000) == 2537014689);
 assert(lexicographicPermutations(999999) == 2783915460);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function lexicographicPermutations(n) {
+
+  return n;
+}
+
+lexicographicPermutations(999999);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

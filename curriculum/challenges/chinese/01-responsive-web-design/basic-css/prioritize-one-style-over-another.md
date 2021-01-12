@@ -40,5 +40,33 @@ assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));
 assert($('h1').css('color') === 'rgb(255, 192, 203)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+</style>
+<h1>Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+</style>
+<h1 class="pink-text">Hello World!</h1>
+```

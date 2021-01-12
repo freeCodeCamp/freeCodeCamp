@@ -33,5 +33,24 @@ assert(typeof action === 'object');
 assert(action.type === 'LOGIN');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const action = {
+  type: 'LOGIN'
+}
+// Define an action creator here:
+```
+
 # --solutions--
 
+```js
+const action = {
+  type: 'LOGIN'
+}
+const actionCreator = () => {
+  return action;
+};
+```

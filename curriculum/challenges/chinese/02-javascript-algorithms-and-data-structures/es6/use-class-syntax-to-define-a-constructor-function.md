@@ -77,5 +77,26 @@ assert(() => {
 assert(carrot.name == 'carrot');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
+```
+
 # --solutions--
 
+```js
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const carrot = new Vegetable('carrot');
+```

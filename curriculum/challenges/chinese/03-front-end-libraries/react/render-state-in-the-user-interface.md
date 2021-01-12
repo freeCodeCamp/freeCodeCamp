@@ -58,5 +58,54 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <h1>{this.state.name}</h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```

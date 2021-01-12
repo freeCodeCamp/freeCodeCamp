@@ -48,8 +48,3 @@ print(height/3)
 
 3
 
-# --hints--
-
-
-# --solutions--
-

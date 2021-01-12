@@ -65,5 +65,22 @@ assert(checkEqual(1, 1) === 'Equal');
 assert(checkEqual(1, -1) === 'Not Equal');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkEqual(a, b) {
+
+}
+
+checkEqual(1, 2);
+```
+
 # --solutions--
 
+```js
+function checkEqual(a, b) {
+  return a === b ? "Equal" : "Not Equal";
+}
+```

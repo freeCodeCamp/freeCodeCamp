@@ -37,8 +37,3 @@ print(lst)
 
 1
 
-# --hints--
-
-
-# --solutions--
-

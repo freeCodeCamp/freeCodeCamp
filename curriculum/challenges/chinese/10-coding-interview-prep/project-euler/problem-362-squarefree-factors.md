@@ -25,5 +25,21 @@ S（100）= 193。
 assert.strictEqual(euler362(), 457895958010);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler362() {
+
+  return true;
+}
+
+euler362();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

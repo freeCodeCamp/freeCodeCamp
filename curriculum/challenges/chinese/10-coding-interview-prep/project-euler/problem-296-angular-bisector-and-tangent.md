@@ -21,5 +21,21 @@ n和k的交集称为E。
 assert.strictEqual(euler296(), 1137208419);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler296() {
+
+  return true;
+}
+
+euler296();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -58,5 +58,30 @@ console.log(s); // returns [5, 6, 45]
 assert.deepEqual(s, [2, 5, 7]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const s = [5, 7, 2];
+function editInPlace() {
+  // Only change code below this line
+
+  // Using s = [2, 5, 7] would be invalid
+
+  // Only change code above this line
+}
+editInPlace();
+```
+
 # --solutions--
 
+```js
+const s = [5, 7, 2];
+function editInPlace() {
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+}
+editInPlace();
+```

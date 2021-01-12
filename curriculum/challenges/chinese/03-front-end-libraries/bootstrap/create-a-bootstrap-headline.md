@@ -51,5 +51,15 @@ assert($('h3').hasClass('text-center'));
 assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+```
+
 # --solutions--
 
+```html
+<h3 class="text-primary text-center">jQuery Playground</h3>
+```

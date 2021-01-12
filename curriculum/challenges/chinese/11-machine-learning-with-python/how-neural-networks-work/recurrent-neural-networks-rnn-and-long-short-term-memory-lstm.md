@@ -26,8 +26,3 @@ Prediction, ignoring, forgetting, and selection.
 
 3
 
-# --hints--
-
-
-# --solutions--
-

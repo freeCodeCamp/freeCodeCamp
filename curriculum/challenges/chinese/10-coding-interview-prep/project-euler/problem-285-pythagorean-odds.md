@@ -25,5 +25,21 @@ Albert选择一个正整数k，然后在区间\[0,1]中以均匀分布随机选�
 assert.strictEqual(euler285(), 157055.80999);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler285() {
+
+  return true;
+}
+
+euler285();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

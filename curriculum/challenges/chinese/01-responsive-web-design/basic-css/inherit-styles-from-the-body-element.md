@@ -82,5 +82,29 @@ assert(
 assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+  }
+
+</style>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+
+</style>
+<h1>Hello World!</h1>
+```

@@ -26,8 +26,3 @@ UTF-32
 
 1
 
-# --hints--
-
-
-# --solutions--
-

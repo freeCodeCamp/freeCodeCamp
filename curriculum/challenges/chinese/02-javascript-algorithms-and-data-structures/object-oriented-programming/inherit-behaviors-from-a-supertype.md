@@ -85,5 +85,40 @@ assert(duck instanceof Animal);
 assert(beagle instanceof Animal);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+// Only change code below this line
+
+let duck; // Change this line
+let beagle; // Change this line
+```
+
 # --solutions--
 
+```js
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+let duck = Object.create(Animal.prototype);
+let beagle = Object.create(Animal.prototype);
+
+duck.eat();
+beagle.eat();
+```

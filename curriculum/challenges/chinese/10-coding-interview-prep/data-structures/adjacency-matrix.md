@@ -88,5 +88,22 @@ assert(adjMatUndirected[2][4] === 1 && adjMatUndirected[4][2] === 1);
 assert(adjMatUndirected[3][4] === 1 && adjMatUndirected[4][3] === 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var adjMatUndirected = [];
+```
+
 # --solutions--
 
+```js
+var adjMatUndirected = [
+  [0, 0, 1, 1, 0],
+  [0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [0, 0, 1, 1, 0]
+];
+```

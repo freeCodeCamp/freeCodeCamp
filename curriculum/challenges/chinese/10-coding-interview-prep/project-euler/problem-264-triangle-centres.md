@@ -23,5 +23,21 @@ A（-4,3），B（5,0），C（4，-3）A（4,3），B（5,0），C（-4，-3）
 assert.strictEqual(euler264(), 2816417.1055);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler264() {
+
+  return true;
+}
+
+euler264();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -26,8 +26,3 @@ Sigmoid
 
 2
 
-# --hints--
-
-
-# --solutions--
-

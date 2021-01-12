@@ -35,5 +35,21 @@ S1864 + S1865 + ... + S1909有多少方面？
 assert.strictEqual(euler228(), 86226);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler228() {
+
+  return true;
+}
+
+euler228();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

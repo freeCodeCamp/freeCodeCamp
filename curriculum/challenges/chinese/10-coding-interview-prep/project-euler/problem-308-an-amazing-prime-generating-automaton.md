@@ -25,5 +25,21 @@ Fractran虚拟机的内部状态是一个正整数，该整数最初设置为种
 assert.strictEqual(euler308(), 1539669807660924);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler308() {
+
+  return true;
+}
+
+euler308();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

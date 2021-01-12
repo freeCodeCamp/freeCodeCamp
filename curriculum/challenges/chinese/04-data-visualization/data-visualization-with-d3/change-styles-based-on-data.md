@@ -82,5 +82,42 @@ assert($('h2').eq(7).css('color') == 'rgb(255, 0, 0)');
 assert($('h2').eq(8).css('color') == 'rgb(255, 0, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      // Add your code below this line
+
+
+
+      // Add your code above this line
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      .style("color", (d) => d < 20 ? "red" : "green")
+  </script>
+</body>
+```

@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler74(), 402);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function digitFactorialChains() {
+
+  return true;
+}
+
+digitFactorialChains();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

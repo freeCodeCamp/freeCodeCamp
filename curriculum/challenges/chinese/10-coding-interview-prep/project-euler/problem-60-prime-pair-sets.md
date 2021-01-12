@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler60(), 26033);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function primePairSets() {
+
+  return true;
+}
+
+primePairSets();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

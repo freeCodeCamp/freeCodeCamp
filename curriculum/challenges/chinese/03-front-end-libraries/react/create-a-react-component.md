@@ -56,5 +56,46 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    // Change code below this line
+
+
+
+    // Change code above this line
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    // Change code below this line
+    return (
+      <div>
+        <h1>Hello React!</h1>
+      </div>
+    );
+    // Change code above this line
+  }
+};
+```

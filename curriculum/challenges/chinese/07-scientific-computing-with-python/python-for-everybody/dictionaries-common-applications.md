@@ -39,8 +39,3 @@ quincy
 
 3
 
-# --hints--
-
-
-# --solutions--
-

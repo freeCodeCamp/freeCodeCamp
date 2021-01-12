@@ -33,8 +33,3 @@ A header, a footer, and the contents of "romeo.txt".
 
 1
 
-# --hints--
-
-
-# --solutions--
-

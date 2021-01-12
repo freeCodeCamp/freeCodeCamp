@@ -45,5 +45,30 @@ assert.deepEqual(
 (getUserInput) => assert(!getUserInput('index').match(/:/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const createPerson = (name, age, gender) => {
+  // Only change code below this line
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+  // Only change code above this line
+};
+```
+
 # --solutions--
 
+```js
+const createPerson = (name, age, gender) => {
+  return {
+    name,
+    age,
+    gender
+  };
+};
+```

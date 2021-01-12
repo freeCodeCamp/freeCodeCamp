@@ -35,5 +35,32 @@ assert(typeof accumulator(0)(2) === 'number');
 assert(testFn(5) === 5.5);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const testFn = typeof accumulator(3) === 'function' && accumulator(3);
+if (testFn) {
+  testFn(-4);
+  testFn(1.5);
+}
+```
+
+## --seed-contents--
+
+```js
+function accumulator(sum) {
+
+}
+```
+
 # --solutions--
 
+```js
+function accumulator(sum) {
+  return function(n) {
+    return sum += n;
+  };
+}
+```

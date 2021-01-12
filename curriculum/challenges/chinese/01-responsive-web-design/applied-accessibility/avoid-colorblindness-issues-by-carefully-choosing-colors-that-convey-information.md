@@ -26,5 +26,46 @@ Camper Cat 正在测试一个重要按钮的不同样式。在色轮上，用于
 assert($('button').css('color') == 'rgb(0, 51, 102)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<head>
+  <style>
+  button {
+    color: #33FF33;
+    background-color: #FFFF33;
+    font-size: 14px;
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Danger!</h1>
+  </header>
+  <button>Delete Internet</button>
+</body>
+```
+
 # --solutions--
 
+```html
+<head>
+  <style>
+    button {
+      color: #003366;
+      background-color: #FFFF33;
+      font-size: 14px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Danger!</h1>
+  </header>
+  <button>Delete Internet</button>
+</body>
+```

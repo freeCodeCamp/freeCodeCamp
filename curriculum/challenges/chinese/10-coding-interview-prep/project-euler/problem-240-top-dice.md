@@ -27,5 +27,21 @@ D1，D2，D3，D4，D5 = 6,6,3,3,3
 assert.strictEqual(euler240(), 7448717393364182000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler240() {
+
+  return true;
+}
+
+euler240();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

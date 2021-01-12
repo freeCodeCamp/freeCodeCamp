@@ -79,5 +79,51 @@ assert.sameMembers(
 assert.strictEqual(code.search(/\.sort\(/), -1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
+
+function isBuiltInSortUsed(){
+  let sortUsed = false;
+  Array.prototype.sort = () => sortUsed = true;
+  insertionSort([0, 1]);
+  return !sortUsed;
+}
+```
+
+## --seed-contents--
+
+```js
+function insertionSort(array) {
+  // Only change code below this line
+  return array;
+  // Only change code above this line
+}
+
+insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+```
+
 # --solutions--
 
+```js
+function insertionSort (array) {
+  for (let currentIndex = 0; currentIndex < array.length; currentIndex++) {
+    let current = array[currentIndex];
+    let j = currentIndex - 1;
+    while (j > -1 && array[j] > current) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = current;
+  }
+  return array;
+}
+```

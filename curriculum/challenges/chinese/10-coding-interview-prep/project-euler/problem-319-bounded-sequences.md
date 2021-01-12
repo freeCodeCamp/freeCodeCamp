@@ -27,5 +27,21 @@ x1 = 2
 assert.strictEqual(euler319(), 268457129);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler319() {
+
+  return true;
+}
+
+euler319();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

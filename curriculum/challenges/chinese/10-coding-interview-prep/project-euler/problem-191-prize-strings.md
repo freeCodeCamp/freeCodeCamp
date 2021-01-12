@@ -25,5 +25,21 @@ OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA OAOL OAAO OAAL OALO OALA OLOO 
 assert.strictEqual(euler191(), 1918080160);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler191() {
+
+  return true;
+}
+
+euler191();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -34,8 +34,3 @@ What is used to indicate a new line in a string?
 
 1
 
-# --hints--
-
-
-# --solutions--
-

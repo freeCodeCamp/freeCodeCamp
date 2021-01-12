@@ -29,5 +29,21 @@ f（76275）= 7627 + 5 *34 = 7797：76275和7797都可以被113f（12345）= 123
 assert.strictEqual(euler274(), 1601912348822);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler274() {
+
+  return true;
+}
+
+euler274();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

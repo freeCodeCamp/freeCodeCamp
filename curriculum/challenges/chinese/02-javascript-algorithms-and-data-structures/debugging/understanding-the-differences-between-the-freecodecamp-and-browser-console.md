@@ -40,5 +40,30 @@ const noSpaces = code.replace(/\s/g, '');
 assert(noSpaces.match(/console\.log\(output\)/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Open your browser console.
+let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
+// Use console.log() to print the output variable.
+
+// Run the tests to see the difference between the two consoles.
+
+// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
+```
+
 # --solutions--
 
+```js
+// Open your browser console.
+let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
+// Use console.log() to print the output variable.
+console.clear();
+console.log(output);
+
+// Run the tests to see the difference between the two consoles.
+
+// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
+```

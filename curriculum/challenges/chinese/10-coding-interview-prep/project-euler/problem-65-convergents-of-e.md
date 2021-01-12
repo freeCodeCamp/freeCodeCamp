@@ -59,5 +59,21 @@ videoUrl: ''
 assert.strictEqual(euler65(), 272);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function convergentsOfE() {
+
+  return true;
+}
+
+convergentsOfE();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

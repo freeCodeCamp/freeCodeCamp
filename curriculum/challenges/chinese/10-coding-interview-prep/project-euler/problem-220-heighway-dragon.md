@@ -27,5 +27,21 @@ D50中1012步后光标的位置是什么？以x，y的形式给出答案，没�
 assert.strictEqual(euler220(), 139776, 963904);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler220() {
+
+  return true;
+}
+
+euler220();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

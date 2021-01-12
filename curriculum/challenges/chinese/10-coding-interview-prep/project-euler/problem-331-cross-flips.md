@@ -29,5 +29,21 @@ CN为具有N×N个盘的板的以下配置：（x，y）处的盘满足，表示
 assert.strictEqual(euler331(), 467178235146843500);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler331() {
+
+  return true;
+}
+
+euler331();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

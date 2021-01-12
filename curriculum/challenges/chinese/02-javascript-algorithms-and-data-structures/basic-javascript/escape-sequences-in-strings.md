@@ -72,5 +72,24 @@ assert(/SecondLine\nThirdLine/.test(myStr));
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){
+if (myStr !== undefined){
+console.log('myStr:\n' + myStr);}})();
+```
+
+## --seed-contents--
+
+```js
+var myStr; // Change this line
+```
+
 # --solutions--
 
+```js
+var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+```

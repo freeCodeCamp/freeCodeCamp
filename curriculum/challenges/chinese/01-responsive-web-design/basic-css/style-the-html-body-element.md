@@ -48,5 +48,22 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+</style>
+```
+
 # --solutions--
 
+```html
+<style>
+body {
+  background-color: black;
+}
+</style>
+```

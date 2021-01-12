@@ -26,8 +26,3 @@ What is the correct command to install the Python 3 version of the `python-nmap`
 
 3
 
-# --hints--
-
-
-# --solutions--
-

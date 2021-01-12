@@ -55,8 +55,3 @@ output[4:1, 4:1] = z
 
 1
 
-# --hints--
-
-
-# --solutions--
-

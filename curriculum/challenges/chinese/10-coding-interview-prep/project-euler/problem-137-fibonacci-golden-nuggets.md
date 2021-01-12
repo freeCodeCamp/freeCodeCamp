@@ -25,5 +25,21 @@ xAF（x）√2-111/ 22（√13-2）/ 33（√89-5）/ 84（√34-3）/ 55
 assert.strictEqual(euler137(), 1120149658760);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler137() {
+
+  return true;
+}
+
+euler137();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

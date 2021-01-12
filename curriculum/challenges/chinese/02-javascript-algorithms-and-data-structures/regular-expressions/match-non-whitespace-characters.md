@@ -56,5 +56,20 @@ assert('Space: the final frontier.'.match(countNonWhiteSpace).length == 23);
 assert('MindYourPersonalSpace'.match(countNonWhiteSpace).length == 21);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /change/; // Change this line
+let result = sample.match(countNonWhiteSpace);
+```
+
 # --solutions--
 
+```js
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
+```

@@ -69,5 +69,34 @@ assert(typeof Dog.prototype.eat === 'function');
 assert(typeof Dog.prototype.describe === 'function');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  // Only change code below this line
+
+};
+```
+
 # --solutions--
 
+```js
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype = {
+numLegs: 4,
+  eat () {
+    console.log('nom nom nom');
+  },
+  describe () {
+    console.log('My name is ' + this.name);
+  }
+};
+```

@@ -83,4 +83,22 @@ assert($('.text-4').css('font-size') == '60px');
 assert($('.text-5').css('font-size') == '75px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
 # --solutions--

@@ -49,8 +49,3 @@ for key, value in user
 
 3
 
-# --hints--
-
-
-# --solutions--
-

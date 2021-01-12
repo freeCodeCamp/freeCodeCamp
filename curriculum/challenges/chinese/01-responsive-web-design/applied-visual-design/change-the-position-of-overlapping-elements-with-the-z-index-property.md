@@ -22,5 +22,59 @@ class 为 `first` 的元素的 `z-index` 属性值应为 2。
 assert($('.first').css('z-index') == '2');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  div {
+    width: 60%;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .first {
+    background-color: red;
+    position: absolute;
+
+  }
+  .second {
+    background-color: blue;
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    z-index: 1;
+  }
+</style>
+
+<div class="first"></div>
+<div class="second"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div {
+    width: 60%;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .first {
+    background-color: red;
+    position: absolute;
+    z-index: 2;
+  }
+  .second {
+    background-color: blue;
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    z-index: 1;
+  }
+</style>
+<div class="first"></div>
+<div class="second"></div>
+```

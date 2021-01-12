@@ -30,5 +30,47 @@ id 为 `bottom` 的元素应该沿着 X 轴翻转 24 度。
 assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+  }
+  #bottom {
+    background-color: blue;
+
+  }
+</style>
+
+<div id="top"></div>
+<div id="bottom"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+  }
+  #bottom {
+    background-color: blue;
+    transform: skewX(24deg);
+  }
+</style>
+<div id="top"></div>
+<div id="bottom"></div>
+```

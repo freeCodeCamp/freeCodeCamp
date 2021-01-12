@@ -44,8 +44,3 @@ SELECT * FROM Users WHERE email="quincy@freecodecamp.org"
 
 5
 
-# --hints--
-
-
-# --solutions--
-

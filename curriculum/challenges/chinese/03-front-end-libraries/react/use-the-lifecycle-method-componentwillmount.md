@@ -41,5 +41,46 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    // Change code below this line
+
+    // Change code above this line
+  }
+  render() {
+    return <div />
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    // Change code below this line
+    console.log('Component is mounting...');
+    // Change code above this line
+  }
+  render() {
+    return <div />
+  }
+};
+```

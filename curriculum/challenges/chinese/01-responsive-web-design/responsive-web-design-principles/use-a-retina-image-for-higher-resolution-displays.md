@@ -37,5 +37,27 @@ assert($('img').css('width') == '100px');
 assert($('img').css('height') == '100px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+</style>
+
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
+```
+
 # --solutions--
 
+```html
+<style>
+  img { 
+    height: 100px; 
+    width: 100px; 
+  }
+</style>
+
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
+```

@@ -36,8 +36,3 @@ B: `from_generator`
 
 1
 
-# --hints--
-
-
-# --solutions--
-

@@ -36,8 +36,3 @@ How many columns the source data had before loading.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

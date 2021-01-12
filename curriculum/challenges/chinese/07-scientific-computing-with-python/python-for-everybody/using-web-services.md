@@ -34,8 +34,3 @@ PHP and TXT
 
 2
 
-# --hints--
-
-
-# --solutions--
-

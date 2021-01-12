@@ -46,5 +46,20 @@ assert(lastRegex.flags == '');
 assert(lastRegex.test('The last car on a train is the caboose'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /change/; // Change this line
+let result = lastRegex.test(caboose);
+```
+
 # --solutions--
 
+```js
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
+```

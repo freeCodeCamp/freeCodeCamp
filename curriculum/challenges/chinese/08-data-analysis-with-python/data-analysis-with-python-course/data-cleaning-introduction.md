@@ -55,8 +55,3 @@ dtype: bool
 
 1
 
-# --hints--
-
-
-# --solutions--
-

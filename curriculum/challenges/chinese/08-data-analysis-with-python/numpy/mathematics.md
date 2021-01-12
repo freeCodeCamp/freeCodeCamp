@@ -45,8 +45,3 @@ b = np.max(a, axis=1).sum()
 
 4
 
-# --hints--
-
-
-# --solutions--
-

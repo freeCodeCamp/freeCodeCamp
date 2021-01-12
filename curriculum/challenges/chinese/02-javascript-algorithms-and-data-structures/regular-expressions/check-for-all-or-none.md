@@ -51,5 +51,20 @@ assert(favRegex.test('favourite'));
 assert(!favRegex.test('fav'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let favWord = "favorite";
+let favRegex = /change/; // Change this line
+let result = favRegex.test(favWord);
+```
+
 # --solutions--
 
+```js
+let favWord = "favorite";
+let favRegex = /favou?r/;
+let result = favRegex.test(favWord);
+```

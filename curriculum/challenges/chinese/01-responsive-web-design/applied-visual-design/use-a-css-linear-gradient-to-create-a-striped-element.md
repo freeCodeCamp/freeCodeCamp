@@ -62,5 +62,49 @@ assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi));
 assert(code.match(/black\s+?80px/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+  div{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      90deg,
+      yellow 0px,
+      blue 40px,
+      green 40px,
+      red 80px
+    );
+  }
+
+</style>
+
+<div></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      yellow 40px,
+      black 40px,
+      black 80px
+    );
+  }
+</style>
+<div></div>
+```

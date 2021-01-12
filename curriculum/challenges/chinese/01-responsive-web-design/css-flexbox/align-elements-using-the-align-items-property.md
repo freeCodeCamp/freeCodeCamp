@@ -33,5 +33,62 @@ CSS 中的 `align-items` 属性用来定义 flex 子元素沿交叉轴的对齐�
 assert($('#box-container').css('align-items') == 'center');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 200px;
+    font-size: 24px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 200px;
+    font-size: 18px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"><p>Hello</p></div>
+  <div id="box-2"><p>Goodbye</p></div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+    align-items: center;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 200px;
+    font-size: 24px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 200px;
+    font-size: 18px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"><p>Hello</p></div>
+  <div id="box-2"><p>Goodbye</p></div>
+</div>
+```

@@ -89,5 +89,20 @@ assert(!unRegex.test('There is a bug in my code.'));
 assert(!unRegex.test('Can me if you can.'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /change/; // Change this line
+let result = unRegex.test(exampleStr);
+```
+
 # --solutions--
 
+```js
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // Change this line
+let result = unRegex.test(exampleStr);
+```

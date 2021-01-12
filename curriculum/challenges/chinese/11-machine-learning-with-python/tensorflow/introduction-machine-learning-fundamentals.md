@@ -26,8 +26,3 @@ Machine learning is a subset of artificial intelligence.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

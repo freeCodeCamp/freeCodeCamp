@@ -25,5 +25,21 @@ Nim Square就像普通的三堆普通游戏Nim一样，但是玩家只能从堆�
 assert.strictEqual(euler310(), 2586528661783);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler310() {
+
+  return true;
+}
+
+euler310();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

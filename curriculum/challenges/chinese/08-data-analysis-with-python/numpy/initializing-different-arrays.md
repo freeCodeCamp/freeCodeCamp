@@ -40,8 +40,3 @@ print(np.full_like(a, 100))
 
 2
 
-# --hints--
-
-
-# --solutions--
-

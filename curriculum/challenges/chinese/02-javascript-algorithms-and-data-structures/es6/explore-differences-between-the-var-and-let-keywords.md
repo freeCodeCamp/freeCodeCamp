@@ -55,5 +55,33 @@ assert(catName === 'Oliver');
 assert(quote === 'Oliver says Meow!');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var catName;
+var quote;
+function catTalk() {
+  "use strict";
+
+  catName = "Oliver";
+  quote = catName + " says Meow!";
+
+}
+catTalk();
+```
+
 # --solutions--
 
+```js
+let catName;
+let quote;
+function catTalk() {
+  'use strict';
+
+  catName = 'Oliver';
+  quote = catName + ' says Meow!';
+}
+catTalk();
+```

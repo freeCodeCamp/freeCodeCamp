@@ -64,5 +64,22 @@ assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
 assert(removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)\;/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+function countdown(n){
+  return;
+}
+// Only change code above this line
+```
+
 # --solutions--
 
+```js
+function countdown(n){
+   return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+```

@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler80(), 40886);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sqrtDigitalExpansion() {
+
+  return true;
+}
+
+sqrtDigitalExpansion();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

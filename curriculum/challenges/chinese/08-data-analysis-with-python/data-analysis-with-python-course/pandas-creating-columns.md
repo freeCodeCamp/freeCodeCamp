@@ -53,8 +53,3 @@ certificates_earned['Certificates per month'] = round(
 
 3
 
-# --hints--
-
-
-# --solutions--
-

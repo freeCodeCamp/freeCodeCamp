@@ -23,5 +23,21 @@ F（106，106）mod 1234567891 = 252903833。
 assert.strictEqual(euler452(), 345558983);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler452() {
+
+  return true;
+}
+
+euler452();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

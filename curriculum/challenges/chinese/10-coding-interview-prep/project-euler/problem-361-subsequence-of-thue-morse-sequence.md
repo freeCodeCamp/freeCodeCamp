@@ -27,5 +27,21 @@ An的前几个术语如下：n0123456789101112 ... An012345691011121318 ...
 assert.strictEqual(euler361(), 178476944);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler361() {
+
+  return true;
+}
+
+euler361();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

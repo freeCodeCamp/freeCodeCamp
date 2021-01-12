@@ -17,5 +17,21 @@ n，rad（n）的基数是n的不同素因子的乘积。例如，504 = 23×32×
 assert.strictEqual(euler127(), 18407904);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler127() {
+
+  return true;
+}
+
+euler127();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

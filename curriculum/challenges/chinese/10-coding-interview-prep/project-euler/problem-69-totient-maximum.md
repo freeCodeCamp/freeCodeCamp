@@ -21,5 +21,21 @@ n相对素数φ（n）n /φ（n）2 1 1 2 3 1,2 2 1.5 4 1,3 2 2 5 1,2,3,4 4 1.25
 assert.strictEqual(euler69(), 510510);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function totientMaximum() {
+
+  return true;
+}
+
+totientMaximum();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

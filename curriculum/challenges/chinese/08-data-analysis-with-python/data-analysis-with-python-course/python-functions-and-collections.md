@@ -32,8 +32,3 @@ Tuples are unordered.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

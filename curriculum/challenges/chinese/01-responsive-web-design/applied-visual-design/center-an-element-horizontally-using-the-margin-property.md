@@ -24,5 +24,32 @@ forumTopicId: 301043
 assert(code.match(/margin:\s*?auto;/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+
+  }
+</style>
+<div></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+</style>
+<div></div>
+```

@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler164(), 378158756814587);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler164() {
+
+  return true;
+}
+
+euler164();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

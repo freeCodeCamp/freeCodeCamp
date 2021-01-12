@@ -35,5 +35,31 @@ assert(firstLetterOfLastName === 'L');
 assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(v){return v;})(firstLetterOfLastName);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName; // Change this line
+```
+
 # --solutions--
 
+```js
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName[0];
+```

@@ -56,5 +56,22 @@ assert(convertToInteger('111001') === 57);
 assert.isNaN(convertToInteger('JamesBond'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function convertToInteger(str) {
+
+}
+
+convertToInteger("10011");
+```
+
 # --solutions--
 
+```js
+function convertToInteger(str) {
+  return parseInt(str, 2);
+}
+```

@@ -26,8 +26,3 @@ have a deep understanding of many different frameworks.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

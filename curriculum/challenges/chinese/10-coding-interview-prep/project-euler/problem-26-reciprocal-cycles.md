@@ -89,5 +89,21 @@ assert(reciprocalCycles(900) == 887);
 assert(reciprocalCycles(1000) == 983);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function reciprocalCycles(n) {
+
+  return n;
+}
+
+reciprocalCycles(1000);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

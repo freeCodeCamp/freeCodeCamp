@@ -23,5 +23,21 @@ blancmange曲线下面的哪个区域被C包围？将你的答案四舍五入到
 assert.strictEqual(euler226(), 0.11316017);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler226() {
+
+  return true;
+}
+
+euler226();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

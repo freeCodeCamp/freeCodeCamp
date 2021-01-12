@@ -26,8 +26,3 @@ Central Processing Unit.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

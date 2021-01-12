@@ -46,8 +46,3 @@ A simple web browser.
 
 4
 
-# --hints--
-
-
-# --solutions--
-

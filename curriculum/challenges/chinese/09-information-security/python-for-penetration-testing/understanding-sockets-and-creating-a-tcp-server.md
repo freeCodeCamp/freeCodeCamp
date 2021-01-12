@@ -26,8 +26,3 @@ Which of the following functions creates a socket object?
 
 3
 
-# --hints--
-
-
-# --solutions--
-

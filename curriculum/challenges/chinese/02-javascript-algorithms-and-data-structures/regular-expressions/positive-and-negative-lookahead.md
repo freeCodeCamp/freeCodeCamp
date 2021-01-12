@@ -100,5 +100,18 @@ assert(!pwRegex.test('8pass99'));
 assert(!pwRegex.test('12abcde'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let sampleWord = "astronaut";
+let pwRegex = /change/; // Change this line
+let result = pwRegex.test(sampleWord);
+```
+
 # --solutions--
 
+```js
+var pwRegex =  /^\D(?=\w{5})(?=\w*\d{2})/;
+```

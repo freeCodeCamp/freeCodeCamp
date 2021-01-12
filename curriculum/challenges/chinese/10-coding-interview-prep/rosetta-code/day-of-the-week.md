@@ -35,5 +35,35 @@ assert.deepEqual(findXmasSunday(1970, 2017), firstSolution);
 assert.deepEqual(findXmasSunday(2008, 2121), secondSolution);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const firstSolution = [1977, 1983, 1988, 1994, 2005, 2011, 2016];
+const secondSolution = [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118];
+```
+
+## --seed-contents--
+
+```js
+function findXmasSunday(start, end) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function findXmasSunday(start, end) {
+  const xmasSunday = [];
+  for (let year = start; year <= end; year++) {
+    const xmas = new Date(year, 11, 25);
+    if (xmas.getDay() === 0) {
+      xmasSunday.push(year);
+    }
+  }
+  return xmasSunday;
+}
+```

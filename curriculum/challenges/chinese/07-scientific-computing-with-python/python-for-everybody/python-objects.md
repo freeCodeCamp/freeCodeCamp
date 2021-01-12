@@ -30,8 +30,3 @@ Objects are one of the five standard data types.
 
 4
 
-# --hints--
-
-
-# --solutions--
-

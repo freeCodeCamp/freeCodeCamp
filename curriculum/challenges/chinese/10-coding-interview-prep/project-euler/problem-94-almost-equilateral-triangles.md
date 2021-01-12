@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler94(), 518408346);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function almostEquilateralTriangles() {
+
+  return true;
+}
+
+almostEquilateralTriangles();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -48,5 +48,24 @@ assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: #F00;
+  }
+</style>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+</style>
+```

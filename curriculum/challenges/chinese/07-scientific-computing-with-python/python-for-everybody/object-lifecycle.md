@@ -69,8 +69,3 @@ Miya party count 1
 
 2
 
-# --hints--
-
-
-# --solutions--
-

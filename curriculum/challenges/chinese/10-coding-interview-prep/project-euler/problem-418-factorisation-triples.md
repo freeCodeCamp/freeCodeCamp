@@ -25,5 +25,21 @@ a·b·c = n。
 assert.strictEqual(euler418(), 1177163565297340400);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler418() {
+
+  return true;
+}
+
+euler418();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

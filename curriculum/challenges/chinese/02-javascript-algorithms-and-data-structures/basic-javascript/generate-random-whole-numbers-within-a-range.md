@@ -59,5 +59,41 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+var calcMin = 100;
+var calcMax = -100;
+for(var i = 0; i < 100; i++) {
+  var result = randomRange(5,15);
+  calcMin = Math.min(calcMin, result);
+  calcMax = Math.max(calcMax, result);
+}
+(function(){
+  if(typeof myRandom === 'number') {
+    return "myRandom = " + myRandom;
+  } else {
+    return "myRandom undefined";
+  }
+})()
+```
+
+## --seed-contents--
+
+```js
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  return 0;
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+```

@@ -23,5 +23,21 @@ m×n迷宫是m×n矩形网格，其中墙壁放置在网格单元之间，使得
 assert.strictEqual(euler380(), Infinity);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler380() {
+
+  return true;
+}
+
+euler380();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -63,5 +63,38 @@ assert(drinkValue === 'water');
 assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b) { return "entreeValue = '" + a + "', drinkValue = '" + b + "'"; })(entreeValue,drinkValue);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Only change code below this line
+
+var entreeValue = testObj;   // Change this line
+var drinkValue = testObj;    // Change this line
+```
+
 # --solutions--
 
+```js
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+var entreeValue = testObj["an entree"];
+var drinkValue = testObj['the drink'];
+```

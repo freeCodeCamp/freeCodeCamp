@@ -23,5 +23,21 @@ Bozo排序，不要与稍微低效的bogo排序混淆，包括检查输入序列
 assert.strictEqual(euler367(), 48271207);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler367() {
+
+  return true;
+}
+
+euler367();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

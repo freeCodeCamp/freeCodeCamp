@@ -50,8 +50,3 @@ C: `checkpoint_callback`
 
 2
 
-# --hints--
-
-
-# --solutions--
-

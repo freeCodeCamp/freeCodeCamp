@@ -22,5 +22,30 @@ CSS 里面的 `font-size` 属性不只限于标题，还可以应用于任何包
 assert($('p').css('font-size') == '16px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  p {
+    font-size: 10px;
+  }
+</style>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+```
+
 # --solutions--
 
+```html
+<style>
+  p {
+    font-size: 16px;
+  }
+</style>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+```

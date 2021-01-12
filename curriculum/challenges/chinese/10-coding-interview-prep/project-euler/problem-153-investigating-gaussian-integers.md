@@ -49,5 +49,21 @@ divisors111 21,1 + i，1-i，25 31,34 41,1 + i，1-i，2,2 + 2i，2-2i，413 51,
 assert.strictEqual(euler153(), 17971254122360636);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler153() {
+
+  return true;
+}
+
+euler153();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

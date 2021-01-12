@@ -36,8 +36,3 @@ Standard Python objects take up more memory than NumPy objects; operations on Nu
 
 4
 
-# --hints--
-
-
-# --solutions--
-

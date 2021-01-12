@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler75(), 161667);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function singularIntRightTriangles() {
+
+  return true;
+}
+
+singularIntRightTriangles();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

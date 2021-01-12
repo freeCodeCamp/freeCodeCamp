@@ -43,5 +43,30 @@ assert(dog.sayLegs() === 'This dog has 4 legs.');
 assert(code.match(/this\.numLegs/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs: function() {return "This dog has " + dog.numLegs + " legs.";}
+};
+
+dog.sayLegs();
+```
+
 # --solutions--
 
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs () {
+    return 'This dog has ' + this.numLegs + ' legs.';
+  }
+};
+
+dog.sayLegs();
+```

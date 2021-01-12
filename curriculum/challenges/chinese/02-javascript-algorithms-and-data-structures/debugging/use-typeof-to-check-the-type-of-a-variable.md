@@ -44,5 +44,20 @@ assert(code.match(/typeof[\( ]seven\)?/g));
 assert(code.match(/typeof[\( ]three\)?/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let seven = 7;
+let three = "3";
+console.log(seven + three);
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+let seven = 7;let three = "3";console.log(typeof seven);
+console.log(typeof three);
+```

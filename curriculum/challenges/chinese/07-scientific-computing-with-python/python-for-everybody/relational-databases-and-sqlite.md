@@ -30,8 +30,3 @@ column
 
 1
 
-# --hints--
-
-
-# --solutions--
-

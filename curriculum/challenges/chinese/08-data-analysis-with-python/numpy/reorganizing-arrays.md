@@ -45,8 +45,3 @@ print(b)
 
 1
 
-# --hints--
-
-
-# --solutions--
-

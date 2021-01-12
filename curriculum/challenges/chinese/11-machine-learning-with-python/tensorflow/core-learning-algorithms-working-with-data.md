@@ -26,8 +26,3 @@ By default, shows the first five rows or entries in a data frame.
 
 3
 
-# --hints--
-
-
-# --solutions--
-

@@ -42,8 +42,3 @@ key
 
 4
 
-# --hints--
-
-
-# --solutions--
-

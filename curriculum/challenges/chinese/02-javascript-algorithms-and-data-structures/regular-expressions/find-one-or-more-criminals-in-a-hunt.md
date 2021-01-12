@@ -90,5 +90,16 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let reCriminals = /./; // Change this line
+```
+
 # --solutions--
 
+```js
+let reCriminals = /C+/; // Change this line
+```

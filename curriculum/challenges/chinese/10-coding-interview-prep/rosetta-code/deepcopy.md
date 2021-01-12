@@ -49,5 +49,35 @@ assert.deepEqual(deepcopy(obj2), obj2);
 assert.deepEqual(deepcopy(obj3), obj3);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const obj1 = { test: 'test' };
+const obj2 = {
+  t: 'test',
+  a: ['an', 'array']
+};
+const obj3 = {
+  t: 'try',
+  o: obj2
+};
+```
+
+## --seed-contents--
+
+```js
+function deepcopy(obj) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function deepcopy(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+```

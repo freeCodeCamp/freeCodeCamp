@@ -25,5 +25,21 @@ E（x0，y0）是最小的n，因此yn = 0。
 assert.strictEqual(euler433(), 326624372659664);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler433() {
+
+  return true;
+}
+
+euler433();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

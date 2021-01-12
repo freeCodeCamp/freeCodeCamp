@@ -47,5 +47,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<html>
+  <body>
+    <!-- Only change code below this line -->
+
+    <!-- Only change code above this line -->
+  </body>
+</html>
+```
+
 # --solutions--
 
+```html
+<html>
+  <body>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
+```

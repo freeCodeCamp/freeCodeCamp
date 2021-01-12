@@ -23,5 +23,28 @@ assert(typeof rms === 'function');
 assert.equal(rms(arr1), answer1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const answer1 = 6.2048368229954285;
+```
+
+## --seed-contents--
+
+```js
+function rms(arr) {
+
+}
+```
+
 # --solutions--
 
+```js
+function rms(arr) {
+  const sumOfSquares = arr.reduce((s, x) => s + x * x, 0);
+  return Math.sqrt(sumOfSquares / arr.length);
+}
+```

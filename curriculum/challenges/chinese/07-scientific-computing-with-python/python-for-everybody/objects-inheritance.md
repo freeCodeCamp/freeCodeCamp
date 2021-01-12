@@ -30,8 +30,3 @@ A method that is called at the moment when a class is being used to construct an
 
 3
 
-# --hints--
-
-
-# --solutions--
-

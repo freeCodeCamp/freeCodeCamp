@@ -31,5 +31,21 @@ nf（n，1）00 11 21 31 41 51 61 71 81 91 102 114 125
 assert.strictEqual(euler156(), 21295121502550);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler156() {
+
+  return true;
+}
+
+euler156();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

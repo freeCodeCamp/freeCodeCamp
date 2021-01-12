@@ -30,5 +30,20 @@ forumTopicId: 301341
 assert(result[0] == '<h1>');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*>/; // Change this line
+let result = text.match(myRegex);
+```
+
 # --solutions--
 
+```js
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // Change this line
+let result = text.match(myRegex);
+```

@@ -21,5 +21,21 @@ x y x AND y000010100111x y x XOR y000011101110多个6输入二进制真值表τ�
 assert.strictEqual(euler209(), 15964587728784);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler209() {
+
+  return true;
+}
+
+euler209();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -36,5 +36,26 @@ assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun']);
 assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence; // Change this line
+  return sentence;
+}
+
+console.log(spreadOut());
+```
+
 # --solutions--
 
+```js
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun'];
+  return sentence;
+}
+```

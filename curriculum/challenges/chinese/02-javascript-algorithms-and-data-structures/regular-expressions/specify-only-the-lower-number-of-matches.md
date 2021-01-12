@@ -71,5 +71,20 @@ assert('Hazzzzzzah'.match(haRegex)[0].length === 10);
 assert('Hazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzah'.match(haRegex)[0].length === 34);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let haStr = "Hazzzzah";
+let haRegex = /change/; // Change this line
+let result = haRegex.test(haStr);
+```
+
 # --solutions--
 
+```js
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+let result = haRegex.test(haStr);
+```

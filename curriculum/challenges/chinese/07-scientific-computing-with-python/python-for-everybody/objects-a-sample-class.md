@@ -50,8 +50,3 @@ So far 2
 
 4
 
-# --hints--
-
-
-# --solutions--
-

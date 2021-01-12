@@ -32,8 +32,3 @@ Working with Numpy is difficult.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

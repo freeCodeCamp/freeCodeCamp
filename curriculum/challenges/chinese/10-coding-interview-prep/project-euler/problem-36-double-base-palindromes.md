@@ -35,5 +35,21 @@ assert(doubleBasePalindromes(500000) == 286602);
 assert(doubleBasePalindromes(1000000) == 872187);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function doubleBasePalindromes(n) {
+
+  return n;
+}
+
+doubleBasePalindromes(1000000);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

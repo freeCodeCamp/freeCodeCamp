@@ -22,8 +22,3 @@ The agent will always try to maximize its reward for the current state/action, l
 
 2
 
-# --hints--
-
-
-# --solutions--
-

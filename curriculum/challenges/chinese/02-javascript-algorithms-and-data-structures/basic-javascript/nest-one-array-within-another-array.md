@@ -22,5 +22,23 @@ forumTopicId: 18247
 assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+var myArray = [];
+```
+
 # --solutions--
 
+```js
+var myArray = [[1,2,3]];
+```

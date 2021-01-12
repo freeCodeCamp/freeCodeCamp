@@ -21,5 +21,21 @@ a2≡amod 6的最大值为4.让我们将M（n）称为a &lt;n的最大值，使�
 assert.strictEqual(euler407(), 39782849136421);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler407() {
+
+  return true;
+}
+
+euler407();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

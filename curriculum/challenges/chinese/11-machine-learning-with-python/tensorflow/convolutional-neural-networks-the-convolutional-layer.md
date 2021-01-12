@@ -26,8 +26,3 @@ Input size, input padding, and stride.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

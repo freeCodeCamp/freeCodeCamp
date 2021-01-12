@@ -71,5 +71,20 @@ assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 (getUserInput) => assert(!getUserInput('index').match(/function/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var magic = function() {
+  return new Date();
+};
+```
+
 # --solutions--
 
+```js
+const magic = () => {
+  return new Date();
+};
+```

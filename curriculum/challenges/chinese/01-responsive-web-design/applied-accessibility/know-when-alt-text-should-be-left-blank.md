@@ -36,5 +36,38 @@ assert(!($('img').attr('alt') == undefined));
 assert($('img').attr('alt') == '');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>Deep Thoughts with Master Camper Cat</h1>
+<article>
+  <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+  <p>To Come...</p>
+</article>
+
+<img src="samuraiSwords.jpeg">
+
+<article>
+  <h2>Is Chuck Norris a Cat Person?</h2>
+  <p>To Come...</p>
+</article>
+```
+
 # --solutions--
 
+```html
+<h1>Deep Thoughts with Master Camper Cat</h1>
+<article>
+  <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+  <p>To Come...</p>
+</article>
+
+<img src="samuraiSwords.jpeg" alt="">
+
+<article>
+  <h2>Is Chuck Norris a Cat Person?</h2>
+  <p>To Come...</p>
+</article>
+```

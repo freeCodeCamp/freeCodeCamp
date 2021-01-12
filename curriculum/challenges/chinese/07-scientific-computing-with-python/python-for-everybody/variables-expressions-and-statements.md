@@ -30,8 +30,3 @@ What is the symbol used in an assignment statement?
 
 3
 
-# --hints--
-
-
-# --solutions--
-

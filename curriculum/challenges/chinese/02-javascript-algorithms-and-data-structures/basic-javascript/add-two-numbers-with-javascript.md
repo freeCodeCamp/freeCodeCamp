@@ -38,5 +38,22 @@ assert(sum === 20);
 assert(/\+/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'sum = '+z;})(sum);
+```
+
+## --seed-contents--
+
+```js
+var sum = 10 + 0;
+```
+
 # --solutions--
 
+```js
+var sum = 10 + 10;
+```

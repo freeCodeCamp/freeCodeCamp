@@ -44,5 +44,20 @@ assert(codingRegex.source === 'coding');
 assert(code.match(/\.match\(.*\)/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /change/; // Change this line
+let result = extractStr; // Change this line
+```
+
 # --solutions--
 
+```js
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+```

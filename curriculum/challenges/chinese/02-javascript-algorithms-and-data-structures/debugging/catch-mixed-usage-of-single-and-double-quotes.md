@@ -46,5 +46,18 @@ assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 assert(code.match(/"<p>.*?<\/p>";/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
+console.log(innerHtml);
+```
+
 # --solutions--
 
+```js
+let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+console.log(innerHtml);
+```

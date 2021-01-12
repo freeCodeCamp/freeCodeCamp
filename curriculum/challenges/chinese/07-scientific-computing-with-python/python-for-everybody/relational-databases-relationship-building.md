@@ -26,8 +26,3 @@ It defines a new table by listing the rows and fields we want to include followe
 
 1
 
-# --hints--
-
-
-# --solutions--
-

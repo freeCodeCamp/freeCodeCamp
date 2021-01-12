@@ -27,5 +27,21 @@ f（10,100,1）= 91.f（10,100,2）= 327.f（10,100,3）= 1135.f（10,100,1000�
 assert.strictEqual(euler350(), 84664213);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler350() {
+
+  return true;
+}
+
+euler350();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

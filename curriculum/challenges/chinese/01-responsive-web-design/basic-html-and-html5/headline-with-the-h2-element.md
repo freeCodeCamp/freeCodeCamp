@@ -55,3 +55,7 @@ assert(code.match(/<h1>\s*?.*?\s*?<\/h1>\s*<h2>\s*?.*?\s*?<\/h2>/gi));
 
 # --solutions--
 
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+```

@@ -36,5 +36,26 @@ Bird.prototype.isPrototypeOf(duck);
 assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function Dog(name) {
+  this.name = name;
+}
+let beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle);
+```

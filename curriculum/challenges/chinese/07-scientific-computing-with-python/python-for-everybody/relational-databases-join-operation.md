@@ -26,8 +26,3 @@ It indicates how the two tables are to be joined.
 
 3
 
-# --hints--
-
-
-# --solutions--
-

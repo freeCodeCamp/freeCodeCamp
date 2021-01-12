@@ -54,8 +54,3 @@ df = pd.csv_reader("data.csv")
 
 2
 
-# --hints--
-
-
-# --solutions--
-

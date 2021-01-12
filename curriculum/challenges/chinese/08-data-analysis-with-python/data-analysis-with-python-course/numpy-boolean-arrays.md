@@ -50,8 +50,3 @@ print(a <= 3)
 
 4
 
-# --hints--
-
-
-# --solutions--
-

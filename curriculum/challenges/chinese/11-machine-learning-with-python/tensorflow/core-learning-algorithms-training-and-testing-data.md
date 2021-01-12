@@ -26,8 +26,3 @@ Any data that is represented numerically.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

@@ -102,8 +102,6 @@ You should assert that the element 'span#dates' exist and its count is 1.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

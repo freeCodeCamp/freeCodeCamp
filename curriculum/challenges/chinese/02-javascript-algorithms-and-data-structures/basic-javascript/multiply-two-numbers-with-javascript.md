@@ -36,5 +36,22 @@ assert(product === 80);
 assert(/\*/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'product = '+z;})(product);
+```
+
+## --seed-contents--
+
+```js
+var product = 8 * 0;
+```
+
 # --solutions--
 
+```js
+var product = 8 * 10;
+```

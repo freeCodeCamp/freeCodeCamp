@@ -41,8 +41,3 @@ print("Smallest:", smallest)
 
 3
 
-# --hints--
-
-
-# --solutions--
-

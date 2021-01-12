@@ -17,5 +17,21 @@ googol（10100）是一个庞大的数字：一个跟着一百个零; 100100几�
 assert.strictEqual(euler56(), 972);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function powerfulDigitSum() {
+
+  return true;
+}
+
+powerfulDigitSum();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

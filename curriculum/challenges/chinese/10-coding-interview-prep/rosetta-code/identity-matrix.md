@@ -47,5 +47,33 @@ assert.deepEqual(idMatrix(3), results[2]);
 assert.deepEqual(idMatrix(4), results[3]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+let results=[[ [ 1 ] ],
+[ [ 1, 0 ], [ 0, 1 ] ],
+[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ],
+[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]]
+```
+
+## --seed-contents--
+
+```js
+function idMatrix(n) {
+
+}
+```
+
 # --solutions--
 
+```js
+function idMatrix(n) {
+    return Array.apply(null, new Array(n)).map(function (x, i, xs) {
+        return xs.map(function (_, k) {
+            return i === k ? 1 : 0;
+        })
+    });
+}
+```

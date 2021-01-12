@@ -47,5 +47,32 @@ assert.equal(quibble(testCases[2]), results[2]);
 assert.equal(quibble(testCases[3]), results[3]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
+const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
+```
+
+## --seed-contents--
+
+```js
+function quibble(words) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function quibble(words) {
+  return "{" +
+    words.slice(0, words.length - 1).join(",") +
+   (words.length > 1 ? " and " : "") +
+   (words[words.length - 1] || '') +
+  "}";
+}
+```

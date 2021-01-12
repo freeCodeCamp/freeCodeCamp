@@ -34,3 +34,10 @@ Helmet 通过配置不同的 HTTP header 信息来使你的 Express 应用更加
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

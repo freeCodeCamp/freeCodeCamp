@@ -52,8 +52,3 @@ None
 
 3
 
-# --hints--
-
-
-# --solutions--
-

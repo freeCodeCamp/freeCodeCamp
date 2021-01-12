@@ -48,8 +48,3 @@ DATA6
 
 2
 
-# --hints--
-
-
-# --solutions--
-

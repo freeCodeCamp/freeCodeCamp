@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler92(), 8581146);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function squareDigitChains() {
+
+  return true;
+}
+
+squareDigitChains();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

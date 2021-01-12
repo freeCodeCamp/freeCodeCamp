@@ -61,5 +61,24 @@ assert.strictEqual(quickCheck([true, false, false], undefined), false);
 assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function quickCheck(arr, elem) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+```
+
 # --solutions--
 
+```js
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) >= 0; 
+}
+```

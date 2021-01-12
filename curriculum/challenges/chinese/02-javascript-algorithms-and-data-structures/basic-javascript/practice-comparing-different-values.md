@@ -53,5 +53,29 @@ assert(compareEquality('20', 20) === 'Not Equal');
 assert(code.match(/===/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+function compareEquality(a, b) {
+  if (a == b) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+compareEquality(10, "10");
+```
+
 # --solutions--
 
+```js
+function compareEquality(a,b) {
+  if (a === b) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
+```

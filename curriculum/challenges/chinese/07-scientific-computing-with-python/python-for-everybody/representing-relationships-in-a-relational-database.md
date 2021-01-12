@@ -30,8 +30,3 @@ A key that the "real world" might use to look up a row.
 
 3
 
-# --hints--
-
-
-# --solutions--
-

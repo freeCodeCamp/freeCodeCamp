@@ -67,5 +67,26 @@ assert(!/shift|unshift/.test(code));
 assert(!/\[\d\]\s*=/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function htmlColorNames(arr) {
+  // Only change code below this line
+
+  // Only change code above this line
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+```
+
 # --solutions--
 
+```js
+function htmlColorNames(arr) {
+  arr.splice(0,2,'DarkSalmon', 'BlanchedAlmond');
+  return arr;
+}
+```

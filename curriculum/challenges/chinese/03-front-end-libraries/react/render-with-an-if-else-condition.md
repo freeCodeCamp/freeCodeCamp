@@ -80,5 +80,75 @@ render 方法中应该使用`if/else`语句来检查`this.state.display`的条�
   );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState((state) => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    // Change code below this line
+
+    return (
+       <div>
+         <button onClick={this.toggleDisplay}>Toggle Display</button>
+         <h1>Displayed!</h1>
+       </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+ this.toggleDisplay = this.toggleDisplay.bind(this);
+ }
+  toggleDisplay() {
+    this.setState((state) => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    // Change code below this line
+    if (this.state.display) {
+      return (
+         <div>
+           <button onClick={this.toggleDisplay}>Toggle Display</button>
+           <h1>Displayed!</h1>
+         </div>
+      );
+    } else {
+      return (
+        <div>
+           <button onClick={this.toggleDisplay}>Toggle Display</button>
+         </div>
+      );
+    }
+  }
+};
+```

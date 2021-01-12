@@ -26,8 +26,3 @@ What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
 
 3
 
-# --hints--
-
-
-# --solutions--
-

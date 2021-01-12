@@ -30,8 +30,3 @@ port
 
 2
 
-# --hints--
-
-
-# --solutions--
-

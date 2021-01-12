@@ -36,8 +36,3 @@ Skips the next block of code.
 
 3
 
-# --hints--
-
-
-# --solutions--
-

@@ -21,5 +21,21 @@ videoUrl: ''
 assert.strictEqual(euler91(), 14234);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function rightTrianglesIntCoords() {
+
+  return true;
+}
+
+rightTrianglesIntCoords();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

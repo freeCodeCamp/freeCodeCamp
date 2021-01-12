@@ -96,5 +96,34 @@ assert(testLogicalAnd(75) === 'No');
 assert(testLogicalAnd(80) === 'No');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function testLogicalAnd(val) {
+  // Only change code below this line
+
+  if (val) {
+    if (val) {
+      return "Yes";
+    }
+  }
+
+  // Only change code above this line
+  return "No";
+}
+
+testLogicalAnd(10);
+```
+
 # --solutions--
 
+```js
+function testLogicalAnd(val) {
+  if (val >= 25 && val <= 50) {
+    return "Yes";
+  }
+  return "No";
+}
+```

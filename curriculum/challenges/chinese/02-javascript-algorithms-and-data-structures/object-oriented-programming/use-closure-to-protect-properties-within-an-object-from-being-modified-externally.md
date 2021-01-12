@@ -59,5 +59,24 @@ Your `getWeight` function should return the private variable `weight`.
 assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Bird() {
+  this.weight = 15;
+
+
+}
+```
+
 # --solutions--
 
+```js
+function Bird() {
+  let weight = 15;
+
+  this.getWeight = () => weight;
+}
+```

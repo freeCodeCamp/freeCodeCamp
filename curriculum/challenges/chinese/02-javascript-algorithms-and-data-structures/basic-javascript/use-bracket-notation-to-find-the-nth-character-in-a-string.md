@@ -33,5 +33,27 @@ assert(thirdLetterOfLastName === 'v');
 assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(v){return v;})(thirdLetterOfLastName);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var lastName = "Lovelace";
+
+// Only change code below this line
+var thirdLetterOfLastName = lastName; // Change this line
+```
+
 # --solutions--
 
+```js
+var lastName = "Lovelace";
+var thirdLetterOfLastName = lastName[2];
+```

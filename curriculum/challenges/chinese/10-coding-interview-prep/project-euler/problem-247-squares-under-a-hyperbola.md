@@ -23,5 +23,21 @@ Sn指数为（3,3）的最大n是多少？
 assert.strictEqual(euler247(), 782252);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler247() {
+
+  return true;
+}
+
+euler247();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

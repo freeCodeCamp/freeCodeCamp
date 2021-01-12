@@ -45,5 +45,26 @@ assert(checkObj('pet') === 'kitten');
 assert(checkObj('house') === 'Not Found');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  return "Change Me!";
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function checkObj(obj, checkProp) {
+  if(obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return "Not Found";
+  }
+}
+```

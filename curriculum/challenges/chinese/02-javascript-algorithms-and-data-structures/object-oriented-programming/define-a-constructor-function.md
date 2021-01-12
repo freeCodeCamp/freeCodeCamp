@@ -47,5 +47,19 @@ assert(typeof new Dog().color === 'string');
 assert(typeof new Dog().numLegs === 'number');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+function Dog (name, color, numLegs) {
+  this.name = 'name';
+  this.color = 'color';
+  this.numLegs = 4;
+}
+```

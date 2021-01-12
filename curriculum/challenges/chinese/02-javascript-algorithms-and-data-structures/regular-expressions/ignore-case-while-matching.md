@@ -79,5 +79,20 @@ assert(fccRegex.test('FrEeCodECamp'));
 assert(fccRegex.test('FReeCodeCAmp'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myString = "freeCodeCamp";
+let fccRegex = /change/; // Change this line
+let result = fccRegex.test(myString);
+```
+
 # --solutions--
 
+```js
+let myString = "freeCodeCamp";
+let fccRegex = /freecodecamp/i; // Change this line
+let result = fccRegex.test(myString);
+```

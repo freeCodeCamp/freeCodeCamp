@@ -56,5 +56,22 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(function(){return myFirstName + ', ' + myLastName;})();}
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+var myFirstName = "Alan";
+var myLastName = "Turing";
+```

@@ -67,5 +67,28 @@ assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
 assert(removeJSComments(sum.toString()).match(/sum\(.*\)/g).length > 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sum(arr, n) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function sum(arr, n) {
+  // Only change code below this line
+  if(n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+  // Only change code above this line
+}
+```

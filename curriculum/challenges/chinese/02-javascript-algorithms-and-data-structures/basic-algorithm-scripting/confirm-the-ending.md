@@ -89,5 +89,24 @@ assert(confirmEnding('Abstraction', 'action') === true);
 assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function confirmEnding(str, target) {
+  return str;
+}
+
+confirmEnding("Bastian", "n");
+```
+
 # --solutions--
 
+```js
+function confirmEnding(str, target) {
+  return str.substring(str.length - target.length) === target;
+}
+
+confirmEnding("Bastian", "n");
+```

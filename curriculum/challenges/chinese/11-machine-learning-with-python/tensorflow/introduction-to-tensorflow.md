@@ -34,8 +34,3 @@ Constant
 
 2
 
-# --hints--
-
-
-# --solutions--
-

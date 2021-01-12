@@ -35,8 +35,3 @@ for i in [2,1,5]:
 
 3
 
-# --hints--
-
-
-# --solutions--
-

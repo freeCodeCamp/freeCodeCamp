@@ -33,5 +33,25 @@ assert.strictEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function findElement(arr, func) {
+  let num = 0;
+  return num;
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+```
+
 # --solutions--
 
+```js
+function findElement(arr, func) {
+  return arr.filter(func)[0];
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+```

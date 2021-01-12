@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler97(), 8739992577);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function lrgNonMersennePrime() {
+
+  return true;
+}
+
+lrgNonMersennePrime();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

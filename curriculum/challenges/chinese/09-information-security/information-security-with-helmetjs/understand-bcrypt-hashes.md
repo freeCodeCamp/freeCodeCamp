@@ -60,3 +60,10 @@ BCrypt 的哈希结果会是这样 `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uU
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

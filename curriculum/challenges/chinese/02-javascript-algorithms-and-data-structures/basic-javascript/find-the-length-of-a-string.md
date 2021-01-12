@@ -41,5 +41,24 @@ assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8);
 assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+var lastNameLength = 0;
+var lastName = "Lovelace";
+
+// Only change code below this line
+
+lastNameLength = lastName;
+```
+
 # --solutions--
 
+```js
+var lastNameLength = 0;
+var lastName = "Lovelace";
+lastNameLength = lastName.length;
+```

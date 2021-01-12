@@ -35,8 +35,3 @@ True
 
 2
 
-# --hints--
-
-
-# --solutions--
-

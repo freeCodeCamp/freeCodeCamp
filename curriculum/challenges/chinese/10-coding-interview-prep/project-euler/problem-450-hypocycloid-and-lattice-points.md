@@ -33,5 +33,21 @@ T（3）= 10; T（10）= 524; T（100）= 580442; T（103）= 583108600。
 assert.strictEqual(euler450(), 583333163984220900);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler450() {
+
+  return true;
+}
+
+euler450();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

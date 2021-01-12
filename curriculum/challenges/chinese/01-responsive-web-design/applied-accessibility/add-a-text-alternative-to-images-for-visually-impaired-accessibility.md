@@ -28,5 +28,16 @@ forumTopicId: 16628
 assert($('img').attr('alt'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<img src="doingKarateWow.jpeg">
+```
+
 # --solutions--
 
+```html
+<img src="doingKarateWow.jpeg" alt="Someone doing karate">
+```

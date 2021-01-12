@@ -39,8 +39,3 @@ B: `int(port)`
 
 3
 
-# --hints--
-
-
-# --solutions--
-

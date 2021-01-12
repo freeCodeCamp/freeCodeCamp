@@ -46,5 +46,16 @@ assert(code.match(/(\/\/)...../g));
 assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+// Fake Comment
+/* Another Comment */
+```

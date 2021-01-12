@@ -19,5 +19,21 @@ videoUrl: ''
 assert.strictEqual(euler85(), 2772);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countingRectangles() {
+
+  return true;
+}
+
+countingRectangles();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

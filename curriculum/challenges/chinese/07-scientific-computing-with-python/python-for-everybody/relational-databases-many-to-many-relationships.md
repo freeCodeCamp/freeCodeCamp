@@ -44,8 +44,3 @@ city to country
 
 1
 
-# --hints--
-
-
-# --solutions--
-

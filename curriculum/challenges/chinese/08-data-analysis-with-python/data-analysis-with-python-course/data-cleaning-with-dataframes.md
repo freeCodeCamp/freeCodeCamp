@@ -63,8 +63,3 @@ dtype: float64
 
 2
 
-# --hints--
-
-
-# --solutions--
-

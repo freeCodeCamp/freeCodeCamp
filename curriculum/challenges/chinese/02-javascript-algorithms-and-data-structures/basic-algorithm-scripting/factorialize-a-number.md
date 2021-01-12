@@ -49,5 +49,24 @@ assert(factorialize(20) === 2432902008176640000);
 assert(factorialize(0) === 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function factorialize(num) {
+  return num;
+}
+
+factorialize(5);
+```
+
 # --solutions--
 
+```js
+function factorialize(num) {
+  return num < 1 ? 1 : num * factorialize(num - 1);
+}
+
+factorialize(5);
+```

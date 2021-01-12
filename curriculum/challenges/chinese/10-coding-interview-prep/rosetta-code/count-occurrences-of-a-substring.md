@@ -47,5 +47,31 @@ assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
 assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCases = ['the three truths', 'ababababab', 'abaabba*bbaba*bbab'];
+const searchString = ['th', 'abab', 'a*b'];
+const results = [3, 2, 2];
+```
+
+## --seed-contents--
+
+```js
+function countSubstring(str, subStr) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function countSubstring(str, subStr) {
+  const escapedSubStr = subStr.replace(/[.+*?^$[\]{}()|/]/g, '\\$&');
+  const matches = str.match(new RegExp(escapedSubStr, 'g'));
+  return matches ? matches.length : 0;
+}
+```

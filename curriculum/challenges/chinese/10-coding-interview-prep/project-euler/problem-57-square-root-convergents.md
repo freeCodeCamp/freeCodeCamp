@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler57(), 153);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function squareRootConvergents() {
+
+  return true;
+}
+
+squareRootConvergents();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

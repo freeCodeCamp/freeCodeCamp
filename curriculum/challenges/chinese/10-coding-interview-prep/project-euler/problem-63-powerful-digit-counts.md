@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler63(), 49);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function powerfulDigitCounts() {
+
+  return true;
+}
+
+powerfulDigitCounts();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

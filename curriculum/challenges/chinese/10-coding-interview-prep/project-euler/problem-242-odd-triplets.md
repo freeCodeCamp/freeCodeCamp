@@ -23,5 +23,21 @@ n≤1012，有多少奇数三胞胎？
 assert.strictEqual(euler242(), 997104142249036700);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler242() {
+
+  return true;
+}
+
+euler242();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

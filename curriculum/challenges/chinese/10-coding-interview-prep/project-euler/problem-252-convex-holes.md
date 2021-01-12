@@ -27,5 +27,21 @@ S0 = 290797 Sn + 1 = Sn2 mod 50515093 Tn =（Sn mod 2000）-1000
 assert.strictEqual(euler252(), 104924);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler252() {
+
+  return true;
+}
+
+euler252();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

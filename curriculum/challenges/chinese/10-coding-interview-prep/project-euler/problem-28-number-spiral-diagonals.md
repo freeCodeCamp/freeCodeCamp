@@ -49,5 +49,30 @@ assert(spiralDiagonals(505) == 85986601);
 assert(spiralDiagonals(1001) == 669171001);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function spiralDiagonals(n) {
+
+  return n;
+}
+
+spiralDiagonals(1001);
+```
+
 # --solutions--
 
+```js
+const spiralDiagonals = (n) => {
+  const Sn2 = (n) => {
+    return n*(n+1)*(2*n+1)/6;
+  };
+  const Sn = (n) => {
+    return n*(n+1)/2;
+  };
+  let sum = (Sn2(n-1) + Sn(n-1) + n-1) + (Math.floor(n/2) + Sn2(n));
+  return sum;
+};
+```

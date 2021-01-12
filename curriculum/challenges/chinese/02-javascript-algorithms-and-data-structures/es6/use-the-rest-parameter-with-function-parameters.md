@@ -57,5 +57,21 @@ assert(sum() === 0);
 assert(code.replace(/\s/g, '').match(/sum=\(\.\.\.args\)=>/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const sum = (x, y, z) => {
+  const args = [x, y, z];
+  return args.reduce((a, b) => a + b, 0);
+}
+```
+
 # --solutions--
 
+```js
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+```

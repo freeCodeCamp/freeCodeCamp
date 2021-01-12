@@ -26,8 +26,3 @@ None of the above.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

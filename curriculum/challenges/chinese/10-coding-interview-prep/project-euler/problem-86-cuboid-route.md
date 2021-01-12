@@ -19,5 +19,21 @@ videoUrl: ''
 assert.strictEqual(euler86(), 1818);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function cuboidRoute() {
+
+  return true;
+}
+
+cuboidRoute();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

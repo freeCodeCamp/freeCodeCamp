@@ -55,5 +55,31 @@ assert(
 assert(new bicycle.setGear(48).gear === 48);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+const bicycle = {
+  gear: 2,
+  setGear: function(newGear) {
+    this.gear = newGear;
+  }
+};
+// Only change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);
+```
+
 # --solutions--
 
+```js
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+```

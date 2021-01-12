@@ -49,5 +49,36 @@ assert(store.getState().login === false);
   );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const store = Redux.createStore(
+  (state = {login: false}) => state
+);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+// Dispatch the action here:
+```
+
 # --solutions--
 
+```js
+const store = Redux.createStore(
+  (state = {login: false}) => state
+);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+store.dispatch(loginAction());
+```

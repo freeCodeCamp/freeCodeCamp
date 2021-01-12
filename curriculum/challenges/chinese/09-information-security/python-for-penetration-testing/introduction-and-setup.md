@@ -26,8 +26,3 @@ Sublime Text and the Anaconda package.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

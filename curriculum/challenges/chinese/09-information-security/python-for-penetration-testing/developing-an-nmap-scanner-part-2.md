@@ -26,8 +26,3 @@ Which of the following allows you to scan for UDP ports between 21 to 443?
 
 1
 
-# --hints--
-
-
-# --solutions--
-

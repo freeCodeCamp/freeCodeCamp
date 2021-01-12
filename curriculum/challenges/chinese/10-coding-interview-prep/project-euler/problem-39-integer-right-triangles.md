@@ -35,5 +35,46 @@ assert(intRightTriangles(900) == 840);
 assert(intRightTriangles(1000) == 840);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function intRightTriangles(n) {
+
+  return n;
+}
+
+intRightTriangles(500);
+```
+
 # --solutions--
 
+```js
+// Original idea for this solution came from
+// https://www.xarg.org/puzzle/project-euler/problem-39/
+
+function intRightTriangles(n) {
+  // store the number of triangles with a given perimeter
+  let triangles = {};
+  // a is the shortest side
+  for (let a = 3; a < n / 3; a++)
+  // o is the opposite side and is at least as long as a
+    for (let o = a; o < n / 2; o++) {
+      let h = Math.sqrt(a * a + o * o); // hypotenuse
+      let p = a + o + h;  // perimeter
+      if ((h % 1) === 0 && p <= n) {
+        triangles[p] = (triangles[p] || 0) + 1;
+      }
+    }
+
+  let max = 0, maxp = null;
+  for (let p in triangles) {
+    if (max < triangles[p]) {
+      max = triangles[p];
+      maxp = parseInt(p);
+    }
+  }
+  return maxp;
+}
+```

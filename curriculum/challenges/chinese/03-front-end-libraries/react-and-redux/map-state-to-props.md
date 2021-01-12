@@ -43,5 +43,26 @@ assert(typeof mapStateToProps() === 'object');
 assert(mapStateToProps(['messages']).messages.pop() === 'messages');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```jsx
+const state = [];
+
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+const state = [];
+
+// Change code below this line
+
+const mapStateToProps = (state) => {
+  return {
+    messages: state
+  }
+};
+```

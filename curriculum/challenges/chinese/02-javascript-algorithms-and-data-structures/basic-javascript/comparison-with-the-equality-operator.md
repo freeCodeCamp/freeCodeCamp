@@ -60,5 +60,29 @@ assert(testEqual('12') === 'Equal');
 assert(code.match(/==/g) && !code.match(/===/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+function testEqual(val) {
+  if (val) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+testEqual(10);
+```
+
 # --solutions--
 
+```js
+function testEqual(val) {
+  if (val == 12) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
+```

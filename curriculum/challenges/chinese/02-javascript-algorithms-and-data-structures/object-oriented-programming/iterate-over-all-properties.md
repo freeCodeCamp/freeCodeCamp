@@ -61,5 +61,43 @@ assert(prototypeProps.indexOf('numLegs') !== -1);
 assert(!/\Object.keys/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+for (let prop in beagle) {
+  if (beagle.hasOwnProperty(prop)) {
+    ownProps.push(prop);
+  } else {
+    prototypeProps.push(prop);
+  }
+}
+```

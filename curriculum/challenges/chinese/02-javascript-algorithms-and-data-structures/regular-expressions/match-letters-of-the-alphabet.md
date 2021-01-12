@@ -50,5 +50,20 @@ assert(alphabetRegex.flags.match(/g/).length == 1);
 assert(alphabetRegex.flags.match(/i/).length == 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /change/; // Change this line
+let result = alphabetRegex; // Change this line
+```
+
 # --solutions--
 
+```js
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi; // Change this line
+let result = quoteSample.match(alphabetRegex); // Change this line
+```

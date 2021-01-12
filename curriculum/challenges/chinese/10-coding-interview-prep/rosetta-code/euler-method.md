@@ -41,5 +41,28 @@ assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
 assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function eulersMethod(x1, y1, x2, h) {
+
+}
+```
+
 # --solutions--
 
+```js
+function eulersMethod(x1, y1, x2, h) {
+  let x = x1;
+  let y = y1;
+
+  while ((x < x2 && x1 < x2) || (x > x2 && x1 > x2)) {
+    y += h * (-0.07 * (y - 20));
+    x += h;
+  }
+
+  return y;
+}
+```

@@ -23,5 +23,21 @@ b是距离原点最近的两个交点的原点的距离，c是另外两个交点
 assert.strictEqual(euler404(), 1199215615081353);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler404() {
+
+  return true;
+}
+
+euler404();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -47,5 +47,21 @@ assert(digitnPowers(4) == 19316);
 assert(digitnPowers(5) == 443839);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function digitnPowers(n) {
+
+  return n;
+}
+
+digitnPowers(5);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

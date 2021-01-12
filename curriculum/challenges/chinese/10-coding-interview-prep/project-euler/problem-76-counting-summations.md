@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler76(), 190569291);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countingSummations() {
+
+  return true;
+}
+
+countingSummations();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

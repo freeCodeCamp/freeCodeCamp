@@ -47,5 +47,22 @@ assert(!code.match(/payable;/g));
 assert(code.match(/payables/g).length == 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let receivables = 10;
+let payables = 8;
+let netWorkingCapital = recievables - payable;
+console.log(`Net working capital is: ${netWorkingCapital}`);
+```
+
 # --solutions--
 
+```js
+let receivables = 10;
+let payables = 8;
+let netWorkingCapital = receivables - payables;
+console.log(`Net working capital is: ${netWorkingCapital}`);
+```

@@ -42,8 +42,3 @@ Pandas
 
 4
 
-# --hints--
-
-
-# --solutions--
-

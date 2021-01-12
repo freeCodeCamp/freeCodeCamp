@@ -30,8 +30,3 @@ None of the above.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

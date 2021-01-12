@@ -35,5 +35,21 @@ FA，B的前几个术语是：1415926535 8979323846 14159265358979323846 8979323
 assert.strictEqual(euler230(), 850481152593119200);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler230() {
+
+  return true;
+}
+
+euler230();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

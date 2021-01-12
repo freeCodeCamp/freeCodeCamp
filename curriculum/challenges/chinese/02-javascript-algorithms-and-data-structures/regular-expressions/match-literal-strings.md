@@ -50,5 +50,20 @@ assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 assert(!/\/.*\/i/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /search/; // Change this line
+let result = waldoRegex.test(waldoIsHiding);
+```
+
 # --solutions--
 
+```js
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /Waldo/; // Change this line
+let result = waldoRegex.test(waldoIsHiding);
+```

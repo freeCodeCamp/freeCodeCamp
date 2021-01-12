@@ -49,5 +49,37 @@ assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10);
 assert.deepEqual(pairwise([], 100), 0);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function pairwise(arr, arg) {
+  return arg;
+}
+
+pairwise([1,4,2,3,0,5], 7);
+```
+
 # --solutions--
 
+```js
+function pairwise(arr, arg) {
+  var sum = 0;
+  arr.forEach(function(e, i, a) {
+    if (e != null) {
+      var diff = arg-e;
+      a[i] = null;
+      var dix = a.indexOf(diff);
+      if (dix !== -1) {
+        sum += dix;
+        sum += i;
+        a[dix] = null;
+      }
+    }
+  });
+  return sum;
+}
+
+pairwise([1,4,2,3,0,5], 7);
+```

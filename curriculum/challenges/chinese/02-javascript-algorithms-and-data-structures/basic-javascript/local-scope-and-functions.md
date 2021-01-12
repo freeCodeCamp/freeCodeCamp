@@ -44,5 +44,36 @@ assert(typeof myVar === 'undefined');
 assert(/var\s+myVar/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function myLocalScope() {
+
+  // Only change code below this line
+
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+```
+
 # --solutions--
 
+```js
+function myLocalScope() {
+
+  // Only change code below this line
+  var myVar;
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+```

@@ -32,8 +32,3 @@ Linear regression
 
 4
 
-# --hints--
-
-
-# --solutions--
-

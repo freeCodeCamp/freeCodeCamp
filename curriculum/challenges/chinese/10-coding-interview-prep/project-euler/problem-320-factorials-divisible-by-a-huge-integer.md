@@ -23,5 +23,21 @@ S（1000）= 614538266565663。
 assert.strictEqual(euler320(), 278157919195482660);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler320() {
+
+  return true;
+}
+
+euler320();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

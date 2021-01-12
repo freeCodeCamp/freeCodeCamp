@@ -35,5 +35,22 @@ assert(JSX.type === 'h1');
 assert(Enzyme.shallow(JSX).contains('Hello JSX!'));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(JSX, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const JSX = <div></div>;
+```
+
 # --solutions--
 
+```jsx
+const JSX = <h1>Hello JSX!</h1>;
+```

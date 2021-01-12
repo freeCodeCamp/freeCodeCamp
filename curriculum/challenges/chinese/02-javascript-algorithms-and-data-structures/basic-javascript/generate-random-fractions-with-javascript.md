@@ -39,5 +39,31 @@ assert((randomFraction() + '').match(/\./g));
 assert(code.match(/Math\.random/g).length >= 0);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){return randomFraction();})();
+```
+
+## --seed-contents--
+
+```js
+function randomFraction() {
+
+  // Only change code below this line
+
+  return 0;
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function randomFraction() {
+  return Math.random();
+}
+```

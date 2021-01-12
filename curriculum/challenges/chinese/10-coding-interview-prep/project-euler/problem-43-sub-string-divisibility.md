@@ -42,5 +42,21 @@ assert.deepEqual(substringDivisibility(), [
 ]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function substringDivisibility() {
+
+  return [];
+}
+
+substringDivisibility();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

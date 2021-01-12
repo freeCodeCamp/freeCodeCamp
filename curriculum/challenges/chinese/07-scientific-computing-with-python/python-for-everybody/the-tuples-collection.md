@@ -55,8 +55,3 @@ kris 9
 
 3
 
-# --hints--
-
-
-# --solutions--
-

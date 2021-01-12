@@ -38,3 +38,10 @@ HTTP header 的 X-XSS-Protection 字段就可以为我们提供最基本的保�
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

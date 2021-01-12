@@ -27,5 +27,21 @@ m的最大可能值是多少？以u / v的形式将答案缩小到最低值。
 assert.strictEqual(euler236(), 123 / 59);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler236() {
+
+  return true;
+}
+
+euler236();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

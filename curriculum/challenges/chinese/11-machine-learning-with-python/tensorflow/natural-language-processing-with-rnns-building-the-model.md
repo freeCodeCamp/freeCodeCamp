@@ -58,8 +58,3 @@ D: `return model`
 
 3
 
-# --hints--
-
-
-# --solutions--
-

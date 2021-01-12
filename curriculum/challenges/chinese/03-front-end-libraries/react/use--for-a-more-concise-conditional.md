@@ -78,5 +78,66 @@ render 方法应该使用`&&`逻辑运算符来检查`this.state.display`的条�
 (getUserInput) => assert(getUserInput('index').includes('&&'));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState(state => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    // Change code below this line
+    return (
+       <div>
+         <button onClick={this.toggleDisplay}>Toggle Display</button>
+         <h1>Displayed!</h1>
+       </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+ this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState(state => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    // Change code below this line
+    return (
+       <div>
+         <button onClick={this.toggleDisplay}>Toggle Display</button>
+         {this.state.display && <h1>Displayed!</h1>}
+       </div>
+    );
+  }
+};
+```

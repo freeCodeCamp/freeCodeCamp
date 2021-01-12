@@ -61,5 +61,27 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [["John", 23], ["cat", 2]];
+
+// Only change code below this line
+var removedFromMyArray;
+```
+
 # --solutions--
 
+```js
+var myArray = [["John", 23], ["cat", 2]];
+var removedFromMyArray = myArray.pop();
+```

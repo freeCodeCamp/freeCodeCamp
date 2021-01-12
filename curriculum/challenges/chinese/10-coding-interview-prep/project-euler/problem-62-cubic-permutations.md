@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler62(), 127035954683);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function cubicPermutations() {
+
+  return true;
+}
+
+cubicPermutations();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

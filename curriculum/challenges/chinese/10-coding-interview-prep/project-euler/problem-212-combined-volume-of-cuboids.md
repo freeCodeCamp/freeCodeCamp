@@ -31,5 +31,21 @@ x0 = S6n-5模10000y0 = S6n-4模10000z0 = S6n-3模10000dx = 1 +（S6n-2模399）d
 assert.strictEqual(euler212(), 328968937309);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler212() {
+
+  return true;
+}
+
+euler212();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

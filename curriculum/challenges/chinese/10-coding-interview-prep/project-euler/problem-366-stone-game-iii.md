@@ -25,5 +25,21 @@ n≤100的ΣM（n）为728。
 assert.strictEqual(euler366(), 88351299);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler366() {
+
+  return true;
+}
+
+euler366();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

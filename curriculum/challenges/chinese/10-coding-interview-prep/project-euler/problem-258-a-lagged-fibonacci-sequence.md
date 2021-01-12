@@ -19,5 +19,21 @@ gk = 1，对于0≤k≤1999gk = gk-2000 + gk-1999，对于k≥2000。对于k = 1
 assert.strictEqual(euler258(), 12747994);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler258() {
+
+  return true;
+}
+
+euler258();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

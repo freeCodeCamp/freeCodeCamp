@@ -44,8 +44,3 @@ Which of these evaluates to False?
 
 2
 
-# --hints--
-
-
-# --solutions--
-

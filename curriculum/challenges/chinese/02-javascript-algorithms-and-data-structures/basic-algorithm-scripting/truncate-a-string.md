@@ -63,5 +63,28 @@ assert(truncateString('A-', 1) === 'A...');
 assert(truncateString('Absolutely Longer', 2) === 'Ab...');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function truncateString(str, num) {
+  return str;
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+```
+
 # --solutions--
 
+```js
+function truncateString(str, num) {
+  if (num >= str.length) {
+    return str;
+  }
+
+  return str.slice(0, num) + '...';
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+```

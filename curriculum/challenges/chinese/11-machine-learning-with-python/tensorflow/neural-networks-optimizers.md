@@ -26,8 +26,3 @@ A function that reduces the time a model needs to train.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

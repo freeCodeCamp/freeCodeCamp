@@ -73,5 +73,24 @@ assert.strictEqual(booWho('true'), false);
 assert.strictEqual(booWho('false'), false);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function booWho(bool) {
+  return bool;
+}
+
+booWho(null);
+```
+
 # --solutions--
 
+```js
+function booWho(bool) {
+  return typeof bool === "boolean";
+}
+
+booWho(null);
+```

@@ -74,5 +74,36 @@ assert(testElseIf(12) === 'Greater than 10');
 assert(testElseIf(12) === 'Greater than 10');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function testElseIf(val) {
+  if (val > 10) {
+    return "Greater than 10";
+  }
+
+  if (val < 5) {
+    return "Smaller than 5";
+  }
+
+  return "Between 5 and 10";
+}
+
+testElseIf(7);
+```
+
 # --solutions--
 
+```js
+function testElseIf(val) {
+  if(val > 10) {
+    return "Greater than 10";
+  } else if(val < 5) {
+    return "Smaller than 5";
+  } else {
+    return "Between 5 and 10";
+  }
+}
+```

@@ -38,8 +38,3 @@ The `Cursor` instance has an `.execute()` method which will receive SQL paramete
 
 3
 
-# --hints--
-
-
-# --solutions--
-

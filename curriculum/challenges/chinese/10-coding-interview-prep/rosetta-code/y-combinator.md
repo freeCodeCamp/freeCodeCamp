@@ -47,5 +47,32 @@ factorial（10）必须返回3628800。
 assert.equal(factorial(10), 3628800);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));
+```
+
+## --seed-contents--
+
+```js
+function Y(f) {
+  return function() {
+
+  };
+}
+
+var factorial = Y(function(f) {
+  return function (n) {
+    return n > 1 ? n * f(n - 1) : 1;
+  };
+});
+```
+
 # --solutions--
 
+```js
+var Y = f => (x => x(x))(y => f(x => y(y)(x)));
+```

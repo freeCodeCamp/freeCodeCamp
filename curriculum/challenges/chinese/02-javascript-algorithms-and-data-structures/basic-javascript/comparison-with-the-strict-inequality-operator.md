@@ -54,5 +54,29 @@ assert(testStrictNotEqual('bob') === 'Not Equal');
 assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+function testStrictNotEqual(val) {
+  if (val) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testStrictNotEqual(10);
+```
+
 # --solutions--
 
+```js
+function testStrictNotEqual(val) {
+  if (val !== 17) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
+```

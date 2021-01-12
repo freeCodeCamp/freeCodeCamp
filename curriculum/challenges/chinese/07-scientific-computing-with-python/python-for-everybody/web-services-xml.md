@@ -39,8 +39,3 @@ Plain text should be encoded using UTF-8.
 
 3
 
-# --hints--
-
-
-# --solutions--
-

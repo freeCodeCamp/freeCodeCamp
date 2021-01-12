@@ -52,8 +52,3 @@ GrunkleStan
 
 3
 
-# --hints--
-
-
-# --solutions--
-

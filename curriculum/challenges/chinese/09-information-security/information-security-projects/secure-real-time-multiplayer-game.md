@@ -123,3 +123,10 @@ The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
+  Please check our contributing guidelines to learn more.
+*/
+```

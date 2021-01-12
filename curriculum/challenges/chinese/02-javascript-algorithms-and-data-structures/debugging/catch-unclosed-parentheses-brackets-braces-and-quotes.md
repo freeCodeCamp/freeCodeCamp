@@ -29,5 +29,20 @@ assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 assert(arraySum === 6);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myArray = [1, 2, 3;
+let arraySum = myArray.reduce((previous, current =>  previous + current);
+console.log(`Sum of array values is: ${arraySum}`);
+```
+
 # --solutions--
 
+```js
+let myArray = [1, 2, 3];
+let arraySum = myArray.reduce((previous, current) =>  previous + current);
+console.log(`Sum of array values is: ${arraySum}`);
+```

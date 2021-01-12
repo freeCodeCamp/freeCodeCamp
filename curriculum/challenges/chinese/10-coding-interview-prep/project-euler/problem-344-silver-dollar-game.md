@@ -33,5 +33,21 @@ NG de Bruijn的银元游戏的一个变种可以描述如下：
 assert.strictEqual(euler344(), 65579304332);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler344() {
+
+  return true;
+}
+
+euler344();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

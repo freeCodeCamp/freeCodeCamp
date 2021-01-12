@@ -67,5 +67,24 @@ assert(() => {
 (getUserInput) => assert(!getUserInput('index').match(/function/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var myConcat = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+```
+
 # --solutions--
 
+```js
+const myConcat = (arr1, arr2) =>  {
+  return arr1.concat(arr2);
+};
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+```

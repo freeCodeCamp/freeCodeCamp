@@ -23,5 +23,15 @@ myMap包含键值对`freeCodeCamp` ， `Awesome!` 。
 assert(myMap.get('freeCodeCamp') === 'Awesome!');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+// solution required
+```

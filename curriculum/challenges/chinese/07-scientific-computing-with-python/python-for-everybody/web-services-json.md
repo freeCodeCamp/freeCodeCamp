@@ -52,8 +52,3 @@ Mrugesh
 
 2
 
-# --hints--
-
-
-# --solutions--
-

@@ -26,8 +26,3 @@ Which socket object method lets you set the maximum amount of data your client a
 
 1
 
-# --hints--
-
-
-# --solutions--
-

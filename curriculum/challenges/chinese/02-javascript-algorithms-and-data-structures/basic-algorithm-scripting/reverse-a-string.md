@@ -39,5 +39,24 @@ assert(reverseString('Howdy') === 'ydwoH');
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function reverseString(str) {
+  return str;
+}
+
+reverseString("hello");
+```
+
 # --solutions--
 
+```js
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString("hello");
+```

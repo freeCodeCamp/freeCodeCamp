@@ -46,8 +46,3 @@ C: `dense`
 
 1
 
-# --hints--
-
-
-# --solutions--
-

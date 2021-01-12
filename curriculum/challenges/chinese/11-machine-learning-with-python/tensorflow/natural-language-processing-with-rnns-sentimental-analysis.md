@@ -46,8 +46,3 @@ C: `LSTM`
 
 3
 
-# --hints--
-
-
-# --solutions--
-

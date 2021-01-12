@@ -49,8 +49,8 @@ forumTopicId: 301145
 
 完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
 
-# --hints--
-
-
 # --solutions--
 
+```html
+// solution required
+```

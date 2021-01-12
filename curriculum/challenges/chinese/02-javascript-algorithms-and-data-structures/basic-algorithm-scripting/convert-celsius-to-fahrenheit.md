@@ -49,5 +49,27 @@ assert(convertToF(20) === 68);
 assert(convertToF(30) === 86);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function convertToF(celsius) {
+  let fahrenheit;
+  return fahrenheit;
+}
+
+convertToF(30);
+```
+
 # --solutions--
 
+```js
+function convertToF(celsius) {
+  let fahrenheit = celsius * 9/5 + 32;
+
+  return fahrenheit;
+}
+
+convertToF(30);
+```

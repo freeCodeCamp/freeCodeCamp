@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(diophantineTwo(), 9350130049860600);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function diophantineTwo() {
+
+  return true;
+}
+
+diophantineTwo();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

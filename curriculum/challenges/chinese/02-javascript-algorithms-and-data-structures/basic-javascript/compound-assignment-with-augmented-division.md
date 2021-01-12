@@ -56,5 +56,35 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+```
+
+## --seed-contents--
+
+```js
+var a = 48;
+var b = 108;
+var c = 33;
+
+// Only change code below this line
+a = a / 12;
+b = b / 4;
+c = c / 11;
+```
+
 # --solutions--
 
+```js
+var a = 48;
+var b = 108;
+var c = 33;
+
+a /= 12;
+b /= 4;
+c /= 11;
+```

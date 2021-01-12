@@ -133,5 +133,22 @@ assert.strictEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function truthCheck(collection, pre) {
+  return pre;
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+```
+
 # --solutions--
 
+```js
+function truthCheck(collection, pre) {
+  return collection.every(function(e) { return e[pre]; });
+}
+```

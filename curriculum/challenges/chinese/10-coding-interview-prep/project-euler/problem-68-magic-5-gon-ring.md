@@ -23,5 +23,21 @@ TotalSolution Set 94,2,3; 5,3,1; 6,1,2 94,3,2; 6,2,1; 5,1,3 102,3,5; 4,5,1; 6,1,
 assert.strictEqual(euler68(), 6531031914842725);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function magic5GonRing() {
+
+  return true;
+}
+
+magic5GonRing();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

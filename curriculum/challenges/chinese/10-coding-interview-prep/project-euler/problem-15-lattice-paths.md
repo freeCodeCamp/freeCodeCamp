@@ -31,5 +31,29 @@ assert.strictEqual(latticePaths(9), 48620);
 assert.strictEqual(latticePaths(20), 137846528820);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function latticePaths(gridSize) {
+
+  return true;
+}
+
+latticePaths(4);
+```
+
 # --solutions--
 
+```js
+function latticePaths(gridSize) {
+  let paths = 1;
+
+  for (let i = 0; i < gridSize; i++) {
+    paths *= (2 * gridSize) - i;
+    paths /= i + 1;
+  }
+  return paths;
+}
+```

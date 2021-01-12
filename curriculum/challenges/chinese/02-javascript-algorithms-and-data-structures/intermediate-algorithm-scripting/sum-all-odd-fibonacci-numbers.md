@@ -51,5 +51,31 @@ assert(sumFibs(75024) === 60696);
 assert(sumFibs(75025) === 135721);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sumFibs(num) {
+  return num;
+}
+
+sumFibs(4);
+```
+
 # --solutions--
 
+```js
+function sumFibs(num) {
+  var a = 1;
+  var b = 1;
+  var s = 0;
+  while (a <= num) {
+    if (a % 2 !== 0) {
+      s += a;
+    }
+    a = [b, b=b+a][0];
+  }
+  return s;
+}
+```

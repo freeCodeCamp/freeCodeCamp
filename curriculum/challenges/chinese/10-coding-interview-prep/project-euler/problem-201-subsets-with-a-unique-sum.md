@@ -25,5 +25,21 @@ sum（{1,3,6}）= 10，sum（{1,3,8}）= 12，sum（{1,3,10}）= 14，sum（{1,3
 assert.strictEqual(euler201(), 115039000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler201() {
+
+  return true;
+}
+
+euler201();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

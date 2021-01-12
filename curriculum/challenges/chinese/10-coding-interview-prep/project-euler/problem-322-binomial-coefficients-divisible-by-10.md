@@ -21,5 +21,21 @@ Find T(1018, 1012-10).
 assert.strictEqual(euler322(), 999998760323314000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler322() {
+
+  return true;
+}
+
+euler322();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

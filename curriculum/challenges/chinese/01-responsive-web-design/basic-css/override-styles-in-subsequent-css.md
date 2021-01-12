@@ -52,5 +52,40 @@ assert($('.pink-text').hasClass('blue-text'));
 assert($('h1').css('color') === 'rgb(0, 0, 255)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+</style>
+<h1 class="pink-text">Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+
+  .blue-text {
+    color: blue;
+  }  
+</style>
+<h1 class="pink-text blue-text">Hello World!</h1>
+```

@@ -27,5 +27,21 @@ N个磁盘连续放置，从左到右从1到N索引。
 assert.strictEqual(euler430(), 5000624921.38);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler430() {
+
+  return true;
+}
+
+euler430();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

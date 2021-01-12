@@ -36,8 +36,3 @@ It's free and open source.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

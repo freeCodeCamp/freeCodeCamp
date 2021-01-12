@@ -71,8 +71,3 @@ C: `certs_num`
 
 2
 
-# --hints--
-
-
-# --solutions--
-

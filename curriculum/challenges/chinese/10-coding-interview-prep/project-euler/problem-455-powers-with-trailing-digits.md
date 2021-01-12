@@ -21,5 +21,21 @@ f（4）= 411728896（4411728896 = ... 490411728896）f（10）= 0 f（157）= 7
 assert.strictEqual(euler455(), 450186511399999);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler455() {
+
+  return true;
+}
+
+euler455();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

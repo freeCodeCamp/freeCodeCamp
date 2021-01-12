@@ -29,5 +29,47 @@ forumTopicId: 301407
   );
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```jsx
+var ReactDOMServer = { renderToString(x) { return null; } };
+```
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
+
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
+
+// Change code below this line
+ReactDOMServer.renderToString(<App/>);
+```

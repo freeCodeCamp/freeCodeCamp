@@ -45,8 +45,3 @@ C: `False`
 
 1
 
-# --hints--
-
-
-# --solutions--
-

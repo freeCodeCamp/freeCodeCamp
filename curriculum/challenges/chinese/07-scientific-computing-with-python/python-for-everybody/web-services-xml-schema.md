@@ -26,8 +26,3 @@ Extensible Situational Driver
 
 1
 
-# --hints--
-
-
-# --solutions--
-

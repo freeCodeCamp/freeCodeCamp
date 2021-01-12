@@ -43,5 +43,20 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function subtract(x, y) {
+  return x - y;
+}
+```
+
 # --solutions--
 
+```js
+export default function subtract(x, y) {
+  return x - y;
+}
+```

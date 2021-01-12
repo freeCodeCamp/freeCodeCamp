@@ -115,5 +115,29 @@ assert.equal(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sym(args) {
+  return args;
+}
+
+sym([1, 2, 3], [5, 2, 1, 4]);
+```
+
 # --solutions--
 
+```js
+function sym() {
+  var arrays = [].slice.call(arguments);
+  return arrays.reduce(function (symDiff, arr) {
+    return symDiff.concat(arr).filter(function (val, idx, theArr) {
+      return theArr.indexOf(val) === idx
+        && (symDiff.indexOf(val) === -1 || arr.indexOf(val) === -1);
+    });
+  });
+}
+sym([1, 2, 3], [5, 2, 1, 4]);
+```

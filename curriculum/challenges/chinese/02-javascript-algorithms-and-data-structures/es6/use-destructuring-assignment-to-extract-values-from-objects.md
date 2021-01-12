@@ -64,5 +64,33 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// Only change code below this line
+
+const today = HIGH_TEMPERATURES.today;
+const tomorrow = HIGH_TEMPERATURES.tomorrow;
+
+// Only change code above this line
+```
+
 # --solutions--
 
+```js
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const { today, tomorrow } = HIGH_TEMPERATURES;
+```

@@ -27,5 +27,21 @@ E（m，n）上的欧拉循环是一条闭合路径，它恰好通过每个圆�
 assert.strictEqual(euler289(), 6567944538);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler289() {
+
+  return true;
+}
+
+euler289();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

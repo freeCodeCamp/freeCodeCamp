@@ -56,5 +56,22 @@ assert(
 assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function() { return "myStr = " + myStr; })();
+```
+
+## --seed-contents--
+
+```js
+var myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+```
+
 # --solutions--
 
+```js
+var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+```

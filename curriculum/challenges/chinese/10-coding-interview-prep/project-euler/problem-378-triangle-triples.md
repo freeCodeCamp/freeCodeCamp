@@ -27,5 +27,21 @@ n（n + 1）2
 assert.strictEqual(euler378(), 147534623725724700);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler378() {
+
+  return true;
+}
+
+euler378();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

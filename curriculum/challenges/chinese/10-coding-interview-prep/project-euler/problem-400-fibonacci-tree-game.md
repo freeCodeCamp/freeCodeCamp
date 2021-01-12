@@ -27,5 +27,21 @@ Fibonacci树是递归定义为的二叉树：T（0）是空树。 T（1）是只
 assert.strictEqual(euler400(), 438505383468410600);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler400() {
+
+  return true;
+}
+
+euler400();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

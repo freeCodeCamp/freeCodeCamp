@@ -40,5 +40,32 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  a {
+    color: #000;
+  }
+
+
+
+</style>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+```
+
 # --solutions--
 
+```html
+<style>
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: rgba(0,0,255,1);
+  }
+</style>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+```

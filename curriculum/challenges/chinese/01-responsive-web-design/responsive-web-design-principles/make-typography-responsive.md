@@ -36,5 +36,31 @@ assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
 assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+</style>
+
+<h2>Importantus Ipsum</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+```
+
 # --solutions--
 
+```html
+<style>
+  h2 {
+      width: 80vw;
+  }
+  p {
+      width: 75vmin;
+  }
+</style>
+
+<h2>Importantus Ipsum</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+```

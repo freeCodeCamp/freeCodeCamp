@@ -26,8 +26,3 @@ What kind of estimator/model does TensorFlow recommend using for classification?
 
 2
 
-# --hints--
-
-
-# --solutions--
-

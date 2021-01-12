@@ -53,8 +53,3 @@ print( [ (k,v) for k,v in counts.values().sort() ] )
 
 1
 
-# --hints--
-
-
-# --solutions--
-

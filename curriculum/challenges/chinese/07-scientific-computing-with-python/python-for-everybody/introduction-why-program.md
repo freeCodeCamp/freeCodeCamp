@@ -34,8 +34,3 @@ Everyone.
 
 3
 
-# --hints--
-
-
-# --solutions--
-

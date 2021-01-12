@@ -29,5 +29,21 @@ Starting from the initial configuration (t0, t1, …, t10), the final state beco
 assert.strictEqual(euler426(), 31591886008);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler426() {
+
+  return true;
+}
+
+euler426();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

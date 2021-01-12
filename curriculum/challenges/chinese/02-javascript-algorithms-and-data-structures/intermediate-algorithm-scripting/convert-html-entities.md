@@ -59,5 +59,30 @@ assert.match(convertHTML('<>'), /&lt;&gt;/);
 assert.strictEqual(convertHTML('abc'), 'abc');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function convertHTML(str) {
+  return str;
+}
+
+convertHTML("Dolce & Gabbana");
+```
+
 # --solutions--
 
+```js
+var MAP = { '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&apos;'};
+
+function convertHTML(str) {
+  return str.replace(/[&<>"']/g, function(c) {
+    return MAP[c];
+  });
+}
+```

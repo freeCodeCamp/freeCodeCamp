@@ -40,5 +40,24 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function bouncer(arr) {
+  return arr;
+}
+
+bouncer([7, "ate", "", false, 9]);
+```
+
 # --solutions--
 
+```js
+function bouncer(arr) {
+  return arr.filter(e => e);
+}
+
+bouncer([7, "ate", "", false, 9]);
+```

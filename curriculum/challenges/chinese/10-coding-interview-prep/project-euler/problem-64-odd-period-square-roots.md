@@ -69,5 +69,21 @@ a0 = 4，
 assert.strictEqual(euler64(), 1322);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function oddPeriodSqrts() {
+
+  return true;
+}
+
+oddPeriodSqrts();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

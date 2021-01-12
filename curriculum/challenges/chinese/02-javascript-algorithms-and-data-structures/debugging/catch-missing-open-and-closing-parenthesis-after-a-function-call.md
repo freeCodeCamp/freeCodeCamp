@@ -37,5 +37,30 @@ assert(result == 9);
 assert(code.match(/getNine\(\)/g).length == 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function getNine() {
+  let x = 6;
+  let y = 3;
+  return x + y;
+}
+
+let result = getNine;
+console.log(result);
+```
+
 # --solutions--
 
+```js
+function getNine() {
+ let x = 6;
+ let y = 3;
+ return x + y;
+}
+
+let result = getNine();
+console.log(result);
+```

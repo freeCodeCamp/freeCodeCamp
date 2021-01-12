@@ -55,8 +55,3 @@ while True:
 
 1
 
-# --hints--
-
-
-# --solutions--
-

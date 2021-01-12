@@ -19,5 +19,21 @@ T（10）是2329.什么是T（1012）模108？
 assert.strictEqual(euler237(), 15836928);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler237() {
+
+  return true;
+}
+
+euler237();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -23,5 +23,21 @@ ABCD是凸的整数边四边形，其1≤AB
 assert.strictEqual(euler311(), 2466018557);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler311() {
+
+  return true;
+}
+
+euler311();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -32,8 +32,3 @@ x + 1
 
 3
 
-# --hints--
-
-
-# --solutions--
-

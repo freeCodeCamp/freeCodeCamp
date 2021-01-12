@@ -35,5 +35,21 @@ C0和C1以及C0和C2形成一个透镜孔。
 assert.strictEqual(euler295(), 4884650818);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler295() {
+
+  return true;
+}
+
+euler295();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

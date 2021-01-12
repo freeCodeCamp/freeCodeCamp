@@ -66,5 +66,34 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<Colorful />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div>Big Red</div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{color: "red", fontSize: 72}}>Big Red</div>
+    );
+  }
+};
+```

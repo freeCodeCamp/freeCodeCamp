@@ -67,5 +67,38 @@ assert(code.match(/\.data/g));
 assert(code.match(/\.enter/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    // Add your code below this line
+
+
+
+    // Add your code above this line
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body")
+      .selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text("New Title")
+
+  </script>
+</body>
+```

@@ -59,5 +59,39 @@ assert(shirtValue === 'jersey');
 assert(code.match(/testObj\.\w+/g).length > 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+// Only change code below this line
+
+var hatValue = testObj;      // Change this line
+var shirtValue = testObj;    // Change this line
+```
+
 # --solutions--
 
+```js
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+var hatValue = testObj.hat;
+var shirtValue = testObj.shirt;
+```

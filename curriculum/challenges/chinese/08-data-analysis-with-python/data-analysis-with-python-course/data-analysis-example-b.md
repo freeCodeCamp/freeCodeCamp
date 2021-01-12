@@ -32,8 +32,3 @@ Returns the first `n` rows based on the integer argument supplied.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

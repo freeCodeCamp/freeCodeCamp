@@ -7,7 +7,7 @@ videoUrl: ''
 
 # --description--
 
-<p>写一个函数来计算给定n和k值的二项式系数。 </p><p>推荐这个公式： </p> $ \\ binom {n} {k} = \\ frac {n！} {（nk）！k！} = \\ frac {n（n-1）（n-2）\\ ldots（n-k + 1）} { k（k-1）（k-2）\\ ldots 1} $ 
+<p>写一个函数来计算给定n和k值的二项式系数。 </p><p>推荐这个公式： </p> $ \\ binom {n} {k} = \\ frac {n！} {（nk）！k！} = \\ frac {n（n-1）（n-2）\\ ldots（n-k + 1）} { k（k-1）（k-2）\\ ldots 1} $
 
 # --hints--
 
@@ -47,5 +47,23 @@ assert.equal(binom(6, 1), 6);
 assert.equal(binom(12, 8), 495);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function binom(n, k) {
+
+}
+```
+
 # --solutions--
 
+```js
+function binom(n, k) {
+  let coeff = 1;
+  for (let i = n - k + 1; i <= n; i++) coeff *= i;
+  for (let i = 1; i <= k; i++) coeff /= i;
+  return coeff;
+}
+```

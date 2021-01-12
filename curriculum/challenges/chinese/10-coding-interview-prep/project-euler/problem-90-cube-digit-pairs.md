@@ -33,5 +33,21 @@ videoUrl: ''
 assert.strictEqual(euler90(), 1217);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function cubeDigitPairs() {
+
+  return true;
+}
+
+cubeDigitPairs();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

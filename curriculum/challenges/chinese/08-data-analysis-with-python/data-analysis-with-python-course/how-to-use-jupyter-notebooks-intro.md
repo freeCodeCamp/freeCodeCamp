@@ -34,8 +34,3 @@ An Excel sheet
 
 3
 
-# --hints--
-
-
-# --solutions--
-

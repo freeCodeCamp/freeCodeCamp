@@ -50,5 +50,27 @@ assert(typeof beagle.numLegs === 'number');
 assert(beagle.hasOwnProperty('numLegs') === false);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+
+
+// Only change code above this line
+let beagle = new Dog("Snoopy");
+```
+
 # --solutions--
 
+```js
+function Dog (name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+let beagle = new Dog("Snoopy");
+```

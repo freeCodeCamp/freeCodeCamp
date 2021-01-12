@@ -54,5 +54,35 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+```
+
+## --seed-contents--
+
+```js
+var a = 11;
+var b = 9;
+var c = 3;
+
+// Only change code below this line
+a = a - 6;
+b = b - 15;
+c = c - 1;
+```
+
 # --solutions--
 
+```js
+var a = 11;
+var b = 9;
+var c = 3;
+
+a -= 6;
+b -= 15;
+c -= 1;
+```

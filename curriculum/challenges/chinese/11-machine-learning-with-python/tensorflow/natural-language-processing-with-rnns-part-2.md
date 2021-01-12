@@ -26,8 +26,3 @@ a vectorized representation of words in a given document that places words with 
 
 3
 
-# --hints--
-
-
-# --solutions--
-

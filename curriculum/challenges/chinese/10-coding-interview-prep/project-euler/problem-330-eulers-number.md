@@ -35,5 +35,21 @@ e = 2.7182818 ......是欧拉常数。
 assert.strictEqual(euler330(), 15955822);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler330() {
+
+  return true;
+}
+
+euler330();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

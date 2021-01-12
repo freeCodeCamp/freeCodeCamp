@@ -41,5 +41,21 @@ n rad（n）k 11
 assert.strictEqual(euler124(), 21417);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler124() {
+
+  return true;
+}
+
+euler124();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

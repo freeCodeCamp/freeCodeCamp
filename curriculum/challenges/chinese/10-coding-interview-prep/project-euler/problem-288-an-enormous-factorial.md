@@ -27,5 +27,21 @@ S0 = 290797 Sn + 1 = Sn2 mod 50515093 Tn = Sn mod p
 assert.strictEqual(euler288(), 605857431263982000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler288() {
+
+  return true;
+}
+
+euler288();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -61,5 +61,21 @@ result 应该返回 `true`。
 assert(result === true);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myString = "Eleanor Roosevelt";
+let myRegex = /False/; // Change this line
+let result = false; // Change this line
+// After passing the challenge experiment with myString and see how the grouping works
+```
+
 # --solutions--
 
+```js
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let result = myRegex.test(myString);
+```

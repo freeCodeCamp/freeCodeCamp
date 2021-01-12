@@ -36,5 +36,43 @@ duck.eat(); // prints "nom nom nom"
 assert(Animal.prototype.isPrototypeOf(Dog.prototype));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+// Only change code below this line
+
+
+let beagle = new Dog();
+```
+
 # --solutions--
 
+```js
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+Dog.prototype = Object.create(Animal.prototype);
+
+let beagle = new Dog();
+beagle.eat();
+```

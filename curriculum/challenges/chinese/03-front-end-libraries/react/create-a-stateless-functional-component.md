@@ -65,5 +65,36 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const MyComponent = function() {
+  // Change code below this line
+
+
+
+  // Change code above this line
+}
+```
+
 # --solutions--
 
+```jsx
+const MyComponent = function() {
+  // Change code below this line
+  return (
+    <div>
+      Demo Solution
+    </div>
+  );
+  // Change code above this line
+}
+```

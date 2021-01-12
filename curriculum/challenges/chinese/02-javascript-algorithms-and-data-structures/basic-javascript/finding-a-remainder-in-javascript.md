@@ -46,5 +46,24 @@ assert(remainder === 2);
 assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(y){return 'remainder = '+y;})(remainder);
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+
+var remainder;
+```
+
 # --solutions--
 
+```js
+var remainder =  11 % 3;
+```

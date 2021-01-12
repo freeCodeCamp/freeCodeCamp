@@ -58,5 +58,27 @@ assert(mixedNumbers.toString().match(/\.push/));
 assert(mixedNumbers.toString().match(/\.unshift/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function mixedNumbers(arr) {
+  // Only change code below this line
+
+  // Only change code above this line
+  return arr;
+}
+
+console.log(mixedNumbers(['IV', 5, 'six']));
+```
+
 # --solutions--
 
+```js
+function mixedNumbers(arr) {
+  arr.push(7,'VIII',9);
+  arr.unshift('I',2,'three');
+  return arr;
+}
+```

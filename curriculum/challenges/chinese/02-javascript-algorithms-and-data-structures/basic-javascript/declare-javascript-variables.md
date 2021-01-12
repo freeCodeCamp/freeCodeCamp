@@ -42,5 +42,21 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myName !== "undefined"){(function(v){return v;})(myName);}
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+var myName;
+```

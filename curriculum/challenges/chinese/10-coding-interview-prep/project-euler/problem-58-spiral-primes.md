@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler58(), 26241);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function spiralPrimes() {
+
+  return true;
+}
+
+spiralPrimes();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

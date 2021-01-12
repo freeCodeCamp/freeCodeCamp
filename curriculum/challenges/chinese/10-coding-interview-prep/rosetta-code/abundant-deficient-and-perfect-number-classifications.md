@@ -35,5 +35,40 @@ assert(getDPA(100).length === 3);
 assert.deepEqual(getDPA(20000), solution);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const solution = [15043, 4, 4953];
+```
+
+## --seed-contents--
+
+```js
+function getDPA(num) {
+
+}
+```
+
 # --solutions--
 
+```js
+function getDPA(num) {
+  const dpa = [1, 0, 0];
+  for (let n = 2; n <= num; n += 1) {
+    let ds = 1;
+    const e = Math.sqrt(n);
+    for (let d = 2; d < e; d += 1) {
+      if (n % d === 0) {
+        ds += d + (n / d);
+      }
+    }
+    if (n % e === 0) {
+      ds += e;
+    }
+    dpa[ds < n ? 0 : ds === n ? 1 : 2] += 1;
+  }
+  return dpa;
+}
+```

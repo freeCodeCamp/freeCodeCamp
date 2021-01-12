@@ -25,5 +25,21 @@ t也是整数的分区称为完美。对于任何m≥1，让P（m）为k≤m的�
 assert.strictEqual(euler207(), 44043947822);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler207() {
+
+  return true;
+}
+
+euler207();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

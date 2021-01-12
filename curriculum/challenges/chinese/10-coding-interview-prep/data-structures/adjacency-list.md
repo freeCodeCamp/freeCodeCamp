@@ -68,5 +68,21 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var undirectedAdjList = {};
+```
+
 # --solutions--
 
+```js
+var undirectedAdjList = {
+  James: ['Jeff'],
+  Jill: ['Jenny'],
+  Jenny: ['Jill', 'Jeff'],
+  Jeff: ['James', 'Jenny']
+};
+```

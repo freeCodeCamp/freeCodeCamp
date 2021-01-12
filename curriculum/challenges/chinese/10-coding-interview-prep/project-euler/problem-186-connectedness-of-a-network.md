@@ -27,5 +27,21 @@ RecNrCallerCalled120000710005326001835004393600863701497 .........来电者的�
 assert.strictEqual(euler186(), 2325629);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler186() {
+
+  return true;
+}
+
+euler186();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

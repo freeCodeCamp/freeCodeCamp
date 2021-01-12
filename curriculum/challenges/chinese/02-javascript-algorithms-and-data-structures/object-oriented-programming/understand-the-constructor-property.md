@@ -56,5 +56,28 @@ assert(joinDogFraternity(new Dog('')) === true);
 assert(/\.constructor/.test(code) && !/instanceof/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+function joinDogFraternity(candidate) {
+
+}
+```
+
 # --solutions--
 
+```js
+function Dog(name) {
+  this.name = name;
+}
+function joinDogFraternity(candidate) {
+  return candidate.constructor === Dog;
+}
+```

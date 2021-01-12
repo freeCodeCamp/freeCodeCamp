@@ -43,3 +43,17 @@ assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
 
 # --solutions--
 
+```js
+function steamrollArray(arr) {
+  if (!Array.isArray(arr)) {
+    return [arr];
+  }
+  var out = [];
+  arr.forEach(function(e) {
+    steamrollArray(e).forEach(function(v) {
+      out.push(v);
+    });
+  });
+  return out;
+}
+```

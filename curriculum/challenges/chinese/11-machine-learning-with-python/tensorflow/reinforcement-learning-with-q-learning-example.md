@@ -42,8 +42,3 @@ C: `next_state`
 
 1
 
-# --hints--
-
-
-# --solutions--
-

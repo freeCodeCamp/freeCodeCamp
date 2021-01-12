@@ -30,5 +30,27 @@ assert(lastLetterOfLastName === 'e');
 assert(code.match(/\.length/g).length === 2);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(v){return v;})(lastLetterOfLastName);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var lastName = "Lovelace";
+
+// Only change code below this line
+var lastLetterOfLastName = lastName; // Change this line
+```
+
 # --solutions--
 
+```js
+var lastName = "Lovelace";
+var lastLetterOfLastName = lastName[lastName.length - 1];
+```

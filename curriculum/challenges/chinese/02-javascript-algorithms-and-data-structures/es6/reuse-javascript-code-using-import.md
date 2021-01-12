@@ -47,5 +47,23 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+  
+// Only change code above this line
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+```
+
 # --solutions--
 
+```js
+import { uppercaseString, lowercaseString } from './string_functions.js';
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+```

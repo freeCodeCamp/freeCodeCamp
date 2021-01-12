@@ -49,5 +49,18 @@ assert(b === 8);
 assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let a = 8, b = 6;
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+let a = 8, b = 6;
+[a, b] = [b, a];
+```

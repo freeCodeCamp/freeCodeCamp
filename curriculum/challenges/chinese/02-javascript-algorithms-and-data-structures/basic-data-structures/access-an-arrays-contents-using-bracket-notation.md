@@ -61,5 +61,21 @@ assert.strictEqual(myArray[2], 'c');
 assert.strictEqual(myArray[3], 'd');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myArray = ["a", "b", "c", "d"];
+// Only change code below this line
+
+// Only change code above this line
+console.log(myArray);
+```
+
 # --solutions--
 
+```js
+let myArray = ["a", "b", "c", "d"];
+myArray[1] = "e";
+```

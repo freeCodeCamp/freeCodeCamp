@@ -51,5 +51,24 @@ assert(typeof myHouse.numBedrooms === 'number');
 assert(/myHouse\s*instanceof\s*House/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+const myHouse = new House(4);
+console.log(myHouse instanceof House);
+```

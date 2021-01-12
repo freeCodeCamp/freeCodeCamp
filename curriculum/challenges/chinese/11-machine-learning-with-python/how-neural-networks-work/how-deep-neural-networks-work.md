@@ -26,8 +26,3 @@ There is no difference between the two methods.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

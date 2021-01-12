@@ -59,5 +59,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [18,64,99];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [18,64,99];
+myArray[0] = 45;
+```

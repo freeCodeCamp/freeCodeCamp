@@ -74,5 +74,27 @@ assert.deepEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function myReplace(str, before, after) {
+  return str;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+```
+
 # --solutions--
 
+```js
+function myReplace(str, before, after) {
+  if (before.charAt(0) === before.charAt(0).toUpperCase()) {
+    after = after.charAt(0).toUpperCase() + after.substring(1);
+  } else {
+    after = after.charAt(0).toLowerCase() + after.substring(1);
+  }
+  return str.replace(before, after);
+}
+```

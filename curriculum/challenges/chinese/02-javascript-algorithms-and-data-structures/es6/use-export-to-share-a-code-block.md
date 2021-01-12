@@ -57,5 +57,28 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+```
+
 # --solutions--
 
+```js
+export const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+export const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+```

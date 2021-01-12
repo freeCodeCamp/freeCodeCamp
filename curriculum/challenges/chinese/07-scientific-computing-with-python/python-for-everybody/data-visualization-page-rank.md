@@ -26,8 +26,3 @@ It figures out which pages contain the most important content.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

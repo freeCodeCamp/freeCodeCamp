@@ -30,8 +30,3 @@ new
 
 3
 
-# --hints--
-
-
-# --solutions--
-

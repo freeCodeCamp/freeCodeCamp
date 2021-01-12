@@ -26,8 +26,3 @@ If your data is text or sound based.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

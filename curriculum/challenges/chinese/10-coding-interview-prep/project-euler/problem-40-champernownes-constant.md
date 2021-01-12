@@ -29,5 +29,34 @@ assert.strictEqual(champernownesConstant(1000), 15);
 assert.strictEqual(champernownesConstant(1000000), 210);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function champernownesConstant(n) {
+
+  return true;
+}
+
+champernownesConstant(100);
+```
+
 # --solutions--
 
+```js
+function champernownesConstant(n) {
+  let fractionalPart = '';
+  for (let i = 0; fractionalPart.length <= n; i++) {
+    fractionalPart += i.toString();
+  }
+
+  let product = 1;
+  for (let i = 0; i < n.toString().length; i++) {
+    const index = 10 ** i;
+    product *= parseInt(fractionalPart[index], 10);
+  }
+
+  return product;
+}
+```

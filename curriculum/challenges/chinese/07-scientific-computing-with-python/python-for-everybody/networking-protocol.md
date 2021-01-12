@@ -30,8 +30,3 @@ ACCESS
 
 2
 
-# --hints--
-
-
-# --solutions--
-

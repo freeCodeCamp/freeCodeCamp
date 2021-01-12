@@ -66,8 +66,3 @@ Beau              6                7
 
 2
 
-# --hints--
-
-
-# --solutions--
-

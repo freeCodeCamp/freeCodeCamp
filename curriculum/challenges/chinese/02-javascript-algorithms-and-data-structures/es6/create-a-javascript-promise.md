@@ -37,5 +37,17 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+
+});
+```

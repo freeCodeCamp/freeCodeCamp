@@ -66,5 +66,40 @@ assert(testElse(10) === 'Bigger than 5');
 assert(/var result = "";/.test(code) && /return result;/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function testElse(val) {
+  var result = "";
+  // Only change code below this line
+
+  if (val > 5) {
+    result = "Bigger than 5";
+  }
+
+  if (val <= 5) {
+    result = "5 or Smaller";
+  }
+
+  // Only change code above this line
+  return result;
+}
+
+testElse(4);
+```
+
 # --solutions--
 
+```js
+function testElse(val) {
+  var result = "";
+  if(val > 5) {
+    result = "Bigger than 5";
+  } else {
+    result = "5 or Smaller";
+  }
+  return result;
+}
+```

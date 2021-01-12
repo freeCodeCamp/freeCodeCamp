@@ -26,8 +26,3 @@ It separates data points into separate categories.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

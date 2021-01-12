@@ -21,5 +21,21 @@ xAG（x）（√5-1）/ 41 2/52（√22-2）/ 63（√137-5）/ 144 1/25
 assert.strictEqual(euler140(), 5673835352990);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler140() {
+
+  return true;
+}
+
+euler140();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

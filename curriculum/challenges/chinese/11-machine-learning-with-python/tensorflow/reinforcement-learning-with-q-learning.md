@@ -26,8 +26,3 @@ habitat, agent, state, action, and punishment.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

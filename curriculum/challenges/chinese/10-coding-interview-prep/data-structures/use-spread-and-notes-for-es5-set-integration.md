@@ -30,5 +30,21 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkSet(set){
+   // Only change code below this line
+
+   // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function checkSet(set){
+return [...set];}
+```

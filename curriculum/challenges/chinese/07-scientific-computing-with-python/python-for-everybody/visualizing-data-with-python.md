@@ -34,8 +34,3 @@ turned into song
 
 3
 
-# --hints--
-
-
-# --solutions--
-

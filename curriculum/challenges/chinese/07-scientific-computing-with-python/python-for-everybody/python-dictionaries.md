@@ -51,8 +51,3 @@ dict["Sun"] = 9
 
 5
 
-# --hints--
-
-
-# --solutions--
-

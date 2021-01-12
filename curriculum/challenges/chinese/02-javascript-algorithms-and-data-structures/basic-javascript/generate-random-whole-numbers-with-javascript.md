@@ -59,5 +59,29 @@ assert(
 assert(code.match(/Math.floor/g).length > 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){return randomWholeNum();})();
+```
+
+## --seed-contents--
+
+```js
+function randomWholeNum() {
+
+  // Only change code below this line
+
+  return Math.random();
+}
+```
+
 # --solutions--
 
+```js
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+```

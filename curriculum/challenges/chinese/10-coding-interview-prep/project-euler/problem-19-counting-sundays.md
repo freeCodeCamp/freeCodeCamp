@@ -39,5 +39,33 @@ assert.strictEqual(countingSundays(1995, 2000), 10);
 assert.strictEqual(countingSundays(1901, 2000), 171);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countingSundays(firstYear, lastYear) {
+
+  return true;
+}
+
+countingSundays(1943, 1946);
+```
+
 # --solutions--
 
+```js
+function countingSundays(firstYear, lastYear) {
+  let sundays = 0;
+
+  for (let year = firstYear; year <= lastYear; year++) {
+    for (let month = 0; month <= 11; month++) {
+      const thisDate = new Date(year, month, 1);
+      if (thisDate.getDay() === 0) {
+        sundays++;
+      }
+    }
+  }
+  return sundays;
+}
+```

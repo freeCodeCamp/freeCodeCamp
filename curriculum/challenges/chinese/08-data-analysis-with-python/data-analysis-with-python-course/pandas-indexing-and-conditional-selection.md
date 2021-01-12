@@ -58,8 +58,3 @@ dtype: int64
 
 3
 
-# --hints--
-
-
-# --solutions--
-

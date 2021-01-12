@@ -51,5 +51,18 @@ assert(timesFive(2) === 10);
 assert(timesFive(0) === 0);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+function timesFive(num) {
+  return num * 5;
+}
+timesFive(10);
+```

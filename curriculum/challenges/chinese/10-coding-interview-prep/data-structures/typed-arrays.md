@@ -80,5 +80,18 @@ assert(i32View.byteLength === 64);
 assert(i32View.length === 16);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var buffer;
+var i32View;
+```
+
 # --solutions--
 
+```js
+var buffer = new ArrayBuffer(64);
+var i32View = new Int32Array(buffer);
+```

@@ -52,8 +52,3 @@ print(A[:, :2])
 
 3
 
-# --hints--
-
-
-# --solutions--
-

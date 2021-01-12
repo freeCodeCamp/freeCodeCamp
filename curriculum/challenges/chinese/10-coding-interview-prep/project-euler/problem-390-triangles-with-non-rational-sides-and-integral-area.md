@@ -25,5 +25,21 @@ S（106）= 18018206。
 assert.strictEqual(euler390(), 2919133642971);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler390() {
+
+  return true;
+}
+
+euler390();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

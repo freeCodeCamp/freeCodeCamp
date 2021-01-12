@@ -41,5 +41,39 @@ assert(code.match(/d3/g));
 assert(code.match(/\.selectAll/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+  </ul>
+  <script>
+    // Add your code below this line
+
+
+
+    // Add your code above this line
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+  </ul>
+  <script>
+    d3.selectAll("li")
+      .text("list item")
+  </script>
+</body>
+```

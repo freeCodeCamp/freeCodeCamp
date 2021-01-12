@@ -39,5 +39,24 @@ assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
 assert(!code.match(/i\s*?!=\s*?4;/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function myFunc() {
+  for (let i = 1; i != 4; i += 2) {
+    console.log("Still going!");
+  }
+}
+```
+
 # --solutions--
 
+```js
+function myFunc() {
+ for (let i = 1; i <= 4; i += 2) {
+   console.log("Still going!");
+ }
+}
+```

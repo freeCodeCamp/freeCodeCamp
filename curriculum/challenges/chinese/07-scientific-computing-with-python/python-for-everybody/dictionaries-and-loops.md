@@ -49,8 +49,3 @@ chuck 1
 
 1
 
-# --hints--
-
-
-# --solutions--
-

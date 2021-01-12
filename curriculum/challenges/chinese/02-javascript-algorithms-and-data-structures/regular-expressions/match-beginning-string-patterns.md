@@ -51,5 +51,20 @@ assert(calRegex.test('Cal and Ricky both like racing.'));
 assert(!calRegex.test('Ricky and Cal both like racing.'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /change/; // Change this line
+let result = calRegex.test(rickyAndCal);
+```
+
 # --solutions--
 
+```js
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
+```

@@ -108,6 +108,26 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 <div id="awesome"></div>
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+
+  #awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+
+  }
+</style>
+
+<div id="awesome"></div>
+```
+
 # --solutions--
 
 ```html

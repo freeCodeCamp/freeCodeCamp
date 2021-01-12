@@ -26,5 +26,21 @@ forumTopicId: 301171
 assert(/var\s+a\s*=\s*9\s*/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof a !== 'undefined') {(function(a){return "a = " + a;})(a);} else { (function() {return 'a is undefined';})(); }
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+var a = 9;
+```

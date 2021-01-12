@@ -52,8 +52,3 @@ print(output)
 
 3
 
-# --hints--
-
-
-# --solutions--
-

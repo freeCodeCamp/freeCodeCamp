@@ -73,5 +73,30 @@ assert(code.match(/\.append/g));
 assert(code.match(/\.text/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <script>
+    // Add your code below this line
+
+
+
+    // Add your code above this line
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <script>
+    d3.select("body")
+      .append("h1")
+      .text("Learning D3")
+  </script>
+</body>
+```

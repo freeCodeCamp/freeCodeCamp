@@ -49,5 +49,51 @@ assert(code.match(/@keyframes\s+?background-color\s*?{/g));
 assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  button {
+    border-radius: 5px;
+    color: white;
+    background-color: #0F5897;
+    padding: 5px 10px 8px 10px;
+  }
+
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+  }
+
+
+</style>
+
+<button>Register</button>
+```
+
 # --solutions--
 
+```html
+<style>
+  button {
+    border-radius: 5px;
+    color: white;
+    background-color: #0F5897;
+    padding: 5px 10px 8px 10px;
+  }
+
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+  }
+
+  @keyframes background-color {
+    100% {
+      background-color: #4791d0;
+    }
+  }
+</style>
+<button>Register</button>
+```

@@ -48,5 +48,21 @@ assert(typeof dog.name === 'string');
 assert(typeof dog.numLegs === 'number');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let dog = {
+
+};
+```
+
 # --solutions--
 
+```js
+let dog = {
+  name: '',
+  numLegs: 4
+};
+```

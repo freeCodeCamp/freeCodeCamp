@@ -26,8 +26,3 @@ is focused on translating computer languages into natural/human languages.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

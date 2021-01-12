@@ -21,5 +21,21 @@ OP（1，n）= 11 1,1,1,1 ...... OP（2，n）= 7n-6 1,8,15，...... OP（3，n�
 assert.strictEqual(euler101(), 37076114526);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler101() {
+
+  return true;
+}
+
+euler101();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -44,8 +44,8 @@ forumTopicId: 301465
 
 一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
-# --hints--
-
-
 # --solutions--
 
+```js
+// solution required
+```

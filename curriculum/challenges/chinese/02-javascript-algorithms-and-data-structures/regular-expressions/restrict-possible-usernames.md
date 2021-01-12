@@ -91,5 +91,20 @@ assert(userCheck.test('Z97'));
 assert(!userCheck.test('c57bT3'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let username = "JackOfAllTrades";
+let userCheck = /change/; // Change this line
+let result = userCheck.test(username);
+```
+
 # --solutions--
 
+```js
+let username = "JackOfAllTrades";
+const userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
+let result = userCheck.test(username);
+```

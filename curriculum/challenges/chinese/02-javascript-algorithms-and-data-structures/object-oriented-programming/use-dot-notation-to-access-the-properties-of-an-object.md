@@ -38,5 +38,25 @@ assert(/console.log\(.*dog\.name.*\)/g.test(code));
 assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4
+};
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4
+};
+console.log(dog.name);
+console.log(dog.numLegs);
+```

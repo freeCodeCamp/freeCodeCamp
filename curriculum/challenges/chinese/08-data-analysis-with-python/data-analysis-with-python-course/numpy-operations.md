@@ -43,8 +43,3 @@ a + 20
 
 2
 
-# --hints--
-
-
-# --solutions--
-

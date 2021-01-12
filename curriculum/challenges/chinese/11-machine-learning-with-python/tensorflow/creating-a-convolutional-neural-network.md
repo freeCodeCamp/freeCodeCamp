@@ -48,8 +48,3 @@ C: `MaxPooling2D`
 
 3
 
-# --hints--
-
-
-# --solutions--
-

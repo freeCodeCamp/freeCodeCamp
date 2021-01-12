@@ -74,5 +74,22 @@ assert(checkSign(-12) === 'negative');
 assert(checkSign(0) === 'zero');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkSign(num) {
+
+}
+
+checkSign(10);
+```
+
 # --solutions--
 
+```js
+function checkSign(num) {
+  return (num > 0) ? 'positive' : (num < 0) ? 'negative' : 'zero';
+}
+```

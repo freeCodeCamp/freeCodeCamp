@@ -59,8 +59,3 @@ a
 
 4
 
-# --hints--
-
-
-# --solutions--
-

@@ -37,3 +37,10 @@ HTML 服务器通常有一个或多个用户可以访问的目录。你可以将
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

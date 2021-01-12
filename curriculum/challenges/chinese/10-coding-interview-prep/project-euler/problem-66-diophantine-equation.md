@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler66(), 661);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function diophantineEquation() {
+
+  return true;
+}
+
+diophantineEquation();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

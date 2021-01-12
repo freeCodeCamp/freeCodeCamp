@@ -58,5 +58,36 @@ assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
 assert(!code.match(/i\s*?<=\s*?len;/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countToFive() {
+  let firstFive = "12345";
+  let len = firstFive.length;
+  // Only change code below this line
+  for (let i = 1; i <= len; i++) {
+  // Only change code above this line
+    console.log(firstFive[i]);
+  }
+}
+
+countToFive();
+```
+
 # --solutions--
 
+```js
+function countToFive() {
+ let firstFive = "12345";
+ let len = firstFive.length;
+ // Only change code below this line
+ for (let i = 0; i < len; i++) {
+ // Only change code above this line
+   console.log(firstFive[i]);
+ }
+}
+
+countToFive();
+```

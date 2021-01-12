@@ -41,5 +41,21 @@ P8，N = N（3N-2）
 assert.strictEqual(euler61(), 28684);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function cyclicalFigurateNums() {
+
+  return true;
+}
+
+cyclicalFigurateNums();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

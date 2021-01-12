@@ -17,5 +17,21 @@ Euler的Totient函数φ（n）\[有时称为phi函数]用于确定小于或等�
 assert.strictEqual(euler70(), 8319823);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function totientPermutation() {
+
+  return true;
+}
+
+totientPermutation();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

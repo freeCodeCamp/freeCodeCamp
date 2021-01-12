@@ -38,5 +38,20 @@ assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 assert(result === true);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex; // Change this line
+```
+
 # --solutions--
 
+```js
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
+```

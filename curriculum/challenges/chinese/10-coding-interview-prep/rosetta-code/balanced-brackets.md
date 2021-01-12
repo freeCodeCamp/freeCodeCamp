@@ -125,5 +125,53 @@ assert(!isBalanced(testCases[16]));
 assert(isBalanced(testCases[17]));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCases = [
+  '[]',
+  ']][[[][][][]][',
+  '[][[[[][][[[]]]]]]',
+  '][',
+  '[[[]]]][[]',
+  '][[]',
+  '][[][]][[[]]',
+  '[[][]]][',
+  '[[[]]][[]]]][][[',
+  '[]][[]]][[[[][]]',
+  '][]][[][',
+  '[[]][[][]]',
+  '[[]]',
+  ']][]][[]][[[',
+  '][]][][[',
+  '][][',
+  '[]]]',
+  ''
+];
+```
+
+## --seed-contents--
+
+```js
+function isBalanced(str) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function isBalanced(str) {
+  if (str === '') return true;
+  let a = str;
+  let b;
+  do {
+    b = a;
+    a = a.replace(/\[\]/g, '');
+  } while (a !== b);
+  return !a;
+}
+```

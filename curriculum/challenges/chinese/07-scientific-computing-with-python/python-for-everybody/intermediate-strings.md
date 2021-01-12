@@ -45,8 +45,3 @@ na
 
 2
 
-# --hints--
-
-
-# --solutions--
-

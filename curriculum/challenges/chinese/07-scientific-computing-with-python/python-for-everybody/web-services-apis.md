@@ -30,8 +30,3 @@ Action Portable Interface
 
 3
 
-# --hints--
-
-
-# --solutions--
-

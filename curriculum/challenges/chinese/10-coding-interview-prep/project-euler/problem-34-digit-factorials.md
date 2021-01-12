@@ -17,5 +17,23 @@ videoUrl: ''
 assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function digitFactorial() {
+
+  var sum = 0;
+  var numbers = [];
+  return { sum, numbers };
+}
+
+digitFactorial();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

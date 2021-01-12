@@ -66,5 +66,24 @@ assert(
 assert(urlSlug('Hold The Door') === 'hold-the-door');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+function urlSlug(title) {
+
+
+}
+// Only change code above this line
+```
+
 # --solutions--
 
+```js
+// Only change code below this line
+function urlSlug(title) {
+  return title.trim().split(/\s+/).join("-").toLowerCase();
+}
+```

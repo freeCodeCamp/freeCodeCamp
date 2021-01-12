@@ -39,5 +39,20 @@ assert(result.length == 2);
 assert(result[0] == 'ss' && result[1] == 'ss');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let difficultSpelling = "Mississippi";
+let myRegex = /change/; // Change this line
+let result = difficultSpelling.match(myRegex);
+```
+
 # --solutions--
 
+```js
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g; // Change this line
+let result = difficultSpelling.match(myRegex);
+```

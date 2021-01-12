@@ -67,5 +67,35 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 assert(removeJSComments(code).match(/\.\.\.arr/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // Only change code below this line
+
+    // Only change code above this line
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+```
+
 # --solutions--
 
+```js
+function copyMachine(arr,num){
+    let newArr=[];
+    while(num >=1){
+    newArr.push([...arr]);
+    num--;
+    }
+    return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
+```

@@ -34,8 +34,3 @@ Which regex matches only a white space character?
 
 2
 
-# --hints--
-
-
-# --solutions--
-

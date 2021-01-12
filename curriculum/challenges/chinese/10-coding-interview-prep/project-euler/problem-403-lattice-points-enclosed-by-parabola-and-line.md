@@ -23,5 +23,21 @@ L（a，b）定义为D（a，b）中包含的晶格点数。例如，L（1,2）=
 assert.strictEqual(euler403(), 18224771);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler403() {
+
+  return true;
+}
+
+euler403();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

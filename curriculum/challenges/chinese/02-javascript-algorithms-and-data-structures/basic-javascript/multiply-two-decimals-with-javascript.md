@@ -30,5 +30,22 @@ assert(product === 5.0);
 assert(/\*/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(y){return 'product = '+y;})(product);
+```
+
+## --seed-contents--
+
+```js
+var product = 2.0 * 0.0;
+```
+
 # --solutions--
 
+```js
+var product = 2.0 * 2.5;
+```

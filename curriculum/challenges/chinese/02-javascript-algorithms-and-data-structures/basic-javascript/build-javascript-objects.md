@@ -127,5 +127,32 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myDog);
+```
+
+## --seed-contents--
+
+```js
+var myDog = {
+// Only change code below this line
+
+
+// Only change code above this line
+};
+```
+
 # --solutions--
 
+```js
+var myDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+```

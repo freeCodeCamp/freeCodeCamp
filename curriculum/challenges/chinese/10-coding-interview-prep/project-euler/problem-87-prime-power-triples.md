@@ -17,5 +17,21 @@ videoUrl: ''
 assert.strictEqual(euler87(), 1097343);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function primePowerTriples() {
+
+  return true;
+}
+
+primePowerTriples();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

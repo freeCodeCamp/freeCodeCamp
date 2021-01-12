@@ -63,5 +63,20 @@ assert(
 assert(result.length == 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /change/; // Change this line
+let result = twinkleStar; // Change this line
+```
+
 # --solutions--
 
+```js
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+let result = twinkleStar.match(starRegex);
+```

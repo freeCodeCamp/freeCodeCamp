@@ -26,8 +26,3 @@ On a separate database server.
 
 1
 
-# --hints--
-
-
-# --solutions--
-

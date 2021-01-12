@@ -31,5 +31,21 @@ L76R82U85D68
 assert.strictEqual(euler244(), 96356848);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler244() {
+
+  return true;
+}
+
+euler244();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

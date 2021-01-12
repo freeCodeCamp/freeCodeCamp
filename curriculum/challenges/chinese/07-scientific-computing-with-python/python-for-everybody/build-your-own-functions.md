@@ -75,8 +75,3 @@ Zap
 
 4
 
-# --hints--
-
-
-# --solutions--
-

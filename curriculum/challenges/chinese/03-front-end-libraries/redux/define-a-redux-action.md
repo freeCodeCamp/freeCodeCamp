@@ -37,5 +37,18 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Define an action here:
+```
+
 # --solutions--
 
+```js
+const action = {
+  type: 'LOGIN'
+}
+```

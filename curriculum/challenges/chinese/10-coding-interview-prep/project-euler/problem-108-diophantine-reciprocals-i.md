@@ -19,5 +19,21 @@ diophantineOne `diophantineOne()`应返回180180。
 assert.strictEqual(diophantineOne(), 180180);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function diophantineOne() {
+
+  return true;
+}
+
+diophantineOne();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

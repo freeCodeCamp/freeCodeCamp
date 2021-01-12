@@ -53,5 +53,26 @@ assert(hound instanceof Dog);
 assert(code.match(/new/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+const hound = new Dog();
+```

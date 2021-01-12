@@ -33,5 +33,21 @@ s7 s8 s9 s10 ......
 assert.strictEqual(euler150(), -271248680);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler150() {
+
+  return true;
+}
+
+euler150();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

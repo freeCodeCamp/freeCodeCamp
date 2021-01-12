@@ -33,5 +33,16 @@ Sass 中的`Partials`是包含 CSS 代码段的单独文件。这些是在其他
 assert(code.match(/@import\s+?('|")variables\1/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<!-- The main.scss file -->
+```
+
 # --solutions--
 
+```html
+@import 'variables'
+```

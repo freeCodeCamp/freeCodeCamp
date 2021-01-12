@@ -35,5 +35,21 @@ assert(truncatablePrimes(10) == 8920);
 assert(truncatablePrimes(11) == 748317);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function truncatablePrimes(n) {
+
+  return n;
+}
+
+truncatablePrimes(11);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

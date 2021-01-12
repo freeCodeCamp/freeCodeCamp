@@ -36,8 +36,3 @@ We could use curly braces or indentation to denote blocks of code.
 
 2
 
-# --hints--
-
-
-# --solutions--
-

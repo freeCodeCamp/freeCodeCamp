@@ -67,5 +67,27 @@ assert(
 );
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```js
+const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+let chewieRegex = /change/; // Change this line
+// Only change code above this line
+
+let result = chewieQuote.match(chewieRegex);
+```
+
 # --solutions--
 
+```js
+  let chewieRegex = /Aa*/;
+  let result = chewieQuote.match(chewieRegex);
+```
