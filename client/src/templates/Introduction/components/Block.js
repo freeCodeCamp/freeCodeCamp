@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Link } from 'gatsby';
 import { withTranslation } from 'react-i18next';
 
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { completedChallengesSelector, executeGA } from '../../../redux';
+import Challenges from './Challenges';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
@@ -46,8 +46,6 @@ export class Block extends Component {
     super(...props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
-    this.handleChallengeClick = this.handleChallengeClick.bind(this);
-    this.renderChallenges = this.renderChallenges.bind(this);
   }
 
   handleBlockClick() {
@@ -62,67 +60,12 @@ export class Block extends Component {
     return toggleBlock(blockDashedName);
   }
 
-  handleChallengeClick(slug) {
-    return () => {
-      return this.props.executeGA({
-        type: 'event',
-        data: {
-          category: 'Map Challenge Click',
-          action: slug
-        }
-      });
-    };
-  }
-
   renderCheckMark(isCompleted) {
     return isCompleted ? (
       <GreenPass style={mapIconStyle} />
     ) : (
       <GreenNotCompleted style={mapIconStyle} />
     );
-  }
-
-  renderChallenges(challenges = [], isProjectBlock = false) {
-    // TODO: Split this into a Challenge Component and add tests
-    // TODO: The styles badge and map-badge on the completion span do not exist
-    return [...challenges].map(challenge => {
-      const completedClass = challenge.isCompleted
-        ? ' map-challenge-title-completed'
-        : '';
-      return (
-        <li
-          className={`map-challenge-title${completedClass} ${
-            isProjectBlock ? 'map-project-wrap' : ''
-          }`}
-          id={challenge.dashedName}
-          key={'map-challenge' + challenge.fields.slug}
-        >
-          {!isProjectBlock ? (
-            <>
-              <Link
-                onClick={this.handleChallengeClick(challenge.fields.slug)}
-                to={challenge.fields.slug}
-              >
-                <span className='badge map-badge'>
-                  {this.renderCheckMark(challenge.isCompleted)}
-                </span>
-                {challenge.title}
-              </Link>
-            </>
-          ) : (
-            <Link
-              onClick={this.handleChallengeClick(challenge.fields.slug)}
-              to={challenge.fields.slug}
-            >
-              {challenge.title}
-              <span className='badge map-badge map-project-checkmark'>
-                {this.renderCheckMark(challenge.isCompleted)}
-              </span>
-            </Link>
-          )}
-        </li>
-      );
-    });
   }
 
   renderBlockIntros(arr) {
@@ -144,6 +87,7 @@ export class Block extends Component {
       superBlockDashedName,
       t
     } = this.props;
+
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
@@ -185,9 +129,10 @@ export class Block extends Component {
         <div className='map-title'>
           <h3 className='map-projects-title'>{blockTitle}</h3>
         </div>
-        <ul className='map-challenges-ul'>
-          {this.renderChallenges(challengesWithCompleted, isProjectBlock)}
-        </ul>
+        <Challenges
+          challengesWithCompleted={challengesWithCompleted}
+          isProjectBlock={isProjectBlock}
+        />
       </div>
     ) : (
       <div className={`block ${isExpanded ? 'open' : ''}`}>
@@ -200,17 +145,18 @@ export class Block extends Component {
           <Caret />
           <h3>{blockTitle}</h3>
           <div className='map-title-completed'>
-            <span>
-              {this.renderCheckMark(
-                completedCount === challengesWithCompleted.length
-              )}
-            </span>
+            {this.renderCheckMark(
+              completedCount === challengesWithCompleted.length
+            )}
             <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
         </button>
-        <ul className='map-challenges-ul'>
-          {isExpanded ? this.renderChallenges(challengesWithCompleted) : null}
-        </ul>
+        {isExpanded && (
+          <Challenges
+            challengesWithCompleted={challengesWithCompleted}
+            isProjectBlock={isProjectBlock}
+          />
+        )}
       </div>
     );
   }

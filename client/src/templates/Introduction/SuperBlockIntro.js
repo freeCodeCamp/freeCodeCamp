@@ -150,12 +150,6 @@ export class SuperBlockIntroductionPage extends Component {
 
     const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
 
-    const miscTextObj = t(`intro:misc-text`);
-    const {
-      'browse-other': browseOtherText,
-      tutorials: tutorialsText
-    } = miscTextObj;
-
     let blockToScrollTo;
     if (!pending && complete) {
       blockToScrollTo = this.getChosenBlock(true);
@@ -172,7 +166,7 @@ export class SuperBlockIntroductionPage extends Component {
           ref={blockToScrollTo === 'top' ? this.elementRef : null}
         >
           <SuperBlockIntro superBlock={superBlock} />
-          <h2 className='text-center'>{tutorialsText}</h2>
+          <h2 className='text-center'>{t(`intro:misc-text.tutorials`)}</h2>
           <div className='block-ui'>
             {blockDashedNames.map(blockDashedName => (
               <div
@@ -204,7 +198,7 @@ export class SuperBlockIntroductionPage extends Component {
           )}
           <Spacer size={2} />
           <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
-            {browseOtherText}
+            {t(`intro:misc-text.browse-other`)}
           </h2>
           <Spacer />
           <Map currentSuperBlock={superBlock} />
