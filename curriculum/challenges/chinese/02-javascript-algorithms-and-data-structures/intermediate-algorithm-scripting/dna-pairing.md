@@ -7,19 +7,19 @@ forumTopicId: 16009
 
 # --description--
 
-DNA 链缺少配对元素。对于每个字符，获取与其配对的元素，并将结果作为二维数组返回。
+给出的 DNA 链上缺少配对元素。请基于每个字符，获取与其配对的元素，并将结果作为二维数组返回。
 
-[碱基对](http://en.wikipedia.org/wiki/Base_pair) 是一对 AT 和 CG。将缺少的元素与提供的字符匹配。
+DNA 的[碱基对](http://en.wikipedia.org/wiki/Base_pair) 有两种形式：一种是 A 与 T，一种是 C 与 G。请为参数中给出的每个字符配对相应的碱基。
 
-将提供的字符作为每个数组中的第一个元素返回。
+注意，参数中给出的字符应作为每个子数组中的第一个元素返回。
 
-例如，对于输入 GCG，返回\[\[“G”, “C”]，\[“C”, “G”]，\[“G”, “C”]]。
+例如，传入 GCG 时，应返回 \[\["G", "C"], \["C", "G"], \["G", "C"]]。
 
-字符及与其配对的元素在一个数组中。再将所有数组放到一个封装数组中。
+参数中的字符及与其配对的碱基应存在于一个数组中，代表碱基对。再将每个配对完成的碱基对数组按顺序放到一个数组中，作为最终的返回结果。
 
 # --hints--
 
-`pairElement('ATCGA')`应该返回`[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']]`。
+`pairElement("ATCGA")` 应返回 `[["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]`。
 
 ```js
 assert.deepEqual(pairElement('ATCGA'), [
@@ -31,7 +31,7 @@ assert.deepEqual(pairElement('ATCGA'), [
 ]);
 ```
 
-`pairElement('TTGAG')`应该返回`[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']]`。
+`pairElement("TTGAG")` 应返回 `[["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]`。
 
 ```js
 assert.deepEqual(pairElement('TTGAG'), [
@@ -43,7 +43,7 @@ assert.deepEqual(pairElement('TTGAG'), [
 ]);
 ```
 
-`pairElement('CTCTA')`应该返回`[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']]`。
+`pairElement("CTCTA")` 应返回 `[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]`。
 
 ```js
 assert.deepEqual(pairElement('CTCTA'), [

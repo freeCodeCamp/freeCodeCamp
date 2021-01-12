@@ -2,34 +2,38 @@
 id: a202eed8fc186c8434cb6d61
 title: 反转字符串
 challengeType: 5
-videoUrl: ''
+forumTopicId: 16043
 ---
 
 # --description--
 
-反转提供的字符串。您可能需要先将字符串转换为数组，然后才能将其反转。您的结果必须是字符串。如果卡住，请记得使用[Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514) 。编写自己的代码。
+请反转传入函数的字符串。
+
+在反转字符串之前，你可能需要将其切分成包含字符的数组。
+
+函数的返回结果应为字符串。
 
 # --hints--
 
-`reverseString("hello")`应该返回一个字符串。
+`reverseString("hello")` 应返回一个字符串。
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")`应该变成`"olleh"` 。
+`reverseString("hello")` 应返回 `"olleh"`。
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")`应该变成`"ydwoH"` 。
+`reverseString("Howdy")` 应返回 `"ydwoH"`。
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")`应返回`"htraE morf sgniteerG"` 。
+`reverseString("Greetings from Earth")` 应返回 `"htraE morf sgniteerG"`。
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');
