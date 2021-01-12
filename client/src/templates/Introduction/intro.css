@@ -77,9 +77,8 @@ button.map-title {
   min-width: 25px;
 }
 
-.map-title > h3 {
+.map-title > h4 {
   margin: 0;
-  font-weight: 700;
 }
 
 .map-title-completed {
@@ -102,10 +101,6 @@ button.map-title {
   flex-shrink: 0;
   fill: var(--color-quaternary) !important;
   stroke: var(--color-quaternary);
-}
-
-.map-completed-count {
-  font-weight: 700;
 }
 
 .open > .map-title svg:first-child {
