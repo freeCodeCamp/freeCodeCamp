@@ -31,6 +31,7 @@ function SuperBlockIntro(props) {
           src={superBlockImage}
           style={{
             backgroundColor: '#f5f6f7',
+            marginBottom: '1rem',
             padding: '15px',
             width: '100%'
           }}
