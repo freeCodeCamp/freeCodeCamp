@@ -1,0 +1,25 @@
+name: 'No changing translated files on GitHub'
+on:
+  pull_request_target:
+    branches:
+      - 'master'
+    paths:
+      - 'curriculum/challenges/**'
+      - '!curriculum/challenges/english/**'
+
+jobs:
+  has-translation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v3
+        if: github.event.pull_request.user.login != "github-actions[bot]"
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'You appear to be adding/modifying/deleting non-English curriculum files directly on GitHub. If you are trying to make translation changes to a curriculum challenge file, please visit https://translate.freecodecamp.org/curriculum instead.'
+            })
+            throw "You appear to be translating files directly on GitHub. Please visit https://translate.freecodecamp.org instead."
