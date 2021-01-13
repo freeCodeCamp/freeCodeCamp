@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d97
 challengeType: 11
 videoId: LrdmcQpTyLw
+dashedName: convolutional-neural-networks-the-convolutional-layer
 ---
 
 # --question--
@@ -25,9 +26,4 @@ Input size, input padding, and stride.
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

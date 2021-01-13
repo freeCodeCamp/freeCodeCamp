@@ -4,6 +4,7 @@ title: for 循环
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNVCe'
 forumTopicId: 18219
+dashedName: iterate-with-javascript-for-loops
 ---
 
 # --description--
@@ -51,5 +52,28 @@ assert(code.match(/for\s*\(/g).length > 1);
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if (typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [];
+for (var i = 1; i < 6; i++) {
+  myArray.push(i);
+}
+```

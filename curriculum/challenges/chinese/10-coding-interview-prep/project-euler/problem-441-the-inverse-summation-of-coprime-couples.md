@@ -3,6 +3,7 @@ id: 5900f5261000cf542c510038
 title: 问题441：互质夫妇的反向总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-441-the-inverse-summation-of-coprime-couples
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler441(), 5000088.8395);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler441() {
+
+  return true;
+}
+
+euler441();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

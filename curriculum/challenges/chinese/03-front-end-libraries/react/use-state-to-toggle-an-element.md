@@ -3,13 +3,14 @@ id: 5a24c314108439a4d4036176
 title: 使用 State 切换元素
 challengeType: 6
 forumTopicId: 301421
+dashedName: use-state-to-toggle-an-element
 ---
 
 # --description--
 
-有时可能在更新状态的时候想知道上一个状态是什么。但是状态更新是异步的，这意味着 React 可能会把多个 `setState()` 集中在一起批量更新。所以设置 `this.state` 或者 `this.props` 后值没有立即更新。所以最好不要写如下的代码：
+有时可能在更新状态的时候想知道上一个状态是什么。但是状态更新是异步的，这意味着 React 可能会把多个 `setState()` 集中在一起批量更新。所以设置 `this.state` 或者 `this.props` 后值后可能没有立即更新。所以最好不要写如下的代码：
 
-```js
+```jsx
 this.setState({
   counter: this.state.counter + this.props.increment
 });
@@ -17,7 +18,7 @@ this.setState({
 
 正确的做法是，给 `setState` 传入一个函数，这个函数可以访问 state 和 props。给 `setState` 传入函数可以返回赋值后的 state 和 props。代码可以重写为这样：
 
-```js
+```jsx
 this.setState((state, props) => ({
   counter: state.counter + props.increment
 }));
@@ -25,7 +26,7 @@ this.setState((state, props) => ({
 
 如果只需要 `state`，那么用下面的格式也是可以的：
 
-```js
+```jsx
 this.setState(state => ({
   counter: state.counter + 1
 }));
@@ -112,5 +113,80 @@ assert(
 assert(!/this\.setState\([^}]*this/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'));
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  // Change code below this line
+
+  // Change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+  }
+  toggleVisibility() {
+    this.setState(state => ({
+      visibility: !state.visibility
+    }));
+  }
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
+```

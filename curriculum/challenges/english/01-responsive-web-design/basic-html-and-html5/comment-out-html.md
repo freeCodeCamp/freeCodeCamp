@@ -4,6 +4,7 @@ title: Comment out HTML
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782
+dashedName: comment-out-html
 ---
 
 # --description--

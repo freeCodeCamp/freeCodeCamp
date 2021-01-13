@@ -3,6 +3,7 @@ id: 5900f3a91000cf542c50febc
 title: 'Problem 61: Cyclical figurate numbers'
 challengeType: 5
 forumTopicId: 302173
+dashedName: problem-61-cyclical-figurate-numbers
 ---
 
 # --description--

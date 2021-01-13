@@ -3,6 +3,7 @@ id: 5900f3a31000cf542c50feb6
 title: 问题55：Lychrel数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-55-lychrel-numbers
 ---
 
 # --description--
@@ -41,5 +42,48 @@ assert.strictEqual(countLychrelNumbers(3243), 39);
 assert.strictEqual(countLychrelNumbers(7654), 140);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countLychrelNumbers(num) {
+
+  return true;
+}
+
+countLychrelNumbers(10000);
+```
+
 # --solutions--
 
+```js
+const countLychrelNumbers = (size) => {
+  const numReverse = (num) => {
+    return Number(num.toString().split('').reverse().join(''));
+  };
+  const isPalin = (num) => {
+    if (numReverse(num) === num) {
+      return true;
+    }
+    return false;
+  };
+  let total = 0;
+  for (let i = 1; i < size; i++) {
+    let loopCount = 1;
+    let sum = i;
+    while (loopCount < 50) {
+      sum = sum + numReverse(sum);
+      if (isPalin(sum)) {
+        break;
+      } else {
+        loopCount++;
+      }
+    }
+    if (loopCount === 50) {
+      total++;
+    }
+  }
+  return total;
+}
+```

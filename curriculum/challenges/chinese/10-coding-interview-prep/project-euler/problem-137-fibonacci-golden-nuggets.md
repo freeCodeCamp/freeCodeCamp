@@ -3,6 +3,7 @@ id: 5900f3f51000cf542c50ff08
 title: 问题137：斐波那契金块
 challengeType: 5
 videoUrl: ''
+dashedName: problem-137-fibonacci-golden-nuggets
 ---
 
 # --description--
@@ -25,5 +26,21 @@ xAF（x）√2-111/ 22（√13-2）/ 33（√89-5）/ 84（√34-3）/ 55
 assert.strictEqual(euler137(), 1120149658760);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler137() {
+
+  return true;
+}
+
+euler137();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5a8b073d06fa14fcfde687aa
 title: 运动跟踪器
 challengeType: 4
 forumTopicId: 301505
+dashedName: exercise-tracker
 ---
 
 # --description--
@@ -200,3 +201,10 @@ async (getUserInput) => {
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
+  Please check our contributing guidelines to learn more.
+*/
+```

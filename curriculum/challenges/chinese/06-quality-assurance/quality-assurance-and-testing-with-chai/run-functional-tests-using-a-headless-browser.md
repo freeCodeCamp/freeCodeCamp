@@ -3,6 +3,7 @@ id: 587d824f367417b2b2512c5c
 title: 使用 headless 浏览器运行功能测试 (1)
 challengeType: 2
 forumTopicId: 301595
+dashedName: run-functional-tests-using-a-headless-browser
 ---
 
 # --description--
@@ -99,3 +100,10 @@ Headless browser 应成功执行请求
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

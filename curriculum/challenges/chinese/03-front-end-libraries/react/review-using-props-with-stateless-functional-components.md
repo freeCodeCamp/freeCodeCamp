@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616f
 title: 复习如何使用 Props 和无状态函数组件
 challengeType: 6
 forumTopicId: 301411
+dashedName: review-using-props-with-stateless-functional-components
 ---
 
 # --description--
@@ -75,5 +76,70 @@ assert(
 );
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```jsx
+var PropTypes = {
+   string: { isRequired: true }
+};
+```
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<CampSite />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+// Change code below this line
+
+const Camper = (props) => {
+   return (
+     <div>
+       <p>{props.name}</p>
+     </div>
+   );
+};
+
+Camper.propTypes = {
+  name: PropTypes.string.isRequired
+};
+
+Camper.defaultProps = {
+  name: 'CamperBot'
+};
+```

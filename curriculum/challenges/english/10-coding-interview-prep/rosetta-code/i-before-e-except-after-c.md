@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7eb0
 title: I before E except after C
 challengeType: 5
 forumTopicId: 302288
+dashedName: i-before-e-except-after-c
 ---
 
 # --description--

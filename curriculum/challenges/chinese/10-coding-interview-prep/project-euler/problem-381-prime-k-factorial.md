@@ -3,6 +3,7 @@ id: 5900f4ea1000cf542c50fffc
 title: 问题381：（prime-k）阶乘
 challengeType: 5
 videoUrl: ''
+dashedName: problem-381-prime-k-factorial
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler381(), 139602943319822);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler381() {
+
+  return true;
+}
+
+euler381();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

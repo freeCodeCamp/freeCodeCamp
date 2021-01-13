@@ -3,6 +3,7 @@ id: 5900f4d91000cf542c50ffea
 title: 问题364：舒适的距离
 challengeType: 5
 videoUrl: ''
+dashedName: problem-364-comfortable-distance
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler364(), 44855254);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler364() {
+
+  return true;
+}
+
+euler364();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -4,6 +4,7 @@ title: 使用赋值运算符存储值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310
+dashedName: storing-values-with-the-assignment-operator
 ---
 
 # --description--
@@ -55,5 +56,34 @@ assert(typeof b === 'number' && b === 7);
 assert(/b\s*=\s*a\s*;/g.test(code));
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```js
+if (typeof a != 'undefined') {
+  a = undefined;
+}
+```
+
+## --after-user-code--
+
+```js
+(function(a){return "a = " + a;})(a);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var a;
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var a;
+a = 7;
+```

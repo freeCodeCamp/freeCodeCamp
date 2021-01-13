@@ -4,6 +4,7 @@ title: 小于运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVRWtB'
 forumTopicId: 16789
+dashedName: comparison-with-the-less-than-operator
 ---
 
 # --description--
@@ -68,5 +69,38 @@ assert(testLessThan(99) === '55 or Over');
 assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function testLessThan(val) {
+  if (val) {  // Change this line
+    return "Under 25";
+  }
+
+  if (val) {  // Change this line
+    return "Under 55";
+  }
+
+  return "55 or Over";
+}
+
+testLessThan(10);
+```
+
 # --solutions--
 
+```js
+function testLessThan(val) {
+  if (val < 25) {  // Change this line
+    return "Under 25";
+  }
+
+  if (val < 55) {  // Change this line
+    return "Under 55";
+  }
+
+  return "55 or Over";
+}
+```

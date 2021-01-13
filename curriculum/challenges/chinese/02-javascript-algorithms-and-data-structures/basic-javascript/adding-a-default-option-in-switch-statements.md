@@ -4,6 +4,7 @@ title: 在 Switch 语句中添加默认选项
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
+dashedName: adding-a-default-option-in-switch-statements
 ---
 
 # --description--
@@ -85,5 +86,43 @@ assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 assert(code.match(/break/g).length > 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function switchOfStuff(val) {
+  var answer = "";
+  // Only change code below this line
+
+
+
+  // Only change code above this line
+  return answer;
+}
+
+switchOfStuff(1);
+```
+
 # --solutions--
 
+```js
+function switchOfStuff(val) {
+  var answer = "";
+
+  switch(val) {
+    case "a":
+      answer = "apple";
+      break;
+    case "b":
+      answer = "bird";
+      break;
+    case "c":
+      answer = "cat";
+      break;
+    default:
+      answer = "stuff";
+  }
+  return answer;
+}
+```

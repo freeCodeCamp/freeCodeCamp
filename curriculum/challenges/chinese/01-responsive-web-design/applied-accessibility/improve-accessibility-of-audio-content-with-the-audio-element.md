@@ -4,6 +4,7 @@ title: 使用 audio 元素提高音频内容的可访问性
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVkcZ'
 forumTopicId: 301014
+dashedName: improve-accessibility-of-audio-content-with-the-audio-element
 ---
 
 # --description--
@@ -79,5 +80,36 @@ assert(
 assert($('source').attr('type') === 'audio/mpeg');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <header>
+    <h1>Real Coding Ninjas</h1>
+  </header>
+  <main>
+    <p>A sound clip of Zersiax's screen reader in action.</p>
+
+
+
+  </main>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <header>
+    <h1>Real Coding Ninjas</h1>
+  </header>
+  <main>
+    <p>A sound clip of Zersiax's screen reader in action.</p>
+    <audio controls>
+      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+    </audio>
+  </main>
+</body>
+```

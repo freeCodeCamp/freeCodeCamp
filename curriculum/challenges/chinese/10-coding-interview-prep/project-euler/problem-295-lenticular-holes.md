@@ -3,6 +3,7 @@ id: 5900f4931000cf542c50ffa6
 title: 问题295：透镜孔
 challengeType: 5
 videoUrl: ''
+dashedName: problem-295-lenticular-holes
 ---
 
 # --description--
@@ -35,5 +36,21 @@ C0和C1以及C0和C2形成一个透镜孔。
 assert.strictEqual(euler295(), 4884650818);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler295() {
+
+  return true;
+}
+
+euler295();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

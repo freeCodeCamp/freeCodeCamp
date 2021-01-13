@@ -3,6 +3,7 @@ id: 5900f38c1000cf542c50fe9f
 title: 问题32：Pandigital产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-32-pandigital-products
 ---
 
 # --description--
@@ -29,5 +30,57 @@ assert(typeof pandigitalProducts === 'function');
 assert.strictEqual(pandigitalProducts(), 45228);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function pandigitalProducts() {
+
+  return true;
+}
+
+pandigitalProducts();
+```
+
 # --solutions--
 
+```js
+function pandigitalProducts() {
+  function is1to9Pandigital(...numbers) {
+    const digitStr = concatenateNums(...numbers);
+    // check if length is 9
+    if (digitStr.length !== 9) {
+      return false;
+    }
+    // check if pandigital
+    for (let i = digitStr.length; i > 0; i--) {
+      if (digitStr.indexOf(i.toString()) === -1) {
+        return false;
+      }
+    }
+    return true;
+  }
+  function concatenateNums(...numbers) {
+    let digitStr = '';
+    for (let i = 0; i < numbers.length; i++) {
+      digitStr += numbers[i].toString();
+    }
+    return digitStr;
+  }
+
+  const pandigitalNums = [];
+  let sum = 0;
+  for (let mult1 = 2; mult1 < 9876; mult1++) {
+    let mult2 = 123;
+    while (concatenateNums(mult1, mult2, mult1 * mult2).length < 10) {
+      if (is1to9Pandigital(mult1, mult2, mult1 * mult2) && !pandigitalNums.includes(mult1 * mult2)) {
+        pandigitalNums.push(mult1 * mult2);
+        sum += mult1 * mult2;
+      }
+      mult2++;
+    }
+  }
+  return sum;
+}
+```

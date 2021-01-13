@@ -3,6 +3,7 @@ id: 5900f3ce1000cf542c50fee0
 title: 问题97：大的非梅森素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-97-large-non-mersenne-prime
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler97(), 8739992577);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function lrgNonMersennePrime() {
+
+  return true;
+}
+
+lrgNonMersennePrime();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

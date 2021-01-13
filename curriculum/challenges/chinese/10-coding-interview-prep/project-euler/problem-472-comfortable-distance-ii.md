@@ -3,6 +3,7 @@ id: 5900f5451000cf542c510057
 title: 问题472：舒适的距离II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-472-comfortable-distance-ii
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler472(), 73811586);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler472() {
+
+  return true;
+}
+
+euler472();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5a24bbe0dba28a8d3cbd4c5e
 title: 在 JSX 中添加注释
 challengeType: 6
 forumTopicId: 301376
+dashedName: add-comments-in-jsx
 ---
 
 # --description--
@@ -50,5 +51,32 @@ assert(
 assert(/<div>[\s\S]*{\s*\/\*[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(JSX, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const JSX = (
+  <div>
+    <h1>This is a block of JSX</h1>
+    <p>Here's a subtitle</p>
+  </div>
+);
+```
+
 # --solutions--
 
+```jsx
+const JSX = (
+<div>
+  <h1>This is a block of JSX</h1>
+  { /* this is a JSX comment */ }
+  <p>Here's a subtitle</p>
+</div>);
+```

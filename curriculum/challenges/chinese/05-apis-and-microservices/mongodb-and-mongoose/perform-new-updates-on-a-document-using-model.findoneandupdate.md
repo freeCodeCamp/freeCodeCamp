@@ -3,6 +3,7 @@ id: 587d7fb8367417b2b2512c0f
 title: 使用 model.findOneAndUpdate() 对更新 document
 challengeType: 2
 forumTopicId: 301542
+dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
 ---
 
 # --description--
@@ -48,3 +49,10 @@ forumTopicId: 301542
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

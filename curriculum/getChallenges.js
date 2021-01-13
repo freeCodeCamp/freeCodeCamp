@@ -7,13 +7,12 @@ const fs = require('fs');
 const util = require('util');
 /* eslint-disable max-len */
 const {
-  mergeChallenges,
   translateCommentsInChallenge
 } = require('../tools/challenge-md-parser/translation-parser/translation-parser');
 /* eslint-enable max-len*/
 
 const { isAuditedCert } = require('../utils/is-audited');
-const { dasherize, nameify } = require('../utils/slugs');
+const { dasherize } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { blockNameify } = require('../utils/block-nameify');
 const { supportedLangs } = require('./utils');
@@ -199,23 +198,14 @@ async function buildCurriculum(file, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(
-  engPath,
-  transPath,
-  dict,
-  lang,
-  parse = parseMD
-) {
-  const engChal = await parse(engPath);
+async function parseTranslation(transPath, dict, lang, parse = parseMD) {
   const translatedChal = await parse(transPath);
 
   // challengeType 11 is for video challenges, which have no seeds, so we skip
   // them.
-  const engWithTranslatedComments =
-    engChal.challengeType !== 11
-      ? translateCommentsInChallenge(engChal, lang, dict)
-      : engChal;
-  return mergeChallenges(engWithTranslatedComments, translatedChal);
+  return translatedChal.challengeType !== 11
+    ? translateCommentsInChallenge(translatedChal, lang, dict)
+    : translatedChal;
 }
 
 function createChallengeCreator(basePath, lang) {
@@ -258,7 +248,6 @@ ${getFullPath('english')}
       challenge = await (useEnglish
         ? parseMarkdown(getFullPath('english'))
         : parseTranslation(
-            getFullPath('english'),
             getFullPath(lang),
             COMMENT_TRANSLATIONS,
             lang,
@@ -267,12 +256,7 @@ ${getFullPath('english')}
     } else {
       challenge = await (useEnglish
         ? parseMD(getFullPath('english'))
-        : parseTranslation(
-            getFullPath('english'),
-            getFullPath(lang),
-            COMMENT_TRANSLATIONS,
-            lang
-          ));
+        : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
     }
     const challengeOrder = findIndex(
       meta.challengeOrder,
@@ -288,11 +272,6 @@ ${getFullPath('english')}
       time
     } = meta;
     challenge.block = blockName;
-    challenge.dashedName =
-      lang === 'english'
-        ? dasherize(challenge.title)
-        : dasherize(challenge.originalTitle);
-    delete challenge.originalTitle;
     challenge.order = order;
     challenge.superOrder = superOrder;
     challenge.superBlock = superBlock;
@@ -327,7 +306,6 @@ function filesToObject(files) {
 
 // gets the challenge ready for sourcing into Gatsby
 function prepareChallenge(challenge) {
-  challenge.name = nameify(challenge.title);
   if (challenge.files) {
     challenge.files = filesToObject(challenge.files);
     challenge.files = Object.keys(challenge.files)

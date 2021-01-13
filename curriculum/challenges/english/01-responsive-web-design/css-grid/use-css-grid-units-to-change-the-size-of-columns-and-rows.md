@@ -4,6 +4,7 @@ title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
 forumTopicId: 301134
+dashedName: use-css-grid-units-to-change-the-size-of-columns-and-rows
 ---
 
 # --description--

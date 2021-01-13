@@ -4,6 +4,7 @@ title: 除法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqkbdAr'
 forumTopicId: 17566
+dashedName: divide-one-number-by-another-with-javascript
 ---
 
 # --description--
@@ -36,5 +37,22 @@ assert(quotient === 2);
 assert(/\d+\s*\/\s*\d+/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'quotient = '+z;})(quotient);
+```
+
+## --seed-contents--
+
+```js
+var quotient = 66 / 0;
+```
+
 # --solutions--
 
+```js
+var quotient = 66 / 33;
+```

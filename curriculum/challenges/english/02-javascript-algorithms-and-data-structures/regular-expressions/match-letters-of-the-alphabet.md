@@ -3,6 +3,7 @@ id: 587d7db5367417b2b2512b96
 title: Match Letters of the Alphabet
 challengeType: 1
 forumTopicId: 301354
+dashedName: match-letters-of-the-alphabet
 ---
 
 # --description--

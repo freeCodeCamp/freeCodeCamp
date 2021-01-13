@@ -4,6 +4,7 @@ title: Learn How the CSS @keyframes and animation Properties Work
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
 forumTopicId: 301059
+dashedName: learn-how-the-css-keyframes-and-animation-properties-work
 ---
 
 # --description--

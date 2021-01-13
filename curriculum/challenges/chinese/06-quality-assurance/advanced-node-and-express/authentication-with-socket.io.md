@@ -3,6 +3,7 @@ id: 589fc831f9fc0f352b528e77
 title: 使用Socket.IO进行身份验证
 challengeType: 2
 forumTopicId: 301548
+dashedName: authentication-with-socket-io
 ---
 
 # --description--
@@ -140,3 +141,10 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

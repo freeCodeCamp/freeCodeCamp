@@ -3,6 +3,7 @@ id: 5eb3e4aa847216613aa81983
 title: Semiprime
 challengeType: 5
 forumTopicId: 385318
+dashedName: semiprime
 ---
 
 # --description--

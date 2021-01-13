@@ -3,6 +3,7 @@ id: 5900f4461000cf542c50ff58
 title: 问题217：平衡数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-217-balanced-numbers
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler217(), 6273134);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler217() {
+
+  return true;
+}
+
+euler217();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

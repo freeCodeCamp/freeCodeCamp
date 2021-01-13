@@ -3,6 +3,7 @@ id: 5900f3971000cf542c50feaa
 title: 'Problem 43: Sub-string divisibility'
 challengeType: 5
 forumTopicId: 302100
+dashedName: problem-43-sub-string-divisibility
 ---
 
 # --description--

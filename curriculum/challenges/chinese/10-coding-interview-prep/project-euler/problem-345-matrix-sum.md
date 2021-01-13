@@ -3,6 +3,7 @@ id: 5900f4c81000cf542c50ffda
 title: 问题345：矩阵求和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-345-matrix-sum
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler345(), 13938);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler345() {
+
+  return true;
+}
+
+euler345();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

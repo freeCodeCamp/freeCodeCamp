@@ -4,6 +4,7 @@ title: 函数可以返回某个值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271
+dashedName: return-a-value-from-a-function-with-return
 ---
 
 # --description--
@@ -51,5 +52,18 @@ assert(timesFive(2) === 10);
 assert(timesFive(0) === 0);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+function timesFive(num) {
+  return num * 5;
+}
+timesFive(10);
+```

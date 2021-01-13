@@ -2,6 +2,7 @@
 id: 5d822fd413a79914d39e992e
 title: Part 101
 challengeType: 0
+dashedName: part-101
 ---
 
 # --description--

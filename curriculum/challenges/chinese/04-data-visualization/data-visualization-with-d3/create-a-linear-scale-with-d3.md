@@ -3,6 +3,7 @@ id: 587d7fab367417b2b2512bda
 title: 用 D3 创建线性比例
 challengeType: 6
 forumTopicId: 301483
+dashedName: create-a-linear-scale-with-d3
 ---
 
 # --description--
@@ -45,5 +46,41 @@ assert(code.match(/\.scaleLinear/g));
 assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <script>
+    // Add your code below this line
+
+    const scale = undefined; // Create the scale here
+    const output = scale(); // Call scale with an argument here
+
+    // Add your code above this line
+
+    d3.select("body")
+      .append("h2")
+      .text(output);
+
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <script>
+
+    const scale = d3.scaleLinear();
+    const output = scale(50); 
+
+    d3.select("body")
+      .append("h2")
+      .text(output);
+
+  </script>
+</body>
+```

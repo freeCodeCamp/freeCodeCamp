@@ -3,6 +3,7 @@ id: 5900f4b91000cf542c50ffcb
 title: 问题332：球形三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-332-spherical-triangles
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler332(), 2717.751525);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler332() {
+
+  return true;
+}
+
+euler332();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdef
 title: Build a Voting App
 challengeType: 4
 forumTopicId: 302359
+dashedName: build-a-voting-app
 ---
 
 # --description--
@@ -28,11 +29,6 @@ Here are the specific user stories you should implement for this project:
 **User Story:** As an authenticated user, if you don't like the options on a poll, you can create a new option.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the \`Solution Link\` field. Optionally, also submit a link to your project's source code in the \`GitHub Link\` field.
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

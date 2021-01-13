@@ -3,6 +3,7 @@ id: 5900f4d31000cf542c50ffe6
 title: 'Problem 359: Hilbert''s New Hotel'
 challengeType: 5
 forumTopicId: 302019
+dashedName: problem-359-hilberts-new-hotel
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4251000cf542c50ff38
 title: 问题185：数字思维
 challengeType: 5
 videoUrl: ''
+dashedName: problem-185-number-mind
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler185(), 4640261571849533);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler185() {
+
+  return true;
+}
+
+euler185();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

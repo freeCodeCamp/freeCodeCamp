@@ -3,6 +3,7 @@ id: 5900f3d21000cf542c50fee5
 title: 问题102：三角形遏制
 challengeType: 5
 videoUrl: ''
+dashedName: problem-102-triangle-containment
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler102(), 228);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler102() {
+
+  return true;
+}
+
+euler102();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

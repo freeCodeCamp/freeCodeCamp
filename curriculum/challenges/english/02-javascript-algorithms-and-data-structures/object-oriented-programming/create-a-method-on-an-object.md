@@ -3,6 +3,7 @@ id: 587d7dad367417b2b2512b75
 title: Create a Method on an Object
 challengeType: 1
 forumTopicId: 301318
+dashedName: create-a-method-on-an-object
 ---
 
 # --description--

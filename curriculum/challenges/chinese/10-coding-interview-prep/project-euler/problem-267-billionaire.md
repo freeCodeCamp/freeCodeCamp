@@ -3,6 +3,7 @@ id: 5900f4771000cf542c50ff8a
 title: 问题267：亿万富翁
 challengeType: 5
 videoUrl: ''
+dashedName: problem-267-billionaire
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler267(), 0.999992836187);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler267() {
+
+  return true;
+}
+
+euler267();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

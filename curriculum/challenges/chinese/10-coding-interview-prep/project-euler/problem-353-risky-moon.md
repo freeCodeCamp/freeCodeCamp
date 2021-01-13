@@ -3,6 +3,7 @@ id: 5900f4cd1000cf542c50ffe0
 title: 问题353：危险的月亮
 challengeType: 5
 videoUrl: ''
+dashedName: problem-353-risky-moon
 ---
 
 # --description--
@@ -31,5 +32,21 @@ videoUrl: ''
 assert.strictEqual(euler353(), 1.2759860331);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler353() {
+
+  return true;
+}
+
+euler353();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

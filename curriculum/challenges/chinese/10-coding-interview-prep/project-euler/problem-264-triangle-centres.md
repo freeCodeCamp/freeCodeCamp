@@ -3,6 +3,7 @@ id: 5900f4751000cf542c50ff87
 title: 问题264：三角中心
 challengeType: 5
 videoUrl: ''
+dashedName: problem-264-triangle-centres
 ---
 
 # --description--
@@ -23,5 +24,21 @@ A（-4,3），B（5,0），C（4，-3）A（4,3），B（5,0），C（-4，-3）
 assert.strictEqual(euler264(), 2816417.1055);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler264() {
+
+  return true;
+}
+
+euler264();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

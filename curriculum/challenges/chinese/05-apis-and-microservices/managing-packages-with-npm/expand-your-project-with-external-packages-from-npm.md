@@ -3,6 +3,7 @@ id: 587d7fb4367417b2b2512c00
 title: 使用 npm 的外部软件包扩展您的项目
 challengeType: 2
 forumTopicId: 301527
+dashedName: expand-your-project-with-external-packages-from-npm
 ---
 
 # --description--
@@ -67,3 +68,10 @@ Moment 是一个非常方便的库，它用来处理时间和日期。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

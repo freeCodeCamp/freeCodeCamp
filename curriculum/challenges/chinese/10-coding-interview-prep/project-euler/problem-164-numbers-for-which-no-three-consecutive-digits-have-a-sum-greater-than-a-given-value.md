@@ -3,6 +3,8 @@ id: 5900f4111000cf542c50ff23
 title: 问题164：没有三个连续数字的总和大于给定值的数字
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-164-numbers-for-which-no-three-consecutive-digits-have-a-sum-greater-than-a-given-value
 ---
 
 # --description--
@@ -17,5 +19,21 @@ videoUrl: ''
 assert.strictEqual(euler164(), 378158756814587);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler164() {
+
+  return true;
+}
+
+euler164();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

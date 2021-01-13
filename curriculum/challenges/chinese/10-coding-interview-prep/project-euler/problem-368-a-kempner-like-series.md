@@ -3,6 +3,7 @@ id: 5900f4dd1000cf542c50ffef
 title: 问题368：类似肯珀纳的系列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-368-a-kempner-like-series
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler368(), 253.6135092068);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler368() {
+
+  return true;
+}
+
+euler368();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

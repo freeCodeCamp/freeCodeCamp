@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9f
 title: 匹配所有的字母和数字
 challengeType: 1
 forumTopicId: 301346
+dashedName: match-all-letters-and-numbers
 ---
 
 # --description--
@@ -74,5 +75,20 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /change/; // Change this line
+let result = quoteSample.match(alphabetRegexV2).length;
+```
+
 # --solutions--
 
+```js
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; // Change this line
+let result = quoteSample.match(alphabetRegexV2).length;
+```

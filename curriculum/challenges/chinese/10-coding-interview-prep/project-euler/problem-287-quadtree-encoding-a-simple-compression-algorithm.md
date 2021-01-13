@@ -3,6 +3,7 @@ id: 5900f48b1000cf542c50ff9e
 title: 问题287：四叉树编码（一种简单的压缩算法）
 challengeType: 5
 videoUrl: ''
+dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 ---
 
 # --description--
@@ -33,5 +34,21 @@ videoUrl: ''
 assert.strictEqual(euler287(), 313135496);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler287() {
+
+  return true;
+}
+
+euler287();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

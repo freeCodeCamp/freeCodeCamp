@@ -4,6 +4,7 @@ title: 固定定位的参照物是浏览器的窗口
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
+dashedName: lock-an-element-to-the-browser-window-with-fixed-positioning
 ---
 
 # --description--
@@ -36,5 +37,84 @@ assert($('#navbar').css('top') == '0px');
 assert($('#navbar').css('left') == '0px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    min-height: 150vh;
+  }
+  #navbar {
+
+
+
+    width: 100%;
+    background-color: #767676;
+  }
+  nav ul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+  }
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+  a {
+    text-decoration: none;
+  }
+</style>
+<body>
+  <header>
+    <h1>Welcome!</h1>
+    <nav id="navbar">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <p>I shift up when the #navbar is fixed to the browser window.</p>
+</body>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    min-height: 150vh;
+  }
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #767676;
+  }
+  nav ul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+  }
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+  a {
+    text-decoration: none;
+  }
+</style>
+<body>
+  <header>
+    <h1>Welcome!</h1>
+    <nav id="navbar">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <p>I shift up when the #navbar is fixed to the browser window.</p>
+</body>
+```

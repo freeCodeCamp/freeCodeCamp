@@ -4,6 +4,7 @@ title: 从函数返回布尔值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
+dashedName: returning-boolean-values-from-functions
 ---
 
 # --description--
@@ -54,5 +55,28 @@ assert(isLess(15, 10) === false);
 assert(!/if|else/g.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function isLess(a, b) {
+  // Only change code below this line
+  if (a < b) {
+    return true;
+  } else {
+    return false;
+  }
+  // Only change code above this line
+}
+
+isLess(10, 15);
+```
+
 # --solutions--
 
+```js
+function isLess(a, b) {
+  return a < b;
+}
+```

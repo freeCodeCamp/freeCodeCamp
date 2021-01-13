@@ -3,6 +3,7 @@ id: 5900f3be1000cf542c50fed1
 title: 'Problem 82: Path sum: three ways'
 challengeType: 5
 forumTopicId: 302196
+dashedName: problem-82-path-sum-three-ways
 ---
 
 # --description--

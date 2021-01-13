@@ -3,6 +3,7 @@ id: 5900f5171000cf542c510029
 title: 问题426：箱式球系统
 challengeType: 5
 videoUrl: ''
+dashedName: problem-426-box-ball-system
 ---
 
 # --description--
@@ -29,5 +30,21 @@ Starting from the initial configuration (t0, t1, …, t10), the final state beco
 assert.strictEqual(euler426(), 31591886008);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler426() {
+
+  return true;
+}
+
+euler426();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -4,6 +4,7 @@ title: 更改元素的相对位置
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVmMtZ'
 forumTopicId: 301044
+dashedName: change-an-elements-relative-position
 ---
 
 # --description--
@@ -39,5 +40,36 @@ assert($('h2').css('position') == 'relative');
 assert($('h2').css('top') == '15px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  h2 {
+
+
+  }
+</style>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
+```
+
 # --solutions--
 
+```html
+<style>
+  h2 {
+    position: relative;
+    top: 15px;
+  }
+</style>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
+```

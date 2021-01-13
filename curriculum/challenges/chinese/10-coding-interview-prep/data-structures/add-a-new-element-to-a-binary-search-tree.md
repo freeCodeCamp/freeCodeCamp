@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7b
 title: 将新元素添加到二叉搜索树
 challengeType: 1
 videoUrl: ''
+dashedName: add-a-new-element-to-a-binary-search-tree
 ---
 
 # --description--
@@ -90,5 +91,85 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    inOrder() {
+      if (!this.root) {
+        return null;
+      }
+      var result = new Array();
+      function traverseInOrder(node) {
+        node.left && traverseInOrder(node.left);
+        result.push(node.value);
+        node.right && traverseInOrder(node.right);
+      }
+      traverseInOrder(this.root);
+      return result;
+    }
+  }
+);
+```
+
+## --seed-contents--
+
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  this.add = function(element) {
+    let current = this.root;
+    if (!current) {
+      this.root = new Node(element);
+      return;
+    } else {
+      const searchTree = function(current) {
+        if (current.value > element) {
+          if (current.left) {
+            return searchTree(current.left);
+          } else {
+            current.left = new Node(element);
+            return;
+          }
+        } else if (current.value < element) {
+          if (current.right) {
+            return searchTree(current.right);
+          } else {
+            current.right = new Node(element);
+            return;
+          }
+        } else {
+          return null;
+        }
+      };
+      return searchTree(current);
+    }
+  };
+}
+```

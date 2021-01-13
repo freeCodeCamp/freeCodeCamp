@@ -3,6 +3,7 @@ id: 5900f48a1000cf542c50ff9d
 title: 问题286：计分概率
 challengeType: 5
 videoUrl: ''
+dashedName: problem-286-scoring-probabilities
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler286(), 52.6494571953);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler286() {
+
+  return true;
+}
+
+euler286();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

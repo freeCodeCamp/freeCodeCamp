@@ -3,6 +3,7 @@ id: 587d825b367417b2b2512c8d
 title: 创建ES6 JavaScript地图
 challengeType: 1
 videoUrl: ''
+dashedName: create-an-es6-javascript-map
 ---
 
 # --description--
@@ -23,5 +24,15 @@ myMap包含键值对`freeCodeCamp` ， `Awesome!` 。
 assert(myMap.get('freeCodeCamp') === 'Awesome!');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+// solution required
+```

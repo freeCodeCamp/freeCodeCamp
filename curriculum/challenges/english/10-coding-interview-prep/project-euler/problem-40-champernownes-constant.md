@@ -3,6 +3,7 @@ id: 5900f3941000cf542c50fea7
 title: 'Problem 40: Champernowne''s constant'
 challengeType: 5
 forumTopicId: 302066
+dashedName: problem-40-champernownes-constant
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Add Gaps Faster with grid-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/ca2qVtv'
 forumTopicId: 301118
+dashedName: add-gaps-faster-with-grid-gap
 ---
 
 # --description--

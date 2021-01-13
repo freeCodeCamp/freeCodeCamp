@@ -3,6 +3,7 @@ id: 587d7fad367417b2b2512be1
 title: Handle Click Events with JavaScript using the onclick property
 challengeType: 6
 forumTopicId: 301503
+dashedName: handle-click-events-with-javascript-using-the-onclick-property
 ---
 
 # --description--

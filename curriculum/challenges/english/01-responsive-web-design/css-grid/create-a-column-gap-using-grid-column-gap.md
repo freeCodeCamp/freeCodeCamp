@@ -4,6 +4,7 @@ title: Create a Column Gap Using grid-column-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
+dashedName: create-a-column-gap-using-grid-column-gap
 ---
 
 # --description--

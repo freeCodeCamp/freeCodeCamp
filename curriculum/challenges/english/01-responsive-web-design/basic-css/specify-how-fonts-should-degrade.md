@@ -4,6 +4,7 @@ title: Specify How Fonts Should Degrade
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
+dashedName: specify-how-fonts-should-degrade
 ---
 
 # --description--

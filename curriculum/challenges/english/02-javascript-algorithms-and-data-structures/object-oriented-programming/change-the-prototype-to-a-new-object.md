@@ -3,6 +3,7 @@ id: 587d7daf367417b2b2512b7f
 title: Change the Prototype to a New Object
 challengeType: 1
 forumTopicId: 301316
+dashedName: change-the-prototype-to-a-new-object
 ---
 
 # --description--

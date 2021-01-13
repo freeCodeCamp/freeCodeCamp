@@ -3,6 +3,7 @@ id: 5900f3ef1000cf542c50ff01
 title: 'Problem 129: Repunit divisibility'
 challengeType: 5
 forumTopicId: 301756
+dashedName: problem-129-repunit-divisibility
 ---
 
 # --description--

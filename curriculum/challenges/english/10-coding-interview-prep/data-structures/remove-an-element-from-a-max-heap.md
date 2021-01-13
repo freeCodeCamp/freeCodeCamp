@@ -3,6 +3,7 @@ id: 587d825b367417b2b2512c8b
 title: Remove an Element from a Max Heap
 challengeType: 1
 forumTopicId: 301710
+dashedName: remove-an-element-from-a-max-heap
 ---
 
 # --description--

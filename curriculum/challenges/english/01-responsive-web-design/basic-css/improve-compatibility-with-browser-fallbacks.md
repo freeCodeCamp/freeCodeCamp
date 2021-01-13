@@ -4,6 +4,7 @@ title: Improve Compatibility with Browser Fallbacks
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301087
+dashedName: improve-compatibility-with-browser-fallbacks
 ---
 
 # --description--

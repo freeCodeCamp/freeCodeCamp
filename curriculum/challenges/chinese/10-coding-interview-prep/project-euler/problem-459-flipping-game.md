@@ -3,6 +3,7 @@ id: 5900f5371000cf542c51004a
 title: 问题459：翻转游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-459-flipping-game
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler459(), 3996390106631);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler459() {
+
+  return true;
+}
+
+euler459();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ec5
 title: 约瑟夫斯问题
 challengeType: 5
 videoUrl: ''
+dashedName: josephus-problem
 ---
 
 # --description--
@@ -53,5 +54,50 @@ assert.equal(josephus(17, 6), 2);
 assert.equal(josephus(29, 4), 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function josephus(init, kill) {
+
+}
+```
+
 # --solutions--
 
+```js
+function josephus(init, kill) {
+  var Josephus = {
+    init: function(n) {
+      this.head = {};
+      var current = this.head;
+      for (var i = 0; i < n - 1; i++) {
+        current.label = i + 1;
+        current.next = {
+          prev: current
+        };
+        current = current.next;
+      }
+      current.label = n;
+      current.next = this.head;
+      this.head.prev = current;
+      return this;
+    },
+    kill: function(spacing) {
+      var current = this.head;
+      while (current.next !== current) {
+        for (var i = 0; i < spacing - 1; i++) {
+          current = current.next;
+        }
+        current.prev.next = current.next;
+        current.next.prev = current.prev;
+        current = current.next;
+      }
+      return current.label;
+    }
+  }
+
+  return Josephus.init(init).kill(kill)
+}
+```

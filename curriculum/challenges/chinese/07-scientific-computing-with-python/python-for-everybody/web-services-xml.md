@@ -2,6 +2,7 @@
 id: 5e7b9f0e0b6c005b0e76f07b
 challengeType: 11
 videoId: _pZ0srbg7So
+dashedName: web-services-xml
 ---
 
 # --question--
@@ -38,9 +39,4 @@ Plain text should be encoded using UTF-8.
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

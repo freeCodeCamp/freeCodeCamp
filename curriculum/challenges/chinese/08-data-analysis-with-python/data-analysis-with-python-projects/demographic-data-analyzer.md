@@ -1,6 +1,7 @@
 ---
 id: 5e46f7e5ac417301a38fb929
 challengeType: 10
+dashedName: demographic-data-analyzer
 ---
 
 # --description--
@@ -23,3 +24,8 @@ It should pass all Python tests.
 
 # --solutions--
 
+```py
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
+  # Please check our contributing guidelines to learn more.
+```

@@ -4,6 +4,7 @@ title: 通过添加细微图案作为背景图像来创建纹理
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQdwJC8'
 forumTopicId: 301052
+dashedName: create-texture-by-adding-a-subtle-pattern-as-a-background-image
 ---
 
 # --description--
@@ -26,5 +27,24 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+
+  }
+</style>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png");
+  }
+</style>
+```

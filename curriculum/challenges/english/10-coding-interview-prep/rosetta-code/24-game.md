@@ -3,6 +3,7 @@ id: 5951e88f64ebf159166a1176
 title: 24 game
 challengeType: 5
 forumTopicId: 302218
+dashedName: 24-game
 ---
 
 # --description--

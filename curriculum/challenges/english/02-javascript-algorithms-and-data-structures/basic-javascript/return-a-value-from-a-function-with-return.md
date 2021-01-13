@@ -4,6 +4,7 @@ title: Return a Value from a Function with Return
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271
+dashedName: return-a-value-from-a-function-with-return
 ---
 
 # --description--

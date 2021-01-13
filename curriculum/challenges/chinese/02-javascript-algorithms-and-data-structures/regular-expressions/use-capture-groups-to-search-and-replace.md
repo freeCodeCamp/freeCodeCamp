@@ -3,6 +3,7 @@ id: 587d7dbb367417b2b2512bab
 title: 使用捕获组搜索和替换
 challengeType: 1
 forumTopicId: 301368
+dashedName: use-capture-groups-to-search-and-replace
 ---
 
 # --description--
@@ -51,5 +52,22 @@ assert(
 assert(code.match(/result\s*=\s*huhText\.replace\(.*?\)/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let str = "one two three";
+let fixRegex = /change/; // Change this line
+let replaceText = ""; // Change this line
+let result = str.replace(fixRegex, replaceText);
+```
+
 # --solutions--
 
+```js
+let str = "one two three";
+let fixRegex = /(\w+) (\w+) (\w+)/g; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let result = str.replace(fixRegex, replaceText);
+```

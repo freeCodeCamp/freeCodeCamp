@@ -4,6 +4,7 @@ title: Adjust the Height of an Element Using the height Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
+dashedName: adjust-the-height-of-an-element-using-the-height-property
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 通过索引修改数组中的数据
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/czQM4A8'
 forumTopicId: 18241
+dashedName: modify-array-data-with-indexes
 ---
 
 # --description--
@@ -59,5 +60,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [18,64,99];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [18,64,99];
+myArray[0] = 45;
+```

@@ -3,6 +3,7 @@ id: 5900f4691000cf542c50ff7b
 title: 问题252：凸孔
 challengeType: 5
 videoUrl: ''
+dashedName: problem-252-convex-holes
 ---
 
 # --description--
@@ -27,5 +28,21 @@ S0 = 290797 Sn + 1 = Sn2 mod 50515093 Tn =（Sn mod 2000）-1000
 assert.strictEqual(euler252(), 104924);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler252() {
+
+  return true;
+}
+
+euler252();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

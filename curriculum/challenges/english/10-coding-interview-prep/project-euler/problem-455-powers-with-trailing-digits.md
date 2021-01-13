@@ -3,6 +3,7 @@ id: 5900f5331000cf542c510046
 title: 'Problem 455: Powers With Trailing Digits'
 challengeType: 5
 forumTopicId: 302129
+dashedName: problem-455-powers-with-trailing-digits
 ---
 
 # --description--

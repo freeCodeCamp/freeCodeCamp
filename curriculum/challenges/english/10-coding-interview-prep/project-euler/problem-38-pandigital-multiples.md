@@ -3,6 +3,7 @@ id: 5900f3931000cf542c50fea5
 title: 'Problem 38: Pandigital multiples'
 challengeType: 5
 forumTopicId: 302042
+dashedName: problem-38-pandigital-multiples
 ---
 
 # --description--

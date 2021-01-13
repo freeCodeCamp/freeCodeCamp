@@ -3,6 +3,7 @@ id: 5900f4031000cf542c50ff15
 title: 问题150：在三角形阵列中搜索具有最小和的子三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum
 ---
 
 # --description--
@@ -33,5 +34,21 @@ s7 s8 s9 s10 ......
 assert.strictEqual(euler150(), -271248680);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler150() {
+
+  return true;
+}
+
+euler150();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f5381000cf542c51004b
 title: 问题460：移动中的蚂蚁
 challengeType: 5
 videoUrl: ''
+dashedName: problem-460-an-ant-on-the-move
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler460(), 18.420738199);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler460() {
+
+  return true;
+}
+
+euler460();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

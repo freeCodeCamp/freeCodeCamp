@@ -3,6 +3,7 @@ id: 5900f4a11000cf542c50ffb4
 title: 问题309：整数阶梯
 challengeType: 5
 videoUrl: ''
+dashedName: problem-309-integer-ladders
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler309(), 210139);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler309() {
+
+  return true;
+}
+
+euler309();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

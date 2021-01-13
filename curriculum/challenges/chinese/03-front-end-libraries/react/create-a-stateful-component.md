@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036170
 title: 创建一个有状态的组件
 challengeType: 6
 forumTopicId: 301391
+dashedName: create-a-stateful-component
 ---
 
 # --description--
@@ -84,5 +85,50 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<StatefulComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    // Only change code below this line
+
+    // Only change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp!'
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
+```

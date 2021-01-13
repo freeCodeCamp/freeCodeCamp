@@ -3,6 +3,7 @@ id: 587d7b89367417b2b2512b48
 title: 使用 spread 运算符展开数组项
 challengeType: 1
 forumTopicId: 301222
+dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
 ---
 
 # --description--
@@ -56,5 +57,24 @@ assert((arr1, arr2) => {
 });
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [];  // Change this line
+
+console.log(arr2);
+```
+
 # --solutions--
 
+```js
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];
+```

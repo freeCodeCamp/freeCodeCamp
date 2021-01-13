@@ -3,6 +3,7 @@ id: 5900f4ca1000cf542c50ffdc
 title: 问题349：兰顿的蚂蚁
 challengeType: 5
 videoUrl: ''
+dashedName: problem-349-langtons-ant
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler349(), 115384615384614940);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler349() {
+
+  return true;
+}
+
+euler349();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

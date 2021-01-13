@@ -3,6 +3,7 @@ id: 5900f4801000cf542c50ff92
 title: 问题275：平衡雕塑
 challengeType: 5
 videoUrl: ''
+dashedName: problem-275-balanced-sculptures
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler275(), 15030564);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler275() {
+
+  return true;
+}
+
+euler275();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

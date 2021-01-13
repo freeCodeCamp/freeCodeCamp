@@ -3,6 +3,7 @@ id: 5900f47b1000cf542c50ff8d
 title: 问题271：模块化立方体，第1部分
 challengeType: 5
 videoUrl: ''
+dashedName: problem-271-modular-cubes-part-1
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler271(), 4617456485273130000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler271() {
+
+  return true;
+}
+
+euler271();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

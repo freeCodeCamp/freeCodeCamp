@@ -3,6 +3,7 @@ id: 5900f4c81000cf542c50ffd9
 title: 问题347：最大整数可被两个素数整除
 challengeType: 5
 videoUrl: ''
+dashedName: problem-347-largest-integer-divisible-by-two-primes
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler347(), 11109800204052);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler347() {
+
+  return true;
+}
+
+euler347();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

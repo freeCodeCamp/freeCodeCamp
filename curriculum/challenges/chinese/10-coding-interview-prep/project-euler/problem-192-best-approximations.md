@@ -3,6 +3,7 @@ id: 5900f42c1000cf542c50ff3f
 title: 问题192：最佳近似值
 challengeType: 5
 videoUrl: ''
+dashedName: problem-192-best-approximations
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler192(), 57060635927998344);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler192() {
+
+  return true;
+}
+
+euler192();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

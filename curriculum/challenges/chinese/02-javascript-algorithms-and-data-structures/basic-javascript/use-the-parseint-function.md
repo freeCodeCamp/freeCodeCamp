@@ -4,6 +4,7 @@ title: 使用 parseInt 函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm83LSW'
 forumTopicId: 301183
+dashedName: use-the-parseint-function
 ---
 
 # --description--
@@ -50,5 +51,22 @@ assert(convertToInteger('77') === 77);
 assert.isNaN(convertToInteger('JamesBond'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function convertToInteger(str) {
+
+}
+
+convertToInteger("56");
+```
+
 # --solutions--
 
+```js
+function convertToInteger(str) {
+  return parseInt(str);
+}
+```

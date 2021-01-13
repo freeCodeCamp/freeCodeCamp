@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036150
 title: 在 Store 里处理 Action
 challengeType: 6
 forumTopicId: 301444
+dashedName: handle-an-action-in-the-store
 ---
 
 # --description--
@@ -54,5 +55,54 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+
+  // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+```
+
 # --solutions--
 
+```js
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+
+  if (action.type === 'LOGIN') {
+    return {login: true}
+  }
+
+  else {
+    return state
+  }
+
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+```

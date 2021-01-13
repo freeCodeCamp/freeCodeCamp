@@ -3,6 +3,7 @@ id: 587d7dbb367417b2b2512baa
 title: 使用捕获组重用模式
 challengeType: 1
 forumTopicId: 301364
+dashedName: reuse-patterns-using-capture-groups
 ---
 
 # --description--
@@ -93,5 +94,20 @@ assert(!reRegex.test('1 2 3'));
 assert(reRegex.test('10 10 10'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let repeatNum = "42 42 42";
+let reRegex = /change/; // Change this line
+let result = reRegex.test(repeatNum);
+```
+
 # --solutions--
 
+```js
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/;
+let result = reRegex.test(repeatNum);
+```

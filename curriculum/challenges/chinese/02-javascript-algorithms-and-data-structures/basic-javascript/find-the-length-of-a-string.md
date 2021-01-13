@@ -4,6 +4,7 @@ title: 查找字符串的长度
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqEAd'
 forumTopicId: 18182
+dashedName: find-the-length-of-a-string
 ---
 
 # --description--
@@ -41,5 +42,24 @@ assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8);
 assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+var lastNameLength = 0;
+var lastName = "Lovelace";
+
+// Only change code below this line
+
+lastNameLength = lastName;
+```
+
 # --solutions--
 
+```js
+var lastNameLength = 0;
+var lastName = "Lovelace";
+lastNameLength = lastName.length;
+```

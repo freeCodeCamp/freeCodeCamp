@@ -3,6 +3,7 @@ id: 5900f3f31000cf542c50ff06
 title: 问题135：同样的差异
 challengeType: 5
 videoUrl: ''
+dashedName: problem-135-same-differences
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler135(), 4989);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler135() {
+
+  return true;
+}
+
+euler135();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

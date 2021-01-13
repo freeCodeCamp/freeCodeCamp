@@ -4,6 +4,7 @@ title: 相等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
+dashedName: comparison-with-the-equality-operator
 ---
 
 # --description--
@@ -60,5 +61,29 @@ assert(testEqual('12') === 'Equal');
 assert(code.match(/==/g) && !code.match(/===/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+function testEqual(val) {
+  if (val) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+testEqual(10);
+```
+
 # --solutions--
 
+```js
+function testEqual(val) {
+  if (val == 12) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
+```

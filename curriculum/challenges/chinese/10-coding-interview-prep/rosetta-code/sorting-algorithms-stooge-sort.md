@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8012
 title: Sorting algorithms/Stooge sort
 challengeType: 5
 forumTopicId: 302318
+dashedName: sorting-algorithmsstooge-sort
 ---
 
 # --description--

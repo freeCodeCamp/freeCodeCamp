@@ -4,6 +4,7 @@ title: 使用 tabindex 指定多个元素的键盘焦点顺序
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzRRcb'
 forumTopicId: 301028
+dashedName: use-tabindex-to-specify-the-order-of-keyboard-focus-for-several-elements
 ---
 
 # --description--
@@ -50,5 +51,76 @@ assert($('#search').attr('tabindex') == '1');
 assert($('#submit').attr('tabindex') == '2');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <header>
+    <h1>Even Deeper Thoughts with Master Camper Cat</h1>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Training</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form>
+    <label for="search">Search:</label>
+
+
+    <input type="search" name="search" id="search">
+    <input type="submit" name="submit" value="Submit" id="submit">
+
+
+  </form>
+  <h2>Inspirational Quotes</h2>
+  <blockquote>
+    <p>&ldquo;There's no Theory of Evolution, just a list of creatures I've allowed to live.&rdquo;<br>
+    - Chuck Norris</p>
+  </blockquote>
+  <blockquote>
+    <p>&ldquo;Wise men say forgiveness is divine, but never pay full price for late pizza.&rdquo;<br>
+    - TMNT</p>
+  </blockquote>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <header>
+    <h1>Even Deeper Thoughts with Master Camper Cat</h1>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Training</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form>
+    <label for="search">Search:</label>
+
+
+    <input tabindex="1" type="search" name="search" id="search">
+    <input tabindex="2" type="submit" name="submit" value="Submit" id="submit">
+
+
+  </form>
+  <h2>Inspirational Quotes</h2>
+  <blockquote>
+    <p>&ldquo;There's no Theory of Evolution, just a list of creatures I've allowed to live.&rdquo;<br>
+    - Chuck Norris</p>
+  </blockquote>
+  <blockquote>
+    <p>&ldquo;Wise men say forgiveness is divine, but never pay full price for late pizza.&rdquo;<br>
+    - TMNT</p>
+  </blockquote>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```

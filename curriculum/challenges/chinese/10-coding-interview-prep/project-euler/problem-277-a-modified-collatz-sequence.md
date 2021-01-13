@@ -3,6 +3,7 @@ id: 5900f4811000cf542c50ff94
 title: 问题277：修改的Collat​​z序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-277-a-modified-collatz-sequence
 ---
 
 # --description--
@@ -31,5 +32,21 @@ videoUrl: ''
 assert.strictEqual(euler277(), 1125977393124310);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler277() {
+
+  return true;
+}
+
+euler277();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

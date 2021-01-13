@@ -3,6 +3,7 @@ id: 587d7db1367417b2b2512b85
 title: 将子辈的原型设置为父辈的实例
 challengeType: 1
 forumTopicId: 301325
+dashedName: set-the-childs-prototype-to-an-instance-of-the-parent
 ---
 
 # --description--
@@ -36,5 +37,43 @@ duck.eat(); // prints "nom nom nom"
 assert(Animal.prototype.isPrototypeOf(Dog.prototype));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+// Only change code below this line
+
+
+let beagle = new Dog();
+```
+
 # --solutions--
 
+```js
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+Dog.prototype = Object.create(Animal.prototype);
+
+let beagle = new Dog();
+beagle.eat();
+```

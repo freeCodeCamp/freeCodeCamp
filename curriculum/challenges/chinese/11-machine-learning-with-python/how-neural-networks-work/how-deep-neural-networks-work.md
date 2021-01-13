@@ -2,6 +2,7 @@
 id: 5e9a0e9ef99a403d019610ca
 challengeType: 11
 videoId: zvalnHWGtx4
+dashedName: how-deep-neural-networks-work
 ---
 
 # --question--
@@ -25,9 +26,4 @@ There is no difference between the two methods.
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

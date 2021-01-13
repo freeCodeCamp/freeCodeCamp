@@ -3,6 +3,7 @@ id: 587d825c367417b2b2512c8f
 title: Implement Merge Sort
 challengeType: 1
 forumTopicId: 301614
+dashedName: implement-merge-sort
 ---
 
 # --description--

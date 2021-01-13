@@ -4,6 +4,7 @@ title: Use CSS Animation to Change the Hover State of a Button
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4vZAa'
 forumTopicId: 301073
+dashedName: use-css-animation-to-change-the-hover-state-of-a-button
 ---
 
 # --description--

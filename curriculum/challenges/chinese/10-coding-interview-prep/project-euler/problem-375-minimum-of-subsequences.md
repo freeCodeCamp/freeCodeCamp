@@ -3,6 +3,7 @@ id: 5900f4e41000cf542c50fff5
 title: 问题375：最小子序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-375-minimum-of-subsequences
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler375(), 7435327983715286000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler375() {
+
+  return true;
+}
+
+euler375();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

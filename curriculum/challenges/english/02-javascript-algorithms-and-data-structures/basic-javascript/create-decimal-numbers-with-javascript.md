@@ -4,6 +4,7 @@ title: Create Decimal Numbers with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GEuW'
 forumTopicId: 16826
+dashedName: create-decimal-numbers-with-javascript
 ---
 
 # --description--

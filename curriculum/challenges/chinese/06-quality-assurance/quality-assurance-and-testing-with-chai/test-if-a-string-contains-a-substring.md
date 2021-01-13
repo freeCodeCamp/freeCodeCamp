@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c53
 title: 测试字符串是否包含子字符串
 challengeType: 2
 forumTopicId: 301597
+dashedName: test-if-a-string-contains-a-substring
 ---
 
 # --description--
@@ -69,3 +70,10 @@ forumTopicId: 301597
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

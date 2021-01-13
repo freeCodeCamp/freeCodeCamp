@@ -3,6 +3,7 @@ id: 587d7b88367417b2b2512b44
 title: 编写带参数的箭头函数
 challengeType: 1
 forumTopicId: 301223
+dashedName: write-arrow-functions-with-parameters
 ---
 
 # --description--
@@ -67,5 +68,24 @@ assert(() => {
 (getUserInput) => assert(!getUserInput('index').match(/function/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var myConcat = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+```
+
 # --solutions--
 
+```js
+const myConcat = (arr1, arr2) =>  {
+  return arr1.concat(arr2);
+};
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+```

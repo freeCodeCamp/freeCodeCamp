@@ -3,6 +3,7 @@ id: bad87fee1348bd9aec908853
 title: Add id Attributes to Bootstrap Elements
 challengeType: 0
 forumTopicId: 16639
+dashedName: add-id-attributes-to-bootstrap-elements
 ---
 
 # --description--

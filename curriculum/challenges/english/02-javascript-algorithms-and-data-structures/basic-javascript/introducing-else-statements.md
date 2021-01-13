@@ -4,6 +4,7 @@ title: Introducing Else Statements
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cek4Efq'
 forumTopicId: 18207
+dashedName: introducing-else-statements
 ---
 
 # --description--

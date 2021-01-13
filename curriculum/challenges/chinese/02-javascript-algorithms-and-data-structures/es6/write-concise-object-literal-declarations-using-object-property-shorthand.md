@@ -3,6 +3,7 @@ id: 587d7b8a367417b2b2512b4f
 title: 使用简单字段编写简洁的对象字面量声明
 challengeType: 1
 forumTopicId: 301225
+dashedName: write-concise-object-literal-declarations-using-object-property-shorthand
 ---
 
 # --description--
@@ -45,5 +46,30 @@ assert.deepEqual(
 (getUserInput) => assert(!getUserInput('index').match(/:/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const createPerson = (name, age, gender) => {
+  // Only change code below this line
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+  // Only change code above this line
+};
+```
+
 # --solutions--
 
+```js
+const createPerson = (name, age, gender) => {
+  return {
+    name,
+    age,
+    gender
+  };
+};
+```

@@ -3,6 +3,7 @@ id: 5900f3d21000cf542c50fee4
 title: 问题101：最佳多项式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-101-optimum-polynomial
 ---
 
 # --description--
@@ -21,5 +22,21 @@ OP（1，n）= 11 1,1,1,1 ...... OP（2，n）= 7n-6 1,8,15，...... OP（3，n�
 assert.strictEqual(euler101(), 37076114526);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler101() {
+
+  return true;
+}
+
+euler101();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

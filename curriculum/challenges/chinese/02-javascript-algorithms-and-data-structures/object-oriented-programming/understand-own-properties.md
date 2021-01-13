@@ -3,6 +3,7 @@ id: 587d7dae367417b2b2512b7b
 title: 了解自己的属性
 challengeType: 1
 forumTopicId: 301326
+dashedName: understand-own-properties
 ---
 
 # --description--
@@ -61,5 +62,41 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+function getOwnProps (obj) {
+  const props = [];
+
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      props.push(prop);
+    }
+  }
+
+  return props;
+}
+
+const ownProps = getOwnProps(canary);
+```

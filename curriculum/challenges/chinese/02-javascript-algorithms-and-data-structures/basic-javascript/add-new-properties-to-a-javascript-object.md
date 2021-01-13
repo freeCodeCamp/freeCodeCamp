@@ -4,6 +4,7 @@ title: 给对象添加新属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
+dashedName: add-new-properties-to-a-javascript-object
 ---
 
 # --description--
@@ -38,5 +39,36 @@ assert(myDog.bark !== undefined);
 assert(!/bark[^\n]:/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myDog);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDog.bark = "Woof Woof";
+```

@@ -4,6 +4,7 @@ title: 将变量附加到字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
+dashedName: appending-variables-to-strings
 ---
 
 # --description--
@@ -28,5 +29,40 @@ assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
 assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){
+  var output = [];
+  if(typeof someAdjective === 'string') {
+    output.push('someAdjective = "' + someAdjective + '"');
+  } else {
+    output.push('someAdjective is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
+```
+
+## --seed-contents--
+
+```js
+// Change code below this line
+
+var someAdjective;
+var myStr = "Learning to code is ";
+```
+
 # --solutions--
 
+```js
+var someAdjective = "neat";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
+```

@@ -4,6 +4,7 @@ title: Multiple Identical Options in Switch Statements
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
+dashedName: multiple-identical-options-in-switch-statements
 ---
 
 # --description--

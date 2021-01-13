@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b41
 title: 用 const 关键字声明只读变量
 challengeType: 1
 forumTopicId: 301201
+dashedName: declare-a-read-only-variable-with-the-const-keyword
 ---
 
 # --description--
@@ -52,5 +53,36 @@ FAV_PET = "Dogs"; // returns error
   assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function printManyTimes(str) {
+
+  // Only change code below this line
+
+  var sentence = str + " is cool!";
+  for (var i = 0; i < str.length; i+=2) {
+    console.log(sentence);
+  }
+
+  // Only change code above this line
+
+}
+printManyTimes("freeCodeCamp");
+```
+
 # --solutions--
 
+```js
+function printManyTimes(str) {
+
+  const SENTENCE = str + " is cool!";
+  for (let i = 0; i < str.length; i+=2) {
+    console.log(SENTENCE);
+  }
+
+}
+printManyTimes("freeCodeCamp");
+```

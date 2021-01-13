@@ -3,6 +3,7 @@ id: 5900f3f71000cf542c50ff0a
 title: 问题139：毕达哥拉斯瓷砖
 challengeType: 5
 videoUrl: ''
+dashedName: problem-139-pythagorean-tiles
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler139(), 10057761);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler139() {
+
+  return true;
+}
+
+euler139();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

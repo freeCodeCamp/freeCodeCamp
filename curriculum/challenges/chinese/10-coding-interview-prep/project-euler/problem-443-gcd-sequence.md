@@ -3,6 +3,7 @@ id: 5900f5271000cf542c51003a
 title: 问题443：GCD序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-443-gcd-sequence
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler443(), 2744233049300770);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler443() {
+
+  return true;
+}
+
+euler443();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 587d7db0367417b2b2512b81
 title: 了解对象的原型来自哪里
 challengeType: 1
 forumTopicId: 301330
+dashedName: understand-where-an-objects-prototype-comes-from
 ---
 
 # --description--
@@ -36,5 +37,26 @@ Bird.prototype.isPrototypeOf(duck);
 assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function Dog(name) {
+  this.name = name;
+}
+let beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle);
+```

@@ -3,6 +3,7 @@ id: 5900f5021000cf542c510014
 title: 问题405：矩形平铺
 challengeType: 5
 videoUrl: ''
+dashedName: problem-405-a-rectangular-tiling
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler405(), 237696125);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler405() {
+
+  return true;
+}
+
+euler405();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

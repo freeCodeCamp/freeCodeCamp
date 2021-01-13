@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c4b
 title: 用三个等号断言严格相等
 challengeType: 2
 forumTopicId: 301610
+dashedName: use-the-triple-equals-to-assert-strict-equality
 ---
 
 # --description--
@@ -101,3 +102,10 @@ forumTopicId: 301610
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

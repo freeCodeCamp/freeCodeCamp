@@ -3,6 +3,7 @@ id: 587d8256367417b2b2512c77
 title: 邻接名单
 challengeType: 1
 videoUrl: ''
+dashedName: adjacency-list
 ---
 
 # --description--
@@ -68,5 +69,21 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var undirectedAdjList = {};
+```
+
 # --solutions--
 
+```js
+var undirectedAdjList = {
+  James: ['Jeff'],
+  Jill: ['Jenny'],
+  Jenny: ['Jill', 'Jeff'],
+  Jeff: ['James', 'Jenny']
+};
+```

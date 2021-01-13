@@ -3,6 +3,7 @@ id: 5900f5201000cf542c510032
 title: 问题435：斐波那契数的多项式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-435-polynomials-of-fibonacci-numbers
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler435(), 252541322550);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler435() {
+
+  return true;
+}
+
+euler435();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f5141000cf542c510027
 title: 问题423：连续死球
 challengeType: 5
 videoUrl: ''
+dashedName: problem-423-consecutive-die-throws
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(euler423(), 653972374);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler423() {
+
+  return true;
+}
+
+euler423();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

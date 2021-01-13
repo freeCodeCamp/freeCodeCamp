@@ -3,6 +3,7 @@ id: 587d7db5367417b2b2512b97
 title: 匹配字母表中的数字和字母
 challengeType: 1
 forumTopicId: 301356
+dashedName: match-numbers-and-letters-of-the-alphabet
 ---
 
 # --description--
@@ -44,5 +45,20 @@ assert(myRegex.flags.match(/g/).length == 1);
 assert(myRegex.flags.match(/i/).length == 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /change/; // Change this line
+let result = myRegex; // Change this line
+```
+
 # --solutions--
 
+```js
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+```

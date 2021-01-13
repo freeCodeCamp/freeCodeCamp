@@ -3,6 +3,7 @@ id: 5900f3811000cf542c50fe94
 title: 问题21：友好的数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-21-amicable-numbers
 ---
 
 # --description--
@@ -35,5 +36,37 @@ assert.strictEqual(sumAmicableNum(5000), 8442);
 assert.strictEqual(sumAmicableNum(10000), 31626);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sumAmicableNum(n) {
+
+  return n;
+}
+
+sumAmicableNum(10000);
+```
+
 # --solutions--
 
+```js
+const sumAmicableNum = (n) => {
+  const fsum = (n) => {
+    let sum = 1;
+    for (let i = 2; i <= Math.floor(Math.sqrt(n)); i++)
+      if (Math.floor(n % i) === 0)
+        sum += i + Math.floor(n / i);
+    return sum;
+  };
+  let d = [];
+  let amicableSum = 0;
+  for (let i=2; i<n; i++) d[i] = fsum(i);
+  for (let i=2; i<n; i++) {
+    let dsum = d[i];
+    if (d[dsum]===i && i!==dsum) amicableSum += i+dsum;
+  }
+  return amicableSum/2;
+};
+```

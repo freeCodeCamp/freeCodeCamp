@@ -3,6 +3,7 @@ id: 5895f700f9fc0f352b528e63
 title: 设置模板引擎
 challengeType: 2
 forumTopicId: 301564
+dashedName: set-up-a-template-engine
 ---
 
 # --description--
@@ -100,3 +101,10 @@ Pug 应该生效。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

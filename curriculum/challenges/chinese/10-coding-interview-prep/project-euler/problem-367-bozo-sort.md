@@ -3,6 +3,7 @@ id: 5900f4db1000cf542c50ffee
 title: 问题367：Bozo排序
 challengeType: 5
 videoUrl: ''
+dashedName: problem-367-bozo-sort
 ---
 
 # --description--
@@ -23,5 +24,21 @@ Bozo排序，不要与稍微低效的bogo排序混淆，包括检查输入序列
 assert.strictEqual(euler367(), 48271207);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler367() {
+
+  return true;
+}
+
+euler367();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

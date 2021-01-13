@@ -4,6 +4,7 @@ title: 使用 RGB 混合颜色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368
+dashedName: use-rgb-to-mix-colors
 ---
 
 # --description--
@@ -82,5 +83,58 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .red-text {
+    color: #000000;
+  }
+  .orchid-text {
+    color: #000000;
+  }
+  .sienna-text {
+    color: #000000;
+  }
+  .blue-text {
+    color: #000000;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="orchid-text">I am orchid!</h1>
+
+<h1 class="sienna-text">I am sienna!</h1>
+
+<h1 class="blue-text">I am blue!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  .red-text {
+    color: rgb(255, 0, 0);
+  }
+  .orchid-text {
+    color: rgb(218, 112, 214);
+  }
+  .sienna-text {
+    color: rgb(160, 82, 45);
+  }
+  .blue-text {
+    color:rgb(0, 0, 255);
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="orchid-text">I am orchid!</h1>
+
+<h1 class="sienna-text">I am sienna!</h1>
+
+<h1 class="blue-text">I am blue!</h1>
+```

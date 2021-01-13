@@ -5,6 +5,8 @@ title: >-
   integral
 challengeType: 5
 forumTopicId: 301934
+dashedName: >-
+  problem-283-integer-sided-triangles-for-which-the-area--perimeter-ratio-is-integral
 ---
 
 # --description--

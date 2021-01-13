@@ -3,6 +3,7 @@ id: 5900f4891000cf542c50ff9b
 title: 问题284：平稳正方形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-284-steady-squares
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler284(), '5a411d7b');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler284() {
+
+  return true;
+}
+
+euler284();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

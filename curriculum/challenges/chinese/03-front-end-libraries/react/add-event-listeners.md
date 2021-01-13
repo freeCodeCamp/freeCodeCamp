@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617e
 title: 添加事件侦听器
 challengeType: 6
 forumTopicId: 301377
+dashedName: add-event-listeners
 ---
 
 # --description--
@@ -88,5 +89,91 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  // Change code below this line
+  componentDidMount() {
+
+  }
+  componentWillUnmount() {
+
+  }
+  // Change code above this line
+  handleEnter() {
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);  }
+  componentDidMount() {
+    // Change code below this line
+    document.addEventListener('keydown', this.handleKeyPress);
+    // Change code above this line
+  }
+  componentWillUnmount() {
+    // Change code below this line
+    document.removeEventListener('keydown', this.handleKeyPress);
+    // Change code above this line
+  }
+  handleEnter() {
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
+```

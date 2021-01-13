@@ -4,6 +4,7 @@ title: 使用 justify-content 属性对齐元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43gnHm'
 forumTopicId: 301102
+dashedName: align-elements-using-the-justify-content-property
 ---
 
 # --description--
@@ -33,5 +34,62 @@ flex 子元素有时不能充满整个 flex 容器，所以我们经常需要告
 assert($('#box-container').css('justify-content') == 'center');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 25%;
+    height: 100%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 25%;
+    height: 100%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 25%;
+    height: 100%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 25%;
+    height: 100%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```

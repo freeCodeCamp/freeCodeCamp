@@ -4,6 +4,7 @@ title: 用加号运算符连接字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNpM8AN'
 forumTopicId: 16802
+dashedName: concatenating-strings-with-plus-operator
 ---
 
 # --description--
@@ -49,5 +50,28 @@ assert(/var\s+myStr/.test(code));
 assert(/myStr\s*=/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){
+  if(typeof myStr === 'string') {
+    return 'myStr = "' + myStr + '"';
+  } else {
+    return 'myStr is not a string';
+  }
+})();
+```
+
+## --seed-contents--
+
+```js
+var myStr; // Change this line
+```
+
 # --solutions--
 
+```js
+var myStr = "This is the start. " + "This is the end.";
+```

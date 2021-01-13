@@ -3,6 +3,7 @@ id: 5900f5411000cf542c510052
 title: 问题467：超级整数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-467-superinteger
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler467(), 775181359);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler467() {
+
+  return true;
+}
+
+euler467();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

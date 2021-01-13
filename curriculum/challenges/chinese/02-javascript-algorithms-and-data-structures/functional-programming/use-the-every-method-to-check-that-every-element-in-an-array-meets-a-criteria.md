@@ -3,6 +3,7 @@ id: 587d7dab367417b2b2512b6e
 title: 使用 every 方法检查数组中的每个元素是否符合条件
 challengeType: 1
 forumTopicId: 301312
+dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria
 ---
 
 # --description--
@@ -49,5 +50,27 @@ assert.isTrue(checkPositive([1, 2, 3, 4, 5]));
 assert.isFalse(checkPositive([1, -2, 3, -4, 5]));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkPositive(arr) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
+```
+
 # --solutions--
 
+```js
+function checkPositive(arr) {
+  // Only change code below this line
+  return arr.every(num => num > 0);
+  // Only change code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
+```

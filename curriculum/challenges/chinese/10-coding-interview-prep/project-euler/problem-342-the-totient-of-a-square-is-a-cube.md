@@ -3,6 +3,7 @@ id: 5900f4c31000cf542c50ffd5
 title: 问题342：正方形的总数是一个立方体
 challengeType: 5
 videoUrl: ''
+dashedName: problem-342-the-totient-of-a-square-is-a-cube
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler342(), 5943040885644);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler342() {
+
+  return true;
+}
+
+euler342();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3ec1000cf542c50fefe
 title: 'Problem 127: abc-hits'
 challengeType: 5
 forumTopicId: 301754
+dashedName: problem-127-abc-hits
 ---
 
 # --description--

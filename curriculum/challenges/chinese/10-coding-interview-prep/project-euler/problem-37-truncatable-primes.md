@@ -3,6 +3,7 @@ id: 5900f3911000cf542c50fea4
 title: 问题37：可截断的素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-37-truncatable-primes
 ---
 
 # --description--
@@ -35,5 +36,21 @@ assert(truncatablePrimes(10) == 8920);
 assert(truncatablePrimes(11) == 748317);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function truncatablePrimes(n) {
+
+  return n;
+}
+
+truncatablePrimes(11);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

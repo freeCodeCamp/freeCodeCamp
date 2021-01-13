@@ -4,6 +4,7 @@ title: 声明 HTML 的文档类型
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra98AJ'
 forumTopicId: 301095
+dashedName: declare-the-doctype-of-an-html-document
 ---
 
 # --description--
@@ -51,5 +52,18 @@ assert($('html').length == 1);
 assert(code.match(/<html>\s*?<h1>\s*?.*?\s*?<\/h1>\s*?<\/html>/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+```
+
 # --solutions--
 
+```html
+<!DOCTYPE html>
+<html>
+  <h1> Hello world </h1>
+</html>
+```

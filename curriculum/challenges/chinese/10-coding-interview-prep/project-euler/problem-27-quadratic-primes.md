@@ -3,6 +3,7 @@ id: 5900f3871000cf542c50fe9a
 title: 问题27：二次素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-27-quadratic-primes
 ---
 
 # --description--
@@ -39,5 +40,21 @@ assert(quadraticPrimes(800) == -43835);
 assert(quadraticPrimes(1000) == -59231);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function quadraticPrimes(range) {
+
+  return range;
+}
+
+quadraticPrimes(1000);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

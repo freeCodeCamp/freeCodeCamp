@@ -3,6 +3,7 @@ id: 587d7da9367417b2b2512b69
 title: 使用 sort 方法按字母顺序给数组排序
 challengeType: 1
 forumTopicId: 18303
+dashedName: sort-an-array-alphabetically-using-the-sort-method
 ---
 
 # --description--
@@ -70,5 +71,27 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function alphabeticalOrder(arr) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+```
+
 # --solutions--
 
+```js
+function alphabeticalOrder(arr) {
+  // Only change code below this line
+  return arr.sort();
+  // Only change code above this line
+}
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+```

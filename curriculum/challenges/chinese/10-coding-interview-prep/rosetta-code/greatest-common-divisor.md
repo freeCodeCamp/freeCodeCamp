@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e82
 title: 最大公约数
 challengeType: 5
 videoUrl: ''
+dashedName: greatest-common-divisor
 ---
 
 # --description--
@@ -59,5 +60,20 @@ assert.equal(gcd(13, 250), 1);
 assert.equal(gcd(1300, 250), 50);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function gcd(a, b) {
+
+}
+```
+
 # --solutions--
 
+```js
+function gcd(a, b) {
+  return b==0 ? Math.abs(a):gcd(b, a % b);
+}
+```

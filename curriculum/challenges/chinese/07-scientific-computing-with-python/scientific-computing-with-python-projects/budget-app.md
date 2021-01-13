@@ -1,6 +1,7 @@
 ---
 id: 5e44413e903586ffb414c94e
 challengeType: 10
+dashedName: budget-app
 ---
 
 # --description--
@@ -32,3 +33,10 @@ It should create a Category class and pass all tests.
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
+  Please check our contributing guidelines to learn more.
+*/
+```

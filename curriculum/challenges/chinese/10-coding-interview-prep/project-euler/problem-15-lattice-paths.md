@@ -3,6 +3,7 @@ id: 5900f37b1000cf542c50fe8e
 title: 问题15：格子路径
 challengeType: 5
 videoUrl: ''
+dashedName: problem-15-lattice-paths
 ---
 
 # --description--
@@ -31,5 +32,29 @@ assert.strictEqual(latticePaths(9), 48620);
 assert.strictEqual(latticePaths(20), 137846528820);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function latticePaths(gridSize) {
+
+  return true;
+}
+
+latticePaths(4);
+```
+
 # --solutions--
 
+```js
+function latticePaths(gridSize) {
+  let paths = 1;
+
+  for (let i = 0; i < gridSize; i++) {
+    paths *= (2 * gridSize) - i;
+    paths /= i + 1;
+  }
+  return paths;
+}
+```

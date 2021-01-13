@@ -3,6 +3,7 @@ id: 5900f41f1000cf542c50ff32
 title: 问题179：连续的正向除数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-179-consecutive-positive-divisors
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler179(), 986262);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler179() {
+
+  return true;
+}
+
+euler179();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

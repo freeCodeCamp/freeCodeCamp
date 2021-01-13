@@ -3,6 +3,7 @@ id: 5900f51e1000cf542c510030
 title: 问题432欧拉
 challengeType: 5
 videoUrl: ''
+dashedName: problem-432-totient-sum
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler432(), 754862080);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler432() {
+
+  return true;
+}
+
+euler432();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

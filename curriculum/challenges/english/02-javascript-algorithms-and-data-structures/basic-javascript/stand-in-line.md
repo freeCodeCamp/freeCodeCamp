@@ -4,6 +4,7 @@ title: Stand in Line
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8Q8tP'
 forumTopicId: 18307
+dashedName: stand-in-line
 ---
 
 # --description--

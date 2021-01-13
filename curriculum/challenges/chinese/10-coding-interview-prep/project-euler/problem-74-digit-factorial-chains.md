@@ -3,6 +3,7 @@ id: 5900f3b61000cf542c50fec9
 title: 问题74：数字因子链
 challengeType: 5
 videoUrl: ''
+dashedName: problem-74-digit-factorial-chains
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler74(), 402);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function digitFactorialChains() {
+
+  return true;
+}
+
+digitFactorialChains();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

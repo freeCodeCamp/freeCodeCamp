@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8024
 title: State name puzzle
 challengeType: 5
 forumTopicId: 302323
+dashedName: state-name-puzzle
 ---
 
 # --description--

@@ -1,6 +1,7 @@
 ---
 id: 5e46f983ac417301a38fb933
 challengeType: 10
+dashedName: sha-1-password-cracker
 ---
 
 # --description--
@@ -32,3 +33,8 @@ It should pass all Python tests.
 
 # --solutions--
 
+```py
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
+  # Please check our contributing guidelines to learn more.
+```

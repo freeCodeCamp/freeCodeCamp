@@ -3,6 +3,7 @@ id: 587d7b8a367417b2b2512b4d
 title: 使用解构赋值将对象作为函数的参数传递
 challengeType: 1
 forumTopicId: 301217
+dashedName: use-destructuring-assignment-to-pass-an-object-as-a-functions-parameters
 ---
 
 # --description--
@@ -58,5 +59,36 @@ assert(code.replace(/\s/g, '').match(/half=\({\w+,\w+}\)/));
 assert(!code.match(/stats\.max|stats\.min/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+const half = (stats) => (stats.max + stats.min) / 2.0; 
+// Only change code above this line
+```
+
 # --solutions--
 
+```js
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+const half = ( {max, min} ) => (max + min) / 2.0;
+```

@@ -3,6 +3,7 @@ id: 5cdafbe72913098997531682
 title: 在 catch 中处理 Promise 失败的情况
 challengeType: 1
 forumTopicId: 301204
+dashedName: handle-a-rejected-promise-with-catch
 ---
 
 # --description--
@@ -46,5 +47,52 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(__helpers.removeWhiteSpace(code));
+```
+
+## --seed-contents--
+
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+```
+
 # --solutions--
 
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+makeServerRequest.catch(error => {
+  console.log(error);
+});
+```

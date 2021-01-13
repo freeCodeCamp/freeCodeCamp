@@ -3,6 +3,7 @@ id: 5900f4291000cf542c50ff3c
 title: 问题189：三角网格三色
 challengeType: 5
 videoUrl: ''
+dashedName: problem-189-tri-colouring-a-triangular-grid
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler189(), 10834893628237824);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler189() {
+
+  return true;
+}
+
+euler189();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

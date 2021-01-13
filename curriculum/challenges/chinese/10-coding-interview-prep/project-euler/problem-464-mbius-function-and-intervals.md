@@ -3,6 +3,7 @@ id: 5900f53d1000cf542c51004f
 title: 问题464：莫比乌斯函数和区间
 challengeType: 5
 videoUrl: ''
+dashedName: problem-464-mbius-function-and-intervals
 ---
 
 # --description--
@@ -25,5 +26,21 @@ Möbius函数，表示为μ（n），定义为：μ（n）=（ - 1）ω（n）�
 assert.strictEqual(euler464(), 198775297232878);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler464() {
+
+  return true;
+}
+
+euler464();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3b81000cf542c50fecb
 title: 问题76：计算总结
 challengeType: 5
 videoUrl: ''
+dashedName: problem-76-counting-summations
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler76(), 190569291);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countingSummations() {
+
+  return true;
+}
+
+countingSummations();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3fa1000cf542c50ff0c
 title: 问题140：改进的斐波那契金块
 challengeType: 5
 videoUrl: ''
+dashedName: problem-140-modified-fibonacci-golden-nuggets
 ---
 
 # --description--
@@ -21,5 +22,21 @@ xAG（x）（√5-1）/ 41 2/52（√22-2）/ 63（√137-5）/ 144 1/25
 assert.strictEqual(euler140(), 5673835352990);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler140() {
+
+  return true;
+}
+
+euler140();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f5171000cf542c510029
 title: 'Problem 426: Box-ball system'
 challengeType: 5
 forumTopicId: 302096
+dashedName: problem-426-box-ball-system
 ---
 
 # --description--

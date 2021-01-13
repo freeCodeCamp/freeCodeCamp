@@ -3,6 +3,7 @@ id: 587d7b8b367417b2b2512b50
 title: 用 ES6 编写简洁的函数声明
 challengeType: 1
 forumTopicId: 301224
+dashedName: write-concise-declarative-functions-with-es6
 ---
 
 # --description--
@@ -55,5 +56,31 @@ assert(
 assert(new bicycle.setGear(48).gear === 48);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+const bicycle = {
+  gear: 2,
+  setGear: function(newGear) {
+    this.gear = newGear;
+  }
+};
+// Only change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);
+```
+
 # --solutions--
 
+```js
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+```

@@ -3,6 +3,7 @@ id: 587d7da9367417b2b2512b66
 title: 使用 concat 方法组合两个数组
 challengeType: 1
 forumTopicId: 301229
+dashedName: combine-two-arrays-using-the-concat-method
 ---
 
 # --description--
@@ -47,5 +48,31 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function nonMutatingConcat(original, attach) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingConcat(first, second);
+```
+
 # --solutions--
 
+```js
+function nonMutatingConcat(original, attach) {
+  // Only change code below this line
+  return original.concat(attach);
+  // Only change code above this line
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingConcat(first, second);
+```

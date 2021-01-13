@@ -3,6 +3,7 @@ id: 5e7b9f0c0b6c005b0e76f073
 title: 'Networking: Write a Web Browser'
 challengeType: 11
 videoId: zjyT9DaAjx4
+dashedName: networking-write-a-web-browser
 ---
 
 # --question--

@@ -4,6 +4,7 @@ title: 使用 parseInt 函数并传入一个基数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6K4Kh3'
 forumTopicId: 301182
+dashedName: use-the-parseint-function-with-a-radix
 ---
 
 # --description--
@@ -56,5 +57,22 @@ assert(convertToInteger('111001') === 57);
 assert.isNaN(convertToInteger('JamesBond'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function convertToInteger(str) {
+
+}
+
+convertToInteger("10011");
+```
+
 # --solutions--
 
+```js
+function convertToInteger(str) {
+  return parseInt(str, 2);
+}
+```

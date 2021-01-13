@@ -3,6 +3,7 @@ id: 5900f3c11000cf542c50fed4
 title: 问题85：计算矩形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-85-counting-rectangles
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler85(), 2772);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countingRectangles() {
+
+  return true;
+}
+
+countingRectangles();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

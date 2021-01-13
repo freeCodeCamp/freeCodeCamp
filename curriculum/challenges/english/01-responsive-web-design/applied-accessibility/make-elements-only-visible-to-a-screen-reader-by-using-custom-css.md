@@ -4,6 +4,7 @@ title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
 forumTopicId: 301020
+dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd0f
 title: 构建一个番茄时钟
 challengeType: 3
 forumTopicId: 301373
+dashedName: build-a-25--5-clock
 ---
 
 # --description--
@@ -73,8 +74,8 @@ forumTopicId: 301373
 
 一旦你完成了本项目并且该项目所有测试运行通过， 请提交项目的 URL。
 
-# --hints--
-
-
 # --solutions--
 
+```js
+// solution required
+```

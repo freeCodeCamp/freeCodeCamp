@@ -3,6 +3,7 @@ id: 5900f5431000cf542c510056
 title: 问题471：以椭圆形刻的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-471-triangle-inscribed-in-ellipse
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler471(), 1.895093981e31);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler471() {
+
+  return true;
+}
+
+euler471();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

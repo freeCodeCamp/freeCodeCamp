@@ -2,6 +2,7 @@
 id: 5e9a0e9ef99a403d019610cd
 challengeType: 11
 videoId: Y5M7KH4A4n4
+dashedName: how-convolutional-neural-networks-work
 ---
 
 # --question--
@@ -25,9 +26,4 @@ If your data is text or sound based.
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

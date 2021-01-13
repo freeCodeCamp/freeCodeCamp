@@ -3,6 +3,7 @@ id: 5900f4b91000cf542c50ffcb
 title: 'Problem 332: Spherical triangles'
 challengeType: 5
 forumTopicId: 301990
+dashedName: problem-332-spherical-triangles
 ---
 
 # --description--

@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c166
 challengeType: 11
 videoId: NzpU17ZVlUw
+dashedName: python-functions-and-collections
 ---
 
 # --description--
@@ -31,9 +32,4 @@ Tuples are unordered.
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

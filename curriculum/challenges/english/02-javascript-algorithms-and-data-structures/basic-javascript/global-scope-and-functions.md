@@ -4,6 +4,7 @@ title: Global Scope and Functions
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQM7mCN'
 forumTopicId: 18193
+dashedName: global-scope-and-functions
 ---
 
 # --description--

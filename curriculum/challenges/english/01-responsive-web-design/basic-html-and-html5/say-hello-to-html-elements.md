@@ -4,6 +4,7 @@ title: Say Hello to HTML Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gpt2'
 forumTopicId: 18276
+dashedName: say-hello-to-html-elements
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 用 p 元素代表段落
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
 forumTopicId: 18202
+dashedName: inform-with-the-paragraph-element
 ---
 
 # --description--
@@ -41,5 +42,19 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+```
+
 # --solutions--
 
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+<p>Hello Paragraph</p>
+```

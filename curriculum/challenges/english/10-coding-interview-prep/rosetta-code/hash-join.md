@@ -3,6 +3,7 @@ id: 5956795bc9e2c415eb244de1
 title: Hash join
 challengeType: 5
 forumTopicId: 302284
+dashedName: hash-join
 ---
 
 # --description--

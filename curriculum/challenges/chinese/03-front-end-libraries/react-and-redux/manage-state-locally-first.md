@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036142
 title: 首先在本地管理状态
 challengeType: 6
 forumTopicId: 301431
+dashedName: manage-state-locally-first
 ---
 
 # --description--
@@ -175,5 +176,85 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+  }
+  // Add handleChange() and submitMessage() methods here
+
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        { /* Render an input, button, and ul below this line */ }
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+ this.handleChange = this.handleChange.bind(this);
+   this.submitMessage = this.submitMessage.bind(this);
+ }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  submitMessage() {
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };  
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input
+          value={this.state.input}
+          onChange={this.handleChange}/><br/>
+        <button onClick={this.submitMessage}>Submit</button>
+        <ul>
+          {this.state.messages.map( (message, idx) => {
+              return (
+                 <li key={idx}>{message}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  }
+};
+```

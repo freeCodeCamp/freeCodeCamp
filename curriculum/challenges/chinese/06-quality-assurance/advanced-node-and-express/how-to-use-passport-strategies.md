@@ -3,6 +3,7 @@ id: 5895f70df9fc0f352b528e69
 title: 如何使用 Passport 策略
 challengeType: 2
 forumTopicId: 301555
+dashedName: how-to-use-passport-strategies
 ---
 
 # --description--
@@ -69,3 +70,10 @@ server.js 中应正确执行所有步骤。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

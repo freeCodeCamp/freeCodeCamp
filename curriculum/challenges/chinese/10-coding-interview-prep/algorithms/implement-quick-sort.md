@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c89
 title: 实施快速排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-quick-sort
 ---
 
 # --description--
@@ -79,5 +80,60 @@ assert.sameMembers(
 assert.strictEqual(code.search(/\.sort\(/), -1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
+
+function isBuiltInSortUsed(){
+  let sortUsed = false;
+  Array.prototype.sort = () => sortUsed = true;
+  quickSort([0, 1]);
+  return !sortUsed;
+}
+```
+
+## --seed-contents--
+
+```js
+function quickSort(array) {
+  // Only change code below this line
+  return array;
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function quickSort(array) {
+  if (array.length === 0) {
+    return [];
+  } else {
+    const pivotValue = array[0];
+
+    // Sort elements into three piles
+    let lesser = [];
+    let equal = [];
+    let greater = [];
+    for (let e of array) {
+      if (e < pivotValue) {
+        lesser.push(e);
+      } else if (e > pivotValue) {
+        greater.push(e);
+      } else {
+        equal.push(e);
+      }
+    }
+
+    return [...quickSort(lesser), ...equal, ...quickSort(greater)];
+  }
+}
+```

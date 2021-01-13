@@ -3,6 +3,7 @@ id: 5900f4591000cf542c50ff6c
 title: 问题237：在4 x n游戏板上游览
 challengeType: 5
 videoUrl: ''
+dashedName: problem-237-tours-on-a-4-x-n-playing-board
 ---
 
 # --description--
@@ -19,5 +20,21 @@ T（10）是2329.什么是T（1012）模108？
 assert.strictEqual(euler237(), 15836928);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler237() {
+
+  return true;
+}
+
+euler237();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

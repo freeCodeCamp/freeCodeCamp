@@ -4,6 +4,7 @@ title: Override Styles in Subsequent CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDQug'
 forumTopicId: 18253
+dashedName: override-styles-in-subsequent-css
 ---
 
 # --description--

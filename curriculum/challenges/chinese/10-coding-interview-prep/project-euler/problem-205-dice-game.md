@@ -3,6 +3,7 @@ id: 5900f4391000cf542c50ff4c
 title: 问题205：骰子游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-205-dice-game
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler205(), 0.5731441);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler205() {
+
+  return true;
+}
+
+euler205();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

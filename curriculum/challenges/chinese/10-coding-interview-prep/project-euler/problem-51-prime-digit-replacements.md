@@ -3,6 +3,7 @@ id: 5900f39f1000cf542c50feb2
 title: 问题51：主要数字替换
 challengeType: 5
 videoUrl: ''
+dashedName: problem-51-prime-digit-replacements
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler51(), 121313);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function primeDigitReplacements() {
+
+  return true;
+}
+
+primeDigitReplacements();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

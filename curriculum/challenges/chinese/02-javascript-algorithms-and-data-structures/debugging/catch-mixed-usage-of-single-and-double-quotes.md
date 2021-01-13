@@ -3,6 +3,7 @@ id: 587d7b84367417b2b2512b37
 title: 捕捉单引号和双引号的混合用法
 challengeType: 1
 forumTopicId: 301188
+dashedName: catch-mixed-usage-of-single-and-double-quotes
 ---
 
 # --description--
@@ -46,5 +47,18 @@ assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 assert(code.match(/"<p>.*?<\/p>";/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
+console.log(innerHtml);
+```
+
 # --solutions--
 
+```js
+let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+console.log(innerHtml);
+```

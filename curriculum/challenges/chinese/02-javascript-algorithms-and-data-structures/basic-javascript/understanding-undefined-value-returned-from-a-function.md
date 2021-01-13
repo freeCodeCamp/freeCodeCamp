@@ -4,6 +4,7 @@ title: 函数也可以返回 undefined
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
 forumTopicId: 301177
+dashedName: understanding-undefined-value-returned-from-a-function
 ---
 
 # --description--
@@ -57,5 +58,40 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+var sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+
+// Only change code below this line
+
+
+// Only change code above this line
+
+addThree();
+addFive();
+```
+
 # --solutions--
 
+```js
+var sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+
+function addFive() {
+  sum = sum + 5;
+}
+
+addThree();
+addFive();
+```

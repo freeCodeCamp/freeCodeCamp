@@ -3,6 +3,7 @@ id: 587d7db5367417b2b2512b96
 title: 匹配字母表中的字母
 challengeType: 1
 forumTopicId: 301354
+dashedName: match-letters-of-the-alphabet
 ---
 
 # --description--
@@ -50,5 +51,20 @@ assert(alphabetRegex.flags.match(/g/).length == 1);
 assert(alphabetRegex.flags.match(/i/).length == 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /change/; // Change this line
+let result = alphabetRegex; // Change this line
+```
+
 # --solutions--
 
+```js
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi; // Change this line
+let result = quoteSample.match(alphabetRegex); // Change this line
+```

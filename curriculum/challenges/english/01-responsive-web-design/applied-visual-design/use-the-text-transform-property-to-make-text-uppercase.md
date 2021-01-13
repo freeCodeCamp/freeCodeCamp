@@ -4,6 +4,7 @@ title: Use the text-transform Property to Make Text Uppercase
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
+dashedName: use-the-text-transform-property-to-make-text-uppercase
 ---
 
 # --description--

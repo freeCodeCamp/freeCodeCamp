@@ -3,6 +3,7 @@ id: 587d7fb3367417b2b2512bfc
 title: 给 package.json 添加一个描述
 challengeType: 2
 forumTopicId: 301522
+dashedName: add-a-description-to-your-package-json
 ---
 
 # --description--
@@ -42,3 +43,10 @@ package.json 应该有一个有效的 'description' 键。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

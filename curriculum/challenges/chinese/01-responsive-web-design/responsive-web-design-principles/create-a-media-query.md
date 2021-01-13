@@ -4,6 +4,7 @@ title: 创建一个媒体查询
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
+dashedName: create-a-media-query
 ---
 
 # --description--
@@ -62,5 +63,38 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  p {
+    font-size: 20px;
+  }
+
+  /* Only change code below this line */
+
+  /* Only change code above this line */
+</style>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+```
+
 # --solutions--
 
+```html
+<style>
+  p {
+    font-size: 20px;
+  }
+
+  @media (max-height: 800px) {
+    p {
+      font-size: 10px;
+    }
+  }
+</style>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+```

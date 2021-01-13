@@ -3,6 +3,7 @@ id: 587d7b8b367417b2b2512b53
 title: Use class Syntax to Define a Constructor Function
 challengeType: 1
 forumTopicId: 301212
+dashedName: use-class-syntax-to-define-a-constructor-function
 ---
 
 # --description--

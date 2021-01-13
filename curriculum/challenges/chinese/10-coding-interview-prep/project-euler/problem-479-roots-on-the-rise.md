@@ -3,6 +3,7 @@ id: 5900f54b1000cf542c51005d
 title: 问题479：崛起的根源
 challengeType: 5
 videoUrl: ''
+dashedName: problem-479-roots-on-the-rise
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler479(), 191541795);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler479() {
+
+  return true;
+}
+
+euler479();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

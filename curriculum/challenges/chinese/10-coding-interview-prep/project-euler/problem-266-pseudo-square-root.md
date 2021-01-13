@@ -3,6 +3,7 @@ id: 5900f4771000cf542c50ff89
 title: 问题266：伪平方根
 challengeType: 5
 videoUrl: ''
+dashedName: problem-266-pseudo-square-root
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler266(), 1096883702440585);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler266() {
+
+  return true;
+}
+
+euler266();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

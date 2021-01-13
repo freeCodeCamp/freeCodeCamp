@@ -3,6 +3,7 @@ id: 5900f3e41000cf542c50fef7
 title: 问题120：方形剩余部分
 challengeType: 5
 videoUrl: ''
+dashedName: problem-120-square-remainders
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler120(), 333082500);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler120() {
+
+  return true;
+}
+
+euler120();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

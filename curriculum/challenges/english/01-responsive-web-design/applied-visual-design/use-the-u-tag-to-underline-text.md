@@ -4,6 +4,7 @@ title: Use the u Tag to Underline Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6aQCL'
 forumTopicId: 301082
+dashedName: use-the-u-tag-to-underline-text
 ---
 
 # --description--

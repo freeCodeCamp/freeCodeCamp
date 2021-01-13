@@ -3,6 +3,7 @@ id: 587d7b83367417b2b2512b37
 title: 了解 freeCodeCamp 和浏览器控制台之间的差异
 challengeType: 1
 forumTopicId: 301193
+dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-console
 ---
 
 # --description--
@@ -40,5 +41,30 @@ const noSpaces = code.replace(/\s/g, '');
 assert(noSpaces.match(/console\.log\(output\)/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Open your browser console.
+let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
+// Use console.log() to print the output variable.
+
+// Run the tests to see the difference between the two consoles.
+
+// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
+```
+
 # --solutions--
 
+```js
+// Open your browser console.
+let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
+// Use console.log() to print the output variable.
+console.clear();
+console.log(output);
+
+// Run the tests to see the difference between the two consoles.
+
+// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
+```

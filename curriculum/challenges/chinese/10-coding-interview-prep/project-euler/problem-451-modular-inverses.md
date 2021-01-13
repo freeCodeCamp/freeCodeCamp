@@ -3,6 +3,7 @@ id: 5900f5311000cf542c510042
 title: 问题451：模逆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-451-modular-inverses
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler451(), 153651073760956);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler451() {
+
+  return true;
+}
+
+euler451();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

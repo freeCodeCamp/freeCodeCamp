@@ -3,6 +3,7 @@ id: 5900f3fc1000cf542c50ff0e
 title: 问题143：研究三角形的Torricelli点
 challengeType: 5
 videoUrl: ''
+dashedName: problem-143-investigating-the-torricelli-point-of-a-triangle
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler143(), 30758397);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler143() {
+
+  return true;
+}
+
+euler143();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f50d1000cf542c51001f
 title: 问题417：倒数周期II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-417-reciprocal-cycles-ii
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler417(), 446572970925740);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler417() {
+
+  return true;
+}
+
+euler417();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3891000cf542c50fe9c
 title: 问题29：不同的权力
 challengeType: 5
 videoUrl: ''
+dashedName: problem-29-distinct-powers
 ---
 
 # --description--
@@ -49,5 +50,30 @@ assert.strictEqual(distinctPowers(25), 519);
 assert.strictEqual(distinctPowers(30), 755);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function distinctPowers(n) {
+
+  return n;
+}
+
+distinctPowers(30);
+```
+
 # --solutions--
 
+```js
+const distinctPowers = (n) => {
+  let list = [];
+  for (let a=2; a<=n; a++) {
+    for (let b=2; b<=n; b++) {
+      let term = Math.pow(a, b);
+      if (list.indexOf(term)===-1) list.push(term);
+    }
+  }
+  return list.length;
+};
+```

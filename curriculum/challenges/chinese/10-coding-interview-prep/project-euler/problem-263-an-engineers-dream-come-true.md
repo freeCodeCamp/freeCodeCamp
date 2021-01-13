@@ -3,6 +3,7 @@ id: 5900f4741000cf542c50ff86
 title: 问题263：工程师“梦想成真
 challengeType: 5
 videoUrl: ''
+dashedName: problem-263-an-engineers-dream-come-true
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler263(), 2039506520);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler263() {
+
+  return true;
+}
+
+euler263();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

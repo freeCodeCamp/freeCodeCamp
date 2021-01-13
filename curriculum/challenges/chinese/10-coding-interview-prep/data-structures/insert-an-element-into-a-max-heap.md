@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c8a
 title: 将元素插入最大堆
 challengeType: 1
 videoUrl: ''
+dashedName: insert-an-element-into-a-max-heap
 ---
 
 # --description--
@@ -79,5 +80,38 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var MaxHeap = function() {
+  // Only change code below this line
+    
+  // Only change code above this line
+};
+```
+
 # --solutions--
 
+```js
+var MaxHeap = function() {
+    // Only change code below this line
+    this.heap = [null];
+    this.insert = (ele) => {
+        var index = this.heap.length;
+        var arr = [...this.heap];
+        arr.push(ele);
+        while (ele > arr[Math.floor(index / 2)] && index > 1) {
+            arr[index] = arr[Math.floor(index / 2)];
+            arr[Math.floor(index / 2)] = ele;
+            index = arr[Math.floor(index / 2)];
+        }
+        this.heap = arr;
+    }
+    this.print = () => {
+        return this.heap.slice(1);
+    }
+    // Only change code above this line
+};
+```

@@ -3,6 +3,7 @@ id: 5900f4c51000cf542c50ffd7
 title: 问题344：银元游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-344-silver-dollar-game
 ---
 
 # --description--
@@ -33,5 +34,21 @@ NG de Bruijn的银元游戏的一个变种可以描述如下：
 assert.strictEqual(euler344(), 65579304332);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler344() {
+
+  return true;
+}
+
+euler344();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

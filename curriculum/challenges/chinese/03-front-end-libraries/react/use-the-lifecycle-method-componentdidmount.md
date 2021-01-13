@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617d
 title: 使用生命周期方法：componentDidMount
 challengeType: 6
 forumTopicId: 301422
+dashedName: use-the-lifecycle-method-componentdidmount
 ---
 
 # --description--
@@ -13,7 +14,7 @@ React 的最佳实践是在生命周期方法`componentDidMount()`中对服务�
 
 # --instructions--
 
-`componentDidMount()`中有一个模拟 API 调用。它在 2.5 秒后设置 state，以模拟调用服务器检索数据。本示例请求站点的当前活动用户总数。在 render 方法中，把`activeUsers`渲染到`h1`标签中。观看预览中发生的事情，随意更改超时时间以查看不同的效果。
+`componentDidMount()` 中有一个模拟 API 调用。它在 2.5 秒后设置 state，以模拟调用服务器检索数据。本示例请求站点的当前活动用户总数。在 render 方法中，把 `activeUsers` 渲染到文字 `Active Users:` 后的 `h1` 标签中。观看预览中发生的事情，随意更改超时时间以查看不同的效果。
 
 # --hints--
 
@@ -61,5 +62,66 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'));
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeUsers: null
+    };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        activeUsers: 1273
+      });
+    }, 2500);
+  }
+  render() {
+    return (
+      <div>
+        {/* Change code below this line */}
+        <h1>Active Users: </h1>
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+}
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeUsers: null
+    };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        activeUsers: 1273
+      });
+    }, 2500);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Active Users: {this.state.activeUsers}</h1>
+      </div>
+    );
+  }
+}
+```

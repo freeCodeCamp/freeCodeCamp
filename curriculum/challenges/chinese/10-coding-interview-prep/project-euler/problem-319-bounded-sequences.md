@@ -3,6 +3,7 @@ id: 5900f4ab1000cf542c50ffbe
 title: 问题319：有界序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-319-bounded-sequences
 ---
 
 # --description--
@@ -27,5 +28,21 @@ x1 = 2
 assert.strictEqual(euler319(), 268457129);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler319() {
+
+  return true;
+}
+
+euler319();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

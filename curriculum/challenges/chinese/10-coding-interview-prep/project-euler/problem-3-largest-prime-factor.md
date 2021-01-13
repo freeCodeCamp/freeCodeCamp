@@ -3,6 +3,7 @@ id: 5900f36f1000cf542c50fe82
 title: 问题3：最大素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-3-largest-prime-factor
 ---
 
 # --description--
@@ -49,5 +50,34 @@ assert.strictEqual(largestPrimeFactor(13195), 29);
 assert.strictEqual(largestPrimeFactor(600851475143), 6857);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function largestPrimeFactor(number) {
+
+  return true;
+}
+
+largestPrimeFactor(13195);
+```
+
 # --solutions--
 
+```js
+const largestPrimeFactor = (number) => {
+  let largestFactor = number;
+
+  for (let i = 2; i <= Math.sqrt(largestFactor); i++) {
+    if (!(largestFactor % i)) {
+      let factor = largestFactor / i;
+      let candidate = largestPrimeFactor(factor);
+
+      return i > candidate ? i : candidate;
+    }
+  }
+
+  return largestFactor;
+}
+```

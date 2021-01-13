@@ -3,6 +3,7 @@ id: 5900f37a1000cf542c50fe8d
 title: 'Problem 14: Longest Collatz sequence'
 challengeType: 5
 forumTopicId: 301768
+dashedName: problem-14-longest-collatz-sequence
 ---
 
 # --description--

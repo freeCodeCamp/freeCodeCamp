@@ -3,6 +3,7 @@ id: 587d7fb2367417b2b2512bf8
 title: 从 POST 请求中获取数据
 challengeType: 2
 forumTopicId: 301511
+dashedName: get-data-from-post-requests
 ---
 
 # --description--
@@ -68,3 +69,10 @@ DELETE => 删除一个资源。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

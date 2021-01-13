@@ -1,6 +1,7 @@
 ---
 id: 5e46f8dcac417301a38fb92e
 challengeType: 10
+dashedName: cat-and-dog-image-classifier
 ---
 
 # --description--
@@ -23,3 +24,8 @@ It should pass all Python tests.
 
 # --solutions--
 
+```py
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
+  # Please check our contributing guidelines to learn more.
+```

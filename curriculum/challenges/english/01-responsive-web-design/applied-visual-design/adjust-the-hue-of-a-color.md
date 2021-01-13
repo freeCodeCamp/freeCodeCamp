@@ -4,6 +4,7 @@ title: Adjust the Hue of a Color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp38TZ'
 forumTopicId: 301036
+dashedName: adjust-the-hue-of-a-color
 ---
 
 # --description--

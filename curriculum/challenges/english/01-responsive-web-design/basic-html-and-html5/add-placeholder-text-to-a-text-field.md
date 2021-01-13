@@ -4,6 +4,7 @@ title: Add Placeholder Text to a Text Field
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
+dashedName: add-placeholder-text-to-a-text-field
 ---
 
 # --description--

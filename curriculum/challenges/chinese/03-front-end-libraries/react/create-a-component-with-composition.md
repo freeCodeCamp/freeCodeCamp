@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036164
 title: 用组合的方式创建一个 React 组件
 challengeType: 6
 forumTopicId: 301383
+dashedName: create-a-component-with-composition
 ---
 
 # --description--
@@ -67,5 +68,67 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<ParentComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+        <ChildComponent />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616a
 title: 传递一个数组作为 Props
 challengeType: 6
 forumTopicId: 301401
+dashedName: pass-an-array-as-props
 ---
 
 # --description--
@@ -108,5 +109,64 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<ToDo />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const List = (props) => {
+  { /* Change code below this line */ }
+  return <p>{}</p>
+  { /* Change code above this line */ }
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        { /* Change code below this line */ }
+        <List/>
+        <h2>Tomorrow</h2>
+        <List/>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+const List= (props) => {
+  return <p>{props.tasks.join(', ')}</p>
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        <List tasks={['study', 'exercise']} />
+        <h2>Tomorrow</h2>
+        <List tasks={['call Sam', 'grocery shopping', 'order tickets']} />
+      </div>
+    );
+  }
+};
+```

@@ -4,6 +4,7 @@ title: 了解变量名区分大小写
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
+dashedName: understanding-case-sensitivity-in-variables
 ---
 
 # --description--
@@ -68,5 +69,30 @@ assert(code.match(/properCamelCase/g).length === 2);
 assert(code.match(/titleCaseOver/g).length === 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Variable declarations
+var StUdLyCapVaR;
+var properCamelCase;
+var TitleCaseOver;
+
+// Variable assignments
+STUDLYCAPVAR = 10;
+PRoperCAmelCAse = "A String";
+tITLEcASEoVER = 9000;
+```
+
 # --solutions--
 
+```js
+var studlyCapVar;
+var properCamelCase;
+var titleCaseOver;
+
+studlyCapVar = 10;
+properCamelCase = "A String";
+titleCaseOver = 9000;
+```

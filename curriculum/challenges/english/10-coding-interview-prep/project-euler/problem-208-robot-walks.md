@@ -3,6 +3,7 @@ id: 5900f43f1000cf542c50ff51
 title: 'Problem 208: Robot Walks'
 challengeType: 5
 forumTopicId: 301849
+dashedName: problem-208-robot-walks
 ---
 
 # --description--

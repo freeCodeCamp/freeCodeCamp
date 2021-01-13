@@ -2,6 +2,7 @@
 id: 5ea9997bbec2e9bc47e94db3
 challengeType: 11
 videoId: CeGW761BIsA
+dashedName: developing-a-banner-grabber
 ---
 
 # --question--
@@ -38,9 +39,4 @@ B: `int(port)`
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

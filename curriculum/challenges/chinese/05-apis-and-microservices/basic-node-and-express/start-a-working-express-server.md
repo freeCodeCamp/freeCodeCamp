@@ -3,6 +3,7 @@ id: 587d7fb0367417b2b2512bee
 title: 启动一个 Express 服务器
 challengeType: 2
 forumTopicId: 301519
+dashedName: start-a-working-express-server
 ---
 
 # --description--
@@ -49,3 +50,10 @@ app 应该输出 "Hello Express" 字符串
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

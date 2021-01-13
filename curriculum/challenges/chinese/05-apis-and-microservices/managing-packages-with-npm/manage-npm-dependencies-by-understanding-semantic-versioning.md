@@ -3,6 +3,7 @@ id: 587d7fb5367417b2b2512c01
 title: 通过理解语义版本化来管理 npm 依赖关系
 challengeType: 2
 forumTopicId: 301529
+dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
 ---
 
 # --description--
@@ -63,3 +64,10 @@ forumTopicId: 301529
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

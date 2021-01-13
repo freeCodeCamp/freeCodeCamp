@@ -4,6 +4,7 @@ title: 使用 align-self 属性
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvzfv'
 forumTopicId: 301107
+dashedName: use-the-align-self-property
 ---
 
 # --description--
@@ -30,5 +31,62 @@ assert($('#box-1').css('align-self') == 'center');
 assert($('#box-2').css('align-self') == 'flex-end');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+
+    height: 200px;
+    width: 200px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    align-self: center;
+    height: 200px;
+    width: 200px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    align-self: flex-end;
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```

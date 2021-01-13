@@ -3,6 +3,7 @@ id: 5895f70bf9fc0f352b528e64
 title: 使用模板引擎
 challengeType: 2
 forumTopicId: 301567
+dashedName: use-a-template-engines-powers
 ---
 
 # --description--
@@ -45,3 +46,10 @@ Pug 应正确地展示变量。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

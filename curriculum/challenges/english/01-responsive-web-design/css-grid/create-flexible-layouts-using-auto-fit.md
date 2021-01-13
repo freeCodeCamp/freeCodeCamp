@@ -4,6 +4,7 @@ title: Create Flexible Layouts Using auto-fit
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127
+dashedName: create-flexible-layouts-using-auto-fit
 ---
 
 # --description--

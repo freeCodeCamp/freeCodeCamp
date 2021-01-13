@@ -3,6 +3,7 @@ id: 5900f5101000cf542c510022
 title: 问题419：先说顺序
 challengeType: 5
 videoUrl: ''
+dashedName: problem-419-look-and-say-sequence
 ---
 
 # --description--
@@ -37,5 +38,21 @@ videoUrl: ''
 assert.strictEqual(euler419(), 998567458, 1046245404, 43363922);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler419() {
+
+  return true;
+}
+
+euler419();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

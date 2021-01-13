@@ -3,6 +3,7 @@ id: 5900f5181000cf542c51002a
 title: 'Problem 427: n-sequences'
 challengeType: 5
 forumTopicId: 302097
+dashedName: problem-427-n-sequences
 ---
 
 # --description--

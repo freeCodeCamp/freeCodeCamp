@@ -3,6 +3,7 @@ id: bad87fee1347bd9aedf08845
 title: Ditch Custom CSS for Bootstrap
 challengeType: 0
 forumTopicId: 17565
+dashedName: ditch-custom-css-for-bootstrap
 ---
 
 # --description--

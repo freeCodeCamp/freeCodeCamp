@@ -3,6 +3,7 @@ id: 5900f4481000cf542c50ff5b
 title: 问题220：高速公路龙
 challengeType: 5
 videoUrl: ''
+dashedName: problem-220-heighway-dragon
 ---
 
 # --description--
@@ -27,5 +28,21 @@ D50中1012步后光标的位置是什么？以x，y的形式给出答案，没�
 assert.strictEqual(euler220(), 139776, 963904);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler220() {
+
+  return true;
+}
+
+euler220();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

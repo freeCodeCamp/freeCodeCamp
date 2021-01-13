@@ -2,6 +2,7 @@
 id: 5e7b9f0e0b6c005b0e76f07c
 challengeType: 11
 videoId: yWU9kTxW-nc
+dashedName: web-services-xml-schema
 ---
 
 # --question--
@@ -25,9 +26,4 @@ Extensible Situational Driver
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

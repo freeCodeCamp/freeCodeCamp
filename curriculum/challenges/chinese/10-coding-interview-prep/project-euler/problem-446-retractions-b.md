@@ -3,6 +3,7 @@ id: 5900f52c1000cf542c51003d
 title: 问题446：撤回B.
 challengeType: 5
 videoUrl: ''
+dashedName: problem-446-retractions-b
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler446(), 907803852);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler446() {
+
+  return true;
+}
+
+euler446();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

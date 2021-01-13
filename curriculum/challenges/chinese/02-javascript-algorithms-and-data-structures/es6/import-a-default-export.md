@@ -3,6 +3,7 @@ id: 587d7b8d367417b2b2512b59
 title: 导入一个默认的导出
 challengeType: 1
 forumTopicId: 301205
+dashedName: import-a-default-export
 ---
 
 # --description--
@@ -29,5 +30,21 @@ import add from "./math_functions.js";
 assert(code.match(/import\s+subtract\s+from\s+('|")\.\/math_functions\.js\1/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+  
+// Only change code above this line
+
+subtract(7,4);
+```
+
 # --solutions--
 
+```js
+import subtract from "./math_functions.js";
+
+subtract(7,4);
+```

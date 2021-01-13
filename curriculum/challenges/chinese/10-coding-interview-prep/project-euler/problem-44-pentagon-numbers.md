@@ -3,6 +3,7 @@ id: 5900f3981000cf542c50feab
 title: 问题44：五角大楼数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-44-pentagon-numbers
 ---
 
 # --description--
@@ -23,5 +24,48 @@ videoUrl: ''
 assert.strictEqual(pentagonNumbers(), 5482660);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function pentagonNumbers() {
+
+  return true;
+}
+
+pentagonNumbers();
+```
+
 # --solutions--
 
+```js
+function pentagonNumbers() {
+  function isPentagonal(num) {
+  // Formula found by solving pentagonal number
+  // equation for n.
+  const n = (Math.sqrt((24 * num) + 1) + 1) / 6;
+  return n % 1 === 0;
+  }
+
+  function pentagonal(num) {
+    return (num * ((3 * num) - 1)) / 2;
+  }
+  let result;
+  let i = 1;
+  while (!result) {
+  i++;
+  const num1 = (i * ((3 * i) - 1)) / 2; // Pentagonal num formula
+  const minDiff = num1 - (((i - 1) * ((3 * (i - 1)) - 1)) / 2);
+  let j = i - 1;
+  while (j > 0 && !result) {
+  const num2 = (j * ((3 * j) - 1)) / 2;
+  if (isPentagonal(num1 - num2) && isPentagonal(num1 + num2)) {
+        result = num1 - num2;
+      }
+      j--;
+    }
+  }
+  return result;
+  }
+```

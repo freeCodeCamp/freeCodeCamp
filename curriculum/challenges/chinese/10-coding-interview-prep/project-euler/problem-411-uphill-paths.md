@@ -3,6 +3,7 @@ id: 5900f5081000cf542c510019
 title: 问题411：上坡路径
 challengeType: 5
 videoUrl: ''
+dashedName: problem-411-uphill-paths
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler411(), 9936352);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler411() {
+
+  return true;
+}
+
+euler411();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

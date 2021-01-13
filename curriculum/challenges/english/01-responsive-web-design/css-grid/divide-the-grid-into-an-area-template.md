@@ -4,6 +4,7 @@ title: Divide the Grid Into an Area Template
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
+dashedName: divide-the-grid-into-an-area-template
 ---
 
 # --description--

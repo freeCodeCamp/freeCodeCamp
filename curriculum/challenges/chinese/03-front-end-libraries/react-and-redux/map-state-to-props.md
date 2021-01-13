@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036145
 title: 映射 State 到 Props
 challengeType: 6
 forumTopicId: 301433
+dashedName: map-state-to-props
 ---
 
 # --description--
@@ -43,5 +44,26 @@ assert(typeof mapStateToProps() === 'object');
 assert(mapStateToProps(['messages']).messages.pop() === 'messages');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```jsx
+const state = [];
+
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+const state = [];
+
+// Change code below this line
+
+const mapStateToProps = (state) => {
+  return {
+    messages: state
+  }
+};
+```

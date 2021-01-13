@@ -4,6 +4,7 @@ title: Override Class Declarations by Styling ID Attributes
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
+dashedName: override-class-declarations-by-styling-id-attributes
 ---
 
 # --description--

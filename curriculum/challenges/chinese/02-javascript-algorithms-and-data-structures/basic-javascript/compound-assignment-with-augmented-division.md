@@ -4,6 +4,7 @@ title: 复合赋值之 /=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvKT2'
 forumTopicId: 16659
+dashedName: compound-assignment-with-augmented-division
 ---
 
 # --description--
@@ -56,5 +57,35 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+```
+
+## --seed-contents--
+
+```js
+var a = 48;
+var b = 108;
+var c = 33;
+
+// Only change code below this line
+a = a / 12;
+b = b / 4;
+c = c / 11;
+```
+
 # --solutions--
 
+```js
+var a = 48;
+var b = 108;
+var c = 33;
+
+a /= 12;
+b /= 4;
+c /= 11;
+```

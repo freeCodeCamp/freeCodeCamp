@@ -3,6 +3,7 @@ id: 5900f4091000cf542c50ff1b
 title: 问题156：计数数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-156-counting-digits
 ---
 
 # --description--
@@ -31,5 +32,21 @@ nf（n，1）00 11 21 31 41 51 61 71 81 91 102 114 125
 assert.strictEqual(euler156(), 21295121502550);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler156() {
+
+  return true;
+}
+
+euler156();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

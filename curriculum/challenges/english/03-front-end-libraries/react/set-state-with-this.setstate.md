@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036173
 title: Set State with this.setState
 challengeType: 6
 forumTopicId: 301412
+dashedName: set-state-with-this-setstate
 ---
 
 # --description--

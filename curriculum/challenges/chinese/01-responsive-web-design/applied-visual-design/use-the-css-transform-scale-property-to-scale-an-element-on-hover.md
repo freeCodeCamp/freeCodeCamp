@@ -4,6 +4,7 @@ title: 使用CSS Transform scale 属性在悬停时缩放元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLPJuM'
 forumTopicId: 301077
+dashedName: use-the-css-transform-scale-property-to-scale-an-element-on-hover
 ---
 
 # --description--
@@ -32,5 +33,47 @@ p:hover {
 assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+    background: linear-gradient(
+      53deg,
+      #ccfffc,
+      #ffcccf
+    );
+  }
+
+
+
+</style>
+
+<div></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+    background: linear-gradient(
+      53deg,
+      #ccfffc,
+      #ffcccf
+    );
+  }
+  div:hover {
+    transform: scale(1.1);
+  }
+</style>
+<div></div>
+```

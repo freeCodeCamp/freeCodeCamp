@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c4a
 title: 用两个等号断言相等
 challengeType: 2
 forumTopicId: 301609
+dashedName: use-the-double-equals-to-assert-equality
 ---
 
 # --description--
@@ -101,3 +102,10 @@ forumTopicId: 301609
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

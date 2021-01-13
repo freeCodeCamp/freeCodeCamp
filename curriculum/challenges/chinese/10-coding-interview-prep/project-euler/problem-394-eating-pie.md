@@ -3,6 +3,7 @@ id: 5900f4f71000cf542c510009
 title: 问题394：吃馅饼
 challengeType: 5
 videoUrl: ''
+dashedName: problem-394-eating-pie
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler394(), 3.2370342194);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler394() {
+
+  return true;
+}
+
+euler394();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

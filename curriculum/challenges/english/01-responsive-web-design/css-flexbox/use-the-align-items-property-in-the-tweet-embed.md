@@ -4,6 +4,7 @@ title: Use the align-items Property in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
 forumTopicId: 301106
+dashedName: use-the-align-items-property-in-the-tweet-embed
 ---
 
 # --description--

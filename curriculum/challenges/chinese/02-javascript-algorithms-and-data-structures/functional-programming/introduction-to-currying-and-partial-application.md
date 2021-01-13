@@ -3,6 +3,7 @@ id: 587d7dab367417b2b2512b70
 title: 函数柯里化
 challengeType: 1
 forumTopicId: 301232
+dashedName: introduction-to-currying-and-partial-application
 ---
 
 # --description--
@@ -80,5 +81,22 @@ assert(add(11)(22)(33) === 66);
 assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function add(x) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+add(10)(20)(30);
+```
+
 # --solutions--
 
+```js
+const add = x => y => z => x + y + z
+```

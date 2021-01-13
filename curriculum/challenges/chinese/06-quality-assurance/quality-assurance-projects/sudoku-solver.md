@@ -1,6 +1,7 @@
 ---
 id: 5e601bf95ac9d0ecd8b94afd
 challengeType: 4
+dashedName: sudoku-solver
 ---
 
 # --description--
@@ -87,3 +88,10 @@ All 4 functional tests are complete and passing. See `/tests/2_functional-tests.
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
+  Please check our contributing guidelines to learn more.
+*/
+```

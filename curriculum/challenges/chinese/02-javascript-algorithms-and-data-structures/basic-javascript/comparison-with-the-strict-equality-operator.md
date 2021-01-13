@@ -4,6 +4,7 @@ title: 严格相等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87atr'
 forumTopicId: 16790
+dashedName: comparison-with-the-strict-equality-operator
 ---
 
 # --description--
@@ -51,5 +52,29 @@ assert(testStrict('7') === 'Not Equal');
 assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+function testStrict(val) {
+  if (val) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+testStrict(10);
+```
+
 # --solutions--
 
+```js
+function testStrict(val) {
+  if (val === 7) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
+```

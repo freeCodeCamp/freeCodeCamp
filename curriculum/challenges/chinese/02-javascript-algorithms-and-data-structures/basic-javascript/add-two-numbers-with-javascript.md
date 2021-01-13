@@ -4,6 +4,7 @@ title: 加法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
+dashedName: add-two-numbers-with-javascript
 ---
 
 # --description--
@@ -38,5 +39,22 @@ assert(sum === 20);
 assert(/\+/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'sum = '+z;})(sum);
+```
+
+## --seed-contents--
+
+```js
+var sum = 10 + 0;
+```
+
 # --solutions--
 
+```js
+var sum = 10 + 10;
+```

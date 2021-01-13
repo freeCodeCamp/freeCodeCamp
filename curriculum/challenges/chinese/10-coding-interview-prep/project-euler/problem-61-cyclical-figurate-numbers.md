@@ -3,6 +3,7 @@ id: 5900f3a91000cf542c50febc
 title: 问题61：循环图号
 challengeType: 5
 videoUrl: ''
+dashedName: problem-61-cyclical-figurate-numbers
 ---
 
 # --description--
@@ -41,5 +42,21 @@ P8，N = N（3N-2）
 assert.strictEqual(euler61(), 28684);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function cyclicalFigurateNums() {
+
+  return true;
+}
+
+cyclicalFigurateNums();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

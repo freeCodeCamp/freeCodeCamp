@@ -3,6 +3,7 @@ id: 587d7da9367417b2b2512b67
 title: 使用 concat 而不是 push 将元素添加到数组的末尾
 challengeType: 1
 forumTopicId: 301226
+dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 ---
 
 # --description--
@@ -59,5 +60,29 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function nonMutatingPush(original, newItem) {
+  // Only change code below this line
+  return original.push(newItem);
+
+  // Only change code above this line
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingPush(first, second);
+```
+
 # --solutions--
 
+```js
+function nonMutatingPush(original, newItem) {
+  return original.concat(newItem);
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingPush(first, second);
+```

@@ -3,6 +3,7 @@ id: 587d7dad367417b2b2512b78
 title: 使用构造函数创建对象
 challengeType: 1
 forumTopicId: 18233
+dashedName: use-a-constructor-to-create-objects
 ---
 
 # --description--
@@ -53,5 +54,26 @@ assert(hound instanceof Dog);
 assert(code.match(/new/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+const hound = new Dog();
+```

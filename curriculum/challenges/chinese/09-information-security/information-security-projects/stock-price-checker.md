@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c44
 title: 股票价格检查
 challengeType: 4
 videoUrl: ''
+dashedName: stock-price-checker
 ---
 
 # --description--
@@ -55,3 +56,10 @@ videoUrl: ''
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

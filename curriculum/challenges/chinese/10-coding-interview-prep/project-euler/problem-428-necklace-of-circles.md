@@ -3,6 +3,7 @@ id: 5900f5191000cf542c51002b
 title: 问题428：圆圈项链
 challengeType: 5
 videoUrl: ''
+dashedName: problem-428-necklace-of-circles
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(necklace(1000000000), 747215561862);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function necklace(n) {
+
+  return true;
+}
+
+necklace(1000000000)
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3e21000cf542c50fef4
 title: 'Problem 117: Red, green, and blue tiles'
 challengeType: 5
 forumTopicId: 301743
+dashedName: problem-117-red-green-and-blue-tiles
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5cfa550e84205a357704ccb6
 title: 使用解构赋值来获取对象的值
 challengeType: 1
 forumTopicId: 301216
+dashedName: use-destructuring-assignment-to-extract-values-from-objects
 ---
 
 # --description--
@@ -64,5 +65,33 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// Only change code below this line
+
+const today = HIGH_TEMPERATURES.today;
+const tomorrow = HIGH_TEMPERATURES.tomorrow;
+
+// Only change code above this line
+```
+
 # --solutions--
 
+```js
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const { today, tomorrow } = HIGH_TEMPERATURES;
+```

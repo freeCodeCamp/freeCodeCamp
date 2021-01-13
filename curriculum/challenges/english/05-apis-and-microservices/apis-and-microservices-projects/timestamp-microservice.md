@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bdef
 title: Timestamp Microservice
 challengeType: 4
 forumTopicId: 301508
+dashedName: timestamp-microservice
 ---
 
 # --description--
@@ -141,8 +142,6 @@ An empty date parameter should return the current time in a JSON object with a `
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

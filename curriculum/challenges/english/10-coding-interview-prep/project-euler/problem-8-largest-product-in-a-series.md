@@ -3,6 +3,7 @@ id: 5900f3741000cf542c50fe87
 title: 'Problem 8: Largest product in a series'
 challengeType: 5
 forumTopicId: 302193
+dashedName: problem-8-largest-product-in-a-series
 ---
 
 # --description--

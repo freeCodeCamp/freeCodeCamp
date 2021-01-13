@@ -4,6 +4,7 @@ title: 使用 JavaScript 数组将多个值存储在一个变量中
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQWAm'
 forumTopicId: 18309
+dashedName: store-multiple-values-in-one-variable-using-javascript-arrays
 ---
 
 # --description--
@@ -41,5 +42,23 @@ assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
 assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myArray);
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+var myArray = [];
+```
+
 # --solutions--
 
+```js
+var myArray = ["The Answer", 42];
+```

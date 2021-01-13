@@ -4,6 +4,7 @@ title: 通过变量访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnQyKur'
 forumTopicId: 16165
+dashedName: accessing-object-properties-with-variables
 ---
 
 # --description--
@@ -79,5 +80,38 @@ assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof player !== "undefined"){(function(v){return v;})(player);}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line
+
+var playerNumber;       // Change this line
+var player = testObj;   // Change this line
+```
+
 # --solutions--
 
+```js
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+var playerNumber = 16;
+var player = testObj[playerNumber];
+```

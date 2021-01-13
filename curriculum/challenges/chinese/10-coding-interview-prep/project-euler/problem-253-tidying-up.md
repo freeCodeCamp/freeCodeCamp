@@ -3,6 +3,7 @@ id: 5900f4691000cf542c50ff7c
 title: 问题253：整理
 challengeType: 5
 videoUrl: ''
+dashedName: problem-253-tidying-up
 ---
 
 # --description--
@@ -31,5 +32,21 @@ M Possibilities1512 2250912 31815264 41418112 5144000
 assert.strictEqual(euler253(), 11.492847);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler253() {
+
+  return true;
+}
+
+euler253();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

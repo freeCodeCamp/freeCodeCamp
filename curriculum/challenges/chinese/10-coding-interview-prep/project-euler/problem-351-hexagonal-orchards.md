@@ -3,6 +3,7 @@ id: 5900f4cb1000cf542c50ffde
 title: 问题351：六角形果园
 challengeType: 5
 videoUrl: ''
+dashedName: problem-351-hexagonal-orchards
 ---
 
 # --description--
@@ -25,5 +26,21 @@ H（5）= 30.H（10）= 138.H（1 000）= 1177848。
 assert.strictEqual(euler351(), 11762187201804552);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler351() {
+
+  return true;
+}
+
+euler351();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

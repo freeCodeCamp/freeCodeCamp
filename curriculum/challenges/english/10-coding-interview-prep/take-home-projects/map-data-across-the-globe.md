@@ -3,6 +3,7 @@ id: bd7108d8c242eddfaeb5bd13
 title: Map Data Across the Globe
 challengeType: 3
 forumTopicId: 302365
+dashedName: map-data-across-the-globe
 ---
 
 # --description--
@@ -22,11 +23,6 @@ Fulfill the following [user stories](https://en.wikipedia.org/wiki/User_story). 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

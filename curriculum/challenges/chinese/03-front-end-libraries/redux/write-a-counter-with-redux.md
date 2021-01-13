@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036157
 title: 用 Redux 写一个计数器
 challengeType: 6
 forumTopicId: 301453
+dashedName: write-a-counter-with-redux
 ---
 
 # --description--
@@ -65,5 +66,51 @@ assert(
 assert(typeof counterReducer === 'function');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const INCREMENT = null; // Define a constant for increment action types
+const DECREMENT = null; // Define a constant for decrement action types
+
+const counterReducer = null; // Define the counter reducer which will increment or decrement the state based on the action it receives
+
+const incAction = null; // Define an action creator for incrementing
+
+const decAction = null; // Define an action creator for decrementing
+
+const store = null; // Define the Redux store here, passing in your reducers
+```
+
 # --solutions--
 
+```js
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const incAction = () => {
+  return {
+    type: INCREMENT
+  }
+};
+
+const decAction = () => {
+  return {
+    type: DECREMENT
+  }
+};
+
+const store = Redux.createStore(counterReducer);
+```

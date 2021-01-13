@@ -3,6 +3,7 @@ id: 5900f42b1000cf542c50ff3e
 title: 问题191：奖品串
 challengeType: 5
 videoUrl: ''
+dashedName: problem-191-prize-strings
 ---
 
 # --description--
@@ -25,5 +26,21 @@ OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA OAOL OAAO OAAL OALO OALA OLOO 
 assert.strictEqual(euler191(), 1918080160);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler191() {
+
+  return true;
+}
+
+euler191();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

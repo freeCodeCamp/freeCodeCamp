@@ -3,6 +3,7 @@ id: 5900f4fe1000cf542c510010
 title: 问题400：斐波纳契树游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-400-fibonacci-tree-game
 ---
 
 # --description--
@@ -27,5 +28,21 @@ Fibonacci树是递归定义为的二叉树：T（0）是空树。 T（1）是只
 assert.strictEqual(euler400(), 438505383468410600);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler400() {
+
+  return true;
+}
+
+euler400();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

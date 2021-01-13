@@ -3,6 +3,7 @@ id: 58a25c98f9fc0f352b528e7f
 title: 哈希密码
 challengeType: 2
 forumTopicId: 301553
+dashedName: hashing-your-passwords
 ---
 
 # --description--
@@ -76,3 +77,10 @@ BCrypt 应正确地引入和调用。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

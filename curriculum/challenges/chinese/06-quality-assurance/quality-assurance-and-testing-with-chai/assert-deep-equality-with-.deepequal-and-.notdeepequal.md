@@ -3,6 +3,7 @@ id: 587d824c367417b2b2512c4c
 title: 用 Assert.deepEqual() 和 Assert.notDeepEqual() 断言深度相等
 challengeType: 2
 forumTopicId: 301587
+dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 ---
 
 # --description--
@@ -69,3 +70,10 @@ forumTopicId: 301587
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

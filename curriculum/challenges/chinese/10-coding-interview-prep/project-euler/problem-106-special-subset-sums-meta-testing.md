@@ -3,6 +3,7 @@ id: 5900f3d71000cf542c50fee9
 title: 问题106：特殊子集和：元测试
 challengeType: 5
 videoUrl: ''
+dashedName: problem-106-special-subset-sums-meta-testing
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler106(), 21384);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler106() {
+
+  return true;
+}
+
+euler106();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

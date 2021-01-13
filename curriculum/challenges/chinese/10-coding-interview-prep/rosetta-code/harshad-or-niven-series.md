@@ -3,6 +3,7 @@ id: 595668ca4cfe1af2fb9818d4
 title: Harshad或Niven系列
 challengeType: 5
 videoUrl: ''
+dashedName: harshad-or-niven-series
 ---
 
 # --description--
@@ -23,5 +24,65 @@ assert(typeof isHarshadOrNiven === 'function');
 assert.deepEqual(isHarshadOrNiven(), res);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const res = {
+  firstTwenty: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],
+  firstOver1000: 1002
+};
+```
+
+## --seed-contents--
+
+```js
+function isHarshadOrNiven() {
+  const res = {
+    firstTwenty: [],
+    firstOver1000: undefined
+  };
+  // Only change code below this line
+
+  return res;
+}
+```
+
 # --solutions--
 
+```js
+function isHarshadOrNiven() {
+  const res = {
+    firstTwenty: [],
+    firstOver1000: undefined
+  };
+
+  function isHarshad(n) {
+    let s = 0;
+    const nStr = n.toString();
+    for (let i = 0; i < nStr.length; ++i) {
+      s += parseInt(nStr.charAt(i), 10);
+    }
+    return n % s === 0;
+  }
+
+  let count = 0;
+  const harshads = [];
+
+  for (let n = 1; count < 20; ++n) {
+    if (isHarshad(n)) {
+      count++;
+      harshads.push(n);
+    }
+  }
+
+  res.firstTwenty = harshads;
+
+  let h = 1000;
+  while (!isHarshad(++h));
+  res.firstOver1000 = h;
+
+  return res;
+}
+```

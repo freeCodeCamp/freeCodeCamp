@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614c
 title: 从 Redux Store 获取状态
 challengeType: 6
 forumTopicId: 301443
+dashedName: get-state-from-the-redux-store
 ---
 
 # --description--
@@ -30,5 +31,25 @@ assert(store.getState() === 5);
   );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const store = Redux.createStore(
+  (state = 5) => state
+);
+
+// Change code below this line
+```
+
 # --solutions--
 
+```js
+const store = Redux.createStore(
+  (state = 5) => state
+);
+
+// Change code below this line
+const currentState = store.getState();
+```

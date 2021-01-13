@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036189
 title: 根据组件状态有条件地更改内联 CSS
 challengeType: 6
 forumTopicId: 301380
+dashedName: change-inline-css-conditionally-based-on-component-state
 ---
 
 # --description--
@@ -96,5 +97,80 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<GateKeeper />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class GateKeeper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ input: event.target.value })
+  }
+  render() {
+    let inputStyle = {
+      border: '1px solid black'
+    };
+    // Change code below this line
+
+    // Change code above this line
+    return (
+      <div>
+        <h3>Don't Type Too Much:</h3>
+        <input
+          type="text"
+          style={inputStyle}
+          value={this.state.input}
+          onChange={this.handleChange} />
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class GateKeeper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ input: event.target.value })
+  }
+  render() {
+    let inputStyle = {
+      border: '1px solid black'
+    };
+    if (this.state.input.length > 15) {
+      inputStyle.border = '3px solid red';
+    };
+    return (
+      <div>
+        <h3>Don't Type Too Much:</h3>
+        <input
+          type="text"
+          style={inputStyle}
+          value={this.state.input}
+          onChange={this.handleChange} />
+      </div>
+    );
+  }
+};
+```

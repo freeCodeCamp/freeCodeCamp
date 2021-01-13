@@ -3,6 +3,7 @@ id: bad87fee1348bd9bec908846
 title: 创建一个 Bootstrap Row
 challengeType: 0
 forumTopicId: 16813
+dashedName: create-a-bootstrap-row
 ---
 
 # --description--
@@ -46,5 +47,22 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+
+</div>
+```
+
 # --solutions--
 
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row"></div>
+</div>
+```

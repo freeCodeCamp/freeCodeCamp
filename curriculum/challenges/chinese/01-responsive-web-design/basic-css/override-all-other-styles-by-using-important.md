@@ -4,6 +4,7 @@ title: Important 的优先级最高
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24rcp'
 forumTopicId: 18249
+dashedName: override-all-other-styles-by-using-important
 ---
 
 # --description--
@@ -60,5 +61,48 @@ assert(
 assert($('h1').css('color') === 'rgb(255, 192, 203)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink !important;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
+```

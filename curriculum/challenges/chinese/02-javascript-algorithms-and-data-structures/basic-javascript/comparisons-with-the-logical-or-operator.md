@@ -4,6 +4,7 @@ title: 逻辑或运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEPrGTN'
 forumTopicId: 16800
+dashedName: comparisons-with-the-logical-or-operator
 ---
 
 # --description--
@@ -99,5 +100,36 @@ assert(testLogicalOr(21) === 'Outside');
 assert(testLogicalOr(25) === 'Outside');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function testLogicalOr(val) {
+  // Only change code below this line
+
+  if (val) {
+    return "Outside";
+  }
+
+  if (val) {
+    return "Outside";
+  }
+
+  // Only change code above this line
+  return "Inside";
+}
+
+testLogicalOr(15);
+```
+
 # --solutions--
 
+```js
+function testLogicalOr(val) {
+  if (val < 10 || val > 20) {
+    return "Outside";
+  }
+  return "Inside";
+}
+```

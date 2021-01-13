@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036161
 title: 了解自动闭合的 JSX 标记
 challengeType: 6
 forumTopicId: 301396
+dashedName: learn-about-self-closing-jsx-tags
 ---
 
 # --description--
@@ -41,5 +42,34 @@ assert(Enzyme.shallow(JSX).find('br').length === 1);
 assert(Enzyme.shallow(JSX).find('hr').length === 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(JSX, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br >
+    <p>Be sure to close all tags!</p>
+    <hr >
+  </div>
+);
+```
+
 # --solutions--
 
+```jsx
+const JSX = (
+<div>
+  <h2>Welcome to React!</h2> <br />
+  <p>Be sure to close all tags!</p>
+  <hr />
+</div>
+);
+```

@@ -3,6 +3,7 @@ id: 587d7db8367417b2b2512ba2
 title: 限制可能的用户名
 challengeType: 1
 forumTopicId: 301363
+dashedName: restrict-possible-usernames
 ---
 
 # --description--
@@ -91,5 +92,20 @@ assert(userCheck.test('Z97'));
 assert(!userCheck.test('c57bT3'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let username = "JackOfAllTrades";
+let userCheck = /change/; // Change this line
+let result = userCheck.test(username);
+```
+
 # --solutions--
 
+```js
+let username = "JackOfAllTrades";
+const userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
+let result = userCheck.test(username);
+```

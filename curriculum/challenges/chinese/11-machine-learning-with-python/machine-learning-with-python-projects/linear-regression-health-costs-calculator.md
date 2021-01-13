@@ -1,6 +1,7 @@
 ---
 id: 5e46f8edac417301a38fb930
 challengeType: 10
+dashedName: linear-regression-health-costs-calculator
 ---
 
 # --description--
@@ -25,3 +26,8 @@ It should pass all Python tests.
 
 # --solutions--
 
+```py
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
+  # Please check our contributing guidelines to learn more.
+```

@@ -5,6 +5,7 @@ challengeType: 1
 videoUrl: >-
   https://www.freecodecamp.org/news/how-recursion-works-explained-with-flowcharts-and-a-video-de61f40cb7f9/
 forumTopicId: 301175
+dashedName: replace-loops-using-recursion
 ---
 
 # --description--
@@ -67,5 +68,28 @@ assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
 assert(removeJSComments(sum.toString()).match(/sum\(.*\)/g).length > 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sum(arr, n) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function sum(arr, n) {
+  // Only change code below this line
+  if(n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+  // Only change code above this line
+}
+```

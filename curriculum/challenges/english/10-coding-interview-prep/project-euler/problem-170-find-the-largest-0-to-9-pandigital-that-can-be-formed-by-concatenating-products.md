@@ -5,6 +5,8 @@ title: >-
   concatenating products
 challengeType: 5
 forumTopicId: 301805
+dashedName: >-
+  problem-170-find-the-largest-0-to-9-pandigital-that-can-be-formed-by-concatenating-products
 ---
 
 # --description--

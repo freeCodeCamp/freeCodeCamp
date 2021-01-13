@@ -4,6 +4,7 @@ title: Selecting from Many Options with Switch Statements
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c4mv4fm'
 forumTopicId: 18277
+dashedName: selecting-from-many-options-with-switch-statements
 ---
 
 # --description--

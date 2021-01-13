@@ -4,6 +4,7 @@ title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
+dashedName: use-grid-row-to-control-spacing
 ---
 
 # --description--

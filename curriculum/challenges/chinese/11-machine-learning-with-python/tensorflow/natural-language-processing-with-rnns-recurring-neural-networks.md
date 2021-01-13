@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d9d
 challengeType: 11
 videoId: bX5681NPOcA
+dashedName: natural-language-processing-with-rnns-recurring-neural-networks
 ---
 
 # --question--
@@ -29,9 +30,4 @@ What is true about Recurrent Neural Networks?
 ## --video-solution--
 
 4
-
-# --hints--
-
-
-# --solutions--
 

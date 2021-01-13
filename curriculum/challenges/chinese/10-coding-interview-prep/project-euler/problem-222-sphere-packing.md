@@ -3,6 +3,7 @@ id: 5900f44b1000cf542c50ff5d
 title: 问题222：球体包装
 challengeType: 5
 videoUrl: ''
+dashedName: problem-222-sphere-packing
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler222(), 1590933);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler222() {
+
+  return true;
+}
+
+euler222();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

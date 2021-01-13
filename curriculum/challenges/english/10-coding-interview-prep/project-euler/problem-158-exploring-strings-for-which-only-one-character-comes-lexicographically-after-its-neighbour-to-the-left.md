@@ -5,6 +5,8 @@ title: >-
   lexicographically after its neighbour to the left
 challengeType: 5
 forumTopicId: 301789
+dashedName: >-
+  problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbour-to-the-left
 ---
 
 # --description--

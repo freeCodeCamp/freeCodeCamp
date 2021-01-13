@@ -3,6 +3,7 @@ id: 587d7fb6367417b2b2512c06
 title: 安装和设置 Mongoose
 challengeType: 2
 forumTopicId: 301540
+dashedName: install-and-set-up-mongoose
 ---
 
 # --description--
@@ -61,3 +62,10 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

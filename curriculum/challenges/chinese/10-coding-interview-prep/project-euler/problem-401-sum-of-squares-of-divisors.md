@@ -3,6 +3,7 @@ id: 5900f4fd1000cf542c51000f
 title: 问题401：除数的平方和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-401-sum-of-squares-of-divisors
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler401(), 281632621);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler401() {
+
+  return true;
+}
+
+euler401();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

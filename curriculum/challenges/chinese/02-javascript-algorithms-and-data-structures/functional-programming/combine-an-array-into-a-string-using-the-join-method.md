@@ -3,6 +3,7 @@ id: 587d7daa367417b2b2512b6c
 title: 使用 join 方法将数组组合成字符串
 challengeType: 1
 forumTopicId: 18221
+dashedName: combine-an-array-into-a-string-using-the-join-method
 ---
 
 # --description--
@@ -64,5 +65,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sentensify(str) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+sentensify("May-the-force-be-with-you");
+```
+
 # --solutions--
 
+```js
+function sentensify(str) {
+  // Only change code below this line
+  return str.split(/\W/).join(' ');
+  // Only change code above this line
+}
+```

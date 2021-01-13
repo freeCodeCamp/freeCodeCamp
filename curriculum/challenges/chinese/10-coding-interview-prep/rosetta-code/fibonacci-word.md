@@ -3,6 +3,7 @@ id: 5992e222d397f00d21122931
 title: 斐波那契字
 challengeType: 5
 videoUrl: ''
+dashedName: fibonacci-word
 ---
 
 # --description--
@@ -29,5 +30,82 @@ assert(Array.isArray(fibWord(5)));
 assert.deepEqual(fibWord(5), ans);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+let ans=[ { N: 1, Length: 1, Entropy: 0, Word: '1' },
+
+  { N: 2, Length: 1, Entropy: 0, Word: '0' },
+
+  { N: 3, Length: 2, Entropy: 1, Word: '01' },
+
+  { N: 4, Length: 3, Entropy: 0.9182958340544896, Word: '010' },
+
+  { N: 5, Length: 5, Entropy: 0.9709505944546688, Word: '01001' }];
+```
+
+## --seed-contents--
+
+```js
+function fibWord(n) {
+
+}
+```
+
 # --solutions--
 
+```js
+function fibWord(n) {
+    function entropy(s) {
+         //create an object containing each individual char
+      //and the amount of iterations per char
+        function prob(s) {
+            var h = Object.create(null);
+            s.split('').forEach(function(c) {
+               h[c] && h[c]++ || (h[c] = 1);
+            });
+            return h;
+        }
+
+        s = s.toString(); //just in case
+        var e = 0, l = s.length, h = prob(s);
+
+        for (var i in h ) {
+            var p = h[i]/l;
+            e -= p * Math.log(p) / Math.log(2);
+        }
+        return e;
+    }
+    var wOne = "1", wTwo = "0", wNth = [wOne, wTwo], w = "", o = [];
+
+    for (var i = 0; i < n; i++) {
+        if (i === 0 || i === 1) {
+            w = wNth[i];
+        } else {
+            w = wNth[i - 1] + wNth[i - 2];
+            wNth.push(w);
+        }
+        var l = w.length;
+        var e = entropy(w);
+
+        if (l <= 21) {
+            o.push({
+                N: i + 1,
+                Length: l,
+                Entropy: e,
+                Word: w
+            });
+        } else {
+            o.push({
+                N: i + 1,
+                Length: l,
+                Entropy: e,
+                Word: "..."
+            });
+        }
+    }
+  return o;
+}
+```

@@ -3,6 +3,7 @@ id: 587d7b86367417b2b2512b3b
 title: 捕获使用索引的时候出现的错误
 challengeType: 1
 forumTopicId: 301189
+dashedName: catch-off-by-one-errors-when-using-indexing
 ---
 
 # --description--
@@ -58,5 +59,36 @@ assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
 assert(!code.match(/i\s*?<=\s*?len;/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function countToFive() {
+  let firstFive = "12345";
+  let len = firstFive.length;
+  // Only change code below this line
+  for (let i = 1; i <= len; i++) {
+  // Only change code above this line
+    console.log(firstFive[i]);
+  }
+}
+
+countToFive();
+```
+
 # --solutions--
 
+```js
+function countToFive() {
+ let firstFive = "12345";
+ let len = firstFive.length;
+ // Only change code below this line
+ for (let i = 0; i < len; i++) {
+ // Only change code above this line
+   console.log(firstFive[i]);
+ }
+}
+
+countToFive();
+```

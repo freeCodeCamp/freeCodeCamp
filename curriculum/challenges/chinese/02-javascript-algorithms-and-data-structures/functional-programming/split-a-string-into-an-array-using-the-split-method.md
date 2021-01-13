@@ -3,6 +3,7 @@ id: 587d7daa367417b2b2512b6b
 title: 使用 split 方法将字符串拆分成数组
 challengeType: 1
 forumTopicId: 18305
+dashedName: split-a-string-into-an-array-using-the-split-method
 ---
 
 # --description--
@@ -62,5 +63,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function splitify(str) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+splitify("Hello World,I-am code");
+```
+
 # --solutions--
 
+```js
+function splitify(str) {
+  // Only change code below this line
+  return str.split(/\W/);
+  // Only change code above this line
+}
+```

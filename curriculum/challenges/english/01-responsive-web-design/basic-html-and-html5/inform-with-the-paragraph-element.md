@@ -4,6 +4,7 @@ title: Inform with the Paragraph Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
 forumTopicId: 18202
+dashedName: inform-with-the-paragraph-element
 ---
 
 # --description--

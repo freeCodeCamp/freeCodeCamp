@@ -3,6 +3,7 @@ id: 587d7db6367417b2b2512b9a
 title: 匹配出现零次或多次的字符
 challengeType: 1
 forumTopicId: 301351
+dashedName: match-characters-that-occur-zero-or-more-times
 ---
 
 # --description--
@@ -67,5 +68,27 @@ assert(
 );
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```js
+const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+let chewieRegex = /change/; // Change this line
+// Only change code above this line
+
+let result = chewieQuote.match(chewieRegex);
+```
+
 # --solutions--
 
+```js
+  let chewieRegex = /Aa*/;
+  let result = chewieQuote.match(chewieRegex);
+```

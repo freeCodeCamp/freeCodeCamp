@@ -3,6 +3,7 @@ id: 5900f5091000cf542c51001b
 title: 问题408：通过网格的可允许路径
 challengeType: 5
 videoUrl: ''
+dashedName: problem-408-admissible-paths-through-a-grid
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler408(), 299742733);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler408() {
+
+  return true;
+}
+
+euler408();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

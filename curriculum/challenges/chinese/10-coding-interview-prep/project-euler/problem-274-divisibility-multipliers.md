@@ -3,6 +3,7 @@ id: 5900f47f1000cf542c50ff91
 title: 问题274：可分性乘数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-274-divisibility-multipliers
 ---
 
 # --description--
@@ -29,5 +30,21 @@ f（76275）= 7627 + 5 *34 = 7797：76275和7797都可以被113f（12345）= 123
 assert.strictEqual(euler274(), 1601912348822);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler274() {
+
+  return true;
+}
+
+euler274();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

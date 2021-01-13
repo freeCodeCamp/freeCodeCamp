@@ -3,6 +3,7 @@ id: 587d8250367417b2b2512c5f
 title: 创建一个堆栈类
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-stack-class
 ---
 
 # --description--
@@ -114,5 +115,46 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Stack() {
+  var collection = [];
+  this.print = function() {
+    console.log(collection);
+  };
+  // Only change code below this line
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+class Stack {
+  constructor() {
+    this.collection = [];
+  }
+  print() {
+    console.log(this.collection);
+  }
+  push(val) {
+    this.collection.push(val);
+  }
+  pop() {
+    return this.collection.pop();
+  }
+  peek() {
+    return this.collection[this.collection.length - 1];
+  }
+  isEmpty() {
+    return this.collection.length === 0;
+  }
+  clear() {
+    return (this.collection.length = 0);
+  }
+}
+```

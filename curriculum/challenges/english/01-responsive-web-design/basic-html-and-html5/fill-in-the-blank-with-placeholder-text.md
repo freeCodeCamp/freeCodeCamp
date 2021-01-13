@@ -4,6 +4,7 @@ title: Fill in the Blank with Placeholder Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cgR7Dc7'
 forumTopicId: 18178
+dashedName: fill-in-the-blank-with-placeholder-text
 ---
 
 # --description--

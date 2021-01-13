@@ -3,6 +3,7 @@ id: 564944c91be2204b269d51e3
 title: 使用 jQuery 更改元素内部的文本
 challengeType: 6
 forumTopicId: 16773
+dashedName: change-text-inside-an-element-using-jquery
 ---
 
 # --description--
@@ -19,7 +20,7 @@ jQuery 有一个`.html()`函数，你能用其在标签里添加 HTML 标签和�
 
 请强调 id 为`target4`的按钮的文本。
 
-请查看此[链接](https://developer.mozilla.org/en/docs/Web/HTML/Element/em)来了解更多`<i>`和`<em>`的区别和用法。
+请查看此[链接](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-elemen)来了解更多`<i>`和`<em>`的区别和用法。
 
 注意，`<i>`标签虽然传统上用来强调文本，但此后常用作图标的标签；`<em>`标签作为强调标签现在已被广泛接受。两者都可以应对本次挑战。
 
@@ -57,5 +58,72 @@ assert(code.match(/\.html\(/g));
 assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+
+  });
+</script>
+
+<!-- Only change code above this line -->
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 # --solutions--
 
+```html
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target4").html('<em>#target4</em>');
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```

@@ -3,6 +3,7 @@ id: 587d7fb1367417b2b2512bf2
 title: 使用 .env 文件
 challengeType: 2
 forumTopicId: 301521
+dashedName: use-the--env-file
 ---
 
 # --description--
@@ -38,3 +39,10 @@ forumTopicId: 301521
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

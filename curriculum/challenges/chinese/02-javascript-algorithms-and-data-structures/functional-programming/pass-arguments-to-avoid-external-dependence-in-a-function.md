@@ -3,6 +3,7 @@ id: 587d7b8e367417b2b2512b5f
 title: 传递参数以避免函数中的外部依赖
 challengeType: 1
 forumTopicId: 301234
+dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
 ---
 
 # --description--
@@ -45,5 +46,34 @@ assert(incrementer.length === 1);
 assert(newValue === 5);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// The global variable
+var fixedValue = 4;
+
+// Only change code below this line
+function incrementer () {
+
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+// The global variable
+var fixedValue = 4;
+
+// Only change code below this line
+function incrementer (fixedValue) {
+  return fixedValue + 1;
+
+  // Only change code above this line
+}
+
+  
+```

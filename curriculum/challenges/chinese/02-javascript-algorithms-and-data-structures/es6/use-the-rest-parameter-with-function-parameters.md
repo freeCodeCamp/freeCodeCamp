@@ -3,6 +3,7 @@ id: 587d7b88367417b2b2512b47
 title: 将 rest 操作符与函数参数一起使用
 challengeType: 1
 forumTopicId: 301221
+dashedName: use-the-rest-parameter-with-function-parameters
 ---
 
 # --description--
@@ -57,5 +58,21 @@ assert(sum() === 0);
 assert(code.replace(/\s/g, '').match(/sum=\(\.\.\.args\)=>/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const sum = (x, y, z) => {
+  const args = [x, y, z];
+  return args.reduce((a, b) => a + b, 0);
+}
+```
+
 # --solutions--
 
+```js
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+```

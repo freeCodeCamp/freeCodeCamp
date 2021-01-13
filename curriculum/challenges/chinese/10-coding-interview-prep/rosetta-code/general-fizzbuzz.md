@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e78
 title: 一般的FizzBu​​zz
 challengeType: 5
 videoUrl: ''
+dashedName: general-fizzbuzz
 ---
 
 # --description--
@@ -137,5 +138,30 @@ assert.equal(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function genFizzBuzz(rules, num) {
+
+}
+```
+
 # --solutions--
 
+```js
+function genFizzBuzz(rules, num) {
+  let res='';
+  rules.forEach(function (e) {
+    if(num % e[0] == 0)
+      res+=e[1];
+  })
+
+  if(res==''){
+    res=num.toString();
+  }
+
+  return res;
+}
+```

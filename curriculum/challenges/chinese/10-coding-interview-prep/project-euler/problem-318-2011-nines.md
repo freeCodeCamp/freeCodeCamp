@@ -3,6 +3,7 @@ id: 5900f4ab1000cf542c50ffbd
 title: 问题318：2011个九
 challengeType: 5
 videoUrl: ''
+dashedName: problem-318-2011-nines
 ---
 
 # --description--
@@ -47,5 +48,21 @@ videoUrl: ''
 assert.strictEqual(euler318(), 709313889);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler318() {
+
+  return true;
+}
+
+euler318();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

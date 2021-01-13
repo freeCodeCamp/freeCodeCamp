@@ -3,6 +3,7 @@ id: 5900f48d1000cf542c50ff9f
 title: 问题288：一个巨大的阶乘
 challengeType: 5
 videoUrl: ''
+dashedName: problem-288-an-enormous-factorial
 ---
 
 # --description--
@@ -27,5 +28,21 @@ S0 = 290797 Sn + 1 = Sn2 mod 50515093 Tn = Sn mod p
 assert.strictEqual(euler288(), 605857431263982000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler288() {
+
+  return true;
+}
+
+euler288();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

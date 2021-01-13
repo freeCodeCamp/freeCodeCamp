@@ -3,6 +3,7 @@ id: 587d7fb4367417b2b2512bfd
 title: Add Keywords to Your package.json
 challengeType: 2
 forumTopicId: 301526
+dashedName: add-keywords-to-your-package-json
 ---
 
 # --description--
@@ -71,8 +72,6 @@ package.json should have a valid "keywords" key
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c47
 title: 测试变量或函数是否已定义
 challengeType: 2
 forumTopicId: 301602
+dashedName: test-if-a-variable-or-function-is-defined
 ---
 
 # --description--
@@ -85,3 +86,10 @@ forumTopicId: 301602
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

@@ -3,6 +3,7 @@ id: 5900f4301000cf542c50ff42
 title: 问题196：Prime三胞胎
 challengeType: 5
 videoUrl: ''
+dashedName: problem-196-prime-triplets
 ---
 
 # --description--
@@ -33,5 +34,21 @@ videoUrl: ''
 assert.strictEqual(euler196(), 322303240771079940);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler196() {
+
+  return true;
+}
+
+euler196();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

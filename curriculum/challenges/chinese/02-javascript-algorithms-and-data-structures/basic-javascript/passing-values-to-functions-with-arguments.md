@@ -4,6 +4,7 @@ title: 将值传递给带有参数的函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy8rahW'
 forumTopicId: 18254
+dashedName: passing-values-to-functions-with-arguments
 ---
 
 # --description--
@@ -60,5 +61,55 @@ assert(logOutput == 16);
 assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*;?/m.test(code));
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```js
+var logOutput = "";
+var originalConsole = console
+function capture() {
+    var nativeLog = console.log;
+    console.log = function (message) {
+        if(message) logOutput = JSON.stringify(message).trim();
+        if(nativeLog.apply) {
+          nativeLog.apply(originalConsole, arguments);
+        } else {
+          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
+          nativeLog(nativeMsg);
+        }
+    };
+}
+
+function uncapture() {
+  console.log = originalConsole.log;
+}
+
+capture();
+```
+
+## --after-user-code--
+
+```js
+uncapture();
+
+if (typeof functionWithArgs !== "function") { 
+  (function() { return "functionWithArgs is not defined"; })();
+} else {
+  (function() { return logOutput || "console.log never called"; })();
+}
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+function functionWithArgs(a, b) {
+  console.log(a + b);
+}
+functionWithArgs(10, 5);
+```

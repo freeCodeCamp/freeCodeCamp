@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036152
 title: 使用 const 声明 Action Types
 challengeType: 6
 forumTopicId: 301450
+dashedName: use-const-for-action-types
 ---
 
 # --description--
@@ -109,5 +110,97 @@ action creator 和 reducer 中应该引用`LOGIN`和`LOGOUT`常量。
   );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Change code below this line
+
+// Change code above this line
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+
+  switch (action.type) {
+
+    case 'LOGIN':
+      return {
+        authenticated: true
+      }
+
+    case 'LOGOUT':
+      return {
+        authenticated: false
+      }
+
+    default:
+      return state;
+
+  }
+
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
+```
+
 # --solutions--
 
+```js
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+
+  switch (action.type) {
+
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+
+    default:
+      return state;
+
+  }
+
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: LOGIN
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: LOGOUT
+  }
+};
+```

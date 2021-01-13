@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c61
 title: 使用链接列表中的节点
 challengeType: 1
 videoUrl: ''
+dashedName: work-with-nodes-in-a-linked-list
 ---
 
 # --description--
@@ -27,5 +28,24 @@ assert(Puppy.next.element === 'Cat');
 assert(Cat.next.element === 'Dog');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var Node = function(element) {
+  this.element = element;
+  this.next = null;
+};
+var Kitten = new Node('Kitten');
+var Puppy = new Node('Puppy');
+
+Kitten.next = Puppy;
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -4,6 +4,7 @@ title: Understand Absolute versus Relative Units
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089
+dashedName: understand-absolute-versus-relative-units
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4f21000cf542c510005
 title: 问题390：具有非理性边和积分面积的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
 ---
 
 # --description--
@@ -25,5 +26,21 @@ S（106）= 18018206。
 assert.strictEqual(euler390(), 2919133642971);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler390() {
+
+  return true;
+}
+
+euler390();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

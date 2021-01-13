@@ -3,6 +3,7 @@ id: 587d7b83367417b2b2512b33
 title: Use the JavaScript Console to Check the Value of a Variable
 challengeType: 1
 forumTopicId: 18372
+dashedName: use-the-javascript-console-to-check-the-value-of-a-variable
 ---
 
 # --description--

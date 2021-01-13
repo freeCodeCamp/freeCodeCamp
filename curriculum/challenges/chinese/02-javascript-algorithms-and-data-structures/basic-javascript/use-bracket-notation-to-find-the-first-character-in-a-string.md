@@ -4,6 +4,7 @@ title: 使用方括号查找字符串中的第一个字符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8JwhW'
 forumTopicId: 18341
+dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 ---
 
 # --description--
@@ -35,5 +36,31 @@ assert(firstLetterOfLastName === 'L');
 assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(v){return v;})(firstLetterOfLastName);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName; // Change this line
+```
+
 # --solutions--
 
+```js
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName[0];
+```

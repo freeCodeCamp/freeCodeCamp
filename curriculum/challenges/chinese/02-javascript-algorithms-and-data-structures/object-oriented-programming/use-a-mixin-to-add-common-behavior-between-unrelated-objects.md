@@ -3,6 +3,7 @@ id: 587d7db2367417b2b2512b89
 title: 使用 Mixin 在不相关对象之间添加共同行为
 challengeType: 1
 forumTopicId: 301331
+dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects
 ---
 
 # --description--
@@ -69,5 +70,40 @@ assert(typeof bird.glide === 'function');
 assert(typeof boat.glide === 'function');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+function glideMixin (obj) {
+  obj.glide = () => 'Gliding!';
+}
+
+glideMixin(bird);
+glideMixin(boat);
+```

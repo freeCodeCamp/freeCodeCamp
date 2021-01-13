@@ -3,6 +3,7 @@ id: 587d824c367417b2b2512c4d
 title: 比较两个元素的属性
 challengeType: 2
 forumTopicId: 301588
+dashedName: compare-the-properties-of-two-elements
 ---
 
 # --description--
@@ -99,3 +100,10 @@ forumTopicId: 301588
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d98
 challengeType: 11
 videoId: kfv0K8MtkIc
+dashedName: creating-a-convolutional-neural-network
 ---
 
 # --question--
@@ -47,9 +48,4 @@ C: `MaxPooling2D`
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

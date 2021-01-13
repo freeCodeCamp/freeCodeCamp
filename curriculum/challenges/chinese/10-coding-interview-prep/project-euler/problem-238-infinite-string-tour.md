@@ -3,6 +3,7 @@ id: 5900f45b1000cf542c50ff6d
 title: 问题238：无限的字符串游览
 challengeType: 5
 videoUrl: ''
+dashedName: problem-238-infinite-string-tour
 ---
 
 # --description--
@@ -37,5 +38,21 @@ s0 = 14025256 sn + 1 = sn2 mod 20300713
 assert.strictEqual(euler238(), 9922545104535660);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler238() {
+
+  return true;
+}
+
+euler238();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

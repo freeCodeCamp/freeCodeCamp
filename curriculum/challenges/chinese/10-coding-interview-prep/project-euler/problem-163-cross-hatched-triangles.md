@@ -3,6 +3,7 @@ id: 5900f40f1000cf542c50ff22
 title: 问题163：阴影线三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-163-cross-hatched-triangles
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler163(), 343047);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler163() {
+
+  return true;
+}
+
+euler163();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

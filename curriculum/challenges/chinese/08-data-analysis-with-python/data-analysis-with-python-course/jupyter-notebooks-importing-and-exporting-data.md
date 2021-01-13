@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c151
 challengeType: 11
 videoId: k1msxD3JIxE
+dashedName: jupyter-notebooks-importing-and-exporting-data
 ---
 
 # --description--
@@ -41,9 +42,4 @@ All of the above.
 ## --video-solution--
 
 5
-
-# --hints--
-
-
-# --solutions--
 

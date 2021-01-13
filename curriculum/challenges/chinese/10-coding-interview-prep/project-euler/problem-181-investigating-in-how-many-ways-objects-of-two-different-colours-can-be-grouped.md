@@ -3,6 +3,8 @@ id: 5900f4231000cf542c50ff34
 title: 问题181：调查两种不同颜色的对象可以分组的方式
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-181-investigating-in-how-many-ways-objects-of-two-different-colours-can-be-grouped
 ---
 
 # --description--
@@ -17,5 +19,21 @@ videoUrl: ''
 assert.strictEqual(euler181(), 83735848679360670);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler181() {
+
+  return true;
+}
+
+euler181();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

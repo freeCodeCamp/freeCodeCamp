@@ -3,6 +3,7 @@ id: bd7158d8c242eddfaeb5bd13
 title: 制作一个个人作品集展示页
 challengeType: 3
 forumTopicId: 301143
+dashedName: build-a-personal-portfolio-webpage
 ---
 
 # --description--
@@ -39,8 +40,8 @@ forumTopicId: 301143
 
 完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
 
-# --hints--
-
-
 # --solutions--
 
+```html
+// solution required
+```

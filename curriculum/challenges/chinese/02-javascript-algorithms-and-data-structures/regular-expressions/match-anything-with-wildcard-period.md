@@ -3,6 +3,7 @@ id: 587d7db5367417b2b2512b94
 title: 用通配符.匹配任何内容
 challengeType: 1
 forumTopicId: 301348
+dashedName: match-anything-with-wildcard-period
 ---
 
 # --description--
@@ -89,5 +90,20 @@ assert(!unRegex.test('There is a bug in my code.'));
 assert(!unRegex.test('Can me if you can.'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /change/; // Change this line
+let result = unRegex.test(exampleStr);
+```
+
 # --solutions--
 
+```js
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // Change this line
+let result = unRegex.test(exampleStr);
+```

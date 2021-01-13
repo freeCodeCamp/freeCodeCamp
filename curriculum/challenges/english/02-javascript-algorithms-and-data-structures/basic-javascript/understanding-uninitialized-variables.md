@@ -4,6 +4,7 @@ title: Understanding Uninitialized Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
+dashedName: understanding-uninitialized-variables
 ---
 
 # --description--

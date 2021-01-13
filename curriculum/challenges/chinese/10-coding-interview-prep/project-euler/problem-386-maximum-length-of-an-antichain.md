@@ -3,6 +3,7 @@ id: 5900f4ef1000cf542c510001
 title: 问题386：反链的最大长度
 challengeType: 5
 videoUrl: ''
+dashedName: problem-386-maximum-length-of-an-antichain
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler386(), 528755790);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler386() {
+
+  return true;
+}
+
+euler386();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bdff
 title: 请求头解析器
 challengeType: 4
 forumTopicId: 301507
+dashedName: request-header-parser-microservice
 ---
 
 # --description--
@@ -53,3 +54,10 @@ software 应该在 `software`  键里返回。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

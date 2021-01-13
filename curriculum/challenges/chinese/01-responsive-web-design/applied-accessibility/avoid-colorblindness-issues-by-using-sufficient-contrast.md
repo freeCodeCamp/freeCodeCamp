@@ -4,6 +4,7 @@ title: 考虑色盲用户的需求设置合适的对比度
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMEUw'
 forumTopicId: 301012
+dashedName: avoid-colorblindness-issues-by-using-sufficient-contrast
 ---
 
 # --description--
@@ -34,5 +35,50 @@ assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi));
 assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<head>
+  <style>
+  body {
+    color: hsl(0, 55%, 20%);
+    background-color: hsl(120, 25%, 35%);
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <article>
+    <h2>A Word on the Recent Catnip Doping Scandal</h2>
+    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
+    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
+  </article>
+</body>
+```
+
 # --solutions--
 
+```html
+<head>
+  <style>
+  body {
+    color: hsl(0, 55%, 15%);
+    background-color: hsl(120, 25%, 55%);
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <article>
+    <h2>A Word on the Recent Catnip Doping Scandal</h2>
+    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
+    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
+  </article>
+</body>
+```

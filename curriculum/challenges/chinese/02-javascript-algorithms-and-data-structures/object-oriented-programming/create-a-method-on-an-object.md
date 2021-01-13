@@ -3,6 +3,7 @@ id: 587d7dad367417b2b2512b75
 title: 在对象上创建方法
 challengeType: 1
 forumTopicId: 301318
+dashedName: create-a-method-on-an-object
 ---
 
 # --description--
@@ -41,5 +42,30 @@ assert(typeof dog.sayLegs === 'function');
 assert(dog.sayLegs() === 'This dog has 4 legs.');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+
+};
+
+dog.sayLegs();
+```
+
 # --solutions--
 
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs () {
+    return 'This dog has ' + this.numLegs + ' legs.';
+  }
+};
+
+dog.sayLegs();
+```

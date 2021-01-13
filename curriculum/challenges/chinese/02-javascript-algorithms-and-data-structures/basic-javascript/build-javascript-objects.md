@@ -4,6 +4,7 @@ title: 新建 JavaScript 对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWGkbtd'
 forumTopicId: 16769
+dashedName: build-javascript-objects
 ---
 
 # --description--
@@ -127,5 +128,32 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myDog);
+```
+
+## --seed-contents--
+
+```js
+var myDog = {
+// Only change code below this line
+
+
+// Only change code above this line
+};
+```
+
 # --solutions--
 
+```js
+var myDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+```

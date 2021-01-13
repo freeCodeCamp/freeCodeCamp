@@ -3,6 +3,7 @@ id: 587d7b8f367417b2b2512b62
 title: 在原型上实现 map 方法
 challengeType: 1
 forumTopicId: 301230
+dashedName: implement-map-on-a-prototype
 ---
 
 # --description--
@@ -33,5 +34,44 @@ assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]));
 assert(!code.match(/\.map/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// The global variable
+var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback) {
+  var newArray = [];
+  // Only change code below this line
+
+  // Only change code above this line
+  return newArray;
+};
+
+var new_s = s.myMap(function(item) {
+  return item * 2;
+});
+```
+
 # --solutions--
 
+```js
+// the global Array
+var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback) {
+  var newArray = [];
+  // Only change code below this line
+  for (var elem of this) {
+    newArray.push(callback(elem));
+  }
+  // Only change code above this line
+  return newArray;
+};
+
+var new_s = s.myMap(function(item) {
+  return item * 2;
+});
+```

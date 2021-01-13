@@ -3,6 +3,7 @@ id: 587d7fa6367417b2b2512bbf
 title: Visualize Data with a Choropleth Map
 challengeType: 3
 forumTopicId: 301465
+dashedName: visualize-data-with-a-choropleth-map
 ---
 
 # --description--
@@ -43,11 +44,6 @@ Here are the datasets you will need to complete this project:
 You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Once you're done, submit the URL to your working project with all its tests passing.
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

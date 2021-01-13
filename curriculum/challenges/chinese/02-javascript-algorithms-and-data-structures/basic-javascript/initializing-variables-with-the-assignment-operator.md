@@ -4,6 +4,7 @@ title: 使用赋值运算符初始化变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
+dashedName: initializing-variables-with-the-assignment-operator
 ---
 
 # --description--
@@ -26,5 +27,21 @@ forumTopicId: 301171
 assert(/var\s+a\s*=\s*9\s*/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof a !== 'undefined') {(function(a){return "a = " + a;})(a);} else { (function() {return 'a is undefined';})(); }
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+var a = 9;
+```

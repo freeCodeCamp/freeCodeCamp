@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d9e
 challengeType: 11
 videoId: lYeLtu8Nq7c
+dashedName: natural-language-processing-with-rnns-sentiment-analysis
 ---
 
 # --question--
@@ -45,9 +46,4 @@ C: `LSTM`
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

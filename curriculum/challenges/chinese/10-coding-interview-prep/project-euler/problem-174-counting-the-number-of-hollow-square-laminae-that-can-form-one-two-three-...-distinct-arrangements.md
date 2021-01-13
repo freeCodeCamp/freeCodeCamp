@@ -3,6 +3,8 @@ id: 5900f41a1000cf542c50ff2d
 title: 问题174：计算可以形成一个，两个，三个......不同排列的“空心”方形薄片的数量
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-174-counting-the-number-of-hollow-square-laminae-that-can-form-one-two-three-----distinct-arrangements
 ---
 
 # --description--
@@ -19,5 +21,21 @@ videoUrl: ''
 assert.strictEqual(euler174(), 209566);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler174() {
+
+  return true;
+}
+
+euler174();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -4,6 +4,7 @@ title: 函数中的全局作用域和局部作用域
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
+dashedName: global-vs--local-scope-in-functions
 ---
 
 # --description--
@@ -46,5 +47,32 @@ assert(myOutfit() === 'sweater');
 assert(/return outerWear/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+var outerWear = "T-Shirt";
+
+function myOutfit() {
+  // Only change code below this line
+
+
+
+  // Only change code above this line
+  return outerWear;
+}
+
+myOutfit();
+```
+
 # --solutions--
 
+```js
+var outerWear = "T-Shirt";
+function myOutfit() {
+  var outerWear = "sweater";
+  return outerWear;
+}
+```

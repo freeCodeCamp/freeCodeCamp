@@ -3,6 +3,7 @@ id: 587d824c367417b2b2512c4f
 title: Test if a Value Falls within a Specific Range
 challengeType: 2
 forumTopicId: 301598
+dashedName: test-if-a-value-falls-within-a-specific-range
 ---
 
 # --description--
@@ -74,8 +75,6 @@ You should choose the correct range for the second assertion - `approximately(ac
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

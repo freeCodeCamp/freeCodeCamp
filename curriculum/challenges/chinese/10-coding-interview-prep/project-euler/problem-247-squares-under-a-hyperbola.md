@@ -3,6 +3,7 @@ id: 5900f4641000cf542c50ff76
 title: 问题247：双曲线下的正方形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-247-squares-under-a-hyperbola
 ---
 
 # --description--
@@ -23,5 +24,21 @@ Sn指数为（3,3）的最大n是多少？
 assert.strictEqual(euler247(), 782252);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler247() {
+
+  return true;
+}
+
+euler247();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

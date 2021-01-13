@@ -3,6 +3,7 @@ id: 5900f3761000cf542c50fe88
 title: 'Problem 9: Special Pythagorean triplet'
 challengeType: 5
 forumTopicId: 302205
+dashedName: problem-9-special-pythagorean-triplet
 ---
 
 # --description--

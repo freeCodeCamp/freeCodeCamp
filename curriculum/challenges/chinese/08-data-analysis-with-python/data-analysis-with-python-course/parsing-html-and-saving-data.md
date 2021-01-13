@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c164
 challengeType: 11
 videoId: bJaqnTWQmb0
+dashedName: parsing-html-and-saving-data
 ---
 
 # --description--
@@ -41,9 +42,4 @@ Pandas
 ## --video-solution--
 
 4
-
-# --hints--
-
-
-# --solutions--
 

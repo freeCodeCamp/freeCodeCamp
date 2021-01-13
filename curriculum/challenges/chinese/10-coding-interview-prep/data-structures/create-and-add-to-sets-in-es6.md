@@ -3,6 +3,7 @@ id: 587d8254367417b2b2512c70
 title: 在ES6中创建和添加集
 challengeType: 1
 videoUrl: ''
+dashedName: create-and-add-to-sets-in-es6
 ---
 
 # --description--
@@ -42,5 +43,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkSet() {
+  var set = new Set([1, 2, 3, 3, 2, 1, 2, 3, 1]);
+  // Only change code below this line
+
+  // Only change code above this line
+  console.log(Array.from(set));
+  return set;
+}
+
+checkSet();
+```
+
 # --solutions--
 
+```js
+function checkSet(){var set = new Set([1,2,3,'Taco','Cat','Awesome']);
+return set;}
+```

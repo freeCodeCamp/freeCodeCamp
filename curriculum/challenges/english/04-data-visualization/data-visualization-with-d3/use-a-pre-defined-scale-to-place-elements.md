@@ -3,6 +3,7 @@ id: 587d7fac367417b2b2512bde
 title: Use a Pre-Defined Scale to Place Elements
 challengeType: 6
 forumTopicId: 301494
+dashedName: use-a-pre-defined-scale-to-place-elements
 ---
 
 # --description--

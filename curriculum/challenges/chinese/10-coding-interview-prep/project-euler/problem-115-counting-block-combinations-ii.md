@@ -3,6 +3,7 @@ id: 5900f3df1000cf542c50fef1
 title: 问题115：计数块组合II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-115-counting-block-combinations-ii
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler115(), 168);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler115() {
+
+  return true;
+}
+
+euler115();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

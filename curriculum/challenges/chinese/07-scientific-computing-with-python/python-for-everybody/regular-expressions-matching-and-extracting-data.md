@@ -2,6 +2,7 @@
 id: 5e7b9f0b0b6c005b0e76f06f
 challengeType: 11
 videoId: LaCZnTbQGkE
+dashedName: regular-expressions-matching-and-extracting-data
 ---
 
 # --question--
@@ -36,9 +37,4 @@ print(lst)
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

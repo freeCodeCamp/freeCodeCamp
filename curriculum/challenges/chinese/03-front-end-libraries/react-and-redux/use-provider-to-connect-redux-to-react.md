@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036144
 title: 使用 Provider 连接 Redux 和 React
 challengeType: 6
 forumTopicId: 301435
+dashedName: use-provider-to-connect-redux-to-react
 ---
 
 # --description--
@@ -79,5 +80,184 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<AppWrapper />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+// Redux:
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+
+
+const store = Redux.createStore(messageReducer);
+
+// React:
+
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  submitMessage() {  
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input
+          value={this.state.input}
+          onChange={this.handleChange}/><br/>
+        <button onClick={this.submitMessage}>Submit</button>
+        <ul>
+          {this.state.messages.map( (message, idx) => {
+              return (
+                 <li key={idx}>{message}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  }
+};
+
+const Provider = ReactRedux.Provider;
+
+class AppWrapper extends React.Component {
+  // Render the Provider below this line
+
+  // Change code above this line
+};
+```
+
 # --solutions--
 
+```jsx
+// Redux:
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(messageReducer);
+
+// React:
+
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+ this.handleChange = this.handleChange.bind(this);
+ this.submitMessage = this.submitMessage.bind(this);
+ }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  submitMessage() {
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };  
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input
+          value={this.state.input}
+          onChange={this.handleChange}/><br/>
+        <button onClick={this.submitMessage}>Submit</button>
+        <ul>
+          {this.state.messages.map( (message, idx) => {
+              return (
+                 <li key={idx}>{message}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  }
+};
+
+const Provider = ReactRedux.Provider;
+
+class AppWrapper extends React.Component {
+  // Change code below this line
+  render() {
+    return (
+      <Provider store = {store}>
+        <DisplayMessages/>
+      </Provider>
+    );
+  }
+  // Change code above this line
+};
+```

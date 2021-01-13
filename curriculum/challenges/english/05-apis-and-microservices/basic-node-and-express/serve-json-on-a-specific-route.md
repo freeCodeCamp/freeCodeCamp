@@ -3,6 +3,7 @@ id: 587d7fb1367417b2b2512bf1
 title: Serve JSON on a Specific Route
 challengeType: 2
 forumTopicId: 301517
+dashedName: serve-json-on-a-specific-route
 ---
 
 # --description--
@@ -34,8 +35,6 @@ The endpoint `/json` should serve the json object `{"message": "Hello json"}`
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

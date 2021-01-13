@@ -3,6 +3,7 @@ id: 5900f3db1000cf542c50feee
 title: 问题111：运行的Primes
 challengeType: 5
 videoUrl: ''
+dashedName: problem-111-primes-with-runs
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler111(), 612407567715);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler111() {
+
+  return true;
+}
+
+euler111();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4c01000cf542c50ffd2
 title: 问题339：Peredur fab Efrawg
 challengeType: 5
 videoUrl: ''
+dashedName: problem-339-peredur-fab-efrawg
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler339(), 19823.542204);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler339() {
+
+  return true;
+}
+
+euler339();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

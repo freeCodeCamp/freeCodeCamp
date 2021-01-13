@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617a
 title: 将 State 作为 Props 传递给子组件
 challengeType: 6
 forumTopicId: 301403
+dashedName: pass-state-as-props-to-child-components
 ---
 
 # --description--
@@ -15,7 +16,7 @@ forumTopicId: 301403
 
 # --instructions--
 
-`MyApp`组件是有状态的，它将`Navbar`组件渲染成它的为子组件。将`MyApp`组件`state`中的`name`属性向下传递给子组件，然后在`h1`标签中显示`name`，`name`是`Navbar`render 方法的一部分。
+`MyApp`组件是有状态的，它将`Navbar`组件渲染成它的为子组件。将`MyApp`组件`state`中的`name`属性向下传递给子组件，然后在`h1`标签中显示`name`，`name`是`Navbar`render 方法的一部分。`name` 应该显示在文字 `Hello, my name is:` 后面。
 
 # --hints--
 
@@ -66,5 +67,79 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyApp />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'CamperBot'
+    }
+  }
+  render() {
+    return (
+       <div>
+         {/* Change code below this line */}
+         <Navbar />
+         {/* Change code above this line */}
+       </div>
+    );
+  }
+};
+
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+    <div>
+      {/* Change code below this line */}
+      <h1>Hello, my name is: </h1>
+      {/* Change code above this line */}
+    </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'CamperBot'
+    }
+  }
+  render() {
+    return (
+       <div>
+         <Navbar name={this.state.name}/>
+       </div>
+    );
+  }
+};
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+    <div>
+      <h1>Hello, my name is: {this.props.name}</h1>
+    </div>
+    );
+  }
+};
+```

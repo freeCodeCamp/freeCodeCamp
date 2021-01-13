@@ -3,6 +3,7 @@ id: 5900f3901000cf542c50fea3
 title: 问题36：双基回文
 challengeType: 5
 videoUrl: ''
+dashedName: problem-36-double-base-palindromes
 ---
 
 # --description--
@@ -35,5 +36,21 @@ assert(doubleBasePalindromes(500000) == 286602);
 assert(doubleBasePalindromes(1000000) == 872187);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function doubleBasePalindromes(n) {
+
+  return n;
+}
+
+doubleBasePalindromes(1000000);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

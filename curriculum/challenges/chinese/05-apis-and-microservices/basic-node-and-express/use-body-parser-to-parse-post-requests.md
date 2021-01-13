@@ -3,6 +3,7 @@ id: 587d7fb2367417b2b2512bf7
 title: 使用 body-parser 来解析POST请求
 challengeType: 2
 forumTopicId: 301520
+dashedName: use-body-parser-to-parse-post-requests
 ---
 
 # --description--
@@ -50,3 +51,10 @@ name=John+Doe&age=25
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

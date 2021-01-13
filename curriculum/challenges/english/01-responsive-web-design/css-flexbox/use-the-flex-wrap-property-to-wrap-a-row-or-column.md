@@ -4,6 +4,7 @@ title: Use the flex-wrap Property to Wrap a Row or Column
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cQv9ZtG'
 forumTopicId: 301114
+dashedName: use-the-flex-wrap-property-to-wrap-a-row-or-column
 ---
 
 # --description--

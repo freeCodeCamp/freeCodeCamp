@@ -3,6 +3,7 @@ id: 5900f4971000cf542c50ffaa
 title: 问题299：三个相似的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-299-three-similar-triangles
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler299(), 549936643);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler299() {
+
+  return true;
+}
+
+euler299();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

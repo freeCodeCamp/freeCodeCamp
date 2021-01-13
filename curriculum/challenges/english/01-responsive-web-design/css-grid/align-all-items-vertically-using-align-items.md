@@ -4,6 +4,7 @@ title: Align All Items Vertically using align-items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/ckzPeUv'
 forumTopicId: 301121
+dashedName: align-all-items-vertically-using-align-items
 ---
 
 # --description--

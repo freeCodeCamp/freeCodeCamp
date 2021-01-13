@@ -3,6 +3,7 @@ id: 5900f3ea1000cf542c50fefd
 title: 问题126：长方体层
 challengeType: 5
 videoUrl: ''
+dashedName: problem-126-cuboid-layers
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler126(), 18522);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler126() {
+
+  return true;
+}
+
+euler126();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

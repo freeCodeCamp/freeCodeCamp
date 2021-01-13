@@ -3,6 +3,7 @@ id: 5900f4111000cf542c50ff24
 title: 'Problem 165: Intersections'
 challengeType: 5
 forumTopicId: 301799
+dashedName: problem-165-intersections
 ---
 
 # --description--

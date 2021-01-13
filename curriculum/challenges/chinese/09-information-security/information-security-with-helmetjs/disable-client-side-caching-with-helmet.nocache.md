@@ -3,6 +3,7 @@ id: 587d8249367417b2b2512c3e
 title: 使用 helment.noCache() 禁用客户端缓存
 challengeType: 2
 forumTopicId: 301576
+dashedName: disable-client-side-caching-with-helmet-nocache
 ---
 
 # --description--
@@ -33,3 +34,10 @@ forumTopicId: 301576
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

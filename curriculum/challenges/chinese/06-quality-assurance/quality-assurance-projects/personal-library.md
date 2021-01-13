@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c43
 title: 个人图书馆
 challengeType: 4
 videoUrl: ''
+dashedName: personal-library
 ---
 
 # --description--
@@ -73,3 +74,10 @@ videoUrl: ''
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

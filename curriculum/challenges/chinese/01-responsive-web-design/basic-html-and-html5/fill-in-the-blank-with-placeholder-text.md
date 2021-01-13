@@ -4,6 +4,7 @@ title: 用占位符文本填充空白
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cgR7Dc7'
 forumTopicId: 18178
+dashedName: fill-in-the-blank-with-placeholder-text
 ---
 
 # --description--
@@ -24,5 +25,24 @@ Web 开发者通常用 [lorem ipsum text](https://baike.baidu.com/item/Lorem%20i
 assert.isTrue(/Kitty(\s)+ipsum/gi.test($('p').text()));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Hello Paragraph</p>
+```
+
 # --solutions--
 
+```html
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff</p>
+```

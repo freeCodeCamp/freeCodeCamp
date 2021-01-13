@@ -3,6 +3,7 @@ id: 587d7dad367417b2b2512b76
 title: 使用 this 关键字使代码更加可重用
 challengeType: 1
 forumTopicId: 301321
+dashedName: make-code-more-reusable-with-the-this-keyword
 ---
 
 # --description--
@@ -43,5 +44,30 @@ assert(dog.sayLegs() === 'This dog has 4 legs.');
 assert(code.match(/this\.numLegs/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs: function() {return "This dog has " + dog.numLegs + " legs.";}
+};
+
+dog.sayLegs();
+```
+
 # --solutions--
 
+```js
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs () {
+    return 'This dog has ' + this.numLegs + ' legs.';
+  }
+};
+
+dog.sayLegs();
+```

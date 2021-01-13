@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614d
 title: 定义一个 Redux Action
 challengeType: 6
 forumTopicId: 301440
+dashedName: define-a-redux-action
 ---
 
 # --description--
@@ -37,5 +38,18 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Define an action here:
+```
+
 # --solutions--
 
+```js
+const action = {
+  type: 'LOGIN'
+}
+```

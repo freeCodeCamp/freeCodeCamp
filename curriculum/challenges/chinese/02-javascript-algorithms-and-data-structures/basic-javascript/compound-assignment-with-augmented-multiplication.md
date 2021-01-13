@@ -4,6 +4,7 @@ title: 复合赋值之 *=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
+dashedName: compound-assignment-with-augmented-multiplication
 ---
 
 # --description--
@@ -56,5 +57,35 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+```
+
+## --seed-contents--
+
+```js
+var a = 5;
+var b = 12;
+var c = 4.6;
+
+// Only change code below this line
+a = a * 5;
+b = 3 * b;
+c = c * 10;
+```
+
 # --solutions--
 
+```js
+var a = 5;
+var b = 12;
+var c = 4.6;
+
+a *= 5;
+b *= 3;
+c *= 10;
+```

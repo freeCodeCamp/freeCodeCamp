@@ -3,6 +3,7 @@ id: 5900f3ef1000cf542c50ff01
 title: 问题129：重新划分可分性
 challengeType: 5
 videoUrl: ''
+dashedName: problem-129-repunit-divisibility
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler129(), 1000023);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler129() {
+
+  return true;
+}
+
+euler129();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

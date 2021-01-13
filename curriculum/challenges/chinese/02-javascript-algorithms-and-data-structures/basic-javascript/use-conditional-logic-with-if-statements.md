@@ -4,6 +4,7 @@ title: 用 if 语句来表达条件逻辑
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87mf3'
 forumTopicId: 18348
+dashedName: use-conditional-logic-with-if-statements
 ---
 
 # --description--
@@ -67,5 +68,28 @@ assert(trueOrFalse(true) === 'Yes, that was true');
 assert(trueOrFalse(false) === 'No, that was false');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function trueOrFalse(wasThatTrue) {
+  // Only change code below this line
+
+
+
+  // Only change code above this line
+
+}
+```
+
 # --solutions--
 
+```js
+function trueOrFalse(wasThatTrue) {
+  if (wasThatTrue) {
+    return "Yes, that was true";
+  }
+  return "No, that was false";
+}
+```

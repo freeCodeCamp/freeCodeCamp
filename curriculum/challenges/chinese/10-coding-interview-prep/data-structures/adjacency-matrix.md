@@ -3,6 +3,7 @@ id: 587d8256367417b2b2512c78
 title: 邻接矩阵
 challengeType: 1
 videoUrl: ''
+dashedName: adjacency-matrix
 ---
 
 # --description--
@@ -88,5 +89,22 @@ assert(adjMatUndirected[2][4] === 1 && adjMatUndirected[4][2] === 1);
 assert(adjMatUndirected[3][4] === 1 && adjMatUndirected[4][3] === 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var adjMatUndirected = [];
+```
+
 # --solutions--
 
+```js
+var adjMatUndirected = [
+  [0, 0, 1, 1, 0],
+  [0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [0, 0, 1, 1, 0]
+];
+```

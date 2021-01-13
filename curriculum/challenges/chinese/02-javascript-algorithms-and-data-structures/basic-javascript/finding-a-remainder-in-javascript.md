@@ -4,6 +4,7 @@ title: 求余运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWP24Ub'
 forumTopicId: 18184
+dashedName: finding-a-remainder-in-javascript
 ---
 
 # --description--
@@ -46,5 +47,24 @@ assert(remainder === 2);
 assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(y){return 'remainder = '+y;})(remainder);
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+
+var remainder;
+```
+
 # --solutions--
 
+```js
+var remainder =  11 % 3;
+```

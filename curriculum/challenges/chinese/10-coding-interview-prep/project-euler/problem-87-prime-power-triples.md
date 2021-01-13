@@ -3,6 +3,7 @@ id: 5900f3c51000cf542c50fed8
 title: 问题87：Prime power三倍
 challengeType: 5
 videoUrl: ''
+dashedName: problem-87-prime-power-triples
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler87(), 1097343);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function primePowerTriples() {
+
+  return true;
+}
+
+primePowerTriples();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

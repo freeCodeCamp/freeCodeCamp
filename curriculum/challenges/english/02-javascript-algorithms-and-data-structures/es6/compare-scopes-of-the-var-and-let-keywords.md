@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b40
 title: Compare Scopes of the var and let Keywords
 challengeType: 1
 forumTopicId: 301195
+dashedName: compare-scopes-of-the-var-and-let-keywords
 ---
 
 # --description--

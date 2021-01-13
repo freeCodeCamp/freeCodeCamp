@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c61
 title: Work with Nodes in a Linked List
 challengeType: 1
 forumTopicId: 301721
+dashedName: work-with-nodes-in-a-linked-list
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3fa1000cf542c50ff0d
 title: 问题142：完美的方形集合
 challengeType: 5
 videoUrl: ''
+dashedName: problem-142-perfect-square-collection
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler142(), 1006193);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler142() {
+
+  return true;
+}
+
+euler142();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

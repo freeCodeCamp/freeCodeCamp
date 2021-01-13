@@ -3,6 +3,7 @@ id: 5895f70cf9fc0f352b528e67
 title: 实现 Passport 用户的序列化
 challengeType: 2
 forumTopicId: 301556
+dashedName: implement-the-serialization-of-a-passport-user
 ---
 
 # --description--
@@ -83,3 +84,10 @@ myDB(async client => {
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

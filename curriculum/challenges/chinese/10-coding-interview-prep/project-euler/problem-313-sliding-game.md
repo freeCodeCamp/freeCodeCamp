@@ -3,6 +3,7 @@ id: 5900f4a61000cf542c50ffb8
 title: 问题313：滑行游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-313-sliding-game
 ---
 
 # --description--
@@ -23,5 +24,21 @@ S（m，n）= p2有多少个网格，其中p &lt;106是素数？
 assert.strictEqual(euler313(), 2057774861813004);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler313() {
+
+  return true;
+}
+
+euler313();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

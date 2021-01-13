@@ -3,6 +3,7 @@ id: 5900f5271000cf542c510039
 title: 问题442：十一个整数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-442-eleven-free-integers
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler442(), 1295552661530920200);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler442() {
+
+  return true;
+}
+
+euler442();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

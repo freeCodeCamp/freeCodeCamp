@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c15d
 challengeType: 11
 videoId: ovYNhnltVxY
+dashedName: data-cleaning-introduction
 ---
 
 # --description--
@@ -54,9 +55,4 @@ dtype: bool
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

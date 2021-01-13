@@ -3,6 +3,7 @@ id: 587d8255367417b2b2512c72
 title: 在ES6集上使用.has和.size
 challengeType: 1
 videoUrl: ''
+dashedName: use--has-and--size-on-an-es6-set
 ---
 
 # --description--
@@ -26,5 +27,29 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkSet(arrToBeSet, checkValue){
+
+   // Only change code below this line
+
+   // Only change code above this line
+
+}
+```
+
 # --solutions--
 
+```js
+function checkSet(arrToBeSet, checkValue){
+var set = new Set(arrToBeSet);
+var result = [
+set.has(checkValue),
+set.size
+];
+return result;
+}
+```

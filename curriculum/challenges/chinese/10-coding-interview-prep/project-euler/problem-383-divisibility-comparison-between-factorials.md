@@ -3,6 +3,7 @@ id: 5900f4ed1000cf542c50ffff
 title: 问题383：阶乘之间的可比性比较
 challengeType: 5
 videoUrl: ''
+dashedName: problem-383-divisibility-comparison-between-factorials
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler383(), 22173624649806);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler383() {
+
+  return true;
+}
+
+euler383();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

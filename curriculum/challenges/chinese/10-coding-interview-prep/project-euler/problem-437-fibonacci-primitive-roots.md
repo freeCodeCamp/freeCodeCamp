@@ -3,6 +3,7 @@ id: 5900f5241000cf542c510036
 title: 问题437：斐波那契原始根
 challengeType: 5
 videoUrl: ''
+dashedName: problem-437-fibonacci-primitive-roots
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler437(), 74204709657207);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler437() {
+
+  return true;
+}
+
+euler437();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

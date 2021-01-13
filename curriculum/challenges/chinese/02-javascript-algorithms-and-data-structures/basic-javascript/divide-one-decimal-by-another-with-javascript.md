@@ -4,6 +4,7 @@ title: 两个小数相除
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZe9AW'
 forumTopicId: 18255
+dashedName: divide-one-decimal-by-another-with-javascript
 ---
 
 # --description--
@@ -34,5 +35,22 @@ quotient 变量应该只被赋值一次。
 assert(code.match(/quotient/g).length === 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(y){return 'quotient = '+y;})(quotient);
+```
+
+## --seed-contents--
+
+```js
+var quotient = 0.0 / 2.0; // Change this line
+```
+
 # --solutions--
 
+```js
+var quotient = 4.4 / 2.0;
+```

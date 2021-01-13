@@ -3,6 +3,7 @@ id: 5900f4601000cf542c50ff72
 title: 问题244：滑块
 challengeType: 5
 videoUrl: ''
+dashedName: problem-244-sliders
 ---
 
 # --description--
@@ -31,5 +32,21 @@ L76R82U85D68
 assert.strictEqual(euler244(), 96356848);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler244() {
+
+  return true;
+}
+
+euler244();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

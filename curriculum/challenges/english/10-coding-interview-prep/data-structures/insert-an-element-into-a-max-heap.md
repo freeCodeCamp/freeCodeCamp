@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c8a
 title: Insert an Element into a Max Heap
 challengeType: 1
 forumTopicId: 301703
+dashedName: insert-an-element-into-a-max-heap
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c62
 title: 创建链接列表类
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-linked-list-class
 ---
 
 # --description--
@@ -64,5 +65,71 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){
+    this.element = element;
+    this.next = null;
+  };
+
+  this.head = function(){
+    return head;
+  };
+
+  this.size = function(){
+    return length;
+  };
+
+  this.add = function(element){
+    // Only change code below this line
+
+    // Only change code above this line
+  };
+}
+```
+
 # --solutions--
 
+```js
+function LinkedList() { 
+  var length = 0; 
+  var head = null; 
+
+  var Node = function(element){
+    this.element = element; 
+    this.next = null; 
+  }; 
+
+  this.head = function(){
+    return head;
+  };
+
+  this.size = function(){
+    return length;
+  };
+
+  this.add = function(element){
+    // Only change code below this line
+    if (head == null) {
+      head = new Node(element);
+    } 
+    else {
+      let currentNode = head;
+      while (currentNode.next != null) {
+        // currentNode.next will be last node of linked list after loop
+        currentNode = currentNode.next;
+      }
+      currentNode.next = new Node(element);
+    }
+    length++;
+    // Only change code above this line
+  };
+}
+```

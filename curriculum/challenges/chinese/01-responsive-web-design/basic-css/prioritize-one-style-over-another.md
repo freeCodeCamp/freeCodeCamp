@@ -4,6 +4,7 @@ title: 样式中的优先级
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ8wnHv'
 forumTopicId: 18258
+dashedName: prioritize-one-style-over-another
 ---
 
 # --description--
@@ -40,5 +41,33 @@ assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));
 assert($('h1').css('color') === 'rgb(255, 192, 203)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+</style>
+<h1>Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+</style>
+<h1 class="pink-text">Hello World!</h1>
+```

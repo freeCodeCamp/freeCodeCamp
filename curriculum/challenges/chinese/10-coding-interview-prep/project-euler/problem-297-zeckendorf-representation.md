@@ -3,6 +3,7 @@ id: 5900f4951000cf542c50ffa8
 title: 问题297：Zeckendorf表示
 challengeType: 5
 videoUrl: ''
+dashedName: problem-297-zeckendorf-representation
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler297(), 2252639041804718000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler297() {
+
+  return true;
+}
+
+euler297();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

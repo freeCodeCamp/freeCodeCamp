@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bd0e
 title: Chart the Stock Market
 challengeType: 4
 forumTopicId: 302363
+dashedName: chart-the-stock-market
 ---
 
 # --description--
@@ -20,11 +21,6 @@ Here are the specific user stories you should implement for this project:
 **User Story:** You can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the \`Solution Link\` field. Optionally, also submit a link to your project's source code in the \`GitHub Link\` field.
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

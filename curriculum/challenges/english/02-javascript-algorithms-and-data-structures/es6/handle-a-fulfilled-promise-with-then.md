@@ -3,6 +3,7 @@ id: 5cdafbd72913098997531681
 title: Handle a Fulfilled Promise with then
 challengeType: 1
 forumTopicId: 301203
+dashedName: handle-a-fulfilled-promise-with-then
 ---
 
 # --description--

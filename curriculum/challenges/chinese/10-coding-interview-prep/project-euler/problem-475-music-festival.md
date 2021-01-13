@@ -3,6 +3,7 @@ id: 5900f5481000cf542c51005a
 title: 问题475：音乐节
 challengeType: 5
 videoUrl: ''
+dashedName: problem-475-music-festival
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler475(), 75780067);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler475() {
+
+  return true;
+}
+
+euler475();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

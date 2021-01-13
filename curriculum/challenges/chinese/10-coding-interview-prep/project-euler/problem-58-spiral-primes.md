@@ -3,6 +3,7 @@ id: 5900f3a61000cf542c50feb9
 title: 问题58：螺旋素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-58-spiral-primes
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler58(), 26241);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function spiralPrimes() {
+
+  return true;
+}
+
+spiralPrimes();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b40
 title: 比较 var 和 let 关键字的作用域
 challengeType: 1
 forumTopicId: 301195
+dashedName: compare-scopes-of-the-var-and-let-keywords
 ---
 
 # --description--
@@ -102,5 +103,33 @@ console.log(i);
 assert(checkScope() === 'function scope');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkScope() {
+  var i = 'function scope';
+  if (true) {
+    i = 'block scope';
+    console.log('Block scope i is: ', i);
+  }
+  console.log('Function scope i is: ', i);
+  return i;
+}
+```
+
 # --solutions--
 
+```js
+function checkScope() {
+  let i = 'function scope';
+  if (true) {
+    let i = 'block scope';
+    console.log('Block scope i is: ', i);
+  }
+ 
+  console.log('Function scope i is: ', i);
+  return i;
+}
+```

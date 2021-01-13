@@ -4,6 +4,7 @@ title: 更新对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
+dashedName: updating-object-properties
 ---
 
 # --description--
@@ -41,5 +42,36 @@ assert(/happy coder/gi.test(myDog.name));
 assert(/"name": "Coder"/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myDog);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDog.name = "Happy Coder";
+```

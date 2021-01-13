@@ -3,6 +3,7 @@ id: 594faaab4e2a8626833e9c3d
 title: Tokenize a string with escaping
 challengeType: 5
 forumTopicId: 302338
+dashedName: tokenize-a-string-with-escaping
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5e9a093a74c4063ca6f7c15c
 title: Pandas Creating Columns
 challengeType: 11
 videoId: _sSo2XZoB3E
+dashedName: pandas-creating-columns
 ---
 
 # --description--

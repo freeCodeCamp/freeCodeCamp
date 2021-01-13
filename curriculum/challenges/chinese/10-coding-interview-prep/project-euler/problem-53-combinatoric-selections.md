@@ -3,6 +3,7 @@ id: 5900f3a11000cf542c50feb4
 title: 问题53：组合选择
 challengeType: 5
 videoUrl: ''
+dashedName: problem-53-combinatoric-selections
 ---
 
 # --description--
@@ -39,5 +40,38 @@ assert.strictEqual(combinatoricSelections(100000), 4255);
 assert.strictEqual(combinatoricSelections(1000000), 4075);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function combinatoricSelections(limit) {
+
+  return 1;
+}
+
+combinatoricSelections(1000000);
+```
+
 # --solutions--
 
+```js
+function combinatoricSelections(limit) {
+    const factorial = n =>
+        Array.apply(null, { length: n })
+            .map((_, i) => i + 1)
+            .reduce((p, c) => p * c, 1);
+
+    let result = 0;
+    const nMax = 100;
+
+    for (let n = 1; n <= nMax; n++) {
+        for (let r = 0; r <= n; r++) {
+            if (factorial(n) / (factorial(r) * factorial(n - r)) >= limit)
+                result++;
+        }
+    }
+
+    return result;
+}
+```

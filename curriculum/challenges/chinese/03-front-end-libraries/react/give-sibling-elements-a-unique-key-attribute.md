@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618b
 title: 给同级元素一个唯一的键属性
 challengeType: 6
 forumTopicId: 301394
+dashedName: give-sibling-elements-a-unique-key-attribute
 ---
 
 # --description--
@@ -85,5 +86,60 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<Frameworks />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const frontEndFrameworks = [
+  'React',
+  'Angular',
+  'Ember',
+  'Knockout',
+  'Backbone',
+  'Vue'
+];
+
+function Frameworks() {
+  const renderFrameworks = null; // Change this line
+  return (
+    <div>
+      <h1>Popular Front End JavaScript Frameworks</h1>
+      <ul>
+        {renderFrameworks}
+      </ul>
+    </div>
+  );
+};
+```
+
 # --solutions--
 
+```jsx
+const frontEndFrameworks = [
+  'React',
+  'Angular',
+  'Ember',
+  'Knockout',
+  'Backbone',
+  'Vue'
+];
+
+function Frameworks() {
+  const renderFrameworks = frontEndFrameworks.map((fw, i) => <li key={i}>{fw}</li>);
+  return (
+    <div>
+      <h1>Popular Front End JavaScript Frameworks</h1>
+      <ul>
+        {renderFrameworks}
+      </ul>
+    </div>
+  );
+};
+```

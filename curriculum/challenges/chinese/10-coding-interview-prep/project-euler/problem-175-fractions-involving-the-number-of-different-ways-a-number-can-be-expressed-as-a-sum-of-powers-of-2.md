@@ -3,6 +3,8 @@ id: 5900f41c1000cf542c50ff2e
 title: 问题175：涉及不同方式的数量的分数数字可以表示为2的幂的总和
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-175-fractions-involving-the-number-of-different-ways-a-number-can-be-expressed-as-a-sum-of-powers-of-2
 ---
 
 # --description--
@@ -21,5 +23,21 @@ videoUrl: ''
 assert.strictEqual(euler175(), 1, 13717420, 8);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler175() {
+
+  return true;
+}
+
+euler175();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

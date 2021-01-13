@@ -3,6 +3,7 @@ id: 5a4b7fcdb66f799f199e11db
 title: Build a Pong Game
 challengeType: 3
 forumTopicId: 302353
+dashedName: build-a-pong-game
 ---
 
 # --description--
@@ -24,11 +25,6 @@ forumTopicId: 302353
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

@@ -3,6 +3,7 @@ id: 5900f4a11000cf542c50ffb3
 title: 问题308：惊人的生成素数的自动机
 challengeType: 5
 videoUrl: ''
+dashedName: problem-308-an-amazing-prime-generating-automaton
 ---
 
 # --description--
@@ -25,5 +26,21 @@ Fractran虚拟机的内部状态是一个正整数，该整数最初设置为种
 assert.strictEqual(euler308(), 1539669807660924);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler308() {
+
+  return true;
+}
+
+euler308();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

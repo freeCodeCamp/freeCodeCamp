@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c14e
 challengeType: 11
 videoId: 0kJz0q0pvgQ
+dashedName: data-analysis-example-b
 ---
 
 # --description--
@@ -31,9 +32,4 @@ Returns the first `n` rows based on the integer argument supplied.
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

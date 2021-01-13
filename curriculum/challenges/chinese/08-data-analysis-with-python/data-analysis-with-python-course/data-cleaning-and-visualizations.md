@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c160
 challengeType: 11
 videoId: mHjxzFS5_Z0
+dashedName: data-cleaning-and-visualizations
 ---
 
 # --description--
@@ -35,9 +36,4 @@ My figure will have one row, two columns, and I am going to start drawing in the
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

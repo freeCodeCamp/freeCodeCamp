@@ -3,6 +3,7 @@ id: 5900f4111000cf542c50ff24
 title: 问题165：交叉口
 challengeType: 5
 videoUrl: ''
+dashedName: problem-165-intersections
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler165(), 2868868);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler165() {
+
+  return true;
+}
+
+euler165();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

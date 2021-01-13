@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc800c
 title: Sorting algorithms/Permutation sort
 challengeType: 5
 forumTopicId: 302316
+dashedName: sorting-algorithmspermutation-sort
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f46d1000cf542c50ff7f
 title: 问题255：圆角平方根
 challengeType: 5
 videoUrl: ''
+dashedName: problem-255-rounded-square-roots
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(euler255(), 4.447401118);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler255() {
+
+  return true;
+}
+
+euler255();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

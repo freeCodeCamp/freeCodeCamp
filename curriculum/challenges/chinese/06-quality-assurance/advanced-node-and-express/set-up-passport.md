@@ -3,6 +3,7 @@ id: 5895f70cf9fc0f352b528e65
 title: 设置 Passport
 challengeType: 2
 forumTopicId: 301565
+dashedName: set-up-passport
 ---
 
 # --description--
@@ -122,3 +123,10 @@ express 应调用 passport 的方法。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

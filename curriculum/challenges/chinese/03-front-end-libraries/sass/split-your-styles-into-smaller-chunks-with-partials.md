@@ -3,6 +3,7 @@ id: 587d7dbf367417b2b2512bbc
 title: 用 Partials 将你的样式分成小块
 challengeType: 0
 forumTopicId: 301459
+dashedName: split-your-styles-into-smaller-chunks-with-partials
 ---
 
 # --description--
@@ -33,5 +34,16 @@ Sass 中的`Partials`是包含 CSS 代码段的单独文件。这些是在其他
 assert(code.match(/@import\s+?('|")variables\1/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<!-- The main.scss file -->
+```
+
 # --solutions--
 
+```html
+@import 'variables'
+```

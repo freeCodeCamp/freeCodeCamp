@@ -3,6 +3,7 @@ id: 587d7b84367417b2b2512b36
 title: 捕获未闭合的括号、方括号、大括号和引号
 challengeType: 1
 forumTopicId: 301190
+dashedName: catch-unclosed-parentheses-brackets-braces-and-quotes
 ---
 
 # --description--
@@ -29,5 +30,20 @@ assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 assert(arraySum === 6);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myArray = [1, 2, 3;
+let arraySum = myArray.reduce((previous, current =>  previous + current);
+console.log(`Sum of array values is: ${arraySum}`);
+```
+
 # --solutions--
 
+```js
+let myArray = [1, 2, 3];
+let arraySum = myArray.reduce((previous, current) =>  previous + current);
+console.log(`Sum of array values is: ${arraySum}`);
+```

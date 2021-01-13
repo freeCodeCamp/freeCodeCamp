@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c46
 title: 了解 JavaScript 断言是如何使用的
 challengeType: 2
 forumTopicId: 301589
+dashedName: learn-how-javascript-assertions-work
 ---
 
 # --description--
@@ -59,3 +60,10 @@ You should choose the right assertion - isNull vs. isNotNull.
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

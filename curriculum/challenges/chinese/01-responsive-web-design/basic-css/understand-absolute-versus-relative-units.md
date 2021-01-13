@@ -4,6 +4,7 @@ title: 理解绝对单位与相对单位
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089
+dashedName: understand-absolute-versus-relative-units
 ---
 
 # --description--
@@ -39,5 +40,84 @@ class 为 `red-box` 的元素的 `padding` 属性值应为 `1.5em`。
 assert(code.match(/\.red-box\s*?{[\s\S]*padding:\s*?1\.5em/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 20px 40px 20px 40px;
+  }
+
+  .red-box {
+    background-color: red;
+    margin: 20px 40px 20px 40px;
+
+  }
+
+  .green-box {
+    background-color: green;
+    margin: 20px 40px 20px 40px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box green-box">padding</h5>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 20px 40px 20px 40px;
+  }
+
+  .red-box {
+    background-color: red;
+    margin: 20px 40px 20px 40px;
+    padding: 1.5em;
+  }
+
+  .green-box {
+    background-color: green;
+    margin: 20px 40px 20px 40px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box green-box">padding</h5>
+</div>
+```

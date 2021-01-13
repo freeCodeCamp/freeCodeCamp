@@ -4,6 +4,7 @@ title: 乘法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3y3Aq'
 forumTopicId: 18243
+dashedName: multiply-two-numbers-with-javascript
 ---
 
 # --description--
@@ -36,5 +37,22 @@ assert(product === 80);
 assert(/\*/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'product = '+z;})(product);
+```
+
+## --seed-contents--
+
+```js
+var product = 8 * 0;
+```
+
 # --solutions--
 
+```js
+var product = 8 * 10;
+```

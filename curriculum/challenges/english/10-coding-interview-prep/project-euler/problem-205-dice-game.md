@@ -3,6 +3,7 @@ id: 5900f4391000cf542c50ff4c
 title: 'Problem 205: Dice Game'
 challengeType: 5
 forumTopicId: 301846
+dashedName: problem-205-dice-game
 ---
 
 # --description--

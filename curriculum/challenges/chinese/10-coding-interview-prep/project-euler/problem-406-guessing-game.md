@@ -3,6 +3,7 @@ id: 5900f5021000cf542c510015
 title: 问题406：猜猜游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-406-guessing-game
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler406(), 36813.12757207);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler406() {
+
+  return true;
+}
+
+euler406();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

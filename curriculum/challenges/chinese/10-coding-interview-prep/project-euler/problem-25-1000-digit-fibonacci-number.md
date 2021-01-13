@@ -3,6 +3,7 @@ id: 5900f3851000cf542c50fe98
 title: 问题25：1000位斐波纳契数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-25-1000-digit-fibonacci-number
 ---
 
 # --description--
@@ -137,5 +138,34 @@ assert.strictEqual(digitFibonacci(15), 69);
 assert.strictEqual(digitFibonacci(20), 93);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function digitFibonacci(n) {
+
+  return n;
+}
+
+digitFibonacci(20);
+```
+
 # --solutions--
 
+```js
+const digitFibonacci = (n) => {
+  const digits = (num) => {
+    return num.toString().length;
+  };
+  let f1 = 1;
+  let f2 = 1;
+  let index = 3;
+  while (true) {
+    let fn = f1 + f2;
+    if (digits(fn) === n) return index;
+    [f1, f2] = [f2, fn];
+    index++;
+  }
+};
+```

@@ -3,6 +3,7 @@ id: 5900f4f71000cf542c510009
 title: 'Problem 394: Eating pie'
 challengeType: 5
 forumTopicId: 302059
+dashedName: problem-394-eating-pie
 ---
 
 # --description--

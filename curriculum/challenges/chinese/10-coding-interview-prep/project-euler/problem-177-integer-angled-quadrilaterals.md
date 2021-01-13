@@ -3,6 +3,7 @@ id: 5900f41e1000cf542c50ff30
 title: 问题177：整数角四边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-177-integer-angled-quadrilaterals
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler177(), 129325);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler177() {
+
+  return true;
+}
+
+euler177();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

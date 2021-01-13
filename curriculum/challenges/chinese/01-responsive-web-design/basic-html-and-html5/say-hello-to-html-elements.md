@@ -4,6 +4,7 @@ title: 向 HTML 元素问好
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gpt2'
 forumTopicId: 18276
+dashedName: say-hello-to-html-elements
 ---
 
 # --description--
@@ -36,5 +37,16 @@ HTML 是英文 Hyper Text Markup Language（超文本标记语言）的缩写。
 assert.isTrue(/hello(\s)+world/gi.test($('h1').text()));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>Hello</h1>
+```
+
 # --solutions--
 
+```html
+<h1>Hello World</h1>
+```

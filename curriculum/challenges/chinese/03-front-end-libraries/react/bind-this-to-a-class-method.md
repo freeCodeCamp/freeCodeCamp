@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036174
 title: 将 this 绑定到 Class 方法
 challengeType: 6
 forumTopicId: 301379
+dashedName: bind-this-to-a-class-method
 ---
 
 # --description--
@@ -68,5 +69,68 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        <button onClick = {this.handleClick}>Click Me</button>
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```

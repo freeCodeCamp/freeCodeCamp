@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c15b
 challengeType: 11
 videoId: BFlH0fN5xRQ
+dashedName: pandas-conditional-selection-and-modifying-dataframes
 ---
 
 # --description--
@@ -65,9 +66,4 @@ Beau              6                7
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

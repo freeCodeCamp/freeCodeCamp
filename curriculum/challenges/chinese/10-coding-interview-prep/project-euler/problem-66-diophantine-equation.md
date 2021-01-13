@@ -3,6 +3,7 @@ id: 5900f3ae1000cf542c50fec1
 title: 问题66：丢番图方程
 challengeType: 5
 videoUrl: ''
+dashedName: problem-66-diophantine-equation
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler66(), 661);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function diophantineEquation() {
+
+  return true;
+}
+
+diophantineEquation();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

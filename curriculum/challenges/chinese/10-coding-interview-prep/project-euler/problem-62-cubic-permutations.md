@@ -3,6 +3,7 @@ id: 5900f3aa1000cf542c50febd
 title: 问题62：立方排列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-62-cubic-permutations
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler62(), 127035954683);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function cubicPermutations() {
+
+  return true;
+}
+
+cubicPermutations();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

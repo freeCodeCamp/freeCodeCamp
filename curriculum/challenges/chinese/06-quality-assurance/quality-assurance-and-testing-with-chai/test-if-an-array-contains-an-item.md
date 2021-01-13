@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c51
 title: 测试数组是否包含项目
 challengeType: 2
 forumTopicId: 301603
+dashedName: test-if-an-array-contains-an-item
 ---
 
 # --description--
@@ -67,3 +68,10 @@ forumTopicId: 301603
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

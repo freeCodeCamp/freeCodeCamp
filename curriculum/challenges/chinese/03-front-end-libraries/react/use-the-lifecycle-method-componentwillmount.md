@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617c
 title: 使用生命周期方法：componentWillMount
 challengeType: 6
 forumTopicId: 301423
+dashedName: use-the-lifecycle-method-componentwillmount
 ---
 
 # --description--
@@ -41,5 +42,46 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    // Change code below this line
+
+    // Change code above this line
+  }
+  render() {
+    return <div />
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    // Change code below this line
+    console.log('Component is mounting...');
+    // Change code above this line
+  }
+  render() {
+    return <div />
+  }
+};
+```

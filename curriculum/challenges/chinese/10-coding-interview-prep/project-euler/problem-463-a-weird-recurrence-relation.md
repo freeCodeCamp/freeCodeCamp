@@ -3,6 +3,7 @@ id: 5900f53c1000cf542c51004e
 title: 问题463：一种奇怪的复发关系
 challengeType: 5
 videoUrl: ''
+dashedName: problem-463-a-weird-recurrence-relation
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler463(), 808981553);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler463() {
+
+  return true;
+}
+
+euler463();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

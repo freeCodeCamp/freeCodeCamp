@@ -3,6 +3,7 @@ id: 5900f4771000cf542c50ff8a
 title: 'Problem 267: Billionaire'
 challengeType: 5
 forumTopicId: 301916
+dashedName: problem-267-billionaire
 ---
 
 # --description--

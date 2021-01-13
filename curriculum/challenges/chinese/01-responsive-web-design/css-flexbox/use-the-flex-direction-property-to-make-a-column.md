@@ -4,6 +4,7 @@ title: 使用 flex-direction 属性创建一列
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
+dashedName: use-the-flex-direction-property-to-make-a-column
 ---
 
 # --description--
@@ -22,5 +23,60 @@ forumTopicId: 301109
 assert($('#box-container').css('flex-direction') == 'column');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```

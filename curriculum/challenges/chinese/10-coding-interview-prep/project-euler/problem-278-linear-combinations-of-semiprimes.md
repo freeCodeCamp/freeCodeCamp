@@ -3,6 +3,7 @@ id: 5900f4831000cf542c50ff95
 title: 问题278：半正定的线性组合
 challengeType: 5
 videoUrl: ''
+dashedName: problem-278-linear-combinations-of-semiprimes
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler278(), 1228215747273908500);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler278() {
+
+  return true;
+}
+
+euler278();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4e81000cf542c50fffb
 title: 问题380：惊人的迷宫！
 challengeType: 5
 videoUrl: ''
+dashedName: problem-380-amazing-mazes
 ---
 
 # --description--
@@ -23,5 +24,21 @@ m×n迷宫是m×n矩形网格，其中墙壁放置在网格单元之间，使得
 assert.strictEqual(euler380(), Infinity);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler380() {
+
+  return true;
+}
+
+euler380();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

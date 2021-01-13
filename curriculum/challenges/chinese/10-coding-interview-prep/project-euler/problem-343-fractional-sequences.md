@@ -3,6 +3,7 @@ id: 5900f4c41000cf542c50ffd6
 title: 问题343：分数序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-343-fractional-sequences
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler343(), 269533451410884200);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler343() {
+
+  return true;
+}
+
+euler343();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

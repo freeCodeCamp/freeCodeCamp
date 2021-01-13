@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036171
 title: 在用户界面中渲染状态
 challengeType: 6
 forumTopicId: 301409
+dashedName: render-state-in-the-user-interface
 ---
 
 # --description--
@@ -58,5 +59,54 @@ async () => {
 };
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <h1>{this.state.name}</h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```

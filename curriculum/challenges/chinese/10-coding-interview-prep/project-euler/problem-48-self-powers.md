@@ -3,6 +3,7 @@ id: 5900f39c1000cf542c50feaf
 title: 问题48：自我权力
 challengeType: 5
 videoUrl: ''
+dashedName: problem-48-self-powers
 ---
 
 # --description--
@@ -35,5 +36,37 @@ assert.strictEqual(selfPowers(673, 7), 2473989);
 assert.strictEqual(selfPowers(1000, 10), 9110846700);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function selfPowers(power, lastDigits) {
+
+  return true;
+}
+
+selfPowers(1000, 10);
+```
+
 # --solutions--
 
+```js
+function selfPowers(power, lastDigits) {
+  let sum = 0;
+  const modulo = Math.pow(10, lastDigits);
+
+  for (let i = 1; i <= power; i++) {
+    let temp = i;
+    for (let j = 1; j < i; j++) {
+      temp *= i;
+      temp %= modulo;
+    }
+
+    sum += temp;
+    sum %= modulo;
+  }
+
+  return sum;
+}
+```

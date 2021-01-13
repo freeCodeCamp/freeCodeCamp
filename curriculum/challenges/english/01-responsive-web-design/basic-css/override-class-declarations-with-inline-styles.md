@@ -4,6 +4,7 @@ title: Override Class Declarations with Inline Styles
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
+dashedName: override-class-declarations-with-inline-styles
 ---
 
 # --description--

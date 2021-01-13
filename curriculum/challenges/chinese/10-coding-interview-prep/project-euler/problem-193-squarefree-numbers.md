@@ -3,6 +3,7 @@ id: 5900f42f1000cf542c50ff41
 title: 问题193：无广场数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-193-squarefree-numbers
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler193(), 684465067343069);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler193() {
+
+  return true;
+}
+
+euler193();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

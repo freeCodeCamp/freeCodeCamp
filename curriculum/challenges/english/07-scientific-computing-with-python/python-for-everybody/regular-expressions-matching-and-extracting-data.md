@@ -3,6 +3,7 @@ id: 5e7b9f0b0b6c005b0e76f06f
 title: 'Regular Expressions: Matching and Extracting Data'
 challengeType: 11
 videoId: LaCZnTbQGkE
+dashedName: regular-expressions-matching-and-extracting-data
 ---
 
 # --question--

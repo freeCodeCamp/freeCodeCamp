@@ -3,6 +3,7 @@ id: 5900f4de1000cf542c50fff1
 title: 问题370：几何三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-370-geometric-triangles
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler370(), 41791929448408);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler370() {
+
+  return true;
+}
+
+euler370();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

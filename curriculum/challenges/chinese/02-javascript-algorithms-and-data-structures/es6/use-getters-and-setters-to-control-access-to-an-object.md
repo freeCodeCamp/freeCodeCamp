@@ -3,6 +3,7 @@ id: 587d7b8c367417b2b2512b54
 title: 使用 getter 和 setter 来控制对象的访问
 challengeType: 1
 forumTopicId: 301220
+dashedName: use-getters-and-setters-to-control-access-to-an-object
 ---
 
 # --description--
@@ -121,5 +122,38 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
+```
+
 # --solutions--
 
+```js
+class Thermostat {
+  constructor(fahrenheit) {
+    this._tempInCelsius = 5/9 * (fahrenheit - 32);
+  }
+  get temperature(){
+    return this._tempInCelsius;
+  }
+  set temperature(newTemp){
+    this._tempInCelsius = newTemp;
+  }
+}
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
+```

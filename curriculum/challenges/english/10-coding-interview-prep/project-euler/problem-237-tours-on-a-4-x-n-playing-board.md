@@ -3,6 +3,7 @@ id: 5900f4591000cf542c50ff6c
 title: 'Problem 237: Tours on a 4 x n playing board'
 challengeType: 5
 forumTopicId: 301882
+dashedName: problem-237-tours-on-a-4-x-n-playing-board
 ---
 
 # --description--

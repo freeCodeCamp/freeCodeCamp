@@ -3,6 +3,7 @@ id: 5900f4511000cf542c50ff63
 title: 问题228：Minkowski Sums
 challengeType: 5
 videoUrl: ''
+dashedName: problem-228-minkowski-sums
 ---
 
 # --description--
@@ -35,5 +36,21 @@ S1864 + S1865 + ... + S1909有多少方面？
 assert.strictEqual(euler228(), 86226);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler228() {
+
+  return true;
+}
+
+euler228();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

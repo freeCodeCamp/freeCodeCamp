@@ -3,6 +3,7 @@ id: 5900f3f21000cf542c50ff04
 title: 问题133：重新计算非因素
 challengeType: 5
 videoUrl: ''
+dashedName: problem-133-repunit-nonfactors
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler133(), 453647705);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler133() {
+
+  return true;
+}
+
+euler133();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

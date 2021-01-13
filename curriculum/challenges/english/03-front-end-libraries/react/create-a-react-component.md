@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036163
 title: Create a React Component
 challengeType: 6
 forumTopicId: 301386
+dashedName: create-a-react-component
 ---
 
 # --description--

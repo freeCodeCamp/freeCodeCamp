@@ -3,6 +3,7 @@ id: a3f503de51cf954ede28891d
 title: 找到对称差异
 challengeType: 5
 videoUrl: ''
+dashedName: find-the-symmetric-difference
 ---
 
 # --description--
@@ -115,5 +116,29 @@ assert.equal(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sym(args) {
+  return args;
+}
+
+sym([1, 2, 3], [5, 2, 1, 4]);
+```
+
 # --solutions--
 
+```js
+function sym() {
+  var arrays = [].slice.call(arguments);
+  return arrays.reduce(function (symDiff, arr) {
+    return symDiff.concat(arr).filter(function (val, idx, theArr) {
+      return theArr.indexOf(val) === idx
+        && (symDiff.indexOf(val) === -1 || arr.indexOf(val) === -1);
+    });
+  });
+}
+sym([1, 2, 3], [5, 2, 1, 4]);
+```

@@ -3,6 +3,7 @@ id: 5900f4c21000cf542c50ffd4
 title: 问题340：疯狂的功能
 challengeType: 5
 videoUrl: ''
+dashedName: problem-340-crazy-function
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler340(), 291504964);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler340() {
+
+  return true;
+}
+
+euler340();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

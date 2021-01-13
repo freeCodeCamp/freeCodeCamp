@@ -3,6 +3,7 @@ id: 5900f46e1000cf542c50ff80
 title: 问题257：角度平分器
 challengeType: 5
 videoUrl: ''
+dashedName: problem-257-angular-bisectors
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler257(), 139012411);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler257() {
+
+  return true;
+}
+
+euler257();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

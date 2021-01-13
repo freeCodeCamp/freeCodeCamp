@@ -4,6 +4,7 @@ title: 使用 flex-grow 属性定义 flex 子元素的增长系数
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
 forumTopicId: 1301111
+dashedName: use-the-flex-grow-property-to-expand-items
 ---
 
 # --description--
@@ -30,5 +31,60 @@ assert($('#box-1').css('flex-grow') == '1');
 assert($('#box-2').css('flex-grow') == '2');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    height: 200px;
+
+  }
+
+  #box-2 {
+    background-color: orangered;
+    height: 200px;
+
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    height: 200px;
+    flex-grow: 1;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    height: 200px;
+    flex-grow: 2;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```

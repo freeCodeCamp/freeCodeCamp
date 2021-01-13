@@ -2,6 +2,7 @@
 id: 5e9a0a8e09c5df3cc3600ed5
 challengeType: 11
 videoId: CEykdsKT4U4
+dashedName: initializing-different-arrays
 ---
 
 # --question--
@@ -39,9 +40,4 @@ print(np.full_like(a, 100))
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

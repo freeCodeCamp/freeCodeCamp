@@ -4,6 +4,7 @@ title: Give a Background Color to a div Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
+dashedName: give-a-background-color-to-a-div-element
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 589a69f5f9fc0f352b528e70
 title: 实现社交账号登陆 (1)
 challengeType: 2
 forumTopicId: 301559
+dashedName: implementation-of-social-authentication
 ---
 
 # --description--
@@ -72,3 +73,10 @@ app.route('/login')
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

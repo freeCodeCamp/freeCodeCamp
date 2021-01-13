@@ -3,6 +3,7 @@ id: 587d7db3367417b2b2512b8f
 title: 匹配文字字符串
 challengeType: 1
 forumTopicId: 301355
+dashedName: match-literal-strings
 ---
 
 # --description--
@@ -50,5 +51,20 @@ assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 assert(!/\/.*\/i/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /search/; // Change this line
+let result = waldoRegex.test(waldoIsHiding);
+```
+
 # --solutions--
 
+```js
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /Waldo/; // Change this line
+let result = waldoRegex.test(waldoIsHiding);
+```

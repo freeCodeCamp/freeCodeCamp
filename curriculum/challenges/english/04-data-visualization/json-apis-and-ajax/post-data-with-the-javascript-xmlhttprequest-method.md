@@ -3,6 +3,7 @@ id: 587d7faf367417b2b2512be9
 title: Post Data with the JavaScript XMLHttpRequest Method
 challengeType: 6
 forumTopicId: 301504
+dashedName: post-data-with-the-javascript-xmlhttprequest-method
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4a81000cf542c50ffbb
 title: 问题316：十进制扩展中的数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-316-numbers-in-decimal-expansions
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(euler316(), 542934735751917760);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler316() {
+
+  return true;
+}
+
+euler316();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

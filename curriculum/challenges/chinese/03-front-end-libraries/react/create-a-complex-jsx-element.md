@@ -3,6 +3,7 @@ id: 5a24bbe0dba28a8d3cbd4c5d
 title: 创建一个复杂的 JSX 元素
 challengeType: 6
 forumTopicId: 301382
+dashedName: create-a-complex-jsx-element
 ---
 
 # --description--
@@ -79,5 +80,30 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(JSX, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+```
+
 # --solutions--
 
+```jsx
+const JSX = (
+<div>
+  <h1>Hello JSX!</h1>
+  <p>Some info</p>
+  <ul>
+    <li>An item</li>
+    <li>Another item</li>
+    <li>A third item</li>
+  </ul>
+</div>);
+```

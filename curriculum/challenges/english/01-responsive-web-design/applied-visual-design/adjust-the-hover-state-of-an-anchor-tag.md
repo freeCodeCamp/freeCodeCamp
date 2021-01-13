@@ -4,6 +4,7 @@ title: Adjust the Hover State of an Anchor Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
+dashedName: adjust-the-hover-state-of-an-anchor-tag
 ---
 
 # --description--

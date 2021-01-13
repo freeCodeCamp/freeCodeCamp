@@ -4,6 +4,7 @@ title: Use Headings to Show Hierarchical Relationships of Content
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026
+dashedName: use-headings-to-show-hierarchical-relationships-of-content
 ---
 
 # --description--

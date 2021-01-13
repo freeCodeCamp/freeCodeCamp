@@ -3,6 +3,7 @@ id: 587d7dbe367417b2b2512bb8
 title: 使用 @if 和 @else 为你的样式添加逻辑
 challengeType: 0
 forumTopicId: 301463
+dashedName: use-if-and-else-to-add-logic-to-your-styles
 ---
 
 # --description--
@@ -92,5 +93,53 @@ assert(
 assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<div id="box"></div>
+```
+
 # --solutions--
 
+```html
+<style type='text/scss'>
+  @mixin border-stroke($val) {
+    @if $val == light {
+      border: 1px solid black;
+    }
+    @else if $val == medium {
+      border: 3px solid black;
+    }
+    @else if $val == heavy {
+      border: 6px solid black;
+    }
+    @else {
+      border: none;
+    }
+  }
+
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<div id="box"></div>
+```

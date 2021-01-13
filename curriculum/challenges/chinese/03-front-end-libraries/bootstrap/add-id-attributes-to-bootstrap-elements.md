@@ -3,6 +3,7 @@ id: bad87fee1348bd9aec908853
 title: 给 Bootstrap 元素添加id属性
 challengeType: 0
 forumTopicId: 16639
+dashedName: add-id-attributes-to-bootstrap-elements
 ---
 
 # --description--
@@ -39,5 +40,52 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 # --solutions--
 
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well" id="left-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well" id="right-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+  </div>
+</div>
+```

@@ -3,6 +3,7 @@ id: 5900f43e1000cf542c50ff50
 title: 问题210：钝角三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-210-obtuse-angled-triangles
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler210(), 1598174770174689500);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler210() {
+
+  return true;
+}
+
+euler210();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

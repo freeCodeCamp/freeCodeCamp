@@ -3,6 +3,7 @@ id: 5900f4f21000cf542c510004
 title: 问题389：柏拉图式骰子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-389-platonic-dice
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler389(), 2406376.3623);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler389() {
+
+  return true;
+}
+
+euler389();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

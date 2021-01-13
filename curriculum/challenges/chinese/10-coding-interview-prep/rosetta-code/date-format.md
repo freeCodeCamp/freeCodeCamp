@@ -3,6 +3,7 @@ id: 59669d08d75b60482359409f
 title: 日期格式
 challengeType: 5
 videoUrl: ''
+dashedName: date-format
 ---
 
 # --description--
@@ -43,5 +44,42 @@ assert(getDateFormats().length === 2);
 assert.deepEqual(getDateFormats(), dates, equalsMessage);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const getDateSolution = () => {
+  const date = new Date();
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;
+  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return [fmt1, fmt2];
+};
+
+const dates = getDateSolution();
+const equalsMessage = `message: <code>getDataFormats()</code> should return <code>["${dates[0]}", "${dates[1]}"]</code>.`;
+```
+
+## --seed-contents--
+
+```js
+function getDateFormats() {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function getDateFormats() {
+  const date = new Date();
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;
+  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return [fmt1, fmt2];
+}
+```

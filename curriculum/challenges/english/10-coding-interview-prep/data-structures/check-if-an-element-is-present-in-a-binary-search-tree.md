@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7c
 title: Check if an Element is Present in a Binary Search Tree
 challengeType: 1
 forumTopicId: 301623
+dashedName: check-if-an-element-is-present-in-a-binary-search-tree
 ---
 
 # --description--

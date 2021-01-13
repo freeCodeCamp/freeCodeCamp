@@ -3,6 +3,7 @@ id: 5900f49d1000cf542c50ffaf
 title: 问题304：Primonacci
 challengeType: 5
 videoUrl: ''
+dashedName: problem-304-primonacci
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler304(), 283988410192);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler304() {
+
+  return true;
+}
+
+euler304();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

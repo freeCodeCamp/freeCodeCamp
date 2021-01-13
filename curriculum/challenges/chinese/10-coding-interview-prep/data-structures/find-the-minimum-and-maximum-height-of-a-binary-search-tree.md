@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7d
 title: 找到二叉搜索树的最小和最大高度
 challengeType: 1
 videoUrl: ''
+dashedName: find-the-minimum-and-maximum-height-of-a-binary-search-tree
 ---
 
 # --description--
@@ -173,5 +174,139 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    add: function(value) {
+      function searchTree(node) {
+        if (value < node.value) {
+          if (node.left == null) {
+            node.left = new Node(value);
+            return;
+          } else if (node.left != null) {
+            return searchTree(node.left);
+          }
+        } else if (value > node.value) {
+          if (node.right == null) {
+            node.right = new Node(value);
+            return;
+          } else if (node.right != null) {
+            return searchTree(node.right);
+          }
+        } else {
+          return null;
+        }
+      }
+
+      var node = this.root;
+      if (node == null) {
+        this.root = new Node(value);
+        return;
+      } else {
+        return searchTree(node);
+      }
+    }
+  }
+);
+```
+
+## --seed-contents--
+
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+  this.findMinHeight = function(root = this.root) {
+    // empty tree.
+    if (root === null) {
+      return -1;
+    }
+    // leaf node.
+    if (root.left === null && root.right === null) {
+      return 0;
+    }
+    if (root.left === null) {
+      return this.findMinHeight(root.right) + 1;
+    }
+    if (root.right === null) {
+      return this.findMinHeight(root.left) + 1;
+    }
+    const lHeight = this.findMinHeight(root.left);
+    const rHeight = this.findMinHeight(root.right);
+    return Math.min(lHeight, rHeight) + 1;
+  };
+  this.findMaxHeight = function(root = this.root) {
+    // empty tree.
+    if (root === null) {
+      return -1;
+    }
+    // leaf node.
+    if (root.left === null && root.right === null) {
+      return 0;
+    }
+    if (root.left === null) {
+      return this.findMaxHeight(root.right) + 1;
+    }
+    if (root.right === null) {
+      return this.findMaxHeight(root.left) + 1;
+    }
+    const lHeight = this.findMaxHeight(root.left);
+    const rHeight = this.findMaxHeight(root.right);
+    return Math.max(lHeight, rHeight) + 1;
+  };
+  this.isBalanced = function(root = this.root) {
+    if (root === null) {
+      return true;
+    }
+
+    if (root.left === null && root.right === null) {
+      return true;
+    }
+
+    if (root.left === null) {
+      return this.findMaxHeight(root.right) <= 0;
+    }
+
+    if (root.right === null) {
+      return this.findMaxHeight(root.left) <= 0;
+    }
+
+    const lHeight = this.findMaxHeight(root.left);
+    const rHeight = this.findMaxHeight(root.right);
+    if (Math.abs(lHeight - rHeight) > 1) {
+      return false;
+    }
+    return this.isBalanced(root.left) && this.isBalanced(root.right);
+  };
+}
+```

@@ -4,6 +4,7 @@ title: Use Clockwise Notation to Specify the Padding of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mBS9'
 forumTopicId: 18346
+dashedName: use-clockwise-notation-to-specify-the-padding-of-an-element
 ---
 
 # --description--

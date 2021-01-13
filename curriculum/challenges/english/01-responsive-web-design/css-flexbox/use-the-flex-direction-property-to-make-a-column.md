@@ -4,6 +4,7 @@ title: Use the flex-direction Property to Make a Column
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
+dashedName: use-the-flex-direction-property-to-make-a-column
 ---
 
 # --description--

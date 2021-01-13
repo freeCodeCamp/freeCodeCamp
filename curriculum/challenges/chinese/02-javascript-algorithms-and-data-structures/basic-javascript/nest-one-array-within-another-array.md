@@ -4,6 +4,7 @@ title: 将一个数组嵌套在另一个数组中
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQZf8'
 forumTopicId: 18247
+dashedName: nest-one-array-within-another-array
 ---
 
 # --description--
@@ -22,5 +23,23 @@ forumTopicId: 18247
 assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+var myArray = [];
+```
+
 # --solutions--
 
+```js
+var myArray = [[1,2,3]];
+```

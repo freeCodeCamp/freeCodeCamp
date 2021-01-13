@@ -4,6 +4,7 @@ title: do...while 循环
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqWGcp'
 forumTopicId: 301172
+dashedName: iterate-with-javascript-do---while-loops
 ---
 
 # --description--
@@ -67,5 +68,35 @@ assert.deepEqual(myArray, [10]);
 assert.deepEqual(i, 11);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [];
+var i = 10;
+
+// Only change code below this line
+while (i < 5) {
+  myArray.push(i);
+  i++;
+}
+```
+
 # --solutions--
 
+```js
+var myArray = [];
+var i = 10;
+do {
+  myArray.push(i);
+  i++;
+} while (i < 5)
+```

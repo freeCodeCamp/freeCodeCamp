@@ -3,6 +3,7 @@ id: 594dc6c729e5700999302b45
 title: Balanced brackets
 challengeType: 5
 forumTopicId: 302230
+dashedName: balanced-brackets
 ---
 
 # --description--

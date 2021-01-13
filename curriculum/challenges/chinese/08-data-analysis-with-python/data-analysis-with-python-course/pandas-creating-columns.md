@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c15c
 challengeType: 11
 videoId: _sSo2XZoB3E
+dashedName: pandas-creating-columns
 ---
 
 # --description--
@@ -52,9 +53,4 @@ certificates_earned['Certificates per month'] = round(
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

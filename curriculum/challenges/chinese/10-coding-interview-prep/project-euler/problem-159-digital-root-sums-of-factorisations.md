@@ -3,6 +3,7 @@ id: 5900f40c1000cf542c50ff1e
 title: 问题159：因子的数字根和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-159-digital-root-sums-of-factorisations
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler159(), 14489159);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler159() {
+
+  return true;
+}
+
+euler159();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

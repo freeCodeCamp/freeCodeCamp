@@ -3,6 +3,7 @@ id: 5900f43e1000cf542c50ff4f
 title: 问题209：循环逻辑
 challengeType: 5
 videoUrl: ''
+dashedName: problem-209-circular-logic
 ---
 
 # --description--
@@ -21,5 +22,21 @@ x y x AND y000010100111x y x XOR y000011101110多个6输入二进制真值表τ�
 assert.strictEqual(euler209(), 15964587728784);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler209() {
+
+  return true;
+}
+
+euler209();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

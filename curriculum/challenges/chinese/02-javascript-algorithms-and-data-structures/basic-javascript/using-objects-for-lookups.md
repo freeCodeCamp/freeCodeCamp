@@ -4,6 +4,7 @@ title: 使用对象进行查找
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
+dashedName: using-objects-for-lookups
 ---
 
 # --description--
@@ -92,5 +93,60 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Setup
+function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+  switch(val) {
+    case "alpha":
+      result = "Adams";
+      break;
+    case "bravo":
+      result = "Boston";
+      break;
+    case "charlie":
+      result = "Chicago";
+      break;
+    case "delta":
+      result = "Denver";
+      break;
+    case "echo":
+      result = "Easy";
+      break;
+    case "foxtrot":
+      result = "Frank";
+  }
+
+  // Only change code above this line
+  return result;
+}
+
+phoneticLookup("charlie");
+```
+
 # --solutions--
 
+```js
+function phoneticLookup(val) {
+  var result = "";
+
+  var lookup = {
+    alpha: "Adams",
+    bravo: "Boston",
+    charlie: "Chicago",
+    delta: "Denver",
+    echo: "Easy",
+    foxtrot: "Frank"
+  };
+
+  result = lookup[val];
+
+  return result;
+}
+```

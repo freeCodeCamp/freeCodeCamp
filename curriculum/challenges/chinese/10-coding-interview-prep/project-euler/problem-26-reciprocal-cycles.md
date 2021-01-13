@@ -3,6 +3,7 @@ id: 5900f3861000cf542c50fe99
 title: 问题26：互惠周期
 challengeType: 5
 videoUrl: ''
+dashedName: problem-26-reciprocal-cycles
 ---
 
 # --description--
@@ -89,5 +90,21 @@ assert(reciprocalCycles(900) == 887);
 assert(reciprocalCycles(1000) == 983);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function reciprocalCycles(n) {
+
+  return n;
+}
+
+reciprocalCycles(1000);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

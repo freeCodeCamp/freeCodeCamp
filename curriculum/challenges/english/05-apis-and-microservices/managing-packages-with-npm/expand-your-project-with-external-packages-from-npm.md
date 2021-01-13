@@ -3,6 +3,7 @@ id: 587d7fb4367417b2b2512c00
 title: Expand Your Project with External Packages from npm
 challengeType: 2
 forumTopicId: 301527
+dashedName: expand-your-project-with-external-packages-from-npm
 ---
 
 # --description--
@@ -64,8 +65,6 @@ Add version "2.14.0" of the "moment" package to the `dependencies` field of your
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

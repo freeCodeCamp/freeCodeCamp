@@ -4,6 +4,7 @@ title: 给元素的每一侧添加不同的内边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mwUw'
 forumTopicId: 16634
+dashedName: add-different-padding-to-each-side-of-an-element
 ---
 
 # --description--
@@ -42,5 +43,94 @@ class 为 `blue-box` 的元素的左内边距属性值应为 `40px`。
 assert($('.blue-box').css('padding-left') === '40px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+```

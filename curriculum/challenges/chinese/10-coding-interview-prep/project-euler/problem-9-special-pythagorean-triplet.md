@@ -3,6 +3,7 @@ id: 5900f3761000cf542c50fe88
 title: 问题9：特殊的毕达哥拉斯三重奏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-9-special-pythagorean-triplet
 ---
 
 # --description--
@@ -55,5 +56,33 @@ assert.strictEqual(specialPythagoreanTriplet(24), 480);
 assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function specialPythagoreanTriplet(n) {
+ let sumOfabc = n;
+
+ return true;
+}
+
+specialPythagoreanTriplet(1000);
+```
+
 # --solutions--
 
+```js
+const specialPythagoreanTriplet = (n)=>{
+ let sumOfabc = n;
+ let a,b,c;
+ for(a = 1; a<=sumOfabc/3; a++){
+ for(b = a+1; b<=sumOfabc/2; b++){
+ c = Math.sqrt(a*a+b*b);
+ if((a+b+c) == sumOfabc){
+ return a*b*c;
+ }
+ }
+ }
+}
+```

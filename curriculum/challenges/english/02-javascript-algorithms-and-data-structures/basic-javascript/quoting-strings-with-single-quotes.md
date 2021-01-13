@@ -4,6 +4,7 @@ title: Quoting Strings with Single Quotes
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260
+dashedName: quoting-strings-with-single-quotes
 ---
 
 # --description--

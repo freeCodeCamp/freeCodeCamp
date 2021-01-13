@@ -3,13 +3,14 @@ id: 587d7dbe367417b2b2512bb9
 title: 使用 @for 创建一个 Sass 循环
 challengeType: 0
 forumTopicId: 301462
+dashedName: use-for-to-create-a-sass-loop
 ---
 
 # --description--
 
 你可以在 Sass 中使用`@for`循环，它的表现类似与 JavaScript 中的`for`循环。
 
-`@for`以两种方式使用："start through end" 或 "start to end"。主要区别在于“开始结束”*排除* 结束号码，而“开始结束”*包括* 结束号码。
+`@for`以两种方式使用："开始 through 到" 或 "开始 to 结束"。主要区别在于“开始结束”*排除* 结束号码，而“开始结束”*包括* 结束号码。
 
 这是一个开始 **到** 结束示例：
 
@@ -83,5 +84,56 @@ assert($('.text-4').css('font-size') == '60px');
 assert($('.text-5').css('font-size') == '75px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
 # --solutions--
 
+```html
+<style type='text/scss'>
+
+@for $i from 1 through 5 {
+  .text-#{$i} { font-size: 15px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+---
+
+```html
+<style type='text/scss'>
+
+@for $i from 1 to 6 {
+  .text-#{$i} { font-size: 15px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```

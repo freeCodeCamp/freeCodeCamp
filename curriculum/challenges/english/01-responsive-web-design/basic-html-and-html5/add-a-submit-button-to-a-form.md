@@ -4,6 +4,7 @@ title: Add a Submit Button to a Form
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
 forumTopicId: 16627
+dashedName: add-a-submit-button-to-a-form
 ---
 
 # --description--

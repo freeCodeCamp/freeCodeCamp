@@ -3,6 +3,7 @@ id: 587d7dad367417b2b2512b77
 title: 定义构造函数
 challengeType: 1
 forumTopicId: 16804
+dashedName: define-a-constructor-function
 ---
 
 # --description--
@@ -47,5 +48,19 @@ assert(typeof new Dog().color === 'string');
 assert(typeof new Dog().numLegs === 'number');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+function Dog (name, color, numLegs) {
+  this.name = 'name';
+  this.color = 'color';
+  this.numLegs = 4;
+}
+```

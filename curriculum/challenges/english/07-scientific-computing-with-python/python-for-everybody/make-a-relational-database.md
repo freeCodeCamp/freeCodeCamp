@@ -3,6 +3,7 @@ id: 5e7b9f170b6c005b0e76f08b
 title: Make a Relational Database
 challengeType: 11
 videoId: MQ5z4bdF92U
+dashedName: make-a-relational-database
 ---
 
 # --question--

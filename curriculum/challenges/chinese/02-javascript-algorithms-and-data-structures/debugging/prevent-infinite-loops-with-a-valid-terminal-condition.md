@@ -3,6 +3,7 @@ id: 587d7b86367417b2b2512b3d
 title: 使用有效的终止条件防止无限循环
 challengeType: 1
 forumTopicId: 301192
+dashedName: prevent-infinite-loops-with-a-valid-terminal-condition
 ---
 
 # --description--
@@ -39,5 +40,24 @@ assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
 assert(!code.match(/i\s*?!=\s*?4;/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function myFunc() {
+  for (let i = 1; i != 4; i += 2) {
+    console.log("Still going!");
+  }
+}
+```
+
 # --solutions--
 
+```js
+function myFunc() {
+ for (let i = 1; i <= 4; i += 2) {
+   console.log("Still going!");
+ }
+}
+```

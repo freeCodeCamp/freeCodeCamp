@@ -3,6 +3,7 @@ id: 5900f4181000cf542c50ff2b
 title: 'Problem 172: Investigating numbers with few repeated digits'
 challengeType: 5
 forumTopicId: 301807
+dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 ---
 
 # --description--

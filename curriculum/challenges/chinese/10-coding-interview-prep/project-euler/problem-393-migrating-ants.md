@@ -3,6 +3,7 @@ id: 5900f4f61000cf542c510008
 title: 问题393：迁移蚂蚁
 challengeType: 5
 videoUrl: ''
+dashedName: problem-393-migrating-ants
 ---
 
 # --description--
@@ -19,5 +20,21 @@ n×n正方形网格包含n2个蚂蚁，每平方一个蚂蚁。所有蚂蚁决�
 assert.strictEqual(euler393(), 112398351350823100);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler393() {
+
+  return true;
+}
+
+euler393();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

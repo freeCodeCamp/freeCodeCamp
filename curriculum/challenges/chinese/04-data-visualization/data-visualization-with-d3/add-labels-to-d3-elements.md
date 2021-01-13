@@ -3,6 +3,7 @@ id: 587d7faa367417b2b2512bd2
 title: 给 D3 元素添加标签
 challengeType: 6
 forumTopicId: 301476
+dashedName: add-labels-to-d3-elements
 ---
 
 # --description--
@@ -76,5 +77,78 @@ assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55');
 assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d)
+       .attr("width", 25)
+       .attr("height", (d, i) => 3 * d)
+       .attr("fill", "navy");
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       // Add your code below this line
+
+
+
+
+       // Add your code above this line
+  </script>
+<body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d)
+       .attr("width", 25)
+       .attr("height", (d, i) => 3 * d)
+       .attr("fill", "navy");
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - (3 * d) - 3)
+       .text((d) => d)
+  </script>
+<body>
+```

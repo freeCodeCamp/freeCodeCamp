@@ -3,6 +3,7 @@ id: 5900f4511000cf542c50ff62
 title: 问题226：Blancmange的一个独家新闻
 challengeType: 5
 videoUrl: ''
+dashedName: problem-226-a-scoop-of-blancmange
 ---
 
 # --description--
@@ -23,5 +24,21 @@ blancmange曲线下面的哪个区域被C包围？将你的答案四舍五入到
 assert.strictEqual(euler226(), 0.11316017);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler226() {
+
+  return true;
+}
+
+euler226();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

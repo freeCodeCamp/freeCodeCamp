@@ -3,6 +3,7 @@ id: 5900f4241000cf542c50ff37
 title: 问题184：包含原点的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-184-triangles-containing-the-origin
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler184(), 1725323624056);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler184() {
+
+  return true;
+}
+
+euler184();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

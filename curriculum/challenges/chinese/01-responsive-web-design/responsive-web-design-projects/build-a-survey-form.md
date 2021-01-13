@@ -3,6 +3,7 @@ id: 587d78af367417b2b2512b03
 title: 制作一个调查表格
 challengeType: 3
 forumTopicId: 301145
+dashedName: build-a-survey-form
 ---
 
 # --description--
@@ -49,8 +50,8 @@ forumTopicId: 301145
 
 完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
 
-# --hints--
-
-
 # --solutions--
 
+```html
+// solution required
+```

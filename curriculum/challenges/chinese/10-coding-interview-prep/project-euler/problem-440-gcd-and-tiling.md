@@ -3,6 +3,7 @@ id: 5900f5241000cf542c510037
 title: 问题440：GCD和平铺
 challengeType: 5
 videoUrl: ''
+dashedName: problem-440-gcd-and-tiling
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler440(), 970746056);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler440() {
+
+  return true;
+}
+
+euler440();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

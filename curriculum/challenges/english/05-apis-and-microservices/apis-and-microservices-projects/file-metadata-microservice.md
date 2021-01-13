@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bd0f
 title: File Metadata Microservice
 challengeType: 4
 forumTopicId: 301506
+dashedName: file-metadata-microservice
 ---
 
 # --description--
@@ -75,8 +76,6 @@ async (getUserInput) => {
   assert.equal(parsed.type, 'image/png');
 };
 ```
-
-# --seed--
 
 # --solutions--
 

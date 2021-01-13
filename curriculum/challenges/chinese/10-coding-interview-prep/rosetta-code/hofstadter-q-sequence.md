@@ -3,11 +3,12 @@ id: 59637c4d89f6786115efd814
 title: Hofstadter Q序列
 challengeType: 5
 videoUrl: ''
+dashedName: hofstadter-q-sequence
 ---
 
 # --description--
 
-<p> <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence' title='wp：Hofstadter_sequence＃Hofstadter_Q_sequence'>Hofstadter Q序列</a>定义为： </p><p> $ Q（1）= Q（2）= 1，\\ Q（n）= Q \ big（nQ（n-1）\ big）+ Q \ big（nQ（n-2）），\ quad n> 2. $ </p><p>它定义为<a href='http://rosettacode.org/wiki/Fibonacci sequence' title='斐波那契序列'>Fibonacci序列</a> ，但<a href='http://rosettacode.org/wiki/Fibonacci sequence' title='斐波那契序列'>Fibonacci序列中</a>的下一个术语是前两个术语的总和，在Q序列中，前两个术语告诉您在Q序列中返回多远以找到两个数字总结以制作序列的下一个术语。 </p>任务：将Hofstadter Q Sequence方程实现为JavaScript 
+<p> <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence' title='wp：Hofstadter_sequence＃Hofstadter_Q_sequence'>Hofstadter Q序列</a>定义为： </p><p> $ Q（1）= Q（2）= 1，\\ Q（n）= Q \ big（nQ（n-1）\ big）+ Q \ big（nQ（n-2）），\ quad n> 2. $ </p><p>它定义为<a href='http://rosettacode.org/wiki/Fibonacci sequence' title='斐波那契序列'>Fibonacci序列</a> ，但<a href='http://rosettacode.org/wiki/Fibonacci sequence' title='斐波那契序列'>Fibonacci序列中</a>的下一个术语是前两个术语的总和，在Q序列中，前两个术语告诉您在Q序列中返回多远以找到两个数字总结以制作序列的下一个术语。 </p>任务：将Hofstadter Q Sequence方程实现为JavaScript
 
 # --hints--
 
@@ -47,5 +48,37 @@ assert.equal(hofstadterQ(testCase[2]), res[2]);
 assert.equal(hofstadterQ(testCase[3]), res[3]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCase = [1000, 1500, 2000, 2500];
+const res = [502, 755, 1005, 1261];
+```
+
+## --seed-contents--
+
+```js
+function hofstadterQ(n) {
+
+  return n;
+}
+```
+
 # --solutions--
 
+```js
+function hofstadterQ (n) {
+  const memo = [1, 1, 1];
+  const Q = function (i) {
+    let result = memo[i];
+    if (typeof result !== 'number') {
+      result = Q(i - Q(i - 1)) + Q(i - Q(i - 2));
+      memo[i] = result;
+    }
+    return result;
+  };
+  return Q(n);
+}
+```

@@ -3,6 +3,7 @@ id: 587d8248367417b2b2512c3d
 title: 使用 helmet.dnsPrefetchControl() 禁用 DNS 预获取
 challengeType: 2
 forumTopicId: 301577
+dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 ---
 
 # --description--
@@ -30,3 +31,10 @@ forumTopicId: 301577
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

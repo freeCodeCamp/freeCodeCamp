@@ -3,6 +3,7 @@ id: 5900f3861000cf542c50fe99
 title: 'Problem 26: Reciprocal cycles'
 challengeType: 5
 forumTopicId: 301908
+dashedName: problem-26-reciprocal-cycles
 ---
 
 # --description--

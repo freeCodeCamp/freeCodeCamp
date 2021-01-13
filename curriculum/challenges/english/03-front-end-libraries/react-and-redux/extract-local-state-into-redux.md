@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036149
 title: Extract Local State into Redux
 challengeType: 6
 forumTopicId: 301428
+dashedName: extract-local-state-into-redux
 ---
 
 # --description--

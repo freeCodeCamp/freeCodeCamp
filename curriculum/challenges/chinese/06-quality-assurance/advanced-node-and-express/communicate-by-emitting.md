@@ -3,6 +3,7 @@ id: 589fc831f9fc0f352b528e75
 title: 通过 Emitting 通信
 challengeType: 2
 forumTopicId: 301550
+dashedName: communicate-by-emitting
 ---
 
 # --description--
@@ -97,3 +98,10 @@ socket.on('user count', function(data) {
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

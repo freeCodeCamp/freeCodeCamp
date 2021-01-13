@@ -3,6 +3,7 @@ id: 587d8253367417b2b2512c6a
 title: 键入的数组
 challengeType: 1
 videoUrl: ''
+dashedName: typed-arrays
 ---
 
 # --description--
@@ -80,5 +81,18 @@ assert(i32View.byteLength === 64);
 assert(i32View.length === 16);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var buffer;
+var i32View;
+```
+
 # --solutions--
 
+```js
+var buffer = new ArrayBuffer(64);
+var i32View = new Int32Array(buffer);
+```

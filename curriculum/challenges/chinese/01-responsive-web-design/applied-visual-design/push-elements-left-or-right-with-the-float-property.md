@@ -4,6 +4,7 @@ title: 使用 float 属性将元素左浮动或右浮动
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDqu2'
 forumTopicId: 301066
+dashedName: push-elements-left-or-right-with-the-float-property
 ---
 
 # --description--
@@ -28,5 +29,72 @@ id 为 `right` 的元素的 `float` 属性值应为 `right`。
 assert($('#right').css('float') == 'right');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<head>
+  <style>
+    #left {
+
+      width: 50%;
+    }
+    #right {
+
+      width: 40%;
+    }
+    aside, section {
+      padding: 2px;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome!</h1>
+  </header>
+  <section id="left">
+    <h2>Content</h2>
+    <p>Good stuff</p>
+  </section>
+  <aside id="right">
+    <h2>Sidebar</h2>
+    <p>Links</p>
+  </aside>
+</body>
+```
+
 # --solutions--
 
+```html
+<head>
+  <style>
+    #left {
+      float: left;
+      width: 50%;
+    }
+    #right {
+      float: right;
+      width: 40%;
+    }
+    aside, section {
+      padding: 2px;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome!</h1>
+  </header>
+  <section id="left">
+    <h2>Content</h2>
+    <p>Good stuff</p>
+  </section>
+  <aside id="right">
+    <h2>Sidebar</h2>
+    <p>Links</p>
+  </aside>
+</body>
+```
