@@ -63,5 +63,10 @@
         "plugins": ["line-numbers"]
       }
     ]
-  ]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["@codesee/instrument"]
+    }
+  }
 }
