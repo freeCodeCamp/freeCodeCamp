@@ -9,9 +9,9 @@ dashedName: adding-a-default-option-in-switch-statements
 
 # --description--
 
-在`switch`语句中你可能无法用 case 来指定所有情况，这时你可以添加 default 语句。当再也找不到 case 匹配的时候 default 语句会执行，非常类似于 if/else 组合中的 else 语句。
+在 `switch` 语句中你可能无法用 case 来指明所有情况，这时我们可以添加 default 语句来解决这个问题。在无法找到匹配的 case 时，default 语句就会执行。这非常类似于 if/else 语句中的 else 语句。
 
-`default`语句应该是最后一个 case。
+注意，`default` 语句应该在所有的 `case` 之后。
 
 ```js
 switch (num) {
@@ -30,7 +30,7 @@ switch (num) {
 
 # --instructions--
 
-写一个 switch 语句，根据下面的条件来设置`answer`的switch语句：  
+请实现根据下面的条件来设置 `answer` 的 `switch` 语句：  
 `"a"` - "apple"  
 `"b"` - "bird"  
 `"c"` - "cat"  
@@ -38,49 +38,49 @@ switch (num) {
 
 # --hints--
 
-`switchOfStuff("a")`应该有一个值为 "apple"。
+`switchOfStuff("a")` 的值应为 "apple"。
 
 ```js
 assert(switchOfStuff('a') === 'apple');
 ```
 
-`switchOfStuff("b")`应该有一个值为 "bird"。
+`switchOfStuff("b")` 的值应为 "bird"。
 
 ```js
 assert(switchOfStuff('b') === 'bird');
 ```
 
-`switchOfStuff("c")`应该有一个值为 "cat"。
+`switchOfStuff("c")` 的值应为 "cat"。
 
 ```js
 assert(switchOfStuff('c') === 'cat');
 ```
 
-`switchOfStuff("d")`应该有一个值为 "stuff"。
+`switchOfStuff("d")` 的值应为 "stuff"。
 
 ```js
 assert(switchOfStuff('d') === 'stuff');
 ```
 
-`switchOfStuff(4)`应该有一个值为 "stuff"。
+`switchOfStuff("4")` 的值应为 "stuff"。
 
 ```js
 assert(switchOfStuff(4) === 'stuff');
 ```
 
-不能使用任何`if`或`else`表达式。
+不应使用 `if` 或 `else` 语句。
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-你应该有一个`default`表达式。
+应有一个 `default` 语句。
 
 ```js
 assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 ```
 
-你应该有至少 3 个`break`表达式。
+应至少有 3 个 `break` 语句。
 
 ```js
 assert(code.match(/break/g).length > 2);
