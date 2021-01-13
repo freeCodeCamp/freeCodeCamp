@@ -8,7 +8,12 @@ To begin proofreading, visit [our translation site](https://translate.freecodeca
 
 You should see the list of projects you have been granted proofreader access on. Select the project that you would like to proofread, then select the language.
 
-You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file.
+![Image - Proofreeding File Tree](./images/crowdin/proof-file-tree.png)
+
+You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
+
+> [!NOTE]
+> If you are in this workspace view, but want to work on [translating a file](./how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
 
 ## Proofread Translations
 
@@ -16,11 +21,14 @@ You should now see the list of available files. Choose your file by selecting th
 
 Here you will see the list of strings in the selected file, with their related translations. The translation that is displayed here is the translation which has received the highest score (between upvotes and downvotes) from the translation community.
 
-1. This is the translation string - you are able to edit the translation directly from this view before approving it.
-2. Crowdin will display the status of each string. `Done` means a translation has been proposed for the string. `Todo` means the string has not been translated. `Hidden` means the string is locked and *should not be translated*.
-3. Crowdin displays error messages here from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
-4. Clicking this checkmark button will approve that translation.
+1. This is the original string (in English).
+2. This is the matching translated string. The most popular translation proposal, based on upvotes and downvotes, will be displayed here.
+3. Clicking this checkmark button will approve that translation.
+4. Crowdin will display the status of each string. `Done` means a translation has been proposed for the string. `Todo` means the string has not been translated. `Hidden` means the string is locked and *should not be translated*. `Comment` means the string has a related comment.
 5. Translations can be selected with the checkboxes and approved here in one bulk action.
+6. You can view the community proposed translations, their popularity scores, and Crowdin suggested translations here.
+7. This button shows/hides the right side display pane, where you can view translations, comments, translation memory, and glossary terms.
+8. Crowdin displays error messages here from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
 
 > [!WARNING]
 > Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
