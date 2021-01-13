@@ -1,9 +1,6 @@
 name: Crowdin i18n Upload Action
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - test-crowdin-upload
 
 jobs:
   
@@ -27,7 +24,7 @@ jobs:
         with:
           # uploads
           upload_sources: true
-          upload_translations: true
+          upload_translations: false
           auto_approve_imported: false
           import_eq_suggestions: false
 

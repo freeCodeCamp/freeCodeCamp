@@ -1,9 +1,6 @@
 name: Crowdin i18n Download Translations
 on:
   workflow_dispatch:
-  push:
-    branches:
-    - test-crowdin-download
 
 jobs:
   
@@ -36,7 +33,7 @@ jobs:
           
           # pull-request
           localization_branch_name: i18n-sync-learn-processed-chinese-translations
-          create_pull_request: false
+          create_pull_request: true
           pull_request_title: 'chore(i18n,learn): Processed chinese translations from crowdin'
           pull_request_body: ''
           pull_request_labels: 'scope: i18n, scope: learn, crowdin-sync, language: Chinese'
