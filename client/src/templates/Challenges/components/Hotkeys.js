@@ -31,7 +31,6 @@ const propTypes = {
   editorRef: PropTypes.object,
   executeChallenge: PropTypes.func,
   innerRef: PropTypes.any,
-  introPath: PropTypes.string,
   nextChallengePath: PropTypes.string,
   prevChallengePath: PropTypes.string,
   setEditorFocusability: PropTypes.func.isRequired
@@ -42,7 +41,6 @@ function Hotkeys({
   children,
   editorRef,
   executeChallenge,
-  introPath,
   innerRef,
   nextChallengePath,
   prevChallengePath,
@@ -68,7 +66,7 @@ function Hotkeys({
       if (!canFocusEditor) navigate(prevChallengePath);
     },
     NAVIGATE_NEXT: () => {
-      if (!canFocusEditor) navigate(introPath ? introPath : nextChallengePath);
+      if (!canFocusEditor) navigate(nextChallengePath);
     }
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,

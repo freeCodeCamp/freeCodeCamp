@@ -10,7 +10,9 @@ const propTypes = {
   height: PropTypes.number,
   loadedClassName: PropTypes.string,
   loadingClassName: PropTypes.string,
+  offsetVertical: PropTypes.number,
   src: PropTypes.string,
+  style: PropTypes.object,
   width: PropTypes.number
 };
 
@@ -18,8 +20,10 @@ const ImageLoader = ({
   className = '',
   loadedClassName = 'img-loaded',
   loadingClassName = 'img-loading',
+  offsetVertical = 100,
   alt,
   src,
+  style,
   width,
   height
 }) => {
@@ -31,7 +35,7 @@ const ImageLoader = ({
     <LazyLoad
       debounce={false}
       height={height}
-      offsetVertical={100}
+      offsetVertical={offsetVertical}
       width={width}
     >
       {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
@@ -40,6 +44,7 @@ const ImageLoader = ({
         className={fullClassName}
         onLoad={() => setLoaded(true)}
         src={src}
+        style={style}
       />
     </LazyLoad>
   );

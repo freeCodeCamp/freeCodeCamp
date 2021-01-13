@@ -1,23 +1,152 @@
+.superBlock-image {
+  max-width: 100%;
+  height: auto !important;
+}
+
 .block-ui {
   height: 100%;
-}
-
-.block-ui ul {
   list-style: none;
   color: var(--secondary-color);
-}
-
-.block-ui > ul {
   padding: 0;
 }
 
-.block a {
+.block-ui a {
   text-decoration: none;
+}
+
+.map-title {
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+button.map-title {
+  cursor: pointer;
+  padding: 18px 8px;
+}
+
+.map-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.map-project-wrap > a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-project-checkmark {
+  margin-right: 7px;
+  padding-left: 15px;
+}
+
+.block .map-cert-title {
+  display: flex;
+  align-items: center;
+  padding: 18px 8px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.block .no-cursor {
+  cursor: default;
+}
+
+.block .no-cursor h3 {
+  cursor: text;
+}
+
+.block .map-is-cert:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.map-cert-title > h3 {
+  margin: 0 0 0 15px;
+}
+
+.map-cert-title > svg {
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  min-width: 25px;
+}
+
+.map-title > h4 {
+  margin: 0;
+}
+
+.map-title-completed {
+  margin-left: auto;
+  min-width: 100px;
+  padding-left: 20px;
+}
+
+.map-title-completed-big {
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 20px;
+  position: relative;
+  top: 4px;
+}
+
+.map-title svg {
+  width: 14px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  fill: var(--color-quaternary) !important;
+  stroke: var(--color-quaternary);
+}
+
+.open > .map-title svg:first-child {
+  transform: rotate(90deg);
+}
+
+.map-challenges-ul {
+  padding-inline-start: 0;
+}
+
+.map-challenge-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.map-challenge-title a {
+  width: 100%;
+  padding: 10px 20px 10px 30px;
+}
+
+.block-description {
+  padding: 18px 0;
+}
+
+.block-description > p:last-child {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 767px) {
   .intro-layout-container {
     padding: 0 10px;
+  }
+
+  button.map-title {
+    width: 100%;
+  }
+
+  .map-challenge-title {
+    max-width: 100%;
+  }
+
+  .map-title-completed {
+    flex-shrink: 0;
+    padding-left: 15px;
   }
 }
 
