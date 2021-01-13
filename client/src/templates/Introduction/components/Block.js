@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Link } from 'gatsby';
+import { withTranslation } from 'react-i18next';
 
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { completedChallengesSelector, executeGA } from '../../../redux';
+import Challenges from './Challenges';
 import Caret from '../../../assets/icons/Caret';
-import { blockNameify } from '../../../../../utils/block-nameify';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import IntroInformation from '../../../assets/icons/IntroInformation';
-import { dasherize } from '../../../../../utils/slugs';
+import { Spacer } from '../../../components/helpers';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -35,14 +34,9 @@ const propTypes = {
   challenges: PropTypes.array,
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
   executeGA: PropTypes.func,
-  intro: PropTypes.shape({
-    fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      block: PropTypes.string.isRequired
-    })
-  }),
   isExpanded: PropTypes.bool,
+  superBlockDashedName: PropTypes.string,
+  t: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired
 };
 
@@ -53,8 +47,6 @@ export class Block extends Component {
     super(...props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
-    this.handleChallengeClick = this.handleChallengeClick.bind(this);
-    this.renderChallenges = this.renderChallenges.bind(this);
   }
 
   handleBlockClick() {
@@ -69,18 +61,6 @@ export class Block extends Component {
     return toggleBlock(blockDashedName);
   }
 
-  handleChallengeClick(slug) {
-    return () => {
-      return this.props.executeGA({
-        type: 'event',
-        data: {
-          category: 'Map Challenge Click',
-          action: slug
-        }
-      });
-    };
-  }
-
   renderCheckMark(isCompleted) {
     return isCompleted ? (
       <GreenPass style={mapIconStyle} />
@@ -89,35 +69,14 @@ export class Block extends Component {
     );
   }
 
-  renderChallenges(intro = {}, challenges = []) {
-    // TODO: Split this into a Challenge Component and add tests
-    // TODO: The styles badge and map-badge on the completion span do not exist
-    return [intro].concat(challenges).map((challenge, i) => {
-      const completedClass = challenge.isCompleted
-        ? ' map-challenge-title-completed'
-        : '';
-      return (
-        <li
-          className={'map-challenge-title' + completedClass}
-          id={challenge.dashedName || dasherize(challenge.frontmatter.title)}
-          key={'map-challenge' + challenge.fields.slug}
-        >
-          <span className='badge map-badge'>
-            {i === 0 ? (
-              <IntroInformation style={mapIconStyle} />
-            ) : (
-              this.renderCheckMark(challenge.isCompleted)
-            )}
-          </span>
-          <Link
-            onClick={this.handleChallengeClick(challenge.fields.slug)}
-            to={challenge.fields.slug}
-          >
-            {challenge.title || challenge.frontmatter.title}
-          </Link>
-        </li>
-      );
-    });
+  renderBlockIntros(arr) {
+    return (
+      <div className='block-description'>
+        {arr.map((str, i) => (
+          <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
+        ))}
+      </div>
+    );
   }
 
   render() {
@@ -126,8 +85,10 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      intro
+      superBlockDashedName,
+      t
     } = this.props;
+
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
@@ -140,30 +101,66 @@ export class Block extends Component {
       return { ...challenge, isCompleted };
     });
 
-    return (
-      <li className={`block ${isExpanded ? 'open' : ''}`}>
+    const isProjectBlock = challenges.some(challenge => {
+      const isJsProject =
+        challenge.order === 10 && challenge.challengeType === 5;
+
+      const isOtherProject =
+        challenge.challengeType === 3 ||
+        challenge.challengeType === 4 ||
+        challenge.challengeType === 10;
+
+      const isTakeHomeProject = blockDashedName === 'take-home-projects';
+
+      return (
+        (isJsProject && !isTakeHomeProject) ||
+        (isOtherProject && !isTakeHomeProject)
+      );
+    });
+
+    const blockIntroObj = t(
+      `intro:${superBlockDashedName}.blocks.${blockDashedName}`
+    );
+    const blockTitle = blockIntroObj ? blockIntroObj.title : null;
+    const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
+
+    return isProjectBlock ? (
+      <div className='block'>
+        <h3>{blockTitle}</h3>
+        {this.renderBlockIntros(blockIntroArr)}
+        <Challenges
+          challengesWithCompleted={challengesWithCompleted}
+          isProjectBlock={isProjectBlock}
+        />
+      </div>
+    ) : (
+      <div className={`block ${isExpanded ? 'open' : ''}`}>
+        <h3>{blockTitle}</h3>
+        {this.renderBlockIntros(blockIntroArr)}
         <button
           aria-expanded={isExpanded}
           className='map-title'
           onClick={this.handleBlockClick}
         >
           <Caret />
-          <h4>{blockNameify(blockDashedName)}</h4>
+          <h4>
+            {t(`intro:misc-text.section-tutorials`, { section: blockTitle })}
+          </h4>
           <div className='map-title-completed'>
-            <span>
-              {this.renderCheckMark(
-                completedCount === challengesWithCompleted.length
-              )}
-            </span>
-            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+            {this.renderCheckMark(
+              completedCount === challengesWithCompleted.length
+            )}
+            <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
         </button>
-        <ul>
-          {isExpanded
-            ? this.renderChallenges(intro, challengesWithCompleted)
-            : null}
-        </ul>
-      </li>
+        {isExpanded && (
+          <Challenges
+            challengesWithCompleted={challengesWithCompleted}
+            isProjectBlock={isProjectBlock}
+          />
+        )}
+        <Spacer size={2} />
+      </div>
     );
   }
 }
@@ -174,4 +171,4 @@ Block.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Block);
+)(withTranslation()(Block));

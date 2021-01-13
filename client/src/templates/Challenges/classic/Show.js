@@ -78,7 +78,6 @@ const propTypes = {
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.shape({
       id: PropTypes.string,
-      introPath: PropTypes.string,
       nextChallengePath: PropTypes.string,
       prevChallengePath: PropTypes.string
     })
@@ -209,19 +208,22 @@ class ShowClassic extends Component {
     const {
       fields: { blockName },
       description,
-      instructions
+      instructions,
+      superBlock
     } = this.getChallenge();
 
     const { forumTopicId, title } = this.getChallenge();
     return (
       <SidePanel
+        block={blockName}
         className='full-height'
         description={description}
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructions={instructions}
         section={dasherize(blockName)}
         showToolPanel={showToolPanel}
-        title={this.getBlockNameTitle()}
+        superBlock={superBlock}
+        title={title}
         videoUrl={this.getVideoUrl()}
       />
     );
@@ -282,7 +284,7 @@ class ShowClassic extends Component {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
       files,
       t
@@ -293,7 +295,6 @@ class ShowClassic extends Component {
         editorRef={this.editorRef}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -360,6 +361,7 @@ export const query = graphql`
       challengeType
       helpCategory
       videoUrl
+      superBlock
       forumTopicId
       fields {
         slug

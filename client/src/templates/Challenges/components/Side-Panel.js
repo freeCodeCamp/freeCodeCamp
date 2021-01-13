@@ -22,12 +22,14 @@ const mapStateToProps = createSelector(
 );
 
 const propTypes = {
+  block: PropTypes.string,
   description: PropTypes.string,
   guideUrl: PropTypes.string,
   instructions: PropTypes.string,
   isChallengeCompleted: PropTypes.bool,
   section: PropTypes.string,
   showToolPanel: PropTypes.bool,
+  superBlock: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   videoUrl: PropTypes.string
@@ -63,6 +65,7 @@ export class SidePanel extends Component {
 
   render() {
     const {
+      block,
       title,
       description,
       instructions,
@@ -71,12 +74,17 @@ export class SidePanel extends Component {
       tests,
       section,
       showToolPanel,
+      superBlock,
       videoUrl
     } = this.props;
     return (
       <div className='instructions-panel' role='complementary' tabIndex='-1'>
         <div>
-          <ChallengeTitle isCompleted={isChallengeCompleted}>
+          <ChallengeTitle
+            block={block}
+            isCompleted={isChallengeCompleted}
+            superBlock={superBlock}
+          >
             {title}
           </ChallengeTitle>
           <ChallengeDescription
