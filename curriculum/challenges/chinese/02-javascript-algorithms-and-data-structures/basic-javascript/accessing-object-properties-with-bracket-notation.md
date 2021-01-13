@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: 通过方括号访问对象属性
+title: 通过方括号表示法访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
@@ -9,11 +9,11 @@ dashedName: accessing-object-properties-with-bracket-notation
 
 # --description--
 
-第二种访问对象的方式就是中括号操作符(`[]`)，如果你想访问的属性的名称有一个空格，这时你只能使用中括号操作符(`[]`)。
+访问对象的第二种方式是方括号表示法（`[]`）。如果你想访问的属性名中包含空格，就必须使用方括号表示法来获取它的属性值。
 
-当然，如果属性名不包含空格，也可以使用中括号操作符。
+当然，如果属性名不包含空格，我们也可以使用方括号表示法。
 
-这是一个使用中括号操作符(`[]`)读取对象属性的例子：
+这是一个使用方括号表示法（`[]`）读取对象属性的例子：
 
 ```js
 var myObj = {
@@ -26,39 +26,39 @@ myObj['More Space']; // Spock
 myObj["NoSpace"];    // USS Enterprise
 ```
 
-提示：属性名称中如果有空格，必须把属性名称用单引号或双引号包裹起来。
+注意，属性名中如果包含空格，就必须把属性名称用单引号或双引号包裹起来。
 
 # --instructions--
 
-用中括号操作符读取对象`testObj`的`an entree`属性值和`the drink`属性值，并分别赋值给`entreeValue`和`drinkValue`。
+请使用方括号表示法读取对象 `testObj` 中 `an entree` 和 `the drink` 的属性值，并分别赋值给 `entreeValue` 和 `drinkValue`。
 
 # --hints--
 
-`entreeValue`应该是一个字符串。
+`entreeValue` 应为一个字符串。
 
 ```js
 assert(typeof entreeValue === 'string');
 ```
 
-`entreeValue`的值应该是`"hamburger"`。
+`entreeValue` 的值应为 `"hamburger"`。
 
 ```js
 assert(entreeValue === 'hamburger');
 ```
 
-`drinkValue`应该是一个字符串。
+`drinkValue` 应为一个字符串。
 
 ```js
 assert(typeof drinkValue === 'string');
 ```
 
-`drinkValue`的值应该是`"water"`。
+`drinkValue` 的值应为 `"water"`。
 
 ```js
 assert(drinkValue === 'water');
 ```
 
-你应该使用中括号两次。
+你应使用两次方括号表示法。
 
 ```js
 assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
