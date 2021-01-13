@@ -4,9 +4,10 @@
  */
 const translationsSchema = {
   meta: {
-    title: 'Learn to Code for Free – Coding Courses for Busy People',
-    description:
-      'Learn to code at home. Build projects. Earn certifications. Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.',
+    title: 'Learn to Code — for Free — Coding Courses for Busy People',
+    description: 'Learn to Code — for Free',
+    'social-description':
+      'Learn to code. Build projects. Earn certifications. Since 2015, 40,000 graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.',
     keywords: [
       'javascript',
       'js',
