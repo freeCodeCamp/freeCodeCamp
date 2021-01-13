@@ -11,7 +11,7 @@ const locations = {
 const superBlockNames = [
   'Responsive Web Design Certification',
   'JavaScript Algorithms and Data Structures Certification',
-  'Front End Libraries Certification',
+  'Front End Development Libraries Certification',
   'Data Visualization Certification',
   'APIs and Microservices Certification',
   'Quality Assurance Certification',
@@ -77,7 +77,7 @@ describe('Superblocks and Blocks', () => {
     cy.contains("Get started (it's free)").click();
   });
 
-  it('Has all supeblocks visible', () => {
+  it('Has all superblocks visible', () => {
     cy.wrap(superBlockNames.slice(1)).each(name => {
       cy.contains(name).should('be.visible');
     });

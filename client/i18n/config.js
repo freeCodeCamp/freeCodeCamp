@@ -13,10 +13,11 @@ i18n.use(initReactI18next).init({
   resources: {
     [i18nextCode]: {
       translations: require(`./locales/${clientLocale}/translations.json`),
-      trending: require(`./locales/${clientLocale}/trending.json`)
+      trending: require(`./locales/${clientLocale}/trending.json`),
+      intro: require(`./locales/${clientLocale}/intro.json`)
     }
   },
-  ns: ['translations', 'trending'],
+  ns: ['translations', 'trending', 'intro'],
   defaultNS: 'translations',
   returnObjects: true,
   debug: environment === 'development',

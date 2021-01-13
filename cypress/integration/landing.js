@@ -10,7 +10,7 @@ const selectors = {
 const certifications = [
   'Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
-  'Front End Libraries',
+  'Front End Development Libraries',
   'Data Visualization',
   'APIs and Microservices',
   'Quality Assurance',

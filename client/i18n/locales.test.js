@@ -20,6 +20,9 @@ const filesThatShouldExist = [
   },
   {
     name: 'trending.json'
+  },
+  {
+    name: 'intro.json'
   }
 ];
 

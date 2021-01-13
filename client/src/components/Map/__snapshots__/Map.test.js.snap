@@ -14,7 +14,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-one/"
         >
-          Super Block One
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -41,7 +47,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-one/"
         >
-          Super Block One
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -68,7 +80,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-one/"
         >
-          Super Block One
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -95,7 +113,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-one/"
         >
-          Super Block One
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -122,7 +146,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-one/"
         >
-          Super Block One
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -149,7 +179,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-two/"
         >
-          Super Block Two
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -176,7 +212,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-two/"
         >
-          Super Block Two
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -203,7 +245,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-two/"
         >
-          Super Block Two
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -230,7 +278,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-two/"
         >
-          Super Block Two
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -257,7 +311,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-three/"
         >
-          Super Block Three
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
@@ -284,7 +344,13 @@ exports[`<Map /> snapshot: Map 1`] = `
           class="btn link-btn btn-lg"
           href="/learn/super-block-three/"
         >
-          Super Block Three
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div
+              class="LazyLoad"
+            />
+          </div>
           <svg
             aria-hidden="true"
             fill="inherit"
