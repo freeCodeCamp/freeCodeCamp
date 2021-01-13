@@ -1,0 +1,62 @@
+# How to Translate a File
+
+> [!NOTE]
+> All translations are handled through https://translate.freecodecamp.org - we are no longer using GitHub to translate files directly.
+
+To begin, head to our translation website and login (if you have not contributed to translations before, you will need to create an account).
+
+## Select a Project and File
+
+You should see two "projects" available for translation: The `Contributing Documentation` project, which contains the files for this documentation site, and the `Coding Curriculum` project, which contains our challenge files for `/learn`.
+
+Select which project you want to contribute to, and you will see a list of available languages for translation.
+
+![Image - List of available languages](./images/crowdin/languages.png)
+
+Select the language you want to work on, and you will see the complete file tree.
+
+![Image - List of available files](./images/crowdin/file-tree.png)
+
+Each file and folder will show a progress bar. The **blue** portion of the progress bar indicates what percentage of the file has been translated, while the **green** portion of the progress bar indicates what percentage of the file has been approved by the proofreading team.
+
+Select a file to work on and Crowdin will open the editor view.
+
+## Translate the File
+
+![Image - Editor View](./images/crowdin/editor.png)
+
+Crowdin separates a document into translatable "strings", usually as sentences. Each string is translated individually. Referring to the image above:
+
+1. A string highlighted in green already has a proposed translation.
+2. A string highlighted in red does *not* have a proposed translation.
+3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must be preserved in English.
+4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
+5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). Translation Memory refers to similar or identical strings that we have translated/approved in other files. Machine Translation refers to translations recommended by their integrated library.
+6. This is the editor pane, where you may write your proposed translation for the selected string.
+
+When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote your translation as accurate and proofreaders will be able to approve it.
+
+You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
+
+## Quality Assurance Checks
+
+We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+
+When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+
+![Image - QA Warning Message](./images/crowdin/qa-message.png)
+
+This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that. 
+
+> [!WARNING]
+> You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error might be incorrect.
+
+## Translation Best Practices
+
+Follow these guidelines to ensure our translations are as accurate as possible:
+
+- Do not translate content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
+- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
+- Do not change the order of content.
+
+If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/contributors) and we will be happy to assist you.

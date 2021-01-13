@@ -8,6 +8,9 @@
   - [Work on video challenges](how-to-help-with-video-challenges.md)
   - [Work on the news theme](how-to-work-on-the-news-theme.md)
   - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+- **Translation Contribution**
+  - [Translating a Curriculum File](how-to-translate-files.md)
+  - [Proofreading a Curriculum File](how-to-proofread-files.md)
 - **Optional Guides**
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on WSL](how-to-setup-wsl.md)
