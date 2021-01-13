@@ -99,6 +99,8 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@codesee/babel-plugin-instrument": "^0.6.2",
+    "@codesee/tracker": "^0.6.2",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
     "autoprefixer": "^9.8.6",
