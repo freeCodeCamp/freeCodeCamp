@@ -3,6 +3,7 @@ id: a0b5010f579e69b815e7c5d6
 title: 搜索与替换
 challengeType: 5
 forumTopicId: 16045
+dashedName: search-and-replace
 ---
 
 # --description--
@@ -74,5 +75,27 @@ assert.deepEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function myReplace(str, before, after) {
+  return str;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+```
+
 # --solutions--
 
+```js
+function myReplace(str, before, after) {
+  if (before.charAt(0) === before.charAt(0).toUpperCase()) {
+    after = after.charAt(0).toUpperCase() + after.substring(1);
+  } else {
+    after = after.charAt(0).toLowerCase() + after.substring(1);
+  }
+  return str.replace(before, after);
+}
+```

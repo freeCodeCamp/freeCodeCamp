@@ -3,6 +3,7 @@ id: a2f1d72d9b908d0bd72bb9f6
 title: 构建 Person 类
 challengeType: 5
 forumTopicId: 16020
+dashedName: make-a-person
 ---
 
 # --description--
@@ -125,5 +126,72 @@ assert.strictEqual(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(bob){
+  bob = new Person("Bob Ross");
+}
+```
+
+## --seed-contents--
+
+```js
+var Person = function(firstAndLast) {
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  this.getFullName = function() {
+    return "";
+  };
+  return firstAndLast;
+};
+
+var bob = new Person('Bob Ross');
+bob.getFullName();
+```
+
 # --solutions--
 
+```js
+var Person = function(firstAndLast) {
+
+  var firstName, lastName;
+
+  function updateName(str) {
+    firstName = str.split(" ")[0];
+    lastName = str.split(" ")[1];
+  }
+
+  updateName(firstAndLast);
+
+  this.getFirstName = function(){
+    return firstName;
+  };
+
+  this.getLastName = function(){
+    return lastName;
+  };
+
+  this.getFullName = function(){
+    return firstName + " " + lastName;
+  };
+
+  this.setFirstName = function(str){
+    firstName = str;
+  };
+
+
+  this.setLastName = function(str){
+    lastName = str;
+  };
+
+  this.setFullName = function(str){
+    updateName(str);
+  };
+};
+
+var bob = new Person('Bob Ross');
+bob.getFullName();
+```

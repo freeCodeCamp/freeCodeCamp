@@ -3,6 +3,7 @@ id: bd7157d8c242eddfaeb5bd13
 title: Build a Markdown Previewer
 challengeType: 3
 forumTopicId: 301372
+dashedName: build-a-markdown-previewer
 ---
 
 # --description--
@@ -30,11 +31,6 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Once you're done, submit the URL to your working project with all its tests passing.
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

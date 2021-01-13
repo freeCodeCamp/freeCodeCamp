@@ -3,6 +3,7 @@ id: 587d7b7a367417b2b2512b12
 title: 使用 slice() 复制数组元素
 challengeType: 1
 forumTopicId: 301158
+dashedName: copy-array-items-using-slice
 ---
 
 # --description--
@@ -40,5 +41,25 @@ assert.deepEqual(
 assert(/\.slice\(/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function forecast(arr) {
+  // Only change code below this line
+
+  return arr;
+}
+
+// Only change code above this line
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+```
+
 # --solutions--
 
+```js
+function forecast(arr) {
+  return arr.slice(2,4);
+}
+```

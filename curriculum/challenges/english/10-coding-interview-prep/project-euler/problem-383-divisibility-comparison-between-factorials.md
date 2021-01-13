@@ -3,6 +3,7 @@ id: 5900f4ed1000cf542c50ffff
 title: 'Problem 383: Divisibility comparison between factorials'
 challengeType: 5
 forumTopicId: 302047
+dashedName: problem-383-divisibility-comparison-between-factorials
 ---
 
 # --description--

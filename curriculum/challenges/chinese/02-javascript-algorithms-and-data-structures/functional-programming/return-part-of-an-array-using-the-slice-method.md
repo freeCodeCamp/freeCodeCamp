@@ -3,6 +3,7 @@ id: 587d7b90367417b2b2512b65
 title: 使用 slice 方法返回数组的一部分
 challengeType: 1
 forumTopicId: 301239
+dashedName: return-part-of-an-array-using-the-slice-method
 ---
 
 # --description--
@@ -65,5 +66,29 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sliceArray(anim, beginSlice, endSlice) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+sliceArray(inputAnim, 1, 3);
+```
+
 # --solutions--
 
+```js
+function sliceArray(anim, beginSlice, endSlice) {
+  // Only change code below this line
+  return anim.slice(beginSlice, endSlice)
+  // Only change code above this line
+}
+var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+sliceArray(inputAnim, 1, 3);
+```

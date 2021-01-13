@@ -2,6 +2,7 @@
 id: 5e46f8d6ac417301a38fb92d
 title: Rock Paper Scissors
 challengeType: 10
+dashedName: rock-paper-scissors
 ---
 
 # --description--
@@ -21,8 +22,6 @@ It should pass all Python tests.
 ```js
 
 ```
-
-# --seed--
 
 # --solutions--
 

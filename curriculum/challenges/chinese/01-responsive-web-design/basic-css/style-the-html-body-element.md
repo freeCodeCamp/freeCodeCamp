@@ -4,6 +4,7 @@ title: 给 HTML 的 body 元素添加样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB77PHW'
 forumTopicId: 18313
+dashedName: style-the-html-body-element
 ---
 
 # --description--
@@ -48,5 +49,22 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+</style>
+```
+
 # --solutions--
 
+```html
+<style>
+body {
+  background-color: black;
+}
+</style>
+```

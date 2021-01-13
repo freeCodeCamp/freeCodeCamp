@@ -3,6 +3,7 @@ id: 5900f3801000cf542c50fe93
 title: 问题20：因子数字和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-20-factorial-digit-sum
 ---
 
 # --description--
@@ -42,5 +43,27 @@ assert.strictEqual(sumFactorialDigits(75), 432);
 assert.strictEqual(sumFactorialDigits(100), 648);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sumFactorialDigits(n) {
+
+  return n;
+}
+
+sumFactorialDigits(100);
+```
+
 # --solutions--
 
+```js
+let factorial = (n) => n <= 1 ? BigInt(n) : BigInt(n) * BigInt(factorial(--n));
+
+let sumDigits = n => n.toString().split('').map(x => parseInt(x)).reduce((a,b) => a + b);
+
+function sumFactorialDigits(n) {
+  return sumDigits(factorial(n));
+}
+```

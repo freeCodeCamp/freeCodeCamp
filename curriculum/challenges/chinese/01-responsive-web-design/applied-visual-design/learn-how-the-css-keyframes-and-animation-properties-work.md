@@ -4,6 +4,7 @@ title: 了解 CSS 的关键帧和动画是如何工作的
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
 forumTopicId: 301059
+dashedName: learn-how-the-css-keyframes-and-animation-properties-work
 ---
 
 # --description--
@@ -76,5 +77,60 @@ assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi));
 assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+  }
+
+  #rect {
+
+
+  }
+
+
+
+
+</style>
+<div id="rect"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+  }
+
+  #rect {
+    animation-name: rainbow;
+    animation-duration: 4s;
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-color: blue;
+    }
+    50% {
+      background-color: green;
+    }
+    100% {
+      background-color: yellow;
+    }
+  }
+</style>
+<div id="rect"></div>
+```

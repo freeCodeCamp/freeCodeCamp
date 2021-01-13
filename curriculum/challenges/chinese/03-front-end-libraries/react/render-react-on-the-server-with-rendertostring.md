@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618d
 title: 用 renderToString 在服务器上渲染 React
 challengeType: 6
 forumTopicId: 301407
+dashedName: render-react-on-the-server-with-rendertostring
 ---
 
 # --description--
@@ -29,5 +30,47 @@ forumTopicId: 301407
   );
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```jsx
+var ReactDOMServer = { renderToString(x) { return null; } };
+```
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
+
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
+
+// Change code below this line
+ReactDOMServer.renderToString(<App/>);
+```

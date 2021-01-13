@@ -3,6 +3,7 @@ id: 5900f38d1000cf542c50fea0
 title: 'Problem 33: Digit cancelling fractions'
 challengeType: 5
 forumTopicId: 301987
+dashedName: problem-33-digit-cancelling-fractions
 ---
 
 # --description--

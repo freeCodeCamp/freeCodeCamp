@@ -3,6 +3,7 @@ id: 5a51eabcad78bf416f316e2a
 title: 'Problem 22: Names scores'
 challengeType: 5
 forumTopicId: 301862
+dashedName: problem-22-names-scores
 ---
 
 # --description--

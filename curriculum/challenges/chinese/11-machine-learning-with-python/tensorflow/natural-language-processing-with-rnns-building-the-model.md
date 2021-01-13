@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72da1
 challengeType: 11
 videoId: 32WBFS7lfsw
+dashedName: natural-language-processing-with-rnns-building-the-model
 ---
 
 # --question--
@@ -57,9 +58,4 @@ D: `return model`
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

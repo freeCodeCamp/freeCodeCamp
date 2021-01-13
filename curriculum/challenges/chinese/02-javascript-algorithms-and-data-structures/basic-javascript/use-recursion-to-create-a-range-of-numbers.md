@@ -3,6 +3,7 @@ id: 5cc0bd7a49b71cb96132e54c
 title: 使用递归来创建一个数字序列
 challengeType: 1
 forumTopicId: 301180
+dashedName: use-recursion-to-create-a-range-of-numbers
 ---
 
 # --description--
@@ -53,5 +54,26 @@ assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function rangeOfNumbers(startNum, endNum) {
+  return [];
+};
+```
+
 # --solutions--
 
+```js
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+```

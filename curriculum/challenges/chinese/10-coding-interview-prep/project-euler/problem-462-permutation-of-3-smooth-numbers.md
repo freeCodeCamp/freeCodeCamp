@@ -3,6 +3,7 @@ id: 5900f53b1000cf542c51004d
 title: 问题462：3个平滑数的排列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-462-permutation-of-3-smooth-numbers
 ---
 
 # --description--
@@ -26,5 +27,21 @@ videoUrl: ''
 assert.strictEqual(euler462(), Infinity);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler462() {
+
+  return true;
+}
+
+euler462();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

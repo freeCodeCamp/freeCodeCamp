@@ -3,6 +3,7 @@ id: 5900f5311000cf542c510043
 title: 问题452：长期产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-452-long-products
 ---
 
 # --description--
@@ -23,5 +24,21 @@ F（106，106）mod 1234567891 = 252903833。
 assert.strictEqual(euler452(), 345558983);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler452() {
+
+  return true;
+}
+
+euler452();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

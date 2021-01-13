@@ -3,6 +3,7 @@ id: 587d7b8b367417b2b2512b53
 title: 使用 class 语法定义构造函数
 challengeType: 1
 forumTopicId: 301212
+dashedName: use-class-syntax-to-define-a-constructor-function
 ---
 
 # --description--
@@ -77,5 +78,26 @@ assert(() => {
 assert(carrot.name == 'carrot');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
+```
+
 # --solutions--
 
+```js
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const carrot = new Vegetable('carrot');
+```

@@ -2,6 +2,7 @@
 id: 5e9a0a8e09c5df3cc3600ed4
 challengeType: 11
 videoId: v-7Y7koJ_N0
+dashedName: accessing-and-changing-elements-rows-columns
 ---
 
 # --question--
@@ -45,9 +46,4 @@ a[1, 2] = 20
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

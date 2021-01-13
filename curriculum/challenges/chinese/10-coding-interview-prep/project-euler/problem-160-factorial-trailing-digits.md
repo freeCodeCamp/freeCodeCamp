@@ -3,6 +3,7 @@ id: 5900f40d1000cf542c50ff1f
 title: 问题160：因子尾随数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-160-factorial-trailing-digits
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler160(), 16576);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler160() {
+
+  return true;
+}
+
+euler160();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f5231000cf542c510035
 title: 问题439：除数之和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-439-sum-of-sum-of-divisors
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler439(), 968697378);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler439() {
+
+  return true;
+}
+
+euler439();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

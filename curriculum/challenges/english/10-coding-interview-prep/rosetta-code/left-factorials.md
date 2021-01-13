@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ee0
 title: Left factorials
 challengeType: 5
 forumTopicId: 302302
+dashedName: left-factorials
 ---
 
 # --description--

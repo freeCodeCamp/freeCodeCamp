@@ -3,6 +3,7 @@ id: 5900f3ba1000cf542c50fecd
 title: 问题78：硬币分区
 challengeType: 5
 videoUrl: ''
+dashedName: problem-78-coin-partitions
 ---
 
 # --description--
@@ -21,5 +22,21 @@ OOOOO OOOO O OOO OO OOO O O OO OO O O O O O O O O O O O O O O O O O O O O O O O 
 assert.strictEqual(euler78(), 55374);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function coinPartitions() {
+
+  return true;
+}
+
+coinPartitions();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

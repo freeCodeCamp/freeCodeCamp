@@ -3,6 +3,7 @@ id: 5900f3b11000cf542c50fec4
 title: 问题69大欧拉
 challengeType: 5
 videoUrl: ''
+dashedName: problem-69-totient-maximum
 ---
 
 # --description--
@@ -21,5 +22,21 @@ n相对素数φ（n）n /φ（n）2 1 1 2 3 1,2 2 1.5 4 1,3 2 2 5 1,2,3,4 4 1.25
 assert.strictEqual(euler69(), 510510);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function totientMaximum() {
+
+  return true;
+}
+
+totientMaximum();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

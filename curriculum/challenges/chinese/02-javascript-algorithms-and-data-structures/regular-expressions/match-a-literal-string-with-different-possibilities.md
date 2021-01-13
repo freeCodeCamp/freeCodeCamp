@@ -3,6 +3,7 @@ id: 587d7db4367417b2b2512b90
 title: 同时用多种模式匹配文字字符串
 challengeType: 1
 forumTopicId: 301345
+dashedName: match-a-literal-string-with-different-possibilities
 ---
 
 # --description--
@@ -63,5 +64,20 @@ assert(petRegex.test('Alice has a pet fish.'));
 assert(!petRegex.test('Jimmy has a pet computer.'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let petString = "James has a pet cat.";
+let petRegex = /change/; // Change this line
+let result = petRegex.test(petString);
+```
+
 # --solutions--
 
+```js
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // Change this line
+let result = petRegex.test(petString);
+```

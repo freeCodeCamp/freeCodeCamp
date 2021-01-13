@@ -3,6 +3,7 @@ id: 5900f4571000cf542c50ff69
 title: 问题234：半透明数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-234-semidivisible-numbers
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler234(), 1259187438574927000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler234() {
+
+  return true;
+}
+
+euler234();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

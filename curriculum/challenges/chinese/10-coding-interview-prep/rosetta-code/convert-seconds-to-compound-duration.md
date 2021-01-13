@@ -3,6 +3,7 @@ id: 596fd036dc1ab896c5db98b1
 title: 将秒转换为复合持续时间
 challengeType: 5
 videoUrl: ''
+dashedName: convert-seconds-to-compound-duration
 ---
 
 # --description--
@@ -65,5 +66,54 @@ assert.equal(convertSeconds(testCases[1]), results[1]);
 assert.equal(convertSeconds(testCases[2]), results[2]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCases = [7259, 86400, 6000000];
+const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
+```
+
+## --seed-contents--
+
+```js
+function convertSeconds(sec) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function convertSeconds(sec) {
+  const localNames = ['wk', 'd', 'hr', 'min', 'sec'];
+  // compoundDuration :: [String] -> Int -> String
+  const compoundDuration = (labels, intSeconds) =>
+    weekParts(intSeconds)
+    .map((v, i) => [v, labels[i]])
+    .reduce((a, x) =>
+      a.concat(x[0] ? [`${x[0]} ${x[1] || '?'}`] : []), []
+    )
+    .join(', ');
+
+    // weekParts :: Int -> [Int]
+  const weekParts = intSeconds => [0, 7, 24, 60, 60]
+    .reduceRight((a, x) => {
+      const r = a.rem;
+      const mod = x !== 0 ? r % x : r;
+
+      return {
+        rem: (r - mod) / (x || 1),
+        parts: [mod].concat(a.parts)
+      };
+    }, {
+      rem: intSeconds,
+      parts: []
+    })
+    .parts;
+
+  return compoundDuration(localNames, sec);
+}
+```

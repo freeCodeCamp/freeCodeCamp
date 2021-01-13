@@ -3,6 +3,7 @@ id: 587d7b7d367417b2b2512b1c
 title: 检查对象是否具有某个属性
 challengeType: 1
 forumTopicId: 301155
+dashedName: check-if-an-object-has-a-property
 ---
 
 # --description--
@@ -83,5 +84,69 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+
+console.log(isEveryoneHere(users));
+```
+
 # --solutions--
 
+```js
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+  return [
+    'Alan',
+    'Jeff',
+    'Sarah',
+    'Ryan'
+  ].every(i => obj.hasOwnProperty(i));
+}
+
+console.log(isEveryoneHere(users));
+```

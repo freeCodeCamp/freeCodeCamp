@@ -3,6 +3,7 @@ id: 5c3dda8b4d8df89bea71600f
 title: 检查混合字符组
 challengeType: 1
 forumTopicId: 301339
+dashedName: check-for-mixed-grouping-of-characters
 ---
 
 # --description--
@@ -61,5 +62,21 @@ result 应该返回 `true`。
 assert(result === true);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myString = "Eleanor Roosevelt";
+let myRegex = /False/; // Change this line
+let result = false; // Change this line
+// After passing the challenge experiment with myString and see how the grouping works
+```
+
 # --solutions--
 
+```js
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let result = myRegex.test(myString);
+```

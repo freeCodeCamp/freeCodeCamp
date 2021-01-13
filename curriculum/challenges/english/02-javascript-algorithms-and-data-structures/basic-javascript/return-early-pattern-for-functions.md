@@ -4,6 +4,7 @@ title: Return Early Pattern for Functions
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
+dashedName: return-early-pattern-for-functions
 ---
 
 # --description--

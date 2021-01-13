@@ -3,6 +3,7 @@ id: 5900f4701000cf542c50ff82
 title: 问题259：可达号码
 challengeType: 5
 videoUrl: ''
+dashedName: problem-259-reachable-numbers
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler259(), 20101196798);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler259() {
+
+  return true;
+}
+
+euler259();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

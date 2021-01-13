@@ -3,6 +3,7 @@ id: 587d8252367417b2b2512c67
 title: 在链接列表中的特定索引处添加元素
 challengeType: 1
 videoUrl: ''
+dashedName: add-elements-at-a-specific-index-in-a-linked-list
 ---
 
 # --description--
@@ -52,5 +53,105 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element) {
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function() {
+    return length;
+  };
+
+  this.head = function() {
+    return head;
+  };
+
+  this.add = function(element) {
+    var node = new Node(element);
+    if (head === null) {
+      head = node;
+    } else {
+      var currentNode = head;
+
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
+
+      currentNode.next = node;
+    }
+    length++;
+  };
+
+  // Only change code below this line
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function(){
+    return length;
+  };
+
+  this.head = function(){
+    return head;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    if (head === null){
+        head = node;
+    } else {
+      var currentNode = head;
+
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
+
+      currentNode.next = node;
+    }
+    length++;
+  };
+  this.addAt = function (index, element) {
+    if (index > length || index < 0) {
+      return false;
+    }
+    var newNode = new Node(element);
+    var currentNode = head;
+    if (index === 0) {
+      head = newNode;
+    } else {
+      var previousNode = null;
+      var i = 0;
+      while (currentNode && i < index) {
+        previousNode = currentNode;
+        currentNode = currentNode.next;
+        i++;
+      }
+      previousNode.next = newNode;
+    }
+    newNode.next = currentNode;
+    length++;
+  }
+}
+```

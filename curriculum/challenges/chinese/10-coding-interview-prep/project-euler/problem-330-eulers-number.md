@@ -3,6 +3,7 @@ id: 5900f4b71000cf542c50ffc9
 title: 问题330：欧拉数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-330-eulers-number
 ---
 
 # --description--
@@ -35,5 +36,21 @@ e = 2.7182818 ......是欧拉常数。
 assert.strictEqual(euler330(), 15955822);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler330() {
+
+  return true;
+}
+
+euler330();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

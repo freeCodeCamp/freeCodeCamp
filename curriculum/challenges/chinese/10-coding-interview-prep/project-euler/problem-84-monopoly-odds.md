@@ -3,6 +3,7 @@ id: 5900f3c11000cf542c50fed3
 title: 问题84：垄断赔率
 challengeType: 5
 videoUrl: ''
+dashedName: problem-84-monopoly-odds
 ---
 
 # --description--
@@ -43,5 +44,21 @@ D3 G2J F3 U2 F2 F1 R3 E3 E2 CH2 E1 FP
 assert.strictEqual(euler84(), 101524);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function monopolyOdds() {
+
+  return true;
+}
+
+monopolyOdds();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

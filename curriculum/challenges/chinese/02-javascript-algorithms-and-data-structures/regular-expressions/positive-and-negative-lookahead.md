@@ -3,6 +3,7 @@ id: 587d7dba367417b2b2512ba9
 title: 正向先行断言和负向先行断言
 challengeType: 1
 forumTopicId: 301360
+dashedName: positive-and-negative-lookahead
 ---
 
 # --description--
@@ -100,5 +101,18 @@ assert(!pwRegex.test('8pass99'));
 assert(!pwRegex.test('12abcde'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let sampleWord = "astronaut";
+let pwRegex = /change/; // Change this line
+let result = pwRegex.test(sampleWord);
+```
+
 # --solutions--
 
+```js
+var pwRegex =  /^\D(?=\w{5})(?=\w*\d{2})/;
+```

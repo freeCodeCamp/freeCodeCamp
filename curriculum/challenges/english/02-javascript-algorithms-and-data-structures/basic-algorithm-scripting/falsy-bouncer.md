@@ -3,6 +3,7 @@ id: adf08ec01beb4f99fc7a68f2
 title: Falsy Bouncer
 challengeType: 5
 forumTopicId: 16014
+dashedName: falsy-bouncer
 ---
 
 # --description--

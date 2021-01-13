@@ -3,6 +3,7 @@ id: 5900f3e51000cf542c50fef8
 title: 问题121：光盘游戏奖金
 challengeType: 5
 videoUrl: ''
+dashedName: problem-121-disc-game-prize-fund
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler121(), 2269);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler121() {
+
+  return true;
+}
+
+euler121();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

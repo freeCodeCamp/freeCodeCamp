@@ -3,6 +3,7 @@ id: 5900f4861000cf542c50ff98
 title: 问题281：比萨馅料
 challengeType: 5
 videoUrl: ''
+dashedName: problem-281-pizza-toppings
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler281(), 1485776387445623);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler281() {
+
+  return true;
+}
+
+euler281();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

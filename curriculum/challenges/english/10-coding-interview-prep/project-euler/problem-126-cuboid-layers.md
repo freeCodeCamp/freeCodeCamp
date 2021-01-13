@@ -3,6 +3,7 @@ id: 5900f3ea1000cf542c50fefd
 title: 'Problem 126: Cuboid layers'
 challengeType: 5
 forumTopicId: 301753
+dashedName: problem-126-cuboid-layers
 ---
 
 # --description--

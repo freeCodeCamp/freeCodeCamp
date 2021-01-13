@@ -3,6 +3,7 @@ id: 5900f5001000cf542c510012
 title: 问题404：交叉椭圆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-404-crisscross-ellipses
 ---
 
 # --description--
@@ -23,5 +24,21 @@ b是距离原点最近的两个交点的原点的距离，c是另外两个交点
 assert.strictEqual(euler404(), 1199215615081353);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler404() {
+
+  return true;
+}
+
+euler404();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

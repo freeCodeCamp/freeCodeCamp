@@ -3,6 +3,7 @@ id: 587d824e367417b2b2512c55
 title: 测试对象是否具有某个属性
 challengeType: 2
 forumTopicId: 301604
+dashedName: test-if-an-object-has-a-property
 ---
 
 # --description--
@@ -83,3 +84,10 @@ forumTopicId: 301604
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

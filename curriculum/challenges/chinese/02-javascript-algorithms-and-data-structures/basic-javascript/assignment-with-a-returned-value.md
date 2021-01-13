@@ -4,6 +4,7 @@ title: 用返回值来赋值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
+dashedName: assignment-with-a-returned-value
 ---
 
 # --description--
@@ -34,5 +35,35 @@ assert(processed === 2);
 assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){return "processed = " + processed})();
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+processed = processArg(7);
+```

@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bdef
 title: 时间戳
 challengeType: 4
 forumTopicId: 301508
+dashedName: timestamp-microservice
 ---
 
 # --description--
@@ -112,3 +113,10 @@ forumTopicId: 301508
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

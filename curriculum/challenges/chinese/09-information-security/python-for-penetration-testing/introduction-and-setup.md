@@ -2,6 +2,7 @@
 id: 5ea9997bbec2e9bc47e94dae
 challengeType: 11
 videoId: XeQ7ZKtb998
+dashedName: introduction-and-setup
 ---
 
 # --question--
@@ -25,9 +26,4 @@ Sublime Text and the Anaconda package.
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

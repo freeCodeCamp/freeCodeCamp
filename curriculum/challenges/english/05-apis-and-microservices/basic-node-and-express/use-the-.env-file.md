@@ -3,6 +3,7 @@ id: 587d7fb1367417b2b2512bf2
 title: Use the .env File
 challengeType: 2
 forumTopicId: 301521
+dashedName: use-the--env-file
 ---
 
 # --description--
@@ -35,8 +36,6 @@ The response of the endpoint `/json` should change according to the environment 
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

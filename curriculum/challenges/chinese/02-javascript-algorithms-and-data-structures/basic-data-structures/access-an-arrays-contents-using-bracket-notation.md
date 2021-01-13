@@ -3,6 +3,7 @@ id: 5a661e0f1068aca922b3ef17
 title: 使用方括号访问数组的元素
 challengeType: 1
 forumTopicId: 301149
+dashedName: access-an-arrays-contents-using-bracket-notation
 ---
 
 # --description--
@@ -61,5 +62,21 @@ assert.strictEqual(myArray[2], 'c');
 assert.strictEqual(myArray[3], 'd');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myArray = ["a", "b", "c", "d"];
+// Only change code below this line
+
+// Only change code above this line
+console.log(myArray);
+```
+
 # --solutions--
 
+```js
+let myArray = ["a", "b", "c", "d"];
+myArray[1] = "e";
+```

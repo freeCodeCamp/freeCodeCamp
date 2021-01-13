@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c165
 challengeType: 11
 videoId: PrQV9JkLhb4
+dashedName: python-introduction
 ---
 
 # --description--
@@ -35,9 +36,4 @@ We could use curly braces or indentation to denote blocks of code.
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

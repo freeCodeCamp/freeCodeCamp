@@ -3,6 +3,7 @@ id: 5900f4731000cf542c50ff85
 title: 问题262：山脉
 challengeType: 5
 videoUrl: ''
+dashedName: problem-262-mountain-range
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler262(), 2531.205);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler262() {
+
+  return true;
+}
+
+euler262();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3db1000cf542c50feec
 title: 问题109：飞镖
 challengeType: 5
 videoUrl: ''
+dashedName: problem-109-darts
 ---
 
 # --description--
@@ -33,5 +34,21 @@ S1 S1 D2 S1 T1 D1 S1 S3 D1 D1 D1 D1 D1 S2 D1 S2 S2 D1
 assert.strictEqual(euler109(), 38182);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler109() {
+
+  return true;
+}
+
+euler109();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

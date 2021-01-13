@@ -4,6 +4,7 @@ title: Center an Element Horizontally Using the margin Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJqU4'
 forumTopicId: 301043
+dashedName: center-an-element-horizontally-using-the-margin-property
 ---
 
 # --description--

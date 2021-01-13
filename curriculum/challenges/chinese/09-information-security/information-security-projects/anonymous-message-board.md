@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c45
 title: 匿名留言板
 challengeType: 4
 videoUrl: ''
+dashedName: anonymous-message-board
 ---
 
 # --description--
@@ -85,3 +86,10 @@ videoUrl: ''
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

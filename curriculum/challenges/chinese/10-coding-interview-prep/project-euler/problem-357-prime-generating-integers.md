@@ -3,6 +3,7 @@ id: 5900f4d11000cf542c50ffe4
 title: 问题357：Prime生成整数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-357-prime-generating-integers
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler357(), 1739023853137);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler357() {
+
+  return true;
+}
+
+euler357();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

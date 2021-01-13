@@ -3,6 +3,7 @@ id: 5900f4861000cf542c50ff99
 title: 问题282：阿克曼函数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-282-the-ackermann-function
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler282(), 1098988351);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler282() {
+
+  return true;
+}
+
+euler282();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

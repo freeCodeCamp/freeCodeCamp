@@ -4,6 +4,7 @@ title: Escaping Literal Quotes in Strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvgSr'
 forumTopicId: 17568
+dashedName: escaping-literal-quotes-in-strings
 ---
 
 # --description--

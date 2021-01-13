@@ -3,6 +3,7 @@ id: 5900f4da1000cf542c50ffed
 title: 问题366：石头游戏III
 challengeType: 5
 videoUrl: ''
+dashedName: problem-366-stone-game-iii
 ---
 
 # --description--
@@ -25,5 +26,21 @@ n≤100的ΣM（n）为728。
 assert.strictEqual(euler366(), 88351299);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler366() {
+
+  return true;
+}
+
+euler366();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

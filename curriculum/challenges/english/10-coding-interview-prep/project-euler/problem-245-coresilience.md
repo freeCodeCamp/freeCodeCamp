@@ -3,6 +3,7 @@ id: 5900f4621000cf542c50ff74
 title: 'Problem 245: Coresilience'
 challengeType: 5
 forumTopicId: 301892
+dashedName: problem-245-coresilience
 ---
 
 # --description--

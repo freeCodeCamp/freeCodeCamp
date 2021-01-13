@@ -3,6 +3,7 @@ id: 5900f40d1000cf542c50ff20
 title: 问题161：Triominoes
 challengeType: 5
 videoUrl: ''
+dashedName: problem-161-triominoes
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler161(), 20574308184277972);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler161() {
+
+  return true;
+}
+
+euler161();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

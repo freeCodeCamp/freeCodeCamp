@@ -3,6 +3,7 @@ id: 5900f4af1000cf542c50ffc1
 title: 问题322：二项式系数可被10整除
 challengeType: 5
 videoUrl: ''
+dashedName: problem-322-binomial-coefficients-divisible-by-10
 ---
 
 # --description--
@@ -21,5 +22,21 @@ Find T(1018, 1012-10).
 assert.strictEqual(euler322(), 999998760323314000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler322() {
+
+  return true;
+}
+
+euler322();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4801000cf542c50ff93
 title: 问题276：原始三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-276-primitive-triangles
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler276(), 5777137137739633000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler276() {
+
+  return true;
+}
+
+euler276();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4021000cf542c50ff13
 title: 问题149：搜索最大和子序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-149-searching-for-a-maximum-sum-subsequence
 ---
 
 # --description--
@@ -31,5 +32,21 @@ videoUrl: ''
 assert.strictEqual(euler149(), 52852124);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler149() {
+
+  return true;
+}
+
+euler149();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

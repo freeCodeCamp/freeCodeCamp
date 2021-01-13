@@ -4,6 +4,7 @@ title: 使用 For 循环遍历数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeR3HB'
 forumTopicId: 18216
+dashedName: iterate-through-an-array-with-a-for-loop
 ---
 
 # --description--
@@ -49,5 +50,30 @@ assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/));
 assert(!code.match(/total[\s\+\-]*=\s*(\d(?!\s*[;,])|[1-9])/g));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){if(typeof total !== 'undefined') { return "total = " + total; } else { return "total is undefined";}})()
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArr = [ 2, 3, 4, 5, 6];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArr = [ 2, 3, 4, 5, 6];
+var total = 0;
+
+for (var i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+```

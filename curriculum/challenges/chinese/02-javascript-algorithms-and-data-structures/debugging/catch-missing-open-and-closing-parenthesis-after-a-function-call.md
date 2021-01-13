@@ -3,6 +3,7 @@ id: 587d7b85367417b2b2512b39
 title: 捕捉函数调用后缺少的左括号和右括号
 challengeType: 1
 forumTopicId: 301185
+dashedName: catch-missing-open-and-closing-parenthesis-after-a-function-call
 ---
 
 # --description--
@@ -37,5 +38,30 @@ assert(result == 9);
 assert(code.match(/getNine\(\)/g).length == 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function getNine() {
+  let x = 6;
+  let y = 3;
+  return x + y;
+}
+
+let result = getNine;
+console.log(result);
+```
+
 # --solutions--
 
+```js
+function getNine() {
+ let x = 6;
+ let y = 3;
+ return x + y;
+}
+
+let result = getNine();
+console.log(result);
+```

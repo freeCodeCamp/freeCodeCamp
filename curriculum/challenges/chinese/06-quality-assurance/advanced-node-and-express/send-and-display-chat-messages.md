@@ -3,6 +3,7 @@ id: 589fc832f9fc0f352b528e79
 title: 发送和显示聊天消息
 challengeType: 2
 forumTopicId: 301562
+dashedName: send-and-display-chat-messages
 ---
 
 # --description--
@@ -69,3 +70,10 @@ socket.emit('chat message', messageToSend);
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

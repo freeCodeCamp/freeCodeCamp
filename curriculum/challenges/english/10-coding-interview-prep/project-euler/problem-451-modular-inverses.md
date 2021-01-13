@@ -3,6 +3,7 @@ id: 5900f5311000cf542c510042
 title: 'Problem 451: Modular inverses'
 challengeType: 5
 forumTopicId: 302124
+dashedName: problem-451-modular-inverses
 ---
 
 # --description--

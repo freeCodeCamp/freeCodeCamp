@@ -4,6 +4,7 @@ title: Lock an Element to the Browser Window with Fixed Positioning
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
+dashedName: lock-an-element-to-the-browser-window-with-fixed-positioning
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4841000cf542c50ff96
 title: 问题279：具有整体边和整体角的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler279(), 416577688);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler279() {
+
+  return true;
+}
+
+euler279();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

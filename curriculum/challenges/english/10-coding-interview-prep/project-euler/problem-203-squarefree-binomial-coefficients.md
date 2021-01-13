@@ -3,6 +3,7 @@ id: 5900f4381000cf542c50ff4a
 title: 'Problem 203: Squarefree Binomial Coefficients'
 challengeType: 5
 forumTopicId: 301844
+dashedName: problem-203-squarefree-binomial-coefficients
 ---
 
 # --description--

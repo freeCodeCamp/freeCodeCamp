@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08834
 title: Create a Set of Radio Buttons
 challengeType: 0
 forumTopicId: 16822
+dashedName: create-a-set-of-radio-buttons
 ---
 
 # --description--

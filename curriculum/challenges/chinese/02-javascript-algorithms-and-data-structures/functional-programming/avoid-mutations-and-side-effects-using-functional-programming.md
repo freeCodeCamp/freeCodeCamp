@@ -3,6 +3,7 @@ id: 587d7b8e367417b2b2512b5e
 title: 使用函数式编程避免变化和副作用
 challengeType: 1
 forumTopicId: 301228
+dashedName: avoid-mutations-and-side-effects-using-functional-programming
 ---
 
 # --description--
@@ -37,5 +38,28 @@ assert(fixedValue === 4);
 assert(newValue === 5);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// The global variable
+var fixedValue = 4;
+
+function incrementer () {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+var fixedValue = 4
+
+function incrementer() {
+  return fixedValue + 1
+}
+```

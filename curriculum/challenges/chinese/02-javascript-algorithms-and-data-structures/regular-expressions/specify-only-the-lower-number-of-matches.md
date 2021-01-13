@@ -3,6 +3,7 @@ id: 587d7db9367417b2b2512ba6
 title: 只指定匹配的下限
 challengeType: 1
 forumTopicId: 301366
+dashedName: specify-only-the-lower-number-of-matches
 ---
 
 # --description--
@@ -71,5 +72,20 @@ assert('Hazzzzzzah'.match(haRegex)[0].length === 10);
 assert('Hazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzah'.match(haRegex)[0].length === 34);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let haStr = "Hazzzzah";
+let haRegex = /change/; // Change this line
+let result = haRegex.test(haStr);
+```
+
 # --solutions--
 
+```js
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+let result = haRegex.test(haStr);
+```

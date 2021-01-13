@@ -3,6 +3,7 @@ id: 5900f5361000cf542c510048
 title: 问题457：多项式以素数的平方为模
 challengeType: 5
 videoUrl: ''
+dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler457(), 2647787126797397000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler457() {
+
+  return true;
+}
+
+euler457();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

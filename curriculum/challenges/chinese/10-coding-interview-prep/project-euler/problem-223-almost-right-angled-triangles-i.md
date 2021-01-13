@@ -3,6 +3,7 @@ id: 5900f44b1000cf542c50ff5e
 title: 问题223：几乎是直角三角形I.
 challengeType: 5
 videoUrl: ''
+dashedName: problem-223-almost-right-angled-triangles-i
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler223(), 61614848);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler223() {
+
+  return true;
+}
+
+euler223();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

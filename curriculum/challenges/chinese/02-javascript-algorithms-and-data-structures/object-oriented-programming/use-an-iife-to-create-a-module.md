@@ -3,6 +3,7 @@ id: 587d7db2367417b2b2512b8c
 title: 使用 IIFE 创建一个模块
 challengeType: 1
 forumTopicId: 301332
+dashedName: use-an-iife-to-create-a-module
 ---
 
 # --description--
@@ -72,5 +73,34 @@ assert(typeof funModule.isCuteMixin === 'function');
 assert(typeof funModule.singMixin === 'function');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let isCuteMixin = function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+};
+let singMixin = function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+  };
+};
+```
+
 # --solutions--
 
+```js
+const funModule = (function () {
+  return {
+    isCuteMixin: obj => {
+      obj.isCute = () => true;
+    },
+    singMixin: obj => {
+      obj.sing = () => console.log("Singing to an awesome tune");
+    }
+  };
+})();
+```

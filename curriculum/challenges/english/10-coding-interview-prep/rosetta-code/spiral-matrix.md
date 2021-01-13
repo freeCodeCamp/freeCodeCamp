@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc801c
 title: Spiral matrix
 challengeType: 5
 forumTopicId: 302321
+dashedName: spiral-matrix
 ---
 
 # --description--

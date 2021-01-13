@@ -3,6 +3,7 @@ id: ab6137d4e35944e21037b769
 title: Title Case a Sentence
 challengeType: 5
 forumTopicId: 16088
+dashedName: title-case-a-sentence
 ---
 
 # --description--

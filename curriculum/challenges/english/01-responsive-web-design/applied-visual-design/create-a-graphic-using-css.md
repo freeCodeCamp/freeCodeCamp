@@ -4,6 +4,7 @@ title: Create a Graphic Using CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDWPs6'
 forumTopicId: 301048
+dashedName: create-a-graphic-using-css
 ---
 
 # --description--

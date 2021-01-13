@@ -2,6 +2,7 @@
 id: af7588ade1100bde429baf20
 title: 寻找缺失的字母
 challengeType: 5
+dashedName: missing-letters
 ---
 
 # --description--
@@ -42,5 +43,29 @@ assert.deepEqual(fearNotLetter('bcdf'), 'e');
 assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function fearNotLetter(str) {
+  return str;
+}
+
+fearNotLetter("abce");
+```
+
 # --solutions--
 
+```js
+function fearNotLetter (str) {
+  for (var i = str.charCodeAt(0); i <= str.charCodeAt(str.length - 1); i++) {
+    var letter = String.fromCharCode(i);
+    if (str.indexOf(letter) === -1) {
+      return letter;
+    }
+  }
+
+  return undefined;
+}
+```

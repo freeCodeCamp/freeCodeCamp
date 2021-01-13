@@ -3,6 +3,7 @@ id: 587d8256367417b2b2512c79
 title: 发生率矩阵
 challengeType: 1
 videoUrl: ''
+dashedName: incidence-matrix
 ---
 
 # --description--
@@ -101,5 +102,18 @@ assert(incMatUndirected[2][2] === 1 && incMatUndirected[4][2] === 1);
 assert(incMatUndirected[1][3] === 1 && incMatUndirected[3][3] === 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var incMatUndirected = [
+
+];
+```
+
 # --solutions--
 
+```js
+var incMatUndirected = [[1, 0, 0, 0],[1, 1, 0, 1],[0, 1, 1, 0],[0, 0, 0, 1],[0, 0, 1, 0]];
+```

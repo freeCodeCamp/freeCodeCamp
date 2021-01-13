@@ -3,6 +3,7 @@ id: 587d8248367417b2b2512c3d
 title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 challengeType: 2
 forumTopicId: 301577
+dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 ---
 
 # --description--
@@ -31,8 +32,6 @@ helmet.dnsPrefetchControl() middleware should be mounted correctly
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

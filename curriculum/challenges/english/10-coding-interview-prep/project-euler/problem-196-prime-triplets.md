@@ -3,6 +3,7 @@ id: 5900f4301000cf542c50ff42
 title: 'Problem 196: Prime triplets'
 challengeType: 5
 forumTopicId: 301834
+dashedName: problem-196-prime-triplets
 ---
 
 # --description--

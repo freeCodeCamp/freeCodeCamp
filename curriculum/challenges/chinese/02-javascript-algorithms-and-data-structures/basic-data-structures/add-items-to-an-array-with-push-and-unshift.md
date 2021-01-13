@@ -3,6 +3,7 @@ id: 587d78b2367417b2b2512b0e
 title: 使用 push() 和 unshift() 为数组添加元素
 challengeType: 1
 forumTopicId: 301151
+dashedName: add-items-to-an-array-with-push-and-unshift
 ---
 
 # --description--
@@ -58,5 +59,27 @@ assert(mixedNumbers.toString().match(/\.push/));
 assert(mixedNumbers.toString().match(/\.unshift/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function mixedNumbers(arr) {
+  // Only change code below this line
+
+  // Only change code above this line
+  return arr;
+}
+
+console.log(mixedNumbers(['IV', 5, 'six']));
+```
+
 # --solutions--
 
+```js
+function mixedNumbers(arr) {
+  arr.push(7,'VIII',9);
+  arr.unshift('I',2,'three');
+  return arr;
+}
+```

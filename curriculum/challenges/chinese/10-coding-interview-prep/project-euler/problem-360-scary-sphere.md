@@ -3,6 +3,7 @@ id: 5900f4d41000cf542c50ffe7
 title: 问题360：可怕的球体
 challengeType: 5
 videoUrl: ''
+dashedName: problem-360-scary-sphere
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler360(), 878825614395267100);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler360() {
+
+  return true;
+}
+
+euler360();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

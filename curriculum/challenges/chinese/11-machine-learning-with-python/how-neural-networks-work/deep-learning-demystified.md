@@ -2,6 +2,7 @@
 id: 5e9a0e9ef99a403d019610cc
 challengeType: 11
 videoId: bejQ-W9BGJg
+dashedName: deep-learning-demystified
 ---
 
 # --question--
@@ -29,9 +30,4 @@ None of the above.
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

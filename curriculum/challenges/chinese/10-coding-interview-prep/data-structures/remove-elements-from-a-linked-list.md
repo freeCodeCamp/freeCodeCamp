@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c63
 title: 从链接列表中删除元素
 challengeType: 1
 videoUrl: ''
+dashedName: remove-elements-from-a-linked-list
 ---
 
 # --description--
@@ -73,5 +74,112 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function(){
+    return length;
+  };
+
+  this.head = function(){
+    return head;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    if(head === null){
+        head = node;
+    } else {
+      var currentNode = head;
+
+      while(currentNode.next){
+        currentNode  = currentNode.next;
+      }
+
+      currentNode.next = node;
+    }
+
+    length++;
+  };
+
+  this.remove = function(element){
+    // Only change code below this line
+
+    // Only change code above this line
+  };
+}
+```
+
 # --solutions--
 
+```js
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function(){
+    return length;
+  };
+
+  this.head = function(){
+    return head;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    if(head === null){
+        head = node;
+    } else {
+        var currentNode = head;
+
+        while(currentNode.next){
+            currentNode  = currentNode.next;
+        }
+
+        currentNode.next = node;
+    }
+
+    length++;
+  };
+
+  this.remove = function(element){
+    if (head === null) {
+      return;
+    }
+    var previous;
+    var currentNode = head;
+
+    while (currentNode.next !== null && currentNode.element !== element) {
+      previous = currentNode;
+      currentNode = currentNode.next;
+    }
+    
+    if (currentNode.next === null && currentNode.element !== element) {
+      return;
+    }
+    else if (previous) {
+      previous.next = currentNode.next;
+    } else {
+      head = currentNode.next;
+    }
+
+    length--;
+  };
+} 
+```

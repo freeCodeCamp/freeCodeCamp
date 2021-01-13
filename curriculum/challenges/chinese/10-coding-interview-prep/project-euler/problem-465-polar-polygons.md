@@ -3,6 +3,7 @@ id: 5900f53d1000cf542c510050
 title: 问题465：极地多边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-465-polar-polygons
 ---
 
 # --description--
@@ -31,5 +32,21 @@ videoUrl: ''
 assert.strictEqual(euler465(), 585965659);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler465() {
+
+  return true;
+}
+
+euler465();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

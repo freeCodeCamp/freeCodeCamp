@@ -4,6 +4,7 @@ title: Use Attribute Selectors to Style Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092
+dashedName: use-attribute-selectors-to-style-elements
 ---
 
 # --description--

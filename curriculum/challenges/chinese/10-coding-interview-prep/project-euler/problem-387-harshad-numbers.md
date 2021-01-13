@@ -3,6 +3,7 @@ id: 5900f4f11000cf542c510003
 title: 问题387：Harshad数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-387-harshad-numbers
 ---
 
 # --description--
@@ -25,5 +26,21 @@ Harshad或Niven数字是可以被其数字之和整除的数字。 201是一个H
 assert.strictEqual(euler387(), 696067597313468);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler387() {
+
+  return true;
+}
+
+euler387();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

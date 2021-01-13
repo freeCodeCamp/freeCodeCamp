@@ -3,6 +3,7 @@ id: 59c3ec9f15068017c96eb8a3
 title: Farey序列
 challengeType: 5
 videoUrl: ''
+dashedName: farey-sequence
 ---
 
 # --description--
@@ -52,5 +53,34 @@ assert.deepEqual(farey(5), [
 ]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function farey(n) {
+
+}
+```
+
 # --solutions--
 
+```js
+function farey(n){
+    let farSeq=[];
+    for(let den = 1; den <= n; den++){
+        for(let num = 1; num < den; num++){
+            farSeq.push({
+                str:num+"/"+den,
+                val:num/den});
+        }
+    }
+    farSeq.sort(function(a,b){
+        return a.val-b.val;
+    });
+    farSeq=farSeq.map(function(a){
+        return a.str;
+    });
+    return farSeq;
+}
+```

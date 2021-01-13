@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c48
 title: 使用 Assert.isOk() 和 Assert.isNotOK()
 challengeType: 2
 forumTopicId: 301607
+dashedName: use-assert-isok-and-assert-isnotok
 ---
 
 # --description--
@@ -75,3 +76,10 @@ forumTopicId: 301607
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

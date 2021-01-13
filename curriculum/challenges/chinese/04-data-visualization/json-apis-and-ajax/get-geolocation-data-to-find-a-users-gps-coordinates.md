@@ -3,6 +3,7 @@ id: 587d7faf367417b2b2512be8
 title: 根据地理位置数据找到用户的 GPS 坐标
 challengeType: 6
 forumTopicId: 18188
+dashedName: get-geolocation-data-to-find-a-users-gps-coordinates
 ---
 
 # --description--
@@ -59,5 +60,39 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<script>
+  // Add your code below this line
+
+
+  // Add your code above this line
+</script>
+<h4>You are here:</h4>
+<div id="data">
+
+</div>
+```
+
 # --solutions--
 
+```html
+<script>
+  // Add your code below this line
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      document.getElementById('data').innerHTML = "latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+    });
+  }
+  // Add your code above this line
+</script>
+<h4>You are here:</h4>
+<div id="data">
+
+</div>
+
+</section>
+```

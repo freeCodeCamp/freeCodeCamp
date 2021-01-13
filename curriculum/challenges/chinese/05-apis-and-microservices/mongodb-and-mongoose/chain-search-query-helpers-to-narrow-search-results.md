@@ -3,6 +3,7 @@ id: 587d7fb9367417b2b2512c12
 title: 通过链式调用搜索查询辅助函数来缩小搜索结果
 challengeType: 2
 forumTopicId: 301533
+dashedName: chain-search-query-helpers-to-narrow-search-results
 ---
 
 # --description--
@@ -73,14 +74,12 @@ forumTopicId: 301533
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js
 /**
-  后端挑战不需要 solutions， 
-  因为他们需要使用一个完整的项目进行测试。 
-  请查询我们的贡献指南以了解更多信息。 
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
 */
 ```

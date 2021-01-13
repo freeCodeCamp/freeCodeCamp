@@ -3,6 +3,7 @@ id: 5900f4291000cf542c50ff3a
 title: 问题187：半致
 challengeType: 5
 videoUrl: ''
+dashedName: problem-187-semiprimes
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler187(), 17427258);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler187() {
+
+  return true;
+}
+
+euler187();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

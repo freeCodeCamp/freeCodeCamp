@@ -3,6 +3,7 @@ id: a9bd25c716030ec90084d8a1
 title: 分割数组
 challengeType: 5
 forumTopicId: 16005
+dashedName: chunky-monkey
 ---
 
 # --description--
@@ -80,5 +81,30 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [
 ]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function chunkArrayInGroups(arr, size) {
+  return arr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+```
+
 # --solutions--
 
+```js
+function chunkArrayInGroups(arr, size) {
+  let out = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    out.push(arr.slice(i, i + size));
+  }
+
+  return out;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+```

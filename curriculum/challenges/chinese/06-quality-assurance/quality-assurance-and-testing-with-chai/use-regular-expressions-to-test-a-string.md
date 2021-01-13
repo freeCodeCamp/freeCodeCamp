@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c54
 title: 使用正则表达式测试字符串
 challengeType: 2
 forumTopicId: 301608
+dashedName: use-regular-expressions-to-test-a-string
 ---
 
 # --description--
@@ -69,3 +70,10 @@ forumTopicId: 301608
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

@@ -3,6 +3,7 @@ id: 587d7b7d367417b2b2512b1d
 title: Iterate Through the Keys of an Object with a for...in Statement
 challengeType: 1
 forumTopicId: 301162
+dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 ---
 
 # --description--

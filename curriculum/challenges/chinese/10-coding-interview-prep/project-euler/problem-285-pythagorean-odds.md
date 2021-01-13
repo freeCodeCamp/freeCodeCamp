@@ -3,6 +3,7 @@ id: 5900f48a1000cf542c50ff9c
 title: 问题285：毕达哥拉斯赔率
 challengeType: 5
 videoUrl: ''
+dashedName: problem-285-pythagorean-odds
 ---
 
 # --description--
@@ -25,5 +26,21 @@ Albert选择一个正整数k，然后在区间\[0,1]中以均匀分布随机选�
 assert.strictEqual(euler285(), 157055.80999);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler285() {
+
+  return true;
+}
+
+euler285();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4f71000cf542c51000a
 title: 问题395：毕达哥拉斯树
 challengeType: 5
 videoUrl: ''
+dashedName: problem-395-pythagorean-tree
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler395(), 28.2453753155);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler395() {
+
+  return true;
+}
+
+euler395();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

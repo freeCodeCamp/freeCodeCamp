@@ -3,6 +3,7 @@ id: 5900f49b1000cf542c50ffae
 title: 问题303：小数的倍数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-303-multiples-with-small-digits
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler303(), 1111981904675169);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler303() {
+
+  return true;
+}
+
+euler303();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

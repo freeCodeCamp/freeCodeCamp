@@ -3,6 +3,7 @@ id: 587d8259367417b2b2512c85
 title: Implement Selection Sort
 challengeType: 1
 forumTopicId: 301616
+dashedName: implement-selection-sort
 ---
 
 # --description--

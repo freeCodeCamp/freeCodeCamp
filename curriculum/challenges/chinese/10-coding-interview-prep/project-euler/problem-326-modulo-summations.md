@@ -3,6 +3,7 @@ id: 5900f4b21000cf542c50ffc5
 title: 问题326：模数汇总
 challengeType: 5
 videoUrl: ''
+dashedName: problem-326-modulo-summations
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler326(), 1966666166408794400);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler326() {
+
+  return true;
+}
+
+euler326();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

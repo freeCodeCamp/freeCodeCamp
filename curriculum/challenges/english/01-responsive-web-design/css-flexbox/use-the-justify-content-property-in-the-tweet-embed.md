@@ -4,6 +4,7 @@ title: Use the justify-content Property in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
 forumTopicId: 301115
+dashedName: use-the-justify-content-property-in-the-tweet-embed
 ---
 
 # --description--

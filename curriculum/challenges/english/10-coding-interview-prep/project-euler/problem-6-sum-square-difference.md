@@ -3,6 +3,7 @@ id: 5900f3721000cf542c50fe85
 title: 'Problem 6: Sum square difference'
 challengeType: 5
 forumTopicId: 302171
+dashedName: problem-6-sum-square-difference
 ---
 
 # --description--

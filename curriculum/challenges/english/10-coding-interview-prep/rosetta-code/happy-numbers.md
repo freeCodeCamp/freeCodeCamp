@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad1
 title: Happy numbers
 challengeType: 5
 forumTopicId: 302280
+dashedName: happy-numbers
 ---
 
 # --description--

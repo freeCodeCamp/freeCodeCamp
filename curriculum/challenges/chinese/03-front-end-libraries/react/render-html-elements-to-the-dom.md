@@ -3,6 +3,7 @@ id: 5a24bbe0dba28a8d3cbd4c5f
 title: 渲染 HTML 元素为 DOM 树
 challengeType: 6
 forumTopicId: 301406
+dashedName: render-html-elements-to-the-dom
 ---
 
 # --description--
@@ -46,5 +47,29 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```jsx
+const JSX = (
+  <div>
+    <h1>Hello World</h1>
+    <p>Lets render this to the DOM</p>
+  </div>
+);
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+const JSX = (
+<div>
+  <h1>Hello World</h1>
+  <p>Lets render this to the DOM</p>
+</div>
+);
+// Change code below this line
+ReactDOM.render(JSX, document.getElementById('challenge-node'));
+```

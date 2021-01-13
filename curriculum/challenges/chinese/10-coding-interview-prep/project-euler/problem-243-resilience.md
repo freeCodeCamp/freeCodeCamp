@@ -3,6 +3,7 @@ id: 5900f4601000cf542c50ff73
 title: 问题243：恢复力
 challengeType: 5
 videoUrl: ''
+dashedName: problem-243-resilience
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler243(), 892371480);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler243() {
+
+  return true;
+}
+
+euler243();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

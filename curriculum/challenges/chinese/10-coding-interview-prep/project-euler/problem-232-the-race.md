@@ -3,6 +3,7 @@ id: 5900f4551000cf542c50ff67
 title: 问题232：比赛
 challengeType: 5
 videoUrl: ''
+dashedName: problem-232-the-race
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler232(), 0.83648556);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler232() {
+
+  return true;
+}
+
+euler232();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

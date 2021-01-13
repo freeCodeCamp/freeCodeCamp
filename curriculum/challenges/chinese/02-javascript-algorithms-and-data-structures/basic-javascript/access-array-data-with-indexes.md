@@ -4,6 +4,7 @@ title: 通过索引访问数组中的数据
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158
+dashedName: access-array-data-with-indexes
 ---
 
 # --description--
@@ -60,5 +61,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [50,60,70];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [50,60,70];
+var myData = myArray[0];
+```

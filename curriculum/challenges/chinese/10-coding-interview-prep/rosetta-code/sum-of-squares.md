@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8042
 title: Sum of squares
 challengeType: 5
 forumTopicId: 302334
+dashedName: sum-of-squares
 ---
 
 # --description--

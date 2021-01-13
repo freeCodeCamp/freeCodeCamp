@@ -4,6 +4,7 @@ title: 使用方括号查找字符串中的第N个字符到最后一个字符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344
+dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 ---
 
 # --description--
@@ -33,5 +34,27 @@ assert(secondToLastLetterOfLastName === 'c');
 assert(code.match(/\.length/g).length === 2);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(v){return v;})(secondToLastLetterOfLastName);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var lastName = "Lovelace";
+
+// Only change code below this line
+var secondToLastLetterOfLastName = lastName; // Change this line
+```
+
 # --solutions--
 
+```js
+var lastName = "Lovelace";
+var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+```

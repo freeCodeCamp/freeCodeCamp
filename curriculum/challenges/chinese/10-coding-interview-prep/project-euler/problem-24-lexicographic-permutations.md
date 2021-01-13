@@ -3,6 +3,7 @@ id: 5900f3841000cf542c50fe97
 title: 问题24：字典排列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-24-lexicographic-permutations
 ---
 
 # --description--
@@ -39,5 +40,21 @@ assert(lexicographicPermutations(900000) == 2537014689);
 assert(lexicographicPermutations(999999) == 2783915460);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function lexicographicPermutations(n) {
+
+  return n;
+}
+
+lexicographicPermutations(999999);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

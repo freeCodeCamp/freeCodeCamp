@@ -3,6 +3,7 @@ id: 587d7db9367417b2b2512ba5
 title: 指定匹配的上限和下限
 challengeType: 1
 forumTopicId: 301367
+dashedName: specify-upper-and-lower-number-of-matches
 ---
 
 # --description--
@@ -69,5 +70,20 @@ assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 assert(!ohRegex.test('Ohhhhhhh no'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let ohStr = "Ohhh no";
+let ohRegex = /change/; // Change this line
+let result = ohRegex.test(ohStr);
+```
+
 # --solutions--
 
+```js
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result = ohRegex.test(ohStr);
+```

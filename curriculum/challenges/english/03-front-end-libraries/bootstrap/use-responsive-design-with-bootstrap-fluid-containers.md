@@ -3,6 +3,7 @@ id: bad87fee1348bd9acde08712
 title: Use Responsive Design with Bootstrap Fluid Containers
 challengeType: 0
 forumTopicId: 18362
+dashedName: use-responsive-design-with-bootstrap-fluid-containers
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4551000cf542c50ff67
 title: 'Problem 232: The Race'
 challengeType: 5
 forumTopicId: 301876
+dashedName: problem-232-the-race
 ---
 
 # --description--

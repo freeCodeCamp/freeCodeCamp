@@ -3,6 +3,7 @@ id: 587d8247367417b2b2512c39
 title: 使用 helmet.xssFilter() 降低跨站点脚本（XSS）攻击的风险
 challengeType: 2
 forumTopicId: 301583
+dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xssfilter
 ---
 
 # --description--
@@ -38,3 +39,10 @@ HTTP header 的 X-XSS-Protection 字段就可以为我们提供最基本的保�
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

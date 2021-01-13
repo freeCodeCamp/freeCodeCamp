@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e80
 title: 格雷码
 challengeType: 5
 videoUrl: ''
+dashedName: gray-code
 ---
 
 # --description--
@@ -63,5 +64,29 @@ assert.equal(gray(false, 381), 425);
 assert.equal(gray(false, 725), 870);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function gray(enc, number) {
+
+}
+```
+
 # --solutions--
 
+```js
+function gray(enc, number){
+  if(enc){
+      return number ^ (number >> 1);
+  }else{
+      let n = number;
+
+      while (number >>= 1) {
+          n ^= number;
+      }
+      return n;
+  }
+}
+```

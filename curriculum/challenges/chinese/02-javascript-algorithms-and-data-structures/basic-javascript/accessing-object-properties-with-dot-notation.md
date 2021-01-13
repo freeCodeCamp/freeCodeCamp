@@ -4,6 +4,7 @@ title: 通过点符号访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cGryJs8'
 forumTopicId: 16164
+dashedName: accessing-object-properties-with-dot-notation
 ---
 
 # --description--
@@ -59,5 +60,39 @@ assert(shirtValue === 'jersey');
 assert(code.match(/testObj\.\w+/g).length > 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+// Only change code below this line
+
+var hatValue = testObj;      // Change this line
+var shirtValue = testObj;    // Change this line
+```
+
 # --solutions--
 
+```js
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+var hatValue = testObj.hat;
+var shirtValue = testObj.shirt;
+```

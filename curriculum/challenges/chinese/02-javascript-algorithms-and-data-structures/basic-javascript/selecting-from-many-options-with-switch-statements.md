@@ -4,6 +4,7 @@ title: 使用 Switch 语句从许多选项中进行选择
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c4mv4fm'
 forumTopicId: 18277
+dashedName: selecting-from-many-options-with-switch-statements
 ---
 
 # --description--
@@ -71,5 +72,43 @@ assert(!/else/g.test(code) || !/if/g.test(code));
 assert(code.match(/break/g).length > 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function caseInSwitch(val) {
+  var answer = "";
+  // Only change code below this line
+
+
+
+  // Only change code above this line
+  return answer;
+}
+
+caseInSwitch(1);
+```
+
 # --solutions--
 
+```js
+function caseInSwitch(val) {
+  var answer = "";
+
+  switch(val) {
+    case 1:
+      answer = "alpha";
+      break;
+    case 2:
+      answer = "beta";
+      break;
+    case 3:
+      answer = "gamma";
+      break;
+    case 4:
+      answer = "delta";
+  }
+  return answer;
+}
+```

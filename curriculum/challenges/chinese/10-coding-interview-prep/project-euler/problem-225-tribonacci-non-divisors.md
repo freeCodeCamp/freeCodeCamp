@@ -3,6 +3,7 @@ id: 5900f44e1000cf542c50ff60
 title: 问题225：Tribonacci非除数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-225-tribonacci-non-divisors
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler225(), 2009);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler225() {
+
+  return true;
+}
+
+euler225();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

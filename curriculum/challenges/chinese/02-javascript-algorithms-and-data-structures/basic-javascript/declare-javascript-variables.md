@@ -4,6 +4,7 @@ title: 声明变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNanrHq'
 forumTopicId: 17556
+dashedName: declare-javascript-variables
 ---
 
 # --description--
@@ -42,5 +43,21 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myName !== "undefined"){(function(v){return v;})(myName);}
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+var myName;
+```

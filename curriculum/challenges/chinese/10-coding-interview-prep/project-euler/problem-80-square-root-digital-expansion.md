@@ -3,6 +3,7 @@ id: 5900f3bc1000cf542c50fecf
 title: 问题80：平方根数字扩展
 challengeType: 5
 videoUrl: ''
+dashedName: problem-80-square-root-digital-expansion
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler80(), 40886);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sqrtDigitalExpansion() {
+
+  return true;
+}
+
+sqrtDigitalExpansion();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

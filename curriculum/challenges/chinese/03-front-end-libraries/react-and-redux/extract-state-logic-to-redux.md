@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036143
 title: 提取状态逻辑给 Redux
 challengeType: 6
 forumTopicId: 301429
+dashedName: extract-state-logic-to-redux
 ---
 
 # --description--
@@ -78,5 +79,37 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```jsx
+// Define ADD, addMessage(), messageReducer(), and store here:
+```
+
 # --solutions--
 
+```jsx
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(messageReducer);
+```

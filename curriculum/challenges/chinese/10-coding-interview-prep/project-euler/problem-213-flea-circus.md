@@ -3,6 +3,7 @@ id: 5900f4411000cf542c50ff54
 title: 问题213：跳蚤马戏团
 challengeType: 5
 videoUrl: ''
+dashedName: problem-213-flea-circus
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler213(), 330.721154);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler213() {
+
+  return true;
+}
+
+euler213();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b18
 title: 将键值对添加到对象中
 challengeType: 1
 forumTopicId: 301153
+dashedName: add-key-value-pairs-to-javascript-objects
 ---
 
 # --description--
@@ -90,5 +91,34 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
+
+// Only change code below this line
+
+// Only change code above this line
+
+console.log(foods);
+```
+
 # --solutions--
 
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
+
+foods['bananas'] = 13;
+foods['grapes']  = 35;
+foods['strawberries'] = 27;
+```

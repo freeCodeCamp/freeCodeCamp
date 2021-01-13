@@ -3,6 +3,7 @@ id: 5900f3b71000cf542c50feca
 title: 问题75：奇异整数直角三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-75-singular-integer-right-triangles
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler75(), 161667);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function singularIntRightTriangles() {
+
+  return true;
+}
+
+singularIntRightTriangles();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

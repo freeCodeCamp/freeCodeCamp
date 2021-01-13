@@ -3,6 +3,7 @@ id: 587d7faf367417b2b2512be8
 title: Get Geolocation Data to Find A User's GPS Coordinates
 challengeType: 6
 forumTopicId: 18188
+dashedName: get-geolocation-data-to-find-a-users-gps-coordinates
 ---
 
 # --description--

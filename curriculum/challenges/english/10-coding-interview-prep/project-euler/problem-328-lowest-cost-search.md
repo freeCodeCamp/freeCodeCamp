@@ -3,6 +3,7 @@ id: 5900f4b41000cf542c50ffc7
 title: 'Problem 328: Lowest-cost Search'
 challengeType: 5
 forumTopicId: 301985
+dashedName: problem-328-lowest-cost-search
 ---
 
 # --description--

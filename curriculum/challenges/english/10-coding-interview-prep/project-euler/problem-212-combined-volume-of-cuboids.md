@@ -3,6 +3,7 @@ id: 5900f4411000cf542c50ff53
 title: 'Problem 212: Combined Volume of Cuboids'
 challengeType: 5
 forumTopicId: 301854
+dashedName: problem-212-combined-volume-of-cuboids
 ---
 
 # --description--

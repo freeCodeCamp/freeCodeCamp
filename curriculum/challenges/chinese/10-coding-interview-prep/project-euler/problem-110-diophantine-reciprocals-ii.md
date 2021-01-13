@@ -3,6 +3,7 @@ id: 5900f3db1000cf542c50feed
 title: 问题110：丢番图互惠II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-110-diophantine-reciprocals-ii
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(diophantineTwo(), 9350130049860600);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function diophantineTwo() {
+
+  return true;
+}
+
+diophantineTwo();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

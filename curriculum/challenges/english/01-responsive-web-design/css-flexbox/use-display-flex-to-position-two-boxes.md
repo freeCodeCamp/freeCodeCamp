@@ -4,6 +4,7 @@ title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cgz3QS7'
 forumTopicId: 301105
+dashedName: use-display-flex-to-position-two-boxes
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: a202eed8fc186c8434cb6d61
 title: 反转字符串
 challengeType: 5
 forumTopicId: 16043
+dashedName: reverse-a-string
 ---
 
 # --description--
@@ -39,5 +40,24 @@ assert(reverseString('Howdy') === 'ydwoH');
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function reverseString(str) {
+  return str;
+}
+
+reverseString("hello");
+```
+
 # --solutions--
 
+```js
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString("hello");
+```

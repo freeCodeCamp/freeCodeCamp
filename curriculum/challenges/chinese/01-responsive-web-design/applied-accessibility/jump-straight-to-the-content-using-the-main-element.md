@@ -4,6 +4,7 @@ title: 使用 main 元素包裹主题内容
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7zuE'
 forumTopicId: 301018
+dashedName: jump-straight-to-the-content-using-the-main-element
 ---
 
 # --description--
@@ -34,5 +35,28 @@ assert($('main').length == 1);
 assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<header>
+  <h1>Weapons of the Ninja</h1>
+</header>
+
+
+
+<footer></footer>
+```
+
 # --solutions--
 
+```html
+<header>
+  <h1>Weapons of the Ninja</h1>
+</header>
+<main>
+
+</main>
+<footer></footer>
+```

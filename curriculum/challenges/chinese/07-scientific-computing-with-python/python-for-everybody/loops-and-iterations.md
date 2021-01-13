@@ -2,6 +2,7 @@
 id: 5e7b9f060b6c005b0e76f05c
 challengeType: 11
 videoId: dLA-szNRnUY
+dashedName: loops-and-iterations
 ---
 
 # --question--
@@ -54,9 +55,4 @@ while True:
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

@@ -3,6 +3,7 @@ id: a7f4d8f2483413a6ce226cac
 title: 罗马数字转换器
 challengeType: 5
 forumTopicId: 16044
+dashedName: roman-numeral-converter
 ---
 
 # --description--
@@ -169,5 +170,30 @@ assert.deepEqual(convertToRoman(2014), 'MMXIV');
 assert.deepEqual(convertToRoman(3999), 'MMMCMXCIX');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function convertToRoman(num) {
+ return num;
+}
+
+convertToRoman(36);
+```
+
 # --solutions--
 
+```js
+function convertToRoman(num) {
+  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];
+  var res = [];
+  ref.forEach(function(p) {
+    while (num >= p[1]) {
+      res.push(p[0]);
+      num -= p[1];
+    }
+  });
+  return res.join('');
+}
+```

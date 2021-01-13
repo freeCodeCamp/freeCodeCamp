@@ -3,6 +3,7 @@ id: 587d7dac367417b2b2512b73
 title: 创建一个基本的 JavaScript 对象
 challengeType: 1
 forumTopicId: 301317
+dashedName: create-a-basic-javascript-object
 ---
 
 # --description--
@@ -48,5 +49,21 @@ assert(typeof dog.name === 'string');
 assert(typeof dog.numLegs === 'number');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let dog = {
+
+};
+```
+
 # --solutions--
 
+```js
+let dog = {
+  name: '',
+  numLegs: 4
+};
+```

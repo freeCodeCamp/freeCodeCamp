@@ -3,6 +3,7 @@ id: aaa48de84e1ecc7c742e1124
 title: 回文检查器
 challengeType: 5
 forumTopicId: 16004
+dashedName: palindrome-checker
 ---
 
 # --description--
@@ -97,5 +98,30 @@ assert(palindrome('0_0 (: /- :) 0-0') === true);
 assert(palindrome('five|_/|four') === false);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function palindrome(str) {
+  return true;
+}
+
+
+
+palindrome("eye");
+```
+
 # --solutions--
 
+```js
+function palindrome(str) {
+  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');
+  var aux = string.split('');
+  if (aux.join('') === aux.reverse().join('')){
+    return true;
+  }
+
+  return false;
+}
+```

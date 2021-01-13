@@ -3,6 +3,7 @@ id: 595668ca4cfe1af2fb9818d4
 title: Harshad or Niven series
 challengeType: 5
 forumTopicId: 302281
+dashedName: harshad-or-niven-series
 ---
 
 # --description--

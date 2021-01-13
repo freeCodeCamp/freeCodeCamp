@@ -3,6 +3,7 @@ id: 5900f4ba1000cf542c50ffcd
 title: 问题334：溢出豆子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-334-spilling-the-beans
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(euler334(), 150320021261690850);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler334() {
+
+  return true;
+}
+
+euler334();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

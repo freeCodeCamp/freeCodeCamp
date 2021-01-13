@@ -3,6 +3,7 @@ id: 5cddbfd622f1a59093ec611d
 title: 创建一个模块脚本
 challengeType: 6
 forumTopicId: 301198
+dashedName: create-a-module-script
 ---
 
 # --description--
@@ -47,5 +48,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<html>
+  <body>
+    <!-- Only change code below this line -->
+
+    <!-- Only change code above this line -->
+  </body>
+</html>
+```
+
 # --solutions--
 
+```html
+<html>
+  <body>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
+```

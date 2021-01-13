@@ -3,6 +3,7 @@ id: 587d7dbf367417b2b2512bbb
 title: 使用 @while 当条件满足时样式生效
 challengeType: 0
 forumTopicId: 301454
+dashedName: apply-a-style-until-a-condition-is-met-with-while
 ---
 
 # --description--
@@ -77,5 +78,40 @@ assert($('.text-4').css('font-size') == '60px');
 assert($('.text-5').css('font-size') == '75px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
 # --solutions--
 
+```html
+<style type='text/scss'>
+  $x: 1;
+  @while $x < 6 {
+    .text-#{$x}{
+      font-size: 15px * $x;
+    }
+    $x: $x + 1;
+  }
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```

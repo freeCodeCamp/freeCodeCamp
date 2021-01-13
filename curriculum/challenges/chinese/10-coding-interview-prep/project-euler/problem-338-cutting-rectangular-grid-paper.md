@@ -3,6 +3,7 @@ id: 5900f4be1000cf542c50ffd1
 title: 问题338：切割矩形网格纸
 challengeType: 5
 videoUrl: ''
+dashedName: problem-338-cutting-rectangular-grid-paper
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler338(), 15614292);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler338() {
+
+  return true;
+}
+
+euler338();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

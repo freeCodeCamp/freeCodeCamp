@@ -3,6 +3,7 @@ id: 587d7db9367417b2b2512ba4
 title: 匹配非空白字符
 challengeType: 1
 forumTopicId: 18210
+dashedName: match-non-whitespace-characters
 ---
 
 # --description--
@@ -56,5 +57,20 @@ assert('Space: the final frontier.'.match(countNonWhiteSpace).length == 23);
 assert('MindYourPersonalSpace'.match(countNonWhiteSpace).length == 21);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /change/; // Change this line
+let result = sample.match(countNonWhiteSpace);
+```
+
 # --solutions--
 
+```js
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
+```

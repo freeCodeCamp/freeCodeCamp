@@ -3,6 +3,7 @@ id: 587d7fb0367417b2b2512bed
 title: Meet the Node console
 challengeType: 2
 forumTopicId: 301515
+dashedName: meet-the-node-console
 ---
 
 # --description--
@@ -34,8 +35,6 @@ Modify the `myApp.js` file to log "Hello World" to the console.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

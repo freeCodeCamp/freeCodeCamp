@@ -3,6 +3,7 @@ id: 587d7db6367417b2b2512b99
 title: 匹配出现一次或多次的字符
 challengeType: 1
 forumTopicId: 301350
+dashedName: match-characters-that-occur-one-or-more-times
 ---
 
 # --description--
@@ -39,5 +40,20 @@ assert(result.length == 2);
 assert(result[0] == 'ss' && result[1] == 'ss');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let difficultSpelling = "Mississippi";
+let myRegex = /change/; // Change this line
+let result = difficultSpelling.match(myRegex);
+```
+
 # --solutions--
 
+```js
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g; // Change this line
+let result = difficultSpelling.match(myRegex);
+```

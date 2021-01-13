@@ -3,6 +3,7 @@ id: 5900f43f1000cf542c50ff52
 title: 问题211：除数平方和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-211-divisor-square-sum
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler211(), 1922364685);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler211() {
+
+  return true;
+}
+
+euler211();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

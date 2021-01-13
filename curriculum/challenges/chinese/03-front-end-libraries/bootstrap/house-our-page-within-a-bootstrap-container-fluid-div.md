@@ -3,6 +3,7 @@ id: bad87fee1348bd9aec908746
 title: 将我们的页面放在 Fluid 容器中
 challengeType: 0
 forumTopicId: 18198
+dashedName: house-our-page-within-a-bootstrap-container-fluid-div
 ---
 
 # --description--
@@ -35,5 +36,18 @@ assert(
 assert($('div').children('h3').length > 0);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h3 class="text-primary text-center">jQuery Playground</h3>
+```
+
 # --solutions--
 
+```html
+<div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+</div>
+```

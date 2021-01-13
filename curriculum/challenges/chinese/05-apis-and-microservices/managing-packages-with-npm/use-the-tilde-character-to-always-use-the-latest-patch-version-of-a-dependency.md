@@ -3,6 +3,7 @@ id: 587d7fb5367417b2b2512c02
 title: 用波浪字符始终使用依赖项的最新补丁版本
 challengeType: 2
 forumTopicId: 301532
+dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency
 ---
 
 # --description--
@@ -65,3 +66,10 @@ forumTopicId: 301532
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

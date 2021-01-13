@@ -3,6 +3,7 @@ id: 5987fd532b954e0f21b5d3f6
 title: 均衡指数
 challengeType: 5
 videoUrl: ''
+dashedName: equilibrium-index
 ---
 
 # --description--
@@ -53,5 +54,43 @@ assert.deepEqual(equilibrium(equilibriumTests[4]), ans[4]);
 assert.deepEqual(equilibrium(equilibriumTests[5]), ans[5]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const equilibriumTests =
+  [[-7, 1, 5, 2, -4, 3, 0], // 3, 6
+  [2, 4, 6], // empty
+  [2, 9, 2], // 1
+  [1, -1, 1, -1, 1, -1, 1], // 0,1,2,3,4,5,6
+  [1], // 0
+  [] // empty
+  ];
+const ans = [[3, 6], [], [1], [0, 1, 2, 3, 4, 5, 6], [0], []];
+```
+
+## --seed-contents--
+
+```js
+function equilibrium(a) {
+
+}
+```
+
 # --solutions--
 
+```js
+function equilibrium(a) {
+  let N = a.length,
+    i,
+    l = [],
+    r = [],
+    e = [];
+  for (l[0] = a[0], r[N - 1] = a[N - 1], i = 1; i < N; i++)
+    { l[i] = l[i - 1] + a[i], r[N - i - 1] = r[N - i] + a[N - i - 1]; }
+  for (i = 0; i < N; i++)
+    { if (l[i] === r[i]) e.push(i); }
+  return e;
+}
+```

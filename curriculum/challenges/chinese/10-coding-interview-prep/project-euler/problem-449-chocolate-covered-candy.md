@@ -3,6 +3,7 @@ id: 5900f52d1000cf542c510040
 title: 问题449：巧克力糖果
 challengeType: 5
 videoUrl: ''
+dashedName: problem-449-chocolate-covered-candy
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler449(), 103.37870096);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler449() {
+
+  return true;
+}
+
+euler449();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

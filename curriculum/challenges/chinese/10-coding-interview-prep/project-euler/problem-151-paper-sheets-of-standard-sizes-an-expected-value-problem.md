@@ -3,6 +3,7 @@ id: 5900f4031000cf542c50ff16
 title: 问题151：标准尺寸的纸张：期望值问题
 challengeType: 5
 videoUrl: ''
+dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler151(), 0.464399);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler151() {
+
+  return true;
+}
+
+euler151();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

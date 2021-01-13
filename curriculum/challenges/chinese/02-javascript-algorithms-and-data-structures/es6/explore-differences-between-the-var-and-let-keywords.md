@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b3f
 title: 探索 var 和 let 关键字之间的差异
 challengeType: 1
 forumTopicId: 301202
+dashedName: explore-differences-between-the-var-and-let-keywords
 ---
 
 # --description--
@@ -55,5 +56,33 @@ assert(catName === 'Oliver');
 assert(quote === 'Oliver says Meow!');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var catName;
+var quote;
+function catTalk() {
+  "use strict";
+
+  catName = "Oliver";
+  quote = catName + " says Meow!";
+
+}
+catTalk();
+```
+
 # --solutions--
 
+```js
+let catName;
+let quote;
+function catTalk() {
+  'use strict';
+
+  catName = 'Oliver';
+  quote = catName + ' says Meow!';
+}
+catTalk();
+```

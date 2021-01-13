@@ -3,6 +3,7 @@ id: 5900f4d31000cf542c50ffe6
 title: 问题359：希尔伯特的新酒店
 challengeType: 5
 videoUrl: ''
+dashedName: problem-359-hilberts-new-hotel
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler359(), 40632119);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler359() {
+
+  return true;
+}
+
+euler359();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

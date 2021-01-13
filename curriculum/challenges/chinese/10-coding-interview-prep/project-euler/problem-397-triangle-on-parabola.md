@@ -3,6 +3,7 @@ id: 5900f4f91000cf542c51000c
 title: 问题397：抛物线上的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-397-triangle-on-parabola
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler397(), 141630459461893730);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler397() {
+
+  return true;
+}
+
+euler397();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

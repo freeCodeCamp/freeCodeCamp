@@ -3,6 +3,7 @@ id: 5900f54c1000cf542c51005e
 title: 'Problem 478: Mixtures'
 challengeType: 5
 forumTopicId: 302155
+dashedName: problem-478-mixtures
 ---
 
 # --description--

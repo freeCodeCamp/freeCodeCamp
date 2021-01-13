@@ -3,6 +3,7 @@ id: 5900f4f31000cf542c510006
 title: 问题391：跳跃游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-391-hopping-game
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler391(), 61029882288);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler391() {
+
+  return true;
+}
+
+euler391();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

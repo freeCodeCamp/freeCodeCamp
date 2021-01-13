@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7eb0
 title: 我在E之前除了C之后
 challengeType: 5
 videoUrl: ''
+dashedName: i-before-e-except-after-c
 ---
 
 # --description--
@@ -64,5 +65,25 @@ assert.equal(IBeforeExceptC('insufficient'), false);
 assert.equal(IBeforeExceptC('omniscient'), false);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function IBeforeExceptC(word) {
+
+}
+```
+
 # --solutions--
 
+```js
+function IBeforeExceptC(word)
+{
+    if(word.indexOf("c")==-1 && word.indexOf("ie")!=-1)
+        return true;
+    else if(word.indexOf("cei")!=-1)
+        return true;
+    return false;
+}
+```

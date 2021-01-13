@@ -3,6 +3,7 @@ id: 5900f5311000cf542c510044
 title: 问题453：格子四边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-453-lattice-quadrilaterals
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler453(), 104354107);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler453() {
+
+  return true;
+}
+
+euler453();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

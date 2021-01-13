@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036182
 title: 在 React 中添加内联样式
 challengeType: 6
 forumTopicId: 301378
+dashedName: add-inline-styles-in-react
 ---
 
 # --description--
@@ -67,5 +68,45 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<Colorful />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+// Change code above this line
+class Colorful extends React.Component {
+  render() {
+    // Change code below this line
+    return (
+      <div style={{color: "yellow", fontSize: 24}}>Style Me!</div>
+    );
+    // Change code above this line
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+const styles = {
+  color: "purple",
+  fontSize: 40,
+  border: "2px solid purple"
+};
+// Change code above this line
+class Colorful extends React.Component {
+  render() {
+    // Change code below this line
+    return (
+      <div style={styles}>Style Me!</div>
+    );
+    // Change code above this line
+  }
+};
+```

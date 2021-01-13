@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036151
 title: 使用 Switch 语句处理多个 Actions
 challengeType: 6
 forumTopicId: 301449
+dashedName: use-a-switch-statement-to-handle-multiple-actions
 ---
 
 # --description--
@@ -77,5 +78,75 @@ assert(
   );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+  // Change code below this line
+
+  // Change code above this line
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
+```
+
 # --solutions--
 
+```js
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+
+  switch (action.type) {
+
+    case 'LOGIN':
+      return {
+        authenticated: true
+      }
+
+    case 'LOGOUT':
+      return {
+        authenticated: false
+      }
+
+    default:
+      return state;
+
+  }
+
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
+```

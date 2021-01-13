@@ -3,6 +3,7 @@ id: 5900f4f41000cf542c510007
 title: 问题392：陷入困境的单位圆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-392-enmeshed-unit-circle
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler392(), 3.1486734435);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler392() {
+
+  return true;
+}
+
+euler392();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

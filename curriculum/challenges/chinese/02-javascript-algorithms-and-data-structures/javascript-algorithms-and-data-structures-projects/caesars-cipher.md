@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244e2
 title: 凯撒密码
 challengeType: 5
 forumTopicId: 16003
+dashedName: caesars-cipher
 ---
 
 # --description--
@@ -44,5 +45,45 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function rot13(str) {
+
+  return str;
+}
+
+rot13("SERR PBQR PNZC");
+```
+
 # --solutions--
 
+```js
+var lookup = {
+  'A': 'N','B': 'O','C': 'P','D': 'Q',
+  'E': 'R','F': 'S','G': 'T','H': 'U',
+  'I': 'V','J': 'W','K': 'X','L': 'Y',
+  'M': 'Z','N': 'A','O': 'B','P': 'C',
+  'Q': 'D','R': 'E','S': 'F','T': 'G',
+  'U': 'H','V': 'I','W': 'J','X': 'K',
+  'Y': 'L','Z': 'M'
+};
+
+function rot13(encodedStr) {
+  var codeArr = encodedStr.split("");  // String to Array
+  var decodedArr = []; // Your Result goes here
+  // Only change code below this line
+
+  decodedArr = codeArr.map(function(letter) {
+    if(lookup.hasOwnProperty(letter)) {
+      letter = lookup[letter];
+    }
+    return letter;
+  });
+
+  // Only change code above this line
+  return decodedArr.join(""); // Array to String
+}
+```

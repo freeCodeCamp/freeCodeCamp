@@ -4,6 +4,7 @@ title: 使用标题显示内容的层次关系
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026
+dashedName: use-headings-to-show-hierarchical-relationships-of-content
 ---
 
 # --description--
@@ -50,5 +51,42 @@ assert($('h5').length === 0);
 assert(/\/h5/.test(code) === false);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>How to Become a Ninja</h1>
+<main>
+  <h2>Learn the Art of Moving Stealthily</h2>
+  <h5>How to Hide in Plain Sight</h5>
+  <h5>How to Climb a Wall</h5>
+
+  <h2>Learn the Art of Battle</h2>
+  <h5>How to Strengthen your Body</h5>
+  <h5>How to Fight like a Ninja</h5>
+
+  <h2>Learn the Art of Living with Honor</h2>
+  <h5>How to Breathe Properly</h5>
+  <h5>How to Simplify your Life</h5>
+</main>
+```
+
 # --solutions--
 
+```html
+<h1>How to Become a Ninja</h1>
+<main>
+  <h2>Learn the Art of Moving Stealthily</h2>
+  <h3>How to Hide in Plain Sight</h3>
+  <h3>How to Climb a Wall</h3>
+
+  <h2>Learn the Art of Battle</h2>
+  <h3>How to Strengthen your Body</h3>
+  <h3>How to Fight like a Ninja</h3>
+
+  <h2>Learn the Art of Living with Honor</h2>
+  <h3>How to Breathe Properly</h3>
+  <h3>How to Simplify your Life</h3>
+</main>
+```

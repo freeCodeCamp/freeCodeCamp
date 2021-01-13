@@ -3,6 +3,7 @@ id: 5900f4bd1000cf542c50ffce
 title: 问题335：收集豆子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-335-gathering-the-beans
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler335(), 5032316);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler335() {
+
+  return true;
+}
+
+euler335();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

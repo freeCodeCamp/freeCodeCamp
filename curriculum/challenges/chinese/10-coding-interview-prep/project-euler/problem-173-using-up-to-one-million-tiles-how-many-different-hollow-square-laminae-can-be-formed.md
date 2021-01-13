@@ -3,6 +3,8 @@ id: 5900f41a1000cf542c50ff2c
 title: 问题173：使用多达一百万个瓷砖可以形成多少个不同的“空心”方形薄片？
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-173-using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed
 ---
 
 # --description--
@@ -19,5 +21,21 @@ videoUrl: ''
 assert.strictEqual(euler173(), 1572729);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler173() {
+
+  return true;
+}
+
+euler173();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4f21000cf542c510004
 title: 'Problem 389: Platonic Dice'
 challengeType: 5
 forumTopicId: 302053
+dashedName: problem-389-platonic-dice
 ---
 
 # --description--

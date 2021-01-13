@@ -3,6 +3,7 @@ id: 587d78b0367417b2b2512b05
 title: 制作一个技术文档页面
 challengeType: 3
 forumTopicId: 301146
+dashedName: build-a-technical-documentation-page
 ---
 
 # --description--
@@ -47,8 +48,8 @@ forumTopicId: 301146
 
 完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
 
-# --hints--
-
-
 # --solutions--
 
+```html
+// solution required
+```

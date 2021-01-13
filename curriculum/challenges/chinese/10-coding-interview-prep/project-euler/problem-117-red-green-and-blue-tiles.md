@@ -3,6 +3,7 @@ id: 5900f3e21000cf542c50fef4
 title: 问题117：红色，绿色和蓝色瓷砖
 challengeType: 5
 videoUrl: ''
+dashedName: problem-117-red-green-and-blue-tiles
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler117(), 100808458960497);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler117() {
+
+  return true;
+}
+
+euler117();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

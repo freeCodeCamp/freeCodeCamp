@@ -3,6 +3,7 @@ id: 5900f46b1000cf542c50ff7d
 title: 问题254：数字因子的总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-254-sums-of-digit-factorials
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler254(), 8184523820510);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler254() {
+
+  return true;
+}
+
+euler254();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

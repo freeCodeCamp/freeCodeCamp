@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616e
 title: 使用 this.props 访问 Props
 challengeType: 6
 forumTopicId: 301375
+dashedName: access-props-using-this-props
 ---
 
 # --description--
@@ -79,5 +80,86 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<ResetPassword />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class ReturnTempPassword extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <p>Your temporary password is: <strong></strong></p>
+            { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class ResetPassword extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          <h2>Reset Password</h2>
+          <h3>We've generated a new temporary password for you.</h3>
+          <h3>Please reset this password from your account settings ASAP.</h3>
+          { /* Change code below this line */ }
+
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class ReturnTempPassword extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>
+        </div>
+    );
+  }
+};
+
+class ResetPassword extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          <h2>Reset Password</h2>
+          <h3>We've generated a new temporary password for you.</h3>
+          <h3>Please reset this password from your account settings ASAP.</h3>
+          { /* Change code below this line */ }
+          <ReturnTempPassword tempPassword="serrPbqrPnzc" />
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+```

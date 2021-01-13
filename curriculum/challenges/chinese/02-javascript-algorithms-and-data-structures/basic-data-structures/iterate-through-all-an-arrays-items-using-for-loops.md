@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b15
 title: 使用 for 循环遍历数组中的全部元素
 challengeType: 1
 forumTopicId: 301161
+dashedName: iterate-through-all-an-arrays-items-using-for-loops
 ---
 
 # --description--
@@ -107,5 +108,32 @@ assert.deepEqual(
 assert.notStrictEqual(filteredArray.toString().search(/for/), -1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function filteredArray(arr, elem) {
+  let newArr = [];
+  // Only change code below this line
+
+  // Only change code above this line
+  return newArr;
+}
+
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+```
+
 # --solutions--
 
+```js
+function filteredArray(arr, elem) {
+  let newArr = [];
+  for (let i = 0; i<arr.length; i++) {
+    if (arr[i].indexOf(elem) < 0) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+```

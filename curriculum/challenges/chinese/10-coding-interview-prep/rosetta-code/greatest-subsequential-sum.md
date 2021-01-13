@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e84
 title: 最重要的后续总和
 challengeType: 5
 videoUrl: ''
+dashedName: greatest-subsequential-sum
 ---
 
 # --description--
@@ -70,5 +71,41 @@ assert.deepEqual(maximumSubsequence([-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1]), [
 ]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function maximumSubsequence(population) {
+
+}
+```
+
 # --solutions--
 
+```js
+function maximumSubsequence(population) {
+  function sumValues(arr) {
+      var result = 0;
+      for (var i = 0, len = arr.length; i < len; i++) {
+          result += arr[i];
+      }
+      return result;
+  }
+  var greatest;
+  var maxValue = 0;
+
+  for (var i = 0, len = population.length; i < len; i++) {
+      for (var j = i; j <= len; j++) {
+          var subsequence = population.slice(i, j);
+          var value = sumValues(subsequence);
+          if (value > maxValue) {
+              maxValue = value;
+              greatest = subsequence;
+          };
+      }
+  }
+
+  return greatest;
+}
+```

@@ -3,6 +3,7 @@ id: 5900f4d21000cf542c50ffe5
 title: 问题358：循环数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-358-cyclic-numbers
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler358(), 3284144505);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler358() {
+
+  return true;
+}
+
+euler358();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 587d78b2367417b2b2512b0f
 title: 使用 pop() 和 shift() 从数组中删除元素
 challengeType: 1
 forumTopicId: 301165
+dashedName: remove-items-from-an-array-with-pop-and-shift
 ---
 
 # --description--
@@ -56,5 +57,26 @@ assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1);
 assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function popShift(arr) {
+  let popped; // Change this line
+  let shifted; // Change this line
+  return [shifted, popped];
+}
+
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
+```
+
 # --solutions--
 
+```js
+function popShift(arr) {
+  let popped = arr.pop(); // Change this line
+  let shifted = arr.shift(); // Change this line
+  return [shifted, popped];
+}
+```

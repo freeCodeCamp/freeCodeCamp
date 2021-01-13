@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b13
 title: 使用展开运算符复制数组
 challengeType: 1
 forumTopicId: 301157
+dashedName: copy-an-array-with-the-spread-operator
 ---
 
 # --description--
@@ -67,5 +68,35 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 assert(removeJSComments(code).match(/\.\.\.arr/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // Only change code below this line
+
+    // Only change code above this line
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+```
+
 # --solutions--
 
+```js
+function copyMachine(arr,num){
+    let newArr=[];
+    while(num >=1){
+    newArr.push([...arr]);
+    num--;
+    }
+    return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
+```

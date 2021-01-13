@@ -3,6 +3,7 @@ id: 595011cba5a81735713873bd
 title: Top rank per group
 challengeType: 5
 forumTopicId: 302339
+dashedName: top-rank-per-group
 ---
 
 # --description--

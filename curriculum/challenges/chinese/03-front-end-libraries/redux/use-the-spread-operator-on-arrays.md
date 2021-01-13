@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036159
 title: 在数组中使用扩展运算符
 challengeType: 6
 forumTopicId: 301452
+dashedName: use-the-spread-operator-on-arrays
 ---
 
 # --description--
@@ -60,5 +61,52 @@ assert(
 (getUserInput) => assert(getUserInput('index').includes('...state'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const immutableReducer = (state = ['Do not mutate state!'], action) => {
+  switch(action.type) {
+    case 'ADD_TO_DO':
+      // Don't mutate state here or the tests will fail
+      return
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: 'ADD_TO_DO',
+    todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+```
+
 # --solutions--
 
+```js
+const immutableReducer = (state = ['Do not mutate state!'], action) => {
+  switch(action.type) {
+    case 'ADD_TO_DO':
+      return [
+        ...state,
+        action.todo
+      ];
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: 'ADD_TO_DO',
+    todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+```

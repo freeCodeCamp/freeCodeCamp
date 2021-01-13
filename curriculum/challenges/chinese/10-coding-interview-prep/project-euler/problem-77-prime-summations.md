@@ -3,6 +3,7 @@ id: 5900f3b91000cf542c50fecc
 title: 问题77：总结
 challengeType: 5
 videoUrl: ''
+dashedName: problem-77-prime-summations
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler77(), 71);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function primeSummations() {
+
+  return true;
+}
+
+primeSummations();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

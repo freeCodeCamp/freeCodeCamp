@@ -3,6 +3,7 @@ id: 5900f5411000cf542c510054
 title: 问题468：二项式系数的平滑除数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-468-smooth-divisors-of-binomial-coefficients
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler468(), 852950321);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler468() {
+
+  return true;
+}
+
+euler468();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

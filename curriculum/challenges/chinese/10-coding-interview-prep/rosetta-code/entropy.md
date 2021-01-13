@@ -3,6 +3,7 @@ id: 599d15309e88c813a40baf58
 title: 熵
 challengeType: 5
 videoUrl: ''
+dashedName: entropy
 ---
 
 # --description--
@@ -61,5 +62,37 @@ assert.equal(entropy('0123456789abcdef'), 4);
 assert.equal(entropy('1223334444'), 1.8464393446710154);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function entropy(s) {
+
+}
+```
+
 # --solutions--
 
+```js
+function entropy(s) {
+    // Create a dictionary of character frequencies and iterate over it.
+  function process(s, evaluator) {
+    let h = Object.create(null),
+      k;
+    s.split('').forEach(c => {
+      h[c] && h[c]++ || (h[c] = 1); });
+    if (evaluator) for (k in h) evaluator(k, h[k]);
+    return h;
+  }
+    // Measure the entropy of a string in bits per symbol.
+
+  let sum = 0,
+    len = s.length;
+  process(s, (k, f) => {
+    const p = f / len;
+    sum -= p * Math.log(p) / Math.log(2);
+  });
+  return sum;
+}
+```

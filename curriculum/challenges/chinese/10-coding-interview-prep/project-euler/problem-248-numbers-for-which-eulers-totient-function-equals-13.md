@@ -3,6 +3,7 @@ id: 5900f4651000cf542c50ff77
 title: 问题248：Euler的totient函数等于13的数字！
 challengeType: 5
 videoUrl: ''
+dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler248(), 23507044290);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler248() {
+
+  return true;
+}
+
+euler248();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

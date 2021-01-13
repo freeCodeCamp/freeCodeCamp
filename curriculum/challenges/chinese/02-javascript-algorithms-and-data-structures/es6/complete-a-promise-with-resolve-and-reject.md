@@ -3,6 +3,7 @@ id: 5cdafbc32913098997531680
 title: 通过 resolve 和 reject 完成 Promise
 challengeType: 1
 forumTopicId: 301196
+dashedName: complete-a-promise-with-resolve-and-reject
 ---
 
 # --description--
@@ -47,5 +48,34 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    // Change this line
+  } else {  
+    // Change this line
+  }
+});
+```
+
 # --solutions--
 
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+```

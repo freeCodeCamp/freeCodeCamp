@@ -4,6 +4,7 @@ title: ID 选择器优先级高于 Class 选择器
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
+dashedName: override-class-declarations-by-styling-id-attributes
 ---
 
 # --description--
@@ -76,5 +77,45 @@ assert(!code.match(/<h1.*style.*>/gi));
 assert($('h1').css('color') === 'rgb(255, 165, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 class="pink-text blue-text">Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+  #orange-text {
+    color: orange;
+  }  
+</style>
+<h1 id="orange-text"  class="pink-text blue-text">Hello World!</h1>
+```

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7eb1
 title: 身份矩阵
 challengeType: 5
 videoUrl: ''
+dashedName: identity-matrix
 ---
 
 # --description--
@@ -47,5 +48,33 @@ assert.deepEqual(idMatrix(3), results[2]);
 assert.deepEqual(idMatrix(4), results[3]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+let results=[[ [ 1 ] ],
+[ [ 1, 0 ], [ 0, 1 ] ],
+[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ],
+[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]]
+```
+
+## --seed-contents--
+
+```js
+function idMatrix(n) {
+
+}
+```
+
 # --solutions--
 
+```js
+function idMatrix(n) {
+    return Array.apply(null, new Array(n)).map(function (x, i, xs) {
+        return xs.map(function (_, k) {
+            return i === k ? 1 : 0;
+        })
+    });
+}
+```

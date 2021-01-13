@@ -3,6 +3,7 @@ id: 5900f4ff1000cf542c510011
 title: 'Problem 402: Integer-valued polynomials'
 challengeType: 5
 forumTopicId: 302070
+dashedName: problem-402-integer-valued-polynomials
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5966f99c45e8976909a85575
 title: Day of the week
 challengeType: 5
 forumTopicId: 302245
+dashedName: day-of-the-week
 ---
 
 # --description--

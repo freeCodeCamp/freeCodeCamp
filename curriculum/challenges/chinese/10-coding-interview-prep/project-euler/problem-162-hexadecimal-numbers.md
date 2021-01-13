@@ -3,6 +3,7 @@ id: 5900f40e1000cf542c50ff21
 title: 问题162：十六进制数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-162-hexadecimal-numbers
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler162(), '3D58725572C62302');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler162() {
+
+  return true;
+}
+
+euler162();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f51b1000cf542c51002e
 title: 问题431：方形筒仓
 challengeType: 5
 videoUrl: ''
+dashedName: problem-431-square-space-silo
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler431(), 23.386029052);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler431() {
+
+  return true;
+}
+
+euler431();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

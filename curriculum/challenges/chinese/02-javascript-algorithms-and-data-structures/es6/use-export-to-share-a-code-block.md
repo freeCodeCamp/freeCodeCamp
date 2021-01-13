@@ -3,6 +3,7 @@ id: 587d7b8c367417b2b2512b56
 title: 用 export 来重用代码块
 challengeType: 1
 forumTopicId: 301219
+dashedName: use-export-to-share-a-code-block
 ---
 
 # --description--
@@ -57,5 +58,28 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+```
+
 # --solutions--
 
+```js
+export const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+export const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+```

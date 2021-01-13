@@ -3,6 +3,7 @@ id: 5900f4621000cf542c50ff74
 title: 问题245：Coresilience
 challengeType: 5
 videoUrl: ''
+dashedName: problem-245-coresilience
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler245(), 288084712410001);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler245() {
+
+  return true;
+}
+
+euler245();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

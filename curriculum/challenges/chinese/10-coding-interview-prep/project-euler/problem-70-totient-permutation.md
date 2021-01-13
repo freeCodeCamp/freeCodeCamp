@@ -3,6 +3,7 @@ id: 5900f3b21000cf542c50fec5
 title: 问题70欧拉置换
 challengeType: 5
 videoUrl: ''
+dashedName: problem-70-totient-permutation
 ---
 
 # --description--
@@ -17,5 +18,21 @@ Euler的Totient函数φ（n）\[有时称为phi函数]用于确定小于或等�
 assert.strictEqual(euler70(), 8319823);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function totientPermutation() {
+
+  return true;
+}
+
+totientPermutation();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

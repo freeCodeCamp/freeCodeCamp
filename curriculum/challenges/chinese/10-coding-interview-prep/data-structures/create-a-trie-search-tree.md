@@ -3,6 +3,7 @@ id: 587d8259367417b2b2512c84
 title: 创建Trie搜索树
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-trie-search-tree
 ---
 
 # --description--
@@ -116,5 +117,31 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+var Node = function() {
+  this.keys = new Map();
+  this.end = false;
+  this.setEnd = function() {
+    this.end = true;
+  };
+  this.isEnd = function() {
+    return this.end;
+  };
+};
+var Trie = function() {
+  // Only change code below this line
+  
+  // Only change code above this line
+};
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e7a
 title: 生成小写ASCII字母表
 challengeType: 5
 videoUrl: ''
+dashedName: generate-lower-case-ascii-alphabet
 ---
 
 # --description--
@@ -53,5 +54,46 @@ assert.deepEqual(lascii('k', 'n'), results[3]);
 assert.deepEqual(lascii('t', 'z'), results[4]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+let results=[
+  [ 'a', 'b', 'c', 'd' ],
+  [ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ],
+  [ 'm', 'n', 'o', 'p', 'q' ],
+  [ 'k', 'l', 'm', 'n' ],
+  [ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+]
+```
+
+## --seed-contents--
+
+```js
+function lascii(cFrom, cTo) {
+
+}
+```
+
 # --solutions--
 
+```js
+function lascii(cFrom, cTo) {
+
+  function cRange(cFrom, cTo) {
+    var iStart = cFrom.charCodeAt(0);
+
+    return Array.apply(
+      null, Array(cTo.charCodeAt(0) - iStart + 1)
+    ).map(function (_, i) {
+
+      return String.fromCharCode(iStart + i);
+
+    });
+  }
+
+  return cRange(cFrom, cTo);
+
+}
+```

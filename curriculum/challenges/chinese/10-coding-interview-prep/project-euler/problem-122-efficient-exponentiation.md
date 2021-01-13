@@ -3,6 +3,7 @@ id: 5900f3e61000cf542c50fef9
 title: 问题122：有效取幂
 challengeType: 5
 videoUrl: ''
+dashedName: problem-122-efficient-exponentiation
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler122(), 1582);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler122() {
+
+  return true;
+}
+
+euler122();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

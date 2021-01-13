@@ -3,6 +3,7 @@ id: a8d97bd4c764e91f9d2bda01
 title: 翻译二进制字符串
 challengeType: 5
 forumTopicId: 14273
+dashedName: binary-agents
 ---
 
 # --description--
@@ -35,5 +36,22 @@ assert.deepEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function binaryAgent(str) {
+  return str;
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+```
+
 # --solutions--
 
+```js
+function binaryAgent(str) {
+  return str.split(' ').map(function(s) { return parseInt(s, 2); }).map(function(b) { return String.fromCharCode(b);}).join('');
+}
+```

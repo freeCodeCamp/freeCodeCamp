@@ -3,6 +3,7 @@ id: 587d8250367417b2b2512c5e
 title: 了解堆栈的工作原理
 challengeType: 1
 videoUrl: ''
+dashedName: learn-how-a-stack-works
 ---
 
 # --description--
@@ -44,5 +45,17 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var homeworkStack = ["BIO12","HIS80","MAT122","PSY44"];
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+// solution required
+```

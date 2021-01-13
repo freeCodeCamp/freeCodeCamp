@@ -3,6 +3,7 @@ id: 5900f3e71000cf542c50fefa
 title: 问题123：素数正方形余数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-123-prime-square-remainders
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler123(), 21035);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler123() {
+
+  return true;
+}
+
+euler123();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

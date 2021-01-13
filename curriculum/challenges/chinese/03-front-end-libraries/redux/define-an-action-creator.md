@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614e
 title: 定义一个 Action Creator
 challengeType: 6
 forumTopicId: 301441
+dashedName: define-an-action-creator
 ---
 
 # --description--
@@ -33,5 +34,24 @@ assert(typeof action === 'object');
 assert(action.type === 'LOGIN');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const action = {
+  type: 'LOGIN'
+}
+// Define an action creator here:
+```
+
 # --solutions--
 
+```js
+const action = {
+  type: 'LOGIN'
+}
+const actionCreator = () => {
+  return action;
+};
+```

@@ -3,6 +3,7 @@ id: 5900f36e1000cf542c50fe81
 title: 问题2：斐波那契数列中的偶数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-2-even-fibonacci-numbers
 ---
 
 # --description--
@@ -65,5 +66,34 @@ assert.equal(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function fiboEvenSum(n) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+const fiboEvenSum = (number) => {
+  if (number <= 1) {
+    return 0;
+  } else {
+    let evenSum = 0,
+      prevFibNum = 1,
+      fibNum = 2; // According to problem description our Fibonacci series starts with 1, 2
+    for (let i = 2; fibNum <= number; i++) {
+      if (fibNum % 2 == 0) {
+        evenSum += fibNum;
+      }
+      [prevFibNum, fibNum] = [fibNum, prevFibNum + fibNum];
+    }
+    return evenSum;
+  }
+};
+```

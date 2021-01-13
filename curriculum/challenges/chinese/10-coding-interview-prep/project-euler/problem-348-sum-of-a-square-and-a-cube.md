@@ -3,6 +3,7 @@ id: 5900f4c81000cf542c50ffdb
 title: 问题348：正方形和立方体的总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-348-sum-of-a-square-and-a-cube
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler348(), 1004195061);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler348() {
+
+  return true;
+}
+
+euler348();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

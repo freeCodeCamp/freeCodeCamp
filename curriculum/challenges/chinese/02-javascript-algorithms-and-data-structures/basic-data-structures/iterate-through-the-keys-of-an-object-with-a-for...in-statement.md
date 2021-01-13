@@ -3,6 +3,7 @@ id: 587d7b7d367417b2b2512b1d
 title: 使用 for...in 语句遍历对象
 challengeType: 1
 forumTopicId: 301162
+dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 ---
 
 # --description--
@@ -71,5 +72,69 @@ assert(countOnline(usersObj2) === 2);
 assert(countOnline(usersObj3) === 0);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const usersObj1 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+const usersObj2 = {
+  Alan: {
+    online: true
+  },
+  Jeff: {
+    online: false
+  },
+  Sarah: {
+    online: true
+  }
+}
+
+
+const usersObj3 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: false
+  },
+  Sarah: {
+    online: false
+  }
+}
+```
+
+## --seed-contents--
+
+```js
+function countOnline(usersObj) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function countOnline(usersObj) {
+  let online = 0;
+  for(let user in usersObj){
+    if(usersObj[user].online) {
+      online++;
+    }
+  }
+  return online;
+}
+```

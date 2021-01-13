@@ -3,6 +3,7 @@ id: 587d8255367417b2b2512c72
 title: Use .has and .size on an ES6 Set
 challengeType: 1
 forumTopicId: 301717
+dashedName: use--has-and--size-on-an-es6-set
 ---
 
 # --description--

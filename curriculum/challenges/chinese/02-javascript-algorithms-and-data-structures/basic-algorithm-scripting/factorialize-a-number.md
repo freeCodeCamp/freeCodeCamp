@@ -3,6 +3,7 @@ id: a302f7aae1aa3152a5b413bc
 title: 计算整数的阶乘
 challengeType: 5
 forumTopicId: 16013
+dashedName: factorialize-a-number
 ---
 
 # --description--
@@ -49,5 +50,24 @@ assert(factorialize(20) === 2432902008176640000);
 assert(factorialize(0) === 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function factorialize(num) {
+  return num;
+}
+
+factorialize(5);
+```
+
 # --solutions--
 
+```js
+function factorialize(num) {
+  return num < 1 ? 1 : num * factorialize(num - 1);
+}
+
+factorialize(5);
+```

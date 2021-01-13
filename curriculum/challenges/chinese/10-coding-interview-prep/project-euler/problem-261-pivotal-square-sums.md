@@ -3,6 +3,7 @@ id: 5900f4711000cf542c50ff84
 title: 问题261：Pivotal Square Sums
 challengeType: 5
 videoUrl: ''
+dashedName: problem-261-pivotal-square-sums
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler261(), 238890850232021);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler261() {
+
+  return true;
+}
+
+euler261();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

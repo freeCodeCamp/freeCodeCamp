@@ -3,6 +3,7 @@ id: 587d7fb6367417b2b2512c09
 title: Create and Save a Record of a Model
 challengeType: 2
 forumTopicId: 301536
+dashedName: create-and-save-a-record-of-a-model
 ---
 
 # --description--
@@ -43,8 +44,6 @@ Creating and saving a db item should succeed
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

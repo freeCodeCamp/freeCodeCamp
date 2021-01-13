@@ -3,6 +3,7 @@ id: 5900f5411000cf542c510053
 title: 问题469：空椅子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-469-empty-chairs
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler469(), 0.56766764161831);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler469() {
+
+  return true;
+}
+
+euler469();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bd0f
 title: 文件元数据
 challengeType: 4
 forumTopicId: 301506
+dashedName: file-metadata-microservice
 ---
 
 # --description--
@@ -29,3 +30,10 @@ forumTopicId: 301506
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

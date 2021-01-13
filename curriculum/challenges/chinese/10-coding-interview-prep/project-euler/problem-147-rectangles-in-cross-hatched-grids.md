@@ -3,6 +3,7 @@ id: 5900f3ff1000cf542c50ff12
 title: 问题147：交叉阴影网格中的矩形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-147-rectangles-in-cross-hatched-grids
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler147(), 846910284);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler147() {
+
+  return true;
+}
+
+euler147();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

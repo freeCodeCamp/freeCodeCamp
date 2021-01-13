@@ -3,6 +3,7 @@ id: 5900f4701000cf542c50ff83
 title: 问题260：石头游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-260-stone-game
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler260(), 167542057);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler260() {
+
+  return true;
+}
+
+euler260();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

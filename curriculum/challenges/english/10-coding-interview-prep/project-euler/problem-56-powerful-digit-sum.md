@@ -3,6 +3,7 @@ id: 5900f3a41000cf542c50feb7
 title: 'Problem 56: Powerful digit sum'
 challengeType: 5
 forumTopicId: 302167
+dashedName: problem-56-powerful-digit-sum
 ---
 
 # --description--

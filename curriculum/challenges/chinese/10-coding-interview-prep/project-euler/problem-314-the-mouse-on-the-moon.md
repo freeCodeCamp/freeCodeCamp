@@ -3,6 +3,7 @@ id: 5900f4a71000cf542c50ffb9
 title: 问题314：月球上的老鼠
 challengeType: 5
 videoUrl: ''
+dashedName: problem-314-the-mouse-on-the-moon
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler314(), 132.52756426);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler314() {
+
+  return true;
+}
+
+euler314();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

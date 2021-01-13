@@ -3,6 +3,7 @@ id: 5900f5221000cf542c510033
 title: 问题436：不公平的赌注
 challengeType: 5
 videoUrl: ''
+dashedName: problem-436-unfair-wager
 ---
 
 # --description--
@@ -33,5 +34,21 @@ videoUrl: ''
 assert.strictEqual(euler436(), 0.5276662759);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler436() {
+
+  return true;
+}
+
+euler436();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

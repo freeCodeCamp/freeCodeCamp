@@ -3,6 +3,7 @@ id: 5a8b073d06fa14fcfde687aa
 title: Exercise Tracker
 challengeType: 4
 forumTopicId: 301505
+dashedName: exercise-tracker
 ---
 
 # --description--
@@ -242,8 +243,6 @@ async (getUserInput) => {
   }
 };
 ```
-
-# --seed--
 
 # --solutions--
 

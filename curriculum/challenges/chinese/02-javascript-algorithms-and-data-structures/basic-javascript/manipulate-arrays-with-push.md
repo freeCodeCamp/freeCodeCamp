@@ -4,6 +4,7 @@ title: 使用 push() 操作数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
+dashedName: manipulate-arrays-with-push
 ---
 
 # --description--
@@ -45,5 +46,26 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [["John", 23], ["cat", 2]];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog",3]);
+```

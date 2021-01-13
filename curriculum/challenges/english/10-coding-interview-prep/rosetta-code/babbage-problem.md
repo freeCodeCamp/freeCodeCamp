@@ -3,6 +3,7 @@ id: 594db4d0dedb4c06a2a4cefd
 title: Babbage problem
 challengeType: 5
 forumTopicId: 302229
+dashedName: babbage-problem
 ---
 
 # --description--

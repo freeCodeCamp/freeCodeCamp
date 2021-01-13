@@ -3,6 +3,7 @@ id: afd15382cdfb22c9efe8b7de
 title: DNA 配对
 challengeType: 5
 forumTopicId: 16009
+dashedName: dna-pairing
 ---
 
 # --description--
@@ -55,5 +56,28 @@ assert.deepEqual(pairElement('CTCTA'), [
 ]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function pairElement(str) {
+  return str;
+}
+
+pairElement("GCG");
+```
+
 # --solutions--
 
+```js
+var lookup = Object.create(null);
+lookup.A = 'T';
+lookup.T = 'A';
+lookup.C = 'G';
+lookup.G = 'C';
+
+function pairElement(str) {
+ return str.split('').map(function(p) {return [p, lookup[p]];});
+}
+```

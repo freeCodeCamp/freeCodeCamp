@@ -4,6 +4,7 @@ title: 用函数编写可重用代码
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
+dashedName: write-reusable-javascript-with-functions
 ---
 
 # --description--
@@ -44,5 +45,57 @@ assert(hiWorldWasLogged);
 assert(/^\s*reusableFunction\(\)\s*/m.test(code));
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```js
+var logOutput = "";
+var originalConsole = console;
+var nativeLog = console.log;
+var hiWorldWasLogged = false;
+function capture() {
+    console.log = function (message) {
+        if(message === 'Hi World')  hiWorldWasLogged = true;
+        if(message && message.trim) logOutput = message.trim();
+        if(nativeLog.apply) {
+          nativeLog.apply(originalConsole, arguments);
+        } else {
+          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
+          nativeLog(nativeMsg);
+        }
+    };
+}
+
+function uncapture() {
+  console.log = nativeLog;
+}
+
+capture();
+```
+
+## --after-user-code--
+
+```js
+uncapture();
+
+if (typeof reusableFunction !== "function") { 
+  (function() { return "reusableFunction is not defined"; })();
+} else {
+  (function() { return logOutput || "console.log never called"; })();
+}
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+function reusableFunction() {
+  console.log("Hi World");
+}
+reusableFunction();
+```

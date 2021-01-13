@@ -3,6 +3,7 @@ id: 5900f3d01000cf542c50fee3
 title: 问题100：安排概率
 challengeType: 5
 videoUrl: ''
+dashedName: problem-100-arranged-probability
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler100(), 756872327473);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function arrangedProbability() {
+
+  return true;
+}
+
+arrangedProbability();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

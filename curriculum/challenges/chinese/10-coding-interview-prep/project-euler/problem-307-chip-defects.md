@@ -3,6 +3,7 @@ id: 5900f4a01000cf542c50ffb2
 title: 问题307：芯片缺陷
 challengeType: 5
 videoUrl: ''
+dashedName: problem-307-chip-defects
 ---
 
 # --description--
@@ -21,5 +22,21 @@ k个缺陷随机分布在一家工厂生产的n个集成电路芯片中（在芯
 assert.strictEqual(euler307(), 0.7311720251);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler307() {
+
+  return true;
+}
+
+euler307();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

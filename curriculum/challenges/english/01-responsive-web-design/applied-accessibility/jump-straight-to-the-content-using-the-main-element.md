@@ -4,6 +4,7 @@ title: Jump Straight to the Content Using the main Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7zuE'
 forumTopicId: 301018
+dashedName: jump-straight-to-the-content-using-the-main-element
 ---
 
 # --description--

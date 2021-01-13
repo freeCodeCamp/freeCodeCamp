@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616b
 title: 使用默认的 Props
 challengeType: 6
 forumTopicId: 301418
+dashedName: use-default-props
 ---
 
 # --description--
@@ -38,5 +39,40 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+
+// Change code below this line
+ShoppingCart.defaultProps = {
+  items: 0
+}
+```

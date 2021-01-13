@@ -3,6 +3,7 @@ id: 599d1566a02b571412643b84
 title: 埃塞俄比亚的乘法
 challengeType: 5
 videoUrl: ''
+dashedName: ethiopian-multiplication
 ---
 
 # --description--
@@ -47,5 +48,36 @@ assert.equal(eth_mult(56, 98), 5488);
 assert.equal(eth_mult(63, 74), 4662);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function eth_mult(a, b) {
+
+}
+```
+
 # --solutions--
 
+```js
+function eth_mult(a, b) {
+  let sum = 0; a = [a]; b = [b];
+
+  let half = a => a / 2,
+    double = a => a * 2,
+    is_even = a => a % 2 == 0;
+
+  while (a[0] !== 1) {
+    a.unshift(Math.floor(half(a[0])));
+    b.unshift(double(b[0]));
+  }
+
+  for (let i = a.length - 1; i > 0; i -= 1) {
+    if (!is_even(a[i])) {
+      sum += b[i];
+    }
+  }
+  return sum + b[0];
+}
+```

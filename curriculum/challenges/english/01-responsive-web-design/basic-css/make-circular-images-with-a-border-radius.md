@@ -4,6 +4,7 @@ title: Make Circular Images with a border-radius
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvrcB'
 forumTopicId: 18229
+dashedName: make-circular-images-with-a-border-radius
 ---
 
 # --description--

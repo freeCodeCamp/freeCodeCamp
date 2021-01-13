@@ -3,6 +3,7 @@ id: 5900f37a1000cf542c50fe8d
 title: 问题14：最长的Collat​​z序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-14-longest-collatz-sequence
 ---
 
 # --description--
@@ -51,5 +52,44 @@ assert.strictEqual(longestCollatzSequence(54512), 52527);
 assert.strictEqual(longestCollatzSequence(100000), 77031);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function longestCollatzSequence(limit) {
+
+  return true;
+}
+
+longestCollatzSequence(14);
+```
+
 # --solutions--
 
+```js
+function longestCollatzSequence(limit) {
+  let longest = 1;
+  let maxLength = 1;
+  for (let i = Math.floor(limit / 2); i < limit; i++) {
+    let len = colLen(i);
+    if (len > maxLength) {
+      longest = i;
+      maxLength = len;
+    }
+  }
+  return longest;
+}
+
+const knownSequence = { '1': 1 };
+
+function colLen(n) {
+  if (knownSequence[n]) {
+    return knownSequence[n];
+  } else {
+    const len = n % 2 === 0 ? colLen(n / 2) + 1 : colLen((3 * n + 1) / 2) + 2;
+    knownSequence[n] = len;
+    return len;
+  }
+}
+```

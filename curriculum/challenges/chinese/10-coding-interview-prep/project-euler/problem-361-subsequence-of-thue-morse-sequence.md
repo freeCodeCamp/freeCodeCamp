@@ -3,6 +3,7 @@ id: 5900f4d51000cf542c50ffe8
 title: 问题361：Thue-Morse序列的子序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-361-subsequence-of-thue-morse-sequence
 ---
 
 # --description--
@@ -27,5 +28,21 @@ An的前几个术语如下：n0123456789101112 ... An012345691011121318 ...
 assert.strictEqual(euler361(), 178476944);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler361() {
+
+  return true;
+}
+
+euler361();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

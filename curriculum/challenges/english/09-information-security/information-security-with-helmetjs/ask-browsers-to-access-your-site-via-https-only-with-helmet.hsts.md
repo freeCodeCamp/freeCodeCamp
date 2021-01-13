@@ -3,6 +3,7 @@ id: 587d8248367417b2b2512c3c
 title: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
 challengeType: 2
 forumTopicId: 301573
+dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 ---
 
 # --description--
@@ -50,8 +51,6 @@ maxAge should be equal to 7776000 s (90 days)
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036160
 title: 在 JSX 中定义一个 HTML Class
 challengeType: 6
 forumTopicId: 301393
+dashedName: define-an-html-class-in-jsx
 ---
 
 # --description--
@@ -33,5 +34,29 @@ assert.strictEqual(JSX.type, 'div');
 assert.strictEqual(JSX.props.className, 'myDiv');
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(JSX, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const JSX = (
+  <div>
+    <h1>Add a class to this div</h1>
+  </div>
+);
+```
+
 # --solutions--
 
+```jsx
+const JSX = (
+<div className = 'myDiv'>
+  <h1>Add a class to this div</h1>
+</div>);
+```

@@ -3,6 +3,7 @@ id: 5900f44f1000cf542c50ff61
 title: 'Problem 227: The Chase'
 challengeType: 5
 forumTopicId: 301870
+dashedName: problem-227-the-chase
 ---
 
 # --description--

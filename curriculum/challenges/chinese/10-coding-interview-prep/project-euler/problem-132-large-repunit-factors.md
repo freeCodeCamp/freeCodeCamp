@@ -3,6 +3,7 @@ id: 5900f3f11000cf542c50ff03
 title: 问题132：大的重新安置因素
 challengeType: 5
 videoUrl: ''
+dashedName: problem-132-large-repunit-factors
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler132(), 843296);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler132() {
+
+  return true;
+}
+
+euler132();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

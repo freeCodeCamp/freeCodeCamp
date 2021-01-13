@@ -3,6 +3,7 @@ id: 5900f4d91000cf542c50ffeb
 title: 问题363：Bézier曲线
 challengeType: 5
 videoUrl: ''
+dashedName: problem-363-bzier-curves
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler363(), 0.0000372091);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler363() {
+
+  return true;
+}
+
+euler363();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

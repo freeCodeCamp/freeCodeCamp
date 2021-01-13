@@ -4,6 +4,7 @@ title: 了解互补色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
 forumTopicId: 301056
+dashedName: learn-about-complementary-colors
 ---
 
 # --description--
@@ -38,5 +39,50 @@ class 为 `yellow` 的 `div` 元素的 `background-color` 属性值应为 `yello
 assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  .blue {
+    background-color: #000000;
+  }
+  .yellow {
+    background-color: #000000;
+  }
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="blue"></div>
+<div class="yellow"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  .blue {
+    background-color: blue;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="blue"></div>
+<div class="yellow"></div>
+```

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ec4
 title: JortSort
 challengeType: 5
 videoUrl: ''
+dashedName: jortsort
 ---
 
 # --description--
@@ -59,5 +60,29 @@ assert.equal(jortsort([5, 4, 3, 2, 1]), false);
 assert.equal(jortsort([1, 1, 1, 1, 1]), true);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function jortsort(array) {
+
+}
+```
+
 # --solutions--
 
+```js
+function jortsort(array) {
+  // sort the array
+  var originalArray = array.slice(0);
+  array.sort( function(a,b){return a - b} );
+
+  // compare to see if it was originally sorted
+  for (var i = 0; i < originalArray.length; ++i) {
+    if (originalArray[i] !== array[i]) return false;
+  }
+
+  return true;
+};
+```

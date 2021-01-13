@@ -3,6 +3,7 @@ id: 5900f3fe1000cf542c50ff11
 title: 问题146：调查素数模式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-146-investigating-a-prime-pattern
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler146(), 676333270);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler146() {
+
+  return true;
+}
+
+euler146();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5e6dd1278e6ca105cde40ea9
 title: Longest common subsequence
 challengeType: 5
 forumTopicId: 385271
+dashedName: longest-common-subsequence
 ---
 
 # --description--

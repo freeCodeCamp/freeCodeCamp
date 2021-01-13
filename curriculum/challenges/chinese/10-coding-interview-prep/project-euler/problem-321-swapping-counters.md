@@ -3,6 +3,7 @@ id: 5900f4ae1000cf542c50ffc0
 title: 问题321：交换计数器
 challengeType: 5
 videoUrl: ''
+dashedName: problem-321-swapping-counters
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler321(), 2470433131948040);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler321() {
+
+  return true;
+}
+
+euler321();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

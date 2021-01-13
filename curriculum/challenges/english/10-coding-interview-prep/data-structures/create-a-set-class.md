@@ -3,6 +3,7 @@ id: 8d1323c8c441eddfaeb5bdef
 title: Create a Set Class
 challengeType: 1
 forumTopicId: 301632
+dashedName: create-a-set-class
 ---
 
 # --description--

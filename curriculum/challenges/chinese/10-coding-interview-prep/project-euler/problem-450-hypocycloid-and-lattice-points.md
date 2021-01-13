@@ -3,6 +3,7 @@ id: 5900f52e1000cf542c510041
 title: 问题450：Hypocycloid和Lattice点
 challengeType: 5
 videoUrl: ''
+dashedName: problem-450-hypocycloid-and-lattice-points
 ---
 
 # --description--
@@ -33,5 +34,21 @@ T（3）= 10; T（10）= 524; T（100）= 580442; T（103）= 583108600。
 assert.strictEqual(euler450(), 583333163984220900);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler450() {
+
+  return true;
+}
+
+euler450();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4a21000cf542c50ffb5
 title: 问题310：尼姆广场
 challengeType: 5
 videoUrl: ''
+dashedName: problem-310-nim-square
 ---
 
 # --description--
@@ -25,5 +26,21 @@ Nim Square就像普通的三堆普通游戏Nim一样，但是玩家只能从堆�
 assert.strictEqual(euler310(), 2586528661783);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler310() {
+
+  return true;
+}
+
+euler310();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

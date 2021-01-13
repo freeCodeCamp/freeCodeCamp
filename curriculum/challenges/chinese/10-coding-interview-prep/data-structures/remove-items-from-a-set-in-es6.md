@@ -3,6 +3,7 @@ id: 587d8254367417b2b2512c71
 title: 从ES6中的集中删除项目
 challengeType: 1
 videoUrl: ''
+dashedName: remove-items-from-a-set-in-es6
 ---
 
 # --description--
@@ -31,5 +32,23 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkSet(){
+   var set = null;
+   return set;
+}
+```
+
 # --solutions--
 
+```js
+function checkSet(){
+var set = new Set([1,2,3,4,5]);
+set.delete(2);
+set.delete(5);
+return set;}
+```

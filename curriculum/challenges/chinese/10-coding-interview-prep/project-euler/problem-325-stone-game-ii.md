@@ -3,6 +3,7 @@ id: 5900f4b11000cf542c50ffc4
 title: 问题325：石头游戏II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-325-stone-game-ii
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(euler325(), 54672965);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler325() {
+
+  return true;
+}
+
+euler325();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

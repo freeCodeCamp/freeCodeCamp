@@ -3,6 +3,7 @@ id: 587d7b83367417b2b2512b33
 title: 使用控制台检查变量值
 challengeType: 1
 forumTopicId: 18372
+dashedName: use-the-javascript-console-to-check-the-value-of-a-variable
 ---
 
 # --description--
@@ -29,5 +30,23 @@ Chrome 和 Firefox 都有出色的 JavaScript 控制台（也称为 DevTools）�
 assert(code.match(/console\.log\(a\)/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let a = 5;
+let b = 1;
+a++;
+// Only change code below this line
+
+
+let sumAB = a + b;
+console.log(sumAB);
+```
+
 # --solutions--
 
+```js
+var a = 5; console.log(a);
+```

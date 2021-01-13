@@ -4,6 +4,7 @@ title: Change an Element's Relative Position
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVmMtZ'
 forumTopicId: 301044
+dashedName: change-an-elements-relative-position
 ---
 
 # --description--

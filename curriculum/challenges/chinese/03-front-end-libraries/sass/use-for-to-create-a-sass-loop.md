@@ -3,6 +3,7 @@ id: 587d7dbe367417b2b2512bb9
 title: 使用 @for 创建一个 Sass 循环
 challengeType: 0
 forumTopicId: 301462
+dashedName: use-for-to-create-a-sass-loop
 ---
 
 # --description--
@@ -83,4 +84,56 @@ assert($('.text-4').css('font-size') == '60px');
 assert($('.text-5').css('font-size') == '75px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
 # --solutions--
+
+```html
+<style type='text/scss'>
+
+@for $i from 1 through 5 {
+  .text-#{$i} { font-size: 15px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+---
+
+```html
+<style type='text/scss'>
+
+@for $i from 1 to 6 {
+  .text-#{$i} { font-size: 15px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```

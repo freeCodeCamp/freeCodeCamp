@@ -4,6 +4,7 @@ title: 使用 For 循环反向遍历数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
+dashedName: count-backwards-with-a-for-loop
 ---
 
 # --description--
@@ -47,5 +48,28 @@ assert(code.match(/myArray.push/));
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [];
+for (var i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+```

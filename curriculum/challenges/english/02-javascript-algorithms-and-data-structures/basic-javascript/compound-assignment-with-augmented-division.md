@@ -4,6 +4,7 @@ title: Compound Assignment With Augmented Division
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvKT2'
 forumTopicId: 16659
+dashedName: compound-assignment-with-augmented-division
 ---
 
 # --description--

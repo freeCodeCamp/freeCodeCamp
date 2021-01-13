@@ -4,6 +4,7 @@ title: 数字递减
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
+dashedName: decrement-a-number-with-javascript
 ---
 
 # --description--
@@ -51,5 +52,26 @@ assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 assert(/var myVar = 11;/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'myVar = ' + z;})(myVar);
+```
+
+## --seed-contents--
+
+```js
+var myVar = 11;
+
+// Only change code below this line
+myVar = myVar - 1;
+```
+
 # --solutions--
 
+```js
+var myVar = 11;
+myVar--;
+```

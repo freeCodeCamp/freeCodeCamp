@@ -3,6 +3,7 @@ id: 595671d4d2cdc305f0d5b36f
 title: 来自两个数组的哈希
 challengeType: 5
 videoUrl: ''
+dashedName: hash-from-two-arrays
 ---
 
 # --description--
@@ -57,5 +58,46 @@ assert.deepEqual(arrToObj(...testCases[4]), res[4]);
 assert.deepEqual(arrToObj(...testCases[5]), res[5]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCases = [
+  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd', 'e']],
+  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd']],
+  [[1, 2, 3], ['a', 'b', 'c', 'd', 'e']],
+  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]],
+  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4]],
+  [['a', 'b', 'c'], [1, 2, 3, 4, 5]]
+];
+
+const res = [
+  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e' },
+  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: undefined },
+  { 1: 'a', 2: 'b', 3: 'c' },
+  { a: 1, b: 2, c: 3, d: 4, e: 5 },
+  { a: 1, b: 2, c: 3, d: 4, e: undefined },
+  { a: 1, b: 2, c: 3 }
+];
+```
+
+## --seed-contents--
+
+```js
+function arrToObj (keys, vals) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function arrToObj (keys, vals) {
+  return keys.reduce((map, key, index) => {
+    map[key] = vals[index];
+    return map;
+  }, {});
+}
+```

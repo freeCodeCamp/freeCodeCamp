@@ -3,6 +3,7 @@ id: a8e512fbe388ac2f9198f0fa
 title: 找出包含特定键值对的对象
 challengeType: 5
 forumTopicId: 16092
+dashedName: wherefore-art-thou
 ---
 
 # --description--
@@ -96,5 +97,34 @@ assert.deepEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function whatIsInAName(collection, source) {
+  var arr = [];
+  // Only change code below this line
+
+
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+```
+
 # --solutions--
 
+```js
+function whatIsInAName(collection, source) {
+  var arr = [];
+  var keys = Object.keys(source);
+  collection.forEach(function(e) {
+    if(keys.every(function(key) {return e[key] === source[key];})) {
+      arr.push(e);
+    }
+  });
+  return arr;
+}
+```

@@ -3,6 +3,7 @@ id: 587d7dae367417b2b2512b79
 title: 扩展构造函数以接收参数
 challengeType: 1
 forumTopicId: 18235
+dashedName: extend-constructors-to-receive-arguments
 ---
 
 # --description--
@@ -65,5 +66,24 @@ assert(new Dog('Clifford').numLegs === 4);
 assert(terrier instanceof Dog);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog() {
+
+}
+```
+
 # --solutions--
 
+```js
+function Dog (name, color) {
+  this.numLegs = 4;
+  this.name = name;
+  this.color = color;
+}
+
+const terrier = new Dog();
+```

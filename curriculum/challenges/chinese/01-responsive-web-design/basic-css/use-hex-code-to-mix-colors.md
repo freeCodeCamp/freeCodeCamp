@@ -4,6 +4,7 @@ title: 使用十六进制编码混合颜色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
+dashedName: use-hex-code-to-mix-colors
 ---
 
 # --description--
@@ -74,5 +75,58 @@ assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
 assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .red-text {
+    color: black;
+  }
+  .green-text {
+    color: black;
+  }
+  .dodger-blue-text {
+    color: black;
+  }
+  .orange-text {
+    color: black;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="green-text">I am green!</h1>
+
+<h1 class="dodger-blue-text">I am dodger blue!</h1>
+
+<h1 class="orange-text">I am orange!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  .red-text {
+    color: #FF0000;
+  }
+  .green-text {
+    color: #00FF00;
+  }
+  .dodger-blue-text {
+    color: #1E90FF;
+  }
+  .orange-text {
+    color: #FFA500;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="green-text">I am green!</h1>
+
+<h1 class="dodger-blue-text">I am dodger blue!</h1>
+
+<h1 class="orange-text">I am orange!</h1>
+```

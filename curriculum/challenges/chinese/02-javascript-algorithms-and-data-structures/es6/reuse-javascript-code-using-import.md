@@ -3,6 +3,7 @@ id: 587d7b8c367417b2b2512b55
 title: 通过 import 复用 JavaScript 代码
 challengeType: 1
 forumTopicId: 301208
+dashedName: reuse-javascript-code-using-import
 ---
 
 # --description--
@@ -47,5 +48,23 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+  
+// Only change code above this line
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+```
+
 # --solutions--
 
+```js
+import { uppercaseString, lowercaseString } from './string_functions.js';
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+```

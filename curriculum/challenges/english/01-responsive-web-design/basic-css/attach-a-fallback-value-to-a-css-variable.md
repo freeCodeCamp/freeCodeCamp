@@ -4,6 +4,7 @@ title: Attach a Fallback value to a CSS Variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
+dashedName: attach-a-fallback-value-to-a-css-variable
 ---
 
 # --description--

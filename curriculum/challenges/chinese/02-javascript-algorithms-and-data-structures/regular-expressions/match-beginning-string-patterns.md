@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9d
 title: 匹配字符串的开头
 challengeType: 1
 forumTopicId: 301349
+dashedName: match-beginning-string-patterns
 ---
 
 # --description--
@@ -51,5 +52,20 @@ assert(calRegex.test('Cal and Ricky both like racing.'));
 assert(!calRegex.test('Ricky and Cal both like racing.'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /change/; // Change this line
+let result = calRegex.test(rickyAndCal);
+```
+
 # --solutions--
 
+```js
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
+```

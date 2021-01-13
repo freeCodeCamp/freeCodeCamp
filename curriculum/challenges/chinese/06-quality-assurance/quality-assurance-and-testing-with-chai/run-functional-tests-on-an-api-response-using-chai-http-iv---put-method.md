@@ -3,6 +3,7 @@ id: 587d824f367417b2b2512c5b
 title: 使用 Chai-HTTP 测试 API 响应结果 (4)—PUT 方法
 challengeType: 2
 forumTopicId: 301591
+dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-method
 ---
 
 # --description--
@@ -105,3 +106,10 @@ forumTopicId: 301591
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

@@ -4,6 +4,8 @@ title: 考虑色盲用户的需求仔细选择传达信息的颜色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437as3'
 forumTopicId: 301011
+dashedName: >-
+  avoid-colorblindness-issues-by-carefully-choosing-colors-that-convey-information
 ---
 
 # --description--
@@ -26,5 +28,46 @@ Camper Cat 正在测试一个重要按钮的不同样式。在色轮上，用于
 assert($('button').css('color') == 'rgb(0, 51, 102)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<head>
+  <style>
+  button {
+    color: #33FF33;
+    background-color: #FFFF33;
+    font-size: 14px;
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Danger!</h1>
+  </header>
+  <button>Delete Internet</button>
+</body>
+```
+
 # --solutions--
 
+```html
+<head>
+  <style>
+    button {
+      color: #003366;
+      background-color: #FFFF33;
+      font-size: 14px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Danger!</h1>
+  </header>
+  <button>Delete Internet</button>
+</body>
+```

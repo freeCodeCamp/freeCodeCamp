@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c87
 title: Create a Doubly Linked List
 challengeType: 1
 forumTopicId: 301626
+dashedName: create-a-doubly-linked-list
 ---
 
 # --description--

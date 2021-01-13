@@ -3,6 +3,7 @@ id: 5900f4911000cf542c50ffa3
 title: 问题292：勾股多边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-292-pythagorean-polygons
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler292(), 3600060866);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler292() {
+
+  return true;
+}
+
+euler292();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

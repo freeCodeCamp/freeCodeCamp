@@ -3,6 +3,7 @@ id: 5900f5431000cf542c510055
 title: 问题470：超级拉姆沃克
 challengeType: 5
 videoUrl: ''
+dashedName: problem-470-super-ramvok
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(euler470(), 147668794);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler470() {
+
+  return true;
+}
+
+euler470();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -4,6 +4,7 @@ title: 使用 margin 属性将元素水平居中
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJqU4'
 forumTopicId: 301043
+dashedName: center-an-element-horizontally-using-the-margin-property
 ---
 
 # --description--
@@ -24,5 +25,32 @@ forumTopicId: 301043
 assert(code.match(/margin:\s*?auto;/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+
+  }
+</style>
+<div></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+</style>
+<div></div>
+```

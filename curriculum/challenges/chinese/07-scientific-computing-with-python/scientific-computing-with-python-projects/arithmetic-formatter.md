@@ -1,6 +1,7 @@
 ---
 id: 5e44412c903586ffb414c94c
 challengeType: 10
+dashedName: arithmetic-formatter
 ---
 
 # --description--
@@ -32,3 +33,10 @@ It should correctly format an arithmetic problem and pass all tests.
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
+  Please check our contributing guidelines to learn more.
+*/
+```

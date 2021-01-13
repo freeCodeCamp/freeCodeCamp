@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c49
 title: 测试真实性
 challengeType: 2
 videoUrl: ''
+dashedName: test-for-truthiness
 ---
 
 # --description--
@@ -91,3 +92,10 @@ assert.isTrue(1, '不过能通过，因为值是数字 1');
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

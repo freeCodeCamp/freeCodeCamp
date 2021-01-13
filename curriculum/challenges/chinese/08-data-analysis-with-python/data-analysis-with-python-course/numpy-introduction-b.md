@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c153
 challengeType: 11
 videoId: YIqgrNLAZkA
+dashedName: numpy-introduction-b
 ---
 
 # --description--
@@ -35,9 +36,4 @@ About how much memory does the integer `5` consume in plain Python?
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

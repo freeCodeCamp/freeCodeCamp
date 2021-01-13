@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036153
 title: 注册 Store 监听器
 challengeType: 6
 forumTopicId: 301446
+dashedName: register-a-store-listener
 ---
 
 # --description--
@@ -40,5 +41,72 @@ assert(
 assert(store.getState() === count);
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```js
+count = 0;
+```
+
+## --seed-contents--
+
+```js
+const ADD = 'ADD';
+
+const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+
+// Global count variable:
+let count = 0;
+
+// Change code below this line
+
+// Change code above this line
+
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+```
+
 # --solutions--
 
+```js
+const ADD = 'ADD';
+
+const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+ let count = 0;
+// Change code below this line
+
+store.subscribe( () =>
+ {
+ count++;
+ }
+);
+
+// Change code above this line
+
+store.dispatch({type: ADD});
+store.dispatch({type: ADD});
+store.dispatch({type: ADD});
+```

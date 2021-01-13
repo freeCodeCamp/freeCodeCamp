@@ -3,6 +3,7 @@ id: 587d7fb4367417b2b2512bff
 title: 给 package.json 添加版本号
 challengeType: 2
 forumTopicId: 301525
+dashedName: add-a-version-to-your-package-json
 ---
 
 # --description--
@@ -36,3 +37,10 @@ package.json 应该包含一个有效的 'version' 键。
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

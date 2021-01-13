@@ -2,6 +2,7 @@
 id: 5e601bf95ac9d0ecd8b94afd
 title: Sudoku Solver
 challengeType: 4
+dashedName: sudoku-solver
 ---
 
 # --description--
@@ -343,8 +344,6 @@ async (getUserInput) => {
   }
 };
 ```
-
-# --seed--
 
 # --solutions--
 

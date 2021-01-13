@@ -3,6 +3,7 @@ id: af2170cad53daa0770fabdea
 title: 比较字符串
 challengeType: 5
 forumTopicId: 16025
+dashedName: mutations
 ---
 
 # --description--
@@ -95,5 +96,28 @@ assert(mutation(['Tiger', 'Zebra']) === false);
 assert(mutation(['Noel', 'Ole']) === true);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function mutation(arr) {
+  return arr;
+}
+
+mutation(["hello", "hey"]);
+```
+
 # --solutions--
 
+```js
+function mutation(arr) {
+  let hash = Object.create(null);
+
+  arr[0].toLowerCase().split('').forEach(c => hash[c] = true);
+
+  return !arr[1].toLowerCase().split('').filter(c => !hash[c]).length;
+}
+
+mutation(["hello", "hey"]);
+```

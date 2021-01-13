@@ -3,6 +3,7 @@ id: 5e46f983ac417301a38fb933
 title: SHA-1 Password Cracker
 challengeType: 10
 helpCategory: Python
+dashedName: sha-1-password-cracker
 ---
 
 # --description--
@@ -31,8 +32,6 @@ It should pass all Python tests.
 ```js
 
 ```
-
-# --seed--
 
 # --solutions--
 

@@ -4,6 +4,7 @@ title: 理解布尔值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
+dashedName: understanding-boolean-values
 ---
 
 # --description--
@@ -31,5 +32,31 @@ assert(typeof welcomeToBooleans() === 'boolean');
 assert(welcomeToBooleans() === true);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+welcomeToBooleans();
+```
+
+## --seed-contents--
+
+```js
+function welcomeToBooleans() {
+
+  // Only change code below this line
+
+  return false; // Change this line
+
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+function welcomeToBooleans() {
+  return true; // Change this line
+}
+```

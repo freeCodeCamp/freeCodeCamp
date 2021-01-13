@@ -4,6 +4,7 @@ title: Standardize Times with the HTML5 datetime Attribute
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025
+dashedName: standardize-times-with-the-html5-datetime-attribute
 ---
 
 # --description--

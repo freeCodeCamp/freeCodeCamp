@@ -4,6 +4,7 @@ title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
+dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 ---
 
 # --description--

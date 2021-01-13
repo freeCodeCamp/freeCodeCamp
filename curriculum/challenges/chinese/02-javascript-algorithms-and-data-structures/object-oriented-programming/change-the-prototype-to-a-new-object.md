@@ -3,6 +3,7 @@ id: 587d7daf367417b2b2512b7f
 title: 将原型更改为新对象
 challengeType: 1
 forumTopicId: 301316
+dashedName: change-the-prototype-to-a-new-object
 ---
 
 # --description--
@@ -69,5 +70,34 @@ assert(typeof Dog.prototype.eat === 'function');
 assert(typeof Dog.prototype.describe === 'function');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  // Only change code below this line
+
+};
+```
+
 # --solutions--
 
+```js
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype = {
+numLegs: 4,
+  eat () {
+    console.log('nom nom nom');
+  },
+  describe () {
+    console.log('My name is ' + this.name);
+  }
+};
+```

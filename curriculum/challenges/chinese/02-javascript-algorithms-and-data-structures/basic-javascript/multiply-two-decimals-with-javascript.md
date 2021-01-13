@@ -4,6 +4,7 @@ title: 两个小数相乘
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2GeHq'
 forumTopicId: 301173
+dashedName: multiply-two-decimals-with-javascript
 ---
 
 # --description--
@@ -30,5 +31,22 @@ assert(product === 5.0);
 assert(/\*/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(y){return 'product = '+y;})(product);
+```
+
+## --seed-contents--
+
+```js
+var product = 2.0 * 0.0;
+```
+
 # --solutions--
 
+```js
+var product = 2.0 * 2.5;
+```

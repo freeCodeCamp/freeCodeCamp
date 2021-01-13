@@ -3,6 +3,7 @@ id: 8d5123c8c441eddfaeb5bdef
 title: 实施冒泡排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-bubble-sort
 ---
 
 # --description--
@@ -79,5 +80,56 @@ assert.sameMembers(
 assert.strictEqual(code.search(/\.sort\(/), -1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
+
+function isBuiltInSortUsed(){
+  let sortUsed = false;
+  Array.prototype.sort = () => sortUsed = true;
+  bubbleSort([0, 1]);
+  return !sortUsed;
+}
+```
+
+## --seed-contents--
+
+```js
+function bubbleSort(array) {
+  // Only change code below this line
+  return array;
+  // Only change code above this line
+}
+
+bubbleSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+```
+
 # --solutions--
 
+```js
+function bubbleSort(array) {
+  for (let i = 0; i < array.length; i++) {
+    let swapped = false;
+    for (let j = 1; j < array.length; j++) {
+      if (array[j - 1] > array[j]) {
+        let temp = array[j-1];
+        array[j-1] =  array[j];
+        array[j] = temp;
+        swapped = true;
+      }
+    }
+    if (swapped === false) {
+      break;
+    }
+  }
+  return array;
+}
+```

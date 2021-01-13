@@ -3,6 +3,7 @@ id: 594810f028c0303b75339acf
 title: 阿克曼功能
 challengeType: 5
 videoUrl: ''
+dashedName: ackermann-function
 ---
 
 # --description--
@@ -41,5 +42,20 @@ assert(ack(2, 5) === 13);
 assert(ack(3, 3) === 61);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function ack(m, n) {
+
+}
+```
+
 # --solutions--
 
+```js
+function ack(m, n) {
+  return m === 0 ? n + 1 : ack(m - 1, n === 0 ? 1 : ack(m, n - 1));
+}
+```

@@ -3,6 +3,7 @@ id: 587d7da9367417b2b2512b6a
 title: 在不更改原始数组的前提下返回排序后的数组
 challengeType: 1
 forumTopicId: 301237
+dashedName: return-a-sorted-array-without-changing-the-original-array
 ---
 
 # --description--
@@ -42,5 +43,29 @@ assert(
 assert(!nonMutatingSort.toString().match(/[23569]/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+nonMutatingSort(globalArray);
+```
+
 # --solutions--
 
+```js
+var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  // Only change code below this line
+  return [].concat(arr).sort((a,b) => a-b);
+  // Only change code above this line
+}
+nonMutatingSort(globalArray);
+```

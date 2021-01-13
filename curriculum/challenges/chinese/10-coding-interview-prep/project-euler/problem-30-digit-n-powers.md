@@ -3,6 +3,7 @@ id: 5900f38a1000cf542c50fe9d
 title: 问题30：数字n次方
 challengeType: 5
 videoUrl: ''
+dashedName: problem-30-digit-n-powers
 ---
 
 # --description--
@@ -47,5 +48,21 @@ assert(digitnPowers(4) == 19316);
 assert(digitnPowers(5) == 443839);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function digitnPowers(n) {
+
+  return n;
+}
+
+digitnPowers(5);
+```
+
 # --solutions--
 
+```js
+// solution required
+```

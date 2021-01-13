@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036181
 title: 介绍内联样式
 challengeType: 6
 forumTopicId: 301395
+dashedName: introducing-inline-styles
 ---
 
 # --description--
@@ -66,5 +67,34 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<Colorful />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div>Big Red</div>
+    );
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{color: "red", fontSize: 72}}>Big Red</div>
+    );
+  }
+};
+```

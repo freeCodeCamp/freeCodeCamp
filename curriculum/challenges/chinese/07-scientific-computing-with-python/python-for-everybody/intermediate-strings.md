@@ -2,6 +2,7 @@
 id: 5e7b9f070b6c005b0e76f061
 challengeType: 11
 videoId: KgT_fYLXnyk
+dashedName: intermediate-strings
 ---
 
 # --description--
@@ -44,9 +45,4 @@ na
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

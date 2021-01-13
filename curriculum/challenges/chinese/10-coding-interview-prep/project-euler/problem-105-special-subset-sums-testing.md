@@ -3,6 +3,7 @@ id: 5900f3d61000cf542c50fee8
 title: 问题105：特殊子集总和：测试
 challengeType: 5
 videoUrl: ''
+dashedName: problem-105-special-subset-sums-testing
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler105(), 73702);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler105() {
+
+  return true;
+}
+
+euler105();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -4,6 +4,7 @@ title: 了解三原色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRDAb'
 forumTopicId: 301057
+dashedName: learn-about-tertiary-colors
 ---
 
 # --description--
@@ -48,5 +49,67 @@ assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
 assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+
+  .orange {
+    background-color: #000000;
+  }
+
+  .cyan {
+    background-color: #000000;
+  }
+
+  .raspberry {
+    background-color: #000000;
+  }
+
+  div {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+  }
+</style>
+
+<div class="orange"></div>
+<div class="cyan"></div>
+<div class="raspberry"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+
+  .orange {
+    background-color: #FF7F00;
+  }
+
+  .cyan {
+    background-color: #00FFFF;
+  }
+
+  .raspberry {
+    background-color: #FF007F;
+  }
+
+  div {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+  }
+</style>
+<div class="orange"></div>
+<div class="cyan"></div>
+<div class="raspberry"></div>
+```

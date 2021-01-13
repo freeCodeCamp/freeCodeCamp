@@ -3,6 +3,7 @@ id: 587d7dbc367417b2b2512bb1
 title: 创建一个简单的 JSX 元素
 challengeType: 6
 forumTopicId: 301390
+dashedName: create-a-simple-jsx-element
 ---
 
 # --description--
@@ -35,5 +36,22 @@ assert(JSX.type === 'h1');
 assert(Enzyme.shallow(JSX).contains('Hello JSX!'));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(JSX, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const JSX = <div></div>;
+```
+
 # --solutions--
 
+```jsx
+const JSX = <h1>Hello JSX!</h1>;
+```

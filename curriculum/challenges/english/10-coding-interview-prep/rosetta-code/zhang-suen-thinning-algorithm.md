@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad7
 title: Zhang-Suen thinning algorithm
 challengeType: 5
 forumTopicId: 302347
+dashedName: zhang-suen-thinning-algorithm
 ---
 
 # --description--

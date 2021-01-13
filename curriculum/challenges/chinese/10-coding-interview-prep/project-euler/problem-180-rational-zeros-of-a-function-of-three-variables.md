@@ -3,6 +3,7 @@ id: 5900f4201000cf542c50ff33
 title: 问题180：三个变量函数的有理零点
 challengeType: 5
 videoUrl: ''
+dashedName: problem-180-rational-zeros-of-a-function-of-three-variables
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler180(), 285196020571078980);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler180() {
+
+  return true;
+}
+
+euler180();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f43c1000cf542c50ff4e
 title: 问题207：整数分区方程
 challengeType: 5
 videoUrl: ''
+dashedName: problem-207-integer-partition-equations
 ---
 
 # --description--
@@ -25,5 +26,21 @@ t也是整数的分区称为完美。对于任何m≥1，让P（m）为k≤m的�
 assert.strictEqual(euler207(), 44043947822);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler207() {
+
+  return true;
+}
+
+euler207();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

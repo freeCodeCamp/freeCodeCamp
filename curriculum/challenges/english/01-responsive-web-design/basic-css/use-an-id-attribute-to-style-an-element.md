@@ -4,6 +4,7 @@ title: Use an id Attribute to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
+dashedName: use-an-id-attribute-to-style-an-element
 ---
 
 # --description--

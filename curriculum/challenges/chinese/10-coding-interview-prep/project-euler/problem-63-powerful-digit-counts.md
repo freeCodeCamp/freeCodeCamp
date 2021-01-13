@@ -3,6 +3,7 @@ id: 5900f3ab1000cf542c50febe
 title: 问题63：强大的数字计数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-63-powerful-digit-counts
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler63(), 49);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function powerfulDigitCounts() {
+
+  return true;
+}
+
+powerfulDigitCounts();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -2,6 +2,7 @@
 id: 5ea9997bbec2e9bc47e94db4
 challengeType: 11
 videoId: z_qkqZS7KZ4
+dashedName: developing-a-port-scanner
 ---
 
 # --question--
@@ -25,9 +26,4 @@ If there is an error or if no host is found, `.connect()` raises an exception wh
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

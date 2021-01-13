@@ -3,6 +3,7 @@ id: 5900f4671000cf542c50ff7a
 title: 问题251：卡尔达诺三胞胎
 challengeType: 5
 videoUrl: ''
+dashedName: problem-251-cardano-triplets
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler251(), 18946051);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler251() {
+
+  return true;
+}
+
+euler251();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

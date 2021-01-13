@@ -1,6 +1,7 @@
 ---
 id: 5e46f8d6ac417301a38fb92d
 challengeType: 10
+dashedName: rock-paper-scissors
 ---
 
 # --description--
@@ -23,3 +24,8 @@ It should pass all Python tests.
 
 # --solutions--
 
+```py
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
+  # Please check our contributing guidelines to learn more.
+```

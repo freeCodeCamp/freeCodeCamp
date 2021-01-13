@@ -3,6 +3,7 @@ id: 5900f3e41000cf542c50fef6
 title: 问题119：数字功率总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-119-digit-power-sum
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler119(), 248155780267521);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler119() {
+
+  return true;
+}
+
+euler119();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

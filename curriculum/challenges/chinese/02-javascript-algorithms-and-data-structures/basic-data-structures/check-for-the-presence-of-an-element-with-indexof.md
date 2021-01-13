@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b14
 title: 使用 indexOf() 检查元素是否存在
 challengeType: 1
 forumTopicId: 301154
+dashedName: check-for-the-presence-of-an-element-with-indexof
 ---
 
 # --description--
@@ -61,5 +62,24 @@ assert.strictEqual(quickCheck([true, false, false], undefined), false);
 assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function quickCheck(arr, elem) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+```
+
 # --solutions--
 
+```js
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) >= 0; 
+}
+```

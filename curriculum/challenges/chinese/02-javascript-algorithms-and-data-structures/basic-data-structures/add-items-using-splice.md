@@ -3,6 +3,7 @@ id: 587d78b3367417b2b2512b11
 title: 使用 splice() 添加元素
 challengeType: 1
 forumTopicId: 301152
+dashedName: add-items-using-splice
 ---
 
 # --description--
@@ -67,5 +68,26 @@ assert(!/shift|unshift/.test(code));
 assert(!/\[\d\]\s*=/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function htmlColorNames(arr) {
+  // Only change code below this line
+
+  // Only change code above this line
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+```
+
 # --solutions--
 
+```js
+function htmlColorNames(arr) {
+  arr.splice(0,2,'DarkSalmon', 'BlanchedAlmond');
+  return arr;
+}
+```

@@ -3,6 +3,7 @@ id: 5900f4311000cf542c50ff44
 title: 问题197：研究递归定义的序列的行为
 challengeType: 5
 videoUrl: ''
+dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-sequence
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler197(), 1.710637717);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler197() {
+
+  return true;
+}
+
+euler197();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

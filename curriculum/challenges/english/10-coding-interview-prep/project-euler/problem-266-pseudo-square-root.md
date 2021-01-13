@@ -3,6 +3,7 @@ id: 5900f4771000cf542c50ff89
 title: 'Problem 266: Pseudo Square Root'
 challengeType: 5
 forumTopicId: 301915
+dashedName: problem-266-pseudo-square-root
 ---
 
 # --description--

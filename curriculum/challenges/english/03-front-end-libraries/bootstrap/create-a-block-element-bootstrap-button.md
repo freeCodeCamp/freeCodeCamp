@@ -3,6 +3,7 @@ id: bad87fee1348cd8acef08812
 title: Create a Block Element Bootstrap Button
 challengeType: 0
 forumTopicId: 16810
+dashedName: create-a-block-element-bootstrap-button
 ---
 
 # --description--

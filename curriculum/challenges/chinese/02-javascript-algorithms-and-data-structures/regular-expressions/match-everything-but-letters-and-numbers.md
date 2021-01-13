@@ -3,6 +3,7 @@ id: 587d7db8367417b2b2512ba0
 title: 匹配除了字母和数字的所有符号
 challengeType: 1
 forumTopicId: 301353
+dashedName: match-everything-but-letters-and-numbers
 ---
 
 # --description--
@@ -70,5 +71,20 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /change/; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
+```
+
 # --solutions--
 
+```js
+let quoteSample = "The five boxing wizards_jump quickly.";
+let nonAlphabetRegex = /\W/g; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
+```

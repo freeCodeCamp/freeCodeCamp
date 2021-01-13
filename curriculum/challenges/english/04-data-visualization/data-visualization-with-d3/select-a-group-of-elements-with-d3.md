@@ -3,6 +3,7 @@ id: 587d7fa6367417b2b2512bc3
 title: Select a Group of Elements with D3
 challengeType: 6
 forumTopicId: 301490
+dashedName: select-a-group-of-elements-with-d3
 ---
 
 # --description--

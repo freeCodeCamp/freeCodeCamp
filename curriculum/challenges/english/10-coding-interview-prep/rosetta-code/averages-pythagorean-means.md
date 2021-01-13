@@ -3,6 +3,7 @@ id: 594d966a1467eb84194f0086
 title: Averages/Pythagorean means
 challengeType: 5
 forumTopicId: 302227
+dashedName: averagespythagorean-means
 ---
 
 # --description--

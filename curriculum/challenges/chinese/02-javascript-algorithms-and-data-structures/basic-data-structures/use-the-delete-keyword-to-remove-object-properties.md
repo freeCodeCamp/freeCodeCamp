@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b1b
 title: 使用 delete 关键字删除对象属性
 challengeType: 1
 forumTopicId: 301168
+dashedName: use-the-delete-keyword-to-remove-object-properties
 ---
 
 # --description--
@@ -44,5 +45,42 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+// Only change code below this line
+
+// Only change code above this line
+
+console.log(foods);
+```
+
 # --solutions--
 
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+delete foods.oranges;
+delete foods.plums;
+delete foods.strawberries;
+
+console.log(foods);
+```

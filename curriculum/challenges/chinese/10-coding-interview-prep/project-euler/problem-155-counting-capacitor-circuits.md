@@ -3,6 +3,7 @@ id: 5900f4081000cf542c50ff1a
 title: 问题155：计算电容器电路
 challengeType: 5
 videoUrl: ''
+dashedName: problem-155-counting-capacitor-circuits
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler155(), 3857447);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler155() {
+
+  return true;
+}
+
+euler155();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f46c1000cf542c50ff7e
 title: 问题256：无榻榻米房间
 challengeType: 5
 videoUrl: ''
+dashedName: problem-256-tatami-free-rooms
 ---
 
 # --description--
@@ -33,5 +34,21 @@ videoUrl: ''
 assert.strictEqual(euler256(), 85765680);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler256() {
+
+  return true;
+}
+
+euler256();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

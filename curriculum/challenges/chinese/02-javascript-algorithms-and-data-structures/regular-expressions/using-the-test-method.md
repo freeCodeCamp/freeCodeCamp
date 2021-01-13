@@ -3,6 +3,7 @@ id: 587d7db3367417b2b2512b8e
 title: 使用测试方法
 challengeType: 1
 forumTopicId: 301369
+dashedName: using-the-test-method
 ---
 
 # --description--
@@ -38,5 +39,20 @@ assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 assert(result === true);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex; // Change this line
+```
+
 # --solutions--
 
+```js
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
+```

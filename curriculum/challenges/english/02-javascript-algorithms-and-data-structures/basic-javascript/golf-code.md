@@ -4,6 +4,7 @@ title: Golf Code
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195
+dashedName: golf-code
 ---
 
 # --description--

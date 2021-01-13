@@ -3,6 +3,7 @@ id: bad87fee1348bd9acdd08826
 title: Learn How Script Tags and Document Ready Work
 challengeType: 6
 forumTopicId: 18224
+dashedName: learn-how-script-tags-and-document-ready-work
 ---
 
 # --description--

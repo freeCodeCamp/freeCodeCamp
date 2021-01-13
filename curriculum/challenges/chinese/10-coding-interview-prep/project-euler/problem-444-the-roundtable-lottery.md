@@ -3,6 +3,7 @@ id: 5900f52a1000cf542c51003b
 title: 问题444：圆桌会议彩票
 challengeType: 5
 videoUrl: ''
+dashedName: problem-444-the-roundtable-lottery
 ---
 
 # --description--
@@ -32,5 +33,21 @@ videoUrl: ''
 assert.strictEqual(euler444(), 1.200856722e263);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler444() {
+
+  return true;
+}
+
+euler444();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

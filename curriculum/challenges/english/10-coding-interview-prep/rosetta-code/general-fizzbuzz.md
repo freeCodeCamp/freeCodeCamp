@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e78
 title: General FizzBuzz
 challengeType: 5
 forumTopicId: 302273
+dashedName: general-fizzbuzz
 ---
 
 # --description--

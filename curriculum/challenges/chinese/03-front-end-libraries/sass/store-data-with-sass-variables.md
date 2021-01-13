@@ -3,6 +3,7 @@ id: 587d7dbd367417b2b2512bb4
 title: 用 Sass 变量存储数据
 challengeType: 0
 forumTopicId: 301460
+dashedName: store-data-with-sass-variables
 ---
 
 # --description--
@@ -56,5 +57,62 @@ assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
 assert($('h2').css('color') == 'rgb(255, 0, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+
+
+  .header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: red;
+  }
+</style>
+
+<h1 class="header">Learn Sass</h1>
+<div class="blog-post">
+  <h2>Some random title</h2>
+  <p>This is a paragraph with some random text in it</p>
+</div>
+<div class="blog-post">
+  <h2>Header #2</h2>
+  <p>Here is some more random text.</p>
+</div>
+<div class="blog-post">
+  <h2>Here is another header</h2>
+  <p>Even more random text within a paragraph</p>
+</div>
+```
+
 # --solutions--
 
+```html
+<style type='text/scss'>
+  $text-color: red;
+
+  .header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: $text-color;
+  }
+</style>
+
+<h1 class="header">Learn Sass</h1>
+<div class="blog-post">
+  <h2>Some random title</h2>
+  <p>This is a paragraph with some random text in it</p>
+</div>
+<div class="blog-post">
+  <h2>Header #2</h2>
+  <p>Here is some more random text.</p>
+</div>
+<div class="blog-post">
+  <h2>Here is another header</h2>
+  <p>Even more random text within a paragraph</p>
+</div>
+```

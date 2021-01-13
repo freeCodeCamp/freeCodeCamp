@@ -3,6 +3,7 @@ id: 5900f45d1000cf542c50ff6f
 title: 'Problem 240: Top Dice'
 challengeType: 5
 forumTopicId: 301887
+dashedName: problem-240-top-dice
 ---
 
 # --description--

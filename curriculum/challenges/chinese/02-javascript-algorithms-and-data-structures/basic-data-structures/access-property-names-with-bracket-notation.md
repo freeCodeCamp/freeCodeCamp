@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b1a
 title: 使用方括号访问属性名称
 challengeType: 1
 forumTopicId: 301150
+dashedName: access-property-names-with-bracket-notation
 ---
 
 # --description--
@@ -59,5 +60,42 @@ assert.strictEqual(checkInventory('bananas'), 13);
 assert.strictEqual(checkInventory('strawberries'), 27);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+
+console.log(checkInventory("apples"));
+```
+
 # --solutions--
 
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+  return foods[scannedItem];
+}
+```

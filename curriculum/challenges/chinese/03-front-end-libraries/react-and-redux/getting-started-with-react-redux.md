@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036141
 title: React 和 Redux 入门
 challengeType: 6
 forumTopicId: 301430
+dashedName: getting-started-with-react-redux
 ---
 
 # --description--
@@ -62,5 +63,40 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+class DisplayMessages extends React.Component {
+  // Change code below this line
+
+  // Change code above this line
+  render() {
+    return <div />
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+  }
+  render() {
+    return <div/>
+  }
+};
+```

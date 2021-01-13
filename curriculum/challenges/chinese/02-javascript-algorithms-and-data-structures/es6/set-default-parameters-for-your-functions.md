@@ -3,6 +3,7 @@ id: 587d7b88367417b2b2512b46
 title: 设置函数的默认参数
 challengeType: 1
 forumTopicId: 301209
+dashedName: set-default-parameters-for-your-functions
 ---
 
 # --description--
@@ -44,5 +45,18 @@ assert(increment(5) === 6);
 assert(code.match(/value\s*=\s*1/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+const increment = (number, value) => number + value;
+// Only change code above this line
+```
+
 # --solutions--
 
+```js
+const increment = (number, value = 1) => number + value;
+```

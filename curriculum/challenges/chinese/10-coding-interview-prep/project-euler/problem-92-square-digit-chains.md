@@ -3,6 +3,7 @@ id: 5900f3c81000cf542c50fedb
 title: 问题92：方形数字链
 challengeType: 5
 videoUrl: ''
+dashedName: problem-92-square-digit-chains
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler92(), 8581146);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function squareDigitChains() {
+
+  return true;
+}
+
+squareDigitChains();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

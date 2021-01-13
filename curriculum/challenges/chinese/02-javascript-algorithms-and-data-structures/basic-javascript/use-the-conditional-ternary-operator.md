@@ -4,6 +4,7 @@ title: 使用三元运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JRmSg'
 forumTopicId: 301181
+dashedName: use-the-conditional-ternary-operator
 ---
 
 # --description--
@@ -65,5 +66,22 @@ assert(checkEqual(1, 1) === 'Equal');
 assert(checkEqual(1, -1) === 'Not Equal');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function checkEqual(a, b) {
+
+}
+
+checkEqual(1, 2);
+```
+
 # --solutions--
 
+```js
+function checkEqual(a, b) {
+  return a === b ? "Equal" : "Not Equal";
+}
+```

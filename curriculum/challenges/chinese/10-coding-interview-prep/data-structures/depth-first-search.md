@@ -3,6 +3,7 @@ id: 587d825d367417b2b2512c96
 title: 深度优先搜索
 challengeType: 1
 videoUrl: ''
+dashedName: depth-first-search
 ---
 
 # --description--
@@ -151,5 +152,45 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function dfs(graph, root) {
+
+}
+
+var exDFSGraph = [
+  [0, 1, 0, 0],
+  [1, 0, 1, 0],
+  [0, 1, 0, 1],
+  [0, 0, 1, 0]
+];
+console.log(dfs(exDFSGraph, 3));
+```
+
 # --solutions--
 
+```js
+function dfs(graph, root) {
+    var stack = [];
+    var tempV;
+    var visited = [];
+    var tempVNeighbors = [];
+    stack.push(root);
+    while (stack.length > 0) {
+        tempV = stack.pop();
+        if (visited.indexOf(tempV) == -1) {
+            visited.push(tempV);
+            tempVNeighbors = graph[tempV];
+            for (var i = 0; i < tempVNeighbors.length; i++) {
+                if (tempVNeighbors[i] == 1) {
+                    stack.push(i);
+                }
+            }
+        }
+    }
+    return visited;
+}
+```

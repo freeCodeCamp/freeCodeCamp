@@ -4,6 +4,7 @@ title: 使用 For 循环遍历数组的奇数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8n7T9'
 forumTopicId: 18212
+dashedName: iterate-odd-numbers-with-a-for-loop
 ---
 
 # --description--
@@ -41,5 +42,28 @@ assert(code.match(/for\s*\(/g).length > 1);
 assert.deepEqual(myArray, [1, 3, 5, 7, 9]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myArray = [];
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myArray = [];
+for (var i = 1; i < 10; i += 2) {
+  myArray.push(i);
+}
+```

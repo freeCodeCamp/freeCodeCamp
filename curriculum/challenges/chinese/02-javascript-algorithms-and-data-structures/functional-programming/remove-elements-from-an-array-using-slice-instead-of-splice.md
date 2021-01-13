@@ -3,6 +3,7 @@ id: 9d7123c8c441eeafaeb5bdef
 title: 使用 slice 而不是 splice 从数组中移除元素
 challengeType: 1
 forumTopicId: 301236
+dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
 ---
 
 # --description--
@@ -56,5 +57,29 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function nonMutatingSplice(cities) {
+  // Only change code below this line
+  return cities.splice(3);
+
+  // Only change code above this line
+}
+var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+nonMutatingSplice(inputCities);
+```
+
 # --solutions--
 
+```js
+function nonMutatingSplice(cities) {
+  // Only change code below this line
+  return cities.slice(0,3);
+  // Only change code above this line
+}
+var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+nonMutatingSplice(inputCities);
+```

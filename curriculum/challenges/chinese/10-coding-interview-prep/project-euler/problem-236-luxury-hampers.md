@@ -3,6 +3,7 @@ id: 5900f4591000cf542c50ff6b
 title: 问题236：豪华礼篮
 challengeType: 5
 videoUrl: ''
+dashedName: problem-236-luxury-hampers
 ---
 
 # --description--
@@ -27,5 +28,21 @@ m的最大可能值是多少？以u / v的形式将答案缩小到最低值。
 assert.strictEqual(euler236(), 123 / 59);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler236() {
+
+  return true;
+}
+
+euler236();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

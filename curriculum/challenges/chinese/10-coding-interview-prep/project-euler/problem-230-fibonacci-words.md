@@ -3,6 +3,7 @@ id: 5900f4531000cf542c50ff65
 title: 问题230：斐波纳契语
 challengeType: 5
 videoUrl: ''
+dashedName: problem-230-fibonacci-words
 ---
 
 # --description--
@@ -35,5 +36,21 @@ FA，B的前几个术语是：1415926535 8979323846 14159265358979323846 8979323
 assert.strictEqual(euler230(), 850481152593119200);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler230() {
+
+  return true;
+}
+
+euler230();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4531000cf542c50ff66
 title: 问题231：二项式系数的素因子化
 challengeType: 5
 videoUrl: ''
+dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler231(), 7526965179680);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler231() {
+
+  return true;
+}
+
+euler231();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

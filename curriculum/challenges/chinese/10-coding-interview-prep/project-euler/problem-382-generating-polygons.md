@@ -3,6 +3,7 @@ id: 5900f4eb1000cf542c50fffd
 title: 问题382：生成多边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-382-generating-polygons
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler382(), 697003956);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler382() {
+
+  return true;
+}
+
+euler382();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

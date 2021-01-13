@@ -4,6 +4,7 @@ title: Improve Chart Accessibility with the figure Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMqtE'
 forumTopicId: 301015
+dashedName: improve-chart-accessibility-with-the-figure-element
 ---
 
 # --description--

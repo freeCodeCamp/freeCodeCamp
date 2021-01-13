@@ -3,6 +3,7 @@ id: 5900f45f1000cf542c50ff71
 title: 问题242：奇数三胞胎
 challengeType: 5
 videoUrl: ''
+dashedName: problem-242-odd-triplets
 ---
 
 # --description--
@@ -23,5 +24,21 @@ n≤1012，有多少奇数三胞胎？
 assert.strictEqual(euler242(), 997104142249036700);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler242() {
+
+  return true;
+}
+
+euler242();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

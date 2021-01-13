@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b19
 title: 修改嵌套在对象中的对象
 challengeType: 1
 forumTopicId: 301164
+dashedName: modify-an-object-nested-within-an-object
 ---
 
 # --description--
@@ -62,5 +63,38 @@ assert(userActivity.data.online === 45);
 assert.strictEqual(code.search(/online: 45/), -1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+// Only change code below this line
+
+// Only change code above this line
+
+console.log(userActivity);
+```
+
 # --solutions--
 
+```js
+let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+userActivity.data.online = 45;
+```

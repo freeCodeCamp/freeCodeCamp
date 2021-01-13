@@ -3,6 +3,7 @@ id: 5900f4b51000cf542c50ffc8
 title: 问题329：Prime Frog
 challengeType: 5
 videoUrl: ''
+dashedName: problem-329-prime-frog
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler329(), 199740353 / 29386561536000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler329() {
+
+  return true;
+}
+
+euler329();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

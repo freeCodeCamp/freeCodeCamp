@@ -3,6 +3,7 @@ id: 5cdafbb0291309899753167f
 title: 创建一个 JavaScript Promise
 challengeType: 1
 forumTopicId: 301197
+dashedName: create-a-javascript-promise
 ---
 
 # --description--
@@ -37,5 +38,17 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+
+});
+```

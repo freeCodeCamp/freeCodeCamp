@@ -2,6 +2,7 @@
 id: 5e44413e903586ffb414c94e
 title: Budget App
 challengeType: 10
+dashedName: budget-app
 ---
 
 # --description--
@@ -30,8 +31,6 @@ It should create a Category class and pass all tests.
 ```js
 
 ```
-
-# --seed--
 
 # --solutions--
 

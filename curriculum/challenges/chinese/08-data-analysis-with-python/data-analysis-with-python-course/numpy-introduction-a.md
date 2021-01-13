@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c152
 challengeType: 11
 videoId: P-JjV6GBCmk
+dashedName: numpy-introduction-a
 ---
 
 # --description--
@@ -31,9 +32,4 @@ Working with Numpy is difficult.
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

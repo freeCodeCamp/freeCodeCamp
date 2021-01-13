@@ -3,6 +3,7 @@ id: 5900f36f1000cf542c50fe82
 title: 'Problem 3: Largest prime factor'
 challengeType: 5
 forumTopicId: 301952
+dashedName: problem-3-largest-prime-factor
 ---
 
 # --description--

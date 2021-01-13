@@ -3,6 +3,7 @@ id: 5900f4931000cf542c50ffa4
 title: 问题293：伪幸运数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-293-pseudo-fortunate-numbers
 ---
 
 # --description--
@@ -25,5 +26,21 @@ videoUrl: ''
 assert.strictEqual(euler293(), 2209);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler293() {
+
+  return true;
+}
+
+euler293();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

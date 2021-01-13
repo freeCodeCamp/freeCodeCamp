@@ -3,6 +3,7 @@ id: 5900f5231000cf542c510034
 title: 问题438：多项式方程解的整数部分
 challengeType: 5
 videoUrl: ''
+dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler438(), 2046409616809);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler438() {
+
+  return true;
+}
+
+euler438();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

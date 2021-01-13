@@ -3,6 +3,7 @@ id: 587d7fb2367417b2b2512bf7
 title: Use body-parser to Parse POST Requests
 challengeType: 2
 forumTopicId: 301520
+dashedName: use-body-parser-to-parse-post-requests
 ---
 
 # --description--
@@ -47,8 +48,6 @@ The 'body-parser' middleware should be mounted
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

@@ -3,6 +3,7 @@ id: 587d7db4367417b2b2512b92
 title: 提取匹配项
 challengeType: 1
 forumTopicId: 301340
+dashedName: extract-matches
 ---
 
 # --description--
@@ -44,5 +45,20 @@ assert(codingRegex.source === 'coding');
 assert(code.match(/\.match\(.*\)/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /change/; // Change this line
+let result = extractStr; // Change this line
+```
+
 # --solutions--
 
+```js
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+```

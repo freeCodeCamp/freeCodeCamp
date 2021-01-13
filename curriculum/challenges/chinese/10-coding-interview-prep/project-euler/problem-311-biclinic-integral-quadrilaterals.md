@@ -3,6 +3,7 @@ id: 5900f4a31000cf542c50ffb6
 title: 问题311：双斜积分四边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-311-biclinic-integral-quadrilaterals
 ---
 
 # --description--
@@ -23,5 +24,21 @@ ABCD是凸的整数边四边形，其1≤AB
 assert.strictEqual(euler311(), 2466018557);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler311() {
+
+  return true;
+}
+
+euler311();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

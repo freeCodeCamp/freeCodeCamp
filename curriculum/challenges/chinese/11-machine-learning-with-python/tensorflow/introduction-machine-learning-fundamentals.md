@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d87
 challengeType: 11
 videoId: KwL1qTR5MT8
+dashedName: introduction-machine-learning-fundamentals
 ---
 
 # --question--
@@ -25,9 +26,4 @@ Machine learning is a subset of artificial intelligence.
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

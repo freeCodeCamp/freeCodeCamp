@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9d
 title: Match Beginning String Patterns
 challengeType: 1
 forumTopicId: 301349
+dashedName: match-beginning-string-patterns
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8255367417b2b2512c75
 title: 创建循环队列
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-circular-queue
 ---
 
 # --description--
@@ -125,5 +126,90 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+class CircularQueue {
+  constructor(size) {
+
+    this.queue = [];
+    this.read = 0;
+    this.write = 0;
+    this.max = size - 1;
+
+    while (size > 0) {
+      this.queue.push(null);
+      size--;
+    }
+  }
+
+  print() {
+    return this.queue;
+  }
+
+  enqueue(item) {
+    // Only change code below this line
+
+    // Only change code above this line
+  }
+
+  dequeue() {
+    // Only change code below this line
+
+    // Only change code above this line
+  }
+}
+```
+
 # --solutions--
 
+```js
+class CircularQueue {
+  constructor(size) {
+    this.queue = [];
+    this.read = 0;
+    this.write = 0;
+    this.max = size - 1;
+
+    while (size > 0) {
+      this.queue.push(null);
+      size--;
+    }
+  }
+
+  print() {
+    return this.queue;
+  }
+
+  enqueue(item) {
+    // Only change code below this line
+    console.log(this.write, this.max);
+    if (this.queue[this.write] === null) {
+      this.queue[this.write++] = item;
+
+      if (this.write > this.max) {
+        this.write = 0;
+      }
+      return item;
+    }
+    return null;
+    // Only change code above this line
+  }
+
+  dequeue() {
+    // Only change code below this line
+    if (this.queue[this.read] !== null) {
+      let item = this.queue[this.read];
+      this.queue[this.read++] = null;
+      if (this.read > this.max) {
+        this.read = 0;
+      }
+      return item;
+    }
+    return null;
+    // Only change code above this line
+  }
+}
+```

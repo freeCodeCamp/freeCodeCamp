@@ -3,6 +3,7 @@ id: 587d7dae367417b2b2512b7a
 title: 使用 instance of 验证对象的构造函数
 challengeType: 1
 forumTopicId: 301337
+dashedName: verify-an-objects-constructor-with-instanceof
 ---
 
 # --description--
@@ -51,5 +52,24 @@ assert(typeof myHouse.numBedrooms === 'number');
 assert(/myHouse\s*instanceof\s*House/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+const myHouse = new House(4);
+console.log(myHouse instanceof House);
+```

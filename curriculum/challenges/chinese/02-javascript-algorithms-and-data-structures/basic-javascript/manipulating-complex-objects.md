@@ -4,6 +4,7 @@ title: 操作复杂对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
+dashedName: manipulating-complex-objects
 ---
 
 # --description--
@@ -120,5 +121,57 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return "myMusic is not an array"})(myMusic);
+```
+
+## --seed-contents--
+
+```js
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+  // Add a record here
+];
+```
+
 # --solutions--
 
+```js
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CS",
+      "8T",
+      "LP" ],
+    "gold": true
+  },
+  {
+    "artist": "ABBA",
+    "title": "Ring Ring",
+    "release_year": 1973,
+    "formats": [
+      "CS",
+      "8T",
+      "LP",
+    "CD",
+  ]
+  }
+];
+```

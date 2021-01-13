@@ -3,6 +3,7 @@ id: bd7168d8c242eddfaeb5bd13
 title: 用条形图可视化数据
 challengeType: 3
 forumTopicId: 301464
+dashedName: visualize-data-with-a-bar-chart
 ---
 
 # --description--
@@ -45,8 +46,8 @@ forumTopicId: 301464
 
 一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
-# --hints--
-
-
 # --solutions--
 
+```js
+// solution required
+```

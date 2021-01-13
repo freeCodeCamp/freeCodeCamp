@@ -3,6 +3,7 @@ id: a24c1a4622e3c05097f71d67
 title: 找出元素在排序后数组中的索引
 challengeType: 5
 forumTopicId: 16094
+dashedName: where-do-i-belong
 ---
 
 # --description--
@@ -111,5 +112,32 @@ assert(getIndexToIns([], 1) === 0);
 assert(typeof getIndexToIns([], 1) === 'number');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function getIndexToIns(arr, num) {
+  return num;
+}
+
+getIndexToIns([40, 60], 50);
+```
+
 # --solutions--
 
+```js
+function getIndexToIns(arr, num) {
+  arr = arr.sort((a, b) => a - b);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= num) {
+      return i;
+    }
+  }
+
+  return arr.length;
+}
+
+getIndexToIns([40, 60], 50);
+```

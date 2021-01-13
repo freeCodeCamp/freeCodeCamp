@@ -3,6 +3,7 @@ id: 5900f5061000cf542c510017
 title: 问题409：Nim Extreme
 challengeType: 5
 videoUrl: ''
+dashedName: problem-409-nim-extreme
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler409(), 253223948);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler409() {
+
+  return true;
+}
+
+euler409();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

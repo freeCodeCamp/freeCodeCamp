@@ -3,6 +3,7 @@ id: 5900f38e1000cf542c50fea1
 title: 问题34：数字阶乘
 challengeType: 5
 videoUrl: ''
+dashedName: problem-34-digit-factorials
 ---
 
 # --description--
@@ -17,5 +18,23 @@ videoUrl: ''
 assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function digitFactorial() {
+
+  var sum = 0;
+  var numbers = [];
+  return { sum, numbers };
+}
+
+digitFactorial();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

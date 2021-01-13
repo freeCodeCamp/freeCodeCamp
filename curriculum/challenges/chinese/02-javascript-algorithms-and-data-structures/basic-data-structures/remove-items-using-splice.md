@@ -3,6 +3,7 @@ id: 587d78b2367417b2b2512b10
 title: 使用 splice() 删除元素
 challengeType: 1
 forumTopicId: 301166
+dashedName: remove-items-using-splice
 ---
 
 # --description--
@@ -61,5 +62,21 @@ splice 应只删除 `arr` 里面的元素，不能给 `arr` 添加元素。
 assert(!code.replace(/\s/g, '').match(/arr\.splice\(\d+,\d+,\d+.*\)/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+// Only change code below this line
+
+// Only change code above this line
+console.log(arr);
+```
+
 # --solutions--
 
+```js
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+arr.splice(1, 4);
+```

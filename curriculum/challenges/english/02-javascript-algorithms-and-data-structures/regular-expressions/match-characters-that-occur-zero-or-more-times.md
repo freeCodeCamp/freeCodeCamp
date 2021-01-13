@@ -3,6 +3,7 @@ id: 587d7db6367417b2b2512b9a
 title: Match Characters that Occur Zero or More Times
 challengeType: 1
 forumTopicId: 301351
+dashedName: match-characters-that-occur-zero-or-more-times
 ---
 
 # --description--

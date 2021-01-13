@@ -3,6 +3,7 @@ id: a5229172f011153519423690
 title: 求斐波那契数列中的奇数之和
 challengeType: 5
 forumTopicId: 16084
+dashedName: sum-all-odd-fibonacci-numbers
 ---
 
 # --description--
@@ -51,5 +52,31 @@ assert(sumFibs(75024) === 60696);
 assert(sumFibs(75025) === 135721);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sumFibs(num) {
+  return num;
+}
+
+sumFibs(4);
+```
+
 # --solutions--
 
+```js
+function sumFibs(num) {
+  var a = 1;
+  var b = 1;
+  var s = 0;
+  while (a <= num) {
+    if (a % 2 !== 0) {
+      s += a;
+    }
+    a = [b, b=b+a][0];
+  }
+  return s;
+}
+```

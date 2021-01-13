@@ -3,6 +3,7 @@ id: 587d7db1367417b2b2512b88
 title: 重写继承的方法
 challengeType: 1
 forumTopicId: 301322
+dashedName: override-inherited-methods
 ---
 
 # --description--
@@ -62,5 +63,40 @@ The `bird.fly()`方法应该返回 'I am flying!'
 assert(new Bird().fly() === 'I am flying!');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+
+
+
+// Only change code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+```
+
 # --solutions--
 
+```js
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+Penguin.prototype.fly = () => 'Alas, this is a flightless bird.';
+let penguin = new Penguin();
+console.log(penguin.fly());
+```

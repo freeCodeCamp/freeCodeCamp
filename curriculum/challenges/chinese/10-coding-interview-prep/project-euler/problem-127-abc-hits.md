@@ -3,6 +3,7 @@ id: 5900f3ec1000cf542c50fefe
 title: 问题127：abc-hits
 challengeType: 5
 videoUrl: ''
+dashedName: problem-127-abc-hits
 ---
 
 # --description--
@@ -17,5 +18,21 @@ n，rad（n）的基数是n的不同素因子的乘积。例如，504 = 23×32×
 assert.strictEqual(euler127(), 18407904);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler127() {
+
+  return true;
+}
+
+euler127();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

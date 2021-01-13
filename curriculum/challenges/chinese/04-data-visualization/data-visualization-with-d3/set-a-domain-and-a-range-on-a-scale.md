@@ -3,6 +3,7 @@ id: 587d7fac367417b2b2512bdb
 title: 按比例设置域和范围
 challengeType: 6
 forumTopicId: 301491
+dashedName: set-a-domain-and-a-range-on-a-scale
 ---
 
 # --description--
@@ -70,5 +71,39 @@ assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]));
 assert($('h2').text() == '-102');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <script>
+    // Add your code below this line
+    const scale = d3.scaleLinear();
+
+
+
+    // Add your code above this line
+    const output = scale(50);
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <script>
+    const scale = d3.scaleLinear();
+    scale.domain([250, 500])
+    scale.range([10, 150])
+    const output = scale(50);
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+```

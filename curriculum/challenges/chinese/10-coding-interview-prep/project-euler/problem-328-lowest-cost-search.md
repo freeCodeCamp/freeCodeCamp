@@ -3,6 +3,7 @@ id: 5900f4b41000cf542c50ffc7
 title: 问题328：成本最低的搜索
 challengeType: 5
 videoUrl: ''
+dashedName: problem-328-lowest-cost-search
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler328(), 260511850222);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler328() {
+
+  return true;
+}
+
+euler328();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

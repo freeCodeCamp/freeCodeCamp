@@ -3,6 +3,7 @@ id: 587d7db9367417b2b2512ba7
 title: 指定匹配的确切数量
 challengeType: 1
 forumTopicId: 301365
+dashedName: specify-exact-number-of-matches
 ---
 
 # --description--
@@ -65,5 +66,20 @@ assert(timRegex.test('Timmmmber'));
 assert(!timRegex.test('Ti' + 'm'.repeat(30) + 'ber'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let timStr = "Timmmmber";
+let timRegex = /change/; // Change this line
+let result = timRegex.test(timStr);
+```
+
 # --solutions--
 
+```js
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
+```

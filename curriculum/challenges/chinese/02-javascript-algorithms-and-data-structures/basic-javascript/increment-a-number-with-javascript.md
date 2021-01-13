@@ -4,6 +4,7 @@ title: 数字递增
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
+dashedName: increment-a-number-with-javascript
 ---
 
 # --description--
@@ -52,5 +53,26 @@ assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
 assert(/var myVar = 87;/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'myVar = ' + z;})(myVar);
+```
+
+## --seed-contents--
+
+```js
+var myVar = 87;
+
+// Only change code below this line
+myVar = myVar + 1;
+```
+
 # --solutions--
 
+```js
+var myVar = 87;
+myVar++;
+```

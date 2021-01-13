@@ -3,6 +3,7 @@ id: a10d2431ad0c6a099a4b8b52
 title: 检查对象属性
 challengeType: 5
 forumTopicId: 16011
+dashedName: everything-be-true
 ---
 
 # --description--
@@ -133,5 +134,22 @@ assert.strictEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function truthCheck(collection, pre) {
+  return pre;
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+```
+
 # --solutions--
 
+```js
+function truthCheck(collection, pre) {
+  return collection.every(function(e) { return e[pre]; });
+}
+```

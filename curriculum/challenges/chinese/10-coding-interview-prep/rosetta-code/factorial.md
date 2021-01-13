@@ -3,6 +3,7 @@ id: 597b2b2a2702b44414742771
 title: 阶乘
 challengeType: 5
 videoUrl: ''
+dashedName: factorial
 ---
 
 # --description--
@@ -41,5 +42,25 @@ assert.equal(factorial(5), 120);
 assert.equal(factorial(10), 3628800);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function factorial(n) {
+
+}
+```
+
 # --solutions--
 
+```js
+function factorial(n) {
+  let sum = 1;
+  while (n > 1) {
+    sum *= n;
+    n--;
+  }
+  return sum;
+}
+```

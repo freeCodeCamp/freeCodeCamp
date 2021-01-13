@@ -4,6 +4,7 @@ title: Make Dead Links Using the Hash Symbol
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMdkytL'
 forumTopicId: 18230
+dashedName: make-dead-links-using-the-hash-symbol
 ---
 
 # --description--

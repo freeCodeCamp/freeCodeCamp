@@ -2,6 +2,7 @@
 id: 5e9a0a8e09c5df3cc3600ed8
 challengeType: 11
 videoId: 7txegvyhtVk
+dashedName: mathematics
 ---
 
 # --question--
@@ -44,9 +45,4 @@ b = np.max(a, axis=1).sum()
 ## --video-solution--
 
 4
-
-# --hints--
-
-
-# --solutions--
 

@@ -3,6 +3,7 @@ id: 587d7dbd367417b2b2512bb5
 title: 用 Sass 嵌套 CSS
 challengeType: 0
 forumTopicId: 301457
+dashedName: nest-css-with-sass
 ---
 
 # --description--
@@ -58,5 +59,47 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style type='text/scss'>
+  .blog-post {
+
+  }
+  h1 {
+    text-align: center;
+    color: blue;
+  }
+  p {
+    font-size: 20px;
+  }
+</style>
+
+<div class="blog-post">
+  <h1>Blog Title</h1>
+  <p>This is a paragraph</p>
+</div>
+```
+
 # --solutions--
 
+```html
+<style type='text/scss'>
+  .blog-post {
+    h1 {
+      text-align: center;
+      color: blue;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<div class="blog-post">
+  <h1>Blog Title</h1>
+  <p>This is a paragraph</p>
+</div>
+```

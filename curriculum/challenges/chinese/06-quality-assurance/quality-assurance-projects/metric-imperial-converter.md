@@ -3,6 +3,7 @@ id: 587d8249367417b2b2512c41
 title: 公制 - 英制转换器
 challengeType: 4
 videoUrl: ''
+dashedName: metric-imperial-converter
 ---
 
 # --description--
@@ -91,3 +92,10 @@ videoUrl: ''
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

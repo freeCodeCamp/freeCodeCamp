@@ -4,6 +4,7 @@ title: Animate Multiple Elements at Variable Rates
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpWZc9'
 forumTopicId: 301042
+dashedName: animate-multiple-elements-at-variable-rates
 ---
 
 # --description--

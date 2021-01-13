@@ -4,6 +4,7 @@ title: 访问嵌套对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
+dashedName: accessing-nested-objects
 ---
 
 # --description--
@@ -47,5 +48,51 @@ assert(gloveBoxContents === 'maps');
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(x) { 
+  if(typeof x != 'undefined') { 
+    return "gloveBoxContents = " + x;
+  }
+  return "gloveBoxContents is undefined";
+})(gloveBoxContents);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+var gloveBoxContents = undefined; // Change this line
+```
+
 # --solutions--
 
+```js
+var myStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+var gloveBoxContents = myStorage.car.inside["glove box"];
+```

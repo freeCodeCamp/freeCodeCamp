@@ -3,6 +3,7 @@ id: 587d824e367417b2b2512c55
 title: Test if an Object has a Property
 challengeType: 2
 forumTopicId: 301604
+dashedName: test-if-an-object-has-a-property
 ---
 
 # --description--
@@ -80,8 +81,6 @@ You should choose the correct method for the third assertion - `property` vs. `n
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

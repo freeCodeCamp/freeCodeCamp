@@ -3,6 +3,7 @@ id: 587d8247367417b2b2512c36
 title: 安装和引入 Helmet
 challengeType: 2
 forumTopicId: 301581
+dashedName: install-and-require-helmet
 ---
 
 # --description--
@@ -34,3 +35,10 @@ Helmet 通过配置不同的 HTTP header 信息来使你的 Express 应用更加
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

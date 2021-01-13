@@ -3,6 +3,7 @@ id: a5de63ebea8dbee56860f4f2
 title: 数组的对称差
 challengeType: 5
 forumTopicId: 16008
+dashedName: diff-two-arrays
 ---
 
 # --description--
@@ -151,5 +152,40 @@ assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']), [
 assert(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']).length === 6);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+```
+
 # --solutions--
 
+```js
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var h1 = Object.create(null);
+  arr1.forEach(function(e) {
+    h1[e] = e;
+  });
+
+  var h2 = Object.create(null);
+  arr2.forEach(function(e) {
+    h2[e] = e;
+  });
+
+  Object.keys(h1).forEach(function(e) {
+     if (!(e in h2)) newArr.push(h1[e]);
+  });
+  Object.keys(h2).forEach(function(e) {
+     if (!(e in h1)) newArr.push(h2[e]);
+  });
+  return newArr;
+}
+```

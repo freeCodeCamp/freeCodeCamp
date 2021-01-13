@@ -3,6 +3,7 @@ id: a5de63ebea8dbee56860f4f2
 title: Diff Two Arrays
 challengeType: 5
 forumTopicId: 16008
+dashedName: diff-two-arrays
 ---
 
 # --description--

@@ -2,6 +2,7 @@
 id: 5e7b9f070b6c005b0e76f05e
 challengeType: 11
 videoId: AelGAcoMXbI
+dashedName: iterations-loop-idioms
 ---
 
 # --question--
@@ -40,9 +41,4 @@ print("Smallest:", smallest)
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

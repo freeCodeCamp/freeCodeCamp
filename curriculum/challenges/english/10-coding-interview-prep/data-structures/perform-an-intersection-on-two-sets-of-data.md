@@ -3,6 +3,7 @@ id: 587d8253367417b2b2512c6d
 title: Perform an Intersection on Two Sets of Data
 challengeType: 1
 forumTopicId: 301709
+dashedName: perform-an-intersection-on-two-sets-of-data
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Finding a Remainder in JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWP24Ub'
 forumTopicId: 18184
+dashedName: finding-a-remainder-in-javascript
 ---
 
 # --description--

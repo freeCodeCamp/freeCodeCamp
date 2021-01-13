@@ -4,6 +4,7 @@ title: 通过方括号访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
+dashedName: accessing-object-properties-with-bracket-notation
 ---
 
 # --description--
@@ -63,5 +64,38 @@ assert(drinkValue === 'water');
 assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b) { return "entreeValue = '" + a + "', drinkValue = '" + b + "'"; })(entreeValue,drinkValue);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Only change code below this line
+
+var entreeValue = testObj;   // Change this line
+var drinkValue = testObj;    // Change this line
+```
+
 # --solutions--
 
+```js
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+var entreeValue = testObj["an entree"];
+var drinkValue = testObj['the drink'];
+```

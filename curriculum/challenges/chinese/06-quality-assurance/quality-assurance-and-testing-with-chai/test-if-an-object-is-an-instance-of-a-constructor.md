@@ -3,6 +3,7 @@ id: 587d824e367417b2b2512c57
 title: 测试对象是否是构造函数的实例
 challengeType: 2
 forumTopicId: 301605
+dashedName: test-if-an-object-is-an-instance-of-a-constructor
 ---
 
 # --description--
@@ -105,3 +106,10 @@ forumTopicId: 301605
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

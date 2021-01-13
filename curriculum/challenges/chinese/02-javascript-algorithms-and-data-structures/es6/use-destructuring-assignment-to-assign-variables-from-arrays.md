@@ -3,6 +3,7 @@ id: 587d7b89367417b2b2512b4b
 title: 使用解构赋值从数组中分配变量
 challengeType: 1
 forumTopicId: 301213
+dashedName: use-destructuring-assignment-to-assign-variables-from-arrays
 ---
 
 # --description--
@@ -49,5 +50,18 @@ assert(b === 8);
 assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let a = 8, b = 6;
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+let a = 8, b = 6;
+[a, b] = [b, a];
+```

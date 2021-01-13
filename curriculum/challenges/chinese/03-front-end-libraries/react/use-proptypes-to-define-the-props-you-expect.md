@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616d
 title: 使用 PropTypes 来定义你期望的 Props
 challengeType: 6
 forumTopicId: 301419
+dashedName: use-proptypes-to-define-the-props-you-expect
 ---
 
 # --description--
@@ -60,5 +61,70 @@ assert(
   );
 ```
 
+# --seed--
+
+## --before-user-code--
+
+```jsx
+var PropTypes = {
+  number: { isRequired: true }
+};
+```
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+// Change code below this line
+
+// Change code above this line
+
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items />
+  }
+};
+```
+
 # --solutions--
 
+```jsx
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+// Change code below this line
+Items.propTypes = {
+  quantity: PropTypes.number.isRequired
+};
+// Change code above this line
+
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items />
+  }
+};
+```

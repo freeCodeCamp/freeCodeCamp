@@ -4,6 +4,7 @@ title: 使用 JavaScript 生成随机整数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6bfr'
 forumTopicId: 18186
+dashedName: generate-random-whole-numbers-with-javascript
 ---
 
 # --description--
@@ -59,5 +60,29 @@ assert(
 assert(code.match(/Math.floor/g).length > 1);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){return randomWholeNum();})();
+```
+
+## --seed-contents--
+
+```js
+function randomWholeNum() {
+
+  // Only change code below this line
+
+  return Math.random();
+}
+```
+
 # --solutions--
 
+```js
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+```

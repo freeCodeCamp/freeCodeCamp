@@ -3,6 +3,7 @@ id: 5900f4281000cf542c50ff39
 title: 问题186：网络的连通性
 challengeType: 5
 videoUrl: ''
+dashedName: problem-186-connectedness-of-a-network
 ---
 
 # --description--
@@ -27,5 +28,21 @@ RecNrCallerCalled120000710005326001835004393600863701497 .........来电者的�
 assert.strictEqual(euler186(), 2325629);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler186() {
+
+  return true;
+}
+
+euler186();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

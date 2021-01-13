@@ -4,6 +4,7 @@ title: 大于或等于运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KBqtV'
 forumTopicId: 16785
+dashedName: comparison-with-the-greater-than-or-equal-to-operator
 ---
 
 # --description--
@@ -75,5 +76,38 @@ assert(testGreaterOrEqual(21) === '20 or Over');
 assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function testGreaterOrEqual(val) {
+  if (val) {  // Change this line
+    return "20 or Over";
+  }
+
+  if (val) {  // Change this line
+    return "10 or Over";
+  }
+
+  return "Less than 10";
+}
+
+testGreaterOrEqual(10);
+```
+
 # --solutions--
 
+```js
+function testGreaterOrEqual(val) {
+  if (val >= 20) {  // Change this line
+    return "20 or Over";
+  }
+
+  if (val >= 10) {  // Change this line
+    return "10 or Over";
+  }
+
+  return "Less than 10";
+}
+```

@@ -4,6 +4,7 @@ title: Declare String Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
+dashedName: declare-string-variables
 ---
 
 # --description--

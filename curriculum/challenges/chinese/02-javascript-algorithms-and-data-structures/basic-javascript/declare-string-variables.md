@@ -4,6 +4,7 @@ title: 声明字符串变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
+dashedName: declare-string-variables
 ---
 
 # --description--
@@ -56,5 +57,22 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(function(){return myFirstName + ', ' + myLastName;})();}
+```
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+var myFirstName = "Alan";
+var myLastName = "Turing";
+```

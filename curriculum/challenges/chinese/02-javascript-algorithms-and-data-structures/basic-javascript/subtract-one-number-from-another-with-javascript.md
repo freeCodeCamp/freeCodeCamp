@@ -4,6 +4,7 @@ title: 减法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3yQtk'
 forumTopicId: 18314
+dashedName: subtract-one-number-from-another-with-javascript
 ---
 
 # --description--
@@ -36,5 +37,22 @@ assert(difference === 12);
 assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'difference = '+z;})(difference);
+```
+
+## --seed-contents--
+
+```js
+var difference = 45 - 0;
+```
+
 # --solutions--
 
+```js
+var difference = 45 - 33;
+```

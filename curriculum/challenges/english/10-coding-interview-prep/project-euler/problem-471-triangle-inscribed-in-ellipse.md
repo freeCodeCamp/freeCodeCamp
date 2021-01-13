@@ -3,6 +3,7 @@ id: 5900f5431000cf542c510056
 title: 'Problem 471: Triangle inscribed in ellipse'
 challengeType: 5
 forumTopicId: 302148
+dashedName: problem-471-triangle-inscribed-in-ellipse
 ---
 
 # --description--

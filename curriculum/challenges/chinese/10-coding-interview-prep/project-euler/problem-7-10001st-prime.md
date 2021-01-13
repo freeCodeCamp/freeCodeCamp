@@ -3,6 +3,7 @@ id: 5900f3731000cf542c50fe86
 title: 问题7：10001个素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-7-10001st-prime
 ---
 
 # --description--
@@ -41,5 +42,37 @@ assert.strictEqual(nthPrime(1000), 7919);
 assert.strictEqual(nthPrime(10001), 104743);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function nthPrime(n) {
+
+  return true;
+}
+
+nthPrime(10001);
+```
+
 # --solutions--
 
+```js
+const nthPrime = n => {
+  let pN = 2;
+  let step = 0;
+  while (step < n) {
+    let isPrime = true;
+    let rootN = Math.sqrt(pN);
+    for (let i = 2; i <= rootN; i++) {
+      if (!(pN % i)) {
+        isPrime = false;
+        break;
+      }
+    }
+    isPrime ? step++ : '';
+    pN++;
+  }
+  return pN - 1;
+}
+```

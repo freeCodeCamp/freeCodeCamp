@@ -3,6 +3,7 @@ id: 587d7fa6367417b2b2512bc3
 title: 用 D3 选择一组元素
 challengeType: 6
 forumTopicId: 301490
+dashedName: select-a-group-of-elements-with-d3
 ---
 
 # --description--
@@ -41,5 +42,39 @@ assert(code.match(/d3/g));
 assert(code.match(/\.selectAll/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+  </ul>
+  <script>
+    // Add your code below this line
+
+
+
+    // Add your code above this line
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+  </ul>
+  <script>
+    d3.selectAll("li")
+      .text("list item")
+  </script>
+</body>
+```

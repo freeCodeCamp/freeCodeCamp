@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403615a
 title: 从数组中删除项目
 challengeType: 6
 forumTopicId: 301447
+dashedName: remove-an-item-from-an-array
 ---
 
 # --description--
@@ -62,5 +63,52 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const immutableReducer = (state = [0,1,2,3,4,5], action) => {
+  switch(action.type) {
+    case 'REMOVE_ITEM':
+      // Don't mutate state here or the tests will fail
+      return
+    default:
+      return state;
+  }
+};
+
+const removeItem = (index) => {
+  return {
+    type: 'REMOVE_ITEM',
+    index
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+```
+
 # --solutions--
 
+```js
+const immutableReducer = (state = [0,1,2,3,4,5], action) => {
+  switch(action.type) {
+    case 'REMOVE_ITEM':
+      return [
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1)
+      ];
+    default:
+      return state;
+  }
+};
+
+const removeItem = (index) => {
+  return {
+    type: 'REMOVE_ITEM',
+    index
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+```

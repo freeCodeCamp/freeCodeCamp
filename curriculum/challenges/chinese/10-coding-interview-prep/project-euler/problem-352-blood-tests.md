@@ -3,6 +3,7 @@ id: 5900f4cd1000cf542c50ffdf
 title: 问题352：验血
 challengeType: 5
 videoUrl: ''
+dashedName: problem-352-blood-tests
 ---
 
 # --description--
@@ -33,5 +34,21 @@ videoUrl: ''
 assert.strictEqual(euler352(), 378563.260589);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler352() {
+
+  return true;
+}
+
+euler352();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

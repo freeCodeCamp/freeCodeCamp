@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036168
 title: 从零开始写一个 React 组件
 challengeType: 6
 forumTopicId: 301424
+dashedName: write-a-react-component-from-scratch
 ---
 
 # --description--
@@ -53,5 +54,31 @@ assert(
     MyComponent.toString().includes('_super.call(this, props)')
 );
 ```
+
+# --seed--
+
+## --seed-contents--
+
+```jsx
+// Change code below this line
+```
+
 # --solutions--
 
+```jsx
+// Change code below this line
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>My First React Component!</h1>
+      </div>
+    );
+  }
+};
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+```

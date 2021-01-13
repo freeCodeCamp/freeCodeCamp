@@ -3,6 +3,7 @@ id: 5900f4411000cf542c50ff53
 title: 问题212：长方体的组合体积
 challengeType: 5
 videoUrl: ''
+dashedName: problem-212-combined-volume-of-cuboids
 ---
 
 # --description--
@@ -31,5 +32,21 @@ x0 = S6n-5模10000y0 = S6n-4模10000z0 = S6n-3模10000dx = 1 +（S6n-2模399）d
 assert.strictEqual(euler212(), 328968937309);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler212() {
+
+  return true;
+}
+
+euler212();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

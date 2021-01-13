@@ -3,6 +3,7 @@ id: 5900f4601000cf542c50ff72
 title: 'Problem 244: Sliders'
 challengeType: 5
 forumTopicId: 301891
+dashedName: problem-244-sliders
 ---
 
 # --description--

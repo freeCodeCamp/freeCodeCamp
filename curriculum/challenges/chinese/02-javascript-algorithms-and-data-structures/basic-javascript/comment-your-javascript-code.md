@@ -4,6 +4,7 @@ title: 给代码添加注释
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c7ynnTp'
 forumTopicId: 16783
+dashedName: comment-your-javascript-code
 ---
 
 # --description--
@@ -46,5 +47,16 @@ assert(code.match(/(\/\/)...../g));
 assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
 # --solutions--
 
+```js
+// Fake Comment
+/* Another Comment */
+```

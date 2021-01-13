@@ -4,6 +4,7 @@ title: Comparison with the Strict Equality Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87atr'
 forumTopicId: 16790
+dashedName: comparison-with-the-strict-equality-operator
 ---
 
 # --description--

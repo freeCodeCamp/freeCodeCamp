@@ -4,6 +4,7 @@ title: Add a Text Alternative to Images for Visually Impaired Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 16628
+dashedName: add-a-text-alternative-to-images-for-visually-impaired-accessibility
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5cd9a70215d3c4e65518328f
 title: 使用递归创建一个倒计时
 challengeType: 1
 forumTopicId: 305925
+dashedName: use-recursion-to-create-a-countdown
 ---
 
 # --description--
@@ -64,5 +65,22 @@ assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
 assert(removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)\;/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+// Only change code below this line
+function countdown(n){
+  return;
+}
+// Only change code above this line
+```
+
 # --solutions--
 
+```js
+function countdown(n){
+   return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+```

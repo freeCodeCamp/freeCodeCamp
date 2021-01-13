@@ -5,6 +5,8 @@ title: >-
   laminae can be formed?
 challengeType: 5
 forumTopicId: 301808
+dashedName: >-
+  problem-173-using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed
 ---
 
 # --description--

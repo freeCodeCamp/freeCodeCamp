@@ -4,6 +4,7 @@ title: Understanding Case Sensitivity in Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
+dashedName: understanding-case-sensitivity-in-variables
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3991000cf542c50feac
 title: 问题45：三角形，五边形和六边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-45-triangular-pentagonal-and-hexagonal
 ---
 
 # --description--
@@ -27,5 +28,51 @@ videoUrl: ''
 assert.strictEqual(triPentaHexa(40756), 1533776805);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function triPentaHexa(n) {
+
+  return true;
+}
+
+triPentaHexa(40756);
+```
+
 # --solutions--
 
+```js
+function triPentaHexa(n) {
+  function triangular(num) {
+  return (num * (num + 1)) / 2;
+}
+
+function isPentagonal(num) {
+  // Formula found by completing the square and
+  // solving for n.
+  const n = (Math.sqrt((24 * num) + 1) + 1) / 6;
+  return n % 1 === 0;
+}
+
+  function isHexagonal(num) {
+  // Formula found by completing the square and
+  // solving for n.
+  const n = Math.sqrt(0.5 * (num + (1 / 8))) + 0.25;
+ return n % 1 === 0;
+}
+
+let iTri = n;
+let tri;
+let found = false;
+while (!found) {
+  iTri++;
+  tri = triangular(iTri);
+  if (isPentagonal(tri) && isHexagonal(tri)) {
+    found = true;
+    }
+  }
+  return tri;
+}
+```

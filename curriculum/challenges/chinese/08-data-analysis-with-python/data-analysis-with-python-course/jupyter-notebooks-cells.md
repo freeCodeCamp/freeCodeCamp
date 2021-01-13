@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c150
 challengeType: 11
 videoId: 5PPegAs9aLA
+dashedName: jupyter-notebooks-cells
 ---
 
 # --description--
@@ -33,9 +34,4 @@ Raw Cells
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

@@ -4,6 +4,7 @@ title: 使用十六进制编码获得指定颜色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c8W9mHM'
 forumTopicId: 18350
+dashedName: use-hex-code-for-specific-colors
 ---
 
 # --description--
@@ -32,7 +33,7 @@ body {
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-应使用 十六进制编码`来替换 `black` 的写法。
+应使用 十六进制编码`来替换 `black\` 的写法。
 
 ```js
 assert(
@@ -42,5 +43,24 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+  }
+</style>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: #000000;
+  }
+</style>
+```

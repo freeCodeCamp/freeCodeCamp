@@ -3,6 +3,7 @@ id: 5900f46e1000cf542c50ff81
 title: 问题258：滞后的斐波那契序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-258-a-lagged-fibonacci-sequence
 ---
 
 # --description--
@@ -19,5 +20,21 @@ gk = 1，对于0≤k≤1999gk = gk-2000 + gk-1999，对于k≥2000。对于k = 1
 assert.strictEqual(euler258(), 12747994);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler258() {
+
+  return true;
+}
+
+euler258();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

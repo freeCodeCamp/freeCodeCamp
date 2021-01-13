@@ -4,6 +4,7 @@ title: Link to External Pages with Anchor Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
 forumTopicId: 18226
+dashedName: link-to-external-pages-with-anchor-elements
 ---
 
 # --description--

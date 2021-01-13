@@ -3,6 +3,7 @@ id: 5900f4371000cf542c50ff49
 title: 问题202：Laserbeam
 challengeType: 5
 videoUrl: ''
+dashedName: problem-202-laserbeam
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler202(), 1209002624);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler202() {
+
+  return true;
+}
+
+euler202();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

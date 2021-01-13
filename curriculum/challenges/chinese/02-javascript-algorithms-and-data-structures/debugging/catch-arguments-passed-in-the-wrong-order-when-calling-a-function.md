@@ -3,6 +3,7 @@ id: 587d7b85367417b2b2512b3a
 title: 调用函数时，捕获以错误顺序传递的参数
 challengeType: 1
 forumTopicId: 301184
+dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 ---
 
 # --description--
@@ -27,5 +28,30 @@ assert(power == 8);
 assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function raiseToPower(b, e) {
+  return Math.pow(b, e);
+}
+
+let base = 2;
+let exp = 3;
+let power = raiseToPower(exp, base);
+console.log(power);
+```
+
 # --solutions--
 
+```js
+function raiseToPower(b, e) {
+ return Math.pow(b, e);
+}
+
+let base = 2;
+let exp = 3;
+let power = raiseToPower(base, exp);
+console.log(power);
+```

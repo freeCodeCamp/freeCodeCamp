@@ -3,6 +3,7 @@ id: 587d824c367417b2b2512c4e
 title: 测试一个值是否小于或等于另一个值
 challengeType: 2
 forumTopicId: 301606
+dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
 ---
 
 # --description--
@@ -101,3 +102,10 @@ Use `assert.isBelow()` (i.e. less than) or `assert.isAtLeast()` (i.e. greater th
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

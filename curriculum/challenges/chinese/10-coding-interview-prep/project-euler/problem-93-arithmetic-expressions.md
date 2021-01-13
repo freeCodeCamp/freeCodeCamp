@@ -3,6 +3,7 @@ id: 5900f3ca1000cf542c50fedc
 title: 问题93：算术表达式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-93-arithmetic-expressions
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler93(), 1258);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function arithmeticExpressions() {
+
+  return true;
+}
+
+arithmeticExpressions();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

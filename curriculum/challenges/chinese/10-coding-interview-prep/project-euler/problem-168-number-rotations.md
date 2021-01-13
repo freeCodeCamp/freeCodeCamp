@@ -3,6 +3,7 @@ id: 5900f4151000cf542c50ff27
 title: 问题168：数字轮换
 challengeType: 5
 videoUrl: ''
+dashedName: problem-168-number-rotations
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler168(), 59206);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler168() {
+
+  return true;
+}
+
+euler168();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 587d7db8367417b2b2512ba1
 title: 匹配所有非数字
 challengeType: 1
 forumTopicId: 301347
+dashedName: match-all-non-numbers
 ---
 
 # --description--
@@ -65,5 +66,20 @@ assert('21 Jump Street'.match(noNumRegex).length == 12);
 assert('2001: A Space Odyssey'.match(noNumRegex).length == 17);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /change/; // Change this line
+let result = movieName.match(noNumRegex).length;
+```
+
 # --solutions--
 
+```js
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // Change this line
+let result = movieName.match(noNumRegex).length;
+```

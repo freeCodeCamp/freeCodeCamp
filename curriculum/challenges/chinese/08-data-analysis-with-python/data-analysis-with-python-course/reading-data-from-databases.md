@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c163
 challengeType: 11
 videoId: MtgXS1MofRw
+dashedName: reading-data-from-databases
 ---
 
 # --description--
@@ -37,9 +38,4 @@ The `Cursor` instance has an `.execute()` method which will receive SQL paramete
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

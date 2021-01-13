@@ -2,6 +2,7 @@
 id: 5e7b9f060b6c005b0e76f05a
 challengeType: 11
 videoId: 3JGF-n3tDPU
+dashedName: python-functions
 ---
 
 # --question--
@@ -33,9 +34,4 @@ None of the above.
 ## --video-solution--
 
 4
-
-# --hints--
-
-
-# --solutions--
 

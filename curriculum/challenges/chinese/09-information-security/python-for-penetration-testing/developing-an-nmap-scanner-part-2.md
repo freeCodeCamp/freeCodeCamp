@@ -2,6 +2,7 @@
 id: 5ea9997bbec2e9bc47e94db2
 challengeType: 11
 videoId: a98PscnUsTg
+dashedName: developing-an-nmap-scanner-part-2
 ---
 
 # --question--
@@ -25,9 +26,4 @@ Which of the following allows you to scan for UDP ports between 21 to 443?
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

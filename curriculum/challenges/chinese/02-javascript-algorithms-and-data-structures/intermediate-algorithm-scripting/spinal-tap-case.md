@@ -3,6 +3,7 @@ id: a103376db3ba46b2d50db289
 title: 短线连接格式
 challengeType: 5
 forumTopicId: 16078
+dashedName: spinal-tap-case
 ---
 
 # --description--
@@ -47,5 +48,23 @@ assert.strictEqual(
 assert.strictEqual(spinalCase('AllThe-small Things'), 'all-the-small-things');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function spinalCase(str) {
+  return str;
+}
+
+spinalCase('This Is Spinal Tap');
+```
+
 # --solutions--
 
+```js
+function spinalCase(str) {
+  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');
+  return str.toLowerCase().replace(/\ |\_/g, '-');
+}
+```

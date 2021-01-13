@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c157
 challengeType: 11
 videoId: XAT97YLOKD8
+dashedName: numpy-algebra-and-size
 ---
 
 # --description--
@@ -35,9 +36,4 @@ Standard Python objects take up more memory than NumPy objects; operations on Nu
 ## --video-solution--
 
 4
-
-# --hints--
-
-
-# --solutions--
 

@@ -3,6 +3,7 @@ id: bd7178d8c242eddfaeb5bd13
 title: 用散点图可视化数据
 challengeType: 3
 forumTopicId: 301467
+dashedName: visualize-data-with-a-scatterplot-graph
 ---
 
 # --description--
@@ -49,8 +50,8 @@ forumTopicId: 301467
 
 一旦你完成了本项目并且通过所有测试，请提交项目的 URL。
 
-# --hints--
-
-
 # --solutions--
 
+```js
+// solution required
+```

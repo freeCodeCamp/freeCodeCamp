@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7e
 title: 在二叉搜索树中使用深度优先搜索
 challengeType: 1
 videoUrl: ''
+dashedName: use-depth-first-search-in-a-binary-search-tree
 ---
 
 # --description--
@@ -220,5 +221,104 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    add: function(value) {
+      function searchTree(node) {
+        if (value < node.value) {
+          if (node.left == null) {
+            node.left = new Node(value);
+            return;
+          } else if (node.left != null) {
+            return searchTree(node.left);
+          }
+        } else if (value > node.value) {
+          if (node.right == null) {
+            node.right = new Node(value);
+            return;
+          } else if (node.right != null) {
+            return searchTree(node.right);
+          }
+        } else {
+          return null;
+        }
+      }
+
+      var node = this.root;
+      if (node == null) {
+        this.root = new Node(value);
+        return;
+      } else {
+        return searchTree(node);
+      }
+    }
+  }
+);
+```
+
+## --seed-contents--
+
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  this.result = [];
+
+  this.inorder = function(node) {
+    if (!node) node = this.root;
+    if (!node) return null;
+
+    if (node.left) this.inorder(node.left);
+    this.result.push(node.value);
+    if (node.right) this.inorder(node.right);
+    return this.result;
+  };
+  this.preorder = function(node) {
+    if (!node) node = this.root;
+    if (!node) return null;
+
+    this.result.push(node.value);
+    if (node.left) this.preorder(node.left);
+    if (node.right) this.preorder(node.right);
+    return this.result;
+  };
+  this.postorder = function(node) {
+    if (!node) node = this.root;
+    if (!node) return null;
+
+    if (node.left) this.postorder(node.left);
+    if (node.right) this.postorder(node.right);
+    this.result.push(node.value);
+
+    return this.result;
+  };
+}
+```

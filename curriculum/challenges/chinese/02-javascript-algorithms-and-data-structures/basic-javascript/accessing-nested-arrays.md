@@ -4,6 +4,7 @@ title: 访问嵌套数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
+dashedName: accessing-nested-arrays
 ---
 
 # --description--
@@ -53,5 +54,70 @@ assert(secondTree === 'pine');
 assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(x) {
+  if(typeof x != 'undefined') {
+    return "secondTree = " + x;
+  }
+  return "secondTree is undefined";
+})(secondTree);
+```
+
+## --seed-contents--
+
+```js
+// Setup
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+// Only change code below this line
+
+var secondTree = ""; // Change this line
+```
+
 # --solutions--
 
+```js
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+// Only change code below this line
+
+var secondTree = myPlants[1].list[1];
+```

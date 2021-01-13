@@ -3,6 +3,7 @@ id: a5deed1811a43193f9f1c841
 title: 根据参数删除数组元素
 challengeType: 5
 forumTopicId: 16010
+dashedName: drop-it
 ---
 
 # --description--
@@ -79,5 +80,25 @@ assert.deepEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function dropElements(arr, func) {
+  return arr;
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });
+```
+
 # --solutions--
 
+```js
+function dropElements(arr, func) {
+  while (arr.length && !func(arr[0])) {
+    arr.shift();
+  }
+  return arr;
+}
+```

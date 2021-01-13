@@ -3,6 +3,7 @@ id: 5900f4ab1000cf542c50ffbd
 title: 'Problem 318: 2011 nines'
 challengeType: 5
 forumTopicId: 301974
+dashedName: problem-318-2011-nines
 ---
 
 # --description--

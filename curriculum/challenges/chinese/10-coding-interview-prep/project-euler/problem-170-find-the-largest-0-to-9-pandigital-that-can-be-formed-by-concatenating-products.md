@@ -3,6 +3,8 @@ id: 5900f4161000cf542c50ff29
 title: 问题170：找到可以通过连接产品形成的最大的0到9个pandigital
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-170-find-the-largest-0-to-9-pandigital-that-can-be-formed-by-concatenating-products
 ---
 
 # --description--
@@ -25,5 +27,21 @@ videoUrl: ''
 assert.strictEqual(euler170(), 9857164023);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler170() {
+
+  return true;
+}
+
+euler170();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3e91000cf542c50fefc
 title: 问题125：回文总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-125-palindromic-sums
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler125(), 2906969179);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler125() {
+
+  return true;
+}
+
+euler125();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

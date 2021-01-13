@@ -4,6 +4,7 @@ title: if else 语句中的逻辑顺序
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228
+dashedName: logical-order-in-if-else-statements
 ---
 
 # --description--
@@ -73,5 +74,34 @@ assert(orderMyLogic(6) === 'Less than 10');
 assert(orderMyLogic(11) === 'Greater than or equal to 10');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function orderMyLogic(val) {
+  if (val < 10) {
+    return "Less than 10";
+  } else if (val < 5) {
+    return "Less than 5";
+  } else {
+    return "Greater than or equal to 10";
+  }
+}
+
+orderMyLogic(7);
+```
+
 # --solutions--
 
+```js
+function orderMyLogic(val) {
+  if(val < 5) {
+    return "Less than 5";
+  } else if (val < 10) {
+    return "Less than 10";
+  } else {
+    return "Greater than or equal to 10";
+  }
+}
+```

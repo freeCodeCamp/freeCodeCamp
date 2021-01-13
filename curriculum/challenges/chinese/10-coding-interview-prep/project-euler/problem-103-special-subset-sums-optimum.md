@@ -3,6 +3,7 @@ id: 5900f3d61000cf542c50fee7
 title: 问题103：特殊子集和：最佳
 challengeType: 5
 videoUrl: ''
+dashedName: problem-103-special-subset-sums-optimum
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler103(), 20313839404245);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler103() {
+
+  return true;
+}
+
+euler103();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

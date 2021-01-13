@@ -3,6 +3,7 @@ id: 587d7faa367417b2b2512bd4
 title: Add a Hover Effect to a D3 Element
 challengeType: 6
 forumTopicId: 301469
+dashedName: add-a-hover-effect-to-a-d3-element
 ---
 
 # --description--

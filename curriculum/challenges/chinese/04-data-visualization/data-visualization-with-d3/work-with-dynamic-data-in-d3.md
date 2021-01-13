@@ -3,6 +3,7 @@ id: 587d7fa7367417b2b2512bc5
 title: 使用 D3 中的动态数据
 challengeType: 6
 forumTopicId: 301498
+dashedName: work-with-dynamic-data-in-d3
 ---
 
 # --description--
@@ -79,5 +80,41 @@ assert($('h2').eq(7).text() == '14 USD');
 assert($('h2').eq(8).text() == '9 USD');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      // Add your code below this line
+
+      .text("New Title");
+
+      // Add your code above this line
+  </script>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => `${d} USD`);
+
+  </script>
+</body>
+```

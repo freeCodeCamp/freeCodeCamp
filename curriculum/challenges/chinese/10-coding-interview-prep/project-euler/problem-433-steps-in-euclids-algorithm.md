@@ -3,6 +3,7 @@ id: 5900f51d1000cf542c51002f
 title: 问题433：欧几里得算法的步骤
 challengeType: 5
 videoUrl: ''
+dashedName: problem-433-steps-in-euclids-algorithm
 ---
 
 # --description--
@@ -25,5 +26,21 @@ E（x0，y0）是最小的n，因此yn = 0。
 assert.strictEqual(euler433(), 326624372659664);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler433() {
+
+  return true;
+}
+
+euler433();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

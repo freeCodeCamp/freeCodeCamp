@@ -3,6 +3,7 @@ id: 587d7db6367417b2b2512b98
 title: 匹配单个未指定的字符
 challengeType: 1
 forumTopicId: 301358
+dashedName: match-single-characters-not-specified
 ---
 
 # --description--
@@ -37,5 +38,20 @@ assert(myRegex.flags.match(/g/).length == 1);
 assert(myRegex.flags.match(/i/).length == 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let quoteSample = "3 blind mice.";
+let myRegex = /change/; // Change this line
+let result = myRegex; // Change this line
+```
+
 # --solutions--
 
+```js
+let quoteSample = "3 blind mice.";
+let myRegex = /[^0-9aeiou]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+```

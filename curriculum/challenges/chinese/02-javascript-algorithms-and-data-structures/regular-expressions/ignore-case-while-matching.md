@@ -3,6 +3,7 @@ id: 587d7db4367417b2b2512b91
 title: 匹配时忽略大小写
 challengeType: 1
 forumTopicId: 301344
+dashedName: ignore-case-while-matching
 ---
 
 # --description--
@@ -79,5 +80,20 @@ assert(fccRegex.test('FrEeCodECamp'));
 assert(fccRegex.test('FReeCodeCAmp'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myString = "freeCodeCamp";
+let fccRegex = /change/; // Change this line
+let result = fccRegex.test(myString);
+```
+
 # --solutions--
 
+```js
+let myString = "freeCodeCamp";
+let fccRegex = /freecodecamp/i; // Change this line
+let result = fccRegex.test(myString);
+```

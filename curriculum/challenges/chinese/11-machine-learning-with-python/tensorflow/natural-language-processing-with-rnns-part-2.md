@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d9c
 challengeType: 11
 videoId: mUU9YXOFbZg
+dashedName: natural-language-processing-with-rnns-part-2
 ---
 
 # --question--
@@ -25,9 +26,4 @@ a vectorized representation of words in a given document that places words with 
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

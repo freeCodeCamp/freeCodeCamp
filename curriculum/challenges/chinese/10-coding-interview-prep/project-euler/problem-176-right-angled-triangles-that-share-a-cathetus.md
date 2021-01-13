@@ -3,6 +3,7 @@ id: 5900f41c1000cf542c50ff2f
 title: 问题176：共用一个cathetus的直角三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-176-right-angled-triangles-that-share-a-cathetus
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler176(), 96818198400000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler176() {
+
+  return true;
+}
+
+euler176();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

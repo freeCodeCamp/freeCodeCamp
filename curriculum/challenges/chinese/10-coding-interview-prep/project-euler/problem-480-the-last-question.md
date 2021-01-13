@@ -3,6 +3,7 @@ id: 5900f54c1000cf542c51005f
 title: 问题480：最后一个问题
 challengeType: 5
 videoUrl: ''
+dashedName: problem-480-the-last-question
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler480(), turnthestarson);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler480() {
+
+  return true;
+}
+
+euler480();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

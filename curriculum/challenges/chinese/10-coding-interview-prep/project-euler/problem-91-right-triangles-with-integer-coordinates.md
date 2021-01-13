@@ -3,6 +3,7 @@ id: 5900f3c71000cf542c50feda
 title: 问题91：带有整数坐标的直角三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-91-right-triangles-with-integer-coordinates
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler91(), 14234);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function rightTrianglesIntCoords() {
+
+  return true;
+}
+
+rightTrianglesIntCoords();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

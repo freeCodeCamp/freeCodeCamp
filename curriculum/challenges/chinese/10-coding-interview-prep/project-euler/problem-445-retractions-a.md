@@ -3,6 +3,7 @@ id: 5900f52a1000cf542c51003c
 title: 问题445：撤回A.
 challengeType: 5
 videoUrl: ''
+dashedName: problem-445-retractions-a
 ---
 
 # --description--
@@ -21,5 +22,21 @@ videoUrl: ''
 assert.strictEqual(euler445(), 659104042);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler445() {
+
+  return true;
+}
+
+euler445();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

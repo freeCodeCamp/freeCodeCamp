@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ace
 title: Accumulator factory
 challengeType: 5
 forumTopicId: 302222
+dashedName: accumulator-factory
 ---
 
 # --description--

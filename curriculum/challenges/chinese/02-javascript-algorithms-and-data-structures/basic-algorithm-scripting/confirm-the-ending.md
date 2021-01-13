@@ -3,6 +3,7 @@ id: acda2fb1324d9b0fa741e6b5
 title: 检查字符串结尾
 challengeType: 5
 forumTopicId: 16006
+dashedName: confirm-the-ending
 ---
 
 # --description--
@@ -89,5 +90,24 @@ assert(confirmEnding('Abstraction', 'action') === true);
 assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function confirmEnding(str, target) {
+  return str;
+}
+
+confirmEnding("Bastian", "n");
+```
+
 # --solutions--
 
+```js
+function confirmEnding(str, target) {
+  return str.substring(str.length - target.length) === target;
+}
+
+confirmEnding("Bastian", "n");
+```

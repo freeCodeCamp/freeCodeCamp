@@ -4,6 +4,7 @@ title: Use the CSS Transform Property skewX to Skew an Element Along the X-Axis
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLP8Sr'
 forumTopicId: 301074
+dashedName: use-the-css-transform-property-skewx-to-skew-an-element-along-the-x-axis
 ---
 
 # --description--

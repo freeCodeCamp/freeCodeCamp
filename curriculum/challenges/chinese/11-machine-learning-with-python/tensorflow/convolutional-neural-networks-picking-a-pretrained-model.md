@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d9a
 challengeType: 11
 videoId: h1XUt1AgIOI
+dashedName: convolutional-neural-networks-picking-a-pretrained-model
 ---
 
 # --question--
@@ -44,9 +45,4 @@ C: `False`
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

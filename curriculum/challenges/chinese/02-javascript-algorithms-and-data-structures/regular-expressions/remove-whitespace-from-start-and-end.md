@@ -3,6 +3,7 @@ id: 587d7dbb367417b2b2512bac
 title: 删除开头和结尾的空白
 challengeType: 1
 forumTopicId: 301362
+dashedName: remove-whitespace-from-start-and-end
 ---
 
 # --description--
@@ -36,5 +37,20 @@ assert(!code.match(/\.trim\(.*?\)/));
 assert(!code.match(/result\s*=\s*".*?"/));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let hello = "   Hello, World!  ";
+let wsRegex = /change/; // Change this line
+let result = hello; // Change this line
+```
+
 # --solutions--
 
+```js
+let hello = "   Hello, World!  ";
+let wsRegex = /^(\s+)(.+[^\s])(\s+)$/;
+let result = hello.replace(wsRegex, '$2');
+```

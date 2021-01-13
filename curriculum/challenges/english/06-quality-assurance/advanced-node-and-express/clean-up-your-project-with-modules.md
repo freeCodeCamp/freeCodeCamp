@@ -3,6 +3,7 @@ id: 589690e6f9fc0f352b528e6e
 title: Clean Up Your Project with Modules
 challengeType: 2
 forumTopicId: 301549
+dashedName: clean-up-your-project-with-modules
 ---
 
 # --description--
@@ -51,8 +52,6 @@ Modules should be present.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

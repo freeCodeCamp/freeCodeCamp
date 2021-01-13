@@ -3,6 +3,7 @@ id: 587d824e367417b2b2512c58
 title: 使用 Chai-HTTP 进行 API 功能测试 (1)
 challengeType: 2
 forumTopicId: 301593
+dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 ---
 
 # --description--
@@ -65,3 +66,10 @@ forumTopicId: 301593
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

@@ -4,6 +4,7 @@ title: Move a Relatively Positioned Element with CSS Offsets
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bQEA4'
 forumTopicId: 301065
+dashedName: move-a-relatively-positioned-element-with-css-offsets
 ---
 
 # --description--

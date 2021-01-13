@@ -4,6 +4,7 @@ title: 用单引号引用字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260
+dashedName: quoting-strings-with-single-quotes
 ---
 
 # --description--
@@ -56,5 +57,22 @@ assert(
 assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function() { return "myStr = " + myStr; })();
+```
+
+## --seed-contents--
+
+```js
+var myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+```
+
 # --solutions--
 
+```js
+var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+```

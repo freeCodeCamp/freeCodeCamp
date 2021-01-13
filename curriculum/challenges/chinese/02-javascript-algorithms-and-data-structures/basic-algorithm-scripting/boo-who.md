@@ -3,6 +3,7 @@ id: a77dbc43c33f39daa4429b4f
 title: 基本类型布尔值的检查
 challengeType: 5
 forumTopicId: 16000
+dashedName: boo-who
 ---
 
 # --description--
@@ -73,5 +74,24 @@ assert.strictEqual(booWho('true'), false);
 assert.strictEqual(booWho('false'), false);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function booWho(bool) {
+  return bool;
+}
+
+booWho(null);
+```
+
 # --solutions--
 
+```js
+function booWho(bool) {
+  return typeof bool === "boolean";
+}
+
+booWho(null);
+```

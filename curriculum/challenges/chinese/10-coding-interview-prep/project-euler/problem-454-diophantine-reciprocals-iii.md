@@ -3,6 +3,7 @@ id: 5900f5331000cf542c510045
 title: 问题454：丢番图倒数III
 challengeType: 5
 videoUrl: ''
+dashedName: problem-454-diophantine-reciprocals-iii
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler454(), 5435004633092);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler454() {
+
+  return true;
+}
+
+euler454();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f3a51000cf542c50feb8
 title: 问题57：平方根收敛
 challengeType: 5
 videoUrl: ''
+dashedName: problem-57-square-root-convergents
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler57(), 153);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function squareRootConvergents() {
+
+  return true;
+}
+
+squareRootConvergents();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f53e1000cf542c510051
 title: 问题466：乘法表中的不同术语
 challengeType: 5
 videoUrl: ''
+dashedName: problem-466-distinct-terms-in-a-multiplication-table
 ---
 
 # --description--
@@ -27,5 +28,21 @@ videoUrl: ''
 assert.strictEqual(euler466(), 258381958195474750);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler466() {
+
+  return true;
+}
+
+euler466();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

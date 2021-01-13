@@ -3,6 +3,7 @@ id: 5900f51f1000cf542c510031
 title: 问题434：刚性图
 challengeType: 5
 videoUrl: ''
+dashedName: problem-434-rigid-graphs
 ---
 
 # --description--
@@ -31,5 +32,21 @@ videoUrl: ''
 assert.strictEqual(euler434(), 863253606);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler434() {
+
+  return true;
+}
+
+euler434();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

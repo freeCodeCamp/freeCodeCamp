@@ -3,6 +3,7 @@ id: 5900f4b11000cf542c50ffc3
 title: 问题324：建造一座塔楼
 challengeType: 5
 videoUrl: ''
+dashedName: problem-324-building-a-tower
 ---
 
 # --description--
@@ -19,5 +20,21 @@ videoUrl: ''
 assert.strictEqual(euler324(), 96972774);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler324() {
+
+  return true;
+}
+
+euler324();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

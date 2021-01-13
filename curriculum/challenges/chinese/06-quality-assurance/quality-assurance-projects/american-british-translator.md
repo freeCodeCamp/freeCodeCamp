@@ -1,6 +1,7 @@
 ---
 id: 5e601c0d5ac9d0ecd8b94afe
 challengeType: 4
+dashedName: american-british-translator
 ---
 
 # --description--
@@ -75,3 +76,10 @@ All 4 functional tests are complete and passing. See `/tests/2_functional-tests.
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
+  Please check our contributing guidelines to learn more.
+*/
+```

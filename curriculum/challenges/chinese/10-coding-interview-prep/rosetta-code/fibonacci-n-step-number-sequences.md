@@ -3,6 +3,7 @@ id: 598eef80ba501f1268170e1e
 title: 斐波那契n步数序列
 challengeType: 5
 videoUrl: ''
+dashedName: fibonacci-n-step-number-sequences
 ---
 
 # --description--
@@ -59,5 +60,45 @@ assert.deepEqual(fib_luc(4, 15, 'l'), ans[5]);
 assert.deepEqual(fib_luc(5, 15, 'l'), ans[6]);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const ans = [[1,1,2,3,5,8,13,21,34,55],
+[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136],
+[1,1,2,4,8,15,29,56,108,208,401,773,1490,2872,5536],
+[ 2, 1, 3, 4, 7, 11, 18, 29, 47, 76],
+[ 2, 1, 3, 6, 10, 19, 35, 64, 118, 217, 399, 734, 1350, 2483, 4567 ],
+[ 2, 1, 3, 6, 12, 22, 43, 83, 160, 308, 594, 1145, 2207, 4254, 8200 ],
+[ 2, 1, 3, 6, 12, 24, 46, 91, 179, 352, 692, 1360, 2674, 5257, 10335 ]];
+```
+
+## --seed-contents--
+
+```js
+function fib_luc(n, len, w) {
+
+}
+```
+
 # --solutions--
 
+```js
+function fib_luc(n, len, w) {
+    function nacci(a, n, len) {
+        while (a.length < len) {
+            let sum = 0;
+            for (let i = Math.max(0, a.length - n); i < a.length; i++)
+                sum += a[i];
+            a.push(sum);
+        }
+        return a;
+    }
+    if(w=="f"){
+        return nacci(nacci([1,1], n, n), n, len);
+    }else{
+        return nacci(nacci([2,1], n, n), n, len);
+    }
+}
+```

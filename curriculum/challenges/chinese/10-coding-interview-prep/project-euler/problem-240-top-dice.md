@@ -3,6 +3,7 @@ id: 5900f45d1000cf542c50ff6f
 title: 问题240：顶部骰子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-240-top-dice
 ---
 
 # --description--
@@ -27,5 +28,21 @@ D1，D2，D3，D4，D5 = 6,6,3,3,3
 assert.strictEqual(euler240(), 7448717393364182000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler240() {
+
+  return true;
+}
+
+euler240();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

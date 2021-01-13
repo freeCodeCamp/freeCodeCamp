@@ -4,6 +4,7 @@ title: Comparison with the Greater Than Or Equal To Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KBqtV'
 forumTopicId: 16785
+dashedName: comparison-with-the-greater-than-or-equal-to-operator
 ---
 
 # --description--

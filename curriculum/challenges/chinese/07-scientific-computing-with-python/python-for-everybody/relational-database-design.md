@@ -2,6 +2,7 @@
 id: 5e7b9f180b6c005b0e76f08c
 challengeType: 11
 videoId: AqdfbrpkbHk
+dashedName: relational-database-design
 ---
 
 # --question--
@@ -29,9 +30,4 @@ What is the best practice for how many times a piece of string data should be st
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

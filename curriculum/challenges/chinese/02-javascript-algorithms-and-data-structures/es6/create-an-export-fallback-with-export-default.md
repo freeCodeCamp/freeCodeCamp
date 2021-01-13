@@ -3,6 +3,7 @@ id: 587d7b8c367417b2b2512b58
 title: 用 export default 创建一个默认导出
 challengeType: 1
 forumTopicId: 301199
+dashedName: create-an-export-fallback-with-export-default
 ---
 
 # --description--
@@ -43,5 +44,20 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function subtract(x, y) {
+  return x - y;
+}
+```
+
 # --solutions--
 
+```js
+export default function subtract(x, y) {
+  return x - y;
+}
+```

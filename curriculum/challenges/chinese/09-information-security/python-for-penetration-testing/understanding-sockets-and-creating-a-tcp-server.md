@@ -2,6 +2,7 @@
 id: 5ea9997bbec2e9bc47e94daf
 challengeType: 11
 videoId: F1QI9tNuDQg
+dashedName: understanding-sockets-and-creating-a-tcp-server
 ---
 
 # --question--
@@ -25,9 +26,4 @@ Which of the following functions creates a socket object?
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

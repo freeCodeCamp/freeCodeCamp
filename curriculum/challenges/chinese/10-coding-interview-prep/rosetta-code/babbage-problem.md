@@ -3,6 +3,7 @@ id: 594db4d0dedb4c06a2a4cefd
 title: 巴贝奇问题
 challengeType: 5
 videoUrl: ''
+dashedName: babbage-problem
 ---
 
 # --description--
@@ -23,5 +24,42 @@ assert(typeof babbage === 'function');
 assert.equal(babbage(babbageAns, endDigits), answer);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+const babbageAns = 99736;
+const endDigits = 269696;
+const answer = 25264;
+```
+
+## --seed-contents--
+
+```js
+function babbage(babbageNum, endDigits) {
+
+  return true;
+}
+```
+
 # --solutions--
 
+```js
+function babbage(babbageAns, endDigits) {
+  const babbageNum = Math.pow(babbageAns, 2);
+  const babbageStartDigits = parseInt(babbageNum.toString().replace('269696', ''));
+  let answer = 99736;
+
+  // count down from this answer and save any sqrt int result. return lowest one
+  for (let i = babbageStartDigits; i >= 0; i--) {
+    const num = parseInt(i.toString().concat('269696'));
+    const result = Math.sqrt(num);
+    if (result === Math.floor(Math.sqrt(num))) {
+      answer = result;
+    }
+  }
+
+  return answer;
+}
+```

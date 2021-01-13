@@ -4,6 +4,7 @@ title: Global vs. Local Scope in Functions
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
+dashedName: global-vs--local-scope-in-functions
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: a56138aff60341a09ed6c480
 title: 库存更新
 challengeType: 5
 videoUrl: ''
+dashedName: inventory-update
 ---
 
 # --description--
@@ -156,5 +157,72 @@ assert.deepEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function updateInventory(arr1, arr2) {
+    return arr1;
+}
+
+// Example inventory lists
+var curInv = [
+    [21, "Bowling Ball"],
+    [2, "Dirty Sock"],
+    [1, "Hair Pin"],
+    [5, "Microphone"]
+];
+
+var newInv = [
+    [2, "Hair Pin"],
+    [3, "Half-Eaten Apple"],
+    [67, "Bowling Ball"],
+    [7, "Toothpaste"]
+];
+
+updateInventory(curInv, newInv);
+```
+
 # --solutions--
 
+```js
+function updateInventory(arr1, arr2) {
+  arr2.forEach(function(item) {
+    createOrUpdate(arr1, item);
+  });
+  // All inventory must be accounted for or you're fired!
+  return arr1;
+}
+
+function createOrUpdate(arr1, item) {
+  var index = -1;
+  while (++index < arr1.length) {
+    if (arr1[index][1] === item[1]) {
+      arr1[index][0] += item[0];
+      return;
+    }
+    if (arr1[index][1] > item[1]) {
+      break;
+    }
+  }
+  arr1.splice(index, 0, item);
+}
+
+// Example inventory lists
+var curInv = [
+    [21, 'Bowling Ball'],
+    [2, 'Dirty Sock'],
+    [1, 'Hair Pin'],
+    [5, 'Microphone']
+];
+
+var newInv = [
+    [2, 'Hair Pin'],
+    [3, 'Half-Eaten Apple'],
+    [67, 'Bowling Ball'],
+    [7, 'Toothpaste']
+];
+
+updateInventory(curInv, newInv);
+```

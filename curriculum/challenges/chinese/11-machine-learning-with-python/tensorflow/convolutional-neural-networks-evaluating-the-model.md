@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d99
 challengeType: 11
 videoId: eCATNvwraXg
+dashedName: convolutional-neural-networks-evaluating-the-model
 ---
 
 # --question--
@@ -25,9 +26,4 @@ Using your test data to retrain the model.
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

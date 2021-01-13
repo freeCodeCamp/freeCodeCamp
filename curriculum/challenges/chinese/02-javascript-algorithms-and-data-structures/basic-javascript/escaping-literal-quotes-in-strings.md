@@ -4,6 +4,7 @@ title: 转义字符串中的引号
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvgSr'
 forumTopicId: 17568
+dashedName: escaping-literal-quotes-in-strings
 ---
 
 # --description--
@@ -38,5 +39,28 @@ assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 assert(myStr === 'I am a "double quoted" string inside "double quotes".');
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){
+  if(typeof myStr === 'string') {
+    console.log("myStr = \"" + myStr + "\"");
+  } else {
+    console.log("myStr is undefined");
+  }
+})();
+```
+
+## --seed-contents--
+
+```js
+var myStr = ""; // Change this line
+```
+
 # --solutions--
 
+```js
+var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
+```

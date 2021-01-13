@@ -3,6 +3,7 @@ id: 587d824c367417b2b2512c4f
 title: 测试某个值是否在特定范围内
 challengeType: 2
 forumTopicId: 301598
+dashedName: test-if-a-value-falls-within-a-specific-range
 ---
 
 # --description--
@@ -73,3 +74,10 @@ forumTopicId: 301598
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

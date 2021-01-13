@@ -3,6 +3,7 @@ id: 5cdafbb0291309899753167f
 title: Create a JavaScript Promise
 challengeType: 1
 forumTopicId: 301197
+dashedName: create-a-javascript-promise
 ---
 
 # --description--

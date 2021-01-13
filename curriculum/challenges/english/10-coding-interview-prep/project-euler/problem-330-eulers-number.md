@@ -3,6 +3,7 @@ id: 5900f4b71000cf542c50ffc9
 title: 'Problem 330: Euler''s Number'
 challengeType: 5
 forumTopicId: 301988
+dashedName: problem-330-eulers-number
 ---
 
 # --description--

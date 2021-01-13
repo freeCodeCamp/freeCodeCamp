@@ -4,6 +4,7 @@ title: Use Bracket Notation to Find the First Character in a String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8JwhW'
 forumTopicId: 18341
+dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 ---
 
 # --description--

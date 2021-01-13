@@ -3,6 +3,7 @@ id: 5900f48d1000cf542c50ffa0
 title: 问题289：欧拉循环
 challengeType: 5
 videoUrl: ''
+dashedName: problem-289-eulerian-cycles
 ---
 
 # --description--
@@ -27,5 +28,21 @@ E（m，n）上的欧拉循环是一条闭合路径，它恰好通过每个圆�
 assert.strictEqual(euler289(), 6567944538);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler289() {
+
+  return true;
+}
+
+euler289();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

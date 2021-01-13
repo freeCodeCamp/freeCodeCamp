@@ -4,6 +4,7 @@ title: Make a CSS Heartbeat using an Infinite Animation Count
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cDZpDUr'
 forumTopicId: 301062
+dashedName: make-a-css-heartbeat-using-an-infinite-animation-count
 ---
 
 # --description--

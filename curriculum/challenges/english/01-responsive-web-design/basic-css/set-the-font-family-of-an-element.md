@@ -4,6 +4,7 @@ title: Set the Font Family of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
+dashedName: set-the-font-family-of-an-element
 ---
 
 # --description--

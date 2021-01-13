@@ -3,6 +3,7 @@ id: 5d712346c441eddfaeb5bdef
 title: 匹配所有数字
 challengeType: 1
 forumTopicId: 18181
+dashedName: match-all-numbers
 ---
 
 # --description--
@@ -65,5 +66,20 @@ assert('21 Jump Street'.match(numRegex).length == 2);
 assert('2001: A Space Odyssey'.match(numRegex).length == 4);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let movieName = "2001: A Space Odyssey";
+let numRegex = /change/; // Change this line
+let result = movieName.match(numRegex).length;
+```
+
 # --solutions--
 
+```js
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; // Change this line
+let result = movieName.match(numRegex).length;
+```

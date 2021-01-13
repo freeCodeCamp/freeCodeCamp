@@ -2,6 +2,7 @@
 id: 5e7b9f170b6c005b0e76f087
 challengeType: 11
 videoId: p1r3h_AMMIM
+dashedName: object-lifecycle
 ---
 
 # --question--
@@ -68,9 +69,4 @@ Miya party count 1
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

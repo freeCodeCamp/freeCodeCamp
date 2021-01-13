@@ -4,6 +4,7 @@ title: Learn How Bezier Curves Work
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bDrs8'
 forumTopicId: 301058
+dashedName: learn-how-bezier-curves-work
 ---
 
 # --description--

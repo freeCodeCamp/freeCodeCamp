@@ -3,6 +3,7 @@ id: 5900f5191000cf542c51002c
 title: 'Problem 429: Sum of squares of unitary divisors'
 challengeType: 5
 forumTopicId: 302099
+dashedName: problem-429-sum-of-squares-of-unitary-divisors
 ---
 
 # --description--

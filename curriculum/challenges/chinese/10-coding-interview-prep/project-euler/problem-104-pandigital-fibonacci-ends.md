@@ -3,6 +3,7 @@ id: 5900f3d51000cf542c50fee6
 title: 问题104：Pandigital Fibonacci结束
 challengeType: 5
 videoUrl: ''
+dashedName: problem-104-pandigital-fibonacci-ends
 ---
 
 # --description--
@@ -17,5 +18,21 @@ Fibonacci序列由递归关系定义：Fn = Fn-1 + Fn-2，其中F1 = 1且F2 = 1.
 assert.strictEqual(euler104(), 329468);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler104() {
+
+  return true;
+}
+
+euler104();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

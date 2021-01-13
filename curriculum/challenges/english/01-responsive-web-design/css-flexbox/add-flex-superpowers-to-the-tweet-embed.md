@@ -4,6 +4,7 @@ title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
 forumTopicId: 301100
+dashedName: add-flex-superpowers-to-the-tweet-embed
 ---
 
 # --description--

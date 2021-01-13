@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c43
 title: Personal Library
 challengeType: 4
 forumTopicId: 301571
+dashedName: personal-library
 ---
 
 # --description--
@@ -208,8 +209,6 @@ async (getUserInput) => {
   }
 };
 ```
-
-# --seed--
 
 # --solutions--
 

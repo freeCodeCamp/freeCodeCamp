@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c87
 title: 创建双向链接列表
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-doubly-linked-list
 ---
 
 # --description--
@@ -147,5 +148,65 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+DoublyLinkedList.prototype = Object.assign(
+  DoublyLinkedList.prototype,
+  {
+  
+  print() {
+    if (this.head == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.head;
+      while (node.next != null) {
+        result.push(node.data);
+        node = node.next;
+      };
+      result.push(node.data);
+      return result;
+    };
+  },
+  printReverse() {
+    if (this.tail == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.tail;
+      while (node.prev != null) {
+        result.push(node.data);
+        node = node.prev;
+      };
+      result.push(node.data);
+      return result;
+    };
+  }
+});
+```
+
+## --seed-contents--
+
+```js
+var Node = function(data, prev) {
+  this.data = data;
+  this.prev = prev;
+  this.next = null;
+};
+var DoublyLinkedList = function() {
+  this.head = null;
+  this.tail = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+};
+```
+
 # --solutions--
 
+```js
+// solution required
+```

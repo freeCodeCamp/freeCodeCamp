@@ -4,6 +4,7 @@ title: 大于运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp6GbH4'
 forumTopicId: 16786
+dashedName: comparison-with-the-greater-than-operator
 ---
 
 # --description--
@@ -75,5 +76,36 @@ assert(testGreaterThan(150) === 'Over 100');
 assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function testGreaterThan(val) {
+  if (val) {  // Change this line
+    return "Over 100";
+  }
+
+  if (val) {  // Change this line
+    return "Over 10";
+  }
+
+  return "10 or Under";
+}
+
+testGreaterThan(10);
+```
+
 # --solutions--
 
+```js
+function testGreaterThan(val) {
+  if (val > 100) {  // Change this line
+    return "Over 100";
+  }
+  if (val > 10) {  // Change this line
+    return "Over 10";
+  }
+  return "10 or Under";
+}
+```

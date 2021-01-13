@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7c
 title: 检查二进制搜索树中是否存在元素
 challengeType: 1
 videoUrl: ''
+dashedName: check-if-an-element-is-present-in-a-binary-search-tree
 ---
 
 # --description--
@@ -88,5 +89,83 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    add: function(value) {
+      var node = this.root;
+      if (node == null) {
+        this.root = new Node(value);
+        return;
+      } else {
+        function searchTree(node) {
+          if (value < node.value) {
+            if (node.left == null) {
+              node.left = new Node(value);
+              return;
+            } else if (node.left != null) {
+              return searchTree(node.left);
+            }
+          } else if (value > node.value) {
+            if (node.right == null) {
+              node.right = new Node(value);
+              return;
+            } else if (node.right != null) {
+              return searchTree(node.right);
+            }
+          } else {
+            return null;
+          }
+        }
+        return searchTree(node);
+      }
+    }
+  }
+);
+```
+
+## --seed-contents--
+
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+}
+```
+
 # --solutions--
 
+```js
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  this.isPresent = function (value) {
+    var current = this.root
+    while (current) {
+      if (value === current.value) {
+        return true;
+      }
+      current = value < current.value ? current.left : current.right;
+    }
+    return false;
+  }
+}
+```

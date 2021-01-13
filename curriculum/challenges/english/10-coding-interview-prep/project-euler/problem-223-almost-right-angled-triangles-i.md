@@ -3,6 +3,7 @@ id: 5900f44b1000cf542c50ff5e
 title: 'Problem 223: Almost right-angled triangles I'
 challengeType: 5
 forumTopicId: 301866
+dashedName: problem-223-almost-right-angled-triangles-i
 ---
 
 # --description--

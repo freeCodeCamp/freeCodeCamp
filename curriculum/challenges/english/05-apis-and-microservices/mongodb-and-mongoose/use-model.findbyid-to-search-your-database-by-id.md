@@ -3,6 +3,7 @@ id: 587d7fb7367417b2b2512c0d
 title: Use model.findById() to Search Your Database By _id
 challengeType: 2
 forumTopicId: 301544
+dashedName: use-model-findbyid-to-search-your-database-by-id
 ---
 
 # --description--
@@ -35,8 +36,6 @@ Find an item by Id should succeed
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

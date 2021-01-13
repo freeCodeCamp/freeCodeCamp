@@ -3,6 +3,7 @@ id: 587d7b85367417b2b2512b38
 title: 捕获使用赋值运算符而不是相等运算符
 challengeType: 1
 forumTopicId: 301191
+dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
 ---
 
 # --description--
@@ -43,5 +44,36 @@ assert(result == 'Not equal!');
 assert(code.match(/x\s*?===?\s*?y/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let x = 7;
+let y = 9;
+let result = "to come";
+
+if(x = y) {
+  result = "Equal!";
+} else {
+  result = "Not equal!";
+}
+
+console.log(result);
+```
+
 # --solutions--
 
+```js
+let x = 7;
+let y = 9;
+let result = "to come";
+
+if(x === y) {
+ result = "Equal!";
+} else {
+ result = "Not equal!";
+}
+
+console.log(result);
+```

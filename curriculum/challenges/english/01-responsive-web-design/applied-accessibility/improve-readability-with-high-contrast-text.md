@@ -4,6 +4,7 @@ title: Improve Readability with High Contrast Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cKb3nCq'
 forumTopicId: 301017
+dashedName: improve-readability-with-high-contrast-text
 ---
 
 # --description--

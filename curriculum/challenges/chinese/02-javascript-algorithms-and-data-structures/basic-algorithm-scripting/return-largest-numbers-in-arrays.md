@@ -3,6 +3,7 @@ id: a789b3483989747d63b0e427
 title: 找出多个数组中的最大数字
 challengeType: 5
 forumTopicId: 16042
+dashedName: return-largest-numbers-in-arrays
 ---
 
 # --description--
@@ -68,5 +69,24 @@ assert.deepEqual(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function largestOfFour(arr) {
+  return arr;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+```
+
 # --solutions--
 
+```js
+function largestOfFour(arr) {
+  return arr.map(subArr => Math.max.apply(null, subArr));
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+```

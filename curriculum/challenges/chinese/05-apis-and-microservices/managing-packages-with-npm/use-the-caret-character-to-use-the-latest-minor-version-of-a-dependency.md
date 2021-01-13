@@ -3,6 +3,7 @@ id: 587d7fb5367417b2b2512c03
 title: 用插入字符可以使用依赖项的最新次要版本
 challengeType: 2
 forumTopicId: 301531
+dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-dependency
 ---
 
 # --description--
@@ -65,3 +66,10 @@ forumTopicId: 301531
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

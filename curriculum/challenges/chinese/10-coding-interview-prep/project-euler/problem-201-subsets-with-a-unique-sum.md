@@ -3,6 +3,7 @@ id: 5900f4361000cf542c50ff48
 title: 问题201：具有唯一总和的子集
 challengeType: 5
 videoUrl: ''
+dashedName: problem-201-subsets-with-a-unique-sum
 ---
 
 # --description--
@@ -25,5 +26,21 @@ sum（{1,3,6}）= 10，sum（{1,3,8}）= 12，sum（{1,3,10}）= 14，sum（{1,3
 assert.strictEqual(euler201(), 115039000);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler201() {
+
+  return true;
+}
+
+euler201();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

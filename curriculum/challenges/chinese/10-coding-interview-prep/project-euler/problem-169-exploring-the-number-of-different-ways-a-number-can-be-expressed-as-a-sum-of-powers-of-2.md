@@ -3,6 +3,8 @@ id: 5900f4151000cf542c50ff28
 title: 问题169：探索数字可以表示为2的幂之和的不同方式的数量
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-169-exploring-the-number-of-different-ways-a-number-can-be-expressed-as-a-sum-of-powers-of-2
 ---
 
 # --description--
@@ -17,5 +19,21 @@ videoUrl: ''
 assert.strictEqual(euler169(), 178653872807);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler169() {
+
+  return true;
+}
+
+euler169();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

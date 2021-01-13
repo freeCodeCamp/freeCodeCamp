@@ -3,6 +3,7 @@ id: 587d7fb7367417b2b2512c0b
 title: Use model.find() to Search Your Database
 challengeType: 2
 forumTopicId: 301543
+dashedName: use-model-find-to-search-your-database
 ---
 
 # --description--
@@ -40,8 +41,6 @@ Find all items corresponding to a criteria should succeed
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

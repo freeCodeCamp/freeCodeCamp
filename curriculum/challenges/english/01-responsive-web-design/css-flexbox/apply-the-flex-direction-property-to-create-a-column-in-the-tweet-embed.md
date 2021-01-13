@@ -4,6 +4,7 @@ title: Apply the flex-direction Property to Create a Column in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103
+dashedName: apply-the-flex-direction-property-to-create-a-column-in-the-tweet-embed
 ---
 
 # --description--

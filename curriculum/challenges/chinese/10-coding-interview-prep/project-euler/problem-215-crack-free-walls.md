@@ -3,6 +3,7 @@ id: 5900f4431000cf542c50ff56
 title: 问题215：无裂缝墙
 challengeType: 5
 videoUrl: ''
+dashedName: problem-215-crack-free-walls
 ---
 
 # --description--
@@ -23,5 +24,21 @@ videoUrl: ''
 assert.strictEqual(euler215(), 806844323190414);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler215() {
+
+  return true;
+}
+
+euler215();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

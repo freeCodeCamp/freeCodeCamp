@@ -3,6 +3,7 @@ id: 5900f4ae1000cf542c50ffc0
 title: 'Problem 321: Swapping Counters'
 challengeType: 5
 forumTopicId: 301978
+dashedName: problem-321-swapping-counters
 ---
 
 # --description--

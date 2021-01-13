@@ -3,6 +3,7 @@ id: 587d7fb7367417b2b2512c0d
 title: 使用 model.findById() 方法，根据 _id 来搜索数据
 challengeType: 2
 forumTopicId: 301544
+dashedName: use-model-findbyid-to-search-your-database-by-id
 ---
 
 # --description--
@@ -38,3 +39,10 @@ forumTopicId: 301544
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

@@ -3,6 +3,7 @@ id: a3566b1109230028080c9345
 title: 范围内的数字求和
 challengeType: 5
 forumTopicId: 16083
+dashedName: sum-all-numbers-in-a-range
 ---
 
 # --description--
@@ -43,5 +44,27 @@ assert.deepEqual(sumAll([5, 10]), 45);
 assert.deepEqual(sumAll([10, 5]), 45);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function sumAll(arr) {
+  return 1;
+}
+
+sumAll([1, 4]);
+```
+
 # --solutions--
 
+```js
+function sumAll(arr) {
+  var sum = 0;
+  arr.sort(function(a,b) {return a-b;});
+  for (var i = arr[0]; i <= arr[1]; i++) {
+    sum += i;
+  }
+  return sum;
+}
+```

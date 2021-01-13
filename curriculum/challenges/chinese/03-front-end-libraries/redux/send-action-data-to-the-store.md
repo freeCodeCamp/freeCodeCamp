@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036155
 title: 发送 Action Data 给 Store
 challengeType: 6
 forumTopicId: 301448
+dashedName: send-action-data-to-the-store
 ---
 
 # --description--
@@ -43,5 +44,64 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // Change code below this line
+
+    // Change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  // Change code below this line
+
+  // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText('Hello!'));
+console.log(store.getState());
+```
+
 # --solutions--
 
+```js
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // Change code below this line
+    case ADD_NOTE:
+      return action.text;
+    // Change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  // Change code below this line
+  return {
+    type: ADD_NOTE,
+    text: note
+  }
+  // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText('Hello Redux!'));
+console.log(store.getState());
+```

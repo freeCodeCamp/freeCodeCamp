@@ -3,6 +3,7 @@ id: 5900f53a1000cf542c51004c
 title: 问题461：几乎是Pi
 challengeType: 5
 videoUrl: ''
+dashedName: problem-461-almost-pi
 ---
 
 # --description--
@@ -17,5 +18,21 @@ videoUrl: ''
 assert.strictEqual(euler461(), 159820276);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler461() {
+
+  return true;
+}
+
+euler461();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

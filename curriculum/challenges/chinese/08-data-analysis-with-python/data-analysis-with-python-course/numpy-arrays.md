@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c154
 challengeType: 11
 videoId: VDYVFHBL1AM
+dashedName: numpy-arrays
 ---
 
 # --description--
@@ -51,9 +52,4 @@ print(A[:, :2])
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

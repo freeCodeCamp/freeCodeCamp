@@ -3,6 +3,7 @@ id: 5900f4671000cf542c50ff7a
 title: 'Problem 251: Cardano Triplets'
 challengeType: 5
 forumTopicId: 301899
+dashedName: problem-251-cardano-triplets
 ---
 
 # --description--

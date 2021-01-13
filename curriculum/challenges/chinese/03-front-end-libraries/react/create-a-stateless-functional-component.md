@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036162
 title: 创建一个无状态的函数组件
 challengeType: 6
 forumTopicId: 301392
+dashedName: create-a-stateless-functional-component
 ---
 
 # --description--
@@ -65,5 +66,36 @@ assert(
 );
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
+
+```jsx
+const MyComponent = function() {
+  // Change code below this line
+
+
+
+  // Change code above this line
+}
+```
+
 # --solutions--
 
+```jsx
+const MyComponent = function() {
+  // Change code below this line
+  return (
+    <div>
+      Demo Solution
+    </div>
+  );
+  // Change code above this line
+}
+```

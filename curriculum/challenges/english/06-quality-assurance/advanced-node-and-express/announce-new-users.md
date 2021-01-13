@@ -3,6 +3,7 @@ id: 589fc832f9fc0f352b528e78
 title: Announce New Users
 challengeType: 2
 forumTopicId: 301546
+dashedName: announce-new-users
 ---
 
 # --description--
@@ -77,8 +78,6 @@ Client should properly handle and display the new data from event `'user'`.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

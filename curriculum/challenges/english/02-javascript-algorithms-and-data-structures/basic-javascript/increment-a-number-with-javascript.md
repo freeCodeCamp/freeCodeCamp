@@ -4,6 +4,7 @@ title: Increment a Number with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
+dashedName: increment-a-number-with-javascript
 ---
 
 # --description--

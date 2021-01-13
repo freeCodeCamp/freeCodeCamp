@@ -3,6 +3,7 @@ id: 5900f3c51000cf542c50fed6
 title: 'Problem 88: Product-sum numbers'
 challengeType: 5
 forumTopicId: 302203
+dashedName: problem-88-product-sum-numbers
 ---
 
 # --description--

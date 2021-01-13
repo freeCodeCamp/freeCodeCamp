@@ -3,6 +3,7 @@ id: 5900f4b01000cf542c50ffc2
 title: 问题323：对随机整数进行按位或运算
 challengeType: 5
 videoUrl: ''
+dashedName: problem-323-bitwise-or-operations-on-random-integers
 ---
 
 # --description--
@@ -27,5 +28,21 @@ xi = xi-1 | yi-1，对于i>0。（|是按位或运算符）
 assert.strictEqual(euler323(), 6.3551758451);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler323() {
+
+  return true;
+}
+
+euler323();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

@@ -3,6 +3,7 @@ id: 5900f4021000cf542c50ff14
 title: 问题148：探索帕斯卡的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-148-exploring-pascals-triangle
 ---
 
 # --description--
@@ -73,5 +74,21 @@ videoUrl: ''
 assert.strictEqual(euler148(), 2129970655314432);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler148() {
+
+  return true;
+}
+
+euler148();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

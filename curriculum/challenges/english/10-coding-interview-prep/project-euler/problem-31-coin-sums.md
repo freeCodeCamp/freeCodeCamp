@@ -3,6 +3,7 @@ id: 5900f38b1000cf542c50fe9e
 title: 'Problem 31: Coin sums'
 challengeType: 5
 forumTopicId: 301965
+dashedName: problem-31-coin-sums
 ---
 
 # --description--

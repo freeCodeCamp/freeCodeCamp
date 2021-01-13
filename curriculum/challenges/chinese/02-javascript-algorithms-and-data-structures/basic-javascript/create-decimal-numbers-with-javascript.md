@@ -4,6 +4,7 @@ title: 创建一个小数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GEuW'
 forumTopicId: 16826
+dashedName: create-decimal-numbers-with-javascript
 ---
 
 # --description--
@@ -31,5 +32,24 @@ assert(typeof myDecimal === 'number');
 assert(myDecimal % 1 != 0);
 ```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){if(typeof myDecimal !== "undefined"){return myDecimal;}})();
+```
+
+## --seed-contents--
+
+```js
+var ourDecimal = 5.7;
+
+// Only change code below this line
+```
+
 # --solutions--
 
+```js
+var myDecimal = 9.9;
+```

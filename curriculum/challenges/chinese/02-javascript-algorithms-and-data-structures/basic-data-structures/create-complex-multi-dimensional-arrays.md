@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b16
 title: 创建复杂的多维数组
 challengeType: 1
 forumTopicId: 301159
+dashedName: create-complex-multi-dimensional-arrays
 ---
 
 # --description--
@@ -186,5 +187,30 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let myNestedArray = [
+  // Only change code below this line
+  ['unshift', false, 1, 2, 3, 'complex', 'nested'],
+  ['loop', 'shift', 6, 7, 1000, 'method'],
+  ['concat', false, true, 'spread', 'array'],
+  ['mutate', 1327.98, 'splice', 'slice', 'push'],
+  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
+  // Only change code above this line
+];
+```
+
 # --solutions--
 
+```js
+let myNestedArray = [
+  ['unshift', ['deep', ['deeper', ['deepest']]],false, 1, 2, 3, 'complex', 'nested'],
+  ['loop', 'shift', 6, 7, 1000, 'method'],
+  ['concat', false, true, 'spread', 'array'],
+  ['mutate', 1327.98, 'splice', 'slice', 'push'],
+  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
+];
+```

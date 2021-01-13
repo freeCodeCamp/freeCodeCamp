@@ -3,6 +3,7 @@ id: 5900f3c61000cf542c50fed9
 title: 问题90：立方体数字对
 challengeType: 5
 videoUrl: ''
+dashedName: problem-90-cube-digit-pairs
 ---
 
 # --description--
@@ -33,5 +34,21 @@ videoUrl: ''
 assert.strictEqual(euler90(), 1217);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function cubeDigitPairs() {
+
+  return true;
+}
+
+cubeDigitPairs();
+```
+
 # --solutions--
 
+```js
+// solution required
+```

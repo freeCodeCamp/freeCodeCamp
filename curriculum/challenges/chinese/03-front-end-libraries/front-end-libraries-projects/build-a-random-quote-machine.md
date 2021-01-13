@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd13
 title: 构建一个随机引语生成器
 challengeType: 3
 forumTopicId: 301374
+dashedName: build-a-random-quote-machine
 ---
 
 # --description--
@@ -40,10 +41,6 @@ forumTopicId: 301374
 一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
 **注意：** Twitter 不允许在 iframe 里加载链接。如果你的 tweet 不能加载，尝试在 `#tweet-quote` 元素上使用 `target="_blank"` 或者 `target="_top"` 属性。`target="_top"` 会替换当前 tab 页的内容，所以确保当前内容已经保存了。
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

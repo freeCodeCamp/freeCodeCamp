@@ -3,6 +3,7 @@ id: 5900f5151000cf542c510028
 title: 问题425：主要连接
 challengeType: 5
 videoUrl: ''
+dashedName: problem-425-prime-connection
 ---
 
 # --description--
@@ -29,5 +30,21 @@ videoUrl: ''
 assert.strictEqual(euler425(), 46479497324);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+function euler425() {
+
+  return true;
+}
+
+euler425();
+```
+
 # --solutions--
 
+```js
+// solution required
+```
