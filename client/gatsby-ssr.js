@@ -4,10 +4,9 @@ import { Provider } from 'react-redux';
 import { I18nextProvider } from 'react-i18next';
 
 import i18n from './i18n/config';
-import headComponents from './src/head';
 import { createStore } from './src/redux/createStore';
-
 import layoutSelector from './utils/gatsby/layoutSelector';
+import { getheadTagComponents, getPostBodyComponents } from './utils/tags';
 
 const store = createStore();
 
@@ -23,26 +22,6 @@ wrapRootElement.propTypes = {
   element: PropTypes.any
 };
 
-// TODO: put these in a common utils file.
-const mathJaxCdn = {
-  address:
-    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
-    '2.7.4/MathJax.js?config=TeX-AMS_HTML',
-  id: 'mathjax',
-  key: 'mathjax',
-  type: 'text/javascript'
-};
-
-const stripeScript = {
-  address: 'https://js.stripe.com/v3/',
-  id: 'stripe-js',
-  key: 'stripe-js',
-  type: 'text/javascript'
-};
-
-const challengeRE = new RegExp('/learn/[^/]+/[^/]+/[^/]+/?$');
-const donateRE = new RegExp('/donate/?$');
-
 export const wrapPageElement = layoutSelector;
 
 export const onRenderBody = ({
@@ -50,52 +29,6 @@ export const onRenderBody = ({
   setHeadComponents,
   setPostBodyComponents
 }) => {
-  setHeadComponents([...headComponents]);
-  const scripts = [
-    <script
-      async={true}
-      key='gtag-script'
-      src='https://www.googletagmanager.com/gtag/js?id=AW-795617839'
-    />,
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-795617839');
-      `
-      }}
-      key='gtag-dataLayer'
-    />
-  ];
-
-  if (
-    pathname.includes('/learn/coding-interview-prep/rosetta-code') ||
-    pathname.includes('/learn/coding-interview-prep/project-euler')
-  ) {
-    scripts.push(
-      <script
-        async={false}
-        id={mathJaxCdn.id}
-        key={mathJaxCdn.key}
-        src={mathJaxCdn.address}
-        type={mathJaxCdn.type}
-      />
-    );
-  }
-
-  if (challengeRE.test(pathname) || donateRE.test(pathname)) {
-    scripts.push(
-      <script
-        async={true}
-        id={stripeScript.id}
-        key={stripeScript.key}
-        src={stripeScript.address}
-        type={stripeScript.type}
-      />
-    );
-  }
-
-  setPostBodyComponents(scripts.filter(Boolean));
+  setHeadComponents(getheadTagComponents());
+  setPostBodyComponents(getPostBodyComponents(pathname));
 };
