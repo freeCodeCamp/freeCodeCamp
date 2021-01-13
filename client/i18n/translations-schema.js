@@ -356,7 +356,11 @@ const translationsSchema = {
     'reset-warn-2': 'This cannot be undone',
     'scrimba-tip':
       'Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.',
-    'chal-preview': 'Challenge Preview'
+    'chal-preview': 'Challenge Preview',
+    'cert-map-estimates': {
+      certs: 'Certification (300\u00A0hours)',
+      'coding-prep': '(Thousands of hours of challenges)'
+    }
   },
   donate: {
     title: 'Support our nonprofit',

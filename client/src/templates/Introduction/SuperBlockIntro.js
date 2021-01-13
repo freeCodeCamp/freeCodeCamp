@@ -2,20 +2,27 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import { uniq, find } from 'lodash';
+import { uniq } from 'lodash';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
+import { withTranslation } from 'react-i18next';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
 
-import Block from '../../components/Map/components/Block';
+import Login from '../../components/Header/components/Login';
+import Map from '../../components/Map';
+import CertChallenge from './components/CertChallenge';
+import SuperBlockIntro from './components/SuperBlockIntro';
+import { dasherize } from '../../../../utils/slugs';
+import Block from './components/Block';
 import { FullWidthRow, Spacer } from '../../components/helpers';
-import { currentChallengeIdSelector, isSignedInSelector } from '../../redux';
-import { resetExpansion, toggleBlock } from '../../components/Map/redux';
 import {
-  MarkdownRemark,
-  AllChallengeNode,
-  AllMarkdownRemark
-} from '../../redux/propTypes';
+  currentChallengeIdSelector,
+  userFetchStateSelector,
+  isSignedInSelector
+} from '../../redux';
+import { resetExpansion, toggleBlock } from './redux';
+import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
 
 import './intro.css';
 
@@ -23,12 +30,22 @@ const propTypes = {
   currentChallengeId: PropTypes.string,
   data: PropTypes.shape({
     markdownRemark: MarkdownRemark,
-    allChallengeNode: AllChallengeNode,
-    allMarkdownRemark: AllMarkdownRemark
+    allChallengeNode: AllChallengeNode
   }),
   expandedState: PropTypes.object,
+  fetchState: PropTypes.shape({
+    pending: PropTypes.bool,
+    complete: PropTypes.bool,
+    errored: PropTypes.bool
+  }),
   isSignedIn: PropTypes.bool,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      breadcrumbBlockClick: PropTypes.string
+    })
+  }),
   resetExpansion: PropTypes.func,
+  t: PropTypes.func,
   toggleBlock: PropTypes.func
 };
 
@@ -36,9 +53,11 @@ const mapStateToProps = state => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
-    (currentChallengeId, isSignedIn) => ({
+    userFetchStateSelector,
+    (currentChallengeId, isSignedIn, fetchState) => ({
       currentChallengeId,
-      isSignedIn
+      isSignedIn,
+      fetchState
     })
   )(state);
 };
@@ -49,70 +68,66 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-function renderBlock(blocksForSuperBlock, introNodes) {
-  // since the nodes have been filtered based on isHidden, any blocks whose
-  // nodes have been entirely removed will not appear in this array.
-  const blockDashedNames = uniq(blocksForSuperBlock.map(({ block }) => block));
-
-  // render all non-empty blocks
-  return (
-    <ul className='block'>
-      {blockDashedNames.map(blockDashedName => (
-        <Block
-          blockDashedName={blockDashedName}
-          challenges={blocksForSuperBlock.filter(
-            node => node.block === blockDashedName
-          )}
-          intro={find(
-            introNodes,
-            ({ frontmatter: { block } }) =>
-              block
-                .toLowerCase()
-                .split(' ')
-                .join('-') === blockDashedName
-          )}
-          key={blockDashedName}
-        />
-      ))}
-    </ul>
-  );
-}
-
 export class SuperBlockIntroductionPage extends Component {
   constructor(props) {
     super(props);
-    this.initializeExpandedState();
+    this.elementRef = React.createRef();
   }
 
-  initializeExpandedState() {
+  componentDidMount() {
+    this.initializeExpandedState();
+    this.scrollToBlock();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBlock();
+  }
+
+  scrollToBlock() {
+    if (this.elementRef.current) {
+      setTimeout(() => {
+        const scrollTo = this.elementRef.current.offsetTop;
+
+        window.scrollTo({ top: scrollTo, left: 0, behavior: 'smooth' });
+      }, 300);
+    }
+  }
+
+  getChosenBlock(forScrolling) {
     const {
-      resetExpansion,
       data: {
         allChallengeNode: { edges }
       },
       isSignedIn,
       currentChallengeId,
-      toggleBlock
+      location
     } = this.props;
 
-    resetExpansion();
+    // if coming from breadcrumb click
+    if (location.state && location.state.breadcrumbBlockClick)
+      return dasherize(location.state.breadcrumbBlockClick);
 
-    let edge;
+    let edge = edges[0];
 
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
-      edge = edges.find(edge => edge.node.id === currentChallengeId);
+      const currentChallengeEdge = edges.find(
+        edge => edge.node.id === currentChallengeId
+      );
+
+      return currentChallengeEdge
+        ? currentChallengeEdge.node.block
+        : edge.node.block;
     }
 
-    // else, find first block in superBlock
-    let i = 0;
-    while (!edge && i < 20) {
-      // eslint-disable-next-line no-loop-func
-      edge = edges.find(edge => edge.node.order === i);
-      i++;
-    }
+    return forScrolling ? 'top' : edge.node.block;
+  }
 
-    if (edge) toggleBlock(edge.node.block);
+  initializeExpandedState() {
+    const { resetExpansion, toggleBlock } = this.props;
+
+    resetExpansion();
+    return toggleBlock(this.getChosenBlock());
   }
 
   render() {
@@ -121,32 +136,79 @@ export class SuperBlockIntroductionPage extends Component {
         markdownRemark: {
           frontmatter: { superBlock }
         },
-        allChallengeNode: { edges },
-        allMarkdownRemark: { edges: mdEdges }
-      }
+        allChallengeNode: { edges }
+      },
+      fetchState: { pending, complete },
+      isSignedIn,
+      t
     } = this.props;
 
+    const superBlockDashedName = dasherize(superBlock);
+
+    const nodesForSuperBlock = edges.map(({ node }) => node);
+    const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
+
+    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
+
+    let blockToScrollTo;
+    if (!pending && complete) {
+      blockToScrollTo = this.getChosenBlock(true);
+    }
+
     return (
-      <Fragment>
+      <>
         <Helmet>
-          <title>{superBlock} | freeCodeCamp.org</title>
+          <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
-        <FullWidthRow className='overflow-fix'>
+        <FullWidthRow
+          className='overflow-fix'
+          ref={blockToScrollTo === 'top' ? this.elementRef : null}
+        >
           <Spacer size={2} />
-          <h1 className='text-center'>
-            {superBlock}
-            {superBlock !== 'Coding Interview Prep' ? ' Certification' : ''}
-          </h1>
+          <SuperBlockIntro superBlock={superBlock} />
+          <Spacer size={2} />
+          <h2 className='text-center'>{t(`intro:misc-text.tutorials`)}</h2>
           <Spacer />
           <div className='block-ui'>
-            {renderBlock(
-              edges.map(({ node }) => node),
-              mdEdges.map(({ node }) => node)
+            {blockDashedNames.map(blockDashedName => (
+              <div
+                key={blockDashedName}
+                ref={
+                  blockDashedName === blockToScrollTo ? this.elementRef : null
+                }
+              >
+                <Block
+                  blockDashedName={blockDashedName}
+                  challenges={nodesForSuperBlock.filter(
+                    node => node.block === blockDashedName
+                  )}
+                  superBlockDashedName={superBlockDashedName}
+                />
+              </div>
+            ))}
+            {superBlock !== 'Coding Interview Prep' && (
+              <div>
+                <CertChallenge superBlock={superBlock} />
+                <Spacer size={2} />
+              </div>
             )}
           </div>
+          {!isSignedIn && (
+            <Row>
+              <Col sm={10} smOffset={1} xs={12}>
+                <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+                <Spacer />
+              </Col>
+            </Row>
+          )}
+          <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
+            {t(`intro:misc-text.browse-other`)}
+          </h2>
           <Spacer />
+          <Map currentSuperBlock={superBlock} />
+          <Spacer size={2} />
         </FullWidthRow>
-      </Fragment>
+      </>
     );
   }
 }
@@ -157,7 +219,7 @@ SuperBlockIntroductionPage.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SuperBlockIntroductionPage);
+)(withTranslation()(SuperBlockIntroductionPage));
 
 export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
@@ -178,27 +240,11 @@ export const query = graphql`
           }
           id
           block
+          challengeType
           title
           order
           superBlock
           dashedName
-        }
-      }
-    }
-    allMarkdownRemark(
-      filter: {
-        frontmatter: { block: { ne: null }, superBlock: { eq: $superBlock } }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            block
-          }
-          fields {
-            slug
-          }
         }
       }
     }
