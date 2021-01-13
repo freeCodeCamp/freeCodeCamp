@@ -29,10 +29,14 @@ Crowdin separates a document into translatable "strings", usually as sentences. 
 
 1. A string highlighted in green already has a proposed translation.
 2. A string highlighted in red does *not* have a proposed translation.
-3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must be preserved in English.
+3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must be preserved in English. You will be unable to select these strings in the editor.
 4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
 5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). Translation Memory refers to similar or identical strings that we have translated/approved in other files. Machine Translation refers to translations recommended by their integrated library.
 6. This is the editor pane, where you may write your proposed translation for the selected string.
+7. The currently selected string in the editor will be highlighted in yellow.
+8. Here you will see tags indicating the state of the string. `Done` means the string has at least one proposed translation. `Todo` means the string does not have any proposed translations.
+9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
+10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote your translation as accurate and proofreaders will be able to approve it.
 
