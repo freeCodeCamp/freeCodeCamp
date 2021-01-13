@@ -7,8 +7,8 @@
 
 files: [
  {
-  "source" : "/curriculum/challenges/english/01-responsive-web-design/**/*.md",
-  "translation" : "/curriculum/challenges/%language%/01-responsive-web-design/**/%original_file_name%",
+  "source" : "/curriculum/challenges/english/**/*.md",
+  "translation" : "/curriculum/challenges/%language%/**/%original_file_name%",
   "ignore": [
     "/**/part-[0-9][0-9][0-9].md",
     "/curriculum/challenges/english/[0-9][0-9]-certificates/**/*.*"
