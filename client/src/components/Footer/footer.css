@@ -25,12 +25,14 @@
   margin-bottom: 10px;
 }
 
-.footer-container .language-menu span {
-  margin-right: 14px;
+.footer-container .language-menu label {
+  font-weight: normal;
 }
 
 .footer-container .language-menu select {
-  width: 40%;
+  padding: 0 5px;
+  margin-left: 10px;
+  font-weight: normal;
 }
 
 .footer-container p {

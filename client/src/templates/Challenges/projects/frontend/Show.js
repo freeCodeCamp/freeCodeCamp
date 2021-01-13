@@ -6,10 +6,12 @@ import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
+import { createSelector } from 'reselect';
 
 import { ChallengeNode } from '../../../../redux/propTypes';
 import {
   challengeMounted,
+  isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
@@ -26,7 +28,13 @@ import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
 import Hotkeys from '../../components/Hotkeys';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = createSelector(
+  isChallengeCompletedSelector,
+  isChallengeCompleted => ({
+    isChallengeCompleted
+  })
+);
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
@@ -43,6 +51,7 @@ const propTypes = {
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
+  isChallengeCompleted: PropTypes.bool,
   openCompletionModal: PropTypes.func.isRequired,
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
@@ -105,12 +114,14 @@ export class Project extends Component {
           fields: { blockName },
           forumTopicId,
           title,
-          description
+          description,
+          superBlock
         }
       },
+      isChallengeCompleted,
       openCompletionModal,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
       t,
       updateSolutionFormValues
@@ -121,7 +132,6 @@ export class Project extends Component {
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -133,7 +143,13 @@ export class Project extends Component {
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+                <ChallengeTitle
+                  block={blockName}
+                  isCompleted={isChallengeCompleted}
+                  superBlock={superBlock}
+                >
+                  {title}
+                </ChallengeTitle>
                 <ChallengeDescription description={description} />
                 <SolutionForm
                   challengeType={challengeType}
@@ -173,6 +189,7 @@ export const query = graphql`
       description
       challengeType
       helpCategory
+      superBlock
       fields {
         blockName
         slug

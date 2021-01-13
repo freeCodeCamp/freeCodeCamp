@@ -4,6 +4,7 @@ const { translationsSchema } = require('./translations-schema');
 const { availableLangs } = require('./allLangs');
 const { trendingSchema } = require('./trending-schema');
 const { motivationSchema } = require('./motivation-schema');
+const { introSchema } = require('./intro-schema');
 
 /**
  * Flattens a nested object structure into a single
@@ -103,6 +104,7 @@ const noEmptyObjectValues = (obj, namespace = '') => {
 const translationSchemaKeys = Object.keys(flattenAnObject(translationsSchema));
 const trendingSchemaKeys = Object.keys(flattenAnObject(trendingSchema));
 const motivationSchemaKeys = Object.keys(flattenAnObject(motivationSchema));
+const introSchemaKeys = Object.keys(flattenAnObject(introSchema));
 
 /**
  * Function that checks the translations.json file
@@ -211,6 +213,30 @@ const motivationSchemaValidation = languages => {
   });
 };
 
+/**
+ * Function that checks the intro.json file
+ * for each available client language.
+ * @param {String[]} languages List of languages to test
+ */
+const introSchemaValidation = languages => {
+  languages.forEach(language => {
+    const filePath = path.join(__dirname, `/locales/${language}/intro.json`);
+    const fileData = fs.readFileSync(filePath);
+    const fileJson = JSON.parse(fileData);
+    const fileKeys = Object.keys(flattenAnObject(fileJson));
+    findMissingKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
+    findExtraneousKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
+    const emptyKeys = noEmptyObjectValues(fileJson);
+    if (emptyKeys.length) {
+      throw new Error(
+        `${language}/intro.json has these empty keys: ${emptyKeys.join(', ')}`
+      );
+    }
+    console.info(`${language} intro.json is correct!`);
+  });
+};
+
 translationSchemaValidation(availableLangs.client);
 trendingSchemaValidation(availableLangs.client);
 motivationSchemaValidation(availableLangs.client);
+introSchemaValidation(availableLangs.client);

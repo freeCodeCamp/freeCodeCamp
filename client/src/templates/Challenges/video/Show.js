@@ -160,13 +160,14 @@ export class Project extends Component {
           fields: { blockName },
           title,
           description,
+          superBlock,
           videoId,
           question: { text, answers, solution }
         }
       },
       openCompletionModal,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
       t,
       isChallengeCompleted
@@ -179,7 +180,6 @@ export class Project extends Component {
           this.handleSubmit(solution, openCompletionModal);
         }}
         innerRef={c => (this._container = c)}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -190,8 +190,12 @@ export class Project extends Component {
           <Grid>
             <Row>
               <Spacer />
-              <ChallengeTitle isCompleted={isChallengeCompleted}>
-                {blockNameTitle}
+              <ChallengeTitle
+                block={blockName}
+                isCompleted={isChallengeCompleted}
+                superBlock={superBlock}
+              >
+                {title}
               </ChallengeTitle>
 
               <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
@@ -315,6 +319,7 @@ export const query = graphql`
       description
       challengeType
       helpCategory
+      superBlock
       fields {
         blockName
         slug
