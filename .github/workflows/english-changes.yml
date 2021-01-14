@@ -1,0 +1,24 @@
+# This will create an issue when a push to master 
+# contains changes to any of the files listed below
+
+name: Client English Changes
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'client/i18n/locales/english/translations.json'
+      - 'client/i18n/locales/english/intro.json'
+
+jobs:
+  has-english-changes:
+    name: Check for changes to client English i18n files
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        filename: .github/ENGLISH_CHANGES_ISSUE.md
