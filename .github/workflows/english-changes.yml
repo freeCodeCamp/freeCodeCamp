@@ -5,7 +5,8 @@ name: Client English Changes
 
 on:
   push:
-    branches: [ master ]
+    # Change to master when next is merged into it
+    branches: [ next-i18n-client ]
     paths:
       - 'client/i18n/locales/english/translations.json'
       - 'client/i18n/locales/english/intro.json'
