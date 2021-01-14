@@ -35,10 +35,8 @@ function IntroDescription() {
         important than the certifications is the practice you get along the way.
       </p>
       <p>If you feel overwhelmed, that is normal. Programming is hard.</p>
-      <p>Practice is the key. Practice, practice, practice.</p>
-      <p>
-        And this curriculum will give you thousands of hours of hands-on
-        programming practice.
+      <p>Practice is the key. And this curriculum will provide you with thousands of hours of hands on
+        promgramming practice.
       </p>
       <p>
         And if you want to learn more math and computer science theory, we also
