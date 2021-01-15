@@ -17,7 +17,7 @@ const { createPoly } = require('../utils/polyvinyl');
 const { helpCategoryMap } = require('../client/utils/challengeTypes');
 const {
   curriculum: curriculumLangs
-} = require('../client/i18n/allLangs').availableLangs;
+} = require('../config/i18n/all-langs').availableLangs;
 
 const access = util.promisify(fs.access);
 
