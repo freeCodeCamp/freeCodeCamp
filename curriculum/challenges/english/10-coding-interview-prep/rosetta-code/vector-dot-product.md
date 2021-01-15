@@ -33,7 +33,7 @@ assert.equal(dotProduct(), null);
 assert.equal(dotProduct([1], [1]), 1);
 ```
 
-`dotProduct([[1], [1, 2]])` should return `null`.
+`dotProduct([1], [1, 2])` should return `null`.
 
 ```js
 assert.equal(dotProduct([1], [1, 2]), null);
