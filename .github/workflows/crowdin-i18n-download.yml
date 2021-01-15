@@ -1,4 +1,4 @@
-name: Crowdin i18n Download Translations
+name: Crowdin Download
 on:
   workflow_dispatch:
 
