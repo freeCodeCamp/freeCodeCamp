@@ -1,6 +1,6 @@
 ---
 id: 5ee127a03c3b35dd45426493
-title: Assigning the Value of One Variable to Another
+title: 将变量的值赋给另一个变量
 challengeType: 1
 videoUrl: ''
 forumTopicId: 418265
@@ -9,7 +9,7 @@ dashedName: assigning-the-value-of-one-variable-to-another
 
 # --description--
 
-After a value is assigned to a variable using the <dfn>assignment</dfn> operator, you can assign the value of that variable to another variable using the <dfn>assignment</dfn> operator.
+使用<dfn>赋值</dfn>运算符将值赋给变量后，我们可以继续使用<dfn>赋值</dfn>运算符将这个变量的值赋给其它变量。
 
 ```js
 var myVar;
@@ -18,27 +18,27 @@ var myNum;
 myNum = myVar;
 ```
 
-The above declares a `myVar` variable with no value, then assigns it the value `5`. Next, a variable named `myNum` is declared with no value. Then, the contents of `myVar` (which is `5`) is assigned to the variable `myNum`. Now, `myNum` also has the value of `5`.
+在上面的代码中，我们声明了没有初始值的 `myVar` 变量，然后给它赋值 `5`。接下来，我们又声明了没有初始值的变量 `myNum`。之后，`myVar` 的值 `5` 被赋给了变量 `myNum`。现在，`myNum` 的值也是 `5`。
 
 # --instructions--
 
-Assign the contents of `a` to variable `b`.
+请把 `a` 的值赋给 `b`。
 
 # --hints--
 
-You should not change code above the specified comment.
+不应修改注释上方的代码。
 
 ```js
 assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
 ```
 
-`b` should have a value of 7.
+`b` 的值应为 7。
 
 ```js
 assert(typeof b === 'number' && b === 7);
 ```
 
-`a` should be assigned to `b` with `=`.
+`a` 的值应通过 `=` 运算符赋给 `b`。
 
 ```js
 assert(/b\s*=\s*a\s*/g.test(code));

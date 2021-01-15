@@ -9,7 +9,7 @@ dashedName: chaining-if-else-statements
 
 # --description--
 
-`if/else`语句串联在一起可以实现复杂的逻辑，这是多个`if/else if`语句串联在一起的伪代码：
+将 `if/else` 语句串联在一起可以实现复杂的逻辑，这是多个 `if/else if` 语句串联在一起的<dfn>伪代码</dfn>：
 
 ```js
 if (condition1) {
@@ -26,89 +26,89 @@ if (condition1) {
 
 # --instructions--
 
-把`if`/`else if`语句串联起来实现下面的逻辑：
+请将 `if`/`else if` 语句串联起来实现下面的逻辑：
 
-`num < 5`- return "Tiny"  
-`num < 10`- return "Small"  
-`num < 15`- return "Medium"  
-`num < 20`- return "Large"  
-`num >= 20` - return "Huge"
+`num < 5` - 返回 "Tiny"  
+`num < 10` - 返回 "Small"  
+`num < 15` - 返回 "Medium"  
+`num < 20` - 返回 "Large"  
+`num >= 20` - 返回 "Huge"
 
 # --hints--
 
-你应该有至少 4 个`else`表达式。
+应至少有 4 个 `else` 语句。
 
 ```js
 assert(code.match(/else/g).length > 3);
 ```
 
-你应该有至少 4 个`if`表达式。
+应至少有 4 个 `if` 语句。
 
 ```js
 assert(code.match(/if/g).length > 3);
 ```
 
-你应该有至少 1 个`return`表达式。
+应至少有 1 个 `return` 语句。
 
 ```js
 assert(code.match(/return/g).length >= 1);
 ```
 
-`testSize(0)`应该返回 "Tiny"。
+`testSize(0)` 应返回 "Tiny"。
 
 ```js
 assert(testSize(0) === 'Tiny');
 ```
 
-`testSize(4)`应该返回 "Tiny"。
+`testSize(4)` 应返回 "Tiny"。
 
 ```js
 assert(testSize(4) === 'Tiny');
 ```
 
-`testSize(5)`应该返回 "Small"。
+`testSize(5)` 应返回 "Small"。
 
 ```js
 assert(testSize(5) === 'Small');
 ```
 
-`testSize(8)`应该返回 "Small"。
+`testSize(8)` 应返回 "Small"。
 
 ```js
 assert(testSize(8) === 'Small');
 ```
 
-`testSize(10)`应该返回 "Medium"。
+`testSize(10)` 应返回 "Medium"。
 
 ```js
 assert(testSize(10) === 'Medium');
 ```
 
-`testSize(14)`应该返回 "Medium"。
+`testSize(14)` 应返回 "Medium"。
 
 ```js
 assert(testSize(14) === 'Medium');
 ```
 
-`testSize(15)`应该返回 "Large"。
+`testSize(15)` 应返回 "Large"。
 
 ```js
 assert(testSize(15) === 'Large');
 ```
 
-`testSize(17)`应该返回 "Large"。
+`testSize(17)` 应返回 "Large"。
 
 ```js
 assert(testSize(17) === 'Large');
 ```
 
-`testSize(20)`应该返回 "Huge"。
+`testSize(20)` 应返回 "Huge"。
 
 ```js
 assert(testSize(20) === 'Huge');
 ```
 
-`testSize(25)`应该返回 "Huge"。
+`testSize(25)` 应返回 "Huge"。
 
 ```js
 assert(testSize(25) === 'Huge');
