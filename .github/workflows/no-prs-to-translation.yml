@@ -20,6 +20,6 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'You appear to be adding/modifying/deleting non-English curriculum files directly on GitHub. If you are trying to make translation changes to a curriculum challenge file, please visit https://translate.freecodecamp.org/curriculum instead.'
+              body: 'We have implemented a new policy of no longer accepting curriculum-related PRs with changes to non-English files. We plan to implement a better way to translate the English challenges in the near future. We will make an announcement when it is ready. For now, please revert your changes to the non-English challenge files. Thank you.'
             })
-            throw "You appear to be translating files directly on GitHub. Please visit https://translate.freecodecamp.org instead."
+            throw new Error('This PR appears to touch translated challenge files.')
