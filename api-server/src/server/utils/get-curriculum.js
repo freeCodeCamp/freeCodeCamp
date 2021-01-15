@@ -1,6 +1,6 @@
 import { flatten } from 'lodash';
 
-import { getChallengesForLang } from '../../../curriculum/getChallenges';
+import { getChallengesForLang } from '../../../../curriculum/getChallenges';
 
 // TODO: this caching is handy if we want to field requests that need to 'query'
 // the curriculum, but if we force the client to handle

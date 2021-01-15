@@ -4,7 +4,7 @@ import { check } from 'express-validator';
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 import { themes } from '../../common/utils/themes.js';
 import { alertTypes } from '../../common/utils/flash.js';
-import { isValidUsername } from '../../../utils/validate';
+import { isValidUsername } from '../../../../utils/validate';
 
 const log = debug('fcc:boot:settings');
 
