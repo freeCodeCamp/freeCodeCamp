@@ -6,9 +6,9 @@
   "scripts": {
     "develop": "cross-env DEBUG=fcc* node src/development-start.js",
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
-    "build": "babel src/server --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
+    "build": "babel src --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
     "ensure-env": "node ../tools/scripts/build/ensure-env.js",
-    "start": "cross-env DEBUG=fcc* node src/production-start.js",
+    "start": "cross-env DEBUG=fcc* node lib/production-start.js",
     "test": "jest"
   },
   "license": "BSD-3-Clause",
