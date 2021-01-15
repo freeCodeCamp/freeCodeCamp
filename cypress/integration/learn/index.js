@@ -28,7 +28,7 @@ describe('Learn Landing page (not logged in)', () => {
 
     cy.title().should(
       'eq',
-      'Learn to Code for Free – Coding Courses for Busy People'
+      'Learn to Code — For Free — Coding Courses for Busy People'
     );
   });
 

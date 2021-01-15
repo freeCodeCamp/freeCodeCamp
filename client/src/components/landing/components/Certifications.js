@@ -19,7 +19,7 @@ const Certifications = ({ nodes, page }) => {
   return (
     <Row className='certification-section'>
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <h1 className='big-heading'>Earn free verified certifications in:</h1>
+        <p className='big-heading'>Earn free verified certifications in:</p>
         <ul data-test-label='certifications'>
           {superBlocks.map((superBlock, i) => (
             <li key={i}>

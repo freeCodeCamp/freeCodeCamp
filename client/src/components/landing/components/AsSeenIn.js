@@ -7,7 +7,7 @@ const AsSeenIn = () => (
   <Row className='as-seen-in'>
     <Col sm={8} smOffset={2} xs={12}>
       <div className='text-center'>
-        <h1 className='big-heading'>As seen in:</h1>
+        <p className='big-heading'>As seen in:</p>
         <AsFeatureLogo fill='light' />
       </div>
     </Col>
