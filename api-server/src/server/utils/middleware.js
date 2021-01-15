@@ -2,7 +2,7 @@ import dedent from 'dedent';
 import { validationResult } from 'express-validator';
 
 import { createValidatorErrorFormatter } from './create-handled-error.js';
-import { homeLocation } from '../../../config/env';
+import { homeLocation } from '../../../../config/env';
 import {
   getAccessTokenFromRequest,
   removeCookies

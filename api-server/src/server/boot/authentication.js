@@ -4,8 +4,8 @@ import { check } from 'express-validator';
 import { isEmail } from 'validator';
 import jwt from 'jsonwebtoken';
 
-import { homeLocation } from '../../../config/env';
-import { jwtSecret } from '../../../config/secrets';
+import { homeLocation } from '../../../../config/env';
+import { jwtSecret } from '../../../../config/secrets';
 
 import {
   createPassportCallbackAuthenticator,

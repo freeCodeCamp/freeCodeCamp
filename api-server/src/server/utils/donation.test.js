@@ -3,7 +3,7 @@
 /* global jest*/
 
 import axios from 'axios';
-import keys from '../../../config/secrets';
+import keys from '../../../../config/secrets';
 import {
   getAsyncPaypalToken,
   verifyWebHook,

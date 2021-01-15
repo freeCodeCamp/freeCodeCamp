@@ -1,6 +1,6 @@
 import accepts from 'accepts';
 
-import { homeLocation } from '../../../config/env';
+import { homeLocation } from '../../../../config/env';
 
 export default function fourOhFour(app) {
   app.all('*', function(req, res) {

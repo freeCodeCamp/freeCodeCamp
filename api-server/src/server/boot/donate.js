@@ -12,8 +12,8 @@ import {
   durationKeysConfig,
   donationOneTimeConfig,
   donationSubscriptionConfig
-} from '../../../config/donation-settings';
-import keys from '../../../config/secrets';
+} from '../../../../config/donation-settings';
+import keys from '../../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
 

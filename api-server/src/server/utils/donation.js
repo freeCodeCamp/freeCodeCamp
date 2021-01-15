@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
 import debug from 'debug';
-import keys from '../../../config/secrets';
+import keys from '../../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
 

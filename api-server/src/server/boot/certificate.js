@@ -26,7 +26,7 @@ import {
   dataAnalysisPyV7Id,
   machineLearningPyV7Id
 } from '../utils/constantStrings.json';
-import { oldDataVizId } from '../../../config/misc';
+import { oldDataVizId } from '../../../../config/misc';
 import certTypes from '../utils/certTypes.json';
 import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 import { completeCommitment$ } from '../utils/commit';

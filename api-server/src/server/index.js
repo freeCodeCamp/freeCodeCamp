@@ -9,7 +9,7 @@ const createDebugger = require('debug');
 const morgan = require('morgan');
 const Sentry = require('@sentry/node');
 
-const { sentry } = require('../../config/secrets');
+const { sentry } = require('../../../config/secrets');
 const { setupPassport } = require('./component-passport');
 
 const log = createDebugger('fcc:server');

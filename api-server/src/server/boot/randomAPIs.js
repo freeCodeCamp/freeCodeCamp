@@ -1,6 +1,6 @@
 import request from 'request';
 
-import { homeLocation } from '../../../config/env';
+import { homeLocation } from '../../../../config/env';
 
 import constantStrings from '../utils/constantStrings.json';
 

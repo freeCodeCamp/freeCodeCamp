@@ -6,8 +6,8 @@ import {
   errorTypes,
   authHeaderNS
 } from '../utils/getSetAccessToken';
-import { homeLocation } from '../../../config/env';
-import { jwtSecret as _jwtSecret } from '../../../config/secrets';
+import { homeLocation } from '../../../../config/env';
+import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
 

@@ -3,7 +3,7 @@ import { Observable } from 'rx';
 import debugFactory from 'debug';
 import dedent from 'dedent';
 
-import { homeLocation } from '../../../config/env';
+import { homeLocation } from '../../../../config/env';
 
 import nonprofits from '../utils/commit.json';
 import { commitGoals, completeCommitment$ } from '../utils/commit';

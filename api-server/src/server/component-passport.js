@@ -8,10 +8,10 @@ import url from 'url';
 import dedent from 'dedent';
 
 import { getUserById } from './utils/user-stats';
-import { homeLocation } from '../../config/env';
+import { homeLocation } from '../../../config/env';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
-import { jwtSecret } from '../../config/secrets';
+import { jwtSecret } from '../../../config/secrets';
 import getReturnTo from './utils/get-return-to';
 
 const passportOptions = {

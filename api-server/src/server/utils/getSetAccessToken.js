@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
 
-import { jwtSecret as _jwtSecret } from '../../../config/secrets';
+import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
 
 export const authHeaderNS = 'X-fcc-access-token';
 export const jwtCookieNS = 'jwt_access_token';

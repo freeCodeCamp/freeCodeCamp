@@ -2,7 +2,7 @@
 // import _ from 'lodash/fp';
 import accepts from 'accepts';
 
-import { homeLocation } from '../../../config/env';
+import { homeLocation } from '../../../../config/env';
 
 import { unwrapHandledError } from '../utils/create-handled-error.js';
 

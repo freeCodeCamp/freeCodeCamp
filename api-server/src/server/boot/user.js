@@ -4,7 +4,7 @@ import { pick } from 'lodash';
 import { Observable } from 'rx';
 import { body } from 'express-validator';
 
-import { homeLocation } from '../../../config/env';
+import { homeLocation } from '../../../../config/env';
 import {
   getProgress,
   normaliseUserFields,
