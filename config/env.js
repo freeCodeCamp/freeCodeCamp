@@ -15,6 +15,7 @@ const {
   API_LOCATION: apiLocation,
   FORUM_LOCATION: forumLocation,
   NEWS_LOCATION: newsLocation,
+  RADIO_LOCATION: radioLocation,
   CLIENT_LOCALE: clientLocale,
   CURRICULUM_LOCALE: curriculumLocale,
   SHOW_LOCALE_DROPDOWN_MENU: showLocaleDropdownMenu,
@@ -30,7 +31,8 @@ const locations = {
   homeLocation,
   apiLocation,
   forumLocation,
-  newsLocation
+  newsLocation,
+  radioLocation
 };
 
 module.exports = Object.assign(locations, {
