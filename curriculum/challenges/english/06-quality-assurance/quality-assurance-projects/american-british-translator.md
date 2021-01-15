@@ -102,7 +102,9 @@ async (getUserInput) => {
 };
 ```
 
-The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. NOTE: The `span` element should wrap the full time string, i.e. `<span class="highlight">10:30</span>`.
+The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English.
+
+**Note:** The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
