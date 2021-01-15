@@ -32,10 +32,10 @@ const COMMENT_TRANSLATIONS = createCommentMap(
 );
 
 function getTranslatableComments(dictionariesDir) {
-  const { COMMENTS_TO_TRANSLATE } = require(path.resolve(
+  const COMMENTS_TO_TRANSLATE = require(path.resolve(
     dictionariesDir,
     'english',
-    'comments'
+    'comments.json'
   ));
   return COMMENTS_TO_TRANSLATE.map(({ text }) => text);
 }
@@ -52,16 +52,23 @@ function createCommentMap(dictionariesDir) {
   const dictionaries = languages.reduce(
     (acc, lang) => ({
       ...acc,
-      [lang]: require(path.resolve(dictionariesDir, lang, 'comments'))
+      [lang]: require(path.resolve(dictionariesDir, lang, 'comments.json'))
     }),
     {}
   );
 
   // get the english dicts
-  const {
-    COMMENTS_TO_TRANSLATE,
-    COMMENTS_TO_NOT_TRANSLATE
-  } = require(path.resolve(dictionariesDir, 'english', 'comments'));
+  const COMMENTS_TO_TRANSLATE = require(path.resolve(
+    dictionariesDir,
+    'english',
+    'comments.json'
+  ));
+
+  const { COMMENTS_TO_NOT_TRANSLATE } = require(path.resolve(
+    dictionariesDir,
+    'english',
+    'comments-to-not-translate'
+  ));
 
   // map from english comment text to translations
   const translatedCommentMap = COMMENTS_TO_TRANSLATE.reduce(
