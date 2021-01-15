@@ -16,7 +16,7 @@ HTTP 严格安全传输（HSTS）是一个能帮助我们抵御协议 [降级攻
 
 通过 `helmet.hsts()`，网站会在未来的90天内使用 HTTPS。我们还可以传入配置对象 `{maxAge: timeInSeconds, force: true}`。Repl.it 默认已经开启 hsts，但你仍然可以通过添加 `{force: true}` 来覆盖它。我们会拦截 Glitch 请求的 header 来进行此挑战的测试，然后恢复此项配置。
 
-注意: 配置 HTTPS 需要域名以及 SSL/TLS 证书。
+注意: 配置 HTTPS 需要域名以及 SSL/TSL 证书。
 
 # --hints--
 
