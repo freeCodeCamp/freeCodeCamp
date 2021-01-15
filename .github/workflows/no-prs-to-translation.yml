@@ -1,6 +1,6 @@
-name: 'No changing translated files on GitHub'
+name: No translate on GitHub
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - 'master'
     paths:
@@ -10,9 +10,9 @@ on:
 jobs:
   has-translation:
     runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
     steps:
       - uses: actions/github-script@v3
-        if: github.event.pull_request.user.login != "github-actions[bot]"
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
