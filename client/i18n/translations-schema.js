@@ -62,6 +62,7 @@ const translationsSchema = {
     'sign-out': 'Sign out',
     curriculum: 'Curriculum',
     forum: 'Forum',
+    radio: 'Radio',
     profile: 'Profile',
     'update-settings': 'Update my account settings',
     'sign-me-out': 'Sign me out of freeCodeCamp',
