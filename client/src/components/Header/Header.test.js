@@ -34,7 +34,8 @@ describe('<NavLinks />', () => {
     shallow.render(<AuthOrProfile {...landingPageProps} />);
     const result = shallow.getRenderOutput();
     expect(
-      hasForumNavItem(result) &&
+      hasRadioNavItem(result) &&
+        hasForumNavItem(result) &&
         hasCurriculumNavItem(result) &&
         hasSignInButton(result)
     ).toBeTruthy();
@@ -110,17 +111,24 @@ const navigationLinks = (component, navItem) => {
     .props;
 };
 
-const profileNavItem = component => component[2].children[0];
+const profileNavItem = component => component[3].children[0];
+
+const hasRadioNavItem = component => {
+  const { children, to } = navigationLinks(component, 0);
+  return (
+    children === 'buttons.radio' && to === 'https://coderadio.freecodecamp.org'
+  );
+};
 
 const hasForumNavItem = component => {
-  const { children, to } = navigationLinks(component, 0);
+  const { children, to } = navigationLinks(component, 1);
   return (
     children === 'buttons.forum' && to === 'https://forum.freecodecamp.org'
   );
 };
 
 const hasCurriculumNavItem = component => {
-  const { children, to } = navigationLinks(component, 1);
+  const { children, to } = navigationLinks(component, 2);
   return children === 'buttons.curriculum' && to === '/learn';
 };
 
