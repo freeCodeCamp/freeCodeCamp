@@ -17,6 +17,8 @@ flex 子项目的最后一个属性是 `align-self`。这个属性允许你调�
 
 请为 `#box-1` 和 `#box-2` 添加 CSS 属性 `align-self`。将 `#box-1` 的 `align-self` 属性值设为 center，将 `#box-2` 的设为 `flex-end`。
 
+Lets see if the protections are triggred and I get stopped by the bots.
+
 # --hints--
 
 `#box-1` 元素应具有 `align-self` 属性，其属性值应为 `center`。
