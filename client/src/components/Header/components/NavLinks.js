@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
 import PropTypes from 'prop-types';
 import Login from '../components/Login';
-import { forumLocation } from '../../../../../config/env.json';
+import { forumLocation, radioLocation } from '../../../../../config/env.json';
 import { useTranslation } from 'react-i18next';
 
 const propTypes = {
@@ -18,8 +18,18 @@ export function AuthOrProfile({ user, pending }) {
   const isTopContributor =
     user && user.yearsTopContributor && user.yearsTopContributor.length > 0;
 
-  const CurriculumAndForumLinks = (
+  const NavigationLinks = (
     <>
+      <li>
+        <Link
+          className='nav-link'
+          external={true}
+          sameTab={false}
+          to={radioLocation}
+        >
+          {t('buttons.radio')}
+        </Link>
+      </li>
       <li>
         <Link
           className='nav-link'
@@ -47,7 +57,7 @@ export function AuthOrProfile({ user, pending }) {
   } else if (!isUserSignedIn) {
     return (
       <>
-        {CurriculumAndForumLinks}
+        {NavigationLinks}
         <Login data-test-label='landing-small-cta'>
           {t('buttons.sign-in')}
         </Login>
@@ -56,7 +66,7 @@ export function AuthOrProfile({ user, pending }) {
   } else {
     return (
       <>
-        {CurriculumAndForumLinks}
+        {NavigationLinks}
         <li>
           <Link className='nav-link' to={`/${user.username}`}>
             {t('buttons.profile')}

@@ -11,7 +11,7 @@ const selectors = {
 describe('Navbar', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.viewport(1200, 660);
+    cy.viewport(1300, 660);
   });
 
   it('Should render properly', () => {
@@ -51,7 +51,7 @@ describe('Navbar', () => {
 
   // have the curriculum and CTA on landing and /learn pages.
   it(
-    'Should have `Forum` and `Curriculum` links on landing and learn pages' +
+    'Should have `Radio`, `Forum`, and `Curriculum` links on landing and learn pages' +
       'page when not signed in',
     () => {
       cy.get(selectors.navigationLinks).contains('Forum');
@@ -61,6 +61,7 @@ describe('Navbar', () => {
       cy.url().should('include', '/learn');
       cy.get(selectors.navigationLinks).contains('Curriculum');
       cy.get(selectors.navigationLinks).contains('Forum');
+      cy.get(selectors.navigationLinks).contains('Radio');
     }
   );
 
