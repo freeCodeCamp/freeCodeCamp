@@ -30,7 +30,7 @@ You will need to use escape sequences to insert special characters correctly. Yo
 
 Here is the text with the escape sequences written out.
 
-"FirstLine```newline``tab``backslash```SecondLine`newline`ThirdLine"
+"FirstLine`newline tab backslash`SecondLine`newline`ThirdLine"
 
 # --hints--
 
