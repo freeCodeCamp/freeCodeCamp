@@ -60,7 +60,7 @@ assert(/FirstLine\n/.test(myStr));
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` should be preceded by the backslash character `\`
+`SecondLine` should be preceded by the backslash character <code>\\</code>
 
 ```js
 assert(/\\SecondLine/.test(myStr));
