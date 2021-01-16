@@ -13,7 +13,10 @@ const shouldHide = (text, context, challengeTitle) => {
 
 const getStrings = async ({ projectId, fileId }) => {
   let headers = { ...authHeader };
-  const endPoint = `projects/${projectId}/strings?fileId=${fileId}&limit=500`;
+  let endPoint = `projects/${projectId}/strings?limit=500`;
+  if (fileId) {
+    endPoint += `&fileId=${fileId}`;
+  }
   const strings = await makeRequest({ method: 'get', endPoint, headers });
   if (strings.data) {
     return strings.data;
@@ -66,9 +69,21 @@ const updateFileStrings = async ({ projectId, fileId, challengeTitle }) => {
   }
 };
 
+const updateFileString = async ({ projectId, string, challengeTitle }) => {
+  const { data: { id: stringId, text, isHidden, context } } = string;
+  const hideString = shouldHide(text, context, challengeTitle);
+  if (!isHidden && hideString) {
+    // await changeHiddenStatus(projectId, stringId, true);
+    console.log('changed isHidden status for ' + challengeTitle + ' - ' + text);
+  } else if (isHidden && !hideString) {
+    // await changeHiddenStatus(projectId, stringId, false);
+    console.log('changed isHidden status for ' + challengeTitle + ' - ' + text);
+  }
+};
+
 module.exports = {
   getStrings,
-  changeHiddenStatus,
   updateString,
-  updateFileStrings
+  updateFileStrings,
+  updateFileString
 };
