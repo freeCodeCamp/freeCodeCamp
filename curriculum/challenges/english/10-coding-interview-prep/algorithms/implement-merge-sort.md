@@ -20,9 +20,6 @@ As an aside, this will be the last sorting algorithm we cover here. However, lat
 
 **Instructions:** Write a function `mergeSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance `merge`, which is responsible for merging two sorted arrays, and another function, for instance `mergeSort`, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!
 
-**Note:**  
-We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging `array` to see your sorting algorithm in action!
-
 # --hints--
 
 `mergeSort` should be a function.

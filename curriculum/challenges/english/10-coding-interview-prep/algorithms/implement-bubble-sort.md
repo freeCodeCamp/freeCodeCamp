@@ -16,9 +16,6 @@ This method requires multiple iterations through the array and for average and w
 
 **Instructions:** Write a function `bubbleSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
 
-**Note:**  
-We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging `array` to see your sorting algorithm in action!
-
 # --hints--
 
 `bubbleSort` should be a function.
