@@ -12,7 +12,6 @@ files: [
   "ignore": [
     "/**/part-[0-9][0-9][0-9].md",
     "/curriculum/challenges/english/[0-9][0-9]-certificates/**/*.*"
-  ],
-  "update_option": "update_as_unapproved"
+  ]
  }
 ]
