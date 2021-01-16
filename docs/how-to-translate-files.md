@@ -38,6 +38,9 @@ Crowdin separates a document into translatable "strings", usually as sentences. 
 9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
 10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
+> [!NOTE]
+> If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://chat.freecodecamp.org/contributors) so we can remove the translation from memory.
+
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote your translation as accurate and proofreaders will be able to approve it.
 
 You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
