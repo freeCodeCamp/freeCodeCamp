@@ -45,6 +45,11 @@ When you have completed a translation for a string, select the `Save` button to 
 
 You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
 
+<!--Note re: What if English is wrong???-->
+
+## haha
+<!--Section for up/down votes-->
+
 ## Quality Assurance Checks
 
 We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
