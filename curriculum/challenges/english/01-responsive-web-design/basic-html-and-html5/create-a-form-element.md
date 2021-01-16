@@ -8,7 +8,7 @@ dashedName: create-a-form-element
 
 # --description--
 
-You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your `form` element.
+You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an `action` attribute on your `form` element.
 
 For example:
 
@@ -20,7 +20,7 @@ For example:
 
 # --instructions--
 
-Nest the existing input element inside a `form` element and assign `"https://freecatphotoapp.com/submit-cat-photo"` to the `action` attribute of the `form` element.
+Nest the existing `input` element inside a `form` element and assign `"https://freecatphotoapp.com/submit-cat-photo"` to the `action` attribute of the `form` element.
 
 # --hints--
 
