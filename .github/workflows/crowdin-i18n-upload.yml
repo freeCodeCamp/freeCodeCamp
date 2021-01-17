@@ -1,4 +1,4 @@
-name: Crowdin i18n Upload Action
+name: Crowdin Upload
 on:
   workflow_dispatch:
 

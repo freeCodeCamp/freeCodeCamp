@@ -12,9 +12,6 @@ The next sorting method we'll look at is insertion sort. This method works by bu
 
 **Instructions:** Write a function `insertionSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
 
-**Note:**  
-We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging `array` to see your sorting algorithm in action!
-
 # --hints--
 
 `insertionSort` should be a function.

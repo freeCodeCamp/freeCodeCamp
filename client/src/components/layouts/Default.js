@@ -173,9 +173,7 @@ class DefaultLayout extends Component {
           meta={[
             {
               name: 'description',
-              content: `Learn to code at home. Build projects. Earn certifications. Since 2014,
-                 more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech
-                 companies including Google, Apple, Amazon, and Microsoft.`
+              content: `Learn to code — for free.`
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
