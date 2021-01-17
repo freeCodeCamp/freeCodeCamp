@@ -77,12 +77,12 @@ const updateFileString = async ({ projectId, string, challengeTitle }) => {
   if (!isHidden && hideString) {
     await changeHiddenStatus(projectId, stringId, true);
     console.log(
-      `${challengeTitle} - stringId: ${stringId} - changed isHidden status to true`
+      `${challengeTitle} - stringId: ${stringId} - changed isHidden to true`
     );
   } else if (isHidden && !hideString) {
     await changeHiddenStatus(projectId, stringId, false);
     console.log(
-      `${challengeTitle} - stringId: ${stringId} - changed isHidden status to false`
+      `${challengeTitle} - stringId: ${stringId} - changed isHidden to false`
     );
   }
 };
