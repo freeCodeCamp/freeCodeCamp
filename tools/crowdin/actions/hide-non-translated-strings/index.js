@@ -6,7 +6,10 @@ const matter = require('gray-matter');
 const { getFiles } = require('../../utils/files');
 const { getStrings, updateFileString } = require('../../utils/strings');
 
-const createChallengeTitleLookup = (lookup, { fileId, path: crowdinFilePath }) => {
+const createChallengeTitleLookup = (
+  lookup,
+  { fileId, path: crowdinFilePath }
+) => {
   const challengeFilePath = path.join(
     __dirname,
     '/../../../../',
@@ -17,7 +20,7 @@ const createChallengeTitleLookup = (lookup, { fileId, path: crowdinFilePath }) =
     const {
       data: { title: challengeTitle }
     } = matter(challengeContent);
-    return { ...lookup, [fileId]: challengeTitle }
+    return { ...lookup, [fileId]: challengeTitle };
   } catch (err) {
     console.log(err.name);
     console.log(err.message);
@@ -26,21 +29,23 @@ const createChallengeTitleLookup = (lookup, { fileId, path: crowdinFilePath }) =
 };
 
 const hideNonTranslatedStrings = async projectId => {
-  console.log('start hiding non-translated strings...');
+  console.log('hide non-translated strings...');
   const crowdinFiles = await getFiles(projectId);
   if (crowdinFiles && crowdinFiles.length) {
-    const challengeTitleLookup = crowdinFiles
-      .reduce(createChallengeTitleLookup, {});
+    const challengeTitleLookup = crowdinFiles.reduce(
+      createChallengeTitleLookup,
+      {}
+    );
     const crowdinStrings = await getStrings({ projectId });
     if (crowdinStrings && crowdinStrings.length) {
       for (let string of crowdinStrings) {
-        const challengeTitle = challengeTitleLookup[string.fileId]
+        const challengeTitle = challengeTitleLookup[string.data.fileId];
         await updateFileString({ projectId, string, challengeTitle });
       }
     }
   }
-  console.log('hiding non-translated strings complete');
+  console.log('complete');
 };
 
 const projectId = process.env.CROWDIN_PROJECT_ID;
-hideNonTranslatedStrings(2);
+hideNonTranslatedStrings(projectId);

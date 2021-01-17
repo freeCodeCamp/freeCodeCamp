@@ -70,14 +70,20 @@ const updateFileStrings = async ({ projectId, fileId, challengeTitle }) => {
 };
 
 const updateFileString = async ({ projectId, string, challengeTitle }) => {
-  const { data: { id: stringId, text, isHidden, context } } = string;
+  const {
+    data: { id: stringId, text, isHidden, context }
+  } = string;
   const hideString = shouldHide(text, context, challengeTitle);
   if (!isHidden && hideString) {
-    // await changeHiddenStatus(projectId, stringId, true);
-    console.log('changed isHidden status for ' + challengeTitle + ' - ' + text);
+    await changeHiddenStatus(projectId, stringId, true);
+    console.log(
+      `${challengeTitle} - stringId: ${stringId} - changed isHidden status to true`
+    );
   } else if (isHidden && !hideString) {
-    // await changeHiddenStatus(projectId, stringId, false);
-    console.log('changed isHidden status for ' + challengeTitle + ' - ' + text);
+    await changeHiddenStatus(projectId, stringId, false);
+    console.log(
+      `${challengeTitle} - stringId: ${stringId} - changed isHidden status to false`
+    );
   }
 };
 
