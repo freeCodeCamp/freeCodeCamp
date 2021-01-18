@@ -3,7 +3,7 @@ id: 587d7b88367417b2b2512b47
 title: Use the Rest Parameter Syntax with Function Parameters
 challengeType: 1
 forumTopicId: 301221
-dashedName: use-rest-parameter-syntax-with-function-parameters
+dashedName: use-the-rest-parameter-syntax-with-function-parameters
 ---
 
 # --description--
@@ -52,7 +52,7 @@ The result of `sum()` should be 0
 assert(sum() === 0);
 ```
 
-The `sum` function should use the rest parameter syntax `...` on the `args` parameter.
+The `sum` function should use the rest parameter syntax (`...`) on the `args` parameter.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
