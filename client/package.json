@@ -60,7 +60,7 @@
     "react-reflex": "^3.1.0",
     "react-responsive": "^6.1.1",
     "react-spinkit": "^3.0.0",
-    "react-stripe-elements": "^2.0.3",
+    "react-stripe-elements": "^6.1.2",
     "react-tooltip": "^4.2.13",
     "react-transition-group": "^4.4.1",
     "react-youtube": "^7.13.0",
