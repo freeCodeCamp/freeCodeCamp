@@ -68,7 +68,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-transform-function-bind": "^6.22.0",
-    "babel-plugin-transform-imports": "^1.5.1",
+    "babel-plugin-transform-imports": "^2.0.0",
     "cross-env": "^7.0.3",
     "jest": "^26.6.3",
     "loopback-component-explorer": "^6.4.0",
