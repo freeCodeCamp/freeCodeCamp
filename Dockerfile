@@ -17,17 +17,22 @@ ARG SHOW_UPCOMING_CHANGES
 
 # since we can use a non-root user we should
 USER node
-WORKDIR /home/node
+WORKDIR /home/node/build
 COPY --chown=node:node . .
 RUN npm ci
 # we don't need to separately run ensure-env, since it gets called as part of
 # build:client
 RUN npm run build:client
 
+WORKDIR /home/node/config
+RUN git clone https://github.com/freeCodeCamp/client-config.git client
+
 FROM node:12.20-alpine
+RUN npm i -g serve
 USER node
 WORKDIR /home/node
-COPY --from=builder /home/node/client/public/ client/public
-RUN npm i serve
+COPY --from=builder /home/node/build/client/public/ client/public
+COPY --from=builder /home/node/config/client/serve.json client
+COPY --from=builder /home/node/config/client/www/ client
 
-CMD ["./node_modules/.bin/serve", "-l", "8000", "client/public"]
+CMD ["serve", "-l", "8000", "-c", "../serve.json", "client/public"]
