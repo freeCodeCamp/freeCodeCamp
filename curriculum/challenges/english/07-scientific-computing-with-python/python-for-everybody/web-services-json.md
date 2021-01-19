@@ -1,4 +1,4 @@
----
+"---
 id: 5e7b9f140b6c005b0e76f07d
 title: 'Web Services: JSON'
 challengeType: 11
@@ -16,13 +16,13 @@ What will the following code print?:
 import json
 data = '''
   [
-    { 'id' : '001',
-      'x' : '2',
-     'name' : 'Quincy'
+    { "id" : "001",
+      "x" : "2",
+     "name" : "Quincy"
     } ,
-    { 'id' : '009',
-      'x' : '7',
-      'name' : 'Mrugesh'
+    { "id" : "009",
+      "x" : "7",
+      "name" : "Mrugesh"
     }
   ]
 '''
