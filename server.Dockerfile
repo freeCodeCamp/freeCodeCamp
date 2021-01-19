@@ -1,20 +1,25 @@
-FROM node:12.20
+FROM node:12.20 as builder
 USER node
-WORKDIR /home/node
+WORKDIR /home/node/build
 COPY --chown=node:node . .
 
-# TODO: only install the bits we need, rather than client, root etc. etc.
 RUN npm ci
+RUN npm run package-curriculum
+WORKDIR /home/node/build/api-server
+RUN npm run build
+RUN npm ci --production
 
-WORKDIR /home/node/api-server
+FROM node:12.20
+USER node
+WORKDIR /home/node/api
+COPY --from=builder /home/node/build/api-server/lib/ api-server/
+COPY --from=builder /home/node/build/api-server/package.json api-server/
+COPY --from=builder /home/node/build/utils/ .
+COPY --from=builder /home/node/build/config/ .
+
+WORKDIR /home/node/api/api-server
 
 CMD ["npm", "start"]
-
-# TODO: can we remove the direct dependence on the curriculum? For instance, by
-# generating a small config file with the certs in?
-
-# Also, if we make sure that all the prod dependencies are inside the api-server
-# we can get away with only installing them, and requiring specific files.
 
 # TODO: if we set the pipelines to fail on standard error, they fail. Is
 # something sending messages to the error stream for some reason?
