@@ -286,9 +286,6 @@
     margin-right: auto;
   }
 
-  .display-menu {
-  }
-
   .expand-nav {
     height: var(--header-height);
   }
