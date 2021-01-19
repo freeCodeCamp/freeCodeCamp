@@ -21,7 +21,7 @@ export const UniversalNav = ({
     id='universal-nav'
   >
     <div
-      className={'universal-nav-left' + (displayMenu ? ' display-menu' : '')}
+      className={'universal-nav-left' + (displayMenu ? ' display-search' : '')}
     >
       <SearchBar innerRef={searchBarRef} />
     </div>

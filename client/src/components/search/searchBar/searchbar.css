@@ -36,7 +36,7 @@
 
 .fcc_searchBar .ais-Hits {
   top: 70px;
-  width: calc(100vw - 30px);
+  width: calc(100vw - 350px);
   left: 15px;
 }
 
@@ -126,7 +126,7 @@ and arrow keys */
 }
 
 .ais-SearchBox-input {
-  width: calc(100vw - 30px);
+  width: calc(100vw - 350px);
 }
 
 .fcc_searchBar .ais-SearchBox-form {
