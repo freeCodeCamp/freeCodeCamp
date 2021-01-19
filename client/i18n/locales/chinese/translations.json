@@ -57,6 +57,8 @@
     "forum": "论坛",
     "radio": "Radio",
     "profile": "个人资料",
+    "news": "News",
+    "donate": "Donate",
     "update-settings": "更新我的账号设置",
     "sign-me-out": "退出登录 freeCodeCamp",
     "flag-user": "标记该用户的账号为滥用",
@@ -315,6 +317,7 @@
   "donate": {
     "title": "支持我们的非营利组织",
     "processing": "我们正在处理你的捐款。",
+    "thanks": "Thanks for donating",
     "thank-you": "谢谢你成为我们的支持者。",
     "thank-you-2": "谢谢你成为 freeCodeCamp 的支持者。现在你已设置定期捐款。",
     "additional": "你可以使用这个链接 <0>{{url}}</0> 额外进行一次性捐款：",

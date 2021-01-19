@@ -24,7 +24,8 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   PAYPAL_CLIENT_ID: paypalClientId,
   DEPLOYMENT_ENV: deploymentEnv,
-  SHOW_UPCOMING_CHANGES: showUpcomingChanges
+  SHOW_UPCOMING_CHANGES: showUpcomingChanges,
+  CHINESE_HOME: chineseHome
 } = process.env;
 
 const locations = {
@@ -32,7 +33,8 @@ const locations = {
   apiLocation,
   forumLocation,
   newsLocation,
-  radioLocation
+  radioLocation,
+  chineseHome
 };
 
 module.exports = Object.assign(locations, {

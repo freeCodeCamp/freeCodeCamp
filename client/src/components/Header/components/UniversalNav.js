@@ -21,7 +21,7 @@ export const UniversalNav = ({
     id='universal-nav'
   >
     <div
-      className={'universal-nav-left' + (displayMenu ? ' display-flex' : '')}
+      className={'universal-nav-left' + (displayMenu ? ' display-menu' : '')}
     >
       <SearchBar innerRef={searchBarRef} />
     </div>
@@ -32,13 +32,14 @@ export const UniversalNav = ({
       </Link>
     </div>
     <div className='universal-nav-right main-nav'>
-      <NavLinks displayMenu={displayMenu} fetchState={fetchState} user={user} />
+      <MenuButton
+        displayMenu={displayMenu}
+        innerRef={menuButtonRef}
+        onClick={toggleDisplayMenu}
+        user={user}
+      />
     </div>
-    <MenuButton
-      displayMenu={displayMenu}
-      innerRef={menuButtonRef}
-      onClick={toggleDisplayMenu}
-    />
+    <NavLinks displayMenu={displayMenu} fetchState={fetchState} user={user} />
   </nav>
 );
 

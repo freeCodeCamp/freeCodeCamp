@@ -59,6 +59,8 @@
     "forum": "Foro",
     "radio": "Radio",
     "profile": "Perfil",
+    "news": "News",
+    "donate": "Donate",
     "update-settings": "Actualizar la configuración de mi cuenta",
     "sign-me-out": "Cerrar sesión en freeCodeCamp",
     "flag-user": "Marcar la cuenta de este usuario por abuso",
@@ -317,6 +319,7 @@
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
     "processing": "Estamos procesando tu donación.",
+    "thanks": "Thanks for donating",
     "thank-you": "Gracias por tu apoyo.",
     "thank-you-2": "Gracias por apoyar a freeCodeCamp. Actualmente tienes una donación recurrente.",
     "additional": "Puede hacer una donación adicional por única vez de cualquier monto utilizando este enlace: <0>{{url}}</0>",
