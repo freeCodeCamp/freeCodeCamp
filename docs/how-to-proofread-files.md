@@ -1,14 +1,14 @@
 # How to Proofread Translations
 
-Our proofreading team is responsible for ensuring that translations are accurate and do not add, modify, or remove content from the text.
+Our proofreading team is responsible for ensuring that translations accurately reflect the source text.
 
 To begin proofreading, visit [our translation site](https://translate.freecodecamp.org) and login. Then select "Go to console" in the top navigation bar to switch from the public view to the workspace view.
 
 ## Select a File
 
-You should see the list of projects you have been granted proofreader access on. Select the project that you would like to proofread, then select the language.
+You should see the list of projects you have been granted access to. Select the project that you would like to proofread, then select the language.
 
-![Image - Proofreeding File Tree](./images/crowdin/proof-file-tree.png)
+![Image - Proofreading File Tree](./images/crowdin/proof-file-tree.png)
 
 You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
 
@@ -31,7 +31,7 @@ While you are able to view *all* proposed translations for a given string, the c
 4. Crowdin will display the status of each string. `Done` means a translation has been approved and will be downloaded on our next Crowdin pull. `Todo` means the string has not been proofread. `Hidden` means the string is locked and *should not be translated*. `Comment` means the string has a related comment.
 5. Translations can be selected with the checkboxes and approved here in one bulk action.
 6. You can view the community proposed translations, their popularity scores, and Crowdin suggested translations here.
-7. This button shows/hides the right side display pane, where you can view translations, comments, translation memory, and glossary terms.
+7. This button shows/hides the right-hand side display pane, where you can view translations, comments, translation memory, and glossary terms.
 8. Crowdin displays error messages here from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
 
 > [!WARNING]
