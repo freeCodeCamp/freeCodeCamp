@@ -16,13 +16,13 @@ What will the following code print?:
 import json
 data = '''
   [
-    { 'id' : '001',
-      'x' : '2',
-     'name' : 'Quincy'
+    { "id" : "001",
+      "x" : "2",
+     "name" : "Quincy"
     } ,
-    { 'id' : '009',
-      'x' : '7',
-      'name' : 'Mrugesh'
+    { "id" : "009",
+      "x" : "7",
+      "name" : "Mrugesh"
     }
   ]
 '''
