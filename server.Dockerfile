@@ -4,8 +4,8 @@ WORKDIR /home/node/build
 COPY --chown=node:node . .
 
 RUN npm ci
-RUN npm run package-curriculum
 WORKDIR /home/node/build/api-server
+RUN npm run package-curriculum
 RUN npm run build
 RUN npm ci --production
 
