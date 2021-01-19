@@ -39,7 +39,7 @@ The `background-color` property of the `heart::after` selector should be pink.
 
 ```js
 assert(
-  code.match(/\.heart::after\s*?{[^\}]*?background-color\s*?:\s*?pink\s*?;/gi)
+  code.match(/\.heart::after{(\s*[\w\-]+\:\s*[\w\-]+\s*\;)*\s*background-color\s*:\s*pink\s*(}|;)/gi)
 );
 ```
 
