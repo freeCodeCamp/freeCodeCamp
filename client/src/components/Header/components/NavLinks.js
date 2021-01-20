@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-
-import { setTheme } from '../../../redux/night-mode-saga';
 import { Link, SkeletonSprite } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import {
@@ -50,11 +48,9 @@ class NavLinks extends Component {
     }
   }
 
-  // toggleTheme(currentTheme = 'default', isSignedIn, toggleNightMode) {
-  toggleTheme() {
+  toggleTheme(currentTheme = 'default', toggleNightMode) {
     console.log('attempting to toggle night mode');
-    setTheme('default', 'night');
-    // toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
+    toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
   }
 
   render() {
@@ -64,7 +60,7 @@ class NavLinks extends Component {
       i18n,
       t,
       toggleNightMode,
-      user: { isUserDonating = false, isSignedIn = false, username, theme }
+      user: { isUserDonating = false, username, theme }
     } = this.props;
 
     const { pending } = fetchState;
@@ -135,12 +131,13 @@ class NavLinks extends Component {
           <li>
             <button
               className='nav-link'
-              onClick={() =>
-                this.toggleTheme('default', isSignedIn, toggleNightMode)
-              }
+              disabled={!username}
+              onClick={() => this.toggleTheme(theme, toggleNightMode)}
             >
-              {t('settings.labels.night-mode') +
-                (theme === 'night' ? ' ✓' : ' ✗')}
+              {username
+                ? t('settings.labels.night-mode') +
+                  (theme === 'night' ? ' ✓' : ' ✗')
+                : 'Sign in to change theme'}
             </button>
           </li>
           <li>
