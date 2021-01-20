@@ -135,7 +135,7 @@ export class Block extends Component {
       </div>
     ) : (
       <div className={`block ${isExpanded ? 'open' : ''}`}>
-        <h3>{blockTitle}</h3>
+        <h3 className='big-block-title'>{blockTitle}</h3>
         {this.renderBlockIntros(blockIntroArr)}
         <button
           aria-expanded={isExpanded}
@@ -143,10 +143,10 @@ export class Block extends Component {
           onClick={this.handleBlockClick}
         >
           <Caret />
-          <h4>
-            {t(`intro:misc-text.section-courses`, { section: blockTitle })}
+          <h4 className='tutorial-title'>
+            {t(`intro:misc-text.section-tutorials`, { section: blockTitle })}
           </h4>
-          <div className='map-title-completed'>
+          <div className='map-title-completed tutorial-title'>
             {this.renderCheckMark(
               completedCount === challengesWithCompleted.length
             )}

@@ -23,7 +23,7 @@ function SuperBlockIntro(props) {
 
   return (
     <>
-      <h1 className='text-center'>{i18nSuperBlock}</h1>
+      <h1 className='text-center big-heading'>{i18nSuperBlock}</h1>
       <Spacer />
       {/* will be replaced by map icon */}
       {/* <div style={{ margin: 'auto', maxWidth: '500px' }}>
