@@ -25,7 +25,7 @@ const propTypes = {
   user: PropTypes.object
 };
 
-export function LinkyLink({ user, pending }) {
+export function AuthOrProfile({ user, pending }) {
   const { i18n, t } = useTranslation();
   const isUserDonating = user && user.isDonating;
   const isUserSignedIn = user && user.username;
@@ -150,7 +150,7 @@ export function NavLinks({ displayMenu, user, fetchState }) {
   return (
     <div className='main-nav-group'>
       <ul className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
-        <LinkyLink pending={pending} user={user} />
+        <AuthOrProfile pending={pending} user={user} />
       </ul>
     </div>
   );

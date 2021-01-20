@@ -380,7 +380,7 @@
   },
   "search": {
     "label": "Search",
-    "placeholder": "Search 6,000+ tutorial",
+    "placeholder": "Search 6,000+ tutorials",
     "see-results": "See all results for {{searchQuery}}",
     "no-tutorials": "No tutorials found",
     "try": "Looking for something? Try the search bar on this page.",
