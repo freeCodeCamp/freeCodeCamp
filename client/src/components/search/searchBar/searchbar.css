@@ -136,7 +136,7 @@ and arrow keys */
   right: 15px;
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 980px) {
   .ais-SearchBox-input {
     width: 100%;
     max-width: 500px;
