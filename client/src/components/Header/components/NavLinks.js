@@ -64,7 +64,7 @@ class NavLinks extends Component {
       i18n,
       t,
       toggleNightMode,
-      user: { isUserDonating = false, isSignedIn = false, username }
+      user: { isUserDonating = false, isSignedIn = false, username, theme }
     } = this.props;
 
     const { pending } = fetchState;
@@ -139,7 +139,8 @@ class NavLinks extends Component {
                 this.toggleTheme('default', isSignedIn, toggleNightMode)
               }
             >
-              {t('settings.labels.night-mode')}
+              {t('settings.labels.night-mode') +
+                (theme === 'night' ? ' ✓' : ' ✗')}
             </button>
           </li>
           <li>
