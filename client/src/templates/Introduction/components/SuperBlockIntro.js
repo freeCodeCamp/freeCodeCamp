@@ -17,7 +17,7 @@ function SuperBlockIntro(props) {
   const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
   const {
     title: i18nSuperBlock,
-    image: superBlockImage,
+    // image: superBlockImage,
     intro: superBlockIntroText
   } = superBlockIntroObj;
 
@@ -25,7 +25,8 @@ function SuperBlockIntro(props) {
     <>
       <h1 className='text-center'>{i18nSuperBlock}</h1>
       <Spacer />
-      <div style={{ margin: 'auto', maxWidth: '500px' }}>
+      {/* will be replaced by map icon */}
+      {/* <div style={{ margin: 'auto', maxWidth: '500px' }}>
         <img
           alt='building a website'
           className='superBlock-image'
@@ -38,7 +39,7 @@ function SuperBlockIntro(props) {
             height: '367px'
           }}
         />
-      </div>
+      </div> */}
       <Spacer />
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>
