@@ -12,8 +12,8 @@ FROM node:12.20
 USER node
 WORKDIR /home/node/api
 # get and install deps
-COPY --from=builder --chown=node:node /home/node/build/package*.json .
-COPY --from=builder --chown=node:node /home/node/build/api-server/package*.json api-server/
+COPY --from=builder --chown=node:node /home/node/build/package.json /home/node/build/package-lock.json ./
+COPY --from=builder --chown=node:node /home/node/build/api-server/package.json /home/node/build/api-server/package-lock.json api-server/
 RUN npm ci --production --ignore-scripts \
   && cd api-server \
   && npm ci --production \
