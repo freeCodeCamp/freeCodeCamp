@@ -11,17 +11,17 @@ RUN npm run build
 FROM node:12.20
 USER node
 WORKDIR /home/node/api
-# get and install root deps
+# get and install deps
 COPY --from=builder --chown=node:node /home/node/build/package*.json .
-RUN npm ci --production --ignore-scripts
-COPY --from=builder --chown=node:node /home/node/build/api-server/lib/ api-server/lib/
-# Both the package.json (for scripts) and the lock (to npm ci) are needed
 COPY --from=builder --chown=node:node /home/node/build/api-server/package*.json api-server/
+RUN npm ci --production --ignore-scripts \
+  && cd api-server \
+  && npm ci --production
+COPY --from=builder --chown=node:node /home/node/build/api-server/lib/ api-server/lib/
 COPY --from=builder --chown=node:node /home/node/build/utils/ utils/
 COPY --from=builder --chown=node:node /home/node/build/config/ config/
 
 WORKDIR /home/node/api/api-server
-RUN npm ci --production
 
 CMD ["npm", "start"]
 
