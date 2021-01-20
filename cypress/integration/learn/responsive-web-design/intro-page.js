@@ -17,7 +17,7 @@ describe('Certificate intro page', () => {
 
   it('Should have certificate intro text', () => {
     cy.contains(
-      "In the Responsive Web Design Certification, you'll learn the languages that developers use to build webpages"
+      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages"
     ).should('be.visible');
   });
 
