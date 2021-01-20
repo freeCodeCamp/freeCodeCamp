@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
@@ -65,30 +64,26 @@ function renderLandingMap(nodes) {
 function renderLearnMap(nodes, currentSuperBlock = '') {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
   return (
-    <Row>
-      <Col sm={10} smOffset={1} xs={12}>
-        <ul data-test-label='learn-curriculum-map'>
-          {nodes.map((node, i) => (
-            <li key={i}>
-              <Link
-                className='btn link-btn btn-lg'
-                to={`/learn/${dasherize(node.superBlock)}/`}
-              >
-                <div style={linkSpacingStyle}>
-                  <ImageLoader
-                    alt='building a website'
-                    offsetVertical={500}
-                    src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
-                    style={iconStyle}
-                  />
-                  {createSuperBlockTitle(node.superBlock)}
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Col>
-    </Row>
+    <ul data-test-label='learn-curriculum-map'>
+      {nodes.map((node, i) => (
+        <li key={i}>
+          <Link
+            className='btn link-btn btn-lg'
+            to={`/learn/${dasherize(node.superBlock)}/`}
+          >
+            <div style={linkSpacingStyle}>
+              <ImageLoader
+                alt='building a website'
+                offsetVertical={500}
+                src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
+                style={iconStyle}
+              />
+              {createSuperBlockTitle(node.superBlock)}
+            </div>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }
 
