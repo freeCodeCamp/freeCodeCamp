@@ -16,7 +16,8 @@ COPY --from=builder --chown=node:node /home/node/build/package*.json .
 COPY --from=builder --chown=node:node /home/node/build/api-server/package*.json api-server/
 RUN npm ci --production --ignore-scripts \
   && cd api-server \
-  && npm ci --production
+  && npm ci --production \
+  && npm cache clean --force
 COPY --from=builder --chown=node:node /home/node/build/api-server/lib/ api-server/lib/
 COPY --from=builder --chown=node:node /home/node/build/utils/ utils/
 COPY --from=builder --chown=node:node /home/node/build/config/ config/
