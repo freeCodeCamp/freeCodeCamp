@@ -126,6 +126,15 @@
   background: white;
 }
 
+.nav-list button:disabled {
+  background-color: var(--gray-75);
+}
+
+.nav-list button:disabled:hover {
+  color: white;
+  background-color: var(--gray-75);
+}
+
 .nav-list li a.nav-link:focus {
   background: var(--theme-color);
   color: white;
