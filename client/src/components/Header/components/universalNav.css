@@ -114,7 +114,7 @@
 
 .nav-list span.nav-link {
   padding: 2px 15px 0 15px;
-  background-color: var(--tertiary-color);
+  background-color: var(--gray-75);
 }
 
 .nav-list a.nav-link:hover {
