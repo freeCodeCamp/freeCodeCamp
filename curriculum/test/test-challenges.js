@@ -476,7 +476,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
           describe('Check tests against solutions', function() {
             solutions.forEach((solution, index) => {
               it(`Solution ${index + 1} must pass the tests`, async function() {
-                this.timeout(5000 * tests.length + 1000);
+                this.timeout(5000 * tests.length + 2000);
                 const testRunner = await createTestRunner(
                   challenge,
                   solution,
