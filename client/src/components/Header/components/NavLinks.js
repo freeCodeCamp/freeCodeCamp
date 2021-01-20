@@ -94,7 +94,7 @@ class NavLinks extends Component {
             <Link
               className='nav-link'
               external={true}
-              sameTab={true}
+              sameTab={false}
               to={forumLocation}
             >
               {t('buttons.forum')}
