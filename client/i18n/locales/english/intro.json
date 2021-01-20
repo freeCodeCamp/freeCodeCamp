@@ -69,24 +69,15 @@
       },
       "basic-html-cat-photo-app": {
         "title": "Basic HTML Cat Photo App",
-        "intro": [
-          "placeholder",
-          "placeholder"
-        ]
+        "intro": ["placeholder", "placeholder"]
       },
       "basic-css-cafe-menu": {
         "title": "Basic CSS Cafe Menu",
-        "intro": [
-          "placeholder",
-          "placeholder"
-        ]
+        "intro": ["placeholder", "placeholder"]
       },
       "css-variables-skyline": {
         "title": "CSS Variables Skyline",
-        "intro": [
-          "placeholder",
-          "placeholder"
-        ]
+        "intro": ["placeholder", "placeholder"]
       }
     }
   },
@@ -176,24 +167,15 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
-        "intro": [
-          "placeholder",
-          "placeholder"
-        ]
+        "intro": ["placeholder", "placeholder"]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
-        "intro": [
-          "placeholder",
-          "placeholder"
-        ]
+        "intro": ["placeholder", "placeholder"]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
-        "intro": [
-          "placeholder",
-          "placeholder"
-        ]
+        "intro": ["placeholder", "placeholder"]
       }
     }
   },
@@ -301,10 +283,7 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": [
-          "placeholder",
-          "placeholder"
-        ]
+        "intro": ["placeholder", "placeholder"]
       }
     }
   },
@@ -570,7 +549,7 @@
   "misc-text": {
     "certification": "{{cert}} Certification",
     "browse-other": "Browse our other free certifications\n(we recommend doing these in order)",
-    "courses": "courses",
-    "section-courses": "{{section}} courses"
+    "courses": "Courses",
+    "section-courses": "{{section}} Courses"
   }
 }

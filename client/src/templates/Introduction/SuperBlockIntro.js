@@ -167,7 +167,7 @@ export class SuperBlockIntroductionPage extends Component {
           <Spacer size={2} />
           <SuperBlockIntro superBlock={superBlock} />
           <Spacer size={2} />
-          <h2 className='text-center'>{t(`intro:misc-text.tutorials`)}</h2>
+          <h2 className='text-center'>{t(`intro:misc-text.courses`)}</h2>
           <Spacer />
           <div className='block-ui'>
             {blockDashedNames.map(blockDashedName => (

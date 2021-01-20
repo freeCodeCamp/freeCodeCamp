@@ -144,7 +144,7 @@ export class Block extends Component {
         >
           <Caret />
           <h4>
-            {t(`intro:misc-text.section-tutorials`, { section: blockTitle })}
+            {t(`intro:misc-text.section-courses`, { section: blockTitle })}
           </h4>
           <div className='map-title-completed'>
             {this.renderCheckMark(
