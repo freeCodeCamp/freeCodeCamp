@@ -17,8 +17,8 @@
   overflow-wrap: break-word;
 }
 
-.tutorial-title {
-  font-size: 1.17rem;
+.course-title {
+  font-size: 1.13rem;
   overflow-wrap: break-word;
 }
 
@@ -141,7 +141,7 @@ button.map-title {
   display: flex;
   align-items: center;
   width: 100%;
-  font-size: 1.17rem;
+  font-size: 1.13rem;
 }
 
 .map-challenge-title a {
@@ -170,7 +170,7 @@ button.map-title {
     font-size: 1.17rem;
   }
 
-  .tutorial-title,
+  .course-title,
   .map-cert-title,
   .map-challenge-title {
     font-size: 1rem;

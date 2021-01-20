@@ -170,7 +170,7 @@ export class SuperBlockIntroductionPage extends Component {
               <SuperBlockIntro superBlock={superBlock} />
               <Spacer size={2} />
               <h2 className='text-center big-subheading'>
-                {t(`intro:misc-text.tutorials`)}
+                {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer />
               <div className='block-ui'>
