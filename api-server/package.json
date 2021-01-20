@@ -33,7 +33,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.9.2",
     "googleapis": "^42.0.0",
-    "helmet": "^3.23.3",
+    "helmet": "^4.4.1",
     "helmet-csp": "^2.10.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
