@@ -105,11 +105,13 @@
   align-items: center;
   padding: 2px 15px 0 25px;
   color: var(--gray-00);
+  background-color: var(--gray-90);
   opacity: 1;
   white-space: nowrap;
   height: var(--header-height);
   width: 100%;
   align-items: center;
+  border: none;
 }
 
 .nav-list span.nav-link {
@@ -117,7 +119,8 @@
   background-color: var(--gray-75);
 }
 
-.nav-list a.nav-link:hover {
+.nav-list a.nav-link:hover,
+.nav-list button.nav-link:hover {
   color: var(--theme-color);
   text-decoration: none;
   background: white;

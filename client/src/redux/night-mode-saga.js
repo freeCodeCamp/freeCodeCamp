@@ -7,7 +7,7 @@ const themeKey = 'fcc-theme';
 const defaultTheme = 'default';
 const nightTheme = 'night';
 
-function setTheme(currentTheme = defaultTheme, theme) {
+export function setTheme(currentTheme = defaultTheme, theme) {
   if (currentTheme !== theme) {
     store.set(themeKey, theme);
   }
