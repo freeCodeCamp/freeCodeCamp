@@ -10,7 +10,7 @@ forumTopicId: 16808
 
 A for loop can also count backwards, so long as we can define the right conditions.
 
-In order to count backward by two, we'll need to change our `initialization`, `condition`, and `final-expression`.
+In order to decrement by two each iteration, we'll need to change our `initialization`, `condition`, and `final-expression`.
 
 We'll start at `i = 10` and loop while `i > 0`. We'll decrement `i` by 2 each loop with `i -= 2`.
 
