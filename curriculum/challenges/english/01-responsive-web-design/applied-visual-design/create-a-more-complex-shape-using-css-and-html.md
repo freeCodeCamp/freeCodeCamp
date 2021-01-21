@@ -40,7 +40,7 @@ The `background-color` property of the `heart::after` selector should be pink.
 ```js
 const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
 assert(
-  /{\s*([\w\-]+\s*:\s*[\w]+\s*;\s*)*background-color\s*:\s*pink\s*(\}|;)/.test(heartAfter)
+  /({|;)\s*background-color\s*:\s*pink\s*(;|})/g.test(heartAfter)
 );
 ```
 
