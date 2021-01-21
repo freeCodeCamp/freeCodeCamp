@@ -18,6 +18,11 @@
   overflow-wrap: break-word;
 }
 
+.block-description pre {
+  display: inline;
+  padding: 0;
+}
+
 .superBlock-image {
   max-width: 100%;
   height: auto !important;
