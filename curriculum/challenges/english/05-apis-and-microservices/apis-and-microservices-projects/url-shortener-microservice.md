@@ -82,7 +82,7 @@ async (getUserInput) => {
     url + '/api/shorturl/' + shortenedUrlVariable
   );
   if (getResponse) {
-    const { redirected, url } = getResponse;
+    const { redirected, url } = await getResponse.json();
     assert.isTrue(redirected);
     assert.strictEqual(
       url,
