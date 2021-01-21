@@ -10,7 +10,7 @@ dashedName: balanced-brackets
 
 Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
 
-<strong>Examples:</strong>
+**Examples:**
 | Input                     | Output |
 | ------------------------- | ------ |
 | <code>\[]</code>          | true   |

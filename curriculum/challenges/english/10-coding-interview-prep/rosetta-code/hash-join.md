@@ -41,7 +41,7 @@ In pseudo-code, the algorithm could be expressed as follows:
 
 Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
 
-<strong>Input</strong>
+**Input**
 
 <table>
   <tr>
@@ -127,7 +127,7 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
   </tr>
 </table>
 
-<strong>Output</strong>
+**Output**
 
 | A_age | A_name | B_character | B_nemesis |
 | ----- | ------ | ----------- | --------- |
