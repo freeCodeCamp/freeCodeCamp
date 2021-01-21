@@ -8,7 +8,7 @@ dashedName: chart-the-stock-market
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://watchstocks.herokuapp.com/>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that is functionally similar to this: <https://chart-the-stock-market.freecodecamp.rocks/>. Use a site builder of your choice to complete the project.
 
 Here are the specific user stories you should implement for this project:
 
