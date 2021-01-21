@@ -195,19 +195,17 @@ export class SuperBlockIntroductionPage extends Component {
                 {superBlock !== 'Coding Interview Prep' && (
                   <div>
                     <CertChallenge superBlock={superBlock} />
-                    <Spacer size={2} />
                   </div>
                 )}
               </div>
-              {!isSignedIn && (
-                <Row>
-                  <Col sm={10} smOffset={1} xs={12}>
-                    <Login block={true}>
-                      {t('buttons.logged-out-cta-btn')}
-                    </Login>
-                    <Spacer />
-                  </Col>
-                </Row>
+              {!isSignedIn ? (
+                <div>
+                  <Spacer />
+                  <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+                  <Spacer />
+                </div>
+              ) : (
+                <Spacer size={2} />
               )}
               <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
                 {t(`intro:misc-text.browse-other`)}

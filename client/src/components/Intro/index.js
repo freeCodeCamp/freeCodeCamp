@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { randomQuote } from '../../utils/get-words';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 import IntroDescription from './components/IntroDescription';
@@ -90,14 +89,10 @@ function Intro({
       <>
         <Spacer />
         <h1>{t('learn.heading')}</h1>
-        <Spacer size={1} />
+        <Spacer />
         <IntroDescription />
         <Spacer />
-        <Row>
-          <Col sm={10} smOffset={1} xs={12}>
-            <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-          </Col>
-        </Row>
+        <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
         <Spacer />
       </>
     );

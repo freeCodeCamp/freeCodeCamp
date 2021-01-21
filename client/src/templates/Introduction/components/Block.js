@@ -123,6 +123,7 @@ export class Block extends Component {
     );
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
+    console.log(blockDashedName);
 
     return isProjectBlock ? (
       <div className='block'>
@@ -159,7 +160,7 @@ export class Block extends Component {
             isProjectBlock={isProjectBlock}
           />
         )}
-        <Spacer size={2} />
+        {blockDashedName !== 'project-euler' ? <Spacer size={2} /> : null}
       </div>
     );
   }
