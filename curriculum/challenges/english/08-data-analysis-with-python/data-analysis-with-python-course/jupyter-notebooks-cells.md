@@ -20,21 +20,20 @@ More resources:
 
 ## --text--
 
-Which cells are responsible for rich display?
+What are the three main types of Jupyter Notebook Cell?
 
 ## --answers--
 
-Code Cells
+Code, Markdown, and Python
 
 ---
 
-Markdown Cells
+Code, Markdown, and Raw
 
 ---
 
-Raw Cells
+Markdown, Python, and Raw
 
 ## --video-solution--
 
-1
-
+2
