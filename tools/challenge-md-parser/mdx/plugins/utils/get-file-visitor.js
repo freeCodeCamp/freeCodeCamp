@@ -45,7 +45,7 @@ function codeToData(node, seeds, seedKey, validate) {
 
   const key = `index${lang}`;
   const id = seeds[key] ? seeds[key].id : '';
-  // the contents will be missing if there is an id preceeding this code
+  // the contents will be missing if there is an id preceding this code
   // block.
   if (!seeds[key]) {
     seeds[key] = defaultFile(lang, id);

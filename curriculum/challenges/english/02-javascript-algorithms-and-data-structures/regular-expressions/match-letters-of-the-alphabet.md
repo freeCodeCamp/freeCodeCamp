@@ -28,8 +28,7 @@ matStr.match(bgRegex); // Returns null
 
 Match all the letters in the string `quoteSample`.
 
-**Note**  
-Be sure to match both upper- and lowercase **letters**.\*\*\*\*
+**Note**: Be sure to match both uppercase and lowercase letters.
 
 # --hints--
 
