@@ -65,7 +65,7 @@ export class Challenges extends Component {
         {[...challengesWithCompleted].map(challenge => (
           <li
             className={`map-challenge-title ${
-              isProjectBlock ? 'map-project-wrap' : ''
+              isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
             }`}
             id={challenge.dashedName}
             key={'map-challenge' + challenge.fields.slug}

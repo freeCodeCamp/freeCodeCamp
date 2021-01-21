@@ -54,8 +54,12 @@ button.map-title {
   background-color: var(--tertiary-background);
 }
 
+.map-challenge-wrap > a,
 .map-project-wrap > a {
   display: flex;
+}
+
+.map-project-wrap > a {
   justify-content: space-between;
 }
 
