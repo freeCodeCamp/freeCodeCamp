@@ -43,15 +43,6 @@ Your regex should reuse a capture group twice.
 assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 ```
 
-Your regex should have two spaces separating the three numbers.
-
-```js
-assert(
-  reRegex.source.match(/ |\\s/g).length === 2 ||
-    reRegex.source.match(/\(\\s\)(?=.*\\(1|2))/g)
-);
-```
-
 Your regex should match `"42 42 42"`.
 
 ```js
