@@ -71,13 +71,13 @@ function Intro({
           </blockquote>
         </div>
         {completedChallengeCount < 15 ? (
-          <div>
+          <div className='intro-description'>
             <Spacer />
-            <h4>
+            <p>
               <Trans i18nKey='learn.start-at-beginning'>
                 <Link to={slug} />
               </Trans>
-            </h4>
+            </p>
           </div>
         ) : (
           ''
