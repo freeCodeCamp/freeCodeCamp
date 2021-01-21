@@ -13,7 +13,7 @@ dashedName: link-to-external-pages-with-anchor-elements
 
 `a` 需要一个 `href` 属性指向跳转的目的地。 同时，它还应有内容。 例如：
 
-`<a href="https://freecodecamp.org">链接到 freeCodeCamp</a>`
+`<a href="https://freecodecamp.org">this links to freecodecamp.org</a>`
 
 在浏览器中，以上的标签会将文字 **"链接到 freeCodeCamp"** 展示成一个可点击的超链接。 点击该文本就会跳转到 **`https://freecodecamp.org`**。
 
