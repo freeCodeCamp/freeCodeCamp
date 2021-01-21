@@ -276,8 +276,8 @@ The following is an example of code:
 ```
 ````
 
-- Additional information in the form of a note should be formatted `**Note:** Rest of note text...`
-- If multiple notes are needed, then list all of the notes in separate sentences using the format `**Notes:** First note text. Second note text.`.
+- Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
 - Use single-quotes where applicable
 
 **Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
