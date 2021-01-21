@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  
+
   i18n-download-curriculum-translations:
     name: Learn
     runs-on: ubuntu-18.04
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
-      
+
       ##### Chinese Download #####
       - name: Crowdin Download for Chinese Translations
         uses: crowdin/github-action@master
@@ -28,12 +28,12 @@ jobs:
           download_translations: true
           skip_untranslated_files: true
           export_only_approved: true
-          
+
           commit_message: 'chore(i8n,learn): processed chinese translations'
-          
+
           # pull-request
           localization_branch_name: i18n-sync-learn-processed-chinese-translations
-          create_pull_request: true
+          create_pull_request: false
           pull_request_title: 'chore(i18n,learn): Processed chinese translations from crowdin'
           pull_request_body: ''
           pull_request_labels: 'scope: i18n, scope: learn, crowdin-sync, language: Chinese'
