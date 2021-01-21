@@ -15,7 +15,7 @@ dashedName: comment-out-html
 
 # --instructions--
 
-任务：注释掉 `h1` 元素和 `p` 元素，保留 `h2` 元素。
+注释掉 `h1` 元素和 `p` 元素，保留 `h2` 元素。
 
 # --hints--
 

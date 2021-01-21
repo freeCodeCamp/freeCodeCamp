@@ -17,15 +17,15 @@ dashedName: add-images-to-your-website
 
 注意：`img` 元素是没有结束标签的。
 
-所有的 `img` 元素**必须**有 `alt` 属性。`alt` 的属性值有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本。
+所有的 `img` 元素**必须**有 `alt` 属性。 `alt` 的属性值有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本。
 
-注意：如果图片是纯装饰性的，把 `alt` 的属性值设置为空是最佳实践。
+**注意：**如果图片是纯装饰性的，把 `alt` 的属性值设置为空是最佳实践。
 
 理想情况下，`alt` 属性不应该包含特殊字符，除非有特殊需要。
 
 让我们给上面例子的 `img` 添加 `alt` 属性。
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="一只打着领带的商务猫">`
+`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
 
 # --instructions--
 
@@ -33,11 +33,11 @@ dashedName: add-images-to-your-website
 
 在 `main` 元素里，给 `p` 元素前面插入一个 `img` 元素。
 
-然后将 `src` 的属性值设置为这个 URL：
+然后将 `src` 的属性值设置为这个 url：
 
 `https://bit.ly/fcc-relaxing-cat`
 
-最后，不要忘记给图片加上 `alt` 属性。
+最后，不要忘记给 `img` 加上 `alt` 属性。
 
 # --hints--
 
@@ -47,19 +47,21 @@ dashedName: add-images-to-your-website
 assert($('img').length);
 ```
 
-`img` 应该有一个 `src` 属性，其值为猫咪图片的 URL。
+你的图片应该有一个 `src` 属性，其值为猫咪图片的 url。
 
 ```js
 assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
 ```
 
-`img` 元素的 `alt` 属性值不应为空。
+你的图片元素的 `alt` 属性值不应为空。
 
 ```js
 assert(
   $('img').attr('alt') &&
     $('img').attr('alt').length &&
-    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g, ''))
+    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
+      __helpers.removeWhiteSpace(code)
+    )
 );
 ```
 
