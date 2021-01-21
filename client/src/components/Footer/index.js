@@ -26,7 +26,11 @@ function Footer() {
       .fill(0)
       .map((_, i) => i);
     const list = numbers.map(number => (
-      <Link external={false} to={t(`trending:articles.${number}.link`)}>
+      <Link
+        external={false}
+        key={number}
+        to={t(`trending:articles.${number}.link`)}
+      >
         {t(`trending:articles.${number}.title`)}
       </Link>
     ));
