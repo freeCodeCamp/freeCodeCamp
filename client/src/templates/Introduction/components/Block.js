@@ -123,7 +123,11 @@ export class Block extends Component {
     );
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
-    console.log(blockDashedName);
+    const {
+      expand: expandText,
+      collapse: collapseText,
+      courses: coursesText
+    } = t('intro:misc-text');
 
     return isProjectBlock ? (
       <div className='block'>
@@ -145,7 +149,9 @@ export class Block extends Component {
         >
           <Caret />
           <h4 className='course-title'>
-            {t(`intro:misc-text.section-courses`, { section: blockTitle })}
+            {`${
+              isExpanded ? collapseText : expandText
+            } ${coursesText.toLowerCase()}`}
           </h4>
           <div className='map-title-completed course-title'>
             {this.renderCheckMark(
