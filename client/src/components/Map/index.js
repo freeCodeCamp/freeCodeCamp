@@ -2,8 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
+import {
+  ResponsiveDesignLogo,
+  JavaScriptLogo,
+  ReactLogo,
+  D3Logo,
+  APILogo,
+  ClipboardLogo,
+  PythonLogo,
+  AnalyticsLogo,
+  ShieldLogo,
+  TensorflowLogo,
+  AlgorithmLogo
+} from './assets';
 
-import { ImageLoader, Link } from '../helpers';
+import { Link } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import { dasherize } from '../../../../utils/slugs';
 import './map.css';
@@ -25,7 +38,9 @@ function createSuperBlockTitle(str) {
 const iconStyle = {
   width: '55px',
   height: '55px',
-  marginRight: '20px'
+  marginRight: '20px',
+  stroke: 'var(--primary-color)',
+  fill: 'var(--primary-color)'
 };
 
 const linkSpacingStyle = {
@@ -45,12 +60,7 @@ function renderLandingMap(nodes) {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              <ImageLoader
-                alt='building a website'
-                offsetVertical={500}
-                src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
-                style={iconStyle}
-              />
+              <AlgorithmLogo style={iconStyle} />
               {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
             </div>
             <LinkButton />
@@ -72,12 +82,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              <ImageLoader
-                alt='building a website'
-                offsetVertical={500}
-                src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
-                style={iconStyle}
-              />
+              <AlgorithmLogo style={iconStyle} />
               {createSuperBlockTitle(node.superBlock)}
             </div>
           </Link>
