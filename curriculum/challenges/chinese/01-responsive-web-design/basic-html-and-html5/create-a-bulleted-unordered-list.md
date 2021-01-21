@@ -17,8 +17,8 @@ HTML 有一个特定的元素用于创建<dfn>无序列表</dfn>。
 
 ```html
 <ul>
-  <li>牛奶</li>
-  <li>奶酪</li>
+  <li>milk</li>
+  <li>cheese</li>
 </ul>
 ```
 
