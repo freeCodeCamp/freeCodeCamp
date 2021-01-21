@@ -11,7 +11,7 @@ dashedName: escaping-literal-quotes-in-strings
 
 When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: `"` or `'` inside of your string?
 
-In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (`\`) in front of the quote.
+In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (<code>\\</code>) in front of the quote.
 
 `var sampleStr = "Alan said, \"Peter is learning JavaScript\".";`
 

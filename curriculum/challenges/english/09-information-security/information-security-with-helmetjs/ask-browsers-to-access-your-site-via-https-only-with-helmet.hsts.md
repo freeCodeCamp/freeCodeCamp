@@ -14,7 +14,7 @@ HTTP Strict Transport Security (HSTS) is a web security policy which helps to pr
 
 # --instructions--
 
-Configure `helmet.hsts()` to use HTTPS for the next 90 days. Pass the config object `{maxAge: timeInSeconds, force: true}`. You can create a variable \`ninetyDaysInSeconds = 90\*24\*60\*60;\` to use for the \`timeInSeconds\`. Repl.it already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Repl.it header, after inspecting it for testing.
+Configure `helmet.hsts()` to use HTTPS for the next 90 days. Pass the config object `{maxAge: timeInSeconds, force: true}`. You can create a variable `ninetyDaysInSeconds = 90*24*60*60;` to use for the `timeInSeconds`. Repl.it already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Repl.it header, after inspecting it for testing.
 
 Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TSL Certificate.
 
