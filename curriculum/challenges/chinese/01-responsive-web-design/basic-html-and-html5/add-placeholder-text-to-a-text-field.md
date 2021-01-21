@@ -9,7 +9,7 @@ dashedName: add-placeholder-text-to-a-text-field
 
 # --description--
 
-`Placeholder` 占位符是用户在 `input` 输入框中输入任何东西前的预定义文本。
+占位符文本用户在 `input` 输入框中输入任何东西前的预定义文本。
 
 你可以像这样创建一个占位符：
 
@@ -29,7 +29,7 @@ dashedName: add-placeholder-text-to-a-text-field
 assert($('input[placeholder]').length > 0);
 ```
 
-设置 `placeholder` 属性的值为 `cat photo URL`。
+设置占位符属性的值为 `cat photo URL`。
 
 ```js
 assert(
@@ -86,9 +86,9 @@ assert($('input[type=text]').length > 0);
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>
