@@ -2,123 +2,123 @@
   "articles": [
     {
       "title": "Spanish: What is Docker?",
-      "link": "https://www.freecoodecamp.org/news/what-is-docker-used-for-a-docker-container-tutorial-for-beginners/"
+      "link": "https://www.freecodecamp.org/news/what-is-docker-used-for-a-docker-container-tutorial-for-beginners/"
     },
     {
       "title": "TCP/IP Model",
-      "link": "https://www.freecoodecamp.org/news/what-is-tcp-ip-layers-and-protocols-explained/"
+      "link": "https://www.freecodecamp.org/news/what-is-tcp-ip-layers-and-protocols-explained/"
     },
     {
       "title": "RTF File",
-      "link": "https://www.freecoodecamp.org/news/rtf-file-what-is-the-rich-text-format/"
+      "link": "https://www.freecodecamp.org/news/rtf-file-what-is-the-rich-text-format/"
     },
     {
       "title": "CSS Transition",
-      "link": "https://www.freecoodecamp.org/news/css-transition-examples/"
+      "link": "https://www.freecodecamp.org/news/css-transition-examples/"
     },
     {
       "title": "How to Use Instagram?",
-      "link": "https://www.freecoodecamp.org/news/how-to-use-instagram-like-a-pro/"
+      "link": "https://www.freecodecamp.org/news/how-to-use-instagram-like-a-pro/"
     },
     {
       "title": "MBR VS GPT",
-      "link": "https://www.freecoodecamp.org/news/mbr-vs-gpt-whats-the-difference-between-an-mbr-partition-and-a-gpt-partition-solved/"
+      "link": "https://www.freecodecamp.org/news/mbr-vs-gpt-whats-the-difference-between-an-mbr-partition-and-a-gpt-partition-solved/"
     },
     {
       "title": "FAT32 Format",
-      "link": "https://www.freecoodecamp.org/news/how-to-format-a-usb-drive-to-fat32-on-windows-10/"
+      "link": "https://www.freecodecamp.org/news/how-to-format-a-usb-drive-to-fat32-on-windows-10/"
     },
     {
       "title": "Error 503 Code",
-      "link": "https://www.freecoodecamp.org/news/http-error-503-service-unavailable-explained-what-the-503-error-code-means/"
+      "link": "https://www.freecodecamp.org/news/http-error-503-service-unavailable-explained-what-the-503-error-code-means/"
     },
     {
       "title": "Windows Hosts File",
-      "link": "https://www.freecoodecamp.org/news/how-to-find-and-edit-a-windows-hosts-file/"
+      "link": "https://www.freecodecamp.org/news/how-to-find-and-edit-a-windows-hosts-file/"
     },
     {
       "title": "Mobi to PDF",
-      "link": "https://www.freecoodecamp.org/news/mobi-to-pdf-how-to-convert-to-and-from-a-mobi-file/"
+      "link": "https://www.freecodecamp.org/news/mobi-to-pdf-how-to-convert-to-and-from-a-mobi-file/"
     },
     {
       "title": "What is STEM?",
-      "link": "https://www.freecoodecamp.org/news/what-is-stem-the-meaning-of-an-acronym-youll-hear-a-lot-in-school/"
+      "link": "https://www.freecodecamp.org/news/what-is-stem-the-meaning-of-an-acronym-youll-hear-a-lot-in-school/"
     },
     {
       "title": "JavaScript Void 0",
-      "link": "https://www.freecoodecamp.org/news/javascript-void-keyword-explained/"
+      "link": "https://www.freecodecamp.org/news/javascript-void-keyword-explained/"
     },
     {
       "title": "SQL Delete Row",
-      "link": "https://www.freecoodecamp.org/news/sql-delete-row-statement-examples/"
+      "link": "https://www.freecodecamp.org/news/sql-delete-row-statement-examples/"
     },
     {
       "title": "JavaScript Replace",
-      "link": "https://www.freecoodecamp.org/news/javascript-string-replace-example-with-regex/"
+      "link": "https://www.freecodecamp.org/news/javascript-string-replace-example-with-regex/"
     },
     {
       "title": "Python JSON Parser",
-      "link": "https://www.freecoodecamp.org/news/python-read-json-file-how-to-load-json-from-a-file-and-parse-dumps/"
+      "link": "https://www.freecodecamp.org/news/python-read-json-file-how-to-load-json-from-a-file-and-parse-dumps/"
     },
     {
       "title": "cmd Delete Folder",
-      "link": "https://www.freecoodecamp.org/news/cmd-delete-folder-how-to-remove-files-and-folders-in-windows/"
+      "link": "https://www.freecodecamp.org/news/cmd-delete-folder-how-to-remove-files-and-folders-in-windows/"
     },
     {
       "title": "What is NFC?",
-      "link": "https://www.freecoodecamp.org/news/what-is-nfc-near-field-communication-uses-chips-tags-and-readers-explained/"
+      "link": "https://www.freecodecamp.org/news/what-is-nfc-near-field-communication-uses-chips-tags-and-readers-explained/"
     },
     {
       "title": "Content Type JSON",
-      "link": "https://www.freecoodecamp.org/news/what-is-the-correct-content-type-for-json-request-header-mime-type-explained/"
+      "link": "https://www.freecodecamp.org/news/what-is-the-correct-content-type-for-json-request-header-mime-type-explained/"
     },
     {
       "title": "Convert HEIC to JPG",
-      "link": "https://www.freecoodecamp.org/news/heic-to-jpg-how-to-convert-images-on-a-mac/"
+      "link": "https://www.freecodecamp.org/news/heic-to-jpg-how-to-convert-images-on-a-mac/"
     },
     {
       "title": "Math Random Java",
-      "link": "https://www.freecoodecamp.org/news/generate-random-numbers-java/"
+      "link": "https://www.freecodecamp.org/news/generate-random-numbers-java/"
     },
     {
       "title": "WordPress for Beginners",
-      "link": "https://www.freecoodecamp.org/news/how-to-start-a-blog-with-wordpress/"
+      "link": "https://www.freecodecamp.org/news/how-to-start-a-blog-with-wordpress/"
     },
     {
       "title": "Qualitative VS Quantitative",
-      "link": "https://www.freecoodecamp.org/news/qualitative-vs-quantitative-definition-research-methods-and-data/"
+      "link": "https://www.freecodecamp.org/news/qualitative-vs-quantitative-definition-research-methods-and-data/"
     },
     {
       "title": "JavaScript Split String",
-      "link": "https://www.freecoodecamp.org/news/javascript-split-string-example/"
+      "link": "https://www.freecodecamp.org/news/javascript-split-string-example/"
     },
     {
       "title": "Accented Letters on Mac",
-      "link": "https://www.freecoodecamp.org/news/how-to-type-letters-with-accents-on-mac/"
+      "link": "https://www.freecodecamp.org/news/how-to-type-letters-with-accents-on-mac/"
     },
     {
       "title": "Windows 10 Product Key",
-      "link": "https://www.freecoodecamp.org/news/how-to-find-a-windows-10-product-key/"
+      "link": "https://www.freecodecamp.org/news/how-to-find-a-windows-10-product-key/"
     },
     {
       "title": "Google Docs Landscape",
-      "link": "https://www.freecoodecamp.org/news/google-docs-landscape-tutorial-how-to-make-a-google-doc-landscape-orientation/"
+      "link": "https://www.freecodecamp.org/news/google-docs-landscape-tutorial-how-to-make-a-google-doc-landscape-orientation/"
     },
     {
       "title": "Antimalware Executable",
-      "link": "https://www.freecoodecamp.org/news/antimalware-service-executable-what-is-msmpeng-exe-and-why-is-it-running-in-windows-10/"
+      "link": "https://www.freecodecamp.org/news/antimalware-service-executable-what-is-msmpeng-exe-and-why-is-it-running-in-windows-10/"
     },
     {
       "title": "Windows 10 Start Menu",
-      "link": "https://www.freecoodecamp.org/news/windows-10-start-menu-not-working-solved/"
+      "link": "https://www.freecodecamp.org/news/windows-10-start-menu-not-working-solved/"
     },
     {
       "title": "Windows 10 Command Line",
-      "link": "https://www.freecoodecamp.org/news/how-to-open-the-command-prompt-in-windows-10/"
+      "link": "https://www.freecodecamp.org/news/how-to-open-the-command-prompt-in-windows-10/"
     },
     {
       "title": "Google Account Recovery",
-      "link": "https://www.freecoodecamp.org/news/google-account-recovery-change-gmail-password/"
+      "link": "https://www.freecodecamp.org/news/google-account-recovery-change-gmail-password/"
     }
   ]
 }
