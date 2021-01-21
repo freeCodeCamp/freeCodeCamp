@@ -27,27 +27,23 @@ for key in counts:
 
 ## --answers--
 
+<pre>annie 42
+jan 100</pre>
+
+---
+
+<pre>chuck 1
 annie 42
-
-jan 100
-
----
-
-chuck 1
-
-annie 42
-
-jan 100
+jan 100</pre>
 
 ---
 
-chuck 1
+<pre>chuck 1</pre>
 
 ---
 
-\[Error]
+<pre>[Error]</pre>
 
 ## --video-solution--
 
 1
-

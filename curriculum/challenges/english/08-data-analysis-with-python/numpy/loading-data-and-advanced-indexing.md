@@ -12,10 +12,10 @@ dashedName: loading-data-and-advanced-indexing
 
 Given a file named `data.txt` with these contents:
 
-```
+<pre>
 29,97,32,100,45
 15,88,5,75,22
-```
+</pre>
 
 What code would produce the following array?
 

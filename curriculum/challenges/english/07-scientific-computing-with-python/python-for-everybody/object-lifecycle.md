@@ -33,39 +33,33 @@ q.party()
 
 ## --answers--
 
+<pre>
 Quincy constructed
-
 Miya constructed
-
 Quincy party count 1
-
 Miya party count 2
-
 Quincy party count 3
+</pre>
 
 ---
 
+<pre>
 Quincy constructed
-
 Miya constructed
-
 Quincy party count 1
-
 Miya party count 1
-
 Quincy party count 2
+</pre>
 
 ---
 
+<pre>
 Quincy constructed
-
 Quincy party count 1
-
 Quincy party count 2
-
 Miya constructed
-
 Miya party count 1
+</pre>
 
 ## --video-solution--
 

@@ -19,43 +19,39 @@ for n in "banana":
 
 ## --answers--
 
+<pre>
 n
-
 n
+</pre>
 
 ---
 
+<pre>
 0
-
 1
+</pre>
 
 ---
 
+<pre>
 0
-
 1
-
 2
-
 3
-
 4
-
 5
+</pre>
 
 ---
 
+<pre>
 b
-
 a
-
 n
-
 a
-
 n
-
 a
+</pre>
 
 ## --video-solution--
 

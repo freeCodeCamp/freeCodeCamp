@@ -34,30 +34,30 @@ print(certificates_earned[certificates_earned > 5])
 
 ## --answers--
 
-```
+<pre>
 Tom      True
 Kris     False
 Ahmad    False
 Beau     True
 dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Tom      8
 Ahmad    5
 Beau     6
 dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Tom      8
 Beau     6
 dtype: int64
-```
+</pre>
 
 ## --video-solution--
 
