@@ -198,18 +198,19 @@ export class SuperBlockIntroductionPage extends Component {
                   </div>
                 )}
               </div>
-              {!isSignedIn ? (
+              {!isSignedIn && (
                 <div>
-                  <Spacer />
+                  <Spacer size={2} />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-                  <Spacer />
                 </div>
-              ) : (
-                <Spacer size={2} />
               )}
-              <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
+              <Spacer size={2} />
+              <h3
+                className='text-center big-block-title'
+                style={{ whiteSpace: 'pre-line' }}
+              >
                 {t(`intro:misc-text.browse-other`)}
-              </h2>
+              </h3>
               <Spacer />
               <Map currentSuperBlock={superBlock} />
               <Spacer size={2} />
