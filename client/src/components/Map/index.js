@@ -40,7 +40,7 @@ function renderLandingMap(nodes) {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock)}
+              {generateIconComponent(node.superBlock, 'map-icon')}
               {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
             </div>
             <LinkButton />
@@ -62,7 +62,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock)}
+              {generateIconComponent(node.superBlock, 'map-icon')}
               {createSuperBlockTitle(node.superBlock)}
             </div>
           </Link>

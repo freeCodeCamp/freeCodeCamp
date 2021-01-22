@@ -11,7 +11,7 @@ import Shield from './Shield';
 import TensorflowIcon from './TensorflowIcon';
 import Algorithm from './Algorithm';
 
-const generateIconComponent = str => {
+const generateIconComponent = (superBlock, className) => {
   const iconMap = {
     'Responsive Web Design': ResponsiveDesign,
     'JavaScript Algorithms and Data Structures': JavaScriptIcon,
@@ -25,9 +25,9 @@ const generateIconComponent = str => {
     'Machine Learning with Python': TensorflowIcon,
     'Coding Interview Prep': Algorithm
   };
-  const Icon = iconMap[str];
+  const Icon = iconMap[superBlock];
 
-  return <Icon className='map-icon' />;
+  return <Icon className={className} />;
 };
 
 export { generateIconComponent };
