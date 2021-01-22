@@ -31,47 +31,35 @@ jane()
 
 ## --answers--
 
-Zap
-
+<pre>Zap
 ABC
-
 jane
-
 fred
-
-jane
-
----
-
-Zap
-
-ABC
-
-Zap
+jane</pre>
 
 ---
 
+<pre>Zap
 ABC
-
-Zap
-
-jane
+Zap</pre>
 
 ---
 
-ABC
-
+<pre>ABC
 Zap
-
-ABC
+jane</pre>
 
 ---
 
+<pre>ABC
 Zap
+ABC</pre>
 
-Zap
+---
 
+<pre>Zap
 Zap
+Zap</pre>
 
 ## --video-solution--
 

@@ -222,7 +222,7 @@ async (getUserInput) => {
 };
 ```
 
-If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error&#58; 'Expected puzzle to be 81 characters long' }`
+If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {

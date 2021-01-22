@@ -26,27 +26,31 @@ an.party()
 
 ## --answers--
 
+<pre>
 So far 1
-
 So far 2
+</pre>
 
 ---
 
+<pre>
 0
-
 0
+</pre>
 
 ---
 
+<pre>
 2
-
 2
+</pre>
 
 ---
 
+<pre>
 2
-
 4
+</pre>
 
 ## --video-solution--
 

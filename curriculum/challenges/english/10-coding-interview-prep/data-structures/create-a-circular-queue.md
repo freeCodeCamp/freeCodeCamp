@@ -46,7 +46,13 @@ This approach requires a constant amount of memory but allows files of a much la
 
 # --instructions--
 
-In this challenge we will implement a circular queue. The circular queue should provide `enqueue` and `dequeue` methods which allow you to read from and write to the queue. The class itself should also accept an integer argument which you can use to specify the size of the queue when created. We've written the starting version of this class for you in the code editor. When you enqueue items to the queue, the write pointer should advance forward and loop back to the beginning once it reaches the end of the queue. Likewise, the read pointer should advance forward as you dequeue items. The write pointer should not be allowed to move past the read pointer (our class won't let you overwrite data you haven't read yet) and the read pointer should not be able to advance past data you have written. In addition, the `enqueue` method should return the item you enqueued if it is successful; otherwise it will return `null`. Similarly, when you dequeue an item, that item should be returned and if you cannot dequeue an item you should return `null`.
+In this challenge we will implement a circular queue. The circular queue should provide `enqueue` and `dequeue` methods which allow you to read from and write to the queue. The class itself should also accept an integer argument which you can use to specify the size of the queue when created. We've written the starting version of this class for you in the code editor.
+
+When you enqueue items to the queue, the write pointer should advance forward and loop back to the beginning once it reaches the end of the queue. The `enqueue` method should return the item you enqueued if it is successful; otherwise it will return `null`.
+
+Likewise, the read pointer should advance forward as you dequeue items. When you dequeue an item, that item should be returned. If you cannot dequeue an item, you should return `null`.
+
+The write pointer should not be allowed to move past the read pointer (our class won't let you overwrite data you haven't read yet) and the read pointer should not be able to advance past data you have written.
 
 # --hints--
 

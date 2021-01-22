@@ -48,6 +48,13 @@ You are welcome to translate as many strings as you like - there are no addition
 > [!NOTE]
 > If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
+### Translating Documentation
+
+Translating our contributing documentation is a similar flow to translating our curriculum files.
+
+> [!NOTE]
+> Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
+
 ## Rate Translations
 
 Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
@@ -68,6 +75,12 @@ This message appears when Crowdin's QA system has identified a potential error i
 
 > [!WARNING]
 > You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error might be incorrect.
+
+Crowdin will sometimes convert HTML tags (such as `<code>`) into numerical values, like `<0>text</0>` or `<1>text</1>`. These tags are usually code tags, and our QA check will verify that these have not been translated. However, sometimes these may be `<strong>` or `<em>` tags, which *should* be translated. If you hover over a numerical tag in the source string, you can see which HTML tag or tags have been replaced:
+
+![Image - Hover over a tag](./images/crowdin/tag-hover.png)
+
+If the replaced tags are something that should be translated (such as `strong` tags), translate the content within the tags and select "Save Anyway" when the error appears. Then leave a comment on the string explaining that the tags are `strong` (for example) so other translators and proofreaders are aware that they should be translated.
 
 ## Translation Best Practices
 

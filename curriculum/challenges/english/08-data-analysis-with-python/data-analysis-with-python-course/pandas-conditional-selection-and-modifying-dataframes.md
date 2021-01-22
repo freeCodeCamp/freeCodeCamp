@@ -39,33 +39,33 @@ print(certificates_earned)
 
 ## --answers--
 
-```
+<pre>
 Tom      13
 Kris     11
 Ahmad     9
 Beau      7
 Name: Longest streak, dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
       Certificates  Time (in months)  Longest streak
 Tom               8                16              13
 Kris              2                 5              11
 Ahmad             5                 9               9
 Beau              6                12               7
-```
+</pre>
 
 ---
 
-```
+<pre>
       Certificates   Longest streak
 Tom               8               13
 Kris              2               11
 Ahmad             5                9
 Beau              6                7
-```
+</pre>
 
 ## --video-solution--
 

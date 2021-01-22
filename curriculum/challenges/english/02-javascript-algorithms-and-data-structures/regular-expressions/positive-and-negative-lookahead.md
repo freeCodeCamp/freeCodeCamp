@@ -37,7 +37,7 @@ checkPass.test(password); // Returns true
 
 # --instructions--
 
-Use lookaheads in the `pwRegex` to match passwords that are greater than 5 characters long, do not begin with numbers, and have two consecutive digits.
+Use lookaheads in the `pwRegex` to match passwords that are greater than 5 characters long, and have two consecutive digits.
 
 # --hints--
 
@@ -71,22 +71,22 @@ Your regex should match `"abc123"`
 assert(pwRegex.test('abc123'));
 ```
 
-Your regex should not match `"1234"`
+Your regex should not match `"12345"`
 
 ```js
-assert(!pwRegex.test('1234'));
+assert(!pwRegex.test('12345'));
 ```
 
-Your regex should not match `"8pass99"`
+Your regex should match `"8pass99"`
 
 ```js
-assert(!pwRegex.test('8pass99'));
+assert(pwRegex.test('8pass99'));
 ```
 
-Your regex should not match `"12abcde"`
+Your regex should not match `"1a2bcde"`
 
 ```js
-assert(!pwRegex.test('12abcde'));
+assert(!pwRegex.test('1a2bcde'));
 ```
 
 Your regex should match `"astr1on11aut"`
@@ -108,5 +108,5 @@ let result = pwRegex.test(sampleWord);
 # --solutions--
 
 ```js
-var pwRegex =  /^\D(?=\w{5})(?=\w*\d{2})/;
+let pwRegex =  /(?=\w{6})(?=\w*\d{2})/;
 ```

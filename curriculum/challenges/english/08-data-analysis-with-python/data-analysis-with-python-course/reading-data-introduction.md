@@ -21,13 +21,13 @@ More resources:
 
 Given a file named `certificates.csv` with these contents:
 
-```
+<pre>
 Name$Certificates$Time (in months)
 Tom$8$16
 Kris$2$5
 Ahmad$5$9
 Beau$6$12
-```
+</pre>
 
 Fill in the blanks for the missing arguments below:
 

@@ -8,7 +8,7 @@ dashedName: build-a-voting-app
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://fcc-voting-arthow4n.herokuapp.com/>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that is functionally similar to this: <https://voting-app.freecodecamp.rocks/>. Use a site builder of your choice to complete the project.
 
 Here are the specific user stories you should implement for this project:
 

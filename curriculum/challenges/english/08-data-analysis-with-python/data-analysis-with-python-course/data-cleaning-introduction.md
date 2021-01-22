@@ -36,25 +36,21 @@ print(s.notnull().sum())
 
 ---
 
-```
-0     True
+<pre>0     True
 1     True
 2    False
 3     True
 4    False
-dtype: bool
-```
+dtype: bool</pre>
 
 ---
 
-```
-0    False
+<pre>0    False
 1    False
 2     True
 3    False
 4     True
-dtype: bool
-```
+dtype: bool</pre>
 
 ## --video-solution--
 

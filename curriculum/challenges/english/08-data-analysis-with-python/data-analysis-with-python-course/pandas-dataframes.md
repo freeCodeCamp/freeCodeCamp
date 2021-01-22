@@ -36,29 +36,29 @@ print(certificates_earned.iloc[2])
 
 ## --answers--
 
-```
+<pre>
 Tom      16
 Kris      5
 Ahmad     9
 Beau     12
 Name: Time (in months), dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Certificates         6
 Time (in months)    12
 Name: Beau, dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Certificates        5
 Time (in months)    9
 Name: Ahmad, dtype: int64
-```
+</pre>
 
 ## --video-solution--
 

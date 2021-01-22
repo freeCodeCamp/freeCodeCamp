@@ -33,7 +33,7 @@ print(A[:, :2])
 
 ## --answers--
 
-```python
+```py
 [['a' 'b']]
 ```
 

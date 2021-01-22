@@ -128,13 +128,11 @@ const defaultState = {
 const authReducer = (state = defaultState, action) => {
 
   switch (action.type) {
-
-    case 'LOGIN':
+    case 'LOGIN': // Change this line
       return {
         authenticated: true
       }
-
-    case 'LOGOUT':
+    case 'LOGOUT': // Change this line
       return {
         authenticated: false
       }

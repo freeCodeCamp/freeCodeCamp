@@ -12,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 `app.use(helmet())` will automatically include all the middleware introduced above, except `noCache()`, and `contentSecurityPolicy()`, but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.
 
-<h3>Example:</h3>
+**Example:**
 
 ```js
 app.use(helmet({

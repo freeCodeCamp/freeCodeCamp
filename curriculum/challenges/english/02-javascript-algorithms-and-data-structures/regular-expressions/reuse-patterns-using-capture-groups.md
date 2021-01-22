@@ -27,7 +27,7 @@ Using the `.match()` method on a string will return an array with the string it 
 
 # --instructions--
 
-Use capture groups in `reRegex` to match numbers that are repeated only three times in a string, each separated by a space.
+Use capture groups in `reRegex` to match a string that consists of only the same number repeated exactly three times separated by single spaces.
 
 # --hints--
 
@@ -41,15 +41,6 @@ Your regex should reuse a capture group twice.
 
 ```js
 assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
-```
-
-Your regex should have two spaces separating the three numbers.
-
-```js
-assert(
-  reRegex.source.match(/ |\\s/g).length === 2 ||
-    reRegex.source.match(/\(\\s\)(?=.*\\(1|2))/g)
-);
 ```
 
 Your regex should match `"42 42 42"`.
