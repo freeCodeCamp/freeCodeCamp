@@ -297,6 +297,12 @@ fieldset[disabled] .btn-primary.focus {
   margin-left: 5px;
 }
 
+.map-icon {
+  width: 35px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
 .link-btn:hover svg {
   fill: var(--quaternary-background);
 }
@@ -304,6 +310,15 @@ fieldset[disabled] .btn-primary.focus {
 @media (min-width: 700px) {
   .link-btn {
     font-size: 1.1rem;
+  }
+  .map-icon {
+    width: 45px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .map-icon {
+    width: 50px;
   }
 }
 

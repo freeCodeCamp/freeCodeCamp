@@ -35,18 +35,29 @@ function createSuperBlockTitle(str) {
     : `${superBlockTitle} ${i18next.t('learn.cert-map-estimates.certs')}`;
 }
 
-const iconStyle = {
-  width: '55px',
-  height: '55px',
-  marginRight: '20px',
-  stroke: 'var(--primary-color)',
-  fill: 'var(--primary-color)'
-};
-
 const linkSpacingStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center'
+};
+
+const generateIcon = str => {
+  const iconMap = {
+    'Responsive Web Design': ResponsiveDesignLogo,
+    'JavaScript Algorithms and Data Structures': JavaScriptLogo,
+    'Front End Libraries': ReactLogo,
+    'Data Visualization': D3Logo,
+    'APIs and Microservices': APILogo,
+    'Quality Assurance': ClipboardLogo,
+    'Scientific Computing with Python': PythonLogo,
+    'Data Analysis with Python': AnalyticsLogo,
+    'Information Security': ShieldLogo,
+    'Machine Learning with Python': TensorflowLogo,
+    'Coding Interview Prep': AlgorithmLogo
+  };
+  const Icon = iconMap[str];
+
+  return <Icon className='map-icon' />;
 };
 
 function renderLandingMap(nodes) {
@@ -60,7 +71,7 @@ function renderLandingMap(nodes) {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              <AlgorithmLogo style={iconStyle} />
+              {generateIcon(node.superBlock)}
               {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
             </div>
             <LinkButton />
@@ -82,7 +93,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              <AlgorithmLogo style={iconStyle} />
+              {generateIcon(node.superBlock)}
               {createSuperBlockTitle(node.superBlock)}
             </div>
           </Link>
