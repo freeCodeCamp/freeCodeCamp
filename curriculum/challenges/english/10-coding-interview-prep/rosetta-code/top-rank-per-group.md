@@ -47,7 +47,7 @@ one could rank the top-rated movie in each genre by calling
 
 `topRankPerGroup(1, data, 'genre', 'rating')`
 
-The function should return an array with an array for each group containing `n` objects.
+The function should return an array with an array for each group containing the top `n` objects.
 
 # --hints--
 
