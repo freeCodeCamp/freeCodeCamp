@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function ClipboardIcon(props) {
+function Clipboard(props) {
   const { t } = useTranslation();
 
   return (
@@ -14,6 +14,6 @@ function ClipboardIcon(props) {
   );
 }
 
-ClipboardIcon.displayName = 'ClipboardIcon';
+Clipboard.displayName = 'Clipboard';
 
-export default ClipboardIcon;
+export default Clipboard;

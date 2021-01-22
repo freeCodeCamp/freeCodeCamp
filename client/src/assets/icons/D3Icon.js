@@ -18,6 +18,6 @@ function D3Icon(props) {
   );
 }
 
-D3Icon.displayName = 'D3Icon';
+D3Icon.displayName = 'D3';
 
 export default D3Icon;

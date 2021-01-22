@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function ShieldIcon(props) {
+function Shield(props) {
   const { t } = useTranslation();
 
   return (
@@ -14,6 +14,6 @@ function ShieldIcon(props) {
   );
 }
 
-ShieldIcon.displayName = 'ShieldIcon';
+Shield.displayName = 'Shield';
 
-export default ShieldIcon;
+export default Shield;

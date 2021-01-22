@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function ResponsiveDesignIcon(props) {
+function ResponsiveDesign(props) {
   const { t } = useTranslation();
 
   return (
@@ -14,6 +14,6 @@ function ResponsiveDesignIcon(props) {
   );
 }
 
-ResponsiveDesignIcon.displayName = 'ResponsiveDesignIcon';
+ResponsiveDesign.displayName = 'ResponsiveDesign';
 
-export default ResponsiveDesignIcon;
+export default ResponsiveDesign;

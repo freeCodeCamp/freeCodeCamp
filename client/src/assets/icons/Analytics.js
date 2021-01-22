@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function AnalyticsIcon(props) {
+function Analytics(props) {
   const { t } = useTranslation();
 
   return (
@@ -14,6 +14,6 @@ function AnalyticsIcon(props) {
   );
 }
 
-AnalyticsIcon.displayName = 'AnalyticsIcon';
+Analytics.displayName = 'Analytics';
 
-export default AnalyticsIcon;
+export default Analytics;

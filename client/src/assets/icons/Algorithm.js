@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function AlgorithmIcon(props) {
+function Algorithm(props) {
   const { t } = useTranslation();
 
   return (
@@ -14,6 +14,6 @@ function AlgorithmIcon(props) {
   );
 }
 
-AlgorithmIcon.displayName = 'AlgorithmIcon';
+Algorithm.displayName = 'Algorithm';
 
-export default AlgorithmIcon;
+export default Algorithm;

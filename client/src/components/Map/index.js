@@ -2,19 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
-import {
-  ResponsiveDesignIcon,
-  JavaScriptIcon,
-  ReactIcon,
-  D3Icon,
-  APIIcon,
-  ClipboardIcon,
-  PythonIcon,
-  AnalyticsIcon,
-  ShieldIcon,
-  TensorflowIcon,
-  AlgorithmIcon
-} from './assets';
+import { generateIconComponent } from '../../assets/icons';
 
 import { Link } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
@@ -41,25 +29,6 @@ const linkSpacingStyle = {
   alignItems: 'center'
 };
 
-const generateIcon = str => {
-  const iconMap = {
-    'Responsive Web Design': ResponsiveDesignIcon,
-    'JavaScript Algorithms and Data Structures': JavaScriptIcon,
-    'Front End Libraries': ReactIcon,
-    'Data Visualization': D3Icon,
-    'APIs and Microservices': APIIcon,
-    'Quality Assurance': ClipboardIcon,
-    'Scientific Computing with Python': PythonIcon,
-    'Data Analysis with Python': AnalyticsIcon,
-    'Information Security': ShieldIcon,
-    'Machine Learning with Python': TensorflowIcon,
-    'Coding Interview Prep': AlgorithmIcon
-  };
-  const Icon = iconMap[str];
-
-  return <Icon className='map-icon' />;
-};
-
 function renderLandingMap(nodes) {
   nodes = nodes.filter(node => node.superBlock !== 'Coding Interview Prep');
   return (
@@ -71,7 +40,7 @@ function renderLandingMap(nodes) {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIcon(node.superBlock)}
+              {generateIconComponent(node.superBlock)}
               {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
             </div>
             <LinkButton />
@@ -93,7 +62,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIcon(node.superBlock)}
+              {generateIconComponent(node.superBlock)}
               {createSuperBlockTitle(node.superBlock)}
             </div>
           </Link>
