@@ -25,7 +25,8 @@ const generateIconComponent = (superBlock, className) => {
     'Machine Learning with Python': TensorflowIcon,
     'Coding Interview Prep': Algorithm
   };
-  const Icon = iconMap[superBlock];
+  // fallback in case super block doesn't exist and for tests
+  const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;
 
   return <Icon className={className} />;
 };
