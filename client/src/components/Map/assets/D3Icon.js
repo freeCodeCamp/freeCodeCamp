@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function D3Logo(props) {
+function D3Icon(props) {
   const { t } = useTranslation();
 
   return (
     <Fragment>
-      <span className='sr-only'>{t('icons.passed')}</span>
+      <span className='sr-only'>{t('icons.d3')}</span>
       <svg
         viewBox='-10 -10 116 111'
         xmlns='http://www.w3.org/2000/svg'
@@ -18,6 +18,6 @@ function D3Logo(props) {
   );
 }
 
-D3Logo.displayName = 'D3Logo';
+D3Icon.displayName = 'D3Icon';
 
-export default D3Logo;
+export default D3Icon;

@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 import {
-  ResponsiveDesignLogo,
-  JavaScriptLogo,
-  ReactLogo,
-  D3Logo,
-  APILogo,
-  ClipboardLogo,
-  PythonLogo,
-  AnalyticsLogo,
-  ShieldLogo,
-  TensorflowLogo,
-  AlgorithmLogo
+  ResponsiveDesignIcon,
+  JavaScriptIcon,
+  ReactIcon,
+  D3Icon,
+  APIIcon,
+  ClipboardIcon,
+  PythonIcon,
+  AnalyticsIcon,
+  ShieldIcon,
+  TensorflowIcon,
+  AlgorithmIcon
 } from './assets';
 
 import { Link } from '../helpers';
@@ -43,17 +43,17 @@ const linkSpacingStyle = {
 
 const generateIcon = str => {
   const iconMap = {
-    'Responsive Web Design': ResponsiveDesignLogo,
-    'JavaScript Algorithms and Data Structures': JavaScriptLogo,
-    'Front End Libraries': ReactLogo,
-    'Data Visualization': D3Logo,
-    'APIs and Microservices': APILogo,
-    'Quality Assurance': ClipboardLogo,
-    'Scientific Computing with Python': PythonLogo,
-    'Data Analysis with Python': AnalyticsLogo,
-    'Information Security': ShieldLogo,
-    'Machine Learning with Python': TensorflowLogo,
-    'Coding Interview Prep': AlgorithmLogo
+    'Responsive Web Design': ResponsiveDesignIcon,
+    'JavaScript Algorithms and Data Structures': JavaScriptIcon,
+    'Front End Libraries': ReactIcon,
+    'Data Visualization': D3Icon,
+    'APIs and Microservices': APIIcon,
+    'Quality Assurance': ClipboardIcon,
+    'Scientific Computing with Python': PythonIcon,
+    'Data Analysis with Python': AnalyticsIcon,
+    'Information Security': ShieldIcon,
+    'Machine Learning with Python': TensorflowIcon,
+    'Coding Interview Prep': AlgorithmIcon
   };
   const Icon = iconMap[str];
 

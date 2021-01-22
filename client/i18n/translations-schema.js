@@ -415,7 +415,7 @@ const translationsSchema = {
     'bigger-donation':
       'Want to make a bigger one-time donation, mail us a check, or give in other ways?',
     'other-ways':
-      "Here are many <0>other ways we could support our non-profit's mission</0>.",
+      "Here are many <0>other ways you can support our non-profit's mission</0>.",
     'other-ways-url':
       'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp',
     'failed-pay':
@@ -477,7 +477,18 @@ const translationsSchema = {
     initial: 'Initial',
     info: 'Intro Information',
     spacer: 'Spacer',
-    toggle: 'Toggle Checkmark'
+    toggle: 'Toggle Checkmark',
+    'responsive-design': 'Laptop and mobile phone icon',
+    javascript: 'JavaScript icon',
+    react: 'React icon',
+    d3: 'D3 icon',
+    api: 'A stack of servers',
+    clipboard: 'A clipboard with a checkmark',
+    python: 'Python icon',
+    analytics: 'A bar chart and line graph',
+    shield: 'A shield with a checkmark',
+    tensorflow: 'Tensorflow icon',
+    algorithm: 'Branching nodes'
   },
   aria: {
     'fcc-logo': 'freeCodeCamp Logo',

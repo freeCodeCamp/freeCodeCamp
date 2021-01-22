@@ -406,7 +406,18 @@
     "initial": "Inicial",
     "info": "Información de introducción",
     "spacer": "Espaciador",
-    "toggle": "Alternar marca de verificación"
+    "toggle": "Alternar marca de verificación",
+    "responsive-design": "Laptop and mobile phone icon",
+    "javascript": "JavaScript icon",
+    "react": "React icon",
+    "d3": "D3 icon",
+    "api": "A stack of servers",
+    "clipboard": "A clipboard with a checkmark",
+    "python": "Python icon",
+    "analytics": "A bar chart and line graph",
+    "shield": "A shield with a checkmark",
+    "tensorflow": "Tensorflow icon",
+    "algorithm": "Branching nodes"
   },
   "aria": {
     "fcc-logo": "freeCodeCamp Logo",

@@ -1,25 +1,25 @@
-import ResponsiveDesignLogo from './ResponsiveDesignLogo';
-import JavaScriptLogo from './JavaScriptLogo';
-import ReactLogo from './ReactLogo';
-import D3Logo from './D3Logo';
-import APILogo from './APILogo';
-import ClipboardLogo from './ClipboardLogo';
-import PythonLogo from './PythonLogo';
-import AnalyticsLogo from './AnalyticsLogo';
-import ShieldLogo from './ShieldLogo';
-import TensorflowLogo from './TensorflowLogo';
-import AlgorithmLogo from './AlgorithmLogo';
+import ResponsiveDesignIcon from './ResponsiveDesignIcon';
+import JavaScriptIcon from './JavaScriptIcon';
+import ReactIcon from './ReactIcon';
+import D3Icon from './D3Icon';
+import APIIcon from './APIIcon';
+import ClipboardIcon from './ClipboardIcon';
+import PythonIcon from './PythonIcon';
+import AnalyticsIcon from './AnalyticsIcon';
+import ShieldIcon from './ShieldIcon';
+import TensorflowIcon from './TensorflowIcon';
+import AlgorithmIcon from './AlgorithmIcon';
 
 export {
-  ResponsiveDesignLogo,
-  JavaScriptLogo,
-  ReactLogo,
-  D3Logo,
-  APILogo,
-  ClipboardLogo,
-  PythonLogo,
-  AnalyticsLogo,
-  ShieldLogo,
-  TensorflowLogo,
-  AlgorithmLogo
+  ResponsiveDesignIcon,
+  JavaScriptIcon,
+  ReactIcon,
+  D3Icon,
+  APIIcon,
+  ClipboardIcon,
+  PythonIcon,
+  AnalyticsIcon,
+  ShieldIcon,
+  TensorflowIcon,
+  AlgorithmIcon
 };
