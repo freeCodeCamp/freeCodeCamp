@@ -7,7 +7,7 @@ import { I18nextProvider } from 'react-i18next';
 
 import i18n from '../../../i18n/configForTests';*/
 import { UniversalNav } from './components/UniversalNav';
-import { AuthOrProfile } from './components/NavLinks';
+import NavComponent from './components/NavLinks';
 
 describe('<UniversalNav />', () => {
   const UniversalNavProps = {
@@ -31,7 +31,7 @@ describe('<NavLinks />', () => {
       pending: false
     };
     const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...landingPageProps} />);
+    shallow.render(<NavComponent {...landingPageProps} />);
     const result = shallow.getRenderOutput();
     expect(
       hasRadioNavItem(result) &&
@@ -51,7 +51,7 @@ describe('<NavLinks />', () => {
     };
 
     const componentTree = renderer
-      .create(<AuthOrProfile {...defaultUserProps} />)
+      .create(<NavComponent {...defaultUserProps} />)
       .toJSON();
 
     expect(avatarHasClass(componentTree, 'default-border')).toBeTruthy();
@@ -67,7 +67,7 @@ describe('<NavLinks />', () => {
       pending: false
     };
     const componentTree = renderer
-      .create(<AuthOrProfile {...donatingUserProps} />)
+      .create(<NavComponent {...donatingUserProps} />)
       .toJSON();
 
     expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
@@ -84,7 +84,7 @@ describe('<NavLinks />', () => {
     };
 
     const componentTree = renderer
-      .create(<AuthOrProfile {...topContributorUserProps} />)
+      .create(<NavComponent {...topContributorUserProps} />)
       .toJSON();
 
     expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
@@ -100,7 +100,7 @@ describe('<NavLinks />', () => {
       pending: false
     };
     const componentTree = renderer
-      .create(<AuthOrProfile {...topDonatingContributorUserProps} />)
+      .create(<NavComponent {...topDonatingContributorUserProps} />)
       .toJSON();
     expect(avatarHasClass(componentTree, 'purple-border')).toBeTruthy();
   });
