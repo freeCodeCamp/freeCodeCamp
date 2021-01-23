@@ -41,8 +41,8 @@ class NavLinks extends Component {
         return `${homeLocation}/espanol${path}`;
       case 'english':
         return `${homeLocation}${path}`;
-      case '中文':
-        return chineseHome;
+      case 'chinese':
+        return `${chineseHome}${path}`;
       default:
         return `${homeLocation}`;
     }
