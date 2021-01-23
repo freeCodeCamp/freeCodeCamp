@@ -173,8 +173,7 @@
   outline: none;
   background-color: var(--theme-color);
   cursor: pointer;
-  margin-top: 4px;
-  height: auto;
+  max-height: calc(var(--header-height) - 6px);
 }
 
 .toggle-button-nav:hover {
@@ -204,6 +203,10 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.avatar-nav-link.default-border {
+  border: 0;
 }
 
 .gold-border {
@@ -282,4 +285,10 @@
   .expand-nav {
     min-height: calc(2 * var(--header-height));
   }
+}
+
+.signup-btn {
+  max-height: calc(var(--header-height) - 6px);
+  padding: 0 4px;
+  margin-left: 2px;
 }
