@@ -52,7 +52,7 @@ The result of `sum()` should be 0
 assert(sum() === 0);
 ```
 
-`sum` should be an arrow function and use rest parameters syntax (`...`) on the `args` parameter.
+`sum` should be an arrow function which uses the rest parameter syntax (`...`) on the `args` parameter.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
