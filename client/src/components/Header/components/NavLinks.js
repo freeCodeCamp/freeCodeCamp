@@ -33,7 +33,7 @@ const mapDispatchToProps = {
   toggleNightMode: theme => updateUserFlag({ theme })
 };
 
-class NavLinks extends Component {
+export class NavLinks extends Component {
   goToLanguage(lang) {
     const path = window.location.pathname;
     switch (lang) {
@@ -72,7 +72,7 @@ class NavLinks extends Component {
     ) : (
       <div className='main-nav-group'>
         <ul className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
-          <li>
+          <li key='donate'>
             {isUserDonating ? (
               <span className='nav-link'>{t('donate.thanks')}</span>
             ) : (
@@ -86,7 +86,7 @@ class NavLinks extends Component {
               </Link>
             )}
           </li>
-          <li>
+          <li key='forum'>
             <Link
               className='nav-link'
               external={true}
@@ -96,7 +96,7 @@ class NavLinks extends Component {
               {t('buttons.forum')}
             </Link>
           </li>
-          <li>
+          <li key='news'>
             <Link
               className='nav-link'
               external={true}
@@ -106,19 +106,19 @@ class NavLinks extends Component {
               {t('buttons.news')}
             </Link>
           </li>
-          <li>
+          <li key='learn'>
             <Link className='nav-link' to='/learn'>
               {t('buttons.curriculum')}
             </Link>
           </li>
           {username && (
-            <li>
+            <li key='profile'>
               <Link className='nav-link' to={`/${username}`}>
                 {t('buttons.profile')}
               </Link>
             </li>
           )}
-          <li>
+          <li key='radio'>
             <Link
               className='nav-link'
               external={true}
@@ -128,7 +128,7 @@ class NavLinks extends Component {
               {t('buttons.radio')}
             </Link>
           </li>
-          <li>
+          <li key='theme'>
             <button
               className='nav-link'
               disabled={!username}
@@ -140,11 +140,11 @@ class NavLinks extends Component {
                 : 'Sign in to change theme'}
             </button>
           </li>
-          <li>
+          <li key='lang-header'>
             <span className='nav-link'>{t('footer.language')}</span>
           </li>
           {locales.map(lang => (
-            <li>
+            <li key={'lang-' + lang}>
               <Link className='nav-link sub-link' to={this.goToLanguage(lang)}>
                 {langDisplayNames[lang]}
                 {i18n.language === i18nextCodes[lang] ? ' ✓' : ''}
