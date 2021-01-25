@@ -1,5 +1,8 @@
 name: Cypress
-on: [push, pull_request]
+on:
+  push:
+    branches: ["master", "production-staging", "production-current"]
+  pull_request:
 
 jobs:
   cypress-run:
