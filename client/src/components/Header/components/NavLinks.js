@@ -136,7 +136,7 @@ class NavLinks extends Component {
             >
               {username
                 ? t('settings.labels.night-mode') +
-                  (theme === 'night' ? ' ✓' : ' ✗')
+                  (theme === 'night' ? ' ✓' : '')
                 : 'Sign in to change theme'}
             </button>
           </li>

@@ -38,7 +38,6 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  margin-right: 10px;
   letter-spacing: 0.4px;
   white-space: nowrap;
   -ms-overflow-scrolling: touch;
@@ -273,6 +272,7 @@
     position: absolute;
     top: var(--header-height);
     left: 15px;
+    max-width: calc(100vw - 350px);
   }
 
   #universal-nav-logo {
@@ -284,6 +284,26 @@
 
   .expand-nav {
     min-height: calc(2 * var(--header-height));
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    min-width: 100%;
+    top: calc(var(--header-height) * 2);
+    margin-top: 0;
+  }
+
+  .fcc_searchBar .ais-SearchBox-form {
+    max-width: 100%;
+  }
+
+  .ais-SearchBox-input {
+    min-width: 100%;
+  }
+
+  .ais-Hits {
+    min-width: calc(100% - 30px);
   }
 }
 
