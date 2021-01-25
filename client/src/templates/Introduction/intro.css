@@ -1,3 +1,28 @@
+.super-block-intro-page p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.17rem;
+}
+
+.big-subheading {
+  font-size: 2rem;
+  overflow-wrap: break-word;
+}
+
+.big-block-title {
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+}
+
+.course-title {
+  font-size: 1.13rem;
+  overflow-wrap: break-word;
+}
+
+.block-description pre {
+  display: inline;
+  padding: 0;
+}
+
 .superBlock-image {
   max-width: 100%;
   height: auto !important;
@@ -34,8 +59,12 @@ button.map-title {
   background-color: var(--tertiary-background);
 }
 
+.map-challenge-wrap > a,
 .map-project-wrap > a {
   display: flex;
+}
+
+.map-project-wrap > a {
   justify-content: space-between;
 }
 
@@ -68,6 +97,7 @@ button.map-title {
 }
 
 .map-cert-title > h3 {
+  font-size: 1.17rem;
   margin: 0 0 0 15px;
 }
 
@@ -116,6 +146,7 @@ button.map-title {
   display: flex;
   align-items: center;
   width: 100%;
+  font-size: 1.13rem;
 }
 
 .map-challenge-title a {
@@ -129,6 +160,26 @@ button.map-title {
 
 .block-description > p:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .super-block-intro-page p {
+    font-size: 1rem;
+  }
+
+  .big-subheading {
+    font-size: 1.35rem;
+  }
+
+  .big-block-title {
+    font-size: 1.17rem;
+  }
+
+  .course-title,
+  .map-cert-title,
+  .map-challenge-title {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 767px) {

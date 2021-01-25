@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { graphql } from 'gatsby';
@@ -63,16 +63,20 @@ export const LearnPage = ({
     <LearnLayout>
       <Helmet title={t('meta.title')} />
       <Grid>
-        <Intro
-          complete={complete}
-          completedChallengeCount={completedChallengeCount}
-          isSignedIn={isSignedIn}
-          name={name}
-          pending={pending}
-          slug={slug}
-        />
-        <Map />
-        <Spacer size={2} />
+        <Row>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <Intro
+              complete={complete}
+              completedChallengeCount={completedChallengeCount}
+              isSignedIn={isSignedIn}
+              name={name}
+              pending={pending}
+              slug={slug}
+            />
+            <Map />
+            <Spacer size={2} />
+          </Col>
+        </Row>
       </Grid>
     </LearnLayout>
   );

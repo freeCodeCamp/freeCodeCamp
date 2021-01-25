@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { dasherize } from '../../../../../utils/slugs';
 import { Spacer } from '../../../components/helpers';
+import { generateIconComponent } from '../../../assets/icons';
 
 const propTypes = {
   superBlock: PropTypes.string
@@ -17,28 +18,14 @@ function SuperBlockIntro(props) {
   const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
   const {
     title: i18nSuperBlock,
-    image: superBlockImage,
     intro: superBlockIntroText
   } = superBlockIntroObj;
 
   return (
     <>
-      <h1 className='text-center'>{i18nSuperBlock}</h1>
+      <h1 className='text-center big-heading'>{i18nSuperBlock}</h1>
       <Spacer />
-      <div style={{ margin: 'auto', maxWidth: '500px' }}>
-        <img
-          alt='building a website'
-          className='superBlock-image'
-          src={superBlockImage}
-          style={{
-            backgroundColor: '#f5f6f7',
-            marginBottom: '1rem',
-            padding: '15px',
-            width: '500px',
-            height: '367px'
-          }}
-        />
-      </div>
+      {generateIconComponent(superBlock, 'cert-header-icon')}
       <Spacer />
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>

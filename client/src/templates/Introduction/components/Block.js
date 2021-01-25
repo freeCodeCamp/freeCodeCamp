@@ -123,10 +123,15 @@ export class Block extends Component {
     );
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
+    const {
+      expand: expandText,
+      collapse: collapseText,
+      courses: coursesText
+    } = t('intro:misc-text');
 
     return isProjectBlock ? (
       <div className='block'>
-        <h3>{blockTitle}</h3>
+        <h3 className='big-block-title'>{blockTitle}</h3>
         {this.renderBlockIntros(blockIntroArr)}
         <Challenges
           challengesWithCompleted={challengesWithCompleted}
@@ -135,7 +140,7 @@ export class Block extends Component {
       </div>
     ) : (
       <div className={`block ${isExpanded ? 'open' : ''}`}>
-        <h3>{blockTitle}</h3>
+        <h3 className='big-block-title'>{blockTitle}</h3>
         {this.renderBlockIntros(blockIntroArr)}
         <button
           aria-expanded={isExpanded}
@@ -143,10 +148,12 @@ export class Block extends Component {
           onClick={this.handleBlockClick}
         >
           <Caret />
-          <h4>
-            {t(`intro:misc-text.section-courses`, { section: blockTitle })}
+          <h4 className='course-title'>
+            {`${
+              isExpanded ? collapseText : expandText
+            } ${coursesText.toLowerCase()}`}
           </h4>
-          <div className='map-title-completed'>
+          <div className='map-title-completed course-title'>
             {this.renderCheckMark(
               completedCount === challengesWithCompleted.length
             )}
@@ -159,7 +166,7 @@ export class Block extends Component {
             isProjectBlock={isProjectBlock}
           />
         )}
-        <Spacer size={2} />
+        {blockDashedName !== 'project-euler' ? <Spacer size={2} /> : null}
       </div>
     );
   }
