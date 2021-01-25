@@ -173,6 +173,7 @@
   background-color: var(--theme-color);
   cursor: pointer;
   max-height: calc(var(--header-height) - 6px);
+  margin-right: 10px;
 }
 
 .toggle-button-nav:hover {
@@ -181,18 +182,20 @@
   border: 1px solid var(--gray-00);
 }
 
-.navatar .avatar-container {
-  display: block;
-  padding: 0;
-  margin-left: 15px;
-  opacity: 1;
-  white-space: nowrap;
-  background: transparent;
-  height: calc(var(--header-height) - 8px);
-  width: calc(var(--header-height) - 8px);
+.navatar {
+  display: contents;
 }
 
-.navatar .avatar-containersvg {
+.navatar .avatar-nav-link {
+  height: 31px;
+  width: 31px;
+}
+
+.navatar .default-border {
+  border: none;
+}
+
+.navatar .avatar-container svg {
   display: inline;
   background: var(--secondary-background);
 }
@@ -202,10 +205,6 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
-}
-
-.avatar-nav-link.default-border {
-  border: 0;
 }
 
 .gold-border {
@@ -254,7 +253,7 @@
   }
 
   .universal-nav-middle {
-    width: 50%;
+    flex: none;
   }
 
   .display-search {
@@ -262,7 +261,7 @@
   }
 
   .universal-nav-right {
-    width: 50%;
+    flex: 1 0 50%;
     display: flex;
     justify-content: flex-end;
   }
@@ -304,6 +303,21 @@
 
   .ais-Hits {
     min-width: calc(100% - 30px);
+  }
+}
+
+@media (max-width: 400px) {
+  .universal-nav {
+    padding: 0 5px;
+  }
+
+  .universal-nav {
+    padding: 0 5px;
+  }
+
+  #universal-nav-logo {
+    left: 5px;
+    max-width: 45%;
   }
 }
 

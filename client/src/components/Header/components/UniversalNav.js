@@ -17,7 +17,7 @@ export const UniversalNav = ({
   fetchState
 }) => (
   <nav
-    className={'universal-nav nav-padding' + (displayMenu ? ' expand-nav' : '')}
+    className={'universal-nav' + (displayMenu ? ' expand-nav' : '')}
     id='universal-nav'
   >
     <div

@@ -16,7 +16,7 @@ describe('Navbar', () => {
 
   it('Should render properly', () => {
     cy.get('#universal-nav').should('be.visible');
-    cy.get('#universal-nav').should('have.class', 'universal-nav nav-padding');
+    cy.get('#universal-nav').should('have.class', 'universal-nav');
   });
 
   it(
