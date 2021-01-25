@@ -1,4 +1,4 @@
-"project_id_env": "CROWDIN_PROJECT_ID_DOCS"
+"project_id_env": "CROWDIN_PROJECT_ID"
 "api_token_env": "CROWDIN_PERSONAL_TOKEN"
 "base_path_env": "CROWDIN_BASE_PATH"
 "base_url_env": "CROWDIN_BASE_URL"
@@ -7,22 +7,14 @@
 
 files: [
  {
-  "source" : "/*.md",
-  "translation" : "/i18n/%language%/%original_file_name%",
+  "source" : "/docs/*.md",
+  "translation" : "/docs/i18n/%language%/%original_file_name%",
 
   "ignore" : [
-    "_coverpage.md",
-    "_navbar.md",
-    "_translations.md",
-    "README.md",
-  ],
-
-  # "languages_mapping" : {
-  #     "language" : {
-
-  #     }
-  #   },
-
-  "update_option": "update_without_changes"
+    "/docs/_coverpage.md",
+    "/docs/_navbar.md",
+    "/docs/_translations.md",
+    "/docs/README.md",
+  ]
  }
 ]
