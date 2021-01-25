@@ -28,7 +28,7 @@
     "csrf": "^3.1.0",
     "date-fns": "^2.16.1",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-adapter-react-16": "^1.15.6",
     "final-form": "^4.20.1",
     "gatsby": "^2.30.3",
     "gatsby-cli": "^2.17.1",
