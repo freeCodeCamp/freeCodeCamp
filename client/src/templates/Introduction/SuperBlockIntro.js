@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
@@ -15,7 +15,7 @@ import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
 import { dasherize } from '../../../../utils/slugs';
 import Block from './components/Block';
-import { FullWidthRow, Spacer } from '../../components/helpers';
+import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
@@ -160,54 +160,63 @@ export class SuperBlockIntroductionPage extends Component {
         <Helmet>
           <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
-        <FullWidthRow
-          className='overflow-fix'
-          ref={blockToScrollTo === 'top' ? this.elementRef : null}
-        >
-          <Spacer size={2} />
-          <SuperBlockIntro superBlock={superBlock} />
-          <Spacer size={2} />
-          <h2 className='text-center'>{t(`intro:misc-text.courses`)}</h2>
-          <Spacer />
-          <div className='block-ui'>
-            {blockDashedNames.map(blockDashedName => (
-              <div
-                key={blockDashedName}
-                ref={
-                  blockDashedName === blockToScrollTo ? this.elementRef : null
-                }
+        <Grid>
+          <Row
+            className='super-block-intro-page'
+            ref={blockToScrollTo === 'top' ? this.elementRef : null}
+          >
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size={2} />
+              <SuperBlockIntro superBlock={superBlock} />
+              <Spacer size={2} />
+              <h2 className='text-center big-subheading'>
+                {t(`intro:misc-text.courses`)}
+              </h2>
+              <Spacer />
+              <div className='block-ui'>
+                {blockDashedNames.map(blockDashedName => (
+                  <div
+                    key={blockDashedName}
+                    ref={
+                      blockDashedName === blockToScrollTo
+                        ? this.elementRef
+                        : null
+                    }
+                  >
+                    <Block
+                      blockDashedName={blockDashedName}
+                      challenges={nodesForSuperBlock.filter(
+                        node => node.block === blockDashedName
+                      )}
+                      superBlockDashedName={superBlockDashedName}
+                    />
+                  </div>
+                ))}
+                {superBlock !== 'Coding Interview Prep' && (
+                  <div>
+                    <CertChallenge superBlock={superBlock} />
+                  </div>
+                )}
+              </div>
+              {!isSignedIn && (
+                <div>
+                  <Spacer size={2} />
+                  <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+                </div>
+              )}
+              <Spacer size={2} />
+              <h3
+                className='text-center big-block-title'
+                style={{ whiteSpace: 'pre-line' }}
               >
-                <Block
-                  blockDashedName={blockDashedName}
-                  challenges={nodesForSuperBlock.filter(
-                    node => node.block === blockDashedName
-                  )}
-                  superBlockDashedName={superBlockDashedName}
-                />
-              </div>
-            ))}
-            {superBlock !== 'Coding Interview Prep' && (
-              <div>
-                <CertChallenge superBlock={superBlock} />
-                <Spacer size={2} />
-              </div>
-            )}
-          </div>
-          {!isSignedIn && (
-            <Row>
-              <Col sm={10} smOffset={1} xs={12}>
-                <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-                <Spacer />
-              </Col>
-            </Row>
-          )}
-          <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
-            {t(`intro:misc-text.browse-other`)}
-          </h2>
-          <Spacer />
-          <Map currentSuperBlock={superBlock} />
-          <Spacer size={2} />
-        </FullWidthRow>
+                {t(`intro:misc-text.browse-other`)}
+              </h3>
+              <Spacer />
+              <Map currentSuperBlock={superBlock} />
+              <Spacer size={2} />
+            </Col>
+          </Row>
+        </Grid>
       </>
     );
   }

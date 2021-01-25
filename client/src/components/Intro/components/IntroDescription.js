@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Spacer } from '../../helpers';
-import { Col } from '@freecodecamp/react-bootstrap';
 import { forumLocation } from '../../../../config/env.json';
 import { Trans, useTranslation } from 'react-i18next';
 
@@ -10,14 +9,7 @@ function IntroDescription() {
   const { t } = useTranslation();
 
   return (
-    <Col
-      className='intro-description'
-      md={8}
-      mdOffset={2}
-      sm={10}
-      smOffset={1}
-      xs={12}
-    >
+    <div className='intro-description'>
       <strong>{t('learn.read-this.heading')}</strong>
       <Spacer />
       <p>{t('learn.read-this.p1')}</p>
@@ -40,7 +32,7 @@ function IntroDescription() {
         </Trans>
       </p>
       <p>{t('learn.read-this.p12')}</p>
-    </Col>
+    </div>
   );
 }
 

@@ -297,6 +297,23 @@ fieldset[disabled] .btn-primary.focus {
   margin-left: 5px;
 }
 
+.map-icon,
+.cert-header-icon {
+  flex-shrink: 0;
+  fill: var(--primary-color);
+}
+
+.map-icon {
+  width: 35px;
+  margin-right: 20px;
+}
+
+.cert-header-icon {
+  display: block;
+  width: 80px;
+  margin: auto;
+}
+
 .link-btn:hover svg {
   fill: var(--quaternary-background);
 }
@@ -304,6 +321,21 @@ fieldset[disabled] .btn-primary.focus {
 @media (min-width: 700px) {
   .link-btn {
     font-size: 1.1rem;
+  }
+  .map-icon {
+    width: 45px;
+  }
+  .cert-header-icon {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .map-icon {
+    width: 50px;
+  }
+  .cert-header-icon {
+    width: 120px;
   }
 }
 

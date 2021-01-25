@@ -1,10 +1,10 @@
 import React from 'react';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
+import { generateIconComponent } from '../../assets/icons';
 
-import { ImageLoader, Link } from '../helpers';
+import { Link } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import { dasherize } from '../../../../utils/slugs';
 import './map.css';
@@ -23,12 +23,6 @@ function createSuperBlockTitle(str) {
     : `${superBlockTitle} ${i18next.t('learn.cert-map-estimates.certs')}`;
 }
 
-const iconStyle = {
-  width: '55px',
-  height: '55px',
-  marginRight: '20px'
-};
-
 const linkSpacingStyle = {
   display: 'flex',
   justifyContent: 'space-between',
@@ -46,12 +40,7 @@ function renderLandingMap(nodes) {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              <ImageLoader
-                alt='building a website'
-                offsetVertical={500}
-                src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
-                style={iconStyle}
-              />
+              {generateIconComponent(node.superBlock, 'map-icon')}
               {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
             </div>
             <LinkButton />
@@ -65,30 +54,21 @@ function renderLandingMap(nodes) {
 function renderLearnMap(nodes, currentSuperBlock = '') {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
   return (
-    <Row>
-      <Col sm={10} smOffset={1} xs={12}>
-        <ul data-test-label='learn-curriculum-map'>
-          {nodes.map((node, i) => (
-            <li key={i}>
-              <Link
-                className='btn link-btn btn-lg'
-                to={`/learn/${dasherize(node.superBlock)}/`}
-              >
-                <div style={linkSpacingStyle}>
-                  <ImageLoader
-                    alt='building a website'
-                    offsetVertical={500}
-                    src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
-                    style={iconStyle}
-                  />
-                  {createSuperBlockTitle(node.superBlock)}
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Col>
-    </Row>
+    <ul data-test-label='learn-curriculum-map'>
+      {nodes.map((node, i) => (
+        <li key={i}>
+          <Link
+            className='btn link-btn btn-lg'
+            to={`/learn/${dasherize(node.superBlock)}/`}
+          >
+            <div style={linkSpacingStyle}>
+              {generateIconComponent(node.superBlock, 'map-icon')}
+              {createSuperBlockTitle(node.superBlock)}
+            </div>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }
 

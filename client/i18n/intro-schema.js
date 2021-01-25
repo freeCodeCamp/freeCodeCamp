@@ -10,13 +10,6 @@ const introSchema = {
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
       "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/building_websites_i78t.svg',
-    'image-alt': 'Three people designing a responsive website layout together',
-    icon:
-      'https://cdn3.iconfinder.com/data/icons/seo-web-5-1/128/Vigor_responsive-web-design-adaptive-64.png',
-    'icon-alt':
-      'A computer monitor with the desktop view and a smartphone with the mobile view of the same website.',
     blocks: {
       'basic-html-and-html5': {
         title: 'Basic HTML and HTML5',
@@ -95,12 +88,6 @@ const introSchema = {
       "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
       "Along the way, you'll also learn two important programing styles or paradigms: Object Oriented Programing (OOP), and Functional Programing (FP)."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/dev_focus_b9xo.svg',
-    'image-alt': 'A person working on a laptop',
-    icon:
-      'https://i2.wp.com/info.widespace.com/wp-content/uploads/2016/03/javascript-shield-logo.png?ssl=1',
-    'icon-alt': 'JavaScript shield logo',
     blocks: {
       'basic-javascript': {
         title: 'Basic JavaScript',
@@ -195,12 +182,6 @@ const introSchema = {
       "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
       "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/react_y7wq.svg',
-    'image-alt': 'A person sitting atop the react logo',
-    icon:
-      'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-64.png',
-    'icon-alt': 'React logo',
     blocks: {
       bootstrap: {
         title: 'Bootstrap',
@@ -263,13 +244,6 @@ const introSchema = {
       "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
       "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programing Interface)."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Data_re_80ws.svg',
-    'image-alt':
-      'Three people placing charts and graphs onto a browser interface',
-    icon:
-      'https://camo.githubusercontent.com/586ccf0aad9684edc821658cee04146cf36d1f1d5ec904bbefd72728909ccb2e/68747470733a2f2f64336a732e6f72672f6c6f676f2e737667',
-    'icon-alt': 'D3 logo',
     blocks: {
       'data-visualization-with-d3': {
         title: 'Data Visualization with D3',
@@ -308,12 +282,6 @@ const introSchema = {
       'Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.',
       "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/server_status_5pbv.svg',
-    'image-alt': 'A person standing next to a database icon larger than her',
-    icon:
-      'https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_Cloud-Server-Database-Hosting-64.png',
-    'icon-alt': 'A server in front of a cloud.',
     blocks: {
       'managing-packages-with-npm': {
         title: 'Managing Packages with NPM',
@@ -355,12 +323,6 @@ const introSchema = {
       "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai to ensure your applications work the way you expect them to.",
       "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, and Socket.io for real-time communication between the server and connected clients."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/usability_testing_2xs4.svg',
-    'image-alt': 'Two people interacting with a website',
-    icon:
-      'https://cdn1.iconfinder.com/data/icons/smallicons-misc/32/clipboard-64.png',
-    'icon-alt': 'A clipboard with a bulleted list.',
     blocks: {
       'quality-assurance-and-testing-with-chai': {
         title: 'Quality Assurance and Testing with Chai',
@@ -393,12 +355,6 @@ const introSchema = {
       'Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.',
       "In the Scientific Computing with Python Certification, you'll Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/pair_programming_njlp.svg',
-    'image-alt': 'Two people sitting in front of a computer',
-    icon:
-      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/267_Python_logo-64.png',
-    'icon-alt': 'Python logo',
     blocks: {
       'python-for-everybody': {
         title: 'Python for Everybody',
@@ -421,12 +377,6 @@ const introSchema = {
       'Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.',
       "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/design_data_khdb.svg',
-    'image-alt': 'A person looking at various charts',
-    icon:
-      'https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_Analytics-Graph-Statistics-64.png',
-    'icon-alt': 'A line graph',
     blocks: {
       'data-analysis-with-python-course': {
         title: 'Data Analysis with Python',
@@ -458,12 +408,6 @@ const introSchema = {
       "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
       "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/security_o890.svg',
-    'image-alt': 'A person standing in front of a browser with a padlock',
-    icon:
-      'https://cdn1.iconfinder.com/data/icons/unigrid-phantom-security-vol-1/60/013_005_shield_protect_protection_security_secure_guard_guardian_defense_firewall_5-64.png',
-    'icon-alt': 'Green shield logo',
     blocks: {
       'information-security-with-helmetjs': {
         title: 'Information Security with HelmetJS',
@@ -495,11 +439,6 @@ const introSchema = {
       "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks. A you'll explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Artificial_intelligence_re_enpp.svg',
-    'image-alt': 'A person holding a cell phone standing next to a robot',
-    icon: 'https://www.kubeflow.org/docs/images/logos/TensorFlow.png',
-    'icon-alt': 'TensorFlow logo',
     blocks: {
       tensorflow: {
         title: 'Tensorflow',
@@ -529,13 +468,6 @@ const introSchema = {
       "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
       'This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio.'
     ],
-    image:
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/software_engineer_lvl5.svg',
-    'image-alt':
-      'A person sitting at a computer with a data structure in the background',
-    icon:
-      'https://cdn1.iconfinder.com/data/icons/data-science-flat-1/64/neural-network-machine-learning-algorithm-64.png',
-    'icon-alt': 'Algorithm, creative shape icon',
     blocks: {
       algorithms: {
         title: 'Algorithms',
@@ -578,9 +510,9 @@ const introSchema = {
     certification: '{{cert}} Certification',
     'browse-other':
       'Browse our other free certifications\n(we recommend doing these in order)',
-    courses: 'courses',
-    'section-courses': '{{section}} courses'
+    courses: 'Courses',
+    expand: 'Expand',
+    collapse: 'Collapse'
   }
 };
-
 exports.introSchema = introSchema;
