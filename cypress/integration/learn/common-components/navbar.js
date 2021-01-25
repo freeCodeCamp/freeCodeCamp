@@ -5,7 +5,8 @@ const selectors = {
   smallCallToAction: "[data-test-label='landing-small-cta']",
   navigationLinks: '.nav-list',
   avatarContainer: '.avatar-container',
-  defaultAvatar: '.avatar-container svg'
+  defaultAvatar: '.avatar-container',
+  menuButton: '.toggle-button-nav'
 };
 
 describe('Navbar', () => {
@@ -54,6 +55,7 @@ describe('Navbar', () => {
     'Should have `Radio`, `Forum`, and `Curriculum` links on landing and learn pages' +
       'page when not signed in',
     () => {
+      cy.get(selectors.menuButton).click();
       cy.get(selectors.navigationLinks).contains('Forum');
       cy.get(selectors.navigationLinks)
         .contains('Curriculum')
@@ -70,6 +72,7 @@ describe('Navbar', () => {
       'page when not signed in',
     () => {
       cy.contains(selectors.smallCallToAction, 'Sign in');
+      cy.get(selectors.menuButton).click();
       cy.get(selectors.navigationLinks)
         .contains('Curriculum')
         .click();
@@ -79,6 +82,8 @@ describe('Navbar', () => {
 
   it('Should have `Profile` link when user is signed in', () => {
     cy.login()
+      .get(selectors.menuButton)
+      .click()
       .get(selectors.navigationLinks)
       .contains('Profile')
       .click();
