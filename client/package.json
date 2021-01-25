@@ -40,7 +40,7 @@
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-remark-prismjs": "^3.11.0",
     "gatsby-source-filesystem": "^2.9.1",
-    "gatsby-transformer-remark": "^2.14.0",
+    "gatsby-transformer-remark": "^2.15.0",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "monaco-editor": "^0.20.0",
