@@ -9,10 +9,7 @@
 <div class='i18n-lang-list'>
 
 - [English](/index.md)
-- [Chinese](/i18n/chinese/index.md)
-- [Espanol](/i18n/espano/index.md)
-- [Hindi](/i18n/hindi/index.md)
-- [Italian](/i18n/italian/index.md)
+- [Español](/i18n/espanol/index.md)
 
 </div>
 
