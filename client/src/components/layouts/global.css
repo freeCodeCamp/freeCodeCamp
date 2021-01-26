@@ -458,6 +458,11 @@ hr {
   text-align: center;
 }
 
+.challenge-instructions .inline-pre {
+  display: inline;
+  padding: 0;
+}
+
 .help-block {
   color: var(--quaternary-color);
 }

@@ -8,6 +8,10 @@
   "superOrder": 5,
   "challengeOrder": [
     [
+      "600fc4e7651ba2962400b077",
+      "Get Started with MongoDB Atlas"
+    ],
+    [
       "587d7fb6367417b2b2512c06",
       "Install and Set Up Mongoose"
     ],

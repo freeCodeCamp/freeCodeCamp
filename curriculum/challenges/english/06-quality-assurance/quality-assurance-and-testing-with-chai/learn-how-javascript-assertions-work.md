@@ -8,7 +8,7 @@ dashedName: learn-how-javascript-assertions-work
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Start this project on Repl.it using <a rel='noopener noreferrer' target='_blank' href='https://repl.it/github/freeCodeCamp/boilerplate-mochachai'>this link</a> or clone <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>this repository</a> on GitHub. If you use Repl.it, remember to save the link to your project somewhere safe.
 
 # --instructions--
 

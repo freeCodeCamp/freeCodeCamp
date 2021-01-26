@@ -8,6 +8,8 @@ dashedName: meet-the-node-console
 
 # --description--
 
+Start this project on Repl.it using <a rel='noopener noreferrer' target='_blank' href='https://repl.it/github/freeCodeCamp/boilerplate-express'>this link</a> or clone <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-express/'>this repository</a> on GitHub. If you use Repl.it, remember to save the link to your project somewhere safe.
+
 During the development process, it is important to be able to check what’s going on in your code.
 
 Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see console output in a terminal. On Repl.it, a terminal is open in the right pane by default.
@@ -15,8 +17,6 @@ Node is just a JavaScript environment. Like client side JavaScript, you can use 
 We recommend to keep the terminal open while working at these challenges. By reading the output in the terminal, you can see any errors that may occur.
 
 # --instructions--
-
-If you have not already done so, please read the instructions in [the introduction](/learn/apis-and-microservices/basic-node-and-express/) and start a new project on Repl.it using [this link](https://repl.it/github/freeCodeCamp/boilerplate-express).
 
 Modify the `myApp.js` file to log "Hello World" to the console.
 
