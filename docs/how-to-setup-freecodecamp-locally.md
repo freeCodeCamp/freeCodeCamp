@@ -50,14 +50,14 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 3. Install a code editor of your choice.
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
+  We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
 4. Set up linting for your code editor.
 
-   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP]
-   > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+  > [!TIP]
+  > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
 ## Fork the repository on GitHub
 
@@ -100,13 +100,13 @@ Run these commands on your local machine:
 
 1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _i.e.: `/yourprojectsdirectory/`_
+  _i.e.: `/yourprojectsdirectory/`_
 
 2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
-   ```console
-   git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-   ```
+  ```console
+  git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+  ```
 
 This will download the entire freeCodeCamp repository to your projects directory.
 
@@ -122,30 +122,30 @@ You need a reference from your local clone to the `upstream` repository in addit
 
 1. Change directory to the new freeCodeCamp directory:
 
-   ```console
-   cd freeCodeCamp
-   ```
+  ```console
+  cd freeCodeCamp
+  ```
 
 2. Add a remote reference to the main freeCodeCamp repository:
 
-   ```console
-   git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
-   ```
+  ```console
+  git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+  ```
 
 3. Ensure the configuration looks correct:
 
-   ```console
-   git remote -v
-   ```
+  ```console
+  git remote -v
+  ```
 
-   The output should look something like below:
+  The output should look something like below:
 
-   ```console
-   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
-   ```
+  ```console
+  origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+  origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+  upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+  upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+  ```
 
 ## Running freeCodeCamp locally
 
@@ -207,17 +207,17 @@ Start the MongoDB server in a separate terminal:
 
 - On macOS & Ubuntu:
 
-  ```console
-  mongod
-  ```
+ ```console
+ mongod
+ ```
 
 - On Windows, you must specify the full path to the `mongod` binary
 
-  ```console
-  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-  ```
+ ```console
+ "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+ ```
 
-  Make sure to replace `3.6` with the version you have installed
+ Make sure to replace `3.6` with the version you have installed
 
 > [!TIP]
 > You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
@@ -255,11 +255,11 @@ However, accessing the user portfolio page is a little tricky. In development, G
 Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
-   <summary>
-      How to sign in when working locally (screenshot)
-   </summary>
-   <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally">
+  <summary>
+     How to sign in when working locally (screenshot)
+  </summary>
+  <br>
+  <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally">
 </details>
 
 ## Making changes locally
@@ -270,18 +270,18 @@ Follow these steps:
 
 1. Validate that you are on the `main` branch:
 
-   ```console
-   git status
-   ```
+  ```console
+  git status
+  ```
 
-   You should get an output like this:
+  You should get an output like this:
 
    ```console
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
-   nothing to commit, working directory clean
-   ```
+  nothing to commit, working directory clean
+  ```
 
    If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
 
@@ -298,11 +298,11 @@ Follow these steps:
 
    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
-   Update your local copy of the freeCodeCamp upstream repository:
+  Update your local copy of the freeCodeCamp upstream repository:
 
-   ```console
-   git fetch upstream
-   ```
+  ```console
+  git fetch upstream
+  ```
 
    Hard reset your main branch with the freeCodeCamp main:
 
@@ -322,7 +322,7 @@ Follow these steps:
    git diff upstream/main
    ```
 
-   The resulting output should be empty.
+  The resulting output should be empty.
 
 3. Create a fresh new branch:
 
@@ -330,21 +330,21 @@ Follow these steps:
 
    Check that you are on `main` as explained previously, and branch off from there:
 
-   ```console
-   git checkout -b fix/update-guide-for-xyz
-   ```
+  ```console
+  git checkout -b fix/update-guide-for-xyz
+  ```
 
-   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+  Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-   Some examples of good branch names are:
+  Some examples of good branch names are:
 
-   ```md
-   fix/update-challenges-for-react
-   fix/update-guide-for-html-css
-   fix/platform-bug-sign-in-issues
-   feat/add-guide-article-for-javascript
-   translate/add-spanish-basic-html
-   ```
+  ```md
+  fix/update-challenges-for-react
+  fix/update-guide-for-html-css
+  fix/platform-bug-sign-in-issues
+  feat/add-guide-article-for-javascript
+  translate/add-spanish-basic-html
+  ```
 
 4. Edit pages and work on code in your favorite text editor.
 
@@ -354,107 +354,107 @@ Follow these steps:
 
 7. Check and confirm the files you are updating:
 
-   ```console
-   git status
-   ```
+  ```console
+  git status
+  ```
 
-   This should show a list of `unstaged` files that you have edited.
+  This should show a list of `unstaged` files that you have edited.
 
-   ```console
-   On branch feat/documentation
-   Your branch is up to date with 'upstream/feat/documentation'.
+  ```console
+  On branch feat/documentation
+  Your branch is up to date with 'upstream/feat/documentation'.
 
-   Changes not staged for commit:
-   (use "git add/rm <file>..." to update what will be committed)
-   (use "git checkout -- <file>..." to discard changes in working directory)
+  Changes were not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in the working directory)
 
-       modified:   CONTRIBUTING.md
-       modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-locally.md
-       modified:   docs/how-to-work-on-guide-articles.md
-   ...
-   ```
+      modified:   CONTRIBUTING.md
+      modified:   docs/README.md
+      modified:   docs/how-to-setup-freecodecamp-locally.md
+      modified:   docs/how-to-work-on-guide-articles.md
+  ...
+  ```
 
 8. Stage the changes and make a commit:
 
-   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+  In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
-   ```console
-   git add path/to/my/changed/file.ext
-   ```
+  ```console
+  git add path/to/my/changed/file.ext
+  ```
 
-   Or you can add all the `unstaged` files to the staging area:
+  Or you can add all the `unstaged` files to the staging area:
 
-   ```console
-   git add .
-   ```
+  ```console
+  git add .
+  ```
 
-   Only the files that were moved to the staging area will be added when you make a commit.
+  Only the files that were moved to the staging area will be added when you make a commit.
 
-   ```console
-   git status
-   ```
+  ```console
+  git status
+  ```
 
-   Output:
+  Output:
 
-   ```console
-   On branch feat/documentation
-   Your branch is up to date with 'upstream/feat/documentation'.
+  ```console
+  On branch feat/documentation
+  Your branch is up to date with 'upstream/feat/documentation'.
 
-   Changes to be committed:
-   (use "git reset HEAD <file>..." to unstage)
+  Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
 
-       modified:   CONTRIBUTING.md
-       modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-locally.md
-       modified:   docs/how-to-work-on-guide-articles.md
-   ```
+      modified:   CONTRIBUTING.md
+      modified:   docs/README.md
+      modified:   docs/how-to-setup-freecodecamp-locally.md
+      modified:   docs/how-to-work-on-guide-articles.md
+  ```
 
-   Now, you can commit your changes with a short message like so:
+  Now, you can commit your changes with a short message like so:
 
-   ```console
-   git commit -m "fix: my short commit message"
-   ```
+  ```console
+  git commit -m "fix: my short commit message"
+  ```
 
-   Some examples:
+  Some examples:
 
-   ```md
-   fix: update guide article for Java - for loop
-   feat: add guide article for alexa skills
-   ```
+  ```md
+  fix: update guide article for Java - for loop
+  feat: add guide article for alexa skills
+  ```
 
-   Optional:
+  Optional:
 
-   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+  We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
 
-   Some examples of conventional commit messages are:
+  Some examples of conventional commit messages are:
 
-   ```md
-   fix: update HTML guide article
-   fix: update build scripts for Travis-CI
-   feat: add article for JavaScript hoisting
-   docs: update contributing guidelines
-   ```
+  ```md
+  fix: update HTML guide article
+  fix: update build scripts for Travis-CI
+  feat: add article for JavaScript hoisting
+  docs: update contributing guidelines
+  ```
 
-   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+  Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
+  This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+  You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
-   ```console
-   git commit --amend
-   ```
+  ```console
+  git commit --amend
+  ```
 
-   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+  This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
 10. Next, you can push your changes to your fork:
 
-    ```console
-    git push origin branch/name-here
-    ```
+   ```console
+   git push origin branch/name-here
+   ```
 
 ## Proposing a Pull Request (PR)
 
@@ -483,9 +483,9 @@ A quick reference to the commands that you will need when working locally.
 
 ### Issues with installing the recommended prerequisites
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
 If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
@@ -493,7 +493,7 @@ If you are on a different OS and/or are still running into issues, see [getting 
 >
 > Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Issues with the UI, Fonts, build errors etc.
+### Issues with the UI, Fonts, build errors, etc.
 
 If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
@@ -514,21 +514,21 @@ npm run clean-and-develop
 
 If you continue to face issues with the build, cleaning up the workspace is recommend.
 
-Use `git clean` in interative mode:
+Use `git clean` in an interactive mode:
 
 ```
 git clean -ifdX
 ```
 
 <details>
-   <summary>
-      How to clean git untracked files (screenshot)
-   </summary>
-   <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
+  <summary>
+     How to clean git untracked files (screenshot)
+  </summary>
+  <br>
+  <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
 </details>
 
-### Issues with API, Login, Challenge Submissions, etc.
+### Issues with API, login, Challenge Submissions, etc.
 
 If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
@@ -552,10 +552,13 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
 
 ## Getting Help
 
 If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/contributors).
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+
+
+

@@ -22,7 +22,7 @@ To learn how to write Cypress tests, or 'specs', please see Cypress' official [d
  
 **2. Run the cypress tests**
 
-  To run tests against production builds, replace `dev` with `prd` bellow.
+  To run tests against production builds, replace `dev` with `prd` below.
 
   - To run all tests in the `./cypress` directory:
 
