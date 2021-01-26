@@ -39,7 +39,7 @@ Crowdin separates a document into translatable "strings", usually sentences. Eac
 10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
 > [!NOTE]
-> If you see a hidden string that includes translations, please notify us in the [translators chat room](https://chat.freecodecamp.org/translators) so we can remove the translation from memory.
+> If you see a hidden string that includes translations, please notify us in the [translators chat room](https://chat.freecodecamp.org/channel/translators) so we can remove the translation from memory.
 
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
 
@@ -90,4 +90,4 @@ Follow these guidelines to ensure our translations are as accurate as possible:
 - Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
 - Do not change the order of content.
 
-If you have any questions, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/translators) and we will be happy to assist you.
+If you have any questions, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators) and we will be happy to assist you.

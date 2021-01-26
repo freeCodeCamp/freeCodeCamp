@@ -6,7 +6,7 @@ The developer news also known as [`/news`](https://www.freecodecamp.org/news) si
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes. The theme used on `/news` is based off of the default [casper theme](https://github.com/TryGhost/Casper).
 
-The default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, Ghost also has a full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
+The default theme is commented pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, Ghost also has a full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
 
 **The main files are:**
 
@@ -42,7 +42,7 @@ One really neat trick is that you can also create custom one-off templates just 
 
    Be sure to run `ghost` commands from the `ghost-local-site` directory. Follow additional instructions on [Ghost's official documentation](https://docs.ghost.org) if are not familiar with its interface.
 
-2. Fork and clone the repository in your theme directory:
+2. Fork and clone the repository in your theme directory (replacing `YOUR_USERNAME` with your GitHub username):
 
    ```sh
    cd content/themes/

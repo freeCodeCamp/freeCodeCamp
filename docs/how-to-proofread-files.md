@@ -37,7 +37,7 @@ While you can view *all* proposed translations for a given string, the community
 > [!WARNING]
 > Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
 
-No additional actions are required once a file has been proofread. If you have any questions or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/translators).
+No additional actions are required once a file has been proofread. If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators).
 
 > [!NOTE]
 > Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
