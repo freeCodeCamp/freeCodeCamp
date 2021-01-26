@@ -41,7 +41,7 @@ export const onPreRenderHTML = ({
   headComponents.sort((x, y) => {
     if (x.key === 'boostrap-min-preload' || x.key === 'boostrap-min') {
       return -1;
-    } else if (y.key === 'TypographyStyle' || x.key === 'boostrap-min') {
+    } else if (y.key === 'boostrap-min-preload' || y.key === 'boostrap-min') {
       return 1;
     }
     return 0;
