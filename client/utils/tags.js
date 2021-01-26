@@ -6,6 +6,7 @@ export const getheadTagComponents = () => {
   const socialImage =
     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
   const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
+  const pathToGap = withPrefix('/gap/index.js');
   return [
     <link
       as='style'
@@ -44,8 +45,9 @@ export const getheadTagComponents = () => {
     <meta
       content='$ilp.uphold.com/LJmbPn7WD4JB'
       key='monetization'
-      name='monetization'
-    />
+      name='monetizationss'
+    />,
+    <script href={pathToGap} id='gap' key='gap' rel='stylesheet' />
   ];
 };
 
