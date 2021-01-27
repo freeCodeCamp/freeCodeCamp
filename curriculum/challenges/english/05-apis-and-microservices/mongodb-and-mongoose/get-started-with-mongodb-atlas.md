@@ -72,7 +72,39 @@ Feel free to create separate databases for different applications. You just need
 
 After you set up a hosted database on MongoDB Atlas, start this project on Repl.it using <a rel='noopener noreferrer' target='_blank' href='https://repl.it/github/freeCodeCamp/boilerplate-mongomongoose'>this link</a> or clone <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-mongomongoose/'>this repository</a> on GitHub. If you use Repl.it, remember to save the link to your project somewhere safe.
 
-Then, submit a link to your project below to move onto the next challenge.
+Run `cp sample.env .env` in the console to copy the contents of `sample.env` to a new `.env` file. Then, store MongoDB Atlas database URI in the `.env` file as `MONGO_URI`.
+
+Make sure no space exists between the variable `MONGO_URI` and the `=`, and the value and `=`.
+
+# --hints--
+
+You should have a value for `MONGO_URI` in `.env`
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/mongo-uri/exists').then(
+    (data) => {
+      assert.isTrue(data.mongoURIExists);
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+Your MongoDB Atlas URI is in a valid format
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/mongo-uri/valid').then(
+    (data) => {
+      assert.isTrue(data.mongoURIValid);
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
 # --solutions--
 

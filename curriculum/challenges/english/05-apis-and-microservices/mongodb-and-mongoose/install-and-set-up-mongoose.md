@@ -8,7 +8,7 @@ dashedName: install-and-set-up-mongoose
 
 # --description--
 
-In this challenge, you will import the required projects, and connect to your Atlas database.
+In this challenge, you will import the required packages and connect to your Atlas database.
 
 # --instructions--
 
