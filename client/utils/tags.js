@@ -1,13 +1,20 @@
 import React from 'react';
 import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
+import psl from 'psl';
+import { homeLocation } from '../../config/env.json';
 
 export const getheadTagComponents = () => {
   const socialImage =
     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
+  const gapScript = (
+    <script href={pathToGap} id='gap' key='gap' rel='stylesheet' />
+  );
   const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
   const pathToGap = withPrefix('/gap/index.js');
-  return [
+  const parsedHomeUrl = psl.parse(homeLocation);
+
+  let headTags = [
     <link
       as='style'
       href={pathToBootstrap}
@@ -45,10 +52,15 @@ export const getheadTagComponents = () => {
     <meta
       content='$ilp.uphold.com/LJmbPn7WD4JB'
       key='monetization'
-      name='monetizationss'
-    />,
-    <script href={pathToGap} id='gap' key='gap' rel='stylesheet' />
+      name='monetization'
+    />
   ];
+
+  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.ltd === 'org') {
+    headTags.push(gapScript);
+  }
+
+  return headTags;
 };
 
 export const getPostBodyComponents = pathname => {
