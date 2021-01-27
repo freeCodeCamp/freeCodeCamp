@@ -39,26 +39,16 @@ export function AuthOrProfile({ user, pathName, pending }) {
   } else {
     return (
       <>
-        <li>
-          <Link className='nav-link' to='/learn'>
-            {t('buttons.curriculum')}
-          </Link>
-        </li>
-        <li>
-          <Link className='nav-link' to={`/${user.username}`}>
-            {t('buttons.profile')}
-          </Link>
-          <Link
-            className={`avatar-nav-link ${badgeColorClass}`}
-            to={`/${user.username}`}
-          >
-            <AvatarRenderer
-              picture={user.picture}
-              size='sm'
-              userName={user.username}
-            />
-          </Link>
-        </li>
+        <Link
+          className={`avatar-nav-link ${badgeColorClass}`}
+          to={`/${user.username}`}
+        >
+          <AvatarRenderer
+            picture={user.picture}
+            size='sm'
+            userName={user.username}
+          />
+        </Link>
       </>
     );
   }

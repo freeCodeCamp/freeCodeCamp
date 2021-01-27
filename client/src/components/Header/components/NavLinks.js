@@ -1,89 +1,154 @@
-import React from 'react';
-import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Login from '../components/Login';
-import { forumLocation } from '../../../../../config/env.json';
-import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
+import { Link, SkeletonSprite } from '../../helpers';
+import { updateUserFlag } from '../../../redux/settings';
+import {
+  forumLocation,
+  radioLocation,
+  newsLocation
+} from '../../../../../config/env.json';
+import createLanguageRedirect from '../../createLanguageRedirect';
+
+const {
+  availableLangs,
+  i18nextCodes,
+  langDisplayNames
+} = require('../../../../i18n/allLangs');
+
+const locales = availableLangs.client;
 
 const propTypes = {
   displayMenu: PropTypes.bool,
   fetchState: PropTypes.shape({ pending: PropTypes.bool }),
+  i18n: PropTypes.object,
+  t: PropTypes.func,
+  toggleNightMode: PropTypes.func.isRequired,
   user: PropTypes.object
 };
 
-export function AuthOrProfile({ user, pending }) {
-  const { t } = useTranslation();
-  const isUserDonating = user && user.isDonating;
-  const isUserSignedIn = user && user.username;
-  const isTopContributor =
-    user && user.yearsTopContributor && user.yearsTopContributor.length > 0;
+const mapDispatchToProps = {
+  toggleNightMode: theme => updateUserFlag({ theme })
+};
 
-  const CurriculumAndForumLinks = (
-    <>
-      <li>
-        <Link
-          className='nav-link'
-          external={true}
-          sameTab={true}
-          to={forumLocation}
-        >
-          {t('buttons.forum')}
-        </Link>
-      </li>
-      <li>
-        <Link className='nav-link' to='/learn'>
-          {t('buttons.curriculum')}
-        </Link>
-      </li>
-    </>
-  );
+export class NavLinks extends Component {
+  toggleTheme(currentTheme = 'default', toggleNightMode) {
+    console.log('attempting to toggle night mode');
+    toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
+  }
 
-  if (pending) {
-    return (
+  render() {
+    const {
+      displayMenu,
+      fetchState,
+      i18n,
+      t,
+      toggleNightMode,
+      user: { isUserDonating = false, username, theme }
+    } = this.props;
+
+    const { pending } = fetchState;
+
+    return pending ? (
       <div className='nav-skeleton'>
         <SkeletonSprite />
       </div>
-    );
-  } else if (!isUserSignedIn) {
-    return (
-      <>
-        {CurriculumAndForumLinks}
-        <Login data-test-label='landing-small-cta'>
-          {t('buttons.sign-in')}
-        </Login>
-      </>
-    );
-  } else {
-    return (
-      <>
-        {CurriculumAndForumLinks}
-        <li>
-          <Link className='nav-link' to={`/${user.username}`}>
-            {t('buttons.profile')}
-            <AvatarRenderer
-              isDonating={isUserDonating}
-              isTopContributor={isTopContributor}
-              picture={user.picture}
-              userName={user.username}
-            />
-          </Link>
-        </li>
-      </>
+    ) : (
+      <div className='main-nav-group'>
+        <ul className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
+          <li key='donate'>
+            {isUserDonating ? (
+              <span className='nav-link'>{t('donate.thanks')}</span>
+            ) : (
+              <Link
+                className='nav-link'
+                external={true}
+                sameTab={false}
+                to='/donate'
+              >
+                {t('buttons.donate')}
+              </Link>
+            )}
+          </li>
+          <li key='forum'>
+            <Link
+              className='nav-link'
+              external={true}
+              sameTab={false}
+              to={forumLocation}
+            >
+              {t('buttons.forum')}
+            </Link>
+          </li>
+          <li key='news'>
+            <Link
+              className='nav-link'
+              external={true}
+              sameTab={false}
+              to={newsLocation}
+            >
+              {t('buttons.news')}
+            </Link>
+          </li>
+          <li key='learn'>
+            <Link className='nav-link' to='/learn'>
+              {t('buttons.curriculum')}
+            </Link>
+          </li>
+          {username && (
+            <li key='profile'>
+              <Link className='nav-link' to={`/${username}`}>
+                {t('buttons.profile')}
+              </Link>
+            </li>
+          )}
+          <li key='radio'>
+            <Link
+              className='nav-link'
+              external={true}
+              sameTab={false}
+              to={radioLocation}
+            >
+              {t('buttons.radio')}
+            </Link>
+          </li>
+          <li key='theme'>
+            <button
+              className='nav-link'
+              disabled={!username}
+              onClick={() => this.toggleTheme(theme, toggleNightMode)}
+            >
+              {username
+                ? t('settings.labels.night-mode') +
+                  (theme === 'night' ? ' ✓' : '')
+                : 'Sign in to change theme'}
+            </button>
+          </li>
+          <li key='lang-header'>
+            <span className='nav-link'>{t('footer.language')}</span>
+          </li>
+          {locales.map(lang => (
+            <li key={'lang-' + lang}>
+              <Link
+                className='nav-link sub-link'
+                to={createLanguageRedirect(lang)}
+              >
+                {langDisplayNames[lang]}
+                {i18n.language === i18nextCodes[lang] ? ' ✓' : ''}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }
 
-export function NavLinks({ displayMenu, user, fetchState }) {
-  const { pending } = fetchState;
-  return (
-    <div className='main-nav-group'>
-      <ul className={'nav-list' + (displayMenu ? ' display-flex' : '')}>
-        <AuthOrProfile pending={pending} user={user} />
-      </ul>
-    </div>
-  );
-}
-
 NavLinks.propTypes = propTypes;
 NavLinks.displayName = 'NavLinks';
-export default NavLinks;
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(withTranslation()(NavLinks));
