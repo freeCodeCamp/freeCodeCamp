@@ -1,16 +1,16 @@
-- **Getting Started**
-  - [Introduction](index.md "Contribute to the freeCodeCamp.org Community")
-  - [Frequently Asked Questions](FAQ.md)
-- **Code Contribution**
-  - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
-  - [Open a pull request](how-to-open-a-pull-request.md)
-  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
-  - [Work on video challenges](how-to-help-with-video-challenges.md)
-  - [Work on the news theme](how-to-work-on-the-news-theme.md)
-  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
-- **Optional Guides**
-  - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
-  - [Set up freeCodeCamp on WSL](how-to-setup-wsl.md)
+- **Comenzando**
+  - [Introducción](index.md "Contribuye a la Comunidad freeCodeCamp.org")
+  - [Preguntas Más Frecuentes](FAQ.md)
+- **Contribución de Código**
+  - [Configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
+  - [Abrir una pull request](how-to-open-a-pull-request.md)
+  - [Trabaja en los desafíos de código](how-to-work-on-coding-challenges.md)
+  - [Trabaja en los desafíos de video](how-to-help-with-video-challenges.md)
+  - [ Trabajar en el tema de noticias](how-to-work-on-the-news-theme.md)
+  - [Trabaja en la documentación](how-to-work-on-the-docs-theme.md)
+- **Guías Opcionales**
+  - [Captura correos electrónicos salientes localmente](how-to-catch-outgoing-emails-locally.md)
+  - [Configurar freeCodeCamp en WSL](how-to-setup-wsl.md)
 
 ---
 
@@ -25,13 +25,14 @@
 
 ---
 
-- **Flight Manuals** (for Staff & Mods)
-  - [Moderator Handbook](moderator-handbook.md)
-  - [DevOps Handbook](devops.md)
+- **Manuales de Vuelo** (para el Personal & Moderadores)
+  - [Manual del Moderador](moderator-handbook.md)
+  - [Plantillas de Respuesta](moderator-handbook?id=using-reply-templates)
+  - [Manual de DevOps](devops.md)
 
 ---
 
-- **Our Community**
+- **Nuestra Comunidad**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Discourse Forum**](https://freecodecamp.org/forum/c/contributors)
   - [**Gitter Chat**](https://gitter.im/FreeCodeCamp/Contributors)

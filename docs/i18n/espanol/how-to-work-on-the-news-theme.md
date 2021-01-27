@@ -1,31 +1,31 @@
-# How to work on freeCodeCamp.org's developer news theme
+# Cómo trabajar en las noticias para desarrolladores de freeCodeCamp.org
 
-The developer news also known as [`/news`](https://www.freecodecamp.org/news) site is powered by [Ghost](https://ghost.org/). We use a custom theme for the look and feel of the site. The source code of the theme is available here: <https://github.com/freeCodeCamp/news-theme>.
+Las noticias del desarrollador también conocidas como el sitio [`/news`](https://www.freecodecamp.org/news) funciona con [Ghost](https://ghost.org/). Utilizamos un tema personalizado para el aspecto del sitio. El código fuente del tema está disponible aquí: <https://github.com/freeCodeCamp/news-theme>.
 
-## The Theme
+## El Tema
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes. The theme used on `/news` is based off of the default [casper theme](https://github.com/TryGhost/Casper).
+Ghost utiliza un lenguaje de plantillas sencillo llamado [Handlebars](http://handlebarsjs.com/) para sus temas. El tema usado en `/news` se basa en el tema predeterminado [casper](https://github.com/TryGhost/Casper).
 
-The default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, Ghost also has a full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
+El tema por defecto es bastante fuerte, por lo que debería ser bastante fácil averiguar lo que está pasando con sólo leer el código y los comentarios. Una vez que te sientas cómodo con cómo funciona todo, Ghost también tiene una completa [documentación API de temas](https://themes.ghost.org) que explica todos los posibles ayudantes de Handlebars y plantillas.
 
-**The main files are:**
+**Los archivos principales son:**
 
-- `default.hbs` - The main template file
-- `index.hbs` - Used for the home page
-- `post.hbs` - Used for individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives
-- `author.hbs` - Used for author archives
+- `default.hbs` - El archivo de plantilla principal
+- `index.hbs` - Utilizado para la página de inicio
+- `post.hbs` - Utilizado para publicaciones individuales
+- `page.hbs` - Utilizado para páginas individuales
+- `tag.hbs` - Utilizado para archivos de etiquetas
+- `author.hbs` - Utilizado para archivos de autor
 
-One really neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
+Un truco realmente bueno es que también puede crear plantillas personalizadas sólo añadiendo un trozo pequeño de una página a un archivo de plantilla. Por ejemplo:
 
-- `page-about.hbs` - Custom template for the `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
+- `page-about.hbs` - plantilla personalizada para la página `/about/`
+- `tag-news.hbs` - plantilla personalizada para `/tag/news/` archivo
+- `author-ali.hbs` - plantilla personalizada para `/author/ali/` archivo
 
-## Development
+## Desarrollo
 
-1. Get Ghost installed locally.
+1. Obtén Ghost instalado localmente.
 
    ```sh
    npm install -g ghost-cli@latest
@@ -38,62 +38,62 @@ One really neat trick is that you can also create custom one-off templates just 
    ghost start
    ```
 
-   > Note: Currently freeCodeCamp uses Ghost version `2.9.0`, so make sure you are using a version higher than that.
+   > Nota: actualmente freeCodeCamp usa la versión Ghost `2.9.0`, así que asegúrate de que estás usando una versión superior a eso.
 
-   Be sure to run `ghost` commands from the `ghost-local-site` directory. Follow additional instructions on [Ghost's official documentation](https://docs.ghost.org) if are not familiar with its interface.
+   Asegúrate de ejecutar los comandos de `ghost` desde el directorio `ghost-local-site`. Siga las instrucciones adicionales de la [documentación oficial de Ghost](https://docs.ghost.org) si no estás familiarizado con su interfaz.
 
-2. Fork and clone the repository in your theme directory:
+2. Crea una bifurcación (fork) y clona el repositorio en el directorio de tu tema:
 
    ```sh
    cd content/themes/
    git clone https://github.com/YOUR_USERNAME/news-theme.git
    ```
 
-3. Make sure you have all the pre-requisites.
+3. Asegúrese de tener todos los requisitos previos.
 
-   The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node.js](https://nodejs.org/). Make sure that your Node.js version is compatible with `ghost`.
+   Los estilos de los temas se compilan usando Gulp/PostCSS para polyfill las futuras especificaciones CSS. Necesitará [Node.js](https://nodejs.org/). Asegúrese de que su versión de Node.js es compatible con `ghost`.
 
-4. Install dependencies and develop the theme
+4. Instalar dependencias y desarrollar el tema
 
    ```sh
    npm ci
    npm run develop
    ```
 
-5. Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+5. Ahora puedes editar los archivos `/assets/css/`, los cuales serán compilados a `/assets/built/` automáticamente.
 
-6. Access the development site.
+6. Acceder al sitio de desarrollo.
 
-   a. Enter `http://localhost:2368/ghost/` into your address bar. Continue with the setup prompted on the page (if running ghost for the first time).
+   a. Introduzca `http://localhost:2368/ghost/` en su barra de direcciones. Continúe con la configuración solicitada en la página (si se ejecuta Ghost por primera vez).
 
-   b. _(One-time only, during setup)_ Restart Ghost, on a separate terminal once to ensure the theme is available.
+   b. _(Solo una vez, durante la configuración)_ Reinicie Ghost, en una terminal por separado una vez para asegurarse de que el tema está disponible.
 
    ```sh
    cd ghost-local-site
    ghost restart
    ```
 
-   c. _(One-time only, during setup)_ Once you've done this, go to `http://localhost:2368/ghost/#/settings/design` and scroll to the bottom. Make sure you click activate on the `freecodecamp-news-theme`.
+   c. _(Solo una vez, durante la configuración)_ Una vez que hayas hecho esto, ve a `http://localhost:2368/ghost/#/settings/design` y desplázate hacia abajo. Asegúrate de hacer clic en activar en el `freecodecamp-news-theme`.
 
-7. Zip the final code and make a pull-request
+7. Comprime el código final y crea un pull-request
 
-   The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which we can then upload to the production site.
+   El `zip` que Gulp empaqueta son los archivos del tema en `dist/<theme-name>.zip`, los cuales podemos subir al sitio de producción.
 
-   When you make a PR, please make sure you have run the below script prior to commiting the code and sending a PR.
+   Cuando haga un PR, por favor asegúrese de haber ejecutado el script de abajo antes de confirmar el código y enviar un PR.
 
    ```sh
    npm run zip
    ```
-## Other Reference and resources
+## Otros recursos y referencias
 
-### PostCSS Features Used
+### Funcionalidades utilizadas de PostCSS
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
+- Autoprefixer - No te preocupes por escribir prefijos del navegador de ningún tipo, todo se hace automáticamente con soporte para las 2 versiones más recientes de cada navegador.
+- Variables - Variables CSS simples
+- [Función de color](https://github.com/postcss/postcss-color-function)
 
-### SVG Icons
+### Iconos SVG
 
-The theme uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
+El tema utiliza iconos SVG en línea, incluidos a través de parciales de Handlebars. Puedes encontrar todos los iconos dentro de `/partials/icons`. Para usar un icono simplemente incluya el nombre del archivo relevante, por ejemplo. Para incluir el icono SVG en `/partials/icons/rss.hbs` - usa `{{> "icons/rss"}}`.
 
-You can add your own SVG icons in the same manner.
+Puedes añadir tus propios iconos SVG de la misma manera.
