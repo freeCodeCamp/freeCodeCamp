@@ -39,9 +39,9 @@ export const onPreRenderHTML = ({
 }) => {
   const headComponents = getHeadComponents();
   headComponents.sort((x, y) => {
-    if (x.key === 'boostrap-min-preload' || x.key === 'boostrap-min') {
+    if (x.key === 'bootstrap-min-preload' || x.key === 'bootstrap-min') {
       return -1;
-    } else if (y.key === 'boostrap-min-preload' || y.key === 'boostrap-min') {
+    } else if (y.key === 'bootstrap-min-preload' || y.key === 'bootstrap-min') {
       return 1;
     }
     return 0;
