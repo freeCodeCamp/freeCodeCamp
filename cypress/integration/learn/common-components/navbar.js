@@ -83,8 +83,8 @@ describe('Navbar', () => {
   it('Should have `Profile` link when user is signed in', () => {
     cy.login()
       .get(selectors.menuButton)
-      .click()
-      .get(selectors.navigationLinks)
+      .click();
+    cy.get(selectors.navigationLinks)
       .contains('Profile')
       .click();
     cy.url().should('include', '/developmentuser');
