@@ -297,6 +297,13 @@ fieldset[disabled] .btn-primary.focus {
   margin-left: 5px;
 }
 
+.link-btn:hover,
+.link-btn.btn-lg:hover svg {
+  fill: var(--quaternary-background);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
 .map-icon,
 .cert-header-icon {
   flex-shrink: 0;
@@ -312,10 +319,6 @@ fieldset[disabled] .btn-primary.focus {
   display: block;
   width: 80px;
   margin: auto;
-}
-
-.link-btn:hover svg {
-  fill: var(--quaternary-background);
 }
 
 @media (min-width: 700px) {
