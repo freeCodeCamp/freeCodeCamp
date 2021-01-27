@@ -10,10 +10,10 @@ export const getheadTagComponents = () => {
     <link
       as='style'
       href={pathToBootstrap}
-      key='boostrap-min-preload'
+      key='bootstrap-min-preload'
       rel='preload'
     />,
-    <link href={pathToBootstrap} key='boostrap-min' rel='stylesheet' />,
+    <link href={pathToBootstrap} key='bootstrap-min' rel='stylesheet' />,
     <meta content='freeCodeCamp.org' key='og:title' name='og:title' />,
     <meta
       content={i18next.t('meta.social-description')}

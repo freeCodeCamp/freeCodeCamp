@@ -32,3 +32,19 @@ export const onRenderBody = ({
   setHeadComponents(getheadTagComponents());
   setPostBodyComponents(getPostBodyComponents(pathname));
 };
+
+export const onPreRenderHTML = ({
+  getHeadComponents,
+  replaceHeadComponents
+}) => {
+  const headComponents = getHeadComponents();
+  headComponents.sort((x, y) => {
+    if (x.key === 'bootstrap-min-preload' || x.key === 'bootstrap-min') {
+      return -1;
+    } else if (y.key === 'bootstrap-min-preload' || y.key === 'bootstrap-min') {
+      return 1;
+    }
+    return 0;
+  });
+  replaceHeadComponents(headComponents);
+};
