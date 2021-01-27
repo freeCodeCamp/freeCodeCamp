@@ -9,9 +9,36 @@ const selectors = {
   menuButton: '.toggle-button-nav'
 };
 
+let appHasStarted;
+function spyOnListener(win) {
+  const addListener = win.EventTarget.prototype.addEventListener;
+  win.EventTarget.prototype.addEventListener = function(name) {
+    if (name === 'click') {
+      appHasStarted = true;
+      win.EventTarget.prototype.addEventListener = addListener;
+    }
+    return addListener.apply(this, arguments);
+  };
+}
+
+function waitForAppStart() {
+  return new Promise(resolve => {
+    const isReady = () => {
+      if (appHasStarted) {
+        return resolve();
+      }
+      return setTimeout(isReady, 0);
+    };
+    isReady();
+  });
+}
+
 describe('Navbar', () => {
   beforeEach(() => {
-    cy.visit('/');
+    appHasStarted = false;
+    cy.visit('/', {
+      onBeforeLoad: spyOnListener
+    }).then(waitForAppStart);
     cy.viewport(1300, 660);
   });
 
@@ -55,7 +82,6 @@ describe('Navbar', () => {
     'Should have `Radio`, `Forum`, and `Curriculum` links on landing and learn pages' +
       'page when not signed in',
     () => {
-      cy.wait(150);
       cy.get(selectors.menuButton).click();
       cy.get(selectors.navigationLinks).contains('Forum');
       cy.get(selectors.navigationLinks)
@@ -70,10 +96,9 @@ describe('Navbar', () => {
 
   it(
     'Should have `Sign in` link on landing and learn pages' +
-      'page when not signed in',
+      ' when not signed in',
     () => {
       cy.contains(selectors.smallCallToAction, 'Sign in');
-      cy.wait(150);
       cy.get(selectors.menuButton).click();
       cy.get(selectors.navigationLinks)
         .contains('Curriculum')
@@ -84,7 +109,7 @@ describe('Navbar', () => {
 
   it('Should have `Profile` link when user is signed in', () => {
     cy.login();
-    cy.wait(150);
+    cy.get('a[href*="/settings"]').should('be.visible');
     cy.get(selectors.menuButton).click();
     cy.get(selectors.navigationLinks)
       .contains('Profile')
@@ -94,7 +119,6 @@ describe('Navbar', () => {
 
   it('Should have a profile image with class `default-border`', () => {
     cy.login();
-    cy.wait(150);
     cy.get(selectors.avatarContainer).should('have.class', 'default-border');
     cy.get(selectors.defaultAvatar).should('exist');
   });
