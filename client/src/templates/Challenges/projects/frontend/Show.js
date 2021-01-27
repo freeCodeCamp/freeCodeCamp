@@ -103,7 +103,8 @@ export class Project extends Component {
           fields: { blockName },
           forumTopicId,
           title,
-          description
+          description,
+          instructions
         }
       },
       openCompletionModal,
@@ -129,7 +130,10 @@ export class Project extends Component {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
                 <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
-                <ChallengeDescription description={description} />
+                <ChallengeDescription
+                  description={description}
+                  instructions={instructions}
+                />
                 <SolutionForm
                   challengeType={challengeType}
                   description={description}
@@ -166,6 +170,7 @@ export const query = graphql`
       forumTopicId
       title
       description
+      instructions
       challengeType
       helpCategory
       fields {
