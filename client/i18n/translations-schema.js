@@ -61,7 +61,10 @@ const translationsSchema = {
     'sign-out': 'Sign out',
     curriculum: 'Curriculum',
     forum: 'Forum',
+    radio: 'Radio',
     profile: 'Profile',
+    news: 'News',
+    donate: 'Donate',
     'update-settings': 'Update my account settings',
     'sign-me-out': 'Sign me out of freeCodeCamp',
     'flag-user': "Flag This User's Account for Abuse",
@@ -365,6 +368,7 @@ const translationsSchema = {
   donate: {
     title: 'Support our nonprofit',
     processing: 'We are processing your donation.',
+    thanks: 'Thanks for donating',
     'thank-you': 'Thank you for being a supporter.',
     'thank-you-2':
       'Thank you for being a supporter of freeCodeCamp. You currently have a recurring donation.',

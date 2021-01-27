@@ -15,6 +15,7 @@ const {
   API_LOCATION: apiLocation,
   FORUM_LOCATION: forumLocation,
   NEWS_LOCATION: newsLocation,
+  RADIO_LOCATION: radioLocation,
   CLIENT_LOCALE: clientLocale,
   CURRICULUM_LOCALE: curriculumLocale,
   SHOW_LOCALE_DROPDOWN_MENU: showLocaleDropdownMenu,
@@ -23,14 +24,17 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   PAYPAL_CLIENT_ID: paypalClientId,
   DEPLOYMENT_ENV: deploymentEnv,
-  SHOW_UPCOMING_CHANGES: showUpcomingChanges
+  SHOW_UPCOMING_CHANGES: showUpcomingChanges,
+  CHINESE_HOME: chineseHome
 } = process.env;
 
 const locations = {
   homeLocation,
   apiLocation,
   forumLocation,
-  newsLocation
+  newsLocation,
+  radioLocation,
+  chineseHome
 };
 
 module.exports = Object.assign(locations, {
