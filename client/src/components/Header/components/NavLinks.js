@@ -7,10 +7,9 @@ import { updateUserFlag } from '../../../redux/settings';
 import {
   forumLocation,
   radioLocation,
-  newsLocation,
-  homeLocation,
-  chineseHome
+  newsLocation
 } from '../../../../../config/env.json';
+import createLanguageRedirect from '../../createLanguageRedirect';
 
 const {
   availableLangs,
@@ -34,20 +33,6 @@ const mapDispatchToProps = {
 };
 
 export class NavLinks extends Component {
-  goToLanguage(lang) {
-    const path = window.location.pathname;
-    switch (lang) {
-      case 'espanol':
-        return `${homeLocation}/espanol${path}`;
-      case 'english':
-        return `${homeLocation}${path}`;
-      case 'chinese':
-        return `${chineseHome}${path}`;
-      default:
-        return `${homeLocation}`;
-    }
-  }
-
   toggleTheme(currentTheme = 'default', toggleNightMode) {
     console.log('attempting to toggle night mode');
     toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
@@ -145,7 +130,10 @@ export class NavLinks extends Component {
           </li>
           {locales.map(lang => (
             <li key={'lang-' + lang}>
-              <Link className='nav-link sub-link' to={this.goToLanguage(lang)}>
+              <Link
+                className='nav-link sub-link'
+                to={createLanguageRedirect(lang)}
+              >
                 {langDisplayNames[lang]}
                 {i18n.language === i18nextCodes[lang] ? ' ✓' : ''}
               </Link>
