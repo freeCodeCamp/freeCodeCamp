@@ -10,7 +10,7 @@ dashedName: get-started-with-mongodb-atlas
 
 For the following challenges, you are going to use MongoDB to store data. To simplify the configuration, you'll use a service called MongoDB Atlas.
 
-# Get Started with MongoDB Atlas
+<strong>Get Started with MongoDB Atlas</strong>
 
 MongoDB Atlas is a MongoDB Database-as-a-Service platform, which means that they configure and host the database for you. Then, your only responsibility will be to populate your database with what matters: data.
 
@@ -22,12 +22,12 @@ In this tutorial, you will:
 - Allow access from all IP addresses
 - Connect to your cluster
 
-## Create a MongoDB Atlas account
+<strong>Create a MongoDB Atlas account</strong>
 
 - <a href='https://account.mongodb.com/account/register' target='_blank' rel='no-follow'>Go here</a> to sign up for a new MongoDB Atlas account.
 - Fill the registration form with your information and click **Sign up**.
 
-## Create a new cluster
+<strong>Create a new cluster</strong>
 
 - On the next page, fill in your organization's name, project's name, select JavaScript as your preferred programming language, and click the green **Continue** button.
 - Click the **Create a cluster** button under Shared Clusters. This should be the only free option.
@@ -37,7 +37,7 @@ In this tutorial, you will:
 - Click the green **Create Cluster** button at the bottom of the screen.
 - You should now see the message `Your cluster is being created - New clusters take between 1-3 minutes to provision.` Wait until the cluster is created before going to the next step.
 
-## Create a new user for the database
+<strong>Create a new user for the database</strong>
 
 - On the left side of screen, click on **Database Access**.
 - Click the green **Add New Database User** button.
@@ -45,14 +45,14 @@ In this tutorial, you will:
 - Under **Database User Privileges**, leave this as the default option, **Read and write to any database**.
 - Click the **Add User** button to create your new user.
 
-## Allow access from all IP addresses
+<strong>Allow access from all IP addresses</strong>
 
 - On the left side of the screen, click on **Network Access**.
 - Click the green **Add IP Address** button.
 - In the modal, click the **ALLOW ACCESS FROM ANYWHERE** button. You should see `0.0.0.0/0` in the Access List Entry entry field.
 - Click the green **Confirm** button.
 
-## Connect to your cluster
+<strong>Connect to your cluster</strong>
 
 - Clicking on the green **Get Started** button in the bottom left of your screen should now show you the final step, **Connect to your cluster**, click on it.
 
