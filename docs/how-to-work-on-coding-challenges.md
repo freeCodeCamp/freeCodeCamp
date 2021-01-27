@@ -471,7 +471,7 @@ You are also able to test one challenge individually by performing the following
    cd curriculum
    ```
 
-2. Run the following for each challenge file for which you have changed (replacing `title` with the full English title of the challenge):
+2. Run the following for each challenge file for which you have changed (replacing `title` with the full title of the challenge):
 
    ```
    npm run test -- -g 'title'
