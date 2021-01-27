@@ -55,6 +55,7 @@ describe('Navbar', () => {
     'Should have `Radio`, `Forum`, and `Curriculum` links on landing and learn pages' +
       'page when not signed in',
     () => {
+      cy.wait(150);
       cy.get(selectors.menuButton).click();
       cy.get(selectors.navigationLinks).contains('Forum');
       cy.get(selectors.navigationLinks)
@@ -72,6 +73,7 @@ describe('Navbar', () => {
       'page when not signed in',
     () => {
       cy.contains(selectors.smallCallToAction, 'Sign in');
+      cy.wait(150);
       cy.get(selectors.menuButton).click();
       cy.get(selectors.navigationLinks)
         .contains('Curriculum')
@@ -81,9 +83,9 @@ describe('Navbar', () => {
   );
 
   it('Should have `Profile` link when user is signed in', () => {
-    cy.login()
-      .get(selectors.menuButton)
-      .click();
+    cy.login();
+    cy.wait(150);
+    cy.get(selectors.menuButton).click();
     cy.get(selectors.navigationLinks)
       .contains('Profile')
       .click();
@@ -91,9 +93,9 @@ describe('Navbar', () => {
   });
 
   it('Should have a profile image with class `default-border`', () => {
-    cy.login()
-      .get(selectors.avatarContainer)
-      .should('have.class', 'default-border');
+    cy.login();
+    cy.wait(150);
+    cy.get(selectors.avatarContainer).should('have.class', 'default-border');
     cy.get(selectors.defaultAvatar).should('exist');
   });
 });
