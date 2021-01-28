@@ -45,12 +45,16 @@ export class NavLinks extends Component {
     const {
       displayMenu,
       i18n,
+      fetchState,
       t,
       toggleNightMode,
       user: { isDonating = false, username, theme }
     } = this.props;
 
-    return (
+    const { pending } = fetchState;
+    return pending ? (
+      <div className='nav-skeleton' />
+    ) : (
       <div className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
         {isDonating ? (
           <div className='nav-link nav-link-header' key='donate'>
