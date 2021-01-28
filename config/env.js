@@ -24,13 +24,11 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   PAYPAL_CLIENT_ID: paypalClientId,
   DEPLOYMENT_ENV: deploymentEnv,
-  SHOW_UPCOMING_CHANGES: showUpcomingChanges,
-  CHINESE_HOME: chineseHome
+  SHOW_UPCOMING_CHANGES: showUpcomingChanges
 } = process.env;
 
 const locations = {
   homeLocation,
-  chineseHome: !chineseHome ? 'https://chinese.freecodecamp.org' : chineseHome,
   apiLocation,
   forumLocation,
   newsLocation,
