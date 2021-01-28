@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-
-import { Link, SkeletonSprite } from '../../helpers';
+import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import {
   clientLocale,
@@ -44,20 +43,13 @@ export class NavLinks extends Component {
   render() {
     const {
       displayMenu,
-      fetchState,
       i18n,
       t,
       toggleNightMode,
       user: { isDonating = false, username, theme }
     } = this.props;
 
-    const { pending } = fetchState;
-
-    return pending ? (
-      <div className='nav-skeleton'>
-        <SkeletonSprite />
-      </div>
-    ) : (
+    return (
       <div className='main-nav-group'>
         <ul className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
           <li key='donate'>

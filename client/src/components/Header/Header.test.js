@@ -15,7 +15,10 @@ describe('<UniversalNav />', () => {
     menuButtonRef: {},
     searchBarRef: {},
     toggleDisplayMenu: function() {},
-    pathName: '/'
+    pathName: '/',
+    fetchState: {
+      pending: false
+    }
   };
   it('renders to the DOM', () => {
     const shallow = new ShallowRenderer();
