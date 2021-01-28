@@ -13,32 +13,6 @@ exports[`<Footer /> matches snapshot 1`] = `
       <div
         className="footer-desc-col"
       >
-        <div
-          className="language-menu"
-        >
-          <label>
-            footer.language
-            <select
-              onChange={[Function]}
-            >
-              <option
-                value="english"
-              >
-                English
-              </option>
-              <option
-                value="espanol"
-              >
-                Español
-              </option>
-              <option
-                value="chinese"
-              >
-                中文
-              </option>
-            </select>
-          </label>
-        </div>
         <p>
           footer.tax-exempt-status
         </p>
