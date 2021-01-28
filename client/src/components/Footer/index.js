@@ -42,6 +42,9 @@ function Footer() {
             <div className='col-header'>{t('footer.trending-guides')}</div>
             <div className='trending-guides-row'>
               <div className='footer-col footer-col-1'>
+                <Link external={false} to={t('trending:article0link')}>
+                  {t('trending:article0title')}
+                </Link>
                 <Link external={false} to={t('trending:article1link')}>
                   {t('trending:article1title')}
                 </Link>
@@ -69,11 +72,11 @@ function Footer() {
                 <Link external={false} to={t('trending:article9link')}>
                   {t('trending:article9title')}
                 </Link>
+              </div>
+              <div className='footer-col footer-col-2'>
                 <Link external={false} to={t('trending:article10link')}>
                   {t('trending:article10title')}
                 </Link>
-              </div>
-              <div className='footer-col footer-col-2'>
                 <Link external={false} to={t('trending:article11link')}>
                   {t('trending:article11title')}
                 </Link>
@@ -101,12 +104,12 @@ function Footer() {
                 <Link external={false} to={t('trending:article19link')}>
                   {t('trending:article19title')}
                 </Link>
-                <Link external={false} to={t('trending:article20link')}>
-                  {t('trending:article20title')}
-                </Link>
               </div>
               <div className='footer-col footer-col-3'>
                 <div className='footer-left'>
+                  <Link external={false} to={t('trending:article20link')}>
+                    {t('trending:article20title')}
+                  </Link>
                   <Link external={false} to={t('trending:article21link')}>
                     {t('trending:article21title')}
                   </Link>
@@ -119,12 +122,12 @@ function Footer() {
                   <Link external={false} to={t('trending:article24link')}>
                     {t('trending:article24title')}
                   </Link>
-                  <Link external={false} to={t('trending:article25link')}>
-                    {t('trending:article25title')}
-                  </Link>
                 </div>
 
                 <div className='footer-right'>
+                  <Link external={false} to={t('trending:article25link')}>
+                    {t('trending:article25title')}
+                  </Link>
                   <Link external={false} to={t('trending:article26link')}>
                     {t('trending:article26title')}
                   </Link>
@@ -136,9 +139,6 @@ function Footer() {
                   </Link>
                   <Link external={false} to={t('trending:article29link')}>
                     {t('trending:article29title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article30link')}>
-                    {t('trending:article30title')}
                   </Link>
                 </div>
               </div>

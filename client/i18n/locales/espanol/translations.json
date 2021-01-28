@@ -379,6 +379,8 @@
     "heres-a-quote": "No pudimos encontrar lo que estabas buscando, pero aquí hay una cita:"
   },
   "search": {
+    "index-name": "news-es",
+    "search-page-url": "https://www.freecodecamp.org/espanol/news/search/?query={{searchQuery}}",
     "label": "Buscar",
     "placeholder": "Buscar tutorial",
     "see-results": "Ver todos los resultados de {{searchQuery}}",

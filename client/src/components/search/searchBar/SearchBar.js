@@ -93,7 +93,7 @@ export class SearchBar extends Component {
 
   handleSearch(e, query) {
     e.preventDefault();
-    const { toggleSearchDropdown, updateSearchQuery } = this.props;
+    const { toggleSearchDropdown, updateSearchQuery, t } = this.props;
     const { index, hits } = this.state;
     const selectedHit = hits[index];
 
@@ -116,9 +116,9 @@ export class SearchBar extends Component {
     // are hits besides the footer
     return query && hits.length > 1
       ? window.location.assign(
-          `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
-            query
-          )}`
+          t('search.search-page-url', {
+            searchQuery: encodeURIComponent(query)
+          })
         )
       : false;
   }
