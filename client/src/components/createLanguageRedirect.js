@@ -1,10 +1,23 @@
-import { homeLocation, chineseHome } from '../../../config/env.json';
+const createLanguageRedirect = ({ clientLocale, lang }) => {
+  // return early if requesting the same page
+  if (clientLocale === lang) return `${window?.location}`;
 
-const createLanguageRedirect = lang => {
-  const path = window.location.pathname;
-  if (lang === 'chinese') return `${chineseHome}${path}`;
-  if (lang === 'english') return `${homeLocation}${path}`;
-  return `${homeLocation}/${lang}${path}`;
+  let path = window?.location?.pathname?.split('/');
+  path = path
+    .filter(item => (item !== clientLocale && item !== lang ? item : ''))
+    .join('/');
+
+  const domain = window?.location?.host
+    .split('.')
+    .slice(1)
+    .join('.');
+  const nextClient = lang !== 'chinese' ? 'www' : 'chinese';
+  const nextLocation = `${window?.location?.protocol}//${nextClient}.${domain}`;
+
+  if (lang === 'english' || lang === 'chinese')
+    return `${nextLocation}/${path}`;
+
+  return `${nextLocation}/${lang}/${path}`;
 };
 
 export default createLanguageRedirect;

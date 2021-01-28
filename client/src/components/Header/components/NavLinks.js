@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+
 import { Link, SkeletonSprite } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import {
+  clientLocale,
   forumLocation,
   radioLocation,
   newsLocation
@@ -132,7 +134,12 @@ export class NavLinks extends Component {
             <li key={'lang-' + lang}>
               <Link
                 className='nav-link sub-link'
-                to={createLanguageRedirect(lang)}
+                // Todo: should treat other lang client application links as external??
+                external={true}
+                to={createLanguageRedirect({
+                  clientLocale,
+                  lang
+                })}
               >
                 {langDisplayNames[lang]}
                 {i18n.language === i18nextCodes[lang] ? ' ✓' : ''}

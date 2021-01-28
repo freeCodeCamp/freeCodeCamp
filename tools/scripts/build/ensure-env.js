@@ -32,7 +32,6 @@ function checkCurriculumLocale() {
 if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
     'homeLocation',
-    'chineseHome',
     'apiLocation',
     'forumLocation',
     'newsLocation',
