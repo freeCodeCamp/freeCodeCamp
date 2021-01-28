@@ -190,6 +190,9 @@ export class SuperBlockIntroductionPage extends Component {
                       )}
                       superBlockDashedName={superBlockDashedName}
                     />
+                    {blockDashedName !== 'project-euler' ? (
+                      <Spacer size={2} />
+                    ) : null}
                   </div>
                 ))}
                 {superBlock !== 'Coding Interview Prep' && (

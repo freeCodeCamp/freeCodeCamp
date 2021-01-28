@@ -51,7 +51,7 @@
 
 button.map-title {
   cursor: pointer;
-  padding: 18px 8px;
+  padding: 18px 15px;
 }
 
 .map-title:hover {
@@ -77,7 +77,7 @@ button.map-title {
   display: flex;
   align-items: center;
   padding: 18px 8px;
-  background: transparent;
+  background: var(--secondary-background);
   border: none;
   text-align: left;
   width: 100%;
@@ -94,6 +94,18 @@ button.map-title {
 .block .map-is-cert:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
+}
+
+.block-ui .block {
+  background: var(--primary-background);
+}
+
+.block-ui .block .big-block-title {
+  padding: 25px 15px 10px;
+}
+.block-ui .block .block-description {
+  padding: 0 15px 15px;
+  border-bottom: 3px solid var(--secondary-background);
 }
 
 .map-cert-title > h3 {
@@ -134,8 +146,12 @@ button.map-title {
   stroke: var(--color-quaternary);
 }
 
-.open > .map-title svg:first-child {
+.map-title svg:first-child {
   transform: rotate(90deg);
+}
+
+.open > .map-title svg:first-child {
+  transform: rotate(-90deg);
 }
 
 .map-challenges-ul {
@@ -151,7 +167,7 @@ button.map-title {
 
 .map-challenge-title a {
   width: 100%;
-  padding: 10px 20px 10px 30px;
+  padding: 10px 15px;
 }
 
 .block-description {

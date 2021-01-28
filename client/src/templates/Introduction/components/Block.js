@@ -11,7 +11,6 @@ import Challenges from './Challenges';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { Spacer } from '../../../components/helpers';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -166,7 +165,6 @@ export class Block extends Component {
             isProjectBlock={isProjectBlock}
           />
         )}
-        {blockDashedName !== 'project-euler' ? <Spacer size={2} /> : null}
       </div>
     );
   }
