@@ -77,6 +77,13 @@ exports[`<Footer /> matches snapshot 1`] = `
             className="footer-col footer-col-1"
           >
             <a
+              href="trending:article0link"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              trending:article0title
+            </a>
+            <a
               href="trending:article1link"
               rel="noopener noreferrer"
               target="_blank"
@@ -139,6 +146,10 @@ exports[`<Footer /> matches snapshot 1`] = `
             >
               trending:article9title
             </a>
+          </div>
+          <div
+            className="footer-col footer-col-2"
+          >
             <a
               href="trending:article10link"
               rel="noopener noreferrer"
@@ -146,10 +157,6 @@ exports[`<Footer /> matches snapshot 1`] = `
             >
               trending:article10title
             </a>
-          </div>
-          <div
-            className="footer-col footer-col-2"
-          >
             <a
               href="trending:article11link"
               rel="noopener noreferrer"
@@ -213,13 +220,6 @@ exports[`<Footer /> matches snapshot 1`] = `
             >
               trending:article19title
             </a>
-            <a
-              href="trending:article20link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              trending:article20title
-            </a>
           </div>
           <div
             className="footer-col footer-col-3"
@@ -227,6 +227,13 @@ exports[`<Footer /> matches snapshot 1`] = `
             <div
               className="footer-left"
             >
+              <a
+                href="trending:article20link"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                trending:article20title
+              </a>
               <a
                 href="trending:article21link"
                 rel="noopener noreferrer"
@@ -255,6 +262,10 @@ exports[`<Footer /> matches snapshot 1`] = `
               >
                 trending:article24title
               </a>
+            </div>
+            <div
+              className="footer-right"
+            >
               <a
                 href="trending:article25link"
                 rel="noopener noreferrer"
@@ -262,10 +273,6 @@ exports[`<Footer /> matches snapshot 1`] = `
               >
                 trending:article25title
               </a>
-            </div>
-            <div
-              className="footer-right"
-            >
               <a
                 href="trending:article26link"
                 rel="noopener noreferrer"
@@ -293,13 +300,6 @@ exports[`<Footer /> matches snapshot 1`] = `
                 target="_blank"
               >
                 trending:article29title
-              </a>
-              <a
-                href="trending:article30link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                trending:article30title
               </a>
             </div>
           </div>
