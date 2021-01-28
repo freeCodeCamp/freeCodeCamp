@@ -49,7 +49,7 @@ export class NavLinks extends Component {
       toggleNightMode,
       user: { isDonating = false, username, theme }
     } = this.props;
-    console.log(this.props);
+
     const { pending } = fetchState;
 
     return pending ? (

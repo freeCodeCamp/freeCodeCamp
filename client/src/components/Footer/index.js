@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import Link from '../helpers/Link';
-import LanguageMenu from './LanguageMenu';
 import './footer.css';
-
-const { showLocaleDropdownMenu = false } = require('../../../config/env');
 
 const propTypes = {
   children: PropTypes.any
@@ -26,7 +23,6 @@ function Footer() {
       <div className='footer-container'>
         <div className='footer-top'>
           <div className='footer-desc-col'>
-            {showLocaleDropdownMenu ? <LanguageMenu /> : null}
             <p>{t('footer.tax-exempt-status')}</p>
             <p>{t('footer.mission-statement')}</p>
             <p>{t('footer.donation-initiatives')}</p>
