@@ -66,6 +66,7 @@
   text-decoration: none;
   background-color: var(--theme-color);
 }
+
 #universal-nav-logo:focus {
   background-color: inherit;
 }
@@ -90,19 +91,14 @@
   margin: 0 0 0 -12px;
   padding: 0;
   list-style: none;
-  max-width: 300px;
-}
-
-.nav-list li {
-  display: block;
-  margin: 0;
-  padding: 0;
+  max-width: 250px;
 }
 
 .nav-link {
+  margin: 0;
+  padding: 0 15px;
   display: flex;
   align-items: center;
-  padding: 2px 15px 0 25px;
   color: var(--gray-00);
   background-color: var(--gray-90);
   opacity: 1;
@@ -113,42 +109,30 @@
   border: none;
 }
 
-.nav-list span.nav-link {
-  padding: 2px 15px 0 15px;
-  background-color: var(--gray-75);
-}
-
-.nav-list a.nav-link:hover,
+.nav-link:hover,
+.nav-link:active,
 .nav-list button.nav-link:hover {
   color: var(--theme-color);
   text-decoration: none;
   background: white;
+  cursor: pointer;
 }
 
-.nav-list button:disabled {
-  background-color: var(--gray-75);
+.nav-link-header,
+.nav-link-header:hover,
+.nav-link-header:active {
+  color: var(--gray-00);
+  background-color: var(--gray-85);
+  cursor: default;
 }
 
-.nav-list button:disabled:hover {
-  color: white;
-  background-color: var(--gray-75);
+.nav-link-lang {
+  padding-left: 30px;
 }
 
-.nav-list li a.nav-link:focus {
-  background: var(--theme-color);
-  color: white;
-}
-
-.nav-list li a.nav-link:focus:hover {
-  color: var(--theme-color);
-  background: white;
-}
-
-.nav-list a.btn-cta {
-  padding: 0 20px;
-  height: 30px;
-  margin-left: 19px;
-  margin-right: 15px;
+.nav-link-flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-skeleton {

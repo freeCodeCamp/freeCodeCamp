@@ -36,7 +36,6 @@ const mapDispatchToProps = {
 
 export class NavLinks extends Component {
   toggleTheme(currentTheme = 'default', toggleNightMode) {
-    console.log('attempting to toggle night mode');
     toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
   }
 
@@ -50,106 +49,104 @@ export class NavLinks extends Component {
     } = this.props;
 
     return (
-      <div className='main-nav-group'>
-        <ul className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
-          <li key='donate'>
-            {isDonating ? (
-              <span className='nav-link'>{t('donate.thanks')}</span>
-            ) : (
-              <Link
-                className='nav-link'
-                external={true}
-                sameTab={false}
-                to='/donate'
-              >
-                {t('buttons.donate')}
-              </Link>
-            )}
-          </li>
-          <li key='forum'>
-            <Link
-              className='nav-link'
-              external={true}
-              sameTab={false}
-              to={forumLocation}
-            >
-              {t('buttons.forum')}
-            </Link>
-          </li>
-          <li key='news'>
-            <Link
-              className='nav-link'
-              external={true}
-              sameTab={false}
-              to={newsLocation}
-            >
-              {t('buttons.news')}
-            </Link>
-          </li>
-          <li key='learn'>
-            <Link className='nav-link' to='/learn'>
-              {t('buttons.curriculum')}
-            </Link>
-          </li>
+      <div className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
+        {isDonating ? (
+          <div className='nav-link nav-link-header' key='donate'>
+            {t('donate.thanks')}
+          </div>
+        ) : (
+          <Link
+            className='nav-link'
+            external={true}
+            key='donate'
+            sameTab={false}
+            to='/donate'
+          >
+            {t('buttons.donate')}
+          </Link>
+        )}
+        <Link
+          className='nav-link'
+          external={true}
+          key='forum'
+          sameTab={false}
+          to={forumLocation}
+        >
+          {t('buttons.forum')}
+        </Link>
+        <Link
+          className='nav-link'
+          external={true}
+          key='news'
+          sameTab={false}
+          to={newsLocation}
+        >
+          {t('buttons.news')}
+        </Link>
+        <Link className='nav-link' key='learn' to='/learn'>
+          {t('buttons.curriculum')}
+        </Link>
+        {username ? (
+          <Link
+            className='nav-link'
+            key='profile'
+            sameTab={false}
+            to={`/${username}`}
+          >
+            {t('buttons.profile')}
+          </Link>
+        ) : (
+          <Link
+            className='nav-link'
+            key='signin'
+            sameTab={true}
+            to={`${apiLocation}/signin`}
+          >
+            {t('buttons.sign-in')}
+          </Link>
+        )}
+        <Link
+          className='nav-link'
+          external={true}
+          key='radio'
+          sameTab={false}
+          to={radioLocation}
+        >
+          {t('buttons.radio')}
+        </Link>
+        <button
+          className='nav-link nav-link-flex'
+          disabled={!username}
+          key='theme'
+          onClick={() => this.toggleTheme(theme, toggleNightMode)}
+        >
           {username ? (
-            <li key='profile'>
-              <Link className='nav-link' sameTab={false} to={`/${username}`}>
-                {t('buttons.profile')}
-              </Link>
-            </li>
+            <>
+              <span>{t('settings.labels.night-mode')}</span>
+              <span>{theme === 'night' ? '[✓]' : '[ ]'}</span>
+            </>
           ) : (
-            <li key='signin'>
-              <Link
-                className='nav-link'
-                sameTab={true}
-                to={`${apiLocation}/signin`}
-              >
-                {t('buttons.sign-in')}
-              </Link>
-            </li>
+            <span>Sign in to change theme</span>
           )}
-          <li key='radio'>
-            <Link
-              className='nav-link'
-              external={true}
-              sameTab={false}
-              to={radioLocation}
-            >
-              {t('buttons.radio')}
-            </Link>
-          </li>
-          <li key='theme'>
-            <button
-              className='nav-link'
-              disabled={!username}
-              onClick={() => this.toggleTheme(theme, toggleNightMode)}
-            >
-              {username
-                ? t('settings.labels.night-mode') +
-                  (theme === 'night' ? ' ✓' : '')
-                : 'Sign in to change theme'}
-            </button>
-          </li>
-          <li key='lang-header'>
-            <span className='nav-link'>{t('footer.language')}</span>
-          </li>
-          {locales.map(lang => (
-            <li key={'lang-' + lang}>
-              <Link
-                className='nav-link sub-link'
-                // Todo: should treat other lang client application links as external??
-                external={true}
-                to={createLanguageRedirect({
-                  clientLocale,
-                  lang
-                })}
-              >
-                {langDisplayNames[lang]}
-                {i18n.language === i18nextCodes[lang] ? ' ✓' : ''}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        </button>
+        <div className='nav-link nav-link-header' key='lang-header'>
+          {t('footer.language')}
+        </div>
+        {locales.map(lang => (
+          <Link
+            className='nav-link nav-link-lang nav-link-flex'
+            external={true}
+            // Todo: should treat other lang client application links as external??
+            key={'lang-' + lang}
+            to={createLanguageRedirect({
+              clientLocale,
+              lang
+            })}
+          >
+            <span>{langDisplayNames[lang]}</span>
+            <span>{i18n.language === i18nextCodes[lang] ? ' ✓' : 'O'}</span>
+          </Link>
+        ))}
       </div>
     );
   }
