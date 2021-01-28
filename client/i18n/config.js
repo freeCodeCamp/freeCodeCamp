@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const { environment, clientLocale } = require('../config/env');
+const { clientLocale } = require('../config/env');
 const { i18nextCodes } = require('./allLangs');
 
 const i18nextCode = i18nextCodes[clientLocale];
@@ -20,7 +20,8 @@ i18n.use(initReactI18next).init({
   ns: ['translations', 'trending', 'intro'],
   defaultNS: 'translations',
   returnObjects: true,
-  debug: environment === 'development',
+  // Uncomment the next line for debug logging
+  // debug: true,
   interpolation: {
     escapeValue: false
   },
