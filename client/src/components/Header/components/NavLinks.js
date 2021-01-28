@@ -47,9 +47,9 @@ export class NavLinks extends Component {
       i18n,
       t,
       toggleNightMode,
-      user: { isUserDonating = false, username, theme }
+      user: { isDonating = false, username, theme }
     } = this.props;
-
+    console.log(this.props);
     const { pending } = fetchState;
 
     return pending ? (
@@ -60,7 +60,7 @@ export class NavLinks extends Component {
       <div className='main-nav-group'>
         <ul className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
           <li key='donate'>
-            {isUserDonating ? (
+            {isDonating ? (
               <span className='nav-link'>{t('donate.thanks')}</span>
             ) : (
               <Link
