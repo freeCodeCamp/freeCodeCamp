@@ -30,11 +30,13 @@ const {
 
 const locations = {
   homeLocation,
+  chineseHome: !chineseHome ? 'https://chinese.freecodecamp.org' : chineseHome,
   apiLocation,
   forumLocation,
   newsLocation,
-  radioLocation,
-  chineseHome
+  radioLocation: !radioLocation
+    ? 'https://coderadio.freecodecamp.org'
+    : radioLocation
 };
 
 module.exports = Object.assign(locations, {
