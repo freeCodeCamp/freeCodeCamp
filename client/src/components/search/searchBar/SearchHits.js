@@ -25,9 +25,9 @@ const CustomHits = connectHits(
         query: searchQuery,
         url: noHits
           ? null
-          : `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
-              searchQuery
-            )}`,
+          : t('search.search-page-url', {
+              searchQuery: encodeURIComponent(searchQuery)
+            }),
         title: t('search.see-results', { searchQuery: searchQuery }),
         _highlightResult: {
           query: {
