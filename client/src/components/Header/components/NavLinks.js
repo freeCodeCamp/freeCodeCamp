@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import {
@@ -106,13 +108,14 @@ export class NavLinks extends Component {
           </Link>
         )}
         <Link
-          className='nav-link'
+          className='nav-link nav-link-flex'
           external={true}
           key='radio'
           sameTab={false}
           to={radioLocation}
         >
-          {t('buttons.radio')}
+          <span>{t('buttons.radio')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
         <button
           className='nav-link nav-link-flex'

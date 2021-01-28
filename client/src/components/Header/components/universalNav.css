@@ -96,7 +96,7 @@
 
 .nav-link {
   margin: 0;
-  padding: 0 15px;
+  padding: 2px 15px 0 15px;
   display: flex;
   align-items: center;
   color: var(--gray-00);
