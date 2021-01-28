@@ -98,7 +98,7 @@ const translationsSchema = {
     'ask-later': 'Ask me later'
   },
   landing: {
-    'big-heading-1': 'Learn to code at home.',
+    'big-heading-1': 'Learn to code — for free.',
     'big-heading-2': 'Build projects.',
     'big-heading-3': 'Earn certifications.',
     'h2-heading':
@@ -449,8 +449,11 @@ const translationsSchema = {
       "We couldn't find what you were looking for, but here is a quote:"
   },
   search: {
+    'index-name': 'news',
+    'search-page-url':
+      'https://www.freecodecamp.org/news/search/?query={{searchQuery}}',
     label: 'Search',
-    placeholder: 'Search 6,000+ tutorial',
+    placeholder: 'Search 6,000+ tutorials',
     'see-results': 'See all results for {{searchQuery}}',
     'no-tutorials': 'No tutorials found',
     try: 'Looking for something? Try the search bar on this page.',
