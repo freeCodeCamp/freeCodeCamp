@@ -26,13 +26,13 @@ describe('<UniversalNav />', () => {
 });
 
 describe('<NavLinks />', () => {
-  it('has expected navigation links', () => {
+  it('has expected navigation links when not signed in', () => {
     const landingPageProps = {
       fetchState: {
         pending: false
       },
       user: {
-        isUserDonating: false,
+        isDonating: false,
         username: '',
         theme: 'default'
       },
@@ -49,7 +49,64 @@ describe('<NavLinks />', () => {
         hasForumNavItem(result) &&
         hasCurriculumNavItem(result) &&
         hasNewsNavItem(result) &&
-        hasDonateNavItem(result)
+        hasDonateNavItem(result) &&
+        hasSignInNavItem(result)
+    ).toBeTruthy();
+  });
+
+  it('has expected navigation links when signed in', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: false,
+        username: 'nhcarrigan',
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      toggleNightMode: theme => theme
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<NavLinks {...landingPageProps} />);
+    const result = shallow.getRenderOutput();
+    expect(
+      hasRadioNavItem(result) &&
+        hasForumNavItem(result) &&
+        hasCurriculumNavItem(result) &&
+        hasNewsNavItem(result) &&
+        hasDonateNavItem(result) &&
+        hasProfileNavItem(result, landingPageProps.user.username)
+    ).toBeTruthy();
+  });
+
+  it('has expected navigation links when signed in and donating', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: true,
+        username: 'moT01',
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      toggleNightMode: theme => theme
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<NavLinks {...landingPageProps} />);
+    const result = shallow.getRenderOutput();
+    expect(
+      hasRadioNavItem(result) &&
+        hasForumNavItem(result) &&
+        hasCurriculumNavItem(result) &&
+        hasNewsNavItem(result) &&
+        hasThanksForDonating(result) &&
+        hasProfileNavItem(result, landingPageProps.user.username)
     ).toBeTruthy();
   });
 });
@@ -135,6 +192,11 @@ const hasDonateNavItem = component => {
   return children === 'buttons.donate' && to === '/donate';
 };
 
+const hasThanksForDonating = component => {
+  const { children } = navigationLinks(component, 0);
+  return children === 'donate.thanks';
+};
+
 const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 1);
   return (
@@ -152,6 +214,16 @@ const hasNewsNavItem = component => {
 const hasCurriculumNavItem = component => {
   const { children, to } = navigationLinks(component, 3);
   return children === 'buttons.curriculum' && to === '/learn';
+};
+
+const hasProfileNavItem = (component, username) => {
+  const { children, to } = navigationLinks(component, 4);
+  return children === 'buttons.profile' && to === `/${username}`;
+};
+
+const hasSignInNavItem = component => {
+  const { children } = navigationLinks(component, 4);
+  return children === 'buttons.sign-in';
 };
 
 const hasRadioNavItem = component => {

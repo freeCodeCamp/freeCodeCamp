@@ -9,7 +9,8 @@ import {
   clientLocale,
   forumLocation,
   radioLocation,
-  newsLocation
+  newsLocation,
+  apiLocation
 } from '../../../../../config/env.json';
 import createLanguageRedirect from '../../createLanguageRedirect';
 
@@ -98,10 +99,20 @@ export class NavLinks extends Component {
               {t('buttons.curriculum')}
             </Link>
           </li>
-          {username && (
+          {username ? (
             <li key='profile'>
-              <Link className='nav-link' to={`/${username}`}>
+              <Link className='nav-link' sameTab={false} to={`/${username}`}>
                 {t('buttons.profile')}
+              </Link>
+            </li>
+          ) : (
+            <li key='signin'>
+              <Link
+                className='nav-link'
+                sameTab={true}
+                to={`${apiLocation}/signin`}
+              >
+                {t('buttons.sign-in')}
               </Link>
             </li>
           )}

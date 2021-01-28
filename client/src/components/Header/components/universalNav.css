@@ -306,7 +306,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .universal-nav {
     padding: 0 5px;
   }
@@ -325,4 +325,22 @@
   max-height: calc(var(--header-height) - 6px);
   padding: 0 4px;
   margin-left: 2px;
+}
+
+@media (max-width: 365px) {
+  .navatar .signup-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 250px) {
+  .navatar {
+    display: none;
+  }
+}
+
+@media (max-width: 200px) {
+  .universal-nav-middle {
+    display: none;
+  }
 }
