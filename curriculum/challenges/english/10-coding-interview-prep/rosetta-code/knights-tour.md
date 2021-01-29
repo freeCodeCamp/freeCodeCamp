@@ -72,83 +72,149 @@ function knightTour(w, h) {
 
 ```js
 function knightTour(w, h) {
-  var b,
-    cnt = 0;
-
-  var dx = [-2, -2, -1, 1, 2, 2, 1, -1];
-  var dy = [-1, 1, 2, 2, 1, -1, -2, -2];
-
-  function init_board() {
-    var i, j, k, x, y;
-    // * b is board; a is board with 2 rows padded at each side
-
-    for (i = 0; i < h; i++) {
-      for (j = 0; j < w; j++) {
-        b[i][j] = 255;
-      }
+  function createBoards(rows, columns) {
+    const board = [];
+    const visited = [];
+    for (let i = 0; i < rows; i++) {
+      board.push(new Array(columns).fill(-1));
+      visited.push(new Array(columns).fill(false));
     }
+    fillAllowedMovesCounts(board, visited);
+    return [board, visited];
+  }
 
-    for (i = 0; i < h; i++) {
-      for (j = 0; j < w; j++) {
-        for (k = 0; k < 8; k++) {
-          (x = j + dx[k]), (y = i + dy[k]);
-          if (b[i][j] == 255) b[i][j] = 0;
-          if (x >= 0 && x < w && y >= 0 && y < h) b[i][j]++;
+  function copyBoard(board) {
+    const copied = [];
+    for (let i = 0; i < board.length; i++) {
+      copied.push([...board[i]]);
+    }
+    return copied;
+  }
+
+  function isOnBoard(value, limit) {
+    return value >= 0 && value < limit;
+  }
+
+  function markVisited(board, visited, row, column) {
+    visited[row][column] = true;
+    board[row][column] = -1;
+    fillAllowedMovesCounts(board, visited);
+  }
+
+  function areAllVisited(visited) {
+    return (
+      visited.filter(row => row.filter(column => column === false).length !== 0)
+        .length === 0
+    );
+  }
+
+  function getAllowedMoves(board, row, column, visited) {
+    const allowed = [];
+    for (let i = 0; i < moves.length; i++) {
+      const [rowChange, colChange] = moves[i];
+      const [rowN, colN] = [row + rowChange, column + colChange];
+      if (!isOnBoard(rowN, board.length) ||
+          !isOnBoard(colN, board[0].length) ||
+          visited[rowN][colN]) {
+        continue;
+      }
+      allowed.push([rowN, colN]);
+    }
+    return allowed;
+  }
+
+  function fillAllowedMovesCounts(board, visited) {
+    for (let row = 0; row < board.length; row++) {
+      for (let column = 0; column < board[0].length; column++) {
+        if (!visited[row][column]) {
+          board[row][column] = getAllowedMoves(
+            board,
+            row,
+            column,
+            visited
+          ).length;
         }
       }
     }
   }
 
-  function walk_board(x, y) {
-    var i, nx, ny, least;
-    var steps = 0;
-    // printf(E"H"E"J"E"%d;%dH"E"32m[]"E"m", y + 1, 1 + 2 * x);
-
-    while (1) {
-      // * occupy cell
-      b[y][x] = 255;
-
-      // * reduce all neighbors' neighbor count
-      for (i = 0; i < 8; i++)
-        if (y + dy[i] >= 0 && x + dx[i] >= 0 && y + dy[i] < h && x + dx[i] < w)
-          b[y + dy[i]][x + dx[i]]--;
-
-      // find neighbor with lowest neighbor count
-      least = 255;
-      for (i = 0; i < 8; i++) {
-        if (y + dy[i] >= 0 && x + dx[i] >= 0 && y + dy[i] < h && x + dx[i] < w)
-          if (b[y + dy[i]][x + dx[i]] < least) {
-            nx = x + dx[i];
-            ny = y + dy[i];
-            least = b[ny][nx];
-          }
+  function getBestNextMoves(board, allowedMoves) {
+    let bestMoves = [];
+    let fewestNextMoves = Infinity;
+    let zeroMove = [];
+    for (let i = 0; i < allowedMoves.length; i++) {
+      const [moveRow, moveCol] = allowedMoves[i];
+      const numMoves = board[moveRow][moveCol];
+      if (numMoves === -1) {
+        continue;
       }
-
-      if (least > 7) {
-        return steps == w * h - 1;
+      if (numMoves === 0) {
+        zeroMove.push(allowedMoves[i]);
       }
-
-      steps++;
-      (x = nx), (y = ny);
+      if (numMoves < fewestNextMoves) {
+        bestMoves = [allowedMoves[i]];
+        fewestNextMoves = numMoves;
+      } else if (numMoves === fewestNextMoves) {
+        bestMoves.push(allowedMoves[i]);
+      }
     }
+
+    if (bestMoves.length > 0) {
+      return bestMoves;
+    }
+    return zeroMove;
   }
 
-  function solve(x, y) {
-    b = new Array(h);
-    for (var i = 0; i < h; i++) b[i] = new Array(w);
-
-    init_board();
-    if (walk_board(x, y)) {
-      cnt++;
+  function solve(board, visited, lastRow, lastColumn) {
+    const allowedMoves = getAllowedMoves(board, lastRow, lastColumn, visited);
+    if (allowedMoves.length === 0) {
+      return areAllVisited(visited);
     }
+
+    const bestMoves = getBestNextMoves(board, allowedMoves);
+    const restMoves = allowedMoves.filter(move => bestMoves.indexOf(move) === -1);
+    const possibleMoves = [...bestMoves];
+    possibleMoves.push(...getBestNextMoves(board, restMoves));
+
+    for (let i = 0; i < possibleMoves.length; i++) {
+      const [moveRow, moveCol] = possibleMoves[i];
+      const newBoard = copyBoard(board);
+      const newVisited = copyBoard(visited);
+      markVisited(newBoard, newVisited, moveRow, moveCol);
+      if (solve(newBoard, newVisited, moveRow, moveCol)) {
+        return true;
+      }
+    }
+    return false;
   }
 
-  for (var i = 0; i < h; i++) {
-    for (var j = 0; j < w; j++) {
-      solve(j, i);
-    }
+  function solveStart(board, visited, startRow, startColumn) {
+    const newBoard = copyBoard(board);
+    const newVisited = copyBoard(visited);
+    markVisited(newBoard, newVisited, startRow, startColumn);
+    return solve(newBoard, newVisited, startRow, startColumn);
   }
 
-  return cnt;
+  const moves = [
+    [-1, -2],
+    [-2, -1],
+    [-2, 1],
+    [-1, 2],
+    [1, 2],
+    [2, 1],
+    [2, -1],
+    [1, -2]
+  ];
+
+  const [baseBoard, baseVisited] = createBoards(h, w);
+  let solvedCount = 0;
+  for (let row = 0; row < h; row++) {
+    for (let column = 0; column < w; column++) {
+      if (solveStart(baseBoard, baseVisited, row, column)) {
+        solvedCount++;
+      }
+    }
+  }
+  return solvedCount;
 }
 ```
