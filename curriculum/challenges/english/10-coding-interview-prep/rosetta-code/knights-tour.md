@@ -79,7 +79,6 @@ function knightTour(w, h) {
       board.push(new Array(columns).fill(-1));
       visited.push(new Array(columns).fill(false));
     }
-    fillAllowedMovesCounts(board, visited);
     return [board, visited];
   }
 
@@ -98,7 +97,6 @@ function knightTour(w, h) {
   function markVisited(board, visited, row, column) {
     visited[row][column] = true;
     board[row][column] = -1;
-    fillAllowedMovesCounts(board, visited);
   }
 
   function areAllVisited(visited) {
@@ -108,32 +106,32 @@ function knightTour(w, h) {
     );
   }
 
-  function getAllowedMoves(board, row, column, visited) {
-    const allowed = [];
+  function getMovesFrom(board, row, column) {
+    const possibleMoves = [];
     for (let i = 0; i < moves.length; i++) {
       const [rowChange, colChange] = moves[i];
       const [rowN, colN] = [row + rowChange, column + colChange];
-      if (!isOnBoard(rowN, board.length) ||
-          !isOnBoard(colN, board[0].length) ||
-          visited[rowN][colN]) {
+      if (!isOnBoard(rowN, board.length) || !isOnBoard(colN, board[0].length)) {
         continue;
       }
-      allowed.push([rowN, colN]);
+      possibleMoves.push([rowN, colN]);
     }
-    return allowed;
+    return possibleMoves;
   }
 
-  function fillAllowedMovesCounts(board, visited) {
+  function fillAllowedMovesCounts(board) {
     for (let row = 0; row < board.length; row++) {
       for (let column = 0; column < board[0].length; column++) {
-        if (!visited[row][column]) {
-          board[row][column] = getAllowedMoves(
-            board,
-            row,
-            column,
-            visited
-          ).length;
-        }
+        board[row][column] = getMovesFrom(board, row, column).length;
+      }
+    }
+  }
+
+  function updateAllowedMovesCounts(board, possibleMoves) {
+    for (let i = 0; i < possibleMoves.length; i++) {
+      const [row, column] = possibleMoves[i];
+      if (board[row][column] > 0) {
+        board[row][column]--;
       }
     }
   }
@@ -166,13 +164,19 @@ function knightTour(w, h) {
   }
 
   function solve(board, visited, lastRow, lastColumn) {
-    const allowedMoves = getAllowedMoves(board, lastRow, lastColumn, visited);
-    if (allowedMoves.length === 0) {
-      return areAllVisited(visited);
+    if (areAllVisited(visited)) {
+      return true;
     }
+    const nextMoves = getMovesFrom(board, lastRow, lastColumn);
+    updateAllowedMovesCounts(board, nextMoves);
+    const allowedMoves = nextMoves.filter(
+      ([row, column]) => !visited[row][column]
+    );
 
     const bestMoves = getBestNextMoves(board, allowedMoves);
-    const restMoves = allowedMoves.filter(move => bestMoves.indexOf(move) === -1);
+    const restMoves = allowedMoves.filter(
+      move => bestMoves.indexOf(move) === -1
+    );
     const possibleMoves = [...bestMoves];
     possibleMoves.push(...getBestNextMoves(board, restMoves));
 
@@ -207,6 +211,7 @@ function knightTour(w, h) {
   ];
 
   const [baseBoard, baseVisited] = createBoards(h, w);
+  fillAllowedMovesCounts(baseBoard);
   let solvedCount = 0;
   for (let row = 0; row < h; row++) {
     for (let column = 0; column < w; column++) {
