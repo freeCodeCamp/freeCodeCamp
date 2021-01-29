@@ -50,7 +50,12 @@ export const UniversalNav = ({
         )}
       </div>
 
-      <NavLinks displayMenu={displayMenu} fetchState={fetchState} user={user} />
+      <NavLinks
+        displayMenu={displayMenu}
+        fetchState={fetchState}
+        toggleDisplayMenu={toggleDisplayMenu}
+        user={user}
+      />
     </nav>
   );
 };

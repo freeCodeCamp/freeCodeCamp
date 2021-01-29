@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCheck,
+  faCheckSquare,
+  faSquare,
+  faExternalLinkAlt
+} from '@fortawesome/free-solid-svg-icons';
 import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import {
@@ -27,6 +32,7 @@ const propTypes = {
   fetchState: PropTypes.shape({ pending: PropTypes.bool }),
   i18n: PropTypes.object,
   t: PropTypes.func,
+  toggleDisplayMenu: PropTypes.func,
   toggleNightMode: PropTypes.func.isRequired,
   user: PropTypes.object
 };
@@ -46,6 +52,7 @@ export class NavLinks extends Component {
       i18n,
       fetchState,
       t,
+      toggleDisplayMenu,
       toggleNightMode,
       user: { isDonating = false, username, theme }
     } = this.props;
@@ -70,27 +77,37 @@ export class NavLinks extends Component {
             {t('buttons.donate')}
           </Link>
         )}
+        {!username && (
+          <a
+            className='nav-link nav-link-sign-in'
+            href={`${apiLocation}/signin`}
+            key='signin'
+          >
+            {t('buttons.sign-in')}
+          </a>
+        )}
         <Link className='nav-link' key='learn' to='/learn'>
           {t('buttons.curriculum')}
         </Link>
-        {username ? (
-          <Link
-            className='nav-link'
-            key='profile'
-            sameTab={false}
-            to={`/${username}`}
-          >
-            {t('buttons.profile')}
-          </Link>
-        ) : (
-          <Link
-            className='nav-link'
-            key='signin'
-            sameTab={true}
-            to={`${apiLocation}/signin`}
-          >
-            {t('buttons.sign-in')}
-          </Link>
+        {username && (
+          <>
+            <Link
+              className='nav-link'
+              key='profile'
+              sameTab={false}
+              to={`/${username}`}
+            >
+              {t('buttons.profile')}
+            </Link>
+            <Link
+              className='nav-link'
+              key='profile'
+              sameTab={false}
+              to={`/settings`}
+            >
+              {t('buttons.settings')}
+            </Link>
+          </>
         )}
         <hr className='nav-line' />
         <Link
@@ -125,7 +142,9 @@ export class NavLinks extends Component {
         </Link>
         <hr className='nav-line' />
         <button
-          className='nav-link nav-link-flex'
+          className={
+            'nav-link nav-link-flex' + (!username ? ' nav-link-header' : '')
+          }
           disabled={!username}
           key='theme'
           onClick={() => this.toggleTheme(theme, toggleNightMode)}
@@ -133,7 +152,11 @@ export class NavLinks extends Component {
           {username ? (
             <>
               <span>{t('settings.labels.night-mode')}</span>
-              <span>{theme === 'night' ? '[✓]' : '[ ]'}</span>
+              {theme === 'night' ? (
+                <FontAwesomeIcon icon={faSquare} />
+              ) : (
+                <FontAwesomeIcon icon={faCheckSquare} />
+              )}
             </>
           ) : (
             <span>Sign in to change theme</span>
@@ -142,21 +165,39 @@ export class NavLinks extends Component {
         <div className='nav-link nav-link-header' key='lang-header'>
           {t('footer.language')}
         </div>
-        {locales.map(lang => (
-          <Link
-            className='nav-link nav-link-lang nav-link-flex'
-            external={true}
-            // Todo: should treat other lang client application links as external??
-            key={'lang-' + lang}
-            to={createLanguageRedirect({
-              clientLocale,
-              lang
-            })}
-          >
-            <span>{langDisplayNames[lang]}</span>
-            <span>{i18n.language === i18nextCodes[lang] ? ' ✓' : 'O'}</span>
-          </Link>
-        ))}
+        {locales.map(lang =>
+          // current lang is a button that closes the menu
+          i18n.language === i18nextCodes[lang] ? (
+            <button
+              className='nav-link nav-link-lang nav-link-flex'
+              onClick={() => toggleDisplayMenu()}
+            >
+              <span>{langDisplayNames[lang]}</span>
+              <FontAwesomeIcon icon={faCheck} />
+            </button>
+          ) : (
+            <Link
+              className='nav-link nav-link-lang nav-link-flex'
+              external={true}
+              // Todo: should treat other lang client application links as external??
+              key={'lang-' + lang}
+              to={createLanguageRedirect({
+                clientLocale,
+                lang
+              })}
+            >
+              {langDisplayNames[lang]}
+            </Link>
+          )
+        )}
+        {username && (
+          <>
+            <hr className='nav-line-2' />
+            <a className='nav-link' href={`${apiLocation}/signout`}>
+              {t('buttons.sign-out')}
+            </a>
+          </>
+        )}
       </div>
     );
   }
