@@ -8,12 +8,11 @@ import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import {
   clientLocale,
-  forumLocation,
   radioLocation,
-  newsLocation,
   apiLocation
 } from '../../../../../config/env.json';
 import createLanguageRedirect from '../../createLanguageRedirect';
+import createExternalRedirect from '../../createExternalRedirects';
 
 const {
   availableLangs,
@@ -99,7 +98,7 @@ export class NavLinks extends Component {
           external={true}
           key='forum'
           sameTab={false}
-          to={forumLocation}
+          to={createExternalRedirect('forum', { clientLocale })}
         >
           <span>{t('buttons.forum')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -109,7 +108,7 @@ export class NavLinks extends Component {
           external={true}
           key='news'
           sameTab={false}
-          to={newsLocation}
+          to={createExternalRedirect('news', { clientLocale })}
         >
           <span>{t('buttons.news')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
