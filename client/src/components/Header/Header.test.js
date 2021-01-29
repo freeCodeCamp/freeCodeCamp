@@ -204,7 +204,7 @@ const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 4);
   return (
     children[0].props.children === 'buttons.forum' &&
-    to === 'https://forum.freecodecamp.org'
+    to === 'https://forum.freecodecamp.org/'
   );
 };
 
