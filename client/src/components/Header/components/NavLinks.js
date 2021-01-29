@@ -71,24 +71,6 @@ export class NavLinks extends Component {
             {t('buttons.donate')}
           </Link>
         )}
-        <Link
-          className='nav-link'
-          external={true}
-          key='forum'
-          sameTab={false}
-          to={forumLocation}
-        >
-          {t('buttons.forum')}
-        </Link>
-        <Link
-          className='nav-link'
-          external={true}
-          key='news'
-          sameTab={false}
-          to={newsLocation}
-        >
-          {t('buttons.news')}
-        </Link>
         <Link className='nav-link' key='learn' to='/learn'>
           {t('buttons.curriculum')}
         </Link>
@@ -111,6 +93,27 @@ export class NavLinks extends Component {
             {t('buttons.sign-in')}
           </Link>
         )}
+        <hr className='nav-line' />
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          key='forum'
+          sameTab={false}
+          to={forumLocation}
+        >
+          <span>{t('buttons.forum')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          key='news'
+          sameTab={false}
+          to={newsLocation}
+        >
+          <span>{t('buttons.news')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
         <Link
           className='nav-link nav-link-flex'
           external={true}
@@ -121,6 +124,7 @@ export class NavLinks extends Component {
           <span>{t('buttons.radio')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
+        <hr className='nav-line' />
         <button
           className='nav-link nav-link-flex'
           disabled={!username}

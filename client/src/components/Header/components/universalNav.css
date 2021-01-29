@@ -231,6 +231,12 @@
   color: var(--theme-color);
 }
 
+.nav-line {
+  border-color: var(--gray-35);
+  width: 100%;
+  margin: 0;
+}
+
 @media (max-width: 980px) {
   .universal-nav-left {
     display: none;
