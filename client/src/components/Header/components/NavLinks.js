@@ -188,9 +188,9 @@ export class NavLinks extends Component {
             <>
               <span>{t('settings.labels.night-mode')}</span>
               {theme === 'night' ? (
-                <FontAwesomeIcon icon={faSquare} />
-              ) : (
                 <FontAwesomeIcon icon={faCheckSquare} />
+              ) : (
+                <FontAwesomeIcon icon={faSquare} />
               )}
             </>
           ) : (
