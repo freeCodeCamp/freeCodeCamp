@@ -185,7 +185,7 @@ describe('<AuthOrProfile />', () => {
 });
 
 const navigationLinks = (component, navItem) => {
-  return component.props.children.props.children[navItem].props.children.props;
+  return component.props.children[navItem].props;
 };
 
 const profileNavItem = component => component.props.children;
@@ -201,38 +201,41 @@ const hasThanksForDonating = component => {
 };
 
 const hasForumNavItem = component => {
-  const { children, to } = navigationLinks(component, 1);
+  const { children, to } = navigationLinks(component, 4);
   return (
-    children === 'buttons.forum' && to === 'https://forum.freecodecamp.org'
+    children[0].props.children === 'buttons.forum' &&
+    to === 'https://forum.freecodecamp.org'
   );
 };
 
 const hasNewsNavItem = component => {
-  const { children, to } = navigationLinks(component, 2);
+  const { children, to } = navigationLinks(component, 5);
   return (
-    children === 'buttons.news' && to === 'https://www.freecodecamp.org/news'
+    children[0].props.children === 'buttons.news' &&
+    to === 'https://www.freecodecamp.org/news'
   );
 };
 
 const hasCurriculumNavItem = component => {
-  const { children, to } = navigationLinks(component, 3);
+  const { children, to } = navigationLinks(component, 1);
   return children === 'buttons.curriculum' && to === '/learn';
 };
 
 const hasProfileNavItem = (component, username) => {
-  const { children, to } = navigationLinks(component, 4);
+  const { children, to } = navigationLinks(component, 2);
   return children === 'buttons.profile' && to === `/${username}`;
 };
 
 const hasSignInNavItem = component => {
-  const { children } = navigationLinks(component, 4);
+  const { children } = navigationLinks(component, 2);
   return children === 'buttons.sign-in';
 };
 
 const hasRadioNavItem = component => {
-  const { children, to } = navigationLinks(component, 5);
+  const { children, to } = navigationLinks(component, 6);
   return (
-    children === 'buttons.radio' && to === 'https://coderadio.freecodecamp.org'
+    children[0].props.children === 'buttons.radio' &&
+    to === 'https://coderadio.freecodecamp.org'
   );
 };
 
