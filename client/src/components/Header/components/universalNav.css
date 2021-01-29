@@ -261,7 +261,7 @@
 
 .signup-btn {
   max-height: calc(var(--header-height) - 6px);
-  padding: 0 4px;
+  padding: 0 8px;
   margin-left: 2px;
 }
 
@@ -324,7 +324,7 @@
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 455px) {
   .universal-nav {
     padding: 0 5px;
   }
