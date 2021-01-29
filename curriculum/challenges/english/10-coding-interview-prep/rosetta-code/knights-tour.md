@@ -28,34 +28,34 @@ assert(typeof knightTour == 'function');
 assert(typeof knightTour(6, 6) == 'number');
 ```
 
-`knightTour(6, 6)` should return `35`.
+`knightTour(6, 6)` should return `36`.
 
 ```js
-assert.equal(knightTour(6, 6), 35);
+assert.equal(knightTour(6, 6), 36);
 ```
 
-`knightTour(5, 6)` should return `20`.
+`knightTour(5, 6)` should return `30`.
 
 ```js
-assert.equal(knightTour(5, 6), 20);
+assert.equal(knightTour(5, 6), 30);
 ```
 
-`knightTour(4, 6)` should return `10`.
+`knightTour(4, 6)` should return `12`.
 
 ```js
-assert.equal(knightTour(4, 6), 10);
+assert.equal(knightTour(4, 6), 12);
 ```
 
-`knightTour(7, 3)` should return `4`.
+`knightTour(7, 3)` should return `10`.
 
 ```js
-assert.equal(knightTour(7, 3), 4);
+assert.equal(knightTour(7, 3), 10);
 ```
 
-`knightTour(8, 6)` should return `47`.
+`knightTour(8, 6)` should return `48`.
 
 ```js
-assert.equal(knightTour(8, 6), 47);
+assert.equal(knightTour(8, 6), 48);
 ```
 
 # --seed--
