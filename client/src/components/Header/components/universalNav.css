@@ -342,13 +342,13 @@
   }
 
   #universal-nav-logo {
-    left: 5px;
-    max-width: 45%;
+    max-width: 60%;
   }
 }
 
-@media (max-width: 200px) {
-  .universal-nav-middle {
-    display: none;
+@media (max-width: 300px) {
+  #universal-nav-logo {
+    max-width: none;
+    left: -170px;
   }
 }
