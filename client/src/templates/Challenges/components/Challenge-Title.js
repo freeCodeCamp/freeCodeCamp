@@ -5,6 +5,7 @@ import { Link } from '../../../components/helpers/index';
 import { dasherize } from '../../../../../utils/slugs';
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
+import { generateIconComponent } from '../../../assets/icons';
 
 const propTypes = {
   block: PropTypes.string,
@@ -16,15 +17,24 @@ const propTypes = {
 function ChallengeTitle({ block, children, isCompleted, superBlock }) {
   return (
     <div className='challenge-title-wrap'>
-      <Link to={`/learn/${dasherize(superBlock)}`}>{superBlock}</Link>
-      {' >> '}
-      <Link
-        state={{ breadcrumbBlockClick: block }}
-        to={`/learn/${dasherize(superBlock)}`}
-      >
-        {block}
-      </Link>
-      {' >> '}
+      <div className='challenge-title-breadcrumbs'>
+        <Link
+          className='breadcrumb-left'
+          to={`/learn/${dasherize(superBlock)}`}
+        >
+          <span>{generateIconComponent(superBlock, 'breadcrumb-icon')}</span>
+        </Link>
+        <div className='breadcrumb-center'>
+          <span>{'>>'}</span>
+        </div>
+        <Link
+          className='breadcrumb-right'
+          state={{ breadcrumbBlockClick: block }}
+          to={`/learn/${dasherize(superBlock)}`}
+        >
+          {block}
+        </Link>
+      </div>
       <b>{children}</b>
       {isCompleted ? (
         <GreenPass

@@ -1,4 +1,45 @@
 .challenge-title-wrap {
-  padding: 10px 15px;
   text-align: center;
+}
+
+.challenge-title-breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  margin-left: -10px;
+  margin-right: -10px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.breadcrumb-left {
+  width: 10%;
+  min-width: 40px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumb-icon {
+  height: 20px;
+}
+
+.breadcrumb-center {
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumb-right {
+  width: 85%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumb-rule {
+  margin: 5px -10px;
 }
