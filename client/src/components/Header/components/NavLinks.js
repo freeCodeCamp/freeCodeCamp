@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
   faCheckSquare,
+  faHeart,
   faSquare,
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
@@ -63,8 +64,9 @@ export class NavLinks extends Component {
     ) : (
       <div className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
         {isDonating ? (
-          <div className='nav-link nav-link-header' key='donate'>
-            {t('donate.thanks')}
+          <div className='nav-link nav-link-flex nav-link-header' key='donate'>
+            <span>{t('donate.thanks')}</span>
+            <FontAwesomeIcon icon={faHeart} />
           </div>
         ) : (
           <Link
