@@ -69,31 +69,11 @@ const mapDispatchToProps = dispatch =>
   );
 
 export class SuperBlockIntroductionPage extends Component {
-  constructor(props) {
-    super(props);
-    this.elementRef = React.createRef();
-  }
-
   componentDidMount() {
     this.initializeExpandedState();
-    this.scrollToBlock();
   }
 
-  componentDidUpdate() {
-    this.scrollToBlock();
-  }
-
-  scrollToBlock() {
-    if (this.elementRef.current) {
-      setTimeout(() => {
-        const scrollTo = this.elementRef.current.offsetTop;
-
-        window.scrollTo({ top: scrollTo, left: 0, behavior: 'smooth' });
-      }, 300);
-    }
-  }
-
-  getChosenBlock(forScrolling) {
+  getChosenBlock() {
     const {
       data: {
         allChallengeNode: { edges }
@@ -120,7 +100,7 @@ export class SuperBlockIntroductionPage extends Component {
         : edge.node.block;
     }
 
-    return forScrolling ? 'top' : edge.node.block;
+    return edge.node.block;
   }
 
   initializeExpandedState() {
@@ -138,7 +118,6 @@ export class SuperBlockIntroductionPage extends Component {
         },
         allChallengeNode: { edges }
       },
-      fetchState: { pending, complete },
       isSignedIn,
       t
     } = this.props;
@@ -150,21 +129,13 @@ export class SuperBlockIntroductionPage extends Component {
 
     const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
 
-    let blockToScrollTo;
-    if (!pending && complete) {
-      blockToScrollTo = this.getChosenBlock(true);
-    }
-
     return (
       <>
         <Helmet>
           <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
         <Grid>
-          <Row
-            className='super-block-intro-page'
-            ref={blockToScrollTo === 'top' ? this.elementRef : null}
-          >
+          <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size={2} />
               <SuperBlockIntro superBlock={superBlock} />
@@ -175,14 +146,7 @@ export class SuperBlockIntroductionPage extends Component {
               <Spacer />
               <div className='block-ui'>
                 {blockDashedNames.map(blockDashedName => (
-                  <div
-                    key={blockDashedName}
-                    ref={
-                      blockDashedName === blockToScrollTo
-                        ? this.elementRef
-                        : null
-                    }
-                  >
+                  <div key={blockDashedName}>
                     <Block
                       blockDashedName={blockDashedName}
                       challenges={nodesForSuperBlock.filter(
