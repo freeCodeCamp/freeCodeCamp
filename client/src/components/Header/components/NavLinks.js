@@ -136,7 +136,7 @@ export class NavLinks extends Component {
             </Link>
             <Link
               className='nav-link'
-              key='profile'
+              key='settings'
               sameTab={false}
               to={`/settings`}
             >
