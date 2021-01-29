@@ -161,7 +161,7 @@ export class NavLinks extends Component {
               )}
             </>
           ) : (
-            <span>Sign in to change theme</span>
+            <span className='nav-link-dull'>{t('misc.change-theme')}</span>
           )}
         </button>
         <div className='nav-link nav-link-header' key='lang-header'>

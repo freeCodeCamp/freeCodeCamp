@@ -398,7 +398,8 @@
     "update-email-1": "Actualiza tu correo electrónico",
     "update-email-2": "Actualiza tu correo electrónico aquí:",
     "email": "Correo electrónico",
-    "and": "y"
+    "and": "y",
+    "change-theme": "Sign in to change theme."
   },
   "icons": {
     "gold-cup": "Copa de Oro",

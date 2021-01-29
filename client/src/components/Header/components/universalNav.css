@@ -148,6 +148,10 @@
   display: none;
 }
 
+.nav-link-dull {
+  color: var(--gray-45);
+}
+
 .nav-skeleton {
   height: var(--header-height);
   margin-right: 15px;
@@ -246,7 +250,7 @@
 
 .nav-line,
 .nav-line-2 {
-  border-color: var(--gray-35);
+  border-color: var(--gray-45);
   width: 100%;
   margin: 0;
 }

@@ -470,7 +470,8 @@ const translationsSchema = {
     'update-email-1': 'Update your email address',
     'update-email-2': 'Update your email address here:',
     email: 'Email',
-    and: 'and'
+    and: 'and',
+    'change-theme': 'Sign in to change theme.'
   },
   icons: {
     'gold-cup': 'Gold Cup',
