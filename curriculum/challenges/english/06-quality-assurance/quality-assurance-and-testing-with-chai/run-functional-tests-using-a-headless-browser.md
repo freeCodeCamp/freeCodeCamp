@@ -49,7 +49,7 @@ Within the callback:
 3.  assert that the text inside the element `span#surname` is `'Colombo'`
 4.  assert that the element(s) `span#dates` exist and their count is `1`
 
-Do not forget to to remove the `assert.fail()` call.
+Do not forget to remove the `assert.fail()` call.
 
 # --hints--
 
