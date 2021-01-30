@@ -2,7 +2,7 @@ name: No translate on GitHub
 on:
   pull_request_target:
     branches:
-      - 'master'
+      - 'main'
     paths:
       - 'curriculum/challenges/**'
       - '!curriculum/challenges/english/**'
