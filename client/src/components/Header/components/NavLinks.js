@@ -2,30 +2,71 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-
-import { Link, SkeletonSprite } from '../../helpers';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  // faCheck,
+  faCheckSquare,
+  faHeart,
+  faSquare,
+  faExternalLinkAlt
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import {
   clientLocale,
-  forumLocation,
   radioLocation,
-  newsLocation
+  apiLocation
 } from '../../../../../config/env.json';
-import createLanguageRedirect from '../../createLanguageRedirect';
+// import createLanguageRedirect from '../../createLanguageRedirect';
+import createExternalRedirect from '../../createExternalRedirects';
 
-const {
+/* const {
   availableLangs,
   i18nextCodes,
   langDisplayNames
-} = require('../../../../i18n/allLangs');
+} = require('../../../../i18n/allLangs'); */
 
-const locales = availableLangs.client;
+// const locales = availableLangs.client;
+
+// The linter was complaining about inline comments. Add the code below above
+// the sign out button when the language menu is ready to be added
+/*
+        <div className='nav-link nav-link-header' key='lang-header'>
+          {t('footer.language')}
+        </div>
+        {locales.map(lang =>
+          // current lang is a button that closes the menu
+          i18n.language === i18nextCodes[lang] ? (
+            <button
+              className='nav-link nav-link-lang nav-link-flex'
+              onClick={() => toggleDisplayMenu()}
+            >
+              <span>{langDisplayNames[lang]}</span>
+              <FontAwesomeIcon icon={faCheck} />
+            </button>
+          ) : (
+            <Link
+              className='nav-link nav-link-lang nav-link-flex'
+              external={true}
+              // Todo: should treat other lang client application links as external??
+              key={'lang-' + lang}
+              to={createLanguageRedirect({
+                clientLocale,
+                lang
+              })}
+            >
+              {langDisplayNames[lang]}
+            </Link>
+          )
+        )
+*/
 
 const propTypes = {
   displayMenu: PropTypes.bool,
   fetchState: PropTypes.shape({ pending: PropTypes.bool }),
   i18n: PropTypes.object,
   t: PropTypes.func,
+  toggleDisplayMenu: PropTypes.func,
   toggleNightMode: PropTypes.func.isRequired,
   user: PropTypes.object
 };
@@ -36,117 +77,134 @@ const mapDispatchToProps = {
 
 export class NavLinks extends Component {
   toggleTheme(currentTheme = 'default', toggleNightMode) {
-    console.log('attempting to toggle night mode');
     toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
   }
 
   render() {
     const {
       displayMenu,
+      // i18n,
       fetchState,
-      i18n,
       t,
+      // toggleDisplayMenu,
       toggleNightMode,
-      user: { isUserDonating = false, username, theme }
+      user: { isDonating = false, username, theme }
     } = this.props;
 
     const { pending } = fetchState;
-
     return pending ? (
-      <div className='nav-skeleton'>
-        <SkeletonSprite />
-      </div>
+      <div className='nav-skeleton' />
     ) : (
-      <div className='main-nav-group'>
-        <ul className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
-          <li key='donate'>
-            {isUserDonating ? (
-              <span className='nav-link'>{t('donate.thanks')}</span>
-            ) : (
-              <Link
-                className='nav-link'
-                external={true}
-                sameTab={false}
-                to='/donate'
-              >
-                {t('buttons.donate')}
-              </Link>
-            )}
-          </li>
-          <li key='forum'>
+      <div className={'nav-list' + (displayMenu ? ' display-menu' : '')}>
+        {isDonating ? (
+          <div className='nav-link nav-link-flex nav-link-header' key='donate'>
+            <span>{t('donate.thanks')}</span>
+            <FontAwesomeIcon icon={faHeart} />
+          </div>
+        ) : (
+          <Link
+            className='nav-link'
+            external={true}
+            key='donate'
+            sameTab={false}
+            to='/donate'
+          >
+            {t('buttons.donate')}
+          </Link>
+        )}
+        {!username && (
+          <a
+            className='nav-link nav-link-sign-in'
+            href={`${apiLocation}/signin`}
+            key='signin'
+          >
+            {t('buttons.sign-in')}
+          </a>
+        )}
+        <Link className='nav-link' key='learn' to='/learn'>
+          {t('buttons.curriculum')}
+        </Link>
+        {username && (
+          <>
             <Link
               className='nav-link'
-              external={true}
+              key='profile'
               sameTab={false}
-              to={forumLocation}
+              to={`/${username}`}
             >
-              {t('buttons.forum')}
+              {t('buttons.profile')}
             </Link>
-          </li>
-          <li key='news'>
             <Link
               className='nav-link'
-              external={true}
+              key='settings'
               sameTab={false}
-              to={newsLocation}
+              to={`/settings`}
             >
-              {t('buttons.news')}
+              {t('buttons.settings')}
             </Link>
-          </li>
-          <li key='learn'>
-            <Link className='nav-link' to='/learn'>
-              {t('buttons.curriculum')}
-            </Link>
-          </li>
-          {username && (
-            <li key='profile'>
-              <Link className='nav-link' to={`/${username}`}>
-                {t('buttons.profile')}
-              </Link>
-            </li>
+          </>
+        )}
+        <hr className='nav-line' />
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          key='forum'
+          sameTab={false}
+          to={createExternalRedirect('forum', { clientLocale })}
+        >
+          <span>{t('buttons.forum')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          key='news'
+          sameTab={false}
+          to={createExternalRedirect('news', { clientLocale })}
+        >
+          <span>{t('buttons.news')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          key='radio'
+          sameTab={false}
+          to={radioLocation}
+        >
+          <span>{t('buttons.radio')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+        <hr className='nav-line' />
+        <button
+          className={
+            'nav-link nav-link-flex' + (!username ? ' nav-link-header' : '')
+          }
+          disabled={!username}
+          key='theme'
+          onClick={() => this.toggleTheme(theme, toggleNightMode)}
+        >
+          {username ? (
+            <>
+              <span>{t('settings.labels.night-mode')}</span>
+              {theme === 'night' ? (
+                <FontAwesomeIcon icon={faCheckSquare} />
+              ) : (
+                <FontAwesomeIcon icon={faSquare} />
+              )}
+            </>
+          ) : (
+            <span className='nav-link-dull'>{t('misc.change-theme')}</span>
           )}
-          <li key='radio'>
-            <Link
-              className='nav-link'
-              external={true}
-              sameTab={false}
-              to={radioLocation}
-            >
-              {t('buttons.radio')}
-            </Link>
-          </li>
-          <li key='theme'>
-            <button
-              className='nav-link'
-              disabled={!username}
-              onClick={() => this.toggleTheme(theme, toggleNightMode)}
-            >
-              {username
-                ? t('settings.labels.night-mode') +
-                  (theme === 'night' ? ' ✓' : '')
-                : 'Sign in to change theme'}
-            </button>
-          </li>
-          <li key='lang-header'>
-            <span className='nav-link'>{t('footer.language')}</span>
-          </li>
-          {locales.map(lang => (
-            <li key={'lang-' + lang}>
-              <Link
-                className='nav-link sub-link'
-                // Todo: should treat other lang client application links as external??
-                external={true}
-                to={createLanguageRedirect({
-                  clientLocale,
-                  lang
-                })}
-              >
-                {langDisplayNames[lang]}
-                {i18n.language === i18nextCodes[lang] ? ' ✓' : ''}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        </button>
+        {username && (
+          <>
+            <hr className='nav-line-2' />
+            <a className='nav-link' href={`${apiLocation}/signout`}>
+              {t('buttons.sign-out')}
+            </a>
+          </>
+        )}
       </div>
     );
   }

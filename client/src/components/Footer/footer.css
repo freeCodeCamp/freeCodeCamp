@@ -20,21 +20,6 @@
   overflow-x: hidden;
 }
 
-.footer-container .language-menu {
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.footer-container .language-menu label {
-  font-weight: normal;
-}
-
-.footer-container .language-menu select {
-  padding: 0 5px;
-  margin-left: 10px;
-  font-weight: normal;
-}
-
 .footer-container p {
   margin: 0 0 1.45rem;
   line-height: 30px;
