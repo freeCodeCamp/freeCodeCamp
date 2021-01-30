@@ -75,7 +75,7 @@ Pick a challenge markdown file from the options above.
 
 First, find the videoId.
 
-For example, in the following code from the header of a video challenge markdown file, the video Id is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
 ```
 ---
 id: 5e9a093a74c4063ca6f7c14d
@@ -197,5 +197,4 @@ For more examples, you can look at the markdown files for the following video co
 ## Open a pull request
 
 After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).
-
 
