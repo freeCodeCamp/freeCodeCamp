@@ -13,7 +13,7 @@ The previous challenges covered how to use some of the animation properties and 
 
 `animation-iteration-count: 3;`
 
-In this case the animation will stop after running 3 times, but it's possible to make the animation run continuously by setting that value to infinite.
+In this case the animation will stop after running 3 times, but it's possible to make the animation run continuously by setting that value to `infinite`.
 
 # --instructions--
 
@@ -21,7 +21,7 @@ To keep the ball bouncing on the right on a continuous loop, change the `animati
 
 # --hints--
 
-The `animation-iteration-count` property should have a value of infinite.
+The `animation-iteration-count` property should have a value of `infinite`.
 
 ```js
 assert($('#ball').css('animation-iteration-count') == 'infinite');

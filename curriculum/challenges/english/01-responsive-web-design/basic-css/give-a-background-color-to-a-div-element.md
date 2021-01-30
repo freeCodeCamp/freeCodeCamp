@@ -21,7 +21,7 @@ For example, if you wanted an element's background color to be `green`, you'd pu
 
 # --instructions--
 
-Create a class called `silver-background` with the `background-color` of silver. Assign this class to your `div` element.
+Create a class called `silver-background` with the `background-color` of `silver`. Assign this class to your `div` element.
 
 # --hints--
 

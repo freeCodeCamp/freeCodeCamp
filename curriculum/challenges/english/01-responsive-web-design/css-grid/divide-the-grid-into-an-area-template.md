@@ -26,7 +26,7 @@ Place the area template so that the cell labeled `advert` becomes an empty cell.
 
 # --hints--
 
-`container` class should have a `grid-template-areas` property similar to the preview but has `.` instead of the `advert` area.
+`container` class should have a `grid-template-areas` property similar to the preview but with`.` instead of the `advert` area.
 
 ```js
 assert(

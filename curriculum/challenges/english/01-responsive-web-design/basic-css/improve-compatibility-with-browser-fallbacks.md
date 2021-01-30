@@ -17,11 +17,11 @@ This means that if you do want to provide a browser fallback, it's as easy as pr
 
 # --instructions--
 
-It looks like a variable is being used to set the background color of the `.red-box` class. Let's improve our browser compatibility by adding another `background` declaration right before the existing declaration and set its value to red.
+It looks like a variable is being used to set the background color of the `.red-box` class. Let's improve our browser compatibility by adding another `background` declaration right before the existing declaration and set its value to `red`.
 
 # --hints--
 
-Your `.red-box` rule should include a fallback with the `background` set to red immediately before the existing `background` declaration.
+Your `.red-box` rule should include a fallback with the `background` set to `red` immediately before the existing `background` declaration.
 
 ```js
 assert(

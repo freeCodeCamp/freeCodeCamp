@@ -9,7 +9,7 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-`p` elements are the preferred element for paragraph text on websites. `p` is short for "paragraph".
+`p` elements are the preferred element for paragraph text on websites. `p` is short for "`paragraph`".
 
 You can create a paragraph element like this:
 
@@ -17,7 +17,7 @@ You can create a paragraph element like this:
 
 # --instructions--
 
-Create a `p` element below your `h2` element, and give it the text "Hello Paragraph".
+Create a `p` element below your `h2` element, and give it the text "`Hello Paragraph`".
 
 **Note:** As a convention, all HTML tags are written in lowercase, for example `<p></p>` and not `<P></P>`.
 

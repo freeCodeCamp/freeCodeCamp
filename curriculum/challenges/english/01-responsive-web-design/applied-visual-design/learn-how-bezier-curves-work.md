@@ -25,7 +25,7 @@ For the element with the id of `ball1`, change the value of the `animation-timin
 
 # --hints--
 
-The value of the `animation-timing-function` property for the element with the id `ball1` should be the linear-equivalent cubic-bezier function.
+The value of the `animation-timing-function` property for the element with the id `ball1` should be the linear-equivalent `cubic-bezier` function.
 
 ```js
 assert(

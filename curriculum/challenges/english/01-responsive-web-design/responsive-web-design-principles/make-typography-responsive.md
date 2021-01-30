@@ -15,7 +15,7 @@ The four different viewport units are:
 
 <ul><li><code>vw</code> (viewport width): <code>10vw</code> would be 10% of the viewport's width.</li><li><code>vh</code> (viewport height): <code>3vh</code> would be 3% of the viewport's height.</li><li><code>vmin</code> (viewport minimum): <code>70vmin</code> would be 70% of the viewport's smaller dimension (height or width).</li><li><code>vmax</code> (viewport maximum): <code>100vmax</code> would be 100% of the viewport's bigger dimension (height or width).</li></ul>
 
-Here is an example that sets a body tag to 30% of the viewport's width.
+Here is an example that sets a `body` tag to 30% of the viewport's width.
 
 `body { width: 30vw; }`
 

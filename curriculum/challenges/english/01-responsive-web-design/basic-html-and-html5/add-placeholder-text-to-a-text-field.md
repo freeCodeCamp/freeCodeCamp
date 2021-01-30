@@ -29,7 +29,7 @@ You should add a `placeholder` attribute to the existing text `input` element.
 assert($('input[placeholder]').length > 0);
 ```
 
-You should set the value of your placeholder attribute to `cat photo URL`.
+You should set the value of your `placeholder` attribute to `cat photo URL`.
 
 ```js
 assert(

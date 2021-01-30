@@ -37,11 +37,11 @@ For the element with the `anim` id, the code snippet above sets the `animation-n
 
 # --instructions--
 
-Create an animation for the element with the id `rect`, by setting the `animation-name` to rainbow and the `animation-duration` to 4 seconds. Next, declare a `@keyframes` rule, and set the `background-color` at the beginning of the animation (`0%`) to blue, the middle of the animation (`50%`) to green, and the end of the animation (`100%`) to yellow.
+Create an animation for the element with the id `rect`, by setting the `animation-name` to `rainbow` and the `animation-duration` to 4 seconds. Next, declare a `@keyframes` rule, and set the `background-color` at the beginning of the animation (`0%`) to blue, the middle of the animation (`50%`) to green, and the end of the animation (`100%`) to yellow.
 
 # --hints--
 
-The element with id of `rect` should have an `animation-name` property with a value of rainbow.
+The element with id of `rect` should have an `animation-name` property with a value of `rainbow`.
 
 ```js
 assert($('#rect').css('animation-name') == 'rainbow');
@@ -53,25 +53,25 @@ The element with id of `rect` should have an `animation-duration` property with 
 assert($('#rect').css('animation-duration') == '4s');
 ```
 
-The `@keyframes` rule should use the `animation-name` of rainbow.
+The `@keyframes` rule should use the `animation-name` of `rainbow`.
 
 ```js
 assert(code.match(/@keyframes\s+?rainbow\s*?{/g));
 ```
 
-The `@keyframes` rule for rainbow should use a `background-color` of blue at 0%.
+The `@keyframes` rule for `rainbow` should use a `background-color` of `blue` at 0%.
 
 ```js
 assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi));
 ```
 
-The `@keyframes` rule for rainbow should use a `background-color` of green at 50%.
+The `@keyframes` rule for `rainbow` should use a `background-color` of `green` at 50%.
 
 ```js
 assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi));
 ```
 
-The `@keyframes` rule for rainbow should use a `background-color` of yellow at 100%.
+The `@keyframes` rule for rainbow should use a `background-color` of `yellow` at 100%.
 
 ```js
 assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));

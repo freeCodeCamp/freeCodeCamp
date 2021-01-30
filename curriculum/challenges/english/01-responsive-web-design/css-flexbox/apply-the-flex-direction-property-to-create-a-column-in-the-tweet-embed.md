@@ -13,7 +13,7 @@ The tweet embed `header` and `footer` used the `flex-direction` property earlier
 
 # --instructions--
 
-Add the CSS property `flex-direction` to the header's `.profile-name` element and set the value to column.
+Add the CSS property `flex-direction` to the header's `.profile-name` element and set the value to `column`.
 
 # --hints--
 
@@ -23,7 +23,7 @@ Your `.follow-btn` should be rendered on the page. Be sure to turn off any exten
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `.profile-name` element should have a `flex-direction` property set to column.
+The `.profile-name` element should have a `flex-direction` property set to `column`.
 
 ```js
 assert($('.profile-name').css('flex-direction') == 'column');

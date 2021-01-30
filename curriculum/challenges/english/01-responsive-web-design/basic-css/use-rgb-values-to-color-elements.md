@@ -11,11 +11,11 @@ dashedName: use-rgb-values-to-color-elements
 
 Another way you can represent colors in CSS is by using `RGB` values.
 
-The RGB value for black looks like this:
+The `RGB` value for black looks like this:
 
 `rgb(0, 0, 0)`
 
-The RGB value for white looks like this:
+The `RGB` value for white looks like this:
 
 `rgb(255, 255, 255)`
 

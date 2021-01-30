@@ -27,7 +27,7 @@ Here's a [link to freecodecamp.org](http://freecodecamp.org) for you to follow.
 
 # --instructions--
 
-Nest the existing `a` element within a new `p` element. The new paragraph should have text that says "View more cat photos", where "cat photos" is a link, and the rest is plain text.
+Nest the existing `a` element within a new `p` element. The new paragraph should have text that says "`View more cat photos`", where "`cat photos`" is a link, and the rest is plain text.
 
 # --hints--
 
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Your `a` element should have the anchor text of "cat photos"
+Your `a` element should have the anchor text of "`cat photos`"
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-Your `p` element should have the text "View more " (with a space after it).
+Your `p` element should have the text "`View more `" (with a space after it).
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-Your `a` element should <em>not</em> have the text "View more".
+Your `a` element should <em>not</em> have the text "`View more`".
 
 ```js
 assert(

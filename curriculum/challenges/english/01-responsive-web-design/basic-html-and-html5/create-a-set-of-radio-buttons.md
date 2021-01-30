@@ -38,7 +38,7 @@ Add a pair of radio buttons to your form, each nested in its own `label` element
 
 # --hints--
 
-Your page should have two radio button elements.
+Your page should have two `radio` button elements.
 
 ```js
 assert($('input[type="radio"]').length > 1);
