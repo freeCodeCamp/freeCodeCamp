@@ -58,3 +58,11 @@
 .breadcrumb-rule {
   margin: 5px -10px;
 }
+
+.breadcrumb-left:hover {
+  background-color: var(--quaternary-background);
+}
+
+.breadcrumb-right:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
