@@ -1,121 +1,121 @@
-# How to open a Pull Request (PR)
+# Cómo abrir una Pull Request (PR)
 
-A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
+Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
 
-## Prepare a good PR title
+## Prepara un buen título para tu PR
 
-We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
+Recomendamos usar [titulos y mensajes convencionales](https://www.conventionalcommits.org/) para tus commits y pull request. La convención tiene el siguiente formato:
 
-> `<type>([optional scope(s)]): <description>`
+> `<type>([ámbito opcional(s)]): <description>`
 > 
-> For example:
+> Por ejemplo:
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
+Al abrir un Pull Request(PR), puede utilizar el siguiente para determinar el tipo, alcance (opcional) y descripción.
 
-**Type:**
+**Tipo:**
 
-| Type  | When to select                                                               |
-|:----- |:---------------------------------------------------------------------------- |
-| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                        |
-| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
+| Tipo       | Cuándo seleccionar                                                                          |
+|:---------- |:------------------------------------------------------------------------------------------- |
+| fijar      | Funciones modificadas o actualizadas/mejoradas, pruebas, verbiage de una lección, etc.      |
+| hazaña     | Sólo si está añadiendo nuevas funcionalidades, pruebas, etc.                                |
+| coro       | Cambios que no están relacionados con el código, las pruebas o la verborrea de una lección. |
+| documentos | Cambios al directorio `/docs` o a las pautas de contribución, etc.                          |
 
-**Scope:**
+**Alcance:**
 
-You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+Puede seleccionar un ámbito de [esta lista de etiquetas](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Description:**
+**Descripción:**
 
-Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
+Manténgalo corto (menos de 30 caracteres) y simple, puede agregar más información en el cuadro de descripción de relaciones públicas y comentarios.
 
-Some examples of good PRs titles would be:
+Algunos ejemplos de buenos títulos PRs serían:
 
-- `fix(a11y): improved search bar contrast`
-- `feat: add more tests to html and css challenges`
-- `fix(api,client): prevent CORS errors on form submission`
-- `docs(i18n): Chinese translation of local setup`
+- `fix(a11y): contraste mejorado en la barra de búsqueda`
+- `feat: añadir más pruebas a challenges html y css`
+- `fix(api,client): evitar errores CORS en el envío de formularios`
+- `docs(i18n): Traducción al chino de la configuración local`
 
-## Proposing a Pull Request
+## Proponer una Pull Request
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+1. Una vez que las ediciones hayan sido confirmadas, se le pedirá que cree un pull request en la página de GitHub de su fork.
 
-   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Imagen - Comparar solicitud de pull en GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
+2. Por defecto, todas las pull requests deben estar en contra del repositorio principal freeCodeCamp `master` branch.
 
-   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+   Asegúrese de que su bifurcación base está configurada en freeCodeCamp/freeCodeCamp al elevar una solicitud de Pull Request.
 
-   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
+   ![Imagen - Comparando bifurcaciones al hacer un pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
+3. Envía el pull request de tu rama a la rama `master` de freeCodeCamp.
 
-4. In the body of your PR include a more detailed summary of the changes you made and why.
+4. En el cuerpo de sus relaciones públicas incluya un resumen más detallado de los cambios realizados y por qué.
 
-   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+   - Se le presentará una plantilla de pull request. Esta es una lista de verificación que debería haber seguido antes de abrir la solicitud de pull request.
 
-   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
+   - Rellene los detalles como considere oportuno. Esta información será revisada y los revisores decidirán si su pull request es o no aceptada.
 
-   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - Si el PR está pensado para abordar un problema existente de GitHub entonces, al final de el cuerpo de la descripción de su PR, use la palabra clave _Cierra_ con el número de incidencia para [cerrar automáticamente ese problema si se acepta y fusionan las relaciones públicas](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Example: `Closes #123` will close issue 123
+     > Ejemplo: `Cerrar #123` cerrará el problema 123
 
-5. Indicate if you have tested on a local copy of the site or not.
+5. Indique si ha probado en una copia local del sitio o no.
 
-   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+   Esto es muy importante a la hora de hacer cambios que no sean sólo ediciones al contenido de texto como la documentación o una descripción del desafío. Ejemplos de cambios que necesitan pruebas locales incluyen JavaScript, CSS o HTML que podrían cambiar la funcionalidad o el diseño de una página.
 
-## Feedback on pull requests
+## Comentarios sobre pull requests
 
-> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
+> ¡Felicidades! :tada: en hacer relaciones públicas y muchas gracias por tomarse el tiempo para contribuir.
 
-Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
+Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Por favor, sea paciente con los demás moderadores y respete su tiempo. Todos los pull requests son revisados a su debido tiempo.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
+Y como siempre, siéntete libre de hacer preguntas en la categoría ['Colaboradores' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o [nuestro servidor de Discord](https://discord.gg/pFspAhS).
 
-> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
+> [!TIP] Si quieres contribuir con más solicitudes de extracción, te recomendamos que leas las directrices [haciendo cambios y sincronizando](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) para evitar tener que borrar tu bifurcación.
 
-## Conflicts on a pull request
+## Conflicto en un pull request
 
-Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
+Los conflictos pueden surgir porque muchos colaboradores trabajan en el repositorio y los cambios pueden romper su PR que está pendiente de revisión y fusión.
 
-More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
+La mayoría de las veces no puede requerir una rebase, porque aplastamos todos los commits, Sin embargo, si se solicita una rebase aquí es lo que debe hacer.
 
-### For usual bug fixes and features
+### Para arreglos de errores y características habituales
 
-When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
+Cuando trabajas con errores y características regulares en nuestra rama de desarrollo `master`, puedes hacer una simple rebase:
 
-1. Rebase your local copy:
+1. Reiniciar su copia local:
 
    ```console
    git checkout <pr-branch>
    git pull --rebase upstream master
    ```
 
-2. Resolve any conflicts and add / edit commits
+2. Resolver cualquier conflicto y añadir / editar commits
 
    ```console
-   # Either
+   # O bien
    git add .
    git commit -m "chore: resolve conflicts"
 
-   # Or
+   # o
    git add .
    git commit --amend --no-edit
    ```
 
-3. Push back your changes to the PR
+3. Enviar los cambios al PR
 
    ```console
    git push --force origin <pr-branch>
    ```
 
-### For upcoming curriculum and features
+### Para los próximos planes de estudios y características
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
+Cuando estás trabajando en funciones para nuestro próximo currículo `siguiente *` ramas, tienes que hacer una selección de cerezos:
 
-1. Make sure your upstream comes in sync with your local:
+1. Asegúrese de que su autor está sincronizado con su local:
 
    ```console
    git checkout master
@@ -124,41 +124,41 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git reset --hard upstream/next-python-projects
    ```
 
-2. Take backup
+2. Respaldar
 
-   a. Either delete your local branch after taking a backup (if you still have it locally):
+   a. Borra tu rama local después de realizar una copia de seguridad (si todavía la tienes localmente):
 
       ```console
       git checkout <pr-branch-name>
 
-      # example:
+      # ejemplo:
       # git checkout feat/add-numpy-video-question
 
       git checkout -b <backup-branch-name>
 
-      # example:
-      #  git checkout -b backup-feat/add-numpy-video-question
+      # ejemplo:
+      # git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   b. Or just a backup of your pr branch (if you do not have it locally):
+   b. O simplemente una copia de seguridad de su rama pr (si no la tiene localmente):
 
       ```console
       git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # example:
-      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+      # ejemplo:
+      # git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. Start off with a clean slate:
+4. Empezar con una pizarra limpia:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Resolve any conflicts, and cleanup, install run tests
+5. Resuelve cualquier conflicto y limpia, instala pruebas de ejecución
 
    ```console
    npm run clean
@@ -166,13 +166,13 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    npm ci
    npm run test:curriculum --superblock=<superblock-name>
 
-   # example:
+   # ejemplo:
 
-   # npm run test:curriculum --superblock=python-for-everybody
+   # npm run test:curriculum --superblock=python-for-everyone
 
    ```
 
-6. If everything looks good push back to the PR
+6. Si todo se ve bien empuje hacia el PR
 
    ```console
    git push --force origin <pr-branch-name>

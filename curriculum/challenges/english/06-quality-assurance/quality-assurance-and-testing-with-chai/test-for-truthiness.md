@@ -14,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ```js
 assert.isTrue(true, 'this will pass with the boolean value true');
-assert.isTrue('true', 'this will NOT pass with the string value 'true');
+assert.isTrue('true', 'this will NOT pass with the string value "true"');
 assert.isTrue(1, 'this will NOT pass with the number value 1');
 ```
 

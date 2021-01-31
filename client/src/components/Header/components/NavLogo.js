@@ -1,5 +1,5 @@
 import React from 'react';
-import FreeCodeCampLogo from '../../../assets/icons/freeCodeCampLogo';
+import FreeCodeCampLogo from '../../../assets/icons/FreeCodeCampLogo';
 
 function NavLogo() {
   return <FreeCodeCampLogo />;

@@ -11,11 +11,14 @@ if (process.env.PIPELINE_ENV !== 'true') {
 }
 
 const {
-  HOME_LOCATION: home,
-  API_LOCATION: api,
-  FORUM_LOCATION: forum,
-  NEWS_LOCATION: news,
-  LOCALE: locale,
+  HOME_LOCATION: homeLocation,
+  API_LOCATION: apiLocation,
+  FORUM_LOCATION: forumLocation,
+  NEWS_LOCATION: newsLocation,
+  RADIO_LOCATION: radioLocation,
+  CLIENT_LOCALE: clientLocale,
+  CURRICULUM_LOCALE: curriculumLocale,
+  SHOW_LOCALE_DROPDOWN_MENU: showLocaleDropdownMenu,
   STRIPE_PUBLIC_KEY: stripePublicKey,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
@@ -25,14 +28,19 @@ const {
 } = process.env;
 
 const locations = {
-  homeLocation: home,
-  apiLocation: api,
-  forumLocation: forum,
-  newsLocation: news
+  homeLocation,
+  apiLocation,
+  forumLocation,
+  newsLocation,
+  radioLocation: !radioLocation
+    ? 'https://coderadio.freecodecamp.org'
+    : radioLocation
 };
 
 module.exports = Object.assign(locations, {
-  locale,
+  clientLocale,
+  curriculumLocale,
+  showLocaleDropdownMenu: showLocaleDropdownMenu === 'true',
   deploymentEnv,
   environment: process.env.FREECODECAMP_NODE_ENV || 'development',
   stripePublicKey:

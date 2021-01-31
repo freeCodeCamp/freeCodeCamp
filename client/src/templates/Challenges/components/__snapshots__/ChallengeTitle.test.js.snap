@@ -1,21 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ChallengeTitle/> renders correctly 1`] = `
-<h2
-  className="text-center challenge-title"
+<div
+  className="challenge-title-wrap"
 >
-  title text
+  <a
+    href="/learn/undefined"
+  />
+   &gt;&gt; 
+  <a
+    href="/learn/undefined"
+    state={
+      Object {
+        "breadcrumbBlockClick": undefined,
+      }
+    }
+  />
+   &gt;&gt; 
+  <b>
+    title text
+  </b>
   <span
     className="sr-only"
   >
-    Passed
+    icons.passed
   </span>
   <svg
     height="50"
     style={
       Object {
         "height": "15px",
-        "marginLeft": "5px",
+        "marginLeft": "7px",
         "width": "15px",
       }
     }
@@ -25,7 +40,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
   >
     <g>
       <title>
-        Passed
+        icons.passed
       </title>
       <circle
         cx="100"
@@ -63,5 +78,5 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       />
     </g>
   </svg>
-</h2>
+</div>
 `;

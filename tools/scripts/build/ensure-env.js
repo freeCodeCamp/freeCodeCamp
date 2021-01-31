@@ -1,25 +1,46 @@
 const fs = require('fs');
 const path = require('path');
-const debug = require('debug');
 
 const env = require('../../../config/env');
-
-const log = debug('fcc:ensure-env');
+const { availableLangs } = require('../../../client/i18n/allLangs');
 
 const clientPath = path.resolve(__dirname, '../../../client');
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 const { FREECODECAMP_NODE_ENV } = process.env;
 
+function checkClientLocale() {
+  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
+    throw Error(`
+
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in client/i18n/allLangs.js
+
+      `);
+  }
+}
+
+function checkCurriculumLocale() {
+  if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
+    throw Error(`
+
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in client/i18n/allLangs.js
+
+      `);
+  }
+}
+
 if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
     'homeLocation',
     'apiLocation',
     'forumLocation',
-    'newsLocation'
+    'newsLocation',
+    'radioLocation'
   ];
   const deploymentKeys = [
-    'locale',
+    'clientLocale',
+    'curriculumLocale',
+    'showLocaleDropdownMenu',
     'deploymentEnv',
     'environment',
     'showUpcomingChanges'
@@ -32,30 +53,55 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     searchKeys,
     donationKeys
   );
-  const variables = Object.keys(env);
+  const receivedvariables = Object.keys(env);
   expectedVariables.sort();
-  variables.sort();
-  if (expectedVariables.length !== variables.length) {
-    throw Error(`Env. variable validation failed. Expected
-    ${expectedVariables}
-    but recieved
-    ${variables}
+  receivedvariables.sort();
+  if (expectedVariables.length !== receivedvariables.length) {
+    throw Error(`
+
+    Env. variable validation failed. Make sure these keys are used and configured.
+
+    Mismatch:
+    ${expectedVariables
+      .filter(expected => !receivedvariables.includes(expected))
+      .concat(
+        receivedvariables.filter(
+          received => !expectedVariables.includes(received)
+        )
+      )}
+
     `);
   }
 
   for (const key of expectedVariables) {
     if (typeof env[key] === 'undefined' || env[key] === null) {
-      throw Error(`Env. variable ${key} is missing, build cannot continue`);
+      throw Error(`
+
+      Env. variable ${key} is missing, build cannot continue
+
+      `);
     }
   }
 
   if (env['environment'] !== 'production')
-    throw Error("Production environment should be 'production' ");
+    throw Error(`
+
+    Production environment should be 'production'
+
+    `);
 
   if (env['showUpcomingChanges'])
-    throw Error("SHOW_UPCOMING_CHANGES should never be 'true' in production");
+    throw Error(`
+
+    SHOW_UPCOMING_CHANGES should never be 'true' in production
+
+    `);
+
+  checkClientLocale();
+  checkCurriculumLocale();
 } else {
-  log('Skipping environment variable checks in development');
+  checkClientLocale();
+  checkCurriculumLocale();
 }
 
 fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));

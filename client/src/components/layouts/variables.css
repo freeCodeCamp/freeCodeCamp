@@ -14,8 +14,8 @@
   --purple-dark: #5a01a7;
   --yellow-light: #ffc300;
   --yellow-dark: #4d3800;
-  --blue-light: 153, 201, 255;
-  --blue-dark: 0, 46, 173;
+  --blue-light: rgb(153, 201, 255);
+  --blue-dark: rgb(0, 46, 173);
   --green-light: #acd157;
   --blue-mid: #198eee;
   --purple-mid: darkviolet;

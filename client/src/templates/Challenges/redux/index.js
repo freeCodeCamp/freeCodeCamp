@@ -30,7 +30,6 @@ const initialState = {
     id: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
-    introPath: '',
     challengeType: -1
   },
   challengeTests: [],
