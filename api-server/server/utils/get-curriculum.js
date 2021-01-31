@@ -10,9 +10,9 @@ import { getChallengesForLang } from '../../../curriculum/getChallenges';
 
 let curriculum;
 export async function getCurriculum() {
-  curriculum = curriculum
-    ? curriculum
-    : getChallengesForLang(process.env.LOCALE);
+  // NOTE: this is always 'english' because we are only interested in the slugs
+  // and those should not change between the languages.
+  curriculum = curriculum ? curriculum : getChallengesForLang('english');
   return curriculum;
 }
 

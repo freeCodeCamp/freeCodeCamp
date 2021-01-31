@@ -1,0 +1,29 @@
+{
+  "compliments": [
+    "¡Excesivo!",
+    "¡Por la madriguera del conejo vamos!",
+    "¡Trae esa lluvia!",
+    "Objetivo localizado.",
+    "¡Siente esa necesidad de velocidad!",
+    "¡Tienes agallas!",
+    "¡Al infinito y más allá!",
+    "¡De nuevo!",
+    "¡Adelante!",
+    "¡Desafío destruido!",
+    "¡Estás que ardes!"
+  ],
+  "motivationalQuotes": [
+    {
+      "quote": "La acción es la clave fundamental para todo éxito.",
+      "author": "Pablo Picasso"
+    },
+    {
+      "quote": "Trabaja duro en silencio, que el éxito sea tu ruido.",
+      "author": "Frank Ocean"
+    },
+    {
+      "quote": "No importa lo lento que vayas, siempre y cuando no te detengas.",
+      "author": "Confucio"
+    }
+  ]
+}

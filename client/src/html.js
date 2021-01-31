@@ -12,8 +12,6 @@ export default class HTML extends React.Component {
             content='width=device-width, initial-scale=1.0, shrink-to-fit=no'
             name='viewport'
           />
-          <link as='style' href='/css/bootstrap.min.css' rel='preload' />
-          <link href='/css/bootstrap.min.css' rel='stylesheet' />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 
 import Testimonials from './components/Testimonials';
 import LandingTop from './components/LandingTop';
@@ -16,22 +16,12 @@ const propTypes = {
 };
 
 export const Landing = ({ page = 'landing' }) => {
-  const data = useStaticQuery(graphql`
-    query certifications {
-      challenges: allChallengeNode(
-        sort: { fields: [superOrder, order, challengeOrder] }
-      ) {
-        nodes {
-          superBlock
-        }
-      }
-    }
-  `);
+  const { t } = useTranslation();
 
   return (
     <Fragment>
       <Helmet>
-        <title>Learn to Code — For Free — Coding Courses for Busy People</title>
+        <title>{t('meta.title')}</title>
       </Helmet>
       <main className='landing-page'>
         <Grid>
@@ -42,7 +32,7 @@ export const Landing = ({ page = 'landing' }) => {
         </Grid>
         <Grid>
           <Testimonials />
-          <Certifications nodes={data.challenges.nodes} page={page} />
+          <Certifications />
         </Grid>
       </main>
     </Fragment>

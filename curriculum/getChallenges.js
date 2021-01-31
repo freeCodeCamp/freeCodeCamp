@@ -1,6 +1,6 @@
 const path = require('path');
 const { findIndex, reduce, toString } = require('lodash');
-const readDirP = require('readdirp-walk');
+const readDirP = require('readdirp');
 const { parseMarkdown } = require('../tools/challenge-md-parser');
 const { parseMD } = require('../tools/challenge-md-parser/mdx');
 const fs = require('fs');
@@ -15,8 +15,10 @@ const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { blockNameify } = require('../utils/block-nameify');
-const { supportedLangs } = require('./utils');
 const { helpCategoryMap } = require('../client/utils/challengeTypes');
+const {
+  curriculum: curriculumLangs
+} = require('../client/i18n/allLangs').availableLangs;
 
 const access = util.promisify(fs.access);
 
@@ -121,61 +123,77 @@ function getMetaForBlock(block) {
 exports.getChallengesDirForLang = getChallengesDirForLang;
 exports.getMetaForBlock = getMetaForBlock;
 
-exports.getChallengesForLang = function getChallengesForLang(lang) {
-  let curriculum = {};
+// This recursively walks the directories starting at root, and calls cb for
+// each file/directory and only resolves once all the callbacks do.
+const walk = (root, target, options, cb) => {
   return new Promise(resolve => {
     let running = 1;
     function done() {
       if (--running === 0) {
-        resolve(curriculum);
+        resolve(target);
       }
     }
-    readDirP({ root: getChallengesDirForLang(lang) })
+    readDirP(root, options)
       .on('data', file => {
         running++;
-        buildCurriculum(file, curriculum, lang).then(done);
+        cb(file, target).then(done);
       })
       .on('end', done);
   });
 };
 
-async function buildCurriculum(file, curriculum, lang) {
-  const { name, depth, path: filePath, stat } = file;
-  const createChallenge = createChallengeCreator(challengesDir, lang);
-  if (depth === 1 && stat.isDirectory()) {
-    // extract the superBlock info
-    const { order, name: superBlock } = superBlockInfo(name);
-    curriculum[superBlock] = { superBlock, order, blocks: {} };
-    return;
-  }
-  if (depth === 2 && stat.isDirectory()) {
-    const blockName = getBlockNameFromPath(filePath);
-    const metaPath = path.resolve(
-      __dirname,
-      `./challenges/_meta/${blockName}/meta.json`
+exports.getChallengesForLang = async function getChallengesForLang(lang) {
+  const root = getChallengesDirForLang(lang);
+  // scaffold the curriculum, first set up the superblocks, then recurse into
+  // the blocks
+  const curriculum = await walk(
+    root,
+    {},
+    { type: 'directories', depth: 1 },
+    buildSuperBlocks
+  );
+  const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
+  // fill the scaffold with the challenges
+  return walk(
+    root,
+    curriculum,
+    { type: 'files', fileFilter: ['*.md', '*.markdown'] },
+    cb
+  );
+};
+
+async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
+  const metaPath = path.resolve(
+    __dirname,
+    `./challenges/_meta/${blockName}/meta.json`
+  );
+  const blockMeta = require(metaPath);
+  const { isUpcomingChange } = blockMeta;
+  if (typeof isUpcomingChange !== 'boolean') {
+    throw Error(
+      `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
     );
-    const blockMeta = require(metaPath);
-    const { isUpcomingChange } = blockMeta;
-    if (typeof isUpcomingChange !== 'boolean') {
-      throw Error(
-        `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
-      );
-    }
-
-    if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      // add the block to the superBlock
-      const { name: superBlock } = superBlockInfoFromPath(filePath);
-      const blockInfo = { meta: blockMeta, challenges: [] };
-      curriculum[superBlock].blocks[name] = blockInfo;
-    }
-    return;
-  }
-  if (name === 'meta.json' || name === '.DS_Store') {
-    return;
   }
 
-  const block = getBlockNameFromPath(filePath);
-  const { name: superBlock } = superBlockInfoFromPath(filePath);
+  if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
+    // add the block to the superBlock
+    const blockInfo = { meta: blockMeta, challenges: [] };
+    curriculum[superBlock].blocks[blockName] = blockInfo;
+  }
+}
+
+async function buildSuperBlocks({ path, fullPath }, curriculum) {
+  const { order, name: superBlock } = superBlockInfo(path);
+  curriculum[superBlock] = { superBlock, order, blocks: {} };
+
+  const cb = (file, curriculum) => buildBlocks(file, curriculum, superBlock);
+  return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
+}
+
+async function buildChallenges({ path }, curriculum, lang) {
+  // path is relative to getChallengesDirForLang(lang)
+  const block = getBlockNameFromPath(path);
+  const { name: superBlock } = superBlockInfoFromPath(path);
   let challengeBlock;
 
   // TODO: this try block and process exit can all go once errors terminate the
@@ -193,7 +211,7 @@ async function buildCurriculum(file, curriculum, lang) {
   }
   const { meta } = challengeBlock;
 
-  const challenge = await createChallenge(filePath, meta);
+  const challenge = await createChallenge(challengesDir, path, lang, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
@@ -208,83 +226,80 @@ async function parseTranslation(transPath, dict, lang, parse = parseMD) {
     : translatedChal;
 }
 
-function createChallengeCreator(basePath, lang) {
-  const hasEnglishSource = hasEnglishSourceCreator(basePath);
-  return async function createChallenge(filePath, maybeMeta) {
-    function getFullPath(pathLang) {
-      return path.resolve(__dirname, basePath, pathLang, filePath);
-    }
-    let meta;
-    if (maybeMeta) {
-      meta = maybeMeta;
-    } else {
-      const metaPath = path.resolve(
-        metaDir,
-        `./${getBlockNameFromPath(filePath)}/meta.json`
-      );
-      meta = require(metaPath);
-    }
-    const { name: superBlock } = superBlockInfoFromPath(filePath);
-    if (!supportedLangs.includes(lang))
-      throw Error(`${lang} is not a accepted language.
+async function createChallenge(basePath, filePath, lang, maybeMeta) {
+  function getFullPath(pathLang) {
+    return path.resolve(__dirname, basePath, pathLang, filePath);
+  }
+  let meta;
+  if (maybeMeta) {
+    meta = maybeMeta;
+  } else {
+    const metaPath = path.resolve(
+      metaDir,
+      `./${getBlockNameFromPath(filePath)}/meta.json`
+    );
+    meta = require(metaPath);
+  }
+  const { name: superBlock } = superBlockInfoFromPath(filePath);
+  if (!curriculumLangs.includes(lang))
+    throw Error(`${lang} is not a accepted language.
   Trying to parse ${filePath}`);
-    if (lang !== 'english' && !(await hasEnglishSource(filePath)))
-      throw Error(`Missing English challenge for
+  if (lang !== 'english' && !(await hasEnglishSource(basePath, filePath)))
+    throw Error(`Missing English challenge for
 ${filePath}
 It should be in
 ${getFullPath('english')}
 `);
-    // assumes superblock names are unique
-    // while the auditing is ongoing, we default to English for un-audited certs
-    // once that's complete, we can revert to using isEnglishChallenge(fullPath)
-    const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-    const isCert = path.extname(filePath) === '.markdown';
-    let challenge;
+  // assumes superblock names are unique
+  // while the auditing is ongoing, we default to English for un-audited certs
+  // once that's complete, we can revert to using isEnglishChallenge(fullPath)
+  const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
+  const isCert = path.extname(filePath) === '.markdown';
+  let challenge;
 
-    if (isCert) {
-      // TODO: this uses the old parser to handle certifcates, but Markdown is a
-      // clunky way to store data, consider converting to YAML and removing the
-      // old parser.
-      challenge = await (useEnglish
-        ? parseMarkdown(getFullPath('english'))
-        : parseTranslation(
-            getFullPath(lang),
-            COMMENT_TRANSLATIONS,
-            lang,
-            parseMarkdown
-          ));
-    } else {
-      challenge = await (useEnglish
-        ? parseMD(getFullPath('english'))
-        : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
-    }
-    const challengeOrder = findIndex(
-      meta.challengeOrder,
-      ([id]) => id === challenge.id
-    );
-    const {
-      name: blockName,
-      order,
-      superOrder,
-      isPrivate,
-      required = [],
-      template,
-      time
-    } = meta;
-    challenge.block = blockName;
-    challenge.order = order;
-    challenge.superOrder = superOrder;
-    challenge.superBlock = superBlock;
-    challenge.challengeOrder = challengeOrder;
-    challenge.isPrivate = challenge.isPrivate || isPrivate;
-    challenge.required = required.concat(challenge.required || []);
-    challenge.template = template;
-    challenge.time = time;
-    challenge.helpCategory =
-      challenge.helpCategory || helpCategoryMap[dasherize(blockName)];
+  if (isCert) {
+    // TODO: this uses the old parser to handle certifcates, but Markdown is a
+    // clunky way to store data, consider converting to YAML and removing the
+    // old parser.
+    challenge = await (useEnglish
+      ? parseMarkdown(getFullPath('english'))
+      : parseTranslation(
+          getFullPath(lang),
+          COMMENT_TRANSLATIONS,
+          lang,
+          parseMarkdown
+        ));
+  } else {
+    challenge = await (useEnglish
+      ? parseMD(getFullPath('english'))
+      : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
+  }
+  const challengeOrder = findIndex(
+    meta.challengeOrder,
+    ([id]) => id === challenge.id
+  );
+  const {
+    name: blockName,
+    order,
+    superOrder,
+    isPrivate,
+    required = [],
+    template,
+    time
+  } = meta;
+  challenge.block = blockName;
+  challenge.order = order;
+  challenge.superOrder = superOrder;
+  challenge.superBlock = superBlock;
+  challenge.challengeOrder = challengeOrder;
+  challenge.isPrivate = challenge.isPrivate || isPrivate;
+  challenge.required = required.concat(challenge.required || []);
+  challenge.template = template;
+  challenge.time = time;
+  challenge.helpCategory =
+    challenge.helpCategory || helpCategoryMap[dasherize(blockName)];
 
-    return prepareChallenge(challenge);
-  };
+  return prepareChallenge(challenge);
 }
 
 // TODO: tests and more descriptive name.
@@ -331,16 +346,14 @@ function prepareChallenge(challenge) {
   return challenge;
 }
 
-function hasEnglishSourceCreator(basePath) {
+async function hasEnglishSource(basePath, translationPath) {
   const englishRoot = path.resolve(__dirname, basePath, 'english');
-  return async function(translationPath) {
-    return await access(
-      path.join(englishRoot, translationPath),
-      fs.constants.F_OK
-    )
-      .then(() => true)
-      .catch(() => false);
-  };
+  return await access(
+    path.join(englishRoot, translationPath),
+    fs.constants.F_OK
+  )
+    .then(() => true)
+    .catch(() => false);
 }
 
 function superBlockInfoFromPath(filePath) {
@@ -370,6 +383,6 @@ function arrToString(arr) {
   return Array.isArray(arr) ? arr.join('\n') : toString(arr);
 }
 
-exports.hasEnglishSourceCreator = hasEnglishSourceCreator;
+exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
-exports.createChallengeCreator = createChallengeCreator;
+exports.createChallenge = createChallenge;

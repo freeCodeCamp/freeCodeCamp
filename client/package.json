@@ -41,6 +41,7 @@
     "gatsby-remark-prismjs": "^3.12.0",
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-remark": "^2.15.0",
+    "i18next": "^19.8.4",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "monaco-editor": "^0.20.0",
@@ -53,6 +54,7 @@
     "react-ga": "^2.7.0",
     "react-helmet": "^6.1.0",
     "react-hotkeys": "^2.0.0",
+    "react-i18next": "^11.8.5",
     "react-instantsearch-dom": "^6.8.3",
     "react-lazy-load": "^3.1.13",
     "react-monaco-editor": "^0.39.1",
@@ -83,7 +85,7 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "echo 'Client workers building...' && npm run build:workers && echo 'Client workers ready.' && node ../tools/scripts/build/ensure-env.js",
-    "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build",
+    "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build --prefix-paths",
     "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli --env.production --config ./webpack-workers.js && echo",
     "build:workers:debug": "node --max_old_space_size=7168 node_modules/webpack-cli --env.production --config ./webpack-workers.js --progress",
     "clean": "gatsby clean",
@@ -93,10 +95,12 @@
     "format:src": "prettier-eslint --write --trailing-comma none --single-quote './src/**/*.js'",
     "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
     "format": "npm run format:gatsby && npm run format:src && npm run format:utils",
+    "lint": "node ./i18n/schema-validation.js",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
     "serve": "gatsby serve -p 8000",
-    "test": "jest"
+    "test": "jest",
+    "validate-keys": "node ./i18n/validate-keys.js"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -106,6 +110,7 @@
     "chokidar": "^3.5.1",
     "copy-webpack-plugin": "^5.1.2",
     "jest": "^26.6.3",
+    "jest-json-schema-extended": "^0.3.0",
     "monaco-editor-webpack-plugin": "^1.9.0",
     "react-test-renderer": "^16.14.0",
     "redux-saga-test-plan": "^4.0.1",

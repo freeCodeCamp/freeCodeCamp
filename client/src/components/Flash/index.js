@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { useTranslation } from 'react-i18next';
 
 import './flash.css';
 
 function Flash({ flashMessage, onClose }) {
-  const { type, message, id } = flashMessage;
+  const { type, message, id, variables = {} } = flashMessage;
+  const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(null);
 
   useEffect(() => {
@@ -33,7 +35,7 @@ function Flash({ flashMessage, onClose }) {
             className='flash-message'
             onDismiss={handleClose}
           >
-            {message}
+            {t(message, variables)}
           </Alert>
         </CSSTransition>
       </TransitionGroup>
@@ -53,7 +55,8 @@ Flash.propTypes = {
   flashMessage: PropTypes.shape({
     id: PropTypes.string,
     type: PropTypes.string,
-    message: PropTypes.string
+    message: PropTypes.string,
+    variables: PropTypes.object
   }),
   onClose: PropTypes.func.isRequired
 };

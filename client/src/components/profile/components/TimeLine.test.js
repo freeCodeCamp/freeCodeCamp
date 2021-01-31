@@ -72,7 +72,7 @@ describe('<TimeLine />', () => {
   it('rendering the correct button when files is present', () => {
     const { getByText } = render(<TimeLine {...propsForOnlySolution} />);
 
-    const button = getByText('Show Code');
+    const button = getByText('buttons.show-code');
     expect(button).toBeInTheDocument();
   });
 });

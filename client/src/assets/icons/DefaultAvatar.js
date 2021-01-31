@@ -1,7 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function DefaultAvatar(props) {
+  const { t } = useTranslation();
+
   return (
     <svg
       className='default-avatar'
@@ -13,8 +16,8 @@ function DefaultAvatar(props) {
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}
     >
-      <title>default avatar</title>
-      <desc>an avatar conding with a laptop</desc>
+      <title>{t('icons.avatar')}</title>
+      <desc>{t('icons.avatar-2')}</desc>
       <g fill='none' fillRule='evenodd'>
         <g id='g'>
           <rect fill='#D0D0D5' height='500' width='500' />

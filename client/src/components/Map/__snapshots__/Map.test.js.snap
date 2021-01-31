@@ -3,92 +3,497 @@
 exports[`<Map /> snapshot: Map 1`] = `
 <div>
   <div
-    class="row"
+    class="map-ui"
+    data-test-label="learn-curriculum-map"
   >
-    <div
-      class="col-sm-10 col-sm-offset-1 col-xs-12"
+    <ul
+      data-test-label="certifications"
     >
-      <div
-        class="map-ui"
-        data-test-label="learn-curriculum-map"
-      >
-        <ul>
-          <li
-            class="superblock "
-            id="super-block-one"
-          >
-            <button
-              aria-expanded="false"
-              class="map-title"
-            >
-              <svg
-                viewBox="0 0 100 100"
-                width="25px"
-              >
-                <polygon
-                  points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
-                  style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
-                  transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
-                />
-              </svg>
-              <h4>
-                Super Block One Certification (300 hours)
-              </h4>
-            </button>
-          </li>
-          <li
-            class="superblock "
-            id="super-block-two"
-          >
-            <button
-              aria-expanded="false"
-              class="map-title"
-            >
-              <svg
-                viewBox="0 0 100 100"
-                width="25px"
-              >
-                <polygon
-                  points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
-                  style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
-                  transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
-                />
-              </svg>
-              <h4>
-                Super Block Two Certification (300 hours)
-              </h4>
-            </button>
-          </li>
-          <li
-            class="superblock "
-            id="super-block-three"
-          >
-            <button
-              aria-expanded="false"
-              class="map-title"
-            >
-              <svg
-                viewBox="0 0 100 100"
-                width="25px"
-              >
-                <polygon
-                  points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
-                  style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
-                  transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
-                />
-              </svg>
-              <h4>
-                Super Block Three Certification (300 hours)
-              </h4>
-            </button>
-          </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
           <div
-            class="spacer"
-            style="padding: 15px 0px; height: 1px;"
-          />
-        </ul>
-      </div>
-    </div>
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-three/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-three/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <span
+              class="sr-only"
+            >
+              icons.responsive-design
+            </span>
+            <svg
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 `;

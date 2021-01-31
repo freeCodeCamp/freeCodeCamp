@@ -46,7 +46,7 @@ Cypress.Commands.add('resetUsername', () => {
     .clear({ force: true })
     .type('developmentuser', { force: true });
 
-  cy.contains('Username is available.');
+  cy.contains('Username is available');
 
   cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
