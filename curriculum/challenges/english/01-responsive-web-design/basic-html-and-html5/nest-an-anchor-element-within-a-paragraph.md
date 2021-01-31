@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-Your `a` element should <em>not</em> have the text "`View more`".
+Your `a` element should <em>not</em> have the text `View more`.
 
 ```js
 assert(
