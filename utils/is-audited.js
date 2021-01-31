@@ -17,8 +17,6 @@ const auditedCerts = {
 function isAuditedCert(lang, cert) {
   if (!lang || !cert)
     throw Error('Both arguments must be provided for auditing');
-  // in order to see the challenges in the client, add the certification that
-  // contains those challenges to this array:
   return lang === 'english' || auditedCerts[lang].includes(cert);
 }
 
