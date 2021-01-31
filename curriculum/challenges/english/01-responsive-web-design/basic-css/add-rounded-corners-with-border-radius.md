@@ -19,7 +19,7 @@ You can specify a `border-radius` with pixels. Give your cat photo a `border-rad
 
 # --hints--
 
-Your image element should have the class "`thick-green-border`".
+Your image element should have the class `thick-green-border`.
 
 ```js
 assert($('img').hasClass('thick-green-border'));
