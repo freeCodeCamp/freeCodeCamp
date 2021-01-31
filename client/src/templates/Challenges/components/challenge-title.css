@@ -21,22 +21,22 @@
   justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 20px;
+  max-height: 25px;
   word-wrap: none;
   white-space: nowrap;
   flex-grow: 1;
   flex-shrink: 2;
+  background-color: var(--quaternary-background);
 }
 
 .breadcrumb-center {
-  width: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-height: 20px;
+  width: 0;
+  height: 0;
+  border-top: calc(23px / 2) solid transparent;
+  border-bottom: calc(23px / 2) solid transparent;
+  border-left: calc(23px / 2) solid var(--quaternary-background);
   flex-grow: 0;
   flex-shrink: 0;
-  margin: 0 10px;
 }
 
 .breadcrumb-right {
@@ -44,7 +44,7 @@
   display: inline-block;
   align-items: center;
   justify-content: center;
-  max-height: 20px;
+  max-height: 25px;
   min-width: 50px;
   flex-grow: 2;
   flex-shrink: 1;

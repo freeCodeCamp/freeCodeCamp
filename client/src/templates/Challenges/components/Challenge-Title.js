@@ -23,9 +23,7 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
         >
           <span className='ellipsis'>{superBlock}</span>
         </Link>
-        <div className='breadcrumb-center'>
-          <span>{'>>'}</span>
-        </div>
+        <div className='breadcrumb-center' />
         <Link
           className='breadcrumb-right'
           state={{ breadcrumbBlockClick: block }}
