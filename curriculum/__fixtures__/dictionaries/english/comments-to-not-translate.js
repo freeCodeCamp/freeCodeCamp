@@ -1,14 +1,3 @@
-const COMMENTS_TO_TRANSLATE = [
-  {
-    id: 'hyek8f',
-    text: 'To be translated one'
-  },
-  {
-    id: 'rscjup',
-    text: 'To be translated two'
-  }
-];
-
 const COMMENTS_TO_NOT_TRANSLATE = [
   {
     id: 'rms15q',
@@ -20,5 +9,4 @@ const COMMENTS_TO_NOT_TRANSLATE = [
   }
 ];
 
-exports.COMMENTS_TO_TRANSLATE = COMMENTS_TO_TRANSLATE;
 exports.COMMENTS_TO_NOT_TRANSLATE = COMMENTS_TO_NOT_TRANSLATE;
