@@ -10,19 +10,22 @@
   margin-left: -10px;
   margin-right: -10px;
   border-bottom: 2px solid var(--secondary-color);
+  height: 25px;
 }
 
 .breadcrumb-left {
-  width: 10%;
-  min-width: 40px;
   text-decoration: none;
-  display: flex;
+  min-width: 25px;
+  display: inline-block;
   align-items: center;
   justify-content: center;
-}
-
-.breadcrumb-icon {
-  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 20px;
+  word-wrap: none;
+  white-space: nowrap;
+  flex-grow: 1;
+  flex-shrink: 2;
 }
 
 .breadcrumb-center {
@@ -30,14 +33,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-height: 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 0 10px;
 }
 
 .breadcrumb-right {
-  width: 85%;
   text-decoration: none;
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
+  max-height: 20px;
+  min-width: 50px;
+  flex-grow: 2;
+  flex-shrink: 1;
+  word-wrap: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 20px;
+  white-space: nowrap;
 }
 
 .breadcrumb-rule {

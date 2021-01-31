@@ -5,7 +5,6 @@ import { Link } from '../../../components/helpers/index';
 import { dasherize } from '../../../../../utils/slugs';
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
-import { generateIconComponent } from '../../../assets/icons';
 
 const propTypes = {
   block: PropTypes.string,
@@ -22,7 +21,7 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
           className='breadcrumb-left'
           to={`/learn/${dasherize(superBlock)}`}
         >
-          <span>{generateIconComponent(superBlock, 'breadcrumb-icon')}</span>
+          <span className='ellipsis'>{superBlock}</span>
         </Link>
         <div className='breadcrumb-center'>
           <span>{'>>'}</span>
