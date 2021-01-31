@@ -29,7 +29,7 @@ Change your external link to an internal link by changing the `href` attribute t
 
 Remove the `target="_blank"` attribute from the anchor tag since this causes the linked document to open in a new window tab.
 
-Then add an `id` attribute with a value of "`footer`" to the `<footer>` element at the bottom of the page.
+Then add an `id` attribute with a value of `footer` to the `<footer>` element at the bottom of the page.
 
 # --hints--
 

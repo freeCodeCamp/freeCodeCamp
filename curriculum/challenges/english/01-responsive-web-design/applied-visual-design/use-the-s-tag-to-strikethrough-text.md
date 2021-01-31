@@ -13,7 +13,7 @@ To strikethrough text, which is when a horizontal line cuts across the character
 
 # --instructions--
 
-Wrap the `s` tag around "`Google`" inside the `h4` tag and then add the word "`Alphabet`" beside it, which should not have the strikethrough formatting.
+Wrap the `s` tag around `Google` inside the `h4` tag and then add the word `Alphabet` beside it, which should not have the strikethrough formatting.
 
 # --hints--
 
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-You should include the word "`Alphabet`" in the `h4` tag, without strikethrough formatting.
+You should include the word `Alphabet` in the `h4` tag, without strikethrough formatting.
 
 ```js
 assert(

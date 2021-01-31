@@ -24,7 +24,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an `input` tag with a `type` attribute of "`date`", an `id` attribute of "`pickdate`", and a `name` attribute of "`date`".
+Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an `input` tag with a `type` attribute of `date`, an `id` attribute of `pickdate`, and a `name` attribute of `date`.
 
 # --hints--
 

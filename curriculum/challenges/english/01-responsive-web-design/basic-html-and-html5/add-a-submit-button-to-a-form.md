@@ -17,7 +17,7 @@ Here's an example submit button:
 
 # --instructions--
 
-Add a button as the last element of your `form` element with a type of `submit`, and "`Submit`" as its text.
+Add a button as the last element of your `form` element with a type of `submit`, and `Submit` as its text.
 
 # --hints--
 
