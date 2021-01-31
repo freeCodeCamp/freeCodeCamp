@@ -17,7 +17,7 @@ jobs:
         with:
           # uploads
           upload_sources: true
-          upload_translations: true
+          upload_translations: false
           auto_approve_imported: false
           import_eq_suggestions: false
 
