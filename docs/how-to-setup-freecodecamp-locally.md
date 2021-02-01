@@ -33,8 +33,8 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
-node -v
-npm -v
+  node -v
+  npm -v
 ```
 
 > [!TIP]
@@ -104,9 +104,9 @@ Run these commands on your local machine:
 
 2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
-  ```console
-  git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-  ```
+    ```console
+    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+    ```
 
 This will download the entire freeCodeCamp repository to your projects directory.
 
@@ -122,30 +122,30 @@ You need a reference from your local clone to the `upstream` repository in addit
 
 1. Change directory to the new freeCodeCamp directory:
 
-  ```console
-  cd freeCodeCamp
-  ```
+    ```console
+    cd freeCodeCamp
+    ```
 
 2. Add a remote reference to the main freeCodeCamp repository:
 
-  ```console
-  git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
-  ```
+    ```console
+    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+    ```
 
 3. Ensure the configuration looks correct:
 
-  ```console
-  git remote -v
-  ```
+    ```console
+    git remote -v
+    ```
 
   The output should look something like below:
 
-  ```console
-  origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-  origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-  upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-  upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
-  ```
+    ```console
+    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+    ```
 
 ## Running freeCodeCamp locally
 
@@ -172,16 +172,16 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
-```console
-# Create a copy of the "sample.env" and name it ".env".
-# Populate it with the necessary API keys and secrets:
+  ```console
+  # Create a copy of the "sample.env" and name it ".env".
+  # Populate it with the necessary API keys and secrets:
 
-# macOS / Linux
-cp sample.env .env
+  # macOS / Linux
+  cp sample.env .env
 
-# Windows
-copy sample.env .env
-```
+  # Windows
+  copy sample.env .env
+  ```
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
@@ -192,9 +192,9 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 This step will install the dependencies required for the application to run:
 
-```console
-npm ci
-```
+  ```console
+  npm ci
+  ```
 
 #### Step 3: Start MongoDB and seed the database
 
@@ -207,15 +207,15 @@ Start the MongoDB server in a separate terminal:
 
 - On macOS & Ubuntu:
 
- ```console
- mongod
- ```
+  ```console
+  mongod
+  ```
 
 - On Windows, you must specify the full path to the `mongod` binary
 
- ```console
- "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
- ```
+  ```console
+  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+  ```
 
  Make sure to replace `3.6` with the version you have installed
 
@@ -224,17 +224,17 @@ Start the MongoDB server in a separate terminal:
 
 Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
-```console
-npm run seed
-```
+  ```console
+  npm run seed
+  ```
 
 #### Step 4: Start the freeCodeCamp client application and API server
 
 You can now start up the API server and the client applications.
 
-```console
-npm run develop
-```
+  ```console
+  npm run develop
+  ```
 
 This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
@@ -270,9 +270,9 @@ Follow these steps:
 
 1. Validate that you are on the `main` branch:
 
-  ```console
-  git status
-  ```
+    ```console
+    git status
+    ```
 
   You should get an output like this:
 
@@ -280,8 +280,8 @@ Follow these steps:
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
-  nothing to commit, working directory clean
-  ```
+    nothing to commit, working directory clean
+    ```
 
    If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
 
@@ -300,9 +300,9 @@ Follow these steps:
 
   Update your local copy of the freeCodeCamp upstream repository:
 
-  ```console
-  git fetch upstream
-  ```
+    ```console
+    git fetch upstream
+    ```
 
    Hard reset your main branch with the freeCodeCamp main:
 
@@ -330,21 +330,21 @@ Follow these steps:
 
    Check that you are on `main` as explained previously, and branch off from there:
 
-  ```console
-  git checkout -b fix/update-guide-for-xyz
-  ```
+    ```console
+    git checkout -b fix/update-guide-for-xyz
+    ```
 
   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
   Some examples of good branch names are:
 
-  ```md
-  fix/update-challenges-for-react
-  fix/update-guide-for-html-css
-  fix/platform-bug-sign-in-issues
-  feat/add-guide-article-for-javascript
-  translate/add-spanish-basic-html
-  ```
+    ```md
+    fix/update-challenges-for-react
+    fix/update-guide-for-html-css
+    fix/platform-bug-sign-in-issues
+    feat/add-guide-article-for-javascript
+    translate/add-spanish-basic-html
+    ```
 
 4. Edit pages and work on code in your favorite text editor.
 
@@ -354,74 +354,74 @@ Follow these steps:
 
 7. Check and confirm the files you are updating:
 
-  ```console
-  git status
-  ```
+    ```console
+    git status
+    ```
 
   This should show a list of `unstaged` files that you have edited.
 
-  ```console
-  On branch feat/documentation
-  Your branch is up to date with 'upstream/feat/documentation'.
+    ```console
+    On branch feat/documentation
+    Your branch is up to date with 'upstream/feat/documentation'.
 
-  Changes were not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in the working directory)
+    Changes were not staged for commit:
+    (use "git add/rm <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in the working directory)
 
-      modified:   CONTRIBUTING.md
-      modified:   docs/README.md
-      modified:   docs/how-to-setup-freecodecamp-locally.md
-      modified:   docs/how-to-work-on-guide-articles.md
-  ...
-  ```
+        modified:   CONTRIBUTING.md
+        modified:   docs/README.md
+        modified:   docs/how-to-setup-freecodecamp-locally.md
+        modified:   docs/how-to-work-on-guide-articles.md
+    ...
+    ```
 
 8. Stage the changes and make a commit:
 
   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
-  ```console
-  git add path/to/my/changed/file.ext
-  ```
+    ```console
+    git add path/to/my/changed/file.ext
+    ```
 
   Or you can add all the `unstaged` files to the staging area:
 
-  ```console
-  git add .
-  ```
+    ```console
+    git add .
+    ```
 
   Only the files that were moved to the staging area will be added when you make a commit.
 
-  ```console
-  git status
-  ```
+    ```console
+    git status
+    ```
 
   Output:
 
-  ```console
-  On branch feat/documentation
-  Your branch is up to date with 'upstream/feat/documentation'.
+    ```console
+    On branch feat/documentation
+    Your branch is up to date with 'upstream/feat/documentation'.
 
-  Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+    Changes to be committed:
+    (use "git reset HEAD <file>..." to unstage)
 
-      modified:   CONTRIBUTING.md
-      modified:   docs/README.md
-      modified:   docs/how-to-setup-freecodecamp-locally.md
-      modified:   docs/how-to-work-on-guide-articles.md
-  ```
+        modified:   CONTRIBUTING.md
+        modified:   docs/README.md
+        modified:   docs/how-to-setup-freecodecamp-locally.md
+        modified:   docs/how-to-work-on-guide-articles.md
+    ```
 
   Now, you can commit your changes with a short message like so:
 
-  ```console
-  git commit -m "fix: my short commit message"
-  ```
+    ```console
+    git commit -m "fix: my short commit message"
+    ```
 
   Some examples:
 
-  ```md
-  fix: update guide article for Java - for loop
-  feat: add guide article for alexa skills
-  ```
+    ```md
+    fix: update guide article for Java - for loop
+    feat: add guide article for alexa skills
+    ```
 
   Optional:
 
@@ -429,12 +429,12 @@ Follow these steps:
 
   Some examples of conventional commit messages are:
 
-  ```md
-  fix: update HTML guide article
-  fix: update build scripts for Travis-CI
-  feat: add article for JavaScript hoisting
-  docs: update contributing guidelines
-  ```
+    ```md
+    fix: update HTML guide article
+    fix: update build scripts for Travis-CI
+    feat: add article for JavaScript hoisting
+    docs: update contributing guidelines
+    ```
 
   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
@@ -444,17 +444,17 @@ Follow these steps:
 
 9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
-  ```console
-  git commit --amend
-  ```
+    ```console
+    git commit --amend
+    ```
 
   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
 10. Next, you can push your changes to your fork:
 
-   ```console
-   git push origin branch/name-here
-   ```
+    ```console
+    git push origin branch/name-here
+    ```
 
 ## Proposing a Pull Request (PR)
 
@@ -497,12 +497,12 @@ If you are on a different OS and/or are still running into issues, see [getting 
 
 If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
-```console
-npm run clean
-npm ci
-npm run seed
-npm run develop
-```
+  ```console
+  npm run clean
+  npm ci
+  npm run seed
+  npm run develop
+  ```
 
 OR
 
