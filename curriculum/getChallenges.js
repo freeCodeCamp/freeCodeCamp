@@ -2,7 +2,7 @@ const path = require('path');
 const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp');
 const yaml = require('js-yaml');
-const { parseMD } = require('../tools/challenge-parser/mdx');
+const { parseMD } = require('../tools/challenge-parser/parser');
 const fs = require('fs');
 const util = require('util');
 /* eslint-disable max-len */
