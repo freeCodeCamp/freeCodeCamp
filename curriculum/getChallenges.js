@@ -2,13 +2,13 @@ const path = require('path');
 const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp');
 const yaml = require('js-yaml');
-const { parseMD } = require('../tools/challenge-md-parser/mdx');
+const { parseMD } = require('../tools/challenge-parser/mdx');
 const fs = require('fs');
 const util = require('util');
 /* eslint-disable max-len */
 const {
   translateCommentsInChallenge
-} = require('../tools/challenge-md-parser/translation-parser/translation-parser');
+} = require('../tools/challenge-parser/translation-parser/translation-parser');
 /* eslint-enable max-len*/
 
 const { isAuditedCert } = require('../utils/is-audited');

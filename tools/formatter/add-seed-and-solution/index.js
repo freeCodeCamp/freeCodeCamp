@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { getText } = require('./get-challenge-text');
 const { challengeToString } = require('./create-challenge-string');
-const { parseMD } = require('../../challenge-md-parser/mdx');
+const { parseMD } = require('../../challenge-parser/mdx');
 
 const challengeDir = '../../../curriculum/challenges/';
 const enChalDir = path.resolve(__dirname, challengeDir, 'english');

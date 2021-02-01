@@ -1,8 +1,8 @@
 const { root } = require('mdast-builder');
-const getAllBetween = require('../../../challenge-md-parser/mdx/plugins/utils/between-headings');
+const getAllBetween = require('../../../challenge-parser/mdx/plugins/utils/between-headings');
 const {
   splitOnThematicBreak
-} = require('../../../challenge-md-parser/mdx/plugins/utils/split-on-thematic-break');
+} = require('../../../challenge-parser/mdx/plugins/utils/split-on-thematic-break');
 
 const { stringifyMd } = require('./text-to-data');
 

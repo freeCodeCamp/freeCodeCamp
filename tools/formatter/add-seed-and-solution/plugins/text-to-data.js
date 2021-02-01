@@ -1,7 +1,7 @@
 const stringify = require('remark-stringify');
 const { root } = require('mdast-builder');
 const unified = require('unified');
-const getAllBetween = require('../../../challenge-md-parser/mdx/plugins/utils/between-headings');
+const getAllBetween = require('../../../challenge-parser/mdx/plugins/utils/between-headings');
 
 const stringifyMd = nodes =>
   unified()
