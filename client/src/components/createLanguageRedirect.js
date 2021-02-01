@@ -4,9 +4,7 @@ const createLanguageRedirect = ({ clientLocale, lang }) => {
 
   let path = window?.location?.pathname?.split('/');
   path = path
-    .filter(
-      (item, i) => i !== 0 || (item !== clientLocale && item !== lang && item)
-    )
+    .filter(item => (item !== clientLocale && item !== lang ? item : ''))
     .join('/');
 
   const hostTail = window?.location?.host

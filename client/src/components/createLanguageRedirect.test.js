@@ -16,11 +16,6 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       'https://www.freecodecamp.org/espanol/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const francaisPageURL =
       'https://www.freecodecamp.org/francais/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
-    const singleEspanolURL =
-      'https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/espanol';
-
-    const doubleEspanolURL =
-      'https://www.freecodecamp.org/espanol/learn/responsive-web-design/basic-html-and-html5/espanol';
 
     const originalLocation = window.location;
 
