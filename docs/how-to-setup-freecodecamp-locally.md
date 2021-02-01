@@ -83,7 +83,7 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
       How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub">
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub">
 </details>
 
 ## Clone your fork from GitHub
@@ -262,7 +262,7 @@ You can now make changes to files and commit your changes to your local clone of
 
 Follow these steps:
 
-1. Validate that you are on the `master` branch:
+1. Validate that you are on the `main` branch:
 
    ```console
    git status
@@ -271,26 +271,26 @@ Follow these steps:
    You should get an output like this:
 
    ```console
-   On branch master
-   Your branch is up-to-date with 'origin/master'.
+   On branch main
+   Your branch is up-to-date with 'origin/main'.
 
    nothing to commit, working directory clean
    ```
 
-   If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
+   If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
 
    ```console
-   git checkout master
+   git checkout main
    ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
+2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your local main branch:
 
    > [!WARNING]
-   > If you have any outstanding pull request that you made from the `master` branch of your fork, you will lose them at the end of this step.
+   > If you have any outstanding pull request that you made from the `main` branch of your fork, you will lose them at the end of this step.
    >
-   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `master`.
+   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
 
-   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
+   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
    Update your local copy of the freeCodeCamp upstream repository:
 
@@ -298,31 +298,31 @@ Follow these steps:
    git fetch upstream
    ```
 
-   Hard reset your master branch with the freeCodeCamp master:
+   Hard reset your main branch with the freeCodeCamp main:
 
    ```console
-   git reset --hard upstream/master
+   git reset --hard upstream/main
    ```
 
-   Push your master branch to your origin to have a clean history on your fork on GitHub:
+   Push your main branch to your origin to have a clean history on your fork on GitHub:
 
    ```console
-   git push origin master --force
+   git push origin main --force
    ```
 
-   You can validate your current master matches the upstream/master by performing a diff:
+   You can validate your current main matches the upstream/main by performing a diff:
 
    ```console
-   git diff upstream/master
+   git diff upstream/main
    ```
 
    The resulting output should be empty.
 
 3. Create a fresh new branch:
 
-   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
-   Check that you are on `master` as explained previously, and branch off from there:
+   Check that you are on `main` as explained previously, and branch off from there:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
