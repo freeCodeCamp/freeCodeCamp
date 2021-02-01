@@ -94,7 +94,7 @@ Skim the YouTube video with that videoId and think of a multiple-choice question
 
 ### Add the question to the markdown file
 
-You can add the question locally or directly through the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
+You can add the question locally or using the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
