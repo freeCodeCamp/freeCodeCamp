@@ -1,7 +1,7 @@
 const path = require('path');
 const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp');
-const { parseMarkdown } = require('../tools/challenge-md-parser');
+const yaml = require('js-yaml');
 const { parseMD } = require('../tools/challenge-md-parser/mdx');
 const fs = require('fs');
 const util = require('util');
@@ -127,6 +127,10 @@ function getMetaForBlock(block) {
   );
 }
 
+function parseCert(filePath) {
+  return yaml.load(fs.readFileSync(filePath, 'utf8'));
+}
+
 exports.getChallengesDirForLang = getChallengesDirForLang;
 exports.getMetaForBlock = getMetaForBlock;
 
@@ -164,7 +168,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
   return walk(
     root,
     curriculum,
-    { type: 'files', fileFilter: ['*.md', '*.markdown'] },
+    { type: 'files', fileFilter: ['*.md', '*.yml'] },
     cb
   );
 };
@@ -261,21 +265,13 @@ ${getFullPath('english')}
   // while the auditing is ongoing, we default to English for un-audited certs
   // once that's complete, we can revert to using isEnglishChallenge(fullPath)
   const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-  const isCert = path.extname(filePath) === '.markdown';
+  const isCert = path.extname(filePath) === '.yml';
   let challenge;
 
   if (isCert) {
-    // TODO: this uses the old parser to handle certifcates, but Markdown is a
-    // clunky way to store data, consider converting to YAML and removing the
-    // old parser.
     challenge = await (useEnglish
-      ? parseMarkdown(getFullPath('english'))
-      : parseTranslation(
-          getFullPath(lang),
-          COMMENT_TRANSLATIONS,
-          lang,
-          parseMarkdown
-        ));
+      ? parseCert(getFullPath('english'))
+      : parseCert(getFullPath(lang)));
   } else {
     challenge = await (useEnglish
       ? parseMD(getFullPath('english'))
