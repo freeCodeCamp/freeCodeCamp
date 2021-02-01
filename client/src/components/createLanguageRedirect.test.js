@@ -60,15 +60,6 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       expect(receivedPageURL).toBe(francaisPageURL);
     });
 
-    it('should not replace the second espanol', () => {
-      delete window.location;
-      window.location = new URL(singleEspanolURL);
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'espanol'
-      });
-      expect(receivedPageURL).toBe(doubleEspanolURL);
-    });
   });
 
   describe('settings page', () => {
