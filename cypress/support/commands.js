@@ -37,3 +37,18 @@ Cypress.Commands.add('login', () => {
   cy.visit('/');
   cy.contains("Get started (it's free)").click({ force: true });
 });
+
+Cypress.Commands.add('resetUsername', () => {
+  cy.login();
+  cy.visit('/settings');
+
+  cy.get('@usernameInput')
+    .clear({ force: true })
+    .type('developmentuser', { force: true });
+
+  cy.contains('Username is available');
+
+  cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+
+  cy.contains('Account Settings for developmentuser').should('be.visible');
+});

@@ -1,57 +1,109 @@
 ---
 id: 5900f3951000cf542c50fea8
+title: 问题41：Pandigital prime
 challengeType: 5
 videoUrl: ''
-title: 问题41：Pandigital prime
+dashedName: problem-41-pandigital-prime
 ---
 
-## Description
-<section id="description">我们将说<i>n</i>数字是pandigital，如果它使用所有数字1到<i>n</i>恰好一次。例如，2143是一个4位数的pandigital，也是素数。什么是最大的<i>n长</i>数字pandigital素数？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+我们将说*n*数字是pandigital，如果它使用所有数字1到*n*恰好一次。例如，2143是一个4位数的pandigital，也是素数。什么是最大的*n长*数字pandigital素数？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>pandigitalPrime(4)</code>应该返回4231。
-    testString: assert(pandigitalPrime(4) == 4231);
-  - text: <code>pandigitalPrime(7)</code>应该返回7652413。
-    testString: assert(pandigitalPrime(7) == 7652413);
+`pandigitalPrime(4)`应该返回4231。
 
+```js
+assert(pandigitalPrime(4) == 4231);
 ```
 
-</section>
+`pandigitalPrime(7)`应该返回7652413。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(pandigitalPrime(7) == 7652413);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function pandigitalPrime(n) {
-  // Good luck!
+
   return n;
 }
 
 pandigitalPrime(7);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function pandigitalPrime(n) {
+  function isPrime(num) {
+    for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return num !== 1;
+  }
 
-/section>
+  function getPermutations(n) {
+    if (n === 1) {
+      permutations.push(digitsArr.join(''));
+    } else {
+      for (let i = 0; i < n - 1; i++) {
+        getPermutations(n - 1);
+        // swap(n % 2 === 0 ? i : 0, n - 1);
+        if (n % 2 === 0) {
+          swap(i, n - 1);
+        } else {
+          swap(0, n - 1);
+        }
+      }
+      getPermutations(n - 1);
+    }
+  }
+  function swap(x, y) {
+    let temp = digitsArr[x];
+    digitsArr[x] = digitsArr[y];
+    digitsArr[y] = temp;
+  }
+  let max = 0;
+  let permutations = [];
+  let digitsArr;
+  let pandigitalNum = '';
+
+  for (let max = n; max > 0; max--) {
+    pandigitalNum += max;
+  }
+
+  for (let i = 0; i < pandigitalNum.length; i++) {
+    if (max > 0) {
+      break;
+    } else {
+      permutations = [];
+      const currMax = pandigitalNum.slice(i);
+      digitsArr = currMax.split('');
+      getPermutations(digitsArr.length);
+
+      // sort permutations in descending order
+      permutations.sort(function(a, b) {
+        return b - a;
+      });
+
+      for (let perm of permutations) {
+        const thisPerm = parseInt(perm);
+        if (isPrime(thisPerm)) {
+          max = thisPerm;
+          break;
+        }
+      }
+    }
+  }
+
+  return max;
+}
+```

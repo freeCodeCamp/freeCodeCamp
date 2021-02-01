@@ -2,29 +2,28 @@
 id: 5e8f2f13c4cdbe86b5c72d8e
 challengeType: 11
 videoId: 5wHw8BTd2ZQ
+dashedName: core-learning-algorithms-building-the-model
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What kind of estimator/model does TensorFlow recommend using for classification?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What kind of estimator/model does TensorFlow recommend using for classification?
-  answers:
-    - |
-      `LinearClassifier`
-    - |
-      `DNNClassifier`
-    - |
-      `BoostedTreesClassifier`
-  solution: 2
-```
+`LinearClassifier`
 
-</section>
+---
+
+`DNNClassifier`
+
+---
+
+`BoostedTreesClassifier`
+
+## --video-solution--
+
+2
+

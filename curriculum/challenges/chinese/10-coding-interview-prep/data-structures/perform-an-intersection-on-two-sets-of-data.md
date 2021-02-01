@@ -1,99 +1,182 @@
 ---
 id: 587d8253367417b2b2512c6d
+title: 在两组数据上执行交集
 challengeType: 1
 videoUrl: ''
-title: 在两组数据上执行交集
+dashedName: perform-an-intersection-on-two-sets-of-data
 ---
 
-## Description
-<section id="description">在本练习中，我们将对两组数据执行交集。我们将在我们的<code>Set</code>数据结构上创建一个名为<code>intersection</code> 。集合的交集表示两个或更多集合共有的所有值。此方法应将另一个<code>Set</code>作为参数，并返回两个集合的<code>intersection</code> 。例如，如果<code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code>和<code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> ，则setA和setB的交集为： <code>setA.intersection(setB) = [&#39;a&#39;, &#39;b&#39;]</code> 。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+在本练习中，我们将对两组数据执行交集。我们将在我们的`Set`数据结构上创建一个名为`intersection` 。集合的交集表示两个或更多集合共有的所有值。此方法应将另一个`Set`作为参数，并返回两个集合的`intersection` 。例如，如果`setA = ['a','b','c']`和`setB = ['a','b','d','e']` ，则setA和setB的交集为： `setA.intersection(setB) = ['a', 'b']` 。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 您的<code>Set</code>类应该有一个<code>intersection</code>方法。
-    testString: assert((function(){var test = new Set(); return (typeof test.intersection === 'function')})());
-  - text: 收回了适当的收藏
-    testString: assert((function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')})());
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+您的`Set`类应该有一个`intersection`方法。
 
 ```js
-function Set() {
-    // the var collection will hold the set
-    var collection = [];
-    // this method will check for the presence of an element and return true or false
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
-    // this method will return all the values in the set
-    this.values = function() {
-        return collection;
-    };
-   // this method will add an element to the set
-    this.add = function(element) {
-        if(!this.has(element)){
-            collection.push(element);
-            return true;
-        }
-        return false;
-    };
-    // this method will remove an element from a set
-    this.remove = function(element) {
-        if(this.has(element)){
-           var index = collection.indexOf(element);
-            collection.splice(index,1);
-            return true;
-        }
-        return false;
-    };
-    // this method will return the size of the collection
-    this.size = function() {
-        return collection.length;
-    };
-    // this method will return the union of two sets
-    this.union = function(otherSet) {
-        var unionSet = new Set();
-        var firstSet = this.values();
-        var secondSet = otherSet.values();
-        firstSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        secondSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        return unionSet;
-    };
-    // change code below this line
-    // change code above this line
+assert(
+  (function () {
+    var test = new Set();
+    return typeof test.intersection === 'function';
+  })()
+);
+```
+
+收回了适当的收藏
+
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    setA.add('a');
+    setA.add('b');
+    setA.add('c');
+    setB.add('c');
+    setB.add('d');
+    var intersectionSetAB = setA.intersection(setB);
+    return (
+      intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c'
+    );
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+class Set {
+  constructor() {
+    // This will hold the set
+    this.dictionary = {};
+    this.length = 0;
+  }
+  // This method will check for the presence of an element and return true or false
+  has(element) {
+    return this.dictionary[element] !== undefined;
+  }
+  // This method will return all the values in the set
+  values() {
+    return Object.keys(this.dictionary);
+  }
+  // This method will add an element to the set
+  add(element) {
+    if (!this.has(element)) {
+      this.dictionary[element] = true;
+      this.length++;
+      return true;
+    }
+
+    return false;
+  }
+  // This method will remove an element from a set
+  remove(element) {
+    if (this.has(element)) {
+      delete this.dictionary[element];
+      this.length--;
+      return true;
+    }
+
+    return false;
+  }
+  // This method will return the size of the set
+  size() {
+    return this.length;
+  }
+  // This is our union method 
+  union(set) {
+    const newSet = new Set();
+    this.values().forEach(value => {
+      newSet.add(value);
+    })
+    set.values().forEach(value => {
+      newSet.add(value);
+    })
+
+    return newSet;
+  }
+  // Only change code below this line
+  
+  // Only change code above this line
 }
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+class Set {
+  constructor() {
+    this.dictionary = {};
+    this.length = 0;
+  }
 
-/section>
+  has(element) {
+    return this.dictionary[element] !== undefined;
+  }
+
+  values() {
+    return Object.keys(this.dictionary);
+  }
+
+  add(element) {
+    if (!this.has(element)) {
+      this.dictionary[element] = true;
+      this.length++;
+      return true;
+    }
+
+    return false;
+  }
+
+  remove(element) {
+    if (this.has(element)) {
+      delete this.dictionary[element];
+      this.length--;
+      return true;
+    }
+
+    return false;
+  }
+
+  size() {
+    return this.length;
+  }
+
+  union(set) {
+    const newSet = new Set();
+    this.values().forEach(value => {
+      newSet.add(value);
+    })
+    set.values().forEach(value => {
+      newSet.add(value);
+    })
+
+    return newSet;
+  }
+
+  intersection(set) {
+    const newSet = new Set();
+
+    let largeSet;
+    let smallSet;
+    if (this.dictionary.length > set.length) {
+      largeSet = this;
+      smallSet = set;
+    } else {
+      largeSet = set;
+      smallSet = this;
+    }
+
+    smallSet.values().forEach(value => {
+      if (largeSet.dictionary[value]) {
+        newSet.add(value);
+      }
+    })
+
+    return newSet;
+  }
+}
+```

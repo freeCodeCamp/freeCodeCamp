@@ -1,55 +1,40 @@
 ---
 id: 5900f4311000cf542c50ff44
+title: 问题197：研究递归定义的序列的行为
 challengeType: 5
 videoUrl: ''
-title: 问题197：研究递归定义的序列的行为
+dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-sequence
 ---
 
-## Description
-<section id="description">给定函数f（x）=⌊230.403243784-x2⌋×10-9（⌊⌊是floor函数），序列un由u0 = -1和un + 1 = f（un）定义。 <p>找到n + 1012的un + un + 1.在小数点后面给出9位数的答案。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+给定函数f（x）=⌊230.403243784-x2⌋×10-9（⌊⌊是floor函数），序列un由u0 = -1和un + 1 = f（un）定义。
 
-## Tests
-<section id='tests'>
+找到n + 1012的un + un + 1.在小数点后面给出9位数的答案。
 
-```yml
-tests:
-  - text: <code>euler197()</code>应该返回1.710637717。
-    testString: assert.strictEqual(euler197(), 1.710637717);
+# --hints--
 
+`euler197()`应该返回1.710637717。
+
+```js
+assert.strictEqual(euler197(), 1.710637717);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler197() {
-  // Good luck!
+
   return true;
 }
 
 euler197();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

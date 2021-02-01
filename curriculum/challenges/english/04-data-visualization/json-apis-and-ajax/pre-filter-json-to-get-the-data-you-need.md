@@ -3,12 +3,15 @@ id: 587d7fae367417b2b2512be7
 title: Pre-filter JSON to Get the Data You Need
 challengeType: 6
 forumTopicId: 18257
+dashedName: pre-filter-json-to-get-the-data-you-need
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.
-Given that the JSON data is stored in an array, you can use the <code>filter</code> method to filter out the cat whose "id" key has a value of 1.
+
+Given that the JSON data is stored in an array, you can use the `filter` method to filter out the cat whose "id" key has a value of 1.
+
 Here's the code to do this:
 
 ```js
@@ -17,29 +20,21 @@ json = json.filter(function(val) {
 });
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add code to <code>filter</code> the json data to remove the cat with the "id" value of 1.
-</section>
+Add code to `filter` the json data to remove the cat with the "id" value of 1.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should use the <code>filter</code> method.
-    testString: assert(code.match(/json\.filter/g));
+Your code should use the `filter` method.
 
+```js
+assert(code.match(/json\.filter/g));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <script>
@@ -106,14 +101,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -181,5 +169,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>

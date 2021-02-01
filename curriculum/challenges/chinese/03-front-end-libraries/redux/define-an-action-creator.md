@@ -1,68 +1,57 @@
 ---
 id: 5a24c314108439a4d403614e
+title: 定义一个 Action Creator
 challengeType: 6
 forumTopicId: 301441
-title: 定义一个 Action Creator
+dashedName: define-an-action-creator
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 创建 action 后要将 action 发送到 Redux store，以便它可以更新其状态。在 Redux 中，你可以定义动作创建器来完成此任务，action creator 只是一个返回动作的 JavaScript 函数，换句话说，action creator 创建表示动作事件的对象。
-</section>
 
-## Instructions
-<section id='instructions'>
-定义名为<code>actionCreator()</code>的函数，该函数在调用时返回<code>action</code>对象。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+定义名为`actionCreator()`的函数，该函数在调用时返回`action`对象。
 
-```yml
-tests:
-  - text: 函数<code>actionCreator</code>应该存在。
-    testString: assert(typeof actionCreator === 'function');
-  - text: 运行<code>actionCreator</code>函数应返回 action 对象。
-    testString: assert(typeof action === 'object');
-  - text: 返回的 action 应具有值为<code>LOGIN</code>的键值类型。
-    testString: assert(action.type === 'LOGIN');
+# --hints--
 
+函数`actionCreator`应该存在。
+
+```js
+assert(typeof actionCreator === 'function');
 ```
 
-</section>
+运行`actionCreator`函数应返回 action 对象。
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='jsx-seed'>
-
-```jsx
-const action = {
-  type: 'LOGIN'
-}
-// 在此处定义 action creator
-
-
+```js
+assert(typeof action === 'object');
 ```
 
-</div>
+返回的 action 应具有值为`LOGIN`的键值类型。
 
+```js
+assert(action.type === 'LOGIN');
+```
 
+# --seed--
 
-</section>
-
-## Solution
-<section id='solution'>
-
+## --seed-contents--
 
 ```js
 const action = {
   type: 'LOGIN'
 }
-// 在此处定义 action creator:
+// Define an action creator here:
+```
+
+# --solutions--
+
+```js
+const action = {
+  type: 'LOGIN'
+}
 const actionCreator = () => {
   return action;
 };
 ```
-
-</section>

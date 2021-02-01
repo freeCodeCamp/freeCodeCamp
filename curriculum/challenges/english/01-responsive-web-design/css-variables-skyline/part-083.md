@@ -2,33 +2,24 @@
 id: 5d822fd413a79914d39e991c
 title: Part 83
 challengeType: 0
+dashedName: part-83
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest three `div` elements within `fb2b` and give them a class of `fb2-window`. These will be windows for this section of the building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".fb2b").children("div.fb2-window").length === 3);
-
+```js
+assert($('.fb2b').children('div.fb2-window').length === 3);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -312,12 +303,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -604,5 +590,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

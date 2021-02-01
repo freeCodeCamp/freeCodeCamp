@@ -1,17 +1,22 @@
 ---
 id: bad87fee1348bd9aedf08834
+title: 创建一组单选按钮
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNWKvuR'
 forumTopicId: 16822
-title: 创建一组单选按钮
+dashedName: create-a-set-of-radio-buttons
 ---
 
-## Description
-<section id='description'>
-<code>radio buttons</code>（单选按钮）就好比单项选择题，正确答案只有一个。
-单选按钮是<code>input</code>选择框的一种类型。
-每一个单选按钮都应该嵌套在它自己的<code>label</code>（标签）元素中。
-所有关联的单选按钮应该拥有相同的<code>name</code>属性。
+# --description--
+
+`radio buttons`（单选按钮）就好比单项选择题，正确答案只有一个。
+
+单选按钮是 `input` 选择框的一种类型。
+
+每一个单选按钮都应该嵌套在它自己的 `label`（标签）元素中。这样，我们相当于给 `input` 元素和包裹它的 `label` 元素建立起了对应关系。
+
+所有关联的单选按钮应该拥有相同的 `name` 属性。
+
 下面是一个单选按钮的例子：
 
 ```html
@@ -20,7 +25,7 @@ title: 创建一组单选按钮
 </label>
 ```
 
-最佳实践是在<code>label</code>元素上设置for属性，让其值与单选按钮的<code>id</code>属性值相等，这样就在<code>label</code>元素和它的子元素单选按钮之间创建了一种链接关系。例如：
+使得 `input` 与 `label` 关联的最佳实践是在 `label` 元素上设置 `for` 属性，让其值与单选按钮的 `id` 属性值相同。
 
 ```html
 <label for="indoor"> 
@@ -28,75 +33,122 @@ title: 创建一组单选按钮
 </label>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-给表单添加两个单选按钮，一个叫<code>indoor</code>，另一个叫<code>outdoor</code>，单选按钮的 <code>name</code> 为 <code>indoor-outdoor</code>。
-</section>
+给表单添加两个单选按钮，一个叫 `indoor` 另一个叫 `outdoor`。并将单选按钮的 `name` 属性值设置为 `indoor-outdoor`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '页面上应该有两个单选按钮元素。'
-    testString: assert($('input[type="radio"]').length > 1);
-  - text: '设置单选按钮的<code>name</code>属性为<code>indoor-outdoor</code>。'
-    testString: assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
-  - text: '每一个单选按钮都应该嵌套进它自己的<code>label</code>元素中。'
-    testString: assert($('label > input[type="radio"]:only-child').length > 1);
-  - text: '每一个<code>label</code>元素都有结束标记。'
-    testString: assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length));
-  - text: '其中一个<code>label</code>元素的文本为<code>indoor</code>。'
-    testString: assert($("label").text().match(/indoor/gi));
-  - text: '其中一个<code>label</code>元素的文本为<code>outdoor</code>。'
-    testString: assert($("label").text().match(/outdoor/gi));
-  - text: '所有的单选按钮都应该包含在<code>form</code>表单中。'
-    testString: assert($("label").parent().get(0).tagName.match('FORM'));
+页面上应存在两个单选按钮元素。
 
+```js
+assert($('input[type="radio"]').length > 1);
 ```
 
-</section>
+应设置单选按钮的 `name` 属性值为 `indoor-outdoor`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
+```
 
-<div id='html-seed'>
+每个单选按钮都应嵌套进它自己的 `label` 元素中。
+
+```js
+assert($('label > input[type="radio"]:only-child').length > 1);
+```
+
+每一个 `label` 元素都有结束标签。
+
+```js
+assert(
+  code.match(/<\/label>/g) &&
+    code.match(/<label/g) &&
+    code.match(/<\/label>/g).length === code.match(/<label/g).length
+);
+```
+
+其中一个 `label` 元素的文本为 `indoor`。
+
+```js
+assert(
+  $('label')
+    .text()
+    .match(/indoor/gi)
+);
+```
+
+其中一个 `label` 元素的文本为 `outdoor`。
+
+```js
+assert(
+  $('label')
+    .text()
+    .match(/outdoor/gi)
+);
+```
+
+所有的单选按钮都应该包含在 `form` 表单中。
+
+```js
+assert($('label').parent().get(0).tagName.match('FORM'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-<p>点击查看更多<a href="#">猫咪图片</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
-  <p>猫咪最喜欢的三件东西：</p>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
   <ul>
-    <li>猫薄荷</li>
-    <li>激光笔</li>
-    <li>千层饼</li>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
   </ul>
-  <p>猫咪最讨厌的三件东西：</p>
+  <p>Top 3 things cats hate:</p>
   <ol>
-    <li>跳蚤</li>
-    <li>打雷</li>
-    <li>同类</li>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
   </ol>
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+   <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

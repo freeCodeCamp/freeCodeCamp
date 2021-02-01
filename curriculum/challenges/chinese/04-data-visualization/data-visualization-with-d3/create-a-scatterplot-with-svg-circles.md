@@ -1,38 +1,35 @@
 ---
 id: 587d7fab367417b2b2512bd7
+title: 使用 SVG Circles 创建散点图
 challengeType: 6
 forumTopicId: 301484
-title: 使用 SVG Circles 创建散点图
+dashedName: create-a-scatterplot-with-svg-circles
 ---
 
-## Description
-<section id='description'>
-散点图是另一种形式的可视化。它用圆圈来映射数据点，每个数据点有两个值，这两个值和 <code>x</code> 和 <code>y</code> 轴相关联，在可视化中用来给圆圈定位。
-SVG 用 <code>circle</code> 标签来创建圆形，它和之前用来构建条形图的 <code>rect</code> 非常相像。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-使用 <code>data()</code>、<code>enter()</code>、<code>append()</code> 方法将 <code>dataset</code> 和新添加到 SVG 画布上的 <code>circle</code> 元素绑定起来。
-<strong>注意</strong><br>circles 并不可见，因为我们还没有设置它们的属性。我们会在下一个挑战来设置它。
-</section>
+散点图是另一种形式的可视化。它用圆圈来映射数据点，每个数据点有两个值，这两个值和 `x` 和 `y` 轴相关联，在可视化中用来给圆圈定位。
 
-## Tests
-<section id='tests'>
+SVG 用 `circle` 标签来创建圆形，它和之前用来构建条形图的 `rect` 非常相像。
 
-```yml
-tests:
-  - text: 你应该有 10 个 <code>circle</code> 元素。
-    testString: assert($('circle').length == 10);
+# --instructions--
 
+使用 `data()`、`enter()`、`append()` 方法将 `dataset` 和新添加到 SVG 画布上的 `circle` 元素绑定起来。
+
+**注意**  
+circles 并不可见，因为我们还没有设置它们的属性。我们会在下一个挑战来设置它。
+
+# --hints--
+
+你应该有 10 个 `circle` 元素。
+
+```js
+assert($('circle').length == 10);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <body>
@@ -60,24 +57,17 @@ tests:
                   .attr("height", h);
 
     svg.selectAll("circle")
-       // 在下面添加你的代码
+       // Add your code below this line
 
 
 
-       // 在上面添加你的代码
+       // Add your code above this line
 
   </script>
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -111,7 +101,4 @@ tests:
 
   </script>
 </body>
-
 ```
-
-</section>

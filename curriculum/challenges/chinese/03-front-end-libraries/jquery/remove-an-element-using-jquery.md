@@ -1,40 +1,42 @@
 ---
 id: bad87fee1348bd9aed708826
+title: 使用 jQuery 删除元素
 challengeType: 6
 forumTopicId: 18262
-title: 使用 jQuery 删除元素
+dashedName: remove-an-element-using-jquery
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 现在学习用 jQuery 从页面移除 HTML 标签。
-jQuery 有一个<code>.remove()</code>方法，能完全移除 HTML 标签。
-请用<code>.remove()</code>方法从页面移除<code>target4</code>标签。
-</section>
 
-## Instructions
-<section id='instructions'>
+jQuery 有一个`.remove()`方法，能完全移除 HTML 标签。
 
-</section>
+请用`.remove()`方法从页面移除`target4`标签。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 用 jQuery 从页面中移除<code>target4</code>标签。
-    testString: assert($("#target4").length === 0 && code.match(/\$\(["']#target4["']\).remove\(\)/g));
-  - text: 仅用 jQuery 移除该标签。
-    testString: assert(code.match(/id="target4/g) && !code.match(/<!--.*id="target4".*-->/g) && $("#right-well").length > 0);
+用 jQuery 从页面中移除`target4`标签。
 
+```js
+assert(
+  $('#target4').length === 0 && code.match(/\$\(["']#target4["']\).remove\(\)/g)
+);
 ```
 
-</section>
+仅用 jQuery 移除该标签。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/id="target4/g) &&
+    !code.match(/<!--.*id="target4".*-->/g) &&
+    $('#right-well').length > 0
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -45,7 +47,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -70,14 +72,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -88,7 +83,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -112,5 +107,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

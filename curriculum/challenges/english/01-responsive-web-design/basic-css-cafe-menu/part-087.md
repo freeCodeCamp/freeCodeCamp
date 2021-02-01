@@ -2,31 +2,24 @@
 id: 5f46e270702a8456a664f0df
 title: Part 87
 challengeType: 0
+dashedName: part-87
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -90,10 +83,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -184,6 +173,3 @@ a:active {
 }
 ```
 
-</div>
-
-</section>

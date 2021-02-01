@@ -2,33 +2,30 @@
 id: 5d822fd413a79914d39e9930
 title: Part 103
 challengeType: 0
+dashedName: part-103
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 This building is going to have another triangle on top. Give the top section a `border-top` of `5vh solid transparent` and a `border-left` that is `8vw`, `solid`, and uses your building color variable as the color.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb4a = code.match(/\.fb4a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-top\s*:\s*5vh\s+solid\s+transparent\s*(;|})/g.test(fb4a) && /border-left\s*:\s*8vw\s+solid\s+var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb4a));
-
+```js
+const fb4a = code.match(/\.fb4a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /border-top\s*:\s*5vh\s+solid\s+transparent\s*(;|})/g.test(fb4a) &&
+    /border-left\s*:\s*8vw\s+solid\s+var\(\s*--building-color1\s*\)\s*(;|})/g.test(
+      fb4a
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -376,12 +373,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -733,5 +725,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

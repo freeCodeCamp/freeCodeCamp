@@ -3,39 +3,40 @@ id: 587d7fae367417b2b2512be6
 title: Render Images from Data Sources
 challengeType: 6
 forumTopicId: 18265
+dashedName: render-images-from-data-sources
 ---
 
-## Description
-<section id='description'>
-The last few challenges showed that each object in the JSON array contains an <code>imageLink</code> key with a value that is the URL of a cat's image.
-When you're looping through these objects, you can use this <code>imageLink</code> property to display this image in an <code>img</code> element.
+# --description--
+
+The last few challenges showed that each object in the JSON array contains an `imageLink` key with a value that is the URL of a cat's image.
+
+When you're looping through these objects, you can use this `imageLink` property to display this image in an `img` element.
+
 Here's the code that does this:
-<code>html += "&lt;img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'&gt;";</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-Add code to use the <code>imageLink</code> and <code>altText</code> properties in an <code>img</code> tag.
-</section>
+`html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: You should use the <code>imageLink</code> property to display the images.
-    testString: assert(code.match(/val\.imageLink/g));
-  - text: You should use the <code>altText</code> for the alt attribute values of the images.
-    testString: assert(code.match(/val\.altText/g));
+Add code to use the `imageLink` and `altText` properties in an `img` tag.
 
+# --hints--
+
+You should use the `imageLink` property to display the images.
+
+```js
+assert(code.match(/val\.imageLink/g));
 ```
 
-</section>
+You should use the `altText` for the alt attribute values of the images.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/val\.altText/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -98,14 +99,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -164,7 +158,4 @@ tests:
     Get Message
   </button>
 </p>
-
 ```
-
-</section>

@@ -2,33 +2,25 @@
 id: 5d822fd413a79914d39e9928
 title: Part 95
 challengeType: 0
+dashedName: part-95
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 I'm not thrilled about that black for the windows anymore. Change the `--window-color1` value to `#bb99ff`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--window-color1\s*:\s*#bb99ff\s*(;|})/g.test(root));
-
+```js
+const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
+assert(/--window-color1\s*:\s*#bb99ff\s*(;|})/g.test(root));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -351,12 +343,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -678,5 +665,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -2,33 +2,26 @@
 id: 5d822fd413a79914d39e992f
 title: Part 102
 challengeType: 0
+dashedName: part-102
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add `display: flex;` and `flex-wrap: wrap;` to the window container. This will put your windows side by side and then push them down to a new row when they don't fit.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".fb4b").css("display") === "flex" && $(".fb4b").css("flex-wrap") === "wrap");
-
+```js
+assert(
+  $('.fb4b').css('display') === 'flex' && $('.fb4b').css('flex-wrap') === 'wrap'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -374,12 +367,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -726,5 +714,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

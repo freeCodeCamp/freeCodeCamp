@@ -1,55 +1,44 @@
 ---
 id: 5900f4fd1000cf542c51000f
+title: 问题401：除数的平方和
 challengeType: 5
 videoUrl: ''
-title: 问题401：除数的平方和
+dashedName: problem-401-sum-of-squares-of-divisors
 ---
 
-## Description
-<section id="description"> 6的除数是1,2,3和6.这些数的平方和是1 + 4 + 9 + 36 = 50。 <p>设sigma2（n）代表n的除数的平方和。因此sigma2（6）= 50。 </p><p>设SIGMA2表示sigma2的和函数，即对于i = 1到n，SIGMA2（n）=Σsigma2（i）。 SIGMA2的前6个值是：1,6,16,37,63和113。 </p><p>找到SIGMA2（1015）modulo 109。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+6的除数是1,2,3和6.这些数的平方和是1 + 4 + 9 + 36 = 50。
 
-## Tests
-<section id='tests'>
+设sigma2（n）代表n的除数的平方和。因此sigma2（6）= 50。
 
-```yml
-tests:
-  - text: <code>euler401()</code>应该返回281632621。
-    testString: assert.strictEqual(euler401(), 281632621);
+设SIGMA2表示sigma2的和函数，即对于i = 1到n，SIGMA2（n）=Σsigma2（i）。 SIGMA2的前6个值是：1,6,16,37,63和113。
 
+找到SIGMA2（1015）modulo 109。
+
+# --hints--
+
+`euler401()`应该返回281632621。
+
+```js
+assert.strictEqual(euler401(), 281632621);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler401() {
-  // Good luck!
+
   return true;
 }
 
 euler401();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

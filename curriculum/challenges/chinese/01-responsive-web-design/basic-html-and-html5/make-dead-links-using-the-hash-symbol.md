@@ -1,59 +1,58 @@
 ---
 id: bad87fee1348bd9aedf08817
+title: '用 # 号来创建链接占位符'
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMdkytL'
 forumTopicId: 18230
-title: '用 # 号来创建链接占位符'
+dashedName: make-dead-links-using-the-hash-symbol
 ---
 
-## Description
-<section id='description'>
-有时你想为网站添加一个 <code>a</code>，但如果你还不确定要将它链接到哪儿，这时可以使用链接占位符。
-在后面的课程中我们会学到：如何轻松通过<code>JavaScript</code>更改链接指向的地址。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-<code>href</code>属性的当前值是指向 "https://freecatphotoapp.com"，将<code>href</code>属性的值替换为<code>#</code>，就可以创建固定链接。
-例如: <code>href="#"</code>
-</section>
+有时你想为网站添加一个 `a` 元素，但还不确定要将它链接到哪里。这时，你可以使用链接占位符。
 
-## Tests
-<section id='tests'>
+链接占位符还有一个应用场景，就是实现在点击 `a` 元素时执行 `JavaScript` 代码。我们会在后面的课程中学到。
 
-```yml
-tests:
-  - text: '<code>a</code> 的<code>href</code>属性应为 "#"。'
-    testString: assert($("a").attr("href") === "#");
+# --instructions--
 
+目前，`href` 的属性值是 "`https://freecatphotoapp.com`"。请将 `href` 属性的值替换为`#`，以此来创建链接占位符。
+
+例如: `href="#"`
+
+# --hints--
+
+`a` 的 `href` 属性值应为 "#"。
+
+```js
+assert($('a').attr('href') === '#');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>点击这里可以获取更多<a href="https://freecatphotoapp.com" target="_blank">猫咪图片</a>。</p>
-  
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫">
-  
-  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
-  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>
+  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#" target="_blank">cat photos</a>.</p>
+  
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+```

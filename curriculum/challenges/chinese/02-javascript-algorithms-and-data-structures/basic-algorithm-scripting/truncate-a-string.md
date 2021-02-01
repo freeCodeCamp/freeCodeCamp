@@ -1,65 +1,91 @@
 ---
 id: ac6993d51946422351508a41
-challengeType: 5
-videoUrl: ''
 title: 截断字符串
+challengeType: 5
+forumTopicId: 16089
+dashedName: truncate-a-string
 ---
 
-## Description
-<section id="description">如果字符串（第一个参数）长于给定的最大字符串长度（第二个参数），则截断该字符串。返回带有<code>...</code>结尾的截断字符串。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+如果传入的字符串（第一个参数）的长度大于传入的值（第二个参数），请在这个位置截断它并在后面加上 `...`，然后返回结果。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '<code>truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, 8)</code>应该返回“A-tisket ......”。'
-    testString: assert(truncateString("A-tisket a-tasket A green and yellow basket", 8) === "A-tisket...");
-  - text: '<code>truncateString(&quot;Peter Piper picked a peck of pickled peppers&quot;, 11)</code>应该回归“Peter Piper ......”。'
-    testString: assert(truncateString("Peter Piper picked a peck of pickled peppers", 11) === "Peter Piper...");
-  - text: '<code>truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, &quot;A-tisket a-tasket A green and yellow basket&quot;.length)</code>应该返回“A-tisket a-tasket A green and yellow basket”。'
-    testString: assert(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) === "A-tisket a-tasket A green and yellow basket");
-  - text: '<code>truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, &quot;A-tisket a-tasket A green and yellow basket&quot;.length + 2)</code>应返回“A-tisket a-tasket A green and yellow basket”。'
-    testString: assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket');
-  - text: '<code>truncateString(&quot;A-&quot;, 1)</code>应返回“A ...”。'
-    testString: assert(truncateString("A-", 1) === "A...");
-  - text: '<code>truncateString(&quot;Absolutely Longer&quot;, 2)</code>应返回“Ab ...”。'
-    testString: assert(truncateString("Absolutely Longer", 2) === "Ab...");
+`truncateString("A-tisket a-tasket A green and yellow basket", 8)` 应返回 "A-tisket..."。
 
+```js
+assert(
+  truncateString('A-tisket a-tasket A green and yellow basket', 8) ===
+    'A-tisket...'
+);
 ```
 
-</section>
+`truncateString("Peter Piper picked a peck of pickled peppers", 11)` 应返回 "Peter Piper..."。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  truncateString('Peter Piper picked a peck of pickled peppers', 11) ===
+    'Peter Piper...'
+);
+```
 
-<div id='js-seed'>
+`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)` 应返回 "A-tisket a-tasket A green and yellow basket"。
+
+```js
+assert(
+  truncateString(
+    'A-tisket a-tasket A green and yellow basket',
+    'A-tisket a-tasket A green and yellow basket'.length
+  ) === 'A-tisket a-tasket A green and yellow basket'
+);
+```
+
+`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)` 应返回 "A-tisket a-tasket A green and yellow basket"。
+
+```js
+assert(
+  truncateString(
+    'A-tisket a-tasket A green and yellow basket',
+    'A-tisket a-tasket A green and yellow basket'.length + 2
+  ) === 'A-tisket a-tasket A green and yellow basket'
+);
+```
+
+`truncateString("A-", 1)` 应返回 "A..."。
+
+```js
+assert(truncateString('A-', 1) === 'A...');
+```
+
+`truncateString("Absolutely Longer", 2)` 应返回 "Ab..."。
+
+```js
+assert(truncateString('Absolutely Longer', 2) === 'Ab...');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function truncateString(str, num) {
-  // Clear out that junk in your trunk
   return str;
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function truncateString(str, num) {
+  if (num >= str.length) {
+    return str;
+  }
 
-/section>
+  return str.slice(0, num) + '...';
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+```

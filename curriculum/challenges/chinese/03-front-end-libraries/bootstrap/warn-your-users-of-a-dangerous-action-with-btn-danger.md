@@ -1,44 +1,52 @@
 ---
 id: bad87fee1348ce8acef08814
+title: 使用 btn-danger 提示危险操作
 challengeType: 0
 forumTopicId: 18375
-title: 使用 btn-danger 提示危险操作
+dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 ---
 
-## Description
-<section id='description'>
-Bootstrap 有着丰富的预定义按钮颜色。 红色 <code>btn-danger</code> class 用来提醒用户此行为具有破坏性，比如删除一张猫的图片。
-创建一个包含文本 "Delete" 的按钮并为它设置 class 为 <code>btn-danger</code>。
-记住：你的这些按钮仍然需要 <code>btn</code> 和 <code>btn-block</code> class。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap 有着丰富的预定义按钮颜色。 红色 `btn-danger` class 用来提醒用户此行为具有破坏性，比如删除一张猫的图片。
 
-</section>
+创建一个包含文本 "Delete" 的按钮并为它设置 class 为 `btn-danger`。
 
-## Tests
-<section id='tests'>
+记住：你的这些按钮仍然需要 `btn` 和 `btn-block` class。
 
-```yml
-tests:
-  - text: "创建一个包含文本 'Delete' 的 <code>button</code> 元素。"
-    testString: assert(new RegExp("Delete","gi").test($("button").text()));
-  - text: 所有 Bootstrap 按钮的 class 属性都应该有 <code>btn</code> 和 <code>btn-block</code>。
-    testString: assert($("button.btn-block.btn").length > 2);
-  - text: 新创建按钮的 class 属性应该有 <code>btn-danger</code>。
-    testString: assert($("button").hasClass("btn-danger"));
-  - text: 确保你所有的 <code>button</code> 元素都有一个闭合标签。
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+# --hints--
 
+创建一个包含文本 'Delete' 的 `button` 元素。
+
+```js
+assert(new RegExp('Delete', 'gi').test($('button').text()));
 ```
 
-</section>
+所有 Bootstrap 按钮的 class 属性都应该有 `btn` 和 `btn-block`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button.btn-block.btn').length > 2);
+```
 
-<div id='html-seed'>
+新创建按钮的 class 属性应该有 `btn-danger`。
+
+```js
+assert($('button').hasClass('btn-danger'));
+```
+
+确保你所有的 `button` 元素都有一个闭合标签。
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -102,14 +110,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -162,7 +163,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -173,5 +174,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

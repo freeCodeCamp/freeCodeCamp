@@ -1,66 +1,78 @@
 ---
 id: a6b0bb188d873cb2c8729495
+title: 转换 HTML 实体字符
 challengeType: 5
-title: 转换HTML实体
+forumTopicId: 16007
+dashedName: convert-html-entities
 ---
 
-## Description
-<section id='description'>
-在这道题目中，我们需要写一个转换 HTML entity 的函数。需要转换的 HTML entity 有<code>&</code>、<code><</code>、<code>></code>、<code>"</code>（双引号）和<code>'</code>（单引号）。  
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+请将字符串中的 `&`、`<`、`>`、`"`（双引号）和 `'`（单引号）转换为 [HTML 实体字符](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)，并返回转换之后的字符串。
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`convertHTML("Dolce & Gabbana")` 应返回 `"Dolce &amp; Gabbana"`。
 
-```yml
-tests:
-  - text: "<code>convertHTML('Dolce & Gabbana')</code>应该返回<code>Dolce &&#8203;amp; Gabbana</code>。"
-    testString: assert.match(convertHTML("Dolce & Gabbana"), /Dolce &amp; Gabbana/);
-  - text: "<code>convertHTML('Hamburgers < Pizza < Tacos')</code>应该返回<code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>。"
-    testString: assert.match(convertHTML("Hamburgers < Pizza < Tacos"), /Hamburgers &lt; Pizza &lt; Tacos/);
-  - text: "<code>convertHTML('Sixty > twelve')</code>应该返回<code>Sixty &&#8203;gt; twelve</code>。"
-    testString: assert.match(convertHTML("Sixty > twelve"), /Sixty &gt; twelve/);
-  - text: "<code>convertHTML(&apos;Stuff in \"quotation marks\"&apos;)</code>应该返回<code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>。"
-    testString: assert.match(convertHTML('Stuff in "quotation marks"'), /Stuff in &quot;quotation marks&quot;/);
-  - text: "<code>convertHTML('Schindler&apos;s List')</code>应该返回<code>Schindler&&#8203;apos;s List</code>。"
-    testString: assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);
-  - text: "<code>convertHTML('<>')</code>应该返回<code>&&#8203;lt;&&#8203;gt;</code>。"
-    testString: assert.match(convertHTML('<>'), /&lt;&gt;/);
-  - text: "<code>convertHTML('abc')</code>应该返回<code>abc</code>。"
-    testString: assert.strictEqual(convertHTML('abc'), 'abc');
-
+```js
+assert.match(convertHTML('Dolce & Gabbana'), /Dolce &amp; Gabbana/);
 ```
 
-</section>
+`convertHTML("Hamburgers < Pizza < Tacos")` 应返回 `"Hamburgers &lt; Pizza &lt; Tacos"`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.match(
+  convertHTML('Hamburgers < Pizza < Tacos'),
+  /Hamburgers &lt; Pizza &lt; Tacos/
+);
+```
 
-<div id='js-seed'>
+`convertHTML("Sixty > twelve")` 应返回 `"Sixty &gt; twelve"`。
+
+```js
+assert.match(convertHTML('Sixty > twelve'), /Sixty &gt; twelve/);
+```
+
+`convertHTML('Stuff in "quotation marks"')` 应返回 `"Stuff in &quot;quotation marks&quot;"`。
+
+```js
+assert.match(
+  convertHTML('Stuff in "quotation marks"'),
+  /Stuff in &quot;quotation marks&quot;/
+);
+```
+
+`convertHTML("Schindler's List")` 应返回 `"Schindler&apos;s List"`。
+
+```js
+assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);
+```
+
+`convertHTML("<>")` 应返回 `"&lt;&gt;"`。
+
+```js
+assert.match(convertHTML('<>'), /&lt;&gt;/);
+```
+
+`convertHTML("abc")` 应返回 `"abc"`。
+
+```js
+assert.strictEqual(convertHTML('abc'), 'abc');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function convertHTML(str) {
-  // &colon;&rpar;
   return str;
 }
 
 convertHTML("Dolce & Gabbana");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var MAP = { '&': '&amp;',
@@ -75,5 +87,3 @@ function convertHTML(str) {
   });
 }
 ```
-
-</section>

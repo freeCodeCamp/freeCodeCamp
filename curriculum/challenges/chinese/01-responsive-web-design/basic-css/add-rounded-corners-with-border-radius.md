@@ -1,40 +1,44 @@
 ---
 id: bad87fee1348bd9aedf08814
+title: 用 border-radius 添加圆角边框
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
-title: 用 border-radius 添加圆角边框
+dashedName: add-rounded-corners-with-border-radius
 ---
 
-## Description
-<section id='description'>
-猫咪图片边角很尖锐，我们可以使用<code>border-radius</code>属性来让它变得圆润。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-<code>border-radius</code>可以用<code>px</code>像素单位来赋值。给猫咪图片设置 10px 的<code>border-radius</code>。
-注意：这个挑战有多个解决方法。例如，添加<code>border-radius</code>属性到<code>.thick-green-border</code>class 或<code>.smaller-image</code>class 里都是可行的。
-</section>
+猫咪图片的四个角看起来很尖锐，我们可以使用 `border-radius` 属性来让它变得圆润。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '图片元素应具有 "thick-green-border" class 属性。'
-    testString: assert($("img").hasClass("thick-green-border"));
-  - text: '图片应含有<code>10px</code>的边框圆角。'
-    testString: assert($("img").css("border-top-left-radius") === '10px' && $("img").css("border-top-right-radius") === '10px' && $("img").css("border-bottom-left-radius") === '10px' && $("img").css("border-bottom-right-radius") === '10px');
+`border-radius` 的属性值单位可以是 `px`（像素）。请将猫咪图片 `border-radius` 的属性值设置为 10px。
 
+**注意：**这个挑战有多个解决方法。例如，添加 `border-radius` 属性到 `.thick-green-border` 或 `.smaller-image` 都是可行的。
+
+# --hints--
+
+图片元素应具有 "thick-green-border" class。
+
+```js
+assert($('img').hasClass('thick-green-border'));
 ```
 
-</section>
+图片应含有 `10px` 的边框圆角。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('img').css('border-top-left-radius') === '10px' &&
+    $('img').css('border-top-right-radius') === '10px' &&
+    $('img').css('border-bottom-left-radius') === '10px' &&
+    $('img').css('border-bottom-right-radius') === '10px'
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -65,49 +69,96 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫" class="smaller-image thick-green-border"></a>
-  
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
   <div>
-    <p>猫咪最喜欢的三件东西：</p>
+    <p>Things cats love:</p>
     <ul>
-      <li>猫薄荷</li>
-      <li>激光笔</li>
-      <li>千层饼</li>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
     </ul>
-    <p>猫咪最讨厌的三件东西：</p>
+    <p>Top 3 things cats hate:</p>
     <ol>
-      <li>跳蚤</li>
-      <li>打雷</li>
-      <li>同类</li>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor">室内</label>
-    <label><input type="radio" name="indoor-outdoor">室外</label><br>
-    <label><input type="checkbox" name="personality">忠诚</label>
-    <label><input type="checkbox" name="personality">懒惰</label>
-    <label><input type="checkbox" name="personality">积极</label><br>
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
 
-</section>
-              
+  h2 {
+    font-family: Lobster, monospace;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: monospace;
+  }
+
+  .thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+  }
+
+  .smaller-image {
+    width: 100px;
+    border-radius: 10px;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

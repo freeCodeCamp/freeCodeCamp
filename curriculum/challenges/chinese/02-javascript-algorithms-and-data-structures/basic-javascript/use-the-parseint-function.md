@@ -1,47 +1,59 @@
 ---
 id: 587d7b7e367417b2b2512b23
+title: 使用 parseInt 函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm83LSW'
 forumTopicId: 301183
-title: 使用 parseInt 函数
+dashedName: use-the-parseint-function
 ---
 
-## Description
-<section id='description'>
-<code>parseInt()</code>函数解析一个字符串返回一个整数下面是一个示例：
-<code>var a = parseInt("007");</code>
-上面的函数把字符串 "007" 转换成数字 7。 如果字符串参数的第一个字符是字符串类型的，结果将不会转换成数字，而是返回<code>NaN</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-在<code>convertToInteger</code>函数中使用<code>parseInt()</code>将字符串<code>str</code>转换为正数并返回。
-</section>
+`parseInt()`函数解析一个字符串返回一个整数下面是一个示例：
 
-## Tests
-<section id='tests'>
+`var a = parseInt("007");`
 
-```yml
-tests:
-  - text: <code>convertToInteger</code>应该使用<code>parseInt()</code>函数。
-    testString: assert(/parseInt/g.test(code));
-  - text: <code>convertToInteger("56")</code>应该返回一个数字。
-    testString: assert(typeof(convertToInteger("56")) === "number");
-  - text: <code>convertToInteger("56")</code>应该返回 56。
-    testString: assert(convertToInteger("56") === 56);
-  - text: <code>convertToInteger("77")</code>应该返回 77。
-    testString: assert(convertToInteger("77") === 77);
-  - text: <code>convertToInteger("JamesBond")</code>应该返回 NaN。
-    testString: assert.isNaN(convertToInteger("JamesBond"));
+上面的函数把字符串 "007" 转换成数字 7。 如果字符串参数的第一个字符是字符串类型的，结果将不会转换成数字，而是返回`NaN`.
 
+# --instructions--
+
+在`convertToInteger`函数中使用`parseInt()`将字符串`str`转换为正数并返回。
+
+# --hints--
+
+`convertToInteger`应该使用`parseInt()`函数。
+
+```js
+assert(/parseInt/g.test(code));
 ```
 
-</section>
+`convertToInteger("56")`应该返回一个数字。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof convertToInteger('56') === 'number');
+```
 
-<div id='js-seed'>
+`convertToInteger("56")`应该返回 56。
+
+```js
+assert(convertToInteger('56') === 56);
+```
+
+`convertToInteger("77")`应该返回 77。
+
+```js
+assert(convertToInteger('77') === 77);
+```
+
+`convertToInteger("JamesBond")`应该返回 NaN。
+
+```js
+assert.isNaN(convertToInteger('JamesBond'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function convertToInteger(str) {
@@ -51,19 +63,10 @@ function convertToInteger(str) {
 convertToInteger("56");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function convertToInteger(str) {
   return parseInt(str);
 }
 ```
-
-</section>

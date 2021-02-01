@@ -2,31 +2,24 @@
 id: 5f475e1c7f71a61d913836c6
 title: Part 92
 challengeType: 0
+dashedName: part-92
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add one last image under the `Desserts` heading using the url `https://tinyurl.com/cafe-pie-fcc`. Give the image an `alt` value of `pie icon`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -65,9 +58,9 @@ tests:
           </article>
         </section>
         <section>
-          --fcc-editable-region--
+--fcc-editable-region--
           <h2>Desserts</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -93,10 +86,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -196,6 +185,3 @@ a:active {
 }
 ```
 
-</div>
-
-</section>

@@ -1,57 +1,56 @@
 ---
 id: 5900f3701000cf542c50fe83
+title: 问题4：最大的回文产品
 challengeType: 5
 videoUrl: ''
-title: 问题4：最大的回文产品
+dashedName: problem-4-largest-palindrome-product
 ---
 
-## Description
-<section id="description">回文数字读取两种方式相同。由两个2位数字的乘积制成的最大回文是9009 = 91×99。找到由两个<code>n</code>数字的乘积制成的最大回文。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+回文数字读取两种方式相同。由两个2位数字的乘积制成的最大回文是9009 = 91×99。找到由两个`n`数字的乘积制成的最大回文。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>largestPalindromeProduct(2)</code>应返回9009。
-    testString: assert.strictEqual(largestPalindromeProduct(2), 9009);
-  - text: <code>largestPalindromeProduct(3)</code>应返回906609。
-    testString: assert.strictEqual(largestPalindromeProduct(3), 906609);
+`largestPalindromeProduct(2)`应返回9009。
 
+```js
+assert.strictEqual(largestPalindromeProduct(2), 9009);
 ```
 
-</section>
+`largestPalindromeProduct(3)`应返回906609。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(largestPalindromeProduct(3), 906609);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function largestPalindromeProduct(n) {
-  // Good luck!
+
   return true;
 }
 
 largestPalindromeProduct(3);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
+const largestPalindromeProduct = (digit)=>{
+  let start = 1;
+  let end = Number(`1e${digit}`) - 1;
+ let palindrome = [];
+  for(let i=start;i<=end;i++){
+    for(let j=start;j<=end;j++){
+      let product = i*j;
+      let palindromeRegex = /\b(\d)(\d?)(\d?).?\3\2\1\b/gi;
+      palindromeRegex.test(product) && palindrome.push(product);
+    }
+ }
+ return Math.max(...palindrome);
+}
 ```
-
-/section>

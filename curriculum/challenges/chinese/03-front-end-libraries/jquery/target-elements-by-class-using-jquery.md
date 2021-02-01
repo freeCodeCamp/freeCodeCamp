@@ -1,46 +1,46 @@
 ---
 id: bad87fee1348bd9aedc08826
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 使用 jQuery 配合 class 选择器选择元素
 challengeType: 6
 forumTopicId: 18316
-title: 使用 jQuery 配合 class 选择器选择元素
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: target-elements-by-class-using-jquery
 ---
 
-## Description
-<section id='description'>
-我们如何使所有的<code>button</code>标签有弹性的动画效果？我们用<code>$("button")</code>选取所有的<code>button</code>标签，并用<code>.addClass("animated bounce");</code>给其添加一些 CSS 属性。
-jQuery 的<code>.addClass()</code>方法用来给标签添加类。
-首先，我们使用<code>$(".well")</code>选取类为<code>well</code>的<code>div</code>标签。
-值得注意的是，和 CSS 声明一样，在类名前需要添加<code>.</code>。
-然后，用 jQuery 的<code>.addClass()</code>方法添加<code>animated</code>和<code>shake</code>类。
-例如，在<code>document ready function</code>中添加下面的代码，能使所有类为<code>text-primary</code>的标签抖动：
-<code>$(".text-primary").addClass("animated shake");</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+我们如何使所有的`button`标签有弹性的动画效果？我们用`$("button")`选取所有的`button`标签，并用`.addClass("animated bounce");`给其添加一些 CSS 属性。
 
-</section>
+jQuery 的`.addClass()`方法用来给标签添加类。
 
-## Tests
-<section id='tests'>
+首先，我们使用`$(".well")`选取类为`well`的`div`标签。
 
-```yml
-tests:
-  - text: 用 jQuery 的<code>addClass&#40&#41</code>方法给所有类为<code>well</code>的标签添加<code>animated</code>和<code>shake</code>类。
-    testString: assert($(".well").hasClass("animated") && $(".well").hasClass("shake"));
-  - text: 仅用 jQuery 给标签添加类。
-    testString: assert(!code.match(/class\.\*animated/g));
+值得注意的是，和 CSS 声明一样，在类名前需要添加`.`。
 
+然后，用 jQuery 的`.addClass()`方法添加`animated`和`shake`类。
+
+例如，在`document ready function`中添加下面的代码，能使所有类为`text-primary`的标签抖动：
+
+`$(".text-primary").addClass("animated shake");`
+
+# --hints--
+
+用 jQuery 的`addClass()`方法给所有类为`well`的标签添加`animated`和`shake`类。
+
+```js
+assert($('.well').hasClass('animated') && $('.well').hasClass('shake'));
 ```
 
-</section>
+仅用 jQuery 给标签添加类。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/class\.\*animated/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -49,7 +49,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -74,14 +74,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -91,7 +84,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -115,5 +108,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

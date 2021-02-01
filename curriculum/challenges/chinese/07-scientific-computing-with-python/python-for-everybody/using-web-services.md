@@ -2,33 +2,36 @@
 id: 5e7b9f0e0b6c005b0e76f07a
 challengeType: 11
 videoId: oNl1OVDPGKE
+dashedName: using-web-services
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What are the two most common ways to send data over the internet?
 
-```yml
-question:
-  text: |
-    What are the two most common ways to send data over the internet?
+## --answers--
 
-  answers:
-    - |
-        JSON and TXT
-    - |
-        JSON and XML
-    - |
-        XML and TXT
-    - |
-        XML and PHP
-    - |
-        PHP and TXT
-  solution: 2
-```
+JSON and TXT
 
-</section>
+---
+
+JSON and XML
+
+---
+
+XML and TXT
+
+---
+
+XML and PHP
+
+---
+
+PHP and TXT
+
+## --video-solution--
+
+2
+

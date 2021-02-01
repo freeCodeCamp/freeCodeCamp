@@ -2,33 +2,26 @@
 id: 5f3ef6e0e9629bad967cd71e
 title: Part 61
 challengeType: 0
+dashedName: part-61
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
+You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma. This second font would be used in case the browser does not have the font built-in to it.
 
-Add the fallback font `serif` after the `Impact` font. 
+Add the fallback font `serif` after the `Impact` font.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -85,10 +78,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -129,6 +118,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

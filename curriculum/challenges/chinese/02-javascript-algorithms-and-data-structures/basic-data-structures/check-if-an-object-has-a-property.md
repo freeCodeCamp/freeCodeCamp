@@ -1,13 +1,14 @@
 ---
 id: 587d7b7d367417b2b2512b1c
+title: 检查对象是否具有某个属性
 challengeType: 1
 forumTopicId: 301155
-title: 检查对象是否具有某个属性
+dashedName: check-if-an-object-has-a-property
 ---
 
-## Description
-<section id='description'>
-现在我们可以新增、修改和移除对象中的属性。但如果我们想知道一个对象中是否含有某个属性呢？JavaScript 为我们提供了两种不同的方式来实现这个功能，一个是<code>hasOwnProperty()</code>方法，另一个是<code>in</code>关键字。如果我们有一个<code>users</code>对象，它有一个<code>Alan</code>属性，我们可以用以下两种方式之一来检查该属性在对象中是否存在：
+# --description--
+
+我们已经学习了如果添加、修改和移除对象中的属性。但如果我们想知道一个对象中是否包含某个属性呢？JavaScript 为我们提供了两种不同的方式来实现这个功能：一个是通过 `hasOwnProperty()` 方法，另一个是使用 `in` 关键字。假如我们有一个 `users` 对象，为检查它是否含有 `Alan` 属性，可以这样写：
 
 ```js
 users.hasOwnProperty('Alan');
@@ -15,38 +16,77 @@ users.hasOwnProperty('Alan');
 // 都返回 true
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-我们已经创建了一个含有一些用户的<code>users</code>对象和一个<code>isEveryoneHere</code>函数，该函数接受<code>users</code>对象作为参数。请完成该函数使其在<code>users</code>对象中包含以下 4 个键<code>Alan</code>、<code>Jeff</code>、<code>Sarah</code>和<code>Ryan</code>时才返回<code>true</code>，否则返回<code>false</code>。
-</section>
+我们已经定义了一个包含若干用户信息的 `users` 对象和一个 `isEveryoneHere` 函数，该函数接收 `users` 对象作为参数。请完成该函数使其在 `users` 对象中同时包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 四个属性时才返回 `true`，否则返回 `false`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>users</code>对象应该只含有<code>Alan</code>、<code>Jeff</code>、<code>Sarah</code>和<code>Ryan</code>4 个键。
-    testString: assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4);
-  - text: <code>isEveryoneHere</code>函数在<code>users</code>对象包含<code>Alan</code>、<code>Jeff</code>、<code>Sarah</code>和<code>Ryan</code>4 个键时应该返回<code>true</code>。
-    testString: assert(isEveryoneHere(users) === true);
-  - text: <code>isEveryoneHere</code>函数在<code>users</code>对象不包含<code>Alan</code>、<code>Jeff</code>、<code>Sarah</code>或<code>Ryan</code>4 个键时应该返回<code>false</code>。
-    testString: assert((function() { delete users.Alan; return isEveryoneHere(users) })() === false);
-  - text: 如果 <code>Jeff</code> 不是 <code>users</code> 对象的属性，函数 <code>isEveryoneHere</code> 应该返回  <code>false</code>。
-    testString: assert((function() { delete users.Jeff; return isEveryoneHere(users) })() === false);
-  - text: 如果 <code>Sarah</code> 不是 <code>users</code> 对象的属性，函数 <code>isEveryoneHere</code> 应该返回  <code>false</code>。
-    testString: assert((function() { delete users.Sarah; return isEveryoneHere(users) })() === false);
-  - text: 如果 <code>Ryan</code> 不是 <code>users</code> 对象的属性，函数 <code>isEveryoneHere</code> 应该返回  <code>false</code>。
-    testString: assert((function() { delete users.Ryan; return isEveryoneHere(users) })() === false);
+`users` 对象应该只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 个属性。
+
+```js
+assert(
+  'Alan' in users &&
+    'Jeff' in users &&
+    'Sarah' in users &&
+    'Ryan' in users &&
+    Object.keys(users).length === 4
+);
 ```
 
-</section>
+`isEveryoneHere` 函数在 `users` 对象包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 个属性时应返回 `true`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(isEveryoneHere(users) === true);
+```
 
-<div id='js-seed'>
+`isEveryoneHere` 函数在 `users` 对象不包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 个属性时应返回 `false`。
+
+```js
+assert(
+  (function () {
+    delete users.Alan;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+如果 `users` 对象中不包含属性 `Jeff`，则函数 `isEveryoneHere` 应返回 `false`。
+
+```js
+assert(
+  (function () {
+    delete users.Jeff;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+如果 `users` 对象中不包含属性 `Sarah`，则函数 `isEveryoneHere` 应返回 `false`。
+
+```js
+assert(
+  (function () {
+    delete users.Sarah;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+如果 `users` 对象中不包含属性 `Ryan`，则函数 `isEveryoneHere` 应返回 `false`。
+
+```js
+assert(
+  (function () {
+    delete users.Ryan;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let users = {
@@ -69,22 +109,15 @@ let users = {
 };
 
 function isEveryoneHere(obj) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(isEveryoneHere(users));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let users = {
@@ -117,5 +150,3 @@ function isEveryoneHere(obj) {
 
 console.log(isEveryoneHere(users));
 ```
-
-</section>

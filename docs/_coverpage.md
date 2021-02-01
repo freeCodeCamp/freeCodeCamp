@@ -4,7 +4,7 @@
 
 ## Here are some quick and fun ways you can help the community.
 
-- <span class='cover-icon'><i class="fas fa-question-circle"></i></span> [Help by answering coding questions](https://forum.freecodecamp.org/c/help?max_posts=1) on our community forum.
+- <span class='cover-icon'><i class="fas fa-question-circle"></i></span> [Help by answering coding questions](https://forum.freecodecamp.org) on our community forum.
 - <span class='cover-icon'><i class="fas fa-comments"></i></span> [Give feedback on coding projects](https://forum.freecodecamp.org/c/project-feedback?max_posts=1) built by campers.
 - <span class='cover-icon'><i class="fas fa-language"></i></span> [Help us translate](https://translate.freecodecamp.org) these Contributing Guidelines.
 - <span class='cover-icon'><i class="fab fa-github"></i></span> [Contribute to our open source codebase](/index?id=our-open-source-codebase) on GitHub.

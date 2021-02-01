@@ -1,15 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244d0
+title: 相等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
-title: 相等运算符
+dashedName: comparison-with-the-equality-operator
 ---
 
-## Description
-<section id='description'>
-在 JavaScript 中，有很多<dfn>相互比较的操作</dfn>。所有这些操作符都返回一个<code>true</code>或<code>false</code>值。
-最基本的运算符是相等运算符：<code>==</code>。相等运算符比较两个值，如果它们是同等，返回<code>true</code>，如果它们不等，返回<code>false</code>。值得注意的是相等运算符不同于赋值运算符（<code>=</code>），赋值运算符是把等号右边的值赋给左边的变量。
+# --description--
+
+在 JavaScript 中，有很多<dfn>相互比较的操作</dfn>。所有这些操作符都返回一个`true`或`false`值。
+
+最基本的运算符是相等运算符：`==`。相等运算符比较两个值，如果它们是同等，返回`true`，如果它们不等，返回`false`。值得注意的是相等运算符不同于赋值运算符（`=`），赋值运算符是把等号右边的值赋给左边的变量。
 
 ```js
 function equalityTest(myVal) {
@@ -20,8 +22,7 @@ function equalityTest(myVal) {
 }
 ```
 
-如果<code>myVal</code>等于<code>10</code>，相等运算符会返回<code>true</code>，因此大括号里面的代码会被执行，函数将返回<code>"Equal"</code>。否则，函数返回<code>"Not Equal"</code>。
-在 JavaScript 中，为了让两个不同的<code>数据类型</code>（例如<code>数字</code>和<code>字符串</code>）的值可以作比较，它必须把一种类型转换为另一种类型。然而一旦这样做，它可以像下面这样来比较：
+如果`myVal`等于`10`，相等运算符会返回`true`，因此大括号里面的代码会被执行，函数将返回`"Equal"`。否则，函数返回`"Not Equal"`。 在 JavaScript 中，为了让两个不同的`数据类型`（例如`数字`和`字符串`）的值可以作比较，它必须把一种类型转换为另一种类型。然而一旦这样做，它可以像下面这样来比较：
 
 ```js
 1   ==  1   // true
@@ -30,35 +31,39 @@ function equalityTest(myVal) {
 "3" ==  3   // true
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-把<code>相等运算符</code>添加到指定的行，这样当<code>val</code>的值为<code>12</code>的时候，函数会返回"Equal"。
-</section>
+把`相等运算符`添加到指定的行，这样当`val`的值为`12`的时候，函数会返回"Equal"。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testEqual(10)</code>应该返回 "Not Equal"。
-    testString: assert(testEqual(10) === "Not Equal");
-  - text: <code>testEqual(12)</code>应该返回 "Equal"。
-    testString: assert(testEqual(12) === "Equal");
-  - text: <code>testEqual("12")</code>应该返回 "Equal"。
-    testString: assert(testEqual("12") === "Equal");
-  - text: 你应该使用<code>==</code>运算符。
-    testString: assert(code.match(/==/g) && !code.match(/===/g));
+`testEqual(10)`应该返回 "Not Equal"。
 
+```js
+assert(testEqual(10) === 'Not Equal');
 ```
 
-</section>
+`testEqual(12)`应该返回 "Equal"。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testEqual(12) === 'Equal');
+```
 
-<div id='js-seed'>
+`testEqual("12")`应该返回 "Equal"。
+
+```js
+assert(testEqual('12') === 'Equal');
+```
+
+你应该使用`==`运算符。
+
+```js
+assert(code.match(/==/g) && !code.match(/===/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -69,19 +74,10 @@ function testEqual(val) {
   return "Not Equal";
 }
 
-// Change this value to test
 testEqual(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testEqual(val) {
@@ -91,5 +87,3 @@ function testEqual(val) {
   return "Not Equal";
 }
 ```
-
-</section>

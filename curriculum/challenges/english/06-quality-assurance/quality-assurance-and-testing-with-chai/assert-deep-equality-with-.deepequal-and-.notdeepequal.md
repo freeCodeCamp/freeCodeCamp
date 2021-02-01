@@ -3,43 +3,72 @@ id: 587d824c367417b2b2512c4c
 title: Assert Deep Equality with .deepEqual and .notDeepEqual
 challengeType: 2
 forumTopicId: 301587
+dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 ---
 
-## Description
-<section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-<code>deepEqual()</code> asserts that two object are deep equal.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Use <code>assert.deepEqual()</code> or <code>assert.notDeepEqual()</code> to make the tests pass.
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-</section>
+`deepEqual()` asserts that two objects are deep equal.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: All tests should pass.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - deepEqual vs. notDeepEqual.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[0].method, 'deepEqual', 'The order of the keys does not matter'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - deepEqual vs. notDeepEqual.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[1].method, 'notDeepEqual', 'The position of elements within an array does matter'); }, xhr => { throw new Error(xhr.responseText); })
+Within `tests/1_unit-tests.js` under the test labelled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
+# --hints--
+
+All tests should pass.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+You should choose the correct method for the first assertion - `deepEqual` vs. `notDeepEqual`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(
+    (data) => {
+      assert.equal(
+        data.assertions[0].method,
+        'deepEqual',
+        'The order of the keys does not matter'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-</section>
+You should choose the correct method for the second assertion - `deepEqual` vs. `notDeepEqual`.
 
-## Solution
-<section id='solution'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'notDeepEqual',
+        'The position of elements within an array does matter'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
 
 ```js
 /**
@@ -48,5 +77,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

@@ -2,34 +2,37 @@
 id: 5e7b9f070b6c005b0e76f05d
 challengeType: 11
 videoId: hiRTRAqNlpE
+dashedName: iterations-definite-loops
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+How many lines will the following code print?:
 
-```yml
-question:
-  text: |
-    How many lines will the following code print?:
-    ```python
-    for i in [2,1,5]:
-        print(i)
-    ```
-  answers:
-    - |
-        1
-    - |
-        2
-    - |
-        3
-    - |
-        5
-  solution: 3
+```python
+for i in [2,1,5]:
+    print(i)
 ```
 
-</section>
+## --answers--
+
+1
+
+---
+
+2
+
+---
+
+3
+
+---
+
+5
+
+## --video-solution--
+
+3
+

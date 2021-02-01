@@ -2,33 +2,30 @@
 id: 5d822fd413a79914d39e9911
 title: Part 73
 challengeType: 0
+dashedName: part-73
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Looks good! On to the foreground buildings! Turn the `fb1` building into three sections by nesting three new `div` elements within it. Give them the classes of `fb1a`, `fb1b` and `fb1c`, in that order.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb1 = $(".fb1").children("div"); assert(fb1.length === 3 && fb1[0] === $("div.fb1a")[0] && fb1[1] === $("div.fb1b")[0] && fb1[2] === $("div.fb1c")[0]);
-
+```js
+const fb1 = $('.fb1').children('div');
+assert(
+  fb1.length === 3 &&
+    fb1[0] === $('div.fb1a')[0] &&
+    fb1[1] === $('div.fb1b')[0] &&
+    fb1[2] === $('div.fb1c')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -267,12 +264,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -514,5 +506,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

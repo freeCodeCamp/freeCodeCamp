@@ -2,41 +2,34 @@
 id: 5f3477cb2e27333b1ab2b955
 title: Part 17
 challengeType: 0
+dashedName: part-17
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now you need to link the `styles.css` file so the styles will be applied again. Next a self-closing `link` element in the `head` element. Give it a `rel` attribute value `stylesheet`, a `type` attribute value of `text/css`, and an `href` attribute value of `styles.css`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
 <html>
-  --fcc-editable-region--
+--fcc-editable-region--
   <head>
     <meta charset="utf-8" />
     <title>Camper Cafe Menu</title>
   </head>
-  --fcc-editable-region--
+--fcc-editable-region--
   <body>
     <header>
       <h1>CAMPER CAFE</h1>
@@ -51,16 +44,9 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 h1, h2, p {
   text-align: center;
 }
 ```
 
-</div>
-
-</section>

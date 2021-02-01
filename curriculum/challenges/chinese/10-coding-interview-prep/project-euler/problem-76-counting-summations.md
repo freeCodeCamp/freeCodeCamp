@@ -1,55 +1,38 @@
 ---
 id: 5900f3b81000cf542c50fecb
+title: 问题76：计算总结
 challengeType: 5
 videoUrl: ''
-title: 问题76：计算总结
+dashedName: problem-76-counting-summations
 ---
 
-## Description
-<section id="description">可以用六种不同的方式将五个作为总和写成：4 + 1 3 + 2 3 + 1 + 1 2 + 2 + 1 2 + 1 + 1 + 1 1 + 1 + 1 + 1 + 1多少个不同一百种方式可以写成至少两个正整数的总和？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+可以用六种不同的方式将五个作为总和写成：4 + 1 3 + 2 3 + 1 + 1 2 + 2 + 1 2 + 1 + 1 + 1 1 + 1 + 1 + 1 + 1多少个不同一百种方式可以写成至少两个正整数的总和？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>euler76()</code>应该返回190569291。
-    testString: assert.strictEqual(euler76(), 190569291);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler76()`应该返回190569291。
 
 ```js
-function euler76() {
-  // Good luck!
+assert.strictEqual(euler76(), 190569291);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function countingSummations() {
+
   return true;
 }
 
-euler76();
-
+countingSummations();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

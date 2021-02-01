@@ -2,33 +2,25 @@
 id: 5d822fd413a79914d39e9905
 title: Part 61
 challengeType: 0
+dashedName: part-61
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Remove the `background-color` property and value from `bb3` since you are using the gradient as the background now.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb3));
-
+```js
+const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];
+assert(!/background-color/g.test(bb3));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -226,12 +218,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -427,5 +414,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

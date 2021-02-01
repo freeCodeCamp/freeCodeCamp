@@ -1,37 +1,33 @@
 ---
 id: 5a94fdf869fb03452672e45b
+title: 使用 align-items 垂直对齐所有项目
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/ckzPeUv'
 forumTopicId: 301121
-title: 使用 align-items 垂直对齐所有项目
+dashedName: align-all-items-vertically-using-align-items
 ---
 
-## Description
-<section id='description'>
-对网格容器使用<code>align-items</code>属性可以给网格中所有的网格项设置沿列轴对齐的方式。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-请使用<code>align-items</code>属性将所有网格项移动到单元格的末尾。
-</section>
+对网格容器使用 `align-items` 属性可以让网格中所有的网格项沿竖直方向对齐。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '<code>container</code>类应该有<code>align-items</code>属性且值为<code>end</code>。'
-    testString: assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi));
+请使用 `align-items` 属性将所有网格项移动到单元格的末尾。
 
+# --hints--
+
+class 为 `container` 的元素应具有 `align-items` 属性且属性值应为 `end`。
+
+```js
+assert(
+  code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -40,7 +36,7 @@ tests:
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -50,13 +46,13 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    /* 请在本行以下添加你的代码 */
+    /* Only change code below this line */
+
     
-    
-    /* 请在本行以上添加你的代码 */
+    /* Only change code above this line */
   }
 </style>
-  
+
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>
@@ -66,19 +62,8 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>.container {align-items: end;}</style>
 ```
-
-</section>
-              

@@ -34,7 +34,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   });
 
   watcher.on('change', filePath =>
-    /\.md$/.test(filePath)
+    /\.md?$/.test(filePath)
       ? onSourceChange(filePath)
           .then(challenge => {
             reporter.info(
@@ -61,13 +61,14 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
       .then(challenges =>
         challenges.map(challenge => createVisibleChallenge(challenge))
       )
-      .catch(e =>
+      .catch(e => {
+        console.log(e);
         reporter.panic(`fcc-source-challenges
 
   ${e.message}
 
-  `)
-      );
+  `);
+      });
   }
 
   function createVisibleChallenge(challenge) {

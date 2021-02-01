@@ -1,15 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244cd
+title: 访问嵌套数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
-title: 访问嵌套数组
+dashedName: accessing-nested-arrays
 ---
 
-## Description
-<section id='description'>
-正如我们在前面的例子所见，对象可以嵌套对象和数组。与访问嵌套对象一样，用中括号操作符同样可以访问嵌套数组。
-下面是如何访问嵌套数组的例子：
+# --description--
+
+在之前的挑战中，我们学习了在对象中嵌套对象和数组。与访问嵌套的对象一样，我们可以用方括号表示法来访问嵌套数组。
+
+下面是访问嵌套数组的例子：
 
 ```js
 var ourPets = [
@@ -34,31 +36,38 @@ ourPets[0].names[1]; // "Fluffy"
 ourPets[1].names[0]; // "Spot"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-使用点操作符和中括号操作符来检索变量<code>myPlants</code>的第二棵树。
-</section>
+请使用点号表示法和方括号表示法来检索变量 `myPlants` 中的第二棵树，即返回 `type` 为 `trees` 的数组中的第二个元素。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>secondTree</code>应该等于 "pine"。
-    testString: assert(secondTree === "pine");
-  - text: 使用点操作符和中括号操作符来检索变量<code>myPlants</code>。
-    testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+`secondTree` 的值应为 "pine"。
 
+```js
+assert(secondTree === 'pine');
 ```
 
-</section>
+应使用点号表示法和方括号表示法来检索变量 `myPlants`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(x) {
+  if(typeof x != 'undefined') {
+    return "secondTree = " + x;
+  }
+  return "secondTree is undefined";
+})(secondTree);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -84,31 +93,9 @@ var myPlants = [
 // Only change code below this line
 
 var secondTree = ""; // Change this line
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(x) {
-  if(typeof x != 'undefined') {
-    return "secondTree = " + x;
-  }
-  return "secondTree is undefined";
-})(secondTree);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myPlants = [
@@ -134,5 +121,3 @@ var myPlants = [
 
 var secondTree = myPlants[1].list[1];
 ```
-
-</section>

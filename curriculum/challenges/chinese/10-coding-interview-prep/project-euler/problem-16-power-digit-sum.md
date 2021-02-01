@@ -1,62 +1,77 @@
 ---
 id: 5900f37d1000cf542c50fe8f
+title: 问题16：电源数字总和
 challengeType: 5
 videoUrl: ''
-title: 问题16：电源数字总和
+dashedName: problem-16-power-digit-sum
 ---
 
-## Description
-<section id="description">
-2 <sup> 15 </ sup> = 32768，其位数之和为3 + 2 + 7 + 6 + 8 = 26。
-2 <sup> <code>指数</ code> </ sup>的数字总和是多少？
-</section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+2 <sup>15<!-- sup-->= 32768，其位数之和为3 + 2 + 7 + 6 + 8 = 26。 2 <sup><code>指数<!-- code--><!-- sup-->的数字总和是多少？</code></sup></sup>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>powerDigitSum(15)</code>应该返回26。
-    testString: assert.strictEqual(powerDigitSum(15), 26);
-  - text: <code>powerDigitSum(128)</code>应该返回166。
-    testString: assert.strictEqual(powerDigitSum(128), 166);
-  - text: <code>powerDigitSum(1000)</code>应返回1366。
-    testString: assert.strictEqual(powerDigitSum(1000), 1366);
+`powerDigitSum(15)`应该返回26。
 
+```js
+assert.strictEqual(powerDigitSum(15), 26);
 ```
 
-</section>
+`powerDigitSum(128)`应该返回166。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(powerDigitSum(128), 166);
+```
 
-<div id='js-seed'>
+`powerDigitSum(1000)`应返回1366。
+
+```js
+assert.strictEqual(powerDigitSum(1000), 1366);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function powerDigitSum(exponent) {
-  // Good luck!
+
   return true;
 }
 
 powerDigitSum(15);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function powerDigitSum(exponent) {
+  const bigNum = [1];
+  let sum = 0;
 
-/section>
+  for (let i = 1; i <= exponent; i++) {
+    let count = bigNum.length + 1;
+    let overflow = 0;
+    for (let j = 0; j < count; j++) {
+      let digit = bigNum[j] || 0;
+      digit = 2 * digit + overflow;
+
+      if (digit > 9) {
+        digit -= 10;
+        overflow = 1;
+      } else {
+        overflow = 0;
+      }
+
+      bigNum[j] = digit;
+    }
+  }
+
+  bigNum.forEach(function(num) {
+    return sum += num;
+  });
+
+  return sum;
+}
+```

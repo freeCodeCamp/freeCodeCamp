@@ -1,72 +1,84 @@
 ---
 id: bad87fee1348bd9aedc08830
+title: 给表单添加一个必填字段
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMd4EcQ'
 forumTopicId: 18360
-title: 给表单添加一个必填字段
+dashedName: use-html5-to-require-a-field
 ---
 
-## Description
-<section id='description'>
-当你设计表单时，你可以指定某些字段为必填项(required)，只有当用户填写了该字段后，才可以提交表单。
-如果你想把文本输入框设置为必填项，在<code>input</code>元素中加上 required 属性就可以了，例如：<code>&#60;input type="text" required&#62;</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-给<code>input</code>元素加上<code>required</code>属性，这样用户就必须先在输入框里填入内容，然后才可以提交表单。
-</section>
+当你设计表单时，你可以指定某些字段为必填项（required），只有当用户填写了该字段后，才可以提交表单。
 
-## Tests
-<section id='tests'>
+如果你想把文本输入框设置为必填项，在 `input` 元素中加上 `required` 属性就可以了，例如：`<input type="text" required>`
 
-```yml
-tests:
-  - text: '<code>input</code>元素必须有<code>required</code>属性。'
-    testString: assert($("input").prop("required"));
+# --instructions--
 
+请给 `input` 元素加上 `required` 属性，这样用户就必须先在输入框里填入内容，然后才可以提交表单。
+
+# --hints--
+
+`input` 元素应有 `required` 属性。
+
+```js
+assert($('input').prop('required'));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-<p>点击查看更多<a href="#">猫咪图片</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
-  <p>猫咪最喜欢的三件东西：</p>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
   <ul>
-    <li>猫薄荷</li>
-    <li>激光笔</li>
-    <li>千层饼</li>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
   </ul>
-  <p>猫咪最讨厌的三件东西：</p>
+  <p>Top 3 things cats hate:</p>
   <ol>
-    <li>跳蚤</li>
-    <li>打雷</li>
-    <li>同类</li>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
   </ol>
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <input type="text" placeholder="猫咪图片地址">
-    <button type="submit">提交</button>
+    <input type="text" placeholder="cat photo URL">
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <input type="text" required placeholder="cat photo URL">
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

@@ -1,58 +1,46 @@
 ---
 id: 56533eb9ac21ba0edf2244ed
+title: 将变量追加到字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
-title: 将变量附加到字符串
+dashedName: appending-variables-to-strings
 ---
 
-## Description
-<section id='description'>
-我们不仅可以创建出多行的字符串，还可以使用加等号(<code>+=</code>)运算符来将变量追加到字符串。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-设置变量<code>someAdjective</code>的值，并使用<code>+=</code>运算符把它追加到变量<code>myStr</code>上。
-</section>
+我们不仅可以通过字符串的<dfn>字面量</dfn>创建多行字符串，还可以使用加法赋值运算符（`+=`）来将变量追加到字符串。
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>someAdjective</code>应该是一个至少包含三个字符的字符串。
-    testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
-  - text: 使用<code>+=</code>操作符把<code>someAdjective</code>追加到<code>myStr</code>的后面。
-    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+代码示例：
 
 ```js
-// Example
 var anAdjective = "awesome!";
 var ourStr = "freeCodeCamp is ";
 ourStr += anAdjective;
-
-// Only change code below this line
-
-var someAdjective;
-var myStr = "Learning to code is ";
-
+// ourStr 的值现在为 "freeCodeCamp is awesome!"
 ```
 
-</div>
+# --instructions--
 
+请将变量 `someAdjective` 的设置为包含至少三个字符的字符串，并使用 `+=` 运算符把它追加到变量 `myStr` 上。
 
-### After Test
-<div id='js-teardown'>
+# --hints--
+
+`someAdjective` 应为至少包含三个字符的字符串。
+
+```js
+assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
+```
+
+应使用 `+=` 操作符把 `someAdjective` 追加到 `myStr` 的末尾。
+
+```js
+assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(){
@@ -71,22 +59,19 @@ var myStr = "Learning to code is ";
 })();
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+## --seed-contents--
 
 ```js
-var anAdjective = "awesome!";
-var ourStr = "freeCodeCamp is ";
-ourStr += anAdjective;
+// Change code below this line
 
+var someAdjective;
+var myStr = "Learning to code is ";
+```
+
+# --solutions--
+
+```js
 var someAdjective = "neat";
 var myStr = "Learning to code is ";
 myStr += someAdjective;
 ```
-
-</section>

@@ -1,72 +1,99 @@
 ---
 id: 5a23c84252665b21eecc7e7a
+title: 生成小写ASCII字母表
 challengeType: 5
 videoUrl: ''
-title: 生成小写ASCII字母表
+dashedName: generate-lower-case-ascii-alphabet
 ---
 
-## Description
-<section id="description">编写一个函数以生成给定范围的小写ASCII字符数组。例如：对于范围1到4，函数应返回<code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> 。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+编写一个函数以生成给定范围的小写ASCII字符数组。例如：对于范围1到4，函数应返回`['a','b','c','d']` 。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>lascii</code>应该是一个功能。
-    testString: assert(typeof lascii=='function');
-  - text: <code>lascii("a","d")</code>应该返回一个数组。
-    testString: assert(Array.isArray(lascii('a','d')));
-  - text: <code>lascii("a","d")</code>应该返回<code>[ "a", "b", "c", "d" ]</code> 。
-    testString: assert.deepEqual(lascii("a","d"),results[0]);
-  - text: <code>lascii("c","i")</code>应该返回<code>[ "c", "d", "e", "f", "g", "h", "i" ]</code> 。
-    testString: assert.deepEqual(lascii("c","i"),results[1]);
-  - text: <code>lascii("m","q")</code>应该返回<code>[ "m", "n", "o", "p", "q" ]</code> 。
-    testString: assert.deepEqual(lascii("m","q"),results[2]);
-  - text: <code>lascii("k","n")</code>应返回<code>[ "k", "l", "m", "n" ]</code> 。
-    testString: assert.deepEqual(lascii("k","n"),results[3]);
-  - text: <code>lascii("t","z")</code>应该返回<code>[ "t", "u", "v", "w", "x", "y", "z" ]</code> 。
-    testString: assert.deepEqual(lascii("t","z"),results[4]);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`lascii`应该是一个功能。
 
 ```js
-function lascii (cFrom, cTo) {
-  // Good luck!
+assert(typeof lascii == 'function');
+```
+
+`lascii("a","d")`应该返回一个数组。
+
+```js
+assert(Array.isArray(lascii('a', 'd')));
+```
+
+`lascii("a","d")`应该返回`[ "a", "b", "c", "d" ]` 。
+
+```js
+assert.deepEqual(lascii('a', 'd'), results[0]);
+```
+
+`lascii("c","i")`应该返回`[ "c", "d", "e", "f", "g", "h", "i" ]` 。
+
+```js
+assert.deepEqual(lascii('c', 'i'), results[1]);
+```
+
+`lascii("m","q")`应该返回`[ "m", "n", "o", "p", "q" ]` 。
+
+```js
+assert.deepEqual(lascii('m', 'q'), results[2]);
+```
+
+`lascii("k","n")`应返回`[ "k", "l", "m", "n" ]` 。
+
+```js
+assert.deepEqual(lascii('k', 'n'), results[3]);
+```
+
+`lascii("t","z")`应该返回`[ "t", "u", "v", "w", "x", "y", "z" ]` 。
+
+```js
+assert.deepEqual(lascii('t', 'z'), results[4]);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+let results=[
+  [ 'a', 'b', 'c', 'd' ],
+  [ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ],
+  [ 'm', 'n', 'o', 'p', 'q' ],
+  [ 'k', 'l', 'm', 'n' ],
+  [ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+]
+```
+
+## --seed-contents--
+
+```js
+function lascii(cFrom, cTo) {
+
 }
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+# --solutions--
 
 ```js
-console.info('after the test');
+function lascii(cFrom, cTo) {
+
+  function cRange(cFrom, cTo) {
+    var iStart = cFrom.charCodeAt(0);
+
+    return Array.apply(
+      null, Array(cTo.charCodeAt(0) - iStart + 1)
+    ).map(function (_, i) {
+
+      return String.fromCharCode(iStart + i);
+
+    });
+  }
+
+  return cRange(cFrom, cTo);
+
+}
 ```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

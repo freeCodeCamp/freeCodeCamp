@@ -2,10 +2,11 @@
 id: 5d822fd413a79914d39e98fb
 title: Part 51
 challengeType: 0
+dashedName: part-51
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can make an instant color change in a gradient by giving the transition zero space like this:
 
 ```css
@@ -18,27 +19,23 @@ gradient-type(
 ```
 
 Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2b = code.match(/\.bb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*9%\s*\)\s*(;|})/g.test(bb2b));
-
+```js
+const bb2b = code.match(/\.bb2b\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*9%\s*\)\s*(;|})/g.test(
+    bb2b
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -218,12 +215,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -408,5 +400,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

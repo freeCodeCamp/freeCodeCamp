@@ -2,48 +2,47 @@
 id: 5e9a0a8e09c5df3cc3600ed9
 challengeType: 11
 videoId: VNWAQbEM-C8
+dashedName: reorganizing-arrays
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What code would produce the following array?
 
-<section id='tests'>
+```py
+[[1. 1.]
+[1. 1.]
+[1. 1.]
+[1. 1.]]
+```
 
-````yml
-question:
-  text: |
-    What code would produce the following array?
+## --answers--
 
-    ```py
-    [[1. 1.]
-    [1. 1.]
-    [1. 1.]
-    [1. 1.]]
-    ```
-  answers:
-    - |
-      ```py
-      a = np.ones((2, 4))
-      b = a.reshape((4, 2))
-      print(b)
-      ```
-    - |
-      ```py
-      a = np.ones((2, 4))
-      b = a.reshape((2, 4))
-      print(b)
-      ```
-    - |
-      ```py
-      a = np.ones((2, 4))
-      b = a.reshape((8, 1))
-      print(b)
-      ```
-  solution: 1
-````
+```py
+a = np.ones((2, 4))
+b = a.reshape((4, 2))
+print(b)
+```
 
-</section>
+---
+
+```py
+a = np.ones((2, 4))
+b = a.reshape((2, 4))
+print(b)
+```
+
+---
+
+```py
+a = np.ones((2, 4))
+b = a.reshape((8, 1))
+print(b)
+```
+
+## --video-solution--
+
+1
+

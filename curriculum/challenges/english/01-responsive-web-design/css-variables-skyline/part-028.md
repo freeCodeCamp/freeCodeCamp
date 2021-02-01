@@ -2,33 +2,27 @@
 id: 5d822fd413a79914d39e98e4
 title: Part 28
 challengeType: 0
+dashedName: part-28
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The background buildings are starting to look pretty good. Create a new `div` below the `background-buildings` element and give it a class of `foreground-buildings`. This will be another container for more buildings.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bodyDivs = $("#display-body").children("div"); assert(bodyDivs.length === 2 && bodyDivs[1] === $("div.foreground-buildings")[0]);
-
+```js
+const bodyDivs = $('#display-body').children('div');
+assert(
+  bodyDivs.length === 2 && bodyDivs[1] === $('div.foreground-buildings')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -135,12 +129,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -248,5 +237,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

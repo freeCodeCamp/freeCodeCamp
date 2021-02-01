@@ -1,44 +1,41 @@
 ---
 id: 5a9036ee38fddaf9a66b5d35
+title: 使用 grid-column-gap 创建多列之间的间距
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
-title: 使用 grid-column-gap 创建多列之间的间距
+dashedName: create-a-column-gap-using-grid-column-gap
 ---
 
-## Description
-<section id='description'>
-到目前为止，在你所建立的网格中列都相互紧挨着。如果需要在列与列之间添加一些间距，我们可以使用<code>grid-column-gap</code>：
+# --description--
 
+目前为止，在你所创建的网格中，每列都相互紧挨着。如果需要在列与列之间添加一些间距，我们可以使用 `grid-column-gap`：
 
 ```css
 grid-column-gap: 10px;
 ```
 
-这会在我们创建的所有列之间添加 10px 的空白间距。
-</section>
+这会为我们创建的所有列之间都添加 10px 的空白间距。
 
-## Instructions
-<section id='instructions'>
-为网格中的列添加宽度为<code>20px</code>的间距。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+请为网格中的所有列添加宽度为 `20px` 的间距。
 
-```yml
-tests:
-  - text: '<code>container</code>类应该有<code>grid-column-gap</code>属性且值为<code>20px</code>。'
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
+# --hints--
 
+class 为 `container` 的元素应具有 `grid-column-gap` 属性且属性值应为 `20px`。
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -47,7 +44,7 @@ tests:
   .d3{background:PaleTurquoise;}
   .d4{background:LightPink;}
   .d5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -56,13 +53,13 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    /* 请在本行以下添加你的代码 */
-    
-    
-    /* 请在本行以上添加你的代码 */
+    /* Only change code below this line */
+
+   
+    /* Only change code above this line */
   }
 </style>
-  
+
 <div class="container">
   <div class="d1">1</div>
   <div class="d2">2</div>
@@ -72,19 +69,8 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>.container {grid-column-gap: 20px;}</style>
 ```
-
-</section>
-              

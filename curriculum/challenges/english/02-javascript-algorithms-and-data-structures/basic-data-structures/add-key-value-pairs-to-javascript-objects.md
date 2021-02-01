@@ -3,10 +3,11 @@ id: 587d7b7c367417b2b2512b18
 title: Add Key-Value Pairs to JavaScript Objects
 challengeType: 1
 forumTopicId: 301153
+dashedName: add-key-value-pairs-to-javascript-objects
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 At their most basic, objects are just collections of <dfn>key-value</dfn> pairs. In other words, they are pieces of data (<dfn>values</dfn>) mapped to unique identifiers called <dfn>properties</dfn> (<dfn>keys</dfn>). Take a look at an example:
 
 ```js
@@ -17,13 +18,13 @@ const tekkenCharacter = {
 };
 ```
 
-The above code defines a Tekken video game character object called <code>tekkenCharacter</code>. It has three properties, each of which map to a specific value. If you want to add an additional property, such as "origin", it can be done by assigning <code>origin</code> to the object:
+The above code defines a Tekken video game character object called `tekkenCharacter`. It has three properties, each of which map to a specific value. If you want to add an additional property, such as "origin", it can be done by assigning `origin` to the object:
 
 ```js
 tekkenCharacter.origin = 'South Korea';
 ```
 
-This uses dot notation. If you were to observe the <code>tekkenCharacter</code> object, it will now include the <code>origin</code> property. Hwoarang also had distinct orange hair. You can add this property with bracket notation by doing:
+This uses dot notation. If you were to observe the `tekkenCharacter` object, it will now include the `origin` property. Hwoarang also had distinct orange hair. You can add this property with bracket notation by doing:
 
 ```js
 tekkenCharacter['hair color'] = 'dyed orange';
@@ -50,37 +51,49 @@ After adding all the examples, the object will look like this:
 };
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
- A <code>foods</code> object has been created with three entries. Using the syntax of your choice, add three more entries to it: <code>bananas</code> with a value of <code>13</code>, <code>grapes</code> with a value of <code>35</code>, and <code>strawberries</code> with a value of <code>27</code>.
-</section>
+A `foods` object has been created with three entries. Using the syntax of your choice, add three more entries to it: `bananas` with a value of `13`, `grapes` with a value of `35`, and `strawberries` with a value of `27`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>foods</code> should be an object.
-    testString: assert(typeof foods === 'object');
-  - text: The <code>foods</code> object should have a key <code>"bananas"</code> with a value of <code>13</code>.
-    testString: assert(foods.bananas === 13);
-  - text: The <code>foods</code> object should have a key <code>"grapes"</code> with a value of <code>35</code>.
-    testString: assert(foods.grapes === 35);
-  - text: The <code>foods</code> object should have a key <code>"strawberries"</code> with a value of <code>27</code>.
-    testString: assert(foods.strawberries === 27);
-  - text: The key-value pairs should be set using dot or bracket notation.
-    testString: assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1);
+`foods` should be an object.
 
+```js
+assert(typeof foods === 'object');
 ```
 
-</section>
+The `foods` object should have a key `"bananas"` with a value of `13`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(foods.bananas === 13);
+```
 
-<div id='js-seed'>
+The `foods` object should have a key `"grapes"` with a value of `35`.
+
+```js
+assert(foods.grapes === 35);
+```
+
+The `foods` object should have a key `"strawberries"` with a value of `27`.
+
+```js
+assert(foods.strawberries === 27);
+```
+
+The key-value pairs should be set using dot or bracket notation.
+
+```js
+assert(
+  code.search(/bananas:/) === -1 &&
+    code.search(/grapes:/) === -1 &&
+    code.search(/strawberries:/) === -1
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let foods = {
@@ -96,14 +109,7 @@ let foods = {
 console.log(foods);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let foods = {
@@ -116,5 +122,3 @@ foods['bananas'] = 13;
 foods['grapes']  = 35;
 foods['strawberries'] = 27;
 ```
-
-</section>

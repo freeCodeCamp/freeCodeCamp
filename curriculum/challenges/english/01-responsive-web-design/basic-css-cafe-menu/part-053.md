@@ -2,10 +2,10 @@
 id: 5f716bee5838c354c728a7c5
 title: Part 53
 challengeType: 0
+dashedName: part-53
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Below the dessert you just added, add the rest of the desserts and prices using three more `article` elements, each with two nested `p` elements. Each element should have the correct dessert and price text, and all of them should have the correct classes.
 
@@ -15,24 +15,17 @@ Cheesecake 3.00
 Cinammon Roll 2.50
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -70,21 +63,17 @@ tests:
         </section>
         <section>
           <h2>Desserts</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -117,6 +106,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

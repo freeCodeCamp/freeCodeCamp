@@ -2,10 +2,10 @@
 id: 5f3477ae34c1239cafe128be
 title: Part 14
 challengeType: 0
+dashedName: part-14
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You now have three type selectors with the exact same styling. You can add the same group of styles to many elements by separating the selectors with commas like this:
 
@@ -17,24 +17,17 @@ selector1, selector2 {
 
 Use a single type selector to center the `h1`, `h2` and `p` elements at the same time.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -42,7 +35,7 @@ tests:
   <head>
     <meta charset="utf-8" />
     <title>Camper Cafe Menu</title>
-    --fcc-editable-region--
+--fcc-editable-region--
     <style>
       h1 {
         text-align: center;
@@ -54,7 +47,7 @@ tests:
         text-align: center;
       }
     </style>
-    --fcc-editable-region--
+--fcc-editable-region--
   </head>
   <body>
     <header>
@@ -70,6 +63,3 @@ tests:
 <html>
 ```
 
-</div>
-
-</section>

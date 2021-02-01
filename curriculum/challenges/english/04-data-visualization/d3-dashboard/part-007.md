@@ -2,50 +2,27 @@
 id: 5d8a4cfbe6b6180ed9a1c9e4
 title: Part 7
 challengeType: 0
+dashedName: part-7
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, target the `dashboard` class you created and give it a `width` of `980px` and a `height` of `500px`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const dashboard = $(".dashboard"); assert(dashboard.css("width") === "980px" && dashboard.css("height") === "500px");
-
+```js
+const dashboard = $('.dashboard');
+assert(
+  dashboard.css('width') === '980px' && dashboard.css('height') === '500px'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
-
-```html
-<style>
-body {
-  background-color: #ccc;
-}
-
-
-
-</style>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -60,12 +37,20 @@ body {
 </html>
 ```
 
-</div>
-</section>
+## --seed-contents--
+
+```html
+<style>
+body {
+  background-color: #ccc;
+}
 
 
-## Solution
-<section id='solution'>
+
+</style>
+```
+
+# --solutions--
 
 ```html
 <style>
@@ -79,5 +64,3 @@ body {
 }
 </style>
 ```
-
-</section>

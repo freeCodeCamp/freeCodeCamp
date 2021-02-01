@@ -1,55 +1,38 @@
 ---
 id: 5900f3a41000cf542c50feb7
+title: 问题56：强大的数字总和
 challengeType: 5
 videoUrl: ''
-title: 问题56：强大的数字总和
+dashedName: problem-56-powerful-digit-sum
 ---
 
-## Description
-<section id="description"> googol（10100）是一个庞大的数字：一个跟着一百个零; 100100几乎是难以想象的大：一个跟着两百个零。尽管它们的大小，每个数字的数字之和仅为1.考虑到形式的自然数，ab，其中a，b &lt;100，最大数字和是多少？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+googol（10100）是一个庞大的数字：一个跟着一百个零; 100100几乎是难以想象的大：一个跟着两百个零。尽管它们的大小，每个数字的数字之和仅为1.考虑到形式的自然数，ab，其中a，b &lt;100，最大数字和是多少？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>euler56()</code>应返回972。
-    testString: assert.strictEqual(euler56(), 972);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler56()`应返回972。
 
 ```js
-function euler56() {
-  // Good luck!
+assert.strictEqual(euler56(), 972);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function powerfulDigitSum() {
+
   return true;
 }
 
-euler56();
-
+powerfulDigitSum();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

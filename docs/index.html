@@ -11,18 +11,14 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!--social-->
   <meta content='freeCodeCamp.org' name='og:title' />
-  <meta content='Learn to code at home. Build projects. Earn certifications.'
-    + 'Since 2015, 40,000 graduates have gotten jobs at tech '
-    + 'companies including Google, Apple, Amazon, and Microsoft.' name='og:description' />
+  <meta content='Learn to code — for free.' name='og:description' />
   <meta content='https://cdn.freecodecamp.org/platform/universal/fcc-og-1200-social-green.png' property='og:image' />
 
   <meta content='summary_large_image' key='twitter:card' name='twitter:card' />
   <meta content='https://cdn.freecodecamp.org/platform/universal/fcc-twitter-1120X600-social-green.png'
     name='twitter:image:src' />
   <meta content='freeCodeCamp.org' name='twitter:title' />
-  <meta content='Learn to code at home. Build projects. Earn certifications.'
-    + 'Since 2015, 40,000 graduates have gotten jobs at tech '
-    + 'companies including Google, Apple, Amazon, and Microsoft.' name='twitter:description' />
+  <meta content='Learn to code — for free.' name='twitter:description' />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
@@ -134,10 +130,17 @@
 
             // Used from https://github.com/ckoliber/docsify-rtl/blob/master/build/docsify-rtl.js,
             // Currently this is a hack because can't use the plugin as is.
-            if (vm.route.path.search('Arabic') !== -1) {
+            if (vm.route.path.search('Arabic') !== -1 || vm.route.path.search('Hebrew') !== -1) {
               for (var counter = 0, elements = document.getElementsByClassName("markdown-section"); counter < elements.length; counter++) {
                 var item = elements[counter];
                 item.dir = "rtl";
+              }
+            };
+
+            if (vm.route.path.search('Arabic') === -1 && vm.route.path.search('Hebrew') === -1) {
+              for (var counter = 0, elements = document.getElementsByClassName("markdown-section"); counter < elements.length; counter++) {
+                var item = elements[counter];
+                item.dir = "ltr";
               }
             };
 

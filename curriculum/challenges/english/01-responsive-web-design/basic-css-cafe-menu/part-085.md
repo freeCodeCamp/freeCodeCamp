@@ -2,31 +2,24 @@
 id: 5f45b4c81cea7763550e40df
 title: Part 85
 challengeType: 0
+dashedName: part-85
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked. 
+To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -90,10 +83,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -183,6 +172,3 @@ a:active {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

@@ -1,12 +1,13 @@
 ---
 id: 587d7b88367417b2b2512b44
+title: 编写带参数的箭头函数
 challengeType: 1
 forumTopicId: 301223
-title: 编写带参数的箭头函数
+dashedName: write-arrow-functions-with-parameters
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 和一般的函数一样，你也可以给箭头函数传递参数。
 
 ```js
@@ -28,63 +29,63 @@ const doubler = item => item * 2;
 const multiplier = (item, multi) => item * multi;
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-使用箭头函数的语法重写<code>myConcat</code>函数，使其可以将<code>arr2</code>的内容填充在<code>arr1</code>里。
-</section>
+使用箭头函数的语法重写`myConcat`函数，使其可以将`arr2`的内容填充在`arr1`里。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 替换掉所有的<code>var</code>关键字。
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
-  - text: <code>myConcat</code>应该是一个常量 (使用<code>const</code>)。
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+myConcat/g));
-  - text: <code>myConcat</code>应该是一个函数。
-    testString: assert(typeof myConcat === 'function');
-  - text: <code>myConcat()</code> 应该返回 <code>[1, 2, 3, 4, 5]</code>。
-    testString: assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; });
-  - text: 不要使用<code>function</code>关键字。
-    testString: getUserInput => assert(!getUserInput('index').match(/function/g));
+替换掉所有的`var`关键字。
 
+```js
+(getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-</section>
+`myConcat`应该是一个常量 (使用`const`)。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+```
 
-<div id='js-seed'>
+`myConcat`应该是一个函数。
+
+```js
+assert(typeof myConcat === 'function');
+```
+
+`myConcat()` 应该返回 `[1, 2, 3, 4, 5]`。
+
+```js
+assert(() => {
+  const a = myConcat([1], [2]);
+  return a[0] == 1 && a[1] == 2;
+});
+```
+
+不要使用`function`关键字。
+
+```js
+(getUserInput) => assert(!getUserInput('index').match(/function/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 var myConcat = function(arr1, arr2) {
-  "use strict";
   return arr1.concat(arr2);
 };
-// test your code
+
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const myConcat = (arr1, arr2) =>  {
-  "use strict";
   return arr1.concat(arr2);
 };
-// test your code
+
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
-
-</section>

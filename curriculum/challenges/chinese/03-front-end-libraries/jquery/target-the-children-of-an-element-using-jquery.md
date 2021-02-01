@@ -1,43 +1,48 @@
 ---
 id: bad87fee1348bd9aed208826
+title: 使用 jQuery 选择元素的子元素
 challengeType: 6
 forumTopicId: 18320
-title: 使用 jQuery 选择元素的子元素
+dashedName: target-the-children-of-an-element-using-jquery
 ---
 
-## Description
-<section id='description'>
-把 HTML 标签放到另一个级别的标签里，这些 HTML 标签被称为该标签的<code>子标签（children element）</code>。例如，本次挑战中文本为 "#target1"、"#target2" 和 "#target3" 的按钮都是<code>&#60;div class="well" id="left-well"&#62;</code>标签的<code>子标签</code>。
-jQuery 有一个<code>children()</code>方法，可以访问被选取标签的子标签。
-下面的代码展示了用<code>children()</code>方法把<code>left-well</code>标签的子标签的颜色设置成<code>蓝色（blue）</code>：
-<code>$("#left-well").children().css("color", "blue")</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-请把<code>right-well</code>标签的所有子标签颜色设置成<code>橙色（orange）</code>。
-</section>
+把 HTML 标签放到另一个级别的标签里，这些 HTML 标签被称为该标签的`子标签（children element）`。例如，本次挑战中文本为 "#target1"、"#target2" 和 "#target3" 的按钮都是`<div class="well" id="left-well">`标签的`子标签`。
 
-## Tests
-<section id='tests'>
+jQuery 有一个`children()`方法，可以访问被选取标签的子标签。
 
-```yml
-tests:
-  - text: <code>#right-well</code>所有的子标签文本应该是橙色。
-    testString: assert($("#right-well").children().css("color") === 'rgb(255, 165, 0)');
-  - text: 应该用<code>children&#40&#41</code>方法修改标签。
-    testString: assert(code.match(/\.children\(\)\.css/g));
-  - text: 仅用 jQuery 给标签添加类。
-    testString: assert(code.match(/<div class="well" id="right-well">/g));
+下面的代码展示了用`children()`方法把`left-well`标签的子标签的颜色设置成`蓝色（blue）`：
 
+`$("#left-well").children().css("color", "blue")`
+
+# --instructions--
+
+请把`right-well`标签的所有子标签颜色设置成`橙色（orange）`。
+
+# --hints--
+
+`#right-well`所有的子标签文本应该是橙色。
+
+```js
+assert($('#right-well').children().css('color') === 'rgb(255, 165, 0)');
 ```
 
-</section>
+应该用`children()`方法修改标签。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.children\(\)\.css/g));
+```
 
-<div id='html-seed'>
+仅用 jQuery 给标签添加类。
+
+```js
+assert(code.match(/<div class="well" id="right-well">/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -52,7 +57,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -77,14 +82,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -99,7 +97,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -123,6 +121,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>
-

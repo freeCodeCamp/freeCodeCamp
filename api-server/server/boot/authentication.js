@@ -1,18 +1,21 @@
 import passport from 'passport';
 import dedent from 'dedent';
-import { check } from 'express-validator/check';
+import { check } from 'express-validator';
 import { isEmail } from 'validator';
+import jwt from 'jsonwebtoken';
 
-import { homeLocation } from '../../../config/env';
+import { jwtSecret } from '../../../config/secrets';
+
 import {
   createPassportCallbackAuthenticator,
-  saveResponseAuthCookies,
-  loginRedirect
+  devSaveResponseAuthCookies,
+  devLoginRedirect
 } from '../component-passport';
-import { ifUserRedirectTo, ifNoUserRedirectTo } from '../utils/middleware';
+import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { decodeEmail } from '../../common/utils';
+import { getRedirectParams } from '../utils/redirection';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 if (isSignUpDisabled) {
@@ -36,9 +39,9 @@ module.exports = function enableAuthentication(app) {
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
-  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
-  const saveAuthCookies = saveResponseAuthCookies();
-  const loginSuccessRedirect = loginRedirect();
+  const ifNoUserRedirect = ifNoUserRedirectHome();
+  const devSaveAuthCookies = devSaveResponseAuthCookies();
+  const devLoginSuccessRedirect = devLoginRedirect();
   const api = app.loopback.Router();
 
   // Use a local mock strategy for signing in if we are in dev mode.
@@ -48,26 +51,15 @@ module.exports = function enableAuthentication(app) {
     api.get(
       '/signin',
       passport.authenticate('devlogin'),
-      saveAuthCookies,
-      loginSuccessRedirect
+      devSaveAuthCookies,
+      devLoginSuccessRedirect
     );
   } else {
-    api.get(
-      '/signin',
-      (req, res, next) => {
-        if (req && req.query && req.query.returnTo) {
-          req.query.returnTo = `${homeLocation}/${req.query.returnTo}`;
-        }
-        return next();
-      },
-      ifUserRedirect,
-      (req, res, next) => {
-        const state = req.query.returnTo
-          ? Buffer.from(req.query.returnTo).toString('base64')
-          : null;
-        return passport.authenticate('auth0-login', { state })(req, res, next);
-      }
-    );
+    api.get('/signin', ifUserRedirect, (req, res, next) => {
+      const { returnTo, origin, pathPrefix } = getRedirectParams(req);
+      const state = jwt.sign({ returnTo, origin, pathPrefix }, jwtSecret);
+      return passport.authenticate('auth0-login', { state })(req, res, next);
+    });
 
     api.get(
       '/auth/auth0/callback',
@@ -76,23 +68,24 @@ module.exports = function enableAuthentication(app) {
   }
 
   api.get('/signout', (req, res) => {
+    const { origin } = getRedirectParams(req);
     req.logout();
     req.session.destroy(err => {
       if (err) {
         throw wrapHandledError(new Error('could not destroy session'), {
           type: 'info',
           message: 'We could not log you out, please try again in a moment.',
-          redirectTo: homeLocation
+          redirectTo: origin
         });
       }
       removeCookies(req, res);
-      res.redirect(homeLocation);
+      res.redirect(origin);
     });
   });
 
   api.get(
     '/confirm-email',
-    ifNoUserRedirectHome,
+    ifNoUserRedirect,
     passwordlessGetValidators,
     createGetPasswordlessAuth(app)
   );
@@ -113,14 +106,14 @@ function createGetPasswordlessAuth(app) {
     const {
       query: { email: encodedEmail, token: authTokenId, emailChange } = {}
     } = req;
-
+    const { origin } = getRedirectParams(req);
     const email = decodeEmail(encodedEmail);
     if (!isEmail(email)) {
       return next(
         wrapHandledError(new TypeError('decoded email is invalid'), {
           type: 'info',
           message: 'The email encoded in the link is incorrectly formatted',
-          redirectTo: `${homeLocation}/signin`
+          redirectTo: `${origin}/signin`
         })
       );
     }
@@ -134,7 +127,7 @@ function createGetPasswordlessAuth(app) {
               {
                 type: 'info',
                 message: defaultErrorMsg,
-                redirectTo: `${homeLocation}/signin`
+                redirectTo: `${origin}/signin`
               }
             );
           }
@@ -148,7 +141,7 @@ function createGetPasswordlessAuth(app) {
                   {
                     type: 'info',
                     message: defaultErrorMsg,
-                    redirectTo: `${homeLocation}/signin`
+                    redirectTo: `${origin}/signin`
                   }
                 );
               }
@@ -159,7 +152,7 @@ function createGetPasswordlessAuth(app) {
                     {
                       type: 'info',
                       message: defaultErrorMsg,
-                      redirectTo: `${homeLocation}/signin`
+                      redirectTo: `${origin}/signin`
                     }
                   );
                 }
@@ -174,7 +167,7 @@ function createGetPasswordlessAuth(app) {
                         Looks like the link you clicked has expired,
                         please request a fresh link, to sign in.
                       `,
-                      redirectTo: `${homeLocation}/signin`
+                      redirectTo: `${origin}/signin`
                     });
                   }
                   return authToken.destroy$();
@@ -187,11 +180,8 @@ function createGetPasswordlessAuth(app) {
         // update user and log them in
         .map(user => user.loginByRequest(req, res))
         .do(() => {
-          req.flash(
-            'success',
-            'Success! You have signed in to your account. Happy Coding!'
-          );
-          return res.redirectWithFlash(`${homeLocation}/learn`);
+          req.flash('success', 'flash.signin-success');
+          return res.redirectWithFlash(`${origin}/learn`);
         })
         .subscribe(() => {}, next)
     );

@@ -1,39 +1,48 @@
 ---
 id: a202eed8fc186c8434cb6d61
-challengeType: 5
-videoUrl: ''
 title: 反转字符串
+challengeType: 5
+forumTopicId: 16043
+dashedName: reverse-a-string
 ---
 
-## Description
-<section id="description">反转提供的字符串。您可能需要先将字符串转换为数组，然后才能将其反转。您的结果必须是字符串。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+请反转传入函数的字符串。
 
-## Tests
-<section id='tests'>
+在反转字符串之前，你可能需要将其切分成包含字符的数组。
 
-```yml
-tests:
-  - text: <code>reverseString(&quot;hello&quot;)</code>应该返回一个字符串。
-    testString: assert(typeof reverseString("hello") === "string");
-  - text: <code>reverseString(&quot;hello&quot;)</code>应该变成<code>&quot;olleh&quot;</code> 。
-    testString: assert(reverseString("hello") === "olleh");
-  - text: <code>reverseString(&quot;Howdy&quot;)</code>应该变成<code>&quot;ydwoH&quot;</code> 。
-    testString: assert(reverseString("Howdy") === "ydwoH");
-  - text: <code>reverseString(&quot;Greetings from Earth&quot;)</code>应返回<code>&quot;htraE morf sgniteerG&quot;</code> 。
-    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG");
+函数的返回结果应为字符串。
 
+# --hints--
+
+`reverseString("hello")` 应返回一个字符串。
+
+```js
+assert(typeof reverseString('hello') === 'string');
 ```
 
-</section>
+`reverseString("hello")` 应返回 `"olleh"`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(reverseString('hello') === 'olleh');
+```
 
-<div id='js-seed'>
+`reverseString("Howdy")` 应返回 `"ydwoH"`。
+
+```js
+assert(reverseString('Howdy') === 'ydwoH');
+```
+
+`reverseString("Greetings from Earth")` 应返回 `"htraE morf sgniteerG"`。
+
+```js
+assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function reverseString(str) {
@@ -41,20 +50,14 @@ function reverseString(str) {
 }
 
 reverseString("hello");
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
 
-/section>
+reverseString("hello");
+```

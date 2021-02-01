@@ -1,55 +1,38 @@
 ---
 id: 5900f4181000cf542c50ff2b
+title: 问题172：调查重复数字很少的数字
 challengeType: 5
 videoUrl: ''
-title: 问题172：调查重复数字很少的数字
+dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 ---
 
-## Description
-<section id="description">有多少个18位数字n（没有前导零），n中没有数字出现超过三次？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+有多少个18位数字n（没有前导零），n中没有数字出现超过三次？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>euler172()</code>应返回227485267000992000。
-    testString: assert.strictEqual(euler172(), 227485267000992000);
+`euler172()`应返回227485267000992000。
 
+```js
+assert.strictEqual(euler172(), 227485267000992000);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler172() {
-  // Good luck!
+
   return true;
 }
 
 euler172();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

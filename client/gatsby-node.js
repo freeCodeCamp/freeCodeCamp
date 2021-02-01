@@ -186,8 +186,7 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
       HOME_PATH: JSON.stringify(
         process.env.HOME_PATH || 'http://localhost:3000'
       ),
-      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
-      PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
+      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
     })
   ];
   // The monaco editor relies on some browser only globals so should not be

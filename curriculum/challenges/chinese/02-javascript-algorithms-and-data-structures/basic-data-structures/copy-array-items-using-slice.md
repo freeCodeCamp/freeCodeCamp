@@ -1,13 +1,14 @@
 ---
 id: 587d7b7a367417b2b2512b12
+title: 使用 slice() 复制数组元素
 challengeType: 1
 forumTopicId: 301158
-title: 使用 slice() 拷贝数组项目
+dashedName: copy-array-items-using-slice
 ---
 
-## Description
-<section id='description'>
-接下来我们要介绍<code>slice()</code>方法。<code>slice()</code>并不修改数组，而是复制或者说<em>提取（extract）</em>给定数量的元素到一个新数组里，而调用方法的数组则保持不变。<code>slice()</code>只接受 2 个输入参数&mdash;第一个是开始提取元素的位置（索引），第二个是结束提取元素的位置（索引）。slice 方法会提取直到截止索引的元素，但被提取的元素不包括截止索引对应的元素。请看以下例子：
+# --description--
+
+接下来我们要介绍 `slice()` 方法。`slice()` 不会修改数组，而是会复制，或者说*提取（extract）*给定数量的元素到一个新数组。同时，调用方法的数组保持不变。`slice()` 只接收 2 个输入参数：第一个是开始提取元素的位置（索引），第二个是提取元素的结束位置（索引）。`slice()` 提取的元素中不包括第二个参数所对应的元素。请看以下例子：
 
 ```js
 let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
@@ -17,57 +18,48 @@ let todaysWeather = weatherConditions.slice(1, 3);
 // weatherConditions 仍然等于 ['rain', 'snow', 'sleet', 'hail', 'clear']
 ```
 
-现在我们从一个已有的数组中提取了一些元素，并用这些元素创建了一个新数组。
-</section>
+在上面的代码中，我们从一个数组中提取了一些元素，并用这些元素创建了一个新数组。
 
-## Instructions
-<section id='instructions'>
-我们已经定义了一个<code>forecast</code>函数，它接受一个数组作为参数。请修改这个函数，利用<code>slice()</code>来从输入的数组中提取信息，并返回一个包含元素<code>'warm'</code>和<code>'sunny'</code> 的新数组。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+我们已经定义了一个 `forecast` 函数，它接受一个数组作为参数。请修改这个函数，利用 `slice()` 从输入的数组中提取信息，最终返回一个包含元素 `'warm'` 和 `'sunny'` 的新数组。
 
-```yml
-tests:
-  - text: '<code>forecast</code>应该返回<code>[&quot;warm&quot;, &quot;sunny&quot;]</code>'
-    testString: assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny']);
-  - text: <code>forecast</code>函数应该使用<code>slice()</code>方法
-    testString: assert(/\.slice\(/.test(code));
+# --hints--
 
+`forecast` 应返回 `["warm", "sunny"]`。
+
+```js
+assert.deepEqual(
+  forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']),
+  ['warm', 'sunny']
+);
 ```
 
-</section>
+`forecast` 函数中应使用 `slice()` 方法。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/\.slice\(/.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function forecast(arr) {
-  // change code below this line
+  // Only change code below this line
 
   return arr;
 }
 
-// do not change code below this line
+// Only change code above this line
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function forecast(arr) {
   return arr.slice(2,4);
 }
 ```
-
-</section>

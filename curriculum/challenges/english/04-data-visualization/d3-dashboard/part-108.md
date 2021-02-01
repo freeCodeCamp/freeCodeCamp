@@ -2,10 +2,10 @@
 id: 5d8a4cfbe6b6180ed9a1ca4b
 title: Part 108
 challengeType: 0
+dashedName: part-108
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Your percent values are numbers less than one. You will need to multiply it by 100, round of the decimals, and add a `%` sign. Use a template literal to return this to the `text` function:
 
@@ -14,27 +14,53 @@ ${Math.round(percent * 100)}%
 ```
 
 Don't forget that you need a `return` statement here since you aren't using an implicit return.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/return\s*`\$\{\s*Math\s*\.\s*round\s*\(\s*percent\s*\*\s*100\s*\)\s*\}%`;?\s*\}\s*\)/g.test(code));
-
+```js
+assert(
+  /return\s*`\$\{\s*Math\s*\.\s*round\s*\(\s*percent\s*\*\s*100\s*\)\s*\}%`;?\s*\}\s*\)/g.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -196,47 +222,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -400,5 +386,3 @@ tests:
 
 </script>
 ```
-
-</section>

@@ -2,29 +2,28 @@
 id: 5e7b9f180b6c005b0e76f08f
 challengeType: 11
 videoId: jvDw3D9GKac
+dashedName: relational-databases-join-operation
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+When using a JOIN clause in an SQL statement, what does ON do?
 
-```yml
-question:
-  text: |
-    When using a JOIN clause in an SQL statement, what does ON do?
+## --answers--
 
-  answers:
-    - |
-        It indicates what tables to perform the JOIN on.
-    - |
-        It specifies the fields to use for the JOIN.
-    - |
-        It indicates how the two tables are to be joined.
-  solution: 3
-```
+It indicates what tables to perform the JOIN on.
 
-</section>
+---
+
+It specifies the fields to use for the JOIN.
+
+---
+
+It indicates how the two tables are to be joined.
+
+## --video-solution--
+
+3
+

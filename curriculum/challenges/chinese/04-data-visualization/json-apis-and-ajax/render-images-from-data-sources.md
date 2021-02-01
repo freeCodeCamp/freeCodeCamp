@@ -1,41 +1,42 @@
 ---
 id: 587d7fae367417b2b2512be6
+title: 渲染数据源的图像
 challengeType: 6
 forumTopicId: 18265
-title: 渲染数据源的图像
+dashedName: render-images-from-data-sources
 ---
 
-## Description
-<section id='description'>
-前几个挑战中表明，JSON 数组中的每个对象都包含一个<code>imageLink</code>键，其值为猫图像的 URL。
-当你遍历这些对象的时候，你可以使用<code>imageLink</code>属性在<code>img</code>元素中显示此图像。
+# --description--
+
+前几个挑战中表明，JSON 数组中的每个对象都包含一个`imageLink`键，其值为猫图像的 URL。
+
+当你遍历这些对象的时候，你可以使用`imageLink`属性在`img`元素中显示此图像。
+
 这是执行此操作的代码：
-<code>html += "&lt;img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'&gt;";</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-添加代码以在<code>img</code>标签中使用<code>imageLink</code>和<code>altText</code>属性。
-</section>
+`html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 你应该使用<code>imageLink</code>属性来显示图像。
-    testString: assert(code.match(/val\.imageLink/g));
-  - text: 应该用 <code>altText</code> 做为图片的 alt 属性。
-    testString: assert(code.match(/val\.altText/g));
+添加代码以在`img`标签中使用`imageLink`和`altText`属性。
 
+# --hints--
+
+你应该使用`imageLink`属性来显示图像。
+
+```js
+assert(code.match(/val\.imageLink/g));
 ```
 
-</section>
+应该用 `altText` 做为图片的 alt 属性。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/val\.altText/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -49,10 +50,10 @@ tests:
         let html = "";
         json.forEach(function(val) {
           html += "<div class = 'cat'>";
-          // 在这行下面添加代码
+          // Add your code below this line
 
 
-          // 在这行上面添加代码
+          // Add your code above this line
           html += "</div><br>";
         });
         document.getElementsByClassName('message')[0].innerHTML=html;
@@ -98,14 +99,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -164,7 +158,4 @@ tests:
     Get Message
   </button>
 </p>
-
 ```
-
-</section>

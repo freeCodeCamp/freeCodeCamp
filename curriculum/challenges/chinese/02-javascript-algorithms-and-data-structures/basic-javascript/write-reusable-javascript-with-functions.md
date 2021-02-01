@@ -1,14 +1,16 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
+title: 用函数编写可重用代码
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
-title: 用函数编写可重用代码
+dashedName: write-reusable-javascript-with-functions
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 在 JavaScript 中，我们可以把代码的重复部分抽取出来，放到一个<dfn>函数</dfn>中。
+
 举个例子：
 
 ```js
@@ -17,53 +19,35 @@ function functionName() {
 }
 ```
 
-你可以通过函数名<code>functionName</code>加上后面的小括号来调用这个函数，就像这样：
-<code>functionName();</code>
-每次调用函数时，它都会在控制台上打印消息<code>"Hello World"</code>。每次调用函数时，大括号之间的所有代码都将被执行。
-</section>
+你可以通过函数名`functionName`加上后面的小括号来调用这个函数，就像这样： `functionName();` 每次调用函数时，它都会在控制台上打印消息`"Hello World"`。每次调用函数时，大括号之间的所有代码都将被执行。
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 <ol><li>先创建一个名为<code>reusableFunction</code>的函数，这个函数可以打印<code>"Hi World"</code>到控制台上。</li><li>然后调用这个函数。</li></ol>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>reusableFunction</code>应该是一个函数。
-    testString: assert(typeof reusableFunction === 'function');
-  - text: <code>reusableFunction</code>应该在控制台中输出 "Hi World"。
-    testString: assert(hiWorldWasLogged);
-  - text: 在你定义<code>reusableFunction</code>之后记得调用它。
-    testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`reusableFunction`应该是一个函数。
 
 ```js
-// Example
-function ourReusableFunction() {
-  console.log("Heyya, World");
-}
-
-ourReusableFunction();
-
-// Only change code below this line
-
+assert(typeof reusableFunction === 'function');
 ```
 
-</div>
+`reusableFunction`应该在控制台中输出 "Hi World"。
 
-### Before Test
-<div id='js-setup'>
+```js
+assert(hiWorldWasLogged);
+```
+
+在你定义`reusableFunction`之后记得调用它。
+
+```js
+assert(/^\s*reusableFunction\(\)\s*/m.test(code));
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 var logOutput = "";
@@ -90,10 +74,7 @@ function uncapture() {
 capture();
 ```
 
-</div>
-
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 uncapture();
@@ -105,13 +86,12 @@ if (typeof reusableFunction !== "function") {
 }
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function reusableFunction() {
@@ -119,5 +99,3 @@ function reusableFunction() {
 }
 reusableFunction();
 ```
-
-</section>

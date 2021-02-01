@@ -1,62 +1,60 @@
 ---
 id: ab306dbdcc907c7ddfc30830
+title: 数组扁平化
 challengeType: 5
 forumTopicId: 16079
-title: 扁平化
+dashedName: steamroller
 ---
 
-## Description
-<section id='description'>
-在这道题目中，我们需要写一个数组扁平化的函数。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+在这道题目中，我们需要写一个数组扁平化的函数。请注意考虑多层数组嵌套的情景。
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`steamrollArray([[["a"]], [["b"]]])` 应返回 `["a", "b"]`。
 
-```yml
-tests:
-  - text: "<code>steamrollArray([[['a']], [['b']]])</code>应该返回<code>['a', 'b']</code>。"
-    testString: assert.deepEqual(steamrollArray([[["a"]], [["b"]]]), ["a", "b"]);
-  - text: <code>steamrollArray([1, [2], [3, [[4]]]])</code>应该返回<code>[1, 2, 3, 4]</code>。
-    testString: assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4]);
-  - text: <code>steamrollArray([1, [], [3, [[4]]]])</code>应该返回<code>[1, 3, 4]</code>。
-    testString: assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
-  - text: <code>steamrollArray([1, {}, [3, [[4]]]])</code>应该返回<code>[1, {}, 3, 4]</code>。
-    testString: assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
-
+```js
+assert.deepEqual(steamrollArray([[['a']], [['b']]]), ['a', 'b']);
 ```
 
-</section>
+`steamrollArray([1, [2], [3, [[4]]]])` 应返回 `[1, 2, 3, 4]`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4]);
+```
 
-<div id='js-seed'>
+`steamrollArray([1, [], [3, [[4]]]])` 应返回 `[1, 3, 4]`。
+
+```js
+assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
+```
+
+`steamrollArray([1, {}, [3, [[4]]]])` 应返回 `[1, {}, 3, 4]`。
+
+```js
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
+```
+
+代码中不应使用 `Array.prototype.flat()` 或 `Array.prototype.flatMap()` 方法。
+
+```js
+assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function steamrollArray(arr) {
-  // I'm a steamroller, baby
   return arr;
 }
 
 steamrollArray([1, [2], [3, [[4]]]]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function steamrollArray(arr) {
@@ -72,5 +70,3 @@ function steamrollArray(arr) {
   return out;
 }
 ```
-
-</section>

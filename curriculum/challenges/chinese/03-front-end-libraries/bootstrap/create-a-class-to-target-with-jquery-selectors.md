@@ -1,37 +1,28 @@
 ---
 id: bad87fee1348bd9aec908852
+title: 分别给每个目标元素的 class 属性添加一个 target 值
 challengeType: 0
 forumTopicId: 16815
-title: 分别给每个目标元素的 class 属性添加一个 target 值
+dashedName: create-a-class-to-target-with-jquery-selectors
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 并不是所有 class 属性都需要有对应的 CSS 样式。有时候我们设置 class 只是为了更方便地在 jQuery 中选中这些元素。
-为每一个 <code>button</code> 元素添加 <code>target</code> class。
-</section>
 
-## Instructions
-<section id='instructions'>
+为每一个 `button` 元素添加 `target` class。
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+给你的每一个 `button` 元素设置 `target` class。
 
-```yml
-tests:
-  - text: 给你的每一个 <code>button</code> 元素设置 <code>target</code> class。
-    testString: assert($(".target").length > 5);
-
+```js
+assert($('.target').length > 5);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -55,14 +46,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -85,5 +69,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

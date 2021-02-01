@@ -2,31 +2,32 @@
 id: 5e7b9f090b6c005b0e76f065
 challengeType: 11
 videoId: lCnHfTHkhbE
+dashedName: working-with-lists
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+Which method is used to add an item at the end of a list?
 
-```yml
-question:
-  text: |
-    Which method is used to add an item at the end of a list?
+## --answers--
 
-  answers:
-    - |
-        insert
-    - |
-        push
-    - |
-        append
-    - |
-        new
-  solution: 3
-```
+insert
 
-</section>
+---
+
+push
+
+---
+
+append
+
+---
+
+new
+
+## --video-solution--
+
+3
+

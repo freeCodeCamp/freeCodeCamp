@@ -2,12 +2,12 @@
 id: 5f3c866dbf362f99b9a0c6d0
 title: Part 38
 challengeType: 0
+dashedName: part-38
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The `p` elements are nested in an `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
+The `p` elements are nested in an `article` elements with the class attribute of `item`. You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
 ```css
 .item p { }
@@ -15,24 +15,17 @@ The `p` elements are nested in an `article` elements with the class attribute of
 
 Using the above selector, add a `display` property with value `inline-block` so the `p` elements behave more like `inline` elements.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -79,10 +72,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -110,9 +99,5 @@ h1, h2, p {
 .price {
   text-align: right;
 }
-
 ```
 
-</div>
-
-</section>

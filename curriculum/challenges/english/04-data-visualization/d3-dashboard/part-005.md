@@ -2,33 +2,24 @@
 id: 5d8a4cfbe6b6180ed9a1c9e2
 title: Part 5
 challengeType: 0
+dashedName: part-5
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, add a container for the dashboard. Put an empty `div` element in the body with class of `dashboard`. You will be appending all the dashboard elements to this div.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($("div.dashboard").length === 1);
-
+```js
+assert($('div.dashboard').length === 1);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -45,12 +36,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -67,5 +53,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

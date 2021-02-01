@@ -3,41 +3,46 @@ id: bad87fee1348bd9aed208826
 title: Target the Children of an Element Using jQuery
 challengeType: 6
 forumTopicId: 18320
+dashedName: target-the-children-of-an-element-using-jquery
 ---
 
-## Description
-<section id='description'>
-When HTML elements are placed one level below another they are called <dfn>children</dfn> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all children of the <code>&#60;div class="well" id="left-well"&#62;</code> element.
-jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.
-Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color <code>blue</code>:
-<code>$("#left-well").children().css("color", "blue")</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Give all the children of your <code>right-well</code> element the color orange.
-</section>
+When HTML elements are placed one level below another they are called <dfn>children</dfn> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all children of the `<div class="well" id="left-well">` element.
 
-## Tests
-<section id='tests'>
+jQuery has a function called `children()` that allows you to access the children of whichever element you've selected.
 
-```yml
-tests:
-  - text: All children of <code>#right-well</code> should have orange text.
-    testString: assert($("#right-well").children().css("color") === 'rgb(255, 165, 0)');
-  - text: You should use the <code>children&#40&#41</code> function to modify these elements.
-    testString: assert(code.match(/\.children\(\)\.css/g));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(code.match(/<div class="well" id="right-well">/g));
+Here's an example of how you would use the `children()` function to give the children of your `left-well` element the color `blue`:
 
+`$("#left-well").children().css("color", "blue")`
+
+# --instructions--
+
+Give all the children of your `right-well` element the color orange.
+
+# --hints--
+
+All children of `#right-well` should have orange text.
+
+```js
+assert($('#right-well').children().css('color') === 'rgb(255, 165, 0)');
 ```
 
-</section>
+You should use the `children()` function to modify these elements.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.children\(\)\.css/g));
+```
 
-<div id='html-seed'>
+You should only use jQuery to add these classes to the element.
+
+```js
+assert(code.match(/<div class="well" id="right-well">/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -77,14 +82,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -123,5 +121,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

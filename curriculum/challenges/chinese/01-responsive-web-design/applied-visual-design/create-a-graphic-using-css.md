@@ -1,79 +1,91 @@
 ---
 id: 587d78a6367417b2b2512add
+title: 使用 CSS 创建一个图形
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDWPs6'
 forumTopicId: 301048
-title: 使用 CSS 创建一个图形
+dashedName: create-a-graphic-using-css
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 术语表：blur-radius => 模糊半径，spread-radius => 辐射半径，transparent => 透明的，border-radius => 圆角边框。
-通过使用选择器选择不同的元素并改变其属性，你可以创造一些有趣的形状。比如新月。你可以使用 <code>box-shadow</code> 属性来设置元素的阴影，<code>border-radius</code> 属性控制元素的圆角边框。
-首先你将会创建一个圆的、透明的对象，它具有模糊阴影并略微向两边递减。如你所见，这个阴影其实就是新月形狀。
-为了创建一个圆形的对象，<code>border-radius</code> 应该被设置成 50%。
-你应该还记得之前关卡的 <code>box-shadow</code> 属性以及它的依次取值 <code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code> 和颜色值。其中<code>blur-radius</code> 和 <code>spread-radius</code> 是可选的。
-</section>
 
-## Instructions
-<section id='instructions'>
-把编辑器里的正方形元素变成新月形状。首先，把 <code>background-color</code> 改为 transparent，接着把 <code>border-radius</code> 属性设置成 50%，以创建一个圆形。最后，更改 <code>box-shadow</code> 属性，使其 <code>offset-x</code> 为 25px，<code>offset-y</code> 为 10px，<code>blur-radius</code> 为 0，<code>spread-radius</code> 为 0，<code>color</code> 为 blue。
-</section>
+通过使用不同的选择器和属性，你可以做出有趣的形状，比如新月形状。在这个挑战中，我们会学习如何使用 `box-shadow` 属性来设置元素的阴影，以及使用 `border-radius` 属性控制元素的圆角边框。
 
-## Tests
-<section id='tests'>
+首先我们来创建一个圆的、透明的图形，它具有模糊阴影并略微向两边递减。如你所见，这个阴影其实就是新月形狀。
 
-```yml
-tests:
-  - text: '<code>background-color</code> 属性应该取值 <code>transparent</code>。'
-    testString: assert(code.match(/background-color:\s*?transparent;/gi));
-  - text: '<code>border-radius</code> 属性应该取值 <code>50%</code>。'
-    testString: assert(code.match(/border-radius:\s*?50%;/gi));
-  - text: '<code>box-shadow</code> 属性的 <code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code> 和 <code>color</code> 应该依次取值<code>25px</code>、<code>10px</code>、<code>0</code>、<code>0</code> 和 <code>blue</code>。'
-    testString: assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi));
+为了创建一个圆形的对象，`border-radius` 应该被设置成 50%。
 
+你应该还记得之前关卡的 `box-shadow` 属性以及它的依次取值 `offset-x`、`offset-y`、`blur-radius`、`spread-radius` 和颜色值。其中 `blur-radius` 和 `spread-radius` 是可选的。
+
+# --instructions--
+
+把编辑器里的正方形元素变成新月形状。首先，把 `background-color` 改为 transparent，接着把 `border-radius` 属性值设置成 50%，以创建一个圆形。最后，更改 `box-shadow` 属性，使其 `offset-x` 为 25px、`offset-y` 为 10px、`blur-radius` 为 0、`spread-radius` 为 0、`color` 为 blue。
+
+# --hints--
+
+`background-color` 属性值应为 `transparent`。
+
+```js
+assert(code.match(/background-color:\s*?transparent;/gi));
 ```
 
-</section>
+`border-radius` 属性值应为 `50%`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/border-radius:\s*?50%;/gi));
+```
 
-<div id='html-seed'>
+`box-shadow` 的 `offset-x`、`offset-y`、`blur-radius`、`spread-radius`、`color` 属性值应依次为 `25px`、`10px`、`0`、`0`、`blue`。
+
+```js
+assert(
+  code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
-.center{
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  border-radius: 0px;
-  box-shadow: 25px 10px 10px 10px green; 
-}
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 0px;
+    box-shadow: 25px 10px 10px 10px green;
+  }
 
 </style>
 <div class="center"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
-// solution required
+<style>
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0 0 blue;
+  }
+</style>
+<div class="center"></div>
 ```
-
-</section>
-              

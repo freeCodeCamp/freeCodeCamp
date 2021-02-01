@@ -2,10 +2,10 @@
 id: 5f344f9c805cd193c33d829c
 title: Part 12
 challengeType: 0
+dashedName: part-12
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can add style to an element by specifying it in the `style` element and setting a property for it like this:
 
@@ -17,24 +17,17 @@ element {
 
 Center your `h1` element by setting its `text-align` property to the value `center`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -42,10 +35,10 @@ tests:
   <head>
     <meta charset="utf-8" />
     <title>Camper Cafe Menu</title>
-    --fcc-editable-region--
+--fcc-editable-region--
     <style>
     </style>
-    --fcc-editable-region--
+--fcc-editable-region--
   </head>
   <body>
     <header>
@@ -61,6 +54,3 @@ tests:
 <html>
 ```
 
-</div>
-
-</section>

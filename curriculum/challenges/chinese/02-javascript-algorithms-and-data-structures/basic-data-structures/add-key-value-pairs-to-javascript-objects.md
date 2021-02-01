@@ -1,69 +1,99 @@
 ---
 id: 587d7b7c367417b2b2512b18
+title: 将键值对添加到对象中
 challengeType: 1
 forumTopicId: 301153
-title: 将键值对添加到对象中
+dashedName: add-key-value-pairs-to-javascript-objects
 ---
 
-## Description
-<section id='description'>
-对象（object）本质上是<dfn>键值对（key-value pair）</dfn>的集合，或者说，一系列被映射到唯一标识符（叫做<dfn>属性（property）</dfn>或者<dfn>键（key）</dfn>）的数据。让我们来看一个很简单的例子：
+# --description--
+
+对象（object）本质上是<dfn>键值对（key-value pair）</dfn>的集合。或者说，一系列被映射到唯一标识符的数据就是对象；习惯上，唯一标识符叫做<dfn>属性（property）</dfn>或者<dfn>键（key）</dfn>）；数据叫做<dfn>值（value）</dfn>。让我们来看一个简单的例子：
 
 ```js
-let FCC_User = {
-  username: 'awesome_coder',
-  followers: 572,
-  points: 1741,
-  completedProjects: 15
+const tekkenCharacter = {
+  player: 'Hwoarang',
+  fightingStyle: 'Tae Kwon Doe',
+  human: true
 };
 ```
 
-上面的代码定义了一个叫做<code>FCC_User</code>的对象，它有 4 个<dfn>属性</dfn>，每个属性映射一个特定的值。如果我们想知道<code>FCC_User</code>有多少<code>followers</code>，我们可以这样访问其<code>followers</code>属性：
+上面的代码定义了一个叫做 `tekkenCharacter` 的“铁拳”游戏人物对象。它有三个属性，每个属性都对应一个特定的值。如果我们想为它再添加一个叫做 `origin` 的属性，可以这样写：
 
 ```js
-let userData = FCC_User.followers;
-// userData 等于 572
+tekkenCharacter.origin = 'South Korea';
 ```
 
-这叫做<dfn>点符号（dot notation）</dfn>。我们还可以用方括号符号来访问对象中的属性：
+上面的代码中，我们使用了<dfn>点号表示法（dot notation）</dfn>。如果我们现在输出这个对象，便可以看到它具有 `origin` 属性。接下来，因为这个人物在游戏中有着与众不同的橘色头发，我们可以通过方括号表示法来为它添加这个属性，像这样：
 
 ```js
-let userData = FCC_User['followers'];
-// userData 等于 572
+tekkenCharacter['hair color'] = 'dyed orange';
 ```
 
-注意，在用<dfn>方括号符号</dfn>时，我们在括号里写的是字符串<code>followers</code>（用引号括起）。方括号符号让我们能用一个变量作为属性名来访问对象的属性（请记住）。若我们在方括号中不写引号而直接写<code>followers</code>，JavaScript 引擎会将其看作一个变量，并抛出一个<code>ReferenceError: followers is not defined</code>的错误。
-</section>
+如果要设置的属性中存在空格，或者要设置的属性是一个变量，那我们必须使用<dfn>方括号表示法（bracket notation）</dfn>来为对象添加属性。在上面的代码中，我们把属性 `hair color` 放到引号里，以此来表示整个字符串都是需要设置的属性。如果我们不加上引号，那么中括号里的内容会被当作一个变量来解析，这个变量对应的值就会作为要设置的属性，请看这段代码：
 
-## Instructions
-<section id='instructions'>
-用这样的语法，我们还可以向对象中<em><strong>新增</strong></em>键值对。我们已经创建了一个有 3 个属性的<code>foods</code>对象，请为其新增 3 项：值为<code>13</code>的<code>bananas</code>属性、值为<code>35</code>的<code>grapes</code>属性和值为<code>27</code>的<code>strawberries</code>属性。
-</section>
+```js
+const eyes = 'eye color';
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>foods</code>应该是一个对象。
-    testString: assert(typeof foods === 'object');
-  - text: <code>foods</code>应该有一个值为<code>13</code>的<code>&quot;bananas&quot;</code>属性。
-    testString: assert(foods.bananas === 13);
-  - text: <code>foods</code>应该有一个值为<code>35</code>的<code>&quot;grapes&quot;</code>属性。
-    testString: assert(foods.grapes === 35);
-  - text: <code>foods</code>应该有一个值为<code>27</code>的<code>&quot;strawberries&quot;</code>属性。
-    testString: assert(foods.strawberries === 27);
-  - text: 你应该用点符号或者方括号符号来设置对象的属性。
-    testString: assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1);
-
+tekkenCharacter[eyes] = 'brown';
 ```
 
-</section>
+执行以上所有示例代码后，对象会变成这样：
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+{
+  player: 'Hwoarang',
+  fightingStyle: 'Tae Kwon Doe',
+  human: true,
+  origin: 'South Korea',
+  'hair color': 'dyed orange',
+  'eye color': 'brown'
+};
+```
 
-<div id='js-seed'>
+# --instructions--
+
+我们已经为你创建了 `foods` 对象。请使用上述任意语法，来为 `foods` 对象添加如下三个键值对：`bananas` 属性，值为 `13`；`grapes` 属性，值为 `35`；`strawberries` 属性，值为 `27`。
+
+# --hints--
+
+`foods` 应为一个对象。
+
+```js
+assert(typeof foods === 'object');
+```
+
+`foods` 应有一个值为 `13` 的 `"bananas"` 属性。
+
+```js
+assert(foods.bananas === 13);
+```
+
+`foods` 应有一个值为 `35` 的 `"grapes"` 属性。
+
+```js
+assert(foods.grapes === 35);
+```
+
+`foods` 应有一个值为 `27` 的 `"strawberries"` 属性。
+
+```js
+assert(foods.strawberries === 27);
+```
+
+应使用点号表示法或方括号表示法来设置对象的属性。
+
+```js
+assert(
+  code.search(/bananas:/) === -1 &&
+    code.search(/grapes:/) === -1 &&
+    code.search(/strawberries:/) === -1
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let foods = {
@@ -72,21 +102,14 @@ let foods = {
   plums: 28
 };
 
-// change code below this line
+// Only change code below this line
 
-// change code above this line
+// Only change code above this line
 
 console.log(foods);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let foods = {
@@ -95,11 +118,7 @@ let foods = {
   plums: 28
 };
 
-// change code below this line
 foods['bananas'] = 13;
 foods['grapes']  = 35;
 foods['strawberries'] = 27;
-// change code above this line
 ```
-
-</section>

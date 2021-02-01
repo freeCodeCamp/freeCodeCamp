@@ -1,75 +1,58 @@
 ---
 id: cf1231c1c11feddfaeb5bdef
+title: 乘法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3y3Aq'
 forumTopicId: 18243
-title: 乘法运算
+dashedName: multiply-two-numbers-with-javascript
 ---
 
-## Description
-<section id='description'>
-我们也可在 JavaScript 中使用乘法运算。
-JavaScript 使用<code>*</code>符号表示两数相乘。
+# --description--
 
-<strong>示例</strong>
+我们也可在 JavaScript 中使用乘法运算。
+
+JavaScript 使用`*`符号表示两数相乘。
+
+**示例**
 
 ```js
 myVar = 13 * 13; // assigned 169
 ```
 
+# --instructions--
 
-</section>
+改变数值`0`来让变量 product 的值等于`80`。
 
-## Instructions
-<section id='instructions'>
-改变数值<code>0</code>来让变量 product 的值等于<code>80</code>。
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: 要使<code>product</code>的值等于 80。
-    testString: assert(product === 80);
-  - text: 使用<code>*</code>运算符。
-    testString: assert(/\*/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+要使`product`的值等于 80。
 
 ```js
-var product = 8 * 0;
-
-
+assert(product === 80);
 ```
 
-</div>
+使用`*`运算符。
 
+```js
+assert(/\*/.test(code));
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(z){return 'product = '+z;})(product);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var product = 8 * 0;
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var product = 8 * 10;
 ```
-
-</section>

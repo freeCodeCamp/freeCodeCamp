@@ -2,31 +2,24 @@
 id: 5f7691dafd882520797cd2f0
 title: Part 44
 challengeType: 0
+dashedName: part-44
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, position the other `p` elements to be on the same line with no space between them.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -49,7 +42,7 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article class="item">
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -66,17 +59,13 @@ tests:
             <p>Mocha</p>
             <p>4.50</p>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -109,6 +98,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

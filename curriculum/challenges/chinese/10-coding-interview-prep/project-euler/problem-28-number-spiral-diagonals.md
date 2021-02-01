@@ -1,70 +1,79 @@
 ---
 id: 5900f3881000cf542c50fe9b
+title: 问题28：对角螺旋数
 challengeType: 5
 videoUrl: ''
-title: 问题28：对角螺旋数
+dashedName: problem-28-number-spiral-diagonals
 ---
 
-## Description
-<section id="description">
+# --description--
+
 从数字1开始，沿顺时针方向向右移动，形成5 x 5螺旋，如下所示：
+
 21 22 23 24 25
+
 20 7 8 9 10
+
 19 6 1 2 11
+
 18 5 4 3 12
+
 17 16 15 14 13
+
 可以验证对角线上的数字之和为101。
+
 以相同方式形成的n×n螺旋中的对角线上的数字的总和是多少？
-</section>
 
-## Instructions
-<section id="instructions">
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`spiralDiagonals(101)`应该返回692101。
 
-```yml
-tests:
-  - text: '<code>spiralDiagonals(101)</code>应该返回692101。'
-    testString: assert(spiralDiagonals(101) == 692101);
-  - text: '<code>spiralDiagonals(101)</code>应该返回18591725。'
-    testString: assert(spiralDiagonals(303) == 18591725);
-  - text: '<code>spiralDiagonals(101)</code>应该返回85986601。'
-    testString: assert(spiralDiagonals(505) == 85986601);
-  - text: '<code>spiralDiagonals(101)</code>应该返回669171001。'
-    testString: assert(spiralDiagonals(1001) == 669171001);
-
+```js
+assert(spiralDiagonals(101) == 692101);
 ```
 
-</section>
+`spiralDiagonals(101)`应该返回18591725。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(spiralDiagonals(303) == 18591725);
+```
 
-<div id='js-seed'>
+`spiralDiagonals(101)`应该返回85986601。
+
+```js
+assert(spiralDiagonals(505) == 85986601);
+```
+
+`spiralDiagonals(101)`应该返回669171001。
+
+```js
+assert(spiralDiagonals(1001) == 669171001);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function spiralDiagonals(n) {
-  // Good luck!
+
   return n;
 }
 
 spiralDiagonals(1001);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
+const spiralDiagonals = (n) => {
+  const Sn2 = (n) => {
+    return n*(n+1)*(2*n+1)/6;
+  };
+  const Sn = (n) => {
+    return n*(n+1)/2;
+  };
+  let sum = (Sn2(n-1) + Sn(n-1) + n-1) + (Math.floor(n/2) + Sn2(n));
+  return sum;
+};
 ```
-
-/section>

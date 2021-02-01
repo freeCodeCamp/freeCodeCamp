@@ -2,31 +2,24 @@
 id: 5f3ef6e050279c7a4a7101d3
 title: Part 56
 challengeType: 0
+dashedName: part-56
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -83,10 +76,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -122,6 +111,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

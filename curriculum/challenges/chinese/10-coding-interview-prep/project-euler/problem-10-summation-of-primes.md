@@ -1,61 +1,73 @@
 ---
 id: 5900f3761000cf542c50fe89
+title: 问题10：素数的总和
 challengeType: 5
 videoUrl: ''
-title: 问题10：素数的总和
+dashedName: problem-10-summation-of-primes
 ---
 
-## Description
-<section id="description">低于10的素数之和为2 + 3 + 5 + 7 = 17.求出n以下所有素数的总和。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+低于10的素数之和为2 + 3 + 5 + 7 = 17.求出n以下所有素数的总和。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>primeSummation(17)</code>应该返回41。
-    testString: assert.strictEqual(primeSummation(17), 41);
-  - text: <code>primeSummation(2001)</code>应该返回277050。
-    testString: assert.strictEqual(primeSummation(2001), 277050);
-  - text: <code>primeSummation(140759)</code>应该返回873608362。
-    testString: assert.strictEqual(primeSummation(140759), 873608362);
-  - text: <code>primeSummation(2000000)</code>应返回142913828922。
-    testString: assert.strictEqual(primeSummation(2000000), 142913828922);
+`primeSummation(17)`应该返回41。
 
+```js
+assert.strictEqual(primeSummation(17), 41);
 ```
 
-</section>
+`primeSummation(2001)`应该返回277050。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(primeSummation(2001), 277050);
+```
 
-<div id='js-seed'>
+`primeSummation(140759)`应该返回873608362。
+
+```js
+assert.strictEqual(primeSummation(140759), 873608362);
+```
+
+`primeSummation(2000000)`应返回142913828922。
+
+```js
+assert.strictEqual(primeSummation(2000000), 142913828922);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function primeSummation(n) {
-  // Good luck!
+
   return true;
 }
 
 primeSummation(2000000);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
+function primeSummation(n) {
+  if (n < 3) { return 0 };
+  let nums = [0, 0, 2];
+  for (let i = 3; i < n; i += 2){
+    nums.push(i);
+    nums.push(0);
+  }
+  let sum = 2;
+  for (let i = 3; i < n; i += 2){
+    if (nums[i] !== 0){
+      sum += nums[i];
+      for (let j = i*i; j < n; j += i){
+        nums[j] = 0;
+      }
+    }
+  }
+  return sum;
+}
 ```
-
-/section>

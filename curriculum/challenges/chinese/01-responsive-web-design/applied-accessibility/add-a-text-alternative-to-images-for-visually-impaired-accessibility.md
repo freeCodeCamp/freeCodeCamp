@@ -1,59 +1,44 @@
 ---
 id: 587d774c367417b2b2512a9c
+title: 为视觉障碍用户添加替代图像的文本
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 16628
-title: 为视觉障碍用户添加替代图像的文本
+dashedName: add-a-text-alternative-to-images-for-visually-impaired-accessibility
 ---
 
-## Description
-<section id='description'>
-在其他挑战里你应该已经见到过<code>img</code>标签的<code>alt</code>属性了。<code>alt</code>属性中的文本作为备用文字描述了图片的内容，这可以帮助用户在图片加载失败或者不可见的情况下理解图片内容，也有助于搜索引擎理解图片内容，并将其加入到搜索结果中。例如：
-<code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code>
-视觉障碍用户无法通过视觉获取信息，而是通过屏幕阅读器将网页内容转换为音频以获取信息。屏幕阅读器可以识别<code>alt</code>属性，朗读其中的内容，来告知用户图片包含的关键信息。
-良好的<code>alt</code>文本可以简明扼要地描述图片信息，所以你应该为图片添加<code>alt</code>属性。另外，HTML5 标准也在考虑强制要求对图片添加<code>alt</code>属性。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+在其他挑战里你应该已经见到过 `img` 标签的 `alt` 属性了。`alt` 属性中的文本作为备用文字来描述图片的内容，这可以帮助用户在图片加载失败或者图片不可见的情况下理解图片内容，也有助于搜索引擎理解图片内容，并将其加入到搜索结果中。例如：
 
-碰巧，Camper Cat 是忍者中写代码最厉害的，他正在建立一个可以分享忍者知识的网站。在这个网站中，他使用一张简介图片来展示技能。给<code>img</code>标签添加一个<code>alt</code>属性，说明 Camper Cat 在学习空手道（图片的<code>src</code>属性没有指向任何链接，因此你可以看到<code>alt</code>属性中的文本）。
+`<img src="importantLogo.jpeg" alt="Company logo">`
 
-</section>
+视觉障碍用户无法通过视觉获取信息，而是通过屏幕阅读器将网页内容转换为音频以获取信息。屏幕阅读器可以识别 `alt` 属性，朗读其中的内容，来告知用户图片包含的关键信息。
 
-## Tests
-<section id='tests'>
+`alt` 文本可以为屏幕阅读器提供图片的描述信息，所以你应始终为图片添加 `alt` 属性。另外，根据最新的 HTML5 标准，为图片添加 `alt` 属性是必需的。
 
-```yml
-tests:
-  - text: '你的<code>img</code>标签应该包含一个非空的<code>alt</code>属性。'
-    testString: assert($('img').attr('alt'));
+# --instructions--
 
+碰巧，Camper Cat 是忍者中写代码最厉害的，他正在建立一个可以分享忍者知识的网站。在这个网站中，他添加了一张展示技能的资料图片，并希望这张图片可以让访问网站的所有用户看到。请给 `img` 标签添加一个 `alt` 属性，说明 Camper Cat 在学习空手道（图片的 `src` 属性指向的是一个不存在的文件，因此你可以看到 `alt` 属性中的文本出现在页面上）。
+
+# --hints--
+
+`img` 标签应该包含一个非空的 `alt` 属性。
+
+```js
+assert($('img').attr('alt'));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <img src="doingKarateWow.jpeg">
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
+<img src="doingKarateWow.jpeg" alt="Someone doing karate">
 ```
-
-</section>
-              

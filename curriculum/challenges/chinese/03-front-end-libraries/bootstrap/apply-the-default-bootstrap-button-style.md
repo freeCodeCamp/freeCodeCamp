@@ -1,39 +1,34 @@
 ---
 id: bad87fee1348bd9aec908850
+title: 给 Bootstrap 按钮添加默认样式
 challengeType: 0
 forumTopicId: 16657
-title: 给 Bootstrap 按钮添加默认样式
+dashedName: apply-the-default-bootstrap-button-style
 ---
 
-## Description
-<section id='description'>
-Bootstrap 还有另外一种属于按钮的 class 属性叫做 <code>btn-default</code>。
-为 <code>button</code> 元素增加两个 class： <code>btn</code> 和 <code>btn-default</code>。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap 还有另外一种属于按钮的 class 属性叫做 `btn-default`。
 
-</section>
+为 `button` 元素增加两个 class： `btn` 和 `btn-default`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 将 <code>btn</code> class 添加到所有的 <code>button</code> 元素中。
-    testString: assert($(".btn").length > 5);
-  - text: 将 <code>btn-default</code> class 添加到每一个 <code>button</code> 元素中。
-    testString: assert($(".btn-default").length > 5);
+将 `btn` class 添加到所有的 `button` 元素中。
 
+```js
+assert($('.btn').length > 5);
 ```
 
-</section>
+将 `btn-default` class 添加到每一个 `button` 元素中。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.btn-default').length > 5);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -57,14 +52,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -87,5 +75,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

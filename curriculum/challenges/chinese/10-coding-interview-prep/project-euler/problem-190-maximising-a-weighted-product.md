@@ -1,55 +1,42 @@
 ---
 id: 5900f42b1000cf542c50ff3d
+title: 问题190：最大化加权产品
 challengeType: 5
 videoUrl: ''
-title: 问题190：最大化加权产品
+dashedName: problem-190-maximising-a-weighted-product
 ---
 
-## Description
-<section id="description">令Sm =（x1，x2，...，xm）为正实数的m元组，其中x1 + x2 + ... + xm = m，其中Pm = x1 * x22 * ... * xmm最大化。 <p>例如，可以验证[P10] = 4112（[]是整数部分函数）。 </p><p>求Σ[Pm]为2≤m≤15。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+令Sm =（x1，x2，...，xm）为正实数的m元组，其中x1 + x2 + ... + xm = m，其中Pm = x1 \* x22 \* ... \* xmm最大化。
 
-## Tests
-<section id='tests'>
+例如，可以验证\[P10] = 4112（\[]是整数部分函数）。
 
-```yml
-tests:
-  - text: <code>euler190()</code>应该返回371048281。
-    testString: assert.strictEqual(euler190(), 371048281);
+求Σ\[Pm]为2≤m≤15。
 
+# --hints--
+
+`euler190()`应该返回371048281。
+
+```js
+assert.strictEqual(euler190(), 371048281);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler190() {
-  // Good luck!
+
   return true;
 }
 
 euler190();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

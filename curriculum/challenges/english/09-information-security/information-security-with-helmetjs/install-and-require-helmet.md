@@ -3,39 +3,39 @@ id: 587d8247367417b2b2512c36
 title: Install and Require Helmet
 challengeType: 2
 forumTopicId: 301581
+dashedName: install-and-require-helmet
 ---
 
-## Description
-<section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-infosec">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.
-Helmet helps you secure your Express apps by setting various HTTP headers.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+
+Helmet helps you secure your Express apps by setting various HTTP headers.
+
+# --instructions--
+
+All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
 
 Install Helmet version `3.21.3`, then require it.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '<code>helmet</code> version <code>3.21.3</code> should be in <code>package.json</code>'
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.dependencies.helmet === '3.21.3' ); }, xhr => { throw new Error(xhr.responseText); })
+`helmet` version `3.21.3` should be in `package.json`
 
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/package.json').then(
+    (data) => {
+      var packJson = JSON.parse(data);
+      assert(packJson.dependencies.helmet === '3.21.3');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -44,5 +44,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

@@ -1,14 +1,15 @@
 ---
 id: 56533eb9ac21ba0edf2244db
+title: 介绍 else if 语句
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJ2hm'
 forumTopicId: 18206
-title: 介绍 else if 语句
+dashedName: introducing-else-if-statements
 ---
 
-## Description
-<section id='description'>
-如果你有多个条件语句，你可以通过<code>else if</code>语句把<code>if</code>语句链起来。
+# --description--
+
+如果你有多个条件语句，你可以通过`else if`语句把`if`语句链起来。
 
 ```js
 if (num > 15) {
@@ -20,43 +21,63 @@ if (num > 15) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-使用<code>if else</code>实现同样的效果。
-</section>
+使用`if else`实现同样的效果。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 你应该至少有两个<code>else</code>表达式。
-    testString: assert(code.match(/else/g).length > 1);
-  - text: 你应该至少有两个<code>if</code>表达式。
-    testString: assert(code.match(/if/g).length > 1);
-  - text: <code>testElseIf(0)</code>应该返回 "Smaller than 5"。
-    testString: assert(testElseIf(0) === "Smaller than 5");
-  - text: <code>testElseIf(5)</code>应该返回 "Between 5 and 10"。
-    testString: assert(testElseIf(5) === "Between 5 and 10");
-  - text: <code>testElseIf(7)</code>应该返回 "Between 5 and 10"。
-    testString: assert(testElseIf(7) === "Between 5 and 10");
-  - text: <code>testElseIf(10)</code>应该返回 "Between 5 and 10"。
-    testString: assert(testElseIf(10) === "Between 5 and 10");
-  - text: <code>testElseIf(12)</code>应该返回 "Greater than 10"。
-    testString: assert(testElseIf(12) === "Greater than 10");
-  - text: <code>testElseIf(12)</code> 应该返回 "Greater than 10"。
-    testString: assert(testElseIf(12) === "Greater than 10");
+你应该至少有两个`else`表达式。
 
+```js
+assert(code.match(/else/g).length > 1);
 ```
 
-</section>
+你应该至少有两个`if`表达式。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/if/g).length > 1);
+```
 
-<div id='js-seed'>
+`testElseIf(0)`应该返回 "Smaller than 5"。
+
+```js
+assert(testElseIf(0) === 'Smaller than 5');
+```
+
+`testElseIf(5)`应该返回 "Between 5 and 10"。
+
+```js
+assert(testElseIf(5) === 'Between 5 and 10');
+```
+
+`testElseIf(7)`应该返回 "Between 5 and 10"。
+
+```js
+assert(testElseIf(7) === 'Between 5 and 10');
+```
+
+`testElseIf(10)`应该返回 "Between 5 and 10"。
+
+```js
+assert(testElseIf(10) === 'Between 5 and 10');
+```
+
+`testElseIf(12)`应该返回 "Greater than 10"。
+
+```js
+assert(testElseIf(12) === 'Greater than 10');
+```
+
+`testElseIf(12)` 应该返回 "Greater than 10"。
+
+```js
+assert(testElseIf(12) === 'Greater than 10');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testElseIf(val) {
@@ -71,20 +92,10 @@ function testElseIf(val) {
   return "Between 5 and 10";
 }
 
-// Change this value to test
 testElseIf(7);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testElseIf(val) {
@@ -97,5 +108,3 @@ function testElseIf(val) {
   }
 }
 ```
-
-</section>

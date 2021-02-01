@@ -2,31 +2,24 @@
 id: 5f356ed69db0a491745e2bb6
 title: Part 28
 challengeType: 0
+dashedName: part-28
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 To apply the class's styling to the `div` element, add a `class` attribute to the `div` element's opening tag and set its value to `menu`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -38,9 +31,9 @@ tests:
     <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    --fcc-editable-region--
+--fcc-editable-region--
     <div>
-    --fcc-editable-region--
+--fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
@@ -54,10 +47,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -78,6 +67,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

@@ -4,11 +4,13 @@ title: Accessing Nested Objects
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
+dashedName: accessing-nested-objects
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
 Here is a nested object:
 
 ```js
@@ -28,31 +30,38 @@ ourStorage.cabinet["top drawer"].folder2;  // "secrets"
 ourStorage.desk.drawer; // "stapler"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use dot notation for all properties where possible, otherwise use bracket notation.
-</section>
+Access the `myStorage` object and assign the contents of the `glove box` property to the `gloveBoxContents` variable. Use dot notation for all properties where possible, otherwise use bracket notation.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>gloveBoxContents</code> should equal "maps".
-    testString: assert(gloveBoxContents === "maps");
-  - text: Your code should use dot and bracket notation to access <code>myStorage</code>.
-    testString: assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+`gloveBoxContents` should equal "maps".
 
+```js
+assert(gloveBoxContents === 'maps');
 ```
 
-</section>
+Your code should use dot and bracket notation to access `myStorage`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(x) { 
+  if(typeof x != 'undefined') { 
+    return "gloveBoxContents = " + x;
+  }
+  return "gloveBoxContents is undefined";
+})(gloveBoxContents);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -69,31 +78,9 @@ var myStorage = {
 };
 
 var gloveBoxContents = undefined; // Change this line
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(x) { 
-  if(typeof x != 'undefined') { 
-    return "gloveBoxContents = " + x;
-  }
-  return "gloveBoxContents is undefined";
-})(gloveBoxContents);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myStorage = {
@@ -109,5 +96,3 @@ var myStorage = {
 };
 var gloveBoxContents = myStorage.car.inside["glove box"];
 ```
-
-</section>

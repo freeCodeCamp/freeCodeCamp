@@ -2,33 +2,25 @@
 id: 5d822fd413a79914d39e990c
 title: Part 68
 challengeType: 0
+dashedName: part-68
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Create a new variable called `--window-color4` in `:root` and give it a value of `#8cb3d9`. This will be the secondary color for the last background building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--window-color4\s*:\s*#8cb3d9\s*(;|})/g.test(rootStyle));
-
+```js
+const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
+assert(/--window-color4\s*:\s*#8cb3d9\s*(;|})/g.test(rootStyle));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -249,12 +241,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -475,5 +462,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

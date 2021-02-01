@@ -2,33 +2,26 @@
 id: 5f3ef6e05473f91f948724ab
 title: Part 59
 challengeType: 0
+dashedName: part-59
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
 
-Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`. This is a fairly common font that is very readable.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -85,10 +78,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 --fcc-editable-region--
 body {
@@ -124,6 +113,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

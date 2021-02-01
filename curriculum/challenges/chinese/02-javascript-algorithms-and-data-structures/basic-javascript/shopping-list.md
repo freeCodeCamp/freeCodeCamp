@@ -1,58 +1,51 @@
 ---
 id: 56533eb9ac21ba0edf2244bc
+title: 购物清单
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9MEKHZ'
 forumTopicId: 18280
-title: 购物清单
+dashedName: shopping-list
 ---
 
-## Description
-<section id='description'>
-创建一个名叫<code>myList</code>的购物清单，清单的数据格式就是多维数组。
+# --description--
+
+创建一个名叫`myList`的购物清单，清单的数据格式就是多维数组。
+
 每个子数组中的第一个元素应该是购买的物品名称，第二个元素应该是物品的数量，类似于：
-<code>["Chocolate Bar", 15]</code>
+
+`["Chocolate Bar", 15]`
+
 任务：你的购物清单至少应该有 5 个子数组。
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>myList</code>应该一个数组。
-    testString: assert(isArray);
-  - text: 你的每个子数组的第一个元素的类型都应该是字符串。
-    testString: assert(hasString);
-  - text: 你的每个子数组的第二个元素的类型都应该是数字。
-    testString: assert(hasNumber);
-  - text: 你的列表中至少要包含 5 个元素。
-    testString: assert(count > 4);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myList`应该一个数组。
 
 ```js
-var myList = [];
-
-
+assert(isArray);
 ```
 
-</div>
+你的每个子数组的第一个元素的类型都应该是字符串。
 
+```js
+assert(hasString);
+```
 
-### After Test
-<div id='js-teardown'>
+你的每个子数组的第二个元素的类型都应该是数字。
+
+```js
+assert(hasNumber);
+```
+
+你的列表中至少要包含 5 个元素。
+
+```js
+assert(count > 4);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 var count = 0;
@@ -83,13 +76,13 @@ var hasNumber = false;
 })(myList);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var myList = [];
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myList = [
@@ -100,5 +93,3 @@ var myList = [
   ["Toads", 9]
 ];
 ```
-
-</section>

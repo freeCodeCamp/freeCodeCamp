@@ -1,46 +1,46 @@
 ---
 id: bad87fee1348bd9aed908826
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 使用 jQuery 更改元素的 CSS
 challengeType: 6
 forumTopicId: 16776
-title: 使用 jQuery 更改元素的 CSS
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: change-the-css-of-an-element-using-jquery
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 我们也能用 jQuery 直接改变 HTML 标签的 CSS。
-jQuery 有一个<code>.css()</code>方法，其能改变标签的 CSS。
+
+jQuery 有一个`.css()`方法，其能改变标签的 CSS。
+
 下面的代码效果是把颜色变蓝：
-<code>$("#target1").css("color", "blue");</code>
+
+`$("#target1").css("color", "blue");`
+
 这与通常的 CSS 声明略有不同，因为这个 CSS 属性和它的值在英文引号里，并且它们用逗号而不是冒号间隔开。
-删除你的jQuery选择器，并留下空的<code>document ready function</code>。
-请选择<code>target1</code>并将其颜色变为红色（red）。
-</section>
 
-## Instructions
-<section id='instructions'>
+删除你的jQuery选择器，并留下空的`document ready function`。
 
-</section>
+请选择`target1`并将其颜色变为红色（red）。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>target1</code>标签应该有红色文本。
-    testString: assert($("#target1").css("color") === 'rgb(255, 0, 0)');
-  - text: 仅用 jQuery 给标签添加类。
-    testString: assert(!code.match(/class.*animated/g));
+`target1`标签应该有红色文本。
 
+```js
+assert($('#target1').css('color') === 'rgb(255, 0, 0)');
 ```
 
-</section>
+仅用 jQuery 给标签添加类。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/class.*animated/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -53,7 +53,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -78,14 +78,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -98,7 +91,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
   <div class="row">
@@ -121,5 +114,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

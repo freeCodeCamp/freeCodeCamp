@@ -1,67 +1,45 @@
 ---
 id: cf1111c1c11feddfaeb7bdef
+title: 将一个数组嵌套在另一个数组中
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQZf8'
 forumTopicId: 18247
-title: 将一个数组嵌套在另一个数组中
+dashedName: nest-one-array-within-another-array
 ---
 
-## Description
-<section id='description'>
-你也可以在数组中包含其他数组，例如：<code>[["Bulls", 23], ["White Sox", 45]]</code>。这被称为一个<dfn>多维数组<dfn>。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-创建一个名为<code>myArray</code>的多维数组。
-</section>
+你也可以在数组中包含其他数组，例如：`[["Bulls", 23], ["White Sox", 45]]`。这被称为一个<dfn>多维数组<dfn>。</dfn></dfn>
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 应该包含至少一个嵌入的数组。
-    testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray));
+创建一个名为`myArray`的多维数组。
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+应该包含至少一个嵌入的数组。
 
 ```js
-// Example
-var ourArray = [["the universe", 42], ["everything", 101010]];
-
-// Only change code below this line.
-var myArray = [];
-
+assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 ```
 
-</div>
+# --seed--
 
-
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Only change code below this line
+var myArray = [];
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myArray = [[1,2,3]];
 ```
-
-</section>

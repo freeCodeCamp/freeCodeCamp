@@ -10,7 +10,7 @@ Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [
 
 Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/contributors).
 
 With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
@@ -31,96 +31,139 @@ Before you work on the curriculum, you would need to set up some tooling to help
 
 ## Challenge Template
 
-Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
-
 ````md
+
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
-title: Challenge Title
-challengeType: 0
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
 videoUrl: 'url of video explanation'
+forumTopicId: 12345
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-A Description of the challenge and what is required to pass
-</section>
+Challenge description text, in markdown
 
-## Instructions
-
-<section id='instructions'>
-Instructions about what exactly needs to be done.
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: Should return "foo"
-    testString: 'A stringified function possibly using Chai asserts'
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='{ext}-seed'>
-
-```{ext}
-Code displayed in the editor by default.
-
-This is a required section for the challenge.
-```
-
+```html
+<div>
+  example code
 </div>
-
-### Before Test
-
-<div id='{ext}-setup'>
-
-```{ext}
-Optional Test setup code.
 ```
 
-</div>
+# --instructions--
 
-### After Test
+Challenge instruction text, in markdown
 
-<div id='{ext}-teardown'>
+# --hints--
 
-```{ext}
-Optional Test tear down code.
+Tests to run against user code, in pairs of markdown text and codeblock test code.
+
+```js
+Code for test one
 ```
 
-</div>
+More instructions in markdown syntax
 
-</section>
-
-## Solution
-
-<section id='solution'>
-
-```{ext}
-// solution required
+```js
+More code
 ```
 
-</section>
+# --seed--
+
+## --before-user-code--
+
+```lang
+Code evaluated before the user’s code.
+```
+
+## --after-user-code--
+
+```lang
+Code evaluated after the user’s code, and just before the tests
+```
+
+## --seed-contents--
+
+Boilerplate code to render to the editor. This section should only contain code inside backticks, like the following:
+
+```html
+<body>
+  <p class="main-text">
+    Hello world!
+  </p>
+</body>
+```
+
+```css
+body {
+  margin: 0;
+  background-color: #3a3240;
+}
+
+.main-text {
+  color: #aea8d3;
+}
+```
+
+```js
+console.log('freeCodeCamp is awesome!');
+```
+
+# --solutions--
+
+Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
+
+```js
+// first solution - the language(s) should match the seed.
+```
+
+---
+
+```js
+// second solution - so if the seed is written in HTML...
+```
+
+---
+
+```js
+// third solution etc. - Your solutions should be in HTML.
+```
+
+# --question--
+
+These fields are currently used for the multiple choice Python challenges.
+
+## --text--
+
+The question text goes here.
+
+## --answers--
+
+Answer 1
+
+---
+
+Answer 2
+
+---
+
+More answers
+
+## --video-solution--
+
+The number for the correct answer goes here.
+
+
 ````
 
 > [!NOTE]
 >
-> 1. In the above sections, examples of `{ext}` are:
+> 1. In the above sections, examples of `lang` are:
 >
 >   - `html` - HTML/CSS
 >   - `js` - JavaScript
 >   - `jsx` - JSX
->
-> 2. For the `Tests` section above, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression using which could use Chai asserts.
 
 ## Numbering Challenges
 
@@ -212,15 +255,15 @@ Our goal is to have thousands of 2-minute challenges. These can flow together an
 
 Here are specific formatting guidelines for challenge text and examples:
 
-- Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
-- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
-- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+- Language keywords go in `\`` backticks. For example, HTML tag names or CSS property names.
+- References to code parts (i.e. function, method or variable names) should be wrapped in `\`` backticks. See example below:
 ```md
-Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+Use `parseInt` to convert the variable `realNumber` into an integer.
 ```
-- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `\`` backticks.
 - Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
-  
+- Whitespace matters in Markdown, so we recommend that you make it visible in your editor.  
+
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
@@ -233,11 +276,11 @@ The following is an example of code:
 ```
 ````
 
-- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
-- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
+- Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
 - Use single-quotes where applicable
 
-**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
+**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
 ## Writing tests
 
@@ -269,7 +312,7 @@ Example of valid single line JavaScript comment:
 
 Example of a valid CSS comment:
 
-```js
+```css
 /* Only change code above this line */
 ```
 
@@ -441,118 +484,6 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 > You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
-
-## Upcoming Challenge Template
-
-The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
-
-````mdx
-
----
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes.js`
-videoUrl: 'url of video explanation'
-forumTopicId: 12345
----
-
-import Script from './script.mdx';
-
-## --step-description--
-
-Description text, in markdown
-
-```html
-<div> 
-  example code
-</div>
-```
-
-## --step-hints--
-
-![test-id-1]
-
-There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.  
-
-```js
-Code for test one
-```
-
-![test-id-2]
-
-More instructions in markdown syntax
-
-```js
-More code
-```
-
-## --step-seed--
-
-### --before-user-code--
-
-```lang
-Code evaluated before the user’s
-```
-
-### --after-user-code--
-
-```lang
-Code evaluated after the user’s, and just before the tests
-```
-
-### --seed-content--
-
-![index-html]
-
-```html
-Some html
-```
-
-```css
-Some css
-```
-
-```js
-Some js
-```
-
-![index-js]
-
-<Script />
-
-
-# --solution-marker--
-
-Exactly the same as the seeds section
-
-## --next-solution-marker
-
-Same again
-
-# --question-marker--
-
-## --text-marker--
-
-The question would go here (only used for video challenges)
-
-## --answers-marker--
-
-Answer 1
-
----
-
-Answer 2
-
----
-
-More answers
-
-## --solution-marker--
-
-\<number of correct answer\>
-
-
-````
 
 ### Useful Links
 

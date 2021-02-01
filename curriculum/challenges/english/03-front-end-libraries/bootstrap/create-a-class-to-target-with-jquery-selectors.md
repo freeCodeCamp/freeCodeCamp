@@ -3,35 +3,26 @@ id: bad87fee1348bd9aec908852
 title: Create a Class to Target with jQuery Selectors
 challengeType: 0
 forumTopicId: 16815
+dashedName: create-a-class-to-target-with-jquery-selectors
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Not every class needs to have corresponding CSS. Sometimes we create classes just for the purpose of selecting these elements more easily using jQuery.
-Give each of your <code>button</code> elements the class <code>target</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+Give each of your `button` elements the class `target`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You should apply the `target` class to each of your `button` elements.
 
-```yml
-tests:
-  - text: You should apply the <code>target</code> class to each of your <code>button</code> elements.
-    testString: assert($(".target").length > 5);
-
+```js
+assert($('.target').length > 5);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -55,14 +46,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -85,5 +69,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

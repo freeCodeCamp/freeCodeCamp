@@ -2,33 +2,26 @@
 id: 5f3cade9fa77275d9f4efe62
 title: Part 41
 challengeType: 0
+dashedName: part-41
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-That worked, but there is still a little space on the right of the price. 
+That worked, but there is still a little space on the right of the price.
 
-You could keep trying various percentages for the widths.  Instead,  simply move the price `p` element to be on the same line and make sure there is no space between them.
+You could keep trying various percentages for the widths. Instead, simply move the price `p` element to be on the same line and make sure there is no space between them.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -49,10 +42,10 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            --fcc-editable-region--
+--fcc-editable-region--
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
-            --fcc-editable-region--
+--fcc-editable-region--
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -76,10 +69,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -112,6 +101,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

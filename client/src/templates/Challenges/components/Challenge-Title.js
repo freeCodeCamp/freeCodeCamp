@@ -1,24 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from '../../../components/helpers/index';
 
+import { dasherize } from '../../../../../utils/slugs';
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
 
 const propTypes = {
+  block: PropTypes.string,
   children: PropTypes.string,
-  isCompleted: PropTypes.bool
+  isCompleted: PropTypes.bool,
+  superBlock: PropTypes.string
 };
 
-function ChallengeTitle({ children, isCompleted }) {
+function ChallengeTitle({ block, children, isCompleted, superBlock }) {
   return (
-    <h2 className='text-center challenge-title'>
-      {children || 'Happy Coding!'}
+    <div className='challenge-title-wrap'>
+      <div className='challenge-title-breadcrumbs'>
+        <Link
+          className='breadcrumb-left'
+          to={`/learn/${dasherize(superBlock)}`}
+        >
+          <span className='ellipsis'>{superBlock}</span>
+        </Link>
+        <div className='breadcrumb-center' />
+        <Link
+          className='breadcrumb-right'
+          state={{ breadcrumbBlockClick: block }}
+          to={`/learn/${dasherize(superBlock)}`}
+        >
+          {block}
+        </Link>
+      </div>
+      <b>{children}</b>
       {isCompleted ? (
         <GreenPass
-          style={{ height: '15px', width: '15px', marginLeft: '5px' }}
+          style={{ height: '15px', width: '15px', marginLeft: '7px' }}
         />
       ) : null}
-    </h2>
+    </div>
   );
 }
 

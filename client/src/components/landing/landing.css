@@ -38,12 +38,15 @@ p.caption {
   color: var(--gray-15);
 }
 
-.as-seen-in h1 {
+.as-seen-in .big-heading {
   color: var(--gray-15);
 }
 
-.landing-page h1 {
+.landing-page .big-heading {
+  height: 100%;
   margin-bottom: 40px;
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .campers-images {
@@ -94,9 +97,10 @@ p.caption {
   }
 }
 
-.cta-landing-section h2 {
-  font-size: 1.3rem;
-  font-weight: 400;
+.landing-top p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.6rem 0;
 }
 
 /* testimonials */
@@ -178,8 +182,8 @@ p.caption {
 }
 
 @media (min-width: 500px) {
-  .cta-landing-section h2 {
-    font-size: 1.5rem;
+  .landing-top p {
+    font-size: 1.25rem;
   }
 }
 

@@ -1,40 +1,56 @@
 ---
 id: 587d7b7d367417b2b2512b1f
+title: 修改存储在对象中的数组
 challengeType: 1
 forumTopicId: 301163
-title: 修改存储在对象中的数组
+dashedName: modify-an-array-stored-in-an-object
 ---
 
-## Description
-<section id='description'>
-现在你已经接触到 JavaScript 对象的所有运算。你可以增加、修改和移除键值对，检查某个键是否存在，并且遍历一个对象中的所有键。在你继续学习 JavaScript 的过程中，你会看到对象的更多用法。另外，后续的《高级数据结构》课程还会介绍 ES6 的 <dfn>Map</dfn> 和 <dfn>Set</dfn> 对象。这两种对象都跟一般的对象相似，但它们提供了一些额外的特性。现在你已经学到了数组和对象的基础知识，你已经可以继续用 JavaScript 来解决更加复杂的问题了！
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-请你看一下代码编辑器中我们提供的对象。<code>user</code>对象包含 3 个键。<code>data</code>对象包含 5 个键，其中一个包含一个<code>friends</code>数组。从这个例子你可以看到对象作为数据结构是多么的灵活。我们已经写了<code>addFriend</code>函数的一部分，请你完成这个函数，使其接受一个<code>user</code>对象，将<code>friend</code>参数中的名字添加到<code>user.data.friends</code>数组中并返回该数组。
-</section>
+我们已经学习了 JavaScript 对象的这些基本操作：添加、修改、移除键值对、检查某个属性是否存在、遍历对象的所有属性。在继续学习 JavaScript 的过程中，我们会了解对象的更多用法。另外，在之后的数据结构课程中，我们还会学习 ES6 的 <dfn>Map</dfn> 和 <dfn>Set</dfn>。这两种数据结构与我们现在学到的对象十分类似，但它们在对象的基础上提供了一些额外的功能。目前，我们已经学习了数组和对象的基础知识，让我们试着来用所学的知识解决一些更复杂的问题。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>user</code>对象应该包含<code>name</code>、<code>age</code>和<code>data</code>三个键。
-    testString: assert('name' in user && 'age' in user && 'data' in user);
-  - text: <code>addFriend</code>函数应该接受一个<code>user</code>对象和一个<code>friend</code>字符串作为输入参数，并将 friend 插入到<code>user</code>对象的<code>friends</code>数组中。
-    testString: assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })());
-  - text: '<code>addFriend(user, &quot;Pete&quot;)</code>应该返回<code>[&quot;Sam&quot;, &quot;Kira&quot;, &quot;Tomo&quot;, &quot;Pete&quot;]</code>。'
-    testString: assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete']);
+请看一下代码编辑器中我们为你写好的对象。`user` 对象包含 3 个属性；`data` 对象包含 5 个属性，其中包含一个叫做 `friends` 的数组。这就是对象作为数据结构所展现出的灵活性。我们已经写好了 `addFriend` 函数的一部分，请你完成这个函数，使其接受一个 `user` 对象，将 `friend` 参数中的名字添加到 `user.data.friends` 数组中并返回该数组。
 
+# --hints--
+
+`user` 对象应该包含 `name`、`age` 和 `data` 三个属性。
+
+```js
+assert('name' in user && 'age' in user && 'data' in user);
 ```
 
-</section>
+`addFriend` 函数应该接受一个 `user` 对象和一个 `friend` 字符串作为输入参数，并将这个字符串插入到 `user` 对象的 `friends` 数组中。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    let L1 = user.data.friends.length;
+    addFriend(user, 'Sean');
+    let L2 = user.data.friends.length;
+    return L2 === L1 + 1;
+  })()
+);
+```
 
-<div id='js-seed'>
+`addFriend(user, "Pete")` 应该返回 `["Sam", "Kira", "Tomo", "Pete"]`。
+
+```js
+assert.deepEqual(
+  (function () {
+    delete user.data.friends;
+    user.data.friends = ['Sam', 'Kira', 'Tomo'];
+    return addFriend(user, 'Pete');
+  })(),
+  ['Sam', 'Kira', 'Tomo', 'Pete']
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let user = {
@@ -58,22 +74,15 @@ let user = {
 };
 
 function addFriend(userObj, friend) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(addFriend(user, 'Pete'));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let user = {
@@ -101,5 +110,3 @@ function addFriend(userObj, friend) {
   return userObj.data.friends;
 }
 ```
-
-</section>

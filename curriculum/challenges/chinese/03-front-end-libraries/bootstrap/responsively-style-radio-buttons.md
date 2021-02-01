@@ -1,45 +1,50 @@
 ---
 id: bad87fee1348bd9aedb08845
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
-    raw: true
+title: 响应式风格的单选按钮
 challengeType: 0
 forumTopicId: 18270
-title: 响应式风格的单选按钮
+required:
+  - link: >-
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css
+    raw: true
+dashedName: responsively-style-radio-buttons
 ---
 
-## Description
-<section id='description'>
-你还可以将 Bootstrap 的 <code>col-xs-*</code> class 用在 <code>form</code> 元素上！这样我们就可以在不关心屏幕大小的情况下，将我们的单选按钮均匀的平铺在页面上。
-将你的所有单选按钮放入 <code>&#60;div class="row"&#62;</code> 元素。再用 <code>&#60;div class="col-xs-6"&#62;</code> 元素包裹每一个单选按钮。
-<strong>记住：</strong> 提醒一句，单选按钮是 type 为 <code>radio</code> 的 <code>input</code> 元素。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+你还可以将 Bootstrap 的 `col-xs-*` class 用在 `form` 元素上！这样我们就可以在不关心屏幕大小的情况下，将我们的单选按钮均匀的平铺在页面上。
 
-</section>
+将你的所有单选按钮放入 `<div class="row">` 元素。再用 `<div class="col-xs-6">` 元素包裹每一个单选按钮。
 
-## Tests
-<section id='tests'>
+**记住：** 提醒一句，单选按钮是 type 为 `radio` 的 `input` 元素。
 
-```yml
-tests:
-  - text: 把所有的单选按钮放置于具有 <code>row</code> class 的 <code>div</code> 元素中。
-    testString: assert($("div.row:has(input[type=\"radio\"])").length > 0);
-  - text: 每一个单选按钮应该嵌套于 <code>div</code> 元素之中，该 <code>div</code> 元素的 class 属性为 <code>col-xs-6</code>。
-    testString: assert($("div.col-xs-6:has(input[type=\"radio\"])").length > 1);
-  - text: 确保所有 <code>div</code> 元素都有一个闭合标签。
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
+# --hints--
 
+把所有的单选按钮放置于具有 `row` class 的 `div` 元素中。
+
+```js
+assert($('div.row:has(input[type="radio"])').length > 0);
 ```
 
-</section>
+每一个单选按钮应该嵌套于 `div` 元素之中，该 `div` 元素的 class 属性为 `col-xs-6`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
+```
 
-<div id='html-seed'>
+确保所有 `div` 元素都有一个闭合标签。
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -101,14 +106,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -158,7 +156,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
   <div class="row">
       <div class="col-xs-6">
         <label><input type="radio" name="indoor-outdoor"> Indoor</label>
@@ -175,5 +173,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

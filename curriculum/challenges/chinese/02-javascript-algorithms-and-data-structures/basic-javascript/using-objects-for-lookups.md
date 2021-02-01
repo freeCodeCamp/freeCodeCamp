@@ -1,14 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
+title: 使用对象进行查找
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
-title: 使用对象进行查找
+dashedName: using-objects-for-lookups
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 对象和字典一样，可以用来存储键/值对。如果你的数据跟对象一样，你可以用对象来查找你想要的值，而不是使用switch或if/else语句。当你知道你的输入数据在某个范围时，这种查找方式极为有效。
+
 这是简单的反向字母表：
 
 ```js
@@ -29,45 +31,71 @@ var value = 2;
 alpha[value]; // "Y"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-把 switch 语句转化为<code>lookup</code>对象。使用它来查找<code>val</code>属性的值，并赋值给<code>result</code>变量。
-</section>
+把 switch 语句转化为`lookup`对象。使用它来查找`val`属性的值，并赋值给`result`变量。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>phoneticLookup("alpha")</code>应该等于<code>"Adams"</code>。
-    testString: assert(phoneticLookup("alpha") === 'Adams');
-  - text: <code>phoneticLookup("bravo")</code>应该等于<code>"Boston"</code>。
-    testString: assert(phoneticLookup("bravo") === 'Boston');
-  - text: <code>phoneticLookup("charlie")</code>应该等于<code>"Chicago"</code>。
-    testString: assert(phoneticLookup("charlie") === 'Chicago');
-  - text: <code>phoneticLookup("delta")</code>应该等于<code>"Denver"</code>。
-    testString: assert(phoneticLookup("delta") === 'Denver');
-  - text: <code>phoneticLookup("echo")</code>应该等于<code>"Easy"</code>。
-    testString: assert(phoneticLookup("echo") === 'Easy');
-  - text: <code>phoneticLookup("foxtrot")</code>应该等于<code>"Frank"</code>。
-    testString: assert(phoneticLookup("foxtrot") === 'Frank');
-  - text: <code>phoneticLookup("")</code>应该等于<code>undefined</code>。
-    testString: assert(typeof phoneticLookup("") === 'undefined');
-  - text: 请不要修改<code>return</code>语句。
-    testString: assert(code.match(/return\sresult;/));
-  - text: 请不要使用<code>case</code>，<code>switch</code>，或<code>if</code>语句。
-    testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')));
+`phoneticLookup("alpha")`应该等于`"Adams"`。
 
+```js
+assert(phoneticLookup('alpha') === 'Adams');
 ```
 
-</section>
+`phoneticLookup("bravo")`应该等于`"Boston"`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(phoneticLookup('bravo') === 'Boston');
+```
 
-<div id='js-seed'>
+`phoneticLookup("charlie")`应该等于`"Chicago"`。
+
+```js
+assert(phoneticLookup('charlie') === 'Chicago');
+```
+
+`phoneticLookup("delta")`应该等于`"Denver"`。
+
+```js
+assert(phoneticLookup('delta') === 'Denver');
+```
+
+`phoneticLookup("echo")`应该等于`"Easy"`。
+
+```js
+assert(phoneticLookup('echo') === 'Easy');
+```
+
+`phoneticLookup("foxtrot")`应该等于`"Frank"`。
+
+```js
+assert(phoneticLookup('foxtrot') === 'Frank');
+```
+
+`phoneticLookup("")`应该等于`undefined`。
+
+```js
+assert(typeof phoneticLookup('') === 'undefined');
+```
+
+请不要修改`return`语句。
+
+```js
+assert(code.match(/return\sresult;/));
+```
+
+请不要使用`case`，`switch`，或`if`语句。
+
+```js
+assert(
+  !/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -99,19 +127,10 @@ function phoneticLookup(val) {
   return result;
 }
 
-// Change this value to test
 phoneticLookup("charlie");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function phoneticLookup(val) {
@@ -131,5 +150,3 @@ function phoneticLookup(val) {
   return result;
 }
 ```
-
-</section>

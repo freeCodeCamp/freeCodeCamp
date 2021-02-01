@@ -1,67 +1,197 @@
 ---
 id: 59f4eafba0343628bb682785
+title: Discordian日期
 challengeType: 5
 videoUrl: ''
-title: Discordian日期
+dashedName: discordian-date
 ---
 
-## Description
-<section id="description">任务： <p>将给定日期从<a href="https://en.wikipedia.org/wiki/Gregorian calendar" title="wp：阳历">公历</a>转换为<a href="https://en.wikipedia.org/wiki/Discordian calendar" title="wp：Discordian日历">Discordian日历</a> 。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+任务：
 
-## Tests
-<section id='tests'>
+将给定日期从[公历](<https://en.wikipedia.org/wiki/Gregorian calendar> "wp：阳历")转换为[Discordian日历](<https://en.wikipedia.org/wiki/Discordian calendar> "wp：Discordian日历") 。
 
-```yml
-tests:
-  - text: <code>discordianDate</code>是一个函数。
-    testString: assert(typeof discordianDate === 'function');
-  - text: <code>discordianDate(new Date(2010, 6, 22))</code> <code>"Pungenday, the 57th day of Confusion in the YOLD 3176"</code> <code>discordianDate(new Date(2010, 6, 22))</code>应该返回<code>"Pungenday, the 57th day of Confusion in the YOLD 3176"</code> 。
-    testString: assert(discordianDate(new Date(2010, 6, 22)) === 'Pungenday, the 57th day of Confusion in the YOLD 3176');
-  - text: <code>discordianDate(new Date(2012, 1, 28))</code>应该返回<code>"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"</code> 。
-    testString: assert(discordianDate(new Date(2012, 1, 28)) === 'Prickle-Prickle, the 59th day of Chaos in the YOLD 3178');
-  - text: <code>discordianDate(new Date(2012, 1, 29))</code> <code>"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib's Day!"</code> <code>discordianDate(new Date(2012, 1, 29))</code>应该返回<code>"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib's Day!"</code> 。
-    testString: assert(discordianDate(new Date(2012, 1, 29)) === 'Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!');
-  - text: <code>discordianDate(new Date(2012, 2, 1))</code>应该返回<code>"Setting Orange, the 60th day of Chaos in the YOLD 3178"</code> 。
-    testString: assert(discordianDate(new Date(2012, 2, 1)) === 'Setting Orange, the 60th day of Chaos in the YOLD 3178');
-  - text: <code>discordianDate(new Date(2010, 0, 5))</code> <code>"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"</code> <code>discordianDate(new Date(2010, 0, 5))</code>应该返回<code>"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"</code> 。
-    testString: assert(discordianDate(new Date(2010, 0, 5)) === 'Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!');
-  - text: <code>discordianDate(new Date(2011, 4, 3))</code>应该返回<code>"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"</code> 。
-    testString: assert(discordianDate(new Date(2011, 4, 3)) === 'Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!');
-  - text: <code>discordianDate(new Date(2015, 9, 19))</code> <code>"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"</code> <code>discordianDate(new Date(2015, 9, 19))</code>应该返回<code>"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"</code> 。
-    testString: assert(discordianDate(new Date(2015, 9, 19)) === 'Boomtime, the 73rd day of Bureaucracy in the YOLD 3181');
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`discordianDate`是一个函数。
 
 ```js
-function discordianDate (date) {
-  // Good luck!
+assert(typeof discordianDate === 'function');
+```
+
+`discordianDate(new Date(2010, 6, 22))` `"Pungenday, the 57th day of Confusion in the YOLD 3176"` `discordianDate(new Date(2010, 6, 22))`应该返回`"Pungenday, the 57th day of Confusion in the YOLD 3176"` 。
+
+```js
+assert(
+  discordianDate(new Date(2010, 6, 22)) ===
+    'Pungenday, the 57th day of Confusion in the YOLD 3176'
+);
+```
+
+`discordianDate(new Date(2012, 1, 28))`应该返回`"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"` 。
+
+```js
+assert(
+  discordianDate(new Date(2012, 1, 28)) ===
+    'Prickle-Prickle, the 59th day of Chaos in the YOLD 3178'
+);
+```
+
+`discordianDate(new Date(2012, 1, 29))` `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib's Day!"` `discordianDate(new Date(2012, 1, 29))`应该返回`"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib's Day!"` 。
+
+```js
+assert(
+  discordianDate(new Date(2012, 1, 29)) ===
+    "Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib's Day!"
+);
+```
+
+`discordianDate(new Date(2012, 2, 1))`应该返回`"Setting Orange, the 60th day of Chaos in the YOLD 3178"` 。
+
+```js
+assert(
+  discordianDate(new Date(2012, 2, 1)) ===
+    'Setting Orange, the 60th day of Chaos in the YOLD 3178'
+);
+```
+
+`discordianDate(new Date(2010, 0, 5))` `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"` `discordianDate(new Date(2010, 0, 5))`应该返回`"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"` 。
+
+```js
+assert(
+  discordianDate(new Date(2010, 0, 5)) ===
+    'Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!'
+);
+```
+
+`discordianDate(new Date(2011, 4, 3))`应该返回`"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"` 。
+
+```js
+assert(
+  discordianDate(new Date(2011, 4, 3)) ===
+    'Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!'
+);
+```
+
+`discordianDate(new Date(2015, 9, 19))` `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"` `discordianDate(new Date(2015, 9, 19))`应该返回`"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"` 。
+
+```js
+assert(
+  discordianDate(new Date(2015, 9, 19)) ===
+    'Boomtime, the 73rd day of Bureaucracy in the YOLD 3181'
+);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function discordianDate(date) {
+
   return true;
 }
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+/**
+ * All Hail Discordia! - this script prints Discordian date using system date.
+ *
+ * lang: JavaScript
+ * author: jklu
+ * contributors: JamesMcGuigan
+ *
+ * source: https://rosettacode.org/wiki/Discordian_date#JavaScript
+ */
+const seasons = [
+  'Chaos', 'Discord', 'Confusion',
+  'Bureaucracy', 'The Aftermath'
+];
+const weekday = [
+  'Sweetmorn', 'Boomtime', 'Pungenday',
+  'Prickle-Prickle', 'Setting Orange'
+];
 
-/section>
+const apostle = [
+  'Mungday', 'Mojoday', 'Syaday',
+  'Zaraday', 'Maladay'
+];
+
+const holiday = [
+  'Chaoflux', 'Discoflux', 'Confuflux',
+  'Bureflux', 'Afflux'
+];
+
+
+Date.prototype.isLeapYear = function() {
+  const year = this.getFullYear();
+  if ((year & 3) !== 0) { return false; }
+  return ((year % 100) !== 0 || (year % 400) === 0);
+};
+
+// Get Day of Year
+Date.prototype.getDOY = function() {
+  const dayCount = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+  const mn = this.getMonth();
+  const dn = this.getDate();
+  let dayOfYear = dayCount[mn] + dn;
+  if (mn > 1 && this.isLeapYear()) { dayOfYear += 1; }
+  return dayOfYear;
+};
+
+Date.prototype.isToday = function() {
+  const today = new Date();
+  return this.getDate() === today.getDate()
+      && this.getMonth() === today.getMonth()
+      && this.getFullYear() === today.getFullYear()
+  ;
+};
+
+function discordianDate(date) {
+  if (!date) { date = new Date(); }
+
+  const y = date.getFullYear();
+  const yold = y + 1166;
+  let dayOfYear = date.getDOY();
+  let celebrateHoliday = null;
+
+  if (date.isLeapYear()) {
+    if (dayOfYear === 60) {
+      celebrateHoliday = 'St. Tib\'s Day';
+    }
+    else if (dayOfYear > 60) {
+      dayOfYear--;
+    }
+  }
+  dayOfYear--;
+
+  const divDay = Math.floor(dayOfYear / 73);
+
+  const seasonDay = (dayOfYear % 73) + 1;
+  if (seasonDay === 5) {
+    celebrateHoliday = apostle[divDay];
+  }
+  if (seasonDay === 50) {
+    celebrateHoliday = holiday[divDay];
+  }
+
+  const season = seasons[divDay];
+  const dayOfWeek = weekday[dayOfYear % 5];
+
+  const nth = (seasonDay % 10 === 1) ? 'st'
+          : (seasonDay % 10 === 2) ? 'nd'
+          : (seasonDay % 10 === 3) ? 'rd'
+                                  : 'th';
+
+  return ''
+         + dayOfWeek
+         + ', the ' + seasonDay + nth
+         + ' day of ' + season
+         + ' in the YOLD ' + yold
+         + (celebrateHoliday ? '. Celebrate ' + celebrateHoliday + '!' : '')
+    ;
+}
+```

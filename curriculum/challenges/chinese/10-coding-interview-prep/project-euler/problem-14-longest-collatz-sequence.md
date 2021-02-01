@@ -1,63 +1,95 @@
 ---
 id: 5900f37a1000cf542c50fe8d
+title: 问题14：最长的Collat​​z序列
 challengeType: 5
 videoUrl: ''
-title: 问题14：最长的Collat​​z序列
+dashedName: problem-14-longest-collatz-sequence
 ---
 
-## Description
-<section id="description">为正整数集定义以下迭代序列： <div style="padding-left: 4em;"> <var>n</var> → <var>n</var> / 2（ <var>n</var>是偶数） </div><div style="padding-left: 4em;"> <var>n</var> →3 <var>n</var> + 1（ <var>n</var>为奇数） </div>使用上面的规则并从13开始，我们生成以下序列： <div style="text-align: center;"> 13→40→20→10→5→16→8→4→2→1 </div>可以看出，该序列（从13开始并在1结束）包含10个项。虽然尚未证实（Collat​​z问题），但是认为所有起始数字都在1处结束。在给定<code>limit</code>下，哪个起始数产生最长链？注意：一旦链条启动，条款允许超过一百万。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+为正整数集定义以下迭代序列：
 
-## Tests
-<section id='tests'>
+`n` → `n` / 2（ `n`是偶数）
 
-```yml
-tests:
-  - text: <code>longestCollatzSequence(14)</code>应该返回9。
-    testString: assert.strictEqual(longestCollatzSequence(14), 9);
-  - text: <code>longestCollatzSequence(5847)</code>应返回3711。
-    testString: assert.strictEqual(longestCollatzSequence(5847), 3711);
-  - text: <code>longestCollatzSequence(46500)</code>应返回35655。
-    testString: assert.strictEqual(longestCollatzSequence(46500), 35655);
-  - text: <code>longestCollatzSequence(54512)</code>应返回52527。
-    testString: assert.strictEqual(longestCollatzSequence(54512), 52527);
-  - text: <code>longestCollatzSequence(1000000)</code>应返回837799。
-    testString: assert.strictEqual(longestCollatzSequence(100000), 77031);
+`n` →3 `n` + 1（ `n`为奇数）
 
+使用上面的规则并从13开始，我们生成以下序列：
+
+13→40→20→10→5→16→8→4→2→1
+
+可以看出，该序列（从13开始并在1结束）包含10个项。虽然尚未证实（Collat​​z问题），但是认为所有起始数字都在1处结束。在给定`limit`下，哪个起始数产生最长链？注意：一旦链条启动，条款允许超过一百万。
+
+# --hints--
+
+`longestCollatzSequence(14)`应该返回9。
+
+```js
+assert.strictEqual(longestCollatzSequence(14), 9);
 ```
 
-</section>
+`longestCollatzSequence(5847)`应返回3711。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(longestCollatzSequence(5847), 3711);
+```
 
-<div id='js-seed'>
+`longestCollatzSequence(46500)`应返回35655。
+
+```js
+assert.strictEqual(longestCollatzSequence(46500), 35655);
+```
+
+`longestCollatzSequence(54512)`应返回52527。
+
+```js
+assert.strictEqual(longestCollatzSequence(54512), 52527);
+```
+
+`longestCollatzSequence(1000000)`应返回837799。
+
+```js
+assert.strictEqual(longestCollatzSequence(100000), 77031);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function longestCollatzSequence(limit) {
-  // Good luck!
+
   return true;
 }
 
 longestCollatzSequence(14);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function longestCollatzSequence(limit) {
+  let longest = 1;
+  let maxLength = 1;
+  for (let i = Math.floor(limit / 2); i < limit; i++) {
+    let len = colLen(i);
+    if (len > maxLength) {
+      longest = i;
+      maxLength = len;
+    }
+  }
+  return longest;
+}
 
-/section>
+const knownSequence = { '1': 1 };
+
+function colLen(n) {
+  if (knownSequence[n]) {
+    return knownSequence[n];
+  } else {
+    const len = n % 2 === 0 ? colLen(n / 2) + 1 : colLen((3 * n + 1) / 2) + 2;
+    knownSequence[n] = len;
+    return len;
+  }
+}
+```

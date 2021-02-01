@@ -1,48 +1,62 @@
 ---
 id: bad87fee1347bd9aedf08845
+title: 用 Bootstrap 来取代我们之前的自定义样式
 challengeType: 0
 forumTopicId: 17565
-title: 用 Bootstrap 来取代我们之前的自定义样式
+dashedName: ditch-custom-css-for-bootstrap
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 现在我们可以清理一下之前代码，用 Bootstrap 的内置样式来替换我们之前定义的样式，这样会让我们的 Cat Photo App 看起来更简洁些。
+
 别担心————以后我们会有大把时间来自定义我们的 CSS 样式的。
-删除 <code>style</code> 元素里的 <code>.red-text</code>, <code>p</code>, 和 <code>.smaller-image</code> CSS 声明，使 <code>style</code> 元素留下的声明只有 <code>h2</code> 和 <code>thick-green-border</code>.
-删除包含死链接的 <code>p</code> 元素。 然后将 <code>h2</code> 的 <code>red-text</code> class 替换为 Bootstrap 的 <code>text-primary</code> class.
-最后, 将你第一个 <code>img</code> 元素的 "smaller-image" class 替换为 <code>img-responsive</code> class.
-</section>
 
-## Instructions
-<section id='instructions'>
+删除 `style` 元素里的 `.red-text`, `p`, 和 `.smaller-image` CSS 声明，使 `style` 元素留下的声明只有 `h2` 和 `thick-green-border`.
 
-</section>
+删除包含死链接的 `p` 元素。 然后将 `h2` 的 `red-text` class 替换为 Bootstrap 的 `text-primary` class.
 
-## Tests
-<section id='tests'>
+最后, 将你第一个 `img` 元素的 "smaller-image" class 替换为 `img-responsive` class.
 
-```yml
-tests:
-  - text: h2 元素的 class 不应为 <code>red-text</code>。
-    testString: assert(!$("h2").hasClass("red-text"));
-  - text: h2 元素的 class 应为 <code>text-primary</code>。
-    testString: assert($("h2").hasClass("text-primary"));
-  - text: 你的段落元素（p）应该不再使用 <code>Monospace</code> 字体。
-    testString: assert(!$("p").css("font-family").match(/monospace/i));
-  - text: 移除你第一张图片的 class 属性 <code>smaller-image</code>。
-    testString: assert(!$("img").hasClass("smaller-image"));
-  - text: 给你的第一张图片添加 class 属性 <code>img-responsive</code>。
-    testString: assert($(".img-responsive").length > 1);
+# --hints--
 
+h2 元素的 class 不应为 `red-text`。
+
+```js
+assert(!$('h2').hasClass('red-text'));
 ```
 
-</section>
+h2 元素的 class 应为 `text-primary`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').hasClass('text-primary'));
+```
 
-<div id='html-seed'>
+你的段落元素（p）应该不再使用 `Monospace` 字体。
+
+```js
+assert(
+  !$('p')
+    .css('font-family')
+    .match(/monospace/i)
+);
+```
+
+移除你第一张图片的 class 属性 `smaller-image`。
+
+```js
+assert(!$('img').hasClass('smaller-image'));
+```
+
+给你的第一张图片添加 class 属性 `img-responsive`。
+
+```js
+assert($('.img-responsive').length > 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -115,14 +129,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -168,7 +175,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -179,5 +186,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

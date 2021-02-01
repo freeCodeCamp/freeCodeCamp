@@ -3,11 +3,13 @@ id: 587d7dbd367417b2b2512bb5
 title: Nest CSS with Sass
 challengeType: 0
 forumTopicId: 301457
+dashedName: nest-css-with-sass
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+
 Normally, each element is targeted on a different line to style it, like so:
 
 ```scss
@@ -41,29 +43,25 @@ nav {
 
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the nesting technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element.
-</section>
+Use the nesting technique shown above to re-organize the CSS rules for both children of `.blog-post` element. For testing purposes, the `h1` should come before the `p` element.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should re-organize the CSS rules so the <code>h1</code> and <code>p</code> are nested in the <code>.blog-post</code> parent element.
-    testString: assert(code.match(/\.blog-post\s*?{\s*?h1\s*?{\s*?text-align:\s*?center;\s*?color:\s*?blue;\s*?}\s*?p\s*?{\s*?font-size:\s*?20px;\s*?}\s*?}/gi));
+Your code should re-organize the CSS rules so the `h1` and `p` are nested in the `.blog-post` parent element.
 
+```js
+assert(
+  code.match(
+    /\.blog-post\s*?{\s*?h1\s*?{\s*?text-align:\s*?center;\s*?color:\s*?blue;\s*?}\s*?p\s*?{\s*?font-size:\s*?20px;\s*?}\s*?}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style type='text/scss'>
@@ -85,14 +83,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style type='text/scss'>
@@ -112,5 +103,3 @@ tests:
   <p>This is a paragraph</p>
 </div>
 ```
-
-</section>

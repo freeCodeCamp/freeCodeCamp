@@ -2,33 +2,26 @@
 id: 5f475bb508746c16c9431d42
 title: Part 91
 challengeType: 0
+dashedName: part-91
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The image you added is not centered horizontally like the `Coffees` heading above it.  `img` elements are "like" inline elements.
+The image you added is not centered horizontally like the `Coffees` heading above it. `img` elements are "like" inline elements.
 
 To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -93,10 +86,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -194,6 +183,3 @@ a:active {
 }
 ```
 
-</div>
-
-</section>

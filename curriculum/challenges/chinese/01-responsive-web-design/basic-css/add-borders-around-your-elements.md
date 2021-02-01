@@ -1,15 +1,17 @@
 ---
 id: bad87fee1348bd9bedf08813
+title: 在元素周围添加边框
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 forumTopicId: 16630
-title: 在元素周围添加边框
+dashedName: add-borders-around-your-elements
 ---
 
-## Description
-<section id='description'>
-CSS 边框具有<code>style</code>，<code>color</code>和<code>width</code>属性。
-假如我们想要创建一个 5px 的红色实线边框包围一个 HTML 元素，我们可以这样做：
+# --description--
+
+CSS 边框具有 `style`、`color`、`width` 属性。
+
+假如我们要将一个 HTML 元素边框设置为 5px 的红色实线边框，我们可以这样做：
 
 ```html
 <style>
@@ -21,39 +23,53 @@ CSS 边框具有<code>style</code>，<code>color</code>和<code>width</code>属�
 </style>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-创建一个<code>thick-green-border</code> CSS class，该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框，将它应用在猫咪照片上。
-记得在一个元素上可以同时应用多个<code>class</code>，通过使用空格来分隔。例子如下：
-<code>&lt;img class="class1 class2"&gt;</code>
-</section>
+创建一个 `thick-green-border` 的 class，该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框，并将这个 class 应用在猫咪照片上。
 
-## Tests
-<section id='tests'>
+记得在一个元素上可以同时应用多个 `class`，使用空格来分隔不同 class 即可，例如：
 
-```yml
-tests:
-  - text: '<code>img</code>元素应该含有<code>smaller-image</code> class。'
-    testString: assert($("img").hasClass("smaller-image"));
-  - text: '<code>img</code>元素应该含有<code>thick-green-border</code> class。'
-    testString: assert($("img").hasClass("thick-green-border"));
-  - text: '设置图片边框为<code>10px</code>。'
-    testString: assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12);
-  - text: '设置图片边框为<code>solid</code>实线。'
-    testString: assert($("img").css("border-right-style") === "solid");
-  - text: '<code>img</code>元素的边框颜色应该为绿色。'
-    testString: assert($("img").css("border-left-color") === "rgb(0, 128, 0)");
+`<img class="class1 class2">`
 
+# --hints--
+
+`img` 元素应包含 `smaller-image` class。
+
+```js
+assert($('img').hasClass('smaller-image'));
 ```
 
-</section>
+`img` 元素应包含 `thick-green-border` class。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('img').hasClass('thick-green-border'));
+```
 
-<div id='html-seed'>
+图片边框宽度应设置为 `10px`。
+
+```js
+assert(
+  $('img').hasClass('thick-green-border') &&
+    parseInt($('img').css('border-top-width'), 10) >= 8 &&
+    parseInt($('img').css('border-top-width'), 10) <= 12
+);
+```
+
+图片边框样式应为 `solid` 实线。
+
+```js
+assert($('img').css('border-right-style') === 'solid');
+```
+
+`img` 元素的边框颜色应为绿色。
+
+```js
+assert($('img').css('border-left-color') === 'rgb(0, 128, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -78,47 +94,95 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">点击查看更多<a href="#">猫图</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫" class="smaller-image"></a>
-  
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
   <div>
-    <p>猫咪最喜欢的三件东西：</p>
+    <p>Things cats love:</p>
     <ul>
-      <li>猫薄荷</li>
-      <li>激光笔</li>
-      <li>千层饼</li>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
     </ul>
-    <p>猫咪最讨厌的三件东西：</p>
+    <p>Top 3 things cats hate:</p>
     <ol>
-      <li>跳蚤</li>
-      <li>打雷</li>
-      <li>同类</li>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor">室内</label>
-    <label><input type="radio" name="indoor-outdoor">室外</label><br>
-    <label><input type="checkbox" name="personality">忠诚</label>
-    <label><input type="checkbox" name="personality">懒惰</label>
-    <label><input type="checkbox" name="personality">积极</label><br>
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
 
-</section>
-              
+  h2 {
+    font-family: Lobster, monospace;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: monospace;
+  }
+
+  .smaller-image {
+    width: 100px;
+  }
+
+  .thick-green-border {
+    border-width: 10px;
+    border-color: green;
+    border-style: solid;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

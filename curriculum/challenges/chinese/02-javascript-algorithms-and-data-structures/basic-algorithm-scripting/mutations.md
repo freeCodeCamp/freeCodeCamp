@@ -1,49 +1,104 @@
 ---
 id: af2170cad53daa0770fabdea
+title: 比较字符串
 challengeType: 5
-videoUrl: ''
-title: 突变
+forumTopicId: 16025
+dashedName: mutations
 ---
 
-## Description
-<section id="description">如果数组的第一个元素中的字符串包含数组第二个元素中字符串的所有字母，则返回true。例如， <code>[&quot;hello&quot;, &quot;Hello&quot;]</code>应该返回true，因为第二个字符串中的所有字母都出现在第一个字母中，忽略大小写。参数<code>[&quot;hello&quot;, &quot;hey&quot;]</code>应返回false，因为字符串“hello”不包含“y”。最后， <code>[&quot;Alien&quot;, &quot;line&quot;]</code>应该返回true，因为“line”中的所有字母都出现在“Alien”中。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+输入参数是一个数组，其中包含两个字符串元素。如果数组里的第一个字符串包含了第二个字符串中的所有字母，则返回 true。
 
-## Tests
-<section id='tests'>
+例如，`["hello", "Hello"]` 应该返回 true。因为在忽略大小写的情况下，第一个字符串中包含了第二个字符串里出现的所有字母。
 
-```yml
-tests:
-  - text: '<code>mutation([&quot;hello&quot;, &quot;hey&quot;])</code>应该返回false。'
-    testString: assert(mutation(["hello", "hey"]) === false);
-  - text: '<code>mutation([&quot;hello&quot;, &quot;Hello&quot;])</code>应该返回true。'
-    testString: assert(mutation(["hello", "Hello"]) === true);
-  - text: '<code>mutation([&quot;zyxwvutsrqponmlkjihgfedcba&quot;, &quot;qrstu&quot;])</code>应该返回true。'
-    testString: assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true);
-  - text: '<code>mutation([&quot;Mary&quot;, &quot;Army&quot;])</code>应该返回true。'
-    testString: assert(mutation(["Mary", "Army"]) === true);
-  - text: '<code>mutation([&quot;Mary&quot;, &quot;Aarmy&quot;])</code>应该返回true。'
-    testString: assert(mutation(["Mary", "Aarmy"]) === true);
-  - text: '<code>mutation([&quot;Alien&quot;, &quot;line&quot;])</code>应该返回true。'
-    testString: assert(mutation(["Alien", "line"]) === true);
-  - text: '<code>mutation([&quot;floor&quot;, &quot;for&quot;])</code>应该返回true。'
-    testString: assert(mutation(["floor", "for"]) === true);
-  - text: '<code>mutation([&quot;hello&quot;, &quot;neo&quot;])</code>应该返回false。'
-    testString: assert(mutation(["hello", "neo"]) === false);
-  - text: '<code>mutation([&quot;voodoo&quot;, &quot;no&quot;])</code>应该返回false。'
-    testString: assert(mutation(["voodoo", "no"]) === false);
+而 `["hello", "hey"]` 应该返回 false。因为第一个字符串 "hello" 没有包含字母 "y"。
 
+最后，`["Alien", "line"]` 应该返回 true。因为 "line" 中的所有字母都出现在了 "Alien" 中。
+
+# --hints--
+
+`mutation(["hello", "hey"])` 应返回 false。
+
+```js
+assert(mutation(['hello', 'hey']) === false);
 ```
 
-</section>
+`mutation(["hello", "Hello"])` 应返回 true。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(mutation(['hello', 'Hello']) === true);
+```
 
-<div id='js-seed'>
+`mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])` 应返回 true。
+
+```js
+assert(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']) === true);
+```
+
+`mutation(["Mary", "Army"])` 应返回 true。
+
+```js
+assert(mutation(['Mary', 'Army']) === true);
+```
+
+`mutation(["Mary", "Aarmy"])` 应返回 true。
+
+```js
+assert(mutation(['Mary', 'Aarmy']) === true);
+```
+
+`mutation(["Alien", "line"])` 应返回 true。
+
+```js
+assert(mutation(['Alien', 'line']) === true);
+```
+
+`mutation(["floor", "for"])` 应返回 true。
+
+```js
+assert(mutation(['floor', 'for']) === true);
+```
+
+`mutation(["hello", "neo"])` 应返回 false。
+
+```js
+assert(mutation(['hello', 'neo']) === false);
+```
+
+`mutation(["voodoo", "no"])` 应返回 false。
+
+```js
+assert(mutation(['voodoo', 'no']) === false);
+```
+
+`mutation(["voodoo", "no"])` 应返回 false。
+
+```js
+assert(mutation(['voodoo', 'no']) === false);
+```
+
+`mutation(["ate", "date"]` 应返回 false。
+
+```js
+assert(mutation(['ate', 'date']) === false);
+```
+
+`mutation(["Tiger", "Zebra"])` 应返回 false。
+
+```js
+assert(mutation(['Tiger', 'Zebra']) === false);
+```
+
+`mutation(["Noel", "Ole"])` 应返回 true。
+
+```js
+assert(mutation(['Noel', 'Ole']) === true);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function mutation(arr) {
@@ -51,20 +106,18 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function mutation(arr) {
+  let hash = Object.create(null);
 
-/section>
+  arr[0].toLowerCase().split('').forEach(c => hash[c] = true);
+
+  return !arr[1].toLowerCase().split('').filter(c => !hash[c]).length;
+}
+
+mutation(["hello", "hey"]);
+```

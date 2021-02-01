@@ -10,6 +10,7 @@ import { FullWidthRow, Spacer } from '../helpers';
 import ThemeSettings from './Theme';
 import UsernameSettings from './Username';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
+import { withTranslation } from 'react-i18next';
 
 const propTypes = {
   about: PropTypes.string,
@@ -19,6 +20,7 @@ const propTypes = {
   picture: PropTypes.string,
   points: PropTypes.number,
   submitNewAbout: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   toggleNightMode: PropTypes.func.isRequired,
   username: PropTypes.string
 };
@@ -125,7 +127,7 @@ class AboutSettings extends Component {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    const { currentTheme, username, toggleNightMode } = this.props;
+    const { currentTheme, username, t, toggleNightMode } = this.props;
     return (
       <div className='about-settings'>
         <UsernameSettings username={username} />
@@ -134,7 +136,7 @@ class AboutSettings extends Component {
           <form id='camper-identity' onSubmit={this.handleSubmit}>
             <FormGroup controlId='about-name'>
               <ControlLabel>
-                <strong>Name</strong>
+                <strong>{t('settings.labels.name')}</strong>
               </ControlLabel>
               <FormControl
                 onChange={this.handleNameChange}
@@ -144,7 +146,7 @@ class AboutSettings extends Component {
             </FormGroup>
             <FormGroup controlId='about-location'>
               <ControlLabel>
-                <strong>Location</strong>
+                <strong>{t('settings.labels.location')}</strong>
               </ControlLabel>
               <FormControl
                 onChange={this.handleLocationChange}
@@ -154,7 +156,7 @@ class AboutSettings extends Component {
             </FormGroup>
             <FormGroup controlId='about-picture'>
               <ControlLabel>
-                <strong>Picture</strong>
+                <strong>{t('settings.labels.picture')}</strong>
               </ControlLabel>
               <FormControl
                 onChange={this.handlePictureChange}
@@ -165,7 +167,7 @@ class AboutSettings extends Component {
             </FormGroup>
             <FormGroup controlId='about-about'>
               <ControlLabel>
-                <strong>About</strong>
+                <strong>{t('settings.labels.about')}</strong>
               </ControlLabel>
               <FormControl
                 componentClass='textarea'
@@ -191,4 +193,4 @@ class AboutSettings extends Component {
 AboutSettings.displayName = 'AboutSettings';
 AboutSettings.propTypes = propTypes;
 
-export default AboutSettings;
+export default withTranslation()(AboutSettings);

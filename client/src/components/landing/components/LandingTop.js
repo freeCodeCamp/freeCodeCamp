@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Media from 'react-responsive';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { Spacer, ImageLoader } from '../../helpers';
-import wideImg from '../../../assets/images/landing/wide-image.png';
-import Login from '../../Header/components/Login';
+import { Spacer } from '../../helpers';
 import {
   AmazonLogo,
   AppleLogo,
@@ -12,50 +9,28 @@ import {
   SpotifyLogo,
   GoogleLogo
 } from '../../../assets/images/components';
+import CampersImage from './CampersImage';
+import BigCallToAction from './BigCallToAction';
+import { useTranslation } from 'react-i18next';
 
 const propTypes = {
   page: PropTypes.string
 };
 
-const LARGE_SCREEN_SIZE = 1200;
+function LandingTop({ page }) {
+  const { t } = useTranslation();
 
-function landingTop({ page }) {
-  const landingImageSection = (
-    <Media minWidth={LARGE_SCREEN_SIZE}>
-      <Spacer size={2} />
-      <ImageLoader
-        alt='Freecodecamp students at a local study'
-        className='landing-page-image'
-        height={442}
-        src={wideImg}
-        width={750}
-      />
-      <p className='text-center caption'>
-        freeCodeCamp students at a local study group in South Korea.
-      </p>
-    </Media>
-  );
-  const BigCallToAction = (
-    <Login block={true} data-test-label={`${page}-big-cta`}>
-      {page === 'landing'
-        ? "Get started (it's free)"
-        : "Sign in to save your progress (it's free)"}
-    </Login>
-  );
   return (
     <div className='landing-top'>
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <h1 className='big-heading' data-test-label={`${page}-header`}>
-            Learn to code at home.
+            {t('landing.big-heading-1')}
           </h1>
-          <h1 className='big-heading '>Build projects.</h1>
-          <h1 className='big-heading'>Earn certifications.</h1>
-          <h2>
-            Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten
-            jobs at tech companies including:
-          </h2>
+          <p className='big-heading'>{t('landing.big-heading-2')}</p>
+          <p className='big-heading'>{t('landing.big-heading-3')}</p>
+          <p>{t('landing.h2-heading')}</p>
           <div className='logo-row'>
             <AppleLogo />
             <GoogleLogo />
@@ -64,8 +39,8 @@ function landingTop({ page }) {
             <SpotifyLogo />
           </div>
           <Spacer />
-          {BigCallToAction}
-          {landingImageSection}
+          <BigCallToAction page={page} />
+          <CampersImage page={page} />
           <Spacer />
         </Col>
       </Row>
@@ -73,6 +48,6 @@ function landingTop({ page }) {
   );
 }
 
-landingTop.displayName = 'LandingTop';
-landingTop.propTypes = propTypes;
-export default landingTop;
+LandingTop.displayName = 'LandingTop';
+LandingTop.propTypes = propTypes;
+export default LandingTop;

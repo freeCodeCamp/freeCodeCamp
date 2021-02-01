@@ -11,6 +11,7 @@ import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import DonateForm from './DonateForm';
 import { modalDefaultDonation } from '../../../../config/donation-settings';
+import { useTranslation } from 'react-i18next';
 
 import {
   closeDonationModal,
@@ -60,6 +61,7 @@ function DonateModal({
   executeGA
 }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
+  const { t } = useTranslation();
   const handleProcessing = (
     duration,
     amount,
@@ -68,7 +70,7 @@ function DonateModal({
     executeGA({
       type: 'event',
       data: {
-        category: 'donation',
+        category: 'Donation',
         action: `Modal ${action}`,
         label: duration,
         value: amount
@@ -83,7 +85,7 @@ function DonateModal({
       executeGA({
         type: 'event',
         data: {
-          category: 'Donation',
+          category: 'Donation View',
           action: `Displayed ${
             isBlockDonation ? 'block' : 'progress'
           } donation modal`,
@@ -93,19 +95,20 @@ function DonateModal({
     }
   }, [show, isBlockDonation, executeGA]);
 
-  const durationToText = donationDuration => {
-    if (donationDuration === 'onetime') return 'a one-time';
-    else if (donationDuration === 'month') return 'a monthly';
-    else if (donationDuration === 'year') return 'an annual';
-    else return 'a';
+  const getDonationText = () => {
+    const donationDuration = modalDefaultDonation.donationDuration;
+    switch (donationDuration) {
+      case 'onetime':
+        return <b>{t('donate.duration')}</b>;
+      case 'month':
+        return <b>{t('donate.duration-2')}</b>;
+      case 'year':
+        return <b>{t('donate.duration-3')}</b>;
+      default:
+        return <b>{t('donate.duration-4')}</b>;
+    }
   };
 
-  const donationText = (
-    <b>
-      Become {durationToText(modalDefaultDonation.donationDuration)} supporter
-      of our nonprofit.
-    </b>
-  );
   const blockDonationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
@@ -114,9 +117,9 @@ function DonateModal({
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
-            <b>Nicely done. You just completed {blockNameify(block)}. </b>
+            <b>{t('donate.nicely-done', { block: blockNameify(block) })}</b>
             <br />
-            {donationText}
+            {getDonationText()}
           </Col>
         )}
       </Row>
@@ -131,7 +134,7 @@ function DonateModal({
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
-            {donationText}
+            {getDonationText()}
           </Col>
         )}
       </Row>
@@ -155,7 +158,7 @@ function DonateModal({
               onClick={closeDonationModal}
               tabIndex='0'
             >
-              {closeLabel ? 'Close' : 'Ask me later'}
+              {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
             </Button>
           </Col>
         </Row>

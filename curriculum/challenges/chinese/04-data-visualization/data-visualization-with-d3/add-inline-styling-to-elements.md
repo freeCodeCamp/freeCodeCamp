@@ -1,40 +1,40 @@
 ---
 id: 587d7fa7367417b2b2512bc6
+title: 给元素添加内联样式
 challengeType: 6
 forumTopicId: 301475
-title: 给元素添加内联样式
+dashedName: add-inline-styling-to-elements
 ---
 
-## Description
-<section id='description'>
-D3 可以使用 <code>style()</code> 方法为动态元素添加内联 CSS 样式表。
-<code>style()</code> 方法以用逗号分隔的键值对作为参数。这里是一个将选中文本的颜色设为蓝色的例子：
-<code>selection.style("color","blue");</code> 
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-在编辑器中添加 <code>style()</code> 方法，使所有显示的文本的 <code>font-family</code> 为 <code>verdana</code>。
-</section>
+D3 可以使用 `style()` 方法为动态元素添加内联 CSS 样式表。
 
-## Tests
-<section id='tests'>
+`style()` 方法以用逗号分隔的键值对作为参数。这里是一个将选中文本的颜色设为蓝色的例子：
 
-```yml
-tests:
-  - text: 你的 <code>h2</code> 元素的 <code>font-family</code> 应该为 verdana。
-    testString: assert($('h2').css('font-family') == 'verdana');
-  - text: 你应该使用 <code>style()</code> 方法。
-    testString: assert(code.match(/\.style/g));
+`selection.style("color","blue");`
 
+# --instructions--
+
+在编辑器中添加 `style()` 方法，使所有显示的文本的 `font-family` 为 `verdana`。
+
+# --hints--
+
+你的 `h2` 元素的 `font-family` 应该为 verdana。
+
+```js
+assert($('h2').css('font-family') == 'verdana');
 ```
 
-</section>
+你应该使用 `style()` 方法。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.style/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -46,23 +46,16 @@ tests:
       .enter()
       .append("h2")
       .text((d) => (d + " USD"))
-      // 在下面添加你的代码
+      // Add your code below this line
 
 
 
-      // 在上面添加你的代码
+      // Add your code above this line
   </script>
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -78,7 +71,4 @@ tests:
 
   </script>
 </body>
-
 ```
-
-</section>

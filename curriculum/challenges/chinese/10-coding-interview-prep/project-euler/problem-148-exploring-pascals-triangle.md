@@ -1,55 +1,94 @@
 ---
 id: 5900f4021000cf542c50ff14
+title: 问题148：探索帕斯卡的三角形
 challengeType: 5
 videoUrl: ''
-title: 问题148：探索帕斯卡的三角形
+dashedName: problem-148-exploring-pascals-triangle
 ---
 
-## Description
-<section id="description">我们可以很容易地验证Pascal三角形的前七行中的所有条目都不能被7整除： <p> 1 </p><p> 1 </p><p> 1 </p><p> 1 </p><p> 2 </p><p> 1 </p><p> 1 </p><p> 3 </p><p> 3 </p><p> 1 </p><p> 1 </p><p> 4 </p><p> 6 </p><p> 4 </p><p> 1 </p><p> 1 </p><p>五</p><p> 10 </p><p> 10 </p><p>五</p><p> 1 1 </p><p> 6 </p><p> 15 </p><p> 20 </p><p> 15 </p><p> 6 </p><p> 1然而，如果我们检查前100行，我们会发现5050个条目中只有2361个不能被7整除。 </p><p>找到Pascal三角形的前十亿（109）行中不能被7整除的条目数。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+我们可以很容易地验证Pascal三角形的前七行中的所有条目都不能被7整除：
 
-## Tests
-<section id='tests'>
+1
 
-```yml
-tests:
-  - text: <code>euler148()</code>应该返回2129970655314432。
-    testString: assert.strictEqual(euler148(), 2129970655314432);
+1
 
+1
+
+1
+
+2
+
+1
+
+1
+
+3
+
+3
+
+1
+
+1
+
+4
+
+6
+
+4
+
+1
+
+1
+
+五
+
+10
+
+10
+
+五
+
+1 1
+
+6
+
+15
+
+20
+
+15
+
+6
+
+1然而，如果我们检查前100行，我们会发现5050个条目中只有2361个不能被7整除。
+
+找到Pascal三角形的前十亿（109）行中不能被7整除的条目数。
+
+# --hints--
+
+`euler148()`应该返回2129970655314432。
+
+```js
+assert.strictEqual(euler148(), 2129970655314432);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler148() {
-  // Good luck!
+
   return true;
 }
 
 euler148();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

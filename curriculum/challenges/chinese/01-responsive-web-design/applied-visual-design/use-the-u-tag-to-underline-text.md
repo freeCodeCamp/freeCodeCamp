@@ -1,41 +1,39 @@
 ---
 id: 587d781a367417b2b2512ab8
+title: 使用 u 标签给文本添加下划线
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6aQCL'
 forumTopicId: 301082
-title: 使用 u 标签给文本添加下划线
+dashedName: use-the-u-tag-to-underline-text
 ---
 
-## Description
-<section id='description'>
-术语：Underline => u => 下划线。
-你可以使用 <code>u</code> 标签来给文字添加下划线。添加了 <code>u</code> 标签后，浏览器会自动给元素应用 <code>text-decoration: underline;</code>。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-给 “理工博士” 添加 <code>u</code> 标签，不要给整个 class 为 <code>cardText</code> 的父 <code>div</code> 添加。
-<strong>注意：</strong>锚点默认给文本添加下划线，如果 <code>u</code> 标签的下划线和页面的锚点混淆，请避免使用它。
-</section>
+你可以使用 `u` 标签来给文字添加下划线。下划线通常用来表示重要内容或需要记忆的内容。添加了 `u` 标签后，浏览器会自动给元素添加这段样式：`text-decoration: underline;`。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 你应该有一个 <code>u</code> 标签。
-    testString: assert($('u').length === 1);
-  - text: <code>u</code> 标签应该包围 “理工博士”。
-    testString: assert($('u').text() === '理工博士');
+给 "Ph.D. students" 添加 `u` 标签。
 
+**注意：**HTML 的 `<a>` 标签默认也会给文本添加下划线。如果使用 `u` 标签添加下划线会造成与 `<a>` 标签混淆，则应避免使用 `u` 标签。
+
+# --hints--
+
+应添加一个 `u` 标签。
+
+```js
+assert($('u').length === 1);
 ```
 
-</section>
+`u` 标签的内容文本应为 `Ph.D. students`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('u').text() === 'Ph.D. students');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -68,28 +66,55 @@ tests:
   <div class="cardContent">
     <div class="cardText">
       <h4>Google</h4>
-      <p>Google 由在<strong>斯坦福大学</strong>攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>
+      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at <strong>Stanford University</strong>.</p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
     </div>
   </div>
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
+<style>
+  h4 {
+    text-align: center;
+    height: 25px;
+  }
+  p {
+    text-align: justify;
+  }
+  .links {
+    text-align: left;
+    color: black;
+  }
+  .fullCard {
+    width: 245px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+  }
+  .cardContent {
+    padding: 10px;
+  }
+  .cardText {
+    margin-bottom: 30px;
+  }
+</style>
+<div class="fullCard">
+  <div class="cardContent">
+    <div class="cardText">
+      <h4>Google</h4>
+      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p>
+    </div>
+    <div class="cardLinks">
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
+  </div>
+</div>
 ```
-
-</section>
-              

@@ -1,41 +1,34 @@
 ---
 id: bad87fee1348bd9aecb08826
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 使用 jQuery 修改整个页面
 challengeType: 6
 forumTopicId: 18361
-title: 使用 jQuery 修改整个页面
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: use-jquery-to-modify-the-entire-page
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 jQuery 的学习到这里就告一段落了，现在我们来试一试让元素消失的特效。
-jQuery 也能选取<code>body</code>标签。
-后面的代码效果是使整个<code>body</code>标签淡出：<code> $("body").addClass("animated fadeOut");</code>
-接下来我们做一些更有戏剧性的事：给<code>body</code>标签添加<code>animated</code>和<code>hinge</code>类。
-</section>
 
-## Instructions
-<section id='instructions'>
+jQuery 也能选取`body`标签。
 
-</section>
+后面的代码效果是使整个`body`标签淡出：`$("body").addClass("animated fadeOut");`
 
-## Tests
-<section id='tests'>
+接下来我们做一些更有戏剧性的事：给`body`标签添加`animated`和`hinge`类。
 
-```yml
-tests:
-  - text: 给<code>body</code>标签添加<code>animated</code>和<code>hinge</code>类。
-    testString: assert($('body').hasClass('animated') && $('body').hasClass('hinge'));
+# --hints--
 
+给`body`标签添加`animated`和`hinge`类。
+
+```js
+assert($('body').hasClass('animated') && $('body').hasClass('hinge'));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <script>
@@ -54,7 +47,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -79,14 +72,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -105,7 +91,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -129,6 +115,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>
-

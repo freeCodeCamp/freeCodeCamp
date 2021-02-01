@@ -24,8 +24,8 @@
   border: 10px solid var(--yellow-gold);
 }
 
-.avatar-container .green-border {
-  border: 10px solid var(--green-mid);
+.avatar-container .blue-border {
+  border: 10px solid var(--blue-mid);
 }
 
 .avatar-container .purple-border {

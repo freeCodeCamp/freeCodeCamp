@@ -1,38 +1,56 @@
 ---
 id: 587d7b7d367417b2b2512b1e
+title: 使用 Object.keys() 生成由对象的所有属性组成的数组
 challengeType: 1
 forumTopicId: 301160
-title: 使用 Object.Keys() 生成对象所有键组成的数组
+dashedName: generate-an-array-of-all-object-keys-with-object-keys
 ---
 
-## Description
-<section id='description'>
-我们还可以输入一个对象作为参数来调用<code>Object.keys()</code>方法，使其生成一个包含对象中所有键的数组。这会返回一个由对象中所有键的名称（字符串）组成的数组。再次说明，这个数组中的项的顺序是不确定的。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-请你完成<code>getArrayOfUsers</code>函数，使其返回一个包含输入的对象的所有属性的数组。
-</section>
+我们可以给 `Object.keys()` 方法传入一个对象作为参数，这会返回一个由对象中所有属性（字符串）组成的数组。需要注意的是，数组中元素的顺序是不确定的。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>users</code>对象应该只包含<code>Alan</code>、<code>Jeff</code>、<code>Sarah</code>和<code>Ryan</code>这 4 个键
-    testString: assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4);
-  - text: <code>getArrayOfUsers</code>函数应该返回一个包含<code>users</code>对象中所有键的数组
-    testString: assert((function() { users.Sam = {}; users.Lewis = {}; let R = getArrayOfUsers(users); return (R.indexOf('Alan') !== -1 && R.indexOf('Jeff') !== -1 && R.indexOf('Sarah') !== -1 && R.indexOf('Ryan') !== -1 && R.indexOf('Sam') !== -1 && R.indexOf('Lewis') !== -1); })() === true);
+请完成 `getArrayOfUsers` 函数的实现，使其返回一个由输入对象中的所有属性所组成的数组。
 
+# --hints--
+
+`users` 对象应该只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 这 4 个属性。
+
+```js
+assert(
+  'Alan' in users &&
+    'Jeff' in users &&
+    'Sarah' in users &&
+    'Ryan' in users &&
+    Object.keys(users).length === 4
+);
 ```
 
-</section>
+`getArrayOfUsers` 函数应返回一个包含 `users` 对象中所有属性的数组。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    users.Sam = {};
+    users.Lewis = {};
+    let R = getArrayOfUsers(users);
+    return (
+      R.indexOf('Alan') !== -1 &&
+      R.indexOf('Jeff') !== -1 &&
+      R.indexOf('Sarah') !== -1 &&
+      R.indexOf('Ryan') !== -1 &&
+      R.indexOf('Sam') !== -1 &&
+      R.indexOf('Lewis') !== -1
+    );
+  })() === true
+);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 let users = {
@@ -55,22 +73,15 @@ let users = {
 };
 
 function getArrayOfUsers(obj) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(getArrayOfUsers(users));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let users = {
@@ -98,5 +109,3 @@ function getArrayOfUsers(obj) {
 
 console.log(getArrayOfUsers(users));
 ```
-
-</section>

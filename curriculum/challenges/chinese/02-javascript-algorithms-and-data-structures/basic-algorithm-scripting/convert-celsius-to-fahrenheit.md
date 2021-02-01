@@ -1,43 +1,58 @@
 ---
 id: 56533eb9ac21ba0edf2244b3
+title: 将摄氏度转换为华氏度
 challengeType: 1
-videoUrl: ''
-title: 将摄氏温度转换为华氏温度
+forumTopicId: 16806
+dashedName: convert-celsius-to-fahrenheit
 ---
 
-## Description
-<section id="description">从摄氏温度转换为华氏温度的算法是以摄氏度乘以<code>9/5</code>，再加上<code>32</code> 。您将获得一个参数<code>celsius</code>代表着摄氏温度。使用已准备好代表华氏温度的变量<code>fahrenheit</code>，将<code>celsius</code>摄氏温度变量值兑换成华氏温度值，然后存储在<code>farenheit</code>变量里。使用以上提到的算法将摄氏温度转换为华氏温度。不需要过多担心函数和返回语句，因为它们将会在未来的挑战中加以解释。目前，只需使用您已经学过的运算符。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+将摄氏度转换为华氏度的计算方式为：摄氏度乘以 `9/5` 然后加上 `32`。
 
-## Tests
-<section id='tests'>
+输入参数 `celsius` 代表一个摄氏度的温度。请根据上述转换公式，将已定义好的 `fahrenheit` 变量赋值为相应的华氏度的温度值。
 
-```yml
-tests:
-  - text: <code>convertToF(0)</code>应该返回一个数字
-    testString: assert(typeof convertToF(0) === 'number');
-  - text: <code>convertToF(-30)</code>应该返回值<code>-22</code>
-    testString: assert(convertToF(-30) === -22);
-  - text: <code>convertToF(-10)</code>应该返回值<code>14</code>
-    testString: assert(convertToF(-10) === 14);
-  - text: <code>convertToF(0)</code>应返回值<code>32</code>
-    testString: assert(convertToF(0) === 32);
-  - text: <code>convertToF(20)</code>应返回值<code>68</code>
-    testString: assert(convertToF(20) === 68);
-  - text: <code>convertToF(30)</code>应返回值<code>86</code>
-    testString: assert(convertToF(30) === 86);
+# --hints--
 
+`convertToF(0)` 应返回一个数字。
+
+```js
+assert(typeof convertToF(0) === 'number');
 ```
 
-</section>
+`convertToF(-30)` 应返回 `-22`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(convertToF(-30) === -22);
+```
 
-<div id='js-seed'>
+`convertToF(-10)` 应返回 `14`。
+
+```js
+assert(convertToF(-10) === 14);
+```
+
+`convertToF(0)` 应返回 `32`。
+
+```js
+assert(convertToF(0) === 32);
+```
+
+`convertToF(20)` 应返回 `68`。
+
+```js
+assert(convertToF(20) === 68);
+```
+
+`convertToF(30)` 应返回 `86`。
+
+```js
+assert(convertToF(30) === 86);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function convertToF(celsius) {
@@ -46,17 +61,9 @@ function convertToF(celsius) {
 }
 
 convertToF(30);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function convertToF(celsius) {
@@ -67,5 +74,3 @@ function convertToF(celsius) {
 
 convertToF(30);
 ```
-
-/section>

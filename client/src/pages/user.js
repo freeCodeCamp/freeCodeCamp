@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
+import { withPrefix } from 'gatsby';
 
 import RedirectHome from '../components/RedirectHome';
 import ShowUser from '../client-only-routes/ShowUser';
@@ -7,7 +8,7 @@ import ShowUser from '../client-only-routes/ShowUser';
 function User() {
   return (
     <Router>
-      <ShowUser path='/user/:username/report-user' />
+      <ShowUser path={withPrefix('/user/:username/report-user')} />
       <RedirectHome default={true} />
     </Router>
   );

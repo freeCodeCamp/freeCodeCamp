@@ -1,45 +1,48 @@
 ---
 id: bad87fee1348bd9aed508826
+title: 使用 jQuery 克隆元素
 challengeType: 6
 forumTopicId: 16780
-title: 使用 jQuery 克隆元素
+dashedName: clone-an-element-using-jquery
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 除了移动标签，也可以把元素从一个地方复制到另一地方。
-jQuery 有一个<code>clone()</code>方法，可以复制标签。
-例如，如果想把<code>target2</code>从<code>left-well</code>复制到<code>right-well</code>，可以设置如下：
-<code>$("#target2").clone().appendTo("#right-well");</code>
-你是否注意到这两个 jQuery 方法连在一起了吗？这被称为<code>链式调用（function chaining）</code>，是一种用 jQuery 实现效果的简便方法。
-克隆<code>target5</code>标签并附加到<code>left-well</code>。
-</section>
 
-## Instructions
-<section id='instructions'>
+jQuery 有一个`clone()`方法，可以复制标签。
 
-</section>
+例如，如果想把`target2`从`left-well`复制到`right-well`，可以设置如下：
 
-## Tests
-<section id='tests'>
+`$("#target2").clone().appendTo("#right-well");`
 
-```yml
-tests:
-  - text: <code>target5</code>标签应该在<code>right-well</code>内。
-    testString: assert($("#right-well").children("#target5").length > 0);
-  - text: 克隆<code>target5</code>标签并放在<code>left-well</code>内。
-    testString: assert($("#left-well").children("#target5").length > 0);
-  - text: 仅用 jQuery 移动这些标签。
-    testString: assert(!code.match(/class.*animated/g));
+你是否注意到这两个 jQuery 方法连在一起了吗？这被称为`链式调用（function chaining）`，是一种用 jQuery 实现效果的简便方法。
 
+克隆`target5`标签并附加到`left-well`。
+
+# --hints--
+
+`target5`标签应该在`right-well`内。
+
+```js
+assert($('#right-well').children('#target5').length > 0);
 ```
 
-</section>
+克隆`target5`标签并放在`left-well`内。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#left-well').children('#target5').length > 0);
+```
 
-<div id='html-seed'>
+仅用 jQuery 移动这些标签。
+
+```js
+assert(!code.match(/class.*animated/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -52,7 +55,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -77,14 +80,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -97,7 +93,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -121,5 +117,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

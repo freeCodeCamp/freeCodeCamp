@@ -1,56 +1,59 @@
 ---
 id: 587d7791367417b2b2512ab3
+title: 使用 text-align 属性创建视觉平衡
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
-title: 使用 text-align 属性创建视觉平衡
+dashedName: create-visual-balance-using-the-text-align-property
 ---
 
-## Description
-<section id='description'>
-这部分课程主要关于应用视觉设计。开始的挑战展示了一些核心的原则，代码基于一个指定的卡片布局。
-web 内容大部分都是文本。CSS 里面的 <code>text-align</code> 属性可以控制文本的对齐方式。
-<code>text-align: justify;</code> 可以让除最后一行之外的文字两端对齐，即每行的左右两端都紧贴行的边缘。
-<code>text-align: center;</code> 可以让文本居中对齐。
-<code>text-align: right;</code> 可以让文本右对齐。
-<code>text-align: left;</code> 是 <code>text-align</code> 的默认值，它可以让文本左对齐。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-居中对齐 <code>h4</code> 标签文本，文本内容为 “Google”。两端对齐段落标签文本，文本介绍了 Google 的创立。
-</section>
+这部分课程的主题是应用视觉设计。开始的挑战基于美化一个卡片组件的外观，借此展示了若干核心原则。
 
-## Tests
-<section id='tests'>
+web 内容大部分都是文本。CSS 里面的 `text-align` 属性可以控制文本的对齐方式。
 
-```yml
-tests:
-  - text: '你应该在 <code>h4</code> 标签上使用 text-align 属性设置文本居中对齐。'
-    testString: assert($('h4').css('text-align') == 'center');
-  - text: '你应该在 <code>p</code> 标签上使用 text-align 属性设置文本两端对齐。'
-    testString: assert($('p').css('text-align') == 'justify');
+`text-align: justify;` 可以让除最后一行之外的文字两端对齐，即每行的左右两端都紧贴行的边缘。
 
+`text-align: center;` 可以让文本居中对齐。
+
+`text-align: right;` 可以让文本右对齐。
+
+`text-align: left;` 是 `text-align` 的默认值，它可以让文本左对齐。
+
+# --instructions--
+
+请让内容文本为 `"Google"` 的 `h4` 标签居中对齐；让介绍了 Google 创立历程的段落文本两端对齐。
+
+# --hints--
+
+应在 `h4` 标签上使用 text-align 属性设置文本居中对齐。
+
+```js
+assert($('h4').css('text-align') == 'center');
 ```
 
-</section>
+应在 `p` 标签上使用 text-align 属性设置文本两端对齐。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('p').css('text-align') == 'justify');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
   h4 {
-    
+
   }
   p {
-    
+
   }
   .links {
     margin-right: 20px;
-    
+
   }
   .fullCard {
     border: 1px solid #ccc;
@@ -66,28 +69,50 @@ tests:
   <div class="cardContent">
     <div class="cardText">
       <h4>Google</h4>
-      <p>Google 由在斯坦福大学攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>
+      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
     </div>
   </div>
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<style>
+  h4 {
+    text-align: center;
+  }
+  p {
+    text-align: justify;
+  }
+  .links {
+    margin-right: 20px;
 
-</section>
-              
+  }
+  .fullCard {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+  }
+  .cardContent {
+    padding: 10px;
+  }
+</style>
+<div class="fullCard">
+  <div class="cardContent">
+    <div class="cardText">
+      <h4>Google</h4>
+      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>
+    </div>
+    <div class="cardLinks">
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
+  </div>
+</div>
+```

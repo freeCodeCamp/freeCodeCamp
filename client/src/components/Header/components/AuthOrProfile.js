@@ -7,6 +7,7 @@ import {
   AvatarRenderer
 } from '../../helpers';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import Login from '../components/Login';
 
@@ -17,6 +18,7 @@ const propTypes = {
 };
 
 export function AuthOrProfile({ user, pathName, pending }) {
+  const { t } = useTranslation();
   const isUserDonating = user && user.isDonating;
   const isUserSignedIn = user && user.username;
   const isTopContributor =
@@ -31,30 +33,22 @@ export function AuthOrProfile({ user, pathName, pending }) {
       </div>
     );
   } else if (pathName === '/' || !isUserSignedIn) {
-    return <Login data-test-label='landing-small-cta'>Sign In</Login>;
+    return (
+      <Login data-test-label='landing-small-cta'>{t('buttons.sign-in')}</Login>
+    );
   } else {
     return (
       <>
-        <li>
-          <Link className='nav-link' to='/learn'>
-            Curriculum
-          </Link>
-        </li>
-        <li>
-          <Link className='nav-link' to={`/${user.username}`}>
-            Profile
-          </Link>
-          <Link
-            className={`avatar-nav-link ${badgeColorClass}`}
-            to={`/${user.username}`}
-          >
-            <AvatarRenderer
-              picture={user.picture}
-              size='sm'
-              userName={user.username}
-            />
-          </Link>
-        </li>
+        <Link
+          className={`avatar-nav-link ${badgeColorClass}`}
+          to={`/${user.username}`}
+        >
+          <AvatarRenderer
+            picture={user.picture}
+            size='sm'
+            userName={user.username}
+          />
+        </Link>
       </>
     );
   }

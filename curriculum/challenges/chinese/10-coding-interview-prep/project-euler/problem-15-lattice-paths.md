@@ -1,59 +1,60 @@
 ---
 id: 5900f37b1000cf542c50fe8e
+title: 问题15：格子路径
 challengeType: 5
 videoUrl: ''
-title: 问题15：格子路径
+dashedName: problem-15-lattice-paths
 ---
 
-## Description
-<section id="description">从2×2网格的左上角开始，只能向右和向下移动，右下角有6条路线。 <img class="img-responsive center-block" alt="6 2乘2网格的图表显示了右下角的所有路线" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif"><p>通过给定的<code>gridSize</code>有多少这样的路由？ </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+从2×2网格的左上角开始，只能向右和向下移动，右下角有6条路线。 ![6 2乘2网格的图表显示了右下角的所有路线](https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif)
 
-## Tests
-<section id='tests'>
+通过给定的`gridSize`有多少这样的路由？
 
-```yml
-tests:
-  - text: <code>latticePaths(4)</code>应该返回70。
-    testString: assert.strictEqual(latticePaths(4), 70);
-  - text: <code>latticePaths(9)</code>应该返回48620。
-    testString: assert.strictEqual(latticePaths(9), 48620);
-  - text: <code>latticePaths(20)</code>应该返回137846528820。
-    testString: assert.strictEqual(latticePaths(20), 137846528820);
+# --hints--
 
+`latticePaths(4)`应该返回70。
+
+```js
+assert.strictEqual(latticePaths(4), 70);
 ```
 
-</section>
+`latticePaths(9)`应该返回48620。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(latticePaths(9), 48620);
+```
 
-<div id='js-seed'>
+`latticePaths(20)`应该返回137846528820。
+
+```js
+assert.strictEqual(latticePaths(20), 137846528820);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function latticePaths(gridSize) {
-  // Good luck!
+
   return true;
 }
 
 latticePaths(4);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function latticePaths(gridSize) {
+  let paths = 1;
 
-/section>
+  for (let i = 0; i < gridSize; i++) {
+    paths *= (2 * gridSize) - i;
+    paths /= i + 1;
+  }
+  return paths;
+}
+```

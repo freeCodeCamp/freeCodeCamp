@@ -2,33 +2,29 @@
 id: 5d822fd413a79914d39e9902
 title: Part 58
 challengeType: 0
+dashedName: part-58
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Finally, on the `border-bottom` property of `bb2a`, change the `1vw` to `5vh` and change the `#000` color to your `--building-color2` variable. There you go, now it looks good! At any time throughout this project, you can comment out or remove the `border` property you added to everything at the beginning to see what the buildings will look like when that gets removed at the end.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-bottom\s*:\s*5vh\s+solid\s+var\(\s*--building-color2\s*\)\s*(;|})/g.test(bb2a));
-
+```js
+const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /border-bottom\s*:\s*5vh\s+solid\s+var\(\s*--building-color2\s*\)\s*(;|})/g.test(
+    bb2a
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -219,12 +215,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -414,5 +405,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

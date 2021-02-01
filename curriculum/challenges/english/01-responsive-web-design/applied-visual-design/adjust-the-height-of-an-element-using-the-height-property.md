@@ -4,11 +4,12 @@ title: Adjust the Height of an Element Using the height Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
+dashedName: adjust-the-height-of-an-element-using-the-height-property
 ---
 
-## Description
-<section id='description'>
-You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:
+# --description--
+
+You can specify the height of an element using the `height` property in CSS, similar to the `width` property. Here's an example that changes the height of an image to 20px:
 
 ```css
 img {
@@ -16,30 +17,27 @@ img {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px.
-<strong>Note:</strong> You may need to be at 100% zoom to pass the test on this challenge.
-</section>
+Add a `height` property to the `h4` tag and set it to 25px.
 
-## Tests
-<section id='tests'>
+**Note:** You may need to be at 100% zoom to pass the test on this challenge.
 
-```yml
-tests:
-  - text: Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.
-    testString: assert(Math.round(document.querySelector('h4').getBoundingClientRect().height) === 25 && /h4{\S*height:25px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
+# --hints--
 
+Your code should change the `h4` `height` property to a value of 25 pixels.
+
+```js
+assert(
+  Math.round(document.querySelector('h4').getBoundingClientRect().height) ===
+    25 &&
+    /h4{\S*height:25px(;\S*}|})/.test($('style').text().replace(/\s/g, ''))
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -79,14 +77,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -125,5 +116,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

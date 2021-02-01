@@ -2,33 +2,26 @@
 id: 5f3ef6e0eaa7da26e3d34d78
 title: Part 55
 challengeType: 0
+dashedName: part-55
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can give your menu some space between the content and the sides with various `padding` properties.
 
 Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -85,10 +78,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -122,6 +111,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

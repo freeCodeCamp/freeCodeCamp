@@ -1,40 +1,47 @@
 ---
 id: 5a9d72ad424fe3d0e10cad16
+title: 使用媒体查询更改变量
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
-title: 使用媒体查询更改变量
+dashedName: use-a-media-query-to-change-a-variable
 ---
 
-## Description
-<section id='description'>
-CSS 变量可以简化媒体查询的方式。
-例如，当屏幕小于或大于媒体查询所设置的值，通过改变变量的值，那么应用了变量的元素样式都会得到响应修改。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-在<code>media query（媒体查询）</code>声明的<code>:root</code>选择器里，重定义<code>--penguin-size</code>的值为 200px，且重定义<code>--penguin-skin</code>的值为<code>black</code>，然后通过缩放页面来查看是否生效。
-</section>
+CSS 变量可以简化媒体查询的定义方式。
 
-## Tests
-<section id='tests'>
+例如，当屏幕小于或大于媒体查询所设置的值，只要我们更新变量的值，那么使用了此变量的元素样式就都会更改。
 
-```yml
-tests:
-  - text: '<code>:root</code>中的<code>--penguin-size</code>值应为<code>200px</code>。'
-    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi));
-  - text: '<code>:root</code>中的<code>--penguin-skin</code>值应为<code>black</code>。'
-    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi));
+# --instructions--
 
+在 `media query`（媒体查询）声明的 `:root` 选择器里，重定义 `--penguin-size` 的值为 200px，且重定义 `--penguin-skin` 的值为 `black`，然后通过缩放页面来查看它们是否生效。
+
+# --hints--
+
+`:root` 中的 `--penguin-size` 值应为 `200px`。
+
+```js
+assert(
+  code.match(
+    /media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+`:root` 中的 `--penguin-skin` 值应为 `black`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi
+  )
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -44,17 +51,15 @@ tests:
     --penguin-belly: white;
     --penguin-beak: orange;
   }
-  
+
   @media (max-width: 350px) {
     :root {
-      
-      /* add code below */
-      
-      /* add code above */
-      
+      /* Only change code below this line */
+
+      /* Only change code above this line */
     }
   }
-  
+
   .penguin {
     position: relative;
     margin: auto;
@@ -63,7 +68,7 @@ tests:
     width: var(--penguin-size, 300px);
     height: var(--penguin-size, 300px);
   }
-  
+
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -72,7 +77,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -81,7 +86,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .belly {
     top: 60%;
     left: 2.5%;
@@ -90,7 +95,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-  
+
   .penguin-top {
     top: 10%;
     left: 25%;
@@ -99,7 +104,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
@@ -108,7 +113,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-  
+
   .right-hand {
     top: 5%;
     left: 25%;
@@ -124,7 +129,7 @@ tests:
     transform-origin:0% 0%;
     animation-timing-function: linear;
   }
-  
+
   @keyframes wave {
       10% {
         transform: rotate(110deg);
@@ -134,12 +139,12 @@ tests:
       }
       30% {
         transform: rotate(110deg);
-      } 
+      }
       40% {
         transform: rotate(130deg);
-      }  
+      }
     }
-  
+
   .left-hand {
     top: 0%;
     left: 75%;
@@ -150,7 +155,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-  
+
   .right-feet {
     top: 85%;
     left: 60%;
@@ -161,7 +166,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-  
+
   .left-feet {
     top: 85%;
     left: 25%;
@@ -172,7 +177,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-  
+
   .right-eye {
     top: 45%;
     left: 60%;
@@ -181,7 +186,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .left-eye {
     top: 45%;
     left: 25%;
@@ -190,7 +195,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .sparkle {
     top: 25%;
     left:-23%;
@@ -199,7 +204,7 @@ tests:
     height: 100%;
     border-radius: 50%;
   }
-  
+
   .blush-right {
     top: 65%;
     left: 15%;
@@ -208,7 +213,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .blush-left {
     top: 65%;
     left: 70%;
@@ -217,7 +222,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-top {
     top: 60%;
     left: 40%;
@@ -226,7 +231,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -235,11 +240,11 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   body {
     background:#c6faf1;
   }
-  
+
   .penguin * {
     position: absolute;
   }
@@ -269,19 +274,8 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}</style>
 ```
-
-</section>
-              

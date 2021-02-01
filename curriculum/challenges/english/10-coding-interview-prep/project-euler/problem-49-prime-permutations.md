@@ -1,12 +1,12 @@
 ---
 id: 5900f39d1000cf542c50feb0
-challengeType: 5
 title: 'Problem 49: Prime permutations'
+challengeType: 5
 forumTopicId: 302159
+dashedName: problem-49-prime-permutations
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways: (i) each of the three terms are prime, and, (ii) each of the 4-digit numbers are permutations of one another.
 
@@ -14,31 +14,23 @@ There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, ex
 
 What 12-digit number do you form by concatenating the three terms in this sequence?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`primePermutations()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>primePermutations()</code> should return a number.
-    testString: assert(typeof primePermutations() === 'number');
-  - text: <code>primePermutations()</code> should return 296962999629.
-    testString: assert.strictEqual(primePermutations(), 296962999629);
-
+```js
+assert(typeof primePermutations() === 'number');
 ```
 
-</section>
+`primePermutations()` should return 296962999629.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(primePermutations(), 296962999629);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function primePermutations() {
@@ -49,15 +41,7 @@ function primePermutations() {
 primePermutations();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function primePermutations() {
@@ -107,5 +91,3 @@ function primePermutations() {
   return 0;
 }
 ```
-
-</section>

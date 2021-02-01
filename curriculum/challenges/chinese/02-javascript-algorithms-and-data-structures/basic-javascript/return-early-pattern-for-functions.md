@@ -1,15 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244c4
+title: 函数执行到 return 语句就结束
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
-title: 函数执行到 return 语句就结束
+dashedName: return-early-pattern-for-functions
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 当代码执行到 return 语句时，函数返回一个结果就结束运行了，return 后面的语句不会执行。
-<strong>示例</strong>
+
+**示例**
 
 ```js
 function myFun() {
@@ -20,41 +22,56 @@ function myFun() {
 myFun();
 ```
 
-上面的代码输出"Hello"到控制台、返回 "World"，但没有输出<code>"byebye"</code>，因为函数遇到 return 语句就退出了。
-</section>
+上面的代码输出"Hello"到控制台、返回 "World"，但没有输出`"byebye"`，因为函数遇到 return 语句就退出了。
 
-## Instructions
-<section id='instructions'>
-修改函数<code>abTest</code>当<code>a</code>或<code>b</code>小于0时，函数立即返回一个<code>undefined</code>并退出。
-<strong>提示</strong><br>记住<a href='/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables' target='_blank'><code>undefined</code> 是一个关键字</a>，而不是一个字符串。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+修改函数`abTest`当`a`或`b`小于0时，函数立即返回一个`undefined`并退出。
 
-```yml
-tests:
-  - text: <code>abTest(2,2)</code> 应该返回一个数字。
-    testString: assert(typeof abTest(2,2) === 'number' );
-  - text: <code>abTest(2,2)</code> 应该返回 <code>8</code>。
-    testString: assert(abTest(2,2) === 8 );
-  - text: <code>abTest(-2,2)</code> 应该返回 <code>undefined</code>。
-    testString: assert(abTest(-2,2) === undefined );
-  - text: <code>abTest(2,-2)</code> 应该返回 <code>undefined</code>。
-    testString: assert(abTest(2,-2) === undefined );
-  - text: <code>abTest(2,8)</code> 应该返回 <code>18</code>。
-    testString: assert(abTest(2,8) === 18 );
-  - text: <code>abTest(3,3)</code> 应该返回 <code>12</code>。
-    testString: assert(abTest(3,3) === 12 );
+**提示**  
+记住[`undefined` 是一个关键字](/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables)，而不是一个字符串。
 
+# --hints--
+
+`abTest(2,2)` 应该返回一个数字。
+
+```js
+assert(typeof abTest(2, 2) === 'number');
 ```
 
-</section>
+`abTest(2,2)` 应该返回 `8`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(abTest(2, 2) === 8);
+```
 
-<div id='js-seed'>
+`abTest(-2,2)` 应该返回 `undefined`。
+
+```js
+assert(abTest(-2, 2) === undefined);
+```
+
+`abTest(2,-2)` 应该返回 `undefined`。
+
+```js
+assert(abTest(2, -2) === undefined);
+```
+
+`abTest(2,8)` 应该返回 `18`。
+
+```js
+assert(abTest(2, 8) === 18);
+```
+
+`abTest(3,3)` 应该返回 `12`。
+
+```js
+assert(abTest(3, 3) === 12);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -68,19 +85,10 @@ function abTest(a, b) {
   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
 }
 
-// Change values below to test your code
 abTest(2,2);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function abTest(a, b) {
@@ -90,5 +98,3 @@ function abTest(a, b) {
   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
 }
 ```
-
-</section>

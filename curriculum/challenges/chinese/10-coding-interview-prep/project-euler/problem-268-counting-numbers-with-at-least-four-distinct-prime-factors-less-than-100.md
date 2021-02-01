@@ -1,55 +1,41 @@
 ---
 id: 5900f4791000cf542c50ff8b
+title: 问题268：计算至少有四个不同素因子小于100的数字
 challengeType: 5
 videoUrl: ''
-title: 问题268：计算至少有四个不同素因子小于100的数字
+dashedName: >-
+  problem-268-counting-numbers-with-at-least-four-distinct-prime-factors-less-than-100
 ---
 
-## Description
-<section id="description">可以证实，有23个小于1000的正整数可被至少四个小于100的不同质数整除。 <p>找出少于1016的正整数可被至少四个小于100的不同质数整除。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+可以证实，有23个小于1000的正整数可被至少四个小于100的不同质数整除。
 
-## Tests
-<section id='tests'>
+找出少于1016的正整数可被至少四个小于100的不同质数整除。
 
-```yml
-tests:
-  - text: <code>euler268()</code>应该返回785478606870985。
-    testString: assert.strictEqual(euler268(), 785478606870985);
+# --hints--
 
+`euler268()`应该返回785478606870985。
+
+```js
+assert.strictEqual(euler268(), 785478606870985);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler268() {
-  // Good luck!
+
   return true;
 }
 
 euler268();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

@@ -2,33 +2,24 @@
 id: 5d822fd413a79914d39e990d
 title: Part 69
 challengeType: 0
+dashedName: part-69
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest four new `div` elements within `bb4c`, give them all the class of `bb4-window`. These will be windows for this building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".bb4c").children("div.bb4-window").length === 4);
-
+```js
+assert($('.bb4c').children('div.bb4-window').length === 4);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -250,12 +241,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -481,5 +467,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

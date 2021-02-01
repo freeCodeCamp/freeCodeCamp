@@ -2,33 +2,24 @@
 id: 5d822fd413a79914d39e9925
 title: Part 92
 challengeType: 0
+dashedName: part-92
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest three new `div` elements in the first `fb3a` element. Give them each a class of `fb3-window`. These will be windows for this section.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".fb3 div.fb3a:first-child").children("div.fb3-window").length === 3);
-
+```js
+assert($('.fb3 div.fb3a:first-child').children('div.fb3-window').length === 3);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -341,12 +332,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -662,5 +648,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

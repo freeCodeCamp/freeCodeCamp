@@ -1,15 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244c9
+title: 通过变量访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnQyKur'
 forumTopicId: 16165
-title: 通过变量访问对象属性
+dashedName: accessing-object-properties-with-variables
 ---
 
-## Description
-<section id='description'>
-中括号操作符的另一个使用方式是访问赋值给变量的属性。当你需要遍历对象的属性列表或访问查找表（lookup tables）时，这种方式极为有用。
-这有一个使用变量来访问属性的例子：
+# --description--
+
+方括号表示法的另一个用途就是访问一个存储在变量中的值所对应的属性值。当你需要遍历对象的所有属性，或者根据一个变量的值查找对应的属性值时，这种写法尤其适用。
+
+以下是一个使用变量来访问属性的例子：
 
 ```js
 var dogs = {
@@ -20,7 +22,7 @@ var myBreed = dogs[myDog];
 console.log(myBreed); // "Doberman"
 ```
 
-使用此概念的另一种方法是在程序执行期间动态收集属性名称，如下所示：
+使用此写法的另一种场景是程序执行期间所动态获取的属性名称，如下所示：
 
 ```js
 var someObj = {
@@ -30,44 +32,63 @@ function propPrefix(str) {
   var s = "prop";
   return s + str;
 }
-var someProp = propPrefix("Name"); // someProp now holds the value 'propName'
+var someProp = propPrefix("Name"); // someProp 的值现在是 'propName'
 console.log(someObj[someProp]); // "John"
 ```
 
-提示：当我们通过变量名访问属性的时候，不需要给变量名包裹引号。因为实际上我们使用的是变量的值，而不是变量的名称。
-</section>
+注意，当我们通过变量名访问属性时，不需要给变量名包裹引号。因为我们实际需要获取的是变量的值，而不是变量的名称。
 
-## Instructions
-<section id='instructions'>
-使用变量<code>playerNumber</code>，通过中括号操作符找到<code>testObj</code>中<code>playerNumber</code>为<code>16</code>的值。然后把名字赋给变量<code>player</code>。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+首先，请将 `playerNumber` 的值设置为 `16`。然后通过 `playerNumber` 变量，使用方括号表示法获取 `testObj` 中 `16` 的属性值，然后把这个属性值赋给变量 `player`。
 
-```yml
-tests:
-  - text: <code>playerNumber</code>应该是一个数字。
-    testString: assert(typeof playerNumber === 'number');
-  - text: 变量<code>player</code>应该是一个字符串。
-    testString: assert(typeof player === 'string');
-  - text: <code>player</code>点值应该是 "Montana"。
-    testString: assert(player === 'Montana');
-  - text: 你应该使用中括号访问<code>testObj</code>。
-    testString: assert(/testObj\s*?\[.*?\]/.test(code));
-  - text: 你不应该直接将<code>Montana</code>赋给<code>player</code>。
-    testString: assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
-  - text: 你应该在中括号中使用<code>playerNumber</code>变量。
-    testString: assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+# --hints--
 
+`playerNumber` 应为一个数字。
+
+```js
+assert(typeof playerNumber === 'number');
 ```
 
-</section>
+`player` 应为一个字符串。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof player === 'string');
+```
 
-<div id='js-seed'>
+`player` 的值应为 "Montana"。
+
+```js
+assert(player === 'Montana');
+```
+
+应使用方括号表示法访问 `testObj`。
+
+```js
+assert(/testObj\s*?\[.*?\]/.test(code));
+```
+
+不应直接将 `Montana` 赋值给 `player`。
+
+```js
+assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
+```
+
+应在中括号里使用 `playerNumber` 变量。
+
+```js
+assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof player !== "undefined"){(function(v){return v;})(player);}
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -77,29 +98,13 @@ var testObj = {
   19: "Unitas"
 };
 
-// Only change code below this line;
+// Only change code below this line
 
-var playerNumber;       // Change this Line
-var player = testObj;   // Change this Line
+var playerNumber;       // Change this line
+var player = testObj;   // Change this line
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-if(typeof player !== "undefined"){(function(v){return v;})(player);}
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var testObj = {
@@ -110,5 +115,3 @@ var testObj = {
 var playerNumber = 16;
 var player = testObj[playerNumber];
 ```
-
-</section>

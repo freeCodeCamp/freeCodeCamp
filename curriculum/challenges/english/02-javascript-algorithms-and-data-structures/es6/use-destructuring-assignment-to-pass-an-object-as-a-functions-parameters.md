@@ -3,11 +3,13 @@ id: 587d7b8a367417b2b2512b4d
 title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 challengeType: 1
 forumTopicId: 301217
+dashedName: use-destructuring-assignment-to-pass-an-object-as-a-functions-parameters
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In some cases, you can destructure the object in a function argument itself.
+
 Consider the code below:
 
 ```js
@@ -25,36 +27,41 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 }
 ```
 
-When <code>profileData</code> is passed to the above function, the values are destructured from the function parameter for use within the function.
-</section>
+When `profileData` is passed to the above function, the values are destructured from the function parameter for use within the function.
 
-## Instructions
-<section id='instructions'>
-Use destructuring assignment within the argument to the function <code>half</code> to send only <code>max</code> and <code>min</code> inside the function.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Use destructuring assignment within the argument to the function `half` to send only `max` and `min` inside the function.
 
-```yml
-tests:
-  - text: <code>stats</code> should be an <code>object</code>.
-    testString: assert(typeof stats === 'object');
-  - text: <code>half(stats)</code> should be <code>28.015</code>
-    testString: assert(half(stats) === 28.015);
-  - text: Destructuring should be used.
-    testString: assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
-  - text: Destructured parameter should be used.
-    testString: assert(!code.match(/stats\.max|stats\.min/));
+# --hints--
 
+`stats` should be an `object`.
+
+```js
+assert(typeof stats === 'object');
 ```
 
-</section>
+`half(stats)` should be `28.015`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(half(stats) === 28.015);
+```
 
-<div id='js-seed'>
+Destructuring should be used.
+
+```js
+assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
+```
+
+Destructured parameter should be used.
+
+```js
+assert(!code.match(/stats\.max|stats\.min/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 const stats = {
@@ -69,17 +76,9 @@ const stats = {
 // Only change code below this line
 const half = (stats) => (stats.max + stats.min) / 2.0; 
 // Only change code above this line
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const stats = {
@@ -93,5 +92,3 @@ const stats = {
 
 const half = ( {max, min} ) => (max + min) / 2.0;
 ```
-
-</section>

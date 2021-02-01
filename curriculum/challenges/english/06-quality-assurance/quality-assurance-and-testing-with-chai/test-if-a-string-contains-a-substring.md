@@ -3,46 +3,72 @@ id: 587d824d367417b2b2512c53
 title: Test if a String Contains a Substring
 challengeType: 2
 forumTopicId: 301597
+dashedName: test-if-a-string-contains-a-substring
 ---
 
-## Description
-<section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+# --description--
 
-<code>include()</code> and <code>notInclude()</code> work for strings too!
-<code>include()</code> asserts that the actual string contains the expected substring.
-</section>
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-## Instructions
-<section id='instructions'>
-Use <code>assert.include()</code> or <code>assert.notInclude()</code> to make the tests pass.
+`include()` and `notInclude()` work for strings too! `include()` asserts that the actual string contains the expected substring.
 
+# --instructions--
 
-</section>
+Within `tests/1_unit-tests.js` under the test labelled `#14` in the `Strings` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: All tests should pass.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - include vs. notInclude.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[0].method, 'include', '\'Arrow\' contains \'row\'...'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - include vs. notInclude.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[1].method, 'notInclude', '... a \'dart\' doesn\'t contain a \'queue\''); }, xhr => { throw new Error(xhr.responseText); })
+All tests should pass.
 
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+You should choose the correct method for the first assertion - `include` vs. `notInclude`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(
+    (data) => {
+      assert.equal(
+        data.assertions[0].method,
+        'include',
+        "'Arrow' contains 'row'..."
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-</section>
+You should choose the correct method for the second assertion - `include` vs. `notInclude`.
 
-## Solution
-<section id='solution'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'notInclude',
+        "... a 'dart' doesn't contain a 'queue'"
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
 
 ```js
 /**
@@ -51,5 +77,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

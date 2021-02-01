@@ -1,62 +1,70 @@
 ---
 id: 598de241872ef8353c58a7a2
+title: 评估二项式系数
 challengeType: 5
 videoUrl: ''
-title: 评估二项式系数
+dashedName: evaluate-binomial-coefficients
 ---
 
-## Description
-<section id="description"><p>写一个函数来计算给定n和k值的二项式系数。 </p><p>推荐这个公式： </p> $ \ binom {n} {k} = \ frac {n！} {（nk）！k！} = \ frac {n（n-1）（n-2）\ ldots（n-k + 1）} { k（k-1）（k-2）\ ldots 1} $ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+<p>写一个函数来计算给定n和k值的二项式系数。 </p><p>推荐这个公式： </p> $ \\ binom {n} {k} = \\ frac {n！} {（nk）！k！} = \\ frac {n（n-1）（n-2）\\ ldots（n-k + 1）} { k（k-1）（k-2）\\ ldots 1} $
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>binom</code>是一个功能。
-    testString: assert(typeof binom === 'function');
-  - text: '<code>binom(5,3)</code>应该返回10。'
-    testString: assert.equal(binom(5, 3), 10);
-  - text: '<code>binom(7,2)</code>应该返回21。'
-    testString: assert.equal(binom(7, 2), 21);
-  - text: '<code>binom(10,4)</code>应该返回210。'
-    testString: assert.equal(binom(10, 4), 210);
-  - text: '<code>binom(6,1)</code>应该返回6。'
-    testString: assert.equal(binom(6, 1), 6);
-  - text: '<code>binom(12,8)</code>应该返回495。'
-    testString: assert.equal(binom(12, 8), 495);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`binom`是一个功能。
 
 ```js
-function binom (n, k) {
-  // Good luck!
+assert(typeof binom === 'function');
+```
+
+`binom(5,3)`应该返回10。
+
+```js
+assert.equal(binom(5, 3), 10);
+```
+
+`binom(7,2)`应该返回21。
+
+```js
+assert.equal(binom(7, 2), 21);
+```
+
+`binom(10,4)`应该返回210。
+
+```js
+assert.equal(binom(10, 4), 210);
+```
+
+`binom(6,1)`应该返回6。
+
+```js
+assert.equal(binom(6, 1), 6);
+```
+
+`binom(12,8)`应该返回495。
+
+```js
+assert.equal(binom(12, 8), 495);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function binom(n, k) {
+
 }
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
+function binom(n, k) {
+  let coeff = 1;
+  for (let i = n - k + 1; i <= n; i++) coeff *= i;
+  for (let i = 1; i <= k; i++) coeff /= i;
+  return coeff;
+}
 ```
-
-/section>

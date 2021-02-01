@@ -2,33 +2,29 @@
 id: 5d822fd413a79914d39e9932
 title: Part 104
 challengeType: 0
+dashedName: part-104
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 On to the next building! It's the green one in the foreground. Give it a `repeating-linear-gradient` with your building color from `0%` to `5%` and `transparent` from `5%` to `10%`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*5%\s*,\s*transparent\s*5%\s*,\s*transparent\s*10%\s*\)\s*(;|})/g.test(fb5));
-
+```js
+const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*5%\s*,\s*transparent\s*5%\s*,\s*transparent\s*10%\s*\)\s*(;|})/g.test(
+    fb5
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -381,12 +377,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -744,5 +735,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

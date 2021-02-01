@@ -2,10 +2,10 @@
 id: 5d822fd413a79914d39e98f6
 title: Part 46
 challengeType: 0
+dashedName: part-46
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can specify where you want a gradient transition to complete by adding it to the color like this:
 
@@ -18,27 +18,23 @@ gradient-type(
 ```
 
 Here, it will transition from `color1` to `color2` between `0%` and `20%` of the element and then transition to `color3` for the rest. Add `80%` to the `--building-color1` color of the `bb1d` gradient so you can see it in action.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*linear-gradient\(\s*orange\s*,\s*var\(\s*--building-color1\s*\)\s*80%\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1d));
-
+```js
+const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*linear-gradient\(\s*orange\s*,\s*var\(\s*--building-color1\s*\)\s*80%\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(
+    bb1d
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -210,12 +206,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -386,5 +377,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -1,14 +1,16 @@
 ---
 id: 587d7b7e367417b2b2512b21
+title: 使用多个三元运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJBT4'
 forumTopicId: 301179
-title: 使用多个三元运算符
+dashedName: use-multiple-conditional-ternary-operators
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 在之前的挑战中，你使用了一个条件运算符。你也可以将多个运算符串联在一起以检查多种条件。
+
 下面的函数使用 if，else if 和 else 语句来检查多个条件：
 
 ```js
@@ -43,35 +45,39 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 在 checkSign 函数中使用多个条件运算符来检查数字是正数 ("positive")、负数 ("negative") 或零 ("zero")。
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>checkSign</code>应该使用多个条件运算符。
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));'
-  - text: <code>checkSign(10)</code>应该返回 "positive" 注意，结果对大小写敏感。
-    testString: assert(checkSign(10) === 'positive');
-  - text: <code>checkSign(-12)</code>应该返回 "negative" 注意，结果对大小写敏感。
-    testString: assert(checkSign(-12) === 'negative');
-  - text: <code>checkSign(0)</code>应该返回 "zero" 注意，结果对大小写敏感。
-    testString: assert(checkSign(0) === 'zero');
+`checkSign`应该使用多个条件运算符。
 
+```js
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
 ```
 
-</section>
+`checkSign(10)`应该返回 "positive" 注意，结果对大小写敏感。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(checkSign(10) === 'positive');
+```
 
-<div id='js-seed'>
+`checkSign(-12)`应该返回 "negative" 注意，结果对大小写敏感。
+
+```js
+assert(checkSign(-12) === 'negative');
+```
+
+`checkSign(0)`应该返回 "zero" 注意，结果对大小写敏感。
+
+```js
+assert(checkSign(0) === 'zero');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function checkSign(num) {
@@ -81,19 +87,10 @@ function checkSign(num) {
 checkSign(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function checkSign(num) {
   return (num > 0) ? 'positive' : (num < 0) ? 'negative' : 'zero';
 }
 ```
-
-</section>

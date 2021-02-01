@@ -1,10 +1,17 @@
 import React, { Component, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import format from 'date-fns/format';
-import { find, reverse, sortBy } from 'lodash';
-import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
+import { reverse, sortBy } from 'lodash';
+import {
+  Button,
+  Modal,
+  Table,
+  DropdownButton,
+  MenuItem
+} from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
+import { withTranslation } from 'react-i18next';
 
+import './timeline.css';
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow, Link } from '../../helpers';
 import SolutionViewer from '../../SolutionViewer/SolutionViewer';
@@ -13,7 +20,14 @@ import {
   getPathFromID,
   getTitleFromId
 } from '../../../../../utils';
+
+import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
+
+import { langCodes } from '../../../../i18n/allLangs';
+import { clientLocale } from '../../../../config/env';
+
+const localeCode = langCodes[clientLocale];
 
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;
@@ -33,6 +47,7 @@ const propTypes = {
       )
     })
   ),
+  t: PropTypes.func.isRequired,
   username: PropTypes.string
 };
 
@@ -66,7 +81,9 @@ class TimelineInner extends Component {
     this.state = {
       solutionToView: null,
       solutionOpen: false,
-      pageNo: 1
+      pageNo: 1,
+      solution: null,
+      files: null
     };
 
     this.closeSolution = this.closeSolution.bind(this);
@@ -76,11 +93,74 @@ class TimelineInner extends Component {
     this.prevPage = this.prevPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
     this.lastPage = this.lastPage.bind(this);
+    this.renderViewButton = this.renderViewButton.bind(this);
+  }
+
+  renderViewButton(id, files, githubLink, solution) {
+    const { t } = this.props;
+    if (files && files.length) {
+      return (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          id={`btn-for-${id}`}
+          onClick={() => this.viewSolution(id, solution, files)}
+        >
+          {t('buttons.show-code')}
+        </Button>
+      );
+    } else if (githubLink) {
+      return (
+        <div className='solutions-dropdown'>
+          <DropdownButton
+            block={true}
+            bsStyle='primary'
+            className='btn-invert'
+            id={`dropdown-for-${id}`}
+            title='View'
+          >
+            <MenuItem
+              bsStyle='primary'
+              href={solution}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              {t('buttons.frontend')}
+            </MenuItem>
+            <MenuItem
+              bsStyle='primary'
+              href={githubLink}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              {t('buttons.backend')}
+            </MenuItem>
+          </DropdownButton>
+        </div>
+      );
+    } else if (maybeUrlRE.test(solution)) {
+      return (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          href={solution}
+          id={`btn-for-${id}`}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          {t('buttons.view')}
+        </Button>
+      );
+    } else {
+      return null;
+    }
   }
 
   renderCompletion(completed) {
     const { idToNameMap, username } = this.props;
-    const { id } = completed;
+    const { id, files, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
@@ -99,19 +179,26 @@ class TimelineInner extends Component {
             <Link to={challengePath}>{challengeTitle}</Link>
           )}
         </td>
+        <td>{this.renderViewButton(id, files, githubLink, solution)}</td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
-            {format(completedDate, 'MMMM d, y')}
+            {completedDate.toLocaleString([localeCode, 'en-US'], {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })}
           </time>
         </td>
       </tr>
     );
   }
-  viewSolution(id) {
+  viewSolution(id, solution, files) {
     this.setState(state => ({
       ...state,
       solutionToView: id,
-      solutionOpen: true
+      solutionOpen: true,
+      solution,
+      files
     }));
   }
 
@@ -119,7 +206,9 @@ class TimelineInner extends Component {
     this.setState(state => ({
       ...state,
       solutionToView: null,
-      solutionOpen: false
+      solutionOpen: false,
+      solution: null,
+      files: null
     }));
   }
 
@@ -150,6 +239,7 @@ class TimelineInner extends Component {
       idToNameMap,
       username,
       sortedTimeline,
+      t,
       totalPages = 1
     } = this.props;
     const { solutionToView: id, solutionOpen, pageNo = 1 } = this.state;
@@ -158,18 +248,19 @@ class TimelineInner extends Component {
 
     return (
       <FullWidthRow>
-        <h2 className='text-center'>Timeline</h2>
+        <h2 className='text-center'>{t('profile.timeline')}</h2>
         {completedMap.length === 0 ? (
           <p className='text-center'>
-            No challenges have been completed yet.&nbsp;
-            <Link to='/learn'>Get started here.</Link>
+            {t('profile.none-completed')}&nbsp;
+            <Link to='/learn'>{t('profile.get-started')}</Link>
           </p>
         ) : (
           <Table condensed={true} striped={true}>
             <thead>
               <tr>
-                <th>Challenge</th>
-                <th className='text-center'>Completed</th>
+                <th>{t('profile.challenge')}</th>
+                <th>{t('settings.labels.solution')}</th>
+                <th className='text-center'>{t('profile.completed')}</th>
               </tr>
             </thead>
             <tbody>
@@ -194,14 +285,12 @@ class TimelineInner extends Component {
             </Modal.Header>
             <Modal.Body>
               <SolutionViewer
-                solution={find(
-                  completedMap,
-                  ({ id: completedId }) => completedId === id
-                )}
+                files={this.state.files}
+                solution={this.state.solution}
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.closeSolution}>Close</Button>
+              <Button onClick={this.closeSolution}>{t('buttons.close')}</Button>
             </Modal.Footer>
           </Modal>
         )}
@@ -280,4 +369,4 @@ Timeline.propTypes = propTypes;
 
 Timeline.displayName = 'Timeline';
 
-export default Timeline;
+export default withTranslation()(Timeline);

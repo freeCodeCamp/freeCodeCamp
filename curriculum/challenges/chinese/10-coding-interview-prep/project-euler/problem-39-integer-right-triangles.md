@@ -1,61 +1,81 @@
 ---
 id: 5900f3931000cf542c50fea6
+title: 问题39：整数直角三角形
 challengeType: 5
 videoUrl: ''
-title: 问题39：整数直角三角形
+dashedName: problem-39-integer-right-triangles
 ---
 
-## Description
-<section id="description">如果p是具有整数长度边的直角三角形的周长{a，b，c}，则对于p = 120，恰好有三个解。{20,48,52}，{24,45,51}，{ 30,40,50}对于p≤n的值，最大化解的数量是多少？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+如果p是具有整数长度边的直角三角形的周长{a，b，c}，则对于p = 120，恰好有三个解。{20,48,52}，{24,45,51}，{ 30,40,50}对于p≤n的值，最大化解的数量是多少？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>intRightTriangles(500)</code>应该返回420。
-    testString: assert(intRightTriangles(500) == 420);
-  - text: <code>intRightTriangles(800)</code>应该返回420。
-    testString: assert(intRightTriangles(800) == 720);
-  - text: <code>intRightTriangles(900)</code>应该返回840。
-    testString: assert(intRightTriangles(900) == 840);
-  - text: <code>intRightTriangles(1000)</code>应该返回840。
-    testString: assert(intRightTriangles(1000) == 840);
+`intRightTriangles(500)`应该返回420。
 
+```js
+assert(intRightTriangles(500) == 420);
 ```
 
-</section>
+`intRightTriangles(800)`应该返回420。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(intRightTriangles(800) == 720);
+```
 
-<div id='js-seed'>
+`intRightTriangles(900)`应该返回840。
+
+```js
+assert(intRightTriangles(900) == 840);
+```
+
+`intRightTriangles(1000)`应该返回840。
+
+```js
+assert(intRightTriangles(1000) == 840);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function intRightTriangles(n) {
-  // Good luck!
+
   return n;
 }
 
-intRightTriangles(1000);
-
+intRightTriangles(500);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+// Original idea for this solution came from
+// https://www.xarg.org/puzzle/project-euler/problem-39/
 
-/section>
+function intRightTriangles(n) {
+  // store the number of triangles with a given perimeter
+  let triangles = {};
+  // a is the shortest side
+  for (let a = 3; a < n / 3; a++)
+  // o is the opposite side and is at least as long as a
+    for (let o = a; o < n / 2; o++) {
+      let h = Math.sqrt(a * a + o * o); // hypotenuse
+      let p = a + o + h;  // perimeter
+      if ((h % 1) === 0 && p <= n) {
+        triangles[p] = (triangles[p] || 0) + 1;
+      }
+    }
+
+  let max = 0, maxp = null;
+  for (let p in triangles) {
+    if (max < triangles[p]) {
+      max = triangles[p];
+      maxp = parseInt(p);
+    }
+  }
+  return maxp;
+}
+```

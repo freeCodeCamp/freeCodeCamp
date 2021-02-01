@@ -1,55 +1,40 @@
 ---
 id: 5900f4e11000cf542c50fff3
+title: 问题372：光线笔
 challengeType: 5
 videoUrl: ''
-title: 问题372：光线笔
+dashedName: problem-372-pencils-of-rays
 ---
 
-## Description
-<section id="description">令R（M，N）为满足M的格点（x，y）的数量<p>注意：代表楼层功能。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+令R（M，N）为满足M的格点（x，y）的数量
 
-## Tests
-<section id='tests'>
+注意：代表楼层功能。
 
-```yml
-tests:
-  - text: <code>euler372()</code>应该返回301450082318807040。
-    testString: assert.strictEqual(euler372(), 301450082318807040);
+# --hints--
 
+`euler372()`应该返回301450082318807040。
+
+```js
+assert.strictEqual(euler372(), 301450082318807040);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler372() {
-  // Good luck!
+
   return true;
 }
 
 euler372();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

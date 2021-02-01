@@ -1,70 +1,80 @@
 ---
 id: 5a23c84252665b21eecc7eb1
+title: 身份矩阵
 challengeType: 5
 videoUrl: ''
-title: 身份矩阵
+dashedName: identity-matrix
 ---
 
-## Description
-<section id="description"> <i>单位矩阵</i>是大小为\（n \次n \）的方阵，其中对角元素都是<b>1</b> s（1），所有其他元素都是<b>0</b> s（零）。 \ begin {bmatrix} 1＆0＆0 \ cr 0＆1＆0 \ cr 0＆0＆1 \ cr \ end {bmatrix}编写一个以数字&#39;n&#39;作为参数并返回单位矩阵的函数订单nx n。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+*单位矩阵*是大小为\\（n \\次n \\）的方阵，其中对角元素都是**1** s（1），所有其他元素都是**0** s（零）。 \\ begin {bmatrix} 1＆0＆0 \\ cr 0＆1＆0 \\ cr 0＆0＆1 \\ cr \\ end {bmatrix}编写一个以数字'n'作为参数并返回单位矩阵的函数订单nx n。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>idMatrix</code>应该是一个功能。
-    testString: assert(typeof idMatrix=='function');
-  - text: <code>idMatrix(1)</code>应该返回一个数组。
-    testString: assert(Array.isArray(idMatrix(1)));
-  - text: '<code>idMatrix(1)</code>应返回<code>&quot;+JSON.stringify(results[0])+&quot;</code> 。'
-    testString: assert.deepEqual(idMatrix(1),results[0]);
-  - text: '<code>idMatrix(2)</code>应返回<code>&quot;+JSON.stringify(results[1])+&quot;</code> 。'
-    testString: assert.deepEqual(idMatrix(2),results[1]);
-  - text: '<code>idMatrix(3)</code>应返回<code>&quot;+JSON.stringify(results[2])+&quot;</code> 。'
-    testString: assert.deepEqual(idMatrix(3),results[2]);
-  - text: '<code>idMatrix(4)</code>应返回<code>&quot;+JSON.stringify(results[3])+&quot;</code> 。'
-    testString: assert.deepEqual(idMatrix(4),results[3]);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`idMatrix`应该是一个功能。
 
 ```js
-function idMatrix (n) {
-  // Good luck!
+assert(typeof idMatrix == 'function');
+```
+
+`idMatrix(1)`应该返回一个数组。
+
+```js
+assert(Array.isArray(idMatrix(1)));
+```
+
+`idMatrix(1)`应返回`"+JSON.stringify(results[0])+"` 。
+
+```js
+assert.deepEqual(idMatrix(1), results[0]);
+```
+
+`idMatrix(2)`应返回`"+JSON.stringify(results[1])+"` 。
+
+```js
+assert.deepEqual(idMatrix(2), results[1]);
+```
+
+`idMatrix(3)`应返回`"+JSON.stringify(results[2])+"` 。
+
+```js
+assert.deepEqual(idMatrix(3), results[2]);
+```
+
+`idMatrix(4)`应返回`"+JSON.stringify(results[3])+"` 。
+
+```js
+assert.deepEqual(idMatrix(4), results[3]);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+let results=[[ [ 1 ] ],
+[ [ 1, 0 ], [ 0, 1 ] ],
+[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ],
+[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]]
+```
+
+## --seed-contents--
+
+```js
+function idMatrix(n) {
+
 }
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+# --solutions--
 
 ```js
-console.info('after the test');
+function idMatrix(n) {
+    return Array.apply(null, new Array(n)).map(function (x, i, xs) {
+        return xs.map(function (_, k) {
+            return i === k ? 1 : 0;
+        })
+    });
+}
 ```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

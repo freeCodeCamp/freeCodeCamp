@@ -1,3 +1,4 @@
 import createRedirect from './createRedirect';
+import { withPrefix } from 'gatsby';
 
-export default createRedirect('/');
+export default createRedirect(withPrefix('/'));

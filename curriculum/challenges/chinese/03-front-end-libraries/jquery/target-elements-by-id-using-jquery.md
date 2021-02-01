@@ -1,47 +1,53 @@
 ---
 id: bad87fee1348bd9aeda08826
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 使用 jQuery 配合 id 选择器选择元素
 challengeType: 6
 forumTopicId: 18317
-title: 使用 jQuery 配合 id 选择器选择元素
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: target-elements-by-id-using-jquery
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 你也能通过 id 属性选取标签。
-首先，用<code>$("#target3")</code>选择器选取 id 为<code>target3</code>的<code>button</code>标签。
-注意，和 CSS 属性一样，在 id 名前需要添加<code>#</code>。
-然后，用 jQuery 的<code>.addClass()</code>方法添加<code>animated</code>和<code>fadeOut</code>类。
-下面的代码的效果是使 id 为<code>target6</code>的<code>button</code>标签淡出：
-<code>$("#target6").addClass("animated fadeOut")</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+首先，用`$("#target3")`选择器选取 id 为`target3`的`button`标签。
 
-</section>
+注意，和 CSS 属性一样，在 id 名前需要添加`#`。
 
-## Tests
-<section id='tests'>
+然后，用 jQuery 的`.addClass()`方法添加`animated`和`fadeOut`类。
 
-```yml
-tests:
-  - text: 用 jQuery 的<code>addClass&#40&#41</code>方法给<code>id</code>为<code>target3</code>的<code>button</code>标签添加<code>animated</code>类。
-    testString: assert($("#target3").hasClass("animated"));
-  - text: 用 jQuery 的<code>addClass&#40&#41</code>方法给<code>id</code>为<code>target3</code>的标签的类添加<code>fadeOut</code>类。
-    testString: assert(($("#target3").hasClass("fadeOut") || $("#target3").hasClass("fadeout"))  && code.match(/\$\(\s*.#target3.\s*\)/g));
-  - text: 仅用 jQuery 给标签设置类。
-    testString: assert(!code.match(/class.*animated/g));
+下面的代码的效果是使 id 为`target6`的`button`标签淡出：
 
+`$("#target6").addClass("animated fadeOut")`.
+
+# --hints--
+
+用 jQuery 的`addClass()`方法给`id`为`target3`的`button`标签添加`animated`类。
+
+```js
+assert($('#target3').hasClass('animated'));
 ```
 
-</section>
+用 jQuery 的`addClass()`方法给`id`为`target3`的标签的类添加`fadeOut`类。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  ($('#target3').hasClass('fadeOut') || $('#target3').hasClass('fadeout')) &&
+    code.match(/\$\(\s*.#target3.\s*\)/g)
+);
+```
 
-<div id='html-seed'>
+仅用 jQuery 给标签设置类。
+
+```js
+assert(!code.match(/class.*animated/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -52,7 +58,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -77,14 +83,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -95,7 +94,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -119,5 +118,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

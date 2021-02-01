@@ -2,33 +2,24 @@
 id: 5d822fd413a79914d39e9910
 title: Part 72
 challengeType: 0
+dashedName: part-72
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add the new `window-wrap` class to the `bb4c` element.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".bb4c.window-wrap").length === 1);
-
+```js
+assert($('.bb4c.window-wrap').length === 1);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -267,12 +258,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -510,5 +496,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

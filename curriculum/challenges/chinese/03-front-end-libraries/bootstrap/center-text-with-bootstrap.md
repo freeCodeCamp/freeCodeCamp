@@ -1,40 +1,36 @@
 ---
 id: bad87fee1348bd8acde08812
+title: 用 Bootstrap 居中文本
 challengeType: 0
 forumTopicId: 16771
-title: 用 Bootstrap 居中文本
+dashedName: center-text-with-bootstrap
 ---
 
-## Description
-<section id='description'>
-我们可以使用 Bootstrap 将顶部的元素居中来美化页面。只需要将 <code>h2</code> 元素的 class 属性设置为 <code>text-center</code> 就可以实现。
+# --description--
+
+我们可以使用 Bootstrap 将顶部的元素居中来美化页面。只需要将 `h2` 元素的 class 属性设置为 `text-center` 就可以实现。
+
 记住：我们通过空格分隔不同的 class 可以为一个元素添加多个 class ，就像这样：
-<code>&#60h2 class="red-text text-center"&#62your text&#60/h2&#62</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`<h2 class="red-text text-center">your text</h2>`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+你的 `h2` 元素应该居中且有一个 class 为 `text-center`
 
-```yml
-tests:
-  - text: 你的 <code>h2</code> 元素应该居中且有一个 class 为 <code>text-center</code>
-    testString: assert($("h2").hasClass("text-center"));
-  - text: 你的 <code>h2</code> 元素应该还有另一个 class 为 <code>red-text</code>
-    testString: assert($("h2").hasClass("red-text"));
-
+```js
+assert($('h2').hasClass('text-center'));
 ```
 
-</section>
+你的 `h2` 元素应该还有另一个 class 为 `red-text`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').hasClass('red-text'));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -96,14 +92,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -153,7 +142,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -164,5 +153,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

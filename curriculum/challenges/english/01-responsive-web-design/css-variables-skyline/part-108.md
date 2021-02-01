@@ -2,33 +2,29 @@
 id: 5d822fd413a79914d39e9935
 title: Part 108
 challengeType: 0
+dashedName: part-108
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add another repeating gradient to this building; make it the same as the one you just added, except don't add the `90deg` direction and use your window color instead of the two `transparent` colors.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*30%\s*\)\s*(;|})/g.test(fb6));
-
+```js
+const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*30%\s*\)\s*(;|})/g.test(
+    fb6
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -400,12 +396,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -782,5 +773,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

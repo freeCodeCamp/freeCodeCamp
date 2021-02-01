@@ -2,33 +2,27 @@
 id: 5d822fd413a79914d39e98f8
 title: Part 48
 challengeType: 0
+dashedName: part-48
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest two new `div` elements within `bb2`, give them the classes of `bb2a` and `bb2b`, in that order. These will be two sections for this building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2 = $(".bb2").children("div"); assert(bb2.length === 2 && bb2[0] === $(".bb2a")[0] && bb2[1] === $(".bb2b")[0]);
-
+```js
+const bb2 = $('.bb2').children('div');
+assert(
+  bb2.length === 2 && bb2[0] === $('.bb2a')[0] && bb2[1] === $('.bb2b')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -199,12 +193,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -377,5 +366,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

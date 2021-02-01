@@ -2,31 +2,24 @@
 id: 5f76967fad478126d6552b0d
 title: Part 35
 challengeType: 0
+dashedName: part-35
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, you want to align the price to the right. Add a class named `price` to your `p` element that has `3.00` as its text.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -48,9 +41,9 @@ tests:
           <h2>Coffees</h2>
           <article>
             <p class="flavor">French Vanilla</p>
-            --fcc-editable-region--
+--fcc-editable-region--
             <p>3.00</p>
-            --fcc-editable-region--
+--fcc-editable-region--
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -75,10 +68,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -100,6 +89,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

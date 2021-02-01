@@ -8,9 +8,11 @@ import {
   FormGroup,
   Image
 } from '@freecodecamp/react-bootstrap';
+import { withTranslation } from 'react-i18next';
 
 const propTypes = {
   getValidationState: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   theme: PropTypes.string
 };
 
@@ -70,12 +72,13 @@ class StripeCardForm extends Component {
   }
 
   render() {
+    const { t } = this.props;
     // set color based on theme
     style.base.color = this.props.theme === 'night' ? '#fff' : '#0a0a23';
     return (
       <div className='donation-elements'>
         <FormGroup>
-          <ControlLabel>Your Card Number:</ControlLabel>
+          <ControlLabel>{t('donate.card-number')}</ControlLabel>
           <CardNumberElement
             className='form-control donate-input-element'
             onChange={this.handleInputChange}
@@ -83,7 +86,7 @@ class StripeCardForm extends Component {
           />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Expiration Date:</ControlLabel>
+          <ControlLabel>{t('donate.expiration')}</ControlLabel>
           <Row>
             <Col md={5} xs={12}>
               <CardExpiryElement
@@ -112,4 +115,4 @@ class StripeCardForm extends Component {
 StripeCardForm.displayName = 'StripeCardForm';
 StripeCardForm.propTypes = propTypes;
 
-export default StripeCardForm;
+export default withTranslation()(StripeCardForm);

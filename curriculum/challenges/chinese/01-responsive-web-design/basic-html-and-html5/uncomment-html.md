@@ -1,45 +1,53 @@
 ---
 id: bad87fee1348bd9aedf08802
+title: 去除 HTML 的注释
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBmG9T7'
 forumTopicId: 18329
-title: 去除 HTML 的注释
+dashedName: uncomment-html
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 注释的作用是给代码添加一些说明，方便团队合作或日后自己查看，但又不影响代码本身。
+
 注释的另一个用途就是在不删除代码的前提下，让代码不起作用。
-在 HTML 中，注释的开始标记是<code>&#60;!--</code>，结束标记是<code>--&#62;</code>。
-</section>
 
-## Instructions
-<section id='instructions'>
-现在我们反其道而行之，去掉<code>h1</code>元素、<code>h2</code>元素、<code>p</code>元素的注释。
-</section>
+在 HTML 中，注释的开始标签是 `<!--`，结束标签是 `-->`。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '确保网页中能看到<code>h1</code>元素。'
-    testString: assert($("h1").length > 0);
-  - text: '确保网页中能看到<code>h2</code>元素。'
-    testString: assert($("h2").length > 0);
-  - text: '确保网页中能看到<code>p</code>元素。'
-    testString: assert($("p").length > 0);
-  - text: '确保删除了注释的结束标记<code>--&#62;</code>。'
-    testString: assert(!$('*:contains("-->")')[1]);
+现在我们反其道而行之，去掉 `h1` 元素、`h2` 元素、`p` 元素的注释。
 
+# --hints--
+
+页面上应存在 `h1` 元素。
+
+```js
+assert($('h1').length > 0);
 ```
 
-</section>
+页面上应存在 `h2` 元素。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').length > 0);
+```
 
-<div id='html-seed'>
+页面上应存在 `p` 元素。
+
+```js
+assert($('p').length > 0);
+```
+
+应删除注释的结束标签 `-->`。
+
+```js
+assert(!$('*:contains("-->")')[1]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <!--
@@ -51,13 +59,12 @@ tests:
 -->
 ```
 
-</div>
+# --solutions--
 
+```html
+<h1>Hello World</h1>
 
+<h2>CatPhotoApp</h2>
 
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+```

@@ -28,7 +28,7 @@ This is the final release that moves changes to our production platforms on free
 
 #### Testing changes - Integration and User Acceptance Testing.
 
-We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
 We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
@@ -79,16 +79,16 @@ Currently, only members on the developer team can push to the production branche
    git reset --hard upstream/master
    ```
 
-3. Check that the Travis CI is passing on the `master` branch for upstream.
+3. Check that the GitHub CI is passing on the `master` branch for upstream.
 
-   The [continuous integration](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) tests should be green and PASSING for the `master` branch.
+   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `master` branch. Click the green check mark next to the commit hash when viewing the `master` branch code.
 
     <details>
       <summary>
-        Checking status on Travis CI (screenshot)
+        Checking status on GitHub Actions (screenshot)
       </summary>
       <br>
-      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png" alt="Check build status on Travis CI">
+      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/github-actions.png" alt="Check build status on GitHub Actions">
     </details>
 
    If this is failing you should stop and investigate the errors.
@@ -207,7 +207,7 @@ Currently a public beta testing version is available at:
 
 The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site.
 
-You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) for a confirmation.
+You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://chat.freecodecamp.org/contributors) for a confirmation.
 
 ### Known Limitations
 
@@ -225,7 +225,7 @@ There are some known limitations and tradeoffs when using the beta version of th
 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Sign page may look different than production
+- #### Sign in page may look different than production
 
   We use a test tenant for freecodecamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 

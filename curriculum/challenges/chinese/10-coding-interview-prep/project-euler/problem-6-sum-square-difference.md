@@ -1,59 +1,90 @@
 ---
 id: 5900f3721000cf542c50fe85
+title: 问题6：求和方差
 challengeType: 5
 videoUrl: ''
-title: 问题6：求和方差
+dashedName: problem-6-sum-square-difference
 ---
 
-## Description
-<section id="description">前十个自然数的平方和是， <div style="text-align: center;"> 1 <sup>2</sup> + 2 <sup>2</sup> + ... + 10 <sup>2</sup> = 385 </div>前十个自然数之和的平方是， <div style="text-align: center;"> （1 + 2 + ... + 10） <sup>2</sup> = 55 <sup>2</sup> = 3025 </div>因此，前十个自然数的平方和与和的平方之间的差值为3025  -  385 = 2640.求出前<code>n</code>自然数的平方和与总和的平方之间的差值。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+前十个自然数的平方和是，
 
-## Tests
-<section id='tests'>
+1 
 
-```yml
-tests:
-  - text: <code>sumSquareDifference(10)</code>应该返回2640。
-    testString: assert.strictEqual(sumSquareDifference(10), 2640);
-  - text: <code>sumSquareDifference(20)</code>应该返回41230。
-    testString: assert.strictEqual(sumSquareDifference(20), 41230);
-  - text: <code>sumSquareDifference(100)</code>应该返回25164150。
-    testString: assert.strictEqual(sumSquareDifference(100), 25164150);
+<sup>2</sup>
 
+-   2 
+
+<sup>2</sup>
+
+-   ... + 10 
+
+<sup>2</sup>
+
+ = 385
+
+前十个自然数之和的平方是，
+
+（1 + 2 + ... + 10） 
+
+<sup>2</sup>
+
+ = 55 
+
+<sup>2</sup>
+
+ = 3025
+
+因此，前十个自然数的平方和与和的平方之间的差值为3025 - 385 = 2640.求出前`n`自然数的平方和与总和的平方之间的差值。
+
+# --hints--
+
+`sumSquareDifference(10)`应该返回2640。
+
+```js
+assert.strictEqual(sumSquareDifference(10), 2640);
 ```
 
-</section>
+`sumSquareDifference(20)`应该返回41230。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(sumSquareDifference(20), 41230);
+```
 
-<div id='js-seed'>
+`sumSquareDifference(100)`应该返回25164150。
+
+```js
+assert.strictEqual(sumSquareDifference(100), 25164150);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sumSquareDifference(n) {
-  // Good luck!
+
   return true;
 }
 
 sumSquareDifference(100);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+const sumSquareDifference = (number)=>{
+  let squareOfSum = Math.pow(sumOfArithmeticSeries(1,1,number),2);
+  let sumOfSquare = sumOfSquareOfNumbers(number);
+ return squareOfSum - sumOfSquare;
+}
 
-/section>
+function sumOfArithmeticSeries(a,d,n){
+  return (n/2)*(2*a+(n-1)*d);
+}
+
+function sumOfSquareOfNumbers(n){
+ return (n*(n+1)*(2*n+1))/6;
+}
+```

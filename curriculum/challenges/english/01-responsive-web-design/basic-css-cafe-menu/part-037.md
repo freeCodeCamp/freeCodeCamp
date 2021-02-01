@@ -2,33 +2,26 @@
 id: 5f3c866de7a5b784048f94b1
 title: Part 37
 challengeType: 0
+dashedName: part-37
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
+That is kind of what you want, but now it would be nice if the flavor and price were on the same line. `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
 
-To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
+To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements. Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -47,13 +40,13 @@ tests:
       </header>
       <main>
         <section>
-          --fcc-editable-region--
+--fcc-editable-region--
           <h2>Coffees</h2>
           <article>
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -76,10 +69,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -104,9 +93,5 @@ h1, h2, p {
 .price {
   text-align: right;
 }
-
 ```
 
-</div>
-
-</section>

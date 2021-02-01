@@ -2,33 +2,26 @@
 id: 5f459a7ceb8b5c446656d88b
 title: Part 71
 challengeType: 0
+dashedName: part-71
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+Notice the grey color along the edges of the line. Those edges are known as <dfn>borders</dfn>. Each side of an element can have a different color or they can all be the same.
 
 Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,10 +85,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -153,6 +142,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

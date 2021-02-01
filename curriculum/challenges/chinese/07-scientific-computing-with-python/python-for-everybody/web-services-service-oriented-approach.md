@@ -2,29 +2,28 @@
 id: 5e7b9f140b6c005b0e76f07e
 challengeType: 11
 videoId: muerlsCHExI
+dashedName: web-services-service-oriented-approach
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+With a services oriented approach to developing web apps, where is the data located?
 
-```yml
-question:
-  text: |
-    With a services oriented approach to developing web apps, where is the data located?
+## --answers--
 
-  answers:
-    - |
-        Spread across many computer systems connected via the internet or internal network.
-    - |
-        Within different services on the main web server.
-    - |
-        On a separate database server.
-  solution: 1
-```
+Spread across many computer systems connected via the internet or internal network.
 
-</section>
+---
+
+Within different services on the main web server.
+
+---
+
+On a separate database server.
+
+## --video-solution--
+
+1
+

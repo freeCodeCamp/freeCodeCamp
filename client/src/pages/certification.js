@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
+import { withPrefix } from 'gatsby';
 
 import RedirectHome from '../components/RedirectHome';
 import ShowCertification from '../client-only-routes/ShowCertification';
@@ -10,7 +11,9 @@ class Certification extends Component {
   render() {
     return (
       <Router>
-        <ShowCertification path='/certification/:username/:certName' />
+        <ShowCertification
+          path={withPrefix('/certification/:username/:certName')}
+        />
         <RedirectHome default={true} />
       </Router>
     );

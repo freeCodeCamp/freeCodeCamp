@@ -1,63 +1,75 @@
 ---
 id: 5900f3711000cf542c50fe84
+title: 问题5：最小的倍数
 challengeType: 5
 videoUrl: ''
-title: 问题5：最小的倍数
+dashedName: problem-5-smallest-multiple
 ---
 
-## Description
-<section id="description"> 2520是可以除以1到10中的每个数字而没有任何余数的最小数字。从1到<code>n</code>所有数字均可被整除的最小正数是多少？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+2520是可以除以1到10中的每个数字而没有任何余数的最小数字。从1到`n`所有数字均可被整除的最小正数是多少？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>smallestMult(5)</code>应该返回60。
-    testString: assert.strictEqual(smallestMult(5), 60);
-  - text: <code>smallestMult(7)</code>应该返回420。
-    testString: assert.strictEqual(smallestMult(7), 420);
-  - text: <code>smallestMult(10)</code>应返回2520。
-    testString: assert.strictEqual(smallestMult(10), 2520);
-  - text: <code>smallestMult(13)</code>应返回360360。
-    testString: assert.strictEqual(smallestMult(13), 360360);
-  - text: <code>smallestMult(20)</code>应该返回232792560。
-    testString: assert.strictEqual(smallestMult(20), 232792560);
+`smallestMult(5)`应该返回60。
 
+```js
+assert.strictEqual(smallestMult(5), 60);
 ```
 
-</section>
+`smallestMult(7)`应该返回420。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(smallestMult(7), 420);
+```
 
-<div id='js-seed'>
+`smallestMult(10)`应返回2520。
+
+```js
+assert.strictEqual(smallestMult(10), 2520);
+```
+
+`smallestMult(13)`应返回360360。
+
+```js
+assert.strictEqual(smallestMult(13), 360360);
+```
+
+`smallestMult(20)`应该返回232792560。
+
+```js
+assert.strictEqual(smallestMult(20), 232792560);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function smallestMult(n) {
-  // Good luck!
+
   return true;
 }
 
 smallestMult(20);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function smallestMult(n){
+  function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a%b); // Euclidean algorithm
+  }
 
-/section>
+  function lcm(a, b) {
+    return a * b / gcd(a, b);
+  }
+  var result = 1;
+  for(var i = 2; i <= n; i++) {
+    result = lcm(result, i);
+  }
+  return result;
+}
+```

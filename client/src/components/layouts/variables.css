@@ -12,12 +12,12 @@
   --gray-90: #0a0a23;
   --purple-light: #dbb8ff;
   --purple-dark: #5a01a7;
-  --yellow-light: #f1be32;
+  --yellow-light: #ffc300;
   --yellow-dark: #4d3800;
-  --blue-light: #99c9ff;
-  --blue-dark: #002ead;
+  --blue-light: rgb(153, 201, 255);
+  --blue-dark: rgb(0, 46, 173);
   --green-light: #acd157;
-  --green-mid: green;
+  --blue-mid: #198eee;
   --purple-mid: darkviolet;
   --green-dark: #00471b;
   --red-light: #ffadad;

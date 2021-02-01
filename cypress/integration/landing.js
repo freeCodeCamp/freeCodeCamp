@@ -10,7 +10,7 @@ const selectors = {
 const certifications = [
   'Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
-  'Front End Libraries',
+  'Front End Development Libraries',
   'Data Visualization',
   'APIs and Microservices',
   'Quality Assurance',
@@ -23,13 +23,16 @@ const certifications = [
 describe('Landing page', () => {
   it('Should render', () => {
     cy.visit('/');
-    cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
+    cy.title().should(
+      'eq',
+      'Learn to Code — For Free — Coding Courses for Busy People'
+    );
     cy.contains(selectors.callToAction, "Get started (it's free)");
     cy.get(selectors.callToAction).should('have.length', 2);
   });
 
   it('Has visible header and sub-header', () => {
-    cy.contains(selectors.heading, 'Learn to code at home.');
+    cy.contains(selectors.heading, 'Learn to code — for free.');
     cy.contains('Build projects.').should('be.visible');
     cy.contains('Earn certifications.').should('be.visible');
 
@@ -60,7 +63,7 @@ describe('Landing page', () => {
 
     cy.viewport(1199, 660)
       .get(selectors.landingPageImage)
-      .should('not.be.visible');
+      .should('not.exist');
   });
 
   it('Has links to all the certifications', function() {

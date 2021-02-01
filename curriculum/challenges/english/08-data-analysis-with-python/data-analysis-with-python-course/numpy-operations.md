@@ -3,48 +3,48 @@ id: 5e9a093a74c4063ca6f7c155
 title: Numpy Operations
 challengeType: 11
 videoId: eqSVcJbaPdk
+dashedName: numpy-operations
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+-   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
+-   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-</section>
+# --question--
 
-## Tests
+## --text--
 
-<section id='tests'>
+What is the value of `a` after you run the following code?
 
-````yml
-question:
-  text: |
-    What is the value of `a` after you run the following code?
+```py
+a = np.arange(5)
+a + 20
+```
 
-    ```py
-    a = np.arange(5)
-    a + 20
-    ```
+## --answers--
 
-  answers:
-    - |
-      ```python
-      [20, 21, 22, 24, 24]
-      ```
-    - |
-      ```python
-      [0, 1, 2, 3, 4]
-      ```
-    - |
-      ```python
-      [25, 26, 27, 28, 29]
-      ```
-  solution: 2
-````
+```python
+[20, 21, 22, 24, 24]
+```
 
-</section>
+---
+
+```python
+[0, 1, 2, 3, 4]
+```
+
+---
+
+```python
+[25, 26, 27, 28, 29]
+```
+
+## --video-solution--
+
+2
+

@@ -1,14 +1,16 @@
 ---
 id: 587d7db4367417b2b2512b92
+title: 提取匹配项
 challengeType: 1
 forumTopicId: 301340
-title: 提取匹配项
+dashedName: extract-matches
 ---
 
-## Description
-<section id='description'>
-到目前为止，只是检查了一个匹配模式是否存在于字符串中。还可以使用<code>.match()</code>方法来提取找到的实际匹配项。
-可以使用字符串来调用<code>.match()</code>方法，并在括号内传入正则表达式。以下是一个示例：
+# --description--
+
+到目前为止，只是检查了一个匹配模式是否存在于字符串中。还可以使用`.match()`方法来提取找到的实际匹配项。
+
+可以使用字符串来调用`.match()`方法，并在括号内传入正则表达式。以下是一个示例：
 
 ```js
 "Hello, World!".match(/Hello/);
@@ -19,33 +21,33 @@ ourStr.match(ourRegex);
 // Returns ["expressions"]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-利用<code>.match()</code>方法提取单词<code>coding</code>。
-</section>
+利用`.match()`方法提取单词`coding`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>结果</code>应该包含单词<code>coding</code>。
-    testString: assert(result.join() === "coding");
-  - text: 你的正则表达式<code>codingRegex</code>应该搜寻<code>coding</code>。
-    testString: assert(codingRegex.source === "coding");
-  - text: 你应该使用<code>.match()</code>方法。
-    testString: assert(code.match(/\.match\(.*\)/));
+`结果`应该包含单词`coding`。
 
+```js
+assert(result.join() === 'coding');
 ```
 
-</section>
+你的正则表达式`codingRegex`应该搜寻`coding`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(codingRegex.source === 'coding');
+```
 
-<div id='js-seed'>
+你应该使用`.match()`方法。
+
+```js
+assert(code.match(/\.match\(.*\)/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let extractStr = "Extract the word 'coding' from this string.";
@@ -53,19 +55,10 @@ let codingRegex = /change/; // Change this line
 let result = extractStr; // Change this line
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /coding/; // Change this line
 let result = extractStr.match(codingRegex); // Change this line
 ```
-
-</section>

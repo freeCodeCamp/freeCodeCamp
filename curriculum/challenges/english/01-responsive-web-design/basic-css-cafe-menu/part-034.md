@@ -2,31 +2,24 @@
 id: 5f769541be494f25449b292f
 title: Part 34
 challengeType: 0
+dashedName: part-34
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Using your new `flavor` class as a selector, set the `text-align` property's value to `left`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -73,10 +66,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -98,6 +87,3 @@ h1, h2, p {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

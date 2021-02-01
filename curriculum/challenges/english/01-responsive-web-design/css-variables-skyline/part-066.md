@@ -2,33 +2,29 @@
 id: 5d822fd413a79914d39e990a
 title: Part 66
 challengeType: 0
+dashedName: part-66
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Move the `display`, `flex-direction`, and `align-items` properties and values from `bb1` to the new `building-wrap` class.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bWrap = code.match(/\.building-wrap\s*{[\s\S]+?[^}]}/g)[0]; assert(/display\s*:\s*flex\s*(;|})/g.test(bWrap) && /flex-direction\s*:\s*column\s*(;|})/g.test(bWrap) && /align-items\s*:\s*center\s*(;|})/g.test(bWrap));
-
+```js
+const bWrap = code.match(/\.building-wrap\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /display\s*:\s*flex\s*(;|})/g.test(bWrap) &&
+    /flex-direction\s*:\s*column\s*(;|})/g.test(bWrap) &&
+    /align-items\s*:\s*center\s*(;|})/g.test(bWrap)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -250,12 +246,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -475,5 +466,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

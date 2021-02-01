@@ -1,41 +1,44 @@
 ---
 id: bad87fee1348bd9aec908848
+title: 创建 Bootstrap Wells
 challengeType: 0
 forumTopicId: 16825
-title: 创建 Bootstrap Wells
+dashedName: create-bootstrap-wells
 ---
 
-## Description
-<section id='description'>
-Bootstrap 有一个叫做 <code>well</code> 的 class，作用是赋予列一种视觉上的深度感（视觉上的效果）。
-在每一个 class 属性为 <code>col-xs-6</code> 的 <code>div</code> 元素中都嵌入一个带有 <code>well</code> 的 <code>div</code> 元素。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap 有一个叫做 `well` 的 class，作用是赋予列一种视觉上的深度感（视觉上的效果）。
 
-</section>
+在每一个 class 属性为 `col-xs-6` 的 `div` 元素中都嵌入一个带有 `well` 的 `div` 元素。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: "在每一个 class 属性为 <code>'col-xs-6'</code> 的 <code>div</code> 元素中都嵌入一个带有 <code>well</code> 的 <code>div</code> 元素。"
-    testString: assert($("div.col-xs-6").not(":has(>div.well)").length < 1);
-  - text: "将你的两个 class 属性为 <code>'col-xs-6'</code> 的 <code>div</code> 元素都内嵌入一个带有 <code>'row'</code> 的 <code>div</code> 元素中。"
-    testString: assert($("div.row > div.col-xs-6").length > 1);
-  - text: 确保你的 <code>div</code> 元素都有一个闭合标签。
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
+在每一个 class 属性为 `'col-xs-6'` 的 `div` 元素中都嵌入一个带有 `well` 的 `div` 元素。
 
+```js
+assert($('div.col-xs-6').not(':has(>div.well)').length < 1);
 ```
 
-</section>
+将你的两个 class 属性为 `'col-xs-6'` 的 `div` 元素都内嵌入一个带有 `'row'` 的 `div` 元素中。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div.row > div.col-xs-6').length > 1);
+```
 
-<div id='html-seed'>
+确保你的 `div` 元素都有一个闭合标签。
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -51,14 +54,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -73,5 +69,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

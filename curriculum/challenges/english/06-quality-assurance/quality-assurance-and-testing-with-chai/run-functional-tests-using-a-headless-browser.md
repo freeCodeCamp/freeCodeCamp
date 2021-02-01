@@ -1,51 +1,135 @@
 ---
-id: 587d824f367417b2b2512c5c
+id: 587d8250367417b2b2512c5d
 title: Run Functional Tests using a Headless Browser
 challengeType: 2
 forumTopicId: 301595
+dashedName: run-functional-tests-using-a-headless-browser
 ---
 
-## Description
-<section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.
-A headless browser is a web browser without a graphical user interface. This kind of tool is particularly useful for testing web pages, as it is able to render and understand HTML, CSS, and JavaScript the same way a browser would.
+# --description--
 
-</section>
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-## Instructions
-<section id='instructions'>
-For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Repl.it. There are many other (more powerful) options.<br>
-Look at the examples in the code for the exercise directions Follow the assertions order, We rely on it.
-</section>
+In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the info returned by the call to the DOM. Here is an example of how to interact with this form:
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: All tests should pass.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should assert that the headless browser request succeeded.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[0].method, 'browser.success'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should assert that the text inside the element 'span#name' is 'Cristoforo'.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.match(data.assertions[1].args[0], /('|")span#name\1/); assert.match(data.assertions[1].args[1], /('|")Cristoforo\1/);}, xhr => { throw new Error(xhr.responseText); })
-  - text: You should assert that the text inside the element 'span#surname' is 'Colombo'.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.match(data.assertions[2].args[0], /('|")span#surname\1/); assert.match(data.assertions[2].args[1], /('|")Colombo\1/);}, xhr => { throw new Error(xhr.responseText); })
-  - text: You should assert that the element 'span#dates' exist and its count is 1.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.match(data.assertions[3].args[0], /('|")span#dates\1/); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })
-
+```js
+test('#test - submit the input "surname" : "Polo"', function (done) {
+  browser.fill('surname', 'Polo').pressButton('submit', function () {
+    browser.assert.success();
+    browser.assert.text('span#name', 'Marco');
+    browser.assert.text('span#surname', 'Polo');
+    browser.assert.element('span#dates', 1);
+    done();
+  });
+}
 ```
 
-</section>
+First, the `fill` method of the `browser` object fills the `surname` field of the form with the value `'Polo'`. Immediately after, the `pressButton` method invokes the `submit` event listener of the form. The `pressButton` method is asynchronous.
 
-## Challenge Seed
-<section id='challengeSeed'>
+Then, once a response is received from the AJAX request, a few assertions are made confirming:
 
-</section>
+1.  The status of the response is `200`
+2.  The text within the `<span id='name'></span>` element matches `'Marco'`
+3.  The text within the `<span id='surname'></span>` element matches `'Polo'`
+4.  The there is `1` `<span id='dates'></span>` element.
 
-## Solution
-<section id='solution'>
+Finally, the `done` callback is invoked, which is needed due to the asynchronous test.
+
+# --instructions--
+
+Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Colombo" - write your e2e test...'` test (`// #5`), automate filling-in and submitting the form:
+
+1.  Fill in the form
+2.  Submit it pressing `'submit'` button.
+
+Within the callback:
+
+1.  assert that status is OK `200`
+2.  assert that the text inside the element `span#name` is `'Cristoforo'`
+3.  assert that the text inside the element `span#surname` is `'Colombo'`
+4.  assert that the element(s) `span#dates` exist and their count is `1`
+
+Do not forget to to remove the `assert.fail()` call.
+
+# --hints--
+
+All tests should pass.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+You should assert that the headless browser request succeeded.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+    (data) => {
+      assert.equal(data.assertions[0].method, 'browser.success');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+You should assert that the text inside the element 'span#name' is 'Cristoforo'.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+    (data) => {
+      assert.equal(data.assertions[1].method, 'browser.text');
+      assert.match(data.assertions[1].args[0], /('|")span#name\1/);
+      assert.match(data.assertions[1].args[1], /('|")Cristoforo\1/);
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+You should assert that the text inside the element 'span#surname' is 'Colombo'.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+    (data) => {
+      assert.equal(data.assertions[2].method, 'browser.text');
+      assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
+      assert.match(data.assertions[2].args[1], /('|")Colombo\1/);
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+You should assert that the element 'span#dates' exist and its count is 1.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+    (data) => {
+      assert.equal(data.assertions[3].method, 'browser.element');
+      assert.match(data.assertions[3].args[0], /('|")span#dates\1/);
+      assert.equal(data.assertions[3].args[1], 1);
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
 
 ```js
 /**
@@ -54,5 +138,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

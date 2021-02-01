@@ -1,53 +1,51 @@
 ---
 id: 56533eb9ac21ba0edf2244c3
+title: 用返回值来赋值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
-title: 用返回值来赋值
+dashedName: assignment-with-a-returned-value
 ---
 
-## Description
-<section id='description'>
-如果你还记得我们在这一节<a href="/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">使用赋值运算符存储值</a>的讨论，赋值之前，先完成等号右边的操作。这意味着我们可把一个函数的返回值，赋值给一个变量。
-假设我们预先定义的函数<code>sum</code>其功能就是将两个数字相加，那么：
-<code>ourSum = sum(5, 12);</code>
-将调用<code>sum</code>函数，返回<code>return</code>了一个数值<code>17</code>，然后把它赋值给了<code>ourSum</code>变量。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-调用<code>processArg</code>函数并给参数一个值<code>7</code>，然后把返回的值赋值给变量<code>processed</code>。
-</section>
+在[使用赋值运算符存储值](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator)这一挑战中我们曾提到，赋值发生之前会先完成等号右边的操作。这意味着我们可把一个函数的返回值赋给一个变量。
 
-## Tests
-<section id='tests'>
+假设我们已经定义了函数 `sum`，它的作用就是将两个数字相加，那么：
 
-```yml
-tests:
-  - text: <code>processed</code>的值应该是<code>2</code>。
-    testString: assert(processed === 2);
-  - text: 你应该把<code>processArg</code>的返回值赋给<code>processed</code>。
-    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code));
+`ourSum = sum(5, 12);`
 
-```
+会调用 `sum` 函数，函数返回数值 `17`，然后把它赋值给 `ourSum` 变量。
 
-</section>
+# --instructions--
 
-## Challenge Seed
-<section id='challengeSeed'>
+请调用 `processArg` 函数并传入 `7` 作为参数，然后把返回值赋值给变量 `processed`。
 
-<div id='js-seed'>
+# --hints--
+
+`processed` 的值应为 `2`。
 
 ```js
-// Example
-var changed = 0;
+assert(processed === 2);
+```
 
-function change(num) {
-  return (num + 5) / 3;
-}
+应将 `processArg` 的返回值赋给 `processed`。
 
-changed = change(10);
+```js
+assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code));
+```
 
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){return "processed = " + processed})();
+```
+
+## --seed-contents--
+
+```js
 // Setup
 var processed = 0;
 
@@ -56,27 +54,9 @@ function processArg(num) {
 }
 
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(){return "processed = " + processed})();
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var processed = 0;
@@ -87,5 +67,3 @@ function processArg(num) {
 
 processed = processArg(7);
 ```
-
-</section>

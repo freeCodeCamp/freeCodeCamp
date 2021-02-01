@@ -2,31 +2,24 @@
 id: 5f356ed63c7807a4f1e6d054
 title: Part 22
 challengeType: 0
+dashedName: part-22
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The goal now is to make the `div` not take up the entire width of the page. The CSS `width` property is perfect for this. Create a new type selector in the style sheet that gives your `div` element a width of `300px`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -53,10 +46,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 --fcc-editable-region--
 body {
@@ -69,6 +58,3 @@ h1, h2, p {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

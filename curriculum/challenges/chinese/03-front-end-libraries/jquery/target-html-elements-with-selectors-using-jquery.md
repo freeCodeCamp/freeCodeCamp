@@ -1,47 +1,54 @@
 ---
 id: bad87fee1348bd9bedc08826
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 使用 jQuery 配合元素选择器选择元素
 challengeType: 6
 forumTopicId: 18319
-title: 使用 jQuery 配合元素选择器选择元素
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: target-html-elements-with-selectors-using-jquery
 ---
 
-## Description
-<section id='description'>
-接下来我们学习<code>document ready function</code>。
-首先，我们完成第一个 jQuery 语句。所有的 jQuery 函数以<code>$</code>开头，这个符号通常被称为<code>美元符号（dollar sign operator）</code>或<code>bling</code>。
-jQuery 通常选取并操作带有<code>选择器（selector）</code>的 HTML 标签。
-例如，如果要所有<code>button</code>有弹性的动画效果，只需在<code>document ready function</code>中添加如下代码即可：
-<code>$("button").addClass("animated bounce");</code>
-请注意，为了能在编辑器里直接使用，我们已经为你在后台引入了 jQuery 库和 Animate.css 库。因此，你只需要通过 jQuery 给<code>button</code>元素添加<code>bounce</code>类就可以了。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+接下来我们学习`document ready function`。
 
-</section>
+首先，我们完成第一个 jQuery 语句。所有的 jQuery 函数以`$`开头，这个符号通常被称为`美元符号（dollar sign operator）`或`bling`。
 
-## Tests
-<section id='tests'>
+jQuery 通常选取并操作带有`选择器（selector）`的 HTML 标签。
 
-```yml
-tests:
-  - text: 用 jQuery 的<code>addClass&#40&#41</code>方法给<code>button</code>标签添加<code>animated</code>和<code>bounce</code>类。
-    testString: 'assert($("button").hasClass("animated") && $("button").hasClass("bounce"));'
-  - text: 仅用 jQuery 给标签添加颜色。
-    testString: 'assert(!code.match(/class.*animated/g));'
-  - text: jQuery 代码应该放在<code>$(document).ready();</code>函数里。
-    testString: assert(code.match(/\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g));
+例如，如果要所有`button`有弹性的动画效果，只需在`document ready function`中添加如下代码即可：
 
+`$("button").addClass("animated bounce");`
+
+请注意，为了能在编辑器里直接使用，我们已经为你在后台引入了 jQuery 库和 Animate.css 库。因此，你只需要通过 jQuery 给`button`元素添加`bounce`类就可以了。
+
+# --hints--
+
+用 jQuery 的`addClass()`方法给`button`标签添加`animated`和`bounce`类。
+
+```js
+assert($('button').hasClass('animated') && $('button').hasClass('bounce'));
 ```
 
-</section>
+仅用 jQuery 给标签添加颜色。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/class.*animated/g));
+```
 
-<div id='html-seed'>
+jQuery 代码应该放在`$(document).ready();`函数里。
+
+```js
+assert(
+  code.match(
+    /\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -50,7 +57,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -75,14 +82,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -91,7 +91,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -115,5 +115,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

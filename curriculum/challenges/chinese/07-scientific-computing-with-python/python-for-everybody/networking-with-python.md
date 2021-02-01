@@ -2,31 +2,32 @@
 id: 5e7b9f0c0b6c005b0e76f071
 challengeType: 11
 videoId: _kJvneKVdNM
+dashedName: networking-with-python
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What Python library gives access to TCP Sockets?
 
-```yml
-question:
-  text: |
-      What Python library gives access to TCP Sockets?
+## --answers--
 
-  answers:
-    - |
-        tcp
-    - |
-        socket
-    - |
-        http
-    - |
-        port
-  solution: 2
-```
+tcp
 
-</section>
+---
+
+socket
+
+---
+
+http
+
+---
+
+port
+
+## --video-solution--
+
+2
+

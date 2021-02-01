@@ -2,31 +2,24 @@
 id: 5f4701b942c824109626c3d8
 title: Part 78
 challengeType: 0
+dashedName: part-78
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now add the `bottom-line` class to the second `hr` element so the styling is applied.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -79,9 +72,9 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
+--fcc-editable-region--
       <hr>
-      --fcc-editable-region--
+--fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -92,10 +85,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -161,6 +150,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

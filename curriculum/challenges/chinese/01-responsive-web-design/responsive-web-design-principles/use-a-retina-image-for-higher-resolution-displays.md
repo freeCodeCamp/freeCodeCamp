@@ -1,16 +1,17 @@
 ---
 id: 587d78b1367417b2b2512b0a
+title: 针对高分辨率屏幕应使用视网膜图片
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-title: 针对高分辨率屏幕应使用视网膜图片
+dashedName: use-a-retina-image-for-higher-resolution-displays
 ---
 
-## Description
-<section id='description'>
-随着联网设备的增加，设备的尺寸和规格有所不同，它们使用的显示器在内部和外部可能也不同。像素密度（PPI 或 DPI）就是设备之间的其中一个不同点。最著名的显示器就是最新的 Apple MacBook Pro 笔记本电脑和最近的 iMac 电脑上的“视网膜显示器”。由于“视网膜”和“非视网膜”显示器之间的像素密度不同，某些未考虑高分辨率显示器的图像在高分辨率显示器上渲染时可能看起来“像素化”。
+# --description--
 
-使图像在高分辨率显示器（例如 MacBook Pro 的“视网膜显示器”）上正常显示的最简单方法是将其 width 和 height 值设置为原始文件的一半，如下所示：
+随着联网设备的增加，设备间的区别不仅发生在尺寸和规格上，还发生在用于显示的设备上。像素密度就是区分不同显示设备的一个指标，它一般会以 PPI（Pixel Per Inch，即每英寸像素）或 DPI（每英寸点数）为计量单位。最著名的显示器就是 Apple MacBook Pro 笔记本电脑上的“视网膜显示屏”（现亦用于 iMac）。由于“视网膜显示屏”和“非视网膜显示屏”显示器之间像素密度的不同，某些未考虑高分辨率显示器的图像在高分辨率显示器上渲染时，可能因出现“像素化”而不够清晰。
+
+要让图像在高分辨率显示器（例如 MacBook Pro 的“视网膜显示屏”）上正常显示，最简单的方法是将其 width 和 height 值设置为原始文件的一半，如下所示：
 
 ```html
 <style>
@@ -19,55 +20,45 @@ title: 针对高分辨率屏幕应使用视网膜图片
 <img src="coolPic500x500" alt="A most excellent picture">
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
+请将 `img` 标签的 `width` 和 `height` 设置为它们原始宽高的一半。在这个例子中，原始 `height` 和 `width` 的值都为 200px。
 
-设置 <code>img</code> 标签的 <code>width</code> 和 <code>height</code> 为它们原始宽高的一半。在这个例子中，原始 <code>height</code> 和原始 <code>width</code> 的值都为 200px。
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`img` 标签的 `width` 属性值应为 100px。
 
-```yml
-tests:
-  - text: '<code>img</code> 标签的 <code>width</code> 值应为 100px。'
-    testString: assert($('img').css('width') == '100px');
-  - text: '<code>img</code> 标签的 <code>height</code> 值应为 100px。'
-    testString: assert($('img').css('height') == '100px');
-
+```js
+assert($('img').css('width') == '100px');
 ```
 
-</section>
+`img` 标签的 `height` 属性值应为 100px。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('img').css('height') == '100px');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
-  
+
 </style>
 
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
 ```
 
+# --solutions--
 
+```html
+<style>
+  img { 
+    height: 100px; 
+    width: 100px; 
+  }
+</style>
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
 ```
-
-</section>
-              

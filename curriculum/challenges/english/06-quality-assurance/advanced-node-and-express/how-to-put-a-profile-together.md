@@ -3,11 +3,10 @@ id: 5895f70ef9fc0f352b528e6b
 title: How to Put a Profile Together
 challengeType: 2
 forumTopicId: 301554
+dashedName: how-to-put-a-profile-together
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Now that we can ensure the user accessing the `/profile` is authenticated, we can use the information contained in `req.user` on our page!
 
@@ -17,7 +16,7 @@ Pass an object containing the property `username` and value of `req.user.usernam
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class '`center`' and id '`welcome`' containing the text '`Welcome, `' followed by the username.
+This creates an `h2` element with the class '`center`' and id '`welcome`' containing the text '`Welcome,`' followed by the username.
 
 Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user.
 
@@ -25,37 +24,29 @@ Also, in `profile.pug`, add a link referring to the `/logout` route, which will 
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
 
-</section>
+# --hints--
 
-## Instructions
+You should correctly add a Pug render variable to /profile.
 
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: You should correctly add a Pug render variable to /profile.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /username:( |)req.user.username/gi, 'You should be passing the variable username with req.user.username into the render function of the profile page'); }, xhr => { throw new Error(xhr.statusText); })
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/server.js').then(
+    (data) => {
+      assert.match(
+        data,
+        /username:( |)req.user.username/gi,
+        'You should be passing the variable username with req.user.username into the render function of the profile page'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
 ```
 
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -64,5 +55,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

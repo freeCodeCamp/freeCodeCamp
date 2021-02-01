@@ -1,49 +1,64 @@
 ---
 id: bad87fee1348bd9aed108826
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 使用 jQuery 选择元素的特定子元素
 challengeType: 6
 forumTopicId: 18315
-title: 使用 jQuery 选择元素的特定子元素
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: target-a-specific-child-of-an-element-using-jquery
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 你已经看到了为什么 id 属性对于 jQuery 选择器选取标签非常方便，但这并不适用于所有情景。
+
 幸运的是，jQuery 有一些其他的方法可以选取正确的标签。
-jQuery 可以用<code>CSS 选择器（CSS Selectors）</code>选取标签。<code>target:nth-child(n)</code>CSS 选择器可以选取所有的第 n 个标签并设置目标属性和目标样式。
-下面的代码展示了给每个区域（well）的第 3 个标签设置<code>bounce</code>类：
-<code>$(".target:nth-child(3)").addClass("animated bounce");</code>
-请给每个区域（well）的第 2 个标签设置<code>bounce</code>类，必须用<code>target</code>类选取标签。
-</section>
 
-## Instructions
-<section id='instructions'>
+jQuery 可以用`CSS 选择器（CSS Selectors）`选取标签。`target:nth-child(n)`CSS 选择器可以选取所有的第 n 个标签并设置目标属性和目标样式。
 
-</section>
+下面的代码展示了给每个区域（well）的第 3 个标签设置`bounce`类：
 
-## Tests
-<section id='tests'>
+`$(".target:nth-child(3)").addClass("animated bounce");`
 
-```yml
-tests:
-  - text: <code>target</code>标签中的第二个标签应该有弹性的动画效果。
-    testString: assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"));
-  - text: 应该仅两个标签有弹性的动画效果。
-    testString: assert($(".animated.bounce").length === 2);
-  - text: 应该用<code>&#58;nth-child&#40&#41</code>选择器修改这些标签。
-    testString: assert(code.match(/\:nth-child\(/g));
-  - text: 仅用 jQuery 给标签添加类。
-    testString: assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\('.target:nth-child\(2\)'\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g));
+请给每个区域（well）的第 2 个标签设置`bounce`类，必须用`target`类选取标签。
 
+# --hints--
+
+`target`标签中的第二个标签应该有弹性的动画效果。
+
+```js
+assert(
+  $('.target:nth-child(2)').hasClass('animated') &&
+    $('.target:nth-child(2)').hasClass('bounce')
+);
 ```
 
-</section>
+应该仅两个标签有弹性的动画效果。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.animated.bounce').length === 2);
+```
 
-<div id='html-seed'>
+应该用`:nth-child()`选择器修改这些标签。
+
+```js
+assert(code.match(/\:nth-child\(/g));
+```
+
+仅用 jQuery 给标签添加类。
+
+```js
+assert(
+  code.match(/\$\(".target:nth-child\(2\)"\)/g) ||
+    code.match(/\$\('.target:nth-child\(2\)'\)/g) ||
+    code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) ||
+    code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -59,7 +74,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -84,14 +99,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -107,7 +115,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -131,5 +139,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

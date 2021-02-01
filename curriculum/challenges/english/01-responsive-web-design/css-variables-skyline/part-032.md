@@ -2,33 +2,29 @@
 id: 5d822fd413a79914d39e98e8
 title: Part 32
 challengeType: 0
+dashedName: part-32
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add the same `display`, `align-items`, and `justify-content` properties and values to `foreground-buildings` that you used on `background-buildings`. Again, this will use Flexbox to evenly space the buildings across the bottom of their container.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb = $(".foreground-buildings"); assert(fb.css("display") === "flex" && fb.css("align-items") === "flex-end" && fb.css("justify-content") === "space-evenly");
-
+```js
+const fb = $('.foreground-buildings');
+assert(
+  fb.css('display') === 'flex' &&
+    fb.css('align-items') === 'flex-end' &&
+    fb.css('justify-content') === 'space-evenly'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -181,12 +177,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -341,5 +332,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

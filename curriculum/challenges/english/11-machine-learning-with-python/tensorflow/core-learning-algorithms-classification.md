@@ -3,29 +3,28 @@ id: 5e8f2f13c4cdbe86b5c72d8d
 title: 'Core Learning Algorithms: Classification'
 challengeType: 11
 videoId: qFF7ZQNvK9E
+dashedName: core-learning-algorithms-classification
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What is classification?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What is classification?
-  answers:
-    - |
-      The process of separating data points into different classes.
-    - |
-      Predicting a numeric value or forecast based on independent and dependent variables.
-    - |
-      None of the above.
-  solution: 1
-```
+The process of separating data points into different classes.
 
-</section>
+---
+
+Predicting a numeric value or forecast based on independent and dependent variables.
+
+---
+
+None of the above.
+
+## --video-solution--
+
+1
+

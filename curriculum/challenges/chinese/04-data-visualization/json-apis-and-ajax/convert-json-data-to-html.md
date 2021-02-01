@@ -1,16 +1,21 @@
 ---
 id: 587d7fae367417b2b2512be5
+title: 将 JSON 数据转换为 HTML
 challengeType: 6
 forumTopicId: 16807
-title: 将 JSON 数据转换为 HTML
+dashedName: convert-json-data-to-html
 ---
 
-## Description
-<section id='description'>
-现在你可以从 JSON API 获取数据了，你可以在 HTML 中显示它。
-既然 cat photo 对象保存在数组里，你可以使用<code>forEach</code>方法来遍历它。当你拿到每个对象时，你就可以修改 HTML 元素了。
-首先，用<code>let html = "";</code>声明一个变量。
-接着，遍历 JSON，将 HTML 添加到用<code>strong</code>标记键名的变量，后面跟着值。当循环结束后渲染它。
+# --description--
+
+现在你从 JSON API 获取了数据，可以在 HTML 中显示它们了。
+
+既然 cat photo 对象都保存在数组里，你可以使用 `forEach` 方法来遍历它们。当你拿到每个对象时，你就可以修改 HTML 元素了。
+
+首先，通过 `let html = "";` 声明一个 html 变量。
+
+接着，遍历 JSON，将用 `strong` 标签包裹的键名和后面跟着值的 html 元素添加给变量。当循环结束后渲染它。
+
 这是执行此操作的代码：
 
 ```js
@@ -25,12 +30,12 @@ json.forEach(function(val) {
 });
 ```
 
-<strong>注意：</strong> 在本挑战需要给页面添加一个新的 HTML 元素，不能使用 `textContent` 方法，这个方法容易遭受跨站脚本攻击，可以用 `innerHTML` 来完成挑战。
-</section>
+**注意：** 在本挑战中，你需要给页面添加新的 HTML 元素，不能依赖 `textContent` 方法，这个方法容易遭受跨站脚本攻击，可以用 `innerHTML` 来完成挑战。
 
-## Instructions
-<section id='instructions'>
-添加一个<code>forEach</code>循环 JSON 数据的方法，并创建 HTML 元素以显示它。
+# --instructions--
+
+添加一个 `forEach` 循环来遍历 JSON 数据，并创建 HTML 元素以显示它。
+
 以下是一个 JSON 示例：
 
 ```json
@@ -45,28 +50,29 @@ json.forEach(function(val) {
 ]
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+你的代码应该将数据保存在 `html` 变量中。
 
-```yml
-tests:
-  - text: 你的代码应该将数据保存在<code>html</code>变量中。
-    testString: assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
-  - text: 你的代码应该使用<code>forEach</code>方法来遍历 API 中的 JSON 数据。
-    testString: assert(code.match(/json\.forEach/g));
-  - text: 你的代码应该将键名包装在<code>strong</code>标签中。
-    testString: assert(code.match(/<strong>.+<\/strong>/g));
-
+```js
+assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
 ```
 
-</section>
+你的代码应该使用 `forEach` 方法来遍历 API 中的 JSON 数据。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/json\.forEach/g));
+```
 
-<div id='html-seed'>
+你的代码应该用 `strong` 标签包裹键名。
+
+```js
+assert(code.match(/<strong>.+<\/strong>/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -78,10 +84,10 @@ tests:
       req.onload = function(){
         const json = JSON.parse(req.responseText);
         let html = "";
-        // 在这行下面添加代码
+        // Add your code below this line
 
 
-        // 在这行上面添加代码
+        // Add your code above this line
         document.getElementsByClassName('message')[0].innerHTML = html;
       };
     };
@@ -115,7 +121,7 @@ tests:
   }
 </style>
 
-<h1>Cat Photo Finder</h1> 
+<h1>Cat Photo Finder</h1>
 <p class="message box">
   The message will go here
 </p>
@@ -126,12 +132,7 @@ tests:
 </p>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -196,5 +197,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>

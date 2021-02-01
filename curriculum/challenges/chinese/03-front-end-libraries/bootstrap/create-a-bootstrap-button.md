@@ -1,41 +1,47 @@
 ---
 id: bad87fee1348cd8acdf08812
+title: 创建一个 Bootstrap 按钮
 challengeType: 0
 forumTopicId: 16811
-title: 创建一个 Bootstrap 按钮
+dashedName: create-a-bootstrap-button
 ---
 
-## Description
-<section id='description'>
-Bootstrap 的 <code>button</code> 元素有着独有的、比默认 HTML 按钮更好的样式风格。
-在较大的小猫图片下方创建新的 <code>button</code> 元素。 为它添加 <code>btn</code> 与 <code>btn-default</code> 两个 class 和 "Like" 文本。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap 的 `button` 元素有着独有的、比默认 HTML 按钮更好的样式风格。
 
-</section>
+在较大的小猫图片下方创建新的 `button` 元素。 为它添加 `btn` 与 `btn-default` 两个 class 和 "Like" 文本。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: "创建新的 <code>button</code> 元素，设置文本为 'Like'。"
-    testString: assert(new RegExp("like","gi").test($("button").text()) && ($("img.img-responsive + button.btn").length > 0));
-  - text: '新的按钮元素应该有两个 class : <code>btn</code> 和 <code>btn-default</code>。'
-    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
-  - text: 保证所有 <code>button</code> 元素都有一个闭合标签。
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+创建新的 `button` 元素，设置文本为 'Like'。
 
+```js
+assert(
+  new RegExp('like', 'gi').test($('button').text()) &&
+    $('img.img-responsive + button.btn').length > 0
+);
 ```
 
-</section>
+新的按钮元素应该有两个 class : `btn` 和 `btn-default`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
+```
 
-<div id='html-seed'>
+保证所有 `button` 元素都有一个闭合标签。
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -98,14 +104,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <html>
@@ -163,7 +162,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -175,5 +174,3 @@ tests:
 </div>
 </html>
 ```
-
-</section>

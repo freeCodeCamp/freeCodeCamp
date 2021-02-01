@@ -1,14 +1,17 @@
 ---
 id: 587d7fae367417b2b2512be7
+title: 预先过滤 JSON 以获得所需的数据
 challengeType: 6
 forumTopicId: 18257
-title: 预先过滤 JSON 以获得所需的数据
+dashedName: pre-filter-json-to-get-the-data-you-need
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 如果你不希望渲染每张从 freeCodeCamp Cat Photo API 取回的猫照片，你可以在循环先预先过滤 JSON 数据。
-鉴于 JSON 数据都存储在数组中，你可以使用<code>filter</code>方法过滤掉 "id" 键值为 1 的猫。
+
+鉴于 JSON 数据都存储在数组中，你可以使用`filter`方法过滤掉 "id" 键值为 1 的猫。
+
 这是执行此操作的代码：
 
 ```js
@@ -17,29 +20,21 @@ json = json.filter(function(val) {
 });
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-将<code>filter</code>代码添加到 JSON 数据中来移除 "id" 值为 1 的猫。
-</section>
+将`filter`代码添加到 JSON 数据中来移除 "id" 值为 1 的猫。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 你的代码应该使用<code>filter</code>方法。
-    testString: assert(code.match(/json\.filter/g));
+你的代码应该使用`filter`方法。
 
+```js
+assert(code.match(/json\.filter/g));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <script>
@@ -51,10 +46,10 @@ tests:
       req.onload=function(){
         let json = JSON.parse(req.responseText);
         let html = "";
-        // 在这行下面添加代码
+        // Add your code below this line
 
 
-        // 在这行上面添加代码
+        // Add your code above this line
          json.forEach(function(val) {
            html += "<div class = 'cat'>"
 
@@ -106,14 +101,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -181,5 +169,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>

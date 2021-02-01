@@ -1,70 +1,92 @@
 ---
 id: a77dbc43c33f39daa4429b4f
+title: 基本类型布尔值的检查
 challengeType: 5
-videoUrl: ''
-title: 嘘谁
+forumTopicId: 16000
+dashedName: boo-who
 ---
 
-## Description
-<section id="description">检查参数是否归类为布尔基元。返回true或false。布尔基元是true和false。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+检查一个值是否是[基本类型](https://developer.mozilla.org/zh-CN/docs/Glossary/Primitive)中的布尔值（boolean）类型。函数应返回 true 或者 false。
 
-## Tests
-<section id='tests'>
+基本类型中的布尔值为 true 或者 false。
 
-```yml
-tests:
-  - text: <code>booWho(true)</code>应该返回true。
-    testString: assert.strictEqual(booWho(true), true);
-  - text: <code>booWho(false)</code>应该返回true。
-    testString: assert.strictEqual(booWho(false), true);
-  - text: '<code>booWho([1, 2, 3])</code>应该返回false。'
-    testString: assert.strictEqual(booWho([1, 2, 3]), false);
-  - text: '<code>booWho([].slice)</code>应该返回false。'
-    testString: assert.strictEqual(booWho([].slice), false);
-  - text: '<code>booWho({ &quot;a&quot;: 1 })</code>应该返回false。'
-    testString: 'assert.strictEqual(booWho({ "a": 1 }), false);'
-  - text: <code>booWho(1)</code>应该返回false。
-    testString: assert.strictEqual(booWho(1), false);
-  - text: <code>booWho(NaN)</code>应该返回false。
-    testString: assert.strictEqual(booWho(NaN), false);
-  - text: <code>booWho(&quot;a&quot;)</code>应该返回false。
-    testString: assert.strictEqual(booWho("a"), false);
-  - text: <code>booWho(&quot;true&quot;)</code>应该返回false。
-    testString: assert.strictEqual(booWho("true"), false);
-  - text: <code>booWho(&quot;false&quot;)</code>应该返回false。
-    testString: assert.strictEqual(booWho("false"), false);
+# --hints--
 
+`booWho(true)` 应返回 true。
+
+```js
+assert.strictEqual(booWho(true), true);
 ```
 
-</section>
+`booWho(false)` 应返回 true。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(booWho(false), true);
+```
 
-<div id='js-seed'>
+`booWho([1, 2, 3])` 应返回 false。
+
+```js
+assert.strictEqual(booWho([1, 2, 3]), false);
+```
+
+`booWho([].slice)` 应返回 false。
+
+```js
+assert.strictEqual(booWho([].slice), false);
+```
+
+`booWho({ "a": 1 })` 应返回 false。
+
+```js
+assert.strictEqual(booWho({ a: 1 }), false);
+```
+
+`booWho(1)` 应返回 false。
+
+```js
+assert.strictEqual(booWho(1), false);
+```
+
+`booWho(NaN)` 应返回 false。
+
+```js
+assert.strictEqual(booWho(NaN), false);
+```
+
+`booWho("a")` 应返回 false。
+
+```js
+assert.strictEqual(booWho('a'), false);
+```
+
+`booWho("true")` 应返回 false。
+
+```js
+assert.strictEqual(booWho('true'), false);
+```
+
+`booWho("false")` 应返回 false。
+
+```js
+assert.strictEqual(booWho('false'), false);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function booWho(bool) {
-  // What is the new fad diet for ghost developers? The Boolean.
   return bool;
 }
 
 booWho(null);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function booWho(bool) {
@@ -73,5 +95,3 @@ function booWho(bool) {
 
 booWho(null);
 ```
-
-/section>

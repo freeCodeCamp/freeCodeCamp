@@ -1,85 +1,143 @@
 ---
 id: a24c1a4622e3c05097f71d67
+title: 找出元素在排序后数组中的索引
 challengeType: 5
-videoUrl: ''
-title: 我属于哪里？
+forumTopicId: 16094
+dashedName: where-do-i-belong
 ---
 
-## Description
-<section id="description">返回一个值（第二个参数）应该在排序后插入数组（第一个参数）的最低索引。返回的值应该是一个数字。例如， <code>getIndexToIns([1,2,3,4], 1.5)</code>应返回<code>1</code>因为它大于<code>1</code> （索引0），但小于<code>2</code> （索引1）。同样， <code>getIndexToIns([20,3,5], 19)</code>应返回<code>2</code>因为一旦数组已经排序，它将看起来像<code>[3,5,20]</code> ， <code>19</code>小于<code>20</code> （索引2）并且大于<code>5</code> （指数1）。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+第一个参数的数组在排序后，将一个值（第二个参数）插入该数组，并使数组保持有序。返回这个新插入元素的**最小**索引值（应为一个数字）。
 
-## Tests
-<section id='tests'>
+例如，`getIndexToIns([1,2,3,4], 1.5)` 应该返回 `1` 因为 `1.5` 大于 `1`（索引为 0）且小于 `2`（索引为 1）。
 
-```yml
-tests:
-  - text: '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code>应返回<code>3</code> 。'
-    testString: assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3);
-  - text: '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code>应返回一个数字。'
-    testString: assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 35)) === "number");
-  - text: '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code>应该返回<code>2</code> 。'
-    testString: assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2);
-  - text: '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code>应该返回一个数字。'
-    testString: assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 30)) === "number");
-  - text: '<code>getIndexToIns([40, 60], 50)</code>应返回<code>1</code> 。'
-    testString: assert(getIndexToIns([40, 60], 50) === 1);
-  - text: '<code>getIndexToIns([40, 60], 50)</code>应返回一个数字。'
-    testString: assert(typeof(getIndexToIns([40, 60], 50)) === "number");
-  - text: '<code>getIndexToIns([3, 10, 5], 3)</code>应该返回<code>0</code> 。'
-    testString: assert(getIndexToIns([3, 10, 5], 3) === 0);
-  - text: '<code>getIndexToIns([3, 10, 5], 3)</code>应返回一个数字。'
-    testString: assert(typeof(getIndexToIns([3, 10, 5], 3)) === "number");
-  - text: '<code>getIndexToIns([5, 3, 20, 3], 5)</code>应返回<code>2</code> 。'
-    testString: assert(getIndexToIns([5, 3, 20, 3], 5) === 2);
-  - text: '<code>getIndexToIns([5, 3, 20, 3], 5)</code>应返回一个数字。'
-    testString: assert(typeof(getIndexToIns([5, 3, 20, 3], 5)) === "number");
-  - text: '<code>getIndexToIns([2, 20, 10], 19)</code>应该返回<code>2</code> 。'
-    testString: assert(getIndexToIns([2, 20, 10], 19) === 2);
-  - text: '<code>getIndexToIns([2, 20, 10], 19)</code>应返回一个数字。'
-    testString: assert(typeof(getIndexToIns([2, 20, 10], 19)) === "number");
-  - text: '<code>getIndexToIns([2, 5, 10], 15)</code>应该返回<code>3</code> 。'
-    testString: assert(getIndexToIns([2, 5, 10], 15) === 3);
-  - text: '<code>getIndexToIns([2, 5, 10], 15)</code>应返回一个数字。'
-    testString: assert(typeof(getIndexToIns([2, 5, 10], 15)) === "number");
-  - text: '<code>getIndexToIns([], 1)</code>应该返回<code>0</code> 。'
-    testString: assert(getIndexToIns([], 1) === 0);
-  - text: '<code>getIndexToIns([], 1)</code>应该返回一个数字。'
-    testString: assert(typeof(getIndexToIns([], 1)) === "number");
+同样地，`getIndexToIns([20,3,5], 19)` 应该返回 `2`。因为数组排序后会变成 `[3,5,20]`，而 `19` 小于 `20`（索引为 2）且大于 `5`（索引为 1）。
 
+# --hints--
+
+`getIndexToIns([10, 20, 30, 40, 50], 35)` 应返回 `3`。
+
+```js
+assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3);
 ```
 
-</section>
+`getIndexToIns([10, 20, 30, 40, 50], 35)` 应返回一个数字。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof getIndexToIns([10, 20, 30, 40, 50], 35) === 'number');
+```
 
-<div id='js-seed'>
+`getIndexToIns([10, 20, 30, 40, 50], 30)` 应返回 `2`。
+
+```js
+assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2);
+```
+
+`getIndexToIns([10, 20, 30, 40, 50], 30)` 应返回一个数字。
+
+```js
+assert(typeof getIndexToIns([10, 20, 30, 40, 50], 30) === 'number');
+```
+
+`getIndexToIns([40, 60], 50)` 应返回 `1`。
+
+```js
+assert(getIndexToIns([40, 60], 50) === 1);
+```
+
+`getIndexToIns([40, 60], 50)` 应返回一个数字。
+
+```js
+assert(typeof getIndexToIns([40, 60], 50) === 'number');
+```
+
+`getIndexToIns([3, 10, 5], 3)` 应返回 `0`。
+
+```js
+assert(getIndexToIns([3, 10, 5], 3) === 0);
+```
+
+`getIndexToIns([3, 10, 5], 3)` 应返回一个数字。
+
+```js
+assert(typeof getIndexToIns([3, 10, 5], 3) === 'number');
+```
+
+`getIndexToIns([5, 3, 20, 3], 5)` 应返回 `2`。
+
+```js
+assert(getIndexToIns([5, 3, 20, 3], 5) === 2);
+```
+
+`getIndexToIns([5, 3, 20, 3], 5)` 应返回一个数字。
+
+```js
+assert(typeof getIndexToIns([5, 3, 20, 3], 5) === 'number');
+```
+
+`getIndexToIns([2, 20, 10], 19)` 应返回 `2`。
+
+```js
+assert(getIndexToIns([2, 20, 10], 19) === 2);
+```
+
+`getIndexToIns([2, 20, 10], 19)` 应返回一个数字。
+
+```js
+assert(typeof getIndexToIns([2, 20, 10], 19) === 'number');
+```
+
+`getIndexToIns([2, 5, 10], 15)` 应返回 `3`。
+
+```js
+assert(getIndexToIns([2, 5, 10], 15) === 3);
+```
+
+`getIndexToIns([2, 5, 10], 15)` 应返回一个数字。
+
+```js
+assert(typeof getIndexToIns([2, 5, 10], 15) === 'number');
+```
+
+`getIndexToIns([], 1)`应该返回 `0`。
+
+```js
+assert(getIndexToIns([], 1) === 0);
+```
+
+`getIndexToIns([], 1)` 应返回一个数字。
+
+```js
+assert(typeof getIndexToIns([], 1) === 'number');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function getIndexToIns(arr, num) {
-  // Find my place in this sorted array.
   return num;
 }
 
 getIndexToIns([40, 60], 50);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function getIndexToIns(arr, num) {
+  arr = arr.sort((a, b) => a - b);
 
-/section>
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= num) {
+      return i;
+    }
+  }
+
+  return arr.length;
+}
+
+getIndexToIns([40, 60], 50);
+```

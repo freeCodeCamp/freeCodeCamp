@@ -1,66 +1,79 @@
 ---
 id: 5a23c84252665b21eecc7e82
+title: 最大公约数
 challengeType: 5
 videoUrl: ''
-title: 最大公约数
+dashedName: greatest-common-divisor
 ---
 
-## Description
-<section id="description">编写一个函数，返回两个整数的最大公约数。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+编写一个函数，返回两个整数的最大公约数。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>gcd</code>应该是一个功能。
-    testString: assert(typeof gcd=='function');
-  - text: '<code>gcd(24,36)</code>应该返回一个数字。'
-    testString: assert(typeof gcd(24,36)=='number');
-  - text: '<code>gcd(24,36)</code>应该返回<code>12</code> 。'
-    testString: assert.equal(gcd(24,36),12);
-  - text: '<code>gcd(30,48)</code>应该返回<code>6</code> 。'
-    testString: assert.equal(gcd(30,48),6);
-  - text: '<code>gcd(10,15)</code>应该返回<code>5</code> 。'
-    testString: assert.equal(gcd(10,15),5);
-  - text: '<code>gcd(100,25)</code>应该返回<code>25</code> 。'
-    testString: assert.equal(gcd(100,25),25);
-  - text: '<code>gcd(13,250)</code>应该返回<code>1</code> 。'
-    testString: assert.equal(gcd(13,250),1);
-  - text: '<code>gcd(1300,250)</code>应该返回<code>50</code> 。'
-    testString: assert.equal(gcd(1300,250),50);
+`gcd`应该是一个功能。
 
+```js
+assert(typeof gcd == 'function');
 ```
 
-</section>
+`gcd(24,36)`应该返回一个数字。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof gcd(24, 36) == 'number');
+```
 
-<div id='js-seed'>
+`gcd(24,36)`应该返回`12` 。
+
+```js
+assert.equal(gcd(24, 36), 12);
+```
+
+`gcd(30,48)`应该返回`6` 。
+
+```js
+assert.equal(gcd(30, 48), 6);
+```
+
+`gcd(10,15)`应该返回`5` 。
+
+```js
+assert.equal(gcd(10, 15), 5);
+```
+
+`gcd(100,25)`应该返回`25` 。
+
+```js
+assert.equal(gcd(100, 25), 25);
+```
+
+`gcd(13,250)`应该返回`1` 。
+
+```js
+assert.equal(gcd(13, 250), 1);
+```
+
+`gcd(1300,250)`应该返回`50` 。
+
+```js
+assert.equal(gcd(1300, 250), 50);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function gcd(a, b) {
-  // Good luck!
-}
 
+}
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
+function gcd(a, b) {
+  return b==0 ? Math.abs(a):gcd(b, a % b);
+}
 ```
-
-/section>

@@ -1,17 +1,21 @@
 ---
 id: 587d778a367417b2b2512aa6
+title: 使用 label 元素提高表单的可访问性
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016
-title: 使用 label 元素提高表单的可访问性
+dashedName: improve-form-field-accessibility-with-the-label-element
 ---
 
-## Description
-<section id='description'>
-合理地使用语义化的 HTML 标签和属性可以提升页面可访问性。在接下来的挑战中，你将会看到使用表单属性的重要场景。
-<code>label</code>标签用于呈现特定表单控件的文本，通常是选项的名称。这些文本代表了选项的含义，使表单具有更好的可读性。<code>label</code>标签的<code>for</code>属性指定了与<code>label</code>绑定的表单控件，并且屏幕阅读器也会读取<code>for</code>属性。
-在 HTML 基础章节的课程中，我们已经了解了单选按钮标签。在那节课程中，我们为了可以点击单选按钮的名称，将<code>input</code>标签放在<code>label</code>标签中。在本节课程中，我们介绍了另外一种实现这个功能的方法，那就是使用<code>for</code>属性。
-<code>for</code>属性的值必须与表单控件的<code>id</code>属性的值相同。举个例子：
+# --description--
+
+合理地使用语义化 HTML 标签和属性可以提升页面的可访问性。在接下来的挑战中，你将会看到在表单中使用属性的场景。
+
+`label` 标签的文本内容通常会是表单组件的名称或标签。这些文本表明了组件的意义，也提升了表单的可访问性。`label` 标签的 `for` 属性将标签与表单组件绑定；同时，屏幕阅读器也会读取 `for` 属性的属性值。
+
+在 HTML 基础章节中，我们已经学习使用了单选按钮标签。在那次挑战中，为了让标签可以在点击的时候也选中输入框，我们将 `input` 标签嵌套在了 `label` 标签里面。在本节课程中，我们会了解到另外一种实现这个功能的方法，那就是使用 `for` 属性。
+
+`for` 的属性值必须与表单组件的 `id` 属性值相同。举个例子：
 
 ```html
 <form>
@@ -20,31 +24,27 @@ title: 使用 label 元素提高表单的可访问性
 </form>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Camper Cat 希望他的博客文章能有很多订阅，他想添加一个电子邮件注册表单。请为表示电子邮件的<code>label</code>标签添加<code>for</code>属性，并设置属性值与<code>input</code>标签的<code>id</code>属性值相同。
-</section>
+Camper Cat 觉得他的博客文章会有很多人订阅，因此他想添加一个电子邮件注册表单。请为表示电子邮件的 `label` 标签添加 `for` 属性，并将其属性值设置为与 `input` 标签的 `id` 属性值相同。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '你的<code>label</code>标签应该有 1 个非空的<code>for</code>属性。'
-    testString: assert($('label').attr('for'));
-  - text: '<code>for</code>属性的值应该与<code>input</code>标签的 id 值 email 相同。'
-    testString: assert($('label').attr('for') == 'email');
+`label `标签应该有一个非空的 `for` 属性。
 
+```js
+assert($('label').attr('for'));
 ```
 
-</section>
+`for` 的属性值应与用于输入邮箱的 `input` 标签 id 属性值相同。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('label').attr('for') == 'email');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -54,12 +54,12 @@ tests:
   <section>
     <form>
       <p>Sign up to receive Camper Cat's blog posts by email here!</p>
-      
-      
+
+
       <label>Email:</label>
       <input type="text" id="email" name="email">
-      
-      
+
+
       <input type="submit" name="submit" value="Submit">
     </form>
   </section>
@@ -81,18 +81,39 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <section>
+    <form>
+      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
 
-</section>
-              
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+
+
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </section>
+  <article>
+    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>
+    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Is Chuck Norris a Cat Person?</h2>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+  </article>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```

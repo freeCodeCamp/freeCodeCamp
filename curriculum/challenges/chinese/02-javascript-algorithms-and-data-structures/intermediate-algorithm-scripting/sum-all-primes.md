@@ -1,48 +1,40 @@
 ---
 id: a3bfc1673c0526e06d3ac698
+title: 质数求和
 challengeType: 5
 forumTopicId: 16085
-title: 对所有素数求和
+dashedName: sum-all-primes
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-质数是大于 1 且仅可以被 1 和自己整除的数。
-比如，2 就是一个质数，因为它只可以被 1 和 2（它本身）整除。
-相反，4 不是质数，因为它可以被 1, 2 和 4 整除。
+<dfn>质数</dfn>是大于 1 且仅可以被 1 和自己整除的数。比如，2 就是一个质数，因为它只可以被 1 和 2（它本身）整除。相反，4 不是质数，因为它可以被 1, 2 和 4 整除。
 
-重写 `sumPrimes` 使其返回所有小于或等于该数字的质数
-的和。
+请完成 `sumPrimes` 方法，使其返回小于等于传入参数数字的所有质数之和。
 
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`sumPrimes(10)` 应返回一个数字。
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>sumPrimes(10)</code>应该返回一个数字。
-    testString: assert.deepEqual(typeof sumPrimes(10), 'number');
-  - text: <code>sumPrimes(10)</code>应该返回 17。
-    testString: assert.deepEqual(sumPrimes(10), 17);
-  - text: <code>sumPrimes(977)</code>应该返回 73156。
-    testString: assert.deepEqual(sumPrimes(977), 73156);
-
+```js
+assert.deepEqual(typeof sumPrimes(10), 'number');
 ```
 
-</section>
+`sumPrimes(10)` 应返回 17。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(sumPrimes(10), 17);
+```
 
-<div id='js-seed'>
+`sumPrimes(977)` 应返回 73156。
+
+```js
+assert.deepEqual(sumPrimes(977), 73156);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sumPrimes(num) {
@@ -52,15 +44,7 @@ function sumPrimes(num) {
 sumPrimes(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function eratosthenesArray(n) {
@@ -89,5 +73,3 @@ function sumPrimes(num) {
 
 sumPrimes(10);
 ```
-
-</section>

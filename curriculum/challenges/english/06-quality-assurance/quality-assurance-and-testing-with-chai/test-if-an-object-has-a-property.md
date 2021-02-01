@@ -3,45 +3,86 @@ id: 587d824e367417b2b2512c55
 title: Test if an Object has a Property
 challengeType: 2
 forumTopicId: 301604
+dashedName: test-if-an-object-has-a-property
 ---
 
-## Description
-<section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-<code>property</code> asserts that the actual object has a given property.
+# --description--
 
-</section>
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-## Instructions
-<section id='instructions'>
-Use <code>assert.property()</code> or <code>assert.notProperty()</code> to make the tests pass. 
-</section>
+`property` asserts that the actual object has a given property.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: All tests should pass.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - property vs. notProperty.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[0].method, 'notProperty', 'A car has not wings'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - property vs. notProperty.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[1].method, 'property', 'planes have engines'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - property vs. notProperty.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[2].method, 'property', 'Cars have wheels'); }, xhr => { throw new Error(xhr.responseText); })
+Within `tests/1_unit-tests.js` under the test labelled `#16` in the `Objects` suite, change each `assert` to either `assert.property` or `assert.notProperty` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
+# --hints--
+
+All tests should pass.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+You should choose the correct method for the first assertion - `property` vs. `notProperty`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(
+        data.assertions[0].method,
+        'notProperty',
+        'A car has not wings'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-</section>
+You should choose the correct method for the second assertion - `property` vs. `notProperty`.
 
-## Solution
-<section id='solution'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'property',
+        'planes have engines'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+You should choose the correct method for the third assertion - `property` vs. `notProperty`.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(data.assertions[2].method, 'property', 'Cars have wheels');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
 
 ```js
 /**
@@ -50,5 +91,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

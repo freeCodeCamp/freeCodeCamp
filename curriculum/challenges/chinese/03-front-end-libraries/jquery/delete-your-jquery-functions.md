@@ -1,47 +1,58 @@
 ---
 id: bad87fee1348bd9aeda08726
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 删除 jQuery 函数
 challengeType: 6
 forumTopicId: 17561
-title: 删除 jQuery 函数
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: delete-your-jquery-functions
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 这些动画开始看起来很酷，但是有时可能会让用户分心。
-请删除<code>document ready function</code>内的三个 jQuery 函数，但保留<code>document ready function</code>本身。
-</section>
 
-## Instructions
-<section id='instructions'>
+请删除`document ready function`内的三个 jQuery 函数，但保留`document ready function`本身。
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+删除`document ready function`中的三个 jQuery 函数。
 
-```yml
-tests:
-  - text: 删除<code>document ready function</code>中的三个 jQuery 函数。
-    testString: assert(code.match(/\{\s*\}\);/g));
-  - text: 保持<code>script</code>标签不变。
-    testString: assert(code.match(/<script>/g));
-  - text: 保持<code>$&#40document&#41.ready&#40function&#40&#41 {</code>在<code>script</code>标签的开头不变。
-    testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
-  - text: "保持 'document ready function' 用<code>&#125;&#41;</code>闭合。"
-    testString: assert(code.match(/.*\s*\}\);/g));
-  - text: 保持<code>script</code>标签闭合。
-    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length);
-
+```js
+assert(code.match(/\{\s*\}\);/g));
 ```
 
-</section>
+保持`script`标签不变。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<script>/g));
+```
 
-<div id='html-seed'>
+保持`$(document).ready(function() {`在`script`标签的开头不变。
+
+```js
+assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
+```
+
+保持 'document ready function' 用`})`闭合。
+
+```js
+assert(code.match(/.*\s*\}\);/g));
+```
+
+保持`script`标签闭合。
+
+```js
+assert(
+  code.match(/<\/script>/g) &&
+    code.match(/<script/g) &&
+    code.match(/<\/script>/g).length === code.match(/<script/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -53,7 +64,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -78,14 +89,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -94,7 +98,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -118,5 +122,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

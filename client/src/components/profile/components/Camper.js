@@ -7,12 +7,18 @@ import {
   faHeart,
   faCalendar
 } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 import { AvatarRenderer } from '../../helpers';
-
 import SocialIcons from './SocialIcons';
+import Link from '../../helpers/Link';
 
 import './camper.css';
+
+import { langCodes } from '../../../../i18n/allLangs';
+import { clientLocale } from '../../../../config/env';
+
+const localeCode = langCodes[clientLocale];
 
 const propTypes = {
   about: PropTypes.string,
@@ -34,15 +40,11 @@ const propTypes = {
   yearsTopContributor: PropTypes.array
 };
 
-function pluralise(word, condition) {
-  return condition ? word + 's' : word;
-}
-
-function joinArray(array) {
+function joinArray(array, t) {
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
       if (index === array.length - 1) {
-        return `${string} and ${item}`;
+        return `${string} ${t('misc.and')} ${item}`;
       } else {
         return `${string}, ${item}`;
       }
@@ -52,11 +54,13 @@ function joinArray(array) {
   });
 }
 
-function parseDate(joinDate) {
+function parseDate(joinDate, t) {
   joinDate = new Date(joinDate);
-  const year = joinDate.getFullYear();
-  const month = joinDate.toLocaleString('en-US', { month: 'long' });
-  return `Joined ${month} ${year}`;
+  const date = joinDate.toLocaleString([localeCode, 'en-US'], {
+    year: 'numeric',
+    month: 'long'
+  });
+  return t('profile.joined', { date: date });
 }
 
 function Camper({
@@ -78,6 +82,8 @@ function Camper({
   twitter,
   website
 }) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <Row>
@@ -107,28 +113,29 @@ function Camper({
       {location && <p className='text-center location'>{location}</p>}
       {isDonating && (
         <p className='text-center supporter'>
-          <FontAwesomeIcon icon={faHeart} /> Supporter
+          <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
       {joinDate && (
         <p className='bio text-center'>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate)}
+          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
         </p>
       )}
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
           <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} /> Top Contributor
+            <FontAwesomeIcon icon={faAward} />{' '}
+            <Link to={'/top-contributors'}>{t('profile.contributor')}</Link>
           </p>
-          <p className='text-center'>{joinArray(yearsTopContributor)}</p>
+          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
         </div>
       )}
       <br />
       {typeof points === 'number' ? (
         <p className='text-center points'>
-          {`${points} ${pluralise('total point', points !== 1)}`}
+          {t('profile.total-points', { count: points })}
         </p>
       ) : null}
     </div>

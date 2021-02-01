@@ -1,49 +1,60 @@
 ---
 id: bad87fee1348cd8acef08812
+title: 创建一个 Bootstrap 块级元素
 challengeType: 0
 forumTopicId: 16810
-title: 创建一个 Bootstrap 块级元素
+dashedName: create-a-block-element-bootstrap-button
 ---
 
-## Description
-<section id='description'>
-一般情况下，具有 <code>btn</code> 和 <code>btn-default</code> 两个 class 的 <code>button</code> 元素宽度与它包含的文本相同，举个例子：
-<code>&lt;button class="btn btn-default"&gt;Submit&lt;/button&gt;</code>
+# --description--
+
+一般情况下，具有 `btn` 和 `btn-default` 两个 class 的 `button` 元素宽度与它包含的文本相同，举个例子：
+
+`<button class="btn btn-default">Submit</button>`
+
 这个按钮的宽度应该和文本 "Submit" 相同
+
 <button class='btn btn-default'>Submit</button>
-通过为按钮添加 class 属性 <code>btn-block</code> 使其成为块级元素，按钮会伸展并填满页面整个水平空间，后续的元素会流到这个块级元素的下方，即 "新开一行"。
-<code>&lt;button class="btn btn-default btn-block"&gt;Submit&lt;/button&gt;</code>
+
+通过为按钮添加 class 属性 `btn-block` 使其成为块级元素，按钮会伸展并填满页面整个水平空间，后续的元素会流到这个块级元素的下方，即 "新开一行"。
+
+`<button class="btn btn-default btn-block">Submit</button>`
+
 这个按钮会 100% 占满所有的可用宽度。
+
 <button class='btn btn-default btn-block'>Submit</button>
-记住这些按钮仍然需要 <code>btn</code> 这个 class。
-添加 Bootstrap 的 <code>btn-block</code> class 到你 Bootstrap 按钮上吧。
-</section>
 
-## Instructions
-<section id='instructions'>
+记住这些按钮仍然需要 `btn` 这个 class。
 
-</section>
+添加 Bootstrap 的 `btn-block` class 到你 Bootstrap 按钮上吧。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 按钮的 class 属性应该仍然具有 <code>btn</code> 和 <code>btn-default</code>。
-    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
-  - text: 按钮的 class 属性应该包含 <code>btn-block</code>。
-    testString: assert($("button").hasClass("btn-block"));
-  - text: 确保所有的 <code>button</code> 元素都有一个闭合标签。
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+按钮的 class 属性应该仍然具有 `btn` 和 `btn-default`。
 
+```js
+assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-</section>
+按钮的 class 属性应该包含 `btn-block`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button').hasClass('btn-block'));
+```
 
-<div id='html-seed'>
+确保所有的 `button` 元素都有一个闭合标签。
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -106,14 +117,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -164,7 +168,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -175,5 +179,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

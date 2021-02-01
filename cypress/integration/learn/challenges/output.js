@@ -15,7 +15,7 @@ const locations = {
 
 const defaultOutput = `
 /**
-* Your test output will go here.
+* Your test output will go here
 */`;
 
 const runningOutput = '// running tests';
@@ -40,7 +40,7 @@ describe('Classic challenge', function() {
   it('shows test output when the tests are run', () => {
     cy.visit(locations.index);
     // first wait for the editor to load
-    cy.get(selectors.editor, { timeout: 10000 });
+    cy.get(selectors.editor, { timeout: 15000 });
     cy.get(selectors.runTestsButton)
       .click()
       .then(() => {
@@ -53,7 +53,7 @@ describe('Classic challenge', function() {
   it('shows test output when the tests are triggered by the keyboard', () => {
     cy.visit(locations.index);
     // first wait for the editor to load
-    cy.get(selectors.editor, { timeout: 10000 });
+    cy.get(selectors.editor, { timeout: 15000 });
     cy.get(selectors.hotkeys)
       .focus()
       .type('{ctrl}{enter}')

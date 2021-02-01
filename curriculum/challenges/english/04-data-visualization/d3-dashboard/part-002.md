@@ -2,44 +2,34 @@
 id: 5d8a4cfbe6b6180ed9a1c9df
 title: Part 2
 challengeType: 0
+dashedName: part-2
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, add opening and closing `html`, `head` and `body` tags below the doctype. Be sure to nest them properly.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/<!DOCTYPE\s+html\s*>\s*<html\s*>\s*<head\s*>\s*<\/head\s*>\s*<body\s*>\s*<\/body\s*>\s*<\/html\s*>/gi.test(code));
-
+```js
+assert(
+  /<!DOCTYPE\s+html\s*>\s*<html\s*>\s*<head\s*>\s*<\/head\s*>\s*<body\s*>\s*<\/body\s*>\s*<\/html\s*>/gi.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -51,5 +41,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

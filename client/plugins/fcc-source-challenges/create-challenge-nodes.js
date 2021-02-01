@@ -3,8 +3,14 @@ const crypto = require('crypto');
 function createChallengeNode(challenge, reporter) {
   // challengeType 11 is for video challenges (they only have instructions)
   // challengeType 7 is for certificates (they only have tests)
+
+  // TODO: either handle empty descriptions inside Gatsby OR ensure that
+  // description defaults to '' when creating challenges.
+  // ditto for seeds and instructions.
+  // create-md should, then, not create empty seed, description or instruction
+  // sections.
   if (
-    typeof challenge.description[0] !== 'string' &&
+    typeof challenge.description !== 'string' &&
     (challenge.challengeType !== 11 && challenge.challengeType !== 7)
   ) {
     reporter.warn(`

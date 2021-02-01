@@ -1,49 +1,78 @@
 ---
 id: 587d7b88367417b2b2512b45
-title: Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem 
+title: 'Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem'
 challengeType: 1
 forumTopicId: 301311
+dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem
 ---
 
-## Description
-<section id='description'>
-Now that you have worked through a few challenges using higher-order functions like <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>, you now get to apply them to solve a more complex challenge.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-We have defined a function named <code>squareList</code>.  You need to complete the code for the <code>squareList</code> function using any combination of <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> so that it returns a new array containing only the square of <em>only</em> the positive integers (decimal numbers are not integers) when an array of real numbers is passed to it.  An example of an array containing only real numbers is <code>[-3, 4.8, 5, 3, -3.2]</code>.
-<strong>Note:</strong> Your function should not use any kind of <code>for</code> or <code>while</code> loops or the <code>forEach()</code> function.
-</section>
+Now that you have worked through a few challenges using higher-order functions like `map()`, `filter()`, and `reduce()`, you now get to apply them to solve a more complex challenge.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>squareList</code> should be a <code>function</code>.
-    testString: assert.typeOf(squareList, 'function'), '<code>squareList</code> should be a <code>function</code>';
-  - text: for or while loops or forEach should not be used.
-    testString: assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
-  - text: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used.
-    testString: assert(__helpers.removeJSComments(code).match(/\.(map|filter|reduce)\s*\(/g));
-  - text: The function should return an <code>array</code>.
-    testString: assert(Array.isArray(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])));
-  - text: <code>squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])</code> should return <code>[16, 1764, 36]</code>.
-    testString: assert.deepStrictEqual(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]), [16, 1764, 36]);
-  - text: <code>squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3])</code> should return <code>[9, 100, 49]</code>.
-    testString: assert.deepStrictEqual(squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]), [9, 100, 49]);  
-```
+We have defined a function named `squareList`. You need to complete the code for the `squareList` function using any combination of `map()`, `filter()`, and `reduce()` so that it returns a new array containing only the square of *only* the positive integers (decimal numbers are not integers) when an array of real numbers is passed to it. An example of an array containing only real numbers is `[-3, 4.8, 5, 3, -3.2]`.
 
-</section>
+**Note:** Your function should not use any kind of `for` or `while` loops or the `forEach()` function.
 
-## Challenge Seed
-<section id='challengeSeed'>
+# --hints--
 
-<div id='js-seed'>
+`squareList` should be a `function`.
 
 ```js
-const squareList = (arr) => {
+assert.typeOf(squareList, 'function'),
+  '<code>squareList</code> should be a <code>function</code>';
+```
+
+`for`, `while`, and `forEach` should not be used.
+
+```js
+assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
+```
+
+`map`, `filter`, or `reduce` should be used.
+
+```js
+assert(
+  __helpers
+    .removeWhiteSpace(__helpers.removeJSComments(code))
+    .match(/\.(map|filter|reduce)\(/g)
+);
+```
+
+The function should return an `array`.
+
+```js
+assert(Array.isArray(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])));
+```
+
+`squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])` should return `[16, 1764, 36]`.
+
+```js
+assert.deepStrictEqual(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]), [
+  16,
+  1764,
+  36
+]);
+```
+
+`squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3])` should return `[9, 100, 49]`.
+
+```js
+assert.deepStrictEqual(squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]), [
+  9,
+  100,
+  49
+]);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+const squareList = arr => {
   // Only change code below this line
   return arr;
   // Only change code above this line
@@ -53,15 +82,10 @@ const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-const squareList = (arr) => {
+const squareList = arr => {
   const positiveIntegers = arr.filter(num => {
     return num >= 0 && Number.isInteger(num);
   });
@@ -71,5 +95,3 @@ const squareList = (arr) => {
   return squaredIntegers;
 };
 ```
-
-</section>

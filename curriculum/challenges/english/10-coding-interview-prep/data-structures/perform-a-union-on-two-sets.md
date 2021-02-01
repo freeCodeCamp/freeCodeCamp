@@ -3,35 +3,56 @@ id: 587d8253367417b2b2512c6c
 title: Perform a Union on Two Sets
 challengeType: 1
 forumTopicId: 301708
+dashedName: perform-a-union-on-two-sets
 ---
 
-## Description
-<section id='description'>
-In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another <code>Set</code> as an argument and return the <code>union</code> of the two sets, excluding any duplicate values.
-For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the union of setA and setB is: <code>setA.union(setB) = ['a', 'b', 'c', 'd', 'e']</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-</section>
+In this exercise we are going to perform a union on two sets of data. We will create a method on our `Set` data structure called `union`. This method should take another `Set` as an argument and return the `union` of the two sets, excluding any duplicate values.
 
-## Tests
-<section id='tests'>
+For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the union of setA and setB is: `setA.union(setB) = ['a', 'b', 'c', 'd', 'e']`.
 
-```yml
-tests:
-  - text: Your <code>Set</code> class should have a <code>union</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.union === 'function')})());
-  - text: The union of <code>["a", "b", "c"]</code> and <code>["c", "d"]</code> should return <code>["a", "b", "c", "d"]</code>.
-    testString: assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})());
+# --hints--
 
+Your `Set` class should have a `union` method.
+
+```js
+assert(
+  (function () {
+    var test = new Set();
+    return typeof test.union === 'function';
+  })()
+);
 ```
 
-</section>
+The union of a Set containing values ["a", "b", "c"] and a Set containing values ["c", "d"] should return a new Set containing values ["a", "b", "c", "d"].
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    setA.add('a');
+    setA.add('b');
+    setA.add('c');
+    setB.add('c');
+    setB.add('d');
+    var unionSetAB = setA.union(setB);
+    var final = unionSetAB.values();
+    return (
+      final.indexOf('a') !== -1 &&
+      final.indexOf('b') !== -1 &&
+      final.indexOf('c') !== -1 &&
+      final.indexOf('d') !== -1 &&
+      final.length === 4
+    );
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 class Set {
@@ -46,12 +67,12 @@ class Set {
   }
   // This method will return all the values in the set
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
   // This method will add an element to the set
   add(element) {
     if (!this.has(element)) {
-      this.dictionary[element] = true;
+      this.dictionary[element] = element;
       this.length++;
       return true;
     }
@@ -78,11 +99,7 @@ class Set {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 class Set {
@@ -96,12 +113,12 @@ class Set {
   }
 
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
 
   add(element) {
     if (!this.has(element)) {
-      this.dictionary[element] = true;
+      this.dictionary[element] = element;
       this.length++;
       return true;
     }
@@ -136,5 +153,3 @@ class Set {
   }
 }
 ```
-
-</section>

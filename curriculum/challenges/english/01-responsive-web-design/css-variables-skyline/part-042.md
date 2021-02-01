@@ -2,33 +2,28 @@
 id: 5d822fd413a79914d39e98f2
 title: Part 42
 challengeType: 0
+dashedName: part-42
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add the new `bb1-window` class to the `bb1a`, `bb1b`, and `bb1c` elements. This will apply the gradient to them.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".bb1a.bb1-window").length === 1 && $(".bb1b.bb1-window").length === 1 && $(".bb1c.bb1-window").length === 1);
-
+```js
+assert(
+  $('.bb1a.bb1-window').length === 1 &&
+    $('.bb1b.bb1-window').length === 1 &&
+    $('.bb1c.bb1-window').length === 1
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -201,12 +196,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -378,5 +368,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

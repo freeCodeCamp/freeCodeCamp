@@ -2,33 +2,25 @@
 id: 5d822fd413a79914d39e98fd
 title: Part 53
 challengeType: 0
+dashedName: part-53
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In the next few steps, you are going to use some tricks with CSS borders to turn the `bb2a` section into a triangle at the top of the building. First, remove the `background-color` from `bb2` since you don't need it anymore.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb2));
-
+```js
+const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0];
+assert(!/background-color/g.test(bb2));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -214,12 +206,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -403,5 +390,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

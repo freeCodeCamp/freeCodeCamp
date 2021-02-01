@@ -2,9 +2,8 @@
 // import _ from 'lodash/fp';
 import accepts from 'accepts';
 
-import { homeLocation } from '../../../config/env';
-
 import { unwrapHandledError } from '../utils/create-handled-error.js';
+import { getRedirectParams } from '../utils/redirection';
 
 const errTemplate = (error, req) => {
   const { message, stack } = error;
@@ -27,6 +26,7 @@ export default function prodErrorHandler() {
   // error handling in production.
   // eslint-disable-next-line no-unused-vars
   return function(err, req, res, next) {
+    const { origin } = getRedirectParams(req);
     const handled = unwrapHandledError(err);
     // respect handled error status
     let status = handled.status || err.status || res.statusCode;
@@ -39,7 +39,7 @@ export default function prodErrorHandler() {
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
 
-    const redirectTo = handled.redirectTo || `${homeLocation}/`;
+    const redirectTo = handled.redirectTo || `${origin}/`;
     const message =
       handled.message ||
       'Oops! Something went wrong. Please try again in a moment.';

@@ -2,31 +2,24 @@
 id: 5f459225127805351a6ad057
 title: Part 70
 challengeType: 0
+dashedName: part-70
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -90,10 +83,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -150,6 +139,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

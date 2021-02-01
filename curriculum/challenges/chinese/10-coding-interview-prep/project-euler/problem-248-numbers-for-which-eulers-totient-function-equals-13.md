@@ -1,55 +1,38 @@
 ---
 id: 5900f4651000cf542c50ff77
+title: 问题248：Euler的totient函数等于13的数字！
 challengeType: 5
 videoUrl: ''
-title: 问题248：Euler的totient函数等于13的数字！
+dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13
 ---
 
-## Description
-<section id="description"> φ（n）= 13的第一个数字n！是6227180929.找到第150,000个这样的数字。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+φ（n）= 13的第一个数字n！是6227180929.找到第150,000个这样的数字。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>euler248()</code>应返回23507044290。
-    testString: assert.strictEqual(euler248(), 23507044290);
+`euler248()`应返回23507044290。
 
+```js
+assert.strictEqual(euler248(), 23507044290);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler248() {
-  // Good luck!
+
   return true;
 }
 
 euler248();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

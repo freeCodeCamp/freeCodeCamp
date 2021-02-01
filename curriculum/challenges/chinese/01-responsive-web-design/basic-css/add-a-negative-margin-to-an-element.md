@@ -1,39 +1,35 @@
 ---
 id: bad87fee1348bd9aedf08823
+title: 给元素添加负外边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpyGs3'
 forumTopicId: 16166
-title: 给元素添加负外边距
+dashedName: add-a-negative-margin-to-an-element
 ---
 
-## Description
-<section id='description'>
-元素的<code>margin（外边距）</code>控制元素<code>border（边框）</code>与其他周围元素之间的距离大小。
-如果你把元素的<code>margin</code>设置为负值，元素会变得更大。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-尝试将蓝色框的<code>margin</code>设为负值，跟红色框一样大小。
-蓝色框的<code>margin</code>设置为<code>-15px</code>，它会填满与黄色框之间的距离。
-</section>
+元素的 `margin（外边距）` 用来控制元素 `border（边框）` 与其周围元素之间的距离大小。
 
-## Tests
-<section id='tests'>
+如果你把元素的 `margin` 设置为负值，元素会变得占用更多空间。
 
-```yml
-tests:
-  - text: '<code>blue-box</code> class的<code>margin</code>应该设置为<code>-15px</code>。'
-    testString: assert($(".blue-box").css("margin-top") === "-15px");
+# --instructions--
 
+请将蓝色框的 `margin` 设为负值，跟红色框 `margin` 的属性值设置成一样的大小。
+
+将蓝色框的 `margin` 设置为 `-15px`，它会让蓝色框填满整个黄色框。
+
+# --hints--
+
+class 为 `blue-box` 的元素的 `margin` 应设置为 `-15px`。
+
+```js
+assert($('.blue-box').css('margin-top') === '-15px');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -53,7 +49,7 @@ tests:
     background-color: yellow;
     padding: 10px;
   }
-  
+
   .red-box {
     background-color: crimson;
     color: #fff;
@@ -75,18 +71,45 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
 
-</section>
-              
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: -15px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+    margin-top: -15px;
+  }
+</style>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+```

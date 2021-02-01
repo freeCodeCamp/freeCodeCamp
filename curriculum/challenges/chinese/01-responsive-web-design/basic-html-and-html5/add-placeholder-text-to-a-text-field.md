@@ -1,75 +1,106 @@
 ---
 id: bad87fee1348bd9aedf08830
+title: 给输入框添加占位符文本
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
-title: 给输入框添加占位符文本
+dashedName: add-placeholder-text-to-a-text-field
 ---
 
-## Description
-<section id='description'>
-<code>Placeholder</code>占位符是用户在<code>input</code>输入框中输入任何东西前的预定义文本。
+# --description--
+
+占位符文本用户在 `input` 输入框中输入任何东西前的预定义文本。
+
 你可以像这样创建一个占位符：
-<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-把<code>input</code>输入框的<code>placeholder</code>占位符文本设置为 “猫咪图片地址”。
-</section>
+`<input type="text" placeholder="this is placeholder text">`
 
-## Tests
-<section id='tests'>
+**注意：**别忘了 `input` 元素是 "自闭和标签"，即不需要结束标签。
 
-```yml
-tests:
-  - text: 给现有的<code>input</code>输入框添加一个<code>placeholder</code>属性。
-    testString: assert($("input[placeholder]").length > 0);
-  - text: 设置<code>placeholder</code>属性的值为 ”猫咪图片地址“。
-    testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/猫咪图片地址/gi));
-  - text: 完整的<code>input</code>元素应有一个结束标签
-    testString: assert(!code.match(/<input.*\/?>.*<\/input>/gi));
-  - text: <code>input</code>输入框的语法必须正确。
-    testString: assert($("input[type=text]").length > 0);
+# --instructions--
+
+把 `input` 输入框的 `placeholder` 占位符文本设置为 "cat photo URL"。
+
+# --hints--
+
+给现有的 `input` 输入框添加一个 `placeholder` 属性。
+
+```js
+assert($('input[placeholder]').length > 0);
 ```
 
-</section>
+设置占位符属性的值为 `cat photo URL`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('input') &&
+    $('input').attr('placeholder') &&
+    $('input')
+      .attr('placeholder')
+      .match(/cat\s+photo\s+URL/gi)
+);
+```
 
-<div id='html-seed'>
+`input` 元素不该有结束标签。
+
+```js
+assert(!code.match(/<input.*\/?>.*<\/input>/gi));
+```
+
+`input` 输入框的语法必须正确。
+
+```js
+assert($('input[type=text]').length > 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-<p>点击查看更多<a href="#">猫咪图片</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
-  <p>猫咪最喜欢的三件东西：</p>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
   <ul>
-    <li>猫薄荷</li>
-    <li>激光笔</li>
-    <li>千层饼</li>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
   </ul>
-  <p>猫咪最讨厌的三件东西：</p>
+  <p>Top 3 things cats hate:</p>
   <ol>
-    <li>跳蚤</li>
-    <li>打雷</li>
-    <li>同类</li>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
   </ol>
   <input type="text">
 </main>
 ```
 
-</div>
+# --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
 
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <input type="text" placeholder="cat photo URL">
+</main>
+```

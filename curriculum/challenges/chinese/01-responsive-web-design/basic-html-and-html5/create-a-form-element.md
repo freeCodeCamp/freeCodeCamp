@@ -1,74 +1,104 @@
 ---
 id: bad87fee1348bd9aede08830
+title: 创建一个表单
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cmQ3Kfa'
 forumTopicId: 16817
-title: 创建一个表单
+dashedName: create-a-form-element
 ---
 
-## Description
-<section id='description'>
-如果想使用 HTML 向服务器提交数据，可以给<code>form</code>添加<code>action</code>属性。
+# --description--
+
+我们可以只通过 HTML 来实现发送数据给服务器的表单，只需要给 `form` 元素添加 `action` 属性即可。
+
 例如:
-<code>&#60;form action="/url-where-you-want-to-submit-form-data"&#62;&#60;/form&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-在<code>input</code>输入框外层创建一个<code>form</code>表单，然后设置表单的<code>action</code>属性为<code>"https://freecatphotoapp.com/submit-cat-photo"</code>。
-</section>
+`<form action="/url-where-you-want-to-submit-form-data"></form>`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '在<code>input</code>输入框外层创建一个<code>form</code>表单。'
-    testString: assert($("form") && $("form").children("input") && $("form").children("input").length > 0);
-  - text: '确保表单的<code>action</code>属性为<code>"https://freecatphotoapp.com/submit-cat-photo"</code>。'
-    testString: assert($("form").attr("action") === "https://freecatphotoapp.com/submit-cat-photo");
-  - text: '确保表单有开始标记和结束标记。'
-    testString: assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length);
+把现有的 `input` 输入框放到一个新建的 `form` 表单里，然后设置表单的 `action` 属性为 `"https://freecatphotoapp.com/submit-cat-photo"`。
 
+# --hints--
+
+现有的 `input` 输入框应位于新创建的 `form` 表单里面。
+
+```js
+const inputElem = document.querySelector('form input');
+assert(
+  inputElem.getAttribute('type') === 'text' &&
+    inputElem.getAttribute('placeholder') === 'cat photo URL'
+);
 ```
 
-</section>
+表单的 `action` 属性值应设置为 `https://freecatphotoapp.com/submit-cat-photo`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('form').attr('action') === 'https://freecatphotoapp.com/submit-cat-photo'
+);
+```
 
-<div id='html-seed'>
+`form` 元素应有开始标签和结束标签。
+
+```js
+assert(
+  code.match(/<\/form>/g) &&
+    code.match(/<form [^<]*>/g) &&
+    code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-<p>点击查看更多<a href="#">猫咪图片</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
-  <p>猫咪最喜欢的三件东西：</p>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
   <ul>
-    <li>猫薄荷</li>
-    <li>激光笔</li>
-    <li>千层饼</li>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
   </ul>
-  <p>猫咪最讨厌的三件东西：</p>
+  <p>Top 3 things cats hate:</p>
   <ol>
-    <li>跳蚤</li>
-    <li>打雷</li>
-    <li>同类</li>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
   </ol>
-  <input type="text" placeholder="猫咪图片地址">
+  <input type="text" placeholder="cat photo URL">
 </main>
 ```
 
-</div>
+# --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
 
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL">
+  </form>
+</main>
+```

@@ -2,33 +2,58 @@
 id: 5d8a4cfbe6b6180ed9a1c9f8
 title: Part 27
 challengeType: 0
+dashedName: part-27
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The two scales you defined will be used to create the axes and lines. First is the y-axis, it will be a line with some labels on the left of the graph. Create a new `const` named `yAxis` and set it equal to `d3.axisLeft(yScale)`. This will use the information from the `yScale` variable to build the axis.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(typeof(yAxis) === "function" && /yAxis\s*=\s*d3\.axisLeft\(\s*yScale\)/.test(code));
-
+```js
+assert(
+  typeof yAxis === 'function' &&
+    /yAxis\s*=\s*d3\.axisLeft\(\s*yScale\)/.test(code)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -69,47 +94,7 @@ tests:
 </script>  
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -151,5 +136,3 @@ tests:
 
 </script>
 ```
-
-</section>

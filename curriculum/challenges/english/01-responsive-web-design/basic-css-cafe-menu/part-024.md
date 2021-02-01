@@ -2,31 +2,24 @@
 id: 5f356ed63e0fa262326eef05
 title: Part 24
 challengeType: 0
+dashedName: part-24
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now make the background color of the `div` element to be `burlywood`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -53,10 +46,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   /*
@@ -75,6 +64,3 @@ div {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

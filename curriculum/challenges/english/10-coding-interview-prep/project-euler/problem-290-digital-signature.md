@@ -1,36 +1,26 @@
 ---
 id: 5900f48f1000cf542c50ffa1
-challengeType: 5
 title: 'Problem 290: Digital Signature'
+challengeType: 5
 forumTopicId: 301942
+dashedName: problem-290-digital-signature
 ---
 
-## Description
-<section id='description'>
-How many integers 0 ≤ n < 1018 have the property that the sum of the digits of n equals the sum of digits of 137n?
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+How many integers 0 ≤ n &lt; 1018 have the property that the sum of the digits of n equals the sum of digits of 137n?
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`euler290()` should return 20444710234716470.
 
-```yml
-tests:
-  - text: <code>euler290()</code> should return 20444710234716470.
-    testString: assert.strictEqual(euler290(), 20444710234716470);
-
+```js
+assert.strictEqual(euler290(), 20444710234716470);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler290() {
@@ -41,17 +31,8 @@ function euler290() {
 euler290();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

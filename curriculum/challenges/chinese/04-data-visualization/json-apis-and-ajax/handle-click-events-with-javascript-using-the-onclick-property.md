@@ -1,13 +1,14 @@
 ---
 id: 587d7fad367417b2b2512be1
+title: 使用 onclick 属性处理点击事件
 challengeType: 6
 forumTopicId: 301503
-title: 使用 onclick 属性处理点击事件
+dashedName: handle-click-events-with-javascript-using-the-onclick-property
 ---
 
-## Description
-<section id='description'>
-你希望代码仅在页面完成加载后执行。为此，你可将名为<code>DOMContentLoaded</code>的 JavaScript 事件附加到文档中。以下是实现的代码：
+# --description--
+
+你希望代码仅在页面完成加载后执行。为此，你可将名为`DOMContentLoaded`的 JavaScript 事件附加到文档中。以下是实现的代码：
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,44 +16,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-你可以在<code>DOMContentLoaded</code>函数内部添加事件处理方法。你可以添加<code>onclick</code>事件处理器，当用户点击 id 为<code>getMessage</code>的元素时会触发事件。添加以下代码：
+你可以在`DOMContentLoaded`函数内部添加事件处理方法。你可以添加`onclick`事件处理器，当用户点击 id 为`getMessage`的元素时会触发事件。添加以下代码：
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-在<code>DOMContentLoaded</code>函数内为 id 为<code>getMessage</code>的元素添加一个 click 事件处理器。
-</section>
+在`DOMContentLoaded`函数内为 id 为`getMessage`的元素添加一个 click 事件处理器。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 你的代码应该用<code>document.getElementById</code>方法来选择<code>getMessage</code>元素。
-    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
-  - text: 你的代码应该添加<code>onclick</code>事件处理器。
-    testString: assert(typeof document.getElementById('getMessage').onclick === 'function');
+你的代码应该用`document.getElementById`方法来选择`getMessage`元素。
 
+```js
+assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
 ```
 
-</section>
+你的代码应该添加`onclick`事件处理器。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof document.getElementById('getMessage').onclick === 'function');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
   document.addEventListener('DOMContentLoaded', function(){
-    // 在这行下面添加代码
+    // Add your code below this line
 
-    // 在这行上面添加代码
+
+    // Add your code above this line
   });
 </script>
 
@@ -93,14 +91,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -147,6 +138,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>
-

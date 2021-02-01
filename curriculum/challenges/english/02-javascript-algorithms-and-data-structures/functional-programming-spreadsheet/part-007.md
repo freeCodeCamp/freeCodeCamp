@@ -2,12 +2,12 @@
 id: 5d7925337954ed57a565a135
 title: Part 7
 challengeType: 0
+dashedName: part-7
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-This is possible because the anonymous function has been immediately assigned to a value - this is effectively the same as using a named function. 
+This is possible because the anonymous function has been immediately assigned to a value - this is effectively the same as using a named function.
 
 Rewrite `addVar` using ES6's arrow syntax:
 
@@ -17,50 +17,17 @@ const fn = (x, y) => x;
 
 Note that the value is returned implicitly.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constaddVar=(x,y)=>x+y"));
-
+```js
+assert(code.replace(/\s/g, '').includes('constaddVar=(x,y)=>x+y'));
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const addVar = function(x, y) {
-  return x + y;
-};
-
-const infixToFunction = {};
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -88,25 +55,29 @@ const infixToFunction = {};
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const addVar = function(x, y) {
+  return x + y;
+};
+
+const infixToFunction = {};
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -115,5 +86,3 @@ const addVar = (x, y) => x + y;
 const infixToFunction = {};
 </script>
 ```
-
-</section>

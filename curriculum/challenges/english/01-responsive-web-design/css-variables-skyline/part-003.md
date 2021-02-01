@@ -2,33 +2,28 @@
 id: 5d822fd413a79914d39e98cb
 title: Part 3
 challengeType: 0
+dashedName: part-3
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, add opening and closing `head` and `body` tags within the html element.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(code.match(/<html\s*>\s*<head\s*>\s*<\/head\s*>\s*<body\s*>\s*<\/body\s*>\s*<\/html\s*>/gi));
-
+```js
+assert(
+  code.match(
+    /<html\s*>\s*<head\s*>\s*<\/head\s*>\s*<body\s*>\s*<\/body\s*>\s*<\/html\s*>/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -37,12 +32,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -55,5 +45,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

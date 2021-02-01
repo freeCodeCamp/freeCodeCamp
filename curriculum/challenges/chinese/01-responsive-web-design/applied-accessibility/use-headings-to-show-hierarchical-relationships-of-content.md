@@ -1,47 +1,59 @@
 ---
 id: 587d774d367417b2b2512a9e
+title: 使用标题显示内容的层次关系
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026
-title: 使用标题显示内容的层次关系
+dashedName: use-headings-to-show-hierarchical-relationships-of-content
 ---
 
-## Description
-<section id='description'>
-标题标签（包括<code>h1</code>到<code>h6</code>）有很高的使用率，它们用于描述内容的主题。在屏幕阅读器中，用户为更快地了解页面内容，可以设置让阅读器只朗读页面标题。这意味着标题标签之间以及标签本身都应语义化，不应仅仅为了获得不同字号而使用不同级别的标题标签。
-<em>语义化</em>：标签名能准确地表达它所含内容的信息类型。
-对于一篇含有引言、正文、结论的论文，把结论作为引言的一部分没有任何意义，因为结论应该是独立的章节。类似地，页面中的标题标签也应该是有序的，并且能表明内容的层次关系。
+# --description--
+
+标题标签（包括 `h1` 到 `h6`）有很高的使用率，它们用于描述内容的主题。在屏幕阅读器中，用户为了快速了解页面纲要，可以设置让阅读器只朗读页面标题。这意味着我们不应仅仅为了设置不同字号而使用标题，而应让标签本身具有语义化和实质性的含义，同时不同标题之间也应关联（具有层级关系）。
+
+*语义化*的意思是，标签名能准确地表达它所含内容的信息类型。
+
+假如你在写一篇含有引言、正文、结论的论文。此时，如果把结论作为正文的一部分显然没有任何意义，因为结论应该是独立的章节。类似地，页面中的标题标签也应该是有序的，并且能表明内容的层次关系。
+
 在使用中，相同级别（或者更高级别）的标题标签用于开启新的章节，低一级别的标题标签用于开启上一级标题标签的子小节。
-举个例子：一个<code>h2</code>标签后紧跟若干<code>h4</code>标签的页面，会让使用屏幕阅读器的用户感到困惑。尽管在页面中，使用这 6 个标题标签可以控制内容的的视觉样式，但我们应该使用 CSS 来调整。
-最后一点，每个页面应该只有一个<code>h1</code>标签，用来说明页面主要内容。<code>h1</code>标签和其他的标题标签可以让搜索引擎获取页面的大纲。
-</section>
 
-## Instructions
-<section id='instructions'>
-Camper Cat 希望他的网站有一个介绍如何成为忍者的页面。请帮助他修改标题标签，使它们语义化且顺序正确。你需要将所有的<code>h5</code>标题标签调整为恰当的级别（即<code>h3</code>标题标签），使它们是<code>h2</code>标题标签的子级。
-</section>
+比如说，如果我们在一个 `h2` 标签后加上若干由 `h4` 标签引导的页面。此时发生了层级的错位，这会让使用屏幕阅读器的用户感到困惑。尽管在浏览器所显示的页面中，错误地使用这六个标题标签依然可以让它们在视觉效果上看起来很合理。但此时，我们应该按照层级正确地使用标签，然后用 CSS 来调整样式。
 
-## Tests
-<section id='tests'>
+最后一点，每个页面应只有一个 `h1` 标签，用来概括说明页面的主题。另外，这六个标题标签可以让搜索引擎获取页面的大纲。
 
-```yml
-tests:
-  - text: '你的代码应该包含 6 个<code>h3</code>标签。'
-    testString: assert($("h3").length === 6);
-  - text: '你的代码不应包含 <code>h5</code> 标签。'
-    testString: assert((code.match(/\/h3/g) || []).length===6);
-  - text: '代码不应该包含 <code>h5</code> 标记.'
-    testString: assert($("h5").length === 0);
-  - text: '代码不应该包含 <code>h5</code> 结束标记。'
-    testString: assert(/\/h5/.test(code)===false);
+# --instructions--
+
+Camper Cat 希望他的网站有一个介绍如何成为忍者的页面。请帮助他修改标题标签，使它们语义化且顺序正确。你需要将所有的 `h5` 标题标签调整为恰当的级别（即 `h3` 标题标签），因为它们是 `h2` 标题标签的子级。
+
+# --hints--
+
+应存在 6 个 `h3` 标签。
+
+```js
+assert($('h3').length === 6);
 ```
 
-</section>
+确保 `h3` 有结束标签
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert((code.match(/\/h3/g) || []).length === 6);
+```
 
-<div id='html-seed'>
+不应该存在 `h5` 标签.
+
+```js
+assert($('h5').length === 0);
+```
+
+不应该存在 `h5` 的结束标签。
+
+```js
+assert(/\/h5/.test(code) === false);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h1>How to Become a Ninja</h1>
@@ -60,18 +72,21 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<h1>How to Become a Ninja</h1>
+<main>
+  <h2>Learn the Art of Moving Stealthily</h2>
+  <h3>How to Hide in Plain Sight</h3>
+  <h3>How to Climb a Wall</h3>
 
-</section>
-              
+  <h2>Learn the Art of Battle</h2>
+  <h3>How to Strengthen your Body</h3>
+  <h3>How to Fight like a Ninja</h3>
+
+  <h2>Learn the Art of Living with Honor</h2>
+  <h3>How to Breathe Properly</h3>
+  <h3>How to Simplify your Life</h3>
+</main>
+```

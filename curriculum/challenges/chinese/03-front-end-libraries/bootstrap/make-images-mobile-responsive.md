@@ -1,46 +1,58 @@
 ---
 id: bad87fee1348bd9acde08812
+title: 使图片自适应移动端
 challengeType: 0
 forumTopicId: 18232
-title: 使图片自适应移动端
+dashedName: make-images-mobile-responsive
 ---
 
-## Description
-<section id='description'>
-首先，在已有的图片下面添加一张新的图片. 设置 <code>src</code> 属性为 <code>https://bit.ly/fcc-running-cats</code>。
+# --description--
+
+首先，在已有的图片下面添加一张新的图片. 设置 `src` 属性为 `https://bit.ly/fcc-running-cats`。
+
 如果图片的大小恰恰和我们手机屏幕尺寸大小一样自然是最好的。
-幸运的是现在通过 Bootstrap，我们仅仅只需要为 image 标签上设置 class 属性为 <code>img-responsive</code> 就可以让它完美的适应你页面的宽度了。
-</section>
 
-## Instructions
-<section id='instructions'>
+幸运的是现在通过 Bootstrap，我们仅仅只需要为 image 标签上设置 class 属性为 `img-responsive` 就可以让它完美的适应你页面的宽度了。
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+该页面拥有总计两个图片。
 
-```yml
-tests:
-  - text: 该页面拥有总计两个图片。
-    testString: assert($("img").length === 2);
-  - text: 新的图片应该在旧的图片下面并且含有 class 属性 <code>img-responsive</code>。
-    testString: assert($("img:eq(1)").hasClass("img-responsive"));
-  - text: 新的图片不应该含有 class 属性 <code>smaller-image</code>。
-    testString: assert(!$("img:eq(1)").hasClass("smaller-image"));
-  - text: 新图片的 <code>src</code> 属性应该为 <code>https&#58;//bit.ly/fcc-running-cats</code>。
-    testString: assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats");
-  - text: 确保新的 <code>img</code> 元素有一个闭合的右尖括号 “/>”。
-    testString: assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2);
-
+```js
+assert($('img').length === 2);
 ```
 
-</section>
+新的图片应该在旧的图片下面并且含有 class 属性 `img-responsive`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('img:eq(1)').hasClass('img-responsive'));
+```
 
-<div id='html-seed'>
+新的图片不应该含有 class 属性 `smaller-image`。
+
+```js
+assert(!$('img:eq(1)').hasClass('smaller-image'));
+```
+
+新图片的 `src` 属性应该为 `https://bit.ly/fcc-running-cats`。
+
+```js
+assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
+```
+
+确保新的 `img` 元素有一个闭合的右尖括号 “/>”。
+
+```js
+assert(
+  code.match(/<img/g) &&
+    code.match(/<img[^<]*>/g).length === 2 &&
+    code.match(/<img/g).length === 2
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -101,14 +113,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -158,7 +163,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -169,5 +174,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

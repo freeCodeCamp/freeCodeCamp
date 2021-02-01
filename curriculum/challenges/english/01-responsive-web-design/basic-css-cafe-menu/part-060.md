@@ -2,33 +2,26 @@
 id: 5f3ef6e056bdde6ae6892ba2
 title: Part 60
 challengeType: 0
+dashedName: part-60
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
 
 Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -85,10 +78,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -127,6 +116,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

@@ -1,37 +1,35 @@
 ---
 id: 5a9036e138fddaf9a66b5d33
+title: 使用 grid-template-rows 添加多行
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cbp9Pua'
 forumTopicId: 301119
-title: 使用 grid-template-rows 添加多行
+dashedName: add-rows-with-grid-template-rows
 ---
 
-## Description
-<section id='description'>
-在上个挑战中，你创建的网格会自动设置行数。你可以像用<code>grid-template-columns</code>设置网格的列一样，用<code>grid-template-rows</code>设置网格的行。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-给网格添加两行，使每行高度均为<code>50px</code>。
-</section>
+在上个挑战中，你创建的网格会自动设置行数。你可以用 `grid-template-rows` 设置网格的行，就像用 `grid-template-columns` 设置网格的列那样。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '<code>container</code>类应该有<code>grid-template-rows</code>属性，且该属性的两个值均为<code>50px</code>'
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi));
+请给网格添加两行，使每行高度均为 `50px`。
 
+# --hints--
+
+类为 `container` 的元素应具有 `grid-template-rows` 属性，且该属性的两个属性值均为 `50px`。
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -40,20 +38,20 @@ tests:
   .d3{background:PaleTurquoise;}
   .d4{background:LightPink;}
   .d5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     width: 100%;
     background: LightGray;
     display: grid;
     grid-template-columns: 100px 100px 100px;
-    /* 请在本行以下添加你的代码 */
+    /* Only change code below this line */
+
     
-    
-    /* 请在本行以上添加你的代码 */
+    /* Only change code above this line */
   }
 </style>
-  
+
 <div class="container">
   <div class="d1">1</div>
   <div class="d2">2</div>
@@ -63,19 +61,8 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>.container {grid-template-rows: 50px 50px;}</style>
 ```
-
-</section>
-              

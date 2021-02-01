@@ -1,49 +1,66 @@
 ---
 id: a97fd23d9b809dac9921074f
+title: 可选参数
 challengeType: 5
 forumTopicId: 14271
-title: 可选参数
+dashedName: arguments-optional
 ---
 
-## Description
-<section id='description'>
-创建一个将两个参数相加的函数。如果只传入了一个参数，则返回一个函数，需要传入一个参数并返回总和。
-比如，<code>addTogether(2, 3)</code>应该返回<code>5</code>。而<code>addTogether(2)</code>应该返回一个函数。
-调用这个返回的函数，传入一个值，返回总和：
-<code>var sumTwoAnd = addTogether(2);</code>
-<code>sumTwoAnd(3)</code>此时应返回<code>5</code>。
-只要其中任何一个参数不是数字，那就应返回<code>undefined</code>。
-  </section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+创建一个将两个参数相加的函数。如果调用时只传入了一个参数，则应返回一个接收新的参数的函数。待传入下一个参数后，再返回与之前传入的参数之和。
 
-</section>
+比如，`addTogether(2, 3)` 应该返回 `5`。而 `addTogether(2)` 应该返回一个函数。
 
-## Tests
-<section id='tests'>
+调用这个返回的函数，为它传入一个值，然后再返回总和：
 
-```yml
-tests:
-  - text: '<code>addTogether(2, 3)</code>应该返回5。'
-    testString: assert.deepEqual(addTogether(2, 3), 5);
-  - text: <code>addTogether(2)(3)</code>应该返回5。
-    testString: assert.deepEqual(addTogether(2)(3), 5);
-  - text: '<code>addTogether(&quot;http://bit.ly/IqT6zt&quot;)</code>应返回undefined。'
-    testString: assert.isUndefined(addTogether("http://bit.ly/IqT6zt"));
-  - text: '<code>addTogether(2, &quot;3&quot;)</code>应返回undefined。'
-    testString: assert.isUndefined(addTogether(2, "3"));
-  - text: '<code>addTogether(2)([3])</code>应返回undefined。'
-    testString: assert.isUndefined(addTogether(2)([3]));
+`var sumTwoAnd = addTogether(2);`
 
+`sumTwoAnd(3)` 此时应返回 `5`。
+
+任何时候，只要任一传入的参数不是数字，就应返回 `undefined`。
+
+# --hints--
+
+`addTogether(2, 3)` 应返回 5。
+
+```js
+assert.deepEqual(addTogether(2, 3), 5);
 ```
 
-</section>
+`addTogether(23, 30)` 应返回 53。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(addTogether(23, 30), 53);
+```
 
-<div id='js-seed'>
+`addTogether(5)(7)` 应返回 12。
+
+```js
+assert.deepEqual(addTogether(5)(7), 12);
+```
+
+`addTogether("http://bit.ly/IqT6zt")` 应返回 undefined。
+
+```js
+assert.isUndefined(addTogether('http://bit.ly/IqT6zt'));
+```
+
+`addTogether(2, "3")` 应返回 undefined。
+
+```js
+assert.isUndefined(addTogether(2, '3'));
+```
+
+`addTogether(2)([3])` 应返回 undefined。
+
+```js
+assert.isUndefined(addTogether(2)([3]));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function addTogether() {
@@ -53,15 +70,7 @@ function addTogether() {
 addTogether(2,3);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function addTogether() {
@@ -78,5 +87,3 @@ function addTogether() {
   return a + arguments[1];
 }
 ```
-
-</section>

@@ -1,15 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244cc
+title: 访问嵌套对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
-title: 访问嵌套对象
+dashedName: accessing-nested-objects
 ---
 
-## Description
-<section id='description'>
-通过串联起来的点操作符或中括号操作符来访问对象的嵌套属性。
-下面是一个嵌套的对象：
+# --description--
+
+我们可以通过连续使用点号表示法和方括号表示法来访问对象的嵌套属性。
+
+这是一个访问嵌套对象的示例：
 
 ```js
 var ourStorage = {
@@ -28,31 +30,38 @@ ourStorage.cabinet["top drawer"].folder2;  // "secrets"
 ourStorage.desk.drawer; // "stapler"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-读取<code>myStorage</code>对象，将<code>glove box</code>属性的内容赋值给变量<code>gloveBoxContents</code>。在适用的地方使用点操作符来访问属性，否则使用中括号操作符。
-</section>
+请把 `myStorage` 对象中 `glove box` 的属性值赋给变量 `gloveBoxContents`。请优先使用点号表示法来访问属性；对于点号表示法不能处理的情况，再考虑使用方括号表示法。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>gloveBoxContents</code>应该等于"maps"。
-    testString: assert(gloveBoxContents === "maps");
-  - text: 应使用点操作符和中括号操作符来访问<code>myStorage</code>。
-    testString: assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+`gloveBoxContents` 的值应为 "maps"。
 
+```js
+assert(gloveBoxContents === 'maps');
 ```
 
-</section>
+应使用点号表示法和方括号表示法来访问 `myStorage`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(x) { 
+  if(typeof x != 'undefined') { 
+    return "gloveBoxContents = " + x;
+  }
+  return "gloveBoxContents is undefined";
+})(gloveBoxContents);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -69,31 +78,9 @@ var myStorage = {
 };
 
 var gloveBoxContents = undefined; // Change this line
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(x) { 
-  if(typeof x != 'undefined') { 
-    return "gloveBoxContents = " + x;
-  }
-  return "gloveBoxContents is undefined";
-})(gloveBoxContents);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myStorage = {
@@ -109,5 +96,3 @@ var myStorage = {
 };
 var gloveBoxContents = myStorage.car.inside["glove box"];
 ```
-
-</section>

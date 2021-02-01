@@ -2,33 +2,26 @@
 id: 5f3ef6e0f8c230bdd2349716
 title: Part 64
 challengeType: 0
+dashedName: part-64
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `h1` and `h2` elements' text are set by default values of the user's browser.
 
-Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -85,10 +78,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -135,6 +124,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

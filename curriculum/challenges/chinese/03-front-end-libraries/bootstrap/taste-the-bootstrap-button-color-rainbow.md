@@ -1,42 +1,46 @@
 ---
 id: bad87fee1348cd8acef08811
+title: 体验 Bootstrap 彩虹色的按钮
 challengeType: 0
 forumTopicId: 18323
-title: 体验 Bootstrap 彩虹色的按钮
+dashedName: taste-the-bootstrap-button-color-rainbow
 ---
 
-## Description
-<section id='description'>
-<code>btn-primary</code> class 的颜色是你在应用中的主题色。这样 “突出显示” 是引导用户按步就班进行操作的有效办法。
-将按钮的 class 从 Bootstrap 的 <code>btn-default</code> 替换为 <code>btn-primary</code>。
-记住：你的按钮仍然需要 <code>btn</code> 和 <code>btn-block</code> class。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+`btn-primary` class 的颜色是你在应用中的主题色。这样 “突出显示” 是引导用户按步就班进行操作的有效办法。
 
-</section>
+将按钮的 class 从 Bootstrap 的 `btn-default` 替换为 `btn-primary`。
 
-## Tests
-<section id='tests'>
+记住：你的按钮仍然需要 `btn` 和 `btn-block` class。
 
-```yml
-tests:
-  - text: 按钮的 class 属性应该有 <code>btn-primary</code>。
-    testString: assert($("button").hasClass("btn-primary"));
-  - text: 按钮的 class 属性应该仍有 <code>btn</code> 和 <code>btn-block</code>。
-    testString: assert($("button").hasClass("btn-block") && $("button").hasClass("btn"));
-  - text: 确保所有 <code>button</code> 元素都有一个闭合标签。
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+# --hints--
 
+按钮的 class 属性应该有 `btn-primary`。
+
+```js
+assert($('button').hasClass('btn-primary'));
 ```
 
-</section>
+按钮的 class 属性应该仍有 `btn` 和 `btn-block`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
+```
 
-<div id='html-seed'>
+确保所有 `button` 元素都有一个闭合标签。
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -99,14 +103,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -157,7 +154,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -168,5 +165,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

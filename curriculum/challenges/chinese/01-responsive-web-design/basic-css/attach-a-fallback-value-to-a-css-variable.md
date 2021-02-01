@@ -1,48 +1,55 @@
 ---
 id: 5a9d7286424fe3d0e10cad13
+title: 给 CSS 变量附加回退值
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
-title: 给 CSS 变量附加回退值
+dashedName: attach-a-fallback-value-to-a-css-variable
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 使用变量来作为 CSS 属性值的时候，可以设置一个备用值来防止由于某些原因导致变量不生效的情况。
-或许有些人正在使用着不支持 CSS 变量的旧浏览器，又或者，设备不支持你设置的变量值。为了防止这种情况出现，那么你可以这样写：
+
+或许有些人正在使用着不支持 CSS 变量的旧浏览器，又或者，设备不支持你设置的变量值。为了防止这种情况出现，你可以这样写：
 
 ```css
 background: var(--penguin-skin, black);
 ```
 
-这样，当变量有问题的时候，它会设置背景颜色为黑色。
-提示：这对调试会很有帮助。
-</section>
+这样，当变量有问题的时候，它会设置背景颜色为黑色。 提示：这对调试代码也会很有帮助。
 
-## Instructions
-<section id='instructions'>
-在<code>penguin-top</code>和<code>penguin-bottom</code>class 里面，<code>background</code>属性设置一个<code>black</code>的备用色。
-<strong>注意：</strong>因为 CSS 变量名拼写错了，所以备用值会被使用。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+请为 class 为 `penguin-top` 和 `penguin-bottom` 的元素的 `background` 属性设置一个 `black` 的备用色。
 
-```yml
-tests:
-  - text: '<code>penguin-top</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
-    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
-  - text: '<code>penguin-bottom</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
-    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
+**注意：**因为 CSS 变量名拼写错了，所以备用值会被采用。
 
+# --hints--
+
+class 为 `penguin-top` 的元素的 `background` 属性值应有 `black` 作为备用颜色。
+
+```js
+assert(
+  code.match(
+    /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi
+  )
+);
 ```
 
-</section>
+class 为 `penguin-bottom` 的元素的 `background` 属性值应有 `black` 作为备用颜色。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi
+  )
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -57,33 +64,33 @@ tests:
     width: 300px;
     height: 300px;
   }
-  
+
   .penguin-top {
     top: 10%;
     left: 25%;
-  
-    /* change code below */
+
+    /* Change code below this line */
     background: var(--pengiun-skin);
-    /* change code above */
-  
+    /* Change code above this line */
+
     width: 50%;
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
-  
-    /* change code below */
+
+    /* Change code below this line */
     background: var(--pengiun-skin);
-    /* change code above */
-  
+    /* Change code above this line */
+
     width: 53%;
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-  
+
   .right-hand {
     top: 0%;
     left: -5%;
@@ -94,7 +101,7 @@ tests:
     transform: rotate(45deg);
     z-index: -1;
   }
-  
+
   .left-hand {
     top: 0%;
     left: 75%;
@@ -105,7 +112,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-  
+
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -114,7 +121,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -123,7 +130,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .belly {
     top: 60%;
     left: 2.5%;
@@ -132,7 +139,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-  
+
   .right-feet {
     top: 85%;
     left: 60%;
@@ -143,7 +150,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-  
+
   .left-feet {
     top: 85%;
     left: 25%;
@@ -154,7 +161,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-  
+
   .right-eye {
     top: 45%;
     left: 60%;
@@ -163,7 +170,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .left-eye {
     top: 45%;
     left: 25%;
@@ -172,7 +179,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .sparkle {
     top: 25%;
     left: 15%;
@@ -181,7 +188,7 @@ tests:
     height: 35%;
     border-radius: 50%;
   }
-  
+
   .blush-right {
     top: 65%;
     left: 15%;
@@ -190,7 +197,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .blush-left {
     top: 65%;
     left: 70%;
@@ -199,7 +206,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-top {
     top: 60%;
     left: 40%;
@@ -208,7 +215,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -217,11 +224,11 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   body {
-    background:#c6faf1;
+    background: #c6faf1;
   }
-  
+
   .penguin * {
     position: absolute;
   }
@@ -251,19 +258,15 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>
+  .penguin-top {
+    background: var(--pengiun-skin, black);
+  }
+  .penguin-bottom {
+    background: var(--pengiun-skin, black);
+  }
+</style>
 ```
-
-</section>
-              

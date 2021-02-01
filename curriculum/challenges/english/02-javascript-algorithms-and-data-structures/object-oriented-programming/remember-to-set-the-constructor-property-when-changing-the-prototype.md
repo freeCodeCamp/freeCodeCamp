@@ -3,11 +3,12 @@ id: 587d7daf367417b2b2512b80
 title: Remember to Set the Constructor Property when Changing the Prototype
 challengeType: 1
 forumTopicId: 301323
+dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 ---
 
-## Description
-<section id='description'>
-There is one crucial side effect of manually setting the prototype to a new object. It erases the <code>constructor</code> property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
+# --description--
+
+There is one crucial side effect of manually setting the prototype to a new object. It erases the `constructor` property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
 
 ```js
 duck.constructor === Bird; // false -- Oops
@@ -15,7 +16,7 @@ duck.constructor === Object; // true, all objects inherit from Object.prototype
 duck instanceof Bird; // true, still works
 ```
 
-To fix this, whenever a prototype is manually set to a new object, remember to define the <code>constructor</code> property:
+To fix this, whenever a prototype is manually set to a new object, remember to define the `constructor` property:
 
 ```js
 Bird.prototype = {
@@ -30,29 +31,21 @@ Bird.prototype = {
 };
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Define the <code>constructor</code> property on the <code>Dog</code> <code>prototype</code>.
-</section>
+Define the `constructor` property on the `Dog` `prototype`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>Dog.prototype</code> should set the <code>constructor</code> property.
-    testString: assert(Dog.prototype.constructor === Dog);
+`Dog.prototype` should set the `constructor` property.
 
+```js
+assert(Dog.prototype.constructor === Dog);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function Dog(name) {
@@ -72,15 +65,7 @@ Dog.prototype = {
 };
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function Dog(name) {
@@ -97,5 +82,3 @@ Dog.prototype = {
   }
 };
 ```
-
-</section>

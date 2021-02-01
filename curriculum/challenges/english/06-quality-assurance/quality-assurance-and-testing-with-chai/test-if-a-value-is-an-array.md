@@ -3,41 +3,70 @@ id: 587d824d367417b2b2512c50
 title: Test if a Value is an Array
 challengeType: 2
 forumTopicId: 301600
+dashedName: test-if-a-value-is-an-array
 ---
 
-## Description
-<section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Use <code>assert.isArray()</code> or <code>assert.isNotArray()</code> to make the tests pass.
-</section>
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: All tests should pass.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isArray vs. isNotArray.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[0].method, 'isArray', 'String.prototype.split() returns an Array'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isArray vs. isNotArray.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[1].method, 'isNotArray', 'Array.prototype.indexOf() returns a number'); }, xhr => { throw new Error(xhr.responseText); })
+Within `tests/1_unit-tests.js` under the test labelled `#11` in the `Arrays` suite, change each `assert` to either `assert.isArray` or `assert.isNotArray` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
+# --hints--
+
+All tests should pass.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+You should choose the correct method for the first assertion - `isArray` vs. `isNotArray`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(
+    (data) => {
+      assert.equal(
+        data.assertions[0].method,
+        'isArray',
+        'String.prototype.split() returns an Array'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-</section>
+You should choose the correct method for the second assertion - `isArray` vs. `isNotArray`.
 
-## Solution
-<section id='solution'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'isNotArray',
+        'Array.prototype.indexOf() returns a number'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
 
 ```js
 /**
@@ -46,5 +75,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

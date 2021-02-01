@@ -1,13 +1,14 @@
 ---
 id: 5c6c06847491271903d37cfd
+title: 使用单选框和复选框的 value 属性
 challengeType: 0
 forumTopicId: 301099
-title: 使用单选框和复选框的 value 属性
+dashedName: use-the-value-attribute-with-radio-buttons-and-checkboxes
 ---
 
-## Description
-<section id='description'>
-当表单提交时，包括 options 已选值在内的数据会发送给服务端。<code>radio</code>和<code>checkbox</code>的<code>value</code>值决定了发送到服务端的实际内容。
+# --description--
+
+提交表单时，所选项的值会发送给服务端。`radio` 和 `checkbox` 的 `value` 属性值决定了发送到服务端的实际内容。
 
 例如：
 
@@ -20,82 +21,128 @@ title: 使用单选框和复选框的 value 属性
 </label>
 ```
 
-在这里，有两个 <code>radio</code> 单选框。如果当用户提交表单时 <code>indoor</code>  选项被选中，表单数据会包含：<code>indoor-outdoor=indoor</code>。也就是 "indoor" 单选框的 <code>name</code> 和 <code>value</code> 属性。
+这里有两个 `radio` 单选框。当用户提交表单时，如果 `indoor` 选项被选中，表单数据会包含：`indoor-outdoor=indoor`。也就是所选项的 `name` 和 `value` 属性值。
 
-如果没写 <code>value</code> 属性，会使用默认值做为表单数据提交，也就是 <code>on</code>。在这种情况下，如果用户点击 "indoor" 选项然后提交表单，表单数据的值为 <code>indoor-outdoor=on</code>，这可能并没有什么意义。因此最好将 <code>value</code> 属性设置一些有意义的内容。
-</section>
+如果没有指明 `value` 属性值，则会使用默认值做为表单数据提交，也就是 `on`。在这种情况下，如果用户选中 "indoor" 选项然后提交表单，表单数据则会包含 `indoor-outdoor=on`。这样的表单数据看起来不够直观，因此最好将 `value` 属性值设置为一些有意义的内容。
 
-## Instructions
-<section id='instructions'>
-给每一个<code>radio</code>和<code>checkbox</code>输入框添加<code>value</code>属性。请把每个<code>input</code>对应的<code>label</code>文本转换为小写（如 Outdoor 应转换为 outdoor），设置其为 value 的值（即 <code>value="outdoor"</code>）。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+给每一个 `radio` 和 `checkbox` 输入框添加 `value` 属性，属性值为 `input` 对应 `label` 中文本的小写形式。如 Outdoor 的 `value` 应设置为 `"outdoor"`，即 `value="outdoor"`。
 
-```yml
-tests:
-  - text: '一个单选按钮应该包含 <code>indoor</code> 的 <code>value</code> 属性。'
-    testString: assert($('label:contains("Indoor") > input[type="radio"]').filter("[value='indoor']").length > 0);
-  - text: '一个单选按钮应该包含 <code>outdoor</code> 的 <code>value</code> 属性。'
-    testString: assert($('label:contains("Outdoor") > input[type="radio"]').filter("[value='outdoor']").length > 0);
-  - text: '一个复选框应该包含 <code>loving</code> 的 <code>value</code> 属性。'
-    testString: assert($('label:contains("Loving") > input[type="checkbox"]').filter("[value='loving']").length > 0);
-  - text: '一个复选框应该包含 <code>lazy</code> 的 <code>value</code> 属性。'
-    testString: assert($('label:contains("Lazy") > input[type="checkbox"]').filter("[value='lazy']").length > 0);
-  - text: '一个复选框应该包含 <code>lazy</code> 的 <code>energetic</code> 属性。'
-    testString: assert($('label:contains("Energetic") > input[type="checkbox"]').filter("[value='energetic']").length > 0);
+# --hints--
+
+应有一个单选按钮的 `value` 属性值为 `indoor`。
+
+```js
+assert(
+  $('label:contains("Indoor") > input[type="radio"]').filter("[value='indoor']")
+    .length > 0
+);
 ```
 
-</section>
+应有一个单选按钮的 `value` 属性值为 `outdoor`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('label:contains("Outdoor") > input[type="radio"]').filter(
+    "[value='outdoor']"
+  ).length > 0
+);
+```
 
-<div id='html-seed'>
+应有一个复选框的 `value` 属性值为 `loving`。
+
+```js
+assert(
+  $('label:contains("Loving") > input[type="checkbox"]').filter(
+    "[value='loving']"
+  ).length > 0
+);
+```
+
+应有一个复选框的 `value` 属性值为 `lazy`。
+
+```js
+assert(
+  $('label:contains("Lazy") > input[type="checkbox"]').filter("[value='lazy']")
+    .length > 0
+);
+```
+
+应有一个复选框的 `value` 属性值为 `energetic`。
+
+```js
+assert(
+  $('label:contains("Energetic") > input[type="checkbox"]').filter(
+    "[value='energetic']"
+  ).length > 0
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>点击查看更多<a href="#">猫咪照片</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一个可爱的橘猫躺在地上"></a>
-  
-  <p>猫咪最喜欢的三件东西：</p>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
   <ul>
-    <li>猫薄荷</li>
-    <li>激光笔</li>
-    <li>千层饼</li>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
   </ul>
-  <p>猫咪最讨厌的三件东西：</p>
+  <p>Top 3 things cats hate:</p>
   <ol>
-    <li>跳蚤</li>
-    <li>打雷</li>
-    <li>同类</li>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
   </ol>
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality"> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label><br>
     <input type="text" placeholder="cat photo URL" required>
     <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-</section>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving"> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

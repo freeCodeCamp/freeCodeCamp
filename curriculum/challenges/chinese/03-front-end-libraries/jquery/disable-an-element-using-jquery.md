@@ -1,45 +1,52 @@
 ---
 id: bad87fee1348bd9aed808826
+title: 使用 jQuery 禁用元素
 challengeType: 6
 forumTopicId: 17563
-title: 使用 jQuery 禁用元素
+dashedName: disable-an-element-using-jquery
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 你还能用 jQuery 改变 HTML 标签的非 CSS 属性,例如:能禁用按钮。
+
 当你禁用按钮时，它将变成灰色并无法点击。
-jQuery 有一个<code>.prop()</code>方法，你可以用其调整标签的属性。
+
+jQuery 有一个`.prop()`方法，你可以用其调整标签的属性。
+
 下面的代码效果是禁用所有的按钮：
-<code>$("button").prop("disabled", true);</code>
-请仅禁用<code>target1</code>按钮。
-</section>
 
-## Instructions
-<section id='instructions'>
+`$("button").prop("disabled", true);`
 
-</section>
+请仅禁用`target1`按钮。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 禁用<code>target1</code>按钮。
-    testString: assert($("#target1") && $("#target1").prop("disabled") && code.match(/["']disabled["'],( true|true)/g));
-  - text: 不禁用其他的按钮。
-    testString: assert($("#target2") && !$("#target2").prop("disabled"));
-  - text: 仅用 jQuery 给标签添加类。
-    testString: assert(!code.match(/disabled[^<]*>/g));
+禁用`target1`按钮。
 
+```js
+assert(
+  $('#target1') &&
+    $('#target1').prop('disabled') &&
+    code.match(/["']disabled["'],( true|true)/g)
+);
 ```
 
-</section>
+不禁用其他的按钮。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#target2') && !$('#target2').prop('disabled'));
+```
 
-<div id='html-seed'>
+仅用 jQuery 给标签添加类。
+
+```js
+assert(!code.match(/disabled[^<]*>/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -49,7 +56,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -74,14 +81,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -92,7 +92,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -116,5 +116,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

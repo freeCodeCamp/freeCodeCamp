@@ -1,12 +1,13 @@
 ---
 id: 5900f38c1000cf542c50fe9f
+title: 问题32：Pandigital产品
 challengeType: 5
 videoUrl: ''
-title: 问题32：Pandigital产品
+dashedName: problem-32-pandigital-products
 ---
 
-## Description
-<section id="description">
+# --description--
+
 我们可以说，如果n位数字恰好一次使用了1到n的所有数字，那么它就是pandigital。 例如，5位数字15234是1到5泛数字。
 
 乘积7254是不寻常的，因为其标识为39×186 = 7254，包含被乘数，乘数，乘积是1到9泛数。
@@ -14,52 +15,72 @@ title: 问题32：Pandigital产品
 找出所有被乘数/乘数/产品标识可以写成1到9泛数字的所有产品的总和。
 
 提示：某些产品可以通过多种方式获得，因此请确保只在其总和中包括一次。
-</section>
 
-## Instructions
-<section id="instructions">
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`pandigitalProducts()`是一个函数。
 
-```yml
-tests:
-  - text: <code>pandigitalProducts()</code>是一个函数。
-    testString: assert(typeof pandigitalProducts === 'function');
-  - text: <code>pandigitalProducts()</code>应该返回45228。
-    testString: assert.strictEqual(pandigitalProducts(), 45228);
-
+```js
+assert(typeof pandigitalProducts === 'function');
 ```
 
-</section>
+`pandigitalProducts()`应该返回45228。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(pandigitalProducts(), 45228);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function pandigitalProducts() {
-  // Good luck!
+
   return true;
 }
 
 pandigitalProducts();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-// solution required
-```
+function pandigitalProducts() {
+  function is1to9Pandigital(...numbers) {
+    const digitStr = concatenateNums(...numbers);
+    // check if length is 9
+    if (digitStr.length !== 9) {
+      return false;
+    }
+    // check if pandigital
+    for (let i = digitStr.length; i > 0; i--) {
+      if (digitStr.indexOf(i.toString()) === -1) {
+        return false;
+      }
+    }
+    return true;
+  }
+  function concatenateNums(...numbers) {
+    let digitStr = '';
+    for (let i = 0; i < numbers.length; i++) {
+      digitStr += numbers[i].toString();
+    }
+    return digitStr;
+  }
 
-/section>
+  const pandigitalNums = [];
+  let sum = 0;
+  for (let mult1 = 2; mult1 < 9876; mult1++) {
+    let mult2 = 123;
+    while (concatenateNums(mult1, mult2, mult1 * mult2).length < 10) {
+      if (is1to9Pandigital(mult1, mult2, mult1 * mult2) && !pandigitalNums.includes(mult1 * mult2)) {
+        pandigitalNums.push(mult1 * mult2);
+        sum += mult1 * mult2;
+      }
+      mult2++;
+    }
+  }
+  return sum;
+}
+```

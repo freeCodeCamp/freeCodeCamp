@@ -1,44 +1,46 @@
 ---
 id: bad87fee1348bd9aed608826
+title: 使用 jQuery 的 appendTo 方法移动元素
 challengeType: 6
 forumTopicId: 18340
-title: 使用 jQuery 的 appendTo 方法移动元素
+dashedName: use-appendto-to-move-elements-with-jquery
 ---
 
-## Description
-<section id='description'>
-现在我们学习把标签从一个<code>div</code>移动到另一个<code>div</code>。
-jQuery 有一个<code>appendTo()</code>方法，可以选取 HTML 标签并将其添加到另一个标签里面。
-例如，如果要把<code>target4</code>从右框移到左框，可以设置如下：
-<code>$("#target4").appendTo("#left-well");</code>
-请把<code>target2</code>标签从<code>left-well</code>移动到<code>right-well</code>。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+现在我们学习把标签从一个`div`移动到另一个`div`。
 
-</section>
+jQuery 有一个`appendTo()`方法，可以选取 HTML 标签并将其添加到另一个标签里面。
 
-## Tests
-<section id='tests'>
+例如，如果要把`target4`从右框移到左框，可以设置如下：
 
-```yml
-tests:
-  - text: <code>target2</code>标签应该不在<code>left-well</code>内。
-    testString: assert($("#left-well").children("#target2").length === 0);
-  - text: <code>target2</code>标签应该在<code>right-well</code>内。
-    testString: assert($("#right-well").children("#target2").length > 0);
-  - text: 仅用 jQuery 移动这些标签。
-    testString: assert(!code.match(/class.*animated/g));
+`$("#target4").appendTo("#left-well");`
 
+请把`target2`标签从`left-well`移动到`right-well`。
+
+# --hints--
+
+`target2`标签应该不在`left-well`内。
+
+```js
+assert($('#left-well').children('#target2').length === 0);
 ```
 
-</section>
+`target2`标签应该在`right-well`内。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#right-well').children('#target2').length > 0);
+```
 
-<div id='html-seed'>
+仅用 jQuery 移动这些标签。
+
+```js
+assert(!code.match(/class.*animated/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -50,7 +52,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -75,14 +77,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -94,7 +89,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -118,6 +113,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>
-

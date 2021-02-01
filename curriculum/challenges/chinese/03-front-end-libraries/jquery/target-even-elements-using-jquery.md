@@ -1,46 +1,55 @@
 ---
 id: bad87fee1348bd9aed008826
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+title: 使用 jQuery 选择偶数元素
 challengeType: 6
 forumTopicId: 18318
-title: 使用 jQuery 选择偶数元素
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: target-even-elements-using-jquery
 ---
 
-## Description
-<section id='description'>
-你也可以用基于位置的<code>:odd</code>和<code>:even</code>选择器选取标签。
-注意，jQuery 是<code>零索引（zero-indexed）</code>的，这意味着第 1 个标签的位置编号是<code>0</code>。这有点混乱和反常——<code>:odd</code>表示选择第 2 个标签（位置编号 1），第 4 个标签（位置编号 3）……等等，以此类推。
+# --description--
+
+你也可以用基于位置的`:odd`和`:even`选择器选取标签。
+
+注意，jQuery 是`零索引（zero-indexed）`的，这意味着第 1 个标签的位置编号是`0`。这有点混乱和反常——`:odd`表示选择第 2 个标签（位置编号 1），第 4 个标签（位置编号 3）……等等，以此类推。
+
 下面的代码展示了选取所有的奇标签并设置类：
-<code>$(".target:odd").addClass("animated shake");</code>
-请尝试选取所有<code>target</code>标签的偶标签并给他们设置<code>animated</code>和<code>shake</code>类。要考虑到<strong>偶（even）</strong>指的是标签位置编号基于<code>0</code>的系统。
-</section>
 
-## Instructions
-<section id='instructions'>
+`$(".target:odd").addClass("animated shake");`
 
-</section>
+请尝试选取所有`target`标签的偶标签并给他们设置`animated`和`shake`类。要考虑到**偶（even）**指的是标签位置编号基于`0`的系统。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 所有的<code>target</code>标签应该抖动。
-    testString: assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'));
-  - text: 应该用<code>&#58;even</code>选择器修改这些标签。
-    testString: assert(code.match(/\:even/g));
-  - text: 仅用 jQuery 给标签添加类。
-    testString: assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\('.target:even'\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\('.target'\).filter\(':even'\)/g));
+所有的`target`标签应该抖动。
 
+```js
+assert(
+  $('.target:even').hasClass('animated') && $('.target:even').hasClass('shake')
+);
 ```
 
-</section>
+应该用`:even`选择器修改这些标签。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\:even/g));
+```
 
-<div id='html-seed'>
+仅用 jQuery 给标签添加类。
+
+```js
+assert(
+  code.match(/\$\(".target:even"\)/g) ||
+    code.match(/\$\('.target:even'\)/g) ||
+    code.match(/\$\(".target"\).filter\(":even"\)/g) ||
+    code.match(/\$\('.target'\).filter\(':even'\)/g)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -58,7 +67,7 @@ tests:
   });
 </script>
 
-<!-- 请修改本行以上的代码 -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -83,14 +92,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -108,7 +110,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -132,5 +134,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

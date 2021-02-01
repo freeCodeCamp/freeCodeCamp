@@ -3,67 +3,65 @@ id: 5e7b9f060b6c005b0e76f05b
 title: Build your own Functions
 challengeType: 11
 videoId: nLDychdBwUg
+dashedName: build-your-own-functions
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target='_blank'>Exercise</a>
-</section>
 
-## Tests
-<section id='tests'>
+\- [Exercise](https://www.youtube.com/watch?v=ksvGhDsjtpw)
 
-```yml
-question:
-  text: |
-    What will the following Python program print out?:
-    ```python
-    def fred():
-        print("Zap")
-    def jane():
-        print("ABC")
+# --question--
 
-    jane()
-    fred()
-    jane()
-    ```
-  answers:
-    - |
-        Zap
+## --text--
 
-        ABC
+What will the following Python program print out?:
 
-        jane
+```python
+def fred():
+    print("Zap")
+def jane():
+    print("ABC")
 
-        fred
-
-        jane
-    - |
-        Zap
-
-        ABC
-
-        Zap
-    - |
-        ABC
-
-        Zap
-
-        jane
-    - |
-        ABC
-
-        Zap
-
-        ABC
-    - |
-        Zap
-
-        Zap
-
-        Zap
-  solution: 4
+jane()
+fred()
+jane()
 ```
 
-</section>
+## --answers--
+
+<pre>Zap
+ABC
+jane
+fred
+jane</pre>
+
+---
+
+<pre>Zap
+ABC
+Zap</pre>
+
+---
+
+<pre>ABC
+Zap
+jane</pre>
+
+---
+
+<pre>ABC
+Zap
+ABC</pre>
+
+---
+
+<pre>Zap
+Zap
+Zap</pre>
+
+## --video-solution--
+
+4
+

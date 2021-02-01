@@ -3,11 +3,13 @@ id: 587d7da9367417b2b2512b69
 title: Sort an Array Alphabetically using the sort Method
 challengeType: 1
 forumTopicId: 18303
+dashedName: sort-an-array-alphabetically-using-the-sort-method
 ---
 
-## Description
-<section id='description'>
-The <code>sort</code> method sorts the elements of an array according to the callback function.
+# --description--
+
+The `sort` method sorts the elements of an array according to the callback function.
+
 For example:
 
 ```js
@@ -28,40 +30,50 @@ reverseAlpha(['l', 'h', 'z', 'b', 's']);
 // Returns ['z', 's', 'l', 'h', 'b']
 ```
 
-JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such a callback function, normally called <code>compareFunction</code>, is supplied, the array elements are sorted according to the return value of the <code>compareFunction</code>:
-If <code>compareFunction(a,b)</code> returns a value less than 0 for two elements <code>a</code> and <code>b</code>, then <code>a</code> will come before <code>b</code>.
-If <code>compareFunction(a,b)</code> returns a value greater than 0 for two elements <code>a</code> and <code>b</code>, then <code>b</code> will come before <code>a</code>.
-If <code>compareFunction(a,b)</code> returns a value equal to 0 for two elements <code>a</code> and <code>b</code>, then <code>a</code> and <code>b</code> will remain unchanged.
+JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such a callback function, normally called `compareFunction`, is supplied, the array elements are sorted according to the return value of the `compareFunction`: If `compareFunction(a,b)` returns a value less than 0 for two elements `a` and `b`, then `a` will come before `b`. If `compareFunction(a,b)` returns a value greater than 0 for two elements `a` and `b`, then `b` will come before `a`. If `compareFunction(a,b)` returns a value equal to 0 for two elements `a` and `b`, then `a` and `b` will remain unchanged.
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the <code>sort</code> method in the <code>alphabeticalOrder</code> function to sort the elements of <code>arr</code> in alphabetical order.
-</section>
+Use the `sort` method in the `alphabeticalOrder` function to sort the elements of `arr` in alphabetical order.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should use the <code>sort</code> method.
-    testString: assert(code.match(/\.sort/g));
-  - text: <code>alphabeticalOrder(["a", "d", "c", "a", "z", "g"])</code> should return <code>["a", "a", "c", "d", "g", "z"]</code>.
-    testString: assert(JSON.stringify(alphabeticalOrder(["a", "d", "c", "a", "z", "g"])) === JSON.stringify(["a", "a", "c", "d", "g", "z"]));
-  - text: <code>alphabeticalOrder(["x", "h", "a", "m", "n", "m"])</code> should return <code>["a", "h", "m", "m", "n", "x"]</code>.
-    testString: assert(JSON.stringify(alphabeticalOrder(["x", "h", "a", "m", "n", "m"])) === JSON.stringify(["a", "h", "m", "m", "n", "x"]));
-  - text: <code>alphabeticalOrder(["a", "a", "a", "a", "x", "t"])</code> should return <code>["a", "a", "a", "a", "t", "x"]</code>.
-    testString: assert(JSON.stringify(alphabeticalOrder(["a", "a", "a", "a", "x", "t"])) === JSON.stringify(["a", "a", "a", "a", "t", "x"]));
+Your code should use the `sort` method.
 
+```js
+assert(code.match(/\.sort/g));
 ```
 
-</section>
+`alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` should return `["a", "a", "c", "d", "g", "z"]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  JSON.stringify(alphabeticalOrder(['a', 'd', 'c', 'a', 'z', 'g'])) ===
+    JSON.stringify(['a', 'a', 'c', 'd', 'g', 'z'])
+);
+```
 
-<div id='js-seed'>
+`alphabeticalOrder(["x", "h", "a", "m", "n", "m"])` should return `["a", "h", "m", "m", "n", "x"]`.
+
+```js
+assert(
+  JSON.stringify(alphabeticalOrder(['x', 'h', 'a', 'm', 'n', 'm'])) ===
+    JSON.stringify(['a', 'h', 'm', 'm', 'n', 'x'])
+);
+```
+
+`alphabeticalOrder(["a", "a", "a", "a", "x", "t"])` should return `["a", "a", "a", "a", "t", "x"]`.
+
+```js
+assert(
+  JSON.stringify(alphabeticalOrder(['a', 'a', 'a', 'a', 'x', 't'])) ===
+    JSON.stringify(['a', 'a', 'a', 'a', 't', 'x'])
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function alphabeticalOrder(arr) {
@@ -73,14 +85,7 @@ function alphabeticalOrder(arr) {
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function alphabeticalOrder(arr) {
@@ -90,5 +95,3 @@ function alphabeticalOrder(arr) {
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
-
-</section>
