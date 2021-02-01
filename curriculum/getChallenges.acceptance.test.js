@@ -5,13 +5,13 @@
 
 // const path = require('path');
 
-// const { parseMarkdown } = require('../tools/challenge-md-parser');
+// const { parseMarkdown } = require('../tools/challenge-parser');
 // const { parseTranslation } = require('./getChallenges');
 
 // /* eslint-disable max-len */
 // const {
 //   SIMPLE_TRANSLATION
-// } = require('../tools/challenge-md-parser/translation-parser/__mocks__/mock-comments');
+// } = require('../tools/challenge-parser/translation-parser/__mocks__/mock-comments');
 // /* eslint-enable max-len */
 
 describe('translation parser', () => {

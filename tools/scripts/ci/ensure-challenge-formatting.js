@@ -2,7 +2,7 @@ const readdirp = require('readdirp-walk');
 const { has, isEmpty, isNumber } = require('lodash');
 const ora = require('ora');
 
-const { parseMarkdown } = require('../../challenge-md-parser');
+const { parseMarkdown } = require('../../challenge-parser');
 const { challengeRoot, checkFrontmatter } = require('./md-testing-utils');
 
 const scrimbaUrlRE = /^https:\/\/scrimba\.com\//;
