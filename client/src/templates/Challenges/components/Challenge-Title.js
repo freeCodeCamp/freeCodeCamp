@@ -16,15 +16,22 @@ const propTypes = {
 function ChallengeTitle({ block, children, isCompleted, superBlock }) {
   return (
     <div className='challenge-title-wrap'>
-      <Link to={`/learn/${dasherize(superBlock)}`}>{superBlock}</Link>
-      {' >> '}
-      <Link
-        state={{ breadcrumbBlockClick: block }}
-        to={`/learn/${dasherize(superBlock)}`}
-      >
-        {block}
-      </Link>
-      {' >> '}
+      <div className='challenge-title-breadcrumbs'>
+        <Link
+          className='breadcrumb-left'
+          to={`/learn/${dasherize(superBlock)}`}
+        >
+          <span className='ellipsis'>{superBlock}</span>
+        </Link>
+        <div className='breadcrumb-center' />
+        <Link
+          className='breadcrumb-right'
+          state={{ breadcrumbBlockClick: block }}
+          to={`/learn/${dasherize(superBlock)}`}
+        >
+          {block}
+        </Link>
+      </div>
       <b>{children}</b>
       {isCompleted ? (
         <GreenPass
