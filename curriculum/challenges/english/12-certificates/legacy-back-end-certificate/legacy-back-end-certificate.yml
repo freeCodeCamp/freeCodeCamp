@@ -1,27 +1,7 @@
----
 id: 660add10cb82ac38a17513be
 title: Legacy Back End Certificate
 challengeType: 7
 isPrivate: true
----
-
-## Description
-
-<section id='description'>
-
-</section>
-
-## Instructions
-
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
 tests:
   - id: bd7158d8c443edefaeb5bdef
     title: Timestamp Microservice
@@ -43,23 +23,3 @@ tests:
     title: Manage a Book Trading Club
   - id: bd7158d8c443eddfaeb5bdee
     title: Build a Pinterest Clone
-
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-
-<section id='solution'>
-
-```js
-// solution required
-```
-
-</section>
