@@ -7,12 +7,12 @@ const createLanguageRedirect = ({ clientLocale, lang }) => {
     .filter(item => (item !== clientLocale && item !== lang ? item : ''))
     .join('/');
 
-  const domain = window?.location?.host
+  const hostTail = window?.location?.host
     .split('.')
     .slice(1)
     .join('.');
   const nextClient = lang !== 'chinese' ? 'www' : 'chinese';
-  const nextLocation = `${window?.location?.protocol}//${nextClient}.${domain}`;
+  const nextLocation = `${window?.location?.protocol}//${nextClient}.${hostTail}`;
 
   if (lang === 'english' || lang === 'chinese')
     return `${nextLocation}/${path}`;
