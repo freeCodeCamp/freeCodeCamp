@@ -59,7 +59,6 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       });
       expect(receivedPageURL).toBe(francaisPageURL);
     });
-
   });
 
   describe('settings page', () => {
