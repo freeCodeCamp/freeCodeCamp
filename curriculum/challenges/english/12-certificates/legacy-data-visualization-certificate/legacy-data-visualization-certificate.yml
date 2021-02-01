@@ -1,27 +1,7 @@
----
 id: 561add10cb82ac39a17513bc
 title: Legacy Data Visualization Certificate
 challengeType: 7
 isPrivate: true
----
-
-## Description
-
-<section id='description'>
-
-</section>
-
-## Instructions
-
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
 tests:
   - id: bd7157d8c242eddfaeb5bd13
     title: Build a Markdown Previewer
@@ -43,23 +23,3 @@ tests:
     title: Show National Contiguity with a Force Directed Graph
   - id: bd7108d8c242eddfaeb5bd13
     title: Map Data Across the Globe
-
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-
-<section id='solution'>
-
-```js
-// solution required
-```
-
-</section>

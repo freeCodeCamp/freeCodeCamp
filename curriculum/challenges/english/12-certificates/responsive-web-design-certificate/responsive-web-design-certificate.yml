@@ -1,27 +1,7 @@
----
 id: 561add10cb82ac38a17513bc
 title: Responsive Web Design Certificate
 challengeType: 7
 isPrivate: true
----
-
-## Description
-
-<section id='description'>
-
-</section>
-
-## Instructions
-
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
 tests:
   - id: bd7158d8c442eddfaeb5bd18
     title: Build a Tribute Page
@@ -33,23 +13,3 @@ tests:
     title: Build a Technical Documentation Page
   - id: bd7158d8c242eddfaeb5bd13
     title: Build a Personal Portfolio Webpage
-
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-
-<section id='solution'>
-
-```js
-// solution required
-```
-
-</section>

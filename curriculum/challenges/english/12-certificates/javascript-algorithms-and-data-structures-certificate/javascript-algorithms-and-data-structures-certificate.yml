@@ -1,27 +1,7 @@
----
 id: 561abd10cb81ac38a17513bc
 title: JavaScript Algorithms and Data Structures Certificate
 challengeType: 7
 isPrivate: true
----
-
-## Description
-
-<section id='description'>
-
-</section>
-
-## Instructions
-
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
 tests:
   - id: aaa48de84e1ecc7c742e1124
     title: Palindrome Checker
@@ -33,23 +13,3 @@ tests:
     title: Telephone Number Validator
   - id: aa2e6f85cab2ab736c9a9b24
     title: Cash Register
-
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-
-<section id='solution'>
-
-```js
-// solution required
-```
-
-</section>
