@@ -8,8 +8,6 @@ import { useTranslation } from 'react-i18next';
 import { isSignedInSelector } from '../../../redux';
 import { apiLocation, homeLocation } from '../../../../config/env.json';
 
-import { gtagReportConversion } from '../../../analytics/gtag';
-
 import './login.css';
 
 const mapStateToProps = createSelector(
@@ -34,7 +32,6 @@ function Login(props) {
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
       href={href}
-      onClick={() => gtagReportConversion()}
     >
       {children || t('buttons.sign-in')}
     </Button>
