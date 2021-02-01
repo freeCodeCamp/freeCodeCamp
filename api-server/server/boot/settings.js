@@ -1,5 +1,5 @@
 import debug from 'debug';
-import { check } from 'express-validator/check';
+import { check } from 'express-validator';
 
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 import { themes } from '../../common/utils/themes.js';
@@ -53,13 +53,12 @@ export default function settingsController(app) {
 
 const standardErrorMessage = {
   type: 'danger',
-  message:
-    'Something went wrong updating your account. Please check and try again'
+  message: 'flash.wrong-updating'
 };
 
 const standardSuccessMessage = {
   type: 'success',
-  message: 'We have updated your preferences'
+  message: 'flash.updated-preferences'
 };
 
 const createStandardHandler = (req, res, next) => err => {
@@ -196,7 +195,7 @@ function createUpdateMyUsername(app) {
     if (username === user.username) {
       return res.json({
         type: 'info',
-        message: 'Username is already associated with this account'
+        message: 'flash.username-used'
       });
     }
     const validation = isValidUsername(username);
@@ -213,7 +212,7 @@ function createUpdateMyUsername(app) {
     if (exists) {
       return res.json({
         type: 'info',
-        message: 'Username is already associated with a different account'
+        message: 'flash.username-taken'
       });
     }
 
@@ -222,9 +221,11 @@ function createUpdateMyUsername(app) {
         res.status(500).json(standardErrorMessage);
         return next(err);
       }
+
       return res.status(200).json({
         type: 'success',
-        message: `We have updated your username to ${username}`
+        message: `flash.username-updated`,
+        variables: { username: username }
       });
     });
   };
@@ -244,12 +245,7 @@ const updatePrivacyTerms = (req, res, next) => {
       res.status(500).json(standardErrorMessage);
       return next(err);
     }
-    return res.status(200).json({
-      type: 'success',
-      message:
-        'We have updated your preferences. ' +
-        'You can now continue using freeCodeCamp!'
-    });
+    return res.status(200).json(standardSuccessMessage);
   });
 };
 

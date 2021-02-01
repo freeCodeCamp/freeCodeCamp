@@ -1,5 +1,6 @@
 {
   "name": "Redux",
+  "isUpcomingChange": false,
   "dashedName": "redux",
   "order": 6,
   "time": "5 hours",

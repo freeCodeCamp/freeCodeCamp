@@ -16,11 +16,11 @@ function CertificationIcon() {
         <path
           d='M239 303.14L310.43 248.57L381.86 303.14L354.57 391.43L266.28 391.43L239 303.14Z'
           id='aZt9D86Ps'
-        ></path>
+        />
         <path
           d='M327.11 393.59L344.3 496.78L309.91 479.58L275.51 496.78L292.71 393.59L327.11 393.59Z'
           id='b7LyrCUAE'
-        ></path>
+        />
       </defs>
       <g>
         <g>
@@ -29,7 +29,7 @@ function CertificationIcon() {
             fillOpacity='0'
             opacity='1'
             xlinkHref='#aZt9D86Ps'
-          ></use>
+          />
           <g>
             <use
               fillOpacity='0'
@@ -38,7 +38,7 @@ function CertificationIcon() {
               strokeOpacity='1'
               strokeWidth='14'
               xlinkHref='#aZt9D86Ps'
-            ></use>
+            />
           </g>
         </g>
         <g>
@@ -47,7 +47,7 @@ function CertificationIcon() {
             fillOpacity='0'
             opacity='1'
             xlinkHref='#b7LyrCUAE'
-          ></use>
+          />
           <g>
             <use
               fillOpacity='0'
@@ -56,7 +56,7 @@ function CertificationIcon() {
               strokeOpacity='1'
               strokeWidth='14'
               xlinkHref='#b7LyrCUAE'
-            ></use>
+            />
           </g>
         </g>
       </g>

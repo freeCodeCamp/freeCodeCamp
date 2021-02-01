@@ -1,6 +1,7 @@
 const env = require('../config/env');
 
 const { createFilePath } = require('gatsby-source-filesystem');
+const uniq = require('lodash/uniq');
 
 const { dasherize } = require('../utils/slugs');
 const { blockNameify } = require('../utils/block-nameify');
@@ -18,10 +19,10 @@ const createByIdentityMap = {
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
   if (node.internal.type === 'ChallengeNode') {
-    const { tests = [], block, title, superBlock } = node;
+    const { tests = [], block, dashedName, superBlock } = node;
     const slug = `/learn/${dasherize(superBlock)}/${dasherize(
       block
-    )}/${dasherize(title)}`;
+    )}/${dashedName}`;
     createNodeField({ node, name: 'slug', value: slug });
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
     createNodeField({ node, name: 'tests', value: tests });
@@ -52,15 +53,12 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
     }
   }
 
-  if (!env.stripePublicKey || !env.servicebotId) {
+  if (!env.stripePublicKey) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
-      throw new Error(
-        'Stripe public key and Servicebot id are required to start the client!'
-      );
+      throw new Error('Stripe public key is required to start the client!');
     } else {
       reporter.info(
-        'Stripe public key or Servicebot id missing or invalid. Required for' +
-          ' donations.'
+        'Stripe public key missing or invalid. Required for donations.'
       );
     }
   }
@@ -73,7 +71,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         {
           allChallengeNode(
             sort: { fields: [superOrder, order, challengeOrder] }
-            filter: { isHidden: { eq: false } }
           ) {
             edges {
               node {
@@ -126,6 +123,16 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           createChallengePages(createPage)
         );
 
+        const blocks = uniq(
+          result.data.allChallengeNode.edges.map(({ node: { block } }) => block)
+        ).map(block => blockNameify(block));
+
+        const superBlocks = uniq(
+          result.data.allChallengeNode.edges.map(
+            ({ node: { superBlock } }) => superBlock
+          )
+        ).map(superBlock => blockNameify(superBlock));
+
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {
           const {
@@ -140,6 +147,17 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             return null;
           }
           try {
+            if (nodeIdentity === 'blockIntroMarkdown') {
+              if (!blocks.some(block => block === frontmatter.block)) {
+                return null;
+              }
+            } else if (
+              !superBlocks.some(
+                superBlock => superBlock === frontmatter.superBlock
+              )
+            ) {
+              return null;
+            }
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
             return pageBuilder(edge);
           } catch (e) {
@@ -168,11 +186,7 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
       HOME_PATH: JSON.stringify(
         process.env.HOME_PATH || 'http://localhost:3000'
       ),
-      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
-      ENVIRONMENT: JSON.stringify(
-        process.env.FREECODECAMP_NODE_ENV || 'development'
-      ),
-      PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
+      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
@@ -210,3 +224,81 @@ exports.onCreateBabelConfig = ({ actions }) => {
     }
   });
 };
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+  // Only update the `/challenges` page.
+  if (page.path.match(/^\/challenges/)) {
+    // page.matchPath is a special key that's used for matching pages
+    // with corresponding routes only on the client.
+    page.matchPath = '/challenges/*';
+    // Update the page.
+    createPage(page);
+  }
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type ChallengeNode implements Node {
+      files: ChallengeFile
+    }
+    type ChallengeFile {
+      indexcss: FileContents
+      indexhtml: FileContents
+      indexjs: FileContents
+      indexjsx: FileContents
+    }
+    type FileContents {
+      key: String
+      ext: String
+      name: String
+      contents: String
+      head: String
+      tail: String
+      editableRegionBoundaries: [Int]
+    }
+  `;
+  createTypes(typeDefs);
+};
+
+// TODO: this broke the React challenges, not sure why, but I'll investigate
+// further and reimplement if it's possible and necessary (Oliver)
+// I'm still not sure why, but the above schema seems to work.
+// Typically the schema can be inferred, but not when some challenges are
+// skipped (at time of writing the Chinese only has responsive web design), so
+// this makes the missing fields explicit.
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions;
+//   const typeDefs = `
+//     type ChallengeNode implements Node {
+//       question: Question
+//       videoId: String
+//       required: ExternalFile
+//       files: ChallengeFile
+//     }
+//     type Question {
+//       text: String
+//       answers: [String]
+//       solution: Int
+//     }
+//     type ChallengeFile {
+//       indexhtml: FileContents
+//       indexjs: FileContents
+//       indexjsx: FileContents
+//     }
+//     type ExternalFile {
+//       link: String
+//       src: String
+//     }
+//     type FileContents {
+//       key: String
+//       ext: String
+//       name: String
+//       contents: String
+//       head: String
+//       tail: String
+//     }
+//   `;
+//   createTypes(typeDefs);
+// };

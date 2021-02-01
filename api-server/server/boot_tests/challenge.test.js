@@ -9,8 +9,7 @@ import {
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
   getFirstChallenge,
-  isValidChallengeCompletion,
-  createRedirectToLearn
+  isValidChallengeCompletion
 } from '../boot/challenge';
 
 import {
@@ -21,8 +20,7 @@ import {
   mockUser,
   mockGetFirstChallenge,
   mockCompletedChallenge,
-  mockCompletedChallenges,
-  mockPathMigrationMap
+  mockCompletedChallenges
 } from './fixtures';
 
 describe('boot/challenge', () => {
@@ -332,11 +330,18 @@ describe('boot/challenge', () => {
   describe('redirectToCurrentChallenge', () => {
     const mockHomeLocation = 'https://www.example.com';
     const mockLearnUrl = `${mockHomeLocation}/learn`;
+    const mockgetParamsFromReq = () => ({
+      returnTo: mockLearnUrl,
+      origin: mockHomeLocation,
+      pathPrefix: ''
+    });
+    const mockNormalizeParams = params => params;
 
     it('redirects to the learn base url for non-users', async done => {
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         () => {},
-        { _homeLocation: mockHomeLocation, _learnUrl: mockLearnUrl }
+        mockNormalizeParams,
+        mockgetParamsFromReq
       );
       const req = mockReq();
       const res = mockRes();
@@ -358,7 +363,8 @@ describe('boot/challenge', () => {
       const expectedUrl = `${mockHomeLocation}${requestedChallengeUrl}`;
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         challengeUrlResolver,
-        { _homeLocation: mockHomeLocation, _learnUrl: mockLearnUrl }
+        mockNormalizeParams,
+        mockgetParamsFromReq
       );
       const req = mockReq({
         user: mockUser
@@ -381,7 +387,8 @@ describe('boot/challenge', () => {
       );
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         challengeUrlResolver,
-        { _homeLocation: mockHomeLocation, _learnUrl: mockLearnUrl }
+        mockNormalizeParams,
+        mockgetParamsFromReq
       );
       const req = mockReq({
         user: { ...mockUser, currentChallengeId: '' }
@@ -392,35 +399,6 @@ describe('boot/challenge', () => {
       const expectedUrl = `${mockHomeLocation}${firstChallengeUrl}`;
       expect(res.redirect.calledWith(expectedUrl)).toBe(true);
       done();
-    });
-  });
-
-  describe('redirectToLearn', () => {
-    const mockHome = 'https://example.com';
-    const mockLearn = 'https://example.com/learn';
-    const redirectToLearn = createRedirectToLearn(
-      mockPathMigrationMap,
-      mockHome,
-      mockLearn
-    );
-
-    it('redirects to learn by default', () => {
-      const req = mockReq({ path: '/challenges' });
-      const res = mockRes();
-
-      redirectToLearn(req, res);
-
-      expect(res.redirect.calledWith(mockLearn)).toBe(true);
-    });
-
-    it('maps to the correct redirect if the path matches a challenge', () => {
-      const req = mockReq({ path: '/challenges/challenge-two' });
-      const res = mockRes();
-      const expectedRedirect =
-        'https://example.com/learn/superblock/block/challenge-two';
-      redirectToLearn(req, res);
-
-      expect(res.redirect.calledWith(expectedRedirect)).toBe(true);
     });
   });
 });

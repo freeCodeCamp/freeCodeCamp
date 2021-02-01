@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { withTranslation } from 'react-i18next';
 
 import {
   executeChallenge,
@@ -13,6 +14,7 @@ import {
   consoleOutputSelector,
   initConsole,
   initTests,
+  isChallengeCompletedSelector,
   updateChallengeMeta,
   updateSolutionFormValues
 } from '../../redux';
@@ -45,11 +47,13 @@ const propTypes = {
   id: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
+  isChallengeCompleted: PropTypes.bool,
   isSignedIn: PropTypes.bool,
-  output: PropTypes.string,
+  output: PropTypes.arrayOf(PropTypes.string),
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
+  t: PropTypes.func.isRequired,
   tests: PropTypes.array,
   title: PropTypes.string,
   updateChallengeMeta: PropTypes.func.isRequired,
@@ -59,10 +63,12 @@ const propTypes = {
 const mapStateToProps = createSelector(
   consoleOutputSelector,
   challengeTestsSelector,
+  isChallengeCompletedSelector,
   isSignedInSelector,
-  (output, tests, isSignedIn) => ({
+  (output, tests, isChallengeCompleted, isSignedIn) => ({
     tests,
     output,
+    isChallengeCompleted,
     isSignedIn
   })
 );
@@ -100,16 +106,22 @@ export class BackEnd extends Component {
   componentDidUpdate(prevProps) {
     const {
       data: {
-        challengeNode: { title: prevTitle }
+        challengeNode: {
+          title: prevTitle,
+          fields: { tests: prevTests }
+        }
       }
     } = prevProps;
     const {
       data: {
-        challengeNode: { title: currentTitle }
+        challengeNode: {
+          title: currentTitle,
+          fields: { tests: currTests }
+        }
       }
     } = this.props;
-    if (prevTitle !== currentTitle) {
-      this.initializeComponent();
+    if (prevTitle !== currentTitle || prevTests !== currTests) {
+      this.initializeComponent(currentTitle);
     }
   }
 
@@ -123,14 +135,20 @@ export class BackEnd extends Component {
         challengeNode: {
           fields: { tests },
           title,
-          challengeType
+          challengeType,
+          helpCategory
         }
       },
       pageContext: { challengeMeta }
     } = this.props;
-    initConsole('');
+    initConsole();
     initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
   }
 
@@ -143,13 +161,16 @@ export class BackEnd extends Component {
           forumTopicId,
           title,
           description,
-          instructions
+          instructions,
+          superBlock
         }
       },
+      isChallengeCompleted,
       output,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
+      t,
       tests,
       executeChallenge,
       updateSolutionFormValues
@@ -160,17 +181,24 @@ export class BackEnd extends Component {
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+                <ChallengeTitle
+                  block={blockName}
+                  isCompleted={isChallengeCompleted}
+                  superBlock={superBlock}
+                >
+                  {title}
+                </ChallengeTitle>
                 <ChallengeDescription
                   description={description}
                   instructions={instructions}
@@ -187,7 +215,7 @@ export class BackEnd extends Component {
                 <Output
                   defaultOutput={`/**
 *
-* Test output will go here
+* ${t('learn.test-output')}
 *
 *
 */`}
@@ -214,7 +242,7 @@ BackEnd.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToActions
-)(BackEnd);
+)(withTranslation()(BackEnd));
 
 export const query = graphql`
   query BackendChallenge($slug: String!) {
@@ -224,6 +252,8 @@ export const query = graphql`
       description
       instructions
       challengeType
+      helpCategory
+      superBlock
       fields {
         blockName
         slug

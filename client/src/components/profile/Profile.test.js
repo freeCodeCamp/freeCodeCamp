@@ -1,6 +1,5 @@
 /* global expect */
 
-import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -32,6 +31,7 @@ const userProps = {
     isLinkedIn: true,
     isTwitter: true,
     isWebsite: true,
+    joinDate: 'string',
     linkedin: 'string',
     location: 'string',
     name: 'string',
@@ -59,7 +59,7 @@ describe('<Profile/>', () => {
   it('renders the settings button on your own profile', () => {
     const { getByText } = render(<Profile {...myProfileProps} />);
 
-    expect(getByText('Update my account settings')).toHaveAttribute(
+    expect(getByText('buttons.update-settings')).toHaveAttribute(
       'href',
       '/settings'
     );
@@ -68,7 +68,7 @@ describe('<Profile/>', () => {
   it('renders the report button on another persons profile', () => {
     const { getByText } = render(<Profile {...notMyProfileProps} />);
 
-    expect(getByText("Flag This User's Account for Abuse")).toHaveAttribute(
+    expect(getByText('buttons.flag-user')).toHaveAttribute(
       'href',
       '/user/string/report-user'
     );

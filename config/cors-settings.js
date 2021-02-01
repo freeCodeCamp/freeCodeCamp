@@ -1,4 +1,4 @@
-exports.whitelistOrigins = [
+exports.allowedOrigins = [
   'https://www.freecodecamp.dev',
   'https://www.freecodecamp.org',
   'https://beta.freecodecamp.dev',

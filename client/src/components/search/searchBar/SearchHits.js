@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connectStateResults, connectHits } from 'react-instantsearch-dom';
 import isEmpty from 'lodash/isEmpty';
+import { useTranslation } from 'react-i18next';
+
 import Suggestion from './SearchSuggestion';
 import NoHitsSuggestion from './NoHitsSuggestion';
 
@@ -14,26 +16,24 @@ const CustomHits = connectHits(
     selectedIndex,
     handleHits
   }) => {
+    const { t } = useTranslation();
     const noHits = isEmpty(hits);
-    const noHitsTitle = 'No tutorials found';
+    const noHitsTitle = t('search.no-tutorials');
     const footer = [
       {
         objectID: `footer-${searchQuery}`,
         query: searchQuery,
         url: noHits
           ? null
-          : `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
-              searchQuery
-            )}`,
-        title: noHits ? noHitsTitle : `See all results for ${searchQuery}`,
+          : t('search.search-page-url', {
+              searchQuery: encodeURIComponent(searchQuery)
+            }),
+        title: t('search.see-results', { searchQuery: searchQuery }),
         _highlightResult: {
           query: {
-            value: noHits
-              ? noHitsTitle
-              : `
+            value: `
               <ais-highlight-0000000000>
-                See all results for
-                ${searchQuery}
+                ${t('search.see-results', { searchQuery: searchQuery })}
               </ais-highlight-0000000000>
             `
           }
@@ -59,7 +59,11 @@ const CustomHits = connectHits(
               key={hit.objectID}
             >
               {noHits ? (
-                <NoHitsSuggestion title={noHitsTitle} />
+                <NoHitsSuggestion
+                  handleMouseEnter={handleMouseEnter}
+                  handleMouseLeave={handleMouseLeave}
+                  title={noHitsTitle}
+                />
               ) : (
                 <Suggestion
                   handleMouseEnter={handleMouseEnter}

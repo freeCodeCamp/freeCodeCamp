@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
 import { ObserveKeys } from 'react-hotkeys';
+import { withTranslation } from 'react-i18next';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
@@ -61,6 +62,7 @@ const propTypes = {
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
+  t: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -86,12 +88,17 @@ export class Project extends Component {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title, challengeType }
+        challengeNode: { title, challengeType, helpCategory }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
     } = this.props;
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
     this._container.focus();
   }
@@ -105,7 +112,7 @@ export class Project extends Component {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title: currentTitle, challengeType }
+        challengeNode: { title: currentTitle, challengeType, helpCategory }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
@@ -114,7 +121,8 @@ export class Project extends Component {
       updateChallengeMeta({
         ...challengeMeta,
         title: currentTitle,
-        challengeType
+        challengeType,
+        helpCategory
       });
       challengeMounted(challengeMeta.id);
     }
@@ -161,14 +169,16 @@ export class Project extends Component {
           fields: { blockName },
           title,
           description,
+          superBlock,
           videoId,
           question: { text, answers, solution }
         }
       },
       openCompletionModal,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
+      t,
       isChallengeCompleted
     } = this.props;
 
@@ -179,19 +189,25 @@ export class Project extends Component {
           this.handleSubmit(solution, openCompletionModal);
         }}
         innerRef={c => (this._container = c)}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
           <Grid>
             <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer />
-                <ChallengeTitle isCompleted={isChallengeCompleted}>
-                  {blockNameTitle}
-                </ChallengeTitle>
+              <Spacer />
+              <ChallengeTitle
+                block={blockName}
+                isCompleted={isChallengeCompleted}
+                superBlock={superBlock}
+              >
+                {title}
+              </ChallengeTitle>
+
+              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
                 <div className='video-wrapper'>
                   {!this.state.videoIsLoaded ? (
                     <div className='video-placeholder-loader'>
@@ -206,9 +222,11 @@ export class Project extends Component {
                     }
                     onReady={this.videoIsReady}
                     opts={{
-                      rel: 0,
-                      width: '960px',
-                      height: '540px'
+                      playerVars: {
+                        rel: 0
+                      },
+                      width: 'auto',
+                      height: 'auto'
                     }}
                     videoId={videoId}
                   />
@@ -222,13 +240,15 @@ export class Project extends Component {
                       rel='noopener noreferrer'
                       target='_blank'
                     >
-                      Help improve or add subtitles
+                      {t('learn.add-subtitles')}
                     </a>
                     .
                   </i>
                 </div>
+              </Col>
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
-                <PrismFormatted text={text} />
+                <PrismFormatted className={'line-numbers'} text={text} />
                 <Spacer />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
@@ -242,6 +262,7 @@ export class Project extends Component {
                         key={index}
                       >
                         <input
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -253,7 +274,7 @@ export class Project extends Component {
                         />{' '}
                         <span className='video-quiz-input-visible'>
                           {this.state.selectedOption === index ? (
-                            <span className='video-quiz-selected-input'></span>
+                            <span className='video-quiz-selected-input' />
                           ) : null}
                         </span>
                         <PrismFormatted
@@ -271,11 +292,9 @@ export class Project extends Component {
                   }}
                 >
                   {this.state.showWrong ? (
-                    <span>
-                      Sorry, that's not the right answer. Give it another try?
-                    </span>
+                    <span>{t('learn.wrong-answer')}</span>
                   ) : (
-                    <span>Click the button below to check your answer.</span>
+                    <span>{t('learn.check-answer')}</span>
                   )}
                 </div>
                 <Spacer />
@@ -287,7 +306,7 @@ export class Project extends Component {
                     this.handleSubmit(solution, openCompletionModal)
                   }
                 >
-                  Check your answer
+                  {t('buttons.check-answer')}
                 </Button>
                 <Spacer size={2} />
               </Col>
@@ -306,7 +325,7 @@ Project.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Project);
+)(withTranslation()(Project));
 
 export const query = graphql`
   query VideoChallenge($slug: String!) {
@@ -315,6 +334,8 @@ export const query = graphql`
       title
       description
       challengeType
+      helpCategory
+      superBlock
       fields {
         blockName
         slug

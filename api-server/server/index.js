@@ -5,14 +5,15 @@ const _ = require('lodash');
 const Rx = require('rx');
 const loopback = require('loopback');
 const boot = require('loopback-boot');
-const expressState = require('express-state');
 const createDebugger = require('debug');
+const morgan = require('morgan');
 const Sentry = require('@sentry/node');
 
 const { sentry } = require('../../config/secrets');
 const { setupPassport } = require('./component-passport');
 
 const log = createDebugger('fcc:server');
+const reqLogFormat = ':date[iso] :status :method :response-time ms - :url';
 
 // force logger to always output
 // this may be brittle
@@ -30,12 +31,14 @@ if (sentry.dns === 'dsn_from_sentry_dashboard') {
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();
 
-expressState.extend(app);
 app.set('state namespace', '__fcc__');
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(loopback.token());
+app.use(
+  morgan(reqLogFormat, { stream: { write: msg => log(_.split(msg, '\n')[0]) } })
+);
 app.disable('x-powered-by');
 
 const createLogOnce = () => {

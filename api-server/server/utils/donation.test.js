@@ -157,10 +157,7 @@ describe('donation', () => {
       expect(updateDonationAttr).toHaveBeenCalledWith({
         endDate: new Date(status_update_time).toISOString()
       });
-
-      expect(updateUserAttr).toHaveBeenCalledWith({
-        isDonating: false
-      });
+      expect(updateUserAttr).not.toHaveBeenCalled();
     });
   });
 });

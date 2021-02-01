@@ -1,0 +1,319 @@
+{
+  "name": "Intermediate JavaScript Calorie Counter",
+  "isUpcomingChange": true,
+  "dashedName": "intermediate-javascript-calorie-counter",
+  "order": 12,
+  "time": "2 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "5ddb965c65d27e1512d44d9a",
+      "Part 1"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9b",
+      "Part 2"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9c",
+      "Part 3"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9d",
+      "Part 4"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9e",
+      "Part 5"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9f",
+      "Part 6"
+    ],
+    [
+      "5ddb965c65d27e1512d44da0",
+      "Part 7"
+    ],
+    [
+      "5ddb965c65d27e1512d44da1",
+      "Part 8"
+    ],
+    [
+      "5ddb965c65d27e1512d44da2",
+      "Part 9"
+    ],
+    [
+      "5ddb965c65d27e1512d44da3",
+      "Part 10"
+    ],
+    [
+      "5ddb965c65d27e1512d44da4",
+      "Part 11"
+    ],
+    [
+      "5ddb965c65d27e1512d44da5",
+      "Part 12"
+    ],
+    [
+      "5ddb965c65d27e1512d44da6",
+      "Part 13"
+    ],
+    [
+      "5ddb965c65d27e1512d44da7",
+      "Part 14"
+    ],
+    [
+      "5ddb965c65d27e1512d44da8",
+      "Part 15"
+    ],
+    [
+      "5ddb965c65d27e1512d44da9",
+      "Part 16"
+    ],
+    [
+      "5ddb965c65d27e1512d44daa",
+      "Part 17"
+    ],
+    [
+      "5ddb965c65d27e1512d44dab",
+      "Part 18"
+    ],
+    [
+      "5ddb965c65d27e1512d44dac",
+      "Part 19"
+    ],
+    [
+      "5ddb965c65d27e1512d44dad",
+      "Part 20"
+    ],
+    [
+      "5e302e80e003129199103c78",
+      "Part 21"
+    ],
+    [
+      "5e302e8ce003129199103c79",
+      "Part 22"
+    ],
+    [
+      "5ddb965c65d27e1512d44dae",
+      "Part 23"
+    ],
+    [
+      "5ddb965c65d27e1512d44daf",
+      "Part 24"
+    ],
+    [
+      "5ddb965c65d27e1512d44db0",
+      "Part 25"
+    ],
+    [
+      "5ddb965c65d27e1512d44db1",
+      "Part 26"
+    ],
+    [
+      "5ddb965c65d27e1512d44db2",
+      "Part 27"
+    ],
+    [
+      "5ddb965c65d27e1512d44db3",
+      "Part 28"
+    ],
+    [
+      "5ddb965c65d27e1512d44db4",
+      "Part 29"
+    ],
+    [
+      "5ddb965c65d27e1512d44db5",
+      "Part 30"
+    ],
+    [
+      "5ddb965c65d27e1512d44db6",
+      "Part 31"
+    ],
+    [
+      "5ddb965c65d27e1512d44db7",
+      "Part 32"
+    ],
+    [
+      "5ddb965c65d27e1512d44db8",
+      "Part 33"
+    ],
+    [
+      "5ddb965c65d27e1512d44db9",
+      "Part 34"
+    ],
+    [
+      "5ddb965c65d27e1512d44dba",
+      "Part 35"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbb",
+      "Part 36"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbc",
+      "Part 37"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbd",
+      "Part 38"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbe",
+      "Part 39"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbf",
+      "Part 40"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc0",
+      "Part 41"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc1",
+      "Part 42"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc2",
+      "Part 43"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc3",
+      "Part 44"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc4",
+      "Part 45"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc5",
+      "Part 46"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc6",
+      "Part 47"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc7",
+      "Part 48"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc8",
+      "Part 49"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc9",
+      "Part 50"
+    ],
+    [
+      "5ddb965c65d27e1512d44dca",
+      "Part 51"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcb",
+      "Part 52"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcc",
+      "Part 53"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcd",
+      "Part 54"
+    ],
+    [
+      "5ddb965c65d27e1512d44dce",
+      "Part 55"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcf",
+      "Part 56"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd0",
+      "Part 57"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd1",
+      "Part 58"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd2",
+      "Part 59"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd3",
+      "Part 60"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd4",
+      "Part 61"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd5",
+      "Part 62"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd6",
+      "Part 63"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd7",
+      "Part 64"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd8",
+      "Part 65"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd9",
+      "Part 66"
+    ],
+    [
+      "5ddb965c65d27e1512d44dda",
+      "Part 67"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddb",
+      "Part 68"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddc",
+      "Part 69"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddd",
+      "Part 70"
+    ],
+    [
+      "5ddb965c65d27e1512d44dde",
+      "Part 71"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddf",
+      "Part 72"
+    ],
+    [
+      "5ddb965c65d27e1512d44de0",
+      "Part 73"
+    ],
+    [
+      "5ddb965c65d27e1512d44de1",
+      "Part 74"
+    ],
+    [
+      "5ddb965c65d27e1512d44de2",
+      "Part 75"
+    ],
+    [
+      "5ddb965c65d27e1512d44de3",
+      "Part 76"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "02-javascript-algorithms-and-data-structures/intermediate-javascript-calorie-counter.json"
+}

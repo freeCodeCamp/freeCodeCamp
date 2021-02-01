@@ -12,6 +12,7 @@ import {
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
 import escape from 'lodash/escape';
+import i18next from 'i18next';
 
 import {
   challengeDataSelector,
@@ -40,12 +41,21 @@ import {
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
+let previewTask;
 
 export function* executeCancellableChallengeSaga() {
+  if (previewTask) {
+    yield cancel(previewTask);
+  }
   const task = yield fork(executeChallengeSaga);
+  previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
 
   yield take(types.cancelTests);
   yield cancel(task);
+}
+
+export function* executeCancellablePreviewSaga() {
+  previewTask = yield fork(previewChallengeSaga);
 }
 
 export function* executeChallengeSaga() {
@@ -58,7 +68,7 @@ export function* executeChallengeSaga() {
 
   try {
     yield put(initLogs());
-    yield put(initConsole('// running tests'));
+    yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString })
@@ -85,8 +95,8 @@ export function* executeChallengeSaga() {
     const testResults = yield executeTests(testRunner, tests);
 
     yield put(updateTests(testResults));
-    yield put(updateConsole('// tests completed'));
-    yield put(logsToConsole('// console output'));
+    yield put(updateConsole(i18next.t('learn.tests-completed')));
+    yield put(logsToConsole(i18next.t('learn.console-output')));
   } catch (e) {
     yield put(updateConsole(e));
   } finally {
@@ -157,7 +167,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 }
 
 // updates preview frame and the fcc console.
-function* previewChallengeSaga() {
+function* previewChallengeSaga({ flushLogs = true } = {}) {
   yield delay(700);
 
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -169,8 +179,10 @@ function* previewChallengeSaga() {
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    yield put(initLogs());
-    yield put(initConsole(''));
+    if (flushLogs) {
+      yield put(initLogs());
+      yield put(initConsole(''));
+    }
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
@@ -194,6 +206,7 @@ function* previewChallengeSaga() {
     }
   } catch (err) {
     if (err === 'timeout') {
+      // TODO: translate the error
       // eslint-disable-next-line no-ex-assign
       err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
@@ -212,7 +225,7 @@ export function createExecuteChallengeSaga(types) {
         types.challengeMounted,
         types.resetChallenge
       ],
-      previewChallengeSaga
+      executeCancellablePreviewSaga
     )
   ];
 }

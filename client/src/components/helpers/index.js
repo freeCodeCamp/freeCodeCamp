@@ -6,3 +6,6 @@ export { default as SkeletonSprite } from './SkeletonSprite';
 export { default as Spacer } from './Spacer';
 export { default as Link } from './Link';
 export { default as CurrentChallengeLink } from './CurrentChallengeLink';
+export { default as ImageLoader } from './ImageLoader';
+export { default as AvatarRenderer } from './AvatarRenderer';
+export { default as borderColorPicker } from './borderColorPicker';

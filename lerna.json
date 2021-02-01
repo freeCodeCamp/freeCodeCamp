@@ -4,10 +4,12 @@
     "client",
     "client/plugins/*",
     "curriculum",
-    "search-indexing",
     "tools/challenge-md-parser",
+    "tools/challenge-md-parser/mdx",
     "tools/scripts/seed",
-    "tools/scripts/build"
+    "tools/scripts/build",
+    "tools/formatter",
+    "tools/challenge-helper-scripts"
   ],
   "version": "independent"
 }

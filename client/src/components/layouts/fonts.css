@@ -3,6 +3,7 @@
   src: url('../../../static/fonts/lato/Lato-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url('../../../static/fonts/lato/Lato-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -17,6 +19,7 @@
   src: url('../../../static/fonts/lato/Lato-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -24,6 +27,7 @@
   src: url('../../../static/fonts/lato/Lato-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -31,6 +35,7 @@
   src: url('../../../static/fonts/lato/Lato-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
+  font-display: fallback;
 }
 
 /* roboto mono */
@@ -41,6 +46,7 @@
     format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -49,6 +55,7 @@
     format('woff');
   font-weight: normal;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -57,4 +64,5 @@
     format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
 }

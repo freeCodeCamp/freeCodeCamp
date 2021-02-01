@@ -2,14 +2,15 @@
 
 exports[`challengeSeed-to-data plugin should have an output to match the snapshot 1`] = `
 Object {
-  "files": Array [
-    Object {
+  "files": Object {
+    "indexjs": Object {
       "contents": "function testFunction(arg) {
   return arg;
 }
 
 testFunction('hello');
 ",
+      "editableRegionBoundaries": Array [],
       "ext": "js",
       "head": "console.log('before the test');
 ",
@@ -18,6 +19,6 @@ testFunction('hello');
       "tail": "console.info('after the test');
 ",
     },
-  ],
+  },
 }
 `;

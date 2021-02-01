@@ -1,0 +1,19 @@
+#description {
+  background: var(--secondary-background);
+}
+.monaco-editor .margin-view-overlays .line-numbers,
+.monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
+  color: var(--primary-color);
+}
+
+[widgetid='my.overlay.widget'] {
+  padding: 10px;
+}
+
+.vs .monaco-scrollable-element > .scrollbar > .slider {
+  z-index: 11;
+}
+
+.editor-container {
+  background: var(--editor-background);
+}

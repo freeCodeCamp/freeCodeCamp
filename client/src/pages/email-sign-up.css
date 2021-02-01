@@ -1,0 +1,12 @@
+.email-sign-up strong,
+.email-sign-up p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+@media (min-width: 500px) {
+  .email-sign-up strong,
+  .email-sign-up p {
+    font-size: 1.22rem;
+  }
+}

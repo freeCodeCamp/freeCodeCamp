@@ -1,26 +1,51 @@
 html {
+  height: 100%;
   font-size: 18px;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
+  height: 100%;
   font-family: 'Roboto Mono', monospace;
   color: var(--secondary-color);
   background: var(--secondary-background);
 }
 
+#___gatsby {
+  height: 100%;
+}
+
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+.page-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .btn-cta-big {
   max-height: 100%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   white-space: normal;
   width: 100%;
 }
 
+/*
+  Row from @freecodecamp/react-bootstrap adds some negative margin which causes
+  a little bit of horizontal overflow on certain pages. This eliminates that
+  for those pages.
+*/
+.overflow-fix {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .default-layout {
+  flex: 1 0 auto;
   margin-top: var(--header-height, 0px);
   background: var(--secondary-background);
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - var(--header-height, 0px));
 }
 
 h1 {
@@ -63,25 +88,17 @@ p {
 }
 
 .big-heading {
-  font-size: 1.5rem !important;
+  font-size: 2.5rem !important;
   overflow-wrap: break-word;
 }
 
-.medium-heading {
-  font-size: 1.25rem !important;
-  font-weight: normal;
-}
-
-.medium-heading.text-center {
-  margin-bottom: 50px;
+::selection {
+  background-color: rgba(var(--highlight-color), 0.3);
 }
 
 @media (max-width: 500px) {
   .big-heading {
-    font-size: 1.2rem !important;
-  }
-  .medium-heading {
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
   }
   h1 {
     font-size: 1.3rem;
@@ -95,6 +112,12 @@ p {
   .btn-cta,
   .btn-cta-big {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .btn-cta-big {
+    font-size: 1.3rem;
   }
 }
 
@@ -159,6 +182,7 @@ input[type='submit'],
   color: var(--secondary-color);
   border-radius: 0px;
   text-decoration: none;
+  white-space: pre-line;
 }
 
 button:hover,
@@ -229,7 +253,7 @@ fieldset[disabled] .btn-primary.focus {
 .btn-cta:hover,
 .btn-cta:focus,
 .btn-cta:active:hover {
-  background-color: #fecc4c;
+  background-color: #fecc4c !important;
   border-width: 3px;
   border-color: #f1a02a;
   background-image: none;
@@ -254,6 +278,68 @@ fieldset[disabled] .btn-primary.focus {
   background: var(--tertiary-background);
   text-decoration: none;
   color: inherit;
+}
+
+.link-btn {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.link-btn.btn-lg svg {
+  height: 100%;
+  min-height: 20px;
+  min-width: 16px;
+  margin-left: 5px;
+}
+
+.link-btn:hover,
+.link-btn.btn-lg:hover svg {
+  fill: var(--quaternary-background);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.map-icon,
+.cert-header-icon {
+  flex-shrink: 0;
+  fill: var(--primary-color);
+}
+
+.map-icon {
+  width: 35px;
+  margin-right: 20px;
+}
+
+.cert-header-icon {
+  display: block;
+  width: 80px;
+  margin: auto;
+}
+
+@media (min-width: 700px) {
+  .link-btn {
+    font-size: 1.1rem;
+  }
+  .map-icon {
+    width: 45px;
+  }
+  .cert-header-icon {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .map-icon {
+    width: 50px;
+  }
+  .cert-header-icon {
+    width: 120px;
+  }
 }
 
 .button-group .btn:not(:last-child) {
@@ -413,7 +499,17 @@ pre {
 
 .panel-primary > .panel-heading {
   background-color: transparent;
-  border-color: var(--color-primary);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.solution-viewer,
+.solution-viewer pre {
+  margin-bottom: 0px;
+}
+
+.solution-viewer {
+  border-color: var(--primary-color);
 }
 
 .has-success .help-block,
@@ -426,7 +522,7 @@ pre {
 .has-success.checkbox label,
 .has-success.radio-inline label,
 .has-success.checkbox-inline label {
-  color: var(--highlight-color);
+  color: rgb(var(--highlight-color));
 }
 
 .has-error .help-block,

@@ -14,77 +14,50 @@
   "version": "0.0.0-next.4",
   "main": "lib.js",
   "scripts": {
+    "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-empty-steps",
+    "create-next-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-next-step",
+    "create-step-between": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-step-between",
+    "delete-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/delete-step",
+    "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/reorder-steps",
     "develop": "gulp",
     "lint": "gulp lint",
-    "semantic-release": "semantic-release",
     "pretest": "cd ../client && npm run build:workers",
-    "test": "mocha --delay --reporter progress --bail"
-  },
-  "dependencies": {
-    "invariant": "^2.2.4"
+    "pretest:full-output": "npm run pretest",
+    "test": "mocha --delay --reporter progress --bail",
+    "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/polyfill": "^7.2.5",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/register": "^7.0.0",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^7.0.1",
-    "@commitlint/travis-cli": "^8.3.5",
-    "@freecodecamp/challenge-md-parser": "^2.0.0",
-    "@semantic-release/changelog": "^2.0.2",
-    "@semantic-release/git": "^5.0.0",
+    "@babel/core": "^7.11.6",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "acorn": "^8.0.1",
+    "acorn-jsx": "^5.3.1",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-dynamic-import-node": "^2.3.0",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-transform-imports": "^1.4.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.3.13",
-    "babel-preset-stage-3": "^6.24.1",
-    "babel-standalone": "^6.26.0",
     "chai": "4.2.0",
+    "cross-env": "^7.0.2",
+    "css": "^3.0.0",
     "fs-extra": "^6.0.1",
     "gulp": "^4.0.2",
+    "invariant": "^2.2.4",
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",
-    "jquery": "^3.4.1",
-    "js-yaml": "^3.12.0",
     "jsdom": "^12.2.0",
-    "lint-staged": "^7.2.0",
     "live-server": "^1.2.1",
-    "lodash": "^4.17.15",
-    "mocha": "5.2.0",
-    "puppeteer": "^1.19.0",
-    "readdirp-walk": "^1.7.0",
-    "rx": "^4.1.0",
-    "semantic-release": "^15.13.24",
-    "string-similarity": "^4.0.1",
-    "validator": "^10.4.0"
-  },
-  "keywords": [
-    "challenges",
-    "curriculum",
-    "freecodecamp",
-    "interview",
-    "javascript",
-    "json"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "release": {
-    "branch": "master",
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ],
-    "prepare": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ]
+    "lodash": "^4.17.20",
+    "mocha": "8.2.1",
+    "puppeteer": "^5.3.1",
+    "readdirp": "^3.5.0",
+    "rehype": "^11.0.0",
+    "rework-visit": "^1.0.0",
+    "string-similarity": "^4.0.2",
+    "unist-util-visit": "^2.0.3",
+    "vfile": "^4.2.0"
   }
 }

@@ -1,6 +1,5 @@
 /* global expect jest */
 
-import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -45,14 +44,14 @@ describe('<HeatMap/>', () => {
   it('calculates the correct longest streak', () => {
     const { getByTestId } = render(<HeatMap {...props} />);
     expect(getByTestId('longest-streak').textContent).toContain(
-      'Longest Streak: 2'
+      'profile.longest-streak'
     );
   });
 
   it('calculates the correct current streak', () => {
     const { getByTestId } = render(<HeatMap {...props} />);
     expect(getByTestId('current-streak').textContent).toContain(
-      'Current Streak: 1'
+      'profile.current-streak'
     );
   });
 });

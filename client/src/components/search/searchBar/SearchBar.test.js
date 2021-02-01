@@ -1,6 +1,5 @@
 /* global jest, expect */
 import React from 'react';
-import 'jest-dom/extend-expect';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 import { SearchBar } from './SearchBar';

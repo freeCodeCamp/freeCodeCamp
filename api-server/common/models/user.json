@@ -101,11 +101,11 @@
     },
     "acceptedPrivacyTerms": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "sendQuincyEmail": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "currentChallengeId": {
       "type": "string",

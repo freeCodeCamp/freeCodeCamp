@@ -29,11 +29,12 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   const watcher = chokidar.watch(curriculumPath, {
     ignored: /(^|[\/\\])\../,
     persistent: true,
-    usePolling: true
+    usePolling: true,
+    cwd: curriculumPath
   });
 
   watcher.on('change', filePath =>
-    /\.md$/.test(filePath)
+    /\.md?$/.test(filePath)
       ? onSourceChange(filePath)
           .then(challenge => {
             reporter.info(
@@ -45,6 +46,7 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
           })
           .catch(e =>
             reporter.error(`fcc-replace-challenge
+  attempting to replace ${filePath}
 
   ${e.message}
 
@@ -59,17 +61,17 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
       .then(challenges =>
         challenges.map(challenge => createVisibleChallenge(challenge))
       )
-      .catch(e =>
+      .catch(e => {
+        console.log(e);
         reporter.panic(`fcc-source-challenges
 
   ${e.message}
 
-  `)
-      );
+  `);
+      });
   }
 
   function createVisibleChallenge(challenge) {
-    if (challenge.superBlock.toLowerCase() === 'certificates') return;
     createNode(createChallengeNode(challenge, reporter));
   }
 

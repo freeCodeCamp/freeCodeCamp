@@ -7,7 +7,7 @@ const feLibsBase = '/learn/front-end-libraries/front-end-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
 const apiMicroBase =
   '/learn/apis-and-microservices/apis-and-microservices-projects';
-const qaBase = 'learn/quality-assurance/quality-assurance-projects';
+const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
 const sciCompPyBase =
   '/learn/scientific-computing-with-python/' +
@@ -44,8 +44,8 @@ const certMap = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
-        title: 'Build a Pomodoro Clock',
-        link: `${legacyFrontEndBase}/build-a-pomodoro-clock`,
+        title: 'Build a 25 + 5 Clock',
+        link: `${legacyFrontEndBase}/build-a-25--5-clock`,
         superBlock: 'legacy-front-end'
       },
       {
@@ -384,8 +384,8 @@ const certMap = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
-        title: 'Build a Pomodoro Clock',
-        link: `${feLibsBase}/build-a-pomodoro-clock`,
+        title: 'Build a 25 + 5 Clock',
+        link: `${feLibsBase}/build-a-25--5-clock`,
         superBlock: 'front-end-libraries'
       }
     ]
@@ -505,44 +505,6 @@ const certMap = [
     ]
   },
   {
-    id: '5e6021435ac9d0ecd8b94b00',
-    title: 'Information Security',
-    slug: 'information-security-v7',
-    flag: 'isInfosecCertV7',
-    projects: [
-      {
-        id: '587d824a367417b2b2512c44',
-        title: 'Stock Price Checker',
-        link: `${infoSecBase}/stock-price-checker`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '587d824a367417b2b2512c45',
-        title: 'Anonymous Message Board',
-        link: `${infoSecBase}/anonymous-message-board`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '5e46f979ac417301a38fb932',
-        title: 'Port Scanner',
-        link: `${infoSecBase}/port-scanner`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '5e46f983ac417301a38fb933',
-        title: 'SHA-1 Password Cracker',
-        link: `${infoSecBase}/sha-1-password-cracker`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '5e601c775ac9d0ecd8b94aff',
-        title: 'Secure Real Time Multiplayer Game',
-        link: `${infoSecBase}/secure-real-time-multiplayer-game`,
-        superBlock: 'information-security-v7'
-      }
-    ]
-  },
-  {
     id: '5e44431b903586ffb414c951',
     title: 'Scientific Computing with Python',
     slug: 'scientific-computing-with-python-v7',
@@ -615,6 +577,45 @@ const certMap = [
         title: 'Sea Level Predictor',
         link: `${dataAnalysisPyBase}/sea-level-predictor`,
         superBlock: 'data-analysis-with-python-v7'
+      }
+    ]
+  },
+
+  {
+    id: '5e6021435ac9d0ecd8b94b00',
+    title: 'Information Security',
+    slug: 'information-security-v7',
+    flag: 'isInfosecCertV7',
+    projects: [
+      {
+        id: '587d824a367417b2b2512c44',
+        title: 'Stock Price Checker',
+        link: `${infoSecBase}/stock-price-checker`,
+        superBlock: 'information-security-v7'
+      },
+      {
+        id: '587d824a367417b2b2512c45',
+        title: 'Anonymous Message Board',
+        link: `${infoSecBase}/anonymous-message-board`,
+        superBlock: 'information-security-v7'
+      },
+      {
+        id: '5e46f979ac417301a38fb932',
+        title: 'Port Scanner',
+        link: `${infoSecBase}/port-scanner`,
+        superBlock: 'information-security-v7'
+      },
+      {
+        id: '5e46f983ac417301a38fb933',
+        title: 'SHA-1 Password Cracker',
+        link: `${infoSecBase}/sha-1-password-cracker`,
+        superBlock: 'information-security-v7'
+      },
+      {
+        id: '5e601c775ac9d0ecd8b94aff',
+        title: 'Secure Real Time Multiplayer Game',
+        link: `${infoSecBase}/secure-real-time-multiplayer-game`,
+        superBlock: 'information-security-v7'
       }
     ]
   },

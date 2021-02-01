@@ -1,6 +1,5 @@
 /* global expect */
 
-import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -12,10 +11,10 @@ test('<BlockSaveButton /> snapshot', () => {
   expect(container).toMatchSnapshot();
 });
 
-test('Button text should default to "Save"', () => {
+test('Button text should default to the correct translation key', () => {
   const { getByRole } = render(<BlockSaveButton />);
 
-  expect(getByRole('button')).toHaveTextContent('Save');
+  expect(getByRole('button')).toHaveTextContent('buttons.save');
 });
 
 test('Button text should match "children"', () => {

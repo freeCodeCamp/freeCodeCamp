@@ -138,7 +138,13 @@ function loadCodeEpic(action$, state$) {
                   ...file,
                   contents: codeFound[file.key]
                     ? codeFound[file.key].contents
-                    : file.contents
+                    : file.contents,
+                  editableContents: codeFound[file.key]
+                    ? codeFound[file.key].editableContents
+                    : file.editableContents,
+                  editableRegionBoundaries: codeFound[file.key]
+                    ? codeFound[file.key].editableRegionBoundaries
+                    : file.editableRegionBoundaries
                 }
               }),
               {}

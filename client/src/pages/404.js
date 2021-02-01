@@ -1,7 +1,8 @@
 import React from 'react';
 import { Router } from '@reach/router';
+import { withPrefix } from 'gatsby';
 
-import NotFoundPage from '../components/FourOhFour';
+import FourOhFour from '../components/FourOhFour';
 /* eslint-disable max-len */
 import ShowProfileOrFourOhFour from '../client-only-routes/ShowProfileOrFourOhFour';
 /* eslint-enable max-len */
@@ -9,8 +10,8 @@ import ShowProfileOrFourOhFour from '../client-only-routes/ShowProfileOrFourOhFo
 function FourOhFourPage() {
   return (
     <Router>
-      <ShowProfileOrFourOhFour path='/:maybeUser' />
-      <NotFoundPage default={true} />
+      <ShowProfileOrFourOhFour path={withPrefix('/:maybeUser')} />
+      <FourOhFour default={true} />
     </Router>
   );
 }

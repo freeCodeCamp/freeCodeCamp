@@ -1,7 +1,5 @@
 /* global expect */
 
-import '@testing-library/jest-dom/extend-expect';
-
 import { getCompletedPercent } from './CompletionModal';
 
 const completedChallengesIds = ['1', '3', '5'],

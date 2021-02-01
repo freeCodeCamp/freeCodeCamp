@@ -1,38 +1,62 @@
-name: Cypress tests
-on:
-  push:
-    branches:
-      - master
-      - production-**
-      # This will let us work on cypress config itself
-      - cypress-**
-  pull_request:
-    branches:
-      - master
+name: Cypress
+on: [push, pull_request]
+
 jobs:
   cypress-run:
-    env:
-      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # our .npmrc sets a default version to 0, and prevents download. This installs it.
-      CYPRESS_INSTALL_BINARY: '4.6.0'
-    name: Cypress run
-    runs-on: ubuntu-latest
+    name: Test
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        browsers: [chrome, firefox]
     services:
       mongodb:
-        image: mongo:3.5.5
-        # ports may not be necessary, try without
+        image: mongo:3.6.19
         ports:
           - 27017:27017
+
     steps:
-      - name: Checkout
+      # We use .npmrc to set the default version to 0, and prevents download during developement.
+      # This installs it specifically in the CI runs.
+      - name: Set Action Environment Variables
+        run: |
+          echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+          echo "CYPRESS_INSTALL_BINARY=6.0.0" >> $GITHUB_ENV
+
+      - name: Checkout Source Files
         uses: actions/checkout@v2
 
-      - name: Set up environment
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
 
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npm run ensure-env
+
+      - name: Seed Database
+        run: npm run seed
+
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           build: npm run build
@@ -44,3 +68,5 @@ jobs:
           # left for testing.
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
+          browser: ${{ matrix.browsers }}
+          headless: true

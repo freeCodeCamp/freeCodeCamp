@@ -44,8 +44,6 @@ seed/unpacked
 server/rev-manifest.json
 server/manifests/*
 !server/manifests/README.md
-server/resources/pathMigration.json
-
 
 webpack-bundle-stats.html
 server/rev-manifest.json

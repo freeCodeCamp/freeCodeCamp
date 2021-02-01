@@ -13,6 +13,7 @@ describe('getSetAccessToken', () => {
   const invalidJWTSecret = 'This is not correct secret';
   const now = new Date(Date.now());
   const theBeginningOfTime = new Date(0);
+  const domain = process.env.COOKIE_DOMAIN || 'localhost';
   const accessToken = {
     id: '123abc',
     userId: '456def',
@@ -134,7 +135,7 @@ describe('getSetAccessToken', () => {
         expectedJWT,
         {
           signed: false,
-          domain: 'localhost',
+          domain,
           maxAge: accessToken.ttl
         }
       ]);
@@ -147,37 +148,20 @@ describe('getSetAccessToken', () => {
       // expect.assertions(4);
       const req = mockReq();
       const res = mockRes();
+      const jwtOptions = { signed: false, domain };
 
       removeCookies(req, res);
 
       expect(res.clearCookie.getCall(0).args).toEqual([
         'jwt_access_token',
-        {
-          signed: false,
-          domain: 'localhost'
-        }
+        jwtOptions
       ]);
       expect(res.clearCookie.getCall(1).args).toEqual([
         'access_token',
-        {
-          signed: false,
-          domain: 'localhost'
-        }
+        jwtOptions
       ]);
-      expect(res.clearCookie.getCall(2).args).toEqual([
-        'userId',
-        {
-          signed: false,
-          domain: 'localhost'
-        }
-      ]);
-      expect(res.clearCookie.getCall(3).args).toEqual([
-        '_csrf',
-        {
-          signed: false,
-          domain: 'localhost'
-        }
-      ]);
+      expect(res.clearCookie.getCall(2).args).toEqual(['userId', jwtOptions]);
+      expect(res.clearCookie.getCall(3).args).toEqual(['_csrf', jwtOptions]);
     });
   });
 });

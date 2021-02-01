@@ -6,10 +6,10 @@ import {
   errorTypes,
   authHeaderNS
 } from '../utils/getSetAccessToken';
-import { homeLocation } from '../../../config/env';
 import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
+import { getRedirectParams } from '../utils/redirection';
 
 const authRE = /^\/auth\//;
 const confirmEmailRE = /^\/confirm-email$/;
@@ -28,7 +28,7 @@ const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
 
-const _whiteListREs = [
+const _pathsAllowedREs = [
   authRE,
   confirmEmailRE,
   newsShortLinksRE,
@@ -44,14 +44,15 @@ const _whiteListREs = [
   donateRE
 ];
 
-export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
-  return whiteListREs.some(re => re.test(path));
+export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
+  return pathsAllowedREs.some(re => re.test(path));
 }
 
 export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
   function requestAuthorisation(req, res, next) {
+    const { origin } = getRedirectParams(req);
     const { path } = req;
-    if (!isWhiteListedPath(path)) {
+    if (!isAllowedPath(path)) {
       const { accessToken, error, jwt } = getAccessTokenFromRequest(
         req,
         jwtSecret
@@ -61,7 +62,7 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
           new Error('Access token is required for this request'),
           {
             type: 'info',
-            redirect: `${homeLocation}/signin`,
+            redirect: `${origin}/signin`,
             message: 'Access token is required for this request',
             status: 403
           }
@@ -70,7 +71,7 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
       if (!accessToken && error === errorTypes.invalidToken) {
         throw wrapHandledError(new Error('Access token is invalid'), {
           type: 'info',
-          redirect: `${homeLocation}/signin`,
+          redirect: `${origin}/signin`,
           message: 'Your access token is invalid',
           status: 403
         });
@@ -78,7 +79,7 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
       if (!accessToken && error === errorTypes.expiredToken) {
         throw wrapHandledError(new Error('Access token is no longer valid'), {
           type: 'info',
-          redirect: `${homeLocation}/signin`,
+          redirect: `${origin}/signin`,
           message: 'Access token is no longer valid',
           status: 403
         });

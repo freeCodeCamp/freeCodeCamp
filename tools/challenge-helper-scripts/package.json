@@ -1,0 +1,33 @@
+{
+  "name": "@freecodecamp/curriculum-helper-scripts",
+  "description": "freeCodeCamp's project-based curriculum scripts",
+  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "version": "0.0.0-next.1",
+  "main": "utils.js",
+  "scripts": {
+    "test": "mocha --delay --reporter progress --bail"
+  },
+  "devDependencies": {
+    "bson-objectid": "^1.3.1",
+    "cross-env": "^7.0.2",
+    "gray-matter": "^4.0.2"
+  },
+  "keywords": [
+    "challenges",
+    "curriculum",
+    "freecodecamp",
+    "javascript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

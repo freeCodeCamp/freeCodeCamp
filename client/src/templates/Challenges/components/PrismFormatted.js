@@ -27,7 +27,7 @@ class PrismFormatted extends Component {
         className={className}
         dangerouslySetInnerHTML={{ __html: text }}
         ref={this.instructionsRef}
-      ></div>
+      />
     );
   }
 }

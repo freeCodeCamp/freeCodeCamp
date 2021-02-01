@@ -1,5 +1,3 @@
-# Catch outgoing emails locally for email workflows
-
 > **Note:** This is an **optional** step and is required only when working with email workflows
 
 ## Introduction
@@ -10,9 +8,13 @@ Some email workflows, like updating a user's email, requires the back-end api-se
 
 MailHog can be installed on macOS, Windows and Linux.
 
-- [Installing MailHog on macOS](#installing-mailhog-on-macos)
-- [Installing MailHog on Windows](#installing-mailhog-on-windows)
-- [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
+  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
+  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
 
 ### Installing MailHog on macOS
 

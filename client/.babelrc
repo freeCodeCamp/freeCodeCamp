@@ -62,8 +62,13 @@
           "mathml",
           "python",
           "svg",
-          "xml"
-        ], "theme": "default", "css": true
+          "xml",
+          "sql",
+          "typescript"
+        ],
+        "theme": "default",
+        "css": true,
+        "plugins": ["line-numbers"]
       }
     ]
   ]

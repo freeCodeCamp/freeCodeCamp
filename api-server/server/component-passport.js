@@ -4,13 +4,18 @@ import {
   // prettier ignore
   PassportConfigurator
 } from '@freecodecamp/loopback-component-passport';
-import url from 'url';
 import dedent from 'dedent';
 
 import { getUserById } from './utils/user-stats';
-import { homeLocation } from '../../config/env';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
+import { jwtSecret } from '../../config/secrets';
+import {
+  getReturnTo,
+  getRedirectBase,
+  getRedirectParams,
+  isRootPath
+} from './utils/redirection';
 
 const passportOptions = {
   emailOptional: true,
@@ -63,7 +68,7 @@ export function setupPassport(app) {
   });
 }
 
-export const saveResponseAuthCookies = () => {
+export const devSaveResponseAuthCookies = () => {
   return (req, res, next) => {
     const user = req.user;
 
@@ -78,21 +83,17 @@ export const saveResponseAuthCookies = () => {
   };
 };
 
-export const loginRedirect = () => {
+export const devLoginRedirect = () => {
   return (req, res) => {
-    const successRedirect = req => {
-      if (!!req && req.session && req.session.returnTo) {
-        delete req.session.returnTo;
-        return `${homeLocation}/learn`;
-      }
-      return `${homeLocation}/learn`;
-    };
-
-    let redirect = url.parse(successRedirect(req), true);
-    delete redirect.search;
-
-    redirect = url.format(redirect);
-    return res.redirect(redirect);
+    // this mirrors the production approach, but without any validation
+    let { returnTo, origin, pathPrefix } = getRedirectParams(
+      req,
+      params => params
+    );
+    returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
+      ? 'learn'
+      : '';
+    return res.redirect(returnTo);
   };
 };
 
@@ -101,10 +102,6 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
   res,
   next
 ) => {
-  const returnTo =
-    req && req.query && req.query.state
-      ? Buffer.from(req.query.state, 'base64').toString('utf-8')
-      : `${homeLocation}/learn`;
   return passport.authenticate(
     strategy,
     { session: false },
@@ -116,18 +113,12 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       if (!user || !userInfo) {
         return res.redirect('/signin');
       }
-      const redirect = `${returnTo}`;
 
       const { accessToken } = userInfo;
       const { provider } = config;
       if (accessToken && accessToken.id) {
         if (provider === 'auth0') {
-          req.flash(
-            'success',
-            dedent`
-              Success! You have signed in to your account. Happy Coding!
-            `
-          );
+          req.flash('success', 'flash.signin-success');
         } else if (user.email) {
           req.flash(
             'info',
@@ -140,7 +131,23 @@ we recommend using your email address: ${user.email} to sign in instead.
         setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
-      return res.redirectWithFlash(redirect);
+
+      const state = req && req.query && req.query.state;
+      // returnTo, origin and pathPrefix are audited by getReturnTo
+      let { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
+      const redirectBase = getRedirectBase(origin, pathPrefix);
+
+      // TODO: getReturnTo could return a success flag to show a flash message,
+      // but currently it immediately gets overwritten by a second message. We
+      // should either change the message if the flag is present or allow
+      // multiple messages to appear at once.
+
+      if (user.acceptedPrivacyTerms) {
+        returnTo += isRootPath(redirectBase, returnTo) ? '/learn' : '';
+        return res.redirectWithFlash(returnTo);
+      } else {
+        return res.redirectWithFlash(`${redirectBase}/email-sign-up`);
+      }
     }
   )(req, res, next);
 };

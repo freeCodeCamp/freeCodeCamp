@@ -1,17 +1,20 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import fontawesome from '@fortawesome/fontawesome';
+import { withTranslation } from 'react-i18next';
 
 import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
   isOnlineSelector,
+  userFetchStateSelector,
   userSelector,
+  usernameSelector,
   executeGA
 } from '../../redux';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
@@ -42,33 +45,10 @@ fontawesome.config = {
   autoAddCss: false
 };
 
-const metaKeywords = [
-  'javascript',
-  'js',
-  'website',
-  'web',
-  'development',
-  'free',
-  'code',
-  'camp',
-  'course',
-  'courses',
-  'html',
-  'css',
-  'react',
-  'redux',
-  'api',
-  'front',
-  'back',
-  'end',
-  'learn',
-  'tutorial',
-  'programming'
-];
-
 const propTypes = {
   children: PropTypes.node.isRequired,
   executeGA: PropTypes.func,
+  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
   fetchUser: PropTypes.func.isRequired,
   flashMessage: PropTypes.shape({
     id: PropTypes.string,
@@ -82,21 +62,28 @@ const propTypes = {
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
+  signedInUserName: PropTypes.string,
+  t: PropTypes.func.isRequired,
   theme: PropTypes.string,
-  useTheme: PropTypes.bool
+  useTheme: PropTypes.bool,
+  user: PropTypes.object
 };
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   flashMessageSelector,
   isOnlineSelector,
+  userFetchStateSelector,
   userSelector,
-  (isSignedIn, flashMessage, isOnline, user) => ({
+  usernameSelector,
+  (isSignedIn, flashMessage, isOnline, fetchState, user) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
     isOnline,
-    theme: user.theme
+    fetchState,
+    theme: user.theme,
+    user
   })
 );
 
@@ -142,16 +129,20 @@ class DefaultLayout extends Component {
     const {
       children,
       hasMessage,
+      fetchState,
       flashMessage,
       isOnline,
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
+      t,
       theme = 'default',
+      user,
       useTheme = true
     } = this.props;
+
     return (
-      <Fragment>
+      <div className='page-wrapper'>
         <Helmet
           bodyAttributes={{
             class: useTheme
@@ -161,11 +152,9 @@ class DefaultLayout extends Component {
           meta={[
             {
               name: 'description',
-              content: `Learn to code at home. Build projects. Earn certifications. Since 2014,
-                 more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech
-                 companies including Google, Apple, Amazon, and Microsoft.`
+              content: t('meta.description')
             },
-            { name: 'keywords', content: metaKeywords.join(', ') }
+            { name: 'keywords', content: t('meta.keywords') }
           ]}
         >
           <link
@@ -213,17 +202,17 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header />
           <div className={`default-layout`}>
+            <Header fetchState={fetchState} user={user} />
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
             {hasMessage && flashMessage ? (
               <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
             ) : null}
             {children}
-            {showFooter && <Footer />}
           </div>
+          {showFooter && <Footer />}
         </WithInstantSearch>
-      </Fragment>
+      </div>
     );
   }
 }
@@ -234,4 +223,4 @@ DefaultLayout.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DefaultLayout);
+)(withTranslation()(DefaultLayout));

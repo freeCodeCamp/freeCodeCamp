@@ -1,103 +1,74 @@
 // Configuration for client side
 const durationsConfig = {
-  year: 'yearly',
   month: 'monthly',
   onetime: 'one-time'
 };
 const amountsConfig = {
-  year: [100000, 25000, 6000],
-  month: [25000, 3500, 500],
-  onetime: [100000, 25000, 6000]
+  month: [1000, 2000, 3000, 4000, 5000],
+  onetime: [2500, 5000, 7500, 10000, 15000]
 };
 const defaultAmount = {
-  year: 25000,
-  month: 500,
-  onetime: 25000
+  month: 500
 };
-const defaultStateConfig = {
+const defaultDonation = {
   donationAmount: defaultAmount['month'],
   donationDuration: 'month'
 };
-const modalDefaultStateConfig = {
+const modalDefaultDonation = {
   donationAmount: 500,
   donationDuration: 'month'
 };
 
 const onetimeSKUConfig = {
   live: [
-    { amount: '100000', id: 'sku_GwHogRRJrCYGms' },
-    { amount: '25000', id: 'sku_GwHnCde23uDH5R' },
-    { amount: '6000', id: 'sku_H5mjFgpayAzJzT' }
+    { amount: '15000', id: 'sku_IElisJHup0nojP' },
+    { amount: '10000', id: 'sku_IEliodY88lglPk' },
+    { amount: '7500', id: 'sku_IEli9AXW8DwNtT' },
+    { amount: '5000', id: 'sku_IElhJxkNh9UgDp' },
+    { amount: '2500', id: 'sku_IElhQtqLgKZC8y' }
   ],
   staging: [
-    { amount: '100000', id: 'sku_GvAeUdWLsmGO9O' },
-    { amount: '25000', id: 'sku_GvAdXbsotjFi7G' },
-    { amount: '6000', id: 'sku_GvAeJDgwjnGAdy' }
+    { amount: '15000', id: 'sku_IEPNpHACYJmUwz' },
+    { amount: '10000', id: 'sku_IEPMY1OXxnY4WU' },
+    { amount: '7500', id: 'sku_IEPLOotEqlMOWC' },
+    { amount: '5000', id: 'sku_IEPKAxxAxfMnUI' },
+    { amount: '2500', id: 'sku_IEPIgLRzViwq5z' }
   ]
 };
 
 // Configuration for server side
-const durationKeysConfig = ['year', 'month', 'onetime'];
+const durationKeysConfig = ['month', 'onetime'];
 const donationOneTimeConfig = [100000, 25000, 6000];
 const donationSubscriptionConfig = {
   duration: {
-    year: 'Yearly',
     month: 'Monthly'
   },
   plans: {
-    year: [100000, 25000, 6000],
     month: [25000, 3500, 500]
   }
 };
 
 // Shared paypal configuration
+// keep the 5 dollars for the modal
 const paypalConfigTypes = {
   live: {
     month: {
-      '500': {
-        planId: 'P-1L11422374370240ULZKX3PA'
-      },
-      '3500': {
-        planId: 'P-81U00703FF076883HLZ2PWMI'
-      },
-      '25000': {
-        planId: 'P-7M045671FN915794KLZ2PW6I'
-      }
-    },
-    year: {
-      '6000': {
-        planId: 'P-9Y661558DW462253NLZZ2IMQ'
-      },
-      '25000': {
-        planId: 'P-3NN39392MK1889318LZZ2KQY'
-      },
-      '100000': {
-        planId: 'P-7YN43286C4599382LLZZ2JUI'
-      }
+      '500': { planId: 'P-1L11422374370240ULZKX3PA' },
+      '1000': { planId: 'P-61K21421WY874920PL6E36YI' },
+      '2000': { planId: 'P-31999436LF709112VL6E374A' },
+      '3000': { planId: 'P-1KY930839N8045117L6E4BKY' },
+      '4000': { planId: 'P-0JW4843250567551AL6E4CAI' },
+      '5000': { planId: 'P-0WR49877YD949401BL6E4CTA' }
     }
   },
   staging: {
     month: {
-      '500': {
-        planId: 'P-37N14480BW163382FLZYPVMA'
-      },
-      '3500': {
-        planId: 'P-3E678937P5715503NLZZTRVY'
-      },
-      '25000': {
-        planId: 'P-97K80194AU368022JLZ2Q27Y'
-      }
-    },
-    year: {
-      '6000': {
-        planId: 'P-0UY77185EM3077131LZYP6VY'
-      },
-      '25000': {
-        planId: 'P-7K1585908S634694XLZZTHUQ'
-      },
-      '100000': {
-        planId: 'P-0J5231134H608574XLZZTDLQ'
-      }
+      '500': { planId: 'P-37N14480BW163382FLZYPVMA' },
+      '1000': { planId: 'P-28B62039J8092810UL6E3FXA' },
+      '2000': { planId: 'P-7HR706961M9170433L6HI5VI' },
+      '3000': { planId: 'P-35V33574BU596924JL6HI6XY' },
+      '4000': { planId: 'P-45M45060289267734L6HJSXA' },
+      '5000': { planId: 'P-0MD70861FY4172444L6HJTUQ' }
     }
   }
 };
@@ -113,16 +84,23 @@ const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   };
 };
 
+//
+const donationUrls = {
+  successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
+  cancelUrl: 'https://freecodecamp.org/donate'
+};
+
 module.exports = {
   durationsConfig,
   amountsConfig,
   defaultAmount,
-  defaultStateConfig,
+  defaultDonation,
   durationKeysConfig,
   donationOneTimeConfig,
   donationSubscriptionConfig,
-  modalDefaultStateConfig,
+  modalDefaultDonation,
   onetimeSKUConfig,
   paypalConfigTypes,
-  paypalConfigurator
+  paypalConfigurator,
+  donationUrls
 };

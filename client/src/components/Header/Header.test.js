@@ -1,11 +1,24 @@
 /* global expect */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import TestRenderer from 'react-test-renderer';
+
 import { UniversalNav } from './components/UniversalNav';
-import NavLinks from './components/NavLinks';
+import { NavLinks } from './components/NavLinks';
+import AuthOrProfile from './components/AuthOrProfile';
+
+import { apiLocation } from '../../../../config/env.json';
 
 describe('<UniversalNav />', () => {
+  const UniversalNavProps = {
+    displayMenu: false,
+    menuButtonRef: {},
+    searchBarRef: {},
+    toggleDisplayMenu: function() {},
+    pathName: '/',
+    fetchState: {
+      pending: false
+    }
+  };
   it('renders to the DOM', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<UniversalNav {...UniversalNavProps} />);
@@ -13,34 +26,245 @@ describe('<UniversalNav />', () => {
     expect(result).toBeTruthy();
   });
 });
+
 describe('<NavLinks />', () => {
-  const root = TestRenderer.create(<NavLinks />).root;
-  const aTags = root.findAllByType('a');
-
-  // reduces the aTags to href links
-  const links = aTags.reduce((acc, item) => {
-    acc.push(item._fiber.pendingProps.href);
-    return acc;
-  }, []);
-
-  const expectedLinks = ['/learn', '/news', '/forum'];
-
-  it('renders to the DOM', () => {
-    expect(root).toBeTruthy();
+  it('has expected navigation links when not signed in', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: false,
+        username: null,
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      toggleNightMode: theme => theme
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<NavLinks {...landingPageProps} />);
+    const result = shallow.getRenderOutput();
+    expect(
+      hasDonateNavItem(result) &&
+        hasSignInNavItem(result) &&
+        hasCurriculumNavItem(result) &&
+        hasForumNavItem(result) &&
+        hasNewsNavItem(result) &&
+        hasRadioNavItem(result)
+    ).toBeTruthy();
   });
-  it('has 3 links', () => {
-    expect(aTags.length === 3).toBeTruthy();
+
+  it('has expected navigation links when signed in', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: false,
+        username: 'nhcarrigan',
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      toggleNightMode: theme => theme
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<NavLinks {...landingPageProps} />);
+    const result = shallow.getRenderOutput();
+    expect(
+      hasDonateNavItem(result) &&
+        hasCurriculumNavItem(result) &&
+        hasProfileAndSettingsNavItems(result, landingPageProps.user.username) &&
+        hasForumNavItem(result) &&
+        hasNewsNavItem(result) &&
+        hasRadioNavItem(result) &&
+        hasSignOutNavItem(result)
+    ).toBeTruthy();
   });
 
-  it('has links to news, forum, learn and portfolio', () => {
-    // checks if all links in expected links exist in links
-    expect(expectedLinks.every(elem => links.indexOf(elem) > -1)).toBeTruthy();
+  it('has expected navigation links when signed in and donating', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: true,
+        username: 'moT01',
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      toggleNightMode: theme => theme
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<NavLinks {...landingPageProps} />);
+    const result = shallow.getRenderOutput();
+    expect(
+      hasThanksForDonating(result) &&
+        hasCurriculumNavItem(result) &&
+        hasProfileAndSettingsNavItems(result, landingPageProps.user.username) &&
+        hasForumNavItem(result) &&
+        hasNewsNavItem(result) &&
+        hasRadioNavItem(result) &&
+        hasSignOutNavItem(result)
+    ).toBeTruthy();
   });
 });
 
-const UniversalNavProps = {
-  displayMenu: false,
-  menuButtonRef: {},
-  searchBarRef: {},
-  toggleDisplayMenu: function() {}
+describe('<AuthOrProfile />', () => {
+  it('has avatar with default border for default users', () => {
+    const defaultUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png'
+      },
+      pending: false,
+      pathName: '/learn'
+    };
+
+    const shallow = new ShallowRenderer();
+    shallow.render(<AuthOrProfile {...defaultUserProps} />);
+    const componentTree = shallow.getRenderOutput();
+    expect(avatarHasClass(componentTree, 'default-border')).toBeTruthy();
+  });
+
+  it('has avatar with gold border for donating users', () => {
+    const donatingUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png',
+        isDonating: true
+      },
+      pending: false,
+      pathName: '/learn'
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<AuthOrProfile {...donatingUserProps} />);
+    const componentTree = shallow.getRenderOutput();
+
+    expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
+  });
+
+  it('has avatar with blue border for top contributors', () => {
+    const topContributorUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png',
+        yearsTopContributor: [2020]
+      },
+      pending: false,
+      pathName: '/learn'
+    };
+
+    const shallow = new ShallowRenderer();
+    shallow.render(<AuthOrProfile {...topContributorUserProps} />);
+    const componentTree = shallow.getRenderOutput();
+
+    expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
+  });
+  it('has avatar with purple border for donating top contributors', () => {
+    const topDonatingContributorUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png',
+        isDonating: true,
+        yearsTopContributor: [2020]
+      },
+      pending: false,
+      pathName: '/learn'
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<AuthOrProfile {...topDonatingContributorUserProps} />);
+    const componentTree = shallow.getRenderOutput();
+    expect(avatarHasClass(componentTree, 'purple-border')).toBeTruthy();
+  });
+});
+
+const navigationLinks = (component, navItem) => {
+  return component.props.children[navItem].props;
+};
+
+const profileNavItem = component => component.props.children;
+
+const hasDonateNavItem = component => {
+  const { children, to } = navigationLinks(component, 0);
+  return children === 'buttons.donate' && to === '/donate';
+};
+
+const hasThanksForDonating = component => {
+  const { children } = navigationLinks(component, 0);
+  return children[0].props.children === 'donate.thanks';
+};
+
+const hasSignInNavItem = component => {
+  const { children } = navigationLinks(component, 1);
+  return children === 'buttons.sign-in';
+};
+
+const hasCurriculumNavItem = component => {
+  const { children, to } = navigationLinks(component, 2);
+  return children === 'buttons.curriculum' && to === '/learn';
+};
+
+const hasProfileAndSettingsNavItems = (component, username) => {
+  const fragment = navigationLinks(component, 3);
+
+  const profile = fragment.children[0].props;
+  const settings = fragment.children[1].props;
+
+  const hasProfile =
+    profile.children === 'buttons.profile' && profile.to === `/${username}`;
+  const hasSettings =
+    settings.children === 'buttons.settings' && settings.to === '/settings';
+
+  return hasProfile && hasSettings;
+};
+
+const hasForumNavItem = component => {
+  const { children, to } = navigationLinks(component, 5);
+  return (
+    children[0].props.children === 'buttons.forum' &&
+    to === 'https://forum.freecodecamp.org/'
+  );
+};
+
+const hasNewsNavItem = component => {
+  const { children, to } = navigationLinks(component, 6);
+  return (
+    children[0].props.children === 'buttons.news' &&
+    to === 'https://www.freecodecamp.org/news'
+  );
+};
+
+const hasRadioNavItem = component => {
+  const { children, to } = navigationLinks(component, 7);
+  return (
+    children[0].props.children === 'buttons.radio' &&
+    to === 'https://coderadio.freecodecamp.org'
+  );
+};
+
+const hasSignOutNavItem = component => {
+  const { children } = navigationLinks(component, 10);
+  const signOutProps = children[1].props;
+
+  return (
+    signOutProps.children === 'buttons.sign-out' &&
+    signOutProps.href === `${apiLocation}/signout`
+  );
+};
+
+/* TODO: Apply this to Universalnav component
+const hasSignInButton = component =>
+  component.props.children[1].props.children === 'buttons.sign-in';
+*/
+const avatarHasClass = (componentTree, classes) => {
+  return (
+    profileNavItem(componentTree).props.className ===
+    'avatar-nav-link ' + classes
+  );
 };

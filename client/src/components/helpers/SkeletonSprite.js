@@ -9,9 +9,9 @@ function SkeletonSprite() {
       <svg className='sprite-svg'>
         <rect
           className='sprite'
-          fill='#ccc'
+          fill='var(--gray-75)'
           height='100%'
-          stroke='#ccc'
+          stroke='var(--gray-75)'
           width='2px'
           x='0'
           y='0'

@@ -15,9 +15,6 @@
   },
   "initial": {
     "compression": {},
-    "morgan": {
-      "params": ":date[iso] :status :method :response-time ms - :url"
-    },
     "cors": {
       "params": {
         "origin": true,
@@ -32,7 +29,6 @@
   "auth:before": {
     "express-flash": {},
     "./middlewares/express-extensions": {},
-    "./middlewares/add-return-to": {},
     "./middlewares/cookie-parser": {},
     "./middlewares/request-authorization": {}
   },
@@ -44,9 +40,6 @@
       }
     },
     "method-override": {}
-  },
-  "parse:after": {
-    "./middlewares/validator": {}
   },
   "routes:before": {
     "helmet#xssFilter": {},

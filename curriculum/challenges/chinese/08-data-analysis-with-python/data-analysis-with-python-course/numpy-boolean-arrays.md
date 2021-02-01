@@ -1,0 +1,53 @@
+---
+id: 5e9a093a74c4063ca6f7c156
+challengeType: 11
+videoId: N1ttsMmcVMM
+dashedName: numpy-boolean-arrays
+---
+
+# --description--
+
+More resources:
+
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74)
+
+# --question--
+
+## --text--
+
+What will the following code print out?
+
+```py
+a = np.arange(5)
+
+print(a <= 3)
+```
+
+## --answers--
+
+```python
+[False, False, False, False, True]
+```
+
+---
+
+```python
+[5]
+```
+
+---
+
+```python
+[0, 1, 2, 3]
+```
+
+---
+
+```python
+[True, True, True, True, False]
+```
+
+## --video-solution--
+
+4
+

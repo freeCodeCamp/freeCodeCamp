@@ -12,7 +12,10 @@ import {
 const propTypes = {
   buttonText: PropTypes.string,
   enableSubmit: PropTypes.bool,
-  formFields: PropTypes.arrayOf(PropTypes.string).isRequired,
+  formFields: PropTypes.arrayOf(
+    PropTypes.shape({ name: PropTypes.string, label: PropTypes.string })
+      .isRequired
+  ).isRequired,
   hideButton: PropTypes.bool,
   id: PropTypes.string.isRequired,
   initialValues: PropTypes.object,
@@ -47,7 +50,7 @@ function DynamicForm({
           onSubmit={handleSubmit}
           style={{ width: '100%' }}
         >
-          <FormFields fields={formFields} options={options} />
+          <FormFields formFields={formFields} options={options} />
           <BlockSaveWrapper>
             {hideButton ? null : (
               <BlockSaveButton disabled={(pristine && !enableSubmit) || error}>

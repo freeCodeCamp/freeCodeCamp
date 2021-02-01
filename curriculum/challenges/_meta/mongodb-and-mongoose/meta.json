@@ -1,5 +1,6 @@
 {
   "name": "MongoDB and Mongoose",
+  "isUpcomingChange": false,
   "dashedName": "mongodb-and-mongoose",
   "order": 3,
   "time": "5 hours",

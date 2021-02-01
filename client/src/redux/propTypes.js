@@ -35,13 +35,11 @@ export const ChallengeNode = PropTypes.shape({
   forumTopicId: PropTypes.number,
   guideUrl: PropTypes.string,
   head: PropTypes.arrayOf(PropTypes.string),
+  helpCategory: PropTypes.string,
   instructions: PropTypes.string,
-  isHidden: PropTypes.bool,
   isComingSoon: PropTypes.bool,
   isLocked: PropTypes.bool,
   isPrivate: PropTypes.bool,
-  isRequired: PropTypes.bool,
-  name: PropTypes.string,
   order: PropTypes.number,
   required: PropTypes.arrayOf(
     PropTypes.shape({
@@ -72,4 +70,56 @@ export const AllMarkdownRemark = PropTypes.shape({
       node: MarkdownRemark
     })
   )
+});
+
+export const User = PropTypes.shape({
+  about: PropTypes.string,
+  completedChallenges: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      solution: PropTypes.string,
+      githubLink: PropTypes.string,
+      challengeType: PropTypes.number,
+      completedDate: PropTypes.number,
+      files: PropTypes.array
+    })
+  ),
+  email: PropTypes.string,
+  githubProfile: PropTypes.string,
+  is2018DataVisCert: PropTypes.bool,
+  isApisMicroservicesCert: PropTypes.bool,
+  isBackEndCert: PropTypes.bool,
+  isDataVisCert: PropTypes.bool,
+  isEmailVerified: PropTypes.bool,
+  isFrontEndCert: PropTypes.bool,
+  isFrontEndLibsCert: PropTypes.bool,
+  isFullStackCert: PropTypes.bool,
+  isHonest: PropTypes.bool,
+  isInfosecQaCert: PropTypes.bool,
+  isQaCertV7: PropTypes.bool,
+  isInfosecCertV7: PropTypes.bool,
+  isJsAlgoDataStructCert: PropTypes.bool,
+  isRespWebDesignCert: PropTypes.bool,
+  isSciCompPyCertV7: PropTypes.bool,
+  isDataAnalysisPyCertV7: PropTypes.bool,
+  isMachineLearningPyCertV7: PropTypes.bool,
+  linkedin: PropTypes.string,
+  location: PropTypes.string,
+  name: PropTypes.string,
+  picture: PropTypes.string,
+  points: PropTypes.number,
+  portfolio: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string,
+      url: PropTypes.string,
+      image: PropTypes.string,
+      description: PropTypes.string
+    })
+  ),
+  sendQuincyEmail: PropTypes.bool,
+  theme: PropTypes.string,
+  twitter: PropTypes.string,
+  username: PropTypes.string,
+  website: PropTypes.string
 });

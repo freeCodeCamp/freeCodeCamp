@@ -1,240 +1,130 @@
-# Setting up WSL for Working with freeCodeCamp Locally
+# Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
 
 > [!NOTE]
-> Requirements:
-> 
-> **WSL 1**: Windows 10 64-bit, version 1607
-> 
-> **WSL 2**: Windows 10 64-bit, version 2004, Build 19041 or higher
+> Before you follow these instructions make sure your system meets the requirements
+>
+> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
+>
+> **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-Follow these guidlines for setting up WSL to set up freeCodeCamp locally.
+This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow the our local setup guide to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
 
-This guide covers some common issues encountered with the setup of WSL.
+## Enable WSL
 
-## Enable WSL & Download a Distro
+Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
 
-1) Follow the instructions given in the documentation by Microsoft to install WSL2 (Recommended Distro: Ubuntu18.04):
-[Installing WSL2](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-wsl2#install-windows-10-insider-preview-build)
+## Install Ubuntu
 
-> [!NOTE]
-> You can download a different distro, but the setup might differ.
+1. We recommended using Ubuntu-18.04 or above with WSL2.
 
-2) On the same page, ensure to follow the instructions about installing Nodejs and NPM through the NVM.
+   > [!NOTE]
+   >
+   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
 
-**NOTE:** If you encounter errors on step 2, skip to the next step, and return when prompted
+2. Update the dependencies for the OS
 
-## Setting Up Git
+   ```console
+   sudo apt update
+   sudo apt upgrade -y
 
-It is likely you will be unable to clone your fork of freeCodeCamp, without running these steps, but there is no harm in trying. Just follow the instructions on [the Contributors Site](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally).
+   # cleanup
+   sudo apt autoremove -y
+   ```
 
-If you run into any issues related to Git, follow through with one of the following alternatives. If that does not resolve the issue, try the next alternative:
+## Set up Git
 
-### ALTERNATIVE 1 - Use apt-get to Install the Latest Version of Git
+Git comes pre-installed with Ubuntu 18.04, verify that your Git version with `git --version`.
 
-1) Update your distribution:
-
-```sh
-sudo apt update && sudo apt upgrade
+```output
+~
+❯ git --version
+git version 2.25.1
 ```
 
-2) Download and install Git:
+(Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
 
-```sh
-sudo apt install git
+## Installing a Code Editor
+
+We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
+
+Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
+
+## Installing Docker Desktop
+
+**Docker Desktop for Windows** allows you to install and run database and services like MongoDB, NGINX, etc. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
+
+Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
+
+There are some minimum hardware requirements for the best experience.
+
+## Configure Docker Desktop for WSL
+
+Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
+
+This makes it so that the containers run on WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
+
+## Install MongoDB from Docker Hub
+
+Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
+
+1. Launch a new Ubuntu-18.04 terminal
+
+2. Pull `MongoDB 3.6` from dockerhub
+
+   ```console
+   docker pull mongo:3
+   ```
+
+3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
+
+   ```console
+   docker run -it \
+     -v mongodata:/data/db \
+     -p 27017:27017 \
+     --name mongodb \
+     --restart unless-stopped \
+     -d mongo:3
+   ```
+
+4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
+
+## Installing Node.js and npm
+
+We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+Once installed use these commands to install and use the Node.js version as needed
+
+```console
+nvm install --lts
+
+# OR
+# nvm install <version>
+
+nvm install 14
+
+# Usage
+# nvm use <version>
+
+nvm use 12
 ```
 
-3) Verify the installed version:
+Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
 
-```sh
-git --version
+```console
+npm install -g npm@latest
 ```
 
-### ALTERNATIVE 2 - Use SSH to Work on Your Fork
+## Set up freeCodeCamp locally
 
-1) Follow the instructions on [GitHub](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to generate a new SSH key, and add it to your account.
+Now that you have installed the pre-requisites, follow [our local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to clone, install and setup freeCodeCamp locally on your machine.
 
-2) If you encounter an error similar to this, perform the rest of this alternative:
+> [!WARNING]
+>
+> Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
 
- >ssh: connect to host `github.com` port 22: Connection refused
+## Useful Links
 
-3) `cd` into the `.ssh` folder, and create a config file:
-
-```sh
-cd ~/.ssh && touch config
-```
-
-4) Open the file with your favourite text editor:
-
-Open VS Code: `code .`
-
-Alternatively, open the folder in the explorer, and use the Windows built-in text editor: `explorer.exe .`
-
-> [!NOTE]
-> This command works for VS Code, and you might be asked to install an extension for this to work
-
-5) Add this to the config file to allow GitHub's domain through your firewall:
-
-```
-# GitHub Account
-Host github.com
-    HostName ssh.github.com
-    Port 443
-    PreferredAuthentications publickey
-    IdentityFile ./id_rsa.pub
-```
-
-> [!DANGER]
-> Provided you have not deviated from the default setup, the `IdentityFile` will be as above.
-
-6) Return to the GitHub SSH setup to test your connection
-
-### ALTERNATIVE 3 - Last Resort
-
-1) Install build-essential, fakeroot and dpkg-dev using the following command:
-
-```sh
-sudo apt-get install build-essential fakeroot dpkg-dev
-```
-
-2) Create a directory named git-rectify in the home folder using the following command:
-
-```sh
-mkdir ~/git-rectify
-```
-
-3) Change directory to the `get-rectify` directory and get the git source files:
-
-```sh
-cd ~/git-rectify
-```
-
-4) This command creates a copy of your `sources.list` file, for safe keeping.
-
-```sh
-sudo cp /etc/apt/sources.list /etc/apt/sources.list~
-```
-
-> [!NOTE]
-> If you encounter any errors with the directory not existing, or the file being copied to already existing, follow this step:
-
- - Enter the directory
-
-```sh
-cd ~/git-rectify/etc/apt
-```
-
- - Open your file explorer
-
-```sh
-explorer.exe .
-```
-
- - Manually create a copy of the `sources.list` file, and save it with a different name.
- - Change directory back to `git-rectify`
-
-```sh
-cd ../..
-```
-
-Continue from these steps:
-
-5) Now, you need to uncomment the sources in the ../ file
-
-```sh
-sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
-```
-
-6) Get the source files from the list:
-
-```sh
-apt-get source git
-```
-
-7) Install all the git dependencies:
-
-```sh
-sudo apt-get build-dep git
-```
-
-8) Install libcurl with all development files:
-
-```sh
-sudo apt-get install libcurl4-openssl-dev
-```
-
-9) Unpack all the source packages using the following command:
-
-> [!NOTE]
-> The name `git_2.17.1-1ubuntu0.1` could vary based on the lastest version. So look in to the directory for the correct version name.
-
-```sh
-dpkg-source -x git_2.17.1-1ubuntu0.1
-```
-
-10) Change directory in to `git_2.17.1` folder and open the control file located inside debian folder (git_2.17.1/debian/control) in a text editor. Replace all the occurences of _“libcurl4-gnutls-dev”_ to _“libcurl4-openssl-dev”_.
-
-11) Also open _“debian/rules”_ file and delete the line _“TEST=test”_
-
-12) Build the package files using the following command.
-
-```sh
-sudo dpkg-buildpackage -rfakeroot -b
-```
-
-13) Install the package:
-
-```sh
-sudo dpkg -i git_2.17.1_amd64.deb
-```
-
----
-
-## Setup MongoDB on WSL
-
-> [!NOTE]
-> Remember to return to **step 2** of [Enabling WSL](#enable-wsl-amp-download-a-distro), if you skipped it.
-
-You might find that setting up MongoDB Server on Windows to be the easiest, but connecting to the server from WSL might lead to permission denied errors.
-
-1) Follow the instructions on the [Microsoft Documentation](https://docs.microsoft.com/en-us/windows/nodejs/databases) for setting up MongoDB on WSL.
-
-If you encounter any errors similar to this:
->NonExistentPath: Data directory /data/db not found.
-
-Follow these steps:
-
-2) Create the path for the database:
-
-```sh
-sudo mkdir -p /data/db
-```
-
-3) Try to start the server again. If you encounter a `permission denied` error, start the server with:
-
-```sh
-sudo mongod
-```
-
-If you encounter another `path` error, manually tell MongoDB where to store the database:
-
-```sh
-mongod --dbpath=data/db
-```
-
-> [!NOTE]
-> The path `data/db` must exist beforehand.
-
-## Other Possible Issues
-
-> ERR! build error gyp ERR! stack Error: not found: make
-
-- Install missing dependencies
-
-```sh
-sudo apt-get install -yq /
-gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 /
-libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 /
-libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1libxcursor1 /
-libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates /
-fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
-```
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- Frequently asked questions on:
+  - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
+  - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

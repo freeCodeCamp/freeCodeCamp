@@ -1,5 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
-import nanoId from 'nanoid';
+import { nanoid } from 'nanoid';
 
 import { createTypes } from '../../../utils/createTypes';
 
@@ -15,7 +15,7 @@ export const sagas = [];
 
 export const createFlashMessage = createAction(
   types.createFlashMessage,
-  msg => ({ id: nanoId(), ...msg })
+  msg => ({ id: nanoid(), ...msg })
 );
 export const removeFlashMessage = createAction(types.removeFlashMessage);
 

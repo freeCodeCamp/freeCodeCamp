@@ -6,7 +6,8 @@ module.exports = {
     '^(?!.*\\.module\\.css$).*\\.css$': '<rootDir>/src/__mocks__/styleMock.js',
     // CSS Modules - match files that end with 'module.css'
     '\\.module\\.css$': 'identity-obj-proxy',
-    analytics: '<rootDir>/src/__mocks__/analyticsMock.js'
+    analytics: '<rootDir>/src/__mocks__/analyticsMock.js',
+    'react-i18next': '<rootDir>/src/__mocks__/react-i18nextMock.js'
   },
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.cache/'],
   globals: {
@@ -16,5 +17,6 @@ module.exports = {
   transform: {
     '^.+\\.js$': '<rootDir>/jest.transform.js'
   },
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)']
+  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  setupFilesAfterEnv: ['./jest.setup.js']
 };

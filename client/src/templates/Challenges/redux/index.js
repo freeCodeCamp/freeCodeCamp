@@ -3,6 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { createTypes } from '../../../../utils/stateManagement';
 
 import { createPoly } from '../../../../../utils/polyvinyl';
+import { getLines } from '../../../../../utils/get-lines';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import codeLockEpic from './code-lock-epic';
@@ -12,13 +13,16 @@ import codeStorageEpic from './code-storage-epic';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
+import { getTargetEditor } from '../utils/getTargetEditor';
 import { completedChallengesSelector } from '../../../redux';
+import { isEmpty } from 'lodash';
 
 export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
 
 const initialState = {
   canFocusEditor: true,
+  visibleEditors: {},
   challengeFiles: {},
   challengeMeta: {
     superBlock: '',
@@ -26,15 +30,15 @@ const initialState = {
     id: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
-    introPath: '',
     challengeType: -1
   },
   challengeTests: [],
-  consoleOut: '',
+  consoleOut: [],
   hasCompletedBlock: false,
   inAccessibilityMode: false,
   isCodeLocked: false,
   isBuildEnabled: true,
+  logsOut: [],
   modal: {
     completion: false,
     help: false,
@@ -84,6 +88,7 @@ export const types = createTypes(
     'moveToTab',
 
     'setEditorFocusability',
+    'toggleVisibleEditor',
     'setAccessibilityMode',
 
     'lastBlockChalSubmitted'
@@ -104,6 +109,7 @@ export const sagas = [
   ...createCurrentChallengeSaga(types)
 ];
 
+// TODO: can createPoly handle editable region, rather than separating it?
 export const createFiles = createAction(types.createFiles, challengeFiles =>
   Object.keys(challengeFiles)
     .filter(key => challengeFiles[key])
@@ -113,7 +119,12 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
         ...challengeFiles,
         [file.key]: {
           ...createPoly(file),
-          seed: file.contents.slice(0)
+          seed: file.contents.slice(),
+          editableContents: getLines(
+            file.contents,
+            file.editableRegionBoundaries
+          ),
+          seedEditableRegionBoundaries: file.editableRegionBoundaries.slice()
         }
       }),
       {}
@@ -159,6 +170,7 @@ export const submitChallenge = createAction(types.submitChallenge);
 export const moveToTab = createAction(types.moveToTab);
 
 export const setEditorFocusability = createAction(types.setEditorFocusability);
+export const toggleVisibleEditor = createAction(types.toggleVisibleEditor);
 export const setAccessibilityMode = createAction(types.setAccessibilityMode);
 
 export const lastBlockChalSubmitted = createAction(
@@ -238,24 +250,30 @@ export const challengeDataSelector = state => {
 };
 
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
+export const visibleEditorsSelector = state => state[ns].visibleEditors;
+
 export const inAccessibilityModeSelector = state =>
   state[ns].inAccessibilityMode;
-
-const MAX_LOGS_SIZE = 64 * 1024;
 
 export const reducer = handleActions(
   {
     [types.createFiles]: (state, { payload }) => ({
       ...state,
-      challengeFiles: payload
+      challengeFiles: payload,
+      visibleEditors: { [getTargetEditor(payload)]: true }
     }),
-    [types.updateFile]: (state, { payload: { key, editorValue } }) => ({
+    [types.updateFile]: (
+      state,
+      { payload: { key, editorValue, editableRegionBoundaries } }
+    ) => ({
       ...state,
       challengeFiles: {
         ...state.challengeFiles,
         [key]: {
           ...state.challengeFiles[key],
-          contents: editorValue
+          contents: editorValue,
+          editableContents: getLines(editorValue, editableRegionBoundaries),
+          editableRegionBoundaries
         }
       }
     }),
@@ -263,7 +281,6 @@ export const reducer = handleActions(
       ...state,
       challengeFiles: payload
     }),
-
     [types.initTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload
@@ -275,25 +292,25 @@ export const reducer = handleActions(
 
     [types.initConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut: payload
+      consoleOut: payload ? [payload] : []
     }),
     [types.updateConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut: state.consoleOut + '\n' + payload
+      consoleOut: state.consoleOut.concat(payload)
     }),
     [types.initLogs]: state => ({
       ...state,
-      logsOut: ''
+      logsOut: []
     }),
     [types.updateLogs]: (state, { payload }) => ({
       ...state,
-      logsOut: (state.logsOut + '\n' + payload).slice(-MAX_LOGS_SIZE)
+      logsOut: state.logsOut.concat(payload)
     }),
     [types.logsToConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut:
-        state.consoleOut +
-        (state.logsOut ? '\n' + payload + '\n' + state.logsOut : '')
+      consoleOut: isEmpty(state.logsOut)
+        ? state.consoleOut
+        : state.consoleOut.concat(payload, state.logsOut)
     }),
     [types.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
@@ -311,7 +328,12 @@ export const reducer = handleActions(
               ...files,
               [file.key]: {
                 ...file,
-                contents: file.seed.slice()
+                contents: file.seed.slice(),
+                editableContents: getLines(
+                  file.seed,
+                  file.seedEditableRegionBoundaries
+                ),
+                editableRegionBoundaries: file.seedEditableRegionBoundaries
               }
             }),
             {}
@@ -321,7 +343,7 @@ export const reducer = handleActions(
         text,
         testString
       })),
-      consoleOut: ''
+      consoleOut: []
     }),
     [types.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
@@ -372,6 +394,15 @@ export const reducer = handleActions(
       ...state,
       canFocusEditor: payload
     }),
+    [types.toggleVisibleEditor]: (state, { payload }) => {
+      return {
+        ...state,
+        visibleEditors: {
+          ...state.visibleEditors,
+          [payload]: !state.visibleEditors[payload]
+        }
+      };
+    },
     [types.setAccessibilityMode]: (state, { payload }) => ({
       ...state,
       inAccessibilityMode: payload

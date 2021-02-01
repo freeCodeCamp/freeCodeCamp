@@ -17,7 +17,7 @@ body {
   text-decoration: none !important;
 }
 
-/****** Universal Nav ****/
+/****** Nav ****/
 
 .universal-nav {
   margin: 0px;
@@ -28,6 +28,17 @@ body {
   top: 0px;
   display: flex;
   justify-content: center;
+  z-index: 100;
+}
+
+.universal-nav a.translations-link {
+  color: #ffffff;
+  position: fixed;
+  right: 50px;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 6px 0;
+  padding: 0 0;
 }
 
 .universal-nav img {
@@ -35,13 +46,14 @@ body {
   height: 24px;
 }
 
-.app-nav > a {
-  margin: 0;
-  padding: 0;
+.app-nav {
+  visibility: hidden;
 }
 
-.app-nav.no-badge {
-  margin-right: 0px;
+@media screen and (max-width: 768px) {
+  .universal-nav a.translations-link {
+    visibility: hidden;
+  }
 }
 
 /****** Cover Page ******/
@@ -228,7 +240,6 @@ body .sidebar-toggle span:nth-child(3) {
   body .sidebar-toggle {
     left: 1rem;
   }
-
   body.close .sidebar-toggle {
     left: calc(300px + 1.5rem);
   }
@@ -241,6 +252,11 @@ body.close .github-corner {
 }
 
 /****** Markdown General ******/
+
+.markdown-section h1,
+.markdown-section h2 {
+  margin: 1em 0;
+}
 
 .markdown-section p {
   font-size: 18px;
@@ -314,11 +330,25 @@ body.close .github-corner {
   font-size: 0.7em !important;
 }
 
-/****** Anchor Headings ******/
-a.anchor {
-  padding-top: 48px;
+/****** Others ******/
+
+.i18n-lang-list ul {
+  height: 10em;
+  font-size: larger;
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-align-content: stretch;
+  align-content: stretch;
 }
 
-.markdown-section h2 {
-  margin: 0 0 0.8em;
+.i18n-lang-list li {
+  text-align: left;
+  width: 5em;
 }

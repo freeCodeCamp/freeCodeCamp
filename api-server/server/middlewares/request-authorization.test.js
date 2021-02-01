@@ -1,10 +1,11 @@
 /* global describe it expect */
 import sinon from 'sinon';
-import { mockReq, mockRes } from 'sinon-express-mock';
+import { mockReq as mockRequest, mockRes } from 'sinon-express-mock';
 import jwt from 'jsonwebtoken';
 
+import { homeLocation } from '../../../config/env.json';
 import createRequestAuthorization, {
-  isWhiteListedPath
+  isAllowedPath
 } from './request-authorization';
 
 const validJWTSecret = 'this is a super secret string';
@@ -26,8 +27,14 @@ const users = {
 const mockGetUserById = id =>
   id in users ? Promise.resolve(users[id]) : Promise.reject('No user found');
 
+const mockReq = args => {
+  const mock = mockRequest(args);
+  mock.header = () => homeLocation;
+  return mock;
+};
+
 describe('request-authorization', () => {
-  describe('isWhiteListedPath', () => {
+  describe('isAllowedPath', () => {
     const authRE = /^\/auth\//;
     const confirmEmailRE = /^\/confirm-email$/;
     const newsShortLinksRE = /^\/n\/|^\/p\//;
@@ -42,7 +49,7 @@ describe('request-authorization', () => {
     const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
     const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
 
-    const whiteList = [
+    const allowedPathsList = [
       authRE,
       confirmEmailRE,
       newsShortLinksRE,
@@ -58,18 +65,21 @@ describe('request-authorization', () => {
     ];
 
     it('returns a boolean', () => {
-      const result = isWhiteListedPath();
+      const result = isAllowedPath();
       expect(typeof result).toBe('boolean');
     });
 
     it('returns true for a white listed path', () => {
-      const resultA = isWhiteListedPath(
+      const resultA = isAllowedPath(
         '/auth/auth0/callback?code=yF_mGjswLsef-_RLo',
-        whiteList
+        allowedPathsList
       );
-      const resultB = isWhiteListedPath('/ue/WmjInLerysPrcon6fMb/', whiteList);
-      const resultC = isWhiteListedPath('/hooks/update-paypal', whiteList);
-      const resultD = isWhiteListedPath('/hooks/update-stripe', whiteList);
+      const resultB = isAllowedPath(
+        '/ue/WmjInLerysPrcon6fMb/',
+        allowedPathsList
+      );
+      const resultC = isAllowedPath('/hooks/update-paypal', allowedPathsList);
+      const resultD = isAllowedPath('/hooks/update-stripe', allowedPathsList);
       expect(resultA).toBe(true);
       expect(resultB).toBe(true);
       expect(resultC).toBe(true);
@@ -77,8 +87,11 @@ describe('request-authorization', () => {
     });
 
     it('returns false for a non-white-listed path', () => {
-      const resultA = isWhiteListedPath('/hax0r-42/no-go', whiteList);
-      const resultB = isWhiteListedPath('/update-current-challenge', whiteList);
+      const resultA = isAllowedPath('/hax0r-42/no-go', allowedPathsList);
+      const resultB = isAllowedPath(
+        '/update-current-challenge',
+        allowedPathsList
+      );
       expect(resultA).toBe(false);
       expect(resultB).toBe(false);
     });

@@ -8,7 +8,7 @@ import {
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-
+import { useTranslation } from 'react-i18next';
 import './social-icons.css';
 
 const propTypes = {
@@ -26,9 +26,10 @@ const propTypes = {
 };
 
 function LinkedInIcon(linkedIn, username) {
+  const { t } = useTranslation();
   return (
     <a
-      aria-label={`Link to ${username}'s LinkedIn`}
+      aria-label={t('aria.linkedin', { username: username })}
       href={linkedIn}
       rel='noopener noreferrer'
       target='_blank'
@@ -39,9 +40,10 @@ function LinkedInIcon(linkedIn, username) {
 }
 
 function GithubIcon(ghURL, username) {
+  const { t } = useTranslation();
   return (
     <a
-      aria-label={`Link to ${username}'s Github`}
+      aria-label={t('aria.github', { username: username })}
       href={ghURL}
       rel='noopener noreferrer'
       target='_blank'
@@ -52,9 +54,10 @@ function GithubIcon(ghURL, username) {
 }
 
 function WebsiteIcon(website, username) {
+  const { t } = useTranslation();
   return (
     <a
-      aria-label={`Link to ${username}'s website`}
+      aria-label={t('aria.website', { username: username })}
       href={website}
       rel='noopener noreferrer'
       target='_blank'
@@ -65,9 +68,10 @@ function WebsiteIcon(website, username) {
 }
 
 function TwitterIcon(handle, username) {
+  const { t } = useTranslation();
   return (
     <a
-      aria-label={`Link to ${username}'s Twitter`}
+      aria-label={t('aria.twitter', { username: username })}
       href={handle}
       rel='noopener noreferrer'
       target='_blank'

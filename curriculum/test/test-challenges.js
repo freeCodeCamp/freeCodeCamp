@@ -2,6 +2,7 @@
 const path = require('path');
 const liveServer = require('live-server');
 const stringSimilarity = require('string-similarity');
+const { isAuditedCert } = require('../../utils/is-audited');
 
 const spinner = require('ora')();
 
@@ -23,39 +24,70 @@ const {
 
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
-const { flatten } = require('lodash');
+const { flatten, isEmpty, cloneDeep } = require('lodash');
+const { getLines } = require('../../utils/get-lines');
 
 const jsdom = require('jsdom');
-
-const dom = new jsdom.JSDOM('');
-global.document = dom.window.document;
 
 const vm = require('vm');
 
 const puppeteer = require('puppeteer');
 
-const { getChallengesForLang, getMetaForBlock } = require('../getChallenges');
+const {
+  getChallengesForLang,
+  getMetaForBlock,
+  getTranslatableComments
+} = require('../getChallenges');
 
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const {
-  challengeTypes,
-  helpCategory
-} = require('../../client/utils/challengeTypes');
+const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { dasherize } = require('../../utils/slugs');
+const { toSortedArray } = require('../../utils/sort-files');
 
-const { testedLangs } = require('../utils');
+const { testedLang } = require('../utils');
 
 const {
   buildDOMChallenge,
   buildJSChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 
-const { createPoly } = require('../../utils/polyvinyl');
+const { sortChallenges } = require('./utils/sort-challenges');
+
+const TRANSLATABLE_COMMENTS = getTranslatableComments(
+  path.resolve(__dirname, '..', 'dictionaries')
+);
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
+
+const commentExtractors = {
+  html: require('./utils/extract-html-comments'),
+  js: require('./utils/extract-js-comments'),
+  jsx: require('./utils/extract-jsx-comments'),
+  css: require('./utils/extract-css-comments')
+};
+
+// rethrow unhandled rejections to make sure the tests exit with -1
+process.on('unhandledRejection', err => handleRejection(err));
+
+const handleRejection = err => {
+  // setting the error code because node does not (yet) exit with a non-zero
+  // code on unhandled exceptions.
+  process.exitCode = 1;
+  cleanup();
+  if (process.env.FULL_OUTPUT === 'true') {
+    // some errors *may* not be reported, since cleanup is triggered by the
+    // first error and that starts shutting down the browser and the server.
+    console.error(err);
+  } else {
+    throw err;
+  }
+};
+
+const dom = new jsdom.JSDOM('');
+global.document = dom.window.document;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
@@ -88,13 +120,7 @@ let page;
 
 setup()
   .then(runTests)
-  .catch(err => {
-    cleanup();
-    // setting the error code because node does not (yet) exit with a non-zero
-    // code on unhandled exceptions.
-    process.exitCode = 1;
-    throw err;
-  });
+  .catch(err => handleRejection(err));
 
 async function setup() {
   if (process.env.npm_config_superblock && process.env.npm_config_block) {
@@ -124,22 +150,15 @@ async function setup() {
   global.Worker = createPseudoWorker(await newPageContext(browser));
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
-  const testLangs = testedLangs();
-  if (testLangs.length > 1)
-    throw Error(
-      `Testing more than one language at once is not currently supported
-please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
-    );
-  const challengesForLang = await Promise.all(
-    testLangs.map(lang => getChallenges(lang))
-  );
+
+  const lang = testedLang();
+
+  let challenges = await getChallenges(lang);
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
-  const blocks = challengesForLang[0].challenges.map(({ block }) => block);
-  const superBlocks = challengesForLang[0].challenges.map(
-    ({ superBlock }) => superBlock
-  );
+  const blocks = challenges.map(({ block }) => block);
+  const superBlocks = challenges.map(({ superBlock }) => superBlock);
   const targetBlockStrings = [...new Set(blocks)];
   const targetSuperBlockStrings = [...new Set(superBlocks)];
 
@@ -151,11 +170,11 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
     ).bestMatch.target;
 
     console.log(`\nsuperBlock being tested: ${filter}`);
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
+    challenges = challenges.filter(
       challenge => challenge.superBlock === filter
     );
 
-    if (!challengesForLang[0].challenges.length) {
+    if (!challenges.length) {
       throw new Error(`No challenges found with superBlock "${filter}"`);
     }
   }
@@ -167,30 +186,26 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
     ).bestMatch.target;
 
     console.log(`\nblock being tested: ${filter}`);
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
-      challenge => challenge.block === filter
-    );
+    challenges = challenges.filter(challenge => challenge.block === filter);
 
-    if (!challengesForLang[0].challenges.length) {
+    if (!challenges.length) {
       throw new Error(`No challenges found with block "${filter}"`);
     }
   }
 
   const meta = {};
-  for (const { lang, challenges } of challengesForLang) {
-    meta[lang] = {};
-    for (const challenge of challenges) {
-      const dashedBlockName = dasherize(challenge.block);
-      if (!meta[dashedBlockName]) {
-        meta[lang][dashedBlockName] = (await getMetaForBlock(
-          dashedBlockName
-        )).challengeOrder;
-      }
+  for (const challenge of challenges) {
+    const dashedBlockName = dasherize(challenge.block);
+    if (!meta[dashedBlockName]) {
+      meta[dashedBlockName] = (await getMetaForBlock(
+        dashedBlockName
+      )).challengeOrder;
     }
   }
   return {
     meta,
-    challengesForLang
+    challenges,
+    lang
   };
 }
 
@@ -204,18 +219,12 @@ function cleanup() {
   spinner.stop();
 }
 
-function runTests({ challengesForLang, meta }) {
-  process.on('unhandledRejection', err => {
-    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
-  });
-
+function runTests(challengeData) {
   describe('Check challenges', function() {
     after(function() {
       cleanup();
     });
-    for (const challenge of challengesForLang) {
-      populateTestsForLang(challenge, meta);
-    }
+    populateTestsForLang(challengeData);
   });
   spinner.text = 'Testing';
   run();
@@ -232,43 +241,26 @@ async function getChallenges(lang) {
         return [...challengeArray, ...flatten(challengesForBlock)];
       }, [])
   );
-  return { lang, challenges };
+  // This matches the order Gatsby uses (via a GraphQL query). Ideally both
+  // should be sourced and sorted using a single query, but we're not there yet.
+  return sortChallenges(challenges);
 }
 
-function validateBlock(challenge) {
-  const dashedBlock = dasherize(challenge.block);
-  if (!helpCategory.hasOwnProperty(dashedBlock)) {
-    return `'${dashedBlock}' block not found as a helpCategory in client/utils/challengeTypes.js file for the '${challenge.title}' challenge`;
-  } else {
-    return null;
-  }
-}
-
-function populateTestsForLang({ lang, challenges }, meta) {
+function populateTestsForLang({ lang, challenges, meta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
-  const validateChallenge = challengeSchemaValidator(lang);
+  const validateChallenge = challengeSchemaValidator();
 
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
-    challenges.forEach(challenge => {
+    challenges.forEach((challenge, id) => {
       const dashedBlockName = dasherize(challenge.block);
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
-          it('Matches a title in meta.json', function() {
-            const index = meta[lang][dashedBlockName].findIndex(
-              arr => arr[1] === challenge.title
-            );
-
-            if (index < 0) {
-              throw new AssertionError(
-                `Cannot find title "${challenge.title}" in meta.json file`
-              );
-            }
-          });
-
+          // Note: the title in meta.json are purely for human readability and
+          // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function() {
-            const index = meta[lang][dashedBlockName].findIndex(
+            const index = meta[dashedBlockName].findIndex(
               arr => arr[0] === challenge.id
             );
 
@@ -281,17 +273,87 @@ function populateTestsForLang({ lang, challenges }, meta) {
 
           it('Common checks', function() {
             const result = validateChallenge(challenge);
-            const invalidBlock = validateBlock(challenge);
 
             if (result.error) {
               throw new AssertionError(result.error);
             }
-            if (challenge.challengeType !== 7 && invalidBlock) {
-              throw new Error(invalidBlock);
-            }
-            const { id, title } = challenge;
+            const { id, title, block, dashedName } = challenge;
+            const dashedBlock = dasherize(block);
+            const pathAndTitle = `${dashedBlock}/${dashedName}`;
             mongoIds.check(id, title);
-            challengeTitles.check(title);
+            challengeTitles.check(title, pathAndTitle);
+          });
+
+          it('Has replaced all the English comments', () => {
+            // special cases are where this process breaks for some reason, but
+            // we have validated that the challenge gets parsed correctly.
+            const specialCases = [
+              '587d7b84367417b2b2512b36',
+              '587d7b84367417b2b2512b37',
+              '587d7db0367417b2b2512b82',
+              '587d7dbe367417b2b2512bb8',
+              '5a24c314108439a4d4036161',
+              '5a24c314108439a4d4036154',
+              '5a94fe0569fb03452672e45c',
+              '5a94fe7769fb03452672e463',
+              '5a24c314108439a4d4036148'
+            ];
+            if (specialCases.includes(challenge.id)) return;
+            if (
+              lang === 'english' ||
+              !isAuditedCert(lang, challenge.superBlock)
+            ) {
+              return;
+            }
+
+            // If no .files, then no seed:
+            if (!challenge.files) return;
+
+            // - None of the translatable comments should appear in the
+            //   translations. While this is a crude check, no challenges
+            //   currently have the text of a comment elsewhere. If that happens
+            //   we can handle that challenge separately.
+            TRANSLATABLE_COMMENTS.forEach(comment => {
+              Object.values(challenge.files).forEach(file => {
+                if (file.contents.includes(comment))
+                  throw Error(
+                    `English comment '${comment}' should be replaced with its translation`
+                  );
+              });
+            });
+
+            // - None of the translated comment texts should appear *outside* a
+            //   comment
+            Object.values(challenge.files).forEach(file => {
+              let comments = {};
+
+              // We get all the actual comments using the appropriate parsers
+              if (file.ext === 'html') {
+                const commentTypes = ['css', 'html'];
+                for (let type of commentTypes) {
+                  const newComments = commentExtractors[type](file.contents);
+                  for (const [key, value] of Object.entries(newComments)) {
+                    comments[key] = comments[key]
+                      ? comments[key] + value
+                      : value;
+                  }
+                }
+              } else {
+                comments = commentExtractors[file.ext](file.contents);
+              }
+
+              // Then we compare the number of times a given comment appears
+              // (count) with the number of times the text within it appears
+              // (commentTextCount)
+              for (const [comment, count] of Object.entries(comments)) {
+                const commentTextCount =
+                  file.contents.split(comment).length - 1;
+                if (commentTextCount !== count)
+                  throw Error(
+                    `Translated comment text, ${comment}, should only appear inside comments`
+                  );
+              }
+            });
           });
 
           const { challengeType } = challenge;
@@ -320,16 +382,8 @@ function populateTestsForLang({ lang, challenges }, meta) {
             });
           });
 
-          let { files = [] } = challenge;
           if (challengeType === challengeTypes.backend) {
             it('Check tests is not implemented.');
-            return;
-          }
-
-          if (files.length > 1) {
-            it('Check tests.', () => {
-              throw new Error('Seed file should be only the one.');
-            });
             return;
           }
 
@@ -339,7 +393,6 @@ function populateTestsForLang({ lang, challenges }, meta) {
               ? buildJSChallenge
               : buildDOMChallenge;
 
-          files = files.map(createPoly);
           it('Test suite must fail on the initial contents', async function() {
             this.timeout(5000 * tests.length + 1000);
             // suppress errors in the console.
@@ -349,7 +402,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
             let testRunner;
             try {
               testRunner = await createTestRunner(
-                { ...challenge, files },
+                challenge,
                 '',
                 buildChallenge
               );
@@ -371,12 +424,51 @@ function populateTestsForLang({ lang, challenges }, meta) {
           });
 
           let { solutions = [] } = challenge;
-          const noSolution = new RegExp('// solution required');
-          solutions = solutions.filter(
-            solution => !!solution && !noSolution.test(solution)
-          );
 
-          if (solutions.length === 0) {
+          // if there's an empty string as solution, this is likely a mistake
+          // TODO: what does this look like now? (this being detection of empty
+          // lines in solutions - rather than entirely missing solutions)
+
+          // We need to track where the solution came from to give better
+          // feedback if the solution is failing.
+          let solutionFromNext = false;
+
+          if (isEmpty(solutions)) {
+            // if there are no solutions in the challenge, it's assumed the next
+            // challenge's seed will be a solution to the current challenge.
+            // This is expected to happen in the project based curriculum.
+
+            const nextChallenge = challenges[id + 1];
+            // TODO: can this be dried out, ideally by removing the redux
+            // handler?
+            if (nextChallenge) {
+              const solutionFiles = cloneDeep(nextChallenge.files);
+              Object.keys(solutionFiles).forEach(key => {
+                const file = solutionFiles[key];
+                file.editableContents = getLines(
+                  file.contents,
+                  challenge.files[key].editableRegionBoundaries
+                );
+              });
+              solutions = [solutionFiles];
+              solutionFromNext = true;
+            } else {
+              throw Error('solution omitted');
+            }
+          }
+
+          // TODO: the no-solution filtering is a little convoluted:
+          const noSolution = new RegExp('// solution required');
+
+          const solutionsAsArrays = solutions.map(toSortedArray);
+
+          const filteredSolutions = solutionsAsArrays.filter(solution => {
+            return !isEmpty(
+              solution.filter(file => !noSolution.test(file.contents))
+            );
+          });
+
+          if (isEmpty(filteredSolutions)) {
             it('Check tests. No solutions');
             return;
           }
@@ -384,11 +476,12 @@ function populateTestsForLang({ lang, challenges }, meta) {
           describe('Check tests against solutions', function() {
             solutions.forEach((solution, index) => {
               it(`Solution ${index + 1} must pass the tests`, async function() {
-                this.timeout(5000 * tests.length + 1000);
+                this.timeout(5000 * tests.length + 2000);
                 const testRunner = await createTestRunner(
-                  { ...challenge, files },
+                  challenge,
                   solution,
-                  buildChallenge
+                  buildChallenge,
+                  solutionFromNext
                 );
                 for (const test of tests) {
                   await testRunner(test);
@@ -403,20 +496,29 @@ function populateTestsForLang({ lang, challenges }, meta) {
 }
 
 async function createTestRunner(
-  { required = [], template, files },
+  challenge,
   solution,
-  buildChallenge
+  buildChallenge,
+  solutionFromNext
 ) {
-  if (solution) {
-    files[0].contents = solution;
-  }
+  const { required = [], template } = challenge;
+  // we should avoid modifying challenge, as it gets reused:
+  const files = cloneDeep(challenge.files);
+
+  Object.keys(solution).forEach(key => {
+    files[key].contents = solution[key].contents;
+    files[key].editableContents = solution[key].editableContents;
+  });
 
   const { build, sources, loadEnzyme } = await buildChallenge({
     files,
     required,
     template
   });
-  const code = sources && 'index' in sources ? sources['index'] : '';
+  const code = {
+    contents: sources.index,
+    editableContents: sources.editableContents
+  };
 
   const evaluator = await (buildChallenge === buildDOMChallenge
     ? getContextEvaluator(build, sources, code, loadEnzyme)
@@ -429,7 +531,11 @@ async function createTestRunner(
         throw new AssertionError(err.message);
       }
     } catch (err) {
-      reThrow(err, text);
+      text = 'Test text: ' + text;
+      const message = solutionFromNext
+        ? 'Check next step for solution!\n' + text
+        : text;
+      reThrow(err, message);
     }
   };
 }
@@ -474,14 +580,11 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
 }
 
 function reThrow(err, text) {
-  if (typeof err === 'string') {
-    throw new AssertionError(
-      `${text}
-         ${err}`
-    );
+  const newMessage = `${text}
+  ${err.message}`;
+  if (err.name === 'AssertionError') {
+    throw new AssertionError(newMessage);
   } else {
-    err.message = `${text}
-       ${err.message}`;
-    throw err;
+    throw Error(newMessage);
   }
 }

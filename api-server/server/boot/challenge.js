@@ -5,20 +5,22 @@
  *
  */
 import { Observable } from 'rx';
-import { isEmpty, pick, omit, find, uniqBy, last } from 'lodash';
+import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
 import debug from 'debug';
 import dedent from 'dedent';
 import { ObjectID } from 'mongodb';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
-import { homeLocation } from '../../../config/env';
-
 import { ifNoUserSend } from '../utils/middleware';
 import { dasherize } from '../../../utils/slugs';
-import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
+import {
+  getRedirectParams,
+  getRedirectBase,
+  normalizeParams
+} from '../utils/redirection';
 
 const log = debug('fcc:boot:challenges');
 
@@ -26,12 +28,13 @@ export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
-  const redirectToLearn = createRedirectToLearn(_pathMigrations);
   const challengeUrlResolver = await createChallengeUrlResolver(
     await getChallenges()
   );
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
-    challengeUrlResolver
+    challengeUrlResolver,
+    normalizeParams,
+    getRedirectParams
   );
 
   api.post(
@@ -57,17 +60,10 @@ export default async function bootChallenge(app, done) {
 
   router.get('/challenges/current-challenge', redirectToCurrentChallenge);
 
-  router.get('/challenges', redirectToLearn);
-
-  router.get('/challenges/*', redirectToLearn);
-
-  router.get('/map', redirectToLearn);
-
   app.use(api);
   app.use(router);
   done();
 }
-const learnURL = `${homeLocation}/learn`;
 
 const jsProjects = [
   'aaa48de84e1ecc7c742e1124',
@@ -335,15 +331,22 @@ function backendChallengeCompleted(req, res, next) {
     .subscribe(() => {}, next);
 }
 
+// TODO: extend tests to cover www.freecodecamp.org/language and
+// chinese.freecodecamp.org
 export function createRedirectToCurrentChallenge(
   challengeUrlResolver,
-  { _homeLocation = homeLocation, _learnUrl = learnURL } = {}
+  normalizeParams,
+  getRedirectParams
 ) {
   return async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
+    const { origin, pathPrefix } = getRedirectParams(req, normalizeParams);
+
+    const redirectBase = getRedirectBase(origin, pathPrefix);
     if (!user) {
-      return res.redirect(_learnUrl);
+      return res.redirect(redirectBase + '/learn');
     }
+
     const challengeId = user && user.currentChallengeId;
     const challengeUrl = await challengeUrlResolver(challengeId).catch(next);
     if (challengeUrl === '/learn') {
@@ -354,21 +357,6 @@ export function createRedirectToCurrentChallenge(
         db may not be properly seeded.
       `);
     }
-    return res.redirect(`${_homeLocation}${challengeUrl}`);
-  };
-}
-
-export function createRedirectToLearn(
-  pathMigrations,
-  base = homeLocation,
-  learn = learnURL
-) {
-  return function redirectToLearn(req, res) {
-    const maybeChallenge = last(req.path.split('/'));
-    if (maybeChallenge in pathMigrations) {
-      const redirectPath = pathMigrations[maybeChallenge];
-      return res.status(302).redirect(`${base}${redirectPath}`);
-    }
-    return res.status(302).redirect(learn);
+    return res.redirect(`${redirectBase}${challengeUrl}`);
   };
 }

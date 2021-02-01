@@ -1,24 +1,19 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const supportedLangs = [
-  'arabic',
-  'chinese',
-  'english',
-  'portuguese',
-  'russian',
-  'spanish'
-];
+const {
+  curriculum: curriculumLangs
+} = require('../client/i18n/allLangs').availableLangs;
 
-exports.testedLangs = function testedLangs() {
-  if (process.env.TEST_CHALLENGES_FOR_LANGS) {
-    const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(',').map(
-      lang => lang.trim().toLowerCase()
-    );
-    return supportedLangs.filter(lang => filterLangs.includes(lang));
+exports.testedLang = function testedLang() {
+  if (process.env.CURRICULUM_LOCALE) {
+    if (curriculumLangs.includes(process.env.CURRICULUM_LOCALE)) {
+      return process.env.CURRICULUM_LOCALE;
+    } else {
+      throw Error(`${process.env.CURRICULUM_LOCALE} is not a supported language.
+      Before the site can be built, this language needs to be manually approved`);
+    }
   } else {
-    return [...supportedLangs];
+    throw Error('LOCALE must be set for testing');
   }
 };
-
-exports.supportedLangs = supportedLangs;

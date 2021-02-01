@@ -1,0 +1,603 @@
+{
+  "name": "D3 Dashboard",
+  "isUpcomingChange": true,
+  "dashedName": "d3-dashboard",
+  "order": 4,
+  "time": "5 hours",
+  "template": "",
+  "required": [
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"
+    }
+  ],
+  "superBlock": "data-visualization",
+  "superOrder": 4,
+  "challengeOrder": [
+    [
+      "5d8a4cfbe6b6180ed9a1c9de",
+      "Part 1"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9df",
+      "Part 2"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e0",
+      "Part 3"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e1",
+      "Part 4"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e2",
+      "Part 5"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e3",
+      "Part 6"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e4",
+      "Part 7"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e5",
+      "Part 8"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e6",
+      "Part 9"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e7",
+      "Part 10"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e8",
+      "Part 11"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9e9",
+      "Part 12"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9ea",
+      "Part 13"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9eb",
+      "Part 14"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9ec",
+      "Part 15"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9ed",
+      "Part 16"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9ee",
+      "Part 17"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9ef",
+      "Part 18"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f0",
+      "Part 19"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f1",
+      "Part 20"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f2",
+      "Part 21"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f3",
+      "Part 22"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f4",
+      "Part 23"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f5",
+      "Part 24"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f6",
+      "Part 25"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f7",
+      "Part 26"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f8",
+      "Part 27"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9f9",
+      "Part 28"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9fa",
+      "Part 29"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9fb",
+      "Part 30"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9fc",
+      "Part 31"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9fd",
+      "Part 32"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9fe",
+      "Part 33"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1c9ff",
+      "Part 34"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca00",
+      "Part 35"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca01",
+      "Part 36"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca02",
+      "Part 37"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca03",
+      "Part 38"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca04",
+      "Part 39"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca05",
+      "Part 40"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca06",
+      "Part 41"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca07",
+      "Part 42"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca08",
+      "Part 43"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca09",
+      "Part 44"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca0a",
+      "Part 45"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca0b",
+      "Part 46"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca0c",
+      "Part 47"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca0d",
+      "Part 48"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca0e",
+      "Part 49"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca0f",
+      "Part 50"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca10",
+      "Part 51"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca11",
+      "Part 52"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca12",
+      "Part 53"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca13",
+      "Part 54"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca14",
+      "Part 55"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca15",
+      "Part 56"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca16",
+      "Part 57"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca17",
+      "Part 58"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca18",
+      "Part 59"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca19",
+      "Part 60"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca1a",
+      "Part 61"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca1b",
+      "Part 62"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca1c",
+      "Part 63"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca1d",
+      "Part 64"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca1e",
+      "Part 65"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca1f",
+      "Part 66"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca20",
+      "Part 67"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca21",
+      "Part 68"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca22",
+      "Part 69"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca23",
+      "Part 70"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca24",
+      "Part 71"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca25",
+      "Part 72"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca26",
+      "Part 73"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca27",
+      "Part 74"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca28",
+      "Part 75"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca29",
+      "Part 76"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca2a",
+      "Part 77"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca2b",
+      "Part 78"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca2c",
+      "Part 79"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca2d",
+      "Part 80"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca2e",
+      "Part 81"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca2f",
+      "Part 82"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca30",
+      "Part 83"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca31",
+      "Part 84"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca32",
+      "Part 85"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca33",
+      "Part 86"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca34",
+      "Part 87"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca35",
+      "Part 88"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca36",
+      "Part 89"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca37",
+      "Part 90"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca38",
+      "Part 91"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca39",
+      "Part 92"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca3a",
+      "Part 93"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca3b",
+      "Part 94"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca3c",
+      "Part 95"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca3d",
+      "Part 96"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca3e",
+      "Part 97"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca3f",
+      "Part 98"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca40",
+      "Part 99"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca41",
+      "Part 100"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca42",
+      "Part 101"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca43",
+      "Part 102"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca44",
+      "Part 103"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca47",
+      "Part 104"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca48",
+      "Part 105"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca49",
+      "Part 106"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca4a",
+      "Part 107"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca4b",
+      "Part 108"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca4c",
+      "Part 109"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca4d",
+      "Part 110"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca4e",
+      "Part 111"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca4f",
+      "Part 112"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca50",
+      "Part 113"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca51",
+      "Part 114"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca52",
+      "Part 115"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca53",
+      "Part 116"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca54",
+      "Part 117"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca55",
+      "Part 118"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca56",
+      "Part 119"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca57",
+      "Part 120"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca58",
+      "Part 121"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca59",
+      "Part 122"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca5a",
+      "Part 123"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca5b",
+      "Part 124"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca5c",
+      "Part 125"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca5d",
+      "Part 126"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca5e",
+      "Part 127"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca5f",
+      "Part 128"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca60",
+      "Part 129"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca61",
+      "Part 130"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca62",
+      "Part 131"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca63",
+      "Part 132"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca64",
+      "Part 133"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca65",
+      "Part 134"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca66",
+      "Part 135"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca67",
+      "Part 136"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca68",
+      "Part 137"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca6a",
+      "Part 138"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca6b",
+      "Part 139"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca6c",
+      "Part 140"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca6d",
+      "Part 141"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca6e",
+      "Part 142"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca6f",
+      "Part 143"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca70",
+      "Part 144"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca71",
+      "Part 145"
+    ],
+    [
+      "5d8a4cfbe6b6180ed9a1ca72",
+      "Part 146"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "04-data-visualization/d3-dashboard.json"
+}

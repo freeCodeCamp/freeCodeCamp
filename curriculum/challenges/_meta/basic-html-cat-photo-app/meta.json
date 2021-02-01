@@ -1,0 +1,284 @@
+{
+  "name": "Basic HTML Cat Photo App",
+  "isUpcomingChange": true,
+  "dashedName": "basic-html-cat-photo-app",
+  "order": 9,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "5dc174fcf86c76b9248c6eb2",
+      "Part 1"
+    ],
+    [
+      "5dc1798ff86c76b9248c6eb3",
+      "Part 2"
+    ],
+    [
+      "5dc17d3bf86c76b9248c6eb4",
+      "Part 3"
+    ],
+    [
+      "5dc17dc8f86c76b9248c6eb5",
+      "Part 4"
+    ],
+    [
+      "5dc2385ff86c76b9248c6eb7",
+      "Part 5"
+    ],
+    [
+      "5dc23991f86c76b9248c6eb8",
+      "Part 6"
+    ],
+    [
+      "5dc23f9bf86c76b9248c6eba",
+      "Part 7"
+    ],
+    [
+      "5dc24073f86c76b9248c6ebb",
+      "Part 8"
+    ],
+    [
+      "5dc24165f86c76b9248c6ebc",
+      "Part 9"
+    ],
+    [
+      "5dc24614f86c76b9248c6ebd",
+      "Part 10"
+    ],
+    [
+      "5ddbd81294d8ddc1510a8e56",
+      "Part 11"
+    ],
+    [
+      "5dfa22d1b521be39a3de7be0",
+      "Part 12"
+    ],
+    [
+      "5dfa2407b521be39a3de7be1",
+      "Part 13"
+    ],
+    [
+      "5dfa30b9eacea3f48c6300ad",
+      "Part 14"
+    ],
+    [
+      "5f07be6ef7412fbad0c5626b",
+      "Part 15"
+    ],
+    [
+      "5f07c98cdb9413cbd4b16750",
+      "Part 16"
+    ],
+    [
+      "5dfa3589eacea3f48c6300ae",
+      "Part 17"
+    ],
+    [
+      "5dfa371beacea3f48c6300af",
+      "Part 18"
+    ],
+    [
+      "5dfa37b9eacea3f48c6300b0",
+      "Part 19"
+    ],
+    [
+      "5dfb5ecbeacea3f48c6300b1",
+      "Part 20"
+    ],
+    [
+      "5dfb6250eacea3f48c6300b2",
+      "Part 21"
+    ],
+    [
+      "5dfb655eeacea3f48c6300b3",
+      "Part 22"
+    ],
+    [
+      "5dfb6a35eacea3f48c6300b4",
+      "Part 23"
+    ],
+    [
+      "5ef9b03c81a63668521804d0",
+      "Part 24"
+    ],
+    [
+      "5ef9b03c81a63668521804d1",
+      "Part 25"
+    ],
+    [
+      "5ef9b03c81a63668521804d2",
+      "Part 26"
+    ],
+    [
+      "5ef9b03c81a63668521804d3",
+      "Part 27"
+    ],
+    [
+      "5efada803cbd2bbdab94e332",
+      "Part 28"
+    ],
+    [
+      "5efae0543cbd2bbdab94e333",
+      "Part 29"
+    ],
+    [
+      "5efae16e3cbd2bbdab94e334",
+      "Part 30"
+    ],
+    [
+      "5ef9b03c81a63668521804d4",
+      "Part 31"
+    ],
+    [
+      "5f07fb1579dc934717801375",
+      "Part 32"
+    ],
+    [
+      "5ef9b03c81a63668521804d5",
+      "Part 33"
+    ],
+    [
+      "5ef9b03c81a63668521804d6",
+      "Part 34"
+    ],
+    [
+      "5ef9b03c81a63668521804d7",
+      "Part 35"
+    ],
+    [
+      "5ef9b03c81a63668521804d8",
+      "Part 36"
+    ],
+    [
+      "5efb23e70dc218d6c85f89b1",
+      "Part 37"
+    ],
+    [
+      "7cf9b03d81a65668421804c3",
+      "Part 38"
+    ],
+    [
+      "5ef9b03c81a63668521804d9",
+      "Part 39"
+    ],
+    [
+      "5ef9b03c81a63668521804db",
+      "Part 40"
+    ],
+    [
+      "5ef9b03c81a63668521804da",
+      "Part 41"
+    ],
+    [
+      "5efb2c990dc218d6c85f89b2",
+      "Part 42"
+    ],
+    [
+      "5ef9b03c81a63668521804dc",
+      "Part 43"
+    ],
+    [
+      "5ef9b03c81a63668521804dd",
+      "Part 44"
+    ],
+    [
+      "5ef9b03c81a63668521804df",
+      "Part 45"
+    ],
+    [
+      "5f05a1d8e233dff4a68508d8",
+      "Part 46"
+    ],
+    [
+      "5ef9b03c81a63668521804de",
+      "Part 47"
+    ],
+    [
+      "5f1a80975fc4bcae0edb3497",
+      "Part 48"
+    ],
+    [
+      "5ef9b03c81a63668521804e1",
+      "Part 49"
+    ],
+    [
+      "5f0d48e7b435f13ab6550051",
+      "Part 50"
+    ],
+    [
+      "5f0d4ab1b435f13ab6550052",
+      "Part 51"
+    ],
+    [
+      "5f0d4d04b435f13ab6550053",
+      "Part 52"
+    ],
+    [
+      "5ef9b03c81a63668521804e2",
+      "Part 53"
+    ],
+    [
+      "5efc54138d6a74d05e68af76",
+      "Part 54"
+    ],
+    [
+      "5efc4f528d6a74d05e68af74",
+      "Part 55"
+    ],
+    [
+      "5efc518e8d6a74d05e68af75",
+      "Part 56"
+    ],
+    [
+      "5ef9b03c81a63668521804e3",
+      "Part 57"
+    ],
+    [
+      "5efc575c8d6a74d05e68af77",
+      "Part 58"
+    ],
+    [
+      "5f1a89f1190aff21ae42105a",
+      "Part 59"
+    ],
+    [
+      "5ef9b03c81a63668521804e5",
+      "Part 60"
+    ],
+    [
+      "5ef9b03c81a63668521804e7",
+      "Part 61"
+    ],
+    [
+      "5ef9b03c81a63668521804e8",
+      "Part 62"
+    ],
+    [
+      "5ef9b03c81a63668521804e9",
+      "Part 63"
+    ],
+    [
+      "5ef9b03c81a63668521804ea",
+      "Part 64"
+    ],
+    [
+      "5ef9b03c81a63668521804eb",
+      "Part 65"
+    ],
+    [
+      "5ef9b03c81a63668521804ec",
+      "Part 66"
+    ],
+    [
+      "5ef9b03c81a63668521804ee",
+      "Part 67"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "01-responsive-web-design/basic-html-cat-photo-app.json"
+}

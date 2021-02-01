@@ -149,21 +149,12 @@ export async function cancelDonation(body, app) {
   const {
     resource: { id, status_update_time = new Date(Date.now()).toISOString() }
   } = body;
-  const { User, Donation } = app.models;
+  const { Donation } = app.models;
   Donation.findOne({ where: { subscriptionId: id } }, (err, donation) => {
     if (err || !donation) throw Error(err);
-    const userId = donation.userId;
     log(`Updating donation record: ${donation.subscriptionId}`);
     donation.updateAttributes({
       endDate: new Date(status_update_time).toISOString()
-    });
-
-    User.findOne({ where: { id: userId } }, (err, user) => {
-      if (err || !user || !user.donationEmails) throw Error(err);
-      log('Updating user record for donation cancellation');
-      user.updateAttributes({
-        isDonating: false
-      });
     });
   });
 }

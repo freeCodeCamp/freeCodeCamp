@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchUser, isSignedInSelector, executeGA } from '../../redux';
 import { createSelector } from 'reselect';
+import Helmet from 'react-helmet';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -22,8 +23,16 @@ class CertificationLayout extends Component {
     }
     this.props.executeGA({ type: 'page', data: pathname });
   }
+
   render() {
-    return <Fragment>{this.props.children}</Fragment>;
+    const { children } = this.props;
+
+    return (
+      <Fragment>
+        <Helmet bodyAttributes={{ class: 'light-palette' }} />
+        {children}
+      </Fragment>
+    );
   }
 }
 

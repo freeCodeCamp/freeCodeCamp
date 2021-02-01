@@ -49,21 +49,6 @@ const getPrevChallengePath = (node, index, nodeArray) => {
 
 const getTemplateComponent = challengeType => views[viewTypes[challengeType]];
 
-const getIntroIfRequired = (node, index, nodeArray) => {
-  const next = nodeArray[index + 1];
-  const isEndOfBlock = next && next.node.challengeOrder === 0;
-  let nextSuperBlock = '';
-  let nextBlock = '';
-  if (next) {
-    const { superBlock, block } = next.node;
-    nextSuperBlock = superBlock;
-    nextBlock = block;
-  }
-  return isEndOfBlock
-    ? `/learn/${dasherize(nextSuperBlock)}/${dasherize(nextBlock)}`
-    : '';
-};
-
 exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
   const {
     superBlock,
@@ -76,9 +61,6 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
   } = node;
   // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
   // should remove one of them.
-  if (challengeType === 7) {
-    return null;
-  }
 
   return createPage({
     path: slug,
@@ -87,7 +69,6 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
       challengeMeta: {
         superBlock,
         block: block,
-        introPath: getIntroIfRequired(node, index, thisArray),
         template,
         required,
         nextChallengePath: getNextChallengePath(node, index, thisArray),
@@ -125,7 +106,7 @@ exports.createSuperBlockIntroPages = createPage => edge => {
     path: slug,
     component: superBlockIntro,
     context: {
-      superBlock: dasherize(superBlock),
+      superBlock: superBlock,
       slug
     }
   });

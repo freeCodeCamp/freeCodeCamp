@@ -1,0 +1,25 @@
+name: No translate on GitHub
+on:
+  pull_request_target:
+    branches:
+      - 'master'
+    paths:
+      - 'curriculum/challenges/**'
+      - '!curriculum/challenges/english/**'
+
+jobs:
+  has-translation:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'We have implemented a new policy of no longer accepting curriculum-related PRs with changes to non-English files. We plan to implement a better way to translate the English challenges in the near future. We will make an announcement when it is ready. For now, please revert your changes to the non-English challenge files. Thank you.'
+            })
+            throw new Error('This PR appears to touch translated challenge files.')

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
+import { withTranslation } from 'react-i18next';
 
 import Login from '../../../components/Header/components/Login';
 import CompletionModalBody from './CompletionModalBody';
@@ -77,6 +78,7 @@ const propTypes = {
   lastBlockChalSubmitted: PropTypes.func,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   title: PropTypes.string
 };
 
@@ -183,6 +185,7 @@ export class CompletionModalInner extends Component {
       close,
       isOpen,
       message,
+      t,
       title,
       isSignedIn
     } = this.props;
@@ -192,6 +195,9 @@ export class CompletionModalInner extends Component {
     if (isOpen) {
       executeGA({ type: 'modal', data: '/completion-modal' });
     }
+    // normally dashedName should be graphQL queried and then passed around,
+    // but it's only used to make a nice filename for downloading, so dasherize
+    // is fine here.
     const dashedName = dasherize(title);
     return (
       <Modal
@@ -217,14 +223,7 @@ export class CompletionModalInner extends Component {
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <Login
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-cta'
-            >
-              Sign in to save your progress
-            </Login>
+            <Login block={true}>{t('learn.sign-in-save')}</Login>
           )}
           <Button
             block={true}
@@ -232,8 +231,8 @@ export class CompletionModalInner extends Component {
             bsStyle='primary'
             onClick={this.handleSubmit}
           >
-            {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
-            <span className='hidden-xs'>(Ctrl + Enter)</span>
+            {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
+            <span className='hidden-xs'> (Ctrl + Enter)</span>
           </Button>
           {this.state.downloadURL ? (
             <Button
@@ -244,7 +243,7 @@ export class CompletionModalInner extends Component {
               download={`${dashedName}.txt`}
               href={this.state.downloadURL}
             >
-              Download my solution
+              {t('learn.download-solution')}
             </Button>
           ) : null}
         </Modal.Footer>
@@ -290,4 +289,4 @@ CompletionModal.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CompletionModal);
+)(withTranslation()(CompletionModal));

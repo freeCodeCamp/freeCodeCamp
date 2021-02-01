@@ -1,4 +1,3 @@
-/* global PAYPAL_SUPPORTERS */
 import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash';
 import store from 'store';
@@ -31,6 +30,12 @@ export const defaultFetchState = {
   error: null
 };
 
+export const defaultDonationFormState = {
+  processing: false,
+  success: false,
+  error: ''
+};
+
 const initialState = {
   appUsername: '',
   canRequestBlockDonation: false,
@@ -51,7 +56,10 @@ const initialState = {
   sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   isBlockDonationModal: false,
-  isOnline: true
+  isOnline: true,
+  donationFormState: {
+    ...defaultDonationFormState
+  }
 };
 
 export const types = createTypes(
@@ -71,7 +79,10 @@ export const types = createTypes(
     'updateComplete',
     'updateCurrentChallengeId',
     'updateFailed',
+    'updateDonationFormState',
     ...createAsyncTypes('fetchUser'),
+    ...createAsyncTypes('addDonation'),
+    ...createAsyncTypes('postChargeStripe'),
     ...createAsyncTypes('fetchProfileForUser'),
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
@@ -112,6 +123,9 @@ export const preventBlockDonationRequests = createAction(
 export const preventProgressDonationRequests = createAction(
   types.preventProgressDonationRequests
 );
+export const updateDonationFormState = createAction(
+  types.updateDonationFormState
+);
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
@@ -132,6 +146,16 @@ export const acceptTermsError = createAction(types.acceptTermsError);
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
 export const fetchUserError = createAction(types.fetchUserError);
+
+export const addDonation = createAction(types.addDonation);
+export const addDonationComplete = createAction(types.addDonationComplete);
+export const addDonationError = createAction(types.addDonationError);
+
+export const postChargeStripe = createAction(types.postChargeStripe);
+export const postChargeStripeComplete = createAction(
+  types.postChargeStripeComplete
+);
+export const postChargeStripeError = createAction(types.postChargeStripeError);
 
 export const fetchProfileForUser = createAction(types.fetchProfileForUser);
 export const fetchProfileForUserComplete = createAction(
@@ -160,7 +184,6 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const isDonatingSelector = state => userSelector(state).isDonating;
-
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
@@ -168,12 +191,11 @@ export const canRequestBlockDonationSelector = state =>
   state[ns].canRequestBlockDonation;
 export const isBlockDonationModalSelector = state =>
   state[ns].isBlockDonationModal;
-
+export const donationFormStateSelector = state => state[ns].donationFormState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
-
 export const shouldRequestDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completionCount = completionCountSelector(state);
@@ -334,20 +356,6 @@ export const userSelector = state => {
 };
 
 export const sessionMetaSelector = state => state[ns].sessionMeta;
-export const activeDonationsSelector = state => {
-  const donors =
-    Number(sessionMetaSelector(state).activeDonations) +
-    Number(PAYPAL_SUPPORTERS || 0) -
-    // Note 1:
-    // Offset the no of inactive donations, that are not yet normalized in db
-    // TODO: This data needs to be fetched and updated in db from Stripe
-    2500;
-  // Note 2:
-  // Due to the offset above, non-prod data needs to be adjusted for -ve values
-  return donors > 0
-    ? donors
-    : Number(sessionMetaSelector(state).activeDonations);
-};
 
 function spreadThePayloadOnUser(state, payload) {
   return {
@@ -364,9 +372,80 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
+    [types.acceptTermsComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            // TODO: the user accepts the privacy terms in practice during auth
+            // however, it's currently being used to track if they've accepted
+            // or rejected the newsletter. Ideally this should be migrated,
+            // since they can't sign up without accepting the terms.
+            acceptedPrivacyTerms: true,
+            sendQuincyEmail:
+              payload === null
+                ? state.user[appUsername].sendQuincyEmail
+                : payload
+          }
+        }
+      };
+    },
     [types.allowBlockDonationRequests]: state => ({
       ...state,
       canRequestBlockDonation: true
+    }),
+    [types.updateDonationFormState]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...state.donationFormState, ...payload }
+    }),
+    [types.addDonation]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [types.addDonationComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [types.addDonationError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
+    }),
+    [types.postChargeStripe]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [types.postChargeStripeComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [types.postChargeStripeError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
     }),
     [types.fetchUser]: state => ({
       ...state,

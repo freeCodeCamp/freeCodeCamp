@@ -1,6 +1,5 @@
 import Stripe from 'stripe';
 import debug from 'debug';
-import crypto from 'crypto';
 import { isEmail, isNumeric } from 'validator';
 
 import {
@@ -223,45 +222,6 @@ export default function donateBoot(app, done) {
       });
   }
 
-  function createHmacHash(req, res) {
-    const { user, body } = req;
-
-    if (!user || !body) {
-      return res
-        .status(500)
-        .send({ error: 'User must be signed in for this request.' });
-    }
-
-    const { email } = body;
-
-    if (!isEmail('' + email)) {
-      return res
-        .status(500)
-        .send({ error: 'The email is invalid for this request.' });
-    }
-
-    if (!user.donationEmails.includes(email)) {
-      return res.status(500).send({
-        error: `User does not have the email: ${email} associated with their donations.`
-      });
-    }
-
-    log(`creating HMAC hash for ${email}`);
-    return Promise.resolve(email)
-      .then(email =>
-        crypto
-          .createHmac('sha256', keys.servicebot.hmacKey)
-          .update(email)
-          .digest('hex')
-      )
-      .then(hash => res.status(200).json({ hash }))
-      .catch(() =>
-        res
-          .status(500)
-          .send({ error: 'Donation failed due to a server error.' })
-      );
-  }
-
   function addDonation(req, res) {
     const { user, body } = req;
 
@@ -304,7 +264,6 @@ export default function donateBoot(app, done) {
   const secKey = keys.stripe.secret;
   const paypalKey = keys.paypal.client;
   const paypalSec = keys.paypal.secret;
-  const hmacKey = keys.servicebot.hmacKey;
   const stripeSecretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
   const stripPublicInvalid =
     !stripeKey || stripeKey === 'pk_from_stripe_dashboard';
@@ -313,12 +272,11 @@ export default function donateBoot(app, done) {
     !paypalKey || paypalKey === 'id_from_paypal_dashboard';
   const paypalPublicInvalid =
     !paypalSec || paypalSec === 'secret_from_paypal_dashboard';
-  const hmacKeyInvalid =
-    !hmacKey || hmacKey === 'secret_key_from_servicebot_dashboard';
+
   const paypalInvalid = paypalPublicInvalid || paypalSecretInvalid;
   const stripeInvalid = stripeSecretInvalid || stripPublicInvalid;
 
-  if (stripeInvalid || paypalInvalid || hmacKeyInvalid) {
+  if (stripeInvalid || paypalInvalid) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Donation API keys are required to boot the server!');
     }
@@ -326,7 +284,6 @@ export default function donateBoot(app, done) {
     done();
   } else {
     api.post('/charge-stripe', createStripeDonation);
-    api.post('/create-hmac-hash', createHmacHash);
     api.post('/add-donation', addDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);

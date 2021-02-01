@@ -1,0 +1,5 @@
+name: 'Remove Deleted English Files From Crowdin'
+description: 'Deletes files from Crowdin that are no longer in the English curriculum folder'
+runs:
+  using: 'node12'
+  main: './index.js'

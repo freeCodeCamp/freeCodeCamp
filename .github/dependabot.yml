@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/client'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 20
+    labels:
+      - 'dependabot'
+      - 'platform: client'
+  - package-ecosystem: npm
+    directory: '/api-server'
+    schedule:
+      interval: 'weekly'
+      day: 'sunday'
+    open-pull-requests-limit: 20
+    labels:
+      - 'dependabot'
+      - 'platform: api'
+  - package-ecosystem: npm
+    directory: '/curriculum'
+    schedule:
+      interval: 'weekly'
+      day: 'sunday'
+    open-pull-requests-limit: 20
+    labels:
+      - 'dependabot'
+      - 'scope: learn'

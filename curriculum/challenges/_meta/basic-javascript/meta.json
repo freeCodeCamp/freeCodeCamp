@@ -1,5 +1,6 @@
 {
   "name": "Basic JavaScript",
+  "isUpcomingChange": false,
   "dashedName": "basic-javascript",
   "order": 1,
   "time": "10 hours",
@@ -19,6 +20,10 @@
     [
       "56533eb9ac21ba0edf2244a8",
       "Storing Values with the Assignment Operator"
+    ],
+    [
+      "5ee127a03c3b35dd45426493",
+      "Assigning the Value of One Variable to Another"
     ],
     [
       "56533eb9ac21ba0edf2244a9",
@@ -443,7 +448,7 @@
     [
       "5cd9a70215d3c4e65518328f",
       "Use Recursion to Create a Countdown"
-    ],    
+    ],
     [
       "5cc0bd7a49b71cb96132e54c",
       "Use Recursion to Create a Range of Numbers"

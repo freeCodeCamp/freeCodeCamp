@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { withTranslation } from 'react-i18next';
+import { createSelector } from 'reselect';
 
 import { ChallengeNode } from '../../../../redux/propTypes';
 import {
   challengeMounted,
+  isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
@@ -25,7 +28,13 @@ import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
 import Hotkeys from '../../components/Hotkeys';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = createSelector(
+  isChallengeCompletedSelector,
+  isChallengeCompleted => ({
+    isChallengeCompleted
+  })
+);
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
@@ -42,10 +51,12 @@ const propTypes = {
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
+  isChallengeCompleted: PropTypes.bool,
   openCompletionModal: PropTypes.func.isRequired,
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
+  t: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -55,12 +66,17 @@ export class Project extends Component {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title, challengeType }
+        challengeNode: { title, challengeType, helpCategory }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
     } = this.props;
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
     this._container.focus();
   }
@@ -74,7 +90,7 @@ export class Project extends Component {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title: currentTitle, challengeType }
+        challengeNode: { title: currentTitle, challengeType, helpCategory }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
@@ -83,7 +99,8 @@ export class Project extends Component {
       updateChallengeMeta({
         ...challengeMeta,
         title: currentTitle,
-        challengeType
+        challengeType,
+        helpCategory
       });
       challengeMounted(challengeMeta.id);
     }
@@ -97,13 +114,16 @@ export class Project extends Component {
           fields: { blockName },
           forumTopicId,
           title,
-          description
+          description,
+          superBlock
         }
       },
+      isChallengeCompleted,
       openCompletionModal,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
+      t,
       updateSolutionFormValues
     } = this.props;
 
@@ -112,17 +132,24 @@ export class Project extends Component {
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+                <ChallengeTitle
+                  block={blockName}
+                  isCompleted={isChallengeCompleted}
+                  superBlock={superBlock}
+                >
+                  {title}
+                </ChallengeTitle>
                 <ChallengeDescription description={description} />
                 <SolutionForm
                   challengeType={challengeType}
@@ -152,7 +179,7 @@ Project.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Project);
+)(withTranslation()(Project));
 
 export const query = graphql`
   query ProjectChallenge($slug: String!) {
@@ -161,6 +188,8 @@ export const query = graphql`
       title
       description
       challengeType
+      helpCategory
+      superBlock
       fields {
         blockName
         slug

@@ -1,8 +1,7 @@
 import request from 'request';
 
-import { homeLocation } from '../../../config/env';
-
 import constantStrings from '../utils/constantStrings.json';
+import { getRedirectParams } from '../utils/redirection';
 
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -51,19 +50,21 @@ module.exports = function(app) {
       'We are no longer able to process this unsubscription request. ' +
         'Please go to your settings to update your email preferences'
     );
-    res.redirectWithFlash(homeLocation);
+    const { origin } = getRedirectParams(req);
+    res.redirectWithFlash(origin);
   }
 
   function unsubscribeById(req, res, next) {
+    const { origin } = getRedirectParams(req);
     const { unsubscribeId } = req.params;
     if (!unsubscribeId) {
       req.flash('info', 'We could not find an account to unsubscribe');
-      return res.redirectWithFlash(homeLocation);
+      return res.redirectWithFlash(origin);
     }
     return User.find({ where: { unsubscribeId } }, (err, users) => {
       if (err || !users.length) {
         req.flash('info', 'We could not find an account to unsubscribe');
-        return res.redirectWithFlash(homeLocation);
+        return res.redirectWithFlash(origin);
       }
       const updates = users.map(user => {
         return new Promise((resolve, reject) =>
@@ -88,7 +89,7 @@ module.exports = function(app) {
             "We've successfully updated your email preferences."
           );
           return res.redirectWithFlash(
-            `${homeLocation}/unsubscribed/${unsubscribeId}`
+            `${origin}/unsubscribed/${unsubscribeId}`
           );
         })
         .catch(next);
@@ -111,17 +112,18 @@ module.exports = function(app) {
 
   function resubscribe(req, res, next) {
     const { unsubscribeId } = req.params;
+    const { origin } = getRedirectParams(req);
     if (!unsubscribeId) {
       req.flash(
         'info',
         'We we unable to process this request, please check and try againÍ'
       );
-      res.redirect(homeLocation);
+      res.redirect(origin);
     }
     return User.find({ where: { unsubscribeId } }, (err, users) => {
       if (err || !users.length) {
         req.flash('info', 'We could not find an account to resubscribe');
-        return res.redirectWithFlash(homeLocation);
+        return res.redirectWithFlash(origin);
       }
       const [user] = users;
       return new Promise((resolve, reject) =>
@@ -144,7 +146,7 @@ module.exports = function(app) {
             "We've successfully updated your email preferences. Thank you " +
               'for resubscribing.'
           );
-          return res.redirectWithFlash(homeLocation);
+          return res.redirectWithFlash(origin);
         })
         .catch(next);
     });
