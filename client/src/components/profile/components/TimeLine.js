@@ -14,7 +14,7 @@ import { withTranslation } from 'react-i18next';
 import './timeline.css';
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow, Link } from '../../helpers';
-import SolutionViewer from '../../settings/SolutionViewer';
+import SolutionViewer from '../../SolutionViewer/SolutionViewer';
 import {
   getCertIds,
   getPathFromID,
