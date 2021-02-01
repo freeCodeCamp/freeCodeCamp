@@ -24,19 +24,18 @@ jobs:
           import_eq_suggestions: false
 
           # downloads
-          download_language: zh-CN
           download_translations: true
           skip_untranslated_files: true
           export_only_approved: true
 
-          commit_message: 'chore(i8n,learn): processed chinese translations'
+          commit_message: 'chore(i8n,learn): processed translations'
 
           # pull-request
-          localization_branch_name: i18n-sync-learn-processed-chinese-translations
+          localization_branch_name: i18n-sync-learn-processed-translations
           create_pull_request: false
-          pull_request_title: 'chore(i18n,learn): Processed chinese translations from crowdin'
+          pull_request_title: 'chore(i18n,learn): Processed translations from Crowdin'
           pull_request_body: ''
-          pull_request_labels: 'scope: i18n, scope: learn, crowdin-sync, language: Chinese'
+          pull_request_labels: 'scope: i18n, scope: learn, crowdin-sync'
 
           # global options
           config: './curriculum/crowdin.yml'
