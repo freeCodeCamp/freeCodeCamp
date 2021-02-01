@@ -71,7 +71,7 @@ You can find the markdown files for video challenges at the following locations 
 
 Pick a challenge markdown file from the options above.
 
-### Skim through the video associated with the challenge and create a multiple choice question
+### Skim through the video associated with the challenge and create a multiple-choice question
 
 First, find the videoId.
 
@@ -197,4 +197,3 @@ For more examples, you can look at the markdown files for the following video co
 ## Open a pull request
 
 After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).
-
