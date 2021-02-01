@@ -1,5 +1,5 @@
 {
-  "name": "challenge-mdx-parser",
+  "name": "challenge-parser",
   "version": "0.0.1",
   "description": "converts mdx files to challenge objects",
   "main": "index.js",

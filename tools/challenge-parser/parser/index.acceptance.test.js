@@ -2,7 +2,7 @@
 
 const path = require('path');
 
-const { parseMD } = require('./');
+const { parseMD } = require('.');
 
 describe('challenge parser', () => {
   it('should parse a simple md file', async () => {
