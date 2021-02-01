@@ -17,6 +17,12 @@ Add the CSS property `align-items` to the header's `.follow-btn` element. Set th
 
 # --hints--
 
+Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
 The `.follow-btn` element should have the `align-items` property set to a value of `center`.
 
 ```js

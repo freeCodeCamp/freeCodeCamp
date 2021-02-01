@@ -17,6 +17,12 @@ Add the CSS property `justify-content` to the header's `.profile-name` element a
 
 # --hints--
 
+Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
 The `.profile-name` element should have the `justify-content` property set to any of these values: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`, or `space-evenly`.
 
 ```js

@@ -17,6 +17,12 @@ Add the CSS property `flex-direction` to both the `header` and `footer` and set 
 
 # --hints--
 
+Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
 The `header` should have a `flex-direction` property set to row.
 
 ```js

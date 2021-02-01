@@ -17,6 +17,12 @@ Add the CSS property `flex-direction` to the header's `.profile-name` element an
 
 # --hints--
 
+Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
 The `.profile-name` element should have a `flex-direction` property set to column.
 
 ```js

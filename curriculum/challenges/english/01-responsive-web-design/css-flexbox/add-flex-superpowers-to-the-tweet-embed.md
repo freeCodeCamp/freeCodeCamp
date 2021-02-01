@@ -19,6 +19,12 @@ Add the CSS property `display: flex` to all of the following items - note that t
 
 # --hints--
 
+Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
 Your `header` should have a `display` property set to `flex`.
 
 ```js
