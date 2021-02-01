@@ -9,7 +9,7 @@ dashedName: override-styles-in-subsequent-css
 
 # --description--
 
-Our "pink-text" class overrode our `body` element's CSS declaration!
+Our `pink-text` class overrode our `body` element's CSS declaration!
 
 We just proved that our classes will override the `body` element's CSS. So the next logical question is, what can we do to override our `pink-text` class?
 

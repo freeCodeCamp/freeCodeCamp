@@ -17,7 +17,7 @@ You can create a paragraph element like this:
 
 # --instructions--
 
-Create a `p` element below your `h2` element, and give it the text "Hello Paragraph".
+Create a `p` element below your `h2` element, and give it the text `Hello Paragraph`.
 
 **Note:** As a convention, all HTML tags are written in lowercase, for example `<p></p>` and not `<P></P>`.
 

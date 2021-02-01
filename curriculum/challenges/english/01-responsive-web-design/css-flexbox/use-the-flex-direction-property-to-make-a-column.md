@@ -17,7 +17,7 @@ Add the CSS property `flex-direction` to the `#box-container` element, and give 
 
 # --hints--
 
-The `#box-container` element should have a `flex-direction` property set to column.
+The `#box-container` element should have a `flex-direction` property set to `column`.
 
 ```js
 assert($('#box-container').css('flex-direction') == 'column');

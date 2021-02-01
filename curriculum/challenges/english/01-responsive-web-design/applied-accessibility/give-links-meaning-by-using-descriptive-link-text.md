@@ -15,11 +15,11 @@ Screen readers do this by reading the link text, or what's between the anchor (`
 
 # --instructions--
 
-The link text that Camper Cat is using is not very descriptive without the surrounding context. Move the anchor (`a`) tags so they wrap around the text "information about batteries" instead of "Click here".
+The link text that Camper Cat is using is not very descriptive without the surrounding context. Move the anchor (`a`) tags so they wrap around the text `information about batteries` instead of `Click here`.
 
 # --hints--
 
-Your code should move the anchor `a` tags from around the words "Click here" to wrap around the words "information about batteries".
+Your code should move the anchor `a` tags from around the words `Click here` to wrap around the words `information about batteries`.
 
 ```js
 assert(

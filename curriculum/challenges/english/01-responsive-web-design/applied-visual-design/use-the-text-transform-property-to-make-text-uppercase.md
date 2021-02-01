@@ -21,7 +21,7 @@ Transform the text of the `h4` to be uppercase using the `text-transform` proper
 
 # --hints--
 
-The `h4` text should be uppercase.
+The `h4` text should be `uppercase`.
 
 ```js
 assert($('h4').css('text-transform') === 'uppercase');

@@ -23,29 +23,29 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search `input` and submit `input` form controls to be the first two items in the tab order. Add a `tabindex` attribute set to `"1"` to the search `input`, and a `tabindex` attribute set to `"2"` to the submit `input`.
+Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search `input` and submit `input` form controls to be the first two items in the tab order. Add a `tabindex` attribute set to `1` to the `search` `input`, and a `tabindex` attribute set to `2` to the `submit` `input`.
 
 # --hints--
 
-Your code should add a `tabindex` attribute to the search `input` tag.
+Your code should add a `tabindex` attribute to the `search` `input` tag.
 
 ```js
 assert($('#search').attr('tabindex'));
 ```
 
-Your code should add a `tabindex` attribute to the submit `input` tag.
+Your code should add a `tabindex` attribute to the `submit` `input` tag.
 
 ```js
 assert($('#submit').attr('tabindex'));
 ```
 
-Your code should set the `tabindex` attribute on the search `input` tag to a value of 1.
+Your code should set the `tabindex` attribute on the `search` `input` tag to a value of 1.
 
 ```js
 assert($('#search').attr('tabindex') == '1');
 ```
 
-Your code should set the `tabindex` attribute on the submit `input` tag to a value of 2.
+Your code should set the `tabindex` attribute on the `submit` `input` tag to a value of 2.
 
 ```js
 assert($('#submit').attr('tabindex') == '2');

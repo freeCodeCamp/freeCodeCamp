@@ -19,29 +19,29 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to "g" (for Garfield) and the second one to "c" (for Chuck Norris).
+Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to `g` (for Garfield) and the second one to `c` (for Chuck Norris).
 
 # --hints--
 
-Your code should add an `accesskey` attribute to the `a` tag with the `id` of "first".
+Your code should add an `accesskey` attribute to the `a` tag with the `id` of `first`.
 
 ```js
 assert($('#first').attr('accesskey'));
 ```
 
-Your code should add an `accesskey` attribute to the `a` tag with the `id` of "second".
+Your code should add an `accesskey` attribute to the `a` tag with the `id` of `second`.
 
 ```js
 assert($('#second').attr('accesskey'));
 ```
 
-Your code should set the `accesskey` attribute on the `a` tag with the `id` of "first" to "g". Note that case matters.
+Your code should set the `accesskey` attribute on the `a` tag with the `id` of `first` to `g`. Note that case matters.
 
 ```js
 assert($('#first').attr('accesskey') == 'g');
 ```
 
-Your code should set the `accesskey` attribute on the `a` tag with the `id` of "second" to "c". Note that case matters.
+Your code should set the `accesskey` attribute on the `a` tag with the `id` of `second` to `c`. Note that case matters.
 
 ```js
 assert($('#second').attr('accesskey') == 'c');

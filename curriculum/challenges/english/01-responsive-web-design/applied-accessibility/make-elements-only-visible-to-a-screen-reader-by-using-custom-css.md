@@ -35,29 +35,29 @@ Here's an example of the CSS rules that accomplish this:
 
 # --instructions--
 
-Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an `sr-only` class, but the CSS rules aren't filled in yet. Give the `position` an absolute value, the `left` a -10000px value, and the `width` and `height` both 1px values.
+Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an `sr-only` class, but the CSS rules aren't filled in yet. Give the `position` an `absolute` value, the `left` a `-10000px` value, and the `width` and `height` both `1px` values.
 
 # --hints--
 
-Your code should set the `position` property of the `sr-only` class to a value of absolute.
+Your code should set the `position` property of the `sr-only` class to a value of `absolute`.
 
 ```js
 assert($('.sr-only').css('position') == 'absolute');
 ```
 
-Your code should set the `left` property of the `sr-only` class to a value of -10000px.
+Your code should set the `left` property of the `sr-only` class to a value of `-10000px`.
 
 ```js
 assert($('.sr-only').css('left') == '-10000px');
 ```
 
-Your code should set the `width` property of the `sr-only` class to a value of 1 pixel.
+Your code should set the `width` property of the `sr-only` class to a value of `1` pixel.
 
 ```js
 assert(code.match(/width:\s*?1px/gi));
 ```
 
-Your code should set the `height` property of the `sr-only` class to a value of 1 pixel.
+Your code should set the `height` property of the `sr-only` class to a value of `1` pixel.
 
 ```js
 assert(code.match(/height:\s*?1px/gi));

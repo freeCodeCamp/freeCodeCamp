@@ -13,7 +13,7 @@ The `header` and `footer` in the tweet embed example have child items that could
 
 # --instructions--
 
-Add the CSS property `flex-direction` to both the `header` and `footer` and set the value to row.
+Add the CSS property `flex-direction` to both the `header` and `footer` and set the value to `row`.
 
 # --hints--
 
@@ -23,13 +23,13 @@ Your `.follow-btn` should be rendered on the page. Be sure to turn off any exten
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `header` should have a `flex-direction` property set to row.
+The `header` should have a `flex-direction` property set to `row`.
 
 ```js
 assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
 ```
 
-The `footer` should have a `flex-direction` property set to row.
+The `footer` should have a `flex-direction` property set to `row`.
 
 ```js
 assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));

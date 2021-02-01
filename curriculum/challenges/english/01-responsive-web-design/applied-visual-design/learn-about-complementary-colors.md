@@ -21,7 +21,7 @@ This is different than the outdated RYB color model that many of us were taught 
 
 There are many color picking tools available online that have an option to find the complement of a color.
 
-**Note:** For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
+**Note:** Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
 
 # --instructions--
 

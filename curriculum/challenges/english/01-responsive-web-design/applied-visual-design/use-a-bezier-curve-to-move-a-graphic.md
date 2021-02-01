@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The element with the id `red` should no longer have the `animation-timing-function` property of linear.
+The element with the id `red` should no longer have the `animation-timing-function` property of `linear`.
 
 ```js
 assert($('#red').css('animation-timing-function') !== 'linear');

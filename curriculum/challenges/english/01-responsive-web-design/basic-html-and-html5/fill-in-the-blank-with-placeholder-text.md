@@ -13,7 +13,7 @@ Web developers traditionally use <dfn>lorem ipsum text</dfn> as placeholder text
 
 Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.
 
-Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called "kitty ipsum text".
+Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called "kitty ipsum" text.
 
 # --instructions--
 
@@ -21,7 +21,7 @@ Replace the text inside your `p` element with the first few words of this kitty 
 
 # --hints--
 
-Your `p` element should contain the first few words of the provided `kitty ipsum text`.
+Your `p` element should contain the first few words of the provided "kitty ipsum" text.
 
 ```js
 assert.isTrue(/Kitty(\s)+ipsum/gi.test($('p').text()));

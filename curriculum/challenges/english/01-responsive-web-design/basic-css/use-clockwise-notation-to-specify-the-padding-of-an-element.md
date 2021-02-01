@@ -17,7 +17,7 @@ These four values work like a clock: top, right, bottom, left, and will produce 
 
 # --instructions--
 
-Use Clockwise Notation to give the ".blue-box" class a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+Use Clockwise Notation to give the `.blue-box` class a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
 
 # --hints--
 

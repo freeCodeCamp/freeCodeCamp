@@ -15,14 +15,11 @@ Determining whether content can stand alone is usually a judgement call, but the
 
 Remember that folks using assistive technologies rely on organized, semantically meaningful markup to better understand your work.
 
-**Note about `section` and `div`**  
-The `section` element is also new with HTML5, and has a slightly different semantic meaning than `article`. An `article` is for standalone content, and a `section` is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the `article`, then each chapter is a `section`. When there's no relationship between groups of content, then use a `div`.
+**Note:** The `section` element is also new with HTML5, and has a slightly different semantic meaning than `article`. An `article` is for standalone content, and a `section` is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the `article`, then each chapter is a `section`. When there's no relationship between groups of content, then use a `div`.
 
-```html
-<div> - groups content
-<section> - groups related content
-<article> - groups independent, self-contained content
-```
+`<div>` - groups content
+`<section>` - groups related content
+`<article>` - groups independent, self-contained content
 
 # --instructions--
 

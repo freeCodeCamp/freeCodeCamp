@@ -22,7 +22,7 @@ For example:
 </ol>
 ```
 
-would create a numbered list of "Garfield" and "Sylvester".
+would create a numbered list of `Garfield` and `Sylvester`.
 
 # --instructions--
 

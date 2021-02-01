@@ -29,7 +29,7 @@ To begin, apply the `monospace` font to the `h2` element, so that it now has two
 
 In the last challenge, you imported the `Lobster` font using the `link` tag. Now comment out that import of the `Lobster` font (using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your `h2` element degrades to the `monospace` font.
 
-**Note:** If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
+**Note:** If you have the `Lobster` font installed on your computer, you won't see the degradation because your browser is able to find the font.
 
 # --hints--
 

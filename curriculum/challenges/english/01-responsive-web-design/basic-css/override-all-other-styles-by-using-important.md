@@ -13,7 +13,7 @@ Yay! We just proved that inline styles will override all the CSS declarations in
 
 But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.
 
-In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use `!important`
+In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use `!important`.
 
 Let's go all the way back to our `pink-text` class declaration. Remember that our `pink-text` class was overridden by subsequent class declarations, id declarations, and inline styles.
 
@@ -39,7 +39,7 @@ Your `h1` element should have the class `blue-text`.
 assert($('h1').hasClass('blue-text'));
 ```
 
-Your `h1` element should have the id of `orange-text`.
+Your `h1` element should have the `id` of `orange-text`.
 
 ```js
 assert($('h1').attr('id') === 'orange-text');

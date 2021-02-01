@@ -23,7 +23,7 @@ Create an `a` element that links to `https://freecatphotoapp.com` and has "cat p
 
 # --hints--
 
-Your `a` element should have the anchor text of "cat photos".
+Your `a` element should have the anchor text of `cat photos`.
 
 ```js
 assert(/cat photos/gi.test($('a').text()));

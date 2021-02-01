@@ -17,7 +17,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the text "Thursday, September 15&lt;sup>th&lt;/sup>" and add a `datetime` attribute to it set to "2016-09-15".
+Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the text `Thursday, September 15<sup>th<sup>` and add a `datetime` attribute to it set to `2016-09-15`.
 
 # --hints--
 

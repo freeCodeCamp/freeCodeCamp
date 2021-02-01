@@ -19,7 +19,7 @@ Here's how you do it:
 background: var(--penguin-skin, black);
 ```
 
-This will set background to black if your variable wasn't set. Note that this can be useful for debugging.
+This will set background to `black` if your variable wasn't set. Note that this can be useful for debugging.
 
 # --instructions--
 

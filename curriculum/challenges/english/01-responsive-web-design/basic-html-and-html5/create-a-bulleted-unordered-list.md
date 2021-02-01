@@ -22,7 +22,7 @@ For example:
 </ul>
 ```
 
-would create a bullet point style list of "milk" and "cheese".
+would create a bullet point style list of `milk` and `cheese`.
 
 # --instructions--
 

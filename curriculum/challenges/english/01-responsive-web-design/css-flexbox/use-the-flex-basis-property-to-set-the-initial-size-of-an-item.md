@@ -19,7 +19,7 @@ Set the initial size of the boxes using `flex-basis`. Add the CSS property `flex
 
 # --hints--
 
-The `#box-1` element should have a `flex-basis` property.
+The `#box-1` element should have the `flex-basis` property.
 
 ```js
 assert($('#box-1').css('flex-basis') != 'auto');

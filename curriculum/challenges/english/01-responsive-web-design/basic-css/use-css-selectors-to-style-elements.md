@@ -40,7 +40,7 @@ Delete your `h2` element's style attribute, and instead create a CSS `style` blo
 
 # --hints--
 
-The style attribute should be removed from your `h2` element.
+The `style` attribute should be removed from your `h2` element.
 
 ```js
 assert(!$('h2').attr('style'));
