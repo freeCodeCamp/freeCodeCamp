@@ -16,6 +16,7 @@ import {
   openModal,
   updateSolutionFormValues
 } from '../../redux';
+
 import { getGuideUrl } from '../../utils';
 
 import LearnLayout from '../../../../components/layouts/Learn';
@@ -62,6 +63,10 @@ const propTypes = {
 };
 
 export class Project extends Component {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
   componentDidMount() {
     const {
       challengeMounted,
@@ -106,6 +111,12 @@ export class Project extends Component {
     }
   }
 
+  handleSubmit({ isShouldCompletionModalOpen }) {
+    if (isShouldCompletionModalOpen) {
+      this.props.openCompletionModal();
+    }
+  }
+
   render() {
     const {
       data: {
@@ -119,7 +130,6 @@ export class Project extends Component {
         }
       },
       isChallengeCompleted,
-      openCompletionModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
@@ -154,7 +164,7 @@ export class Project extends Component {
                 <SolutionForm
                   challengeType={challengeType}
                   description={description}
-                  onSubmit={openCompletionModal}
+                  onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
                 />
                 <ProjectToolPanel

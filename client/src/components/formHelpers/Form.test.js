@@ -79,12 +79,12 @@ test('should submit', () => {
 
   fireEvent.click(button);
   expect(submit).toHaveBeenCalledTimes(1);
-  expect(submit.mock.calls[0][0]).toEqual({ website: websiteValue });
+  expect(submit.mock.calls[0][0].values).toEqual({ website: websiteValue });
 
   fireEvent.change(websiteInput, { target: { value: `${websiteValue}///` } });
   expect(websiteInput).toHaveValue(`${websiteValue}///`);
 
   fireEvent.click(button);
   expect(submit).toHaveBeenCalledTimes(2);
-  expect(submit.mock.calls[1][0]).toEqual({ website: websiteValue });
+  expect(submit.mock.calls[1][0].values).toEqual({ website: websiteValue });
 });

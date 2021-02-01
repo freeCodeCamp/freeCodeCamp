@@ -24,6 +24,7 @@ import {
   updateLogs,
   logsToConsole,
   updateTests,
+  openModal,
   isBuildEnabledSelector,
   disableBuildOnError,
   types
@@ -43,11 +44,12 @@ import {
 const previewTimeout = 2500;
 let previewTask;
 
-export function* executeCancellableChallengeSaga() {
+export function* executeCancellableChallengeSaga(payload) {
   if (previewTask) {
     yield cancel(previewTask);
   }
-  const task = yield fork(executeChallengeSaga);
+  // executeChallenge with payload containing isShouldCompletionModalOpen
+  const task = yield fork(executeChallengeSaga, payload);
   previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
 
   yield take(types.cancelTests);
@@ -58,7 +60,9 @@ export function* executeCancellablePreviewSaga() {
   previewTask = yield fork(previewChallengeSaga);
 }
 
-export function* executeChallengeSaga() {
+export function* executeChallengeSaga({
+  payload: isShouldCompletionModalOpen
+}) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -93,8 +97,13 @@ export function* executeChallengeSaga() {
       document
     );
     const testResults = yield executeTests(testRunner, tests);
-
     yield put(updateTests(testResults));
+
+    const challengeComplete = testResults.every(test => test.pass && !test.err);
+    if (challengeComplete && isShouldCompletionModalOpen) {
+      yield put(openModal('completion'));
+    }
+
     yield put(updateConsole(i18next.t('learn.tests-completed')));
     yield put(logsToConsole(i18next.t('learn.console-output')));
   } catch (e) {
