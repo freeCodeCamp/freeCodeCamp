@@ -44,13 +44,13 @@ Some examples of good PRs titles would be:
 
    ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
    ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
+3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
 4. In the body of your PR include a more detailed summary of the changes you made and why.
 
@@ -88,13 +88,13 @@ More often than not you may not require a rebase, because we squash all commits,
 
 ### For usual bug fixes and features
 
-When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
+When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
 1. Rebase your local copy:
 
    ```console
    git checkout <pr-branch>
-   git pull --rebase upstream master
+   git pull --rebase upstream main
    ```
 
 2. Resolve any conflicts and add / edit commits
@@ -122,7 +122,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 1. Make sure your upstream comes in sync with your local:
 
    ```console
-   git checkout master
+   git checkout main
    git fetch --all --prune
    git checkout next-python-projects
    git reset --hard upstream/next-python-projects

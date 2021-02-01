@@ -3,7 +3,7 @@
 > [!NOTE]
 > A quick reminder that you do not need to setup anything for working on the content for the documentation site.
 >
-> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). When your changes are merged, it will be made available automatically at the documentation site.
+> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, it will be made available automatically at the documentation site.
 
 ## Structure of the docs website
 

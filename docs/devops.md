@@ -10,13 +10,13 @@ This repository is continuously built, tested and deployed to **separate sets of
 
 This involves three steps to be followed in sequence:
 
-1. New changes (both fixes and features) are merged into our primary development branch (`master`) via pull requests.
+1. New changes (both fixes and features) are merged into our primary development branch (`main`) via pull requests.
 2. These changes are run through a series of automated tests.
 3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
 #### Building the codebase - Mapping Git Branches to Deployments.
 
-Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
+Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
 This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
@@ -71,24 +71,24 @@ Currently, only members on the developer team can push to the production branche
    upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `master` branch is pristine and in sync with the upstream.
+2. Make sure your `maim` branch is pristine and in sync with the upstream.
 
    ```sh
-   git checkout master
+   git checkout main
    git fetch --all --prune
-   git reset --hard upstream/master
+   git reset --hard upstream/main
    ```
 
-3. Check that the GitHub CI is passing on the `master` branch for upstream.
+3. Check that the GitHub CI is passing on the `main` branch for upstream.
 
-   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `master` branch. Click the green check mark next to the commit hash when viewing the `master` branch code.
+   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `main` branch. Click the green check mark next to the commit hash when viewing the `main` branch code.
 
     <details>
       <summary>
         Checking status on GitHub Actions (screenshot)
       </summary>
       <br>
-      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/github-actions.png" alt="Check build status on GitHub Actions">
+      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png" alt="Check build status on GitHub Actions">
     </details>
 
    If this is failing you should stop and investigate the errors.
@@ -99,11 +99,11 @@ Currently, only members on the developer team can push to the production branche
    npm run clean-and-develop
    ```
 
-5. Move changes from `master` to `production-staging` via a fast-forward merge
+5. Move changes from `main` to `production-staging` via a fast-forward merge
 
    ```
    git checkout production-staging
-   git merge master
+   git merge main
    git push upstream
    ```
 
@@ -176,8 +176,6 @@ Here is the current test, build and deployment status of the codebase.
 
 | Type             | Branch                                                                                       | Status                                                                                                                                                                                                                                              | Dashboard                                                                                 |
 | :--------------- | :------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
-| CI Tests         | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                         | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| CI Tests         | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
 | Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
 | Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 | CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
@@ -528,7 +526,7 @@ sudo su
 ```console
 cd /etc/nginx
 git fetch --all --prune
-git reset --hard origin/master
+git reset --hard origin/main
 ```
 
 3. Test and reload the config
