@@ -32,7 +32,9 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
           {block}
         </Link>
       </div>
-      <b>{children}</b>
+      <div className='challenge-title'>
+        <b>{children}</b>
+      </div>
       {isCompleted ? (
         <GreenPass
           style={{ height: '15px', width: '15px', marginLeft: '7px' }}
