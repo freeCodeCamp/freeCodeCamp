@@ -16,7 +16,8 @@ const propTypes = {
   handleSolutionModalHide: PropTypes.func,
   isOpen: PropTypes.bool,
   projectTitle: PropTypes.string,
-  solution: PropTypes.string
+  solution: PropTypes.string,
+  t: PropTypes.func.isRequired
 };
 
 const ProjectModal = props => {
@@ -25,6 +26,7 @@ const ProjectModal = props => {
     projectTitle,
     files,
     solution,
+    t,
     handleSolutionModalHide
   } = props;
   return (
@@ -36,14 +38,16 @@ const ProjectModal = props => {
     >
       <Modal.Header className='this-one?' closeButton={true}>
         <Modal.Title id='solution-viewer-modal-title'>
-          Solution for {projectTitle}
+          {t('settings.labels.solution-for', {
+            projectTitle: projectTitle
+          })}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <SolutionViewer files={files} solution={solution} />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={handleSolutionModalHide}>Close</Button>
+        <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );
