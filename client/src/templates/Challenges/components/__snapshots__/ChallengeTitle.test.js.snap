@@ -4,19 +4,30 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
 <div
   className="challenge-title-wrap"
 >
-  <a
-    href="/learn/undefined"
-  />
-   &gt;&gt; 
-  <a
-    href="/learn/undefined"
-    state={
-      Object {
-        "breadcrumbBlockClick": undefined,
+  <div
+    className="challenge-title-breadcrumbs"
+  >
+    <a
+      className="breadcrumb-left"
+      href="/learn/undefined"
+    >
+      <span
+        className="ellipsis"
+      />
+    </a>
+    <div
+      className="breadcrumb-center"
+    />
+    <a
+      className="breadcrumb-right"
+      href="/learn/undefined"
+      state={
+        Object {
+          "breadcrumbBlockClick": undefined,
+        }
       }
-    }
-  />
-   &gt;&gt; 
+    />
+  </div>
   <b>
     title text
   </b>

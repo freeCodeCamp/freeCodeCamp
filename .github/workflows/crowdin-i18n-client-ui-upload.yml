@@ -1,44 +1,34 @@
-name: Crowdin Curriculum Download
+name: Crowdin Client UI Upload
 on:
   workflow_dispatch:
 
 jobs:
-
-  i18n-download-curriculum-translations:
-    name: Learn
+  
+  i18n-upload-client-ui-files:
+    name: Client
     runs-on: ubuntu-18.04
 
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
-
-      ##### Chinese Download #####
-      - name: Crowdin Download for Chinese Translations
+      - name: Crowdin Upload
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
-          upload_sources: false
+          upload_sources: true
           upload_translations: false
           auto_approve_imported: false
           import_eq_suggestions: false
 
           # downloads
-          download_translations: true
-          skip_untranslated_files: true
-          export_only_approved: true
-
-          commit_message: 'chore(i8n,learn): processed translations'
+          download_translations: false
 
           # pull-request
-          localization_branch_name: i18n-sync-learn-processed-translations
           create_pull_request: false
-          pull_request_title: 'chore(i18n,learn): Processed translations from Crowdin'
-          pull_request_body: ''
-          pull_request_labels: 'scope: i18n, scope: learn, crowdin-sync'
 
           # global options
-          config: './curriculum/crowdin.yml'
+          config: './client/i18n/locales/crowdin.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
@@ -46,5 +36,5 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CLIENT }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}

@@ -1,4 +1,68 @@
 .challenge-title-wrap {
-  padding: 10px 15px;
   text-align: center;
+}
+
+.challenge-title-breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  margin-left: -10px;
+  margin-right: -10px;
+  border-bottom: 2px solid var(--secondary-color);
+  height: 25px;
+}
+
+.breadcrumb-left {
+  text-decoration: none;
+  min-width: 25px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 25px;
+  word-wrap: none;
+  white-space: nowrap;
+  flex-grow: 1;
+  flex-shrink: 2;
+  background-color: var(--quaternary-background);
+}
+
+.breadcrumb-center {
+  width: 0;
+  height: 0;
+  border-top: calc(23px / 2) solid transparent;
+  border-bottom: calc(23px / 2) solid transparent;
+  border-left: calc(23px / 2) solid var(--quaternary-background);
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.breadcrumb-right {
+  text-decoration: none;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  max-height: 25px;
+  min-width: 50px;
+  flex-grow: 2;
+  flex-shrink: 1;
+  word-wrap: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 20px;
+  white-space: nowrap;
+}
+
+.breadcrumb-rule {
+  margin: 5px -10px;
+}
+
+.breadcrumb-left:hover {
+  background-color: var(--quaternary-background);
+}
+
+.breadcrumb-right:hover {
+  background-color: rgba(0, 0, 0, 0);
 }
