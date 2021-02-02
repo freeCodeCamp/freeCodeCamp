@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.challenge-title {
+  margin: 20px 0px 15px;
+}
+
 .challenge-title-breadcrumbs {
   display: flex;
   flex-direction: row;
@@ -9,7 +13,7 @@
   font-size: 16px;
   margin-left: -10px;
   margin-right: -10px;
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 1px solid var(--quaternary-color);
   height: 25px;
 }
 
@@ -32,7 +36,7 @@
 .breadcrumb-center {
   width: 0;
   height: 0;
-  border-top: calc(23px / 2) solid transparent;
+  border-top: calc(25px / 2) solid transparent;
   border-bottom: calc(23px / 2) solid transparent;
   border-left: calc(23px / 2) solid var(--quaternary-background);
   flex-grow: 0;
@@ -51,7 +55,6 @@
   word-wrap: none;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 20px;
   white-space: nowrap;
 }
 
@@ -60,9 +63,10 @@
 }
 
 .breadcrumb-left:hover {
+  text-decoration: underline;
   background-color: var(--quaternary-background);
 }
-
 .breadcrumb-right:hover {
-  background-color: rgba(0, 0, 0, 0);
+  text-decoration: underline;
+  background-color: var(--secondary-background);
 }

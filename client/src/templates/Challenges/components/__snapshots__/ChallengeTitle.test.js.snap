@@ -28,9 +28,13 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       }
     />
   </div>
-  <b>
-    title text
-  </b>
+  <div
+    className="challenge-title"
+  >
+    <b>
+      title text
+    </b>
+  </div>
   <span
     className="sr-only"
   >
