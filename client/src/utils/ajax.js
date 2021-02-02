@@ -1,4 +1,4 @@
-import { apiLocation } from '../../config/env.json';
+import { apiLocation } from '../../../config/env.json';
 import axios from 'axios';
 import Tokens from 'csrf';
 import cookies from 'browser-cookies';

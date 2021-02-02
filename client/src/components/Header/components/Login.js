@@ -6,7 +6,7 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { isSignedInSelector } from '../../../redux';
-import { apiLocation, homeLocation } from '../../../../config/env.json';
+import { apiLocation, homeLocation } from '../../../../../config/env.json';
 
 import './login.css';
 

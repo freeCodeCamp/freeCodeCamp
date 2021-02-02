@@ -7,7 +7,7 @@ import { Trans, withTranslation } from 'react-i18next';
 
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
 import { executeGA } from '../../../redux';
-import { forumLocation } from '../../../../config/env.json';
+import { forumLocation } from '../../../../../config/env.json';
 
 import './help-modal.css';
 

@@ -24,10 +24,9 @@ import {
   donationUrls,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
-import { stripePublicKey } from '../../../../config/env.json';
+import { stripePublicKey, deploymentEnv } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
-import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
