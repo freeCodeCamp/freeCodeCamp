@@ -1,10 +1,4 @@
-[
-  {
-    "id": "hyek8f",
-    "text": "Chinese translation one"
-  },
-  {
-    "id": "rscjup",
-    "text": "Chinese translation two"
-  }
-]
+{
+  "hyek8f": "Chinese translation one",
+  "rscjup": "Chinese translation two"
+}
