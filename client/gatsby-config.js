@@ -1,15 +1,16 @@
-const path = require('path');
+import path from 'path';
 
-const {
+import {
   clientLocale,
   curriculumLocale,
   homeLocation
-} = require('../config/env');
-const {
+} from '../config/env.json';
+
+import {
   buildChallenges,
   replaceChallengeNode,
   localeChallengesRootDir
-} = require('./utils/buildChallenges');
+} from './utils/buildChallenges';
 
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 const pathPrefix =
