@@ -366,11 +366,13 @@ button#confirm-donation-btn {
   border-radius: 5px;
   background-color: var(--yellow-light);
   border-color: var(--yellow-light);
+  color: black;
+  font-weight: bold;
 }
 button#confirm-donation-btn:active,
 button#confirm-donation-btn:active:focus,
 button#confirm-donation-btn:hover {
-  color: var(--secondary-color);
+  color: black;
   background-color: #f2ba38;
   border-color: #f2ba38;
 }
