@@ -60,8 +60,19 @@ It should be in
       '__fixtures__',
       'dictionaries'
     );
+    const incompleteDictDir = path.resolve(
+      __dirname,
+      '__fixtures__',
+      'incomplete-dicts'
+    );
+
     it('returns an object', () => {
       expect(typeof createCommentMap(dictionaryDir)).toBe('object');
+    });
+
+    it('throws if an entry is missing', () => {
+      expect.assertions(1);
+      expect(() => createCommentMap(incompleteDictDir)).toThrow();
     });
 
     it('returns an object with an expected form', () => {
