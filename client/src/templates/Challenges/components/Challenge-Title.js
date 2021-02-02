@@ -5,6 +5,7 @@ import { Link } from '../../../components/helpers/index';
 import { dasherize } from '../../../../../utils/slugs';
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
+import i18next from 'i18next';
 
 const propTypes = {
   block: PropTypes.string,
@@ -21,7 +22,9 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
           className='breadcrumb-left'
           to={`/learn/${dasherize(superBlock)}`}
         >
-          <span className='ellipsis'>{superBlock}</span>
+          <span className='ellipsis'>
+            {i18next.t(`intro:${dasherize(superBlock)}.title`)}
+          </span>
         </Link>
         <div className='breadcrumb-center' />
         <Link
@@ -29,7 +32,9 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
           state={{ breadcrumbBlockClick: block }}
           to={`/learn/${dasherize(superBlock)}`}
         >
-          {block}
+          {i18next.t(
+            `intro:${dasherize(superBlock)}.blocks.${dasherize(block)}.title`
+          )}
         </Link>
       </div>
       <div className='challenge-title'>
