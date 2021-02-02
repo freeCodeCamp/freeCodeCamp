@@ -1,434 +1,110 @@
-[
-  {
-    "id": "hyek8f",
-    "text": "24.44 en Celsius"
-  },
-  {
-    "id": "rscjup",
-    "text": "26 en Celsius"
-  },
-  {
-    "id": "am2xch",
-    "text": "Una lista de cadenas de texto representando tareas por hacer:"
-  },
-  {
-    "id": "6rztdg",
-    "text": "Agrega un registro aquí"
-  },
-  {
-    "id": "to1vwe",
-    "text": "Agrega los métodos handleChange() y submitMessage() aquí"
-  },
-  {
-    "id": "31b7ey",
-    "text": "Agrega tu código encima de esta línea"
-  },
-  {
-    "id": "c24by8",
-    "text": "Agrega tu código debajo de esta línea"
-  },
-  {
-    "id": "jbrt8k",
-    "text": "Agrega la fila número m a newArray"
-  },
-  {
-    "id": "zkh12d",
-    "text": "Después de pasar el desafío experimenta con myString y observa cómo funciona la agrupación"
-  },
-  {
-    "id": "mobihi",
-    "text": "Asigna 5 a oopsGlobal aquí"
-  },
-  {
-    "id": "v3ups9",
-    "text": "Llama scale con un argumento aquí"
-  },
-  {
-    "id": "iw4a3a",
-    "text": "Caso 1: El objetivo no tiene hijo"
-  },
-  {
-    "id": "463xp8",
-    "text": "Caso 2: El objetivo tiene un hijo"
-  },
-  {
-    "id": "u3inrm",
-    "text": "caso 3: El objetivo tiene dos hijos"
-  },
-  {
-    "id": "axnbgg",
-    "text": "Cambia el código encima de esta línea"
-  },
-  {
-    "id": "i2kck7",
-    "text": "Cambia el código debajo de esta línea"
-  },
-  {
-    "id": "dlbobn",
-    "text": "Cambia esta línea"
-  },
-  {
-    "id": "v127zb",
-    "text": "Verifica las dos consolas para ver la diferencia. La consola de freeCodeCamp debería haber impreso la variable dos veces, una por cada prueba de este desafío. La consola del navegador solo debería imprimir la variable una vez dado que la limpiaste primero."
-  },
-  {
-    "id": "ejm0ql",
-    "text": "Cierra la tercera pestaña en videoWindow y une"
-  },
-  {
-    "id": "iwch6t",
-    "text": "Completa el método de abajo e implementa los otros de manera similar"
-  },
-  {
-    "id": "hihhyz",
-    "text": "Completa la sentencia return:"
-  },
-  {
-    "id": "sdxti5",
-    "text": "Cuenta los hijos del objetivo a eliminar"
-  },
-  {
-    "id": "wfw6sc",
-    "text": "Crea una escala de X y Y"
-  },
-  {
-    "id": "sjw6f4",
-    "text": "Crea la escala aquí"
-  },
-  {
-    "id": "nupsh2",
-    "text": "Crea un arreglo de 2 dimensiones con m filas y n columnas de ceros"
-  },
-  {
-    "id": "xfjb3s",
-    "text": "Declara la variable myGlobal debajo de esta línea"
-  },
-  {
-    "id": "htpjk7",
-    "text": "Define una constante para acciones de decremento"
-  },
-  {
-    "id": "tfzdsp",
-    "text": "Define una constante para acciones de incremento"
-  },
-  {
-    "id": "zh20mi",
-    "text": "Define ADD, addMessage(), messageReducer(), y store aquí:"
-  },
-  {
-    "id": "43qs4c",
-    "text": "Define un creador de acción para decrementar"
-  },
-  {
-    "id": "nen3qo",
-    "text": "Define un creador de acción para incrementar"
-  },
-  {
-    "id": "0cwyam",
-    "text": "Define un creador de acción aquí:"
-  },
-  {
-    "id": "fq0wsg",
-    "text": "Define una acción aquí:"
-  },
-  {
-    "id": "tegkqa",
-    "text": "Define el componente Container aquí:"
-  },
-  {
-    "id": "b5oihn",
-    "text": "Define el reductor counter que aumentará o disminuirá el estado en función de la acción que reciba"
-  },
-  {
-    "id": "91y4pd",
-    "text": "Define el store de Redux aquí, pasando tus reductores"
-  },
-  {
-    "id": "eie1vk",
-    "text": "Define el reductor root aquí"
-  },
-  {
-    "id": "5s7nnl",
-    "text": "Define el store aquí:"
-  },
-  {
-    "id": "34qe2q",
-    "text": "El diccionario almacenará elementos de nuestro conjunto"
-  },
-  {
-    "id": "2c1wra",
-    "text": "Despacha la acción received data aquí"
-  },
-  {
-    "id": "923cpg",
-    "text": "Despacha la acción request aquí"
-  },
-  {
-    "id": "picsyf",
-    "text": "Despacha la acción aquí:"
-  },
-  {
-    "id": "ysjr1s",
-    "text": "Muestra el código"
-  },
-  {
-    "id": "kjd1am",
-    "text": "No mutes el estado aquí o la prueba fallará"
-  },
-  {
-    "id": "5tx4ow",
-    "text": "Sitios de entretenimiento"
-  },
-  {
-    "id": "9yu58b",
-    "text": "Ejemplo listas de inventario"
-  },
-  {
-    "id": "ciddtb",
-    "text": "Encuentra el valor del objetivo y su padre"
-  },
-  {
-    "id": "ixx548",
-    "text": "Arregla el código de abajo para que evalúe a true"
-  },
-  {
-    "id": "6mbhjj",
-    "text": "Por ejemplo: Redux.createStore()"
-  },
-  {
-    "id": "jshtzq",
-    "text": "Función que retorna una cadena de texto representando una taza de té negro"
-  },
-  {
-    "id": "cw1ghf",
-    "text": "Función que retorna una cadena de texto representando una taza de té verde"
-  },
-  {
-    "id": "iuccln",
-    "text": "Genera un arreglo lleno al azar"
-  },
-  {
-    "id": "bm2mop",
-    "text": "Obtiene las pestañas después de la pestaña"
-  },
-  {
-    "id": "kchz5k",
-    "text": "Obtiene las pestañas antes de la pestaña"
-  },
-  {
-    "id": "bfd23c",
-    "text": "Dada una función (representando el tipo de té) y el número de tazas necesarias, la \n    siguiente función retorna un arreglo de cadenas de texto (cada una representando un tipo específico de té)."
-  },
-  {
-    "id": "ead98i",
-    "text": "Variable global count:"
-  },
-  {
-    "id": "7zf0i2",
-    "text": "Únelos juntos"
-  },
-  {
-    "id": "5j2l88",
-    "text": "Vamos a crear tres ventanas del navegador"
-  },
-  {
-    "id": "e843r9",
-    "text": "Abramos una nueva pestaña por ahora"
-  },
-  {
-    "id": "5fvehh",
-    "text": "myVar no está definida afuera de myLocalScope"
-  },
-  {
-    "id": "qn720a",
-    "text": "Ahora, agrega console.clear() antes de tu console.log() para limpiar la consola del navegador y pasar la prueba"
-  },
-  {
-    "id": "j86mef",
-    "text": "Ahora completa la apertura de la pestaña, cierre, y otras operaciones"
-  },
-  {
-    "id": "mk7rvy",
-    "text": "Ahora remueve la línea del console log para pasar la prueba"
-  },
-  {
-    "id": "n7vm1s",
-    "text": "Cambia solo el código encima de esta línea"
-  },
-  {
-    "id": "cvh4x7",
-    "text": "Cambia solo el código debajo de esta línea"
-  },
-  {
-    "id": "lvmnm7",
-    "text": "Abre una nueva pestaña para memes de gatos"
-  },
-  {
-    "id": "avpx79",
-    "text": "Abre la consola de tu navegador."
-  },
-  {
-    "id": "0b5ps6",
-    "text": "Relleno entre el límite del canvas SVG y el gráfico"
-  },
-  {
-    "id": "uemoej",
-    "text": "Inserta n ceros a la fila actual para crear las columnas"
-  },
-  {
-    "id": "lm86nf",
-    "text": "Inserta la fila actual, que ahora contiene n ceros, al arreglo"
-  },
-  {
-    "id": "qscelx",
-    "text": "Los métodos Redux están disponibles desde un objeto Redux"
-  },
-  {
-    "id": "atqiig",
-    "text": "Renderiza un input, button, y ul debajo de esta línea"
-  },
-  {
-    "id": "yq81wg",
-    "text": "Renderiza el Provider debajo de esta línea"
-  },
-  {
-    "id": "kxio9j",
-    "text": "responseFromServer es establecido a false para representar una respuesta no satisfactoria del servidor"
-  },
-  {
-    "id": "alh6pw",
-    "text": "responseFromServer es establecido a true para representar una respuesta satisfactoria del servidor"
-  },
-  {
-    "id": "1cfidd",
-    "text": "responseFromServer representa una respuesta de un servidor"
-  },
-  {
-    "id": "96tntk",
-    "text": "Retorna 30"
-  },
-  {
-    "id": "58a5g7",
-    "text": "Ejecuta y verifica la consola"
-  },
-  {
-    "id": "71bus9",
-    "text": "Ejecuta las pruebas para ver la diferencia entre las dos consolas."
-  },
-  {
-    "id": "7wp46n",
-    "text": "Ajuste en escala Farenheit"
-  },
-  {
-    "id": "oefvg5",
-    "text": "Configuración"
-  },
-  {
-    "id": "mnt4d3",
-    "text": "Debería mostrar 'carrot'"
-  },
-  {
-    "id": "fhe9m4",
-    "text": "Sitios sociales"
-  },
-  {
-    "id": "za434b",
-    "text": "La tabla de barras apiladas de entrenamiento semanal"
-  },
-  {
-    "id": "7c1fv9",
-    "text": "La tabla de barras apiladas irá aquí"
-  },
-  {
-    "id": "r44ovx",
-    "text": "tabs es un arreglo de títulos de cada sítio abierto dentro de la ventana"
-  },
-  {
-    "id": "cl8peb",
-    "text": "arreglo de prueba:"
-  },
-  {
-    "id": "1xi3cv",
-    "text": "La variable global"
-  },
-  {
-    "id": "3gc01a",
-    "text": "El archivo main.scss"
-  },
-  {
-    "id": "14kfog",
-    "text": "Este es nuestro método de intersección"
-  },
-  {
-    "id": "d1shtt",
-    "text": "Este es nuestro método de unión"
-  },
-  {
-    "id": "pqq6sy",
-    "text": "Este método agregará un elemento al conjunto"
-  },
-  {
-    "id": "nd2oxy",
-    "text": "Este método verificará la existencia de un elemento y retornará true o false"
-  },
-  {
-    "id": "ocm81t",
-    "text": "Este método removerá un elemento del conjunto"
-  },
-  {
-    "id": "or9p5p",
-    "text": "Este método retornará todos los valores del conjunto"
-  },
-  {
-    "id": "g1608f",
-    "text": "Este método retornará el tamaño del conjunto"
-  },
-  {
-    "id": "bheu99",
-    "text": "Esto almacenará el conjunto"
-  },
-  {
-    "id": "x1djjr",
-    "text": "Usa console.clear() en la siguiente línea para limpiar la consola del navegador."
-  },
-  {
-    "id": "22ta95",
-    "text": "Usa console.log() para imprimir la variable output."
-  },
-  {
-    "id": "w43c7l",
-    "text": "Usar s = [2, 5, 7] sería inválido"
-  },
-  {
-    "id": "pgckoj",
-    "text": "Asignación de variables"
-  },
-  {
-    "id": "2xiqvv",
-    "text": "Declaración de variables"
-  },
-  {
-    "id": "2sx8zg",
-    "text": "Mantenemos un registro del arreglo dentro del objeto"
-  },
-  {
-    "id": "xmjfd8",
-    "text": "Cuando cierras una pestaña"
-  },
-  {
-    "id": "es69h6",
-    "text": "Cuando unes dos ventanas en una"
-  },
-  {
-    "id": "fho5t5",
-    "text": "Cuando abres una nueva pestaña al final"
-  },
-  {
-    "id": "00kcrm",
-    "text": "produce true"
-  },
-  {
-    "id": "sxpg2a",
-    "text": "Tu casilla de correo, drive y otros sitios de trabajo"
-  }
-]
+{
+  "hyek8f": "24.44 en Celsius",
+  "rscjup": "26 en Celsius",
+  "am2xch": "Una lista de cadenas de texto representando tareas por hacer:",
+  "6rztdg": "Agrega un registro aquí",
+  "to1vwe": "Agrega los métodos handleChange() y submitMessage() aquí",
+  "31b7ey": "Agrega tu código encima de esta línea",
+  "c24by8": "Agrega tu código debajo de esta línea",
+  "jbrt8k": "Agrega la fila número m a newArray",
+  "zkh12d": "Después de pasar el desafío experimenta con myString y observa cómo funciona la agrupación",
+  "mobihi": "Asigna 5 a oopsGlobal aquí",
+  "v3ups9": "Llama scale con un argumento aquí",
+  "iw4a3a": "Caso 1: El objetivo no tiene hijo",
+  "463xp8": "Caso 2: El objetivo tiene un hijo",
+  "u3inrm": "caso 3: El objetivo tiene dos hijos",
+  "axnbgg": "Cambia el código encima de esta línea",
+  "i2kck7": "Cambia el código debajo de esta línea",
+  "dlbobn": "Cambia esta línea",
+  "v127zb": "Verifica las dos consolas para ver la diferencia. La consola de freeCodeCamp debería haber impreso la variable dos veces, una por cada prueba de este desafío. La consola del navegador solo debería imprimir la variable una vez dado que la limpiaste primero.",
+  "ejm0ql": "Cierra la tercera pestaña en videoWindow y une",
+  "iwch6t": "Completa el método de abajo e implementa los otros de manera similar",
+  "hihhyz": "Completa la sentencia return:",
+  "sdxti5": "Cuenta los hijos del objetivo a eliminar",
+  "wfw6sc": "Crea una escala de X y Y",
+  "sjw6f4": "Crea la escala aquí",
+  "nupsh2": "Crea un arreglo de 2 dimensiones con m filas y n columnas de ceros",
+  "xfjb3s": "Declara la variable myGlobal debajo de esta línea",
+  "htpjk7": "Define una constante para acciones de decremento",
+  "tfzdsp": "Define una constante para acciones de incremento",
+  "zh20mi": "Define ADD, addMessage(), messageReducer(), y store aquí:",
+  "43qs4c": "Define un creador de acción para decrementar",
+  "nen3qo": "Define un creador de acción para incrementar",
+  "0cwyam": "Define un creador de acción aquí:",
+  "fq0wsg": "Define una acción aquí:",
+  "tegkqa": "Define el componente Container aquí:",
+  "b5oihn": "Define el reductor counter que aumentará o disminuirá el estado en función de la acción que reciba",
+  "91y4pd": "Define el store de Redux aquí, pasando tus reductores",
+  "eie1vk": "Define el reductor root aquí",
+  "5s7nnl": "Define el store aquí:",
+  "34qe2q": "El diccionario almacenará elementos de nuestro conjunto",
+  "2c1wra": "Despacha la acción received data aquí",
+  "923cpg": "Despacha la acción request aquí",
+  "picsyf": "Despacha la acción aquí:",
+  "ysjr1s": "Muestra el código",
+  "kjd1am": "No mutes el estado aquí o la prueba fallará",
+  "5tx4ow": "Sitios de entretenimiento",
+  "9yu58b": "Ejemplo listas de inventario",
+  "ciddtb": "Encuentra el valor del objetivo y su padre",
+  "ixx548": "Arregla el código de abajo para que evalúe a true",
+  "6mbhjj": "Por ejemplo: Redux.createStore()",
+  "jshtzq": "Función que retorna una cadena de texto representando una taza de té negro",
+  "cw1ghf": "Función que retorna una cadena de texto representando una taza de té verde",
+  "iuccln": "Genera un arreglo lleno al azar",
+  "bm2mop": "Obtiene las pestañas después de la pestaña",
+  "kchz5k": "Obtiene las pestañas antes de la pestaña",
+  "bfd23c": "Dada una función (representando el tipo de té) y el número de tazas necesarias, la \n    siguiente función retorna un arreglo de cadenas de texto (cada una representando un tipo específico de té).",
+  "ead98i": "Variable global count:",
+  "7zf0i2": "Únelos juntos",
+  "5j2l88": "Vamos a crear tres ventanas del navegador",
+  "e843r9": "Abramos una nueva pestaña por ahora",
+  "5fvehh": "myVar no está definida afuera de myLocalScope",
+  "qn720a": "Ahora, agrega console.clear() antes de tu console.log() para limpiar la consola del navegador y pasar la prueba",
+  "j86mef": "Ahora completa la apertura de la pestaña, cierre, y otras operaciones",
+  "mk7rvy": "Ahora remueve la línea del console log para pasar la prueba",
+  "n7vm1s": "Cambia solo el código encima de esta línea",
+  "cvh4x7": "Cambia solo el código debajo de esta línea",
+  "lvmnm7": "Abre una nueva pestaña para memes de gatos",
+  "avpx79": "Abre la consola de tu navegador.",
+  "0b5ps6": "Relleno entre el límite del canvas SVG y el gráfico",
+  "uemoej": "Inserta n ceros a la fila actual para crear las columnas",
+  "lm86nf": "Inserta la fila actual, que ahora contiene n ceros, al arreglo",
+  "qscelx": "Los métodos Redux están disponibles desde un objeto Redux",
+  "atqiig": "Renderiza un input, button, y ul debajo de esta línea",
+  "yq81wg": "Renderiza el Provider debajo de esta línea",
+  "kxio9j": "responseFromServer es establecido a false para representar una respuesta no satisfactoria del servidor",
+  "alh6pw": "responseFromServer es establecido a true para representar una respuesta satisfactoria del servidor",
+  "1cfidd": "responseFromServer representa una respuesta de un servidor",
+  "96tntk": "Retorna 30",
+  "58a5g7": "Ejecuta y verifica la consola",
+  "71bus9": "Ejecuta las pruebas para ver la diferencia entre las dos consolas.",
+  "7wp46n": "Ajuste en escala Farenheit",
+  "oefvg5": "Configuración",
+  "mnt4d3": "Debería mostrar 'carrot'",
+  "fhe9m4": "Sitios sociales",
+  "za434b": "La tabla de barras apiladas de entrenamiento semanal",
+  "7c1fv9": "La tabla de barras apiladas irá aquí",
+  "r44ovx": "tabs es un arreglo de títulos de cada sítio abierto dentro de la ventana",
+  "cl8peb": "arreglo de prueba:",
+  "1xi3cv": "La variable global",
+  "3gc01a": "El archivo main.scss",
+  "14kfog": "Este es nuestro método de intersección",
+  "d1shtt": "Este es nuestro método de unión",
+  "pqq6sy": "Este método agregará un elemento al conjunto",
+  "nd2oxy": "Este método verificará la existencia de un elemento y retornará true o false",
+  "ocm81t": "Este método removerá un elemento del conjunto",
+  "or9p5p": "Este método retornará todos los valores del conjunto",
+  "g1608f": "Este método retornará el tamaño del conjunto",
+  "bheu99": "Esto almacenará el conjunto",
+  "x1djjr": "Usa console.clear() en la siguiente línea para limpiar la consola del navegador.",
+  "22ta95": "Usa console.log() para imprimir la variable output.",
+  "w43c7l": "Usar s = [2, 5, 7] sería inválido",
+  "pgckoj": "Asignación de variables",
+  "2xiqvv": "Declaración de variables",
+  "2sx8zg": "Mantenemos un registro del arreglo dentro del objeto",
+  "xmjfd8": "Cuando cierras una pestaña",
+  "es69h6": "Cuando unes dos ventanas en una",
+  "fho5t5": "Cuando abres una nueva pestaña al final",
+  "00kcrm": "produce true",
+  "sxpg2a": "Tu casilla de correo, drive y otros sitios de trabajo"
+}

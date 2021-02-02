@@ -37,7 +37,7 @@ function getTranslatableComments(dictionariesDir) {
     'english',
     'comments.json'
   ));
-  return COMMENTS_TO_TRANSLATE.map(({ text }) => text);
+  return Object.values(COMMENTS_TO_TRANSLATE);
 }
 
 exports.getTranslatableComments = getTranslatableComments;
@@ -64,15 +64,15 @@ function createCommentMap(dictionariesDir) {
     'comments.json'
   ));
 
-  const { COMMENTS_TO_NOT_TRANSLATE } = require(path.resolve(
+  const COMMENTS_TO_NOT_TRANSLATE = require(path.resolve(
     dictionariesDir,
     'english',
     'comments-to-not-translate'
   ));
 
   // map from english comment text to translations
-  const translatedCommentMap = COMMENTS_TO_TRANSLATE.reduce(
-    (acc, { id, text }) => {
+  const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
+    (acc, [id, text]) => {
       return {
         ...acc,
         [text]: getTranslationEntry(dictionaries, { engId: id, text })
@@ -82,22 +82,21 @@ function createCommentMap(dictionariesDir) {
   );
 
   // map from english comment text to itself
-  const untranslatableCommentMap = COMMENTS_TO_NOT_TRANSLATE.reduce(
-    (acc, { text }) => {
-      const englishEntry = languages.reduce(
-        (acc, lang) => ({
-          ...acc,
-          [lang]: text
-        }),
-        {}
-      );
-      return {
+  const untranslatableCommentMap = Object.values(
+    COMMENTS_TO_NOT_TRANSLATE
+  ).reduce((acc, text) => {
+    const englishEntry = languages.reduce(
+      (acc, lang) => ({
         ...acc,
-        [text]: englishEntry
-      };
-    },
-    {}
-  );
+        [lang]: text
+      }),
+      {}
+    );
+    return {
+      ...acc,
+      [text]: englishEntry
+    };
+  }, {});
 
   return { ...translatedCommentMap, ...untranslatableCommentMap };
 }
@@ -106,9 +105,9 @@ exports.createCommentMap = createCommentMap;
 
 function getTranslationEntry(dicts, { engId, text }) {
   return Object.keys(dicts).reduce((acc, lang) => {
-    const entry = dicts[lang].find(({ id }) => engId === id);
+    const entry = dicts[lang][engId];
     if (entry) {
-      return { ...acc, [lang]: entry.text };
+      return { ...acc, [lang]: entry };
     } else {
       throw Error(`Missing translation for comment
 '${text}'
