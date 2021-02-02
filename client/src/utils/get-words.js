@@ -1,4 +1,4 @@
-const config = require('../../config/env');
+const config = require('../../../config/env.json');
 
 const words = require(`../../i18n/locales/${config.clientLocale}/motivation.json`);
 
