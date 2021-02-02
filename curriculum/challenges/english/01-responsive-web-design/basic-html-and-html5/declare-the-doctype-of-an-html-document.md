@@ -19,12 +19,12 @@ The `!` and uppercase `DOCTYPE` is important, especially for older browsers. The
 
 Next, the rest of your HTML code needs to be wrapped in `html` tags. The opening `<html>` goes directly below the `<!DOCTYPE html>` line, and the closing `</html>` goes at the end of the page.
 
-Here's an example of the page structure:
+Here's an example of the page structure. Your HTML code would go in the space between the two `html` tags.
 
 ```html
 <!DOCTYPE html>
 <html>
-  <!-- Your HTML code goes here -->
+
 </html>
 ```
 
