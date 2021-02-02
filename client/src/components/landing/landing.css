@@ -118,7 +118,7 @@ p.caption {
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   margin: 0;
-  color: var(--gray-75);
+  color: var(--quaternary-color);
 }
 .testimonial-meta p:last-child {
   margin-top: 15px;
@@ -157,6 +157,7 @@ p.caption {
   height: 100%;
   padding-bottom: 100%;
   position: relative;
+  background-color: var(--primary-background);
 }
 
 .testimonial-image {
@@ -173,12 +174,17 @@ p.caption {
   padding: 25px;
   text-align: justify;
   justify-content: center;
+  background-color: var(--primary-background);
 }
 .landing-top,
 .as-seen-in,
 .certification-section,
 .testimonials {
   padding: 4vw 0;
+}
+
+.map-ui .btn {
+  min-height: 80px;
 }
 
 @media (min-width: 500px) {

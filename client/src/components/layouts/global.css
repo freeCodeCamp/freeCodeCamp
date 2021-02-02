@@ -304,6 +304,7 @@ fieldset[disabled] .btn-primary.focus {
   color: var(--secondary-background);
 }
 
+.link-btn.btn-lg svg,
 .map-icon,
 .cert-header-icon {
   flex-shrink: 0;

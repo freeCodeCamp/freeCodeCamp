@@ -183,7 +183,6 @@ class DonateFormChildViewForHOC extends Component {
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-cta'
           id='confirm-donation-btn'
           type='submit'
         >
