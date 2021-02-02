@@ -28,7 +28,7 @@ Challenge description text, in markdown
 
 ```html
 <div>
- example code
+  example code
 </div>
 ```
 

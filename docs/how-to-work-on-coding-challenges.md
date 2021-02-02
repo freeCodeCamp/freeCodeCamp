@@ -25,7 +25,7 @@ Before you work on the curriculum, you would need to set up some tooling to help
 - You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
 - Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
 
- [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
 - Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead again.
 
@@ -47,7 +47,7 @@ Challenge description text, in markdown
 
 ```html
 <div>
- example code
+  example code
 </div>
 ```
 
@@ -89,20 +89,20 @@ Boilerplate code to render to the editor. This section should only contain code 
 
 ```html
 <body>
- <p class="main-text">
-   Hello world!
- </p>
+  <p class="main-text">
+    Hello world!
+  </p>
 </body>
 ```
 
 ```css
 body {
- margin: 0;
- background-color: #3a3240;
+  margin: 0;
+  background-color: #3a3240;
 }
 
 .main-text {
- color: #aea8d3;
+  color: #aea8d3;
 }
 ```
 
@@ -333,30 +333,30 @@ If a challenge has multiple places where the user is expected to change code (i.
 
 ```jsx
 class MyComponent extends React.Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     text: "Hello"
-   };
-   // Change code below this line
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
 
-   // Change code above this line
- }
- handleClick() {
-   this.setState({
-     text: "You clicked!"
-   });
- }
- render() {
-   return (
-     <div>
-       { /* Change code below this line */ }
-       <button>Click Me</button>
-       { /* Change code above this line */ }
-       <h1>{this.state.text}</h1>
-     </div>
-   );
- }
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
 };
 ```
 
@@ -427,7 +427,7 @@ Hint goes here
 
 ```js
 function myFunc() {
- console.log('Hello World!');
+  console.log('Hello World!');
 }
 ```
 
@@ -468,15 +468,15 @@ You are also able to test one challenge individually by performing the following
 
 1. Switch to the `curriculum` directory:
 
-  ```
-  cd curriculum
-  ```
+   ```
+   cd curriculum
+   ```
 
 2. Run the following for each challenge file for which you have changed:
 
-  ```
-  npm run test -- -g 'the full English title of the challenge'
-  ```
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
 
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
 

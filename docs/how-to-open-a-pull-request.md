@@ -42,32 +42,32 @@ Some examples of good PRs titles would be:
 
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-  ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-  ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
 3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
 4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-    - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-    - If the PR is meant to address an existing GitHub Issue then, at the end of
-      your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of
+     your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-    > Example: `Closes #123` will close issue 123
+   > Example: `Closes #123` will close issue 123
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-    - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-    - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
+   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
 
 ## Feedback on pull requests
 
@@ -99,21 +99,21 @@ When you are working on regular bugs and features on our development branch `mai
 
 2. Resolve any conflicts and add / edit commits
 
-    ```console
-    # Either
-    git add .
-    git commit -m "chore: resolve conflicts"
+   ```console
+   # Either
+   git add .
+   git commit -m "chore: resolve conflicts"
 
-    # Or
-    git add .
-    git commit --amend --no-edit
-    ```
+   # Or
+   git add .
+   git commit --amend --no-edit
+   ```
 
 3. Push back your changes to the PR
 
-    ```console
-    git push --force origin <pr-branch>
-    ```
+   ```console
+   git push --force origin <pr-branch>
+   ```
 
 ### For upcoming curriculum and features
 
@@ -130,20 +130,20 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 2. Take backup
 
-  a. Either delete your local branch after taking a backup (if you still have it locally):
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
-        git checkout <pr-branch-name>
+      git checkout <pr-branch-name>
 
-        # example:
-        # git checkout feat/add-numpy-video-question
+      # example:
+      # git checkout feat/add-numpy-video-question
 
-        git checkout -b <backup-branch-name>
+      git checkout -b <backup-branch-name>
 
-        # example:
-        #  git checkout -b backup-feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question
 
-        git branch -D <pr-branch-name>
+      git branch -D <pr-branch-name>
       ```
 
   b. Or just a backup of your pr branch (if you do not have it locally):
@@ -157,30 +157,27 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 4. Start off with a clean slate:
 
-    ```console
-    git checkout -b <pr-branch-name> next-python-projects
-    git cherry-pick <commit-hash>
-    ```
+   ```console
+   git checkout -b <pr-branch-name> next-python-projects
+   git cherry-pick <commit-hash>
+   ```
 
 5. Resolve any conflicts, and cleanup, install run tests
 
-    ```console
-    npm run clean
+   ```console
+   npm run clean
 
-    npm ci
-    npm run test:curriculum --superblock=<superblock-name>
+   npm ci
+   npm run test:curriculum --superblock=<superblock-name>
 
-    # example:
+   # example:
 
-    # npm run test:curriculum --superblock=python-for-everybody
+   # npm run test:curriculum --superblock=python-for-everybody
 
-    ```
+   ```
 
 6. If everything looks good push back to the PR
 
     ```console
     git push --force origin <pr-branch-name>
     ```
-
-
-

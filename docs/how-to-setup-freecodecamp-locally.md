@@ -33,8 +33,8 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
-  node -v
-  npm -v
+node -v
+npm -v
 ```
 
 > [!TIP]
@@ -50,14 +50,14 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 3. Install a code editor of your choice.
 
-  We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/)or [Atom](https://atom.io/). These are great, free and open source code editors.
 
 4. Set up linting for your code editor.
 
-  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-  > [!TIP]
-  > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+   > [!TIP]
+   > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
 ## Fork the repository on GitHub
 
@@ -100,13 +100,13 @@ Run these commands on your local machine:
 
 1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-  _i.e.: `/yourprojectsdirectory/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
 2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
-    ```console
-    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-    ```
+   ```console
+   git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+   ```
 
 This will download the entire freeCodeCamp repository to your projects directory.
 
@@ -122,30 +122,30 @@ You need a reference from your local clone to the `upstream` repository in addit
 
 1. Change directory to the new freeCodeCamp directory:
 
-    ```console
-    cd freeCodeCamp
-    ```
+   ```console
+   cd freeCodeCamp
+   ```
 
 2. Add a remote reference to the main freeCodeCamp repository:
 
-    ```console
-    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
-    ```
+   ```console
+   git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+   ```
 
 3. Ensure the configuration looks correct:
 
-    ```console
-    git remote -v
-    ```
+   ```console
+   git remote -v
+   ```
 
-  The output should look something like below:
+   The output should look something like below:
 
-    ```console
-    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
-    ```
+   ```console
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   ```
 
 ## Running freeCodeCamp locally
 
@@ -172,15 +172,15 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
-  ```console
-  # Create a copy of the "sample.env" and name it ".env".
-  # Populate it with the necessary API keys and secrets:
+```console
+# Create a copy of the "sample.env" and name it ".env".
+# Populate it with the necessary API keys and secrets:
 
-  # macOS / Linux
-  cp sample.env .env
+# macOS / Linux
+cp sample.env .env
 
-  # Windows
-  copy sample.env .env
+# Windows
+copy sample.env .env
   ```
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
@@ -192,9 +192,9 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 This step will install the dependencies required for the application to run:
 
-  ```console
-  npm ci
-  ```
+```console
+npm ci
+```
 
 #### Step 3: Start MongoDB and seed the database
 
@@ -217,24 +217,24 @@ Start the MongoDB server in a separate terminal:
   "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
- Make sure to replace `3.6` with the version you have installed
+  Make sure to replace `3.6` with the version you have installed
 
 > [!TIP]
 > You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
 Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
-  ```console
-  npm run seed
-  ```
+```console
+npm run seed
+```
 
 #### Step 4: Start the freeCodeCamp client application and API server
 
 You can now start up the API server and the client applications.
 
-  ```console
-  npm run develop
-  ```
+```console
+npm run develop
+```
 
 This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
@@ -255,11 +255,11 @@ However, accessing the user portfolio page is a little tricky. In development, G
 Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
-  <summary>
-     How to sign in when working locally (screenshot)
-  </summary>
-  <br>
-  <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally">
+   <summary>
+      How to sign in when working locally (screenshot)
+   </summary>
+   <br>
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally">
 </details>
 
 ## Making changes locally
@@ -270,18 +270,18 @@ Follow these steps:
 
 1. Validate that you are on the `main` branch:
 
-    ```console
-    git status
-    ```
+   ```console
+   git status
+   ```
 
-  You should get an output like this:
+   You should get an output like this:
 
    ```console
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
-    nothing to commit, working directory clean
-    ```
+   nothing to commit, working directory clean
+   ```
 
    If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
 
@@ -300,9 +300,9 @@ Follow these steps:
 
   Update your local copy of the freeCodeCamp upstream repository:
 
-    ```console
-    git fetch upstream
-    ```
+   ```console
+   git fetch upstream
+   ```
 
    Hard reset your main branch with the freeCodeCamp main:
 
@@ -322,7 +322,7 @@ Follow these steps:
    git diff upstream/main
    ```
 
-  The resulting output should be empty.
+   The resulting output should be empty.
 
 3. Create a fresh new branch:
 
@@ -330,21 +330,21 @@ Follow these steps:
 
    Check that you are on `main` as explained previously, and branch off from there:
 
-    ```console
-    git checkout -b fix/update-guide-for-xyz
-    ```
+   ```console
+   git checkout -b fix/update-guide-for-xyz
+   ```
 
-  Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-  Some examples of good branch names are:
+   Some examples of good branch names are:
 
-    ```md
-    fix/update-challenges-for-react
-    fix/update-guide-for-html-css
-    fix/platform-bug-sign-in-issues
-    feat/add-guide-article-for-javascript
-    translate/add-spanish-basic-html
-    ```
+   ```md
+   fix/update-challenges-for-react
+   fix/update-guide-for-html-css
+   fix/platform-bug-sign-in-issues
+   feat/add-guide-article-for-javascript
+   translate/add-spanish-basic-html
+   ```
 
 4. Edit pages and work on code in your favorite text editor.
 
@@ -354,101 +354,101 @@ Follow these steps:
 
 7. Check and confirm the files you are updating:
 
-    ```console
-    git status
-    ```
+   ```console
+   git status
+   ```
 
-  This should show a list of `unstaged` files that you have edited.
+   This should show a list of `unstaged` files that you have edited.
 
-    ```console
-    On branch feat/documentation
-    Your branch is up to date with 'upstream/feat/documentation'.
+   ```console
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-    Changes were not staged for commit:
-    (use "git add/rm <file>..." to update what will be committed)
-    (use "git checkout -- <file>..." to discard changes in the working directory)
+   Changes were not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in the working directory)
 
-        modified:   CONTRIBUTING.md
-        modified:   docs/README.md
-        modified:   docs/how-to-setup-freecodecamp-locally.md
-        modified:   docs/how-to-work-on-guide-articles.md
-    ...
-    ```
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ...
+   ```
 
 8. Stage the changes and make a commit:
 
-  In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
-    ```console
-    git add path/to/my/changed/file.ext
+   ```console
+   git add path/to/my/changed/file.ext
+   ```
+
+   Or you can add all the `unstaged` files to the staging area:
+
+   ```console
+   git add .
+   ```
+
+   Only the files that were moved to the staging area will be added when you make a commit.
+
+   ```console
+   git status
+   ```
+
+   Output:
+
+   ```console
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
+
+   Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
+
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
     ```
 
-  Or you can add all the `unstaged` files to the staging area:
+   Now, you can commit your changes with a short message like so:
 
-    ```console
-    git add .
+   ```console
+   git commit -m "fix: my short commit message"
+   ```
+
+   Some examples:
+
+   ```md
+   fix: update guide article for Java - for loop
+   feat: add guide article for alexa skills
+   ```
+
+   Optional:
+
+   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+
+   Some examples of conventional commit messages are:
+
+   ```md
+   fix: update HTML guide article
+   fix: update build scripts for Travis-CI
+   feat: add article for JavaScript hoisting
+   docs: update contributing guidelines
     ```
 
-  Only the files that were moved to the staging area will be added when you make a commit.
+   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-    ```console
-    git status
-    ```
+   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-  Output:
-
-    ```console
-    On branch feat/documentation
-    Your branch is up to date with 'upstream/feat/documentation'.
-
-    Changes to be committed:
-    (use "git reset HEAD <file>..." to unstage)
-
-        modified:   CONTRIBUTING.md
-        modified:   docs/README.md
-        modified:   docs/how-to-setup-freecodecamp-locally.md
-        modified:   docs/how-to-work-on-guide-articles.md
-    ```
-
-  Now, you can commit your changes with a short message like so:
-
-    ```console
-    git commit -m "fix: my short commit message"
-    ```
-
-  Some examples:
-
-    ```md
-    fix: update guide article for Java - for loop
-    feat: add guide article for alexa skills
-    ```
-
-  Optional:
-
-  We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
-
-  Some examples of conventional commit messages are:
-
-    ```md
-    fix: update HTML guide article
-    fix: update build scripts for Travis-CI
-    feat: add article for JavaScript hoisting
-    docs: update contributing guidelines
-    ```
-
-  Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
-
-  This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
-
-  You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
 9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
-    ```console
-    git commit --amend
-    ```
+   ```console
+   git commit --amend
+   ```
 
-  This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
 10. Next, you can push your changes to your fork:
 
@@ -497,12 +497,12 @@ If you are on a different OS and/or are still running into issues, see [getting 
 
 If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
-  ```console
-  npm run clean
-  npm ci
-  npm run seed
-  npm run develop
-  ```
+```console
+npm run clean
+npm ci
+npm run seed
+npm run develop
+```
 
 OR
 
@@ -521,11 +521,11 @@ git clean -ifdX
 ```
 
 <details>
-  <summary>
-     How to clean git untracked files (screenshot)
-  </summary>
-  <br>
-  <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
+   <summary>
+      How to clean git untracked files (screenshot)
+   </summary>
+   <br>
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
 </details>
 
 ### Issues with API, login, Challenge Submissions, etc.
@@ -559,6 +559,3 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/contributors).
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
-
-
-

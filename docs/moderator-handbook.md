@@ -42,13 +42,15 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
 ```markdown
 Thank you for your pull request.
+
 We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
+
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
 
 2. **Challenge Code Edits** These are changes to the code in a challenge - the Challenge Seed, Challenge Solution, and Test Strings. These pull requests need to be pulled down from GitHub and tested on your local computer to make sure the challenge tests can still be passed with the current solution, and the new code doesn't introduce any errors. Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
 
-3. **Codebase Changes** These code edits to change the functionality of the freeCodeCamp platform itself. Sometimes contributors try to make changes without much explanation, but for code changes, we need to make sure there's a genuine need for the change. So these pull requests should reference an existing GitHub issue where the reasons for the change are discussed. Then you can open the pull request on your computer and test them out locally. After you've done so, if the changes look good, don't merge them quite yet. You can comment on the pull request saying "LGTM", then mention @raisedadead so he can take a final look.
+3. **Codebase Changes** These code edits change the functionality of the freeCodeCamp platform itself. Sometimes contributors try to make changes without much explanation, but for code changes, we need to make sure there's a genuine need for the change. So these pull requests should reference an existing GitHub issue where the reasons for the change are discussed. Then you can open the pull request on your computer and test them out locally. After you've done so, if the changes look good, don't merge them quite yet. You can comment on the pull request saying "LGTM", then mention @raisedadead so he can take a final look.
 
 #### How to merge or close pull requests
 
@@ -96,6 +98,7 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
 
 ```markdown
 Thank you for reporting this issue.
+
 This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Help"** button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
 
 If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
@@ -107,8 +110,8 @@ Thank you and happy coding.
 
 - If it's a simple change to an existing challenge, label it as `first timers only`, otherwise label it as `help wanted`. Use other labels as appropriate.
 - If the issue is more significant, flag it as `bug`.
- &nbsp;
- If there is any ambiguity as to the proper course of action on an issue, feel free to tag @raisedadead on the issue get his opinion on it, then add the `Discussing` label.
+  &nbsp;
+  If there is any ambiguity as to the proper course of action on an issue, feel free to tag @raisedadead on the issue get his opinion on it, then add the `Discussing` label.
 
 3. **Duplicate Issues** If an issue is the same as another reported issue, the prior reported issue should take precedence. Flag as `Duplicate`, paste the following message replacing `#XXXXX` with the issue number, then close the issue.
 
@@ -205,7 +208,7 @@ But if it is an egregious offense that can't reasonably be attributed to a cultu
 Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on Discord:
 
 1. **Make sure it was intended to violate the Code of Conduct.**
-  Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like Codepen or Pastebin.
+   Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like Codepen or Pastebin.
 
 2. **If the camper clearly and intentionally violates the Code of Conduct, the moderator will proceed as follows:**
 
@@ -231,7 +234,7 @@ There may be situations where you need to address a concern with a camper privat
 - When the conversation is complete, call the `!fCC moderate close` command *in the private channel* to have the bot close and delete that channel.
 
 4. **Deleting messages**
-  Moderators have the ability to delete messages on Discord. They should only exercise this ability in four very specific situations:
+   Moderators have the ability to delete messages on Discord. They should only exercise this ability in four very specific situations:
 
 - Someone has posted a pornographic or graphically violent image.
 - Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
@@ -241,47 +244,47 @@ There may be situations where you need to address a concern with a camper privat
 In all other situations - even situations where the code of conduct is violated - Moderators should not delete the message as these are an important historic record. When you do delete a message, make sure you take a screenshot of it first! The screenshot can be logged in the #mod-log channel, but for the #activity-log it is sufficient to say the evidence was "removed due to sensitive content". Note: If the message contains material that would be illegal to take a screenshot of, copy the message link instead - provide that message link to @raisedadead to forward to Discord's Trust and Safety team.
 
 5. **Don’t use @everyone or @here**
-  Don’t use @everyone or @here under any circumstances! Every single person in that chat room will get a notification. In some cases, tens of thousands of people.
-  Instead, if you want people to see an announcement, you can pin it to the channel to allow everyone to read it.
+   Don’t use @everyone or @here under any circumstances! Every single person in that chat room will get a notification. In some cases, tens of thousands of people.
+   Instead, if you want people to see an announcement, you can pin it to the channel to allow everyone to read it.
 
 6. **Don’t threaten to ban** If a camper is breaking the code of conduct, don’t threaten to ban them, and never warn them in public. Instead, talk to them privately using the bot's `private` command. No one else in that channel needs to know that you banned/suspended the person - campers can view the summary in the #activity-log channel if they want to keep up on that information. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
 
 - Camper posts a wall of code to request help
 
- Moderator: @username Please use Codepen or Pastebin when posting large amounts of code.
+  Moderator: @username Please use Codepen or Pastebin when posting large amounts of code.
 
 - Or if you really have to explain why:
 
- Moderator: @username Please use Codepen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our Code of Conduct.
+  Moderator: @username Please use Codepen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our Code of Conduct.
 
 - For mild and unintentional violations of the code of conduct
 
- Moderator: This is a friendly reminder for everyone to follow the code of conduct: https://code-of-conduct.freecodecamp.org/
+  Moderator: This is a friendly reminder for everyone to follow the code of conduct: https://code-of-conduct.freecodecamp.org/
 
 7. **Don’t brag about being a moderator**
-  Do not see yourself as above the community. You are the community. And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
-  If you brag about being a moderator, people may feel uneasy around you, in the same way, that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
+   Do not see yourself as above the community. You are the community. And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
+   If you brag about being a moderator, people may feel uneasy around you, in the same way, that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
 
 8. **Don’t contradict other moderators**
-  If you disagree with the action of a moderator, talk with them in private or bring it up in the #mod-chat channel. Never override a ban, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in mod-chat and convince the moderator that they themselves should reverse their ban or change their point of view.
-  Remember: we’re all on the same team. We want to dignify the role of moderators and present a unified front.
+   If you disagree with the action of a moderator, talk with them in private or bring it up in the #mod-chat channel. Never override a ban, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in mod-chat and convince the moderator that they themselves should reverse their ban or change their point of view.
+   Remember: we’re all on the same team. We want to dignify the role of moderators and present a unified front.
 
 9. **Talk with other moderators**
-  We have a room for moderators only. Use it! If you feel uncomfortable with how to handle a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team and we value the input of every team member! Even if you totally disagree with anything in these guidelines or the Code of Conduct!
+   We have a room for moderators only. Use it! If you feel uncomfortable with how to handle a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team and we value the input of every team member! Even if you totally disagree with anything in these guidelines or the Code of Conduct!
 
 10. **Temporarily inactive**
-   If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the #mod-chat channel. This is so we know if we can count on you to be regularly active on the server or not.
+    If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the #mod-chat channel. This is so we know if we can count on you to be regularly active on the server or not.
 
 ## Moderating our Chat Server
 
 Moderating the chat server is very similar to moderating the Discord server, but there are a few key differences:
 
 1. **No Ban functionality**
-   At this time, Rocket.Chat does not have a flow for banning users. Users can be muted (so they are prevented from chatting in a room) or kicked from a room.
+    At this time, Rocket.Chat does not have a flow for banning users. Users can be muted (so they are prevented from chatting in a room) or kicked from a room.
 2. **Modified Bot Commands**
-   The moderation bot in the chat server was developed with a smoother UX in mind. Some of the commands have been modified. Use the `!fCC modHelp` command to view the available functionality. Bot commands in the chat server do NOT require a user mention as they do with Discord.
+    The moderation bot in the chat server was developed with a smoother UX in mind. Some of the commands have been modified. Use the `!fCC modHelp` command to view the available functionality. Bot commands in the chat server do NOT require a user mention as they do with Discord.
 3. **No Role Mentions**
-   Unlike Discord, Rocket.Chat does not allow you to mention all users by a specific role - this means you cannot ping all moderators at once.
+    Unlike Discord, Rocket.Chat does not allow you to mention all users by a specific role - this means you cannot ping all moderators at once.
 
 ## How to become a moderator
 
