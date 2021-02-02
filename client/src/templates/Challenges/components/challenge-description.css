@@ -16,7 +16,3 @@
 #instructions ol {
   font-family: 'Lato', sans-serif;
 }
-
-#description ::selection {
-  background-color: rgba(var(--highlight-color), 0.3);
-}
