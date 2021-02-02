@@ -93,7 +93,7 @@ p {
 }
 
 ::selection {
-  background-color: rgba(var(--highlight-color), 0.3);
+  background-color: var(--selection-color);
 }
 
 @media (max-width: 500px) {
@@ -522,7 +522,7 @@ pre {
 .has-success.checkbox label,
 .has-success.radio-inline label,
 .has-success.checkbox-inline label {
-  color: rgb(var(--highlight-color));
+  color: var(--highlight-color);
 }
 
 .has-error .help-block,

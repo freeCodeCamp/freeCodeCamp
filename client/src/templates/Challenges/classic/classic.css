@@ -3,7 +3,7 @@
 }
 
 .monaco-menu .action-label {
-  color: rgb(var(--highlight-color));
+  color: var(--highlight-color);
   letter-spacing: 0.02em;
 }
 
