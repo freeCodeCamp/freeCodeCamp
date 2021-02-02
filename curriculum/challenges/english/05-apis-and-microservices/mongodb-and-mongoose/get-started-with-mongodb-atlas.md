@@ -10,18 +10,6 @@ dashedName: get-started-with-mongodb-atlas
 
 For the following challenges, you are going to use MongoDB to store data. To simplify the configuration, you'll use a service called MongoDB Atlas.
 
-<strong>Get Started with MongoDB Atlas</strong>
-
-MongoDB Atlas is a MongoDB Database-as-a-Service platform, which means that they configure and host the database for you. Then, your only responsibility will be to populate your database with what matters: data.
-
-In this tutorial, you will:
-
-- Create a MongoDB Atlas account
-- Create a new cluster
-- Create a new user for the database
-- Allow access from all IP addresses
-- Connect to your cluster
-
 <strong>Create a MongoDB Atlas account</strong>
 
 - <a href='https://account.mongodb.com/account/register' target='_blank' rel='no-follow'>Go here</a> to sign up for a new MongoDB Atlas account.
@@ -54,19 +42,16 @@ In this tutorial, you will:
 
 <strong>Connect to your cluster</strong>
 
-- Clicking on the green **Get Started** button in the bottom left of your screen should now show you the final step, **Connect to your cluster**, click on it.
-
+- Click on the green **Get Started** button in the bottom left of your screen should now show you the final step, **Connect to your cluster**, click on it.
 - On the left side of the screen, click on **Clusters**.
 - Click the **Connect** button for your cluster.
 - In the popup modal, click on **Connect your application**.
-- You should see the URI you'll use to connect to your database similar to this: <pre class='inline-pre'>mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<db-name>?retryWrites=true&w=majority</pre>.
+- You should see the URI you'll use to connect to your database similar to this: `mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<db-name>?retryWrites=true&w=majority`.
 - Click the **Copy** button to copy your URI to your clipboard.
 
-Notice that the <pre class='inline-pre'>&lt;username&gt;</pre> and <pre class='inline-pre'>&lt;password&gt;</pre> fields of URI you copied are already filled out for you. All you need to do is replace the <pre class='inline-pre'>&lt;password&gt;</pre> field with the one you created in the previous step.
+Notice that the `username`, `cluster-name`, and `db-name` fields of URI you copied are already filled out for you. All you need to do is replace the `password` field with the one you created in the previous step.
 
 And that's it — you now have the URI to add to your application and connect to your database. Keep this URI safe somewhere so you can use it later.
-
-Feel free to create separate databases for different applications. You just need to create a new project under your current MongoDB Atlas account, build a new cluster, add a new user, allow access from all IP addresses, and connect to your cluster to obtain the new URI.
 
 # --instructions--
 
