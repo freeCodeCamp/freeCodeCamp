@@ -1,19 +1,36 @@
 const authHeader = require('./auth-header');
 const makeRequest = require('./make-request');
 
-const isHeading = str => /\h\d/.test(str);
+const isReservedHeading = (context, str) => {
+  const reservedHeadings = [
+    'after-user-code',
+    'answers',
+    'before-user-code',
+    'description',
+    'fcc-editable-region',
+    'hints',
+    'instructions',
+    'question',
+    'seed',
+    'seed-contents',
+    'solutions',
+    'text',
+    'video-solution'
+  ];
+  const captureGroupStr = `(${reservedHeadings.join('|')})`;
+  const regex = new RegExp(`--${captureGroupStr}--`);
+  return !!(context.match(/^Headline/) && str.match(regex));
+};
+
 const isCode = str => /^\/pre\/code|\/code$/.test(str);
-const isId = str => /^\d+\s*?->\s*?id/.test(str);
+
 const isTitle = str => /^(tests\s*->\s*\d+\s*)?->\s*title/.test(str);
 
 const shouldHide = (text, context, challengeTitle, crowdinFilePath) => {
-  if (crowdinFilePath.endsWith('comments.json')) {
-    return isId(context);
-  }
   if (crowdinFilePath.endsWith('.yml')) {
     return !isTitle(context);
   }
-  if (isHeading(context) || isCode(context)) {
+  if (isReservedHeading(context, text) || isCode(context)) {
     return true;
   }
   return text !== challengeTitle && context.includes('id=front-matter');
