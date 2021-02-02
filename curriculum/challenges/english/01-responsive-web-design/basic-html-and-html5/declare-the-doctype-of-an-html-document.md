@@ -57,6 +57,7 @@ assert(code.match(/<html>\s*?<h1>\s*?.*?\s*?<\/h1>\s*?<\/html>/gi));
 ## --seed-contents--
 
 ```html
+
 ```
 
 # --solutions--
