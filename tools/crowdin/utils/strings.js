@@ -3,8 +3,16 @@ const makeRequest = require('./make-request');
 
 const isHeading = str => /\h\d/.test(str);
 const isCode = str => /^\/pre\/code|\/code$/.test(str);
+const isId = str => /^\d+\s*?->\s*?id/.test(str);
+const isTitle = str => /^(tests\s*->\s*\d+\s*)?->\s*title/.test(str);
 
-const shouldHide = (text, context, challengeTitle) => {
+const shouldHide = (text, context, challengeTitle, crowdinFilePath) => {
+  if (crowdinFilePath.endsWith('comments.json')) {
+    return isId(context);
+  }
+  if (crowdinFilePath.endsWith('.yml')) {
+    return !isTitle(context);
+  }
   if (isHeading(context) || isCode(context)) {
     return true;
   }
@@ -13,18 +21,29 @@ const shouldHide = (text, context, challengeTitle) => {
 
 const getStrings = async ({ projectId, fileId }) => {
   let headers = { ...authHeader };
-  let endPoint = `projects/${projectId}/strings?limit=500`;
-  if (fileId) {
-    endPoint += `&fileId=${fileId}`;
+  let done = false;
+  let offset = 0;
+  let strings = [];
+  while (!done) {
+    let endPoint = `projects/${projectId}/strings?limit=500&offset=${offset}`;
+    if (fileId) {
+      endPoint += `&fileId=${fileId}`;
+    }
+    const response = await makeRequest({ method: 'get', endPoint, headers });
+    if (response.data) {
+      if (response.data.length) {
+        strings = [...strings, ...response.data];
+        offset += 500;
+      } else {
+        done = true;
+        return strings;
+      }
+    } else {
+      const { error, errors } = response;
+      console.error(error ? error : errors);
+    }
   }
-  const strings = await makeRequest({ method: 'get', endPoint, headers });
-  if (strings.data) {
-    return strings.data;
-  } else {
-    const { error, errors } = strings;
-    console.error(error ? error : errors);
-    return null;
-  }
+  return null;
 };
 
 const updateString = async ({ projectId, stringId, propsToUpdate }) => {
@@ -69,11 +88,16 @@ const updateFileStrings = async ({ projectId, fileId, challengeTitle }) => {
   }
 };
 
-const updateFileString = async ({ projectId, string, challengeTitle }) => {
+const updateFileString = async ({
+  projectId,
+  string,
+  challengeTitle,
+  crowdinFilePath
+}) => {
   const {
     data: { id: stringId, text, isHidden, context }
   } = string;
-  const hideString = shouldHide(text, context, challengeTitle);
+  const hideString = shouldHide(text, context, challengeTitle, crowdinFilePath);
   if (!isHidden && hideString) {
     await changeHiddenStatus(projectId, stringId, true);
     console.log(
