@@ -14,10 +14,11 @@ i18n.use(initReactI18next).init({
     [i18nextCode]: {
       translations: require(`./locales/${clientLocale}/translations.json`),
       trending: require(`./locales/${clientLocale}/trending.json`),
-      intro: require(`./locales/${clientLocale}/intro.json`)
+      intro: require(`./locales/${clientLocale}/intro.json`),
+      metaTags: require(`./locales/${clientLocale}/metaTags.json`)
     }
   },
-  ns: ['translations', 'trending', 'intro'],
+  ns: ['translations', 'trending', 'intro', 'metaTags'],
   defaultNS: 'translations',
   returnObjects: true,
   // Uncomment the next line for debug logging

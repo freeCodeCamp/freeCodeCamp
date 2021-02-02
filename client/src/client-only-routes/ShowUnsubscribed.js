@@ -15,7 +15,7 @@ function ShowUnsubscribed({ unsubscribeId }) {
   return (
     <Fragment>
       <Helmet>
-        <title>{t('meta.youre-unsubscribed')} | freeCodeCamp.org</title>
+        <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
       </Helmet>
       <Grid>
         <main>
