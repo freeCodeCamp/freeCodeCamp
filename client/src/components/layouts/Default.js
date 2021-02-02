@@ -152,9 +152,9 @@ class DefaultLayout extends Component {
           meta={[
             {
               name: 'description',
-              content: t('metaTags.description')
+              content: t('metaTags:description')
             },
-            { name: 'keywords', content: t('metaTags.keywords') }
+            { name: 'keywords', content: t('metaTags:keywords') }
           ]}
         >
           <link
