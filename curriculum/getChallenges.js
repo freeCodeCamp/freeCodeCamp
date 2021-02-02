@@ -37,7 +37,7 @@ function getTranslatableComments(dictionariesDir) {
     'english',
     'comments.json'
   ));
-  return COMMENTS_TO_TRANSLATE.map(({ text }) => text);
+  return Object.values(COMMENTS_TO_TRANSLATE);
 }
 
 exports.getTranslatableComments = getTranslatableComments;
