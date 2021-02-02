@@ -1,10 +1,4 @@
-[
-  {
-    "id": "hyek8f",
-    "text": "To be translated one"
-  },
-  {
-    "id": "rscjup",
-    "text": "To be translated two"
-  }
-]
+{
+  "hyek8f": "To be translated one",
+  "rscjup": "To be translated two"
+}
