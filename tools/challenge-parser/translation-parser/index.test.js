@@ -3,7 +3,7 @@ const {
   mergeChallenges,
   translateComments,
   translateCommentsInChallenge
-} = require('./translation-parser');
+} = require('.');
 const {
   ENGLISH_CERTIFICATE,
   ENGLISH_CHALLENGE,
