@@ -48,7 +48,7 @@ Your regex should match two criminals (`CC`) in `"CC"`
 assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
 ```
 
-Your regex should match three criminals (`CCC`) in `"P1P5P4CCCcP2P6P3"`
+Your regex should match three criminals (`CCC`) in the string `P1P5P4CCCcP2P6P3`.
 
 ```js
 assert(
