@@ -15,7 +15,7 @@ However, using the `flex-wrap` property tells CSS to wrap items. This means extr
 
 CSS also has options for the direction of the wrap:
 
-<ul><li><code>nowrap</code>: this is the default setting, and does not wrap items.</li><li><code>wrap</code>: wraps items from left-to-right if they are in a row, or top-to-bottom if they are in a column.</li><li><code>wrap-reverse</code>: wraps items from right-to-left if they are in a row, or bottom-to-top if they are in a column.</li></ul>
+<ul><li><code>nowrap</code>: this is the default setting, and does not wrap items.</li><li><code>wrap</code>: wraps items onto multiple lines from top-to-bottom if they are in rows and left-to-right if they are in columns.</li><li><code>wrap-reverse</code>: wraps items onto multiple lines from bottom-to-top if they are in rows and right-to-left if they are in columns.</li></ul>
 
 # --instructions--
 
