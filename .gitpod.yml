@@ -1,5 +1,4 @@
-image:
-  file: .gitpod.Dockerfile
+image: gitpod/workspace-mongodb
 ports:
   - port: 27017 # mongodb
     onOpen: ignore
