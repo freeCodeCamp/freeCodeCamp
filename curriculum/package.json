@@ -12,7 +12,6 @@
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
   "version": "0.0.0-next.4",
-  "main": "lib.js",
   "scripts": {
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-next-step",
