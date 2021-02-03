@@ -23,7 +23,7 @@ const removeDeletedFiles = async projectId => {
   const crowdinFiles = await getFiles(projectId);
 
   if (crowdinFiles && crowdinFiles.length) {
-    const command = 'find curriculum/challenges/english -name \\*.md';
+    const command = 'find curriculum/challenges/english -name \\*.*';
     const listOfEnglishFiles = await getOutputFromCommand(command);
     const curriculumFilesArr = listOfEnglishFiles.split('\n');
     if (curriculumFilesArr.length) {
