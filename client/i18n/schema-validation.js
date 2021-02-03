@@ -5,7 +5,7 @@ const { availableLangs } = require('./allLangs');
 const { trendingSchema } = require('./trending-schema');
 const { motivationSchema } = require('./motivation-schema');
 const { introSchema } = require('./intro-schema');
-const { metaTagsSchema } = require('./metaTags-schema');
+const { metaTagsSchema } = require('./meta-tags-schema');
 
 /**
  * Flattens a nested object structure into a single
@@ -240,11 +240,14 @@ const introSchemaValidation = languages => {
 
 const metaTagsSchemaValidation = languages => {
   languages.forEach(language => {
-    const filePath = path.join(__dirname, `/locales/${language}/metaTags.json`);
+    const filePath = path.join(
+      __dirname,
+      `/locales/${language}/meta-tags.json`
+    );
     const fileData = fs.readFileSync(filePath);
     const fileJson = JSON.parse(fileData);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(fileKeys, metaTagsSchemaKeys, `${language}/metaTags.json`);
+    findMissingKeys(fileKeys, metaTagsSchemaKeys, `${language}/meta-tags.json`);
     findExtraneousKeys(
       fileKeys,
       metaTagsSchemaKeys,

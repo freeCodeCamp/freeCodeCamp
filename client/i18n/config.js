@@ -15,7 +15,7 @@ i18n.use(initReactI18next).init({
       translations: require(`./locales/${clientLocale}/translations.json`),
       trending: require(`./locales/${clientLocale}/trending.json`),
       intro: require(`./locales/${clientLocale}/intro.json`),
-      metaTags: require(`./locales/${clientLocale}/metaTags.json`)
+      metaTags: require(`./locales/${clientLocale}/meta-tags.json`)
     }
   },
   ns: ['translations', 'trending', 'intro', 'metaTags'],
