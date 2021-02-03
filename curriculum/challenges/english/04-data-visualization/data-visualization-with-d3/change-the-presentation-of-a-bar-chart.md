@@ -113,10 +113,10 @@ assert(
   .bar {
     width: 25px;
     height: 100px;
-    /* Change code below this line */
+    /* Add your code below this line */
 
     
-    /* Change code above this line */
+    /* Add your code above this line */
     display: inline-block;
     background-color: blue;
   }
