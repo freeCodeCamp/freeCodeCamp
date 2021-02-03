@@ -23,9 +23,13 @@ const removeDeletedFiles = async projectId => {
   const crowdinFiles = await getFiles(projectId);
 
   if (crowdinFiles && crowdinFiles.length) {
-    const command = 'find curriculum/challenges/english -name \\*.*';
-    const listOfEnglishFiles = await getOutputFromCommand(command);
+    const challengeCommand = 'find curriculum/challenges/english -name \\*.*';
+    const listOfEnglishFiles = await getOutputFromCommand(challengeCommand);
+    const dictionaryCommand =
+      'find curriculum/dictionaries/english -name \\*.*';
+    const listOfDictFiles = await getOutputFromCommand(dictionaryCommand);
     const curriculumFilesArr = listOfEnglishFiles.split('\n');
+    curriculumFilesArr.concat(listOfDictFiles.split('\n'));
     if (curriculumFilesArr.length) {
       const curriculumLookup = curriculumFilesArr.reduce((obj, filename) => {
         return { ...obj, [filename]: 1 };
