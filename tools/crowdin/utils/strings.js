@@ -24,7 +24,7 @@ const isReservedHeading = (context, str) => {
 
 const isCode = str => /^\/pre\/code|\/code$/.test(str);
 
-const isTitle = str => /^(tests\s*->\s*\d+\s*)?->\s*title/.test(str);
+const isTitle = str => str.endsWith('title');
 
 const shouldHide = (text, context, challengeTitle, crowdinFilePath) => {
   if (crowdinFilePath.endsWith('.yml')) {
