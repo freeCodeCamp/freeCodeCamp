@@ -1,7 +1,7 @@
 {
   "name": "challenge-parser",
   "version": "0.0.1",
-  "description": "converts mdx files to challenge objects",
+  "description": "converts challenge files to objects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
