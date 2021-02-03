@@ -2,11 +2,11 @@
 
 Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on to the next video challenge in the course.
 
 The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
+You can help by creating multiple-choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
 ## Challenge Template
@@ -34,7 +34,7 @@ Challenge description text, in markdown
 
 # --question--
 
-These fields are currently used for the multiple choice Python challenges.
+These fields are currently used for the multiple-choice Python challenges.
 
 ## --text--
 
@@ -71,11 +71,11 @@ You can find the markdown files for video challenges at the following locations 
 
 Pick a challenge markdown file from the options above.
 
-### Skim through the video associated with the challenge and create a mutiple choice question
+### Skim through the video associated with the challenge and create a multiple-choice question
 
 First, find the videoId.
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
 ```
 ---
 id: 5e9a093a74c4063ca6f7c14d
@@ -85,16 +85,16 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Next, access the YouTube video with that videoId. The url for the video will be:
+Next, access the YouTube video with that videoId. The URL for the video will be:
 https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
+In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
+Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
 
 ### Add the question to the markdown file
 
-You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
+You can add the question locally or using the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
@@ -122,7 +122,7 @@ More answers
 1
 ```
 
-Update the  “Question Text” with your question. Update the `Answer 1`, `Answer 2`, and so on with the possible answers. Make sure to update the video-solution number with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
+Update the  “Question Text” with your question. Update the `Answer 1`, `Answer 2`, and so on with the possible answers. Make sure to update the video-solution number with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded by quotation marks.
 
 ### Question examples
 

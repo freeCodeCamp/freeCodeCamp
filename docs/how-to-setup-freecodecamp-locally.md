@@ -364,9 +364,9 @@ Follow these steps:
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
-   Changes not staged for commit:
+   Changes were not staged for commit:
    (use "git add/rm <file>..." to update what will be committed)
-   (use "git checkout -- <file>..." to discard changes in working directory)
+   (use "git checkout -- <file>..." to discard changes in the working directory)
 
        modified:   CONTRIBUTING.md
        modified:   docs/README.md
@@ -442,7 +442,7 @@ Follow these steps:
 
    You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
    ```console
    git commit --amend
@@ -483,9 +483,9 @@ A quick reference to the commands that you will need when working locally.
 
 ### Issues with installing the recommended prerequisites
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
 If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
@@ -493,7 +493,7 @@ If you are on a different OS and/or are still running into issues, see [getting 
 >
 > Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Issues with the UI, Fonts, build errors etc.
+### Issues with the UI, Fonts, build errors, etc.
 
 If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
@@ -514,7 +514,7 @@ npm run clean-and-develop
 
 If you continue to face issues with the build, cleaning up the workspace is recommend.
 
-Use `git clean` in interative mode:
+Use `git clean` in an interactive mode:
 
 ```
 git clean -ifdX
@@ -528,7 +528,7 @@ git clean -ifdX
    <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
 </details>
 
-### Issues with API, Login, Challenge Submissions, etc.
+### Issues with API, login, Challenge Submissions, etc.
 
 If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
@@ -552,7 +552,7 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
 
 ## Getting Help
 

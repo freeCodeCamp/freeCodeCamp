@@ -19,11 +19,11 @@ You should now see the list of available files. Choose your file by selecting th
 
 ![Image - Proofreading View](./images/crowdin/proofread.png)
 
-<!--Add proofread/crowdsource button to image-->
+<!--Add proofread/crowdsource button to the image-->
 
-Here you will see the list of strings in the selected file, with their related translations. The translation that is displayed here is the translation which has received the highest score (between upvotes and downvotes) from the translation community.
+Here you will see the list of strings in the selected file, with their related translations. The translation that is displayed here is the translation that has received the highest score (between upvotes and downvotes) from the translation community.
 
-While you are able to view *all* proposed translations for a given string, the community scores (determined by the upvotes and downvotes) should be taken in to consideration when choosing which translation to approve. The community is able to review proposed translations and recommend which one is most accurate and clear.
+While you can view *all* proposed translations for a given string, the community scores (determined by the upvotes and downvotes) should be taken into consideration when choosing which translation to approve. The community can review proposed translations and recommend which one is most accurate and clear.
 
 1. This is the original string (in English).
 2. This is the matching translated string. The most popular translation proposal, based on upvotes and downvotes, will be displayed here.
@@ -37,7 +37,7 @@ While you are able to view *all* proposed translations for a given string, the c
 > [!WARNING]
 > Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
 
-No additional actions are required once a file has been proofread. If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/translators).
+No additional actions are required once a file has been proofread. If you have any questions or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/translators).
 
 > [!NOTE]
-> Crowdin will allow you to approve your own translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
+> Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.

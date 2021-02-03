@@ -71,7 +71,7 @@ When you attempt to save a translation, you may see a warning message appear wit
 
 ![Image - QA Warning Message](./images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that. 
+This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
 > [!WARNING]
 > You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error might be incorrect.
@@ -86,7 +86,7 @@ If the replaced tags are something that should be translated (such as `strong` t
 
 Follow these guidelines to ensure our translations are as accurate as possible:
 
-- Do not translate content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
+- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
 - Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
 - Do not change the order of content.
 

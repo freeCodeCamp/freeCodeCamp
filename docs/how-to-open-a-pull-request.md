@@ -12,15 +12,15 @@ We recommend using [conventional title and messages](https://www.conventionalcom
 >
 > `fix(learn): tests for the do...while loop challenge`
 
-When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Type:**
 
 | Type  | When to select                                                               |
 | :---- | :--------------------------------------------------------------------------- |
-| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
 | feat  | Only if you are adding new functionality, tests, etc.                        |
-| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.         |
 | docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
 **Scope:**
@@ -34,7 +34,7 @@ Keep it short (less than 30 characters) and simple, you can add more information
 Some examples of good PRs titles would be:
 
 - `fix(a11y): improved search bar contrast`
-- `feat: add more tests to html and css challenges`
+- `feat: add more tests to HTML and CSS challenges`
 - `fix(api,client): prevent CORS errors on form submission`
 - `docs(i18n): Chinese translation of local setup`
 
