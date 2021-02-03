@@ -28,8 +28,8 @@ const removeDeletedFiles = async projectId => {
     const dictionaryCommand =
       'find curriculum/dictionaries/english -name \\*.*';
     const listOfDictFiles = await getOutputFromCommand(dictionaryCommand);
-    const curriculumFilesArr = listOfEnglishFiles.split('\n');
-    curriculumFilesArr.concat(listOfDictFiles.split('\n'));
+    let curriculumFilesArr = listOfEnglishFiles.split('\n');
+    curriculumFilesArr = curriculumFilesArr.concat(listOfDictFiles.split('\n'));
     if (curriculumFilesArr.length) {
       const curriculumLookup = curriculumFilesArr.reduce((obj, filename) => {
         return { ...obj, [filename]: 1 };
