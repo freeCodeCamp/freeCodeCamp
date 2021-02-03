@@ -16,7 +16,7 @@ If you don’t know what middleware is... don’t worry, we will discuss in deta
 
 Mount the `express.static()` middleware to the path `/public` with `app.use()`. The absolute path to the assets folder is `__dirname + /public`.
 
-Now your app should be able to serve a CSS stylesheet. Note that the `/public/style.css` file is referenced in the `/views/index.html` in the project boilerplate. Also note that you should still keep the code in a previous challenge serving the `/views/index.html` to the root. Your front-page should look a little better now!
+Now your app should be able to serve a CSS stylesheet. Note that the `/public/style.css` file is referenced in the `/views/index.html` in the project boilerplate. Your front-page should look a little better now!
 
 # --hints--
 
