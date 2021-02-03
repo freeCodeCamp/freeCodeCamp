@@ -60,6 +60,8 @@ const TRANSLATABLE_COMMENTS = getTranslatableComments(
   path.resolve(__dirname, '..', 'dictionaries')
 );
 
+// the config files are created during the build, but not before linting
+// eslint-disable-next-line import/no-unresolved
 const testEvaluator = require('../../config/client/test-evaluator').filename;
 
 const commentExtractors = {
