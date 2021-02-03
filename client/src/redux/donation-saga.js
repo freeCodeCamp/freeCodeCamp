@@ -4,7 +4,8 @@ import {
   takeEvery,
   takeLeading,
   delay,
-  call
+  call,
+  take
 } from 'redux-saga/effects';
 
 import {
@@ -12,11 +13,12 @@ import {
   preventBlockDonationRequests,
   shouldRequestDonationSelector,
   preventProgressDonationRequests,
-  canRequestBlockDonationSelector,
+  recentlyClaimedBlockSelector,
   addDonationComplete,
   addDonationError,
   postChargeStripeComplete,
-  postChargeStripeError
+  postChargeStripeError,
+  types as appTypes
 } from './';
 
 import { addDonation, postChargeStripe } from '../utils/ajax';
@@ -27,9 +29,10 @@ function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
   if (shouldRequestDonation) {
     yield delay(200);
-    const isBlockDonation = yield select(canRequestBlockDonationSelector);
-    yield put(openDonationModal(isBlockDonation));
-    if (isBlockDonation) {
+    const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
+    yield put(openDonationModal());
+    yield take(appTypes.closeDonationModal);
+    if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());
     } else {
       yield put(preventProgressDonationRequests());
