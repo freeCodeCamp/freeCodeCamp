@@ -50,7 +50,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 3. Install a code editor of your choice.
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/)or [Atom](https://atom.io/). These are great, free and open source code editors.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
 4. Set up linting for your code editor.
 
@@ -181,7 +181,7 @@ cp sample.env .env
 
 # Windows
 copy sample.env .env
-  ```
+```
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
@@ -298,7 +298,7 @@ Follow these steps:
 
    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
-  Update your local copy of the freeCodeCamp upstream repository:
+   Update your local copy of the freeCodeCamp upstream repository:
 
    ```console
    git fetch upstream
@@ -408,7 +408,7 @@ Follow these steps:
        modified:   docs/README.md
        modified:   docs/how-to-setup-freecodecamp-locally.md
        modified:   docs/how-to-work-on-guide-articles.md
-    ```
+   ```
 
    Now, you can commit your changes with a short message like so:
 
@@ -434,7 +434,7 @@ Follow these steps:
    fix: update build scripts for Travis-CI
    feat: add article for JavaScript hoisting
    docs: update contributing guidelines
-    ```
+   ```
 
    Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 

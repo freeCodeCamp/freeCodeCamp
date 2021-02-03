@@ -446,13 +446,13 @@ function myFunc() {
 
 ## Testing Challenges
 
-Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge.
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
 1. To test all challenges run the below command from the root directory
 
 ```
 npm run test:curriculum
-```
+``` 
 
 2. You can also test a block or a superblock of challenges with these commands
 
@@ -482,7 +482,7 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 
 > [!TIP]
 > You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
->
+> 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
 ### Useful Links

@@ -42,9 +42,9 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
 ```markdown
 Thank you for your pull request.
-
+ 
 We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
-
+ 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
 
@@ -80,7 +80,7 @@ In both of these situations, you should go ahead and close their pull request an
 
 ```markdown
 Thank you for opening this pull request.
-
+ 
 This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
 
 Thank you and happy coding.

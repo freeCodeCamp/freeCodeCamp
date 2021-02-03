@@ -41,6 +41,3 @@ No additional actions are required once a file has been proofread. If you have a
 
 > [!NOTE]
 > Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
-
-
-

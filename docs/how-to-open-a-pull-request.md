@@ -46,7 +46,7 @@ Some examples of good PRs titles would be:
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
-  Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
    ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
@@ -61,7 +61,7 @@ Some examples of good PRs titles would be:
    - If the PR is meant to address an existing GitHub Issue then, at the end of
      your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-   > Example: `Closes #123` will close issue 123
+     > Example: `Closes #123` will close issue 123
 
 5. Indicate if you have tested on a local copy of the site or not.
 
@@ -146,7 +146,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
       git branch -D <pr-branch-name>
       ```
 
-  b. Or just a backup of your pr branch (if you do not have it locally):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
       git checkout -b <backup-branch-name> origin/<pr-branch-name>
@@ -178,6 +178,6 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 6. If everything looks good push back to the PR
 
-    ```console
-    git push --force origin <pr-branch-name>
-    ```
+   ```console
+   git push --force origin <pr-branch-name>
+   ```
