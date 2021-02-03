@@ -137,8 +137,8 @@ function translateGeneric(text, config, regexBefore, regexAfter) {
   for (const [match, before, comment, after] of matches) {
     if (knownComments.includes(comment)) {
       text = text.replace(match, `${before}${dict[comment][lang]}${after}`);
-    } else {
-      console.warn(`${comment} does not appear in the comment dictionary`);
+    } else if (comment.trim()) {
+      throw `${comment} does not appear in the comment dictionary`;
     }
   }
 
