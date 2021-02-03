@@ -60,7 +60,7 @@ const TRANSLATABLE_COMMENTS = getTranslatableComments(
   path.resolve(__dirname, '..', 'dictionaries')
 );
 
-const testEvaluator = require('../../client/config/test-evaluator').filename;
+const testEvaluator = require('../../config/client/test-evaluator').filename;
 
 const commentExtractors = {
   html: require('./utils/extract-html-comments'),

@@ -16,7 +16,7 @@ import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
 import { langCodes } from '../../../../i18n/allLangs';
-import { clientLocale } from '../../../../config/env';
+import { clientLocale } from '../../../../../config/env.json';
 
 const localeCode = langCodes[clientLocale];
 

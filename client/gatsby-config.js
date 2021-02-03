@@ -4,7 +4,8 @@ const {
   clientLocale,
   curriculumLocale,
   homeLocation
-} = require('../config/env');
+} = require('../config/env.json');
+
 const {
   buildChallenges,
   replaceChallengeNode,

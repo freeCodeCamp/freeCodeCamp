@@ -154,13 +154,18 @@ jspm_packages/
 ### Netlify ###
 .netlify
 
+### Generated config files ###
+config/env.json
+config/client/sass-compile.json
+config/client/frame-runner.json
+config/client/test-evaluator.json
+
 ### Additional Files ###
 *.csv
 *.dat
 *.out
 *.gz
 *.swp
-env.json
 curriculum/curricula.json
 client/static/js/frame-runner.js
 client/static/js/frame-runner.js.map

@@ -8,7 +8,7 @@ import { createStructuredSelector } from 'reselect';
 import { currentTabSelector, moveToTab } from '../redux';
 import { bindActionCreators } from 'redux';
 import EditorTabs from './EditorTabs';
-import { showUpcomingChanges } from '../../../../config/env.json';
+import { showUpcomingChanges } from '../../../../../config/env.json';
 
 const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector

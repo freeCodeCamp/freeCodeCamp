@@ -5,7 +5,7 @@ const { writeFileSync } = require('fs');
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
   const staticPath = path.join(__dirname, './static/js');
-  const configPath = path.join(__dirname, './config');
+  const configPath = path.join(__dirname, '../config/client');
   return {
     mode: __DEV__ ? 'development' : 'production',
     entry: {

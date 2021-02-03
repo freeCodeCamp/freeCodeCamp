@@ -7,7 +7,7 @@ import { createSelector } from 'reselect';
 import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 import { withTranslation } from 'react-i18next';
 
-import { paypalClientId, deploymentEnv } from '../../../config/env.json';
+import { paypalClientId, deploymentEnv } from '../../../../config/env.json';
 import {
   paypalConfigurator,
   paypalConfigTypes

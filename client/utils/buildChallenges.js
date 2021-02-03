@@ -6,7 +6,7 @@ const {
   challengesDir,
   getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
-const { curriculumLocale } = require('../config/env.json');
+const { curriculumLocale } = require('../../config/env.json');
 
 exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 

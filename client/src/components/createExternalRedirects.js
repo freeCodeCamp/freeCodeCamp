@@ -1,4 +1,4 @@
-import { forumLocation } from '../../config/env.json';
+import { forumLocation } from '../../../config/env.json';
 
 const createExternalRedirect = (page, { clientLocale }) => {
   const isNotEnglish = clientLocale !== 'english';

@@ -17,7 +17,7 @@ import createWorker from '../utils/worker-executor';
 
 // the config files are created during the build, but not before linting
 // eslint-disable-next-line import/no-unresolved
-import { filename as sassCompile } from '../../../../config/sass-compile';
+import { filename as sassCompile } from '../../../../../config/client/sass-compile';
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;

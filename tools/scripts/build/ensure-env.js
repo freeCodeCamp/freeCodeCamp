@@ -4,7 +4,6 @@ const path = require('path');
 const env = require('../../../config/env');
 const { availableLangs } = require('../../../client/i18n/allLangs');
 
-const clientPath = path.resolve(__dirname, '../../../client');
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 const { FREECODECAMP_NODE_ENV } = process.env;
@@ -104,5 +103,4 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   checkCurriculumLocale();
 }
 
-fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));
 fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { first } from 'lodash';
 import EditorTabs from './EditorTabs';
 import ActionRow from './ActionRow';
-import { showUpcomingChanges } from '../../../../config/env.json';
+import { showUpcomingChanges } from '../../../../../config/env.json';
 
 const propTypes = {
   challengeFiles: PropTypes.object,
