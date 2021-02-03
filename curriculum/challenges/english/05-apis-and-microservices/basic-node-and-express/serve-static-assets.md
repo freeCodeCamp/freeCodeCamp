@@ -20,7 +20,7 @@ Now your app should be able to serve a CSS stylesheet. Note that the `/public/st
 
 # --hints--
 
-Your app should serve asset files from the `/public` directory to `/public` path
+Your app should serve asset files from the `/public` directory to the `/public` path
 
 ```js
 (getUserInput) =>
