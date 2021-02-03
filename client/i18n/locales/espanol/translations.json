@@ -1,33 +1,4 @@
 {
-  "meta": {
-    "title": "Aprende a codificar gratis: cursos de programación para personas ocupadas",
-    "description": "Aprende a codificar en casa. Construye proyectos. Obtén certificaciones. Desde el 2014, más de 40,000 graduados de freeCodeCamp.org han conseguido trabajos en empresas de tecnología como Google, Apple, Amazon y Microsoft.",
-    "social-description": "Learn to Code — For Free",
-    "keywords": [
-      "javascript",
-      "js",
-      "sitio web",
-      "web",
-      "desarrollo",
-      "gratis",
-      "código",
-      "camp",
-      "curso",
-      "cursos",
-      "html",
-      "css",
-      "react",
-      "redux",
-      "api",
-      "front",
-      "back",
-      "end",
-      "aprende",
-      "tutorial",
-      "programación"
-    ],
-    "youre-unsubscribed": "Tu suscripción ha sido cancelada"
-  },
   "buttons": {
     "logged-in-cta-btn": "Empieza es gratis",
     "logged-out-cta-btn": "Inicia sesión para guardar tu progreso (es gratis)",

@@ -61,7 +61,7 @@ export const LearnPage = ({
 
   return (
     <LearnLayout>
-      <Helmet title={t('meta.title')} />
+      <Helmet title={t('metaTags:title')} />
       <Grid>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

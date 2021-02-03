@@ -16,7 +16,7 @@ export const getheadTagComponents = () => {
     <link href={pathToBootstrap} key='bootstrap-min' rel='stylesheet' />,
     <meta content='freeCodeCamp.org' key='og:title' name='og:title' />,
     <meta
-      content={i18next.t('meta.social-description')}
+      content={i18next.t('metaTags:social-description')}
       key='og:description'
       name='og:description'
     />,
@@ -37,7 +37,7 @@ export const getheadTagComponents = () => {
       name='twitter:title'
     />,
     <meta
-      content={i18next.t('meta.social-description')}
+      content={i18next.t('metaTags:social-description')}
       key='twitter:description'
       name='twitter:description'
     />,
