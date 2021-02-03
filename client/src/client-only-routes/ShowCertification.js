@@ -233,14 +233,15 @@ const ShowCertification = props => {
 
   const {
     date,
-    name: userFullName,
+    name: userFullName = null,
     username,
     certTitle,
     completionTime
   } = cert;
+
   const { user } = props;
 
-  const displayName = user.profileUI.showName ? userFullName : username;
+  const displayName = userFullName ? userFullName : username;
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();
