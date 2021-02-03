@@ -235,6 +235,14 @@ describe('translation parser', () => {
       );
     });
 
+    it('ignores empty comments', () => {
+      expect.assertions(1);
+      const seed = '//';
+      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
+        seed
+      );
+    });
+
     it('only replaces text inside comments, not between them', () => {
       const seed = `multiline comment /*  Add your code below this line */
          /* Add your code above this line */ Add your code below this line /* */  `;
@@ -363,33 +371,36 @@ describe('translation parser', () => {
       ).toBe(seed);
     });
 
-    it('only replaces exact matches (js)', () => {
+    it('throws if there is not an exact match (js)', () => {
+      expect.assertions(2);
       const seedMulti = `/*  Add your code below this line
       Add your code above this line */ <span>change code below this line</span>  `;
       const seedInline = `// Add your code below this line, please`;
-      expect(
+      expect(() =>
         translateComments(seedMulti, 'chinese', SIMPLE_TRANSLATION, 'js')
-      ).toBe(seedMulti);
-      expect(
+      ).toThrow();
+      expect(() =>
         translateComments(seedInline, 'chinese', SIMPLE_TRANSLATION, 'js')
-      ).toBe(seedInline);
+      ).toThrow();
     });
 
     it('only replaces exact matches (jsx)', () => {
+      expect.assertions(1);
       const seedMulti = `{ /*  Add your code below this line
       Add your code above this line */ } <span>change code below this line</span>  `;
-      expect(
+      expect(() =>
         translateComments(seedMulti, 'chinese', SIMPLE_TRANSLATION, 'jsx')
-      ).toBe(seedMulti);
+      ).toThrow();
     });
 
     it('only replaces exact matches (html)', () => {
+      expect.assertions(1);
       const seed = `<div> <!--  Add your code below this line
        Add your code above this line --> <span>change code below this line</span>  `;
 
-      expect(
+      expect(() =>
         translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
-      ).toBe(seed);
+      ).toThrow();
     });
 
     it('only translates jsx comments once', () => {
@@ -400,7 +411,8 @@ describe('translation parser', () => {
       ).toBe(transSeed);
     });
 
-    it('warns if the comment is not in the dictionary', () => {
+    it('throws if the comment is not in the dictionary', () => {
+      expect.assertions(6);
       const seedJSX = `{ /* this is not a comment */ }`;
       const seedInline = `// this is not a comment `;
       const seedMulti = `/* this is not a comment */`;
@@ -410,18 +422,24 @@ describe('translation parser', () => {
       const seedHTML = `<div> <!--  this is not a comment --> `;
       const seedScript = `<script> // this is not a comment </script>`;
 
-      translateComments(seedJSX, 'chinese', SIMPLE_TRANSLATION, 'jsx');
-      expect(logSpy).toBeCalledTimes(1);
-      translateComments(seedInline, 'chinese', SIMPLE_TRANSLATION, 'js');
-      expect(logSpy).toBeCalledTimes(2);
-      translateComments(seedMulti, 'chinese', SIMPLE_TRANSLATION, 'js');
-      expect(logSpy).toBeCalledTimes(3);
-      translateComments(seedCSS, 'chinese', SIMPLE_TRANSLATION, 'html');
-      expect(logSpy).toBeCalledTimes(4);
-      translateComments(seedHTML, 'chinese', SIMPLE_TRANSLATION, 'html');
-      expect(logSpy).toBeCalledTimes(5);
-      translateComments(seedScript, 'chinese', SIMPLE_TRANSLATION, 'html');
-      expect(logSpy).toBeCalledTimes(6);
+      expect(() =>
+        translateComments(seedJSX, 'chinese', SIMPLE_TRANSLATION, 'jsx')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedInline, 'chinese', SIMPLE_TRANSLATION, 'js')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedMulti, 'chinese', SIMPLE_TRANSLATION, 'js')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedCSS, 'chinese', SIMPLE_TRANSLATION, 'html')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedHTML, 'chinese', SIMPLE_TRANSLATION, 'html')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedScript, 'chinese', SIMPLE_TRANSLATION, 'html')
+      ).toThrow();
     });
   });
 });
