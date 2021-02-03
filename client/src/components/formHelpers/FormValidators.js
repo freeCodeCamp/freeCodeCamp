@@ -1,5 +1,5 @@
-// Matches editor links for: Repl.it, Glitch, CodeSandbox
-const editorRegex = /repl\.it\/@|glitch\.com\/edit\/#!|codesandbox\.io\/s\//;
+// Matches editor links for: Repl.it, Glitch, CodeSandbox, GitHub
+const editorRegex = /repl\.it\/@|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
 const localhostRegex = /localhost:/;
 
 export const editorValidator = value =>
@@ -11,4 +11,4 @@ export const localhostValidator = value =>
     : null;
 
 export const composeValidators = (...validators) => value =>
-  validators.reduce((error, validator) => error ?? validator(value), null);
+  validators.reduce((error, validator) => error ?? validator?.(value), null);

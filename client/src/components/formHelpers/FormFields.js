@@ -39,7 +39,7 @@ function FormFields(props) {
     types = {}
   } = options;
 
-  const nullOrWarning = (value, error, isURL) => {
+  const nullOrWarning = (value, error, isURL, name) => {
     let validationError;
     if (value && isURL) {
       try {
@@ -49,7 +49,7 @@ function FormFields(props) {
       }
     }
     const validationWarning = composeValidators(
-      editorValidator,
+      name === 'githubLink' ? null : editorValidator,
       localhostValidator
     )(value);
     const message = error || validationError || validationWarning;
@@ -90,7 +90,7 @@ function FormFields(props) {
                       type={type}
                       value={value}
                     />
-                    {nullOrWarning(value, !pristine && error, isURL)}
+                    {nullOrWarning(value, !pristine && error, isURL, name)}
                   </FormGroup>
                 </Col>
               );
