@@ -8,7 +8,7 @@ const util = require('util');
 /* eslint-disable max-len */
 const {
   translateCommentsInChallenge
-} = require('../tools/challenge-parser/translation-parser/translation-parser');
+} = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
 const { isAuditedCert } = require('../utils/is-audited');

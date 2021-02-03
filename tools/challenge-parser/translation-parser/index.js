@@ -1,5 +1,4 @@
-const { isEmpty } = require('lodash');
-const clone = require('lodash/cloneDeep');
+const { isEmpty, cloneDeep } = require('lodash');
 
 exports.translateComments = (text, lang, dict, codeLang) => {
   const knownComments = Object.keys(dict);
@@ -16,7 +15,7 @@ exports.translateComments = (text, lang, dict, codeLang) => {
 };
 
 exports.translateCommentsInChallenge = (challenge, lang, dict) => {
-  const challClone = clone(challenge);
+  const challClone = cloneDeep(challenge);
   if (!challClone.files) {
     console.warn(`Challenge ${challClone.title} has no comments to translate`);
   } else {
