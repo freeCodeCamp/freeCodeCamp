@@ -19,10 +19,11 @@ Here's an example of a page's layout:
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- metadata elements -->
+    <meta />
   </head>
   <body>
-    <!-- page contents -->
+    <div>
+    </div>
   </body>
 </html>
 ```
