@@ -1,5 +1,4 @@
 const makeRequest = require('./make-request');
-const delay = require('./delay');
 const authHeader = require('./auth-header');
 
 const addFile = async (projectId, filename, fileContent, directoryId) => {
@@ -88,7 +87,6 @@ const getFiles = async projectId => {
   let files = [];
   while (!done) {
     const endPoint = `projects/${projectId}/files?limit=500&offset=${offset}`;
-    await delay(1000);
     const response = await makeRequest({
       method: 'get',
       endPoint,

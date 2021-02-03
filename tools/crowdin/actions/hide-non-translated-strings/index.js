@@ -1,5 +1,4 @@
 require('dotenv').config({ path: `${__dirname}/../../.env` });
-// const core = require('@actions/core');
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
@@ -20,7 +19,13 @@ const createChallengeTitleLookup = (
     const {
       data: { title: challengeTitle }
     } = matter(challengeContent);
-    return { ...lookup, [fileId]: challengeTitle };
+    return {
+      ...lookup,
+      [fileId]: {
+        crowdinFilePath,
+        challengeTitle
+      }
+    };
   } catch (err) {
     console.log(err.name);
     console.log(err.message);
@@ -39,8 +44,15 @@ const hideNonTranslatedStrings = async projectId => {
     const crowdinStrings = await getStrings({ projectId });
     if (crowdinStrings && crowdinStrings.length) {
       for (let string of crowdinStrings) {
-        const challengeTitle = challengeTitleLookup[string.data.fileId];
-        await updateFileString({ projectId, string, challengeTitle });
+        const { crowdinFilePath, challengeTitle } = challengeTitleLookup[
+          string.data.fileId
+        ];
+        await updateFileString({
+          projectId,
+          string,
+          challengeTitle,
+          crowdinFilePath
+        });
       }
     }
   }
