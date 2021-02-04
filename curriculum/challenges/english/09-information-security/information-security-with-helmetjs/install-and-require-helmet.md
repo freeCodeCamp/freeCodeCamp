@@ -16,7 +16,7 @@ Helmet helps you secure your Express apps by setting various HTTP headers.
 
 All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
 
-Install Helmet version `3.21.3`, then require it.
+Install Helmet version `3.21.3`, then require it. You can install a specific version of a package with `npm install --save-exact package@version`, or by adding it to your `package.json` directly.
 
 # --hints--
 
@@ -26,8 +26,9 @@ Install Helmet version `3.21.3`, then require it.
 (getUserInput) =>
   $.get(getUserInput('url') + '/_api/package.json').then(
     (data) => {
-      var packJson = JSON.parse(data);
-      assert(packJson.dependencies.helmet === '3.21.3');
+      const packJson = JSON.parse(data);
+      const helmet = packJson.dependencies.helmet;
+      assert(helmet === '3.21.3' || helmet === '^3.21.3');
     },
     (xhr) => {
       throw new Error(xhr.responseText);
