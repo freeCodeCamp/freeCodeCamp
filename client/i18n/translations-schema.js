@@ -568,6 +568,14 @@ const translationsSchema = {
     'invalid-protocol': 'URL must start with http or https',
     'url-not-image': 'URL must link directly to an image file',
     'use-valid-url': 'Please use a valid URL'
+  },
+  certification: {
+    certifies: 'This certifies that',
+    completed: 'has successfully completed the freeCodeCamp.org',
+    developer: 'Developer Certification, representing approximately',
+    executive: 'Executive Director, freeCodeCamp.org',
+    verify: 'Verify this certification at {{certURL}}',
+    issued: 'Issued'
   }
 };
 
