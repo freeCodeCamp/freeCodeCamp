@@ -8,7 +8,13 @@ dashedName: install-and-require-helmet
 
 # --description--
 
-Start this project on Repl.it using <a rel='noopener noreferrer' target='_blank' href='https://repl.it/github/freeCodeCamp/boilerplate-infosec'>this link</a> or clone <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-infosec/'>this repository</a> on GitHub. If you use Repl.it, remember to save the link to your project somewhere safe.
+Working on these challenges will involve you writing your code using one of the following methods:
+
+- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-infosec/) and complete these challenges locally.
+- Use [our Repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-infosec) to complete these challenges.
+- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
 Helmet helps you secure your Express apps by setting various HTTP headers.
 
