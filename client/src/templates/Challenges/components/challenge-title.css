@@ -1,5 +1,6 @@
 .challenge-title-wrap {
   text-align: center;
+  padding-top: 10px;
 }
 
 .challenge-title {
@@ -11,9 +12,7 @@
   flex-direction: row;
   justify-content: space-around;
   font-size: 16px;
-  margin-left: -10px;
-  margin-right: -10px;
-  border-bottom: 1px solid var(--quaternary-color);
+  border: 1px solid var(--quaternary-background);
   height: 25px;
 }
 
@@ -31,6 +30,7 @@
   flex-grow: 1;
   flex-shrink: 2;
   background-color: var(--quaternary-background);
+  padding: 0px 3px;
 }
 
 .breadcrumb-center {
@@ -56,6 +56,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding: 0px 3px;
 }
 
 .breadcrumb-rule {
