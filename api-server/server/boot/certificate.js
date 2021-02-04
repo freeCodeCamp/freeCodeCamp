@@ -423,7 +423,7 @@ function createShowCert(app) {
           ]
         });
       }
-      const { isLocked, showCerts } = user.profileUI;
+      const { isLocked, showCerts, showName } = user.profileUI;
 
       if (!user.name) {
         return res.json({
@@ -512,6 +512,16 @@ function createShowCert(app) {
         }
 
         const { username, name } = user;
+
+        if (!showName) {
+          return res.json({
+            certTitle,
+            username,
+            date: completedDate,
+            completionTime
+          });
+        }
+
         return res.json({
           certTitle,
           username,

@@ -75,6 +75,9 @@ const propTypes = {
         )
       })
     ),
+    profileUI: PropTypes.shape({
+      showName: PropTypes.bool
+    }),
     username: PropTypes.string
   }),
   userFetchState: PropTypes.shape({
@@ -230,12 +233,15 @@ const ShowCertification = props => {
 
   const {
     date,
-    name: userFullName,
+    name: userFullName = null,
     username,
     certTitle,
     completionTime
   } = cert;
+
   const { user } = props;
+
+  const displayName = userFullName ?? username;
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();
@@ -328,7 +334,7 @@ const ShowCertification = props => {
             <div className='information-container'>
               <h3>This certifies that</h3>
               <h1>
-                <strong>{userFullName}</strong>
+                <strong>{displayName}</strong>
               </h1>
               <h3>has successfully completed the freeCodeCamp.org</h3>
               <h1>
@@ -362,7 +368,7 @@ const ShowCertification = props => {
       </Grid>
       {signedInUserName === username ? shareCertBtns : ''}
       <Spacer size={2} />
-      <ShowProjectLinks user={user} name={userFullName} certName={certTitle} />
+      <ShowProjectLinks user={user} name={displayName} certName={certTitle} />
     </div>
   );
 };
