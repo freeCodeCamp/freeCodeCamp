@@ -170,7 +170,6 @@
   font-family: 'lato', sans-serif;
   font-size: 18px;
   color: var(--gray-00);
-  outline: none;
   background-color: var(--theme-color);
   cursor: pointer;
   max-height: calc(var(--header-height) - 6px);
