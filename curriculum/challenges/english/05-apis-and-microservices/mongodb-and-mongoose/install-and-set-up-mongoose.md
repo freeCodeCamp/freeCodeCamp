@@ -8,7 +8,11 @@ dashedName: install-and-set-up-mongoose
 
 # --description--
 
-In this challenge, you will import the required packages and connect to your Atlas database.
+In this challenge, you will set up a MongoDB Atlas database and import the required packages to connect to it.
+
+Follow [this](https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/) tutorial to set up a hosted database on MongoDB Atlas.
+
+After you set up your hosted database, start this project on Repl.it using <a rel='noopener noreferrer' target='_blank' href='https://repl.it/github/freeCodeCamp/boilerplate-mongomongoose'>this link</a> or clone <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-mongomongoose/'>this repository</a> on GitHub. If you use Repl.it, remember to save the link to your project somewhere safe.
 
 # --instructions--
 
