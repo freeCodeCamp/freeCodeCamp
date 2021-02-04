@@ -9,7 +9,7 @@ dashedName: nest-many-elements-within-a-single-div-element
 
 # --description--
 
-`div` 元素也叫 Content Division Element（内容划分元素）元素，是一个包裹其他元素的通用容器。
+`div` 元素也叫内容划分元素，是一个包裹其他元素的通用容器。
 
 它也是 HTML 中出现频率最高的元素。
 
@@ -17,9 +17,9 @@ dashedName: nest-many-elements-within-a-single-div-element
 
 # --instructions--
 
-请把无序列表、有序列表和段落都嵌套进同一个 `div` 元素。
+将你的列表“猫喜欢的三件事”和“猫最讨厌的三件事”放入同一个 `div` 元素中。
 
-提示：你可以在第一个 `<p>` 之前插入 `div` 开始标记，在 `</ol>` 之后插入 `div` 结束标签。这样，所有的列表都会位于 `div` 之内。
+提示：你可以在第一个 `<p>` 之前插入 `div` 开始标记，在 `</ol>` 之后插入 `div` 结束标签。 这样，所有的列表都会位于 `div` 之内。
 
 # --hints--
 
@@ -92,7 +92,7 @@ assert(
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
   <div>
     <p>Things cats love:</p>

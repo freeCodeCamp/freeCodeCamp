@@ -9,9 +9,11 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 
 # --description--
 
-`a` 元素还可以用来实现页面内不同区域的跳转，只需要把 `a` 元素的 `href` 值设置为井号 `#` 加欲跳转区域所对应的 `id` 属性值即可。`id` 是描述网页元素的一个属性，它的值在整个页面中唯一。
+`a`（*anchor*）元素也可以用于创建内部链接，跳转到网页内的各个不同部分。
 
-下面是用来创建内部 `a` 的例子：
+要创建内部链接，你需要将链接的 `href` 属性值设置为一个哈希符号 `#` 加上你想内部链接到的元素的 `id`，通常是在网页下方的元素。 然后你需要将相同的 `id` 属性添加到你链接到的元素中。 `id` 是描述网页元素的一个属性，它的值在整个页面中唯一。
+
+当用户点击了 `Contacts` 链接，页面就会跳转到网页的 **Contacts** 区域。
 
 ```html
 <a href="#contacts-header">Contacts</a>
@@ -19,37 +21,37 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-当用户点击了 `Contacts` 链接，页面就会跳转到网页的 **Contacts** 区域。
+当用户点击 `Contacts` 链接，可以访问网页中带有 **Contacts** 标题元素的部分。
 
 # --instructions--
 
-请修改 `href` 属性值为 `#footer` 来将外部链接更改为内部链接，同时修改文本 `cat photos` 为 `Jump to Bottom`。
-
-移除 `target="\_blank"` 属性，这个属性的存在会让链接在新标签页中打开。
+通过修改 `href` 属性值为 `"#footer"`，同时修改文本 `cat photos` 为 `Jump to Bottom`，来更改外部链接为内部链接。
 
 然后添加一个 `<footer>` 元素，并将它的 `id` 属性值设置为 `footer`。
 
+然后给页面底部的 `<footer>` 元素添加一个 `id` 属性，值为 `footer`。
+
 # --hints--
 
-页面中应只存在一个 `a` 元素。
+页面中应只存在一个 `footer` 元素。
 
 ```js
 assert($('a').length == 1);
 ```
 
-页面中应只存在一个 `footer` 元素。
+`a` 的 `href` 属性值应为 `#footer`。
 
 ```js
 assert($('footer').length == 1);
 ```
 
-`a` 的 `href` 属性值应为 `#footer`。
+`a` 不应有 `target` 属性。
 
 ```js
 assert($('a').eq(0).attr('href') == '#footer');
 ```
 
-`a` 不应有 `target` 属性。
+`a` 的内容文本应为 `Jump to Bottom`。
 
 ```js
 assert(
@@ -58,7 +60,7 @@ assert(
 );
 ```
 
-`a` 的内容文本应为 `Jump to Bottom`。
+`footer` 元素的 `id` 属性值应为 `footer`。
 
 ```js
 assert(
@@ -69,7 +71,7 @@ assert(
 );
 ```
 
-`footer` 元素的 `id` 属性值应为 `footer`。
+`footer` 标签应该有一个 `id` 属性，值为 “footer”。
 
 ```js
 assert($('footer').eq(0).attr('id') == 'footer');

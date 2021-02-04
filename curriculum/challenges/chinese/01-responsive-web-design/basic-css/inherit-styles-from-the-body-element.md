@@ -17,9 +17,9 @@ dashedName: inherit-styles-from-the-body-element
 
 首先，创建一个内容文本为 `Hello World` 的 `h1` 元素。
 
-接着，在 `body` 的 CSS 规则里面添加 `color: green;`，这会将页面内所有字体的颜色都设置为绿色。
+接着，在 `body` 的 CSS 规则里面添加 `color: green;`，这会将页面内所有字体的颜色都设置为 `green`。
 
-最后，在 `body` 的 CSS 规则里面添加 `font-family: monospace;`，这会将页面内所有字体的 `font-family` 都设置为 `monospace`。
+最后，在 `body` 的 CSS 规则里面添加 `font-family: monospace;`，这会将 `body` 内所有元素的字体都设置为 `monospace`。
 
 # --hints--
 

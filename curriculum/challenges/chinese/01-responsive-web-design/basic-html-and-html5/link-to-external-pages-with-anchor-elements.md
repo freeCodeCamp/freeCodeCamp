@@ -15,7 +15,7 @@ dashedName: link-to-external-pages-with-anchor-elements
 
 `<a href="https://freecodecamp.org">this links to freecodecamp.org</a>`
 
-在浏览器中，以上的标签会将文字 **"链接到 freeCodeCamp"** 展示成一个可点击的超链接。 点击该文本就会跳转到 **`https://freecodecamp.org`**。
+浏览器将显示文本 `this links to freecodecamp.org`，这是一个可点击的链接。 你可以通过这个链接访问 `https://www.freecodecamp.org`。
 
 # --instructions--
 
@@ -23,7 +23,7 @@ dashedName: link-to-external-pages-with-anchor-elements
 
 # --hints--
 
-`a` 元素的锚文本应为 “cat photos”。
+`a` 元素应有锚文本 `cat photos`。
 
 ```js
 assert(/cat photos/gi.test($('a').text()));

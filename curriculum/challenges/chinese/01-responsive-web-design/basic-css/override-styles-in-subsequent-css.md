@@ -9,15 +9,15 @@ dashedName: override-styles-in-subsequent-css
 
 # --description--
 
-"pink-text" class 覆盖了 `body` 元素的 CSS 声明。
+我们的 `pink-text` class 覆盖了 `body` 元素的 CSS 样式！
 
-我们刚刚证明了我们的 class 会覆盖 `body` 的 CSS 样式。那么下一个问题是，我们要怎么样才能覆盖我们的 `pink-text` class 中所定义的样式？
+我们刚刚证明了 class 会覆盖 `body` 的 CSS 样式。 那么下一个问题是，要怎么样才能覆盖 `pink-text` class 中所定义的样式？
 
 # --instructions--
 
-创建一个字体颜色为 `blue` 的 `blue-text` class，并确保它在 `pink-text` 下方声明。
+创建一个 `blue-text` class，将元素的颜色设置为蓝色。 将它放在 `pink-text` class 下面。
 
-在含有 `pink-text` class 的 `h1` 元素里面，添加上 `blue-text` class。我们来看看到底是谁获胜。
+创建一个字体颜色为 `blue` 的 `blue-text` class，并确保它在 `pink-text` 下方声明。
 
 HTML 同时应用多个 class 属性需以空格来间隔，例子如下:
 
@@ -25,7 +25,7 @@ HTML 同时应用多个 class 属性需以空格来间隔，例子如下:
 
 **注意：**HTML 元素里应用的 class 的先后顺序无关紧要。
 
-但是，在 `<style>` 标签里面声明的 `class` 顺序十分重要，之后的声明会覆盖之前的声明。由于 `.blue-text` 在 `.pink-text` 的后面出现，所以 `.blue-text` 里的样式会覆盖 `.pink-text` 里的样式。
+但是，在 `<style>` 标签里面声明的 `class` 顺序十分重要，之后的声明会覆盖之前的声明。 第二个声明的优先级始终高于第一个声明。 由于 `.blue-text` 是在后面声明的，所以它的样式会覆盖 `.pink-text` 里的样式。
 
 # --hints--
 

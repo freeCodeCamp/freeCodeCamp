@@ -9,11 +9,9 @@ dashedName: introduction-to-html5-elements
 
 # --description--
 
-HTML5 引入了很多更具描述性的 HTML 元素，例如：`header`、`footer`、`nav`、`video`、`article`、`section` 等等。
+HTML5 引入了很多更具描述性的 HTML 元素， 包括 `main`、`header`、`footer`、`nav`、`video`、`article`、`section` 等等。
 
-这些元素让 HTML 更易读，同时有助于搜索引擎优化和无障碍访问。
-
-`main` 元素让搜索引擎和开发者能很快地找到网页的主要内容。
+这些元素让 HTML 更易读，同时有助于搜索引擎优化和无障碍访问。 `main` 元素让搜索引擎和开发者能很快地找到网页的主要内容。
 
 举个例子，下面的 `main` 元素嵌套了两个子元素：
 
@@ -28,7 +26,7 @@ HTML5 引入了很多更具描述性的 HTML 元素，例如：`header`、`foote
 
 # --instructions--
 
-请在现有的段落之后创建一个新的段落，段落内容为：`Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+请在现有的 `p` 之后创建一个新的 `p` 元素，内容为：`Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
 然后，请添加一个 `main` 元素，作为现有的两个 `p` 元素的父级元素。
 
@@ -49,7 +47,7 @@ assert(
 );
 ```
 
-新建的段落应包含关键词 `Purr jump eat`。
+新建的`p` 元素应包含 `kitty ipsum text` 的前面几个词。
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));
@@ -61,7 +59,7 @@ assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));
 assert($('main').length === 1);
 ```
 
-`main` 元素应有两个 `p` 元素作为它的子元素。
+`main` 元素应有两个段落元素作为它的子元素。
 
 ```js
 assert($('main').children('p').length === 2);

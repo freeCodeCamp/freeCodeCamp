@@ -15,17 +15,17 @@ dashedName: use-rgb-to-mix-colors
 
 将 `style` 标签里面中的十六进制编码替换为正确的 RGB 值。
 
-<table class='table table-striped'><tbody><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
+<table class='table table-striped'><tbody><tr><th>颜色</th><th>RGB</th></tr><tr><td>蓝色</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>红色</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>淡紫色</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>赭黄色</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
 # --hints--
 
-文本内容为 `I am red!` 的 `h1` 元素的字体颜色应为红色。
+文本内容为 `I am red!` 的 `h1` 元素的 `color` 值应为红色。
 
 ```js
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-红色应使用 `RGB` 值来表示。
+红色应使用 `rgb` 值来表示。
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-文本内容为 `I am orchid!` 的 `h1` 元素的字体颜色应为兰紫色。
+文本内容为 `I am orchid!` 的 `h1` 元素的 `color` 应为淡紫色。
 
 ```js
 assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)');
 ```
 
-兰紫色应使用 `RGB` 值来表示。
+淡紫色应使用 `rgb` 值来表示。
 
 ```js
 assert(
@@ -51,13 +51,13 @@ assert(
 );
 ```
 
-文本内容为 `I am blue!` 的 `h1` 元素的字体颜色应为蓝色。
+文本内容为 `I am blue!` 的 `h1` 元素的 `color` 应为蓝色。
 
 ```js
 assert($('.blue-text').css('color') === 'rgb(0, 0, 255)');
 ```
 
-蓝色应使用 `RGB` 值来表示。
+蓝色应使用 `rgb` 值来表示。
 
 ```js
 assert(
@@ -67,13 +67,13 @@ assert(
 );
 ```
 
-文本内容为 `I am sienna!` 的 `h1` 元素的字体颜色应为黄土赭色。
+文本内容为 `I am sienna!` 的 `h1` 元素的 `color` 应为赭黄色。
 
 ```js
 assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)');
 ```
 
-黄土赭色应使用 `RGB` 值来表示。
+赭黄色应使用 `rgb` 值来表示。
 
 ```js
 assert(

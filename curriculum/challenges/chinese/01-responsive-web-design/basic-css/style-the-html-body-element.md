@@ -15,7 +15,7 @@ dashedName: style-the-html-body-element
 
 # --instructions--
 
-我们可以通过设置 `background-color` 的属性值为 `black`，来证明 `body` 元素的存在。
+我们可以通过设置 `background-color` 的属性值为 黑色，来证明 `body` 元素的存在。
 
 请将以下代码添加到 `style` 标签里面：
 

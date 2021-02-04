@@ -21,7 +21,7 @@ dashedName: give-a-background-color-to-a-div-element
 
 # --instructions--
 
-创建一个 `silver-background` class 并设置其 `background-color` 为 `silver`。之后，将这个 class 添加到 `div` 元素上。
+创建一个叫作 `silver-background` 的 class，并设置 `background-color` 为 `silver`。 之后，将这个 class 添加到 `div` 元素上。
 
 # --hints--
 
@@ -31,7 +31,7 @@ dashedName: give-a-background-color-to-a-div-element
 assert($('div').hasClass('silver-background'));
 ```
 
-`div` 元素背景颜色应设置为 `silver`。
+`div` 元素背景颜色应设置为银色。
 
 ```js
 assert($('div').css('background-color') === 'rgb(192, 192, 192)');

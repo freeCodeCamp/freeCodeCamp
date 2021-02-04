@@ -9,9 +9,9 @@ dashedName: size-your-images
 
 # --description--
 
-CSS 的 `width` 属性可以控制元素的宽度。和设置文本字号一样，我们会以 `px`（像素）为单位来设置图片的宽度。
+CSS 的 `width` 属性可以控制元素的宽度。 和设置文本字号一样，我们会以 `px`（像素）为单位来设置图片的宽度。
 
-例如，如果你想创建一个叫 `larger-image` 的 CSS `class` 来控制 HTML 元素的宽度为 500px，就可以这样写：
+例如，如果你想创建一个叫 `larger-image` 的 CSS class，来控制 HTML 元素的宽度为 500px，就可以这样写：
 
 ```html
 <style>
@@ -23,11 +23,11 @@ CSS 的 `width` 属性可以控制元素的宽度。和设置文本字号一样�
 
 # --instructions--
 
-创建一个叫 `smaller-image` 的 CSS `class`，并用它来设置图片宽度为 100px。
+创建一个叫 `smaller-image` 的 CSS class，并用它来设置图片宽度为 100px。
 
 # --hints--
 
-`img` 元素的 `class` 应包含 `smaller-image`。
+`img` 元素应包含 `smaller-image` class。
 
 ```js
 assert(
@@ -39,7 +39,10 @@ assert(
 图片宽度应为 100px。
 
 ```js
-assert($('img').width() === 100);
+assert(
+  $('img').width() < 200 &&
+    code.match(/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i)
+);
 ```
 
 # --seed--
@@ -122,9 +125,9 @@ assert($('img').width() === 100);
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -139,7 +142,7 @@ assert($('img').width() === 100);
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

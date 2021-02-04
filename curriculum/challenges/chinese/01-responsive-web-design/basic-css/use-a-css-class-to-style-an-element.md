@@ -9,9 +9,9 @@ dashedName: use-a-css-class-to-style-an-element
 
 # --description--
 
-CSS 的 `class` 具有可重用性，可应用于各种 HTML 元素。
+CSS 的 class 具有可重用性，可应用于各种 HTML 元素。
 
-一个 CSS `class` 声明示例如下所示：
+一个 CSS class 声明示例如下所示：
 
 ```html
 <style>
@@ -21,15 +21,13 @@ CSS 的 `class` 具有可重用性，可应用于各种 HTML 元素。
 </style>
 ```
 
-可以看到，我们在 `<style>` 样式声明区域里，创建了一个名为 `blue-text` 的 `class` 选择器。你可以将 CSS `class` 添加到一个 HTML 元素里，如下所示：`<h2 class="blue-text">CatPhotoApp</h2>`
-
-**注意：**在 `style` 样式区域声明里，`class` 需以 `.` 开头。而在 HTML 元素里，`class` 属性的前面不能添加 `.`。
+可以看到，我们在 `<style>` 样式声明区域里，创建了一个名为 `blue-text` 的 `class` 选择器。 你可以将一个 class 添加到一个 HTML 元素里，如下所示：`<h2 class="blue-text">CatPhotoApp</h2>`。注意在 CSS `style` 里，class 名称以一个句点开始。 而在 HTML 元素的 class 属性中，名称前面没有句点。
 
 # --instructions--
 
 在 `style` 样式声明里，把 `h2` 元素选择器改为 `.red-text` class 选择器，同时将颜色 `blue` 改为 `red`。
 
-在 `h2` 元素里，添加一个 `class`，值为 `'red-text'`。
+把 `h2` 元素的 `class` 属性值设置为 `'red-text'`。
 
 # --hints--
 
@@ -39,13 +37,13 @@ CSS 的 `class` 具有可重用性，可应用于各种 HTML 元素。
 assert($('h2').css('color') === 'rgb(255, 0, 0)');
 ```
 
-`h2` 元素应含有 `red-text` class。
+`h2` 元素应有一个 `red-text` class。
 
 ```js
 assert($('h2').hasClass('red-text'));
 ```
 
-`style` 样式声明区域里应该包含一个 `red-text` class 选择器，且它的颜色应为红色。
+样式表应该声明一个 `red-text` class，颜色为 `red`。
 
 ```js
 assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
@@ -113,9 +111,9 @@ assert($('h2').attr('style') === undefined);
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -130,7 +128,7 @@ assert($('h2').attr('style') === undefined);
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

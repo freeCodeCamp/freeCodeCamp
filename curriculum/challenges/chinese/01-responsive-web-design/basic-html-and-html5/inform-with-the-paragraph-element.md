@@ -9,7 +9,7 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-`p` 是 `paragraph` 的缩写，通常用来创建一个段落，就和你写作文一样。
+`p` 元素是网站上段落文本使用的元素。 `p` 是“paragraph（段落）”的缩写。
 
 你可以像这样创建一个段落：
 
@@ -17,7 +17,9 @@ dashedName: inform-with-the-paragraph-element
 
 # --instructions--
 
-请在 `h2` 元素下方添加一个 `p` 元素，元素内容是 `Hello Paragraph`。
+在 `h2` 元素下方添加一个 `p` 元素，其内容是 `Hello Paragraph`。
+
+**注意：**按照惯例，所有 HTML 标签都应该是小写字母，例如应使用 `<p></p>`，而不会使用`<P></P>`。
 
 # --hints--
 

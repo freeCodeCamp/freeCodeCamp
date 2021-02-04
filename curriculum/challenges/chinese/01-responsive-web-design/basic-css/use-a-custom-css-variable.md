@@ -15,9 +15,7 @@ dashedName: use-a-custom-css-variable
 background: var(--penguin-skin);
 ```
 
-因为引用了 `--penguin-skin` 变量的值，使用了这个样式的元素背景颜色会是灰色。
-
-**注意：**如果变量名不匹配，则样式不会生效。
+因为引用了 `--penguin-skin` 变量的值，使用了这个样式的元素背景颜色会是灰色。 请注意，除非变量名称完全匹配，否则将不会应用样式。
 
 # --instructions--
 
@@ -25,7 +23,7 @@ background: var(--penguin-skin);
 
 # --hints--
 
-class 为 `penguin-top` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
+将 `--penguin-skin` 的值应用到 `penguin-top` class 的 `background` 属性。
 
 ```js
 assert(

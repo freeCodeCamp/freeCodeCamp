@@ -17,7 +17,7 @@ dashedName: adjust-the-padding-of-an-element
 
 `padding` 用来控制着元素内容与 `border` 之间的空隙大小。
 
-在这个挑战中，我们可以看到蓝色框和红色框都在黄色框里面，同时，红色框比蓝色框的 `padding` 大。
+我们可以看到蓝色框和红色框是嵌套在黄色框里的。 注意红色框的 `padding` 比蓝色框的更多。
 
 如果你增加蓝色框的 `padding` 值，其中的文本内容与边框的距离就也会变大。
 

@@ -9,15 +9,15 @@ dashedName: create-a-set-of-checkboxes
 
 # --description--
 
-`checkboxes`（复选框）就好比多项选择题，正确答案有多个。
+<dfn>checkboxes</dfn>（复选框）就好比多项选择题，正确答案有多个。
 
 复选框是 `input` 选择框的一种类型。
 
-每一个复选框都应该嵌套在它自己的 `label`（标签）元素中。这样，我们相当于给 `input` 元素和包裹它的 `label` 元素建立起了对应关系。
+每一个复选框都应该嵌套在它自己的 `label`（标签）元素中。 这样，我们相当于给 `input` 元素和包裹它的 `label` 元素建立起了对应关系。
 
 所有关联的复选框应该拥有相同的 `name` 属性。
 
-使得 `input` 与 `label` 关联的最佳实践是在 `label` 元素上设置 `for` 属性，让其值与复选框的 `id` 属性值相同。
+使得 `input` 与 `label` 关联的最佳实践是在 `label` 元素上设置 `for` 属性，让其值与相关联的 `input` 复选框的 `id` 属性值相同。
 
 下面是一个复选框的例子：
 
@@ -25,7 +25,7 @@ dashedName: create-a-set-of-checkboxes
 
 # --instructions--
 
-请给表单添加三个复选框，每个复选框都被嵌套进 `label` 元素中，并且它的 `name` 属性均为 `personality`。你可以随意指定每个复选框的内容文本。
+请给表单添加三个复选框， 每个复选框都被嵌套进 `label` 元素中， 并且它们的 `name` 属性均为 `personality`。
 
 # --hints--
 
@@ -103,9 +103,9 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>
