@@ -85,7 +85,7 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Next, access the YouTube video with that videoId. The url for the video will be:
+Next, access the YouTube video with that videoId. The URL for the video will be:
 https://www.youtube.com/watch?v=[videoId]    (replace `videoId` in the URL with the video's ID - without square brackets)
 
 In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
