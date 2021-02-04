@@ -20,7 +20,7 @@ export function formatUrlValues(values, options) {
     let value = values[key];
     const nullOrWarning = composeValidators(
       localhostValidator,
-      editorValidator
+      key === 'githubLink' ? null : editorValidator
     )(value);
     if (nullOrWarning) {
       validatedValues.invalidValues.push(nullOrWarning);
