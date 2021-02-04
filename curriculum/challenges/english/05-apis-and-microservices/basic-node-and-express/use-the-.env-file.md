@@ -16,7 +16,7 @@ The environment variables are accessible from the app as `process.env.VAR_NAME`.
 
 Let's add an environment variable as a configuration option.
 
-Store the variable `MESSAGE_STYLE=uppercase` in the `.env` file. Then tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{"message": "HELLO JSON"}`.
+Create a `.env` file in the root of your project directory, and store the variable `MESSAGE_STYLE=uppercase` in it. Then, in the GET `/json` route handler that you created in the last challenge, transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{"message": "HELLO JSON"}`.
 
 # --hints--
 
