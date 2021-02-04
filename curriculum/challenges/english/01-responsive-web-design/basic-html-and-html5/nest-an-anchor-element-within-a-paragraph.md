@@ -17,11 +17,23 @@ You can nest links within other text elements.
 </p>
 ```
 
-Let's break down the example: Normal text is wrapped in the `p` element:  
-`<p> Here's a ... for you to follow. </p>` Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):  
-`<a> ... </a>` `target` is an anchor tag attribute that specifies where to open the link and the value `_blank` specifies to open the link in a new tab `href` is an anchor tag attribute that contains the URL address of the link:  
-`<a href="http://freecodecamp.org"> ... </a>` The text, **"link to freecodecamp.org"**, within the `a` element called `anchor text`, will display a link to click:  
-`<a href=" ... ">link to freecodecamp.org</a>` The final output of the example will look like this:  
+Let's break down the example. Normal text is wrapped in the `p` element:
+
+`<p> Here's a ... for you to follow. </p>`
+
+Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):  
+
+`<a> ... </a>`
+
+`target` is an anchor tag attribute that specifies where to open the link. The value `_blank` specifies to open the link in a new tab. The `href` is an anchor tag attribute that contains the URL address of the link:  
+
+`<a href="http://freecodecamp.org"> ... </a>`
+
+The text, `link to freecodecamp.org`, within the `a` element is called `anchor text`, and will display the link to click:  
+
+`<a href=" ... ">link to freecodecamp.org</a>`
+
+The final output of the example will look like this:  
 
 Here's a [link to freecodecamp.org](http://freecodecamp.org) for you to follow.
 
