@@ -12,8 +12,8 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v2
 
-      ##### Chinese Download #####
-      - name: Crowdin Download for Chinese Translations
+      ##### Download #####
+      - name: Crowdin Download for Translations
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
@@ -25,7 +25,7 @@ jobs:
 
           # downloads
           download_translations: true
-          skip_untranslated_files: true
+          skip_untranslated_files: false
           export_only_approved: true
 
           commit_message: 'chore(i8n,learn): processed translations'
