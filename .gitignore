@@ -1,13 +1,9 @@
 ### VisualStudioCode ###
 .vscode/*
-
 ### VisualStudioCode Patch ###
-
 # Ignore all local history of files
 .history
-
 ### Windows ###
-
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
@@ -59,7 +55,6 @@ $RECYCLE.BIN/
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
