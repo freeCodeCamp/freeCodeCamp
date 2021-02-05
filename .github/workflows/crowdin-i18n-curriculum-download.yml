@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v2
 
-      ##### Chinese Download #####
+      ##### Download #####
       - name: Crowdin Download for Translations
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
