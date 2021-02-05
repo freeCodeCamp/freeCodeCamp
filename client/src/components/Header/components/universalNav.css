@@ -182,6 +182,11 @@
   border: 1px solid var(--gray-00);
 }
 
+.toggle-button-nav:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -3px;
+}
+
 .navatar {
   display: contents;
 }
