@@ -470,11 +470,11 @@
     "use-valid-url": "Utiliza un URL válido"
   },
   "certification": {
-    "certifies": "Spanish: This certifies that",
-    "completed": "Spanish: has successfully completed the freeCodeCamp.org",
-    "developer": "Spanish: Developer Certification, representing approximately",
-    "executive": "Spanish: Executive Director, freeCodeCamp.org",
-    "verify": "Spanish: Verify this certification at {{certURL}}",
-    "issued": "Spanish: Issued"
+    "certifies": "This certifies that",
+    "completed": "has successfully completed the freeCodeCamp.org",
+    "developer": "Developer Certification, representing approximately",
+    "executive": "Executive Director, freeCodeCamp.org",
+    "verify": "Verify this certification at {{certURL}}",
+    "issued": "Issued"
   }
 }

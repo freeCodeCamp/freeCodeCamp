@@ -470,11 +470,11 @@
     "use-valid-url": "请使用有效的 URL"
   },
   "certification": {
-    "certifies": "Chinese: This certifies that",
-    "completed": "Chinese: has successfully completed the freeCodeCamp.org",
-    "developer": "Chinese: Developer Certification, representing approximately",
-    "executive": "Chinese: Executive Director, freeCodeCamp.org",
-    "verify": "Chinese: Verify this certification at {{certURL}}",
-    "issued": "Chinese: Issued"
+    "certifies": "This certifies that",
+    "completed": "has successfully completed the freeCodeCamp.org",
+    "developer": "Developer Certification, representing approximately",
+    "executive": "Executive Director, freeCodeCamp.org",
+    "verify": "Verify this certification at {{certURL}}",
+    "issued": "Issued"
   }
 }
