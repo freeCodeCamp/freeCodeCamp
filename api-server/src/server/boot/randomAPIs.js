@@ -1,6 +1,6 @@
 import request from 'request';
 
-import constantStrings from '../utils/constantStrings.json';
+import { constantStrings } from '../../../../config/certification-settings';
 import { getRedirectParams } from '../utils/redirection';
 
 const githubClient = process.env.GITHUB_ID;
