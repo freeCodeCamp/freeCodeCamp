@@ -24,20 +24,32 @@ $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 {2+\\frac 1 2}}} = \\frac {41}{29} = 1.4
 
 The next three expansions are $\\frac {99}{70}$, $\\frac {239}{169}$, and $\\frac {577}{408}$, but the eighth expansion, $\\frac {1393}{985}$, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator.
 
-In the first one-thousand expansions, how many fractions contain a numerator with more digits than denominator?
+In the first `n` expansions, how many fractions contain a numerator with more digits than denominator?
 
 # --hints--
 
-`squareRootConvergents()` should return a number.
+`squareRootConvergents(10)` should return a number.
 
 ```js
-assert(typeof squareRootConvergents() === 'number');
+assert(typeof squareRootConvergents(10) === 'number');
 ```
 
-`squareRootConvergents()` should return 153.
+`squareRootConvergents(10)` should return 1.
 
 ```js
-assert.strictEqual(squareRootConvergents(), 153);
+assert.strictEqual(squareRootConvergents(10), 1);
+```
+
+`squareRootConvergents(100)` should return 15.
+
+```js
+assert.strictEqual(squareRootConvergents(100), 15);
+```
+
+`squareRootConvergents(1000)` should return 153.
+
+```js
+assert.strictEqual(squareRootConvergents(1000), 153);
 ```
 
 # --seed--
@@ -45,12 +57,12 @@ assert.strictEqual(squareRootConvergents(), 153);
 ## --seed-contents--
 
 ```js
-function squareRootConvergents() {
+function squareRootConvergents(n) {
 
   return true;
 }
 
-squareRootConvergents();
+squareRootConvergents(1000);
 ```
 
 # --solutions--
