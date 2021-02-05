@@ -468,5 +468,13 @@
     "invalid-protocol": "URL 必须以 http 或 https 开头",
     "url-not-image": "URL 必须直接链接到图片文件",
     "use-valid-url": "请使用有效的 URL"
+  },
+  "certification": {
+    "certifies": "Chinese: This certifies that",
+    "completed": "Chinese: has successfully completed the freeCodeCamp.org",
+    "developer": "Chinese: Developer Certification, representing approximately",
+    "executive": "Chinese: Executive Director, freeCodeCamp.org",
+    "verify": "Chinese: Verify this certification at {{certURL}}",
+    "issued": "Chinese: Issued"
   }
 }
