@@ -31,7 +31,7 @@ jobs:
           commit_message: 'chore(i8n,learn): processed translations'
 
           # pull-request
-          localization_branch_name: i18n-sync-learn-processed-translations
+          localization_branch_name: i18n-sync-learn
           create_pull_request: false
           pull_request_title: 'chore(i18n,learn): Processed translations from Crowdin'
           pull_request_body: ''

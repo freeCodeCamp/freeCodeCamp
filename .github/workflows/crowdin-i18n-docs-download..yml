@@ -31,7 +31,7 @@ jobs:
           commit_message: 'chore(i8n,docs): processed translations'
 
           # pull-request
-          localization_branch_name: i18n-sync-docs-processed-translations
+          localization_branch_name: i18n-sync-docs
           create_pull_request: false
           pull_request_title: 'chore(i18n,docs): Processed translations from crowdin'
           pull_request_body: ''
