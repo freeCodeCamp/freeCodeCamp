@@ -471,10 +471,10 @@ You are also able to test one challenge individually by performing the following
    cd curriculum
    ```
 
-2. Run the following for each challenge file for which you have changed (replacing `title` with the full title of the challenge):
+2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
-   npm run test -- -g 'title'
+   npm run test -- -g challenge-title-goes-here
    ```
 
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
