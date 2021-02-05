@@ -570,12 +570,11 @@ const translationsSchema = {
     'use-valid-url': 'Please use a valid URL'
   },
   certification: {
-    certifies: 'This certifies that',
-    completed: 'has successfully completed the freeCodeCamp.org',
-    developer: 'Developer Certification, representing approximately',
     executive: 'Executive Director, freeCodeCamp.org',
     verify: 'Verify this certification at {{certURL}}',
-    issued: 'Issued'
+    issued: 'Issued',
+    fulltext:
+      '<0>This certifies that</0> <1>{{user}}</1> <2>has successfully completed the freeCodeCamp.org</2> <3>{{title}}</3> <4>Developer Certification, representing approximately {{time}} hours of coursework.</4>'
   }
 };
 

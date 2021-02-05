@@ -11,7 +11,7 @@ import ShowProjectLinks from './ShowProjectLinks';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCampLogo';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import {
   showCertSelector,
@@ -332,18 +332,22 @@ const ShowCertification = props => {
 
           <main className='information'>
             <div className='information-container'>
-              <h3>{t('certification.certifies')}</h3>
-              <h1>
-                <strong>{displayName}</strong>
-              </h1>
-              <h3>{t('certification.completed')}</h3>
-              <h1>
-                <strong>{certTitle}</strong>
-              </h1>
-              <h4>
-                {t('certification.developer')} {completionTime} hours of
-                coursework
-              </h4>
+              <Trans
+                user={displayName}
+                title={certTitle}
+                time={completionTime}
+                i18nKey='certification.fulltext'
+              >
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>{{ user: displayName }}</strong>
+                </h1>
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>{{ title: certTitle }}</strong>
+                </h1>
+                <h4>{{ time: completionTime }}</h4>
+              </Trans>
             </div>
           </main>
           <footer>
