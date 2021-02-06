@@ -81,7 +81,7 @@ function squareRootConvergents(n) {
   // Use BigInt as integer won't handle all cases
   let numerator = 3n;
   let denominator = 2n;
-  let moreDigitsInDenominator = 0;
+  let moreDigitsInNumerator = 0;
 
   for (let i = 2; i <= n; i++) {
     [numerator, denominator] = [
@@ -90,9 +90,9 @@ function squareRootConvergents(n) {
     ];
 
     if (countDigits(numerator) > countDigits(denominator)) {
-      moreDigitsInDenominator++;
+      moreDigitsInNumerator++;
     }
   }
-  return moreDigitsInDenominator;
+  return moreDigitsInNumerator;
 }
 ```
