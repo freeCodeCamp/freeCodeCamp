@@ -16,13 +16,13 @@ Write a function that takes two vectors (arrays) as input and computes their cro
 
 # --hints--
 
-dotProduct should be a function.
+crossProduct should be a function.
 
 ```js
 assert.equal(typeof crossProduct, 'function');
 ```
 
-dotProduct() should return null.
+crossProduct() should return null.
 
 ```js
 assert.equal(crossProduct(), null);
