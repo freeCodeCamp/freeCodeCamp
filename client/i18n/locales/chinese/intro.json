@@ -1,212 +1,212 @@
 {
   "responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "响应式网页设计",
     "intro": [
-      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "在响应式网页设计认证中，你将学习开发者用来编写网页的语言：HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
+      "首先，你将通过编写一个展示猫咪图片的应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，以及通过构建网页表单来学习无障碍的最佳实践。",
+      "最后，你将学习使用 flexbox（弹性盒子）构建一个 Twitter 卡片，以及使用 CSS 网格构建复杂的博客布局，以此学习制作适应不同屏幕大小的网页。"
     ],
     "blocks": {
       "basic-html-and-html5": {
-        "title": "Basic HTML and HTML5",
+        "title": "基础 HTML 和 HTML5",
         "intro": [
-          "HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a heading, paragraph, or list item.",
-          "In this course, you'll build a cat photo app to learn some of the most common HTML elements — the building blocks of any webpage."
+          "HTML 是一种标记语言，使用特殊的语法或标记来向浏览器描述网页的结构。HTML 元素由开始和结束标签构成，标签之间是文本内容。 不同的标签可以让文本内容以标题、段落、列表等形式展现。",
+          "在这个课程中，你将通过编写一个展示猫咪图片的应用，学习最常见的 HTML 元素——它们可以用来构成任何网页。"
         ]
       },
       "basic-css": {
-        "title": "Basic CSS",
+        "title": "基础 CSS",
         "intro": [
-          "CSS, or Cascading Style Sheets, tell the browser how to display the text and other content that you write in HTML. With CSS, you can control the color, font, size, spacing, and many other aspects of HTML elements.",
-          "Now that you've described the structure of your cat photo app, give it some style with CSS."
+          "CSS（级联样式表）告诉浏览器如何显示你在 HTML 中写入的文本和其他内容。你可以使用 CSS 控制 HTML 元素的颜色、字体、大小、间距等许多\b属性。",
+          "现在你已经写好了猫图应用的基本结构，接下来我们用 CSS 给它加一些样式。"
         ]
       },
       "applied-visual-design": {
-        "title": "Applied Visual Design",
+        "title": "应用视觉设计",
         "intro": [
-          "Visual design is a combination of typography, color theory, graphics, animation, page layout, and more to help deliver your unique message.",
-          "In this course, you'll learn how to apply these different elements of visual design to your webpages."
+          "视觉设计结合了排版、色彩理论、图形、动画、页面布局等，以表达独特的信息。",
+          "在这个课程中，你将学习如何将这些不同的视觉设计元素应用到网页上。"
         ]
       },
       "applied-accessibility": {
-        "title": "Applied Accessibility",
+        "title": "应用无障碍",
         "intro": [
-          "In web development, accessibility refers to web content and a UI (user interface) that can be understood, navigated, and interacted with by a broad audience. This includes people with visual, auditory, mobility, or cognitive disabilities.",
-          "In this course, you'll learn best practices for building webpages that are accessible to everyone."
+          "在网页开发中，可访问性是指网页内容和用户界面可以被用户理解、浏览并与之交互。这里的用户包括有视觉障碍、听觉障碍或认知障碍的用户。",
+          "在这个课程中，你将学习提升网站可访问性的最佳实践。"
         ]
       },
       "responsive-web-design-principles": {
-        "title": "Responsive Web Design Principles",
+        "title": "响应式网页设计原则",
         "intro": [
-          "There are many devices that can access the web, and they come in all shapes and sizes. Responsive web design is the practice of designing flexible websites that can respond to different screen sizes, orientations, and resolutions.",
-          "In this course, you'll learn how to use CSS to make your webpages look good, no matter what device they're viewed on."
+          "人们可能通过形状和大小不同的设备来访问网页。通过响应式网页设计，你可以设计出能灵活适应不同屏幕大小、方向和分辨率的网页。",
+          "在这个课程中，你将学习如何使用 CSS 让你的网页在不同设备上看起来都不错。"
         ]
       },
       "css-flexbox": {
-        "title": "CSS Flexbox",
+        "title": "CSS 弹性盒子",
         "intro": [
-          "Flexbox is a powerful, well-supported layout method that was introduced with the latest version of CSS, CSS3. With flexbox, it's easy to center elements on the page and create dynamic user interfaces that shrink and expand automatically.",
-          "In this course, you'll learn the fundamentals of flexbox and dynamic layouts by building a Twitter card."
+          "Flexbox（弹性盒子）是最新版本的 CSS（即 CSS3）中引入的一种强大且兼容性好的布局方法。使用 flexbox，我们可以很容易地处理好页面上的元素布局，并创建可以自动缩小和放大的动态用户界面。",
+          "在这个课程中，你将通过构建一个 Twitter 卡片来学习 flexbox 和动态布局的基础知识。"
         ]
       },
       "css-grid": {
-        "title": "CSS Grid",
+        "title": "CSS 网格",
         "intro": [
-          "The CSS grid is a newer standard that makes it easy to build complex responsive layouts. It works by turning an HTML element into a grid, and lets you place child elements anywhere within.",
-          "In this course, you'll learn the fundamentals of CSS grid by building different complex layouts, including a blog."
+          "CSS 网格是一个较新的标准，用于构建复杂的响应布局。它通过把 HTML 元素转换为具有行和列的网格容器，以便将子元素放置在所需要的位置。",
+          "在这个课程中，你将通过构建不同的复杂布局（包括博客）来学习 CSS 网格的基础知识。"
         ]
       },
       "responsive-web-design-projects": {
-        "title": "Responsive Web Design Projects",
+        "title": "响应式网页设计项目",
         "intro": [
-          "Time to put your newly learnt skills to work. By working on these projects, you will get a chance to apply all of the skills, principles, and concepts you have learned so far: HTML, CSS, Visual Design, Accessibility, and more.",
-          "Complete the five web programming projects below to earn your Responsive Web Design certification."
+          "是时候使用你新学到的技能了。通过构建这些项目，你将有机会应用之前学到的所有技巧、原则和概念：HTML、CSS、视觉设计、无障碍等等。",
+          "完成下面的五个网页编程项目，获得响应式网页设计认证。"
         ]
       },
       "basic-html-cat-photo-app": {
-        "title": "Basic HTML Cat Photo App",
-        "intro": ["placeholder", "placeholder"]
+        "title": "基础 HTML 猫图应用",
+        "intro": ["占位符", "占位符"]
       },
       "basic-css-cafe-menu": {
-        "title": "Basic CSS Cafe Menu",
-        "intro": ["placeholder", "placeholder"]
+        "title": "基础 CSS 咖啡菜单",
+        "intro": ["占位符", "占位符"]
       },
       "css-variables-skyline": {
-        "title": "CSS Variables Skyline",
-        "intro": ["placeholder", "placeholder"]
+        "title": "CSS 变量 Skyline",
+        "intro": ["占位符", "占位符"]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "JavaScript 算法和数据结构",
     "intro": [
-      "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
-      "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
-      "Along the way, you'll also learn two important programing styles or paradigms: Object Oriented Programing (OOP), and Functional Programing (FP)."
+      "HTML 和 CSS 控制页面的内容和样式，JavaScript 则用于页面交互。在 JavaScript 算法和数据结构认证中，你将学习 JavaScript 的基础知识，包括变量、 数组、 对象、 循环和函数。",
+      "打好基础之后，你将会通过创建算法来操作字符串、进行阶乘运算甚至计算国际空间站的轨道来应用这些知识。",
+      "在这个过程中，你还会学习两种重要的编程方式或模式：面向对象的编程（OOP）和函数式编程（FP）。"
     ],
     "blocks": {
       "basic-javascript": {
-        "title": "Basic JavaScript",
+        "title": "基础 JavaScript",
         "intro": [
-          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.",
-          "In this course, you'll learn fundamental programming concepts in JavaScript. You'll start with basic data structures like numbers and strings. Then you'll learn to work with arrays, objects, functions, loops, if/else statements, and more."
+          "JavaScript 是一种用于网页交互的脚本语言。它和 HTML 和 CSS 一样，是网站的核心技术之一。所有现代浏览器都支持 JavaScript。",
+          "在这个课程中，你将学习JavaScript 中的基本编程概念。你将从数字和字符串等基本数据结构开始，然后学习使用数组、对象、函数、循环、if/else 语句等等。"
         ]
       },
       "es6": {
         "title": "ES6",
         "intro": [
-          "ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.",
-          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is always evolving, and new features are released every year.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including <code>let</code> and <code>const</code>, arrow functions, classes, promises, and modules."
+          "ECMAScript（ES）是 JavaScript 的标准。因为所有主流浏览器都遵循此规范，所以 ECMAScript 和 JavaScript 是可以互换的。",
+          "截至目前你所学到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 编写程序。JavaScript 在不断迭代，每年都会发布新功能。",
+          "2015 年发布的 ES6 为该语言增加了许多强大的新功能。在这个课程中，你将学习这些新功能，包括 <code>let</code>、<code>const</code>、箭头函数、类、promises 和模块。"
         ]
       },
       "regular-expressions": {
-        "title": "Regular Expressions",
+        "title": "正则表达式",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
-          "In this course, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
+          "正则表达式，常常缩写为 “regex” 或 “regexp”，是帮助程序员匹配、搜索和替换文本的模式。正则表达式非常强大，但可能难以阅读，因为它们使用特殊字符来做更复杂更灵活的匹配。",
+          "在这个课程中，你将学习如何使用特殊字符、捕获组、正向或负向先行断言以及其他技巧来匹配你想要的文本。"
         ]
       },
       "debugging": {
-        "title": "Debugging",
+        "title": "调试",
         "intro": [
-          "Debugging is the process of going through your code, finding any issues, and fixing them.",
-          "Issues in code generally come in three forms: syntax errors that prevent your program from running, runtime errors where your code has unexpected behavior, or logical errors where your code doesn't do what you intended.",
-          "In this course, you'll learn how to use the JavaScript console to debug programs and prevent common issues before they happen."
+          "调试是检查代码、发现并修复问题的过程。",
+          "代码中的问题通常有三种形式：1）语法错误导致程序停止运行， 2）代码无法执行或具有意外行为导致运行时错误，3）代码有语义（逻辑）错误，没有实现原来的意图。",
+          "在这个课程中，你将学习如何使用 JavaScript 控制台来调试程序，防止出现常见问题。"
         ]
       },
       "basic-data-structures": {
-        "title": "Basic Data Structures",
+        "title": "基础数据结构",
         "intro": [
-          "Data can be stored and accessed in many ways. You already know some common JavaScript data structures — arrays and objects.",
-          "In this Basic Data Structures course, you'll learn more about the differences between arrays and objects, and which to use in different situations. You'll also learn how to use helpful JS methods like <code>splice()</code> and <code>Object.keys()</code> to access and manipulate data."
+          "我们可以通过多种方式存储和访问数据。你已经知道数组和对象了，它们都是常见的 JavaScript 数据结构。",
+          "在基础数据结构课程中，你会更深入地了解数组和对象之间的差异，以及在不同情况下应该使用哪个。你还将学习到一些好用的 JS 方法，例如 <code>splice()</code>，以及使用 <code>Object.keys()</code> 来访问和操作数据。"
         ]
       },
       "basic-algorithm-scripting": {
-        "title": "Basic Algorithm Scripting",
+        "title": "基础算法",
         "intro": [
-          "An algorithm is a series of step-by-step instructions that describe how to do something.",
-          "To write an effective algorithm, it helps to break a problem down into smaller parts, and think carefully about how to solve each part with code.",
-          "In this course, you'll learn the fundamentals of algorithmic thinking by writing algorithms that do everything from converting temperatures to handling complex 2D arrays."
+          "算法是描述如何处理某个问题的一系列步骤。",
+          "要写一个有效的算法，你需要先将一个特定的问题分解为小的部分，并仔细思考如何用代码解决每个部分。",
+          "在这个课程中，你将通过编写算法来实现诸如转换温度、处理复杂的二维数组等，来学习算法思维的基础知识。"
         ]
       },
       "object-oriented-programming": {
-        "title": "Object Oriented Programming",
+        "title": "面向对象编程",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes are used to organize code to describe things and what they can do.",
-          "In this course, you'll learn the basic principles of OOP in JavaScript including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
+          "OOP，即面向对象编程，是软件开发过程的主要方法之一。在 OOP 中，我们用对象和类来组织代码，以描述事物的特点以及它们可以做什么。",
+          "在这个课程中，你将会学习 JavaScript 中面向对象编程的基本原则，例如 <code>this</code> 关键词、原型链、构造器和继承。"
         ]
       },
       "functional-programming": {
-        "title": "Functional Programming",
+        "title": "函数式编程",
         "intro": [
-          "Functional Programming is another popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.",
-          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
+          "函数式编程是另一种软件开发方法。在函数式编程中，代码被组织成较小的基本的函数，可以结合起来构建复杂的程序。",
+          "在这个课程中，你将学习函数式编程的核心概念，包括纯函数，如何避免突变，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法编写更整洁的代码。"
         ]
       },
       "intermediate-algorithm-scripting": {
-        "title": "Intermediate Algorithm Scripting",
+        "title": "中级算法",
         "intro": [
-          "Now that you know the basics of algorithmic thinking, along with OOP and Functional Programming, test your skills with the Intermediate Algorithm Scripting challenges."
+          "现在你了解了算法的基础知识、面向对象编程以及函数式编程。接下来我们将进入中级算法挑战来测试你的技能。"
         ]
       },
       "javascript-algorithms-and-data-structures-projects": {
-        "title": "JavaScript Algorithms and Data Structures Projects",
+        "title": "JavaScript 算法和数据结构项目",
         "intro": [
-          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
-          "Complete these 5 JavaScript projects to earn the JavaScript Algorithms and Data Structures certification."
+          "是时候用上你新学到的 JavaScript 技能了！接下来的项目和前面的算法挑战很相近，但是难度会更高。",
+          "完成这 5 个 JavaScript 项目，以获得 JavaScript 算法和数据结构认证。"
         ]
       },
       "basic-javascript-rpg-game": {
-        "title": "Basic JavaScript RPG Game",
-        "intro": ["placeholder", "placeholder"]
+        "title": "基础 JavaScript RPG 游戏",
+        "intro": ["占位符", "占位符"]
       },
       "intermediate-javascript-calorie-counter": {
-        "title": "Intermediate JavaScript Calorie Counter",
-        "intro": ["placeholder", "placeholder"]
+        "title": "中级 JavaScript 卡路里计算器",
+        "intro": ["占位符", "占位符"]
       },
       "functional-programming-spreadsheet": {
-        "title": "Functional Programming Spreadsheet",
-        "intro": ["placeholder", "placeholder"]
+        "title": "函数式编程电子表格",
+        "intro": ["占位符", "占位符"]
       }
     }
   },
   "front-end-libraries": {
-    "title": "Front End Development Libraries",
+    "title": "前端开发库",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
-      "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
-      "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
+      "你已经熟悉了 HTML、CSS 和 JavaScript。现在学习行业中一些流行的前端库来提升你的技能吧。",
+      "在前端库认证中，你将学习如何使用 Bootstrap 快速设置网站样式，以及如何在 CSS 样式中添加逻辑，并使用 Sass 对其进行扩展。",
+      "稍后，你将建立一个购物车和其他应用程序，学习如何使用 React 和 Redux 创建强大的单页应用程序（SPAs）。"
     ],
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-fist approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
-          "In this course, you'll learn how to build responsive websites with Bootstrap, and use its included classes to style buttons, images, forms, navigation, and other common elements."
+          "Bootstrap 是一个用于设计响应式网页和应用程序的前端框架。它具有移动优先的特点，具有预定义的 CSS 样式和 class，还有一些 JavaScript 功能。",
+          "在这个课程中，你将学习如何使用 Bootstrap 来建立响应式网页，并使用它的 class 来设置按钮、图像、表格、导航和其他常见元素的样式。"
         ]
       },
       "jquery": {
         "title": "jQuery",
         "intro": [
-          "jQuery is one of the most widely used JavaScript libraries in the world.",
-          "In 2006 when it was released, all major browsers handled JavaScript slightly differently. jQuery simplified the process of writing client-side JavaScript, and also ensured that your code worked the same way in all browsers.",
-          "In this course, you'll learn how to use jQuery to select, remove, clone, and modify different elements on the page."
+          "jQuery 是开发者们最常用的 JavaScript 库之一。",
+          "在 jQuery 于 2006 年发布时，各种常用浏览器处理 JavaScript 的方式都略有不同。jQuery 简化了编写客户端 JavaScript 的过程，并确保代码在所有浏览器中以同样的方式运行。",
+          "在这个课程中，你将学习如何使用 jQuery 选择、移除、克隆和修改页面上的不同元素。"
         ]
       },
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available in basic CSS, which make it easier for you to simplify and maintain the style sheets for your projects.",
-          "In this Sass course, you'll learn how to store data in variables, nest CSS, create reusable styles with mixins, add logic and loops to your styles, and more."
+          "Sass，英文全称为 “Syntactically Awesome StyleSheets”，是对 CSS 的扩展。它添加了一些 CSS 语法不具有的新特性。Sass 简化了 CSS，这让维护样式表变得更容易。",
+          "在 Sass 课程中，你将学习如何将数据存储在变量中、嵌套 CSS、创建可重用的样式、为样式添加逻辑和循环等等。"
         ]
       },
       "react": {
         "title": "React",
         "intro": [
-          "React is a popular JavaScript library for building reusable, component-driven user interfaces for web pages or applications.",
-          "React combines HTML with JavaScript functionality into its own markup language called JSX. React also makes it easy to manage the flow of data throughout the application.",
-          "In this course, you'll learn how to create different React components, manage data in the form of state props, use different lifecycle methods like <code>componentDidMount</code>, and much more."
+          "React 是一个流行的 JavaScript 库，用于为网页或应用程序构建可重用的组件驱动的用户界面。",
+          "React 将 HTML 与 JavaScript 结合在了一起，以此创建出一个新的标签语言 JSX。React 还使得管理整个应用程序的数据流变得更容易。",
+          "在这个课程中，你将学习如何创建不同的 React 组件，以 state props 管理数据，以及使用不同的生命周期方法（例如 <code>componentDidMount</code>）和更多内容。"
         ]
       },
       "redux": {
@@ -503,10 +503,10 @@
     }
   },
   "misc-text": {
-    "certification": "{{cert}} Certification",
-    "browse-other": "Browse our other free certifications\n(we recommend doing these in order)",
-    "courses": "Courses",
-    "expand": "Expand",
-    "collapse": "Collapse"
+    "certification": "{{cert}} 认证",
+    "browse-other": "浏览我们的其他免费认证\n（我们建议你按顺序学习）",
+    "courses": "课程",
+    "expand": "展开",
+    "collapse": "折叠"
   }
 }

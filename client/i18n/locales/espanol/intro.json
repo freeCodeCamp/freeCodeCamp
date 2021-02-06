@@ -1,78 +1,78 @@
 {
   "responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Diseño web responsivo",
     "intro": [
-      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "En esta Certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores utilizan para construir páginas web: HTML (lenguaje de marcado de hipertexto) para el contenido, y CSS (Hojas de estilo en cascada) para el diseño.",
+      "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderá técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
+      "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
     ],
     "blocks": {
       "basic-html-and-html5": {
-        "title": "Basic HTML and HTML5",
+        "title": "HTML básico y HTML5",
         "intro": [
-          "HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a heading, paragraph, or list item.",
-          "In this course, you'll build a cat photo app to learn some of the most common HTML elements — the building blocks of any webpage."
+          "HTML es un lenguaje de marcado que usa una sintaxis o notación especial para describir la estructura de una página web al navegador. Los elementos HTML generalmente tienen etiquetas de apertura y cierre que rodean y dan sentido al contenido. Por ejemplo, diferentes elementos pueden describir el texto como un título, párrafo o elemento de lista.",
+          "En este curso, crearás una aplicación de fotos para gatos para aprender algunos de los elementos HTML más comunes, los bloques básicos de cualquier página web."
         ]
       },
       "basic-css": {
-        "title": "Basic CSS",
+        "title": "CSS básico",
         "intro": [
-          "CSS, or Cascading Style Sheets, tell the browser how to display the text and other content that you write in HTML. With CSS, you can control the color, font, size, spacing, and many other aspects of HTML elements.",
-          "Now that you've described the structure of your cat photo app, give it some style with CSS."
+          "CSS, u hojas de estilo en cascada (Cascading Style Sheets), informa al navegador cómo mostrar el texto y otros contenidos que escriba en HTML. Con CSS, usted puede controlar el color, fuente, tamaño, espaciado y muchos otros aspectos de los elementos HTML.",
+          "Ahora que has descrito la estructura de tu aplicación de fotos para gatos, dale algo de estilo con CSS."
         ]
       },
       "applied-visual-design": {
-        "title": "Applied Visual Design",
+        "title": "Diseño visual aplicado",
         "intro": [
-          "Visual design is a combination of typography, color theory, graphics, animation, page layout, and more to help deliver your unique message.",
-          "In this course, you'll learn how to apply these different elements of visual design to your webpages."
+          "El diseño visual es una combinación de tipografía, teoría del color, gráficos, animación, diseño de página y más para ayudar a entregar su mensaje único.",
+          "En este curso, aprenderás cómo aplicar estos diferentes elementos de diseño visual a tus páginas web."
         ]
       },
       "applied-accessibility": {
-        "title": "Applied Accessibility",
+        "title": "Accesibilidad aplicada",
         "intro": [
-          "In web development, accessibility refers to web content and a UI (user interface) that can be understood, navigated, and interacted with by a broad audience. This includes people with visual, auditory, mobility, or cognitive disabilities.",
-          "In this course, you'll learn best practices for building webpages that are accessible to everyone."
+          "En el desarrollo web, la accesibilidad se refiere al contenido web y a una interfaz de usuario (interfaz de usuario) que puede ser entendida, navegada e interactuada por una amplia audiencia. Esto incluye a personas con discapacidades visuales, auditivas, de movilidad o cognitivas.",
+          "En este curso, aprenderá las prácticas recomendadas para crear páginas web que sean accesibles para todos."
         ]
       },
       "responsive-web-design-principles": {
-        "title": "Responsive Web Design Principles",
+        "title": "Principios de diseño web responsivo",
         "intro": [
-          "There are many devices that can access the web, and they come in all shapes and sizes. Responsive web design is the practice of designing flexible websites that can respond to different screen sizes, orientations, and resolutions.",
-          "In this course, you'll learn how to use CSS to make your webpages look good, no matter what device they're viewed on."
+          "Hay muchos dispositivos que pueden acceder a la web, y vienen en todas las formas y tamaños. El diseño web responsivo es la práctica de diseñar sitios web flexibles que pueden responder a diferentes tamaños de pantalla, orientaciones y resoluciones.",
+          "En este curso, aprenderás a usar CSS para que sus páginas web se vean bien, sin importar en qué dispositivo se vean."
         ]
       },
       "css-flexbox": {
         "title": "CSS Flexbox",
         "intro": [
-          "Flexbox is a powerful, well-supported layout method that was introduced with the latest version of CSS, CSS3. With flexbox, it's easy to center elements on the page and create dynamic user interfaces that shrink and expand automatically.",
-          "In this course, you'll learn the fundamentals of flexbox and dynamic layouts by building a Twitter card."
+          "Flexbox es un método de diseño potente y bien soportado que se introdujo con la última versión de CSS, CSS3. Con flexbox, es fácil centrar elementos en la página y crear interfaces de usuario dinámicas que se reducen y se expanden automáticamente.",
+          "En este curso, tu aprenderás los fundamentos de flexbox y diseños dinámicos mediante la construcción de una tarjeta de Twitter."
         ]
       },
       "css-grid": {
         "title": "CSS Grid",
         "intro": [
-          "The CSS grid is a newer standard that makes it easy to build complex responsive layouts. It works by turning an HTML element into a grid, and lets you place child elements anywhere within.",
-          "In this course, you'll learn the fundamentals of CSS grid by building different complex layouts, including a blog."
+          "La cuadrícula (grid) CSS es un estándar más nuevo que facilita la creación de diseños complejos y receptivos. Funciona convirtiendo un elemento HTML en una cuadrícula y le permite colocar elementos secundarios en cualquier lugar.",
+          "En este curso, aprenderá los fundamentos de la cuadrícula (grid) CSS construyendo diferentes diseños complejos, incluido un blog."
         ]
       },
       "responsive-web-design-projects": {
-        "title": "Responsive Web Design Projects",
+        "title": "Proyectos de diseño web responsivos",
         "intro": [
-          "Time to put your newly learnt skills to work. By working on these projects, you will get a chance to apply all of the skills, principles, and concepts you have learned so far: HTML, CSS, Visual Design, Accessibility, and more.",
-          "Complete the five web programming projects below to earn your Responsive Web Design certification."
+          "Es hora de poner tus habilidades recién aprendidas a trabajar. Al trabajar en estos proyectos, tendrás la oportunidad de aplicar todas las habilidades, principios y conceptos que ha aprendido hasta ahora: HTML, CSS, diseño visual, accesibilidad y más.",
+          "Completa los cinco proyectos de programación web de abajo para obtener tu certificado de Diseño Web Responsivo."
         ]
       },
       "basic-html-cat-photo-app": {
-        "title": "Basic HTML Cat Photo App",
+        "title": "Aplicación básica de fotos de gato HTML",
         "intro": ["placeholder", "placeholder"]
       },
       "basic-css-cafe-menu": {
-        "title": "Basic CSS Cafe Menu",
+        "title": "Menú básico de café CSS",
         "intro": ["placeholder", "placeholder"]
       },
       "css-variables-skyline": {
-        "title": "CSS Variables Skyline",
+        "title": "Skyline Variables de CSS",
         "intro": ["placeholder", "placeholder"]
       }
     }
