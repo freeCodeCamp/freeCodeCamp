@@ -35,7 +35,7 @@ function createQuestionEpic(action$, state$, { window }) {
         navigator: { userAgent },
         location: { href }
       } = window;
-
+      const backendSolutionLink = state?.challenge?.projectFormValues?.solution;
       const endingText = dedent(
         `**Your browser information:**
 
@@ -49,7 +49,11 @@ function createQuestionEpic(action$, state$, { window }) {
 
       let textMessage = dedent(
         `**Tell us what's happening:**\n\n\n\n**Your code so far**
-        ${filesToMarkdown(files)}\n${endingText}`
+        ${
+          Object.entries(files).length > 0
+            ? filesToMarkdown(files)
+            : backendSolutionLink ?? ''
+        }\n${endingText}`
       );
 
       const altTextMessage = dedent(
