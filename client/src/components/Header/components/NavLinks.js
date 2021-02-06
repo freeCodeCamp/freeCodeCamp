@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  // faCheck,
+  faCheck,
   faCheckSquare,
   faHeart,
   faSquare,
@@ -17,49 +17,16 @@ import {
   radioLocation,
   apiLocation
 } from '../../../../../config/env.json';
-// import createLanguageRedirect from '../../createLanguageRedirect';
+import createLanguageRedirect from '../../createLanguageRedirect';
 import createExternalRedirect from '../../createExternalRedirects';
 
-/* const {
+const {
   availableLangs,
   i18nextCodes,
   langDisplayNames
-} = require('../../../../i18n/allLangs'); */
+} = require('../../../../i18n/allLangs');
 
-// const locales = availableLangs.client;
-
-// The linter was complaining about inline comments. Add the code below above
-// the sign out button when the language menu is ready to be added
-/*
-        <div className='nav-link nav-link-header' key='lang-header'>
-          {t('footer.language')}
-        </div>
-        {locales.map(lang =>
-          // current lang is a button that closes the menu
-          i18n.language === i18nextCodes[lang] ? (
-            <button
-              className='nav-link nav-link-lang nav-link-flex'
-              onClick={() => toggleDisplayMenu()}
-            >
-              <span>{langDisplayNames[lang]}</span>
-              <FontAwesomeIcon icon={faCheck} />
-            </button>
-          ) : (
-            <Link
-              className='nav-link nav-link-lang nav-link-flex'
-              external={true}
-              // Todo: should treat other lang client application links as external??
-              key={'lang-' + lang}
-              to={createLanguageRedirect({
-                clientLocale,
-                lang
-              })}
-            >
-              {langDisplayNames[lang]}
-            </Link>
-          )
-        )
-*/
+const locales = availableLangs.client;
 
 const propTypes = {
   displayMenu: PropTypes.bool,
@@ -83,10 +50,10 @@ export class NavLinks extends Component {
   render() {
     const {
       displayMenu,
-      // i18n,
+      i18n,
       fetchState,
       t,
-      // toggleDisplayMenu,
+      toggleDisplayMenu,
       toggleNightMode,
       user: { isDonating = false, username, theme }
     } = this.props;
@@ -197,6 +164,34 @@ export class NavLinks extends Component {
             <span className='nav-link-dull'>{t('misc.change-theme')}</span>
           )}
         </button>
+        <div className='nav-link nav-link-header' key='lang-header'>
+          {t('footer.language')}
+        </div>
+        {locales.map(lang =>
+          // current lang is a button that closes the menu
+          i18n.language === i18nextCodes[lang] ? (
+            <button
+              className='nav-link nav-link-lang nav-link-flex'
+              onClick={() => toggleDisplayMenu()}
+            >
+              <span>{langDisplayNames[lang]}</span>
+              <FontAwesomeIcon icon={faCheck} />
+            </button>
+          ) : (
+            <Link
+              className='nav-link nav-link-lang nav-link-flex'
+              external={true}
+              // Todo: should treat other lang client application links as external??
+              key={'lang-' + lang}
+              to={createLanguageRedirect({
+                clientLocale,
+                lang
+              })}
+            >
+              {langDisplayNames[lang]}
+            </Link>
+          )
+        )}
         {username && (
           <>
             <hr className='nav-line-2' />
