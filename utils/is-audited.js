@@ -10,8 +10,8 @@
 // to the arrays below
 
 const auditedCerts = {
-  espanol: [],
-  chinese: []
+  espanol: ['responsive-web-design'],
+  chinese: ['responsive-web-design']
 };
 
 function isAuditedCert(lang, cert) {

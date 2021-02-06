@@ -3,7 +3,7 @@
  */
 const availableLangs = {
   client: ['english', 'espanol', 'chinese'],
-  curriculum: ['english', 'chinese']
+  curriculum: ['english', 'espanol', 'chinese']
 };
 
 // Each client language needs an entry in the rest of the variables below
