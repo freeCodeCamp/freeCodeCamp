@@ -57,15 +57,18 @@ describe('A certification,', function() {
         .and(
           'match',
           // eslint-disable-next-line max-len
-          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Legacy Front End&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=https:\/\/freecodecamp\.org\/certification\/developmentuser\/legacy-front-end/
-        );
+          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME/
+        )
+        .and('include', 'name=' + window.location);
     });
 
     it('should render a Twitter button', function() {
       cy.contains('Share this certification on Twitter').should(
         'have.attr',
         'href',
-        'https://twitter.com/intent/tweet?text=I just earned the Legacy Front End certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/developmentuser/legacy-front-end'
+        'https://twitter.com/intent/tweet?text=I just earned the Legacy Front End certification @freeCodeCamp! Check it out here: ' +
+          window.location.origin +
+          window.location.path
       );
     });
 
