@@ -47,7 +47,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

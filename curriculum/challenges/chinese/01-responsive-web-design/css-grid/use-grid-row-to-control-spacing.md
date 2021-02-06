@@ -9,7 +9,7 @@ dashedName: use-grid-row-to-control-spacing
 
 # --description--
 
-和设置一个网格项占用多列类似，你也可以设置它占用多行。你可以使用 `grid-row` 属性来定义一个网格项开始和结束的水平线。
+和设置一个网格项占用多列类似，你也可以设置它占用多行。 你可以使用 `grid-row` 属性来定义一个网格项开始和结束的水平线。
 
 # --instructions--
 
@@ -21,10 +21,7 @@ class 为 `item5` 的元素应具有 `grid-row` 属性。
 
 ```js
 assert(
-  $('style')
-    .text()
-    .replace(/\s/g, '')
-    .match(/\.item5{.*grid-row:.*}/g)
+  __helpers.removeWhiteSpace($('style').text()).match(/\.item5{.*grid-row:.*}/g)
 );
 ```
 

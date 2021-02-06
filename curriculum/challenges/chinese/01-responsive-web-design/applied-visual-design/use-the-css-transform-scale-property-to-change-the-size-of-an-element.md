@@ -9,7 +9,7 @@ dashedName: use-the-css-transform-scale-property-to-change-the-size-of-an-elemen
 
 # --description--
 
-CSS 属性 `transform` 里面的 `scale()` 函数可以用来改变元素的显示比例。下面的例子把页面的 `p` 元素放大到了原来的 2 倍：
+CSS 属性 `transform` 里面的 `scale()` 函数可以用来改变元素的显示比例。 下面的例子把页面的段落元素放大到了原来的 2 倍：
 
 ```css
 p {

@@ -9,21 +9,21 @@ dashedName: override-class-declarations-by-styling-id-attributes
 
 # --description--
 
-我们刚刚证明了浏览器读取 CSS 是由上到下的。这就意味着，如果发生冲突，浏览器将会应用最后声明的样式。
+我们刚刚证明了浏览器读取 CSS 是由上到下的。 这就意味着，如果发生冲突，浏览器将会应用最后声明的样式。 注意，如果我们在 `h1` 元素的类中，将 `blue-text` 放置在 `pink-text` 之前，它仍然会检查声明顺序，而不是使用顺序！
 
-不过我们还没结束，还有其他方法来覆盖 CSS 样式。你还记得 id 属性吗？
+但我们还没有完成。 其实还有其他方法可以覆盖 CSS 样式。 你还记得 id 属性吗？
 
-通过给 `h1` 元素添加 id 属性，我们便可以此来覆盖 class 属性中定义的同名样式。
+我们来通过给 `h1` 元素添加 id 属性，覆盖 `pink-text` 和 `blue-text` 类，使 `h1` 元素变成橘色。
 
 # --instructions--
 
-给 `h1` 元素添加 id 属性，属性值为 `orange-text`。设置方式如下：
+给 `h1` 元素添加 `id` 属性，属性值为 `orange-text`。 设置方式如下：
 
 `<h1 id="orange-text">`
 
 `h1` 元素应继续保留 `blue-text` 和 `pink-text` 这两个 class。
 
-在 `style` 元素中创建名为 `orange-text` 的 id 选择器。例子如下：
+在 `style` 元素中创建名为 `orange-text` 的 id 选择器。 例子如下：
 
 ```css
 #brown-text {
@@ -31,7 +31,7 @@ dashedName: override-class-declarations-by-styling-id-attributes
 }
 ```
 
-**注意：**无论在 `pink-text` class 之前或者之后声明，id 选择器的优先级总是高于 class 选择器。
+**Note:** 无论在 pink-text class 之前或者之后声明，id 选择器的优先级总是高于 class 选择器。
 
 # --hints--
 
@@ -65,7 +65,7 @@ assert($('h1').length === 1);
 assert(code.match(/#orange-text\s*{/gi));
 ```
 
-不要在 `h1` 元素里面使用行内样式。
+不要在 `h1` 元素里面使用 `style` 属性。
 
 ```js
 assert(!code.match(/<h1.*style.*>/gi));

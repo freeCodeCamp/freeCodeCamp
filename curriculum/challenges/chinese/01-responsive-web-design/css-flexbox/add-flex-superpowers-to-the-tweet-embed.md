@@ -9,15 +9,21 @@ dashedName: add-flex-superpowers-to-the-tweet-embed
 
 # --description--
 
-我们以右边的嵌入推文为例，一些元素换一个布局方式或许更好看。上一个挑战演示了 `display: flex`，现在你需要把它添加到推文内嵌的多个组件中，调整它们的位置。
+我们以右边的嵌入推文为例， 一些元素换一个布局方式或许更好看。 上一个挑战演示了 `display: flex`， 现在你需要把它添加到推文内嵌的多个组件中，调整它们的位置。
 
 # --instructions--
 
-请为下列项目添加 CSS 属性 `display: flex`。注意，以下 CSS 选择器已为你写好：
+请为下列项目添加 CSS 属性 `display: flex`。 注意，以下 CSS 选择器已为你写好：
 
 `header`、header 中的 `.profile-name`、header 中的 `.follow-btn`、header 中的 `h3` 和 `h4`、`footer` 以及 footer 中的 `.stats`。
 
 # --hints--
+
+`.follow-btn` 应在页面上呈现。 请关闭广告拦截器等任何扩展。
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
 
 `header` 的 `display` 属性值应为 `flex`。
 

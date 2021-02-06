@@ -9,7 +9,7 @@ dashedName: adjust-the-width-of-an-element-using-the-width-property
 
 # --description--
 
-你可以使用 CSS 里的 `width` 属性来指定元素的宽度。属性值可以是相对单位（比如 em）、绝对单位（比如 px）、或者其父元素宽度的百分比。下面这段代码可以把图片的宽度设置为 220px：
+你可以使用 CSS 里的 `width` 属性来指定元素的宽度。 属性值可以是相对单位（比如 `em`），绝对单位（比如 `px`），或者包含块（父元素）宽度的百分比。 下面这段代码可以把图片的宽度设置为 220px：
 
 ```css
 img {
@@ -19,7 +19,7 @@ img {
 
 # --instructions--
 
-请使用 `fullCard` class 来选择卡片元素，为它添加 `width` 属性，并将它的宽度设置为 245px。
+为卡片元素添加 `width` 属性，并将它的宽度设置为 245px。 使用 `fullCard` class 来选择卡片元素。
 
 # --hints--
 

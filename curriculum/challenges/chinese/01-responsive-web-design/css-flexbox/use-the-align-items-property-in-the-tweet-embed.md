@@ -9,15 +9,21 @@ dashedName: use-the-align-items-property-in-the-tweet-embed
 
 # --description--
 
-在上一个挑战中，我们介绍了 `align-items` 属性并给出了示例。我们可以对推文的几个嵌入元素使用这个属性，以调整其中 flex 元素的对齐方式。
+在上一个挑战中，我们介绍了 `align-items` 属性并给出了示例。 我们可以对推文的几个嵌入元素使用这个属性，以调整其中 flex 元素的对齐方式。
 
 # --instructions--
 
-为 header 中的 `.follow-btn` 元素添加 CSS 属性 `align-items`，并将其属性值设为 `center`。
+为 header 中的 `.follow-btn` 元素添加 CSS 属性 `align-items`， 并将其属性值设为 `center`。
 
 # --hints--
 
-`.follow-btn` 选取的元素应有 `align-items` 属性，且其属性值应为 `center`。
+`.follow-btn` 应在页面上呈现。 请关闭广告拦截器等任何扩展。
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
+`.follow-btn` 元素应有值为 `center` 的 `align-items` 属性。
 
 ```js
 assert($('.follow-btn').css('align-items') == 'center');

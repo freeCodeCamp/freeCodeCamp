@@ -15,7 +15,7 @@ dashedName: create-visual-direction-by-fading-an-element-from-left-to-right
 
 # --instructions--
 
-使用 id 选择器选择 id 为 `ball` 的元素，在 `@keyframes` 为 `50%` 的节点里添加 `opacity` 属性并设置属性值为 0.1，使其在向右移动时渐隐。
+使用 id 选择器选择 id 为 `ball` 的元素，在 @keyframes 为 `50%` 的节点里添加 `opacity` 属性并设置属性值为 0.1，使其在向右移动时渐隐。
 
 # --hints--
 

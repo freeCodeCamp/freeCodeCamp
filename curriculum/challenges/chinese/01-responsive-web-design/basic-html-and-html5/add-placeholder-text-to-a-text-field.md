@@ -29,7 +29,7 @@ dashedName: add-placeholder-text-to-a-text-field
 assert($('input[placeholder]').length > 0);
 ```
 
-设置占位符属性的值为 `cat photo URL`。
+设置 `placeholder` 属性的值为 `cat photo URL`。
 
 ```js
 assert(

@@ -2,8 +2,8 @@
 id: bad87fee1348bd9aedf08806
 title: 更改元素的字体大小
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cPp7VfD'
-forumTopicId: 1
+videoUrl: 'https://scrimba.com/c/c3bvDc8'
+forumTopicId: 16777
 dashedName: change-the-font-size-of-an-element
 ---
 
@@ -23,7 +23,7 @@ h1 {
 
 # --hints--
 
-在 `style` 样式声明区域里，`p` 元素的 `font-size` 的值应为 `16px`。请注意，浏览器和文本缩放应设置为 100％。
+在 `style` 样式声明区域里，`p` 元素的 `font-size` 的值应为 `16px`。 请注意，浏览器和文本缩放应设置为 100％。
 
 ```js
 assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));

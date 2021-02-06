@@ -13,7 +13,7 @@ dashedName: align-all-items-vertically-using-align-items
 
 # --instructions--
 
-请使用 `align-items` 属性将所有网格项移动到单元格的末尾。
+请使用这个属性将所有网格项移动到单元格的末尾。
 
 # --hints--
 
@@ -48,7 +48,7 @@ assert(
     grid-gap: 10px;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

@@ -13,9 +13,9 @@ dashedName: use-the-u-tag-to-underline-text
 
 # --instructions--
 
-给 "Ph.D. students" 添加 `u` 标签。
+给 `Ph.D. students` 添加 `u` 标签。
 
-**注意：**HTML 的 `<a>` 标签默认也会给文本添加下划线。如果使用 `u` 标签添加下划线会造成与 `<a>` 标签混淆，则应避免使用 `u` 标签。
+**注意：**当 `u` 标签可能会被混淆为链接时，避免使用它。锚标签也有默认下划线格式。
 
 # --hints--
 

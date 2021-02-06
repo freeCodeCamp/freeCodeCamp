@@ -9,17 +9,17 @@ dashedName: create-your-first-css-grid
 
 # --description--
 
-通过将属性 `display` 的值设为 `grid`，HTML 元素就可以变为网格容器。通过前面的操作，你可以对该容器使用与 CSS 网格（CSS Grid）相关的属性。
+通过将属性 `display` 的值设为 `grid`，HTML 元素就可以变为网格容器。 通过前面的操作，你可以对该容器使用与 CSS 网格（CSS Grid）相关的属性。
 
 **注意：**在 CSS 网格中，父元素称为<dfn>容器（container）</dfn>，它的子元素称为<dfn>项（items）</dfn>。
 
 # --instructions--
 
-请将 class 为 `container` 的 `div` 的 `display` 属性值设置为 `grid`。
+请将 class 为 `container` 的 div 的 display 属性值设置为 `grid`。
 
 # --hints--
 
-class 为 `container` 的 `div` 元素应具有 `display` 属性且属性值应为 `grid`。
+`container` class 应具有 `display` 属性，属性值应为 `grid`。
 
 ```js
 assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
@@ -43,7 +43,7 @@ assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
     background: LightGray;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

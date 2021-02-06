@@ -9,11 +9,11 @@ dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 
 # --description--
 
-下一个表单主题与单选按钮的可访问性有关。在上一个挑战中，每个单选按钮都有一个包含 `for` 属性的 `label` 标签，`for` 的属性值指向相关选项的 `id`。然而单选按钮通常成组出现，而且用户必须选择其中一项。本次挑战介绍一种可以语义化呈现单选按钮组的方法。
+下一个表单主题涵盖单选按钮的可访问性。 在上一个挑战中，每个单选按钮都有一个包含 `for` 属性的 `label` 标签，这些属性值指向相关选项的 `id`。 然而单选按钮通常成组出现，而且用户必须选择其中一项。
 
-我们可以使用 `fieldset` 标签将单选按钮组包含在里面，通常还会使用 `legend` 标签来为单选按钮组提供文字说明。屏幕阅读器也可以朗读这些文字。
+`fieldset` 标签包裹整组单选按钮，实现这个功能。 我们可以使用 `fieldset` 标签将单选按钮组包含在里面，通常还会使用 `legend` 标签来为单选按钮组提供文字说明。 屏幕阅读器也可以朗读这些文字。
 
-当选项的含义很明确时，如“性别选择”，`fieldset` 与 `legend` 标签可以省略。这时，使用包含 `for` 属性的 `label` 标签就足够了。
+当选项的含义很明确时，如“性别选择”，`fieldset` 与 `legend` 标签可以省略。 这时，使用包含 `for` 属性的 `label` 标签就足够了。
 
 举个例子：
 
@@ -33,7 +33,7 @@ dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 
 # --instructions--
 
-当用户使用邮件注册时，Camper Cat 想知道他们的忍者等级。通过上一个挑战的学习，Camper Cat 创建了一组单选按钮，并为每个选项的 `label` 标签添加了 `for` 属性，但是 Camper Cat 的代码依然需要你的帮助。请将包含单选按钮组的 `div` 标签替换为 `fieldset` 标签；将 `p` 标签替换为 `legend` 标签。
+当用户使用邮件注册时，Camper Cat 想知道他们的忍者等级。 他添加了一组单选按钮，并从我们之前的课程中吸取了教训，为每个选项使用带有 `for` 属性的 `label` 标签。 Camper Cat 加油！ 然而，他仍然需要一些帮助。 请将包含单选按钮组的 `div` 标签替换为 `fieldset` 标签；将 `p` 标签替换为 `legend` 标签。
 
 # --hints--
 

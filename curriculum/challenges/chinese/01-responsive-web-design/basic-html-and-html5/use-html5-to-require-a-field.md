@@ -17,6 +17,8 @@ dashedName: use-html5-to-require-a-field
 
 请给 `input` 元素加上 `required` 属性，这样用户就必须先在输入框里填入内容，然后才可以提交表单。
 
+然后尝试在不输入任何文本的情况下提交表单， 看看 HTML5 表单是如何通知你这个字段是必填的。
+
 # --hints--
 
 `input` 元素应有 `required` 属性。
@@ -61,9 +63,9 @@ assert($('input').prop('required'));
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

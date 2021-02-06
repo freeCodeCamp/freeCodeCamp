@@ -9,9 +9,9 @@ dashedName: use-the-css-transform-scale-property-to-scale-an-element-on-hover
 
 # --description--
 
-`transform` 属性有很多函数可以调用，可以对元素进行调整大小、移动、旋转、翻转等操作。当使用伪类选取元素的指定状态（如 `:hover`）时，我们可以通过 `transform` 属性非常方便地给元素添加交互。
+`transform` 属性有很多函数可以调用，可以对元素进行调整大小、移动、旋转、翻转等操作。 当使用伪类选取元素的指定状态（如 `:hover`）时，我们可以通过 `transform` 属性非常方便地给元素添加交互。
 
-下面是当用户悬停在 `p` 元素时，段落大小缩放到原始大小 2.1 倍的例子：
+下面是当用户悬停在段落元素时，段落大小缩放到原始大小 2.1 倍的例子：
 
 ```css
 p:hover {
@@ -23,7 +23,7 @@ p:hover {
 
 # --instructions--
 
-通过伪类，给 `div` 的 `hover` 状态添加 `transform` 属性，使其当鼠标悬停时大小缩放到原始大小的 1.1 倍。
+通过伪类，给 `div` 的 `hover` 状态添加 `transform` 属性，使 `div` 当鼠标悬停时大小缩放到原始大小的 1.1 倍。
 
 # --hints--
 

@@ -11,7 +11,7 @@ dashedName: reduce-repetition-using-the-repeat-function
 
 使用 `grid-template-columns` 或 `grid-template-rows` 定义网格结构时，你需要为添加的每一行或每一列都输入一个值。
 
-如果一个网格共有 100 行且每行高度相同，那我们就需要输入 100 个值，这显然不太实际。为此，更好的方式是使用 `repeat` 方法指定行或列的重复次数，后面加上逗号以及需要重复的值。
+如果一个网格共有 100 行且每行高度相同， 那我们就需要输入 100 个值，这显然不太实际。 为此，更好的方式是使用 `repeat` 方法指定行或列的重复次数，后面加上逗号以及需要重复的值。
 
 以下为添加 100 行网格的例子，每行高度均为 50px：
 
@@ -19,7 +19,7 @@ dashedName: reduce-repetition-using-the-repeat-function
 grid-template-rows: repeat(100, 50px);
 ```
 
-你还可以用 repeat 方法重复多个值，并在定义网格结构时与其他值一起使用。比如：
+你还可以用 repeat 方法重复多个值，并在定义网格结构时与其他值一起使用。 比如：
 
 ```css
 grid-template-columns: repeat(2, 1fr 50px) 20px;

@@ -25,9 +25,9 @@ CSS 边框具有 `style`、`color`、`width` 属性。
 
 # --instructions--
 
-创建一个 `thick-green-border` 的 class，该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框，并将这个 class 应用在猫咪照片上。
+创建一个名为 `thick-green-border` 的 class， 该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框。 将这个 class 应用于你的猫图。
 
-记得在一个元素上可以同时应用多个 `class`，使用空格来分隔不同 class 即可，例如：
+记得在一个元素上可以同时应用多个 `class`，使用空格来分隔不同 class 即可， 例如：
 
 `<img class="class1 class2">`
 

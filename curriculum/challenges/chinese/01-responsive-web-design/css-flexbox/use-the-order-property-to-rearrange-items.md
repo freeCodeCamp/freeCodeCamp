@@ -9,11 +9,11 @@ dashedName: use-the-order-property-to-rearrange-items
 
 # --description--
 
-`order` 属性告诉 CSS flex 容器里子元素的顺序。默认情况下，项目排列顺序与源 HTML 文件中顺序相同。`order` 属性接受数字作为参数，可以使用负数。
+`order` 属性告诉 CSS flex 容器里子元素的顺序。 默认情况下，项目排列顺序与源 HTML 文件中顺序相同。 这个属性接受数字作为参数，可以使用负数。
 
 # --instructions--
 
-请给 `#box-1` 和 `#box-2` 添加 CSS 属性 `order`，并将 `#box-1` 的`order` 属性值设为 `2`，`#box-2` 的属性值设为 `1`。
+请给 `#box-1` 和 `#box-2` 添加 CSS 属性 `order`， 并将 `#box-1` 的属性值设为 `2`，`#box-2` 的属性值设为 `1`。
 
 # --hints--
 

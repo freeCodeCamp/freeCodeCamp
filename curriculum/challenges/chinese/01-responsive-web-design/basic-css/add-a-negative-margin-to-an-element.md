@@ -15,7 +15,7 @@ dashedName: add-a-negative-margin-to-an-element
 
 # --instructions--
 
-请将蓝色框的 `margin` 设为负值，跟红色框 `margin` 的属性值设置成一样的大小。
+请将蓝色框的 `margin` 设为负值，跟红色框的一样。
 
 将蓝色框的 `margin` 设置为 `-15px`，它会让蓝色框填满整个黄色框。
 

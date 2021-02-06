@@ -11,13 +11,13 @@ dashedName: prioritize-one-style-over-another
 
 有时候，HTML 元素的样式会跟其他样式发生冲突。
 
-就像 `h1` 元素也不能同时设置 `green` 和 `pink` 两种颜色。
+就像 `h1` 元素不能同时设置绿色和粉色两种颜色。
 
-让我们尝试创建一个字体颜色为 `pink` 的 class，并应于用其中一个元素中。猜一猜，它会覆盖 `body` 元素设置的 `color: green;` CSS 规则吗？
+让我们尝试创建一个字体颜色为粉色的 class，并应用于其中一个元素中。 猜一猜，它会 *覆盖* `body` 元素的 `color: green;` CSS 规则吗？
 
 # --instructions--
 
-创建一个能将元素的字体颜色改为 `pink` 的 class，并命名为 `pink-text`。
+创建一个能将元素的字体颜色改为粉色的 class，并命名为 `pink-text`。
 
 给 `h1` 元素添加 `pink-text` class。
 
@@ -29,7 +29,7 @@ dashedName: prioritize-one-style-over-another
 assert($('h1').hasClass('pink-text'));
 ```
 
-`<style>` 标签应含有一个可以改变字体颜色的 `pink-text` class。
+`<style>` 标签应含有一个可以改变 `color` 的 `pink-text` class。
 
 ```js
 assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));

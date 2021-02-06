@@ -9,7 +9,7 @@ dashedName: create-a-column-gap-using-grid-column-gap
 
 # --description--
 
-目前为止，在你所创建的网格中，每列都相互紧挨着。如果需要在列与列之间添加一些间距，我们可以使用 `grid-column-gap`：
+目前为止，在你所创建的网格中，每列都相互紧挨着。 有时候你想要列之间有一个间距。 如果需要在列与列之间添加一些间距，我们可以使用 `grid-column-gap`：
 
 ```css
 grid-column-gap: 10px;
@@ -55,7 +55,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     /* Only change code below this line */
 
-   
+
     /* Only change code above this line */
   }
 </style>

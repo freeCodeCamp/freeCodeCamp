@@ -11,11 +11,11 @@ dashedName: use-the-flex-basis-property-to-set-the-initial-size-of-an-item
 
 `flex-basis` 属性定义了在使用 CSS 的 `flex-shrink` 或 `flex-grow` 属性对元素进行调整前，元素的初始大小。
 
-`flex-basis` 属性的单位与其他表示尺寸的属性的单位一致（`px`、`em`、`%` 等）。如果值为 `auto`，则项目的尺寸随内容调整。
+`flex-basis` 属性的单位与其他表示尺寸的属性的单位一致（`px`、`em`、`%` 等）。 如果值为 `auto`，则项目的尺寸随内容调整。
 
 # --instructions--
 
-使用 `flex-basis` 为盒子设置初始值。请给 `#box-1` 和 `#box-2` 添加 CSS 属性 `flex-basis`。设置 `#box-1` 的尺寸初始值为 `10em`，`#box-2` 的尺寸初始值为 `20em`。
+使用 `flex-basis` 为盒子设置初始值。 请给 `#box-1` 和 `#box-2` 添加 CSS 属性 `flex-basis`。 设置 `#box-1` 的尺寸初始值为 `10em`，`#box-2` 的尺寸初始值为 `20em`。
 
 # --hints--
 

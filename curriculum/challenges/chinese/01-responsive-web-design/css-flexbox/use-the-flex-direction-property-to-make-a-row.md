@@ -9,11 +9,11 @@ dashedName: use-the-flex-direction-property-to-make-a-row
 
 # --description--
 
-给元素添加 `display: flex` 属性可以让它变成 flex 容器。只要给父元素添加 `flex-direction` 属性，并把属性值设置为 row 或 column，即可横向排列或纵向排列它的所有子元素。设为 row 可以让子元素横向排列，设为 column 可以让子元素纵向排列。
+给元素添加 `display: flex` 属性可以让它变成 flex 容器， 然后可以让元素的项目排列成行或列。 只要给父元素添加 `flex-direction` 属性，并把属性值设置为 row 或 column，即可横向排列或纵向排列它的所有子元素。 创建一行将使子项水平对齐，创建一列将使子项垂直对齐。
 
 `flex-direction` 的其他可选值还有 `row-reverse` 和 `column-reverse`。
 
-**注意：**`flex-direction` 的默认值为 row。
+**注意：**`flex-direction` 的默认值为 `row`。
 
 # --instructions--
 
@@ -21,7 +21,7 @@ dashedName: use-the-flex-direction-property-to-make-a-row
 
 # --hints--
 
-`#box-container` 应有 `flex-direction` 属性，其属性值应为 row-reverse。
+`#box-container` 元素应有 `flex-direction` 属性，其属性值应为 `row-reverse`。
 
 ```js
 assert($('#box-container').css('flex-direction') == 'row-reverse');

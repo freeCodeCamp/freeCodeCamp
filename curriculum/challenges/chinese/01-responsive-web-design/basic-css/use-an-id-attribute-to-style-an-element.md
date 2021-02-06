@@ -9,11 +9,11 @@ dashedName: use-an-id-attribute-to-style-an-element
 
 # --description--
 
-通过 `id` 属性，你可以做一些很酷的事情。比如像 class 一样，你可以使用 CSS 来设置他们的样式。
+通过 `id` 属性，你可以做一些很酷的事情。就像 class 一样，你可以使用 CSS 来设置他们的样式。
 
-不过，`id` 不可以重复，它只能作用于一个元素上。同时，在 CSS 里，`id` 的优先级高于 `class`。如果一个元素同时应用了 `class` 和 `id`，且两者设置的样式有冲突，会优先应用 `id` 中所设置的样式。
+不过，`id` 不可以重复，它只能作用于一个元素上。 如果一个元素同时应用了 class 和 `id`，且两者设置的样式有冲突，会优先应用 `id` 中所设置的样式。
 
-选择 `id` 为 `cat-photo-element` 的元素，并设置它的背景样式为 `green`，可以在 `style` 标签里这样写：
+选择 `id` 为 `cat-photo-element` 的元素，并设置它的背景颜色为绿色。 可以在 `style` 标签里这样写：
 
 ```css
 #cat-photo-element {
@@ -21,11 +21,11 @@ dashedName: use-an-id-attribute-to-style-an-element
 }
 ```
 
-注意在 `style` 标签里，声明 class 的时候必须在名字前插入 `.` 符号。同样，在声明 id 的时候，也必须在名字前插入 `#` 符号。
+注意在 `style` 标签里，声明 class 的时候必须在名字前插入 `.` 符号。 同样，在声明 id 的时候，也必须在名字前插入 `#` 符号。
 
 # --instructions--
 
-请将 id 为 `cat-photo-form` 的 `form` 表单的背景颜色设置为 `green`。
+请将 `id` 为 `cat-photo-form` 的表单的背景颜色设置为绿色。
 
 # --hints--
 
@@ -35,7 +35,7 @@ dashedName: use-an-id-attribute-to-style-an-element
 assert($('form').attr('id') === 'cat-photo-form');
 ```
 
-`form` 元素应含有 `background-color` CSS 属性且其属性值应为 `green`。
+`form` 元素应含有 `background-color` 属性，颜色为绿色。
 
 ```js
 assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)');
@@ -166,9 +166,9 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -183,7 +183,7 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

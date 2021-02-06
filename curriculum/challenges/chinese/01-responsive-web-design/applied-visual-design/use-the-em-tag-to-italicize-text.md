@@ -9,13 +9,11 @@ dashedName: use-the-em-tag-to-italicize-text
 
 # --description--
 
-术语：emphasis => em => 强调。
-
-你可以使用 `em` 标签来强调文本。由于浏览器会自动给元素应用 `font-style: italic;`，所以文本会显示为斜体。
+你可以使用 `em` 标签来强调文本。 由于浏览器会自动给元素应用 `font-style: italic;`，所以文本会显示为斜体。
 
 # --instructions--
 
-在 `p` 标签里面嵌套 `em` 标签来强调文本。
+在段落标签里面嵌套 `em` 标签来强调文本。
 
 # --hints--
 
@@ -25,7 +23,7 @@ dashedName: use-the-em-tag-to-italicize-text
 assert($('em').length == 1);
 ```
 
-`em` 标签应嵌套在 `p` 标签里面。
+`em` 标签应包裹 `p` 标签里的内容，但不包裹 `p` 标签本身。
 
 ```js
 assert($('p').children().length == 1 && $('em').children().length == 2);

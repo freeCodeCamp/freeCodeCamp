@@ -9,11 +9,11 @@ dashedName: make-screen-reader-navigation-easier-with-the-footer-landmark
 
 # --description--
 
-与 `header` 和 `nav` 类似，`footer` 元素也具有语义化的特性，可以让辅助工具快速定位到它。它位于页面底部，用于呈现版权信息或者相关文档链接。
+与 `header` 和 `nav` 类似，`footer` 元素也具有语义化的特性，可以让辅助工具快速定位到它。 它位于页面底部，用于呈现版权信息或者相关文档链接。
 
 # --instructions--
 
-Camper Cat 的忍者训练页面进展顺利。请将他在页面底部呈现版权信息的 `div` 元素更改为 `footer` 元素。
+Camper Cat 的忍者训练页面进展顺利。 请将他在页面底部呈现版权信息的 `div` 元素更改为 `footer` 元素。
 
 # --hints--
 

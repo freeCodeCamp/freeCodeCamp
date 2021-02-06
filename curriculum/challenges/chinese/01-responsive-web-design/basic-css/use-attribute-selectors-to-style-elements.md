@@ -9,11 +9,11 @@ dashedName: use-attribute-selectors-to-style-elements
 
 # --description--
 
-我们已经通过设置元素的 `id` 和 `class` 来显示想要的样式。这就是 ID 选择器和 Class 选择器。另外，也还有其他的 CSS 选择器可以让我们给特定的元素设置样式。
+我们已经通过设置元素的 `id` 和 `class` 来显示想要的样式。 这就是 ID 选择器和 Class 选择器。 另外，也还有其他的 CSS 选择器可以让我们给特定的元素设置样式。
 
 让我们再次通过猫咪图片项目来练习 CSS 选择器。
 
-在这个挑战里，我们需要使用 `[attr=value]` 属性选择器来修改复选框的样式。这个选择器使用特定的属性值来匹配和设置元素样式。例如，下面的代码会改变所有 `type` 为 `radio` 的元素的外边距。
+在这个挑战里，我们需要使用 `[attr=value]` 属性选择器来修改 CatPhotoApp 中复选框的样式。 这个选择器使用特定的属性值来匹配和设置元素样式。 例如，下面的代码会改变所有 `type` 为 `radio` 的元素的外边距。
 
 ```css
 [type='radio'] {
@@ -32,7 +32,7 @@ dashedName: use-attribute-selectors-to-style-elements
 ```js
 assert(
   code.match(
-    /<style>[\s\S]*?\[type=("|')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi
+    /<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi
   )
 );
 ```
@@ -179,9 +179,9 @@ assert(
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -196,7 +196,7 @@ assert(
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

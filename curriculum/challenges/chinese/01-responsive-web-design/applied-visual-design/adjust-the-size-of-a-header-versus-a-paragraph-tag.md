@@ -9,15 +9,15 @@ dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
 
 # --description--
 
-标题（`h1` 到 `h6`）的文字应该比段落的文字大，这样可以让用户更直观的看到页面布局，同时能根据不同元素的层级梳理出页面的结构，更方便用户获取关键的信息。你可以使用 `font-size` 属性来设置元素内文字的大小。
+标题标签的字体大小（从 `h1` 到 `h6`）一般应该大于段落标签的字体大小。 这使用户更容易在视觉上了解页面上所有内容的布局和重要程度。 你可以使用 `font-size` 属性来设置元素内文字的大小。
 
 # --instructions--
 
-把 `h4` 标签的 `font-size` 的属性值改成 27 像素，让标题更醒目。
+把 `h4` 标签的 `font-size` 的属性值改成 27px，让标题更醒目。
 
 # --hints--
 
-应给 `h4` 元素添加一个 `font-size` 属性并将属性值设置为 `27px`。
+应给 `h4` 元素添加一个 `font-size` 属性并将属性值设置为 27px。
 
 ```js
 assert($('h4').css('font-size') == '27px');

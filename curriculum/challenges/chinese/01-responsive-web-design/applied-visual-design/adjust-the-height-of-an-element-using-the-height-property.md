@@ -9,7 +9,7 @@ dashedName: adjust-the-height-of-an-element-using-the-height-property
 
 # --description--
 
-和 `width` 属性类似，你可以使用 CSS 里面的 `height` 属性来指定元素的高度。下面这段代码可以把图片的高度设置为 20px：
+和 `width` 属性类似，你可以使用 CSS 里面的 `height` 属性来指定元素的高度。 下面这段代码可以把图片的高度设置为 20px：
 
 ```css
 img {
@@ -25,7 +25,7 @@ img {
 
 # --hints--
 
-`h4` 的 `height` 属性值应为 `25px`。
+`h4` 的 `height` 属性值应为 25px。
 
 ```js
 assert(

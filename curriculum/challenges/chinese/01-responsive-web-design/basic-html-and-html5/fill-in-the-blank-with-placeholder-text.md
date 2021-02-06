@@ -9,17 +9,19 @@ dashedName: fill-in-the-blank-with-placeholder-text
 
 # --description--
 
-Web 开发者通常用 [lorem ipsum text](https://baike.baidu.com/item/Lorem%20ipsum/3684081) 来做占位符，占位符就是一些用于占位的文字，没有实际意义。
+Web 开发者通常用 <dfn>lorem ipsum text</dfn> 来做占位符。 lorem ipsum text 是从古罗马西塞罗的一段著名经文中随机抽取的。
 
-之所以叫 `lorem ipsum text`，是因为 `lorem ipsum` 是古罗马西塞罗谚语的前两个单词。
+Lorem ipsum text 自 16 世纪以来就在排版中被用作占位符，这一习惯也在 Web 开发中得以延续。
+
+五个世纪已经很久远了。 因为我们正在构建一个 CatPhotoApp，所以我们使用 “kitty ipsum” 文本。
 
 # --instructions--
 
-请把 `p` 元素的内容文本替换为：`Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.`
+`p` 元素的内容文本应包含 `Kitty ipsum`。
 
 # --hints--
 
-`p` 元素的内容文本应包含 `Kitty ipsum`。
+你的 `p` 元素应包含 “kitty ipsum” 文本的前面几个词。
 
 ```js
 assert.isTrue(/Kitty(\s)+ipsum/gi.test($('p').text()));

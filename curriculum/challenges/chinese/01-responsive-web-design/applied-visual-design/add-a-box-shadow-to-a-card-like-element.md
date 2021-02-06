@@ -18,7 +18,7 @@ dashedName: add-a-box-shadow-to-a-card-like-element
   <li><code>offset-y</code> 阴影的垂直偏移量；</li>
   <li><code>blur-radius</code> 模糊半径；</li>
   <li><code>spread-radius</code> 阴影扩展半径；</li>
-  <li>颜色。</li>
+  <li><code>color</code></li>
 </ul>
 
 其中 `blur-radius` 和 `spread-radius` 是可选的。
@@ -33,7 +33,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 # --instructions--
 
-我们把卡片的 `id` 设置成了 `thumbnail`，请把上面的 `box-shadow` 值赋给这个卡片。
+元素现在有一个 `thumbnail` id。 在这个选择器中，使用上面的示例 CSS 值在卡片上加一个 `box-shadow`。
 
 # --hints--
 

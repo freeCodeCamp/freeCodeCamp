@@ -9,9 +9,9 @@ dashedName: move-a-relatively-positioned-element-with-css-offsets
 
 # --description--
 
-CSS 里面的 `top`、`bottom`、`left` 和 `right` 定义了元素在相应方位的偏移距离。元素将从当前位置向属性相反的方向偏移。就像你在上一个挑战看到的，`top` 属性使 `h2` 向下移动。`left` 属性使元素向右移动。
+CSS 里面的 `top`、`bottom`、`left` 和 `right` 定义了元素在相应方位的偏移距离。 元素将从当前位置向属性相反的方向偏移。 就像你在上一个挑战看到的，`top` 属性使 `h2` 向下移动。 同样，使用 `left` 将项目移动到右边。
 
-<img src='https://i.imgur.com/eWWi3gZ.gif' alt=''>
+<img src='https://i.imgur.com/eWWi3gZ.gif' alt='' />
 
 # --instructions--
 
@@ -19,13 +19,13 @@ CSS 里面的 `top`、`bottom`、`left` 和 `right` 定义了元素在相应方�
 
 # --hints--
 
-应使用 CSS 属性使 `h2` 相对当前位置向上移动 `10px`。也就是说，从 `h2` 当前位置远离 `bottom` `10px`。
+应使用 CSS 属性使 `h2` 相对当前位置向上移动 10px。 也就是说，从当前位置相对于 `bottom` 移动 10px。
 
 ```js
 assert($('h2').css('bottom') == '10px');
 ```
 
-应使用 CSS 属性使 `h2` 相对当前位置向右移动 `15px`。也就是说，从 `h2` 当前位置远离 `left` `15px`。
+应使用 CSS 属性使 `h2` 相对当前位置向右移动 15px。 也就是说，从当前位置相对于 `left` 移动 15px。
 
 ```js
 assert($('h2').css('left') == '15px');

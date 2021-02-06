@@ -11,7 +11,7 @@ dashedName: use-media-queries-to-create-responsive-layouts
 
 将 CSS 网格与使用媒体查询结合使用，如使用媒体查询重新排列网格区域、更改网格尺寸以及重新排列网格项位置，我们可以让制作出的网站更具响应性。
 
-在右侧的预览区中，当网页可视区域的宽不小于 300px 时，列数从 1 变为 2。并且，广告（advertisement）区域会完全占据左列。
+在右侧的预览区中，当网页可视区域的宽不小于 300px 时，列数从 1 变为 2。 并且，广告（advertisement）区域会完全占据左列。
 
 # --instructions--
 
@@ -23,9 +23,11 @@ dashedName: use-media-queries-to-create-responsive-layouts
 
 ```js
 assert(
-  code.match(
-    /@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
-  )
+  __helpers
+    .removeCssComments(code)
+    .match(
+      /@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+    )
 );
 ```
 

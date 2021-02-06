@@ -9,34 +9,29 @@ dashedName: wrap-content-in-the-article-element
 
 # --description--
 
-`article` 是另一个具有语义化特性的 HTML5 新标签。`article` 是一个用于表示独立且可复用结构的标签，用于呈现独立及完整的内容。这个标签适用于播客文章、论坛帖子或者新闻文章。
+`article` 是另一个具有语义化特性的 HTML5 新标签。 `article` 是一个用于表示独立且可复用结构的标签，用于呈现独立及完整的内容。 这个标签适用于博客、论坛帖子或者新闻文章。
 
-有些技巧可以用来判断内容是否独立，像是如果内容脱离了上下文，这些内容是否仍然有意义？类似地，对于文本内容，可否把这些内容放到 RSS 推送里？如果回答是肯定的，那我们就可以认为这些内容是独立的。
+确定内容是否可以单独作为一部分，通常是个人的判断，但你可以使用几个简单的测试。 如果删除了所有周围的上下文，这个内容是否仍然有意义？ 类似地，对于文本内容，可否把这些内容放到 RSS 推送里？
 
 请牢记，辅助设备依赖组织良好、语义化的标签来获取页面中的信息。
 
-**请注意 `section` 和 `div` 的区别：**  
-`section` 也是一个 HTML5 新标签，它与 `article` 标签的语义含义略有不同。`article` 用于独立且完整的内容，而 `section` 用于对与主题相关的内容进行分组。它们可以根据需要来嵌套使用。举个例子：如果一本书是一个 `article` 的话，那么每个章节就是 `section`。当内容组之间没有联系时，我们可以使用 `div`。
+**注意：**`section` 元素也是 HTML5 引入的新元素，其语义与 `article` 略有不同。 `article` 用于独立且完整的内容，而 `section` 用于对与主题相关的内容进行分组。 它们可以根据需要来嵌套使用。 举个例子：如果一本书是一个 `article` 的话，那么每个章节就是 `section`。 当内容组之间没有联系时，我们可以使用 `div`。
 
-```html
-<div> - groups content
-<section> - groups related content
-<article> - groups independent, self-contained content
-```
+`<div>` - 一组内容 `<section>` - 几组相关的内容 `<article>` - 几组独立的内容
 
 # --instructions--
 
-Camper Cat 打算使用 `article` 标签来呈现他的博客页面里的帖子，但是他还没有加到最上面的帖子上。请使用 `article` 标签来代替 `div` 标签。
+Camper Cat 打算使用 `article` 标签来呈现他的博客页面里的帖子，但是他忘记在顶部的帖子上使用这个标签。 将 `div` 标签改为 `article` 标签。
 
 # --hints--
 
-应存在 3 个 `article` 标签。
+应有三个 `article` 标签。
 
 ```js
 assert($('article').length == 3);
 ```
 
-不应存在 `div` 标签。
+不应有 `div` 标签。
 
 ```js
 assert($('div').length == 0);

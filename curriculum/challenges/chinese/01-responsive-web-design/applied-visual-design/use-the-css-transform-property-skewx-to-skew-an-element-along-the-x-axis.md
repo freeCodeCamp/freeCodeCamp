@@ -9,9 +9,9 @@ dashedName: use-the-css-transform-property-skewx-to-skew-an-element-along-the-x-
 
 # --description--
 
-接下来要介绍的 `transform` 属性是 `skewX`：`skewX` 使选择的元素沿着 X 轴（横向）翻转指定的角度。
+接下来要介绍的 `transform` 属性是 `skewX()`：它使选择的元素沿着 X 轴（横向）翻转指定的角度。
 
-下面的代码沿着 X 轴翻转 `p` 元素 -32 度。
+下面的代码沿着 X 轴翻转段落元素 -32 度。
 
 ```css
 p {

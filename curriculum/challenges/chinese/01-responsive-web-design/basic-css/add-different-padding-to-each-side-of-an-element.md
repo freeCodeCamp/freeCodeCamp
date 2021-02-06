@@ -19,25 +19,25 @@ CSS 允许你使用 `padding-top`、`padding-right`、`padding-bottom`、`paddin
 
 # --hints--
 
-class 为 `blue-box` 的元素的上内边距属性值应为 `40px`。
+class 为 `blue-box` 的元素的上内边距属性值 `padding` 应为 `40px`。
 
 ```js
 assert($('.blue-box').css('padding-top') === '40px');
 ```
 
-class 为 `blue-box` 的元素的右内边距属性值应为 `20px`。
+class 为 `blue-box` 的元素的右内边距属性值 `padding` 应为 `20px`。
 
 ```js
 assert($('.blue-box').css('padding-right') === '20px');
 ```
 
-class 为 `blue-box` 的元素的下内边距属性值应为 `20px`。
+class 为 `blue-box` 的元素的下内边距属性值 `padding` 应为 `20px`。
 
 ```js
 assert($('.blue-box').css('padding-bottom') === '20px');
 ```
 
-class 为 `blue-box` 的元素的左内边距属性值应为 `40px`。
+class 为 `blue-box` 的元素的左内边距属性值 `padding` 应为 `40px`。
 
 ```js
 assert($('.blue-box').css('padding-left') === '40px');

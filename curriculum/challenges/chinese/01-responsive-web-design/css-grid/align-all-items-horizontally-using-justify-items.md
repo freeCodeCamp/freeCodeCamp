@@ -9,11 +9,11 @@ dashedName: align-all-items-horizontally-using-justify-items
 
 # --description--
 
-有时你想让 CSS 网格中的网格项共享对齐方式。你可以像之前学习的那样分别设置它们的对齐方式，也可以对网格容器使用 `justify-items` 使它们一次性沿水平轴对齐。这个属性能接受我们在之前两个挑战中学到的所有值作为属性值，但与之前不同的是，它会将网格中**所有**的网格项按所设置的方式对齐。
+有时你想让 CSS 网格中的网格项共享对齐方式。 你可以像之前学习的那样分别设置它们的对齐方式，也可以对网格容器使用 `justify-items` 使它们一次性沿水平轴对齐。 这个属性能接受我们在之前两个挑战中学到的所有值作为属性值，但与之前不同的是，它会将网格中**所有**的网格项按所设置的方式对齐。
 
 # --instructions--
 
-请使用 `justify-items` 属性设置所有网格项水平居中。
+请使用这个属性设置所有网格项水平居中。
 
 # --hints--
 
@@ -50,7 +50,7 @@ assert(
     grid-gap: 10px;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

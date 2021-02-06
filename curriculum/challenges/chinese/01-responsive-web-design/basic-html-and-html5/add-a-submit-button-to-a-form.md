@@ -17,11 +17,11 @@ dashedName: add-a-submit-button-to-a-form
 
 # --instructions--
 
-请在表单（`form` 元素）底部添加一个按钮，将按钮的 type 属性值设置为 `submit`，内容文本为“提交”。
+在 `form` 的底部创建一个按钮，按钮的类型为 `submit`，文本为 `Submit`。
 
 # --hints--
 
-表单内部应有一个按钮。
+你的 `form` 里面应该有一个 `button`。
 
 ```js
 assert($('form').children('button').length > 0);

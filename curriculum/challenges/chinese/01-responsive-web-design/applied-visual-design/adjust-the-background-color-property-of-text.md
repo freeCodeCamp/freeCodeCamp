@@ -9,13 +9,13 @@ dashedName: adjust-the-background-color-property-of-text
 
 # --description--
 
-为了让页面更美观，除了设置整个页面的背景色以及文字颜色外，你还可以单独设置文字的背景色，即在文字的父元素上添加 `background-color` 属性。在本挑战里我们将使用 `rgba()` 颜色，而不是之前学到的 `hex` 编码或者 `rgb()` 颜色。
+为了让页面更美观，除了设置整个页面的背景色以及文字颜色外，你还可以单独设置文字的背景色，即在文字的父元素上添加 `background-color` 属性。 在本挑战里我们将使用 `rgba()` 颜色，而不是之前学到的 `hex` 编码或者 `rgb()` 颜色。
 
 <blockquote>rgba 代表：<br>  r = red 红色<br>  g = green 绿色<br>  b = blue 蓝色<br>  a = alpha 透明度</blockquote>
 
-RGB 值可以取在 0 到 255 之间。alpha 值可取在 0 到 1 之间，其中 0 代表完全透明，1 代表完全不透明。`rgba()` 在需要设置颜色透明度时十分有用，这意味着你可以做出一些很漂亮的半透明效果。
+RGB 值可以取在 0 到 255 之间。 alpha 值可取在 0 到 1 之间，其中 0 代表完全透明，1 代表完全不透明。 `rgba()` 在需要设置颜色透明度时十分有用， 这意味着你可以做出一些很漂亮的半透明效果。
 
-在本挑战里你将会用到这个代码 `background-color: rgba(45, 45, 45, 0.1)`。它表示背景是黑灰色，因为设置了透明度为 0.1，所以几乎是透明的。
+在本挑战里你将会用到这个代码 `background-color: rgba(45, 45, 45, 0.1)`。 它表示背景是黑灰色，因为设置了透明度为 0.1，所以几乎是透明的。
 
 # --instructions--
 
@@ -29,13 +29,13 @@ RGB 值可以取在 0 到 255 之间。alpha 值可取在 0 到 1 之间，其�
 
 ```js
 assert(
-  code.match(
-    /(background-color|background):\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\);/gi
+  /(background-color|background):rgba\(45,45,45,0?\.1\)(;?}|;)/gi.test(
+    code.replace(/\s/g, '')
   )
 );
 ```
 
-`h4` 元素的 `padding` 属性值应为 `10px`。
+`h4` 元素的 `padding` 属性值应为 10px。
 
 ```js
 assert(

@@ -9,7 +9,7 @@ dashedName: change-the-position-of-overlapping-elements-with-the-z-index-propert
 
 # --description--
 
-当一些元素重叠时，在 HTML 里后出现的元素会默认显示在更早出现的元素的上面。你可以使用 `z-index` 属性指定元素的堆叠次序。`z-index` 的取值是整数，数值大的元素会叠放到数值小的元素上面。
+当一些元素在位置上重叠时（例如，使用 `position: absolute | relative | fixed | sticky` 时），在 HTML 里后出现的元素会默认显示在更早出现的元素的上面。 你可以使用 `z-index` 属性指定元素的堆叠次序。 `z-index` 的取值是整数，数值大的元素会叠放到数值小的元素上面。
 
 # --instructions--
 

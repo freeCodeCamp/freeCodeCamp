@@ -1,5 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f069
+title: Dictionaries and Loops
 challengeType: 11
 videoId: EEmekKiKG70
 dashedName: dictionaries-and-loops
@@ -26,27 +27,23 @@ for key in counts:
 
 ## --answers--
 
+<pre>annie 42
+jan 100</pre>
+
+---
+
+<pre>chuck 1
 annie 42
-
-jan 100
-
----
-
-chuck 1
-
-annie 42
-
-jan 100
+jan 100</pre>
 
 ---
 
-chuck 1
+<pre>chuck 1</pre>
 
 ---
 
-[Error]
+<pre>[Error]</pre>
 
 ## --video-solution--
 
 1
-

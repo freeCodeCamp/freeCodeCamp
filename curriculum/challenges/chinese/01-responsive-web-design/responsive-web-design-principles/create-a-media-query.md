@@ -2,16 +2,16 @@
 id: 587d78b0367417b2b2512b08
 title: 创建一个媒体查询
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cPp7VfD'
-forumTopicId: 1
+videoUrl: 'https://scrimba.com/p/pzrPu4/cqwKrtm'
+forumTopicId: 301139
 dashedName: create-a-media-query
 ---
 
 # --description--
 
-媒体查询是 CSS3 中引入的一项新技术，它可以根据不同的视口大小调整内容的布局。视口是指浏览器中，用户可见的网页内容。视口会随访问网站的设备不同而改变。
+媒体查询是 CSS3 中引入的一项新技术，它可以根据不同的视口大小调整内容的布局。 视口是指浏览器中，用户可见的网页内容。 视口会随访问网站的设备不同而改变。
 
-媒体查询由媒体类型组成，如果媒体类型与展示网页的设备类型匹配，则应用对应的样式。你可以在媒体查询中使用各种选择器和样式。
+媒体查询由媒体类型组成，如果媒体类型与展示网页的设备类型匹配，则应用对应的样式。 你可以在媒体查询中使用各种选择器和样式。
 
 下面是一个媒体查询的例子，当设备宽度小于或等于 100px 时返回内容：
 
@@ -25,7 +25,7 @@ dashedName: create-a-media-query
 
 # --instructions--
 
-请添加一条媒体查询规则，当设备的高度小于等于 800px 时，`p` 标签的 `font-size` 为 `10px`。
+请添加一条媒体查询规则，当设备的高度小于等于 `800px` 时，`p` 标签的 `font-size` 为 `10px`。
 
 # --hints--
 

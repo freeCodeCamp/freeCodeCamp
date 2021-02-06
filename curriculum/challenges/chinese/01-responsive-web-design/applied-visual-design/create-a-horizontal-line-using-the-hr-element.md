@@ -9,9 +9,7 @@ dashedName: create-a-horizontal-line-using-the-hr-element
 
 # --description--
 
-术语：Horizontal Rule => hr => 水平线。
-
-你可以用 `hr` 标签来创建一条宽度撑满父元素的水平线。这种水平分割线一般用来表示内容主题的改变，或在视觉上将文档分隔成几个部分。
+你可以用 `hr` 标签来创建一条宽度撑满父元素的水平线。 这种水平分割线一般用来表示内容主题的改变，或在视觉上将文档分隔成几个部分。
 
 # --instructions--
 
@@ -27,7 +25,7 @@ dashedName: create-a-horizontal-line-using-the-hr-element
 assert($('hr').length == 1);
 ```
 
-`hr` 标签应该在标题和段落之间。
+`hr` 应在标题和段落之间。
 
 ```js
 assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));

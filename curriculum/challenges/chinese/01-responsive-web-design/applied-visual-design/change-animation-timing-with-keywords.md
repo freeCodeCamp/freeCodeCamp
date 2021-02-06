@@ -9,31 +9,31 @@ dashedName: change-animation-timing-with-keywords
 
 # --description--
 
-在 CSS 动画里，`animation-timing-function` 用来定义动画的速度曲线。速度曲线决定了动画从一套 CSS 样式变为另一套所用的时间。如果要描述的动画是一辆车在指定时间内（`animation-duration`）从 A 运动到 B，那么 `animation-timing-function` 表述的就是车在运动中的加速和减速等过程。
+在 CSS 动画里，`animation-timing-function` 用来定义动画的速度曲线。 速度曲线决定了动画从一套 CSS 样式变为另一套所用的时间。 如果要描述的动画是一辆车在指定时间内（`animation-duration`）从 A 运动到 B，那么 `animation-timing-function` 表述的就是车在运动中的加速和减速等过程。
 
-对于常用的选项，CSS 提供了内置的关键字方便我们调用。比如，默认的值是 `ease`：动画以低速开始，然后加快，在结束前变慢；其它常用的值包括 `ease-out`：动画以高速开始，以低速结束；`ease-in`，动画以低速开始，以高速结束；`linear`：动画从头到尾的速度是相同的。
+有一些预定义的关键字可用于常见的选项。 比如，默认值是 `ease`，动画以低速开始，然后加快，在结束前变慢。 其它常用的值包括 `ease-out`：动画以高速开始，以低速结束；`ease-in`，动画以低速开始，以高速结束；`linear`：动画从头到尾的速度是相同的。
 
 # --instructions--
 
-给 id 为 `ball1` 和 `ball2` 的元素添加 `animation-timing-function`，`ball1` 的属性值为 `linear`，`ball2` 的属性值为 `ease-out`。它们的 `animation-duration` 都为 2 秒，注意观察它们在开始和结束时的不同。
+给 id 为 `ball1` 和 `ball2` 的元素添加 `animation-timing-function`，`ball1` 的属性值为 `linear`，`ball2` 的属性值为 `ease-out`。 它们的 `animation-duration` 都为 2 秒，注意观察它们在开始和结束时的不同。
 
 # --hints--
 
-id 为 `ball1` 的元素的 `animation-timing-function` 属性值应为 linear。
+id 为 `ball1` 的元素的 `animation-timing-function` 属性值应为 `linear`。
 
 ```js
-const ball1Animation = $('#ball1')
-  .css('animation-timing-function')
-  .replace(/\s/g, '');
+const ball1Animation = __helpers.removeWhiteSpace(
+  $('#ball1').css('animation-timing-function')
+);
 assert(ball1Animation == 'linear' || ball1Animation == 'cubic-bezier(0,0,1,1)');
 ```
 
-id 为 `ball2` 的元素的 `animation-timing-function` 属性值应为 ease-out。
+id 为 `ball2` 的元素的 `animation-timing-function` 属性值为 `ease-out`。
 
 ```js
-const ball2Animation = $('#ball2')
-  .css('animation-timing-function')
-  .replace(/\s/g, '');
+const ball2Animation = __helpers.removeWhiteSpace(
+  $('#ball2').css('animation-timing-function')
+);
 assert(
   ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)'
 );

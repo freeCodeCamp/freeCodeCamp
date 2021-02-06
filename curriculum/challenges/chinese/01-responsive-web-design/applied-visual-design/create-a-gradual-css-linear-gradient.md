@@ -9,11 +9,11 @@ dashedName: create-a-gradual-css-linear-gradient
 
 # --description--
 
-HTML 元素的背景色并不局限于单色。CSS 还为我们提供了颜色渐变。可以通过 `background` 里的 `linear-gradient()` 来实现线性渐变，以下是它的语法：
+HTML 元素的背景色并不局限于单色。 CSS 还为我们提供了颜色渐变。 可通过 `background` 里的 `linear-gradient()` 实现线性渐变， 以下是它的语法：
 
-`background: linear-gradient(gradient_direction, 颜色 1, 颜色 2, 颜色 3, ...);`
+`background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);`
 
-第一个参数用来表明颜色渐变的初始方向。它的值是一个角度，比如 `90deg` 代表水平渐变（从左到右），再比如 `45deg` 代表对角线方向的渐变（从左下到右上）。后续的参数指定了渐变颜色的顺序。
+第一个参数用来表明颜色渐变的初始方向。 它的值是一个角度，比如 `90deg` 代表水平渐变（从左到右），再比如 `45deg` 代表对角线方向的渐变（从左下到右上）。 后续的参数指定了渐变颜色的顺序。
 
 例如：
 

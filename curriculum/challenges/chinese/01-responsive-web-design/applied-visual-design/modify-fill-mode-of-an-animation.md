@@ -9,15 +9,15 @@ dashedName: modify-fill-mode-of-an-animation
 
 # --description--
 
-太棒了，但是现在还不完美。注意动画在 `500ms` 之后重置了，所以按钮又变成了之前的颜色。而我们想要的效果是按钮在悬停时始终高亮。
+太棒了，但是现在还不完美。 注意动画在 `500ms` 之后重置了，所以按钮又变成了之前的颜色。 而我们想要的效果是按钮在悬停时始终高亮。
 
-为此，我们可以通过把 `animation-fill-mode` 设置成 `forwards` 来实现。`animation-fill-mode` 指定了在动画结束时元素的样式：
+为此，我们可以通过把 `animation-fill-mode` 设置成 `forwards` 来实现。 `animation-fill-mode` 指定了在动画结束时元素的样式： 你可以这样设置：
 
 `animation-fill-mode: forwards;`
 
 # --instructions--
 
-修改 `button:hover` 的 `animation-fill-mode`，使按钮悬停时保持高亮。
+修改 `button:hover` 的 `animation-fill-mode` 属性值为 `forwards`，使按钮悬停时保持高亮。
 
 # --hints--
 

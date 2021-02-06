@@ -9,7 +9,7 @@ dashedName: align-an-item-vertically-using-align-self
 
 # --description--
 
-正如能设置网格项沿水平方向的对齐方式一样，我们也可以设置网格项沿竖直方向的对齐方式。为此，我们可以对网格项使用 `align-self` 属性来实现。在上一个挑战中适用于 `justify-self` 属性的属性值同样也可用于 `align-self`。
+正如能设置网格项沿水平方向的对齐方式一样，我们也可以设置网格项沿竖直方向的对齐方式。 为此，我们可以对网格项使用 `align-self` 属性来实现。 在上一个挑战中适用于 `justify-self` 属性的属性值同样也可用于这个属性。
 
 # --instructions--
 
@@ -36,7 +36,7 @@ assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
     background: PaleTurquoise;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 

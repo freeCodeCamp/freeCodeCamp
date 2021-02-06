@@ -11,7 +11,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 当你在 `:root` 里创建变量时，这些变量的作用域是整个页面。
 
-如果在元素里创建相同的变量，会重写 `:root` 变量设置的值。
+如果在元素里创建相同的变量，会重写作用于整个页面的变量的值。
 
 # --instructions--
 

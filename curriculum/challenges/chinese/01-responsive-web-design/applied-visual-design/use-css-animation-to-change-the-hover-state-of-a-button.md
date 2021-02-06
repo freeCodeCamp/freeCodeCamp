@@ -34,17 +34,17 @@ dashedName: use-css-animation-to-change-the-hover-state-of-a-button
 
 注意 `ms` 代表毫秒，1000ms 等于 1s。
 
-使用 `@keyframes` 来改变 `button` 元素的 `background-color`，使其在悬停时变成 `#4791d0`。`@keyframes` 规则应该只有一个 `100%` 条目。
+使用 `@keyframes` 来改变 `button` 元素的 `background-color`，使其在悬停时变成 `#4791d0`。 `@keyframes` 规则应该只有一个 `100%` 条目。
 
 # --hints--
 
-`@keyframes` 规则的 `animation-name` 应该是 background-color。
+@keyframes 规则的 `animation-name` 应该是 background-color。
 
 ```js
 assert(code.match(/@keyframes\s+?background-color\s*?{/g));
 ```
 
-在 `@keyframes` 为 `100%` 的位置，应将 `background-color` 改成 `#4791d0`。
+在 `@keyframes` 为 100% 的位置，应将 `background-color` 改成 `#4791d0`。
 
 ```js
 assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));

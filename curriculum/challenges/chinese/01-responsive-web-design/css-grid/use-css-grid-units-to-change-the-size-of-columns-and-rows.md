@@ -9,7 +9,7 @@ dashedName: use-css-grid-units-to-change-the-size-of-columns-and-rows
 
 # --description--
 
-在 CSS 网格中，可以使用绝对单位（如 `px`）或相对单位（如 `em`）来定义行或列的大小。下面的单位也可以使用：
+在 CSS 网格中，可以使用绝对单位（如 `px`）或相对单位（如 `em`）来定义行或列的大小。 下面的单位也可以使用：
 
 `fr`：设置列或行占剩余空间的比例，
 
@@ -23,7 +23,7 @@ dashedName: use-css-grid-units-to-change-the-size-of-columns-and-rows
 grid-template-columns: auto 50px 10% 2fr 1fr;
 ```
 
-这段代码添加了五个列。第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。
+这段代码添加了五个列。 第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。
 
 # --instructions--
 

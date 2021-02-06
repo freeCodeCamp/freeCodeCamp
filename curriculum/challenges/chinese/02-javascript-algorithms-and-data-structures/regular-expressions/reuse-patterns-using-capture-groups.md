@@ -27,7 +27,7 @@ repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
 
 # --instructions--
 
-在正则表达式 `reRegex` 中使用捕获组，以匹配在字符串中被空格隔开的三个相同数字。
+Use capture groups in `reRegex` to match a string that consists of only the same number repeated exactly three times separated by single spaces.
 
 # --hints--
 
@@ -43,52 +43,43 @@ assert(reRegex.source.match(/\\d/));
 assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 ```
 
-你的正则表达式应该有两个空格分隔三个数字。
-
-```js
-assert(
-  reRegex.source.match(/ |\\s/g).length === 2 ||
-    reRegex.source.match(/\(\\s\)(?=.*\\(1|2))/g)
-);
-```
-
-你的正则表达式应该匹配 `"42 42 42"`。
+Your regex should match `"42 42 42"`.
 
 ```js
 assert(reRegex.test('42 42 42'));
 ```
 
-你的正则表达式应该匹配 `"100 100 100"`。
+Your regex should match `"100 100 100"`.
 
 ```js
 assert(reRegex.test('100 100 100'));
 ```
 
-你的正则表达式不应该匹配 `"42 42 42 42"`。
+Your regex should not match `"42 42 42 42"`.
 
 ```js
 assert.equal('42 42 42 42'.match(reRegex.source), null);
 ```
 
-你的正则表达式不应该匹配 `"42 42"`。
+Your regex should not match `"42 42"`.
 
 ```js
 assert.equal('42 42'.match(reRegex.source), null);
 ```
 
-你的正则表达式不应该匹配 `"101 102 103"`。
+Your regex should not match `"101 102 103"`.
 
 ```js
 assert(!reRegex.test('101 102 103'));
 ```
 
-你的正则表达式不应该匹配 `"1 2 3"`。
+Your regex should not match `"1 2 3"`.
 
 ```js
 assert(!reRegex.test('1 2 3'));
 ```
 
-你的正则表达式应该匹配 `"10 10 10"`。
+Your regex should match `"10 10 10"`.
 
 ```js
 assert(reRegex.test('10 10 10'));

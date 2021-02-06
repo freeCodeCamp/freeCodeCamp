@@ -9,7 +9,7 @@ dashedName: limit-item-size-using-the-minmax-function
 
 # --description--
 
-此外，内置函数 `minmax` 也可用于设置 `grid-template-columns` 和 `grid-template-rows` 的值。它的作用是在网格容器改变大小时限制网格项的大小。为此，你需要指定网格项允许的尺寸范围。例如：
+此外，内置函数 `minmax` 也可用于设置 `grid-template-columns` 和 `grid-template-rows` 的值。 它的作用是在网格容器改变大小时限制网格项的大小。 为此，你需要指定网格项允许的尺寸范围。 例如：
 
 ```css
 grid-template-columns: 100px minmax(50px, 200px);
@@ -19,7 +19,7 @@ grid-template-columns: 100px minmax(50px, 200px);
 
 # --instructions--
 
-请用 `minmax` 函数替换 `repeat` 函数中的 `1fr`，限定其最小值为 `90px`，最大值为`1fr`。你可以调整最右侧的预览面板查看效果。
+请用 `minmax` 函数替换 `repeat` 函数中的 `1fr`，限定其最小值为 `90px`，最大值为`1fr`。 你可以调整最右侧的预览面板查看效果。
 
 # --hints--
 

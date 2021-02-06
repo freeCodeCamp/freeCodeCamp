@@ -9,7 +9,7 @@ dashedName: style-multiple-elements-with-a-css-class
 
 # --description--
 
-通过 CSS class 选择器，多个 HTML 元素可以使用相同的 CSS 样式规则。你可以将 `red-text` class 添加到第一个 `p` 元素上。
+通过 CSS class 选择器，多个 HTML 元素可以使用相同的 CSS 样式规则。 你可以将 `red-text` class 添加到第一个 `p` 元素上。
 
 # --hints--
 
@@ -102,9 +102,9 @@ assert($('p:eq(0)').hasClass('red-text'));
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -119,7 +119,7 @@ assert($('p:eq(0)').hasClass('red-text'));
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

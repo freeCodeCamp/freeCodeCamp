@@ -9,7 +9,7 @@ dashedName: specify-how-fonts-should-degrade
 
 # --description--
 
-所有浏览器都有几种默认字体，包括`monospace`、`serif` 和 `sans-serif`。
+所有浏览器都有几种默认字体， 包括 `monospace`、`serif` 和 `sans-serif`。
 
 在字体不可用的时候，你可以告诉浏览器通过“降级”去使用其他字体。
 
@@ -21,19 +21,19 @@ p {
 }
 ```
 
-通用字体名不区分大小写。同时，也不需要使用引号，因为它们是 CSS 中的关键字。
+通用字体名不区分大小写。 同时，也不需要使用引号，因为它们是 CSS 中的关键字。
 
 # --instructions--
 
 首先，添加 `monospace` 字体到 `h2` 元素里，它现在拥有 `Lobster` 和 `monospace` 两种字体。
 
-在上一个挑战里，你已经通过 `link` 标签从谷歌字体库引入了 `Lobster` 字体。现在让我们使用之前学习的 HTML 注释，将 `Lobster` 字体的引入注释掉，这样一来，引入的 `Lobster` 字体会失效。此时，你会发现 `h2` 元素降级到了 `monospace` 字体。
+在上一个挑战里，你已经通过 `link` 标签从谷歌字体库引入了 `Lobster` 字体。 现在让我们使用之前学习的 HTML 注释，将 `Lobster` 字体的引入注释掉，这样一来，这个引入的字体就会失效。 此时，你会发现 `h2` 元素降级到了 `monospace` 字体。
 
-**注意：**如果你的电脑里已经安装了 `Lobster` 字体，你就看不到这个降级过程，因为浏览器还是会在你的电脑中找到该字体。
+**Note:** 如果你的电脑里已经安装了 `Lobster` 字体，你就看不到这个降级过程，因为浏览器会在你的电脑中找到该字体。
 
 # --hints--
 
-`h2` 元素的字体应设置为 `Lobster`。
+h2 元素的字体应设置为 `Lobster`。
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-当 `Lobster` 字体失效时，`h2` 元素应该降级使用 `monospace` 字体。
+当 `Lobster` 字体失效时，h2 元素应该降级使用 `monospace` 字体。
 
 ```js
 assert(
@@ -141,9 +141,9 @@ assert(new RegExp('[^fc]-->', 'gi').test(code));
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -158,7 +158,7 @@ assert(new RegExp('[^fc]-->', 'gi').test(code));
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

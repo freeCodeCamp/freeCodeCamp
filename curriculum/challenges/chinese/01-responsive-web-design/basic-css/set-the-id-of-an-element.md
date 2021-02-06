@@ -11,9 +11,9 @@ dashedName: set-the-id-of-an-element
 
 除了 class 属性，每一个 HTML 元素都有一个 `id` 属性。
 
-使用 `id` 有几个好处：你可以通过 `id` 选择器来改变单个元素的样式。在稍后的课程中，你还会了解到如何在 JavaScript 里面通过 `id` 来选择和操作元素。
+使用 `id` 有几个好处：你可以通过 `id` 选择器来改变单个元素的样式。在稍后的课程中，你还会了解到如何在 JavaScript 里面用它来选择和操作元素。
 
-根据规范，`id` 属性应是唯一的。尽管浏览器并非必须执行这条规范，但 `id` 唯一是广泛认可的最佳实践。因此，请不要给多个元素设置相同的 `id`。
+根据规范，`id` 属性应是唯一的。 尽管浏览器并非必须执行这条规范，但这是广泛认可的最佳实践。 因此，请不要给多个元素设置相同的 `id`。
 
 设置 `h2` 元素的 id 为 `cat-photo-app` 的代码如下：
 
@@ -137,9 +137,9 @@ assert($('form').attr('id') === 'cat-photo-form');
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -154,7 +154,7 @@ assert($('form').attr('id') === 'cat-photo-form');
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

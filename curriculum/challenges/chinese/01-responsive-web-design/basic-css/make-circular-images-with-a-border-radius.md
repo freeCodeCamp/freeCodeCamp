@@ -23,7 +23,7 @@ dashedName: make-circular-images-with-a-border-radius
 assert(parseInt($('img').css('border-top-left-radius')) > 48);
 ```
 
-值应为 `50%`。
+`border-radius` 的值应为 `50%`。
 
 ```js
 assert(code.match(/50%/g));

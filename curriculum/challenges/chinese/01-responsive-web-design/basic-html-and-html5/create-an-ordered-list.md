@@ -11,22 +11,22 @@ dashedName: create-an-ordered-list
 
 HTML 中有用于创建<dfn>有序列表</dfn>的特定元素。
 
-有序列表以 `<ol>` 开始，中间包含一个或多个 `<li>` 元素，最后以 `</ol>` 结束。
+有序列表以 `<ol>` 开始，中间包含一个或多个 `<li>` 元素。 最后以 `</ol>` 结束。
 
 例如:
 
 ```html
 <ol>
-  <li>加菲猫</li>
-  <li>哆啦A梦</li>
+  <li>Garfield</li>
+  <li>Sylvester</li>
 </ol>
 ```
 
-将会创建一个包含加菲猫和哆啦 A 梦的有序列表。
+将创建一个包含 `Garfield` 和 `Sylvester` 的编号列表。
 
 # --instructions--
 
-请创建一个有序列表，内容是猫咪最讨厌的三样东西（`Top 3 things cats hate:`），内容可以任意指定。
+请创建一个有序列表，内容是猫咪最讨厌的三样东西。
 
 # --hints--
 

@@ -9,7 +9,7 @@ dashedName: use-the-justify-content-property-in-the-tweet-embed
 
 # --description--
 
-上一项挑战展示了 `justify-content` 属性的作用。如果我们想对齐推文内的子元素，可以把 `justify-content` 应用在 `.profile-name` 上。
+上一项挑战展示了 `justify-content` 属性的作用。 如果我们想对齐推文内的子元素，可以把给 `.profile-name` 元素应用这个属性。
 
 # --instructions--
 
@@ -17,7 +17,13 @@ dashedName: use-the-justify-content-property-in-the-tweet-embed
 
 # --hints--
 
-`.profile-name` 元素的 `justify-content` 可选用以下属性值：`center`、`flex-start`、`flex-end`、`space-between`、`space-around`。
+`.follow-btn` 应在页面上呈现。 请关闭广告拦截器等任何扩展。
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
+`.profile-name` 元素的 `justify-content` 属性可选用以下属性值：`center`、`flex-start`、`flex-end`、`space-between`、`space-around` 或 `space-evenly`。
 
 ```js
 assert(
