@@ -111,15 +111,9 @@ const certKeyToText = {
   [certKeys.machineLearningPyV7]: 'Machine Learning with Python'
 };
 
-const constantStrings = {
-  gitHubUserAgent:
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'
-};
-
 exports.completionHours = completionHours;
 exports.certKeys = certKeys;
 exports.superBlockCertTypeMap = superBlockCertTypeMap;
 exports.certIds = certIds;
 exports.certKeyToId = certKeyToId;
 exports.certKeyToText = certKeyToText;
-exports.constantStrings = constantStrings;
