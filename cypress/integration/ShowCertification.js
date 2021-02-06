@@ -57,7 +57,7 @@ describe('A certification,', function() {
         .and(
           'match',
           // eslint-disable-next-line max-len
-          /'https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Legacy Front End&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=http:\/\/localhost:8000\/certification\/developmentuser\/legacy-front-end/
+          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Legacy Front End&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=http:\/\/localhost:8000\/certification\/developmentuser\/legacy-front-end/
         );
     });
 
