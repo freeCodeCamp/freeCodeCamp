@@ -15,10 +15,10 @@ import { getChallenges } from '../utils/get-curriculum';
 
 import {
   completionHours,
-  certKeys,
+  certTypes,
   superBlockCertTypeMap,
-  certKeyToText,
-  certKeyToId,
+  certTypeTitleMap,
+  certTypeIdMap,
   certIds
 } from '../../../../config/certification-settings';
 
@@ -57,7 +57,7 @@ export default function bootCertificate(app) {
 }
 
 export function getFallbackFrontEndDate(completedChallenges, completedDate) {
-  var chalIds = [...Object.values(certKeyToId), oldDataVizId];
+  var chalIds = [...Object.values(certTypeIdMap), oldDataVizId];
 
   const latestCertDate = completedChallenges
     .filter(chal => chalIds.includes(chal.id))
@@ -81,26 +81,32 @@ const renderCertifiedEmail = loopback.template(
 function createCertTypeIds(allChallenges) {
   return {
     // legacy
-    [certKeys.frontEnd]: getCertById(legacyFrontEndChallengeId, allChallenges),
-    [certKeys.backEnd]: getCertById(legacyBackEndChallengeId, allChallenges),
-    [certKeys.dataVis]: getCertById(legacyDataVisId, allChallenges),
-    [certKeys.infosecQa]: getCertById(legacyInfosecQaId, allChallenges),
-    [certKeys.fullStack]: getCertById(legacyFullStackId, allChallenges),
+    [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, allChallenges),
+    [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, allChallenges),
+    [certTypes.dataVis]: getCertById(legacyDataVisId, allChallenges),
+    [certTypes.infosecQa]: getCertById(legacyInfosecQaId, allChallenges),
+    [certTypes.fullStack]: getCertById(legacyFullStackId, allChallenges),
 
     // modern
-    [certKeys.respWebDesign]: getCertById(respWebDesignId, allChallenges),
-    [certKeys.frontEndLibs]: getCertById(frontEndLibsId, allChallenges),
-    [certKeys.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
-    [certKeys.jsAlgoDataStruct]: getCertById(jsAlgoDataStructId, allChallenges),
-    [certKeys.apisMicroservices]: getCertById(
+    [certTypes.respWebDesign]: getCertById(respWebDesignId, allChallenges),
+    [certTypes.frontEndLibs]: getCertById(frontEndLibsId, allChallenges),
+    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
+    [certTypes.jsAlgoDataStruct]: getCertById(
+      jsAlgoDataStructId,
+      allChallenges
+    ),
+    [certTypes.apisMicroservices]: getCertById(
       apisMicroservicesId,
       allChallenges
     ),
-    [certKeys.qaV7]: getCertById(qaV7Id, allChallenges),
-    [certKeys.infosecV7]: getCertById(infosecV7Id, allChallenges),
-    [certKeys.sciCompPyV7]: getCertById(sciCompPyV7Id, allChallenges),
-    [certKeys.dataAnalysisPyV7]: getCertById(dataAnalysisPyV7Id, allChallenges),
-    [certKeys.machineLearningPyV7]: getCertById(
+    [certTypes.qaV7]: getCertById(qaV7Id, allChallenges),
+    [certTypes.infosecV7]: getCertById(infosecV7Id, allChallenges),
+    [certTypes.sciCompPyV7]: getCertById(sciCompPyV7Id, allChallenges),
+    [certTypes.dataAnalysisPyV7]: getCertById(
+      dataAnalysisPyV7Id,
+      allChallenges
+    ),
+    [certTypes.machineLearningPyV7]: getCertById(
       machineLearningPyV7Id,
       allChallenges
     )
@@ -225,7 +231,7 @@ function createVerifyCert(certTypeIds, app) {
     log(certType);
     return Observable.of(certTypeIds[certType])
       .flatMap(challenge => {
-        const certName = certKeyToText[certType];
+        const certName = certTypeTitleMap[certType];
         if (user[certType]) {
           return Observable.just({
             type: 'info',
@@ -332,8 +338,8 @@ function createShowCert(app) {
     let { username, cert } = req.params;
     username = username.toLowerCase();
     const certType = superBlockCertTypeMap[cert];
-    const certId = certKeyToId[certType];
-    const certTitle = certKeyToText[certType];
+    const certId = certTypeIdMap[certType];
+    const certTitle = certTypeTitleMap[certType];
     const completionTime = completionHours[certType] || 300;
     return findUserByUsername$(username, {
       isCheater: true,
@@ -481,7 +487,7 @@ function createShowCert(app) {
           {
             type: 'info',
             message: 'flash.user-not-certified',
-            variables: { username: username, cert: certKeyToText[certType] }
+            variables: { username: username, cert: certTypeTitleMap[certType] }
           }
         ]
       });

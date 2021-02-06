@@ -1,4 +1,4 @@
-const certKeys = {
+const certTypes = {
   frontEnd: 'isFrontEndCert',
   backEnd: 'isBackEndCert',
   dataVis: 'isDataVisCert',
@@ -35,85 +35,85 @@ const certIds = {
 };
 
 const completionHours = {
-  [certKeys.frontEnd]: 400,
-  [certKeys.backEnd]: 400,
-  [certKeys.dataVis]: 400,
-  [certKeys.infosecQa]: 300,
-  [certKeys.fullStack]: 1800,
-  [certKeys.respWebDesign]: 300,
-  [certKeys.frontEndLibs]: 300,
-  [certKeys.jsAlgoDataStruct]: 300,
-  [certKeys.dataVis2018]: 300,
-  [certKeys.apisMicroservices]: 300,
-  [certKeys.qaV7]: 300,
-  [certKeys.infosecV7]: 300,
-  [certKeys.sciCompPyV7]: 300,
-  [certKeys.dataAnalysisPyV7]: 300,
-  [certKeys.machineLearningPyV7]: 300
+  [certTypes.frontEnd]: 400,
+  [certTypes.backEnd]: 400,
+  [certTypes.dataVis]: 400,
+  [certTypes.infosecQa]: 300,
+  [certTypes.fullStack]: 1800,
+  [certTypes.respWebDesign]: 300,
+  [certTypes.frontEndLibs]: 300,
+  [certTypes.jsAlgoDataStruct]: 300,
+  [certTypes.dataVis2018]: 300,
+  [certTypes.apisMicroservices]: 300,
+  [certTypes.qaV7]: 300,
+  [certTypes.infosecV7]: 300,
+  [certTypes.sciCompPyV7]: 300,
+  [certTypes.dataAnalysisPyV7]: 300,
+  [certTypes.machineLearningPyV7]: 300
 };
 
 const superBlockCertTypeMap = {
   // legacy
-  'legacy-front-end': certKeys.frontEnd,
-  'legacy-back-end': certKeys.backEnd,
-  'legacy-data-visualization': certKeys.dataVis,
+  'legacy-front-end': certTypes.frontEnd,
+  'legacy-back-end': certTypes.backEnd,
+  'legacy-data-visualization': certTypes.dataVis,
   // Keep these slugs the same so we don't
   // break existing links
-  'information-security-and-quality-assurance': certKeys.infosecQa,
-  'full-stack': certKeys.fullStack,
+  'information-security-and-quality-assurance': certTypes.infosecQa,
+  'full-stack': certTypes.fullStack,
 
   // modern
-  'responsive-web-design': certKeys.respWebDesign,
-  'javascript-algorithms-and-data-structures': certKeys.jsAlgoDataStruct,
-  'front-end-libraries': certKeys.frontEndLibs,
-  'data-visualization': certKeys.dataVis2018,
-  'apis-and-microservices': certKeys.apisMicroservices,
-  'quality-assurance-v7': certKeys.qaV7,
-  'information-security-v7': certKeys.infosecV7,
-  'scientific-computing-with-python-v7': certKeys.sciCompPyV7,
-  'data-analysis-with-python-v7': certKeys.dataAnalysisPyV7,
-  'machine-learning-with-python-v7': certKeys.machineLearningPyV7
+  'responsive-web-design': certTypes.respWebDesign,
+  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
+  'front-end-libraries': certTypes.frontEndLibs,
+  'data-visualization': certTypes.dataVis2018,
+  'apis-and-microservices': certTypes.apisMicroservices,
+  'quality-assurance-v7': certTypes.qaV7,
+  'information-security-v7': certTypes.infosecV7,
+  'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
+  'data-analysis-with-python-v7': certTypes.dataAnalysisPyV7,
+  'machine-learning-with-python-v7': certTypes.machineLearningPyV7
 };
 
-const certKeyToId = {
-  [certKeys.frontEnd]: certIds.legacyFrontEndChallengeId,
-  [certKeys.backEnd]: certIds.legacyBackEndChallengeId,
-  [certKeys.dataVis]: certIds.legacyDataVisId,
-  [certKeys.infosecQa]: certIds.legacyInfosecQaId,
-  [certKeys.fullStack]: certIds.legacyFullStackId,
-  [certKeys.respWebDesign]: certIds.respWebDesignId,
-  [certKeys.frontEndLibs]: certIds.frontEndLibsId,
-  [certKeys.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
-  [certKeys.dataVis2018]: certIds.dataVis2018Id,
-  [certKeys.apisMicroservices]: certIds.apisMicroservicesId,
-  [certKeys.qaV7]: certIds.qaV7Id,
-  [certKeys.infosecV7]: certIds.infosecV7Id,
-  [certKeys.sciCompPyV7]: certIds.sciCompPyV7Id,
-  [certKeys.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
-  [certKeys.machineLearningPyV7]: certIds.machineLearningPyV7Id
+const certTypeIdMap = {
+  [certTypes.frontEnd]: certIds.legacyFrontEndChallengeId,
+  [certTypes.backEnd]: certIds.legacyBackEndChallengeId,
+  [certTypes.dataVis]: certIds.legacyDataVisId,
+  [certTypes.infosecQa]: certIds.legacyInfosecQaId,
+  [certTypes.fullStack]: certIds.legacyFullStackId,
+  [certTypes.respWebDesign]: certIds.respWebDesignId,
+  [certTypes.frontEndLibs]: certIds.frontEndLibsId,
+  [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
+  [certTypes.dataVis2018]: certIds.dataVis2018Id,
+  [certTypes.apisMicroservices]: certIds.apisMicroservicesId,
+  [certTypes.qaV7]: certIds.qaV7Id,
+  [certTypes.infosecV7]: certIds.infosecV7Id,
+  [certTypes.sciCompPyV7]: certIds.sciCompPyV7Id,
+  [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
+  [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id
 };
 
-const certKeyToText = {
-  [certKeys.frontEnd]: 'Legacy Front End',
-  [certKeys.backEnd]: 'Legacy Back End',
-  [certKeys.dataVis]: 'Legacy Data Visualization',
-  [certKeys.infosecQa]: 'Legacy Information Security and Quality Assurance',
-  [certKeys.fullStack]: 'Legacy Full Stack',
-  [certKeys.respWebDesign]: 'Responsive Web Design',
-  [certKeys.frontEndLibs]: 'Front End Libraries',
-  [certKeys.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
-  [certKeys.dataVis2018]: 'Data Visualization',
-  [certKeys.apisMicroservices]: 'APIs and Microservices',
-  [certKeys.qaV7]: 'Quality Assurance',
-  [certKeys.infosecV7]: 'Information Security',
-  [certKeys.sciCompPyV7]: 'Scientific Computing with Python',
-  [certKeys.dataAnalysisPyV7]: 'Data Analysis with Python',
-  [certKeys.machineLearningPyV7]: 'Machine Learning with Python'
+const certTypeTitleMap = {
+  [certTypes.frontEnd]: 'Legacy Front End',
+  [certTypes.backEnd]: 'Legacy Back End',
+  [certTypes.dataVis]: 'Legacy Data Visualization',
+  [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
+  [certTypes.fullStack]: 'Legacy Full Stack',
+  [certTypes.respWebDesign]: 'Responsive Web Design',
+  [certTypes.frontEndLibs]: 'Front End Libraries',
+  [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
+  [certTypes.dataVis2018]: 'Data Visualization',
+  [certTypes.apisMicroservices]: 'APIs and Microservices',
+  [certTypes.qaV7]: 'Quality Assurance',
+  [certTypes.infosecV7]: 'Information Security',
+  [certTypes.sciCompPyV7]: 'Scientific Computing with Python',
+  [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
+  [certTypes.machineLearningPyV7]: 'Machine Learning with Python'
 };
 
 exports.completionHours = completionHours;
-exports.certKeys = certKeys;
+exports.certTypes = certTypes;
 exports.superBlockCertTypeMap = superBlockCertTypeMap;
 exports.certIds = certIds;
-exports.certKeyToId = certKeyToId;
-exports.certKeyToText = certKeyToText;
+exports.certTypeIdMap = certTypeIdMap;
+exports.certTypeTitleMap = certTypeTitleMap;
