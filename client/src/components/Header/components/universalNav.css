@@ -170,7 +170,6 @@
   font-family: 'lato', sans-serif;
   font-size: 18px;
   color: var(--gray-00);
-  outline: none;
   background-color: var(--theme-color);
   cursor: pointer;
   max-height: calc(var(--header-height) - 6px);
@@ -181,6 +180,11 @@
   background-color: var(--theme-color);
   color: var(--gray-00);
   border: 1px solid var(--gray-00);
+}
+
+.toggle-button-nav:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -3px;
 }
 
 .navatar {

@@ -28,7 +28,7 @@ Select a file to work on and Crowdin will open the editor view.
 Crowdin separates a document into translatable "strings", usually sentences. Each string is translated individually. Referring to the image above:
 
 1. A string highlighted in green already has a proposed translation.
-2. A string highlighted in red does *not* have a proposed translation.
+2. A string highlighted in red does _not_ have a proposed translation.
 3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must not be translated. You will be unable to select these strings in the editor.
 4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
 5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). Translation Memory refers to similar or identical strings that we have translated/approved in other files. Machine Translation refers to translations recommended by their integrated library.
@@ -76,7 +76,7 @@ This message appears when Crowdin's QA system has identified a potential error i
 > [!WARNING]
 > You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error might be incorrect.
 
-Crowdin will sometimes convert HTML tags (such as `<code>`) into numerical values, like `<0>text</0>` or `<1>text</1>`. These tags are usually code tags, and our QA check will verify that these have not been translated. However, sometimes these may be `<strong>` or `<em>` tags, which *should* be translated. If you hover over a numerical tag in the source string, you can see which HTML tag or tags have been replaced:
+Crowdin will sometimes convert HTML tags (such as `<code>`) into numerical values, like `<0>text</0>` or `<1>text</1>`. These tags are usually code tags, and our QA check will verify that these have not been translated. However, sometimes these may be `<strong>` or `<em>` tags, which _should_ be translated. If you hover over a numerical tag in the source string, you can see which HTML tag or tags have been replaced:
 
 ![Image - Hover over a tag](./images/crowdin/tag-hover.png)
 

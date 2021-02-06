@@ -162,9 +162,9 @@ const completionHours = {
   [certTypes.apisMicroservices]: 300,
   [certTypes.qaV7]: 300,
   [certTypes.infosecV7]: 300,
-  [certTypes.sciCompPyV7]: 400,
-  [certTypes.dataAnalysisPyV7]: 400,
-  [certTypes.machineLearningPyV7]: 400
+  [certTypes.sciCompPyV7]: 300,
+  [certTypes.dataAnalysisPyV7]: 300,
+  [certTypes.machineLearningPyV7]: 300
 };
 
 function getCertById(anId, allChallenges) {

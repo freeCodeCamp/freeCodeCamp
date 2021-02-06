@@ -468,5 +468,11 @@
     "invalid-protocol": "La URL debe comenzar con http o https",
     "url-not-image": "URL debes enlazar directamente a un archivo de imagen",
     "use-valid-url": "Utiliza un URL válido"
+  },
+  "certification": {
+    "executive": "Executive Director, freeCodeCamp.org",
+    "verify": "Verify this certification at {{certURL}}",
+    "issued": "Issued",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully completed the freeCodeCamp.org</2> <3>{{title}}</3> <4>Developer Certification, representing approximately {{time}} hours of coursework.</4>"
   }
 }

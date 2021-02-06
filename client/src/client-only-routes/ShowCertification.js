@@ -11,7 +11,7 @@ import ShowProjectLinks from './ShowProjectLinks';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCampLogo';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import {
   showCertSelector,
@@ -324,7 +324,7 @@ const ShowCertification = props => {
             </Col>
             <Col md={7} sm={12}>
               <div data-cy='issue-date' className='issue-date'>
-                Issued&nbsp;
+                {t('certification.issued')}&nbsp;
                 <strong>{format(certDate, 'MMMM d, y')}</strong>
               </div>
             </Col>
@@ -332,18 +332,22 @@ const ShowCertification = props => {
 
           <main className='information'>
             <div className='information-container'>
-              <h3>This certifies that</h3>
-              <h1>
-                <strong>{displayName}</strong>
-              </h1>
-              <h3>has successfully completed the freeCodeCamp.org</h3>
-              <h1>
-                <strong>{certTitle}</strong>
-              </h1>
-              <h4>
-                Developer Certification, representing approximately{' '}
-                {completionTime} hours of coursework
-              </h4>
+              <Trans
+                user={displayName}
+                title={certTitle}
+                time={completionTime}
+                i18nKey='certification.fulltext'
+              >
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>{{ user: displayName }}</strong>
+                </h1>
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>{{ title: certTitle }}</strong>
+                </h1>
+                <h4>{{ time: completionTime }}</h4>
+              </Trans>
             </div>
           </main>
           <footer>
@@ -358,10 +362,12 @@ const ShowCertification = props => {
               <p>
                 <strong>Quincy Larson</strong>
               </p>
-              <p>Executive Director, freeCodeCamp.org</p>
+              <p>{t('certification.executive')}</p>
             </div>
             <Row>
-              <p className='verify'>Verify this certification at {certURL}</p>
+              <p className='verify'>
+                {t('certification.verify', { certURL: certURL })}
+              </p>
             </Row>
           </footer>
         </Row>
