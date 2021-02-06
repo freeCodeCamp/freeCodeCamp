@@ -249,7 +249,7 @@ const hasRadioNavItem = component => {
 };
 
 const hasSignOutNavItem = component => {
-  const { children } = navigationLinks(component, 10);
+  const { children } = navigationLinks(component, 12);
   const signOutProps = children[1].props;
 
   return (
