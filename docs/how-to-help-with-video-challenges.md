@@ -85,8 +85,8 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Next, access the YouTube video with that videoId. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
+Next, access the YouTube video with that `videoId`. The URL for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (replace `videoId` in the URL with the video's ID - without square brackets)
 
 In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
@@ -122,7 +122,13 @@ More answers
 1
 ```
 
-Update the  “Question Text” with your question. Update the `Answer 1`, `Answer 2`, and so on with the possible answers. Make sure to update the video-solution number with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded by quotation marks.
+Add/Update the  question text under the part that shows:
+```
+# --question--
+
+## --text--
+```
+Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
 ### Question examples
 

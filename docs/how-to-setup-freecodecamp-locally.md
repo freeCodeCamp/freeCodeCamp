@@ -68,7 +68,7 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
 > [!TIP]
 > The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
 >
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
 
 **Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
@@ -76,7 +76,7 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
 
 2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 
-3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
 <details>
    <summary>
@@ -88,7 +88,7 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
 
 ## Clone your fork from GitHub
 
-[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
 > [!WARNING]
 > If you are working on a WSL2 Linux Distro, you might get performance and stability issues by running this project in a folder which is shared between Windows and WSL2 (e.g. `/mnt/c/Users/`).
@@ -138,7 +138,7 @@ You need a reference from your local clone to the `upstream` repository in addit
    git remote -v
    ```
 
-   The output should look something like below:
+   The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
    ```console
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
@@ -514,7 +514,7 @@ npm run clean-and-develop
 
 If you continue to face issues with the build, cleaning up the workspace is recommend.
 
-Use `git clean` in an interactive mode:
+Use `git clean` in interactive mode:
 
 ```
 git clean -ifdX
@@ -556,6 +556,6 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 
 ## Getting Help
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/contributors).
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

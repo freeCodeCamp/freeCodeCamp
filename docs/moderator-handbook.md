@@ -304,7 +304,7 @@ Please note that we will frequently remove mods whom we think are inactive. When
 
 ## How our Contributors room works
 
-Anyone is welcome in the [Contributors room on our chat server](https://chat.freecodecamp.org/contributors). It is the designated chat room for moderators and other campers who are contributing to our community in any number of ways, including through study groups.
+Anyone is welcome in the [Contributors room on our chat server](https://chat.freecodecamp.org/channel/contributors). It is the designated chat room for moderators and other campers who are contributing to our community in any number of ways, including through study groups.
 
 Our assumption is that contributors will read anything in this room that directly mentions them with an `@username`. Everything else is optional. But feel free to read anything anyone posts in there and interact.
 
@@ -443,7 +443,7 @@ Thanks again! 😊
 
 ---
 
-If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/contributors).
+If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 ```
 
 ### Closing invalid pull requests
