@@ -39,7 +39,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.3.13",
-    "chai": "4.2.0",
+    "chai": "4.3.0",
     "cross-env": "^7.0.2",
     "css": "^3.0.0",
     "fs-extra": "^6.0.1",
