@@ -245,7 +245,7 @@ const ShowCertification = props => {
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();
-  const certMonth = certDate.getMonth();
+  const certMonth = certDate.getMonth() + 1; // Linkedin Certificate API is 1 base-index
   const certURL = `https://freecodecamp.org${pathname}`;
 
   const donationCloseBtn = (
