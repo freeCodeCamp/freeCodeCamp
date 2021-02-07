@@ -133,7 +133,7 @@ You can place the key inside the component tags like the above example if the te
 
 ### Complex Elements Nested
 
-Other times, you will want to have certain text inside another element, an achor tag is a good example:
+Other times, you will want to have certain text inside another element, an anchor tag is a good example:
 
 ```js
 // in the component:
