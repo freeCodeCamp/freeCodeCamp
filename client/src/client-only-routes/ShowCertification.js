@@ -245,7 +245,7 @@ const ShowCertification = props => {
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();
-  const certMonth = certDate.getMonth();
+  const certMonth = certDate.getMonth() + 1;
   const certURL = `https://freecodecamp.org${pathname}`;
 
   const donationCloseBtn = (
