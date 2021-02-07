@@ -52,7 +52,7 @@
     "passport-local": "^1.0.0",
     "query-string": "^6.13.8",
     "rx": "^4.1.0",
-    "stripe": "^6.36.0",
+    "stripe": "^8.134.0",
     "uuid": "^3.4.0",
     "validator": "^9.4.1"
   },
