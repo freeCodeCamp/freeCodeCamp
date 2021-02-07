@@ -7,12 +7,8 @@ import { homeLocation } from '../../config/env.json';
 export const getheadTagComponents = () => {
   const socialImage =
     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
-  const gapScript = (
-    <script href={pathToGap} id='gap' key='gap' rel='stylesheet' />
-  );
+
   const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
-  const pathToGap = withPrefix('/gap/index.js');
-  const parsedHomeUrl = psl.parse(homeLocation);
 
   let headTags = [
     <link
@@ -55,12 +51,35 @@ export const getheadTagComponents = () => {
       name='monetization'
     />
   ];
+  return pushConditionalScripts(headTags, homeLocation);
+};
 
+export const pushConditionalScripts = (tagsArray, homeLocation) => {
+  const parsedHomeUrl = psl.parse(homeLocation);
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.ltd === 'org') {
-    headTags.push(gapScript);
+    return tagsArray.push(
+      <script
+        href={withPrefix('/misc/gap.js')}
+        id='www-gap'
+        key='gap'
+        rel='stylesheet'
+      />
+    );
   }
-
-  return headTags;
+  if (
+    parsedHomeUrl.subdomain === 'www.chinese' &&
+    parsedHomeUrl.ltd === 'org'
+  ) {
+    return tagsArray.push(
+      <script
+        href={withPrefix('/misc/cap.js')}
+        id='www-chinese-cap'
+        key='cap'
+        rel='stylesheet'
+      />
+    );
+  }
+  return tagsArray;
 };
 
 export const getPostBodyComponents = pathname => {
