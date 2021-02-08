@@ -26,7 +26,7 @@
     "browser-cookies": "^1.2.0",
     "chai": "^4.3.0",
     "csrf": "^3.1.0",
-    "date-fns": "^2.16.1",
+    "date-fns": "^2.17.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "final-form": "^4.20.1",
