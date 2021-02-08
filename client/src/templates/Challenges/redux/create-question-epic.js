@@ -54,7 +54,7 @@ function createQuestionEpic(action$, state$, { window }) {
         `**Tell us what's happening:**
         \n\n
         ${
-          projectFormValues.length > 0
+          projectFormValues.length
             ? `**Your project link(s)**\n`
             : `**Your code so far**`
         }
