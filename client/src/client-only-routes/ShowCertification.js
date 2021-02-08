@@ -245,7 +245,7 @@ const ShowCertification = props => {
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();
-  const certMonth = certDate.getMonth() + 1;
+  const certMonth = certDate.getMonth();
   const certURL = `https://freecodecamp.org${pathname}`;
 
   const donationCloseBtn = (
@@ -291,7 +291,7 @@ const ShowCertification = props => {
         bsSize='lg'
         bsStyle='primary'
         target='_blank'
-        href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth}&certUrl=${certURL}`}
+        href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth+1}&certUrl=${certURL}`}
       >
         {t('profile.add-linkedin')}
       </Button>
