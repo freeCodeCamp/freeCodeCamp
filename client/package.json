@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "dependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.12.1",
+    "@babel/plugin-proposal-export-default-from": "^7.12.13",
     "@babel/plugin-proposal-function-bind": "^7.12.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/standalone": "^7.12.15",
