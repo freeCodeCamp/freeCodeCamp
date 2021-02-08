@@ -33,7 +33,7 @@
     "gatsby": "^2.31.1",
     "gatsby-cli": "^2.19.1",
     "gatsby-plugin-advanced-sitemap": "^1.6.0",
-    "gatsby-plugin-create-client-paths": "^2.9.0",
+    "gatsby-plugin-create-client-paths": "^2.10.0",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.10.0",
