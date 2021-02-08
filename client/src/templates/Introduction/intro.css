@@ -181,6 +181,7 @@ button.map-title {
 div.translation-banner {
   position: fixed;
   top: var(--header-height);
+  height: var(--header-height);
   background-color: var(--blue-dark);
   display: flex;
   align-items: center;
