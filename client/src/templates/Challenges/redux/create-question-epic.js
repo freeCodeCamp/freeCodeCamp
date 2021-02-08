@@ -4,7 +4,8 @@ import {
   types,
   closeModal,
   challengeFilesSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  projectFormValuesSelector
 } from '../redux';
 import { tap, mapTo } from 'rxjs/operators';
 import { forumLocation } from '../../../../../config/env.json';
@@ -35,7 +36,7 @@ function createQuestionEpic(action$, state$, { window }) {
         navigator: { userAgent },
         location: { href }
       } = window;
-      const backendSolutionLink = state?.challenge?.projectFormValues?.solution;
+      const projectFormValues = projectFormValuesSelector(state);
       const endingText = dedent(
         `**Your browser information:**
 
@@ -48,12 +49,18 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       let textMessage = dedent(
-        `**Tell us what's happening:**\n\n\n\n**Your code so far**
+        `**Tell us what's happening:**
+        \n\n
         ${
-          Object.entries(files).length > 0
-            ? filesToMarkdown(files)
-            : backendSolutionLink ?? ''
-        }\n${endingText}`
+          projectFormValues
+            ? `**Your project link(s)**\n`
+            : `**Your code so far**`
+        }
+        ${Object.entries(projectFormValues)
+          ?.map(([key, val]) => `${key}: ${val}\n`)
+          ?.join('') || filesToMarkdown(files)}
+        \n
+        ${endingText}`
       );
 
       const altTextMessage = dedent(
