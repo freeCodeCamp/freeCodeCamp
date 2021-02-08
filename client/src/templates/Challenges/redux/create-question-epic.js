@@ -36,7 +36,9 @@ function createQuestionEpic(action$, state$, { window }) {
         navigator: { userAgent },
         location: { href }
       } = window;
-      const projectFormValues = projectFormValuesSelector(state);
+      const projectFormValues = Object.entries(
+        projectFormValuesSelector(state)
+      );
       const endingText = dedent(
         `**Your browser information:**
 
@@ -52,11 +54,11 @@ function createQuestionEpic(action$, state$, { window }) {
         `**Tell us what's happening:**
         \n\n
         ${
-          projectFormValues
+          projectFormValues.length > 0
             ? `**Your project link(s)**\n`
             : `**Your code so far**`
         }
-        ${Object.entries(projectFormValues)
+        ${projectFormValues
           ?.map(([key, val]) => `${key}: ${val}\n`)
           ?.join('') || filesToMarkdown(files)}
         \n
