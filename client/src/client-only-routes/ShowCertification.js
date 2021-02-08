@@ -291,7 +291,8 @@ const ShowCertification = props => {
         bsSize='lg'
         bsStyle='primary'
         target='_blank'
-        href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth+1}&certUrl=${certURL}`}
+        href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth +
+          1}&certUrl=${certURL}`}
       >
         {t('profile.add-linkedin')}
       </Button>
