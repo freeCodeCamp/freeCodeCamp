@@ -172,6 +172,7 @@ export class NavLinks extends Component {
           i18n.language === i18nextCodes[lang] ? (
             <button
               className='nav-link nav-link-lang nav-link-flex'
+              key={'lang-' + lang}
               onClick={() => toggleDisplayMenu()}
             >
               <span>{langDisplayNames[lang]}</span>
