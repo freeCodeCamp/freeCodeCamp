@@ -38,7 +38,7 @@
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-remark-prismjs": "^3.12.0",
+    "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-source-filesystem": "^2.11.0",
     "gatsby-transformer-remark": "^2.16.0",
     "i18next": "^19.8.7",
