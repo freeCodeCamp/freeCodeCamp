@@ -24,7 +24,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "bezier-easing": "^2.1.0",
     "browser-cookies": "^1.2.0",
-    "chai": "^4.2.0",
+    "chai": "^4.3.0",
     "csrf": "^3.1.0",
     "date-fns": "^2.16.1",
     "enzyme": "^3.10.0",
