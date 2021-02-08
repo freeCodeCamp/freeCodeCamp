@@ -127,13 +127,22 @@ export class SuperBlockIntroductionPage extends Component {
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
-    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
+    const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
+    const { title: i18nSuperBlock, isTranslated } = superBlockIntroObj;
+    const translationBannerText = t(`intro:misc-text.translation-banner`);
 
     return (
       <>
         <Helmet>
           <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
+        {isTranslated ? (
+          ''
+        ) : (
+          <div className='translation-banner'>
+            <p>{translationBannerText}</p>
+          </div>
+        )}
         <Grid>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
