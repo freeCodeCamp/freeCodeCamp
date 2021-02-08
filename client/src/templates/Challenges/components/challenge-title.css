@@ -4,6 +4,7 @@
 }
 
 .challenge-title {
+  display: inline-block;
   margin: 20px 0px 15px;
 }
 
