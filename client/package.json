@@ -36,7 +36,7 @@
     "gatsby-plugin-create-client-paths": "^2.9.0",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-postcss": "^2.3.13",
-    "gatsby-plugin-react-helmet": "^3.9.0",
+    "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-remark-prismjs": "^3.12.0",
     "gatsby-source-filesystem": "^2.11.0",
