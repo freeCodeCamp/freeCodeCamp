@@ -524,7 +524,8 @@ const introSchema = {
     courses: 'Courses',
     expand: 'Expand',
     collapse: 'Collapse',
-    'translation-banner': 'Translation in progress'
+    'translation-banner': 'Translation in progress',
+    'translation-link': 'You can help'
   }
 };
 exports.introSchema = introSchema;

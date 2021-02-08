@@ -15,7 +15,7 @@ import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
 import { dasherize } from '../../../../utils/slugs';
 import Block from './components/Block';
-import { Spacer } from '../../components/helpers';
+import { Spacer, Link } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
@@ -130,6 +130,7 @@ export class SuperBlockIntroductionPage extends Component {
     const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
     const { title: i18nSuperBlock, isTranslated } = superBlockIntroObj;
     const translationBannerText = t(`intro:misc-text.translation-banner`);
+    const translationBannerLinkText = t(`intro:misc-text.translation-link`);
 
     return (
       <>
@@ -140,7 +141,15 @@ export class SuperBlockIntroductionPage extends Component {
           ''
         ) : (
           <div className='translation-banner'>
-            <p>{translationBannerText}</p>
+            <p>
+              {translationBannerText}{' '}
+              <Link
+                external={true}
+                to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+              >
+                {translationBannerLinkText}
+              </Link>
+            </p>
           </div>
         )}
         <Grid>

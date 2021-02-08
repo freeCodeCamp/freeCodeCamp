@@ -519,6 +519,7 @@
     "courses": "课程",
     "expand": "展开",
     "collapse": "折叠",
-    "translation-banner": "Translation in progress"
+    "translation-banner": "Translations for this section are in progress.",
+    "translation-link": "You can help"
   }
 }
