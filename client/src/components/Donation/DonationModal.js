@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
 import { Spacer } from '../helpers';
-import { blockNameify } from '../../../../utils/block-nameify';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import DonateForm from './DonateForm';
@@ -16,22 +15,18 @@ import { useTranslation } from 'react-i18next';
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
-  isBlockDonationModalSelector,
+  recentlyClaimedBlockSelector,
   executeGA
 } from '../../redux';
-
-import { challengeMetaSelector } from '../../templates/Challenges/redux';
 
 import './Donation.css';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
-  challengeMetaSelector,
-  isBlockDonationModalSelector,
-  (show, { block }, isBlockDonation) => ({
+  recentlyClaimedBlockSelector,
+  (show, recentlyClaimedBlock) => ({
     show,
-    block,
-    isBlockDonation
+    recentlyClaimedBlock
   })
 );
 
@@ -46,19 +41,17 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   activeDonors: PropTypes.number,
-  block: PropTypes.string,
   closeDonationModal: PropTypes.func.isRequired,
   executeGA: PropTypes.func,
-  isBlockDonation: PropTypes.bool,
+  recentlyClaimedBlock: PropTypes.string,
   show: PropTypes.bool
 };
 
 function DonateModal({
   show,
-  block,
-  isBlockDonation,
   closeDonationModal,
-  executeGA
+  executeGA,
+  recentlyClaimedBlock
 }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const { t } = useTranslation();
@@ -87,13 +80,13 @@ function DonateModal({
         data: {
           category: 'Donation View',
           action: `Displayed ${
-            isBlockDonation ? 'block' : 'progress'
+            recentlyClaimedBlock ? 'block' : 'progress'
           } donation modal`,
           nonInteraction: true
         }
       });
     }
-  }, [show, isBlockDonation, executeGA]);
+  }, [show, recentlyClaimedBlock, executeGA]);
 
   const getDonationText = () => {
     const donationDuration = modalDefaultDonation.donationDuration;
@@ -117,7 +110,7 @@ function DonateModal({
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
-            <b>{t('donate.nicely-done', { block: blockNameify(block) })}</b>
+            <b>{t('donate.nicely-done', { block: recentlyClaimedBlock })}</b>
             <br />
             {getDonationText()}
           </Col>
@@ -144,7 +137,7 @@ function DonateModal({
   return (
     <Modal bsSize='lg' className='donation-modal' show={show}>
       <Modal.Body>
-        {isBlockDonation ? blockDonationText : progressDonationText}
+        {recentlyClaimedBlock ? blockDonationText : progressDonationText}
         <Spacer />
         <DonateForm handleProcessing={handleProcessing} isMinimalForm={true} />
         <Spacer />

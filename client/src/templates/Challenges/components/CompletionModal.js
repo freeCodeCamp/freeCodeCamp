@@ -20,11 +20,14 @@ import {
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
-  challengeMetaSelector,
-  lastBlockChalSubmitted
+  challengeMetaSelector
 } from '../redux';
 
-import { isSignedInSelector, executeGA } from '../../../redux';
+import {
+  isSignedInSelector,
+  executeGA,
+  allowBlockDonationRequests
+} from '../../../redux';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -57,8 +60,8 @@ const mapDispatchToProps = function(dispatch) {
     submitChallenge: () => {
       dispatch(submitChallenge());
     },
-    lastBlockChalSubmitted: () => {
-      dispatch(lastBlockChalSubmitted());
+    allowBlockDonationRequests: block => {
+      dispatch(allowBlockDonationRequests(block));
     },
     executeGA
   };
@@ -66,6 +69,7 @@ const mapDispatchToProps = function(dispatch) {
 };
 
 const propTypes = {
+  allowBlockDonationRequests: PropTypes.func,
   blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
@@ -75,7 +79,6 @@ const propTypes = {
   id: PropTypes.string,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
-  lastBlockChalSubmitted: PropTypes.func,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
@@ -168,7 +171,7 @@ export class CompletionModalInner extends Component {
       this.state.completedPercent === 100 &&
       !this.props.completedChallengesIds.includes(this.props.id)
     ) {
-      this.props.lastBlockChalSubmitted();
+      this.props.allowBlockDonationRequests(this.props.blockName);
     }
   }
 
