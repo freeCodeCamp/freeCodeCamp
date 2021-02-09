@@ -87,14 +87,10 @@ const propTypes = {
   validCertNames: PropTypes.arrayOf(PropTypes.string)
 };
 
-// const mapStateToProps = () => {
 const requestedUserSelector = (state, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state);
 
-// const validCertNames = certMap.map(cert => cert.slug);
-
-const mapStateToProps = (state, props) => {
-  // const validCertName = validCertNames.some(name => name === props.certName);
+const mapStateToProps = () => {
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
@@ -119,37 +115,6 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-// function propComparator(currentProps, nextProps) {
-//   const {
-//     userFetchState: { complete: userComplete },
-//     signedInUserName,
-//     isDonating,
-//     cert: { username = '' },
-//     executeGA
-//   } = nextProps;
-//   const { isDonationDisplayed } = currentProps;
-
-//   if (
-//     !isDonationDisplayed &&
-//     userComplete &&
-//     signedInUserName &&
-//     signedInUserName === username &&
-//     !isDonating
-//   ) {
-//     setIsDonationDisplayed(true);
-
-//     executeGA({
-//       type: 'event',
-//       data: {
-//         category: 'Donation',
-//         action: 'Displayed Certificate Donation',
-//         nonInteraction: true
-//       }
-//     });
-//   }
-//   return false;
-// }
-
 const ShowCertification = props => {
   const { t } = useTranslation();
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
@@ -158,6 +123,7 @@ const ShowCertification = props => {
 
   useEffect(() => {
     const { username, certName, validCertNames, showCert } = props;
+    console.log(props);
     if (validCertNames.some(name => name === certName)) {
       showCert({ username, certName });
     }
@@ -240,7 +206,7 @@ const ShowCertification = props => {
     signedInUserName,
     location: { pathname }
   } = props;
-
+  console.log(validCertNames, certName);
   if (!validCertNames.some(name => name === certName)) {
     createFlashMessage(standardErrorMessage);
     return <RedirectHome />;

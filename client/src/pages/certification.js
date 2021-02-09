@@ -12,16 +12,18 @@ const Certification = () => {
     query {
       allCertificateNode {
         nodes {
-          dashedName
+          title
           block
+          curriculumVersion
         }
       }
     }
   `).allCertificateNode.nodes;
   const validCertNames = certMap.map(cert =>
-    cert.dashedName.startsWith('legacy')
-      ? cert.block.replace(/-certificate/g, '')
-      : cert.dashedName.replace(/-certificate/, '')
+    cert.block.replace(
+      /-certificate/,
+      cert.curriculumVersion === 7 ? '-v7' : ''
+    )
   );
 
   return (

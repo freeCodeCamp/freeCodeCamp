@@ -191,10 +191,10 @@ export const ShowSettings = props => {
                       id
                     }
                     title
-                    dashedName
                     id
                     block
                     order
+                    curriculumVersion
                   }
                 }
               }
@@ -202,21 +202,32 @@ export const ShowSettings = props => {
             render={data => {
               const certMap = data.allCertificateNode.nodes;
               certMap.forEach(cert => {
-                // superBlock needs to contain -v7 for some projects
-                cert.superBlock = cert.dashedName.startsWith('legacy')
-                  ? cert.block.replace(/-certificate/g, '')
-                  : cert.dashedName.replace(/-certificate/, '');
-                cert.title = cert.title.replace(/ Certificate( v7)?/, '');
+                cert.superBlock = cert.block.replace(/-certificate/, '');
+                cert.title = cert.title.replace(/ Certificate/, '');
                 cert.tests.forEach(
                   test =>
-                    (test.link = `/learn/${cert.dashedName.replace(
-                      /-certificate(-v7)?/,
+                    (test.link = `/learn/${cert.block.replace(
+                      /-certificate/,
                       ''
-                    )}/${cert.dashedName.replace(
-                      /-certificate(-v7)?/,
+                    )}/${cert.block.replace(
+                      /-certificate/,
                       '-projects'
                     )}/${dasherize(test.title)}`)
                 );
+                switch (cert.curriculum) {
+                  case 5:
+                    cert.endpoint = cert.superBlock.replace('legacy-', '');
+                    break;
+                  case 6:
+                    cert.endpoint = cert.superBlock.replace('legacy-', '');
+                    break;
+                  case 7:
+                    cert.endpoint = `${cert.superBlock}-v7`;
+                    break;
+                  default:
+                    cert.endpoint = cert.superBlock;
+                    break;
+                }
               });
               return (
                 <Certification
