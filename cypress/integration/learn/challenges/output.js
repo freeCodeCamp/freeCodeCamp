@@ -18,8 +18,10 @@ const defaultOutput = `
 * Your test output will go here
 */`;
 
-const runningOutput = '// running tests';
-const finishedOutput = '// tests completed';
+// Disabled for https://github.com/freeCodeCamp/freeCodeCamp/issues/41009
+
+// const runningOutput = '// running tests';
+// const finishedOutput = '// tests completed';
 
 describe('Classic challenge', function() {
   it('renders', () => {
@@ -37,30 +39,34 @@ describe('Classic challenge', function() {
     cy.get(selectors.defaultOutput).contains(defaultOutput);
   });
 
-  it('shows test output when the tests are run', () => {
-    cy.visit(locations.index);
-    // first wait for the editor to load
-    cy.get(selectors.editor, { timeout: 15000 });
-    cy.get(selectors.runTestsButton)
-      .click()
-      .then(() => {
-        cy.get(selectors.defaultOutput)
-          .contains(runningOutput)
-          .contains(finishedOutput);
-      });
-  });
+  // Disabled for https://github.com/freeCodeCamp/freeCodeCamp/issues/41009
 
-  it('shows test output when the tests are triggered by the keyboard', () => {
-    cy.visit(locations.index);
-    // first wait for the editor to load
-    cy.get(selectors.editor, { timeout: 15000 });
-    cy.get(selectors.hotkeys)
-      .focus()
-      .type('{ctrl}{enter}')
-      .then(() => {
-        cy.get(selectors.defaultOutput)
-          .contains(runningOutput)
-          .contains(finishedOutput);
-      });
-  });
+  // it('shows test output when the tests are run', () => {
+  //   cy.visit(locations.index);
+  //   // first wait for the editor to load
+  //   cy.get(selectors.editor, { timeout: 15000 });
+  //   cy.get(selectors.runTestsButton)
+  //     .click()
+  //     .then(() => {
+  //       cy.get(selectors.defaultOutput)
+  //         .contains(runningOutput)
+  //         .contains(finishedOutput);
+  //     });
+  // });
+
+  // it('shows test output when the tests are triggered by the keyboard', () => {
+  //   cy.visit(locations.index);
+  //   // first wait for the editor to load
+  //   cy.get(selectors.editor, {
+  //     timeout: 15000
+  //   });
+  //   cy.get(selectors.hotkeys)
+  //     .focus()
+  //     .type('{ctrl}{enter}')
+  //     .then(() => {
+  //       cy.get(selectors.defaultOutput)
+  //         .contains(runningOutput)
+  //         .contains(finishedOutput);
+  //     });
+  // });
 });
