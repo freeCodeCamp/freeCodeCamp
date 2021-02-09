@@ -2,6 +2,7 @@ id: 561add10cb82ac39a17513bc
 title: Legacy Data Visualization Certificate
 challengeType: 7
 isPrivate: true
+curriculumVersion: 5
 tests:
   - id: bd7157d8c242eddfaeb5bd13
     title: Build a Markdown Previewer

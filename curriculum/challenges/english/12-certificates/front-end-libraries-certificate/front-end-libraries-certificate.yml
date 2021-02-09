@@ -2,6 +2,7 @@ id: 561acd10cb82ac38a17513bc
 title: Front End Libraries Certificate
 challengeType: 7
 isPrivate: true
+curriculumVersion: 6
 tests:
   - id: bd7158d8c442eddfaeb5bd13
     title: Build a Random Quote Machine

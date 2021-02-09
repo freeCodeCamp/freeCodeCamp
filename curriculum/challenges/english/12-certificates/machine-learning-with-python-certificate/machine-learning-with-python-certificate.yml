@@ -2,6 +2,7 @@ id: 5e46fc95ac417301a38fb935
 title: Machine Learning with Python Certificate
 challengeType: 7
 isPrivate: true
+curriculumVersion: 7
 tests:
   - id: 5e46f8d6ac417301a38fb92d
     title: Rock Paper Scissors
@@ -13,4 +14,3 @@ tests:
     title: Linear Regression Health Costs Calculator
   - id: 5e46f8edac417301a38fb931
     title: Neural Network SMS Text Classifier
-
