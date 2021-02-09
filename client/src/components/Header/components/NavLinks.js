@@ -69,13 +69,7 @@ export class NavLinks extends Component {
             <FontAwesomeIcon icon={faHeart} />
           </div>
         ) : (
-          <Link
-            className='nav-link'
-            external={true}
-            key='donate'
-            sameTab={false}
-            to='/donate'
-          >
+          <Link className='nav-link' key='donate' sameTab={false} to='/donate'>
             {t('buttons.donate')}
           </Link>
         )}
