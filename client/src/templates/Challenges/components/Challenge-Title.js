@@ -37,7 +37,7 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
           )}
         </Link>
       </div>
-   <div className='challenge-title'>
+      <div className='challenge-title'>
         <b>{children}</b>
         {isCompleted ? (
           <GreenPass
