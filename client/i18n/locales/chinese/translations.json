@@ -292,7 +292,8 @@
       "tests": "测验",
       "preview": "预习"
     },
-    "help-translate": "Translate these challenges"
+    "help-translate": "The following certificates are still being translated.",
+    "help-translate-link": "Go here if you'd like to help."
   },
   "donate": {
     "title": "支持我们的非营利组织",

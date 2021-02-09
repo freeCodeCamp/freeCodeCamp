@@ -91,6 +91,16 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
           </li>
         ))}
       <hr />
+      <div style={{ textAlign: 'center' }}>
+        <p style={{ marginBottom: 0 }}>{i18next.t('learn.help-translate')} </p>
+        <Link
+          external={true}
+          sameTab={false}
+          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+        >
+          {i18next.t('learn.help-translate-link')}
+        </Link>
+      </div>
       {nodes
         .filter(
           node => !isAuditedCert(curriculumLocale, dasherize(node.superBlock))
@@ -108,13 +118,6 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
             </Link>
           </li>
         ))}
-      <Link
-        external={true}
-        sameTab={false}
-        to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-      >
-        {i18next.t('learn.help-translate')}
-      </Link>
     </ul>
   );
 }
