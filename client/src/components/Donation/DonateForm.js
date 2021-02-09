@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -12,6 +13,8 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
+import { withTranslation } from 'react-i18next';
+
 import {
   amountsConfig,
   durationsConfig,
@@ -21,10 +24,9 @@ import {
   donationUrls,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
-import { stripePublicKey } from '../../../../config/env.json';
+import { stripePublicKey, deploymentEnv } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
-import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
@@ -55,6 +57,7 @@ const propTypes = {
   navigate: PropTypes.func.isRequired,
   postChargeStripe: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired,
   updateDonationFormState: PropTypes.func
 };
 
@@ -157,21 +160,26 @@ class DonateForm extends Component {
     return `${numToCommas((amount / 100) * 50)} hours`;
   }
 
-  getFormatedAmountLabel(amount) {
-    return `$${numToCommas(amount / 100)}`;
+  getFormattedAmountLabel(amount) {
+    return `${numToCommas(amount / 100)}`;
   }
 
   getDonationButtonLabel() {
     const { donationAmount, donationDuration } = this.state;
-    let donationBtnLabel = `Confirm your donation`;
+    const { t } = this.props;
+    const usd = this.getFormattedAmountLabel(donationAmount);
+    let donationBtnLabel = t('donate.confirm');
     if (donationDuration === 'onetime') {
-      donationBtnLabel = `Confirm your one-time donation of ${this.getFormatedAmountLabel(
-        donationAmount
-      )}`;
+      donationBtnLabel = t('donate.confirm-2', {
+        usd: usd
+      });
     } else {
-      donationBtnLabel = `Confirm your donation of ${this.getFormatedAmountLabel(
-        donationAmount
-      )} ${donationDuration === 'month' ? ' / month' : ' / year'}`;
+      donationBtnLabel =
+        donationDuration === 'month'
+          ? t('donate.confirm-3', {
+              usd: usd
+            })
+          : t('donate.confirm-4', { usd: usd });
     }
     return donationBtnLabel;
   }
@@ -229,30 +237,35 @@ class DonateForm extends Component {
         key={`${this.durations[duration]}-donation-${amount}`}
         value={amount}
       >
-        {this.getFormatedAmountLabel(amount)}
+        {this.getFormattedAmountLabel(amount)}
       </ToggleButton>
     ));
   }
 
   renderDonationDescription() {
     const { donationAmount, donationDuration } = this.state;
+    const { t } = this.props;
+    const usd = this.getFormattedAmountLabel(donationAmount);
+    const hours = this.convertToTimeContributed(donationAmount);
+
     return (
       <p className='donation-description'>
-        {`Your `}
-        {this.getFormatedAmountLabel(donationAmount)}
-        {` donation will provide `}
-        {this.convertToTimeContributed(donationAmount)}
-        {` of learning to people around the world`}
-        {donationDuration === 'onetime' ? `.` : ` each ${donationDuration}.`}
+        {donationDuration === 'onetime'
+          ? t('donate.your-donation', { usd: usd, hours: hours })
+          : donationDuration === 'month'
+          ? t('donate.your-donation-2', { usd: usd, hours: hours })
+          : t('donate.your-donation-3', { usd: usd, hours: hours })}
       </p>
     );
   }
 
   renderDurationAmountOptions() {
     const { donationAmount, donationDuration, processing } = this.state;
+    const { t } = this.props;
+
     return !processing ? (
       <div>
-        <h3>Select gift frequency:</h3>
+        <h3>{t('donate.gift-frequency')}</h3>
         <Tabs
           activeKey={donationDuration}
           animation={false}
@@ -268,7 +281,7 @@ class DonateForm extends Component {
               title={this.durations[duration]}
             >
               <Spacer />
-              <h3>Select gift amount:</h3>
+              <h3>{t('donate.gift-amount')}</h3>
               <div>
                 <ToggleButtonGroup
                   animation={`false`}
@@ -295,7 +308,7 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { handleProcessing, isSignedIn, addDonation } = this.props;
+    const { handleProcessing, isSignedIn, addDonation, t } = this.props;
     const { donationAmount, donationDuration } = this.state;
 
     const isOneTime = donationDuration === 'onetime';
@@ -303,11 +316,12 @@ class DonateForm extends Component {
     return (
       <div>
         {isOneTime ? (
-          <b>Confirm your one-time donation of ${donationAmount / 100}:</b>
+          <b>
+            {t('donate.confirm-1')} {donationAmount / 100}:
+          </b>
         ) : (
           <b>
-            Confirm your donation of ${donationAmount / 100} /{' '}
-            {donationDuration}:
+            {t('donate.confirm-2')} {donationAmount / 100} / {donationDuration}:
           </b>
         )}
         <Spacer />
@@ -318,7 +332,7 @@ class DonateForm extends Component {
             id='confirm-donation-btn'
             onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
           >
-            <b>Credit Card</b>
+            <b>{t('donate.credit-card')}</b>
           </Button>
           <PaypalButton
             addDonation={addDonation}
@@ -348,14 +362,17 @@ class DonateForm extends Component {
       handleProcessing,
       defaultTheme,
       addDonation,
-      postChargeStripe
+      postChargeStripe,
+      t
     } = this.props;
 
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>{this.getDonationButtonLabel()} with PayPal:</b>
+          <b>
+            {this.getDonationButtonLabel()} {t('donate.paypal')}
+          </b>
           <Spacer />
           <PaypalButton
             addDonation={addDonation}
@@ -367,7 +384,7 @@ class DonateForm extends Component {
         </Col>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>Or donate with a credit card:</b>
+          <b>{t('donate.credit-card-2')}</b>
           <Spacer />
           <StripeProvider stripe={stripe}>
             <Elements>
@@ -436,4 +453,4 @@ DonateForm.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DonateForm);
+)(withTranslation()(DonateForm));

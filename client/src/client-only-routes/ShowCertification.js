@@ -6,9 +6,12 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
-import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
+
+import ShowProjectLinks from './ShowProjectLinks';
+import FreeCodeCampLogo from '../assets/icons/FreeCodeCampLogo';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
+import { Trans, useTranslation } from 'react-i18next';
 
 import {
   showCertSelector,
@@ -17,7 +20,9 @@ import {
   userFetchStateSelector,
   usernameSelector,
   isDonatingSelector,
-  executeGA
+  executeGA,
+  userByNameSelector,
+  fetchProfileForUser
 } from '../redux';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
@@ -25,6 +30,7 @@ import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
+import { isEmpty } from 'lodash';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -39,6 +45,7 @@ const propTypes = {
   certName: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
   executeGA: PropTypes.func,
+  fetchProfileForUser: PropTypes.func,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -50,6 +57,28 @@ const propTypes = {
   }),
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
+  user: PropTypes.shape({
+    completedChallenges: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        solution: PropTypes.string,
+        githubLink: PropTypes.string,
+        files: PropTypes.arrayOf(
+          PropTypes.shape({
+            contents: PropTypes.string,
+            ext: PropTypes.string,
+            key: PropTypes.string,
+            name: PropTypes.string,
+            path: PropTypes.string
+          })
+        )
+      })
+    ),
+    profileUI: PropTypes.shape({
+      showName: PropTypes.bool
+    }),
+    username: PropTypes.string
+  }),
   userFetchState: PropTypes.shape({
     complete: PropTypes.bool
   }),
@@ -58,25 +87,37 @@ const propTypes = {
   validCertNames: PropTypes.arrayOf(PropTypes.string)
 };
 
-const mapStateToProps = () => {
+// const mapStateToProps = () => {
+const requestedUserSelector = (state, { username = '' }) =>
+  userByNameSelector(username.toLowerCase())(state);
+
+// const validCertNames = certMap.map(cert => cert.slug);
+
+const mapStateToProps = (state, props) => {
+  // const validCertName = validCertNames.some(name => name === props.certName);
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
     userFetchStateSelector,
     isDonatingSelector,
-    (cert, fetchState, signedInUserName, userFetchState, isDonating) => ({
+    requestedUserSelector,
+    (cert, fetchState, signedInUserName, userFetchState, isDonating, user) => ({
       cert,
       fetchState,
       signedInUserName,
       userFetchState,
-      isDonating
+      isDonating,
+      user
     })
   );
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert, executeGA }, dispatch);
+  bindActionCreators(
+    { createFlashMessage, showCert, fetchProfileForUser, executeGA },
+    dispatch
+  );
 
 // function propComparator(currentProps, nextProps) {
 //   const {
@@ -110,6 +151,7 @@ const mapDispatchToProps = dispatch =>
 // }
 
 const ShowCertification = props => {
+  const { t } = useTranslation();
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
   const [isDonationClosed, setIsDonationClosed] = useState(false);
@@ -128,8 +170,16 @@ const ShowCertification = props => {
       signedInUserName,
       isDonating,
       cert: { username = '' },
+      fetchProfileForUser,
+      user,
       executeGA
     } = props;
+
+    if (!signedInUserName || signedInUserName !== username) {
+      if (isEmpty(user) && username) {
+        fetchProfileForUser(username);
+      }
+    }
 
     if (
       !isDonationDisplayed &&
@@ -149,7 +199,15 @@ const ShowCertification = props => {
         }
       });
     }
-  }, [isDonationDisplayed, props]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    isDonationDisplayed,
+    props.userFetchState,
+    props.signedInUserName,
+    props.isDonating,
+    props.cert,
+    props.executeGA
+  ]);
 
   const hideDonationSection = () => {
     setIsDonationDisplayed(false);
@@ -205,14 +263,18 @@ const ShowCertification = props => {
   }
 
   const {
-    date: issueDate,
-    name: userFullName,
+    date,
+    name: userFullName = null,
     username,
     certTitle,
     completionTime
   } = cert;
 
-  const certDate = new Date(issueDate);
+  const { user } = props;
+
+  const displayName = userFullName ?? username;
+
+  const certDate = new Date(date);
   const certYear = certDate.getFullYear();
   const certMonth = certDate.getMonth();
   const certURL = `https://freecodecamp.org${pathname}`;
@@ -225,7 +287,7 @@ const ShowCertification = props => {
         bsStyle='primary'
         onClick={hideDonationSection}
       >
-        Close
+        {t('buttons.close')}
       </Button>
     </div>
   );
@@ -235,13 +297,7 @@ const ShowCertification = props => {
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p>
-              Only you can see this message. Congratulations on earning this
-              certification. It’s no easy task. Running freeCodeCamp isn’t easy
-              either. Nor is it cheap. Help us help you and many other people
-              around the world. Make a tax-deductible supporting donation to our
-              nonprofit today.
-            </p>
+            <p>{t('donate.only-you')}</p>
           </Col>
         </Row>
       )}
@@ -266,9 +322,10 @@ const ShowCertification = props => {
         bsSize='lg'
         bsStyle='primary'
         target='_blank'
-        href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth}&certUrl=${certURL}`}
+        href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth +
+          1}&certUrl=${certURL}`}
       >
-        Add this certification to my LinkedIn profile
+        {t('profile.add-linkedin')}
       </Button>
       <Spacer />
       <Button
@@ -276,9 +333,12 @@ const ShowCertification = props => {
         bsSize='lg'
         bsStyle='primary'
         target='_blank'
-        href={`https://twitter.com/intent/tweet?text=I just earned the ${certTitle} certification @freeCodeCamp! Check it out here: ${certURL}`}
+        href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
+          certTitle: certTitle,
+          certURL: certURL
+        })}`}
       >
-        Share this certification on Twitter
+        {t('profile.add-twitter')}
       </Button>
     </Row>
   );
@@ -295,27 +355,31 @@ const ShowCertification = props => {
               </div>
             </Col>
             <Col md={7} sm={12}>
-              <div className='issue-date'>
-                Issued&nbsp;
-                <strong>{format(certDate, 'MMMM D, YYYY')}</strong>
+              <div data-cy='issue-date' className='issue-date'>
+                {t('certification.issued')}&nbsp;
+                <strong>{format(certDate, 'MMMM d, y')}</strong>
               </div>
             </Col>
           </header>
 
           <main className='information'>
             <div className='information-container'>
-              <h3>This certifies that</h3>
-              <h1>
-                <strong>{userFullName}</strong>
-              </h1>
-              <h3>has successfully completed the freeCodeCamp.org</h3>
-              <h1>
-                <strong>{certTitle}</strong>
-              </h1>
-              <h4>
-                Developer Certification, representing approximately{' '}
-                {completionTime} hours of coursework
-              </h4>
+              <Trans
+                user={displayName}
+                title={certTitle}
+                time={completionTime}
+                i18nKey='certification.fulltext'
+              >
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>{{ user: displayName }}</strong>
+                </h1>
+                <h3>placeholder</h3>
+                <h1>
+                  <strong>{{ title: certTitle }}</strong>
+                </h1>
+                <h4>{{ time: completionTime }}</h4>
+              </Trans>
             </div>
           </main>
           <footer>
@@ -330,15 +394,19 @@ const ShowCertification = props => {
               <p>
                 <strong>Quincy Larson</strong>
               </p>
-              <p>Executive Director, freeCodeCamp.org</p>
+              <p>{t('certification.executive')}</p>
             </div>
             <Row>
-              <p className='verify'>Verify this certification at {certURL}</p>
+              <p className='verify'>
+                {t('certification.verify', { certURL: certURL })}
+              </p>
             </Row>
           </footer>
         </Row>
       </Grid>
       {signedInUserName === username ? shareCertBtns : ''}
+      <Spacer size={2} />
+      <ShowProjectLinks user={user} name={displayName} certName={certTitle} />
     </div>
   );
 };

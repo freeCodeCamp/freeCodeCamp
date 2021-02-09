@@ -3,6 +3,7 @@ id: 5900f37f1000cf542c50fe92
 title: 'Problem 19: Counting Sundays'
 challengeType: 5
 forumTopicId: 301827
+dashedName: problem-19-counting-sundays
 ---
 
 # --description--

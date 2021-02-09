@@ -3,6 +3,7 @@ id: 5e7b9f180b6c005b0e76f08f
 title: 'Relational Databases: Join Operation'
 challengeType: 11
 videoId: jvDw3D9GKac
+dashedName: relational-databases-join-operation
 ---
 
 # --question--

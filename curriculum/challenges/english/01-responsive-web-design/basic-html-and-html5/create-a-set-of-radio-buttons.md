@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08834
 title: Create a Set of Radio Buttons
 challengeType: 0
 forumTopicId: 16822
+dashedName: create-a-set-of-radio-buttons
 ---
 
 # --description--
@@ -37,7 +38,7 @@ Add a pair of radio buttons to your form, each nested in its own `label` element
 
 # --hints--
 
-Your page should have two radio button elements.
+Your page should have two `radio` button elements.
 
 ```js
 assert($('input[type="radio"]').length > 1);

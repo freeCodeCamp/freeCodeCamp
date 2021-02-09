@@ -3,6 +3,7 @@ id: 5900f51e1000cf542c510030
 title: 'Problem 432: Totient sum'
 challengeType: 5
 forumTopicId: 302103
+dashedName: problem-432-totient-sum
 ---
 
 # --description--

@@ -31,7 +31,7 @@
   "import/namespace": 2,
   "import/newline-after-import": 2,
   "import/no-duplicates": 2,
-  "import/no-unresolved": 2,
+  "import/no-unresolved": [2, {"commonjs": true}],
   "import/unambiguous": 2,
   "jsx-quotes": [2, "prefer-single"],
   "jsx-a11y/accessible-emoji": "error",

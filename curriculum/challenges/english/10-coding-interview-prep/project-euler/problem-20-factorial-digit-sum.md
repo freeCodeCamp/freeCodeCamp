@@ -3,6 +3,7 @@ id: 5900f3801000cf542c50fe93
 title: 'Problem 20: Factorial digit sum'
 challengeType: 5
 forumTopicId: 301839
+dashedName: problem-20-factorial-digit-sum
 ---
 
 # --description--

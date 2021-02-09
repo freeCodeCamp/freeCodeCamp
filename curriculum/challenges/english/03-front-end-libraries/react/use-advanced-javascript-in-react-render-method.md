@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036183
 title: Use Advanced JavaScript in React Render Method
 challengeType: 6
 forumTopicId: 301415
+dashedName: use-advanced-javascript-in-react-render-method
 ---
 
 # --description--

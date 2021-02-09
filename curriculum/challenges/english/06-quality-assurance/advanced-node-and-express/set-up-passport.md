@@ -3,6 +3,7 @@ id: 5895f70cf9fc0f352b528e65
 title: Set up Passport
 challengeType: 2
 forumTopicId: 301565
+dashedName: set-up-passport
 ---
 
 # --description--
@@ -119,8 +120,6 @@ Session and session secret should be correctly set up.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

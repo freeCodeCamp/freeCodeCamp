@@ -3,6 +3,7 @@ id: 5900f4971000cf542c50ffa9
 title: 'Problem 298: Selective Amnesia'
 challengeType: 5
 forumTopicId: 301950
+dashedName: problem-298-selective-amnesia
 ---
 
 # --description--

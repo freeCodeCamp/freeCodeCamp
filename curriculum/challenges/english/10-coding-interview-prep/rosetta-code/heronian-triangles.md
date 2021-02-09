@@ -3,6 +3,7 @@ id: 595b98f8b5a2245e243aa831
 title: Heronian triangles
 challengeType: 5
 forumTopicId: 302285
+dashedName: heronian-triangles
 ---
 
 # --description--

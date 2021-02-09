@@ -3,6 +3,7 @@ id: 5900f3b31000cf542c50fec6
 title: 'Problem 71: Ordered fractions'
 challengeType: 5
 forumTopicId: 302184
+dashedName: problem-71-ordered-fractions
 ---
 
 # --description--

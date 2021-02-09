@@ -3,6 +3,7 @@ id: 5e9a093a74c4063ca6f7c161
 title: Reading Data Introduction
 challengeType: 11
 videoId: cDnt02BcHng
+dashedName: reading-data-introduction
 ---
 
 # --description--
@@ -20,13 +21,13 @@ More resources:
 
 Given a file named `certificates.csv` with these contents:
 
-```
+<pre>
 Name$Certificates$Time (in months)
 Tom$8$16
 Kris$2$5
 Ahmad$5$9
 Beau$6$12
-```
+</pre>
 
 Fill in the blanks for the missing arguments below:
 

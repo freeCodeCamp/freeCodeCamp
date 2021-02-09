@@ -3,6 +3,7 @@ id: 5900f4d01000cf542c50ffe2
 title: 'Problem 355: Maximal coprime subset'
 challengeType: 5
 forumTopicId: 302015
+dashedName: problem-355-maximal-coprime-subset
 ---
 
 # --description--

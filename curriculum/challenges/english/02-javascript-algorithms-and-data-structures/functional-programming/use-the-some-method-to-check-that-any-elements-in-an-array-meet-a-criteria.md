@@ -3,6 +3,7 @@ id: 587d7dab367417b2b2512b6f
 title: Use the some Method to Check that Any Elements in an Array Meet a Criteria
 challengeType: 1
 forumTopicId: 301314
+dashedName: use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria
 ---
 
 # --description--

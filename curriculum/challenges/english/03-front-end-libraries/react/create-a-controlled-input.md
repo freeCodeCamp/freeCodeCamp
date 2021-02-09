@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036178
 title: Create a Controlled Input
 challengeType: 6
 forumTopicId: 301385
+dashedName: create-a-controlled-input
 ---
 
 # --description--

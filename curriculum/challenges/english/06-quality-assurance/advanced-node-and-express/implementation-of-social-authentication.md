@@ -3,6 +3,7 @@ id: 589a69f5f9fc0f352b528e70
 title: Implementation of Social Authentication
 challengeType: 2
 forumTopicId: 301559
+dashedName: implementation-of-social-authentication
 ---
 
 # --description--
@@ -69,8 +70,6 @@ Route /auth/github/callback should be correct.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

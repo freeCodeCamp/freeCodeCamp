@@ -3,6 +3,7 @@ id: 5900f3a61000cf542c50feb9
 title: 'Problem 58: Spiral primes'
 challengeType: 5
 forumTopicId: 302169
+dashedName: problem-58-spiral-primes
 ---
 
 # --description--

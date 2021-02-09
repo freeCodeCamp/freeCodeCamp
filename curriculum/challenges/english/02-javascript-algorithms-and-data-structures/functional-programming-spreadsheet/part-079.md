@@ -2,6 +2,7 @@
 id: 5d792536e33baeaa60129e0a
 title: Part 79
 challengeType: 0
+dashedName: part-79
 ---
 
 # --description--

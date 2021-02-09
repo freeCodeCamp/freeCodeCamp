@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c52
 title: Test if a Value is a String
 challengeType: 2
 forumTopicId: 301599
+dashedName: test-if-a-value-is-a-string
 ---
 
 # --description--
@@ -80,8 +81,6 @@ You should choose the correct method for the third assertion - `isString` vs. `i
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

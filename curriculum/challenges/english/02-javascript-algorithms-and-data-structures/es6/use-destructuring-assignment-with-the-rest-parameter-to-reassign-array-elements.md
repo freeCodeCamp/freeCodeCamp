@@ -5,6 +5,8 @@ title: >-
   Elements
 challengeType: 1
 forumTopicId: 301218
+dashedName: >-
+  use-destructuring-assignment-with-the-rest-parameter-to-reassign-array-elements
 ---
 
 # --description--

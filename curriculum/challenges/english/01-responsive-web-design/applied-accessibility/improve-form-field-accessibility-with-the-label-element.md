@@ -4,6 +4,7 @@ title: Improve Form Field Accessibility with the label Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016
+dashedName: improve-form-field-accessibility-with-the-label-element
 ---
 
 # --description--

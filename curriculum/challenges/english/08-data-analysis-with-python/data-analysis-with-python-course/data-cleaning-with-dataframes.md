@@ -3,6 +3,7 @@ id: 5e9a093a74c4063ca6f7c15e
 title: Data Cleaning with DataFrames
 challengeType: 11
 videoId: sTMN_pdI6S0
+dashedName: data-cleaning-with-dataframes
 ---
 
 # --description--
@@ -32,36 +33,36 @@ print(s)
 
 ## --answers--
 
-```
+<pre>
 0    1.0
 1    1.0
 2    2.0
 3    3.0
 4    3.0
 dtype: float64
-```
+</pre>
 
 ---
 
-```
+<pre>
 0    NaN
 1    1.0
 2    2.0
 3    2.0
 4    3.0
 dtype: float64
-```
+</pre>
 
 ---
 
-```
+<pre>
 0    NaN
 1    1.0
 2    2.0
 3    NaN
 4    3.0
 dtype: float64
-```
+</pre>
 
 ## --video-solution--
 

@@ -3,6 +3,7 @@ id: 5900f4fe1000cf542c510010
 title: 'Problem 400: Fibonacci tree game'
 challengeType: 5
 forumTopicId: 302067
+dashedName: problem-400-fibonacci-tree-game
 ---
 
 # --description--

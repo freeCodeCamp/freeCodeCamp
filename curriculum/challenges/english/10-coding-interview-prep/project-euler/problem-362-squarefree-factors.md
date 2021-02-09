@@ -3,6 +3,7 @@ id: 5900f4d61000cf542c50ffe9
 title: 'Problem 362: Squarefree factors'
 challengeType: 5
 forumTopicId: 302023
+dashedName: problem-362-squarefree-factors
 ---
 
 # --description--

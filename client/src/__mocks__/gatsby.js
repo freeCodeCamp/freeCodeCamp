@@ -4,6 +4,8 @@ const React = require('react');
 
 const gatsby = jest.requireActual('gatsby');
 
+const { clientLocale } = require('../../../config/env.json');
+
 module.exports = {
   ...gatsby,
   navigate: jest.fn(),
@@ -26,6 +28,13 @@ module.exports = {
         href: to
       })
   ),
+  withPrefix: jest.fn().mockImplementation(path => {
+    const pathPrefix =
+      clientLocale === 'english' || clientLocale === 'chinese'
+        ? ''
+        : '/' + clientLocale;
+    return pathPrefix + path;
+  }),
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn()
 };

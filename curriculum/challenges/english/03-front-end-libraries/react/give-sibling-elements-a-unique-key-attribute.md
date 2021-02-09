@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618b
 title: Give Sibling Elements a Unique Key Attribute
 challengeType: 6
 forumTopicId: 301394
+dashedName: give-sibling-elements-a-unique-key-attribute
 ---
 
 # --description--

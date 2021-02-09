@@ -3,6 +3,7 @@ id: 5900f3b81000cf542c50fecb
 title: 'Problem 76: Counting summations'
 challengeType: 5
 forumTopicId: 302189
+dashedName: problem-76-counting-summations
 ---
 
 # --description--

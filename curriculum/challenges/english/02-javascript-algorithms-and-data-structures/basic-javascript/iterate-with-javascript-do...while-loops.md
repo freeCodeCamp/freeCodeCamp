@@ -4,6 +4,7 @@ title: Iterate with JavaScript Do...While Loops
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqWGcp'
 forumTopicId: 301172
+dashedName: iterate-with-javascript-do---while-loops
 ---
 
 # --description--

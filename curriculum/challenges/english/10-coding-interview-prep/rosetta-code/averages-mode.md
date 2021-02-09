@@ -3,6 +3,7 @@ id: 594d8d0ab97724821379b1e6
 title: Averages/Mode
 challengeType: 5
 forumTopicId: 302226
+dashedName: averagesmode
 ---
 
 # --description--

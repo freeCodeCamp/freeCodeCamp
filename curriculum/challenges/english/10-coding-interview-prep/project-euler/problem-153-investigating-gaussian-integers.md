@@ -3,6 +3,7 @@ id: 5900f4051000cf542c50ff18
 title: 'Problem 153: Investigating Gaussian Integers'
 challengeType: 5
 forumTopicId: 301784
+dashedName: problem-153-investigating-gaussian-integers
 ---
 
 # --description--

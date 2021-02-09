@@ -1,19 +1,22 @@
 /* global expect */
 import { toLearnPath } from './challenges';
+import { withPrefix } from 'gatsby';
 
 describe('toLearnPath', () => {
   it('should return a string', () => {
     expect(typeof toLearnPath({})).toBe('string');
   });
   it('should include /learn', () => {
-    expect(toLearnPath({})).toMatch(/\/learn/);
+    expect(toLearnPath({})).toMatch(withPrefix('/learn'));
   });
   it('should include superBlock after learn', () => {
-    expect(toLearnPath({ superBlock: 'testSuper' })).toBe('/learn/testSuper');
+    expect(toLearnPath({ superBlock: 'testSuper' })).toBe(
+      withPrefix('/learn/testSuper')
+    );
   });
   it('should include superBlock, then block after learn', () => {
     expect(toLearnPath({ superBlock: 'testSuper', block: 'testBlock' })).toBe(
-      '/learn/testSuper/testBlock'
+      withPrefix('/learn/testSuper/testBlock')
     );
   });
   it('should include superBlock, block, then challenge after learn', () => {
@@ -23,6 +26,6 @@ describe('toLearnPath', () => {
         block: 'testBlock',
         challenge: 'testChallenge'
       })
-    ).toBe('/learn/testSuper/testBlock/testChallenge');
+    ).toBe(withPrefix('/learn/testSuper/testBlock/testChallenge'));
   });
 });

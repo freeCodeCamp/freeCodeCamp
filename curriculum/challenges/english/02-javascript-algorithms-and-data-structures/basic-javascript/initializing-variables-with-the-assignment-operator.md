@@ -4,6 +4,7 @@ title: Initializing Variables with the Assignment Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
+dashedName: initializing-variables-with-the-assignment-operator
 ---
 
 # --description--
@@ -23,7 +24,7 @@ Define a variable `a` with `var` and initialize it to a value of `9`.
 You should initialize `a` to a value of `9`.
 
 ```js
-assert(/var\s+a\s*=\s*9\s*/.test(code));
+assert(/var\s+a\s*=\s*9(\s*;?\s*)$/.test(code));
 ```
 
 # --seed--

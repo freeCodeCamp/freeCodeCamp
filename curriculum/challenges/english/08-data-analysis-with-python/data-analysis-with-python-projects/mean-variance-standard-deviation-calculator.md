@@ -2,6 +2,7 @@
 id: 5e46f7e5ac417301a38fb928
 title: Mean-Variance-Standard Deviation Calculator
 challengeType: 10
+dashedName: mean-variance-standard-deviation-calculator
 ---
 
 # --description--
@@ -21,8 +22,6 @@ It should pass all Python tests.
 ```js
 
 ```
-
-# --seed--
 
 # --solutions--
 

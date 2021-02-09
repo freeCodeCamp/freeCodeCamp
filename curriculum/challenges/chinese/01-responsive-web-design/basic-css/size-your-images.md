@@ -1,15 +1,17 @@
 ---
 id: bad87fee1348bd9acdf08812
+title: 调整图片的大小
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
-title: 调整图片的大小
+dashedName: size-your-images
 ---
 
-## Description
-<section id='description'>
-CSS 的<code>width</code>属性可以控制元素的宽度。图片的<code>width</code>宽度类似于字体的<code>px</code>（像素)值。
-假如，你想创建一个叫<code>larger-image</code>的 CSS class 来控制 HTML 元素的宽度为 500px，我们可以这样做：
+# --description--
+
+CSS 的 `width` 属性可以控制元素的宽度。 和设置文本字号一样，我们会以 `px`（像素）为单位来设置图片的宽度。
+
+例如，如果你想创建一个叫 `larger-image` 的 CSS class，来控制 HTML 元素的宽度为 500px，就可以这样写：
 
 ```html
 <style>
@@ -19,32 +21,33 @@ CSS 的<code>width</code>属性可以控制元素的宽度。图片的<code>widt
 </style>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-创建一个<code>smaller-image</code>的 CSS class，设置图片的宽度为 100px。
-<strong>注意：</strong><br>由于不同浏览器的差异性，你可能需要将浏览器缩放到 100% 来通过该挑战。
-</section>
+创建一个叫 `smaller-image` 的 CSS class，并用它来设置图片宽度为 100px。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '<code>img</code>元素应该含有<code>smaller-image</code> class。'
-    testString: assert($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') === "smaller-image");
-  - text: '图片宽度应为 100px（像素），且浏览器缩放应为默认 100%。'
-    testString: assert($("img").width() === 100);
+`img` 元素应包含 `smaller-image` class。
 
+```js
+assert(
+  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') ===
+    'smaller-image'
+);
 ```
 
-</section>
+图片宽度应为 100px。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('img').width() < 200 &&
+    code.match(/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i)
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -65,49 +68,89 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
   <div>
-    <p>猫咪最喜欢的三件东西：</p>
+    <p>Things cats love:</p>
     <ul>
-      <li>猫薄荷</li>
-      <li>激光笔</li>
-      <li>千层饼</li>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
     </ul>
-    <p>猫咪最讨厌的三件东西：</p>
+    <p>Top 3 things cats hate:</p>
     <ol>
-      <li>跳蚤</li>
-      <li>打雷</li>
-      <li>同类</li>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor">室内</label>
-    <label><input type="radio" name="indoor-outdoor">室外</label><br>
-    <label><input type="checkbox" name="personality">忠诚</label>
-    <label><input type="checkbox" name="personality">懒惰</label>
-    <label><input type="checkbox" name="personality">积极</label><br>
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
+# --solutions--
 
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
 
+  h2 {
+    font-family: Lobster, monospace;
+  }
 
-</section>
+  p {
+    font-size: 16px;
+    font-family: monospace;
+  }
 
-## Solution
-<section id='solution'>
+  .smaller-image {
+    width: 100px;
+  }
+</style>
 
-```js
-// solution required
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
 ```
-
-/section>
-              

@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
-import { paypalClientId, deploymentEnv } from '../../../config/env.json';
+import { withTranslation } from 'react-i18next';
+
+import { paypalClientId, deploymentEnv } from '../../../../config/env.json';
 import {
   paypalConfigurator,
   paypalConfigTypes
@@ -55,6 +57,7 @@ export class PaypalButton extends Component {
 
   render() {
     const { duration, planId, amount } = this.state;
+    const { t } = this.props;
     const isSubscription = duration !== 'onetime';
 
     if (!paypalClientId) {
@@ -90,14 +93,14 @@ export class PaypalButton extends Component {
           this.props.onDonationStateChange({
             processing: false,
             success: false,
-            error: `Uh - oh. It looks like your transaction didn't go through. Could you please try again?`
+            error: t('donate.failed-pay')
           });
         }}
         onError={() =>
           this.props.onDonationStateChange({
             processing: false,
             success: false,
-            error: 'Please try again.'
+            error: t('donate.try-again')
           })
         }
         plantId={planId}
@@ -117,7 +120,8 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
   onDonationStateChange: PropTypes.func,
-  skipAddDonation: PropTypes.bool
+  skipAddDonation: PropTypes.bool,
+  t: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
@@ -132,4 +136,4 @@ const mapStateToProps = createSelector(
 PaypalButton.displayName = 'PaypalButton';
 PaypalButton.propTypes = propTypes;
 
-export default connect(mapStateToProps)(PaypalButton);
+export default connect(mapStateToProps)(withTranslation()(PaypalButton));

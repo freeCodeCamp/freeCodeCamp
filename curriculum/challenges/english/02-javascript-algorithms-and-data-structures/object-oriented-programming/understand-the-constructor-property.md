@@ -3,6 +3,7 @@ id: 587d7daf367417b2b2512b7e
 title: Understand the Constructor Property
 challengeType: 1
 forumTopicId: 301327
+dashedName: understand-the-constructor-property
 ---
 
 # --description--

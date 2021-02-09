@@ -3,6 +3,7 @@ id: 5951815dd895584b06884620
 title: Circles of given radius through two points
 challengeType: 5
 forumTopicId: 302231
+dashedName: circles-of-given-radius-through-two-points
 ---
 
 # --description--

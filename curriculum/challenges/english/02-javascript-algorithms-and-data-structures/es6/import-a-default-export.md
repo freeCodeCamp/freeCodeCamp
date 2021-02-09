@@ -3,6 +3,7 @@ id: 587d7b8d367417b2b2512b59
 title: Import a Default Export
 challengeType: 1
 forumTopicId: 301205
+dashedName: import-a-default-export
 ---
 
 # --description--

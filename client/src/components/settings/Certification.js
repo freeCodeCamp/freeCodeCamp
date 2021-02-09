@@ -7,14 +7,14 @@ import {
   Table,
   Button,
   DropdownButton,
-  MenuItem,
-  Modal
+  MenuItem
 } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
+import { withTranslation } from 'react-i18next';
 
 import SectionHeader from './SectionHeader';
-import SolutionViewer from './SolutionViewer';
+import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
 import { Form } from '../formHelpers';
 
@@ -70,6 +70,7 @@ const propTypes = {
   isQaCertV7: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
+  t: PropTypes.func.isRequired,
   updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
@@ -146,9 +147,7 @@ const isCertMapSelector = createSelector(
 
 const honestyInfoMessage = {
   type: 'info',
-  message:
-    'To claim a certification, you must first accept our academic ' +
-    'honesty policy'
+  message: 'flash.honest-first'
 };
 
 const initialState = {
@@ -178,7 +177,7 @@ export class CertificationSettings extends Component {
   getUserIsCertMap = () => isCertMapSelector(this.props);
 
   getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges } = this.props;
+    const { completedChallenges, t } = this.props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -205,7 +204,7 @@ export class CertificationSettings extends Component {
           id={`btn-for-${projectId}`}
           onClick={onClickHandler}
         >
-          Show Code
+          {t('buttons.show-code')}
         </Button>
       );
     }
@@ -225,7 +224,7 @@ export class CertificationSettings extends Component {
               rel='noopener noreferrer'
               target='_blank'
             >
-              Front End
+              {t('buttons.frontend')}
             </MenuItem>
             <MenuItem
               bsStyle='primary'
@@ -233,7 +232,7 @@ export class CertificationSettings extends Component {
               rel='noopener noreferrer'
               target='_blank'
             >
-              Back End
+              {t('buttons.backend')}
             </MenuItem>
           </DropdownButton>
         </div>
@@ -250,7 +249,7 @@ export class CertificationSettings extends Component {
           rel='noopener noreferrer'
           target='_blank'
         >
-          Show Solution
+          {t('buttons.show-solution')}
         </Button>
       );
     }
@@ -262,34 +261,40 @@ export class CertificationSettings extends Component {
         id={`btn-for-${projectId}`}
         onClick={onClickHandler}
       >
-        Show Code
+        {t('buttons.show-code')}
       </Button>
     );
   };
 
-  renderCertifications = certName => (
-    <FullWidthRow key={certName}>
-      <Spacer />
-      <h3 className='text-center'>{certName}</h3>
-      <Table>
-        <thead>
-          <tr>
-            <th>Project Name</th>
-            <th>Solution</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderProjectsFor(certName, this.getUserIsCertMap()[certName])}
-        </tbody>
-      </Table>
-    </FullWidthRow>
-  );
-
+  renderCertifications = certName => {
+    const { t } = this.props;
+    return (
+      <FullWidthRow key={certName}>
+        <Spacer />
+        <h3 className='text-center'>{certName}</h3>
+        <Table>
+          <thead>
+            <tr>
+              <th>{t('settings.labels.project-name')}</th>
+              <th>{t('settings.labels.solution')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderProjectsFor(
+              certName,
+              this.getUserIsCertMap()[certName]
+            )}
+          </tbody>
+        </Table>
+      </FullWidthRow>
+    );
+  };
   renderProjectsFor = (certName, isCert) => {
     const {
       username,
       isHonest,
       createFlashMessage,
+      t,
       verifyCert,
       certMap
     } = this.props;
@@ -326,7 +331,7 @@ export class CertificationSettings extends Component {
               href={certLocation}
               onClick={createClickHandler(superBlock)}
             >
-              {isCert ? 'Show Certification' : 'Claim Certification'}
+              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
             </Button>
           </td>
         </tr>
@@ -334,7 +339,7 @@ export class CertificationSettings extends Component {
   };
 
   // legacy projects rendering
-  handleSubmitLegacy(formChalObj) {
+  handleSubmitLegacy({ values: formChalObj }) {
     const {
       isHonest,
       createFlashMessage,
@@ -420,7 +425,8 @@ export class CertificationSettings extends Component {
       username,
       createFlashMessage,
       completedChallenges,
-      certMap
+      certMap,
+      t
     } = this.props;
     console.log('422: ', certMap);
     const { superBlock } = certMap.find(cert => cert.title === certName);
@@ -481,7 +487,9 @@ export class CertificationSettings extends Component {
         <Spacer />
         <h3 className='text-center'>{certName}</h3>
         <Form
-          buttonText={fullForm ? 'Claim Certification' : 'Save Progress'}
+          buttonText={
+            fullForm ? t('buttons.claim-cert') : t('buttons.save-progress')
+          }
           enableSubmit={fullForm}
           formFields={formFields}
           hideButton={isCertClaimed}
@@ -504,7 +512,7 @@ export class CertificationSettings extends Component {
               style={buttonStyle}
               target='_blank'
             >
-              Show Certification
+              {t('buttons.show-cert')}
             </Button>
           </div>
         ) : null}
@@ -525,7 +533,8 @@ export class CertificationSettings extends Component {
       isFrontEndLibsCert,
       isInfosecQaCert,
       isJsAlgoDataStructCert,
-      isRespWebDesignCert
+      isRespWebDesignCert,
+      t
     } = this.props;
 
     const fullStackClaimable =
@@ -563,8 +572,9 @@ export class CertificationSettings extends Component {
         <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
           <p>
-            Once you've earned the following freeCodeCamp certifications, you'll
-            be able to claim the Legacy Full Stack Developer Certification:
+            {t('settings.claim-legacy', {
+              cert: 'Legacy Full Stack Certification'
+            })}
           </p>
           <ul>
             {certMap
@@ -587,7 +597,9 @@ export class CertificationSettings extends Component {
               style={buttonStyle}
               target='_blank'
             >
-              {isFullStackCert ? 'Show Certification' : 'Claim Certification'}
+              {isFullStackCert
+                ? t('buttons.show-cert')
+                : t('buttons.claim-cert')}
             </Button>
           ) : (
             <Button
@@ -599,7 +611,7 @@ export class CertificationSettings extends Component {
               style={buttonStyle}
               target='_blank'
             >
-              Claim Certification
+              {t('buttons.claim-cert')}
             </Button>
           )}
         </div>
@@ -612,14 +624,16 @@ export class CertificationSettings extends Component {
     const {
       solutionViewer: { files, solution, isOpen, projectTitle }
     } = this.state;
+
+    const { t } = this.props;
     return (
       <section id='certification-settings'>
-        <SectionHeader>Certifications</SectionHeader>
+        <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
         {this.props.certMap
           .filter(cert => !cert.dashedName.startsWith('legacy'))
           ?.map(cert => this.renderCertifications(cert.title))
           ?.sort((x, y) => x.order - y.order)}
-        <SectionHeader>Legacy Certifications</SectionHeader>
+        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         {this.renderLegacyFullStack()}
         {this.props.certMap
           .filter(
@@ -630,24 +644,14 @@ export class CertificationSettings extends Component {
           ?.map(cert => this.renderLegacyCertifications(cert.title))
           ?.sort((x, y) => x.order - y.order)}
         {isOpen ? (
-          <Modal
-            aria-labelledby='solution-viewer-modal-title'
-            bsSize='large'
-            onHide={this.handleSolutionModalHide}
-            show={isOpen}
-          >
-            <Modal.Header className='this-one?' closeButton={true}>
-              <Modal.Title id='solution-viewer-modal-title'>
-                Solution for {projectTitle}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <SolutionViewer files={files} solution={solution} />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.handleSolutionModalHide}>Close</Button>
-            </Modal.Footer>
-          </Modal>
+          <ProjectModal
+            files={files}
+            handleSolutionModalHide={this.handleSolutionModalHide}
+            isOpen={isOpen}
+            projectTitle={projectTitle}
+            solution={solution}
+            t={t}
+          />
         ) : null}
       </section>
     );
@@ -660,4 +664,4 @@ CertificationSettings.propTypes = propTypes;
 export default connect(
   null,
   mapDispatchToProps
-)(CertificationSettings);
+)(withTranslation()(CertificationSettings));

@@ -3,6 +3,7 @@ id: 598eea87e5cf4b116c3ff81a
 title: Factors of a Mersenne number
 challengeType: 5
 forumTopicId: 302264
+dashedName: factors-of-a-mersenne-number
 ---
 
 # --description--

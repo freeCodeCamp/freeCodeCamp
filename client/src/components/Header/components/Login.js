@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 import { isSignedInSelector } from '../../../redux';
-import { apiLocation } from '../../../../config/env.json';
-
-import { gtagReportConversion } from '../../../analytics/gtag';
+import { apiLocation, homeLocation } from '../../../../../config/env.json';
 
 import './login.css';
 
@@ -19,22 +18,22 @@ const mapStateToProps = createSelector(
 );
 
 function Login(props) {
+  const { t } = useTranslation();
   const {
     block,
     'data-test-label': dataTestLabel,
     children,
     isSignedIn
   } = props;
-  const href = isSignedIn ? '/learn' : `${apiLocation}/signin`;
+  const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
   return (
     <Button
       bsStyle='default'
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
       href={href}
-      onClick={() => gtagReportConversion()}
     >
-      {children || 'Sign In'}
+      {children || t('buttons.sign-in')}
     </Button>
   );
 }

@@ -3,6 +3,7 @@ id: 8d5123c8c441eddfaeb5bdef
 title: Implement Bubble Sort
 challengeType: 1
 forumTopicId: 301612
+dashedName: implement-bubble-sort
 ---
 
 # --description--
@@ -14,9 +15,6 @@ Here we will see bubble sort. The bubble sort method starts at the beginning of 
 This method requires multiple iterations through the array and for average and worst cases has quadratic time complexity. While simple, it is usually impractical in most situations.
 
 **Instructions:** Write a function `bubbleSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
-
-**Note:**  
-We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging `array` to see your sorting algorithm in action!
 
 # --hints--
 

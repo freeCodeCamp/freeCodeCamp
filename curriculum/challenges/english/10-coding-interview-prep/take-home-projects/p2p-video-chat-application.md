@@ -3,6 +3,7 @@ id: bd7150d8c442eddfafb5bd1c
 title: P2P Video Chat Application
 challengeType: 4
 forumTopicId: 302366
+dashedName: p2p-video-chat-application
 ---
 
 # --description--
@@ -32,11 +33,6 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

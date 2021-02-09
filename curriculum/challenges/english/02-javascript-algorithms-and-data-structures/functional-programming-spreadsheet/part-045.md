@@ -2,6 +2,7 @@
 id: 5d792535591db67ee15b4106
 title: Part 45
 challengeType: 0
+dashedName: part-45
 ---
 
 # --description--

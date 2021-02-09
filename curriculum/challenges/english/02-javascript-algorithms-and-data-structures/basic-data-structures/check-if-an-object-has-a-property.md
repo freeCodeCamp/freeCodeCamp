@@ -3,6 +3,7 @@ id: 587d7b7d367417b2b2512b1c
 title: Check if an Object has a Property
 challengeType: 1
 forumTopicId: 301155
+dashedName: check-if-an-object-has-a-property
 ---
 
 # --description--

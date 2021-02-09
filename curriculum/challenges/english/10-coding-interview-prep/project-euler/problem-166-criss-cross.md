@@ -3,6 +3,7 @@ id: 5900f4131000cf542c50ff25
 title: 'Problem 166: Criss Cross'
 challengeType: 5
 forumTopicId: 301800
+dashedName: problem-166-criss-cross
 ---
 
 # --description--

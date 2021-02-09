@@ -3,6 +3,7 @@ id: 587d7fab367417b2b2512bd7
 title: Create a Scatterplot with SVG Circles
 challengeType: 6
 forumTopicId: 301484
+dashedName: create-a-scatterplot-with-svg-circles
 ---
 
 # --description--

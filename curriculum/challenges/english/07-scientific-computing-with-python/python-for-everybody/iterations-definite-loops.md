@@ -3,6 +3,7 @@ id: 5e7b9f070b6c005b0e76f05d
 title: 'Iterations: Definite Loops'
 challengeType: 11
 videoId: hiRTRAqNlpE
+dashedName: iterations-definite-loops
 ---
 
 # --question--

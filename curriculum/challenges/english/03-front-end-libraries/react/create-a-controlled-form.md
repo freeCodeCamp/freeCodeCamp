@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036179
 title: Create a Controlled Form
 challengeType: 6
 forumTopicId: 301384
+dashedName: create-a-controlled-form
 ---
 
 # --description--

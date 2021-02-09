@@ -1,50 +1,71 @@
 ---
 id: 5a9d727a424fe3d0e10cad12
+title: 使用一个自定义的 CSS 变量
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM989ck'
 forumTopicId: 301090
-title: 使用一个自定义的 CSS 变量
+dashedName: use-a-custom-css-variable
 ---
 
-## Description
-<section id='description'>
-创建变量后，CSS 属性可以通过引用变量名来使用它的值。
+# --description--
+
+创建变量后，CSS 属性可以通过调用变量名来使用它对应的值。
 
 ```css
 background: var(--penguin-skin);
 ```
 
-因为引用了<code>--penguin-skin</code>变量的值，使用了这个样式的元素背景颜色会是灰色。
-注意：如果变量名不匹配，样式不会生效。
-</section>
+因为引用了 `--penguin-skin` 变量的值，使用了这个样式的元素背景颜色会是灰色。 请注意，除非变量名称完全匹配，否则将不会应用样式。
 
-## Instructions
-<section id='instructions'>
-<code>penguin-top</code>，<code>penguin-bottom</code>，<code>right-hand</code>和<code>left-hand</code>class 的<code>background</code>属性均使用<code>--penguin-skin</code>变量值。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+将 `--penguin-skin` 的值应用到 class 为 `penguin-top`、`penguin-bottom`、`right-hand`、`left-hand` 的 `background` 的属性值。
 
-```yml
-tests:
-  - text: '<code>penguin-top</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
-  - text: '<code>penguin-bottom</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi));
-  - text: '<code>right-hand</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi));
-  - text: '<code>left-hand</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi));
+# --hints--
 
+将 `--penguin-skin` 的值应用到 `penguin-top` class 的 `background` 属性。
+
+```js
+assert(
+  code.match(
+    /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi
+  )
+);
 ```
 
-</section>
+class 为 `penguin-bottom` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi
+  )
+);
+```
 
-<div id='html-seed'>
+class 为 `right-hand` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
+
+```js
+assert(
+  code.match(
+    /.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi
+  )
+);
+```
+
+class 为 `left-hand` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
+
+```js
+assert(
+  code.match(
+    /.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -57,63 +78,63 @@ tests:
     width: 300px;
     height: 300px;
   }
-  
+
   .penguin-top {
     top: 10%;
     left: 25%;
-    
-    /* change code below */
+
+    /* Change code below this line */
     background: black;
-    /* change code above */
-    
+    /* Change code above this line */
+
     width: 50%;
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
-    
-    /* change code below */
+
+    /* Change code below this line */
     background: black;
-    /* change code above */
-    
+    /* Change code above this line */
+
     width: 53%;
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-  
+
   .right-hand {
     top: 0%;
     left: -5%;
-    
-    /* change code below */
+
+    /* Change code below this line */
     background: black;
-    /* change code above */
-    
+    /* Change code above this line */
+
     width: 30%;
     height: 60%;
     border-radius: 30% 30% 120% 30%;
     transform: rotate(45deg);
     z-index: -1;
   }
-  
+
   .left-hand {
     top: 0%;
     left: 75%;
-    
-    /* change code below */
+
+    /* Change code below this line */
     background: black;
-    /* change code above */
-    
+    /* Change code above this line */
+
     width: 30%;
     height: 60%;
     border-radius: 30% 30% 30% 120%;
     transform: rotate(-45deg);
     z-index: -1;
   }
-  
+
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -122,7 +143,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -131,7 +152,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .belly {
     top: 60%;
     left: 2.5%;
@@ -140,7 +161,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-  
+
   .right-feet {
     top: 85%;
     left: 60%;
@@ -149,9 +170,9 @@ tests:
     height: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(-80deg);
-    z-index: -2222;  
+    z-index: -2222;
   }
-  
+
   .left-feet {
     top: 85%;
     left: 25%;
@@ -160,18 +181,18 @@ tests:
     height: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(80deg);
-    z-index: -2222;  
+    z-index: -2222;
   }
-  
+
   .right-eye {
     top: 45%;
     left: 60%;
     background: black;
     width: 15%;
     height: 17%;
-    border-radius: 50%; 
+    border-radius: 50%;
   }
-  
+
   .left-eye {
     top: 45%;
     left: 25%;
@@ -180,7 +201,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .sparkle {
     top: 25%;
     left: 15%;
@@ -189,7 +210,7 @@ tests:
     height: 35%;
     border-radius: 50%;
   }
-  
+
   .blush-right {
     top: 65%;
     left: 15%;
@@ -198,7 +219,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .blush-left {
     top: 65%;
     left: 70%;
@@ -207,7 +228,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-top {
     top: 60%;
     left: 40%;
@@ -216,7 +237,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -225,11 +246,11 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   body {
     background:#c6faf1;
   }
-  
+
   .penguin * {
     position: absolute;
   }
@@ -259,16 +280,8 @@ tests:
 </div>
 ```
 
-</div>
-</section>
+# --solutions--
 
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>.penguin-top {background: var(--penguin-skin);} .penguin-bottom {background: var(--penguin-skin);} .right-hand {background: var(--penguin-skin);} .left-hand {background: var(--penguin-skin);}</style>
 ```
-
-</section>
-              

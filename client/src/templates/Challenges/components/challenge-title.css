@@ -1,3 +1,73 @@
+.challenge-title-wrap {
+  text-align: center;
+  padding-top: 10px;
+}
+
 .challenge-title {
-  padding: 0 15px;
+  margin: 20px 0px 15px;
+}
+
+.challenge-title-breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  border: 1px solid var(--quaternary-background);
+  height: 25px;
+}
+
+.breadcrumb-left {
+  text-decoration: none;
+  min-width: 25px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 25px;
+  word-wrap: none;
+  white-space: nowrap;
+  flex-grow: 1;
+  flex-shrink: 2;
+  background-color: var(--quaternary-background);
+  padding: 0px 3px;
+}
+
+.breadcrumb-center {
+  width: 0;
+  height: 0;
+  border-top: calc(25px / 2) solid transparent;
+  border-bottom: calc(23px / 2) solid transparent;
+  border-left: calc(23px / 2) solid var(--quaternary-background);
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.breadcrumb-right {
+  text-decoration: none;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  max-height: 25px;
+  min-width: 50px;
+  flex-grow: 2;
+  flex-shrink: 1;
+  word-wrap: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0px 3px;
+}
+
+.breadcrumb-rule {
+  margin: 5px -10px;
+}
+
+.breadcrumb-left:hover {
+  text-decoration: underline;
+  background-color: var(--quaternary-background);
+}
+.breadcrumb-right:hover {
+  text-decoration: underline;
+  background-color: var(--secondary-background);
 }

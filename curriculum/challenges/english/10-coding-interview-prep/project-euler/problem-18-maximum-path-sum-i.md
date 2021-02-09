@@ -3,6 +3,7 @@ id: 5900f37e1000cf542c50fe91
 title: 'Problem 18: Maximum path sum I'
 challengeType: 5
 forumTopicId: 301815
+dashedName: problem-18-maximum-path-sum-i
 ---
 
 # --description--

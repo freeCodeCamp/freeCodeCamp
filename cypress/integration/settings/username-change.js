@@ -35,7 +35,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('brad', { force: true });
 
-    cy.contains('Username is available.')
+    cy.contains('Username is available')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
@@ -75,7 +75,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('twaha', { force: true });
 
-    cy.contains('Username not available.')
+    cy.contains('Username not available')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
@@ -89,8 +89,8 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('twaha', { force: true });
 
-    cy.contains('Username is available.').should('not.exist');
-    cy.contains('Username not available.').should('not.exist');
+    cy.contains('Username is available').should('not.exist');
+    cy.contains('Username not available').should('not.exist');
     cy.contains(
       'Please note, changing your username will also change ' +
         'the URL to your profile and your certifications.'
@@ -127,7 +127,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
 
-    cy.contains('Username contains invalid characters.')
+    cy.contains('Username "quincy larson" contains invalid characters')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
@@ -151,7 +151,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('quincy', { force: true });
 
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
 
     cy.get('@usernameForm')
       .contains('Save')
@@ -165,7 +165,7 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('nhcarrigan', { force: true });
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('We have updated your username to nhcarrigan')
@@ -184,7 +184,7 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('bjorno', { force: true });
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('We have updated your username to bjorno').within(() => {
@@ -200,7 +200,7 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('symbol', { force: true });
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
 
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 

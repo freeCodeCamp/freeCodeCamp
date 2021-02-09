@@ -4,6 +4,7 @@ title: Use the s Tag to Strikethrough Text
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301079
+dashedName: use-the-s-tag-to-strikethrough-text
 ---
 
 # --description--
@@ -12,7 +13,7 @@ To strikethrough text, which is when a horizontal line cuts across the character
 
 # --instructions--
 
-Wrap the `s` tag around "Google" inside the `h4` tag and then add the word "Alphabet" beside it, which should not have the strikethrough formatting.
+Wrap the `s` tag around `Google` inside the `h4` tag and then add the word `Alphabet` beside it, which should not have the strikethrough formatting.
 
 # --hints--
 
@@ -22,7 +23,7 @@ Your code should add one `s` tag to the markup.
 assert($('s').length == 1);
 ```
 
-A `s` tag should wrap around the Google text in the `h4` tag. It should not contain the word Alphabet.
+A `s` tag should wrap around the `Google` text in the `h4` tag. It should not contain the word `Alphabet`.
 
 ```js
 assert(
@@ -35,7 +36,7 @@ assert(
 );
 ```
 
-You should include the word "Alphabet" in the `h4` tag, without strikethrough formatting.
+You should include the word `Alphabet` in the `h4` tag, without strikethrough formatting.
 
 ```js
 assert(

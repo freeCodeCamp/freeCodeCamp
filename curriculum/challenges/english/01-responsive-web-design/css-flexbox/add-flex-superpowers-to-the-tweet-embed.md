@@ -4,6 +4,7 @@ title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
 forumTopicId: 301100
+dashedName: add-flex-superpowers-to-the-tweet-embed
 ---
 
 # --description--
@@ -17,6 +18,12 @@ Add the CSS property `display: flex` to all of the following items - note that t
 `header`, the header's `.profile-name`, the header's `.follow-btn`, the header's `h3` and `h4`, the `footer`, and the footer's `.stats`.
 
 # --hints--
+
+Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+
+```js
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
 
 Your `header` should have a `display` property set to `flex`.
 

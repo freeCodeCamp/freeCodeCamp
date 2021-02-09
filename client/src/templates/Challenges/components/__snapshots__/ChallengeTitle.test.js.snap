@@ -1,67 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ChallengeTitle/> renders correctly 1`] = `
-<h2
-  className="text-center challenge-title"
+<div
+  className="challenge-title-wrap"
 >
-  title text
-  <span
-    className="sr-only"
+  <div
+    className="challenge-title-breadcrumbs"
   >
-    Passed
-  </span>
-  <svg
-    height="50"
-    style={
-      Object {
-        "height": "15px",
-        "marginLeft": "5px",
-        "width": "15px",
+    <a
+      className="breadcrumb-left"
+      href="/learn/undefined"
+    >
+      <span
+        className="ellipsis"
+      />
+    </a>
+    <div
+      className="breadcrumb-center"
+    />
+    <a
+      className="breadcrumb-right"
+      href="/learn/undefined"
+      state={
+        Object {
+          "breadcrumbBlockClick": undefined,
+        }
       }
-    }
-    viewBox="0 0 200 200"
-    width="50"
-    xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+  <div
+    className="challenge-title"
   >
-    <g>
-      <title>
-        Passed
-      </title>
-      <circle
-        cx="100"
-        cy="99"
-        fill="var(--primary-color)"
-        r="95"
-        stroke="var(--primary-color)"
-        strokeDasharray="null"
-        strokeLinecap="null"
-        strokeLinejoin="null"
-      />
-      <rect
-        fill="var(--primary-background)"
-        height="30"
-        stroke="var(--primary-background)"
-        strokeDasharray="null"
-        strokeLinecap="null"
-        strokeLinejoin="null"
-        transform="rotate(-45, 120, 106.321)"
-        width="128.85878"
-        x="55.57059"
-        y="91.32089"
-      />
-      <rect
-        fill="var(--primary-background)"
-        height="30"
-        stroke="var(--primary-background)"
-        strokeDasharray="null"
-        strokeLinecap="null"
-        strokeLinejoin="null"
-        transform="rotate(45, 66.75, 123.75)"
-        width="80.66548"
-        x="26.41726"
-        y="108.75"
-      />
-    </g>
-  </svg>
-</h2>
+    <b>
+      title text
+    </b>
+    <span
+      className="sr-only"
+    >
+      icons.passed
+    </span>
+    <svg
+      height="50"
+      style={
+        Object {
+          "height": "15px",
+          "marginLeft": "7px",
+          "width": "15px",
+        }
+      }
+      viewBox="0 0 200 200"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g>
+        <title>
+          icons.passed
+        </title>
+        <circle
+          cx="100"
+          cy="99"
+          fill="var(--primary-color)"
+          r="95"
+          stroke="var(--primary-color)"
+          strokeDasharray="null"
+          strokeLinecap="null"
+          strokeLinejoin="null"
+        />
+        <rect
+          fill="var(--primary-background)"
+          height="30"
+          stroke="var(--primary-background)"
+          strokeDasharray="null"
+          strokeLinecap="null"
+          strokeLinejoin="null"
+          transform="rotate(-45, 120, 106.321)"
+          width="128.85878"
+          x="55.57059"
+          y="91.32089"
+        />
+        <rect
+          fill="var(--primary-background)"
+          height="30"
+          stroke="var(--primary-background)"
+          strokeDasharray="null"
+          strokeLinecap="null"
+          strokeLinejoin="null"
+          transform="rotate(45, 66.75, 123.75)"
+          width="80.66548"
+          x="26.41726"
+          y="108.75"
+        />
+      </g>
+    </svg>
+  </div>
+</div>
 `;

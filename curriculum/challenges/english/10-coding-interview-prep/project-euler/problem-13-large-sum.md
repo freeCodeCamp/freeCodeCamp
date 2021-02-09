@@ -3,6 +3,7 @@ id: 5900f37a1000cf542c50fe8c
 title: 'Problem 13: Large sum'
 challengeType: 5
 forumTopicId: 301757
+dashedName: problem-13-large-sum
 ---
 
 # --description--

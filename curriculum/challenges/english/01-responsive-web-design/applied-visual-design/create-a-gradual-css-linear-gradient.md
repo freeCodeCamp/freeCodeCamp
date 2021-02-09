@@ -4,6 +4,7 @@ title: Create a Gradual CSS Linear Gradient
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4dpt9'
 forumTopicId: 301047
+dashedName: create-a-gradual-css-linear-gradient
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 59c3ec9f15068017c96eb8a3
 title: Farey sequence
 challengeType: 5
 forumTopicId: 302266
+dashedName: farey-sequence
 ---
 
 # --description--

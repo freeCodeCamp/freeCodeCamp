@@ -28,6 +28,7 @@ const schema = Joi.object()
       .max(11)
       .required(),
     checksum: Joi.number(),
+    // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string(),
     description: Joi.when('challengeType', {
       is: Joi.only([challengeTypes.step, challengeTypes.video]),
@@ -51,7 +52,6 @@ const schema = Joi.object()
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
-    name: Joi.string(),
     order: Joi.number(),
     // video challenges only:
     videoId: Joi.when('challengeType', {

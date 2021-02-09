@@ -3,6 +3,7 @@ id: 5900f4f41000cf542c510007
 title: 'Problem 392: Enmeshed unit circle'
 challengeType: 5
 forumTopicId: 302057
+dashedName: problem-392-enmeshed-unit-circle
 ---
 
 # --description--

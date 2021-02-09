@@ -4,6 +4,7 @@ title: Find the Length of a String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqEAd'
 forumTopicId: 18182
+dashedName: find-the-length-of-a-string
 ---
 
 # --description--

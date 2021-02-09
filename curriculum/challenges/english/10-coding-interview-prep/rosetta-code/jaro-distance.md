@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ec2
 title: Jaro distance
 challengeType: 5
 forumTopicId: 302292
+dashedName: jaro-distance
 ---
 
 # --description--

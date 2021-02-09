@@ -3,6 +3,7 @@ id: 5900f38f1000cf542c50fea2
 title: 'Problem 35: Circular primes'
 challengeType: 5
 forumTopicId: 302009
+dashedName: problem-35-circular-primes
 ---
 
 # --description--

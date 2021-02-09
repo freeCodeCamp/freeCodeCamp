@@ -4,13 +4,14 @@ title: Count Backwards With a For Loop
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
+dashedName: count-backwards-with-a-for-loop
 ---
 
 # --description--
 
 A for loop can also count backwards, so long as we can define the right conditions.
 
-In order to count backwards by twos, we'll need to change our `initialization`, `condition`, and `final-expression`.
+In order to decrement by two each iteration, we'll need to change our `initialization`, `condition`, and `final-expression`.
 
 We'll start at `i = 10` and loop while `i > 0`. We'll decrement `i` by 2 each loop with `i -= 2`.
 

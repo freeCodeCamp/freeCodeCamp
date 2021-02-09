@@ -3,6 +3,7 @@ id: 587d7db8367417b2b2512ba2
 title: Restrict Possible Usernames
 challengeType: 1
 forumTopicId: 301363
+dashedName: restrict-possible-usernames
 ---
 
 # --description--

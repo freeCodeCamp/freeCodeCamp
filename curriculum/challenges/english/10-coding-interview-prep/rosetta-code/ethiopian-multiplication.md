@@ -3,6 +3,7 @@ id: 599d1566a02b571412643b84
 title: Ethiopian multiplication
 challengeType: 5
 forumTopicId: 302257
+dashedName: ethiopian-multiplication
 ---
 
 # --description--
@@ -81,6 +82,7 @@ The task is to define three named functions/methods/procedures/subroutines:
 Use these functions to create a function that does Ethiopian multiplication.
 
 <!-- markdownlint-disable MD046-->
+
 # --hints--
 
 `eth_mult` should be a function.

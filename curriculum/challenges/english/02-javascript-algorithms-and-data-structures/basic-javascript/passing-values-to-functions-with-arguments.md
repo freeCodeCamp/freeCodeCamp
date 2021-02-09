@@ -4,6 +4,7 @@ title: Passing Values to Functions with Arguments
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy8rahW'
 forumTopicId: 18254
+dashedName: passing-values-to-functions-with-arguments
 ---
 
 # --description--

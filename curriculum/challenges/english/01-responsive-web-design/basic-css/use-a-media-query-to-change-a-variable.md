@@ -4,6 +4,7 @@ title: Use a media query to change a variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
+dashedName: use-a-media-query-to-change-a-variable
 ---
 
 # --description--

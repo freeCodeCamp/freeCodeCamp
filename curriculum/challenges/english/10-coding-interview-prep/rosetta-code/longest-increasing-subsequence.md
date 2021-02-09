@@ -3,6 +3,7 @@ id: 5e6dd139859c290b6ab80292
 title: Longest increasing subsequence
 challengeType: 5
 forumTopicId: 385272
+dashedName: longest-increasing-subsequence
 ---
 
 # --description--

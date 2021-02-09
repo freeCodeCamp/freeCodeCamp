@@ -4,6 +4,7 @@ title: Add Borders Around Your Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 forumTopicId: 16630
+dashedName: add-borders-around-your-elements
 ---
 
 # --description--

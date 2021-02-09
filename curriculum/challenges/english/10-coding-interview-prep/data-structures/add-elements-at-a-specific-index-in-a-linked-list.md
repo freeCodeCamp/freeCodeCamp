@@ -3,6 +3,7 @@ id: 587d8252367417b2b2512c67
 title: Add Elements at a Specific Index in a Linked List
 challengeType: 1
 forumTopicId: 301619
+dashedName: add-elements-at-a-specific-index-in-a-linked-list
 ---
 
 # --description--

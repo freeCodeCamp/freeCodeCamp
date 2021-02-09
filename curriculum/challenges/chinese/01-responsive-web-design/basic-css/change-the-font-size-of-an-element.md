@@ -1,14 +1,15 @@
 ---
 id: bad87fee1348bd9aedf08806
-challengeType: 0
-videoUrl: 'https://scrimba.com/c/cPp7VfD'
-forumTopicId: 1
 title: 更改元素的字体大小
+challengeType: 0
+videoUrl: 'https://scrimba.com/c/c3bvDc8'
+forumTopicId: 16777
+dashedName: change-the-font-size-of-an-element
 ---
 
-## Description
-<section id='description'>
-字体大小由<code>font-size</code>属性控制，如下所示：
+# --description--
+
+字体大小由 `font-size` 属性控制，如下所示：
 
 ```css
 h1 {
@@ -16,29 +17,21 @@ h1 {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-在包含<code>red-text</code>class 选择器的<code>&#60;style&#62;</code>声明区域的里，创建一个<code>p</code>元素样式规则，并设置<code>font-size</code>为<code>16px</code>。
-</section>
+在包含 `red-text` 的类选择器的 `<style>` 声明区域的里，创建一个 `p` 元素样式规则，并设置其 `font-size` 为 `16px`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '在<code>style</code>样式声明区域里，<code>p</code>元素的<code>font-size</code>的值应为<code>16px</code>，浏览器和文本缩放应设置为 100％。'
-    testString: assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));
+在 `style` 样式声明区域里，`p` 元素的 `font-size` 的值应为 `16px`。 请注意，浏览器和文本缩放应设置为 100％。
 
+```js
+assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -49,49 +42,78 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <div>
-    <p>猫咪最喜欢的三件东西：</p>
+    <p>Things cats love:</p>
     <ul>
-      <li>猫薄荷</li>
-      <li>激光笔</li>
-      <li>千层饼</li>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
     </ul>
-    <p>猫咪最讨厌的三件东西：</p>
+    <p>Top 3 things cats hate:</p>
     <ol>
-      <li>跳蚤</li>
-      <li>打雷</li>
-      <li>同类</li>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor">室内</label>
-    <label><input type="radio" name="indoor-outdoor">室外</label><br>
-    <label><input type="checkbox" name="personality">忠诚</label>
-    <label><input type="checkbox" name="personality">懒惰</label>
-    <label><input type="checkbox" name="personality">积极</label><br>
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<style>
+  .red-text {
+    color: red;
+  }
+  p {
+    font-size: 16px;
+  }
+</style>
 
-</section>
-              
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

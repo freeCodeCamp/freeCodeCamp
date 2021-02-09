@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8004
 title: Sorting algorithms/Cocktail sort
 challengeType: 5
 forumTopicId: 302312
+dashedName: sorting-algorithmscocktail-sort
 ---
 
 # --description--

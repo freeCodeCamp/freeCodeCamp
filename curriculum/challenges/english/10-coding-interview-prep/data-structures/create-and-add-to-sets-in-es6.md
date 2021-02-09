@@ -3,6 +3,7 @@ id: 587d8254367417b2b2512c70
 title: Create and Add to Sets in ES6
 challengeType: 1
 forumTopicId: 301636
+dashedName: create-and-add-to-sets-in-es6
 ---
 
 # --description--

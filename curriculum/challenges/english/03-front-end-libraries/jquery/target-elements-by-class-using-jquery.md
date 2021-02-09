@@ -5,6 +5,7 @@ challengeType: 6
 forumTopicId: 18316
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+dashedName: target-elements-by-class-using-jquery
 ---
 
 # --description--

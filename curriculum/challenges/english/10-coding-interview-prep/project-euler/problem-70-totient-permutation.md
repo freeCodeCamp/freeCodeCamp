@@ -3,6 +3,7 @@ id: 5900f3b21000cf542c50fec5
 title: 'Problem 70: Totient permutation'
 challengeType: 5
 forumTopicId: 302183
+dashedName: problem-70-totient-permutation
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7fb3367417b2b2512bfc
 title: Add a Description to Your package.json
 challengeType: 2
 forumTopicId: 301522
+dashedName: add-a-description-to-your-package-json
 ---
 
 # --description--
@@ -39,8 +40,6 @@ package.json should have a valid "description" key
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

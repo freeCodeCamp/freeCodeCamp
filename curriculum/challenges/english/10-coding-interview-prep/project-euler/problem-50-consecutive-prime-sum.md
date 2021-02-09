@@ -3,6 +3,7 @@ id: 5900f39e1000cf542c50feb1
 title: 'Problem 50: Consecutive prime sum'
 challengeType: 5
 forumTopicId: 302161
+dashedName: problem-50-consecutive-prime-sum
 ---
 
 # --description--

@@ -1,42 +1,43 @@
 ---
 id: 587d774e367417b2b2512a9f
+title: 使用 main 元素包裹主题内容
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7zuE'
 forumTopicId: 301018
-title: 使用 main 元素包裹主题内容
+dashedName: jump-straight-to-the-content-using-the-main-element
 ---
 
-## Description
-<section id='description'>
-HTML5 添加了诸如<code>main</code>、<code>header</code>、<code>footer</code>、<code>nav</code>、<code>article</code>、<code>section</code>等大量新标签，开发人员提供更多的选择，也兼顾了无障碍特性。
-默认情况下，浏览器呈现这些新标签的方式与<code>div</code>相似。然而，合理地使用它们，可以使你的标签更加的语义化。辅助技术（如：屏幕阅读器）可以通过这些标签为用户提供更加准确的、易于理解的页面信息。
-<code>main</code>标签用于呈现网页的主体内容，且每个页面只能有一个。这意味着它只应包含与页面中心主题相关的信息，而不应包含如导航连接、网页横幅等可以在多个页面中重复出现的内容。
-<code>main</code>标签的语义化特性可以使辅助技术快速定位到页面的主体。 如果页面顶部有一个 “跳转到主要内容” 的链接，那么辅助设备会自动识别<code>main</code>标签，实现这个功能。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Camper Cat 对他的忍者武器页面有一些新的想法，请帮助他在<code>header</code>标签和<code>footer</code>标签（在接下来的挑战中会详细介绍）之间添加完整<code>main</code>标签来使页面语义化。在这个挑战中，你可以先让<code>main</code>为空。
-</section>
+HTML5 引入了一些新元素，其中包括无障碍特性，给予开发者更多的选择。 HTML5 引入了诸如 `main`、`header`、`footer`、`nav`、`article`、`section` 等大量新标签。
 
-## Tests
-<section id='tests'>
+默认情况下，浏览器呈现这些新标签的方式与 `div` 相似。 但是，在适当的地方使用它们，会给标签额外的意义。 仅标签名称就可以表示它所包含的信息类型，这给内容增加了语义含义。 辅助技术可以获取这种信息，为用户提供更好的页面摘要或导航选项。
 
-```yml
-tests:
-  - text: '你的代码应该有一个<code>main</code>标签。'
-    testString: assert($('main').length == 1);
-  - text: '<code>main</code>标签应该在<code>header</code>标签与<code>footer</code>标签之间。'
-    testString: assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi));
+`main` 标签用于呈现网页的主体内容，且每个页面应只有一个。 这意味着它只应包含与页面中心主题相关的信息， 而不应包含如导航连接、网页横幅等需要在多个页面中重复出现的内容。
 
+`main` 标签的语义化特性可以让辅助工具快速定位到页面的主体。 如果你在页面顶部看到了“跳转到主内容”链接， 使用 main 标签可以自动让辅助设备实现这个功能。
+
+# --instructions--
+
+Camper Cat 对他的忍者武器页面有一些新的想法。 请帮他在 `header` 标签和 `footer` 标签（在接下来的挑战中会详细介绍）之间添加一个有开始和结束标记的 `main` 标签。 现在保持 `main` 标签为空。
+
+# --hints--
+
+应存在一个 `main` 标签。
+
+```js
+assert($('main').length == 1);
 ```
 
-</section>
+`main` 标签应位于 `header` 标签与 `footer` 标签之间。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <header>
@@ -48,18 +49,14 @@ tests:
 <footer></footer>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<header>
+  <h1>Weapons of the Ninja</h1>
+</header>
+<main>
 
-</section>
-              
+</main>
+<footer></footer>
+```

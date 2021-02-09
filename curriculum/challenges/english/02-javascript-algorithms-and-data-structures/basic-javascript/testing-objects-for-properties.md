@@ -4,6 +4,7 @@ title: Testing Objects for Properties
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
+dashedName: testing-objects-for-properties
 ---
 
 # --description--

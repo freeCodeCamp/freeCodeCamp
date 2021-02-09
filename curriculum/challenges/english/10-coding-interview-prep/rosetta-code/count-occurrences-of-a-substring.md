@@ -3,6 +3,7 @@ id: 596fda99c69f779975a1b67d
 title: Count occurrences of a substring
 challengeType: 5
 forumTopicId: 302237
+dashedName: count-occurrences-of-a-substring
 ---
 
 # --description--

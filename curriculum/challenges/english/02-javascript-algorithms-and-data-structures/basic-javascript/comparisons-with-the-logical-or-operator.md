@@ -4,6 +4,7 @@ title: Comparisons with the Logical Or Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEPrGTN'
 forumTopicId: 16800
+dashedName: comparisons-with-the-logical-or-operator
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Use the strong Tag to Make Text Bold
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 301080
+dashedName: use-the-strong-tag-to-make-text-bold
 ---
 
 # --description--
@@ -12,7 +13,7 @@ To make text bold, you can use the `strong` tag. This is often used to draw atte
 
 # --instructions--
 
-Wrap a `strong` tag around "Stanford University" inside the `p` tag (do not include the period).
+Wrap a `strong` tag around `Stanford University` text inside the `p` tag (do not include the period).
 
 # --hints--
 

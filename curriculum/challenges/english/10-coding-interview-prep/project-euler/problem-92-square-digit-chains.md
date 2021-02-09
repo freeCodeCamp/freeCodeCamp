@@ -3,6 +3,7 @@ id: 5900f3c81000cf542c50fedb
 title: 'Problem 92: Square digit chains'
 challengeType: 5
 forumTopicId: 302209
+dashedName: problem-92-square-digit-chains
 ---
 
 # --description--

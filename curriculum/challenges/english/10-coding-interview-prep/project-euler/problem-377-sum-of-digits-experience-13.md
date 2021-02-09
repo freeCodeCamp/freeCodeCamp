@@ -3,6 +3,7 @@ id: 5900f4e51000cf542c50fff8
 title: 'Problem 377: Sum of digits, experience 13'
 challengeType: 5
 forumTopicId: 302039
+dashedName: problem-377-sum-of-digits-experience-13
 ---
 
 # --description--

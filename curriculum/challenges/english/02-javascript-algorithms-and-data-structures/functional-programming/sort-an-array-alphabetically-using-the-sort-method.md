@@ -3,6 +3,7 @@ id: 587d7da9367417b2b2512b69
 title: Sort an Array Alphabetically using the sort Method
 challengeType: 1
 forumTopicId: 18303
+dashedName: sort-an-array-alphabetically-using-the-sort-method
 ---
 
 # --description--

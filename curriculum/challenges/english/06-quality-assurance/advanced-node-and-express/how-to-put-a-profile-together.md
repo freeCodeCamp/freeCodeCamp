@@ -3,6 +3,7 @@ id: 5895f70ef9fc0f352b528e6b
 title: How to Put a Profile Together
 challengeType: 2
 forumTopicId: 301554
+dashedName: how-to-put-a-profile-together
 ---
 
 # --description--
@@ -44,8 +45,6 @@ You should correctly add a Pug render variable to /profile.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

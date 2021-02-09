@@ -3,6 +3,7 @@ id: 5900f4331000cf542c50ff45
 title: 'Problem 198: Ambiguous Numbers'
 challengeType: 5
 forumTopicId: 301836
+dashedName: problem-198-ambiguous-numbers
 ---
 
 # --description--

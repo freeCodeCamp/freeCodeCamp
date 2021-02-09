@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b17
 title: Combine Arrays with the Spread Operator
 challengeType: 1
 forumTopicId: 301156
+dashedName: combine-arrays-with-the-spread-operator
 ---
 
 # --description--

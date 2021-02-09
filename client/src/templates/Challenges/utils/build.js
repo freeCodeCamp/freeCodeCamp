@@ -10,9 +10,9 @@ import {
 
 // the config files are created during the build, but not before linting
 // eslint-disable-next-line import/no-unresolved
-import { filename as runner } from '../../../../config/frame-runner';
+import { filename as runner } from '../../../../../config/client/frame-runner';
 // eslint-disable-next-line import/no-unresolved
-import { filename as testEvaluator } from '../../../../config/test-evaluator';
+import { filename as testEvaluator } from '../../../../../config/client/test-evaluator';
 
 const frameRunner = [
   {

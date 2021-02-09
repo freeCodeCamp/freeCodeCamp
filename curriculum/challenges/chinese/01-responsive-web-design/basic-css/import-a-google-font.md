@@ -1,50 +1,76 @@
 ---
 id: bad87fee1348bd9aedf08807
+title: 引入谷歌字体
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MRsJ'
 forumTopicId: 18200
-title: 引入谷歌字体
+dashedName: import-a-google-font
 ---
 
-## Description
-<section id='description'>
-除了大多数系统提供的默认字体以外，我们也可以使用自定义字体。网络上有各种各样的字体，不过在这个例子中，我们将会尝试使用<code>Google</code>字体库。
-<a href='https://fonts.google.com/' target='_blank'>Google 字体</a>是一个免费的字体库，可以通过在 CSS 里面设置字体的 URL 来引用。
-因此，下一步，我们将引入和使用<code>Google</code>字体。
-引入<code>Google</code>字体，你需要复制<code>Google</code>字体的 URL，并粘贴到 HTML 里面。在这个挑战中，我们需要引入<code>Lobster</code>字体。因此，请复制以下代码段，并粘贴到代码编辑器顶部，即放到<code>style</code>标签之前。
-<code>&#60;link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"&#62;</code>
-现在你可以设置<code>font-family</code>属性为<code>Lobster</code>，来使用<code>Lobster</code>字体。例子如下：<br><code>font-family: FAMILY_NAME, GENERIC_NAME;</code>.
-<code>GENERIC_NAME</code>是可选的，其他字体不可用时便作为后备字体，在下一个挑战中可以得到体现。
-字体名区分大小写，并且如果字体名含有空格，需要用引号括起来。例如，使用<code>"Open Sans"</code>字体需要添加引号，而<code>Lobster</code>字体则不需要。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-创建一个 CSS 规则，<code>font-family</code>属性里设置为<code>Lobster</code>字体，并把这个字体应用到所有的<code>h2</code>元素。
-</section>
+在我们的网站上，除了使用系统提供的默认字体以外，我们也可以使用自定义字体。 网络上有很多字体库。 在这个例子中，我们将使用 Google 字体库。
 
-## Tests
-<section id='tests'>
+[Google 字体库](https://fonts.google.com/)是一个免费的 Web 字体库，我们只需要在 CSS 里设置字体的 URL 即可使用。
 
-```yml
-tests:
-  - text: '引入<code>Lobster</code>字体。'
-    testString: assert(new RegExp("googleapis", "gi").test(code));
-  - text: '<code>h2</code>元素必须使用<code>Lobster</code>字体。'
-    testString: assert($("h2").css("font-family").match(/lobster/i));
-  - text: '使用<code>h2</code>选择器去改变字体样式。'
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?(.{0,})\s*;\s*\}/gi.test(code));'
-  - text: '<code>p</code>元素应该保持使用<code>monospace</code>字体。'
-    testString: assert($("p").css("font-family").match(/monospace/i));
+接下来，我们就要引入和使用 Google Fonts（注意：如果 Google 在你的地区被限制访问，你可以选择跳过这个挑战）。
 
+要引入 Google Font，你需要从 Google Fonts 上复制字体的 URL，并粘贴到你的 HTML 里面。 在这个挑战中，我们需要引入 `Lobster` 字体。 因此，请复制以下代码段，并粘贴到代码编辑器顶部，即放到 `style` 标签之前。
+
+`<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
+
+现在你可以通过将下面例子中的 FAMILY_NAMEFAMILY_NAME 替换为 `Lobster`，来使用 `Lobster` 字体：  
+`font-family: FAMILY_NAME, GENERIC_NAME;`。
+
+GENERIC_NAME 是可选的，它用来指明在其他字体不可用时的后备字体。 我们会在下一个挑战中详细说明。
+
+字体名区分大小写，并且如果字体名含有空格，则在声明时需要用引号包起来。 例如，使用 `"Open Sans"` 字体需要添加引号，而 `Lobster` 则不需要。
+
+# --instructions--
+
+给你的网页导入 `Lobster` 字体。 引入 Lobster 字体，然后使用元素选择器将 `h2` 元素的 `font-family` 设置为 `Lobster`。
+
+# --hints--
+
+应引入 `Lobster` 字体。
+
+```js
+assert(new RegExp('googleapis', 'gi').test(code));
 ```
 
-</section>
+`h2` 元素应使用 `Lobster` 字体。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('h2')
+    .css('font-family')
+    .match(/lobster/i)
+);
+```
 
-<div id='html-seed'>
+应使用元素选择器（`h2`）来改变字体样式。
+
+```js
+assert(
+  /\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(
+    code
+  )
+);
+```
+
+`p` 元素应保持使用 `monospace` 字体。
+
+```js
+assert(
+  $('p')
+    .css('font-family')
+    .match(/monospace/i)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -60,49 +86,85 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <div>
-    <p>猫咪最喜欢的三件东西：</p>
+    <p>Things cats love:</p>
     <ul>
-      <li>猫薄荷</li>
-      <li>激光笔</li>
-      <li>千层饼</li>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
     </ul>
-    <p>猫咪最讨厌的三件东西：</p>
+    <p>Top 3 things cats hate:</p>
     <ol>
-      <li>跳蚤</li>
-      <li>打雷</li>
-      <li>同类</li>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor">室内</label>
-    <label><input type="radio" name="indoor-outdoor">室外</label><br>
-    <label><input type="checkbox" name="personality">忠诚</label>
-    <label><input type="checkbox" name="personality">懒惰</label>
-    <label><input type="checkbox" name="personality">积极</label><br>
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
 
-</section>
-              
+  p {
+    font-size: 16px;
+    font-family: monospace;
+  }
+
+  h2 {
+    font-family: Lobster;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

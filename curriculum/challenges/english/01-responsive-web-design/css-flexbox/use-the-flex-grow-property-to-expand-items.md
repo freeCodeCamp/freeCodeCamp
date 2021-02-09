@@ -4,6 +4,7 @@ title: Use the flex-grow Property to Expand Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
 forumTopicId: 301111
+dashedName: use-the-flex-grow-property-to-expand-items
 ---
 
 # --description--

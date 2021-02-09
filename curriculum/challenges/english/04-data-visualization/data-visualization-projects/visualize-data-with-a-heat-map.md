@@ -3,6 +3,7 @@ id: bd7188d8c242eddfaeb5bd13
 title: Visualize Data with a Heat Map
 challengeType: 3
 forumTopicId: 301466
+dashedName: visualize-data-with-a-heat-map
 ---
 
 # --description--
@@ -52,11 +53,6 @@ Here is the dataset you will need to complete this project: `https://raw.githubu
 You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Once you're done, submit the URL to your working project with all its tests passing.
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

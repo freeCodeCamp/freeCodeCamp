@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244cf
 title: Record Collection
 challengeType: 1
 forumTopicId: 18261
+dashedName: record-collection
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8013
 title: Sorting algorithms/Strand sort
 challengeType: 5
 forumTopicId: 302319
+dashedName: sorting-algorithmsstrand-sort
 ---
 
 # --description--

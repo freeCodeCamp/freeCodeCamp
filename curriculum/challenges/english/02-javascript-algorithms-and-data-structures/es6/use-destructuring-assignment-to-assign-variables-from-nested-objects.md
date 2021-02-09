@@ -3,6 +3,7 @@ id: 587d7b89367417b2b2512b4a
 title: Use Destructuring Assignment to Assign Variables from Nested Objects
 challengeType: 1
 forumTopicId: 301214
+dashedName: use-destructuring-assignment-to-assign-variables-from-nested-objects
 ---
 
 # --description--

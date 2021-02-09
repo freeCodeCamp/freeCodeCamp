@@ -1,0 +1,38 @@
+{
+  "name": "@freecodecamp/contributer-tools",
+  "description": "Tools to help maintain freecodecamp.org's Open Source Codebase on GitHub",
+  "scripts": {
+    "bootstrap": "lerna bootstrap --ci",
+    "build": "lerna run build",
+    "postinstall": "npm run bootstrap",
+    "test": "run-p test:*",
+    "test:client": "cd ./dashboard-app/client && npm run test",
+    "format": "prettier --write es5 ./**/*.{js,json} && npm run lint",
+    "lint": "eslint ./**/*.js --fix",
+    "start": "cd dashboard-app/server && npm start",
+    "develop": "run-p develop:*",
+    "develop:client": "cd ./dashboard-app/client && npm run develop",
+    "develop:server": "cd ./dashboard-app/server && npm run develop"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^5.9.0",
+    "joi": "^14.3.1",
+    "lerna": "^3.5.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.2"
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "dependencies": {
+    "ajv": "^6.6.1",
+    "ajv-keywords": "^3.2.0"
+  }
+}

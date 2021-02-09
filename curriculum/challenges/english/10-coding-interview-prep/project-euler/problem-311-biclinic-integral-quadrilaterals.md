@@ -3,6 +3,7 @@ id: 5900f4a31000cf542c50ffb6
 title: 'Problem 311: Biclinic Integral Quadrilaterals'
 challengeType: 5
 forumTopicId: 301967
+dashedName: problem-311-biclinic-integral-quadrilaterals
 ---
 
 # --description--

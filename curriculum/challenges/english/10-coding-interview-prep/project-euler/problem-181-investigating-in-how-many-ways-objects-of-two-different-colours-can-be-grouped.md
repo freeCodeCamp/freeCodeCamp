@@ -5,6 +5,8 @@ title: >-
   can be grouped
 challengeType: 5
 forumTopicId: 301817
+dashedName: >-
+  problem-181-investigating-in-how-many-ways-objects-of-two-different-colours-can-be-grouped
 ---
 
 # --description--

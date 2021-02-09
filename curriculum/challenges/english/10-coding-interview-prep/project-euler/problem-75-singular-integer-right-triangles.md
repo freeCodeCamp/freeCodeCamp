@@ -3,6 +3,7 @@ id: 5900f3b71000cf542c50feca
 title: 'Problem 75: Singular integer right triangles'
 challengeType: 5
 forumTopicId: 302188
+dashedName: problem-75-singular-integer-right-triangles
 ---
 
 # --description--

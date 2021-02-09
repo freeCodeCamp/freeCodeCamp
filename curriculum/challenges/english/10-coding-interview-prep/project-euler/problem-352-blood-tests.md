@@ -3,6 +3,7 @@ id: 5900f4cd1000cf542c50ffdf
 title: 'Problem 352: Blood tests'
 challengeType: 5
 forumTopicId: 302012
+dashedName: problem-352-blood-tests
 ---
 
 # --description--

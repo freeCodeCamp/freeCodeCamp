@@ -1,14 +1,15 @@
 ---
 id: 587d78b1367417b2b2512b09
+title: 使图片自适应设备尺寸
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cPp7VfD'
-forumTopicId: 1
-title: 使图片根据设备尺寸自如响应
+videoUrl: 'https://scrimba.com/p/pzrPu4/cz763UD'
+forumTopicId: 301140
+dashedName: make-an-image-responsive
 ---
 
-## Description
-<section id='description'>
-用 CSS 来让图片自适应其实很简单。你只需要给图片添加这些属性:
+# --description--
+
+用 CSS 来让图片自适应其实很简单。 你只需要给图片添加这些属性:
 
 ```css
 img {
@@ -17,33 +18,29 @@ img {
 }
 ```
 
-设置 `max-width` 值为 `100%` 可确保图片不超出父容器的范围。设置 `height `属性为 `auto` 保持图片的原始宽高比。
-</section>
+设置 `max-width` 值为 `100%` 可确保图片不超出父容器的范围；设置 `height` 属性为 `auto` 可以保持图片的原始宽高比。
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-给 `responsive-img` 添加样式规则，使其成为响应式。它不应该超出父容器（在本例中，即预览窗口）的范围，并保持宽高比不变。添加代码后，拖动浏览器窗口，看看图片发生什么变化。
-</section>
+给 `responsive-img` 添加样式规则，使其成为响应式的图片。 它不应该超出父容器（在本例中，即预览窗口）的范围，并保持宽高比不变。 添加代码后，拖动浏览器窗口，看看图片发生什么变化。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>responsive-img</code> 类应设置 <code>max-width</code> 为 <code>100%</code>。
-    testString: assert(getComputedStyle($('.responsive-img')[0]).maxWidth === '100%');
-  - text: <code>responsive-img</code> 类应设置 <code>height</code> 为 <code>auto</code>。
-    testString: assert(code.match(/height:\s*?auto;/g));
+`responsive-img` 类应将 `max-width` 设置为 `100%`。
 
+```js
+assert(getComputedStyle($('.responsive-img')[0]).maxWidth === '100%');
 ```
 
-</section>
+`responsive-img` 类应将 `height` 设置为 `auto`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/height:\s*?auto;/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -61,16 +58,7 @@ img {
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
 
-
-
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -87,6 +75,3 @@ img {
 <img class="responsive-img" src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
-
-</section>
-              

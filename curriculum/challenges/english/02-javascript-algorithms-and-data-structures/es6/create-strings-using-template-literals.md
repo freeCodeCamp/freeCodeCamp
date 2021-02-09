@@ -3,6 +3,7 @@ id: 587d7b8a367417b2b2512b4e
 title: Create Strings using Template Literals
 challengeType: 1
 forumTopicId: 301200
+dashedName: create-strings-using-template-literals
 ---
 
 # --description--

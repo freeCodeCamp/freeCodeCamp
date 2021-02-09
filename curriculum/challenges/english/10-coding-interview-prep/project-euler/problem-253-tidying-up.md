@@ -3,6 +3,7 @@ id: 5900f4691000cf542c50ff7c
 title: 'Problem 253: Tidying up'
 challengeType: 5
 forumTopicId: 301901
+dashedName: problem-253-tidying-up
 ---
 
 # --description--

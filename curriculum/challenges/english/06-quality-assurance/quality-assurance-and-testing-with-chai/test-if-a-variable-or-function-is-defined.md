@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c47
 title: Test if a Variable or Function is Defined
 challengeType: 2
 forumTopicId: 301602
+dashedName: test-if-a-variable-or-function-is-defined
 ---
 
 # --description--
@@ -82,8 +83,6 @@ You should choose the correct method for the third assertion - `isDefined` vs. `
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

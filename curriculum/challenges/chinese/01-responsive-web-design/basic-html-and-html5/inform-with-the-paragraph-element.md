@@ -1,56 +1,62 @@
 ---
 id: bad87fee1348bd9aedf08801
+title: 用 p 元素代表段落
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
 forumTopicId: 18202
-title: 用 p 元素代表段落
+dashedName: inform-with-the-paragraph-element
 ---
 
-## Description
-<section id='description'>
-<code>p</code>是<code>paragraph</code>的缩写，通常用来创建一个段落，就和你写作文一样。
+# --description--
+
+`p` 元素是网站上段落文本使用的元素。 `p` 是“paragraph（段落）”的缩写。
+
 你可以像这样创建一个段落：
-<code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-在<code>h2</code>元素下面新增一个<code>p</code>元素，元素内容是：<code>Hello Paragraph</code>。
-</section>
+`<p>I'm a p tag!</p>`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '创建一个<code>p</code>元素。'
-    testString: assert(($("p").length > 0));
-  - text: '<code>p</code>元素的内容应为：<code>Hello Paragraph</code>。'
-    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()));
-  - text: '<code>p</code>元素应该有结束标记。'
-    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
+在 `h2` 元素下方添加一个 `p` 元素，其内容是 `Hello Paragraph`。
 
+**注意：**按照惯例，所有 HTML 标签都应该是小写字母，例如应使用 `<p></p>`，而不会使用`<P></P>`。
+
+# --hints--
+
+应包含一个 `p` 元素。
+
+```js
+assert($('p').length > 0);
 ```
 
-</section>
+`p` 元素的内容文本应为 `Hello Paragraph`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.isTrue(/hello(\s)+paragraph/gi.test($('p').text()));
+```
 
-<div id='html-seed'>
+`p` 元素应有结束标签。
+
+```js
+assert(
+  code.match(/<\/p>/g) &&
+    code.match(/<\/p>/g).length === code.match(/<p/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h1>Hello World</h1>
 <h2>CatPhotoApp</h2>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+<p>Hello Paragraph</p>
+```

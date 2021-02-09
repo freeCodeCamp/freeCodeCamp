@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c46
 title: Learn How JavaScript Assertions Work
 challengeType: 2
 forumTopicId: 301589
+dashedName: learn-how-javascript-assertions-work
 ---
 
 # --description--
@@ -56,8 +57,6 @@ You should choose the correct method for the second assertion - `isNull` vs. `is
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

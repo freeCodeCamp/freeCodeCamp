@@ -3,6 +3,7 @@ id: 5900f4861000cf542c50ff98
 title: 'Problem 281: Pizza Toppings'
 challengeType: 5
 forumTopicId: 301932
+dashedName: problem-281-pizza-toppings
 ---
 
 # --description--

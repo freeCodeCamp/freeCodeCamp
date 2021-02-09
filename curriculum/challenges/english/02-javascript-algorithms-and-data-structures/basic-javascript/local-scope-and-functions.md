@@ -4,6 +4,7 @@ title: Local Scope and Functions
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd62NhM'
 forumTopicId: 18227
+dashedName: local-scope-and-functions
 ---
 
 # --description--

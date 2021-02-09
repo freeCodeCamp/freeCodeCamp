@@ -1,20 +1,28 @@
 ---
 id: bad87fee1348bd9aede08718
+title: 使用 RGB 值为元素上色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkp2fr'
 forumTopicId: 18369
-title: 使用 RGB 值为元素上色
+dashedName: use-rgb-values-to-color-elements
 ---
 
-## Description
-<section id='description'>
-另一种可以在 CSS 中表示颜色的方法是使用 RGB 值。
-黑色的 RGB 值声明如下：
-<code>rgb(0, 0, 0)</code>
-白色的 RGB 值声明如下：
-<code>rgb(255, 255, 255)</code>
-RGB 不像十六进制编码，并不需要用到 6 位十六进制数字。在 RGB 里，你只需要指定每种颜色的亮度大小，从 0 到 255。
-在数学的角度来看，如果将十六进制的一种颜色的两位数字相乘，16 乘以 16 也等于 256。所以，从 0 到 255 计算的 RGB 值的具有十六进制编码相同的颜色可能性。
+# --description--
+
+`RGB` 值是在 CSS 中表示颜色的另一种方法。
+
+黑色的 `RGB` 值：
+
+`rgb(0, 0, 0)`
+
+白色的 `RGB` 值：
+
+`rgb(255, 255, 255)`
+
+RGB 值与我们之前学到的十六进制编码不同。`RGB` 值不需要用到 6 位十六进制数字，而只需要指定每种颜色的亮度大小，数值范围从 0 到 255。
+
+如果我们稍微计算一下，就不难发现这两种表示方式本质上是等价的。在十六进制编码中，我们用两个十六进制数表示一个颜色；这样，每种颜色都有 16 \* 16（即 256）种可能。 所以，`RGB` 从零开始计算，与十六进制代码的值的数量完全相同。
+
 下面是通过使用 RGB 值设置背景颜色为橘色的例子：
 
 ```css
@@ -23,31 +31,27 @@ body {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-让我们用<code>rgb(0, 0, 0)</code>的 RGB 值替换<code>body</code>元素背景颜色的十六进制编码。
-</section>
+请用 RGB 值 `rgb(0, 0, 0)` 替换 `body` 元素背景颜色的十六进制编码。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '<code>body</code>元素的背景颜色应该是黑色的。'
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
-  - text: '<code>body</code>元素的背景颜色的黑色值应该为<code>RGB</code>值。'
-    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig));
+`body` 元素的背景颜色应该是黑色。
 
+```js
+assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-</section>
+`body` 元素的背景颜色的属性值应使用 `rgb` 值。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -57,18 +61,12 @@ tests:
 </style>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
+<style>
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+</style>
 ```
-
-</section>
-              

@@ -29,7 +29,6 @@ import {
 import { oldDataVizId } from '../../../config/misc';
 import certTypes from '../utils/certTypes.json';
 import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
-import { completeCommitment$ } from '../utils/commit';
 import { getChallenges } from '../utils/get-curriculum';
 
 const log = debug('fcc:certification');
@@ -60,34 +59,6 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
 
   return latestCertDate ? latestCertDate : completedDate;
 }
-
-const noNameMessage = dedent`
-  We need your name so we can put it on your certification.
-  Add your name to your account settings and click the save button.
-  Then we can issue your certification.
-  `;
-
-const notCertifiedMessage = name => dedent`
-  It looks like you have not completed the necessary steps.
-  Please complete the required projects to claim the
-  ${name} Certification
-  `;
-
-const alreadyClaimedMessage = name => dedent`
-    It looks like you already have claimed the ${name} Certification
-    `;
-
-const successMessage = (username, name) => dedent`
-    @${username}, you have successfully claimed
-    the ${name} Certification!
-    Congratulations on behalf of the freeCodeCamp.org team!
-    `;
-
-const failureMessage = name => dedent`
-    Something went wrong with the verification of ${name}, please try again.
-    If you continue to receive this error, you can send a message to
-    support@freeCodeCamp.org to get help.
-    `;
 
 function ifNoSuperBlock404(req, res, next) {
   const { superBlock } = req.body;
@@ -191,9 +162,9 @@ const completionHours = {
   [certTypes.apisMicroservices]: 300,
   [certTypes.qaV7]: 300,
   [certTypes.infosecV7]: 300,
-  [certTypes.sciCompPyV7]: 400,
-  [certTypes.dataAnalysisPyV7]: 400,
-  [certTypes.machineLearningPyV7]: 400
+  [certTypes.sciCompPyV7]: 300,
+  [certTypes.dataAnalysisPyV7]: 300,
+  [certTypes.machineLearningPyV7]: 300
 };
 
 function getCertById(anId, allChallenges) {
@@ -310,19 +281,31 @@ function createVerifyCert(certTypeIds, app) {
       .flatMap(challenge => {
         const certName = certText[certType];
         if (user[certType]) {
-          return Observable.just(alreadyClaimedMessage(certName));
+          return Observable.just({
+            type: 'info',
+            message: 'flash.already-claimed',
+            variables: { name: certName }
+          });
         }
 
         // certificate doesn't exist or
         // connection error
         if (!challenge) {
           reportError(`Error claiming ${certName}`);
-          return Observable.just(failureMessage(certName));
+          return Observable.just({
+            type: 'danger',
+            message: 'flash.wrong-name',
+            variables: { name: certName }
+          });
         }
 
         const { id, tests, challengeType } = challenge;
         if (!canClaim(tests, user.completedChallenges)) {
-          return Observable.just(notCertifiedMessage(certName));
+          return Observable.just({
+            type: 'info',
+            message: 'flash.incomplete-steps',
+            variables: { name: certName }
+          });
         }
 
         const updateData = {
@@ -338,7 +321,10 @@ function createVerifyCert(certTypeIds, app) {
         };
 
         if (!user.name) {
-          return Observable.just(noNameMessage);
+          return Observable.just({
+            type: 'info',
+            message: 'flash.name-needed'
+          });
         }
         // set here so sendCertifiedEmail works properly
         // not used otherwise
@@ -354,9 +340,6 @@ function createVerifyCert(certTypeIds, app) {
         return Observable.combineLatest(
           // update user data
           Observable.fromPromise(updatePromise),
-          // If user has committed to nonprofit,
-          // this will complete their pledge
-          completeCommitment$(user),
           // sends notification email is user has all 6 certs
           // if not it noop
           sendCertifiedEmail(user, Email.send$),
@@ -366,15 +349,19 @@ function createVerifyCert(certTypeIds, app) {
             log(pledgeOrMessage);
           }
           log('Certificates updated');
-          return successMessage(user.username, certName);
+          return {
+            type: 'success',
+            message: 'flash.cert-claim-success',
+            variables: {
+              username: user.username,
+              name: certName
+            }
+          };
         });
       })
       .subscribe(message => {
         return res.status(200).json({
-          response: {
-            type: message.includes('Congratulations') ? 'success' : 'info',
-            message
-          },
+          response: message,
           isCertMap: getUserIsCertMap(user),
           // send back the completed challenges
           // NOTE: we could just send back the latest challenge, but this
@@ -430,23 +417,20 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message:
-                'We could not find a user with the username "' + username + '"'
+              message: 'flash.username-not-found',
+              variables: { username: username }
             }
           ]
         });
       }
-      const { isLocked, showCerts } = user.profileUI;
+      const { isLocked, showCerts, showName } = user.profileUI;
 
       if (!user.name) {
         return res.json({
           messages: [
             {
               type: 'info',
-              message: dedent`
-              This user needs to add their name to their account
-              in order for others to be able to view their certification.
-            `
+              message: 'flash.add-name'
             }
           ]
         });
@@ -457,9 +441,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message:
-                'This user is not eligible for freeCodeCamp.org ' +
-                'certifications at this time'
+              message: 'flash.not-eligible'
             }
           ]
         });
@@ -470,11 +452,8 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: dedent`
-              ${username} has chosen to make their portfolio
-                private. They will need to make their portfolio public
-                in order for others to be able to view their certification.
-            `
+              message: 'flash.profile-private',
+              variables: { username: username }
             }
           ]
         });
@@ -485,11 +464,8 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: dedent`
-              ${username} has chosen to make their certifications
-                private. They will need to make their certifications public
-                in order for others to be able to view them.
-            `
+              message: 'flash.certs-private',
+              variables: { username: username }
             }
           ]
         });
@@ -500,9 +476,8 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: dedent`
-              ${username} has not yet agreed to our Academic Honesty Pledge.
-            `
+              message: 'flash.not-honest',
+              variables: { username: username }
             }
           ]
         });
@@ -537,6 +512,16 @@ function createShowCert(app) {
         }
 
         const { username, name } = user;
+
+        if (!showName) {
+          return res.json({
+            certTitle,
+            username,
+            date: completedDate,
+            completionTime
+          });
+        }
+
         return res.json({
           certTitle,
           username,
@@ -549,9 +534,8 @@ function createShowCert(app) {
         messages: [
           {
             type: 'info',
-            message: `
-It looks like user ${username} is not ${certText[certType]} certified
-          `
+            message: 'flash.user-not-certified',
+            variables: { username: username, cert: certText[certType] }
           }
         ]
       });

@@ -3,6 +3,7 @@ id: 5900f3ad1000cf542c50fec0
 title: 'Problem 65: Convergents of e'
 challengeType: 5
 forumTopicId: 302177
+dashedName: problem-65-convergents-of-e
 ---
 
 # --description--

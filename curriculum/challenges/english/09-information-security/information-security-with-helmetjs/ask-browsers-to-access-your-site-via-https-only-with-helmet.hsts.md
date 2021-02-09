@@ -3,6 +3,7 @@ id: 587d8248367417b2b2512c3c
 title: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
 challengeType: 2
 forumTopicId: 301573
+dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 ---
 
 # --description--
@@ -13,9 +14,9 @@ HTTP Strict Transport Security (HSTS) is a web security policy which helps to pr
 
 # --instructions--
 
-Configure `helmet.hsts()` to use HTTPS for the next 90 days. Pass the config object `{maxAge: timeInSeconds, force: true}`. You can create a variable \`ninetyDaysInSeconds = 90\*24\*60\*60;\` to use for the \`timeInSeconds\`. Repl.it already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Repl.it header, after inspecting it for testing.
+Configure `helmet.hsts()` to use HTTPS for the next 90 days. Pass the config object `{maxAge: timeInSeconds, force: true}`. You can create a variable `ninetyDaysInSeconds = 90*24*60*60;` to use for the `timeInSeconds`. Repl.it already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Repl.it header, after inspecting it for testing.
 
-Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TSL Certificate.
+Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TLS Certificate.
 
 # --hints--
 
@@ -50,8 +51,6 @@ maxAge should be equal to 7776000 s (90 days)
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

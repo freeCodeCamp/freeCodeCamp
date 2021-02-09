@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c43
 title: Personal Library
 challengeType: 4
 forumTopicId: 301571
+dashedName: personal-library
 ---
 
 # --description--
@@ -108,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string \`missing required field comment\`\`. If no book is found, return the string `no book exists`.
+You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -208,8 +209,6 @@ async (getUserInput) => {
   }
 };
 ```
-
-# --seed--
 
 # --solutions--
 

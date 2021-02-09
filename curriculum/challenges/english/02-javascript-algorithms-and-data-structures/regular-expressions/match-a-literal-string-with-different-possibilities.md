@@ -3,6 +3,7 @@ id: 587d7db4367417b2b2512b90
 title: Match a Literal String with Different Possibilities
 challengeType: 1
 forumTopicId: 301345
+dashedName: match-a-literal-string-with-different-possibilities
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7fb9367417b2b2512c12
 title: Chain Search Query Helpers to Narrow Search Results
 challengeType: 2
 forumTopicId: 301533
+dashedName: chain-search-query-helpers-to-narrow-search-results
 ---
 
 # --description--
@@ -12,15 +13,6 @@ If you don’t pass the callback as the last argument to `Model.find()` (or to t
 # --instructions--
 
 Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sort them by `name`, limit the results to two documents, and hide their age. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Pass the `done(err, data)` callback to `exec()`.
-
-## Further Reading
-
-If you are eager to learn and want to go deeper, You may look at:
-
--   Indexes ( very important for query efficiency ),
--   Pre/Post hooks,
--   Validation,
--   Schema Virtuals and Model, Static, and Instance methods,
 
 # --hints--
 
@@ -72,8 +64,6 @@ Chaining query helpers should succeed
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

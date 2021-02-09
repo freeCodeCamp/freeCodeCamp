@@ -3,6 +3,7 @@ id: aaa48de84e1ecc7c742e1124
 title: Palindrome Checker
 challengeType: 5
 forumTopicId: 16004
+dashedName: palindrome-checker
 ---
 
 # --description--

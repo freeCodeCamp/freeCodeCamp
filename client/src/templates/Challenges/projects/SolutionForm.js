@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
 
 import { Form } from '../../../components/formHelpers';
 import {
@@ -14,22 +15,8 @@ const propTypes = {
   description: PropTypes.string,
   isSubmitting: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   updateSolutionForm: PropTypes.func.isRequired
-};
-
-// back end challenges and front end projects use a single form field
-const solutionField = [{ name: 'solution', label: 'Solution Link' }];
-const backEndProjectFields = [
-  { name: 'solution', label: 'Solution Link' },
-  { name: 'githubLink', label: 'GitHub Link' }
-];
-
-const options = {
-  types: {
-    solution: 'url',
-    githubLink: 'url'
-  },
-  required: ['solution']
 };
 
 export class SolutionForm extends Component {
@@ -40,15 +27,43 @@ export class SolutionForm extends Component {
   componentDidMount() {
     this.props.updateSolutionForm({});
   }
-  handleSubmit(values) {
-    this.props.updateSolutionForm(values);
-    this.props.onSubmit();
+
+  handleSubmit(validatedValues) {
+    // Do not execute challenge, if errors
+    if (validatedValues.errors.length === 0) {
+      if (validatedValues.invalidValues.length === 0) {
+        // updates values on server
+        this.props.updateSolutionForm(validatedValues.values);
+        this.props.onSubmit({ isShouldCompletionModalOpen: true });
+      } else {
+        this.props.onSubmit({ isShouldCompletionModalOpen: false });
+      }
+    }
   }
+
   render() {
-    const { isSubmitting, challengeType, description } = this.props;
+    const { isSubmitting, challengeType, description, t } = this.props;
+
+    // back end challenges and front end projects use a single form field
+    const solutionField = [
+      { name: 'solution', label: t('learn.solution-link') }
+    ];
+    const backEndProjectFields = [
+      { name: 'solution', label: t('learn.solution-link') },
+      { name: 'githubLink', label: t('learn.github-link') }
+    ];
+
+    const options = {
+      types: {
+        solution: 'url',
+        githubLink: 'url'
+      },
+      required: ['solution']
+    };
+
     const buttonCopy = isSubmitting
-      ? 'Submit and go to my next challenge'
-      : "I've completed this challenge";
+      ? t('learn.submit-and-go')
+      : t('learn.i-completed');
 
     let formFields = solutionField;
     let solutionLink = 'ex: ';
@@ -107,4 +122,4 @@ export class SolutionForm extends Component {
 
 SolutionForm.propTypes = propTypes;
 
-export default SolutionForm;
+export default withTranslation()(SolutionForm);

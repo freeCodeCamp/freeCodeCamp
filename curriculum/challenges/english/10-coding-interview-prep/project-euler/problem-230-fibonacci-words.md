@@ -3,6 +3,7 @@ id: 5900f4531000cf542c50ff65
 title: 'Problem 230: Fibonacci Words'
 challengeType: 5
 forumTopicId: 301874
+dashedName: problem-230-fibonacci-words
 ---
 
 # --description--

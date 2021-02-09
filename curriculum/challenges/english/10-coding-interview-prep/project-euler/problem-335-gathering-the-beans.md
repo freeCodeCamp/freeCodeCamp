@@ -3,6 +3,7 @@ id: 5900f4bd1000cf542c50ffce
 title: 'Problem 335: Gathering the beans'
 challengeType: 5
 forumTopicId: 301993
+dashedName: problem-335-gathering-the-beans
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3a01000cf542c50feb3
 title: 'Problem 52: Permuted multiples'
 challengeType: 5
 forumTopicId: 302163
+dashedName: problem-52-permuted-multiples
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bad87fee1348bd9acde08812
 title: Make Images Mobile Responsive
 challengeType: 0
 forumTopicId: 18232
+dashedName: make-images-mobile-responsive
 ---
 
 # --description--

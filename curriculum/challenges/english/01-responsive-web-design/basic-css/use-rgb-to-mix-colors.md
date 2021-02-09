@@ -4,6 +4,7 @@ title: Use RGB to Mix Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368
+dashedName: use-rgb-to-mix-colors
 ---
 
 # --description--

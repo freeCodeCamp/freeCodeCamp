@@ -3,6 +3,7 @@ id: 587d7db1367417b2b2512b87
 title: Add Methods After Inheritance
 challengeType: 1
 forumTopicId: 301315
+dashedName: add-methods-after-inheritance
 ---
 
 # --description--

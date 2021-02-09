@@ -3,6 +3,7 @@ id: 587d78b3367417b2b2512b11
 title: Add Items Using splice()
 challengeType: 1
 forumTopicId: 301152
+dashedName: add-items-using-splice
 ---
 
 # --description--
@@ -20,7 +21,7 @@ console.log(numbers);
 // returns [ 10, 11, 12, 13, 14, 15 ]
 ```
 
-Here we begin with an array of numbers. We then pass the following to `splice()`. The index at which to begin deleting elements (3), the number of elements to be deleted (1), and the elements (13, 14) to be inserted at that same index. Note that there can be any number of elements (separated by commas) following `amountToDelete`, each of which gets inserted.
+Here, we begin with an array of numbers. Then, we pass the following to `splice()`: The index at which to begin deleting elements (3), the number of elements to be deleted (1), and the remaining arguments (13, 14) will be inserted starting at that same index. Note that there can be any number of elements (separated by commas) following `amountToDelete`, each of which gets inserted.
 
 # --instructions--
 

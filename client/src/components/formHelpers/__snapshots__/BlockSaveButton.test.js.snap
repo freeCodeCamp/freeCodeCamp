@@ -6,7 +6,7 @@ exports[`<BlockSaveButton /> snapshot 1`] = `
     class="btn btn-primary btn-block"
     type="submit"
   >
-    Save
+    buttons.save
   </button>
 </div>
 `;

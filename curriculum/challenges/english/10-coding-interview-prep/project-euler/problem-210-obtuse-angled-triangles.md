@@ -3,6 +3,7 @@ id: 5900f43e1000cf542c50ff50
 title: 'Problem 210: Obtuse Angled Triangles'
 challengeType: 5
 forumTopicId: 301852
+dashedName: problem-210-obtuse-angled-triangles
 ---
 
 # --description--

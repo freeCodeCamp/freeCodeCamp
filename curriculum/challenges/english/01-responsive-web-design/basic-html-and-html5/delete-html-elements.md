@@ -4,6 +4,7 @@ title: Delete HTML Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ckK73C9'
 forumTopicId: 17559
+dashedName: delete-html-elements
 ---
 
 # --description--

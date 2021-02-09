@@ -3,6 +3,7 @@ id: 5900f45c1000cf542c50ff6e
 title: 'Problem 239: Twenty-two Foolish Primes'
 challengeType: 5
 forumTopicId: 301884
+dashedName: problem-239-twenty-two-foolish-primes
 ---
 
 # --description--

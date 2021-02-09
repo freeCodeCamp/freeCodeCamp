@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b1a
 title: Access Property Names with Bracket Notation
 challengeType: 1
 forumTopicId: 301150
+dashedName: access-property-names-with-bracket-notation
 ---
 
 # --description--

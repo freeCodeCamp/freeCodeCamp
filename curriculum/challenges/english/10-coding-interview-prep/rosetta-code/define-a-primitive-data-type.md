@@ -3,6 +3,7 @@ id: 597089c87eec450c68aa1643
 title: Define a primitive data type
 challengeType: 5
 forumTopicId: 302248
+dashedName: define-a-primitive-data-type
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4811000cf542c50ff94
 title: 'Problem 277: A Modified Collatz sequence'
 challengeType: 5
 forumTopicId: 301927
+dashedName: problem-277-a-modified-collatz-sequence
 ---
 
 # --description--

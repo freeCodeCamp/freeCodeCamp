@@ -4,6 +4,7 @@ title: Create Visual Balance Using the text-align Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
+dashedName: create-visual-balance-using-the-text-align-property
 ---
 
 # --description--
@@ -26,13 +27,13 @@ Align the `h4` tag's text, which says "Google", to the center. Then justify the 
 
 # --hints--
 
-Your code should use the text-align property on the `h4` tag to set it to center.
+Your code should use the text-align property on the `h4` tag to set it to `center`.
 
 ```js
 assert($('h4').css('text-align') == 'center');
 ```
 
-Your code should use the text-align property on the `p` tag to set it to justify.
+Your code should use the text-align property on the `p` tag to set it to `justify`.
 
 ```js
 assert($('p').css('text-align') == 'justify');

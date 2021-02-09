@@ -1,4 +1,6 @@
-import words from '../../../config/motivational-quotes.json';
+const config = require('../../../config/env.json');
+
+const words = require(`../../i18n/locales/${config.clientLocale}/motivation.json`);
 
 function randomItem(arr) {
   return arr[Math.floor(Math.random() * arr.length)];

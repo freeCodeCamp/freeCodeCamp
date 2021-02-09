@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd18
 title: Build a Tribute Page
 challengeType: 3
 forumTopicId: 301147
+dashedName: build-a-tribute-page
 ---
 
 # --description--
@@ -34,11 +35,6 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
 Once you're done, submit the URL to your working project with all its tests passing.
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

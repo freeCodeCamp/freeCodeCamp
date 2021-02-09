@@ -3,6 +3,7 @@ id: 5900f5101000cf542c510022
 title: 'Problem 419: Look and say sequence'
 challengeType: 5
 forumTopicId: 302088
+dashedName: problem-419-look-and-say-sequence
 ---
 
 # --description--

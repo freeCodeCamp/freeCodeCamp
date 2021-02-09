@@ -3,6 +3,7 @@ id: 5900f47f1000cf542c50ff91
 title: 'Problem 274: Divisibility Multipliers'
 challengeType: 5
 forumTopicId: 301924
+dashedName: problem-274-divisibility-multipliers
 ---
 
 # --description--

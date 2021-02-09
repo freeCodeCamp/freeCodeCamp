@@ -1,16 +1,19 @@
 ---
 id: bad87dee1348bd9aede07836
+title: 使用 id 属性来设定元素的样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
-title: 使用 id 属性来设定元素的样式
+dashedName: use-an-id-attribute-to-style-an-element
 ---
 
-## Description
-<section id='description'>
-通过<code>id</code>属性，你可以做一些很酷的事情，例如，就像 class 一样，你可以使用 CSS 来设置他们的样式
-可是，<code>id</code>不可以重用，只应用于一个元素上。同时，在 CSS 里，<code>id</code>的优先级要高于<code>class</code>，如果一个元素同时应用了<code>class</code>和<code>id</code>，并设置样式有冲突，会优先应用<code>id</code>的样式。
-选择<code>id</code>为<code>cat-photo-element</code>的元素，并设置它的背景样式为<code>green</code>，可以在<code>style</code>标签里这样写：
+# --description--
+
+通过 `id` 属性，你可以做一些很酷的事情。就像 class 一样，你可以使用 CSS 来设置他们的样式。
+
+不过，`id` 不可以重复，它只能作用于一个元素上。 如果一个元素同时应用了 class 和 `id`，且两者设置的样式有冲突，会优先应用 `id` 中所设置的样式。
+
+选择 `id` 为 `cat-photo-element` 的元素，并设置它的背景颜色为绿色。 可以在 `style` 标签里这样写：
 
 ```css
 #cat-photo-element {
@@ -18,36 +21,44 @@ title: 使用 id 属性来设定元素的样式
 }
 ```
 
-注意在<code>style</code>标签里，声明 class 的时候必须在名字前插入<code>.</code>符号。同样，在声明 id 的时候，也必须在名字前插入<code>#</code>符号。
-</section>
+注意在 `style` 标签里，声明 class 的时候必须在名字前插入 `.` 符号。 同样，在声明 id 的时候，也必须在名字前插入 `#` 符号。
 
-## Instructions
-<section id='instructions'>
-尝试给含有<code>cat-photo-form</code>id属性的<code>form</code>表单的背景颜色设置为<code>green</code>。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+请将 `id` 为 `cat-photo-form` 的表单的背景颜色设置为绿色。
 
-```yml
-tests:
-  - text: '设置<code>form</code>元素的 id 为<code>cat-photo-form</code>。'
-    testString: assert($("form").attr("id") === "cat-photo-form");
-  - text: '<code>form</code>元素应该含有<code>background-color</code>css 属性并且值为 <code>green</code>。'
-    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)");
-  - text: '确保<code>form</code>元素含有<code>id</code>属性。'
-    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0);
-  - text: '不要在<code>form</code>元素上添加其他<code>class</code>属性或者<code>style</code>行内样式。'
-    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
+# --hints--
 
+`form` 元素的 id 应为 `cat-photo-form`。
+
+```js
+assert($('form').attr('id') === 'cat-photo-form');
 ```
 
-</section>
+`form` 元素应含有 `background-color` 属性，颜色为绿色。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)');
+```
 
-<div id='html-seed'>
+确保 `form` 元素的 `id` 设置正确。
+
+```js
+assert(
+  code.match(/<form.*cat-photo-form.*>/gi) &&
+    code.match(/<form.*cat-photo-form.*>/gi).length > 0
+);
+```
+
+不要在 `form` 元素上添加其他 `class` 属性或者 `style` 行内样式。
+
+```js
+assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -83,48 +94,104 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
   <div class="silver-background">
-    <p>猫咪最喜欢的三件东西：</p>
+    <p>Things cats love:</p>
     <ul>
-      <li>猫薄荷</li>
-      <li>激光笔</li>
-      <li>千层饼</li>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
     </ul>
-    <p>猫咪最讨厌的三件东西：</p>
+    <p>Top 3 things cats hate:</p>
     <ol>
-      <li>跳蚤</li>
-      <li>打雷</li>
-      <li>同类</li>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
-    <label><input type="radio" name="indoor-outdoor">室内</label>
-    <label><input type="radio" name="indoor-outdoor">室外</label><br>
-    <label><input type="checkbox" name="personality">忠诚</label>
-    <label><input type="checkbox" name="personality">懒惰</label>
-    <label><input type="checkbox" name="personality">积极</label><br>
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
-```
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
 
-</section>
-              
+  h2 {
+    font-family: Lobster, monospace;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: monospace;
+  }
+
+  .thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+  }
+
+  .smaller-image {
+    width: 100px;
+  }
+
+  .silver-background {
+    background-color: silver;
+  }
+
+  #cat-photo-form {
+    background-color: green;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div class="silver-background">
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

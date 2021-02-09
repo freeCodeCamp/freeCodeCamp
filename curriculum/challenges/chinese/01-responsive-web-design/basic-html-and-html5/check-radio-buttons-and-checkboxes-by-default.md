@@ -1,79 +1,102 @@
 ---
 id: bad87fee1348bd9aedd08835
+title: 给单选按钮和复选框添加默认选中项
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cWk3Qh6'
 forumTopicId: 301094
-title: 给单选按钮和复选框添加默认选中项
+dashedName: check-radio-buttons-and-checkboxes-by-default
 ---
 
-## Description
-<section id='description'>
-如果想设置某个单选按钮或多选按钮默认被选中，只需给<code>input</code>元素添加 "checked" 属性。 例如:
-<code>&#60;input type="radio" name="test-name" checked&#62;</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-把第一个<code>radio button</code>和第一个<code>checkbox</code>都设置为默认选中。
-</section>
+用 `checked` 属性把第一个复选框和单选按钮都设置为默认选中。
 
-## Tests
-<section id='tests'>
+在一个 input 元素里面添加 `checked` 这个词，即可实现。 例如:
 
-```yml
-tests:
-  - text: '表单的第一个单选按钮应该被默认选中。'
-    testString: assert($('input[type="radio"]').prop("checked"));
-  - text: '表单的第一个多选按钮应该被默认选中。'
-    testString: assert($('input[type="checkbox"]').prop("checked"));
+`<input type="radio" name="test-name" checked>`
 
+# --instructions--
+
+把第一个单选按钮和第一个复选框都设置为默认选中。
+
+# --hints--
+
+表单的第一个多选按钮应被默认选中。
+
+```js
+assert($('input[type="radio"]').prop('checked'));
 ```
 
-</section>
+表单的第一个复选框应被默认选中。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('input[type="checkbox"]').prop('checked'));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-<p>点击查看更多<a href="#">猫咪图片</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
-  <p>猫咪最喜欢的三件东西：</p>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
   <ul>
-    <li>猫薄荷</li>
-    <li>激光笔</li>
-    <li>千层饼</li>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
   </ul>
-  <p>猫咪最讨厌的三件东西：</p>
+  <p>Top 3 things cats hate:</p>
   <ol>
-    <li>跳蚤</li>
-    <li>打雷</li>
-    <li>同类</li>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
   </ol>
   <form action="https://freecatphotoapp.com/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor">室内</label>
-    <label><input type="radio" name="indoor-outdoor">室外</label><br>
-    <label><input type="checkbox" name="personality">忠诚</label>
-    <label><input type="checkbox" name="personality">懒惰</label>
-    <label><input type="checkbox" name="personality">积极</label><br>
-    <input type="text" placeholder="猫咪图片地址" required>
-    <button type="submit">提交</button>
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving"> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
 
-</div>
+# --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
 
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

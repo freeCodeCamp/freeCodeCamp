@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b41
 title: Declare a Read-Only Variable with the const Keyword
 challengeType: 1
 forumTopicId: 301201
+dashedName: declare-a-read-only-variable-with-the-const-keyword
 ---
 
 # --description--

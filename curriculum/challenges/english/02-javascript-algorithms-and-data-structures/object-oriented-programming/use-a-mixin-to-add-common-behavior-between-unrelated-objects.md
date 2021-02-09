@@ -3,6 +3,7 @@ id: 587d7db2367417b2b2512b89
 title: Use a Mixin to Add Common Behavior Between Unrelated Objects
 challengeType: 1
 forumTopicId: 301331
+dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects
 ---
 
 # --description--

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
+import { withTranslation } from 'react-i18next';
 
 import Login from '../../../components/Header/components/Login';
 import CompletionModalBody from './CompletionModalBody';
@@ -19,11 +20,14 @@ import {
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
-  challengeMetaSelector,
-  lastBlockChalSubmitted
+  challengeMetaSelector
 } from '../redux';
 
-import { isSignedInSelector, executeGA } from '../../../redux';
+import {
+  isSignedInSelector,
+  executeGA,
+  allowBlockDonationRequests
+} from '../../../redux';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -56,8 +60,8 @@ const mapDispatchToProps = function(dispatch) {
     submitChallenge: () => {
       dispatch(submitChallenge());
     },
-    lastBlockChalSubmitted: () => {
-      dispatch(lastBlockChalSubmitted());
+    allowBlockDonationRequests: block => {
+      dispatch(allowBlockDonationRequests(block));
     },
     executeGA
   };
@@ -65,6 +69,7 @@ const mapDispatchToProps = function(dispatch) {
 };
 
 const propTypes = {
+  allowBlockDonationRequests: PropTypes.func,
   blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
@@ -74,9 +79,9 @@ const propTypes = {
   id: PropTypes.string,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
-  lastBlockChalSubmitted: PropTypes.func,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   title: PropTypes.string
 };
 
@@ -166,7 +171,7 @@ export class CompletionModalInner extends Component {
       this.state.completedPercent === 100 &&
       !this.props.completedChallengesIds.includes(this.props.id)
     ) {
-      this.props.lastBlockChalSubmitted();
+      this.props.allowBlockDonationRequests(this.props.blockName);
     }
   }
 
@@ -183,6 +188,7 @@ export class CompletionModalInner extends Component {
       close,
       isOpen,
       message,
+      t,
       title,
       isSignedIn
     } = this.props;
@@ -220,7 +226,7 @@ export class CompletionModalInner extends Component {
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <Login block={true}>Sign in to save your progress</Login>
+            <Login block={true}>{t('learn.sign-in-save')}</Login>
           )}
           <Button
             block={true}
@@ -228,8 +234,8 @@ export class CompletionModalInner extends Component {
             bsStyle='primary'
             onClick={this.handleSubmit}
           >
-            {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
-            <span className='hidden-xs'>(Ctrl + Enter)</span>
+            {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
+            <span className='hidden-xs'> (Ctrl + Enter)</span>
           </Button>
           {this.state.downloadURL ? (
             <Button
@@ -240,7 +246,7 @@ export class CompletionModalInner extends Component {
               download={`${dashedName}.txt`}
               href={this.state.downloadURL}
             >
-              Download my solution
+              {t('learn.download-solution')}
             </Button>
           ) : null}
         </Modal.Footer>
@@ -286,4 +292,4 @@ CompletionModal.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CompletionModal);
+)(withTranslation()(CompletionModal));

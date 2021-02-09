@@ -4,6 +4,7 @@ title: Nest an Anchor Element within a Paragraph
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 forumTopicId: 18244
+dashedName: nest-an-anchor-element-within-a-paragraph
 ---
 
 # --description--
@@ -16,17 +17,29 @@ You can nest links within other text elements.
 </p>
 ```
 
-Let's break down the example: Normal text is wrapped in the `p` element:  
-`<p> Here's a ... for you to follow. </p>` Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):  
-`<a> ... </a>` `target` is an anchor tag attribute that specifies where to open the link and the value `"_blank"` specifies to open the link in a new tab `href` is an anchor tag attribute that contains the URL address of the link:  
-`<a href="http://freecodecamp.org"> ... </a>` The text, **"link to freecodecamp.org"**, within the `a` element called `anchor text`, will display a link to click:  
-`<a href=" ... ">link to freecodecamp.org</a>` The final output of the example will look like this:  
+Let's break down the example. Normal text is wrapped in the `p` element:
+
+`<p> Here's a ... for you to follow. </p>`
+
+Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):  
+
+`<a> ... </a>`
+
+`target` is an anchor tag attribute that specifies where to open the link. The value `_blank` specifies to open the link in a new tab. The `href` is an anchor tag attribute that contains the URL address of the link:  
+
+`<a href="http://freecodecamp.org"> ... </a>`
+
+The text, `link to freecodecamp.org`, within the `a` element is called `anchor text`, and will display the link to click:  
+
+`<a href=" ... ">link to freecodecamp.org</a>`
+
+The final output of the example will look like this:  
 
 Here's a [link to freecodecamp.org](http://freecodecamp.org) for you to follow.
 
 # --instructions--
 
-Nest the existing `a` element within a new `p` element. The new paragraph should have text that says "View more cat photos", where "cat photos" is a link, and the rest is plain text.
+Nest the existing `a` element within a new `p` element. The new paragraph should have text that says `View more cat photos`, where `cat photos` is a link, and the rest is plain text.
 
 # --hints--
 
@@ -39,7 +52,7 @@ assert(
 );
 ```
 
-Your `a` element should have the anchor text of "cat photos"
+Your `a` element should have the anchor text of `cat photos`
 
 ```js
 assert(
@@ -64,7 +77,7 @@ assert(
 );
 ```
 
-Your `p` element should have the text "View more " (with a space after it).
+Your `p` element should have the text `View more ` (with a space after it).
 
 ```js
 assert(
@@ -79,7 +92,7 @@ assert(
 );
 ```
 
-Your `a` element should <em>not</em> have the text "View more".
+Your `a` element should <em>not</em> have the text `View more`.
 
 ```js
 assert(

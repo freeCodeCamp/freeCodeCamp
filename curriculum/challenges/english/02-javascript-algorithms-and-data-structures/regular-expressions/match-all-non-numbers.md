@@ -3,6 +3,7 @@ id: 587d7db8367417b2b2512ba1
 title: Match All Non-Numbers
 challengeType: 1
 forumTopicId: 301347
+dashedName: match-all-non-numbers
 ---
 
 # --description--

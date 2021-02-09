@@ -3,6 +3,7 @@ id: 5951ed8945deab770972ae56
 title: Towers of Hanoi
 challengeType: 5
 forumTopicId: 302341
+dashedName: towers-of-hanoi
 ---
 
 # --description--

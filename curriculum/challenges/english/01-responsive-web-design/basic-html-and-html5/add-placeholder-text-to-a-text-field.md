@@ -4,6 +4,7 @@ title: Add Placeholder Text to a Text Field
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
+dashedName: add-placeholder-text-to-a-text-field
 ---
 
 # --description--
@@ -28,7 +29,7 @@ You should add a `placeholder` attribute to the existing text `input` element.
 assert($('input[placeholder]').length > 0);
 ```
 
-You should set the value of your placeholder attribute to `cat photo URL`.
+You should set the value of your `placeholder` attribute to `cat photo URL`.
 
 ```js
 assert(

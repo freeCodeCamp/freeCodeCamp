@@ -3,6 +3,7 @@ id: 59713da0a428c1a62d7db430
 title: Cramer's rule
 challengeType: 5
 forumTopicId: 302239
+dashedName: cramers-rule
 ---
 
 # --description--

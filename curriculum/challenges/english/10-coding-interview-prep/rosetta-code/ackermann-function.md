@@ -3,6 +3,7 @@ id: 594810f028c0303b75339acf
 title: Ackermann function
 challengeType: 5
 forumTopicId: 302223
+dashedName: ackermann-function
 ---
 
 # --description--

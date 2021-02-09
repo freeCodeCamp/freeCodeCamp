@@ -3,6 +3,7 @@ id: 587d7b84367417b2b2512b37
 title: Catch Mixed Usage of Single and Double Quotes
 challengeType: 1
 forumTopicId: 301188
+dashedName: catch-mixed-usage-of-single-and-double-quotes
 ---
 
 # --description--
@@ -21,7 +22,7 @@ const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quot
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
-Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (`\`) escape character:
+Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (<code>\\</code>) escape character:
 
 ```js
 // Correct use of same quotes:

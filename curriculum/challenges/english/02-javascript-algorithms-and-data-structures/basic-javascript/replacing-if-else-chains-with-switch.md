@@ -4,6 +4,7 @@ title: Replacing If Else Chains with Switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JE8fy'
 forumTopicId: 18266
+dashedName: replacing-if-else-chains-with-switch
 ---
 
 # --description--

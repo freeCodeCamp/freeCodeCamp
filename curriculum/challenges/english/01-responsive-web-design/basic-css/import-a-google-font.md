@@ -4,6 +4,7 @@ title: Import a Google Font
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MRsJ'
 forumTopicId: 18200
+dashedName: import-a-google-font
 ---
 
 # --description--
@@ -27,7 +28,7 @@ Family names are case-sensitive and need to be wrapped in quotes if there is a s
 
 # --instructions--
 
-Import the Lobster font to your web page. Then, use an element selector to set `Lobster` as the `font-family` for your `h2` element.
+Import the `Lobster` font to your web page. Then, use an element selector to set `Lobster` as the `font-family` for your `h2` element.
 
 # --hints--
 

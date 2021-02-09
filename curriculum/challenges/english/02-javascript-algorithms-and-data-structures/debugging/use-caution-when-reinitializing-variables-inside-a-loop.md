@@ -3,6 +3,7 @@ id: 587d7b86367417b2b2512b3c
 title: Use Caution When Reinitializing Variables Inside a Loop
 challengeType: 1
 forumTopicId: 301194
+dashedName: use-caution-when-reinitializing-variables-inside-a-loop
 ---
 
 # --description--

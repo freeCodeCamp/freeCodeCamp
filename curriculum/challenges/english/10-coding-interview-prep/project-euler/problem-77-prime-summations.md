@@ -3,6 +3,7 @@ id: 5900f3b91000cf542c50fecc
 title: 'Problem 77: Prime summations'
 challengeType: 5
 forumTopicId: 302190
+dashedName: problem-77-prime-summations
 ---
 
 # --description--

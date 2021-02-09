@@ -4,6 +4,7 @@ title: Delete Properties from a JavaScript Object
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqKdTv'
 forumTopicId: 17560
+dashedName: delete-properties-from-a-javascript-object
 ---
 
 # --description--

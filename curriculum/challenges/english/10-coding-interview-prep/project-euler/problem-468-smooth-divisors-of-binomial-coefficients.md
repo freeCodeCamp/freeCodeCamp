@@ -3,6 +3,7 @@ id: 5900f5411000cf542c510054
 title: 'Problem 468: Smooth divisors of binomial coefficients'
 challengeType: 5
 forumTopicId: 302143
+dashedName: problem-468-smooth-divisors-of-binomial-coefficients
 ---
 
 # --description--

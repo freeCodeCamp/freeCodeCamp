@@ -3,6 +3,7 @@ id: 5900f4e41000cf542c50fff5
 title: 'Problem 375: Minimum of subsequences'
 challengeType: 5
 forumTopicId: 302037
+dashedName: problem-375-minimum-of-subsequences
 ---
 
 # --description--

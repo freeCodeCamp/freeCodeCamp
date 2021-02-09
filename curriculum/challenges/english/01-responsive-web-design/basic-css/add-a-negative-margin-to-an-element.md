@@ -4,6 +4,7 @@ title: Add a Negative Margin to an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpyGs3'
 forumTopicId: 16166
+dashedName: add-a-negative-margin-to-an-element
 ---
 
 # --description--

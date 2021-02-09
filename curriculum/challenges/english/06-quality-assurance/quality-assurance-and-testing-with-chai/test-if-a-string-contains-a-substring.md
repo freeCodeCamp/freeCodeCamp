@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c53
 title: Test if a String Contains a Substring
 challengeType: 2
 forumTopicId: 301597
+dashedName: test-if-a-string-contains-a-substring
 ---
 
 # --description--
@@ -66,8 +67,6 @@ You should choose the correct method for the second assertion - `include` vs. `n
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

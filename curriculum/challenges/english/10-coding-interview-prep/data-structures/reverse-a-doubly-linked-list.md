@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c88
 title: Reverse a Doubly Linked List
 challengeType: 1
 forumTopicId: 301714
+dashedName: reverse-a-doubly-linked-list
 ---
 
 # --description--

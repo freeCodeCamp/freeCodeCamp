@@ -3,6 +3,7 @@ id: 587d7fb4367417b2b2512bfe
 title: Add a License to Your package.json
 challengeType: 2
 forumTopicId: 301523
+dashedName: add-a-license-to-your-package-json
 ---
 
 # --description--
@@ -35,8 +36,6 @@ package.json should have a valid "license" key
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

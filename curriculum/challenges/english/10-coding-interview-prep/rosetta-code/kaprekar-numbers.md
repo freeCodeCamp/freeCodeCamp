@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7eca
 title: Kaprekar numbers
 challengeType: 5
 forumTopicId: 302296
+dashedName: kaprekar-numbers
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7fb8367417b2b2512c11
 title: Delete Many Documents with model.remove()
 challengeType: 2
 forumTopicId: 301538
+dashedName: delete-many-documents-with-model-remove
 ---
 
 # --description--
@@ -44,8 +45,6 @@ Deleting many items at once should succeed
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

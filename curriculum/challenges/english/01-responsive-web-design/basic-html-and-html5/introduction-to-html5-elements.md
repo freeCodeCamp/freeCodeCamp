@@ -4,6 +4,7 @@ title: Introduction to HTML5 Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
+dashedName: introduction-to-html5-elements
 ---
 
 # --description--

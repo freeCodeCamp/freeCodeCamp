@@ -2,6 +2,7 @@
 id: 5e444136903586ffb414c94d
 title: Time Calculator
 challengeType: 10
+dashedName: time-calculator
 ---
 
 # --description--
@@ -28,8 +29,6 @@ It should correctly add times and pass all tests.
 ```js
 
 ```
-
-# --seed--
 
 # --solutions--
 

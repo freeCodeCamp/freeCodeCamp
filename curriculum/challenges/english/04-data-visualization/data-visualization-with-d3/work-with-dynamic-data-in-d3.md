@@ -3,6 +3,7 @@ id: 587d7fa7367417b2b2512bc5
 title: Work with Dynamic Data in D3
 challengeType: 6
 forumTopicId: 301498
+dashedName: work-with-dynamic-data-in-d3
 ---
 
 # --description--

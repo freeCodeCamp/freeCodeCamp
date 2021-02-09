@@ -3,6 +3,7 @@ id: 5900f54b1000cf542c51005d
 title: 'Problem 479: Roots on the Rise'
 challengeType: 5
 forumTopicId: 302156
+dashedName: problem-479-roots-on-the-rise
 ---
 
 # --description--

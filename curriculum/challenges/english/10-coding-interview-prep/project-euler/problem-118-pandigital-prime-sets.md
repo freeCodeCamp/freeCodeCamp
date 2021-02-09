@@ -3,6 +3,7 @@ id: 5900f3e21000cf542c50fef5
 title: 'Problem 118: Pandigital prime sets'
 challengeType: 5
 forumTopicId: 301744
+dashedName: problem-118-pandigital-prime-sets
 ---
 
 # --description--

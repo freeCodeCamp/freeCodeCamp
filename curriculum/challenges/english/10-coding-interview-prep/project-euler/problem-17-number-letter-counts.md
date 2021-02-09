@@ -3,6 +3,7 @@ id: 5900f37d1000cf542c50fe90
 title: 'Problem 17: Number letter counts'
 challengeType: 5
 forumTopicId: 301804
+dashedName: problem-17-number-letter-counts
 ---
 
 # --description--

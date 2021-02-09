@@ -14,8 +14,10 @@
   --purple-dark: #5a01a7;
   --yellow-light: #ffc300;
   --yellow-dark: #4d3800;
-  --blue-light: #99c9ff;
-  --blue-dark: #002ead;
+  --blue-light: rgb(153, 201, 255);
+  --blue-light-translucent: rgb(153, 201, 255, 0.3);
+  --blue-dark: rgb(0, 46, 173);
+  --blue-dark-translucent: rgb(0, 46, 173, 0.3);
   --green-light: #acd157;
   --blue-mid: #198eee;
   --purple-mid: darkviolet;
@@ -39,6 +41,7 @@
   --primary-background: var(--gray-90);
   --highlight-color: var(--blue-light);
   --highlight-background: var(--blue-dark);
+  --selection-color: var(--blue-light-translucent);
   --success-color: var(--green-light);
   --success-background: var(--green-dark);
   --danger-color: var(--red-light);
@@ -58,6 +61,7 @@
   --primary-background: var(--gray-00);
   --highlight-color: var(--blue-dark);
   --highlight-background: var(--blue-light);
+  --selection-color: var(--blue-dark-translucent);
   --success-color: var(--green-dark);
   --success-background: var(--green-light);
   --danger-color: var(--red-dark);

@@ -3,6 +3,7 @@ id: 5900f3981000cf542c50feab
 title: 'Problem 44: Pentagon numbers'
 challengeType: 5
 forumTopicId: 302111
+dashedName: problem-44-pentagon-numbers
 ---
 
 # --description--

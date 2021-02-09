@@ -1,71 +1,91 @@
 ---
 id: bad87fee1348bd9aedf08812
+title: 给网站添加图片
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 forumTopicId: 16640
-title: 给网站添加图片
+dashedName: add-images-to-your-website
 ---
 
-## Description
-<section id='description'>
-用<code>img</code>元素来为你的网站添加图片，其中<code>src</code>属性指向一个图片的地址。
+# --description--
+
+你可以使用 `img` 元素来为你的网站添加图片，其中 `src` 属性指向图片的地址。
+
 例如：
-<code>&#60img src="https://www.your-image-source.com/your-image.jpg"&#62</code>
-注意：<code>img</code>元素是没有结束标记的。
-所有的<code>img</code>元素必须有<code>alt</code>属性，<code>alt</code>属性的文本是当图片无法加载时显示的替代文本，这对于通过屏幕阅读器来浏览网页的用户非常重要。
-注意：如果图片是纯装饰性的，用一个空的<code>alt</code>是最佳实践。
-理想情况下，<code>alt</code>属性不应该包含特殊字符，除非必要。
-让我们给上面例子的<code>img</code>添加<code>alt</code>属性。
-<code>&#60img src="https://www.your-image-source.com/your-image.jpg" alt="作者站在沙滩上竖起两个大拇指"&#62</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`<img src="https://www.freecatphotoapp.com/your-image.jpg">`
+
+注意：`img` 元素是没有结束标签的。
+
+所有的 `img` 元素**必须**有 `alt` 属性。 `alt` 的属性值有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本。
+
+**注意：**如果图片是纯装饰性的，把 `alt` 的属性值设置为空是最佳实践。
+
+理想情况下，`alt` 属性不应该包含特殊字符，除非有特殊需要。
+
+让我们给上面例子的 `img` 添加 `alt` 属性。
+
+`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
+
+# --instructions--
+
 让我们给网站添加图片：
-在<code>main</code>元素里面，给<code>p</code>前面插入一个<code>img</code>元素
-现在设置<code>src</code>属性指向这个地址：
-<code>https://bit.ly/fcc-relaxing-cat</code>
-最后不要忘记给图片添加一个<code>alt</code>文本。
-</section>
 
-## Tests
-<section id='tests'>
+在 `main` 元素里，给 `p` 元素前面插入一个 `img` 元素。
 
-```yml
-tests:
-  - text: 网页应该有一张图片。
-    testString: assert($("img").length);
-  - text: <code>img</code> 应该有一个<code>src</code>属性，指向猫咪图片。
-    testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
-  - text: <code>img</code> 元素的<code>alt</code>属性值不应为空。
-    testString: assert($("img").attr("alt") && $("img").attr("alt").length && /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g,'')));
+然后将 `src` 的属性值设置为这个 url：
 
+`https://bit.ly/fcc-relaxing-cat`
+
+最后，不要忘记给 `img` 加上 `alt` 属性。
+
+# --hints--
+
+你的网页上应该有一张图片。
+
+```js
+assert($('img').length);
 ```
 
-</section>
+你的图片应该有一个 `src` 属性，其值为猫咪图片的 url。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
+```
 
-<div id='html-seed'>
+你的图片元素的 `alt` 属性值不应为空。
+
+```js
+assert(
+  $('img').attr('alt') &&
+    $('img').attr('alt').length &&
+    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
+      __helpers.removeWhiteSpace(code)
+    )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  
-  
-  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
-  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会囤老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>
+
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-</section>
-              
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+```

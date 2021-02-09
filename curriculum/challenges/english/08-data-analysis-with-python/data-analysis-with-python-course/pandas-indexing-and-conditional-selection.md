@@ -3,6 +3,7 @@ id: 5e9a093a74c4063ca6f7c159
 title: Pandas Indexing and Conditional Selection
 challengeType: 11
 videoId: '-ZOrgV_aA9A'
+dashedName: pandas-indexing-and-conditional-selection
 ---
 
 # --description--
@@ -33,30 +34,30 @@ print(certificates_earned[certificates_earned > 5])
 
 ## --answers--
 
-```
+<pre>
 Tom      True
 Kris     False
 Ahmad    False
 Beau     True
 dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Tom      8
 Ahmad    5
 Beau     6
 dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Tom      8
 Beau     6
 dtype: int64
-```
+</pre>
 
 ## --video-solution--
 

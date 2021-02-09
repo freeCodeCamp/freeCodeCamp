@@ -3,6 +3,7 @@ id: 5900f3c31000cf542c50fed5
 title: 'Problem 86: Cuboid route'
 challengeType: 5
 forumTopicId: 302200
+dashedName: problem-86-cuboid-route
 ---
 
 # --description--

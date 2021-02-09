@@ -4,6 +4,7 @@ title: Adjust the Size of a Header Versus a Paragraph Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
+dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
 ---
 
 # --description--

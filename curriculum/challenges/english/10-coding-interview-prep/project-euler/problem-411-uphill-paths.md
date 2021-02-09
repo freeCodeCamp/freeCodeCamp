@@ -3,6 +3,7 @@ id: 5900f5081000cf542c510019
 title: 'Problem 411: Uphill paths'
 challengeType: 5
 forumTopicId: 302080
+dashedName: problem-411-uphill-paths
 ---
 
 # --description--

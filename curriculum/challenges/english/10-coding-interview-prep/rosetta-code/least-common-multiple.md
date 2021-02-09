@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7edf
 title: Least common multiple
 challengeType: 5
 forumTopicId: 302301
+dashedName: least-common-multiple
 ---
 
 # --description--

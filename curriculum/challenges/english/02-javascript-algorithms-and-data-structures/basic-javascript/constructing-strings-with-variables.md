@@ -4,6 +4,7 @@ title: Constructing Strings with Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805
+dashedName: constructing-strings-with-variables
 ---
 
 # --description--

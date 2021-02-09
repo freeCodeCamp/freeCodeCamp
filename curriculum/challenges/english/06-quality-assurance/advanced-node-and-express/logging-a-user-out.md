@@ -3,6 +3,7 @@ id: 58965611f9fc0f352b528e6c
 title: Logging a User Out
 challengeType: 2
 forumTopicId: 301560
+dashedName: logging-a-user-out
 ---
 
 # --description--
@@ -68,8 +69,6 @@ Logout should redirect to the home page.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

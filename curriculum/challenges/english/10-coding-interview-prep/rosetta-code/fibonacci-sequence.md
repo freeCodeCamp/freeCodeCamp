@@ -3,6 +3,7 @@ id: 597f24c1dda4e70f53c79c81
 title: Fibonacci sequence
 challengeType: 5
 forumTopicId: 302268
+dashedName: fibonacci-sequence
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036155
 title: Send Action Data to the Store
 challengeType: 6
 forumTopicId: 301448
+dashedName: send-action-data-to-the-store
 ---
 
 # --description--

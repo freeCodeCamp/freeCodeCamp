@@ -3,6 +3,7 @@ id: 587d7db2367417b2b2512b8c
 title: Use an IIFE to Create a Module
 challengeType: 1
 forumTopicId: 301332
+dashedName: use-an-iife-to-create-a-module
 ---
 
 # --description--

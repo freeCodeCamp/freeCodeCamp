@@ -3,6 +3,7 @@ id: 5900f4f71000cf542c51000a
 title: 'Problem 395: Pythagorean tree'
 challengeType: 5
 forumTopicId: 302060
+dashedName: problem-395-pythagorean-tree
 ---
 
 # --description--

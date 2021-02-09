@@ -3,6 +3,7 @@ id: bd7154d8c242eddfaeb5bd13
 title: Build the Game of Life
 challengeType: 3
 forumTopicId: 302362
+dashedName: build-the-game-of-life
 ---
 
 # --description--
@@ -30,11 +31,6 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

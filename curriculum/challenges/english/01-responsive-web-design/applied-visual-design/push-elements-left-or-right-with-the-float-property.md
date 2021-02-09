@@ -4,6 +4,7 @@ title: Push Elements Left or Right with the float Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDqu2'
 forumTopicId: 301066
+dashedName: push-elements-left-or-right-with-the-float-property
 ---
 
 # --description--

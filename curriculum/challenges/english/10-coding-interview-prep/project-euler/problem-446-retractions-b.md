@@ -3,6 +3,7 @@ id: 5900f52c1000cf542c51003d
 title: 'Problem 446: Retractions B'
 challengeType: 5
 forumTopicId: 302118
+dashedName: problem-446-retractions-b
 ---
 
 # --description--

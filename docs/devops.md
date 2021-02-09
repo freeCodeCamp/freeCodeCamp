@@ -10,13 +10,13 @@ This repository is continuously built, tested and deployed to **separate sets of
 
 This involves three steps to be followed in sequence:
 
-1. New changes (both fixes and features) are merged into our primary development branch (`master`) via pull requests.
+1. New changes (both fixes and features) are merged into our primary development branch (`main`) via pull requests.
 2. These changes are run through a series of automated tests.
 3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
 #### Building the codebase - Mapping Git Branches to Deployments.
 
-Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
+Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
 This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
@@ -28,7 +28,7 @@ This is the final release that moves changes to our production platforms on free
 
 #### Testing changes - Integration and User Acceptance Testing.
 
-We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
 We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
@@ -71,24 +71,24 @@ Currently, only members on the developer team can push to the production branche
    upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `master` branch is pristine and in sync with the upstream.
+2. Make sure your `maim` branch is pristine and in sync with the upstream.
 
    ```sh
-   git checkout master
+   git checkout main
    git fetch --all --prune
-   git reset --hard upstream/master
+   git reset --hard upstream/main
    ```
 
-3. Check that the Travis CI is passing on the `master` branch for upstream.
+3. Check that the GitHub CI is passing on the `main` branch for upstream.
 
-   The [continuous integration](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) tests should be green and PASSING for the `master` branch.
+   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `main` branch. Click the green check mark next to the commit hash when viewing the `main` branch code.
 
     <details>
       <summary>
-        Checking status on Travis CI (screenshot)
+        Checking status on GitHub Actions (screenshot)
       </summary>
       <br>
-      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png" alt="Check build status on Travis CI">
+      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png" alt="Check build status on GitHub Actions">
     </details>
 
    If this is failing you should stop and investigate the errors.
@@ -99,11 +99,11 @@ Currently, only members on the developer team can push to the production branche
    npm run clean-and-develop
    ```
 
-5. Move changes from `master` to `production-staging` via a fast-forward merge
+5. Move changes from `main` to `production-staging` via a fast-forward merge
 
    ```
    git checkout production-staging
-   git merge master
+   git merge main
    git push upstream
    ```
 
@@ -176,8 +176,6 @@ Here is the current test, build and deployment status of the codebase.
 
 | Type             | Branch                                                                                       | Status                                                                                                                                                                                                                                              | Dashboard                                                                                 |
 | :--------------- | :------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
-| CI Tests         | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                         | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| CI Tests         | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
 | Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
 | Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 | CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
@@ -207,7 +205,7 @@ Currently a public beta testing version is available at:
 
 The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site.
 
-You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) for a confirmation.
+You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors) for a confirmation.
 
 ### Known Limitations
 
@@ -225,7 +223,7 @@ There are some known limitations and tradeoffs when using the beta version of th
 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Sign page may look different than production
+- #### Sign in page may look different than production
 
   We use a test tenant for freecodecamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 
@@ -528,7 +526,7 @@ sudo su
 ```console
 cd /etc/nginx
 git fetch --all --prune
-git reset --hard origin/master
+git reset --hard origin/main
 ```
 
 3. Test and reload the config

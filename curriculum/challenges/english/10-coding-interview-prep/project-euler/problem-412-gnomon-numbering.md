@@ -3,6 +3,7 @@ id: 5900f5081000cf542c51001a
 title: 'Problem 412: Gnomon numbering'
 challengeType: 5
 forumTopicId: 302081
+dashedName: problem-412-gnomon-numbering
 ---
 
 # --description--

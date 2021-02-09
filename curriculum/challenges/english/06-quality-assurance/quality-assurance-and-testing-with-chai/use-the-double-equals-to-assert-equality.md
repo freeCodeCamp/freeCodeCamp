@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c4a
 title: Use the Double Equals to Assert Equality
 challengeType: 2
 forumTopicId: 301609
+dashedName: use-the-double-equals-to-assert-equality
 ---
 
 # --description--
@@ -98,8 +99,6 @@ You should choose the correct method for the fourth assertion - `equal` vs. `not
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

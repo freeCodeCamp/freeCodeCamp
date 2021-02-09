@@ -3,6 +3,7 @@ id: 5900f4b11000cf542c50ffc3
 title: 'Problem 324: Building a tower'
 challengeType: 5
 forumTopicId: 301981
+dashedName: problem-324-building-a-tower
 ---
 
 # --description--

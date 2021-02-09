@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
 
 import { previewMounted } from '../redux';
 
@@ -20,7 +21,8 @@ const mapDispatchToProps = dispatch =>
 const propTypes = {
   className: PropTypes.string,
   disableIframe: PropTypes.bool,
-  previewMounted: PropTypes.func.isRequired
+  previewMounted: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 class Preview extends Component {
@@ -44,13 +46,14 @@ class Preview extends Component {
   }
 
   render() {
+    const { t } = this.props;
     const iframeToggle = this.state.iframeStatus ? 'disable' : 'enable';
     return (
       <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
         <iframe
           className={'challenge-preview-frame'}
           id={mainId}
-          title='Challenge Preview'
+          title={t('learn.chal-preview')}
         />
       </div>
     );
@@ -63,4 +66,4 @@ Preview.propTypes = propTypes;
 export default connect(
   null,
   mapDispatchToProps
-)(Preview);
+)(withTranslation()(Preview));

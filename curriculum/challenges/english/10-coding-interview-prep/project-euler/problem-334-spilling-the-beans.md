@@ -3,6 +3,7 @@ id: 5900f4ba1000cf542c50ffcd
 title: 'Problem 334: Spilling the beans'
 challengeType: 5
 forumTopicId: 301992
+dashedName: problem-334-spilling-the-beans
 ---
 
 # --description--

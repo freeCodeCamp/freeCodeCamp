@@ -3,6 +3,7 @@ id: 587d7fae367417b2b2512be4
 title: Access the JSON Data from an API
 challengeType: 6
 forumTopicId: 301499
+dashedName: access-the-json-data-from-an-api
 ---
 
 # --description--

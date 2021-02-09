@@ -3,6 +3,7 @@ id: 5900f3ab1000cf542c50febe
 title: 'Problem 63: Powerful digit counts'
 challengeType: 5
 forumTopicId: 302175
+dashedName: problem-63-powerful-digit-counts
 ---
 
 # --description--

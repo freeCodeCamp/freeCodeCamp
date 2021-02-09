@@ -3,6 +3,7 @@ id: 5900f3871000cf542c50fe9a
 title: 'Problem 27: Quadratic primes'
 challengeType: 5
 forumTopicId: 301919
+dashedName: problem-27-quadratic-primes
 ---
 
 # --description--

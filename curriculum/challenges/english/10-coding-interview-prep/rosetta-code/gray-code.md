@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e80
 title: Gray code
 challengeType: 5
 forumTopicId: 302276
+dashedName: gray-code
 ---
 
 # --description--

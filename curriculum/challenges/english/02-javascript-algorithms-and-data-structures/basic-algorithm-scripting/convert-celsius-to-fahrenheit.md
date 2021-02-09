@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244b3
 title: Convert Celsius to Fahrenheit
 challengeType: 1
 forumTopicId: 16806
+dashedName: convert-celsius-to-fahrenheit
 ---
 
 # --description--

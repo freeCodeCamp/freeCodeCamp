@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9c
 title: Find One or More Criminals in a Hunt
 challengeType: 1
 forumTopicId: 301343
+dashedName: find-one-or-more-criminals-in-a-hunt
 ---
 
 # --description--
@@ -47,12 +48,12 @@ Your regex should match two criminals (`CC`) in `"CC"`
 assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
 ```
 
-Your regex should match three criminals (`CCC`) in `"P1P5P4CCCP2P6P3"`
+Your regex should match three criminals (`CCC`) in the string `P1P5P4CCCcP2P6P3`.
 
 ```js
 assert(
-  'P1P5P4CCCP2P6P3'.match(reCriminals) &&
-    'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC'
+  'P1P5P4CCCcP2P6P3'.match(reCriminals) &&
+    'P1P5P4CCCcP2P6P3'.match(reCriminals)[0] == 'CCC'
 );
 ```
 

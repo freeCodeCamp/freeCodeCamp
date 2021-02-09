@@ -3,6 +3,7 @@ id: 587d7fb5367417b2b2512c03
 title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
 challengeType: 2
 forumTopicId: 301531
+dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-dependency
 ---
 
 # --description--
@@ -62,8 +63,6 @@ Use the caret (`^`) to prefix the version of moment in your dependencies and all
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

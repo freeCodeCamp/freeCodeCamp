@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617c
 title: Use the Lifecycle Method componentWillMount
 challengeType: 6
 forumTopicId: 301423
+dashedName: use-the-lifecycle-method-componentwillmount
 ---
 
 # --description--

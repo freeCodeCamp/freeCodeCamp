@@ -1,0 +1,16 @@
+.project-link-button-override {
+  all: unset;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.project-link-button-override:hover {
+  text-decoration: none;
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.project-link {
+  font-weight: 800;
+}

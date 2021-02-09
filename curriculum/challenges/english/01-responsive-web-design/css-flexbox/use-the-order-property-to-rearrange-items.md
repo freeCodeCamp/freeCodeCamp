@@ -4,6 +4,7 @@ title: Use the order Property to Rearrange Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
 forumTopicId: 301116
+dashedName: use-the-order-property-to-rearrange-items
 ---
 
 # --description--

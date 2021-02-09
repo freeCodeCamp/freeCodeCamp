@@ -3,11 +3,12 @@ id: bd7158d8c443eddfaeb5bdef
 title: Build a Voting App
 challengeType: 4
 forumTopicId: 302359
+dashedName: build-a-voting-app
 ---
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://fcc-voting-arthow4n.herokuapp.com/>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that is functionally similar to this: <https://voting-app.freecodecamp.rocks/>. Use a site builder of your choice to complete the project.
 
 Here are the specific user stories you should implement for this project:
 
@@ -27,12 +28,7 @@ Here are the specific user stories you should implement for this project:
 
 **User Story:** As an authenticated user, if you don't like the options on a poll, you can create a new option.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the \`Solution Link\` field. Optionally, also submit a link to your project's source code in the \`GitHub Link\` field.
-
-# --hints--
-
-
-# --seed--
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --solutions--
 

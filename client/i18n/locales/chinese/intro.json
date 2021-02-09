@@ -1,0 +1,525 @@
+{
+  "responsive-web-design": {
+    "title": "响应式网页设计",
+    "isTranslated": true,
+    "intro": [
+      "在响应式网页设计认证中，你将学习开发者用来编写网页的语言：HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
+      "首先，你将通过编写一个展示猫咪图片的应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，以及通过构建网页表单来学习无障碍的最佳实践。",
+      "最后，你将学习使用 flexbox（弹性盒子）构建一个 Twitter 卡片，以及使用 CSS 网格构建复杂的博客布局，以此学习制作适应不同屏幕大小的网页。"
+    ],
+    "blocks": {
+      "basic-html-and-html5": {
+        "title": "基础 HTML 和 HTML5",
+        "intro": [
+          "HTML 是一种标记语言，使用特殊的语法或标记来向浏览器描述网页的结构。HTML 元素由开始和结束标签构成，标签之间是文本内容。 不同的标签可以让文本内容以标题、段落、列表等形式展现。",
+          "在这个课程中，你将通过编写一个展示猫咪图片的应用，学习最常见的 HTML 元素——它们可以用来构成任何网页。"
+        ]
+      },
+      "basic-css": {
+        "title": "基础 CSS",
+        "intro": [
+          "CSS（级联样式表）告诉浏览器如何显示你在 HTML 中写入的文本和其他内容。你可以使用 CSS 控制 HTML 元素的颜色、字体、大小、间距等许多\b属性。",
+          "现在你已经写好了猫图应用的基本结构，接下来我们用 CSS 给它加一些样式。"
+        ]
+      },
+      "applied-visual-design": {
+        "title": "应用视觉设计",
+        "intro": [
+          "视觉设计结合了排版、色彩理论、图形、动画、页面布局等，以表达独特的信息。",
+          "在这个课程中，你将学习如何将这些不同的视觉设计元素应用到网页上。"
+        ]
+      },
+      "applied-accessibility": {
+        "title": "应用无障碍",
+        "intro": [
+          "在网页开发中，可访问性是指网页内容和用户界面可以被用户理解、浏览并与之交互。这里的用户包括有视觉障碍、听觉障碍或认知障碍的用户。",
+          "在这个课程中，你将学习提升网站可访问性的最佳实践。"
+        ]
+      },
+      "responsive-web-design-principles": {
+        "title": "响应式网页设计原则",
+        "intro": [
+          "人们可能通过形状和大小不同的设备来访问网页。通过响应式网页设计，你可以设计出能灵活适应不同屏幕大小、方向和分辨率的网页。",
+          "在这个课程中，你将学习如何使用 CSS 让你的网页在不同设备上看起来都不错。"
+        ]
+      },
+      "css-flexbox": {
+        "title": "CSS 弹性盒子",
+        "intro": [
+          "Flexbox（弹性盒子）是最新版本的 CSS（即 CSS3）中引入的一种强大且兼容性好的布局方法。使用 flexbox，我们可以很容易地处理好页面上的元素布局，并创建可以自动缩小和放大的动态用户界面。",
+          "在这个课程中，你将通过构建一个 Twitter 卡片来学习 flexbox 和动态布局的基础知识。"
+        ]
+      },
+      "css-grid": {
+        "title": "CSS 网格",
+        "intro": [
+          "CSS 网格是一个较新的标准，用于构建复杂的响应布局。它通过把 HTML 元素转换为具有行和列的网格容器，以便将子元素放置在所需要的位置。",
+          "在这个课程中，你将通过构建不同的复杂布局（包括博客）来学习 CSS 网格的基础知识。"
+        ]
+      },
+      "responsive-web-design-projects": {
+        "title": "响应式网页设计项目",
+        "intro": [
+          "是时候使用你新学到的技能了。通过构建这些项目，你将有机会应用之前学到的所有技巧、原则和概念：HTML、CSS、视觉设计、无障碍等等。",
+          "完成下面的五个网页编程项目，获得响应式网页设计认证。"
+        ]
+      },
+      "basic-html-cat-photo-app": {
+        "title": "基础 HTML 猫图应用",
+        "intro": ["占位符", "占位符"]
+      },
+      "basic-css-cafe-menu": {
+        "title": "基础 CSS 咖啡菜单",
+        "intro": ["占位符", "占位符"]
+      },
+      "css-variables-skyline": {
+        "title": "CSS 变量 Skyline",
+        "intro": ["占位符", "占位符"]
+      }
+    }
+  },
+  "javascript-algorithms-and-data-structures": {
+    "title": "JavaScript 算法和数据结构",
+    "isTranslated": false,
+    "intro": [
+      "HTML 和 CSS 控制页面的内容和样式，JavaScript 则用于页面交互。在 JavaScript 算法和数据结构认证中，你将学习 JavaScript 的基础知识，包括变量、 数组、 对象、 循环和函数。",
+      "打好基础之后，你将会通过创建算法来操作字符串、进行阶乘运算甚至计算国际空间站的轨道来应用这些知识。",
+      "在这个过程中，你还会学习两种重要的编程方式或模式：面向对象的编程（OOP）和函数式编程（FP）。"
+    ],
+    "blocks": {
+      "basic-javascript": {
+        "title": "基础 JavaScript",
+        "intro": [
+          "JavaScript 是一种用于网页交互的脚本语言。它和 HTML 和 CSS 一样，是网站的核心技术之一。所有现代浏览器都支持 JavaScript。",
+          "在这个课程中，你将学习JavaScript 中的基本编程概念。你将从数字和字符串等基本数据结构开始，然后学习使用数组、对象、函数、循环、if/else 语句等等。"
+        ]
+      },
+      "es6": {
+        "title": "ES6",
+        "intro": [
+          "ECMAScript（ES）是 JavaScript 的标准。因为所有主流浏览器都遵循此规范，所以 ECMAScript 和 JavaScript 是可以互换的。",
+          "截至目前你所学到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 编写程序。JavaScript 在不断迭代，每年都会发布新功能。",
+          "2015 年发布的 ES6 为该语言增加了许多强大的新功能。在这个课程中，你将学习这些新功能，包括 <code>let</code>、<code>const</code>、箭头函数、类、promises 和模块。"
+        ]
+      },
+      "regular-expressions": {
+        "title": "正则表达式",
+        "intro": [
+          "正则表达式，常常缩写为 “regex” 或 “regexp”，是帮助程序员匹配、搜索和替换文本的模式。正则表达式非常强大，但可能难以阅读，因为它们使用特殊字符来做更复杂更灵活的匹配。",
+          "在这个课程中，你将学习如何使用特殊字符、捕获组、正向或负向先行断言以及其他技巧来匹配你想要的文本。"
+        ]
+      },
+      "debugging": {
+        "title": "调试",
+        "intro": [
+          "调试是检查代码、发现并修复问题的过程。",
+          "代码中的问题通常有三种形式：1）语法错误导致程序停止运行， 2）代码无法执行或具有意外行为导致运行时错误，3）代码有语义（逻辑）错误，没有实现原来的意图。",
+          "在这个课程中，你将学习如何使用 JavaScript 控制台来调试程序，防止出现常见问题。"
+        ]
+      },
+      "basic-data-structures": {
+        "title": "基础数据结构",
+        "intro": [
+          "我们可以通过多种方式存储和访问数据。你已经知道数组和对象了，它们都是常见的 JavaScript 数据结构。",
+          "在基础数据结构课程中，你会更深入地了解数组和对象之间的差异，以及在不同情况下应该使用哪个。你还将学习到一些好用的 JS 方法，例如 <code>splice()</code>，以及使用 <code>Object.keys()</code> 来访问和操作数据。"
+        ]
+      },
+      "basic-algorithm-scripting": {
+        "title": "基础算法",
+        "intro": [
+          "算法是描述如何处理某个问题的一系列步骤。",
+          "要写一个有效的算法，你需要先将一个特定的问题分解为小的部分，并仔细思考如何用代码解决每个部分。",
+          "在这个课程中，你将通过编写算法来实现诸如转换温度、处理复杂的二维数组等，来学习算法思维的基础知识。"
+        ]
+      },
+      "object-oriented-programming": {
+        "title": "面向对象编程",
+        "intro": [
+          "OOP，即面向对象编程，是软件开发过程的主要方法之一。在 OOP 中，我们用对象和类来组织代码，以描述事物的特点以及它们可以做什么。",
+          "在这个课程中，你将会学习 JavaScript 中面向对象编程的基本原则，例如 <code>this</code> 关键词、原型链、构造器和继承。"
+        ]
+      },
+      "functional-programming": {
+        "title": "函数式编程",
+        "intro": [
+          "函数式编程是另一种软件开发方法。在函数式编程中，代码被组织成较小的基本的函数，可以结合起来构建复杂的程序。",
+          "在这个课程中，你将学习函数式编程的核心概念，包括纯函数，如何避免突变，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法编写更整洁的代码。"
+        ]
+      },
+      "intermediate-algorithm-scripting": {
+        "title": "中级算法",
+        "intro": [
+          "现在你了解了算法的基础知识、面向对象编程以及函数式编程。接下来我们将进入中级算法挑战来测试你的技能。"
+        ]
+      },
+      "javascript-algorithms-and-data-structures-projects": {
+        "title": "JavaScript 算法和数据结构项目",
+        "intro": [
+          "是时候用上你新学到的 JavaScript 技能了！接下来的项目和前面的算法挑战很相近，但是难度会更高。",
+          "完成这 5 个 JavaScript 项目，以获得 JavaScript 算法和数据结构认证。"
+        ]
+      },
+      "basic-javascript-rpg-game": {
+        "title": "基础 JavaScript RPG 游戏",
+        "intro": ["占位符", "占位符"]
+      },
+      "intermediate-javascript-calorie-counter": {
+        "title": "中级 JavaScript 卡路里计算器",
+        "intro": ["占位符", "占位符"]
+      },
+      "functional-programming-spreadsheet": {
+        "title": "函数式编程电子表格",
+        "intro": ["占位符", "占位符"]
+      }
+    }
+  },
+  "front-end-libraries": {
+    "title": "前端开发库",
+    "isTranslated": false,
+    "intro": [
+      "你已经熟悉了 HTML、CSS 和 JavaScript。现在学习行业中一些流行的前端库来提升你的技能吧。",
+      "在前端库认证中，你将学习如何使用 Bootstrap 快速设置网站样式，以及如何在 CSS 样式中添加逻辑，并使用 Sass 对其进行扩展。",
+      "稍后，你将建立一个购物车和其他应用程序，学习如何使用 React 和 Redux 创建强大的单页应用程序（SPAs）。"
+    ],
+    "blocks": {
+      "bootstrap": {
+        "title": "Bootstrap",
+        "intro": [
+          "Bootstrap 是一个用于设计响应式网页和应用程序的前端框架。它具有移动优先的特点，具有预定义的 CSS 样式和 class，还有一些 JavaScript 功能。",
+          "在这个课程中，你将学习如何使用 Bootstrap 来建立响应式网页，并使用它的 class 来设置按钮、图像、表格、导航和其他常见元素的样式。"
+        ]
+      },
+      "jquery": {
+        "title": "jQuery",
+        "intro": [
+          "jQuery 是开发者们最常用的 JavaScript 库之一。",
+          "在 jQuery 于 2006 年发布时，各种常用浏览器处理 JavaScript 的方式都略有不同。jQuery 简化了编写客户端 JavaScript 的过程，并确保代码在所有浏览器中以同样的方式运行。",
+          "在这个课程中，你将学习如何使用 jQuery 选择、移除、克隆和修改页面上的不同元素。"
+        ]
+      },
+      "sass": {
+        "title": "SASS",
+        "intro": [
+          "Sass，英文全称为 “Syntactically Awesome StyleSheets”，是对 CSS 的扩展。它添加了一些 CSS 语法不具有的新特性。Sass 简化了 CSS，这让维护样式表变得更容易。",
+          "在 Sass 课程中，你将学习如何将数据存储在变量中、嵌套 CSS、创建可重用的样式、为样式添加逻辑和循环等等。"
+        ]
+      },
+      "react": {
+        "title": "React",
+        "intro": [
+          "React 是一个流行的 JavaScript 库，用于为网页或应用程序构建可重用的组件驱动的用户界面。",
+          "React 将 HTML 与 JavaScript 结合在了一起，以此创建出一个新的标签语言 JSX。React 还使得管理整个应用程序的数据流变得更容易。",
+          "在这个课程中，你将学习如何创建不同的 React 组件，以 state props 管理数据，以及使用不同的生命周期方法（例如 <code>componentDidMount</code>）和更多内容。"
+        ]
+      },
+      "redux": {
+        "title": "Redux",
+        "intro": [
+          "As applications grow in size and scope, managing shared data becomes much more difficult. Redux is defined as a \"predictable state container for JavaScript apps\" that helps ensure your apps work predictably, and are easier to test.",
+          "While you can use Redux with any view library, we introduce Redux here before combining it with React in the next set of courses.",
+          "In this course, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to manage data throughout your application."
+        ]
+      },
+      "react-and-redux": {
+        "title": "React and Redux",
+        "intro": [
+          "React and Redux are often mentioned together, and with good reason. The developer who created Redux was a React developer who wanted to make it easier to share data across different components.",
+          "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
+        ]
+      },
+      "front-end-libraries-projects": {
+        "title": "Front End Development Libraries Projects",
+        "intro": [
+          "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Front End Development Libraries certification."
+        ]
+      }
+    }
+  },
+  "data-visualization": {
+    "title": "Data Visualization",
+    "isTranslated": false,
+    "intro": [
+      "Data is all around us, but it doesn't mean much without shape or context.",
+      "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
+      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programing Interface)."
+    ],
+    "blocks": {
+      "data-visualization-with-d3": {
+        "title": "Data Visualization with D3",
+        "intro": [
+          "D3, or D3.js, stands for Data Driven Documents. It's a JavaScript library for creating dynamic and interactive data visualizations in the browser.",
+          "D3 is built to work with common web standards – namely HTML, CSS, and Scalable Vector Graphics (SVG).",
+          "D3 supports many different kinds of input data formats. Then, using its powerful built-in methods, you can transform those data into different charts, graphs, and maps.",
+          "In the Data Visualization with D3 courses, you'll learn how to work with data to create different charts, graphs, hover elements, and other ingredients to create dynamic and attractive data visualizations."
+        ]
+      },
+      "json-apis-and-ajax": {
+        "title": "JSON APIs and AJAX",
+        "intro": [
+          "Similar to how UIs help people use programs, APIs (Application Programming Interfaces) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.",
+          "Programmers often use AJAX (Asynchronous JavaScript and XML) when working with APIs. AJAX refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. And the data transferred between the browser and server is often in a format called JSON (JavaScript Object Notation).",
+          "This course will teach you the basics about working with APIs and different AJAX technologies in the browser."
+        ]
+      },
+      "data-visualization-projects": {
+        "title": "Data Visualization Projects",
+        "intro": [
+          "Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.",
+          "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
+        ]
+      },
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": ["placeholder", "placeholder"]
+      }
+    }
+  },
+  "apis-and-microservices": {
+    "title": "APIs and Microservices",
+    "isTranslated": false,
+    "intro": [
+      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
+      "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
+      "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+    ],
+    "blocks": {
+      "managing-packages-with-npm": {
+        "title": "Managing Packages with NPM",
+        "intro": [
+          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
+          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
+        ]
+      },
+      "basic-node-and-express": {
+        "title": "Basic Node and Express",
+        "intro": [
+          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing the routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+        ]
+      },
+      "mongodb-and-mongoose": {
+        "title": "MongoDB and Mongoose",
+        "intro": [
+          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
+          "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
+        ]
+      },
+      "apis-and-microservices-projects": {
+        "title": "APIs and Microservices Projects",
+        "intro": [
+          "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
+          "After creating these, you'll have 5 cool microservice APIs you can show of to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
+        ]
+      }
+    }
+  },
+  "quality-assurance": {
+    "title": "Quality Assurance",
+    "isTranslated": false,
+    "intro": [
+      "As your programs or web applications become more complex, you'll want to test them to make sure that new changes don't break their original functionality.",
+      "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai to ensure your applications work the way you expect them to.",
+      "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, and Socket.io for real-time communication between the server and connected clients."
+    ],
+    "blocks": {
+      "quality-assurance-and-testing-with-chai": {
+        "title": "Quality Assurance and Testing with Chai",
+        "intro": [
+          "Chai is a JavaScript testing library that helps you confirm that your program still behaves the way you expect it to after you make changes to your code.",
+          "Using Chai, you can write tests that describe your program's requirements and see if your program meets them.",
+          "In this course, you'll learn about assertions, deep equality, truthiness, testing APIs, and other fundamentals for testing JavaScript applications."
+        ]
+      },
+      "advanced-node-and-express": {
+        "title": "Advanced Node and Express",
+        "intro": [
+          "Now it's time to take a deep dive into Node.js and Express.js by building a chat application with a sign-in system.",
+          "To implement the sign-in system safely, you'll need to learn about authentication. This is the act of verifying the identity of a person or process.",
+          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front end, and web sockets for real-time communication between the clients and server."
+        ]
+      },
+      "quality-assurance-projects": {
+        "title": "Quality Assurance Projects",
+        "intro": [
+          "Now that you're well versed in both the front end and back end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "After completing these Quality Assurance projects, you'll have 5 more projects under your belt, and a new certification to show off on your portfolio."
+        ]
+      }
+    }
+  },
+  "scientific-computing-with-python": {
+    "title": "Scientific Computing with Python",
+    "isTranslated": false,
+    "intro": [
+      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
+      "In the Scientific Computing with Python Certification, you'll Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
+    ],
+    "blocks": {
+      "python-for-everybody": {
+        "title": "Python for Everybody",
+        "intro": [
+          "Python for everybody is a free video course series that teach the basics of using Python 3.",
+          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+        ]
+      },
+      "scientific-computing-with-python-projects": {
+        "title": "Scientific Computing with Python Projects",
+        "intro": [
+          "Time to put your Python skills to the test. By completing these projects, you will demonstrate that you have a good foundational knowledge of Python and qualify for the Scientific Computing with Python Certification."
+        ]
+      }
+    }
+  },
+  "data-analysis-with-python": {
+    "title": "Data Analysis with Python",
+    "isTranslated": false,
+    "intro": [
+      "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
+      "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
+    ],
+    "blocks": {
+      "data-analysis-with-python-course": {
+        "title": "Data Analysis with Python",
+        "intro": [
+          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll reading data from multiple sources (CSV, SQL, Excel), process those data using NumPy and Pandas, and visualize them using Matplotlib and Seaborn,",
+          "Additionally, we've included a thorough Jupyter Notebook course, and a quick Python reference to refresh your programming skills."
+        ]
+      },
+      "numpy": {
+        "title": "Numpy",
+        "intro": [
+          "Learn the basics of the NumPy library in the following video course created by Keith Galli.",
+          "In this course, you'll learn how NumPy works and how it compares to Python's built-in lists. You'll also learn how to write code with NumPy, indexing, reshaping, applied statistics, and much more."
+        ]
+      },
+      "data-analysis-with-python-projects": {
+        "title": "Data Analysis with Python Projects",
+        "intro": [
+          "There are many ways to analyze data with Python. By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.",
+          "Finish them all to claim your Data Analysis with Python certification."
+        ]
+      }
+    }
+  },
+  "information-security": {
+    "title": "Information Security",
+    "isTranslated": false,
+    "intro": [
+      "With everything we do online, there's a vast amount of sensitive information at risk: email addresses, passwords, phone numbers, and much more.",
+      "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
+      "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
+    ],
+    "blocks": {
+      "information-security-with-helmetjs": {
+        "title": "Information Security with HelmetJS",
+        "intro": [
+          "This programming course focuses on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP headers. This way it can prevent sensitive information from unintentionally being passed between the server and client.",
+          "Completing the courses below will help you understand how to protect your website from malicious behavior."
+        ]
+      },
+      "python-for-penetration-testing": {
+        "title": "Python for Penetration Testing",
+        "intro": [
+          "These video courses teach you penetration testing with Python. Also known as a pen test, penetration testing is a simulated attack against a system to check for vulnerabilities.",
+          "In this course, you'll learn about sockets, create a TCP server and client, build an Nmap scanner, and other tools and techniques that pen testers use daily."
+        ]
+      },
+      "information-security-projects": {
+        "title": "Information Security Projects",
+        "intro": [
+          "Now it’s time to put your new information security skills to work. These projects will give you a chance to apply the infosec skills, principles, and concepts you've learned.",
+          "When you are done, you will have plenty of information security projects under your belt, along with a certification that you can show off to friends, family, and employers."
+        ]
+      }
+    }
+  },
+  "machine-learning-with-python": {
+    "title": "Machine Learning with Python",
+    "isTranslated": false,
+    "intro": [
+      "Machine learning has many practical applications that you can use in your projects or on the job.",
+      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks. A you'll explore more advanced techniques like natural language processing and reinforcement learning.",
+      "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
+    ],
+    "blocks": {
+      "tensorflow": {
+        "title": "Tensorflow",
+        "intro": [
+          "TensorFlow is an open source framework that makes machine learning and neural networking easier to use.",
+          "The following video course was created by Tim Ruscica, also known as “Tech With Tim”. It will help you to understand TensorFlow and some of its powerful capabilities."
+        ]
+      },
+      "how-neural-networks-work": {
+        "title": "How Neural Networks Work",
+        "intro": [
+          "Neural networks are at the core of what we call artificial intelligence today. But historically they've been hard to understand. Especially for beginners in the machine learning field.",
+          "Even if you are completely new to neural networks, these video courses by Brandon Rohrer will get you comfortable with the concepts and the math behind them."
+        ]
+      },
+      "machine-learning-with-python-projects": {
+        "title": "Machine Learning with Python Projects",
+        "intro": [
+          "Machine learning has many practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning, and qualify for your Machine Learning with Python certification."
+        ]
+      }
+    }
+  },
+  "coding-interview-prep": {
+    "title": "Coding Interview Prep",
+    "isTranslated": false,
+    "intro": [
+      "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
+      "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
+    ],
+    "blocks": {
+      "algorithms": {
+        "title": "Algorithms",
+        "intro": [
+          "These free programming exercises will teach you about some common algorithms that you will likely encounter in real life. They are a great opportunity to improve your logic and programming skills.",
+          "These algorithms are frequently used in job interviews to test a candidate's skills. We'll give you clear and concise explanations of how these different algorithms work so you can implement a solution for each one."
+        ]
+      },
+      "data-structures": {
+        "title": "Data Structures",
+        "intro": [
+          "These free programming courses are meant to help you deal with large and complex data structures that you may not yet be familiar with.",
+          "Working through the courses below, you will learn about each type of data structure, and implement algorithms to reinforce your understanding of them."
+        ]
+      },
+      "take-home-projects": {
+        "title": "Take Home Projects",
+        "intro": [
+          "Programming interviews have always been stressful. Job applicants are sometimes given a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.",
+          "Build the bonus coding projects below for extra practice. Take your time, make them great, and put them on your resume or portfolio to show potential employers."
+        ]
+      },
+      "rosetta-code": {
+        "title": "Rosetta Code",
+        "intro": [
+          "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
+          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights."
+        ]
+      },
+      "project-euler": {
+        "title": "Project Euler",
+        "intro": [
+          "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
+          "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+        ]
+      }
+    }
+  },
+  "misc-text": {
+    "certification": "{{cert}} 认证",
+    "browse-other": "浏览我们的其他免费认证\n（我们建议你按顺序学习）",
+    "courses": "课程",
+    "expand": "展开",
+    "collapse": "折叠",
+    "translation-banner": "We're still translating this certification.",
+    "translation-help": "You can help here"
+  }
+}

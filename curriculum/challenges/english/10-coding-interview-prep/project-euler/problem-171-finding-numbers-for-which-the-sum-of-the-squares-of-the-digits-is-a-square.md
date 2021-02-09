@@ -5,6 +5,8 @@ title: >-
   a square
 challengeType: 5
 forumTopicId: 301806
+dashedName: >-
+  problem-171-finding-numbers-for-which-the-sum-of-the-squares-of-the-digits-is-a-square
 ---
 
 # --description--

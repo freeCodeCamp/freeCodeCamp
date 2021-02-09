@@ -3,6 +3,7 @@ id: 5900f4341000cf542c50ff46
 title: 'Problem 199: Iterative Circle Packing'
 challengeType: 5
 forumTopicId: 301837
+dashedName: problem-199-iterative-circle-packing
 ---
 
 # --description--

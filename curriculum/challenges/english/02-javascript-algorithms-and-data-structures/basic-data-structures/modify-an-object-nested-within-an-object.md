@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b19
 title: Modify an Object Nested Within an Object
 challengeType: 1
 forumTopicId: 301164
+dashedName: modify-an-object-nested-within-an-object
 ---
 
 # --description--

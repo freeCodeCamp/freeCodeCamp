@@ -3,6 +3,7 @@ id: 5e8f2f13c4cdbe86b5c72d89
 title: Core Learning Algorithms
 challengeType: 11
 videoId: u5lZURgcWnU
+dashedName: core-learning-algorithms
 ---
 
 # --question--

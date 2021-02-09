@@ -3,6 +3,7 @@ id: 594ecc0d9a8cf816e3340187
 title: Taxicab numbers
 challengeType: 5
 forumTopicId: 302337
+dashedName: taxicab-numbers
 ---
 
 # --description--

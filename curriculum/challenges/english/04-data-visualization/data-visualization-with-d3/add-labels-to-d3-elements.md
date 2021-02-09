@@ -3,6 +3,7 @@ id: 587d7faa367417b2b2512bd2
 title: Add Labels to D3 Elements
 challengeType: 6
 forumTopicId: 301476
+dashedName: add-labels-to-d3-elements
 ---
 
 # --description--

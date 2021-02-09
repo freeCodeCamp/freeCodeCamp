@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c63
 title: Remove Elements from a Linked List
 challengeType: 1
 forumTopicId: 301712
+dashedName: remove-elements-from-a-linked-list
 ---
 
 # --description--

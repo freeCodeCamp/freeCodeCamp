@@ -3,6 +3,7 @@ id: 5900f5331000cf542c510045
 title: 'Problem 454: Diophantine reciprocals III'
 challengeType: 5
 forumTopicId: 302127
+dashedName: problem-454-diophantine-reciprocals-iii
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3991000cf542c50feac
 title: 'Problem 45: Triangular, pentagonal, and hexagonal'
 challengeType: 5
 forumTopicId: 302122
+dashedName: problem-45-triangular-pentagonal-and-hexagonal
 ---
 
 # --description--

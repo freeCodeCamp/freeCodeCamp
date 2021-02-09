@@ -4,6 +4,7 @@ title: Accessing Nested Arrays
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
+dashedName: accessing-nested-arrays
 ---
 
 # --description--

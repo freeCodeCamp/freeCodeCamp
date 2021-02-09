@@ -1,0 +1,50 @@
+name: Crowdin Curriculum Download
+on:
+  workflow_dispatch:
+
+jobs:
+
+  i18n-download-curriculum-translations:
+    name: Learn
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      ##### Download #####
+      - name: Crowdin Download for Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          skip_untranslated_files: false
+          export_only_approved: true
+
+          commit_message: 'chore(i8n,learn): processed translations'
+
+          # pull-request
+          localization_branch_name: i18n-sync-learn
+          create_pull_request: false
+          pull_request_title: 'chore(i18n,learn): Processed translations from Crowdin'
+          pull_request_body: ''
+          pull_request_labels: 'scope: i18n, scope: learn, crowdin-sync'
+
+          # global options
+          config: './curriculum/crowdin.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}

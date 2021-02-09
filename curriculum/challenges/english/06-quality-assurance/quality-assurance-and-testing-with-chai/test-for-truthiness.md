@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c49
 title: Test for Truthiness
 challengeType: 2
 forumTopicId: 301596
+dashedName: test-for-truthiness
 ---
 
 # --description--
@@ -13,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ```js
 assert.isTrue(true, 'this will pass with the boolean value true');
-assert.isTrue('true', 'this will NOT pass with the string value 'true');
+assert.isTrue('true', 'this will NOT pass with the string value "true"');
 assert.isTrue(1, 'this will NOT pass with the number value 1');
 ```
 
@@ -88,8 +89,6 @@ You should choose the correct method for the third assertion - `isTrue` vs. `isN
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

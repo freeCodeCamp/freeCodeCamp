@@ -3,6 +3,7 @@ id: 5900f47c1000cf542c50ff8e
 title: 'Problem 270: Cutting Squares'
 challengeType: 5
 forumTopicId: 301920
+dashedName: problem-270-cutting-squares
 ---
 
 # --description--

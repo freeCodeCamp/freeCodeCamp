@@ -3,6 +3,7 @@ id: 595608ff8bcd7a50bd490181
 title: Hailstone sequence
 challengeType: 5
 forumTopicId: 302279
+dashedName: hailstone-sequence
 ---
 
 # --description--

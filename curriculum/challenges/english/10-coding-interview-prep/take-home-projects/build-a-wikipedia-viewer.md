@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd19
 title: Build a Wikipedia Viewer
 challengeType: 3
 forumTopicId: 302360
+dashedName: build-a-wikipedia-viewer
 ---
 
 # --description--
@@ -24,11 +25,6 @@ Hint #3: Use this [link](https://en.wikipedia.org/wiki/Special:ApiSandbox#action
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

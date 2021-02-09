@@ -3,6 +3,7 @@ id: 5900f4931000cf542c50ffa4
 title: 'Problem 293: Pseudo-Fortunate Numbers'
 challengeType: 5
 forumTopicId: 301945
+dashedName: problem-293-pseudo-fortunate-numbers
 ---
 
 # --description--

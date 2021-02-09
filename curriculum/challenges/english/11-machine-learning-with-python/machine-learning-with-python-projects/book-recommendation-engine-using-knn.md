@@ -2,6 +2,7 @@
 id: 5e46f8e3ac417301a38fb92f
 title: Book Recommendation Engine using KNN
 challengeType: 10
+dashedName: book-recommendation-engine-using-knn
 ---
 
 # --description--
@@ -23,8 +24,6 @@ It should pass all Python tests.
 ```js
 
 ```
-
-# --seed--
 
 # --solutions--
 

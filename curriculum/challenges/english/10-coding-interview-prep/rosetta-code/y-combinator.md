@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad5
 title: Y combinator
 challengeType: 5
 forumTopicId: 302345
+dashedName: y-combinator
 ---
 
 # --description--

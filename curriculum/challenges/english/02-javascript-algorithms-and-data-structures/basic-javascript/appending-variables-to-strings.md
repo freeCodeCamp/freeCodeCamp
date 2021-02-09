@@ -4,6 +4,7 @@ title: Appending Variables to Strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
+dashedName: appending-variables-to-strings
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7dac367417b2b2512b74
 title: Use Dot Notation to Access the Properties of an Object
 challengeType: 1
 forumTopicId: 301333
+dashedName: use-dot-notation-to-access-the-properties-of-an-object
 ---
 
 # --description--

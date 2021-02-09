@@ -1,54 +1,48 @@
 ---
 id: 5a90375238fddaf9a66b5d3b
+title: 使用 align-self 垂直对齐项目
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cmzd4fz'
 forumTopicId: 301123
-title: 使用 align-self 垂直对齐项目
+dashedName: align-an-item-vertically-using-align-self
 ---
 
-## Description
-<section id='description'>
-正如能设置网格项沿行轴对齐方式一样，也可以设置网格项沿列轴对齐：你可以对网格项使用<code>align-self</code>属性。在上一个挑战中适用于<code>justify-self</code>属性的每个值也都适用于<code>align-self</code>属性。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-用值<code>end</code>使类为<code>item3</code>的网格项底端对齐。
-</section>
+正如能设置网格项沿水平方向的对齐方式一样，我们也可以设置网格项沿竖直方向的对齐方式。 为此，我们可以对网格项使用 `align-self` 属性来实现。 在上一个挑战中适用于 `justify-self` 属性的属性值同样也可用于这个属性。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '<code>item3</code>类应该有<code>align-self</code>属性且值为<code>end</code>。'
-    testString: assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
+请使用值 `end` 来让 class 为 `item3` 的网格项沿底端对齐。
 
+# --hints--
+
+class 为 `item3` 的元素应具有 `align-self` 属性且属性值应为 `end`。
+
+```js
+assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
   .item1{background:LightSkyBlue;}
   .item2{background:LightSalmon;}
-  
+
   .item3 {
     background: PaleTurquoise;
-    /* 请在本行以下添加你的代码 */
-    
-    
-    /* 请在本行以上添加你的代码 */
+    /* Only change code below this line */
+
+
+    /* Only change code above this line */
   }
-  
+
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -60,7 +54,7 @@ tests:
     grid-gap: 10px;
   }
 </style>
-  
+
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>
@@ -70,19 +64,8 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>.item3 {align-self: end;}</style>
 ```
-
-</section>
-              

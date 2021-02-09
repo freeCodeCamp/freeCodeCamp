@@ -4,6 +4,7 @@ title: Use Hex Code to Mix Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
+dashedName: use-hex-code-to-mix-colors
 ---
 
 # --description--

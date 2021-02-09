@@ -3,6 +3,7 @@ id: 587d7fb1367417b2b2512bf3
 title: Implement a Root-Level Request Logger Middleware
 challengeType: 2
 forumTopicId: 301514
+dashedName: implement-a-root-level-request-logger-middleware
 ---
 
 # --description--
@@ -44,8 +45,6 @@ Root level logger middleware should be active
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

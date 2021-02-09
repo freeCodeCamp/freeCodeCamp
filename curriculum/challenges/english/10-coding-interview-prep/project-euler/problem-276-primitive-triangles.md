@@ -3,6 +3,7 @@ id: 5900f4801000cf542c50ff93
 title: 'Problem 276: Primitive Triangles'
 challengeType: 5
 forumTopicId: 301926
+dashedName: problem-276-primitive-triangles
 ---
 
 # --description--

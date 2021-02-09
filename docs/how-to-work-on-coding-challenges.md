@@ -10,13 +10,13 @@ Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [
 
 Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
-With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
-You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) directory.
+You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
 
 ## Set up the tooling for the curriculum
 
@@ -27,100 +27,143 @@ Before you work on the curriculum, you would need to set up some tooling to help
 
   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead again.
+- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
 
 ## Challenge Template
 
-Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
-
 ````md
+
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
-title: Challenge Title
-challengeType: 0
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
 videoUrl: 'url of video explanation'
+forumTopicId: 12345
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-A Description of the challenge and what is required to pass
-</section>
+Challenge description text, in markdown
 
-## Instructions
-
-<section id='instructions'>
-Instructions about what exactly needs to be done.
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: Should return "foo"
-    testString: 'A stringified function possibly using Chai asserts'
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='{ext}-seed'>
-
-```{ext}
-Code displayed in the editor by default.
-
-This is a required section for the challenge.
-```
-
+```html
+<div>
+  example code
 </div>
-
-### Before Test
-
-<div id='{ext}-setup'>
-
-```{ext}
-Optional Test setup code.
 ```
 
-</div>
+# --instructions--
 
-### After Test
+Challenge instruction text, in markdown
 
-<div id='{ext}-teardown'>
+# --hints--
 
-```{ext}
-Optional Test tear down code.
+Tests to run against user code, in pairs of markdown text and code block test code.
+
+```js
+Code for test one
 ```
 
-</div>
+More instructions in markdown syntax
 
-</section>
-
-## Solution
-
-<section id='solution'>
-
-```{ext}
-// solution required
+```js
+More code
 ```
 
-</section>
+# --seed--
+
+## --before-user-code--
+
+```lang
+Code evaluated before the user’s code.
+```
+
+## --after-user-code--
+
+```lang
+Code evaluated after the user’s code, and just before the tests
+```
+
+## --seed-contents--
+
+Boilerplate code to render to the editor. This section should only contain code inside backticks, like the following:
+
+```html
+<body>
+  <p class="main-text">
+    Hello world!
+  </p>
+</body>
+```
+
+```css
+body {
+  margin: 0;
+  background-color: #3a3240;
+}
+
+.main-text {
+  color: #aea8d3;
+}
+```
+
+```js
+console.log('freeCodeCamp is awesome!');
+```
+
+# --solutions--
+
+Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
+
+```js
+// first solution - the language(s) should match the seed.
+```
+
+---
+
+```js
+// second solution - so if the seed is written in HTML...
+```
+
+---
+
+```js
+// third solution etc. - Your solutions should be in HTML.
+```
+
+# --question--
+
+These fields are currently used for the multiple-choice Python challenges.
+
+## --text--
+
+The question text goes here.
+
+## --answers--
+
+Answer 1
+
+---
+
+Answer 2
+
+---
+
+More answers
+
+## --video-solution--
+
+The number for the correct answer goes here.
+
+
 ````
 
 > [!NOTE]
 >
-> 1. In the above sections, examples of `{ext}` are:
+> 1. In the above sections, examples of `lang` are:
 >
 >   - `html` - HTML/CSS
 >   - `js` - JavaScript
 >   - `jsx` - JSX
->
-> 2. For the `Tests` section above, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression using which could use Chai asserts.
 
 ## Numbering Challenges
 
@@ -164,7 +207,7 @@ All challenge titles should be explicit and should follow this pattern:
 Here are some example challenge names:
 
 - Use Clockwise Notation to Specify the Padding of an Element
-- Condense arrays with .reduce
+- Condense arrays with .reduce
 - Use Bracket Notation to Find the First Character in a String
 
 ## Challenge descriptions/instructions
@@ -177,7 +220,7 @@ Challenge text should use the second person ("you") to help to give it a convers
 
 Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-You can add diagrams if absolutely necessary.
+You can add diagrams if necessary.
 
 Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
@@ -189,7 +232,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 ### The 2-minute rule
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
 
@@ -212,21 +255,19 @@ Our goal is to have thousands of 2-minute challenges. These can flow together an
 
 Here are specific formatting guidelines for challenge text and examples:
 
-- Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
-- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
-- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+- Language keywords go in `\`` backticks. For example, HTML tag names or CSS property names.
+- References to code parts (i.e. function, method, or variable names) should be wrapped in `\`` backticks. See example below:
 ```md
-Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+Use `parseInt` to convert the variable `realNumber` into an integer.
 ```
-- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
-- Whitespace matters in Markdown, so we recommend that you make it visible in your editor.  
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `\`` backticks.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. See example below:
+- Whitespace matters in Markdown, so we recommend that you make it visible in your editor. 
 
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
-````md
 The following is an example of code:
-
+````md
 ```{language}
 
 [YOUR CODE HERE]
@@ -234,11 +275,11 @@ The following is an example of code:
 ```
 ````
 
-- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
-- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
+- Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
 - Use single-quotes where applicable
 
-**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
+**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
 
 ## Writing tests
 
@@ -260,7 +301,7 @@ Here are specific formatting guidelines for the challenge seed code:
 
 We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
-Comments used should have a space between the comment characters and the comment themselves.  In general comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
+Comments used should have a space between the comment characters and the comment themselves.  In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
 Example of valid single line JavaScript comment:
 
@@ -270,7 +311,7 @@ Example of valid single line JavaScript comment:
 
 Example of a valid CSS comment:
 
-```js
+```css
 /* Only change code above this line */
 ```
 
@@ -320,9 +361,9 @@ class MyComponent extends React.Component {
 
 ### Translation of seed code comments
 
-There are separate comment dictionaries for each language. The [English vesion of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+There are separate comment dictionaries for each language. The [English version of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
-Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.  
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated. 
 
 ```text
 Declare the myGlobal variable below this line
@@ -330,7 +371,7 @@ Declare the myGlobal variable below this line
 
 >[!NOTE]
 >
-> We are working on an integration to make it possible to work on i18n for the comment dictionary. 
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
 
 ## Hints and Solutions
 
@@ -358,7 +399,7 @@ When proposing a solution for a curriculum challenge related Guide topic, the fu
 
 ## Problem Explanation
 
-This summarizes what need to be done without just restating the challenge description and/or instructions. This is an optional section
+This summarizes what needs to be done without just restating the challenge description and/or instructions. This is an optional section
 
 #### Relevant Links
 
@@ -430,135 +471,23 @@ You are also able to test one challenge individually by performing the following
    cd curriculum
    ```
 
-2. Run the following for each challenge file for which you have changed:
+2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
-   npm run test -- -g 'the full English title of the challenge'
+   npm run test -- -g challenge-title-goes-here
    ```
 
-Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
 > You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## Upcoming Challenge Template
-
-The challenge template in the process of being updated to a cleaner, less nested structure.
-
-````md
-
----
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes.js`
-videoUrl: 'url of video explanation'
-forumTopicId: 12345
----
-
-::import{component="Script" from="./script.md" }
-
-# --description--
-
-Description text, in markdown
-
-```html
-<div>
-  example code
-</div>
-```
-
-# --hints--
-
-There will be an arbitrary number of pairs of instructions (in markdown) and code blocks.  
-
-```js
-Code for test one
-```
-
-More instructions in markdown syntax
-
-```js
-More code
-```
-
-# --seed--
-
-## --before-user-code--
-
-```lang
-Code evaluated before the user’s
-```
-
-## --after-user-code--
-
-```lang
-Code evaluated after the user’s, and just before the tests
-```
-
-## --seed-contents--
-
-::id{#index-html}
-
-```html
-Some html
-```
-
-```css
-Some css
-```
-
-```js
-Some js
-```
-
-::id{#index-js}
-
-::use{component="Script"}
-
-
-# --solutions--
-
-Exactly the same as the seeds section
-
----
-
-second solution
-
----
-
-third solution etc.
-
-# --question--
-
-## --text--
-
-The question would go here (only used for video challenges)
-
-## --answers--
-
-Answer 1
-
----
-
-Answer 2
-
----
-
-More answers
-
-## --video-solution--
-
-\<number of correct answer\>
-
-
-````
-
 ### Useful Links
 
 Creating and Editing Challenges:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
 
 2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.

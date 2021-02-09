@@ -3,6 +3,7 @@ id: 5900f4c81000cf542c50ffda
 title: 'Problem 345: Matrix Sum'
 challengeType: 5
 forumTopicId: 302004
+dashedName: problem-345-matrix-sum
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4e81000cf542c50fffb
 title: 'Problem 380: Amazing Mazes!'
 challengeType: 5
 forumTopicId: 302044
+dashedName: problem-380-amazing-mazes
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617d
 title: Use the Lifecycle Method componentDidMount
 challengeType: 6
 forumTopicId: 301422
+dashedName: use-the-lifecycle-method-componentdidmount
 ---
 
 # --description--
@@ -91,7 +92,7 @@ class MyComponent extends React.Component {
       <div>
         {/* Change code below this line */}
         <h1>Active Users: </h1>
-        {/* Change code below this line */}
+        {/* Change code above this line */}
       </div>
     );
   }

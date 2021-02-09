@@ -3,6 +3,7 @@ id: 587d7dae367417b2b2512b79
 title: Extend Constructors to Receive Arguments
 challengeType: 1
 forumTopicId: 18235
+dashedName: extend-constructors-to-receive-arguments
 ---
 
 # --description--

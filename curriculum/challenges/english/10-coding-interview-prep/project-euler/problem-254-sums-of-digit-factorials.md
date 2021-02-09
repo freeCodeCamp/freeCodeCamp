@@ -3,6 +3,7 @@ id: 5900f46b1000cf542c50ff7d
 title: 'Problem 254: Sums of Digit Factorials'
 challengeType: 5
 forumTopicId: 301902
+dashedName: problem-254-sums-of-digit-factorials
 ---
 
 # --description--

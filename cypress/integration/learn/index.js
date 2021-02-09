@@ -11,7 +11,7 @@ const locations = {
 const superBlockNames = [
   'Responsive Web Design Certification',
   'JavaScript Algorithms and Data Structures Certification',
-  'Front End Libraries Certification',
+  'Front End Development Libraries Certification',
   'Data Visualization Certification',
   'APIs and Microservices Certification',
   'Quality Assurance Certification',
@@ -28,7 +28,7 @@ describe('Learn Landing page (not logged in)', () => {
 
     cy.title().should(
       'eq',
-      'Learn to Code for Free – Coding Courses for Busy People'
+      'Learn to Code — For Free — Coding Courses for Busy People'
     );
   });
 
@@ -41,7 +41,7 @@ describe('Learn Landing page (not logged in)', () => {
   it('Should render a curriculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll(
-        `${selectors.challengeMap} > ul > li`
+        `${selectors.challengeMap} > li > a`
       );
       expect(superBlocks).to.have.length(11);
 
@@ -77,44 +77,9 @@ describe('Superblocks and Blocks', () => {
     cy.contains("Get started (it's free)").click();
   });
 
-  it('Has first superblock and block collapsed by default', () => {
-    cy.contains(superBlockNames[0])
-      .should('be.visible')
-      .and('have.attr', 'aria-expanded', 'true');
-
-    cy.contains('Basic HTML and HTML5')
-      .should('be.visible')
-      .and('have.attr', 'aria-expanded', 'true');
-  });
-
-  it('Has all supeblocks visible but folded (excluding the first one)', () => {
+  it('Has all superblocks visible', () => {
     cy.wrap(superBlockNames.slice(1)).each(name => {
-      cy.contains(name)
-        .should('be.visible')
-        .and('have.attr', 'aria-expanded', 'false');
+      cy.contains(name).should('be.visible');
     });
-  });
-  it('Superblocks should be collapsable and foldable', () => {
-    cy.contains(superBlockNames[0])
-      .click()
-      .should('have.attr', 'aria-expanded', 'false');
-    cy.contains('Basic HTML and HTML5').should('not.exist');
-
-    cy.contains(superBlockNames[0])
-      .click()
-      .should('have.attr', 'aria-expanded', 'true');
-    cy.contains('Basic HTML and HTML5').should('be.visible');
-  });
-
-  it('Blocks should be collapsable and foldable', () => {
-    cy.contains('Basic HTML and HTML5')
-      .click()
-      .should('have.attr', 'aria-expanded', 'false');
-    cy.contains('Introduction to Basic HTML and HTML5').should('not.exist');
-
-    cy.contains('Basic HTML and HTML5')
-      .click()
-      .should('have.attr', 'aria-expanded', 'true');
-    cy.contains('Introduction to Basic HTML and HTML5').should('be.visible');
   });
 });

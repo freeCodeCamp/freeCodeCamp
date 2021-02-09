@@ -4,6 +4,7 @@ title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
+dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 ---
 
 # --description--
@@ -32,7 +33,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use label tags with `for` attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the `div` tag surrounding the radio buttons to a `fieldset` tag, and change the `p` tag inside it to a `legend`.
+Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use `label` tags with `for` attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the `div` tag surrounding the radio buttons to a `fieldset` tag, and change the `p` tag inside it to a `legend`.
 
 # --hints--
 

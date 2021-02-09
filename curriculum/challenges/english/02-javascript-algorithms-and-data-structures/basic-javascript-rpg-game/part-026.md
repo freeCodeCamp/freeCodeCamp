@@ -2,11 +2,12 @@
 id: 5d66198de0696bdec46938d8
 title: Part 26
 challengeType: 0
+dashedName: part-26
 ---
 
 # --description--
 
-Add double quote marks around the word "Store" in the line "You see a sign that says Store." Before each quotation mark add a `\` to signal that the following quote is not the end of the string, but should instead appear inside the string. This is called escaping.
+Add double quote marks around the word "Store" in the line "You see a sign that says Store." Before each quotation mark add a <code>\\</code> to signal that the following quote is not the end of the string, but should instead appear inside the string. This is called escaping.
 
 # --hints--
 

@@ -4,6 +4,7 @@ title: Attach a Fallback value to a CSS Variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
+dashedName: attach-a-fallback-value-to-a-css-variable
 ---
 
 # --description--
@@ -18,7 +19,7 @@ Here's how you do it:
 background: var(--penguin-skin, black);
 ```
 
-This will set background to black if your variable wasn't set. Note that this can be useful for debugging.
+This will set background to `black` if your variable wasn't set. Note that this can be useful for debugging.
 
 # --instructions--
 

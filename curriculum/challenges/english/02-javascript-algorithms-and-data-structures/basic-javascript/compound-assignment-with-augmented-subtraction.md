@@ -4,6 +4,7 @@ title: Compound Assignment With Augmented Subtraction
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
+dashedName: compound-assignment-with-augmented-subtraction
 ---
 
 # --description--

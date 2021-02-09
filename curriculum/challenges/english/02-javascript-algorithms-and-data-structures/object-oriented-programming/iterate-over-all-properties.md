@@ -3,6 +3,7 @@ id: 587d7daf367417b2b2512b7d
 title: Iterate Over All Properties
 challengeType: 1
 forumTopicId: 301320
+dashedName: iterate-over-all-properties
 ---
 
 # --description--
@@ -43,16 +44,16 @@ Add all of the `own` properties of `beagle` to the array `ownProps`. Add all of 
 
 # --hints--
 
-The `ownProps` array should include `"name"`.
+The `ownProps` array should only contain `"name"`.
 
 ```js
-assert(ownProps.indexOf('name') !== -1);
+assert.deepEqual(ownProps, ['name']);
 ```
 
-The `prototypeProps` array should include `"numLegs"`.
+The `prototypeProps` array should only contain `"numLegs"`.
 
 ```js
-assert(prototypeProps.indexOf('numLegs') !== -1);
+assert.deepEqual(prototypeProps, ['numLegs']);
 ```
 
 You should solve this challenge without using the built in method `Object.keys()`.

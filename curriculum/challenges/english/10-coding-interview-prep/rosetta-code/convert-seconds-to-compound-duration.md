@@ -3,6 +3,7 @@ id: 596fd036dc1ab896c5db98b1
 title: Convert seconds to compound duration
 challengeType: 5
 forumTopicId: 302236
+dashedName: convert-seconds-to-compound-duration
 ---
 
 # --description--

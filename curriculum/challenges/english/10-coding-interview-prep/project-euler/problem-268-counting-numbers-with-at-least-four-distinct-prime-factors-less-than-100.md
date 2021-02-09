@@ -5,6 +5,8 @@ title: >-
   than 100
 challengeType: 5
 forumTopicId: 301917
+dashedName: >-
+  problem-268-counting-numbers-with-at-least-four-distinct-prime-factors-less-than-100
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4461000cf542c50ff59
 title: 'Problem 218: Perfect right-angled triangles'
 challengeType: 5
 forumTopicId: 301860
+dashedName: problem-218-perfect-right-angled-triangles
 ---
 
 # --description--

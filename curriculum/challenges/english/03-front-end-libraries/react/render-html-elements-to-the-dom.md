@@ -3,6 +3,7 @@ id: 5a24bbe0dba28a8d3cbd4c5f
 title: Render HTML Elements to the DOM
 challengeType: 6
 forumTopicId: 301406
+dashedName: render-html-elements-to-the-dom
 ---
 
 # --description--

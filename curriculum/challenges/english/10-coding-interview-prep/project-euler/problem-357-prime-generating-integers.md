@@ -3,6 +3,7 @@ id: 5900f4d11000cf542c50ffe4
 title: 'Problem 357: Prime generating integers'
 challengeType: 5
 forumTopicId: 302017
+dashedName: problem-357-prime-generating-integers
 ---
 
 # --description--

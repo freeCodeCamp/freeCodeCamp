@@ -3,6 +3,7 @@ id: 5900f52a1000cf542c51003c
 title: 'Problem 445: Retractions A'
 challengeType: 5
 forumTopicId: 302117
+dashedName: problem-445-retractions-a
 ---
 
 # --description--

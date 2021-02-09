@@ -3,6 +3,7 @@ id: 5900f3841000cf542c50fe97
 title: 'Problem 24: Lexicographic permutations'
 challengeType: 5
 forumTopicId: 301885
+dashedName: problem-24-lexicographic-permutations
 ---
 
 # --description--

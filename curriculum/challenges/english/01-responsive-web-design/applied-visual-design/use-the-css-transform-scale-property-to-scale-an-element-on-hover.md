@@ -4,6 +4,7 @@ title: Use the CSS Transform scale Property to Scale an Element on Hover
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLPJuM'
 forumTopicId: 301077
+dashedName: use-the-css-transform-scale-property-to-scale-an-element-on-hover
 ---
 
 # --description--

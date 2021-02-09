@@ -1,61 +1,57 @@
 ---
 id: 587d78af367417b2b2512b03
+title: 制作一个调查表格
 challengeType: 3
 forumTopicId: 301145
-title: 制作一个调查表格
+dashedName: build-a-survey-form
 ---
 
-## Description
-<section id='description'>
-<strong>目标：</strong>使用 <a href='https://codepen.io' target='_blank'>CodePen.io</a> 搭建一个与这个功能上相似的 app：<a href='https://codepen.io/freeCodeCamp/full/VPaoNP' target='_blank'>https://codepen.io/freeCodeCamp/full/VPaoNP</a>。
-在满足以下<a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>需求</a>并能通过所有测试的前提下，你可以根据自己的喜好来美化你的 app。
-你可以使用 HTML、JavaScript 以及 CSS 来完成项目。由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。你也可以使用 Bootstrap 或者 SASS。我们不推荐你在这个项目中使用其他技术（比如 jQurey、React、Angular 或 Vue），否则，如果在编码中出现问题，你需要自行解决。在后续的其他项目中，你将有机会使用各种技术栈（比如 React）。如果你在使用上述推荐的技术栈编码的过程中发现问题，请提交给我们来处理。祝你编码愉快！
-<strong>需求 1：</strong>我能看见一个 H1 标签大小<code>id="title"</code>属性的标题。
-<strong>需求 2：</strong>我能看见一段 P 标签大小且带有<code>id="description"</code>属性的简述文字。
-<strong>需求 3：</strong>我能看见一个<code>id="survey-form"</code>的<code>form</code>。
-<strong>需求 4：</strong>在表单元素内，我需要在<code>id="name"</code>的字段中输入我的名字。
-<strong>需求 5：</strong>在表单元素内，我需要在<code>id="email"</code>的字段中输入邮箱。
-<strong>需求 6：</strong>如果我输入了格式不正确的邮箱，我将会看见 HTML5 验证错误信息
-<strong>需求 7：</strong>在表单内，我可以在<code>id="number"</code>的字段中输入数字。
-<strong>需求 8：</strong>如果我在数字输入框内输入非数字，我将会看见 HTML5 验证错误信息
-<strong>需求 9：</strong>如果我输入的数字超出了范围（使用<code>min</code>和<code>max</code>属性定义），我将会看见 HTML5 验证错误信息
-<strong>需求 10：</strong>对于表单中的名称，邮箱和数字输入框应该使用对应 id 为<code>id="name-label"</code>、<code>id="email-label"</code>、<code>id="number-label"</code>的描述标签。
-<strong>需求 11：</strong>在表单中的名称，邮箱和数字输入框中，我能看到各自的描述文字作为占位符。
-<strong>需求 12：</strong>在表单元素内，我可以在<code>id="dropdown"</code>的下拉列表中选择一个选项。
-<strong>需求 13：</strong>在表单元素内，我可以从一组或多组单选按钮中选择一个字段。每组使用<code>name</code>属性进行分组。
-<strong>需求 14：</strong>在表单元素内，我可以从一系列复选框中选择几个字段，每个复选框都必须具有 value 属性。
-<strong>需求 15：</strong>在表单元素内，我能看见在最后有个<code>textarea</code>用于附加注释。
-<strong>需求 16：</strong>在表单元素内，我能看见一个<code>id="submit"</code>的按钮，用于提交我所有的输入。
-你可以通过 fork 这个项目 <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>CodePen</a> 来构建你的项目，也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>。
-完成项目并通过所有测试后，输入你的项目在 CodePen 上的链接。
-完成之后，将你的 URL 提交到相应的项目，并测试通过。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-</section>
+**目标：**在 [CodePen.io](https://codepen.io) 上创建一个与这个功能类似的 app：<https://codepen.io/freeCodeCamp/full/VPaoNP>。
 
-## Tests
-<section id='tests'>
+在满足以下 [需求](https://en.wikipedia.org/wiki/User_story) 并能通过所有测试的前提下， 你可以根据自己的喜好来美化你的 app。
 
-```yml
-tests: []
+你可以使用 HTML、JavaScript 以及 CSS 来完成项目。 由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。 你也可以使用 Bootstrap 或者 SASS。 我们不推荐你在这个项目中使用其他技术（比如 jQuery、React、Angular 或 Vue）。 在后续的其他项目中，你将有机会使用像是 React 等其他技术栈。 我们会接受并尝试修复你在使用推荐技术栈创建项目时报告的问题。 祝你编码愉快！
 
-```
+**需求 1：**此 app 中应存在一个 `id="title"` 的大小为 H1 的标题。
 
-</section>
+**需求 2：**此 app 中应存在一段 `id="description"` 的大小为 P 的短小的描述。
 
-## Challenge Seed
-<section id='challengeSeed'>
+**需求 3：**此 app 中应存在一个 `id="survey-form"` 的 `form` 元素。
 
-</section>
+**需求 4：**在表单元素内，应存在 `id="name"` 的输入框（必填项），以便用户输入姓名。
 
-## Solution
-<section id='solution'>
+**需求 5：**在表单元素内，应存在 `id="email"` 的输入框（必填项），以便用户输入邮箱。
 
-```js
+**需求 6：**如果用户输入了格式不正确的邮箱，则应出现来自 HTML5 表单数据校验的错误信息。
+
+**需求 7：**在表单内，用户应可以在 `id="number"` 的输入框中输入数字。
+
+**需求 8：**如果用户在数字输入框内输入非数字内容，则应出现来自 HTML5 表单数据校验的错误信息。
+
+**需求 9：**如果用户输入的数字超出了使用 `min` 和 `max` 属性定义的范围，则应出现来自 HTML5 表单数据校验的错误信息。
+
+**需求 10：**表单中的姓名、邮箱和数字输入框需有对应的包含描述输入框用途的标签。这些标签的 id 应分别为 `id="name-label"`、`id="email-label"` 和 `id="number-label"`。
+
+**需求 11：**表单中的姓名、邮箱和数字输入框需有对应的描述文字作为占位符。
+
+**需求 12：**在表单元素内，应存在一个 `id="dropdown"` 的下拉列表，用户可以从中选取一个选项。
+
+**需求 13：**在表单元素内，应至少存在一组单选按钮，用户可以从中选取一个选项。 每组应使用 `name` 属性进行分组。
+
+**需求 14：**在表单元素内，应存在几个复选框，且每个复选框都应有 `value` 属性。
+
+**需求 15：**在表单元素的最后，应存在一个 `textarea` 元素，以便用户输入额外的批注。
+
+**需求 16：**在表单元素内，应存在一个 `id="submit"` 的按钮，以便用户提交表单。
+
+你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来创建你的项目。 也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+
+完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
+
+# --solutions--
+
+```html
 // solution required
 ```
-
-</section>
-              

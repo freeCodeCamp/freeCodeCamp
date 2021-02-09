@@ -3,6 +3,7 @@ id: 5900f3a31000cf542c50feb6
 title: 'Problem 55: Lychrel numbers'
 challengeType: 5
 forumTopicId: 302166
+dashedName: problem-55-lychrel-numbers
 ---
 
 # --description--

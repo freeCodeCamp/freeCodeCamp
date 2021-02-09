@@ -3,6 +3,7 @@ id: 587d7db9367417b2b2512ba6
 title: Specify Only the Lower Number of Matches
 challengeType: 1
 forumTopicId: 301366
+dashedName: specify-only-the-lower-number-of-matches
 ---
 
 # --description--

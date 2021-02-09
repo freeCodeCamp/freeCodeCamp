@@ -4,7 +4,6 @@ import { createTypes } from '../../../../utils/stateManagement';
 
 import { createPoly } from '../../../../../utils/polyvinyl';
 import { getLines } from '../../../../../utils/get-lines';
-import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
@@ -30,7 +29,6 @@ const initialState = {
     id: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
-    introPath: '',
     challengeType: -1
   },
   challengeTests: [],
@@ -90,15 +88,12 @@ export const types = createTypes(
 
     'setEditorFocusability',
     'toggleVisibleEditor',
-    'setAccessibilityMode',
-
-    'lastBlockChalSubmitted'
+    'setAccessibilityMode'
   ],
   ns
 );
 
 export const epics = [
-  challengeModalEpic,
   codeLockEpic,
   completionEpic,
   createQuestionEpic,
@@ -174,10 +169,6 @@ export const setEditorFocusability = createAction(types.setEditorFocusability);
 export const toggleVisibleEditor = createAction(types.toggleVisibleEditor);
 export const setAccessibilityMode = createAction(types.setAccessibilityMode);
 
-export const lastBlockChalSubmitted = createAction(
-  types.lastBlockChalSubmitted
-);
-
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
@@ -196,6 +187,7 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 

@@ -3,6 +3,7 @@ id: 587d7b8e367417b2b2512b5c
 title: Understand Functional Programming Terminology
 challengeType: 1
 forumTopicId: 301240
+dashedName: understand-functional-programming-terminology
 ---
 
 # --description--

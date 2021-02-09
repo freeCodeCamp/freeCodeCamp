@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
 import { ObserveKeys } from 'react-hotkeys';
+import { withTranslation } from 'react-i18next';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
@@ -61,6 +62,7 @@ const propTypes = {
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
+  t: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -158,14 +160,16 @@ export class Project extends Component {
           fields: { blockName },
           title,
           description,
+          superBlock,
           videoId,
           question: { text, answers, solution }
         }
       },
       openCompletionModal,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
+      t,
       isChallengeCompleted
     } = this.props;
 
@@ -176,17 +180,22 @@ export class Project extends Component {
           this.handleSubmit(solution, openCompletionModal);
         }}
         innerRef={c => (this._container = c)}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
           <Grid>
             <Row>
               <Spacer />
-              <ChallengeTitle isCompleted={isChallengeCompleted}>
-                {blockNameTitle}
+              <ChallengeTitle
+                block={blockName}
+                isCompleted={isChallengeCompleted}
+                superBlock={superBlock}
+              >
+                {title}
               </ChallengeTitle>
 
               <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
@@ -222,7 +231,7 @@ export class Project extends Component {
                       rel='noopener noreferrer'
                       target='_blank'
                     >
-                      Help improve or add subtitles
+                      {t('learn.add-subtitles')}
                     </a>
                     .
                   </i>
@@ -239,7 +248,7 @@ export class Project extends Component {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label='Answer'
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -267,11 +276,9 @@ export class Project extends Component {
                   }}
                 >
                   {this.state.showWrong ? (
-                    <span>
-                      Sorry, that's not the right answer. Give it another try?
-                    </span>
+                    <span>{t('learn.wrong-answer')}</span>
                   ) : (
-                    <span>Click the button below to check your answer.</span>
+                    <span>{t('learn.check-answer')}</span>
                   )}
                 </div>
                 <Spacer />
@@ -283,7 +290,7 @@ export class Project extends Component {
                     this.handleSubmit(solution, openCompletionModal)
                   }
                 >
-                  Check your answer
+                  {t('buttons.check-answer')}
                 </Button>
                 <Spacer size={2} />
               </Col>
@@ -302,7 +309,7 @@ Project.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Project);
+)(withTranslation()(Project));
 
 export const query = graphql`
   query VideoChallenge($slug: String!) {
@@ -312,6 +319,7 @@ export const query = graphql`
       description
       challengeType
       helpCategory
+      superBlock
       fields {
         blockName
         slug

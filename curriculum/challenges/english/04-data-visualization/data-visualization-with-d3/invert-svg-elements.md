@@ -3,6 +3,7 @@ id: 587d7fa9367417b2b2512bd0
 title: Invert SVG Elements
 challengeType: 6
 forumTopicId: 301488
+dashedName: invert-svg-elements
 ---
 
 # --description--

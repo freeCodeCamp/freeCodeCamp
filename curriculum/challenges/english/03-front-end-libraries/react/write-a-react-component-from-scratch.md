@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036168
 title: Write a React Component from Scratch
 challengeType: 6
 forumTopicId: 301424
+dashedName: write-a-react-component-from-scratch
 ---
 
 # --description--

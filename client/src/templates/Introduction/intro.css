@@ -1,6 +1,252 @@
+.super-block-intro-page p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.17rem;
+}
+
+.big-subheading {
+  font-size: 2rem;
+  overflow-wrap: break-word;
+}
+
+.big-block-title {
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+}
+
+.course-title {
+  font-size: 1.13rem;
+  overflow-wrap: break-word;
+}
+
+.block-description pre {
+  display: inline;
+  padding: 0;
+}
+
+.superBlock-image {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.block-ui {
+  height: 100%;
+  list-style: none;
+  color: var(--secondary-color);
+  padding: 0;
+}
+
+.block-ui a {
+  text-decoration: none;
+}
+
+.map-title {
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+button.map-title {
+  cursor: pointer;
+  padding: 18px 15px;
+}
+
+.map-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.map-challenge-wrap > a,
+.map-project-wrap > a {
+  display: flex;
+}
+
+.map-project-wrap > a {
+  justify-content: space-between;
+}
+
+.map-project-checkmark {
+  margin-right: 7px;
+  padding-left: 15px;
+}
+
+.block .map-cert-title {
+  display: flex;
+  align-items: center;
+  padding: 18px 8px;
+  background: var(--secondary-background);
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.block .no-cursor {
+  cursor: default;
+}
+
+.block .no-cursor h3 {
+  cursor: text;
+}
+
+.block .map-is-cert:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.block-ui .block {
+  background: var(--primary-background);
+}
+
+.block-ui .block .big-block-title {
+  padding: 25px 15px 10px;
+}
+.block-ui .block .block-description {
+  padding: 0 15px 15px;
+  border-bottom: 3px solid var(--secondary-background);
+}
+
+.map-cert-title > h3 {
+  font-size: 1.17rem;
+  margin: 0 0 0 15px;
+}
+
+.map-cert-title > svg {
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  min-width: 25px;
+}
+
+.map-title > h4 {
+  margin: 0;
+}
+
+.map-title-completed {
+  margin-left: auto;
+  min-width: 100px;
+  padding-left: 20px;
+}
+
+.map-title-completed-big {
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 20px;
+  position: relative;
+  top: 4px;
+}
+
+.map-title svg {
+  width: 14px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  fill: var(--color-quaternary) !important;
+  stroke: var(--color-quaternary);
+}
+
+.map-title svg:first-child {
+  transform: rotate(90deg);
+}
+
+.open > .map-title svg:first-child {
+  transform: rotate(-90deg);
+}
+
+.map-challenges-ul {
+  padding-inline-start: 0;
+}
+
+.map-challenge-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1.13rem;
+}
+
+.map-challenge-title a {
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.block-description {
+  padding: 18px 0;
+}
+
+.block-description > p:last-child {
+  margin-bottom: 0;
+}
+
+a.translation-banner {
+  position: fixed;
+  top: var(--header-height);
+  background-color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  width: 100vw;
+  font-weight: 700;
+  font-size: 1rem;
+  z-index: 10;
+  color: var(--gray-00);
+  text-decoration: none;
+}
+
+a.translation-banner * {
+  margin: 0px;
+  color: var(--gray-00);
+}
+
+a.translation-banner span {
+  text-decoration: underline;
+}
+
+a.translation-banner:hover {
+  text-decoration: none;
+}
+
+a.translation-banner:hover span {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .super-block-intro-page p {
+    font-size: 1rem;
+  }
+
+  .big-subheading {
+    font-size: 1.35rem;
+  }
+
+  .big-block-title {
+    font-size: 1.17rem;
+  }
+
+  .course-title,
+  .map-cert-title,
+  .map-challenge-title {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .intro-layout-container {
     padding: 0 10px;
+  }
+
+  button.map-title {
+    width: 100%;
+  }
+
+  .map-challenge-title {
+    max-width: 100%;
+  }
+
+  .map-title-completed {
+    flex-shrink: 0;
+    padding-left: 15px;
   }
 }
 

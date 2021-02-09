@@ -1,47 +1,49 @@
 ---
 id: 5a9036ee38fddaf9a66b5d34
+title: 使用 CSS 网格单位来更改列和行的大小
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
 forumTopicId: 301134
-title: 使用 CSS 网格单位来更改列和行的大小
+dashedName: use-css-grid-units-to-change-the-size-of-columns-and-rows
 ---
 
-## Description
-<section id='description'>
-在 CSS 网格中，可以使用绝对定位和相对定位单位如<code>px</code>和<code>em</code>来确定行或列的大小。下面的单位也可以使用：
-<code>fr</code>：设置列或行占剩余空间的一个比例，
-<code>auto</code>：设置列宽或行高自动等于它的内容的宽度或高度，
-<code>%</code>：将列或行调整为它的容器宽度或高度的百分比，
-最右侧的预览区中的效果通过下面的代码实现：
+# --description--
+
+在 CSS 网格中，可以使用绝对单位（如 `px`）或相对单位（如 `em`）来定义行或列的大小。 下面的单位也可以使用：
+
+`fr`：设置列或行占剩余空间的比例，
+
+`auto`：设置列宽或行高自动等于它的内容的宽度或高度，
+
+`%`：将列或行调整为它的容器宽度或高度的百分比，
+
+以下代码为右侧预览区中的效果：
 
 ```css
 grid-template-columns: auto 50px 10% 2fr 1fr;
 ```
 
-这段代码添加了五个列。第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。
-</section>
+这段代码添加了五个列。 第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。
 
-## Instructions
-<section id='instructions'>
-生成一个包含三列的网格，每列宽度分别为：1fr，100px，和 2fr。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+生成一个包含三列的网格，每列宽度分别为：1fr、100px、2fr。
 
-```yml
-tests:
-  - text: '<code>container</code>类应该有<code>grid-template-columns</code>属性，且生成宽为<code>1fr, 100px</code>和<code>2fr</code>的三列。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi));'
+# --hints--
 
+class 为 `container` 的元素应具有 `grid-template-columns` 属性且属性值应为 `1fr 100px 2fr`。
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -50,21 +52,21 @@ tests:
   .d3{background:PaleTurquoise;}
   .d4{background:LightPink;}
   .d5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     width: 100%;
     background: LightGray;
     display: grid;
-    /* 请修改本行以下的代码 */
-    
+    /* Only change code below this line */
+
     grid-template-columns: auto 50px 10% 2fr 1fr;
-    
-    /* 请修改本行以上的代码 */
+
+    /* Only change code above this line */
     grid-template-rows: 50px 50px;
   }
 </style>
-  
+
 <div class="container">
   <div class="d1">1</div>
   <div class="d2">2</div>
@@ -74,19 +76,8 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>.container {grid-template-columns: 1fr 100px 2fr;}</style>
 ```
-
-</section>
-              

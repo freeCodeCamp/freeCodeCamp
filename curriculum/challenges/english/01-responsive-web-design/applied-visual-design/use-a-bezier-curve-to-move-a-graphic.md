@@ -4,6 +4,7 @@ title: Use a Bezier Curve to Move a Graphic
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bnRCK'
 forumTopicId: 301071
+dashedName: use-a-bezier-curve-to-move-a-graphic
 ---
 
 # --description--
@@ -30,7 +31,7 @@ assert(
 );
 ```
 
-The element with the id `red` should no longer have the `animation-timing-function` property of linear.
+The element with the id `red` should no longer have the `animation-timing-function` property of `linear`.
 
 ```js
 assert($('#red').css('animation-timing-function') !== 'linear');

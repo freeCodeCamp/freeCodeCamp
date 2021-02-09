@@ -3,6 +3,7 @@ id: 5900f4621000cf542c50ff75
 title: 'Problem 246: Tangents to an ellipse'
 challengeType: 5
 forumTopicId: 301893
+dashedName: problem-246-tangents-to-an-ellipse
 ---
 
 # --description--

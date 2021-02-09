@@ -3,6 +3,7 @@ id: 59694356a6e7011f7f1c5f4e
 title: Deal cards for FreeCell
 challengeType: 5
 forumTopicId: 302246
+dashedName: deal-cards-for-freecell
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4c11000cf542c50ffd3
 title: 'Problem 341: Golomb''s self-describing sequence'
 challengeType: 5
 forumTopicId: 302000
+dashedName: problem-341-golombs-self-describing-sequence
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Add Different Margins to Each Side of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4RWh4'
 forumTopicId: 16633
+dashedName: add-different-margins-to-each-side-of-an-element
 ---
 
 # --description--

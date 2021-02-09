@@ -3,6 +3,7 @@ id: 587d824f367417b2b2512c5a
 title: Run Functional Tests on an API Response using Chai-HTTP III - PUT method
 challengeType: 2
 forumTopicId: 301590
+dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-method
 ---
 
 # --description--
@@ -127,8 +128,6 @@ You should test for 'res.body.surname' to be 'Colombo'.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

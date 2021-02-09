@@ -1,16 +1,20 @@
 ---
 id: 587d778b367417b2b2512aa8
+title: 添加可访问的日期选择器
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 forumTopicId: 301008
-title: 添加可访问的日期选择器
+dashedName: add-an-accessible-date-picker
 ---
 
-## Description
-<section id='description'>
-表单中经常出现<code>input</code>标签，它可以用来创建多种表单控件。它的<code>type</code>属性指定了所要创建的<code>input</code>标签类型。
-在以前的挑战中，你可能已经见过<code>text</code>与<code>submit</code>类型的<code>input</code>标签，HTML5 引入了<code>date</code>类型来创建时间选择器。依赖于浏览器的支持，当点击<code>input</code>标签时，时间选择器会显示出来，这可以让用户填写表单更加容易。
-对于旧版本的浏览器，<code>type</code>属性的默认值是<code>text</code>。这种情况下，可以利用<code>label</code>标签或者占位文本来提示用户<code>input</code>标签的输入类型为日期。
+# --description--
+
+表单中经常出现 `input` 标签，它可以用来创建多种表单控件。 它的 `type` 属性指定了所要创建的 `input` 标签类型。
+
+在以前的挑战中，我们已经见过 `text` 与 `submit` 类型的 input 标签。 HTML5 规范添加了 `date` 类型来创建日期选择器。 如果浏览器支持，在点击 `input` 标签时，日期选择器会显示出来，这让用户填写表单变得更加容易。
+
+对于较老的浏览器，类型将默认为 `text`， 这样它可以通过 `label` 或 `placeholder` 文本向用户显示预期的日期格式。
+
 举个例子：
 
 ```html
@@ -18,35 +22,39 @@ title: 添加可访问的日期选择器
 <input type="date" id="input1" name="input1">
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时间。请为 Camper Cat 的页面添加一个<code>input</code>标签，其<code>type</code>属性值为 date，<code>id</code>属性为 pickdate，<code>name</code>属性为 date。
-</section>
+Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时间。 请为 Camper Cat 的页面添加一个`input` 标签，起 `type` 属性值为 `date`，`id` 属性为 `pickdate`，`name` 属性为 `date`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '你的代码中应该有 1 个<code>input</code>标签。'
-    testString: assert($('input').length == 2);
-  - text: '你的<code>input</code>标签的<code>type</code>属性值应该为 date。'
-    testString: assert($('input').attr('type') == 'date');
-  - text: '你的<code>input</code>标签的<code>id</code>属性值应该为 pickdate。'
-    testString: assert($('input').attr('id') == 'pickdate');
-  - text: '你的<code>input</code>标签的<code>name</code>属性值应该为 date。'
-    testString: assert($('input').attr('name') == 'date');
+日期选择器应有一个 `input` 标签。
 
+```js
+assert($('input').length == 2);
 ```
 
-</section>
+`input` 标签应有一个值为 `date` 的 `type` 属性。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('input').attr('type') == 'date');
+```
 
-<div id='html-seed'>
+`input` 标签应有一个值为 `pickdate` 的 `id` 属性。
+
+```js
+assert($('input').attr('id') == 'pickdate');
+```
+
+`input` 标签应有一个值为 `date` 的 `name` 属性。
+
+```js
+assert($('input').attr('name') == 'date');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -59,13 +67,13 @@ tests:
       <form>
         <p>Tell us the best date for the competition</p>
         <label for="pickdate">Preferred Date:</label>
-        
-        <!-- Add your code below this line -->
+
+        <!-- Only change code below this line -->
 
 
 
-        <!-- Add your code above this line -->
-        
+        <!-- Only change code above this line -->
+
         <input type="submit" name="submit" value="Submit">
       </form>
     </section>
@@ -74,18 +82,24 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-// solution required
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Mortal Kombat Tournament Survey</h2>
+      <form>
+        <p>Tell us the best date for the competition</p>
+        <label for="pickdate">Preferred Date:</label>
+        <input type="date" id="pickdate" name="date">
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
 ```
-
-</section>
-              

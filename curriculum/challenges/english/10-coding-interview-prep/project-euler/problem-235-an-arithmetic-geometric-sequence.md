@@ -3,6 +3,7 @@ id: 5900f4571000cf542c50ff6a
 title: 'Problem 235: An Arithmetic Geometric sequence'
 challengeType: 5
 forumTopicId: 301879
+dashedName: problem-235-an-arithmetic-geometric-sequence
 ---
 
 # --description--

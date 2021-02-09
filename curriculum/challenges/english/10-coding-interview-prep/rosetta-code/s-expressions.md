@@ -3,6 +3,7 @@ id: 59667989bf71cf555dd5d2ff
 title: S-Expressions
 challengeType: 5
 forumTopicId: 302303
+dashedName: s-expressions
 ---
 
 # --description--
@@ -21,9 +22,9 @@ Newlines and other whitespace may be ignored unless contained within a quoted st
 
 Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be treated as a string "`foo"bar`", or as an error.
 
-For this, the reader need not recognize "`\`" for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
+For this, the reader need not recognize "<code>\\</code>" for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
 
-Note that with the exception of "`()"`" ("`\`" if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
+Note that with the exception of "`()"`" ("<code>\\</code>" if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
 
 The reader should be able to read the following input
 

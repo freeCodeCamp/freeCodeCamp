@@ -3,6 +3,7 @@ id: 58a25bcef9fc0f352b528e7c
 title: Understand BCrypt Hashes
 challengeType: 2
 forumTopicId: 301586
+dashedName: understand-bcrypt-hashes
 ---
 
 # --description--
@@ -59,8 +60,6 @@ BCrypt should be properly required.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

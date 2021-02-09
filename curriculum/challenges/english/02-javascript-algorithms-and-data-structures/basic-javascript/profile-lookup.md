@@ -4,6 +4,7 @@ title: Profile Lookup
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
+dashedName: profile-lookup
 ---
 
 # --description--

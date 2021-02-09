@@ -4,6 +4,7 @@ title: Override Class Declarations by Styling ID Attributes
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
+dashedName: override-class-declarations-by-styling-id-attributes
 ---
 
 # --description--
@@ -30,7 +31,7 @@ Create a CSS declaration for your `orange-text` id in your `style` element. Here
 }
 ```
 
-**Note:** It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
+**Note:** It doesn't matter whether you declare this CSS above or below `pink-text` class, since the `id` attribute will always take precedence.
 
 # --hints--
 

@@ -4,6 +4,7 @@ title: Assignment with a Returned Value
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
+dashedName: assignment-with-a-returned-value
 ---
 
 # --description--

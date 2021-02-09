@@ -3,6 +3,7 @@ id: 587d7fad367417b2b2512be2
 title: Change Text with click Events
 challengeType: 6
 forumTopicId: 301500
+dashedName: change-text-with-click-events
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a661e0f1068aca922b3ef17
 title: Access an Array's Contents Using Bracket Notation
 challengeType: 1
 forumTopicId: 301149
+dashedName: access-an-arrays-contents-using-bracket-notation
 ---
 
 # --description--

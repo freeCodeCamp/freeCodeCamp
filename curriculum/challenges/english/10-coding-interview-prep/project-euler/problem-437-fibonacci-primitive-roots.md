@@ -3,6 +3,7 @@ id: 5900f5241000cf542c510036
 title: 'Problem 437: Fibonacci primitive roots'
 challengeType: 5
 forumTopicId: 302108
+dashedName: problem-437-fibonacci-primitive-roots
 ---
 
 # --description--

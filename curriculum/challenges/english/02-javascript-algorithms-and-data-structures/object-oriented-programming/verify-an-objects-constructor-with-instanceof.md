@@ -3,6 +3,7 @@ id: 587d7dae367417b2b2512b7a
 title: Verify an Object's Constructor with instanceof
 challengeType: 1
 forumTopicId: 301337
+dashedName: verify-an-objects-constructor-with-instanceof
 ---
 
 # --description--

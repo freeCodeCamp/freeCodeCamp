@@ -10,7 +10,7 @@ const selectors = {
 const certifications = [
   'Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
-  'Front End Libraries',
+  'Front End Development Libraries',
   'Data Visualization',
   'APIs and Microservices',
   'Quality Assurance',
@@ -25,14 +25,14 @@ describe('Landing page', () => {
     cy.visit('/');
     cy.title().should(
       'eq',
-      'Learn to Code for Free – Coding Courses for Busy People'
+      'Learn to Code — For Free — Coding Courses for Busy People'
     );
     cy.contains(selectors.callToAction, "Get started (it's free)");
     cy.get(selectors.callToAction).should('have.length', 2);
   });
 
   it('Has visible header and sub-header', () => {
-    cy.contains(selectors.heading, 'Learn to code at home.');
+    cy.contains(selectors.heading, 'Learn to code — for free.');
     cy.contains('Build projects.').should('be.visible');
     cy.contains('Earn certifications.').should('be.visible');
 

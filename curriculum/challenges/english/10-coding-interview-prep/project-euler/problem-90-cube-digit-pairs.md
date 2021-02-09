@@ -3,6 +3,7 @@ id: 5900f3c61000cf542c50fed9
 title: 'Problem 90: Cube digit pairs'
 challengeType: 5
 forumTopicId: 302207
+dashedName: problem-90-cube-digit-pairs
 ---
 
 # --description--

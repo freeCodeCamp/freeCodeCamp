@@ -3,6 +3,7 @@ id: 8d1323c8c441eddfaeb5bdef
 title: Create a Set Class
 challengeType: 1
 forumTopicId: 301632
+dashedName: create-a-set-class
 ---
 
 # --description--
@@ -165,7 +166,7 @@ class Set {
 
   // This method will return all the values in the set
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
 
   // Only change code below this line
@@ -188,12 +189,12 @@ class Set {
   }
 
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
 
   add(element) {
     if (!this.has(element)) {
-      this.dictionary[element] = true;
+      this.dictionary[element] = element;
       this.length++;
       return true;
     }

@@ -3,6 +3,7 @@ id: 587d7fb6367417b2b2512c07
 title: Create a Model
 challengeType: 2
 forumTopicId: 301535
+dashedName: create-a-model
 ---
 
 # --description--
@@ -75,8 +76,6 @@ Creating an instance from a mongoose schema should succeed
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

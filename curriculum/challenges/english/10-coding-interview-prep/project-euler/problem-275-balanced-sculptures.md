@@ -3,6 +3,7 @@ id: 5900f4801000cf542c50ff92
 title: 'Problem 275: Balanced Sculptures'
 challengeType: 5
 forumTopicId: 301925
+dashedName: problem-275-balanced-sculptures
 ---
 
 # --description--

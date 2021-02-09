@@ -3,6 +3,7 @@ id: aa7697ea2477d1316795783b
 title: Pig Latin
 challengeType: 5
 forumTopicId: 16039
+dashedName: pig-latin
 ---
 
 # --description--

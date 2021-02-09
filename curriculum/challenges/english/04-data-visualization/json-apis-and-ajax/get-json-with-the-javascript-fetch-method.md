@@ -3,6 +3,7 @@ id: 5ccfad82bb2dc6c965a848e5
 title: Get JSON with the JavaScript fetch method
 challengeType: 6
 forumTopicId: 301501
+dashedName: get-json-with-the-javascript-fetch-method
 ---
 
 # --description--
@@ -48,7 +49,7 @@ Your code should use `then` to convert the response to JSON.
 ```js
 assert(
   code.match(
-    /\.then\s*\(\s*(response|\(\s*response\s*\))\s*=>\s*response\s*\.json\s*\(\s*\)\s*\)/g
+    /\.then\s*\(\s*\(?(?<var>\w+)\)?\s*=>\s*\k<var>\s*\.json\s*\(\s*\)\s*\)/g
   )
 );
 ```

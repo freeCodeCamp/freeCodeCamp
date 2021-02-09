@@ -3,6 +3,7 @@ id: 5900f4021000cf542c50ff13
 title: 'Problem 149: Searching for a maximum-sum subsequence'
 challengeType: 5
 forumTopicId: 301778
+dashedName: problem-149-searching-for-a-maximum-sum-subsequence
 ---
 
 # --description--

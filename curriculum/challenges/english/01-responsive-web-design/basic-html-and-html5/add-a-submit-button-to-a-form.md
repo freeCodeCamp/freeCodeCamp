@@ -4,6 +4,7 @@ title: Add a Submit Button to a Form
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
 forumTopicId: 16627
+dashedName: add-a-submit-button-to-a-form
 ---
 
 # --description--
@@ -16,11 +17,11 @@ Here's an example submit button:
 
 # --instructions--
 
-Add a button as the last element of your `form` element with a type of `submit`, and "Submit" as its text.
+Add a button as the last element of your `form` element with a type of `submit`, and `Submit` as its text.
 
 # --hints--
 
-Your form should have a button inside it.
+Your `form` should have a `button` inside it.
 
 ```js
 assert($('form').children('button').length > 0);

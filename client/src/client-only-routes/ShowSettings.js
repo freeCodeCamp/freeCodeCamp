@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { apiLocation, homeLocation } from '../../config/env.json';
+import { apiLocation } from '../../../config/env.json';
 import {
   signInLoadingSelector,
   userSelector,
@@ -14,6 +14,7 @@ import {
 } from '../redux';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
+import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow, Loader, Spacer } from '../components/helpers';
 import About from '../components/settings/About';
@@ -24,6 +25,7 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
+import { User } from '../redux/propTypes';
 
 import { StaticQuery, graphql } from 'gatsby';
 import { dasherize } from '../../../utils/slugs';
@@ -39,57 +41,7 @@ const propTypes = {
   updateIsHonest: PropTypes.func.isRequired,
   updatePortfolio: PropTypes.func.isRequired,
   updateQuincyEmail: PropTypes.func.isRequired,
-  user: PropTypes.shape({
-    about: PropTypes.string,
-    completedChallenges: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        solution: PropTypes.string,
-        githubLink: PropTypes.string,
-        challengeType: PropTypes.number,
-        completedDate: PropTypes.number,
-        files: PropTypes.array
-      })
-    ),
-    email: PropTypes.string,
-    githubProfile: PropTypes.string,
-    is2018DataVisCert: PropTypes.bool,
-    isApisMicroservicesCert: PropTypes.bool,
-    isBackEndCert: PropTypes.bool,
-    isDataVisCert: PropTypes.bool,
-    isEmailVerified: PropTypes.bool,
-    isFrontEndCert: PropTypes.bool,
-    isFrontEndLibsCert: PropTypes.bool,
-    isFullStackCert: PropTypes.bool,
-    isHonest: PropTypes.bool,
-    isInfosecQaCert: PropTypes.bool,
-    isQaCertV7: PropTypes.bool,
-    isInfosecCertV7: PropTypes.bool,
-    isJsAlgoDataStructCert: PropTypes.bool,
-    isRespWebDesignCert: PropTypes.bool,
-    isSciCompPyCertV7: PropTypes.bool,
-    isDataAnalysisPyCertV7: PropTypes.bool,
-    isMachineLearningPyCertV7: PropTypes.bool,
-    linkedin: PropTypes.string,
-    location: PropTypes.string,
-    name: PropTypes.string,
-    picture: PropTypes.string,
-    points: PropTypes.number,
-    portfolio: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string,
-        url: PropTypes.string,
-        image: PropTypes.string,
-        description: PropTypes.string
-      })
-    ),
-    sendQuincyEmail: PropTypes.bool,
-    theme: PropTypes.string,
-    twitter: PropTypes.string,
-    username: PropTypes.string,
-    website: PropTypes.string
-  }),
+  user: User,
   verifyCert: PropTypes.func.isRequired
 };
 
@@ -117,6 +69,7 @@ const mapDispatchToProps = {
 };
 
 export const ShowSettings = props => {
+  const { t } = useTranslation();
   const {
     createFlashMessage,
     isSignedIn,
@@ -170,13 +123,13 @@ export const ShowSettings = props => {
   }
 
   if (!isSignedIn) {
-    navigate(`${apiLocation}/signin?returnTo=${homeLocation}/settings`);
+    navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
 
   return (
     <Fragment>
-      <Helmet title='Settings | freeCodeCamp.org' />
+      <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Grid>
         <main>
           <Spacer size={2} />
@@ -188,12 +141,12 @@ export const ShowSettings = props => {
               className='btn-invert'
               href={`${apiLocation}/signout`}
             >
-              Sign me out of freeCodeCamp
+              {t('buttons.sign-me-out')}
             </Button>
           </FullWidthRow>
           <Spacer />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
-            {`Account Settings for ${username}`}
+            {t('settings.for', { username: username })}
           </h1>
           <About
             about={about}

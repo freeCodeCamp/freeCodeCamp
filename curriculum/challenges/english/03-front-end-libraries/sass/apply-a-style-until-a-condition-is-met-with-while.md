@@ -3,6 +3,7 @@ id: 587d7dbf367417b2b2512bbb
 title: Apply a Style Until a Condition is Met with @while
 challengeType: 0
 forumTopicId: 301454
+dashedName: apply-a-style-until-a-condition-is-met-with-while
 ---
 
 # --description--

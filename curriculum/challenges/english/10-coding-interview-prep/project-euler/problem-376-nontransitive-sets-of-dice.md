@@ -3,6 +3,7 @@ id: 5900f4e51000cf542c50fff7
 title: 'Problem 376: Nontransitive sets of dice'
 challengeType: 5
 forumTopicId: 302038
+dashedName: problem-376-nontransitive-sets-of-dice
 ---
 
 # --description--

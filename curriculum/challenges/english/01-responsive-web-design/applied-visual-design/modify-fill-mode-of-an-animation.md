@@ -4,6 +4,7 @@ title: Modify Fill Mode of an Animation
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJDmcE'
 forumTopicId: 301064
+dashedName: modify-fill-mode-of-an-animation
 ---
 
 # --description--

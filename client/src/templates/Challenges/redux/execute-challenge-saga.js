@@ -12,6 +12,7 @@ import {
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
 import escape from 'lodash/escape';
+import i18next from 'i18next';
 
 import {
   challengeDataSelector,
@@ -23,6 +24,7 @@ import {
   updateLogs,
   logsToConsole,
   updateTests,
+  openModal,
   isBuildEnabledSelector,
   disableBuildOnError,
   types
@@ -42,11 +44,12 @@ import {
 const previewTimeout = 2500;
 let previewTask;
 
-export function* executeCancellableChallengeSaga() {
+export function* executeCancellableChallengeSaga(payload) {
   if (previewTask) {
     yield cancel(previewTask);
   }
-  const task = yield fork(executeChallengeSaga);
+  // executeChallenge with payload containing isShouldCompletionModalOpen
+  const task = yield fork(executeChallengeSaga, payload);
   previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
 
   yield take(types.cancelTests);
@@ -57,7 +60,9 @@ export function* executeCancellablePreviewSaga() {
   previewTask = yield fork(previewChallengeSaga);
 }
 
-export function* executeChallengeSaga() {
+export function* executeChallengeSaga({
+  payload: isShouldCompletionModalOpen
+}) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -67,7 +72,7 @@ export function* executeChallengeSaga() {
 
   try {
     yield put(initLogs());
-    yield put(initConsole('// running tests'));
+    yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString })
@@ -92,10 +97,15 @@ export function* executeChallengeSaga() {
       document
     );
     const testResults = yield executeTests(testRunner, tests);
-
     yield put(updateTests(testResults));
-    yield put(updateConsole('// tests completed'));
-    yield put(logsToConsole('// console output'));
+
+    const challengeComplete = testResults.every(test => test.pass && !test.err);
+    if (challengeComplete && isShouldCompletionModalOpen) {
+      yield put(openModal('completion'));
+    }
+
+    yield put(updateConsole(i18next.t('learn.tests-completed')));
+    yield put(logsToConsole(i18next.t('learn.console-output')));
   } catch (e) {
     yield put(updateConsole(e));
   } finally {
@@ -205,6 +215,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
     }
   } catch (err) {
     if (err === 'timeout') {
+      // TODO: translate the error
       // eslint-disable-next-line no-ex-assign
       err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }

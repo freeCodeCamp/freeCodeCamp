@@ -3,6 +3,7 @@ id: 5e8f2f13c4cdbe86b5c72da2
 title: 'Natural Language Processing With RNNs: Training the Model'
 challengeType: 11
 videoId: hEUiK7j9UI8
+dashedName: natural-language-processing-with-rnns-training-the-model
 ---
 
 # --question--

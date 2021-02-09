@@ -3,11 +3,6 @@
 node_modules
 yarn-error.log
 
-config/env.json
-config/frame-runner.json
-config/sass-compile.json
-config/test-evaluator.json
-
 # Build directory
 /public
 .DS_Store

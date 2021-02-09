@@ -3,6 +3,7 @@ id: 5e7b9f060b6c005b0e76f05c
 title: Loops and Iterations
 challengeType: 11
 videoId: dLA-szNRnUY
+dashedName: loops-and-iterations
 ---
 
 # --question--
@@ -22,35 +23,27 @@ while True:
 
 ## --answers--
 
-0
-
+<pre>0
 1
-
-2
+2</pre>
 
 ---
 
-0
-
+<pre>0
 1
-
 2
-
-3
+3</pre>
 
 ---
 
-1
-
-2
+<pre>1
+2</pre>
 
 ---
 
-1
-
+<pre>1
 2
-
-3
+3</pre>
 
 ## --video-solution--
 

@@ -3,6 +3,7 @@ id: 5900f3d01000cf542c50fee3
 title: 'Problem 100: Arranged probability'
 challengeType: 5
 forumTopicId: 301724
+dashedName: problem-100-arranged-probability
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f40c1000cf542c50ff1e
 title: 'Problem 159: Digital root sums of factorisations'
 challengeType: 5
 forumTopicId: 301790
+dashedName: problem-159-digital-root-sums-of-factorisations
 ---
 
 # --description--

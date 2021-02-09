@@ -4,6 +4,7 @@ title: Use grid-column to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cnzkDSr'
 forumTopicId: 301136
+dashedName: use-grid-column-to-control-spacing
 ---
 
 # --description--

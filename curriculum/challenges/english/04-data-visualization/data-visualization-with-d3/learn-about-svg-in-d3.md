@@ -3,6 +3,7 @@ id: 587d7fa8367417b2b2512bcb
 title: Learn About SVG in D3
 challengeType: 6
 forumTopicId: 301489
+dashedName: learn-about-svg-in-d3
 ---
 
 # --description--

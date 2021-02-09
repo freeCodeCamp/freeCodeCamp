@@ -4,6 +4,7 @@ title: Use CSS Selectors to Style Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKMBT2'
 forumTopicId: 18349
+dashedName: use-css-selectors-to-style-elements
 ---
 
 # --description--
@@ -39,7 +40,7 @@ Delete your `h2` element's style attribute, and instead create a CSS `style` blo
 
 # --hints--
 
-The style attribute should be removed from your `h2` element.
+The `style` attribute should be removed from your `h2` element.
 
 ```js
 assert(!$('h2').attr('style'));

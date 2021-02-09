@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618c
 title: Use Array.filter() to Dynamically Filter an Array
 challengeType: 6
 forumTopicId: 301416
+dashedName: use-array-filter-to-dynamically-filter-an-array
 ---
 
 # --description--

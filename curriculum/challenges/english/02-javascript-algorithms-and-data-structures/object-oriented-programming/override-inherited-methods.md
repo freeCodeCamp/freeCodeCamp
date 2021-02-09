@@ -3,6 +3,7 @@ id: 587d7db1367417b2b2512b88
 title: Override Inherited Methods
 challengeType: 1
 forumTopicId: 301322
+dashedName: override-inherited-methods
 ---
 
 # --description--

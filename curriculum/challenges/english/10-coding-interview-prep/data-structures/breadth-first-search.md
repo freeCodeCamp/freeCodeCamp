@@ -3,6 +3,7 @@ id: 587d825c367417b2b2512c90
 title: Breadth-First Search
 challengeType: 1
 forumTopicId: 301622
+dashedName: breadth-first-search
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Updating Object Properties
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
+dashedName: updating-object-properties
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f50c1000cf542c51001e
 title: 'Problem 415: Titanic sets'
 challengeType: 5
 forumTopicId: 302084
+dashedName: problem-415-titanic-sets
 ---
 
 # --description--

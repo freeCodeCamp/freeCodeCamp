@@ -2,6 +2,7 @@
 id: 5e601bf95ac9d0ecd8b94afd
 title: Sudoku Solver
 challengeType: 4
+dashedName: sudoku-solver
 ---
 
 # --description--
@@ -16,11 +17,14 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 # --instructions--
 
--   All puzzle logic can go into `/controllers/sudoku-solver.js`
--   All routing logic can go into `/routes/api.js`
--   See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
--   To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- All puzzle logic can go into `/controllers/sudoku-solver.js`
+  - The `validate` function should take a given puzzle string and check it to see if it has 81 valid characters for the input.
+  - The `check` functions should be validating against the *current* state of the board.
+  - The `solve` function should handle solving any given valid puzzle string, not just the test inputs and solutions. You are expected to write out the logic to solve this.
+- All routing logic can go into `/routes/api.js`
+- See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
+- To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
+- To run the tests in the console, use the command `npm run test`. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
 Write the following tests in `tests/1_unit-tests.js`:
 
@@ -218,7 +222,7 @@ async (getUserInput) => {
 };
 ```
 
-If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error&#58; 'Expected puzzle to be 81 characters long' }`
+If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {
@@ -343,8 +347,6 @@ async (getUserInput) => {
   }
 };
 ```
-
-# --seed--
 
 # --solutions--
 

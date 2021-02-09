@@ -4,6 +4,7 @@ title: Shopping List
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9MEKHZ'
 forumTopicId: 18280
+dashedName: shopping-list
 ---
 
 # --description--

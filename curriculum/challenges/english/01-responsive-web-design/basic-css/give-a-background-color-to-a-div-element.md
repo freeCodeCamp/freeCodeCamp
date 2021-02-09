@@ -4,6 +4,7 @@ title: Give a Background Color to a div Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
+dashedName: give-a-background-color-to-a-div-element
 ---
 
 # --description--
@@ -20,7 +21,7 @@ For example, if you wanted an element's background color to be `green`, you'd pu
 
 # --instructions--
 
-Create a class called `silver-background` with the `background-color` of silver. Assign this class to your `div` element.
+Create a class called `silver-background` with the `background-color` of `silver`. Assign this class to your `div` element.
 
 # --hints--
 

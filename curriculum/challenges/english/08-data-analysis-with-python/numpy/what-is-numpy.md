@@ -3,6 +3,7 @@ id: 5e9a0a8e09c5df3cc3600ed2
 title: What is NumPy
 challengeType: 11
 videoId: 5Nwfs5Ej85Q
+dashedName: what-is-numpy
 ---
 
 # --question--

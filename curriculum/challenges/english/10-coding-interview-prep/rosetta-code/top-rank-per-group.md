@@ -3,6 +3,7 @@ id: 595011cba5a81735713873bd
 title: Top rank per group
 challengeType: 5
 forumTopicId: 302339
+dashedName: top-rank-per-group
 ---
 
 # --description--
@@ -46,6 +47,8 @@ Given the following data:
 one could rank the top-rated movie in each genre by calling
 
 `topRankPerGroup(1, data, 'genre', 'rating')`
+
+The function should return an array with an array for each group containing the top `n` objects.
 
 # --hints--
 

@@ -3,6 +3,7 @@ id: 587d824f367417b2b2512c59
 title: Run Functional Tests on API Endpoints using Chai-HTTP II
 challengeType: 2
 forumTopicId: 301592
+dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
 ---
 
 # --description--
@@ -62,8 +63,6 @@ You should test for 'res.text' == 'hello Guest'
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

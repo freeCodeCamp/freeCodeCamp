@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8005
 title: Sorting algorithms/Comb sort
 challengeType: 5
 forumTopicId: 302313
+dashedName: sorting-algorithmscomb-sort
 ---
 
 # --description--

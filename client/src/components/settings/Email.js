@@ -12,6 +12,7 @@ import {
   Button
 } from '@freecodecamp/react-bootstrap';
 import isEmail from 'validator/lib/isEmail';
+import { Trans, withTranslation } from 'react-i18next';
 
 import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
@@ -30,15 +31,17 @@ const propTypes = {
   email: PropTypes.string,
   isEmailVerified: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
+  t: PropTypes.func.isRequired,
   updateMyEmail: PropTypes.func.isRequired,
   updateQuincyEmail: PropTypes.func.isRequired
 };
 
 export function UpdateEmailButton() {
+  const { t } = this.props;
   return (
     <Link style={{ textDecoration: 'none' }} to='/update-email'>
       <Button block={true} bsSize='lg' bsStyle='primary'>
-        Edit
+        {t('buttons.edit')}
       </Button>
     </Link>
   );
@@ -83,6 +86,7 @@ class EmailSettings extends Component {
     const {
       emailForm: { newEmail, currentEmail }
     } = this.state;
+    const { t } = this.props;
 
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -93,7 +97,7 @@ class EmailSettings extends Component {
     if (newEmail === currentEmail) {
       return {
         state: 'error',
-        message: 'This email is the same as your current email'
+        message: t('validation.same-email')
       };
     }
     if (isEmail(newEmail)) {
@@ -101,9 +105,7 @@ class EmailSettings extends Component {
     } else {
       return {
         state: 'error',
-        message:
-          'We could not validate your email correctly, ' +
-          'please ensure it is correct'
+        message: t('validation.invalid-email')
       };
     }
   };
@@ -112,6 +114,7 @@ class EmailSettings extends Component {
     const {
       emailForm: { confirmNewEmail, newEmail }
     } = this.state;
+    const { t } = this.props;
 
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -123,7 +126,7 @@ class EmailSettings extends Component {
     if (maybeEmailRE.test(confirmNewEmail)) {
       return {
         state: isMatch ? 'success' : 'error',
-        message: isMatch ? '' : 'Both new email addresses must be the same'
+        message: isMatch ? '' : t('validation.email-mismatch')
       };
     } else {
       return {
@@ -137,7 +140,13 @@ class EmailSettings extends Component {
     const {
       emailForm: { newEmail, confirmNewEmail, currentEmail, isPristine }
     } = this.state;
-    const { isEmailVerified, updateQuincyEmail, sendQuincyEmail } = this.props;
+
+    const {
+      isEmailVerified,
+      updateQuincyEmail,
+      sendQuincyEmail,
+      t
+    } = this.props;
 
     const {
       state: newEmailValidation,
@@ -148,13 +157,12 @@ class EmailSettings extends Component {
       state: confirmEmailValidation,
       message: confirmEmailValidationMessage
     } = this.getValidationForConfirmEmail();
+
     if (!currentEmail) {
       return (
         <div>
           <FullWidthRow>
-            <p className='large-p text-center'>
-              You do not have an email associated with this account.
-            </p>
+            <p className='large-p text-center'>{t('settings.email.missing')}</p>
           </FullWidthRow>
           <FullWidthRow>
             <UpdateEmailButton />
@@ -164,18 +172,16 @@ class EmailSettings extends Component {
     }
     return (
       <div className='email-settings'>
-        <SectionHeader>Email Settings</SectionHeader>
+        <SectionHeader>{t('settings.email.heading')}</SectionHeader>
         {isEmailVerified ? null : (
           <FullWidthRow>
             <HelpBlock>
               <Alert bsStyle='info' className='text-center'>
-                Your email has not been verified.
+                {t('settings.email.not-verified')}
                 <br />
-                Please check your email, or{' '}
-                <Link to='/update-email'>
-                  request a new verification email here
-                </Link>
-                .
+                <Trans i18nKey='settings.email.check'>
+                  <Link to='/update-email' />
+                </Trans>
               </Alert>
             </HelpBlock>
           </FullWidthRow>
@@ -183,14 +189,14 @@ class EmailSettings extends Component {
         <FullWidthRow>
           <form id='form-update-email' onSubmit={this.handleSubmit}>
             <FormGroup controlId='current-email'>
-              <ControlLabel>Current Email</ControlLabel>
+              <ControlLabel>{t('settings.email.current')}</ControlLabel>
               <FormControl.Static>{currentEmail}</FormControl.Static>
             </FormGroup>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
             >
-              <ControlLabel>New Email</ControlLabel>
+              <ControlLabel>{t('settings.email.new')}</ControlLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('newEmail')}
                 type='email'
@@ -204,7 +210,7 @@ class EmailSettings extends Component {
               controlId='confirm-email'
               validationState={confirmEmailValidation}
             >
-              <ControlLabel>Confirm New Email</ControlLabel>
+              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
@@ -227,11 +233,11 @@ class EmailSettings extends Component {
         <FullWidthRow>
           <form id='form-quincy-email' onSubmit={this.handleSubmit}>
             <ToggleSetting
-              action="Send me Quincy's weekly email"
+              action={t('settings.email.weekly')}
               flag={sendQuincyEmail}
               flagName='sendQuincyEmail'
-              offLabel='No thanks'
-              onLabel='Yes please'
+              offLabel={t('buttons.no-thanks')}
+              onLabel={t('buttons.yes-please')}
               toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
             />
           </form>
@@ -247,4 +253,4 @@ EmailSettings.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(EmailSettings);
+)(withTranslation()(EmailSettings));

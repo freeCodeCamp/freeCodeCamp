@@ -3,6 +3,7 @@ id: 587d7b84367417b2b2512b34
 title: Use typeof to Check the Type of a Variable
 challengeType: 1
 forumTopicId: 18374
+dashedName: use-typeof-to-check-the-type-of-a-variable
 ---
 
 # --description--

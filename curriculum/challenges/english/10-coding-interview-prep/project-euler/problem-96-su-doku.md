@@ -3,6 +3,7 @@ id: 5900f3cc1000cf542c50fedf
 title: 'Problem 96: Su Doku'
 challengeType: 5
 forumTopicId: 302213
+dashedName: problem-96-su-doku
 ---
 
 # --description--

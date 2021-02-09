@@ -4,6 +4,7 @@ title: Create a Set of Checkboxes
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
 forumTopicId: 16821
+dashedName: create-a-set-of-checkboxes
 ---
 
 # --description--

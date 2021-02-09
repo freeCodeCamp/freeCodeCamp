@@ -4,6 +4,7 @@ title: Storing Values with the Assignment Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310
+dashedName: storing-values-with-the-assignment-operator
 ---
 
 # --description--

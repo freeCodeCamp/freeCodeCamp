@@ -3,6 +3,7 @@ id: 587d7b8c367417b2b2512b58
 title: Create an Export Fallback with export default
 challengeType: 1
 forumTopicId: 301199
+dashedName: create-an-export-fallback-with-export-default
 ---
 
 # --description--

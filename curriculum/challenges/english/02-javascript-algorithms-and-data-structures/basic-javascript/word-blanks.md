@@ -4,6 +4,7 @@ title: Word Blanks
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caqn8zuP'
 forumTopicId: 18377
+dashedName: word-blanks
 ---
 
 # --description--

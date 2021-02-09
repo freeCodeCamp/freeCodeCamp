@@ -3,6 +3,7 @@ id: 5900f4f11000cf542c510003
 title: 'Problem 387: Harshad Numbers'
 challengeType: 5
 forumTopicId: 302051
+dashedName: problem-387-harshad-numbers
 ---
 
 # --description--

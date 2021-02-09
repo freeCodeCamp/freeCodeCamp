@@ -1,39 +1,35 @@
 ---
 id: 5a9d72a1424fe3d0e10cad15
+title: 更改特定区域的变量
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRwbuW'
 forumTopicId: 301085
-title: 更改特定区域的变量
+dashedName: change-a-variable-for-a-specific-area
 ---
 
-## Description
-<section id='description'>
-当你在<code>:root</code>里创建变量时，这些变量的作用域是整个页面。
-如果在元素里创建相同的变量，会重写<code>:root</code>变量设置的值。
+# --description--
 
-</section>
+当你在 `:root` 里创建变量时，这些变量的作用域是整个页面。
 
-## Instructions
-<section id='instructions'>
-在<code>penguin</code>class 里，设置<code>--penguin-belly</code>的值为<code>white</code>。
-</section>
+如果在元素里创建相同的变量，会重写作用于整个页面的变量的值。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '应该在<code>penguin</code>clas 里重定义<code>--penguin-belly</code>的变量值，且它的值为<code>white</code>。'
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
+在 `penguin` class 里，请设置 `--penguin-belly` 的值为 `white`。
 
+# --hints--
+
+应在 `penguin` class 里重定义 `--penguin-belly` 的变量值，新的值应为 `white`。
+
+```js
+assert(
+  code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -42,17 +38,15 @@ tests:
     --penguin-belly: pink;
     --penguin-beak: orange;
   }
-  
+
   body {
     background: var(--penguin-belly, #c6faf1);
   }
-  
+
   .penguin {
-    
-    /* add code below */
-    
-    /* add code above */
-    
+    /* Only change code below this line */
+
+    /* Only change code above this line */
     position: relative;
     margin: auto;
     display: block;
@@ -60,7 +54,7 @@ tests:
     width: 300px;
     height: 300px;
   }
-  
+
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -69,7 +63,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -78,7 +72,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .belly {
     top: 60%;
     left: 2.5%;
@@ -87,7 +81,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-  
+
   .penguin-top {
     top: 10%;
     left: 25%;
@@ -96,7 +90,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
@@ -105,7 +99,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-  
+
   .right-hand {
     top: 0%;
     left: -5%;
@@ -116,7 +110,7 @@ tests:
     transform: rotate(45deg);
     z-index: -1;
   }
-  
+
   .left-hand {
     top: 0%;
     left: 75%;
@@ -127,7 +121,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-  
+
   .right-feet {
     top: 85%;
     left: 60%;
@@ -138,7 +132,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-  
+
   .left-feet {
     top: 85%;
     left: 25%;
@@ -149,7 +143,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-  
+
   .right-eye {
     top: 45%;
     left: 60%;
@@ -158,7 +152,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .left-eye {
     top: 45%;
     left: 25%;
@@ -167,7 +161,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .sparkle {
     top: 25%;
     left: 15%;
@@ -176,7 +170,7 @@ tests:
     height: 35%;
     border-radius: 50%;
   }
-  
+
   .blush-right {
     top: 65%;
     left: 15%;
@@ -185,7 +179,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .blush-left {
     top: 65%;
     left: 70%;
@@ -194,7 +188,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-top {
     top: 60%;
     left: 40%;
@@ -203,7 +197,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -212,7 +206,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .penguin * {
     position: absolute;
   }
@@ -242,19 +236,10 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>
+.penguin {--penguin-belly: white;}
+</style>
 ```
-
-</section>
-              

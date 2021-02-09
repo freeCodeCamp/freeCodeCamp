@@ -1,15 +1,19 @@
 ---
 id: bad88fee1348bd9aedf08816
+title: 用 a 实现网页内部跳转
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
-title: 用 a 实现网页内部跳转
+dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 ---
 
-## Description
-<section id='description'>
-<code>a</code> 元素还可以用来实现页面内不同区域的跳转，只需要把<code>a</code>元素的<code>href</code>值设置为井号<code>#</code>加欲跳转区域对应的<code>id</code>值即可。<code>id</code>是描述网页元素的一个属性，它的值在整个页面中唯一。
-下面是用来创建内部 <code>a</code> 的例子：
+# --description--
+
+`a`（*anchor*）元素也可以用于创建内部链接，跳转到网页内的各个不同部分。
+
+要创建内部链接，你需要将链接的 `href` 属性值设置为一个哈希符号 `#` 加上你想内部链接到的元素的 `id`，通常是在网页下方的元素。 然后你需要将相同的 `id` 属性添加到你链接到的元素中。 `id` 是描述网页元素的一个属性，它的值在整个页面中唯一。
+
+当用户点击了 `Contacts` 链接，页面就会跳转到网页的 **Contacts** 区域。
 
 ```html
 <a href="#contacts-header">Contacts</a>
@@ -17,64 +21,100 @@ title: 用 a 实现网页内部跳转
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-当用户点击了<code>Contacts</code>链接，页面就会跳转到网页的<b>Contacts</b>区域。
-</section>
+当用户点击 `Contacts` 链接，可以访问网页中带有 **Contacts** 标题元素的部分。
 
-## Instructions
-<section id='instructions'>
-通过修改<code>href</code>属性为<code>#footer</code>来更改外部链接为内部链接，同时修改文本<code>cat photos</code>为<code>Jump to Bottom</code>。
-移除 target="_blank" 属性，它会使得链接在新标签页中打开。
-然后添加一个<code>&lt;footer&gt;</code>元素，它的<code>id</code>值为<code>footer</code>。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+通过修改 `href` 属性值为 `"#footer"`，同时修改文本 `cat photos` 为 `Jump to Bottom`，来更改外部链接为内部链接。
 
-```yml
-tests:
-  - text: '页面中应该只有一个 <code>a</code> 。'
-    testString: assert($('a').length == 1);
-  - text: '页面中应该只有一个<code>footer</code>元素。'
-    testString: assert($('footer').length == 1);
-  - text: '<code>a</code> 的<code>href</code>属性应为 "#footer"。'
-    testString: assert($('a').eq(0).attr('href') == "#footer");
-  - text: '<code>a</code> 不应该有<code>target</code>属性。'
-    testString: assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true);
-  - text: '<code>a</code> 的文本应为<code>Jump to Bottom</code>。'
-    testString: assert($('a').eq(0).text().match(/Jump to Bottom/gi));
-  - text: '<code>footer</code>元素的<code>id</code>属性应为 "footer"。'
-    testString: assert($('footer').eq(0).attr('id') == "footer");
+然后添加一个 `<footer>` 元素，并将它的 `id` 属性值设置为 `footer`。
 
+然后给页面底部的 `<footer>` 元素添加一个 `id` 属性，值为 `footer`。
+
+# --hints--
+
+页面中应只存在一个 `footer` 元素。
+
+```js
+assert($('a').length == 1);
 ```
 
-</section>
+`a` 的 `href` 属性值应为 `#footer`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('footer').length == 1);
+```
 
-<div id='html-seed'>
+`a` 不应有 `target` 属性。
+
+```js
+assert($('a').eq(0).attr('href') == '#footer');
+```
+
+`a` 的内容文本应为 `Jump to Bottom`。
+
+```js
+assert(
+  typeof $('a').eq(0).attr('target') == typeof undefined ||
+    $('a').eq(0).attr('target') == true
+);
+```
+
+`footer` 元素的 `id` 属性值应为 `footer`。
+
+```js
+assert(
+  $('a')
+    .eq(0)
+    .text()
+    .match(/Jump to Bottom/gi)
+);
+```
+
+`footer` 标签应该有一个 `id` 属性，值为 “footer”。
+
+```js
+assert($('footer').eq(0).attr('id') == 'footer');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  
+
   <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
-  
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫">
-  
-  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。 养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。 在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
-  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。 在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。 养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>
-  
+
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+  <p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+  <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.</p>
+
 </main>
-  
+
 <footer>Copyright Cat Photo App</footer>
 ```
 
-</div>
+# --solutions--
 
-</section>
+```html
+<h2>CatPhotoApp</h2>
+<main>
 
-## Solution
-<section id='solution'>
-</section>
-              
+  <a href="#footer">Jump to Bottom</a>
+
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+  <p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+  <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.</p>
+
+</main>
+
+<footer id="footer">Copyright Cat Photo App</footer>
+```

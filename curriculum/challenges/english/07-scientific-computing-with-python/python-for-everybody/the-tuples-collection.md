@@ -3,6 +3,7 @@ id: 5e7b9f0a0b6c005b0e76f06c
 title: The Tuples Collection
 challengeType: 11
 videoId: 3Lxpladfh2k
+dashedName: the-tuples-collection
 ---
 
 # --question--
@@ -22,35 +23,35 @@ for (k,i) in d.items():
 
 ## --answers--
 
+<pre>
 k i
-
 k i
-
 k i
+</pre>
 
 ---
 
+<pre>
 quincy 0
-
 beau 1
-
 kris 2
+</pre>
 
 ---
 
+<pre>
 quincy 1
-
 beau 5
-
 kris 9
+</pre>
 
 ---
 
+<pre>
 1 quincy
-
 5 beau
-
 9 kris
+</pre>
 
 ## --video-solution--
 

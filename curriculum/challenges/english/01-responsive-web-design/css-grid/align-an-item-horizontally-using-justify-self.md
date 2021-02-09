@@ -4,6 +4,7 @@ title: Align an Item Horizontally using justify-self
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpKHq'
 forumTopicId: 301122
+dashedName: align-an-item-horizontally-using-justify-self
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f54a1000cf542c51005c
 title: 'Problem 477: Number Sequence Game'
 challengeType: 5
 forumTopicId: 302154
+dashedName: problem-477-number-sequence-game
 ---
 
 # --description--

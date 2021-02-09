@@ -3,6 +3,7 @@ id: 5900f4511000cf542c50ff62
 title: 'Problem 226: A Scoop of Blancmange'
 challengeType: 5
 forumTopicId: 301869
+dashedName: problem-226-a-scoop-of-blancmange
 ---
 
 # --description--

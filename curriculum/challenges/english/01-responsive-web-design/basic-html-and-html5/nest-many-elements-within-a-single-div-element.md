@@ -4,6 +4,7 @@ title: Nest Many Elements within a Single div Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNW4kC3'
 forumTopicId: 18246
+dashedName: nest-many-elements-within-a-single-div-element
 ---
 
 # --description--
@@ -16,7 +17,7 @@ Just like any other non-self-closing element, you can open a `div` element with 
 
 # --instructions--
 
-Nest your "Things cats love" and "Things cats hate" lists all within a single `div` element.
+Nest your "Things cats love" and "Top 3 things cats hate" lists all within a single `div` element.
 
 Hint: Try putting your opening `div` tag above your "Things cats love" `p` element and your closing `div` tag after your closing `ol` tag so that both of your lists are within one `div`.
 

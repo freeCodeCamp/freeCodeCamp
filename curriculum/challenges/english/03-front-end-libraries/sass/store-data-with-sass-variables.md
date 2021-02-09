@@ -3,6 +3,7 @@ id: 587d7dbd367417b2b2512bb4
 title: Store Data with Sass Variables
 challengeType: 0
 forumTopicId: 301460
+dashedName: store-data-with-sass-variables
 ---
 
 # --description--

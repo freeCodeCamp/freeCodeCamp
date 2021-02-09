@@ -3,6 +3,7 @@ id: 587d8255367417b2b2512c73
 title: Use Spread and Notes for ES5 Set() Integration
 challengeType: 1
 forumTopicId: 301720
+dashedName: use-spread-and-notes-for-es5-set-integration
 ---
 
 # --description--

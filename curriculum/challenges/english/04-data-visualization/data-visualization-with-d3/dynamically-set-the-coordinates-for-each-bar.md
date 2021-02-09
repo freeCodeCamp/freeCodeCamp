@@ -3,6 +3,7 @@ id: 587d7fa9367417b2b2512bce
 title: Dynamically Set the Coordinates for Each Bar
 challengeType: 6
 forumTopicId: 301487
+dashedName: dynamically-set-the-coordinates-for-each-bar
 ---
 
 # --description--

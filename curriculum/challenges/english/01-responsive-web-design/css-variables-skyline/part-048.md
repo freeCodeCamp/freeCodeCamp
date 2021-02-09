@@ -2,6 +2,7 @@
 id: 5d822fd413a79914d39e98f8
 title: Part 48
 challengeType: 0
+dashedName: part-48
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7b89367417b2b2512b4b
 title: Use Destructuring Assignment to Assign Variables from Arrays
 challengeType: 1
 forumTopicId: 301213
+dashedName: use-destructuring-assignment-to-assign-variables-from-arrays
 ---
 
 # --description--

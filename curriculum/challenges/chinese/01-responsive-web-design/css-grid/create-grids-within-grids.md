@@ -1,40 +1,42 @@
 ---
 id: 5a94fe8569fb03452672e464
-challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
-forumTopicId: 301128
 title: 在网格中创建网格
+challengeType: 0
+forumTopicId: 301128
+dashedName: create-grids-within-grids
 ---
 
-## Description
-<section id='description'>
-将元素转换为网格只会影响其子代元素。因此，在把某个子代元素设置为网格后，就会得到一个嵌套的网格。
-例如，设置类为<code>item3</code>的元素的<code>display</code>和<code>grid-template-columns</code>属性，就会得到一个嵌套的网格。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-用<code>display</code>和<code>grid-template-columns</code>，使类为<code>item3</code>元素转换为有两列且宽度为<code>auto</code>和<code>1fr</code>的网格。
-</section>
+将元素转换为网格只会影响其子元素（即直接后代元素，英文为 direct descendants。意思是一个元素的所有后代元素中，父级元素为该元素的所有元素）。 因此，如果我们把某个子元素设置为网格，就会得到一个嵌套的网格。
 
-## Tests
-<section id='tests'>
+例如，如果我们设置 class 为 `item3` 的元素的 `display` 和 `grid-template-columns` 属性，就会得到一个嵌套的网格。
 
-```yml
-tests:
-  - text: '<code>item3</code>类应该有<code>grid-template-columns</code>属性且值为<code>auto</code>和<code>1fr</code>。'
-    testString: assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi));
-  - text: '<code>item3</code>类有<code>display</code>属性且值为<code>grid</code>。'
-    testString: assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
+# --instructions--
 
+请设置 `display` 和 `grid-template-columns`，使类为 `item3` 元素转换为有两列且宽度为 `auto` 和 `1fr` 的网格。
+
+# --hints--
+
+class 为 `item3` 的元素应具有 `grid-template-columns` 属性且属性值应为 `auto` 和 `1fr`。
+
+```js
+assert(
+  code.match(
+    /.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+class 为 `item3` 的元素应具有 `display` 属性且属性值应为 `grid`。
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -56,36 +58,36 @@ tests:
     background: LightSkyBlue;
     grid-area: header;
   }
-  
+
   .item2 {
     background: LightSalmon;
     grid-area: advert;
   }
-  
+
   .item3 {
     background: PaleTurquoise;
     grid-area: content;
-    /* 请在本行以下添加你的代码 */
-    
-    
-    /* 请在本行以上添加你的代码 */
+    /* Only change code below this line */
+
+
+    /* Only change code above this line */
   }
-  
+
   .item4 {
     background: lightpink;
     grid-area: footer;
   }
-  
+
   .itemOne {
     background: PaleGreen;
   }
-  
+
   .itemTwo {
     background: BlanchedAlmond;
   }
-  
+
 </style>
-  
+
 <div class="container">
   <div class="item1">header</div>
   <div class="item2">advert</div>
@@ -97,19 +99,8 @@ tests:
 </div>
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-// solution required
+```html
+<style>.item3 {grid-template-columns: auto 1fr; display: grid;}</style>
 ```
-
-</section>
-              

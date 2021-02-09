@@ -137,7 +137,7 @@ Once you have earned the Responsive Web Design, Algorithms and Data Structures, 
 
 #### Legacy Certifications
 
-We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 4 legacy certifications dating back to our 2015 curriculum, which is still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
@@ -153,7 +153,7 @@ Our community also has:
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about math and computer science.
-- A [Discord chat room](https://discord.gg/KVUmVXA) where you can hang out and talk with developers and people who are learning to code.
+- A [chat server](https://chat.freecodecamp.org/home) where you can hang out and talk with developers and people who are learning to code.
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
 
@@ -171,17 +171,17 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome any and all contributions to the community and are excited to welcome you aboard.
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
-### Platform, Build and Deployment Status
+### Platform, Build, and Deployment Status
 
 The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
 
 ### License
 
-Copyright © 2020 freeCodeCamp.org
+Copyright © 2021 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 

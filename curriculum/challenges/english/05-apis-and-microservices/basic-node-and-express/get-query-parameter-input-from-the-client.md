@@ -3,6 +3,7 @@ id: 587d7fb2367417b2b2512bf6
 title: Get Query Parameter Input from the Client
 challengeType: 2
 forumTopicId: 301512
+dashedName: get-query-parameter-input-from-the-client
 ---
 
 # --description--
@@ -54,8 +55,6 @@ Test 2 : Your API endpoint should respond with the correct name
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

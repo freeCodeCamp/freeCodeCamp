@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036160
 title: Define an HTML Class in JSX
 challengeType: 6
 forumTopicId: 301393
+dashedName: define-an-html-class-in-jsx
 ---
 
 # --description--

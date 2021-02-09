@@ -3,6 +3,7 @@ id: 5900f39f1000cf542c50feb2
 title: 'Problem 51: Prime digit replacements'
 challengeType: 5
 forumTopicId: 302162
+dashedName: problem-51-prime-digit-replacements
 ---
 
 # --description--

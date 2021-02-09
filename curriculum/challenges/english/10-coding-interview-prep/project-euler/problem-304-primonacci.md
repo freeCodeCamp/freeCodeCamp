@@ -3,6 +3,7 @@ id: 5900f49d1000cf542c50ffaf
 title: 'Problem 304: Primonacci'
 challengeType: 5
 forumTopicId: 301958
+dashedName: problem-304-primonacci
 ---
 
 # --description--

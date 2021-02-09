@@ -2,6 +2,7 @@
 id: 5efb2c990dc218d6c85f89b2
 title: Part 42
 challengeType: 0
+dashedName: part-42
 ---
 
 # --description--

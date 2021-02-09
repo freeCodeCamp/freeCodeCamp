@@ -195,8 +195,7 @@ li.disabled > a {
 .donate-page-wrapper,
 .donate-page-wrapper b,
 .donate-page-wrapper h3,
-.donate-text p,
-.donation-description,
+.donate-page-wrapper p,
 [name='payment-method'] {
   font-family: 'Lato', sans-serif;
 }
@@ -367,11 +366,13 @@ button#confirm-donation-btn {
   border-radius: 5px;
   background-color: var(--yellow-light);
   border-color: var(--yellow-light);
+  color: black;
+  font-weight: bold;
 }
 button#confirm-donation-btn:active,
 button#confirm-donation-btn:active:focus,
 button#confirm-donation-btn:hover {
-  color: var(--secondary-color);
+  color: black;
   background-color: #f2ba38;
   border-color: #f2ba38;
 }

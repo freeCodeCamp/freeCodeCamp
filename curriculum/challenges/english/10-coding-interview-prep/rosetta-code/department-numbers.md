@@ -3,6 +3,7 @@ id: 59f40b17e79dbf1ab720ed7a
 title: Department Numbers
 challengeType: 5
 forumTopicId: 302249
+dashedName: department-numbers
 ---
 
 # --description--

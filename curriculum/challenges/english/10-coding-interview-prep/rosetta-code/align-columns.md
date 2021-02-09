@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad0
 title: Align columns
 challengeType: 5
 forumTopicId: 302224
+dashedName: align-columns
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5e4ce2eaac708cc68c1df260
 title: Levenshtein distance
 challengeType: 5
 forumTopicId: 385264
+dashedName: levenshtein-distance
 ---
 
 # --description--

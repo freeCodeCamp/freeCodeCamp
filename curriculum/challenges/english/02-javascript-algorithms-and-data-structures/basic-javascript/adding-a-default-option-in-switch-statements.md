@@ -4,6 +4,7 @@ title: Adding a Default Option in Switch Statements
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
+dashedName: adding-a-default-option-in-switch-statements
 ---
 
 # --description--

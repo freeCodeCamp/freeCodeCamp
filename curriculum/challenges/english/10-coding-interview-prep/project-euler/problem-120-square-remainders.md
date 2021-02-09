@@ -3,6 +3,7 @@ id: 5900f3e41000cf542c50fef7
 title: 'Problem 120: Square remainders'
 challengeType: 5
 forumTopicId: 301747
+dashedName: problem-120-square-remainders
 ---
 
 # --description--

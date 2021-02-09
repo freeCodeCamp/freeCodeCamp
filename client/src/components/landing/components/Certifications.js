@@ -1,39 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { uniq } from 'lodash';
-import { Spacer, Link } from '../../helpers';
-import LinkButton from '../../../assets/icons/LinkButton';
+import { Spacer } from '../../helpers';
 import BigCallToAction from './BigCallToAction';
+import { useTranslation } from 'react-i18next';
+import Map from '../../Map/index';
 
 const propTypes = {
-  nodes: PropTypes.array,
   page: PropTypes.string
 };
 
-const Certifications = ({ nodes, page }) => {
-  const superBlocks = uniq(nodes.map(node => node.superBlock)).filter(
-    cert => cert !== 'Coding Interview Prep'
-  );
+const Certifications = ({ page = 'landing' }) => {
+  const { t } = useTranslation();
 
   return (
     <Row className='certification-section'>
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <h1 className='big-heading'>Earn free verified certifications in:</h1>
-        <ul data-test-label='certifications'>
-          {superBlocks.map((superBlock, i) => (
-            <li key={i}>
-              <Link
-                className='btn link-btn btn-lg'
-                state={{ superBlock: superBlock }}
-                to={`/learn`}
-              >
-                {superBlock}
-                <LinkButton />
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <h1 className='big-heading'>{t('landing.certification-heading')}</h1>
+        <Map forLanding={true} />
         <Spacer />
         <BigCallToAction page={page} />
         <Spacer />

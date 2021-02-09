@@ -3,6 +3,7 @@ id: 5900f4641000cf542c50ff76
 title: 'Problem 247: Squares under a hyperbola'
 challengeType: 5
 forumTopicId: 301894
+dashedName: problem-247-squares-under-a-hyperbola
 ---
 
 # --description--

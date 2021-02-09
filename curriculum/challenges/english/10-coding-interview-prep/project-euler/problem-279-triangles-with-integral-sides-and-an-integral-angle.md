@@ -3,6 +3,7 @@ id: 5900f4841000cf542c50ff96
 title: 'Problem 279: Triangles with integral sides and an integral angle'
 challengeType: 5
 forumTopicId: 301929
+dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 ---
 
 # --description--

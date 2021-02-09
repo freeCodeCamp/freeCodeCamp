@@ -4,6 +4,7 @@ title: Link to Internal Sections of a Page with Anchor Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
+dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 ---
 
 # --description--
@@ -20,15 +21,15 @@ Below is an example of an internal anchor link and its target element:
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-When users click the Contacts link, they'll be taken to the section of the webpage with the **Contacts** header element.
+When users click the `Contacts` link, they'll be taken to the section of the webpage with the **Contacts** header element.
 
 # --instructions--
 
-Change your external link to an internal link by changing the `href` attribute to "#footer" and the text from "cat photos" to "Jump to Bottom".
+Change your external link to an internal link by changing the `href` attribute to `"#footer"` and the text from `cat photos` to `Jump to Bottom`.
 
 Remove the `target="_blank"` attribute from the anchor tag since this causes the linked document to open in a new window tab.
 
-Then add an `id` attribute with a value of "footer" to the `<footer>` element at the bottom of the page.
+Then add an `id` attribute with a value of `footer` to the `<footer>` element at the bottom of the page.
 
 # --hints--
 

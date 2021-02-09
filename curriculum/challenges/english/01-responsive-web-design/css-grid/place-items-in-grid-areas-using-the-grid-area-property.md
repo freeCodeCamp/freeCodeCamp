@@ -4,6 +4,7 @@ title: Place Items in Grid Areas Using the grid-area Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
 forumTopicId: 301132
+dashedName: place-items-in-grid-areas-using-the-grid-area-property
 ---
 
 # --description--

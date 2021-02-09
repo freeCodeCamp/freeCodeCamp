@@ -3,6 +3,7 @@ id: 58a25c98f9fc0f352b528e7f
 title: Hashing Your Passwords
 challengeType: 2
 forumTopicId: 301553
+dashedName: hashing-your-passwords
 ---
 
 # --description--
@@ -73,8 +74,6 @@ BCrypt should be correctly required and implemented.
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

@@ -3,6 +3,7 @@ id: 587d7b7e367417b2b2512b24
 title: Use the Conditional (Ternary) Operator
 challengeType: 1
 forumTopicId: 301181
+dashedName: use-the-conditional-ternary-operator
 ---
 
 # --description--

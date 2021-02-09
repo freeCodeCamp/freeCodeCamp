@@ -4,6 +4,7 @@ title: Counting Cards
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KE7ty'
 forumTopicId: 16809
+dashedName: counting-cards
 ---
 
 # --description--

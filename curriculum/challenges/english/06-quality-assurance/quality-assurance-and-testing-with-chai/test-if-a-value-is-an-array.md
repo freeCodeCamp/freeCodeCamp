@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c50
 title: Test if a Value is an Array
 challengeType: 2
 forumTopicId: 301600
+dashedName: test-if-a-value-is-an-array
 ---
 
 # --description--
@@ -64,8 +65,6 @@ You should choose the correct method for the second assertion - `isArray` vs. `i
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

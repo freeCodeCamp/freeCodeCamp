@@ -3,6 +3,7 @@ id: 5900f36e1000cf542c50fe80
 title: 'Problem 1: Multiples of 3 and 5'
 challengeType: 5
 forumTopicId: 301722
+dashedName: problem-1-multiples-of-3-and-5
 ---
 
 # --description--

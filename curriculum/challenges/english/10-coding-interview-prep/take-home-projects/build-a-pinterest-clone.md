@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdee
 title: Build a Pinterest Clone
 challengeType: 4
 forumTopicId: 302352
+dashedName: build-a-pinterest-clone
 ---
 
 # --description--
@@ -28,11 +29,6 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

@@ -3,6 +3,7 @@ id: 5900f53d1000cf542c510050
 title: 'Problem 465: Polar polygons'
 challengeType: 5
 forumTopicId: 302140
+dashedName: problem-465-polar-polygons
 ---
 
 # --description--

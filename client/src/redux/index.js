@@ -38,7 +38,7 @@ export const defaultDonationFormState = {
 
 const initialState = {
   appUsername: '',
-  canRequestBlockDonation: false,
+  recentlyClaimedBlock: null,
   canRequestProgressDonation: true,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
@@ -55,7 +55,6 @@ const initialState = {
   },
   sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
-  isBlockDonationModal: false,
   isOnline: true,
   donationFormState: {
     ...defaultDonationFormState
@@ -187,10 +186,8 @@ export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
-export const canRequestBlockDonationSelector = state =>
-  state[ns].canRequestBlockDonation;
-export const isBlockDonationModalSelector = state =>
-  state[ns].isBlockDonationModal;
+export const recentlyClaimedBlockSelector = state =>
+  state[ns].recentlyClaimedBlock;
 export const donationFormStateSelector = state => state[ns].donationFormState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
@@ -201,13 +198,13 @@ export const shouldRequestDonationSelector = state => {
   const completionCount = completionCountSelector(state);
   const canRequestProgressDonation = state[ns].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
-  const canRequestBlockDonation = canRequestBlockDonationSelector(state);
+  const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
 
   // a block has been completed
-  if (canRequestBlockDonation) return true;
+  if (recentlyClaimedBlock) return true;
 
   // a donation has already been requested
   if (!canRequestProgressDonation) return false;
@@ -393,10 +390,12 @@ export const reducer = handleActions(
         }
       };
     },
-    [types.allowBlockDonationRequests]: state => ({
-      ...state,
-      canRequestBlockDonation: true
-    }),
+    [types.allowBlockDonationRequests]: (state, { payload }) => {
+      return {
+        ...state,
+        recentlyClaimedBlock: payload
+      };
+    },
     [types.updateDonationFormState]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
@@ -522,14 +521,13 @@ export const reducer = handleActions(
       ...state,
       showDonationModal: false
     }),
-    [types.openDonationModal]: (state, { payload }) => ({
+    [types.openDonationModal]: state => ({
       ...state,
-      showDonationModal: true,
-      isBlockDonationModal: payload
+      showDonationModal: true
     }),
     [types.preventBlockDonationRequests]: state => ({
       ...state,
-      canRequestBlockDonation: false
+      recentlyClaimedBlock: null
     }),
     [types.preventProgressDonationRequests]: state => ({
       ...state,

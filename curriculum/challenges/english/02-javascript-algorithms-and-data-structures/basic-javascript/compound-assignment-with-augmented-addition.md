@@ -4,6 +4,7 @@ title: Compound Assignment With Augmented Addition
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDR6LCb'
 forumTopicId: 16661
+dashedName: compound-assignment-with-augmented-addition
 ---
 
 # --description--

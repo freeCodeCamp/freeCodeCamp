@@ -3,6 +3,7 @@ id: 5900f37d1000cf542c50fe8f
 title: 'Problem 16: Power digit sum'
 challengeType: 5
 forumTopicId: 301791
+dashedName: problem-16-power-digit-sum
 ---
 
 # --description--

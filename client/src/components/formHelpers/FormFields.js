@@ -1,5 +1,6 @@
 import React from 'react';
 import { kebabCase } from 'lodash';
+import normalizeUrl from 'normalize-url';
 import PropTypes from 'prop-types';
 import {
   Alert,
@@ -10,6 +11,11 @@ import {
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
 import { Field } from 'react-final-form';
+import {
+  editorValidator,
+  localhostValidator,
+  composeValidators
+} from './FormValidators';
 
 const propTypes = {
   formFields: PropTypes.arrayOf(
@@ -33,6 +39,28 @@ function FormFields(props) {
     types = {}
   } = options;
 
+  const nullOrWarning = (value, error, isURL, name) => {
+    let validationError;
+    if (value && isURL) {
+      try {
+        normalizeUrl(value, { stripWWW: false });
+      } catch (err) {
+        validationError = err.message;
+      }
+    }
+    const validationWarning = composeValidators(
+      name === 'githubLink' ? null : editorValidator,
+      localhostValidator
+    )(value);
+    const message = error || validationError || validationWarning;
+    return message ? (
+      <HelpBlock>
+        <Alert bsStyle={error || validationError ? 'danger' : 'info'}>
+          {message}
+        </Alert>
+      </HelpBlock>
+    ) : null;
+  };
   return (
     <div>
       {formFields
@@ -44,6 +72,7 @@ function FormFields(props) {
               const type = name in types ? types[name] : 'text';
               const placeholder =
                 name in placeholders ? placeholders[name] : '';
+              const isURL = types[name] === 'url';
               return (
                 <Col key={key} xs={12}>
                   <FormGroup>
@@ -61,11 +90,7 @@ function FormFields(props) {
                       type={type}
                       value={value}
                     />
-                    {error && !pristine ? (
-                      <HelpBlock>
-                        <Alert bsStyle='danger'>{error}</Alert>
-                      </HelpBlock>
-                    ) : null}
+                    {nullOrWarning(value, !pristine && error, isURL, name)}
                   </FormGroup>
                 </Col>
               );

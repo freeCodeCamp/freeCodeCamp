@@ -4,6 +4,7 @@ title: Inform with the Paragraph Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
 forumTopicId: 18202
+dashedName: inform-with-the-paragraph-element
 ---
 
 # --description--
@@ -16,7 +17,7 @@ You can create a paragraph element like this:
 
 # --instructions--
 
-Create a `p` element below your `h2` element, and give it the text "Hello Paragraph".
+Create a `p` element below your `h2` element, and give it the text `Hello Paragraph`.
 
 **Note:** As a convention, all HTML tags are written in lowercase, for example `<p></p>` and not `<P></P>`.
 

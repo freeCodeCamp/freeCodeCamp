@@ -4,6 +4,7 @@ title: Create Movement Using CSS Animation
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7amZfW'
 forumTopicId: 301051
+dashedName: create-movement-using-css-animation
 ---
 
 # --description--

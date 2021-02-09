@@ -3,6 +3,7 @@ id: 587d824c367417b2b2512c4d
 title: Compare the Properties of Two Elements
 challengeType: 2
 forumTopicId: 301588
+dashedName: compare-the-properties-of-two-elements
 ---
 
 # --description--
@@ -96,8 +97,6 @@ You should choose the correct method for the fourth assertion - `isAbove` vs. `i
     }
   );
 ```
-
-# --seed--
 
 # --solutions--
 

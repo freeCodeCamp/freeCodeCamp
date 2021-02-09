@@ -4,6 +4,7 @@ title: Use Clockwise Notation to Specify the Padding of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mBS9'
 forumTopicId: 18346
+dashedName: use-clockwise-notation-to-specify-the-padding-of-an-element
 ---
 
 # --description--
@@ -16,7 +17,7 @@ These four values work like a clock: top, right, bottom, left, and will produce 
 
 # --instructions--
 
-Use Clockwise Notation to give the ".blue-box" class a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+Use Clockwise Notation to give the `.blue-box` class a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
 
 # --hints--
 

@@ -4,6 +4,7 @@ title: Comparison with the Equality Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
+dashedName: comparison-with-the-equality-operator
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5e46f979ac417301a38fb932
 title: Port Scanner
 challengeType: 10
 helpCategory: Python
+dashedName: port-scanner
 ---
 
 # --description--
@@ -31,8 +32,6 @@ It should pass all Python tests.
 ```js
 
 ```
-
-# --seed--
 
 # --solutions--
 

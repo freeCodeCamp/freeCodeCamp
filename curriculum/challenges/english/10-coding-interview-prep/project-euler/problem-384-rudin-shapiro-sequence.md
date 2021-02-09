@@ -3,6 +3,7 @@ id: 5900f4ed1000cf542c50fffe
 title: 'Problem 384: Rudin-Shapiro sequence'
 challengeType: 5
 forumTopicId: 302048
+dashedName: problem-384-rudin-shapiro-sequence
 ---
 
 # --description--

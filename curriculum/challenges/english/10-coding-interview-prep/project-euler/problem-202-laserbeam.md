@@ -3,6 +3,7 @@ id: 5900f4371000cf542c50ff49
 title: 'Problem 202: Laserbeam'
 challengeType: 5
 forumTopicId: 301843
+dashedName: problem-202-laserbeam
 ---
 
 # --description--

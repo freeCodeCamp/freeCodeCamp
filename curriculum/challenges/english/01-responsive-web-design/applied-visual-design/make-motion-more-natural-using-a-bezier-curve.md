@@ -4,6 +4,7 @@ title: Make Motion More Natural Using a Bezier Curve
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7akWUv'
 forumTopicId: 301063
+dashedName: make-motion-more-natural-using-a-bezier-curve
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Link to External Pages with Anchor Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
 forumTopicId: 18226
+dashedName: link-to-external-pages-with-anchor-elements
 ---
 
 # --description--
@@ -14,7 +15,7 @@ You can use `a` (*anchor*) elements to link to content outside of your web page.
 
 `<a href="https://freecodecamp.org">this links to freecodecamp.org</a>`
 
-Then your browser will display the text **"this links to freecodecamp.org"** as a link you can click. And that link will take you to the web address **`https://www.freecodecamp.org`**.
+Then your browser will display the text `this links to freecodecamp.org` as a link you can click. And that link will take you to the web address `https://www.freecodecamp.org`.
 
 # --instructions--
 
@@ -22,7 +23,7 @@ Create an `a` element that links to `https://freecatphotoapp.com` and has "cat p
 
 # --hints--
 
-Your `a` element should have the anchor text of "cat photos".
+Your `a` element should have the anchor text of `cat photos`.
 
 ```js
 assert(/cat photos/gi.test($('a').text()));

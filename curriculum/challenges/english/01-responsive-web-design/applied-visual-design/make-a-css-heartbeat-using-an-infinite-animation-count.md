@@ -4,6 +4,7 @@ title: Make a CSS Heartbeat using an Infinite Animation Count
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cDZpDUr'
 forumTopicId: 301062
+dashedName: make-a-css-heartbeat-using-an-infinite-animation-count
 ---
 
 # --description--
@@ -14,17 +15,17 @@ The one-second long heartbeat animation consists of two animated pieces. The `he
 
 # --instructions--
 
-Keep the heart beating by adding the `animation-iteration-count` property for both the `back` class and the `heart` class and setting the value to infinite. The `heart:before` and `heart:after` selectors do not need any animation properties.
+Keep the heart beating by adding the `animation-iteration-count` property for both the `back` class and the `heart` class and setting the value to `infinite`. The `heart:before` and `heart:after` selectors do not need any animation properties.
 
 # --hints--
 
-The `animation-iteration-count` property for the `heart` class should have a value of infinite.
+The `animation-iteration-count` property for the `heart` class should have a value of `infinite`.
 
 ```js
 assert($('.heart').css('animation-iteration-count') == 'infinite');
 ```
 
-The `animation-iteration-count` property for the `back` class should have a value of infinite.
+The `animation-iteration-count` property for the `back` class should have a value of `infinite`.
 
 ```js
 assert($('.back').css('animation-iteration-count') == 'infinite');

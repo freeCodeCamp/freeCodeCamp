@@ -3,6 +3,7 @@ id: 59e09e6d412c5939baa02d16
 title: Execute a Markov algorithm
 challengeType: 5
 forumTopicId: 302260
+dashedName: execute-a-markov-algorithm
 ---
 
 # --description--
@@ -107,7 +108,8 @@ _+1 -> _1+
 1! -> !1
 ,! -> !+
 _! -> _
-# Unary multiplication by duplicating left side, right side times1*1 -> x,@y
+# Unary multiplication by duplicating left side, right side times
+1*1 -> x,@y
 1x -> xX
 X, -> 1,1
 X1 -> 1X
@@ -115,11 +117,13 @@ _x -> _X
 ,x -> ,X
 y1 -> 1y
 y_ -> _
-# Next phase of applying1@1 -> x,@y
+# Next phase of applying
+1@1 -> x,@y
 1@_ -> @_
 ,@_ -> !_
 ++ -> +
-# Termination cleanup for addition_1 -> 1
+# Termination cleanup for addition
+_1 -> 1
 1+_ -> 1
 _+_ ->
 </pre>
@@ -208,6 +212,29 @@ assert.deepEqual(markov(rules[4], tests[4]), outputs[4]);
 
 # --seed--
 
+## --after-user-code--
+
+```js
+
+let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
+            ["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
+            ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
+            ["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],
+            ["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"]];
+let tests=["I bought a B of As from T S.",
+            "I bought a B of As from T S.",
+            "I bought a B of As W my Bgage from T S.",
+            "_1111*11111_",
+            "000000A000000"];
+let outputs=["I bought a bag of apples from my brother.",
+            "I bought a bag of apples from T shop.",
+            "I bought a bag of apples with my money from T shop.",
+            "11111111111111111111",
+            "00011H1111000"]
+
+```
+
+
 ## --seed-contents--
 
 ```js
@@ -246,21 +273,4 @@ function markov(rules,test) {
     }
     return test;
 }
-
-// tail:
-let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
-            ["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
-            ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
-            ["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],
-            ["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"]];
-let tests=["I bought a B of As from T S.",
-            "I bought a B of As from T S.",
-            "I bought a B of As W my Bgage from T S.",
-            "_1111*11111_",
-            "000000A000000"];
-let outputs=["I bought a bag of apples from my brother.",
-            "I bought a bag of apples from T shop.",
-            "I bought a bag of apples with my money from T shop.",
-            "11111111111111111111",
-            "00011H1111000"];
 ```

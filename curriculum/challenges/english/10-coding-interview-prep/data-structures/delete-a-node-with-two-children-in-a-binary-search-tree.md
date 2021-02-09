@@ -3,6 +3,7 @@ id: 587d8258367417b2b2512c82
 title: Delete a Node with Two Children in a Binary Search Tree
 challengeType: 1
 forumTopicId: 301639
+dashedName: delete-a-node-with-two-children-in-a-binary-search-tree
 ---
 
 # --description--

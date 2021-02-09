@@ -5,6 +5,8 @@ title: >-
   Dataset
 challengeType: 6
 forumTopicId: 301496
+dashedName: >-
+  use-the-d3-max-and-d3-min-functions-to-find-minimum-and-maximum-values-in-a-dataset
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f48f1000cf542c50ffa2
 title: 'Problem 291: Panaitopol Primes'
 challengeType: 5
 forumTopicId: 301943
+dashedName: problem-291-panaitopol-primes
 ---
 
 # --description--

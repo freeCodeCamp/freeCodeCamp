@@ -3,6 +3,7 @@ id: 5900f4601000cf542c50ff73
 title: 'Problem 243: Resilience'
 challengeType: 5
 forumTopicId: 301890
+dashedName: problem-243-resilience
 ---
 
 # --description--

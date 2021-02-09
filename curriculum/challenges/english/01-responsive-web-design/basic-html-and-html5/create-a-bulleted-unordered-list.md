@@ -4,6 +4,7 @@ title: Create a Bulleted Unordered List
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 forumTopicId: 16814
+dashedName: create-a-bulleted-unordered-list
 ---
 
 # --description--
@@ -21,7 +22,7 @@ For example:
 </ul>
 ```
 
-would create a bullet point style list of "milk" and "cheese".
+would create a bullet point style list of `milk` and `cheese`.
 
 # --instructions--
 

@@ -3,6 +3,7 @@ id: 5900f4de1000cf542c50fff0
 title: 'Problem 369: Badugi'
 challengeType: 5
 forumTopicId: 302030
+dashedName: problem-369-badugi
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Create a Row Gap using grid-row-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cPbJ2Cv'
 forumTopicId: 301125
+dashedName: create-a-row-gap-using-grid-row-gap
 ---
 
 # --description--

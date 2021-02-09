@@ -3,6 +3,7 @@ id: 587d7b8d367417b2b2512b5b
 title: Learn About Functional Programming
 challengeType: 1
 forumTopicId: 301233
+dashedName: learn-about-functional-programming
 ---
 
 # --description--

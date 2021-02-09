@@ -4,6 +4,7 @@ title: Use the em Tag to Italicize Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJRBtp'
 forumTopicId: 301078
+dashedName: use-the-em-tag-to-italicize-text
 ---
 
 # --description--
