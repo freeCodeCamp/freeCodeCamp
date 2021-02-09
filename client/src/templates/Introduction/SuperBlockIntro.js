@@ -153,7 +153,7 @@ export class SuperBlockIntroductionPage extends Component {
         <Grid>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size={2} />
+              <Spacer size={isTranslated ? 2 : 3} />
               <SuperBlockIntro superBlock={superBlock} />
               <Spacer size={2} />
               <h2 className='text-center big-subheading'>
