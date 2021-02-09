@@ -130,7 +130,7 @@ export class SuperBlockIntroductionPage extends Component {
     const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
     const { title: i18nSuperBlock, isTranslated } = superBlockIntroObj;
     const translationBannerText = t(`intro:misc-text.translation-banner`);
-    const translationBannerLinkText = t(`intro:misc-text.translation-link`);
+    const translationBannerHelpText = t(`intro:misc-text.translation-help`);
 
     return (
       <>
@@ -140,18 +140,15 @@ export class SuperBlockIntroductionPage extends Component {
         {isTranslated ? (
           ''
         ) : (
-          <div className='translation-banner'>
+          <Link
+            className='translation-banner'
+            external={true}
+            to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+          >
             <p>
-              {translationBannerText}{' '}
-              <Link
-                external={true}
-                to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-              >
-                {translationBannerLinkText}
-              </Link>
-              .
+              {translationBannerText} <span>{translationBannerHelpText}</span>.
             </p>
-          </div>
+          </Link>
         )}
         <Grid>
           <Row className='super-block-intro-page'>

@@ -178,33 +178,37 @@ button.map-title {
   margin-bottom: 0;
 }
 
-div.translation-banner {
+a.translation-banner {
   position: fixed;
   top: var(--header-height);
-  height: var(--header-height);
   background-color: var(--blue-dark);
   display: flex;
   align-items: center;
   display: flex;
   justify-content: center;
   font-size: 14px;
-  padding: 8px;
+  padding: 6px;
   width: 100vw;
   font-weight: 700;
   z-index: 10;
+  color: var(--gray-00);
   text-decoration: none;
 }
 
-div.translation-banner p {
+a.translation-banner * {
   margin: 0px;
-  color: var(--gray-00);
 }
 
-@media (min-width: 500px) {
-  div.translation-banner {
-    padding: 10px;
-    font-size: 17px;
-  }
+a.translation-banner span {
+  text-decoration: underline;
+}
+
+a.translation-banner:hover {
+  text-decoration: none;
+}
+
+a.translation-banner:hover span {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 500px) {
