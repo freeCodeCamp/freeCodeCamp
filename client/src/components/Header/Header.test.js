@@ -184,34 +184,37 @@ describe('<AuthOrProfile />', () => {
   });
 });
 
-const navigationLinks = (component, navItem) => {
-  return component.props.children[navItem].props;
+const navigationLinks = (component, key) => {
+  const target = component.props.children.find(
+    child => child && child.key === key
+  );
+  return target.props;
 };
 
 const profileNavItem = component => component.props.children;
 
 const hasDonateNavItem = component => {
-  const { children, to } = navigationLinks(component, 0);
+  const { children, to } = navigationLinks(component, 'donate');
   return children === 'buttons.donate' && to === '/donate';
 };
 
 const hasThanksForDonating = component => {
-  const { children } = navigationLinks(component, 0);
+  const { children } = navigationLinks(component, 'donate');
   return children[0].props.children === 'donate.thanks';
 };
 
 const hasSignInNavItem = component => {
-  const { children } = navigationLinks(component, 1);
+  const { children } = navigationLinks(component, 'signin');
   return children === 'buttons.sign-in';
 };
 
 const hasCurriculumNavItem = component => {
-  const { children, to } = navigationLinks(component, 2);
+  const { children, to } = navigationLinks(component, 'learn');
   return children === 'buttons.curriculum' && to === '/learn';
 };
 
 const hasProfileAndSettingsNavItems = (component, username) => {
-  const fragment = navigationLinks(component, 3);
+  const fragment = navigationLinks(component, 'profile-settings');
 
   const profile = fragment.children[0].props;
   const settings = fragment.children[1].props;
@@ -225,7 +228,7 @@ const hasProfileAndSettingsNavItems = (component, username) => {
 };
 
 const hasForumNavItem = component => {
-  const { children, to } = navigationLinks(component, 5);
+  const { children, to } = navigationLinks(component, 'forum');
   return (
     children[0].props.children === 'buttons.forum' &&
     to === 'https://forum.freecodecamp.org/'
@@ -233,7 +236,7 @@ const hasForumNavItem = component => {
 };
 
 const hasNewsNavItem = component => {
-  const { children, to } = navigationLinks(component, 6);
+  const { children, to } = navigationLinks(component, 'news');
   return (
     children[0].props.children === 'buttons.news' &&
     to === 'https://www.freecodecamp.org/news'
@@ -241,7 +244,7 @@ const hasNewsNavItem = component => {
 };
 
 const hasRadioNavItem = component => {
-  const { children, to } = navigationLinks(component, 7);
+  const { children, to } = navigationLinks(component, 'radio');
   return (
     children[0].props.children === 'buttons.radio' &&
     to === 'https://coderadio.freecodecamp.org'
@@ -249,7 +252,7 @@ const hasRadioNavItem = component => {
 };
 
 const hasSignOutNavItem = component => {
-  const { children } = navigationLinks(component, 12);
+  const { children } = navigationLinks(component, 'signout-frag');
   const signOutProps = children[1].props;
 
   return (
