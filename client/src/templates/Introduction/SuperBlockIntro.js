@@ -149,6 +149,7 @@ export class SuperBlockIntroductionPage extends Component {
               >
                 {translationBannerLinkText}
               </Link>
+              .
             </p>
           </div>
         )}
