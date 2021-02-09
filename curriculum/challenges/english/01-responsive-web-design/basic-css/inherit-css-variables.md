@@ -11,7 +11,7 @@ dashedName: inherit-css-variables
 
 When you create a variable, it is available for you to use inside the selector in which you create it. It also is available in any of that selector's descendants. This happens because CSS variables are inherited, just like ordinary properties.
 
-To make use of inheritance, CSS variables are often defined in the <dfn>:root</dfn> element.
+To make use of inheritance, CSS variables are often defined in the <dfn>`:root`</dfn> element.
 
 `:root` is a <dfn>pseudo-class</dfn> selector that matches the root element of the document, usually the `html` element. By creating your variables in `:root`, they will be available globally and can be accessed from any other selector in the style sheet.
 
