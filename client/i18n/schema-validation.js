@@ -91,7 +91,7 @@ const noEmptyObjectValues = (obj, namespace = '') => {
       emptyKeys.push(
         noEmptyObjectValues(obj[key], namespace ? `${namespace}.${key}` : key)
       );
-    } else if (!obj[key]) {
+    } else if (!obj[key] && typeof obj[key] !== 'boolean') {
       emptyKeys.push(namespace ? `${namespace}.${key}` : key);
     }
   }
