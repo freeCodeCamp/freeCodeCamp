@@ -38,12 +38,20 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
         </Link>
       </div>
       <div className='challenge-title'>
-        <b>{children}</b>
-        {isCompleted ? (
-          <GreenPass
-            style={{ height: '15px', width: '15px', marginLeft: '7px' }}
-          />
-        ) : null}
+        <div className='title-text'>
+          <b>{children}</b>
+          {isCompleted ? (
+            <GreenPass
+              style={{ height: '15px', width: '15px', marginLeft: '7px' }}
+            />
+          ) : null}
+        </div>
+        <Link
+          className='title-translation-cta'
+          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+        >
+          {i18next.t('misc.translation-pending')}
+        </Link>
       </div>
     </div>
   );

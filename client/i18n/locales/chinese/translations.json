@@ -375,7 +375,8 @@
     "update-email-2": "在这里更新你的邮件地址：",
     "email": "邮箱",
     "and": "和",
-    "change-theme": "登录以更改主题。"
+    "change-theme": "登录以更改主题。",
+    "translation-pending": "CN help translate"
   },
   "icons": {
     "gold-cup": "金奖杯",
