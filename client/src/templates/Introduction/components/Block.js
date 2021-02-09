@@ -11,6 +11,9 @@ import Challenges from './Challenges';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
+import { isAuditedCert } from '../../../../../utils/is-audited';
+import { curriculumLocale } from '../../../../../config/env.json';
+import { Link } from '../../../components/helpers/';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -130,7 +133,19 @@ export class Block extends Component {
 
     return isProjectBlock ? (
       <div className='block'>
-        <h3 className='big-block-title'>{blockTitle}</h3>
+        <div className='block-title-wrapper'>
+          <h3 className='big-block-title'>{blockTitle}</h3>
+          {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            <div className='block-cta-wrapper'>
+              <Link
+                className='block-title-translation-cta'
+                to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+              >
+                {t('misc.translation-pending')}
+              </Link>
+            </div>
+          )}
+        </div>
         {this.renderBlockIntros(blockIntroArr)}
         <Challenges
           challengesWithCompleted={challengesWithCompleted}
@@ -139,7 +154,19 @@ export class Block extends Component {
       </div>
     ) : (
       <div className={`block ${isExpanded ? 'open' : ''}`}>
-        <h3 className='big-block-title'>{blockTitle}</h3>
+        <div className='block-title-wrapper'>
+          <h3 className='big-block-title'>{blockTitle}</h3>
+          {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            <div className='block-cta-wrapper'>
+              <Link
+                className='block-title-translation-cta'
+                to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+              >
+                {t('misc.translation-pending')}
+              </Link>
+            </div>
+          )}
+        </div>
         {this.renderBlockIntros(blockIntroArr)}
         <button
           aria-expanded={isExpanded}

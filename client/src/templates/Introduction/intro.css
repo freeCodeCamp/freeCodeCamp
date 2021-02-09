@@ -8,9 +8,32 @@
   overflow-wrap: break-word;
 }
 
+.block-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 .big-block-title {
   font-size: 1.5rem;
   overflow-wrap: break-word;
+}
+
+.block-title-translation-cta {
+  padding: 1em;
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.block-title-translation-cta:hover {
+  text-decoration: underline;
+}
+
+.block-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 1.5rem;
 }
 
 .course-title {
