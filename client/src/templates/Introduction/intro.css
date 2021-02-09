@@ -184,12 +184,12 @@ a.translation-banner {
   background-color: var(--blue-dark);
   display: flex;
   align-items: center;
-  display: flex;
   justify-content: center;
   font-size: 14px;
-  padding: 6px;
+  padding: 5px;
   width: 100vw;
   font-weight: 700;
+  font-size: 1rem;
   z-index: 10;
   color: var(--gray-00);
   text-decoration: none;
@@ -197,6 +197,7 @@ a.translation-banner {
 
 a.translation-banner * {
   margin: 0px;
+  color: var(--gray-00);
 }
 
 a.translation-banner span {
