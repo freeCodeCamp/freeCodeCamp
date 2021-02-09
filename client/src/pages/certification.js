@@ -24,16 +24,15 @@ const Certification = () => {
       : cert.dashedName.replace(/-certificate/, '')
   );
 
-    return (
-      <Router>
-        <ShowCertification
-          path={withPrefix('/certification/:username/:certName')}
-          validCertNames={validCertNames}
-        />
-        <RedirectHome default={true} />
-      </Router>
-    );
-  }
-}
+  return (
+    <Router>
+      <ShowCertification
+        path={withPrefix('/certification/:username/:certName')}
+        validCertNames={validCertNames}
+      />
+      <RedirectHome default={true} />
+    </Router>
+  );
+};
 
 export default Certification;
