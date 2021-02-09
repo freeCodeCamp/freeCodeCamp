@@ -71,7 +71,6 @@ export class NavLinks extends Component {
         ) : (
           <Link
             className='nav-link'
-            external={true}
             key='donate'
             sameTab={false}
             to='/donate'
