@@ -39,12 +39,12 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
       </div>
       <div className='challenge-title'>
         <b>{children}</b>
+        {isCompleted ? (
+          <GreenPass
+            style={{ height: '15px', width: '15px', marginLeft: '7px' }}
+          />
+        ) : null}
       </div>
-      {isCompleted ? (
-        <GreenPass
-          style={{ height: '15px', width: '15px', marginLeft: '7px' }}
-        />
-      ) : null}
     </div>
   );
 }
