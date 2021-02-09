@@ -237,7 +237,6 @@ export const query = graphql`
           order
           superBlock
           dashedName
-          translationPending
         }
       }
     }

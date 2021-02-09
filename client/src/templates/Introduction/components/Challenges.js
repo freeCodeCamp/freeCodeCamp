@@ -79,7 +79,6 @@ export class Challenges extends Component {
                   {this.renderCheckMark(challenge.isCompleted)}
                 </span>
                 {challenge.title}
-                {challenge.translationPending && ' TRANSLATION PENDING'}
               </Link>
             ) : (
               <Link
