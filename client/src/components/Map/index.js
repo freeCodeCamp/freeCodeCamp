@@ -8,6 +8,8 @@ import { Link } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import { dasherize } from '../../../../utils/slugs';
 import './map.css';
+import { isAuditedCert } from '../../../../utils/is-audited';
+import { curriculumLocale } from '../../../../config/env.json';
 
 const propTypes = {
   currentSuperBlock: PropTypes.string,
@@ -53,7 +55,7 @@ function renderLandingMap(nodes) {
 
 function renderLearnMap(nodes, currentSuperBlock = '') {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
-  return (
+  return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
       {nodes.map((node, i) => (
         <li key={i}>
@@ -68,6 +70,51 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
           </Link>
         </li>
       ))}
+    </ul>
+  ) : (
+    <ul data-test-label='learn-curriculum-map'>
+      {nodes
+        .filter(node =>
+          isAuditedCert(curriculumLocale, dasherize(node.superBlock))
+        )
+        .map((node, i) => (
+          <li key={i}>
+            <Link
+              className='btn link-btn btn-lg'
+              to={`/learn/${dasherize(node.superBlock)}/`}
+            >
+              <div style={linkSpacingStyle}>
+                {generateIconComponent(node.superBlock, 'map-icon')}
+                {createSuperBlockTitle(node.superBlock)}
+              </div>
+            </Link>
+          </li>
+        ))}
+      <hr />
+      {nodes
+        .filter(
+          node => !isAuditedCert(curriculumLocale, dasherize(node.superBlock))
+        )
+        .map((node, i) => (
+          <li key={i}>
+            <Link
+              className='btn link-btn btn-lg'
+              to={`/learn/${dasherize(node.superBlock)}/`}
+            >
+              <div style={linkSpacingStyle}>
+                {generateIconComponent(node.superBlock, 'map-icon')}
+                {createSuperBlockTitle(node.superBlock)}
+              </div>
+            </Link>
+          </li>
+        ))}
+      <Link
+        external={true}
+        sameTab={false}
+        to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+      >
+        {i18next.t('learn.help-translate')}
+      </Link>
     </ul>
   );
 }

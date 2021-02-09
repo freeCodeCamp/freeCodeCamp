@@ -291,7 +291,8 @@
       "code": "Código",
       "tests": "Pruebas",
       "preview": "Avance"
-    }
+    },
+    "help-translate": "Translate these challenges"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",

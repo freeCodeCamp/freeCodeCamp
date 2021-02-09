@@ -291,7 +291,8 @@
       "code": "码",
       "tests": "测验",
       "preview": "预习"
-    }
+    },
+    "help-translate": "Translate these challenges"
   },
   "donate": {
     "title": "支持我们的非营利组织",

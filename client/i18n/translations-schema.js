@@ -340,7 +340,8 @@ const translationsSchema = {
       code: 'Code',
       tests: 'Tests',
       preview: 'Preview'
-    }
+    },
+    'help-translate': 'Translate these challenges.'
   },
   donate: {
     title: 'Support our nonprofit',
