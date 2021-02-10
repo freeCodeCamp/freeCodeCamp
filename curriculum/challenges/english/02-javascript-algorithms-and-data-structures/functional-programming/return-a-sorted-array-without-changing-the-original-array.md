@@ -49,6 +49,20 @@ The function should return a new array, not the array passed to it.
 assert(nonMutatingSort(globalArray) !== globalArray);
 ```
 
+`nonMutatingSort([1, 30, 4, 21, 100000])` should return `[1, 4, 21, 30, 100000]`.
+
+```js
+assert(JSON.stringify(nonMutatingSort([1, 30, 4, 21, 100000])) ===
+    JSON.stringify([1, 4, 21, 30, 100000]))
+```
+
+`nonMutatingSort([140000, 104, 99])` should return `[99, 104, 140000]`.
+
+```js
+assert(JSON.stringify(nonMutatingSort([140000, 104, 99])) ===
+    JSON.stringify([99, 104, 140000]))
+```
+
 # --seed--
 
 ## --seed-contents--
