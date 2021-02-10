@@ -201,39 +201,6 @@ button.map-title {
   margin-bottom: 0;
 }
 
-a.translation-banner {
-  position: fixed;
-  top: var(--header-height);
-  background-color: var(--blue-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  width: 100vw;
-  font-weight: 700;
-  font-size: 1rem;
-  z-index: 10;
-  color: var(--gray-00);
-  text-decoration: none;
-}
-
-a.translation-banner * {
-  margin: 0px;
-  color: var(--gray-00);
-}
-
-a.translation-banner span {
-  text-decoration: underline;
-}
-
-a.translation-banner:hover {
-  text-decoration: none;
-}
-
-a.translation-banner:hover span {
-  text-decoration: none;
-}
-
 @media screen and (max-width: 500px) {
   .super-block-intro-page p {
     font-size: 1rem;

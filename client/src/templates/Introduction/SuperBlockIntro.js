@@ -15,7 +15,7 @@ import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
 import { dasherize } from '../../../../utils/slugs';
 import Block from './components/Block';
-import { Spacer, Link } from '../../components/helpers';
+import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
@@ -127,33 +127,17 @@ export class SuperBlockIntroductionPage extends Component {
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
-    const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
-    const { title: i18nSuperBlock, isTranslated } = superBlockIntroObj;
-    const translationBannerText = t(`intro:misc-text.translation-banner`);
-    const translationBannerHelpText = t(`intro:misc-text.translation-help`);
+    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
 
     return (
       <>
         <Helmet>
           <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
-        {isTranslated ? (
-          ''
-        ) : (
-          <Link
-            className='translation-banner'
-            external={true}
-            to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-          >
-            <p>
-              {translationBannerText} <span>{translationBannerHelpText}</span>.
-            </p>
-          </Link>
-        )}
         <Grid>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size={isTranslated ? 2 : 3} />
+              <Spacer size={2} />
               <SuperBlockIntro superBlock={superBlock} />
               <Spacer size={2} />
               <h2 className='text-center big-subheading'>
