@@ -52,17 +52,16 @@ function createQuestionEpic(action$, state$, { window }) {
 
       let textMessage = dedent(
         `**Tell us what's happening:**
-        \n\n
-        ${
-          projectFormValues.length
-            ? `**Your project link(s)**\n`
-            : `**Your code so far**`
-        }
-        ${projectFormValues
-          ?.map(([key, val]) => `${key}: ${val}\n`)
-          ?.join('') || filesToMarkdown(files)}
-        \n
-        ${endingText}`
+
+    ${
+      projectFormValues.length
+        ? `**Your project link(s)**\n`
+        : `**Your code so far**`
+    }
+    ${projectFormValues?.map(([key, val]) => `${key}: ${val}\n`)?.join('') ||
+      filesToMarkdown(files)}
+
+    ${endingText}`
       );
 
       const altTextMessage = dedent(
