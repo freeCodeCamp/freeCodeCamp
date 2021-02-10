@@ -113,10 +113,10 @@ assert(
   .bar {
     width: 25px;
     height: 100px;
-    /* Only change code below this line */
+    /* Add your code below this line */
 
     
-    /* Only change code above this line */
+    /* Add your code above this line */
     display: inline-block;
     background-color: blue;
   }
@@ -130,7 +130,7 @@ assert(
       .enter()
       .append("div")
       .attr("class", "bar")
-      .style("height", (d) => (d + "px"))
+      .style("height", (d) => (d + "px")) // Change this line
   </script>
 </body>
 ```
