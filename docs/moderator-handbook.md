@@ -42,9 +42,9 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
 ```markdown
 Thank you for your pull request.
- 
+
 We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
- 
+
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
 
@@ -80,7 +80,7 @@ In both of these situations, you should go ahead and close their pull request an
 
 ```markdown
 Thank you for opening this pull request.
- 
+
 This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
 
 Thank you and happy coding.
@@ -229,9 +229,9 @@ Discord Bans are global - you cannot ban a user from a specific channel, only fr
 
 There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, as this can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
 
-- Call the `!fCC moderate private @username` command, where `@username` is the *Discord mention* of the user. If you are calling this command from a private channel (such as #mod-chat), you will need to parse the mention manually: Ensure you have Developer Mode turned on in your Discord settings, then right-click on the user's avatar and select `Copy ID`. Replace the `@username` parameter with `<@!ID>`, where `ID` is the value you copied earlier. The result should look like: `!fCC moderate private <@!465650873650118659>`.
+- Call the `!fCC moderate private @username` command, where `@username` is the _Discord mention_ of the user. If you are calling this command from a private channel (such as #mod-chat), you will need to parse the mention manually: Ensure you have Developer Mode turned on in your Discord settings, then right-click on the user's avatar and select `Copy ID`. Replace the `@username` parameter with `<@!ID>`, where `ID` is the value you copied earlier. The result should look like: `!fCC moderate private <@!465650873650118659>`.
 - The bot will create a new channel under the `private` category and add the `@username`-mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
-- When the conversation is complete, call the `!fCC moderate close` command *in the private channel* to have the bot close and delete that channel.
+- When the conversation is complete, call the `!fCC moderate close` command _in the private channel_ to have the bot close and delete that channel.
 
 4. **Deleting messages**
    Moderators have the ability to delete messages on Discord. They should only exercise this ability in four very specific situations:
@@ -280,11 +280,11 @@ In all other situations - even situations where the code of conduct is violated 
 Moderating the chat server is very similar to moderating the Discord server, but there are a few key differences:
 
 1. **No Ban functionality**
-    At this time, Rocket.Chat does not have a flow for banning users. Users can be muted (so they are prevented from chatting in a room) or kicked from a room.
+   At this time, Rocket.Chat does not have a flow for banning users. Users can be muted (so they are prevented from chatting in a room) or kicked from a room.
 2. **Modified Bot Commands**
-    The moderation bot in the chat server was developed with a smoother UX in mind. Some of the commands have been modified. Use the `!fCC modHelp` command to view the available functionality. Bot commands in the chat server do NOT require a user mention as they do with Discord.
+   The moderation bot in the chat server was developed with a smoother UX in mind. Some of the commands have been modified. Use the `!fCC modHelp` command to view the available functionality. Bot commands in the chat server do NOT require a user mention as they do with Discord.
 3. **No Role Mentions**
-    Unlike Discord, Rocket.Chat does not allow you to mention all users by a specific role - this means you cannot ping all moderators at once.
+   Unlike Discord, Rocket.Chat does not allow you to mention all users by a specific role - this means you cannot ping all moderators at once.
 
 ## How to become a moderator
 
@@ -380,14 +380,14 @@ Feel free to reference the [contributing guidelines](https://contribute.freecode
 
 ### Syncing Fork
 
-> When PR is not up to date with the `master` branch.
+> When PR is not up to date with the `main` branch.
 
 ````markdown
 Hey @username
 
 We would love to be able to merge your changes but it looks like the branch is not up to date. ⚠️
 
-To resolve this error, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
+To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
 Using the command line, you can do this in three easy steps:
 
