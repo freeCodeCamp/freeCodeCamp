@@ -117,9 +117,7 @@ The action creators and the reducer should reference the `LOGIN` and `LOGOUT` co
 ## --seed-contents--
 
 ```js
-// Change code below this line
 
-// Change code above this line
 
 const defaultState = {
   authenticated: false
@@ -128,11 +126,11 @@ const defaultState = {
 const authReducer = (state = defaultState, action) => {
 
   switch (action.type) {
-    case 'LOGIN': // Change this line
+    case 'LOGIN': 
       return {
         authenticated: true
       }
-    case 'LOGOUT': // Change this line
+    case 'LOGOUT': 
       return {
         authenticated: false
       }
@@ -145,7 +143,7 @@ const authReducer = (state = defaultState, action) => {
 };
 
 const store = Redux.createStore(authReducer);
-// Change code below this line
+
 const loginUser = () => {
   return {
     type: 'LOGIN'
@@ -157,7 +155,6 @@ const logoutUser = () => {
     type: 'LOGOUT'
   }
 };
-// Change code above this line
 ```
 
 # --solutions--
