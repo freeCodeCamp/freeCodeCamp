@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
@@ -86,7 +86,7 @@ export class NavLinks extends Component {
           {t('buttons.curriculum')}
         </Link>
         {username && (
-          <>
+          <Fragment key='profile-settings'>
             <Link
               className='nav-link'
               key='profile'
@@ -103,7 +103,7 @@ export class NavLinks extends Component {
             >
               {t('buttons.settings')}
             </Link>
-          </>
+          </Fragment>
         )}
         <hr className='nav-line' />
         <Link
@@ -188,12 +188,16 @@ export class NavLinks extends Component {
           )
         )}
         {username && (
-          <>
+          <Fragment key='signout-frag'>
             <hr className='nav-line-2' />
-            <a className='nav-link' href={`${apiLocation}/signout`}>
+            <a
+              className='nav-link'
+              href={`${apiLocation}/signout`}
+              key='sign-out'
+            >
               {t('buttons.sign-out')}
             </a>
-          </>
+          </Fragment>
         )}
       </div>
     );
