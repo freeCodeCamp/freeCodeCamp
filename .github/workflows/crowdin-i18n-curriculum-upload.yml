@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  
   i18n-upload-curriculum-files:
     name: Learn
     runs-on: ubuntu-18.04
@@ -35,7 +34,7 @@ jobs:
           create_pull_request: false
 
           # global options
-          config: './curriculum/crowdin.yml'
+          config: './config/crowdin/curriculum/crowdin.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug

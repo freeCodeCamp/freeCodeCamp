@@ -1,9 +1,8 @@
 name: Crowdin Docs Download
 on:
   workflow_dispatch:
-    
-jobs:
 
+jobs:
   i18n-download-docs-translations:
     name: Learn
     runs-on: ubuntu-18.04
@@ -38,7 +37,7 @@ jobs:
           pull_request_labels: 'scope: i18n, scope: docs, crowdin-sync'
 
           # global options
-          config: './docs/crowdin.yml'
+          config: './config/crowdin/docs/crowdin.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
