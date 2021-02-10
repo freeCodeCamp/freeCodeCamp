@@ -58,7 +58,8 @@ export class SolutionForm extends Component {
         solution: 'url',
         githubLink: 'url'
       },
-      required: ['solution']
+      required: ['solution'],
+      isEditorLinkAllowed: false
     };
 
     const buttonCopy = isSubmitting
@@ -89,6 +90,7 @@ export class SolutionForm extends Component {
 
       case pythonProject:
         formFields = solutionField;
+        options.isEditorLinkAllowed = true;
         solutionLink =
           solutionLink +
           (description.includes('Colaboratory')

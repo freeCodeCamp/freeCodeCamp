@@ -15,17 +15,18 @@ const normalizeOptions = {
 };
 
 export function formatUrlValues(values, options) {
+  const { isEditorLinkAllowed, types } = options;
   const validatedValues = { values: {}, errors: [], invalidValues: [] };
   const urlValues = Object.keys(values).reduce((result, key) => {
     let value = values[key];
     const nullOrWarning = composeValidators(
       localhostValidator,
-      key === 'githubLink' ? null : editorValidator
+      key === 'githubLink' || isEditorLinkAllowed ? null : editorValidator
     )(value);
     if (nullOrWarning) {
       validatedValues.invalidValues.push(nullOrWarning);
     }
-    if (value && options.types[key] === 'url') {
+    if (value && types[key] === 'url') {
       try {
         value = normalizeUrl(value, normalizeOptions);
       } catch (err) {

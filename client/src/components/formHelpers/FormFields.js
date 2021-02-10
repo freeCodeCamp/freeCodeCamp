@@ -36,7 +36,8 @@ function FormFields(props) {
     ignored = [],
     placeholders = {},
     required = [],
-    types = {}
+    types = {},
+    isEditorLinkAllowed = false
   } = options;
 
   const nullOrWarning = (value, error, isURL, name) => {
@@ -49,7 +50,7 @@ function FormFields(props) {
       }
     }
     const validationWarning = composeValidators(
-      name === 'githubLink' ? null : editorValidator,
+      name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
       localhostValidator
     )(value);
     const message = error || validationError || validationWarning;
