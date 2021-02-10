@@ -41,8 +41,11 @@ function createQuestionEpic(action$, state$, { window }) {
       );
       const endingText = dedent(
         `**Your browser information:**
+
         User Agent is: <code>${userAgent}</code>.
+
         **Challenge:** ${challengeTitle}
+
         **Link to the challenge:**
         ${href}`
       );
@@ -64,15 +67,25 @@ function createQuestionEpic(action$, state$, { window }) {
 
       const altTextMessage = dedent(
         `**Tell us what's happening:**
+
+
+
         **Your code so far**
+
         WARNING
+
         The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.
+
         You will need to take an additional step here so the code you wrote presents in an easy to read format.
+
         Please copy/paste all the editor code showing in the challenge from where you just linked.
+
         \`\`\`
+
         Replace these two sentences with your copied code.
         Please leave the \`\`\` line above and the \`\`\` line below,
         because they allow your code to properly format in the post.
+
         \`\`\`\n${endingText}`
       );
 
