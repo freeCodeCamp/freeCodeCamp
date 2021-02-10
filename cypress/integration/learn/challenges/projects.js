@@ -12,9 +12,6 @@ const projects = {
   ]
 };
 describe('project submission', () => {
-  before(() => {
-    cy.login();
-  });
   // NOTE: this will fail once challenge tests are added.
   it('Should be possible to submit Python projects', () => {
     const { superBlock, block, challenges } = projects;
@@ -25,7 +22,7 @@ describe('project submission', () => {
         .type('https://repl.it/@camperbot/python-project#main.py');
 
       cy.contains("I've completed this challenge").click();
-      cy.contains('Submit and go to next challenge').click();
+      cy.contains('Go to next challenge').click();
     });
   });
 });
