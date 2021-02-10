@@ -16,13 +16,13 @@ This involves three steps to be followed in sequence:
 
 #### Building the codebase - Mapping Git Branches to Deployments.
 
-Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
+Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) branch once a day and is released into an isolated infrastructure.
 
 This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
 It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
-Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch.
+Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current) branch.
 
 This is the final release that moves changes to our production platforms on freeCodeCamp.org.
 
@@ -99,10 +99,10 @@ Currently, only members on the developer team can push to the production branche
    npm run clean-and-develop
    ```
 
-5. Move changes from `main` to `production-staging` via a fast-forward merge
+5. Move changes from `main` to `prod-staging` via a fast-forward merge
 
    ```
-   git checkout production-staging
+   git checkout prod-staging
    git merge main
    git push upstream
    ```
@@ -112,7 +112,7 @@ Currently, only members on the developer team can push to the production branche
    >
    > If they do, you may have done something incorrectly and you should just start over.
 
-The above steps will automatically trigger a run on the build pipeline for the `production-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
+The above steps will automatically trigger a run on the build pipeline for the `prod-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
 The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
 
@@ -127,19 +127,19 @@ The process is mostly the same as the staging platforms, with a few extra checks
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
-1. Make sure your `production-staging` branch is pristine and in sync with the upstream.
+1. Make sure your `prod-staging` branch is pristine and in sync with the upstream.
 
    ```sh
-   git checkout production-staging
+   git checkout prod-staging
    git fetch --all --prune
-   git reset --hard upstream/production-staging
+   git reset --hard upstream/prod-staging
    ```
 
-2. Move changes from `production-staging` to `production-current` via a fast-forward merge
+2. Move changes from `prod-staging` to `prod-current` via a fast-forward merge
 
    ```
-   git checkout production-current
-   git merge production-staging
+   git checkout prod-current
+   git merge prod-staging
    git push upstream
    ```
 
@@ -148,7 +148,7 @@ The process is mostly the same as the staging platforms, with a few extra checks
    >
    > If they do, you may have done something incorrectly and you should just start over.
 
-The above steps will automatically trigger a run on the build pipeline for the `production-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
+The above steps will automatically trigger a run on the build pipeline for the `prod-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
 
 > [!TIP|label:Estimates]
 > Typically the build run takes ~20-25 minutes to complete.
@@ -174,13 +174,13 @@ Once one of the staff members approves a release, the pipeline will push the cha
 
 Here is the current test, build and deployment status of the codebase.
 
-| Type             | Branch                                                                                       | Status                                                                                                                                                                                                                                              | Dashboard                                                                                 |
-| :--------------- | :------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
-| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
-| CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| Type             | Branch                                                                           | Status                                                                                                                                                                                                                                  | Dashboard                                                                                 |
+| :--------------- | :------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
+| Build Pipeline   | [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=prod-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=prod-staging) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) |                                                                                                                                                                                                                                         | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| CI Tests         | [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=prod-current)                                                                                                                                      | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=prod-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=prod-current) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) |                                                                                                                                                                                                                                         | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 
 ## Early access and beta testing
 
@@ -203,7 +203,7 @@ Currently a public beta testing version is available at:
 
 **The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
-The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site.
+The dev-team merges changes from the `prod-staging` branch to `prod-current` when they release changes. The top commit should be what you see live on the site.
 
 You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors) for a confirmation.
 
@@ -565,7 +565,7 @@ Provisioning VMs with the Code
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
    cd freeCodeCamp
-   git checkout production-current # or any other branch to be deployed
+   git checkout prod-current # or any other branch to be deployed
    ```
 
 4. Create the `.env` from the secure credentials storage.
