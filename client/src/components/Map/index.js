@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 import { generateIconComponent } from '../../assets/icons';
 
-import { Link } from '../helpers';
+import { Link, Spacer } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import { dasherize } from '../../../../utils/slugs';
 import './map.css';
@@ -100,6 +100,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
         >
           {i18next.t('learn.help-translate-link')}
         </Link>
+        <Spacer />
       </div>
       {nodes
         .filter(
