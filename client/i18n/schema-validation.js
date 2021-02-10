@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const { translationsSchema } = require('./translations-schema');
-const { availableLangs } = require('./allLangs');
 const { trendingSchema } = require('./trending-schema');
 const { motivationSchema } = require('./motivation-schema');
 const { introSchema } = require('./intro-schema');
@@ -265,8 +264,8 @@ const metaTagsSchemaValidation = languages => {
   });
 };
 
-translationSchemaValidation(availableLangs.client);
-trendingSchemaValidation(availableLangs.client);
-motivationSchemaValidation(availableLangs.client);
-introSchemaValidation(availableLangs.client);
-metaTagsSchemaValidation(availableLangs.client);
+translationSchemaValidation(['english']);
+trendingSchemaValidation(['english']);
+motivationSchemaValidation(['english']);
+introSchemaValidation(['english']);
+metaTagsSchemaValidation(['english']);
