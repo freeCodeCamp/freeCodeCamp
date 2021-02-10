@@ -1,3 +1,4 @@
+import dedent from 'dedent';
 import { ofType } from 'redux-observable';
 import {
   types,
@@ -38,24 +39,42 @@ function createQuestionEpic(action$, state$, { window }) {
       const projectFormValues = Object.entries(
         projectFormValuesSelector(state)
       );
-      const endingText = `**Your browser information:**\n
-      \nUser Agent is: <code>${userAgent}</code>.\n
-      \n**Challenge:** ${challengeTitle}\n
-      \n**Link to the challenge:**\n\n${href}`;
+      const endingText = dedent(
+        `**Your browser information:**
+        User Agent is: <code>${userAgent}</code>.
+        **Challenge:** ${challengeTitle}
+        **Link to the challenge:**
+        ${href}`
+      );
 
-      let textMessage = `**Tell us what's happening:**\n\n${
-        projectFormValues.length
-          ? `**Your project link(s)**\n`
-          : `**Your code so far**`
-      }${projectFormValues?.map(([key, val]) => `${key}: ${val}\n`)?.join('') ||
-        filesToMarkdown(files)}${endingText}`;
+      let textMessage = dedent(
+        `**Tell us what's happening:**
 
-      const altTextMessage = `**Tell us what's happening:**\n
-      \n**Your code so far**\n\nWARNING\n
-      \nThe challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.\n
-      \nYou will need to take an additional step here so the code you wrote presents in an easy to read format.\n
-      \nPlease copy/paste all the editor code showing in the challenge from where you just linked.\n\`\`\`\nReplace these two sentences with your copied code.\n
-      \nPlease leave the \`\`\` line above and the \`\`\` line below,\nbecause they allow your code to properly format in the post.\n\`\`\`\n${endingText}`;
+        ${
+          projectFormValues.length
+            ? `**Your project link(s)**\n`
+            : `**Your code so far**`
+        }
+        ${projectFormValues
+          ?.map(([key, val]) => `${key}: ${val}\n`)
+          ?.join('') || filesToMarkdown(files)}
+
+        ${endingText}`
+      );
+
+      const altTextMessage = dedent(
+        `**Tell us what's happening:**
+        **Your code so far**
+        WARNING
+        The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.
+        You will need to take an additional step here so the code you wrote presents in an easy to read format.
+        Please copy/paste all the editor code showing in the challenge from where you just linked.
+        \`\`\`
+        Replace these two sentences with your copied code.
+        Please leave the \`\`\` line above and the \`\`\` line below,
+        because they allow your code to properly format in the post.
+        \`\`\`\n${endingText}`
+      );
 
       const category = window.encodeURIComponent(helpCategory || 'Help');
 
