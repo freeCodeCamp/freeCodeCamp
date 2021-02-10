@@ -8,6 +8,7 @@ import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { configureAnchors } from 'react-scrollable-anchor';
 
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
@@ -40,6 +41,7 @@ const propTypes = {
   }),
   isSignedIn: PropTypes.bool,
   location: PropTypes.shape({
+    hash: PropTypes.string,
     state: PropTypes.shape({
       breadcrumbBlockClick: PropTypes.string
     })
@@ -48,6 +50,8 @@ const propTypes = {
   t: PropTypes.func,
   toggleBlock: PropTypes.func
 };
+
+configureAnchors({ offset: -40, scrollDuration: 0 });
 
 const mapStateToProps = state => {
   return createSelector(
@@ -71,6 +75,14 @@ const mapDispatchToProps = dispatch =>
 export class SuperBlockIntroductionPage extends Component {
   componentDidMount() {
     this.initializeExpandedState();
+
+    setTimeout(() => {
+      configureAnchors({ offset: -40, scrollDuration: 400 });
+    }, 0);
+  }
+
+  componentWillUnmount() {
+    configureAnchors({ offset: -40, scrollDuration: 0 });
   }
 
   getChosenBlock() {
@@ -84,8 +96,15 @@ export class SuperBlockIntroductionPage extends Component {
     } = this.props;
 
     // if coming from breadcrumb click
-    if (location.state && location.state.breadcrumbBlockClick)
+    if (location.state && location.state.breadcrumbBlockClick) {
       return dasherize(location.state.breadcrumbBlockClick);
+    }
+
+    // if the URL includes a hash
+    if (location.hash) {
+      const dashedBlock = location.hash.replace('#', '').replace('/', '');
+      return dashedBlock;
+    }
 
     let edge = edges[0];
 
@@ -146,7 +165,7 @@ export class SuperBlockIntroductionPage extends Component {
               <Spacer />
               <div className='block-ui'>
                 {blockDashedNames.map(blockDashedName => (
-                  <div key={blockDashedName}>
+                  <>
                     <Block
                       blockDashedName={blockDashedName}
                       challenges={nodesForSuperBlock.filter(
@@ -154,10 +173,8 @@ export class SuperBlockIntroductionPage extends Component {
                       )}
                       superBlockDashedName={superBlockDashedName}
                     />
-                    {blockDashedName !== 'project-euler' ? (
-                      <Spacer size={2} />
-                    ) : null}
-                  </div>
+                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
+                  </>
                 ))}
                 {superBlock !== 'Coding Interview Prep' && (
                   <div>

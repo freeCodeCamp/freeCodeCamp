@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { withTranslation } from 'react-i18next';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { completedChallengesSelector, executeGA } from '../../../redux';
@@ -132,67 +133,81 @@ export class Block extends Component {
     } = t('intro:misc-text');
 
     return isProjectBlock ? (
-      <div className='block'>
-        <div className='block-title-wrapper'>
-          <h3 className='big-block-title'>{blockTitle}</h3>
-          {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
-            <div className='block-cta-wrapper'>
-              <Link
-                className='block-title-translation-cta'
-                to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            </div>
-          )}
-        </div>
-        {this.renderBlockIntros(blockIntroArr)}
-        <Challenges
-          challengesWithCompleted={challengesWithCompleted}
-          isProjectBlock={isProjectBlock}
-        />
-      </div>
-    ) : (
-      <div className={`block ${isExpanded ? 'open' : ''}`}>
-        <div className='block-title-wrapper'>
-          <h3 className='big-block-title'>{blockTitle}</h3>
-          {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
-            <div className='block-cta-wrapper'>
-              <Link
-                className='block-title-translation-cta'
-                to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            </div>
-          )}
-        </div>
-        {this.renderBlockIntros(blockIntroArr)}
-        <button
-          aria-expanded={isExpanded}
-          className='map-title'
-          onClick={this.handleBlockClick}
-        >
-          <Caret />
-          <h4 className='course-title'>
-            {`${
-              isExpanded ? collapseText : expandText
-            } ${coursesText.toLowerCase()}`}
-          </h4>
-          <div className='map-title-completed course-title'>
-            {this.renderCheckMark(
-              completedCount === challengesWithCompleted.length
+      <ScrollableAnchor id={blockDashedName}>
+        <div className='block'>
+          <div className='block-title-wrapper'>
+            <a className='block-link' href={`#${blockDashedName}`}>
+              <h3 className='big-block-title'>
+                {blockTitle}
+                <span className='block-link-icon'>#</span>
+              </h3>
+            </a>
+            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+              <div className='block-cta-wrapper'>
+                <Link
+                  className='block-title-translation-cta'
+                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              </div>
             )}
-            <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
-        </button>
-        {isExpanded && (
+          {this.renderBlockIntros(blockIntroArr)}
           <Challenges
             challengesWithCompleted={challengesWithCompleted}
             isProjectBlock={isProjectBlock}
           />
-        )}
-      </div>
+        </div>
+      </ScrollableAnchor>
+    ) : (
+      <ScrollableAnchor id={blockDashedName}>
+        <div className={`block ${isExpanded ? 'open' : ''}`}>
+          <div className='block-title-wrapper'>
+            <a className='block-link' href={`#${blockDashedName}`}>
+              <h3 className='big-block-title'>
+                {blockTitle}
+                <span className='block-link-icon'>#</span>
+              </h3>
+            </a>
+            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+              <div className='block-cta-wrapper'>
+                <Link
+                  className='block-title-translation-cta'
+                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              </div>
+            )}
+          </div>
+          {this.renderBlockIntros(blockIntroArr)}
+          <button
+            aria-expanded={isExpanded}
+            className='map-title'
+            onClick={this.handleBlockClick}
+          >
+            <Caret />
+            <h4 className='course-title'>
+              {`${
+                isExpanded ? collapseText : expandText
+              } ${coursesText.toLowerCase()}`}
+            </h4>
+            <div className='map-title-completed course-title'>
+              {this.renderCheckMark(
+                completedCount === challengesWithCompleted.length
+              )}
+              <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+            </div>
+          </button>
+          {isExpanded && (
+            <Challenges
+              challengesWithCompleted={challengesWithCompleted}
+              isProjectBlock={isProjectBlock}
+            />
+          )}
+        </div>
+      </ScrollableAnchor>
     );
   }
 }

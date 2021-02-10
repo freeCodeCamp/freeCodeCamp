@@ -26,6 +26,7 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
       <div className='challenge-title-breadcrumbs'>
         <Link
           className='breadcrumb-left'
+          state={{ breadcrumbBlockClick: block }}
           to={`/learn/${dasherize(superBlock)}`}
         >
           <span className='ellipsis'>
@@ -36,7 +37,7 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
         <Link
           className='breadcrumb-right'
           state={{ breadcrumbBlockClick: block }}
-          to={`/learn/${dasherize(superBlock)}`}
+          to={`/learn/${dasherize(superBlock)}/#${dasherize(block)}`}
         >
           {i18next.t(
             `intro:${dasherize(superBlock)}.blocks.${dasherize(block)}.title`
