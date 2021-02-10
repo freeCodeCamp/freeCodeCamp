@@ -426,9 +426,6 @@ const translationsSchema = {
       "We couldn't find what you were looking for, but here is a quote:"
   },
   search: {
-    'index-name': 'news',
-    'search-page-url':
-      'https://www.freecodecamp.org/news/search/?query={{searchQuery}}',
     label: 'Search',
     placeholder: 'Search 6,000+ tutorials',
     'see-results': 'See all results for {{searchQuery}}',

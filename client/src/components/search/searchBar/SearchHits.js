@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connectStateResults, connectHits } from 'react-instantsearch-dom';
 import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'react-i18next';
+import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
 import Suggestion from './SearchSuggestion';
 import NoHitsSuggestion from './NoHitsSuggestion';
@@ -25,9 +26,7 @@ const CustomHits = connectHits(
         query: searchQuery,
         url: noHits
           ? null
-          : t('search.search-page-url', {
-              searchQuery: encodeURIComponent(searchQuery)
-            }),
+          : `${searchPageUrl}?query=${encodeURIComponent(searchQuery)}`,
         title: t('search.see-results', { searchQuery: searchQuery }),
         _highlightResult: {
           query: {

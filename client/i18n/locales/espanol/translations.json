@@ -356,8 +356,6 @@
     "heres-a-quote": "No pudimos encontrar lo que estabas buscando, pero aquí hay una cita:"
   },
   "search": {
-    "index-name": "noticias",
-    "search-page-url": "https://www.freecodecamp.org/espanol/news/search/?query={{searchQuery}}",
     "label": "Buscar",
     "placeholder": "Buscar en más de 6.000 tutoriales",
     "see-results": "Ver todos los resultados de {{searchQuery}}",

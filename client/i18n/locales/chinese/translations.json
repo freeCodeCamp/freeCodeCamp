@@ -356,8 +356,6 @@
     "heres-a-quote": "我们未找到你搜索的信息。这里分享一句名言："
   },
   "search": {
-    "index-name": "news-zh",
-    "search-page-url": "https://chinese.freecodecamp.org/news/search/?query={{searchQuery}}",
     "label": "搜索",
     "placeholder": "搜索 300+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有结果",
