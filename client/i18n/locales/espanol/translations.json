@@ -285,6 +285,12 @@
     "cert-map-estimates": {
       "certs": "Certificación (300 horas)",
       "coding-prep": "(Miles de horas de desafíos)"
+    },
+    "editor-tabs": {
+      "info": "Información",
+      "code": "Código",
+      "tests": "Pruebas",
+      "preview": "Avance"
     }
   },
   "donate": {
