@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  
   i18n-upload-client-ui-files:
     name: Client
     runs-on: ubuntu-18.04
@@ -28,7 +27,7 @@ jobs:
           create_pull_request: false
 
           # global options
-          config: './client/i18n/locales/crowdin.yml'
+          config: './config/crowdin/client/crowdin.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug

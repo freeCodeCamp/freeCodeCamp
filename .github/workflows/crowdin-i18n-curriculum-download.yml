@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 
 jobs:
-
   i18n-download-curriculum-translations:
     name: Learn
     runs-on: ubuntu-18.04
@@ -38,7 +37,7 @@ jobs:
           pull_request_labels: 'scope: i18n, scope: learn, crowdin-sync'
 
           # global options
-          config: './curriculum/crowdin.yml'
+          config: './config/crowdin/curriculum/crowdin.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug

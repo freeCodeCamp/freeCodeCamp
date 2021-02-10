@@ -1,9 +1,8 @@
 name: Crowdin Client UI Download
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
-
   i18n-download-client-ui-translations:
     name: Client
     runs-on: ubuntu-18.04
@@ -37,7 +36,7 @@ jobs:
           pull_request_labels: 'scope: i18n, platform: client, crowdin-sync'
 
           # global options
-          config: './client/i18n/locales/crowdin.yml'
+          config: './config/crowdin/client/crowdin.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug

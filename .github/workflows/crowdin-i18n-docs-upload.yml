@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  
   i18n-upload-docs-files:
     name: Learn
     runs-on: ubuntu-18.04
@@ -28,7 +27,7 @@ jobs:
           create_pull_request: false
 
           # global options
-          config: './docs/crowdin.yml'
+          config: './config/crowdin/docs/crowdin.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
@@ -38,7 +37,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       #- name: Remove Deleted English Docs Files From Crowdin
       #  uses: ./tools/crowdin/actions/remove-deleted-files
       #  env:
