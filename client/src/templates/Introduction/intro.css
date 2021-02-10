@@ -20,13 +20,17 @@
 }
 
 .block-title-translation-cta {
-  padding: 1em;
-  color: var(--tertiary-color);
-  background-color: var(--tertiary-background);
+  padding: 0.2em 0.5em;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
 }
 
-.block-title-translation-cta:hover {
+.block-title-translation-cta:hover,
+.block-title-translation-cta:focus {
   text-decoration: underline;
+  padding: 0.2em 0.5em;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
 }
 
 .block-cta-wrapper {

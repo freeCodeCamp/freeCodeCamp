@@ -94,24 +94,19 @@
 }
 
 .title-translation-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  height: 25px;
   text-decoration: none;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  max-height: 25px;
-  min-width: 50px;
-  flex-grow: 1;
-  flex-shrink: 1;
-  word-wrap: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
-  padding: 0px 3px;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
 }
 
-.title-translation-cta:hover {
+.title-translation-cta:hover,
+.title-translation-cta:focus {
   text-decoration: underline;
-  background-color: var(--quaternary-background);
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
 }

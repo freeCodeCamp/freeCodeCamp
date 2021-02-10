@@ -17,6 +17,12 @@ const propTypes = {
 function ChallengeTitle({ block, children, isCompleted, superBlock }) {
   return (
     <div className='challenge-title-wrap'>
+      <Link
+        className='title-translation-cta'
+        to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+      >
+        {i18next.t('misc.translation-pending')}
+      </Link>
       <div className='challenge-title-breadcrumbs'>
         <Link
           className='breadcrumb-left'
@@ -46,12 +52,6 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
             />
           ) : null}
         </div>
-        <Link
-          className='title-translation-cta'
-          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-        >
-          {i18next.t('misc.translation-pending')}
-        </Link>
       </div>
     </div>
   );
