@@ -285,6 +285,12 @@
     "cert-map-estimates": {
       "certs": "认证（300 小时）",
       "coding-prep": "（数千小时的挑战）"
+    },
+    "editor-tabs": {
+      "info": "信息",
+      "code": "码",
+      "tests": "测验",
+      "preview": "预习"
     }
   },
   "donate": {

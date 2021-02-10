@@ -334,6 +334,12 @@ const translationsSchema = {
     'cert-map-estimates': {
       certs: 'Certification (300\u00A0hours)',
       'coding-prep': '(Thousands of hours of challenges)'
+    },
+    'editor-tabs': {
+      info: 'Info',
+      code: 'Code',
+      tests: 'Tests',
+      preview: 'Preview'
     }
   },
   donate: {

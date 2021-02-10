@@ -9,6 +9,7 @@ import { currentTabSelector, moveToTab } from '../redux';
 import { bindActionCreators } from 'redux';
 import EditorTabs from './EditorTabs';
 import { showUpcomingChanges } from '../../../../../config/env.json';
+import i18next from 'i18next';
 
 const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector
@@ -64,18 +65,29 @@ class MobileLayout extends Component {
           id='challenge-page-tabs'
           onSelect={moveToTab}
         >
-          <TabPane eventKey={1} title='Info'>
+          <TabPane eventKey={1} title={i18next.t('learn.editor-tabs.info')}>
             {instructions}
           </TabPane>
-          <TabPane eventKey={2} title='Code' {...editorTabPaneProps}>
+          <TabPane
+            eventKey={2}
+            title={i18next.t('learn.editor-tabs.code')}
+            {...editorTabPaneProps}
+          >
             {showUpcomingChanges && <EditorTabs />}
             {editor}
           </TabPane>
-          <TabPane eventKey={3} title='Tests' {...editorTabPaneProps}>
+          <TabPane
+            eventKey={3}
+            title={i18next.t('learn.editor-tabs.tests')}
+            {...editorTabPaneProps}
+          >
             {testOutput}
           </TabPane>
           {hasPreview && (
-            <TabPane eventKey={4} title='Preview'>
+            <TabPane
+              eventKey={4}
+              title={i18next.t('learn.editor-tabs.preview')}
+            >
               {preview}
             </TabPane>
           )}
