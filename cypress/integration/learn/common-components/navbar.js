@@ -57,22 +57,6 @@ describe('Navbar', () => {
     }
   );
 
-  it('Should be able to search on navbar search field', () => {
-    cy.get('.ais-SearchBox').within(() => {
-      cy.get('input').type('Learn');
-    });
-
-    cy.get('.ais-Hits-list')
-      .children()
-      .should('to.have.length.of.at.least', 1);
-
-    cy.get('.ais-SearchBox').within(() => {
-      cy.get('input').clear();
-    });
-
-    cy.get('div.ais-Hits').should('not.exist');
-  });
-
   it('Should have a "Sign in" button', () => {
     cy.contains("[data-test-label='landing-small-cta']", 'Sign in');
   });
