@@ -24,6 +24,7 @@ const propTypes = {
   ).isRequired,
   options: PropTypes.shape({
     ignored: PropTypes.arrayOf(PropTypes.string),
+    isEditorLinkAllowed: PropTypes.bool,
     placeholders: PropTypes.objectOf(PropTypes.string),
     required: PropTypes.arrayOf(PropTypes.string),
     types: PropTypes.objectOf(PropTypes.string)
@@ -36,7 +37,8 @@ function FormFields(props) {
     ignored = [],
     placeholders = {},
     required = [],
-    types = {}
+    types = {},
+    isEditorLinkAllowed = false
   } = options;
 
   const nullOrWarning = (value, error, isURL, name) => {
@@ -49,7 +51,7 @@ function FormFields(props) {
       }
     }
     const validationWarning = composeValidators(
-      name === 'githubLink' ? null : editorValidator,
+      name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
       localhostValidator
     )(value);
     const message = error || validationError || validationWarning;
