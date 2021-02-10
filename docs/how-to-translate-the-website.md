@@ -25,7 +25,7 @@ Here are some tips:
 - Only translate the values in the JSON files, the keys need to stay the same
 - The English versions of the JSON files are the "source of truth" for what needs to be translated. If you are unsure what text to translate, find the matching key in the English version of the file and translate that text
 - Be sure to escape double quotes (`\"`) in the strings if you need to use them
-- Most of the time, when you see text wrapped in number tags (`<0>`text`</0>`) tags, it's a link. It is okay to change the text that it is wrapped around. Just keep the same tags.
+- Most of the time, when you see text wrapped in number tags (`<0>`text`</0>`), it's a link. It is okay to change the text that it is wrapped around. Just keep the same tags.
 - A value that has something like `{{value}}` in it is a variable. Don't change any of those characters. You can move that whole group of characters around though.
 
 There's some [help on how make changes and open a PR here](/how-to-setup-freecodecamp-locally).
