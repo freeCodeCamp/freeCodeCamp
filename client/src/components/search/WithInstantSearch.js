@@ -7,7 +7,7 @@ import qs from 'query-string';
 import { navigate } from 'gatsby';
 import Media from 'react-responsive';
 import algoliasearch from 'algoliasearch/lite';
-import { withTranslation } from 'react-i18next';
+import { newsIndex } from '../../utils/algolia-locale-setup';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -32,7 +32,6 @@ const propTypes = {
   isDropdownEnabled: PropTypes.bool,
   location: PropTypes.object.isRequired,
   query: PropTypes.string,
-  t: PropTypes.func.isRequired,
   toggleSearchDropdown: PropTypes.func.isRequired,
   updateSearchQuery: PropTypes.func.isRequired
 };
@@ -126,11 +125,11 @@ class InstantSearchRoot extends Component {
   };
 
   render() {
-    const { query, t } = this.props;
+    const { query } = this.props;
     const MAX_MOBILE_HEIGHT = 768;
     return (
       <InstantSearch
-        indexName={t('search.index-name')}
+        indexName={newsIndex}
         onSearchStateChange={this.onSearchStateChange}
         searchClient={searchClient}
         searchState={{ query }}
@@ -159,7 +158,7 @@ InstantSearchRoot.propTypes = propTypes;
 const InstantSearchRootConnected = connect(
   mapStateToProps,
   mapDispatchToProps
-)(withTranslation()(InstantSearchRoot));
+)(InstantSearchRoot);
 
 const WithInstantSearch = ({ children }) => (
   <Location>
