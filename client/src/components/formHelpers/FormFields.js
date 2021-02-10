@@ -24,6 +24,7 @@ const propTypes = {
   ).isRequired,
   options: PropTypes.shape({
     ignored: PropTypes.arrayOf(PropTypes.string),
+    isEditorLinkAllowed: PropTypes.bool,
     placeholders: PropTypes.objectOf(PropTypes.string),
     required: PropTypes.arrayOf(PropTypes.string),
     types: PropTypes.objectOf(PropTypes.string)

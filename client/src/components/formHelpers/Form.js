@@ -21,6 +21,7 @@ const propTypes = {
   initialValues: PropTypes.object,
   options: PropTypes.shape({
     ignored: PropTypes.arrayOf(PropTypes.string),
+    isEditorLinkAllowed: PropTypes.bool,
     required: PropTypes.arrayOf(PropTypes.string),
     types: PropTypes.objectOf(PropTypes.string)
   }),
