@@ -20,6 +20,7 @@
 }
 
 .block-title-translation-cta {
+  white-space: nowrap;
   padding: 0.2em 0.5em;
   color: var(--highlight-color);
   background-color: var(--highlight-background);
@@ -27,17 +28,18 @@
 
 .block-title-translation-cta:hover,
 .block-title-translation-cta:focus {
-  text-decoration: underline;
+  text-decoration: none;
   padding: 0.2em 0.5em;
-  color: var(--highlight-color);
-  background-color: var(--highlight-background);
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
 }
 
 .block-cta-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-right: 1.5rem;
+  justify-content: start;
+  padding-right: 15px;
+  padding-top: 25px;
 }
 
 .course-title {

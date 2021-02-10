@@ -102,11 +102,12 @@
   text-decoration: none;
   color: var(--highlight-color);
   background-color: var(--highlight-background);
+  margin-bottom: 10px;
 }
 
 .title-translation-cta:hover,
 .title-translation-cta:focus {
-  text-decoration: underline;
-  color: var(--highlight-color);
-  background-color: var(--highlight-background);
+  text-decoration: none;
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
 }
