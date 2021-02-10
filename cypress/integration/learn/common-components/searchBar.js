@@ -8,9 +8,19 @@ const search = query => {
   cy.wait(300);
 };
 
+const clear = () => {
+  cy.get('.ais-SearchBox').within(() => {
+    cy.get('input').clear();
+  });
+};
+
 describe('Search bar', () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit('/');
+  });
+
+  beforeEach(() => {
+    clear();
   });
 
   it('Should render properly', () => {
@@ -23,8 +33,6 @@ describe('Search bar', () => {
     cy.get('.ais-Hits-list')
       .children()
       .should('to.have.length.of.at.least', 1);
-
-    cy.contains('See all results for freeCodeCamp');
   });
 
   it('Should clear hits when input is cleared', () => {
@@ -34,9 +42,7 @@ describe('Search bar', () => {
       .children()
       .should('to.have.length.of.at.least', 1);
 
-    cy.get('.ais-SearchBox').within(() => {
-      cy.get('input').clear();
-    });
+    clear();
 
     cy.get('div.ais-Hits').should('not.exist');
   });
