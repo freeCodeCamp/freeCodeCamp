@@ -145,7 +145,7 @@ const authReducer = (state = defaultState, action) => {
 };
 
 const store = Redux.createStore(authReducer);
-
+// Change code below this line
 const loginUser = () => {
   return {
     type: 'LOGIN'
@@ -157,6 +157,7 @@ const logoutUser = () => {
     type: 'LOGOUT'
   }
 };
+// Change code above this line
 ```
 
 # --solutions--
