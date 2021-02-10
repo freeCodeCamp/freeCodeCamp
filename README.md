@@ -7,7 +7,7 @@
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
 Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
@@ -31,102 +31,102 @@ You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freec
 
 Once you’ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or résumé. And when your prospective employers or freelance clients click that link, they’ll see a verified certification specific to you.
 
-The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
 
 Here are our ten core certifications:
 
 #### 1. Responsive Web Design Certification
 
-- [Basic HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
-- [Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
-- [Applied Visual Design](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
-- [Applied Accessibility](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
-- [Responsive Web Design Principles](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
-- [CSS Flexbox](https://learn.freecodecamp.org/responsive-web-design/css-flexbox)
-- [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
+- [Basic HTML and HTML5](https://www.freecodecamp.org/learn/responsive-web-design/)
+- [Basic CSS](https://www.freecodecamp.org/learn/responsive-web-design/)
+- [Applied Visual Design](https://www.freecodecamp.org/learn/responsive-web-design/)
+- [Applied Accessibility](https://www.freecodecamp.org/learn/responsive-web-design/)
+- [Responsive Web Design Principles](https://www.freecodecamp.org/learn/responsive-web-design/)
+- [CSS Flexbox](https://www.freecodecamp.org/learn/responsive-web-design/)
+- [CSS Grid](https://www.freecodecamp.org/learn/responsive-web-design/)
   <br />
   <br />
   **Projects**: [Tribute Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page), [Survey Form](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form), [Product Landing Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page), [Technical Documentation Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page), [Personal Portfolio Webpage](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
 
 #### 2. JavaScript Algorithms and Data Structures Certification
 
-- [Basic JavaScript](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
-- [ES6](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6)
-- [Regular Expressions](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions)
-- [Debugging](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging)
-- [Basic Data Structures](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures)
-- [Algorithm Scripting](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting)
-- [Object-Oriented Programming](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming)
-- [Functional Programming](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming)
-- [Intermediate Algorithm Scripting](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
+- [Basic JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [ES6](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [Regular Expressions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [Debugging](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [Basic Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [Algorithm Scripting](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [Object-Oriented Programming](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [Functional Programming](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- [Intermediate Algorithm Scripting](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
   <br />
   <br />
   **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker),[ Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [Caesar's Cipher](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
 
 #### 3. Front End Libraries Certification
 
-- [Bootstrap](https://learn.freecodecamp.org/front-end-libraries/bootstrap)
-- [jQuery](https://learn.freecodecamp.org/front-end-libraries/jquery)
-- [Sass](https://learn.freecodecamp.org/front-end-libraries/sass)
-- [React](https://learn.freecodecamp.org/front-end-libraries/react)
-- [Redux](https://learn.freecodecamp.org/front-end-libraries/redux)
-- [React and Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
+- [Bootstrap](https://www.freecodecamp.org/learn/front-end-libraries/)
+- [jQuery](https://www.freecodecamp.org/learn/front-end-libraries/)
+- [Sass](https://www.freecodecamp.org/learn/front-end-libraries/)
+- [React](https://www.freecodecamp.org/learn/front-end-libraries/)
+- [Redux](https://www.freecodecamp.org/learn/front-end-libraries/)
+- [React and Redux](https://www.freecodecamp.org/learn/front-end-libraries/)
   <br />
   <br />
   **Projects**:  [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock)
 
 #### 4. Data Visualization Certification
 
-- [Data Visualization with D3](https://learn.freecodecamp.org/data-visualization/data-visualization-with-d3)
-- [JSON APIs and Ajax](https://learn.freecodecamp.org/data-visualization/json-apis-and-ajax)
+- [Data Visualization with D3](https://www.freecodecamp.org/learn/data-visualization/)
+- [JSON APIs and Ajax](https://www.freecodecamp.org/learn/data-visualization/)
   <br />
   <br />
   **Projects**:  [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
 
 #### 5. APIs and Microservices Certification
 
-- [Managing Packages with Npm](https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm)
-- [Basic Node and Express](https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express)
-- [MongoDB and Mongoose](https://learn.freecodecamp.org/apis-and-microservices/mongodb-and-mongoose)
+- [Managing Packages with Npm](https://www.freecodecamp.org/learn/apis-and-microservices/)
+- [Basic Node and Express](https://www.freecodecamp.org/learn/apis-and-microservices/)
+- [MongoDB and Mongoose](https://www.freecodecamp.org/learn/apis-and-microservices/)
   <br />
   <br />
   **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/file-metadata-microservice)
 
 #### 6. Quality Assurance Certification
 
-- [Quality Assurance and Testing with Chai](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-and-testing-with-chai/)
-- [Advanced Node and Express](https://www.freecodecamp.org/learn/quality-assurance/advanced-node-and-express/)
+- [Quality Assurance and Testing with Chai](https://www.freecodecamp.org/learn/quality-assurance/)
+- [Advanced Node and Express](https://www.freecodecamp.org/learn/quality-assurance/)
   <br />
   <br />
   **Projects**:  [Metric-Imperial Converter](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter), [Issue Tracker](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker), [Personal Library](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library), [Sudoku Solver](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver), [American British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
 
 #### 7. Scientific Computing with Python Certification
 
-- [Introduction to Python for Everybody](https://learn.freecodecamp.org/scientific-computing-with-python/python-for-everybody)
+- [Introduction to Python for Everybody](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
   <br />
   <br />
   **Projects**: [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/budget-app), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/polygon-area-calculator), [Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/probability-calculator)
 
 #### 8. Data Analysis with Python Certification
 
-- [Data Analysis with Python Course](https://learn.freecodecamp.org/data-analysis-with-python/data-analysis-with-python-course)
-- [NumPy](https://learn.freecodecamp.org/data-analysis-with-python/numpy)
+- [Data Analysis with Python Course](https://www.freecodecamp.org/learn/data-analysis-with-python/)
+- [NumPy](https://www.freecodecamp.org/learn/data-analysis-with-python/)
   <br />
   <br />
   **Projects**: [Mean-Variance-Standard Deviation Calculator](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator), [Demographic Data Analyzer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer), [Medical Data Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer), [Page View Time Series Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer), [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
 
 #### 9. Information Security Certification
 
-- [Information Security with HelmetJS](https://learn.freecodecamp.org/information-security/information-security-with-helmetjs)
-- [Python for Penetration Testing](https://learn.freecodecamp.org/information-security/python-for-penetration-testing)
+- [Information Security with HelmetJS](https://www.freecodecamp.org/learn/information-security/)
+- [Python for Penetration Testing](https://www.freecodecamp.org/learn/information-security/)
   <br />
   <br />
   **Projects**:  [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
 
 #### 10. Machine Learning with Python Certification
 
-- [TensorFlow](https://learn.freecodecamp.org/machine-learning-with-python/tensorflow)
-- [How Neural Networks Work](https://learn.freecodecamp.org/machine-learning-with-python/how-neural-networks-work)
+- [TensorFlow](https://www.freecodecamp.org/learn/machine-learning-with-python/)
+- [How Neural Networks Work](https://www.freecodecamp.org/learn/machine-learning-with-python/)
   <br />
   <br />
   **Projects**: [Rock Paper Scissors](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors), [Cat and Dog Image Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier), [Book Recommendation Engine using KNN](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn), [Linear Regression Health Costs Calculator](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator), [Neural Network SMS Text Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier)
