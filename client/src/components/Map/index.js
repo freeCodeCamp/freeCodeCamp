@@ -21,8 +21,10 @@ const codingPrepRE = new RegExp('Interview Prep');
 function createSuperBlockTitle(str) {
   const superBlockTitle = i18next.t(`intro:${dasherize(str)}.title`);
   return codingPrepRE.test(str)
-    ? `${superBlockTitle} ${i18next.t('learn.cert-map-estimates.coding-prep')}`
-    : `${superBlockTitle} ${i18next.t('learn.cert-map-estimates.certs')}`;
+    ? i18next.t('learn.cert-map-estimates.coding-prep', {
+        title: superBlockTitle
+      })
+    : i18next.t('learn.cert-map-estimates.certs', { title: superBlockTitle });
 }
 
 const linkSpacingStyle = {
