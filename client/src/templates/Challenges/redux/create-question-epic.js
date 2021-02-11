@@ -52,7 +52,7 @@ function createQuestionEpic(action$, state$, { window }) {
 
       let textMessage = dedent(
         `**Tell us what's happening:**
-        \n\n
+
         ${
           projectFormValues.length
             ? `**Your project link(s)**\n`
@@ -61,7 +61,7 @@ function createQuestionEpic(action$, state$, { window }) {
         ${projectFormValues
           ?.map(([key, val]) => `${key}: ${val}\n`)
           ?.join('') || filesToMarkdown(files)}
-        \n
+
         ${endingText}`
       );
 
