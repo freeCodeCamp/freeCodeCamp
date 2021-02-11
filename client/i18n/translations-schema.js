@@ -448,7 +448,7 @@ const translationsSchema = {
     email: 'Email',
     and: 'and',
     'change-theme': 'Sign in to change theme.',
-    'translation-pending': 'Help us translate.'
+    'translation-pending': 'Help us translate'
   },
   icons: {
     'gold-cup': 'Gold Cup',
