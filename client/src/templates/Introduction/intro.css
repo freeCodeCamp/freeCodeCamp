@@ -14,6 +14,12 @@
   flex-direction: row;
 }
 
+.block-link:hover,
+.block-link:focus,
+.block-link:active {
+  background-color: var(--primary-background);
+}
+
 .block-link {
   cursor: pointer;
 }
