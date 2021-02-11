@@ -1,7 +1,7 @@
 /* global cy */
 
 const selectors = {
-  firstBlock: ':nth-child(1) > .block > .map-title'
+  firstBlock: '.block-ui > .block:nth-child(1) > .map-title'
 };
 
 describe('Certificate intro page', () => {
