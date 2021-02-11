@@ -8,7 +8,7 @@ Yes - Read [this guide](/how-to-translate-files) if you are interested in contri
 
 Currently we have the user contributed translations being done in Chinese and Espanol.
 
-At the minute we are building our experience hosting the curriculum in the aforementioned languages. Eventually, we intend to localize freeCodeCamp into several major world languages, like: Arabic, Hindi, Portuguese, Russian and more.
+At this time we are building our experience hosting the curriculum in the aforementioned languages. Eventually, we intend to localize freeCodeCamp into several major world languages, like: Arabic, Hindi, Portuguese, Russian and more.
 
 We thank you for your patience while we iron out the workflow.
 
