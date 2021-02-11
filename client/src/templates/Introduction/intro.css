@@ -37,9 +37,9 @@
 .block-cta-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  padding-right: 15px;
-  padding-top: 25px;
+  justify-content: center;
+  padding: 25px 15px 10px 0px;
+  margin: 0 0 0.6rem;
 }
 
 .course-title {
