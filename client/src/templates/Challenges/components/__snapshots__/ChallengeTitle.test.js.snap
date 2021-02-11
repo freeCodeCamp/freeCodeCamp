@@ -15,7 +15,12 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
   >
     <a
       className="breadcrumb-left"
-      href="/learn/undefined"
+      href="/learn/fake-superblock"
+      state={
+        Object {
+          "breadcrumbBlockClick": "fake block",
+        }
+      }
     >
       <span
         className="ellipsis"
@@ -26,10 +31,10 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
     />
     <a
       className="breadcrumb-right"
-      href="/learn/undefined"
+      href="/learn/fake-superblock/#fake-block"
       state={
         Object {
-          "breadcrumbBlockClick": undefined,
+          "breadcrumbBlockClick": "fake block",
         }
       }
     />

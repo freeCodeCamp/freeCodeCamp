@@ -14,6 +14,25 @@
   flex-direction: row;
 }
 
+.block-link:hover,
+.block-link:focus,
+.block-link:active {
+  background-color: var(--primary-background);
+}
+
+.block-link {
+  cursor: pointer;
+}
+
+.block-link:hover .block-link-icon {
+  display: inline-block;
+}
+
+.block-link-icon {
+  display: none;
+  margin-left: 15px;
+}
+
 .big-block-title {
   font-size: 1.5rem;
   overflow-wrap: break-word;
@@ -185,6 +204,7 @@ button.map-title {
 
 .map-challenges-ul {
   padding-inline-start: 0;
+  margin-bottom: 0;
 }
 
 .map-challenge-title {
