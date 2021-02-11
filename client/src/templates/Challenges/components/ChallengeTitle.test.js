@@ -6,8 +6,10 @@ import renderer from 'react-test-renderer';
 import ChallengeTitle from './Challenge-Title';
 
 const baseProps = {
+  block: 'fake block',
   children: 'title text',
-  isCompleted: true
+  isCompleted: true,
+  superBlock: 'fake superblock'
 };
 
 describe('<ChallengeTitle/>', () => {
