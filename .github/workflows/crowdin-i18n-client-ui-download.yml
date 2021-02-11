@@ -41,7 +41,7 @@ jobs:
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
-          dryrun_action: true
+          # dryrun_action: true
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
