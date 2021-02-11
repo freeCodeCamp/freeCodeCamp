@@ -23,7 +23,8 @@ jobs:
 
           # downloads
           download_translations: true
-          skip_untranslated_files: true
+          skip_untranslated_strings: true
+          skip_untranslated_files: false
           export_only_approved: true
 
           commit_message: 'chore(i8n,client): processed translations'
@@ -40,7 +41,7 @@ jobs:
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
-          # dryrun_action: true
+          dryrun_action: true
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
