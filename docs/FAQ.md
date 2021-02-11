@@ -6,7 +6,7 @@ Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeC
 
 Yes - Read [this guide](/how-to-translate-files) if you are interested in contributing to translation.
 
-Currently we have the user contributed translations being done in Chinese and Espanol.
+Currently we have the user contributed translations being done in Chinese and Español.
 
 At this time we are building our experience hosting the curriculum in the aforementioned languages. Eventually, we intend to localize freeCodeCamp into several major world languages, like: Arabic, Hindi, Portuguese, Russian and more.
 
