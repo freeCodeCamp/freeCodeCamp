@@ -25,7 +25,7 @@ You can help expand and improve the curriculum. You can also update project user
 
 We are localizing freeCodeCamp.org to world languages starting with Chinese and Espanol. We will be expanding the translations to more languages. It's our dream to provide you with resources to learn, no matter the world language you speak.
 
-To help us with this massive effort, we have integrated our open-source code-base & curricula with [Crowdin](https://crowdin.com/).
+To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/).
 
 **If you're interested in translating, here are the guides to translate our [curriculum](how-to-translate-files.md), the [learning platform](how-to-translate-the-website.md) and our [Contributing guidelines](https://translate.freecodecamp.org/contributing-docs).**
 
