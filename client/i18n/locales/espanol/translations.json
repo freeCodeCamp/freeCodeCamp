@@ -291,7 +291,9 @@
       "code": "Código",
       "tests": "Pruebas",
       "preview": "Avance"
-    }
+    },
+    "help-translate": "We are still translating the following certifications.",
+    "help-translate-link": "Help us translate."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -374,7 +376,8 @@
     "update-email-2": "Actualiza tu correo electrónico aquí:",
     "email": "Correo electrónico",
     "and": "y",
-    "change-theme": "Inicia sesión para cambiar el tema."
+    "change-theme": "Inicia sesión para cambiar el tema.",
+    "translation-pending": "Help us translate"
   },
   "icons": {
     "gold-cup": "Copa de Oro",

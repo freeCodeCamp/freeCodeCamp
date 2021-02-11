@@ -4,10 +4,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 import { generateIconComponent } from '../../assets/icons';
 
-import { Link } from '../helpers';
+import { Link, Spacer } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import { dasherize } from '../../../../utils/slugs';
 import './map.css';
+import { isAuditedCert } from '../../../../utils/is-audited';
+import { curriculumLocale } from '../../../../config/env.json';
 
 const propTypes = {
   currentSuperBlock: PropTypes.string,
@@ -53,7 +55,7 @@ function renderLandingMap(nodes) {
 
 function renderLearnMap(nodes, currentSuperBlock = '') {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
-  return (
+  return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
       {nodes.map((node, i) => (
         <li key={i}>
@@ -68,6 +70,55 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
           </Link>
         </li>
       ))}
+    </ul>
+  ) : (
+    <ul data-test-label='learn-curriculum-map'>
+      {nodes
+        .filter(node =>
+          isAuditedCert(curriculumLocale, dasherize(node.superBlock))
+        )
+        .map((node, i) => (
+          <li key={i}>
+            <Link
+              className='btn link-btn btn-lg'
+              to={`/learn/${dasherize(node.superBlock)}/`}
+            >
+              <div style={linkSpacingStyle}>
+                {generateIconComponent(node.superBlock, 'map-icon')}
+                {createSuperBlockTitle(node.superBlock)}
+              </div>
+            </Link>
+          </li>
+        ))}
+      <hr />
+      <div style={{ textAlign: 'center' }}>
+        <p style={{ marginBottom: 0 }}>{i18next.t('learn.help-translate')} </p>
+        <Link
+          external={true}
+          sameTab={false}
+          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+        >
+          {i18next.t('learn.help-translate-link')}
+        </Link>
+        <Spacer />
+      </div>
+      {nodes
+        .filter(
+          node => !isAuditedCert(curriculumLocale, dasherize(node.superBlock))
+        )
+        .map((node, i) => (
+          <li key={i}>
+            <Link
+              className='btn link-btn btn-lg'
+              to={`/learn/${dasherize(node.superBlock)}/`}
+            >
+              <div style={linkSpacingStyle}>
+                {generateIconComponent(node.superBlock, 'map-icon')}
+                {createSuperBlockTitle(node.superBlock)}
+              </div>
+            </Link>
+          </li>
+        ))}
     </ul>
   );
 }
