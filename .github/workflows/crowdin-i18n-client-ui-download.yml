@@ -23,7 +23,7 @@ jobs:
 
           # downloads
           download_translations: true
-          skip_untranslated_strings: true
+          skip_untranslated_strings: false
           skip_untranslated_files: false
           export_only_approved: true
 
