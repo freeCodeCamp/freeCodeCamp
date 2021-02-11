@@ -65,15 +65,24 @@
       },
       "basic-html-cat-photo-app": {
         "title": "基础 HTML 猫图应用",
-        "intro": ["占位符", "占位符"]
+        "intro": [
+          "占位符",
+          "占位符"
+        ]
       },
       "basic-css-cafe-menu": {
         "title": "基础 CSS 咖啡菜单",
-        "intro": ["占位符", "占位符"]
+        "intro": [
+          "占位符",
+          "占位符"
+        ]
       },
       "css-variables-skyline": {
         "title": "CSS 变量 Skyline",
-        "intro": ["占位符", "占位符"]
+        "intro": [
+          "占位符",
+          "占位符"
+        ]
       }
     }
   },
@@ -159,15 +168,24 @@
       },
       "basic-javascript-rpg-game": {
         "title": "基础 JavaScript RPG 游戏",
-        "intro": ["占位符", "占位符"]
+        "intro": [
+          "占位符",
+          "占位符"
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "中级 JavaScript 卡路里计算器",
-        "intro": ["占位符", "占位符"]
+        "intro": [
+          "占位符",
+          "占位符"
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "函数式编程电子表格",
-        "intro": ["占位符", "占位符"]
+        "intro": [
+          "占位符",
+          "占位符"
+        ]
       }
     }
   },
@@ -267,7 +285,10 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       }
     }
   },
