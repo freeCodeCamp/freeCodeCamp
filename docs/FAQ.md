@@ -4,9 +4,13 @@ Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeC
 
 ### Can I translate freeCodeCamp's curriculum?
 
-Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon. 
+Yes - Read [this guide](/how-to-translate-files) if you are interested in contributing to translation.
 
-Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
+Currently we have the user contributed translations being done in Chinese and Espanol.
+
+At the minute we are building our experience hosting the curriculum in the aforementioned languages. Eventually, we intend to localize freeCodeCamp into several major world languages, like: Arabic, Hindi, Portuguese, Russian and more.
+
+We thank you for your patience while we iron out the workflow.
 
 ### How can I report a new bug?
 
@@ -44,7 +48,7 @@ Please do create an issue if you want to discuss bigger aspects of the codebase 
 
 ### How can I get an issue assigned to me?
 
-We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
+We typically do not assign issues to anyone other than long-time contributors. Instead, we follow the below policy to be fair to everyone:
 
 1. We are most likely to merge the first pull request that addresses the issue.
 2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
