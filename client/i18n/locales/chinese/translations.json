@@ -292,8 +292,8 @@
       "tests": "测验",
       "preview": "预习"
     },
-    "help-translate": "The following certificates are still being translated.",
-    "help-translate-link": "Go here if you'd like to help."
+    "help-translate": "We are still translating the following certifications.",
+    "help-translate-link": "Help us translate."
   },
   "donate": {
     "title": "支持我们的非营利组织",
@@ -377,7 +377,7 @@
     "email": "邮箱",
     "and": "和",
     "change-theme": "登录以更改主题。",
-    "translation-pending": "CN help translate"
+    "translation-pending": "Help us translate"
   },
   "icons": {
     "gold-cup": "金奖杯",

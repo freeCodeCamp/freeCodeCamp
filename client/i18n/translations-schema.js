@@ -341,8 +341,8 @@ const translationsSchema = {
       tests: 'Tests',
       preview: 'Preview'
     },
-    'help-translate': 'The following certificates are still being translated.',
-    'help-translate-link': "Go here if you'd like to help."
+    'help-translate': 'We are still translating the following certifications.',
+    'help-translate-link': 'Help us translate.'
   },
   donate: {
     title: 'Support our nonprofit',
@@ -448,7 +448,7 @@ const translationsSchema = {
     email: 'Email',
     and: 'and',
     'change-theme': 'Sign in to change theme.',
-    'translation-pending': 'Help translate'
+    'translation-pending': 'Help us translate.'
   },
   icons: {
     'gold-cup': 'Gold Cup',
