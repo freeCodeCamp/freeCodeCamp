@@ -1,6 +1,6 @@
 ---
 id: 587d781e367417b2b2512acb
-title: Bloquea un elemento a su padre con posicionamiento absoluto
+title: Bloquea un elemento con relación a su padre con el posicionamiento absoluto
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJ7c3'
 forumTopicId: 301060

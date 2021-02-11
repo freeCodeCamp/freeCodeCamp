@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c01
-title: Manage npm Dependencies By Understanding Semantic Versioning
+title: 通过语义化版本来管理 npm 依赖关系
 challengeType: 2
 forumTopicId: 301529
 dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
@@ -8,23 +8,23 @@ dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
 
 # --description--
 
-`Versions` of the npm packages in the dependencies section of your package.json file follow what’s called Semantic Versioning (SemVer), an industry standard for software versioning aiming to make it easier to manage dependencies. Libraries, frameworks or other tools published on npm should use SemVer in order to clearly communicate what kind of changes projects can expect if they update.
+在 package.json 文件的依赖项中，npm 包的 `Versions` 遵循语义化版本（SemVer，Semantic Versioning），它是一种旨在使管理依赖项更加容易的软件版本控制的行业标准。 在 npm 上发布的库、框架或其它工具都应该使用语义化版本，以便让用户清晰地知道如果项目升级将带来哪些改变。
 
-Knowing SemVer can be useful when you develop software that uses external dependencies (which you almost always do). One day, your understanding of these numbers will save you from accidentally introducing breaking changes to your project without understanding why things that worked yesterday suddenly don’t work today. This is how Semantic Versioning works according to the official website:
+在使用外部依赖项（大多数情况都是这样）进行软件开发时，了解语义化版本会很有用。 这些数字保存着项目的偶然发生的破坏性改变，不会让人对项目昨天还正常，今天却无法运行而百思不解。 根据官网，这是语义化版本的工作方式：
 
 ```json
 "package": "MAJOR.MINOR.PATCH"
 ```
 
-The MAJOR version should increment when you make incompatible API changes. The MINOR version should increment when you add functionality in a backwards-compatible manner. The PATCH version should increment when you make backwards-compatible bug fixes. This means that PATCHes are bug fixes and MINORs add new features but neither of them break what worked before. Finally, MAJORs add changes that won’t work with earlier versions.
+当做了不兼容的 API 修改，应该增加主版本号（MAJOR）； 当新增了向下兼容的新功能时，应该增加次版本号（MINOR）； 当修复了向下兼容的 bug 时，应该增加修订号（PATCH）。 这意味着修订号是用来修复错误的，次版本号则是添加了新功能，但它们都没有破坏之前的功能。 主版本号（MAJOR）是添加了不兼容早期版本的更改。
 
 # --instructions--
 
-In the dependencies section of your package.json file, change the `version` of moment to match MAJOR version 2, MINOR version 10 and PATCH version 2
+在 package.json 文件的依赖项中，修改 moment 的`version`，让它的主版本是 2，次版本号是 10，修订号是 2。
 
 # --hints--
 
-"dependencies" should include "moment"
+“dependencies”字段应该包含“moment”
 
 ```js
 (getUserInput) =>
@@ -43,7 +43,7 @@ In the dependencies section of your package.json file, change the `version` of m
   );
 ```
 
-"moment" version should be "2.10.2"
+“moment”的版本号应该是“2.10.2”
 
 ```js
 (getUserInput) =>

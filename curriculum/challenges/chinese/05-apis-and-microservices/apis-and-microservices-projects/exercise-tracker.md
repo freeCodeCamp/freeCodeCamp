@@ -1,6 +1,6 @@
 ---
 id: 5a8b073d06fa14fcfde687aa
-title: Exercise Tracker
+title: Exercise 追踪器
 challengeType: 4
 forumTopicId: 301505
 dashedName: exercise-tracker
@@ -8,17 +8,17 @@ dashedName: exercise-tracker
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://exercise-tracker.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+构建一个 JavaScript 的全栈应用，在功能上与这个应用相似： <https://exercise-tracker.freecodecamp.rocks/>。 可以采用下面的一种方式完成这个挑战：
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) 并在本地完成项目。
+-   使用 [repl.it 初始化项目](https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker) 来完成项目。
+-   使用你选择的网站生成器来完成项目， 并确保包含了我们 GitHub 仓库的所有文件。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+当完成本项目，请确认有一个正常运行的 demo 可以公开访问。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
 
 # --hints--
 
-You should provide your own project, not the example URL.
+提交自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -29,7 +29,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/exercise/new-user` with form data `username` to create a new user. The returned response will be an object with `username` and `_id` properties.
+可以将表单里的 `username` 通过 `POST` 请求发送到 `/api/exercise/new-user`，以创建一个新的用户。 返回的响应内容是一个带有 `username` 和 `_id` 的对象
 
 ```js
 async (getUserInput) => {
@@ -49,7 +49,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `api/exercise/users` to get an array of all users. Each element in the array is an object containing a user's `username` and `_id`.
+可以发送 `GET` 请求到 `api/exercise/users`，以获取一个所有用户的数组， 数组里的每个元素都是一个包含 `username` 和 `_id` 的用户对象。
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 };
 ```
 
-You can `POST` to `/api/exercise/add` with form data `userId=_id`, `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.
+你能用表单里的 `userId=_id`，`description`，`duration` 和 `date`（可选）发送 `POST` 请求到 `/api/exercise/add`。 如果没有传入 date，默认采用当前日期。 响应内容是包含 exercise 表单内容的 user 对象。
 
 ```js
 async (getUserInput) => {
@@ -102,7 +102,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/exercise/log` with a parameter of `userId=_id` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
+可以向 `/api/exercise/log` 发送参数为 `userId=_id` 的 `GET` 请求，并检索全部的 exercise 日志。 响应内容是一个 user 对象，它带有一个 `log` 属性，该属性的值是所有被添加的 exercises 表单记录组成的数组， 每一个 log 数组里的元素应该是一个含有 `description`、`duration` 和 `date` 等属性的对象。
 
 ```js
 async (getUserInput) => {
@@ -144,7 +144,7 @@ async (getUserInput) => {
 };
 ```
 
-A request to a user's log (`/api/exercise/log`) returns an object with a `count` property representing the number of exercises returned.
+用户日志请求 (`/api/exercise/log`) 返回一个带有 `count` 属性的对象，该属性反映 exercises 表单的成功提交次数（译者注：即 log 属性元素的个数）。
 
 ```js
 async (getUserInput) => {
@@ -185,7 +185,7 @@ async (getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `/api/exercise/log` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+可以把 `from`、`to` 和 `limit` 等参数添加到 `/api/exercise/log` 的请求，以查询该用户的部分 exercise 表单提交记录， `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 数量。
 
 ```js
 async (getUserInput) => {

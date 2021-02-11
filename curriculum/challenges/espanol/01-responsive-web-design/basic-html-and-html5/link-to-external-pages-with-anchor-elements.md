@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08816
-title: Enlaza hacia páginas externas con los elementos "anchor"
+title: Enlaza hacia páginas externas con los elementos anchor
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
 forumTopicId: 18226

@@ -1,6 +1,6 @@
 ---
 id: 587d778f367417b2b2512aae
-title: Dar significado a los enlaces agregando un texto descriptivo
+title: Da significado a los enlaces agregando un texto descriptivo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437DcV'
 forumTopicId: 301013

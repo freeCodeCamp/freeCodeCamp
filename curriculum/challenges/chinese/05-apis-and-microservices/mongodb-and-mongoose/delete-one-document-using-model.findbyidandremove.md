@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c10
-title: Delete One Document Using model.findByIdAndRemove
+title: 使用 model.findByIdAndRemove 删除一个 document
 challengeType: 2
 forumTopicId: 301539
 dashedName: delete-one-document-using-model-findbyidandremove
@@ -8,15 +8,15 @@ dashedName: delete-one-document-using-model-findbyidandremove
 
 # --description--
 
-`findByIdAndRemove` and `findOneAndRemove` are like the previous update methods. They pass the removed document to the db. As usual, use the function argument `personId` as the search key.
+`findByIdAndRemove` 和 `findOneAndRemove` 类似于我们之前的更新方法， 它们将被删除的 document 传给数据库。 和之前一样，使用函数参数 `personId` 作为查询关键字。
 
 # --instructions--
 
-Modify the `removeById` function to delete one person by the person's `_id`. You should use one of the methods `findByIdAndRemove()` or `findOneAndRemove()`.
+修改 `removeById` 函数，通过 `_id` 删除一个人的数据， 可以使用 `findByIdAndRemove()` 或 `findOneAndRemove()` 方法。
 
 # --hints--
 
-Deleting an item should succeed
+应当成功地删除一条数据
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d778a367417b2b2512aa6
-title: Mejorar la accesibilidad del campo de formulario con la etiqueta element
+title: Mejora la accesibilidad del campo de formulario con el elemento label (etiqueta)
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016

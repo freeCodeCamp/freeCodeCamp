@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abc
-title: Ajusta la propiedad de background-color del texto
+title: Ajusta la propiedad background-color del texto
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDqwA6'
 forumTopicId: 301032

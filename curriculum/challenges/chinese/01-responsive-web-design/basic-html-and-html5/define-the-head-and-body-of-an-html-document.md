@@ -19,10 +19,11 @@ dashedName: define-the-head-and-body-of-an-html-document
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- metadata elements -->
+    <meta />
   </head>
   <body>
-    <!-- page contents -->
+    <div>
+    </div>
   </body>
 </html>
 ```
