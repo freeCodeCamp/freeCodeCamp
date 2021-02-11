@@ -287,10 +287,10 @@
       "coding-prep": "（数千小时的挑战）"
     },
     "editor-tabs": {
-      "info": "信息",
-      "code": "码",
-      "tests": "测验",
-      "preview": "预习"
+      "info": "Info",
+      "code": "Code",
+      "tests": "Tests",
+      "preview": "Preview"
     },
     "help-translate": "We are still translating the following certifications.",
     "help-translate-link": "Help us translate."
@@ -335,7 +335,7 @@
     "why-donate-2": "你也帮助我们创建新的学习资源，你可以利用这些资源拓展自己的技术能力。",
     "bigger-donation": "给我们额度更大的一次性捐款，或寄一张支票，或通过其他方式给我们捐款？",
     "other-ways": "有许多<0>其他方式可以支持我们的非营利组织践行使命</0>.",
-    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
+    "other-ways-url": "https://chinese.freecodecamp.org/news/how-to-donate-to-free-code-camp/",
     "failed-pay": "呃，你的转账似乎没有成功，再试一次好吗？",
     "try-again": "请重试。",
     "card-number": "你的卡号：",
