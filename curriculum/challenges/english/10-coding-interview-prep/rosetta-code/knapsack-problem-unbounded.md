@@ -120,36 +120,66 @@ function knapsackUnbounded(items, maxweight, maxvolume) {
 # --solutions--
 
 ```js
-function knapsackUnbounded(items, maxweight, maxvolume) {
-  var n = items.length;
-  var best_value = 0;
-  var count = new Array(n);
-  var best = new Array(n);
-  function recurseKnapsack(i, value, weight, volume) {
-    var j, m1, m2, m;
-    if (i == n) {
-      if (value > best_value) {
-        best_value = value;
-        for (j = 0; j < n; j++) {
-          best[j] = count[j];
-        }
-      }
-      return;
+function knapsackUnbounded(items, maxWeight, maxVolume) {
+  function getPickTotals(items, pick) {
+    let totalValue = 0;
+    let totalWeight = 0;
+    let totalVolume = 0;
+    for (let i = 0; i < items.length; i++) {
+      totalValue += pick[i] * items[i].value;
+      totalWeight += pick[i] * items[i].weight;
+      totalVolume += pick[i] * items[i].volume;
     }
-    m1 = Math.floor(weight / items[i].weight);
-    m2 = Math.floor(volume / items[i].volume);
-    m = m1 < m2 ? m1 : m2;
-    for (count[i] = m; count[i] >= 0; count[i]--) {
-      recurseKnapsack(
-        i + 1,
-        value + count[i] * items[i].value,
-        weight - count[i] * items[i].weight,
-        volume - count[i] * items[i].volume
-      );
+    return [totalValue, totalWeight, totalVolume];
+  }
+
+  function getMaxes(items, maxWeight, maxVolume) {
+    const maxes = [];
+    for (let i = 0; i < items.length; i++) {
+      const maxUnitsInWeight = Math.floor(maxWeight / items[i].weight);
+      const maxUnitsInVolume = Math.floor(maxVolume / items[i].volume);
+      const maxUnitsInLimit = Math.min(maxUnitsInWeight, maxUnitsInVolume);
+      maxes.push(maxUnitsInLimit);
+    }
+    return maxes;
+  }
+
+  function isInLimit(value, limit) {
+    return value <= limit;
+  }
+
+  function getCombinations(maxValues, curPicks, combinations) {
+    if (maxValues.length === 0) {
+      combinations.push(curPicks);
+    }
+
+    const curMax = maxValues[0];
+    const leftMaxValues = maxValues.slice(1);
+    for (let i = 0; i <= curMax; i++) {
+      getCombinations(leftMaxValues, curPicks.concat(i), combinations);
+    }
+    return combinations;
+  }
+
+  let bestValue = 0;
+  let bestPick = [];
+  const maxes = getMaxes(items, maxWeight, maxVolume);
+  const combinations = getCombinations(maxes, [], []);
+  for (let i = 0; i < combinations.length; i++) {
+    const curPick = combinations[i];
+    const [curValue, curWeight, curVolume] = getPickTotals(items, curPick);
+    if (!isInLimit(curWeight, maxWeight) || !isInLimit(curVolume, maxVolume)) {
+      continue;
+    }
+
+    if (curValue > bestValue) {
+      bestValue = curValue;
+      bestPick = [curPick];
+    } else if (curValue === bestValue) {
+      bestPick.push(curPick);
     }
   }
 
-  recurseKnapsack(0, 0, maxweight, maxvolume);
-  return best_value;
+  return bestValue;
 }
 ```
