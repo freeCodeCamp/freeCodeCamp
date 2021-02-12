@@ -22,7 +22,7 @@ Each file and folder will show a progress bar. The **blue** portion of the progr
 Select a file to work on and Crowdin will open the editor view.
 
 > [!NOTE]
-> When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML Tags Displaying' setting to 'Show'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+> When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
 
 ## Translate the File
 
@@ -77,7 +77,7 @@ When you attempt to save a translation, you may see a warning message appear wit
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
 > [!WARNING]
-> You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error is incorrect. If you are clicking "Save Anyway", you should also tag a proofreader or project manager in a comment on that string for further review. Include the reason why you have saved the translation with QA errors.
+> You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
 ## Translation Best Practices
 
