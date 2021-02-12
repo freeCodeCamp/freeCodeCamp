@@ -308,7 +308,7 @@
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 600px) {
   .nav-list {
     min-width: 100%;
     top: calc(var(--header-height) * 2);

@@ -24,7 +24,7 @@ jobs:
 
           # downloads
           download_translations: true
-          skip_untranslated_files: false
+          skip_untranslated_files: true
           export_only_approved: true
 
           commit_message: 'chore(i8n,learn): processed translations'

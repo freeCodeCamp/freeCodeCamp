@@ -1,7 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Diseño web responsivo",
-    "isTranslated": true,
+    "title": "Diseño Web Responsivo",
     "intro": [
       "En esta Certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores utilizan para construir páginas web: HTML (lenguaje de marcado de hipertexto) para el contenido, y CSS (Hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderá técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
@@ -18,69 +17,77 @@
       "basic-css": {
         "title": "CSS básico",
         "intro": [
-          "CSS, u hojas de estilo en cascada (Cascading Style Sheets), informa al navegador cómo mostrar el texto y otros contenidos que escriba en HTML. Con CSS, usted puede controlar el color, fuente, tamaño, espaciado y muchos otros aspectos de los elementos HTML.",
+          "CSS, u hojas de estilo en cascada (Cascading Style Sheets), informa al navegador cómo mostrar el texto y otros contenidos que escribas en HTML. Con CSS, puedes controlar el color, fuente, tamaño, espaciado y muchos otros aspectos de los elementos HTML.",
           "Ahora que has descrito la estructura de tu aplicación de fotos para gatos, dale algo de estilo con CSS."
         ]
       },
       "applied-visual-design": {
         "title": "Diseño visual aplicado",
         "intro": [
-          "El diseño visual es una combinación de tipografía, teoría del color, gráficos, animación, diseño de página y más para ayudar a entregar su mensaje único.",
+          "El diseño visual es una combinación de tipografía, teoría del color, gráficos, animación, diseño de página y más para ayudar a entregar tu mensaje único.",
           "En este curso, aprenderás cómo aplicar estos diferentes elementos de diseño visual a tus páginas web."
         ]
       },
       "applied-accessibility": {
         "title": "Accesibilidad aplicada",
         "intro": [
-          "En el desarrollo web, la accesibilidad se refiere al contenido web y a una interfaz de usuario (interfaz de usuario) que puede ser entendida, navegada e interactuada por una amplia audiencia. Esto incluye a personas con discapacidades visuales, auditivas, de movilidad o cognitivas.",
-          "En este curso, aprenderá las prácticas recomendadas para crear páginas web que sean accesibles para todos."
+          "En el desarrollo web, la accesibilidad se refiere al contenido web y a una interfaz de usuario que puede ser entendida, navegada e interactuada por una amplia audiencia. Esto incluye a personas con discapacidades visuales, auditivas, móviles o cognitivas.",
+          "En este curso, aprenderás las prácticas recomendadas para crear páginas web que sean accesibles para todos."
         ]
       },
       "responsive-web-design-principles": {
         "title": "Principios de diseño web responsivo",
         "intro": [
           "Hay muchos dispositivos que pueden acceder a la web, y vienen en todas las formas y tamaños. El diseño web responsivo es la práctica de diseñar sitios web flexibles que pueden responder a diferentes tamaños de pantalla, orientaciones y resoluciones.",
-          "En este curso, aprenderás a usar CSS para que sus páginas web se vean bien, sin importar en qué dispositivo se vean."
+          "En este curso, aprenderás a usar CSS para que tus páginas web luzcan bien, sin importar en qué dispositivo se vean."
         ]
       },
       "css-flexbox": {
         "title": "CSS Flexbox",
         "intro": [
           "Flexbox es un método de diseño potente y bien soportado que se introdujo con la última versión de CSS, CSS3. Con flexbox, es fácil centrar elementos en la página y crear interfaces de usuario dinámicas que se reducen y se expanden automáticamente.",
-          "En este curso, tu aprenderás los fundamentos de flexbox y diseños dinámicos mediante la construcción de una tarjeta de Twitter."
+          "En este curso, aprenderás los fundamentos de flexbox y diseños dinámicos mediante la construcción de una tarjeta de Twitter."
         ]
       },
       "css-grid": {
         "title": "CSS Grid",
         "intro": [
-          "La cuadrícula (grid) CSS es un estándar más nuevo que facilita la creación de diseños complejos y receptivos. Funciona convirtiendo un elemento HTML en una cuadrícula y le permite colocar elementos secundarios en cualquier lugar.",
+          "La cuadrícula (grid) CSS es un estándar reciente que facilita la creación de diseños complejos y responsivos. Funciona convirtiendo un elemento HTML en una cuadrícula y te permite colocar elementos secundarios en cualquier lugar dentro ella.",
           "En este curso, aprenderá los fundamentos de la cuadrícula (grid) CSS construyendo diferentes diseños complejos, incluido un blog."
         ]
       },
       "responsive-web-design-projects": {
-        "title": "Proyectos de diseño web responsivos",
+        "title": "Proyectos de diseño web responsivo",
         "intro": [
-          "Es hora de poner tus habilidades recién aprendidas a trabajar. Al trabajar en estos proyectos, tendrás la oportunidad de aplicar todas las habilidades, principios y conceptos que ha aprendido hasta ahora: HTML, CSS, diseño visual, accesibilidad y más.",
+          "Es hora de poner tus habilidades recién aprendidas a funcionar. Al trabajar en estos proyectos, tendrás la oportunidad de aplicar todas las habilidades, principios y conceptos que has aprendido hasta ahora: HTML, CSS, diseño visual, accesibilidad y más.",
           "Completa los cinco proyectos de programación web de abajo para obtener tu certificado de Diseño Web Responsivo."
         ]
       },
       "basic-html-cat-photo-app": {
         "title": "Aplicación básica de fotos de gato HTML",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       },
       "basic-css-cafe-menu": {
         "title": "Menú básico de café CSS",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       },
       "css-variables-skyline": {
         "title": "Skyline Variables de CSS",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
-    "isTranslated": false,
+    "title": "Algoritmos de JavaScript y Estructuras de Datos",
     "intro": [
       "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
       "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
@@ -161,21 +168,29 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       }
     }
   },
   "front-end-libraries": {
-    "title": "Front End Development Libraries",
-    "isTranslated": false,
+    "title": "Bibliotecas de Desarrollo Front End",
     "intro": [
       "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
       "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
@@ -237,8 +252,7 @@
     }
   },
   "data-visualization": {
-    "title": "Data Visualization",
-    "isTranslated": false,
+    "title": "Visualización de Datos",
     "intro": [
       "Data is all around us, but it doesn't mean much without shape or context.",
       "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
@@ -271,13 +285,15 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": ["placeholder", "placeholder"]
+        "intro": [
+          "placeholder",
+          "placeholder"
+        ]
       }
     }
   },
   "apis-and-microservices": {
-    "title": "APIs and Microservices",
-    "isTranslated": false,
+    "title": "APIs y Microservicios",
     "intro": [
       "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
       "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
@@ -318,8 +334,7 @@
     }
   },
   "quality-assurance": {
-    "title": "Quality Assurance",
-    "isTranslated": false,
+    "title": "Control de Calidad",
     "intro": [
       "As your programs or web applications become more complex, you'll want to test them to make sure that new changes don't break their original functionality.",
       "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai to ensure your applications work the way you expect them to.",
@@ -352,8 +367,7 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python",
-    "isTranslated": false,
+    "title": "Cálculo Científico con Python",
     "intro": [
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
       "In the Scientific Computing with Python Certification, you'll Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
@@ -375,8 +389,7 @@
     }
   },
   "data-analysis-with-python": {
-    "title": "Data Analysis with Python",
-    "isTranslated": false,
+    "title": "Análisis de Datos con Python",
     "intro": [
       "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
       "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
@@ -406,8 +419,7 @@
     }
   },
   "information-security": {
-    "title": "Information Security",
-    "isTranslated": false,
+    "title": "Seguridad de la Información",
     "intro": [
       "With everything we do online, there's a vast amount of sensitive information at risk: email addresses, passwords, phone numbers, and much more.",
       "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
@@ -438,8 +450,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "Machine Learning with Python",
-    "isTranslated": false,
+    "title": "Aprendizaje Automático con Python",
     "intro": [
       "Machine learning has many practical applications that you can use in your projects or on the job.",
       "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks. A you'll explore more advanced techniques like natural language processing and reinforcement learning.",
@@ -469,8 +480,7 @@
     }
   },
   "coding-interview-prep": {
-    "title": "Coding Interview Prep",
-    "isTranslated": false,
+    "title": "Preparación de Entrevistas de Programación",
     "intro": [
       "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
       "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
@@ -514,12 +524,10 @@
     }
   },
   "misc-text": {
-    "certification": "{{cert}} Certificación",
-    "browse-other": "Explora otras de nuestras certificaciones gratuitas\n (recomendamos hacerlas en orden)",
+    "certification": "Certificación de {{cert}}",
+    "browse-other": "Navega por nuestras otras certificaciones gratuitas\n(recomendamos hacerlo en orden)",
     "courses": "Cursos",
     "expand": "Expandir",
-    "collapse": "Colapso",
-    "translation-banner": "Aún estamos traduciendo esta certificación",
-    "translation-help": "Puedes ayudar aquí"
+    "collapse": "Contraer"
   }
 }

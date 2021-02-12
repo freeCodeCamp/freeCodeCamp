@@ -5,7 +5,7 @@
 // through from Crowdin whenever they are done, but we don't show them on the
 // client until we decide the entire cert is ready.
 
-// NOTE: certificates themselves (.markdown files) are not currently being
+// NOTE: certificates themselves (.yml files) are not currently being
 // translated, but when they are they can be included by adding 'certificates'
 // to the arrays below
 

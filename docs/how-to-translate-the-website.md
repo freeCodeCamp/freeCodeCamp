@@ -1,15 +1,21 @@
 The client/react side of our website is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
 
 > [!NOTE]
-> This does not include the curriculum
+> Curriculum lesson content is [translated separately](./how-to-translate-files.md).
 
 ## File Structure
 
-The files for translating the website are located in the `client/i18n` folder. Each language has a folder within that containing JSON files with the translations. 
+The files for translating the website are located in the `client/i18n` folder. Each language has a folder within that containing JSON files with the translations.
 
 The values in the `translations.json` file contain the majority of the text that appears on the website. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
 
-The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure.
+The `intro.json` file contains the key-value pairs for the introduction text on the certification pages.
+
+The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure. These are not translated via Crowdin.
+
+The `trending.json` file contians the titles and links for the trending news articles in the website's footer. These are not translated via Crowdin.
+
+The `meta-tags.json` file contains the information for our website's meta tag information. These are not translated via Crowdin.
 
 ## Adding a Language
 
@@ -19,16 +25,9 @@ In the `allLangs.js` file, add the language to the `client` array in the first v
 
 ## How to Translate
 
-After a new language is added, you just need to translate the JSON files into the language.
+Translating the `intro.json` and `translations.json` are done through [our translation site](https://translate.freecodecamp.org). View our [translation documentation for that site](/how-to-translate-files.md).
 
-Here are some tips:
-- Only translate the values in the JSON files, the keys need to stay the same
-- The English versions of the JSON files are the "source of truth" for what needs to be translated. If you are unsure what text to translate, find the matching key in the English version of the file and translate that text
-- Be sure to escape double quotes (`\"`) in the strings if you need to use them
-- Most of the time, when you see text wrapped in number tags (`<0>`text`</0>`) tags, it's a link. It is okay to change the text that it is wrapped around. Just keep the same tags.
-- A value that has something like `{{value}}` in it is a variable. Don't change any of those characters. You can move that whole group of characters around though.
-
-There's some [help on how make changes and open a PR here](/how-to-setup-freecodecamp-locally).
+Modifications to the `trending.json`, `meta-tags.json`, and `motivation.json` files should typically only be done by staff.
 
 ## Running it Locally
 
@@ -181,20 +180,25 @@ const email = 'team@freecodecamp.org';
 
 In the above example, the key and a variable are set in the attributes of the `Trans` component. `{{ email }}` needs to be somewhere in the `Trans` component as well, it doesn't matter where.
 
+## Changing Text
+
+To change text on the client side of things, go to the relevant `.json` file, find the key that is being used in the React component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
+
+## Adding Text
+
+If the text you want to add to the client exists in the relevant `.json` file, use the existing key. Otherwise, create a new key.
+
+The matching filename`-schema.js` file is the "source of truth" for all of the `.json` files sharing the same name. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files.
+
+> [!NOTE]
+> Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
+
+It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files. 
+
+> [!NOTE]
+> The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+
 ## Helpful Documentation
 
 - [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
 - [i18next docs](https://www.i18next.com/translation-function/essentials)
-
-## Changing Text
-
-To change text on the client side of things, go to the `translations.json` file, find the key that is being used in the react component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
-
-## Adding Text
-
-If the text you want to add to the client exists in the `translations.json` file, use the existing key. No sense in creating another one.
-
-The `translations-schema.js` file is the "source of truth" for all of the `translations.json` files. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files with placeholder text in the langauges you don't know. The tests will fail if you don't. It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files. 
-
-> [!NOTE]
-> The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.

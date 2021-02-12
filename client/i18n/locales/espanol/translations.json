@@ -74,9 +74,9 @@
     "testimonials": {
       "heading": "Esto es lo que dicen nuestros alumnos sobre freeCodeCamp:",
       "shawn": {
-        "location": "<strong>Shawn Wang</strong> en Singapore",
+        "location": "<strong>Shawn Wang</strong> en Singapur",
         "occupation": "Ingeniero de Software en <strong>Amazon</strong>",
-        "testimony": "\"Da miedo cambiar de carrera. Solo gané la confianza de que podía programar trabajando a través de los cientos de horas de lecciones gratuitas en freeCodeCamp. Dentro de un año tuve un trabajo de seis cifras como ingeniero de software.<strong>freeCodeCamp cambió mi vida.</strong>\""
+        "testimony": "\"Da miedo cambiar de carrera. Solo gané la confianza de que podía programar trabajando a través de los cientos de horas de lecciones gratuitas en freeCodeCamp. Dentro de un año tuve un trabajo de seis cifras como ingeniero de software. <strong>freeCodeCamp cambió mi vida.</strong>\""
       },
       "sarah": {
         "location": "<strong>Sarah Chima</strong> en Nigeria",
@@ -84,7 +84,7 @@
         "testimony": "\"<strong>freeCodeCamp fue la puerta de entrada a mi carrera</strong> como desarrollador de software. El plan de estudios bien estructurado llevó mis conocimientos de programación de un nivel de principiante total a un nivel muy seguro. Era todo lo que necesitaba para conseguir mi primer trabajo de desarrollador en una empresa increíble.\""
       },
       "emma": {
-        "location": "<strong>Emma Bostian</strong> en Sweden",
+        "location": "<strong>Emma Bostian</strong> en Suecia",
         "occupation": "Ingeniera de Software en <strong>Spotify</strong>",
         "testimony": "\"Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong> freeCodeCamp me dio las habilidades </strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.\""
       }
@@ -212,7 +212,7 @@
     "mission-statement": "Nuestra misión: ayudar a las personas a aprender a programar de forma gratuita. Logramos esto mediante la creación de miles de videos, artículos y lecciones de programación interactivas, todos disponibles gratuitamente para el público. También tenemos miles de grupos de estudio de FreeCodeCamp en todo el mundo.",
     "donation-initiatives": "Las donaciones a freeCodeCamp se destinan a nuestras iniciativas educativas y ayudan a pagar los servidores, los servicios y el personal.",
     "donate-text": "Tú puedes",
-    "donate-link": "haz una donación deducible de impuestos aquí",
+    "donate-link": "hacer una donación deducible de impuestos aquí",
     "trending-guides": "Guías de tendencias",
     "our-nonprofit": "Nuestra organización sin fines de lucro",
     "links": {
@@ -283,15 +283,17 @@
     "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntate libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
     "cert-map-estimates": {
-      "certs": "Certificación (300 horas)",
-      "coding-prep": "(Miles de horas de desafíos)"
+      "certs": "Certificación {{title}} (300 horas)",
+      "coding-prep": "{{title}} (Miles de horas de desafíos)"
     },
     "editor-tabs": {
-      "info": "Información",
-      "code": "Código",
-      "tests": "Pruebas",
-      "preview": "Avance"
-    }
+      "info": "Info",
+      "code": "Code",
+      "tests": "Tests",
+      "preview": "Preview"
+    },
+    "help-translate": "We are still translating the following certifications.",
+    "help-translate-link": "Help us translate."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -357,7 +359,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Buscar en más de 6.000 tutoriales",
+    "placeholder": "Buscar tutoriales",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -374,7 +376,8 @@
     "update-email-2": "Actualiza tu correo electrónico aquí:",
     "email": "Correo electrónico",
     "and": "y",
-    "change-theme": "Inicia sesión para cambiar el tema."
+    "change-theme": "Entra para cambiar el tema.",
+    "translation-pending": "Help us translate"
   },
   "icons": {
     "gold-cup": "Copa de Oro",

@@ -11,15 +11,31 @@ const propTypes = {
   block: PropTypes.string,
   children: PropTypes.string,
   isCompleted: PropTypes.bool,
-  superBlock: PropTypes.string
+  superBlock: PropTypes.string,
+  translationPending: PropTypes.bool.isRequired
 };
 
-function ChallengeTitle({ block, children, isCompleted, superBlock }) {
+function ChallengeTitle({
+  block,
+  children,
+  isCompleted,
+  superBlock,
+  translationPending
+}) {
   return (
     <div className='challenge-title-wrap'>
+      {translationPending && (
+        <Link
+          className='title-translation-cta'
+          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+        >
+          {i18next.t('misc.translation-pending')}
+        </Link>
+      )}
       <div className='challenge-title-breadcrumbs'>
         <Link
           className='breadcrumb-left'
+          state={{ breadcrumbBlockClick: block }}
           to={`/learn/${dasherize(superBlock)}`}
         >
           <span className='ellipsis'>
@@ -30,7 +46,7 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
         <Link
           className='breadcrumb-right'
           state={{ breadcrumbBlockClick: block }}
-          to={`/learn/${dasherize(superBlock)}`}
+          to={`/learn/${dasherize(superBlock)}/#${dasherize(block)}`}
         >
           {i18next.t(
             `intro:${dasherize(superBlock)}.blocks.${dasherize(block)}.title`
@@ -38,12 +54,14 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
         </Link>
       </div>
       <div className='challenge-title'>
-        <b>{children}</b>
-        {isCompleted ? (
-          <GreenPass
-            style={{ height: '15px', width: '15px', marginLeft: '7px' }}
-          />
-        ) : null}
+        <div className='title-text'>
+          <b>{children}</b>
+          {isCompleted ? (
+            <GreenPass
+              style={{ height: '15px', width: '15px', marginLeft: '7px' }}
+            />
+          ) : null}
+        </div>
       </div>
     </div>
   );

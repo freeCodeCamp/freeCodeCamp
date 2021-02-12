@@ -8,9 +8,57 @@
   overflow-wrap: break-word;
 }
 
+.block-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.block-link:hover,
+.block-link:focus,
+.block-link:active {
+  background-color: var(--primary-background);
+}
+
+.block-link {
+  cursor: pointer;
+}
+
+.block-link:hover .block-link-icon {
+  display: inline-block;
+}
+
+.block-link-icon {
+  display: none;
+  margin-left: 15px;
+}
+
 .big-block-title {
   font-size: 1.5rem;
   overflow-wrap: break-word;
+}
+
+.block-title-translation-cta {
+  white-space: nowrap;
+  padding: 0.2em 0.5em;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+}
+
+.block-title-translation-cta:hover,
+.block-title-translation-cta:focus {
+  text-decoration: none;
+  padding: 0.2em 0.5em;
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
+}
+
+.block-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 15px 10px 0px;
+  margin: 0 0 0.6rem;
 }
 
 .course-title {
@@ -156,6 +204,7 @@ button.map-title {
 
 .map-challenges-ul {
   padding-inline-start: 0;
+  margin-bottom: 0;
 }
 
 .map-challenge-title {
@@ -176,39 +225,6 @@ button.map-title {
 
 .block-description > p:last-child {
   margin-bottom: 0;
-}
-
-a.translation-banner {
-  position: fixed;
-  top: var(--header-height);
-  background-color: var(--blue-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  width: 100vw;
-  font-weight: 700;
-  font-size: 1rem;
-  z-index: 10;
-  color: var(--gray-00);
-  text-decoration: none;
-}
-
-a.translation-banner * {
-  margin: 0px;
-  color: var(--gray-00);
-}
-
-a.translation-banner span {
-  text-decoration: underline;
-}
-
-a.translation-banner:hover {
-  text-decoration: none;
-}
-
-a.translation-banner:hover span {
-  text-decoration: none;
 }
 
 @media screen and (max-width: 500px) {

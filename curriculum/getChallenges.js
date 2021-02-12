@@ -300,6 +300,8 @@ ${getFullPath('english')}
   challenge.time = time;
   challenge.helpCategory =
     challenge.helpCategory || helpCategoryMap[dasherize(blockName)];
+  challenge.translationPending =
+    lang !== 'english' && !isAuditedCert(lang, superBlock);
 
   return prepareChallenge(challenge);
 }

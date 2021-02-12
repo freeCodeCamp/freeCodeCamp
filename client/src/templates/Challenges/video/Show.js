@@ -63,6 +63,7 @@ const propTypes = {
     challengeMeta: PropTypes.object
   }),
   t: PropTypes.func.isRequired,
+  translationPending: PropTypes.bool.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -161,6 +162,7 @@ export class Project extends Component {
           title,
           description,
           superBlock,
+          translationPending,
           videoId,
           question: { text, answers, solution }
         }
@@ -194,6 +196,7 @@ export class Project extends Component {
                 block={blockName}
                 isCompleted={isChallengeCompleted}
                 superBlock={superBlock}
+                translationPending={translationPending}
               >
                 {title}
               </ChallengeTitle>

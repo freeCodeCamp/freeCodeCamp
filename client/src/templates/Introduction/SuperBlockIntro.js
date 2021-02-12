@@ -8,6 +8,7 @@ import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { configureAnchors } from 'react-scrollable-anchor';
 
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
@@ -15,7 +16,7 @@ import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
 import { dasherize } from '../../../../utils/slugs';
 import Block from './components/Block';
-import { Spacer, Link } from '../../components/helpers';
+import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
@@ -40,6 +41,7 @@ const propTypes = {
   }),
   isSignedIn: PropTypes.bool,
   location: PropTypes.shape({
+    hash: PropTypes.string,
     state: PropTypes.shape({
       breadcrumbBlockClick: PropTypes.string
     })
@@ -48,6 +50,8 @@ const propTypes = {
   t: PropTypes.func,
   toggleBlock: PropTypes.func
 };
+
+configureAnchors({ offset: -40, scrollDuration: 0 });
 
 const mapStateToProps = state => {
   return createSelector(
@@ -71,6 +75,14 @@ const mapDispatchToProps = dispatch =>
 export class SuperBlockIntroductionPage extends Component {
   componentDidMount() {
     this.initializeExpandedState();
+
+    setTimeout(() => {
+      configureAnchors({ offset: -40, scrollDuration: 400 });
+    }, 0);
+  }
+
+  componentWillUnmount() {
+    configureAnchors({ offset: -40, scrollDuration: 0 });
   }
 
   getChosenBlock() {
@@ -84,8 +96,15 @@ export class SuperBlockIntroductionPage extends Component {
     } = this.props;
 
     // if coming from breadcrumb click
-    if (location.state && location.state.breadcrumbBlockClick)
+    if (location.state && location.state.breadcrumbBlockClick) {
       return dasherize(location.state.breadcrumbBlockClick);
+    }
+
+    // if the URL includes a hash
+    if (location.hash) {
+      const dashedBlock = location.hash.replace('#', '').replace('/', '');
+      return dashedBlock;
+    }
 
     let edge = edges[0];
 
@@ -127,33 +146,17 @@ export class SuperBlockIntroductionPage extends Component {
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
-    const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
-    const { title: i18nSuperBlock, isTranslated } = superBlockIntroObj;
-    const translationBannerText = t(`intro:misc-text.translation-banner`);
-    const translationBannerHelpText = t(`intro:misc-text.translation-help`);
+    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
 
     return (
       <>
         <Helmet>
           <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
-        {isTranslated ? (
-          ''
-        ) : (
-          <Link
-            className='translation-banner'
-            external={true}
-            to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-          >
-            <p>
-              {translationBannerText} <span>{translationBannerHelpText}</span>.
-            </p>
-          </Link>
-        )}
         <Grid>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size={isTranslated ? 2 : 3} />
+              <Spacer size={2} />
               <SuperBlockIntro superBlock={superBlock} />
               <Spacer size={2} />
               <h2 className='text-center big-subheading'>
@@ -162,7 +165,7 @@ export class SuperBlockIntroductionPage extends Component {
               <Spacer />
               <div className='block-ui'>
                 {blockDashedNames.map(blockDashedName => (
-                  <div key={blockDashedName}>
+                  <>
                     <Block
                       blockDashedName={blockDashedName}
                       challenges={nodesForSuperBlock.filter(
@@ -170,10 +173,8 @@ export class SuperBlockIntroductionPage extends Component {
                       )}
                       superBlockDashedName={superBlockDashedName}
                     />
-                    {blockDashedName !== 'project-euler' ? (
-                      <Spacer size={2} />
-                    ) : null}
-                  </div>
+                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
+                  </>
                 ))}
                 {superBlock !== 'Coding Interview Prep' && (
                   <div>
