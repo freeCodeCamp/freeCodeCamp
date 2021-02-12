@@ -21,6 +21,9 @@ Each file and folder will show a progress bar. The **blue** portion of the progr
 
 Select a file to work on and Crowdin will open the editor view.
 
+> [!NOTE]
+> When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML Tags Displaying' setting to 'Show'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+
 ## Translate the File
 
 ![Image - Editor View](./images/crowdin/editor.png)
@@ -74,13 +77,7 @@ When you attempt to save a translation, you may see a warning message appear wit
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
 > [!WARNING]
-> You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error might be incorrect.
-
-Crowdin will sometimes convert HTML tags (such as `<code>`) into numerical values, like `<0>text</0>` or `<1>text</1>`. These tags are usually code tags, and our QA check will verify that these have not been translated. However, sometimes these may be `<strong>` or `<em>` tags, which _should_ be translated. If you hover over a numerical tag in the source string, you can see which HTML tag or tags have been replaced:
-
-![Image - Hover over a tag](./images/crowdin/tag-hover.png)
-
-If the replaced tags are something that should be translated (such as `strong` tags), translate the content within the tags and select "Save Anyway" when the error appears. Then leave a comment on the string explaining that the tags are `strong` (for example) so other translators and proofreaders are aware that they should be translated.
+> You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error is incorrect. If you are clicking "Save Anyway", you should also tag a proofreader or project manager in a comment on that string for further review. Include the reason why you have saved the translation with QA errors.
 
 ## Translation Best Practices
 
