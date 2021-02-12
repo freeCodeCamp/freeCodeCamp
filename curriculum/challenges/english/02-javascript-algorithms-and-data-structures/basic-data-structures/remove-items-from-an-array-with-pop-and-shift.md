@@ -16,19 +16,23 @@ Let's take a look:
 let greetings = ['whats up?', 'hello', 'see ya!'];
 
 greetings.pop();
-// now equals ['whats up?', 'hello']
-
-greetings.shift();
-// now equals ['hello']
 ```
+
+`greetings` now has the value `['whats up?', 'hello']`.
+
+```
+greetings.shift();
+```
+
+`greetings` now has the value `['hello']`.
 
 We can also return the value of the removed element with either method like this:
 
 ```js
 let popped = greetings.pop();
-// returns 'hello'
-// greetings now equals []
 ```
+
+`greetings` now has the value `[]`, and `popped` has the value `hello`.
 
 # --instructions--
 
