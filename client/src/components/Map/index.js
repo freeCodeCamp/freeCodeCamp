@@ -6,7 +6,6 @@ import { generateIconComponent } from '../../assets/icons';
 
 import { Link, Spacer } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
-import { dasherize } from '../../../../utils/slugs';
 import './map.css';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import { curriculumLocale } from '../../../../config/env.json';
@@ -18,9 +17,9 @@ const propTypes = {
 
 const codingPrepRE = new RegExp('Interview Prep');
 
-function createSuperBlockTitle(str) {
-  const superBlockTitle = i18next.t(`intro:${dasherize(str)}.title`);
-  return codingPrepRE.test(str)
+function createSuperBlockTitle(superBlock) {
+  const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
+  return codingPrepRE.test(superBlock)
     ? i18next.t('learn.cert-map-estimates.coding-prep', {
         title: superBlockTitle
       })
@@ -41,11 +40,11 @@ function renderLandingMap(nodes) {
         <li key={i}>
           <Link
             className='btn link-btn btn-lg'
-            to={`/learn/${dasherize(node.superBlock)}/`}
+            to={`/learn/${node.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
               {generateIconComponent(node.superBlock, 'map-icon')}
-              {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
+              {i18next.t(`intro:${node.superBlock}.title`)}
             </div>
             <LinkButton />
           </Link>
@@ -63,7 +62,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
         <li key={i}>
           <Link
             className='btn link-btn btn-lg'
-            to={`/learn/${dasherize(node.superBlock)}/`}
+            to={`/learn/${node.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
               {generateIconComponent(node.superBlock, 'map-icon')}
@@ -76,14 +75,12 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
   ) : (
     <ul data-test-label='learn-curriculum-map'>
       {nodes
-        .filter(node =>
-          isAuditedCert(curriculumLocale, dasherize(node.superBlock))
-        )
+        .filter(node => isAuditedCert(curriculumLocale, node.superBlock))
         .map((node, i) => (
           <li key={i}>
             <Link
               className='btn link-btn btn-lg'
-              to={`/learn/${dasherize(node.superBlock)}/`}
+              to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
                 {generateIconComponent(node.superBlock, 'map-icon')}
@@ -105,14 +102,12 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
         <Spacer />
       </div>
       {nodes
-        .filter(
-          node => !isAuditedCert(curriculumLocale, dasherize(node.superBlock))
-        )
+        .filter(node => !isAuditedCert(curriculumLocale, node.superBlock))
         .map((node, i) => (
           <li key={i}>
             <Link
               className='btn link-btn btn-lg'
-              to={`/learn/${dasherize(node.superBlock)}/`}
+              to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
                 {generateIconComponent(node.superBlock, 'map-icon')}
