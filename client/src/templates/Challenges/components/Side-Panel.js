@@ -32,6 +32,7 @@ const propTypes = {
   superBlock: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
+  translationPending: PropTypes.bool.isRequired,
   videoUrl: PropTypes.string
 };
 
@@ -75,6 +76,7 @@ export class SidePanel extends Component {
       section,
       showToolPanel,
       superBlock,
+      translationPending,
       videoUrl
     } = this.props;
     return (
@@ -84,6 +86,7 @@ export class SidePanel extends Component {
             block={block}
             isCompleted={isChallengeCompleted}
             superBlock={superBlock}
+            translationPending={translationPending}
           >
             {title}
           </ChallengeTitle>

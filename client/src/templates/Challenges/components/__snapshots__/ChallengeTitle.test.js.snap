@@ -4,12 +4,6 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
 <div
   className="challenge-title-wrap"
 >
-  <a
-    className="title-translation-cta"
-    href="https://contribute.freecodecamp.org/#/how-to-translate-files"
-    rel="noopener noreferrer"
-    target="_blank"
-  />
   <div
     className="challenge-title-breadcrumbs"
   >

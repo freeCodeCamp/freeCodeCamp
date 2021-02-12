@@ -11,18 +11,27 @@ const propTypes = {
   block: PropTypes.string,
   children: PropTypes.string,
   isCompleted: PropTypes.bool,
-  superBlock: PropTypes.string
+  superBlock: PropTypes.string,
+  translationPending: PropTypes.bool.isRequired
 };
 
-function ChallengeTitle({ block, children, isCompleted, superBlock }) {
+function ChallengeTitle({
+  block,
+  children,
+  isCompleted,
+  superBlock,
+  translationPending
+}) {
   return (
     <div className='challenge-title-wrap'>
-      <Link
-        className='title-translation-cta'
-        to='https://contribute.freecodecamp.org/#/how-to-translate-files'
-      >
-        {i18next.t('misc.translation-pending')}
-      </Link>
+      {translationPending && (
+        <Link
+          className='title-translation-cta'
+          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+        >
+          {i18next.t('misc.translation-pending')}
+        </Link>
+      )}
       <div className='challenge-title-breadcrumbs'>
         <Link
           className='breadcrumb-left'
