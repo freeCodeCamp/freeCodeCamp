@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 
 import ShowProjectLinks from './ShowProjectLinks';
@@ -28,10 +27,14 @@ import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
+import { langCodes } from '../../i18n/allLangs';
+import { clientLocale } from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
 import { isEmpty } from 'lodash';
+
+const localeCode = langCodes[clientLocale];
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -326,7 +329,13 @@ const ShowCertification = props => {
             <Col md={7} sm={12}>
               <div data-cy='issue-date' className='issue-date'>
                 {t('certification.issued')}&nbsp;
-                <strong>{format(certDate, 'MMMM d, y')}</strong>
+                <strong>
+                  {certDate.toLocaleString([localeCode, 'en-US'], {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </strong>
               </div>
             </Col>
           </header>
