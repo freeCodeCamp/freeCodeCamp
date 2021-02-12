@@ -15,11 +15,9 @@ const propTypes = {
   forLanding: PropTypes.bool
 };
 
-const codingPrepRE = new RegExp('Interview Prep');
-
 function createSuperBlockTitle(superBlock) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
-  return codingPrepRE.test(superBlock)
+  return superBlock === 'coding-interview-prep'
     ? i18next.t('learn.cert-map-estimates.coding-prep', {
         title: superBlockTitle
       })
@@ -33,7 +31,7 @@ const linkSpacingStyle = {
 };
 
 function renderLandingMap(nodes) {
-  nodes = nodes.filter(node => node.superBlock !== 'Coding Interview Prep');
+  nodes = nodes.filter(node => node.superBlock !== 'coding-interview-prep');
   return (
     <ul data-test-label='certifications'>
       {nodes.map((node, i) => (
