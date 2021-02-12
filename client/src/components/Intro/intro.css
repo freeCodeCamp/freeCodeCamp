@@ -24,6 +24,10 @@
   border: none;
 }
 
+.intro-description{
+  padding:0 15px;
+}
+
 .intro-description strong,
 .intro-description p {
   font-family: 'Lato', sans-serif;
