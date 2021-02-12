@@ -22,13 +22,13 @@ Your result must be a string.
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` should become `"olleh"`.
+`reverseString("hello")` should return `"olleh"`.
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` should become `"ydwoH"`.
+`reverseString("Howdy")` should return `"ydwoH"`.
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
