@@ -209,7 +209,8 @@ class ShowClassic extends Component {
       fields: { blockName },
       description,
       instructions,
-      superBlock
+      superBlock,
+      translationPending
     } = this.getChallenge();
 
     const { forumTopicId, title } = this.getChallenge();
@@ -224,6 +225,7 @@ class ShowClassic extends Component {
         showToolPanel={showToolPanel}
         superBlock={superBlock}
         title={title}
+        translationPending={translationPending}
         videoUrl={this.getVideoUrl()}
       />
     );
@@ -362,6 +364,7 @@ export const query = graphql`
       helpCategory
       videoUrl
       superBlock
+      translationPending
       forumTopicId
       fields {
         slug

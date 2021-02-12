@@ -53,6 +53,7 @@ export const ChallengeNode = PropTypes.shape({
   tail: PropTypes.arrayOf(PropTypes.string),
   time: PropTypes.string,
   title: PropTypes.string,
+  translationPending: PropTypes.bool,
   videoUrl: PropTypes.string
 });
 

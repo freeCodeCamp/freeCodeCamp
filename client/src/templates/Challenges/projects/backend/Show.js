@@ -167,6 +167,7 @@ export class BackEnd extends Component {
           title,
           description,
           instructions,
+          translationPending,
           superBlock
         }
       },
@@ -200,6 +201,7 @@ export class BackEnd extends Component {
                   block={blockName}
                   isCompleted={isChallengeCompleted}
                   superBlock={superBlock}
+                  translationPending={translationPending}
                 >
                   {title}
                 </ChallengeTitle>
@@ -258,6 +260,7 @@ export const query = graphql`
       challengeType
       helpCategory
       superBlock
+      translationPending
       fields {
         blockName
         slug
