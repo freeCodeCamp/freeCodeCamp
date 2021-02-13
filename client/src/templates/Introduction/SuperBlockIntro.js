@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
@@ -141,12 +141,10 @@ export class SuperBlockIntroductionPage extends Component {
       t
     } = this.props;
 
-    const superBlockDashedName = dasherize(superBlock);
-
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
-    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
+    const i18nSuperBlock = t(`intro:${superBlock}.title`);
 
     return (
       <>
@@ -165,18 +163,18 @@ export class SuperBlockIntroductionPage extends Component {
               <Spacer />
               <div className='block-ui'>
                 {blockDashedNames.map(blockDashedName => (
-                  <>
+                  <Fragment key={blockDashedName}>
                     <Block
                       blockDashedName={blockDashedName}
                       challenges={nodesForSuperBlock.filter(
                         node => node.block === blockDashedName
                       )}
-                      superBlockDashedName={superBlockDashedName}
+                      superBlockDashedName={superBlock}
                     />
                     {blockDashedName !== 'project-euler' ? <Spacer /> : null}
-                  </>
+                  </Fragment>
                 ))}
-                {superBlock !== 'Coding Interview Prep' && (
+                {superBlock !== 'coding-interview-prep' && (
                   <div>
                     <CertChallenge superBlock={superBlock} />
                   </div>

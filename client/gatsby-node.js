@@ -20,9 +20,7 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
   if (node.internal.type === 'ChallengeNode') {
     const { tests = [], block, dashedName, superBlock } = node;
-    const slug = `/learn/${dasherize(superBlock)}/${dasherize(
-      block
-    )}/${dashedName}`;
+    const slug = `/learn/${superBlock}/${dasherize(block)}/${dashedName}`;
     createNodeField({ node, name: 'slug', value: slug });
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
     createNodeField({ node, name: 'tests', value: tests });
@@ -131,7 +129,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           result.data.allChallengeNode.edges.map(
             ({ node: { superBlock } }) => superBlock
           )
-        ).map(superBlock => blockNameify(superBlock));
+        );
 
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {

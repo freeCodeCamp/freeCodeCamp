@@ -14,7 +14,6 @@ const {
 const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
-const { blockNameify } = require('../utils/block-nameify');
 const { helpCategoryMap } = require('../client/utils/challengeTypes');
 const {
   curriculum: curriculumLangs
@@ -346,7 +345,6 @@ function prepareChallenge(challenge) {
     challenge.solutionFiles = filesToObject(challenge.solutionFiles);
   }
   challenge.block = dasherize(challenge.block);
-  challenge.superBlock = blockNameify(challenge.superBlock);
   return challenge;
 }
 

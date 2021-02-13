@@ -1,6 +1,6 @@
 ---
 title: Coding Interview Prep
-superBlock: Coding Interview Prep
+superBlock: coding-interview-prep
 ---
 
 ## Introduction to Coding Interview Prep
