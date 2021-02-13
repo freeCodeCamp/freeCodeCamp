@@ -1,5 +1,5 @@
 // Matches editor links for: Repl.it, Glitch, CodeSandbox, GitHub
-const editorRegex = /repl\.it\/@|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
+const editorRegex = /repl\.it\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
 const localhostRegex = /localhost:/;
 
 export const editorValidator = value =>
