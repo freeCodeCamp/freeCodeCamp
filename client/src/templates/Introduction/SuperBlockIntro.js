@@ -141,12 +141,10 @@ export class SuperBlockIntroductionPage extends Component {
       t
     } = this.props;
 
-    const superBlockDashedName = dasherize(superBlock);
-
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
-    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
+    const i18nSuperBlock = t(`intro:${superBlock}.title`);
 
     return (
       <>
@@ -171,12 +169,12 @@ export class SuperBlockIntroductionPage extends Component {
                       challenges={nodesForSuperBlock.filter(
                         node => node.block === blockDashedName
                       )}
-                      superBlockDashedName={superBlockDashedName}
+                      superBlockDashedName={superBlock}
                     />
                     {blockDashedName !== 'project-euler' ? <Spacer /> : null}
                   </Fragment>
                 ))}
-                {superBlock !== 'Coding Interview Prep' && (
+                {superBlock !== 'coding-interview-prep' && (
                   <div>
                     <CertChallenge superBlock={superBlock} />
                   </div>

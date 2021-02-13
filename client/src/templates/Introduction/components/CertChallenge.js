@@ -8,7 +8,6 @@ import { withTranslation } from 'react-i18next';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { dasherize } from '../../../../../utils/slugs';
 import { userSelector } from '../../../redux';
 import { User } from '../../../redux/propTypes';
 
@@ -48,23 +47,22 @@ export class CertChallenge extends Component {
     } = this.props;
 
     const userCertificates = {
-      'Responsive Web Design': isRespWebDesignCert,
-      'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
-      'Front End Libraries': isFrontEndLibsCert,
-      'Data Visualization': is2018DataVisCert,
-      'APIs and Microservices': isApisMicroservicesCert,
-      'Quality Assurance': isQaCertV7,
-      'Information Security': isInfosecCertV7,
-      'Scientific Computing with Python': isSciCompPyCertV7,
-      'Data Analysis with Python': isDataAnalysisPyCertV7,
-      'Machine Learning with Python': isMachineLearningPyCertV7
+      'responsive-web-design': isRespWebDesignCert,
+      'javascript-algorithms-and-data-structures': isJsAlgoDataStructCert,
+      'front-end-libraries': isFrontEndLibsCert,
+      'data-visualization': is2018DataVisCert,
+      'apis-and-microservices': isApisMicroservicesCert,
+      'quality-assurance': isQaCertV7,
+      'information-security': isInfosecCertV7,
+      'scientific-computing-with-python': isSciCompPyCertV7,
+      'data-analysis-with-python': isDataAnalysisPyCertV7,
+      'machine-learning-with-python': isMachineLearningPyCertV7
     };
 
     const isCertified = userCertificates[superBlock];
-    const superBlockDashedName = dasherize(superBlock);
-    const certLocation = `/certification/${username}/${superBlockDashedName}`;
+    const certLocation = `/certification/${username}/${superBlock}`;
     const certCheckmarkStyle = { height: '40px', width: '40px' };
-    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
+    const i18nSuperBlock = t(`intro:${superBlock}.title`);
     const i18nCertText = t(`intro:misc-text.certification`, {
       cert: i18nSuperBlock
     });
