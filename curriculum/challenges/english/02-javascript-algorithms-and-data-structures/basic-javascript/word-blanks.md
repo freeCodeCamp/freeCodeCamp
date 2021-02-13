@@ -13,7 +13,7 @@ We will now use our knowledge of strings to build a "[Mad Libs](https://en.wikip
 
 In a "Mad Libs" game, you are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs. You then fill in the missing pieces with words of your choice in a way that the completed sentence makes sense.
 
-Consider this sentence - "It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**". This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+Consider this sentence - It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
 
 ```js
 var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-You should not directly use the values "dog", "ran", "big", or "quickly" to create `wordBlanks`.
+You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);

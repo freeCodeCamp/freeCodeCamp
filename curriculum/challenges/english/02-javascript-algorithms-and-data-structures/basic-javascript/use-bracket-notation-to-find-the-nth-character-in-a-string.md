@@ -17,7 +17,7 @@ Example:
 
 ```js
 var firstName = "Ada";
-var secondLetterOfFirstName = firstName[1]; // secondLetterOfFirstName is "d"
+var secondLetterOfFirstName = firstName[1]; // "d"
 ```
 
 # --instructions--

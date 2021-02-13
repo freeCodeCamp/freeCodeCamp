@@ -9,7 +9,7 @@ dashedName: local-scope-and-functions
 
 # --description--
 
-Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.
+Variables which are declared within a function, as well as the function parameters, have <dfn>local</dfn> scope. That means they are only visible within that function.
 
 Here is a function `myTest` with a local variable called `loc`.
 
@@ -18,7 +18,7 @@ function myTest() {
   var loc = "foo";
   console.log(loc);
 }
-myTest(); // logs "foo"
+myTest(); // "foo"
 console.log(loc); // loc is not defined
 ```
 

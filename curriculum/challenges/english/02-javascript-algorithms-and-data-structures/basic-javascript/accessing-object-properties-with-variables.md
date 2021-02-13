@@ -32,7 +32,7 @@ function propPrefix(str) {
   var s = "prop";
   return s + str;
 }
-var someProp = propPrefix("Name"); // someProp now holds the value 'propName'
+var someProp = propPrefix("Name"); // "propName"
 console.log(someObj[someProp]); // "John"
 ```
 
@@ -56,7 +56,7 @@ The variable `player` should be a string
 assert(typeof player === 'string');
 ```
 
-The value of `player` should be "Montana"
+The value of `player` should be `Montana`
 
 ```js
 assert(player === 'Montana');

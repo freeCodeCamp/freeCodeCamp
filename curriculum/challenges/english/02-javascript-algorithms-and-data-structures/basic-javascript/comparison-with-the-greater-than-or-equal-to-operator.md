@@ -28,43 +28,43 @@ Add the greater than or equal to operator to the indicated lines so that the ret
 
 # --hints--
 
-`testGreaterOrEqual(0)` should return "Less than 10"
+`testGreaterOrEqual(0)` should return `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` should return "Less than 10"
+`testGreaterOrEqual(9)` should return `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` should return "10 or Over"
+`testGreaterOrEqual(10)` should return `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` should return "10 or Over"
+`testGreaterOrEqual(11)` should return `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` should return "10 or Over"
+`testGreaterOrEqual(19)` should return `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` should return "20 or Over"
+`testGreaterOrEqual(100)` should return `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` should return "20 or Over"
+`testGreaterOrEqual(21)` should return `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');

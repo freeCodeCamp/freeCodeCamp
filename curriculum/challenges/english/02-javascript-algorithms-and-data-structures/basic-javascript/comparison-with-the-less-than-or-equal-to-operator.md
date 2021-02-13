@@ -27,43 +27,43 @@ Add the less than or equal to operator to the indicated lines so that the return
 
 # --hints--
 
-`testLessOrEqual(0)` should return "Smaller Than or Equal to 12"
+`testLessOrEqual(0)` should return `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(11)` should return "Smaller Than or Equal to 12"
+`testLessOrEqual(11)` should return `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(12)` should return "Smaller Than or Equal to 12"
+`testLessOrEqual(12)` should return `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(23)` should return "Smaller Than or Equal to 24"
+`testLessOrEqual(23)` should return `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(24)` should return "Smaller Than or Equal to 24"
+`testLessOrEqual(24)` should return `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` should return "More Than 24"
+`testLessOrEqual(25)` should return `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` should return "More Than 24"
+`testLessOrEqual(55)` should return `More Than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');

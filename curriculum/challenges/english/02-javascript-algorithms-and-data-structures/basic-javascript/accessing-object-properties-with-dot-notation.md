@@ -36,7 +36,7 @@ Read in the property values of `testObj` using dot notation. Set the variable `h
 assert(typeof hatValue === 'string');
 ```
 
-The value of `hatValue` should be `"ballcap"`
+The value of `hatValue` should be `ballcap`
 
 ```js
 assert(hatValue === 'ballcap');
@@ -48,7 +48,7 @@ assert(hatValue === 'ballcap');
 assert(typeof shirtValue === 'string');
 ```
 
-The value of `shirtValue` should be `"jersey"`
+The value of `shirtValue` should be `jersey`
 
 ```js
 assert(shirtValue === 'jersey');

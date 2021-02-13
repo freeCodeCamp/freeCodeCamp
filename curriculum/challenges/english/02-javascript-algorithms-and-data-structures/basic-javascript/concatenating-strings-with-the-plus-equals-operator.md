@@ -19,7 +19,7 @@ Example:
 ```js
 var ourStr = "I come first. ";
 ourStr += "I come second.";
-// ourStr is now "I come first. I come second."
+// "I come first. I come second."
 ```
 
 # --instructions--

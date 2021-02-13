@@ -27,7 +27,8 @@ var thisVariableNameIsSoLong;
 
 # --instructions--
 
-Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.  
+Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.
+
 Do not create any new variables.
 
 # --hints--

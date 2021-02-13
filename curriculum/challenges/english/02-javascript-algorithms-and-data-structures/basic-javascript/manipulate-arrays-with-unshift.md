@@ -17,9 +17,9 @@ Example:
 
 ```js
 var ourArray = ["Stimpson", "J", "cat"];
-ourArray.shift(); // ourArray now equals ["J", "cat"]
+ourArray.shift(); // ourArray: ["J", "cat"]
 ourArray.unshift("Happy");
-// ourArray now equals ["Happy", "J", "cat"]
+// ourArray: ["Happy", "J", "cat"]
 ```
 
 # --instructions--

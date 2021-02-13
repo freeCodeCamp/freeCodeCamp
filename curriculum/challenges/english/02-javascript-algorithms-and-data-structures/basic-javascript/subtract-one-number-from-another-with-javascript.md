@@ -16,7 +16,7 @@ JavaScript uses the `-` symbol for subtraction.
 **Example**
 
 ```js
-myVar = 12 - 6; // assigned 6
+myVar = 12 - 6; // 6
 ```
 
 # --instructions--

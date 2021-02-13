@@ -22,7 +22,7 @@ function myFun() {
 myFun();
 ```
 
-The above outputs "Hello" to the console, returns "World", but `"byebye"` is never output, because the function exits at the `return` statement.
+The above outputs `Hello` to the console, returns `World`, but `byebye` is never output, because the function exits at the `return` statement.
 
 # --instructions--
 

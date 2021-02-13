@@ -17,7 +17,7 @@ Example:
 
 ```js
 var firstName = "Charles";
-var lastLetter = firstName[firstName.length - 1]; // lastLetter is "s"
+var lastLetter = firstName[firstName.length - 1]; // "s"
 ```
 
 # --instructions--
@@ -28,7 +28,7 @@ Use <dfn>bracket notation</dfn> to find the last character in the `lastName` var
 
 # --hints--
 
-`lastLetterOfLastName` should be "e".
+`lastLetterOfLastName` should be `e`.
 
 ```js
 assert(lastLetterOfLastName === 'e');

@@ -17,7 +17,7 @@ Example:
 
 ```js
 var firstName = "Charles";
-var thirdToLastLetter = firstName[firstName.length - 3]; // thirdToLastLetter is "l"
+var thirdToLastLetter = firstName[firstName.length - 3]; // "l"
 ```
 
 # --instructions--
@@ -28,7 +28,7 @@ Use <dfn>bracket notation</dfn> to find the second-to-last character in the `las
 
 # --hints--
 
-`secondToLastLetterOfLastName` should be "c".
+`secondToLastLetterOfLastName` should be `c`.
 
 ```js
 assert(secondToLastLetterOfLastName === 'c');

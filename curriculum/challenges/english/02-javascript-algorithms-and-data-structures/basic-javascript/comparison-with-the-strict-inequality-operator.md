@@ -21,29 +21,29 @@ The strict inequality operator (`!==`) is the logical opposite of the strict equ
 
 # --instructions--
 
-Add the strict inequality operator to the `if` statement so the function will return "Not Equal" when `val` is not strictly equal to `17`
+Add the strict inequality operator to the `if` statement so the function will return `Not Equal` when `val` is not strictly equal to `17`
 
 # --hints--
 
-`testStrictNotEqual(17)` should return "Equal"
+`testStrictNotEqual(17)` should return `Equal`
 
 ```js
 assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-`testStrictNotEqual("17")` should return "Not Equal"
+`testStrictNotEqual("17")` should return `Not Equal`
 
 ```js
 assert(testStrictNotEqual('17') === 'Not Equal');
 ```
 
-`testStrictNotEqual(12)` should return "Not Equal"
+`testStrictNotEqual(12)` should return `Not Equal`
 
 ```js
 assert(testStrictNotEqual(12) === 'Not Equal');
 ```
 
-`testStrictNotEqual("bob")` should return "Not Equal"
+`testStrictNotEqual("bob")` should return `Not Equal`
 
 ```js
 assert(testStrictNotEqual('bob') === 'Not Equal');

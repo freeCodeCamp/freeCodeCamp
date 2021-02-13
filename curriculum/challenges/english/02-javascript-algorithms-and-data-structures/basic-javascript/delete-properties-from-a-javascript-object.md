@@ -40,11 +40,11 @@ After the last line shown above, `ourDog` looks like:
 
 # --instructions--
 
-Delete the `"tails"` property from `myDog`. You may use either dot or bracket notation.
+Delete the `tails` property from `myDog`. You may use either dot or bracket notation.
 
 # --hints--
 
-You should delete the property `"tails"` from `myDog`.
+You should delete the property `tails` from `myDog`.
 
 ```js
 assert(typeof myDog === 'object' && myDog.tails === undefined);

@@ -18,11 +18,11 @@ Examples:
 ```js
 var arr1 = [1,2,3];
 arr1.push(4);
-// arr1 is now [1,2,3,4]
+// [1,2,3,4]
 
 var arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
-// arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
+// ["Stimpson", "J", "cat", ["happy", "joy"]]
 ```
 
 # --instructions--

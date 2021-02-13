@@ -13,7 +13,7 @@ You can find the length of a `String` value by writing `.length` after the strin
 
 `"Alan Peter".length; // 10`
 
-For example, if we created a variable `var firstName = "Charles"`, we could find out how long the string `"Charles"` is by using the `firstName.length` property.
+For example, if we created a variable `var firstName = "Charles"`, we could find out how long the string `Charles` is by using the `firstName.length` property.
 
 # --instructions--
 

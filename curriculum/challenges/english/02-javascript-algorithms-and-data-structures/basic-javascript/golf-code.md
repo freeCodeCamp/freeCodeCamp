@@ -19,67 +19,67 @@ Your function will be passed `par` and `strokes` arguments. Return the correct s
 
 # --hints--
 
-`golfScore(4, 1)` should return "Hole-in-one!"
+`golfScore(4, 1)` should return `Hole-in-one!`
 
 ```js
 assert(golfScore(4, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(4, 2)` should return "Eagle"
+`golfScore(4, 2)` should return `Eagle`
 
 ```js
 assert(golfScore(4, 2) === 'Eagle');
 ```
 
-`golfScore(5, 2)` should return "Eagle"
+`golfScore(5, 2)` should return `Eagle`
 
 ```js
 assert(golfScore(5, 2) === 'Eagle');
 ```
 
-`golfScore(4, 3)` should return "Birdie"
+`golfScore(4, 3)` should return `Birdie`
 
 ```js
 assert(golfScore(4, 3) === 'Birdie');
 ```
 
-`golfScore(4, 4)` should return "Par"
+`golfScore(4, 4)` should return `Par`
 
 ```js
 assert(golfScore(4, 4) === 'Par');
 ```
 
-`golfScore(1, 1)` should return "Hole-in-one!"
+`golfScore(1, 1)` should return `Hole-in-one!`
 
 ```js
 assert(golfScore(1, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(5, 5)` should return "Par"
+`golfScore(5, 5)` should return `Par`
 
 ```js
 assert(golfScore(5, 5) === 'Par');
 ```
 
-`golfScore(4, 5)` should return "Bogey"
+`golfScore(4, 5)` should return `Bogey`
 
 ```js
 assert(golfScore(4, 5) === 'Bogey');
 ```
 
-`golfScore(4, 6)` should return "Double Bogey"
+`golfScore(4, 6)` should return `Double Bogey`
 
 ```js
 assert(golfScore(4, 6) === 'Double Bogey');
 ```
 
-`golfScore(4, 7)` should return "Go Home!"
+`golfScore(4, 7)` should return `Go Home!`
 
 ```js
 assert(golfScore(4, 7) === 'Go Home!');
 ```
 
-`golfScore(5, 9)` should return "Go Home!"
+`golfScore(5, 9)` should return `Go Home!`
 
 ```js
 assert(golfScore(5, 9) === 'Go Home!');
