@@ -1,13 +1,13 @@
-- **Comenzando**
-  - [Introducción](index.md "Contribuye a la Comunidad freeCodeCamp.org")
-  - [Preguntas Más Frecuentes](FAQ.md)
-- **Contribución de Código**
-  - [Configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
-  - [Abrir una pull request](how-to-open-a-pull-request.md)
-  - [Trabaja en los desafíos de código](how-to-work-on-coding-challenges.md)
-  - [Trabaja en los desafíos de video](how-to-help-with-video-challenges.md)
-  - [ Trabajar en el tema de noticias](how-to-work-on-the-news-theme.md)
-  - [Trabaja en la documentación](how-to-work-on-the-docs-theme.md)
+- **Getting Started**
+  - [Introduction](index.md "Contribute to the freeCodeCamp.org Community")
+  - [Frequently Asked Questions](FAQ.md)
+- **Code Contribution**
+  - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
+  - [Work on the news theme](how-to-work-on-the-news-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
 - **Translation Contribution**
   - [Translating a Curriculum File](how-to-translate-files.md)
   - [Proofreading a Curriculum File](how-to-proofread-files.md)

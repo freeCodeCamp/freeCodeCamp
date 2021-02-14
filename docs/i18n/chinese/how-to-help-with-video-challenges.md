@@ -1,17 +1,17 @@
-# Cómo ayudar con los desafíos de vídeo
+# How to help with video challenges
 
-Los retos en vídeo son un nuevo tipo de desafío en el currículo de freeCodeCamp.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-Un desafío de vídeo es una pequeña sección de un curso de vídeo completo sobre un tema en particular. Una página de desafío de vídeo inserta un vídeo de YouTube. Cada página de desafío tiene una única pregunta de selección múltiple relacionada con el vídeo. A user must answer the question correctly before moving on to the next video challenge in the course.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on to the next video challenge in the course.
 
-Las páginas de desafío de vídeo son creadas por miembros del equipo freeCodeCamp. Los vídeos de YouTube también son subidos por miembros del equipo freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas con ellos.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
 You can help by creating multiple-choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Plantilla de desafío
+## Challenge Template
 
-A continuación se muestra una plantilla de cómo se ven los archivos markdown de los desafíos.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
@@ -75,7 +75,7 @@ Pick a challenge markdown file from the options above.
 
 First, find the videoId.
 
-Por ejemplo, en el siguiente código de la cabecera de un archivo markdown de desafío de video, el videoId es "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -92,7 +92,7 @@ Skim the YouTube video with that videoId and think of a multiple-choice question
 
 ### Add the question to the markdown file
 
-You can add the question locally or using the GitHub interface. Para añadir la pregunta localmente, necesitas [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). También puede encontrar el archivo en GitHub y hacer clic en el botón Editar para añadir la pregunta directamente en su navegador.
+You can add the question locally or using the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
@@ -128,7 +128,7 @@ Add/Update the  question text under the part that shows:
 ```
 Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-### Ejemplos de preguntas
+### Question examples
 
 ````md
 # --question--
