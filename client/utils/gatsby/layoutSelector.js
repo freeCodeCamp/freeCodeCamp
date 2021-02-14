@@ -13,7 +13,11 @@ export default function layoutSelector({ element, props }) {
   } = props;
 
   if (element.type === FourOhFourPage) {
-    return <DefaultLayout pathname={pathname}>{element}</DefaultLayout>;
+    return (
+      <DefaultLayout pathname={pathname} showFooter={true}>
+        {element}
+      </DefaultLayout>
+    );
   }
   if (/\/certification\//.test(pathname)) {
     return (
@@ -21,13 +25,12 @@ export default function layoutSelector({ element, props }) {
     );
   }
   if (/\/guide\//.test(pathname)) {
-    console.log('Hitting guide for some reason. Need a redirect.');
+    return console.log('Hitting guide for some reason. Need a redirect.');
   }
-
-  const splitPath = pathname.split('/');
+  const splitPath = pathname.split('/').filter(x => x);
   const isSuperBlock =
-    (splitPath.length === 3 && splitPath[1]) ||
-    (splitPath.length === 4 && splitPath[2]);
+    (splitPath.length === 2 && splitPath[0]) === 'learn' ||
+    (splitPath.length === 3 && splitPath[1]) === 'learn';
 
   if (/\/learn\//.test(pathname) && !isSuperBlock) {
     return (
@@ -37,7 +40,11 @@ export default function layoutSelector({ element, props }) {
     );
   }
 
-  return <DefaultLayout pathname={pathname}>{element}</DefaultLayout>;
+  return (
+    <DefaultLayout pathname={pathname} showFooter={true}>
+      {element}
+    </DefaultLayout>
+  );
 }
 
 layoutSelector.propTypes = {
