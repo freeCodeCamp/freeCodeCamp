@@ -12,16 +12,16 @@ Recomendamos usar [titulos y mensajes convencionales](https://www.conventionalco
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Al abrir un Pull Request(PR), puede utilizar el siguiente para determinar el tipo, alcance (opcional) y descripción.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Tipo:**
 
-| Tipo       | Cuándo seleccionar                                                                          |
-|:---------- |:------------------------------------------------------------------------------------------- |
-| fijar      | Funciones modificadas o actualizadas/mejoradas, pruebas, verbiage de una lección, etc.      |
-| hazaña     | Sólo si está añadiendo nuevas funcionalidades, pruebas, etc.                                |
-| coro       | Cambios que no están relacionados con el código, las pruebas o la verborrea de una lección. |
-| documentos | Cambios al directorio `/docs` o a las pautas de contribución, etc.                          |
+| Tipo  | Cuándo seleccionar                                                               |
+|:----- |:-------------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
+| feat  | Sólo si está añadiendo nuevas funcionalidades, pruebas, etc.                     |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
+| docs  | Cambios al directorio `/docs` o a las pautas de contribución, etc.               |
 
 **Alcance:**
 
@@ -34,7 +34,7 @@ Manténgalo corto (menos de 30 caracteres) y simple, puede agregar más informac
 Algunos ejemplos de buenos títulos PRs serían:
 
 - `fix(a11y): contraste mejorado en la barra de búsqueda`
-- `feat: añadir más pruebas a challenges html y css`
+- `feat: add more tests to HTML and CSS challenges`
 - `fix(api,client): evitar errores CORS en el envío de formularios`
 - `docs(i18n): Traducción al chino de la configuración local`
 
@@ -44,13 +44,13 @@ Algunos ejemplos de buenos títulos PRs serían:
 
    ![Imagen - Comparar solicitud de pull en GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. Por defecto, todas las pull requests deben estar en contra del repositorio principal freeCodeCamp `master` branch.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
    Asegúrese de que su bifurcación base está configurada en freeCodeCamp/freeCodeCamp al elevar una solicitud de Pull Request.
 
    ![Imagen - Comparando bifurcaciones al hacer un pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Envía el pull request de tu rama a la rama `master` de freeCodeCamp.
+3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
 4. En el cuerpo de sus relaciones públicas incluya un resumen más detallado de los cambios realizados y por qué.
 
@@ -62,9 +62,11 @@ Algunos ejemplos de buenos títulos PRs serían:
 
      > Ejemplo: `Cerrar #123` cerrará el problema 123
 
-5. Indique si ha probado en una copia local del sitio o no.
+5. Indicate if you have tested on a local copy of the site or not.
 
-   Esto es muy importante a la hora de hacer cambios que no sean sólo ediciones al contenido de texto como la documentación o una descripción del desafío. Ejemplos de cambios que necesitan pruebas locales incluyen JavaScript, CSS o HTML que podrían cambiar la funcionalidad o el diseño de una página.
+   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+
+   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
 
 ## Comentarios sobre pull requests
 
@@ -72,7 +74,7 @@ Algunos ejemplos de buenos títulos PRs serían:
 
 Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Por favor, sea paciente con los demás moderadores y respete su tiempo. Todos los pull requests son revisados a su debido tiempo.
 
-Y como siempre, siéntete libre de hacer preguntas en la categoría ['Colaboradores' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o [nuestro servidor de Discord](https://discord.gg/pFspAhS).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
 > [!TIP] Si quieres contribuir con más solicitudes de extracción, te recomendamos que leas las directrices [haciendo cambios y sincronizando](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) para evitar tener que borrar tu bifurcación.
 
@@ -84,13 +86,13 @@ La mayoría de las veces no puede requerir una rebase, porque aplastamos todos l
 
 ### Para arreglos de errores y características habituales
 
-Cuando trabajas con errores y características regulares en nuestra rama de desarrollo `master`, puedes hacer una simple rebase:
+When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
 1. Reiniciar su copia local:
 
    ```console
    git checkout <pr-branch>
-   git pull --rebase upstream master
+   git pull --rebase upstream main
    ```
 
 2. Resolver cualquier conflicto y añadir / editar commits
@@ -118,7 +120,7 @@ Cuando estás trabajando en funciones para nuestro próximo currículo `siguient
 1. Asegúrese de que su autor está sincronizado con su local:
 
    ```console
-   git checkout master
+   git checkout main
    git fetch --all --prune
    git checkout next-python-projects
    git reset --hard upstream/next-python-projects

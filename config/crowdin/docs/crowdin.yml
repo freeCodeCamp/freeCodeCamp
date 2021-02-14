@@ -9,7 +9,6 @@ files: [
  {
   "source" : "/docs/*.md",
   "translation" : "/docs/i18n/%language%/%original_file_name%",
-
   "ignore" : [
     "/docs/_coverpage.md",
     "/docs/_navbar.md",

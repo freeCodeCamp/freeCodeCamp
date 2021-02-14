@@ -60,7 +60,7 @@ Por lo general, no asignamos los números a nadie más que a los colaboradores d
 **Siéntete libre de pedir ayuda en:**
 
 - La categoría de `colaboradores` de [nuestro foro de la comunidad](https://forum.freecodecamp.org/c/contributors).
-- El canal `#Contributors` en [nuestro servidor de la comunidad de Discord](https://discord.gg/pFspAhS).
+- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
 
 Estamos encantados de ayudarte a contribuir a cualquiera de los temas en los que te gustaría trabajar. Si nos hace preguntas sobre los temas relacionados, estaremos encantados de aclararlos. Asegúrese de buscar su pregunta antes de publicar una nueva.
 
