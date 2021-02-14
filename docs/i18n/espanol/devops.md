@@ -10,13 +10,13 @@ Este repositorio se construye, prueba y despliega continuamente para ** separar 
 
 Esto involucra tres pasos que deben seguirse en secuencia:
 
-1. Los nuevos cambios (ambos, correcciones y funcionalidades) son mezclados en nuestra rama principal de desarrollo (`master`) mediante pull requests.
+1. New changes (both fixes and features) are merged into our primary development branch (`main`) via pull requests.
 2. Estos cambios son ejecutados a través de una serie de pruebas automatizadas.
 3. Una vez que las pruebas se completan de forma satisfactoria, publicamos los cambios (o los actualizamos si es necesario) para desplegarlos en nuestra infraestructura.
 
 #### Construyendo la base de código - Mapeando las Ramas de Git con los Despliegues.
 
-Usualmente, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (la rama de desarrollo por defecto) es fusionada con la rama [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) una vez al día, y publicada dentro de una infraestructura que se encuentra aislada.
+Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
 Esta es una publicación intermedia para nuestros desarrolladores y colaboradores voluntarios. También es conocida como nuestra publicación "staging" o "beta".
 
@@ -28,7 +28,7 @@ Esta es la versión final que despliega los cambios a nuestras plataformas de pr
 
 #### Pruebas de cambios - Pruebas de Integración y Aceptación del Usuario.
 
-Empleamos varios niveles de pruebas de integración y aceptación para verificar la calidad del código. Todas nuestras pruebas se realizan a través de software como [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) y [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+Empleamos varios niveles de pruebas de integración y aceptación para verificar la calidad del código. All our tests are done through software like [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
 Contamos con pruebas unitarias para probar nuestras soluciones a los desafíos, las API del Servidor y las interfaces de Usuario. Estas nos ayudan a probar la integración entre diferentes componentes.
 
@@ -69,21 +69,21 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Asegúrate de que tu rama `master` no tiene cambios pendientes y esté sincronizada con el upstream.
+2. Make sure your `maim` branch is pristine and in sync with the upstream.
 
    ```sh
-   git checkout master
+   git checkout main
    git fetch --all --prune
-   git reset --hard upstream/master
+   git reset --hard upstream/main
    ```
 
-3. Comprueba que Travis CI se está ejecutando sobre la rama `master` para el flujo upstream.
+3. Check that the GitHub CI is passing on the `main` branch for upstream.
 
-   Las pruebas de [integración continua](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) deben estar en verde y en estado PASSING para la rama `master`.
+   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `main` branch. Click the green check mark next to the commit hash when viewing the `main` branch code.
 
-    <details> <summary> Comprobando el estado en Travis CI (captura de pantalla) </summary>
+    <details> <summary> Checking status on GitHub Actions (screenshot) </summary>
       <br>
-      ![Comprueba el estado de compilación en Travis CI](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png)
+      ![Check build status on GitHub Actions](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png)
     </details>
 
    Si esto está fallando debes detenerte e investigar los errores.
@@ -94,11 +94,11 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    npm run clean-and-develop
    ```
 
-5. Mueva los cambios desde `master` a `production-staging` mediante una fusión fast-forward
+5. Move changes from `main` to `production-staging` via a fast-forward merge
 
    ```
    git checkout production-staging
-   git merge master
+   git merge main
    git push upstream
    ```
 
@@ -166,15 +166,13 @@ Una vez que uno de los miembros del personal apruebe una publicación, el flujo 
 
 Aquí está el estado actual de las pruebas, compilación y despliegue del código base.
 
-| Tipo                 | Rama                                                                                         | Estado                                                                                                                                                                                                                                                       | Panel                                                                                    |
-|:-------------------- |:-------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:---------------------------------------------------------------------------------------- |
-| Pruebas CI           | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                         | ![Estado de Compilación de Travis CI](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                     | [Ir al panel de estado](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Pruebas CI           | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Estado de Compilación de Travis CI](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                         | [Ir al panel de estado](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Flujo de Compilación | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Estado de Compilación](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Flujo de Publicación | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                              | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
-| Pruebas CI           | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Estado de Compilación de Travis CI](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                         | [Ir al panel de estado](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Flujo de Compilación | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Estado de Compilación](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Flujo de Publicación | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                              | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| Tipo             | Rama                                                                                         | Estado                                                                                                                                                                                                                                              | Panel                                                                                    |
+|:---------------- |:-------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:---------------------------------------------------------------------------------------- |
+| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Ir al panel de estado](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 
 ## Acceso anticipado y pruebas beta
 
@@ -198,7 +196,7 @@ Actualmente una versión de prueba beta pública está disponible en:
 
 El equipo de desarrollo fusiona los cambios de la rama `production-staging` a `production-current` cuando se publican los cambios. El commit más reciente debe ser lo que ves en vivo en el sitio.
 
-Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Adicionalmente, también puedes contactarnos en la [sala de chat de contribuyentes](https://gitter.im/FreeCodeCamp/Contributors) para obtener una confirmación.
+Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Alternatively you can also ping us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors) for a confirmation.
 
 ### Limitaciones Conocidas
 
@@ -216,7 +214,7 @@ Existen algunas limitaciones y problemas conocidos al utilizar la versión beta 
 
   El sitio beta es y siempre ha sido para aumentar el desarrollo y las pruebas locales, nada más. No es una promesa de lo que se avecina, sino un vistazo de lo que se está trabajando.
 
-- #### La página de registro puede verse diferente a la de producción
+- #### Sign in page may look different than production
 
   Usamos un entorno de pruebas para freecodecamp.dev en Auth0 y, por lo tanto, no tenemos la capacidad de configurar un dominio personalizado. Esto hace que todas las redirecciones de peticiones y la página de inicio de sesión aparezcan en un dominio predeterminado como: `https://freecodecamp-dev.auth0.com/`. Esto no afecta la funcionalidad y es lo más cercano a producción que podemos tener.
 
@@ -502,7 +500,7 @@ sudo su
 ```console
 cd /etc/nginx
 git fetch --all --prune
-git reset --hard origin/master
+git reset --hard origin/main
 ```
 
 3. Prueba y recarga la configuración [con Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
