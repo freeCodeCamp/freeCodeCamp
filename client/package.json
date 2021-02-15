@@ -19,7 +19,7 @@
     "@freecodecamp/react-calendar-heatmap": "^1.0.0",
     "@loadable/component": "^5.14.1",
     "@reach/router": "^1.3.4",
-    "algoliasearch": "^3.35.1",
+    "algoliasearch": "^4.8.5",
     "axios": "^0.21.1",
     "babel-plugin-prismjs": "^2.0.1",
     "bezier-easing": "^2.1.0",
