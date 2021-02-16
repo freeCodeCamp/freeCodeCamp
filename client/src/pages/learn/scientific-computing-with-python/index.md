@@ -1,6 +1,6 @@
 ---
 title: Scientific Computing with Python
-superBlock: Scientific Computing with Python
+superBlock: scientific-computing-with-python
 ---
 ## Introduction to Scientific Computing with Python
 

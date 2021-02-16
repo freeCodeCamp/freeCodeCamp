@@ -106,7 +106,7 @@ exports.createSuperBlockIntroPages = createPage => edge => {
     path: slug,
     component: superBlockIntro,
     context: {
-      superBlock: superBlock,
+      superBlock,
       slug
     }
   });

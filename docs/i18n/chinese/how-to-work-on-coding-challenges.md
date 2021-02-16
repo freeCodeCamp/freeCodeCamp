@@ -1,35 +1,35 @@
-# Cómo trabajar en los desafíos de codificación
+# How to work on coding challenges
 
-Nuestro objetivo es desarrollar una experiencia de aprendizaje interactiva y divertida.
+Our goal is to develop a fun and clear interactive learning experience.
 
-Diseñar desafíos de codificación interactivos es difícil. Sería mucho más fácil escribir una explicación larga o crear un tutorial en vídeo. Pero para nuestro plan de estudios, estamos aferrándonos a lo que mejor funciona para la mayoría de la gente - una experiencia totalmente interactiva y de videojuegos.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-Queremos que los campistas entren en un estado de flujo. Queremos que generen impulso y exploten a través de nuestro plan de estudios con el menor número de trabas posible. Queremos que ingresen en los proyectos con confianza y se expongan ampliamente a los conceptos de programación.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-Ten en cuenta que para la versión 7.0 del plan de estudios gratuito, estamos avanzando hacia [un modelo totalmente orientado al proyecto con mucha más repetición](https://www.freecodecamp.org/news/python-curriculum-is-live/).
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-La creación de estos desafíos requiere una inmensa creatividad y atención al detalle. Hay mucha ayuda disponible. Tendrás el apoyo de todo un equipo de colaboradores a los que podrás comentar tus ideas y demostrar tus desafíos.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
 With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-The content for each challenge is stored in its markdown file. Este archivo markdown se convierte más tarde en HTML utilizando nuestras herramientas para crear páginas web interactivas.
+The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
 You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
 
-## Configurar las herramientas para el plan de estudios
+## Set up the tooling for the curriculum
 
-Antes de trabajar en el plan de estudios, necesitarás configurar algunas herramientas para ayudarte a probar tus cambios. Puedes utilizar cualquier opción de las siguientes:
+Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
-- Puedes [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina. Esto es **altamente recomendable** para contribuciones regulares/repetidas. Esta configuración te permite trabajar y probar tus cambios.
-- Utilice Gitpod, un entorno de desarrollo gratuito en línea. Al hacer clic en el botón de abajo se iniciará un entorno de desarrollo listo para freeCodeCamp en su navegador. Sólo toma unos minutos.
+- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
+- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
 
-  [![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Editar los archivos de la interfaz de GitHub haciendo clic en el icono del lápiz del archivo correspondiente. Aunque esta es la manera más rápida, **no se recomienda**, ya que no puedes probar tus cambios en GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
 
-## Plantilla de desafío
+## Challenge Template
 
 ````md
 
@@ -206,9 +206,9 @@ All challenge titles should be explicit and should follow this pattern:
 
 Here are some example challenge names:
 
-- Utilice Notación en sentido de la derecha para especificar el relleno de un elemento
+- Use Clockwise Notation to Specify the Padding of an Element
 - Condense arrays with .reduce
-- Utilice la notación de corchete para encontrar el primer carácter en una cadena
+- Use Bracket Notation to Find the First Character in a String
 
 ## Challenge descriptions/instructions
 
@@ -226,24 +226,24 @@ Don't use emojis or emoticons in challenges. freeCodeCamp has a global community
 
 Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
-- JavaScript (mayúsculas en "J" y "S" y sin abreviaturas)
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-- El desarrollo de front-end (forma adjetiva con guiones) es cuando estás trabajando en la parte frontal (sin guiones). Lo mismo ocurre con el "back end", "full stack", y muchos otros términos compuestos.
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-### La regla de los 2 minutos
+### The 2-minute rule
 
 Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
 
-- Simplificar el desafío, o
-- Dividir el desafío en dos desafíos.
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
 The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
 We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
-### Modularidad
+### Modularity
 
 Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
@@ -251,7 +251,7 @@ We can reinforce previously covered concepts through repetition and variations -
 
 Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### Formateando el texto del desafío
+### Formatting challenge text
 
 Here are specific formatting guidelines for challenge text and examples:
 
@@ -261,7 +261,7 @@ Here are specific formatting guidelines for challenge text and examples:
 Use `parseInt` to convert the variable `realNumber` into an integer.
 ```
 - References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `` \` `` backticks.
-- Los bloques de código de múltiples líneas **deben estar precedidos por una línea vacía**. La siguiente línea debe comenzar con tres backticks seguidos inmediatamente por uno de los [idiomas soportados](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. Ver el ejemplo a continuación:
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. See example below:
 - Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
 
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
@@ -359,7 +359,7 @@ class MyComponent extends React.Component {
 };
 ```
 
-### Traducción de comentarios de código de semilla
+### Translation of seed code comments
 
 There are separate comment dictionaries for each language. The [English version of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
@@ -370,7 +370,7 @@ Declare the myGlobal variable below this line
 ```
 > [!NOTE]
 > 
-> Estamos trabajando en una integración que permita trabajar en i18n para el diccionario de comentarios.
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
 
 ## Hints and Solutions
 
@@ -378,16 +378,16 @@ Each challenge has a `Get a Hint` button, so a user can access any hints/solutio
 
 If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
-### Añadir nuevos temas de sugerencias/soluciones de Desafío
+### Adding new Challenge hints/solutions Topics
 
 Take the following steps when adding a new challenge hints/solutions related topic.
 
-1. Comience siguiendo los mismos pasos para crear un nuevo tema pero revise el siguiente para crear el título.
-2. El título del tema debe comenzar con `Guía de Desafío gratuita:` concatenada con el título real del desafío curricular. Por ejemplo, si el desafío se llama "`Chunky Monkey`", el título del tema sería "`Guía gratuita del Desafío CodeCamp: Chunky Monkey`".
-3. `camperbot` debe ser el dueño de estos temas/posts, así que necesitarás solicitar a un administrador que cambie la propiedad de la publicación principal a `camperbot`.
-4. Una vez creado el nuevo tema, se crea un identificador del tema del foro. Se encuentra al final de la URL del tema del foro. Este id debe añadirse a la parte frontal del archivo de desafío curriculum a través del proceso normal de pull request para el botón `Obtener una pista` para vincular al tema.
+1. Start by following the same steps for creating a new topic but review the next for creating the title.
+2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
+4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 
-### Orientaciones para el contenido de pistas y temas de soluciones
+### Guidelines for content of hints and solutions topics
 
 When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
@@ -429,15 +429,15 @@ function myFunc() {
 }
 ````
 
-#### Explicación del código
+#### Code Explanation
 
-- La explicación del código va aquí
-- La explicación del código va aquí
+- Code explanation goes here
+- Code explanation goes here
 
-#### Enlaces relevantes
+#### Relevant Links
 
-- [Texto del enlace](link_url_goes_here)
-- [Texto del enlace](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 </details>
 ````
@@ -487,4 +487,4 @@ Creating and Editing Challenges:
 
 1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Contribuyendo a FreeCodeCamp - Escribiendo Pruebas de Desafío de ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un vídeo que sigue a [Ethan Arrowood](https://twitter.com/ArrowoodTech) mientras contribuye a la versión antigua del currículo.
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.

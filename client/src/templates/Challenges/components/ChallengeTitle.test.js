@@ -9,7 +9,7 @@ const baseProps = {
   block: 'fake block',
   children: 'title text',
   isCompleted: true,
-  superBlock: 'fake superblock'
+  superBlock: 'fake-superblock'
 };
 
 describe('<ChallengeTitle/>', () => {

@@ -1,41 +1,41 @@
-# El Manual oficial para moderador de freeCodeCamp.
+# The official freeCodeCamp Moderator Handbook.
 
-Esto te ayudará a moderar diferentes lugares en nuestra comunidad, incluyendo:
+This will help you moderate different places in our community, including:
 
-- Peticiones de GitHub & pull requests
-- Los foros, salas de chat, grupos de facebook y otros lugares de reuniones en línea
-- Eventos presenciales y grupos de estudio, competencias y conferencias
+- GitHub issues & pull requests
+- The forum, chat rooms, Facebook groups, and other online meeting places
+- In-person events like study groups, hackathons, and conferences
 
-**Todos los moderadores de freeCodeCamp son de amplio acceso. Esto significa que confiamos en ti para supervisar cualquiera de estos lugares.**
+**All freeCodeCamp Moderators are community-wide moderators. That means that we trust you to oversee any of these places.**
 
-This said you can serve as a moderator in whichever places are of the most interest to you. Algunos moderadores solo ayudan en GitHub. Otros solo contribuyen en foros. Otros moderadores se mantienen activos en todo.
+This said you can serve as a moderator in whichever places are of the most interest to you. Some moderators just help out on GitHub. Others just help out on the forum. Some moderators are active everywhere.
 
-Al final, lo que queremos es que disfrutes ser un moderador y que inviertas tu tiempo en los sitios que te interesen.
+The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
 
-> [!NOTE] "Un gran poder conlleva una gran responsabilidad." - Tío Ben
+> [!NOTE] "With great power comes great responsibility." - Uncle Ben
 
-Como moderador, el temperamento es más importante que las habilidades técnicas.
+As a moderator, temperament is more important than technical skill.
 
-Escucha. Presta ayuda. No abuses de tu poder.
+Listen. Be Helpful. Don't abuse your power.
 
-freeCodeCamp es una comunidad inclusiva y necesitamos conservarla así.
+freeCodeCamp is an inclusive community, and we need to keep it that way.
 
-Tenemos un único código de conducta que regula por completo nuestra comunidad. Mientras menos reglas, más fácil es recordarlas. Puedes leer las reglas y fijarlas en tu memoria [aquí](https://code-of-conduct.freecodecamp.org).
+We have a single code of conduct that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
-## Moderando GitHub
+## Moderating GitHub
 
-Los moderadores tienen la habilidad de cerrar conflictos, y aceptar pull requests.
+Moderators have the ability to close issues and accept or close pull requests.
 
-Los moderadores tienen dos responsabilidades principales en GitHub:
+Moderators have two primary responsibilities regarding GitHub:
 
-1. Probando y fusionando pull requests
-2. Evaluar y responder a problemas
+1. QA'ing and merging pull requests
+2. Evaluating and responding to issues
 
-### Moderando Pull Requests
+### Moderating Pull Requests
 
-Los Pull Requests (PRs) son la vía que utilizan los colaboradores para someter cambios al repositorio de freeCodeCamp. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them or close them.
+Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them or close them.
 
-#### Tipo de Pull Requests
+#### Types of Pull Requests
 
 1. **Challenge Instruction Edits** These are changes to the text of challenges - the Description, Instructions, or Test Text. You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Also, contributors may try to add links to resources to the challenges. You can close these pull requests and reply to them with this:
 
@@ -51,31 +51,31 @@ If you think we're wrong in closing this issue, please request for it to be reop
 
 3. **Codebase Changes** These code edits change the functionality of the freeCodeCamp platform itself. Sometimes contributors try to make changes without much explanation, but for code changes, we need to make sure there's a genuine need for the change. So these pull requests should reference an existing GitHub issue where the reasons for the change are discussed. Then you can open the pull request on your computer and test them out locally. After you've done so, if the changes look good, don't merge them quite yet. You can comment on the pull request saying "LGTM", then mention @raisedadead so he can take a final look.
 
-#### Cómo combinar o cerrar pull requests
+#### How to merge or close pull requests
 
-En primer lugar, cuando elijas un pull request a QA, deberás asignarte a él. You can do this by clicking the "assign yourself" link below the "assignees" part on the right-hand column of GitHub's interface.
+First of all, when you choose a pull request to QA, you should assign yourself to it. You can do this by clicking the "assign yourself" link below the "assignees" part on the right-hand column of GitHub's interface.
 
-Dependiendo del tipo de pull request que sea, siga las reglas indicadas arriba.
+Depending on the type of pull request it is, follow the corresponding rules listed above.
 
-Antes de fusionar cualquier pull request, asegúrate de que GitHub tiene marcas verdes para todo. Si hay alguna X, averigua primero y descubre cómo convertirlas en marcas de verificación verdes primero.
+Before merging any pull request, make sure that GitHub has green checkmarks for everything. If there are any X's, investigate them first and figure out how to get them turned into green checkmarks first.
 
-A veces habrá un conflicto de fusión. This means that another pull request has made a change to that same part of that same file. GitHub tiene una herramienta para abordar estos conflictos de fusión en GitHub. Puedes tratar de resolver estos conflictos. Just use your best judgment. The pull request's changes will be on top, and the Master branch's changes will be on the bottom. A veces habrá información redundante que se puede eliminar. Antes de que finalices, cerciórate de eliminar el `<<<<<<`, `======`, y `>>>>>>` que Git añade para indicar áreas de conflicto.
+Sometimes there will be a Merge Conflict. This means that another pull request has made a change to that same part of that same file. GitHub has a tool for addressing these merge conflicts right on GitHub. You can try to address these conflicts. Just use your best judgment. The pull request's changes will be on top, and the Master branch's changes will be on the bottom. Sometimes there will be redundant information in there that can be deleted. Before you finish, be sure to delete the `<<<<<<`, `======`, and `>>>>>>` that Git adds to indicate areas of conflict.
 
-Si el pull request parece estar listo para fusionarse (y no requiere la aprobación de @raisedadead), puedes seguir adelante y fusionarlo. Asegúrate de utilizar la funcionalidad predeterminada "Squash and Merge" en GitHub. Esto aplastará todas las solicitudes pull se compromete a un solo commit, lo que hace que la historia de Git sea mucho más fácil de leer.
+If the pull request looks ready to merge (and doesn't require approval from @raisedadead), you can go ahead and merge it. Be sure to use the default "Squash and Merge" functionality on GitHub. This will squash all the pull requests commits down into a single commit, which makes the Git history much easier to read.
 
-A continuación, deberías comentar sobre la solicitud de extracción, dando las gracias al colaborador de tu propia manera personal.
+You should then comment on the pull request, thanking the contributor in your own personal way.
 
-If the author of the pull request is a "first-time contributor" you should also congratulate them on their first merged pull request to the repository. Puedes mirar la esquina superior derecha del cuerpo del PR, para determinar un colaborador de primera vez. Mostrará `First-time contributor` como se muestra a continuación:
+If the author of the pull request is a "first-time contributor" you should also congratulate them on their first merged pull request to the repository. You can look at the upper right-hand corner of the PR's body to determine a first-time contributor. It will show `First-time contributor` as shown below:
 
-![Copiar_edits_for_Java_arrays_article_by_karentobo_%C2%B7_Pull_Request__20615_%C2%B7_freeCodeCamp_freeCodeCamp|690x281](https://i.imgur.com/dTQMjGM.png)
+![Copy_edits_for_Java_arrays_article_by_karentobo_%C2%B7_Pull_Request__20615_%C2%B7_freeCodeCamp_freeCodeCamp|690x281](https://i.imgur.com/dTQMjGM.png)
 
-Si el pull request no parece listo para fusionarse, puedes responder amablemente al autor que debe hacer para prepararlo. Hopefully, they will reply and get their pull request closer to ready.
+If the pull request doesn't look ready to merge you can politely reply telling the author what they should do to get it ready. Hopefully, they will reply and get their pull request closer to ready.
 
-A menudo, un pull request será obviamente poco esfuerzo. You can often tell this immediately when the contributor didn't bother checking the checkboxes in the Pull Request Template or used a generic pull request title like "made changes" or "Update index.md".
+Often, a pull request will be obviously low effort. You can often tell this immediately when the contributor didn't bother checking the checkboxes in the Pull Request Template or used a generic pull request title like "made changes" or "Update index.md".
 
-También hay situaciones en las que el colaborador está intentando añadir un enlace a su propio sitio web, o incluir una biblioteca que ellos mismos crearon, o tiene una edición frívola que no sirve para ayudar a nadie más que a sí mismos.
+There are also situations where the contributor is trying to add a link to their own website, or include a library they themselves created, or has a frivolous edit that doesn't serve to help anyone but themselves.
 
-En ambas situaciones, debes seguir adelante y cerrar su pull request y responder con este mensaje estándar:
+In both of these situations, you should go ahead and close their pull request and reply with this standard message:
 
 ```markdown
 Thank you for opening this pull request.
@@ -85,13 +85,13 @@ This is a standard message notifying you that we've reviewed your pull request a
 Thank you and happy coding.
 ```
 
-Si necesitas una segunda opinión sobre un pull request, sigue adelante y deja tus comentarios sobre el pull request, luego agregue la etiqueta "discussing" al pull request.
+If you need a second opinion on a pull request, go ahead and leave your comments on the pull request, then add the "discussing" label to the pull request.
 
-### Moderando problemas de GitHub
+### Moderating GitHub Issues
 
-freeCodeCamp es un proyecto activo de código abierto. Cada día recibimos nuevos asuntos, todos los cuales necesitan ser probados y etiquetados.
+freeCodeCamp is an active open source project. We get new issues every day, all of which need to be triaged and labeled.
 
-#### Tipos de problemas de GitHub
+#### Types of GitHub Issues
 
 1. **Code Help Requests**, which people have mistakenly created GitHub issues for. If someone is asking for help, paste the following message, then close the issue.
 
@@ -107,8 +107,8 @@ Thank you and happy coding.
 
 2. **Bug or Clarification issues** Try to reproduce the bug yourself if you can. If not, ask them for the steps to reproduce the bug, and whether they have any screenshots, videos, or additional details that can help you reproduce the issue. Once you can reproduce the issue - or at least confirm it's a legit issue - label it `confirmed`. Then:
 
-- If it's a simple change to an existing challenge, label it as `first timers only`, otherwise label it as `help wanted`. Utilice otras etiquetas según corresponda.
-- If the issue is more significant, flag it as `bug`. &nbsp; Si hay alguna ambigüedad en cuanto al curso correcto de acción en un problema, siéntate libre de etiquetar a @raisedadead sobre el problema y luego añade la etiqueta `Discutir`.
+- If it's a simple change to an existing challenge, label it as `first timers only`, otherwise label it as `help wanted`. Use other labels as appropriate.
+- If the issue is more significant, flag it as `bug`. &nbsp; If there is any ambiguity as to the proper course of action on an issue, feel free to tag @raisedadead on the issue get his opinion on it, then add the `Discussing` label.
 
 3. **Duplicate Issues** If an issue is the same as another reported issue, the prior reported issue should take precedence. Flag as `Duplicate`, paste the following message replacing `#XXXXX` with the issue number, then close the issue.
 
@@ -130,57 +130,57 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-#### Cerrando pedidos, obsoletos, problemas inactivos y solicitudes de Pull
+#### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
-- Stale issues or PRs are those that have not seen any activity from the OP for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes. Estos pueden ser cerrados en un script automático/bot o por los propios moderadores.
+- Stale issues or PRs are those that have not seen any activity from the OP for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes. These can be closed in an automated/bot script or by the moderators themselves.
 
-- La actividad se define como: Comentarios que solicitan una actualización en PR y clases como `estado: actualización necesaria` etiqueta etc.
+- Activity is defined as: Comments requesting an update on the PR and triages like `status: update needed` label etc.
 
-- Si el OP solicita ayuda adicional o incluso tiempo, lo anterior puede ser relajado y revisado después de que se dé una respuesta. In any case, the mods should use their best judgment to resolve the outstanding PR's status.
+- If the OP asks for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case, the mods should use their best judgment to resolve the outstanding PR's status.
 
-#### Otras pautas para moderadores en GitHub
+#### Other guidelines for Moderators on GitHub
 
-Aunque tendrás acceso de escritura al repositorio de freeCodeCamp, **nunca deberías enviar código directamente a los repositorios freeCodeCamp**. Todo el código debe introducir el código base de freeCodeCamp en forma de pull request desde un fork del repositorio.
+Though you will have write access to freeCodeCamp's repository, **you should never push code directly to freeCodeCamp repositories**. All code should enter freeCodeCamp's codebase in the form of a pull request from a fork of the repository.
 
-Además, nunca debes aceptar tus propios PRs. Deben ser QA'd por otro moderador, al igual que cualquier otro PR.
+Also, you should never accept your own PRs. They must be QA'd by another moderator, just like with any other PR.
 
-Si observas que alguien rompe el código de conducta [](https://code-of-conduct.freecodecamp.org) en problemas de GitHub, o abrir solicitudes de extracción con contenido o código malicioso, envíe un correo electrónico a dev@freecodecamp. rg con un enlace a la solicitud de extracción ofensiva y podemos considerar prohibirlos de la organización GitHub de freeCodeCamp por completo.
+If you notice anyone breaking the [code of conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email dev@freecodecamp.org with a link to the offending pull request and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
-## Moderando el foro
+## Moderating the Forum
 
-Como moderador, usted ayuda a mantener a nuestra comunidad un lugar agradable para que cualquiera aprenda y obtenga ayuda. Usted tratará con mensajes marcados y manejará el spam, fuera de tema y otras conversaciones inapropiadas.
+As a Moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
-Ten en cuenta que una vez que seas un moderador en el foro, empezarás a ver pistas azules de los miembros del foro, como "esta es la primera vez que [person] ha publicado - ¡Bienvenidos a la comunidad! o "[person] no ha publicado en mucho tiempo - ¡Bienvenidos de nuevo! "
+Note that once you are a moderator on the forum, you will start to see blue moderator hints about forum members, like "this is the first time [person] has posted - let's welcome them to the community!" or "[person] hasn't posted in a long time - let's welcome them back."
 
-![Un mensaje de texto azul que dice "esta es la primera vez que [person] ha publicado - ¡Demos la bienvenida a la comunidad!](https://i.imgur.com/mPmVgzK.png)
+![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
-Estas son oportunidades para que usted las acoja y haga que se sientan muy especiales. Nunca sabes qué persona que está involucrada marginalmente puede convertirse en nuestro próximo super-ayudante, ayudando a muchas otras personas en su viaje de codificación. Incluso la bondad más pequeña puede desencadenar una cascada de buenas acciones.
+These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the smallest kindness may trigger a cascade of good deeds.
 
-### Eliminando mensajes del foro
+### Deleting forum posts
 
-Los moderadores del foro tienen la capacidad de borrar los mensajes del usuario. Sólo deberías hacer esto para las siguientes instancias:
+Forum moderators have the ability to delete user's posts. You should only do this for the following instances:
 
 1. Someone has posted a pornographic or graphically violent image.
 2. Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
 3. Someone has flooded a thread with lots of spam messages.
 
-### Tratando con spam
+### Dealing with spam
 
-Para el primer mensaje de correo no deseado de un usuario, envíe un mensaje explicando el problema, y elimine el enlace o mensaje según corresponda. Deja una nota en el perfil del usuario explicando la acción que has tomado. Si el problema persiste, siga el proceso anterior. Bloquear silenciosamente al usuario de publicar (usando la opción de silencio en el panel de Administración de Usuarios), luego enviar una advertencia con el Código de Conducta. Marque la casilla del mensaje privado indicando que su mensaje es una "advertencia formal".
+For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then follow the process above. Quietly block the user from posting (using the silence option on the User Admin panel), then send a warning with the Code of Conduct. Check the box in the private message indicating that your message is a "formal warning."
 
-Puedes hacer preguntas e informar de incidentes en la sección [del foro del personal](https://forum.freecodecamp.com/c/staff).
+You can ask questions and report incidents in the in the [staff forum section](https://forum.freecodecamp.com/c/staff).
 
-### Tratando con conversaciones fuera de tema
+### Dealing with off-topic conversations
 
-Mensajes o temas que parecen estar en el lugar equivocado pueden ser recategorizados o renombrados a cualquier cosa que sea apropiada.
+Posts or topics that seems to be in the wrong place can be re-categorized or renamed to whatever would be appropriate.
 
-En circunstancias excepcionales, puede ser apropiado que un moderador bifurque una discusión en múltiples hilos.
+In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
-De nuevo, si tienes algún problema o pregunta, haz un post con tus acciones en la categoría de personal, y etiquetar a otro moderador si quieres que revisen tus acciones de moderación.
+Again, if you have any problems or questions, make a post with your actions in the Staff category, and tag another moderator if you want them to review your moderating actions.
 
-### Usuarios Inderramados
+### Underage Users
 
-Nuestros Términos de Servicio requieren que los usuarios de freeCodeCamp tengan al menos 13 años de edad. En el caso de que un usuario revele que es menor de 13 años enviarles el siguiente mensaje y eliminar su cuenta del foro (si la eliminación no está disponible, suspender la cuenta es suficiente). Luego envía un correo electrónico a [Quincy](https://forum.freecodecamp.org/u/QuincyLarson) (quincy@freecodecamp.org) o [Mrugesh](https://forum.freecodecamp.org/u/raisedadead) (mrugesh@freecodecamp.org) para eliminar también la cuenta freeCodeCamp del usuario.
+Our Terms of Service require that freeCodeCamp users be at least 13 years of age. In the event that a user reveals that they are under the age of 13, send them the below message and delete their forum account (if deletion is not available, suspending the account is sufficient). Then email [Quincy](https://forum.freecodecamp.org/u/QuincyLarson) (quincy@freecodecamp.org) or [Mrugesh](https://forum.freecodecamp.org/u/raisedadead) (mrugesh@freecodecamp.org) to delete the user's freeCodeCamp account as well.
 
 ```markdown
 SUBJECT: Users under 13 are not allowed to use the forum per Terms of Service
@@ -192,17 +192,17 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
-## Moderando Facebook
+## Moderating Facebook
 
-Si ves algo que parezca incumplir nuestro [Código de Conducta](https://code-of-conduct.freecodecamp.org/), deberías eliminarlo inmediatamente.
+If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
-A veces la gente publicará cosas que creen que son divertidas. No se dan cuenta de que lo que dijeron o lo que compartieron podría interpretarse como ofensivo. En estos casos, su publicación debe ser eliminada, pero la persona que la publicó no necesariamente necesita ser prohibida. Con la eliminación de su correo, espero que lleguen a comprender que lo que publicaron era inapropiado.
+Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. In these cases, their post should be deleted, but the person who posted it doesn't necessarily need to be banned. By getting their post deleted, they will hopefully come to understand that what they posted was inappropriate.
 
-Pero si se trata de una ofensa atroz que no puede atribuirse razonablemente a una diferencia cultural o a un malentendido del idioma inglés. entonces debe considerar fuertemente bloquear al miembro del grupo de Facebook.
+But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language, then you should strongly consider blocking the member from the Facebook group.
 
-## Moderando Discord
+## Moderating Discord
 
-Así es como los moderadores tratan las violaciones de nuestro [Código de Conducta](https://code-of-conduct.freecodecamp.org/) en Discord:
+Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on Discord:
 
 1. **Make sure it was intended to violate the Code of Conduct.** Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like Codepen or Pastebin.
 
@@ -219,7 +219,7 @@ Evidence: _One or more links to the offending message(s)_
 
 - If you decide to ban someone, it means they're unwilling to abide to our Code of Conduct. Therefore unbanning a Camper should rarely occur. However, if the need arises, you can do so by clicking on the server name, choosing "Server Settings", choosing "Bans", selecting the user you wish to unban, and clicking "Revoke Ban".
 
-Los Bans de Discord son globales - no puedes banear a un usuario de un canal específico, solo de todo el servidor.
+Discord Bans are global - you cannot ban a user from a specific channel, only from the entire server.
 
 3. **Creating a Private Discussion**
 

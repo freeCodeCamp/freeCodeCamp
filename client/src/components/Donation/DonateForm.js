@@ -157,7 +157,7 @@ class DonateForm extends Component {
   }
 
   convertToTimeContributed(amount) {
-    return `${numToCommas((amount / 100) * 50)} hours`;
+    return numToCommas((amount / 100) * 50);
   }
 
   getFormattedAmountLabel(amount) {
