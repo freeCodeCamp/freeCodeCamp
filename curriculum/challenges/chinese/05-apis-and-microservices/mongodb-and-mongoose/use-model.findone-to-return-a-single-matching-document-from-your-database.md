@@ -1,6 +1,6 @@
 ---
 id: 587d7fb7367417b2b2512c0c
-title: Use model.findOne() to Return a Single Matching Document from Your Database
+title: 使用 model.findOne() 从数据库中返回一个单一匹配的 Document
 challengeType: 2
 forumTopicId: 301545
 dashedName: use-model-findone-to-return-a-single-matching-document-from-your-database
@@ -8,15 +8,15 @@ dashedName: use-model-findone-to-return-a-single-matching-document-from-your-dat
 
 # --description--
 
-`Model.findOne()` behaves like `Model.find()`, but it returns only one document (not an array), even if there are multiple items. It is especially useful when searching by properties that you have declared as unique.
+`Model.findOne()` 与 `Model.find()` 十分类似，但就算数据库中有很多条数据可以匹配查询条件，它也只返回一个 document，而不会返回一个数组， 如果查询条件是声明为唯一值的属性，它会更加适用。
 
 # --instructions--
 
-Modify the `findOneByFood` function to find just one person which has a certain food in the person's favorites, using `Model.findOne() -> Person`. Use the function argument `food` as search key.
+修改 `findOneByFood` 函数，用 `Model.findOne() -> Person` 来查询在收藏夹中有某种食物的一个人。 将函数参数中的 `food` 作为检索条件。
 
 # --hints--
 
-Find one item should succeed
+应成功地找到一个数据
 
 ```js
 (getUserInput) =>

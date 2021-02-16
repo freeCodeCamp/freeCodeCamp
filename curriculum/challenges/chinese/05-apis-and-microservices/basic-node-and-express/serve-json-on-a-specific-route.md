@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf1
-title: Serve JSON on a Specific Route
+title: 在指定路由上提供 JSON 服务
 challengeType: 2
 forumTopicId: 301517
 dashedName: serve-json-on-a-specific-route
@@ -8,17 +8,17 @@ dashedName: serve-json-on-a-specific-route
 
 # --description--
 
-While an HTML server serves HTML, an API serves data. A <dfn>REST</dfn> (REpresentational State Transfer) API allows data exchange in a simple way, without the need for clients to know any detail about the server. The client only needs to know where the resource is (the URL), and the action it wants to perform on it (the verb). The GET verb is used when you are fetching some information, without modifying anything. These days, the preferred data format for moving information around the web is JSON. Simply put, JSON is a convenient way to represent a JavaScript object as a string, so it can be easily transmitted.
+HTML 服务器提供 HTML 服务，而 API 提供数据服务。 <dfn>具象状态传输</dfn>（REST，REpresentational State Transfer）API 允许以简单的方式进行数据交换，对于客户端不必要知道服务器的细节。 客户只需要知道资源在哪里（URL），以及想执行的动作（动词）。 GET 动词常被用来获取无需修改的信息。 如今，网络上的移动数据首选格式是 JSON， 简而言之，JSON 是一种可以方便地用字符串表示 JavaScript 对象的方式，因此它很容易传输。
 
-Let's create a simple API by creating a route that responds with JSON at the path `/json`. You can do it as usual, with the `app.get()` method. Inside the route handler, use the method `res.json()`, passing in an object as an argument. This method closes the request-response loop, returning the data. Behind the scenes, it converts a valid JavaScript object into a string, then sets the appropriate headers to tell your browser that you are serving JSON, and sends the data back. A valid object has the usual structure `{key: data}`. `data` can be a number, a string, a nested object or an array. `data` can also be a variable or the result of a function call, in which case it will be evaluated before being converted into a string.
+我们来创建一个简单的 API，创建一个路径为 `/json` 且返回数据是 JSON 格式的路由， 可以像之前那样用 `app.get()` 方法来做。 然后在路由处理部分使用 `res.json()` 方法，并传入一个对象作为参数， 这个方法会结束请求响应循环（request-response loop），然后返回数据。 原来，一个有效的 JavaScript 对象会转化为字符串，然后会设置适当的消息头来告诉浏览器：“这是一个 JSON 数据”，最后将数据返回给客户端。 一个有效的对象通常是这种结构：`{key: data}`， `data` 可以是数字、字符串、嵌套对象或数组， `data` 也可以是变量或者函数返回值，在这种情况下，它们先求值再转成字符串。
 
 # --instructions--
 
-Serve the object `{"message": "Hello json"}` as a response, in JSON format, to GET requests to the `/json` route. Then point your browser to `your-app-url/json`, you should see the message on the screen.
+当向路由 `/json` 发送 GET 请求，将对象 `{"message": "Hello json"}` 以 JSON 格式返回给客户端， 浏览器访问 `your-app-url/json` 时，应该在屏幕上看到这个消息。
 
 # --hints--
 
-The endpoint `/json` should serve the json object `{"message": "Hello json"}`
+访问端口 `/json` 应该返回一个 json 对象 `{"message": "Hello json"}`
 
 ```js
 (getUserInput) =>

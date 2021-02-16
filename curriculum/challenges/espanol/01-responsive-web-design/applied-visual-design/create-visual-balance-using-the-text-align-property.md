@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab3
-title: Crea balance visual usando la propiedad text-align
+title: Crea un balance visual usando la propiedad text-align
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
@@ -9,7 +9,7 @@ dashedName: create-visual-balance-using-the-text-align-property
 
 # --description--
 
-Esta sección del currículo se enfoca en Diseño Visual Aplicado. El primer grupo de desafíos están construidos sobre el diseño de la tarjeta dada para mostrar un número de principios fundamentales.
+Esta sección del currículo se enfoca en el Diseño Visual Aplicado. El primer grupo de desafíos se basa en el diseño de la tarjeta provista para mostrar un número de principios fundamentales.
 
 El texto es frecuentemente una gran parte del contenido web. CSS tiene múltiples opciones para alinearlo con la propiedad `text-align`.
 

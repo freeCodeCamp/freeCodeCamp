@@ -1,6 +1,6 @@
 ---
 id: 587d7fb7367417b2b2512c0b
-title: Use model.find() to Search Your Database
+title: 使用 model.find() 查询数据库
 challengeType: 2
 forumTopicId: 301543
 dashedName: use-model-find-to-search-your-database
@@ -8,17 +8,17 @@ dashedName: use-model-find-to-search-your-database
 
 # --description--
 
-In its simplest usage, `Model.find()` accepts a query document (a JSON object) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Read more in the docs.
+我们尝试一种最简单的用法，`Model.find()` 接收一个查询 document（一个 JSON 对象）作为第一个参数，一个回调函数作为第二个参数， 它会返回由匹配到的数据组成的数组。 这个方法支持很多搜索选项， 详情请参阅文档。
 
 # --instructions--
 
-Modify the `findPeopleByName` function to find all the people having a given name, using <code>Model.find() -\> [Person]</code>
+修改 `findPeopleByName` 函数使用 <code>Model.find() -\> [Person]</code> 查询所有给定名字的人。
 
-Use the function argument `personName` as the search key.
+请使用函数参数中的 `personName` 作为搜索条件。
 
 # --hints--
 
-Find all items corresponding to a criteria should succeed
+应成功地找到所有符合条件的数据
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d774c367417b2b2512a9d
-title: Saber Cuando el Texto Alt Debe Dejarse en Blanco
+title: Aprende cuando el texto alternativo debe dejarse en blanco
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9P4t2'
 forumTopicId: 301019

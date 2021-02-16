@@ -15,7 +15,7 @@ Por defecto, un navegador representa estos elementos de manera similar a la humi
 
 El elemento `main` se usa para envolver (lo adivinaste) el contenido principal, y solo debe haber uno por página. Está destinado a rodear la información que está relacionada con el tema central de su página. No está destinado a incluir elementos que se repiten en todas las páginas, como enlaces de navegación o banners.
 
-La etiqueta `main` también tiene una característica de referencia insertada que la tecnología de asistencia puede usar para navegar rápidamente al contenido principal. Si alguna vez has visto un enlace "Salta al contenido principal" en la parte superior de una página, usando una etiqueta principal proporciona automáticamente a los dispositivos de asistencia esa funcionalidad.
+La etiqueta `main` también tiene una característica de referencia insertada que la tecnología de asistencia puede usar para navegar rápidamente al contenido principal. Si alguna vez has visto un enlace de "saltar al contenido principal" en la parte superior de una página, el uso de una etiqueta `main` proporciona automáticamente esa funcionalidad a los dispositivos de asistencia.
 
 # --instructions--
 

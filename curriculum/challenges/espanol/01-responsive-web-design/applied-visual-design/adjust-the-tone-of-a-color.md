@@ -1,6 +1,6 @@
 ---
 id: 587d78a4367417b2b2512ad5
-title: Ajustar el tono de un color
+title: Ajusta el tono de un color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDJvT7'
 forumTopicId: 301038

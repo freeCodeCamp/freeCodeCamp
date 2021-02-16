@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08726
-title: Utiliza código hexadecima (hex code) para indicar colores específicos
+title: Utiliza código hexadecimal (hex code) para indicar colores específicos
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c8W9mHM'
 forumTopicId: 18350

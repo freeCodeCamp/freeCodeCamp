@@ -1,6 +1,6 @@
 ---
 id: 587d778c367417b2b2512aa9
-title: Estandarizar horas con el atributo datetime HTML5
+title: Estandariza horas con el atributo HTML5 datetime
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025
@@ -9,7 +9,7 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --description--
 
-Continuando con el tema de fecha, HTML5 también introdujo el elemento `time` junto con un atributo `datetime` para estandarizar los tiempos. Este es un elemento inline que puede ajustar una fecha u hora en una página. Un formato válido de esa fecha se mantiene mediante el atributo `datetime`. Este es el valor al que acceden los dispositivos de asistencia. Ayuda a evitar confusiones al indicar una versión estandarizada de un tiempo, incluso si está escrito de manera informal o coloquial en el texto.
+Continuando con el tema de fechas, HTML5 también introdujo el elemento `time` junto con un atributo `datetime` para estandarizar las horas. Este es un elemento inline que puede ajustar una fecha u hora en una página. Un formato válido de esa fecha se mantiene mediante el atributo `datetime`. Este es el valor al que acceden los dispositivos de asistencia. Ayuda a evitar confusiones al indicar una versión estandarizada de una hora, incluso si está escrito de manera informal o coloquial en el texto.
 
 Aquí hay un ejemplo:
 
