@@ -55,7 +55,7 @@ Here is some example JSON
 Your code should store the data in the `html` variable
 
 ```js
-assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
+assert(__helpers.removeWhiteSpace(code).match(/html(\+=|=html\+)/g))
 ```
 
 Your code should use a `forEach` method to loop over the JSON data from the API.
