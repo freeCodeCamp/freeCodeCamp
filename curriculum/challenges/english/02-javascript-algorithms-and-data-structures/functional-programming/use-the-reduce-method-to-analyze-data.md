@@ -77,7 +77,7 @@ Your code should not use a `for` loop.
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-Your code should return correct output after modifying the `watchList` object.
+Your code should return the correct output after modifying the `watchList` object.
 
 ```js
 assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
