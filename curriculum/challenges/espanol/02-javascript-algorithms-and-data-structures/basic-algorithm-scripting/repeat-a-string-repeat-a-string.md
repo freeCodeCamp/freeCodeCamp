@@ -1,6 +1,6 @@
 ---
 id: afcc8d540bea9ea2669306b6
-title: Repeat a String Repeat a String
+title: Repetir una cadena repetir una cadena
 challengeType: 5
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string
@@ -8,53 +8,53 @@ dashedName: repeat-a-string-repeat-a-string
 
 # --description--
 
-Repeat a given string `str` (first argument) for `num` times (second argument). Return an empty string if `num` is not a positive number. For the purpose of this challenge, do *not* use the built-in `.repeat()` method.
+Repita una cadena dada `str` (primer argumento) por `num` veces (segundo argumento). Retorne una cadena vacía si `num` no es un número positivo. Para este desafío, utiliza *not* el método `.repeat()` incorporado.
 
 # --hints--
 
-`repeatStringNumTimes("*", 3)` should return `"***"`.
+`repeatStringNumTimes("*", 3)` debe devolver `"***"`.
 
 ```js
 assert(repeatStringNumTimes('*', 3) === '***');
 ```
 
-`repeatStringNumTimes("abc", 3)` should return `"abcabcabc"`.
+`repeatStringNumTimes("abc", 3)` debe devolver `"abcabcabc"`.
 
 ```js
 assert(repeatStringNumTimes('abc', 3) === 'abcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 4)` should return `"abcabcabcabc"`.
+`repeatStringNumTimes("abc", 4)` debe devolver `"abcabcabcabc"`.
 
 ```js
 assert(repeatStringNumTimes('abc', 4) === 'abcabcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 1)` should return `"abc"`.
+`repeatStringNumTimes("abc", 1)` debe devolver `"abc"`.
 
 ```js
 assert(repeatStringNumTimes('abc', 1) === 'abc');
 ```
 
-`repeatStringNumTimes("*", 8)` should return `"********"`.
+`repeatStringNumTimes("*", 8)` debe devolver `"********"`.
 
 ```js
 assert(repeatStringNumTimes('*', 8) === '********');
 ```
 
-`repeatStringNumTimes("abc", -2)` should return `""`.
+`repeatStringNumTimes("abc", -2)` debe devolver `""`.
 
 ```js
 assert(repeatStringNumTimes('abc', -2) === '');
 ```
 
-The built-in `repeat()` method should not be used.
+El método integrado `repeat()` no debe ser utilizado.
 
 ```js
 assert(!/\.repeat/g.test(code));
 ```
 
-`repeatStringNumTimes("abc", 0)` should return `""`.
+`repeatStringNumTimes("abc", 0)` debe devolver `""`.
 
 ```js
 assert(repeatStringNumTimes('abc', 0) === '');

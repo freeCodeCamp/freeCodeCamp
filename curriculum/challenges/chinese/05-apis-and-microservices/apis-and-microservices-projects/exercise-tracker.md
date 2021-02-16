@@ -10,7 +10,7 @@ dashedName: exercise-tracker
 
 构建一个 JavaScript 的全栈应用，在功能上与这个应用相似： <https://exercise-tracker.freecodecamp.rocks/>。 可以采用下面的一种方式完成这个挑战：
 
--   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) 并在本地完成项目。
+-   克隆 [GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) 并在本地完成你的项目。
 -   使用 [repl.it 初始化项目](https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker) 来完成项目。
 -   使用你选择的网站生成器来完成项目， 并确保包含了我们 GitHub 仓库的所有文件。
 

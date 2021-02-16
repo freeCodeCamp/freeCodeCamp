@@ -51,13 +51,13 @@ assert($('.sr-only').css('position') == 'absolute');
 assert($('.sr-only').css('left') == '-10000px');
 ```
 
-设置 `sr-only` class 的 `width` 属性值为`1` px。
+设置 `sr-only` class 的 `width` 属性值为 `1` 像素。
 
 ```js
 assert(code.match(/width:\s*?1px/gi));
 ```
 
-设置 `sr-only` class 的 `height` 属性值为 `1` px。
+设置 `sr-only` class 的 `height` 属性值为 `1` 像素。
 
 ```js
 assert(code.match(/height:\s*?1px/gi));
