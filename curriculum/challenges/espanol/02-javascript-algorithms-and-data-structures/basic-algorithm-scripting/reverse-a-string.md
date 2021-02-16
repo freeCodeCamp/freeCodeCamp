@@ -1,6 +1,6 @@
 ---
 id: a202eed8fc186c8434cb6d61
-title: Reverse a String
+title: Invertir una Cadena
 challengeType: 5
 forumTopicId: 16043
 dashedName: reverse-a-string
@@ -8,33 +8,33 @@ dashedName: reverse-a-string
 
 # --description--
 
-Reverse the provided string.
+Invertir la cadena provista.
 
-You may need to turn the string into an array before you can reverse it.
+Es posible que necesites convertir la cadena en una matriz antes de poder invertirla.
 
-Your result must be a string.
+Tu resultado deber ser una cadena.
 
 # --hints--
 
-`reverseString("hello")` should return a string.
+`reverseString("hello")` debería devolver una cadena.
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` should become `"olleh"`.
+`reverseString("hello")` debería convertirse en `"olleh"`.
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` should become `"ydwoH"`.
+`reverseString("Howdy")` debería convertirse en `"ydwoH"`.
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` should return `"htraE morf sgniteerG"`.
+`reverseString("Greetings from Earth")` debería devolver `"htraE morf sgniteerG"`.
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

@@ -16,7 +16,7 @@ Hay varios métodos para seleccionar colores diferentes que resultan de una comb
 
 Aquí hay tres colores creados usando el esquema de dividir-complemento:
 
-<table class='table table-striped'><thead><tr><th>Color</th><th>Código hexadecimal</th></tr></thead><thead></thead><tbody><tr><td>anaranjado</td><td>#F7F00</td></tr><tr><td>cian</td><td>#00FFFF</td></tr><tr><td>frambuesa</td><td>#FF007F</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Color</th><th>Código hexadecimal</th></tr></thead><thead></thead><tbody><tr><td>anaranjado</td><td>#FF7F00</td></tr><tr><td>cian</td><td>#00FFFF</td></tr><tr><td>frambuesa</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 
