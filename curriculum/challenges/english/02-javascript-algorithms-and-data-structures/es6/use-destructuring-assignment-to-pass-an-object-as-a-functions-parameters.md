@@ -15,7 +15,7 @@ Consider the code below:
 ```js
 const profileUpdate = (profileData) => {
   const { name, age, nationality, location } = profileData;
-  // do something with these variables
+
 }
 ```
 
@@ -23,7 +23,7 @@ This effectively destructures the object sent into the function. This can also b
 
 ```js
 const profileUpdate = ({ name, age, nationality, location }) => {
-  /* do something with these fields */
+
 }
 ```
 

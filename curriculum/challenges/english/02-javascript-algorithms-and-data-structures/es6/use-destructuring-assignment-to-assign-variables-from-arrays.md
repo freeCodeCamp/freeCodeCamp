@@ -32,13 +32,13 @@ Use destructuring assignment to swap the values of `a` and `b` so that `a` recei
 
 # --hints--
 
-Value of `a` should be 6, after swapping.
+The value of `a` should be 6, after swapping.
 
 ```js
 assert(a === 6);
 ```
 
-Value of `b` should be 8, after swapping.
+The value of `b` should be 8, after swapping.
 
 ```js
 assert(b === 8);

@@ -12,7 +12,7 @@ ES6 provides a new syntax to create objects, using the <dfn>class</dfn> keyword.
 
 It should be noted that the `class` syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
 
-In ES5, we usually define a constructor function and use the `new` keyword to instantiate an object.
+In ES5, we usually define a `constructor` function and use the `new` keyword to instantiate an object.
 
 ```js
 var SpaceShuttle = function(targetPlanet){
@@ -21,7 +21,7 @@ var SpaceShuttle = function(targetPlanet){
 var zeus = new SpaceShuttle('Jupiter');
 ```
 
-The `class` syntax simply replaces the constructor function creation:
+The `class` syntax simply replaces the `constructor` function creation:
 
 ```js
 class SpaceShuttle {
@@ -32,17 +32,17 @@ class SpaceShuttle {
 const zeus = new SpaceShuttle('Jupiter');
 ```
 
-It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.  
-**Notes:**  
+It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
 
--   UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
--   The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
+**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
+
+The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
 
 # --instructions--
 
-Use the `class` keyword and write a constructor to create the `Vegetable` class.
+Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
 
-The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the constructor.
+The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
 
 # --hints--
 
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-`class` keyword should be used.
+The `class` keyword should be used.
 
 ```js
 assert(code.match(/class/g));

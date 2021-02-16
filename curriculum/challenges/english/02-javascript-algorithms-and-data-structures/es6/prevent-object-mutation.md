@@ -18,8 +18,8 @@ let obj = {
   review:"Awesome"
 };
 Object.freeze(obj);
-obj.review = "bad"; // will be ignored. Mutation not allowed
-obj.newProp = "Test"; // will be ignored. Mutation not allowed
+obj.review = "bad"; // error
+obj.newProp = "Test"; // error
 console.log(obj); 
 // { name: "FreeCodeCamp", review:"Awesome"}
 ```
@@ -30,7 +30,7 @@ In this challenge you are going to use `Object.freeze` to prevent mathematical c
 
 # --hints--
 
-You should not replace `const` keyword.
+You should not replace the `const` keyword.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const/g));
@@ -43,7 +43,7 @@ You should not replace `const` keyword.
   assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
 ```
 
-You should not change original `MATH_CONSTANTS`.
+You should not change the original declaration of `MATH_CONSTANTS`.
 
 ```js
 (getUserInput) =>

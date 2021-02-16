@@ -36,11 +36,13 @@ novel.writer = 'newAuthor';
 console.log(novel.writer);  // newAuthor
 ```
 
-Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details. **Note:** It is convention to precede the name of a private variable with an underscore (`_`). However, the practice itself does not make a variable private.
+Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details.
+
+**Note:** It is convention to precede the name of a private variable with an underscore (`_`). However, the practice itself does not make a variable private.
 
 # --instructions--
 
-Use the `class` keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+Use the `class` keyword to create a `Thermostat` class. The `constructor` accepts a Fahrenheit temperature.
 
 In the class, create a `getter` to obtain the temperature in Celsius and a `setter` to set the temperature in Celsius.
 
