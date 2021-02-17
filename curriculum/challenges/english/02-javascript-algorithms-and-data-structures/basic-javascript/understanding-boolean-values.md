@@ -20,7 +20,7 @@ Modify the `welcomeToBooleans` function so that it returns `true` instead of `fa
 
 # --hints--
 
-The `welcomeToBooleans()` function should return a boolean (`true`/`false`) value.
+The `welcomeToBooleans()` function should return a Boolean (`true` or `false`) value.
 
 ```js
 assert(typeof welcomeToBooleans() === 'boolean');
