@@ -28,7 +28,7 @@ Add `["Paul",35]` to the beginning of the `myArray` variable using `unshift()`.
 
 # --hints--
 
-`myArray` should now have \[["Paul", 35], ["dog", 3]].
+`myArray` should now have `[["Paul", 35], ["dog", 3]]`.
 
 ```js
 assert(
