@@ -11,7 +11,6 @@ import { find, first } from 'lodash';
 const propTypes = {
   certName: PropTypes.string,
   name: PropTypes.string,
-  t: PropTypes.func.isRequired,
   user: PropTypes.shape({
     completedChallenges: PropTypes.arrayOf(
       PropTypes.shape({
@@ -154,7 +153,6 @@ const ShowProjectLinks = props => {
   const {
     certName,
     name,
-    t,
     user: { username }
   } = props;
   const { files, isOpen, projectTitle, solution } = solutionState;
@@ -173,7 +171,6 @@ const ShowProjectLinks = props => {
           isOpen={isOpen}
           projectTitle={projectTitle}
           solution={solution}
-          t={t}
         />
       ) : null}
       If you suspect that any of these projects violate the{' '}

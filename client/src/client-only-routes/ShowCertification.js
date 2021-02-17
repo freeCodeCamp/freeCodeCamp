@@ -384,12 +384,7 @@ const ShowCertification = props => {
       </Grid>
       {signedInUserName === username ? shareCertBtns : ''}
       <Spacer size={2} />
-      <ShowProjectLinks
-        user={user}
-        name={displayName}
-        certName={certTitle}
-        t={t}
-      />
+      <ShowProjectLinks user={user} name={displayName} certName={certTitle} />
     </div>
   );
 };
