@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bdff
-title: Request Header Parser Microservice
+title: 请求头解析器微服务
 challengeType: 4
 forumTopicId: 301507
 dashedName: request-header-parser-microservice
@@ -8,17 +8,17 @@ dashedName: request-header-parser-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://request-header-parser-microservice.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://request-header-parser-microservice.freecodecamp.rocks/>。 可以采用下面的一种方式完成这个挑战：
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-headerparser/) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-headerparser) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-headerparser/) 并在本地完成项目。
+-   使用 [repl.it 初始化项目](https://repl.it/github/freeCodeCamp/boilerplate-project-headerparser) 来完成项目。
+-   使用你选择的网站生成器来完成项目， 并确保包含了我们 GitHub 仓库的所有文件。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+当完成本项目，请确认有一个正常运行的 demo 可以公开访问。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
 
 # --hints--
 
-You should provide your own project, not the example URL.
+提交自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -30,7 +30,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
+向 `/api/whoami` 发送请求，返回一个 JSON 对象，这个JSON 对象应该含有存放 IP 地址的 `ipaddress` 键中。
 
 ```js
 (getUserInput) =>
@@ -42,7 +42,7 @@ A request to `/api/whoami` should return a JSON object with your IP address in t
   );
 ```
 
-A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
+向 `/api/whoami` 发送请求，返回一个 JSON 对象，这个 JSON 对象应该含有存放语言首选项的 `language` 键。
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ A request to `/api/whoami` should return a JSON object with your preferred langu
   );
 ```
 
-A request to `/api/whoami` should return a JSON object with your software in the `software` key.
+向 `/api/whoami` 发送请求，返回一个 JSON 对象，这个 JSON 对象应该含有存放（发送请求的）软件的 `software` 键。
 
 ```js
 (getUserInput) =>

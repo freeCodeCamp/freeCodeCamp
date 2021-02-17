@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c03
-title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
+title: 用脱字符（^）来使用依赖项的最新次要版本
 challengeType: 2
 forumTopicId: 301531
 dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-dependency
@@ -8,25 +8,25 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 # --description--
 
-Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (`^`) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
+和上一个挑战中我们学到的用波浪号来安装最新的修订版依赖一样，脱字符（`^`）也允许 npm 来安装功能更新。 它们的不同之处在于：脱字符允许次版本和修订版更新。
 
-Your current version of moment should be "~2.10.2" which allows npm to install to the latest 2.10.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 2.x.x version.
+现在项目中的 moment 依赖包的版本应该是“~2.10.2”，这意味着 npm 可以安装最新的 2.10.x 版的 moment， 如果使用脱字符（^）来替换版本号的前缀，那么 npm 可以将 moment 升级安装到任何 2.x.x 的版本。
 
 ```json
 "package": "^1.3.8"
 ```
 
-This would allow updates to any 1.x.x version of the package.
+这会将依赖包更新到任意的 1.x.x 版本。
 
 # --instructions--
 
-Use the caret (`^`) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
+在依赖项中，使用脱字符（`^`）为 moment 的版本添加前缀，允许 npm 更新依赖包到任意新的次版本。
 
-**Note:** The version numbers themselves should not be changed.
+**注意：**原来的版本号不用更改。
 
 # --hints--
 
-"dependencies" should include "moment"
+“dependencies”字段中应包含“moment”
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ Use the caret (`^`) to prefix the version of moment in your dependencies and all
   );
 ```
 
-"moment" version should match "^2.x.x"
+“moment”的版本应是“^2.x.x”
 
 ```js
 (getUserInput) =>

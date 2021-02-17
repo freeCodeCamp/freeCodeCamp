@@ -1,6 +1,6 @@
 ---
 id: 587d78a4367417b2b2512ad4
-title: Ajustar el tono de un color
+title: Ajusta el matiz de un color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp38TZ'
 forumTopicId: 301036

@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac0
-title: Usar la propiedad de text-transform para hacer texto mayúscula
+title: Usa la propiedad text-transform para hacer el texto mayúsculas
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081

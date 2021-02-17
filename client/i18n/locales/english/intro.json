@@ -349,13 +349,13 @@
     "title": "Scientific Computing with Python",
     "intro": [
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
-      "In the Scientific Computing with Python Certification, you'll Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
+      "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
     "blocks": {
       "python-for-everybody": {
         "title": "Python for Everybody",
         "intro": [
-          "Python for everybody is a free video course series that teach the basics of using Python 3.",
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
           "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
         ]
       },
@@ -377,7 +377,7 @@
       "data-analysis-with-python-course": {
         "title": "Data Analysis with Python",
         "intro": [
-          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll reading data from multiple sources (CSV, SQL, Excel), process those data using NumPy and Pandas, and visualize them using Matplotlib and Seaborn,",
+          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll be reading data from multiple sources (CSV, SQL, Excel), process that data using NumPy and Pandas, and visualize it using Matplotlib and Seaborn,",
           "Additionally, we've included a thorough Jupyter Notebook course, and a quick Python reference to refresh your programming skills."
         ]
       },
@@ -432,7 +432,7 @@
     "title": "Machine Learning with Python",
     "intro": [
       "Machine learning has many practical applications that you can use in your projects or on the job.",
-      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks. A you'll explore more advanced techniques like natural language processing and reinforcement learning.",
+      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
     "blocks": {

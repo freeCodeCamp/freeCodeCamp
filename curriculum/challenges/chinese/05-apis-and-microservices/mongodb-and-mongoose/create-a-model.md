@@ -1,6 +1,6 @@
 ---
 id: 587d7fb6367417b2b2512c07
-title: Create a Model
+title: 创建一个模型（Model）
 challengeType: 2
 forumTopicId: 301535
 dashedName: create-a-model
@@ -8,13 +8,13 @@ dashedName: create-a-model
 
 # --description--
 
-**C**RUD Part I - CREATE
+**C**RUD 第一小节——CREATE
 
-First of all we need a Schema. Each schema maps to a MongoDB collection. It defines the shape of the documents within that collection. Schemas are building block for Models. They can be nested to create complex models, but in this case we'll keep things simple. A model allows you to create instances of your objects, called documents.
+首先，我们需要一个 Schema， 每一个 Schema 都对应一个 MongoDB 的 collection， 并且在相应的 collection 里定义 documents 的“样子”。 Schema 用于组成模型（Model）， 我们甚至可以通过嵌套 Schema 来创建复杂的模型。目前我们先从简。 我们可以根据模型创建实例，模型实例化后的对象称为 documents。
 
-Repl.it is a real server, and in real servers the interactions with the database happen in handler functions. These functions are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The `done()` function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating, or deleting. It's following the Node convention, and should be called as `done(null, data)` on success, or `done(err)` on error.
+Repl.it 是一个真实的服务器。正式的服务通过 handler 函数和数据库交互。 这些函数会在特定事件（比如有人调用了我们的服务器 API）发生时执行。 接下来的挑战题目即是以此为基础。 `done()` 是一个回调函数，它的作用是在一个异步操作（比如对数据库进行插入、查询、更新或删除）执行完成时，通知我们可以继续执行后续的其它代码。 这与 Node.js 中的处理方式十分类似，在 Node.js 中，我们会在（异步操作）成功时调用 `done(null, data)`，在失败时调用 `done(err)`。
 
-Warning - When interacting with remote services, errors may occur!
+注意：与远程服务器进行交互时，我们需要考虑到发生错误的可能！
 
 ```js
 /* Example */
@@ -28,7 +28,7 @@ const someFunc = function(done) {
 
 # --instructions--
 
-Create a person schema called `personSchema` having this prototype:
+按下面的原型信息创建一个名为 `personSchema` 的 schema：
 
 ```markup
 - Person Prototype -
@@ -38,13 +38,13 @@ age :  number
 favoriteFoods : array of strings (*)
 ```
 
-Use the Mongoose basic schema types. If you want you can also add more fields, use simple validators like required or unique, and set default values. See the [Mongoose docs](http://mongoosejs.com/docs/guide.html).
+采用 Mongoose 基础 schema 类型。 你如果还想添加更多的键，就请使用 required 或 unique 等简单的验证器（validators），并设置默认值。 详情请参考 [Mongoose 文档](http://mongoosejs.com/docs/guide.html)。
 
-Now, create a model called `Person` from the `personSchema`.
+请从 `personSchema` 创建一个名为 `Person` 的 model。
 
 # --hints--
 
-Creating an instance from a mongoose schema should succeed
+应当成功地通过 Mongoose schema 创建实例
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d781e367417b2b2512acc
-title: Bloquear un elemento en la ventana del explorador con posicionamiento fijo (fixed)
+title: Bloquea un elemento a la ventana del navegador con el posicionamiento fijo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061

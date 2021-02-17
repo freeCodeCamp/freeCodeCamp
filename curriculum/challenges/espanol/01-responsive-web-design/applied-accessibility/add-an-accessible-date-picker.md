@@ -1,6 +1,6 @@
 ---
 id: 587d778b367417b2b2512aa8
-title: Agregar un selector de fechas accesible
+title: Agrega un selector de fechas accesible
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 forumTopicId: 301008

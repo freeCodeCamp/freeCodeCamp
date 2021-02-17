@@ -15,7 +15,7 @@ Convierte cualquier elemento HTML en una grid al establecer la propiedad `displa
 
 # --instructions--
 
-Cambia la visualización del div que tiene la clase `container` a `grid`.
+Cambia la propiedad display del div que tiene la clase `container` a `grid`.
 
 # --hints--
 

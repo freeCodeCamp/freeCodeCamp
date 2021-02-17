@@ -1,6 +1,6 @@
 ---
 id: 587d7fb2367417b2b2512bf7
-title: Use body-parser to Parse POST Requests
+title: 使用 body-parser 来解析 POST 请求
 challengeType: 2
 forumTopicId: 301520
 dashedName: use-body-parser-to-parse-post-requests
@@ -8,9 +8,9 @@ dashedName: use-body-parser-to-parse-post-requests
 
 # --description--
 
-Besides GET, there is another common HTTP verb, it is POST. POST is the default method used to send client data with HTML forms. In REST convention, POST is used to send data to create new items in the database (a new user, or a new blog post). You don’t have a database in this project, but you are going to learn how to handle POST requests anyway.
+除了 GET 还有另一个常见的 HTTP 动词，即 POST。 POST 是使用 HTML 表单发送客户端数据的默认方法。 在 REST 规范中，POST 常用于发送数据以在数据库中创建新项目（新用户或新博客文章）。 在这个项目中没有使用数据库，但下面将学习如何处理 POST 请求。
 
-In these kind of requests, the data doesn’t appear in the URL, it is hidden in the request body. The body is a part of the HTTP request, also called the payload. Even though the data is not visible in the URL, this does not mean that it is private. To see why, look at the raw content of an HTTP POST request:
+在这些类型的请求中，数据不会出现在 URL 中，而是隐藏在请求正文中。 请求正文也是 HTML 请求的一部分，被称为负载。 即使数据在 URL 中是不可见的，也不意味着它是私有的。 要了解原因，请观察 HTTP POST 请求的原始内容：
 
 ```http
 POST /path/subpath HTTP/1.0
@@ -22,17 +22,17 @@ Content-Length: 20
 name=John+Doe&age=25
 ```
 
-As you can see, the body is encoded like the query string. This is the default format used by HTML forms. With Ajax, you can also use JSON to handle data having a more complex structure. There is also another type of encoding: multipart/form-data. This one is used to upload binary files. In this exercise, you will use a urlencoded body. To parse the data coming from POST requests, you have to install the `body-parser` package. This package allows you to use a series of middleware, which can decode data in different formats.
+正如你所看到的，正文被编码成类似查询字符串的形式， 这是 HTML 表单使用的默认格式。 我们还可以通过 Ajax 使用 JSON 来处理具有更复杂结构的数据。 还有另一种类型的编码：multipart/form-data， 它被用来上传二进制文件。 在本练习中，我们将使用 URL 编码请求正文。 要解析来自 POST 请求的数据，你必须安装 `body-parser` 包， 这个包包含一套可以解码不同格式数据的中间件。
 
 # --instructions--
 
-Install the `body-parser` module in your `package.json`. Then, `require` it at the top of the file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
+在 `package.json` 中安装 `body-parser` 模块， 然后在文件顶部 `require` 进来， 用变量 `bodyParser` 保存它。 通过中间件的 `bodyParser.urlencoded({extended: false})` 方法处理 URL 编码数据， 将调用上个方法返回的函数传给 `app.use()`， 中间件通常挂载在所有需要它的路由之前。
 
-**Note:** `extended=false` is a configuration option that tells the parser to use the classic encoding. When using it, values can be only strings or arrays. The extended version allows more data flexibility, but it is outmatched by JSON.
+**注意：**`extended=false`是一个告诉解析器使用经典编码的配置选项， 当使用它时，值只能是字符串或者数组， 拓展版本数据更加灵活，但稍逊于 JSON。
 
 # --hints--
 
-The 'body-parser' middleware should be mounted
+应该挂载“body-parser”中间件
 
 ```js
 (getUserInput) =>

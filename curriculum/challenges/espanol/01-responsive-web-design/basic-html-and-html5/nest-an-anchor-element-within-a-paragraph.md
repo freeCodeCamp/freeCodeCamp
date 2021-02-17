@@ -17,11 +17,23 @@ Puedes anidar enlaces dentro de otros elementos de texto.
 </p>
 ```
 
-Vamos a desglosar el ejemplo: El texto regular está envuelto en el elemento `p`:  
-`<p> Here's a ... for you to follow. </p>` Le sigue el elemento *anchor* `<a>` (el cual requiere una etiqueta de cierre `</a>`):  
-`<a> ... </a>`. `target` es un atributo de la etiqueta anchor que especifica donde abrir el enlace y el valor `_blank` especifica abrir el enlace en una nueva pestaña, `href` es un atributo de la etiqueta anchor que contiene la dirección URL del enlace:  
-`<a href="http://freecodecamp.org"> ... </a>`. El texto, **"link to freecodecamp.org"**, dentro del elemento `a` llamado `anchor text`, mostrará un enlace para hacer click:  
-`<a href=" ... ">link to freecodecamp.org</a>`. El resultado final del ejemplo se verá así:
+Desglosemos el ejemplo. El texto normal está envuelto en el elemento `p`:
+
+`<p> Here's a ... for you to follow. </p>`
+
+A continuación está el elemento *anchor* `<a>` (que requiere una etiqueta de cierre `</a>`):
+
+`<a> ... </a>`
+
+`target` es un atributo de etiqueta anchor que especifica dónde abrir el enlace. El valor `_blank` especifica abrir el enlace en una nueva pestaña. El `href` es un atributo de etiqueta anchor que contiene la dirección URL del enlace:
+
+`<a href="http://freecodecamp.org"> ... </a>`
+
+El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama `anchor text`, y mostrará el enlace para hacer clic:
+
+`<a href=" ... ">link to freecodecamp.org</a>`
+
+El resultado final del ejemplo se verá así:
 
 Aquí hay un enlace [a freecodecamp.org](http://freecodecamp.org) para que lo sigas.
 

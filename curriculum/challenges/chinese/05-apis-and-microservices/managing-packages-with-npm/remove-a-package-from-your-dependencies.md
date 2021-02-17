@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c04
-title: Remove a Package from Your Dependencies
+title: 从依赖项中删除依赖包
 challengeType: 2
 forumTopicId: 301530
 dashedName: remove-a-package-from-your-dependencies
@@ -8,21 +8,21 @@ dashedName: remove-a-package-from-your-dependencies
 
 # --description--
 
-You have now tested a few ways you can manage dependencies of your project by using the package.json's dependencies section. You have also included external packages by adding them to the file and even told npm what types of versions you want, by using special characters such as the tilde or the caret.
+已经尝试过一些通过项目 package.json 文件中依赖项管理依赖的方式了， 也添加了一些外部的依赖包到项目中，甚至通过一些特殊的字符比如波浪号或者脱字符来告诉 npm 想要的版本类型。
 
-But what if you want to remove an external package that you no longer need? You might already have guessed it, just remove the corresponding key-value pair for that package from your dependencies.
+但是，如果想要删除不再需要的依赖包，该怎么办呢？ 可能已经猜到了——只需要从依赖项中删除相应的键值对就行了。
 
-This same method applies to removing other fields in your package.json as well
+同样的方法也适用于删除 package.json 中的其它字段。
 
 # --instructions--
 
-Remove the moment package from your dependencies.
+从依赖项中删除 moment 依赖包。
 
-**Note:** Make sure you have the right amount of commas after removing it.
+**注意：**删除依赖包后，确保逗号数量正确。
 
 # --hints--
 
-"dependencies" should not include "moment"
+“dependencies”字段不包含“moment”。
 
 ```js
 (getUserInput) =>

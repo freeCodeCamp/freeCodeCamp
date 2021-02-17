@@ -157,7 +157,7 @@ class DonateForm extends Component {
   }
 
   convertToTimeContributed(amount) {
-    return `${numToCommas((amount / 100) * 50)} hours`;
+    return numToCommas((amount / 100) * 50);
   }
 
   getFormattedAmountLabel(amount) {
@@ -320,9 +320,7 @@ class DonateForm extends Component {
             {t('donate.confirm-1')} {donationAmount / 100}:
           </b>
         ) : (
-          <b>
-            {t('donate.confirm-2')} {donationAmount / 100} / {donationDuration}:
-          </b>
+          <b>{t('donate.confirm-3', { usd: donationAmount / 100 })}:</b>
         )}
         <Spacer />
         <div className='donate-btn-group'>
