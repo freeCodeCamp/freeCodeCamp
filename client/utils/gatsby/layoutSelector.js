@@ -24,9 +24,7 @@ export default function layoutSelector({ element, props }) {
       <CertificationLayout pathname={pathname}>{element}</CertificationLayout>
     );
   }
-  if (/\/guide\//.test(pathname)) {
-    return console.log('Hitting guide for some reason. Need a redirect.');
-  }
+
   const splitPath = pathname.split('/').filter(x => x);
   const isSuperBlock =
     (splitPath.length === 2 && splitPath[0]) === 'learn' ||
