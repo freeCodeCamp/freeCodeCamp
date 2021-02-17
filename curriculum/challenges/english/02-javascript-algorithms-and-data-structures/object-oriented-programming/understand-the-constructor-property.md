@@ -30,8 +30,7 @@ function joinBirdFraternity(candidate) {
 }
 ```
 
-**Note**  
-Since the `constructor` property can be overwritten (which will be covered in the next two challenges) it’s generally better to use the `instanceof` method to check the type of an object.
+**Note:** Since the `constructor` property can be overwritten (which will be covered in the next two challenges) it’s generally better to use the `instanceof` method to check the type of an object.
 
 # --instructions--
 
@@ -45,7 +44,7 @@ Write a `joinDogFraternity` function that takes a `candidate` parameter and, usi
 assert(typeof joinDogFraternity === 'function');
 ```
 
-`joinDogFraternity` should return true if`candidate` is an instance of `Dog`.
+`joinDogFraternity` should return `true` if `candidate` is an instance of `Dog`.
 
 ```js
 assert(joinDogFraternity(new Dog('')) === true);

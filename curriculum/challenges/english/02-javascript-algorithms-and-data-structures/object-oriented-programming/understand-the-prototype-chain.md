@@ -15,13 +15,13 @@ function Bird(name) {
   this.name = name;
 }
 
-typeof Bird.prototype; // yields 'object'
+typeof Bird.prototype; // 'object'
 ```
 
 Because a `prototype` is an object, a `prototype` can have its own `prototype`! In this case, the `prototype` of `Bird.prototype` is `Object.prototype`:
 
 ```js
-Object.prototype.isPrototypeOf(Bird.prototype); // returns true
+Object.prototype.isPrototypeOf(Bird.prototype); // true
 ```
 
 How is this useful? You may recall the `hasOwnProperty` method from a previous challenge:

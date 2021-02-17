@@ -8,7 +8,7 @@ dashedName: add-methods-after-inheritance
 
 # --description--
 
-A constructor function that inherits its `prototype` object from a supertype constructor function can still have its own methods in addition to inherited methods.
+A `constructor` function that inherits its `prototype` object from a supertype `constructor` function can still have its own methods in addition to inherited methods.
 
 For example, `Bird` is a constructor that inherits its `prototype` from `Animal`:
 
@@ -40,7 +40,7 @@ duck.fly(); // prints "I'm flying!"
 
 # --instructions--
 
-Add all necessary code so the `Dog` object inherits from `Animal` and the `Dog's` `prototype` constructor is set to Dog. Then add a `bark()` method to the `Dog` object so that `beagle` can both `eat()` and `bark()`. The `bark()` method should print "Woof!" to the console.
+Add all necessary code so the `Dog` object inherits from `Animal` and the `Dog's` `prototype` constructor is set to Dog. Then add a `bark()` method to the `Dog` object so that `beagle` can both `eat()` and `bark()`. The `bark()` method should print `Woof!` to the console.
 
 # --hints--
 

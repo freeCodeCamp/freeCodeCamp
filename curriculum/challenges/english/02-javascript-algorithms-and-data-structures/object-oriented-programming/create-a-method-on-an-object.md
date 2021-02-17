@@ -26,7 +26,7 @@ The example adds the `sayName` method, which is a function that returns a senten
 
 # --instructions--
 
-Using the `dog` object, give it a method called `sayLegs`. The method should return the sentence "This dog has 4 legs."
+Using the `dog` object, give it a method called `sayLegs`. The method should return the sentence `This dog has 4 legs.`
 
 # --hints--
 

@@ -40,8 +40,8 @@ flyMixin(plane);
 Here `bird` and `plane` are passed into `flyMixin`, which then assigns the `fly` function to each object. Now `bird` and `plane` can both fly:
 
 ```js
-bird.fly(); // prints "Flying, wooosh!"
-plane.fly(); // prints "Flying, wooosh!"
+bird.fly(); // "Flying, wooosh!"
+plane.fly(); // "Flying, wooosh!"
 ```
 
 Note how the mixin allows for the same `fly` method to be reused by unrelated objects `bird` and `plane`.
