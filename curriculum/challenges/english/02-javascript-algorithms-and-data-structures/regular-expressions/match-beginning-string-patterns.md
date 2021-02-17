@@ -15,20 +15,18 @@ In an earlier challenge, you used the caret character (`^`) inside a character s
 ```js
 let firstString = "Ricky is first and can be found.";
 let firstRegex = /^Ricky/;
-firstRegex.test(firstString);
-// Returns true
+firstRegex.test(firstString); // true
 let notFirst = "You can't find Ricky now.";
-firstRegex.test(notFirst);
-// Returns false
+firstRegex.test(notFirst); // false
 ```
 
 # --instructions--
 
-Use the caret character in a regex to find `"Cal"` only in the beginning of the string `rickyAndCal`.
+Use the caret character in a regex to find `Cal` only in the beginning of the string `rickyAndCal`.
 
 # --hints--
 
-Your regex should search for `"Cal"` with a capital letter.
+Your regex should search for `Cal` with a capital letter.
 
 ```js
 assert(calRegex.source == '^Cal');
@@ -40,13 +38,13 @@ Your regex should not use any flags.
 assert(calRegex.flags == '');
 ```
 
-Your regex should match `"Cal"` at the beginning of the string.
+Your regex should match `Cal` at the beginning of the string.
 
 ```js
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
-Your regex should not match `"Cal"` in the middle of a string.
+Your regex should not match `Cal` in the middle of a string.
 
 ```js
 assert(!calRegex.test('Ricky and Cal both like racing.'));

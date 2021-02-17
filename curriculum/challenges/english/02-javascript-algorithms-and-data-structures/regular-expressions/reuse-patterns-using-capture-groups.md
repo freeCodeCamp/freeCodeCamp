@@ -19,8 +19,8 @@ The example below matches any word that occurs twice separated by a space:
 ```js
 let repeatStr = "regex regex";
 let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr); // Returns true
-repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
+repeatRegex.test(repeatStr); // true
+repeatStr.match(repeatRegex); // ["regex regex", "regex"]
 ```
 
 Using the `.match()` method on a string will return an array with the string it matches, along with its capture group.
@@ -43,43 +43,43 @@ Your regex should reuse a capture group twice.
 assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 ```
 
-Your regex should match `"42 42 42"`.
+Your regex should match `42 42 42`.
 
 ```js
 assert(reRegex.test('42 42 42'));
 ```
 
-Your regex should match `"100 100 100"`.
+Your regex should match `100 100 100`.
 
 ```js
 assert(reRegex.test('100 100 100'));
 ```
 
-Your regex should not match `"42 42 42 42"`.
+Your regex should not match `42 42 42 42`.
 
 ```js
 assert.equal('42 42 42 42'.match(reRegex.source), null);
 ```
 
-Your regex should not match `"42 42"`.
+Your regex should not match `42 42`.
 
 ```js
 assert.equal('42 42'.match(reRegex.source), null);
 ```
 
-Your regex should not match `"101 102 103"`.
+Your regex should not match `101 102 103`.
 
 ```js
 assert(!reRegex.test('101 102 103'));
 ```
 
-Your regex should not match `"1 2 3"`.
+Your regex should not match `1 2 3`.
 
 ```js
 assert(!reRegex.test('1 2 3'));
 ```
 
-Your regex should match `"10 10 10"`.
+Your regex should match `10 10 10`.
 
 ```js
 assert(reRegex.test('10 10 10'));

@@ -17,8 +17,7 @@ Then check whether the desired string groups are in the test string by using the
 ```js
 let testStr = "Pumpkin";
 let testRegex = /P(engu|umpk)in/;
-testRegex.test(testStr);
-// Returns true
+testRegex.test(testStr); // true
 ```
 
 # --instructions--

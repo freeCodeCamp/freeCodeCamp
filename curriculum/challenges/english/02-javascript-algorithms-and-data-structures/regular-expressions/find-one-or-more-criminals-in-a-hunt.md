@@ -36,13 +36,13 @@ Write a greedy regex that finds one or more criminals within a group of other pe
 
 # --hints--
 
-Your regex should match one criminal (`C`) in `"C"`
+Your regex should match one criminal (`C`) in `C`
 
 ```js
 assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
 ```
 
-Your regex should match two criminals (`CC`) in `"CC"`
+Your regex should match two criminals (`CC`) in `CC`
 
 ```js
 assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-Your regex should match five criminals (`CCCCC`) in `"P6P2P7P4P5CCCCCP3P1"`
+Your regex should match five criminals (`CCCCC`) in `P6P2P7P4P5CCCCCP3P1`
 
 ```js
 assert(
@@ -72,13 +72,13 @@ Your regex should not match any criminals in `""`
 assert(!reCriminals.test(''));
 ```
 
-Your regex should not match any criminals in `"P1P2P3"`
+Your regex should not match any criminals in `P1P2P3`
 
 ```js
 assert(!reCriminals.test('P1P2P3'));
 ```
 
-Your regex should match fifty criminals (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) in `"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"`.
+Your regex should match fifty criminals (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) in `P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3`.
 
 ```js
 assert(

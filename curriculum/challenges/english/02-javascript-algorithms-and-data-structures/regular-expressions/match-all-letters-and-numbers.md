@@ -17,10 +17,10 @@ let longHand = /[A-Za-z0-9_]+/;
 let shortHand = /\w+/;
 let numbers = "42";
 let varNames = "important_var";
-longHand.test(numbers); // Returns true
-shortHand.test(numbers); // Returns true
-longHand.test(varNames); // Returns true
-shortHand.test(varNames); // Returns true
+longHand.test(numbers); // true
+shortHand.test(numbers); // true
+longHand.test(varNames); // true
+shortHand.test(varNames); // true
 ```
 
 These shortcut character classes are also known as <dfn>shorthand character classes</dfn>.
@@ -43,7 +43,7 @@ Your regex should use the shorthand character `\w` to match all characters which
 assert(/\\w/.test(alphabetRegexV2.source));
 ```
 
-Your regex should find 31 alphanumeric characters in `"The five boxing wizards jump quickly."`
+Your regex should find 31 alphanumeric characters in `The five boxing wizards jump quickly.`
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Your regex should find 32 alphanumeric characters in `"Pack my box with five dozen liquor jugs."`
+Your regex should find 32 alphanumeric characters in `Pack my box with five dozen liquor jugs.`
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-Your regex should find 30 alphanumeric characters in `"How vexingly quick daft zebras jump!"`
+Your regex should find 30 alphanumeric characters in `How vexingly quick daft zebras jump!`
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-Your regex should find 36 alphanumeric characters in `"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ."`
+Your regex should find 36 alphanumeric characters in `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
 
 ```js
 assert(

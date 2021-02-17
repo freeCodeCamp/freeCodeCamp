@@ -12,7 +12,7 @@ You learned how to match literal patterns (`/literal/`) and wildcard character (
 
 You can search for a literal pattern with some flexibility with <dfn>character classes</dfn>. Character classes allow you to define a group of characters you wish to match by placing them inside square (`[` and `]`) brackets.
 
-For example, you want to match `"bag"`, `"big"`, and `"bug"` but not `"bog"`. You can create the regex `/b[aiu]g/` to do this. The `[aiu]` is the character class that will only match the characters `"a"`, `"i"`, or `"u"`.
+For example, you want to match `bag`, `big`, and `bug` but not `bog`. You can create the regex `/b[aiu]g/` to do this. The `[aiu]` is the character class that will only match the characters `a`, `i`, or `u`.
 
 ```js
 let bigStr = "big";
@@ -20,10 +20,10 @@ let bagStr = "bag";
 let bugStr = "bug";
 let bogStr = "bog";
 let bgRegex = /b[aiu]g/;
-bigStr.match(bgRegex); // Returns ["big"]
-bagStr.match(bgRegex); // Returns ["bag"]
-bugStr.match(bgRegex); // Returns ["bug"]
-bogStr.match(bgRegex); // Returns null
+bigStr.match(bgRegex); // ["big"]
+bagStr.match(bgRegex); // ["bag"]
+bugStr.match(bgRegex); // ["bug"]
+bogStr.match(bgRegex); // null
 ```
 
 # --instructions--
