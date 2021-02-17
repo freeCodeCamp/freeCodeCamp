@@ -385,6 +385,7 @@ const ShowCertification = props => {
       {signedInUserName === username ? shareCertBtns : ''}
       <Spacer size={2} />
       <ShowProjectLinks user={user} name={displayName} certName={certTitle} />
+      <Spacer size={2} />
     </div>
   );
 };
