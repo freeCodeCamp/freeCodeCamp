@@ -574,6 +574,7 @@ blockquote .small {
 .alert {
   border-radius: 0px;
   overflow-wrap: break-word;
+  z-index: 1;
 }
 
 /* gatsby 404 */
