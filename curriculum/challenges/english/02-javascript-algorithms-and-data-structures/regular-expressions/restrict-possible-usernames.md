@@ -98,6 +98,12 @@ Your regex should match `AB1`
 assert(userCheck.test('AB1'));
 ```
 
+Your regex should not match `J%4`
+
+```js
+assert(!userCheck.test('J%4'))
+```
+
 # --seed--
 
 ## --seed-contents--
