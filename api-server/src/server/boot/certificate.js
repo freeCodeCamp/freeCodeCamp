@@ -10,7 +10,6 @@ import { reportError } from '../middlewares/sentry-error-handler.js';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 
-import { oldDataVizId } from '../../../../config/misc';
 import { getChallenges } from '../utils/get-curriculum';
 
 import {
@@ -19,7 +18,8 @@ import {
   superBlockCertTypeMap,
   certTypeTitleMap,
   certTypeIdMap,
-  certIds
+  certIds,
+  oldDataVizId
 } from '../../../../config/certification-settings';
 
 const {

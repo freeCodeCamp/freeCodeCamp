@@ -111,6 +111,7 @@ const certTypeTitleMap = {
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python'
 };
 
+exports.oldDataVizId = '561add10cb82ac38a17513b3';
 exports.completionHours = completionHours;
 exports.certTypes = certTypes;
 exports.superBlockCertTypeMap = superBlockCertTypeMap;
