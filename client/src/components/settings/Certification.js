@@ -260,10 +260,16 @@ export class CertificationSettings extends Component {
 
   renderCertifications = certName => {
     const { t } = this.props;
+    const { superBlock } = first(
+      projectMap[certName],
+      legacyProjectMap[certName]
+    );
     return (
       <FullWidthRow key={certName}>
         <Spacer />
-        <h3 className='text-center'>{certName}</h3>
+        <h3 className='text-center' id={superBlock}>
+          {certName}
+        </h3>
         <Table>
           <thead>
             <tr>
