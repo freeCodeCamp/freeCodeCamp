@@ -27,7 +27,7 @@ assert.strictEqual(
 );
 ```
 
-`MyComponent`'s state should be initialized to an array of six users.")
+`MyComponent`'s state should be initialized to an array of six users.
 
 ```js
 assert(
@@ -81,7 +81,7 @@ assert(
 })();
 ```
 
-`MyComponent` should render `li` elements that contain the username of each online user.
+`MyComponent` should render `li` elements that contain the `username` of each online user.
 
 ```js
 (() => {
