@@ -21,7 +21,7 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'We have implemented a new policy of no longer accepting curriculum-related PRs with changes to non-English files. We plan to implement a better way to translate the English challenges in the near future. We will make an announcement when it is ready. For now, please revert your changes to the non-English challenge files. Thank you.'
+                body: 'We have implemented a new policy of no longer accepting curriculum-related PRs with changes to non-English files. Please visit https://translate.freecodecamp.org to make translations to the curriculum. Thank you.'
               })
               core.setFailed('This PR appears to touch translated challenge files.')
             } else {
