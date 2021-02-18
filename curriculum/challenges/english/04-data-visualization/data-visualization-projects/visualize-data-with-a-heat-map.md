@@ -26,7 +26,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. R
 
 **User Story #6:** There should be at least 4 different fill colors used for the cells.
 
-**User Story #7:** Each cell will have the properties `data-month`, `data-year`, `data-temp` containing their corresponding month, year, and temperature values.
+**User Story #7:** Each cell will have the properties `data-month`, `data-year`, `data-temp` containing their corresponding `month`, `year`, and `temperature` values.
 
 **User Story #8:** The `data-month`, `data-year` of each cell should be within the range of the data.
 
