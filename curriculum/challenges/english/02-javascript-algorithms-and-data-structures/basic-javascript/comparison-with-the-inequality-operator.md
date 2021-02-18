@@ -23,7 +23,7 @@ The inequality operator (`!=`) is the opposite of the equality operator. It mean
 
 # --instructions--
 
-Add the inequality operator `!=` in the `if` statement so that the function will return "Not Equal" when `val` is not equivalent to `99`
+Add the inequality operator `!=` in the `if` statement so that the function will return `Not Equal` when `val` is not equivalent to `99`
 
 # --hints--
 
