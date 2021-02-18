@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const translationsObject = require('./locales/english/translations.json');
+const introObject = require('./locales/english/intro.json');
+const metaObject = require('./locales/english/meta-tags.json');
+const motivationObject = require('./locales/english/motivation.json');
+const trendingObject = require('./locales/english/trending.json');
 
 /**
  * Function to flatten a nested object. Written specifically for
@@ -26,9 +30,11 @@ const flattenAnObject = (obj, namespace = '') => {
   return flattened;
 };
 
-const flattenedSchema = flattenAnObject(translationsObject);
-
-const keyStrings = Object.keys(flattenedSchema);
+const translationKeys = Object.keys(flattenAnObject(translationsObject));
+const metaKeys = Object.keys(flattenAnObject(metaObject));
+const motivationKeys = Object.keys(flattenAnObject(motivationObject));
+const introKeys = Object.keys(flattenAnObject(introObject));
+const trendingKeys = Object.keys(flattenAnObject(trendingObject));
 
 /**
  * Recursively read through the directory, grabbing .js files
@@ -58,8 +64,28 @@ const serverCodebase = readComponentCode(
   path.join(process.cwd() + '/../api-server/server')
 );
 
-for (const key of keyStrings) {
+for (const key of translationKeys) {
   if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
     console.warn(`The translation key '${key}' appears to be unused.`);
+  }
+}
+for (const key of motivationKeys) {
+  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+    console.warn(`The motivation key '${key}' appears to be unused.`);
+  }
+}
+for (const key of metaKeys) {
+  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+    console.warn(`The meta key '${key}' appears to be unused.`);
+  }
+}
+for (const key of introKeys) {
+  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+    console.warn(`The intro key '${key}' appears to be unused.`);
+  }
+}
+for (const key of trendingKeys) {
+  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+    console.warn(`The trending key '${key}' appears to be unused.`);
   }
 }
