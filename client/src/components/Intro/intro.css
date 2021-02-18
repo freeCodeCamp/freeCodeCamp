@@ -24,8 +24,8 @@
   border: none;
 }
 
-.intro-description {
-  padding:0 15px;
+.row {
+  margin:0;
 }
 
 .intro-description strong,
