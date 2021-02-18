@@ -24,6 +24,12 @@
   border: none;
 }
 
+.row {
+  margin: 0;
+}
+
+
+
 .intro-description strong,
 .intro-description p {
   font-family: 'Lato', sans-serif;
