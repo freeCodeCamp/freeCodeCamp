@@ -17,15 +17,15 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             if (context.payload.pull_request.head.repo.fork) {
-              await github.issues.createComment({
+              github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body: 'We have implemented a new policy of no longer accepting curriculum-related PRs with changes to non-English files. We plan to implement a better way to translate the English challenges in the near future. We will make an announcement when it is ready. For now, please revert your changes to the non-English challenge files. Thank you.'
               })
-              throw new Error('This PR appears to touch translated challenge files.')
+              core.setFailed('This PR appears to touch translated challenge files.')
             } else {
-                await github.issues.createComment({
+                github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
