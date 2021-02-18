@@ -184,8 +184,7 @@ p.caption {
 }
 
 .map-ui .btn {
-  height: 80px;
-  max-height: 80px;
+  min-height: 80px;
 }
 
 @media (min-width: 500px) {
