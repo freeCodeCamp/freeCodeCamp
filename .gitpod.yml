@@ -68,13 +68,13 @@ github:
     # enable for pull requests coming from forks (defaults to false)
     pullRequestsFromForks: true
     # add a check to pull requests (defaults to true)
-    addCheck: true
+    addCheck: false
     # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
     addComment: true
     # add a "Review in Gitpod" button to the pull request's description (defaults to false)
     addBadge: false
     # add a label once the prebuild is ready to pull requests (defaults to false)
-    addLabel: false
+    addLabel: true
 
 vscode:
   extensions:
