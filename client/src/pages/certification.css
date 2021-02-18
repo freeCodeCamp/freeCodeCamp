@@ -186,10 +186,6 @@
     font-size: 15px;
     margin-top: 20px;
   }
-
-  .certificate-outer-wrapper {
-    padding-bottom: 55rem;
-  }
 }
 
 @media screen and (max-width: 992px) {
@@ -268,5 +264,4 @@
 .certificate-outer-wrapper {
   margin-top: calc(-1 * var(--header-height));
   background-color: #fff;
-  padding-bottom: 50rem;
 }
