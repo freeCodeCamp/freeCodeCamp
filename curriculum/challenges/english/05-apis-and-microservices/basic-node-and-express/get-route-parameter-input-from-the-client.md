@@ -16,6 +16,8 @@ When building an API, we have to allow users to communicate to us what they want
 
 Build an echo server, mounted at the route `GET /:word/echo`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`. You can test your route from your browser's address bar, visiting some matching routes, e.g. `your-app-rootpath/freecodecamp/echo`.
 
+Make sure the link you submit starts with https:// or else, if it starts with http:// it will not pass the tests. 
+
 # --hints--
 
 Test 1 : Your echo server should repeat words correctly
