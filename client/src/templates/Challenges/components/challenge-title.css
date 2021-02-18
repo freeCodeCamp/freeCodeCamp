@@ -85,7 +85,7 @@
   justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 50px;
+  max-height: fit-content;
   word-wrap: none;
   white-space: pre-line;
   flex-grow: 1;
