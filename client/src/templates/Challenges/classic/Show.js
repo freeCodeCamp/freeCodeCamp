@@ -366,6 +366,7 @@ export const query = graphql`
       translationPending
       forumTopicId
       fields {
+        blockName
         slug
         tests {
           text
