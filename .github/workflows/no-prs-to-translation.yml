@@ -2,7 +2,7 @@ name: No translate on GitHub
 on:
   pull_request_target:
     branches:
-      - 'master'
+      - 'main'
     paths:
       - 'curriculum/challenges/**'
       - '!curriculum/challenges/english/**'
@@ -16,10 +16,19 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            await github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'We have implemented a new policy of no longer accepting curriculum-related PRs with changes to non-English files. We plan to implement a better way to translate the English challenges in the near future. We will make an announcement when it is ready. For now, please revert your changes to the non-English challenge files. Thank you.'
-            })
-            throw new Error('This PR appears to touch translated challenge files.')
+            if (context.payload.pull_request.head.repo.fork) {
+              github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: 'Thanks for your pull-request. We are no longer accepting curriculum-related changes to non-English files. Please visit [our contributing guidelines](https://contribute.freecodecamp.org) to learn more about translating freeCodeCamp's resources.'
+              })
+              core.setFailed('This PR appears to touch translated challenge files.')
+            } else {
+                github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: 'WAIT! This message serves as a sanity check. Your PR appears to come from the base freeCodeCamp repository and modifies translated curriculum files. Before merging, please confirm that the commits on this PR originated from the Crowdin download action.'
+              })
+            }
