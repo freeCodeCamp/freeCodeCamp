@@ -14,7 +14,8 @@ import { Field } from 'react-final-form';
 import {
   editorValidator,
   localhostValidator,
-  composeValidators
+  composeValidators,
+  fCCValidator
 } from './FormValidators';
 
 const propTypes = {
@@ -52,6 +53,7 @@ function FormFields(props) {
     }
     const validationWarning = composeValidators(
       name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
+      fCCValidator,
       localhostValidator
     )(value);
     const message = error || validationError || validationWarning;
