@@ -24,7 +24,6 @@ import Hotkeys from '../components/Hotkeys';
 import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
-import { dasherize } from '../../../../../utils/slugs';
 import {
   createFiles,
   challengeFilesSelector,
@@ -206,7 +205,7 @@ class ShowClassic extends Component {
 
   renderInstructionsPanel({ showToolPanel }) {
     const {
-      fields: { blockName },
+      block,
       description,
       instructions,
       superBlock,
@@ -216,12 +215,11 @@ class ShowClassic extends Component {
     const { forumTopicId, title } = this.getChallenge();
     return (
       <SidePanel
-        block={blockName}
+        block={block}
         className='full-height'
         description={description}
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructions={instructions}
-        section={dasherize(blockName)}
         showToolPanel={showToolPanel}
         superBlock={superBlock}
         title={title}
@@ -357,6 +355,7 @@ export default connect(
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
+      block
       title
       description
       instructions
@@ -368,7 +367,6 @@ export const query = graphql`
       forumTopicId
       fields {
         slug
-        blockName
         tests {
           text
           testString
