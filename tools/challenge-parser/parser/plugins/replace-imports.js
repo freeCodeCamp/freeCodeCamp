@@ -73,8 +73,8 @@ function plugin() {
         next();
       })
       .catch(err => {
-        console.log('error processing ::import');
-        console.log(err);
+        console.error('error processing ::import');
+        console.error(err);
         next(err);
       });
   }

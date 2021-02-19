@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global describe it expect jest */
 const path = require('path');
 const cloneDeep = require('lodash/cloneDeep');
 const toVfile = require('to-vfile');
@@ -59,12 +59,15 @@ describe('replace-imports', () => {
   });
 
   it('should fail when the imported file cannot be found', done => {
+    expect.assertions(1);
+    console.error = jest.fn();
     const plugin = addImports();
 
     // we have to rely on the next callback, because that is how you get error
     // messages out of transformers
     const next = err => {
       if (err) {
+        expect(console.error).toHaveBeenCalledTimes(2);
         done();
       } else {
         done('An error should have been thrown by addImports');
@@ -228,9 +231,12 @@ describe('replace-imports', () => {
   });
 
   it('should reject imported files with editable region markers', done => {
+    expect.assertions(1);
+    console.error = jest.fn();
     const plugin = addImports();
     const next = err => {
       if (err) {
+        expect(console.error).toHaveBeenCalledTimes(2);
         done();
       } else {
         done('An error should have been thrown by addImports');
