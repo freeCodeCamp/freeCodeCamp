@@ -22,20 +22,32 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
 
 It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the ratio of primes along both diagonals first falls below 10%?
+If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
 
 # --hints--
 
-`spiralPrimes()` should return a number.
+`spiralPrimes(50)` should return a number.
 
 ```js
-assert(typeof spiralPrimes() === 'number');
+assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes()` should return 26241.
+`spiralPrimes(50)` should return `11`.
 
 ```js
-assert.strictEqual(spiralPrimes(), 26241);
+assert.strictEqual(spiralPrimes(50), 11);
+```
+
+`spiralPrimes(15)` should return `981`.
+
+```js
+assert.strictEqual(spiralPrimes(15), 981);
+```
+
+`spiralPrimes(10)` should return `26241`.
+
+```js
+assert.strictEqual(spiralPrimes(10), 26241);
 ```
 
 # --seed--
@@ -43,12 +55,12 @@ assert.strictEqual(spiralPrimes(), 26241);
 ## --seed-contents--
 
 ```js
-function spiralPrimes() {
+function spiralPrimes(percent) {
 
   return true;
 }
 
-spiralPrimes();
+spiralPrimes(50);
 ```
 
 # --solutions--
