@@ -474,7 +474,10 @@
     "invalid-url": "No hemos podido validar tu URL correctamente, por favor asegúrate de que sea correcta",
     "invalid-protocol": "La URL debe comenzar con http o https",
     "url-not-image": "La URL debe enlazar directamente hacia un archivo de imagen",
-    "use-valid-url": "Por favor, utiliza una URL válida"
+    "use-valid-url": "Por favor, utiliza una URL válida",
+    "editor-url": "Remember to submit the Live App URL.",
+    "own-work-url": "Remember to submit your own work.",
+    "publicly-visible-url": "Remember to submit a publicly visible app URL."
   },
   "certification": {
     "executive": "Director Ejecutivo, freeCodeCamp.org",
