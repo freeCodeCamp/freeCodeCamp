@@ -7,12 +7,14 @@ const selectAll = require('unist-util-select').selectAll;
 const addImports = require('./replace-imports');
 const originalImportsAST = require('../__fixtures__/ast-imports.json');
 const originalImportsTwoAST = require('../__fixtures__/ast-imports-two.json');
+const originalImportsExtraAST = require('../__fixtures__/ast-imports-extra.json');
 const originalSimpleAST = require('../__fixtures__/ast-simple.json');
 const originalMarkerAST = require('../__fixtures__/ast-marker-imports.json');
 
 describe('replace-imports', () => {
   let importsAST;
   let importsTwoAST;
+  let importsExtraAST;
   let simpleAST;
   let markerAST;
   let correctFile;
@@ -21,6 +23,7 @@ describe('replace-imports', () => {
   beforeEach(() => {
     importsAST = cloneDeep(originalImportsAST);
     importsTwoAST = cloneDeep(originalImportsTwoAST);
+    importsExtraAST = cloneDeep(originalImportsExtraAST);
     simpleAST = cloneDeep(originalSimpleAST);
     markerAST = cloneDeep(originalMarkerAST);
     correctFile = toVfile(
@@ -116,6 +119,26 @@ describe('replace-imports', () => {
       }
     };
     plugin(importsAST, correctFile, next);
+  });
+
+  it('should not remove an ::import without the required attributes', done => {
+    expect.assertions(2);
+    const selector = 'leafDirective[name=import]';
+    const plugin = addImports();
+    const importNodes = selectAll(selector, importsExtraAST);
+
+    expect(importNodes.length).toBe(3);
+
+    const next = err => {
+      if (err) {
+        done(err);
+      } else {
+        const importNodes = selectAll(selector, importsExtraAST);
+        expect(importNodes.length).toBe(1);
+        done();
+      }
+    };
+    plugin(importsExtraAST, correctFile, next);
   });
 
   it('should remove all matching ::use statements', done => {

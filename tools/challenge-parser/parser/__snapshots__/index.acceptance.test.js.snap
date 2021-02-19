@@ -5,6 +5,7 @@ Object {
   "description": "<section id=\\"description\\">
 <p>:root appears, :import appears</p>
 <p>the next paragraph should appear</p>
+::import
 <p>even though it's an import directive, but if we use the full syntax <code>::directive-name{attr=\\"name\\" attr2=\\"a/path\\"}</code></p>
 <p>it goes.</p>
 <p>::: name [inline-content] {key=val}

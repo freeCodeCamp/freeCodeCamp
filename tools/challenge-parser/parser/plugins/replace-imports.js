@@ -69,7 +69,7 @@ function plugin() {
     // Also, we remove the import statements here.
     Promise.all(importPromises)
       .then(() => {
-        remove(tree, { type: 'leafDirective', name: 'import' });
+        remove(tree, isImportNode);
         next();
       })
       .catch(err => {
@@ -78,6 +78,16 @@ function plugin() {
         next(err);
       });
   }
+}
+
+function isImportNode({ type, name, attributes }) {
+  if (!attributes) return false;
+  return (
+    type === 'leafDirective' &&
+    name === 'import' &&
+    attributes.component &&
+    attributes.from
+  );
 }
 
 function validateImports(fileTree) {
