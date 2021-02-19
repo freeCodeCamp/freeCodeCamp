@@ -11,7 +11,7 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 The greater than or equal to operator (`>=`) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns `true`. Otherwise, it returns `false`.
 
-Like the equality operator, `greater than or equal to` operator will convert data types while comparing.
+Like the equality operator, the `>=` will convert data types while comparing.
 
 **Examples**
 
