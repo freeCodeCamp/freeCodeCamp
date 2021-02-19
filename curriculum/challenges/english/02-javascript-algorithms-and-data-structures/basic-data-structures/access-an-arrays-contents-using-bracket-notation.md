@@ -34,7 +34,7 @@ Using bracket notation, we have now reset the item at index 1 from `"b"`, to `"n
 
 # --instructions--
 
-In order to complete this challenge, set the 2nd position (index `1`) of `myArray` to anything you want, besides `"b"`.
+In order to complete this challenge, set the 2nd position (index `1`) of `myArray` to anything you want, besides the letter `b`.
 
 # --hints--
 

@@ -25,7 +25,7 @@ romanNumerals.unshift('XIX', 'XX');
 romanNumerals.push(twentyThree);
 ```
 
-`romanNumerals` now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']. Notice that we can also pass variables, which allows us even greater flexibility in dynamically modifying our array's data.
+`romanNumerals` now equals `['XIX', 'XX', 'XXI', 'XXII', 'XXIII']`. Notice that we can also pass variables, which allows us even greater flexibility in dynamically modifying our array's data.
 
 # --instructions--
 

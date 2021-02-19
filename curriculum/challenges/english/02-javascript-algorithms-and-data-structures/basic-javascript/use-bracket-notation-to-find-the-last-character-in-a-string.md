@@ -28,7 +28,7 @@ Use <dfn>bracket notation</dfn> to find the last character in the `lastName` var
 
 # --hints--
 
-`lastLetterOfLastName` should be `e`.
+`lastLetterOfLastName` should be the letter `e`.
 
 ```js
 assert(lastLetterOfLastName === 'e');

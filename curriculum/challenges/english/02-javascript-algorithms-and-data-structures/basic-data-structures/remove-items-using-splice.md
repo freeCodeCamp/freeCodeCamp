@@ -18,7 +18,7 @@ let array = ['today', 'was', 'not', 'so', 'great'];
 array.splice(2, 2);
 ```
 
-Here we remove 2 elements, beginning with the third element (at index 2). `array` now has the value [`'today', 'was', 'great']`.
+Here we remove 2 elements, beginning with the third element (at index 2). `array` now has the value `['today', 'was', 'great']`.
 
 `splice()` not only modifies the array it's being called on, but it also returns a new array containing the value of the removed elements:
 

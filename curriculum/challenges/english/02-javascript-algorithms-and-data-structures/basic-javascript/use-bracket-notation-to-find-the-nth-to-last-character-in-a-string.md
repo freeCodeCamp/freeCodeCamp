@@ -28,7 +28,7 @@ Use <dfn>bracket notation</dfn> to find the second-to-last character in the `las
 
 # --hints--
 
-`secondToLastLetterOfLastName` should be `c`.
+`secondToLastLetterOfLastName` should be the letter `c`.
 
 ```js
 assert(secondToLastLetterOfLastName === 'c');
