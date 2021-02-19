@@ -38,25 +38,25 @@ In order to complete this challenge, set the 2nd position (index `1`) of `myArra
 
 # --hints--
 
-`myArray[0]` should be equal to `a`
+`myArray[0]` should be equal to the letter `a`
 
 ```js
 assert.strictEqual(myArray[0], 'a');
 ```
 
-`myArray[1]` should not be equal to `b`
+`myArray[1]` should not be equal to the letter `b`
 
 ```js
 assert.notStrictEqual(myArray[1], 'b');
 ```
 
-`myArray[2]` should be equal to `c`
+`myArray[2]` should be equal to the letter `c`
 
 ```js
 assert.strictEqual(myArray[2], 'c');
 ```
 
-`myArray[3]` should be equal to `d`
+`myArray[3]` should be equal to the letter `d`
 
 ```js
 assert.strictEqual(myArray[3], 'd');

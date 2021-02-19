@@ -38,31 +38,31 @@ Write a switch statement to set `answer` for the following conditions:
 
 # --hints--
 
-`switchOfStuff("a")` should have a value of `apple`
+`switchOfStuff("a")` should have a value of the string `apple`
 
 ```js
 assert(switchOfStuff('a') === 'apple');
 ```
 
-`switchOfStuff("b")` should have a value of `bird`
+`switchOfStuff("b")` should have a value of the string `bird`
 
 ```js
 assert(switchOfStuff('b') === 'bird');
 ```
 
-`switchOfStuff("c")` should have a value of `cat`
+`switchOfStuff("c")` should have a value of the string `cat`
 
 ```js
 assert(switchOfStuff('c') === 'cat');
 ```
 
-`switchOfStuff("d")` should have a value of `stuff`
+`switchOfStuff("d")` should have a value of the string `stuff`
 
 ```js
 assert(switchOfStuff('d') === 'stuff');
 ```
 
-`switchOfStuff(4)` should have a value of `stuff`
+`switchOfStuff(4)` should have a value of the string `stuff`
 
 ```js
 assert(switchOfStuff(4) === 'stuff');
