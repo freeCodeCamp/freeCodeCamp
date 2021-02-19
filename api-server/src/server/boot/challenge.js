@@ -144,7 +144,7 @@ export function buildUserUpdate(
 
 export function buildChallengeUrl(challenge) {
   const { superBlock, block, dashedName } = challenge;
-  return `/learn/${dasherize(superBlock)}/${dasherize(block)}/${dashedName}`;
+  return `/learn/${superBlock}/${dasherize(block)}/${dashedName}`;
 }
 
 // this is only called once during boot, so it can be slow.
