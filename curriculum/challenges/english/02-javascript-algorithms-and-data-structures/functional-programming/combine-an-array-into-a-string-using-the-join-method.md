@@ -42,13 +42,13 @@ assert(!code.match(/\.?[\s\S]*?replace/g));
 assert(typeof sentensify('May-the-force-be-with-you') === 'string');
 ```
 
-`sentensify("May-the-force-be-with-you")` should return `May the force be with you`.
+`sentensify("May-the-force-be-with-you")` should return the string `May the force be with you`.
 
 ```js
 assert(sentensify('May-the-force-be-with-you') === 'May the force be with you');
 ```
 
-`sentensify("The.force.is.strong.with.this.one")` should return `The force is strong with this one`.
+`sentensify("The.force.is.strong.with.this.one")` should return the string `The force is strong with this one`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-`sentensify("There,has,been,an,awakening")` should return `"There has been an awakening"`.
+`sentensify("There,has,been,an,awakening")` should return the string `There has been an awakening`.
 
 ```js
 assert(

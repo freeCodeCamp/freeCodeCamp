@@ -26,7 +26,7 @@ Use the caret character in a regex to find `Cal` only in the beginning of the st
 
 # --hints--
 
-Your regex should search for `Cal` with a capital letter.
+Your regex should search for the string `Cal` with a capital letter.
 
 ```js
 assert(calRegex.source == '^Cal');
@@ -38,13 +38,13 @@ Your regex should not use any flags.
 assert(calRegex.flags == '');
 ```
 
-Your regex should match `Cal` at the beginning of the string.
+Your regex should match the string `Cal` at the beginning of the string.
 
 ```js
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
-Your regex should not match `Cal` in the middle of a string.
+Your regex should not match the string `Cal` in the middle of a string.
 
 ```js
 assert(!calRegex.test('Ricky and Cal both like racing.'));

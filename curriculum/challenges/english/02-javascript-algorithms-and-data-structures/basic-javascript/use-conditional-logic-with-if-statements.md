@@ -56,13 +56,13 @@ assert(typeof trueOrFalse(true) === 'string');
 assert(typeof trueOrFalse(false) === 'string');
 ```
 
-`trueOrFalse(true)` should return `Yes, that was true`
+`trueOrFalse(true)` should return the string `Yes, that was true`
 
 ```js
 assert(trueOrFalse(true) === 'Yes, that was true');
 ```
 
-`trueOrFalse(false)` should return `No, that was false`
+`trueOrFalse(false)` should return the string `No, that was false`
 
 ```js
 assert(trueOrFalse(false) === 'No, that was false');

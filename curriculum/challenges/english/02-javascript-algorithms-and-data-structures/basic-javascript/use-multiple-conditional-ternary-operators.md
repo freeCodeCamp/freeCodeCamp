@@ -57,19 +57,19 @@ In the `checkSign` function, use multiple conditional operators - following the 
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
 ```
 
-`checkSign(10)` should return `positive`. Note that capitalization matters
+`checkSign(10)` should return the string `positive`. Note that capitalization matters
 
 ```js
 assert(checkSign(10) === 'positive');
 ```
 
-`checkSign(-12)` should return `negative`. Note that capitalization matters
+`checkSign(-12)` should return the string `negative`. Note that capitalization matters
 
 ```js
 assert(checkSign(-12) === 'negative');
 ```
 
-`checkSign(0)` should return `zero`. Note that capitalization matters
+`checkSign(0)` should return the string `zero`. Note that capitalization matters
 
 ```js
 assert(checkSign(0) === 'zero');

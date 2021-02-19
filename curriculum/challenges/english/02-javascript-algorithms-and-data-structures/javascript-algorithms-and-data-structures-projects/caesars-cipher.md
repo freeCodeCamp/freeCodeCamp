@@ -18,25 +18,25 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 
 # --hints--
 
-`rot13("SERR PBQR PNZC")` should decode to `FREE CODE CAMP`
+`rot13("SERR PBQR PNZC")` should decode to the string `FREE CODE CAMP`
 
 ```js
 assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
 ```
 
-`rot13("SERR CVMMN!")` should decode to `FREE PIZZA!`
+`rot13("SERR CVMMN!")` should decode to the string `FREE PIZZA!`
 
 ```js
 assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
 ```
 
-`rot13("SERR YBIR?")` should decode to `FREE LOVE?`
+`rot13("SERR YBIR?")` should decode to the string `FREE LOVE?`
 
 ```js
 assert(rot13('SERR YBIR?') === 'FREE LOVE?');
 ```
 
-`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` should decode to `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
+`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` should decode to the string `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
 
 ```js
 assert(

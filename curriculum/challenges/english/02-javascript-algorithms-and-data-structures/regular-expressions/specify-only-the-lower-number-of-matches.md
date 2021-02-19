@@ -36,37 +36,37 @@ Your regex should use curly brackets.
 assert(haRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match `Hazzah`
+Your regex should not match the string `Hazzah`
 
 ```js
 assert(!haRegex.test('Hazzah'));
 ```
 
-Your regex should not match `Hazzzah`
+Your regex should not match the string `Hazzzah`
 
 ```js
 assert(!haRegex.test('Hazzzah'));
 ```
 
-Your regex should match `Hazzzzah`
+Your regex should match the string `Hazzzzah`
 
 ```js
 assert('Hazzzzah'.match(haRegex)[0].length === 8);
 ```
 
-Your regex should match `Hazzzzzah`
+Your regex should match the string `Hazzzzzah`
 
 ```js
 assert('Hazzzzzah'.match(haRegex)[0].length === 9);
 ```
 
-Your regex should match `Hazzzzzzah`
+Your regex should match the string `Hazzzzzzah`
 
 ```js
 assert('Hazzzzzzah'.match(haRegex)[0].length === 10);
 ```
 
-Your regex should match `Hazzah` with 30 `z`'s in it.
+Your regex should match the string `Hazzah` with 30 `z`'s in it.
 
 ```js
 assert('Hazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzah'.match(haRegex)[0].length === 34);

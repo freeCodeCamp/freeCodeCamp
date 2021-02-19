@@ -35,21 +35,21 @@ favRegex.lastIndex = 0;
 assert(favRegex.source.match(/\?/).length > 0);
 ```
 
-Your regex should match `favorite`
+Your regex should match the string `favorite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favorite'));
 ```
 
-Your regex should match `favourite`
+Your regex should match the string `favourite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favourite'));
 ```
 
-Your regex should not match `fav`
+Your regex should not match the string `fav`
 
 ```js
 favRegex.lastIndex = 0;

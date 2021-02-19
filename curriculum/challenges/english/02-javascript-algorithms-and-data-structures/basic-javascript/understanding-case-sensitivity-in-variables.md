@@ -39,7 +39,7 @@ Do not create any new variables.
 assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-`properCamelCase` should be defined and have a value of `"A String"`.
+`properCamelCase` should be defined and have a value of the string `A String`.
 
 ```js
 assert(

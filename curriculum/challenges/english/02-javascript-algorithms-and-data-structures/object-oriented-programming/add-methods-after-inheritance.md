@@ -74,7 +74,7 @@ The constructor for `beagle` should be set to `Dog`.
 assert(beagle.constructor === Dog);
 ```
 
-`beagle.eat()` should log `"nom nom nom"`
+`beagle.eat()` should log the string `nom nom nom`
 
 ```js
 console.log = function (msg) {
@@ -83,7 +83,7 @@ console.log = function (msg) {
 assert.throws(() => beagle.eat(), 'nom nom nom');
 ```
 
-`beagle.bark()` should log `"Woof!"`
+`beagle.bark()` should log the string `Woof!`
 
 ```js
 console.log = function (msg) {

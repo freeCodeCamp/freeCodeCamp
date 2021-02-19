@@ -34,13 +34,13 @@ Your regex `chewieRegex` should use the `*` character to match zero or more `a` 
 assert(/\*/.test(chewieRegex.source));
 ```
 
-Your regex should match `A` in `chewieQuote`.
+Your regex should match the string `A` in `chewieQuote`.
 
 ```js
 assert(result[0][0] === 'A');
 ```
 
-Your regex should match `Aaaaaaaaaaaaaaaa` in `chewieQuote`.
+Your regex should match the string `Aaaaaaaaaaaaaaaa` in `chewieQuote`.
 
 ```js
 assert(result[0] === 'Aaaaaaaaaaaaaaaa');
@@ -52,7 +52,7 @@ Your regex `chewieRegex` should match 16 characters in `chewieQuote`.
 assert(result[0].length === 16);
 ```
 
-Your regex should not match any characters in `He made a fair move. Screaming about it can't help you.`
+Your regex should not match any characters in the string `He made a fair move. Screaming about it can't help you.`
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-Your regex should not match any characters in `Let him have it. It's not wise to upset a Wookiee.`
+Your regex should not match any characters in the string `Let him have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(

@@ -32,7 +32,7 @@ Complete the regex `waldoRegex` to find `"Waldo"` in the string `waldoIsHiding` 
 
 # --hints--
 
-Your regex `waldoRegex` should find `Waldo`
+Your regex `waldoRegex` should find the string `Waldo`
 
 ```js
 assert(waldoRegex.test(waldoIsHiding));

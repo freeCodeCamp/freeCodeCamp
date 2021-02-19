@@ -36,7 +36,7 @@ You should use `.replace()` to search and replace.
 assert(code.match(/\.replace\(.*\)/));
 ```
 
-Your regex should change `one two three` to `three two one`
+Your regex should change the string `one two three` to the string `three two one`
 
 ```js
 assert(result === 'three two one');

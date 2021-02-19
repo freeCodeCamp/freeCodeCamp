@@ -31,7 +31,7 @@ Correct the assignment to `myStr` so it contains the string value of `Hello Worl
 
 # --hints--
 
-`myStr` should have a value of `Hello World`.
+`myStr` should have a value of the string `Hello World`.
 
 ```js
 assert(myStr === 'Hello World');

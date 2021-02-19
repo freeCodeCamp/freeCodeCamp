@@ -30,13 +30,13 @@ The `compareEquality` function in the editor compares two values using the equal
 
 # --hints--
 
-`compareEquality(10, "10")` should return `Not Equal`
+`compareEquality(10, "10")` should return the string `Not Equal`
 
 ```js
 assert(compareEquality(10, '10') === 'Not Equal');
 ```
 
-`compareEquality("20", 20)` should return `Not Equal`
+`compareEquality("20", 20)` should return the string `Not Equal`
 
 ```js
 assert(compareEquality('20', 20) === 'Not Equal');

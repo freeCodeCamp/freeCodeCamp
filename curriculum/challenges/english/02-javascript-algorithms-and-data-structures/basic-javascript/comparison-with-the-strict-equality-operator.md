@@ -28,19 +28,19 @@ Use the strict equality operator in the `if` statement so the function will retu
 
 # --hints--
 
-`testStrict(10)` should return `Not Equal`
+`testStrict(10)` should return the string `Not Equal`
 
 ```js
 assert(testStrict(10) === 'Not Equal');
 ```
 
-`testStrict(7)` should return `Equal`
+`testStrict(7)` should return the string `Equal`
 
 ```js
 assert(testStrict(7) === 'Equal');
 ```
 
-`testStrict("7")` should return `Not Equal`
+`testStrict("7")` should return the string `Not Equal`
 
 ```js
 assert(testStrict('7') === 'Not Equal');

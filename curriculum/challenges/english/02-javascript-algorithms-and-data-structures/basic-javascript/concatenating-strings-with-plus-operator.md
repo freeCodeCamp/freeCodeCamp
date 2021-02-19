@@ -29,11 +29,11 @@ var ourStr = "I come first. " + "I come second.";
 
 # --instructions--
 
-Build `myStr` from the strings `"This is the start. "` and `"This is the end."` using the `+` operator.
+Build `myStr` from the strings `This is the start. ` and `This is the end.` using the `+` operator.
 
 # --hints--
 
-`myStr` should have a value of `This is the start. This is the end.`
+`myStr` should have a value of the string `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');

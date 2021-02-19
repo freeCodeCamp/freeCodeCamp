@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-When instantiated with a Fahrenheit value, `Thermostat` should set the correct temperature.
+When instantiated with a Fahrenheit value, `Thermostat` should set the correct `temperature`.
 
 ```js
 assert(
@@ -121,7 +121,7 @@ assert(
 );
 ```
 
-Calling the `setter` with a Celsius value should set the temperature.
+Calling the `setter` with a Celsius value should set the `temperature`.
 
 ```js
 assert(

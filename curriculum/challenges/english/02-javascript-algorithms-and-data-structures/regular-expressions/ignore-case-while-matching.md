@@ -20,61 +20,61 @@ Write a regex `fccRegex` to match `freeCodeCamp`, no matter its case. Your regex
 
 # --hints--
 
-Your regex should match `freeCodeCamp`
+Your regex should match the string `freeCodeCamp`
 
 ```js
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
-Your regex should match `FreeCodeCamp`
+Your regex should match the string `FreeCodeCamp`
 
 ```js
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
-Your regex should match `FreecodeCamp`
+Your regex should match the string `FreecodeCamp`
 
 ```js
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
-Your regex should match `FreeCodecamp`
+Your regex should match the string `FreeCodecamp`
 
 ```js
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
-Your regex should not match `Free Code Camp`
+Your regex should not match the string `Free Code Camp`
 
 ```js
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
-Your regex should match `FreeCOdeCamp`
+Your regex should match the string `FreeCOdeCamp`
 
 ```js
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
-Your regex should not match `FCC`
+Your regex should not match the string `FCC`
 
 ```js
 assert(!fccRegex.test('FCC'));
 ```
 
-Your regex should match `FrEeCoDeCamp`
+Your regex should match the string `FrEeCoDeCamp`
 
 ```js
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
-Your regex should match `FrEeCodECamp`
+Your regex should match the string `FrEeCodECamp`
 
 ```js
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
-Your regex should match `FReeCodeCAmp`
+Your regex should match the string `FReeCodeCAmp`
 
 ```js
 assert(fccRegex.test('FReeCodeCAmp'));

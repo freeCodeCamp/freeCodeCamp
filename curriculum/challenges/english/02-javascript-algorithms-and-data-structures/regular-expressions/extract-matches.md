@@ -30,17 +30,17 @@ Note that the `.match` syntax is the "opposite" of the `.test` method you have b
 
 # --instructions--
 
-Apply the `.match()` method to extract the word `coding`.
+Apply the `.match()` method to extract the string `coding`.
 
 # --hints--
 
-The `result` should have the word `coding`
+The `result` should have the string `coding`
 
 ```js
 assert(result.join() === 'coding');
 ```
 
-Your regex `codingRegex` should search for `coding`
+Your regex `codingRegex` should search for the string `coding`
 
 ```js
 assert(codingRegex.source === 'coding');

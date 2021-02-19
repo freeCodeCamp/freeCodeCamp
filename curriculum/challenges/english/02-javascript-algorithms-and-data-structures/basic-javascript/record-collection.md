@@ -22,7 +22,7 @@ You start with an `updateRecords` function that takes an object like `collection
 
 # --hints--
 
-After `updateRecords(collection, 5439, "artist", "ABBA")`, `artist` should be `ABBA`
+After `updateRecords(collection, 5439, "artist", "ABBA")`, `artist` should be the string `ABBA`
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have `Take a Chance on Me` as the last element.
+After `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have the string `Take a Chance on Me` as the last element.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-After `updateRecords(collection, 1245, "tracks", "Addicted to Love")`, `tracks` should have `Addicted to Love` as the last element.
+After `updateRecords(collection, 1245, "tracks", "Addicted to Love")`, `tracks` should have the string `Addicted to Love` as the last element.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 2468, "tracks", "Free")`, `tracks` should have `1999` as the first element.
+After `updateRecords(collection, 2468, "tracks", "Free")`, `tracks` should have the string `1999` as the first element.
 
 ```js
 assert(
@@ -75,7 +75,7 @@ updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-After `updateRecords(collection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be `Riptide`
+After `updateRecords(collection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be the string `Riptide`
 
 ```js
 assert(

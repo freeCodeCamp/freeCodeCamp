@@ -43,13 +43,13 @@ Update the code so it only uses the `let` keyword.
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`catName` should be `Oliver`.
+`catName` should be the string `Oliver`.
 
 ```js
 assert(catName === 'Oliver');
 ```
 
-`quote` should be `Oliver says Meow!`
+`quote` should be the string `Oliver says Meow!`
 
 ```js
 assert(quote === 'Oliver says Meow!');

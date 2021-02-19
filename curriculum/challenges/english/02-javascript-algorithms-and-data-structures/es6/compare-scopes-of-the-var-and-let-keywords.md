@@ -80,7 +80,7 @@ This exercise is designed to illustrate the difference between how `var` and `le
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-The variable `i` declared in the `if` statement should equal `block scope`.
+The variable `i` declared in the `if` statement should equal the string `block scope`.
 
 ```js
 (getUserInput) =>
@@ -89,7 +89,7 @@ The variable `i` declared in the `if` statement should equal `block scope`.
   );
 ```
 
-`checkScope()` should return `function scope`
+`checkScope()` should return the string `function scope`
 
 ```js
 assert(checkScope() === 'function scope');

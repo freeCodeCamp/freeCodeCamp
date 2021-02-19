@@ -33,7 +33,7 @@ You can call or <dfn>invoke</dfn> this function by using its name followed by pa
 assert(typeof reusableFunction === 'function');
 ```
 
-`reusableFunction` should output `Hi World` to the console.
+`reusableFunction` should output the string `Hi World` to the console.
 
 ```js
 assert(hiWorldWasLogged);

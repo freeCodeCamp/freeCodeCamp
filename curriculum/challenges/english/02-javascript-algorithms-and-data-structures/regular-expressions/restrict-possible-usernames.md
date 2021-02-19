@@ -26,79 +26,79 @@ Change the regex `userCheck` to fit the constraints listed above.
 
 # --hints--
 
-Your regex should match `JACK`
+Your regex should match the string `JACK`
 
 ```js
 assert(userCheck.test('JACK'));
 ```
 
-Your regex should not match `J`
+Your regex should not match the string `J`
 
 ```js
 assert(!userCheck.test('J'));
 ```
 
-Your regex should match `Jo`
+Your regex should match the string `Jo`
 
 ```js
 assert(userCheck.test('Jo'));
 ```
 
-Your regex should match `Oceans11`
+Your regex should match the string `Oceans11`
 
 ```js
 assert(userCheck.test('Oceans11'));
 ```
 
-Your regex should match `RegexGuru`
+Your regex should match the string `RegexGuru`
 
 ```js
 assert(userCheck.test('RegexGuru'));
 ```
 
-Your regex should not match `007`
+Your regex should not match the string `007`
 
 ```js
 assert(!userCheck.test('007'));
 ```
 
-Your regex should not match `9`
+Your regex should not match the string `9`
 
 ```js
 assert(!userCheck.test('9'));
 ```
 
-Your regex should not match `A1`
+Your regex should not match the string `A1`
 
 ```js
 assert(!userCheck.test('A1'));
 ```
 
-Your regex should not match `BadUs3rnam3`
+Your regex should not match the string `BadUs3rnam3`
 
 ```js
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
-Your regex should match `Z97`
+Your regex should match the string `Z97`
 
 ```js
 assert(userCheck.test('Z97'));
 ```
 
-Your regex should not match `c57bT3`
+Your regex should not match the string `c57bT3`
 
 ```js
 assert(!userCheck.test('c57bT3'));
 ```
 
-Your regex should match `AB1`
+Your regex should match the string `AB1`
 
 ```js
 assert(userCheck.test('AB1'));
 ```
 
-Your regex should not match `J%4`
+Your regex should not match the string `J%4`
 
 ```js
 assert(!userCheck.test('J%4'))

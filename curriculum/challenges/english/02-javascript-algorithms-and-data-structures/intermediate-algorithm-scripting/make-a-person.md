@@ -47,25 +47,25 @@ assert.deepEqual(bob.firstName, undefined);
 assert.deepEqual(bob.lastName, undefined);
 ```
 
-`bob.getFirstName()` should return `Bob`.
+`bob.getFirstName()` should return the string `Bob`.
 
 ```js
 assert.deepEqual(bob.getFirstName(), 'Bob');
 ```
 
-`bob.getLastName()` should return `Ross`.
+`bob.getLastName()` should return the string `Ross`.
 
 ```js
 assert.deepEqual(bob.getLastName(), 'Ross');
 ```
 
-`bob.getFullName()` should return `Bob Ross`.
+`bob.getFullName()` should return the string `Bob Ross`.
 
 ```js
 assert.deepEqual(bob.getFullName(), 'Bob Ross');
 ```
 
-`bob.getFullName()` should return `Haskell Ross` after `bob.setFirstName("Haskell")`.
+`bob.getFullName()` should return the string `Haskell Ross` after `bob.setFirstName("Haskell")`.
 
 ```js
 assert.strictEqual(
@@ -77,7 +77,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getFullName()` should return `Haskell Curry` after `bob.setLastName("Curry")`.
+`bob.getFullName()` should return the string `Haskell Curry` after `bob.setLastName("Curry")`.
 
 ```js
 assert.strictEqual(
@@ -90,7 +90,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getFullName()` should return `Haskell Curry` after `bob.setFullName("Haskell Curry")`.
+`bob.getFullName()` should return the string `Haskell Curry` after `bob.setFullName("Haskell Curry")`.
 
 ```js
 assert.strictEqual(
@@ -102,7 +102,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getFirstName()` should return `Haskell` after `bob.setFullName("Haskell Curry")`.
+`bob.getFirstName()` should return the string `Haskell` after `bob.setFullName("Haskell Curry")`.
 
 ```js
 assert.strictEqual(
@@ -114,7 +114,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getLastName()` should return `Curry` after `bob.setFullName("Haskell Curry")`.
+`bob.getLastName()` should return the string `Curry` after `bob.setFullName("Haskell Curry")`.
 
 ```js
 assert.strictEqual(

@@ -37,19 +37,19 @@ Add the equality operator to the indicated line so that the function will return
 
 # --hints--
 
-`testEqual(10)` should return `Not Equal`
+`testEqual(10)` should return the string `Not Equal`
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` should return `Equal`
+`testEqual(12)` should return the string `Equal`
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` should return `Equal`
+`testEqual("12")` should return the string `Equal`
 
 ```js
 assert(testEqual('12') === 'Equal');

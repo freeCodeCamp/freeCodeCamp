@@ -47,7 +47,7 @@ If you have an instance `let duck = new Bird();` and you call `duck.eat()`, this
 
 # --instructions--
 
-Override the `fly()` method for `Penguin` so that it returns `Alas, this is a flightless bird.`
+Override the `fly()` method for `Penguin` so that it returns the string `Alas, this is a flightless bird.`
 
 # --hints--
 
@@ -57,7 +57,7 @@ Override the `fly()` method for `Penguin` so that it returns `Alas, this is a fl
 assert(penguin.fly() === 'Alas, this is a flightless bird.');
 ```
 
-The `bird.fly()` method should return `I am flying!`
+The `bird.fly()` method should return the string `I am flying!`
 
 ```js
 assert(new Bird().fly() === 'I am flying!');

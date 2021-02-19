@@ -37,7 +37,7 @@ function findGreater(a, b) {
 
 # --instructions--
 
-Use the conditional operator in the `checkEqual` function to check if two numbers are equal or not. The function should return either `Equal` or `Not Equal`.
+Use the conditional operator in the `checkEqual` function to check if two numbers are equal or not. The function should return either the string `Equal` or the string `Not Equal`.
 
 # --hints--
 
@@ -47,19 +47,19 @@ Use the conditional operator in the `checkEqual` function to check if two number
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
 ```
 
-`checkEqual(1, 2)` should return `Not Equal`
+`checkEqual(1, 2)` should return the string `Not Equal`
 
 ```js
 assert(checkEqual(1, 2) === 'Not Equal');
 ```
 
-`checkEqual(1, 1)` should return `Equal`
+`checkEqual(1, 1)` should return the string `Equal`
 
 ```js
 assert(checkEqual(1, 1) === 'Equal');
 ```
 
-`checkEqual(1, -1)` should return `Not Equal`
+`checkEqual(1, -1)` should return the string `Not Equal`
 
 ```js
 assert(checkEqual(1, -1) === 'Not Equal');
