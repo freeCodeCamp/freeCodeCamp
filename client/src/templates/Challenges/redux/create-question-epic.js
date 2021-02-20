@@ -23,10 +23,16 @@ function filesToMarkdown(files = {}) {
   }, '\n');
 }
 
-function transformEditorLink(url) {
+export function transformEditorLink(url) {
   return url
-    .replace(/(?<=\/\/)([^.]+)(\.)([^.]+)(\.)(repl)(\.co)(\/?)/, '$5.it/@$3/$1')
-    .replace(/(?<=\/\/)([^.]+)(\.)(glitch)(\.me)(\/?)/, '$3.com/edit/#!/$1');
+    .replace(
+      /(?<=\/\/)(?<projectname>[^.]+)\.(?<username>[^.]+)\.repl\.co\/?/,
+      'repl.it/@$<username>/$<projectname>'
+    )
+    .replace(
+      /(?<=\/\/)(?<projectname>[^.]+)\.glitch\.me\/?/,
+      'glitch.com/edit/#!/$<projectname>'
+    );
 }
 
 function createQuestionEpic(action$, state$, { window }) {
