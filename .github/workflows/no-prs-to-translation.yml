@@ -24,7 +24,7 @@ jobs:
               })
               throw new Error('This PR appears to touch translated curriculum files.')
             } else {
-                github.issues.createComment({
+              await github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
