@@ -288,12 +288,12 @@
     },
     "editor-tabs": {
       "info": "Info",
-      "code": "Code",
-      "tests": "Tests",
-      "preview": "Preview"
+      "code": "Código",
+      "tests": "Pruebas",
+      "preview": "Vista"
     },
-    "help-translate": "We are still translating the following certifications.",
-    "help-translate-link": "Help us translate."
+    "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
+    "help-translate-link": "Ayúdanos a traducir."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -377,7 +377,7 @@
     "email": "Correo electrónico",
     "and": "y",
     "change-theme": "Entra para cambiar el tema.",
-    "translation-pending": "Help us translate"
+    "translation-pending": "Ayúdanos a traducir"
   },
   "icons": {
     "gold-cup": "Copa de Oro",
