@@ -15,6 +15,10 @@ Develop a 2D real time multiplayer game using the HTML Canvas API and [Socket.io
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
+# --instructions--
+
+**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
+
 # --hints--
 
 You can provide your own project, not the example URL.
