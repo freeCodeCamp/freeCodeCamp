@@ -23,11 +23,10 @@ function filesToMarkdown(files = {}) {
   }, '\n');
 }
 
-function transformReplEditorLink(url) {
-  return url.replace(
-    /(?<=\/\/)([^.]+)\.([^.]+)\.repl\.co/,
-    /repl\.it\/@$2\/$1/
-  );
+function transformEditorLink(url) {
+  return url
+    .replace(/(?<=\/\/)([^.]+)(\.)([^.]+)(\.)(repl)(\.co)(\/?)/, '$5.it/@$3/$1')
+    .replace(/(?<=\/\/)([^.]+)(\.)(glitch)(\.me)(\/?)/, '$3.com/edit/#!/$1');
 }
 
 function createQuestionEpic(action$, state$, { window }) {
@@ -66,7 +65,7 @@ function createQuestionEpic(action$, state$, { window }) {
             : `**Your code so far**`
         }
         ${projectFormValues
-          ?.map(([key, val]) => `${key}: ${transformReplEditorLink(val)}\n`)
+          ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n`)
           ?.join('') || filesToMarkdown(files)}
 
         ${endingText}`
