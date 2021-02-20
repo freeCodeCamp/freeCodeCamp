@@ -10,22 +10,21 @@ on:
 jobs:
   has-translation:
     runs-on: ubuntu-latest
-    if: github.actor != 'github-actions[bot]'
     steps:
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             if (context.payload.pull_request.head.repo.fork) {
-              github.issues.createComment({
+              await github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body: 'Thanks for your pull-request. We are no longer accepting curriculum-related changes to non-English files. Please visit [our contributing guidelines](https://contribute.freecodecamp.org) to learn more about translating freeCodeCamp's resources.'
               })
-              core.setFailed('This PR appears to touch translated challenge files.')
+              throw new Error('This PR appears to touch translated curriculum files.')
             } else {
-                github.issues.createComment({
+              await github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
