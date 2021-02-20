@@ -474,7 +474,10 @@
     "invalid-url": "我们无法验证你的 URL，请确保填写正确",
     "invalid-protocol": "URL 必须以 http 或 https 开头",
     "url-not-image": "URL 必须直接链接到图片文件",
-    "use-valid-url": "请使用有效的 URL"
+    "use-valid-url": "请使用有效的 URL",
+    "editor-url": "Remember to submit the Live App URL.",
+    "own-work-url": "Remember to submit your own work.",
+    "publicly-visible-url": "Remember to submit a publicly visible app URL."
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
