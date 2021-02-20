@@ -19,12 +19,12 @@ dashedName: declare-the-doctype-of-an-html-document
 
 所有的 HTML 代码都必须位于 `html` 标签中。 其中 `<html>` 位于 `<!DOCTYPE html>` 之后，`</html>` 位于网页的结尾。
 
-以下是网页结构的一个例子：
+这是一个网页结构的列子。 你的 HTML 代码会在两个 `html` 标签之间。
 
 ```html
 <!DOCTYPE html>
 <html>
-  <!-- Your HTML code goes here -->
+
 </html>
 ```
 

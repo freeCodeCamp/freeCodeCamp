@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b14
-title: Check For The Presence of an Element With indexOf()
+title: Comprobar la presencia de un elemento con indexOf()
 challengeType: 1
 forumTopicId: 301154
 dashedName: check-for-the-presence-of-an-element-with-indexof
@@ -8,9 +8,9 @@ dashedName: check-for-the-presence-of-an-element-with-indexof
 
 # --description--
 
-Since arrays can be changed, or *mutated*, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, `indexOf()`, that allows us to quickly and easily check for the presence of an element on an array. `indexOf()` takes an element as a parameter, and when called, it returns the position, or index, of that element, or `-1` if the element does not exist on the array.
+Ya que los arreglos pueden modificarse, o *mutarse*, en cualquier momento, no se puede garantizar dónde estará un dato concreto en un arreglo determinado, o si ese elemento sigue existiendo. Afortunadamente, JavaScript nos proporciona otro método incorporado, `indexOf()`, que nos permite comprobar rápida y fácilmente la presencia de un elemento en un arreglo. `indexOf()` toma un elemento como parámetro, y cuando lo llama, devuelve la posición, o índice, de ese elemento, o `-1` si el elemento no existe en el arreglo.
 
-For example:
+Por ejemplo:
 
 ```js
 let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
@@ -22,17 +22,17 @@ fruits.indexOf('pears'); // returns 1, the first index at which the element exis
 
 # --instructions--
 
-`indexOf()` can be incredibly useful for quickly checking for the presence of an element on an array. We have defined a function, `quickCheck`, that takes an array and an element as arguments. Modify the function using `indexOf()` so that it returns `true` if the passed element exists on the array, and `false` if it does not.
+`indexOf()` puede ser increíblemente útil para comprobar rápidamente la presencia de un elemento en un arreglo. Hemos definido una función, `quickCheck`, que toma un arreglo y un elemento como argumentos. Modifica la función usando `indexOf()` para que devuelva `true` si el elemento pasado existe en el arreglo, y `false` si no existe.
 
 # --hints--
 
-The `quickCheck` function should return a boolean (`true` or `false`), not a string (`"true"` or `"false"`)
+La función `quickCheck` debe devolver un booleano (`true` o `false`), no una cadena (`"true"` o `"false"`)
 
 ```js
 assert.isBoolean(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
 ```
 
-`quickCheck(["squash", "onions", "shallots"], "mushrooms")` should return `false`
+`quickCheck(["squash", "onions", "shallots"], "mushrooms")` debe devolver `false`
 
 ```js
 assert.strictEqual(
@@ -41,7 +41,7 @@ assert.strictEqual(
 );
 ```
 
-`quickCheck(["onions", "squash", "shallots"], "onions")` should return `true`
+`quickCheck(["onions", "squash", "shallots"], "onions")` debe devolver `true`
 
 ```js
 assert.strictEqual(
@@ -50,19 +50,19 @@ assert.strictEqual(
 );
 ```
 
-`quickCheck([3, 5, 9, 125, 45, 2], 125)` should return `true`
+`quickCheck([3, 5, 9, 125, 45, 2], 125)` debe devolver `true`
 
 ```js
 assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true);
 ```
 
-`quickCheck([true, false, false], undefined)` should return `false`
+`quickCheck([true, false, false], undefined)` debe devolver `false`
 
 ```js
 assert.strictEqual(quickCheck([true, false, false], undefined), false);
 ```
 
-The `quickCheck` function should utilize the `indexOf()` method
+La función `quickCheck` debe utilizar el método `indexOf()`
 
 ```js
 assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1);
