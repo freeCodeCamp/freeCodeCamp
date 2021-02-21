@@ -15,6 +15,10 @@ Develop a 2D real time multiplayer game using the HTML Canvas API and [Socket.io
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
+# --instructions--
+
+**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
+
 # --hints--
 
 You can provide your own project, not the example URL.
@@ -116,25 +120,47 @@ Players can disconnect from the game at any time.
 Prevent the client from trying to guess / sniff the MIME type.
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['x-content-type-options'], 'nosniff');
+};
 ```
 
 Prevent cross-site scripting (XSS) attacks.
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['x-xss-protection'], '1; mode=block');
+};
 ```
 
 Nothing from the website is cached in the client.
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['surrogate-control'], 'no-store');
+  assert.equal(
+    parsed.headers['cache-control'],
+    'no-store, no-cache, must-revalidate, proxy-revalidate'
+  );
+  assert.equal(parsed.headers['pragma'], 'no-cache');
+  assert.equal(parsed.headers['expires'], '0');
+};
 ```
 
 The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['x-powered-by'], 'PHP 7.4.3');
+};
 ```
 
 # --solutions--
