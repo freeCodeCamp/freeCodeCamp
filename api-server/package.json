@@ -63,7 +63,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-proposal-object-rest-spread": "^7.12.13",
     "@babel/plugin-proposal-optional-chaining": "^7.12.16",
-    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-env": "^7.12.17",
     "@babel/register": "^7.12.13",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
