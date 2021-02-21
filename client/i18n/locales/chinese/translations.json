@@ -283,8 +283,8 @@
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "cert-map-estimates": {
-      "certs": "{{title}} 认证（300 小时）",
-      "coding-prep": "{{title}}（数千小时的挑战）"
+      "certs": "{{title}} Certification (300 hours)",
+      "coding-prep": "{{title}} (Thousands of hours of challenges)"
     },
     "editor-tabs": {
       "info": "Info",
@@ -405,7 +405,7 @@
     "algorithm": "分支节点"
   },
   "aria": {
-    "fcc-logo": "freeCodeCamp Logo",
+    "fcc-logo": "freeCodeCamp 徽标",
     "answer": "答案",
     "linkedin": "链接到 {{username}} 的 LinkedIn",
     "github": "链接到 {{username}} 的 GitHub",
