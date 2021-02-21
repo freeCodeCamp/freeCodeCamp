@@ -20,6 +20,8 @@ Cada archivo y carpeta mostrará una barra de progreso. La parte **azul** de la 
 
 Selecciona un archivo para trabajar y Crowdin abrirá la vista de edición.
 
+> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+
 ## Traducir un archivo
 
 ![Imagen - Vista de edición](./images/crowdin/editor.png)
@@ -37,19 +39,19 @@ Crowdin separa un documento en "cadenas" traducibles, normalmente oraciones. Cad
 9. Aquí puedes ver la ventana de comentarios. Si tienes preguntas o inquietudes sobre una cadena en particular, puedes dejar aquí un comentario sobre la cadena para que lo vean otros traductores.
 10. Estos dos botones de "panel" ocultarán las vistas izquierda (documento) y derecha (comentarios).
 
-> [!NOTE] Si ves una cadena oculta que incluye traducciones, notifícanos en la [ sala de chat de traductores ](https://chat.freecodecamp.org/channel/translators) para que podamos eliminar la traducción de la memoria.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [translators chat room](https://chat.freecodecamp.org/channel/translators) so we can remove the translation from memory.
 
 Cuando hayas completado la traducción de una cadena, pulsa el botón `Save` (guardar) para almacenar tu traducción en Crowdin. Luego, otros contribuyentes podrán votar tu traducción y los proofreaders podrán aprobarla.
 
 Eres bienvenido a traducir tantas cadenas como desees, no se requieren pasos adicionales cuando completas todo un archivo o propones una nueva traducción. Hacer clic en el botón `Save` es todo lo que se necesita para almacenar una traducción.
 
-> [!NOTE] Si ves algo en el archivo fuente en inglés que sea inexacto o incorrecto, no lo corrijas a través del flujo de traducción. En su lugar, deja un comentario en la cadena para notificarnos que hay una discrepancia, o crea un issue en GitHub.
+> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
 ### Traducir la documentación
 
 Traducir nuestra documentación de contribución es un proceso similar a traducir nuestros archivos de currículo.
 
-> [!NOTE] Nuestra documentación de contribución esta basada en `docsify`, y tenemos una  forma especial de procesar los cuadros de mensaje como este. Si ves cadenas que comiencen con `[!NOTE]`, `[!WARNING]` o ` [!TIP]`, estas palabras NO deben traducirse.
+> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
 ## Calificar traducciones
 
@@ -69,20 +71,14 @@ Cuando intentes guardar una traducción, es posible que veas aparecer un mensaje
 
 Este mensaje aparece cuando el sistema de control de calidad de Crowdin ha identificado un posible error en la traducción propuesta. En este ejemplo, hemos modificado el texto de una etiqueta `<code>` y Crowdin lo ha detectado.
 
-> [!WARNING] Tienes la opción de guardar una traducción a pesar de los errores, pero esto debe hacerse solo en circunstancias en las que el error pueda ser incorrecto.
-
-Crowdin a veces convierte etiquetas HTML (como `<code>`) en valores numéricos, como `<0>text</0>` o `<1>text</1>`. Estas etiquetas suelen ser etiquetas de código y nuestro control de calidad verificará que no se hayan traducido. Sin embargo, a veces pueden ser etiquetas `<strong>` o  `<em>`, que _deberían_ ser traducidas. Si pasas el cursor sobre una etiqueta numérica en la cadena de origen, puedes ver qué etiqueta o etiquetas HTML se han reemplazado:
-
-![Imagen - Colocar el cursor sobre una etiqueta](./images/crowdin/tag-hover.png)
-
-Si las etiquetas reemplazadas son algo que debería traducirse (como las etiquetas `strong`), traduce el contenido dentro de las etiquetas y selecciona "Save Anyway" (guardar de todos modos) cuando aparezca el error. Luego, deja un comentario en la cadena explicando que las etiquetas son `strong` (por ejemplo) para que otros traductores y proofreaders sepan que deben traducirse.
+> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
 ## Buenas prácticas de traducción
 
-Sigue estas pautas para asegurarte de que nuestras traducciones sean lo más precisas posible:
+Follow these guidelines to ensure our translations are as accurate as possible:
 
 - No traduzcas el contenido dentro de las etiquetas `<code>`. Estas etiquetas indican texto que se encuentra en el código y deben dejarse en inglés.
 - No agregues contenido adicional. Si crees que un desafío requiere cambios en el contenido del texto o información adicional, debes proponer los cambios a través de un issue de GitHub o una pull request que modifique el archivo en inglés.
 - No cambies el orden del contenido.
 
-Si tienes alguna pregunta, no dudes en comunicarte con nosotros en nuestra [sala de chat de traductores](https://chat.freecodecamp.org/channel/translators) y estaremos encantados de ayudarte.
+If you have any questions, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators) and we will be happy to assist you.
