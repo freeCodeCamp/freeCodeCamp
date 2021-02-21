@@ -19,9 +19,6 @@ Inicias una declaración de arreglo con un corchete de apertura, lo terminas con
 
 Modifica el nuevo arreglo `myArray` para que contenga tanto una `string` como un `number` (en ese orden).
 
-**Sugerencia**  
-Consulta el código de ejemplo en el editor de texto si te quedas atascado.
-
 # --hints--
 
 `myArray` debe ser un arreglo (`array`).

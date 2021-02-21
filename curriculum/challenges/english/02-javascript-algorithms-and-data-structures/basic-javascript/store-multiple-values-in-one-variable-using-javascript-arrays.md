@@ -19,9 +19,6 @@ You start an array declaration with an opening square bracket, end it with a clo
 
 Modify the new array `myArray` so that it contains both a `string` and a `number` (in that order).
 
-**Hint**  
-Refer to the example code in the text editor if you get stuck.
-
 # --hints--
 
 `myArray` should be an `array`.
