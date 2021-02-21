@@ -16,15 +16,15 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             if (context.payload.pull_request.head.repo.fork) {
-              await github.issues.createComment({
+              core.setFailed('This PR appears to touch translated curriculum files.')
+              github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'Thanks for your pull-request. We are no longer accepting curriculum-related changes to non-English files. Please visit [our contributing guidelines](https://contribute.freecodecamp.org) to learn more about translating freeCodeCamp's resources.'
+                body: "Thanks for your pull-request. We are no longer accepting curriculum-related changes to non-English files. Please visit [our contributing guidelines](https://contribute.freecodecamp.org) to learn more about translating freeCodeCamp's resources."
               })
-              throw new Error('This PR appears to touch translated curriculum files.')
             } else {
-              await github.issues.createComment({
+              github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
