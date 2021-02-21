@@ -31,7 +31,7 @@ dashedName: override-class-declarations-by-styling-id-attributes
 }
 ```
 
-**Note:** 无论在 pink-text class 之前或者之后声明，id 选择器的优先级总是高于 class 选择器。
+**注意：** 无论在 `pink-text` class 之前或者之后声明，`id` 选择器的优先级总是高于 class 选择器。
 
 # --hints--
 

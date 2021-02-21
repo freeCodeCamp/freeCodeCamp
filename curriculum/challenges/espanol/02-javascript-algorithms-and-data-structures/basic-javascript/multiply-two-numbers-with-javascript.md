@@ -1,6 +1,6 @@
 ---
 id: cf1231c1c11feddfaeb5bdef
-title: Multiply Two Numbers with JavaScript
+title: Multiplica dos números con JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3y3Aq'
 forumTopicId: 18243
@@ -9,11 +9,11 @@ dashedName: multiply-two-numbers-with-javascript
 
 # --description--
 
-We can also multiply one number by another.
+También podemos multiplicar un número por otro.
 
-JavaScript uses the `*` symbol for multiplication of two numbers.
+JavaScript utiliza el símbolo `*` para multiplicar dos números.
 
-**Example**
+**Ejemplo**
 
 ```js
 myVar = 13 * 13; // assigned 169
@@ -21,17 +21,17 @@ myVar = 13 * 13; // assigned 169
 
 # --instructions--
 
-Change the `0` so that product will equal `80`.
+Cambia el `0` para que el producto sea igual a `80`.
 
 # --hints--
 
-The variable `product` should be equal to 80.
+La variable `product` debe ser igual a 80.
 
 ```js
 assert(product === 80);
 ```
 
-You should use the `*` operator.
+Debes usar el operador `*`.
 
 ```js
 assert(/\*/.test(code));

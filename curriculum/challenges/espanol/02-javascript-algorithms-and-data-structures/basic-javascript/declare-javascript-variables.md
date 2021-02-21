@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c443eddfaeb5bdef
-title: Declare JavaScript Variables
+title: Declara variables de JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNanrHq'
 forumTopicId: 17556
@@ -9,32 +9,32 @@ dashedName: declare-javascript-variables
 
 # --description--
 
-In computer science, <dfn>data</dfn> is anything that is meaningful to the computer. JavaScript provides eight different <dfn>data types</dfn> which are `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number`, and `object`.
+En informática, los <dfn>datos</dfn> son cualquier cosa que tenga sentido para la computadora. JavaScript proporciona ocho <dfn>tipos de datos</dfn> diferentes, los cuales son `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number`, y `object`.
 
-For example, computers distinguish between numbers, such as the number `12`, and `strings`, such as `"12"`, `"dog"`, or `"123 cats"`, which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.
+Por ejemplo, las computadoras distinguen entre números, como el número `12` y cadenas (`strings`), tales como `"12"`, `"dog"`, o `"123 cats"`, que son colecciones de caracteres. Las computadoras pueden realizar operaciones matemáticas en un número, pero no en una cadena.
 
-<dfn>Variables</dfn> allow computers to store and manipulate data in a dynamic fashion. They do this by using a "label" to point to the data rather than using the data itself. Any of the eight data types may be stored in a variable.
+Las <dfn>variables</dfn> permiten a los ordenadores almacenar y manipular datos de forma dinámica. Hacen esto usando una "etiqueta" para apuntar a los datos en lugar de usar los datos en sí. Cualquiera de los ocho tipos de datos puede almacenarse en una variable.
 
-`Variables` are similar to the x and y variables you use in mathematics, which means they're a simple name to represent the data we want to refer to. Computer `variables` differ from mathematical variables in that they can store different values at different times.
+Las variables son similares a las variables x, e y que usan en matemáticas, lo que significa que son un nombre simple para representar los datos a los que queremos hacer referencia. Las variables de computadora difieren de las variables matemáticas en que pueden almacenar diferentes valores en diferentes momentos.
 
-We tell JavaScript to create or <dfn>declare</dfn> a variable by putting the keyword `var` in front of it, like so:
+Le decimos a JavaScript que cree o <dfn>declare</dfn> una variable poniendo la palabra clave `var` delante de ella, así:
 
 ```js
 var ourName;
 ```
 
-creates a `variable` called `ourName`. In JavaScript we end statements with semicolons. `Variable` names can be made up of numbers, letters, and `$` or `_`, but may not contain spaces or start with a number.
+crea una variable llamada `ourName`. En JavaScript terminamos las sentencias con punto y coma. Los nombres de las variables pueden estar formados por números, letras y `$` o `_`, pero no pueden contener espacios ni empezar con un número.
 
 # --instructions--
 
-Use the `var` keyword to create a variable called `myName`.
+Utiliza la palabra clave `var` para crear una variable llamada `myName`.
 
-**Hint**  
-Look at the `ourName` example above if you get stuck.
+**Sugerencia**  
+Mira el ejemplo `ourName` de arriba si te quedas atascado.
 
 # --hints--
 
-You should declare `myName` with the `var` keyword, ending with a semicolon
+Debes declarar `myName` con la palabra clave `var`, terminando con un punto y coma
 
 ```js
 assert(/var\s+myName\s*;/.test(code));

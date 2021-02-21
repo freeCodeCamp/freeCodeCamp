@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ad
-title: Decrement a Number with JavaScript
+title: Decrementa un número con JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
@@ -9,30 +9,30 @@ dashedName: decrement-a-number-with-javascript
 
 # --description--
 
-You can easily <dfn>decrement</dfn> or decrease a variable by one with the `--` operator.
+Puedes fácilmente <dfn>decrementar</dfn> o disminuir una variable por uno utilizando el operador `--`.
 
 `i--;`
 
-is the equivalent of
+es equivalente a
 
 `i = i - 1;`
 
-**Note**  
-The entire line becomes `i--;`, eliminating the need for the equal sign.
+**Nota**  
+Toda la línea se convierte en `i--;`, eliminando la necesidad del signo de igualdad.
 
 # --instructions--
 
-Change the code to use the `--` operator on `myVar`.
+Cambia el código para usar el operador `--` en `myVar`.
 
 # --hints--
 
-`myVar` should equal `10`.
+`myVar` debe ser igual a `10`.
 
 ```js
 assert(myVar === 10);
 ```
 
-`myVar = myVar - 1;` should be changed.
+`myVar = myVar - 1;` debe cambiarse.
 
 ```js
 assert(
@@ -40,13 +40,13 @@ assert(
 );
 ```
 
-You should use the `--` operator on `myVar`.
+Debes usar el operador `--` en `myVar`.
 
 ```js
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-You should not change code above the specified comment.
+No debes cambiar el código por encima del comentario especificado.
 
 ```js
 assert(/var myVar = 11;/.test(code));
