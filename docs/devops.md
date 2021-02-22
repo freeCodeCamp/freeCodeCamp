@@ -682,7 +682,7 @@ Provisioning VMs with the Code
    ```
 
    Start placeholder instances for the web client, these will be updated with
-   artifacts from the Azure pipline.
+   artifacts from the Azure pipeline.
 
    > Todo: This setup needs to move to S3 or Azure Blob storage
 
