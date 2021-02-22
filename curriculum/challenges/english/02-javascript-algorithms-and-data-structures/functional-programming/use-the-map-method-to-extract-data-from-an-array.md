@@ -30,8 +30,10 @@ const users = [
 ];
 
 const names = users.map(user => user.name);
-console.log(names); // [ 'John', 'Amy', 'camperCat' ]
+console.log(names);
 ```
+
+The console would display the value ` [ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 

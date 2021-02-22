@@ -15,8 +15,10 @@ Search for non-whitespace using `\S`, which is an uppercase `s`. This pattern wi
 ```js
 let whiteSpace = "Whitespace. Whitespace everywhere!"
 let nonSpaceRegex = /\S/g;
-whiteSpace.match(nonSpaceRegex).length; // 32
+whiteSpace.match(nonSpaceRegex).length;
 ```
+
+The value returned by the `.length` method would be `32`.
 
 # --instructions--
 

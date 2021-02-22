@@ -14,12 +14,14 @@ The <dfn>less than</dfn> operator (`<`) compares the values of two numbers. If t
 **Examples**
 
 ```js
-2   < 5  // true
-'3' < 7  // true
-5   < 5  // false
-3   < 2  // false
-'8' < 4  // false
+2   < 5
+'3' < 7
+5   < 5
+3   < 2
+'8' < 4
 ```
+
+In order, these comparisons return: `true`, `true`, `false`, `false`, and `false`.
 
 # --instructions--
 

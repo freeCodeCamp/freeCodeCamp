@@ -21,10 +21,12 @@ var myObj = {
   "More Space": "Spock",
   "NoSpace": "USS Enterprise"
 };
-myObj["Space Name"]; // Kirk
-myObj['More Space']; // Spock
-myObj["NoSpace"];    // USS Enterprise
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
 ```
+
+`myObj["Space Name"]` would be the string `Kirk`, `myObj['More Space']` would be the string `Spock`, and `myObj["NoSpace"]` would be the string `USS Enterprise`.
 
 Note that property names with spaces in them must be in quotes (single or double).
 

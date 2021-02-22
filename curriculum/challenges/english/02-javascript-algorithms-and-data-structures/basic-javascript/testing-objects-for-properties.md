@@ -18,9 +18,11 @@ var myObj = {
   top: "hat",
   bottom: "pants"
 };
-myObj.hasOwnProperty("top");    // true
-myObj.hasOwnProperty("middle"); // false
+myObj.hasOwnProperty("top");
+myObj.hasOwnProperty("middle");
 ```
+
+The first `hasOwnProperty` returns `true`, while the second returns `false`.
 
 # --instructions--
 

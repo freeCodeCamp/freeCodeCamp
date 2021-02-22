@@ -23,9 +23,11 @@ let quit = "qu";
 let noquit = "qt";
 let quRegex= /q(?=u)/;
 let qRegex = /q(?!u)/;
-quit.match(quRegex); // ["q"]
-noquit.match(qRegex); // ["q"]
+quit.match(quRegex);
+noquit.match(qRegex);
 ```
+
+Both of these `match` calls would return `["q"]`.
 
 A more practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
 

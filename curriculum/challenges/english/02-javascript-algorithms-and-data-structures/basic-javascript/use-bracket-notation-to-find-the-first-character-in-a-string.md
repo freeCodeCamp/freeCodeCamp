@@ -19,8 +19,10 @@ Example:
 
 ```js
 var firstName = "Charles";
-var firstLetter = firstName[0]; // "C"
+var firstLetter = firstName[0];
 ```
+
+`firstLetter` has a value of the string `C`.
 
 # --instructions--
 

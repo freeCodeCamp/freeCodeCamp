@@ -19,9 +19,11 @@ var numArray = [];
 for (var i = 0; i < 3; i++) {
   numArray.push(i);
 }
-console.log(numArray); // [0, 1, 2]
-console.log(i); // 3
+console.log(numArray);
+console.log(i);
 ```
+
+Here the console will display the values `[0, 1, 2]` and `3`.
 
 With the `var` keyword, `i` is declared globally. So when `i++` is executed, it updates the global variable. This code is similar to the following:
 
@@ -31,9 +33,11 @@ var i;
 for (i = 0; i < 3; i++) {
   numArray.push(i);
 }
-console.log(numArray); // [0, 1, 2]
-console.log(i); // 3
+console.log(numArray);
+console.log(i);
 ```
+
+Here the console will display the values `[0, 1, 2]` and `3`.
 
 This behavior will cause problems if you were to create a function and store it for later use inside a `for` loop that uses the `i` variable. This is because the stored function will always refer to the value of the updated global `i` variable.
 
@@ -46,8 +50,10 @@ for (var i = 0; i < 3; i++) {
     };
   }
 }
-console.log(printNumTwo()); // 3
+console.log(printNumTwo());
 ```
+
+Here the console will display the value `3`.
 
 As you can see, `printNumTwo()` prints 3 and not 2. This is because the value assigned to `i` was updated and the `printNumTwo()` returns the global `i` and not the value `i` had when the function was created in the for loop. The `let` keyword does not follow this behavior:
 
@@ -60,9 +66,11 @@ for (let i = 0; i < 3; i++) {
     };
   }
 }
-console.log(printNumTwo()); // 2
-console.log(i); // "i is not defined"
+console.log(printNumTwo());
+console.log(i);
 ```
+
+Here the console will display the value `2`, and an error that `i is not defined`.
 
 `i` is not defined because it was not declared in the global scope. It is only declared within the `for` loop statement. `printNumTwo()` returned the correct value because three different `i` variables with unique values (0, 1, and 2) were created by the `let` keyword within the loop statement.
 

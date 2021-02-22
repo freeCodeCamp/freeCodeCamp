@@ -18,9 +18,11 @@ For example, there are slight differences in American and British English and yo
 let american = "color";
 let british = "colour";
 let rainbowRegex= /colou?r/;
-rainbowRegex.test(american); // true
-rainbowRegex.test(british); // true
+rainbowRegex.test(american);
+rainbowRegex.test(british);
 ```
+
+Both uses of the `test` method would return `true`.
 
 # --instructions--
 

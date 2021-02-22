@@ -17,8 +17,10 @@ Example:
 
 ```js
 var firstName = "Charles";
-var thirdToLastLetter = firstName[firstName.length - 3]; // "l"
+var thirdToLastLetter = firstName[firstName.length - 3];
 ```
+
+`thirdToLastLetter` has a value of the string `l`.
 
 # --instructions--
 

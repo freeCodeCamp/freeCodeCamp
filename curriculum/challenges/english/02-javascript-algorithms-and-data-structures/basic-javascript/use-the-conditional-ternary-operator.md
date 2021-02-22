@@ -10,9 +10,7 @@ dashedName: use-the-conditional-ternary-operator
 
 The <dfn>conditional operator</dfn>, also called the <dfn>ternary operator</dfn>, can be used as a one line if-else expression.
 
-The syntax is:
-
-`condition ? expression-if-true : expression-if-false;`
+The syntax is `a ? b : c`, where `a` is the condition, `b` is the code to run when the condition returns `true`, and `c` is the code to run when the condition returns `false`.
 
 The following function uses an `if/else` statement to check a condition:
 

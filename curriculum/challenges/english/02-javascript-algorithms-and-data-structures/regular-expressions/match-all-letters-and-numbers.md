@@ -17,11 +17,13 @@ let longHand = /[A-Za-z0-9_]+/;
 let shortHand = /\w+/;
 let numbers = "42";
 let varNames = "important_var";
-longHand.test(numbers); // true
-shortHand.test(numbers); // true
-longHand.test(varNames); // true
-shortHand.test(varNames); // true
+longHand.test(numbers);
+shortHand.test(numbers);
+longHand.test(varNames);
+shortHand.test(varNames);
 ```
+
+All four of these `test` calls would return `true`.
 
 These shortcut character classes are also known as <dfn>shorthand character classes</dfn>.
 

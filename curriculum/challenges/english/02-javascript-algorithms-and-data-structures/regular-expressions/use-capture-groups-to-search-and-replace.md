@@ -15,14 +15,18 @@ You can search and replace text in a string using `.replace()` on a string. The 
 ```js
 let wrongText = "The sky is silver.";
 let silverRegex = /silver/;
-wrongText.replace(silverRegex, "blue"); // "The sky is blue."
+wrongText.replace(silverRegex, "blue");
 ```
+
+The `replace` call would return the string `The sky is blue.`.
 
 You can also access capture groups in the replacement string with dollar signs (`$`).
 
 ```js
-"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1'); // "Camp Code"
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
 ```
+
+The `replace` call would return the string `Camp Code`.
 
 # --instructions--
 

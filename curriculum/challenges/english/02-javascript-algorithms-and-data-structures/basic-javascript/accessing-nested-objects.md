@@ -26,9 +26,11 @@ var ourStorage = {
     "bottom drawer": "soda"
   }
 };
-ourStorage.cabinet["top drawer"].folder2; // "secrets"
-ourStorage.desk.drawer; // "stapler"
+ourStorage.cabinet["top drawer"].folder2;
+ourStorage.desk.drawer;
 ```
+
+`ourStorage.cabinet["top drawer"].folder2` would be the string `secrets`, and `ourStorage.desk.drawer` would be the string `stapler`.
 
 # --instructions--
 

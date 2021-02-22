@@ -13,13 +13,13 @@ Comments are lines of code that JavaScript will intentionally ignore. Comments a
 
 There are two ways to write comments in JavaScript:
 
-Using `//` will tell JavaScript to ignore the remainder of the text on the current line:
+Using `//` will tell JavaScript to ignore the remainder of the text on the current line. This is an in-line comment:
 
 ```js
 // This is an in-line comment.
 ```
 
-You can make a multi-line comment beginning with `/*` and ending with `*/`:
+You can make a multi-line comment beginning with `/*` and ending with `*/`. This is a multi-line comment:
 
 ```js
 /* This is a

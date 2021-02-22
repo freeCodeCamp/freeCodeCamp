@@ -46,9 +46,11 @@ function bar(x) {
 While these two functions look nearly identical if we pass a number to both we get different outputs.
 
 ```js
-foo(0) // "Less than one"
-bar(0) // "Less than two"
+foo(0)
+bar(0)
 ```
+
+`foo(0)` will return the string `Less than one`, and `bar(0)` will return the string `Less than two`.
 
 # --instructions--
 

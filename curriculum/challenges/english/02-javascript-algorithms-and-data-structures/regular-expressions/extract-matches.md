@@ -15,11 +15,13 @@ To use the `.match()` method, apply the method on a string and pass in the regex
 Here's an example:
 
 ```js
-"Hello, World!".match(/Hello/); // ["Hello"]
+"Hello, World!".match(/Hello/);
 let ourStr = "Regular expressions";
 let ourRegex = /expressions/;
-ourStr.match(ourRegex); // ["expressions"]
+ourStr.match(ourRegex);
 ```
+
+Here the first `match` would return `["Hello"]` and the second would return `["expressions"]`.
 
 Note that the `.match` syntax is the "opposite" of the `.test` method you have been using thus far:
 

@@ -20,7 +20,7 @@ greetings.pop();
 
 `greetings` now has the value `['whats up?', 'hello']`.
 
-```
+```js
 greetings.shift();
 ```
 

@@ -24,9 +24,9 @@ Example:
 
 ```js
 var ourStr = "I come first. " + "I come second.";
-// "I come first. I come second."
 ```
 
+The string `I come first. I come second.` would be displayed in the console.
 # --instructions--
 
 Build `myStr` from the strings `This is the start. ` and `This is the end.` using the `+` operator.

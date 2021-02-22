@@ -18,11 +18,12 @@ let obj = {
   review:"Awesome"
 };
 Object.freeze(obj);
-obj.review = "bad"; // error
-obj.newProp = "Test"; // error
+obj.review = "bad";
+obj.newProp = "Test";
 console.log(obj); 
-// { name: "FreeCodeCamp", review:"Awesome"}
 ```
+
+The `obj.review` and `obj.newProp` assignments will result in errors, and the console will display the value `{ name: "FreeCodeCamp", review: "Awesome" }`.
 
 # --instructions--
 

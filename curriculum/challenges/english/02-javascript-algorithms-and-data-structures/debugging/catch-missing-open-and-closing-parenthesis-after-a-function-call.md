@@ -16,9 +16,11 @@ The variables in the following example are different:
 function myFunction() {
   return "You rock!";
 }
-let varOne = myFunction; // set to equal a function
-let varTwo = myFunction(); // set to equal the string "You rock!"
+let varOne = myFunction;
+let varTwo = myFunction();
 ```
+
+Here `varOne` is the function `myFunction`, and `varTwo` is the string `You rock!`.
 
 # --instructions--
 

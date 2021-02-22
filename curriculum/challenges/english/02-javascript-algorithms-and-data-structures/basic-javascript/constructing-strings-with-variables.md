@@ -16,8 +16,9 @@ Example:
 ```js
 var ourName = "freeCodeCamp";
 var ourStr = "Hello, our name is " + ourName + ", how are you?";
-// "Hello, our name is freeCodeCamp, how are you?"
 ```
+
+`ourStr` now has a value of the string `Hello, our name is freeCodeCamp, how are you?`.
 
 # --instructions--
 

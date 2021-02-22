@@ -27,8 +27,10 @@ function curried(x) {
 
 const curried = x => y => x + y
 
-curried(1)(2) // 3
+curried(1)(2)
 ```
+
+`curried(1)(2)` would return `3`.
 
 This is useful in your program if you can't supply all the arguments to a function at one time. You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available. Here's an example using the curried function in the example above:
 

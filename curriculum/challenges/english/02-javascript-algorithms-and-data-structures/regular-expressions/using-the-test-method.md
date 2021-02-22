@@ -17,8 +17,10 @@ JavaScript has multiple ways to use regexes. One way to test a regex is using th
 ```js
 let testStr = "freeCodeCamp";
 let testRegex = /Code/;
-testRegex.test(testStr); // true
+testRegex.test(testStr);
 ```
+
+The `test` method here returns `true`.
 
 # --instructions--
 

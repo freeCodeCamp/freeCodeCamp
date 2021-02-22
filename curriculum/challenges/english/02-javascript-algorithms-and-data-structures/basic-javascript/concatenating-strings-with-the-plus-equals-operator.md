@@ -19,8 +19,9 @@ Example:
 ```js
 var ourStr = "I come first. ";
 ourStr += "I come second.";
-// "I come first. I come second."
 ```
+
+`ourStr` now has a value of the string `I come first. I come second.`.
 
 # --instructions--
 

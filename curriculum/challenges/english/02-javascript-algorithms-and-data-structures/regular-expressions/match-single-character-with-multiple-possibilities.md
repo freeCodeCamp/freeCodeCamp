@@ -20,18 +20,19 @@ let bagStr = "bag";
 let bugStr = "bug";
 let bogStr = "bog";
 let bgRegex = /b[aiu]g/;
-bigStr.match(bgRegex); // ["big"]
-bagStr.match(bgRegex); // ["bag"]
-bugStr.match(bgRegex); // ["bug"]
-bogStr.match(bgRegex); // null
+bigStr.match(bgRegex);
+bagStr.match(bgRegex);
+bugStr.match(bgRegex);
+bogStr.match(bgRegex);
 ```
+
+In order, the four `match` calls would return the values `["big"]`, `["bag"]`, `["bug"]`, and `null`.
 
 # --instructions--
 
 Use a character class with vowels (`a`, `e`, `i`, `o`, `u`) in your regex `vowelRegex` to find all the vowels in the string `quoteSample`.
 
-**Note**  
-Be sure to match both upper- and lowercase vowels.
+**Note:** Be sure to match both upper- and lowercase vowels.
 
 # --hints--
 

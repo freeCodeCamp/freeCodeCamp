@@ -16,9 +16,11 @@ The wildcard character `.` will match any one character. The wildcard is also ca
 let humStr = "I'll hum a song";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
-huRegex.test(humStr); // Returns true
-huRegex.test(hugStr); // Returns true
+huRegex.test(humStr);
+huRegex.test(hugStr);
 ```
+
+Both of these `test` calls would return `true`.
 
 # --instructions--
 

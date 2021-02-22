@@ -16,9 +16,9 @@ You can search for whitespace using `\s`, which is a lowercase `s`. This pattern
 let whiteSpace = "Whitespace. Whitespace everywhere!"
 let spaceRegex = /\s/g;
 whiteSpace.match(spaceRegex);
-// Returns [" ", " "]
 ```
 
+This `match` call would return `[" ", " "]`.
 # --instructions--
 
 Change the regex `countWhiteSpace` to look for multiple whitespace characters in a string.

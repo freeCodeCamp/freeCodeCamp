@@ -32,9 +32,11 @@ var ourPets = [
     ]
   }
 ];
-ourPets[0].names[1]; // "Fluffy"
-ourPets[1].names[0]; // "Spot"
+ourPets[0].names[1];
+ourPets[1].names[0];
 ```
+
+`ourPets[0].names[1]` would be the string `Fluffy`, and `ourPets[1][0]` would be the string `Spot`.
 
 # --instructions--
 

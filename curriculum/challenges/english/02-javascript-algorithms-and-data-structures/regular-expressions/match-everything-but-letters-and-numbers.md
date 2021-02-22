@@ -16,9 +16,11 @@ You can search for the opposite of the `\w` with `\W`. Note, the opposite patter
 let shortHand = /\W/;
 let numbers = "42%";
 let sentence = "Coding!";
-numbers.match(shortHand); // ["%"]
-sentence.match(shortHand); // ["!"]
+numbers.match(shortHand);
+sentence.match(shortHand);
 ```
+
+The first `match` call would return the value `["%"]` and the second would return `["!"]`.
 
 # --instructions--
 

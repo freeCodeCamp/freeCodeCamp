@@ -24,12 +24,14 @@ var alpha = {
   25:"B",
   26:"A"
 };
-alpha[2]; // "Y"
-alpha[24]; // "C"
+alpha[2];
+alpha[24];
 
 var value = 2;
-alpha[value]; // "Y"
+alpha[value];
 ```
+
+`alpha[2]` is the string `Y`, `alpha[24]` is the string `C`, and `alpha[value]` is the string `Y`.
 
 # --instructions--
 

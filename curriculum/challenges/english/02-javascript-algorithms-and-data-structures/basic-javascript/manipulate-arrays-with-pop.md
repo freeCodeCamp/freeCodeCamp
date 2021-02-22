@@ -18,9 +18,11 @@ Any type of entry can be popped off of an array - numbers, strings, even nested 
 ```js
 var threeArr = [1, 4, 6];
 var oneDown = threeArr.pop();
-console.log(oneDown); // 6
-console.log(threeArr); // [1, 4]
+console.log(oneDown);
+console.log(threeArr);
 ```
+
+The first `console.log` will display the value `6`, and the second will display the value `[1, 4]`.
 
 # --instructions--
 

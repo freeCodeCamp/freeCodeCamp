@@ -19,9 +19,11 @@ The example below matches any word that occurs twice separated by a space:
 ```js
 let repeatStr = "regex regex";
 let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr); // true
-repeatStr.match(repeatRegex); // ["regex regex", "regex"]
+repeatRegex.test(repeatStr);
+repeatStr.match(repeatRegex);
 ```
+
+The `test` call would return `true`, and the `match` call would return `["regex regex", "regex"]`.
 
 Using the `.match()` method on a string will return an array with the string it matches, along with its capture group.
 

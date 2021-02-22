@@ -15,16 +15,19 @@ Consider the following ES5 code:
 ```js
 const user = { name: 'John Doe', age: 34 };
 
-const name = user.name; // name = 'John Doe'
-const age = user.age; // age = 34
+const name = user.name;
+const age = user.age;
 ```
+
+`name` would have a value of the string `John Doe`, and `age` would have the number `34`.
 
 Here's an equivalent assignment statement using the ES6 destructuring syntax:
 
 ```js
 const { name, age } = user;
-// name = 'John Doe', age = 34
 ```
+
+Again, `name` would have a value of the string `John Doe`, and `age` would have the number `34`.
 
 Here, the `name` and `age` variables will be created and assigned the values of their respective values from the `user` object. You can see how much cleaner this is.
 

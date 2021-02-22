@@ -24,8 +24,10 @@ function countup(n) {
     return countArray;
   }
 }
-console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
+console.log(countup(5));
 ```
+
+The value `[1, 2, 3, 4, 5]` will be displayed in the console.
 
 At first, this seems counterintuitive since the value of `n` *decreases*, but the values in the final array are *increasing*. This happens because the push happens last, after the recursive call has returned. At the point where `n` is pushed into the array, `countup(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
 

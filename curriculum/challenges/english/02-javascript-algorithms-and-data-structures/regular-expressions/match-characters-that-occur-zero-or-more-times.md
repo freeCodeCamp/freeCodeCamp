@@ -17,10 +17,12 @@ let soccerWord = "gooooooooal!";
 let gPhrase = "gut feeling";
 let oPhrase = "over the moon";
 let goRegex = /go*/;
-soccerWord.match(goRegex); // ["goooooooo"]
-gPhrase.match(goRegex); // ["g"]
-oPhrase.match(goRegex); // null
+soccerWord.match(goRegex);
+gPhrase.match(goRegex);
+oPhrase.match(goRegex);
 ```
+
+In order, the three `match` calls would return the values `["goooooooo"]`, `["g"]`, and `null`.
 
 # --instructions--
 

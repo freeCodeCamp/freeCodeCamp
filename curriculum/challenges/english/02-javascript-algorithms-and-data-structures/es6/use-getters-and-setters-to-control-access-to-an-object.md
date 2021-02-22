@@ -31,10 +31,12 @@ class Book {
   }
 }
 const novel = new Book('anonymous');
-console.log(novel.writer);  // anonymous
+console.log(novel.writer);
 novel.writer = 'newAuthor';
-console.log(novel.writer);  // newAuthor
+console.log(novel.writer);
 ```
+
+The console would display the strings `anonymous` and `newAuthor`.
 
 Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details.
 

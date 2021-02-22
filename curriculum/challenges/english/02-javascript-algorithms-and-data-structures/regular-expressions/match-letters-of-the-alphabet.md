@@ -19,10 +19,12 @@ let catStr = "cat";
 let batStr = "bat";
 let matStr = "mat";
 let bgRegex = /[a-e]at/;
-catStr.match(bgRegex); // ["cat"]
-batStr.match(bgRegex); // ["bat"]
-matStr.match(bgRegex); // null
+catStr.match(bgRegex);
+batStr.match(bgRegex);
+matStr.match(bgRegex);
 ```
+
+In order, the three `match` calls would return the values `["cat"]`, `["bat"]`, and `null`.
 
 # --instructions--
 

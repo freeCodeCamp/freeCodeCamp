@@ -20,10 +20,11 @@ var myObj = {
   prop1: "val1",
   prop2: "val2"
 };
-var prop1val = myObj.prop1; // val1
-var prop2val = myObj.prop2; // val2
+var prop1val = myObj.prop1;
+var prop2val = myObj.prop2;
 ```
 
+`prop1val` would have a value of the string `val1`, and `prop2val` would have a value of the string `val2`.
 # --instructions--
 
 Read in the property values of `testObj` using dot notation. Set the variable `hatValue` equal to the object's property `hat` and set the variable `shirtValue` equal to the object's property `shirt`.

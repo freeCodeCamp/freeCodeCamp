@@ -26,8 +26,10 @@ const users = [
 ];
 
 const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
-console.log(sumOfAges); // 64
+console.log(sumOfAges);
 ```
+
+The console would display the value `64`.
 
 In another example, see how an object can be returned containing the names of the users as properties with their ages as values.
 
@@ -42,8 +44,10 @@ const usersObj = users.reduce((obj, user) => {
   obj[user.name] = user.age;
   return obj;
 }, {});
-console.log(usersObj); // { John: 34, Amy: 20, camperCat: 10 }
+console.log(usersObj);
 ```
+
+The console would display the value `{ John: 34, Amy: 20, camperCat: 10 }`.
 
 # --instructions--
 

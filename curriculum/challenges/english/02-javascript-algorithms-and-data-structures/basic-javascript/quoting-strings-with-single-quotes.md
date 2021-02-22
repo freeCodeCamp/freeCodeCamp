@@ -26,8 +26,10 @@ However, this becomes a problem if you need to use the outermost quotes within i
 
 ```js
 goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
-badStr = 'Finn responds, "Let's go!"'; // Throws an error
+badStr = 'Finn responds, "Let's go!"';
 ```
+
+Here `badStr` will throw an error.
 
 In the <dfn>goodStr</dfn> above, you can use both quotes safely by using the backslash <code>\\</code> as an escape character.
 

@@ -26,9 +26,11 @@ function test (myCondition) {
   }
   return "It was false";
 }
-test(true);  // "It was true"
-test(false); // "It was false"
+test(true);
+test(false);
 ```
+
+`test(true)` returns the string `It was true`, and `test(false)` returns the string `It was false`.
 
 When `test` is called with a value of `true`, the `if` statement evaluates `myCondition` to see if it is `true` or not. Since it is `true`, the function returns `It was true`. When we call `test` with a value of `false`, `myCondition` is *not* `true` and the statement in the curly braces is not executed and the function returns `It was false`.
 

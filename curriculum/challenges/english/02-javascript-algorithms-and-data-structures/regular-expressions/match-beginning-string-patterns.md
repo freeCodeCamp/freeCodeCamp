@@ -15,10 +15,12 @@ In an earlier challenge, you used the caret character (`^`) inside a character s
 ```js
 let firstString = "Ricky is first and can be found.";
 let firstRegex = /^Ricky/;
-firstRegex.test(firstString); // true
+firstRegex.test(firstString);
 let notFirst = "You can't find Ricky now.";
-firstRegex.test(notFirst); // false
+firstRegex.test(notFirst);
 ```
+
+The first `test` call would return `true`, while the second would return `false`.
 
 # --instructions--
 

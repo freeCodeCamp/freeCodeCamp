@@ -19,9 +19,11 @@ Array indexes are written in the same bracket notation that strings use, except 
 
 ```js
 var array = [50,60,70];
-array[0]; // 50
-var data = array[1];  // 60
+array[0];
+var data = array[1];
 ```
+
+`array[0]` would point to the value `50`, and `data` would have the value `60`.
 
 **Note:** There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
 

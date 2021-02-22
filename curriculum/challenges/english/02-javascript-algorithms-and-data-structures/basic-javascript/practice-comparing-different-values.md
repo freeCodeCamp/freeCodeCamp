@@ -20,9 +20,11 @@ If the values being compared are not of the same type, the equality operator wil
 **Note:** In JavaScript, you can determine the type of a variable or a value with the `typeof` operator, as follows:
 
 ```js
-typeof 3   // 'number'
-typeof '3' // 'string'
+typeof 3
+typeof '3'
 ```
+
+`typeof 3` returns the string `number`, and `typeof '3'` returns the string `string`.
 
 # --instructions--
 

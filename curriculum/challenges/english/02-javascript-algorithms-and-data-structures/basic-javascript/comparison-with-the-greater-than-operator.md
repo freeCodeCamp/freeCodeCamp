@@ -16,11 +16,13 @@ Like the equality operator, greater than operator will convert data types of val
 **Examples**
 
 ```js
-5   >  3   // true
-7   > '3'  // true
-2   >  3   // false
-'1' >  9   // false
+5   >  3
+7   > '3'
+2   >  3
+'1' >  9
 ```
+
+In order, these comparisons return: `true`, `true`, `false`, and `false`.
 
 # --instructions--
 

@@ -18,9 +18,11 @@ For example, to match only the letter `a` appearing between `3` and `5` times in
 let A4 = "aaaah";
 let A2 = "aah";
 let multipleA = /a{3,5}h/;
-multipleA.test(A4); // true
-multipleA.test(A2); // false
+multipleA.test(A4);
+multipleA.test(A2);
 ```
+
+The first `test` call would return `true`, while the second would return `false`.
 
 # --instructions--
 
