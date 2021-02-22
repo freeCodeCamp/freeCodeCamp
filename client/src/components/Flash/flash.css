@@ -7,7 +7,7 @@
   padding-bottom: 3px;
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .flash-message div {
