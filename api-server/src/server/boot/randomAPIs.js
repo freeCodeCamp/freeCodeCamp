@@ -1,6 +1,6 @@
 import request from 'request';
 
-import { constantStrings } from '../../../../config/certification-settings';
+import { gitHubUserAgent } from '../../../../config/misc';
 import { getRedirectParams } from '../utils/redirection';
 
 const githubClient = process.env.GITHUB_ID;
@@ -155,7 +155,7 @@ module.exports = function(app) {
   function githubCalls(req, res, next) {
     var githubHeaders = {
       headers: {
-        'User-Agent': constantStrings.gitHubUserAgent
+        'User-Agent': gitHubUserAgent
       },
       port: 80
     };
