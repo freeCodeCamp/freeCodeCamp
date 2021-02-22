@@ -13,14 +13,11 @@ With JavaScript `array` variables, we can store several pieces of data in one pl
 
 You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:
 
-`var sandwich = ["peanut butter", "jelly", "bread"]`.
+`var sandwich = ["peanut butter", "jelly", "bread"]`
 
 # --instructions--
 
 Modify the new array `myArray` so that it contains both a `string` and a `number` (in that order).
-
-**Hint**  
-Refer to the example code in the text editor if you get stuck.
 
 # --hints--
 

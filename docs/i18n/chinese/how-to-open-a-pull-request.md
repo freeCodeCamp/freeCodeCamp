@@ -2,6 +2,8 @@
 
 A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
+> [!NOTE] Your PR should be in English. See [here](#index.md?id=translations) for how to contribute translations.
+
 ## Prepare a good PR title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:

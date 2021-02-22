@@ -225,9 +225,9 @@ Los Bans de Discord son globales - no puedes banear a un usuario de un canal esp
 
 There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, as this can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
 
-- Call the `!fCC moderate private @username` command, where `@username` is the *Discord mention* of the user. If you are calling this command from a private channel (such as #mod-chat), you will need to parse the mention manually: Ensure you have Developer Mode turned on in your Discord settings, then right-click on the user's avatar and select `Copy ID`. Replace the `@username` parameter with `<@!ID>`, where `ID` is the value you copied earlier. The result should look like: `!fCC moderate private <@!465650873650118659>`.
+- Call the `!fCC moderate private @username` command, where `@username` is the _Discord mention_ of the user. If you are calling this command from a private channel (such as #mod-chat), you will need to parse the mention manually: Ensure you have Developer Mode turned on in your Discord settings, then right-click on the user's avatar and select `Copy ID`. Replace the `@username` parameter with `<@!ID>`, where `ID` is the value you copied earlier. The result should look like: `!fCC moderate private <@!465650873650118659>`.
 - The bot will create a new channel under the `private` category and add the `@username`-mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
-- When the conversation is complete, call the `!fCC moderate close` command *in the private channel* to have the bot close and delete that channel.
+- When the conversation is complete, call the `!fCC moderate close` command _in the private channel_ to have the bot close and delete that channel.
 
 4. **Deleting messages** Moderators have the ability to delete messages on Discord. They should only exercise this ability in four very specific situations:
 
@@ -364,14 +364,14 @@ Feel free to reference the [contributing guidelines](https://contribute.freecode
 
 ### Syncing Fork
 
-> When PR is not up to date with the `master` branch.
+> When PR is not up to date with the `main` branch.
 
 ````markdown
 Hey @username
 
 We would love to be able to merge your changes but it looks like the branch is not up to date. ⚠️
 
-To resolve this error, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
+To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
 Using the command line, you can do this in three easy steps:
 
