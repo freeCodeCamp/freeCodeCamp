@@ -13,7 +13,7 @@ With JavaScript `array` variables, we can store several pieces of data in one pl
 
 You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:
 
-`var sandwich = ["peanut butter", "jelly", "bread"]`.
+`var sandwich = ["peanut butter", "jelly", "bread"]`
 
 # --instructions--
 
