@@ -52,12 +52,13 @@ exports.parseMD = function parseMD(filename) {
     const file = readSync(filename);
     const tree = processor.parse(file);
     processor.run(tree, file, function(err, node, file) {
-      if (err) {
-        err.message += ' in file ' + filename;
-        reject(err);
+      if (!err) {
+        delete file.contents;
+        resolve(file.data);
       }
-      delete file.contents;
-      return resolve(file.data);
+
+      err.message += ' in file ' + filename;
+      reject(err);
     });
   });
 };
