@@ -8,7 +8,7 @@ To begin proofreading, visit [our translation site](https://translate.freecodeca
 
 You should see the list of projects you have been granted access to. Select the project that you would like to proofread, then select the language.
 
-![Image - Proofreading File Tree](./images/crowdin/proof-file-tree.png)
+![Image - Proofreading File Tree](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
 You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
 
@@ -17,7 +17,7 @@ You should now see the list of available files. Choose your file by selecting th
 
 ## Proofread Translations
 
-![Image - Proofreading View](./images/crowdin/proofread.png)
+![Image - Proofreading View](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 
