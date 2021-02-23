@@ -207,7 +207,7 @@ If `value` submitted to `/api/check` is already placed in `puzzle` on that `coor
 ```js
 async (getUserInput) => {
   const input =
-  '9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+  '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
   const coordinate = 'C3';
   const value = '2';
   const data = await fetch(getUserInput('url') + '/api/check', {
