@@ -159,14 +159,6 @@ describe('boot/challenge', () => {
 
       expect(result).toEqual(requestedChallengeUrl);
     });
-
-    it('can handle non-url-compliant challenge names', () => {
-      const challenge = { ...mockChallenge, superBlock: 'my awesome' };
-      const expected = '/learn/my-awesome/actual/challenge';
-      const result = buildChallengeUrl(challenge);
-
-      expect(result).toEqual(expected);
-    });
   });
 
   describe('challengeUrlResolver', () => {

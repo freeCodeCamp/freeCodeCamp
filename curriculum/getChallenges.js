@@ -288,7 +288,7 @@ ${getFullPath('english')}
     template,
     time
   } = meta;
-  challenge.block = blockName;
+  challenge.block = dasherize(blockName);
   challenge.order = order;
   challenge.superOrder = superOrder;
   challenge.superBlock = superBlock;
@@ -298,7 +298,7 @@ ${getFullPath('english')}
   challenge.template = template;
   challenge.time = time;
   challenge.helpCategory =
-    challenge.helpCategory || helpCategoryMap[dasherize(blockName)];
+    challenge.helpCategory || helpCategoryMap[challenge.block];
   challenge.translationPending =
     lang !== 'english' && !isAuditedCert(lang, superBlock);
 
@@ -344,7 +344,6 @@ function prepareChallenge(challenge) {
   if (challenge.solutionFiles) {
     challenge.solutionFiles = filesToObject(challenge.solutionFiles);
   }
-  challenge.block = dasherize(challenge.block);
   return challenge;
 }
 

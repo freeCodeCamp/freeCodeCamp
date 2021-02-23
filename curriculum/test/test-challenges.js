@@ -44,7 +44,6 @@ const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
-const { dasherize } = require('../../utils/slugs');
 const { toSortedArray } = require('../../utils/sort-files');
 
 const { testedLang } = require('../utils');
@@ -197,7 +196,7 @@ async function setup() {
 
   const meta = {};
   for (const challenge of challenges) {
-    const dashedBlockName = dasherize(challenge.block);
+    const dashedBlockName = challenge.block;
     if (!meta[dashedBlockName]) {
       meta[dashedBlockName] = (await getMetaForBlock(
         dashedBlockName
@@ -256,7 +255,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
     challenges.forEach((challenge, id) => {
-      const dashedBlockName = dasherize(challenge.block);
+      const dashedBlockName = challenge.block;
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
           // Note: the title in meta.json are purely for human readability and
@@ -280,8 +279,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               throw new AssertionError(result.error);
             }
             const { id, title, block, dashedName } = challenge;
-            const dashedBlock = dasherize(block);
-            const pathAndTitle = `${dashedBlock}/${dashedName}`;
+            const pathAndTitle = `${block}/${dashedName}`;
             mongoIds.check(id, title);
             challengeTitles.check(title, pathAndTitle);
           });

@@ -13,7 +13,6 @@ import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
 import { ifNoUserSend } from '../utils/middleware';
-import { dasherize } from '../../../../utils/slugs';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import {
@@ -144,7 +143,7 @@ export function buildUserUpdate(
 
 export function buildChallengeUrl(challenge) {
   const { superBlock, block, dashedName } = challenge;
-  return `/learn/${dasherize(superBlock)}/${dasherize(block)}/${dashedName}`;
+  return `/learn/${superBlock}/${block}/${dashedName}`;
 }
 
 // this is only called once during boot, so it can be slow.
