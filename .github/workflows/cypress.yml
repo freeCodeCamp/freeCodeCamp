@@ -51,6 +51,7 @@ jobs:
         run: |
           npm ci
           npm run ensure-env
+          npm run build:curriculum
 
       - name: Seed Database
         run: npm run seed
@@ -60,9 +61,9 @@ jobs:
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           build: npm run build
-          # this should mirror the production build, but for now we're just using the dev
-          # server and gatsby serve instead (the npm script serve:client needs updating!)
-          start: npm start
+          # this should mirror the production build, but for now we're using gatsby
+          # serve instead (the npm script serve:client needs updating!)
+          start: npm run start-ci
           wait-on: http://localhost:8000
           # the site builds in about 8 minutes, so there is currently 12 minutes of time
           # left for testing.

@@ -11,11 +11,11 @@ You should see two "projects" available for translation: The `Contributing Docum
 
 Select which project you want to contribute to, and you will see a list of available languages for translation.
 
-![Image - List of available languages](./images/crowdin/languages.png)
+![Image - List of available languages](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
 Select the language you want to work on, and you will see the complete file tree.
 
-![Image - List of available files](./images/crowdin/file-tree.png)
+![Image - List of available files](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
 Each file and folder will show a progress bar. The **blue** portion of the progress bar indicates what percentage of the file has been translated, while the **green** portion of the progress bar indicates what percentage of the file has been approved by the proofreading team.
 
@@ -26,7 +26,7 @@ Select a file to work on and Crowdin will open the editor view.
 
 ## Translate the File
 
-![Image - Editor View](./images/crowdin/editor.png)
+![Image - Editor View](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
 Crowdin separates a document into translatable "strings", usually sentences. Each string is translated individually. Referring to the image above:
 
@@ -72,7 +72,7 @@ We have enabled some quality assurance steps that will verify a translation is a
 
 When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
 
-![Image - QA Warning Message](./images/crowdin/qa-message.png)
+![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 

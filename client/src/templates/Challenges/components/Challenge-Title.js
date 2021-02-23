@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '../../../components/helpers/index';
 
-import { dasherize } from '../../../../../utils/slugs';
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
 import i18next from 'i18next';
@@ -46,9 +45,9 @@ function ChallengeTitle({
         <Link
           className='breadcrumb-right'
           state={{ breadcrumbBlockClick: block }}
-          to={`/learn/${superBlock}/#${dasherize(block)}`}
+          to={`/learn/${superBlock}/#${block}`}
         >
-          {i18next.t(`intro:${superBlock}.blocks.${dasherize(block)}.title`)}
+          {i18next.t(`intro:${superBlock}.blocks.${block}.title`)}
         </Link>
       </div>
       <div className='challenge-title'>

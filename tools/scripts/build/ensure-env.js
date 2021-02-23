@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const env = require('../../../config/env');
-const { availableLangs } = require('../../../client/i18n/allLangs');
+const { availableLangs } = require('../../../config/i18n/all-langs');
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
@@ -12,7 +12,7 @@ function checkClientLocale() {
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
     throw Error(`
 
-      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in client/i18n/allLangs.js
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n/all-langs.js
 
       `);
   }
@@ -22,7 +22,7 @@ function checkCurriculumLocale() {
   if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
     throw Error(`
 
-      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in client/i18n/allLangs.js
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n/all-langs.js
 
       `);
   }

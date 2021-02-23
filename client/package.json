@@ -43,7 +43,7 @@
     "gatsby-transformer-remark": "^2.16.0",
     "i18next": "^19.8.9",
     "jquery": "^3.5.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "monaco-editor": "^0.20.0",
     "nanoid": "^3.1.20",
     "prismjs": "^1.23.0",
