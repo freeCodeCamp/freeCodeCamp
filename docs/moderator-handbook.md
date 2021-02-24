@@ -224,14 +224,14 @@ Evidence: _One or more links to the offending message(s)_
 - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
 - When the conversation is complete, call the `!fCC close` command _in the private channel_ to have the bot close and delete that channel.
 
-4. **Deleting messages** Moderators have the ability to delete messages on our chat server. They should only exercise this ability in four very specific situations:
+4. **Deleting messages** Moderators can delete messages on our chat server. They should only exercise this ability in four very specific situations:
 
 - Someone has posted a pornographic or graphically violent image.
 - Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
 - Someone has flooded the chat with lots of spam messages to such an extreme extent (usually involving bots) as to render chat completely unusable.
 - Someone has posted an advertisement and/or a self-promoting message/image (social media).
 
-In all other situations - even situations where the code of conduct is violated - moderators should not delete the message as these are an important historic record. When you do delete a message, make sure you take a screenshot of it first! The screenshot can be logged in the #mod-log channel.
+In all other situations - even situations where the code of conduct is violated - moderators should not delete the messages as they are important historic records. When you do delete a message, make sure you take a screenshot of it first! The screenshot can be logged in the #mod-log channel.
 
 > [!NOTE]
 > If the message contains material that would be illegal to take a screenshot of, copy the message link instead - provide that message link to @raisedadead to forward to Discord's Trust and Safety team.
