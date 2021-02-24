@@ -1,5 +1,5 @@
 const path = require('path');
-const { availableLangs } = require('../../config/i18n/all-langs');
+const { availableLangs } = require('./allLangs');
 const translationsSchema = require('./locales/english/translations.json');
 const trendingSchema = require('./locales/english/trending.json');
 const motivationSchema = require('./locales/english/motivation.json');

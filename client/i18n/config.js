@@ -1,8 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const { clientLocale } = require('../../config/env.json');
-const { i18nextCodes } = require('../../config/i18n/all-langs');
+import { clientLocale } from '../../config/env.json';
+import { i18nextCodes } from './allLangs';
 
 const i18nextCode = i18nextCodes[clientLocale];
 
