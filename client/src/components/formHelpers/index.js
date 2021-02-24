@@ -2,7 +2,8 @@ import normalizeUrl from 'normalize-url';
 import {
   localhostValidator,
   editorValidator,
-  composeValidators
+  composeValidators,
+  fCCValidator
 } from './FormValidators';
 
 export { default as BlockSaveButton } from './BlockSaveButton.js';
@@ -20,6 +21,7 @@ export function formatUrlValues(values, options) {
   const urlValues = Object.keys(values).reduce((result, key) => {
     let value = values[key];
     const nullOrWarning = composeValidators(
+      fCCValidator,
       localhostValidator,
       key === 'githubLink' || isEditorLinkAllowed ? null : editorValidator
     )(value);

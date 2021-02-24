@@ -11,7 +11,8 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v2
 
-      - name: Crowdin Download
+      ##### Download Chinese #####
+      - name: Crowdin Download Chinese Translations
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
@@ -23,18 +24,50 @@ jobs:
 
           # downloads
           download_translations: true
-          skip_untranslated_strings: false
+          download_language: zh-CN
+          skip_untranslated_files: false
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './config/crowdin/client/crowdin.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CLIENT }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+      ##### Download Espanol #####
+      - name: Crowdin Download Espanol Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: es-EM
           skip_untranslated_files: false
           export_only_approved: true
 
           commit_message: 'chore(i8n,client): processed translations'
+          localization_branch_name: i18n-sync-client
+          push_translations: true
 
           # pull-request
-          localization_branch_name: i18n-sync-client
           create_pull_request: false
-          pull_request_title: 'chore(i18n,client): Processed translations from crowdin'
-          pull_request_body: ''
-          pull_request_labels: 'scope: i18n, platform: client, crowdin-sync'
 
           # global options
           config: './config/crowdin/client/crowdin.yml'

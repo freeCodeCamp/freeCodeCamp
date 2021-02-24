@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab4
-title: Ajustar el ancho de un elemento utilizando la propiedad width
+title: Ajusta el ancho de un elemento utilizando la propiedad width
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVLPtN'
 forumTopicId: 301039

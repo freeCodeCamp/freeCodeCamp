@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SolutionViewer from './SolutionViewer';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 const propTypes = {
   files: PropTypes.arrayOf(
@@ -16,8 +17,7 @@ const propTypes = {
   handleSolutionModalHide: PropTypes.func,
   isOpen: PropTypes.bool,
   projectTitle: PropTypes.string,
-  solution: PropTypes.string,
-  t: PropTypes.func.isRequired
+  solution: PropTypes.string
 };
 
 const ProjectModal = props => {
@@ -26,9 +26,9 @@ const ProjectModal = props => {
     projectTitle,
     files,
     solution,
-    t,
     handleSolutionModalHide
   } = props;
+  const { t } = useTranslation();
   return (
     <Modal
       aria-labelledby='solution-viewer-modal-title'

@@ -27,7 +27,7 @@ import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
-import { langCodes } from '../../i18n/allLangs';
+import { langCodes } from '../../../config/i18n/all-langs';
 import { clientLocale } from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
@@ -162,7 +162,6 @@ const ShowCertification = props => {
       !isDonating
     ) {
       setIsDonationDisplayed(true);
-
       executeGA({
         type: 'event',
         data: {
@@ -265,7 +264,7 @@ const ShowCertification = props => {
   );
 
   let donationSection = (
-    <Grid className='donation-section'>
+    <div className='donation-section'>
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -273,119 +272,127 @@ const ShowCertification = props => {
           </Col>
         </Row>
       )}
-      <DonateForm
-        handleProcessing={handleProcessing}
-        defaultTheme='light'
-        isMinimalForm={true}
-      />
+      <Row>
+        <Col md={8} mdOffset={2} xs={12}>
+          <DonateForm
+            handleProcessing={handleProcessing}
+            defaultTheme='light'
+            isMinimalForm={true}
+          />
+        </Col>
+      </Row>
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
         </Col>
       </Row>
-    </Grid>
+      <Spacer size={2} />
+    </div>
   );
 
   const shareCertBtns = (
     <Row className='text-center'>
+      <Col xs={12}>
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          target='_blank'
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth +
+            1}&certUrl=${certURL}`}
+        >
+          {t('profile.add-linkedin')}
+        </Button>
+        <Spacer />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          target='_blank'
+          href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
+            certTitle: certTitle,
+            certURL: certURL
+          })}`}
+        >
+          {t('profile.add-twitter')}
+        </Button>
+      </Col>
       <Spacer size={2} />
-      <Button
-        block={true}
-        bsSize='lg'
-        bsStyle='primary'
-        target='_blank'
-        href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth +
-          1}&certUrl=${certURL}`}
-      >
-        {t('profile.add-linkedin')}
-      </Button>
-      <Spacer />
-      <Button
-        block={true}
-        bsSize='lg'
-        bsStyle='primary'
-        target='_blank'
-        href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
-          certTitle: certTitle,
-          certURL: certURL
-        })}`}
-      >
-        {t('profile.add-twitter')}
-      </Button>
     </Row>
   );
 
   return (
-    <div className='certificate-outer-wrapper'>
+    <Grid className='certificate-outer-wrapper'>
+      <Spacer size={2} />
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
-      <Grid className='certificate-wrapper certification-namespace'>
-        <Row>
-          <header>
-            <Col md={5} sm={12}>
-              <div className='logo'>
-                <FreeCodeCampLogo />
-              </div>
-            </Col>
-            <Col md={7} sm={12}>
-              <div data-cy='issue-date' className='issue-date'>
-                {t('certification.issued')}&nbsp;
-                <strong>
-                  {certDate.toLocaleString([localeCode, 'en-US'], {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </strong>
-              </div>
-            </Col>
-          </header>
+      <Row className='certificate-wrapper certification-namespace'>
+        <header>
+          <Col md={5} sm={12}>
+            <div className='logo'>
+              <FreeCodeCampLogo />
+            </div>
+          </Col>
+          <Col md={7} sm={12}>
+            <div data-cy='issue-date' className='issue-date'>
+              {t('certification.issued')}&nbsp;
+              <strong>
+                {certDate.toLocaleString([localeCode, 'en-US'], {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </strong>
+            </div>
+          </Col>
+        </header>
 
-          <main className='information'>
-            <div className='information-container'>
-              <Trans
-                user={displayName}
-                title={certTitle}
-                time={completionTime}
-                i18nKey='certification.fulltext'
-              >
-                <h3>placeholder</h3>
-                <h1>
-                  <strong>{{ user: displayName }}</strong>
-                </h1>
-                <h3>placeholder</h3>
-                <h1>
-                  <strong>{{ title: certTitle }}</strong>
-                </h1>
-                <h4>{{ time: completionTime }}</h4>
-              </Trans>
-            </div>
-          </main>
-          <footer>
-            <div className='row signatures'>
-              <Image
-                alt="Quincy Larson's Signature"
-                src={
-                  'https://cdn.freecodecamp.org' +
-                  '/platform/english/images/quincy-larson-signature.svg'
-                }
-              />
-              <p>
-                <strong>Quincy Larson</strong>
-              </p>
-              <p>{t('certification.executive')}</p>
-            </div>
-            <Row>
-              <p className='verify'>
-                {t('certification.verify', { certURL: certURL })}
-              </p>
-            </Row>
-          </footer>
-        </Row>
-      </Grid>
+        <main className='information'>
+          <div className='information-container'>
+            <Trans
+              user={displayName}
+              title={certTitle}
+              time={completionTime}
+              i18nKey='certification.fulltext'
+            >
+              <h3>placeholder</h3>
+              <h1>
+                <strong>{{ user: displayName }}</strong>
+              </h1>
+              <h3>placeholder</h3>
+              <h1>
+                <strong>{{ title: certTitle }}</strong>
+              </h1>
+              <h4>{{ time: completionTime }}</h4>
+            </Trans>
+          </div>
+        </main>
+        <footer>
+          <div className='row signatures'>
+            <Image
+              alt="Quincy Larson's Signature"
+              src={
+                'https://cdn.freecodecamp.org' +
+                '/platform/english/images/quincy-larson-signature.svg'
+              }
+            />
+            <p>
+              <strong>Quincy Larson</strong>
+            </p>
+            <p>{t('certification.executive')}</p>
+          </div>
+          <Row>
+            <p className='verify'>
+              {t('certification.verify', { certURL: certURL })}
+            </p>
+          </Row>
+        </footer>
+      </Row>
+      <Spacer size={2} />
       {signedInUserName === username ? shareCertBtns : ''}
       <Spacer size={2} />
       <ShowProjectLinks user={user} name={displayName} certName={certTitle} />
-    </div>
+      <Spacer size={2} />
+    </Grid>
   );
 };
 

@@ -13,17 +13,17 @@ import Algorithm from './Algorithm';
 
 const generateIconComponent = (superBlock, className) => {
   const iconMap = {
-    'Responsive Web Design': ResponsiveDesign,
-    'JavaScript Algorithms and Data Structures': JavaScriptIcon,
-    'Front End Libraries': ReactIcon,
-    'Data Visualization': D3Icon,
-    'APIs and Microservices': APIIcon,
-    'Quality Assurance': Clipboard,
-    'Scientific Computing with Python': PythonIcon,
-    'Data Analysis with Python': Analytics,
-    'Information Security': Shield,
-    'Machine Learning with Python': TensorflowIcon,
-    'Coding Interview Prep': Algorithm
+    'responsive-web-design': ResponsiveDesign,
+    'javascript-algorithms-and-data-structures': JavaScriptIcon,
+    'front-end-libraries': ReactIcon,
+    'data-visualization': D3Icon,
+    'apis-and-microservices': APIIcon,
+    'quality-assurance': Clipboard,
+    'scientific-computing-with-python': PythonIcon,
+    'data-analysis-with-python': Analytics,
+    'information-security': Shield,
+    'machine-learning-with-python': TensorflowIcon,
+    'coding-interview-prep': Algorithm
   };
   // fallback in case super block doesn't exist and for tests
   const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf4
-title: Chain Middleware to Create a Time Server
+title: 通过链式调用中间件来创建时间服务
 challengeType: 2
 forumTopicId: 301510
 dashedName: chain-middleware-to-create-a-time-server
@@ -8,9 +8,9 @@ dashedName: chain-middleware-to-create-a-time-server
 
 # --description--
 
-Middleware can be mounted at a specific route using `app.METHOD(path, middlewareFunction)`. Middleware can also be chained inside route definition.
+使用 `app.METHOD(path, middlewareFunction)` 可以在指定的路由挂载中间件， 也可以在路由定义中链式调用中间件。
 
-Look at the following example:
+请看以下示例：
 
 ```js
 app.get('/user', function(req, res, next) {
@@ -21,17 +21,17 @@ app.get('/user', function(req, res, next) {
 });
 ```
 
-This approach is useful to split the server operations into smaller units. That leads to a better app structure, and the possibility to reuse code in different places. This approach can also be used to perform some validation on the data. At each point of the middleware stack you can block the execution of the current chain and pass control to functions specifically designed to handle errors. Or you can pass control to the next matching route, to handle special cases. We will see how in the advanced Express section.
+此方法可用于将服务操作拆分为较小的单元， 这可以让应用拥有更好的结构，也便于在不同的位置上复用代码； 此方法还可用于对数据执行某些验证。 可以在每一个中间件堆栈中，阻止当前链的执行，并将控制权传递给专门设计用于处理错误的函数； 或者可以将控制权传递给下一个匹配的路由，以处理特殊情况， 我们将在高级 Express 章节中看到这些内容。
 
 # --instructions--
 
-In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.
+在路由 `app.get('/now', ...)` 中链式调用中间件函数，并在最后处理。 在中间件函数中给请求对象中的 `req.time` 添加到当前时间， 可以使用 `new Date().toString()`， 在处理函数中，使用 `{time: req.time}` 结构的 JSON 对象来响应请求。
 
-**Note:** The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct.
+**注意：** 如果不链式调用中间件，测试将不能通过。 如果将中间件函数挂载在其他地方，即使输出结果正确，测试也会失败。
 
 # --hints--
 
-The /now endpoint should have mounted middleware
+/now 接口应该已经挂载了中间件
 
 ```js
 (getUserInput) =>
@@ -49,7 +49,7 @@ The /now endpoint should have mounted middleware
   );
 ```
 
-The /now endpoint should return a time that is +/- 20 secs from now
+/now 接口应该返回一个现在时间 +/-20 秒的时间
 
 ```js
 (getUserInput) =>

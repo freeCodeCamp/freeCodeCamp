@@ -11,19 +11,22 @@ You should see two "projects" available for translation: The `Contributing Docum
 
 Select which project you want to contribute to, and you will see a list of available languages for translation.
 
-![Image - List of available languages](./images/crowdin/languages.png)
+![Image - List of available languages](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
 Select the language you want to work on, and you will see the complete file tree.
 
-![Image - List of available files](./images/crowdin/file-tree.png)
+![Image - List of available files](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
 Each file and folder will show a progress bar. The **blue** portion of the progress bar indicates what percentage of the file has been translated, while the **green** portion of the progress bar indicates what percentage of the file has been approved by the proofreading team.
 
 Select a file to work on and Crowdin will open the editor view.
 
+> [!NOTE]
+> When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+
 ## Translate the File
 
-![Image - Editor View](./images/crowdin/editor.png)
+![Image - Editor View](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
 Crowdin separates a document into translatable "strings", usually sentences. Each string is translated individually. Referring to the image above:
 
@@ -69,18 +72,12 @@ We have enabled some quality assurance steps that will verify a translation is a
 
 When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
 
-![Image - QA Warning Message](./images/crowdin/qa-message.png)
+![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
 > [!WARNING]
-> You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error might be incorrect.
-
-Crowdin will sometimes convert HTML tags (such as `<code>`) into numerical values, like `<0>text</0>` or `<1>text</1>`. These tags are usually code tags, and our QA check will verify that these have not been translated. However, sometimes these may be `<strong>` or `<em>` tags, which _should_ be translated. If you hover over a numerical tag in the source string, you can see which HTML tag or tags have been replaced:
-
-![Image - Hover over a tag](./images/crowdin/tag-hover.png)
-
-If the replaced tags are something that should be translated (such as `strong` tags), translate the content within the tags and select "Save Anyway" when the error appears. Then leave a comment on the string explaining that the tags are `strong` (for example) so other translators and proofreaders are aware that they should be translated.
+> You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
 ## Translation Best Practices
 

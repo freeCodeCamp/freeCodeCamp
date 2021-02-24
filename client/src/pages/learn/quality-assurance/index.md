@@ -1,6 +1,6 @@
 ---
 title: Quality Assurance
-superBlock: Quality Assurance
+superBlock: quality-assurance
 ---
 ## Introduction to Quality Assurance
 

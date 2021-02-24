@@ -2,6 +2,9 @@
 
 A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
+> [!NOTE]
+> Your PR should be in English. See [here](#index.md?id=translations) for how to contribute translations.
+
 ## Prepare a good PR title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
@@ -42,13 +45,13 @@ Some examples of good PRs titles would be:
 
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
 3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
@@ -117,7 +120,7 @@ When you are working on regular bugs and features on our development branch `mai
 
 ### For upcoming curriculum and features
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
 
 1. Make sure your upstream comes in sync with your local:
 

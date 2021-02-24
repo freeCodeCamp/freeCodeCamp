@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c11
-title: Delete Many Documents with model.remove()
+title: 使用 model.remove() 删除多个 document
 challengeType: 2
 forumTopicId: 301538
 dashedName: delete-many-documents-with-model-remove
@@ -8,17 +8,17 @@ dashedName: delete-many-documents-with-model-remove
 
 # --description--
 
-`Model.remove()` is useful to delete all the documents matching given criteria.
+`Model.remove()` 可以用于删除符合给定匹配条件的所有 document。
 
 # --instructions--
 
-Modify the `removeManyPeople` function to delete all the people whose name is within the variable `nameToRemove`, using `Model.remove()`. Pass it to a query document with the `name` field set, and a callback.
+修改 `removeManyPeople` 函数，使用 `nameToRemove` 删除所有姓名是变量 `Model.remove()` 的人。 给它传入一个带有 `name` 字段的查询 document 和一个回调函数。
 
-**Note:** The `Model.remove()` doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the `done()` callback, since we use it in tests.
+**注意：** `Model.remove()` 不会返回被删除的 document，而是会返回一个包含操作结果以及受影响的数据数量的 JSON 对象。 不要忘记将它传入 `done()` 回调函数，因为我们需要在挑战的测试中调用它。
 
 # --hints--
 
-Deleting many items at once should succeed
+应一次性成功删除多条数据
 
 ```js
 (getUserInput) =>

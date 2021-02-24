@@ -13,12 +13,12 @@ const PrResults = ({ searchValue, results, rateLimitMessage }) => {
   const elements = results.map((result, idx) => {
     const { number, filenames, username, title } = result;
     const files = filenames.map((filename, index) => {
-      const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
+      const fileOnMain = `https://github.com/freeCodeCamp/freeCodeCamp/blob/main/${filename}`;
       return (
         <li key={`${number}-${index}`}>
           {filename}{' '}
-          <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">
-            (File on Master)
+          <a href={fileOnMain} rel="noopener noreferrer" target="_blank">
+            (File on Main)
           </a>
         </li>
       );

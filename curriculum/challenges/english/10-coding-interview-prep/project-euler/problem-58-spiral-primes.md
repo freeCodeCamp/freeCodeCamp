@@ -22,20 +22,32 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
 
 It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the ratio of primes along both diagonals first falls below 10%?
+If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
 
 # --hints--
 
-`spiralPrimes()` should return a number.
+`spiralPrimes(50)` should return a number.
 
 ```js
-assert(typeof spiralPrimes() === 'number');
+assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes()` should return 26241.
+`spiralPrimes(50)` should return `11`.
 
 ```js
-assert.strictEqual(spiralPrimes(), 26241);
+assert.strictEqual(spiralPrimes(50), 11);
+```
+
+`spiralPrimes(15)` should return `981`.
+
+```js
+assert.strictEqual(spiralPrimes(15), 981);
+```
+
+`spiralPrimes(10)` should return `26241`.
+
+```js
+assert.strictEqual(spiralPrimes(10), 26241);
 ```
 
 # --seed--
@@ -43,16 +55,51 @@ assert.strictEqual(spiralPrimes(), 26241);
 ## --seed-contents--
 
 ```js
-function spiralPrimes() {
+function spiralPrimes(percent) {
 
   return true;
 }
 
-spiralPrimes();
+spiralPrimes(50);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function spiralPrimes(percent) {
+  function isPrime(n) {
+    if (n <= 3) {
+      return n > 1;
+    } else if (n % 2 === 0 || n % 3 === 0) {
+      return false;
+    }
+
+    for (let i = 5; i * i <= n; i += 6) {
+      if (n % i === 0 || n % (i + 2) === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  let totalCount = 1;
+  let primesCount = 0;
+  let curNumber = 1;
+  let curSideLength = 1;
+  let ratio = 1;
+  const wantedRatio = percent / 100;
+
+  while (ratio >= wantedRatio) {
+    curSideLength += 2;
+    for (let i = 0; i < 4; i++) {
+      curNumber += curSideLength - 1;
+      totalCount++;
+      if (i !== 3 && isPrime(curNumber)) {
+        primesCount++;
+      }
+    }
+    ratio = primesCount / totalCount;
+  }
+  return curSideLength;
+}
 ```

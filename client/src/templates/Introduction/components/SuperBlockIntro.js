@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
-import { dasherize } from '../../../../../utils/slugs';
 import { Spacer } from '../../../components/helpers';
 import { generateIconComponent } from '../../../assets/icons';
 
@@ -13,9 +12,8 @@ const propTypes = {
 function SuperBlockIntro(props) {
   const { t } = useTranslation();
   const { superBlock } = props;
-  const superBlockDashedName = dasherize(superBlock);
 
-  const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
+  const superBlockIntroObj = t(`intro:${superBlock}`);
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText

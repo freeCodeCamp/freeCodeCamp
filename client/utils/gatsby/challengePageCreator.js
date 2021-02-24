@@ -68,7 +68,7 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     context: {
       challengeMeta: {
         superBlock,
-        block: block,
+        block,
         template,
         required,
         nextChallengePath: getNextChallengePath(node, index, thisArray),
@@ -106,7 +106,7 @@ exports.createSuperBlockIntroPages = createPage => edge => {
     path: slug,
     component: superBlockIntro,
     context: {
-      superBlock: superBlock,
+      superBlock,
       slug
     }
   });

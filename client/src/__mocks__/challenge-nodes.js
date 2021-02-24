@@ -8,7 +8,7 @@ export default [
     block: 'block-a',
     title: 'Challenge One',
     isPrivate: false,
-    superBlock: 'Super Block One',
+    superBlock: 'super-block-one',
     dashedName: 'challenge-one'
   },
   {
@@ -20,7 +20,7 @@ export default [
     block: 'block-a',
     title: 'Challenge Two',
     isPrivate: false,
-    superBlock: 'Super Block One',
+    superBlock: 'super-block-one',
     dashedName: 'challenge-two'
   },
   {
@@ -32,7 +32,7 @@ export default [
     block: 'block-b',
     title: 'Challenge One',
     isPrivate: false,
-    superBlock: 'Super Block One',
+    superBlock: 'super-block-one',
     dashedName: 'challenge-one'
   },
   {
@@ -45,7 +45,7 @@ export default [
     block: 'block-b',
     title: 'Challenge Two',
     isPrivate: false,
-    superBlock: 'Super Block One',
+    superBlock: 'super-block-one',
     dashedName: 'challenge-two'
   },
   {
@@ -57,7 +57,7 @@ export default [
     block: 'block-c',
     title: 'Challenge One',
     isPrivate: true,
-    superBlock: 'Super Block One',
+    superBlock: 'super-block-one',
     dashedName: 'challenge-one'
   },
   {
@@ -69,7 +69,7 @@ export default [
     block: 'block-a',
     title: 'Challenge One',
     isPrivate: false,
-    superBlock: 'Super Block Two',
+    superBlock: 'super-block-two',
     dashedName: 'challenge-one'
   },
   {
@@ -81,7 +81,7 @@ export default [
     block: 'block-a',
     title: 'Challenge Two',
     isPrivate: false,
-    superBlock: 'Super Block Two',
+    superBlock: 'super-block-two',
     dashedName: 'challenge-two'
   },
   {
@@ -93,7 +93,7 @@ export default [
     block: 'block-b',
     title: 'Challenge One',
     isPrivate: false,
-    superBlock: 'Super Block Two',
+    superBlock: 'super-block-two',
     dashedName: 'challenge-one'
   },
   {
@@ -105,7 +105,7 @@ export default [
     block: 'block-b',
     title: 'Challenge Two',
     isPrivate: false,
-    superBlock: 'Super Block Two',
+    superBlock: 'super-block-two',
     dashedName: 'challenge-two'
   },
   {
@@ -117,7 +117,7 @@ export default [
     block: 'block-a',
     title: 'Challenge One',
     isPrivate: false,
-    superBlock: 'Super Block Three',
+    superBlock: 'super-block-three',
     dashedName: 'challenge-one'
   },
   {
@@ -129,7 +129,7 @@ export default [
     block: 'block-c',
     title: 'Challenge Two',
     isPrivate: false,
-    superBlock: 'Super Block Three',
+    superBlock: 'super-block-three',
     dashedName: 'challenge-two'
   }
 ];

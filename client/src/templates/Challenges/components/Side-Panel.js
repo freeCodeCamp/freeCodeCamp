@@ -27,7 +27,6 @@ const propTypes = {
   guideUrl: PropTypes.string,
   instructions: PropTypes.string,
   isChallengeCompleted: PropTypes.bool,
-  section: PropTypes.string,
   showToolPanel: PropTypes.bool,
   superBlock: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
@@ -41,8 +40,8 @@ export class SidePanel extends Component {
     const MathJax = global.MathJax;
     const mathJaxMountPoint = document.querySelector('#mathjax');
     const mathJaxChallenge =
-      this.props.section === 'rosetta-code' ||
-      this.props.section === 'project-euler';
+      this.props.block === 'rosetta-code' ||
+      this.props.block === 'project-euler';
     if (MathJax) {
       // Configure MathJax when it's loaded and
       // users navigate from another challenge
@@ -73,7 +72,6 @@ export class SidePanel extends Component {
       isChallengeCompleted,
       guideUrl,
       tests,
-      section,
       showToolPanel,
       superBlock,
       translationPending,
@@ -91,9 +89,9 @@ export class SidePanel extends Component {
             {title}
           </ChallengeTitle>
           <ChallengeDescription
+            block={block}
             description={description}
             instructions={instructions}
-            section={section}
           />
         </div>
         {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}

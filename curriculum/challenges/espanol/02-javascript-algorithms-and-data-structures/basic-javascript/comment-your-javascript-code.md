@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c441eddfaeb4bdef
-title: Comment Your JavaScript Code
+title: Comenta tu código de JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c7ynnTp'
 forumTopicId: 16783
@@ -9,39 +9,39 @@ dashedName: comment-your-javascript-code
 
 # --description--
 
-Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.
+Los comentarios son líneas de código que JavaScript ignorará intencionalmente. Los comentarios son una gran manera de dejar notas para ti mismo y a otras personas que más tarde tengan que averiguar qué hace ese código.
 
-There are two ways to write comments in JavaScript:
+Hay dos maneras de escribir comentarios en JavaScript:
 
-Using `//` will tell JavaScript to ignore the remainder of the text on the current line:
+Usar `//` le dirá a JavaScript que ignore el resto del texto en la línea actual:
 
 ```js
 // This is an in-line comment.
 ```
 
-You can make a multi-line comment beginning with `/*` and ending with `*/`:
+Puedes hacer un comentario multi-línea comenzando con `/*` y terminando con `*/`:
 
 ```js
 /* This is a
 multi-line comment */
 ```
 
-**Best Practice**  
-As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code—both for others *and* for your future self.
+**Buena práctica**  
+A medida que escribes código, deberías añadir comentarios regularmente para aclarar el funcionamiento de las partes de tu código. Un buen comentario puede ayudar a comunicar la intención de tu código, tanto para otros *como* para tu yo futuro.
 
 # --instructions--
 
-Try creating one of each type of comment.
+Intenta crear un comentario de cada tipo.
 
 # --hints--
 
-You should create a `//` style comment that contains at least five letters.
+Debes crear un comentario de estilo `//` que contenga al menos cinco letras.
 
 ```js
 assert(code.match(/(\/\/)...../g));
 ```
 
-You should create a `/* */` style comment that contains at least five letters.
+Debes crear un comentario de estilo `/* */` que contenga al menos cinco letras.
 
 ```js
 assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));

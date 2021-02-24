@@ -1,11 +1,10 @@
 const path = require('path');
-const fs = require('fs');
-const { translationsSchema } = require('./translations-schema');
-const { availableLangs } = require('./allLangs');
-const { trendingSchema } = require('./trending-schema');
-const { motivationSchema } = require('./motivation-schema');
-const { introSchema } = require('./intro-schema');
-const { metaTagsSchema } = require('./meta-tags-schema');
+const { availableLangs } = require('../../config/i18n/all-langs');
+const translationsSchema = require('./locales/english/translations.json');
+const trendingSchema = require('./locales/english/trending.json');
+const motivationSchema = require('./locales/english/motivation.json');
+const introSchema = require('./locales/english/intro.json');
+const metaTagsSchema = require('./locales/english/meta-tags.json');
 
 /**
  * Flattens a nested object structure into a single
@@ -119,8 +118,7 @@ const translationSchemaValidation = languages => {
       __dirname,
       `/locales/${language}/translations.json`
     );
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(
       fileKeys,
@@ -152,8 +150,7 @@ const translationSchemaValidation = languages => {
 const trendingSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/trending.json`);
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, trendingSchemaKeys, `${language}/trending.json`);
     findExtraneousKeys(
@@ -179,8 +176,7 @@ const motivationSchemaValidation = languages => {
       __dirname,
       `/locales/${language}/motivation.json`
     );
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(
       fileKeys,
@@ -223,8 +219,7 @@ const motivationSchemaValidation = languages => {
 const introSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/intro.json`);
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
     findExtraneousKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
@@ -244,8 +239,7 @@ const metaTagsSchemaValidation = languages => {
       __dirname,
       `/locales/${language}/meta-tags.json`
     );
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, metaTagsSchemaKeys, `${language}/meta-tags.json`);
     findExtraneousKeys(
@@ -265,8 +259,10 @@ const metaTagsSchemaValidation = languages => {
   });
 };
 
-translationSchemaValidation(availableLangs.client);
-trendingSchemaValidation(availableLangs.client);
-motivationSchemaValidation(availableLangs.client);
-introSchemaValidation(availableLangs.client);
-metaTagsSchemaValidation(availableLangs.client);
+const translatedLangs = availableLangs.client.filter(x => x !== 'english');
+
+translationSchemaValidation(translatedLangs);
+trendingSchemaValidation(translatedLangs);
+motivationSchemaValidation(translatedLangs);
+introSchemaValidation(translatedLangs);
+metaTagsSchemaValidation(translatedLangs);

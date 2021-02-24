@@ -1,6 +1,6 @@
 ---
 id: 587d781d367417b2b2512ac8
-title: Ajustar el hover de una etiqueta ancla
+title: Ajusta el hover de una etiqueta anchor
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
@@ -9,9 +9,9 @@ dashedName: adjust-the-hover-state-of-an-anchor-tag
 
 # --description--
 
-En este desafío, se incluye el uso de pseudo-clases. Una pseudo-clase es una palabra clave que se puede agregar a los selectores para seleccionar un estado específico de un elemento.
+Este desafío mostrará el uso de las pseudo-clases. Una pseudo-clase es una palabra clave que se puede agregar a los selectores para seleccionar un estado específico de un elemento.
 
-Por ejemplo, el estilo de una etiqueta "anchor" puede ser cambiado para su estado hover usando el selector de pseudo-clase `:hover`. Aquí está el CSS para cambiar el color `color` de la etiqueta de "anchor" a rojo durante el estado hover:
+Por ejemplo, el estilo de una etiqueta "anchor" puede ser cambiado por el estado de su hover utilizando el selector de pseudo-clase `:hover`. Aquí está el CSS para cambiar el color `color` de la etiqueta de "anchor" a rojo durante el estado hover:
 
 ```css
 a:hover {

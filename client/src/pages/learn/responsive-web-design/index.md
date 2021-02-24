@@ -1,6 +1,6 @@
 ---
 title: Responsive Web Design
-superBlock: Responsive Web Design
+superBlock: responsive-web-design
 ---
 ## Introduction to Responsive Web Design
 

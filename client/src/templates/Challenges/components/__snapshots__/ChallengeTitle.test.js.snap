@@ -12,7 +12,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       href="/learn/fake-superblock"
       state={
         Object {
-          "breadcrumbBlockClick": "fake block",
+          "breadcrumbBlockClick": "fake-block",
         }
       }
     >
@@ -28,7 +28,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       href="/learn/fake-superblock/#fake-block"
       state={
         Object {
-          "breadcrumbBlockClick": "fake block",
+          "breadcrumbBlockClick": "fake-block",
         }
       }
     />

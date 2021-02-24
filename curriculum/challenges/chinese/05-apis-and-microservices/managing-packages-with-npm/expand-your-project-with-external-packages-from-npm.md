@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512c00
-title: Expand Your Project with External Packages from npm
+title: 使用 npm 的外部包扩展项目
 challengeType: 2
 forumTopicId: 301527
 dashedName: expand-your-project-with-external-packages-from-npm
@@ -8,9 +8,9 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --description--
 
-One of the biggest reasons to use a package manager, is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the `dependencies` section of your package.json file.
+强大的依赖管理特性是使用包管理器的最大原因之一。 每当在新的计算机上开始一个项目时，无需手动，npm 会自动安装所有的依赖项。 但是 npm 如何准确地知道项目需要哪些依赖呢？ 来看看 package.json 文件中 `dependencies` 这一部分。
 
-In this section, packages your project requires are stored using the following format:
+在这部分，你的项目需要按照下面这种格式来存储依赖包：
 
 ```json
 "dependencies": {
@@ -22,13 +22,13 @@ In this section, packages your project requires are stored using the following f
 
 # --instructions--
 
-Add version "2.14.0" of the "moment" package to the `dependencies` field of your package.json file.
+在 package.json 文件的 `dependencies` 字段中添加一个版本号为“2.14.0”的“moment”包。
 
-**Note:** Moment is a handy library for working with time and dates.
+**注意：** Moment 是一个非常方便地用来处理时间和日期的库。
 
 # --hints--
 
-"dependencies" should include "moment"
+“dependencies”应该包含“moment”
 
 ```js
 (getUserInput) =>
@@ -47,7 +47,7 @@ Add version "2.14.0" of the "moment" package to the `dependencies` field of your
   );
 ```
 
-"moment" version should be "2.14.0"
+“moment”的版本应该是“2.14.0”
 
 ```js
 (getUserInput) =>

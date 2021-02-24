@@ -22,6 +22,10 @@ describe('Donate page', () => {
     cy.title().should('eq', 'Support our nonprofit | freeCodeCamp.org');
   });
 
+  it('Should display default amount and duration', () => {
+    cy.contains('Confirm your donation of $5 / month:').should('be.visible');
+  });
+
   it('Should have support section', () => {
     cy.contains(
       'Want to make a bigger one-time donation, mail us a check, or give in other ways?'

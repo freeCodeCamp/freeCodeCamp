@@ -11,7 +11,7 @@ dashedName: say-hello-to-html-elements
 
 Bienvenido a los desafíos de programación HTML de freeCodeCamp. Estos te guiarán paso a paso a través del mundo del desarrollo web.
 
-Primero, comenzarás construyendo una página web simple usando HTML. Puedes editar el código desde tu editor de código, el cual está incrustado en esta página web.
+Primero, comenzarás construyendo una página web simple usando HTML. Puedes editar el código desde tu editor de código, el cual está insertado en esta página web.
 
 ¿Ves el código en tu editor de código que dice `<h1>Hello</h1>`? Ese es un elemento HTML.
 

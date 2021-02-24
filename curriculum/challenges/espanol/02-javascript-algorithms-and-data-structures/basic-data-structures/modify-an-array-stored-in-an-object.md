@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1f
-title: Modify an Array Stored in an Object
+title: Modificar un arreglo almacenado en un objeto
 challengeType: 1
 forumTopicId: 301163
 dashedName: modify-an-array-stored-in-an-object
@@ -8,21 +8,21 @@ dashedName: modify-an-array-stored-in-an-object
 
 # --description--
 
-Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the Data Structures lessons located in the Coding Interview Prep section of the curriculum also cover the ES6 <dfn>Map</dfn> and <dfn>Set</dfn> objects, both of which are similar to ordinary objects but provide some additional features. Now that you've learned the basics of arrays and objects, you're fully prepared to begin tackling more complex problems using JavaScript!
+Ahora ya has visto todas las operaciones básicas de los objetos de JavaScript. Puedes agregar, modificar y eliminar pares clave-valor, comprobar si las claves existen e iterar sobre todas las claves de un objeto. A medida que sigas aprendiendo JavaScript verás aplicaciones aún más versátiles de los objetos. Además, las lecciones de Estructuras de Datos ubicadas en la sección Coding Interview Prep del plan de estudios también cubren los objetos <dfn>Map</dfn> y <dfn>Set</dfn> de ES6, los cuales son similares a los objetos ordinarios, pero proporcionan algunas características adicionales. Ahora que has aprendido los fundamentos de los arreglos y los objetos, ¡estás totalmente preparado para empezar a abordar problemas más complejos con JavaScript!
 
 # --instructions--
 
-Take a look at the object we've provided in the code editor. The `user` object contains three keys. The `data` key contains five keys, one of which contains an array of `friends`. From this, you can see how flexible objects are as data structures. We've started writing a function `addFriend`. Finish writing it so that it takes a `user` object and adds the name of the `friend` argument to the array stored in `user.data.friends` and returns that array.
+Echa un vistazo al objeto que hemos proporcionado en el editor de código. El objeto `user` contiene tres claves. La clave `data` contiene cinco claves, una de las cuales contiene un arreglo de `friends`. A partir de esto, puedes ver lo flexibles que son los objetos como estructuras de datos. Hemos empezado a escribir una función `addFriend`. Termina de escribirla para que tome un objeto `user` y agregue el nombre del argumento `friend` al arreglo almacenado en `user.data.friends` y devuelva ese arreglo.
 
 # --hints--
 
-The `user` object should have `name`, `age`, and `data` keys.
+El objeto `user` debe tener las claves `name`, `age` y `data`.
 
 ```js
 assert('name' in user && 'age' in user && 'data' in user);
 ```
 
-The `addFriend` function should accept a `user` object and a `friend` string as arguments and add the friend to the array of `friends` in the `user` object.
+La función `addFriend` debe aceptar un objeto `user` y una cadena `friend` como argumentos y agregar el amigo (friend) al arreglo de `friends` del objeto `user`.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-`addFriend(user, "Pete")` should return `["Sam", "Kira", "Tomo", "Pete"]`.
+`addFriend(user, "Pete")` debe devoler `["Sam", "Kira", "Tomo", "Pete"]`.
 
 ```js
 assert.deepEqual(

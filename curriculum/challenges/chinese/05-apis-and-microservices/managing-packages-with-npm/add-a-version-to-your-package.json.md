@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bff
-title: Add a Version to Your package.json
+title: 给 package.json 添加版本号
 challengeType: 2
 forumTopicId: 301525
 dashedName: add-a-version-to-your-package-json
@@ -8,7 +8,7 @@ dashedName: add-a-version-to-your-package-json
 
 # --description--
 
-A `version` is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
+`version` 是 package.json 文件中必填字段之一， 这个字段描述了当前项目的版本， 如：
 
 ```json
 "version": "1.2.0",
@@ -16,11 +16,11 @@ A `version` is one of the required fields of your package.json file. This field 
 
 # --instructions--
 
-Add a `version` to the package.json file of your project.
+给 package.json 文件添加项目的版本号（`version`）。
 
 # --hints--
 
-package.json should have a valid "version" key
+package.json 应该包含一个有效的 “version” 键
 
 ```js
 (getUserInput) =>

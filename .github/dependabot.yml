@@ -13,6 +13,8 @@ updates:
     schedule:
       interval: 'weekly'
       day: 'sunday'
+    ignore:
+      - dependency-name: 'mongodb'
     open-pull-requests-limit: 20
     labels:
       - 'dependabot'

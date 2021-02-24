@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b37
-title: Catch Mixed Usage of Single and Double Quotes
+title: Captura el uso mixto de comillas simples y dobles
 challengeType: 1
 forumTopicId: 301188
 dashedName: catch-mixed-usage-of-single-and-double-quotes
@@ -8,11 +8,11 @@ dashedName: catch-mixed-usage-of-single-and-double-quotes
 
 # --description--
 
-JavaScript allows the use of both single (`'`) and double (`"`) quotes to declare a string. Deciding which one to use generally comes down to personal preference, with some exceptions.
+JavaScript permite el uso de comillas simples (`'`) y dobles (`"`) para declarar una cadena. Decidir cuál usar se reduce generalmente a la preferencia personal, con algunas excepciones.
 
-Having two choices is great when a string has contractions or another piece of text that's in quotes. Just be careful that you don't close the string too early, which causes a syntax error.
+Tener dos opciones es genial cuando una cadena tiene contracciones u otro fragmento de texto que está entre comillas. Sólo hay que tener cuidado de no cerrar la cadena demasiado pronto, lo que provoca un error de sintaxis.
 
-Here are some examples of mixing quotes:
+Aquí hay algunos ejemplos de comillas mezcladas:
 
 ```js
 // These are correct:
@@ -22,7 +22,7 @@ const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quot
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
-Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (<code>\\</code>) escape character:
+Por supuesto, está bien utilizar sólo un estilo de comillas. Puedes realizar un escape de las comillas dentro de la cadena utilizando el caracter de escape de la barra invertida (<code>\\</code>):
 
 ```js
 // Correct use of same quotes:
@@ -31,17 +31,17 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 
 # --instructions--
 
-Fix the string so it either uses different quotes for the `href` value, or escape the existing ones. Keep the double quote marks around the entire string.
+Corrige la cadena para que use comillas diferentes para el valor de `href`, o realiza un escape de las existentes. Mantén las comillas dobles alrededor de toda la cadena.
 
 # --hints--
 
-Your code should fix the quotes around the `href` value "#Home" by either changing or escaping them.
+Tu código debe corregir las comillas alrededor del valor `href` "#Home" cambiándolas o escapándolas.
 
 ```js
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
-Your code should keep the double quotes around the entire string.
+Tu código debe mantener las comillas dobles alrededor de toda la cadena.
 
 ```js
 assert(code.match(/"<p>.*?<\/p>";/g));

@@ -8,7 +8,7 @@ Te damos la bienvenida a:
 
 - Crea, actualiza y corrige errores en nuestro [plan de estudios](#curriculum).
 - Ayúdarnos a corregir errores en la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp.org.
-- _(Próximamente)_ Ayúdarnos a traducir freeCodeCamp.org a idiomas del mundo.
+- [Help us translate](#translations) freeCodeCamp.org to world languages.
 
 Respondemos a las preguntas más comunes sobre cómo contribuir [en nuestras preguntas frecuentes del contribuidor](/FAQ.md).
 
@@ -20,24 +20,32 @@ Puede ayudar a ampliar y mejorar el plan de estudios. También puede actualizar 
 
 **Si estás interesado en mejorar nuestro plan de estudios, aquí mostramos [cómo contribuir al plan de estudios](how-to-work-on-coding-challenges.md).**
 
-## Plataforma de Aprendizaje
+## Translations
 
-Nuestra plataforma de aprendizaje se ejecuta sobre un apilar moderno de JavaScript. Tiene varios componentes, herramientas y librerías. Estas incluyen Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, entre otras.
+We are localizing freeCodeCamp.org to world languages starting with Chinese and Espanol. We will be expanding the translations to more languages. It's our dream to provide you with resources to learn, no matter the world language you speak.
 
-Ampliamente, hacemos uso de
+To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/).
+
+**If you're interested in translating, here are the guides to translate our [curriculum](how-to-translate-files.md), the [learning platform](how-to-translate-the-website.md) and our [Contributing guidelines](https://translate.freecodecamp.org/contributing-docs).**
+
+## Learning Platform
+
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
+
+Broadly, we use
 
 - un servidor con una API basada en Node.js
 - un conjunto de aplicaciones client-side basadas en React
 - y scripts de prueba para evaluar los proyectos curriculares enviados por nuestros campers.
 
-Si deseas contribuir de forma activa a la mejora del plan de estudios, te recomendamos familiarizarte con las herramientas que se han mencionado.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-Si deseas ayudarnos a mejorar nuestro código base...
+If you want to help us improve our codebase...
 
-**puedes optar por utilizar Gitpod, una herramienta de desarrollo en linea que crea ambientes listos para escribir código para freeCodeCamp directamente en el navegador.**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-O también puedes...
+Or you can...
 
-**[configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina. **
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

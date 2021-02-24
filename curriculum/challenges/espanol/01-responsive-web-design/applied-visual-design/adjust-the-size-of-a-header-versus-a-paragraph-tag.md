@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Ajustar el tamaño de un encabezado contra una etiqueta de párrafo
+title: Ajusta el tamaño de un título contra una etiqueta de párrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037

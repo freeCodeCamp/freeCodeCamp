@@ -19,8 +19,6 @@ const getPRs = async () => {
   };
 
   const openPRs = await octokit.paginate(octokit.pulls.list, methodProps);
-  // const openPRs = await octokit.pulls.list(methodProps);
-  // console.log(openPRs[0])
   return openPRs;
 };
 

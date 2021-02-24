@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c0f
-title: Perform New Updates on a Document Using model.findOneAndUpdate()
+title: 在 document 中执行新的更新方式——使用 model.findOneAndUpdate()
 challengeType: 2
 forumTopicId: 301542
 dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
@@ -8,17 +8,17 @@ dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
 
 # --description--
 
-Recent versions of Mongoose have methods to simplify documents updating. Some more advanced features (i.e. pre/post hooks, validation) behave differently with this approach, so the classic method is still useful in many situations. `findByIdAndUpdate()` can be used when searching by id.
+最近发布的 mongoose 版本简化了 document 的更新方式， 但同时，一些高级功能（如 pre/post hook, 验证）的使用方式也变得和以前不同。因此，在很多情景下，上一个挑战中提到的老方法其实更常用。 新方法的加入，可以让我们使用 `findByIdAndUpdate()` 来进行基于 id 的搜索。
 
 # --instructions--
 
-Modify the `findAndUpdate` function to find a person by `Name` and set the person's age to `20`. Use the function parameter `personName` as the search key.
+修改 `findAndUpdate` 函数，通过 `Name` 查询人，并将查到的人的年龄设为 `20` 岁， 将函数参数 `personName` 作为查询关键字。
 
-**Note:** You should return the updated document. To do that, you need to pass the options document `{ new: true }` as the 3rd argument to `findOneAndUpdate()`. By default, these methods return the unmodified object.
+**提示：** 你需要返回更新后的 document。 你可以把 `findOneAndUpdate()` 的第三个参数设置为 `{ new: true }` 。 默认情况下，这个方法会返回修改前的数据。
 
 # --hints--
 
-findOneAndUpdate an item should succeed
+应成功地使用 findOneAndUpdate 更新数据
 
 ```js
 (getUserInput) =>
