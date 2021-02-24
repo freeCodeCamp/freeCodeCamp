@@ -182,6 +182,17 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
+export const stepsToClaimSelector = state => {
+  const user = userSelector(state);
+  console.log('user: ', user);
+  return {
+    currentCerts: certificatesByNameSelector(user).currentCerts,
+    isHonest: true,
+    isProfileNameSet: user.name && true,
+    isCertificationPublic: true,
+    isTimelinePublic: false
+  };
+};
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;

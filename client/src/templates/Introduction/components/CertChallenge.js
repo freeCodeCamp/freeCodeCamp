@@ -7,11 +7,11 @@ import { withTranslation } from 'react-i18next';
 
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 import GreenPass from '../../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { userSelector } from '../../../redux';
 import { verifyCert } from '../../../redux/settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { User } from '../../../redux/propTypes';
+import CertificationCard from './CertificationCard';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
@@ -19,11 +19,6 @@ const propTypes = {
   t: PropTypes.func,
   user: User,
   verifyCert: PropTypes.func.isRequired
-};
-
-const honestyInfoMessage = {
-  type: 'info',
-  message: 'flash.honest-first'
 };
 
 const mapStateToProps = state => {
@@ -39,69 +34,6 @@ const mapDispatchToProps = {
   createFlashMessage,
   verifyCert
 };
-
-const pTypes = {
-  certCheckmarkStyle: PropTypes.object,
-  certLocation: PropTypes.string,
-  createFlashMessage: PropTypes.func.isRequired,
-  i18nCertText: PropTypes.string,
-  isHonest: PropTypes.bool,
-  superBlock: PropTypes.string,
-  t: PropTypes.func.isRequired,
-  verifyCert: PropTypes.func.isRequired
-};
-
-const CertStatus = ({
-  certLocation,
-  createFlashMessage,
-  superBlock,
-  i18nCertText,
-  isHonest,
-  certCheckmarkStyle,
-  verifyCert,
-  t
-}) => {
-  const createClickHandler = superBlock => e => {
-    e.preventDefault();
-    return isHonest
-      ? verifyCert(superBlock)
-      : createFlashMessage(honestyInfoMessage);
-  };
-  return (
-    <div>
-      <ul>
-        <li className='block-link'>
-          <button onClick={() => navigate(`/settings/#${superBlock}`)}>
-            Certificate Requirements
-          </button>
-        </li>
-        <li className='block-link'>
-          <button onClick={() => navigate('/settings/#privacy-settings')}>
-            Status
-          </button>
-        </li>
-      </ul>
-      <button
-        className='map-cert-title map-is-cert'
-        href={certLocation}
-        onClick={createClickHandler(superBlock)}
-      >
-        {t('buttons.claim-cert')}
-
-        <CertificationIcon />
-        <h3>{i18nCertText}</h3>
-        <div className='map-title-completed-big'>
-          <span>
-            <GreenNotCompleted style={certCheckmarkStyle} />
-          </span>
-        </div>
-      </button>
-    </div>
-  );
-};
-
-CertStatus.displayName = 'CertStatus';
-CertStatus.propTypes = pTypes;
 
 export class CertChallenge extends Component {
   render() {
@@ -149,14 +81,13 @@ export class CertChallenge extends Component {
     return (
       <div className='block'>
         {!isCertified ? (
-          <CertStatus
+          <CertificationCard
             certCheckmarkStyle={certCheckmarkStyle}
             certLocation={certLocation}
             createFlashMessage={createFlashMessage}
             i18nCertText={i18nCertText}
             isHonest={isHonest}
             superBlock={superBlock}
-            t={t}
             verifyCert={verifyCert}
           />
         ) : (
