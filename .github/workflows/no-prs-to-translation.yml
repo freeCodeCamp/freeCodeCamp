@@ -6,7 +6,8 @@ on:
     paths:
       - 'curriculum/challenges/**'
       - '!curriculum/challenges/english/**'
-      - 'client/i18n/locales/**'
+      - 'client/i18n/locales/**/intro.json'
+      - 'client/i18n/locales/**/translations.json'
       - '!client/i18n/locales/english/**'
 
 jobs:
