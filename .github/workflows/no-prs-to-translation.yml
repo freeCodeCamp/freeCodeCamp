@@ -6,6 +6,9 @@ on:
     paths:
       - 'curriculum/challenges/**'
       - '!curriculum/challenges/english/**'
+      - 'client/i18n/locales/**/intro.json'
+      - 'client/i18n/locales/**/translations.json'
+      - '!client/i18n/locales/english/**'
 
 jobs:
   has-translation:
@@ -21,13 +24,13 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: "Thanks for your pull-request. We are no longer accepting curriculum-related changes to non-English files. Please visit [our contributing guidelines](https://contribute.freecodecamp.org) to learn more about translating freeCodeCamp's resources."
+                body: "Thanks for your pull-request. We are no longer accepting changes to the non-English versions of files in parts of this codebase. This pull-request seems to change some of those. Please visit [our contributing guidelines](https://contribute.freecodecamp.org) to learn more about translating freeCodeCamp's resources."
               })
             } else {
               github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'WAIT! This message serves as a sanity check. Your PR appears to come from the base freeCodeCamp repository and modifies translated curriculum files. Before merging, please confirm that the commits on this PR originated from the Crowdin download action.'
+                body: 'WAIT! This message serves as a sanity check. Your PR appears to come from the base freeCodeCamp repository and modifies translated curriculum files or intro.json or translations.json. Before merging, please confirm that the commits on this PR originated from the Crowdin download action.'
               })
             }
