@@ -59,6 +59,8 @@ const CertificationCard = ({
   const handleBlockClick = () => {
     setIsExpanded(!isExpanded);
   };
+  // TODO: Undo hardcoded values for testing, and decide
+  //       on best data structure to follow for stepsToClaim
   let completedCount = 3;
   const {
     expand: expandText,

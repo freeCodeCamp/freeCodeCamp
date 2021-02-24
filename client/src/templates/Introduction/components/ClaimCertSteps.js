@@ -10,6 +10,7 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 
+// TODO: Replace with completed steps
 const mapStateToProps = state => {
   return createSelector(
     completedChallengesSelector,
@@ -49,7 +50,7 @@ const ClaimCertSteps = props => {
       <GreenNotCompleted style={mapIconStyle} />
     );
   };
-
+  // TODO: handle links to relevant section on /settings
   const { stepsWithCompleted } = props;
 
   return (
