@@ -7,7 +7,7 @@ const { i18nextCodes } = require('../../config/i18n/all-langs');
 const i18nextCode = i18nextCodes[clientLocale];
 
 i18n.use(initReactI18next).init({
-  fallbackLng: 'fallback',
+  fallbackLng: 'en',
   lng: i18nextCode,
   // we only load one language since each language will have it's own server
   resources: {
@@ -17,7 +17,7 @@ i18n.use(initReactI18next).init({
       intro: require(`./locales/${clientLocale}/intro.json`),
       metaTags: require(`./locales/${clientLocale}/meta-tags.json`)
     },
-    fallback: {
+    en: {
       translations: require('./locales/english/translations.json'),
       trending: require('./locales/english/trending.json'),
       intro: require('./locales/english/intro.json'),
