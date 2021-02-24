@@ -135,12 +135,7 @@ const ShowProjectLinks = props => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              <Trans
-                i18nKey={`certification.project.title.${cert.title}`}
-                defaults={cert.title}
-              >
-                placeholder
-              </Trans>
+              {t(`certification.project.title.${cert.title}`, cert.title)}
             </a>
           </li>
         );
@@ -150,12 +145,7 @@ const ShowProjectLinks = props => {
       ({ link, title, id }) => (
         <li key={id}>
           <Link to={link} className='project-link'>
-            <Trans
-              i18nKey={`certification.project.title.${title}`}
-              defaults={title}
-            >
-              placeholder
-            </Trans>
+            {t(`certification.project.title.${title}`, title)}
           </Link>
           : {getProjectSolution(id, title)}
         </li>
@@ -171,16 +161,12 @@ const ShowProjectLinks = props => {
   const { files, isOpen, projectTitle, solution } = solutionState;
   return (
     <div>
-      <Trans
-        user={name}
-        i18nKey={
-          certName === 'Legacy Full Stack'
-            ? 'certification.project.heading-legacy-full-stack'
-            : 'certification.project.heading'
-        }
-      >
-        {{ user: name }}
-      </Trans>
+      {t(
+        certName === 'Legacy Full Stack'
+          ? 'certification.project.heading-legacy-full-stack'
+          : 'certification.project.heading',
+        { user: name }
+      )}
       <Spacer />
       <ul>{renderProjectsFor(certName)}</ul>
       <Spacer />
@@ -199,14 +185,14 @@ const ShowProjectLinks = props => {
           target='_blank'
           rel='noreferrer'
         >
-          placeholder
+          academic honesty policy
         </a>
         <a
           href={`/user/${username}/report-user`}
           target='_blank'
           rel='noreferrer'
         >
-          placeholder
+          report this to our team
         </a>
       </Trans>
     </div>
