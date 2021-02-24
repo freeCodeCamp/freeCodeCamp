@@ -30,6 +30,7 @@ function LandingTop({ page }) {
           </h1>
           <p className='big-heading'>{t('landing.big-heading-2')}</p>
           <p className='big-heading'>{t('landing.big-heading-3')}</p>
+          <p className='big-heading'>{t('landing.big-heading-4')}</p>
           <p>{t('landing.h2-heading')}</p>
           <div className='logo-row'>
             <AppleLogo />
