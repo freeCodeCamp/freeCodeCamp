@@ -17,7 +17,7 @@ For example, if you wanted to make a text input field required, you can just add
 
 Make your text `input` a `required` field, so that your user can't submit the form without completing this field.
 
-Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?
+Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required.
 
 # --hints--
 
