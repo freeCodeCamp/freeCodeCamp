@@ -15,7 +15,7 @@ import Spacer from '../../helpers/Spacer';
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
-import { langCodes } from '../../../../../config/i18n/all-langs';
+import { langCodes } from '../../../../i18n/allLangs';
 import { clientLocale } from '../../../../../config/env.json';
 
 const localeCode = langCodes[clientLocale];

@@ -39,7 +39,6 @@ jobs:
         run: |
           npm ci
           npm run ensure-env --if-present
-          npm run build:curriculum --if-present
           npm run lint --if-present
 
   test:
@@ -80,7 +79,6 @@ jobs:
         run: |
           npm ci
           npm run ensure-env --if-present
-          npm run build:curriculum --if-present
 
       - name: Run Tests
         run: npm test
