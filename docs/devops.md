@@ -71,7 +71,7 @@ Currently, only members on the developer team can push to the production branche
    upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `maim` branch is pristine and in sync with the upstream.
+2. Make sure your `main` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout main
