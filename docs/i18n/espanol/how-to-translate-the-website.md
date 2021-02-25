@@ -186,7 +186,7 @@ To change text on the client side of things, go to the relevant `.json` file, fi
 
 If the text you want to add to the client exists in the relevant `.json` file, use the existing key. Otherwise, create a new key.
 
-The matching filename`-schema.js` file is the "source of truth" for all of the `.json` files sharing the same name. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files.
+The English file is the "source of truth" for all of the `.json` files sharing the same name. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files.
 
 > [!NOTE] Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
 

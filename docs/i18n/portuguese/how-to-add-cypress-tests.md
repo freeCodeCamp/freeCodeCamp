@@ -14,8 +14,7 @@ To learn how to write Cypress tests, or 'specs', please see Cypress' official [d
 
 ## How to run tests
 
-> [!NOTE]
-> If using GitPod, please see [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
+> [!NOTE] If using GitPod, please see [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
 
 ### 1. Ensure that MongoDB and client applications are running
 

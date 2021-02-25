@@ -32,8 +32,7 @@ We employ various levels of integration and acceptance testing to check on the q
 
 We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
-> [!NOTE]
-> We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
+> [!NOTE] We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
 Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
@@ -51,8 +50,7 @@ Status of builds and releases are [available here](#build-test-and-deployment-st
 
 Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!NOTE]
-> In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
+> [!NOTE] In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
 
 ### Pushing changes to Staging Applications.
 
@@ -65,10 +63,10 @@ Currently, only members on the developer team can push to the production branche
    **Results:**
 
    ```
-   origin	git@github.com:raisedadead/freeCodeCamp.git (fetch)
-   origin	git@github.com:raisedadead/freeCodeCamp.git (push)
-   upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (fetch)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (push)
+   upstream git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
 2. Make sure your `maim` branch is pristine and in sync with the upstream.
@@ -83,12 +81,9 @@ Currently, only members on the developer team can push to the production branche
 
    The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `main` branch. Click the green check mark next to the commit hash when viewing the `main` branch code.
 
-    <details>
-      <summary>
-        Checking status on GitHub Actions (screenshot)
-      </summary>
+    <details> <summary> Checking status on GitHub Actions (screenshot) </summary>
       <br>
-      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png" alt="Check build status on GitHub Actions">
+      ![Check build status on GitHub Actions](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png)
     </details>
 
    If this is failing you should stop and investigate the errors.
@@ -107,9 +102,8 @@ Currently, only members on the developer team can push to the production branche
    git push upstream
    ```
 
-   > [!NOTE]
-   > You will not be able to force push and if you have re-written the history in anyway these commands will error out.
-   >
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   > 
    > If they do, you may have done something incorrectly and you should just start over.
 
 The above steps will automatically trigger a run on the build pipeline for the `prod-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
@@ -121,7 +115,8 @@ The release pipeline is triggered automatically when a fresh artifact is availab
 The process is mostly the same as the staging platforms, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
 
 | Do NOT execute these commands unless you have verified that everything is working on the staging platform. You should not bypass or skip any testing on staging before proceeding further. |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                                            |
 
 
 1. Make sure your `prod-staging` branch is pristine and in sync with the upstream.
@@ -140,9 +135,8 @@ The process is mostly the same as the staging platforms, with a few extra checks
    git push upstream
    ```
 
-   > [!NOTE]
-   > You will not be able to force push and if you have re-written the history in anyway these commands will error out.
-   >
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   > 
    > If they do, you may have done something incorrectly and you should just start over.
 
 The above steps will automatically trigger a run on the build pipeline for the `prod-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
@@ -156,7 +150,8 @@ If the changes are working nicely and have been tested on the staging platform, 
 For staff use:
 
 | Check your email for a direct link or [go to the release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) after the build run is complete. |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                    |
 
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers.
@@ -166,7 +161,7 @@ Once one of the staff members approves a release, the pipeline will push the cha
 Here is the current test, build and deployment status of the codebase.
 
 | Branch                                                                           | Unit Tests                                                                                                                                                                                                                       | Integration Tests                                                                                                                                                                                                        | Builds & Deployments                                                                                                              |
-| :------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+|:-------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:--------------------------------------------------------------------------------------------------------------------------------- |
 | [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main)                 | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=main)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22)                               | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/main&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time)         | -                                                                                                                                 |
 | [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-staging)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-staging) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-staging&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
 | [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-current)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-current) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-current&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
@@ -185,7 +180,7 @@ We thank you for reporting bugs that you encounter and help in making freeCodeCa
 Currently a public beta testing version is available at:
 
 | Application | Language | URL                                      |
-| :---------- | :------- | :--------------------------------------- |
+|:----------- |:-------- |:---------------------------------------- |
 | Learn       | English  | <https://www.freecodecamp.dev>           |
 |             | Espanol  | <https://www.freecodecamp.dev/espanol>   |
 |             | Chinese  | <https://chinese.freecodecamp.dev>       |
@@ -194,9 +189,8 @@ Currently a public beta testing version is available at:
 |             | Chinese  | <https://chinese.freecodecamp.dev/forum> |
 | API         | -        | `https://api.freecodecamp.dev`           |
 
-> [!NOTE]
-> The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
->
+> [!NOTE] The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
+> 
 > The above list not exhaustive of all the applications that we provision. Also not all language variants are deployed in staging to conserve resources.
 
 ### Identifying the current version of the platforms
@@ -236,7 +230,7 @@ You may send an email to `dev[at]freecodecamp.org` if you have any queries. As a
 # Flight Manual - Server Maintenance
 
 > [!WARNING]
->
+> 
 > 1. The guide applies to the **freeCodeCamp Staff members only**.
 > 2. These instructions should not be considered exhaustive, please use caution.
 
@@ -246,8 +240,7 @@ Here are some handy commands that you can use to work on the Virtual Machines (V
 
 ## Get a list of the VMs
 
-> [!NOTE] While you may already have SSH access to the VMs, that alone will not
-> let you list VMs unless you been granted access to the cloud portals as well.
+> [!NOTE] While you may already have SSH access to the VMs, that alone will not let you list VMs unless you been granted access to the cloud portals as well.
 
 ### Azure
 
@@ -273,8 +266,7 @@ az vm list-ip-addresses --output table
 
 ### Digital Ocean
 
-Install Digital Ocean CLI `doctl`:
-https://github.com/digitalocean/doctl#installing-doctl
+Install Digital Ocean CLI `doctl`: https://github.com/digitalocean/doctl#installing-doctl
 
 > **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
 
@@ -284,8 +276,7 @@ brew install doctl
 
 > **(One-time) Login:**
 
-Authentication and context switching:
-https://github.com/digitalocean/doctl#authenticating-with-digitalocean
+Authentication and context switching: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
 
 ```
 doctl auth init
@@ -300,6 +291,7 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 ## Spin a VM (or VM Scale Set)
 
 > Todo: Add instructions for spinning VM(s)
+
 
 <!--
 
@@ -397,17 +389,12 @@ az vmss create \
 
 ## Keep VMs updated
 
-You should keep the VMs up to date by performing updates and upgrades. This will
-ensure that the virtual machine is patched with latest security fixes.
+You should keep the VMs up to date by performing updates and upgrades. This will ensure that the virtual machine is patched with latest security fixes.
 
 > [!WARNING] Before you run these commands:
->
-> - Make sure that the VM has been provisioned completely and there is no
->   post-install steps running.
-> - If you are updating packages on a VM that is already serving an application,
->   make sure the app has been stopped / saved. Package updates will cause
->   network bandwidth, memory and/or CPU usage spikes leading to outages on
->   running applications.
+> 
+> - Make sure that the VM has been provisioned completely and there is no post-install steps running.
+> - If you are updating packages on a VM that is already serving an application, make sure the app has been stopped / saved. Package updates will cause network bandwidth, memory and/or CPU usage spikes leading to outages on running applications.
 
 Update package information
 
@@ -429,13 +416,9 @@ sudo apt autoremove -y
 
 ## Work on Web Servers (Proxy)
 
-We are running load balanced (Azure Load Balancer) instances for our web
-servers. These servers are running NGINX which reverse proxy all of the traffic
-to freeCodeCamp.org from various applications running on their own
-infrastructures.
+We are running load balanced (Azure Load Balancer) instances for our web servers. These servers are running NGINX which reverse proxy all of the traffic to freeCodeCamp.org from various applications running on their own infrastructures.
 
-The NGINX config is available on
-[this repository](https://github.com/freeCodeCamp/nginx-config).
+The NGINX config is available on [this repository](https://github.com/freeCodeCamp/nginx-config).
 
 ### First Install
 
@@ -443,11 +426,9 @@ Provisioning VMs with the Code
 
 #### 1. (Optional) Install NGINX and configure from repository.
 
-The basic setup should be ready OOTB, via the cloud-init configuration. SSH and
-make changes as necessary for the particular instance(s).
+The basic setup should be ready OOTB, via the cloud-init configuration. SSH and make changes as necessary for the particular instance(s).
 
-If you did not use the cloud-init config previously use the below for manual
-setup of NGINX and error pages:
+If you did not use the cloud-init config previously use the below for manual setup of NGINX and error pages:
 
 ```console
 sudo su
@@ -464,8 +445,7 @@ cd /etc/nginx
 
 #### 2. Install Cloudflare origin certificates and upstream application config.
 
-Get the Cloudflare origin certificates from the secure storage and install at
-required locations.
+Get the Cloudflare origin certificates from the secure storage and install at required locations.
 
 **OR**
 
@@ -495,8 +475,7 @@ Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
 
 #### 4. Add the VM to the load balancer backend pool.
 
-Configure and add rules to load balancer if needed. You may also need to add the
-VMs to load balancer backend pool if needed.
+Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
 
 ### Logging and Monitoring
 
@@ -509,11 +488,9 @@ sudo systemctl status nginx
 2. Logging and monitoring for the servers are available at:
 
 > <h3 align="center"><a href='https://amplify.nginx.com' _target='blank'>https://amplify.nginx.com</a></h3>
-
 ### Updating Instances (Maintenance)
 
-Config changes to our NGINX instances are maintained on GitHub, these should be
-deployed on each instance like so:
+Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
 
 1. SSH into the instance and enter sudo
 
@@ -529,8 +506,7 @@ git fetch --all --prune
 git reset --hard origin/main
 ```
 
-3. Test and reload the config
-   [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
 ```console
 nginx -t
@@ -603,12 +579,9 @@ pm2 monit
 
 ### Updating Instances (Maintenance)
 
-Code changes need to be deployed to the API instances from time to time. It can
-be a rolling update or a manual update. The later is essential when changing
-dependencies or adding enviroment variables.
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the
-> minute. We need to do a manual update before any deployment pipeline runs.
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -642,8 +615,7 @@ pm2 start all --update-env && pm2 logs
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You
-> should not need to run these commands. These are here for documentation.
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
 
 ## Work on Client Instances
 
@@ -681,12 +653,11 @@ Provisioning VMs with the Code
    cd client
    ```
 
-   Start placeholder instances for the web client, these will be updated with
-   artifacts from the Azure pipeline.
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
-   > Todo: This setup needs to move to S3 or Azure Blob storage
-
-   ```console
+   > Todo: This setup needs to move to S3 or Azure Blob storage 
+   > 
+   > ```console
    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
    chmod +x client-start-primary.sh
    pm2 delete client-primary
@@ -695,7 +666,7 @@ Provisioning VMs with the Code
    chmod +x client-start-secondary.sh
    pm2 delete client-secondary
    pm2 start  ./client-start-secondary.sh --name client-secondary
-   ```
+```
 
 ### Logging and Monitoring
 
@@ -709,12 +680,9 @@ pm2 monit
 
 ### Updating Instances (Maintenance)
 
-Code changes need to be deployed to the API instances from time to time. It can
-be a rolling update or a manual update. The later is essential when changing
-dependencies or adding enviroment variables.
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the
-> minute. We need to do a manual update before any deployment pipeline runs.
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -738,5 +706,4 @@ dependencies or adding enviroment variables.
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You
-> should not need to run these commands. These are here for documentation.
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.

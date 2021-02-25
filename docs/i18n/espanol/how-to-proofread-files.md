@@ -8,7 +8,7 @@ Para comenzar a revisar y aprobar traducciones, visita [ nuestro sitio de traduc
 
 Deberías ver una lista de los proyectos para los que te concedieron acceso. Selecciona el proyecto que quieres revisar y luego selecciona el idioma.
 
-![Imagen - Árbol de archivos de la vista de proofreading ](./images/crowdin/proof-file-tree.png)
+![Imagen - Árbol de archivos de la vista de proofreading ](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
 Ahora podrás ver la lista de archivos disponibles. Selecciona un archivo haciendo clic en el botón `Proofread` que se encuentra a la derecha de ese archivo, y luego selecciona la opción `Proofreading` del menú desplegable que se abrirá.
 
@@ -16,7 +16,7 @@ Ahora podrás ver la lista de archivos disponibles. Selecciona un archivo hacien
 
 ## Revisar traducciones
 
-![Imagen - Vista de proofreading](./images/crowdin/proofread.png)
+![Imagen - Vista de proofreading](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 

@@ -8,16 +8,15 @@ To begin proofreading, visit [our translation site](https://translate.freecodeca
 
 You should see the list of projects you have been granted access to. Select the project that you would like to proofread, then select the language.
 
-![Image - Proofreading File Tree](./images/crowdin/proof-file-tree.png)
+![Image - Proofreading File Tree](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
 You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
 
-> [!NOTE]
-> If you are in this workspace view, but want to work on [translating a file](./how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
+> [!NOTE] If you are in this workspace view, but want to work on [translating a file](./how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
 
 ## Proofread Translations
 
-![Image - Proofreading View](./images/crowdin/proofread.png)
+![Image - Proofreading View](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 
@@ -34,10 +33,8 @@ While you can view *all* proposed translations for a given string, the community
 7. This button shows/hides the right-hand side display pane, where you can view translations, comments, translation memory, and glossary terms.
 8. Crowdin displays error messages here from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
 
-> [!WARNING]
-> Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
+> [!WARNING] Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
 
 No additional actions are required once a file has been proofread. If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators).
 
-> [!NOTE]
-> Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
+> [!NOTE] Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
