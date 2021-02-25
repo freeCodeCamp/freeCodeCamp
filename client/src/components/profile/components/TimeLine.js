@@ -24,7 +24,7 @@ import {
 import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
-import { langCodes } from '../../../../../config/i18n/all-langs';
+import { langCodes } from '../../../../i18n/allLangs';
 import { clientLocale } from '../../../../../config/env.json';
 
 const localeCode = langCodes[clientLocale];

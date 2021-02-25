@@ -3,7 +3,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const {
   curriculum: curriculumLangs
-} = require('../config/i18n/all-langs').availableLangs;
+} = require('../client/i18n/allLangs').availableLangs;
 
 exports.testedLang = function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {

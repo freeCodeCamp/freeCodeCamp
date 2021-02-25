@@ -313,6 +313,7 @@ fieldset[disabled] .btn-primary.focus {
 
 .map-icon {
   width: 35px;
+  max-height: 45px;
   margin-right: 20px;
 }
 
@@ -328,6 +329,7 @@ fieldset[disabled] .btn-primary.focus {
   }
   .map-icon {
     width: 45px;
+    max-height: 55px;
   }
   .cert-header-icon {
     width: 100px;

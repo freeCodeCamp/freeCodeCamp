@@ -1,13 +1,13 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const { clientLocale } = require('../../config/env.json');
-const { i18nextCodes } = require('../../config/i18n/all-langs');
+import { clientLocale } from '../../config/env.json';
+import { i18nextCodes } from './allLangs';
 
 const i18nextCode = i18nextCodes[clientLocale];
 
 i18n.use(initReactI18next).init({
-  fallbackLng: i18nextCode,
+  fallbackLng: 'en',
   lng: i18nextCode,
   // we only load one language since each language will have it's own server
   resources: {
@@ -16,6 +16,12 @@ i18n.use(initReactI18next).init({
       trending: require(`./locales/${clientLocale}/trending.json`),
       intro: require(`./locales/${clientLocale}/intro.json`),
       metaTags: require(`./locales/${clientLocale}/meta-tags.json`)
+    },
+    en: {
+      translations: require('./locales/english/translations.json'),
+      trending: require('./locales/english/trending.json'),
+      intro: require('./locales/english/intro.json'),
+      metaTags: require('./locales/english/meta-tags.json')
     }
   },
   ns: ['translations', 'trending', 'intro', 'metaTags'],

@@ -4,7 +4,7 @@ import {
   i18nextCodes,
   langDisplayNames,
   langCodes
-} from '../../config/i18n/all-langs';
+} from './allLangs';
 
 const fs = require('fs');
 const { setup } = require('jest-json-schema-extended');

@@ -2,11 +2,10 @@ Follow these guidelines for setting up freeCodeCamp locally on your system. This
 
 Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
-> [!TIP]
-> If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
->
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
+> 
 > [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
->
+> 
 > (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
 ### How to prepare your local machine
@@ -21,14 +20,13 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 
 **Prerequisites:**
 
-| Prerequisite                  | Version | Notes                                                                |
-| ----------------------------- | ------- | -------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)   |
-| npm (comes bundled with Node) | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
-> [!DANGER]
-> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
@@ -37,8 +35,7 @@ node -v
 npm -v
 ```
 
-> [!TIP]
-> We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
 Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
@@ -56,8 +53,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
    You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP]
-   > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
 ## Fork the repository on GitHub
 
@@ -65,9 +61,8 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-> [!TIP]
-> The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
->
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
+> 
 > Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
 
 **Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
@@ -82,18 +77,17 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
    <summary>
       How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
+
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub">
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
 ## Clone your fork from GitHub
 
 [Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
-> [!WARNING]
-> If you are working on a WSL2 Linux Distro, you might get performance and stability issues by running this project in a folder which is shared between Windows and WSL2 (e.g. `/mnt/c/Users/`).
-> Therefore we recommend to clone this repo into a folder which is mainly used by your WSL2 Linux Distro and not directly shared with Windows (e.g. `~/PROJECTS/`).
->
+> [!WARNING] If you are working on a WSL2 Linux Distro, you might get performance and stability issues by running this project in a folder which is shared between Windows and WSL2 (e.g. `/mnt/c/Users/`). Therefore we recommend to clone this repo into a folder which is mainly used by your WSL2 Linux Distro and not directly shared with Windows (e.g. `~/PROJECTS/`).
+> 
 > See [this GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) for further Information about this problem.
 
 Run these commands on your local machine:
@@ -159,11 +153,10 @@ If you do run into issues, first perform a web search for your issue and see if 
 
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://chat.freecodecamp.org/home).
 
-> [!TIP]
-> You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
->
+> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
+> 
 > You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
->
+> 
 > [Skip to making changes](#making-changes-locally).
 
 ### Configuring dependencies
@@ -185,8 +178,7 @@ copy sample.env .env
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-> [!TIP]
-> Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
+> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
 #### Step 2: Install dependencies
 
@@ -200,8 +192,7 @@ npm ci
 
 Before you can run the application locally, you will need to start the MongoDB service.
 
-> [!NOTE]
-> Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
+> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
 
 Start the MongoDB server in a separate terminal:
 
@@ -219,8 +210,7 @@ Start the MongoDB server in a separate terminal:
 
   Make sure to replace `3.6` with the version you have installed
 
-> [!TIP]
-> You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
 Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
@@ -238,11 +228,9 @@ npm run develop
 
 This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-> [!NOTE]
-> Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-> [!TIP]
-> The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
+> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
 > If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
@@ -258,8 +246,9 @@ Simply clicking the **"Preview Custom 404 Page"** button will forward you to the
    <summary>
       How to sign in when working locally (screenshot)
    </summary>
+
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally">
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
 ## Making changes locally
@@ -291,9 +280,8 @@ Follow these steps:
 
 2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your local main branch:
 
-   > [!WARNING]
-   > If you have any outstanding pull request that you made from the `main` branch of your fork, you will lose them at the end of this step.
-   >
+   > [!WARNING] If you have any outstanding pull request that you made from the `main` branch of your fork, you will lose them at the end of this step.
+   > 
    > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
 
    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
@@ -490,7 +478,7 @@ It is recommended to research your specific issue on resources such as Google, S
 If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
 > [!WARNING]
->
+> 
 > Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
 ### Issues with the UI, Fonts, build errors, etc.
@@ -524,8 +512,9 @@ git clean -ifdX
    <summary>
       How to clean git untracked files (screenshot)
    </summary>
+
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
 ### Issues with API, login, Challenge Submissions, etc.

@@ -30,7 +30,7 @@ Challenge description text, in markdown
 <div>
   example code
 </div>
-```
+````
 
 # --question--
 
@@ -76,11 +76,9 @@ Pick a challenge markdown file from the options above.
 First, find the videoId.
 
 For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
-```
+````
 ---
-id: 5e9a093a74c4063ca6f7c14d
-title: Data Analysis Example A
-challengeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
@@ -139,7 +137,7 @@ Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. M
 What does this JavaScript code log to the console?
 ```js
 console.log('hello world');
-```
+````
 
 ## --answers--
 
@@ -171,7 +169,7 @@ What will print out after running this code:
 width = 15
 height = 12.0
 print(height/3)
-```
+````
 
 ## --answers--
 
@@ -195,8 +193,7 @@ print(height/3)
 
 ## --video-solution--
 
-3
-````
+3 ````
 
 For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 

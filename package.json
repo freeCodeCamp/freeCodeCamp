@@ -9,7 +9,6 @@
     "build": "npm-run-all -p build:*",
     "build:client": "cd ./client && npm run build",
     "build:server": "cd ./api-server && npm run build",
-    "build:curriculum": "cd ./curriculum && npm run build",
     "bootstrap": "lerna bootstrap --ci",
     "clean": "npm-run-all clean:client clean:server clean:packages clean:root-deps",
     "clean-and-develop": "npm run clean && npm ci && npm run develop",
@@ -17,7 +16,6 @@
     "clean:packages": "lerna clean -y",
     "clean:server": "shx rm -rf ./api-server/lib",
     "clean:client": "cd ./client && npm run clean",
-    "clean:curriculum": "shx rm ./config/curriculum.json",
     "clean:gatsby-site": "npm run clean:client",
     "precypress": "node ./cypress-install.js",
     "cypress": "cypress",
@@ -27,8 +25,7 @@
     "cypress:dev:watch": "npm run cypress -- open",
     "cypress:prd:run": "npm run cypress -- run",
     "cypress:prd:watch": "npm run cypress -- open",
-    "predevelop": "npm run ensure-env",
-    "develop": "npm-run-all build:curriculum -p develop:*",
+    "develop": "npm-run-all ensure-env -p develop:*",
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && npm run develop",
     "docs:serve": "docsify serve ./docs -o --port 3200",
@@ -53,9 +50,7 @@
     "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser certUser",
     "serve:client": "cd ./client && npm run serve",
     "start": "npm-run-all ensure-env -p develop:server serve:client",
-    "start-ci": "npm-run-all ensure-env -p start:server serve:client",
-    "start:server": "cd ./api-server && npm start",
-    "test": "npm-run-all ensure-env build:curriculum -p test:*",
+    "test": "npm-run-all ensure-env -p test:*",
     "test:client": "cd ./client && npm test",
     "test:curriculum": "cd ./curriculum && npm test",
     "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
@@ -71,6 +66,7 @@
     "cypress": "^6.1.0",
     "debug": "^4.3.1",
     "docsify-cli": "^4.4.2",
+    "dotenv": "^6.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-babel": "^5.3.1",
@@ -118,7 +114,5 @@
       "pre-commit": "lint-staged"
     }
   },
-  "dependencies": {
-    "dotenv": "^8.2.0"
-  }
+  "dependencies": {}
 }

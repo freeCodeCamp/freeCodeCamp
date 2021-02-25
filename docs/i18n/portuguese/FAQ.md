@@ -75,7 +75,7 @@ Thanks in advance for being polite and patient. Remember – this community is r
 If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
 | Staff                 | Send message on Forum                                                        |
-| :-------------------- | :--------------------------------------------------------------------------- |
+|:--------------------- |:---------------------------------------------------------------------------- |
 | Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
 | Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
 | Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |

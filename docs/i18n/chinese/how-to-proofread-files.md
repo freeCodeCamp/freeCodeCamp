@@ -8,7 +8,7 @@
 
 你将看到你已被授予访问权限的项目列表。 选择你想参与校对的项目，然后选择你要校对的语言版本。
 
-![图片 - 待校对文件列表](./images/crowdin/proof-file-tree.png)
+![图片 - 待校对文件列表](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
 在文件列表中， 通过点击文件右侧的 `Proofread` 按钮选择你要校对的文件，然后从出现的下拉菜单中选择 `Proofreading`。
 
@@ -16,7 +16,7 @@
 
 ## 校对译文
 
-![图片 - 校对视图](./images/crowdin/proofread.png)
+![图片 - 校对视图](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 

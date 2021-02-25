@@ -653,7 +653,7 @@ Aprovisionamiento de las VMs con el código
    cd client
    ```
 
-   Inicia las instancias de marcador para el cliente web, estas se actualizarán con artefactos del flujo de Azure.
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
    > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 

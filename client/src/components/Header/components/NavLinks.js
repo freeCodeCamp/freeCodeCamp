@@ -24,7 +24,7 @@ const {
   availableLangs,
   i18nextCodes,
   langDisplayNames
-} = require('../../../../../config/i18n/all-langs');
+} = require('../../../../i18n/allLangs');
 
 const locales = availableLangs.client;
 

@@ -1,7 +1,6 @@
 The client/react side of our website is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
 
-> [!NOTE]
-> Curriculum lesson content is [translated separately](./how-to-translate-files.md).
+> [!NOTE] Curriculum lesson content is [translated separately](./how-to-translate-files.md).
 
 ## File Structure
 
@@ -21,7 +20,7 @@ The `meta-tags.json` file contains the information for our website's meta tag in
 
 To add a new language, create a folder with the language name as the title next to the other languages and copy the JSON files from another language into your new folder.
 
-In the `all-langs.js` file, add the language to the `client` array in the first variable. Then, follow the instructions in the comments to add the rest of the necessary variables.
+In the `allLangs.js` file, add the language to the `client` array in the first variable. Then, follow the instructions in the comments to add the rest of the necessary variables.
 
 ## How to Translate
 
@@ -33,8 +32,7 @@ Modifications to the `trending.json`, `meta-tags.json`, and `motivation.json` fi
 
 Set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to build.
 
-> [!NOTE]
-> The value needs to be one of the client languages available in `config/i18n/all-langs.js`
+> [!NOTE] The value needs to be one of the client languages available in `client/i18n/allLangs.js`
 
 ## How to Structure Components
 
@@ -190,13 +188,11 @@ If the text you want to add to the client exists in the relevant `.json` file, u
 
 The English file is the "source of truth" for all of the `.json` files sharing the same name. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files.
 
-> [!NOTE]
-> Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
+> [!NOTE] Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
 
-It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files. 
+It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files.
 
-> [!NOTE]
-> The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+> [!NOTE] The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
 
 ## Helpful Documentation
 
