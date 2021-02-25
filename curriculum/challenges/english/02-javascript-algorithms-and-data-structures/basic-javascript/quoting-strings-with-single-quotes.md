@@ -31,9 +31,9 @@ badStr = 'Finn responds, "Let's go!"';
 
 Here `badStr` will throw an error.
 
-In the <dfn>goodStr</dfn> above, you can use both quotes safely by using the backslash <code>\\</code> as an escape character.
+In the <dfn>goodStr</dfn> above, you can use both quotes safely by using the backslash `\` as an escape character.
 
-**Note:** The backslash <code>\\</code> should not be confused with the forward slash `/`. They do not do the same thing.
+**Note:** The backslash `\` should not be confused with the forward slash `/`. They do not do the same thing.
 
 # --instructions--
 
