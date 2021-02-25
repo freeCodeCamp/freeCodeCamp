@@ -581,14 +581,13 @@ Provisioning VMs with the Code
 7. Build the server
 
    ```console
-   npm run ensure-env && npm run build:server
+   npm run ensure-env && npm run build:curriculum && npm run build:server
    ```
 
 8. Start Instances
 
    ```console
-   cd api-server
-   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   pm2 start api-server/lib/production-start.js -i max --max-memory-restart 600M --name org
    ```
 
 ### Logging and Monitoring
@@ -627,7 +626,7 @@ npm ci
 3. Build the server
 
 ```console
-npm run ensure-env && npm run build:server
+npm run ensure-env && npm run build:curriculum && npm run build:server
 ```
 
 4. Start Instances
