@@ -17,8 +17,11 @@ Here are a couple examples:
 ```scss
 $main-fonts: Arial, sans-serif;
 $headings-color: green;
+```
 
-//To use variables:
+And to use the variables:
+
+```scss
 h1 {
   font-family: $main-fonts;
   color: $headings-color;
