@@ -19,7 +19,7 @@ let romanNumerals = ['XXI', 'XXII'];
 romanNumerals.unshift('XIX', 'XX');
 ```
 
-`romanNumerals` now equals ['XIX', 'XX', 'XXI', 'XXII']
+`romanNumerals` now equals `['XIX', 'XX', 'XXI', 'XXII']`.
 
 ```js
 romanNumerals.push(twentyThree);

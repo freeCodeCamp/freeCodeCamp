@@ -38,7 +38,7 @@ Access the `myStorage` object and assign the contents of the `glove box` propert
 
 # --hints--
 
-`gloveBoxContents` should equal `maps`.
+`gloveBoxContents` should equal the string `maps`.
 
 ```js
 assert(gloveBoxContents === 'maps');

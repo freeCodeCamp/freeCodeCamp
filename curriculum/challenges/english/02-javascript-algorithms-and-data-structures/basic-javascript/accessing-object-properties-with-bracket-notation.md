@@ -42,7 +42,7 @@ Read the values of the properties `an entree` and `the drink` of `testObj` using
 assert(typeof entreeValue === 'string');
 ```
 
-The value of `entreeValue` should be `hamburger`
+The value of `entreeValue` should be the string `hamburger`
 
 ```js
 assert(entreeValue === 'hamburger');
@@ -54,7 +54,7 @@ assert(entreeValue === 'hamburger');
 assert(typeof drinkValue === 'string');
 ```
 
-The value of `drinkValue` should be `water`
+The value of `drinkValue` should be the string `water`
 
 ```js
 assert(drinkValue === 'water');

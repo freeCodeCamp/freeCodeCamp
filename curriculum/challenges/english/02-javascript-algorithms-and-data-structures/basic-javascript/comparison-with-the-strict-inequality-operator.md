@@ -23,7 +23,7 @@ In order, these conditions return: `false`, `true`, and `true`.
 
 # --instructions--
 
-Add the strict inequality operator to the `if` statement so the function will return `Not Equal` when `val` is not strictly equal to `17`
+Add the strict inequality operator to the `if` statement so the function will return the string `Not Equal` when `val` is not strictly equal to `17`
 
 # --hints--
 

@@ -20,7 +20,7 @@ var ourArray = ["Stimpson", "J", ["cat"]];
 var removedFromOurArray = ourArray.shift();
 ```
 
-`removedFromOurArray` now equals `Stimpson` and ourArray now equals `["J", ["cat"]]`.
+`removedFromOurArray` now equals the string `Stimpson`, and `ourArray` now equals `["J", ["cat"]]`.
 
 # --instructions--
 

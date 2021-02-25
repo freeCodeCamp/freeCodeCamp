@@ -35,7 +35,7 @@ In order, these comparisons return: `true`, `false`, `true`, and `true`.
 
 # --instructions--
 
-Add the equality operator to the indicated line so that the function will return `Equal` when `val` is equivalent to `12`.
+Add the equality operator to the indicated line so that the function will return the string `Equal` when `val` is equivalent to `12`.
 
 # --hints--
 

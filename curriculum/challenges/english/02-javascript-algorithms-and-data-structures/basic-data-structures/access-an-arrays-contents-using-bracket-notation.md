@@ -30,7 +30,7 @@ In addition to accessing the value associated with an index, you can also *set* 
 ourArray[1] = "not b anymore";
 ```
 
-Using bracket notation, we have now reset the item at index 1 from `"b"`, to `"not b anymore"`. Now `ourArray` is `["a", "not b anymore", "c"]`.
+Using bracket notation, we have now reset the item at index 1 from the string `b`, to `not b anymore`. Now `ourArray` is `["a", "not b anymore", "c"]`.
 
 # --instructions--
 

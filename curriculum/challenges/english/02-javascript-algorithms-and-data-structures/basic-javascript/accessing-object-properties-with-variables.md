@@ -19,7 +19,7 @@ var dogs = {
 };
 var myDog = "Hunter";
 var myBreed = dogs[myDog];
-console.log(myBreed); // "Doberman"
+console.log(myBreed);
 ```
 
 The string `Doberman` would be displayed in the console.
@@ -60,7 +60,7 @@ The variable `player` should be a string
 assert(typeof player === 'string');
 ```
 
-The value of `player` should be `Montana`
+The value of `player` should be the string `Montana`
 
 ```js
 assert(player === 'Montana');
