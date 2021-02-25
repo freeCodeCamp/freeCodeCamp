@@ -14,7 +14,7 @@ You create state in a React component by declaring a `state` property on the com
 
 ```jsx
 this.state = {
-  // describe your state here
+
 }
 ```
 

@@ -22,8 +22,7 @@ Add the `shake` class to all the buttons with class `.btn`.
 
 Add the `btn-primary` class to the button with id `#target1`.
 
-**Note**  
-You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes `shake`, `animated`, and `btn-primary` to `#target1`.
+**Note:** You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes `shake`, `animated`, and `btn-primary` to `#target1`.
 
 # --hints--
 

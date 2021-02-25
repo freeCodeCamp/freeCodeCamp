@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-A keydown listener should be attached to the document in `componentDidMount`.
+A `keydown` listener should be attached to the document in `componentDidMount`.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-The keydown listener should be removed from the document in `componentWillUnmount`.
+The `keydown` listener should be removed from the document in `componentWillUnmount`.
 
 ```js
 assert(
