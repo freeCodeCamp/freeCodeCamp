@@ -39,6 +39,7 @@ jobs:
         run: |
           npm ci
           npm run ensure-env
+          npm run build:curriculum
           npm run lint
 
   test:
@@ -79,6 +80,7 @@ jobs:
         run: |
           npm ci
           npm run ensure-env
+          npm run build:curriculum
 
       - name: Run Tests
         run: npm test

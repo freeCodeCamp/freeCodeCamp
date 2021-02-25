@@ -4,11 +4,10 @@
   "version": "0.0.1",
   "repository": "freecodecamp/freecodecamp",
   "scripts": {
-    "develop": "cross-env DEBUG=fcc* node development-start.js",
-    "babel-dev-server": "babel-node --inspect=0.0.0.0 ./server/index.js",
-    "build": "babel server --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
-    "ensure-env": "node ../tools/scripts/build/ensure-env.js",
-    "start": "cross-env DEBUG=fcc* node production-start.js",
+    "develop": "cross-env DEBUG=fcc* node src/development-start.js",
+    "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
+    "build": "babel src --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
+    "start": "cross-env DEBUG=fcc* node lib/production-start.js",
     "test": "jest"
   },
   "license": "BSD-3-Clause",
@@ -23,6 +22,7 @@
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "csurf": "^1.11.0",
     "d3": "~3.5.17",
     "date-fns": "^1.30.1",
@@ -51,6 +51,7 @@
     "passport-auth0": "^1.4.0",
     "passport-local": "^1.0.0",
     "query-string": "^6.14.0",
+    "passport-mock-strategy": "^2.0.0",
     "rx": "^4.1.0",
     "stripe": "^6.36.0",
     "uuid": "^3.4.0",
@@ -69,11 +70,9 @@
     "babel-jest": "^24.9.0",
     "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-plugin-transform-imports": "^1.5.1",
-    "cross-env": "^7.0.3",
     "jest": "^26.6.3",
     "loopback-component-explorer": "^6.4.0",
     "nodemon": "^2.0.7",
-    "passport-mock-strategy": "^2.0.0",
     "smee-client": "^1.2.2"
   },
   "resolutions": {
