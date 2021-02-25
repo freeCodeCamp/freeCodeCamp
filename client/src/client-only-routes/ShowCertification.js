@@ -27,7 +27,7 @@ import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
-import { langCodes } from '../../i18n/allLangs';
+import { langCodes } from '../../../config/i18n/all-langs';
 import { clientLocale } from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
