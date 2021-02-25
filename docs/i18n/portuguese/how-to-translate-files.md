@@ -1,7 +1,6 @@
 # How to Translate a File
 
-> [!NOTE]
-> All translations are handled through https://translate.freecodecamp.org - we are no longer using GitHub to translate files directly.
+> [!NOTE] All translations are handled through https://translate.freecodecamp.org - we are no longer using GitHub to translate files directly.
 
 To begin, head to our translation website and login (if you have not contributed to translations before, you will need to create an account).
 
@@ -11,22 +10,21 @@ You should see two "projects" available for translation: The `Contributing Docum
 
 Select which project you want to contribute to, and you will see a list of available languages for translation.
 
-![Image - List of available languages](./images/crowdin/languages.png)
+![Image - List of available languages](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
 Select the language you want to work on, and you will see the complete file tree.
 
-![Image - List of available files](./images/crowdin/file-tree.png)
+![Image - List of available files](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
 Each file and folder will show a progress bar. The **blue** portion of the progress bar indicates what percentage of the file has been translated, while the **green** portion of the progress bar indicates what percentage of the file has been approved by the proofreading team.
 
 Select a file to work on and Crowdin will open the editor view.
 
-> [!NOTE]
-> When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
 
 ## Translate the File
 
-![Image - Editor View](./images/crowdin/editor.png)
+![Image - Editor View](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
 Crowdin separates a document into translatable "strings", usually sentences. Each string is translated individually. Referring to the image above:
 
@@ -41,22 +39,19 @@ Crowdin separates a document into translatable "strings", usually sentences. Eac
 9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
 10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
-> [!NOTE]
-> If you see a hidden string that includes translations, please notify us in the [translators chat room](https://chat.freecodecamp.org/channel/translators) so we can remove the translation from memory.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [translators chat room](https://chat.freecodecamp.org/channel/translators) so we can remove the translation from memory.
 
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
 
 You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
 
-> [!NOTE]
-> If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
+> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
 ### Translating Documentation
 
 Translating our contributing documentation is a similar flow to translating our curriculum files.
 
-> [!NOTE]
-> Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
+> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
 ## Rate Translations
 
@@ -72,12 +67,11 @@ We have enabled some quality assurance steps that will verify a translation is a
 
 When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
 
-![Image - QA Warning Message](./images/crowdin/qa-message.png)
+![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
-> [!WARNING]
-> You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
+> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
 ## Translation Best Practices
 

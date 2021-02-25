@@ -1,10 +1,9 @@
 # Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
 
-> [!NOTE]
-> Before you follow these instructions make sure your system meets the requirements
->
+> [!NOTE] Before you follow these instructions make sure your system meets the requirements
+> 
 > **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
->
+> 
 > **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
 This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow the our local setup guide to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
@@ -18,7 +17,7 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
 1. We recommended using Ubuntu-18.04 or above with WSL2.
 
    > [!NOTE]
-   >
+   > 
    > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
 
 2. Update the dependencies for the OS
@@ -119,7 +118,7 @@ npm install -g npm@latest
 Now that you have installed the pre-requisites, follow [our local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to clone, install and setup freeCodeCamp locally on your machine.
 
 > [!WARNING]
->
+> 
 > Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
 
 ## Useful Links

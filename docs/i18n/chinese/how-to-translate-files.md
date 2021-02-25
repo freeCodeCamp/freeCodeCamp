@@ -10,11 +10,11 @@
 
 选择你想参与贡献的项目，然后你会看到不同语言版本的可翻译文件列表。
 
-![图片 - 可翻译语言版本列表](./images/crowdin/languages.png)
+![图片 - 可翻译语言版本列表](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
 选择你想参与翻译的语言，然后你会看到完整的文件列表。
 
-![图片 - 可翻译文件列表](./images/crowdin/file-tree.png)
+![图片 - 可翻译文件列表](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
 每个文件和文件夹都会显示一个进度条。 进度条的**蓝色**部分表示多少百分比的文件已经被翻译了，而**绿色**部分表示多少百分比的文件已经被校对团队审核确认。
 
@@ -24,7 +24,7 @@
 
 ## 翻译文件
 
-![图片 - 编辑界面](./images/crowdin/editor.png)
+![图片 - 编辑界面](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
 Crowdin 将一个文件分割成“字符串”（通常是一个个句子），以供翻译。 请单独翻译每个字符串。 在上图中：
 
@@ -67,7 +67,7 @@ Crowdin 通过这些投票为一个字符串的每个建议译文给出一个分
 
 当你尝试保存翻译时，你可能会看到一条警告消息，其中包含关于你所建议的翻译的通知。
 
-![图片 - 质量保证警告消息](./images/crowdin/qa-message.png)
+![图片 - 质量保证警告消息](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
 当 Crowdin 的质量保证检查系统在建议的译文中发现可能的错误时，将显示此消息。 在这个例子中，我们修改了 `<code>` 标签的文本内容，Crowdin 会发现这个问题。
 

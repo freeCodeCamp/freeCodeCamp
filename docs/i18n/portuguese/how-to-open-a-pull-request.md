@@ -2,29 +2,28 @@
 
 A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-> [!NOTE]
-> Your PR should be in English. See [here](#index.md?id=translations) for how to contribute translations.
+> [!NOTE] Your PR should be in English. See [here](#index.md?id=translations) for how to contribute translations.
 
 ## Prepare a good PR title
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
 > `<type>([optional scope(s)]): <description>`
->
+> 
 > For example:
->
+> 
 > `fix(learn): tests for the do...while loop challenge`
 
 When opening a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Type:**
 
-| Type  | When to select                                                               |
-| :---- | :--------------------------------------------------------------------------- |
+| Type  | When to select                                                                   |
+|:----- |:-------------------------------------------------------------------------------- |
 | fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                        |
-| chore | Changes that are not related to code, tests, or verbiage of a lesson.         |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
+| feat  | Only if you are adding new functionality, tests, etc.                            |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
 
 **Scope:**
 
@@ -45,13 +44,13 @@ Some examples of good PRs titles would be:
 
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
 3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
@@ -61,8 +60,7 @@ Some examples of good PRs titles would be:
 
    - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - If the PR is meant to address an existing GitHub Issue then, at the end of
-     your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
      > Example: `Closes #123` will close issue 123
 
@@ -80,8 +78,7 @@ Our moderators will now take a look and leave you feedback. Please be patient wi
 
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP]
-> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
 ## Conflicts on a pull request
 
