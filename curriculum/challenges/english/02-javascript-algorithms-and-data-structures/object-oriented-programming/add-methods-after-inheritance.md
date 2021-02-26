@@ -38,7 +38,7 @@ duck.eat();
 duck.fly();
 ```
 
-`duck.eat()` wou;d display the string `nom nom nom` in the console, and `duck.fly()` would display the string `I'm flying!`.
+`duck.eat()` would display the string `nom nom nom` in the console, and `duck.fly()` would display the string `I'm flying!`.
 
 # --instructions--
 
