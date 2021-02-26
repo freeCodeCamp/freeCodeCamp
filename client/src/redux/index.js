@@ -185,13 +185,15 @@ export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const stepsToClaimSelector = state => {
   // TODO: complete required steps to claim cert
   const user = userSelector(state);
-  console.log('user: ', user);
+  const currentCerts = certificatesByNameSelector(user.username)(state)
+    .currentCerts;
+  console.log('user: ', currentCerts);
   return {
-    currentCerts: certificatesByNameSelector(user).currentCerts,
-    isHonest: true,
-    isProfileNameSet: user.name && true,
-    isCertificationPublic: true,
-    isTimelinePublic: false
+    currentCerts: currentCerts,
+    isHonest: user?.isHonest,
+    isShowName: user?.profileUI?.showName,
+    isShowCerts: user?.profileUI?.showCerts,
+    isShowTimeLine: user?.profileUI?.showTimeLine
   };
 };
 export const isDonatingSelector = state => userSelector(state).isDonating;

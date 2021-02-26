@@ -1,48 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Link } from 'gatsby';
-import { withTranslation } from 'react-i18next';
+import { withTranslation, useTranslation } from 'react-i18next';
 
-import { completedChallengesSelector, executeGA } from '../../../redux';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 
-// TODO: Replace with completed steps
-const mapStateToProps = state => {
-  return createSelector(
-    completedChallengesSelector,
-    completedChallenges => ({
-      completedChallenges: completedChallenges.map(({ id }) => id)
-    })
-  )(state);
-};
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ executeGA }, dispatch);
-
 const propTypes = {
-  challengesWithCompleted: PropTypes.array,
-  executeGA: PropTypes.func
+  i18nCertText: PropTypes.string,
+  steps: PropTypes.object,
+  superBlock: PropTypes.string
 };
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-const ClaimCertSteps = props => {
-  const handleChallengeClick = slug => {
-    return () => {
-      return this.props.executeGA({
-        type: 'event',
-        data: {
-          category: 'Map Challenge Click',
-          action: slug
-        }
-      });
-    };
-  };
-
+const ClaimCertSteps = ({ i18nCertText, steps, superBlock }) => {
+  const { t } = useTranslation();
   const renderCheckMark = isCompleted => {
     return isCompleted ? (
       <GreenPass style={mapIconStyle} />
@@ -51,27 +24,58 @@ const ClaimCertSteps = props => {
     );
   };
   // TODO: handle links to relevant section on /settings
-  const { stepsWithCompleted } = props;
-
+  // const { steps } = props;
+  const settingsLink = '/settings#profile-settings';
+  const certName = i18nCertText.replace(' Certification', '');
+  const {
+    currentCerts,
+    isHonest,
+    isShowName,
+    isShowCerts,
+    isShowTimeLine
+  } = steps;
   return (
     <ul className='map-challenges-ul'>
-      {[...stepsWithCompleted].map(step => (
-        <li
-          className='map-challenge-title map-challenge-wrap'
-          id={step.dashedName}
-          key={'map-challenge' + step.fields.slug}
-        >
-          <Link
-            onClick={handleChallengeClick(step.fields.slug)}
-            to={challenge.fields.slug}
-          >
-            <span className='badge map-badge'>
-              {renderCheckMark(step.isCompleted)}
-            </span>
-            {step.title}
-          </Link>
-        </li>
-      ))}
+      <li className='map-challenge-title map-challenge-wrap'>
+        <a href={`#${superBlock}-projects`}>
+          <span className='badge map-badge'>
+            {renderCheckMark(
+              currentCerts?.find(cert => cert.title === i18nCertText)?.show
+            )}
+          </span>
+          {t('certification-card.complete-project', {
+            certName
+          })}
+        </a>
+      </li>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={settingsLink}>
+          <span className='badge map-badge'>{renderCheckMark(isHonest)}</span>
+          {t('certification-card.accept-honesty')}
+        </Link>
+      </li>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={settingsLink}>
+          <span className='badge map-badge'>{renderCheckMark(isShowName)}</span>
+          {t('certification-card.set-name')}
+        </Link>
+      </li>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={settingsLink}>
+          <span className='badge map-badge'>
+            {renderCheckMark(isShowCerts)}
+          </span>
+          {t('certification-card.set-certs-public')}
+        </Link>
+      </li>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={settingsLink}>
+          <span className='badge map-badge'>
+            {renderCheckMark(isShowTimeLine)}
+          </span>
+          {t('certification-card.set-timeline-public')}
+        </Link>
+      </li>
     </ul>
   );
 };
@@ -79,7 +83,4 @@ const ClaimCertSteps = props => {
 ClaimCertSteps.displayName = 'ClaimCertSteps';
 ClaimCertSteps.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(ClaimCertSteps));
+export default withTranslation()(ClaimCertSteps);

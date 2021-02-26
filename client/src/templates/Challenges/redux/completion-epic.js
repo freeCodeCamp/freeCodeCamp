@@ -133,7 +133,7 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType, superBlock, block } = meta;
+      const { nextChallengePath, challengeType, superBlock } = meta;
       const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
@@ -151,7 +151,7 @@ export default function completionEpic(action$, state$) {
       }
       const pathToNavigateTo = nextChallengePath.includes(superBlock)
         ? nextChallengePath
-        : `/learn/${superBlock}/#${block}`;
+        : `/learn/${superBlock}/#claim-cert-block`;
       return submitter(type, state).pipe(
         tap(() => navigate(pathToNavigateTo)),
         concat(closeChallengeModal),

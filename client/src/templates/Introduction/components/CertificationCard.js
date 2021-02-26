@@ -61,7 +61,14 @@ const CertificationCard = ({
   };
   // TODO: Undo hardcoded values for testing, and decide
   //       on best data structure to follow for stepsToClaim
-  let completedCount = 3;
+  let completedCount = Object.values(steps).filter(val => {
+    if (Array.isArray(val)) {
+      return val?.find(cert => cert.title === i18nCertText)?.show;
+    } else {
+      return val;
+    }
+  }).length;
+  const numberOfSteps = Object.keys(steps).length;
   const {
     expand: expandText,
     collapse: collapseText,
@@ -93,31 +100,37 @@ const CertificationCard = ({
             } ${coursesText.toLowerCase()}`}
           </h4>
           <div className='map-title-completed course-title'>
-            {completedCount === steps.length ? (
+            {completedCount === numberOfSteps ? (
               <GreenPass style={mapIconStyle} />
             ) : (
               <GreenNotCompleted style={mapIconStyle} />
             )}
-            <span className='map-completed-count'>{`${completedCount}/${steps.length}`}</span>
+            <span className='map-completed-count'>{`${completedCount}/${numberOfSteps}`}</span>
           </div>
         </button>
-        {isExpanded && <ClaimCertSteps stepsWithCompleted={steps} />}
-      </div>
-      <button
-        className='map-cert-title map-is-cert'
-        href={certLocation}
-        onClick={createClickHandler(superBlock)}
-      >
-        {t('buttons.claim-cert')}
+        {isExpanded && (
+          <ClaimCertSteps
+            i18nCertText={i18nCertText}
+            steps={steps}
+            superBlock={superBlock}
+          />
+        )}
+        <button
+          className='map-cert-title map-is-cert'
+          href={certLocation}
+          onClick={createClickHandler(superBlock)}
+        >
+          {t('buttons.claim-cert')}
 
-        <CertificationIcon />
-        <h3>{i18nCertText}</h3>
-        <div className='map-title-completed-big'>
-          <span>
-            <GreenNotCompleted style={certCheckmarkStyle} />
-          </span>
-        </div>
-      </button>
+          <CertificationIcon />
+          <h3>{i18nCertText}</h3>
+          <div className='map-title-completed-big'>
+            <span>
+              <GreenNotCompleted style={certCheckmarkStyle} />
+            </span>
+          </div>
+        </button>
+      </div>
     </ScrollableAnchor>
   );
 };

@@ -481,5 +481,14 @@
     "verify": "Verify this certification at {{certURL}}",
     "issued": "Issued",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully completed the freeCodeCamp.org</2> <3>{{title}}</3> <4>Developer Certification, representing approximately {{time}} hours of coursework.</4>"
+  },
+  "certification-card": {
+    "title": "Steps to claim your certification",
+    "intro": "Complete the following steps to claim your {{i18nCertText}}",
+    "complete-project": "Complete {{certName}} Projects",
+    "accept-honesty": "Accept our Academic Honest Policy",
+    "set-name": "Set your profile name",
+    "set-certs-public": "Set your certificication settings to public",
+    "set-timeline-public": "Set your timeline settings to public"
   }
 }
