@@ -20,7 +20,7 @@ fruits.indexOf('oranges');
 fruits.indexOf('pears');
 ```
 
-`indexOf('dates')` returns `-1`, `indexOf('oranges')` returns `2`, and `indexOf('pears')` returns `1` (the first index at which the element exists).
+`indexOf('dates')` returns `-1`, `indexOf('oranges')` returns `2`, and `indexOf('pears')` returns `1` (the first index at which each element exists).
 
 # --instructions--
 

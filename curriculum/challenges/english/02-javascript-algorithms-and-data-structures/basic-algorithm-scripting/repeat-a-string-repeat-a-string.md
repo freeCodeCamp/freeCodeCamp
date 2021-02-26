@@ -42,7 +42,7 @@ assert(repeatStringNumTimes('abc', 1) === 'abc');
 assert(repeatStringNumTimes('*', 8) === '********');
 ```
 
-`repeatStringNumTimes("abc", -2)` should return an empty string `""`.
+`repeatStringNumTimes("abc", -2)` should return an empty string (`""`).
 
 ```js
 assert(repeatStringNumTimes('abc', -2) === '');

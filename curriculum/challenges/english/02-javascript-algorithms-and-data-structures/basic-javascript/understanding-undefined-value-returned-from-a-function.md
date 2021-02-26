@@ -21,8 +21,6 @@ function addSum(num) {
 addSum(3);
 ```
 
-Here, `sum` will be modified but the returned value is `undefined`.
-
 `addSum` is a function without a `return` statement. The function will change the global `sum` variable but the returned value of the function is `undefined`.
 
 # --instructions--

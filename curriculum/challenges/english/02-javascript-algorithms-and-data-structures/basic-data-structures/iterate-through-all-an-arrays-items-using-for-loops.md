@@ -26,7 +26,7 @@ function greaterThanTen(arr) {
 greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
 ```
 
-Using a `for` loop, this function iterates through and accesses each element of the array, and subjects it to a simple test that we have created. In this way, we have easily and programmatically determined which data items are greater than `10`, and returned a new array containing those items (`[12, 14, 80]`).
+Using a `for` loop, this function iterates through and accesses each element of the array, and subjects it to a simple test that we have created. In this way, we have easily and programmatically determined which data items are greater than `10`, and returned a new array, `[12, 14, 80]`, containing those items.
 
 # --instructions--
 
