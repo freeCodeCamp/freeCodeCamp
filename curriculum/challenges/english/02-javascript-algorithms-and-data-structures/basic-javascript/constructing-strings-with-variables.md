@@ -18,7 +18,7 @@ var ourName = "freeCodeCamp";
 var ourStr = "Hello, our name is " + ourName + ", how are you?";
 ```
 
-`ourStr` now has a value of the string `Hello, our name is freeCodeCamp, how are you?`.
+`ourStr` would have a value of the string `Hello, our name is freeCodeCamp, how are you?`.
 
 # --instructions--
 

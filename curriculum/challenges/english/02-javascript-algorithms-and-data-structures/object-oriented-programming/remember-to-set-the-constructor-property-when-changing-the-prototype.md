@@ -11,10 +11,12 @@ dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 There is one crucial side effect of manually setting the prototype to a new object. It erases the `constructor` property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
 
 ```js
-duck.constructor === Bird; // false
-duck.constructor === Object; // true
-duck instanceof Bird; // true
+duck.constructor === Bird;
+duck.constructor === Object;
+duck instanceof Bird;
 ```
+
+In order, these would return `false`, `true`, and `true`.
 
 To fix this, whenever a prototype is manually set to a new object, remember to define the `constructor` property:
 

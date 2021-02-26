@@ -34,9 +34,11 @@ Now instances of `Bird` will have both `eat()` and `fly()` methods:
 
 ```js
 let duck = new Bird();
-duck.eat(); // prints "nom nom nom"
-duck.fly(); // prints "I'm flying!"
+duck.eat();
+duck.fly();
 ```
+
+`duck.eat()` will display the string `nom nom nom` in the console, and `duck.fly()` will display the string `I'm flying!`.
 
 # --instructions--
 

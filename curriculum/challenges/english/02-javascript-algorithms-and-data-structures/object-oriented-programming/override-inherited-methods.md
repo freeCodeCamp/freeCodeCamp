@@ -29,10 +29,8 @@ Animal.prototype.eat = function() {
 };
 function Bird() { }
 
-// Inherit all methods from Animal
 Bird.prototype = Object.create(Animal.prototype);
 
-// Bird.eat() overrides Animal.eat()
 Bird.prototype.eat = function() {
   return "peck peck peck";
 };

@@ -17,8 +17,7 @@ In JavaScript, when the `+` operator is used with a `String` value, it is called
 'My name is Alan,' + ' I concatenate.'
 ```
 
-**Note**  
-Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**Note:** Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
 
 Example:
 

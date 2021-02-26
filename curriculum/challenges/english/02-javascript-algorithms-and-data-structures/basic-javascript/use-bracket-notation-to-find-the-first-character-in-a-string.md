@@ -22,7 +22,7 @@ var firstName = "Charles";
 var firstLetter = firstName[0];
 ```
 
-`firstLetter` has a value of the string `C`.
+`firstLetter` would have a value of the string `C`.
 
 # --instructions--
 

@@ -34,9 +34,11 @@ for (let property in duck) {
   }
 }
 
-console.log(ownProps); // ["name"]
-console.log(prototypeProps); // ["numLegs"]
+console.log(ownProps);
+console.log(prototypeProps);
 ```
+
+`console.log(ownProps)` would display `["name"]` in the console, and `console.log(prototypeProps)` would display `["numLegs"]`.
 
 # --instructions--
 

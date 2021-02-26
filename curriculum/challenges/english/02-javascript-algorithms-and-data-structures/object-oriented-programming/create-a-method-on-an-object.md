@@ -19,7 +19,6 @@ let duck = {
   sayName: function() {return "The name of this duck is " + duck.name + ".";}
 };
 duck.sayName();
-// Returns "The name of this duck is Aflac."
 ```
 
 The example adds the `sayName` method, which is a function that returns a sentence giving the name of the `duck`. Notice that the method accessed the `name` property in the return statement using `duck.name`. The next challenge will cover another way to do this.

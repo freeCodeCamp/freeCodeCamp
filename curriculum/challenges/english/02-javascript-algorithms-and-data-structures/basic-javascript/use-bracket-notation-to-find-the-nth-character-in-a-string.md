@@ -20,7 +20,7 @@ var firstName = "Ada";
 var secondLetterOfFirstName = firstName[1];
 ```
 
-`secondLetterOfFirstName` has a value of the string `d`.
+`secondLetterOfFirstName` would have a value of the string `d`.
 
 # --instructions--
 

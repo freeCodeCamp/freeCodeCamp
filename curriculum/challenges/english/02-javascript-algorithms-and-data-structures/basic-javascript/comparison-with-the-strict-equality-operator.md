@@ -20,7 +20,7 @@ If the values being compared have different types, they are considered unequal, 
 3 === '3'
 ```
 
-These conditions return `true` and `false` respectively.
+These conditions would return `true` and `false` respectively.
 
 In the second example, `3` is a `Number` type and `'3'` is a `String` type.
 

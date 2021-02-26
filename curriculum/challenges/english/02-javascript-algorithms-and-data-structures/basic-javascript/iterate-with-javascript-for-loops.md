@@ -32,7 +32,7 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-`ourArray` will now contain `[0,1,2,3,4]`.
+`ourArray` will now have the value `[0,1,2,3,4]`.
 
 # --instructions--
 

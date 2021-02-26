@@ -19,7 +19,7 @@ JavaScript uses the `*` symbol for multiplication of two numbers.
 myVar = 13 * 13;
 ```
 
-`myVar` has the value `169`.
+`myVar` would have the value `169`.
 
 # --instructions--
 

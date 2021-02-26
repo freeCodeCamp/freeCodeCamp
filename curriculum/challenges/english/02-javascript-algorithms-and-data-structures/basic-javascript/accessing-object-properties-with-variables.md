@@ -38,7 +38,7 @@ var someProp = propPrefix("Name");
 console.log(someObj[someProp]);
 ```
 
-`someProp` has a value of the string `propName`, and the string `John` would be displayed in the console.
+`someProp` would have a value of the string `propName`, and the string `John` would be displayed in the console.
 
 Note that we do *not* use quotes around the variable name when using it to access the property because we are using the *value* of the variable, not the *name*.
 

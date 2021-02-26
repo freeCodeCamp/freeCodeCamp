@@ -21,7 +21,7 @@ The inequality operator (`!=`) is the opposite of the equality operator. It mean
 0 != false
 ```
 
-In order, these comparisons return: `true`, `false`, `false`, `false`, and `false`.
+In order, these comparisons would return: `true`, `false`, `false`, `false`, and `false`.
 
 # --instructions--
 

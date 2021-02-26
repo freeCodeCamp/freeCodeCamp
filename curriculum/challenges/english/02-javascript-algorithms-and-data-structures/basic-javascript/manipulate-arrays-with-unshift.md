@@ -21,7 +21,7 @@ ourArray.shift();
 ourArray.unshift("Happy");
 ```
 
-After the `shift`, `ourArray` has the value `["J", "cat"]`. After the `unshift`, `ourArray` has the value `["Happy", "J", "cat"]`.
+After the `shift`, `ourArray` would have the value `["J", "cat"]`. After the `unshift`, `ourArray` would have the value `["Happy", "J", "cat"]`.
 
 # --instructions--
 

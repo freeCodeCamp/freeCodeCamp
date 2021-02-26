@@ -19,7 +19,7 @@ var ourStr = "freeCodeCamp is ";
 ourStr += anAdjective;
 ```
 
-`ourStr` now has the value `freeCodeCamp is awesome!`.
+`ourStr` would have the value `freeCodeCamp is awesome!`.
 
 # --instructions--
 

@@ -20,7 +20,7 @@ var firstName = "Charles";
 var thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
-`thirdToLastLetter` has a value of the string `l`.
+`thirdToLastLetter` would have a value of the string `l`.
 
 # --instructions--
 

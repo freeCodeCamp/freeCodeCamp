@@ -34,7 +34,7 @@ A more practical use of lookaheads is to check two or more patterns in one strin
 ```js
 let password = "abc123";
 let checkPass = /(?=\w{3,6})(?=\D*\d)/;
-checkPass.test(password); // true
+checkPass.test(password);
 ```
 
 # --instructions--

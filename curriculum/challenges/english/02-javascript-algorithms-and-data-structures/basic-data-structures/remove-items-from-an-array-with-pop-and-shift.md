@@ -18,13 +18,13 @@ let greetings = ['whats up?', 'hello', 'see ya!'];
 greetings.pop();
 ```
 
-`greetings` now has the value `['whats up?', 'hello']`.
+`greetings` would have the value `['whats up?', 'hello']`.
 
 ```js
 greetings.shift();
 ```
 
-`greetings` now has the value `['hello']`.
+`greetings` would have the value `['hello']`.
 
 We can also return the value of the removed element with either method like this:
 
@@ -32,7 +32,7 @@ We can also return the value of the removed element with either method like this
 let popped = greetings.pop();
 ```
 
-`greetings` now has the value `[]`, and `popped` has the value `hello`.
+`greetings` would have the value `[]`, and `popped` would have the value `hello`.
 
 # --instructions--
 

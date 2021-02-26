@@ -17,7 +17,7 @@ var arr = [1, 2, 3];
 arr.push([4, 5, 6]);
 ```
 
-`arr` is changed to `[1, 2, 3, [4, 5, 6]]`, which is not the functional programming way.
+`arr` would have a modified value of `[1, 2, 3, [4, 5, 6]]`, which is not the functional programming way.
 
 `concat` offers a way to add new items to the end of an array without any mutating side effects.
 

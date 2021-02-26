@@ -29,9 +29,9 @@ function Bird(name, color) {
 Then pass in the values as arguments to define each unique bird into the `Bird` constructor: `let cardinal = new Bird("Bruce", "red");` This gives a new instance of `Bird` with `name` and `color` properties set to `Bruce` and `red`, respectively. The `numLegs` property is still set to 2. The `cardinal` has these properties:
 
 ```js
-cardinal.name // => Bruce
-cardinal.color // => red
-cardinal.numLegs // => 2
+cardinal.name
+cardinal.color
+cardinal.numLegs
 ```
 
 The constructor is more flexible. It's now possible to define the properties for each `Bird` at the time it is created, which is one way that JavaScript constructors are so useful. They group objects together based on shared characteristics and behavior and define a blueprint that automates their creation.

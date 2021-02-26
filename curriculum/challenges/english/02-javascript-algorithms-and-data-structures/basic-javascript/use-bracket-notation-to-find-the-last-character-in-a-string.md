@@ -20,7 +20,7 @@ var firstName = "Charles";
 var lastLetter = firstName[firstName.length - 1];
 ```
 
-`lastLetter` has a value of the string `s`.
+`lastLetter` would have a value of the string `s`.
 
 # --instructions--
 
