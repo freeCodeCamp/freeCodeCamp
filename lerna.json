@@ -5,7 +5,6 @@
     "client/plugins/*",
     "curriculum",
     "tools/challenge-parser",
-    "tools/challenge-parser/parser",
     "tools/scripts/seed",
     "tools/scripts/build",
     "tools/challenge-helper-scripts"
