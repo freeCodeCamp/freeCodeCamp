@@ -36,7 +36,7 @@ for (var i = 0; i < 5; i++) {
 
 # --instructions--
 
-Use a `for` loop to work to push the values 1 through 5 onto `myArray`.
+Use a `for` loop to push the values 1 through 5 onto `myArray`.
 
 # --hints--
 
