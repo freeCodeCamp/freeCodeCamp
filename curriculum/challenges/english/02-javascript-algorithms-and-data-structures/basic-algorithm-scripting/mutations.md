@@ -72,7 +72,7 @@ assert(mutation(['hello', 'neo']) === false);
 assert(mutation(['voodoo', 'no']) === false);
 ```
 
-`mutation(["ate", "date"]` should return `false`.
+`mutation(["ate", "date"])` should return `false`.
 
 ```js
 assert(mutation(['ate', 'date']) === false);
