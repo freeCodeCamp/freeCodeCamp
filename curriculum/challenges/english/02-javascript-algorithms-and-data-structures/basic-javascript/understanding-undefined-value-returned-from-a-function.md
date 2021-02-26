@@ -37,7 +37,7 @@ Create a function `addFive` without any arguments. This function adds 5 to the `
 assert(typeof addFive === 'function');
 ```
 
-Once both functions have run, the `sum` should be equal to 8.
+Once both functions have run, the `sum` should be equal to `8`.
 
 ```js
 assert(sum === 8);
