@@ -15,13 +15,14 @@ There are two ways to create a React component. The first way is to use a JavaSc
 To create a component with a function, you simply write a JavaScript function that returns either JSX or `null`. One important thing to note is that React requires your function name to begin with a capital letter. Here's an example of a stateless functional component that assigns an HTML class in JSX:
 
 ```jsx
-// After being transpiled, the <div> will have a CSS class of 'customClass'
 const DemoComponent = function() {
   return (
     <div className='customClass' />
   );
 };
 ```
+
+After being transpiled, the `<div>` will have a CSS class of `customClass`.
 
 Because a JSX component represents HTML, you could put several components together to create a more complex HTML page. This is one of the key advantages of the component architecture React provides. It allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.
 

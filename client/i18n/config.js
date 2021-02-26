@@ -1,8 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import { clientLocale } from '../../config/env.json';
-import { i18nextCodes } from './allLangs';
+const { clientLocale } = require('../../config/env.json');
+const { i18nextCodes } = require('../../config/i18n/all-langs');
 
 const i18nextCode = i18nextCodes[clientLocale];
 
@@ -33,7 +33,7 @@ i18n.use(initReactI18next).init({
     escapeValue: false
   },
   react: {
-    wait: true
+    useSuspense: true
   }
 });
 

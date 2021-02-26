@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The `tempPassword` prop of `ReturnTempPassword` should be equal to a string of at least `8` characters.
+The `tempPassword` prop of `ReturnTempPassword` should be equal to a string of at least 8 characters.
 
 ```js
 assert(

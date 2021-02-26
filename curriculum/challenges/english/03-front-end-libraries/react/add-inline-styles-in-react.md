@@ -14,7 +14,7 @@ All property value length units (like `height`, `width`, and `fontSize`) are ass
 
 # --instructions--
 
-If you have a large set of styles, you can assign a style `object` to a constant to keep your code organized. Initialize a `styles` constant and assign an `object` with three style properties and their values to it. Give the `div` a color of `"purple"`, a font-size of `40`, and a border of `"2px solid purple"`. Then set the `style` attribute equal to the `styles` constant.
+If you have a large set of styles, you can assign a style `object` to a constant to keep your code organized. Initialize a `styles` constant and assign an `object` with three style properties and their values to it. Give the `div` a color of `purple`, a font-size of `40`, and a border of `2px solid purple`. Then set the `style` attribute equal to the `styles` constant.
 
 # --hints--
 

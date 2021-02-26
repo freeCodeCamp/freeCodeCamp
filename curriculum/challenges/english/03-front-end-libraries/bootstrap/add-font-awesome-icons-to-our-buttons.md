@@ -27,7 +27,7 @@ Note that the `span` element is also acceptable for use with icons.
 
 # --instructions--
 
-Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `i` element with the classes `fas` and `fa-thumbs-up`. Make sure to keep the text "Like" next to the icon.
+Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `i` element with the classes `fas` and `fa-thumbs-up`. Make sure to keep the text `Like` next to the icon.
 
 # --hints--
 

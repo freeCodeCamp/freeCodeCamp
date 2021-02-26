@@ -40,20 +40,16 @@ You can POST a URL to `/api/shorturl/new` and get a JSON response with `original
 async (getUserInput) => {
   const url = getUserInput('url');
   const urlVariable = Date.now();
+  const fullUrl = `${url}/?v=${urlVariable}`
   const res = await fetch(url + '/api/shorturl/new/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `url=https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
+    body: `url=${fullUrl}`
   });
   if (res.ok) {
     const { short_url, original_url } = await res.json();
     assert.isNotNull(short_url);
-    assert.match(
-      original_url,
-      new RegExp(
-        `https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
-      )
-    );
+    assert.strictEqual(original_url, `${url}/?v=${urlVariable}`);
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
@@ -66,11 +62,12 @@ When you visit `/api/shorturl/<short_url>`, you will be redirected to the origin
 async (getUserInput) => {
   const url = getUserInput('url');
   const urlVariable = Date.now();
+  const fullUrl = `${url}/?v=${urlVariable}`
   let shortenedUrlVariable;
   const postResponse = await fetch(url + '/api/shorturl/new/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `url=https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
+    body: `url=${fullUrl}`
   });
   if (postResponse.ok) {
     const { short_url } = await postResponse.json();
@@ -84,10 +81,7 @@ async (getUserInput) => {
   if (getResponse) {
     const { redirected, url } = getResponse;
     assert.isTrue(redirected);
-    assert.strictEqual(
-      url,
-      `https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
-    );
+    assert.strictEqual(url,fullUrl);
   } else {
     throw new Error(`${getResponse.status} ${getResponse.statusText}`);
   }

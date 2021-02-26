@@ -12,7 +12,7 @@ Normally, your `button` elements with the `btn` and `btn-default` classes are on
 
 `<button class="btn btn-default">Submit</button>`
 
-This button would only be as wide as the word "Submit".
+This button would only be as wide as the word `Submit`.
 
 <button class='btn btn-default'>Submit</button>
 

@@ -528,14 +528,21 @@ async function createTestRunner(
     try {
       const { pass, err } = await evaluator.evaluate(testString, 5000);
       if (!pass) {
-        throw new AssertionError(err.message);
+        throw err;
       }
     } catch (err) {
+      // add more info to the error so the failing test can be identified.
       text = 'Test text: ' + text;
-      const message = solutionFromNext
+      const newMessage = solutionFromNext
         ? 'Check next step for solution!\n' + text
         : text;
-      reThrow(err, message);
+      // if the stack is missing, the message should be included. Otherwise it
+      // is redundant.
+      err.message = err.stack
+        ? newMessage
+        : `${newMessage}
+      ${err.message}`;
+      throw err;
     }
   };
 }
@@ -577,14 +584,4 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
     sources,
     loadEnzyme
   );
-}
-
-function reThrow(err, text) {
-  const newMessage = `${text}
-  ${err.message}`;
-  if (err.name === 'AssertionError') {
-    throw new AssertionError(newMessage);
-  } else {
-    throw Error(newMessage);
-  }
 }

@@ -14,13 +14,13 @@ Nest one `div` element with the class `well` within each of your `col-xs-6` `div
 
 # --hints--
 
-You should add a `div` element with the class `well` inside each of your `div` elements with the class `"col-xs-6"`
+You should add a `div` element with the class `well` inside each of your `div` elements with the class `col-xs-6`
 
 ```js
 assert($('div.col-xs-6').not(':has(>div.well)').length < 1);
 ```
 
-Both of your `div` elements with the class `"col-xs-6"` should be nested within your `div` element with the class `"row"`.
+Both of your `div` elements with the class `col-xs-6` should be nested within your `div` element with the class `row`.
 
 ```js
 assert($('div.row > div.col-xs-6').length > 1);
