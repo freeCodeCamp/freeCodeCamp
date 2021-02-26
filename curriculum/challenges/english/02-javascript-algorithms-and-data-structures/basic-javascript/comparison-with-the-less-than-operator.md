@@ -21,7 +21,7 @@ The <dfn>less than</dfn> operator (`<`) compares the values of two numbers. If t
 '8' < 4
 ```
 
-In order, these comparisons would return: `true`, `true`, `false`, `false`, and `false`.
+In order, these expressions would evaluate to `true`, `true`, `false`, `false`, and `false`.
 
 # --instructions--
 

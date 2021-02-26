@@ -22,7 +22,7 @@ Like the equality operator, `greater than or equal to` operator will convert dat
 '7' >=  9
 ```
 
-In order, these comparisons would return: `true`, `true`, `false`, and `false`.
+In order, these expressions would evaluate to `true`, `true`, `false`, and `false`.
 
 # --instructions--
 

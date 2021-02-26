@@ -16,7 +16,7 @@ duck.constructor === Object;
 duck instanceof Bird;
 ```
 
-In order, these would return `false`, `true`, and `true`.
+In order, these expressions would evaluate to `false`, `true`, and `true`.
 
 To fix this, whenever a prototype is manually set to a new object, remember to define the `constructor` property:
 

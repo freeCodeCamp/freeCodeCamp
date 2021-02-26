@@ -19,7 +19,7 @@ The strict inequality operator (`!==`) is the logical opposite of the strict equ
 4 !==  3
 ```
 
-In order, these conditions would return: `false`, `true`, and `true`.
+In order, these expressions would evaluate to `false`, `true`, and `true`.
 
 # --instructions--
 

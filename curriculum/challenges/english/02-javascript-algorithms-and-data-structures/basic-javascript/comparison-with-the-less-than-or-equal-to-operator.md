@@ -21,7 +21,7 @@ The less than or equal to operator (`<=`) compares the values of two numbers. If
 '8' <= 4
 ```
 
-In order, these comparisons would return: `true`, `true`, `true`, `false`, and `false`.
+In order, these expressions would evaluate to `true`, `true`, `true`, `false`, and `false`.
 
 # --instructions--
 

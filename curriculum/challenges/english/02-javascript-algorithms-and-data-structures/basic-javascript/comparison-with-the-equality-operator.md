@@ -31,7 +31,7 @@ If `myVal` is equal to `10`, the equality operator returns `true`, so the code i
 "3" ==  3
 ```
 
-In order, these comparisons would return: `true`, `false`, `true`, and `true`.
+In order, these expressions would evaluate to `true`, `false`, `true`, and `true`.
 
 # --instructions--
 

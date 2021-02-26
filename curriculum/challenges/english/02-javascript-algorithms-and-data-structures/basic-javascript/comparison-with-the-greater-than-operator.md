@@ -22,7 +22,7 @@ Like the equality operator, greater than operator will convert data types of val
 '1' >  9
 ```
 
-In order, these comparisons would return: `true`, `true`, `false`, and `false`.
+In order, these expressions would evaluate to `true`, `true`, `false`, and `false`.
 
 # --instructions--
 
