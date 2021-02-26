@@ -127,6 +127,7 @@ export class Project extends Component {
           title,
           description,
           superBlock,
+          block,
           translationPending
         }
       },
@@ -155,7 +156,7 @@ export class Project extends Component {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
                 <ChallengeTitle
-                  block={blockName}
+                  block={block}
                   isCompleted={isChallengeCompleted}
                   superBlock={superBlock}
                   translationPending={translationPending}
@@ -202,6 +203,7 @@ export const query = graphql`
       challengeType
       helpCategory
       superBlock
+      block
       translationPending
       fields {
         blockName
