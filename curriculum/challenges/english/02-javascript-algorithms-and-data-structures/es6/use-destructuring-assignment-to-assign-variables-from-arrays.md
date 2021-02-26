@@ -42,7 +42,7 @@ The value of `a` should be `6`, after swapping.
 assert(a === 6);
 ```
 
-The value of `b` should be 8, after swapping.
+The value of `b` should be `8`, after swapping.
 
 ```js
 assert(b === 8);
