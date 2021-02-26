@@ -587,7 +587,8 @@ Provisioning VMs with the Code
 8. Start Instances
 
    ```console
-   pm2 start api-server/lib/production-start.js -i max --max-memory-restart 600M --name org
+   cd api-server
+   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
    ```
 
 ### Logging and Monitoring
