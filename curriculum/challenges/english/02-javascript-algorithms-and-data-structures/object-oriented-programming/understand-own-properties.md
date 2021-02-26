@@ -34,7 +34,7 @@ for (let property in duck) {
 console.log(ownProps);
 ```
 
-The console will display the value `["name", "numLegs"]`.
+The console would display the value `["name", "numLegs"]`.
 
 # --instructions--
 
