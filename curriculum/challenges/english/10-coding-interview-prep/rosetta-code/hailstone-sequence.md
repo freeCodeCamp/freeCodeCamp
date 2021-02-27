@@ -10,11 +10,9 @@ dashedName: hailstone-sequence
 
 The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
 
-<ul>
-  <li>If <code>n</code> is <code>1</code> then the sequence ends</li>
-  <li>If <code>n</code> is <code>even</code> then the next <code>n</code> of the sequence <code>= n/2</code></li>
-  <li>If <code>n</code> is <code>odd</code> then the next <code>n</code> of the sequence <code>= (3 * n) + 1</code></li>
-</ul>
+- If `n` is `1` then the sequence ends
+- If `n` is `even` then the next `n` of the sequence `= n/2`
+- If `n` is `odd` then the next `n` of the sequence `= (3 * n) + 1`
 
 The (unproven) [Collatz conjecture](<https://en.wikipedia.org/wiki/Collatz conjecture> "wp: Collatz conjecture") is that the hailstone sequence for any starting number always terminates.
 
@@ -27,9 +25,7 @@ The hailstone sequence is also known as hailstone numbers (because the values ar
 
 **See also:**
 
-<ul>
-  <li><a href='https://xkcd.com/710' target='_blank'>xkcd</a> (humourous).</li>
-</ul>
+- [xkcd](https://xkcd.com/710) (humourous).
 
 # --hints--
 
