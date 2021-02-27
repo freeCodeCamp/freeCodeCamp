@@ -55,10 +55,10 @@ exports.parseMD = function parseMD(filename) {
       if (!err) {
         delete file.contents;
         resolve(file.data);
+      } else {
+        err.message += ' in file ' + filename;
+        reject(err);
       }
-
-      err.message += ' in file ' + filename;
-      reject(err);
     });
   });
 };
