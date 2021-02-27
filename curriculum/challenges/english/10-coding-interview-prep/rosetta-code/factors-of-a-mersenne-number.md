@@ -54,7 +54,7 @@ As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)
 
 # --instructions--
 
-Using the above method find a factor of <code>2<sup>929</sup>-1</code> (aka M929)
+Using the above method find a factor of <code>2<sup>p</sup>-1</code>.
 
 # --hints--
 
