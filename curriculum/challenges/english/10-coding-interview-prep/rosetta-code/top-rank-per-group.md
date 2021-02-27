@@ -12,7 +12,7 @@ Find the top `n` ranked data in each group, where `n` is provided as a parameter
 
 Given the following data:
 
-<pre>[
+<pre>testData1 = [
   { name: 'Tyler Bennett', id: 'E10297', salary: 32000, dept: 'D101' },
   { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050' },
   { name: 'George Woltman', id: 'E00127', salary: 53500, dept: 'D101' },
@@ -31,11 +31,11 @@ Given the following data:
 
 one could rank top 10 employees in each department by calling
 
-`topRankPerGroup(10, data, 'dept', 'salary')`
+`topRankPerGroup(10, testData1, 'dept', 'salary')`
 
 Given the following data:
 
-<pre>[
+<pre>testData2 = [
   { name: 'Friday 13th', genre: 'horror', rating: 9.9 },
   { name: "Nightmare on Elm's Street", genre: 'horror', rating: 5.7 },
   { name: 'Titanic', genre: 'drama', rating: 7.3 },
@@ -46,7 +46,7 @@ Given the following data:
 
 one could rank the top-rated movie in each genre by calling
 
-`topRankPerGroup(1, data, 'genre', 'rating')`
+`topRankPerGroup(1, testData2, 'genre', 'rating')`
 
 The function should return an array with an array for each group containing the top `n` objects.
 
@@ -64,22 +64,16 @@ assert(typeof topRankPerGroup === 'function');
 assert(typeof topRankPerGroup(-1, []) === 'undefined');
 ```
 
-First department should be D050
+For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the first result in first group should be `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`.
 
 ```js
-assert.equal(res1[0][0].dept, 'D050');
+assert.deepEqual(res1[0][0], { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'});
 ```
 
-First department should be D050
+For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the last result in last group should be `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }`.
 
 ```js
-assert.equal(res1[0][1].salary, 21900);
-```
-
-The last department should be D202
-
-```js
-assert.equal(res1[3][3].dept, 'D202');
+assert.deepEqual(res1[3][3], { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' });
 ```
 
 `topRankPerGroup(1, ...)` should return only top ranking result per group.
@@ -88,7 +82,7 @@ assert.equal(res1[3][3].dept, 'D202');
 assert.equal(res2[2].length, 1);
 ```
 
-`topRankPerGroup(1, ...)` should return only top ranking result per group.
+`topRankPerGroup(2, ...)` should return two ranking result per group.
 
 ```js
 assert.equal(res3[2][1].name, 'Maze Runner');
