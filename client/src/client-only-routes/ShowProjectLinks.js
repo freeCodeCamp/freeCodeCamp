@@ -180,6 +180,7 @@ const ShowProjectLinks = props => {
         />
       ) : null}
       <Trans i18nKey='certification.project.footnote'>
+        If you suspect that any of these projects violate the{' '}
         <a
           href='https://www.freecodecamp.org/news/academic-honesty-policy/'
           target='_blank'
@@ -187,6 +188,7 @@ const ShowProjectLinks = props => {
         >
           academic honesty policy
         </a>
+        , please{' '}
         <a
           href={`/user/${username}/report-user`}
           target='_blank'
@@ -194,6 +196,7 @@ const ShowProjectLinks = props => {
         >
           report this to our team
         </a>
+        .
       </Trans>
     </div>
   );
