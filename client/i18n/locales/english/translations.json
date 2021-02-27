@@ -489,7 +489,7 @@
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
       "solution": "solution",
       "source": "source",
-      "footnote": "If you suspect that any of these projects violate the <0>academic honesty policy</0>, please <1>report this to our team</1>.",
+      "footnote": "If you suspect that any of these projects violate the <2>academic honesty policy</2>, please <5>report this to our team</5>.",
       "title": {
         "Build a Personal Portfolio Webpage": "Build a Personal Portfolio Webpage",
         "Build a Random Quote Machine": "Build a Random Quote Machine",
