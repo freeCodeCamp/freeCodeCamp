@@ -105,6 +105,15 @@ assert(
     }
     test.add = addMethodSolution;
     test.add('key', 'value');
+    test.add('yek', 'value');
+
+    test.remove('yek');
+    if (test.collection.hasOwnProperty(hashValue) && test.collection[hashValue].yek) {
+      return false;
+    }
+    if (!test.collection.hasOwnProperty(hashValue)) {
+      return false;
+    }
     test.remove('key');
     return !test.collection.hasOwnProperty(hashValue);
   })()
