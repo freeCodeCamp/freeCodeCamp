@@ -65,7 +65,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
     "@babel/plugin-proposal-optional-chaining": "^7.13.8",
     "@babel/preset-env": "^7.13.8",
-    "@babel/register": "^7.12.13",
+    "@babel/register": "^7.13.8",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-transform-function-bind": "^6.22.0",
