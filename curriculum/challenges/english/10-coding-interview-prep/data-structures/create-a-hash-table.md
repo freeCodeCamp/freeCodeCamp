@@ -108,7 +108,7 @@ assert(
     test.add('yek', 'value');
 
     test.remove('yek');
-    if (test.collection.hasOwnProperty(hashValue) && test.collection[hashValue].yek) {
+    if (test.collection.hasOwnProperty(hashValue) && test.collection[hashValue].hasOwnProperty('yek')) {
       return false;
     }
     if (!test.collection.hasOwnProperty(hashValue)) {
