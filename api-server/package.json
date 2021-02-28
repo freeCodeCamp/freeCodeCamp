@@ -58,7 +58,7 @@
     "validator": "^9.4.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.17",
+    "@babel/cli": "^7.13.0",
     "@babel/core": "^7.12.17",
     "@babel/node": "^7.12.17",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
