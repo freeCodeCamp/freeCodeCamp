@@ -50,7 +50,7 @@
     "passport": "^0.4.1",
     "passport-auth0": "^1.4.0",
     "passport-local": "^1.0.0",
-    "query-string": "^6.14.0",
+    "query-string": "^6.14.1",
     "passport-mock-strategy": "^2.0.0",
     "rx": "^4.1.0",
     "stripe": "^6.36.0",
