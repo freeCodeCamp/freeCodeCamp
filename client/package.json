@@ -73,7 +73,7 @@
     "redux-observable": "^1.2.0",
     "redux-saga": "^1.1.1",
     "reselect": "^4.0.0",
-    "rxjs": "^6.6.3",
+    "rxjs": "^6.6.6",
     "sanitize-html": "^2.3.2",
     "sass.js": "^0.11.0",
     "store": "^2.0.12",
