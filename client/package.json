@@ -40,7 +40,7 @@
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-source-filesystem": "^2.11.0",
-    "gatsby-transformer-remark": "^2.16.0",
+    "gatsby-transformer-remark": "^2.16.1",
     "i18next": "^19.8.9",
     "jquery": "^3.5.1",
     "lodash": "^4.17.21",
