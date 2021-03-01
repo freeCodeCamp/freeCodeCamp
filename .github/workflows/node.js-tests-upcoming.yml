@@ -7,7 +7,7 @@ on:
       - upcoming-**
   schedule:
     # run this Action every 14 days
-    - cron: "0 * */14 * *"
+    - cron: '0 * */14 * *'
   workflow_dispatch:
 
 jobs:
@@ -51,6 +51,7 @@ jobs:
         run: |
           npm ci
           npm run ensure-env
+          npm run build:curriculum
           npm run lint
 
   test:
@@ -94,6 +95,7 @@ jobs:
         run: |
           npm ci
           npm run ensure-env
+          npm run build:curriculum
 
       - name: Run Tests
         run: npm test
