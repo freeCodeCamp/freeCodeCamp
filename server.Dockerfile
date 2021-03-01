@@ -4,9 +4,8 @@ WORKDIR /home/node/build
 COPY --chown=node:node . .
 
 RUN npm ci
-RUN npm build:curriculum
-WORKDIR /home/node/build/api-server
-RUN npm run build
+RUN npm run build:curriculum
+RUN npm run build:server
 
 FROM node:12.20-alpine
 USER node
