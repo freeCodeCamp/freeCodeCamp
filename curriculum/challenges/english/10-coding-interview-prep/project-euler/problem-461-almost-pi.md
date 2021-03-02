@@ -8,7 +8,7 @@ dashedName: problem-461-almost-pi
 
 # --description--
 
-You are given the function `fn` for all non-negative integers k.
+You are given the function `fn(k, n)`. `k` can be any non-negative integer.
 
 Remarkably, `fn(6, 200) + fn(75, 200) + fn(89, 200) + fn(226, 200)` = 3.141592… ≈ π.
 
