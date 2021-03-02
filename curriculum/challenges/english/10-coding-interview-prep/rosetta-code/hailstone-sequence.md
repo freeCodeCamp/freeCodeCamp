@@ -21,10 +21,7 @@ The hailstone sequence is also known as hailstone numbers (because the values ar
 # --instructions--
 
 1. Create a routine to generate the hailstone sequence for a number
-2. `Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
-
-**See also:**
-
+2. Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
 
 # --hints--
 
