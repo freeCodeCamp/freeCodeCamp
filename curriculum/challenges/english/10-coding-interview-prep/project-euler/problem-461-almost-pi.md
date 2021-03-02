@@ -46,6 +46,7 @@ assert.strictEqual(typeof almostPi(10), 'number');
 ```js
 assert.strictEqual(almostPi(29), 1208);
 ```
+
 `almostPi(50)` should return `4152`.
 
 ```js
