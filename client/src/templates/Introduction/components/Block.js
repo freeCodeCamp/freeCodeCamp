@@ -129,7 +129,7 @@ export class Block extends Component {
     const {
       expand: expandText,
       collapse: collapseText,
-      courses: coursesText
+      lessons: lessonsText
     } = t('intro:misc-text');
 
     return isProjectBlock ? (
@@ -191,7 +191,7 @@ export class Block extends Component {
             <h4 className='course-title'>
               {`${
                 isExpanded ? collapseText : expandText
-              } ${coursesText.toLowerCase()}`}
+              } ${lessonsText.toLowerCase()}`}
             </h4>
             <div className='map-title-completed course-title'>
               {this.renderCheckMark(
