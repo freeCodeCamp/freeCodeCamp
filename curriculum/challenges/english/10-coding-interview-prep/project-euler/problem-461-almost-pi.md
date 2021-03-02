@@ -8,26 +8,43 @@ dashedName: problem-461-almost-pi
 
 # --description--
 
-Let fn(k) = ek/n - 1, for all non-negative integers k.
+You are given the function `fn` for all non-negative integers k.
 
-Remarkably, f200(6) + f200(75) + f200(89) + f200(226) = 3.141592644529… ≈ π.
+Remarkably, `fn(6, 200) + fn(75, 200) + fn(89, 200) + fn(226, 200)` = 3.141592… ≈ π.
 
-In fact, it is the best approximation of π of the form fn(a) + fn(b) + fn(c) + fn(d) for n = 200.
+In fact, it is the best approximation of π of the form `fn(a, 200) + fn(b, 200) + fn(c, 200) + fn(d, 200)`.
 
-Let g(n) = a2 + b2 + c2 + d 2 for a, b, c, d that minimize the error: | fn(a) + fn(b) + fn(c) + fn(d) - π|
+You are given the function `g`, which tells you the distance (or error) from pi using your `a`, `b`, `c`, `d`, and `n` values.
 
-(where |x| denotes the absolute value of x).
+Find the correct `a`, `b`, `c`, and `d` values for any given `n` that minimizes the error returned from `g(a, b, c, d, n)`. Add together and return the squares of `a`, `b`, `c`, `d`.
 
-You are given g(200) = 62 + 752 + 892 + 2262 = 64658.
-
-Find g(10000).
+You are given `almostPi(200)` = 62² + 75² + 89² + 226² = 64658.
 
 # --hints--
 
-`euler461()` should return 159820276.
+`almostPi` should be a function.
 
 ```js
-assert.strictEqual(euler461(), 159820276);
+assert(typeof almostPi === 'function')
+```
+
+`almostPi` should return a number.
+
+```js
+assert(typeof almostPi(10000) === 'number')
+```
+
+`almostPi(200)` should return 64658.
+
+```js
+
+assert.strictEqual(almostPi(200), 64658);
+```
+
+`almostPi(10000)` should return 159820276.
+
+```js
+assert.strictEqual(almostPi(10000), 159820276);
 ```
 
 # --seed--
@@ -35,12 +52,16 @@ assert.strictEqual(euler461(), 159820276);
 ## --seed-contents--
 
 ```js
-function euler461() {
+const fn = (k, n) =>
+  Math.exp(parseFloat(k)/parseFloat((n))) - 1;
 
+const g = (a, b, c, d, n) =>
+  Math.abs(fn(a,n) + fn(b,n) + fn(c,n) + fn(d,n) - Math.PI);
+
+function almostPi(n) {
+  
   return true;
 }
-
-euler461();
 ```
 
 # --solutions--
