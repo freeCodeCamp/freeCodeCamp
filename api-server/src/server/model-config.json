@@ -7,10 +7,6 @@
       "./models"
     ]
   },
-  "about": {
-    "dataSource": "db",
-    "public": true
-  },
   "AuthToken": {
     "dataSource": "db",
     "public": false
@@ -39,14 +35,6 @@
     "dataSource": "mail",
     "public": false
   },
-  "nonprofit": {
-    "dataSource": "db",
-    "public": true
-  },
-  "pledge": {
-    "dataSource": "db",
-    "public": true
-  },
   "Role": {
     "dataSource": "db",
     "public": false
@@ -70,13 +58,5 @@
   "User": {
     "dataSource": "db",
     "public": false
-  },
-  "article": {
-    "dataSource": "db",
-    "public": true
-  },
-  "popularity": {
-    "dataSource": "db",
-    "public": true
   }
 }

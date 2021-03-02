@@ -1,17 +1,6 @@
 {
   "initial:before": {
-    "./middlewares/sentry-request-handler": {},
-    "loopback#favicon": {
-      "params": "$!../public/favicon.ico"
-    },
-    "loopback#static": {
-      "params": [
-        "$!../public",
-        {
-          "maxAge": "86400000"
-        }
-      ]
-    }
+    "./middlewares/sentry-request-handler": {}
   },
   "initial": {
     "compression": {},
