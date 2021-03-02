@@ -59,7 +59,8 @@ export class SolutionForm extends Component {
         githubLink: 'url'
       },
       required: ['solution'],
-      isEditorLinkAllowed: false
+      isEditorLinkAllowed: false,
+      isLocalLinkAllowed: false
     };
 
     const buttonCopy = isSubmitting
@@ -79,6 +80,7 @@ export class SolutionForm extends Component {
 
       case backend:
         formFields = solutionField;
+        options.isLocalLinkAllowed = true;
         solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         break;
 

@@ -3,7 +3,8 @@ import {
   localhostValidator,
   editorValidator,
   composeValidators,
-  fCCValidator
+  fCCValidator,
+  httpValidator
 } from './FormValidators';
 
 export { default as BlockSaveButton } from './BlockSaveButton.js';
@@ -16,13 +17,14 @@ const normalizeOptions = {
 };
 
 export function formatUrlValues(values, options) {
-  const { isEditorLinkAllowed, types } = options;
+  const { isEditorLinkAllowed, isLocalLinkAllowed, types } = options;
   const validatedValues = { values: {}, errors: [], invalidValues: [] };
   const urlValues = Object.keys(values).reduce((result, key) => {
     let value = values[key];
     const nullOrWarning = composeValidators(
       fCCValidator,
-      localhostValidator,
+      httpValidator,
+      isLocalLinkAllowed ? null : localhostValidator,
       key === 'githubLink' || isEditorLinkAllowed ? null : editorValidator
     )(value);
     if (nullOrWarning) {
