@@ -3,6 +3,8 @@ services:
   # TODO: remove db service after testing
   db:
     image: mongo:3
+    ports:
+      - '27018:27017'
   api:
     # TODO: remove db service after testing
     depends_on:
