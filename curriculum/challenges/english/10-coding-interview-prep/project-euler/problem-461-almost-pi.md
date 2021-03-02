@@ -34,14 +34,14 @@ assert(typeof almostPi === 'function')
 assert(typeof almostPi(10000) === 'number')
 ```
 
-`almostPi(200)` should return 64658.
+`almostPi(200)` should return `64658`.
 
 ```js
 
 assert.strictEqual(almostPi(200), 64658);
 ```
 
-`almostPi(10000)` should return 159820276.
+`almostPi(10000)` should return `159820276`.
 
 ```js
 assert.strictEqual(almostPi(10000), 159820276);
