@@ -14,18 +14,17 @@ The Hailstone sequence of numbers can be generated from a starting positive inte
 - If `n` is `even` then the next `n` of the sequence `= n/2`
 - If `n` is `odd` then the next `n` of the sequence `= (3 * n) + 1`
 
-The (unproven) [Collatz conjecture](<https://en.wikipedia.org/wiki/Collatz conjecture> "wp: Collatz conjecture") is that the hailstone sequence for any starting number always terminates.
+The (unproven) Collatz conjecture is that the hailstone sequence for any starting number always terminates.
 
 The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
 
 # --instructions--
 
 1. Create a routine to generate the hailstone sequence for a number
-2. Show the number less than `limit` which has the longest hailstone sequence together with that sequence's length. (But don't show the actual sequence!)
+2. `Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
 
 **See also:**
 
-- [xkcd](https://xkcd.com/710) (humourous).
 
 # --hints--
 
