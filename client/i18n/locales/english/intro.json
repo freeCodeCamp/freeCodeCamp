@@ -62,18 +62,6 @@
           "Time to put your newly learnt skills to work. By working on these projects, you will get a chance to apply all of the skills, principles, and concepts you have learned so far: HTML, CSS, Visual Design, Accessibility, and more.",
           "Complete the five web programming projects below to earn your Responsive Web Design certification."
         ]
-      },
-      "basic-html-cat-photo-app": {
-        "title": "Basic HTML Cat Photo App",
-        "intro": ["placeholder", "placeholder"]
-      },
-      "basic-css-cafe-menu": {
-        "title": "Basic CSS Cafe Menu",
-        "intro": ["placeholder", "placeholder"]
-      },
-      "css-variables-skyline": {
-        "title": "CSS Variables Skyline",
-        "intro": ["placeholder", "placeholder"]
       }
     }
   },
@@ -156,18 +144,6 @@
           "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
           "Complete these 5 JavaScript projects to earn the JavaScript Algorithms and Data Structures certification."
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "Basic JavaScript RPG Game",
-        "intro": ["placeholder", "placeholder"]
-      },
-      "intermediate-javascript-calorie-counter": {
-        "title": "Intermediate JavaScript Calorie Counter",
-        "intro": ["placeholder", "placeholder"]
-      },
-      "functional-programming-spreadsheet": {
-        "title": "Functional Programming Spreadsheet",
-        "intro": ["placeholder", "placeholder"]
       }
     }
   },
@@ -264,10 +240,6 @@
           "Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.",
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
-      },
-      "d3-dashboard": {
-        "title": "D3 Dashboard",
-        "intro": ["placeholder", "placeholder"]
       }
     }
   },
