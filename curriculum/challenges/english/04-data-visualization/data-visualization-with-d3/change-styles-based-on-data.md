@@ -14,7 +14,7 @@ For example, you may want to color a data point blue if it has a value less than
 
 ```js
 selection.style("color", (d) => {
-  /* Logic that returns the color based on a condition */
+
 });
 ```
 
