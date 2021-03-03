@@ -8,24 +8,15 @@ dashedName: problem-461-almost-pi
 
 # --description--
 
-Let `f(k, n)` = eᵏ/ⁿ - 1. `k` can be any non-negative integer.
-
-```js
-const f = (k, n) =>
-  Math.exp(k / n) - 1;
-```
+Let `f(k, n)` = $e^\frac{k}{n} - 1$. `k` can be any non-negative integer.
 
 Remarkably, `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
 
 In fact, it is the best approximation of π of the form `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
 
-Let `almostPi(n)` = a² + b² + c² + d² for a, b, c, d that minimize the error:
+Let `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> for a, b, c, d that minimize the error: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
 
-```js
-Math.abs(f(a,n) + f(b,n) + f(c,n) + f(d,n) - Math.PI)
-```
-
-You are given `almostPi(200)` = 6² + 75² + 89² + 226² = 64658.
+You are given `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658.
 
 # --hints--
 
