@@ -20,7 +20,7 @@ freeCodeCamp is an inclusive community, and we need to keep it that way.
 We have a single code of conduct that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
 > [!NOTE]
-> As a moderator we would add you to one more more teams on GitHub, our community forum(s) & chat servers. If you are missing access on on a platform that you would like to moderate please [reach out to a staff](/FAQ?id=additional-assistance).
+> As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on on a platform that you would like to moderate please [reach out to a staff member](/FAQ?id=additional-assistance).
 
 ## Moderating GitHub
 
@@ -35,13 +35,13 @@ We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/fr
 
 #### Issue Triage
 
-[Triaging](https://en.wikipedia.org/wiki/Triage), is a process of prioritizing attention to each new issue report. We have a extensive list of labels that we use to mark the priority, category, status and scope of each issue.
+[Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have a extensive list of labels that we use to mark the priority, category, status and scope of each issue.
 
 You can help us moderate the the issue reports by helping us organize and triage these by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually a description is available alongside the label explaining its meaning.
 
 Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
-A `"first timer only"` label should be applied to a trivial issue (ex. a typo fix) and should accompany additional information. You can use this [reply template](/moderator-handbook?id=first-timer-only-issues) for triage.
+A `"first timer only"` label should be applied to a trivial issue (ex. a typo fix) and should include additional information. You can use this [reply template](/moderator-handbook?id=first-timer-only-issues) for triage.
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
