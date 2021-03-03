@@ -5,7 +5,7 @@ This handbook will help you moderate different places in our community. This cov
 > [!NOTE]
 > All freeCodeCamp moderators are community-wide moderators. That is we trust you to oversee any of these places.
 
-You can serve as a moderator in any of the communities that are of the most interest to you. Some moderators just help out on GitHub. Others just help out on the forum. Some are active everywhere.
+You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub. Others just help out on the forum. Some are active everywhere.
 
 The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
 
@@ -24,14 +24,14 @@ We have a single code of conduct that governs our entire community. The fewer th
 
 ## Moderating GitHub
 
-Moderators have two primary responsibilities GitHub:
+Moderators have two primary responsibilities on GitHub:
 
 1. Triaging and responding to issues
 2. Reviewing and merging pull requests (a.k.a QA).
 
 ### Moderating GitHub Issues
 
-We use main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repo as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled and addressed. This is also a great place to start helping with open-source codebase contributions.
+We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repo as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled and addressed. This is also a great place to start helping with open-source codebase contributions.
 
 #### Issue Triage
 
@@ -45,18 +45,18 @@ A `"first timer only"` label should be applied to a trivial issue (ex. a typo fi
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
-- Stale issues or PRs are those that have not seen any activity from the OP for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes.
+- Stale issues or PRs are those that have not seen any activity from the author for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes.
 
 - Activity is defined as: Comments requesting an update on the PR and triages like `status: update needed` label etc.
 
-- If the OP asks for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case, the mods should use their best judgment to resolve the outstanding PR's status.
+- If the contributor asks for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case, the mods should use their best judgment to resolve the outstanding PR's status.
 
 > [!TIP]
-> We recommend you use this list of standard [reply templates](http://localhost:3200/#/moderator-handbook?id=reply-templates) while triaging issues.
+> We recommend you use this list of standard [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=reply-templates) while triaging issues.
 
 ### Moderating Pull Requests
 
-Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them or close them.
+Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them, request changes, or close them.
 
 #### Types of Pull Requests
 
@@ -64,9 +64,9 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    These are changes to the text of challenges - the Description, Instructions, or Test Text.
 
-   You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details.Contributors may try to add links to resources to the challenges.
+   You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
 
-   You can close invalid pull requests and reply to them with these [reply templates](http://localhost:3200/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
    If the change looks good please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
@@ -78,7 +78,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
 
-   You can close invalid pull requests and reply to them with these [reply templates](http://localhost:3200/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
    If the change looks good please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
@@ -145,7 +145,7 @@ Often, a pull request will be obviously low effort. You can often tell this imme
 
 There are also situations where the contributor is trying to add a link to their own website, or include a library they themselves created, or has a frivolous edit that doesn't serve to help anyone but themselves.
 
-You can close invalid pull requests and reply to them with these [reply templates](http://localhost:3200/#/moderator-handbook?id=closing-invalid-pull-requests).
+You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
 #### Other guidelines for Moderators on GitHub
 
