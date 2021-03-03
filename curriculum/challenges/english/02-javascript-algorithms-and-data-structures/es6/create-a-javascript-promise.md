@@ -43,6 +43,7 @@ assert(
 ## --seed-contents--
 
 ```js
+
 ```
 
 # --solutions--

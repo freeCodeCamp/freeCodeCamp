@@ -53,6 +53,7 @@ assert(typeof new Dog().numLegs === 'number');
 ## --seed-contents--
 
 ```js
+
 ```
 
 # --solutions--

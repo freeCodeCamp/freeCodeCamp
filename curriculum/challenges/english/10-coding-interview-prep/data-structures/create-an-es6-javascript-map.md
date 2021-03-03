@@ -33,6 +33,7 @@ assert(myMap.get('freeCodeCamp') === 'Awesome!');
 ## --seed-contents--
 
 ```js
+
 ```
 
 # --solutions--
