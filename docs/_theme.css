@@ -17,6 +17,12 @@ body {
   text-decoration: none !important;
 }
 
+body .content {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /****** Nav ****/
 
 .universal-nav {
