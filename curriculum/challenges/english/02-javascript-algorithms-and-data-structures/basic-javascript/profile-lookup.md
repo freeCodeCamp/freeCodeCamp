@@ -17,13 +17,13 @@ The function should check if `name` is an actual contact's `firstName` and the g
 
 If both are true, then return the "value" of that property.
 
-If `name` does not correspond to any contacts then return `"No such contact"`.
+If `name` does not correspond to any contacts then return the string `No such contact`.
 
-If `prop` does not correspond to any valid properties of a contact found to match `name` then return `"No such property"`.
+If `prop` does not correspond to any valid properties of a contact found to match `name` then return the string `No such property`.
 
 # --hints--
 
-`lookUpProfile("Kristian", "lastName")` should return `"Vos"`
+`lookUpProfile("Kristian", "lastName")` should return the string `Vos`
 
 ```js
 assert(lookUpProfile('Kristian', 'lastName') === 'Vos');
@@ -44,19 +44,19 @@ assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
 assert(typeof lookUpProfile('Harry', 'likes') === 'object');
 ```
 
-`lookUpProfile("Bob", "number")` should return "No such contact"
+`lookUpProfile("Bob", "number")` should return the string `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'number') === 'No such contact');
 ```
 
-`lookUpProfile("Bob", "potato")` should return "No such contact"
+`lookUpProfile("Bob", "potato")` should return the string `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'potato') === 'No such contact');
 ```
 
-`lookUpProfile("Akira", "address")` should return "No such property"
+`lookUpProfile("Akira", "address")` should return the string `No such property`
 
 ```js
 assert(lookUpProfile('Akira', 'address') === 'No such property');

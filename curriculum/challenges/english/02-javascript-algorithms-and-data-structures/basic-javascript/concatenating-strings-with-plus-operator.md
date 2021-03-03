@@ -17,23 +17,22 @@ In JavaScript, when the `+` operator is used with a `String` value, it is called
 'My name is Alan,' + ' I concatenate.'
 ```
 
-**Note**  
-Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**Note:** Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
 
 Example:
 
 ```js
 var ourStr = "I come first. " + "I come second.";
-// ourStr is "I come first. I come second."
 ```
 
+The string `I come first. I come second.` would be displayed in the console.
 # --instructions--
 
-Build `myStr` from the strings `"This is the start. "` and `"This is the end."` using the `+` operator.
+Build `myStr` from the strings `This is the start. ` and `This is the end.` using the `+` operator.
 
 # --hints--
 
-`myStr` should have a value of `This is the start. This is the end.`
+`myStr` should have a value of the string `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');

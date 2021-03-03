@@ -29,32 +29,32 @@ switch(lowercaseLetter) {
 # --instructions--
 
 Write a switch statement which tests `val` and sets `answer` for the following conditions:  
-`1` - "alpha"  
-`2` - "beta"  
-`3` - "gamma"  
-`4` - "delta"
+`1` - `alpha`  
+`2` - `beta`  
+`3` - `gamma`  
+`4` - `delta`
 
 # --hints--
 
-`caseInSwitch(1)` should have a value of "alpha"
+`caseInSwitch(1)` should have a value of the string `alpha`
 
 ```js
 assert(caseInSwitch(1) === 'alpha');
 ```
 
-`caseInSwitch(2)` should have a value of "beta"
+`caseInSwitch(2)` should have a value of the string `beta`
 
 ```js
 assert(caseInSwitch(2) === 'beta');
 ```
 
-`caseInSwitch(3)` should have a value of "gamma"
+`caseInSwitch(3)` should have a value of the string `gamma`
 
 ```js
 assert(caseInSwitch(3) === 'gamma');
 ```
 
-`caseInSwitch(4)` should have a value of "delta"
+`caseInSwitch(4)` should have a value of the string `delta`
 
 ```js
 assert(caseInSwitch(4) === 'delta');

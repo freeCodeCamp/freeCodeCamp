@@ -18,8 +18,10 @@ JavaScript uses the `+` symbol as an addition operator when placed between two n
 **Example:**
 
 ```js
-myVar = 5 + 10; // assigned 15
+myVar = 5 + 10;
 ```
+
+`myVar` now has the value `15`.
 
 # --instructions--
 

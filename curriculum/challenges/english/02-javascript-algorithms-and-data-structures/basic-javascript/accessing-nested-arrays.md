@@ -9,7 +9,7 @@ dashedName: accessing-nested-arrays
 
 # --description--
 
-As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.
+As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
 
 Here is an example of how to access a nested array:
 
@@ -32,9 +32,11 @@ var ourPets = [
     ]
   }
 ];
-ourPets[0].names[1]; // "Fluffy"
-ourPets[1].names[0]; // "Spot"
+ourPets[0].names[1];
+ourPets[1].names[0];
 ```
+
+`ourPets[0].names[1]` would be the string `Fluffy`, and `ourPets[1].names[0]` would be the string `Spot`.
 
 # --instructions--
 
@@ -42,7 +44,7 @@ Retrieve the second tree from the variable `myPlants` using object dot and array
 
 # --hints--
 
-`secondTree` should equal "pine".
+`secondTree` should equal the string `pine`.
 
 ```js
 assert(secondTree === 'pine');

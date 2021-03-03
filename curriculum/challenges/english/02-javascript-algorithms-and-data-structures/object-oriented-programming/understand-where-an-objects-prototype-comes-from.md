@@ -22,8 +22,9 @@ let duck = new Bird("Donald");
 
 ```js
 Bird.prototype.isPrototypeOf(duck);
-// returns true
 ```
+
+This would return `true`.
 
 # --instructions--
 

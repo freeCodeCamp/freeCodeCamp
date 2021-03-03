@@ -9,7 +9,7 @@ dashedName: using-objects-for-lookups
 
 # --description--
 
-Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a `switch` statement or an `if/else` chain. This is most useful when you know that your input data is limited to a certain range.
+Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to lookup values rather than a `switch` statement or an `if/else` chain. This is most useful when you know that your input data is limited to a certain range.
 
 Here is an example of a simple reverse alphabet lookup:
 
@@ -24,12 +24,14 @@ var alpha = {
   25:"B",
   26:"A"
 };
-alpha[2]; // "Y"
-alpha[24]; // "C"
+alpha[2];
+alpha[24];
 
 var value = 2;
-alpha[value]; // "Y"
+alpha[value];
 ```
+
+`alpha[2]` is the string `Y`, `alpha[24]` is the string `C`, and `alpha[value]` is the string `Y`.
 
 # --instructions--
 
@@ -37,37 +39,37 @@ Convert the switch statement into an object called `lookup`. Use it to look up `
 
 # --hints--
 
-`phoneticLookup("alpha")` should equal `"Adams"`
+`phoneticLookup("alpha")` should equal the string `Adams`
 
 ```js
 assert(phoneticLookup('alpha') === 'Adams');
 ```
 
-`phoneticLookup("bravo")` should equal `"Boston"`
+`phoneticLookup("bravo")` should equal the string `Boston`
 
 ```js
 assert(phoneticLookup('bravo') === 'Boston');
 ```
 
-`phoneticLookup("charlie")` should equal `"Chicago"`
+`phoneticLookup("charlie")` should equal the string `Chicago`
 
 ```js
 assert(phoneticLookup('charlie') === 'Chicago');
 ```
 
-`phoneticLookup("delta")` should equal `"Denver"`
+`phoneticLookup("delta")` should equal the string `Denver`
 
 ```js
 assert(phoneticLookup('delta') === 'Denver');
 ```
 
-`phoneticLookup("echo")` should equal `"Easy"`
+`phoneticLookup("echo")` should equal the string `Easy`
 
 ```js
 assert(phoneticLookup('echo') === 'Easy');
 ```
 
-`phoneticLookup("foxtrot")` should equal `"Frank"`
+`phoneticLookup("foxtrot")` should equal the string `Frank`
 
 ```js
 assert(phoneticLookup('foxtrot') === 'Frank');

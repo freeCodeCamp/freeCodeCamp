@@ -40,19 +40,19 @@ assert.deepEqual(addTogether(23, 30), 53);
 assert.deepEqual(addTogether(5)(7), 12);
 ```
 
-`addTogether("http://bit.ly/IqT6zt")` should return undefined.
+`addTogether("http://bit.ly/IqT6zt")` should return `undefined`.
 
 ```js
 assert.isUndefined(addTogether('http://bit.ly/IqT6zt'));
 ```
 
-`addTogether(2, "3")` should return undefined.
+`addTogether(2, "3")` should return `undefined`.
 
 ```js
 assert.isUndefined(addTogether(2, '3'));
 ```
 
-`addTogether(2)([3])` should return undefined.
+`addTogether(2)([3])` should return `undefined`.
 
 ```js
 assert.isUndefined(addTogether(2)([3]));

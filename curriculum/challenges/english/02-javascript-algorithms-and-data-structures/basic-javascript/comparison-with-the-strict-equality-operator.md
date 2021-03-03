@@ -16,31 +16,33 @@ If the values being compared have different types, they are considered unequal, 
 **Examples**
 
 ```js
-3 ===  3   // true
-3 === '3'  // false
+3 ===  3
+3 === '3'
 ```
+
+These conditions would return `true` and `false` respectively.
 
 In the second example, `3` is a `Number` type and `'3'` is a `String` type.
 
 # --instructions--
 
-Use the strict equality operator in the `if` statement so the function will return "Equal" when `val` is strictly equal to `7`
+Use the strict equality operator in the `if` statement so the function will return the string `Equal` when `val` is strictly equal to `7`
 
 # --hints--
 
-`testStrict(10)` should return "Not Equal"
+`testStrict(10)` should return the string `Not Equal`
 
 ```js
 assert(testStrict(10) === 'Not Equal');
 ```
 
-`testStrict(7)` should return "Equal"
+`testStrict(7)` should return the string `Equal`
 
 ```js
 assert(testStrict(7) === 'Equal');
 ```
 
-`testStrict("7")` should return "Not Equal"
+`testStrict("7")` should return the string `Not Equal`
 
 ```js
 assert(testStrict('7') === 'Not Equal');

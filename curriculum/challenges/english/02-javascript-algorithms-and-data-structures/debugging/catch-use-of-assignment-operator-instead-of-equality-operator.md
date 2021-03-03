@@ -20,11 +20,13 @@ The code below assigns `x` to be 2, which evaluates as `true`. Almost every valu
 let x = 1;
 let y = 2;
 if (x = y) {
-  // this code block will run for any value of y (unless y were originally set as a falsy)
+
 } else {
-  // this code block is what should run (but won't) in this example
+
 }
 ```
+
+In this example, the code block within the `if` statement will run for any value of `y`, unless `y` is falsy. The `else` block, which we expect to run here, will not actually run.
 
 # --instructions--
 

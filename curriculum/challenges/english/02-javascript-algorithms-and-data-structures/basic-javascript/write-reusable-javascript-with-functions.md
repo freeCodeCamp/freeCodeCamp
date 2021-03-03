@@ -19,7 +19,7 @@ function functionName() {
 }
 ```
 
-You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this: `functionName();` Each time the function is called it will print out the message `"Hello World"` on the dev console. All of the code between the curly braces will be executed every time the function is called.
+You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this: `functionName();` Each time the function is called it will print out the message `Hello World` on the dev console. All of the code between the curly braces will be executed every time the function is called.
 
 # --instructions--
 
@@ -33,7 +33,7 @@ You can call or <dfn>invoke</dfn> this function by using its name followed by pa
 assert(typeof reusableFunction === 'function');
 ```
 
-`reusableFunction` should output "Hi World" to the dev console.
+`reusableFunction` should output the string `Hi World` to the console.
 
 ```js
 assert(hiWorldWasLogged);

@@ -46,9 +46,11 @@ function bar(x) {
 While these two functions look nearly identical if we pass a number to both we get different outputs.
 
 ```js
-foo(0) // "Less than one"
-bar(0) // "Less than two"
+foo(0)
+bar(0)
 ```
+
+`foo(0)` will return the string `Less than one`, and `bar(0)` will return the string `Less than two`.
 
 # --instructions--
 
@@ -56,19 +58,19 @@ Change the order of logic in the function so that it will return the correct sta
 
 # --hints--
 
-`orderMyLogic(4)` should return "Less than 5"
+`orderMyLogic(4)` should return the string `Less than 5`
 
 ```js
 assert(orderMyLogic(4) === 'Less than 5');
 ```
 
-`orderMyLogic(6)` should return "Less than 10"
+`orderMyLogic(6)` should return the string `Less than 10`
 
 ```js
 assert(orderMyLogic(6) === 'Less than 10');
 ```
 
-`orderMyLogic(11)` should return "Greater than or equal to 10"
+`orderMyLogic(11)` should return the string `Greater than or equal to 10`
 
 ```js
 assert(orderMyLogic(11) === 'Greater than or equal to 10');

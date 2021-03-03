@@ -30,37 +30,37 @@ Your regex should use the global flag.
 assert(noNumRegex.global);
 ```
 
-Your regex should find no non-digits in `"9"`.
+Your regex should find no non-digits in the string `9`.
 
 ```js
 assert('9'.match(noNumRegex) == null);
 ```
 
-Your regex should find 6 non-digits in `"Catch 22"`.
+Your regex should find 6 non-digits in the string `Catch 22`.
 
 ```js
 assert('Catch 22'.match(noNumRegex).length == 6);
 ```
 
-Your regex should find 11 non-digits in `"101 Dalmatians"`.
+Your regex should find 11 non-digits in the string `101 Dalmatians`.
 
 ```js
 assert('101 Dalmatians'.match(noNumRegex).length == 11);
 ```
 
-Your regex should find 15 non-digits in `"One, Two, Three"`.
+Your regex should find 15 non-digits in the string `One, Two, Three`.
 
 ```js
 assert('One, Two, Three'.match(noNumRegex).length == 15);
 ```
 
-Your regex should find 12 non-digits in `"21 Jump Street"`.
+Your regex should find 12 non-digits in the string `21 Jump Street`.
 
 ```js
 assert('21 Jump Street'.match(noNumRegex).length == 12);
 ```
 
-Your regex should find 17 non-digits in `"2001: A Space Odyssey"`.
+Your regex should find 17 non-digits in the string `2001: A Space Odyssey`.
 
 ```js
 assert('2001: A Space Odyssey'.match(noNumRegex).length == 17);

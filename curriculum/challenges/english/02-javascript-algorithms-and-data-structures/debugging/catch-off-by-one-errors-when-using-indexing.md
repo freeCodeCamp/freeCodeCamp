@@ -16,18 +16,17 @@ When you use string or array methods that take index ranges as arguments, it hel
 let alphabet = "abcdefghijklmnopqrstuvwxyz";
 let len = alphabet.length;
 for (let i = 0; i <= len; i++) {
-  // loops one too many times at the end
   console.log(alphabet[i]);
 }
 for (let j = 1; j < len; j++) {
-  // loops one too few times and misses the first character at index 0
   console.log(alphabet[j]);
 }
 for (let k = 0; k < len; k++) {
-  // Goldilocks approves - this is just right
   console.log(alphabet[k]);
 }
 ```
+
+The first example here loops one too many times, and the second loops one too few times (missing the first index, 0). The third example is correct.
 
 # --instructions--
 

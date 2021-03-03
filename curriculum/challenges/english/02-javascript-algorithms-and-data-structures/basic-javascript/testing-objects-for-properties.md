@@ -18,9 +18,11 @@ var myObj = {
   top: "hat",
   bottom: "pants"
 };
-myObj.hasOwnProperty("top");    // true
-myObj.hasOwnProperty("middle"); // false
+myObj.hasOwnProperty("top");
+myObj.hasOwnProperty("middle");
 ```
+
+The first `hasOwnProperty` returns `true`, while the second returns `false`.
 
 # --instructions--
 
@@ -28,7 +30,7 @@ Modify the function `checkObj` to test if an object passed to the function (`obj
 
 # --hints--
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` should return `"pony"`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` should return the string `pony`.
 
 ```js
 assert(
@@ -36,7 +38,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` should return `"kitten"`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` should return the string `kitten`.
 
 ```js
 assert(
@@ -44,7 +46,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` should return `"Not Found"`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` should return the string `Not Found`.
 
 ```js
 assert(
@@ -53,19 +55,19 @@ assert(
 );
 ```
 
-`checkObj({city: "Seattle"}, "city")` should return `"Seattle"`.
+`checkObj({city: "Seattle"}, "city")` should return the string `Seattle`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'city') === 'Seattle');
 ```
 
-`checkObj({city: "Seattle"}, "district")` should return `"Not Found"`.
+`checkObj({city: "Seattle"}, "district")` should return the string `Not Found`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'district') === 'Not Found');
 ```
 
-`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` should return `"Not Found"`.
+`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` should return the string `Not Found`.
 
 ```js
 assert(checkObj({ pet: 'kitten', bed: 'sleigh' }, 'gift') === 'Not Found');

@@ -60,43 +60,43 @@ You should have at least four `break` statements
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` should be "Marley"
+`chainToSwitch("bob")` should be the string `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` should be "The Answer"
+`chainToSwitch(42)` should be the string `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` should be "There is no #1"
+`chainToSwitch(1)` should be the string `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` should be "Missed me by this much!"
+`chainToSwitch(99)` should be the string `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` should be "Ate Nine"
+`chainToSwitch(7)` should be the string `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` should be "" (empty string)
+`chainToSwitch("John")` should be `""` (empty string)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` should be "" (empty string)
+`chainToSwitch(156)` should be `""` (empty string)
 
 ```js
 assert(chainToSwitch(156) === '');

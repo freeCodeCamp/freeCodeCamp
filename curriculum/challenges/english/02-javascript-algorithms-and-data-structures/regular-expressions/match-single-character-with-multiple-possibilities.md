@@ -12,7 +12,7 @@ You learned how to match literal patterns (`/literal/`) and wildcard character (
 
 You can search for a literal pattern with some flexibility with <dfn>character classes</dfn>. Character classes allow you to define a group of characters you wish to match by placing them inside square (`[` and `]`) brackets.
 
-For example, you want to match `"bag"`, `"big"`, and `"bug"` but not `"bog"`. You can create the regex `/b[aiu]g/` to do this. The `[aiu]` is the character class that will only match the characters `"a"`, `"i"`, or `"u"`.
+For example, you want to match `bag`, `big`, and `bug` but not `bog`. You can create the regex `/b[aiu]g/` to do this. The `[aiu]` is the character class that will only match the characters `a`, `i`, or `u`.
 
 ```js
 let bigStr = "big";
@@ -20,18 +20,19 @@ let bagStr = "bag";
 let bugStr = "bug";
 let bogStr = "bog";
 let bgRegex = /b[aiu]g/;
-bigStr.match(bgRegex); // Returns ["big"]
-bagStr.match(bgRegex); // Returns ["bag"]
-bugStr.match(bgRegex); // Returns ["bug"]
-bogStr.match(bgRegex); // Returns null
+bigStr.match(bgRegex);
+bagStr.match(bgRegex);
+bugStr.match(bgRegex);
+bogStr.match(bgRegex);
 ```
+
+In order, the four `match` calls would return the values `["big"]`, `["bag"]`, `["bug"]`, and `null`.
 
 # --instructions--
 
 Use a character class with vowels (`a`, `e`, `i`, `o`, `u`) in your regex `vowelRegex` to find all the vowels in the string `quoteSample`.
 
-**Note**  
-Be sure to match both upper- and lowercase vowels.
+**Note:** Be sure to match both upper- and lowercase vowels.
 
 # --hints--
 

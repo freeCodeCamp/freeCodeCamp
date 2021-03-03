@@ -12,37 +12,37 @@ Repeat a given string `str` (first argument) for `num` times (second argument). 
 
 # --hints--
 
-`repeatStringNumTimes("*", 3)` should return `"***"`.
+`repeatStringNumTimes("*", 3)` should return the string `***`.
 
 ```js
 assert(repeatStringNumTimes('*', 3) === '***');
 ```
 
-`repeatStringNumTimes("abc", 3)` should return `"abcabcabc"`.
+`repeatStringNumTimes("abc", 3)` should return the string `abcabcabc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 3) === 'abcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 4)` should return `"abcabcabcabc"`.
+`repeatStringNumTimes("abc", 4)` should return the string `abcabcabcabc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 4) === 'abcabcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 1)` should return `"abc"`.
+`repeatStringNumTimes("abc", 1)` should return the string `abc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 1) === 'abc');
 ```
 
-`repeatStringNumTimes("*", 8)` should return `"********"`.
+`repeatStringNumTimes("*", 8)` should return the string `********`.
 
 ```js
 assert(repeatStringNumTimes('*', 8) === '********');
 ```
 
-`repeatStringNumTimes("abc", -2)` should return `""`.
+`repeatStringNumTimes("abc", -2)` should return an empty string (`""`).
 
 ```js
 assert(repeatStringNumTimes('abc', -2) === '');
