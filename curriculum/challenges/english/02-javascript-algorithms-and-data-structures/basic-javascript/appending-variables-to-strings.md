@@ -17,8 +17,9 @@ Example:
 var anAdjective = "awesome!";
 var ourStr = "freeCodeCamp is ";
 ourStr += anAdjective;
-// ourStr is now "freeCodeCamp is awesome!"
 ```
+
+`ourStr` would have the value `freeCodeCamp is awesome!`.
 
 # --instructions--
 

@@ -49,31 +49,31 @@ assert(
 );
 ```
 
-`testElseIf(0)` should return "Smaller than 5"
+`testElseIf(0)` should return the string `Smaller than 5`
 
 ```js
 assert(testElseIf(0) === 'Smaller than 5');
 ```
 
-`testElseIf(5)` should return "Between 5 and 10"
+`testElseIf(5)` should return the string `Between 5 and 10`
 
 ```js
 assert(testElseIf(5) === 'Between 5 and 10');
 ```
 
-`testElseIf(7)` should return "Between 5 and 10"
+`testElseIf(7)` should return the string `Between 5 and 10`
 
 ```js
 assert(testElseIf(7) === 'Between 5 and 10');
 ```
 
-`testElseIf(10)` should return "Between 5 and 10"
+`testElseIf(10)` should return the string `Between 5 and 10`
 
 ```js
 assert(testElseIf(10) === 'Between 5 and 10');
 ```
 
-`testElseIf(12)` should return "Greater than 10"
+`testElseIf(12)` should return the string `Greater than 10`
 
 ```js
 assert(testElseIf(12) === 'Greater than 10');

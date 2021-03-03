@@ -18,7 +18,7 @@ Write a regex and use the appropriate string methods to remove whitespace at the
 
 # --hints--
 
-`result` should equal to `"Hello, World!"`
+`result` should be equal to the string `Hello, World!`
 
 ```js
 assert(result == 'Hello, World!');

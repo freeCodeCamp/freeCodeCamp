@@ -15,40 +15,38 @@ In other words, it restructures a function so it takes one argument, then return
 Here's an example:
 
 ```js
-//Un-curried function
 function unCurried(x, y) {
   return x + y;
 }
 
-//Curried function
 function curried(x) {
   return function(y) {
     return x + y;
   }
 }
-//Alternative using ES6
+
 const curried = x => y => x + y
 
-curried(1)(2) // Returns 3
+curried(1)(2)
 ```
+
+`curried(1)(2)` would return `3`.
 
 This is useful in your program if you can't supply all the arguments to a function at one time. You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available. Here's an example using the curried function in the example above:
 
 ```js
-// Call a curried function in parts:
 var funcForY = curried(1);
-console.log(funcForY(2)); // Prints 3
+console.log(funcForY(2)); // 3
 ```
 
 Similarly, <dfn>partial application</dfn> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments. Here's an example:
 
 ```js
-//Impartial function
 function impartial(x, y, z) {
   return x + y + z;
 }
 var partialFn = impartial.bind(this, 1, 2);
-partialFn(10); // Returns 13
+partialFn(10); // 13
 ```
 
 # --instructions--

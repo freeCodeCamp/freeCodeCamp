@@ -63,19 +63,19 @@ A `foods` object has been created with three entries. Using the syntax of your c
 assert(typeof foods === 'object');
 ```
 
-The `foods` object should have a key `"bananas"` with a value of `13`.
+The `foods` object should have a key `bananas` with a value of `13`.
 
 ```js
 assert(foods.bananas === 13);
 ```
 
-The `foods` object should have a key `"grapes"` with a value of `35`.
+The `foods` object should have a key `grapes` with a value of `35`.
 
 ```js
 assert(foods.grapes === 35);
 ```
 
-The `foods` object should have a key `"strawberries"` with a value of `27`.
+The `foods` object should have a key `strawberries` with a value of `27`.
 
 ```js
 assert(foods.strawberries === 27);

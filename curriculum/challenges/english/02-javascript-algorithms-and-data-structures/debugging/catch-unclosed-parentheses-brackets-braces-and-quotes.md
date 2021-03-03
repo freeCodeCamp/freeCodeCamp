@@ -24,7 +24,7 @@ Your code should fix the missing piece of the array.
 assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 ```
 
-Your code should fix the missing piece of the `.reduce()` method. The console output should show that "Sum of array values is: 6".
+Your code should fix the missing piece of the `.reduce()` method. The console output should show that `Sum of array values is: 6`.
 
 ```js
 assert(arraySum === 6);

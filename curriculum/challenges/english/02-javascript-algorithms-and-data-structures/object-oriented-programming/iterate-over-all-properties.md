@@ -34,9 +34,11 @@ for (let property in duck) {
   }
 }
 
-console.log(ownProps); // prints ["name"]
-console.log(prototypeProps); // prints ["numLegs"]
+console.log(ownProps);
+console.log(prototypeProps);
 ```
+
+`console.log(ownProps)` would display `["name"]` in the console, and `console.log(prototypeProps)` would display `["numLegs"]`.
 
 # --instructions--
 
@@ -44,13 +46,13 @@ Add all of the `own` properties of `beagle` to the array `ownProps`. Add all of 
 
 # --hints--
 
-The `ownProps` array should only contain `"name"`.
+The `ownProps` array should only contain `name`.
 
 ```js
 assert.deepEqual(ownProps, ['name']);
 ```
 
-The `prototypeProps` array should only contain `"numLegs"`.
+The `prototypeProps` array should only contain `numLegs`.
 
 ```js
 assert.deepEqual(prototypeProps, ['numLegs']);

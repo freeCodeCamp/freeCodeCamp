@@ -12,8 +12,9 @@ dashedName: combine-two-arrays-using-the-concat-method
 
 ```js
 [1, 2, 3].concat([4, 5, 6]);
-// Returns a new array [1, 2, 3, 4, 5, 6]
 ```
+
+The returned array would be `[1, 2, 3, 4, 5, 6]`.
 
 # --instructions--
 

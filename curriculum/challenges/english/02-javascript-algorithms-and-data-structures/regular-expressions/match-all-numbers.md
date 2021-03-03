@@ -30,37 +30,37 @@ Your regex should use the global flag.
 assert(numRegex.global);
 ```
 
-Your regex should find 1 digit in `"9"`.
+Your regex should find 1 digit in the string `9`.
 
 ```js
 assert('9'.match(numRegex).length == 1);
 ```
 
-Your regex should find 2 digits in `"Catch 22"`.
+Your regex should find 2 digits in the string `Catch 22`.
 
 ```js
 assert('Catch 22'.match(numRegex).length == 2);
 ```
 
-Your regex should find 3 digits in `"101 Dalmatians"`.
+Your regex should find 3 digits in the string `101 Dalmatians`.
 
 ```js
 assert('101 Dalmatians'.match(numRegex).length == 3);
 ```
 
-Your regex should find no digits in `"One, Two, Three"`.
+Your regex should find no digits in the string `One, Two, Three`.
 
 ```js
 assert('One, Two, Three'.match(numRegex) == null);
 ```
 
-Your regex should find 2 digits in `"21 Jump Street"`.
+Your regex should find 2 digits in the string `21 Jump Street`.
 
 ```js
 assert('21 Jump Street'.match(numRegex).length == 2);
 ```
 
-Your regex should find 4 digits in `"2001: A Space Odyssey"`.
+Your regex should find 4 digits in the string `2001: A Space Odyssey`.
 
 ```js
 assert('2001: A Space Odyssey'.match(numRegex).length == 4);

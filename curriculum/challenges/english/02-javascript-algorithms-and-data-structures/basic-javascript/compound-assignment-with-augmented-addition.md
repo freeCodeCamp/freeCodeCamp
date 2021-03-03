@@ -20,8 +20,10 @@ One such operator is the `+=` operator.
 ```js
 var myVar = 1;
 myVar += 5;
-console.log(myVar); // Returns 6
+console.log(myVar);
 ```
+
+`6` would be displayed in the console.
 
 # --instructions--
 

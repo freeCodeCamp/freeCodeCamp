@@ -12,7 +12,7 @@ Promises are most useful when you have a process that takes an unknown amount of
 
 ```js
 myPromise.then(result => {
-  // do something with the result.
+  
 });
 ```
 

@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-will only return "Yes" if `num` is greater than `5` and less than `10`. The same logic can be written as:
+will only return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written as:
 
 ```js
 if (num > 5 && num < 10) {
@@ -33,7 +33,7 @@ return "No";
 
 # --instructions--
 
-Replace the two if statements with one statement, using the && operator, which will return `"Yes"` if `val` is less than or equal to `50` and greater than or equal to `25`. Otherwise, will return `"No"`.
+Replace the two if statements with one statement, using the `&&` operator, which will return the string `Yes` if `val` is less than or equal to `50` and greater than or equal to `25`. Otherwise, will return the string `No`.
 
 # --hints--
 
@@ -49,49 +49,49 @@ You should only have one `if` statement
 assert(code.match(/if/g).length === 1);
 ```
 
-`testLogicalAnd(0)` should return "No"
+`testLogicalAnd(0)` should return the string `No`
 
 ```js
 assert(testLogicalAnd(0) === 'No');
 ```
 
-`testLogicalAnd(24)` should return "No"
+`testLogicalAnd(24)` should return the string `No`
 
 ```js
 assert(testLogicalAnd(24) === 'No');
 ```
 
-`testLogicalAnd(25)` should return "Yes"
+`testLogicalAnd(25)` should return the string `Yes`
 
 ```js
 assert(testLogicalAnd(25) === 'Yes');
 ```
 
-`testLogicalAnd(30)` should return "Yes"
+`testLogicalAnd(30)` should return the string `Yes`
 
 ```js
 assert(testLogicalAnd(30) === 'Yes');
 ```
 
-`testLogicalAnd(50)` should return "Yes"
+`testLogicalAnd(50)` should return the string `Yes`
 
 ```js
 assert(testLogicalAnd(50) === 'Yes');
 ```
 
-`testLogicalAnd(51)` should return "No"
+`testLogicalAnd(51)` should return the string `No`
 
 ```js
 assert(testLogicalAnd(51) === 'No');
 ```
 
-`testLogicalAnd(75)` should return "No"
+`testLogicalAnd(75)` should return the string `No`
 
 ```js
 assert(testLogicalAnd(75) === 'No');
 ```
 
-`testLogicalAnd(80)` should return "No"
+`testLogicalAnd(80)` should return the string `No`
 
 ```js
 assert(testLogicalAnd(80) === 'No');

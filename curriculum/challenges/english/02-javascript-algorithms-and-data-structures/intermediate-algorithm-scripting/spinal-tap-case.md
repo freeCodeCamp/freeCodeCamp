@@ -12,19 +12,19 @@ Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-da
 
 # --hints--
 
-`spinalCase("This Is Spinal Tap")` should return `"this-is-spinal-tap"`.
+`spinalCase("This Is Spinal Tap")` should return the string `this-is-spinal-tap`.
 
 ```js
 assert.deepEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("thisIsSpinalTap")` should return `"this-is-spinal-tap"`.
+`spinalCase("thisIsSpinalTap")` should return the string `this-is-spinal-tap`.
 
 ```js
 assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("The_Andy_Griffith_Show")` should return `"the-andy-griffith-show"`.
+`spinalCase("The_Andy_Griffith_Show")` should return the string `the-andy-griffith-show`.
 
 ```js
 assert.strictEqual(
@@ -33,7 +33,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("Teletubbies say Eh-oh")` should return `"teletubbies-say-eh-oh"`.
+`spinalCase("Teletubbies say Eh-oh")` should return the string `teletubbies-say-eh-oh`.
 
 ```js
 assert.strictEqual(
@@ -42,7 +42,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("AllThe-small Things")` should return `"all-the-small-things"`.
+`spinalCase("AllThe-small Things")` should return the string `all-the-small-things`.
 
 ```js
 assert.strictEqual(spinalCase('AllThe-small Things'), 'all-the-small-things');

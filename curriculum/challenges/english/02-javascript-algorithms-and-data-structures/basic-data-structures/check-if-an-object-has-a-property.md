@@ -13,8 +13,9 @@ Now we can add, modify, and remove keys from objects. But what if we just wanted
 ```js
 users.hasOwnProperty('Alan');
 'Alan' in users;
-// both return true
 ```
+
+Both of these would return `true`.
 
 # --instructions--
 

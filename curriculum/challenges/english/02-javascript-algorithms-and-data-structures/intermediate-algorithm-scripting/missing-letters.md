@@ -10,35 +10,35 @@ dashedName: missing-letters
 
 Find the missing letter in the passed letter range and return it.
 
-If all letters are present in the range, return undefined.
+If all letters are present in the range, return `undefined`.
 
 # --hints--
 
-`fearNotLetter("abce")` should return "d".
+`fearNotLetter("abce")` should return the string `d`.
 
 ```js
 assert.deepEqual(fearNotLetter('abce'), 'd');
 ```
 
-`fearNotLetter("abcdefghjklmno")` should return "i".
+`fearNotLetter("abcdefghjklmno")` should return the string `i`.
 
 ```js
 assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
 ```
 
-`fearNotLetter("stvwx")` should return "u".
+`fearNotLetter("stvwx")` should return the string `u`.
 
 ```js
 assert.deepEqual(fearNotLetter('stvwx'), 'u');
 ```
 
-`fearNotLetter("bcdf")` should return "e".
+`fearNotLetter("bcdf")` should return the string `e`.
 
 ```js
 assert.deepEqual(fearNotLetter('bcdf'), 'e');
 ```
 
-`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` should return undefined.
+`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` should return `undefined`.
 
 ```js
 assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));

@@ -20,7 +20,7 @@ Remember that the `prototype` is like the "recipe" for creating an object. In a 
 
 ```js
 let duck = new Bird("Donald");
-duck.eat(); // prints "nom nom nom"
+duck.eat();
 ```
 
 `duck` inherits all of `Animal`'s properties, including the `eat` method.

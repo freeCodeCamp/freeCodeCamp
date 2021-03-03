@@ -18,13 +18,15 @@ For example, there are slight differences in American and British English and yo
 let american = "color";
 let british = "colour";
 let rainbowRegex= /colou?r/;
-rainbowRegex.test(american); // Returns true
-rainbowRegex.test(british); // Returns true
+rainbowRegex.test(american);
+rainbowRegex.test(british);
 ```
+
+Both uses of the `test` method would return `true`.
 
 # --instructions--
 
-Change the regex `favRegex` to match both the American English (favorite) and the British English (favourite) version of the word.
+Change the regex `favRegex` to match both the American English (`favorite`) and the British English (`favourite`) version of the word.
 
 # --hints--
 
@@ -35,21 +37,21 @@ favRegex.lastIndex = 0;
 assert(favRegex.source.match(/\?/).length > 0);
 ```
 
-Your regex should match `"favorite"`
+Your regex should match the string `favorite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favorite'));
 ```
 
-Your regex should match `"favourite"`
+Your regex should match the string `favourite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favourite'));
 ```
 
-Your regex should not match `"fav"`
+Your regex should not match the string `fav`
 
 ```js
 favRegex.lastIndex = 0;

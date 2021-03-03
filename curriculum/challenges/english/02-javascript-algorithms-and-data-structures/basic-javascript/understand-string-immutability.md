@@ -18,7 +18,7 @@ var myStr = "Bob";
 myStr[0] = "J";
 ```
 
-cannot change the value of `myStr` to "Job", because the contents of `myStr` cannot be altered. Note that this does *not* mean that `myStr` cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change `myStr` would be to assign it with a new string, like this:
+cannot change the value of `myStr` to `Job`, because the contents of `myStr` cannot be altered. Note that this does *not* mean that `myStr` cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change `myStr` would be to assign it with a new string, like this:
 
 ```js
 var myStr = "Bob";
@@ -31,7 +31,7 @@ Correct the assignment to `myStr` so it contains the string value of `Hello Worl
 
 # --hints--
 
-`myStr` should have a value of `Hello World`.
+`myStr` should have a value of the string `Hello World`.
 
 ```js
 assert(myStr === 'Hello World');

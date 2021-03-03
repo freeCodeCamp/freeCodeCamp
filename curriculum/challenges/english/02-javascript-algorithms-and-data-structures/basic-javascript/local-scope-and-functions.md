@@ -9,7 +9,7 @@ dashedName: local-scope-and-functions
 
 # --description--
 
-Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.
+Variables which are declared within a function, as well as the function parameters, have <dfn>local</dfn> scope. That means they are only visible within that function.
 
 Here is a function `myTest` with a local variable called `loc`.
 
@@ -18,17 +18,17 @@ function myTest() {
   var loc = "foo";
   console.log(loc);
 }
-myTest(); // logs "foo"
-console.log(loc); // loc is not defined
+myTest();
+console.log(loc);
 ```
 
-`loc` is not defined outside of the function.
+The `myTest()` function call will display the string `foo` in the console. The `console.log(loc)` line will throw an error, as `loc` is not defined outside of the function.
 
 # --instructions--
 
 The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes. Declare a local variable `myVar` inside `myLocalScope` and run the tests.
 
-**Note:** The console will still have 'ReferenceError: myVar is not defined', but this will not cause the tests to fail.
+**Note:** The console will still display `ReferenceError: myVar is not defined`, but this will not cause the tests to fail.
 
 # --hints--
 

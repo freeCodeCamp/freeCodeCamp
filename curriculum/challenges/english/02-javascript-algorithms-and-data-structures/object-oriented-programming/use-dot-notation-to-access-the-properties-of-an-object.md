@@ -16,10 +16,9 @@ let duck = {
   numLegs: 2
 };
 console.log(duck.name);
-// This prints "Aflac" to the console
 ```
 
-Dot notation is used on the object name, `duck`, followed by the name of the property, `name`, to access the value of "Aflac".
+Dot notation is used on the object name, `duck`, followed by the name of the property, `name`, to access the value of `Aflac`.
 
 # --instructions--
 

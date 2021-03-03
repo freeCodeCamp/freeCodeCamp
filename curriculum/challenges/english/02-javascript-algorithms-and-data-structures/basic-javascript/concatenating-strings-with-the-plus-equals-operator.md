@@ -11,24 +11,24 @@ dashedName: concatenating-strings-with-the-plus-equals-operator
 
 We can also use the `+=` operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.
 
-**Note**  
-Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**Note:** Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
 
 Example:
 
 ```js
 var ourStr = "I come first. ";
 ourStr += "I come second.";
-// ourStr is now "I come first. I come second."
 ```
+
+`ourStr` now has a value of the string `I come first. I come second.`.
 
 # --instructions--
 
-Build `myStr` over several lines by concatenating these two strings: `"This is the first sentence. "` and `"This is the second sentence."` using the `+=` operator. Use the `+=` operator similar to how it is shown in the editor. Start by assigning the first string to `myStr`, then add on the second string.
+Build `myStr` over several lines by concatenating these two strings: `This is the first sentence. ` and `This is the second sentence.` using the `+=` operator. Use the `+=` operator similar to how it is shown in the editor. Start by assigning the first string to `myStr`, then add on the second string.
 
 # --hints--
 
-`myStr` should have a value of `This is the first sentence. This is the second sentence.`
+`myStr` should have a value of the string `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');

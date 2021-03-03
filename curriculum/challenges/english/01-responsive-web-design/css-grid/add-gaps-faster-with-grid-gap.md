@@ -17,7 +17,7 @@ Use `grid-gap` to introduce a `10px` gap between the rows and `20px` gap between
 
 # --hints--
 
-`container` class should have a `grid-gap` property that introduces `10px` gap between the rows and `20px` gap between the columns.
+`container` class should have a `grid-gap` property that introduces a `10px` gap between the rows and a `20px` gap between the columns.
 
 ```js
 assert(

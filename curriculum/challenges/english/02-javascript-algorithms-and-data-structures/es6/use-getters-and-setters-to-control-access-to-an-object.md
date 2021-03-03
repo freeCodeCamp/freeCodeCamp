@@ -31,16 +31,20 @@ class Book {
   }
 }
 const novel = new Book('anonymous');
-console.log(novel.writer);  // anonymous
+console.log(novel.writer);
 novel.writer = 'newAuthor';
-console.log(novel.writer);  // newAuthor
+console.log(novel.writer);
 ```
 
-Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details. **Note:** It is convention to precede the name of a private variable with an underscore (`_`). However, the practice itself does not make a variable private.
+The console would display the strings `anonymous` and `newAuthor`.
+
+Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details.
+
+**Note:** It is convention to precede the name of a private variable with an underscore (`_`). However, the practice itself does not make a variable private.
 
 # --instructions--
 
-Use the `class` keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+Use the `class` keyword to create a `Thermostat` class. The `constructor` accepts a Fahrenheit temperature.
 
 In the class, create a `getter` to obtain the temperature in Celsius and a `setter` to set the temperature in Celsius.
 
@@ -80,7 +84,7 @@ assert(
 );
 ```
 
-When instantiated with a Fahrenheit value, `Thermostat` should set the correct temperature.
+When instantiated with a Fahrenheit value, `Thermostat` should set the correct `temperature`.
 
 ```js
 assert(
@@ -119,7 +123,7 @@ assert(
 );
 ```
 
-Calling the `setter` with a Celsius value should set the temperature.
+Calling the `setter` with a Celsius value should set the `temperature`.
 
 ```js
 assert(

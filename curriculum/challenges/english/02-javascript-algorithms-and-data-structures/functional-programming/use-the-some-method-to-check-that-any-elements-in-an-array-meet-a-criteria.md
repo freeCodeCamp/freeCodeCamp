@@ -17,8 +17,9 @@ var numbers = [10, 50, 8, 220, 110, 11];
 numbers.some(function(currentValue) {
   return currentValue < 10;
 });
-// Returns true
 ```
+
+The `some` method would return `true`.
 
 # --instructions--
 

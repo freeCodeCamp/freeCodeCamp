@@ -16,12 +16,13 @@ Example:
 ```js
 var ourName = "freeCodeCamp";
 var ourStr = "Hello, our name is " + ourName + ", how are you?";
-// ourStr is now "Hello, our name is freeCodeCamp, how are you?"
 ```
+
+`ourStr` would have a value of the string `Hello, our name is freeCodeCamp, how are you?`.
 
 # --instructions--
 
-Set `myName` to a string equal to your name and build `myStr` with `myName` between the strings `"My name is "` and `" and I am well!"`
+Set `myName` to a string equal to your name and build `myStr` with `myName` between the strings `My name is ` and ` and I am well!`
 
 # --hints--
 

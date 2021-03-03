@@ -17,8 +17,10 @@ We can pass values into a function with <dfn>arguments</dfn>. You can use a `ret
 function plusThree(num) {
   return num + 3;
 }
-var answer = plusThree(5); // 8
+var answer = plusThree(5);
 ```
+
+`answer` has the value `8`.
 
 `plusThree` takes an <dfn>argument</dfn> for `num` and returns a value equal to `num + 3`.
 
