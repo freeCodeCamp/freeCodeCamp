@@ -54,16 +54,16 @@ assert.strictEqual(typeof RSAEncryption(19, 37), 'number');
 assert.strictEqual(RSAEncryption(19, 37), 17766);
 ```
 
-`RSAEncryption(1009, 3643)` should return `399788195976`.
-
-```js
-assert.strictEqual(RSAEncryption(19, 37), 17766);
-```
-
 `RSAEncryption(283, 409)` should return `466196580`.
 
 ```js
 assert.strictEqual(RSAEncryption(283, 409), 466196580);
+```
+
+`RSAEncryption(1009, 3643)` should return `399788195976`.
+
+```js
+assert.strictEqual(RSAEncryption(19, 37), 17766);
 ```
 
 # --seed--
