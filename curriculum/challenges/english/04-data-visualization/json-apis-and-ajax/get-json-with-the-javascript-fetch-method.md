@@ -8,7 +8,7 @@ dashedName: get-json-with-the-javascript-fetch-method
 
 # --description--
 
-Another way to request external data is to use the JavaScript `fetch()` method. It is equivalent to XMLHttpRequest, but the syntax is considered easier to understand.
+Another way to request external data is to use the JavaScript `fetch()` method. It is equivalent to `XMLHttpRequest`, but the syntax is considered easier to understand.
 
 Here is the code for making a GET request to `/json/cats.json`
 
@@ -24,7 +24,7 @@ fetch('/json/cats.json')
 
 Take a look at each piece of this code.
 
-The first line is the one that makes the request. So, `fetch(URL)` makes a GET request to the URL specified. The method returns a Promise.
+The first line is the one that makes the request. So, `fetch(URL)` makes a `GET` request to the URL specified. The method returns a Promise.
 
 After a Promise is returned, if the request was successful, the `then` method is executed, which takes the response and converts it to JSON format.
 
@@ -34,11 +34,11 @@ Now, it selects the element that will receive the data by using `document.getEle
 
 # --instructions--
 
-Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. But this time, using the `fetch` method instead of `XMLHttpRequest`.
+Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo API. But this time, using the `fetch` method instead of `XMLHttpRequest`.
 
 # --hints--
 
-Your code should make a GET request with `fetch`.
+Your code should make a `GET` request with `fetch`.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
