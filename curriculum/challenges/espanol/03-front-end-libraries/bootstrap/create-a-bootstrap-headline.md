@@ -56,6 +56,7 @@ assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));
 
 ## --seed-contents--
 ```html
+
 ```
 
 # --solutions--

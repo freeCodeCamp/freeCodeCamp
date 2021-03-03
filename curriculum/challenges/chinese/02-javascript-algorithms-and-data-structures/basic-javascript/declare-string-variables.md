@@ -67,6 +67,7 @@ if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(fun
 
 ## --seed-contents--
 ```js
+
 ```
 
 # --solutions--

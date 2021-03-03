@@ -51,6 +51,7 @@ assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 ## --seed-contents--
 
 ```js
+
 ```
 
 # --solutions--

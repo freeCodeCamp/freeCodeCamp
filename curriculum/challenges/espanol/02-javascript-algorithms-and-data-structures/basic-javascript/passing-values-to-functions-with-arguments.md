@@ -106,6 +106,7 @@ if (typeof functionWithArgs !== "function") {
 
 ## --seed-contents--
 ```js
+
 ```
 
 # --solutions--

@@ -88,6 +88,7 @@ if (typeof reusableFunction !== "function") {
 
 ## --seed-contents--
 ```js
+
 ```
 
 # --solutions--
