@@ -84,7 +84,7 @@ assert(happy(28));
 assert(happy(31));
 ```
 
-`happy(32)` should return true.
+`happy(32)` should return `true`.
 
 ```js
 assert(happy(32));
