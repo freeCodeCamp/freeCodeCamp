@@ -18,7 +18,7 @@ Devuelve el arreglo resultante. Los arreglos de entrada deben permanecer iguales
 
 # --hints--
 
-`frankenSplice([1, 2, 3], [4, 5], 1)` debe devolver`[4, 1, 2, 3, 5]`.
+`frankenSplice([1, 2, 3], [4, 5], 1)` debe devolver `[4, 1, 2, 3, 5]`.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5]);

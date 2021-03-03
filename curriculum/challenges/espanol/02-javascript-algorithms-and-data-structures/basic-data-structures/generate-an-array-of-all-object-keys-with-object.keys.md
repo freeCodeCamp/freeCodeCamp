@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1e
-title: Generar un arreglo de todas las claves de los objetos con Object.keys()
+title: Genera un arreglo de todas las claves de los objetos con Object.keys()
 challengeType: 1
 forumTopicId: 301160
 dashedName: generate-an-array-of-all-object-keys-with-object-keys

@@ -1,6 +1,6 @@
 ---
 id: bd7188d8c242eddfaeb5bd13
-title: Visualize Data with a Heat Map
+title: 用热图可视化数据
 challengeType: 3
 forumTopicId: 301466
 dashedName: visualize-data-with-a-heat-map
@@ -8,51 +8,51 @@ dashedName: visualize-data-with-a-heat-map
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/JEXgeY>.
+**目标：** 在 [CodePen.io](https://codepen.io) 上实现一个功能类似 <https://codepen.io/freeCodeCamp/full/JEXgeY> 的 App。
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下， 你可以根据自己的喜好来美化你的 app。
 
-You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+你可以使用 HTML、JavaScript、CSS、以及基于 svg 的 D3 可视化库来完成这个挑战。 每次测试查询的元素都必须是非虚拟 DOM。 如果你使用了前端框架（例如 Vue），那么对于动态的内容测试结果可能不准确。 我们希望最终能够兼容这些框架，但 D3 项目目前还不支持它们。
 
-**User Story #1:** My heat map should have a title with a corresponding `id="title"`.
+**需求 #1：** 热度图包含一个具有 `id="title"` 属性的标题。
 
-**User Story #2:** My heat map should have a description with a corresponding `id="description"`.
+**需求 #2：** 热度图包含一个具有 `id="description"` 属性的描述内容。
 
-**User Story #3:** My heat map should have an x-axis with a corresponding `id="x-axis"`.
+**需求 #3：** 热度图包含一个具有 `id="x-axis"` 属性的 x 轴。
 
-**User Story #4:** My heat map should have a y-axis with a corresponding `id="y-axis"`.
+**需求 #4：** 热度图包含一个具有 `id="y-axis"` 属性的 y 轴。
 
-**User Story #5:** My heat map should have `rect` elements with a `class="cell"` that represent the data.
+**需求 #5：** 热度图包含一些 `rect` 元素来展示数据，他们具有 `class="cell"` 属性。
 
-**User Story #6:** There should be at least 4 different fill colors used for the cells.
+**需求 #6：** 这些单元格元素至少应该有 4 种不同的填充颜色。
 
-**User Story #7:** Each cell will have the properties `data-month`, `data-year`, `data-temp` containing their corresponding month, year, and temperature values.
+**需求 #7：** 每个单元格元素都有这些属性 `data-month`，`data-year`，`data-temp`，包含了它们相应的月份、年份和温度值。
 
-**User Story #8:** The `data-month`, `data-year` of each cell should be within the range of the data.
+**需求 #8：** 每个元素的 `data-month`、`data-year` 属性应该在数据范围内。
 
-**User Story #9:** My heat map should have cells that align with the corresponding month on the y-axis.
+**需求 #9：** 热度图包含与 y 轴上的相应月份对齐的单元格。
 
-**User Story #10:** My heat map should have cells that align with the corresponding year on the x-axis.
+**需求 #10：** 热度图包含与 x 轴上相应年份对齐的单元格。
 
-**User Story #11:** My heat map should have multiple tick labels on the y-axis with the full month name.
+**需求 #11：** 热度图在 y 轴上有多个刻度标签，并带有完整的月份名称。
 
-**User Story #12:** My heat map should have multiple tick labels on the x-axis with the years between 1754 and 2015.
+**需求 #12：** 热度图在 x 轴上有多个刻度标签，年份在 1754 到 2015 之间。
 
-**User Story #13:** My heat map should have a legend with a corresponding `id="legend"`.
+**需求 #13：** 热度图包含一个具有 `id="legend"` 属性的图例。
 
-**User Story #14:** My legend should contain `rect` elements.
+**需求 #14：** 图例包含一些 `rect` 元素。
 
-**User Story #15:** The `rect` elements in the legend should use at least 4 different fill colors.
+**需求 #15：** 图例中的这些 `rect` 元素应该至少使用 4 种不同的填充颜色。
 
-**User Story #16:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**需求 #16：** 将鼠标悬停在某个区域上时，可以看到具有 `id="tooltip"` 属性的提示框，它会显示有关该区域的更多信息。
 
-**User Story #17:** My tooltip should have a `data-year` property that corresponds to the `data-year` of the active area.
+**需求 #17：** 提示框应该有 `data-year` 属性，它对应了当前激活区域的 `data-year` 属性。
 
-Here is the dataset you will need to complete this project: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json`
+以下是完成此项目所需的数据：`https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json`
 
-You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-Once you're done, submit the URL to your working project with all its tests passing.
+一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --solutions--
 

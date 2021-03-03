@@ -1,6 +1,6 @@
 ---
 id: 5675e877dbd60be8ad28edc6
-title: Iterate Through an Array with a For Loop
+title: Itera a través de un arreglo con un bucle "for"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeR3HB'
 forumTopicId: 18216
@@ -9,7 +9,7 @@ dashedName: iterate-through-an-array-with-a-for-loop
 
 # --description--
 
-A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a `for` loop. This code will output each element of the array `arr` to the console:
+Una tarea común en JavaScript es iterar a través del contenido de un arreglo. Una forma de hacerlo es con un bucle `for`. Este código mostrará cada elemento del arreglo `arr` en la consola:
 
 ```js
 var arr = [10, 9, 8, 7, 6];
@@ -18,33 +18,33 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-Remember that arrays have zero-based indexing, which means the last index of the array is `length - 1`. Our condition for this loop is `i < arr.length`, which stops the loop when `i` is equal to `length`. In this case the last iteration is `i === 4` i.e. when `i` becomes equal to `arr.length` and outputs `6` to the console.
+Recuerda que los arreglos tienen una indexación basada en cero, lo que significa que el último índice del arreglo es igual a su longitud menos uno (`length - 1`). Nuestra condición para este bucle es `i < arr.length`, que detiene el bucle cuando `i` es igual a `length`. En este caso la última iteración es `i === 4`, es decir, cuando `i` es igual a `arr.length` e imprime `6` en la consola.
 
 # --instructions--
 
-Declare and initialize a variable `total` to `0`. Use a `for` loop to add the value of each element of the `myArr` array to `total`.
+Declara e inicializa una variable `total` a `0`. Usa un bucle `for` para sumar el valor de cada elemento del arreglo `myArr` al `total`.
 
 # --hints--
 
-`total` should be declared and initialized to 0.
+`total` debe declararse e inicializarse a 0.
 
 ```js
 assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
 ```
 
-`total` should equal 20.
+`total` debe ser igual a 20.
 
 ```js
 assert(total === 20);
 ```
 
-You should use a `for` loop to iterate through `myArr`.
+Debes usar un bucle `for` para iterar a través de `myArr`.
 
 ```js
 assert(/for\s*\(/g.test(code) && /myArr\s*\[/g.test(code));
 ```
 
-You should not attempt to directly assign the value 20 to `total`.
+No debes intentar asignar directamente el valor 20 al `total`.
 
 ```js
 assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));

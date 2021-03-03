@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b2
-title: Compound Assignment With Augmented Division
+title: 复合赋值之 /=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvKT2'
 forumTopicId: 16659
@@ -9,45 +9,45 @@ dashedName: compound-assignment-with-augmented-division
 
 # --description--
 
-The `/=` operator divides a variable by another number.
+`/=` 操作符是让变量与另一个数相除并赋值。
 
 `myVar = myVar / 5;`
 
-Will divide `myVar` by `5`. This can be rewritten as:
+变量 `myVar` 等于自身除以 `5` 的值。 等价于:
 
 `myVar /= 5;`
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `/=` operator.
+使用 `/=` 操作符对 `a`，`b` 和 `c` 实现相除赋值操作。
 
 # --hints--
 
-`a` should equal `4`.
+`a` 应该等于 `4`。
 
 ```js
 assert(a === 4);
 ```
 
-`b` should equal `27`.
+`b` 应该等于 `27`。
 
 ```js
 assert(b === 27);
 ```
 
-`c` should equal `3`.
+`c` 应该等于`3`。
 
 ```js
 assert(c === 3);
 ```
 
-You should use the `/=` operator for each variable.
+应该对每个变量使用 `/=` 操作符。
 
 ```js
 assert(code.match(/\/=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+不要修改注释上面的代码。
 
 ```js
 assert(

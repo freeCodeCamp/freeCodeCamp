@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc6
-title: Add Inline Styling to Elements
+title: 给元素添加内联样式
 challengeType: 6
 forumTopicId: 301475
 dashedName: add-inline-styling-to-elements
@@ -8,25 +8,25 @@ dashedName: add-inline-styling-to-elements
 
 # --description--
 
-D3 lets you add inline CSS styles on dynamic elements with the `style()` method.
+D3允许你使用 `style()` 方法在动态元素上添加内联 CSS 样式。
 
-The `style()` method takes a comma-separated key-value pair as an argument. Here's an example to set the selection's text color to blue:
+`style()` 方法以用逗号分隔的键值对作为参数。 这里是一个将选中文本的颜色设为蓝色的例子：
 
 `selection.style("color","blue");`
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to make all the displayed text have a `font-family` of `verdana`.
+在编辑器中添加 `style()` 方法，使所有显示的文本都有 `font-family` 属性，且值为 `verdana`。
 
 # --hints--
 
-Your `h2` elements should have a `font-family` of verdana.
+`h2` 元素应该有 `font-family` 属性，且值为 verdana。
 
 ```js
 assert($('h2').css('font-family') == 'verdana');
 ```
 
-Your code should use the `style()` method.
+你应该使用 `style()` 方法。
 
 ```js
 assert(code.match(/\.style/g));

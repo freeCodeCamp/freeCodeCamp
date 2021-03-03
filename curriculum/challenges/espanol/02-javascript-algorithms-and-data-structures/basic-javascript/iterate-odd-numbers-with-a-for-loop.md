@@ -1,6 +1,6 @@
 ---
 id: 56104e9e514f539506016a5c
-title: Iterate Odd Numbers With a For Loop
+title: Itera números impares con un bucle "for"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8n7T9'
 forumTopicId: 18212
@@ -9,9 +9,9 @@ dashedName: iterate-odd-numbers-with-a-for-loop
 
 # --description--
 
-For loops don't have to iterate one at a time. By changing our `final-expression`, we can count by even numbers.
+Los bucles "for" no tienen que iterar de uno en uno a la vez. Al cambiar nuestra `final-expression` (expresión final), podemos contar con números pares.
 
-We'll start at `i = 0` and loop while `i < 10`. We'll increment `i` by 2 each loop with `i += 2`.
+Empezaremos en `i = 0` y realizaremos el bucle mientras `i < 10`. Incrementaremos `i` en 2 cada bucle utilizando `i += 2`.
 
 ```js
 var ourArray = [];
@@ -20,21 +20,21 @@ for (var i = 0; i < 10; i += 2) {
 }
 ```
 
-`ourArray` will now contain `[0,2,4,6,8]`. Let's change our `initialization` so we can count by odd numbers.
+`ourArray` ahora contendrá `[0,2,4,6,8]`. Cambiemos nuestra `initialization` (inicialización) para que podamos contar por números impares.
 
 # --instructions--
 
-Push the odd numbers from 1 through 9 to `myArray` using a `for` loop.
+Inserta los números impares desde 1 hasta 9 en `myArray` utilizando un bucle `for`.
 
 # --hints--
 
-You should be using a `for` loop for this.
+Debes utilizar un bucle `for` para esto.
 
 ```js
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` should equal `[1,3,5,7,9]`.
+`myArray` debe ser igual a `[1,3,5,7,9]`.
 
 ```js
 assert.deepEqual(myArray, [1, 3, 5, 7, 9]);

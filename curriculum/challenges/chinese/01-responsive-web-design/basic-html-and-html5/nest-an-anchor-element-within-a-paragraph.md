@@ -47,8 +47,7 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length > 0 ||
-    $('a[href="http://www.freecatphotoapp.com"]').length > 0
+  $('a[href="https://freecatphotoapp.com"]').length > 0 
 );
 ```
 
@@ -72,8 +71,7 @@ assert($('p') && $('p').length > 2);
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').parent().is('p') ||
-    $('a[href="http://www.freecatphotoapp.com"]').parent().is('p')
+  $('a[href="https://freecatphotoapp.com"]').parent().is('p')
 );
 ```
 
@@ -84,11 +82,7 @@ assert(
   $('a[href="https://freecatphotoapp.com"]')
     .parent()
     .text()
-    .match(/View\smore\s/gi) ||
-    $('a[href="http://www.freecatphotoapp.com"]')
-      .parent()
-      .text()
-      .match(/View\smore\s/gi)
+    .match(/View\smore\s/gi)
 );
 ```
 

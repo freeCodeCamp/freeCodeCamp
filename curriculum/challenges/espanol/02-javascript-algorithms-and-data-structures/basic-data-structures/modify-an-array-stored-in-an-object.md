@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1f
-title: Modificar un arreglo almacenado en un objeto
+title: Modifica un arreglo almacenado en un objeto
 challengeType: 1
 forumTopicId: 301163
 dashedName: modify-an-array-stored-in-an-object

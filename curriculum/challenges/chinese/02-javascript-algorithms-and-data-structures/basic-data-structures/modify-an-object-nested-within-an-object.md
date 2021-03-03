@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b19
-title: Modify an Object Nested Within an Object
+title: 修改嵌套在对象中的对象
 challengeType: 1
 forumTopicId: 301164
 dashedName: modify-an-object-nested-within-an-object
@@ -8,7 +8,7 @@ dashedName: modify-an-object-nested-within-an-object
 
 # --description--
 
-Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:
+现在我们来看一个稍复杂的对象。 在对象中，我们也可以嵌套任意层数的对象，对象的属性值可以是 JavaScript 支持的任意类型，包括数组和其他对象。 请看以下例子：
 
 ```js
 let nestedObject = {
@@ -26,7 +26,7 @@ let nestedObject = {
 };
 ```
 
-`nestedObject` has three properties: `id` (value is a number), `date` (value is a string), and `data` (value is an object with its nested structure). While structures can quickly become complex, we can still use the same notations to access the information we need. To assign the value `10` to the `busy` property of the nested `onlineStatus` object, we use dot notation to reference the property:
+`nestedObject` 有 3 个属性：`id`（属性值为数字）、`date`（属性值为字符串）、`data`（属性值为嵌套的对象）。 虽然对象中的数据可能很复杂，我们仍能使用上一个挑战中讲到的写法来访问我们需要的信息。 如果我们想把嵌套在 `onlineStatus` 中 `busy` 的属性值改为 `10`，可以用点号表示法来这样实现：
 
 ```js
 nestedObject.data.onlineStatus.busy = 10;
@@ -34,11 +34,11 @@ nestedObject.data.onlineStatus.busy = 10;
 
 # --instructions--
 
-Here we've defined an object `userActivity`, which includes another object nested within it. Set the value of the `online` key to `45`.
+我们已经定义了一个 `userActivity` 对象，它包含了另一个对象。 请将 `online` 的属性值改为 `45`。
 
 # --hints--
 
-`userActivity` should have `id`, `date` and `data` properties.
+`userActivity` 应包含 `id`、`date` 和 `data` 属性。
 
 ```js
 assert(
@@ -46,19 +46,19 @@ assert(
 );
 ```
 
-`userActivity` should have a `data` key set to an object with keys `totalUsers` and `online`.
+`userActivity` 应包含 `data` 属性，其属性值应为包含 `totalUsers` 和 `online` 属性的对象。
 
 ```js
 assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
 ```
 
-The `online` property nested in the `data` key of `userActivity` should be set to `45`
+`userActivity` 的 `data` 属性值中的 `online` 属性值应被改为 `45`。
 
 ```js
 assert(userActivity.data.online === 45);
 ```
 
-The `online` property should be set using dot or bracket notation.
+应使用点号表示法或方括号表示法来修改 `online` 属性值。
 
 ```js
 assert.strictEqual(code.search(/online: 45/), -1);

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b5
-title: Escaping Literal Quotes in Strings
+title: 转义字符串中的引号
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvgSr'
 forumTopicId: 17568
@@ -9,31 +9,31 @@ dashedName: escaping-literal-quotes-in-strings
 
 # --description--
 
-When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: `"` or `'` inside of your string?
+定义一个字符串必须要用单引号或双引号来包裹它。 那么当你的字符串里面包含引号 `"` 或者 `'` 时该怎么办呢?
 
-In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (<code>\\</code>) in front of the quote.
+在 JavaScript 中，你可以通过在引号前面使用<dfn>反斜杠</dfn>（<code>\\</code>）来<dfn>转义</dfn>引号。
 
 `var sampleStr = "Alan said, \"Peter is learning JavaScript\".";`
 
-This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:
+有了转义符号，JavaScript 就知道这个单引号或双引号并不是字符串的结尾，而是字符串内的字符。 所以，上面的字符串打印到控制台的结果为：
 
 `Alan said, "Peter is learning JavaScript".`
 
 # --instructions--
 
-Use <dfn>backslashes</dfn> to assign a string to the `myStr` variable so that if you were to print it to the console, you would see:
+使用<dfn>反斜杠</dfn>将一个字符串赋值给变量 `myStr`，打印到控制台，输出为：
 
 `I am a "double quoted" string inside "double quotes".`
 
 # --hints--
 
-You should use two double quotes (`"`) and four escaped double quotes (`\"`).
+你的代码中应该包含两个双引号（`"`）以及四个转义的双引号（`\"`）。
 
 ```js
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-Variable myStr should contain the string: `I am a "double quoted" string inside "double quotes".`
+变量 myStr 应该包含字符串 `I am a "double quoted" string inside "double quotes".`。
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));
