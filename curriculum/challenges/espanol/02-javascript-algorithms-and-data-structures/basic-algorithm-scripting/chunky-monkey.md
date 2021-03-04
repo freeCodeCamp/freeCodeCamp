@@ -59,7 +59,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [
 ]);
 ```
 
-`chunkArrayIngroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)` debe devolver `[[0, 1, 2, 3], [4, 5, 6, 7], [8]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)` debe devolver `[[0, 1, 2, 3], [4, 5, 6, 7], [8]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [
