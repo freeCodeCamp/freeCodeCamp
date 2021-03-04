@@ -4,13 +4,9 @@ Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeC
 
 ### Can I translate freeCodeCamp's curriculum?
 
-Yes - Read [this guide](/how-to-translate-files) if you are interested in contributing to translation.
+Yes - Read [this guide](/how-to-translate-files) if you are interested in contributing to translations.
 
-Currently we have the user contributed translations being done in Chinese and Español.
-
-At this time we are building our experience hosting the curriculum in the aforementioned languages. Eventually, we intend to localize freeCodeCamp into several major world languages, like: Arabic, Hindi, Portuguese, Russian and more.
-
-We thank you for your patience while we iron out the workflow.
+Currently we have the user contributed translations being done in Chinese and Español. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 ### How can I report a new bug?
 
@@ -70,17 +66,20 @@ We are excited to help you contribute to any of the topics that you would like t
 
 Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-**Additional Assistance:**
+### Additional Assistance
 
-If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
+If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff.
 
 | Staff                 | Send message on Forum                                                        |
 | :-------------------- | :--------------------------------------------------------------------------- |
-| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
 | Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
 | Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
-| Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
+| Miya Liu              | [@miyaliu](https://chinese.freecodecamp.org/forum/u/miyaliu)                 |
+| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
+| Nicholas Carrigan     | [@nhcarrigan](https://forum.freecodecamp.org/u/nhcarrigan)                   |
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
+| Rafael D Hernandez    | [@RafaelHernandez](https://forum.freecodecamp.org/u/rafaelhernandez)         |
 | Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
+| Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**

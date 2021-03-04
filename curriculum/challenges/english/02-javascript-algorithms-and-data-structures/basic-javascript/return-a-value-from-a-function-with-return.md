@@ -59,6 +59,7 @@ assert(timesFive(0) === 0);
 ## --seed-contents--
 
 ```js
+
 ```
 
 # --solutions--
