@@ -9,6 +9,7 @@ on:
       - 'client/i18n/locales/**/intro.json'
       - 'client/i18n/locales/**/translations.json'
       - '!client/i18n/locales/english/**'
+      - 'docs/i18n/**'
 
 jobs:
   has-translation:
