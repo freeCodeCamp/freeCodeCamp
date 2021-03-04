@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc2
-title: Add Document Elements with D3
+title: 用 D3 给文档添加元素
 challengeType: 6
 forumTopicId: 301474
 dashedName: add-document-elements-with-d3
@@ -8,21 +8,21 @@ dashedName: add-document-elements-with-d3
 
 # --description--
 
-D3 has several methods that let you add and change elements in your document.
+D3 有多种方法可以用来在文档中增加元素、修改元素。
 
-The `select()` method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Here's an example:
+`select()` 方法从文档中选择一个元素。 它接受你想要选择的元素的名字作为参数，并返回文档中第一个与名字匹配的 HTML 节点。 以下是一个例子：
 
 `const anchor = d3.select("a");`
 
-The above example finds the first anchor tag on the page and saves an HTML node for it in the variable `anchor`. You can use the selection with other methods. The "d3" part of the example is a reference to the D3 object, which is how you access D3 methods.
+上面这个例子找到页面上的第一个锚点标签，将它作为一个 HTML 节点保存在变量 `anchor` 中。 你也可以用其他的方法选择页面上的元素。 例子中的 "d3" 是对 D3 对象的引用，可以通过它来访问 D3 的方法。
 
-Two other useful methods are `append()` and `text()`.
+另外两个有用的方法是 `append()` 和 `text()` 。
 
-The `append()` method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
+`append()` 方法接受你希望添加到文档中的元素作为参数， 它将一个 HTML 节点添加到选中的对象上，并返回那个节点的句柄。
 
-The `text()` method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.
+`text()` 方法既可以给选中的节点设置文本，也可以获取节点的当前文本。 如果要设置文本值，需要方法的括号中传入一个字符串参数。
 
-Here's an example that selects an unordered list, appends a list item, and adds text:
+下面是一个选择无序列表、添加列表项和添加文本的例子：
 
 ```js
 d3.select("ul")
@@ -30,45 +30,45 @@ d3.select("ul")
   .text("Very important item");
 ```
 
-D3 allows you to chain several methods together with periods to perform a number of actions in a row.
+在 D3 中可以串联多个方法，连续执行一系列操作。
 
 # --instructions--
 
-Use the `select` method to select the `body` tag in the document. Then `append` an `h1` tag to it, and add the text "Learning D3" into the `h1` element.
+使用 `select` 方法选择文档中的 `body` 标签。 然后用 `append` 方法为它添加一个 `h1` 标签，同时在 `h1` 中添加文本 "Learning D3"。
 
 # --hints--
 
-The `body` should have one `h1` element.
+`body` 元素应该包含一个 `h1` 元素。
 
 ```js
 assert($('body').children('h1').length == 1);
 ```
 
-The `h1` element should have the text "Learning D3" in it.
+`h1` 元素应该包含文本 'Learning D3'。
 
 ```js
 assert($('h1').text() == 'Learning D3');
 ```
 
-Your code should access the `d3` object.
+你应该能访问 `d3` 对象。
 
 ```js
 assert(code.match(/d3/g));
 ```
 
-Your code should use the `select` method.
+你应该使用 `select` 方法。
 
 ```js
 assert(code.match(/\.select/g));
 ```
 
-Your code should use the `append` method.
+你应该使用 `append` 方法。
 
 ```js
 assert(code.match(/\.append/g));
 ```
 
-Your code should use the `text` method.
+你应该使用 `text` 方法。
 
 ```js
 assert(code.match(/\.text/g));

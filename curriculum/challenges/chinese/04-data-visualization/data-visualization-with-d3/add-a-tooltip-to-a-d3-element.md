@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd6
-title: Add a Tooltip to a D3 Element
+title: 给 D3 元素添加工具提示
 challengeType: 6
 forumTopicId: 301470
 dashedName: add-a-tooltip-to-a-d3-element
@@ -8,71 +8,71 @@ dashedName: add-a-tooltip-to-a-d3-element
 
 # --description--
 
-A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG `title` element.
+当用户在一个对象上悬停时，提示框可以显示关于这个对象更多的信息。 在可视化中有多种方法添加提示框，这个挑战将使用 SVG 的 `title` 元素。
 
-`title` pairs with the `text()` method to dynamically add data to the bars.
+`title` 和 `text()` 方法一起给每组动态添加数据。
 
 # --instructions--
 
-Append a `title` element under each `rect` node. Then call the `text()` method with a callback function so the text displays the data value.
+在每个 `rect` 节点下附加 `title` 元素。 然后用回调函数调用 `text()` 方法使它的文本显示数据值。
 
 # --hints--
 
-Your code should have 9 `title` elements.
+你应该有 9 个 `title` 元素。
 
 ```js
 assert($('title').length == 9);
 ```
 
-The first `title` element should have tooltip text of 12.
+第一个 `title` 元素的提示框文本应为 12。
 
 ```js
 assert($('title').eq(0).text() == '12');
 ```
 
-The second `title` element should have tooltip text of 31.
+第二个 `title` 元素的提示框文本应为 31。
 
 ```js
 assert($('title').eq(1).text() == '31');
 ```
 
-The third `title` element should have tooltip text of 22.
+第三个 `title` 元素的提示框文本应为 22。
 
 ```js
 assert($('title').eq(2).text() == '22');
 ```
 
-The fourth `title` element should have tooltip text of 17.
+第四个 `title` 元素的提示框文本应为 17。
 
 ```js
 assert($('title').eq(3).text() == '17');
 ```
 
-The fifth `title` element should have tooltip text of 25.
+第五个 `title` 元素的提示框文本应为 25。
 
 ```js
 assert($('title').eq(4).text() == '25');
 ```
 
-The sixth `title` element should have tooltip text of 18.
+第六个 `title` 元素的提示框文本应为 18。
 
 ```js
 assert($('title').eq(5).text() == '18');
 ```
 
-The seventh `title` element should have tooltip text of 29.
+第七个 `title` 元素的提示框文本应为 29。
 
 ```js
 assert($('title').eq(6).text() == '29');
 ```
 
-The eighth `title` element should have tooltip text of 14.
+第八个 `title` 元素的提示框文本应为 14。
 
 ```js
 assert($('title').eq(7).text() == '14');
 ```
 
-The ninth `title` element should have tooltip text of 9.
+第九个 `title` 元素的提示框文本应为 9。
 
 ```js
 assert($('title').eq(8).text() == '9');

@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c12feddfaeb1bdef
-title: Generate Random Whole Numbers with JavaScript
+title: 使用 JavaScript 生成随机整数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6bfr'
 forumTopicId: 18186
@@ -9,25 +9,25 @@ dashedName: generate-random-whole-numbers-with-javascript
 
 # --description--
 
-It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.
+生成随机小数很棒，但随机数更有用的地方在于生成随机整数。
 
-<ol><li>Use <code>Math.random()</code> to generate a random decimal.</li><li>Multiply that random decimal by <code>20</code>.</li><li>Use another function, <code>Math.floor()</code> to round the number down to its nearest whole number.</li></ol>
+<ol><li>用 <code>Math.random()</code> 生成一个随机小数。</li><li>把这个随机小数乘以 <code>20</code>。</li><li>用 <code>Math.floor()</code> 向下取整，获得它最近的整数。</li></ol>
 
-Remember that `Math.random()` can never quite return a `1` and, because we're rounding down, it's impossible to actually get `20`. This technique will give us a whole number between `0` and `19`.
+记住 `Math.random()` 永远不会返回 `1`。同时因为我们是在向下取整，所以最终我们获得的结果不可能有 `20`。 这确保了我们获得了一个在 `0` 到 `19` 之间的整数。
 
-Putting everything together, this is what our code looks like:
+把操作连缀起来，代码类似于下面：
 
 `Math.floor(Math.random() * 20);`
 
-We are calling `Math.random()`, multiplying the result by 20, then passing the value to `Math.floor()` function to round the value down to the nearest whole number.
+我们先调用 `Math.random()`，把它的结果乘以 20，然后把上一步的结果传给 `Math.floor()`，最终通过向下取整获得最近的整数。
 
 # --instructions--
 
-Use this technique to generate and return a random whole number between `0` and `9`.
+生成一个 `0` 到 `9` 之间的随机整数。
 
 # --hints--
 
-The result of `randomWholeNum` should be a whole number.
+`randomWholeNum` 的结果应该是一个整数。
 
 ```js
 assert(
@@ -39,13 +39,13 @@ assert(
 );
 ```
 
-You should use `Math.random` to generate a random number.
+需要使用 `Math.random` 生成一个随机数字。
 
 ```js
 assert(code.match(/Math.random/g).length >= 1);
 ```
 
-You should have multiplied the result of `Math.random` by 10 to make it a number that is between zero and nine.
+应该将 `Math.random` 的结果乘以 10，以生成 0 到 9 之间的随机数。
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-You should use `Math.floor` to remove the decimal part of the number.
+需要使用 `Math.floor` 移除数字中的小数部分。
 
 ```js
 assert(code.match(/Math.floor/g).length >= 1);

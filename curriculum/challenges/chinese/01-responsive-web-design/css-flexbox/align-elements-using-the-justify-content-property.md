@@ -15,7 +15,7 @@ flex 子元素有时不能充满整个 flex 容器， 所以我们经常需要�
 
 回忆一下，如果把 flex 容器设为一个行，它的子元素会从左到右逐个排列； 如果把 flex 容器设为一个列，它的子元素会从上到下逐个排列。 子元素排列的方向被称为 **main axis（主轴）**。 对于行，主轴水平贯穿每一个项目； 对于列，主轴垂直贯穿每一个项目。
 
-对于如何沿主轴线排放 flex 项目，有几种选择。 关于 flex 子元素在主轴的排列方式，很常用的是 `justify-content: center;`：即 flex 子元素在 flex 容器中居中排列。 其他可选值还有：
+对于如何沿主轴线排放 flex 项目，有几种选择。 很常用的一种是 `justify-content: center;`：即 flex 子元素在 flex 容器中居中排列。 其他选择包括：
 
 <ul><li><code>flex-start</code>：从 flex 容器的起始位置开始排列项目。 对行来说是把项目移至左边， 对于列是把项目移至顶部。 如未设置 <code>justify-content</code> 的值，那么这就是默认值。</li><li><code>flex-end</code>：从 flex 容器的终止位置开始排列项目。 对行来说是把项目移至右边， 对于列是把项目移至底部。</li><li><code>space-between</code>：项目间保留一定间距地沿主轴居中排列。 第一个和最后一个项目被放置在容器边沿。 例如，在行中第一个项目会紧贴着容器左边，最后一个项目会紧贴着容器右边，然后其他项目均匀排布。</li><li><code>space-around</code>：与<code>space-between</code>相似，但头尾两个项目不会紧贴容器边缘，所有项目之间的空间均匀排布。</li><li><code>space-evenly</code>：头尾两个项目不会紧贴容器边缘，所有项目之间的空间均匀排布。</li></ul>
 

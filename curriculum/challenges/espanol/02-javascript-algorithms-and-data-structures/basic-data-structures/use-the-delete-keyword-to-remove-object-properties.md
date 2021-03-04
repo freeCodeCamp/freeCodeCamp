@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1b
-title: Use the delete Keyword to Remove Object Properties
+title: Usa la palabra clave "delete" para eliminar las propiedades de los objetos
 challengeType: 1
 forumTopicId: 301168
 dashedName: use-the-delete-keyword-to-remove-object-properties
@@ -8,11 +8,11 @@ dashedName: use-the-delete-keyword-to-remove-object-properties
 
 # --description--
 
-Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data, ***and***, they provide very fast lookup time. Throughout the rest of these challenges, we will describe several common operations you can perform on objects so you can become comfortable applying these useful data structures in your programs.
+Ahora ya sabes qué son los objetos y sus características y ventajas básicas. En resumen, son almacenes clave-valor que proporcionan una forma flexible e intuitiva de estructurar los datos, ***y***, proporcionan un tiempo de búsqueda muy rápido. A lo largo del resto de estos desafíos, describiremos varias operaciones comúnes que puedes realizar sobre los objetos para que te sientas cómodo aplicando estas útiles estructuras de datos en tus programas.
 
-In earlier challenges, we have both added to and modified an object's key-value pairs. Here we will see how we can *remove* a key-value pair from an object.
+En desafíos anteriores, hemos agregado y modificado los pares clave-valor de un objeto. Aquí veremos cómo podemos *eliminar* un par clave-valor de un objeto.
 
-Let's revisit our `foods` object example one last time. If we wanted to remove the `apples` key, we can remove it by using the `delete` keyword like this:
+Volvamos a nuestro ejemplo del objeto `foods` una última vez. Si quisiéramos eliminar la clave `apples`, podemos eliminarla utilizando la palabra clave `delete` de esta manera:
 
 ```js
 delete foods.apples;
@@ -20,11 +20,11 @@ delete foods.apples;
 
 # --instructions--
 
-Use the delete keyword to remove the `oranges`, `plums`, and `strawberries` keys from the `foods` object.
+Usa la palabra clave delete para eliminar las claves `oranges`, `plums` y `strawberries` del objeto `foods`.
 
 # --hints--
 
-The `foods` object should only have three keys: `apples`, `grapes`, and `bananas`.
+El objeto `foods` sólo debe tener tres claves: `apples`, `grapes` y `bananas`.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-The `oranges`, `plums`, and `strawberries` keys should be removed using `delete`.
+Las claves `oranges`, `plums` y `strawberries` deben ser eliminadas usando `delete`.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a9
-title: Initializing Variables with the Assignment Operator
+title: 使用赋值运算符初始化变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
@@ -9,19 +9,19 @@ dashedName: initializing-variables-with-the-assignment-operator
 
 # --description--
 
-It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.
+通常在声明变量的时候会给变量<dfn>初始化</dfn>一个初始值。
 
 `var myVar = 0;`
 
-Creates a new variable called `myVar` and assigns it an initial value of `0`.
+创建一个名为 `myVar` 的变量，并指定其初始值 `0`。
 
 # --instructions--
 
-Define a variable `a` with `var` and initialize it to a value of `9`.
+通过关键字 `var` 定义一个变量 `a`，并给它一个初始值 `9`。
 
 # --hints--
 
-You should initialize `a` to a value of `9`.
+你需要初始化 `a` 的值为 `9`。
 
 ```js
 assert(/var\s+a\s*=\s*9(\s*;?\s*)$/.test(code));

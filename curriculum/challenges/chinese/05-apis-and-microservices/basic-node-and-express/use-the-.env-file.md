@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf2
-title: Use the .env File
+title: 使用 .env 文件
 challengeType: 2
 forumTopicId: 301521
 dashedName: use-the--env-file
@@ -8,19 +8,19 @@ dashedName: use-the--env-file
 
 # --description--
 
-The `.env` file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.
+`.env` 文件是一个用于将环境变量传给应用程序的隐藏文件， 这是一个除了开发者之外没人可以访问的私密文件，它可以用来存储你想保密或者隐藏的数据， 例如，它可以存储第三方服务的 API 密钥或者数据库 URI， 也可以使用它来存储配置选项， 通过设置配置选项，你可以改变应用程序的行为，而无需重写一些代码。
 
-The environment variables are accessible from the app as `process.env.VAR_NAME`. The `process.env` object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The `.env` is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. `VAR_NAME=value`. Usually, you will put each variable definition on a separate line.
+在应用程序中可以通过 `process.env.VAR_NAME` 访问到环境变量。 `process.env` 对象是 Node 程序中的一个全局对象，可以给这个变量传字符串。 习惯上，变量名全部大写，单词之间用下划线分隔。 `.env` 是一个 shell 文件，因此不需要用给变量名和值加引号。 还有一点需要注意，当你给变量赋值时等号两侧不能有空格，例如：`VAR_NAME=value`。 通常来讲，每一个变量定义会独占一行。
 
 # --instructions--
 
-Let's add an environment variable as a configuration option.
+添加一个环境变量作为配置选项。
 
-Store the variable `MESSAGE_STYLE=uppercase` in the `.env` file. Then tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{"message": "HELLO JSON"}`.
+在项目根目录创建一个 `.env` 文件，并存储变量 `MESSAGE_STYLE=uppercase`。 当向 `/json` 发 GET 请求时，如果 `process.env.MESSAGE_STYLE` 的值为 `uppercase`，那么上一次挑战中的路由处理程序返回的对象的消息则应该大写， 即响应对象应该是 `{"message": "HELLO JSON"}`。
 
 # --hints--
 
-The response of the endpoint `/json` should change according to the environment variable `MESSAGE_STYLE`
+端口 `/json` 响应的值，应该随着环境变量 `MESSAGE_STYLE` 的变化而改变
 
 ```js
 (getUserInput) =>

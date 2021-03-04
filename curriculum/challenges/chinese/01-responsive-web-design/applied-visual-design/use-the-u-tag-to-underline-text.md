@@ -9,13 +9,11 @@ dashedName: use-the-u-tag-to-underline-text
 
 # --description--
 
-你可以使用 `u` 标签来给文字添加下划线。下划线通常用来表示重要内容或需要记忆的内容。添加了 `u` 标签后，浏览器会自动给元素添加这段样式：`text-decoration: underline;`。
+你可以使用 `u` 标签来给文字添加下划线。 下划线通常用来表示重要内容或需要记忆的内容。 添加了 `u` 标签后，浏览器会自动给元素添加这段样式：`text-decoration: underline;`。
 
 # --instructions--
 
-给 `Ph.D. students` 添加 `u` 标签。
-
-**注意：**当 `u` 标签可能会被混淆为链接时，避免使用它。锚标签也有默认下划线格式。
+**注意：** 如果使用 `u` 标签添加下划线，可能混淆文本和链接，则应避免使用它。 锚标签也有默认的下划线格式。
 
 # --hints--
 
@@ -109,12 +107,12 @@ assert($('u').text() === 'Ph.D. students');
   <div class="cardContent">
     <div class="cardText">
       <h4>Google</h4>
-      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p>
+      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D.
+    students</u> at <strong>Stanford University</strong>.</p>
     </div>
-    <div class="cardLinks">
+      <div class="cardLinks">
       <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
-    </div>
+    <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
   </div>
 </div>
 ```
