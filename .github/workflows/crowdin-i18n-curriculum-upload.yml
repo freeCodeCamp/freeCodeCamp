@@ -1,6 +1,8 @@
 name: Crowdin Curriculum Upload
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 11 * * *"
 
 jobs:
   i18n-upload-curriculum-files:

@@ -1,6 +1,8 @@
 name: Crowdin Curriculum Download
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"
 
 jobs:
   i18n-download-curriculum-translations:
