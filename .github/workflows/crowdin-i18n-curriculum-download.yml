@@ -89,7 +89,7 @@ jobs:
       - name: Create PR
         uses: actions/github-script@v3
         with:
-          github-token: ${{ secrets.GITHUB_ACTIONS_CAMPERBOT_PA_TOKEN }}
+          github-token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           script: |
             const PR = await github.pulls.create({
               owner: 'freeCodeCamp',
@@ -115,6 +115,7 @@ jobs:
               repo: 'freeCodeCamp',
               pull_number: PRNumber,
               reviewers: [
+                'RandellDawson',
                 'nhcarrigan'
               ]
             });
