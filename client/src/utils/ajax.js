@@ -57,6 +57,12 @@ export function getArticleById(shortId) {
   return get(`/n/${shortId}`);
 }
 
+export function getVerifyCanClaimCert(username, superBlock) {
+  return get(
+    `certificate/verify-can-claim-cert?username=${username}?superBlock=${superBlock}`
+  );
+}
+
 /** POST **/
 export function postChargeStripe(body) {
   return post('/donate/charge-stripe', body);

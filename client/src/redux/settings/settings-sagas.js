@@ -81,6 +81,7 @@ function* verifyCertificationSaga({ payload }) {
     const {
       data: { response, isCertMap, completedChallenges }
     } = yield call(putVerifyCert, payload);
+    console.log(response, isCertMap, completedChallenges);
     yield put(
       verifyCertComplete({
         ...response,

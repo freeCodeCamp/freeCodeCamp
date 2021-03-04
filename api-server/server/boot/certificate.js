@@ -41,9 +41,11 @@ export default function bootCertificate(app, done) {
     const certTypeIds = createCertTypeIds(allChallenges);
     const showCert = createShowCert(app);
     const verifyCert = createVerifyCert(certTypeIds, app);
+    const verifyCanClaimCert = createVerifyCanClaim(certTypeIds, app);
 
     api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
     api.get('/certificate/showCert/:username/:cert', showCert);
+    api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
 
     app.use(api);
     done();
@@ -540,5 +542,72 @@ function createShowCert(app) {
         ]
       });
     }, next);
+  };
+}
+
+function createVerifyCanClaim(certTypeIds, app) {
+  const { User } = app.models;
+
+  function findUserByUsername$(username, fields) {
+    return observeQuery(User, 'findOne', {
+      where: { username },
+      fields
+    });
+  }
+  return function verifyCert(req, res, next) {
+    const { superBlock, username } = req.query;
+    log(superBlock);
+    let certType = superBlockCertTypeMap[superBlock];
+    log(certType);
+
+    return findUserByUsername$(username, {
+      isFrontEndCert: true,
+      isBackEndCert: true,
+      isFullStackCert: true,
+      isRespWebDesignCert: true,
+      isFrontEndLibsCert: true,
+      isJsAlgoDataStructCert: true,
+      isDataVisCert: true,
+      is2018DataVisCert: true,
+      isApisMicroservicesCert: true,
+      isInfosecQaCert: true,
+      isQaCertV7: true,
+      isInfosecCertV7: true,
+      isSciCompPyCertV7: true,
+      isDataAnalysisPyCertV7: true,
+      isMachineLearningPyCertV7: true,
+      username: true,
+      name: true,
+      completedChallenges: true
+    }).subscribe(user => {
+      return Observable.of(certTypeIds[certType])
+        .flatMap(challenge => {
+          const certName = certText[certType];
+
+          const { tests } = challenge;
+          if (!canClaim(tests, user.completedChallenges)) {
+            return Observable.just({
+              type: 'success',
+              message: 'cannot-claim-cert',
+              variables: { name: certName }
+            });
+          }
+          return Observable.just({
+            type: 'success',
+            message: 'can-claim-cert',
+            variables: { name: certName }
+          });
+        })
+        .subscribe(message => {
+          return res.status(200).json({
+            response: message,
+            isCertMap: getUserIsCertMap(user),
+            // send back the completed challenges
+            // NOTE: we could just send back the latest challenge, but this
+            // ensures the challenges are synced.
+            completedChallenges: user.completedChallenges
+          });
+        }, next);
+    });
   };
 }
