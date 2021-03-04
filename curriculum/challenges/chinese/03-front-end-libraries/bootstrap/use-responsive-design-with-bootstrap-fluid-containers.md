@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Use Responsive Design with Bootstrap Fluid Containers
+title: 使用 Bootstrap Fluid 容器实现响应式设计
 challengeType: 0
 forumTopicId: 18362
 dashedName: use-responsive-design-with-bootstrap-fluid-containers
@@ -8,29 +8,29 @@ dashedName: use-responsive-design-with-bootstrap-fluid-containers
 
 # --description--
 
-In the HTML5 and CSS section of freeCodeCamp we built a Cat Photo App. Now let's go back to it. This time, we'll style it using the popular Bootstrap responsive CSS framework.
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。 我们在此基础上继续学习。 这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
 
-Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <dfn>responsive design</dfn>.
+Bootstrap 会根据屏幕大小来动态调整 HTML 元素的大小————因此称为 <dfn>Responsive Design</dfn>（响应式设计）。
 
-With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.
+通过响应式设计，我们将无需额外设计一个手机版的网页， 因为它在任何尺寸的屏幕上看起来都很棒。
 
-You can add Bootstrap to any app by adding the following code to the top of your HTML:
+任何 Web 应用，都可以通过添加如下代码到 HTML 顶部来引入 Bootstrap 。
 
 `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>`
 
-In this case, we've already added it for you to this page behind the scenes. Note that using either `>` or `/>` to close the `link` tag is acceptable.
+在该类课程中，我们已经提前帮你把相应代码添加到了页面中。 注意使用 `>` 或者 `/>` 两种方式闭合 `link` 标签都是可行的。
 
-To get started, we should nest all of our HTML (except the `link` tag and the `style` element) in a `div` element with the class `container-fluid`.
+首先，我们应该把所有 HTML 标签放在 class 为 `container-fluid` 的 `div` 元素内（除了 `link` 标签和 `style` 元素）。
 
 # --hints--
 
-Your `div` element should have the class `container-fluid`.
+`div` 元素的 class 属性值应该为 `container-fluid`。
 
 ```js
 assert($('div').hasClass('container-fluid'));
 ```
 
-Your `div` element should have a closing tag.
+确保该 `div` 元素有闭合标签.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-All HTML elements after the closing `style` tag should be nested in `.container-fluid`.
+确保已经将闭合 `style` 标签后所有的 HTML 元素内嵌在 `.container-fluid` 元素中。
 
 ```js
 assert($('.container-fluid').children().length >= 8);

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedc08845
-title: Add Font Awesome Icons to all of our Buttons
+title: 将字体图标添加到所有的按钮上
 challengeType: 0
 forumTopicId: 16637
 required:
@@ -12,17 +12,17 @@ dashedName: add-font-awesome-icons-to-all-of-our-buttons
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome 是一个非常便利的图标库。 这些图标可以是网络字体，也可以是一张矢量图。 这些图标就和字体一样， 不仅能通过像素单位指定它们的大小，它们也同样会继承父级 HTML 元素的字号。
 
 # --instructions--
 
-Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
+为 info 按钮添加 Font Awesome `info-circle` 图标，delete 按钮添加 `trash` 图标。
 
-**Note:** The `span` element is an acceptable alternative to the `i` element for the directions below.
+**注意：** 下述要求中的 `i` 元素也可以用 `span` 元素代替。
 
 # --hints--
 
-You should add a `<i class="fas fa-info-circle"></i>` within your info button element.
+应在 `info` 按钮元素中添加一个 `<i class="fas fa-info-circle"></i>`。
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-You should add a `<i class="fas fa-trash"></i>` within your delete button element.
+应在 `delete` 按钮元素中添加一个 `<i class="fas fa-trash"></i>`。
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your like button element.
+每个 `i` 元素都应有一个闭合标签，`<i class="fas fa-thumbs-up"></i>` 在 `like` 标签元素中。
 
 ```js
 assert(
