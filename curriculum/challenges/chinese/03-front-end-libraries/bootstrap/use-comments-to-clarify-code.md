@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908857
-title: Use Comments to Clarify Code
+title: 使用注释来说明代码
 challengeType: 0
 forumTopicId: 18347
 dashedName: use-comments-to-clarify-code
@@ -8,35 +8,35 @@ dashedName: use-comments-to-clarify-code
 
 # --description--
 
-When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.
+使用 jQuery 时，修改 HTML 元素时并不需要直接修改 HTML 代码。
 
-Let's make sure that everyone knows they shouldn't actually modify any of this code directly.
+必须确保让每个人都知道不应该直接修改此页面上的这些代码。
 
-Remember that you can start a comment with `<!--` and end a comment with `-->`
+记住，可以在 `<!--` 为开始，`-->` 为结束的地方进行评论注释。
 
-Add a comment at the top of your HTML that says `Code below this line should not be changed`
+请你在 HTML 顶部加如下一段注释： `Code below this line should not be changed` 。
 
 # --hints--
 
-You should start a comment with `<!--` at the top of your HTML.
+应该在 HTML 顶部增加此代码 `<!--` 以开始注释。
 
 ```js
 assert(code.match(/^\s*<!--/));
 ```
 
-Your comment should have the text `Code below this line should not be changed`.
+注释内容应该为 `Code below this line should not be changed`。
 
 ```js
 assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
 ```
 
-You should close your comment with `-->`.
+注释应该用 `-->` 进行闭合。
 
 ```js
 assert(code.match(/-->.*\n+.+/g));
 ```
 
-You should have the same number of comment openers and closers.
+注意，注释的开始标签和闭合标签数量应该一一对应，保持数量一致。
 
 ```js
 assert(code.match(/<!--/g).length === code.match(/-->/g).length);

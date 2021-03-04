@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908746
-title: House our page within a Bootstrap container-fluid div
+title: 将页面放在 container-fluid div 中
 challengeType: 0
 forumTopicId: 18198
 dashedName: house-our-page-within-a-bootstrap-container-fluid-div
@@ -8,19 +8,19 @@ dashedName: house-our-page-within-a-bootstrap-container-fluid-div
 
 # --description--
 
-Now let's make sure all the content on your page is mobile-responsive.
+现在确保页面所有内容都可以响应移动端。
 
-Let's nest your `h3` element within a `div` element with the class `container-fluid`.
+将的 `h3` 元素内嵌进一个具有 `container-fluid` class 的`div` 元素中。
 
 # --hints--
 
-Your `div` element should have the class `container-fluid`.
+`div` 元素 class 属性应该为 `container-fluid`。
 
 ```js
 assert($('div').hasClass('container-fluid'));
 ```
 
-Each of your `div` elements should have closing tags.
+确保每一个 `div` 元素都有一个闭合标签。
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-Your `h3` element should be nested inside a `div` element.
+`h3` 元素应该内嵌于 `div` 元素。
 
 ```js
 assert($('div').children('h3').length > 0);

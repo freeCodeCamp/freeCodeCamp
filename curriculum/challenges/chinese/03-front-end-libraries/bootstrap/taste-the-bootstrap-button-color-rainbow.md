@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08811
-title: Taste the Bootstrap Button Color Rainbow
+title: 体验 Bootstrap 按钮的不同主题
 challengeType: 0
 forumTopicId: 18323
 dashedName: taste-the-bootstrap-button-color-rainbow
@@ -8,27 +8,27 @@ dashedName: taste-the-bootstrap-button-color-rainbow
 
 # --description--
 
-The `btn-primary` class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
+`btn-primary` class 的颜色是应用的主要颜色。 这样 “突出显示” 是引导用户按部就班进行操作的有效办法。
 
-Replace Bootstrap's `btn-default` class with `btn-primary` in your button.
+将按钮的 class 从 Bootstrap 的 `btn-default` 替换为 `btn-primary`。
 
-Note that this button will still need the `btn` and `btn-block` classes.
+注意：按钮仍然需要 `btn` 和 `btn-block` classes。
 
 # --hints--
 
-Your button should have the class `btn-primary`.
+按钮的 class 属性应该包含 `btn-primary`。
 
 ```js
 assert($('button').hasClass('btn-primary'));
 ```
 
-Your button should still have the `btn` and `btn-block` classes.
+按钮的 class 属性应该包含 `btn` 和 `btn-block`。
 
 ```js
 assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
 ```
 
-All your `button` elements should have closing tags.
+确保所有 `button` 元素都有一个闭合标签。
 
 ```js
 assert(
