@@ -249,6 +249,14 @@ button.map-title {
     font-size: 1.17rem;
   }
 
+  .block-title-wrapper {
+    flex-direction: column;
+  }
+
+  .block-cta-wrapper {
+    padding: 25px 15px 10px 15px;
+  }
+
   .course-title,
   .map-cert-title,
   .map-challenge-title {
