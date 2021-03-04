@@ -30,7 +30,7 @@ There are four types of common coins in [US](https://en.wikipedia.org/wiki/Unite
 
 # --instructions--
 
-Implement a function to determine how many ways there are to make change for a `cents` cents using these common coins.
+Implement a function to determine how many ways there are to make change for a given input, `cents`, that represents an amount of US pennies using these common coins.
 
 # --hints--
 
