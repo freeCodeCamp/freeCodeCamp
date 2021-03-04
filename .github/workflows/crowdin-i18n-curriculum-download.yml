@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # runs every day at 12:00 noon UTC
-    - cron: "0 12 * * *"
+    # - cron: "0 12 * * *"
 
 jobs:
   i18n-download-curriculum-translations:
@@ -115,6 +115,7 @@ jobs:
               repo: 'freeCodeCamp',
               pull_number: PRNumber,
               reviewers: [
+                'RandellDawson',
                 'nhcarrigan'
               ]
             });
