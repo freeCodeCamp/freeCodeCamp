@@ -2,6 +2,7 @@ name: Crowdin Curriculum Download
 on:
   workflow_dispatch:
   schedule:
+    # runs every day at 12:00 noon UTC
     - cron: "0 12 * * *"
 
 jobs:
