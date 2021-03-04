@@ -111,7 +111,7 @@ assert(
 );
 ```
 
-The remove method should only remove the value with the associated key.
+The remove method should only remove the correct key value pair.
 
 ```js
 assert(
