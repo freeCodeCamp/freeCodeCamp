@@ -15,7 +15,8 @@ import {
   editorValidator,
   localhostValidator,
   composeValidators,
-  fCCValidator
+  fCCValidator,
+  httpValidator
 } from './FormValidators';
 
 const propTypes = {
@@ -39,7 +40,8 @@ function FormFields(props) {
     placeholders = {},
     required = [],
     types = {},
-    isEditorLinkAllowed = false
+    isEditorLinkAllowed = false,
+    isLocalLinkAllowed = false
   } = options;
 
   const nullOrWarning = (value, error, isURL, name) => {
@@ -54,7 +56,8 @@ function FormFields(props) {
     const validationWarning = composeValidators(
       name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
       fCCValidator,
-      localhostValidator
+      httpValidator,
+      isLocalLinkAllowed ? null : localhostValidator
     )(value);
     const message = error || validationError || validationWarning;
     return message ? (
