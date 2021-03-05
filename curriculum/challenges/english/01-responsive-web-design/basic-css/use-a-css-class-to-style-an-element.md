@@ -21,7 +21,7 @@ Here's an example CSS class declaration:
 </style>
 ```
 
-You can see that we've created a CSS class called `blue-text` within the `<style>` tag. You can apply a class to an HTML element like this: `<h2 class="blue-text">CatPhotoApp</h2>` Note that in your CSS `style` element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
+You can see that we've created a CSS class called `blue-text` within the `<style>` tag. You can apply a class to an HTML element like this: `<h2 class="blue-text">CatPhotoApp</h2>`. Note that in your CSS `style` element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
 
 # --instructions--
 
