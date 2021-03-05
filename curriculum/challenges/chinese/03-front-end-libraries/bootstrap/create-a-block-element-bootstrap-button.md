@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08812
-title: Create a Block Element Bootstrap Button
+title: 创建一个 Bootstrap 块级元素按钮
 challengeType: 0
 forumTopicId: 16810
 dashedName: create-a-block-element-bootstrap-button
@@ -8,41 +8,41 @@ dashedName: create-a-block-element-bootstrap-button
 
 # --description--
 
-Normally, your `button` elements with the `btn` and `btn-default` classes are only as wide as the text that they contain. For example:
+一般情况下，`btn` 和 `btn-default` 两个 classes 修饰的 `button` 元素宽度与它包含的文本相同， 举个例子：
 
 `<button class="btn btn-default">Submit</button>`
 
-This button would only be as wide as the word "Submit".
+这个按钮的宽度应该和文本`Submit` 的宽度相同。
 
-<button class='btn btn-default'>Submit</button>
+<button class='btn btn-default'>提交</button>
 
-By making them block elements with the additional class of `btn-block`, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
+通过为按钮添加 class 属性 `btn-block` 使其成为块级元素，按钮会伸展并填满页面整个水平空间，后续的元素会流到这个块级元素的下方，即 "另起一行"。
 
 `<button class="btn btn-default btn-block">Submit</button>`
 
-This button would take up 100% of the available width.
+这个按钮会 100% 占满所有的可用宽度。
 
-<button class='btn btn-default btn-block'>Submit</button>
+<button class='btn btn-default btn-block'>提交</button>
 
-Note that these buttons still need the `btn` class.
+记住这些按钮仍然需要 `btn` 这个 class。
 
-Add Bootstrap's `btn-block` class to your Bootstrap button.
+添加 Bootstrap 的 `btn-block` class 到刚创建的 Bootstrap 按钮上吧。
 
 # --hints--
 
-Your button should still have the `btn` and `btn-default` classes.
+按钮的 class 属性应该仍然包含 `btn` 和 `btn-default`。
 
 ```js
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-Your button should have the class `btn-block`.
+按钮的 class 属性应该包含 `btn-block`。
 
 ```js
 assert($('button').hasClass('btn-block'));
 ```
 
-All of your `button` elements should have closing tags.
+确保所有的 `button` 元素都有一个闭合标签。
 
 ```js
 assert(

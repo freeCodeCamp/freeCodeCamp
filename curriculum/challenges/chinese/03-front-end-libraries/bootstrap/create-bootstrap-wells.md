@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908848
-title: Create Bootstrap Wells
+title: 创建 Bootstrap Wells
 challengeType: 0
 forumTopicId: 16825
 dashedName: create-bootstrap-wells
@@ -8,25 +8,25 @@ dashedName: create-bootstrap-wells
 
 # --description--
 
-Bootstrap has a class called `well` that can create a visual sense of depth for your columns.
+Bootstrap 有一个叫作 `well` 的 class，作用是使界面更具层次感。
 
-Nest one `div` element with the class `well` within each of your `col-xs-6` `div` elements.
+在每一个 class 属性为 `col-xs-6` 的 `div` 元素中都嵌入一个带有 `well` class 的 `div` 元素。
 
 # --hints--
 
-You should add a `div` element with the class `well` inside each of your `div` elements with the class `"col-xs-6"`
+应在每一个 class 属性为 `col-xs-6` 的 `div` 元素中添加一个带有 `well` class 的 `div` 元素。
 
 ```js
 assert($('div.col-xs-6').not(':has(>div.well)').length < 1);
 ```
 
-Both of your `div` elements with the class `"col-xs-6"` should be nested within your `div` element with the class `"row"`.
+两个 class 为 `col-xs-6` 的 `div` 元素都应该嵌入一个 class 为 `row` 的 `div` 元素。
 
 ```js
 assert($('div.row > div.col-xs-6').length > 1);
 ```
 
-All your `div` elements should have closing tags.
+确保所有的 `div` 元素都有一个闭合标签。
 
 ```js
 assert(
