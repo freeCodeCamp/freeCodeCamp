@@ -2,8 +2,8 @@ name: Crowdin Curriculum Download
 on:
   workflow_dispatch:
   schedule:
-    # runs every day at 12:00 noon UTC
-    - cron: "0 12 * * *"
+    # runs every day at 12:30 PM UTC
+    - cron: "30 12 * * *"
 
 jobs:
   i18n-download-curriculum-translations:
@@ -96,7 +96,7 @@ jobs:
               repo: 'freeCodeCamp',
               head: 'i18n-sync-learn',
               base: 'main',
-              title: 'Crowdin Sync Learn',
+              title: 'chore(i18n,learn): processed translations',
               body: 'This PR was opened auto-magically by Crowdin.'
             });
             const PRNumber = PR.data.number;

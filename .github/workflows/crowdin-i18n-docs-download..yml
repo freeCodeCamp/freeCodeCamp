@@ -1,6 +1,9 @@
 name: Crowdin Docs Download
 on:
   workflow_dispatch:
+  schedule:
+    # runs every day at 12:00 noon UTC
+    - cron: "0 12 * * *"
 
 jobs:
   i18n-download-docs-translations:
@@ -114,3 +117,38 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+      # Generate PR - all languages should go ABOVE this. #
+      - name: Create PR
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
+          script: |
+            const PR = await github.pulls.create({
+              owner: 'freeCodeCamp',
+              repo: 'freeCodeCamp',
+              head: 'i18n-sync-docs',
+              base: 'main',
+              title: 'chore(i18n,docs): processed translations',
+              body: 'This PR was opened auto-magically by Crowdin.'
+            });
+            const PRNumber = PR.data.number;
+            await github.issues.addLabels({
+              owner: 'freeCodeCamp',
+              repo: 'freeCodeCamp',
+              issue_number: PRNumber,
+              labels: [
+                "crowdin-sync",
+                "scope: i18n",
+                "scope: docs"
+              ]
+            });
+            await github.pulls.requestReviewers({
+              owner: 'freeCodeCamp',
+              repo: 'freeCodeCamp',
+              pull_number: PRNumber,
+              reviewers: [
+                'RandellDawson',
+                'nhcarrigan'
+              ]
+            });
