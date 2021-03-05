@@ -2,7 +2,7 @@
 
 Los retos en vídeo son un nuevo tipo de desafío en el currículo de freeCodeCamp.
 
-Un desafío de vídeo es una pequeña sección de un curso de vídeo completo sobre un tema en particular. Una página de desafío de vídeo inserta un vídeo de YouTube. Cada página de desafío tiene una única pregunta de selección múltiple relacionada con el vídeo. A user must answer the question correctly before moving on to the next video challenge in the course.
+Un desafío de vídeo es una pequeña sección de un curso de vídeo completo sobre un tema en particular. Una página de desafío de vídeo inserta un vídeo de YouTube. Cada página de desafío tiene una única pregunta de selección múltiple relacionada con el vídeo. El usuario deberá responder correctamente la pregunta antes de avanzar al siguiente desafío de video en el curso.
 
 Las páginas de desafío de vídeo son creadas por miembros del equipo freeCodeCamp. Los vídeos de YouTube también son subidos por miembros del equipo freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas con ellos.
 
@@ -34,23 +34,23 @@ Challenge description text, in markdown
 
 # --question--
 
-These fields are currently used for the multiple-choice Python challenges.
+Estos campos se utilizan actualmente para los desafíos de Python de opción múltiple.
 
 ## --text--
 
-The question text goes here.
+El texto de la pregunta va aquí.
 
 ## --answers--
 
-Answer 1
+Respuesta 1
 
 ---
 
-Answer 2
+Respuesta 2
 
 ---
 
-More answers
+Más respuestas
 
 ## --video-solution--
 
@@ -71,11 +71,11 @@ You can find the markdown files for video challenges at the following locations 
 
 Pick a challenge markdown file from the options above.
 
-### Skim through the video associated with the challenge and create a multiple-choice question
+### Dale un vistazo al video asociado con el desafío y crea una pregunta de opción múltiple
 
-First, find the videoId.
+Primero, encuentra la videoId (id del vídeo).
 
-Por ejemplo, en el siguiente código de la cabecera de un archivo markdown de desafío de video, el videoId es "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+Por ejemplo, en el siguiente código de la cabecera de un archivo markdown de desafío de video, el videoId es "nVAaxZ34khk". En GitHub, la información debe ser colocada en un formato de tabla.
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -83,16 +83,16 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Next, access the YouTube video with that `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId]    (replace `videoId` in the URL with the video's ID - without square brackets)
+A continuación, accede al vídeo de YouTube con esa `videoId`. La URL del video será:
+https://www.youtube. om/watch?v=[videoId]    (reemplaza `videoId` en la URL con la ID del video sin los corchetes)
 
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
+En el ejemplo anterior, la URL es https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
+Dale un vistazo al video de YouTube con ese videoId y piensa en una pregunta de selección múltiple basada en el contenido del video.
 
-### Add the question to the markdown file
+### Añade la pregunta al archivo markdown
 
-You can add the question locally or using the GitHub interface. Para añadir la pregunta localmente, necesitas [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). También puede encontrar el archivo en GitHub y hacer clic en el botón Editar para añadir la pregunta directamente en su navegador.
+Puedes añadir la pregunta localmente o utilizando la interfaz de GitHub. Para añadir la pregunta localmente, necesitas [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). También puede encontrar el archivo en GitHub y hacer clic en el botón Editar para añadir la pregunta directamente en su navegador.
 
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
@@ -120,7 +120,7 @@ More answers
 1
 ```
 
-Add/Update the  question text under the part that shows:
+Añade/Actualiza el texto de la pregunta debajo de la parte que muestra:
 ```
 # --question--
 

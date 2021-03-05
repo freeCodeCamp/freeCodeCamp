@@ -81,7 +81,7 @@ Empieza [a usar MailHog](#using-mailhog).
 
 ## Usando MailHog
 
-Abra una nueva pestaña o ventana del navegador y vaya a [http://localhost:8025](http://localhost:8025) para abrir su bandeja de entrada de MailHog cuando se haya completado la instalación y éste se encuentre funcionando. The inbox will appear similar to the screenshot below.
+Abra una nueva pestaña o ventana del navegador y vaya a [http://localhost:8025](http://localhost:8025) para abrir su bandeja de entrada de MailHog cuando se haya completado la instalación y éste se encuentre funcionando. La bandeja de entrada aparecerá similar a la captura de pantalla de abajo.
 
 ![Captura de pantalla de MailHog 1](https://contribute.freecodecamp.org/images/mailhog/1.jpg)
 

@@ -22,9 +22,11 @@ Puede ayudar a ampliar y mejorar el plan de estudios. También puede actualizar 
 
 ## Translations
 
-We are localizing freeCodeCamp.org to world languages starting with Chinese and Espanol. We will be expanding the translations to more languages. It's our dream to provide you with resources to learn, no matter the world language you speak.
+We are localizing freeCodeCamp.org to world languages starting with Chinese and Español. We will be expanding the translations to more languages.
 
-To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/).
+To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/). You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort). We encourage you to read the announcement and share it your friends to get them excited about this.
+
+It's our dream to provide you with the resources to learn, no matter the world language you speak.
 
 **If you're interested in translating, here are the guides to translate our [curriculum](how-to-translate-files.md), the [learning platform](how-to-translate-the-website.md) and our [Contributing guidelines](https://translate.freecodecamp.org/contributing-docs).**
 
@@ -38,7 +40,7 @@ Broadly, we use
 - un conjunto de aplicaciones client-side basadas en React
 - y scripts de prueba para evaluar los proyectos curriculares enviados por nuestros campers.
 
-If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
+If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
 If you want to help us improve our codebase...
 

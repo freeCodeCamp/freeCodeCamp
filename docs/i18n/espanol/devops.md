@@ -69,7 +69,7 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `maim` branch is pristine and in sync with the upstream.
+2. Make sure your `main` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout main
@@ -557,14 +557,14 @@ Aprovisionamiento de las VMs con el código
 7. Construye el servidor
 
    ```console
-   npm run ensure-env && npm run build:server
+   npm run ensure-env && npm run build:curriculum && npm run build:server
    ```
 
 8. Inicia las Instancias
 
    ```console
    cd api-server
-   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
    ```
 
 ### Registro de Eventos y Monitoreo
@@ -600,7 +600,7 @@ npm ci
 3. Construye el servidor
 
 ```console
-npm run ensure-env && npm run build:server
+npm run ensure-env && npm run build:curriculum && npm run build:server
 ```
 
 4. Inicia las Instancias
