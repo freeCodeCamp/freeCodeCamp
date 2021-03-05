@@ -32,6 +32,6 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'WAIT! This message serves as a sanity check. You should *only* see this message if the PR was created as part of the Crowdin download actions.'
+                body: 'WAIT! This message serves as a sanity check. You should *only* see this message if the PR was created as part of a Crowdin download action.'
               })
             }
