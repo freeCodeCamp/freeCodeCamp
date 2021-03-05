@@ -19,18 +19,18 @@ D3 has two methods - `min()` and `max()` to return this information. Here's an e
 
 ```js
 const exampleData = [34, 234, 73, 90, 6, 52];
-d3.min(exampleData) // Returns 6
-d3.max(exampleData) // Returns 234
+d3.min(exampleData)
+d3.max(exampleData)
 ```
 
-A dataset may have nested arrays, like the \[x, y] coordinate pairs that were in the scatter plot example. In that case, you need to tell D3 how to calculate the maximum and minimum. Fortunately, both the `min()` and `max()` methods take a callback function. In this example, the callback function's argument `d` is for the current inner array. The callback needs to return the element from the inner array (the x or y value) over which you want to compute the maximum or minimum. Here's an example for how to find the min and max values with an array of arrays:
+A dataset may have nested arrays, like the `[x, y]` coordinate pairs that were in the scatter plot example. In that case, you need to tell D3 how to calculate the maximum and minimum. Fortunately, both the `min()` and `max()` methods take a callback function. In this example, the callback function's argument `d` is for the current inner array. The callback needs to return the element from the inner array (the `x` or `y` value) over which you want to compute the maximum or minimum. Here's an example for how to find the min and max values with an array of arrays:
 
 ```js
 const locationData = [[1, 7],[6, 3],[8, 3]];
-// Returns the smallest number out of the first elements
 const minX = d3.min(locationData, (d) => d[0]);
-// minX compared 1, 6, and 8 and is set to 1
 ```
+
+`minX` would have the value `1`.
 
 # --instructions--
 
@@ -38,7 +38,7 @@ The `positionData` array holds sub arrays of x, y, and z coordinates. Use a D3 m
 
 # --hints--
 
-The text in the `h2` should be 8.
+The text in the `h2` should be `8`.
 
 ```js
 assert(output == 8 && $('h2').text() == '8');

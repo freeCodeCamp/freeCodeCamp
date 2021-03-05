@@ -22,9 +22,9 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 **User Story #4:** There should be at least 2 different fill colors used for the tiles.
 
-**User Story #5:** Each tile should have the properties `data-name`, `data-category`, and `data-value` containing their corresponding name, category, and value.
+**User Story #5:** Each tile should have the properties `data-name`, `data-category`, and `data-value` containing their corresponding `name`, `category`, and `value`.
 
-**User Story #6:** The area of each tile should correspond to the data-value amount: tiles with a larger data-value should have a bigger area.
+**User Story #6:** The area of each tile should correspond to the `data-value` amount: tiles with a larger `data-value` should have a bigger area.
 
 **User Story #7:** My tree map should have a legend with corresponding `id="legend"`.
 

@@ -20,7 +20,7 @@ Add the `style()` method to the code in the editor to make all the displayed tex
 
 # --hints--
 
-Your `h2` elements should have a `font-family` of verdana.
+Your `h2` elements should have a `font-family` of `verdana`.
 
 ```js
 assert($('h2').css('font-family') == 'verdana');
