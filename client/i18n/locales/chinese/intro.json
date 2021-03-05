@@ -66,22 +66,22 @@
       "basic-html-cat-photo-app": {
         "title": "基础 HTML 猫图应用",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "basic-css-cafe-menu": {
         "title": "基础 CSS 咖啡菜单",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "css-variables-skyline": {
         "title": "CSS 变量 Skyline",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       }
     }
@@ -169,22 +169,22 @@
       "basic-javascript-rpg-game": {
         "title": "基础 JavaScript RPG 游戏",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "中级 JavaScript 卡路里计算器",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "functional-programming-spreadsheet": {
         "title": "函数式编程电子表格",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       }
     }
@@ -200,7 +200,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap 是一个用于设计响应式网页和应用程序的前端框架。它具有移动优先的特点，具有预定义的 CSS 样式和 class，还有一些 JavaScript 功能。",
+          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "在这个课程中，你将学习如何使用 Bootstrap 来建立响应式网页，并使用它的 class 来设置按钮、图像、表格、导航和其他常见元素的样式。"
         ]
       },
@@ -286,8 +286,8 @@
       "d3-dashboard": {
         "title": "D3 Dashboard",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }

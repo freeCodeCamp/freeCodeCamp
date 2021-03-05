@@ -50,7 +50,7 @@
         ]
       },
       "css-grid": {
-        "title": "CSS Grid",
+        "title": "CSS grid",
         "intro": [
           "La cuadrícula (grid) CSS es un estándar reciente que facilita la creación de diseños complejos y responsivos. Funciona convirtiendo un elemento HTML en una cuadrícula y te permite colocar elementos secundarios en cualquier lugar dentro ella.",
           "En este curso, aprenderá los fundamentos de la cuadrícula (grid) CSS construyendo diferentes diseños complejos, incluido un blog."
@@ -66,53 +66,53 @@
       "basic-html-cat-photo-app": {
         "title": "Aplicación básica de fotos de gato HTML",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "basic-css-cafe-menu": {
         "title": "Menú básico de café CSS",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "css-variables-skyline": {
-        "title": "Skyline Variables de CSS",
+        "title": "Skyline variables de CSS",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Algoritmos de JavaScript y Estructuras de Datos",
+    "title": "Algoritmos de JavaScript y estructuras de datos",
     "intro": [
-      "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
-      "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
-      "Along the way, you'll also learn two important programing styles or paradigms: Object Oriented Programing (OOP), and Functional Programing (FP)."
+      "Mientras HTML y CSS controlan el contenido y el estilo de una página, JavaScript se utiliza para hacerlo interactivo. En la certificación Algoritmos de JavaScript y Estructuras de Datos, aprenderás los fundamentos de JavaScript incluyendo variables, arreglos, objetos, bucles y funciones.",
+      "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para manipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
+      "A lo largo del camino, también aprenderás dos estilos o paradigmas importantes de programación: la Programación Orientada a Objetos (OOP), y la Programación Funcional (FP)."
     ],
     "blocks": {
       "basic-javascript": {
-        "title": "Basic JavaScript",
+        "title": "JavaScript básico",
         "intro": [
-          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.",
-          "In this course, you'll learn fundamental programming concepts in JavaScript. You'll start with basic data structures like numbers and strings. Then you'll learn to work with arrays, objects, functions, loops, if/else statements, and more."
+          "JavaScript es un lenguaje de scripting que puedes utilizar para hacer que las páginas web sean interactivas. Es una de las principales tecnologías de la web, junto con HTML y CSS, y es soportada por todos los navegadores modernos.",
+          "En este curso, aprenderás conceptos fundamentales de programación en JavaScript. Empezarás con estructuras básicas de datos como números y cadenas. Luego aprenderás a trabajar con arreglos, objetos, funciones, bucles, declaraciones if/else y más."
         ]
       },
       "es6": {
         "title": "ES6",
         "intro": [
-          "ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.",
-          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is always evolving, and new features are released every year.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including <code>let</code> and <code>const</code>, arrow functions, classes, promises, and modules."
+          "ECMAScript, o ES, es una versión estandarizada de JavaScript. Debido a que todos los principales navegadores siguen esta especificación, los términos ECMAScript y JavaScript son intercambiables.",
+          "La mayoría del JavaScript que has aprendido hasta este punto estaba en ES5 (ECMAScript 5), el cual fue finalizado en 2009. Aunque puedes seguir escribiendo programas en ES5, JavaScript está evolucionando siempre, y cada año se lanzan nuevas funcionalidades.",
+          "ES6, lanzado en 2015, añadió muchas nuevas y potentes características al lenguaje. En este curso, aprenderás estas nuevas características, incluyendo <code>let</code> y <code>const</code>, funciones flecha, clases, promesas, y módulos."
         ]
       },
       "regular-expressions": {
-        "title": "Regular Expressions",
+        "title": "Expresiones regulares",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
+          "Expresiones regulares, a veces acortadas a \"regex\" o \"regexp\", son patrones que ayudan a los programadores a encontrar, buscar, y reemplazar texto. Las expresiones regulares son muy potentes, pero pueden ser difícil de leer porque usan caracteres especiales para hacer coincidencias más complejas y flexibles.",
           "In this course, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
         ]
       },
@@ -169,22 +169,22 @@
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
@@ -286,8 +286,8 @@
       "d3-dashboard": {
         "title": "D3 Dashboard",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
