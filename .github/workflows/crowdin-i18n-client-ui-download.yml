@@ -93,7 +93,7 @@ jobs:
             const PR = await github.pulls.create({
               owner: 'freeCodeCamp',
               repo: 'freeCodeCamp',
-              head: 'i18n-sync-learn',
+              head: 'i18n-sync-client',
               base: 'main',
               title: 'chore(i18n,client): processed translations',
               body: 'This PR was opened auto-magically by Crowdin.'
