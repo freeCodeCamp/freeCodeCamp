@@ -107,7 +107,7 @@ jobs:
               head: 'freeCodeCamp:i18n-sync-learn'
             });
             if (pullRequestExists.data.length) {
-              console.info("It looks like you have an open pull request for this branch.");
+              console.info("It looks like a pull request already exists for this branch.");
               return;
             }
             const PR = await github.pulls.create({
