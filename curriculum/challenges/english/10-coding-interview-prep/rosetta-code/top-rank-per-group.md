@@ -50,6 +50,28 @@ one could rank the top-rated movie in each genre by calling
 
 The function should return an array with an array for each group containing the top `n` objects.
 
+For example, given data:
+
+```js
+[
+  { name: 'Claire Buckman', id: 'E39876', salary: 27800, dept: 'D101' },
+  { name: 'Rich Holcomb', id: 'E01234', salary: 49500, dept: 'D050' },
+  { name: 'David Motsinger', id: 'E27002', salary: 19250, dept: 'D050' },
+  { name: 'Tim Sampair', id: 'E03033', salary: 27000, dept: 'D101' },
+  { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D050' },
+  { name: 'Timothy Grove', id: 'E16398', salary: 29900, dept: 'D101' }
+];
+```
+
+Top two ranking employees in each department by salary would be:
+
+```js
+[ [ { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D050' },
+    { name: 'Rich Holcomb', id: 'E01234', salary: 49500, dept: 'D050' } ],
+  [ { name: 'Timothy Grove', id: 'E16398', salary: 29900, dept: 'D101' },
+    { name: 'Claire Buckman', id: 'E39876', salary: 27800, dept: 'D101' } ] ]
+```
+
 # --hints--
 
 `topRankPerGroup` should be a function.
