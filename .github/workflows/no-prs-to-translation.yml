@@ -19,7 +19,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            if (context.payload.pull_request.head.repo.fork) {
+            if (context.payload.pull_request.user.login !== "camperbot") {
               core.setFailed('This PR appears to touch translated curriculum files.')
               github.issues.createComment({
                 issue_number: context.issue.number,
@@ -32,6 +32,6 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'WAIT! This message serves as a sanity check. Your PR appears to come from the base freeCodeCamp repository and modifies translated curriculum files or intro.json or translations.json. Before merging, please confirm that the commits on this PR originated from the Crowdin download action.'
+                body: 'WAIT! This message serves as a sanity check. You should *only* see this message if the PR was created as part of a Crowdin download action.'
               })
             }
