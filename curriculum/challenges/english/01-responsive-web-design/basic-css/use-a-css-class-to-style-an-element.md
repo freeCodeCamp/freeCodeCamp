@@ -27,7 +27,7 @@ You can see that we've created a CSS class called `blue-text` within the `<style
 
 Inside your `style` element, change the `h2` selector to `.red-text` and update the color's value from `blue` to `red`.
 
-Give your `h2` element the `class` attribute with a value of `'red-text'`.
+Give your `h2` element the `class` attribute with a value of `red-text`.
 
 # --hints--
 
