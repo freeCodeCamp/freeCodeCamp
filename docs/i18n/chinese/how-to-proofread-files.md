@@ -35,6 +35,6 @@
 
 > [!WARNING] 校对确认之后的字符串会被标注为已完成。我们将在下一次从 Crowdin 拉取内容时下载这些字符串。
 
-当文件被校对确认完毕，你不需要采取其他任何行动。 如果你有任何问题，或者感兴趣成为一名校对贡献者，请随时在[译者交流群](https://chat.freecodecamp.org/channel/translators)联系我们。
+当文件被校对确认完毕，你不需要采取其他任何行动。 如果你有任何问题，或者感兴趣成为一名校对贡献者，请随时在[译者交流群](https://chat.freecodecamp.org/channel/translators)联系我们。 If you are already a proofreader and are interested in having a dedicated channel for a specific language, [fill out our form](https://forms.gle/XU5CyutrYCgDYaVZA).
 
 > [!NOTE] Crowdin 会允许你校对你自己的译文。 一般来说，最好是让另一位校对者审核你的译文，以确保最终内容的准确性。

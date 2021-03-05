@@ -69,7 +69,7 @@ Currently, only members on the developer team can push to the production branche
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `maim` branch is pristine and in sync with the upstream.
+2. Make sure your `main` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout main
@@ -557,14 +557,14 @@ Provisioning VMs with the Code
 7. Build the server
 
    ```console
-   npm run ensure-env && npm run build:server
+   npm run ensure-env && npm run build:curriculum && npm run build:server
    ```
 
 8. Start Instances
 
    ```console
    cd api-server
-   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
    ```
 
 ### Logging and Monitoring
@@ -600,7 +600,7 @@ npm ci
 3. Build the server
 
 ```console
-npm run ensure-env && npm run build:server
+npm run ensure-env && npm run build:curriculum && npm run build:server
 ```
 
 4. Start Instances

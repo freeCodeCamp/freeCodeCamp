@@ -63,7 +63,7 @@ Esto es esencial, ya que te permite trabajar en tu propia copia de freeCodeCamp 
 
 > [!TIP] El repositorio principal en `https://github.com/freeCodeCamp/freeCodeCamp` es frecuentemente conocido como el repositorio `upstream`.
 > 
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+> Tu fork en `https://github.com/YOUR_USER_NAME/freeCodeCamp` suele referirse como el repositorio `origin`. `YOUR_USER_NAME` será remplazado con tu nombre de usuario de GitHub.
 
 **Sigue estos pasos para fork el repositorio `https://github.com/freeCodeCamp/freeCodeCamp`:**
 
