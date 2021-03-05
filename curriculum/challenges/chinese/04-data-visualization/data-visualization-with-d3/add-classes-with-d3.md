@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc8
-title: Add Classes with D3
+title: 用 D3 添加 Class
 challengeType: 6
 forumTopicId: 301473
 dashedName: add-classes-with-d3
@@ -8,27 +8,27 @@ dashedName: add-classes-with-d3
 
 # --description--
 
-Using a lot of inline styles on HTML elements gets hard to manage, even for smaller apps. It's easier to add a class to elements and style that class one time using CSS rules. D3 has the `attr()` method to add any HTML attribute to an element, including a class name.
+即使对小型 app 来说，在 HTML 元素中大量使用内联样式也十分难以管理。 给元素添加类，并使用 CSS 规则给类添加样式会更加方便。 D3 中的 `attr()` 方法可以给元素添加任何 HTML 属性，包括 class 名称。
 
-The `attr()` method works the same way that `style()` does. It takes comma-separated values, and can use a callback function. Here's an example to add a class of "container" to a selection:
+`attr()` 方法和 `style()` 的使用方法一样。 它使用逗号分隔值，并且可以使用回调函数。 这里是一个给选中元素添加 class 名为 "container" 的例子：
 
 `selection.attr("class", "container");`
 
-Note that the "class" parameter will remain the same whenever you need to add a class and only the "container" parameter will change.
+请注意，当你需要添加类时，“class" 参数不会发生改变，只有 "container" 参数会发生变化。
 
 # --instructions--
 
-Add the `attr()` method to the code in the editor and put a class of `bar` on the `div` elements.
+将 `attr()` 方法添加到编辑器的代码中，并在 `div` 元素上添加一个 `bar` 类。
 
 # --hints--
 
-Your `div` elements should have a class of `bar`.
+`div` 元素应该有值为 `bar` 的类。
 
 ```js
 assert($('div').attr('class') == 'bar');
 ```
 
-Your code should use the `attr()` method.
+你应该使用 `attr()` 方法。
 
 ```js
 assert(code.match(/\.attr/g));

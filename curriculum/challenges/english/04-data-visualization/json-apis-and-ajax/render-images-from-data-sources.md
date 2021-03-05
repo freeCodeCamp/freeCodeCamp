@@ -28,7 +28,7 @@ You should use the `imageLink` property to display the images.
 assert(code.match(/val\.imageLink/g));
 ```
 
-You should use the `altText` for the alt attribute values of the images.
+You should use the `altText` for the `alt` attribute values of the images.
 
 ```js
 assert(code.match(/val\.altText/g));

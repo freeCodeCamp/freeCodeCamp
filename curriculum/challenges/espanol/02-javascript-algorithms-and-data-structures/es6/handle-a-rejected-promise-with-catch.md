@@ -1,6 +1,6 @@
 ---
 id: 5cdafbe72913098997531682
-title: Handle a Rejected Promise with catch
+title: Maneja una promesa rechazada usando catch
 challengeType: 1
 forumTopicId: 301204
 dashedName: handle-a-rejected-promise-with-catch
@@ -8,23 +8,23 @@ dashedName: handle-a-rejected-promise-with-catch
 
 # --description--
 
-`catch` is the method used when your promise has been rejected. It is executed immediately after a promise's `reject` method is called. Here’s the syntax:
+`catch` es el método utilizado cuando tu promesa ha sido rechazada. Se ejecuta inmediatamente, después de que se llama al método `reject` de una promesa. A continuación la sintaxis:
 
 ```js
 myPromise.catch(error => {
-  // do something with the error.
+
 });
 ```
 
-`error` is the argument passed in to the `reject` method.
+`error` es el argumento pasado al método `reject`.
 
 # --instructions--
 
-Add the `catch` method to your promise. Use `error` as the parameter of its callback function and log `error` to the console.
+Añade el método `catch` a tu promesa. Usa `error` como el parámetro de tu función callback e imprime `error` en la consola.
 
 # --hints--
 
-You should call the `catch` method on the promise.
+Debes llamar al método `catch` en la promesa.
 
 ```js
 assert(
@@ -32,13 +32,13 @@ assert(
 );
 ```
 
-Your `catch` method should have a callback function with `error` as its parameter.
+El método `catch`, debe tener una función callback con `error` como parámetro.
 
 ```js
 assert(errorIsParameter);
 ```
 
-You should log `error` to the console.
+Debes imprimir `error` en la consola.
 
 ```js
 assert(

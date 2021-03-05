@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aecb08826
-title: Use jQuery to Modify the Entire Page
+title: 使用 jQuery 修改整个页面
 challengeType: 6
 forumTopicId: 18361
 required:
@@ -11,17 +11,17 @@ dashedName: use-jquery-to-modify-the-entire-page
 
 # --description--
 
-We're done playing with our jQuery playground. Let's tear it down!
+目前，已经完成了 jQuery playground。 把它移除吧。
 
-jQuery can target the `body` element as well.
+jQuery 也能选取 `body` 标签。
 
-Here's how we would make the entire body fade out: `$("body").addClass("animated fadeOut");`
+这是使整个 body 淡出的代码：`$("body").addClass("animated fadeOut");`
 
-But let's do something more dramatic. Add the classes `animated` and `hinge` to your `body` element.
+来做一些更好玩的事。 给 `body` 标签添加 `animated` 和 `hinge` class。
 
 # --hints--
 
-You should add the classes `animated` and `hinge` to your `body` element.
+应该给 `body` 标签添加 `animated` 和 `hinge` class。
 
 ```js
 assert($('body').hasClass('animated') && $('body').hasClass('hinge'));

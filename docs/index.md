@@ -41,7 +41,7 @@ Broadly, we use
 - a set of React-based client applications
 - and testing scripts to evaluate camper-submitted curriculum projects.
 
-If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
+If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
 If you want to help us improve our codebase...
 

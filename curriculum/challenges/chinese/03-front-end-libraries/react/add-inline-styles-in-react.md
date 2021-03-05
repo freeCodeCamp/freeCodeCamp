@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036182
-title: Add Inline Styles in React
+title: 在 React 中添加内联样式
 challengeType: 6
 forumTopicId: 301378
 dashedName: add-inline-styles-in-react
@@ -8,41 +8,41 @@ dashedName: add-inline-styles-in-react
 
 # --description--
 
-You may have noticed in the last challenge that there were several other syntax differences from HTML inline styles in addition to the `style` attribute set to a JavaScript object. First, the names of certain CSS style properties use camel case. For example, the last challenge set the size of the font with `fontSize` instead of `font-size`. Hyphenated words like `font-size` are invalid syntax for JavaScript object properties, so React uses camel case. As a rule, any hyphenated style properties are written using camel case in JSX.
+在上一次挑战中，你可能已经注意到，除了设置为 JavaScript 对象的 `style` 属性之外，与 HTML 内联样式相比，React 的内联样式还有其他几个语法差异。 首先，某些 CSS 样式属性的名称使用驼峰式命名。 例如，最后一个挑战用 `fontSize` 而不是 `font-size` 来设置字体的大小。 对于 JavaScript 对象属性来说，像 `font-size` 这样的连字符命名是无效的语法，所以 React 使用驼峰式命名。 通常，任何连字符的 style 属性在 JSX 中都是使用驼峰式命名的。
 
-All property value length units (like `height`, `width`, and `fontSize`) are assumed to be in `px` unless otherwise specified. If you want to use `em`, for example, you wrap the value and the units in quotes, like `{fontSize: "4em"}`. Other than the length values that default to `px`, all other property values should be wrapped in quotes.
+除非另有规定，否则所有属性值的 length（如`height`、`width` 和 `fontSize`）其单位都假定为 `px`。 例如，如果要使用 `em`，可以用引号将值和单位括起来，例如 `{fontSize: "4em"}`。 除了默认为 `px` 的 length 值之外，所有其他属性值都应该用引号括起来。
 
 # --instructions--
 
-If you have a large set of styles, you can assign a style `object` to a constant to keep your code organized. Initialize a `styles` constant and assign an `object` with three style properties and their values to it. Give the `div` a color of `"purple"`, a font-size of `40`, and a border of `"2px solid purple"`. Then set the `style` attribute equal to the `styles` constant.
+如果你有大量样式，你可以将样式 `object`（对象）分配给一个常量，以保持代码的组织有序。 定义一个 `styles` 常量，并将其声明为具有三个样式属性及对应值的 `object`（对象）。 使 `div` 的文字颜色为 `purple`、字号为 `40`、边框为 `2px solid purple`。 然后设置 `style` 属性，使其等于 `styles` 常量。
 
 # --hints--
 
-The `styles` variable should be an `object` with three properties.
+`styles` 变量应该是具有三个属性的 `object`（对象）。
 
 ```js
 assert(Object.keys(styles).length === 3);
 ```
 
-The `styles` variable should have a `color` property set to a value of `purple`.
+`styles` 变量的 `color` 属性应该设置为 `purple`。
 
 ```js
 assert(styles.color === 'purple');
 ```
 
-The `styles` variable should have a `fontSize` property set to a value of `40`.
+`styles` 变量应该将 `fontSize` 属性设置为 `40`。
 
 ```js
 assert(styles.fontSize === 40);
 ```
 
-The `styles` variable should have a `border` property set to a value of `2px solid purple`.
+`styles` 变量的 `border` 属性应该设置为 `2px solid purple`。
 
 ```js
 assert(styles.border === '2px solid purple');
 ```
 
-The component should render a `div` element.
+组件应该渲染一个 `div` 元素。
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The `div` element should have its styles defined by the `styles` object.
+`div` 元素的样式应该由 `styles` 对象定义。
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedd08845
-title: Add Font Awesome Icons to our Buttons
+title: 在按钮中添加字体图标
 challengeType: 0
 forumTopicId: 16638
 required:
@@ -12,33 +12,33 @@ dashedName: add-font-awesome-icons-to-our-buttons
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be webfonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome 是一个非常便利的图标库。 这些图标可以是网络字体，也可以是一张矢量图。 这些图标就和字体一样， 不仅能通过像素单位指定它们的大小，它们也同样会继承父级 HTML 元素的字体大小。
 
-You can include Font Awesome in any app by adding the following code to the top of your HTML:
+可以将 Font Awesome 图标库添加至任何一个 web app 中，方法很简单，只需要在 HTML 头部增加下列代码即可：
 
 `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">`
 
-In this case, we've already added it for you to this page behind the scenes.
+不过在这里，已经预先为此页面添加了上述代码。
 
-The `i` element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the `i` element to turn it into an icon, for example:
+`i` 元素起初用于让其它元素具有斜体（italic）的效果，不过现在一般用于显示图标。 可以把 Font Awesome 中的 class 属性添加到 `i` 元素中，让它变成一个图标，比如：
 
 `<i class="fas fa-info-circle"></i>`
 
-Note that the `span` element is also acceptable for use with icons.
+注意用 `span` 元素展示图标也是可以的。
 
 # --instructions--
 
-Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `i` element with the classes `fas` and `fa-thumbs-up`. Make sure to keep the text "Like" next to the icon.
+给 like 按钮添加一个 Font Awesome `thumbs-up` 图标，具体方法是给 `i` 元素添加 `fas` 和 `fa-thumbs-up` class 属性。 确保将 `Like` 文本放在图标旁边。
 
 # --hints--
 
-You should add an `i` element with the classes `fas` and `fa-thumbs-up`.
+增加一个 class 为 `fas` 和 `fa-thumbs-up` 的 `i` 元素。
 
 ```js
 assert($('i').is('.fas.fa-thumbs-up') || $('span').is('.fas.fa-thumbs-up'));
 ```
 
-Your `fa-thumbs-up` icon should be located within the Like button.
+`fa-thumbs-up` 图标应该在 Like 按钮中。
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-Your `i` element should be nested within your `button` element.
+`i` 元素应该在 `button` 元素中。
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-Your icon element should have a closing tag.
+确保图标元素有一个闭合标签。
 
 ```js
 assert(code.match(/<\/i>|<\/span>/g));

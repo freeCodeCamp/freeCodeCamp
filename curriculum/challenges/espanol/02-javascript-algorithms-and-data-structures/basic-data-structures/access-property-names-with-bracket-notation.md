@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1a
-title: Access Property Names with Bracket Notation
+title: Accede a los nombres de propiedad con la notación de corchetes
 challengeType: 1
 forumTopicId: 301150
 dashedName: access-property-names-with-bracket-notation
@@ -8,28 +8,28 @@ dashedName: access-property-names-with-bracket-notation
 
 # --description--
 
-In the first object challenge we mentioned the use of bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our `foods` object is being used in a program for a supermarket cash register. We have some function that sets the `selectedFood` and we want to check our `foods` object for the presence of that food. This might look like:
+En el primer desafío de objetos mencionamos el uso de notación de corchetes como una manera de acceder a los valores de una propiedad mediante la evaluación de una variable. Por ejemplo, imagina que nuestro objeto `foods` está siendo usado en un programa para una caja registradora de supermercado. Tenemos una función que establece `selectedFood` y queremos revisar en nuestro objeto `foods` si ese alimento está presente. Esto podría verse así:
 
 ```js
 let selectedFood = getCurrentFood(scannedItem);
 let inventory = foods[selectedFood];
 ```
 
-This code will evaluate the value stored in the `selectedFood` variable and return the value of that key in the `foods` object, or `undefined` if it is not present. Bracket notation is very useful because sometimes object properties are not known before runtime or we need to access them in a more dynamic way.
+El código evaluará el valor almacenado en la variable `selectedFood` y devolverá el valor de esa clave en el objeto `foods`, o `undefined` si no está presente. La notación de corchetes es muy útil porque a veces no conocemos las propiedades de los objetos antes de la ejecución o necesitamos acceder a ellos de una manera más dinámica.
 
 # --instructions--
 
-We've defined a function, `checkInventory`, which receives a scanned item as an argument. Return the current value of the `scannedItem` key in the `foods` object. You can assume that only valid keys will be provided as an argument to `checkInventory`.
+Hemos definido una función, `checkInventory`, que recibe como argumento un elemento escaneado. Devuelve el valor actual de la clave `scannedItem` en el objeto `foods`. Puedes asumir que sólo se proporcionarán claves válidas como argumento a `checkInventory`.
 
 # --hints--
 
-`checkInventory` should be a function.
+`checkInventory` debe ser una función.
 
 ```js
 assert.strictEqual(typeof checkInventory, 'function');
 ```
 
-The `foods` object should have only the following key-value pairs: `apples: 25`, `oranges: 32`, `plums: 28`, `bananas: 13`, `grapes: 35`, `strawberries: 27`.
+El objeto `foods` debe tener solo los siguientes pares clave-valor: `apples: 25`, `oranges: 32`, `plums: 28`, `bananas: 13`, `grapes: 35`, `strawberries: 27`.
 
 ```js
 assert.deepEqual(foods, {
@@ -42,19 +42,19 @@ assert.deepEqual(foods, {
 });
 ```
 
-`checkInventory("apples")` should return `25`.
+`checkInventory("apples")` debe devolver `25`.
 
 ```js
 assert.strictEqual(checkInventory('apples'), 25);
 ```
 
-`checkInventory("bananas")` should return `13`.
+`checkInventory("bananas")` debe devolver `13`.
 
 ```js
 assert.strictEqual(checkInventory('bananas'), 13);
 ```
 
-`checkInventory("strawberries")` should return `27`.
+`checkInventory("strawberries")` debe devolver `27`.
 
 ```js
 assert.strictEqual(checkInventory('strawberries'), 27);

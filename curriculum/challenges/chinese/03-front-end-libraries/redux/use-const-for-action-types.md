@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036152
-title: Use const for Action Types
+title: 使用 const 声明 Action Types
 challengeType: 6
 forumTopicId: 301450
 dashedName: use-const-for-action-types
@@ -8,35 +8,35 @@ dashedName: use-const-for-action-types
 
 # --description--
 
-A common practice when working with Redux is to assign action types as read-only constants, then reference these constants wherever they are used. You can refactor the code you're working with to write the action types as `const` declarations.
+在使用 Redux 时的一个常见做法是将操作类型指定为只读，然后在任何使用它们的地方引用这些常量。 可以通过将 action types 使用 `const` 声明重构你正在使用的代码。
 
 # --instructions--
 
-Declare `LOGIN` and `LOGOUT` as `const` values and assign them to the strings `'LOGIN'` and `'LOGOUT'`, respectively. Then, edit the `authReducer()` and the action creators to reference these constants instead of string values.
+将 `LOGIN` 和 `LOGOUT` 声明为 `const` 的值，并为它们分别分配字符串 `'LOGIN'` 和 `'LOGOUT'`。 然后，编辑 `authReducer()` 和 action creators 来引用这些常量而不是字符串值。
 
-**Note:** It's generally a convention to write constants in all uppercase, and this is standard practice in Redux as well.
+**注意：** 通常以全部大写形式写出常量，这也是 Redux 的标准做法。
 
 # --hints--
 
-Calling the function `loginUser` should return an object with `type` property set to the string `LOGIN`.
+调用函数 `loginUser` 应该返回一个 `type` 属性设置为字符串 `LOGIN` 的对象。
 
 ```js
 assert(loginUser().type === 'LOGIN');
 ```
 
-Calling the function `logoutUser` should return an object with `type` property set to the string `LOGOUT`.
+调用函数 `logoutUser` 应该返回一个 `type` 属性设置为字符串 `LOGOUT` 的对象。
 
 ```js
 assert(logoutUser().type === 'LOGOUT');
 ```
 
-The store should be initialized with an object with property `login` set to `false`.
+store 应该用属性 `login` 设置为 `false` 的对象初始化。
 
 ```js
 assert(store.getState().authenticated === false);
 ```
 
-Dispatching `loginUser` should update the `login` property in the store state to `true`.
+dispatch `loginUser` 以后应将 store 中的 state 的 `login` 值更新为 `true`。
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Dispatching `logoutUser` should update the `login` property in the store state to `false`.
+dispatch `logoutUser` 应将 store 中的 state 的 `login` 值更新为 `false`。
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The `authReducer` function should handle multiple action types with a switch statement.
+`authReducer` 函数应该使用 switch 语句处理多个 action 类型。
 
 ```js
 (getUserInput) =>
@@ -83,7 +83,7 @@ The `authReducer` function should handle multiple action types with a switch sta
   );
 ```
 
-`LOGIN` and `LOGOUT` should be declared as `const` values and should be assigned strings of `LOGIN`and `LOGOUT`.
+`LOGIN` 和 `LOGOUT` 应该声明为 `const` 值，并且应该分配为 `LOGIN` 和 `LOGOUT` 的字符串。
 
 ```js
 const noWhiteSpace = __helpers.removeWhiteSpace(code);
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-The action creators and the reducer should reference the `LOGIN` and `LOGOUT` constants.
+action creator 和 reducer 中应该引用 `LOGIN` 和 `LOGOUT` 常量。
 
 ```js
 (getUserInput) =>
@@ -117,9 +117,7 @@ The action creators and the reducer should reference the `LOGIN` and `LOGOUT` co
 ## --seed-contents--
 
 ```js
-// Change code below this line
 
-// Change code above this line
 
 const defaultState = {
   authenticated: false
@@ -128,11 +126,11 @@ const defaultState = {
 const authReducer = (state = defaultState, action) => {
 
   switch (action.type) {
-    case 'LOGIN': // Change this line
+    case 'LOGIN': 
       return {
         authenticated: true
       }
-    case 'LOGOUT': // Change this line
+    case 'LOGOUT': 
       return {
         authenticated: false
       }

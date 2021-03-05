@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed918626
-title: Remove Classes from an Element with jQuery
+title: 使用 jQuery 从元素中移除 class
 challengeType: 6
 forumTopicId: 18264
 required:
@@ -11,29 +11,29 @@ dashedName: remove-classes-from-an-element-with-jquery
 
 # --description--
 
-In the same way you can add classes to an element with jQuery's `addClass()` function, you can remove them with jQuery's `removeClass()` function.
+和用 jQuery 的 `addClass()` 方法给标签添加类一样，也可以利用 jQuery 的 `removeClass()` 方法移除它们。
 
-Here's how you would do this for a specific button:
+下面是为指定按钮执行上面的操作的代码：
 
 `$("#target2").removeClass("btn-default");`
 
-Let's remove the `btn-default` class from all of our `button` elements.
+请把所有 `button` 标签的 `btn-default` 类移除。
 
 # --hints--
 
-The `btn-default` class should be removed from all of your `button` elements.
+应该移除所有 `button` 标签 `btn-default` 属性。
 
 ```js
 assert($('.btn-default').length === 0);
 ```
 
-You should only use jQuery to remove this class from the element.
+应该仅用 jQuery 从标签中移除类。
 
 ```js
 assert(code.match(/btn btn-default/g));
 ```
 
-You should only remove the `btn-default` class.
+应该仅移除 `btn-default` 类。
 
 ```js
 assert(

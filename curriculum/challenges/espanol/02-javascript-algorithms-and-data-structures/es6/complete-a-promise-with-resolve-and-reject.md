@@ -1,6 +1,6 @@
 ---
 id: 5cdafbc32913098997531680
-title: Complete a Promise with resolve and reject
+title: Cumple una Promesa con "Resolve" y "Reject"
 challengeType: 1
 forumTopicId: 301196
 dashedName: complete-a-promise-with-resolve-and-reject
@@ -8,7 +8,7 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 # --description--
 
-A promise has three states: `pending`, `fulfilled`, and `rejected`. The promise you created in the last challenge is forever stuck in the `pending` state because you did not add a way to complete the promise. The `resolve` and `reject` parameters given to the promise argument are used to do this. `resolve` is used when you want your promise to succeed, and `reject` is used when you want it to fail. These are methods that take an argument, as seen below.
+Una promesa tiene tres estados: `pending`, `fulfilled`, y `rejected`. La promesa creada en el último desafío está atascada en el estado `pending` porque no añadiste una forma de completar la promesa. Los parámetros `resolve` y `reject` enviados a "promise" como argumentos, son utilizados para hacer lo siguiente. `resolve` se utiliza, cuando la promesa es cumplida y `reject` cuando es rechazada. Estos son métodos que toman un argumento, como se ve a continuación.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -20,15 +20,15 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-The example above uses strings for the argument of these functions, but it can really be anything. Often, it might be an object, that you would use data from, to put on your website or elsewhere.
+El ejemplo anterior utiliza strings como argumento de las funciones, pero podrían ser cualquier otra cosa. A menudo, podría ser un objeto, del que utilizas datos, para colocar en tu sitio web o en otro lugar.
 
 # --instructions--
 
-Make the promise handle success and failure. If `responseFromServer` is `true`, call the `resolve` method to successfully complete the promise. Pass `resolve` a string with the value `We got the data`. If `responseFromServer` is `false`, use the `reject` method instead and pass it the string: `Data not received`.
+Haga una función promesa que maneje el éxito y el fallo. Si `responseFromServer` es `true`, llame al método `resolve` para completar satisfactoriamente la promesa. `resolve` devuelve un string con el valor `We got the data`. Si `responseFromServer` es `false`, utilice el método `reject` y devuelva la cadena: `Data not received`.
 
 # --hints--
 
-`resolve` should be called with the expected string when the `if` condition is `true`.
+`resolve` debe ser llamada con el string esperado, cuando la condición `if` es `true`.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`reject` should be called with the expected string when the `if` condition is `false`.
+`reject` debe ser llamada con el string esperado, cuando la condición `if` es `false`.
 
 ```js
 assert(

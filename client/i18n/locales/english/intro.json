@@ -65,15 +65,15 @@
       },
       "basic-html-cat-photo-app": {
         "title": "Basic HTML Cat Photo App",
-        "intro": ["placeholder", "placeholder"]
+        "intro": ["", ""]
       },
       "basic-css-cafe-menu": {
         "title": "Basic CSS Cafe Menu",
-        "intro": ["placeholder", "placeholder"]
+        "intro": ["", ""]
       },
       "css-variables-skyline": {
         "title": "CSS Variables Skyline",
-        "intro": ["placeholder", "placeholder"]
+        "intro": ["", ""]
       }
     }
   },
@@ -159,15 +159,15 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
-        "intro": ["placeholder", "placeholder"]
+        "intro": ["", ""]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
-        "intro": ["placeholder", "placeholder"]
+        "intro": ["", ""]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
-        "intro": ["placeholder", "placeholder"]
+        "intro": ["", ""]
       }
     }
   },
@@ -267,7 +267,7 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": ["placeholder", "placeholder"]
+        "intro": ["", ""]
       }
     }
   },

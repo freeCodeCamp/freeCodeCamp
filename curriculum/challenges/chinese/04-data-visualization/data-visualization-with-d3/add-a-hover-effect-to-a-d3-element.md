@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd4
-title: Add a Hover Effect to a D3 Element
+title: 给 D3 元素添加悬停效果
 challengeType: 6
 forumTopicId: 301469
 dashedName: add-a-hover-effect-to-a-d3-element
@@ -8,17 +8,17 @@ dashedName: add-a-hover-effect-to-a-d3-element
 
 # --description--
 
-It's possible to add effects that highlight a bar when the user hovers over it with the mouse. So far, the styling for the rectangles is applied with the built-in D3 and SVG methods, but you can use CSS as well.
+我们可以为用户的鼠标悬停行为添加高亮显示的效果。 到目前为止，矩形的样式应用了内置的 D3 和 SVG 方法，但是你也可以使用 CSS 来实现。
 
-You set the CSS class on the SVG elements with the `attr()` method. Then the `:hover` pseudo-class for your new class holds the style rules for any hover effects.
+你可以使用 `attr()` 方法在 SVG 元素上设置 CSS class。 然后用 `:hover` 伪类为你新添加的 CSS 类设置鼠标悬停的效果。
 
 # --instructions--
 
-Use the `attr()` method to add a class of `bar` to all the `rect` elements. This changes the `fill` color of the bar to brown when you mouse over it.
+用 `attr()` 方法给所有的 `rect` 元素都添加 `bar` class。 当鼠标悬停在元素上时，它的 `fill` 将变为棕色。
 
 # --hints--
 
-Your `rect` elements should have a class of `bar`.
+`rect` 元素应该有 `bar` class。
 
 ```js
 assert($('rect').attr('class') == 'bar');

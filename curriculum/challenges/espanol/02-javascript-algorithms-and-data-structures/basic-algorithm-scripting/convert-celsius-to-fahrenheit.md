@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b3
-title: Convert Celsius to Fahrenheit
+title: Convierte Celsius a Fahrenheit
 challengeType: 1
 forumTopicId: 16806
 dashedName: convert-celsius-to-fahrenheit
@@ -8,43 +8,43 @@ dashedName: convert-celsius-to-fahrenheit
 
 # --description--
 
-The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times `9/5`, plus `32`.
+El algoritmo para convertir de Celsius a Fahrenheit es la temperatura en Celsius multiplicado por `9/5`, más `32`.
 
-You are given a variable `celsius` representing a temperature in Celsius. Use the variable `fahrenheit` already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the algorithm mentioned above to help convert the Celsius temperature to Fahrenheit.
+Se te da una variable `celsius` que representa una temperatura en Celsius. Utiliza la variable `fahrenheit` ya definida y asígnale la temperatura Fahrenheit equivalente a la temperatura Celsius dada. Utiliza el algoritmo mencionado arriba para ayudar a convertir la temperatura en Celsius a Fahrenheit.
 
 # --hints--
 
-`convertToF(0)` should return a number
+`convertToF(0)` debe devolver un número
 
 ```js
 assert(typeof convertToF(0) === 'number');
 ```
 
-`convertToF(-30)` should return a value of `-22`
+`convertToF(-30)` debe devolver un valor de `-22`
 
 ```js
 assert(convertToF(-30) === -22);
 ```
 
-`convertToF(-10)` should return a value of `14`
+`convertToF(-10)` debe devolver un valor de `14`
 
 ```js
 assert(convertToF(-10) === 14);
 ```
 
-`convertToF(0)` should return a value of `32`
+`convertToF(0)` debe devolver un valor de `32`
 
 ```js
 assert(convertToF(0) === 32);
 ```
 
-`convertToF(20)` should return a value of `68`
+`convertToF(20)` debe devolver un valor de `68`
 
 ```js
 assert(convertToF(20) === 68);
 ```
 
-`convertToF(30)` should return a value of `86`
+`convertToF(30)` debe devolver un valor de `86`
 
 ```js
 assert(convertToF(30) === 86);

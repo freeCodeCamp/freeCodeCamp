@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1b
-title: Use the delete Keyword to Remove Object Properties
+title: 使用 delete 关键字删除对象属性
 challengeType: 1
 forumTopicId: 301168
 dashedName: use-the-delete-keyword-to-remove-object-properties
@@ -8,11 +8,11 @@ dashedName: use-the-delete-keyword-to-remove-object-properties
 
 # --description--
 
-Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data, ***and***, they provide very fast lookup time. Throughout the rest of these challenges, we will describe several common operations you can perform on objects so you can become comfortable applying these useful data structures in your programs.
+现在我们已经学习了什么是对象以及对象的基本特性和用途。 总之，对象是以键值对的形式，灵活、直观地存储结构化数据的一种方式，***而且***，通过对象的属性查找属性值是速度很快的操作。 在本章余下的挑战中，我们来了解一下对象的几种常用操作，这样你能更好地在代码中使用这个十分有用的数据结构：对象。
 
-In earlier challenges, we have both added to and modified an object's key-value pairs. Here we will see how we can *remove* a key-value pair from an object.
+在之前的挑战中，我们已经试过添加和修改对象中的键值对。 现在我们来看看如何从一个对象中*移除*一个键值对。
 
-Let's revisit our `foods` object example one last time. If we wanted to remove the `apples` key, we can remove it by using the `delete` keyword like this:
+我们再来回顾一下上一个挑战中的 `foods` 对象。 如果我们想移除 `apples` 属性，可以像这样使用 `delete` 关键字：
 
 ```js
 delete foods.apples;
@@ -20,11 +20,11 @@ delete foods.apples;
 
 # --instructions--
 
-Use the delete keyword to remove the `oranges`, `plums`, and `strawberries` keys from the `foods` object.
+请使用 delete 关键字来移除 `foods` 中的 `oranges`、`plums` 和 `strawberries` 属性。
 
 # --hints--
 
-The `foods` object should only have three keys: `apples`, `grapes`, and `bananas`.
+`foods` 对象应只包含 3 个属性：`apples`、`grapes` 和 `bananas`。
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-The `oranges`, `plums`, and `strawberries` keys should be removed using `delete`.
+应使用 `delete` 关键字来移除 `oranges`、`plums` 和 `strawberries` 属性。
 
 ```js
 assert(

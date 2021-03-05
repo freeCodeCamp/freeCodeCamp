@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c3
-title: Assignment with a Returned Value
+title: 使用返回值赋值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
@@ -9,27 +9,27 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-If you'll recall from our discussion of [Storing Values with the Assignment Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), everything to the right of the equal sign is resolved before the value is assigned. This means we can take the return value of a function and assign it to a variable.
+如果你还记得我们在[使用赋值运算符存储值](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator)中的讨论的话，等号右侧的所有操作都会在赋值之前完成。 这意味着我们可以获取函数的返回值，并将其赋值给一个变量。
 
-Assume we have pre-defined a function `sum` which adds two numbers together, then:
+假设我们有一个预先定义的函数 `sum` ，它将两个数相加，然后：
 
 `ourSum = sum(5, 12);`
 
-will call `sum` function, which returns a value of `17` and assigns it to `ourSum` variable.
+将会调用函数 `sum`，函数返回值 `17`，然后将该值赋给变量 `ourSum`。
 
 # --instructions--
 
-Call the `processArg` function with an argument of `7` and assign its return value to the variable `processed`.
+调用函数 `processArg`，传入参数 `7`，并将它的返回值赋给变量 `processed`。
 
 # --hints--
 
-`processed` should have a value of `2`
+`processed` 的值应为 `2`。
 
 ```js
 assert(processed === 2);
 ```
 
-You should assign `processArg` to `processed`
+你应该将 `processArg` 赋值给 `processed`。
 
 ```js
 assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));

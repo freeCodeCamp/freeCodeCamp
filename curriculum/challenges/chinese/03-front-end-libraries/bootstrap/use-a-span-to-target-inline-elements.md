@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08845
-title: Use a span to Target Inline Elements
+title: 使用 span 创建行内元素
 challengeType: 0
 forumTopicId: 18370
 dashedName: use-a-span-to-target-inline-elements
@@ -8,31 +8,31 @@ dashedName: use-a-span-to-target-inline-elements
 
 # --description--
 
-You can use spans to create inline elements. Remember when we used the `btn-block` class to make the button fill the entire row?
+可以使用 span 标签来创建行内元素。 还记得怎么使用 `btn-block` class 来创建填满整行的按钮吗？
 
-<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>normal button</button>
+<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>普通按钮</button>
 
-<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>btn-block button</button>
+<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>块级按钮</button>
 
-That illustrates the difference between an "inline" element and a "block" element.
+上面的例子就是 "inline" （行内）元素和 "block" （块级）元素的区别。
 
-By using the inline `span` element, you can put several elements on the same line, and even style different parts of the same line differently.
+通过使用行内元素 `span`，可以把不同的元素放在同一行，甚至能为一行的不同部分指定不同样式。
 
-Nest the word "love" in your "Things cats love" element below within a `span` element. Then give that `span` the class `text-danger` to make the text red.
+使用一个 `span` 元素，将文本 `love` 嵌入现在包含文本 `Things cats love` 的 `p` 元素中。 然后给 `span` 元素设置 class `text-danger`，使文本变成红色。
 
-Here's how you would do this with the "Top 3 things cats hate" element:
+对含有文本 `Top 3 things cats hate` 的 `p` 元素这样处理：
 
 `<p>Top 3 things cats <span class="text-danger">hate:</span></p>`
 
 # --hints--
 
-Your `span` element should be inside your `p` element.
+`span` 元素应该在 `p` 元素内。
 
 ```js
 assert($('p span') && $('p span').length > 0);
 ```
 
-Your `span` element should have just the text `love`.
+`span` 元素应该只包括 `love` 文本。
 
 ```js
 assert(
@@ -44,13 +44,13 @@ assert(
 );
 ```
 
-Your `span` element should have class `text-danger`.
+`span` 元素应该含有 `text-danger` class。
 
 ```js
 assert($('span').hasClass('text-danger'));
 ```
 
-Your `span` element should have a closing tag.
+确保 `span` 元素有一个闭合标签。
 
 ```js
 assert(

@@ -1,14 +1,14 @@
-The client/react side of our website is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
+El lado del cliente de nuestro sitio web se traduce a varios idiomas del mundo usando [react-i18next](https://react.i18next.com/) y [i18next](https://www.i18next.com/).
 
-> [!NOTE] Curriculum lesson content is [translated separately](./how-to-translate-files.md).
+> [!NOTE] El contenido de la lección del plan de estudios se [traduce por separado](./how-to-translate-files.md).
 
-## File Structure
+## Estructura de archivos
 
-The files for translating the website are located in the `client/i18n` folder. Each language has a folder within that containing JSON files with the translations.
+Los archivos para traducir el sitio web se encuentran en la carpeta `client/i18n`. Cada idioma tiene una carpeta dentro que contiene archivos JSON con las traducciones.
 
-The values in the `translations.json` file contain the majority of the text that appears on the website. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
+Los valores en el archivo `translations.json` contienen la mayor parte del texto que aparece en el sitio web. Las claves se utilizan en la base de código para obtener el texto correcto para cualquier idioma que se establezca. Este archivo debe tener exactamente las mismas claves en todos los idiomas.
 
-The `intro.json` file contains the key-value pairs for the introduction text on the certification pages.
+El archivo `intro.json` contiene los pares clave-valor para el texto de introducción en las páginas de certificación.
 
 The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure. These are not translated via Crowdin.
 
@@ -16,11 +16,11 @@ The `trending.json` file contians the titles and links for the trending news art
 
 The `meta-tags.json` file contains the information for our website's meta tag information. These are not translated via Crowdin.
 
-## Adding a Language
+## Agregar un idioma
 
 To add a new language, create a folder with the language name as the title next to the other languages and copy the JSON files from another language into your new folder.
 
-In the `allLangs.js` file, add the language to the `client` array in the first variable. Then, follow the instructions in the comments to add the rest of the necessary variables.
+In the `all-langs.js` file, add the language to the `client` array in the first variable. Then, follow the instructions in the comments to add the rest of the necessary variables.
 
 ## How to Translate
 
@@ -32,7 +32,7 @@ Modifications to the `trending.json`, `meta-tags.json`, and `motivation.json` fi
 
 Set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to build.
 
-> [!NOTE] The value needs to be one of the client languages available in `client/i18n/allLangs.js`
+> [!NOTE] The value needs to be one of the client languages available in `config/i18n/all-langs.js`
 
 ## How to Structure Components
 
@@ -101,11 +101,11 @@ const username = 'moT';
 
 The above example passes an object to the `t` function with a `username` variable. The variable will be used in the JSON value where `{{username}}` is.
 
-## Translate with the \<Trans\> Component
+## Translate with the `Trans` Component
 
 The general rule is to use the "t" function when you can. But there's a `Trans` component for when that isn't enough, usually when you have elements embedded in the text. You can use the `Trans` component with any type of react component.
 
-### Basic Elements Nested
+### Elementos básicos anidados
 
 ```js
 // in the component:
@@ -128,7 +128,7 @@ import { Trans } from 'react-i18next'
 
 You can place the key inside the component tags like the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, and `p` are the default, but that list can be expanded in the i18n config.
 
-### Complex Elements Nested
+### Elementos complejos anidados
 
 Other times, you will want to have certain text inside another element, an anchor tag is a good example:
 
@@ -151,7 +151,7 @@ Other times, you will want to have certain text inside another element, an ancho
 
 In the above example, the key is set in the attributes of the `Trans` component. The `<0>` and `</0>` in the JSON represent the first child of the component, in this case, the anchor element. If there were more children, they would just count up from there using the same syntax. You can find the children of a component in the react dev tools by inspecting it. `placeholder` is simply there because the linter was complaining at me about an empty `<a>` element.
 
-### With a Variable
+### Con una variable
 
 ```js
 // in the component:

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed808826
-title: Disable an Element Using jQuery
+title: 使用 jQuery 禁用元素
 challengeType: 6
 forumTopicId: 17563
 dashedName: disable-an-element-using-jquery
@@ -8,21 +8,21 @@ dashedName: disable-an-element-using-jquery
 
 # --description--
 
-You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.
+还能用 jQuery 改变 HTML 标签的非 CSS 属性， 例如：禁用按钮。
 
-When you disable a button, it will become grayed-out and can no longer be clicked.
+当禁用按钮时，它将变成灰色并无法点击。
 
-jQuery has a function called `.prop()` that allows you to adjust the properties of elements.
+jQuery 有一个 `.prop()` 方法，可以用其调整标签的属性。
 
-Here's how you would disable all buttons:
+下面是禁用所有的按钮的代码：
 
 `$("button").prop("disabled", true);`
 
-Disable only the `target1` button.
+禁用 `target1` 按钮。
 
 # --hints--
 
-Your `target1` button should be disabled.
+应该禁用 `target1` 按钮。
 
 ```js
 assert(
@@ -32,13 +32,13 @@ assert(
 );
 ```
 
-No other buttons should be disabled.
+不应该禁用其它的按钮。
 
 ```js
 assert($('#target2') && !$('#target2').prop('disabled'));
 ```
 
-You should only use jQuery to add these classes to the element.
+应该仅用 jQuery 更改元素属性。
 
 ```js
 assert(!code.match(/disabled[^<]*>/g));

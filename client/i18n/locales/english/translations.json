@@ -476,6 +476,7 @@
     "url-not-image": "URL must link directly to an image file",
     "use-valid-url": "Please use a valid URL",
     "editor-url": "Remember to submit the Live App URL.",
+    "http-url": "An unsecure (http) URL cannot be used.",
     "own-work-url": "Remember to submit your own work.",
     "publicly-visible-url": "Remember to submit a publicly visible app URL."
   },

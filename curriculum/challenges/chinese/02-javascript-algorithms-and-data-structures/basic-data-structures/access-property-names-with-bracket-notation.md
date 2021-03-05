@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1a
-title: Access Property Names with Bracket Notation
+title: 使用方括号访问属性名称
 challengeType: 1
 forumTopicId: 301150
 dashedName: access-property-names-with-bracket-notation
@@ -8,28 +8,28 @@ dashedName: access-property-names-with-bracket-notation
 
 # --description--
 
-In the first object challenge we mentioned the use of bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our `foods` object is being used in a program for a supermarket cash register. We have some function that sets the `selectedFood` and we want to check our `foods` object for the presence of that food. This might look like:
+在关于对象的第一个挑战中，我们提到可以在一对方括号中用一个变量作为属性名来访问属性的值。 假设一个超市收银台程序中有一个 `foods` 对象, 并且有一个函数会设置 `selectedFood`；如果我们需要查询 `foods` 对象中，某种食物是否存在， 可以这样实现：
 
 ```js
 let selectedFood = getCurrentFood(scannedItem);
 let inventory = foods[selectedFood];
 ```
 
-This code will evaluate the value stored in the `selectedFood` variable and return the value of that key in the `foods` object, or `undefined` if it is not present. Bracket notation is very useful because sometimes object properties are not known before runtime or we need to access them in a more dynamic way.
+上述代码会先读取 `selectedFood` 变量的值，并返回 `foods` 对象中以该值命名的属性所对应的属性值。 若没有以该值命名的属性，则会返回 `undefined`。 有时候对象的属性名在运行之前是不确定的，或者我们需要动态地访问对象的属性值。在这些场景下，方括号表示法就变得十分有用。
 
 # --instructions--
 
-We've defined a function, `checkInventory`, which receives a scanned item as an argument. Return the current value of the `scannedItem` key in the `foods` object. You can assume that only valid keys will be provided as an argument to `checkInventory`.
+我们已经定义了 `checkInventory` 函数，它接受一个被扫描到的商品名作为输入参数。 请让这个函数返回 `foods` 对象中，以 `scannedItem` 的值所命名的属性对应的属性值。 在本挑战中，只有合理有效的属性名会作为参数传入 `checkInventory`，因此你不需要处理参数无效的情况。
 
 # --hints--
 
-`checkInventory` should be a function.
+`checkInventory` 应是一个函数。
 
 ```js
 assert.strictEqual(typeof checkInventory, 'function');
 ```
 
-The `foods` object should have only the following key-value pairs: `apples: 25`, `oranges: 32`, `plums: 28`, `bananas: 13`, `grapes: 35`, `strawberries: 27`.
+`foods` 对象应只包含以下键值对：`apples: 25`、`oranges: 32`、`plums: 28`、`bananas: 13`、`grapes: 35`、`strawberries: 27`。
 
 ```js
 assert.deepEqual(foods, {
@@ -42,19 +42,19 @@ assert.deepEqual(foods, {
 });
 ```
 
-`checkInventory("apples")` should return `25`.
+`checkInventory("apples")` 应返回 `25`。
 
 ```js
 assert.strictEqual(checkInventory('apples'), 25);
 ```
 
-`checkInventory("bananas")` should return `13`.
+`checkInventory("bananas")` 应返回 `13`。
 
 ```js
 assert.strictEqual(checkInventory('bananas'), 13);
 ```
 
-`checkInventory("strawberries")` should return `27`.
+`checkInventory("strawberries")` 应返回 `27`。
 
 ```js
 assert.strictEqual(checkInventory('strawberries'), 27);

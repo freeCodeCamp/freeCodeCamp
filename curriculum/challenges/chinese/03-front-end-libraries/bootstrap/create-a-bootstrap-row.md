@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9bec908846
-title: Create a Bootstrap Row
+title: 创建一个 Bootstrap Row
 challengeType: 0
 forumTopicId: 16813
 dashedName: create-a-bootstrap-row
@@ -8,13 +8,13 @@ dashedName: create-a-bootstrap-row
 
 # --description--
 
-Now we'll create a Bootstrap row for our inline elements.
+这次为内联元素创建一个 Bootstrap 栅格系统的 Row（行）。
 
-Create a `div` element below the `h3` tag, with a class of `row`.
+在 `h3` 标签下方创建一个 class 属性为 `row` 的 `div` 元素。
 
 # --hints--
 
-You should add a `div` element below your `h3` element.
+`h3` 元素下应该增加一个 `div` 元素。
 
 ```js
 assert(
@@ -25,19 +25,19 @@ assert(
 );
 ```
 
-Your `div` element should have the class `row`
+`div` 元素的 class 属性应为 `row`。
 
 ```js
 assert($('div').hasClass('row'));
 ```
 
-Your `row div` should be nested inside the `container-fluid div`
+`row div` 应该内嵌于 `container-fluid div`。
 
 ```js
 assert($('div.container-fluid div.row').length > 0);
 ```
 
-Your `div` element should have a closing tag.
+确保所有 `div` 元素都有一个闭合标签。
 
 ```js
 assert(

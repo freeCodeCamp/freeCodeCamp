@@ -13,7 +13,7 @@ dashedName: create-texture-by-adding-a-subtle-pattern-as-a-background-image
 
 # --instructions--
 
-选取 `body` 元素，并设置整个页面的 `background` 为 url `https://i.imgur.com/MJAkxbh.png` 的图片。
+选取 `body` 元素，并设置整个页面的 `background` 为 url `https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png` 的图片。
 
 # --hints--
 

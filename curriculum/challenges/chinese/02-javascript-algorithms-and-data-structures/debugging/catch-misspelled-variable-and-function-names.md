@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b35
-title: Catch Misspelled Variable and Function Names
+title: 捕获拼错的变量名和函数名
 challengeType: 1
 forumTopicId: 301186
 dashedName: catch-misspelled-variable-and-function-names
@@ -8,41 +8,41 @@ dashedName: catch-misspelled-variable-and-function-names
 
 # --description--
 
-The `console.log()` and `typeof` methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.
+`console.log()` 和 `typeof` 方法是检查中间值和程序输出类型的两种主要方法。 现在是时候了解一下 bug 出现的常见的情形。 一个语法级别的问题是打字太快带来的低级拼写错误。
 
-Transposed, missing, or mis-capitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript variable and function names are case-sensitive.
+变量或函数名的错写、漏写或大小写弄混都会让浏览器尝试查找并不存在的东西，并报出“引用错误”。 JavaScript 变量和函数名称区分大小写。
 
 # --instructions--
 
-Fix the two spelling errors in the code so the `netWorkingCapital` calculation works.
+修复代码中的两个拼写错误，以便 `netWorkingCapital` 计算有效。
 
 # --hints--
 
-Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".
+检查计算 netWorkingCapital 值时使用的两个变量的拼写是否正确，控制台应该输出 "Net working capital is: 2"。
 
 ```js
 assert(netWorkingCapital === 2);
 ```
 
-There should be no instances of mis-spelled variables in the code.
+代码中不应存在拼写错误的变量。
 
 ```js
 assert(!code.match(/recievables/g));
 ```
 
-The `receivables` variable should be declared and used properly in the code.
+应在代码中声明并正确使用 `receivables` 变量。
 
 ```js
 assert(code.match(/receivables/g).length == 2);
 ```
 
-There should be no instances of mis-spelled variables in the code.
+代码中不应存在拼写错误的变量。
 
 ```js
 assert(!code.match(/payable;/g));
 ```
 
-The `payables` variable should be declared and used properly in the code.
+应在代码中声明并正确使用 `payables` 变量。
 
 ```js
 assert(code.match(/payables/g).length == 2);

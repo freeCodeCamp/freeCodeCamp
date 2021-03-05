@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908853
-title: Add id Attributes to Bootstrap Elements
+title: 给 Bootstrap 元素添加 id 属性
 challengeType: 0
 forumTopicId: 16639
 dashedName: add-id-attributes-to-bootstrap-elements
@@ -8,21 +8,21 @@ dashedName: add-id-attributes-to-bootstrap-elements
 
 # --description--
 
-Recall that in addition to class attributes, you can give each of your elements an `id` attribute.
+回忆一下，除了可以给元素添加 class 属性，我们还可以给元素设置 `id` 属性。
 
-Each id must be unique to a specific element and used only once per page.
+每个元素的 id 都必须是唯一的，并且在一个页面中只能使用一次。
 
-Let's give a unique id to each of our `div` elements of class `well`.
+让我们为每个 class 为 `well` 的 `div` 元素添加一个唯一的 id。
 
-Remember that you can give an element an id like this:
+记住，可以这样给一个元素设置 id：
 
 `<div class="well" id="center-well">`
 
-Give the well on the left the id of `left-well`. Give the well on the right the id of `right-well`.
+把左边 well 的 id 设置为 `left-well`。 右边的 well 的 id 设置为 `right-well`。
 
 # --hints--
 
-Your left `well` should have the id of `left-well`.
+左边 `well` 的 id 应该为 `left-well`。
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Your right `well` should have the id of `right-well`.
+右边的 `well` 的 id 应该为 `right-well`。
 
 ```js
 assert(

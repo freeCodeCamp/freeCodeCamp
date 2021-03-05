@@ -1,6 +1,6 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5d
-title: Create a Complex JSX Element
+title: 创建一个复杂的 JSX 元素
 challengeType: 6
 forumTopicId: 301382
 dashedName: create-a-complex-jsx-element
@@ -8,17 +8,17 @@ dashedName: create-a-complex-jsx-element
 
 # --description--
 
-The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.
+上一个挑战是 JSX 的一个简单示例，但 JSX 也可以表示更复杂的 HTML。
 
-One important thing to know about nested JSX is that it must return a single element.
+关于嵌套的 JSX，需要知道的一件重要的事情，那就是它必须返回单个元素。
 
-This one parent element would wrap all of the other levels of nested elements.
+这个父元素将包裹所有其他级别的嵌套元素。
 
-For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.
+例如，几个作为兄弟元素编写的 JSX 元素而没有父元素包裹将不会被转换。
 
-Here's an example:
+这里是一个示例：
 
-**Valid JSX:**
+**有效的 JSX：**
 
 ```jsx
 <div>
@@ -28,7 +28,7 @@ Here's an example:
 </div>
 ```
 
-**Invalid JSX:**
+**无效的 JSX：**
 
 ```jsx
 <p>Paragraph One</p>
@@ -38,39 +38,39 @@ Here's an example:
 
 # --instructions--
 
-Define a new constant `JSX` that renders a `div` which contains the following elements in order:
+定义一个新的常量 `JSX`，渲染一个 `div`，其中依次包含以下元素：
 
-An `h1`, a `p`, and an unordered list that contains three `li` items. You can include any text you want within each element.
+一个 `h1`，一个 `p`，一个包含三个 `li` 项的无序列表。 可以在每个元素中包含任意文本。
 
-**Note:** When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a `div` tag to wrap all the child elements within a single parent element. If you remove the `div`, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.
+**注意：** 当像这样渲染多个元素时，可以把它们都用圆括号括起来，但是这并不是必须的。 另外，此挑战使用 `div` 标签把所有子元素包裹在里面。 如果删除 `div`，JSX 将不会编译这些元素。 请记住这一点，因为在 React 组件中返回 JSX 元素时也适用。
 
 # --hints--
 
-The constant `JSX` should return a `div` element.
+常量 `JSX` 应该返回一个 `div` 元素。
 
 ```js
 assert(JSX.type === 'div');
 ```
 
-The `div` should contain an `h1` tag as the first element.
+`div` 应该包含一个 `h1` 标签作为第一个元素。
 
 ```js
 assert(JSX.props.children[0].type === 'h1');
 ```
 
-The `div` should contain a `p` tag as the second element.
+`div`应该包含一个`p`标签作为第二个元素。
 
 ```js
 assert(JSX.props.children[1].type === 'p');
 ```
 
-The `div` should contain a `ul` tag as the third element.
+`div` 应该包含一个 `ul` 标签作为第三个元素。
 
 ```js
 assert(JSX.props.children[2].type === 'ul');
 ```
 
-The `ul` should contain three `li` elements.
+`ul` 应该包含三个 `li` 元素。
 
 ```js
 assert(
@@ -89,7 +89,9 @@ ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
 ## --seed-contents--
+
 ```jsx
+
 ```
 
 # --solutions--
