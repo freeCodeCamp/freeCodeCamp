@@ -101,7 +101,7 @@ const username = 'moT';
 
 The above example passes an object to the `t` function with a `username` variable. The variable will be used in the JSON value where `{{username}}` is.
 
-## Translate with the \<Trans\> Component
+## Translate with the `Trans` Component
 
 The general rule is to use the "t" function when you can. But there's a `Trans` component for when that isn't enough, usually when you have elements embedded in the text. You can use the `Trans` component with any type of react component.
 
