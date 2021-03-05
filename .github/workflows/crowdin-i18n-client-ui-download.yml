@@ -90,6 +90,25 @@ jobs:
         with:
           github-token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           script: |
+            const branchExists = await github.repos.getBranch({
+              owner: 'freeCodeCamp',
+              repo: 'freeCodeCamp',
+              branch: 'i18n-sync-client'
+            }).catch(err => {
+              console.info("Branch does not exist. Likely no changes in download?");
+            });
+            if (!branchExists || branchExists.status !== 200) {
+              return;
+            }
+            const pullRequestExists = await github.pulls.list({
+              owner: 'freeCodeCamp',
+              repo: 'freeCodeCamp',
+              head: 'freeCodeCamp:i18n-sync-client'
+            });
+            if (pullRequestExists.data.length) {
+              console.info("It looks like a pull request already exists for this branch.");
+              return;
+            }
             const PR = await github.pulls.create({
               owner: 'freeCodeCamp',
               repo: 'freeCodeCamp',
@@ -97,7 +116,13 @@ jobs:
               base: 'main',
               title: 'chore(i18n,client): processed translations',
               body: 'This PR was opened auto-magically by Crowdin.'
+            }).catch(err => {
+              console.info("Unpredicted error occurred when trying to create the PR.");
+              console.error(err);
             });
+            if (!PR || PR.status !== 201) {
+              return;
+            }
             const PRNumber = PR.data.number;
             await github.issues.addLabels({
               owner: 'freeCodeCamp',
