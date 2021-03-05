@@ -2,8 +2,8 @@ name: Crowdin Curriculum Upload
 on:
   workflow_dispatch:
   schedule:
-    # runs everyday at 11:00 AM UTC
-    - cron: "0 11 * * *"
+    # runs everyday at 11:30 AM UTC
+    - cron: "30 11 * * *"
 
 jobs:
   i18n-upload-curriculum-files:
