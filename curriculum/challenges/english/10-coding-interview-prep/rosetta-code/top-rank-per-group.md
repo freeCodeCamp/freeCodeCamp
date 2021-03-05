@@ -12,7 +12,8 @@ Find the top `n` ranked data in each group, where `n` is provided as a parameter
 
 Given the following data:
 
-<pre>testData1 = [
+```js
+testData1 = [
   { name: 'Tyler Bennett', id: 'E10297', salary: 32000, dept: 'D101' },
   { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050' },
   { name: 'George Woltman', id: 'E00127', salary: 53500, dept: 'D101' },
@@ -27,7 +28,7 @@ Given the following data:
   { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D190' },
   { name: 'Timothy Grove', id: 'E16398', salary: 29900, dept: 'D190' }
 ];
-</pre>
+```
 
 one could rank top 10 employees in each department by calling
 
@@ -35,14 +36,15 @@ one could rank top 10 employees in each department by calling
 
 Given the following data:
 
-<pre>testData2 = [
+```js
+testData2 = [
   { name: 'Friday 13th', genre: 'horror', rating: 9.9 },
   { name: "Nightmare on Elm's Street", genre: 'horror', rating: 5.7 },
   { name: 'Titanic', genre: 'drama', rating: 7.3 },
   { name: 'Maze Runner', genre: 'scifi', rating: 7.1 },
   { name: 'Blade runner', genre: 'scifi', rating: 8.9 }
 ];
-</pre>
+```
 
 one could rank the top-rated movie in each genre by calling
 
