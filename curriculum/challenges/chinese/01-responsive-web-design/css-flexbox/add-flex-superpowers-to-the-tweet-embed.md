@@ -9,7 +9,7 @@ dashedName: add-flex-superpowers-to-the-tweet-embed
 
 # --description--
 
-我们以右边的嵌入推文为例， 一些元素换一个布局方式或许更好看。 上一个挑战演示了 `display: flex`， 现在你需要把它添加到推文内嵌的多个组件中，调整它们的位置。
+以右边的嵌入推文为例， 一些元素换一个布局方式或许更好看。 上一个挑战演示了 `display: flex`， 现在你需要把它添加到推文内嵌的多个组件中，调整它们的位置。
 
 # --instructions--
 

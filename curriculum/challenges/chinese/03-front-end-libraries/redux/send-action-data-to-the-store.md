@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036155
-title: Send Action Data to the Store
+title: 发送 Action Data 给 Store
 challengeType: 6
 forumTopicId: 301448
 dashedName: send-action-data-to-the-store
@@ -8,19 +8,19 @@ dashedName: send-action-data-to-the-store
 
 # --description--
 
-By now you've learned how to dispatch actions to the Redux store, but so far these actions have not contained any information other than a `type`. You can also send specific data along with your actions. In fact, this is very common because actions usually originate from some user interaction and tend to carry some data with them. The Redux store often needs to know about this data.
+到目前为止，你已经学会了如何将 action dispatch 给 Redux store，但到目前为止，这些 action 并未包含除 `type`之外的任何信息。 还可以和 action 一起发送特定数据。 事实上，这是非常常见的，因为 action 通常源于一些用户交互，并且往往会携带一些数据， Redux store 经常需要知道这些数据。
 
 # --instructions--
 
-There's a basic `notesReducer()` and an `addNoteText()` action creator defined in the code editor. Finish the body of the `addNoteText()` function so that it returns an `action` object. The object should include a `type` property with a value of `ADD_NOTE`, and also a `text` property set to the `note` data that's passed into the action creator. When you call the action creator, you'll pass in specific note information that you can access for the object.
+在代码编辑器中定义了一个基础的 `notesReducer()` 和 `addNoteText()` action creator。 完成 `addNoteText()` 函数的主体，这样它就会返回一个 `action` 对象。 该对象应该包含一个 `type` 属性，其值为 `ADD_NOTE`，还有一个传入 action creator 的属性为 `text` 的 `note` 数据。 当调用 action creator 时，需要传入可以访问该对象的特定笔记信息。
 
-Next, finish writing the `switch` statement in the `notesReducer()`. You need to add a case that handles the `addNoteText()` actions. This case should be triggered whenever there is an action of type `ADD_NOTE` and it should return the `text` property on the incoming `action` as the new `state`.
+接下来，完成在 `notesReducer()` 中编写的 `switch` 语句。 需要添加一个处理 `addNoteText()` 操作的选项。 如果 action 的类型为 `ADD_NOTE`，就应该触发这个 case，并且它应该在传入的 `action` 上返回 `text` 属性作为新的 `state`
 
-The action is dispatched at the bottom of the code. Once you're finished, run the code and watch the console. That's all it takes to send action-specific data to the store and use it when you update store `state`.
+这个 action 将在代码底部发送。 一旦完成后，运行代码并观察控制台。 这就是将特定于 action 的数据发送到 store 并在更新 store `state`时使用它所需的全部内容。
 
 # --hints--
 
-The action creator `addNoteText` should return an object with keys `type` and `text`.
+action creator `addNoteText` 应该返回一个包含 `type` 和 `text` 的对象。
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Dispatching an action of type `ADD_NOTE` with the `addNoteText` action creator should update the `state` to the string passed to the action creator.
+dispatch 一个 action creator 是 `addNoteText` 的action `ADD_NOTE`，应将 `state` 更新为 action creator 传递的字符串。
 
 ```js
 assert(

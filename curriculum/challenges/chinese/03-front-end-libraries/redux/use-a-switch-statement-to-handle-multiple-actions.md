@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036151
-title: Use a Switch Statement to Handle Multiple Actions
+title: 使用 Switch 语句处理多个 Actions
 challengeType: 6
 forumTopicId: 301449
 dashedName: use-a-switch-statement-to-handle-multiple-actions
@@ -8,35 +8,35 @@ dashedName: use-a-switch-statement-to-handle-multiple-actions
 
 # --description--
 
-You can tell the Redux store how to handle multiple action types. Say you are managing user authentication in your Redux store. You want to have a state representation for when users are logged in and when they are logged out. You represent this with a single state object with the property `authenticated`. You also need action creators that create actions corresponding to user login and user logout, along with the action objects themselves.
+可以定义 Redux store 处理多种 action 类型。 假设在 Redux store 中管理用户身份验证。 希望用状态表示用户登录和注销。 使用 state 的 `authenticated` 属性表示它。 还需要使用 action creators 创建与用户登录和用户注销相对应的 action，以及 action 对象本身。
 
 # --instructions--
 
-The code editor has a store, actions, and action creators set up for you. Fill in the `reducer` function to handle multiple authentication actions. Use a JavaScript `switch` statement in the `reducer` to respond to different action events. This is a standard pattern in writing Redux reducers. The switch statement should switch over `action.type` and return the appropriate authentication state.
+代码编辑器为你创建了 store、actions、action creators。 通过编写 `reducer` 函数来处理多个身份验证操作。 可以在 `reducer` 里通过使用 JavaScript 的 `switch` 来响应不同的 action 事件。 这是编写 Redux reducers 的标准模式。 switch 语句应该切换 `action.type` 并返回适当的身份验证状态。
 
-**Note:** At this point, don't worry about state immutability, since it is small and simple in this example. For each action, you can return a new object — for example, `{authenticated: true}`. Also, don't forget to write a `default` case in your switch statement that returns the current `state`. This is important because once your app has multiple reducers, they are all run any time an action dispatch is made, even when the action isn't related to that reducer. In such a case, you want to make sure that you return the current `state`.
+**注意：** 此时，不要担心 state 的不变性，因为在这个示例中它很小而且很简单。 所以对于每个操作都可以返回一个新对象，比如 `{authenticated: true}`。 另外，不要忘记在 switch 语句中写一个 `default` case，返回当前的 `state`。 这是很重要的，因为当程序有多个 reducer，当每一个 action 被 dispatch 时它们都会运行，即使 action 与该 reducer 无关。 在这种情况下，你要确保返回当前的 `state`
 
 # --hints--
 
-Calling the function `loginUser` should return an object with type property set to the string `LOGIN`.
+调用函数 `loginUser` 应该返回一个 type 属性设置为字符串 `LOGIN` 的对象。
 
 ```js
 assert(loginUser().type === 'LOGIN');
 ```
 
-Calling the function `logoutUser` should return an object with type property set to the string `LOGOUT`.
+调用函数 `logoutUser` 应该返回一个 type 属性设置为字符串 `LOGOUT` 的对象。
 
 ```js
 assert(logoutUser().type === 'LOGOUT');
 ```
 
-The store should be initialized with an object with an `authenticated` property set to `false`.
+store 应该设置一个 `authenticated` 属性设置为 `false` 的初始化对象。
 
 ```js
 assert(store.getState().authenticated === false);
 ```
 
-Dispatching `loginUser` should update the `authenticated` property in the store state to `true`.
+dispatch `loginUser`应该将 store 中的 state 的 `authenticated` 值更新为 `true`。
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Dispatching `logoutUser` should update the `authenticated` property in the store state to `false`.
+dispatch `logoutUser` 应该将 store 中的 state 的 `authenticated` 值更新为 `false`。
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The `authReducer` function should handle multiple action types with a `switch` statement.
+`authReducer` 函数应该使用 `switch` 语句处理多个 action 类型。
 
 ```js
 (getUserInput) =>

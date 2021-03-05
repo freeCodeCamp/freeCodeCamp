@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036174
-title: Bind 'this' to a Class Method
+title: 将 this 绑定到 Class 方法上
 challengeType: 6
 forumTopicId: 301379
 dashedName: bind-this-to-a-class-method
@@ -8,23 +8,23 @@ dashedName: bind-this-to-a-class-method
 
 # --description--
 
-In addition to setting and updating `state`, you can also define methods for your component class. A class method typically needs to use the `this` keyword so it can access properties on the class (such as `state` and `props`) inside the scope of the method. There are a few ways to allow your class methods to access `this`.
+除了设置和更新 `state` 之外，还可以为组件类定义方法。 类方法通常需要使用 `this` 关键字，以便它可以访问方法中类的属性（例如 `state` 和 `props`）。 有几种方法可以让类方法访问 `this`。
 
-One common way is to explicitly bind `this` in the constructor so `this` becomes bound to the class methods when the component is initialized. You may have noticed the last challenge used `this.handleClick = this.handleClick.bind(this)` for its `handleClick` method in the constructor. Then, when you call a function like `this.setState()` within your class method, `this` refers to the class and will not be `undefined`.
+一种常见的方法是在构造函数中显式地绑定 `this`，这样当组件初始化时，`this` 就会绑定到类方法。 你可能已经注意到上一个挑战在构造函数中的 `handleClick` 方法使用了 `this.handleClick = this.handleClick.bind(this)`。 然后，当在类方法中调用像 `this.setState()` 这样的函数时，`this` 指的是这个类，而不是 `undefined`。
 
-**Note:** The `this` keyword is one of the most confusing aspects of JavaScript but it plays an important role in React. Although its behavior here is totally normal, these lessons aren't the place for an in-depth review of `this` so please refer to other lessons if the above is confusing!
+**注意：** `this`关键字是 JavaScript 中最令人困惑的方面之一，但它在 React 中扮演着重要的角色。 虽然它的行为在这里是完全正常的，但是这些课程并不深入研究`this`，所以如果以上内容令你感到困惑，请参考其他课程！
 
 # --instructions--
 
-The code editor has a component with a `state` that keeps track of the text. It also has a method which allows you to set the text to `"You clicked!"`. However, the method doesn't work because it's using the `this` keyword that is undefined. Fix it by explicitly binding `this` to the `handleClick()` method in the component's constructor.
+代码编辑器有一个带有 `state` 的组件，用于跟踪项目计数。 它还有一个方法，允许设置文本为 `You clicked!`。 但是，该方法不起作用，因为它使用了未定义的 `this` 关键字。 可以通过将 `this` 显式绑定到组件构造函数中的 `handleClick()`方法来修复它。
 
-Next, add a click handler to the `button` element in the render method. It should trigger the `handleClick()` method when the button receives a click event. Remember that the method you pass to the `onClick` handler needs curly braces because it should be interpreted directly as JavaScript.
+接下来，向 render 方法中的 `button` 元素添加一个单击处理程序。 当按钮接收到单击事件时，它应该触发 `handleClick()` 方法。 记住，传递给 `onClick` 处理程序的方法需要使用花括号，因为它应该直接被解释为 JavaScript。
 
-Once you complete the above steps you should be able to click the button and see `You clicked!`.
+完成上述步骤后，可以单击按钮并看到 `You clicked!`。
 
 # --hints--
 
-`MyComponent` should return a `div` element which wraps two elements, a button and an `h1` element, in that order.
+`MyComponent` 应返回 `div` 元素，该元素按顺序包含两个元素，一个按钮和一个 `h1` 元素。
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The state of `MyComponent` should initialize with the key value pair `{ text: "Hello" }`.
+`MyComponent` 的 state 应该使用键值对 `{ text: "Hello" }`，进行初始化。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Clicking the `button` element should run the `handleClick` method and set the state `text` to `"You clicked!"`.
+单击 `button` 元素应该运行 `handleClick` 方法，并使 state `text` 为 `You clicked!`。
 
 ```js
 async () => {

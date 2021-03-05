@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acdd08826
-title: Learn How Script Tags and Document Ready Work
+title: 了解 script 和 document.ready 是如何工作的
 challengeType: 6
 forumTopicId: 18224
 dashedName: learn-how-script-tags-and-document-ready-work
@@ -8,23 +8,23 @@ dashedName: learn-how-script-tags-and-document-ready-work
 
 # --description--
 
-Now we're ready to learn jQuery, the most popular JavaScript tool of all time.
+马上就要学习有史以来最受欢迎的 JavaScript 框架——jQuery 了。
 
-Before we can start using jQuery, we need to add some things to our HTML.
+在使用 jQuery 之前，需要在 HTML 页面中添加一些东西。
 
-First, add a `script` element at the top of your page. Be sure to close it on the following line.
+首先，在页面顶部添加 `script` 标签， 记得在后面为它添加结束标签。
 
-Your browser will run any JavaScript inside a `script` element, including jQuery.
+浏览器会运行 `script` 标签所有的 JavaScript 脚本包括 jQuery。
 
-Inside your `script` element, add this code: `$(document).ready(function() {` to your `script`. Then close it on the following line (still inside your `script` element) with: `});`
+在 `script` 标签中添加代码 `$(document).ready(function() {`。 然后在后面（仍在该 `script` 标签内）用 `});` 闭合它。
 
-We'll learn more about `functions` later. The important thing to know is that code you put inside this `function` will run as soon as your browser has loaded your page.
+稍后将详细介绍 `functions`， 现在需要知道的是，只要浏览器加载页面，`function` 中放入的代码就会运行。
 
-This is important because without your `document ready function`, your code may run before your HTML is rendered, which would cause bugs.
+有一点很重要，如果没有 `document ready function`，代码将在 HTML 页面呈现之前运行，这可能会导致错误。
 
 # --hints--
 
-You should create a `script` element making sure it is valid and has a closing tag.
+应该创建一个 `script` 标签，确保其有效并具有闭合标签。
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-You should add `$(document).ready(function() {` to the beginning of your `script` element.
+应该在 `script` 的开头添加 `$(document).ready(function() {`。
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-You should close your `$(document).ready(function() {` function with `});`
+应该用 `});` 闭合 `$(document).ready(function() {` 函数。
 
 ```js
 assert(code.match(/\n*?\s*?\}\s*?\);/g));

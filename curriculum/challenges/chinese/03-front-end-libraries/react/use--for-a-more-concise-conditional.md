@@ -8,19 +8,19 @@ dashedName: use--for-a-more-concise-conditional
 
 # --description--
 
-The if/else statements worked in the last challenge, but there's a more concise way to achieve the same result. Imagine that you are tracking several conditions in a component and you want different elements to render depending on each of these conditions. If you write a lot of `else if` statements to return slightly different UIs, you may repeat code which leaves room for error. Instead, you can use the `&&` logical operator to perform conditional logic in a more concise way. This is possible because you want to check if a condition is `true`, and if it is, return some markup. Here's an example:
+`if/else` 语句在上一次挑战中是有效的，但是有一种更简洁的方法可以达到同样的结果。 假设正在跟踪组件中的几个条件，并且希望根据这些条件中的每一个来渲染不同的元素。 如果你写了很多 `else if` 语句来返回稍微不同的 UI，你可能会写很多重复代码，这就留下了出错的空间。 相反，你可以使用 `&&` 逻辑运算符以更简洁的方式执行条件逻辑。 这是完全可行的，因为你希望检查条件是否为 `true`。如果是，则返回一些标记。 这里有一个例子：
 
 `{condition && <p>markup</p>}`
 
-If the `condition` is `true`, the markup will be returned. If the condition is `false`, the operation will immediately return `false` after evaluating the `condition` and return nothing. You can include these statements directly in your JSX and string multiple conditions together by writing `&&` after each one. This allows you to handle more complex conditional logic in your `render()` method without repeating a lot of code.
+如果 `condition` 为 `true`，则返回标记。 如果 condition 为 `false`，操作将在判断 `condition` 后立即返回 `false`，并且不返回任何内容。 可以将这些语句直接包含在 JSX 中，并通过在每个条件后面写 `&&` 来将多个条件串在一起。 这允许在 `render()` 方法中处理更复杂的条件逻辑，而无需重复大量代码。
 
 # --instructions--
 
-Solve the previous example again, so the `h1` only renders if `display` is `true`, but use the `&&` logical operator instead of an `if/else` statement.
+再来看看前面的示例，`h1` 还是在 `display` 为 `true` 时被渲染，但使用 `&&` 逻辑运算符代替 `if/else` 语句。
 
 # --hints--
 
-`MyComponent` should exist and render.
+`MyComponent` 应该存在并被渲染。
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-When `display` is set to `true`, a `div`, `button`, and `h1` should render.
+当 `display` 被设置为 `true` 时，`div`、`button` 和 `h1` 标签应该被渲染。
 
 ```js
 async () => {
@@ -52,7 +52,7 @@ async () => {
 };
 ```
 
-When `display` is set to `false`, only a `div` and `button` should render.
+当 `display` 被设置为 `false` 时，只有 `div` 和 `button` 应该被渲染。
 
 ```js
 async () => {
@@ -73,7 +73,7 @@ async () => {
 };
 ```
 
-The render method should use the && logical operator to check the condition of this.state.display.
+render 方法应该使用 `&&` 逻辑运算符来检查 `this.state.display` 的条件。
 
 ```js
 (getUserInput) => assert(getUserInput('index').includes('&&'));

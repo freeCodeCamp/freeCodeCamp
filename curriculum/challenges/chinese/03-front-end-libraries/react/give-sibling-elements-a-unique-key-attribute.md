@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618b
-title: Give Sibling Elements a Unique Key Attribute
+title: 给同级元素一个唯一的键属性
 challengeType: 6
 forumTopicId: 301394
 dashedName: give-sibling-elements-a-unique-key-attribute
@@ -8,19 +8,19 @@ dashedName: give-sibling-elements-a-unique-key-attribute
 
 # --description--
 
-The last challenge showed how the `map` method is used to dynamically render a number of elements based on user input. However, there was an important piece missing from that example. When you create an array of elements, each one needs a `key` attribute set to a unique value. React uses these keys to keep track of which items are added, changed, or removed. This helps make the re-rendering process more efficient when the list is modified in any way.
+上一个挑战展示了如何使用 `map` 方法根据用户输入动态渲染多个元素。 然而，这个例子中缺少一个重要的部分。 创建元素数组时，每个元素都需要一个设置为唯一值的 `key` 属性。 React 使用这些键来跟踪哪些项目被添加、更改或删除。 这有助于在以任何方式修改列表时提高重新渲染过程的效率。
 
-**Note:** Keys only need to be unique between sibling elements, they don't need to be globally unique in your application.
+**注意：** 键只需要在兄弟元素之间是唯一的，它们不需要在应用程序中是全局唯一的。
 
 # --instructions--
 
-The code editor has an array with some front end frameworks and a stateless functional component named `Frameworks()`. `Frameworks()` needs to map the array to an unordered list, much like in the last challenge. Finish writing the `map` callback to return an `li` element for each framework in the `frontEndFrameworks` array. This time, make sure to give each `li` a `key` attribute, set to a unique value. The `li` elements should also contain text from `frontEndFrameworks`.
+代码编辑器有一个数组，它包含一些前端框架和一个名为 `Frameworks()` 的无状态函数组件。 `Frameworks()` 需要将数组映射到无序列表，就像上一个挑战一样。 完成 `map` 回调，为 `frontEndFrameworks` 数组中的每个框架返回一个 `li` 元素。 这次，确保给每个 `li` 的 `key` 属性设置一个唯一的值。 `li` 元素还应该包含来自 `frontEndFrameworks` 的文本。
 
-Normally, you want to make the key something that uniquely identifies the element being rendered. As a last resort the array index may be used, but typically you should try to use a unique identification.
+通常，希望使 key 能唯一标识要渲染的元素。 数组索引可以是最后的选择，但通常你应该尝试使用唯一标识。
 
 # --hints--
 
-The `Frameworks` component should exist and render to the page.
+`Frameworks` 组件应该存在并渲染到页面。
 
 ```js
 assert(
@@ -28,19 +28,19 @@ assert(
 );
 ```
 
-`Frameworks` should render an `h1` element.
+`Frameworks` 应该渲染一个 `h1` 元素。
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('h1').length === 1);
 ```
 
-`Frameworks` should render a `ul` element.
+`Frameworks` 应该渲染一个 `ul` 元素。
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').length === 1);
 ```
 
-The `ul` tag should render 6 child `li` elements.
+`ul` 标签应该渲染 6 个子 `li` 元素。
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-Each list item element should have a unique `key` attribute.
+每个列表项元素应该具有唯一的 `key` 属性。
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-Each list item element should contain text from `frontEndFrameworks`.
+每个列表项元素应该包含来自 `frontEndFrameworks` 的文本。
 
 ```js
 assert(
