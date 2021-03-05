@@ -13,6 +13,8 @@ dashedName: use-the-u-tag-to-underline-text
 
 # --instructions--
 
+`u` 标签包裹的文本内容应为 `Ph.D. students`。
+
 **注意：** 如果使用 `u` 标签添加下划线，可能混淆文本和链接，则应避免使用它。 锚标签也有默认的下划线格式。
 
 # --hints--
@@ -23,7 +25,7 @@ dashedName: use-the-u-tag-to-underline-text
 assert($('u').length === 1);
 ```
 
-`u` 标签的内容文本应为 `Ph.D. students`。
+`u` 标签的文本内容应为 `Ph.D. students`。
 
 ```js
 assert($('u').text() === 'Ph.D. students');
@@ -107,12 +109,12 @@ assert($('u').text() === 'Ph.D. students');
   <div class="cardContent">
     <div class="cardText">
       <h4>Google</h4>
-      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D.
-    students</u> at <strong>Stanford University</strong>.</p>
+      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p>
     </div>
-      <div class="cardLinks">
+    <div class="cardLinks">
       <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-    <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
   </div>
 </div>
 ```

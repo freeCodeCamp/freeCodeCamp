@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036147
-title: Connect Redux to React
+title: 连接 Redux 和 React
 challengeType: 6
 forumTopicId: 301426
 dashedName: connect-redux-to-react
@@ -8,21 +8,21 @@ dashedName: connect-redux-to-react
 
 # --description--
 
-Now that you've written both the `mapStateToProps()` and the `mapDispatchToProps()` functions, you can use them to map `state` and `dispatch` to the `props` of one of your React components. The `connect` method from React Redux can handle this task. This method takes two optional arguments, `mapStateToProps()` and `mapDispatchToProps()`. They are optional because you may have a component that only needs access to `state` but doesn't need to dispatch any actions, or vice versa.
+你已经写了`mapStateToProps()`、`mapDispatchToProps()` 两个函数，现在可以用它们来把 `state` 和 `dispatch` 映射到 React 组件的 `props` 了。 React Redux 的 `connect` 方法可以完成这个任务。 此方法有 `mapStateToProps()`、`mapDispatchToProps()` 两个可选参数， 它们是可选的，原因是你的组件可能仅需要访问 `state` 但不需要分发任何 actions，反之亦然。
 
-To use this method, pass in the functions as arguments, and immediately call the result with your component. This syntax is a little unusual and looks like:
+为了使用此方法，需要传入函数参数并在调用时传入组件。 这种语法有些不寻常，如下所示：
 
 `connect(mapStateToProps, mapDispatchToProps)(MyComponent)`
 
-**Note:** If you want to omit one of the arguments to the `connect` method, you pass `null` in its place.
+**注意：** 如果要省略 `connect` 方法中的某个参数，则应当用 `null` 替换这个参数。
 
 # --instructions--
 
-The code editor has the `mapStateToProps()` and `mapDispatchToProps()` functions and a new React component called `Presentational`. Connect this component to Redux with the `connect` method from the `ReactRedux` global object, and call it immediately on the `Presentational` component. Assign the result to a new `const` called `ConnectedComponent` that represents the connected component. That's it, now you're connected to Redux! Try changing either of `connect`'s arguments to `null` and observe the test results.
+在编辑器上有两个函数：`mapStateToProps()`、`mapDispatchToProps()`，还有一个叫 `Presentational` 的 React 组件。 用 `ReactRedux` 全局对象中的 `connect` 方法将此组件连接到 Redux，并立即在 `Presentational` 组件中调用， 把结果赋值给一个名为 `ConnectedComponent` 的代表已连接组件的新 `const`。 大功告成，已成功把 React 连接到 Redux！ 尝试更改任何一个 `connect` 参数为 `null` 并观察测试结果。
 
 # --hints--
 
-The `Presentational` component should render.
+应渲染 `Presentational` 组件。
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive a prop `messages` via `connect`.
+`Presentational` 组件应通过 `connect` 接收一个 `messages` 属性。
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive a prop `submitNewMessage` via `connect`.
+`Presentational` 组件应通过 `connect` 接收一个 `submitNewMessage` 属性。
 
 ```js
 assert(

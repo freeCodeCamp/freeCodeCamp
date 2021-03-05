@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036171
-title: Render State in the User Interface
+title: 在用户界面中渲染状态
 challengeType: 6
 forumTopicId: 301409
 dashedName: render-state-in-the-user-interface
@@ -8,23 +8,23 @@ dashedName: render-state-in-the-user-interface
 
 # --description--
 
-Once you define a component's initial state, you can display any part of it in the UI that is rendered. If a component is stateful, it will always have access to the data in `state` in its `render()` method. You can access the data with `this.state`.
+定义了组件的初始 state 之后，就可以在要渲染的 UI 中显示它。 如果组件是有状态的，它将始终可以访问 `render()` 方法中 `state` 的数据。 就可以使用 `this.state` 访问数据。
 
-If you want to access a state value within the `return` of the render method, you have to enclose the value in curly braces.
+如果想在 render 方法的 `return` 中访问 state 值，必须把这个值用花括号括起来。
 
-`State` is one of the most powerful features of components in React. It allows you to track important data in your app and render a UI in response to changes in this data. If your data changes, your UI will change. React uses what is called a virtual DOM, to keep track of changes behind the scenes. When state data updates, it triggers a re-render of the components using that data - including child components that received the data as a prop. React updates the actual DOM, but only where necessary. This means you don't have to worry about changing the DOM. You simply declare what the UI should look like.
+`state` 是 React 组件中最强大的特性之一， 它可以跟踪应用程序中的重要数据，并根据数据的变化渲染 UI。 如果数据发生变化，UI 也会随之改变。 React 使用所谓的虚拟 DOM 来跟踪幕后的变化。 当 state 数据更新时，它会使用该数据触发组件的重新渲染 -- 包括接收 prop 数据的子组件。 React 只在必要的时候更新实际的 DOM， 这意味着你不必担心 DOM 的变更， 只需声明 UI 的外观即可。
 
-Note that if you make a component stateful, no other components are aware of its `state`. Its `state` is completely encapsulated, or local to that component, unless you pass state data to a child component as `props`. This notion of encapsulated `state` is very important because it allows you to write certain logic, then have that logic contained and isolated in one place in your code.
+注意，如果组件是有状态的，其它组件并不知道它的 `state`。 它的 `state` 是完全封装的，或者是局限于组件本身的，除非你将 state 数据作为 `props` 传递给子组件。 封装 `state` 的概念非常重要，因为它允许编写特定的逻辑，然后将该逻辑包含并隔离在代码中的某个位置。
 
 # --instructions--
 
-In the code editor, `MyComponent` is already stateful. Define an `h1` tag in the component's render method which renders the value of `name` from the component's state.
+在代码编辑器中，`MyComponent` 是一个有状态组件， 在组件的 render 方法中定义一个`h1`标签，该方法从组件的 state 渲染 `name` 的值。
 
-**Note:** The `h1` should only render the value from `state` and nothing else. In JSX, any code you write with curly braces `{ }` will be treated as JavaScript. So to access the value from `state` just enclose the reference in curly braces.
+**注意：** `h1` 应该只渲染来自 `state` 的值。 在 JSX 中，使用花括号 `{ }` 编写的任何代码都将被视为 JavaScript。 因此，要访问 `state` 中的值，只需将引用括在花括号中即可。
 
 # --hints--
 
-`MyComponent` should have a key `name` with value `freeCodeCamp` stored in its state.
+`MyComponent` 应该有一个键 `name`，其值 `freeCodeCamp` 存储在其 state 中。
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header enclosed in a single `div`.
+`MyComponent` 应该在 `div` 中渲染一个 `h1` 标题。
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+渲染的 `h1` 标题中应该包含一段文本，这段文本是从组件的 state 中渲染出来的。
 
 ```js
 async () => {

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036144
-title: Use Provider to Connect Redux to React
+title: 使用 Provider 连接 Redux 和 React
 challengeType: 6
 forumTopicId: 301435
 dashedName: use-provider-to-connect-redux-to-react
@@ -8,9 +8,9 @@ dashedName: use-provider-to-connect-redux-to-react
 
 # --description--
 
-In the last challenge, you created a Redux store to handle the messages array and created an action for adding new messages. The next step is to provide React access to the Redux store and the actions it needs to dispatch updates. React Redux provides its `react-redux` package to help accomplish these tasks.
+在上一挑战中，创建了 Redux store 和 action，分别用于处理消息数组和添加新消息。 下一步要为 React 提供访问 Redux store 及发起更新所需的 actions。 `react-redux` 包可帮助我们完成这些任务。
 
-React Redux provides a small API with two key features: `Provider` and `connect`. Another challenge covers `connect`. The `Provider` is a wrapper component from React Redux that wraps your React app. This wrapper then allows you to access the Redux `store` and `dispatch` functions throughout your component tree. `Provider` takes two props, the Redux store and the child components of your app. Defining the `Provider` for an App component might look like this:
+React Redux 提供的 API 有两个关键的功能：`Provider` 和 `connect`。 会在另一个挑战会介绍 `connect`。 `Provider`是 React Redux 包装 React 应用的 wrapper 组件， 它允许访问整个组件树中的 Redux `store` 及 `dispatch`（分发）方法。 `Provider` 需要两个 props：Redux store 和 App 应用的子组件。 用于 App 组件的 `Provider` 可这样定义：
 
 ```jsx
 <Provider store={store}>
@@ -20,13 +20,13 @@ React Redux provides a small API with two key features: `Provider` and `connect`
 
 # --instructions--
 
-The code editor now shows all your Redux and React code from the past several challenges. It includes the Redux store, actions, and the `DisplayMessages` component. The only new piece is the `AppWrapper` component at the bottom. Use this top level component to render the `Provider` from `ReactRedux`, and pass the Redux store as a prop. Then render the `DisplayMessages` component as a child. Once you are finished, you should see your React component rendered to the page.
+此时，编辑器上显示的是过去几个挑战中所有代码， 包括 Redux store、actions、`DisplayMessages` 组件。 新出现的代码是底部的`AppWrapper`组件， 这个顶级组件可用于渲染 `ReactRedux` 的 `Provider`，并把 Redux 的 store 作为 props 传入。 接着，渲染 `DisplayMessages` 为子组件。 完成这些任务后，会看到 React 组件渲染到页面上。
 
-**Note:** React Redux is available as a global variable here, so you can access the Provider with dot notation. The code in the editor takes advantage of this and sets it to a constant `Provider` for you to use in the `AppWrapper` render method.
+**注意：** React Redux 在此可作全局变量，因此可通过点号表示法访问 Provider。 利用这一点，编辑器上的代码把 `Provider` 设置为常量，便于你在 `AppWrapper` 渲染方法中使用。
 
 # --hints--
 
-The `AppWrapper` should render.
+`AppWrapper` 应渲染。
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-The `Provider` wrapper component should have a prop of `store` passed to it, equal to the Redux store.
+`Provider` 组件应传入相当于 Redux store 的 `store` 参数。
 
 ```js
 (getUserInput) =>
@@ -51,7 +51,7 @@ The `Provider` wrapper component should have a prop of `store` passed to it, equ
   );
 ```
 
-`DisplayMessages` should render as a child of `AppWrapper`.
+`DisplayMessages` 应渲染为 `AppWrapper` 的子组件。
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-The `DisplayMessages` component should render an h2, input, button, and `ul` element.
+`DisplayMessages` 组件应渲染 `h2`、`input`、`button`、`ul` 四个元素。
 
 ```js
 assert(

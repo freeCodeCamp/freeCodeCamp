@@ -9,7 +9,7 @@ dashedName: add-rows-with-grid-template-rows
 
 # --description--
 
-在上个挑战中，你创建的网格会自动设置行数。 你可以用 `grid-template-rows` 设置网格的行，就像用 `grid-template-columns` 设置网格的列那样。
+在上个挑战中，你创建的网格会自动设置行数。 要手动调整行，请使用 `grid-template-rows` 属性，就像在上一个挑战中使用 `grid-template-columns` 属性一样。
 
 # --instructions--
 

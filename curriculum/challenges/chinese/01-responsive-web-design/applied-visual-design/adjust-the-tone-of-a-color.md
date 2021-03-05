@@ -13,7 +13,7 @@ dashedName: adjust-the-tone-of-a-color
 
 # --instructions--
 
-所有元素的默认 `background-color` 都是 `transparent`。 当前页面的导航栏 `nav` 背景色之所以看起来是蓝绿色，是因为它背后的 `header` 的 `background-color` 属性值为 `cyan`。 请将 `nav` 的 `background-color` 也设置为 `cyan`，但把它的饱和度调整为 `80% saturation`，亮度调整为 `25% lightness`。
+所有元素的默认 `background-color` 都是 `transparent`。 当前页面的导航栏 `nav` 背景色之所以看起来是蓝绿色，是因为它背后的 `header` 的 `background-color` 属性值为 `cyan`。 给 `nav` 元素增加一个 `background-color`，使它的颜色也为 `cyan`，饱和度为 `80%`，亮度为 `25%`，以修改它的色调和阴影。
 
 # --hints--
 

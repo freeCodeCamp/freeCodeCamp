@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616d
-title: Use PropTypes to Define the Props You Expect
+title: 使用 PropTypes 来定义 Props 的类型
 challengeType: 6
 forumTopicId: 301419
 dashedName: use-proptypes-to-define-the-props-you-expect
@@ -8,23 +8,23 @@ dashedName: use-proptypes-to-define-the-props-you-expect
 
 # --description--
 
-React provides useful type-checking features to verify that components receive props of the correct type. For example, your application makes an API call to retrieve data that you expect to be in an array, which is then passed to a component as a prop. You can set `propTypes` on your component to require the data to be of type `array`. This will throw a useful warning when the data is of any other type.
+React 提供了有用的类型检查特性，以验证组件是否接收了正确类型的 props。 例如，应用程序调用 API 来检索数据是否是数组，然后将数据作为 prop 传递给组件。 可以在组件上设置 `propTypes`，以要求数据的类型为 `array`。 当数据是任何其它类型时，都会抛出警告。
 
-It's considered a best practice to set `propTypes` when you know the type of a prop ahead of time. You can define a `propTypes` property for a component in the same way you defined `defaultProps`. Doing this will check that props of a given key are present with a given type. Here's an example to require the type `function` for a prop called `handleClick`:
+当提前知道 prop 的类型时，最佳实践是设置其 `propTypes`。 可以为组件定义 `propTypes` 属性，方法与定义 `defaultProps` 相同。 这样做将检查给定键的 prop 是否是给定类型。 这里有一个示例，表示名为 `handleClick` 的 prop 应为 `function` 类型：
 
 `MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }`
 
-In the example above, the `PropTypes.func` part checks that `handleClick` is a function. Adding `isRequired` tells React that `handleClick` is a required property for that component. You will see a warning if that prop isn't provided. Also notice that `func` represents `function`. Among the seven JavaScript primitive types, `function` and `boolean` (written as `bool`) are the only two that use unusual spelling. In addition to the primitive types, there are other types available. For example, you can check that a prop is a React element. Please refer to the [documentation](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type) for all of the options.
+在上面的示例中，`PropTypes.func` 部分检查 `handleClick` 是否为函数。 添加 `isRequired` 是为了告诉 React `handleClick` 是该组件的必需属性。 如果未提供该 prop，将看到警告信息。 另请注意，`func` 表示 `function`。 在 7 种 JavaScript 基本类型中，`function` 和 `boolean`（写为 `bool`）是仅有的使用异常拼写的两种类型。 除了基本类型，还有其它类型可用。 例如，可以检查 prop 是否为 React 组件， 请参阅[文档](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type)以获取所有选项。
 
-**Note:** As of React v15.5.0, `PropTypes` is imported independently from React, like this: `import PropTypes from 'prop-types';`
+**注意：** 在 React v15.5.0 版本中, `PropTypes` 可以从 React 中单独引入，例如： `import PropTypes from 'prop-types';`。
 
 # --instructions--
 
-Define `propTypes` for the `Items` component to require `quantity` as a prop and verify that it is of type `number`.
+为 `Items` 组件定义 `propTypes`，要求 `quantity` 作为 prop，并验证它是 `number` 类型。
 
 # --hints--
 
-The `ShoppingCart` component should render.
+应该渲染 `ShoppingCart` 组件。
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-The `Items` component should render.
+应该渲染 `Items` 组件。
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The `Items` component should include a `propTypes` check to require a value for `quantity` and ensure that its value is a number.
+`Items` 组件应该包含一个 `propTypes`，要求 `quantity` 有一个 number 类型的值。
 
 ```js
 (getUserInput) =>

@@ -19,7 +19,7 @@ dashedName: create-flexible-layouts-using-auto-fit
 
 # --hints--
 
-class 为 `container2` 的元素应具有 `grid-template-columns` 属性，且属性值应使用 `repeat` 和 `auto-fit`，以便将最小宽度为 `60px`、最大宽度为 `1fr` 的列填充至网格。
+`container2` class 应该有一个 `grid-template-columns` 属性，通过 `repeat` 和 `auto-fit` 将网格中的列的宽度设置为最小 `60px`，最大 `1fr`。
 
 ```js
 assert(

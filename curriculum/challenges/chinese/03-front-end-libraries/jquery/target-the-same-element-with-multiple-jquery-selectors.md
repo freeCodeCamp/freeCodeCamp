@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908626
-title: Target the Same Element with Multiple jQuery Selectors
+title: 用多个 jQuery 选择器选择同一个元素
 challengeType: 6
 forumTopicId: 18322
 required:
@@ -11,42 +11,41 @@ dashedName: target-the-same-element-with-multiple-jquery-selectors
 
 # --description--
 
-Now you know three ways of targeting elements: by type: `$("button")`, by class: `$(".btn")`, and by id `$("#target1")`.
+现在学写了三种选取标签的方法：用标签选择器： `$("button")`，用类选择器：`$(".btn")` 以及用 id 选择器：`$("#target1")` 。
 
-Although it is possible to add multiple classes in a single `.addClass()` call, let's add them to the same element in *three separate ways*.
+虽然可以在单个 `.addClass()` 内添加多个类，但是我们可以用*三种不同的方式*给一种标签添加类。
 
-Using `.addClass()`, add only one class at a time to the same element, three different ways:
+以三种不同的方式用 `.addClass()` 方法每次只给一种标签添加一个类：
 
-Add the `animated` class to all elements with type `button`.
+给所有的 `button` 标签添加 `animated` 类。
 
-Add the `shake` class to all the buttons with class `.btn`.
+给所有类为 `.btn` 的 button 标签添加 `shake` 类。
 
-Add the `btn-primary` class to the button with id `#target1`.
+给所有 id 为 `#target1` 的 button 标签添加 `btn-primary` 类。
 
-**Note**  
-You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes `shake`, `animated`, and `btn-primary` to `#target1`.
+**注意：**只针对一个元素并且一次只能添加一个 class。 总之，三个选择器最终将添加三个 class `shake`、`animated` 以及 `btn-primary` 到 `#target1` 上。
 
 # --hints--
 
-Your code should use the `$("button")` selector.
+应该使用 `$("button")` 选择器。
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?button\s*?(?:'|")/gi));
 ```
 
-Your code should use the `$(".btn")` selector.
+应该使用 `$(".btn")` 选择器。
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?\.btn\s*?(?:'|")/gi));
 ```
 
-Your code should use the `$("#target1")` selector.
+应该使用 `$("#target1")` 选择器。
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
 ```
 
-You should only add one class with each of your three selectors.
+三个选择器每个应该只添加一个类。
 
 ```js
 assert(
@@ -55,7 +54,7 @@ assert(
 );
 ```
 
-Your `#target1` element should have the classes `animated`‚ `shake` and `btn-primary`.
+`#target1` 标签应具有 `animated`、`shake` 和 `btn-primary` 三个类。
 
 ```js
 assert(
@@ -65,7 +64,7 @@ assert(
 );
 ```
 
-You should only use jQuery to add these classes to the element.
+应该仅用 jQuery 给标签添加类。
 
 ```js
 assert(!code.match(/class.*animated/g));

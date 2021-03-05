@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036178
-title: Create a Controlled Input
+title: 创建一个可以控制的输入框
 challengeType: 6
 forumTopicId: 301385
 dashedName: create-a-controlled-input
@@ -8,23 +8,23 @@ dashedName: create-a-controlled-input
 
 # --description--
 
-Your application may have more complex interactions between `state` and the rendered UI. For example, form control elements for text input, such as `input` and `textarea`, maintain their own state in the DOM as the user types. With React, you can move this mutable state into a React component's `state`. The user's input becomes part of the application `state`, so React controls the value of that input field. Typically, if you have React components with input fields the user can type into, it will be a controlled input form.
+应用程序可能在 `state` 和渲染的 UI 之间有更复杂的交互。 例如，用于文本输入的表单控件元素（如 `input` 和 `textarea`）在用户键入时在 DOM 中维护自己的 state。 通过 React，可以将这种可变 state 转移到 React 组件的 `state` 中。 用户的输入变成了应用程序 `state` 的一部分，因此 React 控制该输入字段的值。 通常，如果 React 组件具有用户可以键入的输入字段，那么它将是一个受控的输入表单。
 
 # --instructions--
 
-The code editor has the skeleton of a component called `ControlledInput` to create a controlled `input` element. The component's `state` is already initialized with an `input` property that holds an empty string. This value represents the text a user types into the `input` field.
+代码编辑器具有一个名为 `ControlledInput` 的组件框架，用于创建受控的 `input` 元素。 组件的 `state` 已经被包含空字符串的 `input` 属性初始化。 此值表示用户在 `input` 字段中键入的文本。
 
-First, create a method called `handleChange()` that has a parameter called `event`. When the method is called, it receives an `event` object that contains a string of text from the `input` element. You can access this string with `event.target.value` inside the method. Update the `input` property of the component's `state` with this new string.
+首先，创建一个名为 `handleChange()` 的方法，该方法具有一个名为 `event` 的参数。 方法被调用时，它接收一个 `event` 对象，该对象包含一个来自 `input` 元素的字符串文本。 可以使用方法内的 `event.target.value` 来访问这个字符串。 用这个新字符串更新组件的`state`的`input`属性。
 
-In the render method, create the `input` element above the `h4` tag. Add a `value` attribute which is equal to the `input` property of the component's `state`. Then add an `onChange()` event handler set to the `handleChange()` method.
+在 `render` 方法中的 `h4` 标签之上创建 `input` 元素。 添加一个 `value` 属性，使其等于组件 `state` 的 `input` 属性。 然后将 `onChange()` 事件处理程序设置到 `handleChange()` 方法中。
 
-When you type in the input box, that text is processed by the `handleChange()` method, set as the `input` property in the local `state`, and rendered as the value in the `input` box on the page. The component `state` is the single source of truth regarding the input data.
+在输入框中键入时，文本由 `handleChange()` 方法处理，文本被设置为本地 `state` 中的 `input` 属性，并渲染在页面上的 `input` 框中。 组件 `state` 是输入数据的唯一真实来源。
 
-Last but not least, don't forget to add the necessary bindings in the constructor.
+最后，不要忘记在构造函数中添加必要的绑定。
 
 # --hints--
 
-`ControlledInput` should return a `div` element which contains an `input` and a `p` tag.
+`ControlledInput` 应该返回包含一个 `input` 标签和 `p` 标签的 `div` 元素。
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-The state of `ControlledInput` should initialize with an `input` property set to an empty string.
+`ControlledInput` 的 state 应该使用设置为空字符串的 `input` 属性初始化。
 
 ```js
 assert.strictEqual(
@@ -48,7 +48,7 @@ assert.strictEqual(
 );
 ```
 
-Typing in the input element should update the state and the value of the input, and the `p` element should render this state as you type.
+Input 元素中的键入值应该更新 input 的 state 和值，并且 `p` 元素应该在输入时呈现 state。
 
 ```js
 async () => {

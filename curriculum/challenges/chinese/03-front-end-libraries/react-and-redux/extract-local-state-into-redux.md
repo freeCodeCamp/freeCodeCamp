@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036149
-title: Extract Local State into Redux
+title: 将局部状态提取到 Redux 中
 challengeType: 6
 forumTopicId: 301428
 dashedName: extract-local-state-into-redux
@@ -8,17 +8,17 @@ dashedName: extract-local-state-into-redux
 
 # --description--
 
-You're almost done! Recall that you wrote all the Redux code so that Redux could control the state management of your React messages app. Now that Redux is connected, you need to extract the state management out of the `Presentational` component and into Redux. Currently, you have Redux connected, but you are handling the state locally within the `Presentational` component.
+马上就完成了! 请回顾一下为管理 React messages app 的状态写的 Redux 代码。 现在有了连接好的 Redux，还要从`Presentational`组件中提取状态管理到 Redux， 目前，已连接 Redux，但正在 `Presentational` 组件中本地处理状态。
 
 # --instructions--
 
-In the `Presentational` component, first, remove the `messages` property in the local `state`. These messages will be managed by Redux. Next, modify the `submitMessage()` method so that it dispatches `submitNewMessage()` from `this.props`, and pass in the current message input from local `state` as an argument. Because you removed `messages` from local state, remove the `messages` property from the call to `this.setState()` here as well. Finally, modify the `render()` method so that it maps over the messages received from `props` rather than `state`.
+在 `Presentational` 组件中，先删除本地 `state` 中的 `messages` 属性， 被删的 messages 将由 Redux 管理。 接着，修改 `submitMessage()` 方法，使该方法从 `this.props` 那里分发 `submitNewMessage()`；从本地 `state` 中传入当前消息输入作为参数。 因本地状态删除了 `messages` 属性，所以在调用 `this.setState()` 时也要删除 `messages` 属性。 最后，修改 `render()` 方法，使其所映射的消息是从 `props` 接收的，而不是 `state`
 
-Once these changes are made, the app will continue to function the same, except Redux manages the state. This example also illustrates how a component may have local `state`: your component still tracks user input locally in its own `state`. You can see how Redux provides a useful state management framework on top of React. You achieved the same result using only React's local state at first, and this is usually possible with simple apps. However, as your apps become larger and more complex, so does your state management, and this is the problem Redux solves.
+完成这些更改后，我们的应用会实现 Redux 管理应用的状态，但它继续运行着相同的功能。 此示例还阐明了组件获得本地 `state` 的方式，即在自己的 `state` 中继续跟踪用户本地输入。 由此可见，Redux 为 React 提供了很有用的状态管理框架。 先前，仅使用 React 的本地状态也实现了相同的结果，这在应付简单的应用时通常是可行的。 但是，随着应用变得越来越大，越来越复杂，应用的状态管理也变得非常困难，Redux 就是为解决这样的问题而诞生的。
 
 # --hints--
 
-The `AppWrapper` should render to the page.
+`AppWrapper` 应该渲染该到页面上。
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The `Presentational` component should render to page.
+`Presentational` 应该渲染到页面上.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `Presentational` component should render an `h2`, `input`, `button`, and `ul` elements.
+`Presentational` 组件应渲染 `h2`、`input`、`button`、`ul` 四个元素。
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive `messages` from the Redux store as a prop.
+`Presentational` 组件应接收 Redux store 的 `messages` 属性。
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive the `submitMessage` action creator as a prop.
+`Presentational` 组件应接收创建 action 的函数的 `submitMessage` 属性。
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-The state of the `Presentational` component should contain one property, `input`, which is initialized to an empty string.
+`Presentational` 组件的状态应包含一个初始化为空字符串的 `input` 属性。
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-Typing in the `input` element should update the state of the `Presentational` component.
+键入 `input` 元素应更新 `Presentational` 组件的状态。
 
 ```js
 async () => {
@@ -124,7 +124,7 @@ async () => {
 };
 ```
 
-Dispatching the `submitMessage` on the `Presentational` component should update Redux store and clear the input in local state.
+在 `Presentational` 组件上 dispatch `submitMessage` 应更新 Redux store 并清除本地状态中的输入。
 
 ```js
 async () => {
@@ -156,7 +156,7 @@ async () => {
 };
 ```
 
-The `Presentational` component should render the `messages` from the Redux store.
+`Presentational` 组件应渲染 Redux store 中的 `messages`。
 
 ```js
 async () => {

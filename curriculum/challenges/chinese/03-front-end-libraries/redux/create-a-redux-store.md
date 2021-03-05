@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614b
-title: Create a Redux Store
+title: 创建一个 Redux Store
 challengeType: 6
 forumTopicId: 301439
 dashedName: create-a-redux-store
@@ -8,29 +8,29 @@ dashedName: create-a-redux-store
 
 # --description--
 
-Redux is a state management framework that can be used with a number of different web technologies, including React.
+Redux 是一个状态管理框架，可以与包括 React 在内的许多不同的 Web 技术一起使用。
 
-In Redux, there is a single state object that's responsible for the entire state of your application. This means if you had a React app with ten components, and each component had its own local state, the entire state of your app would be defined by a single state object housed in the Redux `store`. This is the first important principle to understand when learning Redux: the Redux store is the single source of truth when it comes to application state.
+在 Redux 中，有一个状态对象负责应用程序的整个状态， 这意味着如果你有一个包含十个组件且每个组件都有自己的本地状态的 React 项目，那么这个项目的整个状态将通过 Redux `store` 被定义为单个状态对象， 这是学习 Redux 时要理解的第一个重要原则：Redux store 是应用程序状态的唯一真实来源。
 
-This also means that any time any piece of your app wants to update state, it **must** do so through the Redux store. The unidirectional data flow makes it easier to track state management in your app.
+这也意味着，如果应用程序想要更新状态，**只能**通过 Redux store 执行， 单向数据流可以更轻松地对应用程序中的状态进行监测管理。
 
 # --instructions--
 
-The Redux `store` is an object which holds and manages application `state`. There is a method called `createStore()` on the Redux object, which you use to create the Redux `store`. This method takes a `reducer` function as a required argument. The `reducer` function is covered in a later challenge, and is already defined for you in the code editor. It simply takes `state` as an argument and returns `state`.
+Redux `store` 是一个保存和管理应用程序状态的`state`， 可以使用 Redux 对象中的 `createStore()` 来创建一个 redux `store`， 此方法将 `reducer` 函数作为必需参数， `reducer` 函数将在后面的挑战中介绍。该函数已在代码编辑器中为你定义， 它只需将 `state` 作为参数并返回一个 `state` 即可。
 
-Declare a `store` variable and assign it to the `createStore()` method, passing in the `reducer` as an argument.
+声明一个 `store` 变量并把它分配给 `createStore()` 方法，然后把 `reducer` 作为一个参数传入即可。
 
-**Note:** The code in the editor uses ES6 default argument syntax to initialize this state to hold a value of `5`. If you're not familiar with default arguments, you can refer to the [ES6 section in the Curriculum](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) which covers this topic.
+**注意**: 编辑器中的代码使用 ES6 默认参数语法将 state 的值初始化为 `5`， 如果你不熟悉默认参数，你可以参考[ES6 全部课程](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions)，它里面涵盖了这个内容。
 
 # --hints--
 
-The redux store should exist.
+Redux store 应当存在。
 
 ```js
 assert(typeof store.getState === 'function');
 ```
 
-The redux store should have a value of 5 for the state.
+Redux store 的 state 的值应该为 5。
 
 ```js
 assert(store.getState() === 5);

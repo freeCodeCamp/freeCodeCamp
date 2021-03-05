@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036145
-title: Map State to Props
+title: 映射 State 到 Props
 challengeType: 6
 forumTopicId: 301433
 dashedName: map-state-to-props
@@ -8,37 +8,37 @@ dashedName: map-state-to-props
 
 # --description--
 
-The `Provider` component allows you to provide `state` and `dispatch` to your React components, but you must specify exactly what state and actions you want. This way, you make sure that each component only has access to the state it needs. You accomplish this by creating two functions: `mapStateToProps()` and `mapDispatchToProps()`.
+`Provider`可向 React 组件提供 `state` 和 `dispatch` ，但必须确切地指定所需要的 state 和 actions， 以确保每个组件只能访问所需的 state。 完成这个任务，需要创建两个函数：`mapStateToProps()`、`mapDispatchToProps()`。
 
-In these functions, you declare what pieces of state you want to have access to and which action creators you need to be able to dispatch. Once these functions are in place, you'll see how to use the React Redux `connect` method to connect them to your components in another challenge.
+在这两个函数中，声明 state 中函数所要访问的部分及需要 dispatch 的创建 action 的函数。 完成这些，我们就可以迎接下一个挑战，学习如何使用 React Redux 的 `connect` 方法来把函数连接到组件了。
 
-**Note:** Behind the scenes, React Redux uses the `store.subscribe()` method to implement `mapStateToProps()`.
+**注意：** 在幕后，React Redux 用 `store.subscribe()` 方法来实现 `mapStateToProps()`。
 
 # --instructions--
 
-Create a function `mapStateToProps()`. This function should take `state` as an argument, then return an object which maps that state to specific property names. These properties will become accessible to your component via `props`. Since this example keeps the entire state of the app in a single array, you can pass that entire state to your component. Create a property `messages` in the object that's being returned, and set it to `state`.
+创建 `mapStateToProps()` 函数， 以 `state` 为参数，然后返回一个对象，该对象把 state 映射到特定属性名上， 这些属性能通过 `props` 访问组件。 由于此示例把 app 应用的整个状态保存在单一数组中，可把整个状态传给组件。 在返回的对象中创建 `messages` 属性，并设置为 `state`。
 
 # --hints--
 
-The const `state` should be an empty array.
+常量 `state` 应为空数组。
 
 ```js
 assert(Array.isArray(state) && state.length === 0);
 ```
 
-`mapStateToProps` should be a function.
+`mapStateToProps` 应为函数。
 
 ```js
 assert(typeof mapStateToProps === 'function');
 ```
 
-`mapStateToProps` should return an object.
+`mapStateToProps` 应返回一个对象。
 
 ```js
 assert(typeof mapStateToProps() === 'object');
 ```
 
-Passing an array as state to `mapStateToProps` should return this array assigned to a key of `messages`.
+把 state 数组传入 `mapStateToProps` 后应返回赋值给 `messages` 键的数组。
 
 ```js
 assert(mapStateToProps(['messages']).messages.pop() === 'messages');
