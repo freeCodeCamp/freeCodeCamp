@@ -24,7 +24,7 @@ Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be t
 
 For this, the reader need not recognize `\` for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
 
-Note that with the exception of `()"` (`\` if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
+Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. Anything else is allowed without quotes.
 
 The reader should be able to read the following input
 
