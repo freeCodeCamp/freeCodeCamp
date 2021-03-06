@@ -88,6 +88,7 @@ export class CertChallenge extends Component {
             i18nCertText={i18nCertText}
             isHonest={isHonest}
             superBlock={superBlock}
+            username={username}
             verifyCert={verifyCert}
           />
         ) : (

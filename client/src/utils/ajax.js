@@ -59,7 +59,7 @@ export function getArticleById(shortId) {
 
 export function getVerifyCanClaimCert(username, superBlock) {
   return get(
-    `certificate/verify-can-claim-cert?username=${username}?superBlock=${superBlock}`
+    `/certificate/verify-can-claim-cert?username=${username}&superBlock=${superBlock}`
   );
 }
 

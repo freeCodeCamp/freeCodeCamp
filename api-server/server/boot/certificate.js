@@ -583,7 +583,6 @@ function createVerifyCanClaim(certTypeIds, app) {
       return Observable.of(certTypeIds[certType])
         .flatMap(challenge => {
           const certName = certText[certType];
-
           const { tests } = challenge;
           if (!canClaim(tests, user.completedChallenges)) {
             return Observable.just({

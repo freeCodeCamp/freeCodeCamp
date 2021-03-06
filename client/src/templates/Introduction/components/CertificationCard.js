@@ -21,6 +21,7 @@ const propTypes = {
   isHonest: PropTypes.bool,
   steps: PropTypes.object,
   superBlock: PropTypes.string,
+  username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
 };
 
@@ -45,7 +46,8 @@ const CertificationCard = ({
   isHonest,
   certCheckmarkStyle,
   verifyCert,
-  steps
+  steps,
+  username
 }) => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(true);
@@ -113,6 +115,7 @@ const CertificationCard = ({
             i18nCertText={i18nCertText}
             steps={steps}
             superBlock={superBlock}
+            username={username}
           />
         )}
         <button
