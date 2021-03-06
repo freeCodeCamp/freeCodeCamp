@@ -20,7 +20,7 @@ Let's create the basic functionality of a hash table. We've created a naive hash
 
 Be sure to write your code to account for collisions!
 
-Note: The `remove` method tests won't pass until the `add` and `lookup` methods are correctly implemented.
+**Note:** The `remove` method tests won't pass until the `add` and `lookup` methods are correctly implemented.
 
 # --hints--
 
