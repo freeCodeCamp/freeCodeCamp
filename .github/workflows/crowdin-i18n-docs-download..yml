@@ -118,6 +118,12 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
+      - name: Install Dependencies
+        working-directory: ./tools
+        run: |
+          cd ./crowdin
+          npm ci
+          
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR
         uses: ./tools/crowdin/actions/pr-creator
