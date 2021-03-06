@@ -293,7 +293,8 @@
       "preview": "Preview"
     },
     "help-translate": "We are still translating the following certifications.",
-    "help-translate-link": "Help us translate."
+    "help-translate-link": "Help us translate.",
+    "help-translate-link-url": "https://contribute.freecodecamp.org/#/how-to-translate-files"
   },
   "donate": {
     "title": "Support our nonprofit",

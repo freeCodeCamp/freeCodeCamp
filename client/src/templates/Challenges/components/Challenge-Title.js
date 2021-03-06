@@ -26,7 +26,7 @@ function ChallengeTitle({
       {translationPending && (
         <Link
           className='title-translation-cta'
-          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+          to={i18next.t('learn.help-translate-link-url')}
         >
           {i18next.t('misc.translation-pending')}
         </Link>
