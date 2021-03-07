@@ -6,7 +6,7 @@ import {
   challengeFilesSelector,
   challengeMetaSelector,
   projectFormValuesSelector
-} from '../redux';
+} from './';
 import { tap, mapTo } from 'rxjs/operators';
 import { forumLocation } from '../../../../../config/env.json';
 
