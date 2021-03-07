@@ -212,6 +212,18 @@ const getLanguageTranslations = async ({ projectId, languageId }) => {
   return null;
 };
 
+const deleteLanguageTranslations = async (projectId, languageId, stringId) => {
+  let headers = { ...authHeader };
+  const endPoint = `projects/${projectId}/translations?languageId=${languageId}&stringId=${stringId}`;
+  console.log(`deleting ${stringId}...`);
+  await makeRequest({
+    method: 'delete',
+    endPoint,
+    headers
+  });
+  return null;
+};
+
 module.exports = {
   getStrings,
   updateString,
@@ -220,5 +232,6 @@ module.exports = {
   getStringTranslations,
   addTranslation,
   deleteTranslation,
-  getLanguageTranslations
+  getLanguageTranslations,
+  deleteLanguageTranslations
 };
