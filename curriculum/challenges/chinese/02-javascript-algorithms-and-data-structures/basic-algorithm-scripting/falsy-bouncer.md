@@ -1,6 +1,6 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
-title: Falsy Bouncer
+title: 过滤数组中的假值
 challengeType: 5
 forumTopicId: 16014
 dashedName: falsy-bouncer
@@ -8,33 +8,33 @@ dashedName: falsy-bouncer
 
 # --description--
 
-Remove all falsy values from an array.
+从数组中移除所有假值（falsy values）。
 
-Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
+JavaScript 中的假值有 `false`、`null`、`0`、`""`、`undefined`、`NaN`。
 
-Hint: Try converting each value to a Boolean.
+提示：可以考虑将每个值都转换为布尔值（boolean）。
 
 # --hints--
 
-`bouncer([7, "ate", "", false, 9])` should return `[7, "ate", 9]`.
+`bouncer([7, "ate", "", false, 9])` 应返回 `[7, "ate", 9]`。
 
 ```js
 assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9]);
 ```
 
-`bouncer(["a", "b", "c"])` should return `["a", "b", "c"]`.
+`bouncer(["a", "b", "c"])` 应返回 `["a", "b", "c"]`。
 
 ```js
 assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c']);
 ```
 
-`bouncer([false, null, 0, NaN, undefined, ""])` should return `[]`.
+`bouncer([false, null, 0, NaN, undefined, ""])` 应返回 `[]`。
 
 ```js
 assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 ```
 
-`bouncer([null, NaN, 1, 2, undefined])` should return `[1, 2]`.
+`bouncer([null, NaN, 1, 2, undefined])` 应返回 `[1, 2]`。
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);

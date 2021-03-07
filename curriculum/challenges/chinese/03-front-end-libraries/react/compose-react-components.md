@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036166
-title: Compose React Components
+title: 组合 React 组件
 challengeType: 6
 forumTopicId: 301381
 dashedName: compose-react-components
@@ -8,17 +8,17 @@ dashedName: compose-react-components
 
 # --description--
 
-As the challenges continue to use more complex compositions with React components and JSX, there is one important point to note. Rendering ES6 style class components within other components is no different than rendering the simple components you used in the last few challenges. You can render JSX elements, stateless functional components, and ES6 class components within other components.
+随着挑战继续，将组合使用更复杂的 React 组件和 JSX，有一点需要注意。 在其它组件中渲染 ES6 风格的类组件和渲染在过去几个挑战中使用的简单组件没有什么不同。 可以在其它组件中渲染 JSX 元素、无状态功能组件和 ES6 类组件。
 
 # --instructions--
 
-In the code editor, the `TypesOfFood` component is already rendering a component called `Vegetables`. Also, there is the `Fruits` component from the last challenge.
+在代码编辑器中，`TypesOfFood` 组件已经渲染了一个名为 `Vegetables` 的组件。 此外，还有上次挑战中的 `Fruits` 组件。
 
-Nest two components inside of `Fruits` — first `NonCitrus`, and then `Citrus`. Both of these components are provided for you behind the scenes. Next, nest the `Fruits` class component into the `TypesOfFood` component, below the `h1` header and above `Vegetables`. The result should be a series of nested components, which uses two different component types.
+在 `Fruits` 中嵌套两个组件，首先 `NonCitrus`，然后是 `Citrus`， 这两个组件都已经引入。 接下来，将 `Fruits` 类组件嵌到 `TypesOfFood` 组件中，位于 `h1` 标题下方和 `Vegetables` 上方。 结果应该是一系列嵌套的组件，它们使用两种不同的组件类型。
 
 # --hints--
 
-The `TypesOfFood` component should return a single `div` element.
+`TypesOfFood` 组件应该返回单个 `div` 元素。
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The `TypesOfFood` component should return the `Fruits` component.
+`TypesOfFood` 组件应该返回 `Fruits` 组件。
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `Fruits` component should return the `NonCitrus` component and the `Citrus` component.
+`Fruits` 组件应该返回 `NonCitrus` 组件和 `Citrus` 组件。
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-The `TypesOfFood` component should return the `Vegetables` component below the `Fruits` component.
+`TypesOfFood` 组件应该返回 `Vegetables` 组件，且其位于 `Fruits` 组件之下。
 
 ```js
 assert(

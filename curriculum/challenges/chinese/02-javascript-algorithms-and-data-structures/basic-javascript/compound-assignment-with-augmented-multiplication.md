@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b1
-title: Compound Assignment With Augmented Multiplication
+title: 复合赋值之 *=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
@@ -9,45 +9,45 @@ dashedName: compound-assignment-with-augmented-multiplication
 
 # --description--
 
-The `*=` operator multiplies a variable by a number.
+`*=` 操作符是让变量与一个数相乘并赋值。
 
 `myVar = myVar * 5;`
 
-will multiply `myVar` by `5`. This can be rewritten as:
+变量 `myVar` 等于自身与数值 `5` 相乘的值。 也可以写作这样的形式:
 
 `myVar *= 5;`
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `*=` operator.
+使用 `*=` 操作符给 `a`，`b` 和 `c` 实现赋值相乘操作。
 
 # --hints--
 
-`a` should equal `25`.
+`a` 应该等于`25`。
 
 ```js
 assert(a === 25);
 ```
 
-`b` should equal `36`.
+`b` 应该等于`36`。
 
 ```js
 assert(b === 36);
 ```
 
-`c` should equal `46`.
+`c` 应该等于`46`。
 
 ```js
 assert(c === 46);
 ```
 
-You should use the `*=` operator for each variable.
+应该对每个变量使用 `*=` 操作符。
 
 ```js
 assert(code.match(/\*=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+不要修改注释上面的代码。
 
 ```js
 assert(

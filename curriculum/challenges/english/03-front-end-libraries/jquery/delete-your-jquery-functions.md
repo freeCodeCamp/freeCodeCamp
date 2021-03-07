@@ -34,7 +34,7 @@ You should leave your `$(document).ready(function() {` at the beginning of your 
 assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
 ```
 
-You should leave your "document ready function" closing `})` intact.
+You should leave the `document.ready` function's closing `})` intact.
 
 ```js
 assert(code.match(/.*\s*\}\);/g));

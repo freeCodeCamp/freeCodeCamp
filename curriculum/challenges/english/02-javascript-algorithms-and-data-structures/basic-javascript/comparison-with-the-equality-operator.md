@@ -22,34 +22,36 @@ function equalityTest(myVal) {
 }
 ```
 
-If `myVal` is equal to `10`, the equality operator returns `true`, so the code in the curly braces will execute, and the function will return `"Equal"`. Otherwise, the function will return `"Not Equal"`. In order for JavaScript to compare two different <dfn>data types</dfn> (for example, `numbers` and `strings`), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
+If `myVal` is equal to `10`, the equality operator returns `true`, so the code in the curly braces will execute, and the function will return `Equal`. Otherwise, the function will return `Not Equal`. In order for JavaScript to compare two different <dfn>data types</dfn> (for example, `numbers` and `strings`), it must convert one type to another. This is known as Type Coercion. Once it does, however, it can compare terms as follows:
 
 ```js
-1   ==  1   // true
-1   ==  2   // false
-1   == '1'  // true
-"3" ==  3   // true
+1   ==  1
+1   ==  2
+1   == '1'
+"3" ==  3
 ```
+
+In order, these expressions would evaluate to `true`, `false`, `true`, and `true`.
 
 # --instructions--
 
-Add the equality operator to the indicated line so that the function will return "Equal" when `val` is equivalent to `12`.
+Add the equality operator to the indicated line so that the function will return the string `Equal` when `val` is equivalent to `12`.
 
 # --hints--
 
-`testEqual(10)` should return "Not Equal"
+`testEqual(10)` should return the string `Not Equal`
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` should return "Equal"
+`testEqual(12)` should return the string `Equal`
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` should return "Equal"
+`testEqual("12")` should return the string `Equal`
 
 ```js
 assert(testEqual('12') === 'Equal');

@@ -7,6 +7,7 @@ import { Spacer, Link } from '../components/helpers';
 import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash';
+import { Trans, useTranslation } from 'react-i18next';
 
 const propTypes = {
   certName: PropTypes.string,
@@ -44,6 +45,8 @@ const ShowProjectLinks = props => {
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);
 
+  const { t } = useTranslation();
+
   const getProjectSolution = (projectId, projectTitle) => {
     const {
       user: { completedChallenges }
@@ -73,7 +76,7 @@ const ShowProjectLinks = props => {
           onClick={onClickHandler}
           className='project-link-button-override'
         >
-          solution
+          {t('certification.project.solution')}
         </button>
       );
     }
@@ -81,11 +84,11 @@ const ShowProjectLinks = props => {
       return (
         <>
           <a href={solution} rel='noopener noreferrer' target='_blank'>
-            solution
+            {t('certification.project.solution')}
           </a>
           ,{' '}
           <a href={githubLink} rel='noopener noreferrer' target='_blank'>
-            source
+            {t('certification.project.source')}
           </a>
         </>
       );
@@ -99,13 +102,13 @@ const ShowProjectLinks = props => {
           rel='noopener noreferrer'
           target='_blank'
         >
-          solution
+          {t('certification.project.solution')}
         </a>
       );
     }
     return (
       <button className='project-link-button-override' onClick={onClickHandler}>
-        solution
+        {t('certification.project.solution')}
       </button>
     );
   };
@@ -132,7 +135,7 @@ const ShowProjectLinks = props => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              {cert.title}
+              {t(`certification.project.title.${cert.title}`, cert.title)}
             </a>
           </li>
         );
@@ -142,7 +145,7 @@ const ShowProjectLinks = props => {
       ({ link, title, id }) => (
         <li key={id}>
           <Link to={link} className='project-link'>
-            {title}
+            {t(`certification.project.title.${title}`, title)}
           </Link>
           : {getProjectSolution(id, title)}
         </li>
@@ -158,9 +161,12 @@ const ShowProjectLinks = props => {
   const { files, isOpen, projectTitle, solution } = solutionState;
   return (
     <div>
-      {certName === 'Legacy Full Stack'
-        ? `As part of this Legacy Full Stack certification, ${name} completed the following certifications:`
-        : `As part of this certification, ${name} built the following projects and got all automated test suites to pass:`}
+      {t(
+        certName === 'Legacy Full Stack'
+          ? 'certification.project.heading-legacy-full-stack'
+          : 'certification.project.heading',
+        { user: name }
+      )}
       <Spacer />
       <ul>{renderProjectsFor(certName)}</ul>
       <Spacer />
@@ -173,23 +179,25 @@ const ShowProjectLinks = props => {
           solution={solution}
         />
       ) : null}
-      If you suspect that any of these projects violate the{' '}
-      <a
-        href='https://www.freecodecamp.org/news/academic-honesty-policy/'
-        target='_blank'
-        rel='noreferrer'
-      >
-        academic honesty policy
-      </a>
-      , please{' '}
-      <a
-        href={`/user/${username}/report-user`}
-        target='_blank'
-        rel='noreferrer'
-      >
-        report this to our team
-      </a>
-      .
+      <Trans i18nKey='certification.project.footnote'>
+        If you suspect that any of these projects violate the{' '}
+        <a
+          href='https://www.freecodecamp.org/news/academic-honesty-policy/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          academic honesty policy
+        </a>
+        , please{' '}
+        <a
+          href={`/user/${username}/report-user`}
+          target='_blank'
+          rel='noreferrer'
+        >
+          report this to our team
+        </a>
+        .
+      </Trans>
     </div>
   );
 };

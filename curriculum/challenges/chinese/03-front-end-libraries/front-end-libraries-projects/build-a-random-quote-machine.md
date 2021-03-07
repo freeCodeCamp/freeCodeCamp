@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd13
-title: Build a Random Quote Machine
+title: 构建一个随机引语生成器
 challengeType: 3
 forumTopicId: 301374
 dashedName: build-a-random-quote-machine
@@ -8,39 +8,39 @@ dashedName: build-a-random-quote-machine
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/qRZeGZ>.
+**目标：** 在 [CodePen.io](https://codepen.io) 上实现一个功能类似 <https://codepen.io/freeCodeCamp/full/qRZeGZ> 的 App。
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下， 可以根据自己的喜好来美化 app。
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 来完成这个挑战。 但鉴于这个章节的学习内容与前端框架相关，推荐使用一款前端框架（比如 React）来完成这个挑战。 不推荐使用前面没有提到的技术，否则风险自担。 我们有计划新增其他前端框架课程，例如 Angular 和 Vue，不过目前还没有这些内容。 我们会接受并尝试修复使用推荐技术栈遇到的反馈问题。 编码愉快！
 
-**User Story #1:** I can see a wrapper element with a corresponding `id="quote-box"`.
+**需求 1：** 应该能看到一个具有 `id="quote-box"` 属性的包裹元素。
 
-**User Story #2:** Within `#quote-box`, I can see an element with a corresponding `id="text"`.
+**需求 2：** 在 `#quote-box` 元素内，应该能看到一个具有 `id="text"` 属性的元素。
 
-**User Story #3:** Within `#quote-box`, I can see an element with a corresponding `id="author"`.
+**需求 3：** 在 `#quote-box` 元素内，应该能看到一个具有 `id="author"` 属性的元素。
 
-**User Story #4:** Within `#quote-box`, I can see a clickable element with a corresponding `id="new-quote"`.
+**需求 4：** 在 `#quote-box` 元素内，应该能看到一个具有 `id="new-quote"` 属性的可点击元素。
 
-**User Story #5:** Within `#quote-box`, I can see a clickable `a` element with a corresponding `id="tweet-quote"`.
+**需求 5：** 在 `#quote-box` 元素内，应该能看到一个具有 `id="tweet-quote"` 属性的可点击 `a` 元素。
 
-**User Story #6:** On first load, my quote machine displays a random quote in the element with `id="text"`.
+**需求 6：** 首次加载时，App 应该在具有 `id="text"` 属性的元素内展示一条随机引语。
 
-**User Story #7:** On first load, my quote machine displays the random quote's author in the element with `id="author"`.
+**需求 7：** 首次加载时，App 应该在具有 `id="author"` 属性的元素内展示该条随机引语的作者。
 
-**User Story #8:** When the `#new-quote` button is clicked, my quote machine should fetch a new quote and display it in the `#text` element.
+**需求 8：** 当点击具有 `#new-quote` 属性的按钮时，App 应该得到一条新的引语并在具有 `#text` 属性的元素内展示出来。
 
-**User Story #9:** My quote machine should fetch the new quote's author when the `#new-quote` button is clicked and display it in the `#author` element.
+**需求 9：** 当点击具有 `#new-quote` 属性的按钮时，App 应该得到新引语的作者并在具有 `#author` 属性的元素内展示出来。
 
-**User Story #10:** I can tweet the current quote by clicking on the `#tweet-quote``a` element. This `a` element should include the `"twitter.com/intent/tweet"` path in its `href` attribute to tweet the current quote.
+**需求 10：** 可以通过点击具有 `#tweet-quote` 属性的 `a` 标签将当前引语发送到推特。 该 `a` 标签的 `href` 属性应该是 `"twitter.com/intent/tweet"`，以便成功发送。
 
-**User Story #11:** The `#quote-box` wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
+**需求 11：** 具有 `#quote-box` 属性的包裹元素应该水平居中。 请在浏览器缩放尺寸为 100% 且页面窗口最大化时运行测试。
 
-You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建项目。 或者可以在任何喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
-Once you're done, submit the URL to your working project with all its tests passing.
+一旦完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
-**Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
+**注意：** Twitter 不允许在 iframe 里加载链接。 如果 tweet 不能加载，尝试在 `#tweet-quote` 元素上使用 `target="_blank"` 或者 `target="_top"` 属性。 `target="_top"` 会替换当前 tab 页的内容，所以确保当前内容已经保存了。
 
 # --solutions--
 

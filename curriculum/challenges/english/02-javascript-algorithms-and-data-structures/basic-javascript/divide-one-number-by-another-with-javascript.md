@@ -16,9 +16,10 @@ JavaScript uses the `/` symbol for division.
 **Example**
 
 ```js
-myVar = 16 / 2; // assigned 8
+myVar = 16 / 2;
 ```
 
+`myVar` now has the value `8`.
 # --instructions--
 
 Change the `0` so that the `quotient` is equal to `2`.

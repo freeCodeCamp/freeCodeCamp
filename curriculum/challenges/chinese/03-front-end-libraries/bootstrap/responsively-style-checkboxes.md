@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08845
-title: Responsively Style Checkboxes
+title: 响应式风格的复选框
 challengeType: 0
 forumTopicId: 18269
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Since Bootstrap's `col-xs-*` classes are applicable to all `form` elements, you can use them on your checkboxes too! This way, the checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.
+Bootstrap 的 `col-xs-*` 可应用于所有的 `form` 元素上，包括复选框！ 这样就可以不必关注屏幕大小，均匀地把复选框放在页面上了。
 
 # --instructions--
 
-Nest all three of your checkboxes in a `<div class="row">` element. Then nest each of them in a `<div class="col-xs-4">` element.
+将所有三个复选框都放置于一个 `<div class="row">` 元素中。 然后分别把每个复选框都放置于一个 `<div class="col-xs-4">` 元素中。
 
 # --hints--
 
-All of your checkboxes should be nested inside one `div` with the class `row`.
+将所有的复选框嵌入一个含有 `row` class 的 `div` 元素中。
 
 ```js
 assert($('div.row:has(input[type="checkbox"])').length > 0);
 ```
 
-Each of your checkboxes should be nested inside its own `div` with the class `col-xs-4`.
+每一个复选框应该嵌套于单独的具有 `col-xs-4` class 的 `div` 元素中。
 
 ```js
 assert($('div.col-xs-4:has(input[type="checkbox"])').length > 2);
 ```
 
-All of your `div` elements should have closing tags.
+确保所有 `div` 元素都有一个闭合标签。
 
 ```js
 assert(

@@ -53,4 +53,11 @@ describe('challenge parser', () => {
     );
     expect(parsed).toMatchSnapshot();
   });
+
+  it('it should not parse directives we do not use', async () => {
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/with-directives.md')
+    );
+    expect(parsed).toMatchSnapshot();
+  });
 });

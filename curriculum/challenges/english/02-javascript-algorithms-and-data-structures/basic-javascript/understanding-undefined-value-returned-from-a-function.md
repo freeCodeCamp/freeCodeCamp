@@ -18,7 +18,7 @@ var sum = 0;
 function addSum(num) {
   sum = sum + num;
 }
-addSum(3); // sum will be modified but returned value is undefined
+addSum(3);
 ```
 
 `addSum` is a function without a `return` statement. The function will change the global `sum` variable but the returned value of the function is `undefined`.
@@ -35,7 +35,7 @@ Create a function `addFive` without any arguments. This function adds 5 to the `
 assert(typeof addFive === 'function');
 ```
 
-Once both functions have ran, the `sum` should be equal to 8.
+Once both functions have run, the `sum` should be equal to `8`.
 
 ```js
 assert(sum === 8);

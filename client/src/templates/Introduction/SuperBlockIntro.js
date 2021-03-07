@@ -14,7 +14,6 @@ import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
-import { dasherize } from '../../../../utils/slugs';
 import Block from './components/Block';
 import { Spacer } from '../../components/helpers';
 import {
@@ -97,7 +96,7 @@ export class SuperBlockIntroductionPage extends Component {
 
     // if coming from breadcrumb click
     if (location.state && location.state.breadcrumbBlockClick) {
-      return dasherize(location.state.breadcrumbBlockClick);
+      return location.state.breadcrumbBlockClick;
     }
 
     // if the URL includes a hash

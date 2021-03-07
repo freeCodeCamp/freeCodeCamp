@@ -11,9 +11,13 @@ dashedName: find-the-length-of-a-string
 
 You can find the length of a `String` value by writing `.length` after the string variable or string literal.
 
-`"Alan Peter".length; // 10`
+```js
+console.log("Alan Peter".length);
+```
 
-For example, if we created a variable `var firstName = "Charles"`, we could find out how long the string `"Charles"` is by using the `firstName.length` property.
+The value `10` would be displayed in the console.
+
+For example, if we created a variable `var firstName = "Charles"`, we could find out how long the string `Charles` is by using the `firstName.length` property.
 
 # --instructions--
 

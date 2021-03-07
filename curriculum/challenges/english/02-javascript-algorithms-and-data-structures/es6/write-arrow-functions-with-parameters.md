@@ -11,25 +11,26 @@ dashedName: write-arrow-functions-with-parameters
 Just like a regular function, you can pass arguments into an arrow function.
 
 ```js
-// doubles input value and returns it
 const doubler = (item) => item * 2;
-doubler(4); // returns 8
+doubler(4);
 ```
+
+`doubler(4)` would return the value `8`.
 
 If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted.
 
 ```js
-// the same function, without the parameter parentheses
 const doubler = item => item * 2;
 ```
 
 It is possible to pass more than one argument into an arrow function.
 
 ```js
-// multiplies the first input value by the second and returns it
 const multiplier = (item, multi) => item * multi;
-multiplier(4, 2); // returns 8
+multiplier(4, 2);
 ```
+
+`multiplier(4, 2)` would return the value `8`.
 
 # --instructions--
 
@@ -64,7 +65,7 @@ assert(
 assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 ```
 
-`function` keyword should not be used.
+The `function` keyword should not be used.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/function/g));

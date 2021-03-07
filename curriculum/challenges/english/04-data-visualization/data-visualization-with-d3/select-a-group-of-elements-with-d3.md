@@ -16,11 +16,11 @@ Like the `select()` method, `selectAll()` supports method chaining, and you can 
 
 # --instructions--
 
-Select all of the `li` tags in the document, and change their text to "list item" by chaining the `.text()` method.
+Select all of the `li` tags in the document, and change their text to the string `list item` by chaining the `.text()` method.
 
 # --hints--
 
-There should be 3 `li` elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.
+There should be 3 `li` elements on the page, and the text in each one should say `list item`. Capitalization and spacing should match exactly.
 
 ```js
 assert(

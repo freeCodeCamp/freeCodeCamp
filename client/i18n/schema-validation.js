@@ -1,5 +1,5 @@
 const path = require('path');
-const { availableLangs } = require('./allLangs');
+const { availableLangs } = require('../../config/i18n/all-langs');
 const translationsSchema = require('./locales/english/translations.json');
 const trendingSchema = require('./locales/english/trending.json');
 const motivationSchema = require('./locales/english/motivation.json');
@@ -44,7 +44,7 @@ const findMissingKeys = (file, schema, path) => {
     }
   }
   if (missingKeys.length) {
-    throw new Error(
+    console.warn(
       `${path} is missing these required keys: ${missingKeys.join(', ')}`
     );
   }
@@ -65,7 +65,7 @@ const findExtraneousKeys = (file, schema, path) => {
     }
   }
   if (extraKeys.length) {
-    throw new Error(
+    console.warn(
       `${path} has these keys that are not in the schema: ${extraKeys.join(
         ', '
       )}`
@@ -132,13 +132,13 @@ const translationSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/translation.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
       );
     }
-    console.info(`${language} translation.json is correct!`);
+    console.info(`${language} translation.json validation complete.`);
   });
 };
 
@@ -160,13 +160,13 @@ const trendingSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/trending.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
       );
     }
-    console.info(`${language} trending.json is correct!`);
+    console.info(`${language} trending.json validation complete`);
   });
 };
 
@@ -190,7 +190,7 @@ const motivationSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/motivation.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
@@ -203,11 +203,9 @@ const motivationSchemaValidation = languages => {
           object.hasOwnProperty('quote') && object.hasOwnProperty('author')
       )
     ) {
-      throw new Error(
-        `${language}/motivation.json has malformed quote objects.`
-      );
+      console.warn(`${language}/motivation.json has malformed quote objects.`);
     }
-    console.info(`${language} motivation.json is correct!`);
+    console.info(`${language} motivation.json validation complete`);
   });
 };
 
@@ -225,11 +223,11 @@ const introSchemaValidation = languages => {
     findExtraneousKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/intro.json has these empty keys: ${emptyKeys.join(', ')}`
       );
     }
-    console.info(`${language} intro.json is correct!`);
+    console.info(`${language} intro.json validation complete`);
   });
 };
 
@@ -249,13 +247,13 @@ const metaTagsSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/metaTags.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
       );
     }
-    console.info(`${language} metaTags.json is correct!`);
+    console.info(`${language} metaTags.json validation complete`);
   });
 };
 

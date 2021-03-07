@@ -1,12 +1,15 @@
 const { read } = require('to-vfile');
 const remark = require('remark');
-const html = require('remark-html');
+const directives = require('remark-directive');
+const stringify = require('remark-stringify');
 
 (async () => {
   const path = './example.md';
   const file = await read(path);
   const contents = await remark()
-    .use(html)
+    .use(directives)
+    .use(() => tree => console.dir(tree, { depth: null, colors: true }))
+    .use(stringify)
     .process(file);
   console.log(contents);
 })();

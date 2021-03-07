@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036154
-title: Combine Multiple Reducers
+title: 组合多个 Reducers
 challengeType: 6
 forumTopicId: 301436
 dashedName: combine-multiple-reducers
@@ -8,11 +8,11 @@ dashedName: combine-multiple-reducers
 
 # --description--
 
-When the state of your app begins to grow more complex, it may be tempting to divide state into multiple pieces. Instead, remember the first principle of Redux: all app state is held in a single state object in the store. Therefore, Redux provides reducer composition as a solution for a complex state model. You define multiple reducers to handle different pieces of your application's state, then compose these reducers together into one root reducer. The root reducer is then passed into the Redux `createStore()` method.
+当应用程序的状态开始变得越来越复杂时，可能会将 state 分成多个块。 相反，请记住 Redux 的第一个原则：所有应用程序状态都保存在 store 中的一个简单的 state 对象中。 因此，Redux 提供 reducer 组合作为复杂状态模型的解决方案。 定义多个 reducer 来处理应用程序状态的不同部分，然后将这些 reducer 组合成一个 root reducer。 然后将 root reducer 传递给 Redux `createStore()`方法。
 
-In order to let us combine multiple reducers together, Redux provides the `combineReducers()` method. This method accepts an object as an argument in which you define properties which associate keys to specific reducer functions. The name you give to the keys will be used by Redux as the name for the associated piece of state.
+为了将多个 reducer 组合在一起，Redux 提供了`combineReducers()`方法。 该方法接受一个对象作为参数，在该参数中定义一个属性，该属性将键与特定 reducer 函数关联。 Redux 将使用给定的键值作为关联状态的名称。
 
-Typically, it is a good practice to create a reducer for each piece of application state when they are distinct or unique in some way. For example, in a note-taking app with user authentication, one reducer could handle authentication while another handles the text and notes that the user is submitting. For such an application, we might write the `combineReducers()` method like this:
+通常情况下，当它们在某种程度上是独一无二的，为每个应用程序的 state 创建一个 reducer 是一个很好的做法。 例如，在一个带有用户身份验证的记笔记应用程序中，一个 reducer 可以处理身份验证而另一个处理用户提交的文本和注释。 对于这样的应用程序，可能会编写 `combineReducers()` 方法，如下所示：
 
 ```js
 const rootReducer = Redux.combineReducers({
@@ -21,15 +21,15 @@ const rootReducer = Redux.combineReducers({
 });
 ```
 
-Now, the key `notes` will contain all of the state associated with our notes and handled by our `notesReducer`. This is how multiple reducers can be composed to manage more complex application state. In this example, the state held in the Redux store would then be a single object containing `auth` and `notes` properties.
+现在，`notes` 键将包含与注释相关联的所有状态，并由 `notesReducer` 处理。 这就是组合多个 reducer 来管理更复杂的应用程序状态的方式， 在此示例中，Redux store 中保存的状态将是一个包含 `auth` 和 `notes` 属性的简单对象。
 
 # --instructions--
 
-There are `counterReducer()` and `authReducer()` functions provided in the code editor, along with a Redux store. Finish writing the `rootReducer()` function using the `Redux.combineReducers()` method. Assign `counterReducer` to a key called `count` and `authReducer` to a key called `auth`.
+代码编辑器中提供了 `counterReducer()` 和 `authReducer()` 函数以及 Redux store。 使用 `Redux.combineReducers()` 方法编写完成 `rootReducer()` 函数。 将 `counterReducer` 分配给一个叫做 `count` 的键，将 `authReducer` 分配给一个叫做 `auth` 的键。
 
 # --hints--
 
-The `counterReducer` should increment and decrement the `state`.
+`counterReducer` 应该递增和递减 `state`。
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `authReducer` should toggle the `state` of `authenticated` between `true` and `false`.
+`authReducer` 应该可以使 `authenticated` 的 `state` 值在 `true` 和 `false` 之间切换。
 
 ```js
 assert(
@@ -59,7 +59,7 @@ assert(
 );
 ```
 
-The store `state` should have two keys: `count`, which holds a number, and `auth`, which holds an object. The `auth` object should have a property of `authenticated`, which holds a boolean.
+store `state` 应该有两个 key：一个是 `count`，它包含一个数字。 另一个 `auth`，它包含一个对象。 `auth` 对象应该具有 `authenticated` 的属性，该属性的值应该为布尔值。
 
 ```js
 assert(
@@ -74,7 +74,7 @@ assert(
 );
 ```
 
-The `rootReducer` should be a function that combines the `counterReducer` and the `authReducer`.
+`rootReducer` 应该是一个合并了 `counterReducer` 和 `authReducer` 的函数。
 
 ```js
 (getUserInput) =>

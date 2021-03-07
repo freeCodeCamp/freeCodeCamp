@@ -1,6 +1,6 @@
 ---
 id: bad87fee1347bd9aedf08845
-title: Ditch Custom CSS for Bootstrap
+title: 用 Bootstrap 来取代我们之前的自定义样式
 challengeType: 0
 forumTopicId: 17565
 dashedName: ditch-custom-css-for-bootstrap
@@ -8,31 +8,31 @@ dashedName: ditch-custom-css-for-bootstrap
 
 # --description--
 
-We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.
+现在可以清理一下之前代码，用 Bootstrap 的内置样式来替换之前定义的样式，这样 Cat Photo App 看起来更简洁些。
 
-Don't worry - there will be plenty of time to customize our CSS later.
+别担心——以后会有大把时间来自定义 CSS 样式的。
 
-Delete the `.red-text`, `p`, and `.smaller-image` CSS declarations from your `style` element so that the only declarations left in your `style` element are `h2` and `thick-green-border`.
+删除 `style` 元素里的 `.red-text`，`p`，和 `.smaller-image` CSS 定义，使 `style` 元素只留下 `h2` 和 `thick-green-border`。
 
-Then delete the `p` element that contains a dead link. Then remove the `red-text` class from your `h2` element and replace it with the `text-primary` Bootstrap class.
+删除包含死链接的 `p` 元素。 然后将 `h2` 的 `red-text` class 替换为 Bootstrap 的 `text-primary` class。
 
-Finally, remove the "smaller-image" class from your first `img` element and replace it with the `img-responsive` class.
+最后，从第一个 `img` 元素中删除 `smaller-image` class，并将其替换为 `img-responsive` class。
 
 # --hints--
 
-Your h2 element should no longer have the class `red-text`.
+`h2` 元素不应该有 `red-text` class。
 
 ```js
 assert(!$('h2').hasClass('red-text'));
 ```
 
-Your h2 element should now have the class `text-primary`.
+`h2` 元素应有 `text-primary` class。
 
 ```js
 assert($('h2').hasClass('text-primary'));
 ```
 
-Your paragraph elements should no longer use the font `Monospace`.
+段落元素（p）不应该再使用 `Monospace` 字体。
 
 ```js
 assert(
@@ -42,13 +42,13 @@ assert(
 );
 ```
 
-The `smaller-image` class should be removed from your top image.
+移除第一张图片的 `smaller-image` class 属性。
 
 ```js
 assert(!$('img').hasClass('smaller-image'));
 ```
 
-You should add the `img-responsive` class to your top image.
+给第一张图片添加 `img-responsive` class 属性。
 
 ```js
 assert($('.img-responsive').length > 1);

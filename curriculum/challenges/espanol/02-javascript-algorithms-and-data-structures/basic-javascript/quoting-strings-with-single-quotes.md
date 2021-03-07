@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b4
-title: Quoting Strings with Single Quotes
+title: Cita cadenas con las comillas simples
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260
@@ -9,39 +9,39 @@ dashedName: quoting-strings-with-single-quotes
 
 # --description--
 
-<dfn>String</dfn> values in JavaScript may be written with single or double quotes, as long as you start and end with the same type of quote. Unlike some other programming languages, single and double quotes work the same in JavaScript.
+Los valores de <dfn>cadena</dfn> en JavaScript pueden escribirse con comillas simples o dobles, siempre y cuando comiencen y terminen con el mismo tipo de comillas. A diferencia de otros lenguajes de programación, las comillas simples y dobles funcionan igual en JavaScript.
 
 ```js
 doubleQuoteStr = "This is a string"; 
 singleQuoteStr = 'This is also a string';
 ```
 
-The reason why you might want to use one type of quote over the other is if you want to use both in a string. This might happen if you want to save a conversation in a string and have the conversation in quotes. Another use for it would be saving an `<a>` tag with various attributes in quotes, all within a string.
+La razón por la que puedes querer usar un tipo de comilla sobre otro es si quieres usar ambos en una cadena. Esto puede suceder si quieres guardar una conversación en una cadena y tener la conversación entre comillas. Otro uso sería guardar una etiqueta `<a>` con varios atributos entre comillas, todo dentro de una cadena.
 
 ```js
 conversation = 'Finn exclaims to Jake, "Algebraic!"';
 ```
 
-However, this becomes a problem if you need to use the outermost quotes within it. Remember, a string has the same kind of quote at the beginning and end. But if you have that same quote somewhere in the middle, the string will stop early and throw an error.
+Sin embargo, esto se convierte en un problema cuando es necesario utilizar las comillas externas dentro de ella. Recuerda, una cadena tiene el mismo tipo de comillas al principio y al final. Pero si tienes esa misma comilla en algún lugar del medio, la cadena se detendrá temprano y arrojará un error.
 
 ```js
 goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
 badStr = 'Finn responds, "Let's go!"'; // Throws an error
 ```
 
-In the <dfn>goodStr</dfn> above, you can use both quotes safely by using the backslash <code>\\</code> as an escape character.
+En la cadena <dfn>goodStr</dfn> anterior, puedes usar ambas comillas de forma segura usando la barra invertida <code>\\</code> como un carácter de escape.
 
-**Note:** The backslash <code>\\</code> should not be confused with the forward slash `/`. They do not do the same thing.
+**Nota:** La barra invertida <code>\\</code> no debe confundirse con la barra diagonal `/`. No hacen lo mismo.
 
 # --instructions--
 
-Change the provided string to a string with single quotes at the beginning and end and no escape characters.
+Cambia la cadena proporcionada a una cadena con comillas simples al principio y al final y sin caracteres de escape.
 
-Right now, the `<a>` tag in the string uses double quotes everywhere. You will need to change the outer quotes to single quotes so you can remove the escape characters.
+Ahora mismo, la etiqueta `<a>` en la cadena usa comillas dobles en todas partes. Necesitarás cambiar las comillas externas a comillas simples para poder eliminar los caracteres de escape.
 
 # --hints--
 
-You should remove all the `backslashes` (<code>\\</code>).
+Deberías eliminar todas las barras invertidas `backslashes` (<code>\\</code>).
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-You should have two single quotes `'` and four double quotes `"`.
+Debes tener dos comillas simples `'` y cuatro comillas dobles `"`.
 
 ```js
 assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);

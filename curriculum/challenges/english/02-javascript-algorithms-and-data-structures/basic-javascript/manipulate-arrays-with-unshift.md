@@ -17,10 +17,11 @@ Example:
 
 ```js
 var ourArray = ["Stimpson", "J", "cat"];
-ourArray.shift(); // ourArray now equals ["J", "cat"]
+ourArray.shift();
 ourArray.unshift("Happy");
-// ourArray now equals ["Happy", "J", "cat"]
 ```
+
+After the `shift`, `ourArray` would have the value `["J", "cat"]`. After the `unshift`, `ourArray` would have the value `["Happy", "J", "cat"]`.
 
 # --instructions--
 

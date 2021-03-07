@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb5
-title: Nest CSS with Sass
+title: 用 Sass 嵌套 CSS
 challengeType: 0
 forumTopicId: 301457
 dashedName: nest-css-with-sass
@@ -8,9 +8,9 @@ dashedName: nest-css-with-sass
 
 # --description--
 
-Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+Sass 允许 CSS 规则的嵌套，这在组织样式表的时候会很有用。
 
-Normally, each element is targeted on a different line to style it, like so:
+在 CSS 里，每个元素的样式都需要写在独立的代码块中，如下所示：
 
 ```scss
 nav {
@@ -26,7 +26,7 @@ nav ul li {
 }
 ```
 
-For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
+对于一个大型项目，CSS 规则会很复杂。 这时，引入嵌套功能（即在对应的父元素中写子元素的样式）可以有效地简化代码：
 
 ```scss
 nav {
@@ -45,11 +45,11 @@ nav {
 
 # --instructions--
 
-Use the nesting technique shown above to re-organize the CSS rules for both children of `.blog-post` element. For testing purposes, the `h1` should come before the `p` element.
+根据上面关于嵌套的例子，来简化 `.blog-post` 中两个子元素的 CSS 代码。 为了通过测试，`h1` 应该出现在 `p` 元素之前。
 
 # --hints--
 
-Your code should re-organize the CSS rules so the `h1` and `p` are nested in the `.blog-post` parent element.
+应重新组织 CSS 规则，以便 `h1` 和 `p` 嵌套在 `.blog-post` 父元素中。
 
 ```js
 assert(

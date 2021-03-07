@@ -3,7 +3,6 @@ const env = require('../config/env');
 const { createFilePath } = require('gatsby-source-filesystem');
 const uniq = require('lodash/uniq');
 
-const { dasherize } = require('../utils/slugs');
 const { blockNameify } = require('../utils/block-nameify');
 const {
   createChallengePages,
@@ -20,7 +19,7 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
   if (node.internal.type === 'ChallengeNode') {
     const { tests = [], block, dashedName, superBlock } = node;
-    const slug = `/learn/${superBlock}/${dasherize(block)}/${dashedName}`;
+    const slug = `/learn/${superBlock}/${block}/${dashedName}`;
     createNodeField({ node, name: 'slug', value: slug });
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
     createNodeField({ node, name: 'tests', value: tests });

@@ -66,22 +66,22 @@
       "basic-html-cat-photo-app": {
         "title": "基础 HTML 猫图应用",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "basic-css-cafe-menu": {
         "title": "基础 CSS 咖啡菜单",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "css-variables-skyline": {
         "title": "CSS 变量 Skyline",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       }
     }
@@ -169,22 +169,22 @@
       "basic-javascript-rpg-game": {
         "title": "基础 JavaScript RPG 游戏",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "中级 JavaScript 卡路里计算器",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "functional-programming-spreadsheet": {
         "title": "函数式编程电子表格",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       }
     }
@@ -200,7 +200,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap 是一个用于设计响应式网页和应用程序的前端框架。它具有移动优先的特点，具有预定义的 CSS 样式和 class，还有一些 JavaScript 功能。",
+          "Bootstrap 一个是用于设计响应性网页和应用程序的前端框架。它对网页开发采用移动优先的方法，具有预定义的 CSS 样式和 class，以及一些 JavaScript 功能。",
           "在这个课程中，你将学习如何使用 Bootstrap 来建立响应式网页，并使用它的 class 来设置按钮、图像、表格、导航和其他常见元素的样式。"
         ]
       },
@@ -230,295 +230,295 @@
       "redux": {
         "title": "Redux",
         "intro": [
-          "As applications grow in size and scope, managing shared data becomes much more difficult. Redux is defined as a \"predictable state container for JavaScript apps\" that helps ensure your apps work predictably, and are easier to test.",
-          "While you can use Redux with any view library, we introduce Redux here before combining it with React in the next set of courses.",
-          "In this course, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to manage data throughout your application."
+          "随着应用程序规模和范围的扩大，管理共享数据变得更加困难。 Redux 被定义为 “JavaScript 应用的可预测状态容器”，它有助于确保你的应用能够可预测地运行，并且更容易测试。",
+          "虽然你可以使用任何视图库的 Redux，但我们在这里介绍 Redux，然后在下一组课程中与 React 结合起来。",
+          "在这个课程中，你将学习 Redux stores、actions、reducers 和中间件的基础知识，来管理应用程序的数据。"
         ]
       },
       "react-and-redux": {
-        "title": "React and Redux",
+        "title": "React 和 Redux",
         "intro": [
-          "React and Redux are often mentioned together, and with good reason. The developer who created Redux was a React developer who wanted to make it easier to share data across different components.",
-          "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
+          "React 和 Redux 经常一起被提及，这是有充分理由的。创建 Redux 的开发人员是一个 React 开发者，他希望简化不同组件间的数据共享。",
+          "你已经知道了如何使用 Redux 管理共享数据流，是时候将这些知识与 React 结合起来了。在 React 和 Redux 课程中，你将构建一个 React 组件，并学习如何使用 Redux 在组件级别本地管理状态，以及在整个应用程序中管理状态。"
         ]
       },
       "front-end-libraries-projects": {
-        "title": "Front End Development Libraries Projects",
+        "title": "前端开发库项目",
         "intro": [
-          "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Front End Development Libraries certification."
+          "现在是时候应用你的前端开发库技术进行测试。用 Bootstrap、jQuery、Sass、React、和 Redux 构建 5 个项目，测试你到现在所学到的知识。",
+          "完成全部 5 个项目，然后你会获得前端开发库认证。"
         ]
       }
     }
   },
   "data-visualization": {
-    "title": "Data Visualization",
+    "title": "数据可视化",
     "intro": [
-      "Data is all around us, but it doesn't mean much without shape or context.",
-      "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
-      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programing Interface)."
+      "数据无处不在。但是，如果没有上下文，数据就没有多大意义。",
+      "在数据可视化认证中，你会用 D3.js 库来创建表格、图表和地图，以展示不同的数据。",
+      "你还会学习 JSON（JavaScript 对象），以及如何使用 API（应用程序接口）使用在线的数据。"
     ],
     "blocks": {
       "data-visualization-with-d3": {
-        "title": "Data Visualization with D3",
+        "title": "用 D3 实现数据可视化",
         "intro": [
-          "D3, or D3.js, stands for Data Driven Documents. It's a JavaScript library for creating dynamic and interactive data visualizations in the browser.",
-          "D3 is built to work with common web standards – namely HTML, CSS, and Scalable Vector Graphics (SVG).",
-          "D3 supports many different kinds of input data formats. Then, using its powerful built-in methods, you can transform those data into different charts, graphs, and maps.",
-          "In the Data Visualization with D3 courses, you'll learn how to work with data to create different charts, graphs, hover elements, and other ingredients to create dynamic and attractive data visualizations."
+          "D3 或 D3.js 表示数据驱动文档。它是一个用于在浏览器中创建动态和交互式数据视觉化的 JavaScript 库。",
+          "它基于 web 标准，即 HTML、CSS 和 SVG（可缩放矢量图形）技术。",
+          "D3 支持多种不同类型的输入数据格式。 然后，你可以使用它强大的内置方法将这些数据转换成不同的图表、和地图。",
+          "在用 D3 实现数据可视化课程中，你将学习如何使用数据来创建不同的图表、悬停元素及其他内容，用以创建动态和有吸引力的数据可视化。"
         ]
       },
       "json-apis-and-ajax": {
-        "title": "JSON APIs and AJAX",
+        "title": "JSON APIs 和 AJAX",
         "intro": [
-          "Similar to how UIs help people use programs, APIs (Application Programming Interfaces) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.",
-          "Programmers often use AJAX (Asynchronous JavaScript and XML) when working with APIs. AJAX refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. And the data transferred between the browser and server is often in a format called JSON (JavaScript Object Notation).",
-          "This course will teach you the basics about working with APIs and different AJAX technologies in the browser."
+          "类似于 UI 如何帮助人们使用程序，API（应用程序接口）帮助程序与其他程序互动。API 是计算机用来相互沟通的工具，部分用于发送和接收数据。",
+          "程序员在使用 API 的时候，通常会使用 AJAX（同步 JavaScript 和 XML）。AJAX 指的是一组技术，这些技术向服务器提出异步请求以传输数据，然后将任何返回的数据加载到页面。而且在浏览器和服务器之间传输的数据常常是一种 JSON（JavaScript 对象）格式。",
+          "此课程将教你如何在浏览器中使用 API 和不同的 AJAX 技术的基础知识。"
         ]
       },
       "data-visualization-projects": {
-        "title": "Data Visualization Projects",
+        "title": "数据可视化项目",
         "intro": [
-          "Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.",
-          "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
+          "现在你学习了如何使用 D3 、 APIs 和 AJAX 技术，构建这 5 个数据可视化项目来测试你的技术吧。",
+          "在这些项目中，你需要获取数据并解析数据集，然后使用 D3 创建不同的数据可视化。完成之后，你可以获得数据可视化认证。"
         ]
       },
       "d3-dashboard": {
-        "title": "D3 Dashboard",
+        "title": "D3 面板",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
   },
   "apis-and-microservices": {
-    "title": "APIs and Microservices",
+    "title": "APIs 和 微服务",
     "intro": [
-      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
-      "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
-      "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "在这之前，你只是在前端使用 JavaScript 来给页面添加交互、解决算法挑战，或构建一个 SP。但 JavaScript 也可以用于后端或者服务器来构建整个 web 应用程序。",
+      "今天，构建应用软件的广受欢迎的方法之一是微服务，这些微服务是一种小型模块化的应用，能够共同形成一个更大的整体。",
+      "在 API 和微服务认证中，你将学习如何使用 Node.js 和 npm（Node 包管理工具）来写后端。你还将使用 Express 框架构建 web 应用程序，并使用 MongoDB 和 Mongoose 库构建一个 People Finder 微服务。"
     ],
     "blocks": {
       "managing-packages-with-npm": {
-        "title": "Managing Packages with NPM",
+        "title": "使用 NPM 管理软件包",
         "intro": [
-          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
-          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
+          "npm（Node 包管理工具）是一个命令行工具，用于安装、创建和分享为 Node.js 编写的 JavaScript 代码包。在 npm 上有许多开放源码软件包，所以在项目启动之前，需要一些时间来探索，这样你就不会最后重新创建轮子来处理像日期或从 API 获取数据这样的事项。",
+          "在这个课程中，你将学习使用 npm 的基本知识，包括如何使用 <code>package.json</code> 和如何管理已安装的依赖项。"
         ]
       },
       "basic-node-and-express": {
-        "title": "Basic Node and Express",
+        "title": "Node 和 Express 基础",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
-          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing the routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
-          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+          "Node.js 是一个 JavaScript 运行时，它允许开发人员在 JavaScript 中写入后端（服务器侧）程序。Node.js 有几个内置的模块——小型、独立的程序——来帮助实现这一点，一些核心模块包括像服务器一样运作的 HTTP 和文件系统，一个读取和修改文件的模块。",
+          "在上一组课程中你学到了怎么从 npm下载和管理软件包，这些软件包是较小模块的集合，可以帮助你打造更大更复杂的程序。",
+          "Express 是一个轻量级的网页应用框架，是最受欢迎的 npm 软件包之一。 Express 提供精简的基本 web 应用程序功能，包括应用的路由。路由在用户访问一个端点如 <pre>/blog</pre> 时将用户导向到相应的页面。",
+          "在这个课程中，你将学习 Node 和 Express 的基础知识，包括如何创建服务器， 处理不同的文件，及处理不同的浏览器请求。"
         ]
       },
       "mongodb-and-mongoose": {
-        "title": "MongoDB and Mongoose",
+        "title": "MongoDB 和 Mongose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
-          "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
+          "MongoDB 是一个存储您可以在应用程序中使用的 JSON 文件(或记录)的数据库应用程序。 不同于SQL，另一种类型的数据库。Mongo是一个不相关的或“NoSQL”的数据库。 这意味着Mongo将所有相关数据存储在一个记录中，而不是像SQL数据库中那样在许多预设表中存储。",
+          "Mongoose 是一个受欢迎的 npm 包，通常和 Mongo 一起安装。通过 Mongoose，你可以使用 JavaScript 对象而不是 JSON ，这样就更容易与 Mongo 配合使用。 此外，它允许你为 schema 文件创建蓝图，所以你不会意外地保存错误的数据类型并出现错误。",
+          "在 MongoDB 和 Mongoose 课程中，你将学习使用的基本知识，包括如何建立模型，保存、删除并在数据库中查找文档。"
         ]
       },
       "apis-and-microservices-projects": {
-        "title": "APIs and Microservices Projects",
+        "title": "API 和微服务项目",
         "intro": [
-          "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show of to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
+          "你之前用过 API，但是现在你知道 npm、Node、Express、MongoDB 和 Mongoose，是时候创建应用 了。用你到现在所学的所有知识来创建 5 个不同的微服务，这些微服务是使用范围有限的小应用。",
+          "在创建这些微服务后，你会有 5 个很酷的微服务 API，你可以向朋友、家人和潜在的雇主展示。同时，你也会获得 API 和微服务认证。"
         ]
       }
     }
   },
   "quality-assurance": {
-    "title": "Quality Assurance",
+    "title": "质量保证",
     "intro": [
-      "As your programs or web applications become more complex, you'll want to test them to make sure that new changes don't break their original functionality.",
-      "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai to ensure your applications work the way you expect them to.",
-      "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, and Socket.io for real-time communication between the server and connected clients."
+      "随着你的程序或网页应用程序变得更加复杂，你将想要测试它们，以确保新的更改不会破坏它们的原有功能。",
+      "在质量保证认证中， 你将学习如何通过 Chai 测试，以确保你的应用程序能够按照你的期望运行。",
+      "然后你将创建一个聊天应用程序来学习高级 Node 和 Express 概念。你还将使用 Pug 作为模板引擎，用于身份验证的 Passport 和 用于服务器和客户端之间实时通信的 Socket.io。"
     ],
     "blocks": {
       "quality-assurance-and-testing-with-chai": {
-        "title": "Quality Assurance and Testing with Chai",
+        "title": "使用 Chai 进行质量保证和测试",
         "intro": [
-          "Chai is a JavaScript testing library that helps you confirm that your program still behaves the way you expect it to after you make changes to your code.",
-          "Using Chai, you can write tests that describe your program's requirements and see if your program meets them.",
-          "In this course, you'll learn about assertions, deep equality, truthiness, testing APIs, and other fundamentals for testing JavaScript applications."
+          "Chai 是一个JavaScript测试库，帮助你确保程序能够在你更改代码后按照你的期望运行。",
+          "使用 Chai，你可以写测试描述你的程序的要求，并查看你的程序是否符合这些要求。",
+          "在这个课程中，你会了解测试 JavaScript 应用程序的断言、测试 API 和其他测试 JavaScript 应用的基础知识。"
         ]
       },
       "advanced-node-and-express": {
-        "title": "Advanced Node and Express",
+        "title": "高级 Node 和 Express",
         "intro": [
-          "Now it's time to take a deep dive into Node.js and Express.js by building a chat application with a sign-in system.",
-          "To implement the sign-in system safely, you'll need to learn about authentication. This is the act of verifying the identity of a person or process.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front end, and web sockets for real-time communication between the clients and server."
+          "现在是时候来使用高级 Node.js 和 Express.js 创建一个具有登录系统的聊天应用了。",
+          "为了创建一个安全的登录系统，你需要学习验证，这是一个验证个人身份或者过程的的操作。",
+          "在这个课程中，你将学习如何使用 Passport 管理身份验证，如何使用 Pug 创建可重用的模板以快速构建前端，以及如何使用 web sockets 在客户端和服务器之间进行实时通信。"
         ]
       },
       "quality-assurance-projects": {
-        "title": "Quality Assurance Projects",
+        "title": "质量保证项目",
         "intro": [
-          "Now that you're well versed in both the front end and back end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
-          "After completing these Quality Assurance projects, you'll have 5 more projects under your belt, and a new certification to show off on your portfolio."
+          "现在你对前端和后端都非常精通，是时候应用你所学到的所有技能和概念了。你将构建 5 个不同的 web 应用程序，并为每个应用程序编写测试，以确保它们正常工作并可以处理不同的情况。",
+          "完成这 5 个质量保证项目后，你将获得一个新的认证，你可以在自己的作品集中展示这 5 个项目和认证。"
         ]
       }
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python",
+    "title": "Python 和科学计算",
     "intro": [
-      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
-      "In the Scientific Computing with Python Certification, you'll Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
+      "Python 是目前最火、最灵活的编程语言之一。你可以用它来做很多事，包括从基础算法到机器学习。",
+      "在这个认证中，你会学习 Python 基础知识，例如变量、循环、条件和函数。然后你会马上很快学习到复杂数据结构、网络，关系数据库和数据可视化。"
     ],
     "blocks": {
       "python-for-everybody": {
-        "title": "Python for Everybody",
+        "title": "通用 Python 课程",
         "intro": [
-          "Python for everybody is a free video course series that teach the basics of using Python 3.",
-          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+          "通用 Python 课程是一个讲解 Python 3 基础的系列免费视频课程。",
+          "这些课程是 Dr. Charles Severance（Dr. Chuck）创建的。他是密歇根信息大学的实践教授，他教授各种技术课程，包括编程、数据库设计和 web 开发。"
         ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Scientific Computing with Python Projects",
+        "title": "Python 与科学计算项目",
         "intro": [
-          "Time to put your Python skills to the test. By completing these projects, you will demonstrate that you have a good foundational knowledge of Python and qualify for the Scientific Computing with Python Certification."
+          "是时候测试一下你的 Python 技术了。通过完成这些项目，你可以证明和展示自己已经掌握了 Python 基础知识，并能获得认证。"
         ]
       }
     }
   },
   "data-analysis-with-python": {
-    "title": "Data Analysis with Python",
+    "title": "Python 和数据分析",
     "intro": [
-      "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
-      "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
+      "数据分析已经存在很长时间了。但是直到几年前，开发人员还是使用昂贵的闭源工具（如 Tableau）来做数据分析。如今，Python、SQL 和其他开放的库永远改变了数据分析领域。",
+      "在这个认证中，你会学习使用 Python 做数据分析的基础知识。然后，你会学习怎么从 CSV、SQL 等数据源读取数据，并且怎么使用 Numpy、Pandas、Matplotlib 和 Seaborn 等库来处理和可视化数据。"
     ],
     "blocks": {
       "data-analysis-with-python-course": {
-        "title": "Data Analysis with Python",
+        "title": "Python 和数据分析",
         "intro": [
-          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll reading data from multiple sources (CSV, SQL, Excel), process those data using NumPy and Pandas, and visualize them using Matplotlib and Seaborn,",
-          "Additionally, we've included a thorough Jupyter Notebook course, and a quick Python reference to refresh your programming skills."
+          "在 Santiago Basulto 创建的这些综合视频课程中，你会学习整个数据分析的过程。你会从 CSV、SQL、Excel 读取数据，用 Numpy和 Pandas 来处理这些数据，以及使用 Matplotlib 和 Seaborn 来可视化数据。",
+          "此外，你还可以通过完整的 Jupyter Notebook 课程和 Python 资料来刷新自己的编程技能。"
         ]
       },
       "numpy": {
         "title": "Numpy",
         "intro": [
-          "Learn the basics of the NumPy library in the following video course created by Keith Galli.",
-          "In this course, you'll learn how NumPy works and how it compares to Python's built-in lists. You'll also learn how to write code with NumPy, indexing, reshaping, applied statistics, and much more."
+          "通过下方 Keith Galli 创建的视频课程学习 NumPy 库基础知识。",
+          "在这个课程中，你将学习如何使用 NumPy 以及它与 Python 内置列表的区别。你还将学习如何使用 NumPy 编程，以及索引、调整形状、应用统计信息等等知识。"
         ]
       },
       "data-analysis-with-python-projects": {
-        "title": "Data Analysis with Python Projects",
+        "title": "Python 与数据分析",
         "intro": [
-          "There are many ways to analyze data with Python. By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.",
-          "Finish them all to claim your Data Analysis with Python certification."
+          "使用 Python 分析数据的方法很多。通过完成这些项目，你可以证明自己掌握了使用 Python 进行数据分析的基础知识。",
+          "完成所有项目，即可获得 Python 与数据分析认证。"
         ]
       }
     }
   },
   "information-security": {
-    "title": "Information Security",
+    "title": "信息安全",
     "intro": [
-      "With everything we do online, there's a vast amount of sensitive information at risk: email addresses, passwords, phone numbers, and much more.",
-      "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
-      "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
+      "通过我们在线上的一切行为，我们的电子邮件地址、密码、电话号码等等大量敏感信息处于风险之中。",
+      "通过信息安全认证，你将使用 HelmetJS 构建安全的 Web 应用程序，以学习信息安全的基础知识。",
+      "你还将使用 Python 构建一个 TCP 客户端以及一个 Nmap 和端口扫描程序，从而学习渗透测试的基础知识。渗透测试是良好信息安全的重要组成部分。"
     ],
     "blocks": {
       "information-security-with-helmetjs": {
-        "title": "Information Security with HelmetJS",
+        "title": "HelmetJS 与信息安全",
         "intro": [
-          "This programming course focuses on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP headers. This way it can prevent sensitive information from unintentionally being passed between the server and client.",
-          "Completing the courses below will help you understand how to protect your website from malicious behavior."
+          "这个课程的重点是 HelmetJS。HelmetJS 是一种用于基于 Express 的应用程序的中间件，可以自动设置 HTTP 标头。这样，它可以防止敏感信息被无意间在服务器和客户端之间传递。",
+          "以下课程将帮助你了解如何保护你的网站免遭恶意攻击。"
         ]
       },
       "python-for-penetration-testing": {
-        "title": "Python for Penetration Testing",
+        "title": "Python 与渗透测试",
         "intro": [
-          "These video courses teach you penetration testing with Python. Also known as a pen test, penetration testing is a simulated attack against a system to check for vulnerabilities.",
-          "In this course, you'll learn about sockets, create a TCP server and client, build an Nmap scanner, and other tools and techniques that pen testers use daily."
+          "这些视频课程教你使用 Python 进行渗透测试。渗透测试（penetration testing）也叫作 “pen test”，它是对系统的模拟攻击，以检查漏洞。",
+          "在这个课程中，你将学习套接字、创建 TCP 服务器和客户端、构建 Nmap 扫描仪以及渗透测试人员日常使用的其他工具和技术。"
         ]
       },
       "information-security-projects": {
-        "title": "Information Security Projects",
+        "title": "信息安全项目",
         "intro": [
-          "Now it’s time to put your new information security skills to work. These projects will give you a chance to apply the infosec skills, principles, and concepts you've learned.",
-          "When you are done, you will have plenty of information security projects under your belt, along with a certification that you can show off to friends, family, and employers."
+          "现在是时候运用你的信息安全技能了。通过这些项目，你可以运用所学的信息安全技能、原理和概念。",
+          "完成后，您将拥有大量的信息安全项目，并获得认证，你可以向朋友、家人和雇主炫耀的证书。"
         ]
       }
     }
   },
   "machine-learning-with-python": {
-    "title": "Machine Learning with Python",
+    "title": "Python 与机器学习",
     "intro": [
-      "Machine learning has many practical applications that you can use in your projects or on the job.",
-      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks. A you'll explore more advanced techniques like natural language processing and reinforcement learning.",
-      "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
+      "机器学习有许多实际应用程序，你可以在项目中或工作中使用它们。",
+      "在这个认证中，你将使用 TensorFlow 框架构建多个神经网络，同时，你将探索更先进的技术，例如自然语言处理和强化学习。",
+      "你还将学习神经网络，并了解深度、递归和卷积神经网络背后的原理。"
     ],
     "blocks": {
       "tensorflow": {
         "title": "Tensorflow",
         "intro": [
-          "TensorFlow is an open source framework that makes machine learning and neural networking easier to use.",
-          "The following video course was created by Tim Ruscica, also known as “Tech With Tim”. It will help you to understand TensorFlow and some of its powerful capabilities."
+          "TensorFlow 是一个开源框架，使机器学习和神经网络更易于使用。",
+          "以下视频课程是由 Tim Ruscica 创建的，也叫作 “Tech With Tim”。这个课程将帮助你了解 TensorFlow 及它的一些强大功能。"
         ]
       },
       "how-neural-networks-work": {
-        "title": "How Neural Networks Work",
+        "title": "神经网络如何工作",
         "intro": [
-          "Neural networks are at the core of what we call artificial intelligence today. But historically they've been hard to understand. Especially for beginners in the machine learning field.",
-          "Even if you are completely new to neural networks, these video courses by Brandon Rohrer will get you comfortable with the concepts and the math behind them."
+          "神经网络是如今我们所谓的人工智能的核心。但是从历史上看，它们一直很难理解，特别是对于机器学习领域的初学者来说。",
+          "即使你刚开始学习神经网络，Brandon Rohrer 的这些视频课程也可以帮助你熟悉它的概念和它背后的数学知识。"
         ]
       },
       "machine-learning-with-python-projects": {
-        "title": "Machine Learning with Python Projects",
+        "title": "Python 与机器学习项目",
         "intro": [
-          "Machine learning has many practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning, and qualify for your Machine Learning with Python certification."
+          "机器学习有许多实际应用。通过完成这些免费且具有挑战性的编程项目，你可以证明自己掌握了机器学习基础知识，并获得认证。"
         ]
       }
     }
   },
   "coding-interview-prep": {
-    "title": "Coding Interview Prep",
+    "title": "面试攻略",
     "intro": [
-      "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
-      "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
+      "如果你正在寻找免费的编程训练来帮你为下一个工作面试做准备，我们已经帮你准备好了。",
+      "这一部分包含了大量编程挑战，可以测试你的算法、数据结构和数学知识。这里还有一些你可以在家慢慢做的项目，用于提升你的技术，或者丰富你的作品集。"
     ],
     "blocks": {
       "algorithms": {
-        "title": "Algorithms",
+        "title": "算法",
         "intro": [
-          "These free programming exercises will teach you about some common algorithms that you will likely encounter in real life. They are a great opportunity to improve your logic and programming skills.",
-          "These algorithms are frequently used in job interviews to test a candidate's skills. We'll give you clear and concise explanations of how these different algorithms work so you can implement a solution for each one."
+          "这些免费的编程练习将教你一些现实生活中可能会遇到的常见算法。它们是提高你的逻辑和编程技能的绝佳机会。",
+          "这些算法经常在工作面试中被用来测试候选人的技能。我们将为你提供简洁明了的解释，说明不同算法是如何运行的，以便你为每道算法题目编写解决方案。"
         ]
       },
       "data-structures": {
-        "title": "Data Structures",
+        "title": "数据结构",
         "intro": [
-          "These free programming courses are meant to help you deal with large and complex data structures that you may not yet be familiar with.",
-          "Working through the courses below, you will learn about each type of data structure, and implement algorithms to reinforce your understanding of them."
+          "这些免费的编程课程旨在帮助你处理可能你还不太熟悉的大型的、复杂的数据结构。",
+          "通过下面的课程，你将学习不同类型的数据结构，并通过算法来增强你对它们的理解。"
         ]
       },
       "take-home-projects": {
-        "title": "Take Home Projects",
+        "title": "私人项目",
         "intro": [
-          "Programming interviews have always been stressful. Job applicants are sometimes given a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.",
-          "Build the bonus coding projects below for extra practice. Take your time, make them great, and put them on your resume or portfolio to show potential employers."
+          "人们在编程面试的时候通常都是很紧张的。有时求职者会拿到一个带回家的项目，在面试之外完成它。这种类型的面试通常需要求职者做大量工作，但对于雇主来说，这是查看你在工作中表现如何的好方法。",
+          "通过下方的额外的编程项目，进行更多练习。慢慢来，做得好一点，然后将它们放在你的简历或作品集中，以向潜在的雇主展示。"
         ]
       },
       "rosetta-code": {
-        "title": "Rosetta Code",
+        "title": "罗塞塔代码",
         "intro": [
-          "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights."
+          "通过完成经典的罗塞塔代码库中的这些免费编程任务来提升你的创造性问题解决能力。",
+          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。"
         ]
       },
       "project-euler": {
-        "title": "Project Euler",
+        "title": "欧拉计划",
         "intro": [
-          "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-          "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+          "完成下方来自欧拉计划的编程挑战，这将强化你的算法和数学知识。",
+          "这些问题的难度很大，对于许多人来说，这是一个归纳性学习的过程。也就是说，通过解决一个问题，你将接触到一个新概念，然后你可以解决自己以前无法解决的问题。你能完成全部挑战吗？"
         ]
       }
     }

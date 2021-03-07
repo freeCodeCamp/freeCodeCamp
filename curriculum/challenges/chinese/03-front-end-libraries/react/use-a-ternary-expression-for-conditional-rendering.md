@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036187
-title: Use a Ternary Expression for Conditional Rendering
+title: 使用三元表达式进行条件渲染
 challengeType: 6
 forumTopicId: 301414
 dashedName: use-a-ternary-expression-for-conditional-rendering
@@ -8,7 +8,7 @@ dashedName: use-a-ternary-expression-for-conditional-rendering
 
 # --description--
 
-Before moving on to dynamic rendering techniques, there's one last way to use built-in JavaScript conditionals to render what you want: the <dfn>ternary operator</dfn>. The ternary operator is often utilized as a shortcut for `if/else` statements in JavaScript. They're not quite as robust as traditional `if/else` statements, but they are very popular among React developers. One reason for this is because of how JSX is compiled, `if/else` statements can't be inserted directly into JSX code. You might have noticed this a couple challenges ago — when an `if/else` statement was required, it was always *outside* the `return` statement. Ternary expressions can be an excellent alternative if you want to implement conditional logic within your JSX. Recall that a ternary operator has three parts, but you can combine several ternary expressions together. Here's the basic syntax:
+在继续使用动态渲染技术之前，还有最后一种方法可以渲染想要的东西，它使用内置的 JavaScript 条件：<dfn>三元运算符</dfn>。 三元运算符经常被用作 JavaScript 中 `if/else` 语句的缩写。 它们不像传统的 `if/else` 语句那样强大，但是在 React 开发人员中非常流行， 原因之一就是 JSX 的编译原理，`if/else` 语句不能直接插入到 JSX 代码中。 可能你在前几个挑战就注意到了这一点——当需要 `if/else` 语句时，它总是在 `return` 语句的*外面*。 如果想在 JSX 中实现条件逻辑，三元表达式是一个很好的选择。 回想一下，三元运算符有三个部分，但是可以将多个三元表达式组合在一起。 以下是基本语法：
 
 ```jsx
 condition ? expressionIfTrue : expressionIfFalse;
@@ -16,13 +16,13 @@ condition ? expressionIfTrue : expressionIfFalse;
 
 # --instructions--
 
-The code editor has three constants defined within the `CheckUserAge` component's `render()` method. They are called `buttonOne`, `buttonTwo`, and `buttonThree`. Each of these is assigned a simple JSX expression representing a button element. First, initialize the state of `CheckUserAge` with `input` and `userAge` both set to values of an empty string.
+代码编辑器在 `CheckUserAge` 组件的 `render()` 方法中定义了三个常量， 它们分别是 `buttonOne`、`buttonTwo` 和 `buttonThree`。 每个都分配了一个表示按钮元素的简单 JSX 表达式。 首先，使用 `input` 和 `userAge` 初始化 `CheckUserAge` 的 state，并将其值设置为空字符串。
 
-Once the component is rendering information to the page, users should have a way to interact with it. Within the component's `return` statement, set up a ternary expression that implements the following logic: when the page first loads, render the submit button, `buttonOne`, to the page. Then, when a user enters their age and clicks the button, render a different button based on the age. If a user enters a number less than `18`, render `buttonThree`. If a user enters a number greater than or equal to `18`, render `buttonTwo`.
+一旦组件将信息渲染给页面，用户应该有一种方法与之交互。 在组件的 `return` 语句中，设置一个实现以下逻辑的三元表达式：当页面首次加载时，将提交按钮 `buttonOne` 渲染到页面。 然后，当用户输入年龄并点击该按钮时，根据年龄渲染不同的按钮。 如果用户输入的数字小于`18`，则渲染`buttonThree`。 如果用户输入的数字大于或等于`18`，则渲染`buttonTwo`。
 
 # --hints--
 
-The `CheckUserAge` component should render with a single `input` element and a single `button` element.
+`CheckUserAge` 组件应该渲染出单个 `input` 元素和单个 `button` 元素。
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The `CheckUserAge` component's state should be initialized with a property of `userAge` and a property of `input`, both set to a value of an empty string.
+`CheckUserAge` 组件的 state 应该用 `userAge` 属性和 `input` 属性初始化，并且这两个属性的值都被设置为空字符串。
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-When the `CheckUserAge` component is first rendered to the DOM, the `button`'s inner text should be Submit.
+当 `CheckUserAge` 组件首次渲染到 DOM 时，`button` 内部的文本应为 Submit。
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-When a number of less than 18 is entered into the `input` element and the `button` is clicked, the `button`'s inner text should read `You Shall Not Pass`.
+当小于 18 的数字输入到 `input` 元素中，并点击该`button` 时，该 `button` 的内部文本应该是 `You Shall Not Pass`。
 
 ```js
 (() => {
@@ -83,7 +83,7 @@ When a number of less than 18 is entered into the `input` element and the `butto
 })();
 ```
 
-When a number greater than or equal to 18 is entered into the `input` element and the `button` is clicked, the `button`'s inner text should read `You May Enter`.
+当大于或等于 18 的数字输入到 `input` 元素中，并点击该 `button` 时，该 `button` 的内部文本应该是 `You May Enter`。
 
 ```js
 (() => {
@@ -115,7 +115,7 @@ When a number greater than or equal to 18 is entered into the `input` element an
 })();
 ```
 
-Once a number has been submitted, and the value of the `input` is once again changed, the `button` should return to reading `Submit`.
+提交了一个数字之后，并再次更改了 `input` 的值，该 `button` 内部文本应该变回 `Submit`。
 
 ```js
 (() => {
@@ -156,7 +156,7 @@ Once a number has been submitted, and the value of the `input` is once again cha
 })();
 ```
 
-Your code should not contain any `if/else` statements.
+你的代码不应该包含任何 `if/else` 语句。
 
 ```js
 assert(

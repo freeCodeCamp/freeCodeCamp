@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cd
-title: Manipulate Arrays With shift()
+title: Manipula arreglos con shift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238
@@ -9,25 +9,26 @@ dashedName: manipulate-arrays-with-shift
 
 # --description--
 
-`pop()` always removes the last element of an array. What if you want to remove the first?
+`pop()` siempre elimina el último elemento de un arreglo. ¿Qué tal si quieres eliminar el primero?
 
-That's where `.shift()` comes in. It works just like `.pop()`, except it removes the first element instead of the last.
+Ahí es donde entra `.shift()`. Funciona igual que `.pop()`, excepto que elimina el primer elemento en lugar del último.
 
-Example:
+Ejemplo:
 
 ```js
 var ourArray = ["Stimpson", "J", ["cat"]];
 var removedFromOurArray = ourArray.shift();
-// removedFromOurArray now equals "Stimpson" and ourArray now equals ["J", ["cat"]].
 ```
+
+`removedFromOurArray` tendrá una cadena con valor `Stimpson` y `ourArray` tendrá `["J", ["cat"]]`.
 
 # --instructions--
 
-Use the `.shift()` function to remove the first item from `myArray`, assigning the "shifted off" value to `removedFromMyArray`.
+Utiliza la función `.shift()` para eliminar el primer elemento de `myArray`, asignando el valor "desplazado" a `removedFromMyArray`.
 
 # --hints--
 
-`myArray` should now equal `[["dog", 3]]`.
+`myArray` debe ser igual a `[["dog", 3]]`.
 
 ```js
 assert(
@@ -41,7 +42,7 @@ assert(
 );
 ```
 
-`removedFromMyArray` should contain `["John", 23]`.
+`removedFromMyArray` debe contener `["John", 23]`.
 
 ```js
 assert(

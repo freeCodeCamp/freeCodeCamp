@@ -8,8 +8,10 @@
 
 <div class='i18n-lang-list'>
 
+- [Chinese](/i18n/chinese/index.md)
 - [English](/index.md)
 - [Español](/i18n/espanol/index.md)
+- [Portuguese](/i18n/portuguese/index.md)
 
 </div>
 

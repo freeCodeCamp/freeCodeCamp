@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed708826
-title: Remove an Element Using jQuery
+title: 使用 jQuery 删除元素
 challengeType: 6
 forumTopicId: 18262
 dashedName: remove-an-element-using-jquery
@@ -8,15 +8,15 @@ dashedName: remove-an-element-using-jquery
 
 # --description--
 
-Now let's remove an HTML element from your page using jQuery.
+现在学习用 jQuery 从页面移除 HTML 标签。
 
-jQuery has a function called `.remove()` that will remove an HTML element entirely
+jQuery 有一个 `.remove()` 方法，能完全移除 HTML 标签。
 
-Remove element `target4` from the page by using the `.remove()` function.
+用 `.remove()` 方法从页面移除 `target4` 标签。
 
 # --hints--
 
-You should use jQuery to remove your `target4` element from your page.
+应该用 jQuery 从页面中移除 `target4`标签。
 
 ```js
 assert(
@@ -24,7 +24,7 @@ assert(
 );
 ```
 
-You should only use jQuery to remove this element.
+应该仅用 jQuery 移除该标签。
 
 ```js
 assert(

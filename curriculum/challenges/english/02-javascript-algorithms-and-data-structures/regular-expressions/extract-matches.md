@@ -16,12 +16,12 @@ Here's an example:
 
 ```js
 "Hello, World!".match(/Hello/);
-// Returns ["Hello"]
 let ourStr = "Regular expressions";
 let ourRegex = /expressions/;
 ourStr.match(ourRegex);
-// Returns ["expressions"]
 ```
+
+Here the first `match` would return `["Hello"]` and the second would return `["expressions"]`.
 
 Note that the `.match` syntax is the "opposite" of the `.test` method you have been using thus far:
 
@@ -32,17 +32,17 @@ Note that the `.match` syntax is the "opposite" of the `.test` method you have b
 
 # --instructions--
 
-Apply the `.match()` method to extract the word `coding`.
+Apply the `.match()` method to extract the string `coding`.
 
 # --hints--
 
-The `result` should have the word `coding`
+The `result` should have the string `coding`
 
 ```js
 assert(result.join() === 'coding');
 ```
 
-Your regex `codingRegex` should search for `coding`
+Your regex `codingRegex` should search for the string `coding`
 
 ```js
 assert(codingRegex.source === 'coding');

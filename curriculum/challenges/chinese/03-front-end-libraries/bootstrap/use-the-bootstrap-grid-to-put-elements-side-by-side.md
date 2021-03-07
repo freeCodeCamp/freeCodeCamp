@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348ce8acef08815
-title: Use the Bootstrap Grid to Put Elements Side By Side
+title: 使用 Bootstrap Grid 并排放置元素
 challengeType: 0
 forumTopicId: 18371
 dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
@@ -8,33 +8,33 @@ dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 
 # --description--
 
-Bootstrap uses a responsive 12-column grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
+Bootstrap 具有一套 12 列的响应式栅格系统，可以轻松的将多个元素放入一行并指定它们的相对宽度。 Bootstrap 的大部分 class 属性都可以应用在 `div` 元素上。
 
-Bootstrap has different column width attributes that it uses depending on how wide the user's screen is. For example, phones have narrow screens, and laptops have wider screens.
+Bootstrap 的列宽取决于用户的屏幕宽度。 比如，手机有着窄屏幕而笔记本电脑有者更大的屏幕.
 
-Take for example Bootstrap's `col-md-*` class. Here, `md` means medium, and `*` is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
+就拿 Bootstrap 的 `col-md-*` class 来说。 在这里， `md` 表示 medium （中等的）， 而 `*` 是一个数字，说明了这个元素占有多少个列宽度。 这个例子就是指定了中等大小屏幕（例如笔记本电脑）下元素所占的列宽度。
 
-In the Cat Photo App that we're building, we'll use `col-xs-*`, where `xs` means extra small (like an extra-small mobile phone screen), and `*` is the number of columns specifying how many columns wide the element should be.
+在 Cat Photo App 中，将使用 `col-xs-*` ， 其中 `xs` 是 extra small 的缩写 (比如窄屏手机屏幕)， `*` 是填写的数字，代表一行中的元素该占多少列宽。
 
-Put the `Like`, `Info` and `Delete` buttons side-by-side by nesting all three of them within one `<div class="row">` element, then each of them within a `<div class="col-xs-4">` element.
+将 `Like`，`Info` 和 `Delete` 三个按钮并排放入一个 `<div class="row">` 元素中，然后每个按钮都各用一个 `<div class="col-xs-4">` 元素包裹起来。
 
-The `row` class is applied to a `div`, and the buttons themselves can be nested within it.
+当 `div` 元素设置了 `row` class 之后，那几个按钮便会嵌入其中了。
 
 # --hints--
 
-Your buttons should all be nested within the same `div` element with the class `row`.
+所有按钮都需要嵌入到同一个 `div` 元素中， 并且该元素包含 `row` class 属性。
 
 ```js
 assert($('div.row:has(button)').length > 0);
 ```
 
-Each of your Bootstrap buttons should be nested within its own `div` element with the class `col-xs-4`.
+每个 Bootstrap 按钮都需要嵌入各自的 `div` 元素，并且该元素包含 class 属性 `col-xs-4`。
 
 ```js
 assert($('div.col-xs-4:has(button)').length > 2);
 ```
 
-Each of your `button` elements should have a closing tag.
+确保每一个 `button` 元素都有一个闭合标签。
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-Each of your `div` elements should have a closing tag.
+确保每一个 `div` 元素都有一个闭合标签。
 
 ```js
 assert(

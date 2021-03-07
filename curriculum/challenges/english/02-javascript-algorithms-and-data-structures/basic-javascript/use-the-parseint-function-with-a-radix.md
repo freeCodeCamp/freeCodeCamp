@@ -19,7 +19,7 @@ And here's an example:
 
 `var a = parseInt("11", 2);`
 
-The radix variable says that "11" is in the binary system, or base 2. This example converts the string "11" to an integer 3.
+The radix variable says that `11` is in the binary system, or base 2. This example converts the string `11` to an integer `3`.
 
 # --instructions--
 
@@ -51,7 +51,7 @@ assert(convertToInteger('10011') === 19);
 assert(convertToInteger('111001') === 57);
 ```
 
-`convertToInteger("JamesBond")` should return NaN
+`convertToInteger("JamesBond")` should return `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

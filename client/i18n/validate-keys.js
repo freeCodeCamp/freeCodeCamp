@@ -61,7 +61,7 @@ const readComponentCode = filePath => {
 
 const clientCodebase = readComponentCode(path.join(process.cwd() + '/src'));
 const serverCodebase = readComponentCode(
-  path.join(process.cwd() + '/../api-server/server')
+  path.join(process.cwd() + '/../api-server/src/server')
 );
 
 for (const key of translationKeys) {

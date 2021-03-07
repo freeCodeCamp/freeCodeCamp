@@ -15,32 +15,30 @@ If the values being compared are not of the same type, the equality operator wil
 
 **Examples**
 
-```js
-3 == '3'  // returns true because JavaScript performs type conversion from string to number
-3 === '3' // returns false because the types are different and type conversion is not performed
-```
+`3 == '3'` returns `true` because JavaScript performs type conversion from string to number. `3 === '3'` returns false because the types are different and type conversion is not performed.
 
-**Note**  
-In JavaScript, you can determine the type of a variable or a value with the `typeof` operator, as follows:
+**Note:** In JavaScript, you can determine the type of a variable or a value with the `typeof` operator, as follows:
 
 ```js
-typeof 3   // returns 'number'
-typeof '3' // returns 'string'
+typeof 3
+typeof '3'
 ```
+
+`typeof 3` returns the string `number`, and `typeof '3'` returns the string `string`.
 
 # --instructions--
 
-The `compareEquality` function in the editor compares two values using the equality operator. Modify the function so that it returns "Equal" only when the values are strictly equal.
+The `compareEquality` function in the editor compares two values using the equality operator. Modify the function so that it returns the string `Equal` only when the values are strictly equal.
 
 # --hints--
 
-`compareEquality(10, "10")` should return "Not Equal"
+`compareEquality(10, "10")` should return the string `Not Equal`
 
 ```js
 assert(compareEquality(10, '10') === 'Not Equal');
 ```
 
-`compareEquality("20", 20)` should return "Not Equal"
+`compareEquality("20", 20)` should return the string `Not Equal`
 
 ```js
 assert(compareEquality('20', 20) === 'Not Equal');

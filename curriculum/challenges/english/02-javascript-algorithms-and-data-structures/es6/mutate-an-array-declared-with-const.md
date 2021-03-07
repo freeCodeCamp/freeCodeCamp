@@ -16,10 +16,12 @@ However, it is important to understand that objects (including arrays and functi
 
 ```js
 const s = [5, 6, 7];
-s = [1, 2, 3]; // throws error, trying to assign a const
-s[2] = 45; // works just as it would with an array declared with var or let
-console.log(s); // returns [5, 6, 45]
+s = [1, 2, 3];
+s[2] = 45;
+console.log(s);
 ```
+
+`s = [1, 2, 3]` will result in an error. The `console.log` will display the value `[5, 6, 45]`.
 
 As you can see, you can mutate the object `[5, 6, 7]` itself and the variable `s` will still point to the altered array `[5, 6, 45]`. Like all arrays, the array elements in `s` are mutable, but because `const` was used, you cannot use the variable identifier `s` to point to a different array using the assignment operator.
 

@@ -32,7 +32,7 @@ assert(/cat photos/gi.test($('a').text()));
 Necesitas un elemento `a` que enlace `https://freecatphotoapp.com`
 
 ```js
-assert(/https:\/\/(www\.)?freecatphotoapp\.com/gi.test($('a').attr('href')));
+assert(/^https?:\/\/freecatphotoapp\.com\/?$/i.test($('a').attr('href')));
 ```
 
 Tu elemento `a` debe tener una etiqueta de cierre.

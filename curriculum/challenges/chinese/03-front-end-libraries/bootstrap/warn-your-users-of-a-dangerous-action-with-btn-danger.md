@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348ce8acef08814
-title: Warn Your Users of a Dangerous Action with btn-danger
+title: 使用 btn-danger 提示危险操作
 challengeType: 0
 forumTopicId: 18375
 dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
@@ -8,33 +8,33 @@ dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 
 # --description--
 
-Bootstrap comes with several pre-defined colors for buttons. The `btn-danger` class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
+Bootstrap 有着丰富的预定义按钮颜色。 红色 `btn-danger` class 用来提醒用户此行为具有破坏性，比如删除一张猫的图片。
 
-Create a button with the text "Delete" and give it the class `btn-danger`.
+创建一个带有文本 `Delete` 的按钮，给它设置 class `btn-danger`。
 
-Note that these buttons still need the `btn` and `btn-block` classes.
+注意：这些按钮仍然需要 `btn` 和 `btn-block` class。
 
 # --hints--
 
-You should create a new `button` element with the text "Delete".
+应创建一个新的带有文本 `Delete` 的 `button` 元素。
 
 ```js
 assert(new RegExp('Delete', 'gi').test($('button').text()));
 ```
 
-All of your Bootstrap buttons should have the `btn` and `btn-block` classes.
+所有 Bootstrap 按钮的 class 属性都应该包含 `btn` 和 `btn-block`。
 
 ```js
 assert($('button.btn-block.btn').length > 2);
 ```
 
-Your new button should have the class `btn-danger`.
+新创建按钮的 class 属性应该包含 `btn-danger`。
 
 ```js
 assert($('button').hasClass('btn-danger'));
 ```
 
-All of your `button` elements should have closing tags.
+确保所有的 `button` 元素都有一个闭合标签。
 
 ```js
 assert(

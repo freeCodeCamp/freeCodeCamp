@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036148
-title: Connect Redux to the Messages App
+title: 将 Redux 连接到 Messages App
 challengeType: 6
 forumTopicId: 301427
 dashedName: connect-redux-to-the-messages-app
@@ -8,17 +8,17 @@ dashedName: connect-redux-to-the-messages-app
 
 # --description--
 
-Now that you understand how to use `connect` to connect React to Redux, you can apply what you've learned to your React component that handles messages.
+知道如何使用 `connect` 连接 React 和 Redux 后，我们可以在 React 组件中应用上面学到的内容。
 
-In the last lesson, the component you connected to Redux was named `Presentational`, and this wasn't arbitrary. This term *generally* refers to React components that are not directly connected to Redux. They are simply responsible for the presentation of UI and do this as a function of the props they receive. By contrast, container components are connected to Redux. These are typically responsible for dispatching actions to the store and often pass store state to child components as props.
+在上一课，连接到 Redux 的组件命名为 `Presentational`，这个命名不是任意的， 这样的术语*通常*是指未直接连接到 Redux 的 React 组件， 它们只负责执行接收 props 的函数来实现 UI 的呈现。 相比之下，容器组件用来连接到 Redux 上。 这些组件通常负责把 actions 分派给 store，且经常给子组件传入 store state 属性。
 
 # --instructions--
 
-The code editor has all the code you've written in this section so far. The only change is that the React component is renamed to `Presentational`. Create a new component held in a constant called `Container` that uses `connect` to connect the `Presentational` component to Redux. Then, in the `AppWrapper`, render the React Redux `Provider` component. Pass `Provider` the Redux `store` as a prop and render `Container` as a child. Once everything is setup, you will see the messages app rendered to the page again.
+到目前为止，我们的编辑器上已包含了整个章节的代码， 唯一不同的是，React 组件被重新命名为 `Presentational`，即展示层组件。 创建一个新组件，保存在名为 `Container` 的常量中。 这个常量用 `connect` 把 `Presentational` 组件和 Redux 连接起来。 然后，在`AppWrapper` 中渲染 React Redux 的 `Provider`组件， 给 `Provider` 传入 Redux `store` 属性并渲染 `Container` 为子组件。 设置完所有内容后，将再次看到消息应用程序渲染到页面上。
 
 # --hints--
 
-The `AppWrapper` should render to the page.
+`AppWrapper` 应渲染该页面上。
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The `Presentational` component should render to page.
+`Presentational` 组件应该渲染到页面上。
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `Presentational` component should render an `h2`, `input`, `button`, and `ul` elements.
+`Presentational` 组件应渲染 `h2`、`input`、`button`、`ul` 四个元素。
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive `messages` from the Redux store as a prop.
+`Presentational` 组件应接收 Redux store 的 `messages` 属性。
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive the `submitMessage` action creator as a prop.
+`Presentational` 组件应接收创建 action 的函数 `submitMessage` 属性。
 
 ```js
 assert(

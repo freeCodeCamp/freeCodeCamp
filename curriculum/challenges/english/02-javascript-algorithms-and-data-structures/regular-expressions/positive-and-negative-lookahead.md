@@ -23,16 +23,18 @@ let quit = "qu";
 let noquit = "qt";
 let quRegex= /q(?=u)/;
 let qRegex = /q(?!u)/;
-quit.match(quRegex); // Returns ["q"]
-noquit.match(qRegex); // Returns ["q"]
+quit.match(quRegex);
+noquit.match(qRegex);
 ```
+
+Both of these `match` calls would return `["q"]`.
 
 A more practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
 
 ```js
 let password = "abc123";
 let checkPass = /(?=\w{3,6})(?=\D*\d)/;
-checkPass.test(password); // Returns true
+checkPass.test(password);
 ```
 
 # --instructions--
@@ -47,49 +49,49 @@ Your regex should use two positive `lookaheads`.
 assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 ```
 
-Your regex should not match `"astronaut"`
+Your regex should not match the string `astronaut`
 
 ```js
 assert(!pwRegex.test('astronaut'));
 ```
 
-Your regex should not match `"banan1"`
+Your regex should not match the string `banan1`
 
 ```js
 assert(!pwRegex.test('banan1'));
 ```
 
-Your regex should match `"bana12"`
+Your regex should match the string `bana12`
 
 ```js
 assert(pwRegex.test('bana12'));
 ```
 
-Your regex should match `"abc123"`
+Your regex should match the string `abc123`
 
 ```js
 assert(pwRegex.test('abc123'));
 ```
 
-Your regex should not match `"12345"`
+Your regex should not match the string `12345`
 
 ```js
 assert(!pwRegex.test('12345'));
 ```
 
-Your regex should match `"8pass99"`
+Your regex should match the string `8pass99`
 
 ```js
 assert(pwRegex.test('8pass99'));
 ```
 
-Your regex should not match `"1a2bcde"`
+Your regex should not match the string `1a2bcde`
 
 ```js
 assert(!pwRegex.test('1a2bcde'));
 ```
 
-Your regex should match `"astr1on11aut"`
+Your regex should match the string `astr1on11aut`
 
 ```js
 assert(pwRegex.test('astr1on11aut'));

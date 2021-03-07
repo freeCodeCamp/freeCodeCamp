@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08813
-title: Call out Optional Actions with btn-info
+title: 可选操作样式 btn-info
 challengeType: 0
 forumTopicId: 16770
 dashedName: call-out-optional-actions-with-btn-info
@@ -8,33 +8,33 @@ dashedName: call-out-optional-actions-with-btn-info
 
 # --description--
 
-Bootstrap comes with several pre-defined colors for buttons. The `btn-info` class is used to call attention to optional actions that the user can take.
+Bootstrap 有着丰富的预定义按钮颜色。 浅蓝色的 `btn-info` class 通常用在备选操作上。
 
-Create a new block-level Bootstrap button below your "Like" button with the text "Info", and add Bootstrap's `btn-info` and `btn-block` classes to it.
+在 `Like` 按钮下方创建包含文本 `Info` 的块级 Bootstrap 按钮，然后为该按钮添加 Bootstrap 的 `btn-info` 和 `btn-block` classes。
 
-Note that these buttons still need the `btn` and `btn-block` classes.
+注意：这些按钮仍然需要 `btn` 和 `btn-block` classes。
 
 # --hints--
 
-You should create a new `button` element with the text "Info".
+应创建一个新的包含 `Info` 文本的 `button` 元素。
 
 ```js
 assert(new RegExp('info', 'gi').test($('button').text()));
 ```
 
-Both of your Bootstrap buttons should have the `btn` and `btn-block` classes.
+两个按钮的 class 属性应该包含 `btn` 和 `btn-block`。
 
 ```js
 assert($('button.btn-block.btn').length > 1);
 ```
 
-Your new button should have the class `btn-info`.
+新按钮的 class 属性应该含有 `btn-info`。
 
 ```js
 assert($('button').hasClass('btn-info'));
 ```
 
-All of your `button` elements should have closing tags.
+确保所有的 `button` 元素都有一个闭合标签。
 
 ```js
 assert(

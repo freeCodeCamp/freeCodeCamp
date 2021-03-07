@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036165
-title: Use React to Render Nested Components
+title: 使用 React 渲染嵌套组件
 challengeType: 6
 forumTopicId: 301420
 dashedName: use-react-to-render-nested-components
@@ -8,23 +8,23 @@ dashedName: use-react-to-render-nested-components
 
 # --description--
 
-The last challenge showed a simple way to compose two components, but there are many different ways you can compose components with React.
+上一个挑战显示了组合两个组件的简单方法，但是有许多不同的方法可以把 React 组件组合在一起。
 
-Component composition is one of React's powerful features. When you work with React, it is important to start thinking about your user interface in terms of components like the App example in the last challenge. You break down your UI into its basic building blocks, and those pieces become the components. This helps to separate the code responsible for the UI from the code responsible for handling your application logic. It can greatly simplify the development and maintenance of complex projects.
+组件组合是 React 的强大功能之一。 当使用 React 时，应当先用组件的思路考虑清楚用户界面的结构（如上一个挑战中的 App 示例）。 可以将 UI 分解为基本的构建块，这些构建块就是组件。 这样做有助于将负责 UI 的代码与负责处理应用程序逻辑的代码分开， 并可以大大简化复杂项目的开发和维护。
 
 # --instructions--
 
-There are two functional components defined in the code editor, called `TypesOfFruit` and `Fruits`. Take the `TypesOfFruit` component and compose it, or *nest* it, within the `Fruits` component. Then take the `Fruits` component and nest it within the `TypesOfFood` component. The result should be a child component, nested within a parent component, which is nested within a parent component of its own!
+代码编辑器中定义了两个功能组件，分别是 `TypesOfFruit` 和 `Fruits`。 请用组合或者*嵌套*把 `TypesOfFruit` 组件放到 `Fruits` 组件中， 然后把 `Fruits` 组件放到 `TypesOfFood` 组件中。 结果应该是子组件嵌套在父组件中，父组件嵌套在它本身的父组件中！
 
 # --hints--
 
-The `TypesOfFood` component should return a single `div` element.
+`TypesOfFood` 组件应该返回单个 `div` 元素。
 
 ```js
 assert(Enzyme.shallow(React.createElement(TypesOfFood)).type() === 'div');
 ```
 
-The `TypesOfFood` component should return the `Fruits` component.
+`TypesOfFood` 组件应该返回 `Fruits` 组件。
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The `Fruits` component should return the `TypesOfFruit` component.
+`Fruits` 组件应该返回 `TypesOfFruit` 组件。
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `TypesOfFruit` component should return the `h2` and `ul` elements.
+`TypesOfFruit` 组件应该返回 `h2` 和 `ul` 元素。
 
 ```js
 assert(

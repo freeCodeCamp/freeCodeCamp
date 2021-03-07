@@ -44,7 +44,6 @@ const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
-const { dasherize } = require('../../utils/slugs');
 const { toSortedArray } = require('../../utils/sort-files');
 
 const { testedLang } = require('../utils');
@@ -197,7 +196,7 @@ async function setup() {
 
   const meta = {};
   for (const challenge of challenges) {
-    const dashedBlockName = dasherize(challenge.block);
+    const dashedBlockName = challenge.block;
     if (!meta[dashedBlockName]) {
       meta[dashedBlockName] = (await getMetaForBlock(
         dashedBlockName
@@ -256,7 +255,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
     challenges.forEach((challenge, id) => {
-      const dashedBlockName = dasherize(challenge.block);
+      const dashedBlockName = challenge.block;
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
           // Note: the title in meta.json are purely for human readability and
@@ -280,8 +279,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               throw new AssertionError(result.error);
             }
             const { id, title, block, dashedName } = challenge;
-            const dashedBlock = dasherize(block);
-            const pathAndTitle = `${dashedBlock}/${dashedName}`;
+            const pathAndTitle = `${block}/${dashedName}`;
             mongoIds.check(id, title);
             challengeTitles.check(title, pathAndTitle);
           });
@@ -530,14 +528,21 @@ async function createTestRunner(
     try {
       const { pass, err } = await evaluator.evaluate(testString, 5000);
       if (!pass) {
-        throw new AssertionError(err.message);
+        throw err;
       }
     } catch (err) {
+      // add more info to the error so the failing test can be identified.
       text = 'Test text: ' + text;
-      const message = solutionFromNext
+      const newMessage = solutionFromNext
         ? 'Check next step for solution!\n' + text
         : text;
-      reThrow(err, message);
+      // if the stack is missing, the message should be included. Otherwise it
+      // is redundant.
+      err.message = err.stack
+        ? newMessage
+        : `${newMessage}
+      ${err.message}`;
+      throw err;
     }
   };
 }
@@ -579,14 +584,4 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
     sources,
     loadEnzyme
   );
-}
-
-function reThrow(err, text) {
-  const newMessage = `${text}
-  ${err.message}`;
-  if (err.name === 'AssertionError') {
-    throw new AssertionError(newMessage);
-  } else {
-    throw Error(newMessage);
-  }
 }

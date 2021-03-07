@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd8acde08812
-title: Center Text with Bootstrap
+title: 用 Bootstrap 居中文本
 challengeType: 0
 forumTopicId: 16771
 dashedName: center-text-with-bootstrap
@@ -8,21 +8,21 @@ dashedName: center-text-with-bootstrap
 
 # --description--
 
-Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class `text-center` to our `h2` element.
+可以使用 Bootstrap 将顶部的元素居中来美化页面。 只需要将 `h2` 元素的 class 属性设置为 `text-center` 就可以实现。
 
-Remember that you can add several classes to the same element by separating each of them with a space, like this:
+记住：可以为一个元素添加多个 classes ，class 间通过空格分隔，就像这样：
 
 `<h2 class="red-text text-center">your text</h2>`
 
 # --hints--
 
-Your `h2` element should be centered by applying the class `text-center`
+`h2` 元素应该通过 `text-center` class 使其居中显示
 
 ```js
 assert($('h2').hasClass('text-center'));
 ```
 
-Your `h2` element should still have the class `red-text`
+`h2` 元素应该包含 `red-text` class
 
 ```js
 assert($('h2').hasClass('red-text'));

@@ -21,11 +21,11 @@ function myFun() {
 }
 ```
 
-The function `myFun` will return `"Head"` because the `local` version of the variable is present.
+The function `myFun` will return the string `Head` because the `local` version of the variable is present.
 
 # --instructions--
 
-Add a local variable to `myOutfit` function to override the value of `outerWear` with `"sweater"`.
+Add a local variable to `myOutfit` function to override the value of `outerWear` with the string `sweater`.
 
 # --hints--
 
@@ -35,7 +35,7 @@ You should not change the value of the global `outerWear`.
 assert(outerWear === 'T-Shirt');
 ```
 
-`myOutfit` should return `"sweater"`.
+`myOutfit` should return the string `sweater`.
 
 ```js
 assert(myOutfit() === 'sweater');

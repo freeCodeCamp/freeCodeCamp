@@ -9,13 +9,13 @@ dashedName: use-the-u-tag-to-underline-text
 
 # --description--
 
-Para subrayar el texto, puedes utilizar la etiqueta `u`. Esto se usa a menudo para indicar que una sección del texto es importante, o algo que hay que recordar. Con la etiqueta `u`, el navegador aplica el CSS de `text-decoration: underline;` al elemento.
+Para subrayar texto, puedes usar la etiqueta `u`. Esto se utiliza a menudo para indicar que una sección del texto es importante, o algo que hay que recordar. Con la etiqueta `u`, el navegador aplica el CSS de `text-decoration: underline;` al elemento.
 
 # --instructions--
 
-Envuelve la etiqueta `u` solo alrededor del texto `Ph.D. students`.
+Envuelve la etiqueta `u` solo alrededor del texto `Ph.D. students `.
 
-**Nota:** Trata de evitar usar la etiqueta `u` cuando se pueda confundir con un enlace. Las etiquetas Anchor también tienen un formato subrayado por defecto.
+**Nota:** Trata de evitar el uso de la etiqueta `u`, puesto que podría confundirse con un enlace. Las etiquetas de enlaces tienen un formato subrayado por defecto.
 
 # --hints--
 
@@ -25,7 +25,7 @@ Tu código debe agregar una etiqueta `u` al lenguaje de marcado.
 assert($('u').length === 1);
 ```
 
-Envuelve la etiqueta `u` solo alrededor del texto `Ph.D. students`.
+Envuelve la etiqueta `u` solo alrededor del texto `Ph.D. students` </code>.
 
 ```js
 assert($('u').text() === 'Ph.D. students');

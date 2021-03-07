@@ -1,6 +1,6 @@
 ---
 id: 587d7fa5367417b2b2512bbd
-title: Extend One Set of CSS Styles to Another Element
+title: 将一组 CSS 样式扩展到另一个元素
 challengeType: 0
 forumTopicId: 301456
 dashedName: extend-one-set-of-css-styles-to-another-element
@@ -8,9 +8,9 @@ dashedName: extend-one-set-of-css-styles-to-another-element
 
 # --description--
 
-Sass has a feature called `extend` that makes it easy to borrow the CSS rules from one element and build upon them in another.
+Sass 有一个名为 `extend` 的功能，可以很容易地从一个元素中借用 CSS 规则并在另一个元素上重用它们。
 
-For example, the below block of CSS rules style a `.panel` class. It has a `background-color`, `height` and `border`.
+例如，下面的 CSS 规则块设置了 `.panel` class 的样式。 它有 `background-color`，`height` 和 `border`。
 
 ```scss
 .panel{
@@ -20,7 +20,7 @@ For example, the below block of CSS rules style a `.panel` class. It has a `back
 }
 ```
 
-Now you want another panel called `.big-panel`. It has the same base properties as `.panel`, but also needs a `width` and `font-size`. It's possible to copy and paste the initial CSS rules from `.panel`, but the code becomes repetitive as you add more types of panels. The `extend` directive is a simple way to reuse the rules written for one element, then add more for another:
+现在需要另一个名为 `.big-panel` 的面板。 它具有与 `.panel` 相同的基本属性，但还需要 `width` 和 `font-size`。 可以从 `.panel` 复制并粘贴初始 CSS 规则，但是当添加更多类型的面板时，代码会变得重复。 `extend` 指令是一种重用为一个元素编写的规则的简单方法，可以为另一个元素重用并添加更多规则：
 
 ```scss
 .big-panel{
@@ -30,15 +30,15 @@ Now you want another panel called `.big-panel`. It has the same base properties 
 }
 ```
 
-The `.big-panel` will have the same properties as `.panel` in addition to the new styles.
+除了新样式之外，`.big-panel` 将具有与 `.panel` 相同的属性。
 
 # --instructions--
 
-Make a class `.info-important` that extends `.info` and also has a `background-color` set to magenta.
+创建一个扩展 `.info` 的 class `.info-important`，并将`background-color` 设置为洋红色（magenta）。
 
 # --hints--
 
-Your `info-important` class should have a `background-color` set to `magenta`.
+`info-important` class 应该将 `background-color` 设置为 `magenta`。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Your `info-important` class should use `@extend` to inherit the styling from the `info` class.
+`info-important` class 应使用 `@extend` 继承 `info` class 的样式。
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 5688e62ea601b2482ff8422b
-title: Profile Lookup
+title: Búsqueda de perfiles
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
@@ -9,27 +9,27 @@ dashedName: profile-lookup
 
 # --description--
 
-We have an array of objects representing different people in our contacts lists.
+Tenemos un arreglo de objetos que representan a diferentes personas en nuestras listas de contactos.
 
-A `lookUpProfile` function that takes `name` and a property (`prop`) as arguments has been pre-written for you.
+Una función `lookUpProfile` que recibe nombre (`name`) y una propiedad (`prop`) como argumentos preescritos para ti.
 
-The function should check if `name` is an actual contact's `firstName` and the given property (`prop`) is a property of that contact.
+La función debe verificar si el nombre (`name`) es el nombre de pila del contacto (`firstName`) y la propiedad (`prop`) dada es una propiedad de ese contacto.
 
-If both are true, then return the "value" of that property.
+Si ambos son verdaderos, entonces devolver el "valor" de esa propiedad.
 
-If `name` does not correspond to any contacts then return `"No such contact"`.
+Si `name` no corresponde a ningún contacto, entonces devuelve la cadena `No such contact`.
 
-If `prop` does not correspond to any valid properties of a contact found to match `name` then return `"No such property"`.
+Si `prop` no corresponde a ninguna propiedad válida de un contacto encontrado que coincida con `name` entonces devuelve la cadena `No such property`.
 
 # --hints--
 
-`lookUpProfile("Kristian", "lastName")` should return `"Vos"`
+`lookUpProfile("Kristian", "lastName")` debe devolver la cadena `Vos`
 
 ```js
 assert(lookUpProfile('Kristian', 'lastName') === 'Vos');
 ```
 
-`lookUpProfile("Sherlock", "likes")` should return `["Intriguing Cases", "Violin"]`
+`lookUpProfile("Sherlock", "likes")` debe devolver `["Intriguing Cases", "Violin"]`
 
 ```js
 assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
@@ -38,25 +38,25 @@ assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
 ]);
 ```
 
-`lookUpProfile("Harry", "likes")` should return an array
+`lookUpProfile("Harry", "likes")` debe devolver un arreglo
 
 ```js
 assert(typeof lookUpProfile('Harry', 'likes') === 'object');
 ```
 
-`lookUpProfile("Bob", "number")` should return "No such contact"
+`lookUpProfile("Bob", "number")` debe devolver la cadena `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'number') === 'No such contact');
 ```
 
-`lookUpProfile("Bob", "potato")` should return "No such contact"
+`lookUpProfile("Bob", "potato")` debe devolver la cadena `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'potato') === 'No such contact');
 ```
 
-`lookUpProfile("Akira", "address")` should return "No such property"
+`lookUpProfile("Akira", "address")` debe devolver la cadena `No such property`
 
 ```js
 assert(lookUpProfile('Akira', 'address') === 'No such property');

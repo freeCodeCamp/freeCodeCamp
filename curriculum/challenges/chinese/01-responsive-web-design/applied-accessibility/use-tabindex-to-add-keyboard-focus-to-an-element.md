@@ -9,7 +9,7 @@ dashedName: use-tabindex-to-add-keyboard-focus-to-an-element
 
 # --description--
 
-HTML 的 `tabindex` 属性有三种与标签焦点相关的功能。 给标签加上 tabindex，表示该标签可以获得焦点。 tabindex 的值（可以是零、负整数或正整数）定义了行为。
+HTML 的 `tabindex` 属性有三种与标签焦点相关的功能。 当它在一个元素上时，表示该元素可以获得焦点。 tabindex 的值（可以是零、负整数或正整数）定义了行为。
 
 当用户使用键盘浏览页面时，诸如链接、表单控件等元素可以自动获得焦点。 它们获得焦点的顺序与它们出现在 HTML 文档流中的顺序一致。 我们可以通过将其他标签（如 `div`、`span`、`p` 等）的 `tabindex` 属性值设为 0 来让它们实现类似的效果。 比如：
 

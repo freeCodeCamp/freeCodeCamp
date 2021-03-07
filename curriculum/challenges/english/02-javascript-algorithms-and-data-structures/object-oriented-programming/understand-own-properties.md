@@ -31,8 +31,10 @@ for (let property in duck) {
   }
 }
 
-console.log(ownProps); // prints [ "name", "numLegs" ]
+console.log(ownProps);
 ```
+
+The console would display the value `["name", "numLegs"]`.
 
 # --instructions--
 
@@ -40,7 +42,7 @@ Add the `own` properties of `canary` to the array `ownProps`.
 
 # --hints--
 
-`ownProps` should include the values `"numLegs"` and `"name"`.
+`ownProps` should include the values `numLegs` and `name`.
 
 ```js
 assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);

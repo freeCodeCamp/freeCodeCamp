@@ -22,9 +22,9 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 **User Story #4:** I can see dots, that each have a class of `dot`, which represent the data being plotted.
 
-**User Story #5:** Each dot should have the properties `data-xvalue` and `data-yvalue` containing their corresponding x and y values.
+**User Story #5:** Each dot should have the properties `data-xvalue` and `data-yvalue` containing their corresponding `x` and `y` values.
 
-**User Story #6:** The `data-xvalue` and `data-yvalue` of each dot should be within the range of the actual data and in the correct data format. For `data-xvalue`, integers (full years) or Date objects are acceptable for test evaluation. For `data-yvalue` (minutes), use Date objects.
+**User Story #6:** The `data-xvalue` and `data-yvalue` of each dot should be within the range of the actual data and in the correct data format. For `data-xvalue`, integers (full years) or `Date` objects are acceptable for test evaluation. For `data-yvalue` (minutes), use `Date` objects.
 
 **User Story #7:** The `data-xvalue` and its corresponding dot should align with the corresponding point/value on the x-axis.
 

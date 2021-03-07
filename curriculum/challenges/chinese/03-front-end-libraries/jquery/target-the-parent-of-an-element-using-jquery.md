@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed308826
-title: Target the Parent of an Element Using jQuery
+title: 使用 jQuery 选择元素的父元素
 challengeType: 6
 forumTopicId: 18321
 dashedName: target-the-parent-of-an-element-using-jquery
@@ -8,21 +8,21 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 # --description--
 
-Every HTML element has a `parent` element from which it `inherits` properties.
+每个 HTML 标签都默认 `inherits`（继承）其 `parent`（父标签）的 CSS 属性。
 
-For example, your `jQuery Playground` `h3` element has the parent element of `<div class="container-fluid">`, which itself has the parent `body`.
+例如，`h3` 标签 `jQuery Playground` 的父标签是 `<div class="container-fluid">`，而这个标签的父标签是 `body`。
 
-jQuery has a function called `parent()` that allows you to access the parent of whichever element you've selected.
+jQuery 有一个 `parent()` 方法，可以访问被选取标签的父标签。
 
-Here's an example of how you would use the `parent()` function if you wanted to give the parent element of the `left-well` element a background color of blue:
+下面的代码展示了使用 `parent()` 方法把 `left-well` 标签的父标签背景色设置成蓝色（blue）：
 
 `$("#left-well").parent().css("background-color", "blue")`
 
-Give the parent of the `#target1` element a background-color of red.
+把 `#target1` 标签的父标签背景色设置成红色（red）。
 
 # --hints--
 
-Your `left-well` element should have a red background.
+`left-well` 标签应该有红色的背景。
 
 ```js
 assert(
@@ -33,13 +33,13 @@ assert(
 );
 ```
 
-You should use the `.parent()` function to modify this element.
+应该用 `.parent()` 方法修改该标签。
 
 ```js
 assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
 ```
 
-The `.parent()` method should be called on the `#target1` element.
+应该在 `#target1` 标签上调用 `.parent()` 方法。
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-You should only use jQuery to add these classes to the element.
+应该仅用 jQuery 给标签添加类。
 
 ```js
 assert(code.match(/<div class="well" id="left-well">/g));

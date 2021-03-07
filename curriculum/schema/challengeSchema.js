@@ -3,6 +3,8 @@ Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
+const slugRE = new RegExp('^[a-z0-9-]+$');
+
 const fileJoi = Joi.object().keys({
   key: Joi.string(),
   ext: Joi.string(),
@@ -20,7 +22,7 @@ const fileJoi = Joi.object().keys({
 
 const schema = Joi.object()
   .keys({
-    block: Joi.string(),
+    block: Joi.string().regex(slugRE),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     challengeType: Joi.number()
@@ -29,7 +31,7 @@ const schema = Joi.object()
       .required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
-    dashedName: Joi.string(),
+    dashedName: Joi.string().regex(slugRE),
     description: Joi.when('challengeType', {
       is: Joi.only([challengeTypes.step, challengeTypes.video]),
       then: Joi.string().allow(''),
@@ -82,7 +84,7 @@ const schema = Joi.object()
         indexpy: fileJoi
       })
     ),
-    superBlock: Joi.string(),
+    superBlock: Joi.string().regex(slugRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),
     tests: Joi.array().items(

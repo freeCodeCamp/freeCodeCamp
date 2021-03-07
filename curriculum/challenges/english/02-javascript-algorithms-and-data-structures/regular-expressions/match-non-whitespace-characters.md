@@ -15,8 +15,10 @@ Search for non-whitespace using `\S`, which is an uppercase `s`. This pattern wi
 ```js
 let whiteSpace = "Whitespace. Whitespace everywhere!"
 let nonSpaceRegex = /\S/g;
-whiteSpace.match(nonSpaceRegex).length; // Returns 32
+whiteSpace.match(nonSpaceRegex).length;
 ```
+
+The value returned by the `.length` method would be `32`.
 
 # --instructions--
 
@@ -36,7 +38,7 @@ Your regex should use the shorthand character `\S` to match all non-whitespace c
 assert(/\\S/.test(countNonWhiteSpace.source));
 ```
 
-Your regex should find 35 non-spaces in `"Men are from Mars and women are from Venus."`
+Your regex should find 35 non-spaces in the string `Men are from Mars and women are from Venus.`
 
 ```js
 assert(
@@ -45,13 +47,13 @@ assert(
 );
 ```
 
-Your regex should find 23 non-spaces in `"Space: the final frontier."`
+Your regex should find 23 non-spaces in the string `Space: the final frontier.`
 
 ```js
 assert('Space: the final frontier.'.match(countNonWhiteSpace).length == 23);
 ```
 
-Your regex should find 21 non-spaces in `"MindYourPersonalSpace"`
+Your regex should find 21 non-spaces in the string `MindYourPersonalSpace`
 
 ```js
 assert('MindYourPersonalSpace'.match(countNonWhiteSpace).length == 21);

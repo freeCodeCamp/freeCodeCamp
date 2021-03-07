@@ -18,8 +18,9 @@ Then check whether the desired string groups are in the test string by using the
 let testStr = "Pumpkin";
 let testRegex = /P(engu|umpk)in/;
 testRegex.test(testStr);
-// Returns true
 ```
+
+The `test` method here would return `true`.
 
 # --instructions--
 

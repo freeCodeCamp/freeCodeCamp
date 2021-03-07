@@ -59,7 +59,6 @@ async function loadBabel() {
 }
 
 async function loadPresetEnv() {
-  if (babelOptionsJSBase && babelOptionsJSBase.presets) return;
   /* eslint-disable no-inline-comments */
   if (!presetEnv)
     presetEnv = await import(
@@ -81,11 +80,11 @@ async function loadPresetEnv() {
 }
 
 async function loadPresetReact() {
-  if (presetReact) return;
   /* eslint-disable no-inline-comments */
-  presetReact = await import(
-    /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
-  );
+  if (!presetReact)
+    presetReact = await import(
+      /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
+    );
   if (!presetEnv)
     presetEnv = await import(
       /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'

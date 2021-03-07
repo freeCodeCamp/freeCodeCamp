@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1c
-title: Check if an Object has a Property
+title: Evalúa si un objeto tiene una propiedad
 challengeType: 1
 forumTopicId: 301155
 dashedName: check-if-an-object-has-a-property
@@ -8,7 +8,7 @@ dashedName: check-if-an-object-has-a-property
 
 # --description--
 
-Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the `hasOwnProperty()` method and the other uses the `in` keyword. If we have an object `users` with a property of `Alan`, we could check for its presence in either of the following ways:
+Ahora podemos agregar, modificar y eliminar claves de los objetos. Pero, ¿y si sólo queremos saber si un objeto tiene una propiedad específica? JavaScript nos proporciona dos maneras diferentes de hacerlo. Uno utiliza el método `hasOwnProperty()` y el otro utiliza la palabra clave `in`. Si tenemos un objeto `users` con una propiedad de `Alan`, podríamos comprobar su presencia de cualquiera de las siguientes maneras:
 
 ```js
 users.hasOwnProperty('Alan');
@@ -18,11 +18,11 @@ users.hasOwnProperty('Alan');
 
 # --instructions--
 
-We've created an object, `users`, with some users in it and a function `isEveryoneHere`, which we pass the `users` object to as an argument. Finish writing this function so that it returns `true` only if the `users` object contains all four names, `Alan`, `Jeff`, `Sarah`, and `Ryan`, as keys, and `false` otherwise.
+Hemos creado un objeto, `users`, con algunos usuarios en él y una función `isEveryoneHere`, a la que pasamos el objeto `users` como argumento. Termina de escribir esta función para que devuelva `true` sólo si el objeto `users` contiene los cuatro nombres, `Alan`, `Jeff`, `Sarah` y `Ryan`, como claves, y `false` en caso contrario.
 
 # --hints--
 
-The `users` object should only contain the keys `Alan`, `Jeff`, `Sarah`, and `Ryan`
+El objeto `users` sólo debe contener las claves `Alan`, `Jeff`, `Sarah` y `Ryan`
 
 ```js
 assert(
@@ -34,13 +34,13 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the `users` object
+La función `isEveryoneHere` debe devolver `true` si `Alan`, `Jeff`, `Sarah`, y `Ryan` son propiedades en el objeto `users`
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-The function `isEveryoneHere` should return `false` if `Alan` is not a property on the `users` object
+La función `isEveryoneHere` debe devolver `false` si `Alan` no es una propiedad en el objeto `users`
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Jeff` is not a property on the `users` object
+La función `isEveryoneHere` debe devolver `false` si `Jeff` no es una propiedad en el objeto `users`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Sarah` is not a property on the `users` object
+La función `isEveryoneHere` debe devolver `false` si `Sarah` no es una propiedad en el objeto `users`
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Ryan` is not a property on the `users` object
+La función `isEveryoneHere` debe devolver `false` si `Ryan` no es una propiedad en el objeto `users`
 
 ```js
 assert(

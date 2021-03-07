@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Make Images Mobile Responsive
+title: 使图片自适应移动端
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -8,39 +8,39 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-First, add a new image below the existing one. Set its `src` attribute to `https://bit.ly/fcc-running-cats`.
+首先，在已有的图片下面添加一张新的图片。 设置其 `src` 属性为 `https://bit.ly/fcc-running-cats`。
 
-It would be great if this image could be exactly the width of our phone's screen.
+如果图片的大小恰恰和我们手机屏幕尺寸大小一样自然是最好的。
 
-Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class to your image. Do this, and the image should perfectly fit the width of your page.
+幸运的是，现在通过 Bootstrap，我们仅仅只需要为 image 标签上设置 class 属性为 `img-responsive` ， 就可以让它完美地适应你的页面的宽度了。
 
 # --hints--
 
-You should have a total of two images.
+该页面共有两张图片。
 
 ```js
 assert($('img').length === 2);
 ```
 
-Your new image should be below your old one and have the class `img-responsive`.
+新的图片应该在旧的图片下面并且有值包含 `img-responsive` 的 class 属性。
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Your new image should not have the class `smaller-image`.
+新图片的 class 不应该包含 `smaller-image`。
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Your new image should have a `src` of `https://bit.ly/fcc-running-cats`.
+新图片的 `src` 属性值应该为 `https://bit.ly/fcc-running-cats`。
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
 ```
 
-Your new `img` element should have a closing angle bracket.
+确保新的 `img` 元素有一个闭合的尖括号。
 
 ```js
 assert(

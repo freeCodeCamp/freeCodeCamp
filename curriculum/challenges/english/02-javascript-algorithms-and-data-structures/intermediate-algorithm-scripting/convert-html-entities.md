@@ -12,13 +12,13 @@ Convert the characters `&`, `<`, `>`, `"` (double quote), and `'` (apostrophe), 
 
 # --hints--
 
-`convertHTML("Dolce & Gabbana")` should return `"Dolce &amp; Gabbana"`.
+`convertHTML("Dolce & Gabbana")` should return the string `Dolce &amp; Gabbana`.
 
 ```js
 assert.match(convertHTML('Dolce & Gabbana'), /Dolce &amp; Gabbana/);
 ```
 
-`convertHTML("Hamburgers < Pizza < Tacos")` should return `"Hamburgers &lt; Pizza &lt; Tacos"`.
+`convertHTML("Hamburgers < Pizza < Tacos")` should return the string `Hamburgers &lt; Pizza &lt; Tacos`.
 
 ```js
 assert.match(
@@ -27,13 +27,13 @@ assert.match(
 );
 ```
 
-`convertHTML("Sixty > twelve")` should return `"Sixty &gt; twelve"`.
+`convertHTML("Sixty > twelve")` should return the string `Sixty &gt; twelve`.
 
 ```js
 assert.match(convertHTML('Sixty > twelve'), /Sixty &gt; twelve/);
 ```
 
-`convertHTML('Stuff in "quotation marks"')` should return `"Stuff in &quot;quotation marks&quot;"`.
+`convertHTML('Stuff in "quotation marks"')` should return the string `Stuff in &quot;quotation marks&quot;`.
 
 ```js
 assert.match(
@@ -42,19 +42,19 @@ assert.match(
 );
 ```
 
-`convertHTML("Schindler's List")` should return `"Schindler&apos;s List"`.
+`convertHTML("Schindler's List")` should return the string `Schindler&apos;s List`.
 
 ```js
 assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);
 ```
 
-`convertHTML("<>")` should return `"&lt;&gt;"`.
+`convertHTML("<>")` should return the string `&lt;&gt;`.
 
 ```js
 assert.match(convertHTML('<>'), /&lt;&gt;/);
 ```
 
-`convertHTML("abc")` should return `"abc"`.
+`convertHTML("abc")` should return the string `abc`.
 
 ```js
 assert.strictEqual(convertHTML('abc'), 'abc');

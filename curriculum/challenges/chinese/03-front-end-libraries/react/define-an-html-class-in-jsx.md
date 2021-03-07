@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036160
-title: Define an HTML Class in JSX
+title: 在 JSX 中定义一个 HTML Class
 challengeType: 6
 forumTopicId: 301393
 dashedName: define-an-html-class-in-jsx
@@ -8,27 +8,27 @@ dashedName: define-an-html-class-in-jsx
 
 # --description--
 
-Now that you're getting comfortable writing JSX, you may be wondering how it differs from HTML.
+现在已经习惯了编写 JSX，可能想知道它与 HTML 有什么不同。
 
-So far, it may seem that HTML and JSX are exactly the same.
+到目前为止，HTML 和 JSX 似乎完全相同。
 
-One key difference in JSX is that you can no longer use the word `class` to define HTML classes. This is because `class` is a reserved word in JavaScript. Instead, JSX uses `className`.
+JSX 的一个关键区别是你不能再使用 `class` 这个单词来做为 HTML 的 class 名。 这是因为 `class` 是 JavaScript 中的关键字。 而 JSX 使用 `className` 来代替。
 
-In fact, the naming convention for all HTML attributes and event references in JSX become camelCase. For example, a click event in JSX is `onClick`, instead of `onclick`. Likewise, `onchange` becomes `onChange`. While this is a subtle difference, it is an important one to keep in mind moving forward.
+事实上，JSX 中所有 HTML 属性和事件引用的命名约定都变成了驼峰式。 例如，JSX 中的单击事件是 `onClick`，而不是 `onclick`。 同样，`onchange` 变成了`onChange`。 虽然这是一个微小的差异，但请你一定要记住。
 
 # --instructions--
 
-Apply a class of `myDiv` to the `div` provided in the JSX code.
+将 class `myDiv` 应用于 JSX 提供的 `div`上。
 
 # --hints--
 
-The constant `JSX` should return a `div` element.
+常量`JSX`应该返回一个`div`元素。
 
 ```js
 assert.strictEqual(JSX.type, 'div');
 ```
 
-The `div` should have a class of `myDiv`.
+`div` 应该有一个 `myDiv` class。
 
 ```js
 assert.strictEqual(JSX.props.className, 'myDiv');

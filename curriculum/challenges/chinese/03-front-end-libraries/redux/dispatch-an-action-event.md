@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614f
-title: Dispatch an Action Event
+title: 分发 Action Event
 challengeType: 6
 forumTopicId: 301442
 dashedName: dispatch-an-action-event
@@ -8,9 +8,9 @@ dashedName: dispatch-an-action-event
 
 # --description--
 
-`dispatch` method is what you use to dispatch actions to the Redux store. Calling `store.dispatch()` and passing the value returned from an action creator sends an action back to the store.
+`dispatch` 方法用于将 action 分派给 Redux store， 调用 `store.dispatch()` 将从 action creator 返回的值发送回 store。
 
-Recall that action creators return an object with a type property that specifies the action that has occurred. Then the method dispatches an action object to the Redux store. Based on the previous challenge's example, the following lines are equivalent, and both dispatch the action of type `LOGIN`:
+回想一下，动作创建者返回一个具有 type 属性的对象，该属性指定已发生的动作。 然后该方法会将一个 action 对象发送到 Redux store。 基于上一个挑战的示例，下面的行是等效的，两者都会调度类 `LOGIN` 类型的 action：
 
 ```js
 store.dispatch(actionCreator());
@@ -19,23 +19,23 @@ store.dispatch({ type: 'LOGIN' });
 
 # --instructions--
 
-The Redux store in the code editor has an initialized state that's an object containing a `login` property currently set to `false`. There's also an action creator called `loginAction()` which returns an action of type `LOGIN`. Dispatch the `LOGIN` action to the Redux store by calling the `dispatch` method, and pass in the action created by `loginAction()`.
+代码编辑器中的 Redux store 具有初始化状过的 state，包含 `login` 属性当前设置为 `false`的对象， 还有一个名为 `loginAction()` 的 action creator，它返回类型为 `LOGIN` 的 action， 然后通过调用 `dispatch` 方法将 `LOGIN` 的 action dispatch 给 Redux store，并传入 `loginAction()` 创建的 action。
 
 # --hints--
 
-Calling the function `loginAction` should return an object with `type` property set to the string `LOGIN`.
+调用函数 `loginAction` 应该返回一个 `type` 属性设置为字符串 `LOGIN` 的对象。
 
 ```js
 assert(loginAction().type === 'LOGIN');
 ```
 
-The store should be initialized with an object with property `login` set to `false`.
+store 应该用属性 `login` 设置为 `false` 的对象初始化。
 
 ```js
 assert(store.getState().login === false);
 ```
 
-The `store.dispatch()` method should be used to dispatch an action of type `LOGIN`.
+`store.dispatch()` 方法应该被用于 dispatch 一个类型为 `LOGIN` 的 action。
 
 ```js
 (getUserInput) =>

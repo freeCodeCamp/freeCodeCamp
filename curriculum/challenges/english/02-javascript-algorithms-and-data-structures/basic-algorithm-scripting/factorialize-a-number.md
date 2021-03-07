@@ -10,7 +10,7 @@ dashedName: factorialize-a-number
 
 Return the factorial of the provided integer.
 
-If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+If the integer is represented with the letter `n`, a factorial is the product of all positive integers less than or equal to `n`.
 
 Factorials are often represented with the shorthand notation `n!`
 
@@ -26,25 +26,25 @@ Only integers greater than or equal to zero will be supplied to the function.
 assert(typeof factorialize(5) === 'number');
 ```
 
-`factorialize(5)` should return 120.
+`factorialize(5)` should return `120`.
 
 ```js
 assert(factorialize(5) === 120);
 ```
 
-`factorialize(10)` should return 3628800.
+`factorialize(10)` should return `3628800`.
 
 ```js
 assert(factorialize(10) === 3628800);
 ```
 
-`factorialize(20)` should return 2432902008176640000.
+`factorialize(20)` should return `2432902008176640000`.
 
 ```js
 assert(factorialize(20) === 2432902008176640000);
 ```
 
-`factorialize(0)` should return 1.
+`factorialize(0)` should return `1`.
 
 ```js
 assert(factorialize(0) === 1);

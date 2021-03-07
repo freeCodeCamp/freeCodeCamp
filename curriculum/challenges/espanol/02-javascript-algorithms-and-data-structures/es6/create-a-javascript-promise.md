@@ -1,6 +1,6 @@
 ---
 id: 5cdafbb0291309899753167f
-title: Create a JavaScript Promise
+title: Crea una promesa de JavaScript
 challengeType: 1
 forumTopicId: 301197
 dashedName: create-a-javascript-promise
@@ -8,7 +8,7 @@ dashedName: create-a-javascript-promise
 
 # --description--
 
-A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. `Promise` is a constructor function, so you need to use the `new` keyword to create one. It takes a function, as its argument, with two parameters - `resolve` and `reject`. These are methods used to determine the outcome of the promise. The syntax looks like this:
+Una promesa en JavaScript es exactamente lo que suena, la usas para hacer una promesa de hacer algo, normalmente de forma asíncrona. Cuando la tarea se complete, cumple su promesa o no la cumple. `Promise` es una función constructora, así que tu necesitas usar la palabra clave `new` para crear una. Toma una función como su argumento, con dos parámetros - `resolve` y `reject`. Estos son métodos utilizados para determinar el resultado de la promesa. La sintaxis se ve así:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -18,17 +18,17 @@ const myPromise = new Promise((resolve, reject) => {
 
 # --instructions--
 
-Create a new promise called `makeServerRequest`. Pass in a function with `resolve` and `reject` parameters to the constructor.
+Crea una nueva promesa llamada `makeServerRequest`. Pase en una función con `resolve` y `reject` parámetros al constructor.
 
 # --hints--
 
-You should assign a promise to a declared variable named `makeServerRequest`.
+Debes asignar una promesa a una variable declarada con el nombre `makeServerRequest`.
 
 ```js
 assert(makeServerRequest instanceof Promise);
 ```
 
-Your promise should receive a function with `resolve` and `reject` as parameters.
+Tu promesa debe recibir una función con `resolve` y `reject` como parámetros.
 
 ```js
 assert(
@@ -41,7 +41,9 @@ assert(
 # --seed--
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1e
-title: Generate an Array of All Object Keys with Object.keys()
+title: 使用 Object.keys() 生成由对象的所有属性组成的数组
 challengeType: 1
 forumTopicId: 301160
 dashedName: generate-an-array-of-all-object-keys-with-object-keys
@@ -8,15 +8,15 @@ dashedName: generate-an-array-of-all-object-keys-with-object-keys
 
 # --description--
 
-We can also generate an array which contains all the keys stored in an object using the `Object.keys()` method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.
+我们可以给 `Object.keys()` 方法传入一个对象作为参数，来生成包含对象所有键的数组。 这会返回一个由对象中所有属性（字符串）组成的数组。 需要注意的是，数组中元素的顺序是不确定的。
 
 # --instructions--
 
-Finish writing the `getArrayOfUsers` function so that it returns an array containing all the properties in the object it receives as an argument.
+请完成 `getArrayOfUsers` 函数的实现，使其返回一个由输入对象中的所有属性所组成的数组。
 
 # --hints--
 
-The `users` object should only contain the keys `Alan`, `Jeff`, `Sarah`, and `Ryan`
+`users` 对象应该只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 这 4 个属性。
 
 ```js
 assert(
@@ -28,7 +28,7 @@ assert(
 );
 ```
 
-The `getArrayOfUsers` function should return an array which contains all the keys in the `users` object
+`getArrayOfUsers` 函数应返回一个包含 `users` 对象中所有属性的数组。
 
 ```js
 assert(

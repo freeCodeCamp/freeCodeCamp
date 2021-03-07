@@ -50,7 +50,7 @@
         ]
       },
       "css-grid": {
-        "title": "CSS Grid",
+        "title": "CSS grid",
         "intro": [
           "La cuadrícula (grid) CSS es un estándar reciente que facilita la creación de diseños complejos y responsivos. Funciona convirtiendo un elemento HTML en una cuadrícula y te permite colocar elementos secundarios en cualquier lugar dentro ella.",
           "En este curso, aprenderá los fundamentos de la cuadrícula (grid) CSS construyendo diferentes diseños complejos, incluido un blog."
@@ -66,53 +66,53 @@
       "basic-html-cat-photo-app": {
         "title": "Aplicación básica de fotos de gato HTML",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "basic-css-cafe-menu": {
         "title": "Menú básico de café CSS",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "css-variables-skyline": {
-        "title": "Skyline Variables de CSS",
+        "title": "Skyline variables de CSS",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Algoritmos de JavaScript y Estructuras de Datos",
+    "title": "Algoritmos de JavaScript y estructuras de datos",
     "intro": [
-      "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
-      "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
-      "Along the way, you'll also learn two important programing styles or paradigms: Object Oriented Programing (OOP), and Functional Programing (FP)."
+      "Mientras HTML y CSS controlan el contenido y el estilo de una página, JavaScript se utiliza para hacerlo interactivo. En la certificación Algoritmos de JavaScript y Estructuras de Datos, aprenderás los fundamentos de JavaScript incluyendo variables, arreglos, objetos, bucles y funciones.",
+      "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para manipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
+      "A lo largo del camino, también aprenderás dos estilos o paradigmas importantes de programación: la Programación Orientada a Objetos (OOP), y la Programación Funcional (FP)."
     ],
     "blocks": {
       "basic-javascript": {
-        "title": "Basic JavaScript",
+        "title": "JavaScript básico",
         "intro": [
-          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.",
-          "In this course, you'll learn fundamental programming concepts in JavaScript. You'll start with basic data structures like numbers and strings. Then you'll learn to work with arrays, objects, functions, loops, if/else statements, and more."
+          "JavaScript es un lenguaje de scripting que puedes utilizar para hacer que las páginas web sean interactivas. Es una de las principales tecnologías de la web, junto con HTML y CSS, y es soportada por todos los navegadores modernos.",
+          "En este curso, aprenderás conceptos fundamentales de programación en JavaScript. Empezarás con estructuras básicas de datos como números y cadenas. Luego aprenderás a trabajar con arreglos, objetos, funciones, bucles, declaraciones if/else y más."
         ]
       },
       "es6": {
         "title": "ES6",
         "intro": [
-          "ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.",
-          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is always evolving, and new features are released every year.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including <code>let</code> and <code>const</code>, arrow functions, classes, promises, and modules."
+          "ECMAScript, o ES, es una versión estandarizada de JavaScript. Debido a que todos los principales navegadores siguen esta especificación, los términos ECMAScript y JavaScript son intercambiables.",
+          "La mayoría del JavaScript que has aprendido hasta este punto estaba en ES5 (ECMAScript 5), el cual fue finalizado en 2009. Aunque puedes seguir escribiendo programas en ES5, JavaScript está evolucionando siempre, y cada año se lanzan nuevas funcionalidades.",
+          "ES6, lanzado en 2015, añadió muchas nuevas y potentes características al lenguaje. En este curso, aprenderás estas nuevas características, incluyendo <code>let</code> y <code>const</code>, funciones flecha, clases, promesas, y módulos."
         ]
       },
       "regular-expressions": {
-        "title": "Regular Expressions",
+        "title": "Expresiones regulares",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
+          "Expresiones regulares, a veces acortadas a \"regex\" o \"regexp\", son patrones que ayudan a los programadores a encontrar, buscar, y reemplazar texto. Las expresiones regulares son muy potentes, pero pueden ser difícil de leer porque usan caracteres especiales para hacer coincidencias más complejas y flexibles.",
           "In this course, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
         ]
       },
@@ -169,22 +169,22 @@
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
@@ -200,7 +200,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-fist approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "In this course, you'll learn how to build responsive websites with Bootstrap, and use its included classes to style buttons, images, forms, navigation, and other common elements."
         ]
       },
@@ -286,8 +286,8 @@
       "d3-dashboard": {
         "title": "D3 Dashboard",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
@@ -370,13 +370,13 @@
     "title": "Cálculo Científico con Python",
     "intro": [
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
-      "In the Scientific Computing with Python Certification, you'll Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
+      "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
     "blocks": {
       "python-for-everybody": {
         "title": "Python for Everybody",
         "intro": [
-          "Python for everybody is a free video course series that teach the basics of using Python 3.",
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
           "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
         ]
       },
@@ -398,7 +398,7 @@
       "data-analysis-with-python-course": {
         "title": "Data Analysis with Python",
         "intro": [
-          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll reading data from multiple sources (CSV, SQL, Excel), process those data using NumPy and Pandas, and visualize them using Matplotlib and Seaborn,",
+          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll be reading data from multiple sources (CSV, SQL, Excel), process that data using NumPy and Pandas, and visualize it using Matplotlib and Seaborn,",
           "Additionally, we've included a thorough Jupyter Notebook course, and a quick Python reference to refresh your programming skills."
         ]
       },
@@ -453,7 +453,7 @@
     "title": "Aprendizaje Automático con Python",
     "intro": [
       "Machine learning has many practical applications that you can use in your projects or on the job.",
-      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks. A you'll explore more advanced techniques like natural language processing and reinforcement learning.",
+      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
     "blocks": {
@@ -510,8 +510,8 @@
       "rosetta-code": {
         "title": "Rosetta Code",
         "intro": [
-          "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights."
+          "Sube tu nivel de habilidad de resolución creativa de problemas con estas tareas de programación gratis de la clásica librería de Rosetta Code.",
+          "Estos desafíos pueden resultar difíciles, pero empujarán tu lógica de algoritmos a nuevas alturas."
         ]
       },
       "project-euler": {

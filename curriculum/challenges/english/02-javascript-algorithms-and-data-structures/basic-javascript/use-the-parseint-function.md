@@ -13,7 +13,7 @@ The `parseInt()` function parses a string and returns an integer. Here's an exam
 
 `var a = parseInt("007");`
 
-The above function converts the string "007" to an integer 7. If the first character in the string can't be converted into a number, then it returns `NaN`.
+The above function converts the string `007` to the integer `7`. If the first character in the string can't be converted into a number, then it returns `NaN`.
 
 # --instructions--
 
@@ -45,7 +45,7 @@ assert(convertToInteger('56') === 56);
 assert(convertToInteger('77') === 77);
 ```
 
-`convertToInteger("JamesBond")` should return NaN
+`convertToInteger("JamesBond")` should return `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

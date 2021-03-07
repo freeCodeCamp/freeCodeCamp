@@ -21,7 +21,7 @@ The `meta-tags.json` file contains the information for our website's meta tag in
 
 To add a new language, create a folder with the language name as the title next to the other languages and copy the JSON files from another language into your new folder.
 
-In the `allLangs.js` file, add the language to the `client` array in the first variable. Then, follow the instructions in the comments to add the rest of the necessary variables.
+In the `all-langs.js` file, add the language to the `client` array in the first variable. Then, follow the instructions in the comments to add the rest of the necessary variables.
 
 ## How to Translate
 
@@ -34,7 +34,7 @@ Modifications to the `trending.json`, `meta-tags.json`, and `motivation.json` fi
 Set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to build.
 
 > [!NOTE]
-> The value needs to be one of the client languages available in `client/i18n/allLangs.js`
+> The value needs to be one of the client languages available in `config/i18n/all-langs.js`
 
 ## How to Structure Components
 
@@ -103,7 +103,7 @@ const username = 'moT';
 
 The above example passes an object to the `t` function with a `username` variable. The variable will be used in the JSON value where `{{username}}` is.
 
-## Translate with the \<Trans\> Component
+## Translate with the `Trans` Component
 
 The general rule is to use the "t" function when you can. But there's a `Trans` component for when that isn't enough, usually when you have elements embedded in the text. You can use the `Trans` component with any type of react component.
 

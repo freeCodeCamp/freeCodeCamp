@@ -28,7 +28,7 @@ name=John+Doe&age=25
 
 在 `package.json` 中安装 `body-parser` 模块， 然后在文件顶部 `require` 进来， 用变量 `bodyParser` 保存它。 通过中间件的 `bodyParser.urlencoded({extended: false})` 方法处理 URL 编码数据， 将调用上个方法返回的函数传给 `app.use()`， 中间件通常挂载在所有需要它的路由之前。
 
-**注意：**`extended=false`是一个告诉解析器使用经典编码的配置选项， 当使用它时，值只能是字符串或者数组， 拓展版本数据更加灵活，但稍逊于 JSON。
+**注意：**`extended=false` 是一个告诉解析器使用经典编码的配置选项， 当使用它时，值只能是字符串或者数组， 拓展版本数据更加灵活，但稍逊于 JSON。
 
 # --hints--
 

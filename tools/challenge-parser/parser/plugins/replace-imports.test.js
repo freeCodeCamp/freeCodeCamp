@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global describe it expect jest */
 const path = require('path');
 const cloneDeep = require('lodash/cloneDeep');
 const toVfile = require('to-vfile');
@@ -7,12 +7,14 @@ const selectAll = require('unist-util-select').selectAll;
 const addImports = require('./replace-imports');
 const originalImportsAST = require('../__fixtures__/ast-imports.json');
 const originalImportsTwoAST = require('../__fixtures__/ast-imports-two.json');
+const originalImportsExtraAST = require('../__fixtures__/ast-imports-extra.json');
 const originalSimpleAST = require('../__fixtures__/ast-simple.json');
 const originalMarkerAST = require('../__fixtures__/ast-marker-imports.json');
 
 describe('replace-imports', () => {
   let importsAST;
   let importsTwoAST;
+  let importsExtraAST;
   let simpleAST;
   let markerAST;
   let correctFile;
@@ -21,6 +23,7 @@ describe('replace-imports', () => {
   beforeEach(() => {
     importsAST = cloneDeep(originalImportsAST);
     importsTwoAST = cloneDeep(originalImportsTwoAST);
+    importsExtraAST = cloneDeep(originalImportsExtraAST);
     simpleAST = cloneDeep(originalSimpleAST);
     markerAST = cloneDeep(originalMarkerAST);
     correctFile = toVfile(
@@ -56,12 +59,15 @@ describe('replace-imports', () => {
   });
 
   it('should fail when the imported file cannot be found', done => {
+    expect.assertions(1);
+    console.error = jest.fn();
     const plugin = addImports();
 
     // we have to rely on the next callback, because that is how you get error
     // messages out of transformers
     const next = err => {
       if (err) {
+        expect(console.error).toHaveBeenCalledTimes(2);
         done();
       } else {
         done('An error should have been thrown by addImports');
@@ -116,6 +122,26 @@ describe('replace-imports', () => {
       }
     };
     plugin(importsAST, correctFile, next);
+  });
+
+  it('should not remove an ::import without the required attributes', done => {
+    expect.assertions(2);
+    const selector = 'leafDirective[name=import]';
+    const plugin = addImports();
+    const importNodes = selectAll(selector, importsExtraAST);
+
+    expect(importNodes.length).toBe(3);
+
+    const next = err => {
+      if (err) {
+        done(err);
+      } else {
+        const importNodes = selectAll(selector, importsExtraAST);
+        expect(importNodes.length).toBe(1);
+        done();
+      }
+    };
+    plugin(importsExtraAST, correctFile, next);
   });
 
   it('should remove all matching ::use statements', done => {
@@ -205,9 +231,12 @@ describe('replace-imports', () => {
   });
 
   it('should reject imported files with editable region markers', done => {
+    expect.assertions(1);
+    console.error = jest.fn();
     const plugin = addImports();
     const next = err => {
       if (err) {
+        expect(console.error).toHaveBeenCalledTimes(2);
         done();
       } else {
         done('An error should have been thrown by addImports');

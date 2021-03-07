@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Responsively Style Radio Buttons
+title: 响应式风格的单选按钮
 challengeType: 0
 forumTopicId: 18270
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-radio-buttons
 
 # --description--
 
-You can use Bootstrap's `col-xs-*` classes on `form` elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
+Bootstrap 的 `col-xs-*` class 也可以用在 `form` 元素上！ 这样就可以在不关心屏幕大小的情况下，将的单选按钮均匀的平铺在页面上。
 
-Nest both your radio buttons within a `<div class="row">` element. Then nest each of them within a `<div class="col-xs-6">` element.
+将所有单选按钮放入 `<div class="row">` 元素中。 再用 `<div class="col-xs-6">` 元素包裹每一个单选按钮。
 
-**Note:** As a reminder, radio buttons are `input` elements of type `radio`.
+**注意：** 提醒一句，单选按钮是 type 为 `radio` 的 `input` 元素。
 
 # --hints--
 
-All of your radio buttons should be nested inside one `div` with the class `row`.
+所有的单选按钮应该放置于具有 `row` class 的 `div` 元素中。
 
 ```js
 assert($('div.row:has(input[type="radio"])').length > 0);
 ```
 
-Each of your radio buttons should be nested inside its own `div` with the class `col-xs-6`.
+每一个单选按钮应该嵌套于具有 class 属性为 `col-xs-6` 的 `div` 元素之中。
 
 ```js
 assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
 ```
 
-All of your `div` elements should have closing tags.
+确保所有 `div` 元素都有闭合标签。
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed108826
-title: Target a Specific Child of an Element Using jQuery
+title: 使用 jQuery 选择元素的特定子元素
 challengeType: 6
 forumTopicId: 18315
 required:
@@ -11,21 +11,21 @@ dashedName: target-a-specific-child-of-an-element-using-jquery
 
 # --description--
 
-You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.
+已经看到了 id 属性对于 jQuery 选择器选取标签的便利， 但这并不适用于所有情景。
 
-Fortunately, jQuery has some other tricks for targeting the right elements.
+幸运的是，jQuery 有一些其他的方法可以选取正确的标签。
 
-jQuery uses CSS Selectors to target elements. The `target:nth-child(n)` CSS selector allows you to select all the nth elements with the target class or element type.
+jQuery 可以用 CSS 选择器（CSS Selectors）选取标签。 `target:nth-child(n)` CSS 选择器可以选取指定 class 或者元素类型的的第 n 个标签。
 
-Here's how you would give the third element in each well the bounce class:
+下面的代码展示了给每个区域（well）的第 3 个标签设置弹跳（bounce）动画效果：
 
 `$(".target:nth-child(3)").addClass("animated bounce");`
 
-Make the second child in each of your well elements bounce. You must select the elements' children with the `target` class.
+给 well 元素的第二个子元素添加弹跳（bounce）动画效果。 必须选择具有 `target` class 的子元素。
 
 # --hints--
 
-The second element in your `target` elements should bounce.
+`target` 元素中的第二个元素应该有弹跳（bounce）动画效果。
 
 ```js
 assert(
@@ -34,19 +34,19 @@ assert(
 );
 ```
 
-Only two elements should bounce.
+应该仅两个标签有弹跳（bounce）动画效果。
 
 ```js
 assert($('.animated.bounce').length === 2);
 ```
 
-You should use the `:nth-child()` selector to modify these elements.
+应该用 `:nth-child()` 选择器修改这些标签。
 
 ```js
 assert(code.match(/\:nth-child\(/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+应该仅用 jQuery 给标签添加类。
 
 ```js
 assert(

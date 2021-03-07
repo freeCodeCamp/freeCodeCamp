@@ -16,14 +16,13 @@ The last challenge created a bar chart, but there are a couple of formatting cha
 
 # --instructions--
 
-First, add a `margin` of 2px to the `bar` class in the `style` tag. Next, change the callback function in the `style()` method so it returns a value 10 times the original data value (plus the "px").
+First, add a `margin` of `2px` to the `bar` class in the `style` tag. Next, change the callback function in the `style()` method so it returns a value `10` times the original data value (plus the `px`).
 
-**Note**  
-Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
+**Note:** Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
 
 # --hints--
 
-The first `div` should have a `height` of 120 pixels and a `margin` of 2 pixels.
+The first `div` should have a `height` of `120` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -32,7 +31,7 @@ assert(
 );
 ```
 
-The second `div` should have a `height` of 310 pixels and a `margin` of 2 pixels.
+The second `div` should have a `height` of `310` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -41,7 +40,7 @@ assert(
 );
 ```
 
-The third `div` should have a `height` of 220 pixels and a `margin` of 2 pixels.
+The third `div` should have a `height` of `220` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -50,7 +49,7 @@ assert(
 );
 ```
 
-The fourth `div` should have a `height` of 170 pixels and a `margin` of 2 pixels.
+The fourth `div` should have a `height` of `170` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -59,7 +58,7 @@ assert(
 );
 ```
 
-The fifth `div` should have a `height` of 250 pixels and a `margin` of 2 pixels.
+The fifth `div` should have a `height` of `250` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -68,7 +67,7 @@ assert(
 );
 ```
 
-The sixth `div` should have a `height` of 180 pixels and a `margin` of 2 pixels.
+The sixth `div` should have a `height` of `180` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -77,7 +76,7 @@ assert(
 );
 ```
 
-The seventh `div` should have a `height` of 290 pixels and a `margin` of 2 pixels.
+The seventh `div` should have a `height` of `290` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -86,7 +85,7 @@ assert(
 );
 ```
 
-The eighth `div` should have a `height` of 140 pixels and a `margin` of 2 pixels.
+The eighth `div` should have a `height` of `140` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(
@@ -95,7 +94,7 @@ assert(
 );
 ```
 
-The ninth `div` should have a `height` of 90 pixels and a `margin` of 2 pixels.
+The ninth `div` should have a `height` of `90` pixels and a `margin` of `2` pixels.
 
 ```js
 assert(

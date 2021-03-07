@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036146
-title: Map Dispatch to Props
+title: 映射 Dispatch 到 Props
 challengeType: 6
 forumTopicId: 301432
 dashedName: map-dispatch-to-props
@@ -8,9 +8,9 @@ dashedName: map-dispatch-to-props
 
 # --description--
 
-The `mapDispatchToProps()` function is used to provide specific action creators to your React components so they can dispatch actions against the Redux store. It's similar in structure to the `mapStateToProps()` function you wrote in the last challenge. It returns an object that maps dispatch actions to property names, which become component `props`. However, instead of returning a piece of `state`, each property returns a function that calls `dispatch` with an action creator and any relevant action data. You have access to this `dispatch` because it's passed in to `mapDispatchToProps()` as a parameter when you define the function, just like you passed `state` to `mapStateToProps()`. Behind the scenes, React Redux is using Redux's `store.dispatch()` to conduct these dispatches with `mapDispatchToProps()`. This is similar to how it uses `store.subscribe()` for components that are mapped to `state`.
+`mapDispatchToProps()` 函数可为 React 组件提供特定的创建 action 的函数，以便组件可 dispatch actions，从而更改 Redux store 中的数据。 该函数的结构跟上一挑战中的`mapStateToProps()`函数相似， 它返回一个对象，把 dispatch actions 映射到属性名上，该属性名成为`props`。 然而，每个属性都返回一个用 action creator 及与 action 相关的所有数据调用 `dispatch` 的函数，而不是返回 `state` 的一部分。 可以访问 `dispatch`，因为在定义函数时，我们以参数形式把它传入 `mapDispatchToProps()` 了，这跟 `state` 传入 `mapStateToProps()` 是一样的。 在幕后，React Redux 用 Redux 的 `store.dispatch()` 来管理这些含 `mapDispatchToProps()` 的dispatches， 这跟它使用 `store.subscribe()` 来订阅映射到 `state` 的组件的方式类似。
 
-For example, you have a `loginUser()` action creator that takes a `username` as an action payload. The object returned from `mapDispatchToProps()` for this action creator would look something like:
+例如，创建 action 的函数 `loginUser()` 把 `username` 作为 action payload， `mapDispatchToProps()` 返回给创建 action 的函数的对象如下：
 
 ```jsx
 {
@@ -22,11 +22,11 @@ For example, you have a `loginUser()` action creator that takes a `username` as 
 
 # --instructions--
 
-The code editor provides an action creator called `addMessage()`. Write the function `mapDispatchToProps()` that takes `dispatch` as an argument, then returns an object. The object should have a property `submitNewMessage` set to the dispatch function, which takes a parameter for the new message to add when it dispatches `addMessage()`.
+编辑器上提供的是创建 action 的函数 `addMessage()`。 写出接收 `dispatch` 为参数的函数 `mapDispatchToProps()`，返回一个 dispatch 函数对象， 其属性为 `submitNewMessage`。该函数在 dispatch `addMessage()` 时为新消息提供一个参数。
 
 # --hints--
 
-`addMessage` should return an object with keys `type` and `message`.
+`addMessage` 应返回含 `type` 和 `message` 两个键的对象。
 
 ```js
 assert(
@@ -40,19 +40,19 @@ assert(
 );
 ```
 
-`mapDispatchToProps` should be a function.
+`mapDispatchToProps` 应为函数。
 
 ```js
 assert(typeof mapDispatchToProps === 'function');
 ```
 
-`mapDispatchToProps` should return an object.
+`mapDispatchToProps` 应返回一个对象。
 
 ```js
 assert(typeof mapDispatchToProps() === 'object');
 ```
 
-Dispatching `addMessage` with `submitNewMessage` from `mapDispatchToProps` should return a message to the dispatch function.
+从 `mapDispatchToProps` 通过 `submitNewMessage` 分发 `addMessage`，应向 dispatch 函数返回一条消息。
 
 ```js
 assert(
