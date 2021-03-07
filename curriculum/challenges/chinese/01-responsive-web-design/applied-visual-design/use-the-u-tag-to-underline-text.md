@@ -25,7 +25,7 @@ dashedName: use-the-u-tag-to-underline-text
 assert($('u').length === 1);
 ```
 
-`u` 标签的文本内容应为 `Ph.D. students`。
+`u` 标签的文本内容应为 `Ph.D.  students`。
 
 ```js
 assert($('u').text() === 'Ph.D. students');

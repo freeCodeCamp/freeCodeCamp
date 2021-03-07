@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bd
-title: Passing Values to Functions with Arguments
+title: Pasa valores a las funciones utilizando argumentos
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy8rahW'
 forumTopicId: 18254
@@ -9,9 +9,9 @@ dashedName: passing-values-to-functions-with-arguments
 
 # --description--
 
-<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
+<dfn>Los parámetros</dfn> son variables que actúan como marcadores de posición para los valores que deben ser introducidos en una función cuando se llama. Cuando se define una función, se define típicamente junto con uno o más parámetros. Los valores reales que son introducidos (o <dfn>"pasados"</dfn>) a una función cuando se llama son conocidos como <dfn>argumentos</dfn>.
 
-Here is a function with two parameters, `param1` and `param2`:
+Esta es una función con dos parámetros, `param1` y `param2`:
 
 ```js
 function testFun(param1, param2) {
@@ -19,21 +19,21 @@ function testFun(param1, param2) {
 }
 ```
 
-Then we can call `testFun`: `testFun("Hello", "World");` We have passed two arguments, `"Hello"` and `"World"`. Inside the function, `param1` will equal "Hello" and `param2` will equal "World". Note that you could call `testFun` again with different arguments and the parameters would take on the value of the new arguments.
+Entonces podemos llamar a `testFun` así: `testFun("Hello", "World");`. Hemos pasado dos argumentos de cadena, `Hello` y `World`. Dentro de la función, `param1` será igual a la cadena `Hello` y `param2` será igual a la cadena `World`. Ten en cuenta que podrías llamar a `testFun` otra vez con diferentes argumentos y los parámetros tomarían el valor de los nuevos argumentos.
 
 # --instructions--
 
-<ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function with two numbers as arguments.</li></ol>
+<ol><li>Crea una función llamada <code>functionWithArgs</code> que acepte dos argumentos y muestre la suma de ellos en la consola de desarrollador.</li><li>Llama a la función con dos números como argumentos.</li></ol>
 
 # --hints--
 
-`functionWithArgs` should be a function.
+`functionWithArgs` debe ser una función.
 
 ```js
 assert(typeof functionWithArgs === 'function');
 ```
 
-`functionWithArgs(1,2)` should output `3`.
+`functionWithArgs(1,2)` debe mostrar `3`.
 
 ```js
 if (typeof functionWithArgs === 'function') {
@@ -44,7 +44,7 @@ if (typeof functionWithArgs === 'function') {
 assert(logOutput == 3);
 ```
 
-`functionWithArgs(7,9)` should output `16`.
+`functionWithArgs(7,9)` debe mostrar `16`.
 
 ```js
 if (typeof functionWithArgs === 'function') {
@@ -55,7 +55,7 @@ if (typeof functionWithArgs === 'function') {
 assert(logOutput == 16);
 ```
 
-You should call `functionWithArgs` with two numbers after you define it.
+Debes llamar `functionWithArgs` con dos números después de definirla.
 
 ```js
 assert(
@@ -105,7 +105,9 @@ if (typeof functionWithArgs !== "function") {
 ```
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

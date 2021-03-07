@@ -1,6 +1,6 @@
 ---
 id: 5a94fe0569fb03452672e45c
-title: Divide la grid en una platilla de área
+title: Divide la cuadrícula en una plantilla de área
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
@@ -18,7 +18,7 @@ grid-template-areas:
   "footer footer footer";
 ```
 
-El código anterior fusiona las tres celdas superiores en una área llamada `header`, las tres celdas inferiores en una área `footer` y hace dos áreas en la fila del medio; `advert` and `content`. **Nota:** cada palabra en el código representa una celda y cada par de comillas representa una fila. Además de los nombres personalizados, puedes usar un punto (`.`) para designar una celda vacía en la grid.
+El código anterior fusiona las tres celdas superiores en una área llamada `header`, las tres celdas inferiores en una área `footer` y hace dos áreas en la fila del medio; `advert` y `content`. **Nota:** cada palabra en el código representa una celda y cada par de comillas representa una fila. Además de los nombres personalizados, puedes usar un punto (`.`) para designar una celda vacía en la grid.
 
 # --instructions--
 
