@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -12,6 +12,7 @@ import ClaimCertSteps from './ClaimCertSteps';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import { stepsToClaimSelector } from '../../../redux';
+import { getVerifyCanClaimCert } from '../../../utils/ajax';
 
 const propTypes = {
   certCheckmarkStyle: PropTypes.object,
@@ -51,6 +52,21 @@ const CertificationCard = ({
 }) => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(true);
+  const [canClaim, setCanClaim] = useState(false);
+
+  useEffect(() => {
+    if (username) {
+      (async () => {
+        const response = await getVerifyCanClaimCert(username, superBlock);
+        console.log(response);
+        if (response.status === 200) {
+          setCanClaim(response.data?.response?.message === 'can-claim-cert');
+        }
+      })();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [username]);
+
   const createClickHandler = superBlock => e => {
     e.preventDefault();
     return isHonest
@@ -63,13 +79,14 @@ const CertificationCard = ({
   };
   // TODO: Undo hardcoded values for testing, and decide
   //       on best data structure to follow for stepsToClaim
-  let completedCount = Object.values(steps).filter(val => {
-    if (Array.isArray(val)) {
-      return val?.find(cert => cert.title === i18nCertText)?.show;
-    } else {
-      return val;
-    }
-  }).length;
+  let completedCount =
+    Object.values(steps).filter(val => {
+      if (Array.isArray(val)) {
+        return val?.find(cert => cert.title === i18nCertText)?.show;
+      } else {
+        return val;
+      }
+    }).length + canClaim;
   const numberOfSteps = Object.keys(steps).length;
   const {
     expand: expandText,
@@ -112,10 +129,10 @@ const CertificationCard = ({
         </button>
         {isExpanded && (
           <ClaimCertSteps
+            canClaim={canClaim}
             i18nCertText={i18nCertText}
             steps={steps}
             superBlock={superBlock}
-            username={username}
           />
         )}
         <button

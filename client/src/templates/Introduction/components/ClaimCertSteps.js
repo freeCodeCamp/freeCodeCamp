@@ -1,37 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { withTranslation, useTranslation } from 'react-i18next';
 
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { getVerifyCanClaimCert } from '../../../utils/ajax';
 
 const propTypes = {
+  canClaim: PropTypes.bool,
   i18nCertText: PropTypes.string,
   steps: PropTypes.object,
-  superBlock: PropTypes.string,
-  username: PropTypes.string
+  superBlock: PropTypes.string
 };
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-const ClaimCertSteps = ({ i18nCertText, steps, superBlock, username }) => {
-  const [canClaim, setCanClaim] = useState(false);
-
-  useEffect(() => {
-    if (username) {
-      (async () => {
-        const response = await getVerifyCanClaimCert(username, superBlock);
-        console.log(response);
-        if (response.status === 200) {
-          setCanClaim(response.data?.response?.message === 'can-claim-cert');
-        }
-      })();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [username]);
-
+const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
   const { t } = useTranslation();
   const renderCheckMark = isCompleted => {
     return isCompleted ? (

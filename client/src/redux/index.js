@@ -187,7 +187,6 @@ export const stepsToClaimSelector = state => {
   const user = userSelector(state);
   const currentCerts = certificatesByNameSelector(user.username)(state)
     .currentCerts;
-  console.log('user: ', currentCerts);
   return {
     currentCerts: currentCerts,
     isHonest: user?.isHonest,

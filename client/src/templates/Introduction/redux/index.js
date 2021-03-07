@@ -9,15 +9,10 @@ const initialState = {
   }
 };
 
-const types = createTypes(
-  ['resetExpansion', 'toggleBlock', 'verifyCanClaimCert'],
-  ns
-);
+const types = createTypes(['resetExpansion', 'toggleBlock'], ns);
 
 export const resetExpansion = createAction(types.resetExpansion);
 export const toggleBlock = createAction(types.toggleBlock);
-
-export const verifyCanClaimCert = createAction(types.verifyCanClaimCert);
 
 export const makeExpandedBlockSelector = block => state =>
   !!state[ns].expandedState.block[block];
