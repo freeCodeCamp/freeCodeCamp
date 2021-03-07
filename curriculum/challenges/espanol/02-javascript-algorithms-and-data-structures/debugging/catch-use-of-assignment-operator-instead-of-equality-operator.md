@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b38
-title: Catch Use of Assignment Operator Instead of Equality Operator
+title: Captura el uso del operador de asignación en lugar del operador de igualdad
 challengeType: 1
 forumTopicId: 301191
 dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
@@ -8,13 +8,13 @@ dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
 
 # --description--
 
-Branching programs, i.e. ones that do different things if certain conditions are met, rely on `if`, `else if`, and `else` statements in JavaScript. The condition sometimes takes the form of testing whether a result is equal to a value.
+Los programas de bifurcación (branching), es decir, los que hacen cosas diferentes si se cumplen ciertas condiciones, se basan en las sentencias `if`, `else if` y `else` de JavaScript. La condición a veces toma la forma de probar si un resultado es igual a un valor.
 
-This logic is spoken (in English, at least) as "if x equals y, then ..." which can literally translate into code using the `=`, or assignment operator. This leads to unexpected control flow in your program.
+Esta lógica se habla (en español, al menos) como "si x es igual a y, entonces...", lo que puede traducirse literalmente en código utilizando el `=`, u operador de asignación. Esto lleva a un flujo de control inesperado en tu programa.
 
-As covered in previous challenges, the assignment operator (`=`) in JavaScript assigns a value to a variable name. And the `==` and `===` operators check for equality (the triple `===` tests for strict equality, meaning both value and type are the same).
+Como hemos visto en desafíos anteriores, el operador de asignación (`=`) en JavaScript asigna un valor a una variable. Y los operadores `==` y `===` comprueban la igualdad (el triple `===` comprueba la igualdad estricta, lo que significa que tanto el valor como el tipo son iguales).
 
-The code below assigns `x` to be 2, which evaluates as `true`. Almost every value on its own in JavaScript evaluates to `true`, except what are known as the "falsy" values: `false`, `0`, `""` (an empty string), `NaN`, `undefined`, and `null`.
+El código siguiente asigna a `x` el valor de 2, que se evalúa como `true`. Casi todos los valores por sí solos en JavaScript se evalúan como `true`, excepto lo que se conoce como valores "falsos" (falsy values): `false`, `0`, `""` (una cadena vacía), `NaN`, `undefined`, y `null`.
 
 ```js
 let x = 1;
@@ -28,17 +28,17 @@ if (x = y) {
 
 # --instructions--
 
-Fix the condition so the program runs the right branch, and the appropriate value is assigned to `result`.
+Corrige la condición para que el programa ejecute la rama correcta y se asigne el valor adecuado a `result`.
 
 # --hints--
 
-Your code should fix the condition so it checks for equality, instead of using assignment.
+Tu código debe corregir la condición para que compruebe igualdad, en lugar de utilizar asignación.
 
 ```js
 assert(result == 'Not equal!');
 ```
 
-The condition should use either `==` or `===` to test for equality.
+La condición debe utilizar `==` o `===` para comprobar igualdad.
 
 ```js
 assert(code.match(/x\s*?===?\s*?y/g));

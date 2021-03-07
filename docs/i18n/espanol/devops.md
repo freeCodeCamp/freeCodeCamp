@@ -16,13 +16,13 @@ Esto involucra tres pasos que deben seguirse en secuencia:
 
 #### Construyendo la base de código - Mapeando las Ramas de Git con los Despliegues.
 
-Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
+Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) branch once a day and is released into an isolated infrastructure.
 
 Esta es una publicación intermedia para nuestros desarrolladores y colaboradores voluntarios. También es conocida como nuestra publicación "staging" o "beta".
 
 Este es idéntico a nuestro entorno de producción en ` freeCodeCamp.org`, excepto que utiliza un conjunto separado de bases de datos, servidores, web-proxies, etc. Este aislamiento nos permite probar el desarrollo y las funcionalidades de manera continua en un escenario similar al de "producción", sin afectar a los usuarios regulares de las principales plataformas de freeCodeCamp.org.
 
-Una vez que el equipo de desarrolladores [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) está satisfecho con los cambios en la plataforma de staging, estos cambios se trasladan cada pocos días a la rama [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current).
+Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current) branch.
 
 Esta es la versión final que despliega los cambios a nuestras plataformas de producción en freeCodeCamp.org.
 
@@ -69,7 +69,7 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `maim` branch is pristine and in sync with the upstream.
+2. Make sure your `main` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout main
@@ -94,10 +94,10 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    npm run clean-and-develop
    ```
 
-5. Move changes from `main` to `production-staging` via a fast-forward merge
+5. Move changes from `main` to `prod-staging` via a fast-forward merge
 
    ```
-   git checkout production-staging
+   git checkout prod-staging
    git merge main
    git push upstream
    ```
@@ -106,11 +106,9 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    > 
    > Si esto ocurre, es posible que hayas hecho algo incorrectamente y deberías comenzar de nuevo.
 
-Los pasos anteriores activarán automáticamente un flujo de compilación para la rama `production-staging`. Una vez que se completa la compilación, los artefactos se guardan como archivos `.zip` en un almacenamiento en frío para ser recuperados y usados más adelante.
+The above steps will automatically trigger a run on the build pipeline for the `prod-staging` branch. Una vez que se completa la compilación, los artefactos se guardan como archivos `.zip` en un almacenamiento en frío para ser recuperados y usados más adelante.
 
 El flujo de publicación se activa automáticamente cuando hay un nuevo artefacto disponible en el flujo de compilación conectado. Para las plataformas de staging, este proceso no implica aprobación manual y los artefactos se envían a los servidores de API y CDN Cliente.
-
-> [!TIP|label:Estimates] Por lo general, la ejecución de la compilación tarda entre 20 y 25 minutos en completarse, seguido de la ejecución de publicación que tarda aproximadamente entre 15 y 20 minutos para el cliente, y aproximadamente entre 5 y 10 minutos para que el API estén disponibles en vivo. Desde que el código se envía al servidor hasta que está en vivo en las plataformas de staging, todo el proceso toma **aproximadamente 35 a 45 minutos** en total.
 
 ### Publicando cambios a las Aplicaciones en Producción.
 
@@ -121,19 +119,19 @@ El proceso es prácticamente el mismo que el de las plataformas de staging, con 
 |                                                                                                                                                                                |
 
 
-1. Asegúrate de que tu rama `production-staging` no tenga cambios pendientes y esté sincronizada con upstream.
+1. Make sure your `prod-staging` branch is pristine and in sync with the upstream.
 
    ```sh
-   git checkout production-staging
+   git checkout prod-staging
    git fetch --all --prune
-   git reset --hard upstream/production-staging
+   git reset --hard upstream/prod-staging
    ```
 
-2. Mueve los cambios de `production-staging` a `production-current` mediante una fusión fast-forward
+2. Move changes from `prod-staging` to `prod-current` via a fast-forward merge
 
    ```
-   git checkout production-current
-   git merge production-staging
+   git checkout prod-current
+   git merge prod-staging
    git push upstream
    ```
 
@@ -141,9 +139,7 @@ El proceso es prácticamente el mismo que el de las plataformas de staging, con 
    > 
    > Si esto ocurre, es posible que hayas hecho algo incorrectamente y deberías comenzar de nuevo.
 
-Los pasos anteriores activarán automáticamente un flujo de compilación para la rama `production-current`. Una vez que un artefacto de compilación está listo, este activará la ejecución en el flujo de publicación.
-
-> [!TIP|label:Estimates] Normalmente, la ejecución de la compilación tarda entre 20 y 25 minutos en completarse.
+The above steps will automatically trigger a run on the build pipeline for the `prod-current` branch. Una vez que un artefacto de compilación está listo, este activará la ejecución en el flujo de publicación.
 
 **Pasos Adicionales para el Staff Action**
 
@@ -158,21 +154,18 @@ Para uso del personal:
 |                                                                                                                                                                                                                             |
 
 
-Una vez que uno de los miembros del personal apruebe una publicación, el flujo enviará los cambios a los servidores de API y CDN de producción de freeCodeCamp.org. Por lo general, esto tomará entre 15 y 20 minutos para el cliente y aproximadamente 5 minutos para que los servidores API estén disponibles en vivo respectivamente.
-
-> [!TIP|label:Estimates] La publicación suele tardar entre 15 y 20 minutos para cada instancia de cliente, y entre 5 y 10 minutos para que cada instancia de API esté disponible en vivo. Desde el envío del código hasta que está en vivo en las plataformas de producción, todo el proceso toma en total **entre 90 y 120 minutos aproximadamente** (sin contar el tiempo de espera para la aprobación del personal).
+Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers.
 
 ## Estado de la Compilación, Pruebas y Despliegue
 
 Aquí está el estado actual de las pruebas, compilación y despliegue del código base.
 
-| Tipo             | Rama                                                                                         | Estado                                                                                                                                                                                                                                              | Panel                                                                                    |
-|:---------------- |:-------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:---------------------------------------------------------------------------------------- |
-| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
-| CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Ir al panel de estado](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Ir al panel de estado](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| Branch                                                                           | Unit Tests                                                                                                                                                                                                                       | Integration Tests                                                                                                                                                                                                        | Builds & Deployments                                                                                                              |
+|:-------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:--------------------------------------------------------------------------------------------------------------------------------- |
+| [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main)                 | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=main)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22)                               | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/main&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time)         | -                                                                                                                                 |
+| [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-staging)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-staging) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-staging&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
+| [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-current)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-current) | [![Cypress E2E Tests](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-current&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
+| `prod-next` (experimental, upcoming)                                             | -                                                                                                                                                                                                                                | -                                                                                                                                                                                                                        | -                                                                                                                                 |
 
 ## Acceso anticipado y pruebas beta
 
@@ -186,15 +179,25 @@ Te agradecemos por reportar los errores que encuentres y ayudar a mejorar freeCo
 
 Actualmente una versión de prueba beta pública está disponible en:
 
-<h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'>freecodecamp.dev</a></h1>
+| Application | Language | URL                                      |
+|:----------- |:-------- |:---------------------------------------- |
+| Learn       | English  | <https://www.freecodecamp.dev>           |
+|             | Espanol  | <https://www.freecodecamp.dev/espanol>   |
+|             | Chinese  | <https://chinese.freecodecamp.dev>       |
+| News        | English  | <https://www.freecodecamp.dev/news>      |
+| Forum       | English  | <https://forum.freecodecamp.dev>         |
+|             | Chinese  | <https://chinese.freecodecamp.dev/forum> |
+| API         | -        | `https://api.freecodecamp.dev`           |
 
-> [!NOTE] El nombre de dominio es diferente a **`freeCodeCamp.org`**. Esto es intencional para evitar la indexación de los motores de búsqueda y evitar cualquier confusión en los usuarios habituales de la plataforma.
+> [!NOTE] The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
+> 
+> The above list not exhaustive of all the applications that we provision. Also not all language variants are deployed in staging to conserve resources.
 
 ### Identificando la versión actual de las plataformas
 
 **La versión actual de la plataforma siempre está disponible en [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
-El equipo de desarrollo fusiona los cambios de la rama `production-staging` a `production-current` cuando se publican los cambios. El commit más reciente debe ser lo que ves en vivo en el sitio.
+The dev-team merges changes from the `prod-staging` branch to `prod-current` when they release changes. El commit más reciente debe ser lo que ves en vivo en el sitio.
 
 Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Alternatively you can also ping us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors) for a confirmation.
 
@@ -220,16 +223,16 @@ Existen algunas limitaciones y problemas conocidos al utilizar la versión beta 
 
 ## Reportando problemas y dejando retroalimentación
 
-Por favor abre un nuevo reporte (issue) para discusiones e informes de errores. Puedes etiquetarlos como **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** para clasificación.
+Please open fresh issues for discussions and reporting bugs.
 
 Puedes enviar un correo electrónico a `dev[at]freecodecamp.org` si tienes alguna consulta. Como siempre, todas las vulnerabilidades de seguridad deben notificarse a `security[at]freecodecamp.org` en lugar del registro público o el foro.
 
-# Manual de Vuelo - Mantenimiento del Servidor
+# Flight Manual - Server Maintenance
 
 > [!WARNING]
 > 
-> 1. La guía se aplica únicamente a los **miembros del personal de freeCodeCamp**.
-> 2. Estas instrucciones no deben considerarse exhaustivas, por favor ten cuidado.
+> 1. The guide applies to the **freeCodeCamp Staff members only**.
+> 2. These instructions should not be considered exhaustive, please use caution.
 
 Como miembro del equipo interno, es posible que se te haya dado acceso a nuestros proveedores de servicios en la nube como Azure, Digital Ocean, etc.
 
@@ -237,25 +240,25 @@ Estos son algunos comandos prácticos que puedes usar para trabajar en las Máqu
 
 ## Obtener una lista de las Máquinas Virtuales
 
-> [!NOTE] Aunque es posible que ya tengas acceso SSH a las máquinas virtuales, esto solamente no te permitirá enumerar las máquinas virtuales a menos que también se te conceda acceso a los portales en la nube.
+> [!NOTE] While you may already have SSH access to the VMs, that alone will not let you list VMs unless you been granted access to the cloud portals as well.
 
 ### Azure
 
 Instala el CLI de Azure `az`: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
-> **(Una sola vez) Instalar en macOS con [`homebrew`](https://brew.sh):**
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
 
 ```
 brew install azure-cli
 ```
 
-> **(Una sola vez) Inicio de sesión:**
+> **(One-time) Login:**
 
 ```
 az login
 ```
 
-> **Obtener la lista de nombres de las máquinas virtuales y direcciones IP:**
+> **Get the list of VM names and P addresses:**
 
 ```
 az vm list-ip-addresses --output table
@@ -279,7 +282,7 @@ Autenticación y cambio de contexto: https://github.com/digitalocean/doctl#authe
 doctl auth init
 ```
 
-> **Obtener la lista de nombres de las máquinas virtuales y direcciones IP:**
+> **Get the list of VM names and IP addresses:**
 
 ```
 doctl compute droplet list --format "ID,Name,PublicIPv4"
@@ -287,7 +290,7 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 
 ## Iniciar una VM (o Conjunto de Escalado de VMs)
 
-> Todo: Agregar instrucciones para iniciar VM(s)
+> Todo: Add instructions for spinning VM(s)
 
 
 <!--
@@ -388,10 +391,10 @@ az vmss create \
 
 Debes mantener las máquinas virtuales actualizadas mediante la realización de actualizaciones. Esto asegurará que la máquina virtual se ha parcheado con las correcciones de seguridad más recientes.
 
-> [!WARNING] Antes de ejecutar estos comandos:
+> [!WARNING] Before you run these commands:
 > 
-> - Asegúreate de que la máquina virtual se ha aprovisionado completamente y no hay en ejecución pasos posteriores a la instalación.
-> - Si estás actualizando paquetes en una máquina virtual que ya está sirviendo una aplicación, asegúrate de que la aplicación se ha detenido / guardado. Las actualizaciones de paquetes causarán que el ancho de banda de la red, la memoria y/o CPU tengan picos que pueden ocasionar interrupciones en aplicaciones en ejecución.
+> - Make sure that the VM has been provisioned completely and there is no post-install steps running.
+> - If you are updating packages on a VM that is already serving an application, make sure the app has been stopped / saved. Package updates will cause network bandwidth, memory and/or CPU usage spikes leading to outages on running applications.
 
 Actualizar la información de paquetes
 
@@ -538,7 +541,7 @@ Aprovisionamiento de las VMs con el código
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
    cd freeCodeCamp
-   git checkout production-current # o cualquier otra rama a desplegar
+   git checkout prod-current # or any other branch to be deployed
    ```
 
 4. Crea el archivo `.env` desde el almacenamiento de credenciales seguras.
@@ -554,14 +557,14 @@ Aprovisionamiento de las VMs con el código
 7. Construye el servidor
 
    ```console
-   npm run ensure-env && npm run build:server
+   npm run ensure-env && npm run build:curriculum && npm run build:server
    ```
 
 8. Inicia las Instancias
 
    ```console
    cd api-server
-   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
    ```
 
 ### Registro de Eventos y Monitoreo
@@ -578,7 +581,7 @@ pm2 monit
 
 Los cambios en el código deben desplegarse en las instancias del API cada cierto tiempo. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
 
-> [!DANGER] Los flujos automáticos no están manejando actualizaciones de dependencias en el momento. Necesitamos realizar una actualización manual antes de que se ejecute cualquier flujo de despliegue.
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Actualizaciones Manuales - Utilizadas para actualizar dependencias, variables de entorno.
 
@@ -597,7 +600,7 @@ npm ci
 3. Construye el servidor
 
 ```console
-npm run ensure-env && npm run build:server
+npm run ensure-env && npm run build:curriculum && npm run build:server
 ```
 
 4. Inicia las Instancias
@@ -612,7 +615,7 @@ pm2 start all --update-env && pm2 logs
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] Estamos manejando las actualizaciones continuas de código, lógica, mediante flujos (pipelines). No deberías tener que ejecutar estos comandos. Están aquí para documentación.
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
 
 ## Trabajar en Instancias de Cliente
 
@@ -650,9 +653,9 @@ Aprovisionamiento de las VMs con el código
    cd client
    ```
 
-   Inicia las instancias de marcador para el cliente web, estas se actualizarán con artefactos del flujo de Azure.
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
-   > Todo: Esta configuración debe moverse a S3 o Azure Blob Storage 
+   > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 
    > ```console
    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh

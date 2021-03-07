@@ -29,64 +29,63 @@ Cases for 1, 2, and 3 will all produce the same result.
 # --instructions--
 
 Write a switch statement to set `answer` for the following ranges:  
-`1-3` - "Low"  
-`4-6` - "Mid"  
-`7-9` - "High"
+`1-3` - `Low`  
+`4-6` - `Mid`  
+`7-9` - `High`
 
-**Note**  
-You will need to have a `case` statement for each number in the range.
+**Note:** You will need to have a `case` statement for each number in the range.
 
 # --hints--
 
-`sequentialSizes(1)` should return "Low"
+`sequentialSizes(1)` should return the string `Low`
 
 ```js
 assert(sequentialSizes(1) === 'Low');
 ```
 
-`sequentialSizes(2)` should return "Low"
+`sequentialSizes(2)` should return the string `Low`
 
 ```js
 assert(sequentialSizes(2) === 'Low');
 ```
 
-`sequentialSizes(3)` should return "Low"
+`sequentialSizes(3)` should return the string `Low`
 
 ```js
 assert(sequentialSizes(3) === 'Low');
 ```
 
-`sequentialSizes(4)` should return "Mid"
+`sequentialSizes(4)` should return the string `Mid`
 
 ```js
 assert(sequentialSizes(4) === 'Mid');
 ```
 
-`sequentialSizes(5)` should return "Mid"
+`sequentialSizes(5)` should return the string `Mid`
 
 ```js
 assert(sequentialSizes(5) === 'Mid');
 ```
 
-`sequentialSizes(6)` should return "Mid"
+`sequentialSizes(6)` should return the string `Mid`
 
 ```js
 assert(sequentialSizes(6) === 'Mid');
 ```
 
-`sequentialSizes(7)` should return "High"
+`sequentialSizes(7)` should return the string `High`
 
 ```js
 assert(sequentialSizes(7) === 'High');
 ```
 
-`sequentialSizes(8)` should return "High"
+`sequentialSizes(8)` should return the string `High`
 
 ```js
 assert(sequentialSizes(8) === 'High');
 ```
 
-`sequentialSizes(9)` should return "High"
+`sequentialSizes(9)` should return the string `High`
 
 ```js
 assert(sequentialSizes(9) === 'High');

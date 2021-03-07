@@ -16,19 +16,21 @@ You can search and replace text in a string using `.replace()` on a string. The 
 let wrongText = "The sky is silver.";
 let silverRegex = /silver/;
 wrongText.replace(silverRegex, "blue");
-// Returns "The sky is blue."
 ```
+
+The `replace` call would return the string `The sky is blue.`.
 
 You can also access capture groups in the replacement string with dollar signs (`$`).
 
 ```js
 "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
-// Returns "Camp Code"
 ```
+
+The `replace` call would return the string `Camp Code`.
 
 # --instructions--
 
-Write a regex `fixRegex` using three capture groups that will search for each word in the string "one two three". Then update the `replaceText` variable to replace "one two three" with the string "three two one" and assign the result to the `result` variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (`$`) syntax.
+Write a regex `fixRegex` using three capture groups that will search for each word in the string `one two three`. Then update the `replaceText` variable to replace `one two three` with the string `three two one` and assign the result to the `result` variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (`$`) syntax.
 
 # --hints--
 
@@ -38,7 +40,7 @@ You should use `.replace()` to search and replace.
 assert(code.match(/\.replace\(.*\)/));
 ```
 
-Your regex should change `"one two three"` to `"three two one"`
+Your regex should change the string `one two three` to the string `three two one`
 
 ```js
 assert(result === 'three two one');

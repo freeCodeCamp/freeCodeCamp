@@ -22,15 +22,15 @@ var ourDog = {
 };
 ```
 
-Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting "Camper", we'll get his new name, "Happy Camper".
+Since he's a particularly happy dog, let's change his name to the string `Happy Camper`. Here's how we update his object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting `Camper`, we'll get his new name, `Happy Camper`.
 
 # --instructions--
 
-Update the `myDog` object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
+Update the `myDog` object's name property. Let's change her name from `Coder` to `Happy Coder`. You can use either dot or bracket notation.
 
 # --hints--
 
-You should update `myDog`'s `"name"` property to equal "Happy Coder".
+You should update `myDog`'s `name` property to equal the string `Happy Coder`.
 
 ```js
 assert(/happy coder/gi.test(myDog.name));

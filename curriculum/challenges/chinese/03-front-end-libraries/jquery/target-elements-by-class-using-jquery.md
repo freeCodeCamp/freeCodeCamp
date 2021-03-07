@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedc08826
-title: Target Elements by Class Using jQuery
+title: 使用 jQuery class 选择器选择元素
 challengeType: 6
 forumTopicId: 18316
 required:
@@ -11,29 +11,29 @@ dashedName: target-elements-by-class-using-jquery
 
 # --description--
 
-You see how we made all of your `button` elements bounce? We selected them with `$("button")`, then we added some CSS classes to them with `.addClass("animated bounce");`.
+如何使所有的 `button` 标签都有弹跳的动画效果？ 用 `$("button")` 选取所有的 button 标签，并用 `.addClass("animated bounce");` 给其添加一些 CSS 属性。
 
-You just used jQuery's `.addClass()` function, which allows you to add classes to elements.
+jQuery 的 `.addClass()` 方法用来给标签添加类。
 
-First, let's target your `div` elements with the class `well` by using the `$(".well")` selector.
+首先，使用 `$(".well")` 选取类为 `well` 的 `div` 标签。
 
-Note that, just like with CSS declarations, you type a `.` before the class's name.
+值得注意的是，和 CSS 声明一样，在类名前需要添加 `.`。
 
-Then use jQuery's `.addClass()` function to add the classes `animated` and `shake`.
+然后，用 jQuery 的 `.addClass()` 方法添加 `animated` 和 `shake` class。
 
-For example, you could make all the elements with the class `text-primary` shake by adding the following to your `document ready function`:
+例如，在 `document ready function` 中添加下面的代码，使所有类为 `text-primary` 的标签抖动：
 
 `$(".text-primary").addClass("animated shake");`
 
 # --hints--
 
-You should use the jQuery `addClass()` function to give the classes `animated` and `shake` to all your elements with the class `well`.
+应该用 jQuery 的 `addClass()` 方法给所有 class 为 `well` 的标签添加 `animated` 和 `shake` 类。
 
 ```js
 assert($('.well').hasClass('animated') && $('.well').hasClass('shake'));
 ```
 
-You should only use jQuery to add these classes to the element.
+应该仅用 jQuery 给标签添加 class。
 
 ```js
 assert(!code.match(/class\.\*animated/g));

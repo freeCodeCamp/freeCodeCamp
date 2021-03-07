@@ -68,7 +68,7 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     context: {
       challengeMeta: {
         superBlock,
-        block: block,
+        block,
         template,
         required,
         nextChallengePath: getNextChallengePath(node, index, thisArray),

@@ -1,6 +1,6 @@
 ---
 id: 587d7b86367417b2b2512b3c
-title: Use Caution When Reinitializing Variables Inside a Loop
+title: Ten cuidado al reinicializar variables dentro de un bucle
 challengeType: 1
 forumTopicId: 301194
 dashedName: use-caution-when-reinitializing-variables-inside-a-loop
@@ -8,29 +8,29 @@ dashedName: use-caution-when-reinitializing-variables-inside-a-loop
 
 # --description--
 
-Sometimes it's necessary to save information, increment counters, or re-set variables within a loop. A potential issue is when variables either should be reinitialized, and aren't, or vice versa. This is particularly dangerous if you accidentally reset the variable being used for the terminal condition, causing an infinite loop.
+A veces es necesario guardar información, incrementar contadores o reajustar variables dentro de un bucle. Un problema potencial es cuando las variables deberían ser reiniciadas y no lo son, o viceversa. Esto es particularmente peligroso si accidentalmente se restablece la variable que se utiliza para la condición terminal, causando un bucle infinito.
 
-Printing variable values with each cycle of your loop by using `console.log()` can uncover buggy behavior related to resetting, or failing to reset a variable.
+La impresión de los valores de las variables con cada ciclo de su bucle mediante el uso de `console.log()` puede descubrir un comportamiento erróneo relacionado con el restablecimiento, o la falta de restablecimiento de una variable.
 
 # --instructions--
 
-The following function is supposed to create a two-dimensional array with `m` rows and `n` columns of zeroes. Unfortunately, it's not producing the expected output because the `row` variable isn't being reinitialized (set back to an empty array) in the outer loop. Fix the code so it returns a correct 3x2 array of zeroes, which looks like `[[0, 0], [0, 0], [0, 0]]`.
+La siguiente función debe crear un arreglo bidimensional (matriz) con `m` filas (rows) y `n` columnas (columns) de ceros. Desafortunadamente, no está produciendo la salida esperada porque la variable `row` no está siendo reiniciada (devuelta a un arreglo vacío) en el bucle exterior. Corrige el código para que devuelva una matriz 3x2 de ceros correcta, que se parezca a `[[0, 0], [0, 0], [0, 0]]`.
 
 # --hints--
 
-Your code should set the `matrix` variable to an array holding 3 rows of 2 columns of zeroes each.
+Tu código debe establecer la variable `matrix` en una matriz que contenga 3 filas de 2 columnas de ceros cada una.
 
 ```js
 assert(JSON.stringify(matrix) == '[[0,0],[0,0],[0,0]]');
 ```
 
-The `matrix` variable should have 3 rows.
+La variable `matrix` debe tener 3 filas.
 
 ```js
 assert(matrix.length == 3);
 ```
 
-The `matrix` variable should have 2 columns in each row.
+La variable `matrix` debe tener 2 columnas en cada fila.
 
 ```js
 assert(

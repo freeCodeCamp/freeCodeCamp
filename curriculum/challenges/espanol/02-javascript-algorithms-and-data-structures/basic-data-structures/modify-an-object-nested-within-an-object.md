@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b19
-title: Modify an Object Nested Within an Object
+title: Modifica un objeto anidado dentro de un objeto
 challengeType: 1
 forumTopicId: 301164
 dashedName: modify-an-object-nested-within-an-object
@@ -8,7 +8,7 @@ dashedName: modify-an-object-nested-within-an-object
 
 # --description--
 
-Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:
+Veamos ahora un objeto un poco más complejo. Las propiedades de los objetos pueden anidarse a una profundidad arbitraria, y sus valores pueden ser cualquier tipo de datos soportados por JavaScript, incluyendo arreglos e incluso otros objetos. Considera lo siguiente:
 
 ```js
 let nestedObject = {
@@ -26,7 +26,7 @@ let nestedObject = {
 };
 ```
 
-`nestedObject` has three properties: `id` (value is a number), `date` (value is a string), and `data` (value is an object with its nested structure). While structures can quickly become complex, we can still use the same notations to access the information we need. To assign the value `10` to the `busy` property of the nested `onlineStatus` object, we use dot notation to reference the property:
+`nestedObject` tiene tres propiedades: `id` (el valor es un número), `date` (el valor es una cadena), y `data` (el valor es un objeto con su estructura anidada). Aunque las estructuras pueden volverse rápidamente complejas, podemos seguir utilizando las mismas notaciones para acceder a la información que necesitamos. Para asignar el valor `10` a la propiedad `busy` del objeto anidado `onlineStatus`, utilizamos la notación de puntos para referenciar la propiedad:
 
 ```js
 nestedObject.data.onlineStatus.busy = 10;
@@ -34,11 +34,11 @@ nestedObject.data.onlineStatus.busy = 10;
 
 # --instructions--
 
-Here we've defined an object `userActivity`, which includes another object nested within it. Set the value of the `online` key to `45`.
+Aquí hemos definido un objeto `userActivity`, que incluye otro objeto anidado dentro de él. Establece el valor de la clave `online` en `45`.
 
 # --hints--
 
-`userActivity` should have `id`, `date` and `data` properties.
+`userActivity` debe tener las propiedades `id`, `date` y `data`.
 
 ```js
 assert(
@@ -46,19 +46,19 @@ assert(
 );
 ```
 
-`userActivity` should have a `data` key set to an object with keys `totalUsers` and `online`.
+`userActivity` debe tener una clave `data` establecida en un objeto con las claves `totalUsers` y `online`.
 
 ```js
 assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
 ```
 
-The `online` property nested in the `data` key of `userActivity` should be set to `45`
+La propiedad `online` anidada en la clave `data` de `userActivity` debe establecerse en `45`
 
 ```js
 assert(userActivity.data.online === 45);
 ```
 
-The `online` property should be set using dot or bracket notation.
+La propiedad `online` debe establecerse utilizando la notación de puntos o corchetes.
 
 ```js
 assert.strictEqual(code.search(/online: 45/), -1);

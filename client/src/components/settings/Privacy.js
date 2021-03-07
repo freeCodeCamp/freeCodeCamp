@@ -142,7 +142,6 @@ class PrivacySettings extends Component {
             />
             <ToggleSetting
               action={t('settings.labels.my-timeline')}
-              explain={t('settings.disabled')}
               flag={!showTimeLine}
               flagName='showTimeLine'
               offLabel={t('buttons.public')}

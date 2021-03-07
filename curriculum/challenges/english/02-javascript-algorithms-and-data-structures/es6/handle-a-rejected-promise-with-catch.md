@@ -12,7 +12,7 @@ dashedName: handle-a-rejected-promise-with-catch
 
 ```js
 myPromise.catch(error => {
-  // do something with the error.
+  
 });
 ```
 

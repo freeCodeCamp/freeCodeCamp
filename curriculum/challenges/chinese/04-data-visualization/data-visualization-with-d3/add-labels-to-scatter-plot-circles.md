@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd9
-title: Add Labels to Scatter Plot Circles
+title: 向散点图的 Circles 添加标签
 challengeType: 6
 forumTopicId: 301477
 dashedName: add-labels-to-scatter-plot-circles
@@ -8,25 +8,25 @@ dashedName: add-labels-to-scatter-plot-circles
 
 # --description--
 
-You can add text to create labels for the points in a scatter plot.
+你可以为散点图中的点添加文本来创建标签。
 
-The goal is to display the comma-separated values for the first (`x`) and second (`y`) fields of each item in `dataset`.
+目标是显示 `dataset` 中每个对象的第一个（`x`）和第二个（`y`）字段中通过逗号分隔的值。
 
-The `text` nodes need `x` and `y` attributes to position it on the SVG canvas. In this challenge, the `y` value (which determines height) can use the same value that the `circle` uses for its `cy` attribute. The `x` value can be slightly larger than the `cx` value of the `circle`, so the label is visible. This will push the label to the right of the plotted point.
+`text` 节点需要 `x` 和 `y` 属性来指定放置在 SVG 画布中的位置。 在这个挑战中，`y` 值（决定高度）可以用和 `circle` 的 `cy` 属性相同的值， `x` 值可以比 `circle` 的 `cx` 值稍微大一些，这样标签才可见， 并且被放置在散点的右边。
 
 # --instructions--
 
-Label each point on the scatter plot using the `text` elements. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is "34, 78". Set the `x` attribute so it's 5 units more than the value you used for the `cx` attribute on the `circle`. Set the `y` attribute the same way that's used for the `cy` value on the `circle`.
+使用 `text` 元素标记散点图上的每个点。 标签的文本应该是用逗号和空格分隔的两个值。 例如，第一个点的标签为 "34, 78"。 设置 `x` 属性，使其比 `circle` 上 `cx` 属性使用的值多5个单位。 设置 `y` 属性的方式与 `circle` 上的 `cy` 值相同。
 
 # --hints--
 
-Your code should have 10 `text` elements.
+你应该有 10 个 `text` 元素。
 
 ```js
 assert($('text').length == 10);
 ```
 
-The first label should have text of "34, 78", an `x` value of 39, and a `y` value of 422.
+第一个标签的文本应该为 '34, 78'， `x` 值应该为 39， `y` 应该为 422。
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-The second label should have text of "109, 280", an `x` value of 114, and a `y` value of 220.
+第二个标签的文本应该为 '109, 280'， `x` 值应该为 114， `y` 应该为 220。
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The third label should have text of "310, 120", an `x` value of 315, and a `y` value of 380.
+第三个标签的文本应该为 '310, 120'， `x` 值应该为 315， `y` 应该为 380。
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-The fourth label should have text of "79, 411", an `x` value of 84, and a `y` value of 89.
+第四个标签的文本应该为 '79, 411'， `x` 值应该为 84， `y` 应该为 89。
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The fifth label should have text of "420, 220", an `x` value of 425, and a `y` value of 280.
+第五个标签的文本应该为 '420, 220'， `x` 值应该为 425， `y` 应该为 280。
 
 ```js
 assert(
@@ -76,7 +76,7 @@ assert(
 );
 ```
 
-The sixth label should have text of "233, 145", an `x` value of 238, and a `y` value of 355.
+第六个标签的文本应该为 '233, 145'， `x` 值应该为 238， `y` 应该为 355。
 
 ```js
 assert(
@@ -86,7 +86,7 @@ assert(
 );
 ```
 
-The seventh label should have text of "333, 96", an `x` value of 338, and a `y` value of 404.
+第七个标签的文本应该为 '333, 96'， `x` 值应该为 338， `y` 应该为 404。
 
 ```js
 assert(
@@ -96,7 +96,7 @@ assert(
 );
 ```
 
-The eighth label should have text of "222, 333", an `x` value of 227, and a `y` value of 167.
+第八个标签的文本应该为 '222, 333'， `x` 值应该为 227， `y` 应该为 167。
 
 ```js
 assert(
@@ -106,7 +106,7 @@ assert(
 );
 ```
 
-The ninth label should have text of "78, 320", an `x` value of 83, and a `y` value of 180.
+第九个标签的文本应该为 '78, 320'， `x` 值应该为 83， `y` 应该为 180。
 
 ```js
 assert(
@@ -116,7 +116,7 @@ assert(
 );
 ```
 
-The tenth label should have text of "21, 123", an `x` value of 26, and a `y` value of 377.
+第十个标签的文本应该为 '21, 123'， `x` 值应该为 26， `y` 应该为 377。
 
 ```js
 assert(

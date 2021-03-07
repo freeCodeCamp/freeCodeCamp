@@ -13,12 +13,13 @@
   margin: 12px 0;
 }
 
-.certification-namespace.container {
+.certification-namespace {
   max-width: 1500px;
   width: 100%;
   padding: 30px;
   border: var(--theme-color) 15px solid;
   border-radius: 3px;
+  background-color: var(--gray-00);
 }
 
 .certification-namespace .row {
@@ -39,11 +40,6 @@
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
-  padding: 50px;
-}
-
-.certificate-outer-wrapper .donation-section {
-  padding-bottom: 100px;
 }
 
 .certificate-outer-wrapper .donation-section hr {
@@ -263,5 +259,4 @@
 
 .certificate-outer-wrapper {
   margin-top: calc(-1 * var(--header-height));
-  background-color: #fff;
 }

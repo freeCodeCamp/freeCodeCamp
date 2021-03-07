@@ -15,17 +15,16 @@ Having two choices is great when a string has contractions or another piece of t
 Here are some examples of mixing quotes:
 
 ```js
-// These are correct:
 const grouchoContraction = "I've had a perfectly wonderful evening, but this wasn't it.";
 const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quoted.'";
-// This is incorrect:
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
+
+The first two are correct, but the third is incorrect.
 
 Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (<code>\\</code>) escape character:
 
 ```js
-// Correct use of same quotes:
 const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t it.';
 ```
 
@@ -35,7 +34,7 @@ Fix the string so it either uses different quotes for the `href` value, or escap
 
 # --hints--
 
-Your code should fix the quotes around the `href` value "#Home" by either changing or escaping them.
+Your code should fix the quotes around the `href` value `#Home` by either changing or escaping them.
 
 ```js
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));

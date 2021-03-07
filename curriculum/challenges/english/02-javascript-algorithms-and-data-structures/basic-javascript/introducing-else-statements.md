@@ -37,25 +37,25 @@ You should use an `else` statement
 assert(/else/g.test(code));
 ```
 
-`testElse(4)` should return "5 or Smaller"
+`testElse(4)` should return the string `5 or Smaller`
 
 ```js
 assert(testElse(4) === '5 or Smaller');
 ```
 
-`testElse(5)` should return "5 or Smaller"
+`testElse(5)` should return the string `5 or Smaller`
 
 ```js
 assert(testElse(5) === '5 or Smaller');
 ```
 
-`testElse(6)` should return "Bigger than 5"
+`testElse(6)` should return the string `Bigger than 5`
 
 ```js
 assert(testElse(6) === 'Bigger than 5');
 ```
 
-`testElse(10)` should return "Bigger than 5".
+`testElse(10)` should return the string `Bigger than 5`
 
 ```js
 assert(testElse(10) === 'Bigger than 5');

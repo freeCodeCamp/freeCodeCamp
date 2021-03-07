@@ -19,7 +19,7 @@ En la segunda cuadrícula (grid), usa `auto-fit` con `repeat` para rellenar la c
 
 # --hints--
 
-La clase `container2` debe tener una propiedad `grid-template-columns` con `repeat` y `auto-fit` que cubra la cuadrícula con columnas que tengan un ancho mínimo de `60px` y máximo de `1fr`.
+La clase `container2` debe tener una propiedad `grid-template-columns` con `repeat` y `auto-fit` que cubra la cuadrícula con columnas que tengan un ancho mínimo de `60px` y un máximo de `1fr`.
 
 ```js
 assert(

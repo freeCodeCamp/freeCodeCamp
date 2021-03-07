@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908849
-title: Add Elements within Your Bootstrap Wells
+title: 在 Bootstrap Wells 中添加元素
 challengeType: 0
 forumTopicId: 16636
 dashedName: add-elements-within-your-bootstrap-wells
@@ -8,13 +8,13 @@ dashedName: add-elements-within-your-bootstrap-wells
 
 # --description--
 
-Now we're several `div` elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our `button` elements.
+现在的每一行的列都已经有了 `div` 元素。 这已经足够了， 现在让我们添加 `button` 元素吧。
 
-Nest three `button` elements within each of your `div` elements having the class name `well`.
+每一个 class 属性为 `well` 的 `div` 元素内都应该放三个 `button` 元素。
 
 # --hints--
 
-Three `button` elements should be nested within each of your `div` elements with class `well`.
+每一个 class 属性为 `well` 的 `div` 元素内都应该放三个 `button` 元素。
 
 ```js
 assert(
@@ -23,13 +23,13 @@ assert(
 );
 ```
 
-You should have a total of 6 `button` elements.
+总共有 6 个 `button` 元素。
 
 ```js
 assert($('button') && $('button').length > 5);
 ```
 
-All of your `button` elements should have closing tags.
+确保所有 `button` 元素都有闭合标签。
 
 ```js
 assert(

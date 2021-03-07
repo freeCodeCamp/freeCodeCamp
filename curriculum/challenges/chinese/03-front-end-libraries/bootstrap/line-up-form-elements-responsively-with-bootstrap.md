@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Line up Form Elements Responsively with Bootstrap
+title: 使用 Bootstrap 响应式排列表单元素
 challengeType: 0
 forumTopicId: 18225
 required:
@@ -13,15 +13,15 @@ dashedName: line-up-form-elements-responsively-with-bootstrap
 
 # --description--
 
-Now let's get your form `input` and your submission `button` on the same line. We'll do this the same way we have previously: by using a `div` element with the class `row`, and other `div` elements within it using the `col-xs-*` class.
+现在把表单里的 `input` 元素和 submit `button` （提交按钮）放在同一行。 跟着之前的做法来就行：准备好一个具有 `row` class 的 `div` 元素还有几个具有 `col-xs-*` class 的 `div` 元素。
 
-Nest both your form's text `input` and submit `button` within a `div` with the class `row`. Nest your form's text `input` within a div with the class of `col-xs-7`. Nest your form's submit `button` in a `div` with the class `col-xs-5`.
+先把表单的 text `input` （文本输入框）和 submit `button` （提交按钮）放进具有 `row` class 的 `div` 中。 再用 `col-xs-7` class 的 div 包裹表单的 text `input` （文本输入框）， `col-xs-5` class 的 `div` 包裹表单的 submit `button` （提交按钮）。
 
-This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!
+这是我们到目前为止 Cat Photo App 的最后一个挑战了。 祝你编码愉快。
 
 # --hints--
 
-Your form submission button and text input should be nested in a div with class `row`.
+确保提交按钮和文本输入框都在同一个具有 class 属性 `row` 的 div 元素中。
 
 ```js
 assert(
@@ -30,19 +30,19 @@ assert(
 );
 ```
 
-Your form text input should be nested in a div with the class `col-xs-7`.
+表单的文本输入框应该嵌入到 `col-xs-7` class 属性的 div 内。
 
 ```js
 assert($('div.col-xs-7:has(input[type="text"])').length > 0);
 ```
 
-Your form submission button should be nested in a div with the class `col-xs-5`.
+表单的提交按钮应该嵌入到 `col-xs-5` class 属性的 div 内。
 
 ```js
 assert($('div.col-xs-5:has(button[type="submit"])').length > 0);
 ```
 
-All of your `div` elements should have closing tags.
+确保每一个 `div` 元素都有一个闭合标签。
 
 ```js
 assert(

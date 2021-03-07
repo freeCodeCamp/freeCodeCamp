@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b16
-title: Create complex multi-dimensional arrays
+title: Crear arreglos complejos multidimensionales
 challengeType: 1
 forumTopicId: 301159
 dashedName: create-complex-multi-dimensional-arrays
@@ -8,9 +8,9 @@ dashedName: create-complex-multi-dimensional-arrays
 
 # --description--
 
-Awesome! You have just learned a ton about arrays! This has been a fairly high level overview, and there is plenty more to learn about working with arrays, much of which you will see in later sections. But before moving on to looking at <dfn>Objects</dfn>, lets take one more look, and see how arrays can become a bit more complex than what we have seen in previous challenges.
+¡Fantástico! ¡Acabas de aprender un montón sobre arreglos! Esta ha sido una visión general de alto nivel, y hay mucho más que aprender sobre el trabajo con arreglos, mucho de lo cual verás en secciones posteriores. Pero antes de pasar a ver los <dfn>Objetos</dfn>, vamos a echar un vistazo más, y ver cómo los arreglos pueden llegar a ser un poco más complejos de lo que hemos visto en los desafíos anteriores.
 
-One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, known as a <dfn>multi-dimensional</dfn>, or nested array. Consider the following example:
+Una de las características más poderosas cuando se piensa en los arreglos como estructuras de datos, es que los arreglos pueden contener, o incluso estar completamente formados por otros arreglos. Hemos visto arreglos que contienen arreglos en desafíos anteriores, pero bastante simples. Sin embargo, los arreglos pueden contener una profundidad infinita de arreglos que pueden contener otros arreglos, cada uno con sus propios niveles arbitrarios de profundidad, y así sucesivamente. De esta manera, un arreglo puede convertirse rápidamente en una estructura de datos muy compleja, conocida como <dfn>multidimensional</dfn>, o arreglo anidado. Considera el siguiente ejemplo:
 
 ```js
 let nestedArray = [ // top, or first level - the outer most array
@@ -31,14 +31,14 @@ let nestedArray = [ // top, or first level - the outer most array
 ];
 ```
 
-While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data. However, we can still very easily access the deepest levels of an array this complex with bracket notation:
+Aunque este ejemplo pueda parecer enrevesado, este nivel de complejidad no es inaudito, ni siquiera inusual, cuando se trata de grandes cantidades de datos. Sin embargo, podemos acceder muy fácilmente a los niveles más profundos de un arreglo tan complejo con la notación de corchetes:
 
 ```js
 console.log(nestedArray[2][1][0][0][0]);
 // logs: deepest-est?
 ```
 
-And now that we know where that piece of data is, we can reset it if we need to:
+Y ahora que sabemos dónde está ese dato, podemos restablecerlo si lo necesitamos:
 
 ```js
 nestedArray[2][1][0][0][0] = 'deeper still';
@@ -49,11 +49,11 @@ console.log(nestedArray[2][1][0][0][0]);
 
 # --instructions--
 
-We have defined a variable, `myNestedArray`, set equal to an array. Modify `myNestedArray`, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string `'deep'`, on the fourth level, include the string `'deeper'`, and on the fifth level, include the string `'deepest'`.
+Hemos definido una variable, `myNestedArray`, como un arreglo. Modifica `myNestedArray`, utilizando cualquier combinación de <dfn>cadenas</dfn>, <dfn>números</dfn> y <dfn>booleanos</dfn> para los elementos de datos, de modo que tenga exactamente cinco niveles de profundidad (recuerda que el arreglo más externo es el nivel 1). En algún lugar del tercer nivel, incluye la cadena `'deep'`, en el cuarto nivel, incluye la cadena `'deeper'`, y en el quinto nivel, incluye la cadena `'deepest'`.
 
 # --hints--
 
-`myNestedArray` should contain only numbers, booleans, and strings as data elements
+`myNestedArray` debe contener sólo números, booleanos y cadenas como elementos de datos
 
 ```js
 assert.strictEqual(
@@ -77,7 +77,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should have exactly 5 levels of depth
+`myNestedArray` debe tener exactamente 5 niveles de profundidad
 
 ```js
 assert.strictEqual(
@@ -100,7 +100,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deep"` on an array nested 3 levels deep
+`myNestedArray` debe contener exactamente una aparición de la cadena `"deep"` en un arreglo anidado a 3 niveles de profundidad
 
 ```js
 assert(
@@ -129,7 +129,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deeper"` on an array nested 4 levels deep
+`myNestedArray` debe contener exactamente una aparición de la cadena `"deeper"` en un arreglo anidado a 4 niveles de profundidad
 
 ```js
 assert(
@@ -158,7 +158,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deepest"` on an array nested 5 levels deep
+`myNestedArray` debe contener exactamente una aparición de la cadena `"deepest"` en un arreglo anidado a 5 niveles de profundidad
 
 ```js
 assert(

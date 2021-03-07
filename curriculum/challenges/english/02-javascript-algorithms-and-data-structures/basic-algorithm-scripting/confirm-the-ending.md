@@ -14,25 +14,25 @@ This challenge *can* be solved with the `.endsWith()` method, which was introduc
 
 # --hints--
 
-`confirmEnding("Bastian", "n")` should return true.
+`confirmEnding("Bastian", "n")` should return `true`.
 
 ```js
 assert(confirmEnding('Bastian', 'n') === true);
 ```
 
-`confirmEnding("Congratulation", "on")` should return true.
+`confirmEnding("Congratulation", "on")` should return `true`.
 
 ```js
 assert(confirmEnding('Congratulation', 'on') === true);
 ```
 
-`confirmEnding("Connor", "n")` should return false.
+`confirmEnding("Connor", "n")` should return `false`.
 
 ```js
 assert(confirmEnding('Connor', 'n') === false);
 ```
 
-`confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")` should return false.
+`confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")` should return `false`.
 
 ```js
 assert(
@@ -43,31 +43,31 @@ assert(
 );
 ```
 
-`confirmEnding("He has to give me a new name", "name")` should return true.
+`confirmEnding("He has to give me a new name", "name")` should return `true`.
 
 ```js
 assert(confirmEnding('He has to give me a new name', 'name') === true);
 ```
 
-`confirmEnding("Open sesame", "same")` should return true.
+`confirmEnding("Open sesame", "same")` should return `true`.
 
 ```js
 assert(confirmEnding('Open sesame', 'same') === true);
 ```
 
-`confirmEnding("Open sesame", "sage")` should return false.
+`confirmEnding("Open sesame", "sage")` should return `false`.
 
 ```js
 assert(confirmEnding('Open sesame', 'sage') === false);
 ```
 
-`confirmEnding("Open sesame", "game")` should return false.
+`confirmEnding("Open sesame", "game")` should return `false`.
 
 ```js
 assert(confirmEnding('Open sesame', 'game') === false);
 ```
 
-`confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")` should return false.
+`confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")` should return `false`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-`confirmEnding("Abstraction", "action")` should return true.
+`confirmEnding("Abstraction", "action")` should return `true`.
 
 ```js
 assert(confirmEnding('Abstraction', 'action') === true);

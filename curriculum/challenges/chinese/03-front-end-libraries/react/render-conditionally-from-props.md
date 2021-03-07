@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036188
-title: Render Conditionally from Props
+title: 根据 Props 有条件地渲染
 challengeType: 6
 forumTopicId: 301405
 dashedName: render-conditionally-from-props
@@ -8,21 +8,21 @@ dashedName: render-conditionally-from-props
 
 # --description--
 
-So far, you've seen how to use `if/else`, `&&,` `null` and the ternary operator (`condition ? expressionIfTrue : expressionIfFalse`) to make conditional decisions about what to render and when. However, there's one important topic left to discuss that lets you combine any or all of these concepts with another powerful React feature: props. Using props to conditionally render code is very common with React developers — that is, they use the value of a given prop to automatically make decisions about what to render.
+到目前为止，已经看到了如何使用 `if/else`、`&&`和三元运算符（`condition ? expressionIfTrue : expressionIfFalse`）对渲染什么和何时渲染做出有条件的判定。 然而，还有一个重要的话题需要讨论，将这些概念中的任何一个或所有概念与另一个强大的 React 功能结合起来：props。 使用 props 有条件地渲染代码在 React 开发人员中很常见 -- 也就是说：他们使用给定 prop 的值来自动决定渲染什么。
 
-In this challenge, you'll set up a child component to make rendering decisions based on props. You'll also use the ternary operator, but you can see how several of the other concepts that were covered in the last few challenges might be just as useful in this context.
+在这个挑战中，将设置一个子组件来根据 props 做出渲染决定。 可以使用三元运算符，但是可以看到过去几个挑战中涵盖的其他几个概念在这种情况下可能同样有用。
 
 # --instructions--
 
-The code editor has two components that are partially defined for you: a parent called `GameOfChance`, and a child called `Results`. They are used to create a simple game where the user presses a button to see if they win or lose.
+代码编辑器有两个部分为你定义的组件：一个名为 `GameOfChance` 的父组件和一个名为 `Results` 的子组件。 它们被用来创建一个简单的游戏，用户按下按钮来看它们是赢还是输。
 
-First, you'll need a simple expression that randomly returns a different value every time it is run. You can use `Math.random()`. This method returns a value between `0` (inclusive) and `1` (exclusive) each time it is called. So for 50/50 odds, use `Math.random() >= .5` in your expression. Statistically speaking, this expression will return `true` 50% of the time, and `false` the other 50%. In the render method, replace `null` with the above expression to complete the variable declaration.
+首先，需要一个简单的表达式，每次运行时都会随机返回一个不同的值。 可以使用 `Math.random()`。 每次调用此方法时，此方法返回 `0`（包括）和 `1`（不包括）之间的值。 因此，对于50/50的几率，请在表达式中使用 `Math.random() >= .5`。 从统计学上讲，这个表达式有 50％ 的几率返回 `true`，另外 50％ 返回 `false`。 在第 render 方法里，用此表达式替换 `null` 以完成变量声明。
 
-Now you have an expression that you can use to make a randomized decision in the code. Next you need to implement this. Render the `Results` component as a child of `GameOfChance`, and pass in `expression` as a prop called `fiftyFifty`. In the `Results` component, write a ternary expression to render the `h1` element with the text `"You Win!"` or `"You Lose!"` based on the `fiftyFifty` prop that's being passed in from `GameOfChance`. Finally, make sure the `handleClick()` method is correctly counting each turn so the user knows how many times they've played. This also serves to let the user know the component has actually updated in case they win or lose twice in a row.
+现在了一个表达式，可以使用该表达式在代码中做出随机决策。 接下来，需要实现此功能。 将 `Results` 组件渲染为 `GameOfChance` 的子 组件，并将 `expression` 作为名为 `fiftyFifty` 的 prop 传入 。 在 `Results` 组件中，编写一个三元表达式来渲染 `h1` 元素的文本。`GameOfChance` 传来的 prop `fiftyFifty` 来决定渲染文本 `You Win!` 还是 `You Lose!`。 最后，确保 `handleClick()` 方法正确计算每个回合，以便用户知道他们玩过多少次。 这也可以让用户知道组件实际上已经更新，以防他们连续赢两次或输两次时自己不知道。
 
 # --hints--
 
-The `GameOfChance` component should exist and render to the page.
+`GameOfChance` 组件应该存在并渲染到页面。
 
 ```js
 assert.strictEqual(
@@ -31,7 +31,7 @@ assert.strictEqual(
 );
 ```
 
-`GameOfChance` should return a single `button` element.
+`GameOfChance` 应该返回单个 `button` 元素。
 
 ```js
 assert.strictEqual(
@@ -40,7 +40,7 @@ assert.strictEqual(
 );
 ```
 
-`GameOfChance` should return a single instance of the `Results` component, which has a prop called `fiftyFifty`.
+`GameOfChance` 应该返回 `Results` 组件的一个实例，它有一个名为 `fiftyFifty` 的 prop。
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`GameOfChance` state should be initialized with a property of `counter` set to a value of `1`.
+`GameOfChance` 的 state 应该使用值为 `1` 的 `counter` 属性来初始化。
 
 ```js
 assert.strictEqual(
@@ -62,7 +62,7 @@ assert.strictEqual(
 );
 ```
 
-When the `GameOfChance` component is first rendered to the DOM, a `p` element should be returned with the inner text of `Turn: 1`.
+当 `GameOfChance` 组件第一次渲染到 DOM 时，应该返回一个 `p` 元素，其内部文本为 `Turn: 1`。
 
 ```js
 assert.strictEqual(
@@ -71,7 +71,7 @@ assert.strictEqual(
 );
 ```
 
-Each time the button is clicked, the counter state should be incremented by a value of 1, and a single `p` element should be rendered to the DOM that contains the text "Turn: N", where N is the value of the counter state.
+每次点击按钮，counter 应该增加 1，并且一个包含文本 `Turn: N` 的 `p` 元素应该渲染到 DOM，其中 `N` 是 counter 的值。
 
 ```js
 (() => {
@@ -123,7 +123,7 @@ Each time the button is clicked, the counter state should be incremented by a va
 })();
 ```
 
-When the `GameOfChance` component is first mounted to the DOM and each time the button is clicked thereafter, a single `h1` element should be returned that randomly renders either `You Win!` or `You Lose!`.
+当 `GameOfChance` 组件第一次挂载到 DOM 上时，每次按钮被点击，都应该返回一个 `h1` 元素，元素中随机渲染 `You Win!` 或者 `You Lose!`。
 
 ```js
 (() => {

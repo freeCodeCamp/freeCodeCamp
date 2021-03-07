@@ -15,8 +15,9 @@ Here's an example:
 ```js
 var arr = ["Cat", "Dog", "Tiger", "Zebra"];
 var newArray = arr.slice(1, 3);
-// Sets newArray to ["Dog", "Tiger"]
 ```
+
+`newArray` would have the value `["Dog", "Tiger"]`.
 
 # --instructions--
 

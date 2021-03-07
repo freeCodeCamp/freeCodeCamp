@@ -14,6 +14,11 @@
   flex-direction: row;
 }
 
+.block-title-wrapper .block-link {
+  flex-grow: 3;
+  flex-basis: 0;
+}
+
 .block-link:hover,
 .block-link:focus,
 .block-link:active {
@@ -59,6 +64,10 @@
   justify-content: center;
   padding: 25px 15px 10px 0px;
   margin: 0 0 0.6rem;
+  flex-grow: 2;
+  flex-basis: 0;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .course-title {
@@ -238,6 +247,14 @@ button.map-title {
 
   .big-block-title {
     font-size: 1.17rem;
+  }
+
+  .block-title-wrapper {
+    flex-direction: column;
+  }
+
+  .block-cta-wrapper {
+    padding: 25px 15px 10px 15px;
   }
 
   .course-title,

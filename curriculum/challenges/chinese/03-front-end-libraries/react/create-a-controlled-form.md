@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036179
-title: Create a Controlled Form
+title: 创建一个可以控制的表单
 challengeType: 6
 forumTopicId: 301384
 dashedName: create-a-controlled-form
@@ -8,21 +8,21 @@ dashedName: create-a-controlled-form
 
 # --description--
 
-The last challenge showed that React can control the internal state for certain elements like `input` and `textarea`, which makes them controlled components. This applies to other form elements as well, including the regular HTML `form` element.
+上一个挑战展示了 React 能控制某些元素的内部 state，比如 `input` 和 `textarea`，这使得这些元素成为受控组件。 这也适用于其他表单元素，包括常规的 HTML 表单 `form` 元素。
 
 # --instructions--
 
-The `MyForm` component is set up with an empty `form` with a submit handler. The submit handler will be called when the form is submitted.
+`MyForm` 组件中是一个带有提交处理程序的空 `form` 元素， 提交处理程序将在提交表单时被调用。
 
-We've added a button which submits the form. You can see it has the `type` set to `submit` indicating it is the button controlling the form. Add the `input` element in the `form` and set its `value` and `onChange()` attributes like the last challenge. You should then complete the `handleSubmit` method so that it sets the component state property `submit` to the current input value in the local `state`.
+我们增加了一个提交表单的按钮。 可以看到它的 `type` 被设置为 `submit`，表明它是控制表单提交的按钮。 在 `form` 中添加 `input` 元素，并像上个挑战一样设置其 `value` 和 `onChange()` 属性。 然后，应该完成 `handleSubmit` 方法，以便将组件 state 属性 `submit` 设置为本地 `state` 下的当前输入值。
 
-**Note:** You also must call `event.preventDefault()` in the submit handler, to prevent the default form submit behavior which will refresh the web page.
+**注意：** 还必须在提交处理程序中调用 `event.preventDefault()`，以防止默认的表单提交行为刷新网页。
 
-Finally, create an `h1` tag after the `form` which renders the `submit` value from the component's `state`. You can then type in the form and click the button (or press enter), and you should see your input rendered to the page.
+最后，在 `form` 元素之后创建一个 `h1` 标签，该标签从组件的 `state` 渲染 `submit` 的值。 然后，可以在表单中键入任何内容，然后单击按钮（或按 enter 键），输入会渲染到页面上。
 
 # --hints--
 
-`MyForm` should return a `div` element which contains a `form` and an `h1` tag. The form should include an `input` and a `button`.
+`MyForm` 应该返回一个包含 `form` 和 `h1` 标签的 `div` 元素， 其中，表单中应该包括一个 `input` 和一个 `button`。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-The state of `MyForm` should initialize with `input` and `submit` properties, both set to empty strings.
+`MyForm` 的 state 应该用 `input` 和 `submit` 属性初始化，且两者都为空字符串。
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-Typing in the `input` element should update the `input` property of the component's state.
+`input` 元素中的输入应该会更新组件中 state 的 `input` 属性。
 
 ```js
 (() => {
@@ -75,7 +75,7 @@ Typing in the `input` element should update the `input` property of the componen
 })();
 ```
 
-Submitting the form should run `handleSubmit` which should set the `submit` property in state equal to the current input.
+提交表单应该运行 `handleSubmit`，它应该将 state 中的 `submit` 属性设置为当前输入。
 
 ```js
 (() => {
@@ -98,7 +98,7 @@ Submitting the form should run `handleSubmit` which should set the `submit` prop
 })();
 ```
 
-The `h1` header should render the value of the `submit` field from the component's state.
+`h1` 标题应该从组件的 state 渲染 `submit` 字段的值。
 
 ```js
 (() => {

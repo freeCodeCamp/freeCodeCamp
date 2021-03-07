@@ -29,7 +29,7 @@ assert($('strong').length == 1);
 assert($('p').children('strong').length == 1);
 ```
 
-The `strong` tag should wrap around the words `Stanford University`.
+`strong` 标签的文本应为 `Stanford University`。
 
 ```js
 assert(

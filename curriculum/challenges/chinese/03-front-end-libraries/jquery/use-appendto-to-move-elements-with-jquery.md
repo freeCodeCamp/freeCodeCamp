@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed608826
-title: Use appendTo to Move Elements with jQuery
+title: 使用 jQuery 的 appendTo 方法移动元素
 challengeType: 6
 forumTopicId: 18340
 dashedName: use-appendto-to-move-elements-with-jquery
@@ -8,31 +8,31 @@ dashedName: use-appendto-to-move-elements-with-jquery
 
 # --description--
 
-Now let's try moving elements from one `div` to another.
+现在来把标签从一个 `div` 移动到另一个里。
 
-jQuery has a function called `appendTo()` that allows you to select HTML elements and append them to another element.
+jQuery 有一个 `appendTo()` 方法，可以选取 HTML 标签并将其添加到另一个标签里面。
 
-For example, if we wanted to move `target4` from our right well to our left well, we would use:
+例如，如果要把 `target4` 从 right well 移到 left well，可以设置如下：
 
 `$("#target4").appendTo("#left-well");`
 
-Move your `target2` element from your `left-well` to your `right-well`.
+把 `target2` 标签从 `left-well` 移动到 `right-well`。
 
 # --hints--
 
-Your `target2` element should not be inside your `left-well`.
+`target2` 标签不应该在 `left-well` 内。
 
 ```js
 assert($('#left-well').children('#target2').length === 0);
 ```
 
-Your `target2` element should be inside your `right-well`.
+`target2` 标签应该在 `right-well` 内。
 
 ```js
 assert($('#right-well').children('#target2').length > 0);
 ```
 
-You should only use jQuery to move these elements.
+应该仅用 jQuery 移动这些标签。
 
 ```js
 assert(!code.match(/class.*animated/g));

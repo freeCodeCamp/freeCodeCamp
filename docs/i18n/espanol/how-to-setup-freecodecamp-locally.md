@@ -63,7 +63,7 @@ Esto es esencial, ya que te permite trabajar en tu propia copia de freeCodeCamp 
 
 > [!TIP] El repositorio principal en `https://github.com/freeCodeCamp/freeCodeCamp` es frecuentemente conocido como el repositorio `upstream`.
 > 
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+> Tu fork en `https://github.com/YOUR_USER_NAME/freeCodeCamp` suele referirse como el repositorio `origin`. `YOUR_USER_NAME` será remplazado con tu nombre de usuario de GitHub.
 
 **Sigue estos pasos para fork el repositorio `https://github.com/freeCodeCamp/freeCodeCamp`:**
 
@@ -135,10 +135,10 @@ Necesita una referencia de su clon local al repositorio `upstream` además del r
    The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
    ```console
-   origin https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   origin https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
 ## Ejecutando freeCodeCamp localmente
@@ -205,7 +205,7 @@ Iniciar el servidor MongoDB en un terminal separado:
 - En Windows, debe especificar la ruta completa al binario `mondios`
 
   ```console
-  "C:\Archivos de programa\MongoDB\Servidor\3.6\bin\mongod"
+  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
   Asegúrate de reemplazar `3.6` con la versión instalada
@@ -223,7 +223,7 @@ npm run seed
 Ahora puede iniciar el servidor API y las aplicaciones cliente.
 
 ```console
-desarrollo de ejecución npm
+npm run develop
 ```
 
 Este único comando lanzará todos los servicios, incluyendo el servidor API y las aplicaciones cliente disponibles para que usted trabaje.
@@ -289,7 +289,7 @@ Siga estos pasos:
    Actualiza tu copia local del repositorio de freeCodeCamp upstream:
 
    ```console
-   git obtener arriba
+   git fetch upstream
    ```
 
    Hard reset your main branch with the freeCodeCamp main:
@@ -327,7 +327,7 @@ Siga estos pasos:
    Algunos ejemplos de buenos nombres de ramas son:
 
    ```md
-   fix/update-challenges-for-reaccionar
+   fix/update-challenges-for-react
    fix/update-guide-for-html-css
    fix/platform-bug-sign-in-issues
    feat/add-guide-article-for-javascript
@@ -489,7 +489,7 @@ Si usted se enfrenta a problemas con la interfaz de usuario, fuentes o ver error
 npm run clean
 npm ci
 npm run seed
-npm run developer
+npm run develop
 ```
 
 O
@@ -526,7 +526,7 @@ Si no puedes iniciar sesión, y en su lugar ves un banner con un mensaje de erro
 ```console
 netstat -ab | grep "3000"
 
-tcp4 0 0.0.0.0:3000 DESKTOP LISTEN
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
 **En Windows - Desde PowerShell despegado:**
@@ -534,7 +534,7 @@ tcp4 0 0.0.0.0:3000 DESKTOP LISTEN
 ```powershell
 netstat -ab | Select-String "3000"
 
-TCP 0.0.0.0:3000 DESKTOP LISTENING
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
 ### Problemas instalando dependencias

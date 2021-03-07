@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036162
-title: Create a Stateless Functional Component
+title: 创建一个无状态的函数组件
 challengeType: 6
 forumTopicId: 301392
 dashedName: create-a-stateless-functional-component
@@ -8,14 +8,13 @@ dashedName: create-a-stateless-functional-component
 
 # --description--
 
-Components are the core of React. Everything in React is a component and here you will learn how to create one.
+组件是 React 的核心。 React 中的所有内容都是一个组件，在这里将学习如何创建一个组件。
 
-There are two ways to create a React component. The first way is to use a JavaScript function. Defining a component in this way creates a *stateless functional component*. The concept of state in an application will be covered in later challenges. For now, think of a stateless component as one that can receive data and render it, but does not manage or track changes to that data. (We'll cover the second way to create a React component in the next challenge.)
+有两种方法可以创建 React 组件。 第一种方法是使用 JavaScript 函数。 以这种方式定义组件会创建*无状态功能组件*。 应用程序中的状态概念将在以后的挑战中介绍。 目前为止，可以将无状态组件视为能接收数据并对其进行渲染，但不管理或跟踪该数据的更改的组件。 (我们将下一个挑战使用中第二种方式创建 React 组件。)
 
-To create a component with a function, you simply write a JavaScript function that returns either JSX or `null`. One important thing to note is that React requires your function name to begin with a capital letter. Here's an example of a stateless functional component that assigns an HTML class in JSX:
+要用函数创建组件，只需编写一个返回 JSX 或 `null` 的 JavaScript 函数。 需要注意的一点是，React 要求你的函数名以大写字母开头。 下面是一个无状态功能组件的示例，该组件在 JSX 中分配一个 HTML 的 class：
 
 ```jsx
-// After being transpiled, the <div> will have a CSS class of 'customClass'
 const DemoComponent = function() {
   return (
     <div className='customClass' />
@@ -23,17 +22,19 @@ const DemoComponent = function() {
 };
 ```
 
-Because a JSX component represents HTML, you could put several components together to create a more complex HTML page. This is one of the key advantages of the component architecture React provides. It allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.
+翻译完成后， `<div>` 将有一个 `customClass` 的 CSS class。
+
+因为 JSX 组件代表 HTML，所以你可以将几个组件放在一起以创建更复杂的 HTML 页面。 这是 React 提供的组件架构的关键优势之一。 它允许用许多独立的组件组合成 UI。 这使得构建和维护复杂的用户界面变得更加容易。
 
 # --instructions--
 
-The code editor has a function called `MyComponent`. Complete this function so it returns a single `div` element which contains some string of text.
+代码编辑器中有一个名为 `MyComponent` 的函数。 完成此函数，使其返回包含一些文本字符串的单个`div`元素。
 
-**Note:** The text is considered a child of the `div` element, so you will not be able to use a self-closing tag.
+**注意：** 文本被视为是 `div` 的子元素，因此不能使用自闭合标签。
 
 # --hints--
 
-`MyComponent` should return JSX.
+`MyComponent` 应该返回 JSX。
 
 ```js
 assert(
@@ -44,7 +45,7 @@ assert(
 );
 ```
 
-`MyComponent` should return a `div` element.
+`MyComponent` 应该返回一个 `div` 元素。
 
 ```js
 assert(
@@ -55,7 +56,7 @@ assert(
 );
 ```
 
-The `div` element should contain a string of text.
+`div` 元素应该包含一个文本字符串。
 
 ```js
 assert(

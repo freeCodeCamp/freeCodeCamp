@@ -14,7 +14,7 @@ For example, you may want to color a data point blue if it has a value less than
 
 ```js
 selection.style("color", (d) => {
-  /* Logic that returns the color based on a condition */
+
 });
 ```
 
@@ -22,10 +22,9 @@ The `style()` method is not limited to setting the `color` - it can be used with
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns "red", otherwise it returns "green".
+Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns red, otherwise it returns green.
 
-**Note**  
-You can use if-else logic, or the ternary operator.
+**Note:** You can use if-else logic, or the ternary operator.
 
 # --hints--
 

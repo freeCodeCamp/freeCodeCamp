@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036173
-title: Set State with this.setState
+title: 用 this.setState 设置状态
 challengeType: 6
 forumTopicId: 301412
 dashedName: set-state-with-this-setstate
@@ -8,7 +8,7 @@ dashedName: set-state-with-this-setstate
 
 # --description--
 
-The previous challenges covered component `state` and how to initialize state in the `constructor`. There is also a way to change the component's `state`. React provides a method for updating component `state` called `setState`. You call the `setState` method within your component class like so: `this.setState()`, passing in an object with key-value pairs. The keys are your state properties and the values are the updated state data. For instance, if we were storing a `username` in state and wanted to update it, it would look like this:
+前面的挑战涵盖了组件的 `state` 以及如何在 `constructor` 中初始化 state。 还有一种方法可以更改组件的 `state`， React 提供了 `setState` 方法来更新组件的 `state`。 在组件类中调用 `setState` 方法如下所示：`this.setState()`，传入键值对的对象， 其中键是 state 属性，值是更新后的 state 数据。 例如，如果我们在 state 中存储 `username`，并想要更新它，代码如下所示：
 
 ```jsx
 this.setState({
@@ -16,17 +16,17 @@ this.setState({
 });
 ```
 
-React expects you to never modify `state` directly, instead always use `this.setState()` when state changes occur. Also, you should note that React may batch multiple state updates in order to improve performance. What this means is that state updates through the `setState` method can be asynchronous. There is an alternative syntax for the `setState` method which provides a way around this problem. This is rarely needed but it's good to keep it in mind! Please consult the [React documentation](https://facebook.github.io/react/docs/state-and-lifecycle.html) for further details.
+React 要求永远不要直接修改 `state`，而是在 state 发生改变时始终使用 `this.setState()`。 此外，应该注意，React 可以批量处理多个 state 更新以提高性能。 这意味着通过 `setState` 方法进行的 state 更新可以是异步的。 `setState` 方法有一种替代语法可以解决异步问题， 虽然这很少用到，但是最好还是记住它！ 有关详细信息，请参阅[React 文档](https://facebook.github.io/react/docs/state-and-lifecycle.html)。
 
 # --instructions--
 
-There is a `button` element in the code editor which has an `onClick()` handler. This handler is triggered when the `button` receives a click event in the browser, and runs the `handleClick` method defined on `MyComponent`. Within the `handleClick` method, update the component `state` using `this.setState()`. Set the `name` property in `state` to equal the string `React Rocks!`.
+代码编辑器中有一个 `button` 元素，它有一个 `onClick()` 处理程序。 当 `button` 在浏览器中接收到单击事件时触发此处理程序，并运行 `MyComponent` 中定义的 `handleClick` 方法。 在 `handleClick` 方法中，使用 `this.setState()` 更新组件的 `state`。 设置 `state` 中的 `name` 属性为字符串 `React Rocks!`。
 
-Click the button and watch the rendered state update. Don't worry if you don't fully understand how the click handler code works at this point. It's covered in upcoming challenges.
+单击按钮查看渲染的 state 的更新。 如果不完全理解单击处理程序代码在此时的工作方式，请不要担心。 在接下来的挑战中会有讲述。
 
 # --hints--
 
-The state of `MyComponent` should initialize with the key value pair `{ name: Initial State }`.
+`MyComponent` 的 state 应该使用键值对 `{ name: Initial State }` 来初始化。
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header.
+`MyComponent` 应该渲染一个 `h1` 标题。
 
 ```js
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+渲染的 `h1` 标题中应该包含一段文本，这段文本是从组件的 state 中渲染出来的。
 
 ```js
 async () => {
@@ -57,7 +57,7 @@ async () => {
 };
 ```
 
-Calling the `handleClick` method on `MyComponent` should set the name property in state to equal `React Rocks!`.
+调用 `MyComponent` 的 `handleClick` 方法应该将 state 的 name 属性设置为 `React Rocks!`。
 
 ```js
 async () => {

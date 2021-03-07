@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908854
-title: Label Bootstrap Wells
+title: 给 Bootstrap Wells 设置标签
 challengeType: 0
 forumTopicId: 18223
 dashedName: label-bootstrap-wells
@@ -8,15 +8,15 @@ dashedName: label-bootstrap-wells
 
 # --description--
 
-For the sake of clarity, let's label both of our wells with their ids.
+为了让页面逻辑更清晰，每个 wells 都标上它们的 id 吧。
 
-Above your left-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#left-well`.
+在 left-well 的上一层，class 属性为 `col-xs-6` 的 `div` 元素里面，增加一个文本为 `#left-well` 的 `h4` 元素。
 
-Above your right-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#right-well`.
+在 right-well 的上一层，class 属性为 `col-xs-6` 的 `div` 元素里面，增加一个文本为 `#right-well` 的 `h4` 元素。
 
 # --hints--
 
-You should add an `h4` element to each of your `<div class="col-xs-6">` elements.
+应该为每个 `<div class="col-xs-6">` 元素添加一个 `h4` 元素。
 
 ```js
 assert(
@@ -24,19 +24,19 @@ assert(
 );
 ```
 
-One `h4` element should have the text `#left-well`.
+其中一个 `h4` 元素应该含有文本内容 `#left-well`。
 
 ```js
 assert(new RegExp('#left-well', 'gi').test($('h4').text()));
 ```
 
-One `h4` element should have the text `#right-well`.
+其中一个 `h4` 元素应该含有文本内容 `#right-well`。
 
 ```js
 assert(new RegExp('#right-well', 'gi').test($('h4').text()));
 ```
 
-All of your `h4` elements should have closing tags.
+确保每个 `h4` 元素都有一个闭合标签。
 
 ```js
 assert(

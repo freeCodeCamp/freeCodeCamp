@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd8
-title: Add Attributes to the Circle Elements
+title: 给 Circle 元素添加属性
 challengeType: 6
 forumTopicId: 301471
 dashedName: add-attributes-to-the-circle-elements
@@ -8,27 +8,27 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-The last challenge created the `circle` elements for each point in the `dataset`, and appended them to the SVG canvas. But D3 needs more information about the position and size of each `circle` to display them correctly.
+上个挑战为 `dataset` 中的每个点都创建了 `circle` 元素，并将它们添加到 SVG 画布上。 但是 D3 需要更多关于位置和 `circle` 大小的信息来正确地显示它们。
 
-A `circle` in SVG has three main attributes. The `cx` and `cy` attributes are the coordinates. They tell D3 where to position the *center* of the shape on the SVG canvas. The radius (`r` attribute) gives the size of the `circle`.
+在 SVG 中 `circle` 有三个主要的属性。 `cx` 和 `cy` 属性是坐标。 它们告诉 D3 将图形的*中心*放在 SVG 画布的何处。 半径（ `r` 属性）给出 `circle` 的大小。
 
-Just like the `rect` `y` coordinate, the `cy` attribute for a `circle` is measured from the top of the SVG canvas, not from the bottom.
+和 `rect` 的 `y` 坐标一样，`circle` 的 `cy` 属性是从 SVG 画布的顶端开始测量的，而不是从底端。
 
-All three attributes can use a callback function to set their values dynamically. Remember that all methods chained after `data(dataset)` run once per item in `dataset`. The `d` parameter in the callback function refers to the current item in `dataset`, which is an array for each point. You use bracket notation, like `d[0]`, to access the values in that array.
+所有的属性都可以用回调函数来动态设值。 记住，所有串联在 `data(dataset)` 后面的方法会为 `dataset` 中的每个对象都运行一次。 回调函数中的 `d` 参数指在 `dataset` 中的当前对象，对每个点来说都是一个数组。 你可以使用方括号的方式，如 `d[0]`，来访问数组中的值。
 
 # --instructions--
 
-Add `cx`, `cy`, and `r` attributes to the `circle` elements. The `cx` value should be the first number in the array for each item in `dataset`. The `cy` value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The `r` value should be 5 for all circles.
+为 `circle` 元素添加 `cx`、`cy`、`r` 属性。 `cx` 的值应该是 `dataset` 中每个对象的数组的第一个数， `cy` 的值应该根据数组中的第二个值，但是要确保正向显示图表而不是倒转。 所有圆圈的 `r` 的值应该为 5。
 
 # --hints--
 
-Your code should have 10 `circle` elements.
+你应该有 10 个 `circle` 元素。
 
 ```js
 assert($('circle').length == 10);
 ```
 
-The first `circle` element should have a `cx` value of 34, a `cy` value of 422, and an `r` value of 5.
+第一个 `circle` 元素的 `cx` 值应该为 34，`cy` 值应该为 422，`r` 值应该为 5。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-The second `circle` element should have a `cx` value of 109, a `cy` value of 220, and an `r` value of 5.
+第二个 `circle` 元素的 `cx` 值应该为 109，`cy` 值应该为 220，`r` 值应该为 5。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The third `circle` element should have a `cx` value of 310, a `cy` value of 380, and an `r` value of 5.
+第三个 `circle` 元素的 `cx` 值应该为 310，`cy` 值应该为 380，`r` 值应该为 5。
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The fourth `circle` element should have a `cx` value of 79, a `cy` value of 89, and an `r` value of 5.
+第四个 `circle` 元素的 `cx` 值应该为 79，`cy` 值应该为 89，`r` 值应该为 5。
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-The fifth `circle` element should have a `cx` value of 420, a `cy` value of 280, and an `r` value of 5.
+第五个 `circle` 元素的 `cx` 值应该为 420，`cy` 值应该为 280，`r` 值应该为 5。
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-The sixth `circle` element should have a `cx` value of 233, a `cy` value of 355, and an `r` value of 5.
+第六个 `circle` 元素的 `cx` 值应该为 233，`cy` 值应该为 355，`r` 值应该为 5。
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The seventh `circle` element should have a `cx` value of 333, a `cy` value of 404, and an `r` value of 5.
+第七个 `circle` 元素的 `cx` 值应该为 333，`cy` 值应该为 404，`r` 值应该为 5。
 
 ```js
 assert(
@@ -98,7 +98,7 @@ assert(
 );
 ```
 
-The eighth `circle` element should have a `cx` value of 222, a `cy` value of 167, and an `r` value of 5.
+第八个 `circle` 元素的 `cx` 值应该为 222，`cy` 值应该为 167，`r` 值应该为 5。
 
 ```js
 assert(
@@ -108,7 +108,7 @@ assert(
 );
 ```
 
-The ninth `circle` element should have a `cx` value of 78, a `cy` value of 180, and an `r` value of 5.
+第九个 `circle` 元素的 `cx` 值应该为 78，`cy` 值应该为 180，`r` 值应该为 5。
 
 ```js
 assert(
@@ -118,7 +118,7 @@ assert(
 );
 ```
 
-The tenth `circle` element should have a `cx` value of 21, a `cy` value of 377, and an `r` value of 5.
+第十个 `circle` 元素的 `cx` 值应该为 21，`cy` 值应该为 377，`r` 值应该为 5。
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244be
-title: Global Scope and Functions
+title: 全局作用域和函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQM7mCN'
 forumTopicId: 18193
@@ -9,37 +9,37 @@ dashedName: global-scope-and-functions
 
 # --description--
 
-In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.
+在 JavaScript 中，<dfn>作用域</dfn>涉及到变量的作用范围。 在函数外定义的变量具有 <dfn>全局</dfn> 作用域。 这意味着，具有全局作用域的变量可以在代码的任何地方被调用。
 
-Variables which are used without the `var` keyword are automatically created in the `global` scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with `var`.
+这些没有使用 `var` 关键字定义的变量，会被自动创建在 `global` 作用域中，形成全局变量。 当在代码其他地方无意间定义了一个变量，刚好变量名与全局变量相同，这时会产生意想不到的后果。 因此你应该总是使用 `var` 关键字来声明你的变量。
 
 # --instructions--
 
-Using `var`, declare a global variable named `myGlobal` outside of any function. Initialize it with a value of `10`.
+使用 `var`，在函数外声明一个全局变量 `myGlobal`， 并给它一个初始值 `10`。
 
-Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `var` keyword.
+在函数 `fun1` 的内部，***不***使用 `var` 关键字，声明 `oopsGlobal`，并给它赋值为 `5`。
 
 # --hints--
 
-`myGlobal` should be defined
+应定义 `myGlobal`。
 
 ```js
 assert(typeof myGlobal != 'undefined');
 ```
 
-`myGlobal` should have a value of `10`
+`myGlobal` 的值应为 `10`。
 
 ```js
 assert(myGlobal === 10);
 ```
 
-`myGlobal` should be declared using the `var` keyword
+应使用 `var` 关键字定义 `myGlobal`。
 
 ```js
 assert(/var\s+myGlobal/.test(code));
 ```
 
-`oopsGlobal` should be a global variable and have a value of `5`
+`oopsGlobal` 应为全局变量，值为 `5`。
 
 ```js
 assert(typeof oopsGlobal != 'undefined' && oopsGlobal === 5);

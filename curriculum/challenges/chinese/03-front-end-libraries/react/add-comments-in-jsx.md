@@ -1,6 +1,6 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5e
-title: Add Comments in JSX
+title: 在 JSX 中添加注释
 challengeType: 6
 forumTopicId: 301376
 dashedName: add-comments-in-jsx
@@ -8,35 +8,35 @@ dashedName: add-comments-in-jsx
 
 # --description--
 
-JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.
+JSX 是一种可以编译成 JavaScript 的语法。 有时，为了便于阅读，可能需要在代码中添加注释。 像大多数编程语言一样，JSX 也有自己的方法来实现这一点。
 
-To put comments inside JSX, you use the syntax `{/* */}` to wrap around the comment text.
+要将注释放在 JSX 中，可以使用 `{/* */}` 语法来包裹注释文本。
 
 # --instructions--
 
-The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided `div` element, without modifying the existing `h1` or `p` elements.
+代码编辑器中的 JSX 元素与在上一个挑战中创建的元素类似。 在提供的 `div` 元素里添加注释，不修改现有的 `h1` 或 `p` 元素。
 
 # --hints--
 
-The constant `JSX` should return a `div` element.
+常量 `JSX` 应该返回一个 `div` 元素。
 
 ```js
 assert(JSX.type === 'div');
 ```
 
-The `div` should contain an `h1` tag as the first element.
+`div` 应该包含一个 `h1` 标签作为第一个元素。
 
 ```js
 assert(JSX.props.children[0].type === 'h1');
 ```
 
-The `div` should contain a `p` tag as the second element.
+`div` 应该包含一个 `p` 标签作为第二个元素。
 
 ```js
 assert(JSX.props.children[1].type === 'p');
 ```
 
-The existing `h1` and `p` elements should not be modified.
+当前的 `h1` 和 `p` 元素不能被修改。
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `JSX` should use valid comment syntax.
+`JSX` 应该包含一个注释。
 
 ```js
 assert(/<div>[\s\S]*{\s*\/\*[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code));

@@ -13,7 +13,7 @@ La opción `hsl()` en CSS también hace que sencillo ajustar el tono de un color
 
 # --instructions--
 
-Todos los elementos tienen un `background-color` predeterminado de `transparent`. Nuestro elemento `nav` parece tener un fondo `cyan` ya que el elemento detrás del mismo tiene un `background-color` establecido a `cyan`. Añade un `background-color` al elemento `nav` para que use el mismo tono `cyan`, pero tiene `80% saturation` y `25% lightness` para cambiar su tono y sombreado.
+Todos los elementos tienen un `background-color` predeterminado de `transparent`. Nuestro elemento `nav` parece tener un fondo `cyan` ya que el elemento detrás del mismo tiene un `background-color` establecido a `cyan`. Añade un `background-color` al elemento `nav` para que use el mismo tono de `cyan`, pero que tenga `80%` de saturación y luminosidad `25%` para cambiar su tono y sombra.
 
 # --hints--
 

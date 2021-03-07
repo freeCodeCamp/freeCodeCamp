@@ -66,22 +66,22 @@
       "basic-html-cat-photo-app": {
         "title": "基础 HTML 猫图应用",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "basic-css-cafe-menu": {
         "title": "基础 CSS 咖啡菜单",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "css-variables-skyline": {
         "title": "CSS 变量 Skyline",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       }
     }
@@ -169,22 +169,22 @@
       "basic-javascript-rpg-game": {
         "title": "基础 JavaScript RPG 游戏",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "中级 JavaScript 卡路里计算器",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       },
       "functional-programming-spreadsheet": {
         "title": "函数式编程电子表格",
         "intro": [
-          "占位符",
-          "占位符"
+          "",
+          ""
         ]
       }
     }
@@ -200,7 +200,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap 是一个用于设计响应式网页和应用程序的前端框架。它具有移动优先的特点，具有预定义的 CSS 样式和 class，还有一些 JavaScript 功能。",
+          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "在这个课程中，你将学习如何使用 Bootstrap 来建立响应式网页，并使用它的 class 来设置按钮、图像、表格、导航和其他常见元素的样式。"
         ]
       },
@@ -286,8 +286,8 @@
       "d3-dashboard": {
         "title": "D3 Dashboard",
         "intro": [
-          "placeholder",
-          "placeholder"
+          "",
+          ""
         ]
       }
     }
@@ -370,13 +370,13 @@
     "title": "Scientific Computing with Python",
     "intro": [
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
-      "In the Scientific Computing with Python Certification, you'll Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
+      "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
     "blocks": {
       "python-for-everybody": {
         "title": "Python for Everybody",
         "intro": [
-          "Python for everybody is a free video course series that teach the basics of using Python 3.",
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
           "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
         ]
       },
@@ -398,7 +398,7 @@
       "data-analysis-with-python-course": {
         "title": "Data Analysis with Python",
         "intro": [
-          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll reading data from multiple sources (CSV, SQL, Excel), process those data using NumPy and Pandas, and visualize them using Matplotlib and Seaborn,",
+          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll be reading data from multiple sources (CSV, SQL, Excel), process that data using NumPy and Pandas, and visualize it using Matplotlib and Seaborn,",
           "Additionally, we've included a thorough Jupyter Notebook course, and a quick Python reference to refresh your programming skills."
         ]
       },
@@ -453,7 +453,7 @@
     "title": "Machine Learning with Python",
     "intro": [
       "Machine learning has many practical applications that you can use in your projects or on the job.",
-      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks. A you'll explore more advanced techniques like natural language processing and reinforcement learning.",
+      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
     "blocks": {

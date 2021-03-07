@@ -1,88 +1,84 @@
-# How to Translate a File
+# 如何翻译文件
 
-> [!NOTE] All translations are handled through https://translate.freecodecamp.org - we are no longer using GitHub to translate files directly.
+> [!NOTE] 所有翻译都在 https://translate.freecodecamp.org 进行——我们不再使用 GitHub 直接翻译文件。
 
-To begin, head to our translation website and login (if you have not contributed to translations before, you will need to create an account).
+首先，请访问并登录我们的翻译网站（如果你之前没有参与过翻译协作，那么你需要新建一个账号）。
 
-## Select a Project and File
+## 选择项目和文件
 
-You should see two "projects" available for translation: The `Contributing Documentation` project, which contains the files for this documentation site, and the `Coding Curriculum` project, which contains our challenge files for `/learn`.
+你应该可以看到两个“项目”可供翻译：`Contributing Documentation` 项目，包含本文档网站的所有文件；`Coding Curriculum` 项目，包含 `/learn` 的课程文件。
 
-Select which project you want to contribute to, and you will see a list of available languages for translation.
+选择你想参与贡献的项目，然后你会看到不同语言版本的可翻译文件列表。
 
-![Image - List of available languages](./images/crowdin/languages.png)
+![图片 - 可翻译语言版本列表](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
-Select the language you want to work on, and you will see the complete file tree.
+选择你想参与翻译的语言，然后你会看到完整的文件列表。
 
-![Image - List of available files](./images/crowdin/file-tree.png)
+![图片 - 可翻译文件列表](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
-Each file and folder will show a progress bar. The **blue** portion of the progress bar indicates what percentage of the file has been translated, while the **green** portion of the progress bar indicates what percentage of the file has been approved by the proofreading team.
+每个文件和文件夹都会显示一个进度条。 进度条的**蓝色**部分表示多少百分比的文件已经被翻译了，而**绿色**部分表示多少百分比的文件已经被校对团队审核确认。
 
-Select a file to work on and Crowdin will open the editor view.
+选择你想翻译的文件，然后 Crowdin 会打开编辑界面。
 
-## Translate the File
+> [!NOTE] 打开编辑界面后，你需要点击设置图标（右上角的齿轮状图标），将 “HTML tags displaying” 设置为 “SHOW”。 这样，文件中会显示 `<code></code>` 标签，而不是 `<0></0>` 标签。
 
-![Image - Editor View](./images/crowdin/editor.png)
+## 翻译文件
 
-Crowdin separates a document into translatable "strings", usually sentences. Each string is translated individually. Referring to the image above:
+![图片 - 编辑界面](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
-1. A string highlighted in green already has a proposed translation.
-2. A string highlighted in red does _not_ have a proposed translation.
-3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must not be translated. You will be unable to select these strings in the editor.
-4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
-5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). Translation Memory refers to similar or identical strings that we have translated/approved in other files. Machine Translation refers to translations recommended by their integrated library.
-6. This is the editor pane, where you may write your proposed translation for the selected string.
-7. The currently selected string in the editor will be highlighted in yellow.
-8. Here you will see tags indicating the state of the string. `Done` means the string has at least one proposed translation. `Todo` means the string does not have any proposed translations.
-9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
-10. These two "pane" buttons will hide the left (document) and right (comments) views.
+Crowdin 将一个文件分割成“字符串”（通常是一个个句子），以供翻译。 请单独翻译每个字符串。 在上图中：
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [translators chat room](https://chat.freecodecamp.org/channel/translators) so we can remove the translation from memory.
+1. 标注为绿色的字符串已经有建议的译文。
+2. 标注为红色的字符串_没有_建议的译文。
+3. 显示为灰色的内容是不能翻译的。 这些内容是代码块或其他内容，是不可修改的。 你不能在编辑框中选中这些字符串。
+4. 如果某位贡献者对某个字符串有建议的译文，那么 Crowdin 将在此处显示所有的建议。 你无法保存相同的译文。如果某个译文是正确的，那么你可以点击 `+` 图标，给它投票表示赞同。 如果你觉得某个译文不正确，那么你可以点击 `-` 图标，投反对票。
+5. Crowdin 将基于翻译记忆（TM）或机器翻译（MT）推荐译文。 翻译记忆是指我们已在其他文件中翻译过/批准过的相似的或相同的字符串。 机器翻译是指由 Crowdin 系统推荐的翻译。
+6. 这是编辑器窗口，你可以在其中输入你对于所选字符串建议的译文。
+7. 编辑窗口当前选中的字符串将被标注为黄色。
+8. 这里的标签是表示字符串的状态。 `Done` 标签表示字符串有至少一个建议的译文。 `Todo` 标签表示字符串还没有建议的译文。
+9. 这里是评论窗口。 如果你对某个字符串有疑问或疑虑，可以在此处对字符串发表评论，以便其他翻译人员查看。
+10. 点击这两个“窗格”按钮，可以隐藏左边的（文件）视图和右边的（评论）视图。
 
-When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
+> [!NOTE] 如果你看到一个被隐藏的（即灰色的）字符串有对应的译文，请在[译者交流群](https://chat.freecodecamp.org/channel/translators)告诉我们，我们会移除翻译记忆中的译文。
 
-You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
+当你翻译完一个字符串，请点击 `Save` 按钮，将你的译文储存在  Crowdin 中。 然后其他贡献者可以给你的译文投票，而校对者也将审核确认你的译文。
 
-> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
+你想翻译多少字符串，都可以，我们非常欢迎你贡献！当你翻译完某个文件或某个字符串之后，你不需要采取其他步骤。 你只需要点击 `Save` 按钮，就能保存你的译文了。
 
-### Translating Documentation
+> [!NOTE] 如果你发现在英语源文件中有不正确的内容，请不要在翻译流程中对其进行修改。 请在字符串上留下评论，通知我们有什么问题，或者在 GitHub 创建 issue。
 
-Translating our contributing documentation is a similar flow to translating our curriculum files.
+### 翻译文档
 
-> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
+翻译贡献文档的流程和翻译课程文件的流程类似。
 
-## Rate Translations
+> [!NOTE] 我们的贡献文档由` docsify `提供支持，并且我们消息框（比如这份文档里的）进行了特殊的解析。 如果你看到以 `[!NOTE]`、`[!WARNING]` 或 `[!TIP]` 开头的字符串，请注意不要翻译这些单词。
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+## 给译文评分
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+Crowdin 允许你对已有的建议译文进行评分。 在你尝试保存译文的时候，你可能会看到一条消息，提示你无法保存重复的译文——这意味着另一位贡献者已经建议了相同的译文。 如果你赞同那个译文，可以点击 `+` 按钮来投票赞同它。
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+如果你认为译文不正确或与源文件字符串的意思不一致，请单击 `-` 按钮投反对票。
 
-## Quality Assurance Checks
+Crowdin 通过这些投票为一个字符串的每个建议译文给出一个分数，这有助于校对团队确定哪个译文是最准确的。
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+## 质量保证检查
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+我们采用了一些质量保证步骤，以确保译文尽可能准确——这有助于我们的校对贡献者审核建议的译文。
 
-![Image - QA Warning Message](./images/crowdin/qa-message.png)
+当你尝试保存翻译时，你可能会看到一条警告消息，其中包含关于你所建议的翻译的通知。
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
+![图片 - 质量保证警告消息](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-> [!WARNING] You have the option to save a translation in spite of errors, but this should be done only in circumstances where the error might be incorrect.
+当 Crowdin 的质量保证检查系统在建议的译文中发现可能的错误时，将显示此消息。 在这个例子中，我们修改了 `<code>` 标签的文本内容，Crowdin 会发现这个问题。
 
-Crowdin will sometimes convert HTML tags (such as `<code>`) into numerical values, like `<0>text</0>` or `<1>text</1>`. These tags are usually code tags, and our QA check will verify that these have not been translated. However, sometimes these may be `<strong>` or `<em>` tags, which _should_ be translated. If you hover over a numerical tag in the source string, you can see which HTML tag or tags have been replaced:
+> [!WARNING] 即使 Crowdin 提示有错误，你也可以选择保存译文。 如果你仍要通过点击 “Save Anyway” 保存译文，那么你应该标记（@）校对人员或项目经理，说明为什么需要忽略质量检查消息。
 
-![Image - Hover over a tag](./images/crowdin/tag-hover.png)
+## 翻译最佳实践
 
-If the replaced tags are something that should be translated (such as `strong` tags), translate the content within the tags and select "Save Anyway" when the error appears. Then leave a comment on the string explaining that the tags are `strong` (for example) so other translators and proofreaders are aware that they should be translated.
+请遵循下列准则，以确保我们的翻译尽可能的准确：
 
-## Translation Best Practices
+- 不要翻译 `<code>` 标签中的内容。 这个标签表示在文本在代码中，应保留英文文本。
+- 不要添加额外的内容。 如果你认为源文件的文本内容或其他信息需要修改，那么请你在 GitHub issue 或 pull request 来提出更改建议。
+- 不要更改内容的顺序。
 
-Follow these guidelines to ensure our translations are as accurate as possible:
-
-- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
-- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
-- Do not change the order of content.
-
-If you have any questions, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators) and we will be happy to assist you.
+如果你有任何问题，欢迎你随时在[译者交流群](https://chat.freecodecamp.org/channel/translators)提出，我们很高兴给予你支持。

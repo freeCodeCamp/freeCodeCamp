@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036142
-title: Manage State Locally First
+title: 首先在本地管理状态
 challengeType: 6
 forumTopicId: 301431
 dashedName: manage-state-locally-first
@@ -8,19 +8,19 @@ dashedName: manage-state-locally-first
 
 # --description--
 
-Here you'll finish creating the `DisplayMessages` component.
+这一关的任务是完成 `DisplayMessages` 组件的创建。
 
 # --instructions--
 
-First, in the `render()` method, have the component render an `input` element, `button` element, and `ul` element. When the `input` element changes, it should trigger a `handleChange()` method. Also, the `input` element should render the value of `input` that's in the component's state. The `button` element should trigger a `submitMessage()` method when it's clicked.
+首先，在 `render()` 方法中，让组件渲染 `input`、`button`、`ul` 三个元素。 `input` 元素的改变会触发 `handleChange()` 方法。 此外，`input` 元素会渲染组件状态中 `input` 的值。 点击按钮 `button` 需触发 `submitMessage()` 方法。
 
-Second, write these two methods. The `handleChange()` method should update the `input` with what the user is typing. The `submitMessage()` method should concatenate the current message (stored in `input`) to the `messages` array in local state, and clear the value of the `input`.
+接着，写出这两种方法。 `handleChange()` 方法会更新 `input` 为用户正在输入的内容。 `submitMessage()` 方法把当前存储在 `input` 的消息与本地状态的 `messages` 数组连接起来，并清除 `input` 的值。
 
-Finally, use the `ul` to map over the array of `messages` and render it to the screen as a list of `li` elements.
+最后，在 `ul` 中展示 `messages` 数组，其中每个元素内容需放到 `li` 元素内。
 
 # --hints--
 
-The `DisplayMessages` component should initialize with a state equal to `{ input: "", messages: [] }`.
+`DisplayMessages` 组件的初始状态应是 `{ input: "", messages: [] }`。
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-The `DisplayMessages` component should render a `div` containing an `h2` element, a `button` element, a `ul` element, and `li` elements as children.
+`DisplayMessages` 组件应渲染含 `h2`、`button`、`ul`、`li` 四个子元素的`div`
 
 ```js
 async () => {
@@ -58,13 +58,13 @@ async () => {
 };
 ```
 
-`.map` should be used on the `messages` array.
+`.map` 应该用于 `messages` 数组。
 
 ```js
 assert(code.match(/this\.state\.messages\.map/g));
 ```
 
-The `input` element should render the value of `input` in local state.
+`input` 元素应渲染本地状态中的 `input` 值。
 
 ```js
 async () => {
@@ -83,7 +83,7 @@ async () => {
 };
 ```
 
-Calling the method `handleChange` should update the `input` value in state to the current input.
+调用 `handleChange` 方法时应更新状态中的 `input` 值为当前输入。
 
 ```js
 async () => {
@@ -106,7 +106,7 @@ async () => {
 };
 ```
 
-Clicking the `Add message` button should call the method `submitMessage` which should add the current `input` to the `messages` array in state.
+单击 `Add message` 按钮应调用 `submitMessage` 方法，添加当前 `input` 到状态中的 `messages` 数组。
 
 ```js
 async () => {
@@ -149,7 +149,7 @@ async () => {
 };
 ```
 
-The `submitMessage` method should clear the current input.
+`submitMessage` 方法应清除当前输入。
 
 ```js
 async () => {

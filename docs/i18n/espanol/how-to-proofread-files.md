@@ -8,7 +8,7 @@ Para comenzar a revisar y aprobar traducciones, visita [ nuestro sitio de traduc
 
 Deberías ver una lista de los proyectos para los que te concedieron acceso. Selecciona el proyecto que quieres revisar y luego selecciona el idioma.
 
-![Imagen - Árbol de archivos de la vista de proofreading ](./images/crowdin/proof-file-tree.png)
+![Imagen - Árbol de archivos de la vista de proofreading ](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
 Ahora podrás ver la lista de archivos disponibles. Selecciona un archivo haciendo clic en el botón `Proofread` que se encuentra a la derecha de ese archivo, y luego selecciona la opción `Proofreading` del menú desplegable que se abrirá.
 
@@ -16,7 +16,7 @@ Ahora podrás ver la lista de archivos disponibles. Selecciona un archivo hacien
 
 ## Revisar traducciones
 
-![Imagen - Vista de proofreading](./images/crowdin/proofread.png)
+![Imagen - Vista de proofreading](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 
@@ -35,6 +35,6 @@ Si bien puedes ver *todas* las traducciones propuestas para un segmento, deberí
 
 > [!WARNING] Si un segmento es aprobado durante la revisión, se mostrará como finalizado en la vista de proofreading y será descargado en el próximo pull de Crowdin a GitHub.
 
-Cuando un archivo ha sido corregido, no se requiere ningún paso adicional. Si tienes alguna pregunta o te interesa colaborar como corrector, por favor contáctanos en nuestra [sala de chat de traductores](https://chat.freecodecamp.org/channel/translators).
+Cuando un archivo ha sido corregido, no se requiere ningún paso adicional. Si tienes alguna pregunta o te interesa colaborar como corrector, por favor contáctanos en nuestra [sala de chat de traductores](https://chat.freecodecamp.org/channel/translators). If you are already a proofreader and are interested in having a dedicated channel for a specific language, [fill out our form](https://forms.gle/XU5CyutrYCgDYaVZA).
 
 > [!NOTE] Crowdin te permite aprobar tus propias traducciones. Sin embargo, en general suele ser mejor permitir que otro corrector revise tus traducciones propuestas como medida adicional para asegurarse que no hayan errores.

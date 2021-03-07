@@ -14,8 +14,10 @@ The keyword `let` is not the only new way to declare variables. In ES6, you can 
 
 ```js
 const FAV_PET = "Cats";
-FAV_PET = "Dogs"; // returns error
+FAV_PET = "Dogs";
 ```
+
+The console will display an error due to reassigning the value of `FAV_PET`.
 
 As you can see, trying to reassign a variable declared with `const` will throw an error. You should always name variables you don't want to reassign using the `const` keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.
 

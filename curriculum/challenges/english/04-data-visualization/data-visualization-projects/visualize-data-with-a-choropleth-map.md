@@ -22,11 +22,11 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. R
 
 **User Story #4:** There should be at least 4 different fill colors used for the counties.
 
-**User Story #5:** My counties should each have `data-fips` and `data-education` properties containing their corresponding fips and education values.
+**User Story #5:** My counties should each have `data-fips` and `data-education` properties containing their corresponding `fips` and `education` values.
 
 **User Story #6:** My choropleth should have a county for each provided data point.
 
-**User Story #7:** The counties should have data-fips and data-education values that match the sample data.
+**User Story #7:** The counties should have `data-fips` and `data-education` values that match the sample data.
 
 **User Story #8:** My choropleth should have a legend with a corresponding `id="legend"`.
 

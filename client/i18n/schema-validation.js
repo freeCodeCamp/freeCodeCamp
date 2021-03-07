@@ -1,11 +1,10 @@
 const path = require('path');
-const fs = require('fs');
-const { translationsSchema } = require('./translations-schema');
-const { availableLangs } = require('./allLangs');
-const { trendingSchema } = require('./trending-schema');
-const { motivationSchema } = require('./motivation-schema');
-const { introSchema } = require('./intro-schema');
-const { metaTagsSchema } = require('./meta-tags-schema');
+const { availableLangs } = require('../../config/i18n/all-langs');
+const translationsSchema = require('./locales/english/translations.json');
+const trendingSchema = require('./locales/english/trending.json');
+const motivationSchema = require('./locales/english/motivation.json');
+const introSchema = require('./locales/english/intro.json');
+const metaTagsSchema = require('./locales/english/meta-tags.json');
 
 /**
  * Flattens a nested object structure into a single
@@ -45,7 +44,7 @@ const findMissingKeys = (file, schema, path) => {
     }
   }
   if (missingKeys.length) {
-    throw new Error(
+    console.warn(
       `${path} is missing these required keys: ${missingKeys.join(', ')}`
     );
   }
@@ -66,7 +65,7 @@ const findExtraneousKeys = (file, schema, path) => {
     }
   }
   if (extraKeys.length) {
-    throw new Error(
+    console.warn(
       `${path} has these keys that are not in the schema: ${extraKeys.join(
         ', '
       )}`
@@ -119,8 +118,7 @@ const translationSchemaValidation = languages => {
       __dirname,
       `/locales/${language}/translations.json`
     );
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(
       fileKeys,
@@ -134,13 +132,13 @@ const translationSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/translation.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
       );
     }
-    console.info(`${language} translation.json is correct!`);
+    console.info(`${language} translation.json validation complete.`);
   });
 };
 
@@ -152,8 +150,7 @@ const translationSchemaValidation = languages => {
 const trendingSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/trending.json`);
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, trendingSchemaKeys, `${language}/trending.json`);
     findExtraneousKeys(
@@ -163,13 +160,13 @@ const trendingSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/trending.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
       );
     }
-    console.info(`${language} trending.json is correct!`);
+    console.info(`${language} trending.json validation complete`);
   });
 };
 
@@ -179,8 +176,7 @@ const motivationSchemaValidation = languages => {
       __dirname,
       `/locales/${language}/motivation.json`
     );
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(
       fileKeys,
@@ -194,7 +190,7 @@ const motivationSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/motivation.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
@@ -207,11 +203,9 @@ const motivationSchemaValidation = languages => {
           object.hasOwnProperty('quote') && object.hasOwnProperty('author')
       )
     ) {
-      throw new Error(
-        `${language}/motivation.json has malformed quote objects.`
-      );
+      console.warn(`${language}/motivation.json has malformed quote objects.`);
     }
-    console.info(`${language} motivation.json is correct!`);
+    console.info(`${language} motivation.json validation complete`);
   });
 };
 
@@ -223,18 +217,17 @@ const motivationSchemaValidation = languages => {
 const introSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/intro.json`);
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
     findExtraneousKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/intro.json has these empty keys: ${emptyKeys.join(', ')}`
       );
     }
-    console.info(`${language} intro.json is correct!`);
+    console.info(`${language} intro.json validation complete`);
   });
 };
 
@@ -244,8 +237,7 @@ const metaTagsSchemaValidation = languages => {
       __dirname,
       `/locales/${language}/meta-tags.json`
     );
-    const fileData = fs.readFileSync(filePath);
-    const fileJson = JSON.parse(fileData);
+    const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, metaTagsSchemaKeys, `${language}/meta-tags.json`);
     findExtraneousKeys(
@@ -255,18 +247,20 @@ const metaTagsSchemaValidation = languages => {
     );
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
-      throw new Error(
+      console.warn(
         `${language}/metaTags.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
       );
     }
-    console.info(`${language} metaTags.json is correct!`);
+    console.info(`${language} metaTags.json validation complete`);
   });
 };
 
-translationSchemaValidation(availableLangs.client);
-trendingSchemaValidation(availableLangs.client);
-motivationSchemaValidation(availableLangs.client);
-introSchemaValidation(availableLangs.client);
-metaTagsSchemaValidation(availableLangs.client);
+const translatedLangs = availableLangs.client.filter(x => x !== 'english');
+
+translationSchemaValidation(translatedLangs);
+trendingSchemaValidation(translatedLangs);
+motivationSchemaValidation(translatedLangs);
+introSchemaValidation(translatedLangs);
+metaTagsSchemaValidation(translatedLangs);

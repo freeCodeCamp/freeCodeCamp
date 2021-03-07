@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036183
-title: Use Advanced JavaScript in React Render Method
+title: 在 React Render 方法中使用 JavaScript
 challengeType: 6
 forumTopicId: 301415
 dashedName: use-advanced-javascript-in-react-render-method
@@ -8,17 +8,17 @@ dashedName: use-advanced-javascript-in-react-render-method
 
 # --description--
 
-In previous challenges, you learned how to inject JavaScript code into JSX code using curly braces, `{ }`, for tasks like accessing props, passing props, accessing state, inserting comments into your code, and most recently, styling your components. These are all common use cases to put JavaScript in JSX, but they aren't the only way that you can utilize JavaScript code in your React components.
+在之前的挑战中，学习了如何使用大括号 `{ }` 将 JavaScript 代码插入到 JSX 代码中，用于访问 props、传递 props、访问 state、在代码中插入注释以及最近学习的定制组件样式等任务。 这些都是将 JavaScript 放在 JSX 中的常见用例，但是在 React 组件中使用 JavaScript 代码还有其他方式。
 
-You can also write JavaScript directly in your `render` methods, before the `return` statement, ***without*** inserting it inside of curly braces. This is because it is not yet within the JSX code. When you want to use a variable later in the JSX code *inside* the `return` statement, you place the variable name inside curly braces.
+在 `render` 方法中编写 JavaScript，可以把 JavaScript 直接放在 `return` 语句之前，而***不必***将其插入大括号中。 这是因为它还不在 JSX 代码中。 如果之后想在 `return` 语句中的 JSX 代码*里面*使用变量时，可以将变量名放在大括号中。
 
 # --instructions--
 
-In the code provided, the `render` method has an array that contains 20 phrases to represent the answers found in the classic 1980's Magic Eight Ball toy. The button click event is bound to the `ask` method, so each time the button is clicked a random number will be generated and stored as the `randomIndex` in state. On line 52, delete the string `"change me!"` and reassign the `answer` const so your code randomly accesses a different index of the `possibleAnswers` array each time the component updates. Finally, insert the `answer` const inside the `p` tags.
+在提供的代码中，`render` 方法中有一个包含 20 个短语的数组，用于表示 20 世纪 80 年代经典魔术八球玩具中的答案。 绑定 `ask` 方法到按钮的单击事件，每次单击该按钮时，将生成随机数并将其存储为 state 中的 `randomIndex`。 在第 52 行，删除字符串 `change me!` 并重新分配 `answer` 常量，以便每次组件更新时，代码随机访问 `possibleAnswers` 数组的不同值。 最后，在 `p` 标签内插入 `answer` 常量。
 
 # --hints--
 
-The `MagicEightBall` component should exist and should render to the page.
+`MagicEightBall` 组件应该存在并被渲染到页面。
 
 ```js
 assert.strictEqual(
@@ -28,7 +28,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s first child should be an `input` element.
+`MagicEightBall` 的第一个子元素应该是 `input` 元素。
 
 ```js
 assert.strictEqual(
@@ -40,7 +40,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s third child should be a `button` element.
+`MagicEightBall` 的第三个子元素应该是 `button` 元素。
 
 ```js
 assert.strictEqual(
@@ -52,7 +52,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s state should be initialized with a property of `userInput` and a property of `randomIndex` both set to a value of an empty string.
+`MagicEightBall` 的 state 应该用 `userInput` 属性和 `randomIndex` 属性初始化，并且这两个属性的值都应该是空字符串。
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-When `MagicEightBall` is first mounted to the DOM, it should return an empty `p` element.
+当 `MagicEightBall` 第一次加载到 DOM 中时，它应该返回一个空的 `p` 元素。
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-When text is entered into the `input` element and the button is clicked, the `MagicEightBall` component should return a `p` element that contains a random element from the `possibleAnswers` array.
+当文本被输入到 `input` 元素中并点击按钮时， `MagicEightBall` 组件应该返回一个 `p` 元素，该元素包含数组 `possibleAnswers` 中的随机一个元素。
 
 ```js
 (() => {

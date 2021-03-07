@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617e
-title: Add Event Listeners
+title: 添加事件侦听器
 challengeType: 6
 forumTopicId: 301377
 dashedName: add-event-listeners
@@ -8,19 +8,19 @@ dashedName: add-event-listeners
 
 # --description--
 
-The `componentDidMount()` method is also the best place to attach any event listeners you need to add for specific functionality. React provides a synthetic event system which wraps the native event system present in browsers. This means that the synthetic event system behaves exactly the same regardless of the user's browser - even if the native events may behave differently between different browsers.
+`componentDidMount()` 方法也是添加特定功能所需的任何事件监听器的最佳位置。 React 提供了一个合成事件系统，它封装了浏览器中的事件系统。 这意味着，不管用户用的是什么浏览器，合成事件系统的行为都完全相同 -- 即使不同浏览器之间的本地事件的行为可能不同。
 
-You've already been using some of these synthetic event handlers such as `onClick()`. React's synthetic event system is great to use for most interactions you'll manage on DOM elements. However, if you want to attach an event handler to the document or window objects, you have to do this directly.
+之前已经接触了一些合成事件处理程序，如`onClick()`。 React 的合成事件系统非常适合用于在 DOM 元素上管理的大多数交互。 但是，如果要将事件处理程序附加到 document 或 window 对象，则必须直接执行此操作。
 
 # --instructions--
 
-Attach an event listener in the `componentDidMount()` method for `keydown` events and have these events trigger the callback `handleKeyPress()`. You can use `document.addEventListener()` which takes the event (in quotes) as the first argument and the callback as the second argument.
+在 `componentDidMount()` 方法中为 `keydown` 事件添加事件监听器，并让这些事件触发回调 `handleKeyPress()`。 可以使用 `document.addEventListener()`，它将事件（用引号括起来）作为第一个参数，将回调作为第二个参数。
 
-Then, in `componentWillUnmount()`, remove this same event listener. You can pass the same arguments to `document.removeEventListener()`. It's good practice to use this lifecycle method to do any clean up on React components before they are unmounted and destroyed. Removing event listeners is an example of one such clean up action.
+然后，在 `componentWillUnmount()` 中移除相同的事件监听器。 可以把相同的参数传递给 `document.removeEventListener()`。 在卸载和销毁 React 组件之前，最好在这个生命周期方法中对它们进行清理。 移除事件监听器就是这样一个清理操作的例子。
 
 # --hints--
 
-`MyComponent` should render a `div` element which wraps an `h1` tag.
+`MyComponent` 应该渲染一个包含 `h1` 标签的 `div` 元素。
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-A keydown listener should be attached to the document in `componentDidMount`.
+应该在 `componentDidMount` 中将 `keydown` 事件监听添加到到 document 上。
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-The keydown listener should be removed from the document in `componentWillUnmount`.
+应该在 `componentWillUnmount` 中将 document 上的 `keydown` 事件监听移除。
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Once the component has mounted, pressing `enter` should update its state and the rendered `h1` tag.
+当组件装载完毕，按 `enter` 键应该会更新其 state ，并渲染到 `h1` 标签。
 
 ```js
 async () => {

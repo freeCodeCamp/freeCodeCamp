@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed208826
-title: Target the Children of an Element Using jQuery
+title: 使用 jQuery 选择元素的子元素
 challengeType: 6
 forumTopicId: 18320
 dashedName: target-the-children-of-an-element-using-jquery
@@ -8,33 +8,33 @@ dashedName: target-the-children-of-an-element-using-jquery
 
 # --description--
 
-When HTML elements are placed one level below another they are called <dfn>children</dfn> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all children of the `<div class="well" id="left-well">` element.
+把 HTML 标签放到另一个级别的标签里，这些 HTML 标签被称为该标签的<dfn>子标签（children element）</dfn>。 例如，本次挑战中文本为 `#target1`、`#target2` 和 `#target3` 的按钮都是 `<div class="well" id="left-well">` 标签的子标签。
 
-jQuery has a function called `children()` that allows you to access the children of whichever element you've selected.
+jQuery 有一个 `children()` 方法，可以访问被选取标签的子标签。
 
-Here's an example of how you would use the `children()` function to give the children of your `left-well` element the color `blue`:
+下面的代码展示了用 `children()` 方法把 `left-well` 标签的子标签的颜色设置成 `blue`（蓝色）：
 
 `$("#left-well").children().css("color", "blue")`
 
 # --instructions--
 
-Give all the children of your `right-well` element the color orange.
+把 `right-well` 标签的所有子标签颜色设置成橙色（orange）。
 
 # --hints--
 
-All children of `#right-well` should have orange text.
+`#right-well` 所有的子标签文本应该是橙色。
 
 ```js
 assert($('#right-well').children().css('color') === 'rgb(255, 165, 0)');
 ```
 
-You should use the `children()` function to modify these elements.
+应该用 `children()` 方法修改标签。
 
 ```js
 assert(code.match(/\.children\(\)\.css/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+应该仅用 jQuery 给标签添加类。
 
 ```js
 assert(code.match(/<div class="well" id="right-well">/g));

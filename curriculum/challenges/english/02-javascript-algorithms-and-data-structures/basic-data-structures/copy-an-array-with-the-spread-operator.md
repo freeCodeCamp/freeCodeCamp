@@ -15,9 +15,9 @@ In practice, we can use the spread operator to copy an array like so:
 ```js
 let thisArray = [true, true, undefined, false, null];
 let thatArray = [...thisArray];
-// thatArray equals [true, true, undefined, false, null]
-// thisArray remains unchanged and thatArray contains the same elements as thisArray
 ```
+
+`thatArray` equals `[true, true, undefined, false, null]`. `thisArray` remains unchanged and `thatArray` contains the same elements as `thisArray`.
 
 # --instructions--
 

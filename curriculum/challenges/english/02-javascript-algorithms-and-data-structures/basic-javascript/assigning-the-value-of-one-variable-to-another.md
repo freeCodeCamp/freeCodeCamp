@@ -32,7 +32,7 @@ You should not change code above the specified comment.
 assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
 ```
 
-`b` should have a value of 7.
+`b` should have a value of `7`.
 
 ```js
 assert(typeof b === 'number' && b === 7);

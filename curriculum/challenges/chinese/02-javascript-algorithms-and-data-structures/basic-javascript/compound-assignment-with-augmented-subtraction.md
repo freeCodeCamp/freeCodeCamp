@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b0
-title: Compound Assignment With Augmented Subtraction
+title: 复合赋值之 -=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
@@ -9,45 +9,45 @@ dashedName: compound-assignment-with-augmented-subtraction
 
 # --description--
 
-Like the `+=` operator, `-=` subtracts a number from a variable.
+与 `+=` 操作符类似，`-=` 操作符用来对一个变量进行减法赋值操作。
 
 `myVar = myVar - 5;`
 
-will subtract `5` from `myVar`. This can be rewritten as:
+变量 `myVar` 等于自身减去 `5` 的值。 也可以写成这种形式：
 
 `myVar -= 5;`
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `-=` operator.
+使用 `-=` 操作符对 `a`，`b` 和 `c` 实现相减赋值。
 
 # --hints--
 
-`a` should equal `5`.
+`a` 应该等于 `5`。
 
 ```js
 assert(a === 5);
 ```
 
-`b` should equal `-6`.
+`b` 应该等于 `-6`。
 
 ```js
 assert(b === -6);
 ```
 
-`c` should equal `2`.
+`c` 应该等于 `2`。
 
 ```js
 assert(c === 2);
 ```
 
-You should use the `-=` operator for each variable.
+应该对每个变量使用 `-=` 操作符。
 
 ```js
 assert(code.match(/-=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+不要修改注释上面的代码。
 
 ```js
 assert(

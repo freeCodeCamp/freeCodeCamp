@@ -24,157 +24,157 @@ For this challenge you will be presented with a string such as `800-692-7753` or
 assert(typeof telephoneCheck('555-555-5555') === 'boolean');
 ```
 
-`telephoneCheck("1 555-555-5555")` should return true.
+`telephoneCheck("1 555-555-5555")` should return `true`.
 
 ```js
 assert(telephoneCheck('1 555-555-5555') === true);
 ```
 
-`telephoneCheck("1 (555) 555-5555")` should return true.
+`telephoneCheck("1 (555) 555-5555")` should return `true`.
 
 ```js
 assert(telephoneCheck('1 (555) 555-5555') === true);
 ```
 
-`telephoneCheck("5555555555")` should return true.
+`telephoneCheck("5555555555")` should return `true`.
 
 ```js
 assert(telephoneCheck('5555555555') === true);
 ```
 
-`telephoneCheck("555-555-5555")` should return true.
+`telephoneCheck("555-555-5555")` should return `true`.
 
 ```js
 assert(telephoneCheck('555-555-5555') === true);
 ```
 
-`telephoneCheck("(555)555-5555")` should return true.
+`telephoneCheck("(555)555-5555")` should return `true`.
 
 ```js
 assert(telephoneCheck('(555)555-5555') === true);
 ```
 
-`telephoneCheck("1(555)555-5555")` should return true.
+`telephoneCheck("1(555)555-5555")` should return `true`.
 
 ```js
 assert(telephoneCheck('1(555)555-5555') === true);
 ```
 
-`telephoneCheck("555-5555")` should return false.
+`telephoneCheck("555-5555")` should return `false`.
 
 ```js
 assert(telephoneCheck('555-5555') === false);
 ```
 
-`telephoneCheck("5555555")` should return false.
+`telephoneCheck("5555555")` should return `false`.
 
 ```js
 assert(telephoneCheck('5555555') === false);
 ```
 
-`telephoneCheck("1 555)555-5555")` should return false.
+`telephoneCheck("1 555)555-5555")` should return `false`.
 
 ```js
 assert(telephoneCheck('1 555)555-5555') === false);
 ```
 
-`telephoneCheck("1 555 555 5555")` should return true.
+`telephoneCheck("1 555 555 5555")` should return `true`.
 
 ```js
 assert(telephoneCheck('1 555 555 5555') === true);
 ```
 
-`telephoneCheck("1 456 789 4444")` should return true.
+`telephoneCheck("1 456 789 4444")` should return `true`.
 
 ```js
 assert(telephoneCheck('1 456 789 4444') === true);
 ```
 
-`telephoneCheck("123**&!!asdf#")` should return false.
+`telephoneCheck("123**&!!asdf#")` should return `false`.
 
 ```js
 assert(telephoneCheck('123**&!!asdf#') === false);
 ```
 
-`telephoneCheck("55555555")` should return false.
+`telephoneCheck("55555555")` should return `false`.
 
 ```js
 assert(telephoneCheck('55555555') === false);
 ```
 
-`telephoneCheck("(6054756961)")` should return false
+`telephoneCheck("(6054756961)")` should return `false`.
 
 ```js
 assert(telephoneCheck('(6054756961)') === false);
 ```
 
-`telephoneCheck("2 (757) 622-7382")` should return false.
+`telephoneCheck("2 (757) 622-7382")` should return `false`.
 
 ```js
 assert(telephoneCheck('2 (757) 622-7382') === false);
 ```
 
-`telephoneCheck("0 (757) 622-7382")` should return false.
+`telephoneCheck("0 (757) 622-7382")` should return `false`.
 
 ```js
 assert(telephoneCheck('0 (757) 622-7382') === false);
 ```
 
-`telephoneCheck("-1 (757) 622-7382")` should return false
+`telephoneCheck("-1 (757) 622-7382")` should return `false`.
 
 ```js
 assert(telephoneCheck('-1 (757) 622-7382') === false);
 ```
 
-`telephoneCheck("2 757 622-7382")` should return false.
+`telephoneCheck("2 757 622-7382")` should return `false`.
 
 ```js
 assert(telephoneCheck('2 757 622-7382') === false);
 ```
 
-`telephoneCheck("10 (757) 622-7382")` should return false.
+`telephoneCheck("10 (757) 622-7382")` should return `false`.
 
 ```js
 assert(telephoneCheck('10 (757) 622-7382') === false);
 ```
 
-`telephoneCheck("27576227382")` should return false.
+`telephoneCheck("27576227382")` should return `false`.
 
 ```js
 assert(telephoneCheck('27576227382') === false);
 ```
 
-`telephoneCheck("(275)76227382")` should return false.
+`telephoneCheck("(275)76227382")` should return `false`.
 
 ```js
 assert(telephoneCheck('(275)76227382') === false);
 ```
 
-`telephoneCheck("2(757)6227382")` should return false.
+`telephoneCheck("2(757)6227382")` should return `false`.
 
 ```js
 assert(telephoneCheck('2(757)6227382') === false);
 ```
 
-`telephoneCheck("2(757)622-7382")` should return false.
+`telephoneCheck("2(757)622-7382")` should return `false`.
 
 ```js
 assert(telephoneCheck('2(757)622-7382') === false);
 ```
 
-`telephoneCheck("555)-555-5555")` should return false.
+`telephoneCheck("555)-555-5555")` should return `false`.
 
 ```js
 assert(telephoneCheck('555)-555-5555') === false);
 ```
 
-`telephoneCheck("(555-555-5555")` should return false.
+`telephoneCheck("(555-555-5555")` should return `false`.
 
 ```js
 assert(telephoneCheck('(555-555-5555') === false);
 ```
 
-`telephoneCheck("(555)5(55?)-5555")` should return false.
+`telephoneCheck("(555)5(55?)-5555")` should return `false`.
 
 ```js
 assert(telephoneCheck('(555)5(55?)-5555') === false);

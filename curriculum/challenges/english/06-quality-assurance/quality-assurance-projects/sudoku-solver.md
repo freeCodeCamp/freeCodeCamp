@@ -202,6 +202,25 @@ async (getUserInput) => {
 };
 ```
 
+If `value` submitted to `/api/check` is already placed in `puzzle` on that `coordinate`, the returned value will be an object containing a `valid` property with `true` if `value` is not conflicting.
+
+```js
+async (getUserInput) => {
+  const input =
+  '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+  const coordinate = 'C3';
+  const value = '2';
+  const data = await fetch(getUserInput('url') + '/api/check', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ puzzle: input, coordinate, value })
+  });
+  const parsed = await data.json();
+  assert.property(parsed, 'valid');
+  assert.isTrue(parsed.valid);
+};
+```
+
 If the puzzle submitted to `/api/check` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
 
 ```js

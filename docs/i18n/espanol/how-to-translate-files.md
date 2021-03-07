@@ -10,19 +10,21 @@ Deberías ver dos "proyectos" disponibles para traducir: el proyecto `Contributi
 
 Selecciona el proyecto en el que deseas contribuir y verás una lista de idiomas disponibles para traducir.
 
-![Imagen - Lista de idiomas disponibles](./images/crowdin/languages.png)
+![Imagen - Lista de idiomas disponibles](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
 Selecciona el idioma en el que deseas trabajar y verás el árbol de archivos completo.
 
-![Imagen - Lista de archivos disponibles](./images/crowdin/file-tree.png)
+![Imagen - Lista de archivos disponibles](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
 Cada archivo y carpeta mostrará una barra de progreso. La parte **azul** de la barra de progreso indica qué porcentaje del archivo se ha traducido, mientras que la parte **verde** de la barra de progreso indica qué porcentaje del archivo ha sido aprobado por el equipo de revisión.
 
 Selecciona un archivo para trabajar y Crowdin abrirá la vista de edición.
 
+> [!NOTE] Cuando se abra la vista de edición, deberás hacer clic en el icono de configuración (que se muestra como un engranaje) y cambiar la configuración de ''HTML tags displaying (Mostrar etiquetas HTML)" a "SHOW (Mostrar)". Esto asegurará que puedas ver las etiquetas como `<code></code>` en lugar de `<0></0>`.
+
 ## Traducir un archivo
 
-![Imagen - Vista de edición](./images/crowdin/editor.png)
+![Imagen - Vista de edición](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
 Crowdin separa un documento en "cadenas" traducibles, normalmente oraciones. Cada cadena se traduce individualmente. Tomando como referencia la imagen anterior:
 
@@ -65,17 +67,11 @@ Hemos habilitado algunos pasos de control de calidad que verificarán que una tr
 
 Cuando intentes guardar una traducción, es posible que veas aparecer un mensaje de advertencia con una notificación sobre tu traducción propuesta.
 
-![Imagen - Mensaje de advertencia de control de calidad](./images/crowdin/qa-message.png)
+![Imagen - Mensaje de advertencia de control de calidad](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
 Este mensaje aparece cuando el sistema de control de calidad de Crowdin ha identificado un posible error en la traducción propuesta. En este ejemplo, hemos modificado el texto de una etiqueta `<code>` y Crowdin lo ha detectado.
 
-> [!WARNING] Tienes la opción de guardar una traducción a pesar de los errores, pero esto debe hacerse solo en circunstancias en las que el error pueda ser incorrecto.
-
-Crowdin a veces convierte etiquetas HTML (como `<code>`) en valores numéricos, como `<0>text</0>` o `<1>text</1>`. Estas etiquetas suelen ser etiquetas de código y nuestro control de calidad verificará que no se hayan traducido. Sin embargo, a veces pueden ser etiquetas `<strong>` o  `<em>`, que _deberían_ ser traducidas. Si pasas el cursor sobre una etiqueta numérica en la cadena de origen, puedes ver qué etiqueta o etiquetas HTML se han reemplazado:
-
-![Imagen - Colocar el cursor sobre una etiqueta](./images/crowdin/tag-hover.png)
-
-Si las etiquetas reemplazadas son algo que debería traducirse (como las etiquetas `strong`), traduce el contenido dentro de las etiquetas y selecciona "Save Anyway" (guardar de todos modos) cuando aparezca el error. Luego, deja un comentario en la cadena explicando que las etiquetas son `strong` (por ejemplo) para que otros traductores y proofreaders sepan que deben traducirse.
+> [!WARNING] Tienes la opción de guardar una traducción a pesar de los errores. Si lo haces, al hacer clic en "Save Anyway (Guardar de todos modos)", también debes etiquetar a un miembro del equipo de revisión o encargado del proyecto y explicar por qué el mensaje de control de calidad debe ignorarse en este caso.
 
 ## Buenas prácticas de traducción
 

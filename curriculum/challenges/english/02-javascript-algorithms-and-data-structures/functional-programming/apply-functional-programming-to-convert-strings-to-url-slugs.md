@@ -12,7 +12,7 @@ The last several challenges covered a number of useful array and string methods 
 
 Let's combine what we've learned to solve a practical problem.
 
-Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled "Stop Using Reduce", it's likely the URL would have some form of the title string in it (".../stop-using-reduce"). You may have already noticed this on the freeCodeCamp site.
+Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled `Stop Using Reduce`, it's likely the URL would have some form of the title string in it (`.../stop-using-reduce`). You may have already noticed this on the freeCodeCamp site.
 
 # --instructions--
 
@@ -34,19 +34,19 @@ Your code should not use the `replace` method for this challenge.
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`urlSlug("Winter Is Coming")` should return `"winter-is-coming"`.
+`urlSlug("Winter Is Coming")` should return the string `winter-is-coming`.
 
 ```js
 assert(urlSlug('Winter Is Coming') === 'winter-is-coming');
 ```
 
-`urlSlug(" Winter Is  Coming")` should return `"winter-is-coming"`.
+`urlSlug(" Winter Is  Coming")` should return the string `winter-is-coming`.
 
 ```js
 assert(urlSlug(' Winter Is  Coming') === 'winter-is-coming');
 ```
 
-`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` should return `"a-mind-needs-books-like-a-sword-needs-a-whetstone"`.
+`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` should return the string `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`urlSlug("Hold The Door")` should return `"hold-the-door"`.
+`urlSlug("Hold The Door")` should return the string `hold-the-door`.
 
 ```js
 assert(urlSlug('Hold The Door') === 'hold-the-door');

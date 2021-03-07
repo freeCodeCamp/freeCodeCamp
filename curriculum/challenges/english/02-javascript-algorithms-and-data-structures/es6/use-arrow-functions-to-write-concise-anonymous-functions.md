@@ -42,7 +42,7 @@ Rewrite the function assigned to the variable `magic` which returns a `new Date(
 
 # --hints--
 
-User should replace `var` keyword.
+You should replace the `var` keyword.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
@@ -60,13 +60,13 @@ User should replace `var` keyword.
 assert(typeof magic === 'function');
 ```
 
-`magic()` should return correct date.
+`magic()` should return the correct date.
 
 ```js
 assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 ```
 
-`function` keyword should not be used.
+The `function` keyword should not be used.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/function/g));

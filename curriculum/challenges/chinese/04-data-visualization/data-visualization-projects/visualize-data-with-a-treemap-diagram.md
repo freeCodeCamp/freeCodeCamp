@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc0
-title: Visualize Data with a Treemap Diagram
+title: 用树形图可视化数据
 challengeType: 3
 forumTopicId: 301468
 dashedName: visualize-data-with-a-treemap-diagram
@@ -8,43 +8,43 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/KaNGNR>.
+**目标：** 在 [CodePen.io](https://codepen.io) 上实现一个功能类似 <https://codepen.io/freeCodeCamp/full/KaNGNR> 的 App。
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下， 你可以根据自己的喜好来美化你的 app。
 
-You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+你可以使用 HTML、JavaScript、CSS、以及基于 svg 的 D3 可视化库来完成这个挑战。 该任务需要使用 D3 的坐标轴属性生成坐标轴，这个属性会自动生成沿轴的刻度。 这些刻度是通过 D3 测试所必需的，因为它们的位置是用来确定图表元素的对齐方式。 你可以在这里 <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis> 获取关于生成坐标轴的信息。 每次测试查询的元素都必须是非虚拟 DOM。 如果你使用了前端框架（例如 Vue），那么对于动态的内容测试结果可能不准确。 我们希望最终能够兼容这些框架，但 D3 项目目前还不支持它们。
 
-**User Story #1:** My tree map should have a title with a corresponding `id="title"`.
+**需求 #1：** 矩阵树图包含一个具有 `id="title"` 属性的标题。
 
-**User Story #2:** My tree map should have a description with a corresponding `id="description"`.
+**需求 #2：** 矩阵树图包含一个具有 `id="description"` 属性的描述内容。
 
-**User Story #3:** My tree map should have `rect` elements with a corresponding `class="tile"` that represent the data.
+**需求 #3：** 矩阵树图包含一些具有 `class="tile"` 属性的 `rect` 元素来展示数据。
 
-**User Story #4:** There should be at least 2 different fill colors used for the tiles.
+**需求 #4：** 这些矩形块元素至少应该有 2 种不同的填充颜色。
 
-**User Story #5:** Each tile should have the properties `data-name`, `data-category`, and `data-value` containing their corresponding name, category, and value.
+**需求 #5：** 每一块矩形元素应该具有 `data-name`、`data-category`、以及`data-value` 这些属性，包含了它们相应的名称，分类，以及数值。
 
-**User Story #6:** The area of each tile should correspond to the data-value amount: tiles with a larger data-value should have a bigger area.
+**需求 #6：** 每个矩形块的面积和它的 data-value 属性值相对应：data-value 值越大的矩形块面积越大。
 
-**User Story #7:** My tree map should have a legend with corresponding `id="legend"`.
+**需求 #7：** 矩阵树图包含一个具有 `id="legend"` 属性的图例。
 
-**User Story #8:** My legend should have `rect` elements with a corresponding `class="legend-item"`.
+**需求 #8：** 图例包含一些具有 `class="legend-item"` 属性的 `rect` 元素。
 
-**User Story #9:** The `rect` elements in the legend should use at least 2 different fill colors.
+**需求 #9：** 图例中的这些 `rect` 元素至少应该使用 2 种不同的填充颜色。
 
-**User Story #10:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**需求 #10：** 将鼠标悬停在某个区域上时，可以看到具有 `id="tooltip"` 属性的提示框，它会显示有关该区域的更多信息。
 
-**User Story #11:** My tooltip should have a `data-value` property that corresponds to the `data-value` of the active area.
+**需求 #11：** 提示框应该有 `data-value` 属性，它对应了当前激活区域的 `data-value` 属性。
 
-For this project you can use any of the following datasets:
+对于此项目，您可以使用以下任何数据集：
 
--   **Kickstarter Pledges:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json`
--   **Movie Sales:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`
--   **Video Game Sales:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json`
+-   **Kickstarter Pledges：** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json`
+-   **Movie Sales：** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`
+-   **Video Game Sales：** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json`
 
-You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-Once you're done, submit the URL to your working project with all its tests passing.
+一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --solutions--
 

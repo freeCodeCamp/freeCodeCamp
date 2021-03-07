@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618c
-title: Use Array.filter() to Dynamically Filter an Array
+title: 使用 Array.Filter() 动态过滤数组
 challengeType: 6
 forumTopicId: 301416
 dashedName: use-array-filter-to-dynamically-filter-an-array
@@ -8,17 +8,17 @@ dashedName: use-array-filter-to-dynamically-filter-an-array
 
 # --description--
 
-The `map` array method is a powerful tool that you will use often when working with React. Another method related to `map` is `filter`, which filters the contents of an array based on a condition, then returns a new array. For example, if you have an array of users that all have a property `online` which can be set to `true` or `false`, you can filter only those users that are online by writing:
+`map` 数组方法是一个强大的工具，在使用 React 时经常使用。 与 `map` 相关的另一种方法是 `filter`，它根据条件过滤数组的内容，然后返回一个新数组。 例如，如果有一个 users 数组，每个数组元素都有一个可以设置为 `true` 或 `false` 的 `online` 属性，可以这样只过滤那些在线的用户：
 
 `let onlineUsers = users.filter(user => user.online);`
 
 # --instructions--
 
-In the code editor, `MyComponent`'s `state` is initialized with an array of users. Some users are online and some aren't. Filter the array so you see only the users who are online. To do this, first use `filter` to return a new array containing only the users whose `online` property is `true`. Then, in the `renderOnline` variable, map over the filtered array, and return a `li` element for each user that contains the text of their `username`. Be sure to include a unique `key` as well, like in the last challenges.
+在代码编辑器中，`MyComponent` 的 `state` 由一个 users 数组初始化。 有些用户在线，有些则不在线。 过滤数组，只看到在线用户。 为此，首先使用 `filter` 返回一个新数组，该数组只包含 `online` 属性为 `true` 的用户。 然后，在 `renderOnline` 变量中，映射经过过滤的数组，并为每个用户返回一个包含它们 `username` 文本的 `li` 元素。 确保像上一个挑战一样包含一个独特的 `key`。
 
 # --hints--
 
-`MyComponent` should exist and render to the page.
+`MyComponent` 应该存在并被渲染到页面。
 
 ```js
 assert.strictEqual(
@@ -27,7 +27,7 @@ assert.strictEqual(
 );
 ```
 
-`MyComponent`'s state should be initialized to an array of six users.")
+`MyComponent` 的 state 应该初始化为包含 6 个用户的数组。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`MyComponent` should return a `div`, an `h1`, and then an unordered list containing `li` elements for every user whose online status is set to `true`.
+`MyComponent` 应该返回一个 `div`、一个 `h1` 和一个包含 `li` 元素的无序列表，该列表用于展示在线状态为 `true` 的每个用户。
 
 ```js
 (() => {
@@ -81,7 +81,7 @@ assert(
 })();
 ```
 
-`MyComponent` should render `li` elements that contain the username of each online user.
+`MyComponent` 应该渲染包含每个在线用户的 `username` 的 `li` 元素。
 
 ```js
 (() => {
@@ -107,7 +107,7 @@ assert(
 })();
 ```
 
-Each list item element should have a unique `key` attribute.
+每个列表项元素都应该有一个唯一的 `key` 属性。
 
 ```js
 assert(

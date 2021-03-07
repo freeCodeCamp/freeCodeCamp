@@ -16,9 +16,9 @@ You can search for whitespace using `\s`, which is a lowercase `s`. This pattern
 let whiteSpace = "Whitespace. Whitespace everywhere!"
 let spaceRegex = /\s/g;
 whiteSpace.match(spaceRegex);
-// Returns [" ", " "]
 ```
 
+This `match` call would return `[" ", " "]`.
 # --instructions--
 
 Change the regex `countWhiteSpace` to look for multiple whitespace characters in a string.
@@ -37,7 +37,7 @@ Your regex should use the shorthand character `\s` to match all whitespace chara
 assert(/\\s/.test(countWhiteSpace.source));
 ```
 
-Your regex should find eight spaces in `"Men are from Mars and women are from Venus."`
+Your regex should find eight spaces in the string `Men are from Mars and women are from Venus.`
 
 ```js
 assert(
@@ -46,13 +46,13 @@ assert(
 );
 ```
 
-Your regex should find three spaces in `"Space: the final frontier."`
+Your regex should find three spaces in the string `Space: the final frontier.`
 
 ```js
 assert('Space: the final frontier.'.match(countWhiteSpace).length == 3);
 ```
 
-Your regex should find no spaces in `"MindYourPersonalSpace"`
+Your regex should find no spaces in the string `MindYourPersonalSpace`
 
 ```js
 assert('MindYourPersonalSpace'.match(countWhiteSpace) == null);

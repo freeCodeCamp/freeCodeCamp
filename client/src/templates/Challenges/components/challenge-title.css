@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: space-around;
   font-size: 16px;
-  height: 25px;
+  height: fit-content;
   margin: 20px 0px 15px;
 }
 
@@ -85,9 +85,9 @@
   justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 25px;
+  max-height: fit-content;
   word-wrap: none;
-  white-space: nowrap;
+  white-space: pre-line;
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0px 3px;

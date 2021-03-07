@@ -21,7 +21,7 @@ Use Font Awesome to add an `info-circle` icon to your info button and a `trash` 
 
 # --hints--
 
-You should add a `<i class="fas fa-info-circle"></i>` within your info button element.
+You should add a `<i class="fas fa-info-circle"></i>` within your `info` button element.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-You should add a `<i class="fas fa-trash"></i>` within your delete button element.
+You should add a `<i class="fas fa-trash"></i>` within your `delete` button element.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your like button element.
+Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your `like` button element.
 
 ```js
 assert(

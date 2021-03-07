@@ -13,43 +13,45 @@ Awesome! You have just learned a ton about arrays! This has been a fairly high l
 One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, known as a <dfn>multi-dimensional</dfn>, or nested array. Consider the following example:
 
 ```js
-let nestedArray = [ // top, or first level - the outer most array
-  ['deep'], // an array within an array, 2 levels of depth
+let nestedArray = [
+  ['deep'],
   [
-    ['deeper'], ['deeper'] // 2 arrays nested 3 levels deep
+    ['deeper'], ['deeper'] 
   ],
   [
     [
-      ['deepest'], ['deepest'] // 2 arrays nested 4 levels deep
+      ['deepest'], ['deepest']
     ],
     [
       [
-        ['deepest-est?'] // an array nested 5 levels deep
+        ['deepest-est?']
       ]
     ]
   ]
 ];
 ```
 
+The `deep` array is nested 2 levels deep. The `deeper` arrays are 3 levels deep. The `deepest` arrays are 4 levels, and the `deepest-est?` is 5.
+
 While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data. However, we can still very easily access the deepest levels of an array this complex with bracket notation:
 
 ```js
 console.log(nestedArray[2][1][0][0][0]);
-// logs: deepest-est?
 ```
 
-And now that we know where that piece of data is, we can reset it if we need to:
+This logs the string `deepest-est?`. And now that we know where that piece of data is, we can reset it if we need to:
 
 ```js
 nestedArray[2][1][0][0][0] = 'deeper still';
 
 console.log(nestedArray[2][1][0][0][0]);
-// now logs: deeper still
 ```
+
+Now it logs `deeper still`.
 
 # --instructions--
 
-We have defined a variable, `myNestedArray`, set equal to an array. Modify `myNestedArray`, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string `'deep'`, on the fourth level, include the string `'deeper'`, and on the fifth level, include the string `'deepest'`.
+We have defined a variable, `myNestedArray`, set equal to an array. Modify `myNestedArray`, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string `deep`, on the fourth level, include the string `deeper`, and on the fifth level, include the string `deepest`.
 
 # --hints--
 
@@ -100,7 +102,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deep"` on an array nested 3 levels deep
+`myNestedArray` should contain exactly one occurrence of the string `deep` on an array nested 3 levels deep
 
 ```js
 assert(
@@ -129,7 +131,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deeper"` on an array nested 4 levels deep
+`myNestedArray` should contain exactly one occurrence of the string `deeper` on an array nested 4 levels deep
 
 ```js
 assert(
@@ -158,7 +160,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deepest"` on an array nested 5 levels deep
+`myNestedArray` should contain exactly one occurrence of the string `deepest` on an array nested 5 levels deep
 
 ```js
 assert(

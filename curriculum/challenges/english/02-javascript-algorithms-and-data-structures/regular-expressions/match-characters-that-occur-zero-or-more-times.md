@@ -17,14 +17,16 @@ let soccerWord = "gooooooooal!";
 let gPhrase = "gut feeling";
 let oPhrase = "over the moon";
 let goRegex = /go*/;
-soccerWord.match(goRegex); // Returns ["goooooooo"]
-gPhrase.match(goRegex); // Returns ["g"]
-oPhrase.match(goRegex); // Returns null
+soccerWord.match(goRegex);
+gPhrase.match(goRegex);
+oPhrase.match(goRegex);
 ```
+
+In order, the three `match` calls would return the values `["goooooooo"]`, `["g"]`, and `null`.
 
 # --instructions--
 
-For this challenge, `chewieQuote` has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex `chewieRegex` that uses the `*` character to match an uppercase `"A"` character immediately followed by zero or more lowercase `"a"` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+For this challenge, `chewieQuote` has been initialized as the string `Aaaaaaaaaaaaaaaarrrgh!` behind the scenes. Create a regex `chewieRegex` that uses the `*` character to match an uppercase `A` character immediately followed by zero or more lowercase `a` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
 
 # --hints--
 
@@ -34,13 +36,13 @@ Your regex `chewieRegex` should use the `*` character to match zero or more `a` 
 assert(/\*/.test(chewieRegex.source));
 ```
 
-Your regex should match `"A"` in `chewieQuote`.
+Your regex should match the string `A` in `chewieQuote`.
 
 ```js
 assert(result[0][0] === 'A');
 ```
 
-Your regex should match `"Aaaaaaaaaaaaaaaa"` in `chewieQuote`.
+Your regex should match the string `Aaaaaaaaaaaaaaaa` in `chewieQuote`.
 
 ```js
 assert(result[0] === 'Aaaaaaaaaaaaaaaa');
@@ -52,7 +54,7 @@ Your regex `chewieRegex` should match 16 characters in `chewieQuote`.
 assert(result[0].length === 16);
 ```
 
-Your regex should not match any characters in "He made a fair move. Screaming about it can't help you."
+Your regex should not match any characters in the string `He made a fair move. Screaming about it can't help you.`
 
 ```js
 assert(
@@ -60,7 +62,7 @@ assert(
 );
 ```
 
-Your regex should not match any characters in "Let him have it. It's not wise to upset a Wookiee."
+Your regex should not match any characters in the string `Let him have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(

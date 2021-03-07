@@ -8,7 +8,7 @@ dashedName: get-data-from-post-requests
 
 # --description--
 
-在路径 `/name` 挂载一个 POST 处理方法， 和前面一样， 我们已经在 html 首页准备了一份表格， 它将提交与练习 10 相同的数据（查询字符串）， 如果 body-parser 正确配置好了，那么就可以在 `req.body` 对象中找到请求的参数。 来看看一个常规的例子：
+在路径 `/name` 挂载一个 POST 处理方法， 和前面一样， 我们已经在 html 首页准备了一份表单， 它将提交与练习 10 相同的数据（查询字符串）， 如果 body-parser 正确配置好了，那么就可以在 `req.body` 对象中找到请求的参数。 来看看一个常规的例子：
 
 <blockquote>路由：POST '/library'<br>URL 编码的请求正文：userId=546&#x26;bookId=6754<br>req.body：{userId: '546', bookId: '6754'}</blockquote>
 

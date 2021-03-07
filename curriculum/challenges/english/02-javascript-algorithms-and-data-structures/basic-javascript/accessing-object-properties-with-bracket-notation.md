@@ -21,16 +21,18 @@ var myObj = {
   "More Space": "Spock",
   "NoSpace": "USS Enterprise"
 };
-myObj["Space Name"]; // Kirk
-myObj['More Space']; // Spock
-myObj["NoSpace"];    // USS Enterprise
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
 ```
+
+`myObj["Space Name"]` would be the string `Kirk`, `myObj['More Space']` would be the string `Spock`, and `myObj["NoSpace"]` would be the string `USS Enterprise`.
 
 Note that property names with spaces in them must be in quotes (single or double).
 
 # --instructions--
 
-Read the values of the properties `"an entree"` and `"the drink"` of `testObj` using bracket notation and assign them to `entreeValue` and `drinkValue` respectively.
+Read the values of the properties `an entree` and `the drink` of `testObj` using bracket notation and assign them to `entreeValue` and `drinkValue` respectively.
 
 # --hints--
 
@@ -40,7 +42,7 @@ Read the values of the properties `"an entree"` and `"the drink"` of `testObj` u
 assert(typeof entreeValue === 'string');
 ```
 
-The value of `entreeValue` should be `"hamburger"`
+The value of `entreeValue` should be the string `hamburger`
 
 ```js
 assert(entreeValue === 'hamburger');
@@ -52,7 +54,7 @@ assert(entreeValue === 'hamburger');
 assert(typeof drinkValue === 'string');
 ```
 
-The value of `drinkValue` should be `"water"`
+The value of `drinkValue` should be the string `water`
 
 ```js
 assert(drinkValue === 'water');

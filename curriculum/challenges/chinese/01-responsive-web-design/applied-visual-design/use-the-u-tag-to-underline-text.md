@@ -9,13 +9,13 @@ dashedName: use-the-u-tag-to-underline-text
 
 # --description--
 
-你可以使用 `u` 标签来给文字添加下划线。下划线通常用来表示重要内容或需要记忆的内容。添加了 `u` 标签后，浏览器会自动给元素添加这段样式：`text-decoration: underline;`。
+你可以使用 `u` 标签来给文字添加下划线。 下划线通常用来表示重要内容或需要记忆的内容。 添加了 `u` 标签后，浏览器会自动给元素添加这段样式：`text-decoration: underline;`。
 
 # --instructions--
 
-给 `Ph.D. students` 添加 `u` 标签。
+`u` 标签包裹的文本内容应为 `Ph.D. students`。
 
-**注意：**当 `u` 标签可能会被混淆为链接时，避免使用它。锚标签也有默认下划线格式。
+**注意：** 如果使用 `u` 标签添加下划线，可能混淆文本和链接，则应避免使用它。 锚标签也有默认的下划线格式。
 
 # --hints--
 
@@ -25,7 +25,7 @@ dashedName: use-the-u-tag-to-underline-text
 assert($('u').length === 1);
 ```
 
-`u` 标签的内容文本应为 `Ph.D. students`。
+`u` 标签的文本内容应为 `Ph.D. students`。
 
 ```js
 assert($('u').text() === 'Ph.D. students');

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed008826
-title: Target Even Elements Using jQuery
+title: 使用 jQuery 选择偶数元素
 challengeType: 6
 forumTopicId: 18318
 required:
@@ -11,19 +11,19 @@ dashedName: target-even-elements-using-jquery
 
 # --description--
 
-You can also target elements based on their positions using `:odd` or `:even` selectors.
+也可以用基于位置的奇 `:odd` 和偶 `:even` 选择器选取标签。
 
-Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, counter-intuitively, `:odd` selects the second element (position 1), fourth element (position 3), and so on.
+注意，jQuery 是零索引（zero-indexed）的，这意味着第 1 个标签的位置编号是 0。 这有点混乱和反常——`:odd` 表示选择第 2 个标签（位置编号 1），第 4 个标签（位置编号 3）……等等，以此类推。
 
-Here's how you would target all the odd elements with class `target` and give them classes:
+下面的代码展示了选取所有 `target` class 元素的奇数元素并设置 sheke 效果：
 
 `$(".target:odd").addClass("animated shake");`
 
-Try selecting all the even `target` elements and giving them the classes of `animated` and `shake`. Remember that **even** refers to the position of elements with a zero-based system in mind.
+尝试选取所有 `target` class 元素的偶数元素并给它们设置 `animated` 和 `shake` class。 要考虑到**偶（even）**指的是标签位置编号是从 0 开始的。
 
 # --hints--
 
-All of the `target` elements that jQuery considers to be even should shake.
+所有的 `target` 标签应该抖动。
 
 ```js
 assert(
@@ -31,13 +31,13 @@ assert(
 );
 ```
 
-You should use the `:even` selector to modify these elements.
+应该用 `:even` 选择器修改这些标签。
 
 ```js
 assert(code.match(/\:even/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+应该仅用 jQuery 给标签添加类。
 
 ```js
 assert(

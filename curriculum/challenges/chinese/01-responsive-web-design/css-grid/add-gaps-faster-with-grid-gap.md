@@ -17,7 +17,7 @@ dashedName: add-gaps-faster-with-grid-gap
 
 # --hints--
 
-class 为 `container` 的元素应具有 `grid-gap` 属性，并将行间距设置为 `10px`，列间距设置为 `20px`。
+`container` class 应该有一个 `grid-gap` 属性，在行之间设置 `10px` 的间距，在列之间设置 `20px` 的间距。
 
 ```js
 assert(

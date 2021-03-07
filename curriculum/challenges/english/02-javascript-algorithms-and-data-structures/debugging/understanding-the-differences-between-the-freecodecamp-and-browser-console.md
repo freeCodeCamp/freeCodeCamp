@@ -20,7 +20,7 @@ The freeCodeCamp console is cleared before the tests are run and, to avoid spam,
 
 If you would like to see every log for every test, run the tests, and open the browser console. If you prefer to use the browser console, and want it to mimic the freeCodeCamp console, place `console.clear()` before any other `console` calls, to clear the browser console.
 
-**Note:** `console.log`s inside functions are printed to the freeCodeCamp console whenever those functions are called, this can help debugging functions that are called during testing.
+**Note:** `console.log`s inside functions are printed to the freeCodeCamp console whenever those functions are called. This can help debugging functions that are called during testing.
 
 # --instructions--
 
