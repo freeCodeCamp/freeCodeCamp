@@ -162,6 +162,7 @@ export class Project extends Component {
           title,
           description,
           superBlock,
+          block,
           translationPending,
           videoId,
           question: { text, answers, solution }
@@ -193,7 +194,7 @@ export class Project extends Component {
             <Row>
               <Spacer />
               <ChallengeTitle
-                block={blockName}
+                block={block}
                 isCompleted={isChallengeCompleted}
                 superBlock={superBlock}
                 translationPending={translationPending}
@@ -323,6 +324,7 @@ export const query = graphql`
       challengeType
       helpCategory
       superBlock
+      block
       fields {
         blockName
         slug
