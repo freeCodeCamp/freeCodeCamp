@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036159
-title: Use the Spread Operator on Arrays
+title: 在数组中使用扩展运算符
 challengeType: 6
 forumTopicId: 301452
 dashedName: use-the-spread-operator-on-arrays
@@ -8,19 +8,19 @@ dashedName: use-the-spread-operator-on-arrays
 
 # --description--
 
-One solution from ES6 to help enforce state immutability in Redux is the spread operator: `...`. The spread operator has a variety of applications, one of which is well-suited to the previous challenge of producing a new array from an existing array. This is relatively new, but commonly used syntax. For example, if you have an array `myArray` and write:
+ES6 中有助于在 Redux 中强制执行状态不变性的一个解决方案是扩展运算符：`...`。 扩展运算符具有很多的应用，其中一种非常适合通过一个已有的数组生成一个新数组。 这是相对较新的但常用的语法。 例如，如果你有一个数组 `myArray` 并写：
 
 `let newArray = [...myArray];`
 
-`newArray` is now a clone of `myArray`. Both arrays still exist separately in memory. If you perform a mutation like `newArray.push(5)`, `myArray` doesn't change. The `...` effectively *spreads* out the values in `myArray` into a new array. To clone an array but add additional values in the new array, you could write `[...myArray, 'new value']`. This would return a new array composed of the values in `myArray` and the string `'new value'` as the last value. The spread syntax can be used multiple times in array composition like this, but it's important to note that it only makes a shallow copy of the array. That is to say, it only provides immutable array operations for one-dimensional arrays.
+`newArray` 现在是 `myArray` 的克隆。 两个数组仍然在内存中单独存在。 如果你执行像 `newArray.push(5)` 这样的代码，`myArray` 不会改变。 `...` 有效将 `myArray` 中的值 *展开*到一个新数组中。 要克隆数组但在新数组中添加其他值，可以编写 `[...myArray, 'new value']`。 这将返回一个由 `myArray` 中的值和字符串 `new value` （作为最后一个值）组成的新数组。 扩展语法可以像这样在数组组合中多次使用，但重要的是要注意它只做一个浅拷贝。 这就是说，它只为一维数组提供了不可变的数组操作。
 
 # --instructions--
 
-Use the spread operator to return a new copy of state when a to-do is added.
+添加待办事项时，使用 spread 运算符返回新的状态副本。
 
 # --hints--
 
-The Redux store should exist and initialize with a state equal to `[Do not mutate state!]`.
+Redux store 应该在代码编辑器中存在并使用 `["Do not mutate state!"]` 进行状态初始化。
 
 ```js
 assert(
@@ -34,13 +34,13 @@ assert(
 );
 ```
 
-`addToDo` and `immutableReducer` both should be functions.
+`addToDo`和`immutableReducer`都应该是一个函数。
 
 ```js
 assert(typeof addToDo === 'function' && typeof immutableReducer === 'function');
 ```
 
-Dispatching an action of type `ADD_TO_DO` on the Redux store should add a `todo` item and should NOT mutate state.
+在 Redux store 上 dispatch 一个类型为`ADD_TO_DO` aciton 应该添加一个`todo`项，并且不应该改变 state。
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-The spread operator should be used to return new state.
+应使用扩展运算符返回新的 state。
 
 ```js
 (getUserInput) => assert(getUserInput('index').includes('...state'));

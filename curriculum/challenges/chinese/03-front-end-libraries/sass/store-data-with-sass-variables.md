@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb4
-title: Store Data with Sass Variables
+title: 用 Sass 变量存储数据
 challengeType: 0
 forumTopicId: 301460
 dashedName: store-data-with-sass-variables
@@ -8,50 +8,53 @@ dashedName: store-data-with-sass-variables
 
 # --description--
 
-One feature of Sass that's different than CSS is it uses variables. They are declared and set to store data, similar to JavaScript.
+Sass 不同于 CSS 的一个特点是它允许使用变量。 可以在 Sass 中声明变量，并为它赋值，就像在 JavaScript 中一样。
 
-In JavaScript, variables are defined using the `let` and `const` keywords. In Sass, variables start with a `$` followed by the variable name.
+在 JavaScript 中，变量是使用 `let` 和 `const` 关键字定义的。 在 Sass 中，变量以 `$` 开头的，后跟变量名。
 
-Here are a couple examples:
+这里有几个例子：
 
 ```scss
 $main-fonts: Arial, sans-serif;
 $headings-color: green;
+```
 
-//To use variables:
+并使用变量：
+
+```scss
 h1 {
   font-family: $main-fonts;
   color: $headings-color;
 }
 ```
 
-One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.
+当需要把多个元素设置成相同颜色时，变量就会很有用。 一旦需要更改颜色，只需要改变这个变量的值就好。
 
 # --instructions--
 
-Create a variable `$text-color` and set it to red. Then change the value of the `color` property for the `.blog-post` and `h2` to the `$text-color` variable.
+创建一个变量 `$text-color` 并将其设置为 `red`。 然后更改 `.blog-post` 和 `h2` 的 `color` 属性的值为 `$text-color` 变量。
 
 # --hints--
 
-Your code should have a Sass variable declared for `$text-color` with a value of red.
+应该把 `$text-color` 声明一个值为 `red` 的 Sass 变量。
 
 ```js
 assert(code.match(/\$text-color:\s*?red;/g));
 ```
 
-Your code should use the `$text-color` variable to change the `color` for the `.blog-post` and `h2` items.
+应使用 `$text-color` 变量来更改 `.blog-post` 和 `h2` 的 `color`。
 
 ```js
 assert(code.match(/color:\s*?\$text-color;/g));
 ```
 
-Your `.blog-post` element should have a `color` of red.
+`.blog-post` 元素 `color` 应为红色。
 
 ```js
 assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
 ```
 
-Your `h2` elements should have a `color` of red.
+`h2` 元素的 `color` 应为红色。
 
 ```js
 assert($('h2').css('color') == 'rgb(255, 0, 0)');

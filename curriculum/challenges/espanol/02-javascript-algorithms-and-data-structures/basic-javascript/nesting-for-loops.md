@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e1
-title: Nesting For Loops
+title: Anida bucles "for"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
@@ -9,7 +9,7 @@ dashedName: nesting-for-loops
 
 # --description--
 
-If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:
+Si tienes un arreglo multidimensional, puedes utilizar la misma lógica que aprendimos anteriormente para recorrer tanto el arreglo como cualquier sub-arreglo. Aquí hay un ejemplo:
 
 ```js
 var arr = [
@@ -22,21 +22,21 @@ for (var i=0; i < arr.length; i++) {
 }
 ```
 
-This outputs each sub-element in `arr` one at a time. Note that for the inner loop, we are checking the `.length` of `arr[i]`, since `arr[i]` is itself an array.
+Esto imprime cada sub-elemento dentro de `arr` uno a la vez. Ten en cuenta que para el bucle interior, estamos comprobando el `.length` de `arr[i]`, ya que `arr[i]` es en sí mismo es un arreglo.
 
 # --instructions--
 
-Modify function `multiplyAll` so that it returns the product of all the numbers in the sub-arrays of `arr`.
+Modifica la función `multiplyAll` para que devuelva el producto de todos los números dentro de los sub-arreglos de `arr`.
 
 # --hints--
 
-`multiplyAll([[1],[2],[3]])` should return `6`
+`multiplyAll([[1],[2],[3]])` debe devolver `6`
 
 ```js
 assert(multiplyAll([[1], [2], [3]]) === 6);
 ```
 
-`multiplyAll([[1,2],[3,4],[5,6,7]])` should return `5040`
+`multiplyAll([[1,2],[3,4],[5,6,7]])` debe devolver `5040`
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` should return `54`
+`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` debe devolver `54`
 
 ```js
 assert(

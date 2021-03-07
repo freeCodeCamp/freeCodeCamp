@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cc
-title: Manipulate Arrays With pop()
+title: Manipula arreglos con pop()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
@@ -9,26 +9,28 @@ dashedName: manipulate-arrays-with-pop
 
 # --description--
 
-Another way to change the data in an array is with the `.pop()` function.
+Otra manera de cambiar los datos en un arreglo es con la función `.pop()`.
 
-`.pop()` is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable. In other words, `.pop()` removes the last element from an array and returns that element.
+`.pop()` se utiliza para sacar un valor del final de un arreglo. Podemos almacenar este valor sacado asignándolo a una variable. En otras palabras, `.pop()` elimina el último elemento de un arreglo y devuelve ese elemento.
 
-Any type of entry can be "popped" off of an array - numbers, strings, even nested arrays.
+Cualquier tipo de entrada puede ser sacada de un arreglo: números, cadenas, incluso arreglos anidados.
 
 ```js
 var threeArr = [1, 4, 6];
 var oneDown = threeArr.pop();
-console.log(oneDown); // Returns 6
-console.log(threeArr); // Returns [1, 4]
+console.log(oneDown);
+console.log(threeArr);
 ```
+
+El primer `console.log` mostrará el valor `6` y el segundo mostrará el valor `[1, 4]`.
 
 # --instructions--
 
-Use the `.pop()` function to remove the last item from `myArray`, assigning the "popped off" value to `removedFromMyArray`.
+Utiliza la función `.pop()` para eliminar el último elemento de `myArray`, asignando el valor sacado a `removedFromMyArray`.
 
 # --hints--
 
-`myArray` should only contain `[["John", 23]]`.
+`myArray` sólo debe contener `[["John", 23]]`.
 
 ```js
 assert(
@@ -42,13 +44,13 @@ assert(
 );
 ```
 
-You should use `pop()` on `myArray`.
+Debes usar `pop()` en `myArray`.
 
 ```js
 assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
 ```
 
-`removedFromMyArray` should only contain `["cat", 2]`.
+`removedFromMyArray` sólo debe contener `["cat", 2]`.
 
 ```js
 assert(

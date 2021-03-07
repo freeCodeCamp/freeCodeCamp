@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036157
-title: Write a Counter with Redux
+title: 用 Redux 写一个计数器
 challengeType: 6
 forumTopicId: 301453
 dashedName: write-a-counter-with-redux
@@ -8,33 +8,33 @@ dashedName: write-a-counter-with-redux
 
 # --description--
 
-Now you've learned all the core principles of Redux! You've seen how to create actions and action creators, create a Redux store, dispatch your actions against the store, and design state updates with pure reducers. You've even seen how to manage complex state with reducer composition and handle asynchronous actions. These examples are simplistic, but these concepts are the core principles of Redux. If you understand them well, you're ready to start building your own Redux app. The next challenges cover some of the details regarding `state` immutability, but first, here's a review of everything you've learned so far.
+现在已经了解了 Redux 的所有核心原则！ 已经了解了如何创建 action 和 action creator，创建 Redux store，通过 store dispatch action，以及使用纯粹的 reducer 设计状态更新。 甚至已经看到过如何使用 reducer 组合管理复杂状态并处理异步操作。 这些例子很简单，但这些概念是 Redux 的核心原则。 如果已经理解这些，那么就可以开始构建自己的 Redux 应用了。 接下来的挑战包括关于 `state` 不变性的一些细节，但是，这里是对到目前为止学到的所有内容的回顾。
 
 # --instructions--
 
-In this lesson, you'll implement a simple counter with Redux from scratch. The basics are provided in the code editor, but you'll have to fill in the details! Use the names that are provided and define `incAction` and `decAction` action creators, the `counterReducer()`, `INCREMENT` and `DECREMENT` action types, and finally the Redux `store`. Once you're finished you should be able to dispatch `INCREMENT` or `DECREMENT` actions to increment or decrement the state held in the `store`. Good luck building your first Redux app!
+在本课程中，将从头开始使用 Redux 实现一个简单的计数器。 基本知识在代码编辑器中提供，但你必须完成细节！ 使用提供的名称定义 `incAction` 和 `decAction` action creator，`counterReducer()`，`INCREMENT`和`DECREMENT` action 类型，以及 Redux `store`。 一旦完成，应该能够 dispatch `INCREMENT` 或 `DECREMENT` 动作来增加或减少 `store` 中保存的状态。 开始构建你的第一个 Redux 应用程序吧，编码愉快！
 
 # --hints--
 
-The action creator `incAction` should return an action object with `type` equal to the value of `INCREMENT`
+action creator `incAction` 应该返回一个 `type` 等于 `INCREMENT` 的 action 对象。
 
 ```js
 assert(incAction().type === INCREMENT);
 ```
 
-The action creator `decAction` should return an action object with `type` equal to the value of `DECREMENT`
+action creator `decAction` 应该返回一个 `type` 等于 `DECREMENT` 的 action 对象。
 
 ```js
 assert(decAction().type === DECREMENT);
 ```
 
-The Redux store should initialize with a `state` of 0.
+Redux store 应该将 `state` 初始化为 0。
 
 ```js
 assert(store.getState() === 0);
 ```
 
-Dispatching `incAction` on the Redux store should increment the `state` by 1.
+在 Redux store 上 dispatch `incAction` 应该将 `state` 增加 1。
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-Dispatching `decAction` on the Redux store should decrement the `state` by 1.
+在 Redux store 上 dispatch `decAction` 应该将 `state` 减少 1。
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-`counterReducer` should be a function
+`counterReducer` 必须是一个函数。
 
 ```js
 assert(typeof counterReducer === 'function');

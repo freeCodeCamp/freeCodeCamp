@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: Manipulate Arrays With push()
+title: Manipula arreglos con push()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
@@ -9,29 +9,29 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-An easy way to append data to the end of an array is via the `push()` function.
+Una forma fácil de añadir datos al final de un arreglo es a través de la función `push()`.
 
-`.push()` takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
+`.push()` toma uno o más <dfn>parámetros</dfn> y los "empuja" al final del arreglo.
 
-Examples:
+Ejemplos:
 
 ```js
 var arr1 = [1,2,3];
 arr1.push(4);
-// arr1 is now [1,2,3,4]
 
 var arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
-// arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
 ```
+
+`arr1` ahora tiene el valor `[1, 2, 3, 4]` y `arr2` tiene el valor `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 
-Push `["dog", 3]` onto the end of the `myArray` variable.
+Empuja `["dog", 3]` al final de la variable `myArray`.
 
 # --hints--
 
-`myArray` should now equal `[["John", 23], ["cat", 2], ["dog", 3]]`.
+`myArray` debe ser igual a `[["John", 23], ["cat", 2], ["dog", 3]]`.
 
 ```js
 assert(

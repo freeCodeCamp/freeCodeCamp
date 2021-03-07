@@ -21,13 +21,13 @@ CSS 的 class 具有可重用性，可应用于各种 HTML 元素。
 </style>
 ```
 
-可以看到，我们在 `<style>` 样式声明区域里，创建了一个名为 `blue-text` 的 `class` 选择器。 你可以将一个 class 添加到一个 HTML 元素里，如下所示：`<h2 class="blue-text">CatPhotoApp</h2>`。注意在 CSS `style` 里，class 名称以一个句点开始。 而在 HTML 元素的 class 属性中，名称前面没有句点。
+可以看到，我们在 `<style>` 样式声明区域里，创建了一个名为 `blue-text` 的 `class` 选择器。 你可以这样将 class 应用于 HTML 元素：`<h2 class="blue-text">CatPhotoApp</h2>`。 注意在 CSS `style` 元素里，class 名以一个句点开头。 在 HTML 元素的 class 属性中，class 名的开头没有句点。
 
 # --instructions--
 
 在 `style` 样式声明里，把 `h2` 元素选择器改为 `.red-text` class 选择器，同时将颜色 `blue` 改为 `red`。
 
-把 `h2` 元素的 `class` 属性值设置为 `'red-text'`。
+给 `h2` 元素设置一个值为 `red-text` 的 `class` 属性。
 
 # --hints--
 
