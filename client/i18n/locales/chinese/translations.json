@@ -217,16 +217,25 @@
     "our-nonprofit": "关于我们",
     "links": {
       "about": "简介",
+      "about-url": "https://chinese.freecodecamp.org/news/about/",
       "alumni": "校友网络",
       "open-source": "开源",
       "shop": "商店",
+      "shop-url": "https://www.freecodecamp.org/shop/",
       "support": "支持",
+      "support-url": "https://chinese.freecodecamp.org/news/support/",
       "sponsors": "赞助商",
+      "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
       "honesty": "学术诚信",
+      "honesty-url": "https://chinese.freecodecamp.org/news/academic-honesty-policy/",
       "coc": "行为规范",
+      "coc-url": "https://chinese.freecodecamp.org/news/code-of-conduct/",
       "privacy": "隐私条例",
+      "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
       "tos": "服务条款",
-      "copyright": "版权条例"
+      "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+      "copyright": "版权条例",
+      "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
     },
     "language": "语言："
   },
@@ -274,7 +283,7 @@
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification (300 hours)",
+      "certs": "{{title}} Certification (300 hours)",
       "coding-prep": "{{title}} (Thousands of hours of challenges)"
     },
     "editor-tabs": {
@@ -326,6 +335,7 @@
     "why-donate-2": "你也帮助我们创建新的学习资源，你可以利用这些资源拓展自己的技术能力。",
     "bigger-donation": "给我们额度更大的一次性捐款，或寄一张支票，或通过其他方式给我们捐款？",
     "other-ways": "有许多<0>其他方式可以支持我们的非营利组织践行使命</0>.",
+    "other-ways-url": "https://chinese.freecodecamp.org/news/how-to-donate-to-free-code-camp/",
     "failed-pay": "呃，你的转账似乎没有成功，再试一次好吗？",
     "try-again": "请重试。",
     "card-number": "你的卡号：",

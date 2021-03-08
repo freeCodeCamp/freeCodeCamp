@@ -217,16 +217,25 @@
     "our-nonprofit": "Nuestra organización sin fines de lucro",
     "links": {
       "about": "Acerca de",
+      "about-url": "https://www.freecodecamp.org/espanol/news/acerca-de-freecodecamp-preguntas-frecuentes/",
       "alumni": "Red de ex-Alumnos",
       "open-source": "Código abierto",
       "shop": "Tienda",
+      "shop-url": "https://www.freecodecamp.org/shop/",
       "support": "Soporte",
+      "support-url": "https://www.freecodecamp.org/espanol/news/preguntas-comunes-de-soporte-tecnico/",
       "sponsors": "Patrocinadores",
+      "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
       "honesty": "Honestidad Académica",
+      "honesty-url": "https://www.freecodecamp.org/espanol/news/politica-de-honestidad-academica/",
       "coc": "Código de Conducta",
+      "coc-url": "https://www.freecodecamp.org/espanol/news/codigo-de-conducta/",
       "privacy": "Política de privacidad",
+      "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
       "tos": "Términos de servicio",
-      "copyright": "Política de derechos de autor"
+      "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+      "copyright": "Política de derechos de autor",
+      "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
     },
     "language": "Idioma:"
   },
@@ -274,7 +283,7 @@
     "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntate libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
     "cert-map-estimates": {
-      "certs": "Certificación {{title}} (300 horas)",
+      "certs": "Certificación {{title}} (300 horas)",
       "coding-prep": "{{title}} (Miles de horas de desafíos)"
     },
     "editor-tabs": {
@@ -326,6 +335,7 @@
     "why-donate-2": "También nos ayudas a crear nuevos recursos para que los utilices y amplíes tus propias habilidades tecnológicas.",
     "bigger-donation": "¿Quieres hacer una donación más grande de una sola vez, envíanos un cheque o da de otras maneras?",
     "other-ways": "Aquí hay muchas <0>otras formas en las que puedes apoyar la misión de nuestra organización sin fines de lucro</0>.",
+    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
     "failed-pay": "Oh no. Parece que tu transacción no se realizó. ¿Podrías intentarlo de nuevo?",
     "try-again": "Por favor, intenta de nuevo.",
     "card-number": "Tu número de tarjeta:",
