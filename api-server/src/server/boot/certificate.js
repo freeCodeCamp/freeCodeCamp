@@ -46,7 +46,6 @@ export default function bootCertificate(app) {
   const api = app.loopback.Router();
   // TODO: rather than getting all the challenges, then grabbing the certs,
   // consider just getting the certs.
-
   const certTypeIds = createCertTypeIds(getChallenges());
   const showCert = createShowCert(app);
   const verifyCert = createVerifyCert(certTypeIds, app);
@@ -536,7 +535,7 @@ function createVerifyCanClaim(certTypeIds, app) {
       return Observable.of(certTypeIds[certType])
         .flatMap(challenge => {
           const certName = certTypeTitleMap[certType];
-          const { tests } = challenge;
+          const { tests = [] } = challenge;
           if (!canClaim(tests, user.completedChallenges)) {
             return Observable.just({
               type: 'success',
