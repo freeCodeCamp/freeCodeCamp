@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ca
-title: Access Array Data with Indexes
+title: Accede a los datos de un arreglo con índices
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158
@@ -9,30 +9,31 @@ dashedName: access-array-data-with-indexes
 
 # --description--
 
-We can access the data inside arrays using <dfn>indexes</dfn>.
+Podemos acceder a los datos dentro de un arreglo usando <dfn>índices</dfn>.
 
-Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of `0`.
+Los índices de los arreglos se escriben en la misma notación de corchetes que usan las cadenas de texto, con la excepción que en vez de especificar un carácter, se especifica una entrada en el arreglo. Así como las cadenas de texto, los arreglos usan indexación <dfn>empezando desde cero</dfn>, en donde el primer elemento de un arreglo tiene como índice `0`.
 
 <br>
 
-**Example**
+**Ejemplo**
 
 ```js
 var array = [50,60,70];
-array[0]; // equals 50
-var data = array[1];  // equals 60
+array[0];
+var data = array[1];
 ```
 
-**Note**  
-There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+`array[0]` ahora es `50` y `data` tiene el valor `60`.
+
+**Nota:** No debe haber espacios entre el nombre del arreglo y los corchetes, como `array [0]`. Aunque JavaScript pueda procesar esto correctamente, puedes confundir a otros programadores al leer tu código.
 
 # --instructions--
 
-Create a variable called `myData` and set it to equal the first value of `myArray` using bracket notation.
+Crea una variable llamada `myData` e iguálala al primer valor de `myArray` usando notación de corchetes.
 
 # --hints--
 
-The variable `myData` should equal the first value of `myArray`.
+La variable `myData` debe ser igual al primer valor de `myArray`.
 
 ```js
 assert(
@@ -50,7 +51,7 @@ assert(
 );
 ```
 
-The data in variable `myArray` should be accessed using bracket notation.
+Los datos en la variable `myArray` deben ser accedidos utilizando notación de corchetes.
 
 ```js
 assert(

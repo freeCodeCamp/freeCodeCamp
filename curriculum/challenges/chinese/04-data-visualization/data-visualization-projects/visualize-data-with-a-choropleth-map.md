@@ -22,11 +22,11 @@ dashedName: visualize-data-with-a-choropleth-map
 
 **需求 #4：** 这些州县至少应该有 4 种不同的填充颜色。
 
-**需求 #5：** 每个州县都应该具有 `data-fips` 和 `data-education` 属性，分别包含他们相应的 fips 值和教育值。
+**需求 #5：** 每个州县都应该具有 `data-fips` 和 `data-education` 属性，分别包含相应的值 `fips` 和 `education`。
 
 **需求 #6：** 在等值区域图中，每一个提供的数据点都应该有一个对应的州县。
 
-**需求 #7：** 各个州县应该具有与样本数据匹配的 fips 值和教育值。
+**需求 #7：** 各个州县应该具有与样本数据匹配的 `data-fips` 和 `data-education` 值。
 
 **需求 #8：** 等值区域图包含一个具有 `id="legend"` 属性的图例。
 
@@ -43,7 +43,7 @@ dashedName: visualize-data-with-a-choropleth-map
 
 你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
+当你完成了本项目，并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --solutions--
 

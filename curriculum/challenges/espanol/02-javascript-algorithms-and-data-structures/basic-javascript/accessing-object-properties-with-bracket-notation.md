@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: Accessing Object Properties with Bracket Notation
+title: Accede a propiedades de objetos con notación de corchete
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
@@ -9,11 +9,11 @@ dashedName: accessing-object-properties-with-bracket-notation
 
 # --description--
 
-The second way to access the properties of an object is bracket notation (`[]`). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+La segunda manera de acceder a las propiedades de un objeto es con la notación de corchetes (`[]`). Si la propiedad del objeto al que intentas acceder tiene un espacio en el nombre, necesitarás usar notación de corchetes.
 
-However, you can still use bracket notation on object properties without spaces.
+Sin embargo, también puedes utilizar la notación de corchetes en las propiedades de objeto sin espacios.
 
-Here is a sample of using bracket notation to read an object's property:
+Aquí hay un ejemplo de cómo usar la notación de corchetes para leer la propiedad de un objeto:
 
 ```js
 var myObj = {
@@ -21,44 +21,46 @@ var myObj = {
   "More Space": "Spock",
   "NoSpace": "USS Enterprise"
 };
-myObj["Space Name"]; // Kirk
-myObj['More Space']; // Spock
-myObj["NoSpace"];    // USS Enterprise
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
 ```
 
-Note that property names with spaces in them must be in quotes (single or double).
+`myObj["Space Name"]` sería la cadena `Kirk`, `myObj['More Space']` sería la cadena `Spock`, y `myObj["NoSpace"]` sería la cadena `USS Enterprise`.
+
+Ten en cuenta que los nombres de las propiedades con espacios deben estar entre comillas (simples o dobles).
 
 # --instructions--
 
-Read the values of the properties `"an entree"` and `"the drink"` of `testObj` using bracket notation and assign them to `entreeValue` and `drinkValue` respectively.
+Lee los valores de las propiedades `an entree` y `the drink` de `testObj` usando la notación de corchetes y asígnalos a `entreeValue` y `drinkValue` respectivamente.
 
 # --hints--
 
-`entreeValue` should be a string
+`entreeValue` debe ser una cadena de texto
 
 ```js
 assert(typeof entreeValue === 'string');
 ```
 
-The value of `entreeValue` should be `"hamburger"`
+El valor de `entreeValue` debe ser la cadena `hamburger`
 
 ```js
 assert(entreeValue === 'hamburger');
 ```
 
-`drinkValue` should be a string
+`drinkValue` debe ser una cadena
 
 ```js
 assert(typeof drinkValue === 'string');
 ```
 
-The value of `drinkValue` should be `"water"`
+El valor de `drinkValue` debe ser la cadena `water`
 
 ```js
 assert(drinkValue === 'water');
 ```
 
-You should use bracket notation twice
+Debes usar la notación de corchetes dos veces
 
 ```js
 assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);

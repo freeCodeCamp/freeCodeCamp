@@ -12,7 +12,7 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --instructions--
 
-函数 `raiseToPower` 返回基数 (base) 的指数 (exponent) 次幂。 不幸的是，它没有被正确调用 — 修改代码，使`power`的值为 8。
+函数 `raiseToPower` 返回基数 (base) 的指数 (exponent) 次幂。 不幸的是，它没有被正确调用 — 修改代码，使 `power` 的值为 8。
 
 # --hints--
 

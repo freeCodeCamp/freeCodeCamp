@@ -20,17 +20,17 @@ dashedName: visualize-data-with-a-bar-chart
 
 **需求 #3：** 图表应该包含一个 `g` 元素作为 y 轴，并相应地具有`id="y-axis"` 属性。
 
-**需求 #4：** 两个轴都应包含多个刻度标签，每个标签具有 `class="tick"` 属性
+**需求 #4：** 两个轴都应包含多个刻度标签，每个标签具有 `class="tick"` 属性。
 
 **需求 #5：** 在图表里，每个数据点都应该有一个具有 `class="bar"` 属性的 `rect` 元素来展示数据。
 
-**需求 #6：** 每个数据条应该具有包含日期的 `data-date` 属性以及包含 GDP 值的 `data-gdp` 属性。
+**需求 #6：** 每个数据条应该具有值为 `date` 的 `data-date` 属性以及值为 `GDP` 的 `data-gdp` 属性。
 
 **需求 #7：** 数据条元素的 `data-date` 属性应与提供的数据的顺序相匹配。
 
 **需求 #8：** 数据条元素的 `data-gdp` 属性应与提供的数据的顺序相匹配。
 
-**需求 #9：** 每个数据条元素的高度应准确地表示其数据所对应的 GDP 值。
+**需求 #9：** 每个数据条元素的高度应准确地表示其数据所对应的 `GDP` 值。
 
 **需求 #10：** `data-date` 属性和它对应的数据条元素应与 x 轴上的相应的值对齐。
 
@@ -44,7 +44,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 你可以 fork [这个 CodePen pen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
+当你完成了本项目，并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --solutions--
 
