@@ -106,7 +106,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.2.5",
     "babel-plugin-transform-imports": "^1.5.1",
     "chokidar": "^3.5.1",
     "copy-webpack-plugin": "^5.1.2",
