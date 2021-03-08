@@ -18,7 +18,7 @@ const githubRoot = require('@actions/github');
     const labels = labelsStr.trim().split(/,\s+/);
     const reviewersStr = core.getInput('reviewers');
     const reviewers = reviewersStr.trim().split(/,\s+/);
-    
+
     const github = githubRoot.getOctokit(token);
 
     const branchExists = await github.repos
