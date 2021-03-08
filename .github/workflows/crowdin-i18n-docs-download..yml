@@ -7,7 +7,7 @@ on:
 
 jobs:
   i18n-download-docs-translations:
-    name: Learn
+    name: Docs
     runs-on: ubuntu-18.04
 
     steps:

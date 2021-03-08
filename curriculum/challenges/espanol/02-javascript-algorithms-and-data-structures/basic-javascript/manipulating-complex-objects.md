@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cb
-title: Manipulating Complex Objects
+title: Manipulando objectos complejos
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
@@ -9,9 +9,9 @@ dashedName: manipulating-complex-objects
 
 # --description--
 
-Sometimes you may want to store data in a flexible <dfn>Data Structure</dfn>. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.
+A veces, es posible que desees almacenar datos en una <dfn>estructura de datos</dfn> flexible. Un objeto de JavaScript es una forma de manejar datos flexibles. Permiten combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>arreglos</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.
 
-Here's an example of a complex data structure:
+Este es un ejemplo de una estructura de datos compleja:
 
 ```js
 var ourMusic = [
@@ -29,7 +29,7 @@ var ourMusic = [
 ];
 ```
 
-This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested `"formats"` array. If you want to add more album records, you can do this by adding records to the top level array. Objects hold data in a property, which has a key-value format. In the example above, `"artist": "Daft Punk"` is a property that has a key of `"artist"` and a value of `"Daft Punk"`. [JavaScript Object Notation](http://www.json.org/) or `JSON` is a related data interchange format used to store data.
+Esto es una arreglo que contiene un objeto en su interior. El objeto tiene varias piezas de <dfn>metadatos</dfn> sobre un álbum. También tiene un arreglo anidado de `formats`. Si desea añadir más registros de álbumes, puede hacerlo añadiendo registros a la parte superior del arreglo. Los objetos almacenan datos en una propiedad, con formato clave-valor. En el ejemplo anterior, `"artist": "Daft Punk"` es una propiedad que tiene como clave `artist` y su valor es `Daft Punk`. [JavaScript Object Notation](http://www.json.org/) o `JSON` es un formato de intercambio de datos relacionado utilizado para almacenar información.
 
 ```json
 {
@@ -45,40 +45,39 @@ This is an array which contains one object inside. The object has various pieces
 }
 ```
 
-**Note**  
-You will need to place a comma after every object in the array, unless it is the last object in the array.
+**Nota:** Deberás colocar una coma después de cada objeto en el arreglo, a menos que sea el último objeto.
 
 # --instructions--
 
-Add a new album to the `myMusic` array. Add `artist` and `title` strings, `release_year` number, and a `formats` array of strings.
+Añade un nuevo álbum al arreglo `myMusic`. Añade las cadenas `artist` y `title`, el número `release_year`, y un arreglo de cadenas `formats`.
 
 # --hints--
 
-`myMusic` should be an array
+`myMusic` debe ser un arreglo
 
 ```js
 assert(Array.isArray(myMusic));
 ```
 
-`myMusic` should have at least two elements
+`myMusic` debe tener al menos dos elementos
 
 ```js
 assert(myMusic.length > 1);
 ```
 
-`myMusic[1]` should be an object
+`myMusic[1]` debe ser un objeto
 
 ```js
 assert(typeof myMusic[1] === 'object');
 ```
 
-`myMusic[1]` should have at least 4 properties
+`myMusic[1]` debe tener al menos 4 propiedades
 
 ```js
 assert(Object.keys(myMusic[1]).length > 3);
 ```
 
-`myMusic[1]` should contain an `artist` property which is a string
+`myMusic[1]` debe contener una propiedad `artist` que es una cadena
 
 ```js
 assert(
@@ -86,7 +85,7 @@ assert(
 );
 ```
 
-`myMusic[1]` should  contain a `title` property which is a string
+`myMusic[1]` debe contener una propiedad `title` que es una cadena
 
 ```js
 assert(
@@ -94,7 +93,7 @@ assert(
 );
 ```
 
-`myMusic[1]` should contain a `release_year` property which is a number
+`myMusic[1]` debe contener una propiedad `release_year` que es un número
 
 ```js
 assert(
@@ -103,7 +102,7 @@ assert(
 );
 ```
 
-`myMusic[1]` should contain a `formats` property which is an array
+`myMusic[1]` debe contener una propiedad `formats` que es un arreglo
 
 ```js
 assert(
@@ -111,7 +110,7 @@ assert(
 );
 ```
 
-`formats` should be an array of strings with at least two elements
+`formats` debe ser un arreglo de cadenas con al menos dos elementos
 
 ```js
 assert(
