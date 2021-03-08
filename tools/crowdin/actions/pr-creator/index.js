@@ -1,9 +1,12 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable camelcase */
 const core = require('@actions/core');
-const github = require('@actions/github');
+const githubRoot = require('@actions/github');
 
 (async () => {
   try {
-    const branch = core.getInput('branch-name');
+    const token = core.getInput('github-token');
+    const branch = core.getInput('branch');
     const [owner, repo] = core.getInput('owner-repo').split('/');
     if (!owner || !repo) {
       core.setFailed('Must specify a valid ownerName/repoName');
@@ -15,6 +18,8 @@ const github = require('@actions/github');
     const labels = labelsStr.trim().split(/,\s+/);
     const reviewersStr = core.getInput('reviewers');
     const reviewers = reviewersStr.trim().split(/,\s+/);
+    
+    const github = githubRoot.getOctokit(token);
 
     const branchExists = await github.repos
       .getBranch({
@@ -22,7 +27,7 @@ const github = require('@actions/github');
         repo,
         branch
       })
-      .catch(err => {
+      .catch(() => {
         console.info('Branch does not exist. Likely no changes in download?');
       });
     if (!branchExists || branchExists.status !== 200) {
@@ -31,7 +36,7 @@ const github = require('@actions/github');
     const pullRequestExists = await github.pulls.list({
       owner,
       repo,
-      head: `${repo}:${branch}`
+      head: `${owner}:${branch}`
     });
     if (pullRequestExists.data.length) {
       console.info(
@@ -57,10 +62,10 @@ const github = require('@actions/github');
     if (!PR || PR.status !== 201) {
       return;
     }
+    const prNumber = PR.data.number;
     console.log(
       `https://github.com/freeCodeCamp/freeCodeCamp/pull/${prNumber} created`
     );
-    const prNumber = PR.data.number;
     if (labels && labels.length) {
       await github.issues.addLabels({
         owner,
