@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d5
-title: Comparison with the Greater Than Or Equal To Operator
+title: Comparación con el operador "mayor o igual que"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KBqtV'
 forumTopicId: 16785
@@ -9,68 +9,70 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 # --description--
 
-The greater than or equal to operator (`>=`) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns `true`. Otherwise, it returns `false`.
+El operador mayor o igual que (`>=`) compara el valor de dos números. Si el número de la izquierda es mayor o igual que el número de la derecha, devuelve `true`. De lo contrario, devuelve `false`.
 
-Like the equality operator, `greater than or equal to` operator will convert data types while comparing.
+Al igual que el operador de igualdad, `>=` convertirá los tipos de datos al comparar.
 
-**Examples**
+**Ejemplos**
 
 ```js
-6   >=  6   // true
-7   >= '3'  // true
-2   >=  3   // false
-'7' >=  9   // false
+6   >=  6
+7   >= '3'
+2   >=  3
+'7' >=  9
 ```
+
+En orden, estas expresiones se evaluarían como `true`, `true`, `false` y `false`.
 
 # --instructions--
 
-Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
+Agrega el operador mayor o igual que a las líneas indicadas para que el valor devuelto tenga sentido.
 
 # --hints--
 
-`testGreaterOrEqual(0)` should return "Less than 10"
+`testGreaterOrEqual(0)` debe devolver la cadena `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` should return "Less than 10"
+`testGreaterOrEqual(9)` debe devolver la cadena `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` should return "10 or Over"
+`testGreaterOrEqual(10)` debe devolver la cadena `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` should return "10 or Over"
+`testGreaterOrEqual(11)` debe devolver la cadena `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` should return "10 or Over"
+`testGreaterOrEqual(19)` debe devolver la cadena `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` should return "20 or Over"
+`testGreaterOrEqual(100)` debe devolver la cadena `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` should return "20 or Over"
+`testGreaterOrEqual(21)` debe devolver la cadena `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');
 ```
 
-You should use the `>=` operator at least twice
+Debes utilizar el operador `>=` al menos dos veces
 
 ```js
 assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);

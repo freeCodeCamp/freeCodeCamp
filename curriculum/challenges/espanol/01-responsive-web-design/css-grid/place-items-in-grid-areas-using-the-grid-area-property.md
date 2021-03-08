@@ -1,6 +1,6 @@
 ---
 id: 5a94fe1369fb03452672e45d
-title: Ubica elementos en áreas de cuadrícula (grid) usando la propiedad grid-area
+title: Ubica elementos en áreas de cuadrícula usando la propiedad grid-area
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
 forumTopicId: 301132
@@ -9,7 +9,7 @@ dashedName: place-items-in-grid-areas-using-the-grid-area-property
 
 # --description--
 
-Después de crear una plantilla de área para tu contenedor de cuadrícula, cómo se muestra en el desafío anterior, puedes ubicar un elemento en tu área personalizada referenciando el nombre que le diste. Para hacer esto, usa la propiedad `grid-area` sobre un elemento así:
+Después de crear una plantilla de área para tu contenedor de cuadrícula (grid), cómo se muestra en el desafío anterior, puedes ubicar un elemento en tu área personalizada referenciando el nombre que le diste. Para hacer esto, usa la propiedad `grid-area` sobre un elemento así:
 
 ```css
 .item1 {
