@@ -82,7 +82,7 @@ assert.equal(check_mersenne(3), 'M3 = 2^3-1 is prime');
 assert.equal(check_mersenne(23), 'M23 = 2^23-1 is composite with factor 47');
 ```
 
-`check_mersenne(929)` should return "M929 = 2^929-1 is composite with factor 13007"
+`check_mersenne(929)` should return "M929 = 2^929-1 is composite with factor 13007
 
 ```js
 assert.equal(
