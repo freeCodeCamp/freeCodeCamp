@@ -217,25 +217,16 @@
     "our-nonprofit": "Our Nonprofit",
     "links": {
       "about": "About",
-      "about-url": "https://www.freecodecamp.org/news/about/",
       "alumni": "Alumni Network",
       "open-source": "Open Source",
       "shop": "Shop",
-      "shop-url": "https://www.freecodecamp.org/shop/",
       "support": "Support",
-      "support-url": "https://www.freecodecamp.org/news/support/",
       "sponsors": "Sponsors",
-      "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
       "honesty": "Academic Honesty",
-      "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
       "coc": "Code of Conduct",
-      "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
       "privacy": "Privacy Policy",
-      "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
       "tos": "Terms of Service",
-      "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
-      "copyright": "Copyright Policy",
-      "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+      "copyright": "Copyright Policy"
     },
     "language": "Language:"
   },
@@ -293,8 +284,7 @@
       "preview": "Preview"
     },
     "help-translate": "We are still translating the following certifications.",
-    "help-translate-link": "Help us translate.",
-    "help-translate-link-url": "https://contribute.freecodecamp.org/#/how-to-translate-files"
+    "help-translate-link": "Help us translate."
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -336,7 +326,6 @@
     "why-donate-2": "You also help us create new resources for you to use to expand your own technology skills.",
     "bigger-donation": "Want to make a bigger one-time donation, mail us a check, or give in other ways?",
     "other-ways": "Here are many <0>other ways you can support our non-profit's mission</0>.",
-    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
     "failed-pay": "Uh - oh. It looks like your transaction didn't go through. Could you please try again?",
     "try-again": "Please try again.",
     "card-number": "Your Card Number:",

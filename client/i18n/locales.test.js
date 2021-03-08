@@ -26,6 +26,9 @@ const filesThatShouldExist = [
   },
   {
     name: 'meta-tags.json'
+  },
+  {
+    name: 'links.json'
   }
 ];
 

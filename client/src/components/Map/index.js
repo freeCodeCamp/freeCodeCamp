@@ -93,7 +93,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
         <Link
           external={true}
           sameTab={false}
-          to={i18next.t('learn.help-translate-link-url')}
+          to={i18next.t('links:help-translate-link-url')}
         >
           {i18next.t('learn.help-translate-link')}
         </Link>
