@@ -48,7 +48,7 @@
     "nanoid": "^3.1.20",
     "prismjs": "^1.23.0",
     "query-string": "^6.14.1",
-    "react": "^16.14.0",
+    "react": "^17.0.1",
     "react-dom": "^16.14.0",
     "react-final-form": "^6.5.2",
     "react-ga": "^2.7.0",
