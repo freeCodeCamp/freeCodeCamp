@@ -89,9 +89,37 @@
         placeholder: 'Search...'
       },
 
-      'flexible-alerts': {
-        style: 'callout'
-      },
+      // Add languages here for message box translations
+      'flexibleAlerts': {
+          note: {
+            label: {
+              '/i18n/chinese/': '注意',
+              '/i18n/espanol/': 'Nota',
+              '/': 'Note'
+            }
+          },
+          tip: {
+            label: {
+              '/i18n/chinese/': '提示',
+              '/i18n/espanol/': 'Sugerencia',
+              '/': 'Tip'
+            }
+          },
+          warning: {
+            label: {
+              '/i18n/chinese/': '警告',
+              '/i18n/espanol/': 'Advertencia',
+              '/': 'Warning'
+            }
+          },
+          attention: {
+            label: {
+              '/i18n/chinese/': '注意',
+              '/i18n/espanol/': 'Atención',
+              '/': 'Attention'
+            }
+          }
+        },
 
       pagination: {
         crossChapter: true
@@ -176,7 +204,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
     integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
     crossorigin="anonymous"></script>
-
 </body>
 
 </html>
