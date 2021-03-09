@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be4
-title: Access the JSON Data from an API
+title: 访问来自 API 的 JSON 数据
 challengeType: 6
 forumTopicId: 301499
 dashedName: access-the-json-data-from-an-api
@@ -8,36 +8,37 @@ dashedName: access-the-json-data-from-an-api
 
 # --description--
 
-In the previous challenge, you saw how to get JSON data from the freeCodeCamp Cat Photo API.
+在前面的挑战中，你了解了如何从 freeCodeCamp Cat Photo API 获取 JSON 数据。
 
-Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:
+现在，你将进一步观察返回的数据，以更好地了解 JSON 格式。 回忆一下 JavaScript 中的一些符号：
 
-<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>" " -> Double quotes represent a string. They are also used for key names in JSON</blockquote>
+<blockquote>[ ] -> 方括号表示数组<br>{ } -> 大括号表示对象<br>" " -> 双引号表示字符串， 它们还用于表示 JSON 中的键名</blockquote>
 
-Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.
+理解 API 返回数据的结构是必需的，它将影响你如何获取你所需的值。
 
-On the right, click the "Get Message" button to load the freeCodeCamp Cat Photo API JSON into the HTML.
+在右侧，单击 `Get Message` 按钮，将 freeCodeCamp Cat Photo API JSON 加载到 HTML 中。
 
-The first and last character you see in the JSON data are square brackets `[ ]`. This means that the returned data is an array. The second character in the JSON data is a curly `{` bracket, which starts an object. Looking closely, you can see that there are three separate objects. The JSON data is an array of three objects, where each object contains information about a cat photo.
+在 JSON 数据中的第一个和最后一个字符是中括号`[ ]`， 这意味着返回的数据是一个数组。 JSON 数据中的第二个符号是一个大括号`{`，这意味着是一个对象。 再仔细看，你会发现有三个独立的对象。 这个 JSON 数据是一个包含三个对象的数组，它们各自都包含了 cat photo 的信息。
 
-You learned earlier that objects contain "key-value pairs" that are separated by commas. In the Cat Photo example, the first object has `"id":0` where "id" is a key and 0 is its corresponding value. Similarly, there are keys for "imageLink", "altText", and "codeNames". Each cat photo object has these same keys, but with different values.
+你之前了解了对象包含了用逗号分隔的 "键值对"。 在 Cat Photo 示例中，第一个对象的 `"id":0`，`id` 是键，`0` 是对应的值。 类似地，`imageLink`、`altText` 和 `codeNames` 也有键。 每个 cat photo 对象具有相同的键，但具有不同的值。
 
-Another interesting "key-value pair" in the first object is `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`. Here "codeNames" is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.
+在第一个对象中有一个有趣的 "键值对" 它是`"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`。 `codeNames` 是键，它的值是一个包含三个字符串的数组。 对象数组以及数组作为键可以作为值
 
-Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the "altText" of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called `json`:
+记住如何访问数组和对象中的数据。 数组使用括号表示法来访问项目的特定索引， 对象使用括号或点表示法来访问给定属性的值。 这个例子打印第一张 cat photo 的 `altText` 属性——请注意，编辑器中解析的 JSON 数据被保存在名为 `json` 的变量中：
 
 ```js
 console.log(json[0].altText);
-// Prints "A white cat wearing a green helmet shaped melon on its head."
 ```
+
+控制台将显示字符串 `A white cat wearing a green helmet shaped melon on its head.`。
 
 # --instructions--
 
-For the cat with the "id" of 2, print to the console the second value in the `codeNames` array. You should use bracket and dot notation on the object (which is saved in the variable `json`) to access the value.
+对于 `id` 为 2 的 cat，在控制台打印 `codeNames` 数组中的第二个值。 你应该在对象（保存在变量 `json` 中）上使用括号或者点表示法来访问该值。
 
 # --hints--
 
-Your code should use bracket and dot notation to access the proper code name, and print "Loki" to the console.
+应该使用括号和点表示法来读取正确的代码名称，并将 `Loki` 打印到控制台。
 
 ```js
 assert(

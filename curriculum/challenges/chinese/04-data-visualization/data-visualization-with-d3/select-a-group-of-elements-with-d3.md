@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc3
-title: Select a Group of Elements with D3
+title: 用 D3 选择一组元素
 challengeType: 6
 forumTopicId: 301490
 dashedName: select-a-group-of-elements-with-d3
@@ -8,19 +8,19 @@ dashedName: select-a-group-of-elements-with-d3
 
 # --description--
 
-D3 also has the `selectAll()` method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:
+`selectAll()` 方法选择一组元素。 它以 HTML 节点数组的形式返回该文本中所有匹配所输入字符串的对象。 以下是一个选择文本中所有锚标签的例子：
 
 `const anchors = d3.selectAll("a");`
 
-Like the `select()` method, `selectAll()` supports method chaining, and you can use it with other methods.
+像 `select()` 方法一样，`selectAll()` 也支持链式调用，你可以在它之后调用其他方法。
 
 # --instructions--
 
-Select all of the `li` tags in the document, and change their text to "list item" by chaining the `.text()` method.
+选择所有的 `li` 标签，通过 `.text()` 方法将它们的文本改为 `list item`。
 
 # --hints--
 
-There should be 3 `li` elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.
+页面上应该有 3 个 `li` 元素，每个元素的文本内容应为 `list item`。 大小写和空格必须一致。
 
 ```js
 assert(
@@ -30,13 +30,13 @@ assert(
 );
 ```
 
-Your code should access the `d3` object.
+应该能访问 `d3` 的对象。
 
 ```js
 assert(code.match(/d3/g));
 ```
 
-Your code should use the `selectAll` method.
+应该使用 `selectAll` 方法。
 
 ```js
 assert(code.match(/\.selectAll/g));

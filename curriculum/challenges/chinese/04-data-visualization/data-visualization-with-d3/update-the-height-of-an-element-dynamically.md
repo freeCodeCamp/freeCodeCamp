@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bc9
-title: Update the Height of an Element Dynamically
+title: 动态更新元素的高度
 challengeType: 6
 forumTopicId: 301493
 dashedName: update-the-height-of-an-element-dynamically
@@ -8,71 +8,71 @@ dashedName: update-the-height-of-an-element-dynamically
 
 # --description--
 
-The previous challenges covered how to display data from an array and how to add CSS classes. You can combine these lessons to create a simple bar chart. There are two steps to this:
+之前的挑战包括如何从数组中显示数据和如何添加 CSS 类。 将这些课程的内容结合起来，你就能创建出一个简单的条形图， 只需两步：
 
-1) Create a `div` for each data point in the array
+1) 为每一个数组中的数据点都创建一个 `div`
 
-2) Give each `div` a dynamic height, using a callback function in the `style()` method that sets height equal to the data value
+2) 为每个 `div` 动态分配高度值，在 `style()` 方法中使用回调函数将高度值设置为数据大小
 
-Recall the format to set a style using a callback function:
+回想使用回调函数设置样式的格式：
 
 `selection.style("cssProperty", (d) => d)`
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to set the `height` property for each element. Use a callback function to return the value of the data point with the string "px" added to it.
+在编辑器中添加 `style()` 方法给每个元素设置 `height` 属性。 使用回调函数返回数据点的值，加上字符串 `px`。
 
 # --hints--
 
-The first `div` should have a `height` of 12 pixels.
+第一个 `div` 的 `height` 值应为 `12` 像素。
 
 ```js
 assert($('div').eq(0)[0].style.height === '12px');
 ```
 
-The second `div` should have a `height` of 31 pixels.
+第二个 `div` 的 `height` 值应为 `31` 像素。
 
 ```js
 assert($('div').eq(1)[0].style.height === '31px');
 ```
 
-The third `div` should have a `height` of 22 pixels.
+第三个 `div` 的 `height` 值应为 `22` 像素。
 
 ```js
 assert($('div').eq(2)[0].style.height === '22px');
 ```
 
-The fourth `div` should have a `height` of 17 pixels.
+第四个 `div` 的 `height` 值应为 `17` 像素。
 
 ```js
 assert($('div').eq(3)[0].style.height === '17px');
 ```
 
-The fifth `div` should have a `height` of 25 pixels.
+第五个 `div` 的 `height` 值应为 `25` 像素。
 
 ```js
 assert($('div').eq(4)[0].style.height === '25px');
 ```
 
-The sixth `div` should have a `height` of 18 pixels.
+第六个 `div` 的 `height` 值应为 `18` 像素。
 
 ```js
 assert($('div').eq(5)[0].style.height === '18px');
 ```
 
-The seventh `div` should have a `height` of 29 pixels.
+第七个 `div` 的 `height` 值应为 `29` 像素。
 
 ```js
 assert($('div').eq(6)[0].style.height === '29px');
 ```
 
-The eighth `div` should have a `height` of 14 pixels.
+第八个 `div` 的 `height` 值应为 `14` 像素。
 
 ```js
 assert($('div').eq(7)[0].style.height === '14px');
 ```
 
-The ninth `div` should have a `height` of 9 pixels.
+第九个 `div` 的 `height` 值应为 `9` 像素。
 
 ```js
 assert($('div').eq(8)[0].style.height === '9px');

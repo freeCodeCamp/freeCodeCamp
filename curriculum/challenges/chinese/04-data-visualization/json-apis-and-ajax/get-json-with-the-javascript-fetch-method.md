@@ -1,6 +1,6 @@
 ---
 id: 5ccfad82bb2dc6c965a848e5
-title: Get JSON with the JavaScript fetch method
+title: 使用 JavaScript 的 fetch 方法获取 JSON
 challengeType: 6
 forumTopicId: 301501
 dashedName: get-json-with-the-javascript-fetch-method
@@ -8,9 +8,9 @@ dashedName: get-json-with-the-javascript-fetch-method
 
 # --description--
 
-Another way to request external data is to use the JavaScript `fetch()` method. It is equivalent to XMLHttpRequest, but the syntax is considered easier to understand.
+请求外部数据的另一个方法是使用 JavaScript 的 `fetch()` 方法。 它的作用和 `XMLHttpRequest` 一样，但是它的语法更容易理解。
 
-Here is the code for making a GET request to `/json/cats.json`
+下面是使用 GET 请求 `/json/cats.json` 数据的例子。
 
 ```js
 
@@ -22,29 +22,29 @@ fetch('/json/cats.json')
 
 ```
 
-Take a look at each piece of this code.
+逐行解释一下代码。
 
-The first line is the one that makes the request. So, `fetch(URL)` makes a GET request to the URL specified. The method returns a Promise.
+第一行是发起请求。 `fetch(URL)` 向指定的 URL 发起 `GET` 请求。 这个方法返回一个 Promise。
 
-After a Promise is returned, if the request was successful, the `then` method is executed, which takes the response and converts it to JSON format.
+当 Promise 返回后，如果请求成功，会执行 `then` 方法，该方法把响应转换为 JSON 格式。
 
-The `then` method also returns a Promise, which is handled by the next `then` method. The argument in the second `then` is the JSON object you are looking for!
+`then` 方法返回的也是 Promise，会被下一个 `then` 方法捕获。 第二个 `then` 方法传入的参数就是最终的 JSON 对象。
 
-Now, it selects the element that will receive the data by using `document.getElementById()`. Then it modifies the HTML code of the element by inserting a string created from the JSON object returned from the request.
+接着，使用 `document.getElementById()` 选择将要接收数据的元素。 然后插入请求返回的 JSON 对象创建的字符串修改元素的 HTML 代码。
 
 # --instructions--
 
-Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. But this time, using the `fetch` method instead of `XMLHttpRequest`.
+更新代码，创建并向 freeCodeCamp Cat Photo API 发送 `GET` 请求。 这次使用 `fetch` 方法而不是 `XMLHttpRequest`。
 
 # --hints--
 
-Your code should make a GET request with `fetch`.
+应该使用 `fetch` 发起 `GET` 请求。
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Your code should use `then` to convert the response to JSON.
+应该在 `then` 里面将响应转换为 JSON。
 
 ```js
 assert(
@@ -54,13 +54,13 @@ assert(
 );
 ```
 
-Your code should use `then` to handle the data converted to JSON by the other `then`.
+应该使用另一个 `then` 接收 `then` 转换的 JSON。
 
 ```js
 assert(code.match(/\.then\s*\(\s*(data|\(\s*data\s*\))\s*=>\s*{[^}]*}\s*\)/g));
 ```
 
-Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
+代码应该选择 id 为 `message` 的元素然后把它的内部 HTML 改成 JSON data 的字符串。
 
 ```js
 assert(

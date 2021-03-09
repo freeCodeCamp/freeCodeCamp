@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be7
-title: Pre-filter JSON to Get the Data You Need
+title: 预先过滤 JSON 以获得所需的数据
 challengeType: 6
 forumTopicId: 18257
 dashedName: pre-filter-json-to-get-the-data-you-need
@@ -8,11 +8,11 @@ dashedName: pre-filter-json-to-get-the-data-you-need
 
 # --description--
 
-If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.
+如果你不希望渲染每张从 freeCodeCamp Cat Photo API 取回的猫照片，你可以在循环先预先过滤 JSON 数据。
 
-Given that the JSON data is stored in an array, you can use the `filter` method to filter out the cat whose "id" key has a value of 1.
+鉴于 JSON 数据存储在数组中，你可以使用 `filter` 方法过滤掉 `id` 键值为 `1` 的 cat。
 
-Here's the code to do this:
+这是执行此操作的代码：
 
 ```js
 json = json.filter(function(val) {
@@ -22,11 +22,11 @@ json = json.filter(function(val) {
 
 # --instructions--
 
-Add code to `filter` the json data to remove the cat with the "id" value of 1.
+添加代码以 `filter` json 数据，删除 `id` 值为 `1` 的 cat。
 
 # --hints--
 
-Your code should use the `filter` method.
+应该使用 `filter` 方法。
 
 ```js
 assert(code.match(/json\.filter/g));

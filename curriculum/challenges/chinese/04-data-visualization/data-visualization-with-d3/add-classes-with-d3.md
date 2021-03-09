@@ -10,11 +10,11 @@ dashedName: add-classes-with-d3
 
 即使对小型 app 来说，在 HTML 元素中大量使用内联样式也十分难以管理。 给元素添加类，并使用 CSS 规则给类添加样式会更加方便。 D3 中的 `attr()` 方法可以给元素添加任何 HTML 属性，包括 class 名称。
 
-`attr()` 方法和 `style()` 的使用方法一样。 它使用逗号分隔值，并且可以使用回调函数。 这里是一个给选中元素添加 class 名为 "container" 的例子：
+`attr()` 方法和 `style()` 的使用方法一样。 它使用逗号分隔值，并且可以使用回调函数。 下面是给选中元素添加 `container` class 的例子：
 
 `selection.attr("class", "container");`
 
-请注意，当你需要添加类时，“class" 参数不会发生改变，只有 "container" 参数会发生变化。
+请注意，当你需要添加 class 时，`class` 参数保持不变，只有 `container` 参数会发生变化。
 
 # --instructions--
 

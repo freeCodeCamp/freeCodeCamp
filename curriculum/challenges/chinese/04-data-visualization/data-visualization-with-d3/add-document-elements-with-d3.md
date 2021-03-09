@@ -14,7 +14,7 @@ D3 有多种方法可以用来在文档中增加元素、修改元素。
 
 `const anchor = d3.select("a");`
 
-上面这个例子找到页面上的第一个锚点标签，将它作为一个 HTML 节点保存在变量 `anchor` 中。 你也可以用其他的方法选择页面上的元素。 例子中的 "d3" 是对 D3 对象的引用，可以通过它来访问 D3 的方法。
+上面这个例子找到页面上的第一个锚点标签，将它作为一个 HTML 节点保存在变量 `anchor` 中。 你也可以用其他的方法选择页面上的元素。 示例中的 `d3` 部分是对 D3 对象的引用，通过它访问 D3 方法。
 
 另外两个有用的方法是 `append()` 和 `text()` 。
 
@@ -34,7 +34,7 @@ d3.select("ul")
 
 # --instructions--
 
-使用 `select` 方法选择文档中的 `body` 标签。 然后用 `append` 方法为它添加一个 `h1` 标签，同时在 `h1` 中添加文本 "Learning D3"。
+使用 `select` 方法选择文档中的 `body` 标签。 然后给它 `append` 一个 `h1` 标签，并给 `h1` 元素添加文本 `Learning D3`。
 
 # --hints--
 
@@ -44,7 +44,7 @@ d3.select("ul")
 assert($('body').children('h1').length == 1);
 ```
 
-`h1` 元素应该包含文本 'Learning D3'。
+`h1` 元素应包含文本 `Learning D3`。
 
 ```js
 assert($('h1').text() == 'Learning D3');

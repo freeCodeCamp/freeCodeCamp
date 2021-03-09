@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c3
-title: Assignment with a Returned Value
+title: Asignación con un valor devuelto
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
@@ -9,27 +9,27 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-If you'll recall from our discussion of [Storing Values with the Assignment Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), everything to the right of the equal sign is resolved before the value is assigned. This means we can take the return value of a function and assign it to a variable.
+Si recuerdas de nuestra discusión sobre [almacenar valores con el operador de asignación](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), todo a la derecha del signo de igualdad se resuelve antes de asignar el valor. Esto significa que podemos tomar el valor devuelto de una función y asignarlo a una variable.
 
-Assume we have pre-defined a function `sum` which adds two numbers together, then:
+Supongamos que hemos predefinido una función `sum` que suma dos números juntos, entonces:
 
 `ourSum = sum(5, 12);`
 
-will call `sum` function, which returns a value of `17` and assigns it to `ourSum` variable.
+llamará a la función `sum`, la cual devuelve un valor de `17` y lo asigna a la variable `ourSum`.
 
 # --instructions--
 
-Call the `processArg` function with an argument of `7` and assign its return value to the variable `processed`.
+Llama a la función `processArg` con un argumento de `7` y asigna su valor devuelto a la variable `processed`.
 
 # --hints--
 
-`processed` should have a value of `2`
+`processed` debe tener un valor de `2`
 
 ```js
 assert(processed === 2);
 ```
 
-You should assign `processArg` to `processed`
+Debes asignar `processArg` a `processed`
 
 ```js
 assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
