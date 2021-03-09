@@ -90,7 +90,7 @@ function powerfulDigitCounts(n) {
   return true;
 }
 
-powerfulDigitCounts(n);
+powerfulDigitCounts(1);
 ```
 
 # --solutions--
