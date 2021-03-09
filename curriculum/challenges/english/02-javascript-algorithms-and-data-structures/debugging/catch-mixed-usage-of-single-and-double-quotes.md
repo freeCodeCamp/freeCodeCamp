@@ -22,7 +22,7 @@ const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.
 
 The first two are correct, but the third is incorrect.
 
-Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (<code>\\</code>) escape character:
+Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (`\`) escape character:
 
 ```js
 const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t it.';
