@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244de
-title: Adding a Default Option in Switch Statements
+title: Agrega una opción predeterminada en las declaraciones switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
@@ -9,9 +9,9 @@ dashedName: adding-a-default-option-in-switch-statements
 
 # --description--
 
-In a `switch` statement you may not be able to specify all possible values as `case` statements. Instead, you can add the `default` statement which will be executed if no matching `case` statements are found. Think of it like the final `else` statement in an `if/else` chain.
+En una declaración `switch` puede que no seas capaz de especificar todos los valores posibles como declaraciones de `case` (caso). En su lugar, se puede añadir la declaración `default`, la cual se ejecutará si no se encuentran declaraciones `case`. Piensa en ella como la última sentencia `else` en una cadena `if/else`.
 
-A `default` statement should be the last case.
+Una declaración `default` debe ser el último caso.
 
 ```js
 switch (num) {
@@ -30,57 +30,57 @@ switch (num) {
 
 # --instructions--
 
-Write a switch statement to set `answer` for the following conditions:  
-`"a"` - "apple"  
-`"b"` - "bird"  
-`"c"` - "cat"  
-`default` - "stuff"
+Escribe una declaración switch para establecer `answer` con las siguientes condiciones:  
+`a` - `apple`  
+`b` - `bird`  
+`c` - `cat`  
+`default` - `stuff`
 
 # --hints--
 
-`switchOfStuff("a")` should have a value of "apple"
+`switchOfStuff("a")` debe devolver la cadena `apple`
 
 ```js
 assert(switchOfStuff('a') === 'apple');
 ```
 
-`switchOfStuff("b")` should have a value of "bird"
+`switchOfStuff("b")` debe devolver la cadena `bird`
 
 ```js
 assert(switchOfStuff('b') === 'bird');
 ```
 
-`switchOfStuff("c")` should have a value of "cat"
+`switchOfStuff("c")` debe devolver la cadena `cat`
 
 ```js
 assert(switchOfStuff('c') === 'cat');
 ```
 
-`switchOfStuff("d")` should have a value of "stuff"
+`switchOfStuff("d")` debe devolver la cadena `stuff`
 
 ```js
 assert(switchOfStuff('d') === 'stuff');
 ```
 
-`switchOfStuff(4)` should have a value of "stuff"
+`switchOfStuff(4)` debe devolver la cadena `stuff`
 
 ```js
 assert(switchOfStuff(4) === 'stuff');
 ```
 
-You should not use any `if` or `else` statements
+No debes usar ninguna sentencia `if` o `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-You should use a `default` statement
+Debes utilizar una declaración `default`
 
 ```js
 assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 ```
 
-You should have at least 3 `break` statements
+Debes tener al menos 3 declaraciones de ruptura (`break`)
 
 ```js
 assert(code.match(/break/g).length > 2);

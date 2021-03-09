@@ -8,7 +8,7 @@ dashedName: create-a-javascript-promise
 
 # --description--
 
-Una promesa en JavaScript es exactamente lo que suena, la usas para hacer una promesa de hacer algo, normalmente de forma asíncrona. Cuando la tarea se complete, cumple su promesa o no la cumple. `Promise` es una función constructora, así que tu necesitas usar la palabra clave `new` para crear una. Toma una función como su argumento, con dos parámetros - `resolve` y `reject`. Estos son métodos utilizados para determinar el resultado de la promesa. La sintaxis se ve así:
+Una promesa en JavaScript es exactamente como suena, se utiliza para hacer una promesa de que harás algo, habitualmente de forma asíncrona. Cuando la tarea se completa, o cumples tu promesa o no la cumples. `Promise` es una función constructora, así que tu necesitas usar la palabra clave `new` para crear una. Recibe una función como su argumento, con dos parámetros: `resolve` y `reject`. Estos métodos se utilizan para determinar el resultado de la promesa. Su sintaxis se ve así:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -18,7 +18,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 # --instructions--
 
-Crea una nueva promesa llamada `makeServerRequest`. Pase en una función con `resolve` y `reject` parámetros al constructor.
+Crea una nueva promesa llamada `makeServerRequest`. Pásale una función con parámetros `resolve` y `reject` al constructor.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512be2
-title: Change Text with click Events
+title: 通过单击事件更改文本
 challengeType: 6
 forumTopicId: 301500
 dashedName: change-text-with-click-events
@@ -8,21 +8,21 @@ dashedName: change-text-with-click-events
 
 # --description--
 
-When the click event happens, you can use JavaScript to update an HTML element.
+当点击事件发生时，你可以使用 JavaScript 更新 HTML 元素。
 
-For example, when a user clicks the "Get Message" button, it changes the text of the element with the class `message` to say "Here is the message".
+例如，当用户点击 `Get Message` 按钮时，它将改变 class 为 `message` 的元素的文本为 `Here is the message`。
 
-This works by adding the following code within the click event:
+通过在点击事件内添加以下代码实现：
 
 `document.getElementsByClassName('message')[0].textContent="Here is the message";`
 
 # --instructions--
 
-Add code inside the `onclick` event handler to change the text inside the `message` element to say "Here is the message".
+在 `onclick` 事件处理器中添加代码，改变 `message` 元素内的文本为 `Here is the message`。
 
 # --hints--
 
-Your code should use the `document.getElementsByClassName` method to select the element with class `message` and set its `textContent` to the given string.
+应该使用 `document.getElementsByClassName` 方法来选择 class 为 `message` 的元素，然后将其 `textContent` 改为给定文字。
 
 ```js
 assert(

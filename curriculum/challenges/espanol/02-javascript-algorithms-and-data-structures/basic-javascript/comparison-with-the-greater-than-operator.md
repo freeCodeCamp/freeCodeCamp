@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d4
-title: Comparación con el operador Mayor que
+title: Comparación con el operador "mayor que"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp6GbH4'
 forumTopicId: 16786
@@ -16,55 +16,57 @@ Como el operador de igualdad, el operador mayor que convertirá los tipos de dat
 **Ejemplos**
 
 ```js
-5   >  3   // true
-7   > '3'  // true
-2   >  3   // false
-'1' >  9   // false
+5   >  3
+7   > '3'
+2   >  3
+'1' >  9
 ```
+
+En orden, estas expresiones se evaluarían como `true`, `true`, `false` y `false`.
 
 # --instructions--
 
-Agrega el operador mayor que a las líneas indicadas para que las declaraciones de devolución tengan sentido.
+Agrega el operador "mayor que" a las líneas indicadas para que las declaraciones de devolución tengan sentido.
 
 # --hints--
 
-`testGreaterThan(0)` debe devolver "10 or Under"
+`testGreaterThan(0)` debe devolver la cadena `10 or Under`
 
 ```js
 assert(testGreaterThan(0) === '10 or Under');
 ```
 
-`testGreaterThan(10)` debe devolver "10 or Under"
+`testGreaterThan(10)` debe devolver la cadena `10 or Under`
 
 ```js
 assert(testGreaterThan(10) === '10 or Under');
 ```
 
-`testGreaterThan(11)` debe devolver "Over 10"
+`testGreaterThan(11)` debe devolver la cadena `Over 10`
 
 ```js
 assert(testGreaterThan(11) === 'Over 10');
 ```
 
-`testGreaterThan(99)` debe devolver "Over 10"
+`testGreaterThan(99)` debe devolver la cadena `Over 10`
 
 ```js
 assert(testGreaterThan(99) === 'Over 10');
 ```
 
-`testGreaterThan(100)` debe devolver "Over 10"
+`testGreaterThan(100)` debe devolver la cadena `Over 10`
 
 ```js
 assert(testGreaterThan(100) === 'Over 10');
 ```
 
-`testGreaterThan(101)` debe devolver "Over 100"
+`testGreaterThan(101)` debe devolver la cadena `Over 100`
 
 ```js
 assert(testGreaterThan(101) === 'Over 100');
 ```
 
-`testGreaterThan(150)` debe devolver"Over 100"
+`testGreaterThan(150)` debe devolver la cadena `Over 100`
 
 ```js
 assert(testGreaterThan(150) === 'Over 100');

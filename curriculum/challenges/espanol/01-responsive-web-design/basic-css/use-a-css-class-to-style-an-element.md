@@ -21,13 +21,13 @@ A continuación te presentamos un ejemplo de cómo declarar una clase CSS:
 </style>
 ```
 
-Puedes ver que hemos creado una clase CSS llamada `blue-text` dentro de la etiqueta `<style>`. Puedes aplicar una clase a un elemento HTML de este modo: `<h2 class="blue-text">CatPhotoApp</h2>` Ten en cuenta que en tu elemento `style` CSS, los nombres de clase comienzan con un punto. En el atributo de clase de tus elementos HTML, el nombre de la clase no lleva punto delante.
+Puedes ver que hemos creado una clase CSS llamada `blue-text` dentro de la etiqueta `<style>`. Puedes aplicar una clase a un elemento HTML de este modo: `<h2 class="blue-text">CatPhotoApp</h2>`. Ten en cuenta que en tu elemento CSS `style`, los nombres de clase comienzan con un punto. En el atributo "class" de tus elementos HTML, el nombre de la clase no lleva punto delante.
 
 # --instructions--
 
 Dentro de tu elemento `style`, cambia el selector `h2` a `.red-text` y actualiza el valor del color de `blue` a `red`.
 
-Asigna al elemento `h2` el atributo `class` con el valor `'red-text'`.
+Asigna a tu elemento `h2` el atributo `class` con un valor de `red-text`.
 
 # --hints--
 

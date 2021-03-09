@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244dc
-title: Chaining If Else Statements
+title: Encadena sentencias if else
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
@@ -9,7 +9,7 @@ dashedName: chaining-if-else-statements
 
 # --description--
 
-`if/else` statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained `if` / `else if` statements:
+Las sentencias `if/else` pueden ser encadenadas para crear una lógica compleja. Aquí hay <dfn>pseudocódigo</dfn> de múltiples declaraciones `if` / `else if` encadenadas:
 
 ```js
 if (condition1) {
@@ -26,89 +26,89 @@ if (condition1) {
 
 # --instructions--
 
-Write chained `if`/`else if` statements to fulfill the following conditions:
+Escribe sentencias `if` / `else if` encadenadas para cumplir con las siguientes condiciones:
 
-`num < 5` - return "Tiny"  
-`num < 10` - return "Small"  
-`num < 15` - return "Medium"  
-`num < 20` - return "Large"  
-`num >= 20` - return "Huge"
+`num < 5` - devuelve `Tiny`  
+`num < 10` - devuelve `Small`  
+`num < 15` - devuelve `Medium`  
+`num < 20` - devuelve `Large`  
+`num >= 20` - devuelve `Huge`
 
 # --hints--
 
-You should have at least four `else` statements
+Debes tener al menos cuatro sentencias `else`
 
 ```js
 assert(code.match(/else/g).length > 3);
 ```
 
-You should have at least four `if` statements
+Debes tener al menos cuatro sentencias `if`
 
 ```js
 assert(code.match(/if/g).length > 3);
 ```
 
-You should have at least one `return` statement
+Debes tener al menos una sentencia `return`
 
 ```js
 assert(code.match(/return/g).length >= 1);
 ```
 
-`testSize(0)` should return "Tiny"
+`testSize(0)` debe devolver la cadena `Tiny`
 
 ```js
 assert(testSize(0) === 'Tiny');
 ```
 
-`testSize(4)` should return "Tiny"
+`testSize(4)` debe devolver la cadena `Tiny`
 
 ```js
 assert(testSize(4) === 'Tiny');
 ```
 
-`testSize(5)` should return "Small"
+`testSize(5)`debe devolver la cadena `Small`
 
 ```js
 assert(testSize(5) === 'Small');
 ```
 
-`testSize(8)` should return "Small"
+`testSize(8)` debe devolver la cadena `Small`
 
 ```js
 assert(testSize(8) === 'Small');
 ```
 
-`testSize(10)` should return "Medium"
+`testSize(10)` debe devolver la cadena `Medium`
 
 ```js
 assert(testSize(10) === 'Medium');
 ```
 
-`testSize(14)` should return "Medium"
+`testSize(14)` debe devolver la cadena `Medium`
 
 ```js
 assert(testSize(14) === 'Medium');
 ```
 
-`testSize(15)` should return "Large"
+`testSize(15)` debe devolver la cadena `Large`
 
 ```js
 assert(testSize(15) === 'Large');
 ```
 
-`testSize(17)` should return "Large"
+`testSize(17)` debe devolver la cadena `Large`
 
 ```js
 assert(testSize(17) === 'Large');
 ```
 
-`testSize(20)` should return "Huge"
+`testSize(20)` debe devolver la cadena `Huge`
 
 ```js
 assert(testSize(20) === 'Huge');
 ```
 
-`testSize(25)` should return "Huge"
+`testSize(25)` debe devolver la cadena `Huge`
 
 ```js
 assert(testSize(25) === 'Huge');

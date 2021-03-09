@@ -8,9 +8,9 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-Cuando tú declaras una variable con la palabra `var`, esta es declarada globalmente o localmente sí es declarada dentro de una función.
+Cuando declaras una variable con la palabra `var`, esta es declarada globalmente o localmente sí es declarada dentro de una función.
 
-La palabra `let` se comporta de forma similar, pero con algunas funciones adicionales. Cuanto tú declaras una variable con la palabra `let` dentro de un bloque, una declaración o expresión. Su alcance está limitado a ese bloque, declaración o expresión.
+La palabra `let` se comporta de forma similar, pero con algunas funciones adicionales. Cuanto declaras una variable con la palabra `let` dentro de un bloque, una declaración o expresión. Su alcance está limitado a ese bloque, declaración o expresión.
 
 Por ejemplo:
 

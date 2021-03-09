@@ -1,6 +1,6 @@
 ---
 id: 587d7faf367417b2b2512be9
-title: Post Data with the JavaScript XMLHttpRequest Method
+title: 使用 XMLHttpRequest 方法发送数据
 challengeType: 6
 forumTopicId: 301504
 dashedName: post-data-with-the-javascript-xmlhttprequest-method
@@ -8,9 +8,9 @@ dashedName: post-data-with-the-javascript-xmlhttprequest-method
 
 # --description--
 
-In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.
+在前面的示例中，你通过外部资源获取数据。 此外，你也可以将数据发送到外部资源，只要该资源支持 AJAX 请求并且你知道 URL。
 
-JavaScript's `XMLHttpRequest` method is also used to post data to a server. Here's an example:
+JavaScript 的`XMLHttpRequest`方法也用于将数据发布到服务器。 这是一个示例：
 
 ```js
 const xhr = new XMLHttpRequest();
@@ -26,27 +26,27 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-You've seen several of these methods before. Here the `open` method initializes the request as a "POST" to the given URL of the external resource, and uses the `true` Boolean to make it asynchronous. The `setRequestHeader` method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the `open` method, but before the `send` method. The two parameters are the name of the header and the value to set as the body of that header. Next, the `onreadystatechange` event listener handles a change in the state of the request. A `readyState` of 4 means the operation is complete, and a `status` of 201 means it was a successful request. The document's HTML can be updated. Finally, the `send` method sends the request with the `body` value, which the `userName` key was given by the user in the `input` field.
+你之前已经见过这些方法。 `open` 方法将对外部资源的给定 URL 的请求初始化为 `POST`，并使用 `true` 布尔值使其变成异步的。 `setRequestHeader` 方法设置了 HTTP 请求标头的值，该标头包含有关发送人和请求的信息。 它必须在 `open` 方法之后、`send` 方法之前调用。 它的两个参数表示标头的内容类型和标头数据将被设置成什么值。 接下来，`onreadystatechange` 事件监听器监听请求状态的更改。 `readyState` 为 `4`，表示操作已完成。`status` 为 `201`，表示请求成功。 文档的 HTML 可以更新。 最后，`send` 方法发送带有 `body` 值的请求，其中 `userName` 的值由用户在 `input` 字段中输入。
 
 # --instructions--
 
-Update the code so it makes a "POST" request to the API endpoint. Then type your name in the input field and click "Send Message". Your AJAX function should replace "Reply from Server will be here." with data from the server. Format the response to display your name appended with " loves cats".
+更新代码，创建并向 API 发送 `POST` 请求。 然后在输入框中输入你的姓名，并点击 `Send Message`。 你的 AJAX 函数会用服务器返回的数据替换 `Reply from Server will be here.`。 修改返回的请求结果，在你的名字后面添加 `loves cats`。
 
 # --hints--
 
-Your code should create a new `XMLHttpRequest`.
+应该创建一个新的 `XMLHttpRequest`。
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Your code should use the `open` method to initialize a "POST" request to the server.
+应该使用 `open` 方法初始化一个发送给服务器的 `POST` 请求。
 
 ```js
 assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
 ```
 
-Your code should use the `setRequestHeader` method.
+应该使用 `setRequestHeader` 方法。
 
 ```js
 assert(
@@ -56,13 +56,13 @@ assert(
 );
 ```
 
-Your code should have an `onreadystatechange` event handler set to a function.
+应该有一个 `onreadystatechange` 的事件监听器。
 
 ```js
 assert(code.match(/\.onreadystatechange\s*?=/g));
 ```
 
-Your code should get the element with class `message` and change its `textContent` to "`userName` loves cats"
+应该获取 class 为 `message` 的元素，并将它的 `textContent` 更改为 `userName loves cats`。
 
 ```js
 assert(
@@ -72,7 +72,7 @@ assert(
 );
 ```
 
-Your code should use the `send` method.
+应该使用 `send` 方法。
 
 ```js
 assert(code.match(/\.send\(\s*?body\s*?\)/g));

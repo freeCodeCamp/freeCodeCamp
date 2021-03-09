@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdb
-title: Set a Domain and a Range on a Scale
+title: 按比例设置域和范围
 challengeType: 6
 forumTopicId: 301491
 dashedName: set-a-domain-and-a-range-on-a-scale
@@ -8,64 +8,61 @@ dashedName: set-a-domain-and-a-range-on-a-scale
 
 # --description--
 
-By default, scales use the identity relationship. This means the input value maps to the output value. However, scales can be much more flexible and interesting.
+默认情况下，比例尺使用一对一关系（identity relationship）， 即输入值直接映射为输出值。 但是比例尺可以更灵活更有趣。
 
-Say a dataset has values ranging from 50 to 480. This is the input information for a scale, also known as the <dfn>domain</dfn>.
+假设有一个数据集范围为 50 到 480， 这是缩放的输入信息，也被称为<dfn>域</dfn>。
 
-You want to map those points along the `x` axis on the SVG canvas, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
+你想沿着 `x` 轴将这些点映射到 SVG 画布上，位置介于 10 个单位到 500 个单位之间。 这是输出信息，也被称为<dfn>范围</dfn>。
 
-The `domain()` and `range()` methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:
+`domain()` 和 `range()` 方法设置比例尺的值， 它们都接受一个至少有两个元素的数组作为参数。 下面是一个例子：
 
 ```js
-// Set a domain
-// The domain covers the set of input values
 scale.domain([50, 480]);
-// Set a range
-// The range covers the set of output values
 scale.range([10, 500]);
-scale(50) // Returns 10
-scale(480) // Returns 500
-scale(325) // Returns 323.37
-scale(750) // Returns 807.67
+scale(50)
+scale(480)
+scale(325)
+scale(750)
 d3.scaleLinear()
 ```
 
-Notice that the scale uses the linear relationship between the domain and range values to figure out what the output should be for a given number. The minimum value in the domain (50) maps to the minimum value (10) in the range.
+按顺序，将在控制台中显示以下值：`10`、`500`、`323.37` 和 `807.67`。
+
+注意，比例尺使用了域和范围之间的线性关系来找出给定数字的输出值。 域中的最小值（50）映射为范围中的最小值（10）。
 
 # --instructions--
 
-Create a scale and set its domain to `[250, 500]` and range to `[10, 150]`.
+创建一个比例尺，将它的域设置为 `[250, 500]`，范围设置为 `[10, 150]`。
 
-**Note**  
-You can chain the `domain()` and `range()` methods onto the `scale` variable.
+**注意：**你可以将 `domain()` 和 `range()` 方法串联在 `scale` 变量后。
 
 # --hints--
 
-Your code should use the `domain()` method.
+应使用 `domain()` 方法。
 
 ```js
 assert(code.match(/\.domain/g));
 ```
 
-The `domain()` of the scale should be set to `[250, 500]`.
+`scale` 的 `domain()` 应为 `[250, 500]`。
 
 ```js
 assert(JSON.stringify(scale.domain()) == JSON.stringify([250, 500]));
 ```
 
-Your code should use the `range()` method.
+应使用 `range()` 方法。
 
 ```js
 assert(code.match(/\.range/g));
 ```
 
-The `range()` of the scale should be set to `[10, 150]`.
+`scale` 的 `range()` 应为 `[10, 150]`。
 
 ```js
 assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]));
 ```
 
-The text in the `h2` should be -102.
+`h2` 的文本应为 `-102`。
 
 ```js
 assert($('h2').text() == '-102');

@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bde
-title: Use a Pre-Defined Scale to Place Elements
+title: 使用预定义的比例放置元素
 challengeType: 6
 forumTopicId: 301494
 dashedName: use-a-pre-defined-scale-to-place-elements
@@ -8,32 +8,32 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-With the scales set up, it's time to map the scatter plot again. The scales are like processing functions that turn the x and y raw data into values that fit and render correctly on the SVG canvas. They keep the data within the screen's plotting area.
+当比例尺建立好后，是时候重新映射散点图了。 比例尺就像操作函数一样，将 `x` 和 `y` 的原数据值变为适合并可在 SVG 画布上正确渲染的值。 它们使数据在屏幕的布局区域内部。
 
-You set the coordinate attribute values for an SVG shape with the scaling function. This includes `x` and `y` attributes for `rect` or `text` elements, or `cx` and `cy` for `circles`. Here's an example:
+用比例尺函数为 SVG 图形设置坐标属性值。 这包括 `rect` 或者 `text` 元素的 `x` 和 `y` 属性，或者 `circles` 的 `cx` 和 `cy`。 以下是一个例子：
 
 ```js
 shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the `text()` method for a tooltip or label.
+比例尺设置图形坐标属性来将数据点放置在 SVG 画布上。 当你显示实际数据值时，不用使用比例尺，例如，在提示框或标签中的 `text()` 方法。
 
 # --instructions--
 
-Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG canvas. For the `circles`, apply the scales to set the `cx` and `cy` attributes. Give them a radius of 5 units, too.
+使用 `xScale` 和 `yScale` 将 `circle` 和 `text` 图形放置在 SVG 画布上。 对于 `circles`，使用比例尺设置 `cx` 和 `cy` 属性， 半径为 `5` 个单位。
 
-For the `text` elements, apply the scales to set the `x` and `y` attributes. The labels should be offset to the right of the dots. To do this, add 10 units to the x data value before passing it to the `xScale`.
+对于 `text` 元素，使用比例尺设置 `x` 和 `y` 属性。 标签应该标注在点的右边， 为此，在将 `x` 数据值传递给 `xScale` 之前，要给它加上 `10` 个单位。
 
 # --hints--
 
-Your code should have 10 `circle` elements.
+应该有 10 个 `circle` 元素。
 
 ```js
 assert($('circle').length == 10);
 ```
 
-The first `circle` element should have a `cx` value of approximately 91 and a `cy` value of approximately 368 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第一个 `circle` 元素的 `cx` 值应该大约为 `91`，`cy` 值应该大约为 `368`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The second `circle` element should have a `cx` value of approximately 159 and a `cy` value of approximately 181 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第二个 `circle` 元素的 `cx` 值应该大约为 `159`，`cy` 值应该大约为 `181`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The third `circle` element should have a `cx` value of approximately 340 and a `cy` value of approximately 329 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第三个 `circle` 元素的 `cx` 值应该大约为 `340`，`cy` 值应该大约为 `329`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-The fourth `circle` element should have a `cx` value of approximately 131 and a `cy` value of approximately 60 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第四个 `circle` 元素的 `cx` 值应该大约为 `131`，`cy` 值应该大约为 `60`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-The fifth `circle` element should have a `cx` value of approximately 440 and a `cy` value of approximately 237 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第五个 `circle` 元素的 `cx` 值应该大约为 `440`，`cy` 值应该大约为 `237`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-The sixth `circle` element should have a `cx` value of approximately 271 and a `cy` value of approximately 306 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第六个 `circle` 元素的 `cx` 值应该大约为 `271`，`cy` 值应该大约为 `306`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-The seventh `circle` element should have a `cx` value of approximately 361 and a `cy` value of approximately 351 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第七个 `circle` 元素的 `cx` 值应该大约为 `361`，`cy` 值应该大约为 `351`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -103,7 +103,7 @@ assert(
 );
 ```
 
-The eighth `circle` element should have a `cx` value of approximately 261 and a `cy` value of approximately 132 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第八个 `circle` 元素的 `cx` 值应该大约为 `261`，`cy` 值应该大约为 `132`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-The ninth `circle` element should have a `cx` value of approximately 131 and a `cy` value of approximately 144 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第九个 `circle` 元素的 `cx` 值应该大约为 `131`，`cy` 值应该大约为 `144`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -123,7 +123,7 @@ assert(
 );
 ```
 
-The tenth `circle` element should have a `cx` value of approximately 79 and a `cy` value of approximately 326 after applying the scales. It should also have an `r` value of 5.
+在使用比例尺后，第十个 `circle` 元素的 `cx` 值应该大约为 `79`，`cy` 值应该大约为 `326`。 它的 `r` 值应为 `5`。
 
 ```js
 assert(
@@ -133,13 +133,13 @@ assert(
 );
 ```
 
-Your code should have 10 `text` elements.
+应该有 10 个 `text` 元素。
 
 ```js
 assert($('text').length == 10);
 ```
 
-The first label should have an `x` value of approximately 100 and a `y` value of approximately 368 after applying the scales.
+在使用比例尺后，第一个标签的 `x` 值应该大约为 `100`，`y` 值应该大约为 `368`。
 
 ```js
 assert(
@@ -148,7 +148,7 @@ assert(
 );
 ```
 
-The second label should have an `x` value of approximately 168 and a `y` value of approximately 181 after applying the scales.
+在使用比例尺后，第二个标签的 `x` 值应该大约为 `168`，`y` 值应该大约为 `181`。
 
 ```js
 assert(
@@ -157,7 +157,7 @@ assert(
 );
 ```
 
-The third label should have an `x` value of approximately 350 and a `y` value of approximately 329 after applying the scales.
+在使用比例尺后，第三个标签的 `x` 值应该大约为 `350`，`y` 值应该大约为 `329`。
 
 ```js
 assert(
@@ -166,7 +166,7 @@ assert(
 );
 ```
 
-The fourth label should have an `x` value of approximately 141 and a `y` value of approximately 60 after applying the scales.
+在使用比例尺后，第四个标签的 `x` 值应该大约为 `141`，`y` 值应该大约为 `60`。
 
 ```js
 assert(
@@ -175,7 +175,7 @@ assert(
 );
 ```
 
-The fifth label should have an `x` value of approximately 449 and a `y` value of approximately 237 after applying the scales.
+在使用比例尺后，第五个标签的 `x` 值应该大约为 `449`，`y` 值应该大约为 `237`。
 
 ```js
 assert(
@@ -184,7 +184,7 @@ assert(
 );
 ```
 
-The sixth label should have an `x` value of approximately 280 and a `y` value of approximately 306 after applying the scales.
+在使用比例尺后，第六个标签的 `x` 值应该大约为 `280`，`y` 值应该大约为 `306`。
 
 ```js
 assert(
@@ -193,7 +193,7 @@ assert(
 );
 ```
 
-The seventh label should have an `x` value of approximately 370 and a `y` value of approximately 351 after applying the scales.
+在使用比例尺后，第七个标签的 `x` 值应该大约为 `370`，`y` 值应该大约为 `351`。
 
 ```js
 assert(
@@ -202,7 +202,7 @@ assert(
 );
 ```
 
-The eighth label should have an `x` value of approximately 270 and a `y` value of approximately 132 after applying the scales.
+在使用比例尺后，第八个标签的 `x` 值应该大约为 `270`，`y` 值应该大约为 `132`。
 
 ```js
 assert(
@@ -211,7 +211,7 @@ assert(
 );
 ```
 
-The ninth label should have an `x` value of approximately 140 and a `y` value of approximately 144 after applying the scales.
+在使用比例尺后，第九个标签的 `x` 值应该大约为 `140`，`y` 值应该大约为 `144`。
 
 ```js
 assert(
@@ -220,7 +220,7 @@ assert(
 );
 ```
 
-The tenth label should have an `x` value of approximately 88 and a `y` value of approximately 326 after applying the scales.
+在使用比例尺后，第十个标签的 `x` 值应该大约为 `88`，`y` 值应该大约为 `326`。
 
 ```js
 assert(

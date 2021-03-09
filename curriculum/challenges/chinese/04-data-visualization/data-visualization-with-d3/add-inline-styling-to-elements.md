@@ -20,7 +20,7 @@ D3允许你使用 `style()` 方法在动态元素上添加内联 CSS 样式。
 
 # --hints--
 
-`h2` 元素应该有 `font-family` 属性，且值为 verdana。
+`h2` 元素的 `font-family` 应为 `verdana`。
 
 ```js
 assert($('h2').css('font-family') == 'verdana');
