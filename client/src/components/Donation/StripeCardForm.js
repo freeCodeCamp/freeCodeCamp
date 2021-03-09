@@ -1,88 +1,159 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import {
+  CardNumberElement,
+  CardExpiryElement,
+  useStripe,
+  useElements
+} from '@stripe/react-stripe-js';
 import PropTypes from 'prop-types';
-import { CardNumberElement, CardExpiryElement } from 'react-stripe-elements';
+import isEmail from 'validator/lib/isEmail';
+
 import {
   Row,
   Col,
   ControlLabel,
   FormGroup,
-  Image
+  Image,
+  Button,
+  Form,
+  FormControl,
+  Alert
 } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
+const initialPaymentInfoValidityState = {
+  cardNumber: {
+    complete: false,
+    error: null
+  },
+  cardExpiry: {
+    complete: false,
+    error: null
+  }
+};
+
 const propTypes = {
-  getValidationState: PropTypes.func.isRequired,
+  getDonationButtonLabel: PropTypes.func.isRequired,
+  onDonationStateChange: PropTypes.func,
+  postStripeDonation: PropTypes.func,
   t: PropTypes.func.isRequired,
-  theme: PropTypes.string
+  theme: PropTypes.string,
+  userEmail: PropTypes.string
 };
 
-const style = {
-  base: {
-    fontSize: '18px'
-  }
-};
+const StripeCardForm = ({
+  getDonationButtonLabel,
+  theme,
+  t,
+  onDonationStateChange,
+  postStripeDonation,
+  userEmail
+}) => {
+  const [isSubmissionValid, setSubmitionValidity] = useState(true);
+  const [email, setEmail] = useState(userEmail);
+  const [isEmailValid, setEmailValidity] = useState(true);
+  const [paymentInfoValidation, validitySetter] = useState(
+    initialPaymentInfoValidityState
+  );
 
-class StripeCardForm extends Component {
-  constructor(...props) {
-    super(...props);
+  const stripe = useStripe();
+  const elements = useElements();
 
-    this.state = {
-      validation: {
-        cardNumber: {
-          complete: false,
-          error: null
-        },
-        cardExpiry: {
-          complete: false,
-          error: null
-        }
-      }
-    };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.isValidInput = this.isValidInput.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.getValidationState(this.isValidInput());
-  }
-
-  handleInputChange(event) {
+  function handleInputChange(event) {
     const { elementType, error, complete } = event;
-    return this.setState(
-      state => ({
-        ...state,
-        validation: {
-          ...state.validation,
-          [elementType]: {
-            error,
-            complete
-          }
-        }
-      }),
-      () => this.props.getValidationState(this.isValidInput())
-    );
+    validitySetter({
+      ...paymentInfoValidation,
+      [elementType]: {
+        error,
+        complete
+      }
+    });
   }
 
-  isValidInput() {
-    const { validation } = this.state;
-    return Object.keys(validation)
-      .map(key => validation[key])
+  function isPaymentInfoValid() {
+    return Object.keys(paymentInfoValidation)
+      .map(key => paymentInfoValidation[key])
       .every(({ complete, error }) => complete && !error);
   }
 
-  render() {
-    const { t } = this.props;
-    // set color based on theme
-    style.base.color = this.props.theme === 'night' ? '#fff' : '#0a0a23';
-    return (
+  const options = {
+    style: {
+      base: {
+        fontSize: '18px',
+        color: `${theme === 'night' ? '#fff' : '#0a0a23'}`
+      }
+    }
+  };
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+
+    if ((!isEmailValid, !isPaymentInfoValid()))
+      return setSubmitionValidity(false);
+    else setSubmitionValidity(true);
+
+    if (!isEmail(email)) {
+      return onDonationStateChange({
+        error: t('donate.need-email')
+      });
+    }
+
+    const { error, token } = await stripe.createToken(
+      elements.getElement(CardNumberElement),
+      { email }
+    );
+
+    if (error) {
+      return onDonationStateChange({
+        error: t('donate.went-wrong')
+      });
+    }
+    return postStripeDonation(token);
+  };
+
+  const handleEmailChange = e => {
+    const newValue = e.target.value;
+    setEmail(newValue);
+    setEmailValidity(true);
+  };
+
+  const handleEmailBlur = () => {
+    const newValidation = isEmail(email);
+    setEmailValidity(newValidation);
+  };
+
+  const renderErrorMessage = () => {
+    let message = '';
+    if (!isEmailValid && !isPaymentInfoValid())
+      message = <p>{t('donate.valid-info')}</p>;
+    else if (!isEmailValid) message = <p>{t('donate.valid-email')}</p>;
+    else message = <p>{t('donate.valid-card')}</p>;
+    return <Alert bsStyle='danger'>{message}</Alert>;
+  };
+
+  return (
+    <Form className='donation-form' onSubmit={handleSubmit}>
+      <div>{!isSubmissionValid ? renderErrorMessage() : ''}</div>
+      <FormGroup className='donation-email-container'>
+        <ControlLabel>{t('donate.email-receipt')}</ControlLabel>
+        <FormControl
+          className={!isEmailValid && email ? 'email--invalid' : ''}
+          key='3'
+          onBlur={handleEmailBlur}
+          onChange={handleEmailChange}
+          placeholder='me@example.com'
+          required={true}
+          type='text'
+          value={email || ''}
+        />
+      </FormGroup>
       <div className='donation-elements'>
         <FormGroup>
           <ControlLabel>{t('donate.card-number')}</ControlLabel>
           <CardNumberElement
             className='form-control donate-input-element'
-            onChange={this.handleInputChange}
-            style={style}
+            onChange={handleInputChange}
+            options={options}
           />
         </FormGroup>
         <FormGroup>
@@ -91,8 +162,8 @@ class StripeCardForm extends Component {
             <Col md={5} xs={12}>
               <CardExpiryElement
                 className='form-control donate-input-element'
-                onChange={this.handleInputChange}
-                style={style}
+                onChange={handleInputChange}
+                options={options}
               />
             </Col>
             <Col className='form-payments-wrapper' md={7} xs={12}>
@@ -108,9 +179,18 @@ class StripeCardForm extends Component {
           </Row>
         </FormGroup>
       </div>
-    );
-  }
-}
+      <Button
+        block={true}
+        bsStyle='primary'
+        disabled={!stripe}
+        id='confirm-donation-btn'
+        type='submit'
+      >
+        {getDonationButtonLabel()}
+      </Button>
+    </Form>
+  );
+};
 
 StripeCardForm.displayName = 'StripeCardForm';
 StripeCardForm.propTypes = propTypes;

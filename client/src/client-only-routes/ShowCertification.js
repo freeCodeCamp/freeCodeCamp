@@ -276,7 +276,7 @@ const ShowCertification = props => {
         <Col md={8} mdOffset={2} xs={12}>
           <DonateForm
             handleProcessing={handleProcessing}
-            defaultTheme='light'
+            defaultTheme='default'
             isMinimalForm={true}
           />
         </Col>
