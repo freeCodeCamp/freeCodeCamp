@@ -132,7 +132,7 @@ jobs:
           branch: 'i18n-sync-docs'
           owner-repo: 'freeCodeCamp/freeCodeCamp'
           base: 'main'
-          title: 'chore(i18n,docs): processed translations',
+          title: 'chore(i18n,docs): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
           labels: 'crowdin-sync, scope: i18n, scope: docs'
           reviewers: 'RandellDawson, nhcarrigan'

@@ -99,7 +99,7 @@ jobs:
           branch: 'i18n-sync-learn'
           owner-repo: 'freeCodeCamp/freeCodeCamp'
           base: 'main'
-          title: 'chore(i18n,learn): processed translations',
+          title: 'chore(i18n,learn): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
           labels: 'crowdin-sync, scope: i18n, scope: learn'
           reviewers: 'RandellDawson, nhcarrigan'
