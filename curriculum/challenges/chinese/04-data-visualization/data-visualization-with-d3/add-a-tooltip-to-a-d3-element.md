@@ -24,55 +24,55 @@ dashedName: add-a-tooltip-to-a-d3-element
 assert($('title').length == 9);
 ```
 
-第一个 `title` 元素的提示框文本应为 12。
+第一个 `title` 元素的提示框文本应为 `12`。
 
 ```js
 assert($('title').eq(0).text() == '12');
 ```
 
-第二个 `title` 元素的提示框文本应为 31。
+第二个 `title` 元素的提示框文本应为 `31`。
 
 ```js
 assert($('title').eq(1).text() == '31');
 ```
 
-第三个 `title` 元素的提示框文本应为 22。
+第三个 `title` 元素的提示框文本应为 `22`。
 
 ```js
 assert($('title').eq(2).text() == '22');
 ```
 
-第四个 `title` 元素的提示框文本应为 17。
+第四个 `title` 元素的提示框文本应为 `17`。
 
 ```js
 assert($('title').eq(3).text() == '17');
 ```
 
-第五个 `title` 元素的提示框文本应为 25。
+第五个 `title` 元素的提示框文本应为 `25`。
 
 ```js
 assert($('title').eq(4).text() == '25');
 ```
 
-第六个 `title` 元素的提示框文本应为 18。
+第六个 `title` 元素的提示框文本应为 `18`。
 
 ```js
 assert($('title').eq(5).text() == '18');
 ```
 
-第七个 `title` 元素的提示框文本应为 29。
+第七个 `title` 元素的提示框文本应为 `29`。
 
 ```js
 assert($('title').eq(6).text() == '29');
 ```
 
-第八个 `title` 元素的提示框文本应为 14。
+第八个 `title` 元素的提示框文本应为 `14`。
 
 ```js
 assert($('title').eq(7).text() == '14');
 ```
 
-第九个 `title` 元素的提示框文本应为 9。
+第九个 `title` 元素的提示框文本应为 `9`。
 
 ```js
 assert($('title').eq(8).text() == '9');

@@ -17,8 +17,8 @@ Here's an example:
 
 ```html
 <audio id="meowClip" controls>
-  <source src="audio/meow.mp3" type="audio/mpeg" />
-  <source src="audio/meow.ogg" type="audio/ogg" />
+  <source src="audio/meow.mp3" type="audio/mpeg">
+  <source src="audio/meow.ogg" type="audio/ogg">
 </audio>
 ```
 

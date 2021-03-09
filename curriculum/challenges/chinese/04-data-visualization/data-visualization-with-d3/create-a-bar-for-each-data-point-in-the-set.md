@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcd
-title: Create a Bar for Each Data Point in the Set
+title: 为集合中的每个数据点创建一个数据条
 challengeType: 6
 forumTopicId: 301482
 dashedName: create-a-bar-for-each-data-point-in-the-set
@@ -8,9 +8,9 @@ dashedName: create-a-bar-for-each-data-point-in-the-set
 
 # --description--
 
-The last challenge added only one rectangle to the `svg` element to represent a bar. Here, you'll combine what you've learned so far about `data()`, `enter()`, and SVG shapes to create and append a rectangle for each data point in `dataset`.
+上个挑战在 `svg` 中只添加了一个矩形来表示数据条。 接下来你将结合到目前为止所学的关于 `data()`、`enter()` 和 SVG 图形的知识，为 `dataset` 中的每一个数据点创建并且添加一个矩形。
 
-A previous challenge showed the format for how to create and append a `div` for each item in `dataset`:
+之前的挑战展示了如何为 `dataset` 中的每个对象创建并添加一个 `div`：
 
 ```js
 d3.select("body").selectAll("div")
@@ -19,33 +19,33 @@ d3.select("body").selectAll("div")
   .append("div")
 ```
 
-There are a few differences working with `rect` elements instead of `divs`. The `rects` must be appended to an `svg` element, not directly to the `body`. Also, you need to tell D3 where to place each `rect` within the `svg` area. The bar placement will be covered in the next challenge.
+操作 `rect` 元素和 `divs` 有一些不同。 `rects` 必须添加在 `svg` 元素内，而不能直接添加在 `body` 内。 同时，你需要告诉 D3 将 `rect` 放在 `svg` 区域的哪个位置。 条形的放置会在下一个挑战中讲到。
 
 # --instructions--
 
-Use the `data()`, `enter()`, and `append()` methods to create and append a `rect` for each item in `dataset`. The bars should display all on top of each other; this will be fixed in the next challenge.
+用 `data()`、`enter()`、`append()` 方法为 `dataset` 中的每一个对象创建并添加一个 `rect` 。 每个数据条都将直接显示在上一个数据条的上面，这一点将在下一个挑战中实现。
 
 # --hints--
 
-Your document should have 9 `rect` elements.
+应该包含 9 个 `rect` 元素。
 
 ```js
 assert($('rect').length == 9);
 ```
 
-Your code should use the `data()` method.
+应该使用 `data()` 方法。
 
 ```js
 assert(code.match(/\.data/g));
 ```
 
-Your code should use the `enter()` method.
+应该使用 `enter()` 方法。
 
 ```js
 assert(code.match(/\.enter/g));
 ```
 
-Your code should use the `append()` method.
+应该使用 `append()` 方法。
 
 ```js
 assert(code.match(/\.append/g));

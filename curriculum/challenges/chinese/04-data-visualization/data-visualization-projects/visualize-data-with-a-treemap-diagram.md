@@ -22,9 +22,9 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 **需求 #4：** 这些矩形块元素至少应该有 2 种不同的填充颜色。
 
-**需求 #5：** 每一块矩形元素应该具有 `data-name`、`data-category`、以及`data-value` 这些属性，包含了它们相应的名称，分类，以及数值。
+**需求 #5：** 每一个矩形元素应该有 `data-name`、`data-category`、`data-value` 属性，具有相应的 `name`、`category`、`value` 属性值。
 
-**需求 #6：** 每个矩形块的面积和它的 data-value 属性值相对应：data-value 值越大的矩形块面积越大。
+**需求 #6：** 每个矩形块的面积和它的 `data-value` 属性值相对应：`data-value` 值越大的矩形块面积越大。
 
 **需求 #7：** 矩阵树图包含一个具有 `id="legend"` 属性的图例。
 
@@ -44,7 +44,7 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
+当你完成了本项目，并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --solutions--
 

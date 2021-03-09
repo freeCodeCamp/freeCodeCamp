@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcc
-title: Display Shapes with SVG
+title: 用 SVG 显示形状
 challengeType: 6
 forumTopicId: 301485
 dashedName: display-shapes-with-svg
@@ -8,47 +8,47 @@ dashedName: display-shapes-with-svg
 
 # --description--
 
-The last challenge created an `svg` element with a given width and height, which was visible because it had a `background-color` applied to it in the `style` tag. The code made space for the given width and height.
+上个挑战用给定的宽和高创建了一个 `svg` 元素，因为在它的 `style` 标签中有 `background-color`，所以它是可见的。 这一段代码为给定的宽和高腾出空间。
 
-The next step is to create a shape to put in the `svg` area. There are a number of supported shapes in SVG, such as rectangles and circles. They are used to display data. For example, a rectangle (`<rect>`) SVG shape could create a bar in a bar chart.
+下一步是在 `svg` 区域中创建图形。 SVG 支持多种图形，比如矩形和圆形， 并用它们来显示数据。 例如，在条形图中一个矩形（`<rect>`）SVG 图形可以创建一个组。
 
-When you place a shape into the `svg` area, you can specify where it goes with `x` and `y` coordinates. The origin point of (0, 0) is in the upper-left corner. Positive values for `x` push the shape to the right, and positive values for `y` push the shape down from the origin point.
+当把图形放入 `svg` 区域中时，你可以用 `x` 和 `y` 坐标来指定它的位置。 起始点 (0,0) 是在左上角。 `x` 正值将图形右移，`y` 正值将图形从原点下移
 
-To place a shape in the middle of the 500 (width) x 100 (height) `svg` from last challenge, the `x` coordinate would be 250 and the `y` coordinate would be 50.
+若要把一个图形放在上个挑战的 500（宽）x 100（高）的 `svg` 中心，可将 `x` 坐标设置为 250，`y` 坐标设置为 50。
 
-An SVG `rect` has four attributes. There are the `x` and `y` coordinates for where it is placed in the `svg` area. It also has a `height` and `width` to specify the size.
+SVG 的 `rect` 有四个属性。 `x` 和 `y` 坐标指定图形放在 `svg` 区域的位置， `height` 和 `width` 指定图形大小。
 
 # --instructions--
 
-Add a `rect` shape to the `svg` using `append()`, and give it a `width` attribute of 25 and `height` attribute of 100. Also, give the `rect` `x` and `y` attributes each set to 0.
+用 `append()` 给 `svg` 添加一个 `width` 为 `25`、`height` 为 `100` 的 `rect` 形状。 同时，将 `rect` 的 `x` 和 `y` 都设置为 `0`。
 
 # --hints--
 
-Your document should have 1 `rect` element.
+文档应该有 1 个 `rect` 元素。
 
 ```js
 assert($('rect').length == 1);
 ```
 
-The `rect` element should have a `width` attribute set to 25.
+`rect` 元素的 `width` 应为 `25`。
 
 ```js
 assert($('rect').attr('width') == '25');
 ```
 
-The `rect` element should have a `height` attribute set to 100.
+`rect` 元素的 `height` 应为 `100`。
 
 ```js
 assert($('rect').attr('height') == '100');
 ```
 
-The `rect` element should have an `x` attribute set to 0.
+`rect` 元素的 `x` 值应为 `0`。
 
 ```js
 assert($('rect').attr('x') == '0');
 ```
 
-The `rect` element should have a `y` attribute set to 0.
+`rect` 元素的 `y` 值应为 `0`。
 
 ```js
 assert($('rect').attr('y') == '0');

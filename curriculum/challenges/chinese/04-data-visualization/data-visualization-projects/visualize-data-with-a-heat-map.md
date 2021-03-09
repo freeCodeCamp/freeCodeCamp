@@ -26,7 +26,7 @@ dashedName: visualize-data-with-a-heat-map
 
 **需求 #6：** 这些单元格元素至少应该有 4 种不同的填充颜色。
 
-**需求 #7：** 每个单元格元素都有这些属性 `data-month`，`data-year`，`data-temp`，包含了它们相应的月份、年份和温度值。
+**需求 #7：** 每个单元格都有这些属性：`data-month`、`data-year`、`data-temp`，具有相应的属性值 `month`、`year`、`temperature`。
 
 **需求 #8：** 每个元素的 `data-month`、`data-year` 属性应该在数据范围内。
 
@@ -52,7 +52,7 @@ dashedName: visualize-data-with-a-heat-map
 
 你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
+当你完成了本项目，并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --solutions--
 

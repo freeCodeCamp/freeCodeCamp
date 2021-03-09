@@ -54,7 +54,7 @@ As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)
 
 # --instructions--
 
-Using the above method find a factor of <code>2<sup>929</sup>-1</code> (aka M929)
+Using the above method find a factor of <code>2<sup>p</sup>-1</code>.
 
 # --hints--
 
@@ -70,19 +70,19 @@ assert(typeof check_mersenne === 'function');
 assert(typeof check_mersenne(3) == 'string');
 ```
 
-`check_mersenne(3)` should return "M3 = 2^3-1 is prime".
+`check_mersenne(3)` should return the string `M3 = 2^3-1 is prime`.
 
 ```js
 assert.equal(check_mersenne(3), 'M3 = 2^3-1 is prime');
 ```
 
-`check_mersenne(23)` should return "M23 = 2^23-1 is composite with factor 47".
+`check_mersenne(23)` should return the string `M23 = 2^23-1 is composite with factor 47`.
 
 ```js
 assert.equal(check_mersenne(23), 'M23 = 2^23-1 is composite with factor 47');
 ```
 
-`check_mersenne(929)` should return "M929 = 2^929-1 is composite with factor 13007
+`check_mersenne(929)` should return the string `M929 = 2^929-1 is composite with factor 13007`.
 
 ```js
 assert.equal(

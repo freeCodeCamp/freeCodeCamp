@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bd0
-title: Invert SVG Elements
+title: 反转 SVG 元素
 challengeType: 6
 forumTopicId: 301488
 dashedName: invert-svg-elements
@@ -8,74 +8,73 @@ dashedName: invert-svg-elements
 
 # --description--
 
-You may have noticed the bar chart looked like it's upside-down, or inverted. This is because of how SVG uses (x, y) coordinates.
+你可能已经注意到了常见的条形图像是把这个翻转或者颠倒过来。 这是因为 SVG 的 (x, y) 坐标有些特别。
 
-In SVG, the origin point for the coordinates is in the upper-left corner. An `x` coordinate of 0 places a shape on the left edge of the SVG area. A `y` coordinate of 0 places a shape on the top edge of the SVG area. Higher `x` values push the rectangle to the right. Higher `y` values push the rectangle down.
+在 SVG 中，坐标轴的原点在左上角。 `x` 坐标为 0 将图形放在 SVG 区域的左边缘， `y` 坐标为 0 将图形放在 SVG 区域的上边缘。 `x` 值增大矩形将向右移动， `y` 值增大矩形将向下移动。
 
-To make the bars right-side-up, you need to change the way the `y` coordinate is calculated. It needs to account for both the height of the bar and the total height of the SVG area.
+为了使条形图向上，需要改变 `y` 坐标计算的方式。 这需要计算条形的高度和 SVG 区域的总高度。
 
-The height of the SVG area is 100. If you have a data point of 0 in the set, you would want the bar to start at the bottom of the SVG area (not the top). To do this, the `y` coordinate needs a value of 100. If the data point value were 1, you would start with a `y` coordinate of 100 to set the bar at the bottom. Then you need to account for the height of the bar of 1, so the final `y` coordinate would be 99.
+SVG 区域的高度为 100。 如果在集合中一个数据点的值为 0，那么条形将从 SVG 区域的最底端开始（而不是顶端）。 为此，`y` 坐标的值应为 100。 如果数据点的值为 1，你将从 `y` 坐标为 100 开始来将这个条形设置在底端， 然后需要考虑该条形的高度为 1，所以最终的 `y` 坐标将是 99。
 
-The `y` coordinate that is `y = heightOfSVG - heightOfBar` would place the bars right-side-up.
+`y` 坐标为 `y = heightOfSVG - heightOfBar` 会将条形图向上放置。
 
 # --instructions--
 
-Change the callback function for the `y` attribute to set the bars right-side-up. Remember that the `height` of the bar is 3 times the data value `d`.
+改变 `y` 属性的回调函数，让条形图向上放置。 `height` 的值是 3 倍 `d` 的值。
 
-**Note**  
-In general, the relationship is `y = h - m * d`, where `m` is the constant that scales the data points.
+**注意：**通常，关系是 `y = h - m * d`，其中 `m` 是缩放数据点的常数。
 
 # --hints--
 
-The first `rect` should have a `y` value of 64.
+第一个 `rect` 的 `y` 值应该为 `64`。
 
 ```js
 assert($('rect').eq(0).attr('y') == h - dataset[0] * 3);
 ```
 
-The second `rect` should have a `y` value of 7.
+第二个 `rect` 的 `y` 值应该为 `7`。
 
 ```js
 assert($('rect').eq(1).attr('y') == h - dataset[1] * 3);
 ```
 
-The third `rect` should have a `y` value of 34.
+第三个 `rect` 的 `y` 值应该为 `34`。
 
 ```js
 assert($('rect').eq(2).attr('y') == h - dataset[2] * 3);
 ```
 
-The fourth `rect` should have a `y` value of 49.
+第四个 `rect` 的 `y` 值应该为 `49`。
 
 ```js
 assert($('rect').eq(3).attr('y') == h - dataset[3] * 3);
 ```
 
-The fifth `rect` should have a `y` value of 25.
+第五个 `rect` 的 `y` 值应该为 `25`。
 
 ```js
 assert($('rect').eq(4).attr('y') == h - dataset[4] * 3);
 ```
 
-The sixth `rect` should have a `y` value of 46.
+第六个 `rect` 的 `y` 值应该为 `46`。
 
 ```js
 assert($('rect').eq(5).attr('y') == h - dataset[5] * 3);
 ```
 
-The seventh `rect` should have a `y` value of 13.
+第七个 `rect` 的 `y` 值应该为 `13`。
 
 ```js
 assert($('rect').eq(6).attr('y') == h - dataset[6] * 3);
 ```
 
-The eighth `rect` should have a `y` value of 58.
+第八个 `rect` 的 `y` 值应该为 `58`。
 
 ```js
 assert($('rect').eq(7).attr('y') == h - dataset[7] * 3);
 ```
 
-The ninth `rect` should have a `y` value of 73.
+第九个 `rect` 的 `y` 值应该为 `73`。
 
 ```js
 assert($('rect').eq(8).attr('y') == h - dataset[8] * 3);

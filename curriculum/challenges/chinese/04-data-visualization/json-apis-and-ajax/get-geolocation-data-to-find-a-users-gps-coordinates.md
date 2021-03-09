@@ -1,6 +1,6 @@
 ---
 id: 587d7faf367417b2b2512be8
-title: Get Geolocation Data to Find A User's GPS Coordinates
+title: 根据地理位置数据找到用户的 GPS 坐标
 challengeType: 6
 forumTopicId: 18188
 dashedName: get-geolocation-data-to-find-a-users-gps-coordinates
@@ -8,15 +8,15 @@ dashedName: get-geolocation-data-to-find-a-users-gps-coordinates
 
 # --description--
 
-Another cool thing you can do is access your user's current location. Every browser has a built in navigator that can give you this information.
+你还能做一件很酷的事就是访问你用户当前的地理位置。 每个浏览器都有内置的导航器，可以为你提供这些信息。
 
-The navigator will get the user's current longitude and latitude.
+导航器会获取用户当前的经度和纬度。
 
-You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.
+您将看到允许或阻止此站点了解您当前位置的提示。 只要代码正确，挑战就可以以任何一种方式完成。
 
-By selecting allow, you will see the text on the output phone change to your latitude and longitude.
+通过选择允许，你将看到输出手机上的文本更改为你的纬度和经度
 
-Here's code that does this:
+这是执行此操作的代码：
 
 ```js
 if (navigator.geolocation){
@@ -26,33 +26,33 @@ if (navigator.geolocation){
 }
 ```
 
-First, it checks if the `navigator.geolocation` object exists. If it does, the `getCurrentPosition` method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the `position` object's values for latitude and longitude using dot notation and updates the HTML.
+首先，它检查`navigator.geolocation`对象是否存在。 如果是，`getCurrentPosition`则调用该对象上的方法，该方法启动对用户位置的异步请求。 如果请求成功，则运行方法中的回调函数。 此函数`position`使用点表示法访问对象的纬度和经度值，并更新页面。
 
 # --instructions--
 
-Add the example code inside the `script` tags to check a user's current location and insert it into the HTML.
+在`script`标记内添加示例代码以检查用户的当前位置并将其插入 HTML
 
 # --hints--
 
-Your code should use `navigator.geolocation` to access the user's current location.
+应该使用 `navigator.geolocation` 访问用户的当前位置。
 
 ```js
 assert(code.match(/navigator\.geolocation\.getCurrentPosition/g));
 ```
 
-Your code should use `position.coords.latitude` to display the user's latitudinal location.
+应该使用 `position.coords.latitude` 显示用户的纬度位置。
 
 ```js
 assert(code.match(/position\.coords\.latitude/g));
 ```
 
-Your code should use `position.coords.longitude` to display the user's longitudinal location.
+应该使用 `position.coords.longitude` 显示用户的经度位置。
 
 ```js
 assert(code.match(/position\.coords\.longitude/g));
 ```
 
-You should display the user's position within the `data` div element.
+应该在具有 `id="data"` 的 `div` 元素中显示用户的位置。
 
 ```js
 assert(

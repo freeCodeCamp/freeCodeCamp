@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512be1
-title: Handle Click Events with JavaScript using the onclick property
+title: 使用 onclick 属性处理点击事件
 challengeType: 6
 forumTopicId: 301503
 dashedName: handle-click-events-with-javascript-using-the-onclick-property
@@ -8,7 +8,7 @@ dashedName: handle-click-events-with-javascript-using-the-onclick-property
 
 # --description--
 
-You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called `DOMContentLoaded`. Here's the code that does this:
+你希望代码仅在页面完成加载后执行。 为此，你可将名为`DOMContentLoaded`的 JavaScript 事件附加到文档中。 以下是实现的代码：
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-You can implement event handlers that go inside of the `DOMContentLoaded` function. You can implement an `onclick` event handler which triggers when the user clicks on the element with id `getMessage`, by adding the following code:
+你可以在`DOMContentLoaded`函数内部添加事件处理方法。 你可以添加`onclick`事件处理器，当用户点击 id 为`getMessage`的元素时会触发事件。 添加以下代码：
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -24,17 +24,17 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --instructions--
 
-Add a click event handler inside of the `DOMContentLoaded` function for the element with id of `getMessage`.
+在`DOMContentLoaded`函数内为 id 为`getMessage`的元素添加一个 click 事件处理器。
 
 # --hints--
 
-Your code should use the `document.getElementById` method to select the `getMessage` element.
+你的代码应该用`document.getElementById`方法来选择`getMessage`元素。
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
 ```
 
-Your code should add an `onclick` event handler.
+你的代码应该添加`onclick`事件处理器。
 
 ```js
 assert(typeof document.getElementById('getMessage').onclick === 'function');

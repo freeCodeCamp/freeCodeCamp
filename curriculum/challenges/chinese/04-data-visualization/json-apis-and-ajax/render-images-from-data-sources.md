@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be6
-title: Render Images from Data Sources
+title: 渲染数据源的图像
 challengeType: 6
 forumTopicId: 18265
 dashedName: render-images-from-data-sources
@@ -8,27 +8,27 @@ dashedName: render-images-from-data-sources
 
 # --description--
 
-The last few challenges showed that each object in the JSON array contains an `imageLink` key with a value that is the URL of a cat's image.
+前几个挑战中表明，JSON 数组中的每个对象都包含一个 `imageLink` 键，其值为猫图像的 URL。
 
-When you're looping through these objects, you can use this `imageLink` property to display this image in an `img` element.
+当你遍历这些对象的时候，你可以使用 `imageLink` 属性在 `img` 元素中显示此图像。
 
-Here's the code that does this:
+这是执行此操作的代码：
 
 `html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
 
 # --instructions--
 
-Add code to use the `imageLink` and `altText` properties in an `img` tag.
+添加代码，在 `img` 标签中使用 `imageLink` 和 `altText` 属性。
 
 # --hints--
 
-You should use the `imageLink` property to display the images.
+应该使用 `imageLink` 属性来显示图像。
 
 ```js
 assert(code.match(/val\.imageLink/g));
 ```
 
-You should use the `altText` for the alt attribute values of the images.
+应该使用 `altText` 作为图片的 `alt` 属性值。
 
 ```js
 assert(code.match(/val\.altText/g));

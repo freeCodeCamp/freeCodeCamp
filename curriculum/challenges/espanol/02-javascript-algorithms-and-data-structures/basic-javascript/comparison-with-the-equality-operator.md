@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d0
-title: Comparison with the Equality Operator
+title: Comparación con el operador de igualdad
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
@@ -9,9 +9,9 @@ dashedName: comparison-with-the-equality-operator
 
 # --description--
 
-There are many <dfn>comparison operators</dfn> in JavaScript. All of these operators return a boolean `true` or `false` value.
+Hay muchos <dfn>operadores de comparación</dfn> en JavaScript. Todos estos operadores devuelven un valor booleano `true` o `false`.
 
-The most basic operator is the equality operator `==`. The equality operator compares two values and returns `true` if they're equivalent or `false` if they are not. Note that equality is different from assignment (`=`), which assigns the value on the right of the operator to a variable on the left.
+El operador más básico es el de igualdad `==`. El operador de igualdad compara dos valores y devuelve `true` si son equivalentes o `false` si no lo son. Ten en cuenta que una igualdad es diferente a una asignación (`=`), la cual asigna el valor a la derecha del operador a la variable de la izquierda.
 
 ```js
 function equalityTest(myVal) {
@@ -22,40 +22,42 @@ function equalityTest(myVal) {
 }
 ```
 
-If `myVal` is equal to `10`, the equality operator returns `true`, so the code in the curly braces will execute, and the function will return `"Equal"`. Otherwise, the function will return `"Not Equal"`. In order for JavaScript to compare two different <dfn>data types</dfn> (for example, `numbers` and `strings`), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
+Si `myVal` es igual a `10`, el operador de igualdad devuelve `true`, así que el código dentro de los corchetes se ejecutará y la función devolverá `Equal`. De lo contrario, la función devolverá `Not Equal`. Para que JavaScript compare dos <dfn>tipos de datos</dfn> diferentes (por ejemplo, `numbers` y `strings`), tiene que convertir un tipo a otro. Esto se conoce como Coerción de Tipo. Sin embargo, una vez lo hace, puede comparar términos como se ve a continuación:
 
 ```js
-1   ==  1   // true
-1   ==  2   // false
-1   == '1'  // true
-"3" ==  3   // true
+1   ==  1
+1   ==  2
+1   == '1'
+"3" ==  3
 ```
+
+En orden, estas expresiones se evaluarían como `true`, `false`, `true` y `true`.
 
 # --instructions--
 
-Add the equality operator to the indicated line so that the function will return "Equal" when `val` is equivalent to `12`.
+Agrega el operador de igualdad a la línea indicada para que la función devuelva la cadena `Equal` cuando `val` sea equivalente a `12`.
 
 # --hints--
 
-`testEqual(10)` should return "Not Equal"
+`testEqual(10)` debe devolver la cadena `Not Equal`
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` should return "Equal"
+`testEqual(12)` debe devolver la cadena `Equal`
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` should return "Equal"
+`testEqual("12")` debe devolver la cadena `Equal`
 
 ```js
 assert(testEqual('12') === 'Equal');
 ```
 
-You should use the `==` operator
+Debes usar el operador `==`
 
 ```js
 assert(code.match(/==/g) && !code.match(/===/g));
