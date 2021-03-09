@@ -13,7 +13,7 @@ The next HTML5 element that adds semantic meaning and improves accessibility is 
 
 `header` shares the embedded landmark feature you saw with `main`, allowing assistive technologies to quickly navigate to that content.
 
-**Note:** The `header` is meant for use in the `body` tag of your HTML document. The `header` tag is different than the `head` element, which contains the page's title, meta information, etc.
+**Note:** The `header` is meant for use in the `body` tag of your HTML document.its is different than the `head` element, which contains the page's title, meta information, etc.
 
 # --instructions--
 
