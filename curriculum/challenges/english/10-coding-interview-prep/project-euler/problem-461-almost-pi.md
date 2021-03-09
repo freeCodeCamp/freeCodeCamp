@@ -8,7 +8,7 @@ dashedName: problem-461-almost-pi
 
 # --description--
 
-Let `f(k, n)` = $e^\frac{k}{n} - 1$. `k` can be any non-negative integer.
+Let `f(k, n)` = $e^\frac{k}{n} - 1$, for all non-negative integers `k`.
 
 Remarkably, `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
 
