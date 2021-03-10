@@ -59,5 +59,8 @@
     "string-similarity": "^4.0.2",
     "unist-util-visit": "^2.0.3",
     "vfile": "^4.2.0"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
   }
 }

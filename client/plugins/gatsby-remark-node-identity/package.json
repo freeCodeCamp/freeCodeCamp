@@ -1,5 +1,8 @@
 {
   "name": "gatsby-plugin-node-identity",
   "private": true,
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 14.0.0"
+  }
 }
