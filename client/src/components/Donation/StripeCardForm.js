@@ -89,8 +89,8 @@ const StripeCardForm = ({
     event.preventDefault();
 
     if (!isEmailValid || !isPaymentInfoValid())
-      return setSubmitionValidity(false);
-    else setSubmitionValidity(true);
+      return setSubmissionValidity(false);
+    else setSubmissionValidity(true);
 
     if (!isEmail(email)) {
       return onDonationStateChange({
