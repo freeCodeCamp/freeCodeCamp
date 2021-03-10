@@ -10,7 +10,7 @@ import {
 import { getRedirectParams } from './redirection';
 
 export function ifNoUserRedirectHome(message, type = 'errors') {
-  return function(req, res, next) {
+  return function (req, res, next) {
     const { path } = req;
     if (req.user) {
       return next();
@@ -24,7 +24,7 @@ export function ifNoUserRedirectHome(message, type = 'errors') {
 }
 
 export function ifNoUserSend(sendThis) {
-  return function(req, res, next) {
+  return function (req, res, next) {
     if (req.user) {
       return next();
     }

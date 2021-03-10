@@ -2,7 +2,7 @@
 // https://github.com/medialize/sass.js/issues/96#issuecomment-424386171
 if (!self.crypto) {
   self.crypto = {
-    getRandomValues: function(array) {
+    getRandomValues: function (array) {
       for (var i = 0, l = array.length; i < l; i++) {
         array[i] = Math.floor(Math.random() * 256);
       }

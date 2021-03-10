@@ -86,7 +86,4 @@ class EditorTabs extends Component {
 EditorTabs.displayName = 'EditorTabs';
 EditorTabs.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EditorTabs);
+export default connect(mapStateToProps, mapDispatchToProps)(EditorTabs);

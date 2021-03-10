@@ -33,7 +33,7 @@ async function initTestFrame(e = { code: {} }) {
   // Hardcode Deep Freeze dependency
   const DeepFreeze = o => {
     Object.freeze(o);
-    Object.getOwnPropertyNames(o).forEach(function(prop) {
+    Object.getOwnPropertyNames(o).forEach(function (prop) {
       if (
         o.hasOwnProperty(prop) &&
         o[prop] !== null &&

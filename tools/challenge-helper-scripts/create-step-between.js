@@ -24,8 +24,10 @@ if (
   start < 1 ||
   start !== end - 1
 ) {
-  throw 'Step not created. Steps specified must be' +
-    ' consecutive numbers and start step must be greater than 0.';
+  throw (
+    'Step not created. Steps specified must be' +
+    ' consecutive numbers and start step must be greater than 0.'
+  );
 }
 
 const existingSteps = getExistingStepNums(projectPath);

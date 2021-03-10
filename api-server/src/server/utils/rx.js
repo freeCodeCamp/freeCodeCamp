@@ -5,13 +5,13 @@ import debugFactory from 'debug';
 const debug = debugFactory('fcc:rxUtils');
 
 export function saveInstance(instance) {
-  return new Rx.Observable.create(function(observer) {
+  return new Rx.Observable.create(function (observer) {
     if (!instance || typeof instance.save !== 'function') {
       debug('no instance or save method');
       observer.onNext();
       return observer.onCompleted();
     }
-    return instance.save(function(err, savedInstance) {
+    return instance.save(function (err, savedInstance) {
       if (err) {
         return observer.onError(err);
       }
@@ -49,9 +49,7 @@ export function timeCache(time, unit) {
     // set new expire time in MS and create new subscription to source
     if (!expireCacheAt || expireCacheAt < Date.now()) {
       // set expire in ms;
-      expireCacheAt = moment()
-        .add(time, unit)
-        .valueOf();
+      expireCacheAt = moment().add(time, unit).valueOf();
       cache = new AsyncSubject();
       source.subscribe(cache);
     }

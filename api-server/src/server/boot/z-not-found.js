@@ -2,7 +2,7 @@ import accepts from 'accepts';
 import { getRedirectParams } from '../utils/redirection';
 
 export default function fourOhFour(app) {
-  app.all('*', function(req, res) {
+  app.all('*', function (req, res) {
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
     const { path } = req;

@@ -30,7 +30,7 @@ export default function populateUser(db, user) {
         { $match: { _id: user.id } },
         { $project: { points: { $size: '$progressTimestamps' } } }
       ])
-      .get(function(err, [{ points = 1 } = {}]) {
+      .get(function (err, [{ points = 1 } = {}]) {
         if (err) {
           return reject(err);
         }
