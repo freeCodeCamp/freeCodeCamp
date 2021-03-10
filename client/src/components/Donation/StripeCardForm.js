@@ -52,7 +52,7 @@ const StripeCardForm = ({
   const [isSubmissionValid, setSubmitionValidity] = useState(true);
   const [email, setEmail] = useState(userEmail);
   const [isEmailValid, setEmailValidity] = useState(true);
-  const [paymentInfoValidation, validitySetter] = useState(
+  const [paymentInfoValidation, setPaymentValidity] = useState(
     initialPaymentInfoValidityState
   );
 
