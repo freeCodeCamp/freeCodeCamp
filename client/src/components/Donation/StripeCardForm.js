@@ -49,7 +49,7 @@ const StripeCardForm = ({
   postStripeDonation,
   userEmail
 }) => {
-  const [isSubmissionValid, setSubmitionValidity] = useState(true);
+  const [isSubmissionValid, setSubmissionValidity] = useState(true);
   const [email, setEmail] = useState(userEmail);
   const [isEmailValid, setEmailValidity] = useState(true);
   const [paymentInfoValidation, setPaymentValidity] = useState(
