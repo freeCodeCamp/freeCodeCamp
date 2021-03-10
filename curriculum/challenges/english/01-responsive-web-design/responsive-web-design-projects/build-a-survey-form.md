@@ -46,7 +46,15 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 
 **User Story #16:** Inside the form element, I am presented with a button with `id="submit"` to submit all my inputs.
 
-You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). \
+How to fork a pen:\
+1.Login to CodePen\
+2.Visit [this FCC CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO)\
+3.Click on the fork option located at the bottom right hand corner of the page.\
+4.Click save\
+5.Start coding
+
+Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Once you're done, submit the URL to your working project with all its tests passing.
 
