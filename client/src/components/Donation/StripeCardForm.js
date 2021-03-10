@@ -88,7 +88,7 @@ const StripeCardForm = ({
   const handleSubmit = async event => {
     event.preventDefault();
 
-    if ((!isEmailValid, !isPaymentInfoValid()))
+    if (!isEmailValid || !isPaymentInfoValid())
       return setSubmitionValidity(false);
     else setSubmitionValidity(true);
 
