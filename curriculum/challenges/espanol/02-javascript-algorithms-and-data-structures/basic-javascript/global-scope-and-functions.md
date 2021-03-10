@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244be
-title: Global Scope and Functions
+title: Ámbito global y funciones
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQM7mCN'
 forumTopicId: 18193
@@ -9,37 +9,37 @@ dashedName: global-scope-and-functions
 
 # --description--
 
-In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.
+En JavaScript, el <dfn>ámbito</dfn> se refiere a la visibilidad de las variables. Las variables definidas fuera de un bloque de función tienen un ámbito <dfn>Global</dfn>. Esto significa que pueden ser observadas desde cualquier lugar en tu código JavaScript.
 
-Variables which are used without the `var` keyword are automatically created in the `global` scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with `var`.
+Las variables que se usan sin la palabra clave `var` se crean automáticamente en el ámbito `global`. Esto puede crear consecuencias no intencionadas en cualquier lugar de tu código o al volver a ejecutar una función. Siempre debes declarar tus variables con `var`.
 
 # --instructions--
 
-Using `var`, declare a global variable named `myGlobal` outside of any function. Initialize it with a value of `10`.
+Usando `var`, declara una variable global llamada `myGlobal` fuera de cualquier función. Inicialízala con un valor de `10`.
 
-Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `var` keyword.
+Dentro de la función `fun1`, asigna `5` a `oopsGlobal` ***sin*** usar la palabra clave `var`.
 
 # --hints--
 
-`myGlobal` should be defined
+`myGlobal` debe ser definida
 
 ```js
 assert(typeof myGlobal != 'undefined');
 ```
 
-`myGlobal` should have a value of `10`
+`myGlobal` debe tener un valor de `10`
 
 ```js
 assert(myGlobal === 10);
 ```
 
-`myGlobal` should be declared using the `var` keyword
+`myGlobal` debe declararse usando la palabra clave `var`
 
 ```js
 assert(/var\s+myGlobal/.test(code));
 ```
 
-`oopsGlobal` should be a global variable and have a value of `5`
+`oopsGlobal` debe ser una variable global y tener un valor de `5`
 
 ```js
 assert(typeof oopsGlobal != 'undefined' && oopsGlobal === 5);

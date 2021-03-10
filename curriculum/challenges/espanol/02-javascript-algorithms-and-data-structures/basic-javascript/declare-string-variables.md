@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c444eddfaeb5bdef
-title: Declare String Variables
+title: Declara variables de cadena
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
@@ -9,19 +9,19 @@ dashedName: declare-string-variables
 
 # --description--
 
-Previously we have used the code
+Anteriormente hemos usado el código
 
 `var myName = "your name";`
 
-`"your name"` is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.
+`"your name"` es llamada una <dfn>cadena</dfn> <dfn>literal</dfn>. Es una cadena porque es una serie de cero o más caracteres encerrados entre comillas simples o dobles.
 
 # --instructions--
 
-Create two new `string` variables: `myFirstName` and `myLastName` and assign them the values of your first and last name, respectively.
+Crea dos nuevas variables de cadena: `myFirstName` y `myLastName` y asígnales los valores de tu nombre y apellido, respectivamente.
 
 # --hints--
 
-`myFirstName` should be a string with at least one character in it.
+`myFirstName` debe ser una cadena con al menos un carácter en ella.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-`myLastName` should be a string with at least one character in it.
+`myLastName` debe ser una cadena con al menos un carácter en ella.
 
 ```js
 assert(
@@ -66,7 +66,9 @@ if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(fun
 ```
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

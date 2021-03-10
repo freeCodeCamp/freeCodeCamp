@@ -17,8 +17,8 @@ HTML5 的 `audio` 标签用于呈现音频内容或音频流，它也具有语�
 
 ```html
 <audio id="meowClip" controls>
-  <source src="audio/meow.mp3" type="audio/mpeg" />
-  <source src="audio/meow.ogg" type="audio/ogg" />
+  <source src="audio/meow.mp3" type="audio/mpeg">
+  <source src="audio/meow.ogg" type="audio/ogg">
 </audio>
 ```
 

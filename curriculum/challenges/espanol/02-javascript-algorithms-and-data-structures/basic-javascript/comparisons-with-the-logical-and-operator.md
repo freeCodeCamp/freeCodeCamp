@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d8
-title: Comparisons with the Logical And Operator
+title: Comparaciones con el operador lógico "and"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvbRVtr'
 forumTopicId: 16799
@@ -9,9 +9,9 @@ dashedName: comparisons-with-the-logical-and-operator
 
 # --description--
 
-Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (`&&`) returns `true` if and only if the <dfn>operands</dfn> to the left and right of it are true.
+A veces tendrás que probar más de una cosa a la vez. El operador <dfn>lógico and</dfn> (`&&`) devuelve `true` si y solo si los <dfn>operandos</dfn> a la izquierda y a la derecha son verdaderos.
 
-The same effect could be achieved by nesting an if statement inside another if:
+El mismo efecto se podría lograr anidando una sentencia if dentro de otra sentencia if:
 
 ```js
 if (num > 5) {
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-will only return "Yes" if `num` is greater than `5` and less than `10`. The same logic can be written as:
+solo devolverá `Yes` si `num` es mayor que `5` y menor que `10`. La misma lógica se puede escribir como:
 
 ```js
 if (num > 5 && num < 10) {
@@ -33,65 +33,65 @@ return "No";
 
 # --instructions--
 
-Replace the two if statements with one statement, using the && operator, which will return `"Yes"` if `val` is less than or equal to `50` and greater than or equal to `25`. Otherwise, will return `"No"`.
+Reemplaza las dos sentencias if por una sola, usando el operador `&&`, el cual devolverá la cadena `Yes` si `val` es menor o igual a `50` y mayor o igual a `25`. De lo contrario, devolverá la cadena `No`.
 
 # --hints--
 
-You should use the `&&` operator once
+Debes usar el operador `&&` una vez
 
 ```js
 assert(code.match(/&&/g).length === 1);
 ```
 
-You should only have one `if` statement
+Debes tener una sola sentencia `if`
 
 ```js
 assert(code.match(/if/g).length === 1);
 ```
 
-`testLogicalAnd(0)` should return "No"
+`testLogicalAnd(0)` debe devolver la cadena `No`
 
 ```js
 assert(testLogicalAnd(0) === 'No');
 ```
 
-`testLogicalAnd(24)` should return "No"
+`testLogicalAnd(24)` debe devolver la cadena `No`
 
 ```js
 assert(testLogicalAnd(24) === 'No');
 ```
 
-`testLogicalAnd(25)` should return "Yes"
+`testLogicalAnd(25)` debe devolver la cadena `Yes`
 
 ```js
 assert(testLogicalAnd(25) === 'Yes');
 ```
 
-`testLogicalAnd(30)` should return "Yes"
+`testLogicalAnd(30)` debe devolver la cadena `Yes`
 
 ```js
 assert(testLogicalAnd(30) === 'Yes');
 ```
 
-`testLogicalAnd(50)` should return "Yes"
+`testLogicalAnd(50)` debe devolver la cadena `Yes`
 
 ```js
 assert(testLogicalAnd(50) === 'Yes');
 ```
 
-`testLogicalAnd(51)` should return "No"
+`testLogicalAnd(51)` debe devolver la cadena `No`
 
 ```js
 assert(testLogicalAnd(51) === 'No');
 ```
 
-`testLogicalAnd(75)` should return "No"
+`testLogicalAnd(75)` debe devolver la cadena `No`
 
 ```js
 assert(testLogicalAnd(75) === 'No');
 ```
 
-`testLogicalAnd(80)` should return "No"
+`testLogicalAnd(80)` debe devolver la cadena `No`
 
 ```js
 assert(testLogicalAnd(80) === 'No');

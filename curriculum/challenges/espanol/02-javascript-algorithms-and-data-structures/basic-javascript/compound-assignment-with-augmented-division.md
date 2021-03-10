@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b2
-title: Compound Assignment With Augmented Division
+title: Asignación compuesta con división aumentada
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvKT2'
 forumTopicId: 16659
@@ -9,45 +9,45 @@ dashedName: compound-assignment-with-augmented-division
 
 # --description--
 
-The `/=` operator divides a variable by another number.
+El operador `/=` divide una variable entre otro número.
 
 `myVar = myVar / 5;`
 
-Will divide `myVar` by `5`. This can be rewritten as:
+Dividirá `myVar` entre `5`. Esto se puede reescribir como:
 
 `myVar /= 5;`
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `/=` operator.
+Convierte las asignaciones de `a`, `b` y `c` para que utilicen el operador `/=`.
 
 # --hints--
 
-`a` should equal `4`.
+`a` debe ser igual a `4`.
 
 ```js
 assert(a === 4);
 ```
 
-`b` should equal `27`.
+`b` debe ser igual a `27`.
 
 ```js
 assert(b === 27);
 ```
 
-`c` should equal `3`.
+`c` debe ser igual a `3`.
 
 ```js
 assert(c === 3);
 ```
 
-You should use the `/=` operator for each variable.
+Debes usar el operador `/=` para cada variable.
 
 ```js
 assert(code.match(/\/=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+No debes modificar el código por encima del comentario especificado.
 
 ```js
 assert(

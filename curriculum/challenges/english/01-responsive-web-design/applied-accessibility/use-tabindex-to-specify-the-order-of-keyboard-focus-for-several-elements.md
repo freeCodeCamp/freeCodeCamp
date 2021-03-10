@@ -9,7 +9,7 @@ dashedName: use-tabindex-to-specify-the-order-of-keyboard-focus-for-several-elem
 
 # --description--
 
-The `tabindex` attribute also specifies the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher.
+The `tabindex` attribute also specifies the exact tab order of elements. This is achieved when the attribute's value is set to a positive number of 1 or higher.
 
 Setting a `tabindex="1"` will bring keyboard focus to that element first. Then it cycles through the sequence of specified `tabindex` values (2, 3, etc.), before moving to default and `tabindex="0"` items.
 
