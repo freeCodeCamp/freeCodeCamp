@@ -7,6 +7,11 @@ pre[class*='language-'] {
   background: var(--primary-background);
 }
 
+pre[class*='language-'] code[class*='language-'] {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 * {
   text-shadow: none !important;
 }

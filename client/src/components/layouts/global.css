@@ -385,8 +385,9 @@ input:focus {
 }
 code {
   background-color: var(--quaternary-background);
-  color: var(--tertiary-color);
   border-radius: 0px;
+  color: var(--tertiary-color);
+  overflow-wrap: anywhere;
   font-family: 'Roboto Mono', monospace;
 }
 
