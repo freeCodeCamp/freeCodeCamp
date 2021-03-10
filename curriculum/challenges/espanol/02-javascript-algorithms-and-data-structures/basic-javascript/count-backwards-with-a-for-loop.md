@@ -1,6 +1,6 @@
 ---
 id: 56105e7b514f539506016a5e
-title: Count Backwards With a For Loop
+title: Cuenta hacia atrás con un bucle "for"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
@@ -9,11 +9,11 @@ dashedName: count-backwards-with-a-for-loop
 
 # --description--
 
-A for loop can also count backwards, so long as we can define the right conditions.
+Un bucle for también puede contar hacia atrás, siempre que definamos las condiciones adecuadas.
 
-In order to decrement by two each iteration, we'll need to change our `initialization`, `condition`, and `final-expression`.
+Para poder disminuirle dos cada iteración, necesitaremos cambiar nuestra inicialización, condición, y expresión final.
 
-We'll start at `i = 10` and loop while `i > 0`. We'll decrement `i` by 2 each loop with `i -= 2`.
+Empezaremos en `i = 10` e iteraremos mientras `i > 0`. Disminuiremos `i` en 2 por cada bucle con `i -= 2`.
 
 ```js
 var ourArray = [];
@@ -22,27 +22,27 @@ for (var i = 10; i > 0; i -= 2) {
 }
 ```
 
-`ourArray` will now contain `[10,8,6,4,2]`. Let's change our `initialization` and `final-expression` so we can count backward by twos by odd numbers.
+`ourArray` ahora contendrá `[10,8,6,4,2]`. Cambiemos nuestra inicialización y expresión final para que podamos contar hacia atrás por dos números impares.
 
 # --instructions--
 
-Push the odd numbers from 9 through 1 to `myArray` using a `for` loop.
+Inserta los números impares desde el 9 hasta el 1 en `myArray` utilizando un bucle `for`.
 
 # --hints--
 
-You should be using a `for` loop for this.
+Debes utilizar un bucle `for` para esto.
 
 ```js
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-You should be using the array method `push`.
+Debes utilizar el método de arreglo `push`.
 
 ```js
 assert(code.match(/myArray.push/));
 ```
 
-`myArray` should equal `[9,7,5,3,1]`.
+`myArray` debe ser igual a `[9,7,5,3,1]`.
 
 ```js
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);
