@@ -389,6 +389,7 @@ code {
   color: var(--tertiary-color);
   overflow-wrap: anywhere;
   font-family: 'Roboto Mono', monospace;
+  overflow-wrap: break-word;
 }
 
 .panel {
