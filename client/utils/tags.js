@@ -51,29 +51,44 @@ export const getheadTagComponents = () => {
       name='monetization'
     />
   ];
-  return pushConditionalScripts(headTags, homeLocation);
+  return injectConditionalTags(headTags, homeLocation);
 };
 
-export const pushConditionalScripts = (tagsArray, homeLocation) => {
-  const parsedHomeUrl = psl.parse(homeLocation);
-  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.ltd === 'org') {
-    return tagsArray.push(
+// strips subpath and protocol
+const urlStripper = url => {
+  const noProtocolUrl = url.replace(/(^\w+:|^)\/\//, '');
+  const subpathIndexOrLength =
+    noProtocolUrl.lastIndexOf('/') === -1
+      ? noProtocolUrl.length
+      : noProtocolUrl.lastIndexOf('/');
+  const noSubpathUrl = noProtocolUrl.substr(0, subpathIndexOrLength);
+  return noSubpathUrl;
+};
+
+export const injectConditionalTags = (tagsArray, homeLocation) => {
+  if (homeLocation.includes('localhost')) return tagsArray;
+
+  const parsedHomeUrl = psl.parse(urlStripper(homeLocation));
+  console.log(parsedHomeUrl);
+
+  // inject gap for all production learn
+  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {
+    tagsArray.push(
       <script
         href={withPrefix('/misc/gap.js')}
-        id='www-gap'
+        id='gap'
         key='gap'
         rel='stylesheet'
       />
     );
   }
-  if (
-    parsedHomeUrl.subdomain === 'www.chinese' &&
-    parsedHomeUrl.ltd === 'org'
-  ) {
-    return tagsArray.push(
+
+  // inject cap for production chinese only
+  if (parsedHomeUrl.subdomain === 'chinese' && parsedHomeUrl.tld === 'org') {
+    tagsArray.push(
       <script
         href={withPrefix('/misc/cap.js')}
-        id='www-chinese-cap'
+        id='cap'
         key='cap'
         rel='stylesheet'
       />
