@@ -61,7 +61,7 @@ const StripeCardForm = ({
 
   function handleInputChange(event) {
     const { elementType, error, complete } = event;
-    validitySetter({
+    setPaymentValidity({
       ...paymentInfoValidation,
       [elementType]: {
         error,
