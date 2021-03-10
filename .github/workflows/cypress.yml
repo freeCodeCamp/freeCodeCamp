@@ -8,6 +8,7 @@ jobs:
     strategy:
       matrix:
         browsers: [chrome, firefox]
+        node-version: [14.x, 12.x]
     services:
       mongodb:
         image: mongo:3.6.19
@@ -15,7 +16,7 @@ jobs:
           - 27017:27017
 
     steps:
-      # We use .npmrc to set the default version to 0, and prevents download during developement.
+      # We use .npmrc to set the default version to 0, and prevents download during development.
       # This installs it specifically in the CI runs.
       - name: Set Action Environment Variables
         run: |
@@ -27,7 +28,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
 
