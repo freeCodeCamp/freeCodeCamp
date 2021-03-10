@@ -13,9 +13,9 @@
   - [Proofreading a Curriculum File](how-to-proofread-files.md)
   - [How to Translate the Website](how-to-translate-the-website.md)
 - **Optional Guides**
-  - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
-  - [Set up freeCodeCamp on WSL](how-to-setup-wsl.md)
+  - [Set up freeCodeCamp on Windows(WSL)](how-to-setup-wsl.md)
   - [Add Cypress tests](how-to-add-cypress-tests.md)
+  - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
 
 ---
 
