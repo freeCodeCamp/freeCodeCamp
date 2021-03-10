@@ -86,7 +86,7 @@
     "jest": "^24.9.0",
     "jest-dom": "^4.0.0",
     "js-yaml": "^3.14.0",
-    "lerna": "^3.22.1",
+    "lerna": "^4.0.0",
     "lint-staged": "^8.2.1",
     "lodash": "^4.17.21",
     "markdownlint": "^0.21.0",

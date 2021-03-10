@@ -36,5 +36,8 @@
     "unist-util-remove": "^2.0.0",
     "unist-util-visit": "^2.0.3",
     "unist-util-visit-children": "^1.1.4"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
   }
 }
