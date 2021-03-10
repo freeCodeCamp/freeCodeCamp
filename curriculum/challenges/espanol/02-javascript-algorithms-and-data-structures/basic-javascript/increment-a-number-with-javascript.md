@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ac
-title: Increment a Number with JavaScript
+title: Incrementa un número con JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
@@ -9,30 +9,29 @@ dashedName: increment-a-number-with-javascript
 
 # --description--
 
-You can easily <dfn>increment</dfn> or add one to a variable with the `++` operator.
+Puedes fácilmente <dfn>incrementar</dfn> o sumar uno a una variable con el operador `++`.
 
 `i++;`
 
-is the equivalent of
+es equivalente a
 
 `i = i + 1;`
 
-**Note**  
-The entire line becomes `i++;`, eliminating the need for the equal sign.
+**Nota:** Toda la línea se convierte en `i++;`, eliminando la necesidad del signo de igualdad.
 
 # --instructions--
 
-Change the code to use the `++` operator on `myVar`.
+Cambia el código para usar el operador `++` en `myVar`.
 
 # --hints--
 
-`myVar` should equal `88`.
+`myVar` debe ser igual a `88`.
 
 ```js
 assert(myVar === 88);
 ```
 
-You should not use the assignment operator.
+No debes utilizar el operador de asignación.
 
 ```js
 assert(
@@ -40,13 +39,13 @@ assert(
 );
 ```
 
-You should use the `++` operator.
+Debes usar el operador `++`.
 
 ```js
 assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
 ```
 
-You should not change code above the specified comment.
+No debes cambiar el código por encima del comentario especificado.
 
 ```js
 assert(/var myVar = 87;/.test(code));

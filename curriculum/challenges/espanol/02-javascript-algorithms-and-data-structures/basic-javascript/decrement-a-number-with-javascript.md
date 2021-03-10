@@ -17,8 +17,7 @@ es equivalente a
 
 `i = i - 1;`
 
-**Nota**  
-Toda la línea se convierte en `i--;`, eliminando la necesidad del signo de igualdad.
+**Nota:** Toda la línea se convierte en `i--;`, eliminando la necesidad del signo de igualdad.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a9
-title: Initializing Variables with the Assignment Operator
+title: Inicializa variables con el operador de asignación
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
@@ -9,19 +9,19 @@ dashedName: initializing-variables-with-the-assignment-operator
 
 # --description--
 
-It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.
+Es común <dfn>inicializar</dfn> una variable a un valor inicial en la misma línea que es declarada.
 
 `var myVar = 0;`
 
-Creates a new variable called `myVar` and assigns it an initial value of `0`.
+Crea una nueva variable llamada `myVar` y le asigna un valor inicial de `0`.
 
 # --instructions--
 
-Define a variable `a` with `var` and initialize it to a value of `9`.
+Define una variable `a` con `var` e inicialízala con un valor de `9`.
 
 # --hints--
 
-You should initialize `a` to a value of `9`.
+Debes inicializar `a` con un valor de `9`.
 
 ```js
 assert(/var\s+a\s*=\s*9(\s*;?\s*)$/.test(code));
@@ -36,7 +36,9 @@ if(typeof a !== 'undefined') {(function(a){return "a = " + a;})(a);} else { (fun
 ```
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

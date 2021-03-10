@@ -26,7 +26,7 @@ En orden, estas expresiones se evaluarían como `true`, `true`, `false` y `false
 
 # --instructions--
 
-Agrega el operador "mayor que" a las líneas indicadas para que las declaraciones de devolución tengan sentido.
+Agrega el operador mayor que a las líneas indicadas para que las declaraciones de devolución tengan sentido.
 
 # --hints--
 

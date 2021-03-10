@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d3
-title: Delete Properties from a JavaScript Object
+title: Elimina propiedades en un objeto de JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqKdTv'
 forumTopicId: 17560
@@ -9,11 +9,11 @@ dashedName: delete-properties-from-a-javascript-object
 
 # --description--
 
-We can also delete properties from objects like this:
+También podemos eliminar propiedades de objetos de esta forma:
 
 `delete ourDog.bark;`
 
-Example:
+Ejemplo:
 
 ```js
 var ourDog = {
@@ -27,7 +27,7 @@ var ourDog = {
 delete ourDog.bark;
 ```
 
-After the last line shown above, `ourDog` looks like:
+Después de la última línea mostrada anteriormente, `ourDog` se ve así:
 
 ```js
 {
@@ -40,17 +40,17 @@ After the last line shown above, `ourDog` looks like:
 
 # --instructions--
 
-Delete the `"tails"` property from `myDog`. You may use either dot or bracket notation.
+Elimina la propiedad `tails` de `myDog`. Puedes usar tanto la notación de puntos como la notación de corchetes.
 
 # --hints--
 
-You should delete the property `"tails"` from `myDog`.
+Debes eliminar la propiedad `tails` de `myDog`.
 
 ```js
 assert(typeof myDog === 'object' && myDog.tails === undefined);
 ```
 
-You should not modify the `myDog` setup.
+No debes modificar la disposición de `myDog`.
 
 ```js
 assert(code.match(/"tails": 1/g).length > 0);

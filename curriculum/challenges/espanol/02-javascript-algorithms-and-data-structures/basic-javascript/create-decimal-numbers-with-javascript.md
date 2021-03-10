@@ -11,8 +11,7 @@ dashedName: create-decimal-numbers-with-javascript
 
 También podemos almacenar números decimales en variables. Los números decimales a veces se denominan números de <dfn>coma flotante</dfn> o <dfn>flotantes</dfn>.
 
-**Nota**  
-No todos los números reales pueden representarse con precisión en <dfn>coma flotante</dfn>. Esto puede llevar a errores de redondeo. [Detalles aquí](https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems).
+**Nota:** No todos los números reales pueden representarse con precisión en <dfn>coma flotante</dfn>. Esto puede llevar a errores de redondeo. [Detalles aquí](https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems).
 
 # --instructions--
 
