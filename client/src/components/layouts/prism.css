@@ -7,7 +7,7 @@ pre[class*='language-'] {
   background: var(--primary-background);
 }
 
-code[class*='language-'] {
+pre[class*='language-'] code[class*='language-'] {
   overflow-wrap: anywhere;
   white-space: pre-wrap;
 }
