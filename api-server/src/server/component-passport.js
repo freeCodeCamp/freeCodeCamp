@@ -53,7 +53,7 @@ export function setupPassport(app) {
 
   configurator.init();
 
-  Object.keys(passportProviders).map(function(strategy) {
+  Object.keys(passportProviders).map(function (strategy) {
     let config = passportProviders[strategy];
     config.session = config.session !== false;
 

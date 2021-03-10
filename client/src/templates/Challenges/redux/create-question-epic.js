@@ -58,9 +58,11 @@ function createQuestionEpic(action$, state$, { window }) {
             ? `**Your project link(s)**\n`
             : `**Your code so far**`
         }
-        ${projectFormValues
-          ?.map(([key, val]) => `${key}: ${val}\n`)
-          ?.join('') || filesToMarkdown(files)}
+        ${
+          projectFormValues
+            ?.map(([key, val]) => `${key}: ${val}\n`)
+            ?.join('') || filesToMarkdown(files)
+        }
 
         ${endingText}`
       );

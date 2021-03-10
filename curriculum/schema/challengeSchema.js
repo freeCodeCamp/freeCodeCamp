@@ -25,10 +25,7 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
-    challengeType: Joi.number()
-      .min(0)
-      .max(11)
-      .required(),
+    challengeType: Joi.number().min(0).max(11).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -62,9 +59,7 @@ const schema = Joi.object()
     }),
     question: Joi.object().keys({
       text: Joi.string().required(),
-      answers: Joi.array()
-        .items(Joi.string())
-        .required(),
+      answers: Joi.array().items(Joi.string()).required(),
       solution: Joi.number().required()
     }),
     required: Joi.array().items(
@@ -92,9 +87,7 @@ const schema = Joi.object()
       Joi.object().keys({
         id: Joi.string().allow(''),
         text: Joi.string().required(),
-        testString: Joi.string()
-          .allow('')
-          .required()
+        testString: Joi.string().allow('').required()
       }),
       // our tests used in certification verification
       Joi.object().keys({

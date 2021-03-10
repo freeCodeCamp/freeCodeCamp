@@ -10,12 +10,9 @@ import { apiLocation, homeLocation } from '../../../../../config/env.json';
 
 import './login.css';
 
-const mapStateToProps = createSelector(
-  isSignedInSelector,
-  isSignedIn => ({
-    isSignedIn
-  })
-);
+const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
+  isSignedIn
+}));
 
 function Login(props) {
   const { t } = useTranslation();

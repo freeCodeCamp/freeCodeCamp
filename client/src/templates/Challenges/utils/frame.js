@@ -49,7 +49,7 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-export const runTestInTestFrame = async function(document, test, timeout) {
+export const runTestInTestFrame = async function (document, test, timeout) {
   const { contentDocument: frame } = document.getElementById(testId);
   return await Promise.race([
     new Promise((_, reject) => setTimeout(() => reject('timeout'), timeout)),
@@ -115,7 +115,7 @@ const initMainFrame = (frameReady, proxyLogger) => ctx => {
     // Overwriting the onerror added by createHeader to catch any errors thrown
     // after the frame is ready. It has to be overwritten, as proxyLogger cannot
     // be added as part of createHeader.
-    ctx.window.onerror = function(msg) {
+    ctx.window.onerror = function (msg) {
       var string = msg.toLowerCase();
       if (string.includes('script error')) {
         msg = 'Error, open your browser console to learn more.';
