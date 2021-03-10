@@ -32,7 +32,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "final-form": "^4.20.2",
     "gatsby": "^2.32.9",
-    "gatsby-cli": "^2.19.1",
+    "gatsby-cli": "^3.0.0",
     "gatsby-plugin-advanced-sitemap": "^1.6.0",
     "gatsby-plugin-create-client-paths": "^2.10.0",
     "gatsby-plugin-manifest": "^2.12.1",
