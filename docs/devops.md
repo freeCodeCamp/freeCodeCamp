@@ -645,7 +645,7 @@ pm2 reload all --update-env && pm2 logs
 
 ## Work on Chat Servers
 
-Our chat servers are available with a HA configuration [recommend in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
+Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
 
 
 We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available here](https://github.com/freeCodeCamp/chat-nginx-config).
@@ -821,7 +821,7 @@ deployed on each instance like so:
    Are you sure you want to continue? [y/N] y
    ```
 
-   Select yes (y), to remove everything that is not in use.
+   Select yes (y) to remove everything that is not in use.
 
 ## Updating Node.js versions on VMs
 
