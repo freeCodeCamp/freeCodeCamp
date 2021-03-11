@@ -58,7 +58,7 @@ assert.deepEqual(letterFrequency('Not all that Mrs. Bennet, however'), [
 ]);
 ```
 
-`letterFrequency("daughters, could ask on the ")` should return `[[" ",5],[",",1],["a",2],["c",1],["d",2],["e",2],["g",1],["h",2],["k",1],["l",1],["n",1],["o",2],["r",1],["s",2],["t",2],["u",2]]`.
+`letterFrequency("daughters, could ask on the ")` should return `[[" ", 5],[",", 1],["a", 2],["c", 1],["d", 2],["e", 2],["g", 1],["h", 2],["k", 1],["l", 1],["n", 1],["o", 2],["r", 1],["s", 2],["t", 2],["u", 2]]`.
 
 ```js
 assert.deepEqual(letterFrequency('daughters, could ask on the '), [
