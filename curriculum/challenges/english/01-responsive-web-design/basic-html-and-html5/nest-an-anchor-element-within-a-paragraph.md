@@ -29,7 +29,7 @@ Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):
 
 `<a href="http://freecodecamp.org"> ... </a>`
 
-The text, `link to freecodecamp.org`, within the `a` element is called `anchor text`, and will display the link to click:  
+The text, `link to freecodecamp.org`, within the `a` element is called <dfn>anchor text</dfn>, and will display the link to click:
 
 `<a href=" ... ">link to freecodecamp.org</a>`
 
