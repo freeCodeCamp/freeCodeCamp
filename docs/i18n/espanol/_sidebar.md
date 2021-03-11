@@ -13,9 +13,9 @@
   - [Revisar un archivo de currículo](how-to-proofread-files.md)
   - [Cómo traducir la web](how-to-translate-the-website.md)
 - **Guías Opcionales**
+  - [Set up freeCodeCamp on Windows(WSL)](how-to-setup-wsl.md)
+  - [Add Cypress tests](how-to-add-cypress-tests.md)
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
-  - [Configurar freeCodeCamp en WSL](how-to-setup-wsl.md)
-  - [Agregar pruebas de Cypress](how-to-add-cypress-tests.md)
 
 ---
 
@@ -27,5 +27,5 @@
 
 - **Nuestra Comunidad**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
-  - [**Foro de debate**](https://freecodecamp.org/forum/c/contributors)
+  - [**Foro Discourse**](https://freecodecamp.org/forum/c/contributors)
   - [**Servidor de chat**](https://chat.freecodecamp.org/home)
