@@ -9,7 +9,7 @@ dashedName: comparison-with-the-less-than-operator
 
 # --description--
 
-El operador <dfn>menor que</dfn> (`<`) compara los valores de dos números. Si el número a la izquierda es menor que el número a la derecha, devuelve `true`. De lo contrario, devuelve `false`. Al igual que el operador de igualdad, el operador <dfn>menor que</dfn> convertirá los tipos de datos mientras los compara.
+El operador menor que (`<`) compara los valores de dos números. Si el número a la izquierda es menor que el número a la derecha, devuelve `true`. De lo contrario, devuelve `false`. Al igual que el operador de igualdad, el operador menor que convertirá los tipos de datos mientras los compara.
 
 **Ejemplos**
 

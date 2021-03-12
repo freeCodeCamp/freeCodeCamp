@@ -13,7 +13,7 @@ El siguiente elemento HTML5 que agrega significado semántico y mejora la accesi
 
 `header` comparte la función landmark integrada que viste con `main`, lo que permite a las tecnologías de asistencia navegar rápidamente a ese contenido.
 
-**Nota:** El `header` está diseñado para usarse dentro de la etiqueta `body` de tu documento HTML. Esto es diferente al elemento `head`, que contiene el título de la página, metainformación, etc.
+**Nota:** El `header` está diseñado para usarse dentro de la etiqueta `body` de tu documento HTML. Es diferente al elemento `head`, que contiene el título de la página, la meta información, etc.
 
 # --instructions--
 

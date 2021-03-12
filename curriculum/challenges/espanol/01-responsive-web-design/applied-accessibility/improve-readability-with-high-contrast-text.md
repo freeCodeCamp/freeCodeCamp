@@ -9,9 +9,9 @@ dashedName: improve-readability-with-high-contrast-text
 
 # --description--
 
-El bajo contraste entre los colores de primer plano y de fondo puede dificultar la lectura del texto. El contraste suficiente mejora la legibilidad de tu contenido, pero ¿qué significa exactamente "suficiente"?
+El bajo contraste entre los colores de primer plano y de fondo puede dificultar la lectura del texto. Suficiente contraste mejora la legibilidad de tu contenido, pero ¿qué significa exactamente "suficiente"?
 
-Las Directrices de Accesibilidad al Contenido Web (WCAG) recomiendan al menos una relación de contraste de 4.5 a 1 para el texto normal. La relación se calcula comparando los valores de luminancia relativa de dos colores. Esto equilibra entre 1:1 para el mismo color, o sin contraste, y 21:1 para el blanco contra el negro, el contraste más fuerte. Hay muchas herramientas de comprobación de contraste disponibles en línea que calculan esta relación por ti.
+Las Directrices de Accesibilidad al Contenido Web (WCAG) recomiendan al menos una relación de contraste de 4.5 a 1 para el texto normal. La relación se calcula comparando los valores de luminancia relativa de dos colores. Esto varía de 1:1 para el mismo color, o ningún contraste, a 21:1 para blanco contra negro, el contraste más sustancial. Hay muchas herramientas de comprobación de contraste disponibles en línea que calculan esta relación por ti.
 
 # --instructions--
 

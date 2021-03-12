@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b6
-title: Escape Sequences in Strings
+title: Escapa secuencias en cadenas
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqRh6'
 forumTopicId: 17567
@@ -9,36 +9,36 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. There are two reasons to use escaping characters:
+Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Hay dos razones para usar caracteres de escape:
 
-1.  To allow you to use characters you may not otherwise be able to type out, such as a carriage return.
-2.  To allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean.
+1.  Para permitir el uso de caracteres que de otra manera no te sería posible escribir, como un retorno de carro.
+2.  Para permitirte representar múltiples comillas en una cadena sin que JavaScript malinterprete lo que quieres decir.
 
-We learned this in the previous challenge.
+Esto lo aprendimos en el anterior desafío.
 
-<table class='table table-striped'><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Código</th><th>Resultado</th></tr></thead><tbody><tr><td><code>\'</code></td><td>comilla simple</td></tr><tr><td><code>\"</code></td><td>comilla doble</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>línea nueva</td></tr><tr><td><code>\r</code></td><td>retorno de carro</td></tr><tr><td><code>\t</code></td><td>tabulación</td></tr><tr><td><code>\b</code></td><td>límite de palabra</td></tr><tr><td><code>\f</code></td><td>fuente de formulario</td></tr></tbody></table>
 
-*Note that the backslash itself must be escaped in order to display as a backslash.*
+*Ten en cuenta que la barra invertida en sí debe ser escapada para poder mostrarla como una barra invertida.*
 
 # --instructions--
 
-Assign the following three lines of text into the single variable `myStr` using escape sequences.
+Asigna las siguientes tres líneas de texto en la variable única `myStr` usando secuencias de escape.
 
 <blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
 
-You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
+Necesitarás usar secuencias de escape para insertar correctamente los caracteres especiales. También necesitarás seguir el espaciado tal y como se ve arriba, sin espacios entre secuencias de escape o palabras.
 
-**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
+**Nota:** La sangría para la segunda línea (`SecondLine`) se consigue con el carácter de escape de tabulación, no con espacios.
 
 # --hints--
 
-`myStr` should not contain any spaces
+`myStr` no debe contener ningún espacio
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
+`myStr` debe contener las cadenas `FirstLine`, `SecondLine` y `ThirdLine` (recuerda la sensibilidad a mayúsculas y minúsculas)
 
 ```js
 assert(
@@ -46,31 +46,31 @@ assert(
 );
 ```
 
-`FirstLine` should be followed by the newline character `\n`
+`FirstLine` debe ir seguido del carácter de línea nueva `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` should contain a tab character `\t` which follows a newline character
+`myStr` debe contener un carácter de tabulación `\t` seguido de un carácter de línea nueva
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` should be preceded by the backslash character <code>\\</code>
+`SecondLine` debe estar precedida por el carácter de barra invertida `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-There should be a newline character between `SecondLine` and `ThirdLine`
+Debe haber un carácter de línea nueva entre `SecondLine` y `ThirdLine`
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` should only contain characters shown in the instructions
+`myStr` solo debe contener caracteres mostrados en las instrucciones
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

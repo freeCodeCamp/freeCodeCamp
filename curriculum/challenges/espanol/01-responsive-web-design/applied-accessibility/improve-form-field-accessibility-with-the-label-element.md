@@ -9,11 +9,11 @@ dashedName: improve-form-field-accessibility-with-the-label-element
 
 # --description--
 
-La mejora de la accesibilidad con el marcado HTML semántico se aplica tanto al uso de nombres de etiquetas apropiados como de atributos. Los próximos desafíos cubren algunos escenarios importantes utilizando atributos en formularios.
+La mejora de la accesibilidad con el marcado semántico HTML se aplica al uso de nombres de etiquetas y atributos apropiados. Los próximos desafíos cubren algunos escenarios importantes utilizando atributos en formularios.
 
 La etiqueta `label` contiene el texto para un elemento específico de control de formulario, por lo general el nombre o etiqueta para una elección. Esto vincula el significado al elemento y hace que el formulario se lea mejor. El atributo `for` en una etiqueta `label` asocia de manera explícita dicho `label` con el control de formulario utilizado por los lectores de pantalla.
 
-Ya aprendiste sobre botones de radio y sus etiquetas en una lección de la sección de HTML básico. En esa lección, colocamos el elemento de entrada del botón de radio dentro de la etiqueta `label` junto con la etiqueta del texto para hacer que el texto se pueda cliquear. También, se puede utilizar el atributo `for` como se explicó en esta lección.
+Ya aprendiste sobre botones de radio y sus etiquetas en una lección de la sección de HTML básico. En esa lección, colocamos el elemento de entrada del botón de radio dentro de la etiqueta `label` junto con la etiqueta del texto para hacer que el texto se pueda cliquear. Otra forma de lograr esto es usando el atributo `for`, como se explica en esta lección.
 
 El valor del atributo `for` debe ser igual al valor del atributo `id` del formulario de control. Por ejemplo:
 
