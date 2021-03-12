@@ -187,12 +187,13 @@ export const stepsToClaimSelector = state => {
   const user = userSelector(state);
   const currentCerts = certificatesByNameSelector(user.username)(state)
     .currentCerts;
+  console.log(user);
   return {
     currentCerts: currentCerts,
     isHonest: user?.isHonest,
     isShowName: user?.profileUI?.showName,
     isShowCerts: user?.profileUI?.showCerts,
-    isShowTimeLine: user?.profileUI?.showTimeLine
+    isShowProfile: !user?.profileUI?.isLocked
   };
 };
 export const isDonatingSelector = state => userSelector(state).isDonating;

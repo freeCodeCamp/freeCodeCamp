@@ -26,14 +26,14 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
   };
   // TODO: handle links to relevant section on /settings
   // const { steps } = props;
-  const settingsLink = '/settings#profile-settings';
+  const settingsLink = '/settings#privacy-settings';
   const certName = i18nCertText.replace(' Certification', '');
   const {
     // currentCerts,
     isHonest,
     isShowName,
     isShowCerts,
-    isShowTimeLine
+    isShowProfile
   } = steps;
   return (
     <ul className='map-challenges-ul'>
@@ -68,9 +68,9 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
       <li className='map-challenge-title map-challenge-wrap'>
         <Link to={settingsLink}>
           <span className='badge map-badge'>
-            {renderCheckMark(isShowTimeLine)}
+            {renderCheckMark(isShowProfile)}
           </span>
-          {t('certification-card.set-timeline-public')}
+          {t('certification-card.set-profile-public')}
         </Link>
       </li>
     </ul>

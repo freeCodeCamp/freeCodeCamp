@@ -568,8 +568,8 @@
     "intro": "Complete the following steps to claim your {{i18nCertText}}",
     "complete-project": "Complete {{certName}} Projects",
     "accept-honesty": "Accept our Academic Honest Policy",
-    "set-name": "Set your profile name",
+    "set-name": "Set your profile name, and make it public",
     "set-certs-public": "Set your certificication settings to public",
-    "set-timeline-public": "Set your timeline settings to public"
+    "set-profile-public": "Set your timeline settings to public"
   }
 }

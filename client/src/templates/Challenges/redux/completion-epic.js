@@ -5,7 +5,7 @@ import {
   catchError,
   concat,
   filter,
-  tap
+  finalize
 } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 import { navigate } from 'gatsby';
@@ -152,17 +152,19 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const pathToNavigateTo = findPathToNavigateTo(
-        nextChallengePath,
-        superBlock,
-        state,
-        challengeType
-      );
+      const pathToNavigateTo = async () => {
+        return await findPathToNavigateTo(
+          nextChallengePath,
+          superBlock,
+          state,
+          challengeType
+        );
+      };
 
       return submitter(type, state).pipe(
-        tap(async () => navigate(await pathToNavigateTo)),
         concat(closeChallengeModal),
-        filter(Boolean)
+        filter(Boolean),
+        finalize(async () => navigate(pathToNavigateTo))
       );
     })
   );
@@ -184,7 +186,6 @@ async function findPathToNavigateTo(
     const username = usernameSelector(state);
     try {
       const response = await getVerifyCanClaimCert(username, superBlock);
-      console.log(response);
       if (response.status === 200) {
         canClaimCert = response.data?.response?.message === 'can-claim-cert';
       }
@@ -201,11 +202,5 @@ async function findPathToNavigateTo(
   } else {
     pathToNavigateTo = `/learn/${superBlock}/#${superBlock}-projects`;
   }
-  console.log(
-    isProjectSubmission,
-    challengeType,
-    canClaimCert,
-    pathToNavigateTo
-  );
   return pathToNavigateTo;
 }
