@@ -29,7 +29,7 @@ const nestedJQCallReg = /\$\s*?\(\s*?\$\s*?\)/gi;
 const throwIfNestedJquery = cond([
   [
     testHTMLJS,
-    function({ contents }) {
+    function ({ contents }) {
       if (nestedJQCallReg.test(contents)) {
         throw new SyntaxError('Nested jQuery calls breaks browsers');
       }
@@ -44,7 +44,7 @@ const functionCallReg = /function\s*?\(|function\s+\w+\s*?\(/gi;
 const ThrowIfUnfinishedFunction = cond([
   [
     testHTMLJS,
-    function({ contents }) {
+    function ({ contents }) {
       if (functionReg.test(contents) && !functionCallReg.test(contents)) {
         throw new SyntaxError('Unsafe or unfinished function declaration');
       }
@@ -58,7 +58,7 @@ const unsafeConsoleCallReg = /if\s\(null\)\sconsole\.log\(1\);/gi;
 const throwIfUnsafeConsoleCall = cond([
   [
     testHTMLJS,
-    function({ contents }) {
+    function ({ contents }) {
       if (unsafeConsoleCallReg.test(contents)) {
         throw new SyntaxError(
           '`if (null) console.log(1)` detected. This will break tests'
@@ -74,7 +74,7 @@ const goMixReg = /glitch\.(com|me)/gi;
 const throwIfGomixDetected = cond([
   [
     testHTMLJS,
-    function({ contents }) {
+    function ({ contents }) {
       if (goMixReg.test(contents)) {
         throw new Error('Glitch.com or Glitch.me should not be in the code');
       }

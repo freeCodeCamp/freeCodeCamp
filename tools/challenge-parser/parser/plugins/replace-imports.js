@@ -11,9 +11,7 @@ const { editableRegionMarker } = require('./add-seed');
 const tableAndStrikeThrough = require('./table-and-strikethrough');
 
 async function parse(file) {
-  return await remark()
-    .use(tableAndStrikeThrough)
-    .parse(file);
+  return await remark().use(tableAndStrikeThrough).parse(file);
 }
 
 function plugin() {

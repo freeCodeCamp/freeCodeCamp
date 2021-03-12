@@ -14,12 +14,9 @@ import Spacer from '../helpers/Spacer';
 import ToggleSetting from './ToggleSetting';
 import SectionHeader from './SectionHeader';
 
-const mapStateToProps = createSelector(
-  userSelector,
-  user => ({
-    user
-  })
-);
+const mapStateToProps = createSelector(userSelector, user => ({
+  user
+}));
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ submitProfileUI }, dispatch);

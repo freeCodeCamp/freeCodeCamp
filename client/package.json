@@ -121,5 +121,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
   }
 }

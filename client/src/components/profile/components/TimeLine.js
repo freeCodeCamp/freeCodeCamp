@@ -336,9 +336,17 @@ function useIdToNameMap() {
       certPath: getPathFromID(id)
     });
   }
-  edges.forEach(({ node: { id, title, fields: { slug } } }) => {
-    idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
-  });
+  edges.forEach(
+    ({
+      node: {
+        id,
+        title,
+        fields: { slug }
+      }
+    }) => {
+      idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
+    }
+  );
   return idToNameMap;
 }
 

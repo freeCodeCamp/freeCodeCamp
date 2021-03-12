@@ -11,12 +11,9 @@ import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 
 const mapStateToProps = state => {
-  return createSelector(
-    completedChallengesSelector,
-    completedChallenges => ({
-      completedChallenges: completedChallenges.map(({ id }) => id)
-    })
-  )(state);
+  return createSelector(completedChallengesSelector, completedChallenges => ({
+    completedChallenges: completedChallenges.map(({ id }) => id)
+  }))(state);
 };
 
 const mapDispatchToProps = dispatch =>

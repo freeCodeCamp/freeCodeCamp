@@ -211,7 +211,4 @@ export function ShowSettings(props) {
 ShowSettings.displayName = 'ShowSettings';
 ShowSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);

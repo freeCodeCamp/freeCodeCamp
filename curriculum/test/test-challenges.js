@@ -91,7 +91,7 @@ const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
-Mocha.Runner.prototype.fail = function(test, err) {
+Mocha.Runner.prototype.fail = function (test, err) {
   if (err instanceof AssertionError) {
     const errMessage = String(err.message || '');
     const assertIndex = errMessage.indexOf(': expected');
@@ -198,9 +198,9 @@ async function setup() {
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
     if (!meta[dashedBlockName]) {
-      meta[dashedBlockName] = (await getMetaForBlock(
-        dashedBlockName
-      )).challengeOrder;
+      meta[dashedBlockName] = (
+        await getMetaForBlock(dashedBlockName)
+      ).challengeOrder;
     }
   }
   return {
@@ -221,8 +221,8 @@ function cleanup() {
 }
 
 function runTests(challengeData) {
-  describe('Check challenges', function() {
-    after(function() {
+  describe('Check challenges', function () {
+    after(function () {
       cleanup();
     });
     populateTestsForLang(challengeData);
@@ -252,15 +252,15 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  describe(`Check challenges (${lang})`, function() {
+  describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);
     challenges.forEach((challenge, id) => {
       const dashedBlockName = challenge.block;
-      describe(challenge.block || 'No block', function() {
-        describe(challenge.title || 'No title', function() {
+      describe(challenge.block || 'No block', function () {
+        describe(challenge.title || 'No title', function () {
           // Note: the title in meta.json are purely for human readability and
           // do not include translations, so we do not validate against them.
-          it('Matches an ID in meta.json', function() {
+          it('Matches an ID in meta.json', function () {
             const index = meta[dashedBlockName].findIndex(
               arr => arr[0] === challenge.id
             );
@@ -272,7 +272,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
             }
           });
 
-          it('Common checks', function() {
+          it('Common checks', function () {
             const result = validateChallenge(challenge);
 
             if (result.error) {
@@ -374,9 +374,9 @@ function populateTestsForLang({ lang, challenges, meta }) {
             return;
           }
 
-          describe('Check tests syntax', function() {
+          describe('Check tests syntax', function () {
             tests.forEach(test => {
-              it(`Check for: ${test.text}`, function() {
+              it(`Check for: ${test.text}`, function () {
                 assert.doesNotThrow(() => new vm.Script(test.testString));
               });
             });
@@ -393,7 +393,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               ? buildJSChallenge
               : buildDOMChallenge;
 
-          it('Test suite must fail on the initial contents', async function() {
+          it('Test suite must fail on the initial contents', async function () {
             this.timeout(5000 * tests.length + 1000);
             // suppress errors in the console.
             const oldConsoleError = console.error;
@@ -473,9 +473,11 @@ function populateTestsForLang({ lang, challenges, meta }) {
             return;
           }
 
-          describe('Check tests against solutions', function() {
+          describe('Check tests against solutions', function () {
             solutions.forEach((solution, index) => {
-              it(`Solution ${index + 1} must pass the tests`, async function() {
+              it(`Solution ${
+                index + 1
+              } must pass the tests`, async function () {
                 this.timeout(5000 * tests.length + 2000);
                 const testRunner = await createTestRunner(
                   challenge,

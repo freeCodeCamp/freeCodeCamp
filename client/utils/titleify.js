@@ -16,12 +16,7 @@ function prototyper(str) {
     .map(str => {
       if (prototypeRE.test(str)) {
         if (str.length > 9) {
-          return prototyper(
-            str
-              .trim()
-              .split('prototype')
-              .join('-prototype-')
-          );
+          return prototyper(str.trim().split('prototype').join('-prototype-'));
         }
         return str;
       }
@@ -39,12 +34,7 @@ function prototyper(str) {
     return `${titleify(first)}.prototype.${finalSecond}`;
   }
   if (noProto.length === 1) {
-    return prototyper(
-      noProto[0]
-        .toLowerCase()
-        .split('.')
-        .join('-')
-    );
+    return prototyper(noProto[0].toLowerCase().split('.').join('-'));
   }
   return titleify(str, true);
 }

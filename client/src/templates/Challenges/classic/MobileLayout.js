@@ -101,7 +101,4 @@ class MobileLayout extends Component {
 MobileLayout.displayName = 'MobileLayout';
 MobileLayout.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MobileLayout);
+export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);
