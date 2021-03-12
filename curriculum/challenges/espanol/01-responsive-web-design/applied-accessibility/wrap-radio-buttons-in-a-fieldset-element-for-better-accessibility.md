@@ -11,7 +11,7 @@ dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 
 El siguiente tema sobre formularios cubre la accesibilidad de los botones tipo radio. A cada opción se le da una `label` (etiqueta) con un atributo `for` vinculado al `id` del elemento correspondiente como se cubrió en el último desafío. Dado que los botones de radio a menudo vienen en un grupo donde el usuario debe elegir uno, hay una manera de mostrar semánticamente que las opciones son parte de un conjunto.
 
-La etiqueta `fieldset` rodea toda la agrupación de botones de radio para lograr esto. A menudo utiliza una etiqueta `legend` para proporcionar una descripción para la agrupación, la cual es leída por los lectores de pantalla para cada elección en el elemento `fieldset`.
+La etiqueta `fieldset` rodea toda la agrupación de botones de radio para lograr esto. A menudo utiliza una etiqueta de `legend` para proporcionar una descripción para la agrupación, que lectores de pantalla leen por cada opción en el elemento `fieldset`.
 
 El contenedor `fieldset` y la etiqueta `legend` no son necesarias cuando las opciones se explican por sí mismas, como selección de género. Usar `label` con el atributo `for` para cada botón de radio es suficiente.
 
