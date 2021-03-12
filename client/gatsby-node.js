@@ -193,8 +193,10 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
     newPlugins.push(new MonacoWebpackPlugin());
   }
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty'
+    resolve: {
+      fallback: {
+        fs: false
+      }
     },
     plugins: newPlugins
   });
