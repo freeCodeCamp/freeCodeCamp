@@ -219,7 +219,7 @@ Existen algunas limitaciones y problemas conocidos al utilizar la versión beta 
 
 - #### Sign in page may look different than production
 
-  Usamos un entorno de pruebas para freecodecamp.dev en Auth0 y, por lo tanto, no tenemos la capacidad de configurar un dominio personalizado. Esto hace que todas las redirecciones de peticiones y la página de inicio de sesión aparezcan en un dominio predeterminado como: `https://freecodecamp-dev.auth0.com/`. Esto no afecta la funcionalidad y es lo más cercano a producción que podemos tener.
+  We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. Esto hace que todas las redirecciones de peticiones y la página de inicio de sesión aparezcan en un dominio predeterminado como: `https://freecodecamp-dev.auth0.com/`. Esto no afecta la funcionalidad y es lo más cercano a producción que podemos tener.
 
 ## Reportando problemas y dejando retroalimentación
 
@@ -236,7 +236,7 @@ Puedes enviar un correo electrónico a `dev[at]freecodecamp.org` si tienes algun
 
 Como miembro del equipo interno, es posible que se te haya dado acceso a nuestros proveedores de servicios en la nube como Azure, Digital Ocean, etc.
 
-Estos son algunos comandos prácticos que puedes usar para trabajar en las Máquinas Virtuales (VM), por ejemplo, realizar actualizaciones de mantenimiento o realizar un mantenimiento general.
+Here are some handy commands that you can use to work on the Virtual Machines (VM), for instance performing maintenance updates or doing general housekeeping.
 
 ## Obtener una lista de las Máquinas Virtuales
 
@@ -288,105 +288,11 @@ doctl auth init
 doctl compute droplet list --format "ID,Name,PublicIPv4"
 ```
 
-## Iniciar una VM (o Conjunto de Escalado de VMs)
+## Spin new Resources
 
-> Todo: Add instructions for spinning VM(s)
+We are working on creating our IaC setup, and while that is in works you can use the Azure portal or the Azure CLI to spin new virtual machines and other resources.
 
-
-<!--
-
-The below instructions are stale.
-
-### 0. Prerequisites (workspace Setup) for Staff
-
-Get a login session on `azure cli`, and clone the
-[`infra`](https://github.com/freeCodeCamp/infra) for setting up template
-workspace.
-
-```console
-az login
-git clone https://github.com/freeCodeCamp/infra
-cd infra
-```
-
-Use the Scratchpad subdirectory for temporary files, and making one-off edits.
-The contents in this subdirectory are intentionally ignored from source control.
-
-### 1. Provision VMs on Azure.
-
-List all Resource Groups
-
-```console
-az group list --output table
-```
-
-```console
-Name                               Location       Status
----------------------------------  -------------  ---------
-tools-rg                           eastus         Succeeded
-```
-
-Create a Resource Group
-
-```
-az group create --location eastus --name stg-rg
-```
-
-```console
-az group list --output table
-```
-
-```console
-Name                               Location       Status
----------------------------------  -------------  ---------
-tools-rg                           eastus         Succeeded
-stg-rg                             eastus         Succeeded
-```
-
-Next per the need, provision a single VM or a scaleset.
-
-#### A. provision single instances
-
-```console
-az vm create \
-  --resource-group stg-rg-eastus \
-  --name <VIRTUAL_MACHINE_NAME> \
-  --image UbuntuLTS \
-  --size <VIRTUAL_MACHINE_SKU>
-  --custom-data cloud-init/nginx-cloud-init.yaml \
-  --admin-username <USERNAME> \
-  --ssh-key-values <SSH_KEYS>.pub
-```
-
-#### B. provision scaleset instance
-
-```console
-az vmss create \
-  --resource-group stg-rg-eastus \
-  --name <VIRTUAL_MACHINE_SCALESET_NAME> \
-  --image UbuntuLTS \
-  --size <VIRTUAL_MACHINE_SKU>
-  --upgrade-policy-mode automatic \
-  --custom-data cloud-init/nginx-cloud-init.yaml \
-  --admin-username <USERNAME> \
-  --ssh-key-values <SSH_KEYS>.pub
-```
-
-> [!NOTE]
->
-> - The custom-data config should allow you to configure and add SSH keys,
->   install packages etc. via the `cloud-init` templates in your local
->   workspace. Tweak the files in your local workspace as needed. The cloud-init
->   config is optional and you can omit it completely to do setups manually as
->   well.
->
-> - The virtual machine SKU is something like: **Standard_B2s** which can be
->   retrived by executing something like
->   `az vm list-sizes -l eastus --output table` or checking the Azure portal
->   pricing.
-
--->
-
+> [!TIP] No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do  some of the basic provisioning like installing docker or adding SSH keys, etc.
 ## Mantener las VMs actualizadas
 
 Debes mantener las máquinas virtuales actualizadas mediante la realización de actualizaciones. Esto asegurará que la máquina virtual se ha parcheado con las correcciones de seguridad más recientes.
@@ -424,73 +330,70 @@ La configuración de NGINX está disponible en [este repositorio](https://github
 
 Aprovisionamiento de máquinas virtuales con el código
 
-#### 1. (Opcional) Instale NGINX y configúrelo desde el repositorio.
+1. Install NGINX and configure from repository.
 
-La configuración básica debe estar lista OOTB, mediante la configuración cloud-init. SSH y hacer los cambios según sea necesario para la(s) instancia(s) concreta(s).
+   ```console
+   sudo su
 
-Si anteriormente no utilizaste la configuración cloud-init, utiliza lo siguiente para obtener manualmente la configuración de NGINX y páginas de error:
+   cd /var/www/html
+   git clone https://github.com/freeCodeCamp/error-pages
 
-```console
-sudo su
+   cd /etc/
+   rm -rf nginx
+   git clone https://github.com/freeCodeCamp/nginx-config nginx
 
-cd /var/www/html
-git clone https://github.com/freeCodeCamp/error-pages
+   cd /etc/nginx
+   ```
 
-cd /etc/
-rm -rf nginx
-git clone https://github.com/freeCodeCamp/nginx-config nginx
+2. Install Cloudflare origin certificates and upstream application config.
 
-cd /etc/nginx
-```
+   Get the Cloudflare origin certificates from the secure storage and install at required locations.
 
-#### 2. Instale los certificados de origen de Cloudflare y la configuración de la aplicación upstream.
+   **OR**
 
-Obtén los certificados de origen de almacenamiento seguro de Cloudflare e instálalos en los lugares requeridos.
+   Move over existing certificates:
 
-**O**
+   ```console
+   # Local
+   scp -r username@source-server-public-ip:/etc/nginx/ssl ./
+   scp -pr ./ssl username@target-server-public-ip:/tmp/
 
-Reemplazar los certificados existentes:
+   # Remote
+   rm -rf ./ssl
+   mv /tmp/ssl ./
+   ```
 
-```console
-# Local
-scp -r username@source-server-public-ip:/etc/nginx/ssl ./
-scp -pr ./ssl username@target-server-public-ip:/tmp/
+   Update Upstream Configurations:
 
-# Remote
-rm -rf ./ssl
-mv /tmp/ssl ./
-```
+   ```console
+   vi configs/upstreams.conf
+   ```
 
-Actualizar las Configuraciones de Upstream:
+   Add/update the source/origin application IP addresses.
 
-```console
-vi configs/upstreams.conf
-```
+3. Setup networking and firewalls.
 
-Agregar/actualizar las direcciones IP source/origin de la aplicación.
+   Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
 
-#### 3. Configurar redes y firewalls.
+4. Add the VM to the load balancer backend pool.
 
-Configure los firewalls de Azure y `ufw` según sea necesario para las direcciones de origen de entrada.
-
-#### 4. Agregar la VM al grupo de backend del balanceador de cargas.
-
-Configura y agrega reglas al balanceador de carga si es necesario. Es posible que también debas agregar las VMs al grupo de backend del balanceador de carga si es necesario.
+   Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
 
 ### Registro de Eventos y Monitoreo
 
-1. Comprueba el estado del servicio NGINX utilizando el siguiente comando:
+1. Check status for NGINX service using the below command:
 
-```console
-sudo systemctl status nginx
-```
+   ```console
+   sudo systemctl status nginx
+   ```
 
-2. El registro de eventos y el monitoreo de los servidores están disponibles en:
+2. Logging and monitoring for the servers are available at:
 
-> <h3 align="center"><a href='https://amplify.nginx.com' _target='blank'>https://amplify.nginx.com</a></h3>
+   NGINX Amplify: [https://amplify.nginx.com]('https://amplify.nginx.com'), our current basic monitoring dashboard. We are working on more granular metrics for better observability
+
 ### Actualización de las Instancias (Mantenimiento)
 
-Los cambios en la configuración de nuestras instancias NGINX son mantenidos en GitHub, y se deben implementar en cada instancia de la siguiente manera:
+Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
 
 1. SSH en la instancia y entra en modo sudo
 
@@ -523,11 +426,11 @@ sudo apt install build-essential
 
 ### Primera Instalación
 
-Aprovisionamiento de las VMs con el código
+Provisioning VMs with the Code
 
 1. Instala Node LTS.
 
-2. Actualiza `npm`, instala PM2, configura logrotate e inícialo en el arranque
+2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
    npm i -g npm
@@ -579,11 +482,11 @@ pm2 monit
 
 ### Actualización de las Instancias (Mantenimiento)
 
-Los cambios en el código deben desplegarse en las instancias del API cada cierto tiempo. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
 
 > [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
-#### 1. Actualizaciones Manuales - Utilizadas para actualizar dependencias, variables de entorno.
+#### 1. Manual Updates - Used for updating dependencies, env variables.
 
 1. Detén todas las instancias
 
@@ -609,7 +512,7 @@ npm run ensure-env && npm run build:curriculum && npm run build:server
 pm2 start all --update-env && pm2 logs
 ```
 
-#### 2. Actualizaciones Continuas - Utilizadas para cambios lógicos en el código.
+#### 2. Rolling updates - Used for logical changes to code.
 
 ```console
 pm2 reload all --update-env && pm2 logs
@@ -627,11 +530,11 @@ sudo apt install build-essential
 
 ### Primera Instalación
 
-Aprovisionamiento de las VMs con el código
+Provisioning VMs with the Code
 
 1. Instala Node LTS.
 
-2. Actualiza `npm`, instala PM2, configura logrotate e inícialo en el arranque
+2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
    npm i -g npm
@@ -680,11 +583,11 @@ pm2 monit
 
 ### Actualización de las Instancias (Mantenimiento)
 
-Los cambios de código deben desplegarse en las instancias de API cada cierto tiempo. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
 
-> [!DANGER] Los flujos automáticos no están manejando actualizaciones de dependencias en el momento. Necesitamos realizar una actualización manual antes de que se ejecute cualquier flujo de despliegue.
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
-#### 1. Actualizaciones Manuales - Utilizadas para actualizar dependencias, variables de entorno.
+#### 1. Manual Updates - Used for updating dependencies, env variables.
 
 1. Detén todas las instancias
 
@@ -700,10 +603,295 @@ Los cambios de código deben desplegarse en las instancias de API cada cierto ti
    pm2 start all --update-env && pm2 logs
    ```
 
-#### 2. Actualizaciones Continuas - Utilizadas para cambios lógicos en el código.
+#### 2. Rolling updates - Used for logical changes to code.
 
 ```console
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] Estamos manejando las actualizaciones continuas de código, lógica, mediante flujos (pipelines). No deberías tener que ejecutar estos comandos. Están aquí para documentación.
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+
+## Work on Chat Servers
+
+Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
+
+
+We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available here](https://github.com/freeCodeCamp/chat-nginx-config).
+
+### First Install
+
+Provisioning VMs with the Code
+
+**NGINX Cluster:**
+
+1. Install NGINX and configure from repository.
+
+   ```console
+   sudo su
+
+   cd /var/www/html
+   git clone https://github.com/freeCodeCamp/error-pages
+
+   cd /etc/
+   rm -rf nginx
+   git clone https://github.com/freeCodeCamp/chat-nginx-config nginx
+
+   cd /etc/nginx
+   ```
+
+2. Install Cloudflare origin certificates and upstream application config.
+
+   Get the Cloudflare origin certificates from the secure storage and install at required locations.
+
+   **OR**
+
+   Move over existing certificates:
+
+   ```console
+   # Local
+   scp -r username@source-server-public-ip:/etc/nginx/ssl ./
+   scp -pr ./ssl username@target-server-public-ip:/tmp/
+
+   # Remote
+   rm -rf ./ssl
+   mv /tmp/ssl ./
+   ```
+
+   Update Upstream Configurations:
+
+   ```console
+   vi configs/upstreams.conf
+   ```
+
+   Add/update the source/origin application IP addresses.
+
+3. Setup networking and firewalls.
+
+   Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
+
+4. Add the VM to the load balancer backend pool.
+
+   Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
+
+**Docker Cluster:**
+
+1. Install Docker and configure from the repository
+
+   ```console
+   git clone https://github.com/freeCodeCamp/chat-config.git chat
+   cd chat
+   ```
+
+2. Configure the required environment variables and instance IP addresses.
+
+3. Run rocket-chat server
+
+   ```console
+   docker-compose config
+   docker-compose up -d
+   ```
+
+### Logging and Monitoring
+
+1. Check status for NGINX service using the below command:
+
+   ```console
+   sudo systemctl status nginx
+   ```
+
+2. Check status for running docker instances with:
+
+   ```console
+   docker ps
+   ```
+
+### Updating Instances (Maintenance)
+
+
+**NGINX Cluster:**
+
+Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
+
+1. SSH into the instance and enter sudo
+
+   ```console
+   sudo su
+   ```
+
+2. Get the latest config code.
+
+   ```console
+   cd /etc/nginx
+   git fetch --all --prune
+   git reset --hard origin/main
+   ```
+
+3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+
+   ```console
+   nginx -t
+   nginx -s reload
+   ```
+
+**Docker Cluster:**
+
+1. SSH into the instance and navigate to the chat config path
+
+   ```console
+   cd ~/chat
+   ```
+
+2. Get the latest config code.
+
+   ```console
+   git fetch --all --prune
+   git reset --hard origin/main
+   ```
+
+3. Pull down the latest docker image for Rocket.Chat
+
+   ```console
+   docker-compose pull
+   ```
+
+4. Update the running instances
+
+   ```console
+   docker-compose up -d
+   ```
+
+5. Validate the instances are up
+
+   ```console
+   docker ps
+   ```
+
+6. Cleanup extraneous resources
+
+   ```console
+   docker system prune --volumes
+   ```
+
+   Output:
+
+   ```console
+   WARNING! This will remove:
+     - all stopped containers
+     - all networks not used by at least one container
+     - all volumes not used by at least one container
+     - all dangling images
+     - all dangling build cache
+
+   Are you sure you want to continue? [y/N] y
+   ```
+
+   Select yes (y) to remove everything that is not in use.
+
+## Updating Node.js versions on VMs
+
+List currently installed node & npm versions
+
+```console
+nvm -v
+node -v
+npm -v
+
+nvm ls
+```
+
+Install the latest Node.js LTS, and reinstall any global packages
+
+```console
+nvm install 'lts/*' --reinstall-packages-from=default
+```
+
+Verify installed packages
+
+```console
+npm ls -g --depth=0
+```
+
+Alias `default` Node.js versions to the current `stable`
+
+```console
+nvm alias default stable
+```
+
+
+(Optional) Uninstall old versions
+
+```console
+nvm uninstall <version>
+```
+> [!WARNING] If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+
+Quick commands for PM2 to list, resurrect saved processes, etc.
+
+```console
+pm2 ls
+```
+
+```console
+pm2 resurrect
+```
+
+```console
+pm2 save
+```
+
+```console
+pm2 logs
+```
+
+> [!DANGER] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+
+## Installing and Updating Azure Pipeline Agents
+
+
+See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
+
+You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
+
+### Installing agents on Deployment targets
+
+Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register the agent from scratch in the requisite [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
+
+> [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
+
+### Updating agents
+
+Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables correctly. We need to do this for instance updating Node.js on our deployment target VMs.
+
+1. Navigate and check status of the service
+
+   ```console
+   cd ~/azagent
+   sudo ./svc.sh status
+   ```
+
+2. Stop the service
+
+   ```console
+   sudo ./svc.sh stop
+   ```
+
+3. Uninstall the service
+
+   ```console
+   sudo ./svc.sh uninstall
+   ```
+
+4. Remove the agent from the pipeline pool
+
+   ```console
+   ./config.sh remove
+   ```
+
+5. Remove the config files
+
+   ```console
+   cd ~
+   rm -rf ~/azagent
+   ```
+
+Once You have completed the steps above, you can repeat the same steps as installing the agent.
