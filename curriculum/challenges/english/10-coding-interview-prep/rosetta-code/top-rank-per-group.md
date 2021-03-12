@@ -30,7 +30,7 @@ testData1 = [
 ];
 ```
 
-one could rank top 10 employees in each department by calling
+One could rank top 10 employees in each department by calling:
 
 `topRankPerGroup(10, testData1, 'dept', 'salary')`
 
@@ -46,7 +46,7 @@ testData2 = [
 ];
 ```
 
-one could rank the top-rated movie in each genre by calling
+One could rank the top-rated movie in each genre by calling:
 
 `topRankPerGroup(1, testData2, 'genre', 'rating')`
 
