@@ -219,7 +219,7 @@ Existen algunas limitaciones y problemas conocidos al utilizar la versión beta 
 
 - #### Sign in page may look different than production
 
-  We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. Esto hace que todas las redirecciones de peticiones y la página de inicio de sesión aparezcan en un dominio predeterminado como: `https://freecodecamp-dev.auth0.com/`. Esto no afecta la funcionalidad y es lo más cercano a producción que podemos tener.
+  We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. Esto hace que todas las redirecciones de peticiones y la página de inicio de sesión aparezcan en un dominio predeterminado como: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
 
 ## Reportando problemas y dejando retroalimentación
 
