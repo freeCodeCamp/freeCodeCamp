@@ -13,7 +13,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@freecodecamp/loopback-component-passport": "^1.2.0",
-    "@sentry/node": "^5.30.0",
+    "@sentry/node": "^6.2.2",
     "accepts": "^1.3.7",
     "axios": "^0.21.1",
     "bad-words": "^3.0.4",
