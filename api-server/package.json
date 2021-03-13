@@ -19,7 +19,7 @@
     "bad-words": "^3.0.4",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
-    "connect-mongo": "^3.2.0",
+    "connect-mongo": "^4.4.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
