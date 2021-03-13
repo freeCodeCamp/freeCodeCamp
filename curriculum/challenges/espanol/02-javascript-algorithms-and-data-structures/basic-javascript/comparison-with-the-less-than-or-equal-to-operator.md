@@ -9,7 +9,7 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --description--
 
-El operador menor o igual que (`<=`) compara el valor de dos números. Si el número de la izquierda es menor o igual que el número de la derecha, devuelve `true`. Si el número a la izquierda es mayor que el número a la derecha, devuelve `false`. Al igual que el operador de igualdad, el operador menor o igual que convierte los tipos de datos.
+El operador menor o igual que (`<=`) compara el valor de dos números. Si el número de la izquierda es menor o igual que el número de la derecha, devuelve `true`. Si el número a la izquierda es mayor que el número a la derecha, devuelve `false`. Al igual que el operador de igualdad, el operador menor o igual que convertirá los tipos de datos mientras los compara.
 
 **Ejemplos**
 

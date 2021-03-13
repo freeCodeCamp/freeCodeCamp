@@ -11,7 +11,7 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 El operador mayor o igual que (`>=`) compara el valor de dos números. Si el número de la izquierda es mayor o igual que el número de la derecha, devuelve `true`. De lo contrario, devuelve `false`.
 
-Al igual que el operador de igualdad, `>=` convertirá los tipos de datos al comparar.
+Al igual que el operador de igualdad, el operador mayor o igual que convertirá los tipos de datos mientras los compara.
 
 **Ejemplos**
 

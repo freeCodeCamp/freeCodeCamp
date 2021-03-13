@@ -35,7 +35,7 @@ export const DonationOptionsText = () => {
       </h4>
       <p>
         <Trans i18nKey='donate.other-ways'>
-          <a href={t('donate.other-ways-url')}>placeholder</a>
+          <a href={t('links:donate.other-ways-url')}>placeholder</a>
         </Trans>
       </p>
     </>
@@ -48,7 +48,7 @@ export const DonationOptionsAlertText = () => {
     <p>
       <Trans>donate.bigger-donation</Trans>{' '}
       <Trans i18nKey='donate.other-ways'>
-        <a href={t('donate.other-ways-url')}>placeholder</a>
+        <a href={t('links:donate.other-ways-url')}>placeholder</a>
       </Trans>
     </p>
   );

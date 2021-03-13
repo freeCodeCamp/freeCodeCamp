@@ -9,13 +9,13 @@ dashedName: jump-straight-to-the-content-using-the-main-element
 
 # --description--
 
-HTML5 introdujo una serie de nuevos elementos que ofrecen a los desarrolladores más opciones al tiempo que incorporan características de accesibilidad. Estas etiquetas incluyen `main`, `header`, `footer`, `nav`, `article`, y `section`, entre otros.
+HTML5 introdujo varios elementos nuevos que dan a los desarrolladores más opciones y al mismo tiempo incorporan características de accesibilidad. Estas etiquetas incluyen `main`, `header`, `footer`, `nav`, `article`, y `section`, entre otros.
 
 De forma predeterminada, un navegador muestra estos elementos de forma similar al humilde `div`. Sin embargo, usarlos cuando sea apropiado le da un significado adicional a tu lenguaje de marcado. El nombre de la etiqueta solo puede indicar el tipo de información que contiene, lo que agrega significado semántico a ese contenido. Las tecnologías de asistencia pueden acceder a esta información para proporcionar mejores opciones de resumen de páginas o de navegación a sus usuarios.
 
-El elemento `main` se usa para envolver (lo adivinaste) el contenido principal, y solo debe haber uno por página. Está destinado a rodear la información que está relacionada con el tema central de su página. No está destinado a incluir elementos que se repiten en todas las páginas, como enlaces de navegación o banners.
+El elemento `main` se usa para envolver (lo adivinaste) el contenido principal, y solo debe haber uno por página. Su propósito es rodear la información relacionada con el tema central de tu página. No está destinado a incluir elementos que se repiten en todas las páginas, como enlaces de navegación o banners.
 
-La etiqueta `main` también tiene una característica de referencia insertada que la tecnología de asistencia puede usar para navegar rápidamente al contenido principal. Si alguna vez has visto un enlace de "Saltar al contenido principal" en la parte superior de la página, el uso de la etiqueta `main` proporciona automáticamente esa funcionalidad a los dispositivos de asistencia.
+La etiqueta `main` también tiene una característica de referencia incrustada que la tecnología de asistencia puede utilizar para navegar al contenido principal rápidamente. Si alguna vez has visto un enlace de "Saltar al contenido principal" en la parte superior de la página, el uso de la etiqueta `main` proporciona automáticamente esa funcionalidad a los dispositivos de asistencia.
 
 # --instructions--
 
