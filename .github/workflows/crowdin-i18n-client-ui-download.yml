@@ -100,5 +100,5 @@ jobs:
           base: 'main'
           title: 'chore(i18n,client): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
-          labels: 'crowdin-sync, scope: i18n, scope: UI'
+          labels: 'crowdin-sync, scope: UI'
           reviewers: 'RandellDawson, nhcarrigan'
