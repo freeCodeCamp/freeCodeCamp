@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d6
-title: Comparison with the Less Than Operator
+title: 小于运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVRWtB'
 forumTopicId: 16789
@@ -9,61 +9,63 @@ dashedName: comparison-with-the-less-than-operator
 
 # --description--
 
-The <dfn>less than</dfn> operator (`<`) compares the values of two numbers. If the number to the left is less than the number to the right, it returns `true`. Otherwise, it returns `false`. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.
+使用小于运算符（`<`）来比较两个数字。 如果小于运算符左边的数字比右边的数字小，它会返回 `true`。 否则会返回 `false`。 与相等运算符类似，小于运算符在做比较的时候会转换值的数据类型。
 
-**Examples**
+**例如：**
 
 ```js
-2   < 5  // true
-'3' < 7  // true
-5   < 5  // false
-3   < 2  // false
-'8' < 4  // false
+2   < 5
+'3' < 7
+5   < 5
+3   < 2
+'8' < 4
 ```
+
+按顺序，这些表达式会返回 `true`、`true`、`false`、`false` 和 `false`。
 
 # --instructions--
 
-Add the less than operator to the indicated lines so that the return statements make sense.
+添加小于运算符到指定行，使得函数的返回语句有意义。
 
 # --hints--
 
-`testLessThan(0)` should return "Under 25"
+`testLessThan(0)` 应该返回字符串 `Under 25`。
 
 ```js
 assert(testLessThan(0) === 'Under 25');
 ```
 
-`testLessThan(24)` should return "Under 25"
+`testLessThan(24)` 应该返回字符串 `Under 25`。
 
 ```js
 assert(testLessThan(24) === 'Under 25');
 ```
 
-`testLessThan(25)` should return "Under 55"
+`testLessThan(25)` 应该返回字符串 `Under 55`。
 
 ```js
 assert(testLessThan(25) === 'Under 55');
 ```
 
-`testLessThan(54)` should return "Under 55"
+`testLessThan(54)` 应该返回字符串 `Under 55`。
 
 ```js
 assert(testLessThan(54) === 'Under 55');
 ```
 
-`testLessThan(55)` should return "55 or Over"
+`testLessThan(55)` 应该返回字符串 `55 or Over`。
 
 ```js
 assert(testLessThan(55) === '55 or Over');
 ```
 
-`testLessThan(99)` should return "55 or Over"
+`testLessThan(99)` 应该返回字符串 `55 or Over`。
 
 ```js
 assert(testLessThan(99) === '55 or Over');
 ```
 
-You should use the `<` operator at least twice
+应该使用 `<` 运算符至少两次。
 
 ```js
 assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);

@@ -1,6 +1,6 @@
 ---
 id: a202eed8fc186c8434cb6d61
-title: Reverse a String
+title: 反转字符串
 challengeType: 5
 forumTopicId: 16043
 dashedName: reverse-a-string
@@ -8,33 +8,33 @@ dashedName: reverse-a-string
 
 # --description--
 
-Reverse the provided string.
+请反转传入函数的字符串。
 
-You may need to turn the string into an array before you can reverse it.
+在反转字符串之前，你可能需要将其切分成包含字符的数组。
 
-Your result must be a string.
+函数的返回结果应为字符串。
 
 # --hints--
 
-`reverseString("hello")` should return a string.
+`reverseString("hello")` 应返回一个字符串。
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` should become `"olleh"`.
+`reverseString("hello")` 应返回 `olleh`。
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` should become `"ydwoH"`.
+`reverseString("Howdy")` 应返回 `ydwoH`。
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` should return `"htraE morf sgniteerG"`.
+`reverseString("Greetings from Earth")` 应返回 `htraE morf sgniteerG`。
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

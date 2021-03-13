@@ -1,6 +1,6 @@
 ---
 id: af2170cad53daa0770fabdea
-title: Mutations
+title: 比较字符串
 challengeType: 5
 forumTopicId: 16025
 dashedName: mutations
@@ -8,83 +8,83 @@ dashedName: mutations
 
 # --description--
 
-Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+如果数组里的第一个字符串包含了第二个字符串中的所有字母，则返回 `true`。
 
-For example, `["hello", "Hello"]`, should return true because all of the letters in the second string are present in the first, ignoring case.
+例如，`["hello", "Hello"]` 应该返回 `true`。因为在忽略大小写的情况下，第一个字符串包含了第二个字符串里出现的所有字母。
 
-The arguments `["hello", "hey"]` should return false because the string "hello" does not contain a "y".
+`["hello", "hey"]` 应该返回 `false`。因为 `hello` 并不包含字符 `y`。
 
-Lastly, `["Alien", "line"]`, should return true because all of the letters in "line" are present in "Alien".
+最后，`["Alien", "line"]` 应该返回 `true`。因为 `line` 中的所有字母都出现在了 `Alien` 中。
 
 # --hints--
 
-`mutation(["hello", "hey"])` should return false.
+`mutation(["hello", "hey"])` 应返回 `false`。
 
 ```js
 assert(mutation(['hello', 'hey']) === false);
 ```
 
-`mutation(["hello", "Hello"])` should return true.
+`mutation(["hello", "Hello"])` 应返回 `true`。
 
 ```js
 assert(mutation(['hello', 'Hello']) === true);
 ```
 
-`mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])` should return true.
+`mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])` 应返回 `true`。
 
 ```js
 assert(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']) === true);
 ```
 
-`mutation(["Mary", "Army"])` should return true.
+`mutation(["Mary", "Army"])` 应返回 `true`。
 
 ```js
 assert(mutation(['Mary', 'Army']) === true);
 ```
 
-`mutation(["Mary", "Aarmy"])` should return true.
+`mutation(["Mary", "Aarmy"])` 应返回 `true`。
 
 ```js
 assert(mutation(['Mary', 'Aarmy']) === true);
 ```
 
-`mutation(["Alien", "line"])` should return true.
+`mutation(["Alien", "line"])` 应返回 `true`。
 
 ```js
 assert(mutation(['Alien', 'line']) === true);
 ```
 
-`mutation(["floor", "for"])` should return true.
+`mutation(["floor", "for"])` 应返回 `true`。
 
 ```js
 assert(mutation(['floor', 'for']) === true);
 ```
 
-`mutation(["hello", "neo"])` should return false.
+`mutation(["hello", "neo"])` 应返回 `false`。
 
 ```js
 assert(mutation(['hello', 'neo']) === false);
 ```
 
-`mutation(["voodoo", "no"])` should return false.
+`mutation(["voodoo", "no"])` 应返回 `false`。
 
 ```js
 assert(mutation(['voodoo', 'no']) === false);
 ```
 
-`mutation(["ate", "date"]` should return false.
+`mutation(["ate", "date"])` 应返回 `false`。
 
 ```js
 assert(mutation(['ate', 'date']) === false);
 ```
 
-`mutation(["Tiger", "Zebra"])` should return false.
+`mutation(["Tiger", "Zebra"])` 应返回 `false`。
 
 ```js
 assert(mutation(['Tiger', 'Zebra']) === false);
 ```
 
-`mutation(["Noel", "Ole"])` should return true.
+`mutation(["Noel", "Ole"])` 应返回 `true`。
 
 ```js
 assert(mutation(['Noel', 'Ole']) === true);
