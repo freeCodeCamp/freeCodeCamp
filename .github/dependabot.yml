@@ -27,4 +27,4 @@ updates:
     open-pull-requests-limit: 20
     labels:
       - 'dependabot'
-      - 'scope: learn'
+      - 'scope: curriculum'

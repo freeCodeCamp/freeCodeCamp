@@ -219,7 +219,7 @@ There are some known limitations and tradeoffs when using the beta version of th
 
 - #### Sign in page may look different than production
 
-  We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
+  We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
 
 ## Reporting issues and leaving feedback
 
