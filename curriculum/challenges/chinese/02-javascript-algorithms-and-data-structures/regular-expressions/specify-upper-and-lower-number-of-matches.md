@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba5
-title: Specify Upper and Lower Number of Matches
+title: 指定匹配的上限和下限
 challengeType: 1
 forumTopicId: 301367
 dashedName: specify-upper-and-lower-number-of-matches
@@ -8,63 +8,65 @@ dashedName: specify-upper-and-lower-number-of-matches
 
 # --description--
 
-Recall that you use the plus sign `+` to look for one or more characters and the asterisk `*` to look for zero or more characters. These are convenient but sometimes you want to match a certain range of patterns.
+回想一下，使用加号 `+` 查找一个或多个字符，使用星号 `*` 查找零个或多个字符。 这些都很方便，但有时需要匹配一定范围的匹配模式。
 
-You can specify the lower and upper number of patterns with <dfn>quantity specifiers</dfn>. Quantity specifiers are used with curly brackets (`{` and `}`). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+可以使用数量说明符（<dfn>quantity specifiers</dfn>）指定匹配模式的上下限。 数量说明符与花括号（`{` 和 `}`）一起使用。 可以在花括号之间放两个数字，这两个数字代表匹配模式的上限和下限。
 
-For example, to match only the letter `a` appearing between `3` and `5` times in the string `"ah"`, your regex would be `/a{3,5}h/`.
+例如，要匹配出现 `3` 到 `5` 次字母 `a` 的在字符串 `ah`，正则表达式应为`/a{3,5}h/`。
 
 ```js
 let A4 = "aaaah";
 let A2 = "aah";
 let multipleA = /a{3,5}h/;
-multipleA.test(A4); // Returns true
-multipleA.test(A2); // Returns false
+multipleA.test(A4);
+multipleA.test(A2);
 ```
+
+第一次 `test` 调用将返回 `true`，而第二次调用将返回 `false`。
 
 # --instructions--
 
-Change the regex `ohRegex` to match the entire phrase `"Oh no"` only when it has `3` to `6` letter `h`'s.
+修改正则表达式 `ohRegex` 以匹配出现 `3` 到 `6` 次字母 `h` 的字符串 `Oh no`。
 
 # --hints--
 
-Your regex should use curly brackets.
+你的正则表达式应该使用花括号。
 
 ```js
 assert(ohRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match `"Ohh no"`
+你的正则表达式不应匹配字符串 `Ohh no`
 
 ```js
 assert(!ohRegex.test('Ohh no'));
 ```
 
-Your regex should match `"Ohhh no"`
+你的正则表达式应该匹配字符串 `Ohhh no`
 
 ```js
 assert('Ohhh no'.match(ohRegex)[0].length === 7);
 ```
 
-Your regex should match `"Ohhhh no"`
+你的正则表达式应该匹配字符串 `Ohhhh no`
 
 ```js
 assert('Ohhhh no'.match(ohRegex)[0].length === 8);
 ```
 
-Your regex should match `"Ohhhhh no"`
+你的正则表达式应该匹配字符串 `Ohhhhh no`
 
 ```js
 assert('Ohhhhh no'.match(ohRegex)[0].length === 9);
 ```
 
-Your regex should match `"Ohhhhhh no"`
+你的正则表达式应该匹配字符串 `Ohhhhhh no`
 
 ```js
 assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 ```
 
-Your regex should not match `"Ohhhhhhh no"`
+你的正则表达式应该匹配字符串 `Ohhhhhhh no`
 
 ```js
 assert(!ohRegex.test('Ohhhhhhh no'));

@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
-title: Write Reusable JavaScript with Functions
+title: 用函数编写可重用代码
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
@@ -9,9 +9,9 @@ dashedName: write-reusable-javascript-with-functions
 
 # --description--
 
-In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.
+在 JavaScript 中，我们可以把代码的重复部分抽取出来，放到一个函数 （<dfn>functions</dfn>）中。
 
-Here's an example of a function:
+举个例子：
 
 ```js
 function functionName() {
@@ -19,27 +19,27 @@ function functionName() {
 }
 ```
 
-You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this: `functionName();` Each time the function is called it will print out the message `"Hello World"` on the dev console. All of the code between the curly braces will be executed every time the function is called.
+你可以通过函数名加上后面的小括号来调用（<dfn>invoke</dfn>）这个函数，就像这样： `functionName();` 每次调用函数时，它都会在控制台上打印消息 `Hello World`。 每次调用函数时，大括号之间的所有代码都将被执行。
 
 # --instructions--
 
-<ol><li>Create a function called <code>reusableFunction</code> which prints <code>"Hi World"</code> to the dev console.</li><li>Call the function.</li></ol>
+<ol><li>先创建一个名为 <code>reusableFunction</code> 的函数，这个函数可以打印 <code>"Hi World"</code> 到控制台上。</li><li>然后调用这个函数。</li></ol>
 
 # --hints--
 
-`reusableFunction` should be a function.
+`reusableFunction` 应该是一个函数。
 
 ```js
 assert(typeof reusableFunction === 'function');
 ```
 
-`reusableFunction` should output "Hi World" to the dev console.
+`reusableFunction` 应该将字符串 `Hi World` 输出到控制台。
 
 ```js
 assert(hiWorldWasLogged);
 ```
 
-You should call `reusableFunction` after you define it.
+在你定义 `reusableFunction` 之后记得调用它。
 
 ```js
 assert(/^\s*reusableFunction\(\)\s*/m.test(code));
@@ -87,7 +87,9 @@ if (typeof reusableFunction !== "function") {
 ```
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

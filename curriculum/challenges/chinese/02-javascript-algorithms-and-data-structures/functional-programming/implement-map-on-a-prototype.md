@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b62
-title: Implement map on a Prototype
+title: 在原型上实现 map 方法
 challengeType: 1
 forumTopicId: 301230
 dashedName: implement-map-on-a-prototype
@@ -8,25 +8,25 @@ dashedName: implement-map-on-a-prototype
 
 # --description--
 
-As you have seen from applying `Array.prototype.map()`, or simply `map()` earlier, the `map` method returns an array of the same length as the one it was called on. It also doesn't alter the original array, as long as its callback function doesn't.
+之前用到了 `Array.prototype.map()` 方法（即 `map()`），通过 `map` 返回一个与调用它的数组长度相同的数组。 只要它的回调函数不改变原始数组，它就不会改变原始数组。
 
-In other words, `map` is a pure function, and its output depends solely on its inputs. Plus, it takes another function as its argument.
+换句话说，`map` 是一个纯函数，它的输出仅取决于输入的数组和作为参数传入的回调函数。 此外，它接收另一个函数作为它的参数。
 
-You might learn a lot about the `map` method if you implement your own version of it. It is recommended you use a `for` loop or `Array.prototype.forEach()`.
+实现一个 `map`，加深对它的了解。 你可以用 `for` 循环或者 `Array.prototype.forEach()` 方法。
 
 # --instructions--
 
-Write your own `Array.prototype.myMap()`, which should behave exactly like `Array.prototype.map()`. You should not use the built-in `map` method. The `Array` instance can be accessed in the `myMap` method using `this`.
+写一个和 `Array.prototype.map()` 一样的 `Array.prototype.myMap()`。 不能使用内置的 `map` 方法。 在 `myMap` 方法内，可以使用 `this` 访问 `Array` 实例。
 
 # --hints--
 
-`new_s` should equal `[46, 130, 196, 10]`.
+`new_s` 应该等于 `[46, 130, 196, 10]`。
 
 ```js
 assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]));
 ```
 
-Your code should not use the `map` method.
+不能使用 `map` 方法。
 
 ```js
 assert(!code.match(/\.?[\s\S]*?map/g));

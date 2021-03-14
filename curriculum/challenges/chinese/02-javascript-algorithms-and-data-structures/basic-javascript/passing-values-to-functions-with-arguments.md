@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bd
-title: Passing Values to Functions with Arguments
+title: 将值传递给带有参数的函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy8rahW'
 forumTopicId: 18254
@@ -9,9 +9,9 @@ dashedName: passing-values-to-functions-with-arguments
 
 # --description--
 
-<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
+函数的参数 （<dfn>parameters</dfn>）在函数中充当调用函数时传入函数的输入占位符（也叫形参）的作用。 函数调用时，参数可以为一个或多个。 调用函数时输入（或传递 <dfn>"passed"</dfn>）的实际值被称为参数（<dfn>arguments</dfn>）。
 
-Here is a function with two parameters, `param1` and `param2`:
+这是带有两个参数的函数，`param1` 和 `param2`：
 
 ```js
 function testFun(param1, param2) {
@@ -19,21 +19,21 @@ function testFun(param1, param2) {
 }
 ```
 
-Then we can call `testFun`: `testFun("Hello", "World");` We have passed two arguments, `"Hello"` and `"World"`. Inside the function, `param1` will equal "Hello" and `param2` will equal "World". Note that you could call `testFun` again with different arguments and the parameters would take on the value of the new arguments.
+然后我们可以调用 `testFun`，就像这样： `testFun("Hello", "World");`。 我们传入了两个字符串参数， `Hello` 和`World`。 在函数中，`param1` 等于字符串 `Hello` 和 `param2` 等于字符串 `World`。 请注意，`testFun` 函数可以多次调用，每次调用时传递的参数会决定参数的实际值。
 
 # --instructions--
 
-<ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function with two numbers as arguments.</li></ol>
+<ol><li>创建一个名为 <code>functionWithArgs</code> 的函数，它可以接收两个参数，计算参数的和，将结果输出到控制台。</li><li>用两个数字作为参数调用函数。</li></ol>
 
 # --hints--
 
-`functionWithArgs` should be a function.
+`functionWithArgs` 应该是一个函数。
 
 ```js
 assert(typeof functionWithArgs === 'function');
 ```
 
-`functionWithArgs(1,2)` should output `3`.
+`functionWithArgs(1,2)` 应该输出 `3`。
 
 ```js
 if (typeof functionWithArgs === 'function') {
@@ -44,7 +44,7 @@ if (typeof functionWithArgs === 'function') {
 assert(logOutput == 3);
 ```
 
-`functionWithArgs(7,9)` should output `16`.
+`functionWithArgs(7,9)` 应该输出 `16`。
 
 ```js
 if (typeof functionWithArgs === 'function') {
@@ -55,7 +55,7 @@ if (typeof functionWithArgs === 'function') {
 assert(logOutput == 16);
 ```
 
-You should call `functionWithArgs` with two numbers after you define it.
+在定义 `functionWithArgs` 之后记得传入两个数字调用它。
 
 ```js
 assert(
@@ -105,7 +105,9 @@ if (typeof functionWithArgs !== "function") {
 ```
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

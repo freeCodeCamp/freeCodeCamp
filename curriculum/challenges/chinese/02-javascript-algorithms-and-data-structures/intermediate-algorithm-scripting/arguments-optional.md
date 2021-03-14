@@ -1,6 +1,6 @@
 ---
 id: a97fd23d9b809dac9921074f
-title: Arguments Optional
+title: 可选参数
 challengeType: 5
 forumTopicId: 14271
 dashedName: arguments-optional
@@ -8,51 +8,51 @@ dashedName: arguments-optional
 
 # --description--
 
-Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
+创建一个将两个参数相加的函数。 如果只提供了一个参数，则返回一个需要一个参数并返回总和的函数。
 
-For example, `addTogether(2, 3)` should return `5`, and `addTogether(2)` should return a function.
+比如，`addTogether(2, 3)` 应该返回 `5`。 而 `addTogether(2)` 应该返回一个函数。
 
-Calling this returned function with a single argument will then return the sum:
+调用这个返回的函数，为它传入一个值，会返回两个值的总和：
 
 `var sumTwoAnd = addTogether(2);`
 
-`sumTwoAnd(3)` returns `5`.
+`sumTwoAnd(3)` 此时应返回 `5`。
 
-If either argument isn't a valid number, return undefined.
+任何时候，只要任一传入的参数不是数字，就应返回 undefined。
 
 # --hints--
 
-`addTogether(2, 3)` should return 5.
+`addTogether(2, 3)` 应返回 5。
 
 ```js
 assert.deepEqual(addTogether(2, 3), 5);
 ```
 
-`addTogether(23, 30)` should return 53.
+`addTogether(23, 30)` 应返回 53。
 
 ```js
 assert.deepEqual(addTogether(23, 30), 53);
 ```
 
-`addTogether(5)(7)` should return 12.
+`addTogether(5)(7)` 应返回 12。
 
 ```js
 assert.deepEqual(addTogether(5)(7), 12);
 ```
 
-`addTogether("http://bit.ly/IqT6zt")` should return undefined.
+`addTogether("http://bit.ly/IqT6zt")` 应返回 `undefined`。
 
 ```js
 assert.isUndefined(addTogether('http://bit.ly/IqT6zt'));
 ```
 
-`addTogether(2, "3")` should return undefined.
+`addTogether(2, "3")` 应返回 `undefined`。
 
 ```js
 assert.isUndefined(addTogether(2, '3'));
 ```
 
-`addTogether(2)([3])` should return undefined.
+`addTogether(2)([3])` 应返回 `undefined`。
 
 ```js
 assert.isUndefined(addTogether(2)([3]));

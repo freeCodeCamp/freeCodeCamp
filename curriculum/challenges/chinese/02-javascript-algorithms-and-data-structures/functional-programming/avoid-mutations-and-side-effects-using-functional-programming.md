@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5e
-title: Avoid Mutations and Side Effects Using Functional Programming
+title: 使用函数式编程避免变化和副作用
 challengeType: 1
 forumTopicId: 301228
 dashedName: avoid-mutations-and-side-effects-using-functional-programming
@@ -8,39 +8,39 @@ dashedName: avoid-mutations-and-side-effects-using-functional-programming
 
 # --description--
 
-If you haven't already figured it out, the issue in the previous challenge was with the `splice` call in the `tabClose()` function. Unfortunately, `splice` changes the original array it is called on, so the second call to it used a modified array, and gave unexpected results.
+如果你还没想通，上一个挑战的问题出在 `tabClose()` 函数里的 `splice`。 不幸的是，`splice` 修改了调用它的原始数组，所以第二次调用它时是基于修改后的数组，才给出了意料之外的结果。
 
-This is a small example of a much larger pattern - you call a function on a variable, array, or an object, and the function changes the variable or something in the object.
+这是一个小例子，还有更广义的定义——在变量，数组或对象上调用一个函数，这个函数会改变对象中的变量或其他东西。
 
-One of the core principles of functional programming is to not change things. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
+函数式编程的核心原则之一是不改变任何东西。 变化会导致错误。 如果一个函数不改变传入的参数、全局变量等数据，那么它造成问题的可能性就会小很多。
 
-The previous example didn't have any complicated operations but the `splice` method changed the original array, and resulted in a bug.
+前面的例子没有任何复杂的操作，但是 `splice` 方法改变了原始数组，导致 bug 产生。
 
-Recall that in functional programming, changing or altering things is called <dfn>mutation</dfn>, and the outcome is called a <dfn>side effect</dfn>. A function, ideally, should be a <dfn>pure function</dfn>, meaning that it does not cause any side effects.
+回想一下，在函数式编程中，改变或变更叫做 <dfn>mutation</dfn>，这种改变的结果叫做“副作用”（<dfn>side effect</dfn>）。 理想情况下，函数应该是不会产生任何副作用的 <dfn>pure function</dfn>。
 
-Let's try to master this discipline and not alter any variable or object in our code.
+让我们尝试掌握这个原则：不要改变代码中的任何变量或对象。
 
 # --instructions--
 
-Fill in the code for the function `incrementer` so it returns the value of the global variable `fixedValue` increased by one.
+填写 `incrementer` 函数的代码，使其返回值为全局变量 `fixedValue` 增加 1 。
 
 # --hints--
 
-Your function `incrementer` should not change the value of `fixedValue` (which is `4`).
+`incrementer` 函数不能改变 `fixedValue` 的值（`4`）。
 
 ```js
 incrementer();
 assert(fixedValue === 4);
 ```
 
-Your `incrementer` function should return a value that is one larger than the `fixedValue` value.
+`incrementer` 函数应返回比 `fixedValue` 变量更大的值。
 
 ```js
 const __newValue = incrementer();
 assert(__newValue === 5);
 ```
 
-Your `incrementer` function should return a value based on the global `fixedValue` variable value.
+你的 `incrementer` 函数返回的值应该基于全局变量 `fixedValue` 的值。
 
 ```js
 (function () {

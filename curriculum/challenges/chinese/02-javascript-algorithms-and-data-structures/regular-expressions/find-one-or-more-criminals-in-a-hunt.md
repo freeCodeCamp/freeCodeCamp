@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9c
-title: Find One or More Criminals in a Hunt
+title: 在狩猎中找到一个或多个罪犯
 challengeType: 1
 forumTopicId: 301343
 dashedName: find-one-or-more-criminals-in-a-hunt
@@ -8,11 +8,11 @@ dashedName: find-one-or-more-criminals-in-a-hunt
 
 # --description--
 
-Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
+是时候停一停来测试你的正则表达式使用能力了。 一群罪犯越狱逃跑了，但你不知道有多少人。 然而，你知道他们不在一起时会保持紧密联系。 你有责任立刻找到所有的罪犯。
 
-Here's an example to review how to do this:
+这里有一个示例来提示如何做到这一点：
 
-The regex `/z+/` matches the letter `z` when it appears one or more times in a row. It would find matches in all of the following strings:
+当字母`z`在一行中出现一次或连续多次时，正则表达式`/z+/`会匹配到它。 它会在以下所有字符串中找到匹配项：
 
 ```js
 "z"
@@ -22,7 +22,7 @@ The regex `/z+/` matches the letter `z` when it appears one or more times in a r
 "abczzzzzzzzzzzzzzzzzzzzzabc"
 ```
 
-But it does not find matches in the following strings since there are no letter `z` characters:
+但是它不会在以下字符串中找到匹配项，因为它们中没有字母`z`：
 
 ```js
 ""
@@ -32,32 +32,32 @@ But it does not find matches in the following strings since there are no letter 
 
 # --instructions--
 
-Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter `C`.
+编写一个贪婪正则表达式，在一组其他人中匹配到一个或多个罪犯。 罪犯由大写字母`C`表示。
 
 # --hints--
 
-Your regex should match one criminal (`C`) in `"C"`
+您的正则表达式应该匹配字符串 `C` 中的一个罪犯(`C`)
 
 ```js
 assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
 ```
 
-Your regex should match two criminals (`CC`) in `"CC"`
+您的正则表达式应该匹配字符串 `CC` 中的两个罪犯(`CC`)
 
 ```js
 assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
 ```
 
-Your regex should match three criminals (`CCC`) in `"P1P5P4CCCP2P6P3"`
+您的正则表达式应该在字符串 `P1P5P4CCCcP2P6P3` 中匹配三个罪犯(`CCC`)。
 
 ```js
 assert(
-  'P1P5P4CCCP2P6P3'.match(reCriminals) &&
-    'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC'
+  'P1P5P4CCCcP2P6P3'.match(reCriminals) &&
+    'P1P5P4CCCcP2P6P3'.match(reCriminals)[0] == 'CCC'
 );
 ```
 
-Your regex should match five criminals (`CCCCC`) in `"P6P2P7P4P5CCCCCP3P1"`
+您的正则表达式应该在字符串 `P6P2P7P4P5CCCCCP3P1`中匹配五个罪犯(`CCCCC`)
 
 ```js
 assert(
@@ -66,19 +66,19 @@ assert(
 );
 ```
 
-Your regex should not match any criminals in `""`
+你的正则表达式在`""`中不应该匹配到任何罪犯
 
 ```js
 assert(!reCriminals.test(''));
 ```
 
-Your regex should not match any criminals in `"P1P2P3"`
+你的正则表达式在`P1P2P3`中不应该匹配到任何罪犯
 
 ```js
 assert(!reCriminals.test('P1P2P3'));
 ```
 
-Your regex should match fifty criminals (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) in `"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"`.
+你的正则表达式应该在`P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3`中匹配五十个 罪犯（'`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`'）。
 
 ```js
 assert(

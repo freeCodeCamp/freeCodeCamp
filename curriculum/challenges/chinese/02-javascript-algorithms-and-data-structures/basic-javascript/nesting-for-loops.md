@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e1
-title: Nesting For Loops
+title: 循环嵌套
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
@@ -9,7 +9,7 @@ dashedName: nesting-for-loops
 
 # --description--
 
-If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:
+如果你有一个二维数组，可以使用相同的逻辑，先遍历外面的数组，再遍历里面的子数组。 下面是一个例子：
 
 ```js
 var arr = [
@@ -22,21 +22,21 @@ for (var i=0; i < arr.length; i++) {
 }
 ```
 
-This outputs each sub-element in `arr` one at a time. Note that for the inner loop, we are checking the `.length` of `arr[i]`, since `arr[i]` is itself an array.
+这里一次输出了 `arr` 中的每个子元素。 提示，对于内部循环，我们可以通过 `arr[i]` 的 `.length` 来获得子数组的长度，因为 `arr[i]` 本身就是一个数组。
 
 # --instructions--
 
-Modify function `multiplyAll` so that it returns the product of all the numbers in the sub-arrays of `arr`.
+修改函数 `multiplyAll`，获得 `arr` 内部数组的每个数字相乘的结果 product。
 
 # --hints--
 
-`multiplyAll([[1],[2],[3]])` should return `6`
+`multiplyAll([[1],[2],[3]])` 应该返回 `6`
 
 ```js
 assert(multiplyAll([[1], [2], [3]]) === 6);
 ```
 
-`multiplyAll([[1,2],[3,4],[5,6,7]])` should return `5040`
+`multiplyAll([[1,2],[3,4],[5,6,7]])` 应该返回 `5040`
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` should return `54`
+`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` 应该返回 `54`
 
 ```js
 assert(

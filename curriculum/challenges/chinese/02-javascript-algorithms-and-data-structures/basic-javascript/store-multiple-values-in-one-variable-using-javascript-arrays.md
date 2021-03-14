@@ -1,6 +1,6 @@
 ---
 id: bd7993c9c69feddfaeb8bdef
-title: Store Multiple Values in one Variable using JavaScript Arrays
+title: 使用 JavaScript 数组将多个值存储在一个变量中
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQWAm'
 forumTopicId: 18309
@@ -9,34 +9,31 @@ dashedName: store-multiple-values-in-one-variable-using-javascript-arrays
 
 # --description--
 
-With JavaScript `array` variables, we can store several pieces of data in one place.
+使用数组（`array`），我们可以在一个地方存储多个数据。
 
-You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:
+以左方括号开始定义一个数组，以右方括号结束，里面每个元素之间用逗号隔开，例如：
 
-`var sandwich = ["peanut butter", "jelly", "bread"]`.
+`var sandwich = ["peanut butter", "jelly", "bread"]`
 
 # --instructions--
 
-Modify the new array `myArray` so that it contains both a `string` and a `number` (in that order).
-
-**Hint**  
-Refer to the example code in the text editor if you get stuck.
+创建一个包含字符串（`string`）和数字（ `number`）（按照字符串和数字的顺序）的数组`myArray`。
 
 # --hints--
 
-`myArray` should be an `array`.
+`myArray`应该是一个数组（`array`）。
 
 ```js
 assert(typeof myArray == 'object');
 ```
 
-The first item in `myArray` should be a `string`.
+`myArray` 数组的第一个元素应该是一个字符串（`string`）。
 
 ```js
 assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
 ```
 
-The second item in `myArray` should be a `number`.
+`myArray` 数组的第二个元素应该是一个数字（`number`）。
 
 ```js
 assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');

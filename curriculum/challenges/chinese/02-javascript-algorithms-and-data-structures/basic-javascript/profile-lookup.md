@@ -1,6 +1,6 @@
 ---
 id: 5688e62ea601b2482ff8422b
-title: Profile Lookup
+title: 资料查找
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
@@ -9,27 +9,27 @@ dashedName: profile-lookup
 
 # --description--
 
-We have an array of objects representing different people in our contacts lists.
+我们有一个对象数组，里面存储着通讯录。
 
-A `lookUpProfile` function that takes `name` and a property (`prop`) as arguments has been pre-written for you.
+`lookUpProfile` 函数已经写好了参数，需要 `name` 和属性 (`prop`) 参数。
 
-The function should check if `name` is an actual contact's `firstName` and the given property (`prop`) is a property of that contact.
+函数将会检查通讯录中是否存在一个 `firstName` 与传入的 `name` 相同的联系人。 如果存在，那么还需要检查对应的联系人中是否存在 `prop` 属性。
 
-If both are true, then return the "value" of that property.
+如果它们都存在，函数返回 prop 属性对应的值。
 
-If `name` does not correspond to any contacts then return `"No such contact"`.
+如果 `name` 不对应于任何联系人，然后返回字符串 `No such contact`。
 
-If `prop` does not correspond to any valid properties of a contact found to match `name` then return `"No such property"`.
+如果 `prop` 属性在匹配 `name` 的联系人里不存在，返回 `No such property`。
 
 # --hints--
 
-`lookUpProfile("Kristian", "lastName")` should return `"Vos"`
+`lookUpProfile("Kristian", "lastName")` 应该返回字符串 `Vos`
 
 ```js
 assert(lookUpProfile('Kristian', 'lastName') === 'Vos');
 ```
 
-`lookUpProfile("Sherlock", "likes")` should return `["Intriguing Cases", "Violin"]`
+`lookUpProfile("Sherlock", "likes")` 应该返回 `["Intriguing Cases", "Violin"]`
 
 ```js
 assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
@@ -38,25 +38,25 @@ assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
 ]);
 ```
 
-`lookUpProfile("Harry", "likes")` should return an array
+`lookUpProfile("Harry", "likes")` 应该返回一个数组
 
 ```js
 assert(typeof lookUpProfile('Harry', 'likes') === 'object');
 ```
 
-`lookUpProfile("Bob", "number")` should return "No such contact"
+`lookUpProfile("Bob", "number")` 应该返回字符串 `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'number') === 'No such contact');
 ```
 
-`lookUpProfile("Bob", "potato")` should return "No such contact"
+`lookUpProfile("Bob", "potato")` 应该返回字符串 `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'potato') === 'No such contact');
 ```
 
-`lookUpProfile("Akira", "address")` should return "No such property"
+`lookUpProfile("Akira", "address")` 应该返回字符串 `No such property`
 
 ```js
 assert(lookUpProfile('Akira', 'address') === 'No such property');

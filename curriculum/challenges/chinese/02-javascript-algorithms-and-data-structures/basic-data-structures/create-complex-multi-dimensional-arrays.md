@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b16
-title: Create complex multi-dimensional arrays
+title: 创建复杂的多维数组
 challengeType: 1
 forumTopicId: 301159
 dashedName: create-complex-multi-dimensional-arrays
@@ -8,52 +8,54 @@ dashedName: create-complex-multi-dimensional-arrays
 
 # --description--
 
-Awesome! You have just learned a ton about arrays! This has been a fairly high level overview, and there is plenty more to learn about working with arrays, much of which you will see in later sections. But before moving on to looking at <dfn>Objects</dfn>, lets take one more look, and see how arrays can become a bit more complex than what we have seen in previous challenges.
+很好！ 你现在已经学到很多关于数组的知识了， 但这些只是个开始。我们将在接下来的中挑战中学到更多与数组相关的知识。 在继续学习对象（<dfn>Objects</dfn>）之前，让我们再花一点时间了解下更复杂的数组嵌套。
 
-One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, known as a <dfn>multi-dimensional</dfn>, or nested array. Consider the following example:
+数组的一个强大的特性是，它可以包含其他数组，甚至完全由其他数组组成。 在上一个挑战中，我们已经接触到了包含数组的数组，但它还算是比较简单的。 数组中的数组还可以再包含其他数组，即可以嵌套任意多层数组。 习惯上，我们称这种数据结构为<dfn>多维（multi-dimensional）数组</dfn>或嵌套（nested）数组。 请看如下的示例：
 
 ```js
-let nestedArray = [ // top, or first level - the outer most array
-  ['deep'], // an array within an array, 2 levels of depth
+let nestedArray = [
+  ['deep'],
   [
-    ['deeper'], ['deeper'] // 2 arrays nested 3 levels deep
+    ['deeper'], ['deeper'] 
   ],
   [
     [
-      ['deepest'], ['deepest'] // 2 arrays nested 4 levels deep
+      ['deepest'], ['deepest']
     ],
     [
       [
-        ['deepest-est?'] // an array nested 5 levels deep
+        ['deepest-est?']
       ]
     ]
   ]
 ];
 ```
 
-While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data. However, we can still very easily access the deepest levels of an array this complex with bracket notation:
+`deep` 数组已嵌套 2 层。 `deeper` 数组嵌套了 3 层。 `deepest` 数组嵌套了 3 层， `deepest-est?` 嵌套了 5 层。
+
+虽然这个例子看起来错综复杂，不过，尤其是在处理大量数据的时候，这种数据结构还是会用到的。 尽管结构复杂，不过我们仍可以通过方括号表示法来访问嵌套得最深的数组：
 
 ```js
 console.log(nestedArray[2][1][0][0][0]);
-// logs: deepest-est?
 ```
 
-And now that we know where that piece of data is, we can reset it if we need to:
+控制台打印的是字符串 `deepest-est?`。 既然我们知道数据的位置，当然，我们也可以修改它：
 
 ```js
 nestedArray[2][1][0][0][0] = 'deeper still';
 
 console.log(nestedArray[2][1][0][0][0]);
-// now logs: deeper still
 ```
+
+现在控制台打印的是 `deeper still`。
 
 # --instructions--
 
-We have defined a variable, `myNestedArray`, set equal to an array. Modify `myNestedArray`, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string `'deep'`, on the fourth level, include the string `'deeper'`, and on the fifth level, include the string `'deepest'`.
+我们已经定义了一个叫做 `myNestedArray` 的数组变量。 请修改 `myNestedArray`，使用字符串（<dfn>string</dfn>）、数字（<dfn>number</dfn>）或布尔值（<dfn>boolean</dfn>）的任意组合作为数组的元素，并让 myNestedArray 刚好有 5 层（注意，最外层的数组是第 1 层）。 同时，请在第 3 层的数组中包含字符串 `deep`；在第 4 层的数组中包含字符串 `deeper`，在第 5 层的数组中包含字符串 `deepest`。
 
 # --hints--
 
-`myNestedArray` should contain only numbers, booleans, and strings as data elements
+`myNestedArray` 中的数据元素应只包含字符串、数字或者布尔值。
 
 ```js
 assert.strictEqual(
@@ -77,7 +79,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should have exactly 5 levels of depth
+`myNestedArray` 应刚好包含 5 层嵌套数组。
 
 ```js
 assert.strictEqual(
@@ -100,7 +102,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deep"` on an array nested 3 levels deep
+`myNestedArray` 中应只有一个字符串 `deep`，并且应出现在第 3 层数组中。
 
 ```js
 assert(
@@ -129,7 +131,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deeper"` on an array nested 4 levels deep
+`myNestedArray` 中应只有一个字符串 `deeper`，并且应出现在第 4 层数组中。
 
 ```js
 assert(
@@ -158,7 +160,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `"deepest"` on an array nested 5 levels deep
+`myNestedArray` 中应只有一个字符串 `deepest`，并且应出现在第 5 层数组中。
 
 ```js
 assert(

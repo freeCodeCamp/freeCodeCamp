@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b9a
-title: Match Characters that Occur Zero or More Times
+title: 匹配出现零次或多次的字符
 challengeType: 1
 forumTopicId: 301351
 dashedName: match-characters-that-occur-zero-or-more-times
@@ -8,51 +8,53 @@ dashedName: match-characters-that-occur-zero-or-more-times
 
 # --description--
 
-The last challenge used the plus `+` sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
+上一次的挑战中使用了加号 `+` 来查找出现一次或多次的字符。 还有一个选项可以匹配出现零次或多次的字符。
 
-The character to do this is the asterisk or star: `*`.
+执行该操作的字符叫做星号，即`*`。
 
 ```js
 let soccerWord = "gooooooooal!";
 let gPhrase = "gut feeling";
 let oPhrase = "over the moon";
 let goRegex = /go*/;
-soccerWord.match(goRegex); // Returns ["goooooooo"]
-gPhrase.match(goRegex); // Returns ["g"]
-oPhrase.match(goRegex); // Returns null
+soccerWord.match(goRegex);
+gPhrase.match(goRegex);
+oPhrase.match(goRegex);
 ```
+
+按顺序排列，三次 `match` 调用将返回值 `["goooooooo"]`，`["g"]` 和 `null`。
 
 # --instructions--
 
-For this challenge, `chewieQuote` has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex `chewieRegex` that uses the `*` character to match an uppercase `"A"` character immediately followed by zero or more lowercase `"a"` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+在这个挑战里，`chewieQuote` 已经被初始化为 `Aaaaaaaaaaaaaaaarrrgh!`。 创建一个变量为 `chewieRegex` 的正则表达式，使用 `*` 在 `chewieQuote` 中匹配 `A` 及其之后出现的零个或多个`a`。 你的正则表达式不需要使用修饰符，也不需要匹配引号。
 
 # --hints--
 
-Your regex `chewieRegex` should use the `*` character to match zero or more `a` characters.
+你的正则表达式 `chewieRegex` 应该使用 `*` 字符来匹配零或更多的 `a` 字符。
 
 ```js
 assert(/\*/.test(chewieRegex.source));
 ```
 
-Your regex should match `"A"` in `chewieQuote`.
+正则表达式应当匹配 `chewieQuote` 里的 `A`。
 
 ```js
 assert(result[0][0] === 'A');
 ```
 
-Your regex should match `"Aaaaaaaaaaaaaaaa"` in `chewieQuote`.
+你的正则表达式应该与 `chewieQuote` 中的字符串 `Aaaaaaaaaaaaaaaa` 匹配。
 
 ```js
 assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 ```
 
-Your regex `chewieRegex` should match 16 characters in `chewieQuote`.
+你的正则表达式 `chewieRegex` 应该匹配 `chewieQuote` 中的 16 个字符。
 
 ```js
 assert(result[0].length === 16);
 ```
 
-Your regex should not match any characters in "He made a fair move. Screaming about it can't help you."
+你的正则表达式不应该有任何匹配，在字符 `He made a fair move. Screaming about it can't help you.`
 
 ```js
 assert(
@@ -60,7 +62,7 @@ assert(
 );
 ```
 
-Your regex should not match any characters in "Let him have it. It's not wise to upset a Wookiee."
+你的正则表达式不应该有任何匹配，在字符 `Let him have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(

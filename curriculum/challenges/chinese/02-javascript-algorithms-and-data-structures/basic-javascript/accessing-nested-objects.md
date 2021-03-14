@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cc
-title: Accessing Nested Objects
+title: 访问嵌套对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
@@ -9,9 +9,9 @@ dashedName: accessing-nested-objects
 
 # --description--
 
-The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+我们可以通过连续使用点号表示法和方括号表示法来访问对象的嵌套属性。
 
-Here is a nested object:
+这是一个嵌套对象：
 
 ```js
 var ourStorage = {
@@ -26,23 +26,25 @@ var ourStorage = {
     "bottom drawer": "soda"
   }
 };
-ourStorage.cabinet["top drawer"].folder2;  // "secrets"
-ourStorage.desk.drawer; // "stapler"
+ourStorage.cabinet["top drawer"].folder2;
+ourStorage.desk.drawer;
 ```
+
+`ourStorage.cabinet["top drawer"].folder2` 将会是字符串 `secrets`，并且 `ourStorage.desk.drawer` 将会是字符串 `stapler`。
 
 # --instructions--
 
-Access the `myStorage` object and assign the contents of the `glove box` property to the `gloveBoxContents` variable. Use dot notation for all properties where possible, otherwise use bracket notation.
+访问 `myStorage` 对象并将 `glove box` 属性的内容赋值给 `gloveBoxContents` 变量。 在可能的情况下，对所有的属性使用点号，否则使用方括号。
 
 # --hints--
 
-`gloveBoxContents` should equal "maps".
+`gloveBoxContents` 应该等于字符串 `maps`。
 
 ```js
 assert(gloveBoxContents === 'maps');
 ```
 
-Your code should use dot and bracket notation to access `myStorage`.
+你的代码应该使用点号和方括号来访问 `myStorage`。
 
 ```js
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));

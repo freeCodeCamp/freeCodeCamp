@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b54
-title: Use getters and setters to Control Access to an Object
+title: 使用 getter 和 setter 来控制对象的访问
 challengeType: 1
 forumTopicId: 301220
 dashedName: use-getters-and-setters-to-control-access-to-an-object
@@ -8,13 +8,13 @@ dashedName: use-getters-and-setters-to-control-access-to-an-object
 
 # --description--
 
-You can obtain values from an object and set the value of a property within an object.
+你可以从对象中获得一个值，也可以给对象的属性赋值。
 
-These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.
+这些操作通常被称为 <dfn>getters</dfn> 以及 <dfn>setters</dfn>。
 
-Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
+Getter 函数的作用是可以让对象返回一个私有变量，而不需要直接去访问私有变量。
 
-Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.
+Setter 函数的作用是可以基于传进的参数来修改对象中私有变量。 这些修改可以是计算，或者是直接替换之前的值。
 
 ```js
 class Book {
@@ -31,30 +31,34 @@ class Book {
   }
 }
 const novel = new Book('anonymous');
-console.log(novel.writer);  // anonymous
+console.log(novel.writer);
 novel.writer = 'newAuthor';
-console.log(novel.writer);  // newAuthor
+console.log(novel.writer);
 ```
 
-Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details. **Note:** It is convention to precede the name of a private variable with an underscore (`_`). However, the practice itself does not make a variable private.
+控制台将显示字符串 `anonymous` 和 `newAuthor`。
+
+请注意用于调用 getter 和 setter 的语法。 它们甚至看起来不像是函数。 getter 和 setter 非常重要，因为它们隐藏了内部的实现细节。
+
+**注意：**通常会在私有变量前添加下划线（`_`）。 然而，这种做法本身并不是将变量变成私有的。
 
 # --instructions--
 
-Use the `class` keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+使用 `class` 关键字创建一个 `Thermostat` class。 `constructor` 接收一个华氏温度。
 
-In the class, create a `getter` to obtain the temperature in Celsius and a `setter` to set the temperature in Celsius.
+在 class 中，创建一个 `getter` 来获取摄氏温度和一个 `setter` 来设置温度值。
 
-Remember that `C = 5/9 * (F - 32)` and `F = C * 9.0 / 5 + 32`, where `F` is the value of temperature in Fahrenheit, and `C` is the value of the same temperature in Celsius.
+记得在 `C = 5/9 * (F - 32)` 和 `F = C * 9.0 / 5 + 32` 中，`F` 是华氏温度值，`C` 是摄氏温度值。
 
-**Note:** When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+**注意：**完成这个挑战后，应该在 class 中使用一个温度标准，要么是华氏温度，要么是摄氏温度。
 
-This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
+这就是 getter 和 setter 的功能。 你正在为别的用户创建一个 API，不论你使用哪一个，用户都将获得正确的结果。
 
-In other words, you are abstracting implementation details from the user.
+或者说，你从用户需求中抽象出了实现细节。
 
 # --hints--
 
-`Thermostat` should be a `class` with a defined `constructor` method.
+`Thermostat` 应该是一个具有 `constructor` 方法的 `class`。
 
 ```js
 assert(
@@ -63,13 +67,13 @@ assert(
 );
 ```
 
-`class` keyword should be used.
+应该使用 `class` 关键词。
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Thermostat` should be able to be instantiated.
+`Thermostat` 应该可以被实例化。
 
 ```js
 assert(
@@ -80,7 +84,7 @@ assert(
 );
 ```
 
-When instantiated with a Fahrenheit value, `Thermostat` should set the correct temperature.
+当实例化华氏温度值时，`Thermostat` 应该被设置为正确的 `temperature`。
 
 ```js
 assert(
@@ -91,7 +95,7 @@ assert(
 );
 ```
 
-A `getter` should be defined.
+应该定义一个 `getter`。
 
 ```js
 assert(
@@ -105,7 +109,7 @@ assert(
 );
 ```
 
-A `setter` should  be defined.
+应该定义一个 `setter`。
 
 ```js
 assert(
@@ -119,7 +123,7 @@ assert(
 );
 ```
 
-Calling the `setter` with a Celsius value should set the temperature.
+调用带有摄氏温度值的 `setter` 应该设置 `temperature`。
 
 ```js
 assert(

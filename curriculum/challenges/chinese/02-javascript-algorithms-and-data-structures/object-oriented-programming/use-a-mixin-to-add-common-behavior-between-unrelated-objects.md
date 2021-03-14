@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b89
-title: Use a Mixin to Add Common Behavior Between Unrelated Objects
+title: 使用 Mixin 在不相关对象之间添加共同行为
 challengeType: 1
 forumTopicId: 301331
 dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects
@@ -8,9 +8,9 @@ dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects
 
 # --description--
 
-As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like `Bird` and `Airplane`. They can both fly, but a `Bird` is not a type of `Airplane` and vice versa.
+正如你所见，行为是可以通过继承来共享的。 然而，在有些情况下，继承不是最好的解决方案。 继承不适用于不相关的对象，比如 `Bird` 和 `Airplane`。 虽然它们都可以飞行，但是 `Bird` 并不是一种 `Airplane`，反之亦然。
 
-For unrelated objects, it's better to use <dfn>mixins</dfn>. A mixin allows other objects to use a collection of functions.
+对于不相关的对象，更好的方法是使用 <dfn>mixins</dfn>。 mixin 允许其他对象使用函数集合。
 
 ```js
 let flyMixin = function(obj) {
@@ -20,7 +20,7 @@ let flyMixin = function(obj) {
 };
 ```
 
-The `flyMixin` takes any object and gives it the `fly` method.
+`flyMixin` 能接受任何对象，并为其提供 `fly` 方法。
 
 ```js
 let bird = {
@@ -37,34 +37,36 @@ flyMixin(bird);
 flyMixin(plane);
 ```
 
-Here `bird` and `plane` are passed into `flyMixin`, which then assigns the `fly` function to each object. Now `bird` and `plane` can both fly:
+这里的 `flyMixin` 接收了`bird` 和 `plane` 对象，然后将 `fly` 方法分配给了每一个对象。 现在 `bird` 和 `plane` 都可以飞行了：
 
 ```js
-bird.fly(); // prints "Flying, wooosh!"
-plane.fly(); // prints "Flying, wooosh!"
+bird.fly();
+plane.fly();
 ```
 
-Note how the mixin allows for the same `fly` method to be reused by unrelated objects `bird` and `plane`.
+控制台将显示字符串 `Flying, wooosh!` 两次，每 `.fly()` 调用都会显示。
+
+注意观察 mixin 是如何允许相同的 `fly` 方法被不相关的对象 `bird` 和 `plane` 重用的。
 
 # --instructions--
 
-Create a mixin named `glideMixin` that defines a method named `glide`. Then use the `glideMixin` to give both `bird` and `boat` the ability to glide.
+创建一个名为 `glideMixin` 的 mixin，并定义一个 `glide` 方法。 然后使用 `glideMixin` 来给 `bird` 和 `boat` 赋予滑行（glide）的能力。
 
 # --hints--
 
-Your code should declare a `glideMixin` variable that is a function.
+你应该声明一个变量名为 `glideMixin` 的函数。
 
 ```js
 assert(typeof glideMixin === 'function');
 ```
 
-Your code should use the `glideMixin` on the `bird` object to give it the `glide` method.
+你应该在 `bird`上使用 `glideMixin`，以提供 `glide` 方法。
 
 ```js
 assert(typeof bird.glide === 'function');
 ```
 
-Your code should use the `glideMixin` on the `boat` object to give it the `glide` method.
+你应该在 `boat` 上使用 `glideMixin`，以为其提供 `glide` 方法。
 
 ```js
 assert(typeof boat.glide === 'function');

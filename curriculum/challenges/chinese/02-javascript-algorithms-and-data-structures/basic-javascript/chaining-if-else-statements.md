@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244dc
-title: Chaining If Else Statements
+title: 多个 if else 语句
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
@@ -9,7 +9,7 @@ dashedName: chaining-if-else-statements
 
 # --description--
 
-`if/else` statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained `if` / `else if` statements:
+`if/else` 语句串联在一起可以实现复杂的逻辑。 这是多个 `if` / `else if` 语句串联在一起的<dfn>伪代码</dfn>：
 
 ```js
 if (condition1) {
@@ -26,89 +26,89 @@ if (condition1) {
 
 # --instructions--
 
-Write chained `if`/`else if` statements to fulfill the following conditions:
+请将 `if`/`else if` 语句串联起来，实现下面的逻辑：
 
-`num < 5` - return "Tiny"  
-`num < 10` - return "Small"  
-`num < 15` - return "Medium"  
-`num < 20` - return "Large"  
-`num >= 20` - return "Huge"
+`num < 5` - 返回 `Tiny`  
+`num < 10` - 返回 `Small`  
+`num < 15` - 返回 `Medium`  
+`num < 20` - 返回 `Large`  
+`num >= 20` - 返回 `Huge`
 
 # --hints--
 
-You should have at least four `else` statements
+应至少有 4 个 `else` 语句。
 
 ```js
 assert(code.match(/else/g).length > 3);
 ```
 
-You should have at least four `if` statements
+应至少有 4 个 `if` 语句。
 
 ```js
 assert(code.match(/if/g).length > 3);
 ```
 
-You should have at least one `return` statement
+应至少有 1 个 `return` 语句。
 
 ```js
 assert(code.match(/return/g).length >= 1);
 ```
 
-`testSize(0)` should return "Tiny"
+`testSize(0)` 应该返回字符串 `Tiny`
 
 ```js
 assert(testSize(0) === 'Tiny');
 ```
 
-`testSize(4)` should return "Tiny"
+`testSize(4)` 应该返回字符串 `Tiny`
 
 ```js
 assert(testSize(4) === 'Tiny');
 ```
 
-`testSize(5)` should return "Small"
+`testSize(5)` 应该返回字符串 `Small`
 
 ```js
 assert(testSize(5) === 'Small');
 ```
 
-`testSize(8)` should return "Small"
+`testSize(8)` 应该返回字符串 `Small`
 
 ```js
 assert(testSize(8) === 'Small');
 ```
 
-`testSize(10)` should return "Medium"
+`testSize(10)` 应该返回字符串 `Medium`
 
 ```js
 assert(testSize(10) === 'Medium');
 ```
 
-`testSize(14)` should return "Medium"
+`testSize(14)` 应该返回字符串 `Medium`
 
 ```js
 assert(testSize(14) === 'Medium');
 ```
 
-`testSize(15)` should return "Large"
+`testSize(15)` 应该返回字符串 `Large`
 
 ```js
 assert(testSize(15) === 'Large');
 ```
 
-`testSize(17)` should return "Large"
+`testSize(17)` 应该返回字符串 `Large`
 
 ```js
 assert(testSize(17) === 'Large');
 ```
 
-`testSize(20)` should return "Huge"
+`testSize(20)` 应该返回字符串 `Huge`
 
 ```js
 assert(testSize(20) === 'Huge');
 ```
 
-`testSize(25)` should return "Huge"
+`testSize(25)` 应该返回字符串 `Huge`
 
 ```js
 assert(testSize(25) === 'Huge');

@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b37
-title: Catch Mixed Usage of Single and Double Quotes
+title: 捕捉单引号和双引号的混合用法
 challengeType: 1
 forumTopicId: 301188
 dashedName: catch-mixed-usage-of-single-and-double-quotes
@@ -8,40 +8,39 @@ dashedName: catch-mixed-usage-of-single-and-double-quotes
 
 # --description--
 
-JavaScript allows the use of both single (`'`) and double (`"`) quotes to declare a string. Deciding which one to use generally comes down to personal preference, with some exceptions.
+JavaScript 允许使用单引号 (`'`) 和双引号 (`"`) 声明字符串。 决定使用哪一个通常看个人偏好，但有一些例外。
 
-Having two choices is great when a string has contractions or another piece of text that's in quotes. Just be careful that you don't close the string too early, which causes a syntax error.
+如果字符串中有缩写或存在一段带引号的文本，你就会明白为什么 JavaScript 允许两种引号了。 请注意，不要提前用引号结束字符串，这会导致语法错误。
 
-Here are some examples of mixing quotes:
+下面是混合使用引号的一些示例：
 
 ```js
-// These are correct:
 const grouchoContraction = "I've had a perfectly wonderful evening, but this wasn't it.";
 const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quoted.'";
-// This is incorrect:
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
-Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (<code>\\</code>) escape character:
+前两项是正确的，但第三项是不正确的。
+
+当然，只使用一种引号也是可以的。 你可以使用反斜杠（`\`）转义字符来转义字符串中的引号：
 
 ```js
-// Correct use of same quotes:
 const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t it.';
 ```
 
 # --instructions--
 
-Fix the string so it either uses different quotes for the `href` value, or escape the existing ones. Keep the double quote marks around the entire string.
+修复字符串，使其对 `href` 值使用不同的引号，或者转义现有的引号。 在整个字符串周围保留双引号。
 
 # --hints--
 
-Your code should fix the quotes around the `href` value "#Home" by either changing or escaping them.
+你应通过更改或转义来修复 `href` 的值 `#Home` 周围的引号。
 
 ```js
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
-Your code should keep the double quotes around the entire string.
+你应该在整个字符串外围保留双引号。
 
 ```js
 assert(code.match(/"<p>.*?<\/p>";/g));

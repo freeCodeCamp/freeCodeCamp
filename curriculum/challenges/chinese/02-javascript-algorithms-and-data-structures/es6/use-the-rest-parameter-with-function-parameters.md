@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b47
-title: Use the Rest Parameter with Function Parameters
+title: 将 rest 操作符与函数参数一起使用
 challengeType: 1
 forumTopicId: 301221
 dashedName: use-the-rest-parameter-with-function-parameters
@@ -8,51 +8,53 @@ dashedName: use-the-rest-parameter-with-function-parameters
 
 # --description--
 
-In order to help us create more flexible functions, ES6 introduces the <dfn>rest parameter</dfn> for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
+ES6 推出了用于函数参数的 <dfn>rest 操作符</dfn>帮助我们创建更加灵活的函数。 rest 操作符可以用于创建有一个变量来接受多个参数的函数。 这些参数被储存在一个可以在函数内部读取的数组中。
 
-Check out this code:
+请看以下代码：
 
 ```js
 function howMany(...args) {
   return "You have passed " + args.length + " arguments.";
 }
-console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
-console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
+console.log(howMany(0, 1, 2));
+console.log(howMany("string", null, [1, 2, 3], { }));
 ```
 
-The rest parameter eliminates the need to check the `args` array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array.
+控制台将显示字符串 `You have passed 3 arguments.` 和 `You have passed 4 arguments.`。
+
+使用 rest 参数，就不需要查看 `args` 数组，并且允许我们在参数数组上使用 `map()`、`filter()` 和 `reduce()`。
 
 # --instructions--
 
-Modify the function `sum` using the rest parameter in such a way that the function `sum` is able to take any number of arguments and return their sum.
+修改 `sum` 函数，使用 rest 参数，使 `sum` 函数可以接收任意数量的参数，并返回它们的总和。
 
 # --hints--
 
-The result of `sum(0,1,2)` should be 3
+`sum(0,1,2)` 的结果应是 3。
 
 ```js
 assert(sum(0, 1, 2) === 3);
 ```
 
-The result of `sum(1,2,3,4)` should be 10
+`sum(1,2,3,4)` 的结果应是 10。
 
 ```js
 assert(sum(1, 2, 3, 4) === 10);
 ```
 
-The result of `sum(5)` should be 5
+`sum(5)` 的结果应是 5。
 
 ```js
 assert(sum(5) === 5);
 ```
 
-The result of `sum()` should be 0
+`sum()` 的结果应是 0。
 
 ```js
 assert(sum() === 0);
 ```
 
-`sum` should be an arrow function which uses the rest parameter syntax (`...`) on the `args` parameter.
+`sum` 应是一个箭头函数，对 `args` 参数使用 rest 操作符语法（`...`）。
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));

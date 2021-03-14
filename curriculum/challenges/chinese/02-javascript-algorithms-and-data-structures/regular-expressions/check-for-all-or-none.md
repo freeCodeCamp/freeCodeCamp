@@ -1,6 +1,6 @@
 ---
 id: 587d7dba367417b2b2512ba8
-title: Check for All or None
+title: 检查全部或无
 challengeType: 1
 forumTopicId: 301338
 dashedName: check-for-all-or-none
@@ -8,48 +8,50 @@ dashedName: check-for-all-or-none
 
 # --description--
 
-Sometimes the patterns you want to search for may have parts of it that may or may not exist. However, it may be important to check for them nonetheless.
+有时，想要搜寻的匹配模式可能有不确定是否存在的部分。 尽管如此，还是想检查它们。
 
-You can specify the possible existence of an element with a question mark, `?`. This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is optional.
+为此，可以使用问号 `?` 指定可能存在的元素。 这将检查前面的零个或一个元素。 可以将此符号视为前面的元素是可选的。
 
-For example, there are slight differences in American and British English and you can use the question mark to match both spellings.
+例如，美式英语和英式英语略有不同，可以使用问号来匹配两种拼写。
 
 ```js
 let american = "color";
 let british = "colour";
 let rainbowRegex= /colou?r/;
-rainbowRegex.test(american); // Returns true
-rainbowRegex.test(british); // Returns true
+rainbowRegex.test(american);
+rainbowRegex.test(british);
 ```
+
+上面的 `test` 都会返回 `true`。
 
 # --instructions--
 
-Change the regex `favRegex` to match both the American English (favorite) and the British English (favourite) version of the word.
+修改正则表达式 `favRegex` 以匹配美式英语（`favorite`）和英式英语（`favourite`）的单词版本。
 
 # --hints--
 
-Your regex should use the optional symbol, `?`.
+你的正则表达式应该使用可选符号 `?`。
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.source.match(/\?/).length > 0);
 ```
 
-Your regex should match `"favorite"`
+你的正则表达式应该匹配 `favorite`。
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favorite'));
 ```
 
-Your regex should match `"favourite"`
+你的正则表达式应该匹配 `favourite`。
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favourite'));
 ```
 
-Your regex should not match `"fav"`
+你的正则表达式不应该匹配 `fav`。
 
 ```js
 favRegex.lastIndex = 0;

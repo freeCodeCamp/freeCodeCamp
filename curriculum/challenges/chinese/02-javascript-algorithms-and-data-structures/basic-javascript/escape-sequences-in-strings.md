@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b6
-title: Escape Sequences in Strings
+title: 转义字符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqRh6'
 forumTopicId: 17567
@@ -9,36 +9,36 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. There are two reasons to use escaping characters:
+引号不是字符串中唯一可以被 <dfn>转义</dfn> 的字符。 使用转义字符有两个原因：
 
-1.  To allow you to use characters you may not otherwise be able to type out, such as a carriage return.
-2.  To allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean.
+1.  首先是可以让你使用无法输入的字符，例如退格。
+2.  其次是可以让你在一个字符串中表示多个引号，而不会出错。
 
-We learned this in the previous challenge.
+我们在之前的挑战中学到了这个。
 
-<table class='table table-striped'><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>代码</th><th>输出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>单引号</td></tr><tr><td><code>\"</code></td><td>双引号</td></tr><tr><td><code>\\</code></td><td>反斜杠</td></tr><tr><td><code>\n</code></td><td>换行符</td></tr><tr><td><code>\r</code></td><td>回车符</td></tr><tr><td><code>\t</code></td><td>制表符</td></tr><tr><td><code>\b</code></td><td>退格</td></tr><tr><td><code>\f</code></td><td>换页符</td></tr></tbody></table>
 
-*Note that the backslash itself must be escaped in order to display as a backslash.*
+*请注意，必须对反斜杠本身进行转义，它才能显示为反斜杠。*
 
 # --instructions--
 
-Assign the following three lines of text into the single variable `myStr` using escape sequences.
+使用转义序列把下面三行文本赋值给一个变量 `myStr`。
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
 
-You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
+你需要使用转义字符正确地插入特殊字符， 确保间距与上面文本一致，并且单词或转义字符之间没有空格。
 
-**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
+**注意：** `SecondLine` 是因为键入了转义字符（而不是空格），所以在那个位置。
 
 # --hints--
 
-`myStr` should not contain any spaces
+`myStr` 不能包含空格。
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
+`myStr` 应包含字符串 `FirstLine`、`SecondLine` 和 `ThirdLine`（记得区分大小写）。
 
 ```js
 assert(
@@ -46,31 +46,31 @@ assert(
 );
 ```
 
-`FirstLine` should be followed by the newline character `\n`
+`FirstLine` 后面应该是一个换行符 `\n`。
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` should contain a tab character `\t` which follows a newline character
+`myStr` 应该包含一个制表符 `\t`，它在换行符后面。
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` should be preceded by the backslash character <code>\\</code>
+`SecondLine` 前面应该是反斜杠 `\`。
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-There should be a newline character between `SecondLine` and `ThirdLine`
+`SecondLine` 和 `ThirdLine` 之间应该是换行符。
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` should only contain characters shown in the instructions
+`myStr` 应该只包含上面要求的字符。
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

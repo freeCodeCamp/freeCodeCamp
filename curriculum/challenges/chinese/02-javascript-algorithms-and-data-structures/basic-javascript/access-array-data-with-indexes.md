@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ca
-title: Access Array Data with Indexes
+title: 通过索引访问数组中的数据
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158
@@ -9,30 +9,31 @@ dashedName: access-array-data-with-indexes
 
 # --description--
 
-We can access the data inside arrays using <dfn>indexes</dfn>.
+我们可以使用索引（<dfn>indexes</dfn>）来访问数组中的数据。
 
-Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of `0`.
+数组索引与字符串一样使用方括号来表示，不同的是，它们不是指定字符，而是指定数组中的一个条目。 数组索引与字符串索引一样是从 0 开始（<dfn>zero-based</dfn>）的，所以数组中第一个元素的索引编号是 `0`。
 
 <br>
 
-**Example**
+**示例**
 
 ```js
 var array = [50,60,70];
-array[0]; // equals 50
-var data = array[1];  // equals 60
+array[0];
+var data = array[1];
 ```
 
-**Note**  
-There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+现在 `array[0]` 的值是 `50`， `data` 的值为 `60`.
+
+**注意：**数组名与方括号之间不应该有任何空格，比如`array [0]` 。 尽管 JavaScript 能够正确处理这种情况，但是当其他程序员阅读你写的代码时，这可能让他们感到困惑。
 
 # --instructions--
 
-Create a variable called `myData` and set it to equal the first value of `myArray` using bracket notation.
+创建一个名为 `myData` 的变量，使用方括号取出 `myArray` 数组中第一个元素的值并将其赋值给新创建的变量。
 
 # --hints--
 
-The variable `myData` should equal the first value of `myArray`.
+变量 `myData` 应该等于`myArray` 数组中第一个元素的值。
 
 ```js
 assert(
@@ -50,7 +51,7 @@ assert(
 );
 ```
 
-The data in variable `myArray` should be accessed using bracket notation.
+应该使用括号访问变量 `myArray` 中的数据。
 
 ```js
 assert(

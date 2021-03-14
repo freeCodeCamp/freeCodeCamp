@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bb
-title: Word Blanks
+title: 填词造句
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caqn8zuP'
 forumTopicId: 18377
@@ -9,11 +9,11 @@ dashedName: word-blanks
 
 # --description--
 
-We will now use our knowledge of strings to build a "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" style word game we're calling "Word Blanks". You will create an (optionally humorous) "Fill in the Blanks" style sentence.
+现在，我们来用字符串的相关知识实现一个 "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" 类的文字游戏，称为 "Word Blanks"。 你将创建一个（可选幽默的）“填空”样式句子。
 
-In a "Mad Libs" game, you are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs. You then fill in the missing pieces with words of your choice in a way that the completed sentence makes sense.
+在 "Mad Libs" 游戏中，提供一个缺少一些单词的句子，缺少的单词包括名词、动词、形容词和副词等。 然后，你选择一些单词填写句子缺失的地方，使句子完整并且有意义。
 
-Consider this sentence - "It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**". This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+思考一下这句话 - It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**。 这句话有三个缺失的部分 - 形容词、动词和副词，选择合适单词填入完成它。 然后将完成的句子赋值给变量，如下所示：
 
 ```js
 var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -21,21 +21,21 @@ var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves 
 
 # --instructions--
 
-In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
+在这个挑战中，我们为你提供名词、动词、形容词和副词。 你需要使用合适单词以及我们提供的单词来形成完整的句子。
 
-You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
+你需要使用字符串连接运算符 `+` 来拼接字符串变量：`myNoun`、`myAdjective`、`myVerb` 和 `myAdverb` 来构建一个新字符串。 然后，将新字符串赋给 `wordBlanks` 变量。 您不应该更改分配给变量的单词。
 
-You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
+你还需要考虑字符串中的空格，确保句子的所有单词之间有空格。 结果应该是一个完整的句子。
 
 # --hints--
 
-`wordBlanks` should be a string.
+`wordBlanks` 应该返回一个字符串。
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
+不能改变 `myNoun`、`myVerb`、`myAdjective` 或者 `myAdverb` 的值。
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-You should not directly use the values "dog", "ran", "big", or "quickly" to create `wordBlanks`.
+您不应该直接使用 `dog`、`ran`、`big` 或 `quickly` 来创建 `wordBlanks`。
 
 ```js
 const newCode = removeAssignments(code);
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words in your madlib).
+`wordBlanks` 应包含赋值给变量 `myNoun`、`myVerb`、`myAdjective` 和 `myAdverb` 的所有单词，并用非单词字符（以及 madlib 中的其它单词）分隔。
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b43
-title: Use Arrow Functions to Write Concise Anonymous Functions
+title: 使用箭头函数编写简洁的匿名函数
 challengeType: 1
 forumTopicId: 301211
 dashedName: use-arrow-functions-to-write-concise-anonymous-functions
@@ -8,9 +8,9 @@ dashedName: use-arrow-functions-to-write-concise-anonymous-functions
 
 # --description--
 
-In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.
+在 JavaScript 里，我们会经常遇到不需要给函数命名的情况，尤其是在需要将一个函数作为参数传给另外一个函数的时候。 这时，我们会创建匿名函数。 因为这些函数不会在其他地方复用，所以我们不需要给它们命名。
 
-To achieve this, we often use the following syntax:
+这种情况下，我们通常会使用以下语法：
 
 ```js
 const myFunc = function() {
@@ -19,7 +19,7 @@ const myFunc = function() {
 }
 ```
 
-ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use **arrow function syntax**:
+ES6 提供了其他写匿名函数的方式的语法糖。 你可以使用**箭头函数**：
 
 ```js
 const myFunc = () => {
@@ -28,45 +28,45 @@ const myFunc = () => {
 }
 ```
 
-When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
+当不需要函数体，只返回一个值的时候，箭头函数允许你省略 `return` 关键字和外面的大括号。 这样就可以将一个简单的函数简化成一个单行语句。
 
 ```js
 const myFunc = () => "value";
 ```
 
-This code will still return the string `value` by default.
+这段代码默认会返回字符串 `value`。
 
 # --instructions--
 
-Rewrite the function assigned to the variable `magic` which returns a `new Date()` to use arrow function syntax. Also, make sure nothing is defined using the keyword `var`.
+使用箭头函数的语法重写赋给 `magic` 变量的函数，使其返回一个新的 Date() `new Date()`。 同时不要用 `var` 关键字来定义任何变量。
 
 # --hints--
 
-User should replace `var` keyword.
+应该替换 `var` 关键字。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`magic` should be a constant variable (by using `const`).
+`magic` 应该为一个常量（使用 `const`）。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
 ```
 
-`magic` should be a `function`.
+`magic` 应该是一个函数 `function`。
 
 ```js
 assert(typeof magic === 'function');
 ```
 
-`magic()` should return correct date.
+`magic()` 应该返回正确的日期。
 
 ```js
 assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 ```
 
-`function` keyword should not be used.
+不要使用 `function` 关键字。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/function/g));

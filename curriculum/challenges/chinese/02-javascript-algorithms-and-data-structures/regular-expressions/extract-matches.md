@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b92
-title: Extract Matches
+title: 提取匹配项
 challengeType: 1
 forumTopicId: 301340
 dashedName: extract-matches
@@ -8,22 +8,22 @@ dashedName: extract-matches
 
 # --description--
 
-So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the `.match()` method.
+到目前为止，只是检查了一个匹配模式是否存在于字符串中。 还可以使用 `.match()` 方法来提取找到的实际匹配项。
 
-To use the `.match()` method, apply the method on a string and pass in the regex inside the parentheses.
+可以使用字符串来调用 `.match()` 方法，并在括号内传入正则表达式。
 
-Here's an example:
+请看下面的举例：
 
 ```js
 "Hello, World!".match(/Hello/);
-// Returns ["Hello"]
 let ourStr = "Regular expressions";
 let ourRegex = /expressions/;
 ourStr.match(ourRegex);
-// Returns ["expressions"]
 ```
 
-Note that the `.match` syntax is the "opposite" of the `.test` method you have been using thus far:
+这里第一个 `match` 将返回 `["Hello"]` 第二个将返回 `["expressions"]`。
+
+请注意， `.match` 语法是目前为止一直使用的 `.test` 方法中的“反向”：
 
 ```js
 'string'.match(/regex/);
@@ -32,23 +32,23 @@ Note that the `.match` syntax is the "opposite" of the `.test` method you have b
 
 # --instructions--
 
-Apply the `.match()` method to extract the word `coding`.
+利用 `.match()` 方法提取单词 `coding`。
 
 # --hints--
 
-The `result` should have the word `coding`
+`result` 应该有字符串 `coding`
 
 ```js
 assert(result.join() === 'coding');
 ```
 
-Your regex `codingRegex` should search for `coding`
+您的 regex `codingRegex` 应该搜索字符串 `coding`
 
 ```js
 assert(codingRegex.source === 'coding');
 ```
 
-You should use the `.match()` method.
+您应该使用 `.match()` 方法。
 
 ```js
 assert(code.match(/\.match\(.*\)/));

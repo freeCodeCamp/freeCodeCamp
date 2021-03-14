@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cf
-title: Record Collection
+title: 记录集合
 challengeType: 1
 forumTopicId: 18261
 dashedName: record-collection
@@ -8,21 +8,21 @@ dashedName: record-collection
 
 # --description--
 
-You are given a JSON object representing a part of your musical album collection. Each album has a unique id number as its key and several other properties. Not all albums have complete information.
+给定一个 JSON 对象，用来表示部分音乐专辑收藏。 每张专辑都有几个属性和一个唯一的 id 号作为键值。 并非所有专辑都有完整的信息。
 
-You start with an `updateRecords` function that takes an object like `collection`, an `id`, a `prop` (like `artist` or `tracks`), and a `value`. Complete the function using the rules below to modify the object passed to the function.
+以 `updateRecords` 函数开使，这个函数需要一个对象如 `collection`，一个 `id`，一个 `prop` (如 `artist` 或 `tracks`), 和 `value`。 使用下面的规则完成函数来修改传递给函数的对象。
 
--   Your function must always return the entire object.
--   If `prop` isn't `tracks` and `value` isn't an empty string, update or set that album's `prop` to `value`.
--   If `prop` is `tracks` but the album doesn't have a `tracks` property, create an empty array and add `value` to it.
--   If `prop` is `tracks` and `value` isn't an empty string, add `value` to the end of the album's existing `tracks` array.
--   If `value` is an empty string, delete the given `prop` property from the album.
+-   你的函数必须始终返回整个对象。
+-   如果 `prop` 不是 `tracks` 并且 `value` 不是一个空字符串， 将相册的 `prop` 更新或设置为 `value`。
+-   如果 `prop` 是 `tracks` 但专辑没有 `tracks` 属性，则应创建空数组并为其添加 `value`。
+-   如果 `prop` 是 `tracks` 并且 `value` 不是一个空字符串，将 `value` 添加到相册现有 `tracks` 数组的末尾。
+-   如果 `value` 是空字符串，从专辑里删除指定的 `prop`。
 
-**Note:** A copy of the `collection` object is used for the tests.
+**注意：** 用 `collection` 对象做为测试参数对象。
 
 # --hints--
 
-After `updateRecords(collection, 5439, "artist", "ABBA")`, `artist` should be `ABBA`
+执行 `updateRecords(collection, 5439, "artist", "ABBA")` 后, `artist` 应该是字符串 `ABBA`
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have `Take a Chance on Me` as the last element.
+执行 `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")` 后，`tracks` 的最后一个元素应该为字符串 `Take a Chance on Me`。
 
 ```js
 assert(
@@ -41,14 +41,14 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 2548, "artist", "")`, `artist` should not be set
+执行 `updateRecords(collection, 2548, "artist", "")` 后， `artist` 不应被设置
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-After `updateRecords(collection, 1245, "tracks", "Addicted to Love")`, `tracks` should have `Addicted to Love` as the last element.
+执行 `updateRecords(collection, 1245, "tracks", "Addicted to Love")` 后，`tracks` 的最后一个元素应该为字符串 `Addicted to Love`。
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 2468, "tracks", "Free")`, `tracks` should have `1999` as the first element.
+执行 `updateRecords(collection, 2468, "tracks", "Free")` 后，`tracks` 的第一个元素应该为字符串 `1999`。
 
 ```js
 assert(
@@ -68,14 +68,14 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 2548, "tracks", "")`, `tracks` should not be set
+执行 `updateRecords(collection, 2548, "tracks", "")` 后， `tracks` 不应被设置
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-After `updateRecords(collection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be `Riptide`
+执行 `updateRecords(collection, 1245, "albumTitle", "Riptide")` 后, `albumTitle` 应该是字符串 `Riptide`
 
 ```js
 assert(

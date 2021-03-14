@@ -1,6 +1,6 @@
 ---
 id: 587d7b8d367417b2b2512b5b
-title: Learn About Functional Programming
+title: 学习函数式编程
 challengeType: 1
 forumTopicId: 301233
 dashedName: learn-about-functional-programming
@@ -8,33 +8,33 @@ dashedName: learn-about-functional-programming
 
 # --description--
 
-Functional programming is a style of programming where solutions are simple, isolated functions, without any side effects outside of the function scope.
+函数式编程是一种方案简单、功能独立、对作用域外没有任何副作用的编程范式。
 
 `INPUT -> PROCESS -> OUTPUT`
 
-Functional programming is about:
+函数式编程：
 
-1) Isolated functions - there is no dependence on the state of the program, which includes global variables that are subject to change
+1）功能独立——不依赖于程序的状态（比如可能发生变化的全局变量）；
 
-2) Pure functions - the same input always gives the same output
+2）纯函数——同一个输入永远能得到同一个输出；
 
-3) Functions with limited side effects - any changes, or mutations, to the state of the program outside the function are carefully controlled
+3）有限的副作用——可以严格地限制函数外部对状态的更改。
 
 # --instructions--
 
-The members of freeCodeCamp happen to love tea.
+freeCodeCamp 成员在 love tea 的故事。
 
-In the code editor, the `prepareTea` and `getTea` functions are already defined for you. Call the `getTea` function to get 40 cups of tea for the team, and store them in the `tea4TeamFCC` variable.
+在代码编辑器中，已经为你定义好了 `prepareTea` 和 `getTea` 函数。 调用 `getTea` 函数为团队准备 40 杯茶，并将它们存储在 `tea4TeamFCC` 变量里。
 
 # --hints--
 
-The `tea4TeamFCC` variable should hold 40 cups of tea for the team.
+`tea4TeamFCC` 变量里应有 40 杯为团队准备的茶。
 
 ```js
 assert(tea4TeamFCC.length === 40);
 ```
 
-The `tea4TeamFCC` variable should hold cups of green tea.
+`tea4TeamFCC` 变量里应有 greenTea。
 
 ```js
 assert(tea4TeamFCC[0] === 'greenTea');

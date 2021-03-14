@@ -29,7 +29,7 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 
 `<a href="http://freecodecamp.org"> ... </a>`
 
-`a` 元素内的内容文本 `link to freecodecamp.org` 叫作 `anchor text`（锚文本），会显示为一个可以点击的链接：
+`a` 元素内的文本 `link to freecodecamp.org` 叫作<dfn>锚文本</dfn>，会显示为一个可以点击的链接：
 
 `<a href=" ... ">link to freecodecamp.org</a>`
 
@@ -43,15 +43,23 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 
 # --hints--
 
-应包含一个链接到 `https://freecatphotoapp.com` 的 `a` 元素。
+应该只有一个 `a` 元素。
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length > 0 
+  $('a').length  === 1 
 );
 ```
 
-`a` 元素的内容文本应为 `cat photos`。
+`a` 元素应该链接到 “`https://freecatphotoapp.com`”。
+
+```js
+assert(
+  $('a[href="https://freecatphotoapp.com"]').length  === 1 
+);
+```
+
+`a` 元素应该有锚文本 `cat photos`。
 
 ```js
 assert(
@@ -61,13 +69,13 @@ assert(
 );
 ```
 
-你应该在 `a` 标签的外部创建一个新的 `p` 标签。 页面中应至少包含 3 个 `p` 标签。
+应该创建一个新的 `p` 元素。 HTML 代码中应该总共有至少 3 个 `p` 标签。
 
 ```js
 assert($('p') && $('p').length > 2);
 ```
 
-`a` 应嵌套在新创建的 `p` 元素内。
+`a` 元素应该被嵌套在新的 `p` 元素中。
 
 ```js
 assert(
@@ -75,7 +83,7 @@ assert(
 );
 ```
 
-`p` 元素应该包含文本 `View more`（请注意，more 之后有一个空格）。
+`p` 元素应该包含文本 `View more`（在它后面有一个空格）。
 
 ```js
 assert(
@@ -86,7 +94,7 @@ assert(
 );
 ```
 
-`a` 元素中 <em>不</em> 应包含文本 `View more`。
+`a` 元素<em>不</em>应该有文本 `View more`。
 
 ```js
 assert(
@@ -96,7 +104,7 @@ assert(
 );
 ```
 
-确保每个 `p` 元素有结束标签。
+每个 `p` 元素都应该有一个结束标签。
 
 ```js
 assert(
@@ -106,7 +114,7 @@ assert(
 );
 ```
 
-确保每个 `a` 元素有结束标签。
+每个 `a` 元素都应该有一个结束标签。
 
 ```js
 assert(

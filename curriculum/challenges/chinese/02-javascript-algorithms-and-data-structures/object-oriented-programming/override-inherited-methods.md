@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b88
-title: Override Inherited Methods
+title: 重写继承的方法
 challengeType: 1
 forumTopicId: 301322
 dashedName: override-inherited-methods
@@ -8,19 +8,19 @@ dashedName: override-inherited-methods
 
 # --description--
 
-In previous lessons, you learned that an object can inherit its behavior (methods) from another object by referencing its `prototype` object:
+在上一个挑战中，我们学习了一个对象可以通过引用另一个对象的 `prototype` 来继承其属性和行为（或方法）：
 
 ```js
 ChildObject.prototype = Object.create(ParentObject.prototype);
 ```
 
-Then the `ChildObject` received its own methods by chaining them onto its `prototype`:
+然后，`ChildObject` 将自己的方法链接到它的 `prototype`中：
 
 ```js
 ChildObject.prototype.methodName = function() {...};
 ```
 
-It's possible to override an inherited method. It's done the same way - by adding a method to `ChildObject.prototype` using the same method name as the one to override. Here's an example of `Bird` overriding the `eat()` method inherited from `Animal`:
+我们还可以重写继承的方法。 以同样的方式 - 通过使用一个与需要重写的方法相同的方法名，向`ChildObject.prototype` 中添加方法。 请看下面的举例：`Bird` 重写了从 `Animal` 继承来的 `eat()` 方法：
 
 ```js
 function Animal() { }
@@ -29,35 +29,33 @@ Animal.prototype.eat = function() {
 };
 function Bird() { }
 
-// Inherit all methods from Animal
 Bird.prototype = Object.create(Animal.prototype);
 
-// Bird.eat() overrides Animal.eat()
 Bird.prototype.eat = function() {
   return "peck peck peck";
 };
 ```
 
-If you have an instance `let duck = new Bird();` and you call `duck.eat()`, this is how JavaScript looks for the method on `duck’s` `prototype` chain:
+如果你有一个实例：`let duck = new Bird();`，然后你调用了 `duck.eat()`，以下就是 JavaScript 在 `duck’s` 的 `prototype` 链上寻找方法的过程：
 
-1.  duck => Is eat() defined here? No.
-2.  Bird => Is eat() defined here? => Yes. Execute it and stop searching.
-3.  Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.
-4.  Object => JavaScript stopped searching before reaching this level.
+1.  `duck` => `eat()` 是定义在这里吗？ 不是。
+2.  `Bird` => `eat()` 是定义在这里吗？ => 是的。 执行它并停止往上搜索。
+3.  `Animal` => 这里也定义了 `eat()` 方法，但是 JavaScript 在到达这层原型链之前已停止了搜索。
+4.  Object => JavaScript 在到达这层原型链之前也已经停止了搜索。
 
 # --instructions--
 
-Override the `fly()` method for `Penguin` so that it returns "Alas, this is a flightless bird."
+重写 `Penguin` 的 `fly()` 方法，使其返回字符串 `Alas, this is a flightless bird.`
 
 # --hints--
 
-`penguin.fly()` should return the string "Alas, this is a flightless bird."
+`penguin.fly()` 方法应该返回字符串 `Alas, this is a flightless bird.`
 
 ```js
 assert(penguin.fly() === 'Alas, this is a flightless bird.');
 ```
 
-The `bird.fly()` method should return "I am flying!"
+The `bird.fly()`方法应该返回字符串 `I am flying!`
 
 ```js
 assert(new Bird().fly() === 'I am flying!');
