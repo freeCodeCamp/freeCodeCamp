@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d1
-title: Updating Object Properties
+title: Actualizando las propiedades de un objeto
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
@@ -9,9 +9,9 @@ dashedName: updating-object-properties
 
 # --description--
 
-After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+Después de haber creado un objeto de JavaScript, puedes actualizar sus propiedades en cualquier momento tal y como actualizarías cualquier otra variable. Puedes utilizar tanto la notación de puntos como la notación de corchetes para actualizar.
 
-For example, let's look at `ourDog`:
+Por ejemplo, veamos `ourDog`:
 
 ```js
 var ourDog = {
@@ -22,21 +22,21 @@ var ourDog = {
 };
 ```
 
-Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting "Camper", we'll get his new name, "Happy Camper".
+Puesto que es un perro particularmente feliz, vamos a cambiar su nombre por la cadena `Happy Camper`. Así es como actualizamos la propiedad del nombre del objeto: `ourDog.name = "Happy Camper";` o `ourDog["name"] = "Happy Camper";`. Ahora cuando evaluamos `ourDog.name`, en lugar de obtener `Camper`, vamos a obtener su nuevo nombre, `Happy Camper`.
 
 # --instructions--
 
-Update the `myDog` object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
+Actualiza la propiedad nombre del objeto `myDog`. Cambiemos su nombre de `Coder` a `Happy Coder`. Puedes utilizar tanto la notación de puntos como la notación de corchetes.
 
 # --hints--
 
-You should update `myDog`'s `"name"` property to equal "Happy Coder".
+Debes actualizar la propiedad `name` de `myDog` para que sea igual a la cadena `Happy Coder`.
 
 ```js
 assert(/happy coder/gi.test(myDog.name));
 ```
 
-You should not edit the `myDog` definition.
+No debes editar la definición de `myDog`.
 
 ```js
 assert(/"name": "Coder"/.test(code));

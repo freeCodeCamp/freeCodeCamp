@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
-title: Write Reusable JavaScript with Functions
+title: Escribe JavaScript reutilizable utilizando funciones
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
@@ -9,9 +9,9 @@ dashedName: write-reusable-javascript-with-functions
 
 # --description--
 
-In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.
+En JavaScript, podemos dividir nuestro código en partes reutilizables llamadas <dfn>funciones</dfn>.
 
-Here's an example of a function:
+Este es un ejemplo de una función:
 
 ```js
 function functionName() {
@@ -19,27 +19,27 @@ function functionName() {
 }
 ```
 
-You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this: `functionName();` Each time the function is called it will print out the message `"Hello World"` on the dev console. All of the code between the curly braces will be executed every time the function is called.
+Puedes llamar o <dfn>invocar</dfn> esta función usando su nombre seguido por paréntesis, así: `functionName();` Cada vez que se llame la función se imprimirá el mensaje `Hello World` en la consola de desarrollo. Todo el código entre las llaves se ejecutará cada vez que se llame la función.
 
 # --instructions--
 
-<ol><li>Create a function called <code>reusableFunction</code> which prints <code>"Hi World"</code> to the dev console.</li><li>Call the function.</li></ol>
+<ol><li>Crea una función llamada <code>reusableFunction</code> que imprima <code>"Hi World"</code> en la consola de desarrollo.</li><li>Llama a la función.</li></ol>
 
 # --hints--
 
-`reusableFunction` should be a function.
+`reusableFunction` debe ser una función.
 
 ```js
 assert(typeof reusableFunction === 'function');
 ```
 
-`reusableFunction` should output "Hi World" to the dev console.
+`reusableFunction` debe mostrar la cadena `Hi World` en la consola.
 
 ```js
 assert(hiWorldWasLogged);
 ```
 
-You should call `reusableFunction` after you define it.
+Debes llamar `reusableFunction` después de definirla.
 
 ```js
 assert(/^\s*reusableFunction\(\)\s*/m.test(code));
@@ -87,7 +87,9 @@ if (typeof reusableFunction !== "function") {
 ```
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

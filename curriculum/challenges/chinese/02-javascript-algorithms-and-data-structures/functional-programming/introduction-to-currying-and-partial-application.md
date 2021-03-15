@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b70
-title: 函数柯里化
+title: 函数柯里化和局部调用
 challengeType: 1
 forumTopicId: 301232
 dashedName: introduction-to-currying-and-partial-application
@@ -8,7 +8,7 @@ dashedName: introduction-to-currying-and-partial-application
 
 # --description--
 
-<dfn>arity</dfn> 是函数所需的形参的数量。 函数柯里化（<dfn>Currying</dfn>）意思是把接受多个 arity 的函数变换成接受单一arity 的函数。
+<dfn>arity</dfn>（参数个数）是函数所需的形参的数量。 函数柯里化（<dfn>Currying</dfn>）意思是把接受多个 arity 的函数变换成接受单一 arity 的函数。
 
 换句话说，就是重构函数让它接收一个参数，然后返回接收下一个参数的函数，依此类推。
 

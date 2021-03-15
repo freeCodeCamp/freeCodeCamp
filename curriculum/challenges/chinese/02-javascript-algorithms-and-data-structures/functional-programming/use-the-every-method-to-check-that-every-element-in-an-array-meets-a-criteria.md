@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6e
-title: Use the every Method to Check that Every Element in an Array Meets a Criteria
+title: 使用 every 方法检查数组中的每个元素是否符合条件
 challengeType: 1
 forumTopicId: 301312
 dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria
@@ -8,43 +8,44 @@ dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a
 
 # --description--
 
-The `every` method works with arrays to check if *every* element passes a particular test. It returns a Boolean value - `true` if all values meet the criteria, `false` if not.
+`every` 方法用于检测数组中*所有*元素是否都符合指定条件。 如果所有元素满足条件，返回布尔值 `true`，反之返回 `false`。
 
-For example, the following code would check if every element in the `numbers` array is less than 10:
+举个例子，下面的代码检测数组 `numbers` 的所有元素是否都小于 10：
 
 ```js
 var numbers = [1, 5, 8, 0, 10, 11];
 numbers.every(function(currentValue) {
   return currentValue < 10;
 });
-// Returns false
 ```
+
+`every` 方法在这里会返回 `false`。
 
 # --instructions--
 
-Use the `every` method inside the `checkPositive` function to check if every element in `arr` is positive. The function should return a Boolean value.
+在 `checkPositive` 函数中使用 `every` 方法检查 `arr` 中是否所有元素都是正数。 函数应返回一个布尔值。
 
 # --hints--
 
-Your code should use the `every` method.
+应使用`every`方法。
 
 ```js
 assert(code.match(/\.every/g));
 ```
 
-`checkPositive([1, 2, 3, -4, 5])` should return `false`.
+`checkPositive([1, 2, 3, -4, 5])` 应返回 `false`。
 
 ```js
 assert.isFalse(checkPositive([1, 2, 3, -4, 5]));
 ```
 
-`checkPositive([1, 2, 3, 4, 5])` should return `true`.
+`checkPositive([1, 2, 3, 4, 5])` 应返回 `true`。
 
 ```js
 assert.isTrue(checkPositive([1, 2, 3, 4, 5]));
 ```
 
-`checkPositive([1, -2, 3, -4, 5])` should return `false`.
+`checkPositive([1, -2, 3, -4, 5])` 应返回 `false`。
 
 ```js
 assert.isFalse(checkPositive([1, -2, 3, -4, 5]));

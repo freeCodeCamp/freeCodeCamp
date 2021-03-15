@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ab
-title: Comprender la sensibilidad de mayúsculas en las variables
+title: Comprendiendo la sensibilidad de mayúsculas en las variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
@@ -27,8 +27,9 @@ var thisVariableNameIsSoLong;
 
 # --instructions--
 
-Modifica las declaraciones y asignaciones existentes para que sus nombres usen <dfn>camelCase</dfn>.  
-No crees nuevas variables.
+Modifica las declaraciones y asignaciones existentes para que sus nombres usen <dfn>camelCase</dfn>.
+
+No crees ninguna variable nueva.
 
 # --hints--
 
@@ -38,7 +39,7 @@ No crees nuevas variables.
 assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-`properCamelCase` debe definirse y tener un valor de `"A String"`.
+`properCamelCase` debe definirse y tener una cadena con valor `A String`.
 
 ```js
 assert(
@@ -46,7 +47,7 @@ assert(
 );
 ```
 
-`titleCaseOver` debe definirse y tener un valor de `9000`.
+`titleCaseOver` debe definirse y tener una cadena con valor `9000`.
 
 ```js
 assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
