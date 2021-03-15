@@ -1,8 +1,8 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
 
-// Matches editor links for: Repl.it, Glitch, CodeSandbox, GitHub
-const editorRegex = /repl\.it\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
+// Matches editor links for: Replit, Glitch, CodeSandbox, GitHub
+const editorRegex = /repl\.?it(\.com)?\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
 const fCCRegex = /codepen\.io\/freecodecamp|freecodecamp\.rocks|github\.com\/freecodecamp/i;
 const localhostRegex = /localhost:/;
 const httpRegex = /http(?!s|([^s]+?localhost))/;
