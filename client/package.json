@@ -87,8 +87,8 @@
   "scripts": {
     "prebuild": "echo 'Client workers building...' && npm run build:workers && echo 'Client workers ready.' && node ../tools/scripts/build/ensure-env.js",
     "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build --prefix-paths",
-    "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli --env.production --config ./webpack-workers.js && echo",
-    "build:workers:debug": "node --max_old_space_size=7168 node_modules/webpack-cli --env.production --config ./webpack-workers.js --progress",
+    "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli/bin/cli --env production --config ./webpack-workers.js && echo",
+    "build:workers:debug": "node --max_old_space_size=7168 node_modules/webpack-cli/bin/cli --env production --config ./webpack-workers.js --progress",
     "clean": "gatsby clean",
     "predevelop": "npm run prebuild",
     "develop": "gatsby develop --inspect=9230",

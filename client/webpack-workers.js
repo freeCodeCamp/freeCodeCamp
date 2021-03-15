@@ -61,6 +61,13 @@ module.exports = (env = {}) => {
       new CopyWebpackPlugin([
         { from: 'node_modules/sass.js/dist/sass.sync.js' }
       ])
-    ]
+    ],
+    resolve: {
+      fallback: {
+        buffer: false,
+        util: false,
+        stream: false
+      }
+    }
   };
 };
