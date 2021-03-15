@@ -42,6 +42,8 @@ jobs:
 
           # Uncomment below to debug
           # dryrun_action: true
+          project_id: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+          token: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
