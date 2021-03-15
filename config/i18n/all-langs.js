@@ -2,8 +2,8 @@
  * from the .env file aren't found in their respective arrays below
  */
 const availableLangs = {
-  client: ['english', 'espanol', 'chinese'],
-  curriculum: ['english', 'espanol', 'chinese']
+  client: ['english', 'espanol', 'chinese', 'chinese-traditional'],
+  curriculum: ['english', 'espanol', 'chinese', 'chinese-traditional']
 };
 
 // Each client language needs an entry in the rest of the variables below
@@ -15,14 +15,16 @@ const availableLangs = {
 const i18nextCodes = {
   english: 'en',
   espanol: 'es',
-  chinese: 'zh'
+  chinese: 'zh',
+  'chinese-traditional': 'zh'
 };
 
 // These are for the language selector dropdown menu in the footer
 const langDisplayNames = {
   english: 'English',
   espanol: 'Español',
-  chinese: '中文'
+  chinese: '中文',
+  'chinese-traditional': '古文'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -32,7 +34,8 @@ const langDisplayNames = {
 const langCodes = {
   english: 'en-US',
   espanol: 'es-419',
-  chinese: 'zh'
+  chinese: 'zh',
+  'chinese-traditional': 'zh-Hant'
 };
 
 exports.availableLangs = availableLangs;
