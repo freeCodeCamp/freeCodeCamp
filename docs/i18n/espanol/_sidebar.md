@@ -13,9 +13,9 @@
   - [Revisar un archivo de currículo](how-to-proofread-files.md)
   - [Cómo traducir la web](how-to-translate-the-website.md)
 - **Guías Opcionales**
-  - [Set up freeCodeCamp on Windows(WSL)](how-to-setup-wsl.md)
-  - [Add Cypress tests](how-to-add-cypress-tests.md)
-  - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Configurar freeCodeCamp en Windows(WSL)](how-to-setup-wsl.md)
+  - [Agregar pruebas de Cypress](how-to-add-cypress-tests.md)
+  - [Captura correos electrónicos salientes localmente](how-to-catch-outgoing-emails-locally.md)
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512bab
-title: Use Capture Groups to Search and Replace
+title: 使用捕获组搜索和替换
 challengeType: 1
 forumTopicId: 301368
 dashedName: use-capture-groups-to-search-and-replace
@@ -8,55 +8,57 @@ dashedName: use-capture-groups-to-search-and-replace
 
 # --description--
 
-Searching is useful. However, you can make searching even more powerful when it also changes (or replaces) the text you match.
+搜索功能是很有用的。 但是，当搜索同时也执行更改（或替换）匹配文本的操作时，搜索功能就会显得更加强大。
 
-You can search and replace text in a string using `.replace()` on a string. The inputs for `.replace()` is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+可以在字符串上使用 `.replace()` 方法来搜索并替换字符串中的文本。 `.replace()` 的输入首先是想要搜索的正则表达式匹配模式。 第二个参数是用于替换匹配的字符串或用于执行某些操作的函数。
 
 ```js
 let wrongText = "The sky is silver.";
 let silverRegex = /silver/;
 wrongText.replace(silverRegex, "blue");
-// Returns "The sky is blue."
 ```
 
-You can also access capture groups in the replacement string with dollar signs (`$`).
+`replace` 调用将返回字符串 `The sky is blue.`。
+
+你还可以使用美元符号（`$`）访问替换字符串中的捕获组。
 
 ```js
 "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
-// Returns "Camp Code"
 ```
+
+调用 `replace` 将返回字符串 `Camp Code`。
 
 # --instructions--
 
-Write a regex `fixRegex` using three capture groups that will search for each word in the string "one two three". Then update the `replaceText` variable to replace "one two three" with the string "three two one" and assign the result to the `result` variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (`$`) syntax.
+使用三个捕获组编写一个正则表达式 `fixRegex`，这三个捕获组将搜索字符串 `one two three` 中的每个单词。 然后更新 `replaceText` 变量，以字符串 `three two one` 替换 `one two three`，并将结果分配给 `result` 变量。 确保使用美元符号（`$`）语法在替换字符串中使用捕获组。
 
 # --hints--
 
-You should use `.replace()` to search and replace.
+你应该使用 `.replace()` 搜索并替换。
 
 ```js
 assert(code.match(/\.replace\(.*\)/));
 ```
 
-Your regex should change `"one two three"` to `"three two one"`
+你的正则表达式应该将字符串 `one two three` 更改为字符串 `three two one`
 
 ```js
 assert(result === 'three two one');
 ```
 
-You should not change the last line.
+你不应该改变最后一行。
 
 ```js
 assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
-`fixRegex` should use at least three capture groups.
+`fixRegex` 应该至少使用三个抓取组。
 
 ```js
 assert(new RegExp(fixRegex.source + '|').exec('').length - 1 >= 3);
 ```
 
-`replaceText` should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
+`replaceText` 应该使用括号化的子匹配字符串（例如：nth 括号化的子匹配字符串, $n, 对应于第 n 个捕获组）。
 
 ```js
 {

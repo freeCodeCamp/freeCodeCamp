@@ -1,6 +1,6 @@
 ---
 id: 56105e7b514f539506016a5e
-title: Count Backwards With a For Loop
+title: 使用 For 循环反向遍历数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
@@ -9,11 +9,11 @@ dashedName: count-backwards-with-a-for-loop
 
 # --description--
 
-A for loop can also count backwards, so long as we can define the right conditions.
+只要我们定义好合适的条件，for 循环也可以反向遍历。
 
-In order to decrement by two each iteration, we'll need to change our `initialization`, `condition`, and `final-expression`.
+为了让每次递减 2，我们需要改变 initialization、condition 和 final-expression。
 
-We'll start at `i = 10` and loop while `i > 0`. We'll decrement `i` by 2 each loop with `i -= 2`.
+设置 `i = 10`，并且当 `i > 0` 的时候才继续循环。 我们使用 `i -= 2` 来让 `i` 每次循环递减 2。
 
 ```js
 var ourArray = [];
@@ -22,27 +22,27 @@ for (var i = 10; i > 0; i -= 2) {
 }
 ```
 
-`ourArray` will now contain `[10,8,6,4,2]`. Let's change our `initialization` and `final-expression` so we can count backward by twos by odd numbers.
+循环结束后，`ourArray` 的值为 `[10,8,6,4,2]`。 让我们改变 initialization 和 final-expression，这样我们就可以按照奇数从后往前两两倒着数。
 
 # --instructions--
 
-Push the odd numbers from 9 through 1 to `myArray` using a `for` loop.
+使用一个 `for`循环，把从 9 到 1 的奇数添加到 `myArray`。
 
 # --hints--
 
-You should be using a `for` loop for this.
+应该使用 `for` 循环。
 
 ```js
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-You should be using the array method `push`.
+应该使用数组方法 `push`。
 
 ```js
 assert(code.match(/myArray.push/));
 ```
 
-`myArray` should equal `[9,7,5,3,1]`.
+`myArray` 应该等于 `[9,7,5,3,1]`。
 
 ```js
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);

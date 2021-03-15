@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: Refactor Global Variables Out of Functions
+title: 在函数中重构全局变量
 challengeType: 1
 forumTopicId: 301235
 dashedName: refactor-global-variables-out-of-functions
@@ -8,23 +8,23 @@ dashedName: refactor-global-variables-out-of-functions
 
 # --description--
 
-So far, we have seen two distinct principles for functional programming:
+目前为止，我们已经看到了函数式编程的两个原则：
 
-1) Don't alter a variable or object - create new variables and objects and return them if need be from a function. Hint: using something like `var newArr = arrVar`, where `arrVar` is an array will simply create a reference to the existing variable and not a copy. So changing a value in `newArr` would change the value in `arrVar`.
+1) 不要更改变量或对象 - 创建新变量和对象，并在需要时从函数返回它们。 提示：使用类似 `var newArr = arrVar` 时 `arrVar` 是一个数组，代码只是创建一个对现有变量的引用，而不是副本。 所以更改 `newArr` 中的值会同时更改 `arrVar` 中的值。
 
-2) Declare function parameters - any computation inside a function depends only on the arguments passed to the function, and not on any global object or variable.
+2) 声明函数参数 - 函数内的任何计算仅取决于参数，而不取决于任何全局对象或变量。
 
-Adding one to a number is not very exciting, but we can apply these principles when working with arrays or more complex objects.
+给数字增加 1 不够刺激，我们可以在处理数组或更复杂的对象时应用这些原则。
 
 # --instructions--
 
-Rewrite the code so the global array `bookList` is not changed inside either function. The `add` function should add the given `bookName` to the end of the array passed to it and return a new array (list). The `remove` function should remove the given `bookName` from the array passed to it.
+重构代码，使全局数组 `bookList` 在函数内部不会被改变。 `add` 函数可以将指定的 `bookName` 增加到数组末尾并返回一个新的数组（列表）。 `remove` 函数可以从数组中移除指定 `bookName`。
 
-**Note:** Both functions should return an array, and any new parameters should be added before the `bookName` parameter.
+**注意：** 两个函数都应该返回一个数组，任何新参数都应该在 `bookName` 参数之前添加。
 
 # --hints--
 
-`bookList` should not change and still equal `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`bookList` 应等于 `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`newBookList` should equal `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+`newBookList` 应等于 `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`newerBookList` should equal `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`newerBookList` 应等于 `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-`newestBookList` should equal `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+`newestBookList` 应等于 `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
 ```js
 assert(

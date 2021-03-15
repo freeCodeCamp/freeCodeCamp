@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b82
-title: Understand the Prototype Chain
+title: 了解原型链
 challengeType: 1
 forumTopicId: 301329
 dashedName: understand-the-prototype-chain
@@ -8,38 +8,38 @@ dashedName: understand-the-prototype-chain
 
 # --description--
 
-All objects in JavaScript (with a few exceptions) have a `prototype`. Also, an object’s `prototype` itself is an object.
+JavaScript 中所有的对象（除了少数例外）都有自己的 `prototype`。 而且，对象的 `prototype` 本身也是一个对象。
 
 ```js
 function Bird(name) {
   this.name = name;
 }
 
-typeof Bird.prototype; // yields 'object'
+typeof Bird.prototype;
 ```
 
-Because a `prototype` is an object, a `prototype` can have its own `prototype`! In this case, the `prototype` of `Bird.prototype` is `Object.prototype`:
+正因为 `prototype` 是一个对象，所以 `prototype` 对象也有它自己的 `prototype`！ 这样看来的话，`Bird.prototype` 的 `prototype` 就是 `Object.prototype`：
 
 ```js
-Object.prototype.isPrototypeOf(Bird.prototype); // returns true
+Object.prototype.isPrototypeOf(Bird.prototype);
 ```
 
-How is this useful? You may recall the `hasOwnProperty` method from a previous challenge:
+这有什么作用呢？ 你可能还记得我们在上一个挑战中学到的 `hasOwnProperty` 方法：
 
 ```js
 let duck = new Bird("Donald");
-duck.hasOwnProperty("name"); // yields true
+duck.hasOwnProperty("name");
 ```
 
-The `hasOwnProperty` method is defined in `Object.prototype`, which can be accessed by `Bird.prototype`, which can then be accessed by `duck`. This is an example of the `prototype` chain. In this `prototype` chain, `Bird` is the `supertype` for `duck`, while `duck` is the `subtype`. `Object` is a `supertype` for both `Bird` and `duck`. `Object` is a `supertype` for all objects in JavaScript. Therefore, any object can use the `hasOwnProperty` method.
+`hasOwnProperty` 是定义在 `Object.prototype` 上的一个方法，尽管在 `Bird.prototype` 和 `duck`上并没有定义该方法，但是我们依然可以在这两个对象上访问到。 这就是 `prototype` 链的一个例子。 在这个`prototype` 链中，`Bird` 是 `duck` 的 `supertype`，而 `duck` 是 `subtype`。 `Object` 则是 `Bird` 和 `duck` 实例共同的 `supertype`。 `Object` 是 JavaScript 中所有对象的 `supertype`，也就是原型链的最顶层。 因此，所有对象都可以访问 `hasOwnProperty` 方法。
 
 # --instructions--
 
-Modify the code to show the correct prototype chain.
+修改以下代码使其展示出正确的原型链。
 
 # --hints--
 
-Your code should show that `Object.prototype` is the prototype of `Dog.prototype`
+你的代码应该展示 `Object.prototype` 是 `Dog.prototype` 的原型。
 
 ```js
 assert(/Object\.prototype\.isPrototypeOf/.test(code));

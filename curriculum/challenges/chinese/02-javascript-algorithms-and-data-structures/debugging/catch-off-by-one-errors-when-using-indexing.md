@@ -1,6 +1,6 @@
 ---
 id: 587d7b86367417b2b2512b3b
-title: Catch Off By One Errors When Using Indexing
+title: 捕获使用索引的时候出现的错误
 challengeType: 1
 forumTopicId: 301189
 dashedName: catch-off-by-one-errors-when-using-indexing
@@ -8,52 +8,51 @@ dashedName: catch-off-by-one-errors-when-using-indexing
 
 # --description--
 
-<dfn>Off by one errors</dfn> (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. JavaScript indexing starts at zero, not one, which means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an "index out of range" reference error or print `undefined`.
+当试图访问字符串或数组的特定索引（分割或访问一个片段）或循环索引时，有时会出现 <dfn>Off by one errors</dfn> 错误（有时称为 OBOE）。 JavaScript 索引从 0 开始，而不是 1，这意味着最后一个索引总会比字符串或数组的长度少 1。 如果尝试访问等于长度的索引，程序可能会抛出“索引超出范围”引用错误或打印出 `undefined`。
 
-When you use string or array methods that take index ranges as arguments, it helps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not. Here are some examples of off by one errors:
+当使用将索引范围作为参数的字符串或数组方法时，阅读相关的文档并了解参数中的索引的包含性（即是否考虑进返回值中）很重要。 以下是一些错误的示例：
 
 ```js
 let alphabet = "abcdefghijklmnopqrstuvwxyz";
 let len = alphabet.length;
 for (let i = 0; i <= len; i++) {
-  // loops one too many times at the end
   console.log(alphabet[i]);
 }
 for (let j = 1; j < len; j++) {
-  // loops one too few times and misses the first character at index 0
   console.log(alphabet[j]);
 }
 for (let k = 0; k < len; k++) {
-  // Goldilocks approves - this is just right
   console.log(alphabet[k]);
 }
 ```
 
+第一个例子多了一次循环，第二个例子少了一次循环（漏掉了索引 0 处的字符）， 第三个例子是正确的。
+
 # --instructions--
 
-Fix the two indexing errors in the following function so all the numbers 1 through 5 are printed to the console.
+修复以下函数中的两个索引错误，将 1 到 5 之间（包含 1 和 5）的所有数字打印到控制台。
 
 # --hints--
 
-Your code should set the initial condition of the loop so it starts at the first index.
+应该设置循环的初始条件，使循环从第一个索引开始。
 
 ```js
 assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
-Your code should fix the initial condition of the loop so that the index starts at 0.
+应修复循环的初始条件，使循环从索引 0 开始。
 
 ```js
 assert(!code.match(/i\s?=\s*?1\s*?;/g));
 ```
 
-Your code should set the terminal condition of the loop so it stops at the last index.
+应该设置循环的终止条件，使循环在最后一个索引处停止。
 
 ```js
 assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
 ```
 
-Your code should fix the terminal condition of the loop so that it stops at 1 before the length.
+应该修复循环的终止条件，使循环在索引为字符串长度减 1 的位置停止。
 
 ```js
 assert(!code.match(/i\s*?<=\s*?len;/g));

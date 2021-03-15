@@ -1,6 +1,6 @@
 ---
 id: af4afb223120f7348cdfc9fd
-title: Map the Debris
+title: 计算轨道周期
 challengeType: 5
 forumTopicId: 16021
 dashedName: map-the-debris
@@ -8,19 +8,19 @@ dashedName: map-the-debris
 
 # --description--
 
-Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
+在这道题目中，我们需要写一个计算天体轨道周期（单位是秒）的函数。
 
-The array will contain objects in the format `{name: 'name', avgAlt: avgAlt}`.
+它接收一个对象数组参数 arr，对象中包含表示天体名称的 name 属性，及表示天体表面平均海拔的 avgAlt 属性。 就像这样：`{name: 'name', avgAlt: avgAlt}`。
 
-You can read about orbital periods [on Wikipedia](http://en.wikipedia.org/wiki/Orbital_period).
+你可以在这条[维基百科](http://en.wikipedia.org/wiki/Orbital_period)的链接中找到轨道周期的计算公式：
 
-The values should be rounded to the nearest whole number. The body being orbited is Earth.
+最终的计算结果应取整到最接近的整数。 在这里计算地球的轨道周期。
 
-The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km<sup>3</sup>s<sup>-2</sup>.
+地球半径为 6367.4447 公里，地球的 GM 值为 398600.4418 km <sup>3</sup> s <sup>-2</sup> 。
 
 # --hints--
 
-`orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])` should return `[{name: "sputnik", orbitalPeriod: 86400}]`.
+`orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])` 应返回 `[{name: "sputnik", orbitalPeriod: 86400}]` 。
 
 ```js
 assert.deepEqual(orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]), [
@@ -28,7 +28,7 @@ assert.deepEqual(orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]), [
 ]);
 ```
 
-`orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])` should return `[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]`.
+`orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])` 应返回 `[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]`。
 
 ```js
 assert.deepEqual(

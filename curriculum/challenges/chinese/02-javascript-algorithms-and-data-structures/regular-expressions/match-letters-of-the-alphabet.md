@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b96
-title: Match Letters of the Alphabet
+title: 匹配字母表中的字母
 challengeType: 1
 forumTopicId: 301354
 dashedName: match-letters-of-the-alphabet
@@ -8,43 +8,45 @@ dashedName: match-letters-of-the-alphabet
 
 # --description--
 
-You saw how you can use <dfn>character sets</dfn> to specify a group of characters to match, but that's a lot of typing when you need to match a large range of characters (for example, every letter in the alphabet). Fortunately, there is a built-in feature that makes this short and simple.
+了解了如何使用字符集（<dfn>character sets</dfn>）来指定要匹配的一组字符串，但是有时需要匹配大量字符（例如，字母表中的每个字母）。 有一种写法可以让实现这个功能变得简短。
 
-Inside a character set, you can define a range of characters to match using a hyphen character: `-`.
+在字符集中，可以使用连字符（`-`）来定义要匹配的字符范围。
 
-For example, to match lowercase letters `a` through `e` you would use `[a-e]`.
+例如，要匹配小写字母 `a` 到 `e`，你可以使用 `[a-e]`。
 
 ```js
 let catStr = "cat";
 let batStr = "bat";
 let matStr = "mat";
 let bgRegex = /[a-e]at/;
-catStr.match(bgRegex); // Returns ["cat"]
-batStr.match(bgRegex); // Returns ["bat"]
-matStr.match(bgRegex); // Returns null
+catStr.match(bgRegex);
+batStr.match(bgRegex);
+matStr.match(bgRegex);
 ```
+
+按顺序排列，三次 `match` 调用将返回值 `["cat"]`，`["bat"]` 和 `null`。
 
 # --instructions--
 
-Match all the letters in the string `quoteSample`.
+匹配字符串 `quoteSample` 中的所有字母。
 
-**Note**: Be sure to match both uppercase and lowercase letters.
+**注意**：一定要同时匹配大小写字母。
 
 # --hints--
 
-Your regex `alphabetRegex` should match 35 items.
+你的正则表达式 `alphabetRegex` 应该匹配 35 项。
 
 ```js
 assert(result.length == 35);
 ```
 
-Your regex `alphabetRegex` should use the global flag.
+你的正则表达式 `alphabetRegex` 应该使用全局标识。
 
 ```js
 assert(alphabetRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `alphabetRegex` should use the case insensitive flag.
+你的正则表达式 `alphabetRegex` 应该使用忽略大小写标志。
 
 ```js
 assert(alphabetRegex.flags.match(/i/).length == 1);

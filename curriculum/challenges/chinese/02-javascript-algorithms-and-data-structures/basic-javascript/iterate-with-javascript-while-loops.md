@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb1bdef
-title: Iterate with JavaScript While Loops
+title: while 循环
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c8QbnCM'
 forumTopicId: 18220
@@ -9,9 +9,9 @@ dashedName: iterate-with-javascript-while-loops
 
 # --description--
 
-You can run the same code multiple times by using a loop.
+你可以使用循环多次执行相同的代码。
 
-The first type of loop we will learn is called a `while` loop because it runs "while" a specified condition is true and stops once that condition is no longer true.
+我们将学习的第一种类型的循环称为 `while` 循环，当 while 指定的条件为真，循环才会执行，反之不执行。
 
 ```js
 var ourArray = [];
@@ -22,23 +22,23 @@ while(i < 5) {
 }
 ```
 
-In the code example above, the `while` loop will execute 5 times and append the numbers 0 through 4 to `ourArray`.
+在上面的代码里，`while` 循环执行 5 次把 0 到 4 的数字添加到 `ourArray` 数组里。
 
-Let's try getting a while loop to work by pushing values to an array.
+让我们通过 while 循环将值添加到数组中。
 
 # --instructions--
 
-Add the numbers 5 through 0 (inclusive) in descending order to `myArray` using a `while` loop.
+通过一个 `while` 循环，把从 5 到 0（包括 5 和 0） 的值添加到 `myArray` 中。
 
 # --hints--
 
-You should be using a `while` loop for this.
+你应该使用 `while` 循环。
 
 ```js
 assert(code.match(/while/g));
 ```
 
-`myArray` should equal `[5,4,3,2,1,0]`.
+`myArray` 应该等于 `[5,4,3,2,1,0]`。
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);

@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b81
-title: Understand Where an Object’s Prototype Comes From
+title: 了解对象的原型来自哪里
 challengeType: 1
 forumTopicId: 301330
 dashedName: understand-where-an-objects-prototype-comes-from
@@ -8,7 +8,7 @@ dashedName: understand-where-an-objects-prototype-comes-from
 
 # --description--
 
-Just like people inherit genes from their parents, an object inherits its `prototype` directly from the constructor function that created it. For example, here the `Bird` constructor creates the `duck` object:
+就像人们从父母那里继承基因一样，对象也可直接从创建它的构造函数那里继承其 `prototype`。 请看下面的例子：`Bird` 构造函数创建了一个 `duck` 对象：
 
 ```js
 function Bird(name) {
@@ -18,20 +18,21 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-`duck` inherits its `prototype` from the `Bird` constructor function. You can show this relationship with the `isPrototypeOf` method:
+`duck` 从 `Bird` 构造函数那里继承了它的 `prototype`。 你可以使用 `isPrototypeOf` 方法来验证他们之间的关系：
 
 ```js
 Bird.prototype.isPrototypeOf(duck);
-// returns true
 ```
+
+这将返回 `true`。
 
 # --instructions--
 
-Use `isPrototypeOf` to check the `prototype` of `beagle`.
+使用 `isPrototypeOf` 方法验证 `beagle` 的 `prototype`。
 
 # --hints--
 
-You should show that `Dog.prototype` is the `prototype` of `beagle`
+`Dog.prototype` 应该是 `beagle` 的 `prototype`。
 
 ```js
 assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));

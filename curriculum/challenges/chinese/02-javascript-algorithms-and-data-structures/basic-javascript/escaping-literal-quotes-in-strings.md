@@ -11,7 +11,7 @@ dashedName: escaping-literal-quotes-in-strings
 
 定义一个字符串必须要用单引号或双引号来包裹它。 那么当你的字符串里面包含引号 `"` 或者 `'` 时该怎么办呢?
 
-在 JavaScript 中，你可以通过在引号前面使用<dfn>反斜杠</dfn>（<code>\\</code>）来<dfn>转义</dfn>引号。
+在 JavaScript 中，可以通过在引号前面使用<dfn>反斜杠</dfn>（`\`）来<dfn>转义</dfn>引号。
 
 `var sampleStr = "Alan said, \"Peter is learning JavaScript\".";`
 

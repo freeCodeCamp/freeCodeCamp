@@ -1,6 +1,6 @@
 ---
 id: 565bbe00e9cc8ac0725390f4
-title: Counting Cards
+title: 21 点游戏
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KE7ty'
 forumTopicId: 16809
@@ -9,25 +9,25 @@ dashedName: counting-cards
 
 # --description--
 
-In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called [Card Counting](https://en.wikipedia.org/wiki/Card_counting).
+在赌场 21 点游戏中，玩家可以通过计算牌桌上已经发放的卡牌的高低值来让自己在游戏中保持优势。 这就叫 [21 点算法](https://en.wikipedia.org/wiki/Card_counting)。
 
-Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.
+牌桌上的大值的卡牌更多，对玩家有利。 根据下面的表格，每张卡牌都被分配了一个值。 如果卡牌的值大于 0，那么玩家应该追加赌注。 如果卡牌的值为 0 或负数，玩家应该追加少许赌注甚至不追加赌注。
 
-<table class='table table-striped'><thead><tr><th>Count Change</th><th>Cards</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>计数</th><th>卡牌</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
 
-You will write a card counting function. It will receive a `card` parameter, which can be a number or a string, and increment or decrement the global `count` variable according to the card's value (see table). The function will then return a string with the current count and the string `Bet` if the count is positive, or `Hold` if the count is zero or negative. The current count and the player's decision (`Bet` or `Hold`) should be separated by a single space.
+请写一个函数实现 21 点算法。 它根据参数 `card` 的值（见表格，可能是数字或者字符串）来递增或递减全局变量 `count`。 然后函数返回一个由当前 count（计数）和 `Bet`（当 count > 0 时）或 `Hold`（当 count <= 0 时) 拼接的字符串。 注意 count（计数）和玩家的决定（`Bet` 或 `Hold`）之间应该有空格。
 
-**Example Output**  
+**示例输出：**  
 `-3 Hold`  
 `5 Bet`
 
-**Hint**  
-Do NOT reset `count` to 0 when value is 7, 8, or 9. Do NOT return an array.  
-Do NOT include quotes (single or double) in the output.
+**提示：**  
+当卡牌为 7、8、9 时，不要把 `count` 值重置为 0。 不要返回一个数组。  
+输出结果中不要包含单引号或双引号。
 
 # --hints--
 
-Cards Sequence 2, 3, 4, 5, 6 should return `5 Bet`
+卡牌序列 2、3、4、5、6 应该返回 `5 Bet`
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-Cards Sequence 7, 8, 9 should return `0 Hold`
+卡牌序列 7、8、9 应该返回 `0 Hold`
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Cards Sequence 10, J, Q, K, A should return `-5 Hold`
+卡牌序列 10、J、Q、K、A 应该返回 `-5 Hold`
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-Cards Sequence 3, 7, Q, 8, A should return `-1 Hold`
+卡牌序列 3、7、Q、8、A 应该返回 `-1 Hold`
 
 ```js
 assert(
@@ -101,7 +101,7 @@ assert(
 );
 ```
 
-Cards Sequence 2, J, 9, 2, 7 should return `1 Bet`
+卡牌序列 2、J、9、2、7 应该返回 `1 Bet`
 
 ```js
 assert(
@@ -120,7 +120,7 @@ assert(
 );
 ```
 
-Cards Sequence 2, 2, 10 should return `1 Bet`
+卡牌序列 2、2、10 应该返回 `1 Bet`
 
 ```js
 assert(
@@ -137,7 +137,7 @@ assert(
 );
 ```
 
-Cards Sequence 3, 2, A, 10, K should return `-1 Hold`
+卡牌序列 3、2、A、10、K 应该返回 `-1 Hold`
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b84
-title: Inherit Behaviors from a Supertype
+title: 从超类继承行为
 challengeType: 1
 forumTopicId: 301319
 dashedName: inherit-behaviors-from-a-supertype
@@ -8,7 +8,7 @@ dashedName: inherit-behaviors-from-a-supertype
 
 # --description--
 
-In the previous challenge, you created a `supertype` called `Animal` that defined behaviors shared by all animals:
+在上一个挑战中，我们创建了一个`Animal` 超类（`supertype`），用来定义所有动物共有的行为：
 
 ```js
 function Animal() { }
@@ -17,44 +17,46 @@ Animal.prototype.eat = function() {
 };
 ```
 
-This and the next challenge will cover how to reuse `Animal's` methods inside `Bird` and `Dog` without defining them again. It uses a technique called inheritance. This challenge covers the first step: make an instance of the `supertype` (or parent). You already know one way to create an instance of `Animal` using the `new` operator:
+在这一节以及下一节挑战中我们将学习如何在 `Bird` 和 `Dog` 中重用 `Animal's` 中的方法，而无需重新定义它们。 这里我们会用到构造函数的继承特性。 这一节挑战中我们学习第一步：创建一个超类 `supertype`（或者叫父类）的实例。 你已经学会了一种创建 `Animal` 实例的方法，即使用 `new` 操作符：
 
 ```js
 let animal = new Animal();
 ```
 
-There are some disadvantages when using this syntax for inheritance, which are too complex for the scope of this challenge. Instead, here's an alternative approach without those disadvantages:
+此语法用于继承时会存在一些缺点，这些缺点对于当前我们这个挑战来说太复杂了。 相反，我们学习另外一种没有这些缺点的方法来替代 new 操作：
 
 ```js
 let animal = Object.create(Animal.prototype);
 ```
 
-`Object.create(obj)` creates a new object, and sets `obj` as the new object's `prototype`. Recall that the `prototype` is like the "recipe" for creating an object. By setting the `prototype` of `animal` to be `Animal's` `prototype`, you are effectively giving the `animal` instance the same "recipe" as any other instance of `Animal`.
+`Object.create(obj)` 创建了一个新对象，并指定了 `obj` 作为新对象的 `prototype`。 回忆一下，我们之前说过 `prototype` 就像是创建对象的“配方”。 如果我们把 `animal` 的 `prototype` 设置为与 `Animal's` 构造函数的 `prototype` 一样，那么就相当于让 `animal` 这个实例的配方与 `Animal` 其他实例的配方一样了。
 
 ```js
-animal.eat(); // prints "nom nom nom"
-animal instanceof Animal; // => true
+animal.eat();
+animal instanceof Animal;
 ```
+
+`instanceof` 方法会返回 `true`.
 
 # --instructions--
 
-Use `Object.create` to make two instances of `Animal` named `duck` and `beagle`.
+使用 `Object.create` 方法给 `Animal` 创建两个实例：`duck` 和 `beagle`。
 
 # --hints--
 
-The `duck` variable should be defined.
+应该定义一个 `duck` 变量。
 
 ```js
 assert(typeof duck !== 'undefined');
 ```
 
-The `beagle` variable should be defined.
+应该定义一个 `beagle` 变量。
 
 ```js
 assert(typeof beagle !== 'undefined');
 ```
 
-The `duck` variable should be initialised with `Object.create`.
+`duck` 变量应该通过 `Object.create` 初始化。
 
 ```js
 assert(
@@ -64,7 +66,7 @@ assert(
 );
 ```
 
-The `beagle` variable should be initialised with `Object.create`.
+`beagle` 变量应该通过 `Object.create` 初始化。
 
 ```js
 assert(
@@ -74,13 +76,13 @@ assert(
 );
 ```
 
-`duck` should have a `prototype` of `Animal`.
+`duck` 的原型应该被设置为 `Animal` 的 `prototype`。
 
 ```js
 assert(duck instanceof Animal);
 ```
 
-`beagle` should have a `prototype` of `Animal`.
+`beagle` 的 `prototype` 应该是 `Animal`。
 
 ```js
 assert(beagle instanceof Animal);

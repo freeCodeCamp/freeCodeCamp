@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b97
-title: Match Numbers and Letters of the Alphabet
+title: 匹配字母表中的数字和字母
 challengeType: 1
 forumTopicId: 301356
 dashedName: match-numbers-and-letters-of-the-alphabet
@@ -8,38 +8,37 @@ dashedName: match-numbers-and-letters-of-the-alphabet
 
 # --description--
 
-Using the hyphen (`-`) to match a range of characters is not limited to letters. It also works to match a range of numbers.
+使用连字符（`-`）匹配字符范围并不仅限于字母。 它还可以匹配一系列数字。
 
-For example, `/[0-5]/` matches any number between `0` and `5`, including the `0` and `5`.
+例如，`/[0-5]/` 匹配 `0` 和 `5` 之间的任意数字，包含 `0` 和 `5`。
 
-Also, it is possible to combine a range of letters and numbers in a single character set.
+此外，还可以在单个字符集中组合一系列字母和数字。
 
 ```js
 let jennyStr = "Jenny8675309";
 let myRegex = /[a-z0-9]/ig;
-// matches all letters and numbers in jennyStr
 jennyStr.match(myRegex);
 ```
 
 # --instructions--
 
-Create a single regex that matches a range of letters between `h` and `s`, and a range of numbers between `2` and `6`. Remember to include the appropriate flags in the regex.
+创建一个正则表达式，使其可以匹配 `h` 和 `s` 之间的一系列字母，以及 `2` 和 `6` 之间的一系列数字。 请记得在正则表达式中包含恰当的标志。
 
 # --hints--
 
-Your regex `myRegex` should match 17 items.
+你的正则表达式 `myRegex` 应该匹配 17 项。
 
 ```js
 assert(result.length == 17);
 ```
 
-Your regex `myRegex` should use the global flag.
+你的正则表达式 `myRegex` 应该使用全局标志。
 
 ```js
 assert(myRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `myRegex` should use the case insensitive flag.
+你的正则表达式 `myRegex` 应该使用忽略大小写的标志。
 
 ```js
 assert(myRegex.flags.match(/i/).length == 1);

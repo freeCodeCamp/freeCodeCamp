@@ -1,6 +1,6 @@
 ---
 id: 5cdafbc32913098997531680
-title: Complete a Promise with resolve and reject
+title: 通过 resolve 和 reject 完成 Promise
 challengeType: 1
 forumTopicId: 301196
 dashedName: complete-a-promise-with-resolve-and-reject
@@ -8,7 +8,7 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 # --description--
 
-A promise has three states: `pending`, `fulfilled`, and `rejected`. The promise you created in the last challenge is forever stuck in the `pending` state because you did not add a way to complete the promise. The `resolve` and `reject` parameters given to the promise argument are used to do this. `resolve` is used when you want your promise to succeed, and `reject` is used when you want it to fail. These are methods that take an argument, as seen below.
+Promise 有三个状态：`pending`、`fulfilled` 和 `rejected`。 上一个挑战里创建的 promise 一直阻塞在 `pending` 状态里，因为没有调用 promise 的完成方法。 Promise 提供的 `resolve` 和 `reject` 参数就是用来结束 promise 的。 Promise 成功时调用 `resolve`，promise 执行失败时调用 `reject`， 如下文所述，这些方法需要有一个参数。
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -20,15 +20,15 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-The example above uses strings for the argument of these functions, but it can really be anything. Often, it might be an object, that you would use data from, to put on your website or elsewhere.
+上面的示例使用字符串作为这些函数的参数，但参数实际上可以是任何格式。 通常，它可能是一个包含数据的对象，你可以将它放在网站或其他地方。
 
 # --instructions--
 
-Make the promise handle success and failure. If `responseFromServer` is `true`, call the `resolve` method to successfully complete the promise. Pass `resolve` a string with the value `We got the data`. If `responseFromServer` is `false`, use the `reject` method instead and pass it the string: `Data not received`.
+使 promise 可以处理成功和失败情况。 如果 `responseFromServer` 是 `true`，调用 `resolve` 方法使 promise 成功。 给 `resolve` 传递值为 `We got the data` 的字符串。 如果 `responseFromServer` 是 `false`， 使用 `reject` 方法并传入值为 `Data not received` 的字符串。
 
 # --hints--
 
-`resolve` should be called with the expected string when the `if` condition is `true`.
+当 `if` 条件是 `true` 时应该执行 `resolve`。
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`reject` should be called with the expected string when the `if` condition is `false`.
+当 `if` 条件是 `false` 时应该执行 `reject`。
 
 ```js
 assert(

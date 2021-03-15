@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cd
-title: Manipulate Arrays With shift()
+title: 使用 shift() 操作数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238
@@ -9,25 +9,26 @@ dashedName: manipulate-arrays-with-shift
 
 # --description--
 
-`pop()` always removes the last element of an array. What if you want to remove the first?
+`pop()` 函数用来移出数组中最后一个元素。 如果想要移出第一个元素要怎么办呢？
 
-That's where `.shift()` comes in. It works just like `.pop()`, except it removes the first element instead of the last.
+这时候我们就需要 `.shift()` 了。 它的工作原理就像 `.pop()`，但它移除的是第一个元素，而不是最后一个。
 
-Example:
+示例：
 
 ```js
 var ourArray = ["Stimpson", "J", ["cat"]];
 var removedFromOurArray = ourArray.shift();
-// removedFromOurArray now equals "Stimpson" and ourArray now equals ["J", ["cat"]].
 ```
+
+`removedFromOurArray` 值为 `Stimpson`，`ourArray` 值为 `["J", ["cat"]]`
 
 # --instructions--
 
-Use the `.shift()` function to remove the first item from `myArray`, assigning the "shifted off" value to `removedFromMyArray`.
+使用 `.shift()` 函数移除 `myArray` 中的第一项，并把移出的值赋给 `removedFromMyArray`。
 
 # --hints--
 
-`myArray` should now equal `[["dog", 3]]`.
+`myArray` 应该只包含 `[["dog", 3]]`。
 
 ```js
 assert(
@@ -41,7 +42,7 @@ assert(
 );
 ```
 
-`removedFromMyArray` should contain `["John", 23]`.
+`removedFromMyArray` 应该包含 `["John", 23]`。
 
 ```js
 assert(

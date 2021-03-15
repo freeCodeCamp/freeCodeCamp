@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b7d
-title: Iterate Over All Properties
+title: 迭代所有属性
 challengeType: 1
 forumTopicId: 301320
 dashedName: iterate-over-all-properties
@@ -8,7 +8,7 @@ dashedName: iterate-over-all-properties
 
 # --description--
 
-You have now seen two kinds of properties: `own` properties and `prototype` properties. `Own` properties are defined directly on the object instance itself. And `prototype` properties are defined on the `prototype`.
+现在你已经了解了两种属性: `own` 属性和 `prototype` 属性。 `Own` 属性是直接在对象上定义的。 而 `prototype` 属性是定义在 `prototype` 上的。
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ Bird.prototype.numLegs = 2; // prototype property
 let duck = new Bird("Donald");
 ```
 
-Here is how you add `duck`'s `own` properties to the array `ownProps` and `prototype` properties to the array `prototypeProps`:
+这个示例会告诉你如何将 `duck` 的 `own` 属性和 `prototype` 属性分别添加到 `ownProps` 数组和 `prototypeProps` 数组里面：
 
 ```js
 let ownProps = [];
@@ -34,29 +34,31 @@ for (let property in duck) {
   }
 }
 
-console.log(ownProps); // prints ["name"]
-console.log(prototypeProps); // prints ["numLegs"]
+console.log(ownProps);
+console.log(prototypeProps);
 ```
+
+`console.log(ownProps)` 将在控制台中显示 `["name"]` ，`console.log(prototypeProps)` 将显示 `["numLegs"]`。
 
 # --instructions--
 
-Add all of the `own` properties of `beagle` to the array `ownProps`. Add all of the `prototype` properties of `Dog` to the array `prototypeProps`.
+将 `beagle` 的 `own` 属性都添加到 `ownProps` 数组里面去。 将 `Dog` 中所有的 `prototype` 属性都添加到 `prototypeProps` 数组中。
 
 # --hints--
 
-The `ownProps` array should only contain `"name"`.
+`ownProps` 数组应该包含 `name`。
 
 ```js
 assert.deepEqual(ownProps, ['name']);
 ```
 
-The `prototypeProps` array should only contain `"numLegs"`.
+`prototypeProps` 数组应该包含 `numLegs`。
 
 ```js
 assert.deepEqual(prototypeProps, ['numLegs']);
 ```
 
-You should solve this challenge without using the built in method `Object.keys()`.
+在不使用内置方法 `Object.keys()` 的前提下完成这个挑战。
 
 ```js
 assert(!/\Object.keys/.test(code));

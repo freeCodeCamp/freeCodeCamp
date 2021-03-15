@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244da
-title: Introducing Else Statements
+title: 介绍 else 语句
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cek4Efq'
 forumTopicId: 18207
@@ -9,7 +9,7 @@ dashedName: introducing-else-statements
 
 # --description--
 
-When a condition for an `if` statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an `else` statement, an alternate block of code can be executed.
+当 `if` 语句的条件为真，会执行大括号里的代码。 那如果条件为假呢？ 正常情况下什么也不会发生。 使用 `else` 语句，可以执行当条件为假时相应的代码。
 
 ```js
 if (num > 10) {
@@ -21,47 +21,47 @@ if (num > 10) {
 
 # --instructions--
 
-Combine the `if` statements into a single `if/else` statement.
+请把多个 `if` 语句合并为一个 `if/else` 语句。
 
 # --hints--
 
-You should only have one `if` statement in the editor
+应该只有一个 `if` 语句。
 
 ```js
 assert(code.match(/if/g).length === 1);
 ```
 
-You should use an `else` statement
+应该使用一个 `else` 语句。
 
 ```js
 assert(/else/g.test(code));
 ```
 
-`testElse(4)` should return "5 or Smaller"
+`testElse(4)` 应该返回字符串 `5 or Smaller`
 
 ```js
 assert(testElse(4) === '5 or Smaller');
 ```
 
-`testElse(5)` should return "5 or Smaller"
+`testElse(5)` 应该返回字符串 `5 or Smaller`
 
 ```js
 assert(testElse(5) === '5 or Smaller');
 ```
 
-`testElse(6)` should return "Bigger than 5"
+`testElse(6)` 应该返回字符串 `Bigger than 5`
 
 ```js
 assert(testElse(6) === 'Bigger than 5');
 ```
 
-`testElse(10)` should return "Bigger than 5".
+`testElse(10)` 应该返回字符串 `Bigger than 5`
 
 ```js
 assert(testElse(10) === 'Bigger than 5');
 ```
 
-You should not change the code above or below the specified comments.
+不要修改相应注释的上面或下面的代码。
 
 ```js
 assert(/var result = "";/.test(code) && /return result;/.test(code));
