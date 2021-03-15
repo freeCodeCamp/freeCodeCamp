@@ -1,6 +1,6 @@
 ---
 id: 5cd9a70215d3c4e65518328f
-title: Use Recursion to Create a Countdown
+title: Utiliza recursión para crear una cuenta regresiva
 challengeType: 1
 forumTopicId: 305925
 dashedName: use-recursion-to-create-a-countdown
@@ -8,11 +8,11 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-In a [previous challenge](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion), you learned how to use recursion to replace a for loop. Now, let's look at a more complex function that returns an array of consecutive integers starting with `1` through the number passed to the function.
+En el [desafío anterior](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion), aprendiste como usar la recursión para reemplazar un bucle `for`. Ahora, echemos un vistazo a una función más compleja que devuelve un arreglo de enteros consecutivos empezando con `1` hasta el número pasado a la función.
 
-As mentioned in the previous challenge, there will be a <dfn>base case</dfn>. The base case tells the recursive function when it no longer needs to call itself. It is a simple case where the return value is already known. There will also be a <dfn>recursive call</dfn> which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.
+Como se menciona en el desafío anterior, habrá un <dfn>caso base</dfn>. El caso base le dice a la función recursiva cuando no necesita llamarse a sí misma. Es un caso simple donde el valor de retorno ya se conoce. También habrá una <dfn>llamada recursiva</dfn> la cual ejecuta la función original con argumentos diferentes. Si la función se escribe correctamente, eventualmente el caso base será alcanzado.
 
-For example, say you want to write a recursive function that returns an array containing the numbers `1` through `n`. This function will need to accept an argument, `n`, representing the final number. Then it will need to call itself with progressively smaller values of `n` until it reaches `1`. You could write the function as follows:
+Por ejemplo, digamos que quieres escribir una función recursiva que devuelva un arreglo conteniendo los números `1` hasta `n`. Esta función necesitará aceptar un argumento, `n` que representa el número final. Entonces necesitará llamarse a sí misma con valores progresivamente más pequeños de `n` hasta que alcance `1`. Podrías escribir la función de la siguiente manera:
 
 ```javascript
 function countup(n) {
@@ -24,36 +24,38 @@ function countup(n) {
     return countArray;
   }
 }
-console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
+console.log(countup(5));
 ```
 
-At first, this seems counterintuitive since the value of `n` *decreases*, but the values in the final array are *increasing*. This happens because the push happens last, after the recursive call has returned. At the point where `n` is pushed into the array, `countup(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
+El valor `[1, 2, 3, 4, 5]` se mostrará en la consola.
+
+Al principio, esto parece contraintuitivo ya que el valor de `n` *disminuye*, pero los valores en el arreglo final se están *incrementando*. Esto sucede porque la inserción ocurre al último, después de la llamada recursiva. En el punto donde `n` es empujado en el arreglo, `countup(n - 1)` ya ha sido evaluada y devuelto `[1, 2, ..., n - 1]`.
 
 # --instructions--
 
-We have defined a function called `countdown` with one parameter (`n`). The function should use recursion to return an array containing the integers `n` through `1` based on the `n` parameter. If the function is called with a number less than 1, the function should return an empty array. For example, calling this function with `n = 5` should return the array `[5, 4, 3, 2, 1]`. Your function must use recursion by calling itself and must not use loops of any kind.
+Hemos definido una función llamada `countdown` con un parámetro (`n`). La función debe usar recursión para devolver un arreglo conteniendo los `n` enteros hasta `1` basado en el parámetro `n`. Si la función es llamada con un número menor a 1, la función debe devolver un arreglo vacío. Por ejemplo, llamar esta función con `n = 5` debe devolver el arreglo `[5, 4, 3, 2, 1]`. Tu función debe usar recursión llamándose a sí misma y no debe usar bucles de ningún tipo.
 
 # --hints--
 
-`countdown(-1)` should return an empty array.
+`countdown(-1)` debe devolver un arreglo vacío.
 
 ```js
 assert.isEmpty(countdown(-1));
 ```
 
-`countdown(10)` should return `[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]`
+`countdown(10)` debe devolver `[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]`
 
 ```js
 assert.deepStrictEqual(countdown(10), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
 ```
 
-`countdown(5)` should return `[5, 4, 3, 2, 1]`
+`countdown(5)` debe devolver `[5, 4, 3, 2, 1]`
 
 ```js
 assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
 ```
 
-Your code should not rely on any kind of loops (`for`, `while` or higher order functions such as `forEach`, `map`, `filter`, and `reduce`).
+Tu código no debe depender de ningún tipo de bucles (`for`, `while` o funciones de orden alto tales como `forEach`, `map`, `filter`, y `reduce`).
 
 ```js
 assert(
@@ -63,7 +65,7 @@ assert(
 );
 ```
 
-You should use recursion to solve this problem.
+Debes usar recursión para resolver este problema.
 
 ```js
 assert(

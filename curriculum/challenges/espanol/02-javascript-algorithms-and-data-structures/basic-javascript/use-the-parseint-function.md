@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b23
-title: Use the parseInt Function
+title: Utiliza la función "parseInt"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm83LSW'
 forumTopicId: 301183
@@ -9,43 +9,43 @@ dashedName: use-the-parseint-function
 
 # --description--
 
-The `parseInt()` function parses a string and returns an integer. Here's an example:
+La función `parseInt()` analiza una cadena y devuelve un entero. A continuación, te presentamos un ejemplo:
 
 `var a = parseInt("007");`
 
-The above function converts the string "007" to an integer 7. If the first character in the string can't be converted into a number, then it returns `NaN`.
+La función anterior convierte la cadena `007` al entero `7`. Si el primer carácter de la cadena no puede ser convertido en un número, entonces devuelve `NaN`.
 
 # --instructions--
 
-Use `parseInt()` in the `convertToInteger` function so it converts the input string `str` into an integer, and returns it.
+Utiliza `parseInt()` en la función `convertToInteger` para convertir la cadena de entrada `str` a un número entero, y devuélvelo.
 
 # --hints--
 
-`convertToInteger` should use the `parseInt()` function
+`convertToInteger` debe utilizar la función `parseInt()`
 
 ```js
 assert(/parseInt/g.test(code));
 ```
 
-`convertToInteger("56")` should return a number
+`convertToInteger("56")` debe devolver un número
 
 ```js
 assert(typeof convertToInteger('56') === 'number');
 ```
 
-`convertToInteger("56")` should return 56
+`convertToInteger("56")` debe devolver 56
 
 ```js
 assert(convertToInteger('56') === 56);
 ```
 
-`convertToInteger("77")` should return 77
+`convertToInteger("77")` debe devolver 77
 
 ```js
 assert(convertToInteger('77') === 77);
 ```
 
-`convertToInteger("JamesBond")` should return NaN
+`convertToInteger("JamesBond")` debe devolver `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

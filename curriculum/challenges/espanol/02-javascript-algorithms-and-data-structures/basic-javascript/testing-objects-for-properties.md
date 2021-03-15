@@ -1,6 +1,6 @@
 ---
 id: 567af2437cbaa8c51670a16c
-title: Testing Objects for Properties
+title: Verifica las propiedades de un objeto
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
@@ -9,26 +9,28 @@ dashedName: testing-objects-for-properties
 
 # --description--
 
-Sometimes it is useful to check if the property of a given object exists or not. We can use the `.hasOwnProperty(propname)` method of objects to determine if that object has the given property name. `.hasOwnProperty()` returns `true` or `false` if the property is found or not.
+A veces es útil comprobar si existe o no la propiedad de un objeto dado. Podemos utilizar el método `.hasOwnProperty(propname)` para determinar si un objeto tiene una propiedad con ese nombre. `.hasOwnProperty()` devuelve `true` o `false` si se encuentra la propiedad o no.
 
-**Example**
+**Por ejemplo**
 
 ```js
 var myObj = {
   top: "hat",
   bottom: "pants"
 };
-myObj.hasOwnProperty("top");    // true
-myObj.hasOwnProperty("middle"); // false
+myObj.hasOwnProperty("top");
+myObj.hasOwnProperty("middle");
 ```
+
+El primer `hasOwnProperty` devuelve `true`, mientras que el segundo devuelve `false`.
 
 # --instructions--
 
-Modify the function `checkObj` to test if an object passed to the function (`obj`) contains a specific property (`checkProp`). If the property is found, return that property's value. If not, return `"Not Found"`.
+Modifica la función `checkObj` para verificar si el objeto `obj` pasado a la función contiene la propiedad `checkProp`. Si la propiedad es encontrada, devuelve el valor de la propiedad. Si no, devuelve `"Not Found"`.
 
 # --hints--
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` should return `"pony"`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` debe devolver la cadena`pony`.
 
 ```js
 assert(
@@ -36,7 +38,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` should return `"kitten"`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` debe devolver la cadena `kitten`.
 
 ```js
 assert(
@@ -44,7 +46,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` should return `"Not Found"`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` debe devolver la cadena `Not Found`.
 
 ```js
 assert(
@@ -53,19 +55,19 @@ assert(
 );
 ```
 
-`checkObj({city: "Seattle"}, "city")` should return `"Seattle"`.
+`checkObj({city: "Seattle"}, "city")` debe devolver la cadena `Seattle`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'city') === 'Seattle');
 ```
 
-`checkObj({city: "Seattle"}, "district")` should return `"Not Found"`.
+`checkObj({city: "Seattle"}, "district")` debe devolver la cadena `Not Found`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'district') === 'Not Found');
 ```
 
-`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` should return `"Not Found"`.
+`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` debe devolver la cadena `Not Found`.
 
 ```js
 assert(checkObj({ pet: 'kitten', bed: 'sleigh' }, 'gift') === 'Not Found');

@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b67
-title: Add Elements to the End of an Array Using concat Instead of push
+title: 使用 concat 而不是 push 将元素添加到数组的末尾
 challengeType: 1
 forumTopicId: 301226
 dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
@@ -8,50 +8,50 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 # --description--
 
-Functional programming is all about creating and using non-mutating functions.
+函数式编程就是创建和使用具有不变性的函数。
 
-The last challenge introduced the `concat` method as a way to combine arrays into a new one without mutating the original arrays. Compare `concat` to the `push` method. `Push` adds an item to the end of the same array it is called on, which mutates that array. Here's an example:
+上一个挑战介绍了 `concat` 方法，这是一种在不改变原始数组的前提下，将数组组合成新数组的方法。 将 `concat` 方法与 `push` 方法做比较。 `push` 将元素添加到调用它的数组的末尾，这样会改变该数组。 举个例子：
 
 ```js
 var arr = [1, 2, 3];
 arr.push([4, 5, 6]);
-// arr is changed to [1, 2, 3, [4, 5, 6]]
-// Not the functional programming way
 ```
 
-`Concat` offers a way to add new items to the end of an array without any mutating side effects.
+`arr` 的值被修改为 `[1, 2, 3, [4, 5, 6]]`，这不是函数编程方式。
+
+`concat` 方法可以将新项目添加到数组末尾，而不产生副作用。
 
 # --instructions--
 
-Change the `nonMutatingPush` function so it uses `concat` to add `newItem` to the end of `original` instead of `push`. The function should return an array.
+修改 `nonMutatingPush` 函数，用 `concat` 替代 `push` 将 `newItem` 添加到 `original` 末尾。 该函数应返回一个数组。
 
 # --hints--
 
-Your code should use the `concat` method.
+应该使用 `concat` 方法。
 
 ```js
 assert(code.match(/\.concat/g));
 ```
 
-Your code should not use the `push` method.
+不能使用 `push` 方法。
 
 ```js
 assert(!code.match(/\.?[\s\S]*?push/g));
 ```
 
-The `first` array should not change.
+不能改变 `first` 数组。
 
 ```js
 assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
 ```
 
-The `second` array should not change.
+不能改变 `second` 数组。
 
 ```js
 assert(JSON.stringify(second) === JSON.stringify([4, 5]));
 ```
 
-`nonMutatingPush([1, 2, 3], [4, 5])` should return `[1, 2, 3, 4, 5]`.
+`nonMutatingPush([1, 2, 3], [4, 5])` 应返回 `[1, 2, 3, 4, 5]`。
 
 ```js
 assert(
