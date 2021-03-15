@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b22
-title: Use the parseInt Function with a Radix
+title: 使用 parseInt 函数并传入一个基数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6K4Kh3'
 forumTopicId: 301182
@@ -9,49 +9,49 @@ dashedName: use-the-parseint-function-with-a-radix
 
 # --description--
 
-The `parseInt()` function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
+`parseInt()` 函数解析一个字符串并返回一个整数。 它还可以传入第二个参数，指定了字符串中数字的基数。 基数可以是 2 到 36 之间的整数。
 
-The function call looks like:
+函数调用如下所示：
 
 `parseInt(string, radix);`
 
-And here's an example:
+示例：
 
 `var a = parseInt("11", 2);`
 
-The radix variable says that "11" is in the binary system, or base 2. This example converts the string "11" to an integer 3.
+参数 2 表示 `11` 使用二进制数。 此示例将字符串 `11` 转换为整数 `3`。
 
 # --instructions--
 
-Use `parseInt()` in the `convertToInteger` function so it converts a binary number to an integer and returns it.
+在 `convertToInteger` 函数中使用 `parseInt()` 将二进制数转换为正数并返回。
 
 # --hints--
 
-`convertToInteger` should use the `parseInt()` function
+`convertToInteger` 中应该使用 `parseInt()` 函数
 
 ```js
 assert(/parseInt/g.test(code));
 ```
 
-`convertToInteger("10011")` should return a number
+`convertToInteger("10011")` 应该返回一个数字
 
 ```js
 assert(typeof convertToInteger('10011') === 'number');
 ```
 
-`convertToInteger("10011")` should return 19
+`convertToInteger("10011")` 应该返回 19
 
 ```js
 assert(convertToInteger('10011') === 19);
 ```
 
-`convertToInteger("111001")` should return 57
+`convertToInteger("111001")` 应该返回 57
 
 ```js
 assert(convertToInteger('111001') === 57);
 ```
 
-`convertToInteger("JamesBond")` should return NaN
+`convertToInteger("JamesBond")` 应该返回 `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

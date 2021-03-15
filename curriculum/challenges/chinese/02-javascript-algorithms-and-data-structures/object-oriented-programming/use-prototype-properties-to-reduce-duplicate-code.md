@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7c
-title: Use Prototype Properties to Reduce Duplicate Code
+title: 使用原型属性来减少重复代码
 challengeType: 1
 forumTopicId: 301336
 dashedName: use-prototype-properties-to-reduce-duplicate-code
@@ -8,44 +8,44 @@ dashedName: use-prototype-properties-to-reduce-duplicate-code
 
 # --description--
 
-Since `numLegs` will probably have the same value for all instances of `Bird`, you essentially have a duplicated variable `numLegs` inside each `Bird` instance.
+所有 `Bird` 实例可能会有相同的 `numLegs` 值，所以在每一个 `Bird` 的实例中本质上都有一个重复的变量 `numLegs`。
 
-This may not be an issue when there are only two instances, but imagine if there are millions of instances. That would be a lot of duplicated variables.
+当只有两个实例时可能并不是什么问题，但想象一下如果有数百万个实例。 这将会产生许许多多重复的变量。
 
-A better way is to use `Bird’s` `prototype`. Properties in the `prototype` are shared among ALL instances of `Bird`. Here's how to add `numLegs` to the `Bird prototype`:
+这里有一个更好的方法可以解决上述问题，那就是使用 `Bird’s` 的 `prototype`。 `prototype` 是一个可以在所有 `Bird` 实例之间共享的对象。 以下是一个在 `Bird prototype` 中添加 `numLegs` 属性的示例：
 
 ```js
 Bird.prototype.numLegs = 2;
 ```
 
-Now all instances of `Bird` have the `numLegs` property.
+现在所有的 `Bird` 实例都拥有了共同的 `numLegs` 属性值。
 
 ```js
-console.log(duck.numLegs);  // prints 2
-console.log(canary.numLegs);  // prints 2
+console.log(duck.numLegs);
+console.log(canary.numLegs);
 ```
 
-Since all instances automatically have the properties on the `prototype`, think of a `prototype` as a "recipe" for creating objects. Note that the `prototype` for `duck` and `canary` is part of the `Bird` constructor as `Bird.prototype`. Nearly every object in JavaScript has a `prototype` property which is part of the constructor function that created it.
+由于所有的实例都可以继承 `prototype` 上的属性，所以可以把 `prototype` 看作是创建对象的 "配方"。 请注意：`duck` 和 `canary` 的 `prototype` 属于 `Bird` 的构造函数，即 Bird 的原型 `Bird.prototype`。 JavaScript 中几乎所有的对象都有一个 `prototype` 属性，这个属性是属于它所在的构造函数。
 
 # --instructions--
 
-Add a `numLegs` property to the `prototype` of `Dog`
+给 `Dog` 的 `prototype` 添加一个 `numLegs` 属性。
 
 # --hints--
 
-`beagle` should have a `numLegs` property.
+`beagle` 应该有一个 `numLegs` 属性。
 
 ```js
 assert(beagle.numLegs !== undefined);
 ```
 
-`beagle.numLegs` should be a number.
+`beagle.numLegs` 应该是一个数字。
 
 ```js
 assert(typeof beagle.numLegs === 'number');
 ```
 
-`numLegs` should be a `prototype` property not an `own` property.
+`numLegs` 应该是一个 `prototype` 属性而不是一个 `own` 属性。
 
 ```js
 assert(beagle.hasOwnProperty('numLegs') === false);

@@ -29,7 +29,7 @@ A continuación está el elemento *anchor* `<a>` (que requiere una etiqueta de c
 
 `<a href="http://freecodecamp.org"> ... </a>`
 
-El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama `anchor text`, y mostrará el enlace para hacer clic:
+El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama <dfn>anchor text</dfn>, y mostrará el enlace para hacer clic:
 
 `<a href=" ... ">link to freecodecamp.org</a>`
 
@@ -43,11 +43,19 @@ Anida el elemento `a` existente dentro de un nuevo elemento `p`. El nuevo párra
 
 # --hints--
 
-Debes tener un elemento `a` que enlace a "`https://freecatphotoapp.com`".
+Solo debes tener un elemento `a`.
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length > 0 
+  $('a').length  === 1 
+);
+```
+
+El elemento `a` debe enlazar a "`https://freecatphotoapp.com`".
+
+```js
+assert(
+  $('a[href="https://freecatphotoapp.com"]').length  === 1 
 );
 ```
 
@@ -61,13 +69,13 @@ assert(
 );
 ```
 
-Debes crear un nuevo elemento `p` alrededor de tu elemento `a`. Debe haber al menos 3 etiquetas `p` en tu código HTML.
+Debes crear un nuevo elemento `p`. Debe haber al menos 3 etiquetas `p` en tu código HTML.
 
 ```js
 assert($('p') && $('p').length > 2);
 ```
 
-Tu elemento `a` debe ser anidado dentro de tu nuevo elemento `p`.
+El elemento `a` debe estar anidado dentro del nuevo elemento `p`.
 
 ```js
 assert(
@@ -75,7 +83,7 @@ assert(
 );
 ```
 
-Tu elemento `p` debe contener el texto `View more` (con un espacio después de él).
+El elemento `p` debe contener el texto `View more` (con un espacio después de él).
 
 ```js
 assert(
@@ -86,7 +94,7 @@ assert(
 );
 ```
 
-Tu elemento `a` <em>no</em> debe tener el texto `View more`.
+El elemento `a` <em>no</em> debe tener el texto `View more`.
 
 ```js
 assert(
@@ -96,7 +104,7 @@ assert(
 );
 ```
 
-Cada uno de tus elementos `p` debe tener una etiqueta de cierre.
+Cada uno de los elementos `p` debe tener una etiqueta de cierre.
 
 ```js
 assert(
@@ -106,7 +114,7 @@ assert(
 );
 ```
 
-Cada uno de tus elementos `a` debe tener una etiqueta de cierre.
+Cada uno de los elementos `a` debe tener una etiqueta de cierre.
 
 ```js
 assert(

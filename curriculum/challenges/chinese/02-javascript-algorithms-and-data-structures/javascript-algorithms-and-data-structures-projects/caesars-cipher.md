@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e2
-title: Caesars Cipher
+title: 凯撒密码
 challengeType: 5
 forumTopicId: 16003
 dashedName: caesars-cipher
@@ -8,35 +8,35 @@ dashedName: caesars-cipher
 
 # --description--
 
-One of the simplest and most widely known <dfn>ciphers</dfn> is a <dfn>Caesar cipher</dfn>, also known as a <dfn>shift cipher</dfn>. In a shift cipher the meanings of the letters are shifted by some set amount.
+凯撒密码（ <dfn>Caesar cipher</dfn>）是最简单且最广为人知的密码（<dfn>ciphers</dfn>），也被称为移位密码（<dfn>shift cipher</dfn>）。 在移位密码中，明文中的字母通过按照一个固定数目进行偏移后被替换成新的字母。
 
-A common modern use is the [ROT13](https://en.wikipedia.org/wiki/ROT13) cipher, where the values of the letters are shifted by 13 places. Thus 'A' ↔ 'N', 'B' ↔ 'O' and so on.
+[ROT13](https://en.wikipedia.org/wiki/ROT13) 是一个被广泛使用的加密技术，明文中的所有字母都被移动 13 位。 也就是， `A ↔ N`，`B ↔ O` 等等。
 
-Write a function which takes a [ROT13](https://en.wikipedia.org/wiki/ROT13) encoded string as input and returns a decoded string.
+编写一个函数，它将 [ROT13](https://en.wikipedia.org/wiki/ROT13) 编码的字符串作为输入并返回解码字符串。
 
-All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+所有解码后的字母都必须为字母大写。 请不要解码非字母的字符（例如，空格、标点符号），但你需要在结果中保留它们。
 
 # --hints--
 
-`rot13("SERR PBQR PNZC")` should decode to `FREE CODE CAMP`
+`rot13("SERR PBQR PNZC")` 应解码为 `FREE CODE CAMP`
 
 ```js
 assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
 ```
 
-`rot13("SERR CVMMN!")` should decode to `FREE PIZZA!`
+`rot13("SERR CVMMN!")` 应解码为 `FREE PIZZA!`
 
 ```js
 assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
 ```
 
-`rot13("SERR YBIR?")` should decode to `FREE LOVE?`
+`rot13("SERR YBIR?")` 应解码为 `FREE LOVE?`
 
 ```js
 assert(rot13('SERR YBIR?') === 'FREE LOVE?');
 ```
 
-`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` should decode to `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
+`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` 应解码为 `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
 
 ```js
 assert(

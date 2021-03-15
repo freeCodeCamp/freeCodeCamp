@@ -1,6 +1,6 @@
 ---
 id: 587d7b90367417b2b2512b65
-title: Return Part of an Array Using the slice Method
+title: 使用 slice 方法返回数组的一部分
 challengeType: 1
 forumTopicId: 301239
 dashedName: return-part-of-an-array-using-the-slice-method
@@ -8,29 +8,30 @@ dashedName: return-part-of-an-array-using-the-slice-method
 
 # --description--
 
-The `slice` method returns a copy of certain elements of an array. It can take two arguments, the first gives the index of where to begin the slice, the second is the index for where to end the slice (and it's non-inclusive). If the arguments are not provided, the default is to start at the beginning of the array through the end, which is an easy way to make a copy of the entire array. The `slice` method does not mutate the original array, but returns a new one.
+`slice` 方法可以从已有数组中返回指定元素。 它接受两个参数，第一个规定从何处开始选取，第二个规定从何处结束选取（不包括该元素）。 如果没有传参，则默认为从数组的开头开始到结尾结束，这是复制整个数组的简单方式。 `slice` 返回一个新数组，不会修改原始数组。
 
-Here's an example:
+举个例子：
 
 ```js
 var arr = ["Cat", "Dog", "Tiger", "Zebra"];
 var newArray = arr.slice(1, 3);
-// Sets newArray to ["Dog", "Tiger"]
 ```
+
+`newArray` 值为 `["Dog", "Tiger"]`
 
 # --instructions--
 
-Use the `slice` method in the `sliceArray` function to return part of the `anim` array given the provided `beginSlice` and `endSlice` indices. The function should return an array.
+在 `sliceArray` 函数中使用 `slice` 方法，给出 `beginSlice` 和 `endSlice` 索引，返回 `anim` 数组的一部分。 这个函数应返回一个数组。
 
 # --hints--
 
-Your code should use the `slice` method.
+应该使用 `slice` 方法。
 
 ```js
 assert(code.match(/\.slice/g));
 ```
 
-The `inputAnim` variable should not change.
+不能改变 `inputAnim` 变量。
 
 ```js
 assert(
@@ -39,7 +40,7 @@ assert(
 );
 ```
 
-`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 3)` should return `["Dog", "Tiger"]`.
+`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 3)` 应返回 `["Dog", "Tiger"]`。
 
 ```js
 assert(
@@ -48,7 +49,7 @@ assert(
 );
 ```
 
-`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 0, 1)` should return `["Cat"]`.
+`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 0, 1)` 应返回 `["Cat"]`。
 
 ```js
 assert(
@@ -57,7 +58,7 @@ assert(
 );
 ```
 
-`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 4)` should return `["Dog", "Tiger", "Zebra"]`.
+`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 4)` 应返回 `["Dog", "Tiger", "Zebra"]`。
 
 ```js
 assert(

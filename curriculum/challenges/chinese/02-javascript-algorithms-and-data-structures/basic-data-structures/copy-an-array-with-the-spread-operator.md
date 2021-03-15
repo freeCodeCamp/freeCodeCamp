@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b13
-title: Copy an Array with the Spread Operator
+title: 使用展开运算符复制数组
 challengeType: 1
 forumTopicId: 301157
 dashedName: copy-an-array-with-the-spread-operator
@@ -8,24 +8,24 @@ dashedName: copy-an-array-with-the-spread-operator
 
 # --description--
 
-While `slice()` allows us to be selective about what elements of an array to copy, among several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy *all* of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: `...`
+`slice()` 可以让我们从一个数组中选择一些元素来复制到新数组中，而 ES6 中又引入了一个简洁且可读性强的语法：展开运算符（<dfn>spread operator</dfn>），它能让我们方便地复制数组中的*所有*元素。 展开语法写出来是这样：`...`
 
-In practice, we can use the spread operator to copy an array like so:
+我们可以用展开运算符来复制数组：
 
 ```js
 let thisArray = [true, true, undefined, false, null];
 let thatArray = [...thisArray];
-// thatArray equals [true, true, undefined, false, null]
-// thisArray remains unchanged and thatArray contains the same elements as thisArray
 ```
+
+`thatArray` 等于 `[true, true, undefined, false, null]`。 `thisArray` 保持不变， `thatArray` 包含与 `thisArray` 相同的元素。
 
 # --instructions--
 
-We have defined a function, `copyMachine` which takes `arr` (an array) and `num` (a number) as arguments. The function is supposed to return a new array made up of `num` copies of `arr`. We have done most of the work for you, but it doesn't work quite right yet. Modify the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!).
+我们已经定义了一个 `copyMachine` 函数，它接受 `arr`（一个数组）和 `num`（一个数字）作为输入参数。 该函数需要返回一个由 `num` 个 `arr` 组成的新的二维数组。 同时，我们写好了大致的流程，只是细节实现还没有写完。 请修改这个函数，使用展开语法，使该函数能正常工作（提示：我们已经学到过的一个方法很适合用在这里）！
 
 # --hints--
 
-`copyMachine([true, false, true], 2)` should return `[[true, false, true], [true, false, true]]`
+`copyMachine([true, false, true], 2)` 应返回 `[[true, false, true], [true, false, true]]`。
 
 ```js
 assert.deepEqual(copyMachine([true, false, true], 2), [
@@ -34,7 +34,7 @@ assert.deepEqual(copyMachine([true, false, true], 2), [
 ]);
 ```
 
-`copyMachine([1, 2, 3], 5)` should return `[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]`
+`copyMachine([1, 2, 3], 5)` 应返回 `[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]`。
 
 ```js
 assert.deepEqual(copyMachine([1, 2, 3], 5), [
@@ -46,13 +46,13 @@ assert.deepEqual(copyMachine([1, 2, 3], 5), [
 ]);
 ```
 
-`copyMachine([true, true, null], 1)` should return `[[true, true, null]]`
+`copyMachine([true, true, null], 1)` 应返回 `[[true, true, null]]`。
 
 ```js
 assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]]);
 ```
 
-`copyMachine(["it works"], 3)` should return `[["it works"], ["it works"], ["it works"]]`
+`copyMachine(["it works"], 3)` 应返回 `[["it works"], ["it works"], ["it works"]]`。
 
 ```js
 assert.deepEqual(copyMachine(['it works'], 3), [
@@ -62,7 +62,7 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 ]);
 ```
 
-The `copyMachine` function should utilize the `spread operator` with array `arr`
+`copyMachine` 函数中应对 `arr` 使用展开运算符（`spread operator`）。
 
 ```js
 assert(__helpers.removeJSComments(code).match(/\.\.\.arr/));

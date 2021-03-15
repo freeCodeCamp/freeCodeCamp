@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b44
-title: Write Arrow Functions with Parameters
+title: 编写带参数的箭头函数
 challengeType: 1
 forumTopicId: 301223
 dashedName: write-arrow-functions-with-parameters
@@ -8,48 +8,49 @@ dashedName: write-arrow-functions-with-parameters
 
 # --description--
 
-Just like a regular function, you can pass arguments into an arrow function.
+和一般的函数一样，你也可以给箭头函数传递参数。
 
 ```js
-// doubles input value and returns it
 const doubler = (item) => item * 2;
-doubler(4); // returns 8
+doubler(4);
 ```
 
-If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted.
+`doubler(4)` 将返回 `8`。
+
+如果箭头函数只有一个参数，则可以省略参数外面的括号。
 
 ```js
-// the same function, without the parameter parentheses
 const doubler = item => item * 2;
 ```
 
-It is possible to pass more than one argument into an arrow function.
+可以给箭头函数传递多个参数。
 
 ```js
-// multiplies the first input value by the second and returns it
 const multiplier = (item, multi) => item * multi;
-multiplier(4, 2); // returns 8
+multiplier(4, 2);
 ```
+
+`multiplier(4, 2)` 将返回 `8`。
 
 # --instructions--
 
-Rewrite the `myConcat` function which appends contents of `arr2` to `arr1` so that the function uses arrow function syntax.
+使用箭头函数的语法重写 `myConcat` 函数，将 `arr2` 的内容添加到 `arr1`。
 
 # --hints--
 
-You should replace the `var` keyword.
+应替换 `var` 关键词。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`myConcat` should be a constant variable (by using `const`).
+`myConcat` 应该是一个常量（使用`const`）。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
 ```
 
-`myConcat` should be an arrow function with two parameters
+`myConcat` 应该是一个带有两个参数的箭头函数。
 
 ```js
 assert(
@@ -58,13 +59,13 @@ assert(
 );
 ```
 
-`myConcat()` should return `[1, 2, 3, 4, 5]`.
+`myConcat()` 应该返回 `[1, 2, 3, 4, 5]`。
 
 ```js
 assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 ```
 
-`function` keyword should not be used.
+不能使用 `function` 关键字。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/function/g));

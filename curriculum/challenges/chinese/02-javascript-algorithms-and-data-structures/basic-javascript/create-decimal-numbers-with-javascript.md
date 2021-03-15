@@ -1,6 +1,6 @@
 ---
 id: cf1391c1c11feddfaeb4bdef
-title: Create Decimal Numbers with JavaScript
+title: 创建一个小数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GEuW'
 forumTopicId: 16826
@@ -9,24 +9,23 @@ dashedName: create-decimal-numbers-with-javascript
 
 # --description--
 
-We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.
+我们也可以把小数存储到变量中。 小数有时候也被称作<dfn>浮点数</dfn>或者 <dfn>floats</dfn>。
 
-**Note**  
-Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. [Details Here](https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems).
+**提示：**不是所有的实数都可以用浮点数（<dfn>floating point</dfn>）来表示。 因为可能产生四舍五入的错误， [查看详情](https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems)。
 
 # --instructions--
 
-Create a variable `myDecimal` and give it a decimal value with a fractional part (e.g. `5.7`).
+创建一个变量 `myDecimal`，并给它赋值一个浮点数（例如 `5.7`)。
 
 # --hints--
 
-`myDecimal` should be a number.
+`myDecimal` 应该是一个数字。
 
 ```js
 assert(typeof myDecimal === 'number');
 ```
 
-`myDecimal` should have a decimal point
+`myDecimal` 应该包含小数点。
 
 ```js
 assert(myDecimal % 1 != 0);

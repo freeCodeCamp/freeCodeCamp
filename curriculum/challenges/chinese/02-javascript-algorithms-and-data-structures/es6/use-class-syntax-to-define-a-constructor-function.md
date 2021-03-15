@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b53
-title: Use class Syntax to Define a Constructor Function
+title: 使用 class 语法定义构造函数
 challengeType: 1
 forumTopicId: 301212
 dashedName: use-class-syntax-to-define-a-constructor-function
@@ -8,11 +8,11 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 # --description--
 
-ES6 provides a new syntax to create objects, using the <dfn>class</dfn> keyword.
+ES6 提供了一个新的创建对象的语法，使用关键字 <dfn>class</dfn>。
 
-It should be noted that the `class` syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
+值得注意的是，`class` 只是一个语法糖，它并不像 Java、Python 或者 Ruby 这一类的语言一样，严格履行了面向对象的开发规范。
 
-In ES5, we usually define a constructor function and use the `new` keyword to instantiate an object.
+在 ES5 里面，我们通常会定义一个构造函数 `constructor`，然后使用 `new` 关键字来实例化一个对象：
 
 ```js
 var SpaceShuttle = function(targetPlanet){
@@ -21,7 +21,7 @@ var SpaceShuttle = function(targetPlanet){
 var zeus = new SpaceShuttle('Jupiter');
 ```
 
-The `class` syntax simply replaces the constructor function creation:
+`class` 语法只是简单地替换了构造函数 `constructor` 的写法：
 
 ```js
 class SpaceShuttle {
@@ -32,21 +32,21 @@ class SpaceShuttle {
 const zeus = new SpaceShuttle('Jupiter');
 ```
 
-It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.  
-**Notes:**
+应该注意 `class` 关键字声明了一个新的函数，里面添加了一个构造函数。 当用 `new` 创建一个新的对象时，构造函数会被调用。
 
--   UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
--   The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
+**注意：**首字母大写驼峰命名法 UpperCamelCase 是 ES6 class 命名的惯例，就像上面的 `SpaceShuttle`。
+
+`constructor` 方法是一个特殊方法，用于创建和初始化 class 创建的对象。 在 JavaScript 算法和数据结构认证的面向对象编程章节里会更深入介绍它。
 
 # --instructions--
 
-Use the `class` keyword and write a constructor to create the `Vegetable` class.
+使用 `class` 关键词，写一个 `constructor` 来创建 `Vegetable` class。
 
-The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the constructor.
+`Vegetable` 这个 class 可以创建 vegetable 对象，这个对象拥有一个在 `constructor` 中赋值的 `name` 属性。
 
 # --hints--
 
-`Vegetable` should be a `class` with a defined `constructor` method.
+`Vegetable` 应该是一个 `class`，并在其中定义了 `constructor`。
 
 ```js
 assert(
@@ -54,13 +54,13 @@ assert(
 );
 ```
 
-`class` keyword should be used.
+应使用 `class` 关键字。
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` should be able to be instantiated.
+`Vegetable` 可以被实例化。
 
 ```js
 assert(() => {
@@ -69,7 +69,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` should return `carrot`.
+`carrot.name` 应该返回 `carrot`。
 
 ```js
 assert(carrot.name == 'carrot');

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c7
-title: Accessing Object Properties with Dot Notation
+title: 通过点号表示法访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cGryJs8'
 forumTopicId: 16164
@@ -9,52 +9,53 @@ dashedName: accessing-object-properties-with-dot-notation
 
 # --description--
 
-There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array.
+和访问数组类似，访问对象属性有两种方式：点号表示法（`.`）和方括号表示法（`[]`）。
 
-Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
+如果我们已经提前知道要访问的属性名，使用点号表示法是最方便的。
 
-Here is a sample of using dot notation (`.`) to read an object's property:
+这里是一个用点符号（`.`）读取对象属性的示例：
 
 ```js
 var myObj = {
   prop1: "val1",
   prop2: "val2"
 };
-var prop1val = myObj.prop1; // val1
-var prop2val = myObj.prop2; // val2
+var prop1val = myObj.prop1;
+var prop2val = myObj.prop2;
 ```
 
+`prop1val` 的值将为字符串 `val1`，并且`prop2val` 的值将为字符串 `val2`。
 # --instructions--
 
-Read in the property values of `testObj` using dot notation. Set the variable `hatValue` equal to the object's property `hat` and set the variable `shirtValue` equal to the object's property `shirt`.
+使用点号读取 `testObj` 的属性值。 将变量 `hatValue` 的值设置为该对象的 `hat` 属性的值，并将变量 `shirtValue` 的值设置为该对象的 `shirt` 属性的值。
 
 # --hints--
 
-`hatValue` should be a string
+`hatValue` 应该是一个字符串
 
 ```js
 assert(typeof hatValue === 'string');
 ```
 
-The value of `hatValue` should be `"ballcap"`
+`hatValue` 的值应该为字符串 `ballcap`
 
 ```js
 assert(hatValue === 'ballcap');
 ```
 
-`shirtValue` should be a string
+`shirtValue` 应该是一个字符串
 
 ```js
 assert(typeof shirtValue === 'string');
 ```
 
-The value of `shirtValue` should be `"jersey"`
+`shirtValue` 的值应该为字符串 `jersey`
 
 ```js
 assert(shirtValue === 'jersey');
 ```
 
-You should use dot notation twice
+你应该使用两个点号
 
 ```js
 assert(code.match(/testObj\.\w+/g).length > 1);

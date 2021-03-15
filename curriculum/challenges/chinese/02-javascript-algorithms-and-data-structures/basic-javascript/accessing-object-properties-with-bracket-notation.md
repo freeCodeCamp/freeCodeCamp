@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: Accessing Object Properties with Bracket Notation
+title: 使用方括号表示法访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
@@ -9,11 +9,11 @@ dashedName: accessing-object-properties-with-bracket-notation
 
 # --description--
 
-The second way to access the properties of an object is bracket notation (`[]`). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+访问对象属性的第二种方式是方括号表示法（`[]`）。 如果你想访问的属性名中包含空格，就必须使用方括号表示法来获取它的属性值。
 
-However, you can still use bracket notation on object properties without spaces.
+当然，如果属性名不包含空格，也可以使用方括号表示法。
 
-Here is a sample of using bracket notation to read an object's property:
+这是一个使用方括号表示法读取对象属性的例子：
 
 ```js
 var myObj = {
@@ -21,44 +21,46 @@ var myObj = {
   "More Space": "Spock",
   "NoSpace": "USS Enterprise"
 };
-myObj["Space Name"]; // Kirk
-myObj['More Space']; // Spock
-myObj["NoSpace"];    // USS Enterprise
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
 ```
 
-Note that property names with spaces in them must be in quotes (single or double).
+`myObj["Space Name"]` 将会是字符串 `Kirk`，`myObj['More Space']` 将会是字符串 `Spock`，并且`myObj["NoSpace"]` 将会是字符串 `USS Enterprise`。
+
+注意，如果属性名中包含空格，就必须使用引号（单引号或双引号）将它们包裹起来。
 
 # --instructions--
 
-Read the values of the properties `"an entree"` and `"the drink"` of `testObj` using bracket notation and assign them to `entreeValue` and `drinkValue` respectively.
+使用方括号读取 `testObj` 中 `an entree` 和 `the drink` 的属性值，并分别将它们赋值给 `entreeValue` 和 `drinkValue`。
 
 # --hints--
 
-`entreeValue` should be a string
+`entreeValue` 应该是一个字符串。
 
 ```js
 assert(typeof entreeValue === 'string');
 ```
 
-The value of `entreeValue` should be `"hamburger"`
+`entreeValue` 的值应该为字符串 `hamburger`
 
 ```js
 assert(entreeValue === 'hamburger');
 ```
 
-`drinkValue` should be a string
+`drinkValue` 应该是一个字符串
 
 ```js
 assert(typeof drinkValue === 'string');
 ```
 
-The value of `drinkValue` should be `"water"`
+`drinkValue` 的值应该为字符串 `water`
 
 ```js
 assert(drinkValue === 'water');
 ```
 
-You should use bracket notation twice
+你应该使用两次方括号
 
 ```js
 assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);

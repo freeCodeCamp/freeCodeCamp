@@ -1,6 +1,6 @@
 ---
 id: 5cd9a70215d3c4e65518328f
-title: Use Recursion to Create a Countdown
+title: 使用递归创建一个倒计时
 challengeType: 1
 forumTopicId: 305925
 dashedName: use-recursion-to-create-a-countdown
@@ -8,11 +8,11 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-In a [previous challenge](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion), you learned how to use recursion to replace a for loop. Now, let's look at a more complex function that returns an array of consecutive integers starting with `1` through the number passed to the function.
+在上一个[挑战](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion)，学习了怎样用递归来代替 `for` 循环。 现在来学习一个更复杂的函数，函数返回一个从 `1` 到传递给函数的指定数字的连续数字数组。
 
-As mentioned in the previous challenge, there will be a <dfn>base case</dfn>. The base case tells the recursive function when it no longer needs to call itself. It is a simple case where the return value is already known. There will also be a <dfn>recursive call</dfn> which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.
+正如上一个挑战提到的，会有一个 <dfn>base case</dfn>。 base case 告诉递归函数什么时候不在需要调用其自身。 这是简单 情况，返回得到的值。 还有 <dfn>recursive call</dfn>，继续用不同的参数调用自身。 如果函数无误，一直执行直到 base case 为止。
 
-For example, say you want to write a recursive function that returns an array containing the numbers `1` through `n`. This function will need to accept an argument, `n`, representing the final number. Then it will need to call itself with progressively smaller values of `n` until it reaches `1`. You could write the function as follows:
+比如，如果想写一个递归函数，返回一个数字 `1` 到 `n` 的连续数组。 这个函数需要接收一个参数 `n` 代表最终数字。 然后会持续的调用自身，传入一个比 `n` 更小的值一直到传入的值是 `1` 为止。 函数如下：
 
 ```javascript
 function countup(n) {
@@ -24,36 +24,38 @@ function countup(n) {
     return countArray;
   }
 }
-console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
+console.log(countup(5));
 ```
 
-At first, this seems counterintuitive since the value of `n` *decreases*, but the values in the final array are *increasing*. This happens because the push happens last, after the recursive call has returned. At the point where `n` is pushed into the array, `countup(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
+值 `[1, 2, 3, 4, 5]` 将显示在控制台中。
+
+起初，这似乎是违反直觉的，因为 `n` 的值*递减*，但是最终数组中的值却*递增*。 之所以发生这种情况，是因为在递归调用返回之后，才调用 push。 在将 `n` pushed 进数组时，`countup(n - 1)` 已经调用赋值成功并返回了 `[1, 2, ..., n - 1]`。
 
 # --instructions--
 
-We have defined a function called `countdown` with one parameter (`n`). The function should use recursion to return an array containing the integers `n` through `1` based on the `n` parameter. If the function is called with a number less than 1, the function should return an empty array. For example, calling this function with `n = 5` should return the array `[5, 4, 3, 2, 1]`. Your function must use recursion by calling itself and must not use loops of any kind.
+已经定义了一个函数 `countdown`，函数有一个参数（`n`）。 函数应该基于参数 `n` 递归调用返回 `n` 到 `1` 的连续数字的数组。 如果函数以小于 1 的参数调用，函数应该返回空数组。 比如，用 `n = 5` 调用函数应该返回数组 `[5, 4, 3, 2, 1]`。 函数必需使用递归函数调用自身，不能使用任何形式的循环。
 
 # --hints--
 
-`countdown(-1)` should return an empty array.
+`countdown(-1)` 应该返回一个空数组。
 
 ```js
 assert.isEmpty(countdown(-1));
 ```
 
-`countdown(10)` should return `[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]`
+`countdown(10)` 应该返回 `[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]`。
 
 ```js
 assert.deepStrictEqual(countdown(10), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
 ```
 
-`countdown(5)` should return `[5, 4, 3, 2, 1]`
+`countdown(5)` 应该返回 `[5, 4, 3, 2, 1]`。
 
 ```js
 assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
 ```
 
-Your code should not rely on any kind of loops (`for`, `while` or higher order functions such as `forEach`, `map`, `filter`, and `reduce`).
+代码不能包含任意形式的循环（`for`、`while` 或者高阶函数如：`forEach`、`map`、`filter` 以及 `reduce`）。
 
 ```js
 assert(
@@ -63,7 +65,7 @@ assert(
 );
 ```
 
-You should use recursion to solve this problem.
+应该用递归解决这个问题。
 
 ```js
 assert(

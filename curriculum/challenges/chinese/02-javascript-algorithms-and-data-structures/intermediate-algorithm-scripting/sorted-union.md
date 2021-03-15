@@ -1,6 +1,6 @@
 ---
 id: a105e963526e7de52b219be9
-title: Sorted Union
+title: 集合排序
 challengeType: 5
 forumTopicId: 16077
 dashedName: sorted-union
@@ -8,29 +8,29 @@ dashedName: sorted-union
 
 # --description--
 
-Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+编写一个带有两个或更多数组的函数，并按原始提供的数组的顺序返回一个新的唯一值数组。
 
-In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+换句话说，所有数组中出现的所有值都应按其原始顺序包括在内，但最终数组中不得重复。
 
-The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+去重后的数字应按其出现在参数中的原始顺序排序，最终数组不应按数字大小进行排序。
 
-Check the assertion tests for examples.
+如有疑问，请先浏览下方的测试用例。
 
 # --hints--
 
-`uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])` should return `[1, 3, 2, 5, 4]`.
+`uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])` 应返回 `[1, 3, 2, 5, 4]`。
 
 ```js
 assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4]);
 ```
 
-`uniteUnique([1, 2, 3], [5, 2, 1])` should return `[1, 2, 3, 5]`.
+`uniteUnique([1, 2, 3], [5, 2, 1])` 应返回 `[1, 2, 3, 5]`。
 
 ```js
 assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5]);
 ```
 
-`uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])` should return `[1, 2, 3, 5, 4, 6, 7, 8]`.
+`uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])` 应返回 `[1, 2, 3, 5, 4, 6, 7, 8]`。
 
 ```js
 assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [

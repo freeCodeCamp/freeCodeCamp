@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244aa
-title: Understanding Uninitialized Variables
+title: 理解未初始化的变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
@@ -9,33 +9,33 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-When JavaScript variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN` which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a literal <dfn>string</dfn> of `"undefined"`.
+当 JavaScript 中的变量被声明的时候，程序内部会给它一个初始值 `undefined`。 当你对一个值为 `undefined` 的变量进行运算操作的时候，算出来的结果将会是 `NaN`，它的意思是 <dfn>"Not a Number"</dfn>。 当你用一个值是 `undefined` 的变量来做字符串拼接操作的时候，它会转换成字符串（<dfn>string</dfn>）`undefined`。
 
 # --instructions--
 
-Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` respectively so that they will not be `undefined`.
+定义 3 个变量 `a`、`b`、`c`，并且分别给他们赋值：`5`、`10`、`"I am a"`，这样它们值就不会是 `undefined` 了。
 
 # --hints--
 
-`a` should be defined and evaluated to have the value of `6`.
+`a` 应该被定义，并且值为 `6`。
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` should be defined and evaluated to have the value of `15`.
+`b` 应该被定义，并且值为 `15`。
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` should not contain `undefined` and should have a value of "I am a String!"
+`c` 的值不能包含 `undefined`，应该为字符串 `I am a String!`。
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');
 ```
 
-You should not change code below the specified comment.
+不要修改第二条注释下的代码。
 
 ```js
 assert(

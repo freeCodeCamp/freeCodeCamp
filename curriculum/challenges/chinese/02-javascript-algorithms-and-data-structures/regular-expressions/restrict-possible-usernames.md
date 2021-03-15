@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba2
-title: Restrict Possible Usernames
+title: 限制可能的用户名
 challengeType: 1
 forumTopicId: 301363
 dashedName: restrict-possible-usernames
@@ -8,94 +8,100 @@ dashedName: restrict-possible-usernames
 
 # --description--
 
-Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+用户名在互联网上随处可见。 它们是用户在自己喜欢的网站上的唯一身份。
 
-You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+需要检索数据库中的所有用户名。 以下是用户在创建用户名时必须遵守的一些简单规则。
 
-1) Usernames can only use alpha-numeric characters.
+1) 用户名只能是数字字母字符。
 
-2) The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+2) 用户名中的数字必须在最后。 数字可以有零个或多个。 用户名不能以数字开头。
 
-3) Username letters can be lowercase and uppercase.
+3) 用户名字母可以是小写字母和大写字母。
 
-4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+4) 用户名长度必须至少为两个字符。 两位用户名只能使用字母。
 
 # --instructions--
 
-Change the regex `userCheck` to fit the constraints listed above.
+修改正则表达式 `userCheck` 以满足上面列出的约束。
 
 # --hints--
 
-Your regex should match `JACK`
+你的正则表达式应该匹配字符串 `JACK`
 
 ```js
 assert(userCheck.test('JACK'));
 ```
 
-Your regex should not match `J`
+你的正则表达式不应匹配字符串 `J`
 
 ```js
 assert(!userCheck.test('J'));
 ```
 
-Your regex should match `Jo`
+你的正则表达式应该匹配字符串 `Jo`
 
 ```js
 assert(userCheck.test('Jo'));
 ```
 
-Your regex should match `Oceans11`
+你的正则表达式应该匹配字符串 `Oceans11`
 
 ```js
 assert(userCheck.test('Oceans11'));
 ```
 
-Your regex should match `RegexGuru`
+你的正则表达式应该匹配字符串 `RegexGuru`
 
 ```js
 assert(userCheck.test('RegexGuru'));
 ```
 
-Your regex should not match `007`
+你的正则表达式不应匹配字符串 `007`
 
 ```js
 assert(!userCheck.test('007'));
 ```
 
-Your regex should not match `9`
+你的正则表达式不应匹配字符串 `9`
 
 ```js
 assert(!userCheck.test('9'));
 ```
 
-Your regex should not match `A1`
+你的正则表达式不应匹配字符串 `A1`
 
 ```js
 assert(!userCheck.test('A1'));
 ```
 
-Your regex should not match `BadUs3rnam3`
+你的正则表达式不应匹配字符串 `BadUs3rnam3`
 
 ```js
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
-Your regex should match `Z97`
+你的正则表达式应该匹配字符串 `Z97`
 
 ```js
 assert(userCheck.test('Z97'));
 ```
 
-Your regex should not match `c57bT3`
+你的正则表达式不应匹配字符串 `c57bT3`
 
 ```js
 assert(!userCheck.test('c57bT3'));
 ```
 
-Your regex should match `AB1`
+你的正则表达式应该匹配字符串 `AB1`
 
 ```js
 assert(userCheck.test('AB1'));
+```
+
+你的正则表达式不应匹配字符串 `J%4`
+
+```js
+assert(!userCheck.test('J%4'))
 ```
 
 # --seed--

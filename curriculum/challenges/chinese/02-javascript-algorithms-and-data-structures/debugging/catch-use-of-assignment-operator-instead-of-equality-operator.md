@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b38
-title: Catch Use of Assignment Operator Instead of Equality Operator
+title: 捕获使用赋值运算符而不是相等运算符
 challengeType: 1
 forumTopicId: 301191
 dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
@@ -8,37 +8,39 @@ dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
 
 # --description--
 
-Branching programs, i.e. ones that do different things if certain conditions are met, rely on `if`, `else if`, and `else` statements in JavaScript. The condition sometimes takes the form of testing whether a result is equal to a value.
+分支程序，即在满足某些条件时执行不同操作的程序，依赖于 JavaScript 中的`if`，`else if`、`else`语句。 条件有时采取测试一个结果是否等于一个值的形式。
 
-This logic is spoken (in English, at least) as "if x equals y, then ..." which can literally translate into code using the `=`, or assignment operator. This leads to unexpected control flow in your program.
+这种逻辑可以表述为“如果 x 等于 y ，则......”，听起来像是可以使用 `=`（即赋值运算符）。 然而，这会导致程序中流程出问题。
 
-As covered in previous challenges, the assignment operator (`=`) in JavaScript assigns a value to a variable name. And the `==` and `===` operators check for equality (the triple `===` tests for strict equality, meaning both value and type are the same).
+如前面的挑战所述，JavaScript 中的赋值运算符 (`=`) 是用来为变量名赋值的。 并且 `==` 和 `===` 运算符检查相等性（三等号 `===` 是用来测试是否严格相等的，严格相等的意思是值和类型都必须相同）。
 
-The code below assigns `x` to be 2, which evaluates as `true`. Almost every value on its own in JavaScript evaluates to `true`, except what are known as the "falsy" values: `false`, `0`, `""` (an empty string), `NaN`, `undefined`, and `null`.
+下面的代码将 `x` 赋值为 2，表达式会在执行后得到 `true`。 JavaScript 会把大部分的值都视为 `true`，除了所谓的 “falsy”值，即：`false`、`0`、`""`（空字符串）、`NaN`、`undefined` 和 `null`。
 
 ```js
 let x = 1;
 let y = 2;
 if (x = y) {
-  // this code block will run for any value of y (unless y were originally set as a falsy)
+
 } else {
-  // this code block is what should run (but won't) in this example
+
 }
 ```
 
+在这个示例中，除非 `y` 值是假值，否则当 `y` 为任何值时，`if` 语句中的代码块都会运行。 我们期望运行的 `else` 代码块实际上将不会运行。
+
 # --instructions--
 
-Fix the condition so the program runs the right branch, and the appropriate value is assigned to `result`.
+修复条件语句，以便程序运行正确的分支，并给 `result` 赋正确的值。
 
 # --hints--
 
-Your code should fix the condition so it checks for equality, instead of using assignment.
+应该修复条件语句，使其判断是否相等，而不是赋值。
 
 ```js
 assert(result == 'Not equal!');
 ```
 
-The condition should use either `==` or `===` to test for equality.
+条件语句可以使用 `==` 或 `===` 来测试是否相等。
 
 ```js
 assert(code.match(/x\s*?===?\s*?y/g));

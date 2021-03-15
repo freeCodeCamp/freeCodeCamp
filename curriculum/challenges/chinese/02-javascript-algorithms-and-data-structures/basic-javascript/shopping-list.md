@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bc
-title: Shopping List
+title: 购物清单
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9MEKHZ'
 forumTopicId: 18280
@@ -9,35 +9,35 @@ dashedName: shopping-list
 
 # --description--
 
-Create a shopping list in the variable `myList`. The list should be a multi-dimensional array containing several sub-arrays.
+创建一个名叫 `myList` 的购物清单。 清单的数据格式就是多维数组。
 
-The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity i.e.
+每个子数组中的第一个元素应该是购买的物品名称。 第二个元素应该是物品的数量，类似于：
 
 `["Chocolate Bar", 15]`
 
-There should be at least 5 sub-arrays in the list.
+任务：你的购物清单至少应该有 5 个子数组。
 
 # --hints--
 
-`myList` should be an array.
+`myList` 应该是一个数组
 
 ```js
 assert(isArray);
 ```
 
-The first elements in each of your sub-arrays should all be strings.
+你的每个子数组的第一个元素的类型都应该是字符串
 
 ```js
 assert(hasString);
 ```
 
-The second elements in each of your sub-arrays should all be numbers.
+你的每个子数组的第二个元素的类型都应该是数字
 
 ```js
 assert(hasNumber);
 ```
 
-You should have at least 5 items in your list.
+你的列表中至少要包含 5 个元素
 
 ```js
 assert(count > 4);

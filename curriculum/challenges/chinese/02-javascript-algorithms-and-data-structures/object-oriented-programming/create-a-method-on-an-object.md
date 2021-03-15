@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b75
-title: Create a Method on an Object
+title: 在对象上创建方法
 challengeType: 1
 forumTopicId: 301318
 dashedName: create-a-method-on-an-object
@@ -8,9 +8,9 @@ dashedName: create-a-method-on-an-object
 
 # --description--
 
-Objects can have a special type of property, called a <dfn>method</dfn>.
+对象可以有一个叫做 <dfn>method</dfn> 的特殊属性。
 
-Methods are properties that are functions. This adds different behavior to an object. Here is the `duck` example with a method:
+方法属性也就是函数。 这给对象添加了不同的行为。 以下就是一个带有方法属性的 `duck` 示例：
 
 ```js
 let duck = {
@@ -19,24 +19,23 @@ let duck = {
   sayName: function() {return "The name of this duck is " + duck.name + ".";}
 };
 duck.sayName();
-// Returns "The name of this duck is Aflac."
 ```
 
-The example adds the `sayName` method, which is a function that returns a sentence giving the name of the `duck`. Notice that the method accessed the `name` property in the return statement using `duck.name`. The next challenge will cover another way to do this.
+示例添加了 `sayName` 方法，函数返回包含 `duck` 名字的一个句子。 注意：这个方法在返回语句中使用 `duck.name` 的方式来获取 `name` 的属性值。 在下一个挑战中我们将会使用另外一种方法来实现。
 
 # --instructions--
 
-Using the `dog` object, give it a method called `sayLegs`. The method should return the sentence "This dog has 4 legs."
+给 `dog` 对象设置一个名为 `sayLegs` 的方法。 并让它返回 `This dog has 4 legs.` 这句话。
 
 # --hints--
 
-`dog.sayLegs()` should be a function.
+`dog.sayLegs()` 应该是一个函数。
 
 ```js
 assert(typeof dog.sayLegs === 'function');
 ```
 
-`dog.sayLegs()` should return the given string - note that punctuation and spacing matter.
+`dog.sayLegs()` 应该返回给定的字符串，需要注意标点和间距的问题。
 
 ```js
 assert(dog.sayLegs() === 'This dog has 4 legs.');

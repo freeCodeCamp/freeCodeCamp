@@ -1,6 +1,6 @@
 ---
 id: a103376db3ba46b2d50db289
-title: Spinal Tap Case
+title: 短线连接格式
 challengeType: 5
 forumTopicId: 16078
 dashedName: spinal-tap-case
@@ -8,23 +8,23 @@ dashedName: spinal-tap-case
 
 # --description--
 
-Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+将字符串转换为短线连接格式。 短线连接格式是小写单词全部小写并以破折号分隔。
 
 # --hints--
 
-`spinalCase("This Is Spinal Tap")` should return `"this-is-spinal-tap"`.
+`spinalCase("This Is Spinal Tap")` 应返回 `this-is-spinal-tap`。
 
 ```js
 assert.deepEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("thisIsSpinalTap")` should return `"this-is-spinal-tap"`.
+`spinalCase("thisIsSpinalTap")` 应返回 `this-is-spinal-tap`。
 
 ```js
 assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("The_Andy_Griffith_Show")` should return `"the-andy-griffith-show"`.
+`spinalCase("The_Andy_Griffith_Show")` 应返回 `the-andy-griffith-show`。
 
 ```js
 assert.strictEqual(
@@ -33,7 +33,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("Teletubbies say Eh-oh")` should return `"teletubbies-say-eh-oh"`.
+`spinalCase("Teletubbies say Eh-oh")` 应返回 `teletubbies-say-eh-oh`。
 
 ```js
 assert.strictEqual(
@@ -42,7 +42,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("AllThe-small Things")` should return `"all-the-small-things"`.
+`spinalCase("AllThe-small Things")` 应返回 `all-the-small-things`。
 
 ```js
 assert.strictEqual(spinalCase('AllThe-small Things'), 'all-the-small-things');

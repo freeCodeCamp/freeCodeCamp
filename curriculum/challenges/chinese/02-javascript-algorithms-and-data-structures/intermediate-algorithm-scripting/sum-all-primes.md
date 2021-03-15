@@ -1,6 +1,6 @@
 ---
 id: a3bfc1673c0526e06d3ac698
-title: Sum All Primes
+title: 质数求和
 challengeType: 5
 forumTopicId: 16085
 dashedName: sum-all-primes
@@ -8,25 +8,25 @@ dashedName: sum-all-primes
 
 # --description--
 
-A <dfn>prime number</dfn> is a whole number greater than 1 with exactly two divisors: 1 and itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
+质数（<dfn>prime number</dfn>）是大于 1 且仅可以被 1 和自己整除的数。 比如，2 就是一个质数，因为它只可以被 1 和 2（它本身）整除。 相反，4 不是质数，因为它可以被 1, 2 和 4 整除。
 
-Rewrite `sumPrimes` so it returns the sum of all prime numbers that are less than or equal to num.
+请完成 `sumPrimes` 方法，使其返回小于等于传入参数数字的所有质数之和。
 
 # --hints--
 
-`sumPrimes(10)` should return a number.
+`sumPrimes(10)` 应返回一个数字。
 
 ```js
 assert.deepEqual(typeof sumPrimes(10), 'number');
 ```
 
-`sumPrimes(10)` should return 17.
+`sumPrimes(10)` 应返回 17。
 
 ```js
 assert.deepEqual(sumPrimes(10), 17);
 ```
 
-`sumPrimes(977)` should return 73156.
+`sumPrimes(977)` 应返回 73156。
 
 ```js
 assert.deepEqual(sumPrimes(977), 73156);

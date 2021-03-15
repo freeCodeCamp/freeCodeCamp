@@ -1,6 +1,6 @@
 ---
 id: 5cdafbe72913098997531682
-title: Handle a Rejected Promise with catch
+title: 使用 catch 处理 Promise 失败的情况
 challengeType: 1
 forumTopicId: 301204
 dashedName: handle-a-rejected-promise-with-catch
@@ -8,23 +8,23 @@ dashedName: handle-a-rejected-promise-with-catch
 
 # --description--
 
-`catch` is the method used when your promise has been rejected. It is executed immediately after a promise's `reject` method is called. Here’s the syntax:
+当 promise 失败时会调用 `catch` 方法。 当 promise 的 `reject` 方法执行时会直接调用。 用法如下：
 
 ```js
 myPromise.catch(error => {
-  // do something with the error.
+
 });
 ```
 
-`error` is the argument passed in to the `reject` method.
+`error` 是传入 `reject` 方法的参数。
 
 # --instructions--
 
-Add the `catch` method to your promise. Use `error` as the parameter of its callback function and log `error` to the console.
+给 promise 添加 `catch` 方法。 用 `error` 作为回调函数的参数，并把 `error` 打印到控制台。
 
 # --hints--
 
-You should call the `catch` method on the promise.
+应该在 promise 上调用 `catch` 方法。
 
 ```js
 assert(
@@ -32,13 +32,13 @@ assert(
 );
 ```
 
-Your `catch` method should have a callback function with `error` as its parameter.
+`catch` 方法应该有一个回调函数，回调函数参数为 `error`。
 
 ```js
 assert(errorIsParameter);
 ```
 
-You should log `error` to the console.
+应该打印 `error` 到控制台。
 
 ```js
 assert(

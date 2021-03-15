@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+  使用解构赋值配合 rest 操作符来重新分配数组元素
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -10,43 +10,45 @@ dashedName: >-
 
 # --description--
 
-In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.
+在解构数组的某些情况下，我们可能希望将剩下的元素放进另一个数组里面。
 
-The result is similar to `Array.prototype.slice()`, as shown below:
+以下代码的结果与使用 `Array.prototype.slice()` 类似：
 
 ```js
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
-console.log(a, b); // 1, 2
-console.log(arr); // [3, 4, 5, 7]
+console.log(a, b);
+console.log(arr);
 ```
 
-Variables `a` and `b` take the first and second values from the array. After that, because of the rest parameter's presence, `arr` gets the rest of the values in the form of an array. The rest element only works correctly as the last variable in the list. As in, you cannot use the rest parameter to catch a subarray that leaves out the last element of the original array.
+控制台将显示 `1, 2` 和 `[3, 4, 5, 7]`。
+
+变量 `a` 和 `b` 分别接收数组的第一个和第二个值。 之后，因为 rest 操作符的存在，`arr` 获取了原数组剩余的元素的值。 rest 操作符只能对数组列表最后的元素起作用。 这意味着你不能使用 rest 操作符来截取原数组中间的元素作为子数组。
 
 # --instructions--
 
-Use destructuring assignment with the rest parameter to perform an effective `Array.prototype.slice()` so that `arr` is a sub-array of the original array `source` with the first two elements omitted.
+使用解构赋值以及 rest 操作符来进行和 `Array.prototype.slice()` 相同的操作，使 `arr` 是原数组 `source` 除开前两个元素的子数组。
 
 # --hints--
 
-`arr` should be `[3,4,5,6,7,8,9,10]`
+`arr` 应该是 `[3,4,5,6,7,8,9,10]`。
 
 ```js
 assert(arr.every((v, i) => v === i + 3) && arr.length === 8);
 ```
 
-`source` should be `[1,2,3,4,5,6,7,8,9,10]`
+`source` 应该是 `[1,2,3,4,5,6,7,8,9,10]`。
 
 ```js
 assert(source.every((v, i) => v === i + 1) && source.length === 10);
 ```
 
-`Array.slice()` should not be used.
+不应该使用 `Array.slice()`。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/slice/g));
 ```
 
-Destructuring on `list` should be used.
+应该对 `list` 进行解构赋值。
 
 ```js
 assert(

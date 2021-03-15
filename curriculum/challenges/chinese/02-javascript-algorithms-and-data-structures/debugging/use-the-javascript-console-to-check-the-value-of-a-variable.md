@@ -1,6 +1,6 @@
 ---
 id: 587d7b83367417b2b2512b33
-title: Use the JavaScript Console to Check the Value of a Variable
+title: 使用控制台检查变量值
 challengeType: 1
 forumTopicId: 18372
 dashedName: use-the-javascript-console-to-check-the-value-of-a-variable
@@ -8,23 +8,23 @@ dashedName: use-the-javascript-console-to-check-the-value-of-a-variable
 
 # --description--
 
-Both Chrome and Firefox have excellent JavaScript consoles, also known as DevTools, for debugging your JavaScript.
+Chrome 和 Firefox 都有出色的 JavaScript 控制台（也称为 DevTools），可以用来调试 JavaScript 代码
 
-You can find Developer tools in your Chrome's menu or Web Console in Firefox's menu. If you're using a different browser, or a mobile phone, we strongly recommend switching to desktop Firefox or Chrome.
+可以在 Chrome 的菜单中找到“开发者工具”或 FireFox 的菜单中的 “Web 控制台”。 如果你使用其他浏览器或手机，我们强烈建议你切换到桌面版 Firefox 或 Chrome。
 
-The `console.log()` method, which "prints" the output of what's within its parentheses to the console, will likely be the most helpful debugging tool. Placing it at strategic points in your code can show you the intermediate values of variables. It's good practice to have an idea of what the output should be before looking at what it is. Having check points to see the status of your calculations throughout your code will help narrow down where the problem is.
+`console.log()` 方法可能是最有用的调试工具，它可以将括号中的内容输出到控制台。 将它放在代码中的关键点可以显示变量在当时的值。 在查看输出之前，最好先想清楚输出应该是什么。 在整个代码中使用检查点来查看计算状态将有助于缩小问题的范围。
 
-Here's an example to print 'Hello world!' to the console:
+下面是输出 `Hello world!` 字符串到控制台的示例：
 
 `console.log('Hello world!');`
 
 # --instructions--
 
-Use the `console.log()` method to print the value of the variable `a` where noted in the code.
+请使用 `console.log()` 方法在代码中注明的地方输出变量 `a` 的值。
 
 # --hints--
 
-Your code should use `console.log()` to check the value of the variable `a`.
+应使用 `console.log()` 来检查变量 `a` 的值。
 
 ```js
 assert(code.match(/console\.log\(a\)/g));
