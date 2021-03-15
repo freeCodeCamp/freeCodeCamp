@@ -195,7 +195,12 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
-        fs: false
+        fs: false,
+        path: false,
+        assert: false,
+        crypto: false,
+        util: false,
+        buffer: false
       }
     },
     plugins: newPlugins
