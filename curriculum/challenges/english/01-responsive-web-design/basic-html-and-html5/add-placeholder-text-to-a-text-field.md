@@ -13,7 +13,9 @@ Placeholder text is what is displayed in your `input` element before your user h
 
 You can create placeholder text like so:
 
-`<input type="text" placeholder="this is placeholder text">`  
+```html
+<input type="text" placeholder="this is placeholder text">
+```
 
 **Note:** Remember that `input` elements are self-closing.
 

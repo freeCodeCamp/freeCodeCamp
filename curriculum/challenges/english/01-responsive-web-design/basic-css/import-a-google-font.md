@@ -19,8 +19,11 @@ To import a Google Font, you can copy the font's URL from the Google Fonts libra
 
 `<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
 
-Now you can use the `Lobster` font in your CSS by using `Lobster` as the FAMILY_NAME as in the following example:  
-`font-family: FAMILY_NAME, GENERIC_NAME;`.
+Now you can use the `Lobster` font in your CSS by using `Lobster` as the FAMILY_NAME as in the following example:
+
+```css
+font-family: FAMILY_NAME, GENERIC_NAME;
+```
 
 The GENERIC_NAME is optional, and is a fallback font in case the other specified font is not available. This is covered in the next challenge.
 
