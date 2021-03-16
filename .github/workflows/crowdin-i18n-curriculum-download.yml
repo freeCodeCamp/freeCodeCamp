@@ -107,12 +107,6 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "chore(i18n,curriculum): update translations"
           git push -u origin i18n-sync-curriculum -f
 
-      - name: Install Dependencies
-        working-directory: ./tools
-        run: |
-          cd ./crowdin
-          npm ci
-
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR
         uses: ./tools/crowdin/actions/pr-creator
