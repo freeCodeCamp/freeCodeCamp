@@ -33,7 +33,7 @@ const getFiles = async (directory, fileList = []) => {
     const fileText = await fs.readFile(file, 'utf-8');
     const translatedText = await opencc.simplifiedToTraditional(fileText);
     await fs.outputFile(
-      file.replace('chinese', 'chinese-classical'),
+      file.replace('chinese', 'chinese-traditional'),
       translatedText
     );
   }

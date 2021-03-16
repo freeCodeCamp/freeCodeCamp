@@ -22,7 +22,7 @@ const auditedCerts = {
     'apis-and-microservices',
     'quality-assurance'
   ],
-  'chinese-classical': [
+  'chinese-traditional': [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
     'front-end-libraries',
