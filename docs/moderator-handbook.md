@@ -37,7 +37,7 @@ We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/fr
 
 [Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have an extensive list of labels that we use to mark each issue's priority, category, status, and scope.
 
-You can help us moderate the issue reports by organizing and triaging these by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
+You can help us organize and triage the issue reports by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
 
 Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
@@ -76,7 +76,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    These pull requests need to be pulled down from GitHub and tested on your local computer or GitPod to make sure the challenge tests can still be passed with the current solution, and the new code doesn't introduce any errors.
 
-   Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful not to make the challenge too complicated. These challenges and their tests should be as intuitive and straightforward as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
+   Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
 
    You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
@@ -104,7 +104,7 @@ Depending on the type of pull request it is, follow the corresponding rules list
 
 ##### Ensure the CI checks are passing:
 
-Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green checkmarks) on the pull-requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the the PR is merged? These checks are critical for the stability of the platform.
+Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull-requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the the PR is merged? These checks are critical for the stability of the platform.
 
 > [!WARNING]
 > Merging a PR that fails CI/CD checks can cause difficulties for all stakeholders, including the dev-team and contributors.
@@ -183,7 +183,7 @@ You can ask questions and report incidents in the [staff forum section](https://
 
 Posts or topics that seem to be in the wrong place can be re-categorized or renamed to whatever would be appropriate.
 
-It may be appropriate for a moderator to fork a discussion into multiple threads in exceptional circumstances.
+In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
 Again, if you have any problems or questions, make a post with your actions in the Staff category, and tag another moderator if you want them to review your moderating actions.
 
@@ -207,7 +207,7 @@ Thank you for understanding.
 
 If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
-Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete their post in these cases, but the person who posted it doesn't necessarily need to be banned. They will hopefully come to understand that what they posted was inappropriate by getting their post deleted.
+Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted, was inappropriate because the post was deleted.
 
 But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
@@ -239,7 +239,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 4. **Deleting messages**
 
-   Moderators can delete messages on our chat server. They should only exercise this ability in four particular situations:
+   Moderators can delete messages on our chat server. They should only exercise this ability in four very specific situations:
 
    - Someone has posted a pornographic or graphically violent image.
 
@@ -322,7 +322,7 @@ If you think we did this in error, or once you're ready to come back and contrib
 
 Anyone is welcome in the [Contributors room on our chat server](https://chat.freecodecamp.org/channel/contributors). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
-We assume that contributors will read anything in this room that directly mentions them with an `@username`. Everything else is optional. But feel free to read anything anyone posts in there and interact.
+We assume contributors will read anything in this room that directly mentions them with an `@username`. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
 ## Dealing with solicitors
 
@@ -352,7 +352,7 @@ http://www.suicide.org/international-suicide-hotlines.html
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
-This XKCD comic perfectly summarizes most communities' thoughts on free speech. So if someone defends something, they're saying as "free speech" feel free to send it to them.
+This XKCD comic perfectly summarizes most communities' thoughts on free speech. So if someone defends something in the name of "free speech", feel free to send it to them.
 
 <div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
 
