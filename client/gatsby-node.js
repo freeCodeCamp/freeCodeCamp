@@ -1,4 +1,5 @@
 const env = require('../config/env');
+const webpack = require('webpack');
 
 const { createFilePath } = require('gatsby-source-filesystem');
 const uniq = require('lodash/uniq');
@@ -184,6 +185,13 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
         process.env.HOME_PATH || 'http://localhost:3000'
       ),
       STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
+    }),
+    // We add the shims of the node globals to the global scope
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer']
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser'
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
@@ -197,10 +205,12 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
       fallback: {
         fs: false,
         path: false,
-        assert: false,
-        crypto: false,
+        assert: require.resolve('assert/'),
+        crypto: require.resolve('crypto-browserify'),
         util: false,
-        buffer: false
+        buffer: require.resolve('buffer/'),
+        stream: require.resolve('stream-browserify'),
+        process: require.resolve('process/browser')
       }
     },
     plugins: newPlugins
