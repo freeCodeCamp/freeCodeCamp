@@ -22,4 +22,6 @@ function* errorHandlerSaga({ payload: error }) {
   yield put(createFlashMessage(reportedErrorMessage));
 }
 
-export default [takeEvery(errorActionSelector, errorHandlerSaga)];
+const errorSagas = [takeEvery(errorActionSelector, errorHandlerSaga)];
+
+export default errorSagas;

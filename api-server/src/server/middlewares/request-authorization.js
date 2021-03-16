@@ -48,7 +48,10 @@ export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
   return pathsAllowedREs.some(re => re.test(path));
 }
 
-export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
+const getRequestAuthorisation = ({
+  jwtSecret = _jwtSecret,
+  getUserById = _getUserById
+} = {}) =>
   function requestAuthorisation(req, res, next) {
     const { origin } = getRedirectParams(req);
     const { path } = req;
@@ -102,3 +105,5 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
     }
     return Promise.resolve(next());
   };
+
+export default getRequestAuthorisation;

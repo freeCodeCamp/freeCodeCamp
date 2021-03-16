@@ -1,6 +1,6 @@
 import { Observable } from 'rx';
 
-export default function (AuthToken) {
+function initializeAuthToken(AuthToken) {
   AuthToken.on('dataSourceAttached', () => {
     AuthToken.findOne$ = Observable.fromNodeCallback(
       AuthToken.findOne.bind(AuthToken)
@@ -13,3 +13,5 @@ export default function (AuthToken) {
     );
   });
 }
+
+export default initializeAuthToken;

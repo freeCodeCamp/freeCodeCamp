@@ -1,3 +1,5 @@
-export default {
+const analytics = {
   event: () => {}
 };
+
+export default analytics;
