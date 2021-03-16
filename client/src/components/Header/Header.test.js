@@ -6,7 +6,9 @@ import { UniversalNav } from './components/UniversalNav';
 import { NavLinks } from './components/NavLinks';
 import AuthOrProfile from './components/AuthOrProfile';
 
-import { apiLocation, clientLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
+
+const { apiLocation, clientLocale } = envData;
 
 describe('<UniversalNav />', () => {
   const UniversalNavProps = {

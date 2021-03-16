@@ -8,7 +8,9 @@ import { Link, Spacer } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import './map.css';
 import { isAuditedCert } from '../../../../utils/is-audited';
-import { curriculumLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
+
+const { curriculumLocale } = envData;
 
 const propTypes = {
   currentSuperBlock: PropTypes.string,

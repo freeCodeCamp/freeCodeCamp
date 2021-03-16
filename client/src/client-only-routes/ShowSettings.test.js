@@ -1,9 +1,11 @@
 /* global jest, expect */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import { apiLocation } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 
 import { ShowSettings } from './ShowSettings';
+
+const { apiLocation } = envData;
 
 describe('<ShowSettings />', () => {
   it('renders to the DOM when user is logged in', () => {
