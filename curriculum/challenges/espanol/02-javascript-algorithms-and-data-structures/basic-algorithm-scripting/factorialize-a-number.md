@@ -1,6 +1,6 @@
 ---
 id: a302f7aae1aa3152a5b413bc
-title: Factorializar un número
+title: Factoriza un número
 challengeType: 5
 forumTopicId: 16013
 dashedName: factorialize-a-number
@@ -10,13 +10,13 @@ dashedName: factorialize-a-number
 
 Devuelve el factorial del entero proporcionado.
 
-Si el entero está representado con la letra n, un factorial es el producto de todos los enteros positivos menores o iguales a n.
+Si el número entero es representado con la letra `n`, un factorial es el producto de todos los enteros positivos menores o iguales a `n`.
 
-¡Los factoriales suelen representarse con la abreviatura `n!`
+Los factoriales suelen representarse con la abreviatura `n!`
 
 Por ejemplo: `5! = 1 * 2 * 3 * 4 * 5 = 120`
 
-Sólo se proporcionara a la función enteros mayores o igual a cero.
+Sólo se proporcionarán a la función los enteros mayores o iguales a cero.
 
 # --hints--
 
@@ -26,25 +26,25 @@ Sólo se proporcionara a la función enteros mayores o igual a cero.
 assert(typeof factorialize(5) === 'number');
 ```
 
-`factorialize(5)` debe devolver 120.
+`factorialize(5)` debe devolver `120`.
 
 ```js
 assert(factorialize(5) === 120);
 ```
 
-`factorialize(10)` debe devolver 3628800.
+`factorialize(10)` debe devolver `3628800`.
 
 ```js
 assert(factorialize(10) === 3628800);
 ```
 
-`factorialize(20)` debe devolver 2432902008176640000.
+`factorialize(20)` debe devolver `2432902008176640000`.
 
 ```js
 assert(factorialize(20) === 2432902008176640000);
 ```
 
-`factorialize(0)` debe devolver 1.
+`factorialize(0)` debe devolver `1`.
 
 ```js
 assert(factorialize(0) === 1);

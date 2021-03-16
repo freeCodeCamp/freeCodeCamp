@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c4
-title: Return Early Pattern for Functions
+title: Patrón de devolución anticipado para funciones
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
@@ -9,9 +9,9 @@ dashedName: return-early-pattern-for-functions
 
 # --description--
 
-When a `return` statement is reached, the execution of the current function stops and control returns to the calling location.
+Cuando se alcanza una sentencia `return`, la ejecución de la función actual se detiene y el control se devuelve a la ubicación de la llamada.
 
-**Example**
+**Ejemplo**
 
 ```js
 function myFun() {
@@ -22,54 +22,54 @@ function myFun() {
 myFun();
 ```
 
-The above outputs "Hello" to the console, returns "World", but `"byebye"` is never output, because the function exits at the `return` statement.
+Lo anterior mostrará la cadena `Hello` en la consola y devolverá la cadena `World`. La cadena `byebye` nunca se mostrará en la consola, porque la función termina en la sentencia `return`.
 
 # --instructions--
 
-Modify the function `abTest` so that if `a` or `b` are less than `0` the function will immediately exit with a value of `undefined`.
+Modifica la función `abTest` para que cuando `a` o `b` sean menores que `0` la función salga inmediatamente con un valor `undefined`.
 
-**Hint**  
-Remember that [`undefined` is a keyword](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), not a string.
+**Sugerencia**  
+Recuerda que [`undefined` es una palabra clave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), no una cadena.
 
 # --hints--
 
-`abTest(2,2)` should return a number
+`abTest(2,2)` debe devolver un número
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2,2)` should return `8`
+`abTest(2,2)` debe devolver `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2,2)` should return `undefined`
+`abTest(-2,2)` debe devolver `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2,-2)` should return `undefined`
+`abTest(2,-2)` debe devolver `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2,8)` should return `18`
+`abTest(2,8)` debe devolver `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3,3)` should return `12`
+`abTest(3,3)` debe devolver `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0,0)` should return `0`
+`abTest(0,0)` debe devolver `0`
 
 ```js
 assert(abTest(0, 0) === 0);
