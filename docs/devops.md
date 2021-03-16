@@ -847,10 +847,10 @@ Verify installed packages
 npm ls -g --depth=0
 ```
 
-Alias `default` Node.js versions to the current `stable`
+Alias the `default` Node.js version to the current LTS
 
 ```console
-nvm alias default stable
+nvm alias default lts/*
 ```
 
 
