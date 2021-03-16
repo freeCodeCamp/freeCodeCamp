@@ -14,7 +14,7 @@ export function ensureLowerCaseEmail(profile) {
     : '';
 }
 
-function initializeUserIdent(UserIdent) {
+export default function initializeUserIdent(UserIdent) {
   UserIdent.on('dataSourceAttached', () => {
     UserIdent.findOne$ = observeMethod(UserIdent, 'findOne');
   });
@@ -156,5 +156,3 @@ function initializeUserIdent(UserIdent) {
     }
   };
 }
-
-export default initializeUserIdent;

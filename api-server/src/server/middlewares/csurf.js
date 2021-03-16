@@ -1,6 +1,6 @@
 import csurf from 'csurf';
 
-function getCsurf() {
+export default function getCsurf() {
   const protection = csurf({
     cookie: {
       domain: process.env.COOKIE_DOMAIN || 'localhost',
@@ -21,5 +21,3 @@ function getCsurf() {
     return protection(req, res, next);
   };
 }
-
-export default getCsurf;

@@ -152,7 +152,7 @@ function populateRequiredFields(user) {
   return;
 }
 
-function initializeUser(User) {
+export default function initializeUser(User) {
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
   // set user.rand to random number
@@ -1056,5 +1056,3 @@ function initializeUser(User) {
     ]
   });
 }
-
-export default initializeUser;
