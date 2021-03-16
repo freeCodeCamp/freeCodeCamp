@@ -13,12 +13,13 @@ Ahora podemos agregar, modificar y eliminar claves de los objetos. Pero, ¿y si 
 ```js
 users.hasOwnProperty('Alan');
 'Alan' in users;
-// both return true
 ```
+
+Ambos devuelven `true`.
 
 # --instructions--
 
-Hemos creado un objeto, `users`, con algunos usuarios en él y una función `isEveryoneHere`, a la que pasamos el objeto `users` como argumento. Termina de escribir esta función para que devuelva `true` sólo si el objeto `users` contiene los cuatro nombres, `Alan`, `Jeff`, `Sarah` y `Ryan`, como claves, y `false` en caso contrario.
+Hemos creado un objeto, `users`, con algunos usuarios en él y una función `isEveryoneHere`, a la que pasamos el objeto `users` como argumento. Termina de escribir esta función para que devuelva `true` solo si el objeto `users` contiene los cuatro nombres, `Alan`, `Jeff`, `Sarah` y `Ryan`, como claves, y `false`en caso contrario.
 
 # --hints--
 
@@ -34,13 +35,13 @@ assert(
 );
 ```
 
-La función `isEveryoneHere` debe devolver `true` si `Alan`, `Jeff`, `Sarah`, y `Ryan` son propiedades en el objeto `users`
+La función `isEveryoneHere` debe devolver `true` si `Alan`, `Jeff`, `Sarah`, y `Ryan` son propiedades del objeto `users`
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-La función `isEveryoneHere` debe devolver `false` si `Alan` no es una propiedad en el objeto `users`
+La función `isEveryoneHere` debe devolver `false` si `Alan` no es una propiedad del objeto `users`
 
 ```js
 assert(
@@ -51,7 +52,7 @@ assert(
 );
 ```
 
-La función `isEveryoneHere` debe devolver `false` si `Jeff` no es una propiedad en el objeto `users`
+La función `isEveryoneHere` debe devolver `false` si `Jeff` no es una propiedad del objeto `users`
 
 ```js
 assert(
@@ -62,7 +63,7 @@ assert(
 );
 ```
 
-La función `isEveryoneHere` debe devolver `false` si `Sarah` no es una propiedad en el objeto `users`
+La función `isEveryoneHere` debe devolver `false` si `Sarah` no es una propiedad del objeto `users`
 
 ```js
 assert(
@@ -73,7 +74,7 @@ assert(
 );
 ```
 
-La función `isEveryoneHere` debe devolver `false` si `Ryan` no es una propiedad en el objeto `users`
+La función `isEveryoneHere` debe devolver `false` si `Ryan` no es una propiedad del objeto `users`
 
 ```js
 assert(

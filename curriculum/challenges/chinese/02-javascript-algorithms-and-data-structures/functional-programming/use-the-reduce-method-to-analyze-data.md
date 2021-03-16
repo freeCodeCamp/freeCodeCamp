@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b68
-title: Use the reduce Method to Analyze Data
+title: 使用 reduce 方法分析数据
 challengeType: 1
 forumTopicId: 301313
 dashedName: use-the-reduce-method-to-analyze-data
@@ -8,15 +8,15 @@ dashedName: use-the-reduce-method-to-analyze-data
 
 # --description--
 
-`Array.prototype.reduce()`, or simply `reduce()`, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the `reduce` method.
+`reduce()`（即`Array.prototype.reduce()`），是 JavaScript 所有数组操作中最常用的方法。 几乎可以用`reduce`方法解决所有数组处理问题。
 
-The `reduce` method allows for more general forms of array processing, and it's possible to show that both `filter` and `map` can be derived as special applications of `reduce`. The `reduce` method iterates over each item in an array and returns a single value (i.e. string, number, object, array). This is achieved via a callback function that is called on each iteration.
+`reduce`方法是处理数组更通用的方式，而且`filter`和`map`方法都可以当作是`reduce`的特殊实现。 `reduce`方法遍历数组中的每个项目并返回单个值（即字符串、数字、对象、数组）。 这是通过在每次迭代中调用一个回调函数来实现的。
 
-The callback function accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which `reduce` is called.
+回调函数接受四个参数。 第一个参数称为叠加器，它是上一次迭代中回调函数的返回值，第二个参数是当前正在处理的数组元素，第三个参数是该参数的索引，第四个参数是在其上调用 `reduce` 方法的数组。
 
-In addition to the callback function, `reduce` has an additional parameter which takes an initial value for the accumulator. If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
+除了回调函数，`reduce` 还有一个额外的参数做为叠加器的初始值。 如果没有第二个参数，会跳过第一次迭代，第二次迭代给叠加器传入数组的第一个元素。
 
-See below for an example using `reduce` on the `users` array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
+见下面的例子，给 `users` 数组使用 `reduce` 方法，返回所有用户数组的和。 为了简化，例子仅使用了回调函数的第一个参数和第二个参数。
 
 ```js
 const users = [
@@ -26,10 +26,12 @@ const users = [
 ];
 
 const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
-console.log(sumOfAges); // 64
+console.log(sumOfAges);
 ```
 
-In another example, see how an object can be returned containing the names of the users as properties with their ages as values.
+这里控制台将显示值 `64`。
+
+在另一个例子里，查看如何返回一个包含用户名称做为属性，其年龄做为值的对象。
 
 ```js
 const users = [
@@ -42,16 +44,18 @@ const usersObj = users.reduce((obj, user) => {
   obj[user.name] = user.age;
   return obj;
 }, {});
-console.log(usersObj); // { John: 34, Amy: 20, camperCat: 10 }
+console.log(usersObj);
 ```
+
+控制台将显示值 `{ John: 34, Amy: 20, camperCat: 10 }`。
 
 # --instructions--
 
-The variable `watchList` holds an array of objects with information on several movies. Use `reduce` to find the average IMDB rating of the movies **directed by Christopher Nolan**. Recall from prior challenges how to `filter` data and `map` over it to pull what you need. You may need to create other variables, and return the average rating from `getRating` function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
+`watchList` 是包含一些电影信息的对象。 使用 `reduce` 查找由 `Christopher Nolan` 导演的电影的 IMDB 评级平均值。 回想一下之前的挑战，如何 `filter` 数据，以及使用 `map` 来获取你想要的数据。 您可能需要创建其他变量，并从 `getRating` 函数返回平均评分。 请注意，评级在对象中是字符串，需要将其转换为数字再用于数学运算。
 
 # --hints--
 
-The `watchList` variable should not change.
+`watchList` 应保持不变。
 
 ```js
 assert(
@@ -59,25 +63,25 @@ assert(
 );
 ```
 
-Your code should use the `reduce` method.
+应该使用`reduce`方法。
 
 ```js
 assert(code.match(/\.reduce/g));
 ```
 
-The `getRating(watchList)` should equal 8.675.
+`getRating(watchList)` 应该等于 8.675。
 
 ```js
 assert(getRating(watchList) === 8.675);
 ```
 
-Your code should not use a `for` loop.
+不能使用 `for` 循环。
 
 ```js
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-Your code should return correct output after modifying the `watchList` object.
+在修改 `watchList` 对象后应该返回正确的输出。
 
 ```js
 assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);

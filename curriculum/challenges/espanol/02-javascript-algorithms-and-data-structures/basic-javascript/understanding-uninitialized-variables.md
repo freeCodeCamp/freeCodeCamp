@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244aa
-title: Understanding Uninitialized Variables
+title: Comprendiendo las variables no inicializadas
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
@@ -9,33 +9,33 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-When JavaScript variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN` which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a literal <dfn>string</dfn> of `"undefined"`.
+Cuando las variables de JavaScript son declaradas, tienen un valor inicial de `undefined` (indefinido). Si haces una operación matemática en una variable `undefined`, tu resultado será `NaN` lo que significa <dfn>"Not a Number"</dfn> (no es un número). Si concatenas una cadena con una variable `undefined`, obtendrás una <dfn>cadena</dfn> literal con valor `undefined`.
 
 # --instructions--
 
-Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` respectively so that they will not be `undefined`.
+Inicializa las tres variables `a`, `b`, y `c` con `5`, `10` y `"I am a"` respectivamente para que no sean `undefined`.
 
 # --hints--
 
-`a` should be defined and evaluated to have the value of `6`.
+`a` debe ser definido y evaluado para tener el valor de `6`.
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` should be defined and evaluated to have the value of `15`.
+`b` debe ser definido y evaluado para tener el valor de `15`.
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` should not contain `undefined` and should have a value of "I am a String!"
+`c` no debe contener `undefined` y debe tener una cadena con valor `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');
 ```
 
-You should not change code below the specified comment.
+No debes cambiar el código debajo del comentario especificado.
 
 ```js
 assert(

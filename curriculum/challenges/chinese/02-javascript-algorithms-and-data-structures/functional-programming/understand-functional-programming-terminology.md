@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5c
-title: Understand Functional Programming Terminology
+title: 了解函数式编程术语
 challengeType: 1
 forumTopicId: 301240
 dashedName: understand-functional-programming-terminology
@@ -8,47 +8,47 @@ dashedName: understand-functional-programming-terminology
 
 # --description--
 
-The FCC Team had a mood swing and now wants two types of tea: green tea and black tea. General Fact: Client mood swings are pretty common.
+FCC 团队需求有变更，现在想要两种茶：绿茶（green tea）和红茶（black tea）。 事实证明，用户需求变更是很常见的。
 
-With that information, we'll need to revisit the `getTea` function from last challenge to handle various tea requests. We can modify `getTea` to accept a function as a parameter to be able to change the type of tea it prepares. This makes `getTea` more flexible, and gives the programmer more control when client requests change.
+基于以上信息，我们需要重构上一节挑战中的 `getTea` 函数来处理多种茶的请求。 我们可以修改 `getTea` 接受一个函数作为参数，使它能够修改茶的类型。 这让 `getTea` 更灵活，也使需求变更时为程序员提供更多控制权。
 
-But first, let's cover some functional terminology:
+首先，我们将介绍一些术语：
 
-<dfn>Callbacks</dfn> are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in `filter`, the callback function tells JavaScript the criteria for how to filter an array.
+<dfn>Callbacks</dfn> 是被传递到另一个函数中调用的函数。 你应该已经在其他函数中看过这个写法，例如在 `filter` 中，回调函数告诉 JavaScript 以什么规则过滤数组。
 
-Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called <dfn>first class</dfn> functions. In JavaScript, all functions are first class functions.
+函数就像其他正常值一样，可以赋值给变量、传递给另一个函数，或从其它函数返回，这种函数叫做头等 <dfn>first class</dfn> 函数。 在 JavaScript 中，所有函数都是头等函数。
 
-The functions that take a function as an argument, or return a function as a return value are called <dfn>higher order</dfn> functions.
+将函数为参数或返回值的函数叫做高阶 ( <dfn>higher order</dfn>) 函数。
 
-When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a <dfn>lambda</dfn>.
+当函数传递给另一个函数或从另一个函数返回时，那些传入或返回的函数可以叫做<dfn>lambda</dfn>。
 
 # --instructions--
 
-Prepare 27 cups of green tea and 13 cups of black tea and store them in `tea4GreenTeamFCC` and `tea4BlackTeamFCC` variables, respectively. Note that the `getTea` function has been modified so it now takes a function as the first argument.
+准备 27 杯绿茶和 13 杯红茶，分别存入 `tea4GreenTeamFCC` 和 `tea4BlackTeamFCC` 变量。 请注意，`getTea` 函数已经变了，现在它接收一个函数作为第一个参数。
 
-Note: The data (the number of cups of tea) is supplied as the last argument. We'll discuss this more in later lessons.
+注意：数据（茶的数量）作为最后一个参数。 我们将在后面的课程中对此进行更多讨论。
 
 # --hints--
 
-The `tea4GreenTeamFCC` variable should hold 27 cups of green tea for the team.
+`tea4GreenTeamFCC` 变量应存有为团队准备的 27 杯茶。
 
 ```js
 assert(tea4GreenTeamFCC.length === 27);
 ```
 
-The `tea4GreenTeamFCC` variable should hold cups of green tea.
+`tea4GreenTeamFCC` 变量应存有绿茶。
 
 ```js
 assert(tea4GreenTeamFCC[0] === 'greenTea');
 ```
 
-The `tea4BlackTeamFCC` variable should hold 13 cups of black tea.
+`tea4BlackTeamFCC` 变量应存有 13 杯红茶。
 
 ```js
 assert(tea4BlackTeamFCC.length === 13);
 ```
 
-The `tea4BlackTeamFCC` variable should hold cups of black tea.
+`tea4BlackTeamFCC` 变量应存有红茶。
 
 ```js
 assert(tea4BlackTeamFCC[0] === 'blackTea');

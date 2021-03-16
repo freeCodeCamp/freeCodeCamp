@@ -8,7 +8,7 @@ dashedName: catch-mixed-usage-of-single-and-double-quotes
 
 # --description--
 
-JavaScript 允许使用单引号 (`'`) 和双引号 (`"`) 声明字符串。 决定使用哪一个通常看个人偏好，但有一些例外。
+JavaScript 允许使用单引号（`'`）和双引号（`"`）声明字符串。 决定使用哪一个通常看个人偏好，但有一些例外。
 
 如果字符串中有缩写或存在一段带引号的文本，你就会明白为什么 JavaScript 允许两种引号了。 请注意，不要提前用引号结束字符串，这会导致语法错误。
 
@@ -22,7 +22,7 @@ const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.
 
 前两项是正确的，但第三项是不正确的。
 
-当然，只使用一种引号也是可以的。 你可以使用反斜杠（`\`）转义字符来转义字符串中的引号：
+当然，只使用一种引号也是可以的。 可以使用反斜杠（`\`）来转义字符串内的引号：
 
 ```js
 const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t it.';

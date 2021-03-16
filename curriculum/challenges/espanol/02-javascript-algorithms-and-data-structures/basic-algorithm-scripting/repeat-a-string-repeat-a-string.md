@@ -1,6 +1,6 @@
 ---
 id: afcc8d540bea9ea2669306b6
-title: Repetir una cadena repetir una cadena
+title: Repite una cadena repite una cadena
 challengeType: 5
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string
@@ -8,47 +8,47 @@ dashedName: repeat-a-string-repeat-a-string
 
 # --description--
 
-Repita una cadena dada `str` (primer argumento) por `num` veces (segundo argumento). Retorne una cadena vacía si `num` no es un número positivo. Para este desafío, utiliza *not* el método `.repeat()` incorporado.
+Repite una cadena dada `str` (primer argumento) por un número (`num`) de veces (segundo argumento). Devuelve una cadena vacía si `num` no es un número positivo. Para este desafío, *no* utilices el método incorporado `.repeat()`.
 
 # --hints--
 
-`repeatStringNumTimes("*", 3)` debe devolver `"***"`.
+`repeatStringNumTimes("*", 3)` debe devolver la cadena `***`.
 
 ```js
 assert(repeatStringNumTimes('*', 3) === '***');
 ```
 
-`repeatStringNumTimes("abc", 3)` debe devolver `"abcabcabc"`.
+`repeatStringNumTimes("abc", 3)` debe devolver la cadena `abcabcabc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 3) === 'abcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 4)` debe devolver `"abcabcabcabc"`.
+`repeatStringNumTimes("abc", 4)` debe devolver la cadena `abcabcabcabc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 4) === 'abcabcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 1)` debe devolver `"abc"`.
+`repeatStringNumTimes("abc", 1)` debe devolver la cadena `abc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 1) === 'abc');
 ```
 
-`repeatStringNumTimes("*", 8)` debe devolver `"********"`.
+`repeatStringNumTimes("*", 8)` debe devolver la cadena `********`.
 
 ```js
 assert(repeatStringNumTimes('*', 8) === '********');
 ```
 
-`repeatStringNumTimes("abc", -2)` debe devolver `""`.
+`repeatStringNumTimes("abc", -2)` debe devolver una cadena vacía (`""`).
 
 ```js
 assert(repeatStringNumTimes('abc', -2) === '');
 ```
 
-El método integrado `repeat()` no debe ser utilizado.
+El método incorporado `repeat()` no debe ser utilizado.
 
 ```js
 assert(!/\.repeat/g.test(code));

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5d
-title: Understand the Hazards of Using Imperative Code
+title: 了解使用命令式编程的危害
 challengeType: 1
 forumTopicId: 301241
 dashedName: understand-the-hazards-of-using-imperative-code
@@ -8,31 +8,31 @@ dashedName: understand-the-hazards-of-using-imperative-code
 
 # --description--
 
-Functional programming is a good habit. It keeps your code easy to manage, and saves you from sneaky bugs. But before we get there, let's look at an imperative approach to programming to highlight where you may have issues.
+使用函数式编程是一个好的习惯。 它使你的代码易于管理，避免潜在的 bug。 但在开始之前，先看看命令式编程方法，以强调你可能有什么问题。
 
-In English (and many other languages), the imperative tense is used to give commands. Similarly, an imperative style in programming is one that gives the computer a set of statements to perform a task.
+在英语 (以及许多其他语言) 中，命令式时态用来发出指令。 同样，命令式编程是向计算机提供一套执行任务的声明。
 
-Often the statements change the state of the program, like updating global variables. A classic example is writing a `for` loop that gives exact directions to iterate over the indices of an array.
+命令式编程常常改变程序状态，例如更新全局变量。 一个典型的例子是编写 `for` 循环，它为一个数组的索引提供了准确的迭代方向。
 
-In contrast, functional programming is a form of declarative programming. You tell the computer what you want done by calling a method or function.
+相反，函数式编程是声明式编程的一种形式。 通过调用方法或函数来告诉计算机要做什么。
 
-JavaScript offers many predefined methods that handle common tasks so you don't need to write out how the computer should perform them. For example, instead of using the `for` loop mentioned above, you could call the `map` method which handles the details of iterating over an array. This helps to avoid semantic errors, like the "Off By One Errors" that were covered in the Debugging section.
+JavaScript 提供了许多处理常见任务的方法，所以你无需写出计算机应如何执行它们。 例如，你可以用 `map` 函数替代上面提到的 `for` 循环来处理数组迭代。 这有助于避免语义错误，如调试章节介绍的 "Off By One Errors"。
 
-Consider the scenario: you are browsing the web in your browser, and want to track the tabs you have opened. Let's try to model this using some simple object-oriented code.
+考虑这样的场景：你正在浏览器中浏览网页，并想操作你打开的标签。 下面我们来试试用面向对象的思路来描述这种情景。
 
-A Window object is made up of tabs, and you usually have more than one Window open. The titles of each open site in each Window object is held in an array. After working in the browser (opening new tabs, merging windows, and closing tabs), you want to print the tabs that are still open. Closed tabs are removed from the array and new tabs (for simplicity) get added to the end of it.
+窗口对象由选项卡组成，通常会打开多个窗口。 窗口对象中每个打开网站的标题都保存在一个数组中。 在对浏览器进行了如打开新标签、合并窗口、关闭标签之类的操作后，你需要输出所有打开的标签。 关掉的标签将从数组中删除，新打开的标签（为简单起见）则添加到数组的末尾。
 
-The code editor shows an implementation of this functionality with functions for `tabOpen()`, `tabClose()`, and `join()`. The array `tabs` is part of the Window object that stores the name of the open pages.
+代码编辑器中显示了此功能的实现，其中包含 `tabOpen()`，`tabClose()`，和 `join()` 函数。 `tabs` 数组是窗口对象的一部分用于储存打开页面的名称。
 
 # --instructions--
 
-Examine the code in the editor. It's using a method that has side effects in the program, causing incorrect behaviour. The final list of open tabs, stored in `finalTabs.tabs`, should be `['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']` but the list produced by the code is slightly different.
+在编辑器中运行代码。 它使用了有副作用的方法，导致输出错误。 存储在 `finalTabs.tabs` 中的打开标签的最终列表应该是 `['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']`，但输出会略有不同。
 
-Change `Window.prototype.tabClose` so that it removes the correct tab.
+修改 `Window.prototype.tabClose` 使其删除正确的标签。
 
 # --hints--
 
-`finalTabs.tabs` should be `['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']`
+`finalTabs.tabs` 应该是 `['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']`
 
 ```js
 assert.deepEqual(finalTabs.tabs, [

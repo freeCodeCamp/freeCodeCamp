@@ -13,14 +13,11 @@ Con las variables de arreglos (`array`) de JavaScript, podemos almacenar varios 
 
 Inicias una declaración de arreglo con un corchete de apertura, lo terminas con un corchete de cierre, y pones una coma entre cada entrada, de esta forma:
 
-`var sandwich = ["peanut butter", "jelly", "bread"]`.
+`var sandwich = ["peanut butter", "jelly", "bread"]`
 
 # --instructions--
 
 Modifica el nuevo arreglo `myArray` para que contenga tanto una `string` como un `number` (en ese orden).
-
-**Sugerencia**  
-Consulta el código de ejemplo en el editor de texto si te quedas atascado.
 
 # --hints--
 

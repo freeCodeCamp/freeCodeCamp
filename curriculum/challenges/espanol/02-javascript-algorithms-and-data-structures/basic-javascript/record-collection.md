@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cf
-title: Record Collection
+title: Colección de discos
 challengeType: 1
 forumTopicId: 18261
 dashedName: record-collection
@@ -8,21 +8,21 @@ dashedName: record-collection
 
 # --description--
 
-You are given a JSON object representing a part of your musical album collection. Each album has a unique id number as its key and several other properties. Not all albums have complete information.
+Se te da un objeto JSON que representa una parte de tu colección de álbumes musicales. Cada álbum tiene un número de id único como clave y varias otras propiedades. No todos los álbumes tienen una información completa.
 
-You start with an `updateRecords` function that takes an object like `collection`, an `id`, a `prop` (like `artist` or `tracks`), and a `value`. Complete the function using the rules below to modify the object passed to the function.
+Empiezas con una función `updateRecords` el cual toma un objeto `collection`, un `id`, una `prop` (como `artist` o `tracks`), y un `value`. Completa la función usando las reglas siguientes para modificar el objeto pasado a la función.
 
--   Your function must always return the entire object.
--   If `prop` isn't `tracks` and `value` isn't an empty string, update or set that album's `prop` to `value`.
--   If `prop` is `tracks` but the album doesn't have a `tracks` property, create an empty array and add `value` to it.
--   If `prop` is `tracks` and `value` isn't an empty string, add `value` to the end of the album's existing `tracks` array.
--   If `value` is an empty string, delete the given `prop` property from the album.
+-   Tu función siempre debe devolver el objeto completo.
+-   Si `prop` no es `tracks` y `value` no es una cadena vacía, actualiza o establece la propiedad `prop` del album a `value`.
+-   Si `prop` es `tracks` pero el álbum no tiene una propiedad `tracks`, crea un arreglo vacío y agrégale `value` a él.
+-   Si `prop` es `tracks` y `value` no es una cadena vacía, agrega `value` al final del arreglo de `tracks` existentes del álbum.
+-   Si `value` es una cadena vacía, elimina esa propiedad `prop` del álbum.
 
-**Note:** A copy of the `collection` object is used for the tests.
+**Nota:** Una copia del objeto `collection` es usada para las pruebas.
 
 # --hints--
 
-After `updateRecords(collection, 5439, "artist", "ABBA")`, `artist` should be `ABBA`
+Después de `updateRecords(collection, 5439, "artist", "ABBA")`, `artist` debe ser la cadena `ABBA`
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")`, `tracks` should have `Take a Chance on Me` as the last element.
+Después de `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")`, `tracks` debe tener la cadena `Take a Chance on Me` como último elemento.
 
 ```js
 assert(
@@ -41,14 +41,14 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 2548, "artist", "")`, `artist` should not be set
+Después de `updateRecords(collection, 2548, "artist", "")`, `artist` no debe establecerse
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-After `updateRecords(collection, 1245, "tracks", "Addicted to Love")`, `tracks` should have `Addicted to Love` as the last element.
+Después de `updateRecords(collection, 1245, "tracks", "Addicted to Love")`, `tracks` debe tener la cadena `Addicted to Love` como último elemento.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 2468, "tracks", "Free")`, `tracks` should have `1999` as the first element.
+Después de `updateRecords(collection, 2468, "tracks", "Free")`, `tracks` debe tener la cadena `1999` como primer elemento.
 
 ```js
 assert(
@@ -68,14 +68,14 @@ assert(
 );
 ```
 
-After `updateRecords(collection, 2548, "tracks", "")`, `tracks` should not be set
+Después de `updateRecords(collection, 2548, "tracks", "")`, `tracks` no debe establecerse
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-After `updateRecords(collection, 1245, "albumTitle", "Riptide")`, `albumTitle` should be `Riptide`
+Después de `updateRecords(collection, 1245, "albumTitle", "Riptide")`, `albumTitle` debe ser la cadena `Riptide`
 
 ```js
 assert(

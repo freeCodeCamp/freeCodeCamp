@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b4
-title: Quoting Strings with Single Quotes
+title: 用单引号引用字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260
@@ -9,39 +9,41 @@ dashedName: quoting-strings-with-single-quotes
 
 # --description--
 
-<dfn>String</dfn> values in JavaScript may be written with single or double quotes, as long as you start and end with the same type of quote. Unlike some other programming languages, single and double quotes work the same in JavaScript.
+JavaScript 中的<dfn>字符串</dfn>可以使用开始和结束都是同类型的单引号或双引号表示。 与其他一些编程语言不同的是，单引号和双引号的功能在 JavaScript 中是相同的。
 
 ```js
 doubleQuoteStr = "This is a string"; 
 singleQuoteStr = 'This is also a string';
 ```
 
-The reason why you might want to use one type of quote over the other is if you want to use both in a string. This might happen if you want to save a conversation in a string and have the conversation in quotes. Another use for it would be saving an `<a>` tag with various attributes in quotes, all within a string.
+当你需要在一个字符串中使用多个引号的时候，你可以使用单引号包裹双引号或者相反。 常见的场景比如在字符串中包含对话的句子需要用引号包裹。 另外比如在一个包含有 `<a>` 标签的字符串中，标签的属性值需要用引号包裹。
 
 ```js
 conversation = 'Finn exclaims to Jake, "Algebraic!"';
 ```
 
-However, this becomes a problem if you need to use the outermost quotes within it. Remember, a string has the same kind of quote at the beginning and end. But if you have that same quote somewhere in the middle, the string will stop early and throw an error.
+然而，如果你需要在其中使用外面的引号，这就成为一个问题。 记住，一个字符串在开头和结尾处有相同的引号。 要知道，字符串在开头和结尾都有相同的引号，如果在中间使用了相同的引号，字符串会提前中止并抛出错误。
 
 ```js
 goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
-badStr = 'Finn responds, "Let's go!"'; // Throws an error
+badStr = 'Finn responds, "Let's go!"';
 ```
 
-In the <dfn>goodStr</dfn> above, you can use both quotes safely by using the backslash <code>\\</code> as an escape character.
+在这里 `badStr` 会产生一个错误。
 
-**Note:** The backslash <code>\\</code> should not be confused with the forward slash `/`. They do not do the same thing.
+在上面的 <dfn>goodStr</dfn> 中，通过使用反斜杠 `\` 转义字符可以安全地使用两种引号。
+
+**提示：**不要混淆反斜杠 `\` 和斜杠 `/`。 它们不是一回事。
 
 # --instructions--
 
-Change the provided string to a string with single quotes at the beginning and end and no escape characters.
+把字符串更改为开头和结尾使用单引号的字符串，并且不包含转义字符。
 
-Right now, the `<a>` tag in the string uses double quotes everywhere. You will need to change the outer quotes to single quotes so you can remove the escape characters.
+这样字符串中的 `<a>` 标签里面任何地方都可以使用双引号。 你需要将最外层引号更改为单引号，以便删除转义字符。
 
 # --hints--
 
-You should remove all the `backslashes` (<code>\\</code>).
+应该删除所有反斜杠（`\`）。
 
 ```js
 assert(
@@ -52,7 +54,7 @@ assert(
 );
 ```
 
-You should have two single quotes `'` and four double quotes `"`.
+应该要有两个单引号 `'` 和四个双引号 `"`。
 
 ```js
 assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);

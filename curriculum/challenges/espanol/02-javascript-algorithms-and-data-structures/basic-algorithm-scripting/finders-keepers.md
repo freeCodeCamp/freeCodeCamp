@@ -12,7 +12,7 @@ Crea una función que recorra un arreglo `arr` y devuelva el primer elemento que
 
 # --hints--
 
-`findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })` debería devolver 8.
+`findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })` debe devolver `8`.
 
 ```js
 assert.strictEqual(
@@ -23,7 +23,7 @@ assert.strictEqual(
 );
 ```
 
-`findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })` debería devolver undefined.
+`findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })` debe devolver `undefined`.
 
 ```js
 assert.strictEqual(

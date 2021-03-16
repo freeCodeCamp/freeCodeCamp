@@ -13,11 +13,13 @@ Puedes utilizar `typeof` para comprobar la estructura de datos, o tipo, de una v
 Aquí hay algunos ejemplos que utilizan `typeof`:
 
 ```js
-console.log(typeof ""); // outputs "string"
-console.log(typeof 0); // outputs "number"
-console.log(typeof []); // outputs "object"
-console.log(typeof {}); // outputs "object"
+console.log(typeof "");
+console.log(typeof 0);
+console.log(typeof []);
+console.log(typeof {});
 ```
+
+En orden, la consola mostrará las cadenas `string`, `number`, `object`, y `object`.
 
 JavaScript reconoce seis tipos de datos primitivos (inmutables): `Boolean`, `Null`, `Undefined`, `Number`, `String`, y `Symbol` (nuevo con ES6) y un tipo para elementos mutables: `Object`. Ten en cuenta que en JavaScript, los arreglos son técnicamente un tipo de objeto.
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b61
-title: Use the map Method to Extract Data from an Array
+title: 使用 map 方法从数组中提取数据
 challengeType: 1
 forumTopicId: 18214
 dashedName: use-the-map-method-to-extract-data-from-an-array
@@ -8,19 +8,19 @@ dashedName: use-the-map-method-to-extract-data-from-an-array
 
 # --description--
 
-So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.
+目前为止，我们已经学会了使用纯函数来避免程序中的副作用。 此外，我们已经看到函数的值仅取决于其输入参数。
 
-This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.
+这仅仅是个开始。 顾名思义，函数式编程以函数理论为中心。
 
-It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered <dfn>first class objects</dfn> in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
+能够将它们作为参数传递给其他函数，从另一个函数返回一个函数是有意义的。 函数在 JavaScript 中被视为 <dfn>First Class Objects</dfn>，它们可以像任何其他对象一样使用。 它们可以保存在变量中，存储在对象中，也可以作为函数参数传递。
 
-Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at `Array.prototype.map()`, or more simply `map`.
+让我们从一些简单的数组函数开始，这些函数是数组对象原型上的方法。 在本练习中，我们来了解下数组的 `map` 方法（即 `Array.prototype.map()`）。
 
-The `map` method iterates over each item in an array and returns a new array containing the results of calling the callback function on each element. It does this without mutating the original array.
+请记住，`map`方法是迭代数组中每一项的方式之一。 在对每个元素应用回调函数后，它会创建一个新数组(不改变原来的数组)。 它这样做时没有改变原始数组。
 
-When the callback is used, it is passed three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `map` method was called.
+当调用回调函数时，传入了三个参数。 第一个参数是当前正在处理的数组项。 第二个参数是当前数组项的索引值，第三个参数是在其上调用 `map` 方法的数组。
 
-See below for an example using the `map` method on the `users` array to return a new array containing only the names of the users as elements. For simplicity, the example only uses the first argument of the callback.
+看下在 `users` 上使用 `map` 方法的例子，返回了一个新数组只包含了用户的名字。 为了简化，例子里只使用了回调函数的第一个参数。
 
 ```js
 const users = [
@@ -30,16 +30,18 @@ const users = [
 ];
 
 const names = users.map(user => user.name);
-console.log(names); // [ 'John', 'Amy', 'camperCat' ]
+console.log(names);
 ```
+
+控制台将显示值 `[ 'John', 'Amy', 'camperCat' ]`。
 
 # --instructions--
 
-The `watchList` array holds objects with information on several movies. Use `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys to the `ratings` variable. The code in the editor currently uses a `for` loop to do this, so you should replace the loop functionality with your `map` expression.
+`watchList` 数组保存了包含一些电影信息的对象。 使用 `map` 从 `watchList` 中提取标题（`title`）和评分（`rating`），并将新数组保存在 `ratings` 变量里。 目前编辑器中的代码是使用 `for` 循环实现，使用 `map` 表达式替换循环功能。
 
 # --hints--
 
-The `watchList` variable should not change.
+`watchList` 应保持不变。
 
 ```js
 assert(
@@ -47,19 +49,19 @@ assert(
 );
 ```
 
-Your code should not use a `for` loop.
+不能使用 `for` 循环。
 
 ```js
 assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
 ```
 
-Your code should use the `map` method.
+你的代码应使用 `map` 方法。
 
 ```js
 assert(code.match(/\.map/g));
 ```
 
-`ratings` should equal `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
+`ratings` 应等于 `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`。
 
 ```js
 assert.deepEqual(ratings, [

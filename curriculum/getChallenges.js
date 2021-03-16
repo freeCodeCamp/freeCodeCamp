@@ -228,9 +228,10 @@ async function buildChallenges({ path }, curriculum, lang) {
 async function parseTranslation(transPath, dict, lang, parse = parseMD) {
   const translatedChal = await parse(transPath);
 
-  // challengeType 11 is for video challenges, which have no seeds, so we skip
-  // them.
-  return translatedChal.challengeType !== 11
+  const { challengeType } = translatedChal;
+  // challengeType 11 is for video challenges and 3 is for front-end projects
+  // neither of which have seeds.
+  return challengeType !== 11 && challengeType !== 3
     ? translateCommentsInChallenge(translatedChal, lang, dict)
     : translatedChal;
 }

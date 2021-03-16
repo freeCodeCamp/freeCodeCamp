@@ -20,11 +20,13 @@ El código siguiente asigna a `x` el valor de 2, que se evalúa como `true`. Cas
 let x = 1;
 let y = 2;
 if (x = y) {
-  // this code block will run for any value of y (unless y were originally set as a falsy)
+
 } else {
-  // this code block is what should run (but won't) in this example
+
 }
 ```
+
+En este ejemplo, el bloque de código dentro de la sentencia `if` se ejecutará para cualquier valor de `y`, a menos que `y` sea algún valor falsy. El bloque `else`, que esperamos que se ejecute aquí, no se ejecutará realmente.
 
 # --instructions--
 
