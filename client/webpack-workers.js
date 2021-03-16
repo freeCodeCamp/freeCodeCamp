@@ -69,10 +69,9 @@ module.exports = (env = {}) => {
         Buffer: ['buffer', 'Buffer']
       })
     ],
-    // TODO: are the slashes necessary?
     resolve: {
       fallback: {
-        buffer: require.resolve('buffer/'),
+        buffer: require.resolve('buffer'),
         util: false,
         stream: false,
         process: require.resolve('process/browser')
