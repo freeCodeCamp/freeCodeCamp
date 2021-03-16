@@ -11,7 +11,12 @@
 
 const auditedCerts = {
   espanol: ['responsive-web-design'],
-  chinese: ['responsive-web-design']
+  chinese: [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures',
+    'front-end-libraries',
+    'data-visualization'
+  ]
 };
 
 function isAuditedCert(lang, cert) {
