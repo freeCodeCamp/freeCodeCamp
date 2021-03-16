@@ -1,4 +1,4 @@
-Moderator Handbook.
+# The official freeCodeCamp Moderator Handbook.
 
 This handbook will help you moderate different places in our community. This covers conversations and interactions in issues & pull request threads on GitHub, the community forum, the chat rooms and other official communities that we foster.
 
