@@ -15,17 +15,16 @@ Tener dos opciones es genial cuando una cadena tiene contracciones u otro fragme
 Aquí hay algunos ejemplos de comillas mezcladas:
 
 ```js
-// These are correct:
 const grouchoContraction = "I've had a perfectly wonderful evening, but this wasn't it.";
 const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quoted.'";
-// This is incorrect:
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
-Por supuesto, está bien utilizar sólo un estilo de comillas. Puedes realizar un escape de las comillas dentro de la cadena utilizando el caracter de escape de la barra invertida (<code>\\</code>):
+Los dos primeros son correctos, pero el tercero es incorrecto.
+
+Por supuesto, está bien utilizar sólo un estilo de comillas. Puedes escapar las comillas dentro de una cadena usando el carácter de barra diagonal invertida (`\`):
 
 ```js
-// Correct use of same quotes:
 const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t it.';
 ```
 
@@ -35,7 +34,7 @@ Corrige la cadena para que use comillas diferentes para el valor de `href`, o re
 
 # --hints--
 
-Tu código debe corregir las comillas alrededor del valor `href` "#Home" cambiándolas o escapándolas.
+Tu código debe corregir las comillas alrededor del valor `href` `#Home` cambiándolas o escapándolas.
 
 ```js
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));

@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ce
-title: Manipulate Arrays With unshift()
+title: Manipula arreglos con unshift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
@@ -9,26 +9,27 @@ dashedName: manipulate-arrays-with-unshift
 
 # --description--
 
-Not only can you `shift` elements off of the beginning of an array, you can also `unshift` elements to the beginning of an array i.e. add elements in front of the array.
+No solo puedes desplazar (`shift`) elementos del comienzo de un arreglo, también puedes des-desplazar (`unshift`) elementos al comienzo de un arreglo. Por ejemplo añadir elementos delante del arreglo.
 
-`.unshift()` works exactly like `.push()`, but instead of adding the element at the end of the array, `unshift()` adds the element at the beginning of the array.
+`.unshift()` funciona exactamente como `.push()`, pero en lugar de añadir el elemento al final del arreglo, `unshift()` añade el elemento al principio del arreglo.
 
-Example:
+Ejemplo:
 
 ```js
 var ourArray = ["Stimpson", "J", "cat"];
-ourArray.shift(); // ourArray now equals ["J", "cat"]
+ourArray.shift();
 ourArray.unshift("Happy");
-// ourArray now equals ["Happy", "J", "cat"]
 ```
+
+Después del `shift`, `ourArray` tendrá el valor `["J", "cat"]`. Después del `unshift`, `ourArray` tendrá el valor `["Happy", "J", "cat"]`.
 
 # --instructions--
 
-Add `["Paul",35]` to the beginning of the `myArray` variable using `unshift()`.
+Añade `["Paul",35]` al principio de la variable `myArray` usando `unshift()`.
 
 # --hints--
 
-`myArray` should now have \[["Paul", 35], ["dog", 3]].
+`myArray` debe contener ahora `[["Paul", 35], ["dog", 3]]`.
 
 ```js
 assert(

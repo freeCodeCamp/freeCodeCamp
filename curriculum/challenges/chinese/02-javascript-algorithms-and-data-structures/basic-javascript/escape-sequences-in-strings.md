@@ -9,7 +9,7 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-引号不是字符串中唯一可以被 <dfn>转义</dfn> 的字符。 使用转义字符有两个原因：
+引号不是字符串中唯一可以被转义（<dfn>escaped</dfn>）的字符。 使用转义字符有两个原因：
 
 1.  首先是可以让你使用无法输入的字符，例如退格。
 2.  其次是可以让你在一个字符串中表示多个引号，而不会出错。
@@ -24,9 +24,9 @@ dashedName: escape-sequences-in-strings
 
 使用转义序列把下面三行文本赋值给一个变量 `myStr`。
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
 
-你需要使用转义字符正确地插入特殊字符， 确保间距与上面文本一致，并且单词或转义字符之间没有空格。
+你需要使用转义字符正确地插入特殊字符。 确保间距与上面文本一致，并且单词或转义字符之间没有空格。
 
 **注意：** `SecondLine` 是因为键入了转义字符（而不是空格），所以在那个位置。
 

@@ -14,7 +14,7 @@ Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> d
 1.  Para permitir el uso de caracteres que de otra manera no te sería posible escribir, como un retorno de carro.
 2.  Para permitirte representar múltiples comillas en una cadena sin que JavaScript malinterprete lo que quieres decir.
 
-Esto lo aprendimos en el anterior desafío.
+Esto lo aprendimos en el desafío anterior.
 
 <table class='table table-striped'><thead><tr><th>Código</th><th>Resultado</th></tr></thead><tbody><tr><td><code>\'</code></td><td>comilla simple</td></tr><tr><td><code>\"</code></td><td>comilla doble</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>línea nueva</td></tr><tr><td><code>\r</code></td><td>retorno de carro</td></tr><tr><td><code>\t</code></td><td>tabulación</td></tr><tr><td><code>\b</code></td><td>límite de palabra</td></tr><tr><td><code>\f</code></td><td>fuente de formulario</td></tr></tbody></table>
 
