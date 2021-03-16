@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 const fs = require('fs-extra');
 const path = require('path');
 const opencc = require('node-opencc');
