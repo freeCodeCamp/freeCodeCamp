@@ -20,7 +20,7 @@ Here the second value (an integer) represents item priority. If we enqueue `['hu
 
 ```js
 [['human', 1], ['kitten', 2], ['dog', 2], ['rabbit', 2]]
-````
+```
 
 We’ve started writing a `PriorityQueue` in the code editor. You will need to add an `enqueue` method for adding items with a priority, a `dequeue` method for removing and returning items, a `size` method to return the number of items in the queue, a `front` method to return the element at the front of the queue, and finally an `isEmpty` method that will return `true` if the queue is empty or `false` if it is not.
 
