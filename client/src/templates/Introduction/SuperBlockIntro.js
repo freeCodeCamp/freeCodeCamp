@@ -71,7 +71,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export class SuperBlockIntroductionPage extends Component {
+class SuperBlockIntroductionPage extends Component {
   componentDidMount() {
     this.initializeExpandedState();
 

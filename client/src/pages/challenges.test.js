@@ -1,5 +1,5 @@
 /* global expect */
-import { toLearnPath } from './challenges';
+import toLearnPath from '../utils/to-learn-path';
 import { withPrefix } from 'gatsby';
 
 describe('toLearnPath', () => {

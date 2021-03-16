@@ -47,7 +47,7 @@ const propTypes = {
   })
 };
 
-export const LearnPage = ({
+const LearnPage = ({
   isSignedIn,
   fetchState: { pending, complete },
   user: { name = '', completedChallengeCount = 0 },

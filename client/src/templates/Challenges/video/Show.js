@@ -69,7 +69,7 @@ const propTypes = {
 };
 
 // Component
-export class Project extends Component {
+class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
