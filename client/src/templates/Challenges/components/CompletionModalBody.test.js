@@ -7,7 +7,8 @@ import CompletionModalBody from './CompletionModalBody';
 
 const props = {
   blockName: 'Basic HTML and HTML5',
-  completedPercent: Math.floor(Math.random() * 101)
+  completedPercent: Math.floor(Math.random() * 101),
+  superBlock: 'responsive-web-design'
 };
 
 describe('<CompletionModalBody />', () => {
