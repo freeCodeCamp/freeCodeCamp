@@ -50,6 +50,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+        curriculum: [english, chinese, espanol]
 
     steps:
       - name: Checkout Source Files
@@ -77,10 +78,14 @@ jobs:
         run: cp sample.env .env
 
       - name: Install Dependencies
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.curriculum }}
         run: |
           npm ci
           npm run ensure-env
           npm run build:curriculum
 
       - name: Run Tests
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.curriculum }}
         run: npm test
