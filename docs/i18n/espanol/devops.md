@@ -860,7 +860,7 @@ Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register 
 
 ### Updating agents
 
-Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables correctly. We need to do this for instance updating Node.js on our deployment target VMs.
+Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
 
 1. Navigate and check status of the service
 

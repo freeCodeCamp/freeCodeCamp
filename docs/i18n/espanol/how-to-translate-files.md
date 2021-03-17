@@ -22,7 +22,7 @@ Selecciona un archivo para trabajar y Crowdin abrirá la vista de edición.
 
 > [!NOTE] Cuando se abra la vista de edición, deberás hacer clic en el icono de configuración (que se muestra como un engranaje) y cambiar la configuración de ''HTML tags displaying (Mostrar etiquetas HTML)" a "SHOW (Mostrar)". Esto asegurará que puedas ver las etiquetas como `<code></code>` en lugar de `<0></0>`.
 
-## Traducir un archivo
+## Traducir el archivo
 
 ![Imagen - Vista de edición](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
