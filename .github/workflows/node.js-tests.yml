@@ -50,7 +50,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-        curriculum: [english, chinese, espanol]
+        locale: [english, chinese, espanol]
 
     steps:
       - name: Checkout Source Files
@@ -79,7 +79,8 @@ jobs:
 
       - name: Install Dependencies
         env:
-          CURRICULUM_LOCALE: ${{ matrix.curriculum }}
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           npm ci
           npm run ensure-env
@@ -87,5 +88,6 @@ jobs:
 
       - name: Run Tests
         env:
-          CURRICULUM_LOCALE: ${{ matrix.curriculum }}
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
         run: npm test
