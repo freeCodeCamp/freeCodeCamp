@@ -81,6 +81,7 @@ const propTypes = {
   isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
+  superBlock: PropTypes.string,
   t: PropTypes.func.isRequired,
   title: PropTypes.string
 };
@@ -190,7 +191,8 @@ export class CompletionModalInner extends Component {
       message,
       t,
       title,
-      isSignedIn
+      isSignedIn,
+      superBlock = ''
     } = this.props;
 
     const { completedPercent } = this.state;
@@ -222,6 +224,7 @@ export class CompletionModalInner extends Component {
           <CompletionModalBody
             blockName={blockName}
             completedPercent={completedPercent}
+            superBlock={superBlock}
           />
         </Modal.Body>
         <Modal.Footer>
