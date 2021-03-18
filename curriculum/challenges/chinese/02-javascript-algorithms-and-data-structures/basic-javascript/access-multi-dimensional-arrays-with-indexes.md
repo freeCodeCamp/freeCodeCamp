@@ -1,6 +1,6 @@
 ---
 id: 56592a60ddddeae28f7aa8e1
-title: Access Multi-Dimensional Arrays With Indexes
+title: 使用索引访问多维数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckND4Cq'
 forumTopicId: 16159
@@ -9,9 +9,9 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-One way to think of a <dfn>multi-dimensional</dfn> array, is as an *array of arrays*. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+我们可以把<dfn>多维</dfn>数组看作成是*数组中的数组*。 使用方括号表示法访问数组时，第一个方括号访问的是数组的最外层（第一层），第二个方括号访问的是数组的第二层，以此类推。
 
-**Example**
+**例如：**
 
 ```js
 var arr = [
@@ -20,27 +20,28 @@ var arr = [
   [7,8,9],
   [[10,11,12], 13, 14]
 ];
-arr[3]; // equals [[10,11,12], 13, 14]
-arr[3][0]; // equals [10,11,12]
-arr[3][0][1]; // equals 11
+arr[3];
+arr[3][0];
+arr[3][0][1];
 ```
 
-**Note**  
-There shouldn't be any spaces between the array name and the square brackets, like `array [0][0]` and even this `array [0] [0]` is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+`arr[3]` 为 `[[10, 11, 12], 13, 14]`，`arr[3][0]` 为 `[10, 11, 12]`，并且 `arr[3][0][1]` 为 `11`。
+
+**注意：** 数组名与方括号之间不应该有任何空格，比如`array [0][0]` 甚至是 `array [0] [0]` 都是不允许的。 尽管 JavaScript 能够正确处理这种情况，但是当其他程序员阅读你写的代码时，这可能让他们感到困惑。
 
 # --instructions--
 
-Using bracket notation select an element from `myArray` such that `myData` is equal to `8`.
+使用方括号从 `myArray` 中选取一个值，使得 `myData` 等于 `8`。
 
 # --hints--
 
-`myData` should be equal to `8`.
+`myData` 应该等于 `8`。
 
 ```js
 assert(myData === 8);
 ```
 
-You should be using bracket notation to read the correct value from `myArray`.
+你应该使用方括号从 `myArray` 中读取正确的值。
 
 ```js
 assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));

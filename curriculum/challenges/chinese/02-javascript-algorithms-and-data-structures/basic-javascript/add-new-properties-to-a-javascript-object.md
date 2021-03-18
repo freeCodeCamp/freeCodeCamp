@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d2
-title: Add New Properties to a JavaScript Object
+title: 给 JavaScript 对象添加新属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
@@ -9,19 +9,19 @@ dashedName: add-new-properties-to-a-javascript-object
 
 # --description--
 
-You can add new properties to existing JavaScript objects the same way you would modify them.
+你也可以像更改属性一样给 JavaScript 对象添加属性。
 
-Here's how we would add a `"bark"` property to `ourDog`:
+这里展示了如何给 `ourDog` 添加一个属性 `bark`：
 
 `ourDog.bark = "bow-wow";`
 
-or
+或者
 
 `ourDog["bark"] = "bow-wow";`
 
-Now when we evaluate `ourDog.bark`, we'll get his bark, "bow-wow".
+现在，当我们执行 `ourDog.bark` 时，我们就能得到他的叫声，`bow-wow`。
 
-Example:
+例如：
 
 ```js
 var ourDog = {
@@ -36,17 +36,17 @@ ourDog.bark = "bow-wow";
 
 # --instructions--
 
-Add a `"bark"` property to `myDog` and set it to a dog sound, such as "woof". You may use either dot or bracket notation.
+给 `myDog` 添加一个属性 `bark` ，并将其设置为狗的声音，比如“woof“. 你可以使用点号表示法或方括号表示法来完成此挑战。
 
 # --hints--
 
-You should add the property `"bark"` to `myDog`.
+你应该将属性 `bark` 添加到 `myDog`。
 
 ```js
 assert(myDog.bark !== undefined);
 ```
 
-You should not add `"bark"` to the setup section.
+你不应该在 Setup 部分添加 `bark`。
 
 ```js
 assert(!/bark[^\n]:/.test(code));

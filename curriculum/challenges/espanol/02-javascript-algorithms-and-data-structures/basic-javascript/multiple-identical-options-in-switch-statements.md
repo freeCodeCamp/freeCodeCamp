@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244df
-title: Multiple Identical Options in Switch Statements
+title: Múltiples opciones idénticas en las declaraciones "switch"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
@@ -9,7 +9,7 @@ dashedName: multiple-identical-options-in-switch-statements
 
 # --description--
 
-If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered. If you have multiple inputs with the same output, you can represent them in a `switch` statement like this:
+Si la sentencia `break` es omitida en un caso (`case`) de una sentencia `switch`, las siguientes sentencias `case` serán ejecutadas hasta encontrar un `break`. Si tienes múltiples entradas con la misma salida, puedes representarlas en una sentencia `switch` como esta:
 
 ```js
 var result = "";
@@ -24,81 +24,80 @@ switch(val) {
 }
 ```
 
-Cases for 1, 2, and 3 will all produce the same result.
+Los casos 1, 2 y 3 producirán el mismo resultado.
 
 # --instructions--
 
-Write a switch statement to set `answer` for the following ranges:  
-`1-3` - "Low"  
-`4-6` - "Mid"  
-`7-9` - "High"
+Escribe una declaración switch para establecer `answer` con los siguientes rangos:  
+`1-3` - `Low`  
+`4-6` - `Mid`  
+`7-9` - `High`
 
-**Note**  
-You will need to have a `case` statement for each number in the range.
+**Nota:** Necesitarás tener un `case` para cada número dentro del rango.
 
 # --hints--
 
-`sequentialSizes(1)` should return "Low"
+`sequentialSizes(1)` debe devolver la cadena `Low`
 
 ```js
 assert(sequentialSizes(1) === 'Low');
 ```
 
-`sequentialSizes(2)` should return "Low"
+`sequentialSizes(2)` debe devolver la cadena `Low`
 
 ```js
 assert(sequentialSizes(2) === 'Low');
 ```
 
-`sequentialSizes(3)` should return "Low"
+`sequentialSizes(3)` debe devolver la cadena `Low`
 
 ```js
 assert(sequentialSizes(3) === 'Low');
 ```
 
-`sequentialSizes(4)` should return "Mid"
+`sequentialSizes(4)` debe devolver la cadena `Mid`
 
 ```js
 assert(sequentialSizes(4) === 'Mid');
 ```
 
-`sequentialSizes(5)` should return "Mid"
+`sequentialSizes(5)` debe devolver la cadena `Mid`
 
 ```js
 assert(sequentialSizes(5) === 'Mid');
 ```
 
-`sequentialSizes(6)` should return "Mid"
+`sequentialSizes(6)` debe devolver la cadena `Mid`
 
 ```js
 assert(sequentialSizes(6) === 'Mid');
 ```
 
-`sequentialSizes(7)` should return "High"
+`sequentialSizes(7)` debe devolver la cadena `High`
 
 ```js
 assert(sequentialSizes(7) === 'High');
 ```
 
-`sequentialSizes(8)` should return "High"
+`sequentialSizes(8)` debe devolver la cadena `High`
 
 ```js
 assert(sequentialSizes(8) === 'High');
 ```
 
-`sequentialSizes(9)` should return "High"
+`sequentialSizes(9)` debe devolver la cadena `High`
 
 ```js
 assert(sequentialSizes(9) === 'High');
 ```
 
-You should not use any `if` or `else` statements
+No debes utilizar las sentencias `if` o `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-You should have nine `case` statements
+Debes tener nueve sentencias `case`
 
 ```js
 assert(code.match(/case/g).length === 9);

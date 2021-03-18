@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ab
-title: Understanding Case Sensitivity in Variables
+title: 了解变量名区分大小写
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
@@ -9,15 +9,15 @@ dashedName: understanding-case-sensitivity-in-variables
 
 # --description--
 
-In JavaScript all variables and function names are case sensitive. This means that capitalization matters.
+在 JavaScript 中所有的变量和函数名都是大小写敏感的。 要区别对待大写字母和小写字母。
 
-`MYVAR` is not the same as `MyVar` nor `myvar`. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you *do not* use this language feature.
+`MYVAR` 与 `MyVar` 和 `myvar` 是不同的变量。 这有可能导致出现多个相似名字的的变量。 所以强烈地建议你，为了保持代码清晰*不要*使用这一特性。
 
-**Best Practice**
+**最佳实践**
 
-Write variable names in JavaScript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.
+使用驼峰命名法（<dfn>camelCase</dfn>）来书写一个 Javascript 变量。 在驼峰命名法（<dfn>camelCase</dfn>）中，变量名的第一个单词的首写字母小写，后面的单词的第一个字母大写
 
-**Examples:**
+**示例：**
 
 ```js
 var someVariable;
@@ -27,18 +27,19 @@ var thisVariableNameIsSoLong;
 
 # --instructions--
 
-Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.  
-Do not create any new variables.
+修改已声明的变量，让它们的命名符合驼峰命名法（<dfn>camelCase</dfn>）的规范。
+
+不要创建任何新变量。
 
 # --hints--
 
-`studlyCapVar` should be defined and have a value of `10`.
+`studlyCapVar` 应该被定义并且值为 `10`。
 
 ```js
 assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-`properCamelCase` should be defined and have a value of `"A String"`.
+`properCamelCase` 应该被定义并且值为字符串 `A String`。
 
 ```js
 assert(
@@ -46,25 +47,25 @@ assert(
 );
 ```
 
-`titleCaseOver` should be defined and have a value of `9000`.
+`titleCaseOver` 应该被定义并且值为 `9000`。
 
 ```js
 assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 ```
 
-`studlyCapVar` should use camelCase in both declaration and assignment sections.
+`studlyCapVar` 在声明和赋值时都应该使用驼峰命名法。
 
 ```js
 assert(code.match(/studlyCapVar/g).length === 2);
 ```
 
-`properCamelCase` should use camelCase in both declaration and assignment sections.
+`properCamelCase` 在声明和赋值时都应该使用驼峰命名法。
 
 ```js
 assert(code.match(/properCamelCase/g).length === 2);
 ```
 
-`titleCaseOver` should use camelCase in both declaration and assignment sections.
+`titleCaseOver` 在声明和赋值时都应该使用驼峰命名法。
 
 ```js
 assert(code.match(/titleCaseOver/g).length === 2);

@@ -1,53 +1,53 @@
-La comunidad [freeCodeCamp.org](https://freecodecamp.org) es posible gracias a miles de buenos voluntarios como tú. Si gustas contribuir con tu tiempo y experiencia, estaremos encantados de darte la bienvenida.
+La comunidad [freeCodeCamp.org](https://freecodecamp.org) es posible gracias a miles de buenos voluntarios como tú. Si quieres contribuir con tu tiempo y experiencia, estaremos encantados de darte la bienvenida.
 
 > [!NOTE] Antes de continuar, por favor tómate 2 minutos para leer nuestro [Código de Conducta](https://www.freecodecamp.org/code-of-conduct). Lo hacemos cumplir estrictamente en toda nuestra comunidad para que contribuir a freeCodeCamp.org sea una experiencia segura e inclusiva para todos.
 
-Contribuyendo felizmente.
+Feliz día contribuyendo.
 
-Te damos la bienvenida a:
+Eres bienvenido a:
 
 - Crea, actualiza y corrige errores en nuestro [plan de estudios](#curriculum).
-- Ayúdarnos a corregir errores en la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp.org.
-- [Help us translate](#translations) freeCodeCamp.org to world languages.
+- Ayúdanos a corregir errores en la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp.org.
+- [Ayúdanos a traducir](#translations) freeCodeCamp.org a idiomas del mundo.
 
 Respondemos a las preguntas más comunes sobre cómo contribuir [en nuestras preguntas frecuentes del contribuidor](/FAQ.md).
 
-## Plan de Estudios
+## Plan de estudios
 
 Nuestro plan de estudios está elaborado por la comunidad global de freeCodeCamp. De esta forma, podemos incorporar el conocimiento avanzado proporcionado por voluntarios como tú.
 
-Puede ayudar a ampliar y mejorar el plan de estudios. También puede actualizar las historias de usuario del proyecto para explicar mejor los conceptos. Y puedes mejorar nuestras pruebas automatizadas para que podamos probar con más precisión el código de las personas.
+Puedes ayudar a ampliar y mejorar el plan de estudios. También puedes actualizar las historias de usuario del proyecto para explicar mejor los conceptos. Y puedes mejorar nuestras pruebas automatizadas para que podamos probar con más precisión el código de las personas.
 
 **Si estás interesado en mejorar nuestro plan de estudios, aquí mostramos [cómo contribuir al plan de estudios](how-to-work-on-coding-challenges.md).**
 
-## Translations
+## Traducciones
 
-We are localizing freeCodeCamp.org to world languages starting with Chinese and Español. We will be expanding the translations to more languages.
+Estamos globalizando freeCodeCamp.org a los idiomas del mundo, comenzando por chino y español. Estaremos expandiendo las traducciones a más idiomas.
 
-To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/). You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort). We encourage you to read the announcement and share it your friends to get them excited about this.
+Para ayudarnos con este esfuerzo masivo, hemos integrado nuestra base de código de fuente abierta & plan de estudios con [Crowdin](https://crowdin.com/). Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort). Te animamos a que leas el anuncio y lo compartas con tus amigos para que se entusiasmen con esto.
 
-It's our dream to provide you with the resources to learn, no matter the world language you speak.
+Nuestro sueño es brindarte los recursos para aprender, sin importar el idioma mundial que hables.
 
-**If you're interested in translating, here are the guides to translate our [curriculum](how-to-translate-files.md), the [learning platform](how-to-translate-the-website.md) and our [Contributing guidelines](https://translate.freecodecamp.org/contributing-docs).**
+**Si estás interesado en traducir, aquí tienes las guías para traducir nuestro [plan de estudios](how-to-translate-files.md), la [plataforma de aprendizaje](how-to-translate-the-website.md) y nuestras [pautas de contribución](https://translate.freecodecamp.org/contributing-docs).**
 
-## Learning Platform
+## Plataforma de aprendizaje
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
+Nuestra plataforma de aprendizaje se ejecuta en un stack de JavaScript moderno. Tiene varios componentes, herramientas y librerías. Estos incluyen Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack y más.
 
-Broadly, we use
+En general, usamos
 
 - un servidor con una API basada en Node.js
-- un conjunto de aplicaciones client-side basadas en React
-- y scripts de prueba para evaluar los proyectos curriculares enviados por nuestros campers.
+- un conjunto de aplicaciones de lado del cliente basadas en React
+- y scripts de pruebas para evaluar los proyectos del plan de estudios enviados por nuestros campers.
 
-If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
+Si deseas contribuir de manera productiva a la plataforma de aprendizaje, te recomendamos que te familiarice un poco con estas herramientas.
 
-If you want to help us improve our codebase...
+Si quieres ayudarnos a mejorar nuestro código base...
 
-**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
+**puedes utilizar Gitpod, un entorno de desarrollo en línea gratuito que inicia un entorno de desarrollo listo para codificar para freeCodeCamp en tu navegador.**
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-Or you can...
+O puedes...
 
-**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**
+**[configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina.**

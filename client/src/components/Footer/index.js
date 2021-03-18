@@ -145,7 +145,7 @@ function Footer() {
           <div className='col-header'>{t('footer.our-nonprofit')}</div>
           <div className='footer-divder' />
           <div className='our-nonprofit'>
-            <Link external={false} to={t('footer.links.about-url')}>
+            <Link external={false} to={t('links:footer.about-url')}>
               {t('footer.links.about')}
             </Link>
             <Link
@@ -161,29 +161,29 @@ function Footer() {
             <Link
               external={false}
               sameTab={false}
-              to={t('footer.links.shop-url')}
+              to={t('links:footer.shop-url')}
             >
               {t('footer.links.shop')}
             </Link>
-            <Link external={false} to={t('footer.links.support-url')}>
+            <Link external={false} to={t('links:footer.support-url')}>
               {t('footer.links.support')}
             </Link>
-            <Link external={false} to={t('footer.links.sponsors-url')}>
+            <Link external={false} to={t('links:footer.sponsors-url')}>
               {t('footer.links.sponsors')}
             </Link>
-            <Link external={false} to={t('footer.links.honesty-url')}>
+            <Link external={false} to={t('links:footer.honesty-url')}>
               {t('footer.links.honesty')}
             </Link>
-            <Link external={false} to={t('footer.links.coc-url')}>
+            <Link external={false} to={t('links:footer.coc-url')}>
               {t('footer.links.coc')}
             </Link>
-            <Link external={false} to={t('footer.links.privacy-url')}>
+            <Link external={false} to={t('links:footer.privacy-url')}>
               {t('footer.links.privacy')}
             </Link>
-            <Link external={false} to={t('footer.links.tos-url')}>
+            <Link external={false} to={t('links:footer.tos-url')}>
               {t('footer.links.tos')}
             </Link>
-            <Link external={false} to={t('footer.links.copyright-url')}>
+            <Link external={false} to={t('links:footer.copyright-url')}>
               {t('footer.links.copyright')}
             </Link>
           </div>

@@ -1,6 +1,6 @@
 ---
 id: afd15382cdfb22c9efe8b7de
-title: DNA Pairing
+title: DNA 配对
 challengeType: 5
 forumTopicId: 16009
 dashedName: dna-pairing
@@ -8,19 +8,19 @@ dashedName: dna-pairing
 
 # --description--
 
-The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+给出的 DNA 链上缺少配对元素。 请基于每个字符，获取与其配对的元素，并将结果作为二维数组返回。
 
-[Base pairs](http://en.wikipedia.org/wiki/Base_pair) are a pair of AT and CG. Match the missing element to the provided character.
+DNA 的[碱基对](http://en.wikipedia.org/wiki/Base_pair) 有两种形式：一种是 A 与 T，一种是 C 与 G。 请为参数中给出的每个字符配对相应的碱基。
 
-Return the provided character as the first element in each array.
+注意，参数中给出的字符应作为每个子数组中的第一个元素返回。
 
-For example, for the input GCG, return \[\["G", "C"], \["C","G"],\["G", "C"]]
+例如，传入 `GCG` 时，应返回 `[["G", "C"], ["C","G"], ["G", "C"]]`。
 
-The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+字符和它的配对组成一个数组中，所有配对数组放在一个数组里。
 
 # --hints--
 
-`pairElement("ATCGA")` should return `[["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]`.
+`pairElement("ATCGA")` 应返回 `[["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]`。
 
 ```js
 assert.deepEqual(pairElement('ATCGA'), [
@@ -32,7 +32,7 @@ assert.deepEqual(pairElement('ATCGA'), [
 ]);
 ```
 
-`pairElement("TTGAG")` should return `[["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]`.
+`pairElement("TTGAG")` 应返回 `[["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]`。
 
 ```js
 assert.deepEqual(pairElement('TTGAG'), [
@@ -44,7 +44,7 @@ assert.deepEqual(pairElement('TTGAG'), [
 ]);
 ```
 
-`pairElement("CTCTA")` should return `[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]`.
+`pairElement("CTCTA")` 应返回 `[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]`。
 
 ```js
 assert.deepEqual(pairElement('CTCTA'), [

@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b40
-title: Compare Scopes of the var and let Keywords
+title: 比较 var 和 let 关键字的作用域
 challengeType: 1
 forumTopicId: 301195
 dashedName: compare-scopes-of-the-var-and-let-keywords
@@ -8,11 +8,11 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-When you declare a variable with the `var` keyword, it is declared globally, or locally if declared inside a function.
+使用 `var` 关键字来声明一个变量的时候，这个变量会被声明成全局变量，或是函数内的局部变量。
 
-The `let` keyword behaves similarly, but with some extra features. When you declare a variable with the `let` keyword inside a block, statement, or expression, its scope is limited to that block, statement, or expression.
+`let` 关键字的作用与此类似，但会有一些额外的特性。 如果在代码块、语句或表达式中使用关键字 `let` 声明变量，这个变量的作用域就被限制在当前的代码块、语句或表达式之中。
 
-For example:
+举个例子：
 
 ```js
 var numArray = [];
@@ -20,12 +20,12 @@ for (var i = 0; i < 3; i++) {
   numArray.push(i);
 }
 console.log(numArray);
-// returns [0, 1, 2]
 console.log(i);
-// returns 3
 ```
 
-With the `var` keyword, `i` is declared globally. So when `i++` is executed, it updates the global variable. This code is similar to the following:
+这里控制台将显示值 `[0, 1, 2]` 和 `3`。
+
+因为使用了 `var` 关键字，`i` 被声明为全局变量。 所以当 `i++` 执行时，它会更新全局变量。 这个代码和下方的代码类似：
 
 ```js
 var numArray = [];
@@ -34,12 +34,12 @@ for (i = 0; i < 3; i++) {
   numArray.push(i);
 }
 console.log(numArray);
-// returns [0, 1, 2]
 console.log(i);
-// returns 3
 ```
 
-This behavior will cause problems if you were to create a function and store it for later use inside a for loop that uses the `i` variable. This is because the stored function will always refer to the value of the updated global `i` variable.
+这里控制台将显示值 `[0, 1, 2]` 和 `3`。
+
+如果你创建一个函数，将它存储起来，稍后在使用 `i` 变量的 `for` 循环中使用。这么做可能会出现问题。 这是因为存储的函数会总是指向更新后的全局 `i` 变量的值。
 
 ```js
 var printNumTwo;
@@ -51,10 +51,11 @@ for (var i = 0; i < 3; i++) {
   }
 }
 console.log(printNumTwo());
-// returns 3
 ```
 
-As you can see, `printNumTwo()` prints 3 and not 2. This is because the value assigned to `i` was updated and the `printNumTwo()` returns the global `i` and not the value `i` had when the function was created in the for loop. The `let` keyword does not follow this behavior:
+这里控制台将显示值 `3`。
+
+可以看到，`printNumTwo()` 打印了 3，而不是 2。 这是因为赋值给 `i` 的值已经更新，`printNumTwo()` 返回全局的 `i`，而不是在 for 循环中创建函数时 `i` 的值。 `let` 关键字就不会出现这种现象：
 
 ```js
 let printNumTwo;
@@ -66,28 +67,28 @@ for (let i = 0; i < 3; i++) {
   }
 }
 console.log(printNumTwo());
-// returns 2
 console.log(i);
-// returns "i is not defined"
 ```
 
-`i` is not defined because it was not declared in the global scope. It is only declared within the for loop statement. `printNumTwo()` returned the correct value because three different `i` variables with unique values (0, 1, and 2) were created by the `let` keyword within the loop statement.
+在这里控制台将显示值 `2` 和一个错误提示 `i is not defined`。
+
+`i` 未定义，因为它没有在全局范围内声明。 它只在 `for` 循环语句中被声明。 `printNumTwo()` 返回了正确的值，因为 `let` 关键字在循环语句中使 `i` 变量产生了三个不同的值（分别为 0、1、2）。
 
 # --instructions--
 
-Fix the code so that `i` declared in the if statement is a separate variable than `i` declared in the first line of the function. Be certain not to use the `var` keyword anywhere in your code.
+修改这段代码，使 `if` 语句中声明的 `i` 变量与在函数的第一行声明的 `i` 变量是彼此独立的。 请注意不要在你的代码的任何地方使用 `var` 关键字。
 
-This exercise is designed to illustrate the difference between how `var` and `let` keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion.
+这个练习旨在表明使用 `var` 与 `let` 关键字声明变量时作用域之间的区别。 当编写类似这个练习中的函数的时候，通常来说最好使用不同的变量名，以避免混淆。
 
 # --hints--
 
-`var` should not exist in code.
+代码中不应该出现 `var`。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-The variable `i` declared in the if statement should equal "block scope".
+`if` 语句中声明的变量 `i` 应该等于字符串 `block scope`。
 
 ```js
 (getUserInput) =>
@@ -96,7 +97,7 @@ The variable `i` declared in the if statement should equal "block scope".
   );
 ```
 
-`checkScope()` should return "function scope"
+`checkScope()` 应该返回字符串 `function scope`。
 
 ```js
 assert(checkScope() === 'function scope');

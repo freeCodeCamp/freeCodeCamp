@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b63
-title: Use the filter Method to Extract Data from an Array
+title: 使用 filter 方法从数组中提取数据
 challengeType: 1
 forumTopicId: 18179
 dashedName: use-the-filter-method-to-extract-data-from-an-array
@@ -8,13 +8,13 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 # --description--
 
-Another useful array function is `Array.prototype.filter()`, or simply `filter()`.
+另一个有用的数组方法是 `filter()`（即 `Array.prototype.filter()`）。
 
-`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns `true`. In other words, it filters the array, based on the function passed to it. Like `map`, it does this without needing to modify the original array.
+`filter` 接收一个回调函数，将回调函数内的逻辑应用于数组的每个元素，新数组包含根据回调函数内条件返回 `true` 的元素。 换言之，它根据传递给它的函数过滤数组。  和 `map` 一样，filter 不会改变原始数组。
 
-The callback function accepts three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `filter` method was called.
+回调函数接收三个参数。 第一个参数是当前正在被处理的元素。 第二个参数是这个元素的索引，第三个参数是在其上调用 `filter` 方法的数组。
 
-See below for an example using the `filter` method on the `users` array to return a new array containing only the users under the age of 30. For simplicity, the example only uses the first argument of the callback.
+看下在 `users` 上使用 `filter` 方法的例子，返回了一个包含了 30 岁以下的用户新数组。 为了简化，例子里只使用了回调函数的第一个参数。
 
 ```js
 const users = [
@@ -24,16 +24,18 @@ const users = [
 ];
 
 const usersUnder30 = users.filter(user => user.age < 30);
-console.log(usersUnder30); // [ { name: 'Amy', age: 20 }, { name: 'camperCat', age: 10 } ]
+console.log(usersUnder30); 
 ```
+
+控制台将显示值 `[ { name: 'Amy', age: 20 }, { name: 'camperCat', age: 10 } ]`
 
 # --instructions--
 
-The variable `watchList` holds an array of objects with information on several movies. Use a combination of `filter` and `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys. The new array should only include objects where `imdbRating` is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
+`watchList` 变量中包含一组存有多部电影信息对象。 结合 `filter` 和 `map` 返回一个 `watchList` 只包含 `title` 和 `rating` 属性的新数组。 新数组只包含 `imdbRating` 值大于或等于 8.0 的对象。 请注意，`rating` 值在对象中保存为字符串，你可能需要将它转换成数字来执行运算。
 
 # --hints--
 
-The `watchList` variable should not change.
+`watchList`应保持不变。
 
 ```js
 assert(
@@ -41,19 +43,19 @@ assert(
 );
 ```
 
-Your code should use the `filter` method.
+应使用 `filter` 方法。
 
 ```js
 assert(code.match(/\.filter/g));
 ```
 
-Your code should not use a `for` loop.
+不能使用 `for` 循环。
 
 ```js
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-`filteredList` should equal `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`.
+`filteredList` 应等于 `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`。
 
 ```js
 assert.deepEqual(filteredList, [

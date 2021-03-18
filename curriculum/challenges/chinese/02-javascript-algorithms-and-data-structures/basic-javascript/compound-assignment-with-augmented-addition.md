@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244af
-title: Compound Assignment With Augmented Addition
+title: 复合赋值之 +=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDR6LCb'
 forumTopicId: 16661
@@ -9,51 +9,53 @@ dashedName: compound-assignment-with-augmented-addition
 
 # --description--
 
-In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:
+在编程中，通常通过赋值来修改变量的内容。 记住，赋值时 JavaScript 会先计算等号右边的内容，所以我们可以写这样的语句：
 
 `myVar = myVar + 5;`
 
-to add `5` to `myVar`. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
+给 `myVar` 加上 `5`。 以上是最常见的运算赋值语句，即先运算、再赋值。还有一类操作符是一步到位既做运算也赋值的。
 
-One such operator is the `+=` operator.
+其中一种就是 `+=` 运算符。
 
 ```js
 var myVar = 1;
 myVar += 5;
-console.log(myVar); // Returns 6
+console.log(myVar);
 ```
+
+字符串 `6` 将会出现在控制台中。
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `+=` operator.
+使用 `+=` 操作符对 `a`、`b` 和 `c` 实现同样的效果。
 
 # --hints--
 
-`a` should equal `15`.
+`a` 应该等于 `15`。
 
 ```js
 assert(a === 15);
 ```
 
-`b` should equal `26`.
+`b` 应该等于 `26`。
 
 ```js
 assert(b === 26);
 ```
 
-`c` should equal `19`.
+`c` 应该等于 `19`。
 
 ```js
 assert(c === 19);
 ```
 
-You should use the `+=` operator for each variable.
+应该对每个变量使用 `+=` 操作符。
 
 ```js
 assert(code.match(/\+=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+不要修改注释上面的代码。
 
 ```js
 assert(

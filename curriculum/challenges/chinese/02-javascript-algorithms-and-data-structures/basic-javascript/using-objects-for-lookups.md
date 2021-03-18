@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
-title: Using Objects for Lookups
+title: 使用对象进行查找
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
@@ -9,9 +9,9 @@ dashedName: using-objects-for-lookups
 
 # --description--
 
-Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a `switch` statement or an `if/else` chain. This is most useful when you know that your input data is limited to a certain range.
+对象和字典一样，可以用来存储键/值对。 如果数据是扁平的，你可以用对象来查找你想要的值，而不是链式使用 `switch` 或 `if/else` 语句。 当你知道你的输入数据在某个范围时，这种查找方式极为有效。
 
-Here is an example of a simple reverse alphabet lookup:
+这是简单的反向字母表：
 
 ```js
 var alpha = {
@@ -24,68 +24,70 @@ var alpha = {
   25:"B",
   26:"A"
 };
-alpha[2]; // "Y"
-alpha[24]; // "C"
+alpha[2];
+alpha[24];
 
 var value = 2;
-alpha[value]; // "Y"
+alpha[value];
 ```
+
+`alpha[2]` 是字符串 `Y`，`alpha[24]` 是字符串 `C`，`alpha[value]` 是字符串 `Y`。
 
 # --instructions--
 
-Convert the switch statement into an object called `lookup`. Use it to look up `val` and assign the associated string to the `result` variable.
+把 switch 语句转化为对象 `lookup` 调用。 使用它来查找 `val` 属性的值，并赋值给 `result` 变量。
 
 # --hints--
 
-`phoneticLookup("alpha")` should equal `"Adams"`
+`phoneticLookup("alpha")` 应该等于 `Adams`
 
 ```js
 assert(phoneticLookup('alpha') === 'Adams');
 ```
 
-`phoneticLookup("bravo")` should equal `"Boston"`
+`phoneticLookup("bravo")` 应该等于 `Boston`
 
 ```js
 assert(phoneticLookup('bravo') === 'Boston');
 ```
 
-`phoneticLookup("charlie")` should equal `"Chicago"`
+`phoneticLookup("charlie")` 应该等于 `Chicago`
 
 ```js
 assert(phoneticLookup('charlie') === 'Chicago');
 ```
 
-`phoneticLookup("delta")` should equal `"Denver"`
+`phoneticLookup("delta")` 应该等于 `Denver`
 
 ```js
 assert(phoneticLookup('delta') === 'Denver');
 ```
 
-`phoneticLookup("echo")` should equal `"Easy"`
+`phoneticLookup("echo")` 应该等于 `Easy`
 
 ```js
 assert(phoneticLookup('echo') === 'Easy');
 ```
 
-`phoneticLookup("foxtrot")` should equal `"Frank"`
+`phoneticLookup("foxtrot")` 应该等于字符串 `Frank`
 
 ```js
 assert(phoneticLookup('foxtrot') === 'Frank');
 ```
 
-`phoneticLookup("")` should equal `undefined`
+`phoneticLookup("")` 应该等于 `undefined`。
 
 ```js
 assert(typeof phoneticLookup('') === 'undefined');
 ```
 
-You should not modify the `return` statement
+请不要修改 `return` 语句
 
 ```js
 assert(code.match(/return\sresult;/));
 ```
 
-You should not use `case`, `switch`, or `if` statements
+请不要使用 `case`、`switch`、`if` 语句
 
 ```js
 assert(

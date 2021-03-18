@@ -36,7 +36,7 @@ dashedName: build-a-random-quote-machine
 
 **需求 11：** 具有 `#quote-box` 属性的包裹元素应该水平居中。 请在浏览器缩放尺寸为 100% 且页面窗口最大化时运行测试。
 
-可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建项目。 或者可以在任何喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用这个 CodePen 模板</a>，点击 `Save` 创建即可你自己的项目 或者可以在任何喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 一旦完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 

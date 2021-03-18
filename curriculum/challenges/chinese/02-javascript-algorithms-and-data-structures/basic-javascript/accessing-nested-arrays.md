@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cd
-title: Accessing Nested Arrays
+title: 访问嵌套数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
@@ -9,9 +9,9 @@ dashedName: accessing-nested-arrays
 
 # --description--
 
-As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.
+在之前的挑战中，我们学习了在对象中嵌套对象和数组。 与访问嵌套对象类似，数组的方括号可以用来对嵌套数组进行链式访问。
 
-Here is an example of how to access a nested array:
+下面是访问嵌套数组的例子：
 
 ```js
 var ourPets = [
@@ -32,23 +32,25 @@ var ourPets = [
     ]
   }
 ];
-ourPets[0].names[1]; // "Fluffy"
-ourPets[1].names[0]; // "Spot"
+ourPets[0].names[1];
+ourPets[1].names[0];
 ```
+
+`ourPets[0].names[1]` 应该是字符串 `Fluffy`， 并且 `ourPets[1].names[0]` 应该是字符串 `Spot`。
 
 # --instructions--
 
-Retrieve the second tree from the variable `myPlants` using object dot and array bracket notation.
+使用对象的点号和数组的方括号从变量 `myPlants` 检索出第二棵树。
 
 # --hints--
 
-`secondTree` should equal "pine".
+`secondTree` 应该等于字符串 `pine`。
 
 ```js
 assert(secondTree === 'pine');
 ```
 
-Your code should use dot and bracket notation to access `myPlants`.
+你的代码应该使用点号和方括号访问 `myPlants`。
 
 ```js
 assert(/=\s*myPlants\[1\].list\[1\]/.test(code));

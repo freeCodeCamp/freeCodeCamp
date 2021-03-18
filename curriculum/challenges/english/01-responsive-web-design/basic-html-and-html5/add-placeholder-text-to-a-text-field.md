@@ -15,7 +15,7 @@ You can create placeholder text like so:
 
 ```html
 <input type="text" placeholder="this is placeholder text">
-```  
+```
 
 **Note:** Remember that `input` elements are self-closing.
 

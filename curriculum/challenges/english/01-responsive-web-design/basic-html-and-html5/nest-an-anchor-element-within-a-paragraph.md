@@ -35,7 +35,7 @@ Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):
 <a href="http://freecodecamp.org"> ... </a>
 ```
 
-The text, `link to freecodecamp.org`, within the `a` element is called `anchor text`, and will display the link to click:  
+The text, `link to freecodecamp.org`, within the `a` element is called <dfn>anchor text</dfn>, and will display the link to click:
 
 ```html
 <a href=" ... ">link to freecodecamp.org</a>
@@ -51,11 +51,19 @@ Nest the existing `a` element within a new `p` element. The new paragraph should
 
 # --hints--
 
-You should have an `a` element that links to "`https://freecatphotoapp.com`".
+You should only have one `a` element.
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length > 0 
+  $('a').length  === 1 
+);
+```
+
+The `a` element should link to "`https://freecatphotoapp.com`".
+
+```js
+assert(
+  $('a[href="https://freecatphotoapp.com"]').length  === 1 
 );
 ```
 
@@ -69,7 +77,7 @@ assert(
 );
 ```
 
-You should create a new `p` element around your `a` element. There should be at least 3 total `p` tags in your HTML code.
+You should create a new `p` element. There should be at least 3 total `p` tags in your HTML code.
 
 ```js
 assert($('p') && $('p').length > 2);

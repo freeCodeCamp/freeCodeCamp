@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b22
-title: Use the parseInt Function with a Radix
+title: Utiliza la función "parseInt" con Radix (Base)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6K4Kh3'
 forumTopicId: 301182
@@ -9,49 +9,49 @@ dashedName: use-the-parseint-function-with-a-radix
 
 # --description--
 
-The `parseInt()` function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
+La función `parseInt()` analiza una cadena y devuelve un entero. Recibe un segundo argumento para la base (radix), que especifica la base del número representado en la cadena. La base (radix) puede ser un número entero entre 2 y 36.
 
-The function call looks like:
+La llamada a la función se realiza de la siguiente manera:
 
 `parseInt(string, radix);`
 
-And here's an example:
+A continuación, te presentamos un ejemplo:
 
 `var a = parseInt("11", 2);`
 
-The radix variable says that "11" is in the binary system, or base 2. This example converts the string "11" to an integer 3.
+La variable radix indica que `11` está en el sistema binario, o base 2. Este ejemplo convierte la cadena `11` a un entero `3`.
 
 # --instructions--
 
-Use `parseInt()` in the `convertToInteger` function so it converts a binary number to an integer and returns it.
+Utiliza `parseInt()` dentro de la función `convertToInteger` para convertir un número binario en un número entero, y devuélvelo.
 
 # --hints--
 
-`convertToInteger` should use the `parseInt()` function
+`convertToInteger` debe utilizar la función `parseInt()`
 
 ```js
 assert(/parseInt/g.test(code));
 ```
 
-`convertToInteger("10011")` should return a number
+`convertToInteger("10011")` debe devolver un número
 
 ```js
 assert(typeof convertToInteger('10011') === 'number');
 ```
 
-`convertToInteger("10011")` should return 19
+`convertToInteger("10011")` debe devolver 19
 
 ```js
 assert(convertToInteger('10011') === 19);
 ```
 
-`convertToInteger("111001")` should return 57
+`convertToInteger("111001")` debe devolver 57
 
 ```js
 assert(convertToInteger('111001') === 57);
 ```
 
-`convertToInteger("JamesBond")` should return NaN
+`convertToInteger("JamesBond")` debe devolver `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

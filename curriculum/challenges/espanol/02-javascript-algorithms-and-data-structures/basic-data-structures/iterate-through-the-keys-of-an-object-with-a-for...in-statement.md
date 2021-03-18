@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1d
-title: Iterate Through the Keys of an Object with a for...in Statement
+title: Itera a través de las claves de un objeto con una sentencia "for...in"
 challengeType: 1
 forumTopicId: 301162
 dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
@@ -8,25 +8,23 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our `users` object, this could look like:
+A veces es necesario iterar por todas las claves de un objeto. Esto requiere una sintaxis específica en JavaScript llamada sentencia <dfn>for...in</dfn>. Para nuestro objeto `users`, esto podría verse así:
 
 ```js
 for (let user in users) {
   console.log(user);
 }
-
-// logs:
-Alan
-Jeff
-Sarah
-Ryan
 ```
 
-In this statement, we defined a variable `user`, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console. **NOTE:** Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
+Esto registrará `Alan`, `Jeff`, `Sarah`, y `Ryan`, cada valor en su propia línea.
+
+En esta sentencia, definimos una variable `user`, y como puedes ver, esta variable se restablece durante cada iteración a cada una de las claves del objeto a medida que la sentencia hace un bucle a través del objeto, dando como resultado que el nombre de cada usuario se imprima en la consola.
+
+**NOTA:** Los objetos no mantienen un orden para las claves almacenadas como lo hacen los arreglos; por lo tanto, la posición de una clave en un objeto, o el orden relativo en el que aparece, es irrelevante cuando se hace referencia o se accede a esa clave.
 
 # --instructions--
 
-We've defined a function `countOnline` which accepts one argument (a users object). Use a <dfn>for...in</dfn> statement within this function to loop through the users object passed into the function and return the number of users whose `online` property is set to `true`. An example of a users object which could be passed to `countOnline` is shown below. Each user will have an `online` property with either a `true` or `false` value.
+Hemos definido una función `countOnline` que acepta un argumento (un objeto usuario). Utiliza una sentencia <dfn>for...in</dfn> dentro de esta función para iterar sobre el objeto usuarios (users) pasado a la función y devuelve el número de usuarios cuya propiedad `online` esté establecida como `true`. A continuación se muestra un ejemplo de un objeto usuario que podría pasarse a `countOnline`. Cada usuario tendrá una propiedad `online` con un valor `true` o `false`.
 
 ```js
 {
@@ -44,7 +42,7 @@ We've defined a function `countOnline` which accepts one argument (a users objec
 
 # --hints--
 
-The function `countOnline` should use a `for in` statement to iterate through the object keys of the object passed to it.
+La función `countOnline` debe utilizar una sentencia `for in` para iterar por las claves del objeto que se le pasa.
 
 ```js
 assert(
@@ -54,19 +52,19 @@ assert(
 );
 ```
 
-The function `countOnline` should return `1` when the object `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }` is passed to it
+La función `countOnline` debe devolver `1` cuando se le pasa el objeto `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }`
 
 ```js
 assert(countOnline(usersObj1) === 1);
 ```
 
-The function `countOnline` should return `2` when the object `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }` is passed to it
+La función `countOnline` debe devolver `2` cuando se le pasa el objeto `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }`
 
 ```js
 assert(countOnline(usersObj2) === 2);
 ```
 
-The function `countOnline` should return `0` when the object `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }` is passed to it
+La función `countOnline` debe devolver `0` cuando se le pasa el objeto `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }`
 
 ```js
 assert(countOnline(usersObj3) === 0);

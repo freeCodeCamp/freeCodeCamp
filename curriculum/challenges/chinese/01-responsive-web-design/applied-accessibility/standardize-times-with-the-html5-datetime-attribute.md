@@ -1,6 +1,6 @@
 ---
 id: 587d778c367417b2b2512aa9
-title: 使用 HTML5 的 datatime 属性标准化时间
+title: 使用 HTML5 的 datetime 属性标准化时间
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025
@@ -9,7 +9,7 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --description--
 
-继续日期主题。 HTML5 还引入了 `time` 标签与 `datetime` 属性来标准化时间。 这是一个行内元素，用于在页面中呈现日期或时间， 而 `datetime` 属性用于设置日期的格式。 辅助设备可以获取这个值。 即使在文本中以非正式的方式或学术方式撰写，它也有助于避免混乱，因为它规定了时间的标准化版本。
+继续日期主题。 HTML5 还引入了 `time` 标签与 `datetime` 属性来标准化时间。 `datetime` 属性是一个内联元素，可以在一个页面上包含日期或时间。 `datetime` 属性包含的有效格式。 辅助设备可以获取这个值。 这个属性也有助于避免混乱，因为它规定了时间的标准化版本，甚至可以在文本中以非正式的方式或学术方式使用它。
 
 举个例子：
 

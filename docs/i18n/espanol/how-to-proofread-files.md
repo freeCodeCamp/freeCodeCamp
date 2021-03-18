@@ -35,6 +35,6 @@ Si bien puedes ver *todas* las traducciones propuestas para un segmento, deberí
 
 > [!WARNING] Si un segmento es aprobado durante la revisión, se mostrará como finalizado en la vista de proofreading y será descargado en el próximo pull de Crowdin a GitHub.
 
-Cuando un archivo ha sido corregido, no se requiere ningún paso adicional. Si tienes alguna pregunta o te interesa colaborar como corrector, por favor contáctanos en nuestra [sala de chat de traductores](https://chat.freecodecamp.org/channel/translators). If you are already a proofreader and are interested in having a dedicated channel for a specific language, [fill out our form](https://forms.gle/XU5CyutrYCgDYaVZA).
+Cuando un archivo ha sido corregido, no se requiere ningún paso adicional. Si tienes alguna pregunta o te interesa colaborar como corrector, por favor contáctanos en nuestra [sala de chat de traductores](https://chat.freecodecamp.org/channel/translators). Si ya eres un revisor(a)  y estás interesado(a) en tener un canal dedicado a un idioma específico, [ llena nuestro formulario](https://forms.gle/XU5CyutrYCgDYaVZA).
 
 > [!NOTE] Crowdin te permite aprobar tus propias traducciones. Sin embargo, en general suele ser mejor permitir que otro corrector revise tus traducciones propuestas como medida adicional para asegurarse que no hayan errores.

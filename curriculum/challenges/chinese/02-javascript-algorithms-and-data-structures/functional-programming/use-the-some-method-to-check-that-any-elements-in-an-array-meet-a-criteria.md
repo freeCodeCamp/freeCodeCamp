@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6f
-title: Use the some Method to Check that Any Elements in an Array Meet a Criteria
+title: 使用 some 方法检查数组中是否有元素是否符合条件
 challengeType: 1
 forumTopicId: 301314
 dashedName: use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria
@@ -8,43 +8,44 @@ dashedName: use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-cr
 
 # --description--
 
-The `some` method works with arrays to check if *any* element passes a particular test. It returns a Boolean value - `true` if any of the values meet the criteria, `false` if not.
+`some` 方法用于检测数组中*任何*元素是否满足指定条件。 如果有一个元素满足条件，返回布尔值 `true`，反之返回 `false`。
 
-For example, the following code would check if any element in the `numbers` array is less than 10:
+举个例子，下面的代码检测数组`numbers`中是否有元素小于 10：
 
 ```js
 var numbers = [10, 50, 8, 220, 110, 11];
 numbers.some(function(currentValue) {
   return currentValue < 10;
 });
-// Returns true
 ```
+
+`some` 方法将返回 `true`。
 
 # --instructions--
 
-Use the `some` method inside the `checkPositive` function to check if any element in `arr` is positive. The function should return a Boolean value.
+在 `checkPositive` 函数值中使用 `some` 检查 `arr` 中是否有元素为正数。 函数应返回一个布尔值。
 
 # --hints--
 
-Your code should use the `some` method.
+应该使用 `some` 方法。
 
 ```js
 assert(code.match(/\.some/g));
 ```
 
-`checkPositive([1, 2, 3, -4, 5])` should return `true`.
+`checkPositive([1, 2, 3, -4, 5])` 应返回 `true`。
 
 ```js
 assert(checkPositive([1, 2, 3, -4, 5]));
 ```
 
-`checkPositive([1, 2, 3, 4, 5])` should return `true`.
+`checkPositive([1, 2, 3, 4, 5])` 应返回 `true`。
 
 ```js
 assert(checkPositive([1, 2, 3, 4, 5]));
 ```
 
-`checkPositive([-1, -2, -3, -4, -5])` should return `false`.
+`checkPositive([-1, -2, -3, -4, -5])` 应返回 `false`。
 
 ```js
 assert(!checkPositive([-1, -2, -3, -4, -5]));

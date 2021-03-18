@@ -1,6 +1,6 @@
 ---
 id: a6e40f1041b06c996f7b2406
-title: Finders Keepers
+title: 按参数过滤数组
 challengeType: 5
 forumTopicId: 16016
 dashedName: finders-keepers
@@ -8,11 +8,11 @@ dashedName: finders-keepers
 
 # --description--
 
-Create a function that looks through an array `arr` and returns the first element in it that passes a 'truth test'. This means that given an element `x`, the 'truth test' is passed if `func(x)` is `true`. If no element passes the test, return `undefined`.
+请写一个函数来检查数组（第一个参数 `arr`）中的元素，并返回数组中第一个通过校验测试的元素。 其中，“通过校验测试”指的是对于数组中的一个元素 `x`，若 `func(x)` 返回的结果为 `true`，则校验测试通过。 如果没有元素通过测试，请返回 `undefined`。
 
 # --hints--
 
-`findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })` should return 8.
+`findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })` 应返回 `8`。
 
 ```js
 assert.strictEqual(
@@ -23,7 +23,7 @@ assert.strictEqual(
 );
 ```
 
-`findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })` should return undefined.
+`findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })` 应返回 `undefined`。
 
 ```js
 assert.strictEqual(

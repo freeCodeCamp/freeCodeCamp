@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b87
-title: Add Methods After Inheritance
+title: 继承后添加方法
 challengeType: 1
 forumTopicId: 301315
 dashedName: add-methods-after-inheritance
@@ -8,9 +8,9 @@ dashedName: add-methods-after-inheritance
 
 # --description--
 
-A constructor function that inherits its `prototype` object from a supertype constructor function can still have its own methods in addition to inherited methods.
+从超类构造函数继承其 `prototype` 对象的构造函数，除了继承的方法外，还可以拥有自己的方法。
 
-For example, `Bird` is a constructor that inherits its `prototype` from `Animal`:
+请看举例：`Bird` 是一个构造函数，它继承了 `Animal` 的 `prototype`：
 
 ```js
 function Animal() { }
@@ -22,7 +22,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-In addition to what is inherited from `Animal`, you want to add behavior that is unique to `Bird` objects. Here, `Bird` will get a `fly()` function. Functions are added to `Bird's` `prototype` the same way as any constructor function:
+除了从 `Animal` 构造函数继承的行为之外，还需要给 `Bird` 对象添加它独有的行为。 这里，我们给 `Bird` 对象添加一个 `fly()` 函数。 函数会以一种与其他构造函数相同的方式添加到 `Bird's` 的 `prototype` 中：
 
 ```js
 Bird.prototype.fly = function() {
@@ -30,51 +30,53 @@ Bird.prototype.fly = function() {
 };
 ```
 
-Now instances of `Bird` will have both `eat()` and `fly()` methods:
+现在 `Bird` 的实例中就有了 `eat()` 和 `fly()` 这两个方法：
 
 ```js
 let duck = new Bird();
-duck.eat(); // prints "nom nom nom"
-duck.fly(); // prints "I'm flying!"
+duck.eat();
+duck.fly();
 ```
+
+`duck.eat()` 将在控制台中显示字符串 `nom nom nom`， `duck.fly()` 将显示字符串 `I'm flying!`。
 
 # --instructions--
 
-Add all necessary code so the `Dog` object inherits from `Animal` and the `Dog's` `prototype` constructor is set to Dog. Then add a `bark()` method to the `Dog` object so that `beagle` can both `eat()` and `bark()`. The `bark()` method should print "Woof!" to the console.
+添加必要的代码，使得 `Dog` 对象继承 `Animal`，并且把 `Dog` 的 `prototype`上的 constructor 属性设置为 `Dog`。 然后给 `Dog` 对象添加一个 `bark()` 方法，这样的话，`beagle` 将同时拥有 `eat()` 和 `bark()` 这两个方法。 `bark()` 方法中应该输出 `Woof!` 到控制台。
 
 # --hints--
 
-`Animal` should not respond to the `bark()` method.
+`Animal` 应该没有 `bark()` 方法。
 
 ```js
 assert(typeof Animal.prototype.bark == 'undefined');
 ```
 
-`Dog` should inherit the `eat()` method from `Animal`.
+`Dog` 应该继承了 `Animal` 的 `eat()` 方法。
 
 ```js
 assert(typeof Dog.prototype.eat == 'function');
 ```
 
-`Dog` should have the `bark()` method as an `own` property.
+`Dog` 应该有一个 `bark()` 方法作为 `own` 属性。
 
 ```js
 assert(Dog.prototype.hasOwnProperty('bark'));
 ```
 
-`beagle` should be an `instanceof` `Animal`.
+`beagle` 应该是 `Animal` 的一个 `instanceof`。
 
 ```js
 assert(beagle instanceof Animal);
 ```
 
-The constructor for `beagle` should be set to `Dog`.
+`beagle` 的 constructor 属性应该被设置为 `Dog`。
 
 ```js
 assert(beagle.constructor === Dog);
 ```
 
-`beagle.eat()` should log `"nom nom nom"`
+`beagle.eat()` 应该记录字符串 `nom nom nom`
 
 ```js
 console.log = function (msg) {
@@ -83,7 +85,7 @@ console.log = function (msg) {
 assert.throws(() => beagle.eat(), 'nom nom nom');
 ```
 
-`beagle.bark()` should log `"Woof!"`
+`beagle.bark()` 应该将字符串 `Woof!` 打印到控制台
 
 ```js
 console.log = function (msg) {

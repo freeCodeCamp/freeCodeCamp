@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d4
-title: Comparison with the Greater Than Operator
+title: 大于运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp6GbH4'
 forumTopicId: 16786
@@ -9,68 +9,70 @@ dashedName: comparison-with-the-greater-than-operator
 
 # --description--
 
-The greater than operator (`>`) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns `true`. Otherwise, it returns `false`.
+使用大于运算符（`>`）来比较两个数字。 如果大于运算符左边的数字大于右边的数字，将会返回 `true`。 否则，它返回 `false`。
 
-Like the equality operator, greater than operator will convert data types of values while comparing.
+与相等运算符一样，大于运算符在比较的时候，会转换值的数据类型。
 
-**Examples**
+**例如：**
 
 ```js
-5   >  3   // true
-7   > '3'  // true
-2   >  3   // false
-'1' >  9   // false
+5   >  3
+7   > '3'
+2   >  3
+'1' >  9
 ```
+
+按顺序，这些表达式会返回 `true`、`true`、`false` 和 `false`。
 
 # --instructions--
 
-Add the greater than operator to the indicated lines so that the return statements make sense.
+添加大于运算符到指定的行，使得返回的语句是有意义的。
 
 # --hints--
 
-`testGreaterThan(0)` should return "10 or Under"
+`testGreaterThan(0)` 应该返回字符串 `10 or Under`。
 
 ```js
 assert(testGreaterThan(0) === '10 or Under');
 ```
 
-`testGreaterThan(10)` should return "10 or Under"
+`testGreaterThan(10)` 应该返回字符串 `10 or Under`。
 
 ```js
 assert(testGreaterThan(10) === '10 or Under');
 ```
 
-`testGreaterThan(11)` should return "Over 10"
+`testGreaterThan(11)` 应该返回字符串 `Over 10`。
 
 ```js
 assert(testGreaterThan(11) === 'Over 10');
 ```
 
-`testGreaterThan(99)` should return "Over 10"
+`testGreaterThan(99)` 应该返回字符串 `Over 10`。
 
 ```js
 assert(testGreaterThan(99) === 'Over 10');
 ```
 
-`testGreaterThan(100)` should return "Over 10"
+`testGreaterThan(100)` 应该返回字符串 `Over 10`。
 
 ```js
 assert(testGreaterThan(100) === 'Over 10');
 ```
 
-`testGreaterThan(101)` should return "Over 100"
+`testGreaterThan(101)` 应该返回字符串 `Over 100`。
 
 ```js
 assert(testGreaterThan(101) === 'Over 100');
 ```
 
-`testGreaterThan(150)` should return "Over 100"
+`testGreaterThan(150)` 应该返回字符串 `Over 100`。
 
 ```js
 assert(testGreaterThan(150) === 'Over 100');
 ```
 
-You should use the `>` operator at least twice
+应该使用 `>` 运算符至少两次。
 
 ```js
 assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);

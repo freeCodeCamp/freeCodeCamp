@@ -14,7 +14,7 @@ Puedes encontrar las herramientas para desarrolladores en el menú de Chrome o l
 
 El método `console.log()`, que "imprime" la salida de lo que está dentro de sus paréntesis a la consola, será probablemente la herramienta de depuración más útil. Colocarlo en puntos estratégicos de tu código puede mostrarte los valores intermedios de las variables. Es una buena práctica tener una idea de lo que debería ser la salida antes de ver lo que es. Tener puntos de control para ver el estado de tus cálculos a lo largo de tu código ayudará a acotar dónde está el problema.
 
-Este es un ejemplo para imprimir "Hello world!" en la consola:
+Aquí hay un ejemplo para imprimir la cadena `Hello world!` en la consola:
 
 `console.log('Hello world!');`
 

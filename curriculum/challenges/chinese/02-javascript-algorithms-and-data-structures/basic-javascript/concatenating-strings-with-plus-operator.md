@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b7
-title: Concatenating Strings with Plus Operator
+title: 用加号运算符连接字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNpM8AN'
 forumTopicId: 16802
@@ -9,49 +9,48 @@ dashedName: concatenating-strings-with-plus-operator
 
 # --description--
 
-In JavaScript, when the `+` operator is used with a `String` value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.
+在 JavaScript 中，当 `+` 操作符被用于一个 `String` 类型的值的时候，它被称作<dfn>拼接</dfn>操作符。 你可以通过<dfn>拼接</dfn>其他字符串来创建一个新的字符串。
 
-**Example**
+**例如：**
 
 ```js
 'My name is Alan,' + ' I concatenate.'
 ```
 
-**Note**  
-Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**提示：**注意空格。 拼接操作不会在两个字符串之间添加空格。所以，如果想加上空格的话，你需要自己在字符串里面添加。
 
-Example:
+例如：
 
 ```js
 var ourStr = "I come first. " + "I come second.";
-// ourStr is "I come first. I come second."
 ```
 
+字符串 `I come first. I come second.` 将显示在控制台中。
 # --instructions--
 
-Build `myStr` from the strings `"This is the start. "` and `"This is the end."` using the `+` operator.
+使用 `+` 操作符连接字符串`This is the start.` 和 `This is the end.` 赋值给 `myStr` 。
 
 # --hints--
 
-`myStr` should have a value of `This is the start. This is the end.`
+`myStr` 的值应该是 `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');
 ```
 
-You should use the `+` operator to build `myStr`.
+应使用 `+` 操作符创建 `myStr`。
 
 ```js
 assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
-`myStr` should be created using the `var` keyword.
+应使用 `var` 关键字创建 `myStr`。
 
 ```js
 assert(/var\s+myStr/.test(code));
 ```
 
-You should assign the result to the `myStr` variable.
+应把结果赋值给 `myStr` 变量。
 
 ```js
 assert(/myStr\s*=/.test(code));

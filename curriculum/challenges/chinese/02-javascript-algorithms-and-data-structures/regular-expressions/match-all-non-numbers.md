@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba1
-title: Match All Non-Numbers
+title: 匹配所有非数字
 challengeType: 1
 forumTopicId: 301347
 dashedName: match-all-non-numbers
@@ -8,59 +8,59 @@ dashedName: match-all-non-numbers
 
 # --description--
 
-The last challenge showed how to search for digits using the shortcut `\d` with a lowercase `d`. You can also search for non-digits using a similar shortcut that uses an uppercase `D` instead.
+上一项挑战中展示了如何使用带有小写 `d` 的缩写 `\d` 来搜寻数字。 也可以使用类似的缩写来搜寻非数字，该缩写使用大写的 `D`。
 
-The shortcut to look for non-digit characters is `\D`. This is equal to the character class `[^0-9]`, which looks for a single character that is not a number between zero and nine.
+查找非数字字符的缩写是 `\D`。 这等同于字符串 `[^0-9]`，它查找不是 0 - 9 之间数字的单个字符。
 
 # --instructions--
 
-Use the shorthand character class for non-digits `\D` to count how many non-digits are in movie titles.
+使用非数字缩写 `\D` 来计算电影标题中有多少非数字。
 
 # --hints--
 
-Your regex should use the shortcut character to match non-digit characters
+你的正则表达式应该使用缩写来匹配非数字字符。
 
 ```js
 assert(/\\D/.test(noNumRegex.source));
 ```
 
-Your regex should use the global flag.
+你的正则表达式应该使用全局标识。
 
 ```js
 assert(noNumRegex.global);
 ```
 
-Your regex should find no non-digits in `"9"`.
+你的正则表达式在 `9` 中应该匹配不到非数字。
 
 ```js
 assert('9'.match(noNumRegex) == null);
 ```
 
-Your regex should find 6 non-digits in `"Catch 22"`.
+你的正则表达式应该在 `Catch 22` 中匹配到 6 个非数字。
 
 ```js
 assert('Catch 22'.match(noNumRegex).length == 6);
 ```
 
-Your regex should find 11 non-digits in `"101 Dalmatians"`.
+你的正则表达式应该在 `101 Dalmatians` 中匹配到 11 个非数字。
 
 ```js
 assert('101 Dalmatians'.match(noNumRegex).length == 11);
 ```
 
-Your regex should find 15 non-digits in `"One, Two, Three"`.
+你的正则表达式应该在 `One, Two, Three` 中匹配到 15 个非数字。
 
 ```js
 assert('One, Two, Three'.match(noNumRegex).length == 15);
 ```
 
-Your regex should find 12 non-digits in `"21 Jump Street"`.
+你的正则表达式应该在 `21 Jump Street` 中匹配到 12 个非数字。
 
 ```js
 assert('21 Jump Street'.match(noNumRegex).length == 12);
 ```
 
-Your regex should find 17 non-digits in `"2001: A Space Odyssey"`.
+你的正则表达式应该在 `2001: A Space Odyssey` 中匹配到 17 个非数字。
 
 ```js
 assert('2001: A Space Odyssey'.match(noNumRegex).length == 17);

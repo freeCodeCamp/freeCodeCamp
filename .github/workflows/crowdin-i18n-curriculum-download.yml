@@ -7,7 +7,7 @@ on:
 
 jobs:
   i18n-download-curriculum-translations:
-    name: Learn
+    name: Curriculum
     runs-on: ubuntu-18.04
 
     steps:
@@ -66,8 +66,8 @@ jobs:
           export_only_approved: true
 
 
-          commit_message: 'chore(i8n,learn): processed translations'
-          localization_branch_name: i18n-sync-learn
+          commit_message: 'chore(i8n,curriculum): processed translations'
+          localization_branch_name: i18n-sync-curriculum
           push_translations: true
 
           # pull-request
@@ -96,10 +96,10 @@ jobs:
         uses: ./tools/crowdin/actions/pr-creator
         with:
           github-token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          branch: 'i18n-sync-learn'
+          branch: 'i18n-sync-curriculum'
           owner-repo: 'freeCodeCamp/freeCodeCamp'
           base: 'main'
-          title: 'chore(i18n,learn): processed translations'
+          title: 'chore(i18n,curiculum): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
-          labels: 'crowdin-sync, scope: i18n, scope: learn'
+          labels: 'crowdin-sync'
           reviewers: 'RandellDawson, nhcarrigan'

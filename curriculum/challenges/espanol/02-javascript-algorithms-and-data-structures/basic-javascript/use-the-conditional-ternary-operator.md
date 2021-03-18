@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b24
-title: Use the Conditional (Ternary) Operator
+title: Usa el operador condicional (ternario)
 challengeType: 1
 forumTopicId: 301181
 dashedName: use-the-conditional-ternary-operator
@@ -8,13 +8,11 @@ dashedName: use-the-conditional-ternary-operator
 
 # --description--
 
-The <dfn>conditional operator</dfn>, also called the <dfn>ternary operator</dfn>, can be used as a one line if-else expression.
+El <dfn>operador condicional</dfn>, también llamado el <dfn>operador ternario</dfn>, puede utilizarse como una expresión if-else de una sola línea.
 
-The syntax is:
+La sintaxis es `a ? b : c`, donde `a` es la condición, `b` es el código a ejecutar cuando la condición devuelve `true`, y `c` es el código a ejecutar cuando la condición devuelve `false`.
 
-`condition ? expression-if-true : expression-if-false;`
-
-The following function uses an if-else statement to check a condition:
+La siguiente función utiliza una sentencia `if/else` para comprobar una condición:
 
 ```js
 function findGreater(a, b) {
@@ -27,7 +25,7 @@ function findGreater(a, b) {
 }
 ```
 
-This can be re-written using the `conditional operator`:
+Esto puede reescribirse usando el operador condicional:
 
 ```js
 function findGreater(a, b) {
@@ -37,29 +35,29 @@ function findGreater(a, b) {
 
 # --instructions--
 
-Use the `conditional operator` in the `checkEqual` function to check if two numbers are equal or not. The function should return either "Equal" or "Not Equal".
+Utiliza el operador condicional en la función `checkEqual` para comprobar si dos números son iguales o no. La función debe devolver la cadena `Equal` o la cadena `Not Equal`.
 
 # --hints--
 
-`checkEqual` should use the `conditional operator`
+`checkEqual` debe usar el operador condicional
 
 ```js
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
 ```
 
-`checkEqual(1, 2)` should return "Not Equal"
+`checkEqual(1, 2)` debe devolver la cadena `Not Equal`
 
 ```js
 assert(checkEqual(1, 2) === 'Not Equal');
 ```
 
-`checkEqual(1, 1)` should return "Equal"
+`checkEqual(1, 1)` debe devolver la cadena `Equal`
 
 ```js
 assert(checkEqual(1, 1) === 'Equal');
 ```
 
-`checkEqual(1, -1)` should return "Not Equal"
+`checkEqual(1, -1)` debe devolver la cadena `Not Equal`
 
 ```js
 assert(checkEqual(1, -1) === 'Not Equal');

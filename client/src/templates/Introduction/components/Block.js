@@ -146,7 +146,7 @@ export class Block extends Component {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                  to={t('links:help-translate-link-url')}
                 >
                   {t('misc.translation-pending')}
                 </Link>
@@ -174,7 +174,7 @@ export class Block extends Component {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                  to={t('links:help-translate-link-url')}
                 >
                   {t('misc.translation-pending')}
                 </Link>

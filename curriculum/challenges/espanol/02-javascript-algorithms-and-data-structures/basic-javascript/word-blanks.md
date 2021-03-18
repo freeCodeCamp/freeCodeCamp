@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bb
-title: Word Blanks
+title: Palabra en blanco
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caqn8zuP'
 forumTopicId: 18377
@@ -9,11 +9,11 @@ dashedName: word-blanks
 
 # --description--
 
-We will now use our knowledge of strings to build a "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" style word game we're calling "Word Blanks". You will create an (optionally humorous) "Fill in the Blanks" style sentence.
+Ahora usaremos nuestros conocimientos de cadenas para construir un juego de palabras estilo "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" que llamamos "Palabra en blanco". Crearás una frase (opcionalmente humorística) del estilo: Rellena los espacios vacíos.
 
-In a "Mad Libs" game, you are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs. You then fill in the missing pieces with words of your choice in a way that the completed sentence makes sense.
+En un juego de "Mad Libs", se te proporcionan oraciones con algunas palabras faltantes, como sustantivos, verbos, adjetivos y adverbios. Luego, rellenas las piezas que faltan con palabras de tu elección de una manera que la frase completa tenga sentido.
 
-Consider this sentence - "It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**". This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+Considera esta oración: It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. Esta oración tiene tres piezas faltantes: un adjetivo, un verbo y un adverbio, y podemos añadir palabras de nuestra elección para completarla. A continuación, podemos asignar la oración completa a una variable de la siguiente manera:
 
 ```js
 var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -21,21 +21,21 @@ var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves 
 
 # --instructions--
 
-In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
+En este desafío, te proporcionamos un sustantivo, un verbo, un adjetivo y un adverbio. Necesita formar una oración completa usando palabras de tu elección, junto con las palabras que te proporcionamos.
 
-You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
+Necesitarás usar el operador de concatenación de cadenas `+` para construir una nueva cadena, usando las variables proporcionadas: `myNoun`, `myAdjective`, `myVerb`, y `myAdverb`. Luego asignarás la cadena formada a la variable `wordBlanks`. No debes cambiar las palabras asignadas a las variables.
 
-You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
+También tendrás que tener en cuenta los espacios en tu cadena, para que la frase final tenga espacios entre todas las palabras. El resultado debe ser una oración completa.
 
 # --hints--
 
-`wordBlanks` should be a string.
+`wordBlanks` debe ser una cadena.
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
+No debes cambiar los valores asignados a `myNoun`, `myVerb`, `myAdjective` o `myAdverb`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-You should not directly use the values "dog", "ran", "big", or "quickly" to create `wordBlanks`.
+No debes utilizar directamente los valores `dog`, `ran`, `big` o `quickly` para crear `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words in your madlib).
+`wordBlanks` debe contener todas las palabras asignadas a las variables `myNoun`, `myVerb`, `myAdjective` y `myAdverb` separados por espacios (y cualquier palabra adicional en tu madlib).
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c441eddfaeb5bdef
-title: Understanding Boolean Values
+title: 理解布尔值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
@@ -9,24 +9,23 @@ dashedName: understanding-boolean-values
 
 # --description--
 
-Another data type is the <dfn>Boolean</dfn>. `Booleans` may only be one of two values: `true` or `false`. They are basically little on-off switches, where `true` is "on" and `false` is "off." These two states are mutually exclusive.
+另一种数据类型是布尔（<dfn>Boolean</dfn>）。 布尔值只能是两个值中的一个：`true` 或者 `false`。 它非常像电路开关，`true` 是 “开”，`false` 是 “关”。 这两种状态是互斥的。
 
-**Note**  
-`Boolean` values are never written with quotes. The `strings` `"true"` and `"false"` are not `Boolean` and have no special meaning in JavaScript.
+**注意：**布尔值是不带引号的。 字符串 `"true"` 和 `"false"` 不是布尔值，在 JavaScript 中也没有特殊含义。
 
 # --instructions--
 
-Modify the `welcomeToBooleans` function so that it returns `true` instead of `false` when the run button is clicked.
+修改 `welcomeToBooleans` 函数，当 run 按钮点击时让它返回 `true` 而不是 `false`。
 
 # --hints--
 
-The `welcomeToBooleans()` function should return a boolean (true/false) value.
+`welcomeToBooleans()` 函数应该返回一个布尔值 （`true` 或者 `false`)。
 
 ```js
 assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-`welcomeToBooleans()` should return true.
+`welcomeToBooleans()` 应该返回 `true`。
 
 ```js
 assert(welcomeToBooleans() === true);
