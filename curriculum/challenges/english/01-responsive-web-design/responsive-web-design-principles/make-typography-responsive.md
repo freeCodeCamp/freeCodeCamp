@@ -17,7 +17,9 @@ The four different viewport units are:
 
 Here is an example that sets a `body` tag to 30% of the viewport's width.
 
-`body { width: 30vw; }`
+```css
+body { width: 30vw; }
+```
 
 # --instructions--
 

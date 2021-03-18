@@ -13,7 +13,9 @@ In the last challenge, you learned that including an `alt` attribute when using 
 
 When an image is already explained with text content or does not add meaning to a page, the `img` still needs an `alt` attribute, but it can be set to an empty string. Here's an example:
 
-`<img src="visualDecoration.jpeg" alt="">`
+```html
+<img src="visualDecoration.jpeg" alt="">
+```
 
 Background images usually fall under the 'decorative' label as well. However, they are typically applied with CSS rules, and therefore not part of the markup screen readers process.
 

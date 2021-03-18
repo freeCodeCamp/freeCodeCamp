@@ -15,7 +15,9 @@ HTML5 allows this attribute to be used on any element, but it's particularly use
 
 Here's an example:
 
-`<button accesskey="b">Important Button</button>`
+```html
+<button accesskey="b">Important Button</button>
+```
 
 # --instructions--
 

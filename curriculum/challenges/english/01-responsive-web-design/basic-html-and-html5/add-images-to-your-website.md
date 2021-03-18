@@ -13,7 +13,9 @@ You can add images to your website by using the `img` element, and point to a sp
 
 An example of this would be:
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg">`
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg">
+```
 
 Note that `img` elements are self-closing.
 
