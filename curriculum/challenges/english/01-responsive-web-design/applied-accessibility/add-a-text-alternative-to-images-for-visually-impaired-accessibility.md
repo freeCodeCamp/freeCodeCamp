@@ -11,7 +11,9 @@ dashedName: add-a-text-alternative-to-images-for-visually-impaired-accessibility
 
 You've likely seen an `alt` attribute on an `img` tag in other challenges. `alt` text describes the image's content and provides a text-alternative for it. An `alt` attribute helps in cases where the image fails to load or can't be seen by a user. Search engines also use it to understand what an image contains to include it in search results. Here's an example:
 
-`<img src="importantLogo.jpeg" alt="Company logo">`
+```html
+<img src="importantLogo.jpeg" alt="Company logo">
+```
 
 People with visual impairments rely on screen readers to convert web content to an audio interface. They won't get information if it's only presented visually. For images, screen readers can access the `alt` attribute and read its contents to deliver key information.
 

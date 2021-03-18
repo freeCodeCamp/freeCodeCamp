@@ -29,7 +29,9 @@ Create a class called `thick-green-border`. This class should add a 10px, solid,
 
 Remember that you can apply multiple classes to an element using its `class` attribute, by separating each class name with a space. For example:
 
-`<img class="class1 class2">`
+```html
+<img class="class1 class2">
+```
 
 # --hints--
 

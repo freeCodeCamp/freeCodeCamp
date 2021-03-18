@@ -13,7 +13,9 @@ Continuing with the date theme, HTML5 also introduced the `time` element along w
 
 Here's an example:
 
-`<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>`
+```html
+<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>
+```
 
 # --instructions--
 

@@ -17,9 +17,13 @@ It's important to note that when the tab order is set this way, it overrides the
 
 Here's an example:
 
-`<div tabindex="1">I get keyboard focus, and I get it first!</div>`
+```html
+<div tabindex="1">I get keyboard focus, and I get it first!</div>
+```
 
-`<div tabindex="2">I get keyboard focus, and I get it second!</div>`
+```html
+<div tabindex="2">I get keyboard focus, and I get it second!</div>
+```
 
 # --instructions--
 

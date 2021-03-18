@@ -13,7 +13,9 @@ That's great, but it doesn't work right yet. Notice how the animation resets aft
 
 This can be done by setting the `animation-fill-mode` property to `forwards`. The `animation-fill-mode` specifies the style applied to an element when the animation has finished. You can set it like so:
 
-`animation-fill-mode: forwards;`
+```css
+animation-fill-mode: forwards;
+```
 
 # --instructions--
 
