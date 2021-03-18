@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b56
-title: Use export to Share a Code Block
+title: Utiliza la exportación para compartir un bloque de código
 challengeType: 1
 forumTopicId: 301219
 dashedName: use-export-to-share-a-code-block
@@ -8,7 +8,7 @@ dashedName: use-export-to-share-a-code-block
 
 # --description--
 
-Imagine a file called `math_functions.js` that contains several functions related to mathematical operations. One of them is stored in a variable, `add`, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to `export` it.
+Imagina un archivo llamado `math_functions.js` que contiene varias funciones relacionadas con operaciones matemáticas. Uno de ellos se almacena en una variable, `add`, que toma dos números y devuelve su suma. Quieres utilizar esta función en varios archivos JavaScript diferentes. Para compartirlo con estos otros archivos, primero debes usar `export` (exportarlo).
 
 ```js
 export const add = (x, y) => {
@@ -16,7 +16,7 @@ export const add = (x, y) => {
 }
 ```
 
-The above is a common way to export a single function, but you can achieve the same thing like this:
+Lo anterior es una forma común de exportar una sola función, pero puedes lograr lo mismo como esto:
 
 ```js
 const add = (x, y) => {
@@ -26,7 +26,7 @@ const add = (x, y) => {
 export { add };
 ```
 
-When you export a variable or function, you can import it in another file and use it without having to rewrite the code. You can export multiple things by repeating the first example for each thing you want to export, or by placing them all in the export statement of the second example, like this:
+Cuando exportas una variable o función, puedes importarla en otro archivo y usarla sin tener que volver a escribir el código. Puedes exportar diferentes cosas al repartir el primer ejemplo para cada una de ellas si quieres exportar o al colocarlas en la declaración de exportación del segundo ejemplo. Por ejemplo:
 
 ```js
 export { add, subtract };
@@ -34,11 +34,11 @@ export { add, subtract };
 
 # --instructions--
 
-There are two string-related functions in the editor. Export both of them using the method of your choice.
+Hay dos funciones relacionadas con cadenas en el editor. Exporta ambos utilizando el método que elijas.
 
 # --hints--
 
-You should properly export `uppercaseString`.
+Deberías exportar correctamente `uppercaseString`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-You should properly export `lowercaseString`.
+Deberías exportar correctamente `lowercaseString`.
 
 ```js
 assert(
