@@ -14,7 +14,7 @@ If you import styles from a stylesheet, it isn't much different at all. You appl
 
 You apply inline styles to JSX elements similar to how you do it in HTML, but with a few JSX differences. Here's an example of an inline style in HTML:
 
-```html
+```jsx
 <div style="color: yellow; font-size: 16px">Mellow Yellow</div>
 ```
 
