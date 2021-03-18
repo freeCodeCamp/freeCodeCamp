@@ -15,13 +15,17 @@ Font Awesome is a convenient library of icons. These icons can be webfonts or ve
 
 You can include Font Awesome in any app by adding the following code to the top of your HTML:
 
-`<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">`
+```html
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+```
 
 In this case, we've already added it for you to this page behind the scenes.
 
 The `i` element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the `i` element to turn it into an icon, for example:
 
-`<i class="fas fa-info-circle"></i>`
+```html
+<i class="fas fa-info-circle"></i>
+```
 
 Note that the `span` element is also acceptable for use with icons.
 

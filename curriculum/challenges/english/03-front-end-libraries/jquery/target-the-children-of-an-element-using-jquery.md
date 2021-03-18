@@ -14,7 +14,9 @@ jQuery has a function called `children()` that allows you to access the children
 
 Here's an example of how you would use the `children()` function to give the children of your `left-well` element the color `blue`:
 
-`$("#left-well").children().css("color", "blue")`
+```js
+$("#left-well").children().css("color", "blue")
+```
 
 # --instructions--
 

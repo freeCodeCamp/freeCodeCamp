@@ -22,7 +22,9 @@ Then use jQuery's `.addClass()` function to add the classes `animated` and `shak
 
 For example, you could make all the elements with the class `text-primary` shake by adding the following to your `document ready function`:
 
-`$(".text-primary").addClass("animated shake");`
+```js
+$(".text-primary").addClass("animated shake");
+```
 
 # --hints--
 
