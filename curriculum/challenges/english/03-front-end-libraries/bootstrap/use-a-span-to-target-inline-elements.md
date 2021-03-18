@@ -24,7 +24,7 @@ Here's how you would do this for the `p` element that has the text `Top 3 things
 
 ```html
 <p>Top 3 things cats <span class="text-danger">hate:</span></p>
-```html
+```
 
 # --hints--
 
