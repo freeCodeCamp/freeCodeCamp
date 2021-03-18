@@ -10,29 +10,29 @@ Este repositorio se construye, prueba y despliega continuamente para ** separar 
 
 Esto involucra tres pasos que deben seguirse en secuencia:
 
-1. New changes (both fixes and features) are merged into our primary development branch (`main`) via pull requests.
+1. Los nuevos cambios (tanto correcciones como funcionalidades) se integran en nuestra rama principal de desarrollo (`main`) a través de pull requests.
 2. Estos cambios son ejecutados a través de una serie de pruebas automatizadas.
 3. Una vez que las pruebas se completan de forma satisfactoria, publicamos los cambios (o los actualizamos si es necesario) para desplegarlos en nuestra infraestructura.
 
 #### Construyendo la base de código - Mapeando las Ramas de Git con los Despliegues.
 
-Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) branch once a day and is released into an isolated infrastructure.
+Normalmente,  [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (la rama de desarrollo por defecto) se integra diariamente en la rama [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) y se publica en una infraestructura aislada.
 
 Esta es una publicación intermedia para nuestros desarrolladores y colaboradores voluntarios. También es conocida como nuestra publicación "staging" o "beta".
 
-Este es idéntico a nuestro entorno de producción en ` freeCodeCamp.org`, excepto que utiliza un conjunto separado de bases de datos, servidores, web-proxies, etc. Este aislamiento nos permite probar el desarrollo y las funcionalidades de manera continua en un escenario similar al de "producción", sin afectar a los usuarios regulares de las principales plataformas de freeCodeCamp.org.
+Este es idéntico a nuestro entorno de producción en `freeCodeCamp.org`, excepto que utiliza un conjunto separado de bases de datos, servidores, web-proxies, etc. Este aislamiento nos permite probar el desarrollo y las funcionalidades de manera continua en un escenario similar al de "producción", sin afectar a los usuarios regulares de las principales plataformas de freeCodeCamp.org.
 
-Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current) branch.
+Una vez que el equipo de desarrolladores [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) está satisfecho con los cambios en la plataforma de "staging", estos cambios se trasladan cada ciertos días a la rama [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current).
 
 Esta es la versión final que despliega los cambios a nuestras plataformas de producción en freeCodeCamp.org.
 
 #### Pruebas de cambios - Pruebas de Integración y Aceptación del Usuario.
 
-Empleamos varios niveles de pruebas de integración y aceptación para verificar la calidad del código. All our tests are done through software like [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+Empleamos varios niveles de pruebas de integración y aceptación para verificar la calidad del código. Todas nuestras pruebas se realizan a través de software como [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) y [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
 Contamos con pruebas unitarias para probar nuestras soluciones a los desafíos, las API del Servidor y las interfaces de Usuario. Estas nos ayudan a probar la integración entre diferentes componentes.
 
-> [!NOTE] También estamos en el proceso de redactar pruebas de usuario final que nos ayudarán a replicar escenarios del mundo real, como actualizar un correo electrónico o hacer una llamada al API o servicios de terceros.
+> [!NOTE] También estamos en el proceso de redactar pruebas de usuario final que nos ayudarán a replicar escenarios del mundo real, como actualizar un correo electrónico o hacer una llamada a la API o servicios de terceros.
 
 Juntas, estas pruebas ayudan a evitar que los problemas se repitan y garantizan que no introduzcamos un error mientras trabajamos en otro error o en una funcionalidad.
 
@@ -52,7 +52,7 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
 
 > [!NOTE] En los próximos días mejoraríamos este flujo a través de la implementación de pull-requests, para una mejor administración de acceso y transparencia.
 
-### Publicando cambios a las Aplicaciones en Staging.
+### Pushing changes to Staging Applications.
 
 1. Configura tus repositorios remotos correctamente.
 
@@ -69,7 +69,7 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `main` branch is pristine and in sync with the upstream.
+2. Asegúrate de que tu rama `main` sea impecable y esté sincronizada con la corriente ascendente.
 
    ```sh
    git checkout main
@@ -77,13 +77,13 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    git reset --hard upstream/main
    ```
 
-3. Check that the GitHub CI is passing on the `main` branch for upstream.
+3. Comprueba que el GitHub CI este aprobado en la rama `main` para el flujo upstream.
 
-   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `main` branch. Click the green check mark next to the commit hash when viewing the `main` branch code.
+   Las pruebas de [integración continua](https://github.com/freeCodeCamp/freeCodeCamp/actions) deben estar en verde y en estado PASSING para la rama  `main`. Haz clic en la marca de verificación verde junto al hash del commit si estás viendo el código de la rama `main`.
 
-    <details> <summary> Checking status on GitHub Actions (screenshot) </summary>
+    <details> <summary> Comprobando el estado en GitHub actions (captura de pantalla) </summary>
       <br>
-      ![Check build status on GitHub Actions](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png)
+      ![Revisa el estado de compilación en GitHub actions](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png)
     </details>
 
    Si esto está fallando debes detenerte e investigar los errores.
