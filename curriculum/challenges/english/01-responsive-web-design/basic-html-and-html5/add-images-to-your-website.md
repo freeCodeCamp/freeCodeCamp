@@ -37,9 +37,7 @@ Let's try to add an image to our website:
 
 Within the existing `main` element, insert an `img` element before the existing `p` elements.
 
-Now set the `src` attribute so that it points to this url:
-
-`https://bit.ly/fcc-relaxing-cat`
+Now set the `src` attribute so that it points to the url `https://bit.ly/fcc-relaxing-cat`
 
 Finally, don't forget to give your `img` element an `alt` attribute with applicable text.
 
