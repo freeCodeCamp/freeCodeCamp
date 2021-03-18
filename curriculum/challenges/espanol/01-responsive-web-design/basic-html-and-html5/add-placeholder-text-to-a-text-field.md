@@ -13,23 +13,25 @@ El texto provisional es lo que se muestra en tu elemento de entrada `input` ante
 
 Puedes crear texto provisional así:
 
-`<input type="text" placeholder="this is placeholder text">`
+```html
+<input type="text" placeholder="this is placeholder text">
+```
 
-**Note:** Recuerda que los elementos `input` se cierran automáticamente.
+**Nota:** Recuerda que los elementos `input` se cierran solos.
 
 # --instructions--
 
-Establece el valor provisional `placeholder` de tu entrada de texto `input` como "cat photo URL".
+Establece el valor de `placeholder` de tu `input` de texto en "cat photo URL".
 
 # --hints--
 
-Debes agregar un atributo `placeholder` al elemento de entrada de texto `input` existente.
+Debes agregar un atributo `placeholder` al elemento existente `input` de texto.
 
 ```js
 assert($('input[placeholder]').length > 0);
 ```
 
-Debes establecer el valor de tu atributo provisional `placeholder` como `cat photo URL`.
+Debes establecer el valor de tu atributo `placeholder` en `cat photo URL`.
 
 ```js
 assert(
@@ -41,13 +43,13 @@ assert(
 );
 ```
 
-El elemento `input` final no debe tener una etiqueta de cierre.
+El elemento `input` terminado no debe tener una etiqueta de cierre.
 
 ```js
 assert(!code.match(/<input.*\/?>.*<\/input>/gi));
 ```
 
-El elemento `input` final debe tener una sintaxis válida.
+El elemento `input` terminado debe tener una sintaxis válida.
 
 ```js
 assert($('input[type=text]').length > 0);
