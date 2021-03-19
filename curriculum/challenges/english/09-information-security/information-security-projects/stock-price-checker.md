@@ -62,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
+You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ [stock symbol](https://en.wikipedia.org/wiki/Ticker_symbol) to a `stock` query parameter. The returned object will contain a property named `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -74,7 +74,7 @@ async (getUserInput) => {
 };
 ```
 
-The `stockData` property includes the `stock` ticker as a string, the `price` as a number, and `likes` as a number.
+The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
 
 ```js
 async (getUserInput) => {
