@@ -55,7 +55,6 @@
     "puppeteer": "^8.0.0",
     "readdirp": "^3.5.0",
     "rehype": "^11.0.0",
-    "rework-visit": "^1.0.0",
     "string-similarity": "^4.0.2",
     "unist-util-visit": "^2.0.3",
     "vfile": "^4.2.0"
