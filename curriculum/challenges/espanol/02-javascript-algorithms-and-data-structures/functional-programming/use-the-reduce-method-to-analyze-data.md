@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b68
-title: Use the reduce Method to Analyze Data
+title: Utiliza el método "reduce" para analizar datos
 challengeType: 1
 forumTopicId: 301313
 dashedName: use-the-reduce-method-to-analyze-data
@@ -8,15 +8,15 @@ dashedName: use-the-reduce-method-to-analyze-data
 
 # --description--
 
-`Array.prototype.reduce()`, or simply `reduce()`, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the `reduce` method.
+`Array.prototype.reduce()` o simplemente `reduce()` es la operación más común de todas para arreglos en JavaScript. Se puede resolver casi cualquier problema de procesamiento de arreglos utilizando el método `reduce`.
 
-The `reduce` method allows for more general forms of array processing, and it's possible to show that both `filter` and `map` can be derived as special applications of `reduce`. The `reduce` method iterates over each item in an array and returns a single value (i.e. string, number, object, array). This is achieved via a callback function that is called on each iteration.
+El método `reduce` permite formas más generales de procesamiento de arreglos y es posible mostrar que tanto `filter` como `map` pueden derivarse como aplicaciones especiales de `reduce`. El método `reduce` itera sobre cada elemento del arreglo y devuelve un solo valor (por ejemplo una cadena, número, objeto, arreglo). Esto se consigue mediante una función de callback que se llama en cada iteración.
 
-The callback function accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which `reduce` is called.
+La función callback acepta cuatro argumentos. El primer argumento se conoce como acumulador, que recibe el valor retornado de la función callback de la iteración anterior, el segundo es el elemento actual que se está procesando, el tercero es el índice de ese elemento y el cuarto es el arreglo sobre el que se llama a la función `reduce`.
 
-In addition to the callback function, `reduce` has an additional parameter which takes an initial value for the accumulator. If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
+Además de la función callback, `reduce` tiene un parámetro adicional que toma un valor inicial para el acumulador. Si este segundo parámetro no se utiliza, entonces la primera iteración se omite y la segunda se pasa por el primer elemento del arreglo como acumulador.
 
-See below for an example using `reduce` on the `users` array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
+Mira a continuación un ejemplo con `reduce` en el arreglo `users` para devolver la suma de todas las edades de los usuarios. Para hacerlo más fácil, el ejemplo sólo utiliza el primer y segundo argumento.
 
 ```js
 const users = [
@@ -26,10 +26,12 @@ const users = [
 ];
 
 const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
-console.log(sumOfAges); // 64
+console.log(sumOfAges);
 ```
 
-In another example, see how an object can be returned containing the names of the users as properties with their ages as values.
+La consola mostrará el valor `64`.
+
+En otro ejemplo, se puede observar cómo un objeto puede ser devuelto con los nombres de los usuarios como propiedades con las edades como valores.
 
 ```js
 const users = [
@@ -42,16 +44,18 @@ const usersObj = users.reduce((obj, user) => {
   obj[user.name] = user.age;
   return obj;
 }, {});
-console.log(usersObj); // { John: 34, Amy: 20, camperCat: 10 }
+console.log(usersObj);
 ```
+
+La consola mostrará el valor `{ John: 34, Amy: 20, camperCat: 10 }`.
 
 # --instructions--
 
-The variable `watchList` holds an array of objects with information on several movies. Use `reduce` to find the average IMDB rating of the movies **directed by Christopher Nolan**. Recall from prior challenges how to `filter` data and `map` over it to pull what you need. You may need to create other variables, and return the average rating from `getRating` function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
+La variable `watchList` contiene un arreglo de objetos con información sobre varias películas. Utiliza `reduce` para encontrar la calificación media en IMDB de las películas dirigidas por `Christopher Nolan`. Recuerda de desafíos anteriores filtrar (`filter`) los datos y mapear (`map`) sobre ellos para extraer lo que necesitas. Puede que necesites crear otras variables y devolver la calificación media con la función `getRating`. Ten en cuenta que los valores de calificación se guardan como cadenas en el objeto y necesitan ser convertidos en números antes de ser utilizados en cualquier operación matemática.
 
 # --hints--
 
-The `watchList` variable should not change.
+La variable `watchList` no debe cambiar.
 
 ```js
 assert(
@@ -59,25 +63,25 @@ assert(
 );
 ```
 
-Your code should use the `reduce` method.
+Tu código debe utilizar el método `reduce`.
 
 ```js
 assert(code.match(/\.reduce/g));
 ```
 
-The `getRating(watchList)` should equal 8.675.
+`getRating(watchList)` debe ser igual a 8.675.
 
 ```js
 assert(getRating(watchList) === 8.675);
 ```
 
-Your code should not use a `for` loop.
+Tu código no debe usar un bucle `for`.
 
 ```js
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-Your code should return correct output after modifying the `watchList` object.
+Tu código debe devolver el resultado correcto después de modificar el objeto `watchList`.
 
 ```js
 assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
