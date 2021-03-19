@@ -68,7 +68,8 @@ const commentExtractors = {
   html: require('./utils/extract-html-comments'),
   js: require('./utils/extract-js-comments'),
   jsx: require('./utils/extract-jsx-comments'),
-  css: require('./utils/extract-css-comments')
+  css: require('./utils/extract-css-comments'),
+  scriptJs: require('./utils/extract-script-js-comments')
 };
 
 // rethrow unhandled rejections to make sure the tests exit with -1
@@ -330,7 +331,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
               // We get all the actual comments using the appropriate parsers
               if (file.ext === 'html') {
-                const commentTypes = ['css', 'html'];
+                const commentTypes = ['css', 'html', 'scriptJs'];
                 for (let type of commentTypes) {
                   const newComments = commentExtractors[type](file.contents);
                   for (const [key, value] of Object.entries(newComments)) {
