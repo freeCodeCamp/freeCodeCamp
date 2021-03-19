@@ -1,47 +1,9 @@
 /* global expect jest */
+const { translateComments, translateCommentsInChallenge } = require('.');
 const {
-  mergeChallenges,
-  translateComments,
-  translateCommentsInChallenge
-} = require('.');
-const {
-  ENGLISH_CERTIFICATE,
-  ENGLISH_CHALLENGE,
-  ENGLISH_CHALLENGE_NO_FILES,
-  ENGLISH_CHALLENGE_TWO_SOLUTIONS,
-  ENGLISH_VIDEO_CHALLENGE,
-  TRANSLATED_CERTIFICATE,
-  TRANSLATED_CHALLENGE,
-  TRANSLATED_CHALLENGE_NO_TITLE,
-  TRANSLATED_VIDEO_CHALLENGE
-  // WRONG_NUM_TESTS_CHALLENGE
+  ENGLISH_CHALLENGE_NO_FILES
 } = require('./__fixtures__/challenge-objects');
 const { SIMPLE_TRANSLATION } = require('./__mocks__/mock-comments');
-
-const COMBINED_CHALLENGE = mergeChallenges(
-  ENGLISH_CHALLENGE,
-  TRANSLATED_CHALLENGE
-);
-
-const COMBINED_CHALLENGE_NO_TITLE = mergeChallenges(
-  ENGLISH_CHALLENGE,
-  TRANSLATED_CHALLENGE_NO_TITLE
-);
-
-const COMBINED_CHALLENGE_TWO_SOLUTIONS = mergeChallenges(
-  ENGLISH_CHALLENGE_TWO_SOLUTIONS,
-  TRANSLATED_CHALLENGE
-);
-
-const COMBINED_CERTIFICATE = mergeChallenges(
-  ENGLISH_CERTIFICATE,
-  TRANSLATED_CERTIFICATE
-);
-
-const COMBINED_VIDEO_CHALLENGE = mergeChallenges(
-  ENGLISH_VIDEO_CHALLENGE,
-  TRANSLATED_VIDEO_CHALLENGE
-);
 
 let logSpy;
 
@@ -51,113 +13,6 @@ describe('translation parser', () => {
   });
   afterEach(() => {
     logSpy.mockRestore();
-  });
-  describe('mergeChallenges', () => {
-    it('takes the description from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.description).toBe(
-        TRANSLATED_CHALLENGE.description
-      );
-    });
-    it('takes the head and tail from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.files[0].head).toBe(
-        ENGLISH_CHALLENGE.files[0].head
-      );
-      expect(COMBINED_CHALLENGE.files[0].tail).toBe(
-        ENGLISH_CHALLENGE.files[0].tail
-      );
-    });
-    it('takes the instructions from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.instructions).toBe(
-        TRANSLATED_CHALLENGE.instructions
-      );
-    });
-    it('takes the seed from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.files[0].contents).toBe(
-        ENGLISH_CHALLENGE.files[0].contents
-      );
-    });
-    it('takes the solution from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.solutions[0]).toBe(
-        ENGLISH_CHALLENGE.solutions[0]
-      );
-    });
-    it('takes multiple solutions', () => {
-      expect(COMBINED_CHALLENGE_TWO_SOLUTIONS.solutions).toEqual(
-        ENGLISH_CHALLENGE_TWO_SOLUTIONS.solutions
-      );
-    });
-    it('takes the testStrings from the first challenge', () => {
-      const actualStrings = COMBINED_CHALLENGE.tests.map(
-        ({ testString }) => testString
-      );
-      const expectedStrings = ENGLISH_CHALLENGE.tests.map(
-        ({ testString }) => testString
-      );
-      for (let i = 0; i < actualStrings.length; i++) {
-        expect(actualStrings[i]).toBe(expectedStrings[i]);
-      }
-    });
-    it('takes the test text from the second challenge', () => {
-      const actualStrings = COMBINED_CHALLENGE.tests.map(({ text }) => text);
-      const expectedStrings = TRANSLATED_CHALLENGE.tests.map(
-        ({ text }) => text
-      );
-      for (let i = 0; i < actualStrings.length; i++) {
-        expect(actualStrings[i]).toBe(expectedStrings[i]);
-      }
-    });
-    it('takes the title from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.title).toBe(TRANSLATED_CHALLENGE.title);
-    });
-
-    // TODO: throw in production?
-    it("takes the first challenge's title if the second is missing", () => {
-      expect(COMBINED_CHALLENGE_NO_TITLE.title).toBe(ENGLISH_CHALLENGE.title);
-    });
-
-    // 'originalTitle' is just used to create the dashedName (which must be
-    // the same in both challenges, but only gets added after parsing)
-    it('creates originalTitle from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.originalTitle).toBe(ENGLISH_CHALLENGE.title);
-    });
-    // TODO: reinstate this after alpha testing.
-    // it('throws an error if the numbers of tests do not match', () => {
-    //   expect(() =>
-    //     mergeChallenges(ENGLISH_CHALLENGE, WRONG_NUM_TESTS_CHALLENGE)
-    //   ).toThrow();
-    // });
-    it('takes the forum id from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.forumTopicId).toBe(
-        TRANSLATED_CHALLENGE.forumTopicId
-      );
-    });
-    it('takes the ids from the first certificate', () => {
-      const actualIds = COMBINED_CERTIFICATE.tests.map(({ id }) => id);
-      const expectedIds = ENGLISH_CERTIFICATE.tests.map(({ id }) => id);
-      for (let i = 0; i < actualIds.length; i++) {
-        expect(actualIds[i]).toBe(expectedIds[i]);
-      }
-    });
-
-    it('takes the titles from the second certificate', () => {
-      const actualTitles = COMBINED_CERTIFICATE.tests.map(({ title }) => title);
-      const expectedTitles = TRANSLATED_CERTIFICATE.tests.map(
-        ({ title }) => title
-      );
-      for (let i = 0; i < actualTitles.length; i++) {
-        expect(actualTitles[i]).toBe(expectedTitles[i]);
-      }
-    });
-    it('certificates do not have a forumTopicId property', () => {
-      expect(Object.keys(COMBINED_CERTIFICATE).includes('forumTopicId')).toBe(
-        false
-      );
-    });
-    it('takes the question from the second challenge', () => {
-      expect(COMBINED_VIDEO_CHALLENGE.question).toBe(
-        TRANSLATED_VIDEO_CHALLENGE.question
-      );
-    });
   });
 
   describe('translateCommentsInChallenge', () => {

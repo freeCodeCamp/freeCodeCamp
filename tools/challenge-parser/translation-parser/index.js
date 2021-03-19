@@ -1,4 +1,4 @@
-const { isEmpty, cloneDeep } = require('lodash');
+const { cloneDeep } = require('lodash');
 
 exports.translateComments = (text, lang, dict, codeLang) => {
   const knownComments = Object.keys(dict);
@@ -31,63 +31,6 @@ exports.translateCommentsInChallenge = (challenge, lang, dict) => {
     });
   }
   return challClone;
-};
-
-exports.mergeChallenges = (engChal, transChal) => {
-  const hasTests =
-    (engChal.tests && transChal.tests) ||
-    (engChal.question && transChal.question);
-  const challenge = {
-    ...engChal,
-    description: transChal.description,
-    instructions: transChal.instructions,
-    originalTitle: engChal.title,
-    // TODO: throw in production?
-    title: isEmpty(transChal.title) ? engChal.title : transChal.title,
-    forumTopicId: transChal.forumTopicId
-  };
-  if (!hasTests)
-    throw Error(
-      `Both challenges must have tests or questions.
-      title: ${engChal.title}
-      translated title: ${transChal.title}`
-    );
-  // TODO: this should break the build when we go to production, but
-  // not for testing.
-  if (transChal.tests && transChal.tests.length !== engChal.tests.length) {
-    console.error(
-      `Challenges in both languages must have the same number of tests.
-    title: ${engChal.title}
-    translated title: ${transChal.title}`
-    );
-    return challenge;
-  }
-
-  // throw Error(
-  //   `Challenges in both languages must have the same number of tests.
-  // title: ${engChal.title}
-  // translated title: ${transChal.title}`
-  // );
-
-  if (transChal.tests) {
-    const translatedTests =
-      engChal.challengeType === 7
-        ? transChal.tests.map(({ title }, i) => ({
-            title,
-            id: engChal.tests[i].id
-          }))
-        : transChal.tests.map(({ text }, i) => ({
-            text,
-            testString: engChal.tests[i].testString
-          }));
-    challenge.tests = translatedTests;
-  } else {
-    challenge.question = transChal.question;
-  }
-
-  // certificates do not have forumTopicIds
-  if (challenge.challengeType === 7) delete challenge.forumTopicId;
-  return challenge;
 };
 
 // bare urls could be interpreted as comments, so we have to lookbehind for
