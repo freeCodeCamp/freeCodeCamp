@@ -3,14 +3,15 @@ const { cloneDeep } = require('lodash');
 exports.translateComments = (text, lang, dict, codeLang) => {
   const knownComments = Object.keys(dict);
   const config = { knownComments, dict, lang };
+  const input = { text, commentCounts: new Map() };
   switch (codeLang) {
     case 'js':
     case 'jsx':
-      return transMultiline(transInline(text, config), config);
+      return transMultiline(transInline(input, config), config);
     case 'html':
-      return transScript(transHTML(transCSS(text, config), config), config);
+      return transScript(transHTML(transCSS(input, config), config), config);
     default:
-      return text;
+      return input;
   }
 };
 
@@ -21,12 +22,14 @@ exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   } else {
     Object.keys(challClone.files).forEach(key => {
       if (challClone.files[key].contents) {
-        challClone.files[key].contents = this.translateComments(
+        let { text, commentCounts } = this.translateComments(
           challenge.files[key].contents,
           lang,
           dict,
           challClone.files[key].ext
         );
+        challClone.__commentCounts = commentCounts;
+        challClone.files[key].contents = text;
       }
     });
   }
@@ -35,54 +38,75 @@ exports.translateCommentsInChallenge = (challenge, lang, dict) => {
 
 // bare urls could be interpreted as comments, so we have to lookbehind for
 // http:// or https://
-function transInline(text, config) {
-  return translateGeneric(text, config, '((?<!https?:)//\\s*)', '(\\s*$)');
+function transInline(input, config) {
+  return translateGeneric(input, config, '((?<!https?:)//\\s*)', '(\\s*$)');
 }
 
-function transMultiline(text, config) {
-  return translateGeneric(text, config, '(/\\*\\s*)', '(\\s*\\*/)');
+function transMultiline(input, config) {
+  return translateGeneric(input, config, '(/\\*\\s*)', '(\\s*\\*/)');
 }
 
 // CSS has to be handled separately since it is looking for comments inside tags
-function transCSS(text, config) {
+function transCSS({ text, commentCounts }, config) {
   const regex = /<style>.*?<\/style>/gms;
   const matches = text.matchAll(regex);
 
   for (const [match] of matches) {
-    text = text.replace(match, transMultiline(match, config));
+    let { text: styleText } = transMultiline(
+      { text: match, commentCounts },
+      config
+    );
+    text = text.replace(match, styleText);
   }
-  return text;
+  return { text, commentCounts };
 }
 
-function transScript(text, config) {
+function transScript({ text, commentCounts }, config) {
   const regex = /<script>.*?<\/script>/gms;
   const matches = text.matchAll(regex);
 
   for (const [match] of matches) {
-    text = text.replace(
-      match,
-      transMultiline(transInline(match, config), config)
+    let { text: scriptText } = transMultiline(
+      transInline({ text: match, commentCounts }, config),
+      config
     );
+    text = text.replace(match, scriptText);
   }
-  return text;
+  return { text, commentCounts };
 }
 
-function transHTML(text, config) {
-  return translateGeneric(text, config, '(<!--\\s*)', '(\\s*-->)');
+function transHTML(input, config) {
+  return translateGeneric(input, config, '(<!--\\s*)', '(\\s*-->)');
 }
 
-function translateGeneric(text, config, regexBefore, regexAfter) {
+function updateCounts(map, key) {
+  if (map.has(key)) {
+    map.set(key, map.get(key) + 1);
+  } else {
+    map.set(key, 1);
+  }
+}
+
+function translateGeneric(
+  { text, commentCounts },
+  config,
+  regexBefore,
+  regexAfter
+) {
   const { knownComments, dict, lang } = config;
   const regex = new RegExp(regexBefore + '(.*?)' + regexAfter, 'gms');
   const matches = text.matchAll(regex);
 
   for (const [match, before, comment, after] of matches) {
     if (knownComments.includes(comment)) {
+      updateCounts(commentCounts, dict[comment][lang]);
       text = text.replace(match, `${before}${dict[comment][lang]}${after}`);
     } else if (comment.trim()) {
       throw `${comment} does not appear in the comment dictionary`;
     }
   }
 
-  return text;
+  return { text, commentCounts };
 }
+
+exports.translateGeneric = translateGeneric;
