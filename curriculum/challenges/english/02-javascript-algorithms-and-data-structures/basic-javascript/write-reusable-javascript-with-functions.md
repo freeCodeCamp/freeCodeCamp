@@ -39,10 +39,12 @@ assert(typeof reusableFunction === 'function');
 assert(hiWorldWasLogged);
 ```
 
-You should call `reusableFunction` after you define it.
+You should call `reusableFunction` once it is defined.
 
 ```js
-assert(/^\s*reusableFunction\(\)\s*/m.test(code));
+const functionStr = reusableFunction && reusableFunction.toString();
+const codeWithoutFunction = code.replace(functionStr);
+assert(/reusableFunction\(\)/.test(__helpers.removeWhiteSpace(codeWithoutFunction)));
 ```
 
 # --seed--
