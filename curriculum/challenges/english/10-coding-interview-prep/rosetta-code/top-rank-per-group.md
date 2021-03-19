@@ -32,7 +32,9 @@ testData1 = [
 
 One could rank top 10 employees in each department by calling:
 
-`topRankPerGroup(10, testData1, 'dept', 'salary')`
+```js
+topRankPerGroup(10, testData1, 'dept', 'salary')
+```
 
 Given the following data:
 
@@ -48,7 +50,9 @@ testData2 = [
 
 One could rank the top-rated movie in each genre by calling:
 
-`topRankPerGroup(1, testData2, 'genre', 'rating')`
+```js
+topRankPerGroup(1, testData2, 'genre', 'rating')
+```
 
 The function should return an array with an array for each group containing the top `n` objects.
 

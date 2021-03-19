@@ -42,11 +42,15 @@ a never used -> .terminating rule
 
 Sample text of:
 
-`I bought a B of As from T S.`
+```html
+I bought a B of As from T S.
+```
 
 Should generate the output:
 
-`I bought a bag of apples from my brother.`
+```html
+I bought a bag of apples from my brother.
+```
 
 **Ruleset 2:**
 
@@ -63,11 +67,15 @@ a never used -> .terminating rule
 
 Sample text of:
 
-`I bought a B of As from T S.`
+```html
+I bought a B of As from T S.
+```
 
 Should generate:
 
-`I bought a bag of apples from T shop.`
+```html
+I bought a bag of apples from T shop.
+```
 
 **Ruleset 3:**
 
@@ -88,11 +96,15 @@ a never used -> .terminating rule
 
 Sample text of:
 
-`I bought a B of As W my Bgage from T S.`
+```html
+I bought a B of As W my Bgage from T S.
+```
 
 Should generate:
 
-`I bought a bag of apples with my money from T shop.`
+```html
+I bought a bag of apples with my money from T shop.
+```
 
 **Ruleset 4:**
 
@@ -130,11 +142,15 @@ _+_ ->
 
 Sample text of:
 
-`_1111*11111_`
+```html
+_1111*11111_
+```
 
 should generate the output:
 
-`11111111111111111111`
+```html
+11111111111111111111
+```
 
 **Ruleset 5:**
 
@@ -166,11 +182,15 @@ B1 -> 1B
 
 This ruleset should turn
 
-`000000A000000`
+```html
+000000A000000
+```
 
 into
 
-`00011H1111000`
+```html
+00011H1111000
+```
 
 # --hints--
 
