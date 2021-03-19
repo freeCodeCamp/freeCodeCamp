@@ -13,7 +13,9 @@ Let's add a `submit` button to your form. Clicking this button will send the dat
 
 Here's an example submit button:
 
-`<button type="submit">this button submits the form</button>`
+```html
+<button type="submit">this button submits the form</button>
+```
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: Refactor Global Variables Out of Functions
+title: Refactoriza variables globales por fuera de funciones
 challengeType: 1
 forumTopicId: 301235
 dashedName: refactor-global-variables-out-of-functions
@@ -8,23 +8,23 @@ dashedName: refactor-global-variables-out-of-functions
 
 # --description--
 
-So far, we have seen two distinct principles for functional programming:
+Hasta ahora, hemos visto dos principios distintos para la programación funcional:
 
-1) Don't alter a variable or object - create new variables and objects and return them if need be from a function. Hint: using something like `var newArr = arrVar`, where `arrVar` is an array will simply create a reference to the existing variable and not a copy. So changing a value in `newArr` would change the value in `arrVar`.
+1) No alteres una variable u objeto: crea nuevas variables y objetos y devuélvelos, si es necesario, desde una función. Pista: usar algo como `var newArr = arrVar`, donde `arrVar` es un arreglo, simplemente creará una referencia a la variable existente y no una copia. Así que cambiar un valor en `newArr` cambiaría el valor en `arrVar`.
 
-2) Declare function parameters - any computation inside a function depends only on the arguments passed to the function, and not on any global object or variable.
+2) Declara parámetros de función: cualquier cálculo dentro de una función depende sólo de los argumentos pasados a la función y no en ningún objeto o variable global.
 
-Adding one to a number is not very exciting, but we can apply these principles when working with arrays or more complex objects.
+Añadir uno a un número no es muy emocionante, pero podemos aplicar estos principios cuando trabajamos con arreglos u objetos más complejos.
 
 # --instructions--
 
-Rewrite the code so the global array `bookList` is not changed inside either function. The `add` function should add the given `bookName` to the end of the array passed to it and return a new array (list). The `remove` function should remove the given `bookName` from the array passed to it.
+Reescribe el código para que el arreglo global `bookList` no sea cambiado dentro de ninguna de las funciones. La función `add` debe agregar el `bookName` dado al final del arreglo pasado a esta y devolver un nuevo arreglo (lista). La función `remove` debe eliminar el `bookName` dado del arreglo pasado a esta.
 
-**Note:** Both functions should return an array, and any new parameters should be added before the `bookName` parameter.
+**Nota:** ambas funciones deben devolver un arreglo y cualquier nuevo parámetro debe ser añadido antes del parámetro `bookName`.
 
 # --hints--
 
-`bookList` should not change and still equal `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`bookList` no debe cambiar y aún ser igual a `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`newBookList` should equal `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+`newBookList` debe ser igual a `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`newerBookList` should equal `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`newerBookList` debe ser igual a `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-`newestBookList` should equal `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+`newestBookList` debe ser igual a `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
 ```js
 assert(

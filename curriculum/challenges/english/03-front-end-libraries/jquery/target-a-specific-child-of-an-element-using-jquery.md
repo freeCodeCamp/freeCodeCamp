@@ -18,7 +18,9 @@ jQuery uses CSS Selectors to target elements. The `target:nth-child(n)` CSS sele
 
 Here's how you would give the third element in each well the bounce class:
 
-`$(".target:nth-child(3)").addClass("animated bounce");`
+```js
+$(".target:nth-child(3)").addClass("animated bounce");
+```
 
 Make the second child in each of your well elements bounce. You must select the elements' children with the `target` class.
 

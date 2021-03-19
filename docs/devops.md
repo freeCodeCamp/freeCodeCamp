@@ -821,7 +821,7 @@ deployed on each instance like so:
    Are you sure you want to continue? [y/N] y
    ```
 
-   Select yes (y) to remove everything that is not in use.
+   Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
 
 ## Updating Node.js versions on VMs
 
@@ -847,10 +847,10 @@ Verify installed packages
 npm ls -g --depth=0
 ```
 
-Alias `default` Node.js versions to the current `stable`
+Alias the `default` Node.js version to the current LTS
 
 ```console
-nvm alias default stable
+nvm alias default lts/*
 ```
 
 

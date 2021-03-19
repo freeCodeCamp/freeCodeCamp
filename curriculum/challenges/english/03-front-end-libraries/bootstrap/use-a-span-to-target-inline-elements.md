@@ -22,7 +22,9 @@ Using a `span` element, nest the word `love` inside the `p` element that current
 
 Here's how you would do this for the `p` element that has the text `Top 3 things cats hate`:
 
-`<p>Top 3 things cats <span class="text-danger">hate:</span></p>`
+```html
+<p>Top 3 things cats <span class="text-danger">hate:</span></p>
+```
 
 # --hints--
 

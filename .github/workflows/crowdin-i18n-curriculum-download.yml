@@ -90,7 +90,7 @@ jobs:
         run: |
           cd ./crowdin
           npm ci
-          
+
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR
         uses: ./tools/crowdin/actions/pr-creator
@@ -99,7 +99,7 @@ jobs:
           branch: 'i18n-sync-curriculum'
           owner-repo: 'freeCodeCamp/freeCodeCamp'
           base: 'main'
-          title: 'chore(i18n,curiculum): processed translations'
+          title: 'chore(i18n,curriculum): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
           labels: 'crowdin-sync'
           reviewers: 'RandellDawson, nhcarrigan'

@@ -12,7 +12,9 @@ Now that we're using Bootstrap, we can center our heading element to make it loo
 
 Remember that you can add several classes to the same element by separating each of them with a space, like this:
 
-`<h2 class="red-text text-center">your text</h2>`
+```html
+<h2 class="red-text text-center">your text</h2>
+```
 
 # --hints--
 
