@@ -176,7 +176,7 @@ export class Project extends Component {
                 <br />
                 <Spacer />
               </Col>
-              <CompletionModal blockName={blockName} superBlock={superBlock} />
+              <CompletionModal block={block} superBlock={superBlock} />
               <HelpModal />
             </Row>
           </Grid>

@@ -298,7 +298,7 @@ export class Project extends Component {
                 </Button>
                 <Spacer size={2} />
               </Col>
-              <CompletionModal blockName={blockName} superBlock={superBlock} />
+              <CompletionModal block={block} superBlock={superBlock} />
             </Row>
           </Grid>
         </LearnLayout>

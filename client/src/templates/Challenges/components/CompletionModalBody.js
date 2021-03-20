@@ -4,10 +4,8 @@ import BezierEasing from 'bezier-easing';
 import GreenPass from '../../../assets/icons/GreenPass';
 import { withTranslation } from 'react-i18next';
 
-import { dasherize } from '../../../../../utils/slugs';
-
 const propTypes = {
-  blockName: PropTypes.string,
+  block: PropTypes.string,
   completedPercent: PropTypes.number,
   superBlock: PropTypes.string,
   t: PropTypes.func.isRequired
@@ -61,11 +59,8 @@ export class CompletionModalBody extends PureComponent {
   }
 
   render() {
-    const { blockName, completedPercent, superBlock, t } = this.props;
-
-    const blockTitle = t(
-      `intro:${superBlock}.blocks.${dasherize(blockName)}.title`
-    );
+    const { block, completedPercent, superBlock, t } = this.props;
+    const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
 
     return (
       <>

@@ -277,6 +277,7 @@ class ShowClassic extends Component {
 
   render() {
     const {
+      block,
       fields: { blockName },
       forumTopicId,
       superBlock,
@@ -332,7 +333,11 @@ class ShowClassic extends Component {
               testOutput={this.renderTestOutput()}
             />
           </Media>
-          <CompletionModal blockName={blockName} superBlock={superBlock} />
+          <CompletionModal
+            block={block}
+            blockName={blockName}
+            superBlock={superBlock}
+          />
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />

@@ -6,7 +6,7 @@ import { render, fireEvent } from '@testing-library/react';
 import CompletionModalBody from './CompletionModalBody';
 
 const props = {
-  blockName: 'Basic HTML and HTML5',
+  block: 'basic-html-and-html5',
   completedPercent: Math.floor(Math.random() * 101),
   superBlock: 'responsive-web-design'
 };

@@ -70,6 +70,7 @@ const mapDispatchToProps = function (dispatch) {
 
 const propTypes = {
   allowBlockDonationRequests: PropTypes.func,
+  block: PropTypes.string,
   blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
@@ -185,7 +186,7 @@ export class CompletionModalInner extends Component {
 
   render() {
     const {
-      blockName = '',
+      block,
       close,
       isOpen,
       message,
@@ -222,7 +223,7 @@ export class CompletionModalInner extends Component {
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
           <CompletionModalBody
-            blockName={blockName}
+            block={block}
             completedPercent={completedPercent}
             superBlock={superBlock}
           />
