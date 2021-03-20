@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6e
-title: Use the every Method to Check that Every Element in an Array Meets a Criteria
+title: Usa el método "every" para comprobar que cada elemento de un arreglo atienda un criterio
 challengeType: 1
 forumTopicId: 301312
 dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria
@@ -8,43 +8,44 @@ dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a
 
 # --description--
 
-The `every` method works with arrays to check if *every* element passes a particular test. It returns a Boolean value - `true` if all values meet the criteria, `false` if not.
+El método `every` funciona con arreglos para comprobar si *every element* pasa una prueba en particular. Devuelve un valor booleano - `true` si todos los valores cumplen los criterios, `false` si no.
 
-For example, the following code would check if every element in the `numbers` array is less than 10:
+Por ejemplo, el siguiente código comprobaría si cada elemento en el arreglo `numbers` es menor a 10:
 
 ```js
 var numbers = [1, 5, 8, 0, 10, 11];
 numbers.every(function(currentValue) {
   return currentValue < 10;
 });
-// Returns false
 ```
+
+El método `every` devolvería `false` aquí.
 
 # --instructions--
 
-Use the `every` method inside the `checkPositive` function to check if every element in `arr` is positive. The function should return a Boolean value.
+Utiliza el método `every` dentro de la función `checkPositive` para comprobar si cada elemento en `arr` es positivo. La función debe devolver un valor booleano.
 
 # --hints--
 
-Your code should use the `every` method.
+Tu código debe usar el método `every`.
 
 ```js
 assert(code.match(/\.every/g));
 ```
 
-`checkPositive([1, 2, 3, -4, 5])` should return `false`.
+`checkPositive([1, 2, 3, -4, 5])` debe devolver `false`.
 
 ```js
 assert.isFalse(checkPositive([1, 2, 3, -4, 5]));
 ```
 
-`checkPositive([1, 2, 3, 4, 5])` should return `true`.
+`checkPositive([1, 2, 3, 4, 5])` debe devolver `true`.
 
 ```js
 assert.isTrue(checkPositive([1, 2, 3, 4, 5]));
 ```
 
-`checkPositive([1, -2, 3, -4, 5])` should return `false`.
+`checkPositive([1, -2, 3, -4, 5])` debe devolver `false`.
 
 ```js
 assert.isFalse(checkPositive([1, -2, 3, -4, 5]));

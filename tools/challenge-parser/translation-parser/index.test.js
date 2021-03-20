@@ -1,47 +1,13 @@
 /* global expect jest */
 const {
-  mergeChallenges,
   translateComments,
-  translateCommentsInChallenge
+  translateCommentsInChallenge,
+  translateGeneric
 } = require('.');
 const {
-  ENGLISH_CERTIFICATE,
-  ENGLISH_CHALLENGE,
-  ENGLISH_CHALLENGE_NO_FILES,
-  ENGLISH_CHALLENGE_TWO_SOLUTIONS,
-  ENGLISH_VIDEO_CHALLENGE,
-  TRANSLATED_CERTIFICATE,
-  TRANSLATED_CHALLENGE,
-  TRANSLATED_CHALLENGE_NO_TITLE,
-  TRANSLATED_VIDEO_CHALLENGE
-  // WRONG_NUM_TESTS_CHALLENGE
+  ENGLISH_CHALLENGE_NO_FILES
 } = require('./__fixtures__/challenge-objects');
 const { SIMPLE_TRANSLATION } = require('./__mocks__/mock-comments');
-
-const COMBINED_CHALLENGE = mergeChallenges(
-  ENGLISH_CHALLENGE,
-  TRANSLATED_CHALLENGE
-);
-
-const COMBINED_CHALLENGE_NO_TITLE = mergeChallenges(
-  ENGLISH_CHALLENGE,
-  TRANSLATED_CHALLENGE_NO_TITLE
-);
-
-const COMBINED_CHALLENGE_TWO_SOLUTIONS = mergeChallenges(
-  ENGLISH_CHALLENGE_TWO_SOLUTIONS,
-  TRANSLATED_CHALLENGE
-);
-
-const COMBINED_CERTIFICATE = mergeChallenges(
-  ENGLISH_CERTIFICATE,
-  TRANSLATED_CERTIFICATE
-);
-
-const COMBINED_VIDEO_CHALLENGE = mergeChallenges(
-  ENGLISH_VIDEO_CHALLENGE,
-  TRANSLATED_VIDEO_CHALLENGE
-);
 
 let logSpy;
 
@@ -52,111 +18,51 @@ describe('translation parser', () => {
   afterEach(() => {
     logSpy.mockRestore();
   });
-  describe('mergeChallenges', () => {
-    it('takes the description from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.description).toBe(
-        TRANSLATED_CHALLENGE.description
-      );
-    });
-    it('takes the head and tail from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.files[0].head).toBe(
-        ENGLISH_CHALLENGE.files[0].head
-      );
-      expect(COMBINED_CHALLENGE.files[0].tail).toBe(
-        ENGLISH_CHALLENGE.files[0].tail
-      );
-    });
-    it('takes the instructions from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.instructions).toBe(
-        TRANSLATED_CHALLENGE.instructions
-      );
-    });
-    it('takes the seed from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.files[0].contents).toBe(
-        ENGLISH_CHALLENGE.files[0].contents
-      );
-    });
-    it('takes the solution from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.solutions[0]).toBe(
-        ENGLISH_CHALLENGE.solutions[0]
-      );
-    });
-    it('takes multiple solutions', () => {
-      expect(COMBINED_CHALLENGE_TWO_SOLUTIONS.solutions).toEqual(
-        ENGLISH_CHALLENGE_TWO_SOLUTIONS.solutions
-      );
-    });
-    it('takes the testStrings from the first challenge', () => {
-      const actualStrings = COMBINED_CHALLENGE.tests.map(
-        ({ testString }) => testString
-      );
-      const expectedStrings = ENGLISH_CHALLENGE.tests.map(
-        ({ testString }) => testString
-      );
-      for (let i = 0; i < actualStrings.length; i++) {
-        expect(actualStrings[i]).toBe(expectedStrings[i]);
-      }
-    });
-    it('takes the test text from the second challenge', () => {
-      const actualStrings = COMBINED_CHALLENGE.tests.map(({ text }) => text);
-      const expectedStrings = TRANSLATED_CHALLENGE.tests.map(
-        ({ text }) => text
-      );
-      for (let i = 0; i < actualStrings.length; i++) {
-        expect(actualStrings[i]).toBe(expectedStrings[i]);
-      }
-    });
-    it('takes the title from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.title).toBe(TRANSLATED_CHALLENGE.title);
-    });
 
-    // TODO: throw in production?
-    it("takes the first challenge's title if the second is missing", () => {
-      expect(COMBINED_CHALLENGE_NO_TITLE.title).toBe(ENGLISH_CHALLENGE.title);
-    });
-
-    // 'originalTitle' is just used to create the dashedName (which must be
-    // the same in both challenges, but only gets added after parsing)
-    it('creates originalTitle from the first challenge', () => {
-      expect(COMBINED_CHALLENGE.originalTitle).toBe(ENGLISH_CHALLENGE.title);
-    });
-    // TODO: reinstate this after alpha testing.
-    // it('throws an error if the numbers of tests do not match', () => {
-    //   expect(() =>
-    //     mergeChallenges(ENGLISH_CHALLENGE, WRONG_NUM_TESTS_CHALLENGE)
-    //   ).toThrow();
-    // });
-    it('takes the forum id from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.forumTopicId).toBe(
-        TRANSLATED_CHALLENGE.forumTopicId
+  describe('translateGeneric', () => {
+    it('returns an object containing translated text', () => {
+      expect.assertions(1);
+      const seed = `//  Add your code below this line
+      Add your code above this line `;
+      const transSeed = `//  (Chinese) Add your code below this line (Chinese)
+      Add your code above this line `;
+      const knownComments = Object.keys(SIMPLE_TRANSLATION);
+      const config = {
+        knownComments,
+        dict: SIMPLE_TRANSLATION,
+        lang: 'chinese'
+      };
+      const actual = translateGeneric(
+        { text: seed, commentCounts: new Map() },
+        config,
+        '((?<!https?:)//\\s*)',
+        '(\\s*$)'
       );
+      expect(actual.text).toBe(transSeed);
     });
-    it('takes the ids from the first certificate', () => {
-      const actualIds = COMBINED_CERTIFICATE.tests.map(({ id }) => id);
-      const expectedIds = ENGLISH_CERTIFICATE.tests.map(({ id }) => id);
-      for (let i = 0; i < actualIds.length; i++) {
-        expect(actualIds[i]).toBe(expectedIds[i]);
-      }
-    });
-
-    it('takes the titles from the second certificate', () => {
-      const actualTitles = COMBINED_CERTIFICATE.tests.map(({ title }) => title);
-      const expectedTitles = TRANSLATED_CERTIFICATE.tests.map(
-        ({ title }) => title
+    it('returns an object containing a count of the replaced comments', () => {
+      expect.assertions(1);
+      const seed = `//  Add your code below this line
+      // Add your code above this line
+      // Add your code below this line
+      `;
+      const expectedCommentCounts = new Map();
+      expectedCommentCounts
+        .set('(Chinese) Add your code below this line (Chinese)', 2)
+        .set('(Chinese) Add your code above this line (Chinese)', 1);
+      const knownComments = Object.keys(SIMPLE_TRANSLATION);
+      const config = {
+        knownComments,
+        dict: SIMPLE_TRANSLATION,
+        lang: 'chinese'
+      };
+      const actual = translateGeneric(
+        { text: seed, commentCounts: new Map() },
+        config,
+        '((?<!https?:)//\\s*)',
+        '(\\s*$)'
       );
-      for (let i = 0; i < actualTitles.length; i++) {
-        expect(actualTitles[i]).toBe(expectedTitles[i]);
-      }
-    });
-    it('certificates do not have a forumTopicId property', () => {
-      expect(Object.keys(COMBINED_CERTIFICATE).includes('forumTopicId')).toBe(
-        false
-      );
-    });
-    it('takes the question from the second challenge', () => {
-      expect(COMBINED_VIDEO_CHALLENGE.question).toBe(
-        TRANSLATED_VIDEO_CHALLENGE.question
-      );
+      expect(actual.commentCounts).toEqual(expectedCommentCounts);
     });
   });
 
@@ -177,21 +83,21 @@ describe('translation parser', () => {
          Add your code above this line `;
       const transSeed = `//  (Chinese) Add your code below this line (Chinese)
          Add your code above this line `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        transSeed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(transSeed);
     });
 
     it('does not translate urls', () => {
       const seed = `http:// Add your code below this line
       Add your code above this line `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        seed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(seed);
       const seedS = `https:// Add your code below this line
       Add your code above this line `;
       expect(
-        translateComments(seedS, 'chinese', SIMPLE_TRANSLATION, 'js')
+        translateComments(seedS, 'chinese', SIMPLE_TRANSLATION, 'js').text
       ).toBe(seedS);
     });
 
@@ -200,9 +106,9 @@ describe('translation parser', () => {
          Add your code above this line `;
       const transSeed = `inline comment //  (Chinese) Add your code below this line (Chinese)
          Add your code above this line `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        transSeed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(transSeed);
     });
 
     it('replaces multiple English comments with their translations', () => {
@@ -210,9 +116,9 @@ describe('translation parser', () => {
          // Add your code below this line `;
       const transSeed = `inline comment //  (Chinese) Add your code below this line (Chinese)
          // (Chinese) Add your code below this line (Chinese) `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        transSeed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(transSeed);
     });
 
     it('replaces multiline English comments with their translations', () => {
@@ -220,9 +126,9 @@ describe('translation parser', () => {
          /* Add your code above this line */ change code below this line  `;
       const transSeed = `multiline comment /*  (Chinese) Add your code below this line (Chinese) */
          /* (Chinese) Add your code above this line (Chinese) */ change code below this line  `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        transSeed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(transSeed);
     });
 
     it('replaces repeated multiline comments with their translations', () => {
@@ -230,17 +136,17 @@ describe('translation parser', () => {
          /* Add your code below this line */ change code below this line  `;
       const transSeed = `multiline comment /*  (Chinese) Add your code below this line (Chinese) */
          /* (Chinese) Add your code below this line (Chinese) */ change code below this line  `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        transSeed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(transSeed);
     });
 
     it('ignores empty comments', () => {
       expect.assertions(1);
       const seed = '//';
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        seed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(seed);
     });
 
     it('only replaces text inside comments, not between them', () => {
@@ -248,13 +154,13 @@ describe('translation parser', () => {
          /* Add your code above this line */ Add your code below this line /* */  `;
       const transSeed = `multiline comment /*  (Chinese) Add your code below this line (Chinese) */
          /* (Chinese) Add your code above this line (Chinese) */ Add your code below this line /* */  `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        transSeed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(transSeed);
 
       const seedTwo = `multiline /* */  Add your code below this line /* */  `;
       expect(
-        translateComments(seedTwo, 'chinese', SIMPLE_TRANSLATION, 'js')
+        translateComments(seedTwo, 'chinese', SIMPLE_TRANSLATION, 'js').text
       ).toBe(seedTwo);
     });
 
@@ -264,7 +170,7 @@ describe('translation parser', () => {
       const transSeed = `<div> <!--  (Chinese) Add your code below this line (Chinese) -->
          <!-- (Chinese) Add your code above this line (Chinese) --> <span>change code below this line</span>  `;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html').text
       ).toBe(transSeed);
     });
 
@@ -276,7 +182,7 @@ describe('translation parser', () => {
         /* (Chinese) Add your code below this line (Chinese) */
       </style>`;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html').text
       ).toBe(transSeed);
     });
 
@@ -289,15 +195,17 @@ describe('translation parser', () => {
         /* (Chinese) Add your code below this line (Chinese) */
         /* (Chinese) Add your code below this line (Chinese) */
       </style>`;
+      const commentCounts = new Map();
+      commentCounts.set('(Chinese) Add your code below this line (Chinese)', 2);
       expect(
         translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
-      ).toBe(transSeed);
+      ).toEqual({ text: transSeed, commentCounts });
     });
 
     it('ignores css comments outside style tags', () => {
       const seed = `/* Add your code below this line */`;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html').text
       ).toBe(seed);
     });
 
@@ -308,14 +216,14 @@ describe('translation parser', () => {
       <style>
       </style>`;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html').text
       ).toBe(seed);
     });
 
     it('only replaces inside English html comments', () => {
       const seed = `<div> <!-- -->  Add your code below this line <!-- -->`;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html').text
       ).toBe(seed);
     });
 
@@ -325,7 +233,7 @@ describe('translation parser', () => {
       const transSeed = `{ /*  (Chinese) Add your code below this line (Chinese) */ }
       { /* (Chinese) Add your code above this line (Chinese) */ } <span>change code below this line</span>  `;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'jsx')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'jsx').text
       ).toBe(transSeed);
     });
 
@@ -337,7 +245,7 @@ describe('translation parser', () => {
         // (Chinese) Add your code below this line (Chinese)
       </script>`;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html').text
       ).toBe(transSeed);
     });
 
@@ -351,23 +259,23 @@ describe('translation parser', () => {
         // (Chinese) Add your code below this line (Chinese)
       </script>`;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html').text
       ).toBe(transSeed);
     });
 
     it('ignores html comments inside JavaScript', () => {
       const seed = `<div> <!--  Add your code below this line
          Add your code above this line --> <span>change code below this line</span>  `;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        seed
-      );
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js').text
+      ).toBe(seed);
     });
 
     it('ignores html comments inside jsx', () => {
       const seed = `<div> <!--  Add your code below this line
          Add your code above this line --> <span>change code below this line</span>  `;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'jsx')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'jsx').text
       ).toBe(seed);
     });
 
@@ -407,7 +315,7 @@ describe('translation parser', () => {
       const seed = `{ /*  Add your code below this line */ }`;
       const transSeed = `{ /*  (Chinese) Add your code below this line (Chinese) */ }`;
       expect(
-        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'jsx')
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'jsx').text
       ).toBe(transSeed);
     });
 

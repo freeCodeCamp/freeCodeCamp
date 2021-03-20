@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b61
-title: Use the map Method to Extract Data from an Array
+title: Usa el método "map" para extraer datos de un arreglo
 challengeType: 1
 forumTopicId: 18214
 dashedName: use-the-map-method-to-extract-data-from-an-array
@@ -8,19 +8,19 @@ dashedName: use-the-map-method-to-extract-data-from-an-array
 
 # --description--
 
-So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.
+Hasta ahora hemos aprendido a utilizar funciones puras para evitar efectos secundarios en un programa. Además, hemos aprendido el valor de tener una función que solo depende de sus argumentos de entrada.
 
-This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.
+Este es solo el principio. Como su nombre indica, la programación funcional se centra en una teoría de funciones.
 
-It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered <dfn>first class objects</dfn> in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
+Tendría sentido pasarlos como argumentos a otras funciones y devolver una función de otra función. Las funciones se consideran <dfn>first class objects</dfn> en JavaScript, lo que significa que pueden ser usados como cualquier otro objeto. Pueden guardarse en variables, almacenarse en un objeto o pasarse como argumentos de función.
 
-Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at `Array.prototype.map()`, or more simply `map`.
+Empecemos con algunas funciones de arreglos simples, que son métodos en el prototipo de objetos del arreglo. En este ejercicio estamos utilizando `Array.prototype.map()` o más específicamente `map`.
 
-The `map` method iterates over each item in an array and returns a new array containing the results of calling the callback function on each element. It does this without mutating the original array.
+El método `map` iterará sobre cada elemento de un arreglo y devuelve un nuevo arreglo que contiene los resultados de llamar a la función callback en cada elemento. Esto lo hace sin mutar el arreglo original.
 
-When the callback is used, it is passed three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `map` method was called.
+Cuando se utiliza el callback, se pasan tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo al que se llamó el método `map`.
 
-See below for an example using the `map` method on the `users` array to return a new array containing only the names of the users as elements. For simplicity, the example only uses the first argument of the callback.
+A continuación se muestra un ejemplo con el método `map` en el arreglo `users` para devolver un nuevo arreglo que contiene solo los nombres de los usuarios como elementos. Para que sea más fácil, el ejemplo solo utiliza el primer argumento del callback.
 
 ```js
 const users = [
@@ -30,16 +30,18 @@ const users = [
 ];
 
 const names = users.map(user => user.name);
-console.log(names); // [ 'John', 'Amy', 'camperCat' ]
+console.log(names);
 ```
+
+La consola mostraría el valor `[ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 
-The `watchList` array holds objects with information on several movies. Use `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys to the `ratings` variable. The code in the editor currently uses a `for` loop to do this, so you should replace the loop functionality with your `map` expression.
+El arreglo `watchList` contiene objetos con información sobre varias películas. Usa `map` en `watchList` para asignar un nuevo arreglo de objetos con solo `title` y `rating` claves a la variable `ratings`. El código en el editor utiliza actualmente un bucle `for` para hacer esto, por lo que debería reemplazar la funcionalidad del bucle con su expresión `map`.
 
 # --hints--
 
-The `watchList` variable should not change.
+La variable `watchList` no debe cambiar.
 
 ```js
 assert(
@@ -47,19 +49,19 @@ assert(
 );
 ```
 
-Your code should not use a `for` loop.
+Tu código no debe usar un bucle `for`.
 
 ```js
 assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
 ```
 
-Your code should use the `map` method.
+Tu código debe usar el método `map`.
 
 ```js
 assert(code.match(/\.map/g));
 ```
 
-`ratings` should equal `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
+`ratings` debe ser igual a `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
 
 ```js
 assert.deepEqual(ratings, [

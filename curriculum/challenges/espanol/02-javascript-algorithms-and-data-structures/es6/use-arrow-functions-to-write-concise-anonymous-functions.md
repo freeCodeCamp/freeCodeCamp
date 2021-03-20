@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b43
-title: Use Arrow Functions to Write Concise Anonymous Functions
+title: Usa funciones flecha para escribir funciones anónimas de manera breve
 challengeType: 1
 forumTopicId: 301211
 dashedName: use-arrow-functions-to-write-concise-anonymous-functions
@@ -8,9 +8,9 @@ dashedName: use-arrow-functions-to-write-concise-anonymous-functions
 
 # --description--
 
-In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.
+En JavaScript, usualmente no necesitas nombrar tus funciones, especialmente cuando se pasa una función como argumento a otra función. En su lugar, creamos funciones inline (en línea). No necesitamos nombrar estas funciones porque no las reutilizamos en otro lugar.
 
-To achieve this, we often use the following syntax:
+Para lograr esto, por lo general se usa la siguiente sintaxis:
 
 ```js
 const myFunc = function() {
@@ -19,7 +19,7 @@ const myFunc = function() {
 }
 ```
 
-ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use **arrow function syntax**:
+ES6 nos proporciona el azúcar sintáctico, para no tener que escribir funciones anónimas de este modo. En su lugar, puedes usar la **sintaxis de función flecha**:
 
 ```js
 const myFunc = () => {
@@ -28,45 +28,45 @@ const myFunc = () => {
 }
 ```
 
-When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
+Cuando la función no posee cuerpo y sólo tiene un valor de retorno, la sintaxis de "función de flecha", te permite omitir la palabra clave `return`, así como los corchetes que rodean el código. Esto ayuda a simplificar las funciones más pequeñas en sentencias de una sola línea:
 
 ```js
 const myFunc = () => "value";
 ```
 
-This code will still return the string `value` by default.
+Este código todavía retorna el string `value` por defecto.
 
 # --instructions--
 
-Rewrite the function assigned to the variable `magic` which returns a `new Date()` to use arrow function syntax. Also, make sure nothing is defined using the keyword `var`.
+Reescribe la función asignada a la variable `magic`, la cual devuelve una `new Date()`, utilizando la sintaxis de función flecha. Además, asegúrate de que nada esté definido usando la palabra clave `var`.
 
 # --hints--
 
-User should replace `var` keyword.
+Debes reemplazar la palabra clave `var`.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`magic` should be a constant variable (by using `const`).
+`magic` debe ser una variable constante (utilizando `const`).
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
 ```
 
-`magic` should be a `function`.
+`magic` debe ser una función (`function`).
 
 ```js
 assert(typeof magic === 'function');
 ```
 
-`magic()` should return correct date.
+`magic()` debe devolver la fecha correcta.
 
 ```js
 assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 ```
 
-`function` keyword should not be used.
+La palabra clave `function` no debe ser usada.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/function/g));
