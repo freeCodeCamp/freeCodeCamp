@@ -15,7 +15,9 @@ HTML5 允许在任何标签上使用这个属性。 该属性尤其适用于链�
 
 举个例子：
 
-`<button accesskey="b">Important Button</button>`
+```html
+<button accesskey="b">Important Button</button>
+```
 
 # --instructions--
 
@@ -35,7 +37,7 @@ assert($('#first').attr('accesskey'));
 assert($('#second').attr('accesskey'));
 ```
 
-`id` 为 `first` 的 `a` 标签的 `accesskey` 属性值应为 `g`。 注意使用小写。
+`id` 为 `first` 的 `a` 标签的 `accesskey` 属性值应为 `g`。 注意要使用小写。
 
 ```js
 assert($('#first').attr('accesskey') == 'g');

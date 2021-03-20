@@ -13,7 +13,9 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 举个例子：
 
-`<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>`
+```html
+<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>
+```
 
 # --instructions--
 
@@ -21,7 +23,7 @@ Camper Cat 的比武大会的时间确定了！ 用 `time` 标签包裹文本 `T
 
 # --hints--
 
-应存在一个内容文本为 `Thank you to everyone for responding to Master Camper Cat's survey.` 的 `p` 元素和一个 `time` 元素。
+应存在一个 `time` 元素和一个内容文本为 `Thank you to everyone for responding to Master Camper Cat's survey.` 的 `p` 元素。
 
 ```js
 assert(timeElement.length);
