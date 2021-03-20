@@ -24,7 +24,7 @@ const {
 
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
-const { flatten, isEmpty, cloneDeep } = require('lodash');
+const { flatten, isEmpty, cloneDeep, isEqual } = require('lodash');
 const { getLines } = require('../../utils/get-lines');
 
 const jsdom = require('jsdom');
@@ -62,12 +62,14 @@ const TRANSLATABLE_COMMENTS = getTranslatableComments(
 // the config files are created during the build, but not before linting
 // eslint-disable-next-line import/no-unresolved
 const testEvaluator = require('../../config/client/test-evaluator').filename;
+const { inspect } = require('util');
 
 const commentExtractors = {
   html: require('./utils/extract-html-comments'),
   js: require('./utils/extract-js-comments'),
   jsx: require('./utils/extract-jsx-comments'),
-  css: require('./utils/extract-css-comments')
+  css: require('./utils/extract-css-comments'),
+  scriptJs: require('./utils/extract-script-js-comments')
 };
 
 // rethrow unhandled rejections to make sure the tests exit with -1
@@ -329,7 +331,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
               // We get all the actual comments using the appropriate parsers
               if (file.ext === 'html') {
-                const commentTypes = ['css', 'html'];
+                const commentTypes = ['css', 'html', 'scriptJs'];
                 for (let type of commentTypes) {
                   const newComments = commentExtractors[type](file.contents);
                   for (const [key, value] of Object.entries(newComments)) {
@@ -342,17 +344,22 @@ function populateTestsForLang({ lang, challenges, meta }) {
                 comments = commentExtractors[file.ext](file.contents);
               }
 
-              // Then we compare the number of times a given comment appears
-              // (count) with the number of times the text within it appears
-              // (commentTextCount)
-              for (const [comment, count] of Object.entries(comments)) {
-                const commentTextCount =
-                  file.contents.split(comment).length - 1;
-                if (commentTextCount !== count)
-                  throw Error(
-                    `Translated comment text, ${comment}, should only appear inside comments`
-                  );
-              }
+              // Then we compare the number of times each comment appears in the
+              // translated text (commentMap) with the number of replacements
+              // made during translation (challenge.__commentCounts). If they
+              // differ, the translation must have gone wrong
+
+              const commentMap = new Map(Object.entries(comments));
+
+              if (isEmpty(challenge.__commentCounts) && isEmpty(commentMap))
+                return;
+
+              if (!isEqual(commentMap, challenge.__commentCounts))
+                throw Error(`Mismatch in ${challenge.title}. Replaced comments:
+${inspect(challenge.__commentCounts)}
+Comments in translated text:
+${inspect(commentMap)}
+`);
             });
           });
 
