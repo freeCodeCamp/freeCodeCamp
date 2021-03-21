@@ -19,19 +19,27 @@ Puedes anidar enlaces dentro de otros elementos de texto.
 
 Desglosemos el ejemplo. El texto normal está envuelto en el elemento `p`:
 
-`<p> Here's a ... for you to follow. </p>`
+```html
+<p> Here's a ... for you to follow. </p>
+```
 
 A continuación está el elemento *anchor* `<a>` (que requiere una etiqueta de cierre `</a>`):
 
-`<a> ... </a>`
+```html
+<a> ... </a>
+```
 
 `target` es un atributo de etiqueta anchor que especifica dónde abrir el enlace. El valor `_blank` especifica abrir el enlace en una nueva pestaña. El `href` es un atributo de etiqueta anchor que contiene la dirección URL del enlace:
 
-`<a href="http://freecodecamp.org"> ... </a>`
+```html
+<a href="http://freecodecamp.org"> ... </a>
+```
 
 El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama <dfn>anchor text</dfn>, y mostrará el enlace para hacer clic:
 
-`<a href=" ... ">link to freecodecamp.org</a>`
+```html
+<a href=" ... ">link to freecodecamp.org</a>
+```
 
 El resultado final del ejemplo se verá así:
 
@@ -75,7 +83,7 @@ Debes crear un nuevo elemento `p`. Debe haber al menos 3 etiquetas `p` en tu có
 assert($('p') && $('p').length > 2);
 ```
 
-El elemento `a` debe estar anidado dentro del nuevo elemento `p`.
+Tu elemento `a` debe ser anidado dentro de tu nuevo elemento `p`.
 
 ```js
 assert(
@@ -94,7 +102,7 @@ assert(
 );
 ```
 
-El elemento `a` <em>no</em> debe tener el texto `View more`.
+Tu elemento `a` <em>no</em> debe tener el texto `View more`.
 
 ```js
 assert(
@@ -114,7 +122,7 @@ assert(
 );
 ```
 
-Cada uno de los elementos `a` debe tener una etiqueta de cierre.
+Cada uno de tus elementos `a` debe tener una etiqueta de cierre.
 
 ```js
 assert(

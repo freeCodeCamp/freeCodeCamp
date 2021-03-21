@@ -9,13 +9,15 @@ dashedName: add-a-text-alternative-to-images-for-visually-impaired-accessibility
 
 # --description--
 
-Probablemente hayas visto un atributo `alt` en una etiqueta `img` en otros desafíos. El atributo`alt` describe el contenido de la imagen y proporciona un texto alternativo. Un atributo `alt` ayuda en los casos en que la imagen no se carga o un usuario no pueda verla. Los motores de búsqueda también lo utilizan para comprender que contiene una imagen e incluirla en los resultados de búsqueda. Aquí hay un ejemplo:
+Probablemente hayas visto un atributo `alt` en una etiqueta `img` en otros desafíos. El atributo`alt` describe el contenido de la imagen y proporciona un texto alternativo. Un atributo `alt` ayuda en los casos en que la imagen no se carga o un usuario no pueda verla. Los motores de búsqueda también lo utilizan para comprender qué contiene una imagen para incluirla en los resultados de búsqueda. Aquí hay un ejemplo:
 
-`<img src="importantLogo.jpeg" alt="Company logo">`
+```html
+<img src="importantLogo.jpeg" alt="Company logo">
+```
 
 Las personas con dificultades visuales dependen de lectores de pantalla para convertir el contenido web a una interfaz de audio. Por esta razón, no podrán recibir la información si solo se les presenta de manera visual. En el caso de las imágenes, los lectores de pantalla pueden acceder el atributo `alt` y leer su contenido para proporcionar información clave.
 
-Un buen texto `alt` le brinda al lector una breve descripción de la imagen. Siempre deberías incluir el atributo `alt` en tus imágenes. Además, según la especificación de HTML5, esto ahora se considera obligatorio.
+Un buen texto `alt` le brinda al lector una breve descripción de la imagen. Siempre deberías incluir el atributo `alt` en tus imágenes. De acuerdo con las especificaciones de HTML5, esto ahora se considera obligatorio.
 
 # --instructions--
 

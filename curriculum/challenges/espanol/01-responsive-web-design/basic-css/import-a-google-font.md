@@ -17,7 +17,9 @@ Entonces, importemos y apliquemos una fuente de Google (ten en cuenta que si Goo
 
 Para importar una fuente de Google, puedes copiar la URL de la fuente desde la librería de Google Fonts y luego pegarla en tu código HTML. Para este desafío, importaremos la fuente `Lobster`. Para ello, copia el siguiente fragmento de código y pégalo en la parte superior de tu editor de código (antes de abrir el elemento `style`):
 
-`<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+```
 
 Ahora puedes usar la fuente `Lobster` en tu CSS usando `Lobster` como FAMILY_NAME como en el siguiente ejemplo:
 

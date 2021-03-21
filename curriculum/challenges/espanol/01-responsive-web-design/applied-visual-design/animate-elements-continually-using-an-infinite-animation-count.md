@@ -11,7 +11,9 @@ dashedName: animate-elements-continually-using-an-infinite-animation-count
 
 En los desafíos anteriores, vimos cómo utilizar algunas de las propiedades de la animación y la regla `@keyframes`. Otra propiedad de animación es la `animation-iteration-count` la cual te permite controlar cuántas veces te gustaría hacer un bucle a través de la animación. Por ejemplo:
 
-`animation-iteration-count: 3;`
+```css
+animation-iteration-count: 3;
+```
 
 En este caso, la animación se detendrá después de ejecutarse 3 veces, pero es posible hacer que la animación se ejecute continuamente estableciendo ese valor en `infinite`.
 

@@ -19,7 +19,9 @@ Sobrescribamos tus clases `pink-text` y `blue-text`, y haz que el `h1` sea naran
 
 Dale al elemento `h1` el atributo `id` de `orange-text`. Recuerda, los estilos id se ven así:
 
-`<h1 id="orange-text">`
+```html
+<h1 id="orange-text">
+```
 
 Deja las clases `blue-text` y `pink-text` en tu elemento `h1`.
 

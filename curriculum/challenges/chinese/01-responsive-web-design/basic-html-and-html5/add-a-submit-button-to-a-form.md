@@ -13,7 +13,9 @@ dashedName: add-a-submit-button-to-a-form
 
 例如：
 
-`<button type="submit">this button submits the form</button>`
+```html
+<button type="submit">this button submits the form</button>
+```
 
 # --instructions--
 
