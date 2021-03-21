@@ -32,7 +32,7 @@ assert(
 There should be a listener function subscribed to the store using `store.subscribe`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').includes('store.subscribe('));
+(getUserInput) => assert(__helpers.removeWhiteSpace(getUserInput('index')).match(/store\.subscribe\((function|\(.*?=>)/));
 ```
 
 The callback to `store.subscribe` should also increment the global `count` variable as the store is updated.
