@@ -13,15 +13,17 @@ Continuando con el tema de fechas, HTML5 también introdujo el elemento `time` j
 
 Aquí hay un ejemplo:
 
-`<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>`
+```html
+<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>
+```
 
 # --instructions--
 
-¡Ya tenemos los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelva una etiqueta `time` alrededor del texto `Thursday, September 15<sup>th<sup>` y agregue un atributo `datetime` establecido en `2016-09-15`.
+¡Ya tenemos los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelve una etiqueta `time` alrededor del texto `Thursday, September 15<sup>th<sup>` y agrega un atributo `datetime` establecido en `2016-09-15`.
 
 # --hints--
 
-Tu código debe tener un elemento `p` que incluya el texto `Thank you to everyone for responding to Master Camper Cat's survey.` e incluye un elemento `time`.
+Tu código debe tener un elemento `p` que incluya el texto `Thank you to everyone for responding to Master Camper Cat's survey.` e incluya un elemento `time`.
 
 ```js
 assert(timeElement.length);

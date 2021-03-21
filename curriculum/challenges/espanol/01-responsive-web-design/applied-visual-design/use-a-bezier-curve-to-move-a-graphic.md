@@ -13,7 +13,9 @@ Un desafío anterior discutió la palabra clave `ease-out` que describe un cambi
 
 En general, el cambio de los puntos de anclaje `p1` y `p2` impulsa la creación de diferentes curvas Bezier, que controlan como la animación progresa a través del tiempo. Aquí hay un ejemplo de una curva de Bezier que usa valores para imitar el estilo de facilidad:
 
-`animation-timing-function: cubic-bezier(0, 0, 0.58, 1);`
+```css
+animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+```
 
 Recuerda que todas las funciones `cubic-bezier` comienzan con `p0` en (0, 0) y terminan con `p3` en (1, 1). En este ejemplo, la curva se mueve más rápido a través del eje Y (comienza en 0, va a `p1` y valor de 0, luego va a `p2` y valor de 1) que se mueve a través del eje X (0 para iniciar, luego 0 para `p1`, hasta 0.58 para `p2`. Como resultado, el cambio en el elemento animado progresa más rápido que el tiempo de la animación para ese segmento. Hacia el final de la curva, la relación entre el cambio en los valores X e Y se invierte: el valor y se mueve de 1 a 1 (sin cambios), y los valores X se mueven de 0.58 a 1, lo que hace que los cambios de animación progresen más lentamente en comparación con la duración de la animación.
 

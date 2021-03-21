@@ -17,7 +17,9 @@ dashedName: change-the-color-of-text
 
 以下是将 `h2` 元素设置为蓝色的方法：
 
-`<h2 style="color: blue;">CatPhotoApp</h2>`
+```html
+<h2 style="color: blue;">CatPhotoApp</h2>
+```
 
 请注意，需要在内联 `style` 声明末尾加上 `;`。
 

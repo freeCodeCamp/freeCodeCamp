@@ -13,13 +13,15 @@ Los elementos `p` son el elemento preferido para el texto de los párrafos en lo
 
 Puedes crear un elemento párrafo de esta manera:
 
-`<p>I'm a p tag!</p>`
+```html
+<p>I'm a p tag!</p>
+```
 
 # --instructions--
 
 Crea un elemento `p` debajo de tu elemento `h2` y dale como texto `Hello Paragraph`.
 
-**Note:** Por convención, todas las etiquetas HTML son escritas en minúsculas, por ejemplo `<p></p>` y no `<P></P>`.
+**Nota:** Por convención, todas las etiquetas HTML son escritas en minúsculas, por ejemplo `<p></p>` y no `<P></P>`.
 
 # --hints--
 

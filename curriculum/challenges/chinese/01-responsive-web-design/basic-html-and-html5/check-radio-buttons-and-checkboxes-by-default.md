@@ -13,7 +13,9 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 在一个 input 元素里面添加 `checked` 这个词，即可实现。 例如:
 
-`<input type="radio" name="test-name" checked>`
+```html
+<input type="radio" name="test-name" checked>
+```
 
 # --instructions--
 

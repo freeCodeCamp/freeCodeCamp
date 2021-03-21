@@ -15,11 +15,13 @@ HTML5 permite que este atributo se use en cualquier elemento, pero es particular
 
 Aquí hay un ejemplo:
 
-`<button accesskey="b">Important Button</button>`
+```html
+<button accesskey="b">Important Button</button>
+```
 
 # --instructions--
 
-El Gato Campero quiere que los enlaces alrededor de los dos títulos de artículos de blog tengan atajos de teclado para que los usuarios de su sitio puedan navegar rápidamente a la historia completa. Agrega un atributo `accesskey` a ambos enlaces y establece el primero en `g` (para Garfield) y el segundo en `c` (para Chuck Norris).
+Camper Cat quiere que los enlaces alrededor de los dos títulos de artículos de blog tengan atajos de teclado para que los usuarios de su sitio puedan navegar rápidamente a la historia completa. Agrega un atributo `accesskey` a ambos enlaces y establece el primero en `g` (para Garfield) y el segundo en `c` (para Chuck Norris).
 
 # --hints--
 

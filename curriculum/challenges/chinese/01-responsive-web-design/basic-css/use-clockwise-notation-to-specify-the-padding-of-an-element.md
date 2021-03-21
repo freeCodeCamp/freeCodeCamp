@@ -11,7 +11,9 @@ dashedName: use-clockwise-notation-to-specify-the-padding-of-an-element
 
 如果不想每次都要分别声明 `padding-top`、`padding-right`、`padding-bottom`、`padding-left` 属性，可以把它们汇总在一行里面一并声明，像是这样：
 
-`padding: 10px 20px 10px 20px;`
+```css
+padding: 10px 20px 10px 20px;
+```
 
 这四个值按顺时针排序：上、右、下、左，并且设置的效果等同于分别声明每一个方向的内边距。
 

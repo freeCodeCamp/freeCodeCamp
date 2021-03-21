@@ -21,11 +21,13 @@ dashedName: create-a-set-of-checkboxes
 
 下面是一个复选框的例子：
 
-`<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>`
+```html
+<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+```
 
 # --instructions--
 
-请给表单添加三个复选框， 每个复选框都被嵌套进 `label` 元素中， 并且它们的 `name` 属性均为 `personality`。
+请给表单添加三个复选框， 每个复选框都被嵌套进 `label` 元素中。 并且它们的 `name` 属性均为 `personality`。
 
 # --hints--
 
