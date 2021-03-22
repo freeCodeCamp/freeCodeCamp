@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4a
-title: Use the Double Equals to Assert Equality
+title: 用两个等号断言相等
 challengeType: 2
 forumTopicId: 301609
 dashedName: use-the-double-equals-to-assert-equality
@@ -8,17 +8,17 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-`equal()` compares objects using `==`.
+`equal()` 使用 `==` 比较对象。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，在 `Equality` 套件里标有 `#5` 的测试里，将每个 `assert` 改为 `assert.equal` 或 `assert.notEqual`，通过测试（应该返回 `true`）。 不要修改传给断言的参数。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `equal` vs. `notEqual`.
+应该为第一个断言选择正确的方法：`equal` 或 `notEqual`。
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `equal` vs. `notE
   );
 ```
 
-You should choose the correct method for the second assertion - `equal` vs. `notEqual`.
+应该为第二个断言选择正确的方法：`equal` 或 `notEqual`。
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `equal` vs. `not
   );
 ```
 
-You should choose the correct method for the third assertion - `equal` vs. `notEqual`.
+应该为第三个断言选择正确的方法：`equal` 或 `notEqual`。
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ You should choose the correct method for the third assertion - `equal` vs. `notE
   );
 ```
 
-You should choose the correct method for the fourth assertion - `equal` vs. `notEqual`.
+应该为第四个断言选择正确的方法：`equal` 或 `notEqual`。
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 589fc832f9fc0f352b528e79
-title: Send and Display Chat Messages
+title: 发送和显示聊天消息
 challengeType: 2
 forumTopicId: 301562
 dashedName: send-and-display-chat-messages
@@ -8,7 +8,7 @@ dashedName: send-and-display-chat-messages
 
 # --description--
 
-It's time you start allowing clients to send a chat message to the server to emit to all the clients! In your `client.js` file, you should see there is already a block of code handling when the message form is submitted.
+是时候开始允许用户向服务器发送聊天消息，以向所有客户端发送消息了！ 在 `client.js` 文件里，你应该已经注意到了这段提交消息表单的代码：
 
 ```js
 $('form').submit(function() {
@@ -16,23 +16,23 @@ $('form').submit(function() {
 });
 ```
 
-Within the form submit code, you should emit an event after you define `messageToSend` but before you clear the text box `#m`. The event should be named `'chat message'` and the data should just be `messageToSend`.
+在表单提交代码中，需要处理发送（emit）事件，它应该发生在定义 `messageToSend` 之后，以及清除 `#m` 中的文本之前。 我们称这个事件为 `'chat message'`，需发送的数据为 `messageToSend`。
 
 ```js
 socket.emit('chat message', messageToSend);
 ```
 
-Now, on your server, you should be listening to the socket for the event `'chat message'` with the data being named `message`. Once the event is received, it should emit the event `'chat message'` to all sockets `io.emit` with the data being an object containing `name` and `message`.
+在服务端，我们需要监听包含 `message` 数据的 `'chat message'` 事件。 当事件发生，我们就通过 `io.emit` 把包含 `name` 和 `message` 的 `'chat message'` 事件发送给所有已连接的 socket。
 
-In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the name, a colon, and the message!
+在 `client.js` 中，我们需要监听 `'chat message'` 事件。只要接收到这个事件，就把包含名字和消息的内容（注意：需要在名字后添加冒号）添加到 `#messages`。
 
-At this point, the chat should be fully functional and sending messages across all clients!
+至此，我们已经完成发送信息到所有客户端的功能。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016)的答案。
 
 # --hints--
 
-Server should listen for `'chat message'` and then emit it properly.
+服务端应监听 `'chat message'`，且应在监听到后发送它。
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ Server should listen for `'chat message'` and then emit it properly.
   );
 ```
 
-Client should properly handle and display the new data from event `'chat message'`.
+客户端应正确处理和展示从 `'chat message'` 事件发来的新数据。
 
 ```js
 (getUserInput) =>

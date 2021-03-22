@@ -16,13 +16,15 @@ jQuery 有一个 `.prop()` 方法，可以用其调整标签的属性。
 
 下面是禁用所有的按钮的代码：
 
-`$("button").prop("disabled", true);`
+```js
+$("button").prop("disabled", true);
+```
 
-禁用 `target1` 按钮。
+仅禁用 `target1` 按钮。
 
 # --hints--
 
-应该禁用 `target1` 按钮。
+`target1` 按钮应该被禁用。
 
 ```js
 assert(
@@ -38,7 +40,7 @@ assert(
 assert($('#target2') && !$('#target2').prop('disabled'));
 ```
 
-应该仅用 jQuery 更改元素属性。
+应该仅用 jQuery 给元素添加这些 class。
 
 ```js
 assert(!code.match(/disabled[^<]*>/g));

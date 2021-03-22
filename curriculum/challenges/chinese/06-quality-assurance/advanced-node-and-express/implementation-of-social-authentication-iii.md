@@ -1,6 +1,6 @@
 ---
 id: 589a8eb3f9fc0f352b528e72
-title: Implementation of Social Authentication III
+title: 实现第三种社交登录
 challengeType: 2
 forumTopicId: 301558
 dashedName: implementation-of-social-authentication-iii
@@ -8,7 +8,7 @@ dashedName: implementation-of-social-authentication-iii
 
 # --description--
 
-The final part of the strategy is handling the profile returned from GitHub. We need to load the user's database object if it exists, or create one if it doesn't, and populate the fields from the profile, then return the user's object. GitHub supplies us a unique *id* within each profile which we can use to search with to serialize the user with (already implemented). Below is an example implementation you can use in your project--it goes within the function that is the second argument for the new strategy, right below where `console.log(profile);` currently is:
+验证策略的最后一部分是处理从 GitHub 返回的个人信息。 如果用户存在，我们就需要从数据库中读取用户数据并在 profile 页面加载；否则，我们需要把用户信息添加到数据库。 GitHub 在用户信息中为我们提供了独一无二的 *id*，我们可以通过序列化的 id 在数据库中搜索用户（已实现）。 以下是这个逻辑的实现示例，我们应该把它传到新策略的第二个参数，就是目前 `console.log(profile);` 的下方：
 
 ```js
 myDataBase.findOneAndUpdate(
@@ -38,15 +38,15 @@ myDataBase.findOneAndUpdate(
 );
 ```
 
-`findOneAndUpdate` allows you to search for an object and update it. If the object doesn't exist, it will be inserted and made available to the callback function. In this example, we always set `last_login`, increment the `login_count` by `1`, and only populate the majority of the fields when a new object (new user) is inserted. Notice the use of default values. Sometimes a profile returned won't have all the information filled out or the user will keep it private. In this case, you handle it to prevent an error.
+`findOneAndUpdate` 的作用是在数据库中查询对象并更新， 如果对象不存在，将插入对象，然后我们可以在回调方法里获取到插入的新对象。 在这个例子中，我们会设置 `last_login`，而且总会为 `login_count` 加 `1`。只有在插入一个新对象（新用户）时，我们才会初始化这些字段。 另外，还需要注意默认值的使用。 有时返回的用户信息可能不全，可能是因为用户没有填写，也可能是因为用户选择不公开一部分信息。 在这种情况下，我们需要进行相应的处理，以防我们的 app 报错。
 
-You should be able to login to your app now--try it!
+你现在应该可以登录你的应用了，试试吧。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+完成上述要求后，你可以在下方提交你的页面链接。 如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745) 的答案。
 
 # --hints--
 
-GitHub strategy setup should be complete.
+GitHub 策略应配置完成。
 
 ```js
 (getUserInput) =>

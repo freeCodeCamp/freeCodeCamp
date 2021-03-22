@@ -21,17 +21,19 @@ dashedName: target-elements-by-id-using-jquery
 
 下面的代码的效果是使 id 为 `target6` 的 `button` 标签淡出：
 
-`$("#target6").addClass("animated fadeOut")`.
+```js
+$("#target6").addClass("animated fadeOut");
+```
 
 # --hints--
 
-应该用 jQuery 的 `addClass()` 方法给 `id` 为 `target3` 的 `button` 标签添加 `animated` 类。
+应该选择 `id` 为 `target3` 的 `button` 元素，使用 jQuery 的 `addClass()` 函数给它添加 `animated` class。
 
 ```js
 assert($('#target3').hasClass('animated'));
 ```
 
-应该用 jQuery 的 `addClass()` 方法给 id 为 `target3` 的标签的类添加 `fadeOut` 类。
+应该选中 id 为 `target3` 的元素，使用 jQuery 的 `addClass()` 函数给它添加 `fadeOut` class。
 
 ```js
 assert(
@@ -40,7 +42,7 @@ assert(
 );
 ```
 
-应该仅用 jQuery 给标签设置类。
+应该仅用 jQuery 给元素添加这些 class。
 
 ```js
 assert(!code.match(/class.*animated/g));

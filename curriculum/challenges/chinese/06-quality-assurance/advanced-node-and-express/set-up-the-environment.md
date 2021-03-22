@@ -1,6 +1,6 @@
 ---
 id: 589fc830f9fc0f352b528e74
-title: Set up the Environment
+title: 设置环境
 challengeType: 2
 forumTopicId: 301566
 dashedName: set-up-the-environment
@@ -8,20 +8,20 @@ dashedName: set-up-the-environment
 
 # --description--
 
-The following challenges will make use of the `chat.pug` file. So, in your `routes.js` file, add a GET route pointing to `/chat` which makes use of `ensureAuthenticated`, and renders `chat.pug`, with `{ user: req.user }` passed as an argument to the response. Now, alter your existing `/auth/github/callback` route to set the `req.session.user_id = req.user.id`, and redirect to `/chat`.
+在接下来的挑战中，我们将会用到 `chat.pug` 文件。 首先，在你的 `routes.js` 文件中为 `/chat` 添加一个处理 GET 请求的路由，并给它传入 `ensureAuthenticated`。在回调函数中，我们需要让它渲染 `chat.pug` 文件，并在响应中包含 `{ user: req.user }` 信息。 现在，请修改 `/auth/github/callback` 路由，让它可以像这样设置 user_id：`req.session.user_id = req.user.id`，并在设置完成后重定向至 `/chat`。
 
-Add `http` and `socket.io` as a dependency and require/instantiate them in your server defined as follows:
+我们还需要添加 `http` 和 `socket.io` 两个依赖项，并且像这样引入：
 
 ```javascript
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 ```
 
-Now that the *http* server is mounted on the *express app*, you need to listen from the *http* server. Change the line with `app.listen` to `http.listen`.
+现在我们的 *express 应用*已经包含了 *http* 服务，接下来我们需要监听 *http* 服务的事件。 为此，我们需要把 `app.listen` 更新为 `http.listen`。
 
-The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event thats emitted, and a function with which the data is passed though. In the case of our connection listener, we use *socket* to define the data in the second argument. A socket is an individual client who is connected.
+需要处理的第一件事是监听客户端的新连接。 <dfn>on</dfn> 关键字就是监听这个特定事件。 它接收两个参数：一个是发出的事件的标题字符串，另一个是后续用来传递数据的回调函数。 在连接监听器中，我们用 *socket* 来代表它所包含的数据。 socket 就是指已连接到服务器的客户端。
 
-To listen for connections to your server, add the following within your database connection:
+为了可以监听服务器的连接事件，我们在数据库连接的部分加入如下代码：
 
 ```javascript
 io.on('connection', socket => {
@@ -29,24 +29,24 @@ io.on('connection', socket => {
 });
 ```
 
-Now for the client to connect, you just need to add the following to your `client.js` which is loaded by the page after you've authenticated:
+对于发出连接事件的客户端，只需要在认证后页面加载出的 `client.js` 中添加以下内容：
 
 ```js
 /*global io*/
 let socket = io();
 ```
 
-The comment suppresses the error you would normally see since 'io' is not defined in the file. We've already added a reliable CDN to the Socket.IO library on the page in chat.pug.
+在这个文件中，我们没有定义 “io” 变量，但第一行的注释会阻止运行时产生的报错。 不过，我们在 chat.pug 的页面上已经为你添加好了 Socket.IO 库的 CDN。
 
-Now try loading up your app and authenticate and you should see in your server console 'A user has connected'!
+现在你可以重启一下你的 app，尝试一下验证用户，然后你应该会看到服务器的 console 里输出了 “A user has connected”。
 
-**Note:**`io()` works only when connecting to a socket hosted on the same url/server. For connecting to an external socket hosted elsewhere, you would use `io.connect('URL');`.
+**注意：**只有在连接到处于同一个 url/server 上的 socket 时，`io()`才可以正常执行。 如果需要连接到外部的 socket，就需要这样调用：`io.connect('URL');`。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1)的答案。
 
 # --hints--
 
-`socket.io` should be a dependency.
+应添加 `socket.io` 作为依赖。
 
 ```js
 (getUserInput) =>
@@ -65,7 +65,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-You should correctly require and instantiate `http` as `http`.
+应正确引入 `http`，并实例化为 `http`。
 
 ```js
 (getUserInput) =>
@@ -83,7 +83,7 @@ You should correctly require and instantiate `http` as `http`.
   );
 ```
 
-You should correctly require and instantiate `socket.io` as `io`.
+应正确引入 `socket.io`，并实例化为 `io`。
 
 ```js
 (getUserInput) =>
@@ -101,7 +101,7 @@ You should correctly require and instantiate `socket.io` as `io`.
   );
 ```
 
-Socket.IO should be listening for connections.
+Socket.IO 应监听连接。
 
 ```js
 (getUserInput) =>
@@ -119,7 +119,7 @@ Socket.IO should be listening for connections.
   );
 ```
 
-Your client should connect to your server.
+客户端应连接到服务器。
 
 ```js
 (getUserInput) =>

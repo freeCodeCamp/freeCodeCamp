@@ -14,15 +14,17 @@ jQuery 有一个 `.html()` 函数，能用其在标签里添加 HTML 标签和�
 
 下面是重写并强调标题文本的代码：
 
-`$("h3").html("<em>jQuery Playground</em>");`
+```js
+$("h3").html("<em>jQuery Playground</em>");
+```
 
-jQuery 还有一个类似的函数 `.text()` 可以在不添加标签的前提下改变标签内的文本。 换言之，这个函数不会识别传入的任何 HTML 标签，而会把它当做想要替换现有内容的文本。
+jQuery 还有一个类似的函数 `.text()`，可以在不添加标签的前提下改变标签内的文本。 换句话说，这个函数不会评估传递给它的任何 HTML 标记，而是将其视为要替换现有内容的文本。
 
 给 id 为 `target4` 的按钮的文本添加强调效果。
 
-查看此[关于 &lt;em> 的文章](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element)来了解更多 `<i>` 和 `<em>` 的区别和用法。
+查看这篇[关于 &lt;em> 的文章](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element)来了解更多 `<i>` 和 `<em>` 的区别和用法。
 
-注意，`<i>` 标签虽然传统上用来强调文本，但此后常用作图标的标签。 `<em>` 标签作为强调标签现在已被广泛接受。 使用这两个标签中的任一个都可以完成本次挑战。
+注意，`<i>` 标签虽然传统上用来强调文本，但此后常用作图标的标签。 `<em>` 标签作为强调标签现在已被广泛接受。 可以使用任意一种完成这个挑战。
 
 # --hints--
 

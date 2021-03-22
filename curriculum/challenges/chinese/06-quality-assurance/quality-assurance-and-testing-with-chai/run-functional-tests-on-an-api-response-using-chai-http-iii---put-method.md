@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5a
-title: Run Functional Tests on an API Response using Chai-HTTP III - PUT method
+title: 使用 Chai-HTTP III 的 PUT 方法对 API 请求运行功能测试
 challengeType: 2
 forumTopicId: 301590
 dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-method
@@ -8,9 +8,9 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-In the next example we'll see how to send data in a request payload (body). We are going to test a PUT request. The `'/travellers'` endpoint accepts a JSON object taking the structure:
+接下来，我们将了解如何使用请求的 payload（body）发送数据。 我们需要测试一个 PUT 请求， `'/travellers'` 接收如下的 JSON 对象：
 
 ```json
 {
@@ -18,7 +18,7 @@ In the next example we'll see how to send data in a request payload (body). We a
 }
 ```
 
-The route responds with :
+路由响应如下：
 
 ```json
 {
@@ -26,13 +26,13 @@ The route responds with :
 }
 ```
 
-See the server code for more details.
+更多细节请查看服务器代码。
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "Colombo"}'` test (`// #3`):
+在 `tests/2_functional-tests.js` 中，修改 `'send {surname: "Colombo"}'` 测试（`// #3`）：
 
-Send the following JSON response as a payload:
+发送以下 JSON 响应作为有效载荷：
 
 ```json
 {
@@ -40,18 +40,18 @@ Send the following JSON response as a payload:
 }
 ```
 
-Check for the following, within the `request.end` callback:
+在 `request.end` 返回中检查以下情况：
 
 1.  `status`
 2.  `type`
 3.  `body.name`
 4.  `body.surname`
 
-Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+请按照以上顺序书写断言，顺序错误会影响系统判定。 完成后，请务必移除 `assert.fail()`。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -65,7 +65,7 @@ All tests should pass.
   );
 ```
 
-You should test for 'res.status' to be 200.
+应测试 “res.status” 是否为 200。
 
 ```js
 (getUserInput) =>
@@ -81,7 +81,7 @@ You should test for 'res.status' to be 200.
   );
 ```
 
-You should test for 'res.type' to be 'application/json'.
+需要测试 “res.type” 是否为 “application/json”。
 
 ```js
 (getUserInput) =>
@@ -97,7 +97,7 @@ You should test for 'res.type' to be 'application/json'.
   );
 ```
 
-You should test for 'res.body.name' to be 'Cristoforo'.
+需要测试 “res.body.name” 是否为 “Cristoforo”。
 
 ```js
 (getUserInput) =>
@@ -113,7 +113,7 @@ You should test for 'res.body.name' to be 'Cristoforo'.
   );
 ```
 
-You should test for 'res.body.surname' to be 'Colombo'.
+需要测试 “res.body.surname” 是否为 “Colombo”。
 
 ```js
 (getUserInput) =>

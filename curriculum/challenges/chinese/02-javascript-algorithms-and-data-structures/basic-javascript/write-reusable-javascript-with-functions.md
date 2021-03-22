@@ -33,57 +33,49 @@ function functionName() {
 assert(typeof reusableFunction === 'function');
 ```
 
-`reusableFunction` 应该将字符串 `Hi World` 输出到控制台。
+如果调用 `reusableFunction`，应该在控制台输出字符串 `Hi World`。
 
 ```js
-assert(hiWorldWasLogged);
+assert(testConsole());
 ```
 
-在你定义 `reusableFunction` 之后记得调用它。
+在定义 `reusableFunction` 之后，就应该调用它。
 
 ```js
-assert(/^\s*reusableFunction\(\)\s*/m.test(code));
+const functionStr = reusableFunction && __helpers.removeWhiteSpace(reusableFunction.toString());
+const codeWithoutFunction = __helpers.removeWhiteSpace(code).replace(/reusableFunction\(\)\{/g, '');
+assert(/reusableFunction\(\)/.test(codeWithoutFunction));
 ```
 
 # --seed--
 
-## --before-user-code--
-
-```js
-var logOutput = "";
-var originalConsole = console;
-var nativeLog = console.log;
-var hiWorldWasLogged = false;
-function capture() {
-    console.log = function (message) {
-        if(message === 'Hi World')  hiWorldWasLogged = true;
-        if(message && message.trim) logOutput = message.trim();
-        if(nativeLog.apply) {
-          nativeLog.apply(originalConsole, arguments);
-        } else {
-          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-          nativeLog(nativeMsg);
-        }
-    };
-}
-
-function uncapture() {
-  console.log = nativeLog;
-}
-
-capture();
-```
-
 ## --after-user-code--
 
 ```js
-uncapture();
 
-if (typeof reusableFunction !== "function") { 
-  (function() { return "reusableFunction is not defined"; })();
-} else {
-  (function() { return logOutput || "console.log never called"; })();
+function testConsole() {
+  var logOutput = "";
+  var originalConsole = console;
+  var nativeLog = console.log;
+  var hiWorldWasLogged = false;
+  console.log = function (message) {
+    if(message === 'Hi World')  {
+      console.warn(message)
+      hiWorldWasLogged = true;
+    }
+    if(message && message.trim) logOutput = message.trim();
+    if(nativeLog.apply) {
+      nativeLog.apply(originalConsole, arguments);
+    } else {
+      var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
+      nativeLog(nativeMsg);
+    }
+  };
+  reusableFunction();
+  console.log = nativeLog;
+  return hiWorldWasLogged;
 }
+
 ```
 
 ## --seed-contents--

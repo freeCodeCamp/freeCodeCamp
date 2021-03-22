@@ -17,13 +17,15 @@ dashedName: target-even-elements-using-jquery
 
 下面的代码展示了选取所有 `target` class 元素的奇数元素并设置 sheke 效果：
 
-`$(".target:odd").addClass("animated shake");`
+```js
+$(".target:odd").addClass("animated shake");
+```
 
-尝试选取所有 `target` class 元素的偶数元素并给它们设置 `animated` 和 `shake` class。 要考虑到**偶（even）**指的是标签位置编号是从 0 开始的。
+尝试选取所有 `target` class 元素的偶数元素并给它们设置 `animated` 和 `shake` class。 请记住， **偶数**指的是基于零系统的元素的位置。
 
 # --hints--
 
-所有的 `target` 标签应该抖动。
+所有的偶数位置上的 `target` 元素都应该抖动。
 
 ```js
 assert(
@@ -31,13 +33,13 @@ assert(
 );
 ```
 
-应该用 `:even` 选择器修改这些标签。
+应该使用 `:even` 选择器修改这些元素。
 
 ```js
 assert(code.match(/\:even/g));
 ```
 
-应该仅用 jQuery 给标签添加类。
+应该仅用 jQuery 给元素添加 class。
 
 ```js
 assert(
