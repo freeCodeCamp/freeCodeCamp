@@ -15,25 +15,27 @@ dashedName: remove-classes-from-an-element-with-jquery
 
 下面是为指定按钮执行上面的操作的代码：
 
-`$("#target2").removeClass("btn-default");`
+```js
+$("#target2").removeClass("btn-default");
+```
 
-请把所有 `button` 标签的 `btn-default` 类移除。
+请把所有 `button` 元素的 `btn-default` class 移除。
 
 # --hints--
 
-应该移除所有 `button` 标签 `btn-default` 属性。
+应该移除所有 `button` 元素 `btn-default` class。
 
 ```js
 assert($('.btn-default').length === 0);
 ```
 
-应该仅用 jQuery 从标签中移除类。
+应该仅用 jQuery 从元素中移除 class。
 
 ```js
 assert(code.match(/btn btn-default/g));
 ```
 
-应该仅移除 `btn-default` 类。
+应该仅移除 `btn-default` class。
 
 ```js
 assert(

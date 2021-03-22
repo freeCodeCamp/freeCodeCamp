@@ -10,11 +10,13 @@ dashedName: use-array-filter-to-dynamically-filter-an-array
 
 `map` 数组方法是一个强大的工具，在使用 React 时经常使用。 与 `map` 相关的另一种方法是 `filter`，它根据条件过滤数组的内容，然后返回一个新数组。 例如，如果有一个 users 数组，每个数组元素都有一个可以设置为 `true` 或 `false` 的 `online` 属性，可以这样只过滤那些在线的用户：
 
-`let onlineUsers = users.filter(user => user.online);`
+```js
+let onlineUsers = users.filter(user => user.online);
+```
 
 # --instructions--
 
-在代码编辑器中，`MyComponent` 的 `state` 由一个 users 数组初始化。 有些用户在线，有些则不在线。 过滤数组，只看到在线用户。 为此，首先使用 `filter` 返回一个新数组，该数组只包含 `online` 属性为 `true` 的用户。 然后，在 `renderOnline` 变量中，映射经过过滤的数组，并为每个用户返回一个包含它们 `username` 文本的 `li` 元素。 确保像上一个挑战一样包含一个独特的 `key`。
+在代码编辑器中，`MyComponent` 的 `state` 被初始化为一个用户数组。 有些用户在线，有些则没有。 过滤数组，以便只查看在线用户。 要执行此操作，请首先使用 `filter` 返回仅包含 `online` 属性为 `true` 的用户的新数组。 然后，在 `renderOnline` 变量中，映射已过滤的数组，并为包含其 `username` 文本的每个用户返回 `li` 元素。 确保包含一个唯一的 `key` ，就像上一个挑战一样。
 
 # --hints--
 
@@ -38,7 +40,7 @@ assert(
 );
 ```
 
-`MyComponent` 应该返回一个 `div`、一个 `h1` 和一个包含 `li` 元素的无序列表，该列表用于展示在线状态为 `true` 的每个用户。
+`MyComponent` 应该返回一个 `div`、一个 `h1` 元素，和一个包含 `li` 元素无序列表，该列表用于展示在线状态为 `true` 的所有用户。
 
 ```js
 (() => {
@@ -81,7 +83,7 @@ assert(
 })();
 ```
 
-`MyComponent` 应该渲染包含每个在线用户的 `username` 的 `li` 元素。
+`MyComponent` 应该渲染包含所有在线用户的 `username` 的 `li` 元素。
 
 ```js
 (() => {

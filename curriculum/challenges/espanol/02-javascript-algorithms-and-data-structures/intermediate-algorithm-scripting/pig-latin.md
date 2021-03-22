@@ -1,6 +1,6 @@
 ---
 id: aa7697ea2477d1316795783b
-title: Pig Latin
+title: Pig Latin (Latin de los cerdos)
 challengeType: 5
 forumTopicId: 16039
 dashedName: pig-latin
@@ -8,55 +8,55 @@ dashedName: pig-latin
 
 # --description--
 
-Pig Latin is a way of altering English Words. The rules are as follows:
+Pig Latin (latin de los cerdos) es una manera de alterar las palabras en inglés. Las normas son las siguientes:
 
-\- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+\- Si una palabra comienza con una consonante, toma la primer consonante o grupo de consonantes, muévela al final de la palabra, y añade `ay` a ella.
 
-\- If a word begins with a vowel, just add "way" at the end.
+\- Si una palabra comienza con una vocal, solo añade `way` al final.
 
 # --instructions--
 
-Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
+Traduce la cadena proporcionada a Pig Latin. Las cadenas de entrada están garantizadas como palabras en inglés en minúsculas.
 
 # --hints--
 
-`translatePigLatin("california")` should return "aliforniacay".
+`translatePigLatin("california")` debe devolver la cadena `aliforniacay`.
 
 ```js
 assert.deepEqual(translatePigLatin('california'), 'aliforniacay');
 ```
 
-`translatePigLatin("paragraphs")` should return "aragraphspay".
+`translatePigLatin("paragraphs")` debe devolver la cadena `aragraphspay`.
 
 ```js
 assert.deepEqual(translatePigLatin('paragraphs'), 'aragraphspay');
 ```
 
-`translatePigLatin("glove")` should return "oveglay".
+`translatePigLatin("glove")` debe devolver la cadena `oveglay`.
 
 ```js
 assert.deepEqual(translatePigLatin('glove'), 'oveglay');
 ```
 
-`translatePigLatin("algorithm")` should return "algorithmway".
+`translatePigLatin("algorithm")` debe devolver la cadena `algorithmway`.
 
 ```js
 assert.deepEqual(translatePigLatin('algorithm'), 'algorithmway');
 ```
 
-`translatePigLatin("eight")` should return "eightway".
+`translatePigLatin("eight")` debe devolver la cadena `eightway`.
 
 ```js
 assert.deepEqual(translatePigLatin('eight'), 'eightway');
 ```
 
-Should handle words where the first vowel comes in the middle of the word.  `translatePigLatin("schwartz")` should return "artzschway".
+Debes manejar las palabras en donde la primera vocal viene en el centro de la palabra.  `translatePigLatin("schwartz")` debe devolver la cadena `artzschway`.
 
 ```js
 assert.deepEqual(translatePigLatin('schwartz'), 'artzschway');
 ```
 
-Should handle words without vowels. `translatePigLatin("rhythm")` should return "rhythmay".
+Debes manejar las palabras sin vocales. `translatePigLatin("rhythm")` debe devolver la cadena `rhythmay`.
 
 ```js
 assert.deepEqual(translatePigLatin('rhythm'), 'rhythmay');

@@ -14,27 +14,29 @@ jQuery 有一个 `children()` 方法，可以访问被选取标签的子标签�
 
 下面的代码展示了用 `children()` 方法把 `left-well` 标签的子标签的颜色设置成 `blue`（蓝色）：
 
-`$("#left-well").children().css("color", "blue")`
+```js
+$("#left-well").children().css("color", "blue")
+```
 
 # --instructions--
 
-把 `right-well` 标签的所有子标签颜色设置成橙色（orange）。
+将 `right-well` 元素的所有子元素设置为橙色（orange）。
 
 # --hints--
 
-`#right-well` 所有的子标签文本应该是橙色。
+`#right-well` 的所有子元素应该有橙色文本。
 
 ```js
 assert($('#right-well').children().css('color') === 'rgb(255, 165, 0)');
 ```
 
-应该用 `children()` 方法修改标签。
+应该用 `children()` 函数修改这些元素。
 
 ```js
 assert(code.match(/\.children\(\)\.css/g));
 ```
 
-应该仅用 jQuery 给标签添加类。
+应该仅用 jQuery 给标签添加 class。
 
 ```js
 assert(code.match(/<div class="well" id="right-well">/g));

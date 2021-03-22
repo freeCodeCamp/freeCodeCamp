@@ -1,6 +1,6 @@
 ---
 id: 5895f70ef9fc0f352b528e6b
-title: How to Put a Profile Together
+title: 如何将 Profile 放在一起
 challengeType: 2
 forumTopicId: 301554
 dashedName: how-to-put-a-profile-together
@@ -8,27 +8,27 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Now that we can ensure the user accessing the `/profile` is authenticated, we can use the information contained in `req.user` on our page!
+现在，我们能确保访问 `/profile` 页面的用户都是经过验证的，这样我们就可以在页面上使用 `req.user` 里的信息了。
 
-Pass an object containing the property `username` and value of `req.user.username` as the second argument for the render method of the profile view. Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+传递一个包含属性 `username` 且属性值为 `req.user.username` 的对象，作为 profile 页面的 render 方法的第二个参数。 然后在 `profile.pug`页面，将下面的代码添加到现有的 `h1` 元素下方，处在同一级别的缩进。
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class '`center`' and id '`welcome`' containing the text '`Welcome,`' followed by the username.
+这样就创建了一个 `h2` 元素，具有 '`center`' class，和包含文本 '`Welcome,`' 的 id '`welcome`'，以及 username（用户名）。
 
-Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user.
+另外，在 `profile.pug` 中，添加一个指向 `/logout` 路由的链接，它将托管一个未认证用户的逻辑。
 
 ```pug
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a)的答案。
 
 # --hints--
 
-You should correctly add a Pug render variable to /profile.
+应在 Pug render 中给 /profile 传一个变量。
 
 ```js
 (getUserInput) =>

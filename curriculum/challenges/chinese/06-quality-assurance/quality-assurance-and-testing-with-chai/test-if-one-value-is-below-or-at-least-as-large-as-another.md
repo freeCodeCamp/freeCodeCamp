@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4e
-title: Test if One Value is Below or At Least as Large as Another
+title: 测试一个值是否小于或等于另一个值
 challengeType: 2
 forumTopicId: 301606
 dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
@@ -8,15 +8,15 @@ dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#9` in the `Comparisons` suite, change each `assert` to either `assert.isBelow` or `assert.isAtLeast` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，在 `Comparisons` 套件里标有 `#9` 的测试中，将每个 `assert` 改成 `assert.isBelow` 或 `assert.isAtLeast` 方法，让测试通过（结果应该返回 `true`）。 不要修改传给断言的参数。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isBelow` vs. `isAtLeast`.
+应该为第一个断言选择正确的方法：`isBelow` 或 `isAtLeast`。
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isBelow` vs. `is
   );
 ```
 
-You should choose the correct method for the second assertion - `isBelow` vs. `isAtLeast`.
+应该为第二个断言选择正确的方法：`isBelow` 或 `isAtLeast`。
 
 ```js
 (getUserInput) =>
@@ -66,7 +66,7 @@ You should choose the correct method for the second assertion - `isBelow` vs. `i
   );
 ```
 
-You should choose the correct method for the third assertion - `isBelow` vs. `isAtLeast`.
+应该为第三个断言选择正确的方法：`isBelow` 或 `isAtLeast`。
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ You should choose the correct method for the third assertion - `isBelow` vs. `is
   );
 ```
 
-You should choose the correct method for the fourth assertion - `isBelow` vs. `isAtLeast`.
+应该为第四个断言选择正确的方法：`isBelow` 或 `isAtLeast`。
 
 ```js
 (getUserInput) =>

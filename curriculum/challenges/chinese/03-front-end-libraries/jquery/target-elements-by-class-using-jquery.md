@@ -23,17 +23,19 @@ jQuery 的 `.addClass()` 方法用来给标签添加类。
 
 例如，在 `document ready function` 中添加下面的代码，使所有类为 `text-primary` 的标签抖动：
 
-`$(".text-primary").addClass("animated shake");`
+```js
+$(".text-primary").addClass("animated shake");
+```
 
 # --hints--
 
-应该用 jQuery 的 `addClass()` 方法给所有 class 为 `well` 的标签添加 `animated` 和 `shake` 类。
+应该用 jQuery 的 `addClass()` 方法给所有 class 为 `well` 的元素添加 `animated` 和 `shake` class。
 
 ```js
 assert($('.well').hasClass('animated') && $('.well').hasClass('shake'));
 ```
 
-应该仅用 jQuery 给标签添加 class。
+应该仅用 jQuery 给元素添加这些 class。
 
 ```js
 assert(!code.match(/class\.\*animated/g));

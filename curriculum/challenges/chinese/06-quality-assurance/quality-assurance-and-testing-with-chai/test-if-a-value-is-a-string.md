@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c52
-title: Test if a Value is a String
+title: 测试某个值是否为字符串
 challengeType: 2
 forumTopicId: 301599
 dashedName: test-if-a-value-is-a-string
@@ -8,17 +8,17 @@ dashedName: test-if-a-value-is-a-string
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-`isString` or `isNotString` asserts that the actual value is a string.
+`isString` 或 `isNotString` 断言一个值是否为字符串。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#13` in the `Strings` suite, change each `assert` to either `assert.isString` or `assert.isNotString` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，`Strings` 套件里标有 `#13` 的测试下，将每个 `assert` 改成 `assert.isString` 或 `assert.isNotString` 方法，通过测试（结果应该返回 `true`）。 不要修改传给断言的参数。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isString` vs. `isNotString`.
+应该为第一个断言选择正确的方法：`isString` 或 `isNotString`。
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `isString` vs. `i
   );
 ```
 
-You should choose the correct method for the second assertion - `isString` vs. `isNotString`.
+应该为第二个断言选择正确的方法：`isString` 或 `isNotString`。
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `isString` vs. `
   );
 ```
 
-You should choose the correct method for the third assertion - `isString` vs. `isNotString`.
+应该为第三个断言选择正确的方法：`isString` 或 `isNotString`。
 
 ```js
 (getUserInput) =>
