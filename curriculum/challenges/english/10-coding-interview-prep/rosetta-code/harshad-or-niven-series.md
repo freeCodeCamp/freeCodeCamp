@@ -18,7 +18,7 @@ Assume that the series is defined as the numbers in increasing order.
 
 Implement a function to generate successive members of the Harshad sequence.
 
-Use it to return list with ten members of the sequence, starting with first Harshad number greater than `n`.
+Use it to return an array with ten members of the sequence, starting with first Harshad number greater than `n`.
 
 # --hints--
 
