@@ -37,7 +37,23 @@
 .video-quiz-options > label {
   margin: 0;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: auto;
+}
+
+.video-quiz-options > label::-webkit-scrollbar {
+  height: 11px;
+}
+.video-quiz-options > label {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-background) var(--tertiary-background);
+}
+.video-quiz-options > label::-webkit-scrollbar-track {
+  background: var(--tertiary-background);
+}
+.video-quiz-options > label::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary-background);
+  border-radius: 6px;
+  border: 3px solid var(--secondary-background);
 }
 
 .video-quiz-option-label {
