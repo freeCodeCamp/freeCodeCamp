@@ -41,19 +41,17 @@
 }
 
 .video-quiz-options > label::-webkit-scrollbar {
-  height: 11px;
+  height: 15px;
 }
 .video-quiz-options > label {
   scrollbar-width: thin;
-  scrollbar-color: var(--secondary-background) var(--tertiary-background);
+  scrollbar-color: var(--quaternary-background) var(--secondary-background);
 }
 .video-quiz-options > label::-webkit-scrollbar-track {
-  background: var(--tertiary-background);
+  background: var(--secondary-background);
 }
 .video-quiz-options > label::-webkit-scrollbar-thumb {
-  background-color: var(--tertiary-background);
-  border-radius: 6px;
-  border: 3px solid var(--secondary-background);
+  background-color: var(--quaternary-background);
 }
 
 .video-quiz-option-label {
