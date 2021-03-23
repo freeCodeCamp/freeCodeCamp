@@ -17,7 +17,9 @@ Los atributos `id` deben ser únicos. Los navegadores no verifican esta regla, p
 
 A continuación te mostramos un ejemplo de cómo asignar a tu elemento `h2` el id `cat-photo-app`:
 
-`<h2 id="cat-photo-app">`
+```html
+<h2 id="cat-photo-app">
+```
 
 # --instructions--
 
@@ -25,7 +27,7 @@ Asigna a tu elemento `form` el id `cat-photo-form`.
 
 # --hints--
 
-Tu elemento `form` debe contener el id `cat-photo-form`.
+Tu elemento `form` debe tener el id `cat-photo-form`.
 
 ```js
 assert($('form').attr('id') === 'cat-photo-form');

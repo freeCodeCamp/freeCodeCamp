@@ -37,6 +37,7 @@
 .video-quiz-options > label {
   margin: 0;
   align-items: center;
+  overflow-x: scroll;
 }
 
 .video-quiz-option-label {

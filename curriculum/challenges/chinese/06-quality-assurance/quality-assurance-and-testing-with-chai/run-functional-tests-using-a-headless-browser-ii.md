@@ -1,6 +1,6 @@
 ---
 id: 5f8884f4c46685731aabfc41
-title: Run Functional Tests Using a Headless Browser II
+title: 使用 无头浏览器 II 运行功能测试
 challengeType: 2
 forumTopicId: 301594
 dashedName: run-functional-tests-using-a-headless-browser-ii
@@ -8,27 +8,27 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Vespucci" - write your e2e test...'` test (`// #6`), automate filling-in and submitting the form from scratch:
+在 `tests/2_functional-tests.js` 中，`'submit "surname" : "Vespucci" - write your e2e test...'` 测试（`// #6`），自动化填写和提交表单：
 
-1.  Fill in the form with the `surname` of `Vespucci`
-2.  Submit it pressing `'submit'` button
+1.  在表单中填写 `Vespucci` 的 `surname`。
+2.  点击 `'submit'` 按钮提交表单
 
-Within the callback:
+在回调中：
 
-1.  assert that status is `200`
-2.  assert that the text inside the element `span#name` is `'Amerigo'`
-3.  assert that the text inside the element `span#surname` is `'Vespucci'`
-4.  assert that the element(s) `span#dates` exist and their count is `1`
+1.  断言状态是正常的 `200`
+2.  断言元素 `span#name` 中的文本是 `'Amerigo'`
+3.  断言元素 `span#surname` 元素中的文本是 `'Vespucci'`
+4.  断言有 `span#dates` 元素，它们的计数是 `1`
 
-Do not forget to to remove the `assert.fail()` call.
+不要忘记删除 `assert.fail()` 调用。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -42,7 +42,7 @@ All tests should pass.
   );
 ```
 
-You should assert that the headless browser request succeeded.
+应断言无头浏览器成功执行请求。
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ You should assert that the headless browser request succeeded.
   );
 ```
 
-You should assert that the text inside the element 'span#name' is 'Amerigo'.
+应断言元素 “span#surname” 中的文本为 “Vespucci”。
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ You should assert that the text inside the element 'span#name' is 'Amerigo'.
   );
 ```
 
-You should assert that the text inside the element 'span#surname' is 'Vespucci'.
+应断言元素 “span#surname” 中的文本为 “Vespucci”。
 
 ```js
 (getUserInput) =>
@@ -88,7 +88,7 @@ You should assert that the text inside the element 'span#surname' is 'Vespucci'.
   );
 ```
 
-You should assert that the element 'span#dates' exist and its count is 1.
+应该断言元素 “span#dates” 存在，且它的值为 1。
 
 ```js
 (getUserInput) =>

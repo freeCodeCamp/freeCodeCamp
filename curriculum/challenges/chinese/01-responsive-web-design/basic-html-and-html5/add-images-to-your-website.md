@@ -13,7 +13,9 @@ dashedName: add-images-to-your-website
 
 例如：
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg">`
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg">
+```
 
 注意：`img` 元素是没有结束标签的。
 
@@ -25,7 +27,9 @@ dashedName: add-images-to-your-website
 
 让我们给上面例子的 `img` 添加 `alt` 属性。
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+```
 
 # --instructions--
 
@@ -33,9 +37,7 @@ dashedName: add-images-to-your-website
 
 在 `main` 元素里，给 `p` 元素前面插入一个 `img` 元素。
 
-然后将 `src` 的属性值设置为这个 url：
-
-`https://bit.ly/fcc-relaxing-cat`
+现在设置 `src` 属性，以便它指向网址 `https://bit.ly/fcc-relaxing-cat`
 
 最后，不要忘记给 `img` 加上 `alt` 属性。
 

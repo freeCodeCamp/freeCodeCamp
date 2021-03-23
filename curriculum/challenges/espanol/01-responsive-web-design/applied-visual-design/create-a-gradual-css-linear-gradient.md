@@ -11,17 +11,21 @@ dashedName: create-a-gradual-css-linear-gradient
 
 La aplicación de un color en elementos HTML no se limita a un tono plano. CSS proporciona la capacidad de usar transiciones de color, también conocidas como degradados, en los elementos. Esto se accede a través de la función `linear-gradient()` de la propiedad `background`. Aquí está la sintaxis general:
 
-`background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);`
+```css
+background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);
+```
 
-El primer argumento especifica la dirección desde la que comienza la transición de color - se puede establecer como un grado, donde `90deg` hace un gradiente horizontal (de izquierda a derecha) y `45deg` hace un gradiente diagonal (de abajo a izquierda hacia arriba a la derecha). Los siguientes argumentos especifican el orden de los colores utilizados en el degradado.
+El primer argumento especifica la dirección desde la que comienza la transición de color, se puede establecer como un grado, donde `90deg` hace un gradiente horizontal (de izquierda a derecha) y `45deg` hace un gradiente diagonal (de abajo a izquierda hacia arriba a la derecha). Los siguientes argumentos especifican el orden de los colores utilizados en el degradado.
 
 Ejemplo:
 
-`background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));`
+```css
+background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
+```
 
 # --instructions--
 
-Utiliza un `linear-gradient()` para el `div` del elemento `background` y configúralo desde una dirección de 35 grados para cambiar el color de `#CCFFFF` a `#FFCCCC`.
+Utiliza un `linear-gradient()` para el `background` del elemento `div` y configúralo desde una dirección de 35 grados para cambiar el color de `#CCFFFF` a `#FFCCCC`.
 
 # --hints--
 

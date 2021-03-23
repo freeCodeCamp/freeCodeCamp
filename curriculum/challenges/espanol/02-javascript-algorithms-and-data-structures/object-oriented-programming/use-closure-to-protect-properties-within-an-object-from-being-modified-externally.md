@@ -1,7 +1,7 @@
 ---
 id: 587d7db2367417b2b2512b8a
 title: >-
-  Use Closure to Protect Properties Within an Object from Being Modified Externally
+  Utiliza closures para evitar que las propiedades de un objeto se puedan modificar desde fuera
 challengeType: 1
 forumTopicId: 18234
 dashedName: >-
@@ -10,50 +10,49 @@ dashedName: >-
 
 # --description--
 
-In the previous challenge, `bird` had a public property `name`. It is considered public because it can be accessed and changed outside of `bird`'s definition.
+En el desafío anterior, `bird` tenía una propiedad pública `name`. Se considera pública porque se puede acceder y cambiar fuera de la definición de `bird`.
 
 ```js
 bird.name = "Duffy";
 ```
 
-Therefore, any part of your code can easily change the name of `bird` to any value. Think about things like passwords and bank accounts being easily changeable by any part of your codebase. That could cause a lot of issues.
+Por lo tanto, cualquier parte de tu código puede cambiar fácilmente el nombre "name" de `bird` a cualquier valor. Piensa en cosas como contraseñas y cuentas bancarias que se pueden cambiar fácilmente por cualquier parte de tu base de código. Eso podría crear muchos problemas.
 
-The simplest way to make this public property private is by creating a variable within the constructor function. This changes the scope of that variable to be within the constructor function versus available globally. This way, the variable can only be accessed and changed by methods also within the constructor function.
+La forma más sencilla de hacer privada esta propiedad pública es creando una variable dentro de la función constructora. Esto cambia el alcance de esa variable para que esté dentro de la función constructora versus disponible globalmente. De este modo, la variable solo puede ser accesible y cambiable por métodos que también estén dentro de la función constructora.
 
 ```js
 function Bird() {
-  let hatchedEgg = 10; // private variable
+  let hatchedEgg = 10;
 
-  /* publicly available method that a bird object can use */
   this.getHatchedEggCount = function() { 
     return hatchedEgg;
   };
 }
 let ducky = new Bird();
-ducky.getHatchedEggCount(); // returns 10
+ducky.getHatchedEggCount();
 ```
 
-Here `getHatchedEggCount` is a privileged method, because it has access to the private variable `hatchedEgg`. This is possible because `hatchedEgg` is declared in the same context as `getHatchedEggCount`. In JavaScript, a function always has access to the context in which it was created. This is called `closure`.
+Aquí `getHatchedEggCount` es un método privilegiado, porque tiene acceso a la variable privada `hatchedEgg`. Esto es posible porque `hatchedEgg` está declarada en el mismo contexto que `getHatchedEggCount`. En JavaScript, una función siempre tiene acceso al contexto en el que se creó. A esto se le llama `closure`.
 
 # --instructions--
 
-Change how `weight` is declared in the `Bird` function so it is a private variable. Then, create a method `getWeight` that returns the value of `weight` 15.
+Cambia como `weight` es declarada en la función `Bird` para que sea una variable privada. Después, crea un método `getWeight` que devuelva el valor 15 para `weight`.
 
 # --hints--
 
-The `weight` property should be a private variable and should be assigned the value of `15`.
+La propiedad `weight` debe ser una variable privada y debe asignársele el valor `15`.
 
 ```js
 assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
-Your code should create a method in `Bird` called `getWeight` that returns the value of the private variable `weight`.
+Tu código debe crear un método llamado `getWeight` en `Bird` que devuelva el valor de la variable privada `weight`.
 
 ```js
 assert(new Bird().getWeight() === 15);
 ```
 
-Your `getWeight` function should return the private variable `weight`.
+Tu función `getWeight` debe devolver la variable privada `weight`.
 
 ```js
 assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));

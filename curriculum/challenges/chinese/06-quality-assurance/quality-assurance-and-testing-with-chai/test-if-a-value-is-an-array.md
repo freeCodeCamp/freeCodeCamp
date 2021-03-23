@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c50
-title: Test if a Value is an Array
+title: 测试某个值是否为数组
 challengeType: 2
 forumTopicId: 301600
 dashedName: test-if-a-value-is-an-array
@@ -8,15 +8,15 @@ dashedName: test-if-a-value-is-an-array
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#11` in the `Arrays` suite, change each `assert` to either `assert.isArray` or `assert.isNotArray` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，`Arrays` 套件里标有 `#11` 的测试下，将每个 `assert` 改成 `assert.isArray` 或 `assert.isNotArray` 方法，通过测试（结果应该返回 `true`）。 不要改变传入断言的参数。
 
 # --hints--
 
-All tests should pass.
+不应有未通过的测试
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isArray` vs. `isNotArray`.
+请选择正确的断言——`isArray` 或 `isNotArray`。
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isArray` vs. `is
   );
 ```
 
-You should choose the correct method for the second assertion - `isArray` vs. `isNotArray`.
+请选择正确的断言——`isArray` 或 `isNotArray`。
 
 ```js
 (getUserInput) =>

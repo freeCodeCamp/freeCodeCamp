@@ -17,7 +17,9 @@ Las cuatro diferentes unidades de viewport son:
 
 Aquí hay un ejemplo que establece una etiqueta `body` al 30% del ancho del viewport.
 
-`body { width: 30vw; }`
+```css
+body { width: 30vw; }
+```
 
 # --instructions--
 

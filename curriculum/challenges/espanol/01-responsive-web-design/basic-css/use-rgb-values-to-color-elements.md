@@ -13,11 +13,15 @@ Otra forma de representar colores en CSS es utilizar valores `RGB`.
 
 El valor `RGB` del color negro se ve así:
 
-`rgb(0, 0, 0)`
+```css
+rgb(0, 0, 0)
+```
 
 El valor `RGB` del color blanco se ve así:
 
-`rgb(255, 255, 255)`
+```css
+rgb(255, 255, 255)
+```
 
 En lugar de usar seis dígitos hexadecimales, como hacemos con el código hexadecimal, en `RGB` se especifica el brillo de cada color con un número que va de 0 a 255.
 

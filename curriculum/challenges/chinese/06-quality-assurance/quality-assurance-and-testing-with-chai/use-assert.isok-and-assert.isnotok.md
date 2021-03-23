@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c48
-title: Use Assert.isOK and Assert.isNotOK
+title: 使用 Assert.isOk() 和 Assert.isNotOK()
 challengeType: 2
 forumTopicId: 301607
 dashedName: use-assert-isok-and-assert-isnotok
@@ -8,19 +8,19 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-`isOk()` will test for a truthy value, and `isNotOk()` will test for a falsy value.
+`isOk()` 用来测试值是否为真值，`isNotOk()` 用来测试值是否为假值。
 
-To learn more about truthy and falsy values, try our [Falsy Bouncer](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer) challenge.
+可以在[过滤数组中的假值](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer)这个挑战中了解更多关于真值和假值的信息。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，`Basic Assertions` 套件中标注为 `#3` 的测试下，修改每个 `assert` 为 `assert.isOk()` 或 `assert.isNotOk()`，通过测试（结果应为 `true`）。 不要修改传入断言的参数。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -34,7 +34,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isOk` vs. `isNotOk`.
+应该第一个断言选择正确的方法：`isOk` 或 `isNotOk`。
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isOk` vs. `isNot
   );
 ```
 
-You should choose the correct method for the second assertion - `isOk` vs. `isNotOk`.
+应该第二个断言选择正确的方法：`isOk` 或 `isNotOk`。
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ You should choose the correct method for the second assertion - `isOk` vs. `isNo
   );
 ```
 
-You should choose the correct method for the third assertion - `isOk` vs. `isNotOk`.
+应该第三个断言选择正确的方法：`isOk` 或 `isNotOk`。
 
 ```js
 (getUserInput) =>
