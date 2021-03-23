@@ -132,7 +132,7 @@ export class SuperBlockIntroductionPage extends Component {
     const {
       data: {
         markdownRemark: {
-          frontmatter: { superBlock }
+          frontmatter: { superBlock, title }
         },
         allChallengeNode: { edges }
       },
@@ -175,7 +175,7 @@ export class SuperBlockIntroductionPage extends Component {
                 ))}
                 {superBlock !== 'coding-interview-prep' && (
                   <div>
-                    <CertChallenge superBlock={superBlock} />
+                    <CertChallenge superBlock={superBlock} title={title} />
                   </div>
                 )}
               </div>
@@ -216,6 +216,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         superBlock
+        title
       }
     }
     allChallengeNode(
