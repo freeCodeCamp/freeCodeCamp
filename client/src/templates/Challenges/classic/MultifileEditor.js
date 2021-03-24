@@ -185,9 +185,17 @@ class MultifileEditor extends Component {
       renderOnResizeRate: 20
     };
 
-    // TODO: this approach (||ing the visible editors) isn't great.
-    const splitterHTMLRight = indexhtml && indexcss;
-    const splitterCSSRight = indexcss || (indexhtml && indexjs);
+    let splitterHTMLRight, splitterCSSRight;
+    if (indexhtml) {
+      if (indexcss || indexjs) {
+        splitterHTMLRight = true;
+      }
+    }
+    if (indexcss) {
+      if (indexjs) {
+        splitterCSSRight = true;
+      }
+    }
 
     // TODO: tabs should be dynamically created from the challengeFiles
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
