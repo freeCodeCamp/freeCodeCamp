@@ -16,7 +16,9 @@ The previous challenges covered how to display data from an array and how to add
 
 Recall the format to set a style using a callback function:
 
-`selection.style("cssProperty", (d) => d)`
+```js
+selection.style("cssProperty", (d) => d)
+```
 
 # --instructions--
 
