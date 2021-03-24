@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4e
-title: Crea strings usando plantillas literales
+title: Crea cadenas usando plantillas literales
 challengeType: 1
 forumTopicId: 301200
 dashedName: create-strings-using-template-literals
@@ -8,9 +8,9 @@ dashedName: create-strings-using-template-literals
 
 # --description--
 
-Una nueva característica de ES6 es la <dfn>plantilla literal</dfn>. Este es un tipo especial de strings que facilita la creación de strings complejos.
+Una nueva característica de ES6 es la <dfn>plantilla literal</dfn>. Este es un tipo especial de cadena que facilita la creación de cadenas complejas.
 
-Las plantillas literales te permiten crear strings multilínea y usar características de interpolación, para crear strings.
+Las plantillas literales te permiten crear cadenas multilínea y usar características de interpolación, para crearlas.
 
 Fíjese en el código debajo:
 

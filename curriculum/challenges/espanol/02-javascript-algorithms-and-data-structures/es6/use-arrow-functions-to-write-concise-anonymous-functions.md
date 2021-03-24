@@ -34,7 +34,7 @@ Cuando la función no posee cuerpo y sólo tiene un valor de retorno, la sintaxi
 const myFunc = () => "value";
 ```
 
-Este código todavía retorna el string `value` por defecto.
+Este código todavía devolverá la cadena `value` por defecto.
 
 # --instructions--
 
