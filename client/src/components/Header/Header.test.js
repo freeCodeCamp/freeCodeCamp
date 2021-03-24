@@ -6,7 +6,7 @@ import { UniversalNav } from './components/UniversalNav';
 import { NavLinks } from './components/NavLinks';
 import AuthOrProfile from './components/AuthOrProfile';
 
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation, clientLocale } from '../../../../config/env.json';
 
 describe('<UniversalNav />', () => {
   const UniversalNavProps = {
@@ -231,7 +231,9 @@ const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
   return (
     children[0].props.children === 'buttons.forum' &&
-    to === 'https://forum.freecodecamp.org/'
+    (clientLocale === 'chinese'
+      ? to === 'https://chinese.freecodecamp.org/forum'
+      : to === 'https://forum.freecodecamp.org/')
   );
 };
 
@@ -239,7 +241,9 @@ const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
   return (
     children[0].props.children === 'buttons.news' &&
-    to === 'https://www.freecodecamp.org/news'
+    (clientLocale === 'chinese'
+      ? to === 'https://chinese.freecodecamp.org/news'
+      : to === 'https://www.freecodecamp.org/news')
   );
 };
 
