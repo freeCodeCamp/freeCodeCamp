@@ -169,7 +169,7 @@ class MultifileEditor extends Component {
       editorRef,
       theme,
       resizeProps,
-      visibleEditors
+      visibleEditors: { indexcss, indexhtml, indexjs, indexjsx }
     } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
@@ -185,11 +185,9 @@ class MultifileEditor extends Component {
       renderOnResizeRate: 20
     };
 
-    // TODO: this approach (||ing the visibleEditors) isn't great.
-    const splitCSS = visibleEditors.indexhtml && visibleEditors.indexcss;
-    const splitJS =
-      visibleEditors.indexcss ||
-      (visibleEditors.indexhtml && visibleEditors.indexjs);
+    // TODO: this approach (||ing the visible editors) isn't great.
+    const splitterHTMLRight = indexhtml && indexcss;
+    const splitterCSSRight = indexcss || (indexhtml && indexjs);
 
     // TODO: tabs should be dynamically created from the challengeFiles
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
@@ -204,7 +202,7 @@ class MultifileEditor extends Component {
       >
         <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
           <ReflexContainer orientation='vertical'>
-            {visibleEditors.indexhtml && (
+            {indexhtml && (
               <ReflexElement {...reflexProps} {...resizeProps}>
                 <Editor
                   challengeFiles={challengeFiles}
@@ -220,8 +218,10 @@ class MultifileEditor extends Component {
                 />
               </ReflexElement>
             )}
-            {splitCSS && <ReflexSplitter propagate={true} {...resizeProps} />}
-            {visibleEditors.indexcss && (
+            {splitterHTMLRight && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
+            {indexcss && (
               <ReflexElement {...reflexProps} {...resizeProps}>
                 <Editor
                   challengeFiles={challengeFiles}
@@ -234,9 +234,11 @@ class MultifileEditor extends Component {
                 />
               </ReflexElement>
             )}
-            {splitJS && <ReflexSplitter propagate={true} {...resizeProps} />}
+            {splitterCSSRight && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
 
-            {visibleEditors.indexjs && (
+            {indexjs && (
               <ReflexElement {...reflexProps} {...resizeProps}>
                 <Editor
                   challengeFiles={challengeFiles}
@@ -249,7 +251,7 @@ class MultifileEditor extends Component {
                 />
               </ReflexElement>
             )}
-            {visibleEditors.indexjsx && (
+            {indexjsx && (
               <ReflexElement {...reflexProps} {...resizeProps}>
                 <Editor
                   challengeFiles={challengeFiles}
