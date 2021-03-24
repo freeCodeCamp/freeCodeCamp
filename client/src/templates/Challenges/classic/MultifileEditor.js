@@ -185,7 +185,12 @@ class MultifileEditor extends Component {
       renderOnResizeRate: 20
     };
 
-    let splitterHTMLRight, splitterCSSRight;
+    let splitterJSXRight, splitterHTMLRight, splitterCSSRight;
+    if (indexjsx) {
+      if (indexhtml || indexcss || indexjs) {
+        splitterJSXRight = true;
+      }
+    }
     if (indexhtml) {
       if (indexcss || indexjs) {
         splitterHTMLRight = true;
@@ -210,6 +215,22 @@ class MultifileEditor extends Component {
       >
         <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
           <ReflexContainer orientation='vertical'>
+            {indexjsx && (
+              <ReflexElement {...reflexProps} {...resizeProps}>
+                <Editor
+                  challengeFiles={challengeFiles}
+                  containerRef={containerRef}
+                  description={targetEditor === 'indexjsx' ? description : null}
+                  fileKey='indexjsx'
+                  key='indexjsx'
+                  resizeProps={resizeProps}
+                  theme={editorTheme}
+                />
+              </ReflexElement>
+            )}
+            {splitterJSXRight && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
             {indexhtml && (
               <ReflexElement {...reflexProps} {...resizeProps}>
                 <Editor
@@ -254,19 +275,6 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexjs' ? description : null}
                   fileKey='indexjs'
                   key='indexjs'
-                  resizeProps={resizeProps}
-                  theme={editorTheme}
-                />
-              </ReflexElement>
-            )}
-            {indexjsx && (
-              <ReflexElement {...reflexProps} {...resizeProps}>
-                <Editor
-                  challengeFiles={challengeFiles}
-                  containerRef={containerRef}
-                  description={targetEditor === 'indexjsx' ? description : null}
-                  fileKey='indexjsx'
-                  key='indexjsx'
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
