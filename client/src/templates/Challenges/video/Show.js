@@ -338,6 +338,7 @@ export const query = graphql`
         answers
         solution
       }
+      translationPending
     }
   }
 `;
