@@ -25,7 +25,7 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 | ----------------------------- | ------- | -------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)  | `14.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)   |
 | npm (comes bundled with Node) | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x`   | [Release Notes](https://docs.mongodb.com/v4.0/release-notes/) |
 
 > [!DANGER]
 > If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
