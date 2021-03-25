@@ -63,7 +63,6 @@ const propTypes = {
     challengeMeta: PropTypes.object
   }),
   t: PropTypes.func.isRequired,
-  translationPending: PropTypes.bool.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -338,6 +337,7 @@ export const query = graphql`
         answers
         solution
       }
+      translationPending
     }
   }
 `;
