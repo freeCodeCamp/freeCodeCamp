@@ -5,5 +5,8 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
+  ],
+  "ignorePaths": [
+    "api-server"
   ]
 }
