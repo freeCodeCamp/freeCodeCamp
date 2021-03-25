@@ -229,21 +229,27 @@ const hasProfileAndSettingsNavItems = (component, username) => {
 
 const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
+  const localizedForums = {
+    chinese: 'https://chinese.freecodecamp.org/forum',
+    espanol: 'https://forum.freecodecamp.org/c/espanol/',
+    english: 'https://forum.freecodecamp.org/'
+  };
   return (
     children[0].props.children === 'buttons.forum' &&
-    (clientLocale === 'chinese'
-      ? to === 'https://chinese.freecodecamp.org/forum'
-      : to === 'https://forum.freecodecamp.org/')
+    to === localizedForums[clientLocale]
   );
 };
 
 const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
+  const localizedNews = {
+    chinese: 'https://chinese.freecodecamp.org/news',
+    espanol: 'https://www.freecodecamp.org/espanol/news',
+    english: 'https://www.freecodecamp.org/news'
+  };
   return (
     children[0].props.children === 'buttons.news' &&
-    (clientLocale === 'chinese'
-      ? to === 'https://chinese.freecodecamp.org/news'
-      : to === 'https://www.freecodecamp.org/news')
+    to === localizedNews[clientLocale]
   );
 };
 
