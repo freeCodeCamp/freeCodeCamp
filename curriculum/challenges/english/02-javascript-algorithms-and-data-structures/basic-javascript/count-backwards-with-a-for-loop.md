@@ -22,7 +22,7 @@ for (var i = 10; i > 0; i -= 2) {
 }
 ```
 
-`ourArray` will now contain `[10,8,6,4,2]`. Let's change our initialization and final expression so we can count backward by twos by odd numbers.
+`ourArray` will now contain `[10,8,6,4,2]`. Let's change our initialization and final expression so we can count odd numbers backward by twos.
 
 # --instructions--
 
