@@ -11,7 +11,9 @@ dashedName: delete-properties-from-a-javascript-object
 
 We can also delete properties from objects like this:
 
-`delete ourDog.bark;`
+```js
+delete ourDog.bark;
+```
 
 Example:
 
