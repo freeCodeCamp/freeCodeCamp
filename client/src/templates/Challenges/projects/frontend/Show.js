@@ -62,7 +62,7 @@ const propTypes = {
   updateSolutionFormValues: PropTypes.func.isRequired
 };
 
-export class Project extends Component {
+class Project extends Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);

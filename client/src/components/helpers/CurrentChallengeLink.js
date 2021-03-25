@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { apiLocation } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
+
+const { apiLocation } = envData;
 
 const currentChallengeApi = '/challenges/current-challenge';
 

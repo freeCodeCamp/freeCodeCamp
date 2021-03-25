@@ -13,8 +13,10 @@ import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { isAuditedCert } from '../../../../../utils/is-audited';
-import { curriculumLocale } from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
 import { Link } from '../../../components/helpers/';
+
+const { curriculumLocale } = envData;
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
