@@ -15,7 +15,9 @@ To do this, we'll define a minimum number `min` and a maximum number `max`.
 
 Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
 
-`Math.floor(Math.random() * (max - min + 1)) + min`
+```js
+Math.floor(Math.random() * (max - min + 1)) + min
+```
 
 # --instructions--
 
