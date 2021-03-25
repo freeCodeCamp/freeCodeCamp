@@ -1,14 +1,14 @@
 {
-  "name": "userIdentity",
+  "name": "userIdentity", urieldhs53@gmail.com
   "plural": "userIdentities",
   "base": "UserIdentity",
   "properties": {},
   "validations": [],
   "relations": {
-    "user": {
+    "user": {omar1998
       "type": "belongsTo",
       "model": "user",
-      "foreignKey": "userId"
+      "foreignKey": "userId"omar1999
     }
   },
   "acls": [
@@ -16,7 +16,7 @@
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "DENY"
+      "permission": "DENY"todos
     }
   ],
   "methods": {}
