@@ -363,7 +363,7 @@ class Editor extends Component {
     this.data.viewZoneHeight = domNode.offsetHeight;
 
     var background = document.createElement('div');
-    background.style.background = 'lightgreen';
+    // background.style.background = 'lightgreen';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
@@ -392,7 +392,7 @@ class Editor extends Component {
     this.data.outputZoneHeight = outputNode.offsetHeight;
 
     var background = document.createElement('div');
-    background.style.background = 'lightpink';
+    // background.style.background = 'lightpink';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
@@ -413,19 +413,14 @@ class Editor extends Component {
     const { description } = this.props;
     var domNode = document.createElement('div');
     var desc = document.createElement('div');
-    var button = document.createElement('button');
-    button.innerHTML = 'Run the Tests (Ctrl + Enter)';
-    button.onclick = () => {
-      const { executeChallenge } = this.props;
-      executeChallenge();
-    };
-
-    domNode.appendChild(desc);
-    domNode.appendChild(button);
+    var descContainer = document.createElement('div');
+    descContainer.classList.add('description-container');
+    domNode.classList.add('editor-upper-jaw');
+    domNode.appendChild(descContainer);
+    descContainer.appendChild(desc);
     desc.innerHTML = description;
-
-    desc.style.background = 'white';
-    domNode.style.background = 'lightgreen';
+    // desc.style.background = 'white';
+    // domNode.style.background = 'lightgreen';
     // TODO: the solution is probably just to use an overlay that's forced to
     // follow the decorations.
     // TODO: this is enough for Firefox, but Chrome needs more before the
@@ -436,7 +431,7 @@ class Editor extends Component {
 
     domNode.setAttribute('aria-hidden', true);
 
-    domNode.style.background = 'lightYellow';
+    // domNode.style.background = 'lightYellow';
     domNode.style.left = this._editor.getLayoutInfo().contentLeft + 'px';
     domNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
     domNode.style.top = this.getViewZoneTop();
@@ -449,11 +444,23 @@ class Editor extends Component {
     const outputNode = document.createElement('div');
     const statusNode = document.createElement('div');
     const hintNode = document.createElement('div');
-    outputNode.appendChild(statusNode);
-    outputNode.appendChild(hintNode);
+    const editorActionRow = document.createElement('div');
+    editorActionRow.classList.add('action-row-container');
+    outputNode.classList.add('editor-lower-jaw');
+    outputNode.appendChild(editorActionRow);
+    editorActionRow.appendChild(statusNode);
+    editorActionRow.appendChild(hintNode);
     hintNode.setAttribute('id', 'test-output');
     statusNode.setAttribute('id', 'test-status');
-    statusNode.innerHTML = '// tests';
+    statusNode.innerHTML = '&#9203; tests has not run';
+    var button = document.createElement('button');
+    button.classList.add('btn-block');
+    button.innerHTML = 'Run the Tests (Ctrl + Enter)';
+    editorActionRow.appendChild(button);
+    button.onclick = () => {
+      const { executeChallenge } = this.props;
+      executeChallenge();
+    };
 
     // TODO: does it?
     // The z-index needs increasing as ViewZones default to below the lines.
@@ -521,6 +528,19 @@ class Editor extends Component {
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myLineDecoration',
+        className: 'do-not-edit',
+        stickiness
+      }
+    };
+    return target.deltaDecorations(oldIds, [lineDecoration]);
+  }
+
+  highlightEditableLines(stickiness, target, range, oldIds = []) {
+    const lineDecoration = {
+      range,
+      options: {
+        isWholeLine: true,
+        linesDecorationsClassName: 'myEditableLineDecoration',
         className: 'do-not-edit',
         stickiness
       }
@@ -654,6 +674,19 @@ class Editor extends Component {
     const ranges = forbiddenRanges.map(positions => {
       return this.positionsToRange(model, positions);
     });
+
+    console.log(editableRegion);
+
+    const editableRange = this.positionsToRange(model, [
+      editableRegion[0] + 1,
+      editableRegion[1] - 1
+    ]);
+
+    this.highlightEditableLines(
+      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+      model,
+      editableRange
+    );
 
     // if the forbidden range includes the top of the editor
     // we simply don't add those decorations
@@ -902,7 +935,17 @@ class Editor extends Component {
           }
 
           if (output[1]) {
-            document.getElementById('test-output').innerHTML = output[1];
+            if (output[1] === '// tests completed') {
+              document.getElementById('test-output').innerHTML = '';
+              document.getElementById('test-status').innerHTML =
+                '&#9989; all tests passed  [-----progress bar-----]';
+            } else {
+              document.getElementById('test-status').innerHTML =
+                '&#10060; tests have not passed';
+              document.getElementById(
+                'test-output'
+              ).innerHTML = `Hint: ${output[1]}`;
+            }
           }
 
           // if either id exists, the editable region exists
