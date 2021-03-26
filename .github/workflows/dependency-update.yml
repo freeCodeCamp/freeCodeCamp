@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/github-script@v3
         with:
-          github-token: ${{secrets.GITHUB_ACTIONS_CAMPERBOT_PA_TOKEN}}
+          github-token: ${{secrets.CROWDIN_CAMPERBOT_PAT}}
           script: |
             if (context.payload.pull_request.user.login === "renovate[bot]") {
               github.pulls.createReview({
