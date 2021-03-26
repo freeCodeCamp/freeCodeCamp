@@ -6,10 +6,8 @@ RUN sudo apt-get update
 # Source: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/#install-mongodb-community-edition
 RUN mkdir -p /tmp/mongodb && \
     cd /tmp/mongodb && \
-    wget -qOmongodb.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.2.tgz && \
-    tar xf mongodb.tgz && \
-    cd mongodb-* && \
-    sudo cp bin/* /usr/local/bin/ && \
-    rm -rf /tmp/mongodb && \
-    sudo mkdir -p /data/db && \
-    sudo chown gitpod:gitpod -R /data/db
+    wget -qO - https://www.mongodb.org/static/pgp/server-4.0.asc | sudo apt-key add - && \
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list && \
+    sudo apt-get update && \
+    sudo apt-get install -y mongodb-org=4.0 mongodb-org-server=4.0 mongodb-org-shell=4.0 mongodb-org-mongos=4.0 mongodb-org-tools=4.0 && \
+
