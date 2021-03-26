@@ -43,7 +43,7 @@ Your `body` element should have a black background.
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-You should use `rgb` to give your `body` element a background-color of black.
+You should use `rgb` to give your `body` element a background of black.
 
 ```js
 assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));
