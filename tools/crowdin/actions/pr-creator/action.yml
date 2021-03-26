@@ -1,5 +1,5 @@
 name: 'Create Crowdin PRs'
-description: "Creates a PR by camperbot for Crowdin translation downloads"
+description: 'Creates a PR by camperbot for Crowdin translation downloads'
 runs:
   using: 'node12'
   main: './index.js'
@@ -28,4 +28,7 @@ inputs:
     required: false
   reviewers:
     description: 'Requested PR reviewers'
+    required: false
+  team_reviewers:
+    description: 'Requested organization team PR reviewers'
     required: false
