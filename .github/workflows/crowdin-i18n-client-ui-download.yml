@@ -89,7 +89,7 @@ jobs:
         run: |
           cd ./crowdin
           npm ci
-          
+
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR
         uses: ./tools/crowdin/actions/pr-creator
@@ -101,4 +101,4 @@ jobs:
           title: 'chore(i18n,client): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
           labels: 'crowdin-sync, scope: UI'
-          reviewers: 'RandellDawson, nhcarrigan'
+          team_reviewers: 'i18n'
