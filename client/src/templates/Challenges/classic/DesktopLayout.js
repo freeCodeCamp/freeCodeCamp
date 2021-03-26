@@ -73,13 +73,14 @@ class DesktopLayout extends Component {
         )}
         <ReflexContainer className='desktop-layout' orientation='vertical'>
           {!projectBasedChallenge && (
-            <>
-              <ReflexElement flex={1} {...resizeProps}>
-                {instructions}
-              </ReflexElement>
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            </>
+            <ReflexElement flex={1} {...resizeProps}>
+              {instructions}
+            </ReflexElement>
           )}
+          {!projectBasedChallenge && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
+
           <ReflexElement flex={1} {...resizeProps}>
             {challengeFile && (
               <ReflexContainer key={challengeFile.key} orientation='horizontal'>
