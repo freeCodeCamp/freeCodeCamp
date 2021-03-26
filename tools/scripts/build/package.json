@@ -20,7 +20,7 @@
   "devDependencies": {
     "debug": "^4.0.1",
     "dotenv": "^6.0.0",
-    "jest": "^24.9.0"
+    "jest": "^26.0.0"
   },
   "engines": {
     "node": ">= 14.0.0"
