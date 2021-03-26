@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b90
-title: Match a Literal String with Different Possibilities
+title: Coincide una cadena literal con diferentes posibilidades
 challengeType: 1
 forumTopicId: 301345
 dashedName: match-a-literal-string-with-different-possibilities
@@ -8,57 +8,57 @@ dashedName: match-a-literal-string-with-different-possibilities
 
 # --description--
 
-Using regexes like `/coding/`, you can look for the pattern `"coding"` in another string.
+Al utilizar expresiones regulares como `/coding/`, puedes buscar el patrón `coding` en otra cadena.
 
-This is powerful to search single strings, but it's limited to only one pattern. You can search for multiple patterns using the `alternation` or `OR` operator: `|`.
+Esto es muy potente al buscar cadenas individuales, pero está limitado a un solo patrón. Puedes buscar múltiples patrones usando el operador `alternation` o `OR`: `|`.
 
-This operator matches patterns either before or after it. For example, if you wanted to match `"yes"` or `"no"`, the regex you want is `/yes|no/`.
+Este operador coincide con los patrones antes o después de él. Por ejemplo, si deseas coincidir con las cadenas `yes` o `no`, la expresión regular que quieres es `/yes|no/`.
 
-You can also search for more than just two patterns. You can do this by adding more patterns with more `OR` operators separating them, like `/yes|no|maybe/`.
+También puedes buscar más de dos patrones. Puedes hacer esto añadiendo más patrones con más operadores `OR` separándolos, como `/yes|no|maybe/`.
 
 # --instructions--
 
-Complete the regex `petRegex` to match the pets `"dog"`, `"cat"`, `"bird"`, or `"fish"`.
+Completa la expresión regular `petRegex` para que coincida con las mascotas `dog`, `cat`, `bird`, o `fish`.
 
 # --hints--
 
-Your regex `petRegex` should return `true` for the string `"John has a pet dog."`
+Tu expresión regular `petRegex` debe devolver `true` para la cadena `John has a pet dog.`
 
 ```js
 assert(petRegex.test('John has a pet dog.'));
 ```
 
-Your regex `petRegex` should return `false` for the string `"Emma has a pet rock."`
+Tu expresión regular `petRegex` debe devolver `false` para la cadena `Emma has a pet rock.`
 
 ```js
 assert(!petRegex.test('Emma has a pet rock.'));
 ```
 
-Your regex `petRegex` should return `true` for the string `"Emma has a pet bird."`
+Tu expresión regular `petRegex` debe devolver `true` para la cadena `Emma has a pet bird.`
 
 ```js
 assert(petRegex.test('Emma has a pet bird.'));
 ```
 
-Your regex `petRegex` should return `true` for the string `"Liz has a pet cat."`
+Tu expresión regular `petRegex` debe devolver `true` para la cadena `Liz has a pet cat.`
 
 ```js
 assert(petRegex.test('Liz has a pet cat.'));
 ```
 
-Your regex `petRegex` should return `false` for the string `"Kara has a pet dolphin."`
+Tu expresión regular `petRegex` debe devolver `false` para la cadena `Kara has a pet dolphin.`
 
 ```js
 assert(!petRegex.test('Kara has a pet dolphin.'));
 ```
 
-Your regex `petRegex` should return `true` for the string `"Alice has a pet fish."`
+Tu expresión regular `petRegex` debe devolver `true` para la cadena `Alice has a pet fish.`
 
 ```js
 assert(petRegex.test('Alice has a pet fish.'));
 ```
 
-Your regex `petRegex` should return `false` for the string `"Jimmy has a pet computer."`
+Tu expresión regular `petRegex` debe devolver `false` para la cadena `Jimmy has a pet computer.`
 
 ```js
 assert(!petRegex.test('Jimmy has a pet computer.'));
