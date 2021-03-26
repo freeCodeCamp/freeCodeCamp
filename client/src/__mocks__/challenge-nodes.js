@@ -1,4 +1,4 @@
-export default [
+const mockChallengeNodes = [
   {
     fields: {
       slug: '/super-block-one/block-a/challenge-one',
@@ -133,3 +133,5 @@ export default [
     dashedName: 'challenge-two'
   }
 ];
+
+export default mockChallengeNodes;

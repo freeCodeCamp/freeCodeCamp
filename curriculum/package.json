@@ -26,11 +26,11 @@
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
+    "@babel/core": "^7.13.10",
     "@babel/polyfill": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-env": "^7.13.12",
     "@babel/register": "^7.11.5",
-    "acorn": "^8.0.1",
+    "acorn": "^8.1.0",
     "acorn-jsx": "^5.3.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dynamic-import-node": "^2.3.3",
@@ -39,7 +39,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.3.13",
-    "chai": "4.3.3",
+    "chai": "^4.3.4",
     "cross-env": "^7.0.2",
     "css": "^3.0.0",
     "fs-extra": "^6.0.1",
@@ -51,13 +51,13 @@
     "jsdom": "^12.2.0",
     "live-server": "^1.2.1",
     "lodash": "^4.17.20",
-    "mocha": "8.3.1",
+    "mocha": "^8.3.2",
     "puppeteer": "^8.0.0",
-    "readdirp": "^3.5.0",
+    "readdirp": "^3.6.0",
     "rehype": "^11.0.0",
     "string-similarity": "^4.0.2",
     "unist-util-visit": "^2.0.3",
-    "vfile": "^4.2.0"
+    "vfile": "^4.2.1"
   },
   "engines": {
     "node": ">= 14.0.0"

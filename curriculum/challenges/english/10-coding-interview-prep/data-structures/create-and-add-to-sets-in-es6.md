@@ -12,15 +12,21 @@ Now that you have worked through ES5, you are going to perform something similar
 
 To create a new empty set:
 
-`var set = new Set();`
+```js
+var set = new Set();
+```
 
 You can create a set with a value:
 
-`var set = new Set(1);`
+```js
+var set = new Set(1);
+```
 
 You can create a set with an array:
 
-`var set = new Set([1, 2, 3]);`
+```js
+var set = new Set([1, 2, 3]);
+```
 
 Once you have created a set, you can add the values you wish using the `add` method:
 

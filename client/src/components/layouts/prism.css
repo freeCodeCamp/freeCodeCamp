@@ -7,10 +7,6 @@ pre[class*='language-'] {
   background: var(--primary-background);
 }
 
-pre[class*='language'] code[class*='language-'] {
-  white-space: nowrap;
-}
-
 * {
   text-shadow: none !important;
 }

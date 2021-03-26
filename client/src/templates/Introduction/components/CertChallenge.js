@@ -10,10 +10,12 @@ import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { userSelector } from '../../../redux';
 import { User } from '../../../redux/propTypes';
+import { certMap } from '../../../resources/certAndProjectMap';
 
 const propTypes = {
   superBlock: PropTypes.string,
   t: PropTypes.func,
+  title: PropTypes.string,
   user: User
 };
 
@@ -28,6 +30,7 @@ export class CertChallenge extends Component {
     const {
       superBlock,
       t,
+      title,
       user: {
         is2018DataVisCert,
         isApisMicroservicesCert,
@@ -56,8 +59,9 @@ export class CertChallenge extends Component {
       'machine-learning-with-python': isMachineLearningPyCertV7
     };
 
+    const cert = certMap.find(x => x.title === title);
     const isCertified = userCertificates[superBlock];
-    const certLocation = `/certification/${username}/${superBlock}`;
+    const certLocation = `/certification/${username}/${cert.slug}`;
     const certCheckmarkStyle = { height: '40px', width: '40px' };
     const i18nSuperBlock = t(`intro:${superBlock}.title`);
     const i18nCertText = t(`intro:misc-text.certification`, {

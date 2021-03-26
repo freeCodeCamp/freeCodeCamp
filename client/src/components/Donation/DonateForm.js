@@ -24,7 +24,7 @@ import {
   donationUrls,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
-import { stripePublicKey, deploymentEnv } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import Spacer from '../helpers/Spacer';
 import PaypalButton from './PaypalButton';
@@ -43,6 +43,8 @@ import {
 } from '../../redux';
 
 import './Donation.css';
+
+const { stripePublicKey, deploymentEnv } = envData;
 
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');

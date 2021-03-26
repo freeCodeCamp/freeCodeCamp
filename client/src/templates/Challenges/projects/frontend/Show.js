@@ -62,7 +62,7 @@ const propTypes = {
   updateSolutionFormValues: PropTypes.func.isRequired
 };
 
-export class Project extends Component {
+class Project extends Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -176,7 +176,11 @@ export class Project extends Component {
                 <br />
                 <Spacer />
               </Col>
-              <CompletionModal blockName={blockName} />
+              <CompletionModal
+                block={block}
+                blockName={blockName}
+                superBlock={superBlock}
+              />
               <HelpModal />
             </Row>
           </Grid>

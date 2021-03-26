@@ -20,15 +20,15 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-El ejemplo anterior utiliza strings como argumento de las funciones, pero podrían ser cualquier otra cosa. A menudo, podría ser un objeto, del que utilizas datos, para colocar en tu sitio web o en otro lugar.
+El ejemplo anterior usa cadenas como argumento de las funciones, pero podrían ser cualquier otra cosa. A menudo, podría ser un objeto, del que utilizas datos, para colocar en tu sitio web o en otro lugar.
 
 # --instructions--
 
-Haga una función promesa que maneje el éxito y el fallo. Si `responseFromServer` es `true`, llame al método `resolve` para completar satisfactoriamente la promesa. `resolve` devuelve un string con el valor `We got the data`. Si `responseFromServer` es `false`, utilice el método `reject` y devuelva la cadena: `Data not received`.
+Haga una función promesa que maneje el éxito y el fallo. Si `responseFromServer` es `true`, llame al método `resolve` para completar satisfactoriamente la promesa. Pasa a `resolve` una cadena con el valor `We got the data`. Si `responseFromServer` es `false`, utiliza el método `reject` y devuelve la cadena: `Data not received`.
 
 # --hints--
 
-`resolve` debe ser llamada con el string esperado, cuando la condición `if` es `true`.
+`resolve` debe ser llamada con la cadena esperada, cuando la condición `if` es `true`.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`reject` debe ser llamada con el string esperado, cuando la condición `if` es `false`.
+`reject` debe ser llamada con la cadena esperada, cuando la condición `if` es `false`.
 
 ```js
 assert(

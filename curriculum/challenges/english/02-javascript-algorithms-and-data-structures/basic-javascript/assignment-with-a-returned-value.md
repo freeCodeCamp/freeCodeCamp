@@ -13,7 +13,9 @@ If you'll recall from our discussion of [Storing Values with the Assignment Oper
 
 Assume we have pre-defined a function `sum` which adds two numbers together, then:
 
-`ourSum = sum(5, 12);`
+```js
+ourSum = sum(5, 12);
+```
 
 will call `sum` function, which returns a value of `17` and assigns it to `ourSum` variable.
 

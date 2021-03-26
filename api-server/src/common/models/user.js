@@ -152,7 +152,7 @@ function populateRequiredFields(user) {
   return;
 }
 
-export default function (User) {
+export default function initializeUser(User) {
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
   // set user.rand to random number
