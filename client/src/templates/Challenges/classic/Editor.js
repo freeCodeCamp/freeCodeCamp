@@ -682,6 +682,9 @@ class Editor extends Component {
       editableRegion[1] - 1
     ]);
 
+    // TODO: this needs the same treatment as the before and after regions,
+    // since none of the stickiness options actually work
+
     this.highlightEditableLines(
       this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
       model,
