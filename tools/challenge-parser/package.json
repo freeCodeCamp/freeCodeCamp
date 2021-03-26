@@ -1,11 +1,12 @@
 {
-  "name": "challenge-parser",
+  "name": "@freecodecamp/challenge-parser",
   "version": "0.0.1",
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0"
+    "node": ">= 14.0.0",
+    "npm": "^7.7.5"
   },
   "repository": {
     "type": "git",

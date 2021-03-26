@@ -3,8 +3,10 @@
   "version": "0.0.0-next.4",
   "description": "freeCodeCamp's curriculum seed files",
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "private": true,
   "engines": {
-    "node": ">= 14.0.0"
+    "node": ">= 14.0.0",
+    "npm": "^7.7.5"
   },
   "repository": {
     "type": "git",
