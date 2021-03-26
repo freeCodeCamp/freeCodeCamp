@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba1
-title: Match All Non-Numbers
+title: Coincide con todos los caracteres no numéricos
 challengeType: 1
 forumTopicId: 301347
 dashedName: match-all-non-numbers
@@ -8,59 +8,59 @@ dashedName: match-all-non-numbers
 
 # --description--
 
-The last challenge showed how to search for digits using the shortcut `\d` with a lowercase `d`. You can also search for non-digits using a similar shortcut that uses an uppercase `D` instead.
+El último desafío mostró cómo buscar dígitos usando el atajo `\d` con una `d` minúscula. También puedes buscar caracteres que no sean dígitos usando un atajo similar que utilice una `D` mayúscula en su lugar.
 
-The shortcut to look for non-digit characters is `\D`. This is equal to the character class `[^0-9]`, which looks for a single character that is not a number between zero and nine.
+El atajo para buscar caracteres que no sean dígitos es `\D`. Esto es igual a la clase de caracteres `[^0-9]`, el cual busca un único carácter que no sea un número entre cero y nueve.
 
 # --instructions--
 
-Use the shorthand character class for non-digits `\D` to count how many non-digits are in movie titles.
+Usa la clase de caracteres abreviada `\D` para contar cuántos caracteres que no sean dígitos hay en los títulos de las películas.
 
 # --hints--
 
-Your regex should use the shortcut character to match non-digit characters
+Tu expresión regular debe usar el carácter de atajo que coincida con caracteres que no sean dígitos
 
 ```js
 assert(/\\D/.test(noNumRegex.source));
 ```
 
-Your regex should use the global flag.
+Tu expresión regular debe usar la bandera global.
 
 ```js
 assert(noNumRegex.global);
 ```
 
-Your regex should find no non-digits in `"9"`.
+Tu expresión regular no debe encontrar caracteres que no sean dígitos en la cadena `9`.
 
 ```js
 assert('9'.match(noNumRegex) == null);
 ```
 
-Your regex should find 6 non-digits in `"Catch 22"`.
+Tu expresión regular debe encontrar 6 caracteres que no sean dígitos en la cadena `Catch 22`.
 
 ```js
 assert('Catch 22'.match(noNumRegex).length == 6);
 ```
 
-Your regex should find 11 non-digits in `"101 Dalmatians"`.
+Tu expresión regular debe encontrar 11 caracteres que no sean dígitos en la cadena `101 Dalmatians`.
 
 ```js
 assert('101 Dalmatians'.match(noNumRegex).length == 11);
 ```
 
-Your regex should find 15 non-digits in `"One, Two, Three"`.
+Tu expresión regular debe encontrar 15 caracteres que no sean dígitos en la cadena `One, Two, Three`.
 
 ```js
 assert('One, Two, Three'.match(noNumRegex).length == 15);
 ```
 
-Your regex should find 12 non-digits in `"21 Jump Street"`.
+Tu expresión regular debe encontrar 12 caracteres que no sean dígitos en la cadena `21 Jump Street`.
 
 ```js
 assert('21 Jump Street'.match(noNumRegex).length == 12);
 ```
 
-Your regex should find 17 non-digits in `"2001: A Space Odyssey"`.
+Tu expresión regular debe encontrar 17 caracteres que no sean dígitos en la cadena `2001: A Space Odyssey`.
 
 ```js
 assert('2001: A Space Odyssey'.match(noNumRegex).length == 17);
