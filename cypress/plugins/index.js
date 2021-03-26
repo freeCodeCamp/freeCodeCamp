@@ -1,17 +1,46 @@
-// ***********************************************************
-// This example plugins/index.js can be used to load plugins
-//
-// You can change the location of this file or turn off loading
-// the plugins file with the 'pluginsFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/plugins-guide
-// ***********************************************************
+const fs = require('fs');
+const path = require('path');
 
-// This function is called when a project is opened or re-opened (e.g. due to
-// the project's config changing)
-/* eslint-disable no-unused-vars */
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+module.exports = on => {
+  on('task', {
+    // return all superblocks
+    getSuperblock(superBlock = null) {
+      if (superBlock !== null) {
+        return [superBlock];
+      }
+
+      return fs.readdirSync(path.resolve(`./curriculum/challenges/english`));
+    },
+
+    // return an array of all challenge paths
+    getAllChallengePaths(superBlock) {
+      let challengeArr = [];
+
+      superBlock.forEach(superblock => {
+        // read block in superblock
+        var blockInSuperBlock = fs.readdirSync(
+          path.resolve('./curriculum/challenges/english/' + superblock)
+        );
+
+        // read every challenge in block
+        blockInSuperBlock.forEach(block => {
+          var challengeInBlock = fs.readdirSync(
+            path.resolve(
+              './curriculum/challenges/english/' + superblock + '/' + block
+            )
+          );
+
+          challengeInBlock.forEach(challenge => {
+            // remove file extension
+            challenge = challenge.split('.').slice(0, -1).join('.');
+            challengeArr.push(
+              '/learn/' + superblock.slice(3) + '/' + block + '/' + challenge
+            );
+          });
+        });
+      });
+
+      return challengeArr;
+    }
+  });
 };
