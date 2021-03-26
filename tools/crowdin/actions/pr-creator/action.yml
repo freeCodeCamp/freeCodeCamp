@@ -30,5 +30,8 @@ inputs:
     description: 'Requested PR reviewers'
     required: false
   team_reviewers:
+    # Note that this should be a slug, not a full tag
+    # So a requested review from @freeCodeCamp/dev-team
+    # Should be passed only as 'dev-team'
     description: 'Requested organization team PR reviewers'
     required: false
