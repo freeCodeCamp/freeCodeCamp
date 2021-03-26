@@ -33,7 +33,7 @@ jobs:
               github.pulls.requestReviewers({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                pull_number,: context.issue.number
+                pull_number: context.issue.number,
                 reviewers: ['raisedadead']
                 // team_reviewers: [`dev-team`]
               });
