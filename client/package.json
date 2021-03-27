@@ -50,6 +50,7 @@
     "lodash": "^4.17.21",
     "monaco-editor": "^0.22.3",
     "nanoid": "^3.1.22",
+    "path-browserify": "^1.0.1",
     "prismjs": "^1.23.0",
     "process": "^0.11.10",
     "query-string": "^6.14.1",
