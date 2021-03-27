@@ -22,8 +22,8 @@
     "test": "jest"
   },
   "devDependencies": {
-    "debug": "^4.0.1",
-    "dotenv": "^6.0.0",
-    "jest": "^26.0.0"
+    "debug": "4.1.1",
+    "dotenv": "6.2.0",
+    "jest": "26.0.0"
   }
 }
