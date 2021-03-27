@@ -38,7 +38,7 @@ The console would display the value `["name", "numLegs"]`.
 
 # --instructions--
 
-Add the `own properties` of `canary` to the array `ownProps`.
+Add the own properties of `canary` to the array `ownProps`.
 
 # --hints--
 
