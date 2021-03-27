@@ -1,13 +1,25 @@
 {
-  "name": "challenge-parser",
+  "name": "@freecodecamp/challenge-parser",
   "version": "0.0.1",
-  "description": "converts challenge files to objects",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "unist-util-select": "^3.0.1"
   },
   "dependencies": {
     "hast-util-to-html": "^7.1.1",
@@ -37,7 +49,7 @@
     "unist-util-visit": "^2.0.3",
     "unist-util-visit-children": "^1.1.4"
   },
-  "engines": {
-    "node": ">= 14.0.0"
+  "devDependencies": {
+    "unist-util-select": "^3.0.1"
   }
 }

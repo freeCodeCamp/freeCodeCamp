@@ -1,30 +1,46 @@
 {
   "name": "@freecodecamp/freecodecamp",
-  "private": true,
   "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
   "scripts": {
     "audit": "npm audit & lerna exec --no-bail 'echo $LERNA_PACKAGE_NAME & npm audit'",
     "audit:fix": "npm audit fix & lerna exec 'echo $LERNA_PACKAGE_NAME & npm audit fix'",
+    "bootstrap": "lerna bootstrap --ci",
     "prebuild": "npm run ensure-env",
     "build": "npm-run-all -p build:*",
     "build:client": "cd ./client && npm run build",
-    "build:server": "cd ./api-server && npm run build",
     "build:curriculum": "cd ./curriculum && npm run build",
-    "bootstrap": "lerna bootstrap --ci",
+    "build:server": "cd ./api-server && npm run build",
     "clean": "npm-run-all clean:client clean:server clean:packages clean:root-deps",
     "clean-and-develop": "npm run clean && npm ci && npm run develop",
-    "clean:root-deps": "shx rm -rf node_modules",
-    "clean:packages": "lerna clean -y",
-    "clean:server": "shx rm -rf ./api-server/lib",
     "clean:client": "cd ./client && npm run clean",
     "clean:curriculum": "shx rm ./config/curriculum.json",
     "clean:gatsby-site": "npm run clean:client",
+    "clean:packages": "lerna clean -y",
+    "clean:root-deps": "shx rm -rf node_modules",
+    "clean:server": "shx rm -rf ./api-server/lib",
     "precypress": "node ./cypress-install.js",
     "cypress": "cypress",
-    "cypress:install": "cypress install && echo 'for use with ./cypress-install.js'",
-    "cypress:install-build-tools": "sh ./cypress-install.sh",
     "cypress:dev:run": "npm run cypress -- run",
     "cypress:dev:watch": "npm run cypress -- open",
+    "cypress:install": "cypress install && echo 'for use with ./cypress-install.js'",
+    "cypress:install-build-tools": "sh ./cypress-install.sh",
     "cypress:prd:run": "npm run cypress -- run",
     "cypress:prd:watch": "npm run cypress -- open",
     "predevelop": "npm run ensure-env",
@@ -32,24 +48,24 @@
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && npm run develop",
     "docs:serve": "docsify serve ./docs -o --port 3200",
-    "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/build/ensure-env.js",
-    "e2e:dev:watch": "start-test develop ':3000/status/ping|8000' cypress:dev:watch",
     "e2e": "npm run e2e:dev:run",
     "e2e:dev:run": "start-test develop ':3000/status/ping|8000' cypress:dev:run",
-    "e2e:prd:watch": "npm run build && start-test ':3000/status/ping|8000' cypress:dev:watch",
+    "e2e:dev:watch": "start-test develop ':3000/status/ping|8000' cypress:dev:watch",
     "e2e:prd:run": "npm run build && start-test ':3000/status/ping|8000' cypress:dev:run",
+    "e2e:prd:watch": "npm run build && start-test ':3000/status/ping|8000' cypress:dev:watch",
+    "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/build/ensure-env.js",
     "format": "npm-run-all -p format:*",
-    "format:js": "npm run lint:js -- --fix",
     "format:css": "npm run prettier -- --write",
+    "format:js": "npm run lint:js -- --fix",
     "hooks:install": "node node_modules/husky/husky.js install",
     "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
     "lint": "npm-run-all ensure-env -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
-    "lint:js": "eslint .",
     "lint:css": "npm run prettier -- --check",
+    "lint:js": "eslint .",
     "lint:translations": "cd ./client && npm run lint",
-    "prettier": "prettier \"**/*.css\"",
     "postinstall": "npm run bootstrap",
+    "prettier": "prettier \"**/*.css\"",
     "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser certUser",
     "serve:client": "cd ./client && npm run serve",
@@ -57,13 +73,34 @@
     "start-ci": "npm-run-all ensure-env -p start:server serve:client",
     "start:server": "cd ./api-server && npm start",
     "test": "npm-run-all ensure-env build:curriculum -p test:*",
+    "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
     "test:client": "cd ./client && npm test",
     "test:curriculum": "cd ./curriculum && npm test",
-    "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
     "test:curriculum-js": "jest --rootDir ./curriculum",
     "test:server": "cd ./api-server && npm test",
     "test:tools": "jest ./tools",
     "test:utils": "jest --rootDir ./utils"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.css": [
+        "prettier --write",
+        "git add"
+      ],
+      "*.js": [
+        "eslint --fix",
+        "git add"
+      ],
+      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
+    }
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@testing-library/cypress": "^7.0.4",
@@ -100,26 +137,5 @@
     "sinon": "^7.4.1",
     "sinon-express-mock": "^2.2.1",
     "start-server-and-test": "^1.12.1"
-  },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js",
-      "*.css": [
-        "prettier --write",
-        "git add"
-      ]
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "dependencies": {
-    "dotenv": "^8.2.0"
   }
 }

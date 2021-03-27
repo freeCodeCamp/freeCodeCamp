@@ -1,9 +1,42 @@
 {
   "name": "@freecodecamp/client",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
   "private": true,
-  "description": "The freeCodeCamp web client",
-  "version": "1.0.0",
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
+  "scripts": {
+    "prebuild": "echo 'Client workers building...' && npm run build:workers && echo 'Client workers ready.' && node ../tools/scripts/build/ensure-env.js",
+    "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build --prefix-paths",
+    "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli/bin/cli --env production --config ./webpack-workers.js && echo",
+    "build:workers:debug": "node --max_old_space_size=7168 node_modules/webpack-cli/bin/cli --env production --config ./webpack-workers.js --progress",
+    "clean": "gatsby clean",
+    "predevelop": "npm run prebuild",
+    "develop": "gatsby develop --inspect=9230",
+    "format": "npm run format:gatsby && npm run format:src && npm run format:utils",
+    "format:gatsby": "prettier-eslint --write --trailing-comma none --single-quote './gatsby-*.js'",
+    "format:src": "prettier-eslint --write --trailing-comma none --single-quote './src/**/*.js'",
+    "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
+    "lint": "node ./i18n/schema-validation.js",
+    "serve": "gatsby serve -p 8000",
+    "prestand-alone": "npm run prebuild",
+    "stand-alone": "gatsby develop",
+    "test": "jest",
+    "validate-keys": "node ./i18n/validate-keys.js"
+  },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.12.13",
     "@babel/plugin-proposal-function-bind": "^7.12.13",
@@ -86,29 +119,6 @@
     "typescript": "^4.2.3",
     "validator": "^13.5.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "prebuild": "echo 'Client workers building...' && npm run build:workers && echo 'Client workers ready.' && node ../tools/scripts/build/ensure-env.js",
-    "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build --prefix-paths",
-    "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli/bin/cli --env production --config ./webpack-workers.js && echo",
-    "build:workers:debug": "node --max_old_space_size=7168 node_modules/webpack-cli/bin/cli --env production --config ./webpack-workers.js --progress",
-    "clean": "gatsby clean",
-    "predevelop": "npm run prebuild",
-    "develop": "gatsby develop --inspect=9230",
-    "format:gatsby": "prettier-eslint --write --trailing-comma none --single-quote './gatsby-*.js'",
-    "format:src": "prettier-eslint --write --trailing-comma none --single-quote './src/**/*.js'",
-    "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
-    "format": "npm run format:gatsby && npm run format:src && npm run format:utils",
-    "lint": "node ./i18n/schema-validation.js",
-    "prestand-alone": "npm run prebuild",
-    "stand-alone": "gatsby develop",
-    "serve": "gatsby serve -p 8000",
-    "test": "jest",
-    "validate-keys": "node ./i18n/validate-keys.js"
-  },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
@@ -123,12 +133,5 @@
     "redux-saga-test-plan": "^4.0.1",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.5.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "engines": {
-    "node": ">= 14.0.0"
   }
 }

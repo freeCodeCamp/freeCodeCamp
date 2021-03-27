@@ -1,28 +1,35 @@
 {
-  "name": "@freecodecamp/contributer-tools",
-  "description": "Tools to help maintain freecodecamp.org's Open Source Codebase on GitHub",
+  "name": "@freecodecamp/contributor-tools",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
   "scripts": {
     "bootstrap": "lerna bootstrap --ci",
     "build": "lerna run build",
-    "postinstall": "npm run bootstrap",
-    "test": "run-p test:*",
-    "test:client": "cd ./dashboard-app/client && npm run test",
-    "format": "prettier --write es5 ./**/*.{js,json} && npm run lint",
-    "lint": "eslint ./**/*.js --fix",
-    "start": "cd dashboard-app/server && npm start",
     "develop": "run-p develop:*",
     "develop:client": "cd ./dashboard-app/client && npm run develop",
-    "develop:server": "cd ./dashboard-app/server && npm run develop"
-  },
-  "devDependencies": {
-    "dotenv": "^8.2.0",
-    "eslint": "^5.9.0",
-    "joi": "^14.3.1",
-    "lerna": "^3.5.1",
-    "mocha": "^5.2.0",
-    "nodemon": "^1.18.9",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^1.15.2"
+    "develop:server": "cd ./dashboard-app/server && npm run develop",
+    "format": "prettier --write es5 ./**/*.{js,json} && npm run lint",
+    "lint": "eslint ./**/*.js --fix",
+    "postinstall": "npm run bootstrap",
+    "start": "cd dashboard-app/server && npm start",
+    "test": "run-p test:*",
+    "test:client": "cd ./dashboard-app/client && npm run test"
   },
   "nodemonConfig": {
     "exec": "npm start",
@@ -34,5 +41,15 @@
   "dependencies": {
     "ajv": "^6.6.1",
     "ajv-keywords": "^3.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^5.9.0",
+    "joi": "^14.3.1",
+    "lerna": "^3.5.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.2"
   }
 }

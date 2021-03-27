@@ -1,21 +1,45 @@
 {
-  "name": "@freecodecamp/contributer-tools",
-  "version": "1.0.0",
+  "name": "@freecodecamp/dashboard-server",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
-  "repository": "https://github.com/freecodecamp/dashboard.git",
-  "bugs": "https://github.com/freeCodeCamp/freeCodeCamp/issues",
-  "keywords": [
-    "freeCodeCamp",
-    "github",
-    "contributer tools"
-  ],
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
   "scripts": {
     "dev": "develop",
     "develop": "nodemon",
-    "start": "node index.js",
     "lint": "standard --fix",
+    "start": "node index.js",
     "test": "cross-env TEST_ENV=true jest --forceExit && standard",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
   },
   "dependencies": {
     "@octokit/rest": "^18.0.12",
@@ -31,23 +55,5 @@
     "nodemon": "^1.17.2",
     "smee-client": "^1.0.2",
     "standard": "^10.0.3"
-  },
-  "engines": {
-    "node": ">= 12.18.3"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ]
-  },
-  "nodemonConfig": {
-    "exec": "npm start",
-    "watch": [
-      ".env",
-      "."
-    ]
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }

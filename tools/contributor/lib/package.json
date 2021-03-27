@@ -1,5 +1,26 @@
 {
-  "name": "freecodecampcontributelib",
+  "name": "@freecodecamp/contributor-tools-lib",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@octokit/rest": "^18.0.12",
     "cli-progress": "^2.1.0",
@@ -14,9 +35,5 @@
     "travis-ci": "^2.2.0",
     "util": "^0.11.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "BSD-3-Clause"
+  "devDependencies": {}
 }

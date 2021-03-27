@@ -1,9 +1,13 @@
 {
   "name": "@freecodecamp/curriculum",
+  "version": "0.0.0-next.4",
   "description": "freeCodeCamp's curriculum seed files",
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
-  "author": "freeCodeCamp <team@freecodecamp.org>",
-  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
@@ -11,18 +15,19 @@
   "bugs": {
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
-  "version": "0.0.0-next.4",
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
     "build": "node ../tools/scripts/build/build-curriculum.js",
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-next-step",
     "create-step-between": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-step-between",
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/delete-step",
-    "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/reorder-steps",
     "lint": "gulp lint",
+    "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/reorder-steps",
     "pretest": "cd ../client && npm run build:workers",
-    "pretest:full-output": "npm run pretest",
     "test": "mocha --delay --reporter progress --bail",
+    "pretest:full-output": "npm run pretest",
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
@@ -58,8 +63,5 @@
     "string-similarity": "^4.0.2",
     "unist-util-visit": "^2.0.3",
     "vfile": "^4.2.1"
-  },
-  "engines": {
-    "node": ">= 14.0.0"
   }
 }
