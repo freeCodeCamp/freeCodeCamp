@@ -59,7 +59,9 @@ assert.isNaN(convertToInteger('JamesBond'));
 
 ```js
 function convertToInteger(str) {
+  // Only change code below this line
 
+  // Only change code below this line
 }
 
 convertToInteger("56");
