@@ -1,17 +1,20 @@
 /* global cy */
 
 let structure = {
-  superBlock: [],
+  target: [],
   challenge: []
 };
 
 describe('Test breadcrumbs', () => {
   it('should have the correct link', () => {
-    let { superBlock, challenge } = structure;
-    cy.task('getSuperblock', '01-responsive-web-design').then(res => {
-      superBlock = res;
+    let { target, challenge } = structure;
+    cy.task('provideTarget', [
+      '01-responsive-web-design',
+      ['basic-css', 'css-grid']
+    ]).then(res => {
+      target = res;
 
-      cy.task('getAllChallengePaths', superBlock).then(res => {
+      cy.task('getAllChallengePaths', target).then(res => {
         challenge = res;
 
         challenge.forEach(challenge => {
