@@ -102,4 +102,4 @@ jobs:
           title: 'chore(i18n,curriculum): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
           labels: 'crowdin-sync'
-          reviewers: 'RandellDawson, nhcarrigan'
+          team_reviewers: 'i18n'

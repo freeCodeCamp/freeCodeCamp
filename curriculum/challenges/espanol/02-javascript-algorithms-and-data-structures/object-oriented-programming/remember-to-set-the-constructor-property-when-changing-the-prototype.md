@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b80
-title: Remember to Set the Constructor Property when Changing the Prototype
+title: Recuerda establecer la propiedad "constructor" al cambiar el prototipo
 challengeType: 1
 forumTopicId: 301323
 dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
@@ -8,19 +8,21 @@ dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 
 # --description--
 
-There is one crucial side effect of manually setting the prototype to a new object. It erases the `constructor` property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
+Hay un efecto secundario crucial de ajustar manualmente el prototipo a un nuevo objeto. ¡Elimina la propiedad `constructor`! Esta propiedad puede ser usada para verificar cuál función de constructor creó la instancia. Sin embargo, dado que la propiedad ha sido sobrescrita, ahora devuelve resultados falsos:
 
 ```js
-duck.constructor === Bird; // false -- Oops
-duck.constructor === Object; // true, all objects inherit from Object.prototype
-duck instanceof Bird; // true, still works
+duck.constructor === Bird;
+duck.constructor === Object;
+duck instanceof Bird;
 ```
 
-To fix this, whenever a prototype is manually set to a new object, remember to define the `constructor` property:
+En orden, estas expresiones se evaluarían como `false`, `true` y `true`.
+
+Para solucionar esto, cada vez que un prototipo se establece de forma manual a un nuevo objeto, recuerda definir la propiedad `constructor`:
 
 ```js
 Bird.prototype = {
-  constructor: Bird, // define the constructor property
+  constructor: Bird,
   numLegs: 2,
   eat: function() {
     console.log("nom nom nom");
@@ -33,11 +35,11 @@ Bird.prototype = {
 
 # --instructions--
 
-Define the `constructor` property on the `Dog` `prototype`.
+Define la propiedad `constructor` en el `Dog` `prototype`.
 
 # --hints--
 
-`Dog.prototype` should set the `constructor` property.
+`Dog.prototype` debe establecer la propiedad `constructor`.
 
 ```js
 assert(Dog.prototype.constructor === Dog);

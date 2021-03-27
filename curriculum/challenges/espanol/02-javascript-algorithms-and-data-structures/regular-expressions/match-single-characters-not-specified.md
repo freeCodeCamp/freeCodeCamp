@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b98
-title: Match Single Characters Not Specified
+title: Haz coincidir caracteres individuales no especificados
 challengeType: 1
 forumTopicId: 301358
 dashedName: match-single-characters-not-specified
@@ -8,31 +8,31 @@ dashedName: match-single-characters-not-specified
 
 # --description--
 
-So far, you have created a set of characters that you want to match, but you could also create a set of characters that you do not want to match. These types of character sets are called <dfn>negated character sets</dfn>.
+Hasta ahora, has creado un conjunto de caracteres que deseas coincidir, pero también podrías crear un conjunto de caracteres que no desees coincidir. Este tipo de conjuntos de caracteres se llaman <dfn>conjuntos de caracteres negados</dfn>.
 
-To create a negated character set, you place a caret character (`^`) after the opening bracket and before the characters you do not want to match.
+Para crear un conjunto de caracteres negados colocas un carácter de intercalación (`^`) después del corchete de apertura y antes de los caracteres que no quieres coincidir.
 
-For example, `/[^aeiou]/gi` matches all characters that are not a vowel. Note that characters like `.`, `!`, `[`, `@`, `/` and white space are matched - the negated vowel character set only excludes the vowel characters.
+Por ejemplo, `/[^aeiou]/gi` coincide con todos los caracteres que no son una vocal. Ten en cuenta que caracteres como `.`, `!`, `[`, `@`, `/` y el espacio en blanco coinciden; el conjunto de caracteres de vocal negados sólo excluye los caracteres de vocal.
 
 # --instructions--
 
-Create a single regex that matches all characters that are not a number or a vowel. Remember to include the appropriate flags in the regex.
+Crea una sola expresión regular que coincida con todos los caracteres que no son un número o una vocal. Recuerda incluir las banderas apropiadas en la expresión regular.
 
 # --hints--
 
-Your regex `myRegex` should match 9 items.
+Tu expresión regular `myRegex` debe coincidir con 9 elementos.
 
 ```js
 assert(result.length == 9);
 ```
 
-Your regex `myRegex` should use the global flag.
+Tu expresión regular `myRegex` debe utilizar la bandera global.
 
 ```js
 assert(myRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `myRegex` should use the case insensitive flag.
+Tu expresión regular `myRegex` debe utilizar la bandera que no distingue entre mayúsculas y minúsculas.
 
 ```js
 assert(myRegex.flags.match(/i/).length == 1);
