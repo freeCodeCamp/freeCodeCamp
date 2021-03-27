@@ -32,12 +32,12 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "react-scripts": "2.1.1",
-    "styled-components": "^4.1.1"
+    "styled-components": "4.4.1"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0"
+    "cross-env": "5.2.1"
   }
 }

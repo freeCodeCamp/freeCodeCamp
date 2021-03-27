@@ -42,18 +42,18 @@
     ]
   },
   "dependencies": {
-    "@octokit/rest": "^18.0.12",
-    "body-parser": "^1.18.3",
-    "cross-env": "^5.2.0",
-    "express": "^4.16.3",
-    "express-rate-limit": "^5.2.3",
-    "mongoose": "^5.4.1"
+    "@octokit/rest": "18.0.12",
+    "body-parser": "1.19.0",
+    "cross-env": "5.2.1",
+    "express": "4.17.1",
+    "express-rate-limit": "5.2.3",
+    "mongoose": "5.11.7"
   },
   "devDependencies": {
-    "expect": "^23.6.0",
-    "jest": "^22.4.3",
-    "nodemon": "^1.17.2",
-    "smee-client": "^1.0.2",
-    "standard": "^10.0.3"
+    "expect": "23.6.0",
+    "jest": "22.4.4",
+    "nodemon": "1.19.4",
+    "smee-client": "1.2.2",
+    "standard": "10.0.3"
   }
 }

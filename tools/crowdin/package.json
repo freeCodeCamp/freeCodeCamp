@@ -22,11 +22,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
-    "dotenv": "^8.2.0",
-    "gray-matter": "^4.0.2",
-    "node-fetch": "^2.6.1",
-    "readdirp": "^3.5.0"
+    "@actions/core": "1.2.6",
+    "@actions/github": "4.0.0",
+    "dotenv": "8.2.0",
+    "gray-matter": "4.0.2",
+    "node-fetch": "2.6.1",
+    "readdirp": "3.5.0"
   }
 }
