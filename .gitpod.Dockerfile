@@ -1,7 +1,7 @@
 FROM gitpod/workspace-full
 
 RUN sudo apt-get update
-RUN sudo apt-get install libcurl4 openssl liblzma5
+RUN sudo apt-get install libcurl4 openssl liblzma5 -y
 
 # Install MongoDB
 # Source: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/#install-mongodb-community-edition
