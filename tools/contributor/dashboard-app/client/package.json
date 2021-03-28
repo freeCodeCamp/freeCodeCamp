@@ -34,7 +34,7 @@
   "dependencies": {
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-scripts": "2.1.1",
+    "react-scripts": "2.1.8",
     "styled-components": "4.4.1"
   },
   "devDependencies": {
