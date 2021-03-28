@@ -109,7 +109,7 @@
     "cypress": "6.8.0",
     "debug": "4.3.1",
     "docsify-cli": "4.4.3",
-    "eslint": "7.22.0",
+    "eslint": "7.23.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-babel": "5.3.1",
     "eslint-plugin-import": "2.22.1",
