@@ -42,7 +42,7 @@
     ]
   },
   "dependencies": {
-    "@octokit/rest": "18.0.12",
+    "@octokit/rest": "18.5.2",
     "body-parser": "1.19.0",
     "cross-env": "5.2.1",
     "express": "4.17.1",

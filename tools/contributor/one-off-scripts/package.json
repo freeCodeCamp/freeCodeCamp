@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@octokit/rest": "18.0.12",
+    "@octokit/rest": "18.5.2",
     "cli-progress": "2.1.1",
     "dedent": "0.7.0",
     "path": "0.12.7"
