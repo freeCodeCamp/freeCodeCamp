@@ -1,12 +1,17 @@
 {
   "extends": ["config:base"],
+  "prCreation": "not-pending",
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true
     }
   ],
   "ignorePaths": [
-    "api-server"
+    "api-server",
+    "tools/contributor",
+    "tools/contributor/dashboard-app/client",
+    "tools/contributor/dashboard-app/server"
   ]
 }
