@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b95
-title: Match Single Character with Multiple Possibilities
+title: Haz coincidir un solo carácter con múltiples posibilidades
 challengeType: 1
 forumTopicId: 301357
 dashedName: match-single-character-with-multiple-possibilities
@@ -8,11 +8,11 @@ dashedName: match-single-character-with-multiple-possibilities
 
 # --description--
 
-You learned how to match literal patterns (`/literal/`) and wildcard character (`/./`). Those are the extremes of regular expressions, where one finds exact matches and the other matches everything. There are options that are a balance between the two extremes.
+Aprendiste cómo hacer coincidir los patrones literales (`/literal/`) y el carácter de comodín (`/./`). Estos son los extremos de las expresiones regulares, donde uno encuentra coincidencias exactas y el otro coincide de todo. Hay opciones que representan un equilibrio entre los dos extremos.
 
-You can search for a literal pattern with some flexibility with <dfn>character classes</dfn>. Character classes allow you to define a group of characters you wish to match by placing them inside square (`[` and `]`) brackets.
+Puedes buscar un patrón literal con cierta flexibilidad utilizando las <dfn>clases de caracteres</dfn>. Las clases de caracteres te permiten definir un grupo de caracteres que deseas coincidir colocándolos dentro de corchetes (`[` y `]`).
 
-For example, you want to match `"bag"`, `"big"`, and `"bug"` but not `"bog"`. You can create the regex `/b[aiu]g/` to do this. The `[aiu]` is the character class that will only match the characters `"a"`, `"i"`, or `"u"`.
+Por ejemplo, si quieres hacer coincidir `bag`, `big`, y `bug` pero no `bog`. Puedes crear la expresión regular `/b[aiu]g/` para hacer esto. `[aiu]` es la clase de caracteres que solo coincidirá con los caracteres `a`, `i`, o `u`.
 
 ```js
 let bigStr = "big";
@@ -20,46 +20,47 @@ let bagStr = "bag";
 let bugStr = "bug";
 let bogStr = "bog";
 let bgRegex = /b[aiu]g/;
-bigStr.match(bgRegex); // Returns ["big"]
-bagStr.match(bgRegex); // Returns ["bag"]
-bugStr.match(bgRegex); // Returns ["bug"]
-bogStr.match(bgRegex); // Returns null
+bigStr.match(bgRegex);
+bagStr.match(bgRegex);
+bugStr.match(bgRegex);
+bogStr.match(bgRegex);
 ```
+
+En orden, las cuatro llamadas de `match` devolverán los valores `["big"]`, `["bag"]`, `["bug"]`, and `null`.
 
 # --instructions--
 
-Use a character class with vowels (`a`, `e`, `i`, `o`, `u`) in your regex `vowelRegex` to find all the vowels in the string `quoteSample`.
+Usa una clase de caracteres con las vocales (`a`, `e`, `i`, `o` `u`) en tu expresión regular `vowelRegex` para encontrar todas las vocales en la cadena `quoteSample`.
 
-**Note**  
-Be sure to match both upper- and lowercase vowels.
+**Nota:** Asegúrate de hacer coincidir tanto las vocales mayúsculas como minúsculas.
 
 # --hints--
 
-You should find all 25 vowels.
+Debes encontrar las 25 vocales.
 
 ```js
 assert(result.length == 25);
 ```
 
-Your regex `vowelRegex` should use a character class.
+Tu expresión regular `vowelRegex` debe usar una clase de caracteres.
 
 ```js
 assert(/\[.*\]/.test(vowelRegex.source));
 ```
 
-Your regex `vowelRegex` should use the global flag.
+Tu expresión regular `vowelRegex` debe utilizar la bandera global.
 
 ```js
 assert(vowelRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `vowelRegex` should use the case insensitive flag.
+Tu expresión regular `vowelRegex` debe utilizar la bandera que no distingue entre mayúsculas y minúsculas.
 
 ```js
 assert(vowelRegex.flags.match(/i/).length == 1);
 ```
 
-Your regex should not match any consonants.
+Tu expresión regular no debe coincidir con ninguna consonante.
 
 ```js
 assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()));

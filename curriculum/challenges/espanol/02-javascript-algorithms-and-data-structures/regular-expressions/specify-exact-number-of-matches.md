@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba7
-title: Specify Exact Number of Matches
+title: Especifica el número exacto de coincidencias
 challengeType: 1
 forumTopicId: 301365
 dashedName: specify-exact-number-of-matches
@@ -8,63 +8,65 @@ dashedName: specify-exact-number-of-matches
 
 # --description--
 
-You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want a specific number of matches.
+Puedes especificar el número inferior y superior de patrones mediante especificadores de cantidad utilizando llaves. A veces solo quieres un número específico de coincidencias.
 
-To specify a certain number of patterns, just have that one number between the curly brackets.
+Para especificar un cierto número de patrones, simplemente pon ese número entre corchetes.
 
-For example, to match only the word `"hah"` with the letter `a` `3` times, your regex would be `/ha{3}h/`.
+Por ejemplo, para que coincida con la palabra `hah` solo con la letra `a` `3` veces, tu expresión regular sera `/ha{3}h/`.
 
 ```js
 let A4 = "haaaah";
 let A3 = "haaah";
 let A100 = "h" + "a".repeat(100) + "h";
 let multipleHA = /ha{3}h/;
-multipleHA.test(A4); // Returns false
-multipleHA.test(A3); // Returns true
-multipleHA.test(A100); // Returns false
+multipleHA.test(A4);
+multipleHA.test(A3);
+multipleHA.test(A100);
 ```
+
+En orden, las tres llamadas a `test` devuelven `false`, `true` y `false`.
 
 # --instructions--
 
-Change the regex `timRegex` to match the word `"Timber"` only when it has four letter `m`'s.
+Modifica la expresión regular `timRegex` para hacer coincidir con la palabra `Timber` solo cuando esta tiene cuatro letras `m`.
 
 # --hints--
 
-Your regex should use curly brackets.
+La expresión regular debe utilizar corchetes.
 
 ```js
 assert(timRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match `"Timber"`
+La expresión regular no debe coincidir con la cadena `Timber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timber'));
 ```
 
-Your regex should not match `"Timmber"`
+La expresión regular no debe coincidir con la cadena `Timmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmber'));
 ```
 
-Your regex should not match `"Timmmber"`
+La expresión regular no debe coincidir con la cadena `Timmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmmber'));
 ```
 
-Your regex should match `"Timmmmber"`
+La expresión regular debe coincidir con la cadena `Timmmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(timRegex.test('Timmmmber'));
 ```
 
-Your regex should not match `"Timber"` with 30 `m`'s in it.
+La expresión regular no debe coincidir con la cadena `Timber` con 30 `m`.
 
 ```js
 timRegex.lastIndex = 0;

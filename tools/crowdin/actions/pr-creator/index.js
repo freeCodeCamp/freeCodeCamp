@@ -18,6 +18,8 @@ const githubRoot = require('@actions/github');
     const labels = labelsStr.trim().split(/,\s+/);
     const reviewersStr = core.getInput('reviewers');
     const reviewers = reviewersStr.trim().split(/,\s+/);
+    const teamStr = core.getInput('team_reviewers');
+    const team_reviewers = teamStr.trim().split(/,\s+/);
 
     const github = githubRoot.getOctokit(token);
 
@@ -83,6 +85,15 @@ const githubRoot = require('@actions/github');
         reviewers
       });
       console.log(`Requested Reviewers ${reviewers} added to PR`);
+    }
+    if (team_reviewers && team_reviewers.length) {
+      await github.pulls.requestReviewers({
+        owner,
+        repo,
+        pull_number: prNumber,
+        team_reviewers
+      });
+      console.log(`Requested Team Reviewers ${team_reviewers} added to PR`);
     }
   } catch (error) {
     core.setFailed(error.message);

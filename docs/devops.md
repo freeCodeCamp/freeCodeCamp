@@ -456,7 +456,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm
+   npm i -g npm@6
    npm i -g pm2
    pm2 install pm2-logrotate
    pm2 startup
@@ -564,7 +564,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm
+   npm i -g npm@6
    npm i -g pm2
    npm install -g serve
    pm2 install pm2-logrotate

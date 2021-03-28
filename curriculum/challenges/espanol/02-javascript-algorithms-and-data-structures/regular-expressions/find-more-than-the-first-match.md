@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b93
-title: Find More Than the First Match
+title: Encuentra más que la primera coincidencia
 challengeType: 1
 forumTopicId: 301342
 dashedName: find-more-than-the-first-match
@@ -8,45 +8,47 @@ dashedName: find-more-than-the-first-match
 
 # --description--
 
-So far, you have only been able to extract or search a pattern once.
+Hasta ahora, sólo has podido extraer o buscar un patrón una vez.
 
 ```js
 let testStr = "Repeat, Repeat, Repeat";
 let ourRegex = /Repeat/;
 testStr.match(ourRegex);
-// Returns ["Repeat"]
 ```
 
-To search or extract a pattern more than once, you can use the `g` flag.
+Aquí `match` devolverá `["Repeat"]`.
+
+Para buscar o extraer un patrón más de una vez, puedes utilizar la bandera `g`.
 
 ```js
 let repeatRegex = /Repeat/g;
 testStr.match(repeatRegex);
-// Returns ["Repeat", "Repeat", "Repeat"]
 ```
+
+Y aquí `match` devuelve el valor `["Repeat", "Repeat", "Repeat"]`
 
 # --instructions--
 
-Using the regex `starRegex`, find and extract both `"Twinkle"` words from the string `twinkleStar`.
+Utilizando la expresión regular `starRegex`, encuentra y extrae ambas palabras `Twinkle` de la cadena `twinkleStar`.
 
-**Note**  
-You can have multiple flags on your regex like `/search/gi`
+**Nota**  
+En tu expresión regular puedes utilizar múltiples banderas, como `/search/gi`
 
 # --hints--
 
-Your regex `starRegex` should use the global flag `g`
+La expresión regular `starRegex` debe utilizar la bandera global `g`
 
 ```js
 assert(starRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `starRegex` should use the case insensitive flag `i`
+Tu expresión regular `starRegex` debe utilizar la bandera que no distingue entre mayúsculas y minúsculas `i`
 
 ```js
 assert(starRegex.flags.match(/i/).length == 1);
 ```
 
-Your match should match both occurrences of the word `"Twinkle"`
+Tu coincidencia (match) debe coincidir con ambas apariciones de la palabra `Twinkle`
 
 ```js
 assert(
@@ -58,7 +60,7 @@ assert(
 );
 ```
 
-Your match `result` should have two elements in it.
+Tu coincidencia `result` debe tener dos elementos en él.
 
 ```js
 assert(result.length == 2);
