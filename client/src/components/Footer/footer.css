@@ -3,8 +3,8 @@
 
 .site-footer {
   flex-shrink: 0;
-  color: var(--tertiary-color);
-  background: var(--tertiary-background);
+  color: white;
+  background: black;
   line-height: 1.6;
   font-family: 'Lato', sans-serif;
 }
@@ -28,7 +28,7 @@
 }
 
 .footer-container a {
-  color: var(--tertiary-color);
+  color: white;
   text-decoration: none;
 }
 

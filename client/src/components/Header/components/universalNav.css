@@ -7,10 +7,10 @@
   font-size: 18px;
   font-family: 'Roboto-Mono', sans-serif;
   height: var(--header-height);
-  background: var(--theme-color);
+  background: black;
   position: fixed;
   z-index: 1000;
-  color: var(--gray-00);
+  color: black;
   width: 100%;
   padding: 0 15px;
   top: 0;
