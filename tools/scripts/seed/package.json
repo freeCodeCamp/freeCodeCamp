@@ -22,7 +22,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "debug": "4.0.1",
+    "debug": "4.3.1",
     "dotenv": "6.0.0",
     "jest": "24.9.0",
     "lodash": "4.17.19",
