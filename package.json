@@ -134,7 +134,7 @@
     "prismjs": "1.23.0",
     "readdirp-walk": "1.7.0",
     "shx": "0.3.3",
-    "sinon": "7.4.1",
+    "sinon": "7.5.0",
     "sinon-express-mock": "2.2.1",
     "start-server-and-test": "1.12.1"
   }
