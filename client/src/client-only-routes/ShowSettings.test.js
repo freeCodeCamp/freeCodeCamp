@@ -7,6 +7,8 @@ import { ShowSettings } from './ShowSettings';
 
 const { apiLocation } = envData;
 
+jest.mock('../analytics');
+
 describe('<ShowSettings />', () => {
   it('renders to the DOM when user is logged in', () => {
     const shallow = new ShallowRenderer();
