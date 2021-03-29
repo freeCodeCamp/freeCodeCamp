@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: Reset an Inherited Constructor Property
+title: Restablece una propiedad constructor heredada
 challengeType: 1
 forumTopicId: 301324
 dashedName: reset-an-inherited-constructor-property
@@ -8,49 +8,49 @@ dashedName: reset-an-inherited-constructor-property
 
 # --description--
 
-When an object inherits its `prototype` from another object, it also inherits the supertype's constructor property.
+Cuando un objeto hereda el `prototype` de otro objeto, también hereda la propiedad del constructor del supertipo.
 
-Here's an example:
+Por ejemplo:
 
 ```js
 function Bird() { }
 Bird.prototype = Object.create(Animal.prototype);
 let duck = new Bird();
-duck.constructor // function Animal(){...}
+duck.constructor
 ```
 
-But `duck` and all instances of `Bird` should show that they were constructed by `Bird` and not `Animal`. To do so, you can manually set `Bird's` constructor property to the `Bird` object:
+Pero `duck` y todas las instancias de `Bird` deberían mostrar que fueron construidas por `Bird` y no `Animal`. Para hacer esto, puedes establecer de forma manual la propiedad constructor `Bird's` al objeto `Bird`:
 
 ```js
 Bird.prototype.constructor = Bird;
-duck.constructor // function Bird(){...}
+duck.constructor
 ```
 
 # --instructions--
 
-Fix the code so `duck.constructor` and `beagle.constructor` return their respective constructors.
+Corrige el código para que `duck.constructor` y `beagle.constructor` devuelvan sus constructores respectivos.
 
 # --hints--
 
-`Bird.prototype` should be an instance of `Animal`.
+`Bird.prototype` debe ser una instancia de `Animal`.
 
 ```js
 assert(Animal.prototype.isPrototypeOf(Bird.prototype));
 ```
 
-`duck.constructor` should return `Bird`.
+`duck.constructor` debe devolver `Bird`.
 
 ```js
 assert(duck.constructor === Bird);
 ```
 
-`Dog.prototype` should be an instance of `Animal`.
+`Dog.prototype` debe ser una instancia de `Animal`.
 
 ```js
 assert(Animal.prototype.isPrototypeOf(Dog.prototype));
 ```
 
-`beagle.constructor` should return `Dog`.
+`beagle.constructor` debe devolver `Dog`.
 
 ```js
 assert(beagle.constructor === Dog);

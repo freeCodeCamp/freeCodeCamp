@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9d
-title: Match Beginning String Patterns
+title: Haz coincidir patrones de cadena de inicio
 challengeType: 1
 forumTopicId: 301349
 dashedName: match-beginning-string-patterns
@@ -8,45 +8,45 @@ dashedName: match-beginning-string-patterns
 
 # --description--
 
-Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
+Los desafíos anteriores demostraron que las expresiones regulares pueden ser utilizadas para buscar una serie de coincidencias. También se utilizan para buscar patrones en posiciones específicas en cadenas.
 
-In an earlier challenge, you used the caret character (`^`) inside a character set to create a negated character set in the form `[^thingsThatWillNotBeMatched]`. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+En un desafío anterior, usaste el carácter caret (`^`) dentro de un conjunto de caracteres para crear un conjunto de caracteres en la forma `[^thingsThatWillNotBeMatched]`. Fuera de un conjunto de caracteres, el caret es utilizado para buscar patrones al principio de las cadenas.
 
 ```js
 let firstString = "Ricky is first and can be found.";
 let firstRegex = /^Ricky/;
 firstRegex.test(firstString);
-// Returns true
 let notFirst = "You can't find Ricky now.";
 firstRegex.test(notFirst);
-// Returns false
 ```
+
+La primera llamada `test` devolverá `true`, mientras que la segunda retornara `false`.
 
 # --instructions--
 
-Use the caret character in a regex to find `"Cal"` only in the beginning of the string `rickyAndCal`.
+Usa el carácter caret en una expresión para buscar `Cal` solo al principio de la cadena `rickyAndCal`.
 
 # --hints--
 
-Your regex should search for `"Cal"` with a capital letter.
+Tu expresión regular debe buscar la cadena `Cal` con una letra mayúscula.
 
 ```js
 assert(calRegex.source == '^Cal');
 ```
 
-Your regex should not use any flags.
+Tu expresión regular no debería usar ninguna etiqueta.
 
 ```js
 assert(calRegex.flags == '');
 ```
 
-Your regex should match `"Cal"` at the beginning of the string.
+Tu expresión regular debe coincidir con la cadena `Cal` en el inicio de la cadena.
 
 ```js
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
-Your regex should not match `"Cal"` in the middle of a string.
+Tu expresión regular debe coincidir con la cadena `Cal` en medio de la cadena.
 
 ```js
 assert(!calRegex.test('Ricky and Cal both like racing.'));

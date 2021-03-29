@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "hast-util-to-html": "7.1.1",
+    "hast-util-to-html": "7.1.2",
     "js-yaml": "3.14.0",
     "lodash": "4.17.20",
     "mdast-builder": "1.1.1",

@@ -27,7 +27,7 @@ En lugar de usar seis dígitos hexadecimales, como hacemos con el código hexade
 
 Si haces el cálculo, cada uno de los dos dígitos para un color representa 16 combinaciones, lo que nos da 256 valores posibles. Entonces, `RGB`, que comienza a contar desde cero, tiene el mismo número exacto de valores posibles que el código hexadecimal.
 
-A continuación puedes ver un ejemplo de cómo cambiar el color de fondo de "body" a naranja usando su código RGB.
+A continuación puedes ver un ejemplo de cómo cambiar el color de fondo de `body` a naranja usando su código RGB.
 
 ```css
 body {
@@ -47,7 +47,7 @@ Tu elemento `body` debe tener un color de fondo "black" (negro).
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-Debes usar `rgb` para asignar a tu elemento `body` el color negro.
+Debes usar `rgb` para asignar a tu elemento `body` un color de fondo de negro.
 
 ```js
 assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));

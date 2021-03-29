@@ -22,7 +22,7 @@ for (var i = 10; i > 0; i -= 2) {
 }
 ```
 
-`ourArray` ahora contendrá `[10,8,6,4,2]`. Cambiemos nuestra inicialización y expresión final para que podamos contar hacia atrás por dos números impares.
+`ourArray` ahora contendrá `[10,8,6,4,2]`. Ahora cambiemos el valor de inicialización y la expresión final de nuestro bucle para que podamos contar hacia atrás de dos en dos y así crear un arreglo descendente de números impares.
 
 # --instructions--
 
