@@ -25,6 +25,7 @@ const propTypes = {
       description: PropTypes.string,
       image: PropTypes.string,
       title: PropTypes.string,
+      technologies: PropTypes.string,
       url: PropTypes.string
     })
   ),
@@ -37,6 +38,7 @@ function createEmptyPortfolio() {
   return {
     id: nanoid(),
     title: '',
+    technologies: '',
     description: '',
     url: '',
     image: ''
@@ -118,7 +120,7 @@ class PortfolioSettings extends Component {
     if (!toValidate) {
       return false;
     }
-    const { title, url, image, description } = toValidate;
+    const { title, url, image, description, technologies } = toValidate;
 
     const { state: titleState } = this.getTitleValidation(title);
     const { state: urlState } = this.getUrlValidation(url);
@@ -126,7 +128,16 @@ class PortfolioSettings extends Component {
     const { state: descriptionState } = this.getDescriptionValidation(
       description
     );
-    return [titleState, imageState, urlState, descriptionState]
+    const { state: technologiesState } = this.getTechnologiesValidation(
+      technologies
+    );
+    return [
+      titleState,
+      imageState,
+      urlState,
+      descriptionState,
+      technologiesState
+    ]
       .filter(Boolean)
       .every(state => state === 'success');
   };
@@ -134,6 +145,28 @@ class PortfolioSettings extends Component {
   getDescriptionValidation(description) {
     const { t } = this.props;
     const len = description.length;
+    const charsLeft = 288 - len;
+    if (charsLeft < 0) {
+      return {
+        state: 'error',
+        message: t('validation.max-characters', { charsLeft: 0 })
+      };
+    }
+    if (charsLeft < 41 && charsLeft > 0) {
+      return {
+        state: 'warning',
+        message: t('validation.max-characters', { charsLeft: charsLeft })
+      };
+    }
+    if (charsLeft === 288) {
+      return { state: null, message: '' };
+    }
+    return { state: 'success', message: '' };
+  }
+
+  getTechnologiesValidation(technologies) {
+    const { t } = this.props;
+    const len = technologies.length;
     const charsLeft = 288 - len;
     if (charsLeft < 0) {
       return {
@@ -190,7 +223,7 @@ class PortfolioSettings extends Component {
 
   renderPortfolio = (portfolio, index, arr) => {
     const { t } = this.props;
-    const { id, title, description, url, image } = portfolio;
+    const { id, title, description, technologies, url, image } = portfolio;
     const pristine = this.isFormPristine(id);
     const {
       state: titleState,
@@ -205,6 +238,10 @@ class PortfolioSettings extends Component {
       state: descriptionState,
       message: descriptionMessage
     } = this.getDescriptionValidation(description);
+    const {
+      state: technologiesState,
+      message: technologiesMessage
+    } = this.getTechnologiesValidation(technologies);
 
     return (
       <div key={id}>
@@ -264,6 +301,20 @@ class PortfolioSettings extends Component {
               />
               {descriptionMessage ? (
                 <HelpBlock>{descriptionMessage}</HelpBlock>
+              ) : null}
+            </FormGroup>
+            <FormGroup
+              controlId={`${id}-technologies`}
+              validationState={pristine ? null : technologiesState}
+            >
+              <ControlLabel>{t('technologies')}</ControlLabel>
+              <FormControl
+                componentClass='textarea'
+                onChange={this.createOnChangeHandler(id, 'technologies')}
+                value={technologies}
+              />
+              {technologiesMessage ? (
+                <HelpBlock>{technologiesMessage}</HelpBlock>
               ) : null}
             </FormGroup>
             <BlockSaveButton
