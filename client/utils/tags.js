@@ -69,7 +69,6 @@ export const injectConditionalTags = (tagsArray, homeLocation) => {
   if (homeLocation.includes('localhost')) return tagsArray;
 
   const parsedHomeUrl = psl.parse(urlStripper(homeLocation));
-  console.log(parsedHomeUrl);
 
   // inject gap for all production learn
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {

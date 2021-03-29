@@ -86,6 +86,7 @@
     "path-browserify": "1.0.1",
     "prismjs": "1.23.0",
     "process": "0.11.10",
+    "psl": "^1.8.0",
     "query-string": "6.14.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
