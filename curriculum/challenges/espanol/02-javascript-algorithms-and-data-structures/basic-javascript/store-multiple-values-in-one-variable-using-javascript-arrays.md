@@ -13,7 +13,9 @@ Con las variables de arreglos (`array`) de JavaScript, podemos almacenar varios 
 
 Inicias una declaración de arreglo con un corchete de apertura, lo terminas con un corchete de cierre, y pones una coma entre cada entrada, de esta forma:
 
-`var sandwich = ["peanut butter", "jelly", "bread"]`
+```js
+var sandwich = ["peanut butter", "jelly", "bread"]
+```
 
 # --instructions--
 

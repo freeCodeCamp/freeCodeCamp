@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b79
-title: Extend Constructors to Receive Arguments
+title: Extender constructores para recibir argumentos
 challengeType: 1
 forumTopicId: 18235
 dashedName: extend-constructors-to-receive-arguments
@@ -8,7 +8,7 @@ dashedName: extend-constructors-to-receive-arguments
 
 # --description--
 
-The `Bird` and `Dog` constructors from last challenge worked well. However, notice that all `Birds` that are created with the `Bird` constructor are automatically named Albert, are blue in color, and have two legs. What if you want birds with different values for name and color? It's possible to change the properties of each bird manually but that would be a lot of work:
+Los constructores de `Bird` y `Dog` del último desafío funcionaron bien. Sin embargo, nota que todas las `Birds` que son creadas con el constructor `Bird`, automáticamente se nombran Albert, son de color azul y tienen dos patas. ¿Qué pasa si quieres Birds (aves) con diferentes valores para nombre y color? Es posible cambiar manualmente las propiedades de cada Bird (ave), pero sería bastante trabajo:
 
 ```js
 let swan = new Bird();
@@ -16,7 +16,7 @@ swan.name = "Carlos";
 swan.color = "white";
 ```
 
-Suppose you were writing a program to keep track of hundreds or even thousands of different birds in an aviary. It would take a lot of time to create all the birds, then change the properties to different values for every one. To more easily create different `Bird` objects, you can design your Bird constructor to accept parameters:
+Supongamos que estabas escribiendo un programa para hacer seguimiento de cientos o incluso miles de aves diferentes en un aviario. Tardaría mucho tiempo en crear todas las aves, para luego cambiar las propiedades a diferentes valores para cada una. Para crear más fácilmente diferentes objetos `Bird`, puedes diseñar tu constructor de aves para aceptar parámetros:
 
 ```js
 function Bird(name, color) {
@@ -26,41 +26,41 @@ function Bird(name, color) {
 }
 ```
 
-Then pass in the values as arguments to define each unique bird into the `Bird` constructor: `let cardinal = new Bird("Bruce", "red");` This gives a new instance of `Bird` with name and color properties set to Bruce and red, respectively. The `numLegs` property is still set to 2. The `cardinal` has these properties:
+Luego pasa los valores como argumentos para definir cada ave única en el constructor `Bird`: `let cardinal = new Bird("Bruce", "red");` Esto genera una nueva instancia de `Bird` con propiedades `name` y `color` que tienen como valor `Bruce` y `red`, respectivamente. La propiedad `numLegs` aún está establecida en 2. El `cardinal` tiene estas propiedades:
 
 ```js
-cardinal.name // => Bruce
-cardinal.color // => red
-cardinal.numLegs // => 2
+cardinal.name
+cardinal.color
+cardinal.numLegs
 ```
 
-The constructor is more flexible. It's now possible to define the properties for each `Bird` at the time it is created, which is one way that JavaScript constructors are so useful. They group objects together based on shared characteristics and behavior and define a blueprint that automates their creation.
+El constructor es más flexible. Ahora es posible definir las propiedades para cada `Bird` en el momento que se crea. Esta es una manera en que los constructores de JavaScript son tan útiles. Estos agrupan objetos basados en características y comportamiento compartidos, y definen un plano que automatiza su creación.
 
 # --instructions--
 
-Create another `Dog` constructor. This time, set it up to take the parameters `name` and `color`, and have the property `numLegs` fixed at 4. Then create a new `Dog` saved in a variable `terrier`. Pass it two strings as arguments for the `name` and `color` properties.
+Crea otro constructor `Dog`. Esta vez, configúralo para tomar los parámetros `name` y `color`, y haz que la propiedad `numLegs` quede fija en 4. Luego crea un nuevo `Dog` almacenado en una variable `terrier`. Pasale dos cadenas de texto como argumentos para las propiedades `name` y `color`.
 
 # --hints--
 
-`Dog` should receive an argument for `name`.
+`Dog` debe recibir un argumento para `name`.
 
 ```js
 assert(new Dog('Clifford').name === 'Clifford');
 ```
 
-`Dog` should receive an argument for `color`.
+`Dog` debe recibir un argumento para `color`.
 
 ```js
 assert(new Dog('Clifford', 'yellow').color === 'yellow');
 ```
 
-`Dog` should have property `numLegs` set to 4.
+`Dog` debe tener la propiedad `numLegs` fija a 4.
 
 ```js
 assert(new Dog('Clifford').numLegs === 4);
 ```
 
-`terrier` should be created using the `Dog` constructor.
+`terrier` debería ser creado usando el constructor `Dog`.
 
 ```js
 assert(terrier instanceof Dog);

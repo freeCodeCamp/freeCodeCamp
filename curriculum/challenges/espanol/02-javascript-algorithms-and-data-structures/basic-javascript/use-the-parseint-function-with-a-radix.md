@@ -13,17 +13,21 @@ La función `parseInt()` analiza una cadena y devuelve un entero. Recibe un segu
 
 La llamada a la función se realiza de la siguiente manera:
 
-`parseInt(string, radix);`
+```js
+parseInt(string, radix);
+```
 
-A continuación, te presentamos un ejemplo:
+Y aquí hay un ejemplo:
 
-`var a = parseInt("11", 2);`
+```js
+var a = parseInt("11", 2);
+```
 
 La variable radix indica que `11` está en el sistema binario, o base 2. Este ejemplo convierte la cadena `11` a un entero `3`.
 
 # --instructions--
 
-Utiliza `parseInt()` dentro de la función `convertToInteger` para convertir un número binario en un número entero, y devuélvelo.
+Utiliza `parseInt()` en la función `convertToInteger` para convertir un número binario en un número entero, y devolverlo.
 
 # --hints--
 

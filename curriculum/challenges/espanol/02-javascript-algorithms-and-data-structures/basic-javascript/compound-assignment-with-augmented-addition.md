@@ -11,7 +11,9 @@ dashedName: compound-assignment-with-augmented-addition
 
 En la programación, es común utilizar asignaciones para modificar el contenido de una variable. Recuerda que todo lo que está a la derecha del signo de igualdad se evalúa primero, así que podemos decir:
 
-`myVar = myVar + 5;`
+```js
+myVar = myVar + 5;
+```
 
 para sumar `5` a `myVar`. Dado que se trata de un patrón tan común, hay operadores que hacen tanto la operación matemática como la asignación en un solo paso.
 

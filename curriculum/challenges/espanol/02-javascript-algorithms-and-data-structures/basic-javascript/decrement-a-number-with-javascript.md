@@ -11,13 +11,17 @@ dashedName: decrement-a-number-with-javascript
 
 Puedes fácilmente <dfn>decrementar</dfn> o disminuir una variable por uno utilizando el operador `--`.
 
-`i--;`
+```js
+i--;
+```
 
-es equivalente a
+es el equivalente de
 
-`i = i - 1;`
+```js
+i = i - 1;
+```
 
-**Nota:** Toda la línea se convierte en `i--;`, eliminando la necesidad del signo de igualdad.
+**Nota:** La linea se convierte en `i--;`, eliminando la necesidad del signo igual.
 
 # --instructions--
 

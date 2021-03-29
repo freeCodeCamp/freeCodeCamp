@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b88
-title: Override Inherited Methods
+title: Sobrescribir métodos heredados
 challengeType: 1
 forumTopicId: 301322
 dashedName: override-inherited-methods
@@ -8,19 +8,19 @@ dashedName: override-inherited-methods
 
 # --description--
 
-In previous lessons, you learned that an object can inherit its behavior (methods) from another object by referencing its `prototype` object:
+En lecciones anteriores, aprendiste que un objeto puede heredar su comportamiento (métodos) de otro objeto al referenciar su `prototype`:
 
 ```js
 ChildObject.prototype = Object.create(ParentObject.prototype);
 ```
 
-Then the `ChildObject` received its own methods by chaining them onto its `prototype`:
+Luego, el `ChildObject` recibió sus propios métodos al encadenarlos a su `prototype`:
 
 ```js
 ChildObject.prototype.methodName = function() {...};
 ```
 
-It's possible to override an inherited method. It's done the same way - by adding a method to `ChildObject.prototype` using the same method name as the one to override. Here's an example of `Bird` overriding the `eat()` method inherited from `Animal`:
+Es posible sobreescribir un método heredado. Se hace de la misma manera: agregando un método a `ChildObject.prototype` usando el mismo nombre de método que el que se va a sobrescribir. Aquí hay un ejemplo de `Bird` sobrescribiendo el método `eat()` heredado de `Animal`:
 
 ```js
 function Animal() { }
@@ -29,35 +29,33 @@ Animal.prototype.eat = function() {
 };
 function Bird() { }
 
-// Inherit all methods from Animal
 Bird.prototype = Object.create(Animal.prototype);
 
-// Bird.eat() overrides Animal.eat()
 Bird.prototype.eat = function() {
   return "peck peck peck";
 };
 ```
 
-If you have an instance `let duck = new Bird();` and you call `duck.eat()`, this is how JavaScript looks for the method on `duck’s` `prototype` chain:
+Si tienes una instancia de `let duck = new Bird();` y llamas a `duck.eat()`, de esta manera es como JavaScript busca el método en la cadena de `duck’s` `prototype`:
 
-1.  duck => Is eat() defined here? No.
-2.  Bird => Is eat() defined here? => Yes. Execute it and stop searching.
-3.  Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.
-4.  Object => JavaScript stopped searching before reaching this level.
+1.  `duck` => ¿Está `eat()` definido aquí? No.
+2.  `Bird` => ¿Está `eat()` definido aquí? => Sí. Ejecutala y detén la búsqueda.
+3.  `Animal` => `eat()` también está definido, pero JavaScript dejó de buscar antes de llegar a este nivel.
+4.  Object => JavaScript dejó de buscar antes de llegar a este nivel.
 
 # --instructions--
 
-Override the `fly()` method for `Penguin` so that it returns "Alas, this is a flightless bird."
+Sobrescribe el método `fly()` para `Penguin` de manera que devuelva la cadena de texto `Alas, this is a flightless bird.`
 
 # --hints--
 
-`penguin.fly()` should return the string "Alas, this is a flightless bird."
+`penguin.fly()` debe devolver la cadena de texto `Alas, this is a flightless bird.`
 
 ```js
 assert(penguin.fly() === 'Alas, this is a flightless bird.');
 ```
 
-The `bird.fly()` method should return "I am flying!"
+El método `bird.fly()` debe devolver la cadena de texto `I am flying!`
 
 ```js
 assert(new Bird().fly() === 'I am flying!');
