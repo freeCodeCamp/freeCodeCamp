@@ -63,7 +63,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           parallel: ${{ env.CYPRESS_RECORD_KEY != 0 }}
-          group: 'freeCodeCamp Actions'
+          group: ''
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           build: npm run build
           # this should mirror the production build, but for now we're using gatsby
