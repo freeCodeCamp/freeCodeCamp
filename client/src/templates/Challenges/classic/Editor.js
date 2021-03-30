@@ -779,47 +779,19 @@ class Editor extends Component {
         });
       };
 
-      // Make sure the zone tracks the decoration (i.e. the region)
-      const handleHintsZoneChange = id => {
-        const startOfZone = toStartOfLine(
-          model.getDecorationRange(id)
-        ).collapseToStart();
-        // the decoration needs adjusting if the user creates a line immediately
-        // before the greyed out region...
-        const lineOneRange = this.translateRange(startOfZone, -2);
-        // or immediately after it
-        const lineTwoRange = this.translateRange(startOfZone, -1);
-
-        for (const lineRange of newLineRanges) {
-          const shouldMoveZone = this._monaco.Range.areIntersectingOrTouching(
-            lineRange,
-            lineOneRange.plusRange(lineTwoRange)
-          );
-
-          if (shouldMoveZone) {
-            this.updateOutputZone();
-          }
+      // Make sure the zone tracks the decoration (i.e. the region), which might
+      // have changed if a line has been added or removed
+      const handleHintsZoneChange = () => {
+        if (newLineRanges.length > 0 || deletedLine > 0) {
+          this.updateOutputZone();
         }
       };
 
-      // Make sure the zone tracks the decoration (i.e. the region)
-      const handleDescriptionZoneChange = id => {
-        const endOfZone = toLastLine(
-          model.getDecorationRange(id)
-        ).collapseToStart();
-        // the decoration needs adjusting if the user creates a line immediately
-        // before the editable region.
-        const lineOneRange = this.translateRange(endOfZone, -1);
-
-        for (const lineRange of newLineRanges) {
-          const shouldMoveZone = this._monaco.Range.areIntersectingOrTouching(
-            lineRange,
-            lineOneRange
-          );
-
-          if (shouldMoveZone) {
-            this.updateViewZone();
-          }
+      // Make sure the zone tracks the decoration (i.e. the region), which might
+      // have changed if a line has been added or removed
+      const handleDescriptionZoneChange = () => {
+        if (newLineRanges.length > 0 || deletedLine > 0) {
+          this.updateViewZone();
         }
       };
 
@@ -883,10 +855,10 @@ class Editor extends Component {
       // if the editable region includes the first line, the first decoration
       // will be missing.
       if (this.data.startEditDecId) {
-        handleDescriptionZoneChange(this.data.startEditDecId);
+        handleDescriptionZoneChange();
         warnUser(this.data.startEditDecId);
       }
-      handleHintsZoneChange(this.data.endEditDecId);
+      handleHintsZoneChange();
       warnUser(this.data.endEditDecId);
     });
   }
