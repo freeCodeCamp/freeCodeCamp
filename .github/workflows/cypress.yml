@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2, 3]
+        containers: [1, 2]
         browsers: [chrome, firefox]
         node-version: [14.x, 12.x]
     services:
@@ -62,7 +62,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          parallel: true
+          parallel: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           group: 'freeCodeCamp Actions'
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           build: npm run build
