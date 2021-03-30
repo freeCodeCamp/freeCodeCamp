@@ -140,6 +140,7 @@ class Editor extends Component {
       viewZoneId: null,
       startEditDecId: null,
       endEditDecId: null,
+      insideEditDecId: null,
       viewZoneHeight: null
     };
 
@@ -682,11 +683,8 @@ class Editor extends Component {
       editableRegion[1] - 1
     ]);
 
-    // TODO: this needs the same treatment as the before and after regions,
-    // since none of the stickiness options actually work
-
-    this.highlightEditableLines(
-      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+    this.data.insideEditDecId = this.highlightEditableLines(
+      this._monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
       model,
       editableRange
     );
@@ -797,7 +795,7 @@ class Editor extends Component {
 
       // Stops the greyed out region from covering the editable region. Does not
       // change the font decoration.
-      const preventOverlap = id => {
+      const preventOverlap = (id, stickiness, highlightFunction) => {
         // Even though the decoration covers the whole line, it has a
         // startColumn that moves.  toStartOfLine ensures that the
         // comparison detects if any change has occurred on that line
@@ -829,17 +827,15 @@ class Editor extends Component {
 
         if (touchingDeleted) {
           // TODO: if they undo this should be reversed
-          const decorations = this.highlightLines(
-            this._monaco.editor.TrackedRangeStickiness
-              .NeverGrowsWhenTypingAtEdges,
+          const decorations = highlightFunction(
+            stickiness,
             model,
             newCoveringRange,
-            [id]
+            id
           );
 
           this.updateOutputZone();
-          // when there's a change, decorations will be [oldId, newId]
-          return decorations.slice(-1)[0];
+          return decorations;
         } else {
           return id;
         }
@@ -847,7 +843,17 @@ class Editor extends Component {
 
       // we only need to handle the special case of the second region being
       // pulled up, the first region already behaves correctly.
-      this.data.endEditDecId = preventOverlap(this.data.endEditDecId);
+      this.data.endEditDecId = preventOverlap(
+        this.data.endEditDecId,
+        this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+        this.highlightLines
+      );
+
+      this.data.insideEditDecId = preventOverlap(
+        this.data.insideEditDecId,
+        this._monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
+        this.highlightEditableLines
+      );
 
       // TODO: do the same for the description widget
       // this has to be handle differently, because we care about the END
