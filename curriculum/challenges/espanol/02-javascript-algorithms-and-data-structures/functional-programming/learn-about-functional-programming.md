@@ -10,11 +10,13 @@ dashedName: learn-about-functional-programming
 
 La programación funcional es un estilo de programación donde las soluciones son simples, funciones aisladas, sin ningún efecto secundario fuera del ámbito de la función.
 
-`INPUT -> PROCESS -> OUTPUT`
+```js
+INPUT -> PROCESS -> OUTPUT
+```
 
 La programación funcional se refiere a:
 
-1) Funciones aisladas: sin dependencia alguna del estado del programa, que incluye variables globales sujetas a cambios
+1) Funciones aisladas: sin dependencia alguna del estado del programa, el cual incluye variables globales sujetas a cambios
 
 2) Funciones puras: una misma entrada siempre da la misma salida
 

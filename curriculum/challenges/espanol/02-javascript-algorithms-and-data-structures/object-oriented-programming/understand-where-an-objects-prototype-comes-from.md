@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b81
-title: Understand Where an Object’s Prototype Comes From
+title: Entendiendo de dónde viene el prototipo de un objeto
 challengeType: 1
 forumTopicId: 301330
 dashedName: understand-where-an-objects-prototype-comes-from
@@ -8,7 +8,7 @@ dashedName: understand-where-an-objects-prototype-comes-from
 
 # --description--
 
-Just like people inherit genes from their parents, an object inherits its `prototype` directly from the constructor function that created it. For example, here the `Bird` constructor creates the `duck` object:
+Así como las personas heredamos genes de nuestros padres, los objetos también heredan su `prototype` directamente de la función constructor que lo creó. Por ejemplo, aquí el constructor `Bird` crea el objeto `duck`:
 
 ```js
 function Bird(name) {
@@ -18,20 +18,21 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-`duck` inherits its `prototype` from the `Bird` constructor function. You can show this relationship with the `isPrototypeOf` method:
+`duck` hereda su `prototype` de la función constructor `Bird`. Puedes mostrar esta relación con el método `isPrototypeOf`:
 
 ```js
 Bird.prototype.isPrototypeOf(duck);
-// returns true
 ```
+
+Este devolvería `true`.
 
 # --instructions--
 
-Use `isPrototypeOf` to check the `prototype` of `beagle`.
+Utiliza `isPrototypeOf` para comprobar el `prototype` de `beagle`.
 
 # --hints--
 
-You should show that `Dog.prototype` is the `prototype` of `beagle`
+Debes mostrar que `Dog.prototype` es el `prototype` de `beagle`
 
 ```js
 assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));

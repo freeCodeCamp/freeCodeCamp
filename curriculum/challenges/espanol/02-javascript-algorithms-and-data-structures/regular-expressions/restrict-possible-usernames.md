@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba2
-title: Restrict Possible Usernames
+title: Restringe posibles nombres de usuario
 challengeType: 1
 forumTopicId: 301363
 dashedName: restrict-possible-usernames
@@ -8,94 +8,100 @@ dashedName: restrict-possible-usernames
 
 # --description--
 
-Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+Los nombres de usuario se utilizan en todas partes en Internet. Son los que dan a los usuarios una identidad única en tus sitios favoritos.
 
-You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+Se necesita comprobar todos los nombres de usuario en una base de datos. Estas son algunas reglas simples que los usuarios deben seguir al crear su nombre de usuario.
 
-1) Usernames can only use alpha-numeric characters.
+1) Los nombres de usuario sólo pueden utilizar caracteres alfanuméricos.
 
-2) The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+2) Los únicos números del nombre de usuario tienen que estar al final. Puede tener un cero o más al final. El nombre de usuario no puede iniciar con un número.
 
-3) Username letters can be lowercase and uppercase.
+3) Las letras del nombre de usuario pueden ser minúsculas y mayúsculas.
 
-4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+4) Los nombres de usuario deben tener al menos dos caracteres. Un nombre de usuario de dos caracteres sólo puede utilizar letras del alfabeto como caracteres.
 
 # --instructions--
 
-Change the regex `userCheck` to fit the constraints listed above.
+Cambia la expresión regular `userCheck` para que se ajuste a las restricciones indicadas anteriormente.
 
 # --hints--
 
-Your regex should match `JACK`
+Tu expresión regular debe coincidir con la cadena `JACK`
 
 ```js
 assert(userCheck.test('JACK'));
 ```
 
-Your regex should not match `J`
+Tu expresión regular no debe coincidir con la cadena `J`
 
 ```js
 assert(!userCheck.test('J'));
 ```
 
-Your regex should match `Jo`
+Tu expresión regular debe coincidir con la cadena `Jo`
 
 ```js
 assert(userCheck.test('Jo'));
 ```
 
-Your regex should match `Oceans11`
+Tu expresión regular debe coincidir con la cadena `Oceans11`
 
 ```js
 assert(userCheck.test('Oceans11'));
 ```
 
-Your regex should match `RegexGuru`
+Tu expresión regular debe coincidir con la cadena `RegexGuru`
 
 ```js
 assert(userCheck.test('RegexGuru'));
 ```
 
-Your regex should not match `007`
+Tu expresión regular no debe coincidir con la cadena `007`
 
 ```js
 assert(!userCheck.test('007'));
 ```
 
-Your regex should not match `9`
+Tu expresión regular no debe coincidir con la cadena `9`
 
 ```js
 assert(!userCheck.test('9'));
 ```
 
-Your regex should not match `A1`
+Tu expresión regular no debe coincidir con la cadena `A1`
 
 ```js
 assert(!userCheck.test('A1'));
 ```
 
-Your regex should not match `BadUs3rnam3`
+Tu expresión regular no debe coincidir con la cadena `BadUs3rnam3`
 
 ```js
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
-Your regex should match `Z97`
+Tu expresión regular debe coincidir con la cadena `Z97`
 
 ```js
 assert(userCheck.test('Z97'));
 ```
 
-Your regex should not match `c57bT3`
+Tu expresión regular no debe coincidir con la cadena `c57bT3`
 
 ```js
 assert(!userCheck.test('c57bT3'));
 ```
 
-Your regex should match `AB1`
+Tu expresión regular debe coincidir con la cadena `AB1`
 
 ```js
 assert(userCheck.test('AB1'));
+```
+
+Tu expresión regular no debe coincidir con la cadena `J%4`
+
+```js
+assert(!userCheck.test('J%4'))
 ```
 
 # --seed--
