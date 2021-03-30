@@ -6,7 +6,7 @@ jobs:
     name: Test
     runs-on: ubuntu-18.04
     strategy:
-      fast-fail: false
+      fail-fast: false
       matrix:
         containers: [1, 2, 3]
         browsers: [chrome, firefox]
