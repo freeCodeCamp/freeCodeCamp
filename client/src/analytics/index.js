@@ -1,13 +1,14 @@
 import ReactGA from 'react-ga';
 import envData from '../../../config/env.json';
-import analyticsData from '../../../config/anlaytics-settings';
+import {
+  devAnalyticsId,
+  prodAnalyticsId
+} from '../../../config/analytics-settings';
 
 const { deploymentEnv } = envData;
-const { analyticsIds } = analyticsData;
+
 const analyticsId =
-  deploymentEnv === 'staging'
-    ? analyticsIds.development
-    : analyticsIds.production;
+  deploymentEnv === 'staging' ? devAnalyticsId : prodAnalyticsId;
 
 ReactGA.initialize(analyticsId);
 
