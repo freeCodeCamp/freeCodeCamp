@@ -29,7 +29,7 @@ Our ask is that you understand the below:
 
    We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [translators chat room](https://chat.freecodecamp.org/channel/translators) with your friends and showing your interest before starting off with translations. Contributing translations are relatively trivial however, it's also a lot of work.
 
-   We want you enjoy contributing and not burn out or lose interest.
+   We want you to enjoy contributing and not burn out or lose interest.
 
    A small group of 4-5 individuals is a good size to start your niche for your world language. You can then recruit even more friends to join the team.
 
@@ -49,11 +49,11 @@ Our ask is that you understand the below:
 
    Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day to enable a language they speak and would like to help translate to.
 
-   We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum and around a world language.
+   We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum around a world language.
 
    If you would like us to include a new world language of your liking, we recommend getting your friends excited about this.
 
-   Once you have a small group of people (at least 4-5) interested and committed, we can hop on a call. We will explain you all the details and walk you through some of the tools and processes.
+   Once you have a small group of people (at least 4-5) interested and committed, we can hop on a call. We will explain all the details and walk you through some of the tools and processes.
 
 ## Getting started
 
