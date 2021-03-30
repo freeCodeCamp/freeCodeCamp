@@ -87,12 +87,12 @@ jobs:
         env:
           EMAIL: ${{ secrets.ACTIONS_CAMPERBOT_EMAIL }}
         run: |
-          git checkout -b i18n-sync-curriculum
+          git checkout -b i18n-sync-client
           git config --global user.name "camperbot"
           git config --global user.email "$EMAIL"
           git add .
           git commit -m "chore: update translations"
-          git push -u origin i18n-sync-curriculum -f
+          git push -u origin i18n-sync-client -f
 
       - name: Install Dependencies
         working-directory: ./tools
