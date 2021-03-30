@@ -6,7 +6,9 @@ jobs:
     name: Test
     runs-on: ubuntu-18.04
     strategy:
+    fast-fail: false
       matrix:
+        containers: [1, 2, 3]
         browsers: [chrome, firefox]
         node-version: [14.x, 12.x]
     services:
@@ -60,6 +62,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          parallel: true
+          group: 'freeCodeCamp Actions'
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           build: npm run build
           # this should mirror the production build, but for now we're using gatsby
