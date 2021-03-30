@@ -23,7 +23,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 ```js
 assert(
-  code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi)
+  code.match(/\.penguin\s*?{[\s\S]*(?<!background-color: )--penguin-belly\s*?:\s?white\s*?;[\s\S]*}/gi)
 );
 ```
 

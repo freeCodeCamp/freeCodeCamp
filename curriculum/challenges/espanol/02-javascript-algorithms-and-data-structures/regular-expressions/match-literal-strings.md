@@ -1,6 +1,6 @@
 ---
 id: 587d7db3367417b2b2512b8f
-title: Match Literal Strings
+title: Haz coincidir cadenas literales
 challengeType: 1
 forumTopicId: 301355
 dashedName: match-literal-strings
@@ -8,44 +8,46 @@ dashedName: match-literal-strings
 
 # --description--
 
-In the last challenge, you searched for the word `"Hello"` using the regular expression `/Hello/`. That regex searched for a literal match of the string `"Hello"`. Here's another example searching for a literal match of the string `"Kevin"`:
+En el desafío anterior, buscaste la palabra `Hello` usando la expresión regular `/Hello/`. Esa expresión regular buscó una coincidencia literal de la cadena `Hello`. Aquí hay otro ejemplo donde se busca una coincidencia literal de la cadena `Kevin`:
 
 ```js
 let testStr = "Hello, my name is Kevin.";
 let testRegex = /Kevin/;
 testRegex.test(testStr);
-// Returns true
 ```
 
-Any other forms of `"Kevin"` will not match. For example, the regex `/Kevin/` will not match `"kevin"` or `"KEVIN"`.
+Esta llamada a `test` devolverá `true`.
+
+Cualquier otra variante de `Kevin` no coincidirá. Por ejemplo, la expresión regular `/Kevin/` no coincidirá con `kevin` o `KEVIN`.
 
 ```js
 let wrongRegex = /kevin/;
 wrongRegex.test(testStr);
-// Returns false
 ```
 
-A future challenge will show how to match those other forms as well.
+Esta llamada a `test` devolverá `false`.
+
+Un futuro desafío también mostrará cómo coincidir esas otras variantes.
 
 # --instructions--
 
-Complete the regex `waldoRegex` to find `"Waldo"` in the string `waldoIsHiding` with a literal match.
+Completa la expresión regular `waldoRegex` para encontrar `"Waldo"` en la cadena `waldoIsHiding` con una coincidencia literal.
 
 # --hints--
 
-Your regex `waldoRegex` should find `"Waldo"`
+Tu expresión regular `waldoRegex` debe encontrar la cadena `Waldo`
 
 ```js
 assert(waldoRegex.test(waldoIsHiding));
 ```
 
-Your regex `waldoRegex` should not search for anything else.
+Tu expresión regular `waldoRegex` no debe buscar ninguna otra cosa.
 
 ```js
 assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 ```
 
-You should perform a literal string match with your regex.
+Debes realizar una coincidencia de cadena literal con tu expresión regular.
 
 ```js
 assert(!/\/.*\/i/.test(code));

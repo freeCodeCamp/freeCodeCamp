@@ -23,7 +23,7 @@ La clase `penguin` debe reasignar la variable `--penguin-belly` a `white`.
 
 ```js
 assert(
-  code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi)
+  code.match(/\.penguin\s*?{[\s\S]*(?<!background-color: )--penguin-belly\s*?:\s?white\s*?;[\s\S]*}/gi)
 );
 ```
 
