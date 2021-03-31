@@ -12,7 +12,9 @@ import {
   saveEditorContent,
   setEditorFocusability,
   setAccessibilityMode,
-  updateFile
+  updateFile,
+  challengeTestsSelector,
+  submitChallenge
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
@@ -43,6 +45,8 @@ const propTypes = {
   saveEditorContent: PropTypes.func.isRequired,
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
+  submitChallenge: PropTypes.func,
+  tests: PropTypes.arrayOf(PropTypes.object),
   theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
 };
@@ -53,11 +57,20 @@ const mapStateToProps = createSelector(
   inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (canFocus, output, accessibilityMode, open, { theme = 'default' }) => ({
+  challengeTestsSelector,
+  (
+    canFocus,
+    output,
+    accessibilityMode,
+    open,
+    { theme = 'default' },
+    tests
+  ) => ({
     canFocus: open ? false : canFocus,
     output,
     inAccessibilityMode: accessibilityMode,
-    theme
+    theme,
+    tests
   })
 );
 
@@ -66,7 +79,8 @@ const mapDispatchToProps = {
   saveEditorContent,
   setAccessibilityMode,
   setEditorFocusability,
-  updateFile
+  updateFile,
+  submitChallenge
 };
 
 const modeMap = {
@@ -449,15 +463,15 @@ class Editor extends Component {
     editorActionRow.classList.add('action-row-container');
     outputNode.classList.add('editor-lower-jaw');
     outputNode.appendChild(editorActionRow);
-    editorActionRow.appendChild(statusNode);
-    editorActionRow.appendChild(hintNode);
     hintNode.setAttribute('id', 'test-output');
     statusNode.setAttribute('id', 'test-status');
-    statusNode.innerHTML = '&#9203; tests has not run';
     var button = document.createElement('button');
+    button.setAttribute('id', 'test-button');
     button.classList.add('btn-block');
     button.innerHTML = 'Run the Tests (Ctrl + Enter)';
     editorActionRow.appendChild(button);
+    editorActionRow.appendChild(statusNode);
+    editorActionRow.appendChild(hintNode);
     button.onclick = () => {
       const { executeChallenge } = this.props;
       executeChallenge();
@@ -903,7 +917,43 @@ class Editor extends Component {
     }
 
     if (this._editor) {
-      const { output } = this.props;
+      const { output, tests } = this.props;
+      if (this.props.tests !== prevProps.tests) {
+        const challengeComplete = tests.every(test => test.pass && !test.err);
+        const chellengeHasErrors = tests.some(test => test.err);
+        console.log({ chellengeHasErrors, challengeComplete });
+        if (challengeComplete) {
+          let testButton = document.getElementById('test-button');
+          testButton.innerHTML =
+            'Submit your code and go to next challenge (Ctrl + Enter)';
+          testButton.onclick = () => {
+            const { submitChallenge } = this.props;
+            submitChallenge();
+          };
+
+          // could not select parent so added class to body for demo
+          document
+            .getElementsByTagName('BODY')[0]
+            .classList.add('tests-passed');
+
+          document.getElementById('test-output').innerHTML = '';
+          document.getElementById('test-status').innerHTML =
+            '&#9989; all tests passed  [-----progress bar-----]';
+        } else if (chellengeHasErrors) {
+          const wordsArray = [
+            "Not quite. Here's a hint:",
+            'Try again. This might help:',
+            'Keep trying. A quick hint for you:',
+            "You're getting there. This may help:",
+            "Hang in there. You'll get there. A hint:",
+            "Don't give up. Here's a hint to get you thinking:"
+          ];
+          document.getElementById('test-status').innerHTML = `&#10060; ${
+            wordsArray[Math.floor(Math.random() * wordsArray.length)]
+          }`;
+          document.getElementById('test-output').innerHTML = `${output[1]}`;
+        }
+      }
       if (this.props.output !== prevProps.output && this._outputNode) {
         // TODO: output gets wiped when the preview gets updated, keeping the
         // display is an anti-pattern (the render should not ignore props!).
@@ -911,24 +961,6 @@ class Editor extends Component {
         // (shownHint,maybe) and have that persist through previews.  But, for
         // now:
         if (output) {
-          if (output[0]) {
-            document.getElementById('test-status').innerHTML = output[0];
-          }
-
-          if (output[1]) {
-            if (output[1] === '// tests completed') {
-              document.getElementById('test-output').innerHTML = '';
-              document.getElementById('test-status').innerHTML =
-                '&#9989; all tests passed  [-----progress bar-----]';
-            } else {
-              document.getElementById('test-status').innerHTML =
-                '&#10060; tests have not passed';
-              document.getElementById(
-                'test-output'
-              ).innerHTML = `Hint: ${output[1]}`;
-            }
-          }
-
           // if either id exists, the editable region exists
           // TODO: add a layer of abstraction: we should be interacting with
           // the editable region, not the ids

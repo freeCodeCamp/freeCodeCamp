@@ -52,6 +52,7 @@
   background-color: var(--secondary-background);
   padding: 10px;
   border: 2px solid var(--tertiary-background);
+  max-width: 700px;
 }
 
 #description p:last-child {
@@ -60,8 +61,16 @@
 
 #test-status {
   padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .myEditableLineDecoration {
-  background-color: lightblue;
+  background-color: var(--gray-45);
+  width: 15px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.tests-passed .myEditableLineDecoration {
+  background-color: #4caf50;
 }
