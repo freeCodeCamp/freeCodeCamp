@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7b
-title: Understand Own Properties
+title: Comprender las propiedades propias (ownProps)
 challengeType: 1
 forumTopicId: 301326
 dashedName: understand-own-properties
@@ -8,7 +8,7 @@ dashedName: understand-own-properties
 
 # --description--
 
-In the following example, the `Bird` constructor defines two properties: `name` and `numLegs`:
+En el siguiente ejemplo, el constructor `Bird` define dos propiedades: `name` y `numLegs`:
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-`name` and `numLegs` are called `own` properties, because they are defined directly on the instance object. That means that `duck` and `canary` each has its own separate copy of these properties. In fact every instance of `Bird` will have its own copy of these properties. The following code adds all of the `own` properties of `duck` to the array `ownProps`:
+`name` y `numLegs` se llaman <dfn>propiedades propias</dfn>, porque están definidas directamente en la instancia del objeto. Eso significa que `duck` y `canary` tienen su propia copia separada de estas propiedades. De hecho, cada instancia de `Bird` tendrá su propia copia de estas propiedades. El siguiente código añade todas las propiedades propias de `duck` al arreglo `ownProps`:
 
 ```js
 let ownProps = [];
@@ -31,28 +31,30 @@ for (let property in duck) {
   }
 }
 
-console.log(ownProps); // prints [ "name", "numLegs" ]
+console.log(ownProps);
 ```
+
+La consola mostrará el valor `["name", "numLegs"]`.
 
 # --instructions--
 
-Add the `own` properties of `canary` to the array `ownProps`.
+Agrega todas las propiedades propias de `canary` al arreglo `ownProps`.
 
 # --hints--
 
-`ownProps` should include the values `"numLegs"` and `"name"`.
+`ownProps` debe incluir los valores `numLegs` y `name`.
 
 ```js
 assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 ```
 
-You should solve this challenge without using the built in method `Object.keys()`.
+Debes resolver este desafío sin usar el método `Object.keys()`.
 
 ```js
 assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
 ```
 
-You should solve this challenge without hardcoding the `ownProps` array.
+Debes resolver este desafío sin hacer una programación fija (hardcoding) del arreglo `ownProps`.
 
 ```js
 assert(
