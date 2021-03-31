@@ -38,7 +38,7 @@ Hay dos funciones relacionadas con cadenas en el editor. Exporta ambos utilizand
 
 # --hints--
 
-Deberías exportar correctamente `uppercaseString`.
+Debes exportar correctamente `uppercaseString`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Deberías exportar correctamente `lowercaseString`.
+Debes exportar correctamente `lowercaseString`.
 
 ```js
 assert(

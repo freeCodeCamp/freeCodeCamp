@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: Restablece una propiedad constructor heredada
+title: Restablece una propiedad "constructor" heredada
 challengeType: 1
 forumTopicId: 301324
 dashedName: reset-an-inherited-constructor-property

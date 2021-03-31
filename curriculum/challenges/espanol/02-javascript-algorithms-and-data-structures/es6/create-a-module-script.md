@@ -28,7 +28,7 @@ Debes crear una etiqueta `script`.
 assert(code.match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
 ```
 
-Tu etiqueta `input` debe tener un atributo `type` con un valor de `date`.
+Tu etiqueta `script` debe tener un atributo `type` con un valor de `module`.
 
 ```js
 assert(
