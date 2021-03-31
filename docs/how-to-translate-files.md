@@ -6,7 +6,7 @@ The translation workflow is split into two main activities:
 
 - **Translating** curriculum files, documentation and UI elements like buttons, labels, etc.:
 
-  As a translator you can sign up on [our translation platform](https://translate.freecodecamp.org) and contribute translations in any of the 30+ languages enabled in there. If you do not see a language that you speak and are interested in translating, [visit this frequently asked question](/FAQ?id=can-i-translate-freecodecamp39s-resources).
+  As a translator you can sign up on [our translation platform](https://translate.freecodecamp.org) and contribute translations in any of the 30+ languages enabled in there.
 
 - **Proofreading** the translations for all of the above.
 
