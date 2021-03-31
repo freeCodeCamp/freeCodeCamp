@@ -31,7 +31,7 @@ Then, once a response is received from the AJAX request, a few assertions are ma
 1.  The status of the response is `200`
 2.  The text within the `<span id='name'></span>` element matches `'Marco'`
 3.  The text within the `<span id='surname'></span>` element matches `'Polo'`
-4.  The there is `1` `<span id='dates'></span>` element.
+4.  There is `1` `<span id='dates'></span>` element.
 
 Finally, the `done` callback is invoked, which is needed due to the asynchronous test.
 
