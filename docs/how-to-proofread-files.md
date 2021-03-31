@@ -2,11 +2,9 @@
 
 Our proofreading team is responsible for ensuring that translations accurately reflect the source text. We trust our proofreaders to ensure that we have very high quality translations.
 
-If you haven't noticed all our translations are done by hand, by real humans. Proofreading ensures that there is a consistent tone across our all our translated resources like the curriculum.
+All our translations are done by hand, by real humans. Proofreading ensures that there is a consistent tone across our all our translated resources like the curriculum.
 
-To begin proofreading, you are probably already a translator and have been contributing to translations. Visit [our translation platform](https://translate.freecodecamp.org) and login.
-
-Select "Go to console" in the top navigation bar to switch from the public view to the workspace view.
+To begin proofreading, visit [our translation platform](https://translate.freecodecamp.org) and login. Select "Go to console" in the top navigation bar to switch from the public view to the workspace view.
 
 ## Select a File
 
@@ -45,9 +43,9 @@ No additional actions are required once a file has been proofread.
 
 ## Becoming a proofreader
 
-If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators). We will typically grant you proofreading access if you have been contributing to freeCodeCamp in some capacity for a while.
+If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
 
-Our staff team and community moderators teams are always looking for kind volunteers like you who help us in making high quality translations available to the world.
+Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
 
 > [!NOTE]
 > Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.

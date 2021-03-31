@@ -1,10 +1,10 @@
 # How to work on localized client webapp
 
-The react based client webapp that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
+The react based client web app that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
 
-You can learn more about setting the client application locally for development by following [our local setup guide here](/how-to-setup-freecodecamp-locally). By default the application is available only in English.
+You can learn more about setting up the client application locally for development by following [our local setup guide here](/how-to-setup-freecodecamp-locally). By default the application is available only in English.
 
-Once you have setup the project locally you should be able to follow this documentation to run the client in the language of your liking from a list of available languages.
+Once you have setup the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
 
 This could be helpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
 
@@ -60,9 +60,9 @@ Most of files for translating the platform are located in the [`client/i18n`](ht
   └── validate-keys.js
 ```
 
-Some of these files are translated on our translating platform (Crowdin), some are not.
+Some of these files are translated on our translation platform (Crowdin), some are not.
 
-**Files translated on our translations platform:**
+**Files translated on our translation platform:**
 
 - The `translations.json` file contains the majority of the text that appears on the user interface elements. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
 
@@ -97,11 +97,11 @@ Add the language to the `client` array as seen above in the [`config/i18n/all-la
 
 Next, follow the instructions in the comments in the same file to add/update the rest of the variables as needed.
 
-Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to build and start up the.
+Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to build and you're ready.
 
 ## How to Structure Components
 
-If you are working on a feature or a bug for client webapp, say for example adding new UI items on the settings page you should follow the below guidelines for enabling the components to be ready for localization to all the supported world languages.
+If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will help you prepare the components for localization into all the supported world languages.
 
 ### Functional Component
 
@@ -217,7 +217,7 @@ Other times, you will want to have certain text inside another element, an ancho
 <p>Check out <a href='https://forum.freecodecamp.org/'>our forum</a></p>
 ```
 
-In the above example, the key is set in the attributes of the `Trans` component. The `<0>` and `</0>` in the JSON represent the first child of the component, in this case, the anchor element. If there were more children, they would just count up from there using the same syntax. You can find the children of a component in the react dev tools by inspecting it. `placeholder` is simply there because the linter was complaining at me about an empty `<a>` element.
+In the above example, the key is set in the attributes of the `Trans` component. The `<0>` and `</0>` in the JSON represent the first child of the component, in this case, the anchor element. If there were more children, they would just count up from there using the same syntax. You can find the children of a component in the react dev tools by inspecting it. `placeholder` is simply there because the linter complains about empty `<a>` elements.
 
 ### With a Variable
 

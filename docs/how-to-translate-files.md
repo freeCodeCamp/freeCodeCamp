@@ -10,7 +10,7 @@ The translation workflow is split into two main activities:
 
 - **Proofreading** the translations for all of the above.
 
-  Proofreading is verifying the community contributed translations for things like uniformity in tone and common issues like typos, etc. It's essentially ensuring the quality of translations is high. Note that we do not use machine translations for a reason.
+  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
 
 > [!WARNING]
 > We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
@@ -21,13 +21,13 @@ The translation workflow is split into two main activities:
 
 You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
 
-Our ask is that you understand the below:
+We just ask that you understand the following:
 
 1. **Translations are a team effort.**
 
-   Translating freeCodeCamp's resources is one of the most fun and rewarding experiences as a contributor, and it works only if you get your friends and colleagues who speak the same world language as you involved.
+   Translating freeCodeCamp's resources is one of the most fun and rewarding experiences as a contributor, and it works best if you involve your friends and colleagues who speak the same world language as you.
 
-   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [translators chat room](https://chat.freecodecamp.org/channel/translators) with your friends and showing your interest before starting off with translations. Contributing translations are relatively trivial however, it's also a lot of work.
+   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [translators chat room](https://chat.freecodecamp.org/channel/translators) with your friends and showing your interest before starting off with translations. Crowdin makes it easy to contribute translations, but it's still a lot of work.
 
    We want you to enjoy contributing and not burn out or lose interest.
 
@@ -41,17 +41,17 @@ Our ask is that you understand the below:
 
    Once a language reaches at least a few certifications on the curriculum we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
 
-   For example, we would want to deploy the at least the entire front-end certifications suite when we ship a new world language for the first time.
+   For example, we would want to deploy at least the entire front-end certifications suite when we ship a new world language for the first time.
 
 3. **But what about the languages not listed on the translation platform?**
 
    We have looked at our user base and added 30+ most widely spoken languages to the list of enabled languages on the translations platform. Some languages like Chinese and Spanish are already deployed live on **"/learn"** at this moment.
 
-   Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day to enable a language they speak and would like to help translate to.
+   Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day who want to help translate the site into a language they speak.
 
    We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum around a world language.
 
-   If you would like us to include a new world language of your liking, we recommend getting your friends excited about this.
+   If you would like us to include a new world language, we recommend getting your friends excited about this.
 
    Once you have a small group of people (at least 4-5) interested and committed, we can hop on a call. We will explain all the details and walk you through some of the tools and processes.
 

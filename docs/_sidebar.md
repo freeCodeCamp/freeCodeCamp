@@ -14,7 +14,7 @@
 - **Optional Guides**
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [Add Cypress tests](how-to-add-cypress-tests.md)
-  - [Work on localized client webapp](how-to-work-on-localized-client-webapp.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
 
 ---
