@@ -938,7 +938,7 @@ class Editor extends Component {
 
           document.getElementById('test-output').innerHTML = '';
           document.getElementById('test-status').innerHTML =
-            '&#9989; all tests passed  [-----progress bar-----]';
+            '&#9989; Step completed.  [-----progress bar-----]';
         } else if (chellengeHasErrors) {
           const wordsArray = [
             "Not quite. Here's a hint:",
@@ -948,7 +948,7 @@ class Editor extends Component {
             "Hang in there. You'll get there. A hint:",
             "Don't give up. Here's a hint to get you thinking:"
           ];
-          document.getElementById('test-status').innerHTML = `&#10060; ${
+          document.getElementById('test-status').innerHTML = `✖️ ${
             wordsArray[Math.floor(Math.random() * wordsArray.length)]
           }`;
           document.getElementById('test-output').innerHTML = `${output[1]}`;
