@@ -71,6 +71,14 @@ assert(myMusic.length > 1);
 assert(typeof myMusic[1] === 'object');
 ```
 
+your album should be the second value in the array 
+
+```js
+assert(
+  myMusic[0].artist === 'Billy Joel' && myMusic[0].title === 'Piano Man' && myMusic.length > 1
+);
+```
+
 `myMusic[1]` should have at least 4 properties
 
 ```js
