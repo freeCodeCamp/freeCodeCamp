@@ -65,7 +65,7 @@ assert(Array.isArray(myMusic));
 assert(myMusic.length > 1);
 ```
 
-`myMusic` should contain two objects
+`myMusic` should contain at least two objects
 
 ```js
 myMusic.forEach(object => {assert.typeOf(object, 'object')})
@@ -74,7 +74,7 @@ myMusic.forEach(object => {assert.typeOf(object, 'object')})
 Your object in `myMusic` should have at least 4 properties
 
 ```js
-myMusic.forEach(object => {assert.containsAllKeys(object, ['artist', 'release_year', 'title', 'formats'])})
+myMusic.forEach(object => {assert(Object.keys(object).length > 3); });
 ```
 
 Your object in `myMusic` should contain the property `artist` which is a string
@@ -104,7 +104,7 @@ myMusic.forEach(object => {
 })
 ```
 
-your object in `myMusic` should contain a `formats` property which is an array
+Your object in `myMusic` should contain a `formats` property which is an array
 
 ```js
 myMusic.forEach(object => {
