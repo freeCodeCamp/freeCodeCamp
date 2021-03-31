@@ -132,7 +132,7 @@
     "ora": "5.4.0",
     "prettier": "2.2.1",
     "prismjs": "1.23.0",
-    "readdirp-walk": "1.7.0",
+    "readdirp-walk": "2.1.4",
     "shx": "0.3.3",
     "sinon": "7.4.1",
     "sinon-express-mock": "2.2.1",
