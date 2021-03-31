@@ -31,6 +31,7 @@ export const defaultFetchState = {
 };
 
 export const defaultDonationFormState = {
+  redirecting: false,
   processing: false,
   success: false,
   error: ''
@@ -81,6 +82,7 @@ export const types = createTypes(
     'updateDonationFormState',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('addDonation'),
+    ...createAsyncTypes('createStripeSession'),
     ...createAsyncTypes('postChargeStripe'),
     ...createAsyncTypes('fetchProfileForUser'),
     ...createAsyncTypes('acceptTerms'),
@@ -149,6 +151,8 @@ export const fetchUserError = createAction(types.fetchUserError);
 export const addDonation = createAction(types.addDonation);
 export const addDonationComplete = createAction(types.addDonationComplete);
 export const addDonationError = createAction(types.addDonationError);
+
+export const createStripeSession = createAction(types.createStripeSession);
 
 export const postChargeStripe = createAction(types.postChargeStripe);
 export const postChargeStripeComplete = createAction(
@@ -399,6 +403,10 @@ export const reducer = handleActions(
     [types.updateDonationFormState]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
+    }),
+    [types.createStripeSession]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, redirecting: true }
     }),
     [types.addDonation]: state => ({
       ...state,

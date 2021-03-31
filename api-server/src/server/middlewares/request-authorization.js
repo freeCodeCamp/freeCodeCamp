@@ -24,6 +24,7 @@ const statusRE = /^\/status\/ping$/;
 const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
 const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
+const createStripeSession = /^\/donate\/create-stripe-session/;
 
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
@@ -41,7 +42,8 @@ const _pathsAllowedREs = [
   unsubscribedRE,
   unsubscribeRE,
   updateHooksRE,
-  donateRE
+  donateRE,
+  createStripeSession
 ];
 
 export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {

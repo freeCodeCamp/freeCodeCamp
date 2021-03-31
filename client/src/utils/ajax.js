@@ -68,6 +68,10 @@ export function addDonation(body) {
   return post('/donate/add-donation', body);
 }
 
+export function postCreateStripeSession(body) {
+  return post('/donate/create-stripe-session', body);
+}
+
 export function putUpdateLegacyCert(body) {
   return post('/update-my-projects', body);
 }
