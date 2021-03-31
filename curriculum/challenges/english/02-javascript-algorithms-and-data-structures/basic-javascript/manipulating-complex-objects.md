@@ -59,65 +59,69 @@ Add a new album to the `myMusic` array. Add `artist` and `title` strings, `relea
 assert(Array.isArray(myMusic));
 ```
 
-`myMusic` should have at least two elements
+`myMusic` should have at least two objects
 
 ```js
 assert(myMusic.length > 1);
 ```
 
-`myMusic[1]` should be an object
+`myMusic` should contain at least two objects
 
 ```js
-assert(typeof myMusic[1] === 'object');
+myMusic.forEach(object => {assert.typeOf(object, 'object')})
 ```
 
-`myMusic[1]` should have at least 4 properties
+Your object in `myMusic` should have at least 4 properties
 
 ```js
-assert(Object.keys(myMusic[1]).length > 3);
+myMusic.forEach(object => {assert(Object.keys(object).length > 3); });
 ```
 
-`myMusic[1]` should contain an `artist` property which is a string
+Your object in `myMusic` should contain the property `artist` which is a string
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['artist']);
+  assert.typeOf(object.artist, 'string')
+})
 ```
 
-`myMusic[1]` should  contain a `title` property which is a string
+Your object in `myMusic` should contain the property `title` which is a string
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['title']);
+  assert.typeOf(object.title, 'string')
+})
 ```
 
-`myMusic[1]` should contain a `release_year` property which is a number
+Your object in `myMusic` should contain the property `release_year` which is a number
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('release_year') &&
-    typeof myMusic[1].release_year === 'number'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['release_year']);
+  assert.typeOf(object.release_year, 'number')
+})
 ```
 
-`myMusic[1]` should contain a `formats` property which is an array
+Your object in `myMusic` should contain a `formats` property which is an array
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats)
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['formats']);
+  assert.typeOf(object.formats, 'array')
+})
 ```
 
 `formats` should be an array of strings with at least two elements
 
 ```js
-assert(
-  myMusic[1].formats.every(function (item) {
-    return typeof item === 'string';
-  }) && myMusic[1].formats.length > 1
-);
+myMusic.forEach(object => {
+  object.formats.forEach(format => {
+    assert.typeOf(format, 'string')
+  });
+  assert.isAtLeast(object.formats.length, 2)
+})
 ```
 
 # --seed--
@@ -143,7 +147,6 @@ var myMusic = [
     ],
     "gold": true
   }
-  // Add a record here
 ];
 ```
 
