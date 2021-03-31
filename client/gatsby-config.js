@@ -15,6 +15,9 @@ const pathPrefix =
     : '/' + clientLocale;
 
 module.exports = {
+  flags: {
+    DEV_SSR: false
+  },
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: homeLocation

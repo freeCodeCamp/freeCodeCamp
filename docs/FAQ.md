@@ -2,11 +2,13 @@
 
 Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
-### Can I translate freeCodeCamp's curriculum?
+### Can I translate freeCodeCamp's resources?
 
-Yes - Read [this guide](/how-to-translate-files) if you are interested in contributing to translations.
+Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
 
-Currently we have the user contributed translations being done in Chinese and Español. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+We have the user contributed translations live in Chinese (中文) and Spanish (Español). We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+
+If you are interested in contributing to translations please makes sure you [read this guide](/how-to-translate-files) first.
 
 ### How can I report a new bug?
 

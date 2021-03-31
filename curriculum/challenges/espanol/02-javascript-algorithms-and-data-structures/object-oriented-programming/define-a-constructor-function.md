@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b77
-title: Define a Constructor Function
+title: Define una función "Constructor"
 challengeType: 1
 forumTopicId: 16804
 dashedName: define-a-constructor-function
@@ -8,9 +8,9 @@ dashedName: define-a-constructor-function
 
 # --description--
 
-<dfn>Constructors</dfn> are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
+Las funciones <dfn>Constructors</dfn> crean nuevos objetos. Definen propiedades y comportamientos que pertenecerán al nuevo objeto. Piensa que son el modelo para la creación de nuevos objetos.
 
-Here is an example of a constructor:
+A continuación se muestra un ejemplo de un constructor:
 
 ```js
 function Bird() {
@@ -20,29 +20,29 @@ function Bird() {
 }
 ```
 
-This constructor defines a `Bird` object with properties `name`, `color`, and `numLegs` set to Albert, blue, and 2, respectively. Constructors follow a few conventions:
+Este constructor define un objeto `Bird` con las propiedades `name`, `color` y `numLegs` establecidas a Albert, blue y 2 respectivamente. Los constructores tienen las siguientes convenciones:
 
-<ul><li>Constructors are defined with a capitalized name to distinguish them from other functions that are not <code>constructors</code>.</li><li>Constructors use the keyword <code>this</code> to set properties of the object they will create. Inside the constructor, <code>this</code> refers to the new object it will create.</li><li>Constructors define properties and behaviors instead of returning a value as other functions might.</li></ul>
+<ul><li>Están definidos con un nombre en mayúscula para distinguirlos de otras funciones que no son <code>constructors</code>.</li><li>Utilizan la palabra clave <code>this</code> para establecer propiedades del objeto que crearán. Dentro del constructor, <code>this</code> se refiere al nuevo objeto que creará.</li><li>Los Constructors definen propiedades y comportamientos en ves de devolverlos como un valor como lo harían otras funciones.</li></ul>
 
 # --instructions--
 
-Create a constructor, `Dog`, with properties `name`, `color`, and `numLegs` that are set to a string, a string, and a number, respectively.
+Crea un constructor, `Dog`, con las propiedades `name`, `color` y `numLegs` que se establecen a una cadena, una cadena y un número respectivamente.
 
 # --hints--
 
-`Dog` should have a `name` property set to a string.
+`Dog` debe tener una propiedad `name` establecida a una cadena.
 
 ```js
 assert(typeof new Dog().name === 'string');
 ```
 
-`Dog` should have a `color` property set to a string.
+`Dog` debe tener una propiedad `color` establecida a una cadena.
 
 ```js
 assert(typeof new Dog().color === 'string');
 ```
 
-`Dog` should have a `numLegs` property set to a number.
+`Dog` debe tener una propiedad `numLegs` establecida a un número.
 
 ```js
 assert(typeof new Dog().numLegs === 'number');
@@ -51,7 +51,9 @@ assert(typeof new Dog().numLegs === 'number');
 # --seed--
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

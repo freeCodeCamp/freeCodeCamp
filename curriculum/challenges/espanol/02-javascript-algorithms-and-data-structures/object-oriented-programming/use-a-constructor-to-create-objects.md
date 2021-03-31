@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b78
-title: Use a Constructor to Create Objects
+title: Utiliza un constructor para crear objetos
 challengeType: 1
 forumTopicId: 18233
 dashedName: use-a-constructor-to-create-objects
@@ -8,47 +8,48 @@ dashedName: use-a-constructor-to-create-objects
 
 # --description--
 
-Here's the `Bird` constructor from the previous challenge:
+Aquí tenemos el constructor `Bird` del desafío anterior:
 
 ```js
 function Bird() {
   this.name = "Albert";
   this.color  = "blue";
   this.numLegs = 2;
-  // "this" inside the constructor always refers to the object being created
 }
 
 let blueBird = new Bird();
 ```
 
-Notice that the `new` operator is used when calling a constructor. This tells JavaScript to create a new instance of `Bird` called `blueBird`. Without the `new` operator, `this` inside the constructor would not point to the newly created object, giving unexpected results. Now `blueBird` has all the properties defined inside the `Bird` constructor:
+**NOTA:** `this` dentro del constructor siempre se refiere al objeto que se está creando.
+
+Observa que se utiliza el operador `new` cuando llamamos a un constructor. Esto le indica a JavaScript que cree una nueva instancia de `Bird` llamada `blueBird`. Sin el operador `new`, dentro del constructor `this` no haría referencia al nuevo objeto, dando resultados inesperados. Ahora `blueBird` tiene todas las propiedades definidas dentro del constructor `Bird`:
 
 ```js
-blueBird.name; // => Albert
-blueBird.color; // => blue
-blueBird.numLegs; // => 2
+blueBird.name;
+blueBird.color;
+blueBird.numLegs;
 ```
 
-Just like any other object, its properties can be accessed and modified:
+Al igual que cualquier otro objeto, sus propiedades pueden ser accedidas y modificadas:
 
 ```js
 blueBird.name = 'Elvira';
-blueBird.name; // => Elvira
+blueBird.name;
 ```
 
 # --instructions--
 
-Use the `Dog` constructor from the last lesson to create a new instance of `Dog`, assigning it to a variable `hound`.
+Utiliza el constructor `Dog` de la última lección para crear una nueva instancia de `Dog`, asignándolo a una variable `hound`.
 
 # --hints--
 
-`hound` should be created using the `Dog` constructor.
+`hound` debe ser creado usando el constructor `Dog`.
 
 ```js
 assert(hound instanceof Dog);
 ```
 
-Your code should use the `new` operator to create an instance of `Dog`.
+Tu código debe usar el operador `new` para crear una instancia de `Dog`.
 
 ```js
 assert(code.match(/new/g));

@@ -17,7 +17,9 @@ Recuerda que `Math.random()` nunca devolverá un `1` y porque estamos redondeand
 
 Poniendo todo junto, así es como se ve nuestro código:
 
-`Math.floor(Math.random() * 20);`
+```js
+Math.floor(Math.random() * 20);
+```
 
 Estamos llamando a `Math.random()`, multiplicando el resultado por 20 y pasando el valor a la función `Math.floor()` para redondear el valor hacia abajo al número entero más cercano.
 

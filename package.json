@@ -103,7 +103,7 @@
     "dotenv": "8.2.0"
   },
   "devDependencies": {
-    "@testing-library/cypress": "7.0.4",
+    "@testing-library/cypress": "7.0.5",
     "babel-eslint": "10.1.0",
     "cross-env": "7.0.3",
     "cypress": "6.8.0",

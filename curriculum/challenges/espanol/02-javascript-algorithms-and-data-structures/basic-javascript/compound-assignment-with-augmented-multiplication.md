@@ -11,15 +11,19 @@ dashedName: compound-assignment-with-augmented-multiplication
 
 El operador `*=` multiplica una variable por un número.
 
-`myVar = myVar * 5;`
+```js
+myVar = myVar * 5;
+```
 
-multiplicará `myVar` por `5`. Esto se puede reescribir como:
+se multiplicará `myVar` por `5`. Esto se puede reescribir como:
 
-`myVar *= 5;`
+```js
+myVar *= 5;
+```
 
 # --instructions--
 
-Convierte las asignaciones de `a`, `b` y `c` para que utilicen el operador `*=`.
+Convierte las tareas de `a`, `b`, y `c` para utilizar el operador `*=`.
 
 # --hints--
 
@@ -47,7 +51,7 @@ Debes usar el operador `*=` para cada variable.
 assert(code.match(/\*=/g).length === 3);
 ```
 
-No debes modificar el código por encima del comentario especificado.
+No debes modificar el código sobre el comentario especificado.
 
 ```js
 assert(
