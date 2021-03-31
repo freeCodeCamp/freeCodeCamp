@@ -2,67 +2,106 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 const ObjectID = require('bson-objectid');
+const { parseMDSync } = require('../challenge-parser/parser');
 
 const padWithLeadingZeros = originalNum => {
   /* always want file step numbers 3 digits */
   return ('' + originalNum).padStart(3, '0');
 };
 
-const removeErms = seedCode => {
+const insertErms = (seedCode, erms) => {
   const lines = seedCode.split('\n');
-  return lines
-    .filter(line => !line.includes('--fcc-editable-region--'))
-    .join('\n');
+  if (Number.isInteger(erms[0])) {
+    lines.splice(erms[0], 0, '--fcc-editable-region--');
+  }
+  if (Number.isInteger(erms[1])) {
+    lines.splice(erms[1], 0, '--fcc-editable-region--');
+  }
+  return lines.join('\n');
 };
 
 const createStepFile = ({
   projectPath,
   stepNum,
-  challengeSeed = '',
+  challengeSeeds = {},
   stepBetween = false
 }) => {
-  if (challengeSeed) {
-    challengeSeed = removeErms(challengeSeed);
-  }
+  const seedTexts = Object.values(challengeSeeds).map(
+    ({ contents, ext, editableRegionBoundaries }) => {
+      const fullContents = insertErms(contents, editableRegionBoundaries);
+      return `\`\`\`${ext}
+${fullContents}
+\`\`\``;
+    }
+  );
+
+  const seedHeads = Object.values(challengeSeeds)
+    .filter(({ head }) => head)
+    .map(
+      ({ ext, head }) => `\`\`\`${ext}
+${head}
+\`\`\``
+    )
+    .join('\n');
+
+  const seedTails = Object.values(challengeSeeds)
+    .filter(({ tail }) => tail)
+    .map(
+      ({ ext, tail }) => `\`\`\`${ext}
+${tail}
+\`\`\``
+    )
+    .join('\n');
 
   const descStepNum = stepBetween ? stepNum + 1 : stepNum;
   const stepDescription = `${
     stepBetween ? 'new' : ''
   } step ${descStepNum} instructions`;
-  const challengeSeedSection = `<section id='challengeSeed'>
+  const challengeSeedSection = `
+# --seed--
 
-${challengeSeed.trim()}
+## --seed-contents--
 
-</section>`;
+${seedTexts.join('\n')}`;
 
-  const template = `---
+  const seedHeadSection = seedHeads
+    ? `
+
+## --before-user-code--
+
+${seedHeads}`
+    : '';
+
+  const seedTailSection = seedTails
+    ? `
+
+## --after-user-code--
+
+${seedTails}`
+    : '';
+
+  const template =
+    `---
 id: ${ObjectID.generate()}
 title: Part ${stepNum}
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 ${stepDescription}
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-\`\`\`yml
-tests:
-  - text: Test 1
-    testString: ''
+\`\`\`js
 
 \`\`\`
-
-</section>
-
-## Challenge Seed
-${challengeSeedSection}
-`;
+` +
+    challengeSeedSection +
+    seedHeadSection +
+    seedTailSection;
 
   let finalStepNum = padWithLeadingZeros(stepNum);
   finalStepNum += stepBetween ? 'a' : '';
@@ -158,19 +197,8 @@ const reorderSteps = () => {
   console.log('Reordered steps');
 };
 
-const getChallengeSeed = challengeFilePath => {
-  const fileContent = fs.readFileSync(challengeFilePath, 'utf8');
-  const matchedSection = fileContent
-    .toString()
-    .match(/<section id='challengeSeed'>(?<challengeSeed>[\s\S]+)<\/section>/);
-  let finalChallengeSeed = '';
-  if (matchedSection) {
-    let {
-      groups: { challengeSeed }
-    } = matchedSection;
-    finalChallengeSeed = challengeSeed ? challengeSeed : '';
-  }
-  return finalChallengeSeed;
+const getChallengeSeeds = challengeFilePath => {
+  return parseMDSync(challengeFilePath).files;
 };
 
 const getExistingStepNums = projectPath => {
@@ -208,7 +236,7 @@ const getArgValues = argv => {
 
 module.exports = {
   createStepFile,
-  getChallengeSeed,
+  getChallengeSeeds,
   padWithLeadingZeros,
   reorderSteps,
   getExistingStepNums,
