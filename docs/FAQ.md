@@ -81,7 +81,6 @@ If you have queries about the stack, architecture of the codebase, translations,
 | Nicholas Carrigan     | [@nhcarrigan](https://forum.freecodecamp.org/u/nhcarrigan)                   |
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
 | Rafael D Hernandez    | [@RafaelHernandez](https://forum.freecodecamp.org/u/rafaelhernandez)         |
-| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 | Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**
