@@ -69,13 +69,11 @@ function* createStripeSessionSaga({ payload: { stripe, data } }) {
       sessionId: session.data.id
     });
   } catch (error) {
-    const data =
+    const err =
       error.response && error.response.data
-        ? error.response.data
-        : {
-            message: defaultDonationError
-          };
-    yield put(addDonationError(data.message));
+        ? error.response.data.message
+        : defaultDonationError;
+    yield put(addDonationError(err));
   }
 }
 
