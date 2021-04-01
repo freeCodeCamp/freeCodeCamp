@@ -30,10 +30,16 @@ Your solution should not use the `String.prototype.trim()` method.
 assert(!code.match(/\.?[\s\S]*?trim/));
 ```
 
-The `result` variable should not be set equal to a string.
+The `result` variable should not directly be set to a string
 
 ```js
-assert(!code.match(/result\s*=\s*".*?"/));
+assert(!code.match(/result\s*=\s*["'].*?["']/));
+```
+
+The `result` variable should be of type string
+
+```js
+assert.typeOf(result, 'string')
 ```
 
 # --seed--
