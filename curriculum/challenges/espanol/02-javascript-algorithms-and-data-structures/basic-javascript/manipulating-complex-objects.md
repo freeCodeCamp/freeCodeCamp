@@ -65,59 +65,63 @@ assert(Array.isArray(myMusic));
 assert(myMusic.length > 1);
 ```
 
-`myMusic[1]` debe ser un objeto
+`myMusic` debe tener al menos dos elementos
 
 ```js
-assert(typeof myMusic[1] === 'object');
+myMusic.forEach(object => {assert.typeOf(object, 'object')})
 ```
 
-`myMusic[1]` debe tener al menos 4 propiedades
+Tu objeto en `myMusic` debe tener al menos 4 propiedades
 
 ```js
-assert(Object.keys(myMusic[1]).length > 3);
+myMusic.forEach(object => {assert(Object.keys(object).length > 3); });
 ```
 
-`myMusic[1]` debe contener una propiedad `artist` que es una cadena
+Tu objeto en `myMusic` debe contener la propiedad `artist` que es una cadena
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['artist']);
+  assert.typeOf(object.artist, 'string')
+})
 ```
 
-`myMusic[1]` debe contener una propiedad `title` que es una cadena
+Tu objeto en `myMusic` debe contener la propiedad `title` que es una cadena
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['title']);
+  assert.typeOf(object.title, 'string')
+})
 ```
 
-`myMusic[1]` debe contener una propiedad `release_year` que es un número
+Tu objeto en `myMusic` debe contener la propiedad `release_year` que es un número
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('release_year') &&
-    typeof myMusic[1].release_year === 'number'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['release_year']);
+  assert.typeOf(object.release_year, 'number')
+})
 ```
 
-`myMusic[1]` debe contener una propiedad `formats` que es un arreglo
+Tu objeto en `myMusic` debe contener una propiedad de `formats` que es un arreglo
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats)
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['formats']);
+  assert.typeOf(object.formats, 'array')
+})
 ```
 
 `formats` debe ser un arreglo de cadenas con al menos dos elementos
 
 ```js
-assert(
-  myMusic[1].formats.every(function (item) {
-    return typeof item === 'string';
-  }) && myMusic[1].formats.length > 1
-);
+myMusic.forEach(object => {
+  object.formats.forEach(format => {
+    assert.typeOf(format, 'string')
+  });
+  assert.isAtLeast(object.formats.length, 2)
+})
 ```
 
 # --seed--
@@ -143,7 +147,6 @@ var myMusic = [
     ],
     "gold": true
   }
-  // Add a record here
 ];
 ```
 
