@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7b
-title: Comprender las propiedades propias (ownProps)
+title: Comprender las propiedades directas
 challengeType: 1
 forumTopicId: 301326
 dashedName: understand-own-properties
@@ -20,7 +20,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-`name` y `numLegs` se llaman <dfn>propiedades propias</dfn>, porque están definidas directamente en la instancia del objeto. Eso significa que `duck` y `canary` tienen su propia copia separada de estas propiedades. De hecho, cada instancia de `Bird` tendrá su propia copia de estas propiedades. El siguiente código añade todas las propiedades propias de `duck` al arreglo `ownProps`:
+`name` y `numLegs` se llaman <dfn>propiedades directas</dfn>, porque están definidas directamente en la instancia del objeto. Eso significa que `duck` y `canary` tienen su propia copia separada de estas propiedades. De hecho, cada instancia de `Bird` tendrá su propia copia de estas propiedades. El siguiente código añade todas las propiedades directas de `duck` al arreglo `ownProps`:
 
 ```js
 let ownProps = [];
@@ -38,7 +38,7 @@ La consola mostrará el valor `["name", "numLegs"]`.
 
 # --instructions--
 
-Agrega todas las propiedades propias de `canary` al arreglo `ownProps`.
+Agrega todas las propiedades directas de `canary` al arreglo `ownProps`.
 
 # --hints--
 
