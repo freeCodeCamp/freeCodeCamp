@@ -286,7 +286,7 @@ export default function donateBoot(app, done) {
         success_url: donationUrls.successUrl,
         cancel_url: donationUrls.cancelUrl
       });
-      /* eslint-disable camelcase */
+      /* eslint-enable camelcase */
       return res.status(200).json({ id: session.id });
     } catch (err) {
       log(err.message);
