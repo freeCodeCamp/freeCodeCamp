@@ -423,7 +423,6 @@ class DonateForm extends Component {
       donationFormState: { processing, success, error, redirecting },
       isMinimalForm
     } = this.props;
-    console.log({ processing, success, error, redirecting });
     if (success || error) {
       return this.renderCompletion({
         processing,
