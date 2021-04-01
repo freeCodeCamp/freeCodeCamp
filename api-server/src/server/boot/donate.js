@@ -256,7 +256,9 @@ export default function donateBoot(app, done) {
       body: { donationAmount, donationDuration }
     } = req;
     if (!body) {
-      return res.status(500).send({ error: 'Request has not completed.' });
+      return res
+        .status(500)
+        .send({ type: 'danger', message: 'Request has not completed.' });
     }
     const isSubscription = donationDuration !== 'onetime';
     const getSKUId = () => {
