@@ -8,11 +8,7 @@ dashedName: learn-about-functional-programming
 
 # --description--
 
-La programación funcional es un estilo de programación donde las soluciones son simples, funciones aisladas, sin ningún efecto secundario fuera del ámbito de la función.
-
-```js
-INPUT -> PROCESS -> OUTPUT
-```
+La programación funcional es un estilo de programación donde las soluciones son simples, funciones aisladas, sin ningún efecto secundario fuera del ámbito de la función: `INPUT -> PROCESS -> OUTPUT`
 
 La programación funcional se refiere a:
 
