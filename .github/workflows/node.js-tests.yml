@@ -85,8 +85,8 @@ jobs:
       - name: Run Tests
         run: npm test
 
-  test-languages:
-    name: Test Languages
+  test-localization:
+    name: Localize
     needs: lint
     runs-on: ubuntu-18.04
 
