@@ -8,7 +8,7 @@ dashedName: iterate-over-all-properties
 
 # --description--
 
-Ahora has visto dos tipos de propiedades: `own` y `prototype`. Las propiedades `own` se definen directamente en la propia instancia del objeto. Y las propiedades `prototype` se definen en el `prototype`.
+Ahora has visto dos tipos de propiedades: <dfn>propiedades directas</dfn> y propiedades `prototype`. Las propiedades directas se definen directamente en la propia instancia del objeto. Y las propiedades `prototype` se definen en el `prototype`.
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ Bird.prototype.numLegs = 2; // prototype property
 let duck = new Bird("Donald");
 ```
 
-A continuación, se explica cómo se agregan las propiedades `own` de `duck` al arreglo `ownProps` y las propiedades `prototype` al arreglo `prototypeProps`:
+A continuación, se explica cómo se agregan las propiedades directas de `duck` al arreglo `ownProps` y las propiedades `prototype` al arreglo `prototypeProps`:
 
 ```js
 let ownProps = [];
@@ -42,7 +42,7 @@ console.log(prototypeProps);
 
 # --instructions--
 
-Agrega todas las propiedades `own` de `beagle` al arreglo `ownProps`. Agrega todas las propiedades `prototype` de `Dog` al arreglo `prototypeProps`.
+Agrega todas las propiedades directas de `beagle` al arreglo `ownProps`. Agrega todas las propiedades `prototype` de `Dog` al arreglo `prototypeProps`.
 
 # --hints--
 

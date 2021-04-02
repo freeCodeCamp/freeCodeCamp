@@ -22,32 +22,28 @@ Puedes ayudar a ampliar y mejorar el plan de estudios. También puedes actualiza
 
 ## Traducciones
 
-Estamos globalizando freeCodeCamp.org a los idiomas del mundo, comenzando por chino y español. Estaremos expandiendo las traducciones a más idiomas.
+We are localizing freeCodeCamp.org to major world languages. Some of the certifications are already live in [Chinese (中文)](https://chinese.freecodecamp.org/learn) and [Spanish (Español)](https://www.freecodecamp.org/espanol/learn/). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it your friends to get them excited about this.
 
-Para ayudarnos con este esfuerzo masivo, hemos integrado nuestra base de código de fuente abierta & plan de estudios con [Crowdin](https://crowdin.com/). Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort). Te animamos a que leas el anuncio y lo compartas con tus amigos para que se entusiasmen con esto.
-
-Nuestro sueño es brindarte los recursos para aprender, sin importar el idioma mundial que hables.
-
-**Si estás interesado en traducir, aquí tienes las guías para traducir nuestro [plan de estudios](how-to-translate-files.md), la [plataforma de aprendizaje](how-to-translate-the-website.md) y nuestras [pautas de contribución](https://translate.freecodecamp.org/contributing-docs).**
+**If you're interested in translating, here's [how to translate freCodeCamp's resources](how-to-translate-files.md).**
 
 ## Plataforma de aprendizaje
 
-Nuestra plataforma de aprendizaje se ejecuta en un stack de JavaScript moderno. Tiene varios componentes, herramientas y librerías. Estos incluyen Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack y más.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-En general, usamos
+Broadly, we use
 
 - un servidor con una API basada en Node.js
 - un conjunto de aplicaciones de lado del cliente basadas en React
 - y scripts de pruebas para evaluar los proyectos del plan de estudios enviados por nuestros campers.
 
-Si deseas contribuir de manera productiva a la plataforma de aprendizaje, te recomendamos que te familiarice un poco con estas herramientas.
+If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
-Si quieres ayudarnos a mejorar nuestro código base...
+If you want to help us improve our codebase...
 
-**puedes utilizar Gitpod, un entorno de desarrollo en línea gratuito que inicia un entorno de desarrollo listo para codificar para freeCodeCamp en tu navegador.**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-O puedes...
+Or you can...
 
-**[configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

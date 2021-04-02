@@ -9,13 +9,13 @@
   - [ Trabajar en el tema de noticias](how-to-work-on-the-news-theme.md)
   - [Trabajar en el tema de docs](how-to-work-on-the-docs-theme.md)
 - **Contribución a Traducción**
-  - [Traducir un archivo de currículo](how-to-translate-files.md)
-  - [Revisar un archivo de currículo](how-to-proofread-files.md)
-  - [Cómo traducir la web](how-to-translate-the-website.md)
+  - [Work on translating resources](how-to-translate-files.md)
+  - [Work on proofreading translations](how-to-proofread-files.md)
 - **Guías Opcionales**
-  - [Configurar freeCodeCamp en Windows(WSL)](how-to-setup-wsl.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [Agregar pruebas de Cypress](how-to-add-cypress-tests.md)
-  - [Captura correos electrónicos salientes localmente](how-to-catch-outgoing-emails-locally.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
+  - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
 
 ---
 

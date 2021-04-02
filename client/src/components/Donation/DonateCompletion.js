@@ -9,15 +9,25 @@ import './Donation.css';
 const propTypes = {
   error: PropTypes.string,
   processing: PropTypes.bool,
+  redirecting: PropTypes.bool,
   reset: PropTypes.func.isRequired,
   success: PropTypes.bool
 };
 
-function DonateCompletion({ processing, reset, success, error = null }) {
+function DonateCompletion({
+  processing,
+  reset,
+  success,
+  redirecting,
+  error = null
+}) {
   /* eslint-disable no-nested-ternary */
   const { t } = useTranslation();
-  const style = processing ? 'info' : success ? 'success' : 'danger';
-  const heading = processing
+  const style =
+    processing || redirecting ? 'info' : success ? 'success' : 'danger';
+  const heading = redirecting
+    ? `${t('donate.redirecting')}`
+    : processing
     ? `${t('donate.processing')}`
     : success
     ? `${t('donate.thank-you')}`
@@ -28,7 +38,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
         <b>{heading}</b>
       </h4>
       <div className='donation-completion-body'>
-        {processing && (
+        {(processing || redirecting) && (
           <Spinner
             className='user-state-spinner'
             color='#0a0a23'
