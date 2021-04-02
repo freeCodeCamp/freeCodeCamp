@@ -289,6 +289,7 @@
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
     "processing": "Estamos procesando tu donación.",
+    "redirecting": "Redirecting...",
     "thanks": "Gracias por donar",
     "thank-you": "Gracias por tu apoyo.",
     "thank-you-2": "Gracias por apoyar a freeCodeCamp. Actualmente tienes una donación recurrente.",
