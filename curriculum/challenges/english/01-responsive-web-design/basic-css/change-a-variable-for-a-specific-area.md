@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-The `peguin` class should not contain the `background-color` property
+The `penguin` class should not contain the `background-color` property
 
 ```js
 assert(
