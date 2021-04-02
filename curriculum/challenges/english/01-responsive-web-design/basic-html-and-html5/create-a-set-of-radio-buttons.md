@@ -24,7 +24,7 @@ Here's an example of a radio button:
 </label>
 ```
 
-It is considered best practice to set a `for` attribute on the `label` element, with a value that matches the value of the `id` attribute of the `input` element. This allows assistive technologies to create a linked relationship between the label and the child `input` element. For example:
+It is considered best practice to set a `for` attribute on the `label` element, with a value that matches the value of the `id` attribute of the `input` element. This allows assistive technologies to create a linked relationship between the label and the related `input` element. For example:
 
 ```html
 <input id="indoor" type="radio" name="indoor-outdoor">
