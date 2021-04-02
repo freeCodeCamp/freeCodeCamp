@@ -289,6 +289,7 @@
   "donate": {
     "title": "支持我们的非营利组织",
     "processing": "我们正在处理你的捐款。",
+    "redirecting": "Redirecting...",
     "thanks": "谢谢捐款",
     "thank-you": "谢谢你成为我们的支持者。",
     "thank-you-2": "谢谢你成为 freeCodeCamp 的支持者。现在你已设置定期捐款。",
