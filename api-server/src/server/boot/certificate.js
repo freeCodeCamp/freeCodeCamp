@@ -15,7 +15,7 @@ import { getChallenges } from '../utils/get-curriculum';
 import {
   completionHours,
   certTypes,
-  superBlockCertTypeMap,
+  slugCertTypeMap,
   certTypeTitleMap,
   certTypeIdMap,
   certIds,
@@ -66,9 +66,11 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
+const slugs = Object.keys(slugCertTypeMap);
+
 function ifNoSuperBlock404(req, res, next) {
-  const { superBlock } = req.body;
-  if (superBlock && superBlocks.includes(superBlock)) {
+  const { slug } = req.body;
+  if (slug && slugs.includes(slug)) {
     return next();
   }
   return res.status(404).end();
@@ -129,8 +131,6 @@ function getCertById(anId, allChallenges) {
       challengeType
     }))[0];
 }
-
-const superBlocks = Object.keys(superBlockCertTypeMap);
 
 function sendCertifiedEmail(
   {
@@ -223,11 +223,11 @@ function createVerifyCert(certTypeIds, app) {
   const { Email } = app.models;
   return function verifyCert(req, res, next) {
     const {
-      body: { superBlock },
+      body: { slug },
       user
     } = req;
-    log(superBlock);
-    let certType = superBlockCertTypeMap[superBlock];
+    log(slug);
+    let certType = slugCertTypeMap[slug];
     log(certType);
     return Observable.of(certTypeIds[certType])
       .flatMap(challenge => {
@@ -337,7 +337,7 @@ function createShowCert(app) {
   return function showCert(req, res, next) {
     let { username, cert } = req.params;
     username = username.toLowerCase();
-    const certType = superBlockCertTypeMap[cert];
+    const certType = slugCertTypeMap[cert];
     const certId = certTypeIdMap[certType];
     const certTitle = certTypeTitleMap[certType];
     const completionTime = completionHours[certType] || 300;

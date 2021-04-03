@@ -34,6 +34,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleBlock, executeGA }, dispatch);
 
+// superBlockDashedName should either be the standard, or
+// renamed to superBlock, and something be done about the
+// current use of challengeMeta.superBlock (non-dashed)
 const propTypes = {
   blockDashedName: PropTypes.string,
   challenges: PropTypes.array,
