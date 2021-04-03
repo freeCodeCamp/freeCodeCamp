@@ -123,7 +123,6 @@ The process is mostly the same as the staging platforms, with a few extra checks
 | Do NOT execute these commands unless you have verified that everything is working on the staging platform. You should not bypass or skip any testing on staging before proceeding further. |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-
 1. Make sure your `prod-staging` branch is pristine and in sync with the upstream.
 
    ```sh
@@ -157,7 +156,6 @@ For staff use:
 
 | Check your email for a direct link or [go to the release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) after the build run is complete. |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers.
 
@@ -302,7 +300,8 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 We are working on creating our IaC setup, and while that is in works you can use the Azure portal or the Azure CLI to spin new virtual machines and other resources.
 
 > [!TIP]
-> No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do  some of the basic provisioning like installing docker or adding SSH keys, etc.
+> No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do some of the basic provisioning like installing docker or adding SSH keys, etc.
+
 ## Keep VMs updated
 
 You should keep the VMs up to date by performing updates and upgrades. This will
@@ -647,7 +646,6 @@ pm2 reload all --update-env && pm2 logs
 
 Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
 
-
 We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available here](https://github.com/freeCodeCamp/chat-nginx-config).
 
 ### First Install
@@ -740,7 +738,6 @@ Provisioning VMs with the Code
    ```
 
 ### Updating Instances (Maintenance)
-
 
 **NGINX Cluster:**
 
@@ -853,12 +850,12 @@ Alias the `default` Node.js version to the current LTS
 nvm alias default lts/*
 ```
 
-
 (Optional) Uninstall old versions
 
 ```console
 nvm uninstall <version>
 ```
+
 > [!WARNING]
 > If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 
@@ -884,7 +881,6 @@ pm2 logs
 > For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents
-
 
 See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
 
@@ -934,3 +930,34 @@ Currently updating agents requires them to be removed and reconfigured. This is 
    ```
 
 Once You have completed the steps above, you can repeat the same steps as installing the agent.
+
+# Flight Manual - Email Blast
+
+We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
+
+1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
+
+2. Set up the script to fetch the email list.
+
+   ```console
+   cd /home/freecodecamp/scripts/emails
+   cp sample.env .env
+   ```
+
+   You will need to replace the placeholder values in the `.env` file with your credentials.
+
+3. Run the script.
+
+   ```console
+   node get-emails.js emails.csv
+   ```
+
+   This will save the email list in an `emails.csv` file.
+
+4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
+
+5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
+
+6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+
+7. When the email blast is complete, verify that no emails have failed before destroying the droplets.

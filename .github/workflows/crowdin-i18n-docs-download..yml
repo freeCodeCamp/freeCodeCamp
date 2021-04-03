@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # runs every day at 12:00 noon UTC
-    - cron: "0 12 * * *"
+    - cron: '0 12 * * *'
 
 jobs:
   i18n-download-docs-translations:
@@ -99,9 +99,7 @@ jobs:
           skip_untranslated_files: false
           export_only_approved: true
 
-          commit_message: 'chore(i8n,docs): processed translations'
-          localization_branch_name: i18n-sync-docs
-          push_translations: true
+          push_translations: false
 
           # pull-request
           create_pull_request: false
@@ -117,6 +115,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+      # Create Commit
+      - name: Commit Changes
+        env:
+          EMAIL: ${{ secrets.ACTIONS_CAMPERBOT_EMAIL }}
+        run: |
+          git checkout -b i18n-sync-docs
+          git config --global user.name "camperbot"
+          git config --global user.email "$EMAIL"
+          git add .
+          git commit -m "chore: update translations"
+          git push -u origin i18n-sync-docs -f
 
       - name: Install Dependencies
         working-directory: ./tools
