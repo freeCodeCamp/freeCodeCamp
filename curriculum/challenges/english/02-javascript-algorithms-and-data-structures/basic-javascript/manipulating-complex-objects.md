@@ -59,13 +59,13 @@ Add a new album to the `myMusic` array. Add `artist` and `title` strings, `relea
 assert(Array.isArray(myMusic));
 ```
 
-`myMusic` should have at least two objects
+`myMusic` should have at least two elements
 
 ```js
 assert(myMusic.length > 1);
 ```
 
-`myMusic` should contain at least two objects
+The elements in the `myMusic` array should be objects
 
 ```js
 myMusic.forEach(object => {assert.typeOf(object, 'object')})
