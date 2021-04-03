@@ -4,7 +4,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'curriculum/challenges/**'
+      - 'curriculum/challenges/**/*.md'
       - '!curriculum/challenges/english/**'
       - 'client/i18n/locales/**/intro.json'
       - 'client/i18n/locales/**/translations.json'

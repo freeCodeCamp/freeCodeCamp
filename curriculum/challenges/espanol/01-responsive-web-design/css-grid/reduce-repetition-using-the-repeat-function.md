@@ -13,7 +13,7 @@ Cuando usaste `grid-template-columns` y `grid-template-rows` para definir la est
 
 Digamos que quieres una grid con 100 filas del mismo tamaño. No es muy práctico insertar 100 valores manualmente. Afortunadamente, hay una mejor manera - usando la función `repeat` para especificar el número de veces que quieres que tu columna o fila se repita, seguido de una coma y el valor que quieres repetir.
 
-A continuación un ejemplo que crearía una grid de 100 filas, cada fila con 50px de alto.
+A continuación un ejemplo que crearía una cuadrícula de 100 filas, cada fila con 50px de alto.
 
 ```css
 grid-template-rows: repeat(100, 50px);

@@ -43,7 +43,7 @@
         ]
       },
       "css-flexbox": {
-        "title": "CSS Flexbox",
+        "title": "CSS flexbox",
         "intro": [
           "Flexbox es un método de diseño potente y bien soportado que se introdujo con la última versión de CSS, CSS3. Con flexbox, es fácil centrar elementos en la página y crear interfaces de usuario dinámicas que se reducen y se expanden automáticamente.",
           "En este curso, aprenderás los fundamentos de flexbox y diseños dinámicos mediante la construcción de una tarjeta de Twitter."
@@ -60,7 +60,7 @@
         "title": "Proyectos de diseño web responsivo",
         "intro": [
           "Es hora de poner tus habilidades recién aprendidas a funcionar. Al trabajar en estos proyectos, tendrás la oportunidad de aplicar todas las habilidades, principios y conceptos que has aprendido hasta ahora: HTML, CSS, diseño visual, accesibilidad y más.",
-          "Completa los cinco proyectos de programación web de abajo para obtener tu certificado de Diseño Web Responsivo."
+          "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web responsivo."
         ]
       },
       "basic-html-cat-photo-app": {
@@ -87,7 +87,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Algoritmos de JavaScript y estructuras de datos",
+    "title": "Algoritmos de JavaScript y Estructuras de Datos",
     "intro": [
       "Mientras HTML y CSS controlan el contenido y el estilo de una página, JavaScript se utiliza para hacerlo interactivo. En la certificación Algoritmos de JavaScript y Estructuras de Datos, aprenderás los fundamentos de JavaScript incluyendo variables, arreglos, objetos, bucles y funciones.",
       "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para manipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
@@ -113,75 +113,75 @@
         "title": "Expresiones regulares",
         "intro": [
           "Expresiones regulares, a veces acortadas a \"regex\" o \"regexp\", son patrones que ayudan a los programadores a encontrar, buscar, y reemplazar texto. Las expresiones regulares son muy potentes, pero pueden ser difícil de leer porque usan caracteres especiales para hacer coincidencias más complejas y flexibles.",
-          "In this course, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
+          "En este curso, aprenderás como usar caracteres especiales, grupos de captura, miradas positivas y negativas, así como otras técnicas para hacer coincidir cualquier texto que quieras."
         ]
       },
       "debugging": {
-        "title": "Debugging",
+        "title": "Depuración",
         "intro": [
-          "Debugging is the process of going through your code, finding any issues, and fixing them.",
-          "Issues in code generally come in three forms: syntax errors that prevent your program from running, runtime errors where your code has unexpected behavior, or logical errors where your code doesn't do what you intended.",
-          "In this course, you'll learn how to use the JavaScript console to debug programs and prevent common issues before they happen."
+          "La depuración es el proceso de revisar tu código, encontrando cualquier problema, y arreglándolo.",
+          "Los problemas en el código generalmente vienen en tres formas: errores de sintaxis que impiden que tu programa se ejecute, errores de tiempo de ejecución donde tu código tiene un comportamiento inesperado, o errores lógicos donde tu código no hace lo que pretendes.",
+          "En este curso, aprenderás como usar la consola de JavaScript para depurar programas y prevenir errores comunes antes de que ocurran."
         ]
       },
       "basic-data-structures": {
-        "title": "Basic Data Structures",
+        "title": "Estructuras de datos básicas",
         "intro": [
-          "Data can be stored and accessed in many ways. You already know some common JavaScript data structures — arrays and objects.",
-          "In this Basic Data Structures course, you'll learn more about the differences between arrays and objects, and which to use in different situations. You'll also learn how to use helpful JS methods like <code>splice()</code> and <code>Object.keys()</code> to access and manipulate data."
+          "Los datos pueden almacenarse y accederse de muchas maneras. Ya conoces algunas estructuras de datos comunes en JavaScript: los arreglos y los objetos.",
+          "En este curso de estructuras de datos básicas, aprenderás más acerca de las diferencias entre arreglos y objetos, y cuál usar en diferentes situaciones. También aprenderás como usar métodos útiles de JavaScript como <code>splice()</code> y <code>Object.keys()</code> para acceder y manipular datos."
         ]
       },
       "basic-algorithm-scripting": {
-        "title": "Basic Algorithm Scripting",
+        "title": "Programación de algoritmos básicos",
         "intro": [
-          "An algorithm is a series of step-by-step instructions that describe how to do something.",
-          "To write an effective algorithm, it helps to break a problem down into smaller parts, and think carefully about how to solve each part with code.",
-          "In this course, you'll learn the fundamentals of algorithmic thinking by writing algorithms that do everything from converting temperatures to handling complex 2D arrays."
+          "Un algoritmo es una serie de instrucciones paso a paso que describen cómo hacer algo.",
+          "Para escribir un algoritmo efectivo, es de ayuda dividir un problema en pequeñas partes, y pensar detenidamente sobre como resolver cada parte con código.",
+          "En este curso, aprenderás los fundamentos del pensamiento algorítmico mediante la escritura de algoritmos que hacen de todo, desde la conversión de temperaturas hasta el manejo de arreglos 2D complejos."
         ]
       },
       "object-oriented-programming": {
-        "title": "Object Oriented Programming",
+        "title": "Programación orientada a objetos",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes are used to organize code to describe things and what they can do.",
-          "In this course, you'll learn the basic principles of OOP in JavaScript including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
+          "OOP, o programación orientada a objetos, es uno de los principales enfoques del proceso de desarrollo de software. En la OOP, los objetos y las clases son usadas para organizar código para describir las cosas y lo que pueden hacer.",
+          "En este curso, aprenderás los principios básicos de OOP en JavaScript incluyendo la palabra clave <code>this</code>, cadenas prototipo, constructores, y herencias."
         ]
       },
       "functional-programming": {
-        "title": "Functional Programming",
+        "title": "Programación funcional",
         "intro": [
-          "Functional Programming is another popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.",
-          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
+          "La programación funcional es otro enfoque común en el desarrollo de software. En programación funcional, el código está organizado en funciones más pequeñas y básicas que se pueden combinar para construir programas de mayor complejidad.",
+          "En este curso, aprenderás los conceptos básicos de la programación funcional, incluyendo funciones puras, cómo evitar mutaciones, y cómo escribir código más limpio con métodos como <code>.map()</code> y <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
-        "title": "Intermediate Algorithm Scripting",
+        "title": "Programación de algoritmos intermedios",
         "intro": [
-          "Now that you know the basics of algorithmic thinking, along with OOP and Functional Programming, test your skills with the Intermediate Algorithm Scripting challenges."
+          "Ahora que conoces los conceptos básicos del pensamiento algorítmico, junto con la OOP y la programación funcional, prueba tus habilidades con los desafíos de programación de algoritmos intermedios."
         ]
       },
       "javascript-algorithms-and-data-structures-projects": {
-        "title": "JavaScript Algorithms and Data Structures Projects",
+        "title": "Algoritmos de JavaScript y proyectos de estructuras de datos",
         "intro": [
-          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
-          "Complete these 5 JavaScript projects to earn the JavaScript Algorithms and Data Structures certification."
+          "¡Ha llegado el momento de poner tus habilidades de JavaScript a prueba! Estos proyectos son muy similares a los desafíos algorítmicos que has hecho antes, pero más difíciles.",
+          "Completa estos 5 proyectos de JavaScript para obtener la certificación algoritmos de JavaScript y estructuras de datos."
         ]
       },
       "basic-javascript-rpg-game": {
-        "title": "Basic JavaScript RPG Game",
+        "title": "Juego RPG básico en JavaScript",
         "intro": [
           "",
           ""
         ]
       },
       "intermediate-javascript-calorie-counter": {
-        "title": "Intermediate JavaScript Calorie Counter",
+        "title": "Intermedio JavaScript contador de calorías",
         "intro": [
           "",
           ""
         ]
       },
       "functional-programming-spreadsheet": {
-        "title": "Functional Programming Spreadsheet",
+        "title": "Hoja de cálculo de programación funcional",
         "intro": [
           "",
           ""

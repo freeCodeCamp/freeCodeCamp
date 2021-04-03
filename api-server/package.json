@@ -1,16 +1,33 @@
 {
   "name": "@freecodecamp/api-server",
-  "private": true,
   "version": "0.0.1",
-  "repository": "freecodecamp/freecodecamp",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
   "scripts": {
-    "develop": "cross-env DEBUG=fcc* node src/development-start.js",
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
     "build": "babel src --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
+    "develop": "cross-env DEBUG=fcc* node src/development-start.js",
     "start": "cross-env DEBUG=fcc* node lib/production-start.js",
     "test": "jest"
   },
-  "license": "BSD-3-Clause",
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
   "dependencies": {
     "@freecodecamp/loopback-component-passport": "^1.2.0",
     "@sentry/node": "^5.30.0",
@@ -73,11 +90,5 @@
     "loopback-component-explorer": "^6.4.0",
     "nodemon": "^2.0.7",
     "smee-client": "^1.2.2"
-  },
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
-  },
-  "engines": {
-    "node": ">= 14.0.0"
   }
 }

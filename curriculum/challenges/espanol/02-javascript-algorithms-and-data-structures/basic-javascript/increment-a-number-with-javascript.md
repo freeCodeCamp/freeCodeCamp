@@ -11,11 +11,15 @@ dashedName: increment-a-number-with-javascript
 
 Puedes fácilmente <dfn>incrementar</dfn> o sumar uno a una variable con el operador `++`.
 
-`i++;`
+```js
+i++;
+```
 
 es equivalente a
 
-`i = i + 1;`
+```js
+i = i + 1;
+```
 
 **Nota:** Toda la línea se convierte en `i++;`, eliminando la necesidad del signo de igualdad.
 

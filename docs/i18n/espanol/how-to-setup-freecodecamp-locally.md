@@ -20,11 +20,11 @@ Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente 
 
 **Requisitos previos:**
 
-| Prerrequisito                                                                                         | Versión | Notas                                                                                                                                                                                                        |
-| ----------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Node.js](http://nodejs.org)                                                                          | `14.x`  | [Calendario LTS](https://github.com/nodejs/Release#release-schedule)                                                                                                                                         |
-| npm (viene empaquetado con Node)                                                                      | `6.x`   | No tiene lanzamientos LTS, usamos la versión empaquetada con Node LTS                                                                                                                                        |
-| [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Notas de lanzamiento](https://docs.mongodb.com/manual/release-notes/), Nota: Actualmente estamos en `3.6`, una [actualización está planificada](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| Prerrequisito                                                                                         | Versión | Notas                                                                 |
+| ----------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                          | `14.x`  | [Calendario LTS](https://github.com/nodejs/Release#release-schedule)  |
+| npm (viene empaquetado con Node)                                                                      | `6.x`   | No tiene lanzamientos LTS, usamos la versión empaquetada con Node LTS |
+| [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | [Release Notes](https://docs.mongodb.com/v4.0/release-notes/)         |
 
 > [!DANGER] Si tienes una versión diferente, por favor instala la versión recomendada. Sólo podemos soportar problemas de instalación para las versiones recomendadas. Ver [resolución de problemas](#troubleshooting) para más detalles.
 

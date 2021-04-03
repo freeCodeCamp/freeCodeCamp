@@ -19,7 +19,7 @@ p:hover {
 }
 ```
 
-<strong x=id="1">Nota:</strong> La aplicación de una transformación a un elemento `div` también afectará a cualquier elemento secundario contenido de el div.
+**Nota:** La aplicación de una transformación a un elemento `div` también afectará a cualquier elemento secundario contenido del div.
 
 # --instructions--
 

@@ -1,4 +1,4 @@
-/* global expect */
+/* global expect jest */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
@@ -9,6 +9,8 @@ import AuthOrProfile from './components/AuthOrProfile';
 import envData from '../../../../config/env.json';
 
 const { apiLocation, clientLocale } = envData;
+
+jest.mock('../../analytics');
 
 describe('<UniversalNav />', () => {
   const UniversalNavProps = {

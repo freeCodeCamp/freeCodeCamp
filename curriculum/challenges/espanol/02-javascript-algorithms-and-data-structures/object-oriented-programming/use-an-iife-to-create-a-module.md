@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8c
-title: Use an IIFE to Create a Module
+title: Utiliza una IIFE para crear un módulo
 challengeType: 1
 forumTopicId: 301332
 dashedName: use-an-iife-to-create-a-module
@@ -8,7 +8,7 @@ dashedName: use-an-iife-to-create-a-module
 
 # --description--
 
-An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or <dfn>module</dfn>. For example, an earlier challenge defined two mixins:
+Una expresión de función inmediatamente invocada (IIFE) se utiliza a menudo para agrupar la funcionalidad relacionada en un solo objeto o <dfn>módulo</dfn>. Por ejemplo, en el desafío anterior se definieron dos "mixins":
 
 ```js
 function glideMixin(obj) {
@@ -23,7 +23,7 @@ function flyMixin(obj) {
 }
 ```
 
-We can group these mixins into a module as follows:
+Podemos agrupar estos mixins en un módulo:
 
 ```js
 let motionModule = (function () {
@@ -39,10 +39,10 @@ let motionModule = (function () {
       };
     }
   }
-})(); // The two parentheses cause the function to be immediately invoked
+})();
 ```
 
-Note that you have an immediately invoked function expression (IIFE) that returns an object `motionModule`. This returned object contains all of the mixin behaviors as properties of the object. The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. Here is an example using it:
+Ten en cuenta que has invocado una IIFE que devuelve un objeto `motionModule`. El objeto devuelto contiene todos los comportamientos de los mixins como propiedades del objeto. La ventaja del patrón del módulo es que todos los comportamientos de movimiento pueden ser empaquetados en un solo objeto que puede ser usado por otras partes del código. Así se debe utilizar:
 
 ```js
 motionModule.glideMixin(duck);
@@ -51,23 +51,23 @@ duck.glide();
 
 # --instructions--
 
-Create a module named `funModule` to wrap the two mixins `isCuteMixin` and `singMixin`. `funModule` should return an object.
+Crea un módulo llamado `funModule` para envolver los dos mixins `isCuteMixin` y `singMixin`. `funModule` debe devolver un objeto.
 
 # --hints--
 
-`funModule` should be defined and return an object.
+`funModule` debe ser definido y devolver un objeto.
 
 ```js
 assert(typeof funModule === 'object');
 ```
 
-`funModule.isCuteMixin` should access a function.
+`funModule.isCuteMixin` debe acceder a una función.
 
 ```js
 assert(typeof funModule.isCuteMixin === 'function');
 ```
 
-`funModule.singMixin` should access a function.
+`funModule.singMixin` debe acceder a una función.
 
 ```js
 assert(typeof funModule.singMixin === 'function');

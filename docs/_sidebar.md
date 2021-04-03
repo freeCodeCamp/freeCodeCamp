@@ -9,12 +9,12 @@
   - [Work on the news theme](how-to-work-on-the-news-theme.md)
   - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
 - **Translation Contribution**
-  - [Translating a Curriculum File](how-to-translate-files.md)
-  - [Proofreading a Curriculum File](how-to-proofread-files.md)
-  - [How to Translate the Website](how-to-translate-the-website.md)
+  - [Work on translating resources](how-to-translate-files.md)
+  - [Work on proofreading translations](how-to-proofread-files.md)
 - **Optional Guides**
-  - [Set up freeCodeCamp on Windows(WSL)](how-to-setup-wsl.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [Add Cypress tests](how-to-add-cypress-tests.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
 
 ---

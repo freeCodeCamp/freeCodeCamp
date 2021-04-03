@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9e
-title: Match Ending String Patterns
+title: Haz coincidir patrones de cadena final
 challengeType: 1
 forumTopicId: 301352
 dashedName: match-ending-string-patterns
@@ -8,40 +8,39 @@ dashedName: match-ending-string-patterns
 
 # --description--
 
-In the last challenge, you learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
+En el último desafío, aprendiste a usar el carácter de intercalación para buscar patrones al inicio de las cadenas. También hay una manera de buscar patrones al final de las cadenas.
 
-You can search the end of strings using the dollar sign character `$` at the end of the regex.
+Puedes buscar el final de las cadenas usando el carácter del signo de dólar `$` al final de la expresión regular.
 
 ```js
 let theEnding = "This is a never ending story";
 let storyRegex = /story$/;
 storyRegex.test(theEnding);
-// Returns true
 let noEnding = "Sometimes a story will have to end";
 storyRegex.test(noEnding);
-// Returns false
-
 ```
+
+La primera llamada a `test` devuelve `true`, mientras que la segunda retorna `false`.
 
 # --instructions--
 
-Use the anchor character (`$`) to match the string `"caboose"` at the end of the string `caboose`.
+Usa el carácter de ancla (`$`) para coincidir la cadena `caboose` al final de la cadena `caboose`.
 
 # --hints--
 
-You should search for `"caboose"` with the dollar sign `$` anchor in your regex.
+Debes buscar `caboose` con el ancla de signo de dólar `$` en tu expresión regular.
 
 ```js
 assert(lastRegex.source == 'caboose$');
 ```
 
-Your regex should not use any flags.
+Tu expresión regular no debe usar ninguna bandera.
 
 ```js
 assert(lastRegex.flags == '');
 ```
 
-You should match `"caboose"` at the end of the string `"The last car on a train is the caboose"`
+Debes coincidir `caboose` al final de la cadena `The last car on a train is the caboose`
 
 ```js
 assert(lastRegex.test('The last car on a train is the caboose'));

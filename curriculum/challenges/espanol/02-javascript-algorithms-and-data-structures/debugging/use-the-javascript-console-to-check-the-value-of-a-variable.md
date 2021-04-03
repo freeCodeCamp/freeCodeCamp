@@ -16,7 +16,9 @@ El método `console.log()`, que "imprime" la salida de lo que está dentro de su
 
 Aquí hay un ejemplo para imprimir la cadena `Hello world!` en la consola:
 
-`console.log('Hello world!');`
+```js
+console.log('Hello world!');
+```
 
 # --instructions--
 

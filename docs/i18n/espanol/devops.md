@@ -16,7 +16,7 @@ Esto involucra tres pasos que deben seguirse en secuencia:
 
 #### Construyendo la base de código - Mapeando las Ramas de Git con los Despliegues.
 
-Normalmente,  [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (la rama de desarrollo por defecto) se integra diariamente en la rama [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) y se publica en una infraestructura aislada.
+Normalmente, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (la rama de desarrollo por defecto) se integra diariamente en la rama [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) y se publica en una infraestructura aislada.
 
 Esta es una publicación intermedia para nuestros desarrolladores y colaboradores voluntarios. También es conocida como nuestra publicación "staging" o "beta".
 
@@ -433,7 +433,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm
+   npm i -g npm@6
    npm i -g pm2
    pm2 install pm2-logrotate
    pm2 startup
@@ -537,7 +537,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm
+   npm i -g npm@6
    npm i -g pm2
    npm install -g serve
    pm2 install pm2-logrotate
