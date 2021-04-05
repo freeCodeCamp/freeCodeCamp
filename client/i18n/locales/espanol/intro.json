@@ -8,7 +8,7 @@
     ],
     "blocks": {
       "basic-html-and-html5": {
-        "title": "HTML básico y HTML5",
+        "title": "HTML y HTML 5 básico",
         "intro": [
           "HTML es un lenguaje de marcado que usa una sintaxis o notación especial para describir la estructura de una página web al navegador. Los elementos HTML generalmente tienen etiquetas de apertura y cierre que rodean y dan sentido al contenido. Por ejemplo, diferentes elementos pueden describir el texto como un título, párrafo o elemento de lista.",
           "En este curso, crearás una aplicación de fotos para gatos para aprender algunos de los elementos HTML más comunes, los bloques básicos de cualquier página web."
@@ -190,7 +190,7 @@
     }
   },
   "front-end-libraries": {
-    "title": "Bibliotecas de Desarrollo Front End",
+    "title": "Bibliotecas de desarrollo Front end",
     "intro": [
       "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
       "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
