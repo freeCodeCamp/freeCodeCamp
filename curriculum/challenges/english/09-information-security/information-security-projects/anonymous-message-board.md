@@ -144,3 +144,167 @@ All 10 functional tests are complete and passing.
   Please check our contributing guidelines to learn more.
 */
 ```
+Disabled applicant have been on multiple platforms unheard out reaching out to all platforms regarding cyberbullying hacking racial discrimination identity theft total disregard to the disabled law I have identified the group and no one still want to hear me out I have called the police department my internet provider and my calls emails modem has been hacked in and forwarded somewhere else I found out
+
+3:53 PM -
+
+m.facebook.com/bugnu
+
+Report a Problem
+
+Forgot Password?
+
+Can't change phone number
+
+Can't change name
+
+Can't reply to conversation
+
+Find more answers in the Help Center
+
+Let us know about a broken feature
+
+Be sure to mention which page you were on and what you were doing when you encountered the problem.
+
+Other
+
+I never accepted you I'm going through a little bit right now with this hacking cyberbully stuff right now and yes I don't even know how anybody got on here my Facebook don't even look the same and so
+
+Attach optional screenshot:
+
+Choose Files
+
+94 files
+
+Your device and cartie Information will be attached to the report.
+
+Although we regularly use this data to improve the quality of the site, we do not reply to bugs submitted through this form on an individual banin. This is not the correct pince to report abune or
+
+policy violations. If you are looking to report something other than a technical problem, please see the Help Center
+
++
+And I shouldn't be retested because I've taken all those Tetris horrible test they are so inappropriate and aiming towards me directly out of all the tests that I've taken they were inappropriately aimed at me and my everything of race and sex and etc
+784484
+
+6:08 AM I
+
+libosdp
+
+Release
+
+Release v1.4.0
+
+Latest release
+
+github-actions[bot] released this
+
+January 31
+
+This relase brings in a lot of bug fixes and some minor enhancements.
+
+Enhancements:
+
+• doc: Add Doxygen and breathe to talk with sphinx
+
+• LibOSDP: Add osdp.hpp and cpp samples
+
+cp: Add new flag FLAG SC DISABLED when master_key == NULL
+
+• Add support for adpative MARK bytes on packets
+
+• libosdp: consume only processed bytes from rx_buf
+
+• test: Get test log level from test context • Add a toplevel cmake offload makefile
+Tweets
+
+Tweets & replies
+
+Jace Cruz @JaceCruzX 4d
+
+Media
+
+Likes
+
+Can I get graded for my answer?: Review your union contract. See what your rep has to do for you and if and at what point you can consult internal counsel or hire an attorney.
+
+וט
+
+01
+
+IDoDoodlesToo: Commissions open @idodoodlestoo 4d
+
+@LukeTruongxxx #gay #gayart #blowjob #sub #submissive #gayporn #bottom #gaybottom #yaoi #bara #gaystud #hotgaymen #gaytoon #gaycartion #hentai #gayhentai
+
+luke
+
+02
+
+a 13
+
+Show more replies
+
+D @maxxie1129 4d
+
+Replying to @JaceCruzX
+
+I personally choose to not endorse people who I believe have done problematic things
+
+01
+
+Jace Cruz @JaceCruzX 4d
+
+Sure. I didn't reply to your endorsement, I replied because you're calling him out. I agree with your opinion but I just don't
+
+get twitter, I guess
+
+187Tweets
+
+Tweets & replies
+
+Media
+
+Twink SICt@gaycumslut98- 16 Sep 20
+
+Likes
+
+Just uploaded this video of me having #buttplugfun in full as If you like #slut #twinks and their #assgape then check out my
+
+well as 3 other videos of me playing with my #bubblebutt
+
+onlyfans, available for only $3 onlyfans.com/u70173902
+
+#onlyfansnewbie #gay #maleass #rt
+
+1,396 views
+
+9
+
+29
+
+Twink SICt @gaycumslut98 16 Sep 20
+
+Hey everyone I've just uploaded some new photos onto my only fans, which is available now for only £3! If you
+
+wanna see my
+
+know what to do
+
+cock, ass and other guys cocks in me then yo onlyfans.com/u70173902 12 PIECES OF
+r/copypasta
+
+Posted by u/MaxxxYmM9h
+
+34 35
+
+5
+
+I fucking hate amogus
+
+I can't fucking take it. I see an image of a random object posted and then I see it, I fucking see it. "Oh that looks kinda like the among us guy" it started as. That's funny, that's a cool reference. But I kept going, I'd see a fridge that looked like among us, I'd see an animated bag of chips that looked like among us, I'd see a hat that looked like among us. And every time I'd burst into an insane, breath deprived laugh staring at the image as the words AMOGUS ran through my head. It's torment, psychological torture, I am being conditioned to laugh maniacly any time I see an oval on a red object. I can't fucking live like this... I can't I can't I can't I can't I can't! And don't get me fucking started on the words! I'll never hear the word suspicious again without thinking of among us. Someone does something bad and I can't say anything other than "sus." I could watch a man murder everyone I love and all I would be able to say is "red sus" and laugh like a fucking insane person. And the word "among" is ruined. The phrase "among us" is ruined. I can't live anymore. Among us has destroyed my fucking life. I want to eject myself from this plane of existence. MAKE IT STOP!
+
+1 2.6k
+
+105
+
+Share
+
