@@ -10,7 +10,7 @@ jobs:
       matrix:
         containers: [1, 2]
         browsers: [chrome, firefox]
-        node-version: [14.x, 12.x]
+        node-version: [14.x]
     services:
       mongodb:
         image: mongo:3.6.19
