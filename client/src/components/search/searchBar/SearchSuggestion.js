@@ -14,6 +14,7 @@ const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
       href={hit.url}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      target='_blank'
     >
       <span className='hit-name'>
         {dropdownFooter ? (
