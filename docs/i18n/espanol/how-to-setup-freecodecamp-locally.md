@@ -524,7 +524,7 @@ Si no puedes iniciar sesión, y en su lugar ves un banner con un mensaje de erro
 **En Linux / macOS / WSL en Windows - Desde la terminal:**
 
 ```console
-netstat -ab | grep "3000"
+netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
