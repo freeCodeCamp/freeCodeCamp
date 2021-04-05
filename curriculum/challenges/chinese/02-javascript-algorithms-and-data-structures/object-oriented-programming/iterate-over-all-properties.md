@@ -8,7 +8,7 @@ dashedName: iterate-over-all-properties
 
 # --description--
 
-现在你已经了解了两种属性: `own` 属性和 `prototype` 属性。 `Own` 属性是直接在对象上定义的。 而 `prototype` 属性是定义在 `prototype` 上的。
+现在你已经了解了两种属性: <dfn>自身属性</dfn>和 `prototype` 属性。 自身属性是直接在对象上定义的。 而 `prototype` 属性是定义在 `prototype` 上的。
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ Bird.prototype.numLegs = 2; // prototype property
 let duck = new Bird("Donald");
 ```
 
-这个示例会告诉你如何将 `duck` 的 `own` 属性和 `prototype` 属性分别添加到 `ownProps` 数组和 `prototypeProps` 数组里面：
+这个示例会告诉你如何将 `duck` 的自身属性和 `prototype` 属性分别添加到 `ownProps` 数组和 `prototypeProps` 数组里面：
 
 ```js
 let ownProps = [];
@@ -42,7 +42,7 @@ console.log(prototypeProps);
 
 # --instructions--
 
-将 `beagle` 的 `own` 属性都添加到 `ownProps` 数组里面去。 将 `Dog` 中所有的 `prototype` 属性都添加到 `prototypeProps` 数组中。
+将 `beagle` 的自身属性都添加到 `ownProps` 数组里面去。 将 `Dog` 中所有的 `prototype` 属性都添加到 `prototypeProps` 数组中。
 
 # --hints--
 

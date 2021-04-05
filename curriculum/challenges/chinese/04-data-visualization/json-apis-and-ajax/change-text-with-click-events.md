@@ -14,7 +14,9 @@ dashedName: change-text-with-click-events
 
 通过在点击事件内添加以下代码实现：
 
-`document.getElementsByClassName('message')[0].textContent="Here is the message";`
+```js
+document.getElementsByClassName('message')[0].textContent="Here is the message";
+```
 
 # --instructions--
 

@@ -16,11 +16,13 @@ Chrome 和 Firefox 都有出色的 JavaScript 控制台（也称为 DevTools）�
 
 下面是输出 `Hello world!` 字符串到控制台的示例：
 
-`console.log('Hello world!');`
+```js
+console.log('Hello world!');
+```
 
 # --instructions--
 
-请使用 `console.log()` 方法在代码中注明的地方输出变量 `a` 的值。
+使用 `console.log()` 方法打印代码中记录的变量 `a` 的值。
 
 # --hints--
 
