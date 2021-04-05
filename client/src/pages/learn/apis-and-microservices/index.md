@@ -23,7 +23,7 @@ To overcome some of the issues, one of the suggestions that was made early on wa
 2. Easier to isolate and find where issues lie, while debugging
 3. Fits the modern DevOps paradigm, as the architecture is well placed for Continuous Integration/Continuous Deployment
 4. Enables developers to choose a language and data store technology best suited for that bit of functionality
-5. Ease of automated deployment means its best suited for the cloud
+5. Ease of automated deployment means it's best suited for the cloud
 6. Way easier to scale than monoliths, due to ease in deploying multiple instances of the same service
 7. Easy to change, as it encapsulates a single piece of business functionality
 
