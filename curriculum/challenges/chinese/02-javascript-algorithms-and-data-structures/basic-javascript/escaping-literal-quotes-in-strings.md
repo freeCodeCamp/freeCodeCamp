@@ -13,17 +13,23 @@ dashedName: escaping-literal-quotes-in-strings
 
 在 JavaScript 中，可以通过在引号前面使用<dfn>反斜杠</dfn>（`\`）来<dfn>转义</dfn>引号。
 
-`var sampleStr = "Alan said, \"Peter is learning JavaScript\".";`
+```js
+var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
+```
 
 有了转义符号，JavaScript 就知道这个单引号或双引号并不是字符串的结尾，而是字符串内的字符。 所以，上面的字符串打印到控制台的结果为：
 
-`Alan said, "Peter is learning JavaScript".`
+```js
+Alan said, "Peter is learning JavaScript".
+```
 
 # --instructions--
 
-使用<dfn>反斜杠</dfn>将一个字符串赋值给变量 `myStr`，打印到控制台，输出为：
+使用<dfn>反斜杠</dfn>给 `myStr` 变量赋值一个字符串，这样如果你要打印它到控制台，将会看到：
 
-`I am a "double quoted" string inside "double quotes".`
+```js
+I am a "double quoted" string inside "double quotes".
+```
 
 # --hints--
 
@@ -33,7 +39,7 @@ dashedName: escaping-literal-quotes-in-strings
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-变量 myStr 应该包含字符串 `I am a "double quoted" string inside "double quotes".`。
+变量 myStr 应该包含字符串 `I am a "double quoted" string inside "double quotes".`
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));

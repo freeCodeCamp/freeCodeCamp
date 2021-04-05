@@ -524,7 +524,7 @@ If you can't sign in, and instead you see a banner with an error message that it
 **On Linux / macOS / WSL on Windows - From Terminal:**
 
 ```console
-netstat -ab | grep "3000"
+netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```

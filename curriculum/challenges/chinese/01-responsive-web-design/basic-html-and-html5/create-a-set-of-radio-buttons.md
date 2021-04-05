@@ -24,7 +24,14 @@ dashedName: create-a-set-of-radio-buttons
 </label>
 ```
 
-最佳实践是在 `label` 元素上设置 `for` 属性，让其值与相关联的 `input` 单选按钮的 `id` 属性值相同。 这使得辅助技术能够在标签和子项 `input` 元素之间建立关联关系。 例如：
+最佳实践是在 `label` 元素上设置 `for` 属性，让其值与相关联的 `input` 单选按钮的 `id` 属性值相同。 这使得辅助技术能够在标签和相关的 `input` 元素之间建立关联关系。 例如：
+
+```html
+<input id="indoor" type="radio" name="indoor-outdoor">
+<label for="indoor">Indoor</label>
+```
+
+我们也可以在 `label` 标签中嵌入 `input` 元素：
 
 ```html
 <label for="indoor"> 
@@ -86,7 +93,7 @@ assert(
 );
 ```
 
-所有的单选按钮都应该包含在 `form` 表单中。
+所有的单选按钮都应该包含在 `form` 标签中。
 
 ```js
 assert($('label').parent().get(0).tagName.match('FORM'));

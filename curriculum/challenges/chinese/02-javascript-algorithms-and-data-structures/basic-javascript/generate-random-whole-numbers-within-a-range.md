@@ -15,11 +15,13 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 下面是我们将要使用的方法， 仔细看看并尝试理解这行代码到底在干嘛：
 
-`Math.floor(Math.random() * (max - min + 1)) + min`
+```js
+Math.floor(Math.random() * (max - min + 1)) + min
+```
 
 # --instructions--
 
-创建一个函数 `randomRange`，接收参数的范围在 `myMin` 和 `myMax`之间，返回一个在 `myMin`（包括 myMin）和 `myMax`（包括 myMax）之间的随机整数。
+创建一个函数 `randomRange`，参数为 `myMin` 和 `myMax`，返回一个在 `myMin`（包括 myMin）和 `myMax`（包括 myMax）之间的随机整数。
 
 # --hints--
 
@@ -29,7 +31,7 @@ dashedName: generate-random-whole-numbers-within-a-range
 assert(calcMin === 5);
 ```
 
-`randomRange` 返回的随机数最大值应该等于 `myMax`。
+`randomRange` 返回的随机数应该小于或等于 `myMax`。
 
 ```js
 assert(calcMax === 15);

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedc08845
-title: Add Font Awesome Icons to all of our Buttons
+title: Agrega íconos Font Awesome a todos nuestros botones
 challengeType: 0
 forumTopicId: 16637
 required:
@@ -12,17 +12,17 @@ dashedName: add-font-awesome-icons-to-all-of-our-buttons
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome es una conveniente librería de íconos. Éstos pueden ser fuentes de la web o gráficos vectoriales. Los iconos son tratados como fuentes. Puedes especificar su tamaño usando píxeles y ellos asumirán el tamaño de fuente de su elemento HTML padre.
 
 # --instructions--
 
-Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
+Utiliza Font Awesome para agregar un icono `info-circle` a su botón info y un icono `trash` al botón borrar.
 
-**Note:** The `span` element is an acceptable alternative to the `i` element for the directions below.
+** Nota: **El elemento `span` es una alternativa aceptable al elemento `i` para las direcciones a continuación.
 
 # --hints--
 
-You should add a `<i class="fas fa-info-circle"></i>` within your info button element.
+Deberías añadir un elemento `<i class="fas fa-info-circle"></i>` dentro de tu elemento `info` botón info.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-You should add a `<i class="fas fa-trash"></i>` within your delete button element.
+Deberías añadir un elemento `<i class="fas fa-trash"></i>` dentro de tu elemento botón `delete`.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your like button element.
+Cada uno de tus elementos `i` debe tener una etiqueta de cierre y `<i class="fas fa-thumbs-up"></i>` tiene que estar en el botón `like`.
 
 ```js
 assert(

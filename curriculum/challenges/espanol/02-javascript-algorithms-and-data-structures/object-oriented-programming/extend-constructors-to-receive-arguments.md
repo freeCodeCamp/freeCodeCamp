@@ -38,7 +38,7 @@ El constructor es más flexible. Ahora es posible definir las propiedades para c
 
 # --instructions--
 
-Crea otro constructor `Dog`. Esta vez, configúralo para tomar los parámetros `name` y `color`, y haz que la propiedad `numLegs` quede fija en 4. Luego crea un nuevo `Dog` almacenado en una variable `terrier`. Pasale dos cadenas de texto como argumentos para las propiedades `name` y `color`.
+Crea otro constructor `Dog`. Esta vez, configúralo para que tome los parámetros `name` y `color`, y ten la propiedad `numLegs` fija a 4. Luego crea un nuevo `Dog` almacenado en una variable `terrier`. Pasale dos cadenas de texto como argumentos para las propiedades `name` y `color`.
 
 # --hints--
 
