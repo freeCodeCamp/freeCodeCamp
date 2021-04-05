@@ -11,11 +11,15 @@ dashedName: compound-assignment-with-augmented-division
 
 `/=` 操作符是让变量与另一个数相除并赋值。
 
-`myVar = myVar / 5;`
+```js
+myVar = myVar / 5;
+```
 
-变量 `myVar` 等于自身除以 `5` 的值。 等价于:
+将 `myVar` 除以 `5`。 等价于：
 
-`myVar /= 5;`
+```js
+myVar /= 5;
+```
 
 # --instructions--
 

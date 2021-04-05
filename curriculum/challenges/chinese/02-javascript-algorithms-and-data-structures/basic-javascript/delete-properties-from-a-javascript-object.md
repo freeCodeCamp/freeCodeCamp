@@ -11,7 +11,9 @@ dashedName: delete-properties-from-a-javascript-object
 
 我们同样可以删除对象的属性，例如：
 
-`delete ourDog.bark;`
+```js
+delete ourDog.bark;
+```
 
 例如：
 

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908850
-title: Apply the Default Bootstrap Button Style
+title: Aplica el estilo predeterminado de botón de estilo de Bootstrap
 challengeType: 0
 forumTopicId: 16657
 dashedName: apply-the-default-bootstrap-button-style
@@ -8,19 +8,19 @@ dashedName: apply-the-default-bootstrap-button-style
 
 # --description--
 
-Bootstrap has another button class called `btn-default`.
+Bootstrap tiene otra clase de botón llamada `btn-default`.
 
-Apply both the `btn` and `btn-default` classes to each of your `button` elements.
+Aplica las clases `btn` y `btn-default` a cada uno de tus elementos `button`.
 
 # --hints--
 
-You should apply the `btn` class to each of your `button` elements.
+Debes aplicar la clase `btn` a cada uno de tus elementos `button`.
 
 ```js
 assert($('.btn').length > 5);
 ```
 
-You should apply the `btn-default` class to each of your `button` elements.
+Debes aplicar la clase `btn-default` a cada uno de tus elementos `button`.
 
 ```js
 assert($('.btn-default').length > 5);

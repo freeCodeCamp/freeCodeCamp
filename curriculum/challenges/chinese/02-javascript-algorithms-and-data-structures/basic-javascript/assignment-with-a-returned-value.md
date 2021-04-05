@@ -13,13 +13,15 @@ dashedName: assignment-with-a-returned-value
 
 假设我们有一个预先定义的函数 `sum` ，它将两个数相加，然后：
 
-`ourSum = sum(5, 12);`
+```js
+ourSum = sum(5, 12);
+```
 
 将会调用函数 `sum`，函数返回值 `17`，然后将该值赋给变量 `ourSum`。
 
 # --instructions--
 
-调用函数 `processArg`，传入参数 `7`，并将它的返回值赋给变量 `processed`。
+调用 `processArg` 函数，参数为 `7`，然后把返回的值赋值给变量 `processed`。
 
 # --hints--
 
@@ -29,7 +31,7 @@ dashedName: assignment-with-a-returned-value
 assert(processed === 2);
 ```
 
-你应该将 `processArg` 赋值给 `processed`。
+应该将 `processArg` 赋值给 `processed`。
 
 ```js
 assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
