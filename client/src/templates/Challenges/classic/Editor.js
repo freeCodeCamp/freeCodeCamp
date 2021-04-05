@@ -197,6 +197,15 @@ class Editor extends Component {
     this.focusOnEditor = this.focusOnEditor.bind(this);
   }
 
+  getEditablRegion = () => {
+    const { challengeFiles, fileKey } = this.props;
+    const editableRegion = challengeFiles[fileKey].editableRegionBoundaries
+      ? [...challengeFiles[fileKey].editableRegionBoundaries]
+      : [];
+
+    return editableRegion;
+  };
+
   editorWillMount = monaco => {
     this._monaco = monaco;
     const { challengeFiles, fileKey } = this.props;
@@ -216,9 +225,7 @@ class Editor extends Component {
       );
     this.data.model = model;
 
-    const editableRegion = challengeFiles[fileKey].editableRegionBoundaries
-      ? [...challengeFiles[fileKey].editableRegionBoundaries]
-      : [];
+    const editableRegion = this.getEditablRegion();
 
     if (editableRegion.length === 2)
       this.decorateForbiddenRanges(editableRegion);
@@ -239,7 +246,6 @@ class Editor extends Component {
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
-    const { challengeFiles, fileKey } = this.props;
     editor.updateOptions({
       accessibilitySupport: this.props.inAccessibilityMode ? 'on' : 'auto'
     });
@@ -301,9 +307,7 @@ class Editor extends Component {
       }
     });
 
-    const editableBoundaries = challengeFiles[fileKey].editableRegionBoundaries
-      ? [...challengeFiles[fileKey].editableRegionBoundaries]
-      : [];
+    const editableBoundaries = this.getEditablRegion();
 
     if (editableBoundaries.length === 2) {
       // TODO: is there a nicer approach/way of organising everything that
@@ -468,7 +472,7 @@ class Editor extends Component {
     var button = document.createElement('button');
     button.setAttribute('id', 'test-button');
     button.classList.add('btn-block');
-    button.innerHTML = 'Run the Tests (Ctrl + Enter)';
+    button.innerHTML = 'Check Your Code (Ctrl + Enter)';
     editorActionRow.appendChild(button);
     editorActionRow.appendChild(statusNode);
     editorActionRow.appendChild(hintNode);
@@ -689,8 +693,6 @@ class Editor extends Component {
     const ranges = forbiddenRanges.map(positions => {
       return this.positionsToRange(model, positions);
     });
-
-    console.log(editableRegion);
 
     const editableRange = this.positionsToRange(model, [
       editableRegion[0] + 1,
@@ -918,10 +920,11 @@ class Editor extends Component {
 
     if (this._editor) {
       const { output, tests } = this.props;
-      if (this.props.tests !== prevProps.tests) {
+      const editableRegion = this.getEditablRegion();
+      if (this.props.tests !== prevProps.tests && editableRegion.length === 2) {
         const challengeComplete = tests.every(test => test.pass && !test.err);
         const chellengeHasErrors = tests.some(test => test.err);
-        console.log({ chellengeHasErrors, challengeComplete });
+
         if (challengeComplete) {
           let testButton = document.getElementById('test-button');
           testButton.innerHTML =
@@ -931,14 +934,17 @@ class Editor extends Component {
             submitChallenge();
           };
 
-          // could not select parent so added class to body for demo
-          document
-            .getElementsByTagName('BODY')[0]
-            .classList.add('tests-passed');
-
+          let editableRegionDecorators = document.getElementsByClassName(
+            'myEditableLineDecoration'
+          );
+          if (editableRegionDecorators.length > 0) {
+            for (var i of editableRegionDecorators) {
+              i.classList.add('tests-passed');
+            }
+          }
           document.getElementById('test-output').innerHTML = '';
           document.getElementById('test-status').innerHTML =
-            '&#9989; Step completed.  [-----progress bar-----]';
+            '&#9989; Step completed.';
         } else if (chellengeHasErrors) {
           const wordsArray = [
             "Not quite. Here's a hint:",

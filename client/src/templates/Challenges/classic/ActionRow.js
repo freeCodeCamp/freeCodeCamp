@@ -11,13 +11,7 @@ const propTypes = {
   switchDisplayTab: PropTypes.func
 };
 
-const ActionRow = ({
-  switchDisplayTab,
-  showNotes,
-  showPreview,
-  showConsole
-}) => {
-  console.log(showNotes);
+const ActionRow = ({ switchDisplayTab, showPreview, showConsole }) => {
   const restartStep = () => {
     console.log('restart');
   };

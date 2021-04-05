@@ -71,6 +71,6 @@
   margin-right: 5px !important;
 }
 
-.tests-passed .myEditableLineDecoration {
+.myEditableLineDecoration.tests-passed {
   background-color: #4caf50;
 }
