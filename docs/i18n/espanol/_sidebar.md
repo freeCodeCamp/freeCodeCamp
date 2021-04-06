@@ -1,6 +1,6 @@
 - **Comenzando**
-  - [Introducción](index.md "Contribuye a la Comunidad freeCodeCamp.org")
-  - [Preguntas Más Frecuentes](FAQ.md)
+  - [Introducción](index.md "Contribuye a la comunidad freeCodeCamp.org")
+  - [Preguntas más frecuentes](FAQ.md)
 - **Contribución de Código**
   - [Configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
   - [Abrir una pull request](how-to-open-a-pull-request.md)
