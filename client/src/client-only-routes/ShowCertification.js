@@ -96,7 +96,7 @@ const propTypes = {
 const requestedUserSelector = (state, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state);
 
-const validCertNames = certMap.map(cert => cert.slug);
+const validCertNames = certMap.map(cert => cert.certSlug);
 
 const mapStateToProps = (state, props) => {
   const validCertName = validCertNames.some(name => name === props.certName);
