@@ -52,7 +52,7 @@ const completionHours = {
   [certTypes.machineLearningPyV7]: 300
 };
 
-const slugCertTypeMap = {
+const certSlugTypeMap = {
   // legacy
   'legacy-front-end': certTypes.frontEnd,
   'legacy-back-end': certTypes.backEnd,
@@ -80,8 +80,6 @@ const superBlockCertTypeMap = {
   'legacy-front-end': certTypes.frontEnd,
   'legacy-back-end': certTypes.backEnd,
   'legacy-data-visualization': certTypes.dataVis,
-  // Keep these slugs the same so we don't
-  // break existing links
   'information-security-and-quality-assurance': certTypes.infosecQa,
   'full-stack': certTypes.fullStack,
 
@@ -138,7 +136,7 @@ exports.oldDataVizId = '561add10cb82ac38a17513b3';
 exports.completionHours = completionHours;
 exports.certTypes = certTypes;
 exports.superBlockCertTypeMap = superBlockCertTypeMap;
-exports.slugCertTypeMap = slugCertTypeMap;
+exports.certSlugTypeMap = certSlugTypeMap;
 exports.certIds = certIds;
 exports.certTypeIdMap = certTypeIdMap;
 exports.certTypeTitleMap = certTypeTitleMap;

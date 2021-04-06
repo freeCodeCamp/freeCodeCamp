@@ -211,5 +211,5 @@ export function isJavaScriptChallenge({ challengeType }) {
 }
 
 export function isLoopProtected(challengeMeta) {
-  return challengeMeta.superBlock !== 'Coding Interview Prep';
+  return challengeMeta.superBlockTitle !== 'Coding Interview Prep';
 }

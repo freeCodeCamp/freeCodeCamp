@@ -142,9 +142,6 @@ class SuperBlockIntroductionPage extends Component {
 
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
-
-    // This does not even work, as markdownRemark.frontmatter.superBlock
-    // yields the superBlock Title (non-dashed)???
     const i18nSuperBlock = t(`intro:${superBlock}.title`);
 
     return (
@@ -170,7 +167,7 @@ class SuperBlockIntroductionPage extends Component {
                       challenges={nodesForSuperBlock.filter(
                         node => node.block === blockDashedName
                       )}
-                      superBlockDashedName={superBlock}
+                      superBlock={superBlock}
                     />
                     {blockDashedName !== 'project-euler' ? <Spacer /> : null}
                   </Fragment>

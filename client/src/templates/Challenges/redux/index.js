@@ -24,7 +24,7 @@ const initialState = {
   visibleEditors: {},
   challengeFiles: {},
   challengeMeta: {
-    superBlock: '',
+    superBlockTitle: '',
     block: '',
     id: '',
     nextChallengePath: '/',
