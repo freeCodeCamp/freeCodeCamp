@@ -14,7 +14,7 @@ export const MarkdownRemark = PropTypes.shape({
   frontmatter: PropTypes.shape({
     title: PropTypes.string,
     block: PropTypes.string,
-    superBlockTitle: PropTypes.string
+    superBlock: PropTypes.string
   })
 });
 
