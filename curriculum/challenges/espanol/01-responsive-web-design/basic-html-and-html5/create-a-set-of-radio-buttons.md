@@ -24,7 +24,14 @@ Aquí hay un ejemplo de un botón de radio:
 </label>
 ```
 
-Se considera buena práctica establecer un atributo `for` en el elemento `label`, con un valor que coincida con el valor del atributo `id` del elemento `input`. Esto permite a las tecnologías asistivas crear una relación vinculada entre la etiqueta y el elemento hijo `input`. Por ejemplo:
+Se considera buena práctica establecer un atributo `for` en el elemento `label`, con un valor que coincida con el valor del atributo `id` del elemento `input`. Esto permite a las tecnologías asistivas establecer una relación de vínculo entre la etiqueta y el elemento `input` relacionado. Por ejemplo:
+
+```html
+<input id="indoor" type="radio" name="indoor-outdoor">
+<label for="indoor">Indoor</label>
+```
+
+También podemos anidar el elemento `input` dentro de las etiquetas `label`:
 
 ```html
 <label for="indoor"> 
@@ -34,7 +41,7 @@ Se considera buena práctica establecer un atributo `for` en el elemento `label`
 
 # --instructions--
 
-Agrega un par de botones de radio a tu formulario, cada uno anidado en su propio elemento `label`. Uno debe tener la opción `indoor` y el otro debe tener la opción `outdoor`. Ambos deben compartir el atributo `name` establecido como `indoor-outdoor` para crear un grupo de radio.
+Añade un par de botones de radio a tu formulario, cada uno de ellos anidado en su propio elemento `label`. Uno debe tener la opción de `indoor` y el otro debe tener la opción de `outdoor`. Ambos deben compartir el atributo `name` de `indoor-outdoor` para crear un grupo de radio.
 
 # --hints--
 
@@ -44,13 +51,13 @@ Tu página debe tener dos elementos de botón de `radio`.
 assert($('input[type="radio"]').length > 1);
 ```
 
-Tus botones de radio deben recibir el atributo `name` establecido como `indoor-outdoor`.
+Tus botones de radio deben poseer el atributo `name` con el valor `indoor-outdoor`.
 
 ```js
 assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
 ```
 
-Cada uno de tus elementos de botón de radio debe anidarse en su propio elemento `label`.
+Cada uno de tus dos elementos de botón de radio debe estar anidado en su propio elemento `label`.
 
 ```js
 assert($('label > input[type="radio"]:only-child').length > 1);
@@ -86,7 +93,7 @@ assert(
 );
 ```
 
-Cada uno de los elementos de botón de radio debe ser agregado dentro de la etiqueta `form`.
+Cada uno de tus elementos de botón de radio debe ser agregado dentro de la etiqueta `form`.
 
 ```js
 assert($('label').parent().get(0).tagName.match('FORM'));
