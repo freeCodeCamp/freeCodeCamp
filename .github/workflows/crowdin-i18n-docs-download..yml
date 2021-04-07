@@ -127,7 +127,7 @@ jobs:
           git config --global user.name "camperbot"
           git config --global user.email "$EMAIL"
           git add .
-          git commit -m "chore(i18n,docs): update translations"
+          git diff-index --quiet HEAD || git commit -m "chore(i18n,docs): update translations"
           git push -u origin i18n-sync-docs -f
 
       - name: Install Dependencies
