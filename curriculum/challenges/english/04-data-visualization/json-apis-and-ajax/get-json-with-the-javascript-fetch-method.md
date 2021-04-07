@@ -57,15 +57,15 @@ assert(
 Your code should use `then` to handle the data converted to JSON by the other `then`.
 
 ```js
-assert(code.match(/\.then\s*\(\s*(data|\(\s*data\s*\))\s*=>\s*{[^}]*}\s*\)/g));
+assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
 Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
 
 ```js
 assert(
-  code.match(
-    /document\s*\.getElementById\s*\(\s*('|")message\1\s*\)\s*\.innerHTML\s*=\s*JSON\s*\.\s*stringify\s*\(\s*data\s*\)/g
+  __helpers.removeWhiteSpace(code).match(
+    /document\.getElementById\(('|")message\1\)\.innerHTML=JSON\.stringify\(?\w+\)/g
   )
 );
 ```
