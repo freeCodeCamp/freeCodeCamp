@@ -64,20 +64,38 @@ $\\quad \\quad \\sqrt{13}=\[3;(1,1,1,1,6)]$, period = 5
 
 Exactly four continued fractions, for $N \\le 13$, have an odd period.
 
-How many continued fractions for $N \\le 10\\,000$ have an odd period?
+How many continued fractions for $N \\le n$ have an odd period?
 
 # --hints--
 
-`oddPeriodSqrts()` should return a number.
+`oddPeriodSqrts(13)` should return a number.
 
 ```js
-assert(typeof oddPeriodSqrts() === 'number');
+assert(typeof oddPeriodSqrts(13) === 'number');
 ```
 
-`oddPeriodSqrts()` should return 1322.
+`oddPeriodSqrts(500)` should return `83`.
 
 ```js
-assert.strictEqual(oddPeriodSqrts(), 1322);
+assert.strictEqual(oddPeriodSqrts(500), 83);
+```
+
+`oddPeriodSqrts(1000)` should return `152`.
+
+```js
+assert.strictEqual(oddPeriodSqrts(1000), 152);
+```
+
+`oddPeriodSqrts(5000)` should return `690`.
+
+```js
+assert.strictEqual(oddPeriodSqrts(5000), 690);
+```
+
+`oddPeriodSqrts(10000)` should return `1322`.
+
+```js
+assert.strictEqual(oddPeriodSqrts(10000), 1322);
 ```
 
 # --seed--
@@ -85,12 +103,12 @@ assert.strictEqual(oddPeriodSqrts(), 1322);
 ## --seed-contents--
 
 ```js
-function oddPeriodSqrts() {
+function oddPeriodSqrts(n) {
 
   return true;
 }
 
-oddPeriodSqrts();
+oddPeriodSqrts(13);
 ```
 
 # --solutions--
