@@ -91,7 +91,7 @@ jobs:
           git config --global user.name "camperbot"
           git config --global user.email "$EMAIL"
           git add .
-          git commit -m "chore: update translations"
+          git commit -m "chore(i18n,curriculum): update translations" | grep "nothing to commit, working tree clean"
           git push -u origin i18n-sync-curriculum -f
 
       - name: Install Dependencies
