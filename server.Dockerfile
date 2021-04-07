@@ -1,4 +1,4 @@
-FROM node:12.20-alpine as builder
+FROM node:14.16.1-alpine as builder
 USER node
 WORKDIR /home/node/build
 COPY --chown=node:node . .
@@ -7,7 +7,7 @@ RUN npm ci
 RUN npm run build:curriculum
 RUN npm run build:server
 
-FROM node:12.20-alpine
+FROM node:14.16.1-alpine
 USER node
 WORKDIR /home/node/api
 # get and install deps
@@ -24,10 +24,5 @@ COPY --from=builder --chown=node:node /home/node/build/config/ config/
 WORKDIR /home/node/api/api-server
 
 CMD ["npm", "start"]
-
-# TODO: if we set the pipelines to fail on standard error, they fail. Is
-# something sending messages to the error stream for some reason?
-
-# TODO: why has /api-server/lib/server/index.js got different permissions from the rest?
 
 # TODO: don't copy mocks/fixtures
