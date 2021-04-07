@@ -1,0 +1,62 @@
+name: Generate Docker Images
+# TODO: it's triggered on PRs for QA, but it'll be on pushes to master when it's
+# done.
+on: pull_request
+
+jobs:
+  client:
+    name: Client
+    runs-on: ubuntu-20.04
+    # TODO uncomment below when QA is done
+    # if: github.repository == 'freeCodeCamp/devdocs'
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+      - name: Build Client Image
+        run: |
+          DOCKER_BUILDKIT=1 docker build \
+          --build-arg FREECODECAMP_NODE_ENV \
+          --build-arg STRIPE_PUBLIC_KEY \
+          --build-arg HOME_LOCATION \
+          --build-arg API_LOCATION \
+          --build-arg FORUM_LOCATION \
+          --build-arg NEWS_LOCATION \
+          --build-arg LOCALE \
+          --build-arg SHOW_UPCOMING_CHANGES \
+          --build-arg ALGOLIA_APP_ID \
+          --build-arg ALGOLIA_API_KEY \
+          --build-arg PAYPAL_CLIENT_ID \
+          --build-arg DEPLOYMENT_ENV \
+          -t fcc_client .
+          mkdir client-artifact
+          cp docker-compose.yml client-artifact
+          cd client-artifact
+          docker save fcc_client | gzip > fcc_client.tar.gz
+      - name: Upload Client Image
+        uses: actions/upload-artifact@v2
+        with:
+          name: fcc-client-image
+          path: client-artifact/fcc_client.tar.gz
+
+  api:
+    name: Api Server
+    runs-on: ubuntu-20.04
+    # TODO uncomment below when QA is done
+    # if: github.repository == 'freeCodeCamp/devdocs'
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+      - name: Build Api Server Image
+        run: |
+          DOCKER_BUILDKIT=1 docker build -t fcc_api -f server.Dockerfile .
+          mkdir api-artifact
+          cp docker-compose.api.yml api-artifact/docker-compose.yml
+          cd api-artifact
+          docker save fcc_api | gzip > fcc_api.tar.gz
+      - name: Upload Api Server Image
+      - uses: actions/upload-artifact@v2
+        with:
+          name: fcc-api-image
+          path: api-artifact/fcc_api.tar.gz
