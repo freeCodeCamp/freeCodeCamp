@@ -225,7 +225,7 @@ class Editor extends Component {
       );
     this.data.model = model;
 
-    const editableRegion = this.getEditablRegion();
+    const editableRegion = this.getEditableRegion();
 
     if (editableRegion.length === 2)
       this.decorateForbiddenRanges(editableRegion);
