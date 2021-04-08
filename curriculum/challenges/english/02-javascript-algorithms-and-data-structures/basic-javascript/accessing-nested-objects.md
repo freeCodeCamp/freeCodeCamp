@@ -78,7 +78,7 @@ var myStorage = {
   }
 };
 
-var gloveBoxContents = undefined; // Change this line
+var gloveBoxContents = undefined;
 ```
 
 # --solutions--
