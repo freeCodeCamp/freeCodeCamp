@@ -40,6 +40,7 @@ class DesktopLayout extends Component {
       return {
         [displayTab]: !state[displayTab]
       };
+    });
   }
 
   getChallengeFile() {
