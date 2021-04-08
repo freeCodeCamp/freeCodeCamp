@@ -36,9 +36,10 @@ class DesktopLayout extends Component {
   }
 
   switchDisplayTab(displayTab) {
-    this.setState({
-      [displayTab]: !this.state[displayTab]
-    });
+    this.setState(state => {
+      return {
+        [displayTab]: !state[displayTab]
+      };
   }
 
   getChallengeFile() {
