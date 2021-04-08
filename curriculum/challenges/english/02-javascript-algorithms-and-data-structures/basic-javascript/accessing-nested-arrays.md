@@ -72,7 +72,6 @@ assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myPlants = [
   {
     type: "flowers",
@@ -91,8 +90,6 @@ var myPlants = [
     ]
   }
 ];
-
-// Only change code below this line
 
 var secondTree = ""; // Change this line
 ```
@@ -118,8 +115,6 @@ var myPlants = [
     ]
   }
 ];
-
-// Only change code below this line
 
 var secondTree = myPlants[1].list[1];
 ```
