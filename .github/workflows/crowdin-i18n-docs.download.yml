@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
@@ -44,7 +46,7 @@ jobs:
           # dryrun_action: true
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
@@ -78,7 +80,7 @@ jobs:
           # dryrun_action: true
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
@@ -125,7 +127,7 @@ jobs:
           git config --global user.name "camperbot"
           git config --global user.email "$EMAIL"
           git add .
-          git commit -m "chore: update translations"
+          git diff-index --quiet HEAD || git commit -m "chore(i18n,docs): update translations"
           git push -u origin i18n-sync-docs -f
 
       - name: Install Dependencies
