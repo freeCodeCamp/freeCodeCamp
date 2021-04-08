@@ -1,14 +1,78 @@
-# How to Translate a File
+# How to Translate freeCodeCamp's resources
 
-> [!NOTE] All translations are handled through https://translate.freecodecamp.org - we are no longer using GitHub to translate files directly.
+It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
 
-To begin, head to our translation website and login (if you have not contributed to translations before, you will need to create an account).
+The translation workflow is split into two main activities:
+
+- **Translating** curriculum files, documentation and UI elements like buttons, labels, etc.:
+
+  As a translator you can sign up on [our translation platform](https://translate.freecodecamp.org) and contribute translations in any of the 30+ languages enabled in there.
+
+- **Proofreading** the translations for all of the above.
+
+  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
+
+> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+
+## Prepare yourself for contributions
+
+> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
+
+You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
+
+We just ask that you understand the following:
+
+1. **Translations are a team effort.**
+
+   Translating freeCodeCamp's resources is one of the most fun and rewarding experiences as a contributor, and it works best if you involve your friends and colleagues who speak the same world language as you.
+
+   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [translators chat room](https://chat.freecodecamp.org/channel/translators) with your friends and showing your interest before starting off with translations. Crowdin makes it easy to contribute translations, but it's still a lot of work.
+
+   We want you to enjoy contributing and not burn out or lose interest.
+
+   A small group of 4-5 individuals is a good size to start your niche for your world language. You can then recruit even more friends to join the team.
+
+2. **It costs quite a lot to spin servers for each language.**
+
+   On the surface it might not seem how complicated the technical stack is, but it costs quite a lot to keep the engines running. This includes provisioning additional servers and dedicating staff to look after them.
+
+   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need it the most. The last thing we want is to shutdown servers for a language if the translation activity dies off & things become outdated.
+
+   Once a language reaches at least a few certifications on the curriculum we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
+
+   For example, we would want to deploy at least the entire front-end certifications suite when we ship a new world language for the first time.
+
+3. **But what about the languages not listed on the translation platform?**
+
+   We have looked at our user base and added 30+ most widely spoken languages to the list of enabled languages on the translations platform. Some languages like Chinese and Spanish are already deployed live on **"/learn"** at this moment.
+
+   Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day who want to help translate the site into a language they speak.
+
+   We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum around a world language.
+
+   If you would like us to include a new world language, we recommend getting your friends excited about this.
+
+   Once you have a small group of people (at least 4-5) interested and committed, we can hop on a call. We will explain all the details and walk you through some of the tools and processes.
+
+## Getting started
+
+First, make sure you come say "Hi" in our [translators chat room](https://chat.freecodecamp.org/channel/translators). We post regular updates about translating resources and answer a lot of your queries in there.
+
+Next, head to our [translation platform](https://translate.freecodecamp.org/) and login (if you have not contributed to translations before, you will need to create an account).
+
+Finally, go through the detailed walk-thru below to understand the translation tools and workflows at your disposal.
+
+Happy translating.
 
 ## Select a Project and File
 
-You should see two "projects" available for translation: The `Contributing Documentation` project, which contains the files for this documentation site, and the `Coding Curriculum` project, which contains our challenge files for `/learn`.
+Once you visit the translation platform, you should see multiple "projects" available for translation:
 
-Select which project you want to contribute to, and you will see a list of available languages for translation.
+1. [Contributing documentation](https://translate.freecodecamp.org/contributing-docs) project, which contains the files for this documentation site.
+2. [Coding Curriculum](https://translate.freecodecamp.org/curriculum) project, which contains our challenge files for our curriculum.
+3. [Learn User Interface](https://translate.freecodecamp.org/learn-ui) project which contains strings for UI elements like buttons, labels, etc. for our learning platform.
+
+Select any project you want to contribute to, and you will see a list of available languages for translation.
 
 ![Image - List of available languages](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
@@ -22,7 +86,7 @@ Select a file to work on and Crowdin will open the editor view.
 
 > [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
 
-## Translate the File
+## Translate Curriculum
 
 ![Image - Editor View](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
@@ -47,7 +111,7 @@ You are welcome to translate as many strings as you like - there are no addition
 
 > [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
-### Translating Documentation
+## Translate Documentation
 
 Translating our contributing documentation is a similar flow to translating our curriculum files.
 

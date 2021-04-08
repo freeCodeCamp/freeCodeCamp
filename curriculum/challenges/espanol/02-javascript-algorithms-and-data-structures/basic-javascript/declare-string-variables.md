@@ -11,17 +11,19 @@ dashedName: declare-string-variables
 
 Anteriormente hemos usado el código
 
-`var myName = "your name";`
+```js
+var myName = "your name";
+```
 
-`"your name"` es llamada una <dfn>cadena</dfn> <dfn>literal</dfn>. Es una cadena porque es una serie de cero o más caracteres encerrados entre comillas simples o dobles.
+`"your name"` es conocida como una <dfn>cadena</dfn> <dfn>literal</dfn>. Es una cadena porque es una serie de cero o más caracteres encerrados en comillas simples o dobles.
 
 # --instructions--
 
-Crea dos nuevas variables de cadena: `myFirstName` y `myLastName` y asígnales los valores de tu nombre y apellido, respectivamente.
+Crea dos nuevas variables de tipo cadena: `myFirstName`(miNombre) y `myLastName`(miApellido) y asígnales tu nombre y apellido, respectivamente.
 
 # --hints--
 
-`myFirstName` debe ser una cadena con al menos un carácter en ella.
+`myFirstName` debe ser una cadena con al menos un carácter.
 
 ```js
 assert(

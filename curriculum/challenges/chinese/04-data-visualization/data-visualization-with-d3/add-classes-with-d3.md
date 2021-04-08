@@ -12,23 +12,25 @@ dashedName: add-classes-with-d3
 
 `attr()` 方法和 `style()` 的使用方法一样。 它使用逗号分隔值，并且可以使用回调函数。 下面是给选中元素添加 `container` class 的例子：
 
-`selection.attr("class", "container");`
+```js
+selection.attr("class", "container");
+```
 
 请注意，当你需要添加 class 时，`class` 参数保持不变，只有 `container` 参数会发生变化。
 
 # --instructions--
 
-将 `attr()` 方法添加到编辑器的代码中，并在 `div` 元素上添加一个 `bar` 类。
+将 `attr()` 方法添加到编辑器中的代码中，并在 `div` 元素上添加一个 `bar` 类。
 
 # --hints--
 
-`div` 元素应该有值为 `bar` 的类。
+`div` 元素应该一个 `bar` class。
 
 ```js
 assert($('div').attr('class') == 'bar');
 ```
 
-你应该使用 `attr()` 方法。
+应该使用 `attr()` 方法。
 
 ```js
 assert(code.match(/\.attr/g));

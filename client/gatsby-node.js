@@ -204,7 +204,7 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
     resolve: {
       fallback: {
         fs: false,
-        path: false,
+        path: require.resolve('path-browserify'),
         assert: require.resolve('assert'),
         crypto: require.resolve('crypto-browserify'),
         util: false,

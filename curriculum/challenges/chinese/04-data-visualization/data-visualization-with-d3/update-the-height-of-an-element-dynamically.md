@@ -16,11 +16,13 @@ dashedName: update-the-height-of-an-element-dynamically
 
 回想使用回调函数设置样式的格式：
 
-`selection.style("cssProperty", (d) => d)`
+```js
+selection.style("cssProperty", (d) => d)
+```
 
 # --instructions--
 
-在编辑器中添加 `style()` 方法给每个元素设置 `height` 属性。 使用回调函数返回数据点的值，加上字符串 `px`。
+将 `style()` 方法添加到编辑器中的代码中，以设置每个元素的 `height` 属性。 使用回调函数返回数据点的值，加上字符串 `px`。
 
 # --hints--
 

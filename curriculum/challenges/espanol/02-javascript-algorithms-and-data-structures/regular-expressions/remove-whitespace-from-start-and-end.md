@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512bac
-title: Remove Whitespace from Start and End
+title: Elimina espacio en blanco del inicio y final
 challengeType: 1
 forumTopicId: 301362
 dashedName: remove-whitespace-from-start-and-end
@@ -8,29 +8,29 @@ dashedName: remove-whitespace-from-start-and-end
 
 # --description--
 
-Sometimes whitespace characters around strings are not wanted but are there. Typical processing of strings is to remove the whitespace at the start and end of it.
+A veces no se quieren caracteres en espacios en blanco alrededor de las cadenas, pero están ahí. El proceso típico de las cadenas de texto es eliminar el espacio en blanco al inicio y al final del mismo.
 
 # --instructions--
 
-Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.
+Escribe una expresión regular y usa los métodos de cadena apropiados para eliminar espacios en blanco al principio y al final de las cadenas.
 
-**Note:** The `String.prototype.trim()` method would work here, but you'll need to complete this challenge using regular expressions.
+**Nota:** El método `String.prototype.trim()` funcionará aquí, pero necesitarás completar este desafío usando expresiones regulares.
 
 # --hints--
 
-`result` should equal to `"Hello, World!"`
+`result` debe ser igual a la cadena `Hello, World!`
 
 ```js
 assert(result == 'Hello, World!');
 ```
 
-Your solution should not use the `String.prototype.trim()` method.
+Tu solución no debe usar el método `String.prototype.trim()`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?trim/));
 ```
 
-The `result` variable should not be set equal to a string.
+La variable `result` no debe ser igual a una cadena.
 
 ```js
 assert(!code.match(/result\s*=\s*".*?"/));

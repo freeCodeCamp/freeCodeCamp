@@ -14,7 +14,9 @@ Por ejemplo, `addTogether(2, 3)` debe devolver `5` y `addTogether(2)` debe devol
 
 Si se llama a esta función devuelta con un solo argumento, se obtendrá la suma:
 
-`var sumTwoAnd = addTogether(2);`
+```js
+var sumTwoAnd = addTogether(2);
+```
 
 `sumTwoAnd(3)` devuelve `5`.
 

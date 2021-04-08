@@ -13,13 +13,15 @@ Si recuerdas de nuestra discusión sobre [almacenar valores con el operador de a
 
 Supongamos que hemos predefinido una función `sum` que suma dos números juntos, entonces:
 
-`ourSum = sum(5, 12);`
+```js
+ourSum = sum(5, 12);
+```
 
-llamará a la función `sum`, la cual devuelve un valor de `17` y lo asigna a la variable `ourSum`.
+llamará a la función `sum`, que devuelve un valor de `17` y lo asigna a la variable `ourSum`.
 
 # --instructions--
 
-Llama a la función `processArg` con un argumento de `7` y asigna su valor devuelto a la variable `processed`.
+Llama la función `processArg` con un argumento de `7` y asigna su valor de retorno a la variable `processed`.
 
 # --hints--
 
@@ -29,7 +31,7 @@ Llama a la función `processArg` con un argumento de `7` y asigna su valor devue
 assert(processed === 2);
 ```
 
-Debes asignar `processArg` a `processed`
+Debes asignar `processArg` para `processed`
 
 ```js
 assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));

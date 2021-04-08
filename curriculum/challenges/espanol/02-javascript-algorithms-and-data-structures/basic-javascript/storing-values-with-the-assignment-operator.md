@@ -11,7 +11,9 @@ dashedName: storing-values-with-the-assignment-operator
 
 En JavaScript, puedes almacenar un valor en una variable con el operador de <dfn>asignación</dfn> (`=`).
 
-`myVariable = 5;`
+```js
+myVariable = 5;
+```
 
 Esto asigna el valor numérico (`Number`) `5` a `myVariable`.
 
