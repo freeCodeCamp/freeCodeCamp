@@ -50,7 +50,7 @@ You should add the property `bark` to `myDog`.
 assert(myDog.bark !== undefined);
 ```
 
-You should not add `bark` to the setup section.
+You should not add `bark` to the initialization of `myDog`.
 
 ```js
 assert(!/bark[^\n]:/.test(code));
