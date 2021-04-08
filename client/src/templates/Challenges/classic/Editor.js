@@ -199,11 +199,9 @@ class Editor extends Component {
 
   getEditableRegion = () => {
     const { challengeFiles, fileKey } = this.props;
-    const editableRegion = challengeFiles[fileKey].editableRegionBoundaries
+    return challengeFiles[fileKey].editableRegionBoundaries
       ? [...challengeFiles[fileKey].editableRegionBoundaries]
       : [];
-
-    return editableRegion;
   };
 
   editorWillMount = monaco => {
