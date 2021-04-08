@@ -1,4 +1,4 @@
-name: Cypress
+name: Cypress - Push
 on: [push]
 
 jobs:
