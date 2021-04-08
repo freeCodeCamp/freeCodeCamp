@@ -72,14 +72,11 @@ assert(code.match(/testObj\.\w+/g).length > 1);
 ## --seed-contents--
 
 ```js
-// Setup
 var testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
-
-// Only change code below this line
 
 var hatValue = testObj;      // Change this line
 var shirtValue = testObj;    // Change this line
