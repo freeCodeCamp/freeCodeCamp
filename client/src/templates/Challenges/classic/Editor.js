@@ -307,7 +307,7 @@ class Editor extends Component {
       }
     });
 
-    const editableBoundaries = this.getEditablRegion();
+    const editableBoundaries = this.getEditableRegion();
 
     if (editableBoundaries.length === 2) {
       // TODO: is there a nicer approach/way of organising everything that
