@@ -197,7 +197,7 @@ class Editor extends Component {
     this.focusOnEditor = this.focusOnEditor.bind(this);
   }
 
-  getEditablRegion = () => {
+  getEditableRegion = () => {
     const { challengeFiles, fileKey } = this.props;
     const editableRegion = challengeFiles[fileKey].editableRegionBoundaries
       ? [...challengeFiles[fileKey].editableRegionBoundaries]
