@@ -920,7 +920,7 @@ class Editor extends Component {
 
     if (this._editor) {
       const { output, tests } = this.props;
-      const editableRegion = this.getEditablRegion();
+      const editableRegion = this.getEditableRegion();
       if (this.props.tests !== prevProps.tests && editableRegion.length === 2) {
         const challengeComplete = tests.every(test => test.pass && !test.err);
         const chellengeHasErrors = tests.some(test => test.err);
