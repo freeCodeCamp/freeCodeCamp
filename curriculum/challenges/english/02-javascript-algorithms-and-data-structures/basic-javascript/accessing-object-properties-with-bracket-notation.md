@@ -77,14 +77,11 @@ assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ## --seed-contents--
 
 ```js
-// Setup
 var testObj = {
   "an entree": "hamburger",
   "my side": "veggies",
   "the drink": "water"
 };
-
-// Only change code below this line
 
 var entreeValue = testObj;   // Change this line
 var drinkValue = testObj;    // Change this line
