@@ -78,6 +78,7 @@ if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,
 ```js
 var myArray = [50,60,70];
 
+
 ```
 
 # --solutions--
