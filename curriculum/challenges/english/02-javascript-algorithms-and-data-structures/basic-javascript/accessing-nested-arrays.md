@@ -40,7 +40,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Retrieve the second tree from the variable `myPlants` using object dot and array bracket notation.
+Using dot and bracket notation, set the variable `secondTree` to the second item in the `trees` list from the `myPlants` object.
 
 # --hints--
 
@@ -91,7 +91,7 @@ var myPlants = [
   }
 ];
 
-var secondTree = ""; // Change this line
+var secondTree = "";
 ```
 
 # --solutions--
