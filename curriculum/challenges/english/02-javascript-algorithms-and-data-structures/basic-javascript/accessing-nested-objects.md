@@ -66,7 +66,6 @@ assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myStorage = {
   "car": {
     "inside": {
