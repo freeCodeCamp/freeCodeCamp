@@ -1,12 +1,14 @@
-name: Cypress
-on: [push, pull_request]
+name: Cypress - Push
+on: [push]
 
 jobs:
   cypress-run:
     name: Test
     runs-on: ubuntu-18.04
     strategy:
+      fail-fast: false
       matrix:
+        containers: [1, 2, 3]
         browsers: [chrome, firefox]
         node-version: [14.x]
     services:
@@ -60,6 +62,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          parallel: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          group: ${{ matrix.browsers }} 
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           build: npm run build
           # this should mirror the production build, but for now we're using gatsby
