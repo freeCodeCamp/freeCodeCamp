@@ -34,14 +34,14 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl/new` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
-  const res = await fetch(url + '/api/shorturl/new/', {
+  const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=${fullUrl}`
@@ -64,7 +64,7 @@ async (getUserInput) => {
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
   let shortenedUrlVariable;
-  const postResponse = await fetch(url + '/api/shorturl/new/', {
+  const postResponse = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=${fullUrl}`
@@ -93,7 +93,7 @@ If you pass an invalid URL that doesn't follow the valid `http://www.example.com
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/shorturl/new/', {
+  const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=ftp:/john-doe.org`
