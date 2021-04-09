@@ -8,10 +8,7 @@ let structure = {
 describe('Test breadcrumbs', () => {
   it('should have the correct link', () => {
     let { target, challenge } = structure;
-    cy.task('provideTarget', [
-      '01-responsive-web-design',
-      ['basic-css', 'css-grid']
-    ]).then(res => {
+    cy.task('provideTarget', ['08-data-analysis-with-python']).then(res => {
       target = res;
 
       cy.task('getAllChallengePaths', target).then(res => {
