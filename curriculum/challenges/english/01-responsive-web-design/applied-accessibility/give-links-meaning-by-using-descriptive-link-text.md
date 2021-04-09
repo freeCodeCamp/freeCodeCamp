@@ -40,7 +40,7 @@ The `a` element should have a closing tag.
 ```js
 assert(
   code.match(/<\/a>/g) &&
-    code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length
+    code.match(/<\/a>/g).length === code.match(/<a/g).length
 );
 ```
 
