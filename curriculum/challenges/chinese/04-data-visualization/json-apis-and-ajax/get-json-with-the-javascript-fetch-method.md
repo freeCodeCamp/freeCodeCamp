@@ -57,15 +57,15 @@ assert(
 应该使用另一个 `then` 接收 `then` 转换的 JSON。
 
 ```js
-assert(code.match(/\.then\s*\(\s*(data|\(\s*data\s*\))\s*=>\s*{[^}]*}\s*\)/g));
+assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
 代码应该选择 id 为 `message` 的元素然后把它的内部 HTML 改成 JSON data 的字符串。
 
 ```js
 assert(
-  code.match(
-    /document\s*\.getElementById\s*\(\s*('|")message\1\s*\)\s*\.innerHTML\s*=\s*JSON\s*\.\s*stringify\s*\(\s*data\s*\)/g
+  __helpers.removeWhiteSpace(code).match(
+    /document\.getElementById\(('|")message\1\)\.innerHTML=JSON\.stringify\(?\w+\)/g
   )
 );
 ```

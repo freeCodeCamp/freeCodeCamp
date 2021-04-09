@@ -76,10 +76,9 @@ if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,
 ## --seed-contents--
 
 ```js
-// Setup
 var myArray = [50,60,70];
 
-// Only change code below this line
+
 ```
 
 # --solutions--
