@@ -33,7 +33,7 @@ assert(!code.match(/\.?[\s\S]*?trim/));
 The `result` variable should not directly be set to a string
 
 ```js
-assert(!code.match(/result\s*=\s*["'].*?["']/));
+assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
 # --seed--
