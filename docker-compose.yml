@@ -4,7 +4,8 @@ services:
     image: fcc_client
     restart: unless-stopped
     ports:
-      - '8000:8000'
+      - '${PORT}:${PORT}'
+    command: ["-l", "${PORT}"]
 
 # TODO: use https://github.com/docker/docker-bench-security
 # TODO: version images? Ideally we want to keep older images around so that we
