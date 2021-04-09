@@ -14,7 +14,7 @@ The decimal number eleven can be written as `0*13 + 1*8 + 0*5 + 1*3 + 0*2 + 0*1`
 
 # --instructions--
 
-Write a function that generates and returns Zeckendorf number representation of `n`.
+Write a function that generates and returns the Zeckendorf number representation of `n`.
 
 # --hints--
 
