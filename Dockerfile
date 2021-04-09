@@ -15,7 +15,7 @@ ARG PAYPAL_CLIENT_ID
 ARG DEPLOYMENT_ENV
 ARG SHOW_UPCOMING_CHANGES
 
-# since we can use a non-root user we should
+# node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
 COPY --chown=node:node . .
@@ -35,4 +35,5 @@ COPY --from=builder /home/node/build/client/public/ client/public
 COPY --from=builder /home/node/config/client/serve.json client
 COPY --from=builder /home/node/config/client/www/ client
 
-CMD ["serve", "-l", "8000", "-c", "../serve.json", "client/public"]
+ENTRYPOINT ["serve", "-c", "../serve.json", "client/public"]
+CMD ["-l", "8000"]
