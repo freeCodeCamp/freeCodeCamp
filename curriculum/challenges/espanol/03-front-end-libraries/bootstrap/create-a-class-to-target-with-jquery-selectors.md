@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908852
-title: Create a Class to Target with jQuery Selectors
+title: Crear una clase para apuntar con selectores jQuery
 challengeType: 0
 forumTopicId: 16815
 dashedName: create-a-class-to-target-with-jquery-selectors
@@ -8,13 +8,13 @@ dashedName: create-a-class-to-target-with-jquery-selectors
 
 # --description--
 
-Not every class needs to have corresponding CSS. Sometimes we create classes just for the purpose of selecting these elements more easily using jQuery.
+No todas las clases necesitan tener CSS correspondientes. A veces creamos clases sólo con el propósito de seleccionar aquellos elementos más fácilmente utilizando jQuery.
 
-Give each of your `button` elements the class `target`.
+Dale a cada uno de tus elementos `button` la clase `target`.
 
 # --hints--
 
-You should apply the `target` class to each of your `button` elements.
+Debes aplicar la clase `target` a cada uno de tus elementos `button`.
 
 ```js
 assert($('.target').length > 5);
