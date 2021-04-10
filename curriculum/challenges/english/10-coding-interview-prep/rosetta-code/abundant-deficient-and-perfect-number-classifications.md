@@ -38,25 +38,25 @@ assert(typeof getDPA === 'function');
 assert(Array.isArray(getDPA(100)));
 ```
 
-`getDPA` return value should have a length of 3.
+`getDPA` return value should have a length of `3`.
 
 ```js
 assert(getDPA(100).length === 3);
 ```
 
-`getDPA(5000)` should equal [3758, 3, 1239]
+`getDPA(5000)` should equal `[3758, 3, 1239]`.
 
 ```js
 assert.deepEqual(getDPA(5000), [3758, 3, 1239]);
 ```
 
-`getDPA(10000)` should equal [7508, 4, 2488]
+`getDPA(10000)` should equal `[7508, 4, 2488]`.
 
 ```js
 assert.deepEqual(getDPA(10000), [7508, 4, 2488]);
 ```
 
-`getDPA(20000)` should equal [15043, 4, 4953]
+`getDPA(20000)` should equal `[15043, 4, 4953]`.
 
 ```js
 assert.deepEqual(getDPA(20000), [15043, 4, 4953]);
