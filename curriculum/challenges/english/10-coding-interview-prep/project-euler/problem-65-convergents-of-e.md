@@ -26,20 +26,44 @@ $2, 3, \\dfrac{8}{3}, \\dfrac{11}{4}, \\dfrac{19}{7}, \\dfrac{87}{32}, \\dfrac{1
 
 The sum of digits in the numerator of the 10<sup>th</sup> convergent is $1 + 4 + 5 + 7 = 17$.
 
-Find the sum of digits in the numerator of the 100<sup>th</sup> convergent of the continued fraction for `e`.
+Find the sum of digits in the numerator of the `n`<sup>th</sup> convergent of the continued fraction for `e`.
 
 # --hints--
 
-`convergentsOfE()` should return a number.
+`convergentsOfE(10)` should return a number.
 
 ```js
-assert(typeof convergentsOfE() === 'number');
+assert(typeof convergentsOfE(10) === 'number');
 ```
 
-`convergentsOfE()` should return 272.
+`convergentsOfE(10)` should return 17.
 
 ```js
-assert.strictEqual(convergentsOfE(), 272);
+assert.strictEqual(convergentsOfE(10), 17);
+```
+
+`convergentsOfE(30)` should return 53.
+
+```js
+assert.strictEqual(convergentsOfE(30), 53);
+```
+
+`convergentsOfE(50)` should return 91.
+
+```js
+assert.strictEqual(convergentsOfE(50), 91);
+```
+
+`convergentsOfE(70)` should return 169.
+
+```js
+assert.strictEqual(convergentsOfE(70), 169);
+```
+
+`convergentsOfE(100)` should return 272.
+
+```js
+assert.strictEqual(convergentsOfE(100), 272);
 ```
 
 # --seed--
@@ -47,12 +71,12 @@ assert.strictEqual(convergentsOfE(), 272);
 ## --seed-contents--
 
 ```js
-function convergentsOfE() {
+function convergentsOfE(n) {
 
   return true;
 }
 
-convergentsOfE();
+convergentsOfE(10);
 ```
 
 # --solutions--
