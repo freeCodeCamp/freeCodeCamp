@@ -8,7 +8,7 @@ dashedName: abundant-deficient-and-perfect-number-classifications
 
 # --description--
 
-These define three classifications of positive integers based on their [proper divisors](<https://rosettacode.org/wiki/Proper divisors> "Proper divisors").
+These define three classifications of positive integers based on their proper divisors.
 
 Let $P(n)$ be the sum of the proper divisors of `n` where proper divisors are all positive integers `n` other than `n` itself.
 
