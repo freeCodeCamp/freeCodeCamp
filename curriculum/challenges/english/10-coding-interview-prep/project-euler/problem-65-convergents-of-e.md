@@ -36,31 +36,31 @@ Find the sum of digits in the numerator of the `n`<sup>th</sup> convergent of th
 assert(typeof convergentsOfE(10) === 'number');
 ```
 
-`convergentsOfE(10)` should return 17.
+`convergentsOfE(10)` should return `17`.
 
 ```js
 assert.strictEqual(convergentsOfE(10), 17);
 ```
 
-`convergentsOfE(30)` should return 53.
+`convergentsOfE(30)` should return `53`.
 
 ```js
 assert.strictEqual(convergentsOfE(30), 53);
 ```
 
-`convergentsOfE(50)` should return 91.
+`convergentsOfE(50)` should return `91`.
 
 ```js
 assert.strictEqual(convergentsOfE(50), 91);
 ```
 
-`convergentsOfE(70)` should return 169.
+`convergentsOfE(70)` should return `169`.
 
 ```js
 assert.strictEqual(convergentsOfE(70), 169);
 ```
 
-`convergentsOfE(100)` should return 272.
+`convergentsOfE(100)` should return `272`.
 
 ```js
 assert.strictEqual(convergentsOfE(100), 272);
