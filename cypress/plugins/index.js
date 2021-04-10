@@ -1,71 +1,59 @@
 const fs = require('fs');
 const path = require('path');
+const env = require('../../config/env.json');
 
 module.exports = on => {
   on('task', {
-    // return all superblocks
-    provideTarget(targetBlock) {
-      // checks if specific block is provided in superblock
-      if (targetBlock.length === 2) {
-        return [targetBlock[0], targetBlock[1]];
-      } else if (targetBlock.length === 1) {
-        return [targetBlock[0]];
-      }
-
-      return fs.readdirSync(path.resolve(`./curriculum/challenges/english`));
-    },
-
     // return an array of all challenge paths
     getAllChallengePaths(targetBlock) {
-      let challengeArr = [];
+      let blockMeta = [];
+      let challengePaths = [];
 
-      if (targetBlock.length === 1) {
-        targetBlock.forEach(superblock => {
-          // read block in superblock
-          var blockInSuperBlock = fs.readdirSync(
-            path.resolve('./curriculum/challenges/english/' + superblock)
-          );
+      targetBlock.forEach(superblock => {
+        let blockArr = fs.readdirSync(
+          path.resolve(`./curriculum/challenges/english/${superblock}`)
+        );
 
-          // read every challenge in block
-          blockInSuperBlock.forEach(block => {
-            var challengeInBlock = fs.readdirSync(
-              path.resolve(
-                './curriculum/challenges/english/' + superblock + '/' + block
+        blockArr.forEach(block => {
+          blockMeta.push(
+            JSON.parse(
+              fs.readFileSync(
+                path.resolve(`./curriculum/challenges/_meta/${block}/meta.json`)
               )
-            );
-
-            challengeInBlock.forEach(challenge => {
-              // remove file extension
-              challenge = challenge.split('.').slice(0, -1).join('.');
-              challengeArr.push(
-                '/learn/' + superblock.slice(3) + '/' + block + '/' + challenge
-              );
-            });
-          });
-        });
-      } else {
-        targetBlock[1].forEach(block => {
-          var challengeInBlock = fs.readdirSync(
-            path.resolve(
-              './curriculum/challenges/english/' + targetBlock[0] + '/' + block
             )
           );
-
-          challengeInBlock.forEach(challenge => {
-            // remove file extension
-            challenge = challenge.split('.').slice(0, -1).join('.');
-            challengeArr.push(
-              '/learn/' +
-                targetBlock[0].slice(3) +
-                '/' +
-                block +
-                '/' +
-                challenge
-            );
-          });
         });
-      }
-      return challengeArr;
+
+        blockMeta.forEach(block => {
+          if (!env.showUpcomingChanges && !block.isUpcomingChange) {
+            block.challengeOrder.forEach(challengeTitle => {
+              challengeTitle[1] = challengeTitle[1].toLowerCase();
+              challengeTitle[1] = challengeTitle[1].replace(/\s+/g, '-');
+              challengeTitle[1] = challengeTitle[1].replace("'", '');
+
+              challengePaths.push(
+                `/learn/${targetBlock[0].slice(3)}/${block.dashedName}/${
+                  challengeTitle[1]
+                }`
+              );
+            });
+          } else if (env.showUpcomingChanges && block.isUpcomingChange) {
+            block.challengeOrder.forEach(challengeTitle => {
+              challengeTitle[1] = challengeTitle[1].toLowerCase();
+              challengeTitle[1] = challengeTitle[1].replace(/\s+/g, '-');
+              challengeTitle[1] = challengeTitle[1].replace("'", '');
+
+              challengePaths.push(
+                `/learn/${targetBlock[0].slice(3)}/${block.dashedName}/${
+                  challengeTitle[1]
+                }`
+              );
+            });
+          }
+        });
+      });
+
+      return challengePaths;
     }
   });
 };
