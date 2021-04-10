@@ -35,13 +35,13 @@ assert(typeof getDPA === 'function');
 `getDPA(5000)` should return an array.
 
 ```js
-assert(Array.isArray(getDPA(100)));
+assert(Array.isArray(getDPA(5000)));
 ```
 
 `getDPA(5000)` return array should have a length of `3`.
 
 ```js
-assert(getDPA(100).length === 3);
+assert(getDPA(5000).length === 3);
 ```
 
 `getDPA(5000)` should return `[3758, 3, 1239]`.
