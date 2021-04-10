@@ -22,7 +22,7 @@ If `P(n) > n` then `n` is classed as `abundant`
 
 # --instructions--
 
-Implement a function that calculates how many of the integers from `1` to `20,000` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
+Implement a function that calculates how many of the integers from `1` to `num` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
 
 # --hints--
 
@@ -44,19 +44,25 @@ assert(Array.isArray(getDPA(100)));
 assert(getDPA(100).length === 3);
 ```
 
+`getDPA(5000)` should equal [3758, 3, 1239]
+
+```js
+assert.deepEqual(getDPA(5000), [3758, 3, 1239]);
+```
+
+`getDPA(10000)` should equal [7508, 4, 2488]
+
+```js
+assert.deepEqual(getDPA(10000), [7508, 4, 2488]);
+```
+
 `getDPA(20000)` should equal [15043, 4, 4953]
 
 ```js
-assert.deepEqual(getDPA(20000), solution);
+assert.deepEqual(getDPA(20000), [15043, 4, 4953]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const solution = [15043, 4, 4953];
-```
 
 ## --seed-contents--
 
