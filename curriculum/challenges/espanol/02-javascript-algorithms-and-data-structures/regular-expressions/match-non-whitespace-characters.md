@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba4
-title: Match Non-Whitespace Characters
+title: Haz coincidir caracteres que no sean espacios en blanco
 challengeType: 1
 forumTopicId: 18210
 dashedName: match-non-whitespace-characters
@@ -8,35 +8,37 @@ dashedName: match-non-whitespace-characters
 
 # --description--
 
-You learned about searching for whitespace using `\s`, with a lowercase `s`. You can also search for everything except whitespace.
+Aprendiste a buscar espacios en blanco usando `\s`, con una `s` en minúscula. También puedes buscar todo excepto los espacios en blanco.
 
-Search for non-whitespace using `\S`, which is an uppercase `s`. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class `[^ \r\t\f\n\v]`.
+Busca caracteres que no sean espacios en blanco usando `\S`, la cual es una `s` mayúscula. Este patrón no coincidirá con los caracteres de espacios en blanco, retorno de carro, tabulaciones, alimentación de formulario y saltos de línea. Puedes pensar que es similar a la clase de caracteres `[^ \r\t\f\n\v]`.
 
 ```js
 let whiteSpace = "Whitespace. Whitespace everywhere!"
 let nonSpaceRegex = /\S/g;
-whiteSpace.match(nonSpaceRegex).length; // Returns 32
+whiteSpace.match(nonSpaceRegex).length;
 ```
+
+El valor devuelto por el método `.length` sería `32`.
 
 # --instructions--
 
-Change the regex `countNonWhiteSpace` to look for multiple non-whitespace characters in a string.
+Cambia la expresión regular `countNonWhiteSpace` para buscar varios caracteres que no sean espacios en blanco en una cadena.
 
 # --hints--
 
-Your regex should use the global flag.
+Tu expresión regular debe usar la bandera global.
 
 ```js
 assert(countNonWhiteSpace.global);
 ```
 
-Your regex should use the shorthand character `\S` to match all non-whitespace characters.
+Tu expresión regular debe usar el carácter abreviado `\S` para que coincida con todos los caracteres que no sean espacios en blanco.
 
 ```js
 assert(/\\S/.test(countNonWhiteSpace.source));
 ```
 
-Your regex should find 35 non-spaces in `"Men are from Mars and women are from Venus."`
+Tu expresión regular debe encontrar 35 caracteres que no sean espacios en la cadena `Men are from Mars and women are from Venus.`
 
 ```js
 assert(
@@ -45,13 +47,13 @@ assert(
 );
 ```
 
-Your regex should find 23 non-spaces in `"Space: the final frontier."`
+Tu expresión regular debe encontrar 23 caracteres que no sean espacios en la cadena `Space: the final frontier.`
 
 ```js
 assert('Space: the final frontier.'.match(countNonWhiteSpace).length == 23);
 ```
 
-Your regex should find 21 non-spaces in `"MindYourPersonalSpace"`
+Tu expresión regular debe encontrar 21 caracteres que no sean espacios en la cadena `MindYourPersonalSpace`
 
 ```js
 assert('MindYourPersonalSpace'.match(countNonWhiteSpace).length == 21);

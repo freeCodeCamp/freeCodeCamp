@@ -82,7 +82,7 @@ const mapDispatchToActions = {
   updateSolutionFormValues
 };
 
-export class BackEnd extends Component {
+class BackEnd extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -233,7 +233,11 @@ export class BackEnd extends Component {
                 <TestSuite tests={tests} />
                 <Spacer />
               </Col>
-              <CompletionModal blockName={blockName} />
+              <CompletionModal
+                block={block}
+                blockName={blockName}
+                superBlock={superBlock}
+              />
               <HelpModal />
             </Row>
           </Grid>

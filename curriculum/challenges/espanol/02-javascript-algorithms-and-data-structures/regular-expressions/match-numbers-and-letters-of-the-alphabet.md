@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b97
-title: Match Numbers and Letters of the Alphabet
+title: Haz coincidir los números y las letras del alfabeto
 challengeType: 1
 forumTopicId: 301356
 dashedName: match-numbers-and-letters-of-the-alphabet
@@ -8,38 +8,37 @@ dashedName: match-numbers-and-letters-of-the-alphabet
 
 # --description--
 
-Using the hyphen (`-`) to match a range of characters is not limited to letters. It also works to match a range of numbers.
+Usar el guión (`-`) para coincidir con un rango de caracteres no está limitado a letras. También funciona para hacer coincidir un rango de números.
 
-For example, `/[0-5]/` matches any number between `0` and `5`, including the `0` and `5`.
+Por ejemplo, `/[0-5]/` coincide con cualquier número entre `0` y `5`, incluyendo `0` y `5`.
 
-Also, it is possible to combine a range of letters and numbers in a single character set.
+Además, es posible combinar un rango de letras y números en un único conjunto de caracteres.
 
 ```js
 let jennyStr = "Jenny8675309";
 let myRegex = /[a-z0-9]/ig;
-// matches all letters and numbers in jennyStr
 jennyStr.match(myRegex);
 ```
 
 # --instructions--
 
-Create a single regex that matches a range of letters between `h` and `s`, and a range of numbers between `2` and `6`. Remember to include the appropriate flags in the regex.
+Crea una sola expresión regular que coincida con un rango de letras entre `h` y `s`, y un rango de números entre `2` y `6`. Recuerda incluir las banderas apropiadas en la expresión regular.
 
 # --hints--
 
-Your regex `myRegex` should match 17 items.
+Tu expresión regular `myRegex` debe coincidir con 17 elementos.
 
 ```js
 assert(result.length == 17);
 ```
 
-Your regex `myRegex` should use the global flag.
+Tu expresión regular `myRegex` debe utilizar la bandera global.
 
 ```js
 assert(myRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `myRegex` should use the case insensitive flag.
+Tu expresión regular `myRegex` debe utilizar la bandera que no distingue entre mayúsculas y minúsculas.
 
 ```js
 assert(myRegex.flags.match(/i/).length == 1);

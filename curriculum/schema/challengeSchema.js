@@ -100,7 +100,7 @@ const schema = Joi.object()
     template: Joi.string().allow(''),
     time: Joi.string().allow(''),
     title: Joi.string().required(),
-    translationPending: Joi.bool()
+    translationPending: Joi.bool().required()
   })
   .xor('helpCategory', 'isPrivate');
 

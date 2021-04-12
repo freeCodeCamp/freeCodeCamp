@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { writeFileSync } = require('fs');
 
@@ -60,7 +61,21 @@ module.exports = (env = {}) => {
     plugins: [
       new CopyWebpackPlugin([
         { from: 'node_modules/sass.js/dist/sass.sync.js' }
-      ])
-    ]
+      ]),
+      new webpack.ProvidePlugin({
+        process: 'process/browser'
+      }),
+      new webpack.ProvidePlugin({
+        Buffer: ['buffer', 'Buffer']
+      })
+    ],
+    resolve: {
+      fallback: {
+        buffer: require.resolve('buffer'),
+        util: false,
+        stream: false,
+        process: require.resolve('process/browser')
+      }
+    }
   };
 };

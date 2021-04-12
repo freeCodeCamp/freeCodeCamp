@@ -13,13 +13,17 @@ dashedName: add-new-properties-to-a-javascript-object
 
 这里展示了如何给 `ourDog` 添加一个属性 `bark`：
 
-`ourDog.bark = "bow-wow";`
+```js
+ourDog.bark = "bow-wow";
+```
 
 或者
 
-`ourDog["bark"] = "bow-wow";`
+```js
+ourDog["bark"] = "bow-wow";
+```
 
-现在，当我们执行 `ourDog.bark` 时，我们就能得到他的叫声，`bow-wow`。
+现在，当我们执行 `ourDog.bark` 时，就能得到他的叫声，`bow-wow`。
 
 例如：
 
@@ -36,17 +40,17 @@ ourDog.bark = "bow-wow";
 
 # --instructions--
 
-给 `myDog` 添加一个属性 `bark` ，并将其设置为狗的声音，比如“woof“. 你可以使用点号表示法或方括号表示法来完成此挑战。
+给 `myDog` 添加一个属性 `bark` ，并将其设置为狗的声音，比如 “woof“。 可以使用点操作符或者中括号操作符。
 
 # --hints--
 
-你应该将属性 `bark` 添加到 `myDog`。
+应该给 `myDog` 添加属性 `bark`。
 
 ```js
 assert(myDog.bark !== undefined);
 ```
 
-你不应该在 Setup 部分添加 `bark`。
+不应该在初始化部分添加 `bark`。
 
 ```js
 assert(!/bark[^\n]:/.test(code));

@@ -2,11 +2,13 @@
 
 Lee nuestra ["Guía de como contribuir a Open Source"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Es una referencia completa para proyectos aptos para principiantes. E incluye muchos consejos de contribución de código abierto.
 
-### ¿Puedo traducir el currículum de freeCodeCamp?
+### Can I translate freeCodeCamp's resources?
 
-Yes - Read [this guide](/how-to-translate-files) if you are interested in contributing to translations.
+Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
 
-Currently we have the user contributed translations being done in Chinese and Español. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+We have the user contributed translations live in Chinese (中文) and Spanish (Español). We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+
+If you are interested in contributing to translations please makes sure you [read this guide](/how-to-translate-files) first.
 
 ### ¿Cómo puedo reportar un nuevo error?
 
@@ -79,7 +81,6 @@ If you have queries about the stack, architecture of the codebase, translations,
 | Nicholas Carrigan     | [@nhcarrigan](https://forum.freecodecamp.org/u/nhcarrigan)                   |
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
 | Rafael D Hernandez    | [@RafaelHernandez](https://forum.freecodecamp.org/u/rafaelhernandez)         |
-| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 | Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**

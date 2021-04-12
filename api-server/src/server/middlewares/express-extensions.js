@@ -1,7 +1,7 @@
 import qs from 'query-string';
 
 // add rx methods to express
-export default function () {
+export default function getExpressExtensions() {
   return function expressExtensions(req, res, next) {
     res.redirectWithFlash = uri => {
       const flash = req.flash();

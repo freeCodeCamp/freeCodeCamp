@@ -11,7 +11,9 @@ dashedName: compound-assignment-with-augmented-addition
 
 In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:
 
-`myVar = myVar + 5;`
+```js
+myVar = myVar + 5;
+```
 
 to add `5` to `myVar`. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
 

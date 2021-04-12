@@ -12,11 +12,13 @@ D3允许你使用 `style()` 方法在动态元素上添加内联 CSS 样式。
 
 `style()` 方法以用逗号分隔的键值对作为参数。 这里是一个将选中文本的颜色设为蓝色的例子：
 
-`selection.style("color","blue");`
+```js
+selection.style("color","blue");
+```
 
 # --instructions--
 
-在编辑器中添加 `style()` 方法，使所有显示的文本都有 `font-family` 属性，且值为 `verdana`。
+将 `style()` 方法添加到编辑器中的代码中，使所有显示的文本都具有 `verdana` 的 `font-family` 。
 
 # --hints--
 

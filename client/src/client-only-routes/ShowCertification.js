@@ -28,11 +28,13 @@ import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 import { langCodes } from '../../../config/i18n/all-langs';
-import { clientLocale } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
 import { isEmpty } from 'lodash';
+
+const { clientLocale } = envData;
 
 const localeCode = langCodes[clientLocale];
 

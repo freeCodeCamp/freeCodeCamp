@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e2
-title: Caesars Cipher
+title: Cifrado César
 challengeType: 5
 forumTopicId: 16003
 dashedName: caesars-cipher
@@ -8,35 +8,35 @@ dashedName: caesars-cipher
 
 # --description--
 
-One of the simplest and most widely known <dfn>ciphers</dfn> is a <dfn>Caesar cipher</dfn>, also known as a <dfn>shift cipher</dfn>. In a shift cipher the meanings of the letters are shifted by some set amount.
+Uno de los <dfn>cifrados</dfn> más simples y conocidos es el <dfn>cifrado César</dfn>, también conocido como <dfn>cifrado por desplazamiento</dfn>. En un cifrado por desplazamiento los significados de las letras se desplazan por una cantidad determinada.
 
-A common modern use is the [ROT13](https://en.wikipedia.org/wiki/ROT13) cipher, where the values of the letters are shifted by 13 places. Thus 'A' ↔ 'N', 'B' ↔ 'O' and so on.
+Un uso moderno común es el cifrado [ROT13](https://en.wikipedia.org/wiki/ROT13), donde los valores de las letras son desplazados por 13 lugares. Así que `A ↔ N`, `B ↔ O` y así sucesivamente.
 
-Write a function which takes a [ROT13](https://en.wikipedia.org/wiki/ROT13) encoded string as input and returns a decoded string.
+Escribe una función que reciba una cadena codificada en [ROT13](https://en.wikipedia.org/wiki/ROT13) como entrada y devuelva una cadena decodificada.
 
-All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+Todas las letras estarán en mayúsculas. No transformes ningún carácter no alfabético (espacios, puntuación, por ejemplo), pero si transmítelos.
 
 # --hints--
 
-`rot13("SERR PBQR PNZC")` should decode to `FREE CODE CAMP`
+`rot13("SERR PBQR PNZC")` debe decodificarse en la cadena `FREE CODE CAMP`
 
 ```js
 assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
 ```
 
-`rot13("SERR CVMMN!")` should decode to `FREE PIZZA!`
+`rot13("SERR CVMMN!")` debe decodificarse en la cadena `FREE PIZZA!`
 
 ```js
 assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
 ```
 
-`rot13("SERR YBIR?")` should decode to `FREE LOVE?`
+`rot13("SERR YBIR?")` debe decodificarse en la cadena `FREE LOVE?`
 
 ```js
 assert(rot13('SERR YBIR?') === 'FREE LOVE?');
 ```
 
-`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` should decode to `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
+`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` debe decodificarse en la cadena `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
 
 ```js
 assert(

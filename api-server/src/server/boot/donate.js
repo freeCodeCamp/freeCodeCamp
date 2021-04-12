@@ -11,9 +11,13 @@ import {
 import {
   durationKeysConfig,
   donationOneTimeConfig,
-  donationSubscriptionConfig
+  donationSubscriptionConfig,
+  durationsConfig,
+  onetimeSKUConfig,
+  donationUrls
 } from '../../../../config/donation-settings';
 import keys from '../../../../config/secrets';
+import { deploymentEnv } from '../../../../config/env';
 
 const log = debug('fcc:boot:donate');
 
@@ -246,6 +250,53 @@ export default function donateBoot(app, done) {
       });
   }
 
+  async function createStripeSession(req, res) {
+    const {
+      body,
+      body: { donationAmount, donationDuration }
+    } = req;
+    if (!body) {
+      return res
+        .status(500)
+        .send({ type: 'danger', message: 'Request has not completed.' });
+    }
+    const isSubscription = donationDuration !== 'onetime';
+    const getSKUId = () => {
+      const { id } = onetimeSKUConfig[deploymentEnv || 'staging'].find(
+        skuConfig => skuConfig.amount === `${donationAmount}`
+      );
+      return id;
+    };
+    const price = isSubscription
+      ? `${durationsConfig[donationDuration]}-donation-${donationAmount}`
+      : getSKUId();
+
+    /* eslint-disable camelcase */
+    try {
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [
+          {
+            price,
+            quantity: 1
+          }
+        ],
+        metadata: { ...body },
+        mode: isSubscription ? 'subscription' : 'payment',
+        success_url: donationUrls.successUrl,
+        cancel_url: donationUrls.cancelUrl
+      });
+      /* eslint-enable camelcase */
+      return res.status(200).json({ id: session.id });
+    } catch (err) {
+      log(err.message);
+      return res.status(500).send({
+        type: 'danger',
+        message: 'Something went wrong.'
+      });
+    }
+  }
+
   function updatePaypal(req, res) {
     const { headers, body } = req;
     return Promise.resolve(req)
@@ -284,6 +335,7 @@ export default function donateBoot(app, done) {
     done();
   } else {
     api.post('/charge-stripe', createStripeDonation);
+    api.post('/create-stripe-session', createStripeSession);
     api.post('/add-donation', addDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);

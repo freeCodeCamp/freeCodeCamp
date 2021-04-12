@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908848
-title: Create Bootstrap Wells
+title: Crea Bootstrap wells
 challengeType: 0
 forumTopicId: 16825
 dashedName: create-bootstrap-wells
@@ -8,25 +8,25 @@ dashedName: create-bootstrap-wells
 
 # --description--
 
-Bootstrap has a class called `well` that can create a visual sense of depth for your columns.
+Bootstrap tiene una clase llamada `well` (pozo) que puede crear una ilusión visual de profundidad en las columnas.
 
-Nest one `div` element with the class `well` within each of your `col-xs-6` `div` elements.
+Incrusta un elemento `div` con la clase `well` en cada uno de los elementos `col-xs-6` y `div`.
 
 # --hints--
 
-You should add a `div` element with the class `well` inside each of your `div` elements with the class `"col-xs-6"`
+Debes añadir un elemento `div` con la clase `well` dentro de cada uno de los elementos `div` con la clase `col-xs-6`
 
 ```js
 assert($('div.col-xs-6').not(':has(>div.well)').length < 1);
 ```
 
-Both of your `div` elements with the class `"col-xs-6"` should be nested within your `div` element with the class `"row"`.
+Ambos elementos `div` con la clase `col-xs-6` deben estar incrustados en el elemento `div` con la clase `row`.
 
 ```js
 assert($('div.row > div.col-xs-6').length > 1);
 ```
 
-All your `div` elements should have closing tags.
+Todos los elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(

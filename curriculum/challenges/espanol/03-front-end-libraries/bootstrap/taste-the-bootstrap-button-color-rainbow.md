@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08811
-title: Taste the Bootstrap Button Color Rainbow
+title: Prueba el arcoíris de colores del botón de Bootstrap
 challengeType: 0
 forumTopicId: 18323
 dashedName: taste-the-bootstrap-button-color-rainbow
@@ -8,27 +8,27 @@ dashedName: taste-the-bootstrap-button-color-rainbow
 
 # --description--
 
-The `btn-primary` class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
+La clase `btn-primary` es el color principal que usarás en tu aplicación. Es útil para resaltar las acciones que quieres que tome tu usuario.
 
-Replace Bootstrap's `btn-default` class with `btn-primary` in your button.
+Reemplaza la clase de Bootstrap `btn-default` con `btn-primary` en tu botón.
 
-Note that this button will still need the `btn` and `btn-block` classes.
+Ten en cuenta que este botón todavía necesitará las clases `btn` y `btn-block`.
 
 # --hints--
 
-Your button should have the class `btn-primary`.
+Tu botón debe tener la clase `btn-primary`.
 
 ```js
 assert($('button').hasClass('btn-primary'));
 ```
 
-Your button should still have the `btn` and `btn-block` classes.
+Tu botón debe tener las clases `btn` y `btn-block`.
 
 ```js
 assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
 ```
 
-All your `button` elements should have closing tags.
+Todos tus elementos de tipo `button` deben tener etiquetas de cierre.
 
 ```js
 assert(

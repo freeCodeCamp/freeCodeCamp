@@ -18,13 +18,15 @@ D3 中，比例尺可帮助布局数据。 `scales` 是函数，它告诉程序�
 
 D3 有几种缩放类型。 对于线性缩放（通常使用于定量数据），使用 D3 的 `scaleLinear()` 方法：
 
-`const scale = d3.scaleLinear()`
+```js
+const scale = d3.scaleLinear()
+```
 
-默认情况下，比例尺使用一比一的比例， 输出的值和输入的值相同。 后面的挑战将涉及如何改变默认比例。
+默认情况下，比例尺使用一对一关系（identity relationship）。 输入的值和输出的值相同。 后面的挑战将涉及如何改变默认比例。
 
 # --instructions--
 
-改变 `scale` 变量的值，创建线性缩放。 然后将 `output` 变量设置为 scale 函数，调用函数时传入参数 `50`。
+更改 `scale` 变量，以创建线性比例。 然后将 `output` 变量设置为 scale 函数，调用函数时传入参数 `50`。
 
 # --hints--
 

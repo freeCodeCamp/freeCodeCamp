@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b87
-title: Add Methods After Inheritance
+title: Añade métodos después de la herencia
 challengeType: 1
 forumTopicId: 301315
 dashedName: add-methods-after-inheritance
@@ -8,9 +8,9 @@ dashedName: add-methods-after-inheritance
 
 # --description--
 
-A constructor function that inherits its `prototype` object from a supertype constructor function can still have its own methods in addition to inherited methods.
+Una función constructor que hereda su objeto `prototype` de una función constructor "supertype" puede seguir teniendo sus propios métodos además de los heredados.
 
-For example, `Bird` is a constructor that inherits its `prototype` from `Animal`:
+Por ejemplo, `Bird` es un constructor que hereda su `prototype` de `Animal`:
 
 ```js
 function Animal() { }
@@ -22,7 +22,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-In addition to what is inherited from `Animal`, you want to add behavior that is unique to `Bird` objects. Here, `Bird` will get a `fly()` function. Functions are added to `Bird's` `prototype` the same way as any constructor function:
+Además de lo que se hereda de `Animal`, se quiere añadir un comportamiento que sea exclusivo de los objetos `Bird`. Aquí, `Bird` obtendrá una función `fly()`. Las funciones se añaden al `prototype` de `Bird's` del mismo modo que cualquier función constructor:
 
 ```js
 Bird.prototype.fly = function() {
@@ -30,51 +30,53 @@ Bird.prototype.fly = function() {
 };
 ```
 
-Now instances of `Bird` will have both `eat()` and `fly()` methods:
+Ahora las instancias de `Bird` tendrán métodos tanto `eat()` como `fly()`:
 
 ```js
 let duck = new Bird();
-duck.eat(); // prints "nom nom nom"
-duck.fly(); // prints "I'm flying!"
+duck.eat();
+duck.fly();
 ```
+
+`duck.eat()` mostrará la cadena `nom nom nom` en consola, y `duck.fly()` mostrará la cadena `I'm flying!`.
 
 # --instructions--
 
-Add all necessary code so the `Dog` object inherits from `Animal` and the `Dog's` `prototype` constructor is set to Dog. Then add a `bark()` method to the `Dog` object so that `beagle` can both `eat()` and `bark()`. The `bark()` method should print "Woof!" to the console.
+Añade el código necesario para que el objeto `Dog` herede de `Animal` y el constructor `prototype` de `Dog` sea establecido en `Dog`. A continuación agrega el método `bark()` al objeto `Dog`, para que `beagle` pueda "comer" `eat()` y "ladrar" `bark()`. El método `bark()` debe imprimir `Woof!` por consola.
 
 # --hints--
 
-`Animal` should not respond to the `bark()` method.
+`Animal` no debe responder al método `bark()`.
 
 ```js
 assert(typeof Animal.prototype.bark == 'undefined');
 ```
 
-`Dog` should inherit the `eat()` method from `Animal`.
+`Dog` debe heredar el método `eat()` de `Animal`.
 
 ```js
 assert(typeof Dog.prototype.eat == 'function');
 ```
 
-`Dog` should have the `bark()` method as an `own` property.
+`Dog` debe tener el método `bark()` como una propiedad propia `own`.
 
 ```js
 assert(Dog.prototype.hasOwnProperty('bark'));
 ```
 
-`beagle` should be an `instanceof` `Animal`.
+`beagle` debe ser una instancia de (`instanceof`) `Animal`.
 
 ```js
 assert(beagle instanceof Animal);
 ```
 
-The constructor for `beagle` should be set to `Dog`.
+El constructor para `beagle` debe establecerse en `Dog`.
 
 ```js
 assert(beagle.constructor === Dog);
 ```
 
-`beagle.eat()` should log `"nom nom nom"`
+`beagle.eat()` debe imprimir la cadena `nom nom nom`
 
 ```js
 console.log = function (msg) {
@@ -83,7 +85,7 @@ console.log = function (msg) {
 assert.throws(() => beagle.eat(), 'nom nom nom');
 ```
 
-`beagle.bark()` should log `"Woof!"`
+`beagle.bark()` debe imprimir la cadena `Woof!`
 
 ```js
 console.log = function (msg) {

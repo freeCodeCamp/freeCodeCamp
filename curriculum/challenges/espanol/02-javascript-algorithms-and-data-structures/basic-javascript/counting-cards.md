@@ -17,9 +17,7 @@ Tener más cartas altas en la baraja es una ventaja para el jugador. Se le asign
 
 Escribirás una función para contar cartas. Recibirá un parámetro `card` (carta) que puede ser un número o una cadena y aumentar o reducir la variable global `count` (conteo) de acuerdo al valor de la carta (observa la tabla). La función devolverá una cadena con el conteo actual y la cadena `Bet` (Apuesta) si el conteo es positivo, o `Hold` (Espera) si el conteo es cero o negativo. El conteo actual y la decisión del jugador (`Bet` o `Hold`) deben estar separados por un solo espacio.
 
-**Ejemplo de salida**  
-`-3 Hold`  
-`5 Bet`
+**Resultados de ejemplo:** `-3 Hold` o `5 Bet`
 
 **Sugerencia**  
 NO reinicies `count` a 0 cuando el valor sea 7, 8 o 9. NO devuelvas un arreglo.  

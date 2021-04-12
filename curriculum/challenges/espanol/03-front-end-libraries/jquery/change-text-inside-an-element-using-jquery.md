@@ -1,6 +1,6 @@
 ---
 id: 564944c91be2204b269d51e3
-title: Change Text Inside an Element Using jQuery
+title: Cambia el texto dentro de un elemento usando jQuery
 challengeType: 6
 forumTopicId: 16773
 dashedName: change-text-inside-an-element-using-jquery
@@ -8,25 +8,27 @@ dashedName: change-text-inside-an-element-using-jquery
 
 # --description--
 
-Using jQuery, you can change the text between the start and end tags of an element. You can even change HTML markup.
+Usando jQuery, puedes cambiar el texto entre las etiquetas de inicio y fin de un elemento. Puedes incluso cambiar el código HTML.
 
-jQuery has a function called `.html()` that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.
+jQuery tiene una función llamada `.html()` que te permite añadir etiquetas HTML y texto dentro de un elemento. Cualquier contenido anterior dentro del elemento será completamente reemplazado con el contenido que proporciones usando esta función.
 
-Here's how you would rewrite and emphasize the text of our heading:
+Así es como se reescribiría y enfatizaría el texto de nuestro título:
 
-`$("h3").html("<em>jQuery Playground</em>");`
+```js
+$("h3").html("<em>jQuery Playground</em>");
+```
 
-jQuery also has a similar function called `.text()` that only alters text without adding tags. In other words, this function will not evaluate any HTML tags passed to it, but will instead treat it as the text you want to replace the existing content with.
+jQuery también tiene una función similar llamada `.text()` que solo altera el texto sin añadir etiquetas. En otras palabras, esta función no evaluará las etiquetas HTML que se le pasen. En cambio, lo tomará como el texto con el que quieres reemplazar el contenido existente.
 
-Change the button with id `target4` by emphasizing its text.
+Cambia el botón con id `target4`, enfatizando su texto.
 
-[View our news article for &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) to learn the difference between `<i>` and `<em>` and their uses.
+[ Ve a nuestro artículo sobre &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) para aprender la diferencia entre `<i>` y `<em>` y sus usos.
 
-Note that while the `<i>` tag has traditionally been used to emphasize text, it has since been adopted for use as a tag for icons. The `<em>` tag is now widely accepted as the tag for emphasis. Either will work for this challenge.
+Ten en cuenta que, aunque la etiqueta `<i>` se ha utilizado tradicionalmente para enfatizar texto, se ha adoptado su uso desde entonces como etiqueta para íconos. La etiqueta `<em>` es ahora ampliamente aceptada como la etiqueta de énfasis. Cualquiera de las dos servirá para este desafío.
 
 # --hints--
 
-You should emphasize the text in your `target4` button by adding HTML tags.
+Debes enfatizar el texto en el botón `target4` añadiendo etiquetas HTML.
 
 ```js
 assert.isTrue(
@@ -34,25 +36,25 @@ assert.isTrue(
 );
 ```
 
-The text should otherwise remain unchanged.
+De lo contrario, el texto debe permanecer inalterado.
 
 ```js
 assert($('#target4') && $('#target4').text().trim() === '#target4');
 ```
 
-You should not alter any other text.
+No debes modificar ningún otro texto.
 
 ```js
 assert.isFalse(/<em>|<i>/gi.test($('h3').html()));
 ```
 
-You should be using `.html()` and not `.text()`.
+Debes usar `.html()` y no `.text()`.
 
 ```js
 assert(code.match(/\.html\(/g));
 ```
 
-You should select `button id="target4"` with jQuery.
+Debes seleccionar `button id="target4"` con jQuery.
 
 ```js
 assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));

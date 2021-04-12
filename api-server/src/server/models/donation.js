@@ -7,7 +7,7 @@ import InMemoryCache from '../utils/in-memory-cache';
 const log = debug('fcc:boot:donate');
 const fiveMinutes = 1000 * 60 * 5;
 
-export default function (Donation) {
+export default function initializeDonation(Donation) {
   let activeDonationUpdateInterval = null;
   const activeDonationCountCacheTTL = fiveMinutes;
   const activeDonationCountCache = InMemoryCache(0, reportError);

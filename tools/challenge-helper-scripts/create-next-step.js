@@ -4,7 +4,7 @@ const path = require('path');
 const {
   reorderSteps,
   createStepFile,
-  getChallengeSeed,
+  getChallengeSeeds,
   getProjectPath
 } = require('./utils');
 
@@ -28,14 +28,14 @@ const getLastStepFileContent = () => {
 
   return {
     nextStepNum: lastStepFileNum + 1,
-    challengeSeed: getChallengeSeed(projectPath + fileName)
+    challengeSeeds: getChallengeSeeds(projectPath + fileName)
   };
 };
 
 const projectPath = getProjectPath();
 
-const { nextStepNum, challengeSeed } = getLastStepFileContent();
+const { nextStepNum, challengeSeeds } = getLastStepFileContent();
 
-createStepFile({ stepNum: nextStepNum, projectPath, challengeSeed });
+createStepFile({ stepNum: nextStepNum, projectPath, challengeSeeds });
 console.log(`Sucessfully added step #${nextStepNum}`);
 reorderSteps();

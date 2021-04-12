@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, Spacer } from '../../helpers';
-import { forumLocation } from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
 import { Trans, useTranslation } from 'react-i18next';
 
 import '../intro.css';
 
+const { forumLocation } = envData;
 function IntroDescription() {
   const { t } = useTranslation();
 

@@ -9,7 +9,7 @@ const failureRedirect = `${homeLocation}/signin`;
 
 // TODO: can we remove passport-mock-strategy entirely in prod? That would let
 // us make passport-mock-strategy a dev dep, as it should be.
-export default {
+const passportProviders = {
   devlogin: {
     authScheme: 'mock',
     provider: 'dev',
@@ -45,3 +45,5 @@ export default {
     failureFlash: true
   }
 };
+
+export default passportProviders;

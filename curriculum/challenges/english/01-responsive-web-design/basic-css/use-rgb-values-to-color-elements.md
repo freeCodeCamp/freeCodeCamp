@@ -27,7 +27,7 @@ Instead of using six hexadecimal digits like you do with hex code, with `RGB` yo
 
 If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So `RGB`, which starts counting from zero, has the exact same number of possible values as hex code.
 
-Here's an example of how you'd change the body background to orange using its RGB code.
+Here's an example of how you'd change the `body` background to orange using its RGB code.
 
 ```css
 body {
@@ -47,7 +47,7 @@ Your `body` element should have a black background.
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-You should use `rgb` to give your `body` element a color of black.
+You should use `rgb` to give your `body` element a background of black.
 
 ```js
 assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));

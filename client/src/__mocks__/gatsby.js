@@ -4,7 +4,9 @@ const React = require('react');
 
 const gatsby = jest.requireActual('gatsby');
 
-const { clientLocale } = require('../../../config/env.json');
+const envData = require('../../../config/env.json');
+
+const { clientLocale } = envData;
 
 module.exports = {
   ...gatsby,

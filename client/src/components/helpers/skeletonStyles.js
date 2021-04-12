@@ -1,4 +1,4 @@
-export default `
+const styles = `
 
 .sprite-container {
   height: 100%;
@@ -71,3 +71,5 @@ export default `
   animation-direction: normal;
 }
 `;
+
+export default styles;

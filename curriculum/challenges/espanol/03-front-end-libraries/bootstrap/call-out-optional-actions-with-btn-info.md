@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08813
-title: Call out Optional Actions with btn-info
+title: Llama a acciones opcionales con btn-info
 challengeType: 0
 forumTopicId: 16770
 dashedName: call-out-optional-actions-with-btn-info
@@ -8,33 +8,33 @@ dashedName: call-out-optional-actions-with-btn-info
 
 # --description--
 
-Bootstrap comes with several pre-defined colors for buttons. The `btn-info` class is used to call attention to optional actions that the user can take.
+Bootstrap viene con diferentes colores predefinidos para botones. La clase `btn-info` se utiliza para llamar la atención sobre las acciones opcionales que el usuario puede realizar.
 
-Create a new block-level Bootstrap button below your "Like" button with the text "Info", and add Bootstrap's `btn-info` and `btn-block` classes to it.
+Crea un nuevo botón de Bootstrap debajo de tu botón `Like` con el texto `Info` y añádele las clases de Bootstrap `btn-info` y `btn-block`.
 
-Note that these buttons still need the `btn` and `btn-block` classes.
+Ten en cuenta que estos botones todavía necesitan las clases `btn` y `btn-block`.
 
 # --hints--
 
-You should create a new `button` element with the text "Info".
+Debes crear un nuevo elemento `button` con el texto `Info`.
 
 ```js
 assert(new RegExp('info', 'gi').test($('button').text()));
 ```
 
-Both of your Bootstrap buttons should have the `btn` and `btn-block` classes.
+Ambos botones deben tener las clases `btn` y `btn-block`.
 
 ```js
 assert($('button.btn-block.btn').length > 1);
 ```
 
-Your new button should have the class `btn-info`.
+Tu nuevo botón debe tener la clase `btn-info`.
 
 ```js
 assert($('button').hasClass('btn-info'));
 ```
 
-All of your `button` elements should have closing tags.
+Todos los elementos `button` deben tener etiquetas de cierre.
 
 ```js
 assert(
