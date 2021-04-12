@@ -22,7 +22,8 @@ jobs:
           --build-arg API_LOCATION \
           --build-arg FORUM_LOCATION \
           --build-arg NEWS_LOCATION \
-          --build-arg LOCALE \
+          --build-arg CLIENT_LOCALE \
+          --build-arg CURRICULUM_LOCALE \
           --build-arg SHOW_UPCOMING_CHANGES \
           --build-arg ALGOLIA_APP_ID \
           --build-arg ALGOLIA_API_KEY \
