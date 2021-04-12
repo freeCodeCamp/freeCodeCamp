@@ -14,21 +14,23 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v2
       - name: Build Client Image
+      # TODO: hardcoding the .env vars for testing - replace with env or repo
+      # secrets when done?
         run: |
           DOCKER_BUILDKIT=1 docker build \
-          --build-arg FREECODECAMP_NODE_ENV \
-          --build-arg STRIPE_PUBLIC_KEY \
-          --build-arg HOME_LOCATION \
-          --build-arg API_LOCATION \
-          --build-arg FORUM_LOCATION \
-          --build-arg NEWS_LOCATION \
-          --build-arg CLIENT_LOCALE \
-          --build-arg CURRICULUM_LOCALE \
-          --build-arg SHOW_UPCOMING_CHANGES \
-          --build-arg ALGOLIA_APP_ID \
-          --build-arg ALGOLIA_API_KEY \
-          --build-arg PAYPAL_CLIENT_ID \
-          --build-arg DEPLOYMENT_ENV \
+          --build-arg FREECODECAMP_NODE_ENV=development \
+          --build-arg STRIPE_PUBLIC_KEY=pk_from_stripe_dashboard \
+          --build-arg HOME_LOCATION=http://localhost:8000 \
+          --build-arg API_LOCATION=http://localhost:3000 \
+          --build-arg FORUM_LOCATION=https://forum.freecodecamp.org \
+          --build-arg NEWS_LOCATION=https://www.freecodecamp.org/news \
+          --build-arg CLIENT_LOCALE=english \
+          --build-arg CURRICULUM_LOCALE=english \
+          --build-arg SHOW_UPCOMING_CHANGES=false \
+          --build-arg ALGOLIA_APP_ID=app_id_from_algolia_dashboard \
+          --build-arg ALGOLIA_API_KEY=api_key_from_algolia_dashboard \
+          --build-arg PAYPAL_CLIENT_ID=id_from_paypal_dashboard \
+          --build-arg DEPLOYMENT_ENV=staging \
           -t fcc_client .
           mkdir client-artifact
           cp docker-compose.yml client-artifact
