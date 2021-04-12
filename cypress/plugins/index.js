@@ -9,6 +9,8 @@ module.exports = on => {
       let blockMeta = [];
       let challengePaths = [];
 
+      // Get blocks in current superblock
+
       targetBlock.forEach(superblock => {
         let blockArr = fs.readdirSync(
           path.resolve(`./curriculum/challenges/english/${superblock}`)
@@ -26,10 +28,13 @@ module.exports = on => {
 
         blockMeta.forEach(block => {
           if (!env.showUpcomingChanges && !block.isUpcomingChange) {
+            // If upcoming changes is false push released challenges
             block.challengeOrder.forEach(challengeTitle => {
+              // Parse challenge names and remove any explicit characters
+
               challengeTitle[1] = challengeTitle[1].toLowerCase();
               challengeTitle[1] = challengeTitle[1].replace(/\s+/g, '-');
-              challengeTitle[1] = challengeTitle[1].replace("'", '');
+              challengeTitle[1] = challengeTitle[1].replace(/[@$'&?]/g, '');
 
               challengePaths.push(
                 `/learn/${targetBlock[0].slice(3)}/${block.dashedName}/${
@@ -37,11 +42,15 @@ module.exports = on => {
                 }`
               );
             });
-          } else if (env.showUpcomingChanges && block.isUpcomingChange) {
+            // If upcoming changes is true also push upcomming changes
+          } else if (
+            (env.showUpcomingChanges && block.isUpcomingChange) ||
+            !block.isUpcomingChange
+          ) {
             block.challengeOrder.forEach(challengeTitle => {
               challengeTitle[1] = challengeTitle[1].toLowerCase();
               challengeTitle[1] = challengeTitle[1].replace(/\s+/g, '-');
-              challengeTitle[1] = challengeTitle[1].replace("'", '');
+              challengeTitle[1] = challengeTitle[1].replace(/[@$'&?]/g, '');
 
               challengePaths.push(
                 `/learn/${targetBlock[0].slice(3)}/${block.dashedName}/${
