@@ -20,7 +20,7 @@ import createWorker from '../utils/worker-executor';
 import { filename as sassCompile } from '../../../../../config/client/sass-compile';
 
 const protectTimeout = 100;
-const recursionTimeout = 900;
+const recursionTimeout = 700;
 const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 2000;
 
