@@ -13,7 +13,7 @@ Starting below the existing coffee/price pair, add the following coffees and pri
 Carmel Macchiato 3.75
 Pumpkin Spice 3.50
 Hazelnut 4.00
-Mocah 4.50
+Mocha 4.50
 ```
 
 # --hints--

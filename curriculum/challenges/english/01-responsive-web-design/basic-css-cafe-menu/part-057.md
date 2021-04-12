@@ -1,13 +1,15 @@
 ---
-id: 5f3ef6e04559b939080db057
+id: 5f3ef6e03d719d5ac4738993
 title: Part 57
 challengeType: 0
-dashedName: part-57
+dashedName: part-58
 ---
 
 # --description--
 
-Since all 4 sides of the menu have the same internal spacing, go ahead and delete the four properties and use a single `padding` property with the value `20px`.
+The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
+
+Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
 
 # --hints--
 
@@ -91,10 +93,7 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 --fcc-editable-region--
 

@@ -1,15 +1,13 @@
 ---
-id: 5f45b45d099f3e621fbbb256
+id: 5f45b4c81cea7763550e40df
 title: Part 84
 challengeType: 0
-dashedName: part-84
+dashedName: part-85
 ---
 
 # --description--
 
-You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
-
-Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
+To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked.
 
 # --hints--
 
@@ -159,6 +157,7 @@ a {
   color: black;
 }
 
+--fcc-editable-region--
 a:visited {
   color: grey;
 }
@@ -167,8 +166,9 @@ a:hover {
   color: brown;
 }
 
---fcc-editable-region--
-
+a:active {
+  color: white;
+}
 --fcc-editable-region--
 ```
 

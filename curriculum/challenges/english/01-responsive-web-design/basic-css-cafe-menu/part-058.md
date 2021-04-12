@@ -1,15 +1,15 @@
 ---
-id: 5f3ef6e03d719d5ac4738993
+id: 5f3ef6e05473f91f948724ab
 title: Part 58
 challengeType: 0
-dashedName: part-58
+dashedName: part-59
 ---
 
 # --description--
 
-The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
+You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
 
-Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`. This is a fairly common font that is very readable.
 
 # --hints--
 
@@ -79,23 +79,24 @@ Test 1
 ```
 
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
 }
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+  max-width: 500px;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;

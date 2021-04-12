@@ -1,15 +1,13 @@
 ---
-id: 5f45a276c093334f0f6e9df4
+id: 5f45a5a7c49a8251f0bdb527
 title: Part 75
 challengeType: 0
-dashedName: part-75
+dashedName: part-76
 ---
 
 # --description--
 
-Focusing on the menu items and prices, there is a fairly large gap between each line.
-
-Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
+Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
 
 # --hints--
 
@@ -124,14 +122,17 @@ hr {
   border-color: brown;
 }
 
---fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
 
+--fcc-editable-region--
 .item p {
   display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+--fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;
@@ -142,6 +143,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
---fcc-editable-region--
 ```
 

@@ -1,15 +1,13 @@
 ---
-id: 5f459cf202c2a3472fae6a9f
+id: 5f459fd48bdc98491ca6d1a3
 title: Part 72
 challengeType: 0
-dashedName: part-72
+dashedName: part-73
 ---
 
 # --description--
 
-Notice how the thickness of the line looks bigger? The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
-
-Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
+Go ahead and add another `hr` element between the `main` element and the `footer` element.
 
 # --hints--
 
@@ -39,6 +37,7 @@ Test 1
         <p class="established">Est. 2020</p>
       </header>
       <hr>
+--fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,6 +79,7 @@ Test 1
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+--fcc-editable-region--
     </div>
   </body>
 <html>
@@ -116,13 +116,11 @@ h1, h2, p {
   max-width: 500px;
 }
 
---fcc-editable-region--
 hr {
-  height: 3px;
+  height: 2px;
   background-color: brown;
   border-color: brown;
 }
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

@@ -1,13 +1,13 @@
 ---
-id: 5f3ef6e0a81099d9a697b550
+id: 5f3ef6e0b431cc215bb16f55
 title: Part 66
 challengeType: 0
-dashedName: part-66
+dashedName: part-67
 ---
 
 # --description--
 
-Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
+Add a second `p` element below the one with the link and give it the text `123 freeCodeCamp Drive`.
 
 # --hints--
 
@@ -71,10 +71,13 @@ Test 1
           </article>
         </section>
       </main>
---fcc-editable-region--
       <footer>
-      </footer>
 --fcc-editable-region--
+        <p>
+          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
+        </p>
+--fcc-editable-region--
+      </footer>
     </div>
   </body>
 <html>

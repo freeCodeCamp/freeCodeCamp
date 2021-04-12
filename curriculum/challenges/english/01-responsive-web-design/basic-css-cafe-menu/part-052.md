@@ -7,7 +7,7 @@ dashedName: part-52
 
 # --description--
 
-Something does not look right. You added the correct `class` attribute value to the `p` element with `Donunt` as its text, but you have not defined a selector for it.
+Something does not look right. You added the correct `class` attribute value to the `p` element with `Donut` as its text, but you have not defined a selector for it.
 
 Since the `flavor` class selector already has the properties you want, just add the `dessert` class name to it.
 

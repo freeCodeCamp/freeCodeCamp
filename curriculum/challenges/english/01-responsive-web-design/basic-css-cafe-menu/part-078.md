@@ -1,13 +1,13 @@
 ---
-id: 5f4701b942c824109626c3d8
+id: 5f46ede1ff8fec5ba656b44c
 title: Part 78
 challengeType: 0
-dashedName: part-78
+dashedName: part-79
 ---
 
 # --description--
 
-Now add the `bottom-line` class to the second `hr` element so the styling is applied.
+Next you are going to be styling the `footer` element. To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
 
 # --hints--
 
@@ -72,10 +72,7 @@ Test 1
           </article>
         </section>
       </main>
---fcc-editable-region--
-      <hr>
---fcc-editable-region--
-      <footer>
+      <hr class="bottom-line">
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -136,7 +133,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .flavor, .dessert {
@@ -148,5 +145,10 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 ```
 

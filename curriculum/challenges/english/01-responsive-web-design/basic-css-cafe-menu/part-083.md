@@ -1,15 +1,15 @@
 ---
-id: 5f45b3c93c027860d9298dbd
+id: 5f45b45d099f3e621fbbb256
 title: Part 83
 challengeType: 0
-dashedName: part-83
+dashedName: part-84
 ---
 
 # --description--
 
-You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue; }`.
+You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
 
-Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
+Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
 
 # --hints--
 
@@ -163,8 +163,13 @@ a:visited {
   color: grey;
 }
 
+a:hover {
+  color: brown;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
 

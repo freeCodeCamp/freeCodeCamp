@@ -1,15 +1,15 @@
 ---
-id: 5f3ef6e01f288a026d709587
+id: 5f3f26fa39591db45e5cd7a0
 title: Part 68
 challengeType: 0
-dashedName: part-68
+dashedName: part-69
 ---
 
 # --description--
 
-You can use an `hr` element to display a divider between sections of different content.
+The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
 
-First, add an `hr` element between the first `header` element and the `main` element.
+Change the height the `hr` element to be `3px`.
 
 # --hints--
 
@@ -34,11 +34,11 @@ Test 1
   </head>
   <body>
     <div class="menu">
---fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
+      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -74,7 +74,6 @@ Test 1
           </article>
         </section>
       </main>
---fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -116,6 +115,10 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

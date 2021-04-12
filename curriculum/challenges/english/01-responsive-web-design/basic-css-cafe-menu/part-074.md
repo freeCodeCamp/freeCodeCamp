@@ -1,13 +1,15 @@
 ---
-id: 5f45a05977e2fa49d9119437
+id: 5f45a276c093334f0f6e9df4
 title: Part 74
 challengeType: 0
-dashedName: part-74
+dashedName: part-75
 ---
 
 # --description--
 
-To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
+Focusing on the menu items and prices, there is a fairly large gap between each line.
+
+Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
 
 # --hints--
 
@@ -85,12 +87,11 @@ Test 1
 ```
 
 ```css
---fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
+  padding: 20px;
 }
---fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -123,6 +124,7 @@ hr {
   border-color: brown;
 }
 
+--fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
@@ -140,5 +142,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
+--fcc-editable-region--
 ```
 

@@ -1,13 +1,15 @@
 ---
-id: 5f45a5a7c49a8251f0bdb527
+id: 5f46fc57528aa1c4b5ea7c2e
 title: Part 76
 challengeType: 0
-dashedName: part-76
+dashedName: part-77
 ---
 
 # --description--
 
-Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
+Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+
+Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
 # --hints--
 
@@ -122,17 +124,20 @@ hr {
   border-color: brown;
 }
 
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 h1, h2 {
   font-family: Impact, serif;
 }
 
---fcc-editable-region--
 .item p {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-size: 18px;
 }
---fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;
