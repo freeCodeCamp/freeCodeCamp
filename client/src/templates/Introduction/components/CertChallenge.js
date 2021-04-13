@@ -61,7 +61,7 @@ export class CertChallenge extends Component {
 
     const cert = certMap.find(x => x.title === title);
     const isCertified = userCertificates[superBlock];
-    const certLocation = `/certification/${username}/${cert.slug}`;
+    const certLocation = `/certification/${username}/${cert.certSlug}`;
     const certCheckmarkStyle = { height: '40px', width: '40px' };
     const i18nSuperBlock = t(`intro:${superBlock}.title`);
     const i18nCertText = t(`intro:misc-text.certification`, {
