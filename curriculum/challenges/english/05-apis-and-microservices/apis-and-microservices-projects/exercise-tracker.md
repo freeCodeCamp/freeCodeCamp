@@ -102,7 +102,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users/{_id}/logs` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
+You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
 
 ```js
 async (getUserInput) => {
