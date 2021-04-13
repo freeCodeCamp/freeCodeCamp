@@ -19,10 +19,11 @@ import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/propTypes';
 
 import './intro.css';
 
@@ -47,7 +48,8 @@ const propTypes = {
   }),
   resetExpansion: PropTypes.func,
   t: PropTypes.func,
-  toggleBlock: PropTypes.func
+  toggleBlock: PropTypes.func,
+  user: User
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -57,10 +59,12 @@ const mapStateToProps = state => {
     currentChallengeIdSelector,
     isSignedInSelector,
     userFetchStateSelector,
-    (currentChallengeId, isSignedIn, fetchState) => ({
+    userSelector,
+    (currentChallengeId, isSignedIn, fetchState, user) => ({
       currentChallengeId,
       isSignedIn,
-      fetchState
+      fetchState,
+      user
     })
   )(state);
 };
@@ -137,7 +141,8 @@ class SuperBlockIntroductionPage extends Component {
         allChallengeNode: { edges }
       },
       isSignedIn,
-      t
+      t,
+      user
     } = this.props;
 
     const nodesForSuperBlock = edges.map(({ node }) => node);
@@ -174,7 +179,11 @@ class SuperBlockIntroductionPage extends Component {
                 ))}
                 {superBlock !== 'coding-interview-prep' && (
                   <div>
-                    <CertChallenge superBlock={superBlock} title={title} />
+                    <CertChallenge
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
                   </div>
                 )}
               </div>
