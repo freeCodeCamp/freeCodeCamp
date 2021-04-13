@@ -66,7 +66,7 @@ async (getUserInput) => {
 };
 ```
 
-You can `POST` to `/api/users/{_id}/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.
+You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
