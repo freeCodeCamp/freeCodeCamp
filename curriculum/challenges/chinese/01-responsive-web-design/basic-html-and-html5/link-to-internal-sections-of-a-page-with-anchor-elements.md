@@ -34,31 +34,25 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 页面中应只存在一个 `footer` 元素。
 
 ```js
-assert($('a').length == 1);
+assert($('footer').length == 1);
 ```
 
 `a` 的 `href` 属性值应为 `#footer`。
 
 ```js
-assert($('footer').length == 1);
+assert($('a').eq(0).attr('href') == '#footer');
 ```
 
 `a` 不应有 `target` 属性。
 
 ```js
-assert($('a').eq(0).attr('href') == '#footer');
-```
-
-`a` 的内容文本应为 `Jump to Bottom`。
-
-```js
 assert(
   typeof $('a').eq(0).attr('target') == typeof undefined ||
-    $('a').eq(0).attr('target') == true
+    $('a').eq(0).attr('target') == false
 );
 ```
 
-`footer` 元素的 `id` 属性值应为 `footer`。
+`a` 的内容文本应为 `Jump to Bottom`。
 
 ```js
 assert(
@@ -72,7 +66,7 @@ assert(
 `footer` 标签应该有一个 `id` 属性，值为 “footer”。
 
 ```js
-assert($('footer').eq(0).attr('id') == 'footer');
+assert($('footer').eq(0).attr('id') == '#footer');
 ```
 
 # --seed--
