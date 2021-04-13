@@ -26,7 +26,7 @@
     "js-yaml": "3.14.1",
     "lodash": "4.17.20",
     "mdast-builder": "1.1.1",
-    "mdast-util-gfm": "0.1.0",
+    "mdast-util-gfm": "0.1.2",
     "mdast-util-to-hast": "9.1.2",
     "micromark-extension-gfm-strikethrough": "0.6.1",
     "micromark-extension-gfm-table": "0.4.1",
