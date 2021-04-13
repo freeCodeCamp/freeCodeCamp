@@ -13,10 +13,22 @@ Add the `<!DOCTYPE html>` and an `html` element.
 
 # --hints--
 
-Test 1
+You should have the `DOCTYPE` declaration.
 
 ```js
+assert(code.match(/<!DOCTYPE html>/i));
+```
 
+You should have an opening `<html>` tag.
+
+```js
+assert(code.match(/<html>/i));
+```
+
+You should have a closing `<html>` tag. Remember that closing tags have a `/` following the opening `<` bracket.
+
+```js
+assert(code.match(/<\/html>/i));
 ```
 
 # --seed--

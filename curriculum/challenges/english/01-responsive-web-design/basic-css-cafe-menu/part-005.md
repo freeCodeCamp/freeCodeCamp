@@ -11,10 +11,22 @@ The name of the cafe is `Camper Cafe`. Add an `h1` element with the name of the 
 
 # --hints--
 
-Test 1
+You should have an opening `<h1>` tag.
 
 ```js
+assert(code.match(/<h1>/i));
+```
 
+You should have a closing `</h1>` tag.
+
+```js
+assert(code.match(/<\/h1>/i));
+```
+
+Your `h1` tag should have the text `Camper Cafe` in capital letters.
+
+```js
+assert(code.match(/<h1>CAMPER CAFE<\/h1>/));
 ```
 
 # --seed--

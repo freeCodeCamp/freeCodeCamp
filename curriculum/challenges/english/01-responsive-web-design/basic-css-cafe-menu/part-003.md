@@ -13,10 +13,22 @@ Inside the `head` element, nest a `meta` element with an attribute named `charse
 
 # --hints--
 
-Test 1
+You should have a `meta` tag.
 
 ```js
+assert(code.match(/<meta\s.*>/i));
+```
 
+Your `meta` tag should have a `charset` attribute.
+
+```js
+assert(code.match(/<meta charset=/i));
+```
+
+Your `charset` attribute should have a value of `utf-8`.
+
+```js
+assert(code.match(/charset=['"]utf-8['"]/i));
 ```
 
 # --seed--
