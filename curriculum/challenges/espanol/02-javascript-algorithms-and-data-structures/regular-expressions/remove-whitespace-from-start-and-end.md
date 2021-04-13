@@ -21,7 +21,7 @@ Escribe una expresión regular y usa los métodos de cadena apropiados para elim
 `result` debe ser igual a la cadena `Hello, World!`
 
 ```js
-assert(result == 'Hello, World!');
+assert(result === 'Hello, World!');
 ```
 
 Tu solución no debe usar el método `String.prototype.trim()`.
@@ -30,10 +30,10 @@ Tu solución no debe usar el método `String.prototype.trim()`.
 assert(!code.match(/\.?[\s\S]*?trim/));
 ```
 
-La variable `result` no debe ser igual a una cadena.
+La variable `result` no debe ser igual a una cadena
 
 ```js
-assert(!code.match(/result\s*=\s*".*?"/));
+assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
 # --seed--
