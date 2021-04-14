@@ -1,18 +1,18 @@
 /* global cy */
 
-let structure = {
-  challenge: []
-};
-
 describe('Test breadcrumbs', () => {
   it('should have the correct link', () => {
-    cy.task('getAllChallengePaths', {
-      superBlock: '01-responsive-web-design',
-      lang: 'english'
-    }).then(res => {
-      let { challenge } = structure;
-      challenge = res;
-      console.log(challenge);
+    cy.task('getCurriculum', { lang: 'english' }).then(curriculumObj => {
+      cy.task('scopeCurriculum', {
+        curriculum: curriculumObj,
+        superblock: 'responsive-web-design',
+        block: ['css-flexbox'],
+        challenge: null
+      }).then(challenges => {
+        challenges.forEach(challenge => {
+          cy.visit(challenge);
+        });
+      });
     });
   });
 });
