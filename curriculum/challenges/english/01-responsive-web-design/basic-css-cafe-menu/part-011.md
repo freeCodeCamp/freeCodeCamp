@@ -11,10 +11,22 @@ Up until now, you have been limited regarding the presentation and appearance of
 
 # --hints--
 
-Test 1
+Your code should have an opening `<style>` tag.
 
 ```js
+assert(code.match(/<style>/i));
+```
 
+Your code should have a closing `</style>` tag.
+
+```js
+assert(code.match(/<\/style>/));
+```
+
+Your `style` element should be nested in your `head` element.
+
+```js
+assert(code.match(/<head>[\w\W\s]*<style>[\w\W\s]*<\/style>[\w\W\s]*<\/head>/i))
 ```
 
 # --seed--

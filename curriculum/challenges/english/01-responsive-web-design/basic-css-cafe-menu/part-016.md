@@ -11,10 +11,18 @@ Now that you have the CSS in the `styles.css` file, go ahead and remove the `sty
 
 # --hints--
 
-Test 1
+You should not have any `style` tags in your code.
 
 ```js
+assert(!code.match(/style/i));
+```
 
+You should not have any CSS selectors in your HTML file.
+
+```js
+const html = code.split('<!DOCTYPE html>')[1];
+assert(!html.includes('style'));
+assert(!html.includes('text-align'));
 ```
 
 # --seed--

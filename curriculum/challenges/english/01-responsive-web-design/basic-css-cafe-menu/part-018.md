@@ -17,10 +17,24 @@ Add the following within the `head` element:
 
 # --hints--
 
-Test 1
+Your code should have two `meta` elements.
 
 ```js
+assert(code.match(/<meta.*\/?>/g).length === 2);
+```
 
+Your `meta` element should have a `name` attribute with a value of `viewport`.
+
+```js
+const meta = $('meta');
+assert(meta[0].outerHTML.match(/name=['"]viewport['"]/) || meta[1].outerHTML.match(/name=['"]viewport['"]/));
+```
+
+Your `meta` element should have a `content` attribute with a value of `width=device-width, initial-scale=1.0`.
+
+```js
+const meta = $('meta');
+assert(meta[0].outerHTML.match(/content=['"]width=device-width, initial-scale=1.0['"]/) || meta[1].outerHTML.match(/content=['"]width=device-width, initial-scale=1.0['"]/));
 ```
 
 # --seed--

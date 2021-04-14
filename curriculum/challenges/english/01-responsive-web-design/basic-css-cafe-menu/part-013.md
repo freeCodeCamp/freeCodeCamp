@@ -11,10 +11,22 @@ In the previous step, you used a <dfn>type selector</dfn> to style the `h1` elem
 
 # --hints--
 
-Test 1
+Your `h1` element should have a `text-align` of `center`.
 
 ```js
+assert($('h1').css('text-align') === 'center');
+```
 
+Your `h2` element should have a `text-align` of `center`.
+
+```js
+assert($('h2').css('text-align') === 'center');
+```
+
+Your `p` element should have a `text-align` of `center`.
+
+```js
+assert($('p').css('text-align') === 'center');
 ```
 
 # --seed--

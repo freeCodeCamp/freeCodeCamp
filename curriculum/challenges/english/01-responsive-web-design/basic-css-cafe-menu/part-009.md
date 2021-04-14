@@ -11,10 +11,23 @@ There will be two sections on the menu, one for coffees and one for desserts. Ad
 
 # --hints--
 
-Test 1
+You should have an opening `<section>` tag.
 
 ```js
+assert(code.match(/<section>/i));
+```
 
+You should have a closing `</section>` tag.
+
+```js
+assert(code.match(/<\/section>/i));
+```
+
+Your `section` element should be within your `main` element.
+
+```js
+const main = document.querySelectorAll('main')[0];
+assert(main.children[0].tagName === 'SECTION');
 ```
 
 # --seed--

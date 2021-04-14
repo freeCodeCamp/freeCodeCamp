@@ -11,10 +11,23 @@ It's time to add some menu content. Add a `main` element below the existing `hea
 
 # --hints--
 
-Test 1
+Your code should have an opening `<main>` tag.
 
 ```js
+assert(code.match(/<main>/i));
+```
 
+Your code should have a closing `</main>` tag.
+
+```js
+assert(code.match(/<\/main>/i));
+```
+
+Your `main` tag should come after your `header` tag.
+
+```js
+const main = document.querySelectorAll('main')[0];
+assert(main.previousElementSibling.tagName === 'HEADER');
 ```
 
 # --seed--

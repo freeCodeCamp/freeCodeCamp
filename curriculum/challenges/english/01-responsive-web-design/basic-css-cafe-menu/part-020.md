@@ -11,10 +11,18 @@ That brown background makes it hard to read the text. Change the `body` element'
 
 # --hints--
 
-Test 1
+You should set the `background-color` property to `burlywood`.
 
 ```js
+assert(code.match(/background-color:\s*burlywood;/i));
+```
 
+Your body element should have a burlywood background.
+
+```js
+const bodyBackground = $('body').css('background-color');
+console.log(bodyBackground)
+assert(bodyBackground === 'rgb(222, 184, 135)');
 ```
 
 # --seed--

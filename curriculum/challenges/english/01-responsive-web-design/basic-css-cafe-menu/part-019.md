@@ -11,10 +11,23 @@ The text is centered again so the link to the CSS file is working. Add another s
 
 # --hints--
 
-Test 1
+You should use a `body` selector.
 
 ```js
+assert(code.match(/body\s*{/i));
+```
 
+You should set the `background-color` property to `brown`.
+
+```js
+assert(code.match(/background-color:\s*brown;/i));
+```
+
+Your body element should have a brown background.
+
+```js
+const bodyBackground = $('body').css('background-color');
+assert(bodyBackground === 'rgb(165, 42, 42)');
 ```
 
 # --seed--

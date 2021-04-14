@@ -19,10 +19,23 @@ Center your `h1` element by setting its `text-align` property to the value `cent
 
 # --hints--
 
-Test 1
+You should have an `h1` selector in your `style` element.
 
 ```js
+const style = document.querySelector('style');
+assert(style.innerText.includes('h1'));
+```
 
+Your `h1` selector should have a `text-align` property.
+
+```js
+assert(code.match(/h1\s*{\s*text-align:/i));
+```
+
+Your `text-align` property should set a value of `center`.
+
+```js
+assert(code.match(/text-align:\s*center;/i));
 ```
 
 # --seed--

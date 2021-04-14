@@ -11,10 +11,25 @@ You have styled three elements by writing CSS inside the `style` tags. This work
 
 # --hints--
 
-Test 1
+Your `styles.css` file should have the `h1, h2, p` type selector.
 
 ```js
+const css = code.split('<!DOCTYPE html>')[0];
+assert(css.match(/(h1|h2|p), (h1|h2|p), (h1|h2|p) {/))
+```
 
+Your selector should set the `text-align` property to `center`.
+
+```js
+const css = code.split('<!DOCTYPE html>')[0];
+assert(css.match(/text-align:\s*center;/));
+```
+
+You should only have one selector.
+
+```js
+const css = code.split('<!DOCTYPE html>')[0];
+assert(css.match(/text-align:\s*center;/).length === 1);
 ```
 
 # --seed--

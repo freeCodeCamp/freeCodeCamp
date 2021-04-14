@@ -11,10 +11,22 @@ To let visitors know the cafe was founded in 2020, add a `p` element below the `
 
 # --hints--
 
-Test 1
+You should have an opening `<p>` tag.
 
 ```js
+assert(code.match(/<p>/i));
+```
 
+You should have a closing `</p>` tag.
+
+```js
+assert(code.match(/<\/p>/i));
+```
+
+Your `p` element should have the text `Est. 2020`.
+
+```js
+assert(code.match(/<p>Est. 2020<\/p>/i));
 ```
 
 # --seed--

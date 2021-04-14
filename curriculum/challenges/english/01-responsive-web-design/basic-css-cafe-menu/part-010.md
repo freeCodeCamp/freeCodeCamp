@@ -11,10 +11,30 @@ Create an `h2` element in the `section` element and give it the text `Coffees`.
 
 # --hints--
 
-Test 1
+You should have an opening `<h2>` tag.
 
 ```js
+assert(code.match(/<h2>/i));
+```
 
+You should have a closing `</h2>` tag.
+
+```js
+assert(code.match(/<\/h2>/i));
+```
+
+Your `h2` element should be within your `section` element.
+
+```js
+const h2 = document.querySelector('h2');
+assert(h2.parentElement.tagName === 'SECTION');
+```
+
+Your `h2` element should have the text `Coffees`.
+
+```js
+const h2 = document.querySelector('h2');
+assert(h2.innerText === 'Coffees');
 ```
 
 # --seed--
