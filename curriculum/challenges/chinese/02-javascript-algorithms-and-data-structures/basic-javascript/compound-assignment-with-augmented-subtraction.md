@@ -11,19 +11,15 @@ dashedName: compound-assignment-with-augmented-subtraction
 
 与 `+=` 操作符类似，`-=` 操作符用来对一个变量进行减法赋值操作。
 
-```js
-myVar = myVar - 5;
-```
+`myVar = myVar - 5;`
 
-将从 `myVar` 中减去 `5`。 等价于：
+变量 `myVar` 等于自身减去 `5` 的值。 也可以写成这种形式：
 
-```js
-myVar -= 5;
-```
+`myVar -= 5;`
 
 # --instructions--
 
-使用 `-=` 操作符对 `a`、`b` 和 `c` 实现相减赋值操作。
+使用 `-=` 操作符对 `a`，`b` 和 `c` 实现相减赋值。
 
 # --hints--
 

@@ -17,15 +17,13 @@ dashedName: generate-random-whole-numbers-with-javascript
 
 把操作连缀起来，代码类似于下面：
 
-```js
-Math.floor(Math.random() * 20);
-```
+`Math.floor(Math.random() * 20);`
 
 我们先调用 `Math.random()`，把它的结果乘以 20，然后把上一步的结果传给 `Math.floor()`，最终通过向下取整获得最近的整数。
 
 # --instructions--
 
-使用这个方法生成并返回 `0` 和 `9` 之间的随机整数。
+生成一个 `0` 到 `9` 之间的随机整数。
 
 # --hints--
 
@@ -41,7 +39,7 @@ assert(
 );
 ```
 
-应该使用 `Math.random` 生成一个随机数字。
+需要使用 `Math.random` 生成一个随机数字。
 
 ```js
 assert(code.match(/Math.random/g).length >= 1);
@@ -56,7 +54,7 @@ assert(
 );
 ```
 
-应该使用 `Math.floor` 来删除数字的十进制部分。
+需要使用 `Math.floor` 移除数字中的小数部分。
 
 ```js
 assert(code.match(/Math.floor/g).length >= 1);

@@ -9,23 +9,19 @@ dashedName: decrement-a-number-with-javascript
 
 # --description--
 
-使用自减符号 `--`，你可以很方便地对一个变量执行<dfn>自减</dfn>或者 -1 运算。
+使用自减符号`--`，你可以很方便地对一个变量执行<dfn>自减</dfn>或者 -1 运算。
 
-```js
-i--;
-```
+`i--;`
 
-等效于：
+等效于
 
-```js
-i = i - 1;
-```
+`i = i - 1;`
 
-**注意：**`i--;` 这种写法省去了书写等号的必要。
+**提示** `i--;` 这种写法，省去了书写等号的必要。
 
 # --instructions--
 
-修改代码，使用 `--` 符号对 `myVar` 执行自减操作。
+重写代码，使用 `--` 符号对 `myVar` 执行自减操作。
 
 # --hints--
 
@@ -35,7 +31,7 @@ i = i - 1;
 assert(myVar === 10);
 ```
 
-应该修改 `myVar = myVar - 1;`。
+`myVar = myVar - 1;` 语句应该被修改。
 
 ```js
 assert(
@@ -43,13 +39,13 @@ assert(
 );
 ```
 
-应该对 `myVar` 使用 `--` 运算符。
+对 `myVar` 使用 `--` 运算符。
 
 ```js
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-不应修改注释上方的代码。
+不要修改注释上面的代码。
 
 ```js
 assert(/var myVar = 11;/.test(code));
