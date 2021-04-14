@@ -11,10 +11,23 @@ It’s looking good. Time to start adding some menu items. Add an empty `article
 
 # --hints--
 
-Test 1
+You should have an opening `<article>` tag.
 
 ```js
+assert(code.match(/<article>/i));
+```
 
+You should have a closing `</article>` tag.
+
+```js
+assert(code.match(/<\/article>/i));
+```
+
+Your `article` element should come after your `h2` element.
+
+```js
+const article = $('article')[0];
+assert(article.previousElementSibling.tagName === 'H2');
 ```
 
 # --seed--

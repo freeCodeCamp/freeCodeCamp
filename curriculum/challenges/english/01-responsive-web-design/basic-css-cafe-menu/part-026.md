@@ -11,10 +11,25 @@ Next, you want to center the `div` horizontally. You can do this by setting its 
 
 # --hints--
 
-Test 1
+You should set the `margin-left` property to `auto`.
 
 ```js
+assert(code.match(/margin-left:\s*auto;/i));
+```
 
+You should set the `margin-right` property to `auto`.
+
+```js
+assert(code.match(/margin-right:\s*auto;/i));
+```
+
+Your `div` should be horizontally centered.
+
+```js
+const divLeft = $('div').css('margin-left');
+const divRight = $('div').css('margin-right');
+console.log(parseInt(divLeft))
+assert(parseInt(divLeft) === parseInt(divRight));
 ```
 
 # --seed--

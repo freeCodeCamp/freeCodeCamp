@@ -11,10 +11,23 @@ The `div` element is used mainly for design layout purposes unlike the other con
 
 # --hints--
 
-Test 1
+You should have an opening `<div>` tag.
 
 ```js
+assert(code.match(/<div>/i));
+```
 
+You should have a closing `</div>` tag.
+
+```js
+assert(code.match(/<\/div>/i));
+```
+
+Your `div` tag should be nested in the `body`.
+
+```js
+const div = $('div')[0];
+assert(div.parentElement.tagName === 'BODY');
 ```
 
 # --seed--

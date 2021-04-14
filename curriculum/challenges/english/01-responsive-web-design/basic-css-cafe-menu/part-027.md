@@ -19,10 +19,16 @@ Change the existing `div` selector into a class selector by replacing `div` with
 
 # --hints--
 
-Test 1
+You should have a `.menu` type selector.
 
 ```js
+assert(code.match(/\.menu\s*{/i));
+```
 
+You should not have a `div` selector.
+
+```js
+assert(!code.match(/div\s*{/i));
 ```
 
 # --seed--

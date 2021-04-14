@@ -11,10 +11,10 @@ To apply the class's styling to the `div` element, add a `class` attribute to th
 
 # --hints--
 
-Test 1
+Your `div` element should have the `menu` class.
 
 ```js
-
+assert($('div').attr('class').includes('menu'));
 ```
 
 # --seed--

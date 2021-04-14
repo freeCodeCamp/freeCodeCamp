@@ -13,10 +13,23 @@ Delete the comment and its contents inside the `body` type selector. Now add a `
 
 # --hints--
 
-Test 1
+You should remove the commented out `background-color` property.
 
 ```js
+assert(!code.match(/\/\*\s*background-color:\s*burlywood;\s*\*\//i))
+```
 
+Your `body` selector should not have any comments.
+
+```js
+assert(!code.match(/body\s*{\s*\/\*/i));
+```
+
+Your `body` element should have the coffee beans background image.
+
+```js
+const background = $('body').css('background-image');
+assert(background === 'url("https://tinyurl.com/coffee-beans-fcc")');
 ```
 
 # --seed--

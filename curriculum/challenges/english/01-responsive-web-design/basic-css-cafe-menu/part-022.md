@@ -11,10 +11,23 @@ The goal now is to make the `div` not take up the entire width of the page. The 
 
 # --hints--
 
-Test 1
+You should have a `div` type selector.
 
 ```js
+assert(code.match(/div\s*{/i));
+```
 
+You should set the `width` property to `300px`.
+
+```js
+assert(code.match(/div\s*{\s*width:\s*300px;/i));
+```
+
+Your `div` should have a width of 300px.
+
+```js
+const div = $('div').css('width');
+assert(div === '300px');
 ```
 
 # --seed--

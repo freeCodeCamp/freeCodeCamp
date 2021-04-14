@@ -11,10 +11,17 @@ Now make the background color of the `div` element to be `burlywood`.
 
 # --hints--
 
-Test 1
+You should use the `background-color` property in your `div` selector.
 
 ```js
+assert(code.match(/div\s*{[\W\w\s]*background-color:/i))
+```
 
+Your `div` should have a burlywood background.
+
+```js
+const divCSS = $('div').css('background-color');
+assert(divCSS === 'rgb(222, 184, 135)');
 ```
 
 # --seed--

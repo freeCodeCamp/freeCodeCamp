@@ -17,10 +17,18 @@ In your style sheet, comment out the the line containing the `background-color` 
 
 # --hints--
 
-Test 1
+You should comment out the `background-color: burlywood;` line in your CSS.
 
 ```js
+assert(code.match(/\/\*\s*background-color:\s*burlywood;\s*\*\//i));
+```
 
+
+Your `body` should have a white background.
+
+```js
+const bodyCSS = $('body').css('background-color');
+assert(bodyCSS === "rgba(0, 0, 0, 0)")
 ```
 
 # --seed--
