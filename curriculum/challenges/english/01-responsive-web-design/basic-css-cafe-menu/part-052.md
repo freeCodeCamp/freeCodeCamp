@@ -13,10 +13,10 @@ Since the `flavor` class selector already has the properties you want, just add 
 
 # --hints--
 
-Test 1
+You should add the `.dessert` selector to your `.flavor` selector. 
 
 ```js
-
+assert(code.match(/\.flavor,\s*.dessert\s*{/i));
 ```
 
 # --seed--

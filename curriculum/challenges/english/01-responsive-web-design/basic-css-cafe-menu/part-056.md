@@ -11,10 +11,40 @@ Since all 4 sides of the menu have the same internal spacing, go ahead and delet
 
 # --hints--
 
-Test 1
+You should remove the `padding-left` property.
 
 ```js
+assert(!code.match(/padding-left/i));
+```
 
+You should remove the `padding-right` property.
+
+```js
+assert(!code.match(/padding-right/i));
+```
+
+You should remove the `padding-top` property.
+
+```js
+assert(!code.match(/padding-top/i));
+```
+
+You should remove the `padding-bottom` property.
+
+```js
+assert(!code.match(/padding-bottom/i));
+```
+
+You should set the `padding` property to `20px`.
+
+```js
+assert(code.match(/padding:\s*20px;/i));
+```
+
+Your `.menu` element should have a `padding` value of `20px`.
+
+```js
+assert($('.menu').css('padding') === '20px');
 ```
 
 # --seed--

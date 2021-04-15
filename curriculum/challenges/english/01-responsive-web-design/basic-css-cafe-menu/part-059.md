@@ -13,10 +13,28 @@ Style both the `h1` and the `h2` elements so that only these elements' text use 
 
 # --hints--
 
-Test 1
+You should use an `h1, h2` selector.
 
 ```js
+assert(code.match(/h1,\s*h2\s*{/i));
+```
 
+You should set the `font-family` to `Impact`.
+
+```js
+assert(code.match(/font-family:\s*impact;/i));
+```
+
+Your `h1` element should have a `font-family` of `Impact`.
+
+```js
+assert($('h1').css('font-family').match(/impact/i));
+```
+
+Your `h2` element should have a `font-family` of `Impact`.
+
+```js
+assert($('h2').css('font-family').match(/impact/i));
 ```
 
 # --seed--

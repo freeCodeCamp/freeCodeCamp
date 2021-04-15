@@ -11,10 +11,28 @@ For the two `p` elements you just added, add `dessert` as the value of the first
 
 # --hints--
 
-Test 1
+You should have one `p` element with the `dessert` class.
 
 ```js
+assert($('.dessert').length === 1);
+```
 
+Your `p` element with the text `Donut` should have the `dessert` class.
+
+```js
+assert($('.dessert')[0].innerText.match(/donut/i));
+```
+
+Your `p` element with the text `1.50` should have the `price` class.
+
+```js
+assert($('.price').last().text().match(/1\.50/));
+```
+
+You should not have any spaces between your `p` elements.
+
+```js
+assert(!code.match(/<\/p>\s+<p/));
 ```
 
 # --seed--

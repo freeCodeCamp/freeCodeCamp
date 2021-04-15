@@ -11,10 +11,35 @@ That looks better. Now try to add the same `20px` padding to the top and bottom 
 
 # --hints--
 
-Test 1
+You should not remove the `padding-left` or `padding-right` properties.
 
 ```js
+assert(code.match(/padding-left:\s*20px;/i));
+assert(code.match(/padding-right:\s*20px;/i));
+```
 
+You should set the `padding-top` property to `20px`.
+
+```js
+assert(code.match(/padding-top:\s*20px;/i));
+```
+
+You should set the `padding-bottom` property to `20px`.
+
+```js
+assert(code.match(/padding-bottom:\s*20px;/i));
+```
+
+Your `.menu` element should have a `padding-top` of `20px`.
+
+```js
+assert($('.menu').css('padding-top') === '20px');
+```
+
+Your `.menu` element should have a `padding-bottom` of `20px`.
+
+```js
+assert($('.menu').css('padding-bottom') === '20px');
 ```
 
 # --seed--
