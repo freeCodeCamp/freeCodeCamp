@@ -7,7 +7,10 @@ describe('Test breadcrumbs', () => {
         curriculum: curriculumObj,
         superblock: 'responsive-web-design',
         block: ['css-flexbox'],
-        challenge: null
+        challenge: [
+          'use-the-flex-shorthand-property',
+          'use-the-align-self-proerty'
+        ]
       }).then(challenges => {
         challenges.forEach(challenge => {
           cy.visit(challenge);

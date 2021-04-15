@@ -1,6 +1,22 @@
 const getChallenge = require('../../curriculum/getChallenges');
 const env = require('../../config/env.json');
 
+function createPath(curriculum, superblock, block) {
+  let challengePaths = [];
+  console.log('this is called but it does nothing');
+  let superBlockPath = superblock;
+  let blockPath = block;
+  let challengeArr = curriculum[superblock]['blocks'][block]['challenges'];
+
+  challengeArr.forEach(challengePath => {
+    challengePaths.push(
+      `/learn/${superBlockPath}/${blockPath}/${challengePath['dashedName']}`
+    );
+  });
+
+  return challengePaths;
+}
+
 module.exports = on => {
   on('task', {
     // return an array of all challenge paths
@@ -32,31 +48,9 @@ module.exports = on => {
 
           // Check if block is upcoming change
           if (!upcommingChange) {
-            let superBlockPath = superblock;
-            let blockPath =
-              curriculum[superblock]['blocks'][blocks]['meta']['dashedName'];
-            let challengeArr =
-              curriculum[superblock]['blocks'][blocks]['challenges'];
-
-            challengeArr.forEach(challengePath => {
-              challengePaths.push(
-                `/learn/${superBlockPath}/${blockPath}/${challengePath['dashedName']}`
-              );
-            });
-          } else if (
-            upcommingChange && env.showUpcomingChanges
-          ) {
-            let superBlockPath = superblock;
-            let blockPath =
-              curriculum[superblock]['blocks'][blocks]['meta']['dashedName'];
-            let challengeArr =
-              curriculum[superblock]['blocks'][blocks]['challenges'];
-
-            challengeArr.forEach(challengePath => {
-              challengePaths.push(
-                `/learn/${superBlockPath}/${blockPath}/${challengePath['dashedName']}`
-              );
-            });
+            challengePaths = createPath(curriculum, superblock, blocks);
+          } else if (upcommingChange && env.showUpcomingChanges) {
+            challengePaths = createPath(curriculum, superblock, blocks);
           }
         });
       } else if (superblock && block !== null && challenge === null) {
@@ -67,29 +61,9 @@ module.exports = on => {
             ];
 
           if (!upcommingChange) {
-            let superBlockPath = superblock;
-            let blockPath = blockInArr;
-            let challengeArr =
-              curriculum[superblock]['blocks'][blockInArr]['challenges'];
-
-            challengeArr.forEach(challengePath => {
-              challengePaths.push(
-                `/learn/${superBlockPath}/${blockPath}/${challengePath['dashedName']}`
-              );
-            });
-          } else if (
-            upcommingChange && env.showUpcomingChanges
-          ) {
-            let superBlockPath = superblock;
-            let blockPath = blockInArr;
-            let challengeArr =
-              curriculum[superblock]['blocks'][blockInArr]['challenges'];
-
-            challengeArr.forEach(challengePath => {
-              challengePaths.push(
-                `/learn/${superBlockPath}/${blockPath}/${challengePath['dashedName']}`
-              );
-            });
+            challengePaths = createPath(curriculum, superblock, blockInArr);
+          } else if (upcommingChange && env.showUpcomingChanges) {
+            challengePaths = createPath(curriculum, superblock, blockInArr);
           }
         });
       } else if (superblock && block !== null && challenge !== null) {
