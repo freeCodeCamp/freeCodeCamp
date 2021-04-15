@@ -63,7 +63,7 @@
     "chai": "4.3.4",
     "crypto-browserify": "3.12.0",
     "csrf": "3.1.0",
-    "date-fns": "2.19.0",
+    "date-fns": "2.21.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "final-form": "4.20.2",
@@ -93,7 +93,7 @@
     "react-ga": "2.7.0",
     "react-helmet": "6.1.0",
     "react-hotkeys": "2.0.0",
-    "react-i18next": "11.8.12",
+    "react-i18next": "11.8.13",
     "react-instantsearch-dom": "6.10.3",
     "react-lazy-load": "3.1.13",
     "react-monaco-editor": "0.39.1",
@@ -116,7 +116,7 @@
     "sass.js": "0.11.1",
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
-    "typescript": "4.2.3",
+    "typescript": "4.2.4",
     "validator": "13.5.2"
   },
   "devDependencies": {
@@ -131,7 +131,7 @@
     "monaco-editor-webpack-plugin": "3.0.0",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.1",
-    "webpack": "5.32.0",
+    "webpack": "5.33.2",
     "webpack-cli": "4.5.0"
   }
 }
