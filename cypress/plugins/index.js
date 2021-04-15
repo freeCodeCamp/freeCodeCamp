@@ -31,7 +31,7 @@ module.exports = on => {
             ];
 
           // Check if block is upcoming change
-          if (!upcommingChange && !env.showUpcomingChanges) {
+          if (!upcommingChange) {
             let superBlockPath = superblock;
             let blockPath =
               curriculum[superblock]['blocks'][blocks]['meta']['dashedName'];
@@ -44,8 +44,7 @@ module.exports = on => {
               );
             });
           } else if (
-            upcommingChange ||
-            (!upcommingChange && env.showUpcomingChanges)
+            upcommingChange && env.showUpcomingChanges
           ) {
             let superBlockPath = superblock;
             let blockPath =
@@ -67,7 +66,7 @@ module.exports = on => {
               'isUpcomingChange'
             ];
 
-          if (!upcommingChange && !env.showUpcomingChanges) {
+          if (!upcommingChange) {
             let superBlockPath = superblock;
             let blockPath = blockInArr;
             let challengeArr =
@@ -79,8 +78,7 @@ module.exports = on => {
               );
             });
           } else if (
-            upcommingChange ||
-            (!upcommingChange && env.showUpcomingChanges)
+            upcommingChange && env.showUpcomingChanges
           ) {
             let superBlockPath = superblock;
             let blockPath = blockInArr;
