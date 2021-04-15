@@ -2,7 +2,9 @@ import React from 'react';
 import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
 import psl from 'psl';
-import { homeLocation } from '../../config/env.json';
+import env from '../../config/env.json';
+
+const { homeLocation } = env;
 
 export const getheadTagComponents = () => {
   const socialImage =
@@ -55,20 +57,11 @@ export const getheadTagComponents = () => {
 };
 
 // strips subpath and protocol
-const urlStripper = url => {
-  const noProtocolUrl = url.replace(/(^\w+:|^)\/\//, '');
-  const subpathIndexOrLength =
-    noProtocolUrl.lastIndexOf('/') === -1
-      ? noProtocolUrl.length
-      : noProtocolUrl.lastIndexOf('/');
-  const noSubpathUrl = noProtocolUrl.substr(0, subpathIndexOrLength);
-  return noSubpathUrl;
-};
 
 export const injectConditionalTags = (tagsArray, homeLocation) => {
   if (homeLocation.includes('localhost')) return tagsArray;
 
-  const parsedHomeUrl = psl.parse(urlStripper(homeLocation));
+  const parsedHomeUrl = psl.parse(new URL(homeLocation).host);
 
   // inject gap for all production learn
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {
