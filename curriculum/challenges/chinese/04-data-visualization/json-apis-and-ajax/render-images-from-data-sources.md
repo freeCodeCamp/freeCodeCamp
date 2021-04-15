@@ -14,13 +14,11 @@ dashedName: render-images-from-data-sources
 
 这是执行此操作的代码：
 
-```js
-html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
-```
+`html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
 
 # --instructions--
 
-添加代码以在 `img` 标记中使用 `imageLink` 和 `altText` 属性。
+添加代码，在 `img` 标签中使用 `imageLink` 和 `altText` 属性。
 
 # --hints--
 

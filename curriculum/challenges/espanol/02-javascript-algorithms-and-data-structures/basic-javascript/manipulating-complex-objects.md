@@ -65,7 +65,7 @@ assert(Array.isArray(myMusic));
 assert(myMusic.length > 1);
 ```
 
-Los elementos en el arreglo `myMusic` deben ser objetos
+`myMusic` debe tener al menos dos elementos
 
 ```js
 myMusic.forEach(object => {assert.typeOf(object, 'object')})
