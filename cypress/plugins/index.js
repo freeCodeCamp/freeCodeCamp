@@ -41,28 +41,24 @@ module.exports = on => {
         // Get challenges in block
 
         block.forEach(blocks => {
-          const upcommingChange =
+          const upcomingChange =
             curriculum[superblock]['blocks'][blocks]['meta'][
               'isUpcomingChange'
             ];
 
           // Check if block is upcoming change
-          if (!upcommingChange) {
-            challengePaths = createPath(curriculum, superblock, blocks);
-          } else if (upcommingChange && env.showUpcomingChanges) {
+          if (!upcomingChange || env.showUpcomingChanges) {
             challengePaths = createPath(curriculum, superblock, blocks);
           }
         });
       } else if (superblock && block !== null && challenge === null) {
         block.forEach(blockInArr => {
-          const upcommingChange =
+          const upcomingChange =
             curriculum[superblock]['blocks'][blockInArr]['meta'][
               'isUpcomingChange'
             ];
 
-          if (!upcommingChange) {
-            challengePaths = createPath(curriculum, superblock, blockInArr);
-          } else if (upcommingChange && env.showUpcomingChanges) {
+          if (!upcomingChange || env.showUpcomingChanges) {
             challengePaths = createPath(curriculum, superblock, blockInArr);
           }
         });
