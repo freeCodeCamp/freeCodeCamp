@@ -9,7 +9,7 @@ describe('Test breadcrumbs', () => {
         block: ['css-flexbox'],
         challenge: [
           'use-the-flex-shorthand-property',
-          'use-the-align-self-proerty'
+          'use-the-align-self-property'
         ]
       }).then(challenges => {
         challenges.forEach(challenge => {
