@@ -11,10 +11,22 @@ You will come back to the styling the menu in a few steps, but for now, go ahead
 
 # --hints--
 
-Test 1
+You should have an opening `section` tag.
 
 ```js
+assert(code.match(/<section>/ig).length === 2);
+```
 
+You should have a closing `section` tag.
+
+```js
+assert(code.match(/<\/section>/ig).length === 2);
+```
+
+Your new `section` element should be nested in the `main` element.
+
+```js
+assert($('main').children('section').length === 2);
 ```
 
 # --seed--

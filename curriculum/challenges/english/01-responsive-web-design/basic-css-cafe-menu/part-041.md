@@ -13,10 +13,10 @@ You could keep trying various percentages for the widths. Instead, simply move t
 
 # --hints--
 
-Test 1
+Your `p` elements should not have any space between them.
 
 ```js
-
+assert(code.match(/Vanilla<\/p><p/));
 ```
 
 # --seed--

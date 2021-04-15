@@ -13,10 +13,16 @@ Since you know the prices on the right have significantly fewer characters, chan
 
 # --hints--
 
-Test 1
+You should set the `width` property to `75%` in your `.flavor` selector.
 
 ```js
+assert(code.match(/\.flavor\s*{[:;\-\w\s]*width:\s75%;/i));
+```
 
+You should set the `width` property to `25%` in your `.price` selector.
+
+```js
+assert(code.match(/\.price\s*{[\W\w\s]*width:\s25%;/i));
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ Add an empty `article` element under the `Desserts` heading. Give it a `class` a
 
 # --hints--
 
-Test 1
+Your `article` element should be below your `h2` element.
 
 ```js
+assert($('section')[1].children[1].tagName === 'ARTICLE');
+```
 
+Your new `article` element should have the `item` class.
+
+```js
+assert($('section')[1].children[1].className === 'item');
 ```
 
 # --seed--

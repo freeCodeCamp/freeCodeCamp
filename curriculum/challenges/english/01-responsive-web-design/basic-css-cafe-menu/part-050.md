@@ -11,10 +11,22 @@ Nest two `p` elements inside your `article` element. The first one's text should
 
 # --hints--
 
-Test 1
+Your new `article` element should have two `p` elements.
 
 ```js
+assert($('article').last().children('p').length === 2);
+```
 
+Your first `p` element should have the text `Donut`.
+
+```js
+assert($('article').last().children('p')[0].innerText.match(/Donut/i));
+```
+
+Your second `p` element should have the text `1.50`.
+
+```js
+assert($('article').last().children('p')[1].innerText.match(/1\.50/i));
 ```
 
 # --seed--

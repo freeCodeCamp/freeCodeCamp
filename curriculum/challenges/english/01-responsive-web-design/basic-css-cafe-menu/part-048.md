@@ -11,10 +11,16 @@ Add an `h2` element in the new section add give it the text `Desserts`.
 
 # --hints--
 
-Test 1
+You should add an `h2` element in your second `section` element.
 
 ```js
+assert($('section')[1].children[0].tagName === 'H2');
+```
 
+Your new `h2` element should have the text `Desserts`.
+
+```js
+assert($('h2')[1].innerText.match(/Desserts/i));
 ```
 
 # --seed--

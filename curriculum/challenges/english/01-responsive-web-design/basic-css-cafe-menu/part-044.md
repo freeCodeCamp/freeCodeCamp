@@ -11,10 +11,10 @@ Next, position the other `p` elements to be on the same line with no space betwe
 
 # --hints--
 
-Test 1
+You should not have any spaces between your `p` elements.
 
 ```js
-
+assert(!code.match(/<\/p>\s+<p/));
 ```
 
 # --seed--
