@@ -13,10 +13,22 @@ To get them on the same line, you need to apply some styling to the `p` elements
 
 # --hints--
 
-Test 1
+You should apply the `item` class to your `article` element.
 
 ```js
+assert(code.match(/<article\s*class=['"]item['"]\s*>/i))
+```
 
+You should only have one `item` class element.
+
+```js
+assert($('.item').length === 1);
+```
+
+Your first `article` element should have the `item` class.
+
+```js
+assert($('article')[0].className === 'item');
 ```
 
 # --seed--

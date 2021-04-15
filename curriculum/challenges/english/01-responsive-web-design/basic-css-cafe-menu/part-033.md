@@ -13,10 +13,22 @@ Add the class name `flavor` to the `French Vanilla` `p` element.
 
 # --hints--
 
-Test 1
+You should add the `flavor` class to your `p` element.
 
 ```js
+assert(code.match(/<p\s*class=['"]flavor['"]\s*>/i));
+```
 
+You should only have one element with the `flavor` class.
+
+```js
+assert($('.flavor').length === 1);
+```
+
+Your `flavor` class should be on the `p` element with the text `French Vanilla`.
+
+```js
+assert($('.flavor')[0].innerText.match(/French Vanilla/i));
 ```
 
 # --seed--

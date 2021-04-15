@@ -18,10 +18,61 @@ Mocha 4.50
 
 # --hints--
 
-Test 1
+You should have five `article` elements.
 
 ```js
+assert($('article').length === 5);
+```
 
+Each `article` element should have two `p` elements.
+
+```js
+const articles = $('article');
+assert(articles[0].children.length === 2);
+assert(articles[1].children.length === 2);
+assert(articles[2].children.length === 2);
+assert(articles[3].children.length === 2);
+assert(articles[4].children.length === 2);
+```
+
+Your first `article` element should have `p` elements with the text `French Vanilla` and `3.00`.
+
+```js
+const children = $('article')[0].children;
+assert(children[0].innerText.match(/French Vanilla/i));
+assert(children[1].innerText.match(/3.00/i));
+```
+
+Your second `article` element should have `p` elements with the text `Carmel Macchiato` and `3.75`.
+
+```js
+const children = $('article')[1].children;
+assert(children[0].innerText.match(/Carmel Macchiato/i));
+assert(children[1].innerText.match(/3.75/i));
+```
+
+Your third `article` element should have `p` elements with the text `Pumpkin Spice` and `3.50`.
+
+```js
+const children = $('article')[2].children;
+assert(children[0].innerText.match(/Pumpkin Spice/i));
+assert(children[1].innerText.match(/3.50/i));
+```
+
+Your fourth `article` element should have `p` elements with the text `Hazelnut` and `4.00`.
+
+```js
+const children = $('article')[3].children;
+assert(children[0].innerText.match(/Hazelnut/i));
+assert(children[1].innerText.match(/4.00/i));
+```
+
+Your fifth `article` element should have `p` elements with the text `Mocha` and `4.50`.
+
+```js
+const children = $('article')[4].children;
+assert(children[0].innerText.match(/Mocha/i));
+assert(children[1].innerText.match(/4.50/i));
 ```
 
 # --seed--

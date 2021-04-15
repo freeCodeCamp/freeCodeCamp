@@ -11,10 +11,22 @@ Using your new `flavor` class as a selector, set the `text-align` property's val
 
 # --hints--
 
-Test 1
+You should have a `flavor` class selector.
 
 ```js
+assert(code.match(/\.flavor\s*{/i));
+```
 
+Your `flavor` class selector should set the `text-align` property to `left`.
+
+```js
+assert(code.match(/\.flavor\s*{\s*text-align:\s*left;/i));
+```
+
+Your `.flavor` element should be aligned to the left.
+
+```js
+assert($('.flavor').css('text-align') === 'left');
 ```
 
 # --seed--

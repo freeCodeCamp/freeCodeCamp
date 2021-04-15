@@ -11,10 +11,24 @@ dashedName: part-31
 
 # --hints--
 
-Test 1
+Your `article` element should have two `p` elements.
 
 ```js
+assert($('article').children('p').length === 2);
+```
 
+Your first `p` element should have the text `French Vanilla`.
+
+```js
+const firstP = $('article').children('p')[0];
+assert(firstP.innerText.match(/French Vanilla/i));
+```
+
+Your second `p` element should have the text `3.00`.
+
+```js
+const secondP = $('article').children('p')[1];
+assert(secondP.innerText.match(/3.00/i));
 ```
 
 # --seed--

@@ -11,10 +11,22 @@ Next, you want to align the price to the right. Add a class named `price` to you
 
 # --hints--
 
-Test 1
+You should add the `price` class to your `p` element.
 
 ```js
+assert(code.match(/<p\s*class=['"]price['"]\s*>/i));
+```
 
+You should only have one element with the `price` class.
+
+```js
+assert($('.price').length === 1);
+```
+
+Your `price` class should be on the `p` element with the text `3.00`.
+
+```js
+assert($('.price')[0].innerText.match(/3.00/i));
 ```
 
 # --seed--

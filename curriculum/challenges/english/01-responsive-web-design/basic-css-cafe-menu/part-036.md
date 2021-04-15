@@ -11,10 +11,22 @@ Now align the text to the `right` for the elements with the `price` class.
 
 # --hints--
 
-Test 1
+You should have a `price` class selector.
 
 ```js
+assert(code.match(/\.price\s*{/i));
+```
 
+Your `price` class selector should set the `text-align` property to `right`.
+
+```js
+assert(code.match(/\.price\s*{\s*text-align:\s*right;/i));
+```
+
+Your `.price` element should be aligned to the right.
+
+```js
+assert($('.price').css('text-align') === 'right');
 ```
 
 # --seed--
