@@ -63,25 +63,43 @@ export const injectConditionalTags = (tagsArray, homeLocation) => {
 
   const parsedHomeUrl = psl.parse(new URL(homeLocation).host);
 
-  // inject gap for all production learn
+  // inject gap all production languages exept Chinese
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {
     tagsArray.push(
       <script
-        href={withPrefix('/misc/gap.js')}
-        id='gap'
-        key='gap'
+        href={withPrefix('/misc/gap-org.js')}
+        id='gap-org'
+        key='gap-org'
         rel='stylesheet'
       />
     );
   }
 
-  // inject cap for production chinese only
-  if (parsedHomeUrl.subdomain === 'chinese' && parsedHomeUrl.tld === 'org') {
+  // inject gap for developement
+  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'dev') {
     tagsArray.push(
       <script
+        href={withPrefix('/misc/gap-dev.js')}
+        id='gap-dev'
+        key='gap-dev'
+        rel='stylesheet'
+      />
+    );
+  }
+
+  // inject cap and Chinese gap for production Chinese
+  if (parsedHomeUrl.subdomain === 'chinese' && parsedHomeUrl.tld === 'org') {
+    tagsArray.push(
+      <scripts
         href={withPrefix('/misc/cap.js')}
         id='cap'
         key='cap'
+        rel='stylesheet'
+      />,
+      <script
+        href={withPrefix('/misc/gap-org-chinese.js')}
+        id='gap-org-chinese'
+        key='gap-org-chinese'
         rel='stylesheet'
       />
     );
