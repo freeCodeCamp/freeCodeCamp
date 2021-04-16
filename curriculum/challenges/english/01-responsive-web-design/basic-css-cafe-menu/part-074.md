@@ -13,10 +13,34 @@ Target all the `p` elements nested in elements with the `class` named `item` and
 
 # --hints--
 
-Test 1
+You should set the `margin-top` property to `5px`.
 
 ```js
+assert(code.match(/margin-top:\s*5px;/i));
+```
 
+You should set the `margin-bottom` property to `5px`.
+
+```js
+assert(code.match(/margin-bottom:\s*5px;/i));
+```
+
+You should use the existing `.item p` selector.
+
+```js
+assert(code.match(/\.item\s*p/g).length === 1);
+```
+
+Your `p` elements nested in your `.item` elements should have a `margin-top` of `5px`.
+
+```js
+assert($('.item p').css('margin-top') === '5px');
+```
+
+Your `p` elements nested in your `.item` elements should have a `margin-bottom` of `5px`.
+
+```js
+assert($('.item p').css('margin-bottom') === '5px');
 ```
 
 # --seed--

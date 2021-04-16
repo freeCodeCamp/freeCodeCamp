@@ -11,10 +11,29 @@ Moving down to the `footer` element, make all the text have a value of `14px` fo
 
 # --hints--
 
-Test 1
+You should have a `footer` selector.
 
 ```js
+assert(code.match(/footer\s*{/i));
+```
 
+Your `footer` selector should be below your comment.
+
+```js
+assert(code.match(/\/\*\s*FOOTER\s*\*\/\s*footer/i));
+```
+
+You should set the `font-size` property to `14px`.
+
+
+```js
+assert(code.match(/font-size:\s*14px;/i));
+```
+
+Your `footer` element should have a `font-size` of `14px`.
+
+```js
+assert($('footer').css('font-size') === '14px');
 ```
 
 # --seed--

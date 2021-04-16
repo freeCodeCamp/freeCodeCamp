@@ -11,10 +11,16 @@ Now add the `bottom-line` class to the second `hr` element so the styling is app
 
 # --hints--
 
-Test 1
+You should apply the `class="bottom-line"` property.
 
 ```js
+assert(code.match(/class=['"]bottom-line['"]/i));
+```
 
+Your `bottom-line` class should be applied to your second `hr` element.
+
+```js
+assert($('hr')[1].className === 'bottom-line');
 ```
 
 # --seed--

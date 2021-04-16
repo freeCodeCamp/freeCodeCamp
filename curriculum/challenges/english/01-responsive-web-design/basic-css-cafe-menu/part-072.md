@@ -11,10 +11,17 @@ Go ahead and add another `hr` element between the `main` element and the `footer
 
 # --hints--
 
-Test 1
+You should add a second `hr` element.
 
 ```js
+assert($('hr').length === 2);
+```
 
+Your new `hr` element should be between the `main` element and the `footer` element.
+
+```js
+assert($('hr')[1].previousElementSibling.tagName === 'MAIN');
+assert($('hr')[1].nextElementSibling.tagName === 'FOOTER');
 ```
 
 # --seed--

@@ -13,10 +13,16 @@ Add some more space by creating a class named `bottom-line` using `25px` for the
 
 # --hints--
 
-Test 1
+You should add a `.bottom-line` selector.
 
 ```js
+assert(code.match(/\.bottom-line\s*{/i));
+```
 
+You should set the `margin-top` property to `25px`.
+
+```js
+assert(code.match(/\.bottom-line\s*{\s*margin-top:\s*25px;/i));
 ```
 
 # --seed--

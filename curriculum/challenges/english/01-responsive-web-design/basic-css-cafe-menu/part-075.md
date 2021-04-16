@@ -11,10 +11,22 @@ Using the same style selector in the previous step, make the font size of the it
 
 # --hints--
 
-Test 1
+You should set the `font-size` property to `18px`.
 
 ```js
+assert(code.match(/font-size:\s*18px;/i));
+```
 
+You should use the existing `.item p` selector.
+
+```js
+assert(code.match(/\.item p/g).length === 1);
+```
+
+Your `p` elements nested in your `.item` elements should have a `font-size` of `18px`.
+
+```js
+assert($('.item p').css('font-size') === '18px');
 ```
 
 # --seed--

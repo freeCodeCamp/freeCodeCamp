@@ -11,10 +11,16 @@ To create a little more room around the menu, add `20px` of space on the inside 
 
 # --hints--
 
-Test 1
+You should set the `padding` property to `20px`.
 
 ```js
+assert(code.match(/padding:\s*20px;/i));
+```
 
+Your `body` element should have a `padding` of `20px`.
+
+```js
+assert($('body').css('padding') === '20px');
 ```
 
 # --seed--
