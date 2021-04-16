@@ -63,7 +63,7 @@ export const injectConditionalTags = (tagsArray, homeLocation) => {
 
   const parsedHomeUrl = psl.parse(new URL(homeLocation).host);
 
-  // inject gap all production languages exept Chinese
+  // inject gap all production languages except Chinese
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {
     tagsArray.push(
       <script
