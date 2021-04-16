@@ -75,7 +75,7 @@ export const injectConditionalTags = (tagsArray, homeLocation) => {
     );
   }
 
-  // inject gap for developement
+  // inject gap for staging
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'dev') {
     tagsArray.push(
       <script
