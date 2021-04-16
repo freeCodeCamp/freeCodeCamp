@@ -13,10 +13,22 @@ Under the `Coffees` heading, add an image using the url `https://tinyurl.com/caf
 
 # --hints--
 
-Test 1
+You should have an `<img>` tag. Remember that `img` elements are self-closing.
 
 ```js
+assert($('img').length === 1);
+```
 
+Your `img` element should have a `src` attribute of `https://tinyurl.com/cafe-coffee-fcc`.
+
+```js
+assert($('img').attr('src') === 'https://tinyurl.com/cafe-coffee-fcc');
+```
+
+Your `img` element should have an `alt` attribute of `coffee icon`.
+
+```js
+assert($('img').attr('alt').match(/coffee icon/i));
 ```
 
 # --seed--

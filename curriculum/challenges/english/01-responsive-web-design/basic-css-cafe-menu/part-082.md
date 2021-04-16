@@ -13,10 +13,16 @@ Change the color of the footer `Visit our website` link to be `brown` when a use
 
 # --hints--
 
-Test 1
+You should use the `a:hover` pseudoselector.
 
 ```js
+assert(code.match(/a:hover\s*{/i));
+```
 
+You should set the `color` property to `brown`.
+
+```js
+assert(code.match(/a:hover\s*{\s*color:\s*brown;/i));
 ```
 
 # --seed--

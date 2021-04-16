@@ -11,10 +11,22 @@ Now apply the `address` class to the `p` element containing the address.
 
 # --hints--
 
-Test 1
+You should apply the `class="address"` attribute.
 
 ```js
+assert(code.match(/class=['"]address['"]/i));
+```
 
+Your `.address` element should be your `p` element.
+
+```js
+assert($('.address')[0].tagName === 'P');
+```
+
+Your `.address` element should have the text `123 freeCodeCamp Drive`.
+
+```js
+assert($('.address')[0].innerText.match(/123 Free Code Camp Drive/i));
 ```
 
 # --seed--

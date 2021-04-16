@@ -7,7 +7,7 @@ dashedName: part-67
 
 # --description--
 
-Add a second `p` element below the one with the link and give it the text `123 freeCodeCamp Drive`.
+Add a second `p` element below the one with the link and give it the text `123 Free Code Camp Drive`.
 
 # --hints--
 
@@ -17,10 +17,10 @@ You should add a second `p` element to your `footer`.
 assert($('footer').children('p').length === 2);
 ```
 
-Your new `p` element should have the text `123 freeCodeCamp Drive`. Make sure your new element comes after your existing element.
+Your new `p` element should have the text `123 Free Code Camp Drive`. Make sure your new element comes after your existing element.
 
 ```js
-assert($('footer').children('p').last().text().match(/123 freeCodeCamp Drive/i));
+assert($('footer').children('p').last().text().match(/123 Free Code Camp Drive/i));
 ```
 
 # --seed--

@@ -13,10 +13,42 @@ To make the image behave like heading elements (which are block-level), create a
 
 # --hints--
 
-Test 1
+You should use an `img` selector.
 
 ```js
+assert(code.match(/img\s*{/i));
+```
 
+You should set the `display` property to `block`.
+
+```js
+assert(code.match(/display:\s*block;/i));
+```
+
+You should set the `margin-left` property to `auto`.
+
+```js
+assert(code.match(/margin-left:\s*auto;/i));
+```
+
+You should set the `margin-right` property to `auto`.
+
+```js
+assert(code.match(/margin-right:\s*auto;/i));
+```
+
+Your `img` element should have a `display` of `block`.
+
+```js
+assert($('img').css('display') === 'block');
+```
+
+Your `img` element should have a `margin-left` and `margin-right` of `auto`.
+
+```js
+const left = $('img').css('margin-left');
+const right = $('img').css('margin-right');
+assert(parseInt(left) === parseInt(right));
 ```
 
 # --seed--

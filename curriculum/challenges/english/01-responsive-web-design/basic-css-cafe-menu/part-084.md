@@ -11,10 +11,16 @@ To keep with the same color theme you have already been using (black and brown),
 
 # --hints--
 
-Test 1
+You should set the `color` property to `black` when the link is `visited`.
 
 ```js
+assert(code.match(/a:visited\s*{\s*color:\s*black;/i));
+```
 
+You should set the `color` property to `brown` when the link is `active`.
+
+```js
+assert(code.match(/a:active\s*{\s*color:\s*brown;/i));
 ```
 
 # --seed--

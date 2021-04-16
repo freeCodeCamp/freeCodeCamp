@@ -11,10 +11,22 @@ Add one last image under the `Desserts` heading using the url `https://tinyurl.c
 
 # --hints--
 
-Test 1
+You should add a second `img` element.
 
 ```js
+assert($('img').length === 2);
+```
 
+Your new `img` element should have a `src` of `https://tinyurl.com/cafe-pie-fcc`.
+
+```js
+assert($('img').last().attr('src') === 'https://tinyurl.com/cafe-pie-fcc');
+```
+
+Your new `img` element should have an `alt` of `pie icon`.
+
+```js
+assert($('img').last().attr('alt').match(/pie icon/i));
 ```
 
 # --seed--
