@@ -1,20 +1,14 @@
 const getChallenge = require('../../curriculum/getChallenges');
 const env = require('../../config/env.json');
+const assert = require('assert');
 
-function createPath(curriculum, superblock, block) {
-  let challengePaths = [];
-
-  let superBlockPath = superblock;
-  let blockPath = block;
+function createPaths(curriculum, superblock, block) {
   let challengeArr = curriculum[superblock]['blocks'][block]['challenges'];
 
-  challengeArr.forEach(challengePath => {
-    challengePaths.push(
-      `/learn/${superBlockPath}/${blockPath}/${challengePath['dashedName']}`
-    );
-  });
-
-  return challengePaths;
+  return challengeArr.map(
+    challengePath =>
+      `/learn/${superblock}/${block}/${challengePath['dashedName']}`
+  );
 }
 
 module.exports = on => {
@@ -31,45 +25,36 @@ module.exports = on => {
       return curriculum;
     },
 
-    scopeCurriculum({ curriculum, superblock, block, challenge }) {
+    scopeCurriculum({ curriculum, superblock, blocks, challenges }) {
       let challengePaths = [];
 
-      if (superblock && block === null) {
+      assert(superblock, 'superblock must be supplied to scopeCurriculum');
+
+      if (!blocks) {
         // Get blocks in superblock
-        block = Object.keys(curriculum[superblock]['blocks']);
+        blocks = Object.keys(curriculum[superblock]['blocks']);
+      }
 
-        // Get challenges in block
-
-        block.forEach(blocks => {
-          const upcomingChange =
-            curriculum[superblock]['blocks'][blocks]['meta'][
-              'isUpcomingChange'
-            ];
-
-          // Check if block is upcoming change
-          if (!upcomingChange || env.showUpcomingChanges) {
-            challengePaths = createPath(curriculum, superblock, blocks);
-          }
+      if (challenges) {
+        assert(
+          blocks.length === 1,
+          'Individual challenges must come from one block\n' +
+            "scopeCurriculum's arguments may be invalid"
+        );
+        challenges.forEach(challenge => {
+          challengePaths.push(`/learn/${superblock}/${blocks[0]}/${challenge}`);
         });
-      } else if (superblock && block !== null && challenge === null) {
-        block.forEach(blockInArr => {
+      } else {
+        blocks.forEach(block => {
           const upcomingChange =
-            curriculum[superblock]['blocks'][blockInArr]['meta'][
-              'isUpcomingChange'
-            ];
+            curriculum[superblock]['blocks'][block]['meta']['isUpcomingChange'];
 
+          // Upcoming changes should not be tested by default.
           if (!upcomingChange || env.showUpcomingChanges) {
-            challengePaths = createPath(curriculum, superblock, blockInArr);
+            challengePaths = challengePaths.concat(
+              createPaths(curriculum, superblock, block)
+            );
           }
-        });
-      } else if (superblock && block !== null && challenge !== null) {
-        challenge.forEach(challengeInArr => {
-          let superBlockPath = superblock;
-          let blockPath = block;
-
-          challengePaths.push(
-            `/learn/${superBlockPath}/${blockPath}/${challengeInArr}`
-          );
         });
       }
       return challengePaths;

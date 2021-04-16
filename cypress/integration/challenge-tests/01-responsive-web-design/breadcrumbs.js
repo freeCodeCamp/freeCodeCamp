@@ -6,8 +6,8 @@ describe('Test breadcrumbs', () => {
       cy.task('scopeCurriculum', {
         curriculum: curriculumObj,
         superblock: 'responsive-web-design',
-        block: ['css-flexbox'],
-        challenge: [
+        blocks: ['css-flexbox'],
+        challenges: [
           'use-the-flex-shorthand-property',
           'use-the-align-self-property'
         ]
