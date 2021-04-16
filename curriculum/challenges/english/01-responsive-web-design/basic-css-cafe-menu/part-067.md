@@ -13,10 +13,17 @@ First, add an `hr` element between the first `header` element and the `main` ele
 
 # --hints--
 
-Test 1
+You should add an `hr` element. `hr` elements are self-closing.
 
 ```js
+assert(code.match(/<hr\s?\/?>/i));
+```
 
+Your `hr` element should be between your `header` element and your `main` element.
+
+```js
+assert($('hr')[0].previousElementSibling.tagName === 'HEADER');
+assert($('hr')[0].nextElementSibling.tagName === 'MAIN');
 ```
 
 # --seed--

@@ -13,10 +13,28 @@ Add two new type selectors (`h1` and `h2`). Use the `font-size` property for bot
 
 # --hints--
 
-Test 1
+You should use an `h1` selector.
 
 ```js
+assert(code.match(/h1\s*{/i));
+```
 
+You should use an `h2` selector.
+
+```js
+assert(code.match(/h2\s*{/i));
+```
+
+Your `h1` element should have a `font-size` of `40px`.
+
+```js
+assert($('h1').css('font-size') === '40px');
+```
+
+Your `h2` element should have a `font-size` of `30px`.
+
+```js
+assert($('h2').css('font-size') === '30px');
 ```
 
 # --seed--

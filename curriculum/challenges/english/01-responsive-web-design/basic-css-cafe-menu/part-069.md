@@ -11,10 +11,16 @@ Change the background color of the `hr` element to `brown` so it matches the col
 
 # --hints--
 
-Test 1
+You should set the value of the `background-color` property to `brown`.
 
 ```js
+assert(code.match(/background-color:\s*brown;/));
+```
 
+Your `hr` element should have a `background-color` of `brown`.
+
+```js
+assert($('hr').css('background-color') === 'rgb(165, 42, 42)');
 ```
 
 # --seed--

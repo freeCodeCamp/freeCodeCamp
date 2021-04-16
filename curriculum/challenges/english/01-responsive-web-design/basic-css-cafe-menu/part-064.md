@@ -11,10 +11,23 @@ Add a `footer` element below the `main` element, where you can some additional i
 
 # --hints--
 
-Test 1
+You should have an opening `<footer>` tag.
 
 ```js
+assert(code.match(/<footer>/i));
+```
 
+You should have a closing `</footer>` tag.
+
+```js
+assert(code.match(/<\/footer>/i));
+```
+
+Your `footer` element should be below your `main` element.
+
+```js
+const footer = $('footer')[0]
+assert(footer.previousElementSibling.tagName === 'MAIN');
 ```
 
 # --seed--

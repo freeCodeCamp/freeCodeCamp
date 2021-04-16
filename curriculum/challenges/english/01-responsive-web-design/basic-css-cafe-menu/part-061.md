@@ -11,10 +11,16 @@ Make the `Est. 2020` text italicized by creating an `established` class selector
 
 # --hints--
 
-Test 1
+You should have an `.established` selector.
 
 ```js
+assert(code.match(/\.established\s*{/i));
+```
 
+You should set the `font-style` property to `italic`.
+
+```js
+assert(code.match(/\.established\s*{\s*font-style:\s*italic;/i));
 ```
 
 # --seed--

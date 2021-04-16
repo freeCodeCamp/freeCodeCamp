@@ -11,10 +11,23 @@ Now apply the `established` class to the `Est. 2020` text.
 
 # --hints--
 
-Test 1
+You should set the `class` of the `p` element to `established`.
 
 ```js
+assert(code.match(/<p class=['"]established['"]>/i));
+```
 
+Your `established` class should be on the element with the text `Est. 2020`.
+
+```js
+const established = $('.established');
+assert(established[0].innerText.match(/Est\.\s2020/i));
+```
+
+Your `established` class element should have italic text.
+
+```js
+assert($('.established').css('font-style') === 'italic');
 ```
 
 # --seed--

@@ -11,10 +11,28 @@ Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in th
 
 # --hints--
 
-Test 1
+Your new `p` element should be nested within your `footer` element.
 
 ```js
+assert($('footer').children('p').length === 1);
+```
 
+Your new `a` element should be nested within your new `p` element.
+
+```js
+assert($('footer').children('p').children('a').length === 1);
+```
+
+Your new `a` element should have the text `Visit our website`.
+
+```js
+assert($('footer').find('a')[0].innerText.match(/Visit our website/i));
+```
+
+Your new `a` element should link to `https://www.freecodecamp.org`. Remember that `a` elements use the `href` attribute to create a link.
+
+```js
+assert($('footer').find('a').attr('href') === 'https://www.freecodecamp.org');
 ```
 
 # --seed--
