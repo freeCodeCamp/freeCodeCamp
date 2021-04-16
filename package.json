@@ -106,7 +106,7 @@
     "@testing-library/cypress": "7.0.6",
     "babel-eslint": "10.1.0",
     "cross-env": "7.0.3",
-    "cypress": "6.9.1",
+    "cypress": "7.1.0",
     "debug": "4.3.1",
     "docsify-cli": "4.4.3",
     "eslint": "7.24.0",
