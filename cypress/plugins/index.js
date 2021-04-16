@@ -3,7 +3,7 @@ const env = require('../../config/env.json');
 
 function createPath(curriculum, superblock, block) {
   let challengePaths = [];
-  console.log('this is called but it does nothing');
+
   let superBlockPath = superblock;
   let blockPath = block;
   let challengeArr = curriculum[superblock]['blocks'][block]['challenges'];
