@@ -93,7 +93,7 @@ async (getUserInput) => {
     body: JSON.stringify(data)
   });
   if (res.ok) {
-    const checkData = await fetch(getUserInput('url') + '/api/threads/general');
+    const checkData = await fetch(getUserInput('url') + '/api/threads/fcc_test');
     const parsed = await checkData.json();
     assert.isTrue(parsed[0].text == "fcc_test");
     assert.isNotNull(parsed[0]._id);
