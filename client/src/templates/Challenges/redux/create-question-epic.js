@@ -54,6 +54,7 @@ function createQuestionEpic(action$, state$, { window }) {
 
       let textMessage = dedent(
         `**Tell us what's happening:**
+        Describe your issue in detail here.
 
         ${
           projectFormValues.length
