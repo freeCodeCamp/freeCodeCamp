@@ -1,6 +1,6 @@
 /* global expect */
 
-import { transformEditorLink } from './create-question-epic';
+import { transformEditorLink } from '../utils';
 
 describe('create-question-epic', () => {
   describe('transformEditorLink', () => {

@@ -9,6 +9,7 @@ import {
 } from './';
 import { tap, mapTo } from 'rxjs/operators';
 import { forumLocation } from '../../../../../config/env.json';
+import { transformEditorLink } from '../utils';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;
@@ -21,18 +22,6 @@ function filesToMarkdown(files = {}) {
     const fileType = file.ext;
     return `${fileString}\`\`\`${fileType}\n${fileName}\n${file.contents}\n\`\`\`\n\n`;
   }, '\n');
-}
-
-export function transformEditorLink(url) {
-  return url
-    .replace(
-      /(?<=\/\/)(?<projectname>[^.]+)\.(?<username>[^.]+)\.repl\.co\/?/,
-      'repl.it/@$<username>/$<projectname>'
-    )
-    .replace(
-      /(?<=\/\/)(?<projectname>[^.]+)\.glitch\.me\/?/,
-      'glitch.com/edit/#!/$<projectname>'
-    );
 }
 
 function createQuestionEpic(action$, state$, { window }) {
