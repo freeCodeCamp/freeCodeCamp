@@ -201,7 +201,7 @@ async function transformScript(element) {
   });
 }
 
-const transformHtml = async function (file) {
+const transformHtml = async function(file) {
   const div = document.createElement('div');
   div.innerHTML = file.contents;
   await Promise.all([transformSASS(div), transformScript(div)]);

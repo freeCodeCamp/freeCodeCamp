@@ -25,7 +25,10 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
-    challengeType: Joi.number().min(0).max(11).required(),
+    challengeType: Joi.number()
+      .min(0)
+      .max(11)
+      .required(),
     checksum: Joi.number(),
     // __commentCounts is only used to test the comment replacement
     __commentCounts: Joi.object(),
@@ -61,7 +64,9 @@ const schema = Joi.object()
     }),
     question: Joi.object().keys({
       text: Joi.string().required(),
-      answers: Joi.array().items(Joi.string()).required(),
+      answers: Joi.array()
+        .items(Joi.string())
+        .required(),
       solution: Joi.number().required()
     }),
     required: Joi.array().items(
@@ -89,7 +94,9 @@ const schema = Joi.object()
       Joi.object().keys({
         id: Joi.string().allow(''),
         text: Joi.string().required(),
-        testString: Joi.string().allow('').required()
+        testString: Joi.string()
+          .allow('')
+          .required()
       }),
       // our tests used in certification verification
       Joi.object().keys({

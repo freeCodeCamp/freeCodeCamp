@@ -205,4 +205,7 @@ export class NavLinks extends Component {
 NavLinks.propTypes = propTypes;
 NavLinks.displayName = 'NavLinks';
 
-export default connect(null, mapDispatchToProps)(withTranslation()(NavLinks));
+export default connect(
+  null,
+  mapDispatchToProps
+)(withTranslation()(NavLinks));

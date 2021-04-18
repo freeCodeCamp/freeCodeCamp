@@ -90,16 +90,14 @@ function validateEditableMarkers({ value, position }) {
   lines.forEach((line, index) => {
     if (line.match(twoMarkersRE)) {
       throw Error(
-        `Line ${
-          baseLineNumber + index
-        } has two markers. Each line should only have one.`
+        `Line ${baseLineNumber +
+          index} has two markers. Each line should only have one.`
       );
     }
     if (line.match(formattedMarkerRE)) {
       throw Error(
-        `Line ${
-          baseLineNumber + index
-        } has a malformed marker. It should be --fcc-editable-region--`
+        `Line ${baseLineNumber +
+          index} has a malformed marker. It should be --fcc-editable-region--`
       );
     }
   });

@@ -163,4 +163,7 @@ function DonateModal({
 DonateModal.displayName = 'DonateModal';
 DonateModal.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(DonateModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonateModal);

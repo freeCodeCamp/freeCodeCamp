@@ -12,7 +12,7 @@ const selectors = {
 let appHasStarted;
 function spyOnListener(win) {
   const addListener = win.EventTarget.prototype.addEventListener;
-  win.EventTarget.prototype.addEventListener = function (name) {
+  win.EventTarget.prototype.addEventListener = function(name) {
     if (name === 'click') {
       appHasStarted = true;
       win.EventTarget.prototype.addEventListener = addListener;
@@ -68,7 +68,9 @@ describe('Navbar', () => {
     () => {
       cy.get(selectors.menuButton).click();
       cy.get(selectors.navigationLinks).contains('Forum');
-      cy.get(selectors.navigationLinks).contains('Curriculum').click();
+      cy.get(selectors.navigationLinks)
+        .contains('Curriculum')
+        .click();
       cy.url().should('include', '/learn');
       cy.get(selectors.navigationLinks).contains('Curriculum');
       cy.get(selectors.navigationLinks).contains('Forum');
@@ -82,7 +84,9 @@ describe('Navbar', () => {
     () => {
       cy.contains(selectors.smallCallToAction, 'Sign in');
       cy.get(selectors.menuButton).click();
-      cy.get(selectors.navigationLinks).contains('Curriculum').click();
+      cy.get(selectors.navigationLinks)
+        .contains('Curriculum')
+        .click();
       cy.contains(selectors.smallCallToAction, 'Sign in');
     }
   );
@@ -91,7 +95,9 @@ describe('Navbar', () => {
     cy.login();
     cy.get('a[href*="/settings"]').should('be.visible');
     cy.get(selectors.menuButton).click();
-    cy.get(selectors.navigationLinks).contains('Profile').click();
+    cy.get(selectors.navigationLinks)
+      .contains('Profile')
+      .click();
     cy.url().should('include', '/developmentuser');
   });
 

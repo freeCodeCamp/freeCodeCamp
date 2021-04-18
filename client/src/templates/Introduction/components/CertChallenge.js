@@ -20,9 +20,12 @@ const propTypes = {
 };
 
 const mapStateToProps = state => {
-  return createSelector(userSelector, user => ({
-    user
-  }))(state);
+  return createSelector(
+    userSelector,
+    user => ({
+      user
+    })
+  )(state);
 };
 
 export class CertChallenge extends Component {

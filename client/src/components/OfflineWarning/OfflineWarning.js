@@ -22,7 +22,7 @@ function OfflineWarning({ isOnline, isSignedIn }) {
   }
 
   function timeout() {
-    id = setTimeout(function () {
+    id = setTimeout(function() {
       setShowWarning(true);
     }, delayInMilliSeconds);
   }

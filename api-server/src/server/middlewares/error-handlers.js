@@ -25,7 +25,7 @@ const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 export default function prodErrorHandler() {
   // error handling in production.
   // eslint-disable-next-line no-unused-vars
-  return function (err, req, res, next) {
+  return function(err, req, res, next) {
     const { origin } = getRedirectParams(req);
     const handled = unwrapHandledError(err);
     // respect handled error status

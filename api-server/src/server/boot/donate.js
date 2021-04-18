@@ -45,9 +45,9 @@ export default function donateBoot(app, done) {
                 metadata: {
                   /* eslint-disable camelcase */
                   sb_service: `freeCodeCamp.org`,
-                  sb_tier: `${donationSubscriptionConfig.duration[duration]} $${
-                    amount / 100
-                  } Donation`
+                  sb_tier: `${
+                    donationSubscriptionConfig.duration[duration]
+                  } $${amount / 100} Donation`
                   /* eslint-enable camelcase */
                 }
               },
@@ -72,11 +72,11 @@ export default function donateBoot(app, done) {
   }
 
   function connectToStripe() {
-    return new Promise(function (resolve) {
+    return new Promise(function(resolve) {
       // connect to stripe API
       stripe = Stripe(keys.stripe.secret);
       // parse stripe plans
-      stripe.plans.list({}, function (err, stripePlans) {
+      stripe.plans.list({}, function(err, stripePlans) {
         if (err) {
           throw err;
         }
@@ -100,7 +100,7 @@ export default function donateBoot(app, done) {
 
   function createStripePlan(plan) {
     log(`Creating subscription plan: ${plan.product.name}`);
-    stripe.plans.create(plan, function (err) {
+    stripe.plans.create(plan, function(err) {
       if (err) {
         log(err);
       }

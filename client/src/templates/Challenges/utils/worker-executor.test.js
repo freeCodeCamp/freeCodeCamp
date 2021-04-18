@@ -3,7 +3,7 @@
 import createWorker from './worker-executor';
 
 function mockWorker({ init, postMessage, terminate } = {}) {
-  global.Worker = jest.fn(function () {
+  global.Worker = jest.fn(function() {
     setImmediate(
       (init && init(this)) ||
         (() =>
@@ -12,7 +12,7 @@ function mockWorker({ init, postMessage, terminate } = {}) {
     this.onmessage = null;
     this.postMessage =
       postMessage ||
-      function (data) {
+      function(data) {
         setImmediate(
           () => this.onmessage && this.onmessage({ data: `${data} processed` })
         );
@@ -169,7 +169,7 @@ it('Worker executor should reject task', async () => {
 
 it('Worker executor should emit LOG events', async () => {
   mockWorker({
-    postMessage: function (data) {
+    postMessage: function(data) {
       setImmediate(() => {
         for (let i = 0; i < 3; i++) {
           // eslint-disable-next-line no-unused-expressions

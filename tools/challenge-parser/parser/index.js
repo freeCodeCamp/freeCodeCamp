@@ -51,7 +51,7 @@ exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {
     const file = readSync(filename);
     const tree = processor.parse(file);
-    processor.run(tree, file, function (err, node, file) {
+    processor.run(tree, file, function(err, node, file) {
       if (!err) {
         resolve(file.data);
       } else {

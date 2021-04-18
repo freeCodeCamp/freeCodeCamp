@@ -23,7 +23,7 @@ const defaultOutput = `
 // const runningOutput = '// running tests';
 // const finishedOutput = '// tests completed';
 
-describe('Classic challenge', function () {
+describe('Classic challenge', function() {
   it('renders', () => {
     cy.visit(locations.index);
 

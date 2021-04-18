@@ -77,7 +77,9 @@ function refetchCompletedChallenges(req, res, next) {
 }
 
 const updateMyEmailValidators = [
-  check('email').isEmail().withMessage('Email format is invalid.')
+  check('email')
+    .isEmail()
+    .withMessage('Email format is invalid.')
 ];
 
 function updateMyEmail(req, res, next) {
@@ -115,7 +117,9 @@ function updateMyCurrentChallenge(req, res, next) {
 }
 
 const updateMyThemeValidators = [
-  check('theme').isIn(Object.keys(themes)).withMessage('Theme is invalid.')
+  check('theme')
+    .isIn(Object.keys(themes))
+    .withMessage('Theme is invalid.')
 ];
 
 function updateMyTheme(req, res, next) {

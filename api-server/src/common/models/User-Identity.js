@@ -19,7 +19,7 @@ export default function initializeUserIdent(UserIdent) {
     UserIdent.findOne$ = observeMethod(UserIdent, 'findOne');
   });
 
-  UserIdent.login = function (
+  UserIdent.login = function(
     _provider,
     authScheme,
     profile,

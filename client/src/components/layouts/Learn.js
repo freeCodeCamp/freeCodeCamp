@@ -90,4 +90,7 @@ LearnLayout.propTypes = {
   })
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LearnLayout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LearnLayout);

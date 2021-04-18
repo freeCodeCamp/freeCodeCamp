@@ -180,7 +180,7 @@ export default function initializeUser(User) {
     );
   });
 
-  User.observe('before save', function (ctx) {
+  User.observe('before save', function(ctx) {
     const beforeCreate = Observable.of(ctx)
       .filter(({ isNewInstance }) => isNewInstance)
       // User.create
@@ -229,7 +229,7 @@ export default function initializeUser(User) {
   });
 
   // remove lingering user identities before deleting user
-  User.observe('before delete', function (ctx, next) {
+  User.observe('before delete', function(ctx, next) {
     const UserIdentity = User.app.models.UserIdentity;
     const UserCredential = User.app.models.UserCredential;
     log('removing user', ctx.where);
@@ -240,21 +240,21 @@ export default function initializeUser(User) {
     return Observable.combineLatest(
       destroyAll(id, UserIdentity),
       destroyAll(id, UserCredential),
-      function (identData, credData) {
+      function(identData, credData) {
         return {
           identData: identData,
           credData: credData
         };
       }
     ).subscribe(
-      function (data) {
+      function(data) {
         log('deleted', data);
       },
-      function (err) {
+      function(err) {
         log('error deleting user %s stuff', id, err);
         next(err);
       },
-      function () {
+      function() {
         log('user stuff deleted for user %s', id);
         next();
       }
@@ -263,7 +263,7 @@ export default function initializeUser(User) {
 
   log('setting up user hooks');
   // overwrite lb confirm
-  User.confirm = function (uid, token, redirectTo) {
+  User.confirm = function(uid, token, redirectTo) {
     return this.findById(uid).then(user => {
       if (!user) {
         throw wrapHandledError(new Error(`User not found: ${uid}`), {
@@ -339,7 +339,7 @@ export default function initializeUser(User) {
     );
   };
 
-  User.afterRemote('logout', function ({ req, res }, result, next) {
+  User.afterRemote('logout', function({ req, res }, result, next) {
     removeCookies(req, res);
     next();
   });
@@ -802,7 +802,7 @@ export default function initializeUser(User) {
       ...user,
       about: showAbout ? about : '',
       calendar: showHeatMap ? calendar : {},
-      completedChallenges: (function () {
+      completedChallenges: (function() {
         if (showTimeLine) {
           return showCerts
             ? completedChallenges

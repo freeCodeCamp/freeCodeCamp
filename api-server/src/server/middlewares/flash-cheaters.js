@@ -10,7 +10,7 @@ const EXCLUDED_PATHS = [
 ];
 
 export default function flashCheaters() {
-  return function (req, res, next) {
+  return function(req, res, next) {
     if (
       ALLOWED_METHODS.indexOf(req.method) !== -1 &&
       EXCLUDED_PATHS.indexOf(req.path) === -1 &&

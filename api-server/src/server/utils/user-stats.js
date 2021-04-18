@@ -25,23 +25,36 @@ export function prepUniqueDaysByHours(cals, tz = 'UTC') {
         data.push(cur);
         prev = cur;
       } else if (
-        moment(cur).tz(tz).diff(moment(prev).tz(tz).startOf('day'), 'hours') >=
-        hoursDay
+        moment(cur)
+          .tz(tz)
+          .diff(
+            moment(prev)
+              .tz(tz)
+              .startOf('day'),
+            'hours'
+          ) >= hoursDay
       ) {
         data.push(cur);
         prev = cur;
       }
     }, []),
     sortBy(e => e),
-    map(ts => moment(ts).tz(tz).startOf('hours').valueOf())
+    map(ts =>
+      moment(ts)
+        .tz(tz)
+        .startOf('hours')
+        .valueOf()
+    )
   )(cals);
 }
 
 export function calcCurrentStreak(cals, tz = 'UTC') {
   let prev = last(cals);
   if (
-    moment().tz(tz).startOf('day').diff(moment(prev).tz(tz), 'hours') >
-    hoursBetween
+    moment()
+      .tz(tz)
+      .startOf('day')
+      .diff(moment(prev).tz(tz), 'hours') > hoursBetween
   ) {
     return 0;
   }
@@ -49,8 +62,10 @@ export function calcCurrentStreak(cals, tz = 'UTC') {
   let streakContinues = true;
   forEachRight(cur => {
     if (
-      moment(prev).tz(tz).startOf('day').diff(moment(cur).tz(tz), 'hours') <=
-      hoursBetween
+      moment(prev)
+        .tz(tz)
+        .startOf('day')
+        .diff(moment(cur).tz(tz), 'hours') <= hoursBetween
     ) {
       prev = cur;
       currentStreak++;
@@ -71,8 +86,10 @@ export function calcLongestStreak(cals, tz = 'UTC') {
       const last = cals[index === 0 ? 0 : index - 1];
       // is streak broken
       if (
-        moment(head).tz(tz).startOf('day').diff(moment(last).tz(tz), 'hours') >
-        hoursBetween
+        moment(head)
+          .tz(tz)
+          .startOf('day')
+          .diff(moment(last).tz(tz), 'hours') > hoursBetween
       ) {
         tail = head;
       }

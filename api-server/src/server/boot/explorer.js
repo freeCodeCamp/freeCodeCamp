@@ -12,7 +12,7 @@ module.exports = function mountLoopBackExplorer(app) {
   } catch (err) {
     // Print the message only when the app was started via `app.listen()`.
     // Do not print any message when the project is used as a component.
-    app.once('started', function () {
+    app.once('started', function() {
       log(
         'Run `npm install loopback-component-explorer` to enable ' +
           'the LoopBack explorer'
@@ -25,7 +25,7 @@ module.exports = function mountLoopBackExplorer(app) {
   const mountPath = '/explorer';
 
   explorer(app, { basePath: restApiRoot, mountPath });
-  app.once('started', function () {
+  app.once('started', function() {
     const baseUrl = app.get('url').replace(/\/$/, '');
 
     log('Browse your REST API at %s%s', baseUrl, mountPath);

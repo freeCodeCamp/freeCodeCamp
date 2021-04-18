@@ -8,8 +8,8 @@ import {
 } from '../../server/utils/auth';
 
 const log = debug('fcc:models:UserCredential');
-module.exports = function (UserCredential) {
-  UserCredential.link = function (
+module.exports = function(UserCredential) {
+  UserCredential.link = function(
     userId,
     _provider,
     authScheme,

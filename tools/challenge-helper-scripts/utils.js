@@ -112,8 +112,14 @@ const reorderSteps = () => {
   const projectPath = getProjectPath();
 
   const projectName = process.env.CALLING_DIR
-    ? process.env.CALLING_DIR.split(path.sep).slice(-1).toString()
-    : process.cwd().split(path.sep).slice(-1).toString();
+    ? process.env.CALLING_DIR.split(path.sep)
+        .slice(-1)
+        .toString()
+    : process
+        .cwd()
+        .split(path.sep)
+        .slice(-1)
+        .toString();
 
   const curriculumPath = process.env.CALLING_DIR
     ? ''
@@ -209,10 +215,8 @@ const getExistingStepNums = projectPath => {
     ) {
       let stepNum = fileName.split('.')[0].split('-')[1];
       if (!/^\d{3}$/.test(stepNum)) {
-        throw (
-          `Step not created. File ${fileName} has a step number containing non-digits.` +
-          ' Please run reorder-steps script first.'
-        );
+        throw `Step not created. File ${fileName} has a step number containing non-digits.` +
+          ' Please run reorder-steps script first.';
       }
       stepNum = parseInt(stepNum, 10);
       stepNums.push(stepNum);

@@ -54,7 +54,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = function (dispatch) {
+const mapDispatchToProps = function(dispatch) {
   const dispatchers = {
     close: () => dispatch(closeModal('completion')),
     submitChallenge: () => {

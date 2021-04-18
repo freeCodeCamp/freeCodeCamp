@@ -386,7 +386,9 @@ export class CertificationSettings extends Component {
       newChallengeFound = true;
     }
 
-    const valuesSaved = values(formChalObj).filter(Boolean).filter(isString);
+    const valuesSaved = values(formChalObj)
+      .filter(Boolean)
+      .filter(isString);
 
     const isProjectSectionComplete = valuesSaved.length === oldSubmissions;
 
@@ -407,7 +409,7 @@ export class CertificationSettings extends Component {
     const initialObject = {};
     let filledforms = 0;
     legacyProjectMap[certName].forEach(project => {
-      let completedProject = find(completedChallenges, function (challenge) {
+      let completedProject = find(completedChallenges, function(challenge) {
         return challenge['id'] === project['id'];
       });
       if (!completedProject) {

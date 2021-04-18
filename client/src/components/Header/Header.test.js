@@ -17,7 +17,7 @@ describe('<UniversalNav />', () => {
     displayMenu: false,
     menuButtonRef: {},
     searchBarRef: {},
-    toggleDisplayMenu: function () {},
+    toggleDisplayMenu: function() {},
     pathName: '/',
     fetchState: {
       pending: false

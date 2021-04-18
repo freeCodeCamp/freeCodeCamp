@@ -32,7 +32,7 @@ const globalRequires = [
 ];
 
 const applyFunction = fn =>
-  async function (file) {
+  async function(file) {
     try {
       if (file.error) {
         return file;

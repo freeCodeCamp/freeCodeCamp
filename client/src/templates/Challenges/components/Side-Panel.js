@@ -47,10 +47,7 @@ export class SidePanel extends Component {
       // users navigate from another challenge
       MathJax.Hub.Config({
         tex2jax: {
-          inlineMath: [
-            ['$', '$'],
-            ['\\(', '\\)']
-          ],
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
           processEscapes: true,
           processClass: 'rosetta-code|project-euler'
         }

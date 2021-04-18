@@ -2,7 +2,7 @@ import { homeLocation } from '../../../../config/env';
 import { allowedOrigins } from '../../../../config/cors-settings';
 
 export default function constantHeaders() {
-  return function (req, res, next) {
+  return function(req, res, next) {
     if (
       req.headers &&
       req.headers.origin &&

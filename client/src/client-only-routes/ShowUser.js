@@ -155,5 +155,8 @@ ShowUser.displayName = 'ShowUser';
 ShowUser.propTypes = propTypes;
 
 export default withTranslation()(
-  connect(mapStateToProps, mapDispatchToProps)(ShowUser)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(ShowUser)
 );

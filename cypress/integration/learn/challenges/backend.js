@@ -15,7 +15,7 @@ const unhandledErrorMessage = 'Something is not quite right';
 const runningOutput = '// running tests';
 const finishedOutput = '// tests completed';
 
-describe('Backend challenge', function () {
+describe('Backend challenge', function() {
   it('renders', () => {
     cy.visit(locations.index);
 
