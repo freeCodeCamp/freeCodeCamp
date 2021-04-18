@@ -1,45 +1,45 @@
 ---
 id: 587d824f367417b2b2512c5c
-title: Simulate Actions Using a Headless Browser
+title: 使用无头浏览器模拟操作
 challengeType: 2
 dashedName: simulate-actions-using-a-headless-browser
 ---
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.
+在接下来的挑战中，我们将使用名为 “Headless Browser（无头浏览器）” 的设备模拟人与页面的交互。
 
-A headless browser is a web browser without a graphical user interface. This kind of tool is particularly useful for testing web pages, as it is able to render and understand HTML, CSS, and JavaScript the same way a browser would.
+无头浏览器是没有图形用户界面的 Web 浏览器。 这种工具对于测试网页特别有用，因为它能够以与浏览器相同的方式呈现和理解 HTML、CSS 和 JavaScript。
 
-For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Repl.it. There are many other (more powerful) options.
+针对这些挑战，我们使用 Zombie.JS。 它是一个轻量级浏览器，完全基于 JS，而不需要额外的二进制文件来安装。 这个功能使我们可以在 Repl.it 等环境中使用它。 还有许多其他（更强大的）选择。
 
-Mocha allows you to prepare the ground running some code before the actual tests. This can be useful for example to create items in the database, which will be used in the successive tests.
+Mocha 允许你在实际测试之前准备一些代码运行的基础。 这可能有助于例如在数据库中创建项目，用于连续测试。
 
-With a headless browser, before the actual testing, we need to **visit** the page we are going to inspect. The `suiteSetup` 'hook' is executed only once at the suite startup. Other different hook types can be executed before each test, after each test, or at the end of a suite. See the Mocha docs for more information.
+使用无头浏览器，在进行实际测试之前，我们需要**访问**我们将要检查的页面。 `suiteSetup` “hook” 仅在套件启动时执行。 其他不同的钩子类型可以在每次测试之前、每次测试之后或者在套件的末尾执行。 更多信息请参阅 Mocha 文档。
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, immediately after the `Browser` declaration, add your project URL to the `site` property of the variable:
+在 `tests/2_functional-tests.js`中，紧接着 `Browser` 声明之后，将你的项目 URL 添加到变量的 `site` 属性：
 
 ```js
 Browser.site = 'https://sincere-cone.gomix.me'; // Your URL here
 ```
 
-If you are testing on a local environment replace the line above with
+如果你在本地环境中测试，则替换上面的代码为：
 
 ```js
 Browser.localhost('example.com', process.env.PORT || 3000);
 ```
 
-Within `tests/2_functional-tests.js`, at the root level of the `'Functional Tests with Zombie.js'` suite, instantiate a new instance of the `Browser` object with the following code:
+在 `tests/2_functional-tests.js` 中，在 `'Functional Tests with Zombie.js'` 套件的底部，使用以下代码实例化一个新的 `Browser` 对象：
 
 ```js
 const browser = new Browser();
 ```
 
-Then, use the `suiteSetup` hook to direct the `browser` to the `/` route with the following code:
+然后，通过以下代码，使用 `suiteSetup` 钩子把 `browser` 指向 `/` 路由：
 
 ```js
 suiteSetup(function(done) {
@@ -49,7 +49,7 @@ suiteSetup(function(done) {
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b91
-title: Ignore Case While Matching
+title: 匹配时忽略大小写
 challengeType: 1
 forumTopicId: 301344
 dashedName: ignore-case-while-matching
@@ -8,73 +8,73 @@ dashedName: ignore-case-while-matching
 
 # --description--
 
-Up until now, you've looked at regexes to do literal matches of strings. But sometimes, you might want to also match case differences.
+到目前为止，已经了解了如何用正则表达式来执行字符串的匹配。 但有时候，并不关注匹配字母的大小写。
 
-Case (or sometimes letter case) is the difference between uppercase letters and lowercase letters. Examples of uppercase are `"A"`, `"B"`, and `"C"`. Examples of lowercase are `"a"`, `"b"`, and `"c"`.
+大小写即大写字母和小写字母。 大写字母如 `A`、`B` 和 `C`。 小写字母如 `a`、`b` 和 `c`。
 
-You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case - the `i` flag. You can use it by appending it to the regex. An example of using this flag is `/ignorecase/i`. This regex can match the strings `"ignorecase"`, `"igNoreCase"`, and `"IgnoreCase"`.
+可以使用标志（flag）来匹配这两种情况。 标志有很多，不过这里我们只关注忽略大小写的标志——`i`。 可以通过将它附加到正则表达式之后来使用它。 这里给出使用该标志的一个实例 `/ignorecase/i`。 这个字符串可以匹配字符串 `ignorecase`、`igNoreCase` 和 `IgnoreCase`。
 
 # --instructions--
 
-Write a regex `fccRegex` to match `"freeCodeCamp"`, no matter its case. Your regex should not match any abbreviations or variations with spaces.
+编写正则表达式 `fccRegex` 以匹配 `freeCodeCamp`，忽略大小写。 正则表达式不应与任何缩写或带有空格的变体匹配。
 
 # --hints--
 
-Your regex should match `freeCodeCamp`
+你的正则表达式应该匹配 `freeCodeCamp`
 
 ```js
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
-Your regex should match `FreeCodeCamp`
+你的正则表达式应该匹配 `FreeCodeCamp`
 
 ```js
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
-Your regex should match `FreecodeCamp`
+你的正则表达式应该匹配 `FreecodeCamp`
 
 ```js
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
-Your regex should match `FreeCodecamp`
+你的正则表达式应该匹配 `FreeCodecamp`
 
 ```js
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
-Your regex should not match `Free Code Camp`
+你的正则表达式不应该匹配 `Free Code Camp`
 
 ```js
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
-Your regex should match `FreeCOdeCamp`
+您的正则表达式应该匹配字符串 `FreeCOdeCamp`
 
 ```js
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
-Your regex should not match `FCC`
+你的正则表达式不应该匹配 `FCC`
 
 ```js
 assert(!fccRegex.test('FCC'));
 ```
 
-Your regex should match `FrEeCoDeCamp`
+你的正则表达式应该匹配字符串 `FrEeCoDeCamp`
 
 ```js
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
-Your regex should match `FrEeCodECamp`
+你的正则表达式应该匹配字符串 `FrEeCodECamp`
 
 ```js
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
-Your regex should match `FReeCodeCAmp`
+你的正则表达式应该匹配字符串 `FReeCodeCAmp`
 
 ```js
 assert(fccRegex.test('FReeCodeCAmp'));

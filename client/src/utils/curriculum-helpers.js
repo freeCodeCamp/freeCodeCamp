@@ -27,9 +27,11 @@ const removeWhiteSpace = (str = '') => {
   return str.replace(/\s/g, '');
 };
 
-export default {
+const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
   removeJSComments,
   removeWhiteSpace
 };
+
+export default curriculumHelpers;

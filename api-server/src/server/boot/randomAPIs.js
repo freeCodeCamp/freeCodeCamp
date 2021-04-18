@@ -6,7 +6,7 @@ import { getRedirectParams } from '../utils/redirection';
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
 
-module.exports = function(app) {
+module.exports = function (app) {
   const router = app.loopback.Router();
   const User = app.models.User;
 
@@ -168,7 +168,7 @@ module.exports = function(app) {
         githubSecret
       ].join(''),
       githubHeaders,
-      function(err, status1, pulls) {
+      function (err, status1, pulls) {
         if (err) {
           return next(err);
         }
@@ -185,7 +185,7 @@ module.exports = function(app) {
             githubSecret
           ].join(''),
           githubHeaders,
-          function(err, status2, issues) {
+          function (err, status2, issues) {
             if (err) {
               return next(err);
             }

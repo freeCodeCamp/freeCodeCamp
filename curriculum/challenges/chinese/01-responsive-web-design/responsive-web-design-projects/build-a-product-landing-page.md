@@ -44,7 +44,7 @@ dashedName: build-a-product-landing-page
 
 **需求 15：** 在此 app 中，应至少使用一次 CSS 的 flexbox 布局。
 
-你可以通过 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目， 也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用这个 CodePen 模版</a>创建你自己的项目，点击 `Save` 即可创建你的新项目。 也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
 

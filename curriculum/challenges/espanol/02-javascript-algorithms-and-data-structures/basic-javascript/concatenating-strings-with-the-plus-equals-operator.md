@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b8
-title: Concatenating Strings with the Plus Equals Operator
+title: Concatena cadenas con el operador "más igual"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmmC4'
 forumTopicId: 16803
@@ -9,32 +9,32 @@ dashedName: concatenating-strings-with-the-plus-equals-operator
 
 # --description--
 
-We can also use the `+=` operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.
+También podemos utilizar el operador `+=` para <dfn>concatenar</dfn> una cadena al final de una variable de cadena existente. Esto puede ser muy útil para romper una cadena larga en varias líneas.
 
-**Note**  
-Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**Nota:** Ten cuidado con los espacios. La concatenación no añade espacios entre las cadenas concatenadas, así que tendrás que añadirlos por tu cuenta.
 
-Example:
+Ejemplo:
 
 ```js
 var ourStr = "I come first. ";
 ourStr += "I come second.";
-// ourStr is now "I come first. I come second."
 ```
+
+`ourStr` ahora tiene un valor de la cadena `I come first. I come second.`.
 
 # --instructions--
 
-Build `myStr` over several lines by concatenating these two strings: `"This is the first sentence. "` and `"This is the second sentence."` using the `+=` operator. Use the `+=` operator similar to how it is shown in the editor. Start by assigning the first string to `myStr`, then add on the second string.
+Construye `myStr` en varias líneas concatenando estas dos cadenas: `This is the first sentence.` y `This is the second sentence.` usando el operador `+=`. Utiliza el operador `+=` de forma similar a como se muestra en el editor. Comienza asignando la primera cadena a `myStr`, luego añade la segunda cadena.
 
 # --hints--
 
-`myStr` should have a value of `This is the first sentence. This is the second sentence.`
+`myStr` debe tener una cadena con valor `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');
 ```
 
-You should use the `+=` operator to build `myStr`.
+Debes usar el operador `+=` para construir `myStr`.
 
 ```js
 assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));

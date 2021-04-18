@@ -1,6 +1,6 @@
 ---
 id: a7f4d8f2483413a6ce226cac
-title: Roman Numeral Converter
+title: Conversor de números romanos
 challengeType: 5
 forumTopicId: 16044
 dashedName: roman-numeral-converter
@@ -8,163 +8,163 @@ dashedName: roman-numeral-converter
 
 # --description--
 
-Convert the given number into a roman numeral.
+Convierte el número proporcionado en un número romano.
 
-All [roman numerals](http://www.mathsisfun.com/roman-numerals.html) answers should be provided in upper-case.
+Todos los [números romanos](http://www.mathsisfun.com/roman-numerals.html) deben proporcionarse en mayusculas.
 
 # --hints--
 
-`convertToRoman(2)` should return "II".
+`convertToRoman(2)` debe devolver la cadena `II`.
 
 ```js
 assert.deepEqual(convertToRoman(2), 'II');
 ```
 
-`convertToRoman(3)` should return "III".
+`convertToRoman(3)` debe devolver la cadena `III`.
 
 ```js
 assert.deepEqual(convertToRoman(3), 'III');
 ```
 
-`convertToRoman(4)` should return "IV".
+`convertToRoman(4)` debe devolver la cadena `IV`.
 
 ```js
 assert.deepEqual(convertToRoman(4), 'IV');
 ```
 
-`convertToRoman(5)` should return "V".
+`convertToRoman(5)` debe devolver la cadena `V`.
 
 ```js
 assert.deepEqual(convertToRoman(5), 'V');
 ```
 
-`convertToRoman(9)` should return "IX".
+`convertToRoman(9)` debe devolver la cadena `IX`.
 
 ```js
 assert.deepEqual(convertToRoman(9), 'IX');
 ```
 
-`convertToRoman(12)` should return "XII".
+`convertToRoman(12)` debe devolver la cadena `XII`.
 
 ```js
 assert.deepEqual(convertToRoman(12), 'XII');
 ```
 
-`convertToRoman(16)` should return "XVI".
+`convertToRoman(16)` debe devolver la cadena `XVI`.
 
 ```js
 assert.deepEqual(convertToRoman(16), 'XVI');
 ```
 
-`convertToRoman(29)` should return "XXIX".
+`convertToRoman(29)` debe devolver la cadena `XXIX`.
 
 ```js
 assert.deepEqual(convertToRoman(29), 'XXIX');
 ```
 
-`convertToRoman(44)` should return "XLIV".
+`convertToRoman(44)` debe devolver la cadena `XLIV`.
 
 ```js
 assert.deepEqual(convertToRoman(44), 'XLIV');
 ```
 
-`convertToRoman(45)` should return "XLV"
+`convertToRoman(45)` debe devolver la cadena `XLV`.
 
 ```js
 assert.deepEqual(convertToRoman(45), 'XLV');
 ```
 
-`convertToRoman(68)` should return "LXVIII"
+`convertToRoman(68)` debe devolver la cadena `LXVIII`
 
 ```js
 assert.deepEqual(convertToRoman(68), 'LXVIII');
 ```
 
-`convertToRoman(83)` should return "LXXXIII"
+`convertToRoman(83)` debe devolver la cadena `LXXXIII`
 
 ```js
 assert.deepEqual(convertToRoman(83), 'LXXXIII');
 ```
 
-`convertToRoman(97)` should return "XCVII"
+`convertToRoman(97)` debe devolver la cadena `XCVII`
 
 ```js
 assert.deepEqual(convertToRoman(97), 'XCVII');
 ```
 
-`convertToRoman(99)` should return "XCIX"
+`convertToRoman(99)` debe devolver la cadena `XCIX`
 
 ```js
 assert.deepEqual(convertToRoman(99), 'XCIX');
 ```
 
-`convertToRoman(400)` should return "CD"
+`convertToRoman(400)` debe devolver la cadena `CD`
 
 ```js
 assert.deepEqual(convertToRoman(400), 'CD');
 ```
 
-`convertToRoman(500)` should return "D"
+`convertToRoman(500)` debe devolver la cadena `D`
 
 ```js
 assert.deepEqual(convertToRoman(500), 'D');
 ```
 
-`convertToRoman(501)` should return "DI"
+`convertToRoman(501)` debe devolver la cadena `DI`
 
 ```js
 assert.deepEqual(convertToRoman(501), 'DI');
 ```
 
-`convertToRoman(649)` should return "DCXLIX"
+`convertToRoman(649)` debe devolver la cadena `DCXLIX`
 
 ```js
 assert.deepEqual(convertToRoman(649), 'DCXLIX');
 ```
 
-`convertToRoman(798)` should return "DCCXCVIII"
+`convertToRoman(798)` debe devolver la cadena `DCCXCVIII`
 
 ```js
 assert.deepEqual(convertToRoman(798), 'DCCXCVIII');
 ```
 
-`convertToRoman(891)` should return "DCCCXCI"
+`convertToRoman(891)` debe devolver la cadena `DCCCXCI`
 
 ```js
 assert.deepEqual(convertToRoman(891), 'DCCCXCI');
 ```
 
-`convertToRoman(1000)` should return "M"
+`convertToRoman(1000)` debe devolver la cadena `M`
 
 ```js
 assert.deepEqual(convertToRoman(1000), 'M');
 ```
 
-`convertToRoman(1004)` should return "MIV"
+`convertToRoman(1004)` debe devolver la cadena `MIV`
 
 ```js
 assert.deepEqual(convertToRoman(1004), 'MIV');
 ```
 
-`convertToRoman(1006)` should return "MVI"
+`convertToRoman(1006)` debe devolver la cadena `MVI`
 
 ```js
 assert.deepEqual(convertToRoman(1006), 'MVI');
 ```
 
-`convertToRoman(1023)` should return "MXXIII"
+`convertToRoman(1023)` debe devolver la cadena `MXXIII`
 
 ```js
 assert.deepEqual(convertToRoman(1023), 'MXXIII');
 ```
 
-`convertToRoman(2014)` should return "MMXIV"
+`convertToRoman(2014)` debe devolver la cadena `MMXIV`
 
 ```js
 assert.deepEqual(convertToRoman(2014), 'MMXIV');
 ```
 
-`convertToRoman(3999)` should return "MMMCMXCIX"
+`convertToRoman(3999)` debe devolver la cadena `MMMCMXCIX`
 
 ```js
 assert.deepEqual(convertToRoman(3999), 'MMMCMXCIX');

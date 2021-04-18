@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8b
-title: Understand the Immediately Invoked Function Expression (IIFE)
+title: 了解立即调用函数表达（IIFE）
 challengeType: 1
 forumTopicId: 301328
 dashedName: understand-the-immediately-invoked-function-expression-iife
@@ -8,30 +8,31 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 
 # --description--
 
-A common pattern in JavaScript is to execute a function as soon as it is declared:
+JavaScript 中的一个常见模式就是，函数在声明后立刻执行：
 
 ```js
 (function () {
   console.log("Chirp, chirp!");
-})(); // this is an anonymous function expression that executes right away
-// Outputs "Chirp, chirp!" immediately
+})();
 ```
 
-Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <dfn>immediately invoked function expression</dfn> or <dfn>IIFE</dfn>.
+这是一个匿名函数表达式，立即执行并输出 `Chirp, chirp!`。
+
+请注意，函数没有名称，也不存储在变量中。 函数表达式末尾的两个括号（）会让它被立即执行或调用。 这种模式被叫做立即调用函数表达式（<dfn>immediately invoked function expression</dfn>) 或者<dfn>IIFE</dfn>。
 
 # --instructions--
 
-Rewrite the function `makeNest` and remove its call so instead it's an anonymous immediately invoked function expression (IIFE).
+重写函数 `makeNest`，并删除它的调用，取而代之是一个匿名的立即调用函数表达式（IIFE）。
 
 # --hints--
 
-The function should be anonymous.
+该函数应该是匿名的。
 
 ```js
 assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
 ```
 
-Your function should have parentheses at the end of the expression to call it immediately.
+函数应该在表达式的末尾有括号，以便立即调用它。
 
 ```js
 assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));

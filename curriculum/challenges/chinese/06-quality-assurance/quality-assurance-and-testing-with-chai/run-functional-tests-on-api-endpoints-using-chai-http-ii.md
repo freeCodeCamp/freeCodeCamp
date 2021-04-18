@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c59
-title: Run Functional Tests on API Endpoints using Chai-HTTP II
+title: 使用 Chai-HTTP II 在 API 端上运行功能测试
 challengeType: 2
 forumTopicId: 301592
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
@@ -8,17 +8,17 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。 你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with your name'` test (`// #2`) to assert the `status` and the `text` response to make the test pass.
+在 `tests/2_functional-tests.js` 中，修改 `'Test GET /hello with your name'` 测试（`// #2`），对 `status` 和 `text` 断言。
 
-Send your name in the query, appending `?name=<your_name>` to the route. The endpoint responds with `'hello <your_name>'`.
+在查询中发送 name，将 `?name=<your_name>` 添加到路由。 端点响应 `'hello <your_name>'`。
 
 # --hints--
 
-All tests should pass
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' == 200
+应测试 “res.status” 是否为 200。
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should test for 'res.status' == 200
   );
 ```
 
-You should test for 'res.text' == 'hello Guest'
+应测试 “res.text“ 是否为 ”hello Guest“。
 
 ```js
 (getUserInput) =>

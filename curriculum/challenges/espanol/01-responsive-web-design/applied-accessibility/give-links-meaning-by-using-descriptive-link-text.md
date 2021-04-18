@@ -9,9 +9,9 @@ dashedName: give-links-meaning-by-using-descriptive-link-text
 
 # --description--
 
-Los lectores de pantalla tienen diferentes opciones según el tipo de contenido que lea el dispositivo del usuario. Esto incluye saltar a (o pasar por alto) elementos importantes, saltar al contenido principal u obtener un resumen de la página a partir de los títulos. Otra opción es escuchar la narración de los enlaces disponibles en una página.
+Los lectores de pantalla tienen varias opciones para qué tipo de contenido lee su dispositivo. Estas opciones incluyen saltar a elementos de referencia (o sobre) o saltar al contenido principal, u obtener un resumen de la página en los títulos. Otra opción es escuchar la narración de los enlaces disponibles en una página.
 
-Los lectores de pantalla hacen esto leyendo el texto del enlace, o lo que haya entre las etiquetas anchor (`a`). Tener una lista de enlaces que solo digan "clic aquí" o "leer más" no ayuda. En lugar de eso, debes utilizar un texto breve pero descriptivo dentro de las etiquetas `a` para proporcionar más significado a estos usuarios.
+Los lectores de pantalla hacen esto leyendo el texto del enlace, o lo que haya entre las etiquetas anchor (`a`). Tener una lista de enlaces que solo digan "clic aquí" o "leer más" no ayuda. En su lugar, utilice texto breve pero descriptivo dentro de las etiquetas `a` para proporcionar más significado a estos usuarios.
 
 # --instructions--
 

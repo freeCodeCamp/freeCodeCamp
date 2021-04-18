@@ -21,7 +21,9 @@ Apply the `blue-text` class to your `h1` element in addition to your `pink-text`
 
 Applying multiple class attributes to a HTML element is done with a space between them like this:
 
-`class="class1 class2"`
+```html
+class="class1 class2"
+```
 
 **Note:** It doesn't matter which order the classes are listed in the HTML element.
 

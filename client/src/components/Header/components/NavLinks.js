@@ -12,13 +12,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
-import {
-  clientLocale,
-  radioLocation,
-  apiLocation
-} from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
 import createLanguageRedirect from '../../createLanguageRedirect';
 import createExternalRedirect from '../../createExternalRedirects';
+
+const { clientLocale, radioLocation, apiLocation } = envData;
 
 const {
   availableLangs,
@@ -207,7 +205,4 @@ export class NavLinks extends Component {
 NavLinks.propTypes = propTypes;
 NavLinks.displayName = 'NavLinks';
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(withTranslation()(NavLinks));
+export default connect(null, mapDispatchToProps)(withTranslation()(NavLinks));

@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7a
-title: Verify an Object's Constructor with instanceof
+title: 使用 instanceof 验证对象的构造函数
 challengeType: 1
 forumTopicId: 301337
 dashedName: verify-an-objects-constructor-with-instanceof
@@ -8,7 +8,7 @@ dashedName: verify-an-objects-constructor-with-instanceof
 
 # --description--
 
-Anytime a constructor function creates a new object, that object is said to be an <dfn>instance</dfn> of its constructor. JavaScript gives a convenient way to verify this with the `instanceof` operator. `instanceof` allows you to compare an object to a constructor, returning `true` or `false` based on whether or not that object was created with the constructor. Here's an example:
+凡是通过构造函数创建出的新对象，这个对象都叫做这个构造函数的 <dfn>instance</dfn>。 JavaScript 提供了一种很简便的方法来验证这个事实，那就是通过 `instanceof` 操作符。 `instanceof` 允许你将对象与构造函数之间进行比较，根据对象是否由这个构造函数创建的返回 `true` 或者 `false`。 以下是一个示例：
 
 ```js
 let Bird = function(name, color) {
@@ -19,10 +19,12 @@ let Bird = function(name, color) {
 
 let crow = new Bird("Alexis", "black");
 
-crow instanceof Bird; // => true
+crow instanceof Bird;
 ```
 
-If an object is created without using a constructor, `instanceof` will verify that it is not an instance of that constructor:
+`instanceof` 方法会返回 `true`.
+
+如果一个对象不是使用构造函数创建的，那么 `instanceof` 将会验证这个对象不是构造函数的实例：
 
 ```js
 let canary = {
@@ -31,22 +33,24 @@ let canary = {
   numLegs: 2
 };
 
-canary instanceof Bird; // => false
+canary instanceof Bird;
 ```
+
+`instanceof` 方法会返回 `false`。
 
 # --instructions--
 
-Create a new instance of the `House` constructor, calling it `myHouse` and passing a number of bedrooms. Then, use `instanceof` to verify that it is an instance of `House`.
+给 `House` 构造函数创建一个新实例，取名为 `myHouse` 并且传递一个数字给 bedrooms 参数。 然后使用 `instanceof` 操作符验证这个对象是否为 `House` 的实例。
 
 # --hints--
 
-`myHouse` should have a `numBedrooms` attribute set to a number.
+`myHouse` 应该有一个 `numBedrooms` 属性值被赋为一个数字。
 
 ```js
 assert(typeof myHouse.numBedrooms === 'number');
 ```
 
-You should verify that `myHouse` is an instance of `House` using the `instanceof` operator.
+应该使用 `instanceof` 操作符验证 `myHouse` 这个对象是 `House` 构造函数的一个实例。
 
 ```js
 assert(/myHouse\s*instanceof\s*House/.test(code));

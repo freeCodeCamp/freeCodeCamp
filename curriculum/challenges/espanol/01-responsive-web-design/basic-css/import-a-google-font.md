@@ -17,10 +17,15 @@ Entonces, importemos y apliquemos una fuente de Google (ten en cuenta que si Goo
 
 Para importar una fuente de Google, puedes copiar la URL de la fuente desde la librería de Google Fonts y luego pegarla en tu código HTML. Para este desafío, importaremos la fuente `Lobster`. Para ello, copia el siguiente fragmento de código y pégalo en la parte superior de tu editor de código (antes de abrir el elemento `style`):
 
-`<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+```
 
-Ahora puedes usar la fuente `Lobster` en tu código CSS usando `Lobster` como FAMILY_NAME, siguiendo la sintaxis del siguiente ejemplo (aquí, FAMILY_NAME significa "nombre de la familia de fuentes", y GENERIC_NAME significa "nombre genérico"):  
-`font-family: FAMILY_NAME, GENERIC_NAME;`.
+Ahora puedes usar la fuente `Lobster` en tu CSS usando `Lobster` como FAMILY_NAME como en el siguiente ejemplo:
+
+```css
+font-family: FAMILY_NAME, GENERIC_NAME;
+```
 
 GENERIC_NAME es opcional, y es el modo de especificar una fuente de reserva o "fallback font" en caso de que la otra fuente especificada no esté disponible. Veremos esto en el siguiente desafío.
 

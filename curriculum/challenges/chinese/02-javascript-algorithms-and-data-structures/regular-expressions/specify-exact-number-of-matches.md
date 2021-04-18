@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba7
-title: Specify Exact Number of Matches
+title: 指定匹配的确切数量
 challengeType: 1
 forumTopicId: 301365
 dashedName: specify-exact-number-of-matches
@@ -8,63 +8,65 @@ dashedName: specify-exact-number-of-matches
 
 # --description--
 
-You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want a specific number of matches.
+可以使用带有花括号的数量说明符来指定匹配模式的上下限。 但有时只需要特定数量的匹配。
 
-To specify a certain number of patterns, just have that one number between the curly brackets.
+要指定一定数量的匹配模式，只需在大括号之间放置一个数字。
 
-For example, to match only the word `"hah"` with the letter `a` `3` times, your regex would be `/ha{3}h/`.
+例如，要只匹配字母 `a` 出现 `3` 次的单词`hah`，正则表达式应为`/ha{3}h/`。
 
 ```js
 let A4 = "haaaah";
 let A3 = "haaah";
 let A100 = "h" + "a".repeat(100) + "h";
 let multipleHA = /ha{3}h/;
-multipleHA.test(A4); // Returns false
-multipleHA.test(A3); // Returns true
-multipleHA.test(A100); // Returns false
+multipleHA.test(A4);
+multipleHA.test(A3);
+multipleHA.test(A100);
 ```
+
+按顺序排列，三次 `test` 调用将返回值 `false`，`true` 和 `false`。
 
 # --instructions--
 
-Change the regex `timRegex` to match the word `"Timber"` only when it has four letter `m`'s.
+修改正则表达式`timRegex`，以匹配仅有四个字母 `m` 的单词 `Timber`。
 
 # --hints--
 
-Your regex should use curly brackets.
+你的正则表达式应该使用花括号。
 
 ```js
 assert(timRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match `"Timber"`
+你的正则表达式不应匹配字符串 `Timber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timber'));
 ```
 
-Your regex should not match `"Timmber"`
+你的正则表达式不应匹配字符串 `Timmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmber'));
 ```
 
-Your regex should not match `"Timmmber"`
+你的正则表达式不应匹配字符串 `Timmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmmber'));
 ```
 
-Your regex should match `"Timmmmber"`
+你的正则表达式应该匹配字符串 `Timmmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(timRegex.test('Timmmmber'));
 ```
 
-Your regex should not match `"Timber"` with 30 `m`'s in it.
+你的正则表达式不应该匹配包含 30 个字母 `m` 的 `Timber`。
 
 ```js
 timRegex.lastIndex = 0;

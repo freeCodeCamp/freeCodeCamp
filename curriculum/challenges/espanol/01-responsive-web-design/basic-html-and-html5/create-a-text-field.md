@@ -15,7 +15,9 @@ Los elementos de entrada `input` son una forma conveniente de obtener informaci√
 
 Puedes crear una entrada de texto de esta manera:
 
-`<input type="text">`
+```html
+<input type="text">
+```
 
 Ten en cuenta que los elementos `input` se cierran autom√°ticamente.
 

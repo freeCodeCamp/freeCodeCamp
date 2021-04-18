@@ -24,7 +24,4 @@ AppMountNotifier.propTypes = {
   render: PropTypes.func.isRequired
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AppMountNotifier);
+export default connect(mapStateToProps, mapDispatchToProps)(AppMountNotifier);

@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9e
-title: Match Ending String Patterns
+title: 匹配字符串的末尾
 challengeType: 1
 forumTopicId: 301352
 dashedName: match-ending-string-patterns
@@ -8,40 +8,39 @@ dashedName: match-ending-string-patterns
 
 # --description--
 
-In the last challenge, you learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
+在上一个挑战中，学习了使用脱字符号来搜寻字符串的开始位置。 还有一种方法可以搜寻字符串末尾的匹配模式。
 
-You can search the end of strings using the dollar sign character `$` at the end of the regex.
+可以使用正则表达式的美元符号 `$` 来搜寻字符串的结尾。
 
 ```js
 let theEnding = "This is a never ending story";
 let storyRegex = /story$/;
 storyRegex.test(theEnding);
-// Returns true
 let noEnding = "Sometimes a story will have to end";
 storyRegex.test(noEnding);
-// Returns false
-
 ```
+
+第一次 `test` 调用将返回 `true`, 而第二次调用将返回 `false`。
 
 # --instructions--
 
-Use the anchor character (`$`) to match the string `"caboose"` at the end of the string `caboose`.
+使用锚点字符 `$` 来匹配字符串 `caboose` 在字符串末尾 `caboose`。
 
 # --hints--
 
-You should search for `"caboose"` with the dollar sign `$` anchor in your regex.
+你应该在正则表达式使用美元符号 `$` 来搜寻 `caboose`。
 
 ```js
 assert(lastRegex.source == 'caboose$');
 ```
 
-Your regex should not use any flags.
+你的正则表达式不应该使用任何标志。
 
 ```js
 assert(lastRegex.flags == '');
 ```
 
-You should match `"caboose"` at the end of the string `"The last car on a train is the caboose"`
+你应该在字符串 `The last car on a train is the caboose` 的末尾匹配 `caboose`。
 
 ```js
 assert(lastRegex.test('The last car on a train is the caboose'));

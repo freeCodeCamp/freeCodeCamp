@@ -1,6 +1,6 @@
 ---
 id: 587d78ac367417b2b2512af5
-title: Aplica la propiedad flex-direction para crear filas en el tweet insertado
+title: Aplica la propiedad flex-direction para crear columnas en el tweet insertado
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103

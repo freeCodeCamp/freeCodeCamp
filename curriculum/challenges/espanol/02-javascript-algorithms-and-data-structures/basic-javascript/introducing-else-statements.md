@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244da
-title: Introducing Else Statements
+title: Introducción a las sentencias "Else"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cek4Efq'
 forumTopicId: 18207
@@ -9,7 +9,7 @@ dashedName: introducing-else-statements
 
 # --description--
 
-When a condition for an `if` statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an `else` statement, an alternate block of code can be executed.
+Cuando la condición en una sentencia `if` es verdadera, se ejecutará el bloque de código que va a continuación. ¿Qué sucede cuando la condición es falsa? Normalmente no debería ocurrir nada. Con la sentencia `else`, se puede ejecutar un bloque alternativo de código.
 
 ```js
 if (num > 10) {
@@ -21,47 +21,47 @@ if (num > 10) {
 
 # --instructions--
 
-Combine the `if` statements into a single `if/else` statement.
+Combina la sentencia `if` en una sola sentencia `if/else`.
 
 # --hints--
 
-You should only have one `if` statement in the editor
+Sólo debes tener una sentencia `if` en el editor
 
 ```js
 assert(code.match(/if/g).length === 1);
 ```
 
-You should use an `else` statement
+Debes usar una sentencia `else`
 
 ```js
 assert(/else/g.test(code));
 ```
 
-`testElse(4)` should return "5 or Smaller"
+`testElse(4)` debe devolver la cadena `5 or Smaller`
 
 ```js
 assert(testElse(4) === '5 or Smaller');
 ```
 
-`testElse(5)` should return "5 or Smaller"
+`testElse(5)` debe devolver la cadena `5 or Smaller`
 
 ```js
 assert(testElse(5) === '5 or Smaller');
 ```
 
-`testElse(6)` should return "Bigger than 5"
+`testElse(6)` debe devolver la cadena `Bigger than 5`
 
 ```js
 assert(testElse(6) === 'Bigger than 5');
 ```
 
-`testElse(10)` should return "Bigger than 5".
+`testElse(10)` debe devolver la cadena `Bigger than 5`
 
 ```js
 assert(testElse(10) === 'Bigger than 5');
 ```
 
-You should not change the code above or below the specified comments.
+No debes cambiar el código por encima o por debajo de los comentarios especificados.
 
 ```js
 assert(/var result = "";/.test(code) && /return result;/.test(code));

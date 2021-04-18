@@ -21,7 +21,11 @@ import {
   types as appTypes
 } from './';
 
-import { addDonation, postChargeStripe } from '../utils/ajax';
+import {
+  addDonation,
+  postChargeStripe,
+  postCreateStripeSession
+} from '../utils/ajax';
 
 const defaultDonationError = `Something is not right. Please contact donors@freecodecamp.org`;
 
@@ -55,6 +59,24 @@ function* addDonationSaga({ payload }) {
   }
 }
 
+function* createStripeSessionSaga({ payload: { stripe, data } }) {
+  try {
+    const session = yield call(postCreateStripeSession, {
+      ...data,
+      location: window.location.href
+    });
+    stripe.redirectToCheckout({
+      sessionId: session.data.id
+    });
+  } catch (error) {
+    const err =
+      error.response && error.response.data
+        ? error.response.data.message
+        : defaultDonationError;
+    yield put(addDonationError(err));
+  }
+}
+
 function* postChargeStripeSaga({ payload }) {
   try {
     yield call(postChargeStripe, payload);
@@ -72,6 +94,7 @@ export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeEvery(types.addDonation, addDonationSaga),
-    takeLeading(types.postChargeStripe, postChargeStripeSaga)
+    takeLeading(types.postChargeStripe, postChargeStripeSaga),
+    takeLeading(types.createStripeSession, createStripeSessionSaga)
   ];
 }

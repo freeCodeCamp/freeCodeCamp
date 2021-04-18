@@ -11,7 +11,8 @@ function createChallengeNode(challenge, reporter) {
   // sections.
   if (
     typeof challenge.description !== 'string' &&
-    (challenge.challengeType !== 11 && challenge.challengeType !== 7)
+    challenge.challengeType !== 11 &&
+    challenge.challengeType !== 7
   ) {
     reporter.warn(`
 

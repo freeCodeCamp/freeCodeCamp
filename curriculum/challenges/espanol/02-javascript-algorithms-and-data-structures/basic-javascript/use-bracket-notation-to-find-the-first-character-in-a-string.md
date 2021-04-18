@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c549eddfaeb5bdef
-title: Use Bracket Notation to Find the First Character in a String
+title: Utiliza la notación de corchetes para encontrar el primer carácter en una cadena
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8JwhW'
 forumTopicId: 18341
@@ -9,34 +9,36 @@ dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 
 # --description--
 
-<dfn>Bracket notation</dfn> is a way to get a character at a specific `index` within a string.
+La <dfn>notación de corchetes</dfn> es una forma de obtener un carácter en un índice (index) específico dentro de una cadena.
 
-Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.
+La mayoría de lenguajes de programación modernos, como JavaScript, no empiezan a contar desde 1 como lo hacen los humanos. Empiezan desde 0. Esto se conoce como indexación <dfn>basada en cero</dfn>.
 
-For example, the character at index 0 in the word "Charles" is "C". So if `var firstName = "Charles"`, you can get the value of the first letter of the string by using `firstName[0]`.
+Por ejemplo, el carácter en el índice 0 de la palabra `Charles` es `C`. Así que si declaramos `var firstName = "Charles"`, puedes obtener el valor de la primera letra de la cadena usando `firstName[0]`.
 
-Example:
+Ejemplo:
 
 ```js
 var firstName = "Charles";
-var firstLetter = firstName[0]; // firstLetter is "C"
+var firstLetter = firstName[0];
 ```
+
+`firstLetter` tendrá una cadena con valor `C`.
 
 # --instructions--
 
-Use bracket notation to find the first character in the `lastName` variable and assign it to `firstLetterOfLastName`.
+Utiliza notación de corchetes para encontrar el primer carácter en la variable `lastName` y asígnalo a `firstLetterOfLastName`.
 
-**Hint:** Try looking at the example above if you get stuck.
+**Sugerencia:** Intenta mirar el ejemplo de arriba si te quedas atascado.
 
 # --hints--
 
-The `firstLetterOfLastName` variable should have the value of `L`.
+La variable `firstLetterOfLastName` debe tener el valor de `L`.
 
 ```js
 assert(firstLetterOfLastName === 'L');
 ```
 
-You should use bracket notation.
+Debes usar la notación de corchetes.
 
 ```js
 assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));

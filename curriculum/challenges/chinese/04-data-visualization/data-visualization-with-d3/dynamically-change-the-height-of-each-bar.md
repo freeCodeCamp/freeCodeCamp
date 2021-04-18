@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bcf
-title: Dynamically Change the Height of Each Bar
+title: 动态更改每个条形的高度
 challengeType: 6
 forumTopicId: 301486
 dashedName: dynamically-change-the-height-of-each-bar
@@ -8,75 +8,73 @@ dashedName: dynamically-change-the-height-of-each-bar
 
 # --description--
 
-The height of each bar can be set to the value of the data point in the array, similar to how the `x` value was set dynamically.
+和动态设置 `x` 值一样，也可以把每个条形的高度设置成数组中数据点的值。
 
 ```js
 selection.attr("property", (d, i) => {
-  /* 
-  * d is the data point value
-  * i is the index of the data point in the array
-  */
+
 })
 ```
 
+`d` 是数据点值，`i` 是数组中数据点的索引。
+
 # --instructions--
 
-Change the callback function for the `height` attribute to return the data value times 3.
+改变 `height` 属性的回调函数，让它返回数据值乘以 3 的值。
 
-**Note**  
-Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example.
+**注意：** 记住，把所有数据点乘以相同的常数来对数据进行缩放（就像放大）， 这有利于看清例子中条形数值之间的差异。
 
 # --hints--
 
-The first `rect` should have a `height` of 36.
+第一个 `rect` 的 `height` 应为 `36`。
 
 ```js
 assert($('rect').eq(0).attr('height') == '36');
 ```
 
-The second `rect` should have a `height` of 93.
+第二个 `rect` 的 `height` 应为 `93`。
 
 ```js
 assert($('rect').eq(1).attr('height') == '93');
 ```
 
-The third `rect` should have a `height` of 66.
+第三个 `rect` 的 `height` 应为 `66`。
 
 ```js
 assert($('rect').eq(2).attr('height') == '66');
 ```
 
-The fourth `rect` should have a `height` of 51.
+第四个 `rect` 的 `height` 应为 `51`。
 
 ```js
 assert($('rect').eq(3).attr('height') == '51');
 ```
 
-The fifth `rect` should have a `height` of 75.
+第五个 `rect` 的 `height` 应为 `75`。
 
 ```js
 assert($('rect').eq(4).attr('height') == '75');
 ```
 
-The sixth `rect` should have a `height` of 54.
+第六个 `rect` 的 `height` 应为 `54`。
 
 ```js
 assert($('rect').eq(5).attr('height') == '54');
 ```
 
-The seventh `rect` should have a `height` of 87.
+第七个 `rect` 的 `height` 应为 `87`。
 
 ```js
 assert($('rect').eq(6).attr('height') == '87');
 ```
 
-The eighth `rect` should have a `height` of 42.
+第八个 `rect` 的 `height` 应为 `42`。
 
 ```js
 assert($('rect').eq(7).attr('height') == '42');
 ```
 
-The ninth `rect` should have a `height` of 27.
+第九个 `rect` 的 `height` 应为 `27`。
 
 ```js
 assert($('rect').eq(8).attr('height') == '27');

@@ -19,7 +19,9 @@ Let's override your `pink-text` and `blue-text` classes, and make your `h1` elem
 
 Give your `h1` element the `id` attribute of `orange-text`. Remember, id styles look like this:
 
-`<h1 id="orange-text">`
+```html
+<h1 id="orange-text">
+```
 
 Leave the `blue-text` and `pink-text` classes on your `h1` element.
 

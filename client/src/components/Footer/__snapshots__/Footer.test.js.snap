@@ -295,7 +295,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         className="our-nonprofit"
       >
         <a
-          href="footer.links.about-url"
+          href="links:footer.about-url"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -316,56 +316,56 @@ exports[`<Footer /> matches snapshot 1`] = `
           footer.links.open-source
         </a>
         <a
-          href="footer.links.shop-url"
+          href="links:footer.shop-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.shop
         </a>
         <a
-          href="footer.links.support-url"
+          href="links:footer.support-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.support
         </a>
         <a
-          href="footer.links.sponsors-url"
+          href="links:footer.sponsors-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.sponsors
         </a>
         <a
-          href="footer.links.honesty-url"
+          href="links:footer.honesty-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.honesty
         </a>
         <a
-          href="footer.links.coc-url"
+          href="links:footer.coc-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.coc
         </a>
         <a
-          href="footer.links.privacy-url"
+          href="links:footer.privacy-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.privacy
         </a>
         <a
-          href="footer.links.tos-url"
+          href="links:footer.tos-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.tos
         </a>
         <a
-          href="footer.links.copyright-url"
+          href="links:footer.copyright-url"
           rel="noopener noreferrer"
           target="_blank"
         >

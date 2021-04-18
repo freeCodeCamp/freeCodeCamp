@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be5
-title: Convert JSON Data to HTML
+title: 将 JSON 数据转换为 HTML
 challengeType: 6
 forumTopicId: 16807
 dashedName: convert-json-data-to-html
@@ -8,15 +8,15 @@ dashedName: convert-json-data-to-html
 
 # --description--
 
-Now that you're getting data from a JSON API, you can display it in the HTML.
+现在你从 JSON API 获取了数据，可以在 HTML 中显示它们了。
 
-You can use a `forEach` method to loop through the data since the cat photo objects are held in an array. As you get to each item, you can modify the HTML elements.
+既然 cat photo 对象都保存在数组里，你可以使用 `forEach` 方法来遍历它们。 当你拿到每个对象时，你就可以修改 HTML 元素了。
 
-First, declare an html variable with `let html = "";`.
+首先，通过 `let html = "";` 声明一个 html 变量。
 
-Then, loop through the JSON, adding HTML to the variable that wraps the key names in `strong` tags, followed by the value. When the loop is finished, you render it.
+接着，遍历 JSON，将用 `strong` 标签包裹的键名和后面跟着值的 html 元素添加给变量。 当循环结束后渲染它。
 
-Here's the code that does this:
+这是执行此操作的代码：
 
 ```js
 let html = "";
@@ -30,13 +30,13 @@ json.forEach(function(val) {
 });
 ```
 
-**Note:** For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to Cross-site scripting attacks.
+**注意：**在本挑战中，你需要给页面添加新的 HTML 元素，所以你不能使用 `textContent` 方法。 你可以用 `innerHTML` 来完成挑战，这个方法使网站容易遭受跨站脚本攻击。
 
 # --instructions--
 
-Add a `forEach` method to loop over the JSON data and create the HTML elements to display it.
+添加一个 `forEach` 循环来遍历 JSON 数据，并创建 HTML 元素以显示它。
 
-Here is some example JSON
+下面是示例 JSON：
 
 ```json
 [
@@ -52,19 +52,19 @@ Here is some example JSON
 
 # --hints--
 
-Your code should store the data in the `html` variable
+应该将数据保存在 `html` 变量中。
 
 ```js
-assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
+assert(__helpers.removeWhiteSpace(code).match(/html(\+=|=html\+)/g))
 ```
 
-Your code should use a `forEach` method to loop over the JSON data from the API.
+应该使用 `forEach` 方法来遍历 API 中的 JSON 数据。
 
 ```js
 assert(code.match(/json\.forEach/g));
 ```
 
-Your code should wrap the key names in `strong` tags.
+应该用 `strong` 标签包裹键名。
 
 ```js
 assert(code.match(/<strong>.+<\/strong>/g));

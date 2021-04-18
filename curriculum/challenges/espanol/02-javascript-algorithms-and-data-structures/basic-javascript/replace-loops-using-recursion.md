@@ -1,6 +1,6 @@
 ---
 id: 5cfa3679138e7d9595b9d9d4
-title: Replace Loops using Recursion
+title: Reemplaza bucles usando recursión
 challengeType: 1
 videoUrl: >-
   https://www.freecodecamp.org/news/how-recursion-works-explained-with-flowcharts-and-a-video-de61f40cb7f9/
@@ -10,7 +10,7 @@ dashedName: replace-loops-using-recursion
 
 # --description--
 
-Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first `n` elements of an array to create the product of those elements. Using a `for` loop, you could do this:
+La recursión es el concepto que una función puede expresarse en términos de sí misma. Para ayudar a comprender esto, comienza pensando en la siguiente tarea: multiplica los primeros `n` elementos de un arreglo para crear el producto de esos elementos. Usando un bucle `for`, puedes hacer esto:
 
 ```js
   function multiply(arr, n) {
@@ -22,7 +22,7 @@ Recursion is the concept that a function can be expressed in terms of itself. To
   }
 ```
 
-However, notice that `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`. That means you can rewrite `multiply` in terms of itself and never need to use a loop.
+Sin embargo, nota que `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`. Esto significa que puedes reescribir `multiply` en términos de sí misma y que nunca necesites hacer uso de un bucle.
 
 ```js
   function multiply(arr, n) {
@@ -34,35 +34,35 @@ However, notice that `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`. Th
   }
 ```
 
-The recursive version of `multiply` breaks down like this. In the <dfn>base case</dfn>, where `n <= 0`, it returns 1. For larger values of `n`, it calls itself, but with `n - 1`. That function call is evaluated in the same way, calling `multiply` again until `n <= 0`. At this point, all the functions can return and the original `multiply` returns the answer.
+La versión recursiva de `multiply` se desglosa así. En el <dfn>caso base</dfn>, donde `n <= 0`, devuelve 1. Para valores más grandes de `n`, se llama a sí misma, pero con `n - 1`. Esa llamada de función se evalúa de la misma manera, llamando a `multiply` otra vez hasta que `n <= 0`. En este punto, todas las funciones pueden devolver y la `multiply` original devuelve la respuesta.
 
-**Note:** Recursive functions must have a base case when they return without calling the function again (in this example, when `n <= 0`), otherwise they can never finish executing.
+**Nota:** Las funciones recursivas deben tener un caso base cuando devuelven sin tener que llamar a la función de nuevo (en este ejemplo, cuando `n <= 0`), de lo contrario nunca podrán terminar de ejecutarse.
 
 # --instructions--
 
-Write a recursive function, `sum(arr, n)`, that returns the sum of the first `n` elements of an array `arr`.
+Escribe una función recursiva, `sum(arr, n)`, que devuelve la suma de los primeros elementos `n` de un arreglo `arr`.
 
 # --hints--
 
-`sum([1], 0)` should equal 0.
+`sum([1], 0)` debe ser igual a 0.
 
 ```js
 assert.equal(sum([1], 0), 0);
 ```
 
-`sum([2, 3, 4], 1)` should equal 2.
+`sum([2, 3, 4], 1)` debe ser igual a 2.
 
 ```js
 assert.equal(sum([2, 3, 4], 1), 2);
 ```
 
-`sum([2, 3, 4, 5], 3)` should equal 9.
+`sum([2, 3, 4, 5], 3)` debe ser igual a 9.
 
 ```js
 assert.equal(sum([2, 3, 4, 5], 3), 9);
 ```
 
-Your code should not rely on any kind of loops (`for` or `while` or higher order functions such as `forEach`, `map`, `filter`, or `reduce`.).
+Tu código no debe depender de ningún tipo de bluces (`for` o `while`) o funciones de orden alto tales como `forEach`, `map`, `filter`, o `reduce`.).
 
 ```js
 assert(
@@ -72,7 +72,7 @@ assert(
 );
 ```
 
-You should use recursion to solve this problem.
+Debes usar recursión para resolver este problema.
 
 ```js
 assert(

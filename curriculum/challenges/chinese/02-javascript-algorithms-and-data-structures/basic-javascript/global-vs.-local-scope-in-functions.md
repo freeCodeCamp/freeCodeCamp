@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c0
-title: Global vs. Local Scope in Functions
+title: 函数中的全局作用域和局部作用域
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
@@ -9,9 +9,9 @@ dashedName: global-vs--local-scope-in-functions
 
 # --description--
 
-It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the `local` variable takes precedence over the `global` variable.
+一个程序中有可能具有相同名称的<dfn>局部</dfn>变量 和<dfn>全局</dfn>变量。 在这种情况下，`local` 变量将会优先于`global`变量。
 
-In this example:
+下面为例：
 
 ```js
 var someVar = "Hat";
@@ -21,27 +21,27 @@ function myFun() {
 }
 ```
 
-The function `myFun` will return `"Head"` because the `local` version of the variable is present.
+函数 `myFun` 将会返回 `Head`，因为 `local` 变量优先级更高。
 
 # --instructions--
 
-Add a local variable to `myOutfit` function to override the value of `outerWear` with `"sweater"`.
+给 `myOutfit` 添加一个局部变量来将 `outerWear` 的值重载为 `sweater`。
 
 # --hints--
 
-You should not change the value of the global `outerWear`.
+不要修改全局变量 `outerWear` 的值。
 
 ```js
 assert(outerWear === 'T-Shirt');
 ```
 
-`myOutfit` should return `"sweater"`.
+`myOutfit` 应该返回 `sweater`。
 
 ```js
 assert(myOutfit() === 'sweater');
 ```
 
-You should not change the return statement.
+不要修改 return 语句。
 
 ```js
 assert(/return outerWear/.test(code));

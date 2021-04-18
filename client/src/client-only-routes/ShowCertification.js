@@ -28,11 +28,13 @@ import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 import { langCodes } from '../../../config/i18n/all-langs';
-import { clientLocale } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
 import { isEmpty } from 'lodash';
+
+const { clientLocale } = envData;
 
 const localeCode = langCodes[clientLocale];
 
@@ -276,7 +278,7 @@ const ShowCertification = props => {
         <Col md={8} mdOffset={2} xs={12}>
           <DonateForm
             handleProcessing={handleProcessing}
-            defaultTheme='light'
+            defaultTheme='default'
             isMinimalForm={true}
           />
         </Col>
@@ -298,8 +300,9 @@ const ShowCertification = props => {
           bsSize='lg'
           bsStyle='primary'
           target='_blank'
-          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth +
-            1}&certUrl=${certURL}`}
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
+            certMonth + 1
+          }&certUrl=${certURL}`}
         >
           {t('profile.add-linkedin')}
         </Button>
@@ -399,7 +402,4 @@ const ShowCertification = props => {
 ShowCertification.displayName = 'ShowCertification';
 ShowCertification.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowCertification);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowCertification);

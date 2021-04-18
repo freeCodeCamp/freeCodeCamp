@@ -3,6 +3,8 @@ import React from 'react';
 import { Router } from '@reach/router';
 import { navigate, withPrefix } from 'gatsby';
 
+import toLearnPath from '../utils/to-learn-path';
+
 const Redirect = props => {
   if (typeof window !== 'undefined') {
     navigate(toLearnPath(props));
@@ -20,13 +22,5 @@ const Challenges = () => (
 );
 
 Challenges.displayName = 'Challenges';
-
-export function toLearnPath({ superBlock, block, challenge }) {
-  let path = withPrefix('/learn');
-  if (superBlock) path += `/${superBlock}`;
-  if (block) path += `/${block}`;
-  if (challenge) path += `/${challenge}`;
-  return path;
-}
 
 export default Challenges;

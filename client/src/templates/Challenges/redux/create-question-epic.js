@@ -8,8 +8,10 @@ import {
   projectFormValuesSelector
 } from './';
 import { tap, mapTo } from 'rxjs/operators';
-import { forumLocation } from '../../../../../config/env.json';
 import { transformEditorLink } from '../utils';
+import envData from '../../../../../config/env.json';
+
+const { forumLocation } = envData;
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;

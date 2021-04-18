@@ -1,6 +1,6 @@
 ---
 id: 587d78b2367417b2b2512b10
-title: Remove Items Using splice()
+title: 使用 splice() 删除元素
 challengeType: 1
 forumTopicId: 301166
 dashedName: remove-items-using-splice
@@ -8,34 +8,35 @@ dashedName: remove-items-using-splice
 
 # --description--
 
-Ok, so we've learned how to remove elements from the beginning and end of arrays using `shift()` and `pop()`, but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where `splice()` comes in. `splice()` allows us to do just that: **remove any number of consecutive elements** from anywhere in an array.
+在之前的挑战中，我们已经学习了如何用 `shift()` 和 `pop()` 从数组的开头或末尾移除元素。 但如果我们想删除数组中间的一个元素， 或者想一次删除多个元素，该如何操作呢？ 这时候我们就需要使用 `splice()` 方法了， `splice()` 可以让我们从数组中的任意位置**连续删除任意数量的元素**。
 
-`splice()` can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of `splice()` are integers which represent indexes, or positions, of the array that `splice()` is being called upon. And remember, arrays are *zero-indexed*, so to indicate the first element of an array, we would use `0`. `splice()`'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:
+`splice()` 最多可以接受 3 个参数，但现在我们先关注前两个。 `splice()` 接收的前两个参数是整数，表示正在调用 的`splice()` 数组中的元素的索引或位置。 别忘了，数组的索引是*从 0 开始的*，所以我们要用 `0` 来表示数组中的第一个元素。 `splice()` 的第一个参数代表从数组中的哪个索引开始移除元素，而第二个参数表示要从数组中的这个位置开始删除多少个元素。 例如：
 
 ```js
 let array = ['today', 'was', 'not', 'so', 'great'];
 
 array.splice(2, 2);
-// remove 2 elements beginning with the 3rd element
-// array now equals ['today', 'was', 'great']
 ```
 
-`splice()` not only modifies the array it's being called on, but it also returns a new array containing the value of the removed elements:
+这里我们移除 2 个元素，首先是第三个元素（索引为 2）。 `array` 会有值 `['today', 'was', 'great']`。
+
+`splice()` 不仅会修改调用该方法的数组，还会返回一个包含被移除元素的数组：
 
 ```js
 let array = ['I', 'am', 'feeling', 'really', 'happy'];
 
 let newArray = array.splice(3, 2);
-// newArray equals ['really', 'happy']
 ```
+
+`newArray` 值为 `['really', 'happy']`。
 
 # --instructions--
 
-We've initialized an array `arr`. Use `splice()` to remove elements from `arr`, so that it only contains elements that sum to the value of `10`.
+我们已经定义了数组 `arr`。 请使用 `splice()` 从 `arr` 里移除元素，使剩余的元素之和为 `10`。
 
 # --hints--
 
-You should not change the original line of `const arr = [2, 4, 5, 1, 7, 5, 2, 1];`.
+不应修改这一行 `const arr = [2, 4, 5, 1, 7, 5, 2, 1];`。
 
 ```js
 assert(
@@ -43,7 +44,7 @@ assert(
 );
 ```
 
-`arr` should only contain elements that sum to `10`.
+`arr` 的剩余元素之和应为 `10`。
 
 ```js
 assert.strictEqual(
@@ -52,13 +53,13 @@ assert.strictEqual(
 );
 ```
 
-Your code should utilize the `splice()` method on `arr`.
+应对 `arr` 调用 `splice()` 方法。
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
 ```
 
-The splice should only remove elements from `arr` and not add any additional elements to `arr`.
+splice 应只删除 `arr` 里面的元素，不能给 `arr` 添加元素。
 
 ```js
 assert(

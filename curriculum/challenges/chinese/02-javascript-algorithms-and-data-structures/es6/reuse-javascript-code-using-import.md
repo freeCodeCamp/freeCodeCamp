@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b55
-title: Reuse JavaScript Code Using import
+title: 通过 import 复用 JavaScript 代码
 challengeType: 1
 forumTopicId: 301208
 dashedName: reuse-javascript-code-using-import
@@ -8,15 +8,15 @@ dashedName: reuse-javascript-code-using-import
 
 # --description--
 
-`import` allows you to choose which parts of a file or module to load. In the previous lesson, the examples exported `add` from the `math_functions.js` file. Here's how you can import it to use in another file:
+`import` 可以导入文件或模块的一部分。 在之前的课程里，例子从 `math_functions.js` 文件里导出了 `add`。 下面看一下如何在其它文件导入它：
 
 ```js
 import { add } from './math_functions.js';
 ```
 
-Here, `import` will find `add` in `math_functions.js`, import just that function for you to use, and ignore the rest. The `./` tells the import to look for the `math_functions.js` file in the same folder as the current file. The relative file path (`./`) and file extension (`.js`) are required when using import in this way.
+在这里，`import` 会在 `math_functions.js` 里找到 `add`，只导入这个函数，忽略剩余的部分。 `./` 告诉程序在当前文件的相同目录寻找 `math_functions.js` 文件。 用这种方式导入时，相对路径（`./`）和文件扩展名（`.js`）都是必需的。
 
-You can import more than one item from the file by adding them in the `import` statement like this:
+通过在 `import` 语句里添加项目，可以从文件里导入多个项目，如下：
 
 ```js
 import { add, subtract } from './math_functions.js';
@@ -24,11 +24,11 @@ import { add, subtract } from './math_functions.js';
 
 # --instructions--
 
-Add the appropriate `import` statement that will allow the current file to use the `uppercaseString` and `lowercaseString` functions you exported in the previous lesson. These functions are in a file called `string_functions.js`, which is in the same directory as the current file.
+添加 `import` 语句，使当前文件可以使用你在之前课程里导出的 `uppercaseString` 和 `lowercaseString` 函数。 函数在当前路径下的 `string_functions.js` 文件里。
 
 # --hints--
 
-You should properly import `uppercaseString`.
+应该导入 `uppercaseString`。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-You should properly import `lowercaseString`.
+应该导入 `lowercaseString`。
 
 ```js
 assert(

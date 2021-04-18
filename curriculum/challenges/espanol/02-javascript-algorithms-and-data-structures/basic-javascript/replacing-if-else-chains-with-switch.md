@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e0
-title: Replacing If Else Chains with Switch
+title: Reemplazando cadenas de "If Else" por "Switch"
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JE8fy'
 forumTopicId: 18266
@@ -9,7 +9,7 @@ dashedName: replacing-if-else-chains-with-switch
 
 # --description--
 
-If you have many options to choose from, a `switch` statement can be easier to write than many chained `if`/`else if` statements. The following:
+Si tienes muchas opciones entre las que elegir, una sentencia `switch` puede ser más fácil de escribir que muchas sentencias `if`/`else if` encadenadas. Lo siguiente:
 
 ```js
 if (val === 1) {
@@ -21,7 +21,7 @@ if (val === 1) {
 }
 ```
 
-can be replaced with:
+puede reemplazarse por:
 
 ```js
 switch(val) {
@@ -38,65 +38,65 @@ switch(val) {
 
 # --instructions--
 
-Change the chained `if`/`else if` statements into a `switch` statement.
+Cambia la cadena de sentencias `if`/`else if` por una sentencia `switch`.
 
 # --hints--
 
-You should not use any `else` statements anywhere in the editor
+No debes utilizar sentencias `else` en ningún lugar en el editor
 
 ```js
 assert(!/else/g.test(code));
 ```
 
-You should not use any `if` statements anywhere in the editor
+No debes utilizar sentencias `if` en ningún lugar en el editor
 
 ```js
 assert(!/if/g.test(code));
 ```
 
-You should have at least four `break` statements
+Debes tener al menos cuatro sentencias `break`
 
 ```js
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` should be "Marley"
+`chainToSwitch("bob")` debe ser la cadena `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` should be "The Answer"
+`chainToSwitch(42)` debe ser la cadena `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` should be "There is no #1"
+`chainToSwitch(1)` debe ser la cadena `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` should be "Missed me by this much!"
+`chainToSwitch(99)` debe ser la cadena `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` should be "Ate Nine"
+`chainToSwitch(7)` debe ser la cadena `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` should be "" (empty string)
+`chainToSwitch("John")` debe ser `""` (cadena vacía)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` should be "" (empty string)
+`chainToSwitch(156)` debe ser `""` (cadena vacía)
 
 ```js
 assert(chainToSwitch(156) === '');

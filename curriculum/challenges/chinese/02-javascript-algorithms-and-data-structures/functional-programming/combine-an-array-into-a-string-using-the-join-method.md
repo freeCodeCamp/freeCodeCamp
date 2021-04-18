@@ -1,6 +1,6 @@
 ---
 id: 587d7daa367417b2b2512b6c
-title: Combine an Array into a String Using the join Method
+title: 使用 join 方法将数组组合成字符串
 challengeType: 1
 forumTopicId: 18221
 dashedName: combine-an-array-into-a-string-using-the-join-method
@@ -8,47 +8,47 @@ dashedName: combine-an-array-into-a-string-using-the-join-method
 
 # --description--
 
-The `join` method is used to join the elements of an array together to create a string. It takes an argument for the delimiter that is used to separate the array elements in the string.
+`join` 方法用来把数组中的所有元素放入一个字符串。 并通过指定的分隔符参数进行分隔。
 
-Here's an example:
+举个例子：
 
 ```js
 var arr = ["Hello", "World"];
 var str = arr.join(" ");
-// Sets str to "Hello World"
 ```
 
+`str` 的值应该是字符串 `Hello World`。
 # --instructions--
 
-Use the `join` method (among others) inside the `sentensify` function to make a sentence from the words in the string `str`. The function should return a string. For example, "I-like-Star-Wars" would be converted to "I like Star Wars". For this challenge, do not use the `replace` method.
+在函数 `sentensify` 内用 `join` 方法（及其他方法）用字符串 `str` 中的单词造句，这个函数应返回一个字符串。 该函数应返回一个数组。 举个例子，`I-like-Star-Wars` 会被转换成 `I like Star Wars`。 在此挑战中请勿使用 `replace` 方法。
 
 # --hints--
 
-Your code should use the `join` method.
+应使用 `join` 方法。
 
 ```js
 assert(code.match(/\.join/g));
 ```
 
-Your code should not use the `replace` method.
+不能使用 `replace` 方法。
 
 ```js
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`sentensify("May-the-force-be-with-you")` should return a string.
+`sentensify("May-the-force-be-with-you")` 应返回一个字符串。
 
 ```js
 assert(typeof sentensify('May-the-force-be-with-you') === 'string');
 ```
 
-`sentensify("May-the-force-be-with-you")` should return `"May the force be with you"`.
+`sentensify("May-the-force-be-with-you")` 应返回 `May the force be with you`。
 
 ```js
 assert(sentensify('May-the-force-be-with-you') === 'May the force be with you');
 ```
 
-`sentensify("The.force.is.strong.with.this.one")` should return `"The force is strong with this one"`.
+`sentensify("The.force.is.strong.with.this.one")` 应返回 `The force is strong with this one`。
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-`sentensify("There,has,been,an,awakening")` should return `"There has been an awakening"`.
+`sentensify("There,has,been,an,awakening")` 应返回 `There has been an awakening`。
 
 ```js
 assert(

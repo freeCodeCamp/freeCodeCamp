@@ -14,7 +14,9 @@ For example, when a user clicks the `Get Message` button, it changes the text of
 
 This works by adding the following code within the click event:
 
-`document.getElementsByClassName('message')[0].textContent="Here is the message";`
+```js
+document.getElementsByClassName('message')[0].textContent="Here is the message";
+```
 
 # --instructions--
 

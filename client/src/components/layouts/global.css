@@ -388,6 +388,7 @@ code {
   color: var(--tertiary-color);
   border-radius: 0px;
   font-family: 'Roboto Mono', monospace;
+  overflow-wrap: anywhere;
 }
 
 .panel {

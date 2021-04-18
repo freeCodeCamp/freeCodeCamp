@@ -1,44 +1,40 @@
-La comunidad [freeCodeCamp.org](https://freecodecamp.org) es posible gracias a miles de buenos voluntarios como tú. Si gustas contribuir con tu tiempo y experiencia, estaremos encantados de darte la bienvenida.
+La comunidad [freeCodeCamp.org](https://freecodecamp.org) es posible gracias a miles de buenos voluntarios como tú. Si quieres contribuir con tu tiempo y experiencia, estaremos encantados de darte la bienvenida.
 
 > [!NOTE] Antes de continuar, por favor tómate 2 minutos para leer nuestro [Código de Conducta](https://www.freecodecamp.org/code-of-conduct). Lo hacemos cumplir estrictamente en toda nuestra comunidad para que contribuir a freeCodeCamp.org sea una experiencia segura e inclusiva para todos.
 
-Contribuyendo felizmente.
+Feliz día contribuyendo.
 
-Te damos la bienvenida a:
+Eres bienvenido a:
 
 - Crea, actualiza y corrige errores en nuestro [plan de estudios](#curriculum).
-- Ayúdarnos a corregir errores en la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp.org.
-- [Help us translate](#translations) freeCodeCamp.org to world languages.
+- Ayúdanos a corregir errores en la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp.org.
+- [Ayúdanos a traducir](#translations) freeCodeCamp.org a idiomas del mundo.
 
 Respondemos a las preguntas más comunes sobre cómo contribuir [en nuestras preguntas frecuentes del contribuidor](/FAQ.md).
 
-## Plan de Estudios
+## Plan de estudios
 
 Nuestro plan de estudios está elaborado por la comunidad global de freeCodeCamp. De esta forma, podemos incorporar el conocimiento avanzado proporcionado por voluntarios como tú.
 
-Puede ayudar a ampliar y mejorar el plan de estudios. También puede actualizar las historias de usuario del proyecto para explicar mejor los conceptos. Y puedes mejorar nuestras pruebas automatizadas para que podamos probar con más precisión el código de las personas.
+Puedes ayudar a ampliar y mejorar el plan de estudios. También puedes actualizar las historias de usuario del proyecto para explicar mejor los conceptos. Y puedes mejorar nuestras pruebas automatizadas para que podamos probar con más precisión el código de las personas.
 
 **Si estás interesado en mejorar nuestro plan de estudios, aquí mostramos [cómo contribuir al plan de estudios](how-to-work-on-coding-challenges.md).**
 
-## Translations
+## Traducciones
 
-We are localizing freeCodeCamp.org to world languages starting with Chinese and Español. We will be expanding the translations to more languages.
+We are localizing freeCodeCamp.org to major world languages. Some of the certifications are already live in [Chinese (中文)](https://chinese.freecodecamp.org/learn) and [Spanish (Español)](https://www.freecodecamp.org/espanol/learn/). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it your friends to get them excited about this.
 
-To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/). You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort). We encourage you to read the announcement and share it your friends to get them excited about this.
+**If you're interested in translating, here's [how to translate freCodeCamp's resources](how-to-translate-files.md).**
 
-It's our dream to provide you with the resources to learn, no matter the world language you speak.
-
-**If you're interested in translating, here are the guides to translate our [curriculum](how-to-translate-files.md), the [learning platform](how-to-translate-the-website.md) and our [Contributing guidelines](https://translate.freecodecamp.org/contributing-docs).**
-
-## Learning Platform
+## Plataforma de aprendizaje
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
 Broadly, we use
 
 - un servidor con una API basada en Node.js
-- un conjunto de aplicaciones client-side basadas en React
-- y scripts de prueba para evaluar los proyectos curriculares enviados por nuestros campers.
+- un conjunto de aplicaciones de lado del cliente basadas en React
+- y scripts de pruebas para evaluar los proyectos del plan de estudios enviados por nuestros campers.
 
 If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 

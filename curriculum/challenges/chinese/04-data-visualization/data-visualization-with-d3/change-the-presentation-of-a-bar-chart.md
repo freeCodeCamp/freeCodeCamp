@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bca
-title: Change the Presentation of a Bar Chart
+title: 更改条形图的显示方式
 challengeType: 6
 forumTopicId: 301481
 dashedName: change-the-presentation-of-a-bar-chart
@@ -8,22 +8,21 @@ dashedName: change-the-presentation-of-a-bar-chart
 
 # --description--
 
-The last challenge created a bar chart, but there are a couple of formatting changes that could improve it:
+上一个挑战创建了一个条形图，可以通过下面的格式调整来美化它：
 
-1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the `bar` class
+1) 通过在 CSS 中为 `bar` class 添加 margin 属性，给每一个条形图之间添加空格，把它们分开。
 
-2) Increase the height of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the height
+2) 通过给每个值乘以一个数来缩放高度，增加高度，以更好地显示值的差异。
 
 # --instructions--
 
-First, add a `margin` of 2px to the `bar` class in the `style` tag. Next, change the callback function in the `style()` method so it returns a value 10 times the original data value (plus the "px").
+首先，在 `style` 标签中给 `bar` class 增加值为 `2px` 的 `margin`。 然后，更改 `style()` 方法中的回调函数，使其返回原始数据值的 `10` 倍（加上 `px`）。
 
-**Note**  
-Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
+**注意：**每一个数值点乘以*相同的*常量值，仅仅改变比例。 这就像放大，它不会改变底层数据的含义。
 
 # --hints--
 
-The first `div` should have a `height` of 120 pixels and a `margin` of 2 pixels.
+第一个 `div` 应有一个 `120` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -32,7 +31,7 @@ assert(
 );
 ```
 
-The second `div` should have a `height` of 310 pixels and a `margin` of 2 pixels.
+第二个 `div` 应有一个 `310` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -41,7 +40,7 @@ assert(
 );
 ```
 
-The third `div` should have a `height` of 220 pixels and a `margin` of 2 pixels.
+第三个 `div` 应有一个 `220` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -50,7 +49,7 @@ assert(
 );
 ```
 
-The fourth `div` should have a `height` of 170 pixels and a `margin` of 2 pixels.
+第四个 `div` 应有一个 `170` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -59,7 +58,7 @@ assert(
 );
 ```
 
-The fifth `div` should have a `height` of 250 pixels and a `margin` of 2 pixels.
+第五个 `div` 应有一个 `250` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -68,7 +67,7 @@ assert(
 );
 ```
 
-The sixth `div` should have a `height` of 180 pixels and a `margin` of 2 pixels.
+第六个 `div` 应有一个 `180` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -77,7 +76,7 @@ assert(
 );
 ```
 
-The seventh `div` should have a `height` of 290 pixels and a `margin` of 2 pixels.
+第七个 `div` 应有一个 `290` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -86,7 +85,7 @@ assert(
 );
 ```
 
-The eighth `div` should have a `height` of 140 pixels and a `margin` of 2 pixels.
+第八个 `div` 应有一个 `140` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -95,7 +94,7 @@ assert(
 );
 ```
 
-The ninth `div` should have a `height` of 90 pixels and a `margin` of 2 pixels.
+第九个 `div` 应有一个 `90` 像素的 `height` 和一个 `2` 像素的 `margin`。
 
 ```js
 assert(
@@ -113,10 +112,10 @@ assert(
   .bar {
     width: 25px;
     height: 100px;
-    /* Only change code below this line */
+    /* Add your code below this line */
 
 
-    /* Only change code above this line */
+    /* Add your code above this line */
     display: inline-block;
     background-color: blue;
   }
@@ -130,7 +129,7 @@ assert(
       .enter()
       .append("div")
       .attr("class", "bar")
-      .style("height", (d) => (d + "px"))
+      .style("height", (d) => (d + "px")) // Change this line
   </script>
 </body>
 ```

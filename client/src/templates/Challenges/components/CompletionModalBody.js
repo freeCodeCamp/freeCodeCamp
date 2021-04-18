@@ -5,8 +5,9 @@ import GreenPass from '../../../assets/icons/GreenPass';
 import { withTranslation } from 'react-i18next';
 
 const propTypes = {
-  blockName: PropTypes.string,
+  block: PropTypes.string,
   completedPercent: PropTypes.number,
+  superBlock: PropTypes.string,
   t: PropTypes.func.isRequired
 };
 
@@ -58,7 +59,8 @@ export class CompletionModalBody extends PureComponent {
   }
 
   render() {
-    const { blockName, completedPercent, t } = this.props;
+    const { block, completedPercent, superBlock, t } = this.props;
+    const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
 
     return (
       <>
@@ -73,7 +75,7 @@ export class CompletionModalBody extends PureComponent {
           />
         </div>
         <div className='completion-block-details'>
-          <div className='completion-block-name'>{blockName}</div>
+          <div className='completion-block-name'>{blockTitle}</div>
           <div className='progress-bar-wrap'>
             <div className='progress-bar-background'>
               {t('learn.percent-complete', {

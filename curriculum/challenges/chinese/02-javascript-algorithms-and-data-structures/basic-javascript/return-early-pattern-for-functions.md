@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c4
-title: Return Early Pattern for Functions
+title: 函数执行到 return 语句就结束
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
@@ -9,9 +9,9 @@ dashedName: return-early-pattern-for-functions
 
 # --description--
 
-When a `return` statement is reached, the execution of the current function stops and control returns to the calling location.
+当代码执行到 `return` 语句时，函数返回一个结果就结束运行了，return 后面的语句不会执行。
 
-**Example**
+**示例**
 
 ```js
 function myFun() {
@@ -22,54 +22,54 @@ function myFun() {
 myFun();
 ```
 
-The above outputs "Hello" to the console, returns "World", but `"byebye"` is never output, because the function exits at the `return` statement.
+以上将在控制台中显示字符串 `Hello` 并返回字符串 `World`。 字符串 `byebye` 将永远不会在控制台中显示，因为函数在 `return` 语句处就退出了。
 
 # --instructions--
 
-Modify the function `abTest` so that if `a` or `b` are less than `0` the function will immediately exit with a value of `undefined`.
+修改函数 `abTest` 当 `a` 或 `b` 小于 `0` 时，函数立即返回一个 `undefined` 并退出。
 
-**Hint**  
-Remember that [`undefined` is a keyword](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), not a string.
+**提示**  
+记住 [`undefined` 是一个关键字](/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables)，而不是一个字符串。
 
 # --hints--
 
-`abTest(2,2)` should return a number
+`abTest(2,2)` 应该返回一个数字
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2,2)` should return `8`
+`abTest(2,2)` 应该返回 `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2,2)` should return `undefined`
+`abTest(-2,2)` 应该返回 `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2,-2)` should return `undefined`
+`abTest(2,-2)` 应该返回 `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2,8)` should return `18`
+`abTest(2,8)` 应该返回 `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3,3)` should return `12`
+`abTest(3,3)` 应该返回 `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0,0)` should return `0`
+`abTest(0,0)` 应该返回 `0`
 
 ```js
 assert(abTest(0, 0) === 0);

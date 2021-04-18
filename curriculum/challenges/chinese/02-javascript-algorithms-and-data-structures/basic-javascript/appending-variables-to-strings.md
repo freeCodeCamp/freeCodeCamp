@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ed
-title: Appending Variables to Strings
+title: 将变量追加到字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
@@ -9,30 +9,31 @@ dashedName: appending-variables-to-strings
 
 # --description--
 
-Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (`+=`) operator.
+就像我们可以用多行字符串<dfn>字面量</dfn>构建单个字符串一样，我们还可以使用加且赋值（`+=`）运算符将字符串追加到字符串的末尾。
 
-Example:
+示例：
 
 ```js
 var anAdjective = "awesome!";
 var ourStr = "freeCodeCamp is ";
 ourStr += anAdjective;
-// ourStr is now "freeCodeCamp is awesome!"
 ```
+
+`ourStr` 值为 `freeCodeCamp is awesome!`。
 
 # --instructions--
 
-Set `someAdjective` to a string of at least 3 characters and append it to `myStr` using the `+=` operator.
+将 `someAdjective` 设置为一个至少包含 3 个字符的字符串，然后使用 `+=` 运算符将它追加到 `myStr`。
 
 # --hints--
 
-`someAdjective` should be set to a string at least 3 characters long.
+`someAdjective` 应当为包含至少三个字符的字符串。
 
 ```js
 assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
 ```
 
-You should append `someAdjective` to `myStr` using the `+=` operator.
+你应该使用 `+=` 运算符将 `someAdjective` 追加到 `myStr`。
 
 ```js
 assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);

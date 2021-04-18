@@ -1,6 +1,6 @@
 ---
 id: a3bfc1673c0526e06d3ac698
-title: Sum All Primes
+title: Suma todos los números primos
 challengeType: 5
 forumTopicId: 16085
 dashedName: sum-all-primes
@@ -8,25 +8,25 @@ dashedName: sum-all-primes
 
 # --description--
 
-A <dfn>prime number</dfn> is a whole number greater than 1 with exactly two divisors: 1 and itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
+Un <dfn>número primo</dfn> es un número entero mayor que 1 con sólo dos divisores: 1 y el propio número. Por ejemplo, 2 es un número primo porque sólo es divisible entre 1 y 2. Por el contrario, 4 no es primo ya que es divisible entre 1, 2 y 4.
 
-Rewrite `sumPrimes` so it returns the sum of all prime numbers that are less than or equal to num.
+Reescribe `sumPrimes` para que devuelva la suma de todos los números primos que sean menores o iguales a num.
 
 # --hints--
 
-`sumPrimes(10)` should return a number.
+`sumPrimes(10)` debe devolver un número.
 
 ```js
 assert.deepEqual(typeof sumPrimes(10), 'number');
 ```
 
-`sumPrimes(10)` should return 17.
+`sumPrimes(10)` debe devolver 17.
 
 ```js
 assert.deepEqual(sumPrimes(10), 17);
 ```
 
-`sumPrimes(977)` should return 73156.
+`sumPrimes(977)` debe devolver 73156.
 
 ```js
 assert.deepEqual(sumPrimes(977), 73156);

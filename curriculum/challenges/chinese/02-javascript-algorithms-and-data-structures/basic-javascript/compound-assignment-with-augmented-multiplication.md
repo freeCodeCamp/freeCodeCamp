@@ -11,15 +11,19 @@ dashedName: compound-assignment-with-augmented-multiplication
 
 `*=` 操作符是让变量与一个数相乘并赋值。
 
-`myVar = myVar * 5;`
+```js
+myVar = myVar * 5;
+```
 
-变量 `myVar` 等于自身与数值 `5` 相乘的值。 也可以写作这样的形式:
+将 `myVar` 乘以 `5`。 等价于：
 
-`myVar *= 5;`
+```js
+myVar *= 5;
+```
 
 # --instructions--
 
-使用 `*=` 操作符给 `a`，`b` 和 `c` 实现赋值相乘操作。
+使用 `*=` 操作符对 `a`、`b` 和 `c` 实现赋值相乘操作。
 
 # --hints--
 

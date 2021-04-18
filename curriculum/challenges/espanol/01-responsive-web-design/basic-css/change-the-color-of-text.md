@@ -17,7 +17,9 @@ La propiedad que es responsable del color del texto de un elemento es la propied
 
 Aquí te mostramos como establecerías el color de tu elemento `h2` para que sea azul:
 
-`<h2 style="color: blue;">CatPhotoApp</h2>`
+```html
+<h2 style="color: blue;">CatPhotoApp</h2>
+```
 
 Ten en cuenta que es una buena práctica terminar las declaraciones de inline `style` usando punto y coma (`;`).
 

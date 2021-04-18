@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb6bdef
-title: Divide One Number by Another with JavaScript
+title: 除法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqkbdAr'
 forumTopicId: 17566
@@ -9,29 +9,30 @@ dashedName: divide-one-number-by-another-with-javascript
 
 # --description--
 
-We can also divide one number by another.
+我们可以在 JavaScript 中做除法运算。
 
-JavaScript uses the `/` symbol for division.
+JavaScript 中使用 `/` 符号做除法运算。
 
-**Example**
+**示例**
 
 ```js
-myVar = 16 / 2; // assigned 8
+myVar = 16 / 2;
 ```
 
+现在，变量 `myVar` 的值为 `8`。
 # --instructions--
 
-Change the `0` so that the `quotient` is equal to `2`.
+改变数值 `0` 来让变量 `quotient` 的值等于 `2`。
 
 # --hints--
 
-The variable `quotient` should be equal to 2.
+要使 `quotient` 的值等于 2。
 
 ```js
 assert(quotient === 2);
 ```
 
-You should use the `/` operator.
+使用 `/` 运算符。
 
 ```js
 assert(/\d+\s*\/\s*\d+/.test(code));

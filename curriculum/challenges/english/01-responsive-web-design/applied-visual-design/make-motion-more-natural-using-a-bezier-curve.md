@@ -15,7 +15,9 @@ The `animation-timing-function` automatically loops at every keyframe when the `
 
 The following cubic Bezier curve simulates a juggling movement:
 
-`cubic-bezier(0.3, 0.4, 0.5, 1.6);`
+```css
+cubic-bezier(0.3, 0.4, 0.5, 1.6);
+```
 
 Notice that the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on a 1 by 1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to numbers larger than one. This results in a bouncing movement that is ideal for simulating the juggling ball.
 

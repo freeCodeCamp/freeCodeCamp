@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b69
-title: Sort an Array Alphabetically using the sort Method
+title: Ordena un arreglo alfabéticamente con el método sort
 challengeType: 1
 forumTopicId: 18303
 dashedName: sort-an-array-alphabetically-using-the-sort-method
@@ -8,9 +8,9 @@ dashedName: sort-an-array-alphabetically-using-the-sort-method
 
 # --description--
 
-The `sort` method sorts the elements of an array according to the callback function.
+El método `sort` ordena los elementos de un arreglo de acuerdo a la función "callback".
 
-For example:
+Por ejemplo:
 
 ```js
 function ascendingOrder(arr) {
@@ -19,32 +19,36 @@ function ascendingOrder(arr) {
   });
 }
 ascendingOrder([1, 5, 2, 3, 4]);
-// Returns [1, 2, 3, 4, 5]
+```
 
+Esto devolvería el valor de `[1, 2, 3, 4, 5]`.
+
+```js
 function reverseAlpha(arr) {
   return arr.sort(function(a, b) {
     return a === b ? 0 : a < b ? 1 : -1;
   });
 }
 reverseAlpha(['l', 'h', 'z', 'b', 's']);
-// Returns ['z', 's', 'l', 'h', 'b']
 ```
 
-JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such a callback function, normally called `compareFunction`, is supplied, the array elements are sorted according to the return value of the `compareFunction`: If `compareFunction(a,b)` returns a value less than 0 for two elements `a` and `b`, then `a` will come before `b`. If `compareFunction(a,b)` returns a value greater than 0 for two elements `a` and `b`, then `b` will come before `a`. If `compareFunction(a,b)` returns a value equal to 0 for two elements `a` and `b`, then `a` and `b` will remain unchanged.
+Esto devolvería el valor de `['z', 's', 'l', 'h', 'b']`.
+
+Por defecto, JavaScript ordena basándose en el valor "Unicode" de la cadena de caracteres, lo cual puede dar resultados inesperados. Por lo tanto, se recomienda proporcionar una función "callback" para especificar cómo se deben ordenar los elementos del arreglo. Cuando se proporciona dicha función "callback", normalmente llamada `compareFunction`, los elementos del arreglo se ordenan de acuerdo al valor que devuelve la función `compareFunction`: Si `compareFunction(a,b)` devuelve un valor menor a 0 para dos elementos `a` y `b`, entonces `a` irá antes que `b`. Si `compareFunction(a,b)` devuelve un valor mayor a 0 para dos elementos `a` y `b`, entonces `b` irá antes que `a`. Si `compareFunction(a,b)` devuelve un valor igual a 0 para dos elementos `a` y `b`, entonces `a` y `b` se dejarán sin cambios.
 
 # --instructions--
 
-Use the `sort` method in the `alphabeticalOrder` function to sort the elements of `arr` in alphabetical order.
+Utiliza el método `sort` en la función `alphabeticalOrder` para ordenar los elementos de `arr` en orden alfabético.
 
 # --hints--
 
-Your code should use the `sort` method.
+Tu código debe usar el método `sort`.
 
 ```js
 assert(code.match(/\.sort/g));
 ```
 
-`alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` should return `["a", "a", "c", "d", "g", "z"]`.
+`alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` debe devolver `["a", "a", "c", "d", "g", "z"]`.
 
 ```js
 assert(
@@ -53,7 +57,7 @@ assert(
 );
 ```
 
-`alphabeticalOrder(["x", "h", "a", "m", "n", "m"])` should return `["a", "h", "m", "m", "n", "x"]`.
+`alphabeticalOrder(["x", "h", "a", "m", "n", "m"])` debe devolver `["a", "h", "m", "m", "n", "x"]`.
 
 ```js
 assert(
@@ -62,7 +66,7 @@ assert(
 );
 ```
 
-`alphabeticalOrder(["a", "a", "a", "a", "x", "t"])` should return `["a", "a", "a", "a", "t", "x"]`.
+`alphabeticalOrder(["a", "a", "a", "a", "x", "t"])` debe devolver `["a", "a", "a", "a", "t", "x"]`.
 
 ```js
 assert(

@@ -337,7 +337,7 @@
     "title": "质量保证",
     "intro": [
       "随着你的程序或网页应用程序变得更加复杂，你将想要测试它们，以确保新的更改不会破坏它们的原有功能。",
-      "在质量保证认证中， 你将学习如何通过 Chai 测试，以确保你的应用程序能够按照你的期望运行。",
+      "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
       "然后你将创建一个聊天应用程序来学习高级 Node 和 Express 概念。你还将使用 Pug 作为模板引擎，用于身份验证的 Passport 和 用于服务器和客户端之间实时通信的 Socket.io。"
     ],
     "blocks": {

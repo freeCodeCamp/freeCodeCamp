@@ -16,13 +16,15 @@ jQuery 有一个 `parent()` 方法，可以访问被选取标签的父标签。
 
 下面的代码展示了使用 `parent()` 方法把 `left-well` 标签的父标签背景色设置成蓝色（blue）：
 
-`$("#left-well").parent().css("background-color", "blue")`
+```js
+$("#left-well").parent().css("background-color", "blue")
+```
 
-把 `#target1` 标签的父标签背景色设置成红色（red）。
+把 `#target1` 元素的父元素背景色设置成红色（red）。
 
 # --hints--
 
-`left-well` 标签应该有红色的背景。
+`left-well` 元素应该有红色的背景。
 
 ```js
 assert(
@@ -33,13 +35,13 @@ assert(
 );
 ```
 
-应该用 `.parent()` 方法修改该标签。
+应该用 `.parent()` 函数修改该元素。
 
 ```js
 assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
 ```
 
-应该在 `#target1` 标签上调用 `.parent()` 方法。
+应该在 `#target1` 元素上调用 `.parent()` 方法。
 
 ```js
 assert(
@@ -47,7 +49,7 @@ assert(
 );
 ```
 
-应该仅用 jQuery 给标签添加类。
+应该仅用 jQuery 给元素添加 class。
 
 ```js
 assert(code.match(/<div class="well" id="left-well">/g));

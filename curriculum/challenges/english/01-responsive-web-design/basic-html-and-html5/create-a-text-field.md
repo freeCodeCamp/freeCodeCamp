@@ -15,7 +15,9 @@ Now let's create a web form.
 
 You can create a text input like this:
 
-`<input type="text">`
+```html
+<input type="text">
+```
 
 Note that `input` elements are self-closing.
 

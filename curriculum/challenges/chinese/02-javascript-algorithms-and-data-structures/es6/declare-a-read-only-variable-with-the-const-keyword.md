@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b41
-title: Declare a Read-Only Variable with the const Keyword
+title: 用 const 关键字声明只读变量
 challengeType: 1
 forumTopicId: 301201
 dashedName: declare-a-read-only-variable-with-the-const-keyword
@@ -8,44 +8,46 @@ dashedName: declare-a-read-only-variable-with-the-const-keyword
 
 # --description--
 
-The keyword `let` is not the only new way to declare variables. In ES6, you can also declare variables using the `const` keyword.
+`let` 并不是唯一的新的声明变量的方式。 在 ES6 里面，你还可以使用 `const` 关键字来声明变量。
 
-`const` has all the awesome features that `let` has, with the added bonus that variables declared using `const` are read-only. They are a constant value, which means that once a variable is assigned with `const`, it cannot be reassigned.
+`const` 拥有 `let` 的所有优点，不同的是，通过 `const` 声明的变量是只读的。 这意味着通过 `const` 声明的变量只能被赋值一次，而不能被再次赋值。
 
 ```js
 const FAV_PET = "Cats";
-FAV_PET = "Dogs"; // returns error
+FAV_PET = "Dogs";
 ```
 
-As you can see, trying to reassign a variable declared with `const` will throw an error. You should always name variables you don't want to reassign using the `const` keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.
+控制台将由于给 `FAV_PET` 重新赋值而显示错误。
 
-**Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). In a later challenge you will see an example of a lowercase variable identifier being used for an array.
+可见，尝试给用 `const` 声明的变量重新赋值会报错。 你应该使用 `const` 关键字来声明所有不打算再次赋值的变量。 这有助于避免给一个常量进行额外的再次赋值。 一个最佳实践是对所有常量的命名采用全大写字母，并在单词之间使用下划线进行分隔。
+
+**注意：**通常，开发者会用大写字母作为常量标识符，用小写字母或者驼峰命名作为变量（对象或数组）标识符。 后面的挑战会涉及到在数组中使用小写变量标识符。
 
 # --instructions--
 
-Change the code so that all variables are declared using `let` or `const`. Use `let` when you want the variable to change, and `const` when you want the variable to remain constant. Also, rename variables declared with `const` to conform to common practices, meaning constants should be in all caps.
+改变以下代码，使得所有的变量都使用 `let` 或 `const` 关键词来声明。 当变量将会改变的时候使用 `let` 关键字，当变量要保持常量的时候使用 `const` 关键字。 同时，对使用 `const` 声明的变量按照最佳实践重命名，变量名中的字母应该都是大写的。
 
 # --hints--
 
-`var` should not exist in your code.
+代码中不应有 `var`。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`SENTENCE` should be a constant variable declared with `const`.
+`SENTENCE` 应该是使用 `const` 声明的常量。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/(const SENTENCE)/g));
 ```
 
-`i` should be declared with `let`.
+`i` 应该是使用 `let`声明的。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/(let i)/g));
 ```
 
-`console.log` should be changed to print the `SENTENCE` variable.
+`console.log` 应该修改为用于打印 `SENTENCE` 变量。
 
 ```js
 (getUserInput) =>

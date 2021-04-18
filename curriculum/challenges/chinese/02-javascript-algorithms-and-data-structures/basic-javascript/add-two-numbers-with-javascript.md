@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb3bdef
-title: Add Two Numbers with JavaScript
+title: 加法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
@@ -9,31 +9,33 @@ dashedName: add-two-numbers-with-javascript
 
 # --description--
 
-`Number` is a data type in JavaScript which represents numeric data.
+`Number` 是 JavaScript 中的一种数据类型，用来表示数值。
 
-Now let's try to add two numbers using JavaScript.
+现在我们来尝试在 JavaScript 中做加法运算。
 
-JavaScript uses the `+` symbol as an addition operator when placed between two numbers.
+JavaScript 中，我们通过符号 `+` 来进行加法运算。
 
-**Example:**
+**代码示例:**
 
 ```js
-myVar = 5 + 10; // assigned 15
+myVar = 5 + 10;
 ```
+
+现在，变量 `myVar` 的值为 `15`。
 
 # --instructions--
 
-Change the `0` so that sum will equal `20`.
+请改变数字 `0` 让变量 sum 的值为 `20`。
 
 # --hints--
 
-`sum` should equal `20`.
+`sum` 的值应该等于 `20`。
 
 ```js
 assert(sum === 20);
 ```
 
-You should use the `+` operator.
+请使用 `+` 运算符。
 
 ```js
 assert(/\+/.test(code));

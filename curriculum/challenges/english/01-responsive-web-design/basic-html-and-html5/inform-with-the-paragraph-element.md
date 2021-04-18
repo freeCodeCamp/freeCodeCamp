@@ -13,7 +13,9 @@ dashedName: inform-with-the-paragraph-element
 
 You can create a paragraph element like this:
 
-`<p>I'm a p tag!</p>`
+```html
+<p>I'm a p tag!</p>
+```
 
 # --instructions--
 

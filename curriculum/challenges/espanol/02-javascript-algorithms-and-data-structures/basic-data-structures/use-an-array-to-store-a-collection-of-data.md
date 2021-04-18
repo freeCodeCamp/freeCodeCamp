@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b20
-title: Use an Array to Store a Collection of Data
+title: Utiliza un arreglo para almacenar una colección de datos
 challengeType: 1
 forumTopicId: 301167
 dashedName: use-an-array-to-store-a-collection-of-data
@@ -8,15 +8,16 @@ dashedName: use-an-array-to-store-a-collection-of-data
 
 # --description--
 
-The below is an example of the simplest implementation of an array data structure. This is known as a <dfn>one-dimensional array</dfn>, meaning it only has one level, or that it does not have any other arrays nested within it. Notice it contains <dfn>booleans</dfn>, <dfn>strings</dfn>, and <dfn>numbers</dfn>, among other valid JavaScript data types:
+Lo siguiente es un ejemplo de la implementación más simple de una estructura de datos de un arreglo. Esto se conoce como un <dfn>arreglo unidimensional</dfn>, lo que significa que sólo tiene un nivel, o que no tiene otros arreglos anidados dentro de él. Observa que contiene <dfn>booleanos</dfn>, <dfn>cadenas</dfn> y <dfn>números</dfn>, entre otros tipos de datos válidos de JavaScript:
 
 ```js
 let simpleArray = ['one', 2, 'three', true, false, undefined, null];
 console.log(simpleArray.length);
-// logs 7
 ```
 
-All arrays have a length property, which as shown above, can be very easily accessed with the syntax `Array.length`. A more complex implementation of an array can be seen below. This is known as a <dfn>multi-dimensional array</dfn>, or an array that contains other arrays. Notice that this array also contains JavaScript <dfn>objects</dfn>, which we will examine very closely in our next section, but for now, all you need to know is that arrays are also capable of storing complex objects.
+La llamada `console.log` muestra `7`.
+
+Todos los arreglos tienen una propiedad de longitud, que como se muestra arriba, se puede acceder muy fácilmente con la sintaxis `Array.length`. A continuación se puede ver una implementación más compleja de un arreglo. Esto se conoce como un <dfn>arreglo multidimensional</dfn>, o un arreglo que contiene otros arreglos. Observa que este arreglo también contiene <dfn>objetos</dfn> JavaScript, que examinaremos muy de cerca en la siguiente sección, pero por ahora, todo lo que necesitas saber es que los arreglos también son capaces de almacenar objetos complejos.
 
 ```js
 let complexArray = [
@@ -45,35 +46,35 @@ let complexArray = [
 
 # --instructions--
 
-We have defined a variable called `yourArray`. Complete the statement by assigning an array of at least 5 elements in length to the `yourArray` variable. Your array should contain at least one <dfn>string</dfn>, one <dfn>number</dfn>, and one <dfn>boolean</dfn>.
+Hemos definido una variable llamada `yourArray`. Completa la sentencia asignando un arreglo de al menos 5 elementos de longitud a la variable `yourArray`. Tu arreglo debe contener al menos una <dfn>cadena</dfn> (string), un <dfn>número</dfn> (number) y un <dfn>booleano</dfn> (boolean).
 
 # --hints--
 
-`yourArray` should be an array.
+`yourArray` debe ser un arreglo.
 
 ```js
 assert.strictEqual(Array.isArray(yourArray), true);
 ```
 
-`yourArray` should be at least 5 elements long.
+`yourArray` debe tener al menos 5 elementos de largo.
 
 ```js
 assert.isAtLeast(yourArray.length, 5);
 ```
 
-`yourArray` should contain at least one `boolean`.
+`yourArray` debe contener al menos un `boolean`.
 
 ```js
 assert(yourArray.filter((el) => typeof el === 'boolean').length >= 1);
 ```
 
-`yourArray` should contain at least one `number`.
+`yourArray` debe contener al menos un `number`.
 
 ```js
 assert(yourArray.filter((el) => typeof el === 'number').length >= 1);
 ```
 
-`yourArray` should contain at least one `string`.
+`yourArray` debe contener al menos un `string`.
 
 ```js
 assert(yourArray.filter((el) => typeof el === 'string').length >= 1);

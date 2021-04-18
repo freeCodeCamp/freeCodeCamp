@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4c
-title: Assert Deep Equality with .deepEqual and .notDeepEqual
+title: 用 Assert.deepEqual() 和 Assert.notDeepEqual() 断言深度相等
 challengeType: 2
 forumTopicId: 301587
 dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
@@ -8,17 +8,17 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基础上进行开发。 你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-`deepEqual()` asserts that two objects are deep equal.
+`deepEqual()` 断言两个对象是否深度相等。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，在标有 `#7` 的 `Equality` 套件里，将每个 `assert` 替换成 `assert.deepEqual` 或 `assert.notDeepEqual`，让测试通过（应该返回 `true`）。 不要改变传入断言的参数。
 
 # --hints--
 
-All tests should pass.
+不应有未通过的测试
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `deepEqual` vs. `notDeepEqual`.
+请为第一个断言选择正确的方法 — `deepEqual` 或 `notDeepEqual`。
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `deepEqual` vs. `
   );
 ```
 
-You should choose the correct method for the second assertion - `deepEqual` vs. `notDeepEqual`.
+请为第二个断言选择正确的方法 — `deepEqual` 或 `notDeepEqual`。
 
 ```js
 (getUserInput) =>

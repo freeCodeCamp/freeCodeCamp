@@ -15,9 +15,11 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
-import { algoliaAppId, algoliaAPIKey } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 
 import { createSelector } from 'reselect';
+
+const { algoliaAppId, algoliaAPIKey } = envData;
 
 const DEBOUNCE_TIME = 100;
 

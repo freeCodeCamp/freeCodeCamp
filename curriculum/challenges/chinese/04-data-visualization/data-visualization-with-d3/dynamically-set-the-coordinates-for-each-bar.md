@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bce
-title: Dynamically Set the Coordinates for Each Bar
+title: 动态设置每个 Bar 的坐标
 challengeType: 6
 forumTopicId: 301487
 dashedName: dynamically-set-the-coordinates-for-each-bar
@@ -8,83 +8,79 @@ dashedName: dynamically-set-the-coordinates-for-each-bar
 
 # --description--
 
-The last challenge created and appended a rectangle to the `svg` element for each point in `dataset` to represent a bar. Unfortunately, they were all stacked on top of each other.
+上个挑战在 `svg` 元素中为 `dataset` 的每一个数据点创建并且添加了一个矩形，其中一个矩形表示一组， 但是它们相互重叠。
 
-The placement of a rectangle is handled by the `x` and `y` attributes. They tell D3 where to start drawing the shape in the `svg` area. The last challenge set them each to 0, so every bar was placed in the upper-left corner.
+矩形的位置是由 `x` 和 `y` 属性决定的。 它们告诉 D3 在 `svg` 区域的哪个位置开始绘制图形。 上个挑战将它们都设置为 0，因此所有条形都在左上角。
 
-For a bar chart, all of the bars should sit on the same vertical level, which means the `y` value stays the same (at 0) for all bars. The `x` value, however, needs to change as you add new bars. Remember that larger `x` values push items farther to the right. As you go through the array elements in `dataset`, the x value should increase.
+对于条形图，所有条形应该处于相同的垂直线上，也就是说所有条形的 `y` 值相同（为 0）， 但是 `x` 值需要随着增添新的条形而变化。 注意 `x` 值越大，图形就越靠近右边。 所以当遍历 `dataset` 中的数组元素时，`x` 的值应该递增。
 
-The `attr()` method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually `d`) and one for the index of the data point in the array. The second argument for the index is optional. Here's the format:
+D3 的 `attr()` 方法可接收一个回调函数来动态设置属性。 这个回调函数有两个参数，一个是数据点本身（通常是 `d`），另一个是该数据点在数组中的下标， 这个参数是可选的。 下面是其格式：
 
 ```js
 selection.attr("property", (d, i) => {
-  /* 
-  * d is the data point value
-  * i is the index of the data point in the array
-  */
+
 })
 ```
 
-It's important to note that you do NOT need to write a `for` loop or use `forEach()` to iterate over the items in the data set. Recall that the `data()` method parses the data set, and any method that's chained after `data()` is run once for each item in the data set.
+值得注意的是，你不需要写 `for` 循环或者用 `forEach()` 迭代数据集中的对象。 `data()` 方法会解析数据集，任何链接在 `data()` 后面的方法都会为数据集中的每个对象运行一次。
 
 # --instructions--
 
-Change the `x` attribute callback function so it returns the index times 30.
+改变 `x` 属性的回调函数，让它返回下标乘以 30 的值。
 
-**Note**  
-Each bar has a width of 25, so increasing each `x` value by 30 adds some space between the bars. Any value greater than 25 would work in this example.
+**注意：**每组的宽为 25，所以每次 `x` 增加 30，可在每组之间留出一些空隙。 在这个例子中任何比 25 大的数也同样适用。
 
 # --hints--
 
-The first `rect` should have an `x` value of 0.
+第一个 `rect` 的 `x` 值应该为 `0`。
 
 ```js
 assert($('rect').eq(0).attr('x') == '0');
 ```
 
-The second `rect` should have an `x` value of 30.
+第二个 `rect` 的 `x` 值应该为 `30`。
 
 ```js
 assert($('rect').eq(1).attr('x') == '30');
 ```
 
-The third `rect` should have an `x` value of 60.
+第三个 `rect` 的 `x` 值应该为 `60`。
 
 ```js
 assert($('rect').eq(2).attr('x') == '60');
 ```
 
-The fourth `rect` should have an `x` value of 90.
+第四个 `rect` 的 `x` 值应该为 `90`。
 
 ```js
 assert($('rect').eq(3).attr('x') == '90');
 ```
 
-The fifth `rect` should have an `x` value of 120.
+第五个 `rect` 的 `x` 值应该为 `120`。
 
 ```js
 assert($('rect').eq(4).attr('x') == '120');
 ```
 
-The sixth `rect` should have an `x` value of 150.
+第六个 `rect` 的 `x` 值应该为 `150`。
 
 ```js
 assert($('rect').eq(5).attr('x') == '150');
 ```
 
-The seventh `rect` should have an `x` value of 180.
+第七个 `rect` 的 `x` 值应该为 `180`。
 
 ```js
 assert($('rect').eq(6).attr('x') == '180');
 ```
 
-The eighth `rect` should have an `x` value of 210.
+第八个 `rect` 的 `x` 值应该为 `210`。
 
 ```js
 assert($('rect').eq(7).attr('x') == '210');
 ```
 
-The ninth `rect` should have an `x` value of 240.
+第九个 `rect` 的 `x` 值应该为 `240`。
 
 ```js
 assert($('rect').eq(8).attr('x') == '240');

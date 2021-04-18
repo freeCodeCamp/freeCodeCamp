@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # runs every day at 12:15 PM UTC
-    - cron: "15 12 * * *"
+    - cron: '15 12 * * *'
 
 jobs:
   i18n-download-client-ui-translations:
@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
@@ -44,7 +46,7 @@ jobs:
           # dryrun_action: true
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CLIENT }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
@@ -65,9 +67,7 @@ jobs:
           skip_untranslated_files: false
           export_only_approved: true
 
-          commit_message: 'chore(i8n,client): processed translations'
-          localization_branch_name: i18n-sync-client
-          push_translations: true
+          push_translations: false
 
           # pull-request
           create_pull_request: false
@@ -80,66 +80,37 @@ jobs:
           # dryrun_action: true
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CLIENT }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
+      # Create Commit
+      - name: Commit Changes
+        env:
+          EMAIL: ${{ secrets.ACTIONS_CAMPERBOT_EMAIL }}
+        run: |
+          git checkout -b i18n-sync-client
+          git config --global user.name "camperbot"
+          git config --global user.email "$EMAIL"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "chore(i18n,learn): update translations"
+          git push -u origin i18n-sync-client -f
+
+      - name: Install Dependencies
+        working-directory: ./tools
+        run: |
+          cd ./crowdin
+          npm ci
+
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR
-        uses: actions/github-script@v3
+        uses: ./tools/crowdin/actions/pr-creator
         with:
           github-token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          script: |
-            const branchExists = await github.repos.getBranch({
-              owner: 'freeCodeCamp',
-              repo: 'freeCodeCamp',
-              branch: 'i18n-sync-client'
-            }).catch(err => {
-              console.info("Branch does not exist. Likely no changes in download?");
-            });
-            if (!branchExists || branchExists.status !== 200) {
-              return;
-            }
-            const pullRequestExists = await github.pulls.list({
-              owner: 'freeCodeCamp',
-              repo: 'freeCodeCamp',
-              head: 'freeCodeCamp:i18n-sync-client'
-            });
-            if (pullRequestExists.data.length) {
-              console.info("It looks like a pull request already exists for this branch.");
-              return;
-            }
-            const PR = await github.pulls.create({
-              owner: 'freeCodeCamp',
-              repo: 'freeCodeCamp',
-              head: 'i18n-sync-client',
-              base: 'main',
-              title: 'chore(i18n,client): processed translations',
-              body: 'This PR was opened auto-magically by Crowdin.'
-            }).catch(err => {
-              console.info("Unpredicted error occurred when trying to create the PR.");
-              console.error(err);
-            });
-            if (!PR || PR.status !== 201) {
-              return;
-            }
-            const PRNumber = PR.data.number;
-            await github.issues.addLabels({
-              owner: 'freeCodeCamp',
-              repo: 'freeCodeCamp',
-              issue_number: PRNumber,
-              labels: [
-                "crowdin-sync",
-                "scope: i18n",
-                "scope: UI"
-              ]
-            });
-            await github.pulls.requestReviewers({
-              owner: 'freeCodeCamp',
-              repo: 'freeCodeCamp',
-              pull_number: PRNumber,
-              reviewers: [
-                'RandellDawson',
-                'nhcarrigan'
-              ]
-            });
+          branch: 'i18n-sync-client'
+          owner-repo: 'freeCodeCamp/freeCodeCamp'
+          base: 'main'
+          title: 'chore(i18n,client): processed translations'
+          body: 'This PR was opened auto-magically by Crowdin.'
+          labels: 'crowdin-sync, scope: UI'
+          team_reviewers: 'i18n'

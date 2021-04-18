@@ -13,7 +13,9 @@ Puedes usar los elementos `a` (*anchor*) para enlazar a contenido fuera de tu p�
 
 Los elementos `a` requieren un atributo `href` con la dirección web de destino. También necesitan un texto anchor. Por ejemplo:
 
-`<a href="https://freecodecamp.org">this links to freecodecamp.org</a>`
+```html
+<a href="https://freecodecamp.org">this links to freecodecamp.org</a>
+```
 
 Entonces tu navegador mostrará el texto `this links to freecodecamp.org` como un enlace que puedes hacer clic. Y ese enlace te llevará a la dirección web `https://www.freecodecamp.org`.
 

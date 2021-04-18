@@ -1,6 +1,6 @@
 ---
 id: 5cdafbd72913098997531681
-title: Handle a Fulfilled Promise with then
+title: 用 then 处理 Promise 完成的情况
 challengeType: 1
 forumTopicId: 301203
 dashedName: handle-a-fulfilled-promise-with-then
@@ -8,23 +8,23 @@ dashedName: handle-a-fulfilled-promise-with-then
 
 # --description--
 
-Promises are most useful when you have a process that takes an unknown amount of time in your code (i.e. something asynchronous), often a server request. When you make a server request it takes some amount of time, and after it completes you usually want to do something with the response from the server. This can be achieved by using the `then` method. The `then` method is executed immediately after your promise is fulfilled with `resolve`. Here’s an example:
+当程序需要花费未知的时间才能完成时（比如一些异步操作），一般是服务器请求，promise 很有用。 服务器请求会花费一些时间，当结束时，需要根据服务器的响应执行一些操作。 这可以用 `then` 方法来实现， 当 promise 完成 `resolve` 时会触发 `then` 方法。 例子如下：
 
 ```js
 myPromise.then(result => {
-  // do something with the result.
+
 });
 ```
 
-`result` comes from the argument given to the `resolve` method.
+`result` 即传入 `resolve` 方法的参数。
 
 # --instructions--
 
-Add the `then` method to your promise. Use `result` as the parameter of its callback function and log `result` to the console.
+给 promise 添加 `then` 方法。 用 `result` 做为回调函数的参数并将 `result` 打印在控制台。
 
 # --hints--
 
-You should call the `then` method on the promise.
+应该给 promise 方法调用 `then` 方法。
 
 ```js
 assert(
@@ -32,13 +32,13 @@ assert(
 );
 ```
 
-Your `then` method should have a callback function with `result` as its parameter.
+`then` 方法应该有一个回调函数，回调函数参数为 `result`。
 
 ```js
 assert(resultIsParameter);
 ```
 
-You should log `result` to the console.
+应该打印 `result` 到控制台。
 
 ```js
 assert(

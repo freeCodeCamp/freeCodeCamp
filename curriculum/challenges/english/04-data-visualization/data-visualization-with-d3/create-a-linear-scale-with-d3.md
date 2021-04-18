@@ -18,7 +18,9 @@ It's unlikely you would plot raw data as-is. Before plotting it, you set the sca
 
 D3 has several scale types. For a linear scale (usually used with quantitative data), there is the D3 method `scaleLinear()`:
 
-`const scale = d3.scaleLinear()`
+```js
+const scale = d3.scaleLinear()
+```
 
 By default, a scale uses the identity relationship. The value of the input is the same as the value of the output. A separate challenge covers how to change this.
 

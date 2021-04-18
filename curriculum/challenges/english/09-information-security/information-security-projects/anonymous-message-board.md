@@ -33,8 +33,8 @@ Write the following tests in `tests/2_functional-tests.js`:
 -   Reporting a thread: PUT request to `/api/threads/{board}`
 -   Creating a new reply: POST request to `/api/replies/{board}`
 -   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
--   Deleting a reply with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
--   Deleting a reply with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+-   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
+-   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
 -   Reporting a reply: PUT request to `/api/replies/{board}`
 
 # --hints--

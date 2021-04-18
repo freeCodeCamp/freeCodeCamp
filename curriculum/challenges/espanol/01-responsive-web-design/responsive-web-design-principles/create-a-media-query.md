@@ -15,11 +15,15 @@ Las consultas de medios se basan en un tipo de medio, y si ese tipo de medio coi
 
 Este es un ejemplo de una consultas de medios que devuelve el contenido cuando el ancho del dispositivo es menor o igual a 100px:
 
-`@media (max-width: 100px) { /* CSS Rules */ }`
+```css
+@media (max-width: 100px) { /* CSS Rules */ }
+```
 
 y la siguiente consultas de medios devuelve el contenido cuando la altura del dispositivo es mayor o igual a 350px:
 
-`@media (min-height: 350px) { /* CSS Rules */ }`
+```css
+@media (min-height: 350px) { /* CSS Rules */ }
+```
 
 Recuerda, el CSS dentro de las consultas de medios se aplica sólo si el tipo de medio coincide con el del dispositivo que se está usando.
 

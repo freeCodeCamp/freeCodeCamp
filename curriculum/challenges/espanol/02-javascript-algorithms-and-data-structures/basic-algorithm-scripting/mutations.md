@@ -1,6 +1,6 @@
 ---
 id: af2170cad53daa0770fabdea
-title: Mutations
+title: Mutaciones
 challengeType: 5
 forumTopicId: 16025
 dashedName: mutations
@@ -8,83 +8,83 @@ dashedName: mutations
 
 # --description--
 
-Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+Devuelve `true` si la cadena de caracteres en el primer elemento del arreglo contiene todas las letras de la cadena en el segundo elemento del arreglo.
 
-For example, `["hello", "Hello"]`, should return true because all of the letters in the second string are present in the first, ignoring case.
+Por ejemplo, `["hello", "Hello"]`, debe devolver `true` porque todas las letras de la segunda cadena están presentes en la primera, ignorando mayúsculas o minúsculas.
 
-The arguments `["hello", "hey"]` should return false because the string "hello" does not contain a "y".
+Los argumentos `["hello", "hey"]` deben devolver `false` porque la cadena `hello` no contiene `y`.
 
-Lastly, `["Alien", "line"]`, should return true because all of the letters in "line" are present in "Alien".
+Finalmente, `["Alien", "line"]`, debe devolver `true` porque todas las letras de `line` están presentes en `Alien`.
 
 # --hints--
 
-`mutation(["hello", "hey"])` should return false.
+`mutation(["hello", "hey"])` debe devolver `false`.
 
 ```js
 assert(mutation(['hello', 'hey']) === false);
 ```
 
-`mutation(["hello", "Hello"])` should return true.
+`mutation(["hello", "Hello"])` debe devolver `true`.
 
 ```js
 assert(mutation(['hello', 'Hello']) === true);
 ```
 
-`mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])` should return true.
+`mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])` debe devolver `true`.
 
 ```js
 assert(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']) === true);
 ```
 
-`mutation(["Mary", "Army"])` should return true.
+`mutation(["Mary", "Army"])` debe devolver `true`.
 
 ```js
 assert(mutation(['Mary', 'Army']) === true);
 ```
 
-`mutation(["Mary", "Aarmy"])` should return true.
+`mutation(["Mary", "Aarmy"])` debe devolver `true`.
 
 ```js
 assert(mutation(['Mary', 'Aarmy']) === true);
 ```
 
-`mutation(["Alien", "line"])` should return true.
+`mutation(["Alien", "line"])` debe devolver `true`.
 
 ```js
 assert(mutation(['Alien', 'line']) === true);
 ```
 
-`mutation(["floor", "for"])` should return true.
+`mutation(["floor", "for"])` debe devolver `true`.
 
 ```js
 assert(mutation(['floor', 'for']) === true);
 ```
 
-`mutation(["hello", "neo"])` should return false.
+`mutation(["hello", "neo"])` debe devolver `false`.
 
 ```js
 assert(mutation(['hello', 'neo']) === false);
 ```
 
-`mutation(["voodoo", "no"])` should return false.
+`mutation(["voodoo", "no"])` debe devolver `false`.
 
 ```js
 assert(mutation(['voodoo', 'no']) === false);
 ```
 
-`mutation(["ate", "date"]` should return false.
+`mutation(["ate", "date"])` debe devolver `false`.
 
 ```js
 assert(mutation(['ate', 'date']) === false);
 ```
 
-`mutation(["Tiger", "Zebra"])` should return false.
+`mutation(["Tiger", "Zebra"])` debe devolver `false`.
 
 ```js
 assert(mutation(['Tiger', 'Zebra']) === false);
 ```
 
-`mutation(["Noel", "Ole"])` should return true.
+`mutation(["Noel", "Ole"])` debe devolver `true`.
 
 ```js
 assert(mutation(['Noel', 'Ole']) === true);

@@ -74,9 +74,9 @@ export function* executeChallengeSaga({
     yield put(initLogs());
     yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
-    const tests = (yield select(challengeTestsSelector)).map(
-      ({ text, testString }) => ({ text, testString })
-    );
+    const tests = (yield select(
+      challengeTestsSelector
+    )).map(({ text, testString }) => ({ text, testString }));
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
@@ -116,7 +116,7 @@ export function* executeChallengeSaga({
 function* takeEveryLog(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the logs.
-  yield takeEvery(channel, function*(args) {
+  yield takeEvery(channel, function* (args) {
     yield put(updateLogs(escape(args)));
   });
 }
@@ -124,7 +124,7 @@ function* takeEveryLog(channel) {
 function* takeEveryConsole(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the console output.
-  yield takeEvery(channel, function*(args) {
+  yield takeEvery(channel, function* (args) {
     yield put(updateConsole(escape(args)));
   });
 }

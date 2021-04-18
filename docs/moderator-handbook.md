@@ -20,7 +20,7 @@ freeCodeCamp is an inclusive community, and we need to keep it that way.
 We have a single code of conduct that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
 > [!NOTE]
-> As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on on a platform that you would like to moderate please [reach out to a staff member](/FAQ?id=additional-assistance).
+> As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](/FAQ?id=additional-assistance).
 
 ## Moderating GitHub
 
@@ -35,9 +35,9 @@ We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/fr
 
 #### Issue Triage
 
-[Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have a extensive list of labels that we use to mark the priority, category, status and scope of each issue.
+[Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have an extensive list of labels that we use to mark each issue's priority, category, status, and scope.
 
-You can help us moderate the the issue reports by helping us organize and triage these by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually a description is available alongside the label explaining its meaning.
+You can help us organize and triage the issue reports by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
 
 Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
@@ -68,7 +68,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
-   If the change looks good please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 2. **Challenge Code Edits**
 
@@ -80,7 +80,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
-   If the change looks good please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 3. **Platform Changes**
 
@@ -92,7 +92,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
 4. **Automated PRs (Dependabot)**
 
-   Some PRs are automated dependency updates made via an integration. You should not merge or approve these PRs. One of the members of the dev-team will take care of reviewing and merging such automated PRs.
+   Some PRs are automated dependency updates made via an integration. You should not merge or approve these PRs. One of the dev-team members will take care of reviewing and merging such automated PRs.
 
 #### How to review, merge or close pull requests
 
@@ -104,10 +104,10 @@ Depending on the type of pull request it is, follow the corresponding rules list
 
 ##### Ensure the CI checks are passing:
 
-Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull-requests. If you see any of the checks failing, please investigate and get some clarification on the root cause. Is the change being made breaking our tests? Will the site build correctly if the the PR is merged? These checks are critical for the stability of the platform.
+Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull-requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the the PR is merged? These checks are critical for the stability of the platform.
 
 > [!WARNING]
-> Merging a PR that is failing CI/CD checks can cause difficulties for all stakeholders, including the dev-team and contributors.
+> Merging a PR that fails CI/CD checks can cause difficulties for all stakeholders, including the dev-team and contributors.
 
 ##### Handling merge conflicts:
 
@@ -121,11 +121,11 @@ If you are uncertain, please ask one of the fellow moderators or the dev-team fo
 
 ##### Merging a valid pull request:
 
-If the pull request looks ready to merge (and doesn't require additional approvals - remember we require at least two), you can go ahead and merge it. Be sure to use the default **"Squash and Merge"** option. This will squash all the pull requests commits down into a single commit, which makes the Git history much easier to read.
+If the pull request looks ready to merge (and doesn't require additional approvals - remember we require at least two), you can go ahead and merge it. Be sure to use the default **"Squash and Merge"** option. This will squash all the pull requests commits down into a single commit, making the Git history much easier to read.
 
 > You should then comment on the pull request, thanking the contributor in your own personal way.
 
-If the author of the pull request is a "first-time contributor" you should also congratulate them on their first merged pull request to the repository. You can look at the upper right-hand corner of the PR's body to determine a first-time contributor. It will show `First-time contributor` as shown below:
+If the pull request author is a "first-time contributor" you should also congratulate them on their first merged pull request to the repository. You can look at the upper right-hand corner of the PR's body to determine a first-time contributor. It will show `First-time contributor` as shown below:
 
 <details>
    <summary>
@@ -135,15 +135,15 @@ If the author of the pull request is a "first-time contributor" you should also 
    <img src="https://i.imgur.com/dTQMjGM.png" alt="First time contributor badge on pull requests">
 </details>
 
-If the pull request doesn't look ready to merge you can politely reply telling the author what they should do to get it ready. Hopefully, they will reply and get their pull request closer to ready.
+If the pull request doesn't look ready to merge, you can politely reply telling the author what they should do to get it ready. Hopefully, they will reply and get their pull request closer to ready.
 
 If you need a second opinion on a pull request, go ahead and leave your comments on the pull request, then add the "discussing" label to the pull request.
 
 ##### Closing an invalid pull request:
 
-Often, a pull request will be obviously low effort. You can often tell this immediately when the contributor didn't bother checking the checkboxes in the Pull Request Template or used a generic pull request title like "made changes" or "Update index.md".
+Often, a pull request will be low effort. You can usually tell this immediately when the contributor didn't bother checking the checkboxes in the Pull Request Template or used a generic pull request title like "made changes" or "Update index.md".
 
-There are also situations where the contributor is trying to add a link to their own website, or include a library they themselves created, or has a frivolous edit that doesn't serve to help anyone but themselves.
+There are also situations where the contributor is trying to add a link to their website, include a library they created, or have a frivolous edit that doesn't help anyone but themselves.
 
 You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
@@ -151,9 +151,9 @@ You can close invalid pull requests and reply to them with these [reply template
 
 Though you will have write access to freeCodeCamp's repository, **you should never push code directly to freeCodeCamp repositories**. All code should enter freeCodeCamp's codebase in the form of a pull request from a fork of the repository.
 
-Also, you should never accept your own PRs. They must be reviewed by another moderator, just like with any other PR.
+Also, you should never accept your own PRs. They must be reviewed by another moderator, just like any other PR.
 
-If you notice anyone breaking the [code of conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request and we can consider banning them from freeCodeCamp's GitHub organization entirely.
+If you notice anyone breaking the [code of conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
 ## Moderating the Forum
 
@@ -163,11 +163,11 @@ Note that once you are a moderator on the forum, you will start to see blue mode
 
 ![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
-These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the smallest kindness may trigger a cascade of good deeds.
+These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 
 ### Deleting forum posts
 
-Forum moderators have the ability to delete user's posts. You should only do this for the following instances:
+Forum moderators can delete user's posts. You should only do this for the following instances:
 
 1. Someone has posted a pornographic or graphically violent image.
 2. Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
@@ -177,11 +177,11 @@ Forum moderators have the ability to delete user's posts. You should only do thi
 
 For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the Code of Conduct. Check the box in the private message indicating that your message is a "formal warning."
 
-You can ask questions and report incidents in the in the [staff forum section](https://forum.freecodecamp.com/c/staff).
+You can ask questions and report incidents in the [staff forum section](https://forum.freecodecamp.com/c/staff).
 
 ### Dealing with off-topic conversations
 
-Posts or topics that seems to be in the wrong place can be re-categorized or renamed to whatever would be appropriate.
+Posts or topics that seem to be in the wrong place can be re-categorized or renamed to whatever would be appropriate.
 
 In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
@@ -189,7 +189,7 @@ Again, if you have any problems or questions, make a post with your actions in t
 
 ### Underage Users
 
-Our [Terms of Service](https://www.freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. In the event that a user reveals that they are under the age of 13, send them the below message and delete their forum account (if deletion is not available, suspending the account is sufficient).
+Our [Terms of Service](https://www.freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the below message and delete their forum account (if deletion is not available, suspending the account is sufficient).
 
 **Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp account as well.**
 
@@ -207,21 +207,21 @@ Thank you for understanding.
 
 If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
-Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. In these cases, their post should be deleted, but the person who posted it doesn't necessarily need to be banned. By getting their post deleted, they will hopefully come to understand that what they posted was inappropriate.
+Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted, was inappropriate because the post was deleted.
 
-But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language, then you should strongly consider blocking the member from the Facebook group.
+But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
 ## Moderating Chat
 
 Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on our chat server:
 
-1. **Make sure it was intended to violate the Code of Conduct.**
+1. **Make sure the user intended to violate the Code of Conduct.**
 
    Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like Codepen or Pastebin.
 
 2. **If the camper clearly and intentionally violates the Code of Conduct, the moderator will proceed as follows:**
 
-   Kick or mute the offending person from the chat room. In order to kick or mute someone, left-click on their profile picture, select the three dots, and select "Remove from room" to kick or "Mute user" to prevent them from sending messages. Then report a short summary of the event in the #mod-log channel. Here's an example of what such a summary might look like:
+   Kick or mute the offending person from the chat room. To kick or mute someone, left-click on their profile picture, select the three dots, and select "Remove from room" to kick or "Mute user" to prevent them from sending messages. Then report a short summary of the event in the #mod-log channel. Here's an example of what such a summary might look like:
 
    ```
    Kicked: _@username_
@@ -231,7 +231,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 3. **Creating a Private Discussion**
 
-   There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, as this can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
+   There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, which can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
 
    - Call the `!fCC private username` command, where `username` is the camper's chat user name.
    - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
@@ -245,7 +245,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    - Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
 
-   - Someone has flooded the chat with lots of spam messages to such an extreme extent (usually involving bots) as to render chat completely unusable.
+   - Someone has flooded the chat with lots of spam messages to such an extreme extent (usually involving bots) to render chat completely unusable.
 
    - Someone has posted an advertisement and/or a self-promoting message/image (social media).
 
@@ -263,7 +263,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 6. **Don’t threaten to take action**
 
-   If a camper is breaking the code of conduct, don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `private` command. No one else in that channel needs to know that you banned/suspended the person. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
+   If a camper breaks the code of conduct, don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `private` command. No one else in that channel needs to know that you banned/suspended the person. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
 
    - Camper posts a wall of code to request help:
 
@@ -285,13 +285,13 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 8. **Don’t contradict other moderators**
 
-   If you disagree with the action of a moderator, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their point of view.
+   If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their point of view.
 
    Remember: we’re all on the same team. We want to dignify the role of moderators and present a unified front.
 
 9. **Talk with other moderators**
 
-   We have a room for moderators only. Use it! If you feel uncomfortable with how to handle a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team and we value the input of every team member! Even if you totally disagree with anything in these guidelines or the Code of Conduct!
+   We have a room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the Code of Conduct!
 
 10. **Temporarily inactive**
 
@@ -299,7 +299,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 ## How to become a moderator
 
-If you are helping people in the community consistently over time, our Moderator Team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
+Suppose you are helping people in the community consistently over time. In that case, our Moderator Team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
 
 If you are approved, we will add you to our Moderator Teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), and chat etc.
 
@@ -310,7 +310,7 @@ If you are approved, we will add you to our Moderator Teams on [GitHub](https://
 
 ## How we retire inactive moderators
 
-Please note that we will frequently remove mods whom we think are inactive. When we do this we will send the following message:
+Please note that we will frequently remove mods whom we think are inactive. When we do this, we will send the following message:
 
 ```markdown
 This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your help in the past.
@@ -320,21 +320,21 @@ If you think we did this in error, or once you're ready to come back and contrib
 
 ## How our Contributors room works
 
-Anyone is welcome in the [Contributors room on our chat server](https://chat.freecodecamp.org/channel/contributors). It is the designated chat room for moderators and other campers who are contributing to our community in any number of ways, including through study groups.
+Anyone is welcome in the [Contributors room on our chat server](https://chat.freecodecamp.org/channel/contributors). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
-Our assumption is that contributors will read anything in this room that directly mentions them with an `@username`. Everything else is optional. But feel free to read anything anyone posts in there and interact.
+We assume contributors will read anything in this room that directly mentions them with an `@username`. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
 ## Dealing with solicitors
 
-You may be approached by organizations who want to partner or co-brand with freeCodeCamp in some way. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
+You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
 We proposals like this all the time and is in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
 ## Dealing with (mental) health inquiries
 
-You may come across situations where users are seeking medical advice or are dealing with mental health issues and are looking for support.
+You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
 
-As a matter of policy, you should avoid talking privately about these matters. Should the situation at some point reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
+As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
 
 As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional help!
 
@@ -352,7 +352,7 @@ http://www.suicide.org/international-suicide-hotlines.html
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
-This XKCD comic perfectly summarizes most communities' thoughts on free speech. So if someone defends something they're saying as "free speech" feel free to send it to them.
+This XKCD comic perfectly summarizes most communities' thoughts on free speech. So if someone defends something in the name of "free speech", feel free to send it to them.
 
 <div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
 

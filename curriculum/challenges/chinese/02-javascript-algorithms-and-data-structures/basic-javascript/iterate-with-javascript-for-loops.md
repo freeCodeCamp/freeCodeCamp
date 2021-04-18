@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb5bdef
-title: Iterate with JavaScript For Loops
+title: for 循环
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNVCe'
 forumTopicId: 18219
@@ -9,21 +9,21 @@ dashedName: iterate-with-javascript-for-loops
 
 # --description--
 
-You can run the same code multiple times by using a loop.
+你可以使用循环多次执行相同的代码。
 
-The most common type of JavaScript loop is called a `for` loop because it runs "for" a specific number of times.
+JavaScript 中最常见的循环就是 `for`，它可以循环指定次数。
 
-For loops are declared with three optional expressions separated by semicolons:
+for 循环中的可选三个表达式用分号隔开：
 
-`for ([initialization]; [condition]; [final-expression])`
+`for (a; b; c)`，其中 `a` 为初始化语句，`b` 是循环条件语句，`c` 是终止循环条件表达式。
 
-The `initialization` statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
+初始化语句只会在执行循环开始之前执行一次。 它通常用于定义和设置你的循环变量。
 
-The `condition` statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to `true`. When `condition` is `false` at the start of the iteration, the loop will stop executing. This means if `condition` starts as `false`, your loop will never execute.
+循环条件语句会在每一轮循环的开始前执行，只要条件判断为 `true` 就会继续执行循环。 当条件为 `false` 的时候，循环将停止执行。 这意味着，如果条件在一开始就为 false，这个循环将不会执行。
 
-The `final-expression` is executed at the end of each loop iteration, prior to the next `condition` check and is usually used to increment or decrement your loop counter.
+终止循环表达式在每次循环迭代结束， 在下一个条件检查之前时执行，通常用来递增或递减循环计数。
 
-In the following example we initialize with `i = 0` and iterate while our condition `i < 5` is true. We'll increment `i` by `1` in each loop iteration with `i++` as our `final-expression`.
+在下面的例子中，先初始化 `i = 0`，条件 `i < 5` 为 true 时，进入循环。 每次循环后 `i` 的值增加 `1`，然后执行终止循环条件表达式 `i++`。
 
 ```js
 var ourArray = [];
@@ -32,21 +32,21 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-`ourArray` will now contain `[0,1,2,3,4]`.
+最终 `ourArray` 的值为 `[0,1,2,3,4]`.
 
 # --instructions--
 
-Use a `for` loop to work to push the values 1 through 5 onto `myArray`.
+使用 `for` 循环把从 1 到 5 添加进 `myArray` 中。
 
 # --hints--
 
-You should be using a `for` loop for this.
+你应该使用 `for` 循环。
 
 ```js
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` should equal `[1,2,3,4,5]`.
+`myArray` 应该等于 `[1,2,3,4,5]`。
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);

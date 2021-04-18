@@ -6,14 +6,71 @@
   color: var(--primary-color);
 }
 
-[widgetid='my.overlay.widget'] {
-  padding: 10px;
-}
-
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }
 
 .editor-container {
   background: var(--editor-background);
+}
+
+.breadcrumbs-demo {
+  font-size: 16px;
+}
+
+.breadcrumbs-demo span {
+  font-weight: bold;
+}
+
+.tabs-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.action-row button {
+  padding: 4px 16px;
+}
+
+.active-tab {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+/* [widgetid='my.overlay.widget'] {
+  padding: 10px;
+} */
+
+.editor-upper-jaw,
+.editor-lower-jaw {
+  padding: 15px 15px 15px 0px;
+}
+
+.action-row-container,
+.description-container {
+  background-color: var(--secondary-background);
+  padding: 10px;
+  border: 2px solid var(--tertiary-background);
+  max-width: 700px;
+}
+
+#description p:last-child {
+  margin: 0px;
+}
+
+#test-status {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.myEditableLineDecoration {
+  background-color: var(--gray-45);
+  width: 15px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.myEditableLineDecoration.tests-passed {
+  background-color: #4caf50;
 }

@@ -1,7 +1,11 @@
+/* global jest */
+
 import { types } from '.';
 import { createGaSaga } from './ga-saga';
 import ga from '../analytics';
 import { expectSaga } from 'redux-saga-test-plan';
+
+jest.mock('../analytics');
 
 describe('ga-saga', () => {
   it('calls GA after executeGA action', () => {

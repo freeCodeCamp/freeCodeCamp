@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdd
-title: Use Dynamic Scales
+title: 使用动态比例
 challengeType: 6
 forumTopicId: 301495
 dashedName: use-dynamic-scales
@@ -8,13 +8,13 @@ dashedName: use-dynamic-scales
 
 # --description--
 
-The D3 `min()` and `max()` methods are useful to help set the scale.
+D3 的 `min()` 和 `max()` 方法在设置比例尺时十分有用。
 
-Given a complex data set, one priority is to set the scale so the visualization fits the SVG container's width and height. You want all the data plotted inside the SVG canvas so it's visible on the web page.
+对于一个复杂的数据集，首要是设置比例尺，这样可视化才能适合 SVG 容器的宽和高。 所有数据都应布局在 SVG 画布内部，这样它们在页面上才是可见的。
 
-The example below sets the x-axis scale for scatter plot data. The `domain()` method passes information to the scale about the raw data values for the plot. The `range()` method gives it information about the actual space on the web page for the visualization.
+下面这个例子为散点图设置了 x 轴的比例尺。 `domain()` 方法给比例尺传递关于散点图原数据值的信息， `range()` 方法给出在页面上进行可视化的实际空间信息。
 
-In the example, the domain goes from 0 to the maximum in the set. It uses the `max()` method with a callback function based on the x values in the arrays. The range uses the SVG canvas' width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG canvas.
+在这个例子中，domain 是从 0 到数据集中的最大值， 它使用 `max()` 方法和基于数组中 x 值的回调函数。 Range 使用 SVG 画布的宽（`w`），并包含 padding， 这将在散点图和 SVG 画布边缘之间添加空隙。
 
 ```js
 const dataset = [
@@ -32,37 +32,35 @@ const dataset = [
 const w = 500;
 const h = 500;
 
-// Padding between the SVG canvas boundary and the plot
 const padding = 30;
 const xScale = d3.scaleLinear()
   .domain([0, d3.max(dataset, (d) => d[0])])
   .range([padding, w - padding]);
 ```
 
-The padding may be confusing at first. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG canvas). Including the padding in the `range()` method forces the plot to start at 30 along that line (instead of 0), and end at 470 (instead of 500).
+在一开始可能很难理解 padding。 想象 x 轴是一条从 0 到 500 （SVG 画布宽的值）的水平直线。 在 `range()` 方法中包含 padding 使散点图沿着这条直线从 30 （而不是 0）开始，在 470 （而不是 500）结束。
 
 # --instructions--
 
-Use the `yScale` variable to create a linear y-axis scale. The domain should start at zero and go to the maximum y value in the set. The range should use the SVG height (`h`) and include padding.
+使用 `yScale` 变量创建一个线性的 y 轴比例尺。 domain 应该从 0 开始到数据集中 `y` 的最大值， range 应该使用 SVG 的高（`h`），并包含 padding。
 
-**Note**  
-Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument.
+**注意：**记得保持绘图在右上角。 当你为 y 坐标设置 range 时，大的值（height 减去 padding）是第一个参数，小的值是第二个参数。
 
 # --hints--
 
-The text in the `h2` should be 30.
+`h2` 的文本应为 `30`。
 
 ```js
 assert(output == 30 && $('h2').text() == '30');
 ```
 
-The `domain()` of yScale should be equivalent to `[0, 411]`.
+yScale 的 `domain()` 应该等于 `[0, 411]`。
 
 ```js
 assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]));
 ```
 
-The `range()` of yScale should be equivalent to `[470, 30]`.
+yScale 的 `range()` 应该等于 `[470, 30]`。
 
 ```js
 assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]));

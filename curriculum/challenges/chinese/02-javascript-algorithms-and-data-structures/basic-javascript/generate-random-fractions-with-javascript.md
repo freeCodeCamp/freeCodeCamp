@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb9bdef
-title: Generate Random Fractions with JavaScript
+title: 使用 JavaScript 生成随机分数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJJs3'
 forumTopicId: 18185
@@ -9,32 +9,31 @@ dashedName: generate-random-fractions-with-javascript
 
 # --description--
 
-Random numbers are useful for creating random behavior.
+随机数非常适合用来创建随机行为。
 
-JavaScript has a `Math.random()` function that generates a random decimal number between `0` (inclusive) and not quite up to `1` (exclusive). Thus `Math.random()` can return a `0` but never quite return a `1`
+在 JavaScript 中，可以用 `Math.random()` 生成一个在`0`（包括 0）到 `1`（不包括 1）之间的随机小数， 因此 `Math.random()` 可能返回 `0`，但绝不会返回 `1`。
 
-**Note**  
-Like [Storing Values with the Equal Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), all function calls will be resolved before the `return` executes, so we can `return` the value of the `Math.random()` function.
+**提示：** [使用赋值运算符存储值](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator)这一节讲过，所有函数调用将在 `return` 执行之前结束，因此我们可以 `return`（返回）`Math.random()` 函数的值。
 
 # --instructions--
 
-Change `randomFraction` to return a random number instead of returning `0`.
+更改 `randomFraction`，使其返回一个随机数而不是 `0`。
 
 # --hints--
 
-`randomFraction` should return a random number.
+`randomFraction` 应该返回一个随机数。
 
 ```js
 assert(typeof randomFraction() === 'number');
 ```
 
-The number returned by `randomFraction` should be a decimal.
+`randomFraction` 应该返回一个小数。
 
 ```js
 assert((randomFraction() + '').match(/\./g));
 ```
 
-You should be using `Math.random` to generate the random decimal number.
+需要使用 `Math.random` 生成随机的小数。
 
 ```js
 assert(code.match(/Math\.random/g).length >= 0);

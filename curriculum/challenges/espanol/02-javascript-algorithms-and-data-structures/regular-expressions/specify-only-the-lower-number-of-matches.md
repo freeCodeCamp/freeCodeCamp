@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba6
-title: Specify Only the Lower Number of Matches
+title: Especifica solo el menor número de coincidencias
 challengeType: 1
 forumTopicId: 301366
 dashedName: specify-only-the-lower-number-of-matches
@@ -8,65 +8,67 @@ dashedName: specify-only-the-lower-number-of-matches
 
 # --description--
 
-You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want to specify the lower number of patterns with no upper limit.
+Puedes especificar el número inferior y superior de patrones mediante especificadores de cantidad utilizando llaves. A veces sólo se quiere especificar el número inferior de patrones sin tener un límite superior.
 
-To only specify the lower number of patterns, keep the first number followed by a comma.
+Para especificar sólo el número inferior de patrones, mantén el primer número seguido de una coma.
 
-For example, to match only the string `"hah"` with the letter `a` appearing at least `3` times, your regex would be `/ha{3,}h/`.
+Por ejemplo, para hacer coincidir solo con la cadena `hah` cuando la letra `a` aparezca al menos `3` veces, la expresión regular sería `/ha{3,}h/`.
 
 ```js
 let A4 = "haaaah";
 let A2 = "haah";
 let A100 = "h" + "a".repeat(100) + "h";
 let multipleA = /ha{3,}h/;
-multipleA.test(A4); // Returns true
-multipleA.test(A2); // Returns false
-multipleA.test(A100); // Returns true
+multipleA.test(A4);
+multipleA.test(A2);
+multipleA.test(A100);
 ```
+
+En orden, las tres llamadas a `test` devuelven `true`, `false` y `true`.
 
 # --instructions--
 
-Change the regex `haRegex` to match the word `"Hazzah"` only when it has four or more letter `z`'s.
+Modifica la expresión regular `haRegex` para coincidir con la palabra `Hazzah` solo cuando ésta tiene cuatro o más letras `z`.
 
 # --hints--
 
-Your regex should use curly brackets.
+La expresión regular debe utilizar llaves.
 
 ```js
 assert(haRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match `"Hazzah"`
+La expresión regular no debe coincidir con la cadena `Hazzah`
 
 ```js
 assert(!haRegex.test('Hazzah'));
 ```
 
-Your regex should not match `"Hazzzah"`
+La expresión regular no debe coincidir con la cadena `Hazzzah`
 
 ```js
 assert(!haRegex.test('Hazzzah'));
 ```
 
-Your regex should match `"Hazzzzah"`
+La expresión regular debe coincidir con la cadena `Hazzzzah`
 
 ```js
 assert('Hazzzzah'.match(haRegex)[0].length === 8);
 ```
 
-Your regex should match `"Hazzzzzah"`
+La expresión regular debe coincidir con la cadena `Hazzzzzah`
 
 ```js
 assert('Hazzzzzah'.match(haRegex)[0].length === 9);
 ```
 
-Your regex should match `"Hazzzzzzah"`
+La expresión regular debe coincidir con la cadena `Hazzzzzzah`
 
 ```js
 assert('Hazzzzzzah'.match(haRegex)[0].length === 10);
 ```
 
-Your regex should match `"Hazzah"` with 30 `z`'s in it.
+La expresión regular debe coincidir con la cadena `Hazzah` con 30 `z`'s.
 
 ```js
 assert('Hazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzah'.match(haRegex)[0].length === 34);

@@ -125,7 +125,7 @@ function getUnlinkSocial(req, res, next) {
     }
   };
 
-  return user.identities(query, function(err, identities) {
+  return user.identities(query, function (err, identities) {
     if (err) {
       return next(err);
     }
@@ -137,7 +137,7 @@ function getUnlinkSocial(req, res, next) {
       return res.redirect('/' + username);
     }
 
-    return identity.destroy(function(err) {
+    return identity.destroy(function (err) {
       if (err) {
         return next(err);
       }
@@ -181,7 +181,7 @@ function postResetProgress(req, res, next) {
       isMachineLearningPyCertV7: false,
       completedChallenges: []
     },
-    function(err) {
+    function (err) {
       if (err) {
         return next(err);
       }
@@ -193,7 +193,7 @@ function postResetProgress(req, res, next) {
 function createPostDeleteAccount(app) {
   const { User } = app.models;
   return function postDeleteAccount(req, res, next) {
-    return User.destroyById(req.user.id, function(err) {
+    return User.destroyById(req.user.id, function (err) {
       if (err) {
         return next(err);
       }

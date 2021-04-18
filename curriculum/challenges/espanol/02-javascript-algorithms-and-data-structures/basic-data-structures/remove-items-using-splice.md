@@ -1,6 +1,6 @@
 ---
 id: 587d78b2367417b2b2512b10
-title: Remove Items Using splice()
+title: Elimina elementos usando splice()
 challengeType: 1
 forumTopicId: 301166
 dashedName: remove-items-using-splice
@@ -8,34 +8,35 @@ dashedName: remove-items-using-splice
 
 # --description--
 
-Ok, so we've learned how to remove elements from the beginning and end of arrays using `shift()` and `pop()`, but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where `splice()` comes in. `splice()` allows us to do just that: **remove any number of consecutive elements** from anywhere in an array.
+Bien, ya hemos aprendido a eliminar elementos al principio y al final de los arreglos utilizando `shift()` y `pop()`, pero ¿qué pasa si queremos eliminar un elemento de alguna parte del medio? ¿O eliminar más de un elemento a la vez? Pues bien, ahí es donde entra `splice()`. `splice()` nos permite hacer precisamente eso: **eliminar cualquier número de elementos consecutivos** de cualquier parte de un arreglo.
 
-`splice()` can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of `splice()` are integers which represent indexes, or positions, of the array that `splice()` is being called upon. And remember, arrays are *zero-indexed*, so to indicate the first element of an array, we would use `0`. `splice()`'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:
+`splice()` puede tomar hasta 3 parámetros, pero por ahora, nos centraremos sólo en los 2 primeros. Los dos primeros parámetros de `splice()` son enteros que representan índices, o posiciones, del arreglo que llama `splice()`. Y recuerda que los arreglos están *indexados en cero*, por lo que para indicar el primer elemento de un arreglo, usaríamos `0`. El primer parámetro de `splice()` representa el índice del arreglo a partir del cual se empiezan a eliminar los elementos, mientras que el segundo parámetro indica el número de elementos a eliminar. Por ejemplo:
 
 ```js
 let array = ['today', 'was', 'not', 'so', 'great'];
 
 array.splice(2, 2);
-// remove 2 elements beginning with the 3rd element
-// array now equals ['today', 'was', 'great']
 ```
 
-`splice()` not only modifies the array it's being called on, but it also returns a new array containing the value of the removed elements:
+Aquí eliminamos 2 elementos, comenzando con el tercer elemento (en el índice 2). `array` tendrá el valor `['today', 'was', 'great']`.
+
+`splice()` no sólo modifica el arreglo que llama, sino que también devuelve un nuevo arreglo que contiene el valor de los elementos eliminados:
 
 ```js
 let array = ['I', 'am', 'feeling', 'really', 'happy'];
 
 let newArray = array.splice(3, 2);
-// newArray equals ['really', 'happy']
 ```
+
+`newArray` tiene el valor `['really', 'happy']`.
 
 # --instructions--
 
-We've initialized an array `arr`. Use `splice()` to remove elements from `arr`, so that it only contains elements that sum to the value of `10`.
+Hemos inicializado un arreglo `arr`. Usa `splice()` para eliminar elementos de `arr`, de forma que sólo contenga elementos que sumen el valor de `10`.
 
 # --hints--
 
-You should not change the original line of `const arr = [2, 4, 5, 1, 7, 5, 2, 1];`.
+No debes cambiar la línea original de `const arr = [2, 4, 5, 1, 7, 5, 2, 1];`.
 
 ```js
 assert(
@@ -43,7 +44,7 @@ assert(
 );
 ```
 
-`arr` should only contain elements that sum to `10`.
+`arr` sólo debe contener elementos que sumen `10`.
 
 ```js
 assert.strictEqual(
@@ -52,13 +53,13 @@ assert.strictEqual(
 );
 ```
 
-Your code should utilize the `splice()` method on `arr`.
+Tu código debe utilizar el método `splice()` en `arr`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
 ```
 
-The splice should only remove elements from `arr` and not add any additional elements to `arr`.
+La división (splice) sólo debe eliminar elementos de `arr` y no agregar ningún elemento adicional a `arr`.
 
 ```js
 assert(

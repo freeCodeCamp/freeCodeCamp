@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { apiLocation } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import {
   signInLoadingSelector,
   userSelector,
@@ -26,6 +26,8 @@ import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
 import { User } from '../redux/propTypes';
+
+const { apiLocation } = envData;
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
@@ -211,7 +213,4 @@ export function ShowSettings(props) {
 ShowSettings.displayName = 'ShowSettings';
 ShowSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);

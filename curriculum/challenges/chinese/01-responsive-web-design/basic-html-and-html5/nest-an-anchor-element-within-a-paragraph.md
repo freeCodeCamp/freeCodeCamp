@@ -19,39 +19,55 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 
 让我们来拆解一下这个例子。 通常，文本是被包裹在 `p` 元素内：
 
-`<p> Here's a ... for you to follow. </p>`
+```html
+<p> Here's a ... for you to follow. </p>
+```
 
 接下来是*锚点*元素 `<a>`（它需要结束标签 `</a>`）：
 
-`<a> ... </a>`
+```html
+<a> ... </a>
+```
 
-`target` 锚点元素的一个属性，它用来指定链接的打开方式。 属性值 `_blank` 表示链接会在新标签页打开。 `href` 是锚点元素的另一个属性，它用来指定链接的 URL：
+`target` 是锚点元素的一个属性，它用来指定链接的打开方式。 属性值 `_blank` 表示链接会在新标签页打开。 `href` 是锚点元素的另一个属性，它用来指定链接的 URL：
 
-`<a href="http://freecodecamp.org"> ... </a>`
+```html
+<a href="http://freecodecamp.org"> ... </a>
+```
 
-`a` 元素内的内容文本 `link to freecodecamp.org` 叫作 `anchor text`（锚文本），会显示为一个可以点击的链接：
+`a` 元素内的文本 `link to freecodecamp.org` 叫作<dfn>锚文本</dfn>，会显示为一个可以点击的链接：
 
-`<a href=" ... ">link to freecodecamp.org</a>`
+```html
+<a href=" ... ">link to freecodecamp.org</a>
+```
 
 此示例的最终输出结果是这样：
 
-你可以访问 [link to freecodecamp.org](http://freecodecamp.org)。
+Here's a [link to freecodecamp.org](http://freecodecamp.org) for you to follow.
 
 # --instructions--
 
-创建一个新的段落 `p` 元素来包裹 `a` 元素。 新段落标签的内容为 `View more cat photos`，其中 `cat photos` 是一个链接，其余的是纯文本。
+创建一个新的段落 `p` 元素来包裹 `a` 元素。 新段落应有文本 `View more cat photos`，其中 `cat photos` 是一个链接，其余是纯文本。
 
 # --hints--
 
-应包含一个链接到 `https://freecatphotoapp.com` 的 `a` 元素。
+应该只有一个 `a` 元素。
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length > 0 
+  $('a').length  === 1 
 );
 ```
 
-`a` 元素的内容文本应为 `cat photos`。
+`a` 元素应该链接到 “`https://freecatphotoapp.com`”。
+
+```js
+assert(
+  $('a[href="https://freecatphotoapp.com"]').length  === 1 
+);
+```
+
+`a` 元素应有锚文本 `cat photos`。
 
 ```js
 assert(
@@ -61,7 +77,7 @@ assert(
 );
 ```
 
-你应该在 `a` 标签的外部创建一个新的 `p` 标签。 页面中应至少包含 3 个 `p` 标签。
+应该创建一个新的 `p` 元素。 页面中应至少包含 3 个 `p` 标签。
 
 ```js
 assert($('p') && $('p').length > 2);
@@ -75,7 +91,7 @@ assert(
 );
 ```
 
-`p` 元素应该包含文本 `View more`（请注意，more 之后有一个空格）。
+`p` 元素应该包含文本 `View more`（在它后面有一个空格）。
 
 ```js
 assert(
@@ -86,7 +102,7 @@ assert(
 );
 ```
 
-`a` 元素中 <em>不</em> 应包含文本 `View more`。
+`a` 元素 <em>不</em> 应有文本 `View more`。
 
 ```js
 assert(

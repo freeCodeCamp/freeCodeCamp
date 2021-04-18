@@ -13,13 +13,15 @@ dashedName: inform-with-the-paragraph-element
 
 你可以像这样创建一个段落：
 
-`<p>I'm a p tag!</p>`
+```html
+<p>I'm a p tag!</p>
+```
 
 # --instructions--
 
 在 `h2` 元素下方添加一个 `p` 元素，其内容是 `Hello Paragraph`。
 
-**注意：**按照惯例，所有 HTML 标签都应该是小写字母，例如应使用 `<p></p>`，而不会使用`<P></P>`。
+**注意：**按照惯例，所有 HTML 标签都应该是小写字母，例如应使用 `<p></p>`，而不会使用 `<P></P>`。
 
 # --hints--
 

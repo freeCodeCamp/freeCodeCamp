@@ -28,7 +28,7 @@ export async function getAsyncPaypalToken() {
 }
 
 export function capitalizeKeys(object) {
-  Object.keys(object).forEach(function(key) {
+  Object.keys(object).forEach(function (key) {
     object[key.toUpperCase()] = object[key];
   });
 }

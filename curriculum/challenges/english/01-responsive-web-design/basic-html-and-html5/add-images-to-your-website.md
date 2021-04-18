@@ -13,7 +13,9 @@ You can add images to your website by using the `img` element, and point to a sp
 
 An example of this would be:
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg">`
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg">
+```
 
 Note that `img` elements are self-closing.
 
@@ -25,7 +27,9 @@ Ideally the `alt` attribute should not contain special characters unless needed.
 
 Let's add an `alt` attribute to our `img` example above:
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+```
 
 # --instructions--
 
@@ -33,9 +37,7 @@ Let's try to add an image to our website:
 
 Within the existing `main` element, insert an `img` element before the existing `p` elements.
 
-Now set the `src` attribute so that it points to this url:
-
-`https://bit.ly/fcc-relaxing-cat`
+Now set the `src` attribute so that it points to the url `https://bit.ly/fcc-relaxing-cat`
 
 Finally, don't forget to give your `img` element an `alt` attribute with applicable text.
 

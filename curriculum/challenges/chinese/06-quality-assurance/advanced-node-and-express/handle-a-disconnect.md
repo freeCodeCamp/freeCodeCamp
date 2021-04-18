@@ -1,6 +1,6 @@
 ---
 id: 589fc831f9fc0f352b528e76
-title: Handle a Disconnect
+title: 处理连接断开
 challengeType: 2
 forumTopicId: 301552
 dashedName: handle-a-disconnect
@@ -8,9 +8,9 @@ dashedName: handle-a-disconnect
 
 # --description--
 
-You may notice that up to now you have only been increasing the user count. Handling a user disconnecting is just as easy as handling the initial connect, except you have to listen for it on each socket instead of on the whole server.
+你也许注意到，目前为止我们只处理用户数量的增加，没有处理减少。 事实上，处理用户断开连接也很简单。 区别在于，新连接的监听是发生在整个服务器上，但连接断开的监听是发生在每个 socket 上。
 
-To do this, add another listener inside the existing `'connect'` listener that listens for `'disconnect'` on the socket with no data passed through. You can test this functionality by just logging that a user has disconnected to the console.
+为此，我们需要在目前的 `'connect'` 监听里面添加另一个监听器，监听 socket 断开连接 `'disconnect'` 的事件。 通过登录已与控制台断开连接的用户，你可以测试这个功能。
 
 ```js
 socket.on('disconnect', () => {
@@ -18,15 +18,15 @@ socket.on('disconnect', () => {
 });
 ```
 
-To make sure clients continuously have the updated count of current users, you should decrease the currentUsers by 1 when the disconnect happens then emit the 'user count' event with the updated count!
+为确保客户端可以看到实时的用户数量，我们应该在用户断开时让 currentUsers 减 1，然后发送 “user count” 事件，并使用修改后的用户数量。
 
-**Note:** Just like `'disconnect'`, all other events that a socket can emit to the server should be handled within the connecting listener where we have 'socket' defined.
+**注意：**和 `'disconnect'` 类似，所有 socket 可以发送到服务器的事件，我们都应该在有 “socket” 定义的连接监听器里处理。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa)的答案。
 
 # --hints--
 
-Server should handle the event disconnect from a socket.
+服务器应处理断开 socket 连接的事件。
 
 ```js
 (getUserInput) =>
@@ -40,7 +40,7 @@ Server should handle the event disconnect from a socket.
   );
 ```
 
-Your client should be listening for 'user count' event.
+客户端应监听 “user count” 事件。
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: a103376db3ba46b2d50db289
-title: Spinal Tap Case
+title: Spinal case
 challengeType: 5
 forumTopicId: 16078
 dashedName: spinal-tap-case
@@ -8,23 +8,23 @@ dashedName: spinal-tap-case
 
 # --description--
 
-Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+Convierte una cadena a spinal case. Spinal case significa todas-las-palabras-en-minúscula-unidas-por-guiones.
 
 # --hints--
 
-`spinalCase("This Is Spinal Tap")` should return `"this-is-spinal-tap"`.
+`spinalCase("This Is Spinal Tap")` debe devolver la cadena `this-is-spinal-tap`.
 
 ```js
 assert.deepEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("thisIsSpinalTap")` should return `"this-is-spinal-tap"`.
+`spinalCase("thisIsSpinalTap")` debe devolver la cadena `this-is-spinal-tap`.
 
 ```js
 assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("The_Andy_Griffith_Show")` should return `"the-andy-griffith-show"`.
+`spinalCase("The_Andy_Griffith_Show")` debe devolver la cadena `the-andy-griffith-show`.
 
 ```js
 assert.strictEqual(
@@ -33,7 +33,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("Teletubbies say Eh-oh")` should return `"teletubbies-say-eh-oh"`.
+`spinalCase("Teletubbies say Eh-oh")` debe devolver la cadena `teletubbies-say-eh-oh`.
 
 ```js
 assert.strictEqual(
@@ -42,7 +42,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("AllThe-small Things")` should return `"all-the-small-things"`.
+`spinalCase("AllThe-small Things")` debe devolver la cadena `all-the-small-things`.
 
 ```js
 assert.strictEqual(spinalCase('AllThe-small Things'), 'all-the-small-things');

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c444eddfaeb5bdef
-title: Declare String Variables
+title: 声明字符串变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
@@ -9,19 +9,21 @@ dashedName: declare-string-variables
 
 # --description--
 
-Previously we have used the code
+之前我们写过这样的代码：
 
-`var myName = "your name";`
+```js
+var myName = "your name";
+```
 
-`"your name"` is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.
+`"your name"` 被称作<dfn>字符串</dfn><dfn>字面量</dfn>。 这是一个字符串，因为它是一系列包含在单引号或双引号中的零或多个字符。
 
 # --instructions--
 
-Create two new `string` variables: `myFirstName` and `myLastName` and assign them the values of your first and last name, respectively.
+创建两个新的字符串变量：`myFirstName` 和 `myLastName`，并用你的姓和名分别为它们赋值。
 
 # --hints--
 
-`myFirstName` should be a string with at least one character in it.
+`myFirstName` 应该是一个字符串，至少包含一个字符。
 
 ```js
 assert(
@@ -39,7 +41,7 @@ assert(
 );
 ```
 
-`myLastName` should be a string with at least one character in it.
+`myLastName` 应该是一个字符串，至少包含一个字符。
 
 ```js
 assert(
@@ -66,7 +68,9 @@ if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(fun
 ```
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

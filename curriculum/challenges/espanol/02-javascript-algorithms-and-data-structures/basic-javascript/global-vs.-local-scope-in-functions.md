@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c0
-title: Global vs. Local Scope in Functions
+title: Ámbito global vs. local en funciones
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
@@ -9,9 +9,9 @@ dashedName: global-vs--local-scope-in-functions
 
 # --description--
 
-It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the `local` variable takes precedence over the `global` variable.
+Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando haces esto, la variable `local` tiene precedencia sobre la variable `global`.
 
-In this example:
+En este ejemplo:
 
 ```js
 var someVar = "Hat";
@@ -21,27 +21,27 @@ function myFun() {
 }
 ```
 
-The function `myFun` will return `"Head"` because the `local` version of the variable is present.
+La función `myFun` devolverá la cadena `Head` porque está presente la versión `local` de la variable.
 
 # --instructions--
 
-Add a local variable to `myOutfit` function to override the value of `outerWear` with `"sweater"`.
+Añade una variable local a la función `myOutfit` para sobrescribir el valor de `outerWear` con la cadena `sweater`.
 
 # --hints--
 
-You should not change the value of the global `outerWear`.
+No debes cambiar el valor del `outerWear` global.
 
 ```js
 assert(outerWear === 'T-Shirt');
 ```
 
-`myOutfit` should return `"sweater"`.
+`myOutfit` debe devolver la cadena `sweater`.
 
 ```js
 assert(myOutfit() === 'sweater');
 ```
 
-You should not change the return statement.
+No debes cambiar la declaración de devolución.
 
 ```js
 assert(/return outerWear/.test(code));

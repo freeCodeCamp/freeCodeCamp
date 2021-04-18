@@ -25,7 +25,9 @@ import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
-import { clientLocale } from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
+
+const { clientLocale } = envData;
 
 const localeCode = langCodes[clientLocale];
 
@@ -336,9 +338,17 @@ function useIdToNameMap() {
       certPath: getPathFromID(id)
     });
   }
-  edges.forEach(({ node: { id, title, fields: { slug } } }) => {
-    idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
-  });
+  edges.forEach(
+    ({
+      node: {
+        id,
+        title,
+        fields: { slug }
+      }
+    }) => {
+      idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
+    }
+  );
   return idToNameMap;
 }
 

@@ -14,7 +14,9 @@ When you're looping through these objects, you can use this `imageLink` property
 
 Here's the code that does this:
 
-`html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
+```js
+html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
+```
 
 # --instructions--
 
