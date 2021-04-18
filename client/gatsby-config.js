@@ -26,6 +26,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-create-client-paths',
       options: {
@@ -56,6 +57,12 @@ module.exports = {
     },
     {
       resolve: 'gatsby-transformer-remark'
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './i18n/locales/english/'
+      }
     },
     {
       resolve: 'gatsby-remark-node-identity',

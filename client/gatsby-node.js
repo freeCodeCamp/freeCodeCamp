@@ -109,6 +109,15 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
               }
             }
           }
+          allIntroTestsJson {
+            edges {
+              node {
+                id
+                title
+                intro
+              }
+            }
+          }
         }
       `).then(result => {
         if (result.errors) {
@@ -130,6 +139,11 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             ({ node: { superBlock } }) => superBlock
           )
         );
+
+        // We can access to IntroTests from here
+        result.data.allIntroTestsJson.edges.forEach(edge => {
+          console.log('IntroTestsJson: ', edge);
+        });
 
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {
