@@ -8,6 +8,7 @@ import {
   projectFormValuesSelector
 } from '../redux';
 import { tap, mapTo } from 'rxjs/operators';
+import { transformEditorLink } from '../utils';
 import envData from '../../../../../config/env.json';
 
 const { forumLocation } = envData;
@@ -63,7 +64,7 @@ function createQuestionEpic(action$, state$, { window }) {
         }
         ${
           projectFormValues
-            ?.map(([key, val]) => `${key}: ${val}\n`)
+            ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n`)
             ?.join('') || filesToMarkdown(files)
         }
 
