@@ -7,7 +7,7 @@ dashedName: part-1
 
 # --description--
 
-As you learned in the last few steps of the Cat Photo App, there is a basic structure need to start building your web page.
+As you learned in the last few steps of the Cat Photo App, there is a basic structure needed to start building your web page.
 
 Add the `<!DOCTYPE html>` and an `html` element.
 

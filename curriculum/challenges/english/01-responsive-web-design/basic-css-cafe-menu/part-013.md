@@ -11,6 +11,24 @@ In the previous step, you used a <dfn>type selector</dfn> to style the `h1` elem
 
 # --hints--
 
+You should not change the existing `h1` selector.
+
+```js
+assert(code.match(/h1\s*{/i));
+```
+
+You should add a new `h2` selector.
+
+```js
+assert(code.match(/h2\s*{/i));
+```
+
+You should add a new `p` selector.
+
+```js
+assert(code.match(/p\s*{/i))
+```
+
 Your `h1` element should have a `text-align` of `center`.
 
 ```js
