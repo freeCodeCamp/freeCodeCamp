@@ -13,9 +13,8 @@ function createPaths(curriculum, superblock, block) {
 
 module.exports = on => {
   on('task', {
-    // return an array of all challenge paths
-    //  superBlock, block,  this are unused variables in the condition Husky doesn't like that
-    getCurriculum({ lang }) {
+    // return an object of the curriculum
+    getCurriculum(lang = 'english') {
       let curriculum;
 
       if (!curriculum) {
