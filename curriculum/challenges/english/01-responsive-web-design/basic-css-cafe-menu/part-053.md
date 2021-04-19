@@ -26,13 +26,13 @@ assert($('.dessert').length === 4);
 You should have four new `.price` elements.
 
 ```js
-assert($('.item').last().children('.price').length === 4);
+assert($('section').last().find('.price').length === 4);
 ```
 
-Your `article` element should have eight `p` elements.
+Your `section` element should have eight `p` elements.
 
 ```js
-assert($('article').last().children().length === 8);
+assert($('section').last().find('p').length === 8);
 ```
 
 Your `.dessert` elements should have the text `Donut`, `Cherry Pie`, `Cheesecake`, and `Cinammon Roll`.
@@ -143,4 +143,3 @@ h1, h2, p {
   width: 25%
 }
 ```
-
