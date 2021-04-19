@@ -19,19 +19,27 @@ Puedes anidar enlaces dentro de otros elementos de texto.
 
 Desglosemos el ejemplo. El texto normal está envuelto en el elemento `p`:
 
-`<p> Here's a ... for you to follow. </p>`
+```html
+<p> Here's a ... for you to follow. </p>
+```
 
 A continuación está el elemento *anchor* `<a>` (que requiere una etiqueta de cierre `</a>`):
 
-`<a> ... </a>`
+```html
+<a> ... </a>
+```
 
 `target` es un atributo de etiqueta anchor que especifica dónde abrir el enlace. El valor `_blank` especifica abrir el enlace en una nueva pestaña. El `href` es un atributo de etiqueta anchor que contiene la dirección URL del enlace:
 
-`<a href="http://freecodecamp.org"> ... </a>`
+```html
+<a href="http://freecodecamp.org"> ... </a>
+```
 
-El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama `anchor text`, y mostrará el enlace para hacer clic:
+El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama <dfn>anchor text</dfn>, y mostrará el enlace para hacer clic:
 
-`<a href=" ... ">link to freecodecamp.org</a>`
+```html
+<a href=" ... ">link to freecodecamp.org</a>
+```
 
 El resultado final del ejemplo se verá así:
 
@@ -43,11 +51,19 @@ Anida el elemento `a` existente dentro de un nuevo elemento `p`. El nuevo párra
 
 # --hints--
 
-Debes tener un elemento `a` que enlace a "`https://freecatphotoapp.com`".
+Solo debes tener un elemento `a`.
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length > 0 
+  $('a').length  === 1 
+);
+```
+
+El elemento `a` debe enlazar a "`https://freecatphotoapp.com`".
+
+```js
+assert(
+  $('a[href="https://freecatphotoapp.com"]').length  === 1 
 );
 ```
 
@@ -61,7 +77,7 @@ assert(
 );
 ```
 
-Debes crear un nuevo elemento `p` alrededor de tu elemento `a`. Debe haber al menos 3 etiquetas `p` en tu código HTML.
+Debes crear un nuevo elemento `p`. Debe haber al menos 3 etiquetas `p` en tu código HTML.
 
 ```js
 assert($('p') && $('p').length > 2);
@@ -75,7 +91,7 @@ assert(
 );
 ```
 
-Tu elemento `p` debe contener el texto `View more` (con un espacio después de él).
+El elemento `p` debe contener el texto `View more` (con un espacio después de él).
 
 ```js
 assert(
@@ -96,7 +112,7 @@ assert(
 );
 ```
 
-Cada uno de tus elementos `p` debe tener una etiqueta de cierre.
+Cada uno de los elementos `p` debe tener una etiqueta de cierre.
 
 ```js
 assert(

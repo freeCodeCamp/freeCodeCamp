@@ -23,7 +23,9 @@ Let's add the keyword `!important` to your pink-text element's color declaration
 
 An example of how to do this is:
 
-`color: red !important;`
+```css
+color: red !important;
+```
 
 # --hints--
 

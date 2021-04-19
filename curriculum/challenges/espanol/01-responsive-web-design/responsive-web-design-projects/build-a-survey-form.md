@@ -46,7 +46,7 @@ Puedes usar HTML, JavaScript y CSS para completar este proyecto. Se recomienda u
 
 **Historia de Usuario #16:** Dentro del elemento form, me es presentado un botón con `id="submit"` para enviar todas mis entradas.
 
-Puedes construir tu proyecto haciendo un fork de [este CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO). O puedes utilizar este enlace CDN para ejecutar los tests en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Puedes construir tu proyecto usando <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio pen. O puedes utilizar este enlace CDN para ejecutar los tests en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Una vez que hayas terminado, envía la URL de tu proyecto funcional con todos los tests aprobados.
 

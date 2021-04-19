@@ -1,7 +1,7 @@
 /*
 This is a one-off script to run on all open PRs to add the
 "status: need to test locally" label to any PR with an existing
-"scope: learn" label on it.
+"scope: curriculum" label on it.
 */
 
 const {
@@ -38,7 +38,7 @@ const log = new ProcessingLog('all-locally-tested-labels');
       // holds potential labels to add based on file path
       const labelsToAdd = {};
       const existingLabels = labels.map(({ name }) => name);
-      if (existingLabels.includes('scope: learn')) {
+      if (existingLabels.includes('scope: curriculum')) {
         labelsToAdd['status: need to test locally'] = 1;
       }
 

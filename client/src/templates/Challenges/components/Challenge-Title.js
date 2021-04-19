@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '../../../components/helpers/index';
+import i18next from 'i18next';
 
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
-import i18next from 'i18next';
+import BreadCrumb from './BreadCrumb';
 
 const propTypes = {
   block: PropTypes.string,
@@ -26,30 +27,12 @@ function ChallengeTitle({
       {translationPending && (
         <Link
           className='title-translation-cta'
-          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+          to={i18next.t('links:help-translate-link-url')}
         >
           {i18next.t('misc.translation-pending')}
         </Link>
       )}
-      <div className='challenge-title-breadcrumbs'>
-        <Link
-          className='breadcrumb-left'
-          state={{ breadcrumbBlockClick: block }}
-          to={`/learn/${superBlock}`}
-        >
-          <span className='ellipsis'>
-            {i18next.t(`intro:${superBlock}.title`)}
-          </span>
-        </Link>
-        <div className='breadcrumb-center' />
-        <Link
-          className='breadcrumb-right'
-          state={{ breadcrumbBlockClick: block }}
-          to={`/learn/${superBlock}/#${block}`}
-        >
-          {i18next.t(`intro:${superBlock}.blocks.${block}.title`)}
-        </Link>
-      </div>
+      <BreadCrumb block={block} superBlock={superBlock} />
       <div className='challenge-title'>
         <div className='title-text'>
           <b>{children}</b>

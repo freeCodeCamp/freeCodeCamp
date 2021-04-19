@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b44
-title: Write Arrow Functions with Parameters
+title: Escribe funciones flecha con parámetros
 challengeType: 1
 forumTopicId: 301223
 dashedName: write-arrow-functions-with-parameters
@@ -8,48 +8,49 @@ dashedName: write-arrow-functions-with-parameters
 
 # --description--
 
-Just like a regular function, you can pass arguments into an arrow function.
+Al igual que una función regular, puedes pasar argumentos a una función flecha.
 
 ```js
-// doubles input value and returns it
 const doubler = (item) => item * 2;
-doubler(4); // returns 8
+doubler(4);
 ```
 
-If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted.
+`doubler(4)` devolvería el valor `8`.
+
+Si una función flecha tiene un solo parámetro, los paréntesis que encierran el parámetro pueden ser omitidos.
 
 ```js
-// the same function, without the parameter parentheses
 const doubler = item => item * 2;
 ```
 
-It is possible to pass more than one argument into an arrow function.
+Es posible pasar más de un argumento a una función flecha.
 
 ```js
-// multiplies the first input value by the second and returns it
 const multiplier = (item, multi) => item * multi;
-multiplier(4, 2); // returns 8
+multiplier(4, 2);
 ```
+
+`multiplier(4, 2)` devolverá el valor `8`.
 
 # --instructions--
 
-Rewrite the `myConcat` function which appends contents of `arr2` to `arr1` so that the function uses arrow function syntax.
+Reescribe la función `myConcat` que añade el contenido de `arr2` a `arr1` para que la función use la sintaxis de función flecha.
 
 # --hints--
 
-You should replace the `var` keyword.
+Debes reemplazar la palabra clave `var`.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`myConcat` should be a constant variable (by using `const`).
+`myConcat` debe ser una variable constante (utilizando `const`).
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
 ```
 
-`myConcat` should be an arrow function with two parameters
+`myConcat` debe ser una función de flecha con dos parámetros
 
 ```js
 assert(
@@ -58,13 +59,13 @@ assert(
 );
 ```
 
-`myConcat()` should return `[1, 2, 3, 4, 5]`.
+`myConcat()` debe devolver `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 ```
 
-`function` keyword should not be used.
+La palabra clave `function` no debe ser usada.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/function/g));

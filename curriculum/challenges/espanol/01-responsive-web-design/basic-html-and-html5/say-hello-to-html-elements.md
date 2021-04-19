@@ -19,11 +19,15 @@ La mayoría de elementos HTML tienen una etiqueta de apertura y una etiqueta de 
 
 Las etiquetas de apertura se ven así:
 
-`<h1>`
+```html
+<h1>
+```
 
 Las etiquetas de cierre se ven así:
 
-`</h1>`
+```html
+</h1>
+```
 
 La única diferencia entre las etiquetas de apertura y cierre es la barra frontal después del corchete de ángulo abierto.
 

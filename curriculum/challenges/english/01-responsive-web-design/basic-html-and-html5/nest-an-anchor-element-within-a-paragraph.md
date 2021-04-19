@@ -19,19 +19,27 @@ You can nest links within other text elements.
 
 Let's break down the example. Normal text is wrapped in the `p` element:
 
-`<p> Here's a ... for you to follow. </p>`
+```html
+<p> Here's a ... for you to follow. </p>
+```
 
 Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):  
 
-`<a> ... </a>`
+```html
+<a> ... </a>
+```
 
 `target` is an anchor tag attribute that specifies where to open the link. The value `_blank` specifies to open the link in a new tab. The `href` is an anchor tag attribute that contains the URL address of the link:  
 
-`<a href="http://freecodecamp.org"> ... </a>`
+```html
+<a href="http://freecodecamp.org"> ... </a>
+```
 
-The text, `link to freecodecamp.org`, within the `a` element is called `anchor text`, and will display the link to click:  
+The text, `link to freecodecamp.org`, within the `a` element is called <dfn>anchor text</dfn>, and will display the link to click:
 
-`<a href=" ... ">link to freecodecamp.org</a>`
+```html
+<a href=" ... ">link to freecodecamp.org</a>
+```
 
 The final output of the example will look like this:  
 
@@ -43,11 +51,19 @@ Nest the existing `a` element within a new `p` element. The new paragraph should
 
 # --hints--
 
-You should have an `a` element that links to "`https://freecatphotoapp.com`".
+You should only have one `a` element.
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length > 0 
+  $('a').length  === 1 
+);
+```
+
+The `a` element should link to "`https://freecatphotoapp.com`".
+
+```js
+assert(
+  $('a[href="https://freecatphotoapp.com"]').length  === 1 
 );
 ```
 
@@ -61,7 +77,7 @@ assert(
 );
 ```
 
-You should create a new `p` element around your `a` element. There should be at least 3 total `p` tags in your HTML code.
+You should create a new `p` element. There should be at least 3 total `p` tags in your HTML code.
 
 ```js
 assert($('p') && $('p').length > 2);

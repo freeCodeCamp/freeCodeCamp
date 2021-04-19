@@ -13,15 +13,19 @@ Puedes añadir nuevas propiedades a los objetos de JavaScript existentes de la m
 
 Así es como podríamos agregar una propiedad `bark` a nuestro objeto `ourDog`:
 
-`ourDog.bark = "bow-wow";`
+```js
+ourDog.bark = "bow-wow";
+```
 
 o
 
-`ourDog["bark"] = "bow-wow";`
+```js
+ourDog["bark"] = "bow-wow";
+```
 
 Ahora cuando evaluemos `ourDog.bark`, obtendremos su ladrido, `bow-wow`.
 
-Ejemplo:
+Por ejemplo:
 
 ```js
 var ourDog = {
@@ -36,7 +40,7 @@ ourDog.bark = "bow-wow";
 
 # --instructions--
 
-Añade una propiedad `bark` a `myDog` y establécela a un sonido de perro, como "guau". Puedes usar tanto la notación de puntos como la notación de corchetes.
+Añade una propiedad `bark` a `myDog` y establécela a un sonido de perro, como "woof". Puedes usar tanto la notación de puntos como la notación de corchetes.
 
 # --hints--
 
@@ -46,7 +50,7 @@ Debes agregar la propiedad `bark` a `myDog`.
 assert(myDog.bark !== undefined);
 ```
 
-No debes agregar `bark` a la sección de configuración (setup).
+No debes agregar `bark` a la inicialización de `myDog`.
 
 ```js
 assert(!/bark[^\n]:/.test(code));
@@ -63,7 +67,6 @@ assert(!/bark[^\n]:/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myDog = {
   "name": "Happy Coder",
   "legs": 4,
@@ -71,7 +74,7 @@ var myDog = {
   "friends": ["freeCodeCamp Campers"]
 };
 
-// Only change code below this line
+
 ```
 
 # --solutions--

@@ -13,11 +13,15 @@ The `parseInt()` function parses a string and returns an integer. It takes a sec
 
 The function call looks like:
 
-`parseInt(string, radix);`
+```js
+parseInt(string, radix);
+```
 
 And here's an example:
 
-`var a = parseInt("11", 2);`
+```js
+var a = parseInt("11", 2);
+```
 
 The radix variable says that `11` is in the binary system, or base 2. This example converts the string `11` to an integer `3`.
 

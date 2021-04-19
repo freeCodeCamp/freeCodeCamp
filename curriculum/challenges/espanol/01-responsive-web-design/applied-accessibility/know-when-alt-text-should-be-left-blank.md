@@ -9,19 +9,21 @@ dashedName: know-when-alt-text-should-be-left-blank
 
 # --description--
 
-En el último desafío, aprendiste que es obligatorio incluir un atributo `alt` al usar etiquetas `img`. Sin embargo, a veces las imágenes se agrupan con un título que ya las describe, o se usan solo para decoración. En estos casos `alt` el texto puede parecer redundante o innecesario.
+En el último desafío, aprendiste que es obligatorio incluir un atributo `alt` al usar etiquetas `img`. Sin embargo, a veces las imágenes se agrupan con un título que ya las describe, o se usan solo para decoración. En estos casos el texto `alt` puede parecer redundante o innecesario.
 
-En situaciones en las que una ya está explicada con contenido de texto, o no agrega significado a una página, el `img` todavía necesita un atributo `alt`, pero se puede establecer en una cadena vacía. Aquí hay un ejemplo:
+Cuando una imagen ya se explica con el contenido de texto o no agrega significado a una página, `img` todavía necesita un atributo `alt`, pero se puede establecer en una cadena vacía. Aquí hay un ejemplo:
 
-`<img src="visualDecoration.jpeg" alt="">`
+```html
+<img src="visualDecoration.jpeg" alt="">
+```
 
 Las imágenes de fondo generalmente también caen bajo la etiqueta "decorativa". Sin embargo, normalmente se aplican con reglas CSS y, por lo tanto, no forman parte del proceso de lectores de pantalla del lenguaje de marcado.
 
-**Nota:** Para imágenes con subtítulos, es posible que desees incluir texto `alt`, ya que ayuda a los motores de búsqueda a catalogar el contenido de la imagen.
+**Nota:** Para imágenes con un título, es posible que aún desees incluir texto `alt` ya que ayuda a los motores de búsqueda a catalogar el contenido de la imagen.
 
 # --instructions--
 
-Camper Cat ha programado una página esqueleto para la parte del blog de su sitio web. Está planeando agregar una ruptura visual entre sus dos artículos con una imagen decorativa de una espada samurái. Agrega un atributo `alt` a la etiqueta `img` y establezca una cadena vacía. (Ten en cuenta que la imagen `src` no enlace a un archivo real - no te preocupes de que no hay espadas que aparece en la pantalla.)
+Camper Cat ha programado una página esqueleto para la parte del blog de su sitio web. Está planeando agregar una ruptura visual entre sus dos artículos con una imagen decorativa de una espada samurái. Agrega un atributo `alt` a la etiqueta `img` y establécela a una cadena vacía. (Ten en cuenta que la imagen `src` no enlaza a un archivo real, no te preocupes que no se muestren espadas en la pantalla.)
 
 # --hints--
 

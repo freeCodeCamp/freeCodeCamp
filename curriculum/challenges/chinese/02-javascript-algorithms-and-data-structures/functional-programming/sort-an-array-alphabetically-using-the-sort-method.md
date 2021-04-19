@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b69
-title: Sort an Array Alphabetically using the sort Method
+title: 使用 sort 方法按字母顺序给数组排序
 challengeType: 1
 forumTopicId: 18303
 dashedName: sort-an-array-alphabetically-using-the-sort-method
@@ -8,9 +8,9 @@ dashedName: sort-an-array-alphabetically-using-the-sort-method
 
 # --description--
 
-The `sort` method sorts the elements of an array according to the callback function.
+`sort` 方法可以根据回调函数对数组元素进行排序。
 
-For example:
+举个例子：
 
 ```js
 function ascendingOrder(arr) {
@@ -19,32 +19,36 @@ function ascendingOrder(arr) {
   });
 }
 ascendingOrder([1, 5, 2, 3, 4]);
-// Returns [1, 2, 3, 4, 5]
+```
 
+这将返回值 `[1, 2, 3, 4, 5]`。
+
+```js
 function reverseAlpha(arr) {
   return arr.sort(function(a, b) {
     return a === b ? 0 : a < b ? 1 : -1;
   });
 }
 reverseAlpha(['l', 'h', 'z', 'b', 's']);
-// Returns ['z', 's', 'l', 'h', 'b']
 ```
 
-JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such a callback function, normally called `compareFunction`, is supplied, the array elements are sorted according to the return value of the `compareFunction`: If `compareFunction(a,b)` returns a value less than 0 for two elements `a` and `b`, then `a` will come before `b`. If `compareFunction(a,b)` returns a value greater than 0 for two elements `a` and `b`, then `b` will come before `a`. If `compareFunction(a,b)` returns a value equal to 0 for two elements `a` and `b`, then `a` and `b` will remain unchanged.
+这将返回值 `['z', 's', 'l', 'h', 'b']`。
+
+JavaScript 的默认排序方法是 Unicode 值顺序排序，有时可能会得到意想不到的结果。 因此，建议提供一个回调函数来指定如何对数组项目排序。 这个回调函数通常叫做 `compareFunction`，它根据 `compareFunction` 的返回值决定数组元素的排序方式： 如果两个元素 `a` 和 `b`，`compareFunction(a,b)` 返回一个比 0 小的值，那么 `a` 会在 `b` 的前面。 如果两个元素 `a` 和 `b`，`compareFunction(a,b)` 返回一个比 0 大的值，那么 `b` 会在 `a` 的前面。 如果两个元素 `a` 和 `b`，`compareFunction(a,b)` 返回等于 0 的值，那么 `a` 和 `b` 的位置保持不变。
 
 # --instructions--
 
-Use the `sort` method in the `alphabeticalOrder` function to sort the elements of `arr` in alphabetical order.
+在 `alphabeticalOrder` 函数中使用 `sort` 方法对 `arr` 中的元素按照字母顺序排列。
 
 # --hints--
 
-Your code should use the `sort` method.
+应该使用 `sort` 方法。
 
 ```js
 assert(code.match(/\.sort/g));
 ```
 
-`alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` should return `["a", "a", "c", "d", "g", "z"]`.
+`alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` 应返回 `["a", "a", "c", "d", "g", "z"]`。
 
 ```js
 assert(
@@ -53,7 +57,7 @@ assert(
 );
 ```
 
-`alphabeticalOrder(["x", "h", "a", "m", "n", "m"])` should return `["a", "h", "m", "m", "n", "x"]`.
+`alphabeticalOrder(["x", "h", "a", "m", "n", "m"])`应返回`["a", "h", "m", "m", "n", "x"]`。
 
 ```js
 assert(
@@ -62,7 +66,7 @@ assert(
 );
 ```
 
-`alphabeticalOrder(["a", "a", "a", "a", "x", "t"])` should return `["a", "a", "a", "a", "t", "x"]`.
+`alphabeticalOrder(["a", "a", "a", "a", "x", "t"])` 应返回 `["a", "a", "a", "a", "t", "x"]`。
 
 ```js
 assert(

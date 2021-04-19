@@ -1,6 +1,6 @@
 ---
 id: a5deed1811a43193f9f1c841
-title: Drop it
+title: Déjalo caer
 challengeType: 5
 forumTopicId: 16010
 dashedName: drop-it
@@ -8,13 +8,13 @@ dashedName: drop-it
 
 # --description--
 
-Given the array `arr`, iterate through and remove each element starting from the first element (the 0 index) until the function `func` returns `true` when the iterated element is passed through it.
+Dado el arreglo `arr`, itera y elimina cada elemento comenzando desde el primer elemento (el índice 0) hasta que la función `func` devuelva `true` cuando el elemento iterado se pasa a través de él.
 
-Then return the rest of the array once the condition is satisfied, otherwise, `arr` should be returned as an empty array.
+Luego devuelve el resto del arreglo una vez que se cumpla la condición, de lo contrario, `arr` debe devolverse como un arreglo vacío.
 
 # --hints--
 
-`dropElements([1, 2, 3, 4], function(n) {return n >= 3;})` should return `[3, 4]`.
+`dropElements([1, 2, 3, 4], function(n) {return n >= 3;})` debe devolver `[3, 4]`.
 
 ```js
 assert.deepEqual(
@@ -25,7 +25,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([0, 1, 0, 1], function(n) {return n === 1;})` should return `[1, 0, 1]`.
+`dropElements([0, 1, 0, 1], function(n) {return n === 1;})` debe devolver `[1, 0, 1]`.
 
 ```js
 assert.deepEqual(
@@ -36,7 +36,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3], function(n) {return n > 0;})` should return `[1, 2, 3]`.
+`dropElements([1, 2, 3], function(n) {return n > 0;})` debe devolver `[1, 2, 3]`.
 
 ```js
 assert.deepEqual(
@@ -47,7 +47,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 4], function(n) {return n > 5;})` should return `[]`.
+`dropElements([1, 2, 3, 4], function(n) {return n > 5;})` debe devolver `[]`.
 
 ```js
 assert.deepEqual(
@@ -58,7 +58,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})` should return `[7, 4]`.
+`dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})` debe devolver `[7, 4]`.
 
 ```js
 assert.deepEqual(
@@ -69,7 +69,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})` should return `[3, 9, 2]`.
+`dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})` debe devolver `[3, 9, 2]`.
 
 ```js
 assert.deepEqual(

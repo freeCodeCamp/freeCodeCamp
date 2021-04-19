@@ -1,6 +1,6 @@
 ---
 id: 587d78b3367417b2b2512b11
-title: Add Items Using splice()
+title: Agrega elementos usando splice()
 challengeType: 1
 forumTopicId: 301152
 dashedName: add-items-using-splice
@@ -8,7 +8,7 @@ dashedName: add-items-using-splice
 
 # --description--
 
-Remember in the last challenge we mentioned that `splice()` can take up to three parameters? Well, you can use the third parameter, comprised of one or more element(s), to add to the array. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
+¿Recuerdas que en el último desafío mencionamos que `splice()` puede tomar hasta tres parámetros? Pues bien, puedes usar el tercer parámetro, compuesto por uno o varios elementos, para agregarlo al arreglo. Esto puede ser increíblemente útil para cambiar rápidamente un elemento, o un conjunto de elementos, por otro.
 
 ```js
 const numbers = [10, 11, 12, 12, 15];
@@ -16,20 +16,20 @@ const startIndex = 3;
 const amountToDelete = 1;
 
 numbers.splice(startIndex, amountToDelete, 13, 14);
-// the second entry of 12 is removed, and we add 13 and 14 at the same index
 console.log(numbers);
-// returns [ 10, 11, 12, 13, 14, 15 ]
 ```
 
-Here, we begin with an array of numbers. Then, we pass the following to `splice()`: The index at which to begin deleting elements (3), the number of elements to be deleted (1), and the remaining arguments (13, 14) will be inserted starting at that same index. Note that there can be any number of elements (separated by commas) following `amountToDelete`, each of which gets inserted.
+La segunda entrada de `12` es removida, y agregamos `13` y `14` en el mismo índice. El arreglo `numbers` ahora será `[ 10, 11, 12, 13, 14, 15 ]`.
+
+Aquí, comenzamos con un arreglo de números. A continuación, pasamos lo siguiente a `splice()`: El índice en el que empezar a borrar elementos (3), el número de elementos a borrar (1), y el resto de argumentos (13, 14) se insertarán a partir de ese mismo índice. Ten en cuenta que puede haber cualquier número de elementos (separados por comas) después de `amountToDelete`, cada uno de los cuales es insertado.
 
 # --instructions--
 
-We have defined a function, `htmlColorNames`, which takes an array of HTML colors as an argument. Modify the function using `splice()` to remove the first two elements of the array and add `'DarkSalmon'` and `'BlanchedAlmond'` in their respective places.
+Hemos definido una función, `htmlColorNames`, que toma un arreglo de colores HTML como argumento. Modifica la función usando `splice()` para eliminar los dos primeros elementos del arreglo y agrega `'DarkSalmon'` y `'BlanchedAlmond'` en sus respectivos lugares.
 
 # --hints--
 
-`htmlColorNames` should return `["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurquoise", "FireBrick"]`
+`htmlColorNames` debe devolver `["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurquoise", "FireBrick"]`
 
 ```js
 assert.deepEqual(
@@ -50,19 +50,19 @@ assert.deepEqual(
 );
 ```
 
-The `htmlColorNames` function should utilize the `splice()` method
+La función `htmlColorNames` debe utilizar el método `splice()`
 
 ```js
 assert(/.splice/.test(code));
 ```
 
-You should not use `shift()` or `unshift()`.
+No debes usar `shift()` o `unshift()`.
 
 ```js
 assert(!/shift|unshift/.test(code));
 ```
 
-You should not use array bracket notation.
+No debes usar notación de corchetes.
 
 ```js
 assert(!/\[\d\]\s*=/.test(code));

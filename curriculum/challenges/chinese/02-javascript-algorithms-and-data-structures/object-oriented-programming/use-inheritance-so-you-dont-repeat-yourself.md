@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b83
-title: Use Inheritance So You Don't Repeat Yourself
+title: 使用继承避免重复
 challengeType: 1
 forumTopicId: 301334
 dashedName: use-inheritance-so-you-dont-repeat-yourself
@@ -8,9 +8,9 @@ dashedName: use-inheritance-so-you-dont-repeat-yourself
 
 # --description--
 
-There's a principle in programming called <dfn>Don't Repeat Yourself (DRY)</dfn>. The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
+有一条原则叫做：<dfn>Don't Repeat Yourself</dfn>。常以缩写形式 DRY 出现，意思是“不要自己重复”。 编写重复代码会产生的问题是：任何改变都需要去多个地方修复所有重复的代码。 这通常意味着我们需要做更多的工作，会产生更高的出错率。
 
-Notice in the example below that the `describe` method is shared by `Bird` and `Dog`:
+请观察下面的示例，`Bird` 和 `Dog` 共享 `describe` 方法：
 
 ```js
 Bird.prototype = {
@@ -28,7 +28,7 @@ Dog.prototype = {
 };
 ```
 
-The `describe` method is repeated in two places. The code can be edited to follow the DRY principle by creating a `supertype` (or parent) called `Animal`:
+我们可以看到 `describe` 方法在两个地方重复定义了。 根据以上所说的 DRY 原则，我们可以通过创建一个 `Animal` `supertype`（或者父类）来重写这段代码：
 
 ```js
 function Animal() { };
@@ -41,7 +41,7 @@ Animal.prototype = {
 };
 ```
 
-Since `Animal` includes the `describe` method, you can remove it from `Bird` and `Dog`:
+`Animal` 构造函数中定义了 `describe` 方法，可将 `Bird` 和 `Dog` 这两个构造函数的方法删除掉：
 
 ```js
 Bird.prototype = {
@@ -55,23 +55,23 @@ Dog.prototype = {
 
 # --instructions--
 
-The `eat` method is repeated in both `Cat` and `Bear`. Edit the code in the spirit of DRY by moving the `eat` method to the `Animal` `supertype`.
+`Cat` 和 `Bear` 重复定义了 `eat` 方法。 本着 DRY 的原则，通过将 `eat` 方法移动到 `Animal``supertype` 中来重写你的代码。
 
 # --hints--
 
-`Animal.prototype` should have the `eat` property.
+`Animal.prototype` 应该有 `eat` 属性。
 
 ```js
 assert(Animal.prototype.hasOwnProperty('eat'));
 ```
 
-`Bear.prototype` should not have the `eat` property.
+`Bear.prototype` 不应该有 `eat` 属性。
 
 ```js
 assert(!Bear.prototype.hasOwnProperty('eat'));
 ```
 
-`Cat.prototype` should not have the `eat` property.
+`Cat.prototype` 不应该有 `eat` 属性。
 
 ```js
 assert(!Cat.prototype.hasOwnProperty('eat'));

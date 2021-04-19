@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e69
-title: How to Use Passport Strategies
+title: 如何使用 Passport 策略
 challengeType: 2
 forumTopicId: 301555
 dashedName: how-to-use-passport-strategies
@@ -8,21 +8,21 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is actually a login form. It has previously been hidden because of the inline JavaScript `if showLogin` with the form indented after it. Before `showLogin` as a variable was never defined, so it never rendered the code block containing the form. Go ahead and on the `res.render` for that page add a new variable to the object `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`, so this is where we should set up to accept the POST and authenticate the user.
+在提供的 `index.pug` 文件里有一个登录表单。 因为这个表单中存在行内 JavaScript 代码 `if showLogin`，因此它是隐藏的。 因为变量 `showLogin` 未定义，所以表单不会渲染。 在该页面的 `res.render` 里，给 `showLogin: true` 对象添加一个新的变量。 当你刷新页面，就会看到表单！ 表单设置为 `/login` 的 **POST**，因此我们在这里接收 POST 请求并验证用户。
 
-For this challenge you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before your `function(req,res)` with your response! The middleware to use is `passport.authenticate('local')`.
+在这个挑战中，你需要为 POST 请求添加路由 `/login`。 为了用这个路由进行验证，你需要在发送请求响应之前添加一个中间件。 中间件应作为参数添加到用于处理请求的函数 `function(req,res)` 之前。 对于 passport 的验证中间件，应这样调用：`passport.authenticate('local')`。
 
-`passport.authenticate` can also take some options as an argument such as: `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. The response after using the middleware (which will only be called if the authentication middleware passes) should be to redirect the user to `/profile` and that route should render the view `profile.pug`.
+`passport.authenticate` 也接收选项作为参数，例如 `{ failureRedirect: '/' }` 就很有用，请记得添加到你的代码中。 如果中间件验证通过，响应应该是将用户重定向到 `/profile`，并渲染 `profile.pug`。
 
-If the authentication was successful, the user object will be saved in `req.user`.
+如果验证通过，用户对象将会储存到 `req.user` 中。
 
-At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+这时，由于我们还没有实现注册功能，如果你在表单里输入了用户名和密码，路由将会重定向到主页 `/`，在服务端将会打印 `'User {USERNAME} attempted to log in.'`。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9)的答案。
 
 # --hints--
 
-All steps should be correctly implemented in the server.js.
+server.js 中应正确执行所有步骤。
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ All steps should be correctly implemented in the server.js.
   );
 ```
 
-A POST request to /login should correctly redirect to /.
+到 /login 的 POST 请求应重定向到 /。
 
 ```js
 (getUserInput) =>

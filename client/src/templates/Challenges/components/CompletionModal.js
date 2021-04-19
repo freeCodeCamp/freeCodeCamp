@@ -70,6 +70,7 @@ const mapDispatchToProps = function (dispatch) {
 
 const propTypes = {
   allowBlockDonationRequests: PropTypes.func,
+  block: PropTypes.string,
   blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
@@ -81,6 +82,7 @@ const propTypes = {
   isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
+  superBlock: PropTypes.string,
   t: PropTypes.func.isRequired,
   title: PropTypes.string
 };
@@ -184,13 +186,14 @@ export class CompletionModalInner extends Component {
 
   render() {
     const {
-      blockName = '',
+      block,
       close,
       isOpen,
       message,
       t,
       title,
-      isSignedIn
+      isSignedIn,
+      superBlock = ''
     } = this.props;
 
     const { completedPercent } = this.state;
@@ -220,8 +223,9 @@ export class CompletionModalInner extends Component {
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
           <CompletionModalBody
-            blockName={blockName}
+            block={block}
             completedPercent={completedPercent}
+            superBlock={superBlock}
           />
         </Modal.Body>
         <Modal.Footer>

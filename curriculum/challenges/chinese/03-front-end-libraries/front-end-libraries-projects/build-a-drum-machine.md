@@ -28,7 +28,7 @@ dashedName: build-a-drum-machine
 
 **需求 7：** 当触发一个具有 `.drum-pad` 属性的元素时，`#display` 元素内应该展示这个触发元素关联音频片段的描述字符串（每一个字符串都应该是独一无二的）。
 
-可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目。 或者可以在任何喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用这个 CodePen 模板</a>，点击 `Save` 即可创建你自己的项目。 或者可以在任何喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 当你完成了本项目，并且该项目所有测试运行通过，请提交项目的 URL。
 

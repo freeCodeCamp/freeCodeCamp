@@ -17,7 +17,9 @@ En el ejemplo demostrado en el editor de código, el degradado comienza con el c
 
 Para este ejemplo, ayuda a pensar en las paradas de color como pares donde cada dos colores se mezclan juntos.
 
-`0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px`
+```css
+0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
+```
 
 Si cada dos valores de parada de color son del mismo color, la mezcla no es visible porque está entre el mismo color, seguido de una dura transición hacia el siguiente color, así que terminas con rayas.
 

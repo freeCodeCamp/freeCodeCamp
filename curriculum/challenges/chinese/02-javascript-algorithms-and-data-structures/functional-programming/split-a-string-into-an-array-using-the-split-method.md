@@ -1,6 +1,6 @@
 ---
 id: 587d7daa367417b2b2512b6b
-title: Split a String into an Array Using the split Method
+title: 使用 split 方法将字符串拆分成数组
 challengeType: 1
 forumTopicId: 18305
 dashedName: split-a-string-into-an-array-using-the-split-method
@@ -8,35 +8,35 @@ dashedName: split-a-string-into-an-array-using-the-split-method
 
 # --description--
 
-The `split` method splits a string into an array of strings. It takes an argument for the delimiter, which can be a character to use to break up the string or a regular expression. For example, if the delimiter is a space, you get an array of words, and if the delimiter is an empty string, you get an array of each character in the string.
+`split` 方法将一个字符串分割成一个字符串数组。 它需要一个参数作为分隔符，它可以是用于拆分字符串或正则表达式的一个字符。 举个例子，如果分隔符是空格，你会得到一个单词数组；如果分隔符是空字符串，你会得到一个由字符串中每个字符组成的数组。
 
-Here are two examples that split one string by spaces, then another by digits using a regular expression:
+下面是两个用空格分隔一个字符串的例子，另一个是用数字的正则表达式分隔：
 
 ```js
 var str = "Hello World";
 var bySpace = str.split(" ");
-// Sets bySpace to ["Hello", "World"]
 
 var otherString = "How9are7you2today";
 var byDigits = otherString.split(/\d/);
-// Sets byDigits to ["How", "are", "you", "today"]
 ```
 
-Since strings are immutable, the `split` method makes it easier to work with them.
+`bySpace` 将有值 `["Hello", "World"]`，`byDigits` 将有值 `["How", "are", "you", "today"]`。
+
+因为字符串是不可变的，`split` 方法操作它们更方便。
 
 # --instructions--
 
-Use the `split` method inside the `splitify` function to split `str` into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation.
+在 `splitify` 函数中用 `split` 方法将 `str` 分割成单词数组。 这个方法应该返回一个数组。 单词不一定都是用空格分隔，所以数组中不应包含标点符号。
 
 # --hints--
 
-Your code should use the `split` method.
+应该使用 `split` 方法。
 
 ```js
 assert(code.match(/\.split/g));
 ```
 
-`splitify("Hello World,I-am code")` should return `["Hello", "World", "I", "am", "code"]`.
+`splitify("Hello World,I-am code")` 应返回 `["Hello", "World", "I", "am", "code"]`。
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-`splitify("Earth-is-our home")` should return `["Earth", "is", "our", "home"]`.
+`splitify("Earth-is-our home")` 应返回 `["Earth", "is", "our", "home"]`。
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-`splitify("This.is.a-sentence")` should return `["This", "is", "a", "sentence"]`.
+`splitify("This.is.a-sentence")` 应返回 `["This", "is", "a", "sentence"]`。
 
 ```js
 assert(

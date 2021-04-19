@@ -1,6 +1,6 @@
 ---
 id: a5de63ebea8dbee56860f4f2
-title: Diff Two Arrays
+title: Diferencia entre dos arreglos
 challengeType: 5
 forumTopicId: 16008
 dashedName: diff-two-arrays
@@ -8,20 +8,19 @@ dashedName: diff-two-arrays
 
 # --description--
 
-Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+Compara dos arreglos y devuelve un nuevo arreglo con los elementos que sólo se encuentran en uno de los dos arreglos dados, pero no en ambos. En otras palabras, devuelve la diferencia simétrica de los dos arreglos.
 
-**Note**  
-You can return the array with its elements in any order.
+**Nota:**Puedes devolver el arreglo con sus elementos en cualquier orden.
 
 # --hints--
 
-`diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])` should return an array.
+`diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])` debe devolver un arreglo.
 
 ```js
 assert(typeof diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) === 'object');
 ```
 
-`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return `["pink wool"]`.
+`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` debe devolver `["pink wool"]`.
 
 ```js
 assert.sameMembers(
@@ -33,7 +32,7 @@ assert.sameMembers(
 );
 ```
 
-`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return an array with one item.
+`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` debe devolver un arreglo con un elemento.
 
 ```js
 assert(
@@ -44,7 +43,7 @@ assert(
 );
 ```
 
-`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return `["diorite", "pink wool"]`.
+`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` debe devolver `["diorite", "pink wool"]`.
 
 ```js
 assert.sameMembers(
@@ -56,7 +55,7 @@ assert.sameMembers(
 );
 ```
 
-`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return an array with two items.
+`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` debe devolver un arreglo con dos elementos.
 
 ```js
 assert(
@@ -67,7 +66,7 @@ assert(
 );
 ```
 
-`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` should return `[]`.
+`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` debe devolver `[]`.
 
 ```js
 assert.sameMembers(
@@ -79,7 +78,7 @@ assert.sameMembers(
 );
 ```
 
-`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` should return an empty array.
+`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` debe devolver un arreglo vacío.
 
 ```js
 assert(
@@ -90,19 +89,19 @@ assert(
 );
 ```
 
-`[1, 2, 3, 5], [1, 2, 3, 4, 5]` should return `[4]`.
+`[1, 2, 3, 5], [1, 2, 3, 4, 5]` debe devolver `[4]`.
 
 ```js
 assert.sameMembers(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4]);
 ```
 
-`[1, 2, 3, 5], [1, 2, 3, 4, 5]` should return an array with one item.
+`[1, 2, 3, 5], [1, 2, 3, 4, 5]` debe devolver un arreglo con un elemento.
 
 ```js
 assert(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]).length === 1);
 ```
 
-`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` should return `["piglet", 4]`.
+`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` debe devolver `["piglet", 4]`.
 
 ```js
 assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), [
@@ -111,13 +110,13 @@ assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), [
 ]);
 ```
 
-`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` should return an array with two items.
+`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` debe devolver un arreglo con dos elementos.
 
 ```js
 assert(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]).length === 2);
 ```
 
-`[], ["snuffleupagus", "cookie monster", "elmo"]` should return `["snuffleupagus", "cookie monster", "elmo"]`.
+`[], ["snuffleupagus", "cookie monster", "elmo"]` debe devolver `["snuffleupagus", "cookie monster", "elmo"]`.
 
 ```js
 assert.sameMembers(diffArray([], ['snuffleupagus', 'cookie monster', 'elmo']), [
@@ -127,13 +126,13 @@ assert.sameMembers(diffArray([], ['snuffleupagus', 'cookie monster', 'elmo']), [
 ]);
 ```
 
-`[], ["snuffleupagus", "cookie monster", "elmo"]` should return an array with three items.
+`[], ["snuffleupagus", "cookie monster", "elmo"]` debe devolver un arreglo con tres elementos.
 
 ```js
 assert(diffArray([], ['snuffleupagus', 'cookie monster', 'elmo']).length === 3);
 ```
 
-`[1, "calf", 3, "piglet"], [7, "filly"]` should return `[1, "calf", 3, "piglet", 7, "filly"]`.
+`[1, "calf", 3, "piglet"], [7, "filly"]` debe devolver `[1, "calf", 3, "piglet", 7, "filly"]`.
 
 ```js
 assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']), [
@@ -146,7 +145,7 @@ assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']), [
 ]);
 ```
 
-`[1, "calf", 3, "piglet"], [7, "filly"]` should return an array with six items.
+`[1, "calf", 3, "piglet"], [7, "filly"]` debe devolver un arreglo con seis elementos.
 
 ```js
 assert(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']).length === 6);

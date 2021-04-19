@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ba
-title: Understand String Immutability
+title: Comprende la inmutabilidad de las cadenas
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
@@ -9,16 +9,16 @@ dashedName: understand-string-immutability
 
 # --description--
 
-In JavaScript, `String` values are <dfn>immutable</dfn>, which means that they cannot be altered once created.
+En JavaScript, los valores de cadena (`String`) son <dfn>inmutables</dfn>, lo que significa que no pueden ser alterados una vez creados.
 
-For example, the following code:
+Por ejemplo, el siguiente código:
 
 ```js
 var myStr = "Bob";
 myStr[0] = "J";
 ```
 
-cannot change the value of `myStr` to "Job", because the contents of `myStr` cannot be altered. Note that this does *not* mean that `myStr` cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change `myStr` would be to assign it with a new string, like this:
+no puede cambiar el valor de `myStr` a `Job`, porque el contenido de `myStr` no puede ser alterado. Ten en cuenta que esto *no* significa que `myStr` no puede cambiarse, solo que los caracteres individuales de una <dfn>cadena literal</dfn> no pueden ser cambiados. La única forma de cambiar `myStr` sería asignarla con una nueva cadena, como esta:
 
 ```js
 var myStr = "Bob";
@@ -27,17 +27,17 @@ myStr = "Job";
 
 # --instructions--
 
-Correct the assignment to `myStr` so it contains the string value of `Hello World` using the approach shown in the example above.
+Corrige la asignación de `myStr` para que contenga el valor de cadena `Hello World` usando el método mostrado en el ejemplo anterior.
 
 # --hints--
 
-`myStr` should have a value of `Hello World`.
+`myStr` debe tener una cadena con valor `Hello World`.
 
 ```js
 assert(myStr === 'Hello World');
 ```
 
-You should not change the code above the specified comment.
+No debes cambiar el código por encima del comentario especificado.
 
 ```js
 assert(/myStr = "Jello World"/.test(code));

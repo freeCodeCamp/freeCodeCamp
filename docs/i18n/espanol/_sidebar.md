@@ -1,6 +1,6 @@
 - **Comenzando**
-  - [Introducción](index.md "Contribuye a la Comunidad freeCodeCamp.org")
-  - [Preguntas Más Frecuentes](FAQ.md)
+  - [Introducción](index.md "Contribuye a la comunidad freeCodeCamp.org")
+  - [Preguntas más frecuentes](FAQ.md)
 - **Contribución de Código**
   - [Configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
   - [Abrir una pull request](how-to-open-a-pull-request.md)
@@ -9,12 +9,12 @@
   - [ Trabajar en el tema de noticias](how-to-work-on-the-news-theme.md)
   - [Trabajar en el tema de docs](how-to-work-on-the-docs-theme.md)
 - **Contribución a Traducción**
-  - [Traducir un archivo de currículo](how-to-translate-files.md)
-  - [Revisar un archivo de currículo](how-to-proofread-files.md)
-  - [Cómo traducir la web](how-to-translate-the-website.md)
+  - [Work on translating resources](how-to-translate-files.md)
+  - [Work on proofreading translations](how-to-proofread-files.md)
 - **Guías Opcionales**
-  - [Set up freeCodeCamp on Windows(WSL)](how-to-setup-wsl.md)
-  - [Add Cypress tests](how-to-add-cypress-tests.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [Agregar pruebas de Cypress](how-to-add-cypress-tests.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
 
 ---

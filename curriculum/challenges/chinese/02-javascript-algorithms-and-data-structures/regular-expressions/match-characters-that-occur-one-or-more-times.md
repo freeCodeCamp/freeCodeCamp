@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b99
-title: Match Characters that Occur One or More Times
+title: 匹配出现一次或多次的字符
 challengeType: 1
 forumTopicId: 301350
 dashedName: match-characters-that-occur-one-or-more-times
@@ -8,33 +8,33 @@ dashedName: match-characters-that-occur-one-or-more-times
 
 # --description--
 
-Sometimes, you need to match a character (or group of characters) that appears one or more times in a row. This means it occurs at least once, and may be repeated.
+有时，需要匹配出现一次或者连续多次的的字符（或字符组）。 这意味着它至少出现一次，并且可能重复出现。
 
-You can use the `+` character to check if that is the case. Remember, the character or pattern has to be present consecutively. That is, the character has to repeat one after the other.
+可以使用 `+` 符号来检查情况是否如此。 记住，字符或匹配模式必须一个接一个地连续出现。 这就是说，字符必须一个接一个地重复。
 
-For example, `/a+/g` would find one match in `"abc"` and return `["a"]`. Because of the `+`, it would also find a single match in `"aabc"` and return `["aa"]`.
+例如，`/a+/g` 会在 `abc` 中匹配到一个匹配项，并且返回 `["a"]`。 因为 `+` 的存在，它也会在 `aabc` 中匹配到一个匹配项，然后返回 `["aa"]`。
 
-If it were instead checking the string `"abab"`, it would find two matches and return `["a", "a"]` because the `a` characters are not in a row - there is a `b` between them. Finally, since there is no `"a"` in the string `"bcd"`, it wouldn't find a match.
+如果它是检查字符串 `abab`，它将匹配到两个匹配项并且返回`["a", "a"]`，因为`a`字符不连续，在它们之间有一个`b`字符。 最后，因为在字符串 `bcd` 中没有 `a`，因此找不到匹配项。
 
 # --instructions--
 
-You want to find matches when the letter `s` occurs one or more times in `"Mississippi"`. Write a regex that uses the `+` sign.
+想要在字符串 `Mississippi` 中匹配到出现一次或多次的字母 `s` 的匹配项。 编写一个使用 `+` 符号的正则表达式。
 
 # --hints--
 
-Your regex `myRegex` should use the `+` sign to match one or more `s` characters.
+你的正则表达式 `myRegex` 应该使用 `+` 符号来匹配一个或多个 `s` 字符。
 
 ```js
 assert(/\+/.test(myRegex.source));
 ```
 
-Your regex `myRegex` should match 2 items.
+你的正则表达式 `myRegex` 应该匹配两项。
 
 ```js
 assert(result.length == 2);
 ```
 
-The `result` variable should be an array with two matches of `"ss"`
+`result` 变量应该是一个数组，两个匹配的 `ss`
 
 ```js
 assert(result[0] == 'ss' && result[1] == 'ss');

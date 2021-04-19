@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512bac
-title: Remove Whitespace from Start and End
+title: 删除开头和结尾的空白
 challengeType: 1
 forumTopicId: 301362
 dashedName: remove-whitespace-from-start-and-end
@@ -8,29 +8,29 @@ dashedName: remove-whitespace-from-start-and-end
 
 # --description--
 
-Sometimes whitespace characters around strings are not wanted but are there. Typical processing of strings is to remove the whitespace at the start and end of it.
+有时字符串周围存在的空白字符并不是必需的。 字符串的典型处理是删除字符串开头和结尾处的空格。
 
 # --instructions--
 
-Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.
+编写一个正则表达式并使用适当的字符串方法删除字符串开头和结尾的空格。
 
-**Note:** The `String.prototype.trim()` method would work here, but you'll need to complete this challenge using regular expressions.
+**注意：** `String.prototype.trim()` 方法在这里也可以实现同样的效果，但是你需要使用正则表达式来完成此项挑战。
 
 # --hints--
 
-`result` should equal to `"Hello, World!"`
+`result` 应该等于 `Hello, World!`
 
 ```js
 assert(result == 'Hello, World!');
 ```
 
-Your solution should not use the `String.prototype.trim()` method.
+你不应该使用 `String.prototype.trim()` 方法。
 
 ```js
 assert(!code.match(/\.?[\s\S]*?trim/));
 ```
 
-The `result` variable should not be set equal to a string.
+`result` 变量不应该设置为等于字符串。
 
 ```js
 assert(!code.match(/result\s*=\s*".*?"/));

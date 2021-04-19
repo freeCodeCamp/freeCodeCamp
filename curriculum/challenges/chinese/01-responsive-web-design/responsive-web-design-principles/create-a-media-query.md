@@ -15,11 +15,15 @@ dashedName: create-a-media-query
 
 下面是一个媒体查询的例子，当设备宽度小于或等于 100px 时返回内容：
 
-`@media (max-width: 100px) { /* CSS Rules */ }`
+```css
+@media (max-width: 100px) { /* CSS Rules */ }
+```
 
 以下定义的媒体查询，是当设备高度大于或等于 350px 时返回内容：
 
-`@media (min-height: 350px) { /* CSS Rules */ }`
+```css
+@media (min-height: 350px) { /* CSS Rules */ }
+```
 
 注意，只有当媒体类型与所使用的设备的类型匹配时，媒体查询中定义的 CSS 才生效。
 

@@ -1,7 +1,9 @@
-import { apiLocation } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import axios from 'axios';
 import Tokens from 'csrf';
 import cookies from 'browser-cookies';
+
+const { apiLocation } = envData;
 
 const base = apiLocation;
 const tokens = new Tokens();
@@ -64,6 +66,10 @@ export function postChargeStripe(body) {
 
 export function addDonation(body) {
   return post('/donate/add-donation', body);
+}
+
+export function postCreateStripeSession(body) {
+  return post('/donate/create-stripe-session', body);
 }
 
 export function putUpdateLegacyCert(body) {

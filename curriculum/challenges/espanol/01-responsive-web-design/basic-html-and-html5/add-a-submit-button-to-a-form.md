@@ -13,7 +13,9 @@ Agreguemos un botón `submit` a tu formulario. Al hacer clic en este botón se e
 
 Aquí hay un ejemplo de botón de envío:
 
-`<button type="submit">this button submits the form</button>`
+```html
+<button type="submit">this button submits the form</button>
+```
 
 # --instructions--
 

@@ -13,7 +13,9 @@ dashedName: use-clockwise-notation-to-specify-the-margin-of-an-element
 
 同样，每个方向的外边距值可以在一行里面汇总声明，而无需分别通过 `margin-top`、`margin-right`、`margin-bottom`、`margin-left` 分别声明，比如：
 
-`margin: 10px 20px 10px 20px;`
+```css
+margin: 10px 20px 10px 20px;
+```
 
 这四个值按顺时针排序：上、右、下、左，并且设置的效果等同于分别声明每一个方向的外边距值。
 

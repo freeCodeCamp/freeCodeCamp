@@ -9,7 +9,7 @@ dashedName: comparison-with-the-strict-inequality-operator
 
 # --description--
 
-El operador de estricta desigualdad `!==` es el opuesto lógico del operador de estricta igualdad. Esto significa "Estrictamente Desigual", y devuelve `false` cuando la comparación de estricta igualdad devolvería `true` y *vice versa*. Una estricta desigualdad no convertirá los tipos de datos.
+El operador de estricta desigualdad `!==` es el opuesto lógico del operador de estricta igualdad. Esto significa "Estrictamente Desigual", y devuelve `false` cuando la comparación de estricta igualdad devolvería `true` y *vice versa*. El operador de estricta desigualdad no convertirá los tipos de datos.
 
 **Ejemplos**
 

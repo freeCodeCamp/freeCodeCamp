@@ -1,4 +1,4 @@
-/* global describe expect it */
+/* global describe expect it jest */
 
 const jwt = require('jsonwebtoken');
 
@@ -36,8 +36,9 @@ describe('redirection', () => {
     });
 
     it('should return a default url if the secrets do not match', () => {
-      expect.assertions(1);
-
+      const oldLog = console.log;
+      expect.assertions(2);
+      console.log = jest.fn();
       const encryptedReturnTo = jwt.sign(
         { returnTo: validReturnTo },
         invalidJWTSecret
@@ -45,6 +46,8 @@ describe('redirection', () => {
       expect(
         getReturnTo(encryptedReturnTo, validJWTSecret, defaultOrigin)
       ).toStrictEqual(defaultObject);
+      expect(console.log).toHaveBeenCalled();
+      console.log = oldLog;
     });
 
     it('should return a default url for unknown origins', () => {

@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b4a
-title: Use Destructuring Assignment to Assign Variables from Nested Objects
+title: 使用解构赋值从嵌套对象中分配变量
 challengeType: 1
 forumTopicId: 301214
 dashedName: use-destructuring-assignment-to-assign-variables-from-nested-objects
@@ -8,9 +8,9 @@ dashedName: use-destructuring-assignment-to-assign-variables-from-nested-objects
 
 # --description--
 
-You can use the same principles from the previous two lessons to destructure values from nested objects.
+你可以使用前两节课程中相同的原则来解构嵌套对象中的值。
 
-Using an object similar to previous examples:
+使用与前面的例子中类似的对象：
 
 ```js
 const user = {
@@ -21,13 +21,13 @@ const user = {
 };
 ```
 
-Here's how to extract the values of object properties and assign them to variables with the same name:
+这是解构对象的属性值赋值给具有相同名字的变量：
 
 ```js
 const { johnDoe: { age, email }} = user;
 ```
 
-And here's how you can assign an object properties' values to variables with different names:
+这是将对象的属性值赋值给具有不同名字的变量：
 
 ```js
 const { johnDoe: { age: userAge, email: userEmail }} = user;
@@ -35,11 +35,11 @@ const { johnDoe: { age: userAge, email: userEmail }} = user;
 
 # --instructions--
 
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `lowToday` and `highToday` the values of `today.low` and `today.high` from the `LOCAL_FORECAST` object.
+将两个赋值语句替换成等价的解构赋值。 `lowToday` 和 `highToday` 应该为 `LOCAL_FORECAST` 中 `today.low` 和 `today.high` 的值。
 
 # --hints--
 
-You should remove the ES5 assignment syntax.
+不能使用 ES5 的赋值语句。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `lowToday` variable.
+应该使用解构创建 `lowToday` 变量。
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `highToday` variable.
+应该使用解构创建 `highToday` 变量。
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-`lowToday` should be equal to `64` and `highToday` should be equal to `77`.
+`lowToday` 应等于 `64`，`highToday` 应等于 `77`。
 
 ```js
 assert(lowToday === 64 && highToday === 77);

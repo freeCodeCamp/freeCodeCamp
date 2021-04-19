@@ -1,6 +1,6 @@
 ---
 id: 589fc831f9fc0f352b528e77
-title: Authentication with Socket.IO
+title: 使用 Socket.IO 进行身份验证
 challengeType: 2
 forumTopicId: 301548
 dashedName: authentication-with-socket-io
@@ -8,9 +8,9 @@ dashedName: authentication-with-socket-io
 
 # --description--
 
-Currently, you cannot determine who is connected to your web socket. While `req.user` contains the user object, that's only when your user interacts with the web server, and with web sockets you have no `req` (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
+目前，你还无法确定连接到服务器的用户身份。 虽然 `req.user` 包含用户信息，但这个只在用户直接与服务器交互时产生。当用户通过 web socket 与服务器连接时，由于不存在 `req` 对象，我们就无法获取用户数据。 解决这个问题的方法之一是通过读取和解析请求中包含 passport session 的 cookie，然后反序列化，进而获取用户信息对象。 幸运的是，NPM 上有可以让这个复杂的流程简单化的库。
 
-Add `passport.socketio`, `connect-mongo`, and `cookie-parser` as dependencies and require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
+添加 `passport.socketio`、`connect-mongo@~3.2.0`、`cookie-parser` 作为依赖，把它们分别赋值给 `passportSocketIo`、`MongoStore`、`cookieParser`。 同时，我们需要从之前引入的 `express-session` 中开辟新的内存空间， 就像这样：
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -18,7 +18,7 @@ const URI = process.env.MONGO_URI;
 const store = new MongoStore({ url: URI });
 ```
 
-Now we just have to tell Socket.IO to use it and set the options. Be sure this is added before the existing socket code and not in the existing connection listener. For your server, it should look like this:
+现在我们只需要让 Socket.IO 调用它并进行相应的配置即可。 请注意，以上这些都必须放在现有的 socket 相关代码之前，而且不能放到连接的监听回调函数里。 你的服务器代码应类似于这样：
 
 ```js
 io.use(
@@ -33,11 +33,11 @@ io.use(
 );
 ```
 
-Be sure to add the `key` and `store` to the `session` middleware mounted on the app. This is necessary to tell *SocketIO* which session to relate to.
+记得要把 `key` 和 `store` 加到 app 的 `session` 中间件。 这样，*SocketIO* 才知道该对哪个 session 执行此配置。
 
 <hr />
 
-Now, define the `success`, and `fail` callback functions:
+接下来，我们可以定义 `success` 与 `fail` 的回调函数：
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -53,19 +53,19 @@ function onAuthorizeFail(data, message, error, accept) {
 }
 ```
 
-The user object is now accessible on your socket object as `socket.request.user`. For example, now you can add the following:
+现在，我们可以通过 `socket.request.user` 访问用户数据。 为此，你可以这样做：
 
 ```js
 console.log('user ' + socket.request.user.name + ' connected');
 ```
 
-It will log to the server console who has connected!
+这样，我们可以在 console 里看到谁连接到了我们的服务器。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point [here](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254)的答案。
 
 # --hints--
 
-`passport.socketio` should be a dependency.
+应添加 `passport.socketio` 作为依赖。
 
 ```js
 (getUserInput) =>
@@ -84,7 +84,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-`cookie-parser` should be a dependency.
+应添加 `cookie-parser` 作为依赖。
 
 ```js
 (getUserInput) =>
@@ -103,7 +103,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-passportSocketIo should be properly required.
+应正确引入 passportSocketIo。
 
 ```js
 (getUserInput) =>
@@ -121,7 +121,7 @@ passportSocketIo should be properly required.
   );
 ```
 
-passportSocketIo should be properly setup.
+应正确配置 passportSocketIo。
 
 ```js
 (getUserInput) =>

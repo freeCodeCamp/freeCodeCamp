@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c6
-title: Stand in Line
+title: 排队
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8Q8tP'
 forumTopicId: 18307
@@ -9,41 +9,41 @@ dashedName: stand-in-line
 
 # --description--
 
-In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.
+在计算机科学中队列（<dfn>queue</dfn>）是一个抽象的数据结构（<dfn>Data Structure</dfn>），队列中的条目都是有秩序的。 新的条目会被加到队列的末尾，旧的条目会从队列的头部被移出。
 
-Write a function `nextInLine` which takes an array (`arr`) and a number (`item`) as arguments.
+写一个函数 `nextInLine`，用一个数组（`arr`）和一个数字（`item`）作为参数。
 
-Add the number to the end of the array, then remove the first element of the array.
+把数字添加到数组的结尾，然后移出数组的第一个元素。
 
-The `nextInLine` function should then return the element that was removed.
+最后 `nextInLine` 函数应该返回被删除的元素。
 
 # --hints--
 
-`nextInLine([], 5)` should return a number.
+`nextInLine([], 5)` 应该返回一个数字。
 
 ```js
 assert.isNumber(nextInLine([], 5));
 ```
 
-`nextInLine([], 1)` should return `1`
+`nextInLine([], 1)` 应该返回 `1`
 
 ```js
 assert(nextInLine([], 1) === 1);
 ```
 
-`nextInLine([2], 1)` should return `2`
+`nextInLine([2], 1)` 应该返回 `2`
 
 ```js
 assert(nextInLine([2], 1) === 2);
 ```
 
-`nextInLine([5,6,7,8,9], 1)` should return `5`
+`nextInLine([5,6,7,8,9], 1)` 应该返回 `5`
 
 ```js
 assert(nextInLine([5, 6, 7, 8, 9], 1) === 5);
 ```
 
-After `nextInLine(testArr, 10)`, `testArr[4]` should be `10`
+在 `nextInLine(testArr, 10)` 执行后 `testArr[4]` 应该是 `10`
 
 ```js
 nextInLine(testArr, 10);

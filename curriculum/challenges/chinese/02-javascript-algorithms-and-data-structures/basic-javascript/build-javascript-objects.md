@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d0
-title: Build JavaScript Objects
+title: 创建 JavaScript 对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWGkbtd'
 forumTopicId: 16769
@@ -9,13 +9,13 @@ dashedName: build-javascript-objects
 
 # --description--
 
-You may have heard the term `object` before.
+你之前可能听过 `object` 这个词。
 
-Objects are similar to `arrays`, except that instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`.
+对象和 `arrays` 类似，区别在于数组使用索引来访问和修改数据，而对象中的数据是通过 `properties` 访问的。
 
-Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.
+对象非常适合用来存储结构化数据，可以表示真实世界中的物体，比如一只猫。
 
-Here's a sample cat object:
+这里是一个猫对象的样本：
 
 ```js
 var cat = {
@@ -26,7 +26,7 @@ var cat = {
 };
 ```
 
-In this example, all the properties are stored as strings, such as - `"name"`, `"legs"`, and `"tails"`. However, you can also use numbers as properties. You can even omit the quotes for single-word string properties, as follows:
+在这个示例中，所有的属性都被纯属为字符串，比如 `name`、`legs` 和 `tails`。 然而，你也可以使用数字作为属性。 你甚至可以省略单字字符串属性中的引号，如下所示：
 
 ```js
 var anotherObject = {
@@ -36,17 +36,17 @@ var anotherObject = {
 };
 ```
 
-However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.
+然而，如果你的对象有非字符串属性的话，JavaScript 会自动将它们转为字符串。
 
 # --instructions--
 
-Make an object that represents a dog called `myDog` which contains the properties `"name"` (a string), `"legs"`, `"tails"` and `"friends"`.
+确保对象表示一只名为 `myDog` 的狗，包含属性 `name`（字符串）、`legs`、`tails` 和 `friends`。
 
-You can set these object properties to whatever values you want, as long as `"name"` is a string, `"legs"` and `"tails"` are numbers, and `"friends"` is an array.
+你可以随意设置这些对象的属性值，只要 `name` 是字符串，`legs` 和 `tails` 是数字，`friends` 是数组即可。
 
 # --hints--
 
-`myDog` should contain the property `name` and it should be a `string`.
+`myDog` 应该包含 `name` 属性，并且它应该是一个 `string`。
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-`myDog` should contain the property `legs` and it should be a `number`.
+`myDog`应该包含 `legs` 属性，并且它应该是一个 `number`。
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-`myDog` should contain the property `tails` and it should be a `number`.
+`myDog` 应该包含 `tails` 属性，并且它应该是一个 `number`。
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-`myDog` should contain the property `friends` and it should be an `array`.
+`myDog` 应该包含 `friends` 属性，并且它应该是一个 `array`。
 
 ```js
 assert(
@@ -118,7 +118,7 @@ assert(
 );
 ```
 
-`myDog` should only contain all the given properties.
+`myDog` 只应该包含所有给定的属性。
 
 ```js
 assert(

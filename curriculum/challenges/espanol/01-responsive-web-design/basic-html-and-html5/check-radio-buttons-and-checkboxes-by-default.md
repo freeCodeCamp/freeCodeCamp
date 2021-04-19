@@ -13,7 +13,9 @@ Puedes hacer que una casilla de verificación o botón de radio se marque por de
 
 Para hacer esto, simplemente agrega la palabra `checked` al interior de un elemento de entrada. Por ejemplo:
 
-`<input type="radio" name="test-name" checked>`
+```html
+<input type="radio" name="test-name" checked>
+```
 
 # --instructions--
 

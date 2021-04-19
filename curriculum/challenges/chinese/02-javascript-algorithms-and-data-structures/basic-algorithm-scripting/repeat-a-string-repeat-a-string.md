@@ -1,6 +1,6 @@
 ---
 id: afcc8d540bea9ea2669306b6
-title: Repeat a String Repeat a String
+title: 重复输出字符串
 challengeType: 5
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string
@@ -8,53 +8,53 @@ dashedName: repeat-a-string-repeat-a-string
 
 # --description--
 
-Repeat a given string `str` (first argument) for `num` times (second argument). Return an empty string if `num` is not a positive number. For the purpose of this challenge, do *not* use the built-in `.repeat()` method.
+将一个给定的字符串 `str`（第一个参数）重复输出 `num`（第二个参数）次。 如果 `num` 不是正数，返回空字符串。 在这个挑战中，请*不要*使用 JavaScript 内置的 `.repeat()` 方法。
 
 # --hints--
 
-`repeatStringNumTimes("*", 3)` should return `"***"`.
+`repeatStringNumTimes("*", 3)` 应返回 `***`。
 
 ```js
 assert(repeatStringNumTimes('*', 3) === '***');
 ```
 
-`repeatStringNumTimes("abc", 3)` should return `"abcabcabc"`.
+`repeatStringNumTimes("abc", 3)` 应返回 `abcabcabc`。
 
 ```js
 assert(repeatStringNumTimes('abc', 3) === 'abcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 4)` should return `"abcabcabcabc"`.
+`repeatStringNumTimes("abc", 4)` 应返回 `abcabcabcabc`。
 
 ```js
 assert(repeatStringNumTimes('abc', 4) === 'abcabcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 1)` should return `"abc"`.
+`repeatStringNumTimes("abc", 1)` 应返回 `abc`。
 
 ```js
 assert(repeatStringNumTimes('abc', 1) === 'abc');
 ```
 
-`repeatStringNumTimes("*", 8)` should return `"********"`.
+`repeatStringNumTimes("*", 8)` 应返回 `********`。
 
 ```js
 assert(repeatStringNumTimes('*', 8) === '********');
 ```
 
-`repeatStringNumTimes("abc", -2)` should return `""`.
+`repeatStringNumTimes("abc", -2)` 应返回 `""`。
 
 ```js
 assert(repeatStringNumTimes('abc', -2) === '');
 ```
 
-The built-in `repeat()` method should not be used.
+不应使用内置的 `repeat()` 方法。
 
 ```js
 assert(!/\.repeat/g.test(code));
 ```
 
-`repeatStringNumTimes("abc", 0)` should return `""`.
+`repeatStringNumTimes("abc", 0)` 应返回 `""`。
 
 ```js
 assert(repeatStringNumTimes('abc', 0) === '');

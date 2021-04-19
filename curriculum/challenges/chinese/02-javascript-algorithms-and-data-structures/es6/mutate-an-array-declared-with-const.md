@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b42
-title: Mutate an Array Declared with const
+title: 改变一个用 const 声明的数组
 challengeType: 1
 forumTopicId: 301206
 dashedName: mutate-an-array-declared-with-const
@@ -8,40 +8,42 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-The `const` declaration has many use cases in modern JavaScript.
+在现代的 JavaScript 里，`const` 声明有很多用法。
 
-Some developers prefer to assign all their variables using `const` by default, unless they know they will need to reassign the value. Only in that case, they use `let`.
+一些开发者倾向于默认使用 `const` 来声明所有变量，除非他们打算后续重新给变量赋值， 那么他们在声明的时候就会用 `let`。
 
-However, it is important to understand that objects (including arrays and functions) assigned to a variable using `const` are still mutable. Using the `const` declaration only prevents reassignment of the variable identifier.
+然而，你要注意，对象（包括数组和函数）在使用 `const` 声明的时候依然是可变的。 使用 `const` 来声明只会保证变量不会被重新赋值。
 
 ```js
 const s = [5, 6, 7];
-s = [1, 2, 3]; // throws error, trying to assign a const
-s[2] = 45; // works just as it would with an array declared with var or let
-console.log(s); // returns [5, 6, 45]
+s = [1, 2, 3];
+s[2] = 45;
+console.log(s);
 ```
 
-As you can see, you can mutate the object `[5, 6, 7]` itself and the variable `s` will still point to the altered array `[5, 6, 45]`. Like all arrays, the array elements in `s` are mutable, but because `const` was used, you cannot use the variable identifier `s` to point to a different array using the assignment operator.
+`s = [1, 2, 3]` 会导致一个错误。 `console.log` 会显示值 `[5, 6, 45]`。
+
+可以发现，你可以改变对象 `[5, 6, 7]` 本身，而变量 `s` 会指向改变后的数组 `[5, 6, 45]`。 和所有数组一样，数组 `s` 中的元素是可以被改变的，但是因为使用了 `const` 关键字，你不能使用赋值操作符将变量标识 `s` 指向另外一个数组。
 
 # --instructions--
 
-An array is declared as `const s = [5, 7, 2]`. Change the array to `[2, 5, 7]` using various element assignments.
+这里有一个使用 `const s = [5, 7, 2]` 声明的数组。 使用对各元素赋值的方法将数组改成 `[2, 5, 7]`。
 
 # --hints--
 
-You should not replace `const` keyword.
+不要替换 `const` 关键字。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const/g));
 ```
 
-`s` should be a constant variable (by using `const`).
+`s` 应该为常量（使用 `const`）。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
 ```
 
-You should not change the original array declaration.
+不要改变原数组的声明。
 
 ```js
 (getUserInput) =>
@@ -52,7 +54,7 @@ You should not change the original array declaration.
   );
 ```
 
-`s` should be equal to `[2, 5, 7]`.
+`s` 应该等于 `[2, 5, 7]`。
 
 ```js
 assert.deepEqual(s, [2, 5, 7]);

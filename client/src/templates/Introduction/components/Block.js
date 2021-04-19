@@ -13,8 +13,10 @@ import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { isAuditedCert } from '../../../../../utils/is-audited';
-import { curriculumLocale } from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
 import { Link } from '../../../components/helpers/';
+
+const { curriculumLocale } = envData;
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -146,7 +148,7 @@ export class Block extends Component {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                  to={t('links:help-translate-link-url')}
                 >
                   {t('misc.translation-pending')}
                 </Link>
@@ -174,7 +176,7 @@ export class Block extends Component {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                  to={t('links:help-translate-link-url')}
                 >
                   {t('misc.translation-pending')}
                 </Link>

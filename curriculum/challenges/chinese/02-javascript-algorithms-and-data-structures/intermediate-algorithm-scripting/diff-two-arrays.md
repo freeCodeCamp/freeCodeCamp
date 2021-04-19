@@ -1,6 +1,6 @@
 ---
 id: a5de63ebea8dbee56860f4f2
-title: Diff Two Arrays
+title: 数组的对称差
 challengeType: 5
 forumTopicId: 16008
 dashedName: diff-two-arrays
@@ -8,20 +8,19 @@ dashedName: diff-two-arrays
 
 # --description--
 
-Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+比较两个数组并返回一个新数组，包含所有只在其中一个数组中出现的元素，排除两个数组都存在的元素。 换言之，我们需要返回两个数组的对称差。
 
-**Note**  
-You can return the array with its elements in any order.
+**注意：**返回数组中的元素顺序不会影响挑战的测试结果。
 
 # --hints--
 
-`diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])` should return an array.
+`diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])` 应返回一个数组。
 
 ```js
 assert(typeof diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) === 'object');
 ```
 
-`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return `["pink wool"]`.
+`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` 应返回 `["pink wool"]`。
 
 ```js
 assert.sameMembers(
@@ -33,7 +32,7 @@ assert.sameMembers(
 );
 ```
 
-`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return an array with one item.
+`["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` 应返回一个长度为 1 的数组。
 
 ```js
 assert(
@@ -44,7 +43,7 @@ assert(
 );
 ```
 
-`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return `["diorite", "pink wool"]`.
+`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` 应返回 `["diorite", "pink wool"]`。
 
 ```js
 assert.sameMembers(
@@ -56,7 +55,7 @@ assert.sameMembers(
 );
 ```
 
-`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` should return an array with two items.
+`["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]` 应返回一个长度为 2 的数组。
 
 ```js
 assert(
@@ -67,7 +66,7 @@ assert(
 );
 ```
 
-`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` should return `[]`.
+`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` 应返回 `[]`。
 
 ```js
 assert.sameMembers(
@@ -79,7 +78,7 @@ assert.sameMembers(
 );
 ```
 
-`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` should return an empty array.
+`["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]` 应返回一个空数组。
 
 ```js
 assert(
@@ -90,19 +89,19 @@ assert(
 );
 ```
 
-`[1, 2, 3, 5], [1, 2, 3, 4, 5]` should return `[4]`.
+`[1, 2, 3, 5], [1, 2, 3, 4, 5]` 应返回 `[4]`。
 
 ```js
 assert.sameMembers(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4]);
 ```
 
-`[1, 2, 3, 5], [1, 2, 3, 4, 5]` should return an array with one item.
+`[1, 2, 3, 5], [1, 2, 3, 4, 5]` 应返回一个长度为 1 的数组。
 
 ```js
 assert(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]).length === 1);
 ```
 
-`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` should return `["piglet", 4]`.
+`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` 应返回 `["piglet", 4]`。
 
 ```js
 assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), [
@@ -111,13 +110,13 @@ assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), [
 ]);
 ```
 
-`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` should return an array with two items.
+`[1, "calf", 3, "piglet"], [1, "calf", 3, 4]` 应返回一个长度为 2 的数组。
 
 ```js
 assert(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]).length === 2);
 ```
 
-`[], ["snuffleupagus", "cookie monster", "elmo"]` should return `["snuffleupagus", "cookie monster", "elmo"]`.
+`[], ["snuffleupagus", "cookie monster", "elmo"]` 应返回 `["snuffleupagus", "cookie monster", "elmo"]`。
 
 ```js
 assert.sameMembers(diffArray([], ['snuffleupagus', 'cookie monster', 'elmo']), [
@@ -127,13 +126,13 @@ assert.sameMembers(diffArray([], ['snuffleupagus', 'cookie monster', 'elmo']), [
 ]);
 ```
 
-`[], ["snuffleupagus", "cookie monster", "elmo"]` should return an array with three items.
+`[], ["snuffleupagus", "cookie monster", "elmo"]` 应返回一个长度为 3 的数组。
 
 ```js
 assert(diffArray([], ['snuffleupagus', 'cookie monster', 'elmo']).length === 3);
 ```
 
-`[1, "calf", 3, "piglet"], [7, "filly"]` should return `[1, "calf", 3, "piglet", 7, "filly"]`.
+`[1, "calf", 3, "piglet"], [7, "filly"]` 应返回 `[1, "calf", 3, "piglet", 7, "filly"]`。
 
 ```js
 assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']), [
@@ -146,7 +145,7 @@ assert.sameMembers(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']), [
 ]);
 ```
 
-`[1, "calf", 3, "piglet"], [7, "filly"]` should return an array with six items.
+`[1, "calf", 3, "piglet"], [7, "filly"]` 应返回一个长度为 6 的数组。
 
 ```js
 assert(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']).length === 6);

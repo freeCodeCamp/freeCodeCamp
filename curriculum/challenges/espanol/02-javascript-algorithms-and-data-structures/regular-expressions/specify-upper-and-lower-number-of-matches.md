@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba5
-title: Specify Upper and Lower Number of Matches
+title: Especifica el menor y mayor número de coincidencias
 challengeType: 1
 forumTopicId: 301367
 dashedName: specify-upper-and-lower-number-of-matches
@@ -8,63 +8,65 @@ dashedName: specify-upper-and-lower-number-of-matches
 
 # --description--
 
-Recall that you use the plus sign `+` to look for one or more characters and the asterisk `*` to look for zero or more characters. These are convenient but sometimes you want to match a certain range of patterns.
+Recuerda que se utiliza el signo más `+` para buscar uno o más caracteres y el asterisco `*` para buscar cero o más caracteres. Esto es conveniente, pero a veces quieres coincidir con cierta gama de patrones.
 
-You can specify the lower and upper number of patterns with <dfn>quantity specifiers</dfn>. Quantity specifiers are used with curly brackets (`{` and `}`). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+Puedes especificar el número inferior y superior de patrones utilizando <dfn>especificadores de cantidad</dfn>. Para los especificadores de cantidad utilizamos llaves (`{` y `}`). Pon dos números entre las llaves - para el número inferior y superior de patrones.
 
-For example, to match only the letter `a` appearing between `3` and `5` times in the string `"ah"`, your regex would be `/a{3,5}h/`.
+Por ejemplo, para que coincida con la letra `a` si aparece entre `3` y `5` veces en la cadena `ah`, la expresión regular debe ser `/a{3,5}h/`.
 
 ```js
 let A4 = "aaaah";
 let A2 = "aah";
 let multipleA = /a{3,5}h/;
-multipleA.test(A4); // Returns true
-multipleA.test(A2); // Returns false
+multipleA.test(A4);
+multipleA.test(A2);
 ```
+
+La primera llamada a `test` devuelve `true`, mientras que la segunda devuelve `false`.
 
 # --instructions--
 
-Change the regex `ohRegex` to match the entire phrase `"Oh no"` only when it has `3` to `6` letter `h`'s.
+Modifica la expresión regular `ohRegex` para que coincida con toda la frase `Oh no` solo cuando tenga de `3` a `6` letras `h`.
 
 # --hints--
 
-Your regex should use curly brackets.
+La expresión regular debe utilizar llaves.
 
 ```js
 assert(ohRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match `"Ohh no"`
+La expresión regular no debe coincidir con la cadena `Ohh no`
 
 ```js
 assert(!ohRegex.test('Ohh no'));
 ```
 
-Your regex should match `"Ohhh no"`
+La expresión regular debe coincidir con la cadena `Ohhh no`
 
 ```js
 assert('Ohhh no'.match(ohRegex)[0].length === 7);
 ```
 
-Your regex should match `"Ohhhh no"`
+La expresión regular no debe coincidir con la cadena `Ohhhh no`
 
 ```js
 assert('Ohhhh no'.match(ohRegex)[0].length === 8);
 ```
 
-Your regex should match `"Ohhhhh no"`
+La expresión regular debe coincidir con la cadena `Ohhhhh no`
 
 ```js
 assert('Ohhhhh no'.match(ohRegex)[0].length === 9);
 ```
 
-Your regex should match `"Ohhhhhh no"`
+La expresión regular debe coincidir con la cadena `Ohhhhhh no`
 
 ```js
 assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 ```
 
-Your regex should not match `"Ohhhhhhh no"`
+La expresión regular no debe coincidir con la cadena `Ohhhhhhh no`
 
 ```js
 assert(!ohRegex.test('Ohhhhhhh no'));

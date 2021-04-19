@@ -1,22 +1,39 @@
 {
-  "name": "freecodecampcontributelib",
-  "dependencies": {
-    "@octokit/rest": "^18.0.12",
-    "cli-progress": "^2.1.0",
-    "date-fns": "^1.29.0",
-    "dedent": "^0.7.0",
-    "dotenv": "^6.1.0",
-    "form-data": "^2.3.3",
-    "gray-matter": "^4.0.1",
-    "lodash": "^4.17.11",
-    "path": "^0.12.7",
-    "readdirp-walk": "^1.6.0",
-    "travis-ci": "^2.2.0",
-    "util": "^0.11.1"
+  "name": "@freecodecamp/contributor-tools-lib",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
   },
-  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "BSD-3-Clause"
+  "dependencies": {
+    "@octokit/rest": "18.5.2",
+    "cli-progress": "2.1.1",
+    "date-fns": "1.30.1",
+    "dedent": "0.7.0",
+    "dotenv": "6.2.0",
+    "form-data": "2.5.1",
+    "gray-matter": "4.0.2",
+    "lodash": "4.17.20",
+    "path": "0.12.7",
+    "readdirp-walk": "1.7.0",
+    "travis-ci": "2.2.0",
+    "util": "0.11.1"
+  },
+  "devDependencies": {}
 }

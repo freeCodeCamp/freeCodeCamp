@@ -12,17 +12,19 @@ dashedName: center-text-with-bootstrap
 
 记住：可以为一个元素添加多个 classes ，class 间通过空格分隔，就像这样：
 
-`<h2 class="red-text text-center">your text</h2>`
+```html
+<h2 class="red-text text-center">your text</h2>
+```
 
 # --hints--
 
-`h2` 元素应该通过 `text-center` class 使其居中显示
+应使用 `text-center` class 将 `h2` 元素居中。
 
 ```js
 assert($('h2').hasClass('text-center'));
 ```
 
-`h2` 元素应该包含 `red-text` class
+`h2` 元素应具有 `red-text` class。
 
 ```js
 assert($('h2').hasClass('red-text'));

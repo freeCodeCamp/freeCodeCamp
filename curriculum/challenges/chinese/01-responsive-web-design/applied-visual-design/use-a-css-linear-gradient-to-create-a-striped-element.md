@@ -17,47 +17,49 @@ dashedName: use-a-css-linear-gradient-to-create-a-striped-element
 
 下面的代码可以帮助理解成对的起止渐变颜色值是如何过渡的。
 
-`0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px`
+```css
+0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
+```
 
-如果有两个相邻色标的颜色值相同，那么过渡看起来就不会很明显。 由于是在两个相同的颜色间过渡，那么中间的过渡色也会是相同颜色，接着就是这个颜色直接过渡到下一个颜色，最终产生的效果就是条纹。
+如果每对起止渐变颜色值的颜色都是相同的，由于是在两个相同的颜色间过渡，那么中间的过渡色也为同色，接着就是同色的过渡色和下一个起止颜色，最终产生的效果就是条纹。
 
 # --instructions--
 
-修改 `repeating-linear-gradient()` 函数使其为渐变角度为 `45deg` 的条纹，第一个渐变颜色为 `yellow`, 第二个渐变颜色为 `black`。
+使用 `repeating-linear-gradient()` 函数创建一个渐变角度为 `45deg` 的条纹，然后设置第一对渐变颜色为 `yellow`，第二对渐变颜色为 `black`。
 
 # --hints--
 
-`repeating-linear-gradient()` 的渐变角度应该为 45deg。
+`repeating-linear-gradient()` 的渐变角度应为 45deg。
 
 ```js
 assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi));
 ```
 
-`repeating-linear-gradient()` 的渐变角度不应为 90deg。
+`repeating-linear-gradient()` 的渐变角度应该不再是 90deg。
 
 ```js
 assert(!code.match(/90deg/gi));
 ```
 
-0px 处的渐变颜色应该为 `yellow`。
+0px 处的渐变颜色应该是 `yellow`。
 
 ```js
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-40px 处的第一个渐变颜色应该为 `yellow`。
+40px 处的一个渐变颜色应该是 `yellow`。
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));
 ```
 
-40px 处的第二个渐变颜色应该为 `black`。
+40px 处的第二个渐变颜色应该是 `black`。
 
 ```js
 assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi));
 ```
 
-80px 处最后一个渐变颜色应该为 `black`。
+80px 处的最后一个渐变颜色应该是 `black`。
 
 ```js
 assert(code.match(/black\s+?80px/gi));

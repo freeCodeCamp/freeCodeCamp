@@ -13,17 +13,21 @@ Otra forma de representar colores en CSS es utilizar valores `RGB`.
 
 El valor `RGB` del color negro se ve así:
 
-`rgb(0, 0, 0)`
+```css
+rgb(0, 0, 0)
+```
 
 El valor `RGB` del color blanco se ve así:
 
-`rgb(255, 255, 255)`
+```css
+rgb(255, 255, 255)
+```
 
 En lugar de usar seis dígitos hexadecimales, como hacemos con el código hexadecimal, en `RGB` se especifica el brillo de cada color con un número que va de 0 a 255.
 
 Si haces el cálculo, cada uno de los dos dígitos para un color representa 16 combinaciones, lo que nos da 256 valores posibles. Entonces, `RGB`, que comienza a contar desde cero, tiene el mismo número exacto de valores posibles que el código hexadecimal.
 
-A continuación puedes ver un ejemplo de cómo cambiar el color de fondo de "body" a naranja usando su código RGB.
+A continuación puedes ver un ejemplo de cómo cambiar el color de fondo de `body` a naranja usando su código RGB.
 
 ```css
 body {
@@ -43,7 +47,7 @@ Tu elemento `body` debe tener un color de fondo "black" (negro).
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-Debes usar `rgb` para asignar a tu elemento `body` el color negro.
+Debes usar `rgb` para asignar a tu elemento `body` un color de fondo de negro.
 
 ```js
 assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));

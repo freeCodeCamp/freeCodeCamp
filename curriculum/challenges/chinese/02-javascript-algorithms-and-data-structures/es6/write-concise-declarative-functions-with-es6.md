@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b50
-title: Write Concise Declarative Functions with ES6
+title: 用 ES6 编写简洁的函数声明
 challengeType: 1
 forumTopicId: 301224
 dashedName: write-concise-declarative-functions-with-es6
@@ -8,7 +8,7 @@ dashedName: write-concise-declarative-functions-with-es6
 
 # --description--
 
-When defining functions within objects in ES5, we have to use the keyword `function` as follows:
+在 ES5 中，当我们需要在对象中定义一个函数的时候，必须像这样使用 `function` 关键字：
 
 ```js
 const person = {
@@ -19,7 +19,7 @@ const person = {
 };
 ```
 
-With ES6, You can remove the `function` keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
+用 ES6 的语法在对象中定义函数的时候，可以删除 `function` 关键词和冒号。 请看以下例子：
 
 ```js
 const person = {
@@ -32,17 +32,17 @@ const person = {
 
 # --instructions--
 
-Refactor the function `setGear` inside the object `bicycle` to use the shorthand syntax described above.
+使用以上这种简短的语法，重构在 `bicycle` 对象中的 `setGear` 函数。
 
 # --hints--
 
-Traditional function expression should not be used.
+不应使用传统的函数定义方法。
 
 ```js
 (getUserInput) => assert(!__helpers.removeJSComments(code).match(/function/));
 ```
 
-`setGear` should be a declarative function.
+`setGear` 应是一个声明函数。
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-`bicycle.setGear(48)` should change the `gear` value to 48.
+`bicycle.setGear(48)` 应将 `gear` 的值改为 48。
 
 ```js
 assert(new bicycle.setGear(48).gear === 48);

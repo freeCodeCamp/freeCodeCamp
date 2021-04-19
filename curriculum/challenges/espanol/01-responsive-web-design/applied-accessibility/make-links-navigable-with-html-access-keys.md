@@ -9,17 +9,19 @@ dashedName: make-links-navigable-with-html-access-keys
 
 # --description--
 
-HTML ofrece el atributo `accesskey` para especificar una tecla de acceso directo para activar o enfocar un elemento. Esto puede hacer que la navegación sea más eficiente para los usuarios de solo usan el teclado.
+HTML ofrece el atributo `accesskey` para especificar una tecla de acceso directo para activar o enfocar un elemento. Añadiendo un atributo `accesskey` puede hacer que la navegación sea más eficiente para los usuarios que solo utilizan teclado.
 
 HTML5 permite que este atributo se use en cualquier elemento, pero es particularmente útil cuando se usa con elementos interactivos. Esto incluye enlaces, botones y controles de formulario.
 
 Aquí hay un ejemplo:
 
-`<button accesskey="b">Important Button</button>`
+```html
+<button accesskey="b">Important Button</button>
+```
 
 # --instructions--
 
-El Gato Campero quiere que los enlaces alrededor de los dos títulos de artículos de blog tengan atajos de teclado para que los usuarios de su sitio puedan navegar rápidamente a la historia completa. Agrega un atributo `accesskey` a ambos enlaces y establece el primero en `g` (para Garfield) y el segundo en `c` (para Chuck Norris).
+Camper Cat quiere que los enlaces alrededor de los dos títulos de artículos de blog tengan atajos de teclado para que los usuarios de su sitio puedan navegar rápidamente a la historia completa. Agrega un atributo `accesskey` a ambos enlaces y establece el primero en `g` (para Garfield) y el segundo en `c` (para Chuck Norris).
 
 # --hints--
 

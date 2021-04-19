@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1d
-title: Iterate Through the Keys of an Object with a for...in Statement
+title: 使用 for...in 语句遍历对象
 challengeType: 1
 forumTopicId: 301162
 dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
@@ -8,25 +8,23 @@ dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 
 # --description--
 
-Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our `users` object, this could look like:
+如果我们想要遍历对象中的所有属性， 只需要使用 JavaScript 中的 <dfn>for...in</dfn> 语句即可。 以遍历 `users` 对象的属性为例：
 
 ```js
 for (let user in users) {
   console.log(user);
 }
-
-// logs:
-Alan
-Jeff
-Sarah
-Ryan
 ```
 
-In this statement, we defined a variable `user`, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console. **NOTE:** Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
+这将在控制台打印 `Alan`、`Jeff`、`Sarah` 和 `Ryan` - 每个值占一行。
+
+在上面的代码中，我们定义了一个 `user` 变量。 可以观察到，这个变量在遍历对象的语句执行过程中会一直被重置并赋予新值，结果就是不同的用户名打印到了 console 中。
+
+**注意：**对象中的键是无序的，这与数组不同。 因此，一个对象中某个属性的位置，或者说它出现的相对顺序，在引用或访问该属性时是不确定的。
 
 # --instructions--
 
-We've defined a function `countOnline` which accepts one argument (a users object). Use a <dfn>for...in</dfn> statement within this function to loop through the users object passed into the function and return the number of users whose `online` property is set to `true`. An example of a users object which could be passed to `countOnline` is shown below. Each user will have an `online` property with either a `true` or `false` value.
+我们已经定义了一个 `countOnline` 函数，它接收一个 users 对象参数。 请在其中使用 <dfn>for...in</dfn> 语句来遍历传入函数的 users 对象中的用户，并返回 `online` 属性为 `true` 的用户数量。 以下是一个传入 `countOnline` 函数的对象示例， 注意每个用户都有 `online` 属性，其属性值为 `true` 或 `false`：
 
 ```js
 {
@@ -44,7 +42,7 @@ We've defined a function `countOnline` which accepts one argument (a users objec
 
 # --hints--
 
-The function `countOnline` should use a `for in` statement to iterate through the object keys of the object passed to it.
+函数 `countOnline` 中应使用 `for in` 语句遍历传入的对象的对象键。
 
 ```js
 assert(
@@ -54,19 +52,19 @@ assert(
 );
 ```
 
-The function `countOnline` should return `1` when the object `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }` is passed to it
+当传入 `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }` 时，函数 `countOnline` 应该返回 `1`。
 
 ```js
 assert(countOnline(usersObj1) === 1);
 ```
 
-The function `countOnline` should return `2` when the object `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }` is passed to it
+当传入 `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }` 时，函数 `countOnline` 应该返回 `2`。
 
 ```js
 assert(countOnline(usersObj2) === 2);
 ```
 
-The function `countOnline` should return `0` when the object `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }` is passed to it
+当传入 `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }` 时，函数 `countOnline` 应该返回 `0`。
 
 ```js
 assert(countOnline(usersObj3) === 0);

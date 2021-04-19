@@ -14,7 +14,9 @@ In the previous challenge, you created a new `h2` element for each item in the `
 
 The D3 `text()` method can take a string or a callback function as an argument:
 
-`selection.text((d) => d)`
+```js
+selection.text((d) => d)
+```
 
 In the example above, the parameter `d` refers to a single entry in the dataset that a selection is bound to.
 

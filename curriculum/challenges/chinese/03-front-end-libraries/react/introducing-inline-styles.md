@@ -14,17 +14,21 @@ dashedName: introducing-inline-styles
 
 将内联样式应用于 JSX 元素，类似于在 HTML 中的操作方式，但有一些 JSX 差异。 以下是 HTML 中内联样式的示例：
 
-`<div style="color: yellow; font-size: 16px">Mellow Yellow</div>`
+```jsx
+<div style="color: yellow; font-size: 16px">Mellow Yellow</div>
+```
 
-JSX 元素使用 `style` 属性，但是由于 JSX 的编译方式，不能将值设置为 `string`（字符串）。 相反，你应将其设置为 JavaScript `object`（对象）。 这里有一个例子：
+JSX 元素使用 `style` 属性，但是鉴于 JSX 的编译方式，不能将值设置为 `string`（字符串）。 相反，你应该将其设置为等于JavaScript `object` 。 如下所示：
 
-`<div style={{color: "yellow", fontSize: 16}}>Mellow Yellow</div>`
+```jsx
+<div style={{color: "yellow", fontSize: 16}}>Mellow Yellow</div>
+```
 
-请注意如何驼峰拼写 `fontSize` 属性？ 这是因为 React 不接受下划线分隔的样式对象。 React 将在 HTML 中编译为正确的属性名称。
+注意到如何驼峰拼写 `fontSize` 属性了吗？ 这是因为 React 不接受样式对象中的 kebab-case 键。 React 将在 HTML 中为应用正确的属性名称。
 
 # --instructions--
 
-在代码编辑器的 `div` 中添加一个 `style` 属性，使文本颜色为红色，字体大小为 `72px`。
+在代码编辑器中给 `div` 添加一个 `style` 属性，将文本颜色设置为红色，字体大小设置为 `72px`。
 
 请注意，可以选择将字体大小设置为数字，省略单位 `px`，或者将其写为 `72px`。
 

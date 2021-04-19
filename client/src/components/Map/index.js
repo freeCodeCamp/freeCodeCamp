@@ -8,7 +8,9 @@ import { Link, Spacer } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import './map.css';
 import { isAuditedCert } from '../../../../utils/is-audited';
-import { curriculumLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
+
+const { curriculumLocale } = envData;
 
 const propTypes = {
   currentSuperBlock: PropTypes.string,
@@ -93,7 +95,7 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
         <Link
           external={true}
           sameTab={false}
-          to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+          to={i18next.t('links:help-translate-link-url')}
         >
           {i18next.t('learn.help-translate-link')}
         </Link>

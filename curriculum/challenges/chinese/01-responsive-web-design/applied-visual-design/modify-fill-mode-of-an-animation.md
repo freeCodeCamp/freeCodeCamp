@@ -13,15 +13,17 @@ dashedName: modify-fill-mode-of-an-animation
 
 为此，我们可以通过把 `animation-fill-mode` 设置成 `forwards` 来实现。 `animation-fill-mode` 指定了在动画结束时元素的样式： 你可以这样设置：
 
-`animation-fill-mode: forwards;`
+```css
+animation-fill-mode: forwards;
+```
 
 # --instructions--
 
-修改 `button:hover` 的 `animation-fill-mode` 属性值为 `forwards`，使按钮悬停时保持高亮。
+设置 `button:hover` 的 `animation-fill-mode` 属性为 `forwards`，使用户把鼠标悬停在按钮上时，按钮保持高亮。
 
 # --hints--
 
-`button:hover` 应该有一个值为 `forwards` 的 `animation-fill-mode` 的属性。
+`button:hover` 应有一个值为 `forwards` 的 `animation-fill-mode` 属性。
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4d
-title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
+title: Utiliza sintaxis de desestructuración para pasar un objeto como parámetro de función
 challengeType: 1
 forumTopicId: 301217
 dashedName: use-destructuring-assignment-to-pass-an-object-as-a-functions-parameters
@@ -8,52 +8,52 @@ dashedName: use-destructuring-assignment-to-pass-an-object-as-a-functions-parame
 
 # --description--
 
-In some cases, you can destructure the object in a function argument itself.
+En algunos casos, se puede desestructurar el objeto en un propio argumento de función.
 
-Consider the code below:
+Considera el siguiente código:
 
 ```js
 const profileUpdate = (profileData) => {
   const { name, age, nationality, location } = profileData;
-  // do something with these variables
+
 }
 ```
 
-This effectively destructures the object sent into the function. This can also be done in-place:
+Esto desestructura efectivamente el objeto enviado a la función. Esto también se puede hacer en el lugar:
 
 ```js
 const profileUpdate = ({ name, age, nationality, location }) => {
-  /* do something with these fields */
+
 }
 ```
 
-When `profileData` is passed to the above function, the values are destructured from the function parameter for use within the function.
+Cuando `profileData` es pasado a la función anterior, los valores son desestructurados desde el parámetro de función para su uso dentro de la función.
 
 # --instructions--
 
-Use destructuring assignment within the argument to the function `half` to send only `max` and `min` inside the function.
+Utiliza la sintaxis de desestructuración dentro del argumento de la función `half` para enviar solo `max` y `min` dentro de la función.
 
 # --hints--
 
-`stats` should be an `object`.
+`stats` debe ser un objeto (`object`).
 
 ```js
 assert(typeof stats === 'object');
 ```
 
-`half(stats)` should be `28.015`
+`half(stats)` debe ser `28.015`
 
 ```js
 assert(half(stats) === 28.015);
 ```
 
-Destructuring should be used.
+Se debe utilizar desestructuración.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
 ```
 
-Destructured parameter should be used.
+Se debe usar un parámetro desestructurado.
 
 ```js
 assert(!code.match(/stats\.max|stats\.min/));

@@ -63,19 +63,19 @@ Se ha creado un objeto `foods` con tres entradas. Usando la sintaxis de tu elecc
 assert(typeof foods === 'object');
 ```
 
-El objeto `foods` debe tener una clave `"bananas"` con el valor de `13`.
+El objeto `foods` debe tener una clave `bananas` con el valor de `13`.
 
 ```js
 assert(foods.bananas === 13);
 ```
 
-El objeto `foods` debe tener una clave `"grapes"` con el valor de `35`.
+El objeto `foods` debe tener una clave `grapes` con el valor de `35`.
 
 ```js
 assert(foods.grapes === 35);
 ```
 
-El objeto `foods` debe tener una clave `"strawberries"` con el valor de `27`.
+El objeto `foods` debe tener una clave `strawberries` con el valor de `27`.
 
 ```js
 assert(foods.strawberries === 27);

@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # runs every day at 12:15 PM UTC
-    - cron: "15 12 * * *"
+    - cron: '15 12 * * *'
 
 jobs:
   i18n-download-client-ui-translations:
@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
@@ -44,7 +46,7 @@ jobs:
           # dryrun_action: true
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CLIENT }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
@@ -65,9 +67,7 @@ jobs:
           skip_untranslated_files: false
           export_only_approved: true
 
-          commit_message: 'chore(i8n,client): processed translations'
-          localization_branch_name: i18n-sync-client
-          push_translations: true
+          push_translations: false
 
           # pull-request
           create_pull_request: false
@@ -80,16 +80,28 @@ jobs:
           # dryrun_action: true
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CLIENT }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+      # Create Commit
+      - name: Commit Changes
+        env:
+          EMAIL: ${{ secrets.ACTIONS_CAMPERBOT_EMAIL }}
+        run: |
+          git checkout -b i18n-sync-client
+          git config --global user.name "camperbot"
+          git config --global user.email "$EMAIL"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "chore(i18n,learn): update translations"
+          git push -u origin i18n-sync-client -f
 
       - name: Install Dependencies
         working-directory: ./tools
         run: |
           cd ./crowdin
           npm ci
-          
+
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR
         uses: ./tools/crowdin/actions/pr-creator
@@ -100,5 +112,5 @@ jobs:
           base: 'main'
           title: 'chore(i18n,client): processed translations'
           body: 'This PR was opened auto-magically by Crowdin.'
-          labels: 'crowdin-sync, scope: i18n, scope: UI'
-          reviewers: 'RandellDawson, nhcarrigan'
+          labels: 'crowdin-sync, scope: UI'
+          team_reviewers: 'i18n'

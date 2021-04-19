@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b17
-title: Combine Arrays with the Spread Operator
+title: Combina arreglos con el operador de propagación
 challengeType: 1
 forumTopicId: 301156
 dashedName: combine-arrays-with-the-spread-operator
@@ -8,30 +8,31 @@ dashedName: combine-arrays-with-the-spread-operator
 
 # --description--
 
-Another huge advantage of the <dfn>spread</dfn> operator, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:
+Otra gran ventaja del operador de <dfn>propagación</dfn> es la capacidad de combinar arreglos, o de insertar todos los elementos de un arreglo en otro, en cualquier índice. Con sintaxis más tradicionales, podemos concatenar arreglos, pero esto sólo nos permite combinar arreglos al final de uno, y al principio de otro. La sintaxis de propagación hace la siguiente operación extremadamente simple:
 
 ```js
 let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
 
 let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
-// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']
 ```
 
-Using spread syntax, we have just achieved an operation that would have been more complex and more verbose had we used traditional methods.
+`thatArray` tendrá el valor `['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']`.
+
+Usando la sintaxis de propagación, acabamos de lograr una operación que habría sido más compleja y verbosa si hubiéramos usado métodos tradicionales.
 
 # --instructions--
 
-We have defined a function `spreadOut` that returns the variable `sentence`. Modify the function using the <dfn>spread</dfn> operator so that it returns the array `['learning', 'to', 'code', 'is', 'fun']`.
+Hemos definido una función `spreadOut` que devuelve la variable `sentence`. Modifica la función usando el operador de <dfn>propagación</dfn> para que devuelva el arreglo `['learning', 'to', 'code', 'is', 'fun']`.
 
 # --hints--
 
-`spreadOut` should return `["learning", "to", "code", "is", "fun"]`
+`spreadOut` debe devolver `["learning", "to", "code", "is", "fun"]`
 
 ```js
 assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun']);
 ```
 
-The `spreadOut` function should utilize spread syntax
+La función `spreadOut` debe utilizar la sintaxis de propagación
 
 ```js
 assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);

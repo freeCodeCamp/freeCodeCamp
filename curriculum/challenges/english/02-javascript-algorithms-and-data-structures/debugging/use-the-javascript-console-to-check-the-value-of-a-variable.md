@@ -16,7 +16,9 @@ The `console.log()` method, which "prints" the output of what's within its paren
 
 Here's an example to print the string `Hello world!` to the console:
 
-`console.log('Hello world!');`
+```js
+console.log('Hello world!');
+```
 
 # --instructions--
 

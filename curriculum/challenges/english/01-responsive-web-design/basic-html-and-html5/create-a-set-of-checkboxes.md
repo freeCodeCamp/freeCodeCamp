@@ -21,7 +21,9 @@ It is considered best practice to explicitly define the relationship between a c
 
 Here's an example of a checkbox:
 
-`<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>`
+```html
+<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+```
 
 # --instructions--
 

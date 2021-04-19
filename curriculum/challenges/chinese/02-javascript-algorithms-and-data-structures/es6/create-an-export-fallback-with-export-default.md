@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b58
-title: Create an Export Fallback with export default
+title: 用 export default 创建一个默认导出
 challengeType: 1
 forumTopicId: 301199
 dashedName: create-an-export-fallback-with-export-default
@@ -8,33 +8,33 @@ dashedName: create-an-export-fallback-with-export-default
 
 # --description--
 
-In the `export` lesson, you learned about the syntax referred to as a <dfn>named export</dfn>. This allowed you to make multiple functions and variables available for use in other files.
+在 `export` 的课程中，你学习了<dfn>命名导出</dfn>语法， 这可以在其他文件中引用一些函数或者变量。
 
-There is another `export` syntax you need to know, known as <dfn>export default</dfn>. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.
+还需要了解另外一种被称为<dfn>默认导出</dfn>的 `export` 的语法。 在文件中只有一个值需要导出的时候，通常会使用这种语法。 它也常常用于给文件或者模块创建返回值。
 
-Below are examples using `export default`:
+下面是使用 `export default` 的例子：
 
 ```js
-// named function
 export default function add(x, y) {
   return x + y;
 }
 
-// anonymous function
 export default function(x, y) {
   return x + y;
 }
 ```
 
-Since `export default` is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use `export default` with `var`, `let`, or `const`
+第一个是命名函数，第二个是匿名函数。
+
+`export default` 用于为模块或文件声明一个返回值，在每个文件或者模块中应当只默认导出一个值。 此外，你不能将 `export default` 与 `var`、`let` 或 `const` 同时使用。
 
 # --instructions--
 
-The following function should be the fallback value for the module. Please add the necessary code to do so.
+下面的函数应该在这个模块中返回一个值。 请添加需要的代码。
 
 # --hints--
 
-Your code should use `export` fallback.
+正确地使用 `export` 返回值。
 
 ```js
 assert(

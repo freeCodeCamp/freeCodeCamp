@@ -1,6 +1,6 @@
 ---
 id: 5a2efd662fb457916e1fe604
-title: Iterate with JavaScript Do...While Loops
+title: do...while 循环
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqWGcp'
 forumTopicId: 301172
@@ -9,7 +9,7 @@ dashedName: iterate-with-javascript-do---while-loops
 
 # --description--
 
-The next type of loop you will learn is called a `do...while` loop. It is called a `do...while` loop because it will first `do` one pass of the code inside the loop no matter what, and then continue to run the loop `while` the specified condition evaluates to `true`.
+下一种循环叫作 `do...while` 循环。 它被称为 `do...while` 循环，是因为不论什么情况，它都会首先 `do`（运行）循环里的第一部分代码，然后 `while`（当）规定的条件被评估为 `true`（真）的时候，它会继续运行循环。
 
 ```js
 var ourArray = [];
@@ -20,7 +20,7 @@ do {
 } while (i < 5);
 ```
 
-The example above behaves similar to other types of loops, and the resulting array will look like `[0, 1, 2, 3, 4]`. However, what makes the `do...while` different from other loops is how it behaves when the condition fails on the first check. Let's see this in action: Here is a regular `while` loop that will run the code in the loop as long as `i < 5`:
+上面的示例行为类似于其他类型的循环，由此产生的数组将看起来像 `[0, 1, 2, 3, 4]`。 然而，`do...while` 不同于其他循环的地方，是第一次循环检查失败时的行为。 让我们看看代码中的区别：这里是一个常规的 `while` 循环，只要 `i < 5`，就会在循环中运行代码：
 
 ```js
 var ourArray = []; 
@@ -31,7 +31,7 @@ while (i < 5) {
 }
 ```
 
-In this example, we initialize the value of `ourArray` to an empty array and the value of `i` to 5. When we execute the `while` loop, the condition evaluates to `false` because `i` is not less than 5, so we do not execute the code inside the loop. The result is that `ourArray` will end up with no values added to it, and it will still look like `[]` when all of the code in the example above has completed running. Now, take a look at a `do...while` loop:
+这个例子中，定义了一个空数组 `ourArray` 以及一个值为 5 的 `i` 。 当执行 `while` 循环时，因为 `i` 不小于 5，所以循环条件为 `false`，循环内的代码将不会执行。 `ourArray` 最终没有添加任何内容，因此示例中的所有代码执行完时，ourArray 仍然是`[]`。 现在，看一下 `do...while` 循环。
 
 ```js
 var ourArray = []; 
@@ -42,27 +42,27 @@ do {
 } while (i < 5);
 ```
 
-In this case, we initialize the value of `i` to 5, just like we did with the `while` loop. When we get to the next line, there is no condition to evaluate, so we go to the code inside the curly braces and execute it. We will add a single element to the array and then increment `i` before we get to the condition check. When we finally evaluate the condition `i < 5` on the last line, we see that `i` is now 6, which fails the conditional check, so we exit the loop and are done. At the end of the above example, the value of `ourArray` is `[5]`. Essentially, a `do...while` loop ensures that the code inside the loop will run at least once. Let's try getting a `do...while` loop to work by pushing values to an array.
+在这里，和使用 `while` 循环一样，将 `i` 的值初始化为 5。 执行下一行时，没有执行循环检查，直接执行花括号内的代码。 数组会添加一个元素，并在进行条件检查之前递增 `i`。 然后，在条件检查时因为 `i` 等于 6 不符合条件 `i < 5`，所以退出循环。 最终 `ourArray` 的值是 `[5]`。 本质上，`do...while` 循环确保循环内的代码至少运行一次。 让我们通过 `do...while` 循环将值添加到数组中。
 
 # --instructions--
 
-Change the `while` loop in the code to a `do...while` loop so the loop will push only the number `10` to `myArray`, and `i` will be equal to `11` when your code has finished running.
+将代码中的 `while` 循环更改为 `do...while` 循环，将数字 `10` 添加到 `myArray` 中，代码执行完时，`i` 等于 `11`。
 
 # --hints--
 
-You should be using a `do...while` loop for this exercise.
+你应该使用 `do...while` 循环。
 
 ```js
 assert(code.match(/do/g));
 ```
 
-`myArray` should equal `[10]`.
+`myArray` 应该等于 `[10]`。
 
 ```js
 assert.deepEqual(myArray, [10]);
 ```
 
-`i` should equal `11`
+`i` 应该等于 `11`。
 
 ```js
 assert.equal(i, 11);

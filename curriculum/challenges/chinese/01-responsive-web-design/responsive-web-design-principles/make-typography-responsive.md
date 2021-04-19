@@ -17,7 +17,9 @@ dashedName: make-typography-responsive
 
 下面这个例子是设置 `body` 标签的宽度为视窗宽度的 30%。
 
-`body { width: 30vw; }`
+```css
+body { width: 30vw; }
+```
 
 # --instructions--
 

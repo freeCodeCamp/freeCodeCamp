@@ -14,7 +14,9 @@ For example, `addTogether(2, 3)` should return `5`, and `addTogether(2)` should 
 
 Calling this returned function with a single argument will then return the sum:
 
-`var sumTwoAnd = addTogether(2);`
+```js
+var sumTwoAnd = addTogether(2);
+```
 
 `sumTwoAnd(3)` returns `5`.
 

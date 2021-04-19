@@ -63,13 +63,12 @@ const propTypes = {
     challengeMeta: PropTypes.object
   }),
   t: PropTypes.func.isRequired,
-  translationPending: PropTypes.bool.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
 
 // Component
-export class Project extends Component {
+class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -298,7 +297,11 @@ export class Project extends Component {
                 </Button>
                 <Spacer size={2} />
               </Col>
-              <CompletionModal blockName={blockName} />
+              <CompletionModal
+                block={block}
+                blockName={blockName}
+                superBlock={superBlock}
+              />
             </Row>
           </Grid>
         </LearnLayout>
@@ -334,6 +337,7 @@ export const query = graphql`
         answers
         solution
       }
+      translationPending
     }
   }
 `;

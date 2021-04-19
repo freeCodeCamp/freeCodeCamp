@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c47
-title: Test if a Variable or Function is Defined
+title: 测试变量或函数是否已定义
 challengeType: 2
 forumTopicId: 301602
 dashedName: test-if-a-variable-or-function-is-defined
@@ -8,15 +8,15 @@ dashedName: test-if-a-variable-or-function-is-defined
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#2` in the `Basic Assertions` suite, change each `assert` to either `assert.isDefined()` or `assert.isUndefined()` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，`Basic Assertions` 套件中标注为 `#2` 的测试下，修改每个 `assert` 为 `assert.isDefined()` 或 `assert.isUndefined()`，通过测试（结果应为 `true`）。 不要修改传给断言的参数。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isDefined` vs. `isUndefined`.
+应该为第一个断言选择正确的方法：`isDefined` 或 `isUndefined`。
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isDefined` vs. `
   );
 ```
 
-You should choose the correct method for the second assertion - `isDefined` vs. `isUndefined`.
+应该为第二个断言选择正确的方法：`isDefined` 或 `isUndefined`。
 
 ```js
 (getUserInput) =>
@@ -66,7 +66,7 @@ You should choose the correct method for the second assertion - `isDefined` vs. 
   );
 ```
 
-You should choose the correct method for the third assertion - `isDefined` vs. `isUndefined`.
+应该为第三个断言选择正确的方法：`isDefined` 或 `isUndefined`。
 
 ```js
 (getUserInput) =>

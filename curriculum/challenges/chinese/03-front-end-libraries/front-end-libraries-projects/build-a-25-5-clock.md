@@ -70,7 +70,7 @@ dashedName: build-a-25--5-clock
 
 **需求 28：** 当点击 id 属性为 `reset` 的元素时，id 属性为 `beep` 的音频元素必须停止播放并回到开头。
 
-你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用这个 CodePen 模板</a>，点击 `Save` 即可创建你自己的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 当你完成了本项目，并且该项目所有测试运行通过， 请提交项目的 URL。
 

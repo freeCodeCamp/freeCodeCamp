@@ -12,7 +12,9 @@ D3 has several methods that let you add and change elements in your document.
 
 The `select()` method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Here's an example:
 
-`const anchor = d3.select("a");`
+```js
+const anchor = d3.select("a");
+```
 
 The above example finds the first anchor tag on the page and saves an HTML node for it in the variable `anchor`. You can use the selection with other methods. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
 
