@@ -85,7 +85,10 @@ You can send a POST request to `/api/threads/{board}` with form data including `
 
 ```js
 async (getUserInput) => {
-  const data = {"text":"fcc_test", "delete_password":"delete_me"};
+  const date = new Date();
+  const text = `fcc_test_${date}`;
+  const deletePassword = 'delete_me';
+  const data = { text, delete_password: deletePassword };
   const url = getUserInput('url');
   const res = await fetch(url + '/api/threads/fcc_test', {
     method: 'POST',
@@ -93,16 +96,19 @@ async (getUserInput) => {
     body: JSON.stringify(data)
   });
   if (res.ok) {
-    const checkData = await fetch(getUserInput('url') + '/api/threads/fcc_test');
+    const checkData = await fetch(url + '/api/threads/fcc_test');
     const parsed = await checkData.json();
-    assert.isTrue(parsed[0].text == "fcc_test");
-    assert.isNotNull(parsed[0]._id);
-    assert.isNotNull(parsed[0].text);
-    assert.isNotNull(parsed[0].created_on);
-    assert.isNotNull(parsed[0].bumped_on);
-    assert.isNotNull(parsed[0].reported);
-    assert.isNotNull(parsed[0].delete_password);
-    assert.isNotNull(parsed[0].replies);
+    try {
+      assert.equal(parsed[0].text, text);
+      assert.isNotNull(parsed[0]._id);
+      assert.equal(new Date(parsed[0].created_on).toDateString(), date.toDateString());
+      assert.equal(parsed[0].bumped_on, parsed[0].created_on);
+      assert.isBoolean(parsed[0].reported);
+      assert.equal(parsed[0].delete_password, deletePassword);
+      assert.isArray(parsed[0].replies);
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
