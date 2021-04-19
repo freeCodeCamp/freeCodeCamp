@@ -35,6 +35,12 @@ There should be a listener function subscribed to the store using `store.subscri
 (getUserInput) => assert(getUserInput('index').includes('store.subscribe('));
 ```
 
+The function `store.subscribe` should have a function 
+
+```js
+(getUserInput) => assert(getUserInput('index').match(/store\.subscribe\((\s*(function\s*)|(\s*\(\)\s*=>\s*{\s*\s*))/gm))
+```
+
 The callback to `store.subscribe` should also increment the global `count` variable as the store is updated.
 
 ```js
