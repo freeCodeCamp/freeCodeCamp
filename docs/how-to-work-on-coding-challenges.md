@@ -289,6 +289,10 @@ Our goal is to communicate the single point that the challenge is trying to teac
 
 Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
+### Use of language
+
+In contrast to the description, which should talk directly to the user, the test text should talk about the code.  It should describe what is wrong with the code, rather than what the user did wrong.  For example "The `h1` element should..." instead of "Your `h1` element should..."
+
 ## Formatting seed code
 
 Here are specific formatting guidelines for the challenge seed code:
