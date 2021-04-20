@@ -31,7 +31,7 @@ jobs:
           --build-arg ALGOLIA_API_KEY=api_key_from_algolia_dashboard \
           --build-arg PAYPAL_CLIENT_ID=id_from_paypal_dashboard \
           --build-arg DEPLOYMENT_ENV=staging \
-          -t fcc_client .
+          -t fcc_client client.Dockerfile
           mkdir client-artifact
           cp docker-compose.yml client-artifact
           cd client-artifact
