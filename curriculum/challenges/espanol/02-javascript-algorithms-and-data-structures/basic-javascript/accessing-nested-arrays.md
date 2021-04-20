@@ -40,7 +40,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Obtén el segundo árbol de la variable `myPlants` usando la notación de puntos de objetos y la notación de corchetes de arreglos.
+Utilizando la notación de puntos y corchetes, establezca la variable `secondTree` en el segundo elemento de la lista `trees` del objeto `myPlants`.
 
 # --hints--
 
@@ -72,7 +72,6 @@ assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myPlants = [
   {
     type: "flowers",
@@ -92,9 +91,7 @@ var myPlants = [
   }
 ];
 
-// Only change code below this line
-
-var secondTree = ""; // Change this line
+var secondTree = "";
 ```
 
 # --solutions--
@@ -118,8 +115,6 @@ var myPlants = [
     ]
   }
 ];
-
-// Only change code below this line
 
 var secondTree = myPlants[1].list[1];
 ```

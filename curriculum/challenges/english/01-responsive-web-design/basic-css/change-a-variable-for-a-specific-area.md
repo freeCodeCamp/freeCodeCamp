@@ -23,9 +23,18 @@ The `penguin` class should reassign the `--penguin-belly` variable to `white`.
 
 ```js
 assert(
-  code.match(/\.penguin\s*?{[\s\S]*(?<!background-color: )--penguin-belly\s*?:\s?white\s*?;[\s\S]*}/gi)
+  code.match(/\.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi)
 );
 ```
+
+The `penguin` class should not contain the `background-color` property
+
+```js
+assert(
+  code.match(/^((?!background-color\s*?:\s*?)[\s\S])*$/g)
+);
+``` 
+
 
 # --seed--
 
