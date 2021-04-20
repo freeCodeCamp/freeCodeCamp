@@ -32,18 +32,18 @@ Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):
 `target` is an anchor tag attribute that specifies where to open the link. The value `_blank` specifies to open the link in a new tab. The `href` is an anchor tag attribute that contains the URL address of the link:  
 
 ```html
-<a href="http://freecodecamp.org"> ... </a>
+<a href="http://freecodecamp.org" target="_blank"> ... </a>
 ```
 
 The text, `link to freecodecamp.org`, within the `a` element is called <dfn>anchor text</dfn>, and will display the link to click:
 
 ```html
-<a href=" ... ">link to freecodecamp.org</a>
+<a href=" ... " target="_blank">link to freecodecamp.org</a>
 ```
 
 The final output of the example will look like this:  
 
-Here's a [link to freecodecamp.org](http://freecodecamp.org) for you to follow.
+Here's a <a href="http://freecodecamp.org" target="_blank">link to freecodecamp.org</a> for you to follow.
 
 # --instructions--
 
@@ -162,3 +162,5 @@ assert(
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
+
+
