@@ -520,11 +520,17 @@ async function createTestRunner(
     files[key].editableContents = solution[key].editableContents;
   });
 
-  const { build, sources, loadEnzyme } = await buildChallenge({
-    files,
-    required,
-    template
-  });
+  const { build, sources, loadEnzyme } = await buildChallenge(
+    {
+      files,
+      required,
+      template
+    },
+    {
+      removeComments: challenge.removeComments
+    }
+  );
+
   const code = {
     contents: sources.index,
     editableContents: sources.editableContents
