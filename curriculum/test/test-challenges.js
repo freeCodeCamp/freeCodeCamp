@@ -520,6 +520,8 @@ async function createTestRunner(
     files[key].editableContents = solution[key].editableContents;
   });
 
+  console.log(challenge);
+
   const { build, sources, loadEnzyme } = await buildChallenge(
     {
       files,
