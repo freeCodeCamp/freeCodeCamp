@@ -11,6 +11,12 @@ To apply the class's styling to the `div` element, add a `class` attribute to th
 
 # --hints--
 
+Your `div` should still render. Make sure you haven't malformed the `<div>` tag.
+
+```js
+assert($('div').length === 1);
+```
+
 Your `div` element should have the `menu` class.
 
 ```js

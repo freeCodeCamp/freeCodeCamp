@@ -11,6 +11,12 @@ Add an `h2` element in the new section add give it the text `Desserts`.
 
 # --hints--
 
+You should not change your existing `section` element.
+
+```js
+assert($('section').length === 2);
+```
+
 You should add an `h2` element in your second `section` element.
 
 ```js

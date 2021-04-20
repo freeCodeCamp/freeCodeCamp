@@ -23,6 +23,12 @@ You should have a closing `section` tag.
 assert(code.match(/<\/section>/ig).length === 2);
 ```
 
+You should not change the existing `main` element.
+
+```js
+assert($('main').length === 1);
+```
+
 Your new `section` element should be nested in the `main` element.
 
 ```js

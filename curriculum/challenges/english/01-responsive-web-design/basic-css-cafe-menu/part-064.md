@@ -23,6 +23,12 @@ You should have a closing `</footer>` tag.
 assert(code.match(/<\/footer>/i));
 ```
 
+You should not modify the existing `main` element.
+
+```js
+assert($('main').length === 1);
+```
+
 Your `footer` element should be below your `main` element.
 
 ```js

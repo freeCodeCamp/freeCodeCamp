@@ -11,6 +11,12 @@ Nest two `p` elements inside your `article` element. The first one's text should
 
 # --hints--
 
+You should not change your existing `article` element.
+
+```js
+assert($('article').length === 6);
+```
+
 Your new `article` element should have two `p` elements.
 
 ```js

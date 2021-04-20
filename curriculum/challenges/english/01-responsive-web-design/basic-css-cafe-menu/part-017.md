@@ -18,6 +18,12 @@ const link = $('link')[1];
 assert(link);
 ```
 
+You should not change your existing `head` element. Make sure you did not delete the closing tag.
+
+```js
+assert($('head').length === 1);
+```
+
 Your `link` element should be within your `head` element.
 
 ```js

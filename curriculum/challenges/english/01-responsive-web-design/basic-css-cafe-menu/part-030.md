@@ -23,6 +23,12 @@ You should have a closing `</article>` tag.
 assert(code.match(/<\/article>/i));
 ```
 
+You should not change the existing `h2` element.
+
+```js
+assert($('h2').length === 1);
+```
+
 Your `article` element should come after your `h2` element.
 
 ```js

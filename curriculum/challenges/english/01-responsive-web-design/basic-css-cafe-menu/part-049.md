@@ -11,6 +11,12 @@ Add an empty `article` element under the `Desserts` heading. Give it a `class` a
 
 # --hints--
 
+You should not change your existing `h2` element.
+
+```js
+assert($('h2').length === 2);
+```
+
 Your `article` element should be below your `h2` element.
 
 ```js

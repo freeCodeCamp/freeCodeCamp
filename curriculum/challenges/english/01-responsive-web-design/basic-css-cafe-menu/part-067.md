@@ -19,6 +19,18 @@ You should add an `hr` element. `hr` elements are self-closing.
 assert(code.match(/<hr\s?\/?>/i));
 ```
 
+You should not change your existing `header` element.
+
+```js
+assert($('header').length === 1);
+```
+
+You should not change your exiting `main` element.
+
+```js
+assert($('main').length === 1);
+```
+
 Your `hr` element should be between your `header` element and your `main` element.
 
 ```js

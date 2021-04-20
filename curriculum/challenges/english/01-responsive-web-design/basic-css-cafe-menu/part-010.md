@@ -23,6 +23,12 @@ You should have a closing `</h2>` tag.
 assert(code.match(/<\/h2>/i));
 ```
 
+You should not change your existing `section` element. Make sure you did not delete the closing tag.
+
+```js
+assert($('section').length === 1);
+```
+
 Your `h2` element should be within your `section` element.
 
 ```js

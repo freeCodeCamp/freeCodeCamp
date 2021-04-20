@@ -23,6 +23,12 @@ You should have a closing `</div>` tag.
 assert(code.match(/<\/div>/i));
 ```
 
+You should not change your existing `body` element. Make sure you did not delete the closing tag.
+
+```js
+assert($('body').length === 1);
+```
+
 Your `div` tag should be nested in the `body`.
 
 ```js

@@ -11,6 +11,12 @@ Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in th
 
 # --hints--
 
+You should not modify the existing `footer` element.
+
+```js
+assert($('footer').length === 1);
+```
+
 Your new `p` element should be nested within your `footer` element.
 
 ```js

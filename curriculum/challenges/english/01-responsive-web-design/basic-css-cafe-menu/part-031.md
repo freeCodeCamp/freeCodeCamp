@@ -11,6 +11,12 @@ dashedName: part-31
 
 # --hints--
 
+You should not change the existing `article` element.
+
+```js
+assert($('article').length === 1);
+```
+
 Your `article` element should have two `p` elements.
 
 ```js

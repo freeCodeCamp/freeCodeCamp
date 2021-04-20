@@ -23,6 +23,13 @@ You should have a closing `</body>` tag.
 assert(code.match(/<\/body>/i));
 ```
 
+You should not change your `head` element. Make sure you did not delete your closing tag.
+
+```js
+assert(code.match(/<head>/i));
+assert(code.match(/<\/head>/i));
+```
+
 Your `body` element should come after your `head` element.
 
 ```js

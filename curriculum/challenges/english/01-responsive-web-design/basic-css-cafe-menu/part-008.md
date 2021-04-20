@@ -23,6 +23,12 @@ Your code should have a closing `</main>` tag.
 assert(code.match(/<\/main>/i));
 ```
 
+You should not change your `header` element. Make sure you don't accidentally delete your closing tag.
+
+```js
+assert($('header').length === 1);
+```
+
 Your `main` tag should come after your `header` tag.
 
 ```js

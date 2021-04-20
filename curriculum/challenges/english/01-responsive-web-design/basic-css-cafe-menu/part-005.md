@@ -23,7 +23,19 @@ You should have a closing `</h1>` tag.
 assert(code.match(/<\/h1>/i));
 ```
 
-Your `h1` tag should have the text `Camper Cafe` in capital letters.
+You should not change your existing `body` element.
+
+```js
+assert($('body').length === 1);
+```
+
+Your `h1` element should be nested in your `body` element.
+
+```js
+assert($('h1')[0].parentElement.tagName === "BODY");
+```
+
+Your `h1` element should have the text `Camper Cafe` in capital letters.
 
 ```js
 assert(code.match(/<h1>CAMPER CAFE<\/h1>/));
