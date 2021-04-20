@@ -1,8 +1,8 @@
 /* global cy */
 
 describe('Visit Front End Development', () => {
-  cy.task('getCurriculum', { lang: 'english' }).then(curriculum => {
-    it(`should be possible to visit all of the challenges`, () => {
+  it(`should be possible to visit all of the challenges`, () => {
+    cy.task('getCurriculum', 'english').then(curriculum => {
       cy.task('scopeCurriculum', {
         curriculum,
         superblock: 'front-end-libraries'
