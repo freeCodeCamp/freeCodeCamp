@@ -173,12 +173,6 @@ export function buildJSChallenge({ files }, options) {
         )
         .join('\n');
       let sources = buildSourceMap(files);
-      console.log(
-        'OPTIONS: ',
-        options,
-        options?.removeComments !== false,
-        curriculumHelpers.removeJSComments(sources.index)
-      );
       if (options?.removeComments !== false) {
         build = curriculumHelpers.removeJSComments(build);
         sources = {
