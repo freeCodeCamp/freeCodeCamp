@@ -1,14 +1,14 @@
 name: Generate Docker Images
 # TODO: it's triggered on PRs for QA, but it'll be on pushes to master when it's
 # done.
-on: pull_request
+on: [pull_request, push]
 
 jobs:
   client:
     name: Client
     runs-on: ubuntu-20.04
     # TODO uncomment below when QA is done
-    # if: github.repository == 'freeCodeCamp/devdocs'
+    # if: github.repository == 'freeCodeCamp/freeCodeCamp'
 
     steps:
       - name: Checkout Source Files
