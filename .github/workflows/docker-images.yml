@@ -59,7 +59,7 @@ jobs:
           cd api-artifact
           docker save fcc_api | gzip > fcc_api.tar.gz
       - name: Upload Api Server Image
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: fcc-api-image
           path: api-artifact/fcc_api.tar.gz
