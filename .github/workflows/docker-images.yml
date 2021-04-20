@@ -46,7 +46,7 @@ jobs:
     name: Api Server
     runs-on: ubuntu-20.04
     # TODO uncomment below when QA is done
-    # if: github.repository == 'freeCodeCamp/devdocs'
+    # if: github.repository == 'freeCodeCamp/freeCodeCamp'
 
     steps:
       - name: Checkout Source Files
