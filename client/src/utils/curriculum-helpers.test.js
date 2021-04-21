@@ -1,6 +1,6 @@
 /* global describe it expect */
 
-import __testHelpers from './curriculum-helpers';
+import __testHelpers, { removeJSComments } from './curriculum-helpers';
 import jsTestValues from './__fixtures/curriculum-helpers-javascript';
 import cssTestValues from './__fixtures/curriculum-helpers-css';
 import htmlTestValues from './__fixtures/curriculum-helpers-html';
@@ -40,7 +40,6 @@ describe('removeWhiteSpace', () => {
 });
 
 describe('removeJSComments', () => {
-  const { removeJSComments } = __testHelpers;
   it('returns a string', () => {
     expect(typeof removeJSComments('const should = "return a string"')).toBe(
       'string'

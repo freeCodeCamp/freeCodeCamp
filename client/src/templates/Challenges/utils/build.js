@@ -13,7 +13,7 @@ import {
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 // eslint-disable-next-line import/no-unresolved
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import curriculumHelpers from '../../../utils/curriculum-helpers';
+import { removeJSComments } from '../../../utils/curriculum-helpers';
 
 const { filename: runner } = frameRunnerData;
 const { filename: testEvaluator } = testEvaluatorData;
@@ -174,10 +174,10 @@ export function buildJSChallenge({ files }, options) {
         .join('\n');
       let sources = buildSourceMap(files);
       if (options?.removeComments !== false) {
-        build = curriculumHelpers.removeJSComments(build);
+        build = removeJSComments(build);
         sources = {
           ...sources,
-          index: curriculumHelpers.removeJSComments(sources.index)
+          index: removeJSComments(sources.index)
         };
       }
       return {
