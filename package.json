@@ -100,7 +100,8 @@
     }
   },
   "dependencies": {
-    "dotenv": "8.2.0"
+    "dotenv": "8.2.0",
+    "invariant": "2.2.4"
   },
   "devDependencies": {
     "@testing-library/cypress": "7.0.6",
