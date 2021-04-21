@@ -33,14 +33,14 @@ jobs:
           --build-arg DEPLOYMENT_ENV=staging \
           -t fcc_client -f client.Dockerfile .
           mkdir client-artifact
-          cp docker-compose.yml client-artifact
+          cp docker-compose.client.yml client-artifact/docker-compose.yml
           cd client-artifact
           docker save fcc_client | gzip > fcc_client.tar.gz
       - name: Upload Client Image
         uses: actions/upload-artifact@v2
         with:
           name: fcc-client-image
-          path: client-artifact/fcc_client.tar.gz
+          path: client-artifact
 
   api:
     name: Api Server
@@ -62,4 +62,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: fcc-api-image
-          path: api-artifact/fcc_api.tar.gz
+          path: api-artifact
