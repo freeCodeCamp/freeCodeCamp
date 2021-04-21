@@ -5,9 +5,9 @@ import { createFlashMessage } from '../components/Flash/redux';
 import { getShowCert } from '../utils/ajax';
 import { showCertComplete, showCertError } from '.';
 
-function* getShowCertSaga({ payload: { username, certName: cert } }) {
+function* getShowCertSaga({ payload: { username, certSlug } }) {
   try {
-    const { data: response } = yield call(getShowCert, username, cert);
+    const { data: response } = yield call(getShowCert, username, certSlug);
     const { messages } = response;
     if (messages && messages.length) {
       for (let i = 0; i < messages.length; i++) {
