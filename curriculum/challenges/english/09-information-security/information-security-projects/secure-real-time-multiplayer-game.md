@@ -123,13 +123,14 @@ async (getUserInput) => {
 };
 ```
 
-Prevent cross-site scripting (XSS) attacks.
+Prevent cross-site scripting (XSS) attacks, by setting a content security policy to only allow loading scripts from your server.
 
 ```js
 async (getUserInput) => {
   const data = await fetch(getUserInput('url') + '/_api/app-info');
   const parsed = await data.json();
-  assert.equal(parsed.headers['x-xss-protection'], '1; mode=block');
+  const csp = parsed.headers['content-security-policy'];
+  assert.isTrue(csp.includes("script-src 'self'"));
 };
 ```
 
