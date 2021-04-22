@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c58
-title: Run Functional Tests on API Endpoints using Chai-HTTP
+title: 使用 Chai-HTTP 在 API 端上运行功能测试
 challengeType: 2
 forumTopicId: 301593
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http
@@ -8,13 +8,13 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-Mocha allows testing asyncronous operations. There is a small (BIG) difference. Can you spot it?
+Mocha 允许测试异步操作。 有一个差异， 你能发现它吗？
 
-We can test our API endpoints using a plugin, called `chai-http`. Let's see how it works. And remember, API calls are asynchronous.
+我们可以使用一个叫作 `chai-http` 的插件测试 API 端点。 让我们看看它是如何工作的。 请记住，API 调用是异步的。
 
-The following is an example of a test using `chai-http` for the `'GET /hello?name=[name] => "hello [name]"'` suite. The test sends a name string in a url query string (`?name=John`) using a `GET`request to the `server`. In the `end` method's callback function, the response object (`res`) is received and contains the `status` property. The first `assert.equal` checks if the status is equal to `200`. The second `assert.equal` checks that the response string (`res.text`) is equal to `"hello John"`.
+以下是使用 `chai-http` 测试 `'GET /hello?name=[name] => "hello [name]"'` 套件的例子。 测试通过 `GET` 请求在 url 查询字符串 `?name=John` 中发送一个名称字符串给 `server`。 在 `end` 方法的回调函数中，接收包含 `status` 属性的响应对象（`res`）。 第一个 `assert.equal` 检查状态是否为 `200`。 第二个 `assert.equal` 检查响应字符串 `res.text` 是否为 `"hello John"`。
 
 ```js
 suite('GET /hello?name=[name] => "hello [name]"', function () {
@@ -34,17 +34,17 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   });
 ```
 
-Notice the `done` parameter in the test's callback function. Calling it at the end without an argument is necessary to signal successful asynchronous completion.
+请注意测试的回调函数中的 `done` 参数。 在没有传入参数的情况下调用它，是成功完成异步任务所必需的。
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` response to make the test pass. Do not alter the arguments passed to the asserts.
+在 `tests/2_functional-tests.js` 中，修改 `'Test GET /hello with no name'` 测试（`// #1`），对 `status` 和 `text` 使用断言。 不要修改传给断言的参数。
 
-There should be no name in the query; the endpoint responds with `hello Guest`.
+不要在 query 中传入 name，端点将会返回 `hello Guest`。
 
 # --hints--
 
-All tests should pass
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -58,7 +58,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' == 200
+应测试 “res.status” 是否为 200。
 
 ```js
 (getUserInput) =>
@@ -74,7 +74,7 @@ You should test for 'res.status' == 200
   );
 ```
 
-You should test for 'res.text' == 'hello Guest'
+应测试 “res.text“ 是否为 ”hello Guest“。
 
 ```js
 (getUserInput) =>

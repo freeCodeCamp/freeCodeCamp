@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c43
-title: Personal Library
+title: 个人图书馆
 challengeType: 4
 forumTopicId: 301571
 dashedName: personal-library
@@ -8,25 +8,25 @@ dashedName: personal-library
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://personal-library.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://personal-library.freecodecamp.rocks/>。 可以采用下面的任意一种方式完成这个挑战：
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-library) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-library)) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   克隆 [这个 GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-library) 并在本地完成项目。
+-   使用 [repl.it 上的初始化项目](https://repl.it/github/freeCodeCamp/boilerplate-project-library) 来完成项目。
+-   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
 
 # --instructions--
 
-1.  Add your MongoDB connection string to `.env` without quotes as `DB`  
-   Example: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
-2.  In your `.env` file set `NODE_ENV` to `test`, without quotes
-3.  You need to create all routes within `routes/api.js`
-4.  You will create all functional tests in `tests/2_functional-tests.js`
+1.  将的 MongoDB 连接字符串添加到 `.env` 中（没有引号），`DB`  
+   示例： `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
+2.  在 `.env` 文件中设置 `NODE_ENV` 为 `test`中，没有引号
+3.  需要在 `routes/api.js` 中创建所有路由
+4.  在 `tests/2_functional-tests.js` 中创建所有的功能测试
 
 # --hints--
 
-You can provide your own project, not the example URL.
+提交自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -36,7 +36,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You can send a <b>POST</b> request to `/api/books` with `title` as part of the form data to add a book.  The returned response will be an object with the `title` and a unique `_id` as keys.  If `title` is not included in the request, the returned response should be the string `missing required field title`.
+可以发送 <b>POST</b> 请求到 `/api/books`，带有 `title` 作为表单数据的一部分，来添加一本书。  返回的响应将是一个包含 `title` 和唯一的 `_id` 作为键的对象。  如果 `title` 未包含在请求中，返回的响应应该是字符串 `missing required field title`。
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>GET</b> request to `/api/books` and receive a JSON response representing all the books. The JSON response will be an array of objects with each object (book) containing `title`, `_id`, and `commentcount` properties.
+可以向 `/api/books` 发送 <b>GET</b> 请求，并返回代表所有书的 JSON 响应。 JSON 响应应该是一个包含有 `title`、`_id` 和 `commentcount` 属性的对象数组 。
 
 ```js
 async (getUserInput) => {
@@ -85,7 +85,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). If no book is found, return the string `no book exists`.
+可以发送 <b>GET</b> 请求到 `/api/books/{_id}` 来检索一本书的单个对象，返回属性 `title`、`_id` 和 `comments` 数组 (如果没有评论，则展示空数组)。 如果找不到书, 返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -109,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
+可以发送一个 <b>POST</b> 请求，其中包含 `comment` 作为表单正文数据，请求到 `/api/books/{_id}` 以便将评论添加到书中。 返回的响应将是书对象，在先前测试中 <b>GET</b> `/api/books/{_id}` 类似。 如果请求中没有包含 `comment` ，返回字符串 `missing required field comment`。 如果找不到书, 返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -147,7 +147,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. The returned response will be the string `delete successful` if successful. If no book is found, return the string `no book exists`.
+可以向 `/api/books/{_id}` 发送 <b>DELETE</b> 请求，从收藏中删除一本书。 如果成功，返回的响应将是字符串 `delete successful`。 如果找不到书, 返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -171,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `'complete delete successful` if successful.
+可以向 `/api/books` 发送 <b>DELETE</b> 请求来删除数据库中的所有书籍。 如果成功，返回的响应将是字符串 `'complete delete successful`。
 
 ```js
 async (getUserInput) => {
@@ -188,7 +188,7 @@ async (getUserInput) => {
 };
 ```
 
-All 10 functional tests required are complete and passing.
+所有 10 项功能测试都已完成并通过。
 
 ```js
 async (getUserInput) => {

@@ -8,7 +8,10 @@ import {
   projectFormValuesSelector
 } from '../redux';
 import { tap, mapTo } from 'rxjs/operators';
-import { forumLocation } from '../../../../../config/env.json';
+import { transformEditorLink } from '../utils';
+import envData from '../../../../../config/env.json';
+
+const { forumLocation } = envData;
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;
@@ -52,6 +55,7 @@ function createQuestionEpic(action$, state$, { window }) {
 
       let textMessage = dedent(
         `**Tell us what's happening:**
+        Describe your issue in detail here.
 
         ${
           projectFormValues.length
@@ -60,7 +64,7 @@ function createQuestionEpic(action$, state$, { window }) {
         }
         ${
           projectFormValues
-            ?.map(([key, val]) => `${key}: ${val}\n`)
+            ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n`)
             ?.join('') || filesToMarkdown(files)
         }
 

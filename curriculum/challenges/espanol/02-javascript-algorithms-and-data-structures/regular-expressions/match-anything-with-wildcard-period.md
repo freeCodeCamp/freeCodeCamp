@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b94
-title: Match Anything with Wildcard Period
+title: Haz coincidir cualquier cosa con el comodín punto
 challengeType: 1
 forumTopicId: 301348
 dashedName: match-anything-with-wildcard-period
@@ -8,72 +8,74 @@ dashedName: match-anything-with-wildcard-period
 
 # --description--
 
-Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: `.`
+A veces no conoces (o no necesitas conocer) los caracteres exactos en tus patrones. Pensar en todas las palabras que coincidan, digamos, con una ortografía errónea llevaría mucho tiempo. Afortunadamente, puedes ahorrar tiempo utilizando el carácter de comodín: `.`
 
-The wildcard character `.` will match any one character. The wildcard is also called `dot` and `period`. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match `"hug"`, `"huh"`, `"hut"`, and `"hum"`, you can use the regex `/hu./` to match all four words.
+El carácter de comodín `.` coincidirá con cualquier carácter único. El comodín también es llamado `dot` y `period`. Puedes utilizar el carácter de comodín como cualquier otro carácter en la expresión regular. Por ejemplo, si quieres hacer coincidir `hug`, `huh`, `hut`, y `hum`, puedes usar la la expresión regular `/hu./` para que coincida con las cuatro palabras.
 
 ```js
 let humStr = "I'll hum a song";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
-huRegex.test(humStr); // Returns true
-huRegex.test(hugStr); // Returns true
+huRegex.test(humStr);
+huRegex.test(hugStr);
 ```
+
+Ambas llamadas a `test` devolverán `true`.
 
 # --instructions--
 
-Complete the regex `unRegex` so that it matches the strings `"run"`, `"sun"`, `"fun"`, `"pun"`, `"nun"`, and `"bun"`. Your regex should use the wildcard character.
+Completa la expresión regular `unRegex` para que coincida con las cadenas `run`, `sun`, `fun`, `pun`, `nun`, y `bun`. Tu expresión regular debe usar el carácter de comodín.
 
 # --hints--
 
-You should use the `.test()` method.
+Debes usar el método `.test()`.
 
 ```js
 assert(code.match(/\.test\(.*\)/));
 ```
 
-You should use the wildcard character in your regex `unRegex`
+Debes usar el carácter de comodín en tu expresión regular `unRegex`
 
 ```js
 assert(/\./.test(unRegex.source));
 ```
 
-Your regex `unRegex` should match `"run"` in `"Let us go on a run."`
+Tu expresión regular `unRegex` debe coincidir con `run` en la cadena `Let us go on a run.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Let us go on a run.'));
 ```
 
-Your regex `unRegex` should match `"sun"` in `"The sun is out today."`
+Tu expresión regular `unRegex` debe coincidir con `sun` en la cadena `The sun is out today.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('The sun is out today.'));
 ```
 
-Your regex `unRegex` should match `"fun"` in `"Coding is a lot of fun."`
+Tu expresión regular `unRegex` debe coincidir con `fun` en la cadena `Coding is a lot of fun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Coding is a lot of fun.'));
 ```
 
-Your regex `unRegex` should match `"pun"` in `"Seven days without a pun makes one weak."`
+Tu expresión regular `unRegex` debe coincidir con `pun` en la cadena `Seven days without a pun makes one weak.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Seven days without a pun makes one weak.'));
 ```
 
-Your regex `unRegex` should match `"nun"` in `"One takes a vow to be a nun."`
+Tu expresión regular `unRegex` debe coincidir con `nun` en la cadena `One takes a vow to be a nun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-Your regex `unRegex` should match `"bun"` in `"She got fired from the hot dog stand for putting her hair in a bun."`
+Tu expresión regular `unRegex` debe coincidir con `bun` en la cadena `She got fired from the hot dog stand for putting her hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
@@ -84,14 +86,14 @@ assert(
 );
 ```
 
-Your regex `unRegex` should not match `"There is a bug in my code."`
+Tu expresión regular `unRegex` no debe coincidir con la cadena `There is a bug in my code.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(!unRegex.test('There is a bug in my code.'));
 ```
 
-Your regex `unRegex` should not match `"Catch me if you can."`
+Tu expresión regular `unRegex` no debe coincidir con la cadena `Catch me if you can.`
 
 ```js
 unRegex.lastIndex = 0;

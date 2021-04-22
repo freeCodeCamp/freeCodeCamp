@@ -14,11 +14,13 @@ dashedName: arguments-optional
 
 调用这个返回的函数，为它传入一个值，会返回两个值的总和：
 
-`var sumTwoAnd = addTogether(2);`
+```js
+var sumTwoAnd = addTogether(2);
+```
 
-`sumTwoAnd(3)` 此时应返回 `5`。
+`sumTwoAnd(3)` 应返回 `5`。
 
-任何时候，只要任一传入的参数不是数字，就应返回 undefined。
+如果任一参数不是有效数字，则返回 undefined。
 
 # --hints--
 

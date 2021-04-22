@@ -21,7 +21,9 @@ Aplica la clase `blue-text` a tu elemento `h1` además de tu clase `pink-text`, 
 
 Para aplicar múltiples atributos de clase a un elemento HTML debes dejar un espacio entre ellos, como se muestra a continuación:
 
-`class="class1 class2"`
+```html
+class="class1 class2"
+```
 
 **Nota:** No importa el orden en que las clases estén enlistadas dentro del elemento HTML.
 

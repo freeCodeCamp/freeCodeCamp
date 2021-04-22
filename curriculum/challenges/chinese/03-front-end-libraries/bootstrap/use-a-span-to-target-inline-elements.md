@@ -22,7 +22,9 @@ dashedName: use-a-span-to-target-inline-elements
 
 对含有文本 `Top 3 things cats hate` 的 `p` 元素这样处理：
 
-`<p>Top 3 things cats <span class="text-danger">hate:</span></p>`
+```html
+<p>Top 3 things cats <span class="text-danger">hate:</span></p>
+```
 
 # --hints--
 
@@ -32,7 +34,7 @@ dashedName: use-a-span-to-target-inline-elements
 assert($('p span') && $('p span').length > 0);
 ```
 
-`span` 元素应该只包括 `love` 文本。
+`span` 元素应该有文本 `love`。
 
 ```js
 assert(
@@ -44,13 +46,13 @@ assert(
 );
 ```
 
-`span` 元素应该含有 `text-danger` class。
+`span` 元素应该有 `text-danger` class。
 
 ```js
 assert($('span').hasClass('text-danger'));
 ```
 
-确保 `span` 元素有一个闭合标签。
+`span` 元素应该有一个闭合标签。
 
 ```js
 assert(

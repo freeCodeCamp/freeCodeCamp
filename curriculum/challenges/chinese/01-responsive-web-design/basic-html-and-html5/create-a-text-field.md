@@ -15,7 +15,9 @@ dashedName: create-a-text-field
 
 你可以像这样创建一个文本输入框：
 
-`<input type="text">`
+```html
+<input type="text">
+```
 
 注意 `input` 输入框是没有结束标签的。
 

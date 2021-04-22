@@ -40,7 +40,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Retrieve the second tree from the variable `myPlants` using object dot and array bracket notation.
+Using dot and bracket notation, set the variable `secondTree` to the second item in the `trees` list from the `myPlants` object.
 
 # --hints--
 
@@ -72,7 +72,6 @@ assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myPlants = [
   {
     type: "flowers",
@@ -92,9 +91,7 @@ var myPlants = [
   }
 ];
 
-// Only change code below this line
-
-var secondTree = ""; // Change this line
+var secondTree = "";
 ```
 
 # --solutions--
@@ -118,8 +115,6 @@ var myPlants = [
     ]
   }
 ];
-
-// Only change code below this line
 
 var secondTree = myPlants[1].list[1];
 ```

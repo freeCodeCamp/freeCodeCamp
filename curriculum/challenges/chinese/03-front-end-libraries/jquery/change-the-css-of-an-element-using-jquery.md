@@ -17,23 +17,25 @@ jQuery 有一个 `.css()` 方法，能改变标签的 CSS。
 
 下面的代码效果是把颜色变蓝：
 
-`$("#target1").css("color", "blue");`
+```js
+$("#target1").css("color", "blue");
+```
 
 这与通常的 CSS 声明略有不同，因为这个 CSS 属性和它的值在英文引号里，并且它们用逗号而不是冒号间隔开。
 
-删除 jQuery 选择器，并留下空的 `document ready function`。
+删除 jQuery 选择器，留下一个空的 `document ready function` 。
 
-选择 `target1` 并将其颜色变为红色（red）。
+选择 `target1`，并将其颜色更改为红色。
 
 # --hints--
 
-`target1` 标签应该有红色文本。
+`target1` 元素应该有红色文本。
 
 ```js
 assert($('#target1').css('color') === 'rgb(255, 0, 0)');
 ```
 
-应该仅用 jQuery 给标签添加类。
+应该仅用 jQuery 给元素添加这些 class。
 
 ```js
 assert(!code.match(/class.*animated/g));

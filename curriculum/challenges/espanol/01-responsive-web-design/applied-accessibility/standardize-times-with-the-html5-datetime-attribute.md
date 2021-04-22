@@ -9,19 +9,21 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --description--
 
-Continuando con el tema de fechas, HTML5 también introdujo el elemento `time` junto con un atributo `datetime` para estandarizar las horas. El atributo `datetime` es un elemento en línea que puede envolver una fecha o hora en una página. Un atributo `datetime` contiene un formato válido para esa fecha. Este es el valor al que acceden los dispositivos de asistencia. Ayuda a evitar la confusión al declarar una versión estandarizada de un tiempo, incluso si está escrita informal o coloquialmente en el texto.
+Continuando con el tema de fechas, HTML5 también introdujo el elemento `time` junto con un atributo `datetime` para estandarizar las horas. El elemento `time` es un elemento en línea que puede ajustar una fecha u hora en una página. Un atributo `datetime` contiene un formato válido para esa fecha. Este es el valor al que acceden los dispositivos de asistencia. Ayuda a evitar la confusión al declarar una versión estandarizada de un tiempo, incluso si está escrita informal o coloquialmente en el texto.
 
 Aquí hay un ejemplo:
 
-`<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>`
+```html
+<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>
+```
 
 # --instructions--
 
-¡Ya tenemos los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelva una etiqueta `time` alrededor del texto `Thursday, September 15<sup>th<sup>` y agregue un atributo `datetime` establecido en `2016-09-15`.
+¡Ya tenemos los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelve una etiqueta `time` alrededor del texto `Thursday, September 15<sup>th<sup>` y agrega un atributo `datetime` establecido en `2016-09-15`.
 
 # --hints--
 
-Tu código debe tener un elemento `p` que incluya el texto `Thank you to everyone for responding to Master Camper Cat's survey.` e incluye un elemento `time`.
+Tu código debe tener un elemento `p` que incluya el texto `Thank you to everyone for responding to Master Camper Cat's survey.` e incluya un elemento `time`.
 
 ```js
 assert(timeElement.length);

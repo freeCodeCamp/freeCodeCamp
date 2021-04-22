@@ -15,7 +15,9 @@ La función `animation-timing-function` se realiza automáticamente en cada foto
 
 La siguiente curva cúbica de Bezier simula el movimiento de rebotes:
 
-`cubic-bezier(0.3, 0.4, 0.5, 1.6);`
+```css
+cubic-bezier(0.3, 0.4, 0.5, 1.6);
+```
 
 Observa que el valor de y2 es mayor que 1. Aunque la curva cúbica de Bezier se mapea en un sistema de coordenadas 1 por 1, y solo puede aceptar valores x de 0 a 1, el valor y se puede establecer en números mayores que uno. Esto da como resultado un movimiento de rebote que es ideal para simular la pelota rebotando.
 

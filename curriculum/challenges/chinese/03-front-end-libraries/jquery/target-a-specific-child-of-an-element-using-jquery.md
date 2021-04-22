@@ -19,9 +19,11 @@ jQuery 可以用 CSS 选择器（CSS Selectors）选取标签。 `target:nth-chi
 
 下面的代码展示了给每个区域（well）的第 3 个标签设置弹跳（bounce）动画效果：
 
-`$(".target:nth-child(3)").addClass("animated bounce");`
+```js
+$(".target:nth-child(3)").addClass("animated bounce");
+```
 
-给 well 元素的第二个子元素添加弹跳（bounce）动画效果。 必须选择具有 `target` class 的子元素。
+给 well 元素的第二个子元素添加弹跳（bounce）动画效果。 你必须选择具有 `target` class 的元素子项。
 
 # --hints--
 
@@ -34,19 +36,19 @@ assert(
 );
 ```
 
-应该仅两个标签有弹跳（bounce）动画效果。
+应该仅两个元素有弹跳（bounce）动画效果。
 
 ```js
 assert($('.animated.bounce').length === 2);
 ```
 
-应该用 `:nth-child()` 选择器修改这些标签。
+你应该使用 `:nth-child()` 选择器修改这些元素。
 
 ```js
 assert(code.match(/\:nth-child\(/g));
 ```
 
-应该仅用 jQuery 给标签添加类。
+应该仅用 jQuery 给元素添加 class。
 
 ```js
 assert(

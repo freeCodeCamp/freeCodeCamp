@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512baa
-title: Reuse Patterns Using Capture Groups
+title: Reutiliza patrones usando grupos de captura
 challengeType: 1
 forumTopicId: 301364
 dashedName: reuse-patterns-using-capture-groups
@@ -8,78 +8,80 @@ dashedName: reuse-patterns-using-capture-groups
 
 # --description--
 
-Some patterns you search for will occur multiple times in a string. It is wasteful to manually repeat that regex. There is a better way to specify when you have multiple repeat substrings in your string.
+Algunos patrones que busques aparecerán múltiples veces en una cadena. Es un desperdicio repetir manualmente esa expresión regular. Existe una mejor forma de especificar que tienes múltiples subcadenas repetidas en tu cadena.
 
-You can search for repeat substrings using <dfn>capture groups</dfn>. Parentheses, `(` and `)`, are used to find repeat substrings. You put the regex of the pattern that will repeat in between the parentheses.
+Puedes buscar subcadenas repetidas utilizando <dfn>grupos de captura</dfn>. Los paréntesis, `(` y `)`, son usados para encontrar subcadenas repetidas. Introduces la expresión regular del patrón que se repetirá entre los paréntesis.
 
-To specify where that repeat string will appear, you use a backslash (<code>\\</code>) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be `\1` to match the first group.
+Para especificar donde aparecerá esa cadena repetida, utilizarás una barra invertida (`\`) y luego un número. Este número inicia en 1 e incrementa con cada grupo de captura adicional que utilices. Un ejemplo podría ser `\1` para coincidir con el primer grupo.
 
-The example below matches any word that occurs twice separated by a space:
+El siguiente ejemplo encuentra cualquier palabra que ocurra dos veces separada por un espacio:
 
 ```js
 let repeatStr = "regex regex";
 let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr); // Returns true
-repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
+repeatRegex.test(repeatStr);
+repeatStr.match(repeatRegex);
 ```
 
-Using the `.match()` method on a string will return an array with the string it matches, along with its capture group.
+La llamada a la función `test` devolverá `true`, y la llamada a la función `match` devolverá `["regex regex", "regex"]`.
+
+Utilizar el método `.match()` en una cadena devuelve un arreglo con la cadena que coincide, junto con su grupo de captura.
 
 # --instructions--
 
-Use capture groups in `reRegex` to match a string that consists of only the same number repeated exactly three times separated by single spaces.
+Utiliza los grupos de captura en `reRegex` para que coincida con una cadena que conste sólo del mismo número repetido exactamente tres veces separado por espacios.
 
 # --hints--
 
-Your regex should use the shorthand character class for digits.
+Tu expresión regular debe utilizar la clase de caracteres abreviada para los dígitos.
 
 ```js
 assert(reRegex.source.match(/\\d/));
 ```
 
-Your regex should reuse a capture group twice.
+Tu expresión regular debe reutilizar un grupo de captura dos veces.
 
 ```js
 assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 ```
 
-Your regex should match `"42 42 42"`.
+Tu expresión regular debe coincidir con la cadena `42 42 42`.
 
 ```js
 assert(reRegex.test('42 42 42'));
 ```
 
-Your regex should match `"100 100 100"`.
+Tu expresión regular debe coincidir con la cadena `100 100 100`.
 
 ```js
 assert(reRegex.test('100 100 100'));
 ```
 
-Your regex should not match `"42 42 42 42"`.
+Tu expresión regular no debe coincidir con la cadena `42 42 42 42`.
 
 ```js
 assert.equal('42 42 42 42'.match(reRegex.source), null);
 ```
 
-Your regex should not match `"42 42"`.
+Tu expresión regular no debe coincidir con la cadena `42 42`.
 
 ```js
 assert.equal('42 42'.match(reRegex.source), null);
 ```
 
-Your regex should not match `"101 102 103"`.
+Tu expresión regular no debe coincidir con la cadena `101 102 103`.
 
 ```js
 assert(!reRegex.test('101 102 103'));
 ```
 
-Your regex should not match `"1 2 3"`.
+Tu expresión regular no debe coincidir con la cadena `1 2 3`.
 
 ```js
 assert(!reRegex.test('1 2 3'));
 ```
 
-Your regex should match `"10 10 10"`.
+Tu expresión regular debe coincidir con la cadena `10 10 10`.
 
 ```js
 assert(reRegex.test('10 10 10'));

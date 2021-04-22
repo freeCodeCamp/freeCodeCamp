@@ -21,7 +21,9 @@ Se considera buena práctica definir explícitamente la relación entre un `inpu
 
 A continuación te presentamos un ejemplo de una casilla de verificación:
 
-`<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>`
+```html
+<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+```
 
 # --instructions--
 

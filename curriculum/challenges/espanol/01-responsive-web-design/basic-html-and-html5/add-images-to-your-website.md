@@ -13,7 +13,9 @@ Puedes agregar imágenes a tu sitio web utilizando el elemento `img`, y apuntar 
 
 Un ejemplo de esto sería:
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg">`
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg">
+```
 
 Ten en cuenta que los elementos `img` se cierran automáticamente.
 
@@ -25,7 +27,9 @@ Idealmente, el atributo `alt` no debe contener caracteres especiales a menos que
 
 Agreguemos un atributo `alt` a nuestro ejemplo `img` anterior:
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+```
 
 # --instructions--
 
@@ -33,9 +37,7 @@ Intentemos agregar una imagen a nuestro sitio web:
 
 Dentro del elemento `main`, inserta un elemento `img` antes de los elementos `p` existentes.
 
-Ahora establece el atributo `src` para que apunte a esta url:
-
-`https://bit.ly/fcc-relaxing-cat`
+Ahora establece el atributo `src` para que apunte a la url `https://bit.ly/fcc-relaxing-cat`
 
 Finalmente, no olvides darle a tu elemento `img` un atributo `alt` con texto descriptivo.
 

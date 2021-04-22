@@ -17,9 +17,13 @@ Es importante tener en cuenta que cuando el orden de tabulación se establece de
 
 Aquí hay un ejemplo:
 
-`<div tabindex="1">I get keyboard focus, and I get it first!</div>`
+```html
+<div tabindex="1">I get keyboard focus, and I get it first!</div>
+```
 
-`<div tabindex="2">I get keyboard focus, and I get it second!</div>`
+```html
+<div tabindex="2">I get keyboard focus, and I get it second!</div>
+```
 
 # --instructions--
 

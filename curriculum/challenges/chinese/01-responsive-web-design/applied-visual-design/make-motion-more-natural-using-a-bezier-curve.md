@@ -15,17 +15,19 @@ dashedName: make-motion-more-natural-using-a-bezier-curve
 
 下面的例子模拟了杂耍球运动：
 
-`cubic-bezier(0.3, 0.4, 0.5, 1.6);`
+```css
+cubic-bezier(0.3, 0.4, 0.5, 1.6);
+```
 
-注意 y2 的值是大于 1 的。 虽然贝塞尔曲线是在 1 * 1 的坐标系统内 x 值只能取 0 到 1，但是 y 值是可以大于 1 的。 这样我们才能模拟杂耍球运动。
+注意 y2 的值是大于 1 的。 虽然贝塞尔曲线是在 1*1 的坐标系统内，x 值只能在 0 到 1，但是 y 值是可以大于 1 的。 这样才能模拟杂耍球运动。
 
 # --instructions--
 
-把 id 为 `green` 的元素的 `animation-timing-function` 值改成 `cubic-bezier` 函数，函数的参数 x1、y1、x2、y2 值依次为 0.311、0.441、0.444、1.649。
+把 id 为 `green` 的元素的 `animation-timing-function` 值改成 `cubic-bezier` 函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。
 
 # --hints--
 
-id 为 `green` 的元素的 `animation-timing-function` 属性值应为 `cubic-bezier` 函数，函数的参数 x1、y1、x2、y2 的值依次为 0.311、0.441、0.444、1.649。
+id 为 `green` 的元素的 `animation-timing-function` 值应为 `cubic-bezier` 函数，函数的参数 x1，y1，x2，y2 值应为指定值。
 
 ```js
 assert(

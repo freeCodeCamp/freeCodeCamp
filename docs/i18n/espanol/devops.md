@@ -16,7 +16,7 @@ Esto involucra tres pasos que deben seguirse en secuencia:
 
 #### Construyendo la base de código - Mapeando las Ramas de Git con los Despliegues.
 
-Normalmente,  [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (la rama de desarrollo por defecto) se integra diariamente en la rama [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) y se publica en una infraestructura aislada.
+Normalmente, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (la rama de desarrollo por defecto) se integra diariamente en la rama [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) y se publica en una infraestructura aislada.
 
 Esta es una publicación intermedia para nuestros desarrolladores y colaboradores voluntarios. También es conocida como nuestra publicación "staging" o "beta".
 
@@ -118,7 +118,6 @@ El proceso es prácticamente el mismo que el de las plataformas de staging, con 
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 |                                                                                                                                                                                |
 
-
 1. Make sure your `prod-staging` branch is pristine and in sync with the upstream.
 
    ```sh
@@ -152,7 +151,6 @@ Para uso del personal:
 | Revisa tu correo electrónico para ver si hay un enlace directo o [ve al panel de publicaciones](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) después de que la ejecución de la compilación haya terminado. |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                                                                                                                                                                                                                             |
-
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers.
 
@@ -292,7 +290,8 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 
 We are working on creating our IaC setup, and while that is in works you can use the Azure portal or the Azure CLI to spin new virtual machines and other resources.
 
-> [!TIP] No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do  some of the basic provisioning like installing docker or adding SSH keys, etc.
+> [!TIP] No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do some of the basic provisioning like installing docker or adding SSH keys, etc.
+
 ## Mantener las VMs actualizadas
 
 Debes mantener las máquinas virtuales actualizadas mediante la realización de actualizaciones. Esto asegurará que la máquina virtual se ha parcheado con las correcciones de seguridad más recientes.
@@ -433,7 +432,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm
+   npm i -g npm@6
    npm i -g pm2
    pm2 install pm2-logrotate
    pm2 startup
@@ -537,7 +536,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm
+   npm i -g npm@6
    npm i -g pm2
    npm install -g serve
    pm2 install pm2-logrotate
@@ -614,7 +613,6 @@ pm2 reload all --update-env && pm2 logs
 ## Work on Chat Servers
 
 Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
-
 
 We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available here](https://github.com/freeCodeCamp/chat-nginx-config).
 
@@ -707,7 +705,6 @@ Provisioning VMs with the Code
 
 ### Updating Instances (Maintenance)
 
-
 **NGINX Cluster:**
 
 Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
@@ -785,7 +782,7 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
    Are you sure you want to continue? [y/N] y
    ```
 
-   Select yes (y) to remove everything that is not in use.
+   Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
 
 ## Updating Node.js versions on VMs
 
@@ -811,18 +808,18 @@ Verify installed packages
 npm ls -g --depth=0
 ```
 
-Alias `default` Node.js versions to the current `stable`
+Alias the `default` Node.js version to the current LTS
 
 ```console
-nvm alias default stable
+nvm alias default lts/*
 ```
-
 
 (Optional) Uninstall old versions
 
 ```console
 nvm uninstall <version>
 ```
+
 > [!WARNING] If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 
 Quick commands for PM2 to list, resurrect saved processes, etc.
@@ -846,7 +843,6 @@ pm2 logs
 > [!DANGER] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents
-
 
 See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
 
@@ -895,3 +891,34 @@ Currently updating agents requires them to be removed and reconfigured. This is 
    ```
 
 Once You have completed the steps above, you can repeat the same steps as installing the agent.
+
+# Flight Manual - Email Blast
+
+We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
+
+1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
+
+2. Set up the script to fetch the email list.
+
+   ```console
+   cd /home/freecodecamp/scripts/emails
+   cp sample.env .env
+   ```
+
+   You will need to replace the placeholder values in the `.env` file with your credentials.
+
+3. Run the script.
+
+   ```console
+   node get-emails.js emails.csv
+   ```
+
+   This will save the email list in an `emails.csv` file.
+
+4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
+
+5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
+
+6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+
+7. When the email blast is complete, verify that no emails have failed before destroying the droplets.

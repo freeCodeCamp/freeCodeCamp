@@ -20,7 +20,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-`name` and `numLegs` are called `own` properties, because they are defined directly on the instance object. That means that `duck` and `canary` each has its own separate copy of these properties. In fact every instance of `Bird` will have its own copy of these properties. The following code adds all of the `own` properties of `duck` to the array `ownProps`:
+`name` and `numLegs` are called <dfn>own properties</dfn>, because they are defined directly on the instance object. That means that `duck` and `canary` each has its own separate copy of these properties. In fact every instance of `Bird` will have its own copy of these properties. The following code adds all of the own properties of `duck` to the array `ownProps`:
 
 ```js
 let ownProps = [];
@@ -38,7 +38,7 @@ The console would display the value `["name", "numLegs"]`.
 
 # --instructions--
 
-Add the `own` properties of `canary` to the array `ownProps`.
+Add the own properties of `canary` to the array `ownProps`.
 
 # --hints--
 

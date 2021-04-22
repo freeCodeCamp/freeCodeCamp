@@ -13,13 +13,15 @@ dashedName: link-to-external-pages-with-anchor-elements
 
 `a` 需要一个 `href` 属性指向跳转的目的地。 同时，它还应有内容。 例如：
 
-`<a href="https://freecodecamp.org">this links to freecodecamp.org</a>`
+```html
+<a href="https://freecodecamp.org">this links to freecodecamp.org</a>
+```
 
 浏览器将显示文本 `this links to freecodecamp.org`，这是一个可点击的链接。 你可以通过这个链接访问 `https://www.freecodecamp.org`。
 
 # --instructions--
 
-创建一个内容文本为 “cat photos” 的 `a` 元素，并将其 `href` 属性值设置为 `https://freecatphotoapp.com`。
+创建一个内容文本为 “cat photos” 的 `a` 元素，链接指向 `https://freecatphotoapp.com`。
 
 # --hints--
 
@@ -29,7 +31,7 @@ dashedName: link-to-external-pages-with-anchor-elements
 assert(/cat photos/gi.test($('a').text()));
 ```
 
-你的 `a` 元素应链接到 `https://freecatphotoapp.com`。
+你的 `a` 元素应链接到 `https://freecatphotoapp.com`
 
 ```js
 assert(/^https?:\/\/freecatphotoapp\.com\/?$/i.test($('a').attr('href')));

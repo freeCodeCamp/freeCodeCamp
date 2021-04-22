@@ -15,17 +15,19 @@ dashedName: learn-how-bezier-curves-work
 
 `cubic-bezier` 函数包含了 1 * 1 网格里的4个点：`p0`、`p1`、`p2`、`p3`。 其中 `p0` 和 `p3` 是固定值，代表曲线的起始点和结束点，坐标值依次为 (0, 0) 和 (1, 1)。 你只需设置另外两点的 x 值和 y 值，设置的这两点确定了曲线的形状从而确定了动画的速度曲线。 在 CSS 里面通过 `(x1, y1, x2, y2)` 来确定 `p1` 和 `p2`。 以下就是 CSS 贝塞尔曲线的例子：
 
-`animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);`
+```css
+animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+```
 
-在上面的例子里，两个点的 x 和 y 值相等（x1 = 0.25 = y1 和 x2 = 0.75 = y2），如果你还记得初中几何，结果是从原点到点 (1, 1) 的一条直线。 动画速度呈线性，效果和 `linear` 一致。 换言之，元素会匀速运动。
+在上面的例子里，两个点的 x 和 y 值相等（x1 = 0.25 = y1 和 x2 = 0.75 = y2）。如果你还记得几何课的知识，结果是从原点到点 (1, 1) 的一条直线。 元素在动画中的速度呈线性，效果和使用 `linear` 关键词的效果一致。 换言之，元素匀速运动。
 
 # --instructions--
 
-对于 id 为 `ball1` 的元素，请把 `animation-timing-function` 属性值从 `linear` 变成等价的 `cubic-bezier` 函数值。 也就是使用上面例子给的值。
+对于 id 为 `ball1` 的元素，把 `animation-timing-function` 属性的值从 `linear` 改为等价的 `cubic-bezier` 函数值。 也就是说使用上面例子给的值。
 
 # --hints--
 
-对于 id 为 `ball1` 的元素，请把 `animation-timing-function` 属性值从 linear 变成等价的 `cubic-bezier` 函数值。也就是使用上面例子给的值。
+id 为 `ball1` 的元素的 `animation-timing-function` 属性值应该为和 linear 预定值等价的 `cubic-bezier` 函数值。
 
 ```js
 assert(
@@ -34,7 +36,7 @@ assert(
 );
 ```
 
-id 为 `ball2` 的元素的 `animation-timing-function` 属性值应该保持不变。
+id 为 `ball2` 的元素的 `animation-timing-function` 属性值不应改变。
 
 ```js
 const ball2Animation = __helpers.removeWhiteSpace(

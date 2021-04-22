@@ -19,19 +19,21 @@ jQuery 通常选取并操作带有<dfn>选择器（selector）</dfn>的 HTML 标
 
 比如，想要给 `button` 元素添加跳跃效果。 只需要在 document ready 函数内添加如下代码：
 
-`$("button").addClass("animated bounce");`
+```js
+$("button").addClass("animated bounce");
+```
 
-请注意，已经在后台引入了 jQuery 库和 Animate.css 库，所以可以在编辑器里直接使用 jQuery 和动画。 因此，只需要通过 jQuery 给 `button` 元素添加 `bounce` 类就可以了。
+请注意，我们已经在后台引入了 jQuery 库和 Animate.css 库，所以你可以在编辑器里直接使用它们。 你将使用 jQuery 将 Animate.css `bounce` class 应用于 `button` 元素。
 
 # --hints--
 
-应该用 jQuery 的 `addClass()` 方法给 `button` 标签添加 `animated` 和 `bounce` 类。
+应该用 jQuery 的 `addClass()` 函数给 `button` 元素添加 `animated` 和 `bounce` class。
 
 ```js
 assert($('button').hasClass('animated') && $('button').hasClass('bounce'));
 ```
 
-应该仅用 jQuery 给标签添加这些 class。
+应该仅用 jQuery 给元素添加 class。
 
 ```js
 assert(!code.match(/class.*animated/g));

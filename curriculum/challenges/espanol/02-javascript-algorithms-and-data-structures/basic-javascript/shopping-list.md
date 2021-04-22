@@ -13,7 +13,9 @@ Crea una lista de compras en la variable `myList`. La lista debe ser un arreglo 
 
 El primer elemento de cada sub-arreglo debe contener una cadena con el nombre del artículo. El segundo elemento debe ser un número que represente la cantidad, por ejemplo.
 
-`["Chocolate Bar", 15]`
+```js
+["Chocolate Bar", 15]
+```
 
 Debe haber al menos 5 sub-arreglos en la lista.
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9c
-title: Find One or More Criminals in a Hunt
+title: Encuentra uno o más criminales en una cacería
 challengeType: 1
 forumTopicId: 301343
 dashedName: find-one-or-more-criminals-in-a-hunt
@@ -8,11 +8,11 @@ dashedName: find-one-or-more-criminals-in-a-hunt
 
 # --description--
 
-Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
+Es hora de hacer una pausa y probar tus nuevas habilidades para escribir expresiones regulares. Un grupo de criminales se han escapado de la cárcel, pero no sabes cuántos. Sin embargo, sabes que permanecen unidos cuando están alrededor de otras personas. Eres responsable de encontrar a todos los criminales a la vez.
 
-Here's an example to review how to do this:
+Este es un ejemplo para revisar cómo hacer esto:
 
-The regex `/z+/` matches the letter `z` when it appears one or more times in a row. It would find matches in all of the following strings:
+La expresión regular `/z+/` coincide con la letra `z` cuando aparece una o más veces seguidas. Encontrará coincidencias en las siguientes cadenas:
 
 ```js
 "z"
@@ -22,7 +22,7 @@ The regex `/z+/` matches the letter `z` when it appears one or more times in a r
 "abczzzzzzzzzzzzzzzzzzzzzabc"
 ```
 
-But it does not find matches in the following strings since there are no letter `z` characters:
+Pero no encuentra coincidencias en las siguientes cadenas, ya que no hay letras `z`:
 
 ```js
 ""
@@ -32,32 +32,32 @@ But it does not find matches in the following strings since there are no letter 
 
 # --instructions--
 
-Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter `C`.
+Escribe una expresión regular codiciosa que encuentre uno o más criminales dentro de un grupo de personas. Un criminal está representado por la letra mayúscula `C`.
 
 # --hints--
 
-Your regex should match one criminal (`C`) in `"C"`
+Tu expresión regular debe coincidir con un criminal (`C`) en la cadena `C`
 
 ```js
 assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
 ```
 
-Your regex should match two criminals (`CC`) in `"CC"`
+Tu expresión regular debe coincidir con dos criminales (`CC`) en la cadena `CC`
 
 ```js
 assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
 ```
 
-Your regex should match three criminals (`CCC`) in `"P1P5P4CCCP2P6P3"`
+Tu expresión regular debe coincidir con tres criminales (`CCC`) en la cadena `P1P5P4CCCcP2P6P3`.
 
 ```js
 assert(
-  'P1P5P4CCCP2P6P3'.match(reCriminals) &&
-    'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC'
+  'P1P5P4CCCcP2P6P3'.match(reCriminals) &&
+    'P1P5P4CCCcP2P6P3'.match(reCriminals)[0] == 'CCC'
 );
 ```
 
-Your regex should match five criminals (`CCCCC`) in `"P6P2P7P4P5CCCCCP3P1"`
+Tu expresión regular debe coincidir con cinco criminales (`CCCCC`) en la cadena `P6P2P7P4P5CCCCCP3P1`
 
 ```js
 assert(
@@ -66,19 +66,19 @@ assert(
 );
 ```
 
-Your regex should not match any criminals in `""`
+Tu expresión regular no debe coincidir con ningún criminal en la cadena vacía `""`
 
 ```js
 assert(!reCriminals.test(''));
 ```
 
-Your regex should not match any criminals in `"P1P2P3"`
+Tu regex no debe coincidir con ningún criminal en la cadena `P1P2P3`
 
 ```js
 assert(!reCriminals.test('P1P2P3'));
 ```
 
-Your regex should match fifty criminals (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) in `"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"`.
+Tu expresión regular debe coincidir con cincuenta criminales (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) en la cadena `P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3`.
 
 ```js
 assert(

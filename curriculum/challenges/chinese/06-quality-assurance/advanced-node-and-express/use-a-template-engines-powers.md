@@ -1,6 +1,6 @@
 ---
 id: 5895f70bf9fc0f352b528e64
-title: Use a Template Engine's Powers
+title: 使用模板引擎
 challengeType: 2
 forumTopicId: 301567
 dashedName: use-a-template-engines-powers
@@ -8,23 +8,23 @@ dashedName: use-a-template-engines-powers
 
 # --description--
 
-One of the greatest features of using a template engine is being able to pass variables from the server to the template file before rendering it to HTML.
+模版引擎最大的特点之一就是在 HTML 页面展示之前，可以从服务端传变量到模版文件。
 
-In your Pug file, you're able to use a variable by referencing the variable name as `#{variable_name}` inline with other text on an element or by using an equal sign on the element without a space such as `p=variable_name` which assigns the variable's value to the p element's text.
+在 Pug 文件中，你可以用变量名来调用变量，比如写成 `#{variable_name}` 来实现行内调用，或像 `p=variable_name` 把元素与变量直接写在一起，这表示 p 元素的内容等价于这个变量。
 
-We strongly recommend looking at the syntax and structure of Pug [here](https://github.com/pugjs/pug) on GitHub's README. Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
+建议大家在 [Pug 的 README](https://github.com/pugjs/pug) 里看看它的语法和用法，这样你写出的代码会相对简练。 另外要注意，Pug 使用缩进来表示嵌套的代码块。
 
-Looking at our pug file 'index.pug' included in your project, we used the variables *title* and *message*.
+在 pug 的 'index.pug' 文件中，我们使用了 *title* 和 *message* 两个变量。
 
-To pass those along from our server, you will need to add an object as a second argument to your *res.render* with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+为了从服务器传递这些信息，你需要给 *res.render* 的第二个参数传入一个对象，其中包含变量对应的值。 比如，如果你想传递对象 `{title: 'Hello', message: 'Please login'}` 到你的主页，
 
-It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file!
+看起来应该像这样：`res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});`。现在刷新页面，你应该看到那些值就像在 index.pug 文件中一样被渲染在页面上正确的位置。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871) 的答案。
 
 # --hints--
 
-Pug should correctly render variables.
+Pug 应正确地展示变量。
 
 ```js
 (getUserInput) =>

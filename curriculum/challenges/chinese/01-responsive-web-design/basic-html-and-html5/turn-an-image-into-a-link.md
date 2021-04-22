@@ -13,7 +13,9 @@ dashedName: turn-an-image-into-a-link
 
 如果我们要把图片嵌套进 `a` 元素， 可以这样写：
 
-`<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>`
+```html
+<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>
+```
 
 如果把 `a` 的 `href` 属性值设置为 `#`，创建的是一个死链接（不跳转到其他画面）。
 
@@ -37,7 +39,7 @@ assert($('a').children('img').length > 0);
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));
 ```
 
-每个 `a` 元素都应有结束标签。
+每个 `a` 元素都应该有一个结束标签。
 
 ```js
 assert(

@@ -29,11 +29,13 @@ CSS 边框具有 `style`、`color`、`width` 属性。
 
 记得在一个元素上可以同时应用多个 `class`，使用空格来分隔不同 class 即可， 例如：
 
-`<img class="class1 class2">`
+```html
+<img class="class1 class2">
+```
 
 # --hints--
 
-`img` 元素应包含 `smaller-image` class。
+`img` 元素的 class 应包含 `smaller-image`。
 
 ```js
 assert($('img').hasClass('smaller-image'));

@@ -18,7 +18,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-Recuerda que los arreglos tienen una indexación basada en cero, lo que significa que el último índice del arreglo es igual a su longitud menos uno (`length - 1`). Nuestra condición para este bucle es `i < arr.length`, que detiene el bucle cuando `i` es igual a `length`. En este caso la última iteración es `i === 4`, es decir, cuando `i` es igual a `arr.length` e imprime `6` en la consola.
+Recuerda que los arreglos tienen una indexación basada en cero, lo que significa que el último índice del arreglo es igual a su longitud menos uno (`length - 1`). Nuestra condición para este bucle es `i < arr.length`, que detiene el bucle cuando `i` es igual a `length`. En este caso, la última iteración es `i === 4`, es decir, cuando `i` se convierte en igual a `arr.length - 1` y resultados `6` a la consola. Entonces `i` aumenta a `5`, y el bucle termina `i < arr.length` es `false`.
 
 # --instructions--
 

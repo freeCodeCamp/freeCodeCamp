@@ -7,13 +7,14 @@ import { createSelector } from 'reselect';
 import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 import { withTranslation } from 'react-i18next';
 
-import { paypalClientId, deploymentEnv } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import {
   paypalConfigurator,
   paypalConfigTypes
 } from '../../../../config/donation-settings';
 import { signInLoadingSelector, userSelector } from '../../redux';
 
+const { paypalClientId, deploymentEnv } = envData;
 export class PaypalButton extends Component {
   constructor(props) {
     super(props);

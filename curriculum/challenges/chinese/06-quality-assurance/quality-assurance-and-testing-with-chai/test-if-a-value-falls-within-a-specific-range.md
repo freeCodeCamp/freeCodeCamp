@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4f
-title: Test if a Value Falls within a Specific Range
+title: 测试某个值是否在特定范围内
 challengeType: 2
 forumTopicId: 301598
 dashedName: test-if-a-value-falls-within-a-specific-range
@@ -8,23 +8,23 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基础上进行开发。 你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 ```javascript
 .approximately(actual, expected, delta, [message])
 ```
 
-Asserts that the `actual` is equal to `expected`, to within a +/- `delta` range.
+断言 `actual` 等于 `expected`，在 +/- `delta` 的范围内。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
+在 `tests/1_unit-tests.js` 中，在 `Comparisons` 套件里标有 `#10` 的测试中，将每个 `assert` 改成 `assert.approximately`，让测试通过（结果应该返回 `true`）。
 
-Choose the minimum range (3rd parameter) to make the test always pass. It should be less than 1.
+选择最小范围（第三个参数）来通过所有测试。 它应该小于 1。
 
 # --hints--
 
-All tests should pass.
+不应有未通过的测试
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct range for the first assertion - `approximately(actual, expected, range)`.
+应该为第一个断言选择正确的范围——`approximately(actual, expected, range)`。
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ You should choose the correct range for the first assertion - `approximately(act
   );
 ```
 
-You should choose the correct range for the second assertion - `approximately(actual, expected, range)`.
+应该为第二个断言选择正确的范围——`approximately(actual, expected, range)`。
 
 ```js
 (getUserInput) =>
