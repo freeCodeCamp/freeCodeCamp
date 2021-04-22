@@ -140,7 +140,7 @@ function updateRecords(records, id, prop, value) {
   return records;
 }
 
-updateRecords(myRecords, 5439, 'artist', 'ABBA');
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 ```
 
 # --solutions--
