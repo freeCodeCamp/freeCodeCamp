@@ -121,7 +121,7 @@
     "validator": "13.6.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "5.11.10",
+    "@testing-library/jest-dom": "5.12.0",
     "@testing-library/react": "11.2.6",
     "autoprefixer": "9.8.6",
     "babel-plugin-transform-imports": "1.5.1",
