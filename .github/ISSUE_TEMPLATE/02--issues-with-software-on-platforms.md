@@ -36,7 +36,7 @@ If applicable, add screenshots to help explain your problem. you can drag and dr
 
 
 
-**Smartphone (please complete the following information):**
+**System (please complete the following information):**
  - Device: [e.g. iPhone6, Laptop]
  - OS: [e.g. iOS 14, Windows 10, Ubuntu 20.4]
  - Browser: [e.g. chrome, safari]
