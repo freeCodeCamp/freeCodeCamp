@@ -43,9 +43,7 @@ Debes eliminar la sintaxis de asignación ES5.
 
 ```js
 assert(
-  !__helpers
-    .removeJSComments(code)
-    .match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g)
+  !code.match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g)
 );
 ```
 
@@ -53,11 +51,9 @@ Debes usar desestructuración para crear la variable `today`.
 
 ```js
 assert(
-  __helpers
-    .removeJSComments(code)
-    .match(
+  code.match(
       /(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
-    )
+  )
 );
 ```
 
@@ -65,11 +61,9 @@ Debes usar desestructuración para crear la variable `tomorrow`.
 
 ```js
 assert(
-  __helpers
-    .removeJSComments(code)
-    .match(
+  code.match(
       /(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
-    )
+  )
 );
 ```
 
