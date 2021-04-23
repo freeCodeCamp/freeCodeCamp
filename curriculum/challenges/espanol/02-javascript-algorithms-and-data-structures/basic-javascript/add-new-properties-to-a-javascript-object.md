@@ -50,7 +50,7 @@ Debes agregar la propiedad `bark` a `myDog`.
 assert(myDog.bark !== undefined);
 ```
 
-No debes agregar `bark` a la sección de configuración.
+No debes agregar `bark` a la inicialización de `myDog`.
 
 ```js
 assert(!/bark[^\n]:/.test(code));
@@ -67,7 +67,6 @@ assert(!/bark[^\n]:/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myDog = {
   "name": "Happy Coder",
   "legs": 4,
@@ -75,7 +74,7 @@ var myDog = {
   "friends": ["freeCodeCamp Campers"]
 };
 
-// Only change code below this line
+
 ```
 
 # --solutions--

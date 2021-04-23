@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Responsively Style Radio Buttons
+title: Botones radio con estilo responsivo
 challengeType: 0
 forumTopicId: 18270
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-radio-buttons
 
 # --description--
 
-You can use Bootstrap's `col-xs-*` classes on `form` elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
+¡También puedes usar las clases `col-xs-*` de Bootstrap en los elementos `form`! De esta manera, nuestros botones de radio se distribuirán uniformemente por toda la página, independientemente del ancho de la resolución de la pantalla.
 
-Nest both your radio buttons within a `<div class="row">` element. Then nest each of them within a `<div class="col-xs-6">` element.
+Anida ambos botones de radio dentro de un elemento `<div class="row">`. Luego anida cada uno de ellos en un elemento `<div class="col-xs-6">`.
 
-**Note:** As a reminder, radio buttons are `input` elements of type `radio`.
+**Nota:** Como recordatorio, los botones de radio son `entradas`, elementos de tipo `radio`.
 
 # --hints--
 
-All of your radio buttons should be nested inside one `div` with the class `row`.
+Todas las casillas de radio deben anidarse dentro de un `div` con la clase `row`.
 
 ```js
 assert($('div.row:has(input[type="radio"])').length > 0);
 ```
 
-Each of your radio buttons should be nested inside its own `div` with the class `col-xs-6`.
+Cada uno de tus botones de radio debe inscrustarse dentro un `div` con la clase `col-xs-6`.
 
 ```js
 assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
 ```
 
-All of your `div` elements should have closing tags.
+Todos sus elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(

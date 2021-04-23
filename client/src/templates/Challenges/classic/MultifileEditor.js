@@ -223,6 +223,7 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexjsx' ? description : null}
                   fileKey='indexjsx'
                   key='indexjsx'
+                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -258,6 +259,7 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexcss' ? description : null}
                   fileKey='indexcss'
                   key='indexcss'
+                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -275,6 +277,7 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexjs' ? description : null}
                   fileKey='indexjs'
                   key='indexjs'
+                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />

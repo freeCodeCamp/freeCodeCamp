@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08845
-title: Responsively Style Checkboxes
+title: Casillas de verificación con estilo responsivo
 challengeType: 0
 forumTopicId: 18269
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Since Bootstrap's `col-xs-*` classes are applicable to all `form` elements, you can use them on your checkboxes too! This way, the checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.
+Dado que las clases `col-xs-*` de Bootstrap son aplicables a todos los elementos `form`, ¡también puedes usarlas en tus casillas de verificación! De esta manera, las casillas de verificación se distribuirán uniformemente por toda la página, independientemente de la amplitud de la resolución de la pantalla.
 
 # --instructions--
 
-Nest all three of your checkboxes in a `<div class="row">` element. Then nest each of them in a `<div class="col-xs-4">` element.
+Anida las tres casillas de verificación en un elemento `<div class="row">`. Luego incrusta cada uno de ellos en un elemento `<div class="col-xs-4">`.
 
 # --hints--
 
-All of your checkboxes should be nested inside one `div` with the class `row`.
+Todas las casillas de verificación deben anidarse dentro de un `div` con la clase `row`.
 
 ```js
 assert($('div.row:has(input[type="checkbox"])').length > 0);
 ```
 
-Each of your checkboxes should be nested inside its own `div` with the class `col-xs-4`.
+Cada casilla de verificación debe inscrustarse dentro de un `div` con la clase `row`.
 
 ```js
 assert($('div.col-xs-4:has(input[type="checkbox"])').length > 2);
 ```
 
-All of your `div` elements should have closing tags.
+Todos los elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(
