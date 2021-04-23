@@ -16,8 +16,13 @@ export default function getCsurf() {
         path
       )
     ) {
-      return next();
+      next();
+    } else {
+      // add the middleware
+      protection(req, res, next);
+      // use the middleware to generate a token. The client sends this back via
+      // a header
+      res.cookie('CSRF-Server-Token', req.csrfToken());
     }
-    return protection(req, res, next);
   };
 }
