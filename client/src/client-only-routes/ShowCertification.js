@@ -33,6 +33,7 @@ import envData from '../../../config/env.json';
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
 import { isEmpty } from 'lodash';
+import { User } from '../redux/propTypes';
 
 const { clientLocale } = envData;
 
@@ -48,7 +49,7 @@ const propTypes = {
     date: PropTypes.number
   }),
   certDashedName: PropTypes.string,
-  certName: PropTypes.string,
+  certSlug: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
   executeGA: PropTypes.func,
   fetchProfileForUser: PropTypes.func,
@@ -58,48 +59,27 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   isDonating: PropTypes.bool,
+  isValidCert: PropTypes.bool,
   location: PropTypes.shape({
     pathname: PropTypes.string
   }),
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
-  user: PropTypes.shape({
-    completedChallenges: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        solution: PropTypes.string,
-        githubLink: PropTypes.string,
-        files: PropTypes.arrayOf(
-          PropTypes.shape({
-            contents: PropTypes.string,
-            ext: PropTypes.string,
-            key: PropTypes.string,
-            name: PropTypes.string,
-            path: PropTypes.string
-          })
-        )
-      })
-    ),
-    profileUI: PropTypes.shape({
-      showName: PropTypes.bool
-    }),
-    username: PropTypes.string
-  }),
+  user: User,
   userFetchState: PropTypes.shape({
     complete: PropTypes.bool
   }),
   userFullName: PropTypes.string,
-  username: PropTypes.string,
-  validCertName: PropTypes.bool
+  username: PropTypes.string
 };
 
 const requestedUserSelector = (state, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state);
 
-const validCertNames = certMap.map(cert => cert.slug);
+const validCertSlugs = certMap.map(cert => cert.certSlug);
 
 const mapStateToProps = (state, props) => {
-  const validCertName = validCertNames.some(name => name === props.certName);
+  const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
@@ -110,7 +90,7 @@ const mapStateToProps = (state, props) => {
     (cert, fetchState, signedInUserName, userFetchState, isDonating, user) => ({
       cert,
       fetchState,
-      validCertName,
+      isValidCert,
       signedInUserName,
       userFetchState,
       isDonating,
@@ -132,9 +112,9 @@ const ShowCertification = props => {
   const [isDonationClosed, setIsDonationClosed] = useState(false);
 
   useEffect(() => {
-    const { username, certName, validCertName, showCert } = props;
-    if (validCertName) {
-      showCert({ username, certName });
+    const { username, certSlug, isValidCert, showCert } = props;
+    if (isValidCert) {
+      showCert({ username, certSlug });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -208,13 +188,13 @@ const ShowCertification = props => {
   const {
     cert,
     fetchState,
-    validCertName,
+    isValidCert,
     createFlashMessage,
     signedInUserName,
     location: { pathname }
   } = props;
 
-  if (!validCertName) {
+  if (!isValidCert) {
     createFlashMessage(standardErrorMessage);
     return <RedirectHome />;
   }

@@ -124,3 +124,11 @@ export const User = PropTypes.shape({
   username: PropTypes.string,
   website: PropTypes.string
 });
+
+export const CurrentCertsType = PropTypes.arrayOf(
+  PropTypes.shape({
+    show: PropTypes.bool,
+    title: PropTypes.string,
+    certSlug: PropTypes.string
+  })
+);

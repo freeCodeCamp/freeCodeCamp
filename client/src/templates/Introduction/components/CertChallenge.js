@@ -8,21 +8,29 @@ import { withTranslation } from 'react-i18next';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { userSelector } from '../../../redux';
-import { User } from '../../../redux/propTypes';
+import { certificatesByNameSelector } from '../../../redux';
+import { CurrentCertsType, User } from '../../../redux/propTypes';
 import { certMap } from '../../../resources/certAndProjectMap';
+import {
+  certSlugTypeMap,
+  superBlockCertTypeMap
+} from '../../../../../config/certification-settings';
 
 const propTypes = {
+  currentCerts: CurrentCertsType,
   superBlock: PropTypes.string,
   t: PropTypes.func,
   title: PropTypes.string,
   user: User
 };
 
-const mapStateToProps = state => {
-  return createSelector(userSelector, user => ({
-    user
-  }))(state);
+const mapStateToProps = (state, props) => {
+  return createSelector(
+    certificatesByNameSelector(props.user.username),
+    ({ currentCerts }) => ({
+      currentCerts
+    })
+  )(state, props);
 };
 
 export class CertChallenge extends Component {
@@ -31,37 +39,16 @@ export class CertChallenge extends Component {
       superBlock,
       t,
       title,
-      user: {
-        is2018DataVisCert,
-        isApisMicroservicesCert,
-        isFrontEndLibsCert,
-        isQaCertV7,
-        isInfosecCertV7,
-        isJsAlgoDataStructCert,
-        isRespWebDesignCert,
-        isSciCompPyCertV7,
-        isDataAnalysisPyCertV7,
-        isMachineLearningPyCertV7,
-        username
-      }
+      user: { username },
+      currentCerts
     } = this.props;
 
-    const userCertificates = {
-      'responsive-web-design': isRespWebDesignCert,
-      'javascript-algorithms-and-data-structures': isJsAlgoDataStructCert,
-      'front-end-libraries': isFrontEndLibsCert,
-      'data-visualization': is2018DataVisCert,
-      'apis-and-microservices': isApisMicroservicesCert,
-      'quality-assurance': isQaCertV7,
-      'information-security': isInfosecCertV7,
-      'scientific-computing-with-python': isSciCompPyCertV7,
-      'data-analysis-with-python': isDataAnalysisPyCertV7,
-      'machine-learning-with-python': isMachineLearningPyCertV7
-    };
-
     const cert = certMap.find(x => x.title === title);
-    const isCertified = userCertificates[superBlock];
-    const certLocation = `/certification/${username}/${cert.slug}`;
+    const isCertified = currentCerts.find(
+      cert =>
+        certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
+    ).show;
+    const certLocation = `/certification/${username}/${cert.certSlug}`;
     const certCheckmarkStyle = { height: '40px', width: '40px' };
     const i18nSuperBlock = t(`intro:${superBlock}.title`);
     const i18nCertText = t(`intro:misc-text.certification`, {

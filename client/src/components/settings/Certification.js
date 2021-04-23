@@ -289,15 +289,15 @@ export class CertificationSettings extends Component {
       t,
       verifyCert
     } = this.props;
-    const { superBlock } = first(projectMap[certName]);
-    const certLocation = `/certification/${username}/${superBlock}`;
-    const createClickHandler = superBlock => e => {
+    const { certSlug } = first(projectMap[certName]);
+    const certLocation = `/certification/${username}/${certSlug}`;
+    const createClickHandler = certSlug => e => {
       e.preventDefault();
       if (isCert) {
         return navigate(certLocation);
       }
       return isHonest
-        ? verifyCert(superBlock)
+        ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
     return projectMap[certName]
@@ -312,13 +312,13 @@ export class CertificationSettings extends Component {
         </tr>
       ))
       .concat([
-        <tr key={`cert-${superBlock}-button`}>
+        <tr key={`cert-${certSlug}-button`}>
           <td colSpan={2}>
             <Button
               block={true}
               bsStyle='primary'
               href={certLocation}
-              onClick={createClickHandler(superBlock)}
+              onClick={createClickHandler(certSlug)}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
             </Button>
@@ -336,13 +336,13 @@ export class CertificationSettings extends Component {
       updateLegacyCert
     } = this.props;
     let legacyTitle;
-    let superBlock;
+    let certSlug;
     let certs = Object.keys(legacyProjectMap);
     let loopBreak = false;
     for (let certTitle of certs) {
       for (let chalTitle of legacyProjectMap[certTitle]) {
         if (chalTitle.title === Object.keys(formChalObj)[0]) {
-          superBlock = chalTitle.superBlock;
+          certSlug = chalTitle.certSlug;
           loopBreak = true;
           legacyTitle = certTitle;
           break;
@@ -392,16 +392,16 @@ export class CertificationSettings extends Component {
 
     if (isProjectSectionComplete) {
       return isHonest
-        ? verifyCert(superBlock)
+        ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     }
-    return updateLegacyCert({ challengesToUpdate, superBlock });
+    return updateLegacyCert({ challengesToUpdate, certSlug });
   }
 
   renderLegacyCertifications = certName => {
     const { username, createFlashMessage, completedChallenges, t } = this.props;
-    const { superBlock } = first(legacyProjectMap[certName]);
-    const certLocation = `/certification/${username}/${superBlock}`;
+    const { certSlug } = first(legacyProjectMap[certName]);
+    const certLocation = `/certification/${username}/${certSlug}`;
     const challengeTitles = legacyProjectMap[certName].map(item => item.title);
     const isCertClaimed = this.getUserIsCertMap()[certName];
     const initialObject = {};
@@ -446,7 +446,7 @@ export class CertificationSettings extends Component {
     };
 
     return (
-      <FullWidthRow key={superBlock}>
+      <FullWidthRow key={certSlug}>
         <Spacer />
         <h3 className='text-center'>{certName}</h3>
         <Form
@@ -456,7 +456,7 @@ export class CertificationSettings extends Component {
           enableSubmit={fullForm}
           formFields={formFields}
           hideButton={isCertClaimed}
-          id={superBlock}
+          id={certSlug}
           initialValues={{
             ...initialObject
           }}
@@ -470,7 +470,7 @@ export class CertificationSettings extends Component {
               bsStyle='primary'
               className={'col-xs-12'}
               href={certLocation}
-              id={'button-' + superBlock}
+              id={'button-' + certSlug}
               onClick={createClickHandler(certLocation)}
               style={buttonStyle}
               target='_blank'
@@ -507,10 +507,10 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
-    // Keep the settings page slug as full-stack rather than
+    // Keep the settings page certSlug as full-stack rather than
     // legacy-full-stack so we don't break existing links
-    const superBlock = 'full-stack';
-    const certLocation = `/certification/${username}/${superBlock}`;
+    const certSlug = 'full-stack';
+    const certLocation = `/certification/${username}/${certSlug}`;
 
     const buttonStyle = {
       marginBottom: '30px',
@@ -518,17 +518,17 @@ export class CertificationSettings extends Component {
       fontSize: '18px'
     };
 
-    const createClickHandler = superBlock => e => {
+    const createClickHandler = certSlug => e => {
       e.preventDefault();
       if (isFullStackCert) {
         return navigate(certLocation);
       }
       return isHonest
-        ? verifyCert(superBlock)
+        ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
     return (
-      <FullWidthRow key={superBlock}>
+      <FullWidthRow key={certSlug}>
         <Spacer />
         <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
@@ -554,8 +554,8 @@ export class CertificationSettings extends Component {
               bsStyle='primary'
               className={'col-xs-12'}
               href={certLocation}
-              id={'button-' + superBlock}
-              onClick={createClickHandler(superBlock)}
+              id={'button-' + certSlug}
+              onClick={createClickHandler(certSlug)}
               style={buttonStyle}
               target='_blank'
             >
@@ -569,7 +569,7 @@ export class CertificationSettings extends Component {
               bsStyle='primary'
               className={'col-xs-12'}
               disabled={true}
-              id={'button-' + superBlock}
+              id={'button-' + certSlug}
               style={buttonStyle}
               target='_blank'
             >

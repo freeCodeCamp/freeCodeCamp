@@ -132,6 +132,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         );
 
         // Create intro pages
+        // TODO: Remove allMarkdownRemark (populate from elsewhere)
         result.data.allMarkdownRemark.edges.forEach(edge => {
           const {
             node: { frontmatter, fields }
