@@ -35,7 +35,7 @@ There should be a listener function subscribed to the store using `store.subscri
 (getUserInput) => assert(getUserInput('index').match(/store\s*\.\s*subscribe\(/gm));
 ```
 
-The listener function `store.subscribe` should have a function 
+The `store.subscribe` should receive a function.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm)) 
