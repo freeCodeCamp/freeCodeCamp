@@ -26,7 +26,7 @@ Por ejemplo, un elemento `main` con dos elementos hijos anidados en su interior:
 
 # --instructions--
 
-Crea un segundo elemento `p` después del elemento `p` existente con el siguiente texto ipsum gatuno: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+Crea un segundo elemento `p` con el siguiente texto de gatito ipsum: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
 Luego, crea un elemento `main` y anida los dos elementos `p` dentro del elemento `main`.
 

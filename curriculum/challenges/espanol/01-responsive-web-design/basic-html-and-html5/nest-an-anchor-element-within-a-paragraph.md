@@ -13,7 +13,7 @@ Puedes anidar enlaces dentro de otros elementos de texto.
 
 ```html
 <p>
-  Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
+  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
 </p>
 ```
 
@@ -32,18 +32,18 @@ A continuación está el elemento *anchor* `<a>` (que requiere una etiqueta de c
 `target` es un atributo de etiqueta anchor que especifica dónde abrir el enlace. El valor `_blank` especifica abrir el enlace en una nueva pestaña. El `href` es un atributo de etiqueta anchor que contiene la dirección URL del enlace:
 
 ```html
-<a href="http://freecodecamp.org"> ... </a>
+<a href="https://www.freecodecamp.org" target="_blank"> ... </a>
 ```
 
 El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama <dfn>anchor text</dfn>, y mostrará el enlace para hacer clic:
 
 ```html
-<a href=" ... ">link to freecodecamp.org</a>
+<a href=" ... " target="...">link to freecodecamp.org</a>
 ```
 
 El resultado final del ejemplo se verá así:
 
-Aquí hay un enlace [a freecodecamp.org](http://freecodecamp.org) para que lo sigas.
+Aquí hay un enlace <a href="https://www.freecodecamp.org" target="_blank">a freecodecamp.org</a> para que lo sigas.
 
 # --instructions--
 
@@ -59,11 +59,11 @@ assert(
 );
 ```
 
-El elemento `a` debe enlazar a "`https://freecatphotoapp.com`".
+El elemento `a` debe enlazar a "`https://www.freecatphotoapp.com`".
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length  === 1 
+  $('a[href="https://www.freecatphotoapp.com"]').length  === 1 
 );
 ```
 
@@ -87,7 +87,7 @@ Tu elemento `a` debe ser anidado dentro de tu nuevo elemento `p`.
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').parent().is('p')
+  $('a[href="https://www.freecatphotoapp.com"]').parent().is('p')
 );
 ```
 
@@ -95,7 +95,7 @@ El elemento `p` debe contener el texto `View more` (con un espacio después de �
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]')
+  $('a[href="https://www.freecatphotoapp.com"]')
     .parent()
     .text()
     .match(/View\smore\s/gi)
@@ -140,7 +140,7 @@ assert(
 <h2>CatPhotoApp</h2>
 <main>
 
-  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://www.freecatphotoapp.com" target="_blank">cat photos</a>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
@@ -154,7 +154,7 @@ assert(
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>View more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a></p>
+  <p>View more <a target="_blank" href="https://www.freecatphotoapp.com">cat photos</a></p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
