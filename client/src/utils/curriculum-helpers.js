@@ -1,7 +1,7 @@
 import { parse } from '@babel/parser';
 import generate from '@babel/generator';
 
-const removeHtmlComments = str => str.replace(/<!--.*?-->/gs, '');
+const removeHtmlComments = str => str.replace(/<!--[\s\S]*?(-->|$)/g, '');
 
 const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, '');
 

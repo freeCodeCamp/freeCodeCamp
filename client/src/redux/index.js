@@ -266,81 +266,81 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
-        showURL: 'responsive-web-design'
+        certSlug: 'responsive-web-design'
       },
       {
         show: isJsAlgoDataStructCert,
         title: 'JavaScript Algorithms and Data Structures Certification',
-        showURL: 'javascript-algorithms-and-data-structures'
+        certSlug: 'javascript-algorithms-and-data-structures'
       },
       {
         show: isFrontEndLibsCert,
         title: 'Front End Libraries Certification',
-        showURL: 'front-end-libraries'
+        certSlug: 'front-end-libraries'
       },
       {
         show: is2018DataVisCert,
         title: 'Data Visualization Certification',
-        showURL: 'data-visualization'
+        certSlug: 'data-visualization'
       },
       {
         show: isApisMicroservicesCert,
         title: 'APIs and Microservices Certification',
-        showURL: 'apis-and-microservices'
+        certSlug: 'apis-and-microservices'
       },
       {
         show: isQaCertV7,
         title: ' Quality Assurance Certification',
-        showURL: 'quality-assurance-v7'
+        certSlug: 'quality-assurance-v7'
       },
       {
         show: isInfosecCertV7,
         title: 'Information Security Certification',
-        showURL: 'information-security-v7'
+        certSlug: 'information-security-v7'
       },
       {
         show: isSciCompPyCertV7,
         title: 'Scientific Computing with Python Certification',
-        showURL: 'scientific-computing-with-python-v7'
+        certSlug: 'scientific-computing-with-python-v7'
       },
       {
         show: isDataAnalysisPyCertV7,
         title: 'Data Analysis with Python Certification',
-        showURL: 'data-analysis-with-python-v7'
+        certSlug: 'data-analysis-with-python-v7'
       },
       {
         show: isMachineLearningPyCertV7,
         title: 'Machine Learning with Python Certification',
-        showURL: 'machine-learning-with-python-v7'
+        certSlug: 'machine-learning-with-python-v7'
       }
     ],
     legacyCerts: [
       {
         show: isFrontEndCert,
         title: 'Front End Certification',
-        showURL: 'legacy-front-end'
+        certSlug: 'legacy-front-end'
       },
       {
         show: isBackEndCert,
         title: 'Back End Certification',
-        showURL: 'legacy-back-end'
+        certSlug: 'legacy-back-end'
       },
       {
         show: isDataVisCert,
         title: 'Data Visualization Certification',
-        showURL: 'legacy-data-visualization'
+        certSlug: 'legacy-data-visualization'
       },
       {
         show: isInfosecQaCert,
         title: 'Information Security and Quality Assurance Certification',
         // Keep the current public profile cert slug
-        showURL: 'information-security-and-quality-assurance'
+        certSlug: 'information-security-and-quality-assurance'
       },
       {
         show: isFullStackCert,
         title: 'Full Stack Certification',
         // Keep the current public profile cert slug
-        showURL: 'full-stack'
+        certSlug: 'full-stack'
       }
     ]
   };
