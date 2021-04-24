@@ -72,6 +72,7 @@
     "start": "npm-run-all ensure-env -p develop:server serve:client",
     "start-ci": "npm-run-all ensure-env -p start:server serve:client",
     "start:server": "cd ./api-server && npm start",
+    "storybook": "cd ./client && npm run storybook",
     "test": "npm-run-all ensure-env build:curriculum -p test:*",
     "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
     "test:client": "cd ./client && npm test",
