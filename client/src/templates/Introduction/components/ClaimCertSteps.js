@@ -24,9 +24,9 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
       <GreenNotCompleted style={mapIconStyle} />
     );
   };
-  // TODO: handle links to relevant section on /settings
-  // const { steps } = props;
+
   const settingsLink = '/settings#privacy-settings';
+  const honestyPolicyAnchor = '/settings#honesty-policy';
   const certName = i18nCertText.replace(' Certification', '');
   const {
     // currentCerts,
@@ -46,7 +46,7 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
         </a>
       </li>
       <li className='map-challenge-title map-challenge-wrap'>
-        <Link to={settingsLink}>
+        <Link to={honestyPolicyAnchor}>
           <span className='badge map-badge'>{renderCheckMark(isHonest)}</span>
           {t('certification-card.accept-honesty')}
         </Link>

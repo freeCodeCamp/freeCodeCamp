@@ -164,7 +164,7 @@ export default function completionEpic(action$, state$) {
       return submitter(type, state).pipe(
         concat(closeChallengeModal),
         filter(Boolean),
-        finalize(async () => navigate(pathToNavigateTo))
+        finalize(async () => navigate(await pathToNavigateTo()))
       );
     })
   );
@@ -202,5 +202,6 @@ async function findPathToNavigateTo(
   } else {
     pathToNavigateTo = `/learn/${superBlock}/#${superBlock}-projects`;
   }
+  console.log(pathToNavigateTo);
   return pathToNavigateTo;
 }

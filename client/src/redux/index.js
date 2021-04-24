@@ -187,11 +187,9 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const stepsToClaimSelector = state => {
-  // TODO: complete required steps to claim cert
   const user = userSelector(state);
   const currentCerts = certificatesByNameSelector(user.username)(state)
     .currentCerts;
-  console.log(user);
   return {
     currentCerts: currentCerts,
     isHonest: user?.isHonest,
