@@ -1,6 +1,6 @@
 ---
 id: 5cfa550e84205a357704ccb6
-title: Use Destructuring Assignment to Extract Values from Objects
+title: 使用解构赋值来获取对象的值
 challengeType: 1
 forumTopicId: 301216
 dashedName: use-destructuring-assignment-to-extract-values-from-objects
@@ -8,35 +8,38 @@ dashedName: use-destructuring-assignment-to-extract-values-from-objects
 
 # --description--
 
-<dfn>Destructuring assignment</dfn> is special syntax introduced in ES6, for neatly assigning values taken directly from an object.
+<dfn>解构赋值</dfn>是 ES6 引入的新语法，用来从数组和对象中提取值，并优雅地对变量进行赋值。
 
-Consider the following ES5 code:
+有如下 ES5 代码：
 
 ```js
 const user = { name: 'John Doe', age: 34 };
 
-const name = user.name; // name = 'John Doe'
-const age = user.age; // age = 34
+const name = user.name;
+const age = user.age;
 ```
 
-Here's an equivalent assignment statement using the ES6 destructuring syntax:
+`name` 的值应该是字符串 `John Doe`， `age` 的值应该是数字 `34`。
+
+下面是使用 ES6 解构赋值语句，实现相同效果：
 
 ```js
 const { name, age } = user;
-// name = 'John Doe', age = 34
 ```
 
-Here, the `name` and `age` variables will be created and assigned the values of their respective values from the `user` object. You can see how much cleaner this is.
+同样，`name` 的值应该是字符串 `John Doe`， `age` 的值应该是数字 `34`。
 
-You can extract as many or few values from the object as you want.
+在这里，自动创建 `name` 和 `age` 变量，并将 `user` 对象相应属性的值赋值给它们。 这个方法简洁多了。
+
+你可以从对象中提取尽可能多或很少的值。
 
 # --instructions--
 
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `today` and `tomorrow` the values of `today` and `tomorrow` from the `HIGH_TEMPERATURES` object.
+把两个赋值语句替换成效果相同的解构赋值语句。 `today` 和 `tomorrow` 的值应该还是 `HIGH_TEMPERATURES` 对象中 `today` 和 `tomorrow` 属性的值。
 
 # --hints--
 
-You should remove the ES5 assignment syntax.
+应该移除 ES5 赋值语句。
 
 ```js
 assert(
@@ -46,7 +49,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `today` variable.
+应该使用解构赋值创建 `today` 变量。
 
 ```js
 assert(
@@ -58,7 +61,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `tomorrow` variable.
+应该使用解构赋值创建 `tomorrow` 变量。
 
 ```js
 assert(
@@ -70,7 +73,7 @@ assert(
 );
 ```
 
-`today` should be equal to `77` and `tomorrow` should be equal to `80`.
+`today` 应该等于 `77`，`tomorrow` 应该等于 `80`。
 
 ```js
 assert(today === 77 && tomorrow === 80);

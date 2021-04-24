@@ -14,19 +14,21 @@ jQuery 有一个 `appendTo()` 方法，可以选取 HTML 标签并将其添加�
 
 例如，如果要把 `target4` 从 right well 移到 left well，可以设置如下：
 
-`$("#target4").appendTo("#left-well");`
+```js
+$("#target4").appendTo("#left-well");
+```
 
-把 `target2` 标签从 `left-well` 移动到 `right-well`。
+把 `target2` 元素从 `left-well` 移动到 `right-well`。
 
 # --hints--
 
-`target2` 标签不应该在 `left-well` 内。
+`target2` 元素不应该在 `left-well` 内。
 
 ```js
 assert($('#left-well').children('#target2').length === 0);
 ```
 
-`target2` 标签应该在 `right-well` 内。
+`target2` 元素应该在 `right-well` 内。
 
 ```js
 assert($('#right-well').children('#target2').length > 0);

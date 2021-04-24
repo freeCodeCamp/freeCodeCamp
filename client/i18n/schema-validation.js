@@ -5,6 +5,7 @@ const trendingSchema = require('./locales/english/trending.json');
 const motivationSchema = require('./locales/english/motivation.json');
 const introSchema = require('./locales/english/intro.json');
 const metaTagsSchema = require('./locales/english/meta-tags.json');
+const linksSchema = require('./locales/english/links.json');
 
 /**
  * Flattens a nested object structure into a single
@@ -106,6 +107,7 @@ const trendingSchemaKeys = Object.keys(flattenAnObject(trendingSchema));
 const motivationSchemaKeys = Object.keys(flattenAnObject(motivationSchema));
 const introSchemaKeys = Object.keys(flattenAnObject(introSchema));
 const metaTagsSchemaKeys = Object.keys(flattenAnObject(metaTagsSchema));
+const linksSchemaKeys = Object.keys(flattenAnObject(linksSchema));
 
 /**
  * Function that checks the translations.json file
@@ -257,6 +259,23 @@ const metaTagsSchemaValidation = languages => {
   });
 };
 
+const linksSchemaValidation = languages => {
+  languages.forEach(language => {
+    const filePath = path.join(__dirname, `/locales/${language}/links.json`);
+    const fileJson = require(filePath);
+    const fileKeys = Object.keys(flattenAnObject(fileJson));
+    findMissingKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
+    findExtraneousKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
+    const emptyKeys = noEmptyObjectValues(fileJson);
+    if (emptyKeys.length) {
+      console.warn(
+        `${language}/links.json has these empty keys: ${emptyKeys.join(', ')}`
+      );
+    }
+    console.info(`${language} links.json validation complete`);
+  });
+};
+
 const translatedLangs = availableLangs.client.filter(x => x !== 'english');
 
 translationSchemaValidation(translatedLangs);
@@ -264,3 +283,4 @@ trendingSchemaValidation(translatedLangs);
 motivationSchemaValidation(translatedLangs);
 introSchemaValidation(translatedLangs);
 metaTagsSchemaValidation(translatedLangs);
+linksSchemaValidation(translatedLangs);

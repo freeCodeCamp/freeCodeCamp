@@ -16,7 +16,9 @@ With responsive design, there is no need to design a mobile version of your webs
 
 You can add Bootstrap to any app by adding the following code to the top of your HTML:
 
-`<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>`
+```html
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+```
 
 In this case, we've already added it for you to this page behind the scenes. Note that using either `>` or `/>` to close the `link` tag is acceptable.
 
@@ -43,7 +45,7 @@ assert(
 All HTML elements after the closing `style` tag should be nested in `.container-fluid`.
 
 ```js
-assert($('.container-fluid').children().length >= 8);
+assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').has("style").length && !$('.container-fluid').has("link").length);
 ```
 
 # --seed--

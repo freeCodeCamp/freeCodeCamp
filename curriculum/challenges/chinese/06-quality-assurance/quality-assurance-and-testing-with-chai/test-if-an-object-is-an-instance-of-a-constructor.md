@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c57
-title: Test if an Object is an Instance of a Constructor
+title: 测试对象是否是构造函数的实例
 challengeType: 2
 forumTopicId: 301605
 dashedName: test-if-an-object-is-an-instance-of-a-constructor
@@ -8,17 +8,17 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-`#instanceOf` asserts that an object is an instance of a constructor.
+`#instanceOf` 断言一个对象是一个构造器的实例。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 中，`Objects` 套件里标有 `#18` 的测试下，将每个 `assert` 改成 `assert.instanceOf` 或 `assert.notInstanceOf` 方法，通过测试（结果应该返回 `true`）。 不要修改传给断言的参数。
 
 # --hints--
 
-All tests should pass.
+应通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `instanceOf` vs. `notInstanceOf`.
+应该为第一个断言选择正确的方法：`instanceOf` 或 `notInstanceOf`。
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `instanceOf` vs. 
   );
 ```
 
-You should choose the correct method for the second assertion - `instanceOf` vs. `notInstanceOf`.
+应该为第二个断言选择正确的方法：`instanceOf` 或 `notInstanceOf`。
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `instanceOf` vs.
   );
 ```
 
-You should choose the correct method for the third assertion - `instanceOf` vs. `notInstanceOf`.
+应该为第三个断言选择正确的方法：`instanceOf` 或 `notInstanceOf`。
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ You should choose the correct method for the third assertion - `instanceOf` vs. 
   );
 ```
 
-You should choose the correct method for the fourth assertion - `instanceOf` vs. `notInstanceOf`.
+应该为第四个断言选择正确的方法：`instanceOf` 或 `notInstanceOf`。
 
 ```js
 (getUserInput) =>

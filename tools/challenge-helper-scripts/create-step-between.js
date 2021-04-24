@@ -1,7 +1,7 @@
 const {
   reorderSteps,
   createStepFile,
-  getChallengeSeed,
+  getChallengeSeeds,
   padWithLeadingZeros,
   getExistingStepNums,
   getProjectPath,
@@ -24,8 +24,10 @@ if (
   start < 1 ||
   start !== end - 1
 ) {
-  throw 'Step not created. Steps specified must be' +
-    ' consecutive numbers and start step must be greater than 0.';
+  throw (
+    'Step not created. Steps specified must be' +
+    ' consecutive numbers and start step must be greater than 0.'
+  );
 }
 
 const existingSteps = getExistingStepNums(projectPath);
@@ -33,13 +35,13 @@ if (!allStepsExist(existingSteps, [start, end])) {
   throw 'Step not created. At least one of the steps specified does not exist.';
 }
 
-const challengeSeed = getChallengeSeed(
+const challengeSeeds = getChallengeSeeds(
   `${projectPath}part-${padWithLeadingZeros(start)}.md`
 );
 createStepFile({
   stepNum: start,
   projectPath,
-  challengeSeed,
+  challengeSeeds,
   stepBetween: true
 });
 console.log(`Sucessfully added step between step #${start} and step #${end}`);

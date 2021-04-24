@@ -15,11 +15,12 @@ import { getChallenges } from '../utils/get-curriculum';
 import {
   completionHours,
   certTypes,
-  superBlockCertTypeMap,
+  certSlugTypeMap,
   certTypeTitleMap,
   certTypeIdMap,
   certIds,
-  oldDataVizId
+  oldDataVizId,
+  superBlockCertTypeMap
 } from '../../../../config/certification-settings';
 
 const {
@@ -52,7 +53,7 @@ export default function bootCertificate(app) {
   const verifyCanClaimCert = createVerifyCanClaim(certTypeIds, app);
 
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
-  api.get('/certificate/showCert/:username/:cert', showCert);
+  api.get('/certificate/showCert/:username/:certSlug', showCert);
   api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
 
   app.use(api);
@@ -68,9 +69,11 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
+const certSlugs = Object.keys(certSlugTypeMap);
+
 function ifNoSuperBlock404(req, res, next) {
-  const { superBlock } = req.body;
-  if (superBlock && superBlocks.includes(superBlock)) {
+  const { certSlug } = req.body;
+  if (certSlug && certSlugs.includes(certSlug)) {
     return next();
   }
   return res.status(404).end();
@@ -131,8 +134,6 @@ function getCertById(anId, allChallenges) {
       challengeType
     }))[0];
 }
-
-const superBlocks = Object.keys(superBlockCertTypeMap);
 
 function sendCertifiedEmail(
   {
@@ -225,11 +226,11 @@ function createVerifyCert(certTypeIds, app) {
   const { Email } = app.models;
   return function verifyCert(req, res, next) {
     const {
-      body: { superBlock },
+      body: { certSlug },
       user
     } = req;
-    log(superBlock);
-    let certType = superBlockCertTypeMap[superBlock];
+    log(certSlug);
+    let certType = certSlugTypeMap[certSlug];
     log(certType);
     return Observable.of(certTypeIds[certType])
       .flatMap(challenge => {
@@ -337,9 +338,9 @@ function createShowCert(app) {
   }
 
   return function showCert(req, res, next) {
-    let { username, cert } = req.params;
+    let { username, certSlug } = req.params;
     username = username.toLowerCase();
-    const certType = superBlockCertTypeMap[cert];
+    const certType = certSlugTypeMap[certSlug];
     const certId = certTypeIdMap[certType];
     const certTitle = certTypeTitleMap[certType];
     const completionTime = completionHours[certType] || 300;

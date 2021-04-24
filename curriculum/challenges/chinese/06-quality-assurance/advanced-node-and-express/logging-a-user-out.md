@@ -1,6 +1,6 @@
 ---
 id: 58965611f9fc0f352b528e6c
-title: Logging a User Out
+title: 用户退出登录
 challengeType: 2
 forumTopicId: 301560
 dashedName: logging-a-user-out
@@ -8,9 +8,9 @@ dashedName: logging-a-user-out
 
 # --description--
 
-Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.
+创建退出登录的逻辑是比较简单的。 只要用户尝试退出登录，路由就应重定向到主页，而不应该显示任何其他页面。
 
-In passport, unauthenticating a user is as easy as just calling `req.logout();` before redirecting.
+在 passport 里，只需要在重定向前调用 `req.logout();` 即可完成用户的退出登录。
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-You may have noticed that we're not handling missing pages (404). The common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
+你可能注意到我们还没有处理 404 错误，这个错误码代表页面无法找到。 在 Node 中我们通常会用如下的中间件来处理。 请在所有路由之后添加这段代码：
 
 ```js
 app.use((req, res, next) => {
@@ -30,11 +30,11 @@ app.use((req, res, next) => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b)的答案。
 
 # --hints--
 
-`req.Logout` should be called in your `/logout` route.
+`req.Logout` 应在 `/logout` 路由中调用。
 
 ```js
 (getUserInput) =>
@@ -52,7 +52,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-Logout should redirect to the home page.
+退出登录后应重定向到主页 /。
 
 ```js
 (getUserInput) =>

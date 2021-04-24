@@ -29,7 +29,9 @@ Crea una clase llamada `thick-green-border` (borde grueso verde). Esta clase deb
 
 Recuerda que puedes aplicar múltiples clases a un elemento usando su atributo `class`, separando cada nombre de clase con un espacio. Por ejemplo:
 
-`<img class="class1 class2">`
+```html
+<img class="class1 class2">
+```
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b92
-title: Extract Matches
+title: Extrae coincidencias
 challengeType: 1
 forumTopicId: 301340
 dashedName: extract-matches
@@ -8,22 +8,22 @@ dashedName: extract-matches
 
 # --description--
 
-So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the `.match()` method.
+Hasta ahora, sólo has estado comprobando si un patrón existe o no dentro de una cadena. También puedes extraer las coincidencias encontradas con el método `.match()`.
 
-To use the `.match()` method, apply the method on a string and pass in the regex inside the parentheses.
+Para utilizar el método `.match()`, aplica el método a una cadena y pasa la expresión regular dentro de los paréntesis.
 
-Here's an example:
+Este es un ejemplo:
 
 ```js
 "Hello, World!".match(/Hello/);
-// Returns ["Hello"]
 let ourStr = "Regular expressions";
 let ourRegex = /expressions/;
 ourStr.match(ourRegex);
-// Returns ["expressions"]
 ```
 
-Note that the `.match` syntax is the "opposite" of the `.test` method you have been using thus far:
+Aquí el primer `match` devolverá `["Hello"]` y el segundo devolverá `["expressions"]`.
+
+Ten en cuenta que la sintaxis `.match` es lo "opuesto" al método `.test` que has estado utilizando hasta ahora:
 
 ```js
 'string'.match(/regex/);
@@ -32,23 +32,23 @@ Note that the `.match` syntax is the "opposite" of the `.test` method you have b
 
 # --instructions--
 
-Apply the `.match()` method to extract the word `coding`.
+Aplica el método `.match()` para extraer la cadena `coding`.
 
 # --hints--
 
-The `result` should have the word `coding`
+`result` debe contener la cadena `coding`
 
 ```js
 assert(result.join() === 'coding');
 ```
 
-Your regex `codingRegex` should search for `coding`
+Tu expresión regular `codingRegex` debe buscar la cadena `coding`
 
 ```js
 assert(codingRegex.source === 'coding');
 ```
 
-You should use the `.match()` method.
+Debes utilizar el método `.match()`.
 
 ```js
 assert(code.match(/\.match\(.*\)/));

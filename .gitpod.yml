@@ -10,6 +10,8 @@ ports:
     onOpen: ignore
   - port: 9229 # node debug
     onOpen: ignore
+  - port: 9230 # client node debug
+    onOpen: ignore
 
 tasks:
   - before: |
@@ -75,7 +77,7 @@ github:
     # add a "Review in Gitpod" button to the pull request's description (defaults to false)
     addBadge: false
     # add a label once the prebuild is ready to pull requests (defaults to false)
-    addLabel: ready-on-gitpod
+    addLabel: false
 
 vscode:
   extensions:

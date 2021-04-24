@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b96
-title: Match Letters of the Alphabet
+title: Haz coincidir las letras del alfabeto
 challengeType: 1
 forumTopicId: 301354
 dashedName: match-letters-of-the-alphabet
@@ -8,43 +8,45 @@ dashedName: match-letters-of-the-alphabet
 
 # --description--
 
-You saw how you can use <dfn>character sets</dfn> to specify a group of characters to match, but that's a lot of typing when you need to match a large range of characters (for example, every letter in the alphabet). Fortunately, there is a built-in feature that makes this short and simple.
+Has visto cómo puedes usar los <dfn>conjuntos de caracteres</dfn> para especificar un grupo de caracteres a coincidir, pero eso requiere escribir mucho cuando necesitas coincidir con un amplio rango de caracteres (por ejemplo, cada letra en el alfabeto). Afortunadamente, hay una funcionalidad incorporada que hace esto corto y sencillo.
 
-Inside a character set, you can define a range of characters to match using a hyphen character: `-`.
+Dentro de un conjunto de caracteres, puedes definir un rango de caracteres a coincidir usando un carácter de guion: `-`.
 
-For example, to match lowercase letters `a` through `e` you would use `[a-e]`.
+Por ejemplo, para hacer coincidir las letras minúsculas desde la `a` a la `e` usarías `[a-e]`.
 
 ```js
 let catStr = "cat";
 let batStr = "bat";
 let matStr = "mat";
 let bgRegex = /[a-e]at/;
-catStr.match(bgRegex); // Returns ["cat"]
-batStr.match(bgRegex); // Returns ["bat"]
-matStr.match(bgRegex); // Returns null
+catStr.match(bgRegex);
+batStr.match(bgRegex);
+matStr.match(bgRegex);
 ```
+
+En orden, las tres llamadas a `match` devolverán los valores `["cat"]`, `["bat"]` y `null`.
 
 # --instructions--
 
-Match all the letters in the string `quoteSample`.
+Haz coincidir todas las letras en la cadena `quoteSample`.
 
-**Note**: Be sure to match both uppercase and lowercase letters.
+**Nota:** Asegúrate de hacer coincidir tanto las letras mayúsculas como minúsculas.
 
 # --hints--
 
-Your regex `alphabetRegex` should match 35 items.
+Tu expresión regular `alphabetRegex` debe coincidir con 35 elementos.
 
 ```js
 assert(result.length == 35);
 ```
 
-Your regex `alphabetRegex` should use the global flag.
+Tu expresión regular `alphabetRegex` debe utilizar la bandera global.
 
 ```js
 assert(alphabetRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `alphabetRegex` should use the case insensitive flag.
+Tu expresión regular `alphabetRegex` debe utilizar la bandera que no distingue entre mayúsculas y minúsculas.
 
 ```js
 assert(alphabetRegex.flags.match(/i/).length == 1);

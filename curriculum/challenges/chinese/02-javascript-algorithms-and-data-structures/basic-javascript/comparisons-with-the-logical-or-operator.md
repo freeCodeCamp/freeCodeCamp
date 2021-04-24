@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d9
-title: Comparisons with the Logical Or Operator
+title: 逻辑或运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEPrGTN'
 forumTopicId: 16800
@@ -9,11 +9,11 @@ dashedName: comparisons-with-the-logical-or-operator
 
 # --description--
 
-The <dfn>logical or</dfn> operator (`||`) returns `true` if either of the <dfn>operands</dfn> is `true`. Otherwise, it returns `false`.
+只要<dfn>逻辑或</dfn>运算符（`||`）两边的任何一个<dfn>运算</dfn>的结果是 `true`，则返回 `true`。 否则，返回 `false`。
 
-The <dfn>logical or</dfn> operator is composed of two pipe symbols: (`||`). This can typically be found between your Backspace and Enter keys.
+<dfn>逻辑或</dfn>运算符由两个竖线（`||`）组成。 这个按键位于退格键和回车键之间。
 
-The pattern below should look familiar from prior waypoints:
+下面这样的语句你应该很熟悉：
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-will return "Yes" only if `num` is between `5` and `10` (5 and 10 included). The same logic can be written as:
+只有当 `num` 大于等于 `5` 或小于等于 `10` 时，函数才返回 `Yes`。 相同的逻辑可以简写成：
 
 ```js
 if (num > 10 || num < 5) {
@@ -36,65 +36,65 @@ return "Yes";
 
 # --instructions--
 
-Combine the two `if` statements into one statement which returns `"Outside"` if `val` is not between `10` and `20`, inclusive. Otherwise, return `"Inside"`.
+请使用逻辑或运算符把两个 `if` 语句合并为一个语句，如果 `val` 不在 `10` 和 `20` 之间（包括 10 和 20），返回 `Outside`。 否则，返回 `Inside`。
 
 # --hints--
 
-You should use the `||` operator once
+应该使用一次 `||` 操作符。
 
 ```js
 assert(code.match(/\|\|/g).length === 1);
 ```
 
-You should only have one `if` statement
+应该只有一个 `if` 表达式。
 
 ```js
 assert(code.match(/if/g).length === 1);
 ```
 
-`testLogicalOr(0)` should return "Outside"
+`testLogicalOr(0)` 应该返回字符串 `Outside`
 
 ```js
 assert(testLogicalOr(0) === 'Outside');
 ```
 
-`testLogicalOr(9)` should return "Outside"
+`testLogicalOr(9)` 应该返回字符串 `Outside`
 
 ```js
 assert(testLogicalOr(9) === 'Outside');
 ```
 
-`testLogicalOr(10)` should return "Inside"
+`testLogicalOr(10)` 应该返回字符串 `Inside`
 
 ```js
 assert(testLogicalOr(10) === 'Inside');
 ```
 
-`testLogicalOr(15)` should return "Inside"
+`testLogicalOr(15)` 应该返回字符串 `Inside`
 
 ```js
 assert(testLogicalOr(15) === 'Inside');
 ```
 
-`testLogicalOr(19)` should return "Inside"
+`testLogicalOr(19)` 应该返回字符串 `Inside`
 
 ```js
 assert(testLogicalOr(19) === 'Inside');
 ```
 
-`testLogicalOr(20)` should return "Inside"
+`testLogicalOr(20)` 应该返回字符串 `Inside`
 
 ```js
 assert(testLogicalOr(20) === 'Inside');
 ```
 
-`testLogicalOr(21)` should return "Outside"
+`testLogicalOr(21)` 应该返回字符串 `Outside`
 
 ```js
 assert(testLogicalOr(21) === 'Outside');
 ```
 
-`testLogicalOr(25)` should return "Outside"
+`testLogicalOr(25)` 应该返回字符串 `Outside`
 
 ```js
 assert(testLogicalOr(25) === 'Outside');

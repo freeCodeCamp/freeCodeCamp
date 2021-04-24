@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5b
-title: Run Functional Tests on an API Response using Chai-HTTP IV - PUT method
+title: 使用 Chai-HTTP IV 的 PUT 方法对 API 响应运行功能测试
 challengeType: 2
 forumTopicId: 301591
 dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-method
@@ -8,15 +8,15 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/). This exercise is similar to the preceding one. Look at it for the details.
+请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。 这个练习与上一个类似， 我们详细看看。
 
-Now that you have seen how it is done, it is your turn to do it from scratch.
+你已经看到了它是如何完成的，现在你需要从零开始搭建。
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "da Verrazzano"}'` test (`// #4`):
+在 `tests/2_functional-tests.js` 中，修改 `'send {surname: "da Verrazzano"}'` 测试（`// #4`）。
 
-Send the following JSON response as a payload to the `/travellers` route:
+发送以下 JSON 响应作为有效载荷到 `/travellers` 路径：
 
 ```json
 {
@@ -24,18 +24,18 @@ Send the following JSON response as a payload to the `/travellers` route:
 }
 ```
 
-Check for the following, within a `request.end` callback:
+在 `request.end` 返回中检查以下情况：
 
 1.  `status`
 2.  `type`
 3.  `body.name`
 4.  `body.surname`
 
-Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+请按照以上顺序书写断言，顺序错误会影响系统判定。 完成后请务必删除 `assert.fail()`。
 
 # --hints--
 
-All tests should pass
+需要通过所有测试。
 
 ```js
 (getUserInput) =>
@@ -49,7 +49,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' to be 200
+需要测试 “res.status” 是否为 200。
 
 ```js
 (getUserInput) =>
@@ -65,7 +65,7 @@ You should test for 'res.status' to be 200
   );
 ```
 
-You should test for 'res.type' to be 'application/json'
+需要测试 “res.type” 是否为 “application/json”。
 
 ```js
 (getUserInput) =>
@@ -81,7 +81,7 @@ You should test for 'res.type' to be 'application/json'
   );
 ```
 
-You should test for 'res.body.name' to be 'Giovanni'
+需要测试 “res.body.name” 为 “Giovanni”。
 
 ```js
 (getUserInput) =>
@@ -97,7 +97,7 @@ You should test for 'res.body.name' to be 'Giovanni'
   );
 ```
 
-You should test for 'res.body.surname' to be 'da Verrazzano'
+需要测试 “res.body.surname” 是否为 “da Verrazzano”。
 
 ```js
 (getUserInput) =>

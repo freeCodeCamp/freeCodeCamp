@@ -1,0 +1,25 @@
+"scope: docs":
+  - docs/**/*
+
+"scope: curriculum":
+  - curriculum/challenges/**/*
+
+"platform: client":
+  - client/**/*
+
+"platform: api":
+  - api-server/**/*
+
+"scope: tools/scripts":
+  - cypress/**/*
+  - tools/**/*
+  - .github/**/*
+  - utils/**/*
+
+"scope: i18n":
+  - any: ['curriculum/challenges/**/*', '!curriculum/challenges/english/**/*']
+  - docs/i18n/**/*
+  - client/i18n/**/*
+  - config/crowdin/**/*
+  - config/i18n/**/*
+  - tools/crowdin/**/*

@@ -8,8 +8,10 @@ import { createStructuredSelector } from 'reselect';
 import { currentTabSelector, moveToTab } from '../redux';
 import { bindActionCreators } from 'redux';
 import EditorTabs from './EditorTabs';
-import { showUpcomingChanges } from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
 import i18next from 'i18next';
+
+const { showUpcomingChanges } = envData;
 
 const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector
@@ -101,7 +103,4 @@ class MobileLayout extends Component {
 MobileLayout.displayName = 'MobileLayout';
 MobileLayout.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MobileLayout);
+export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);

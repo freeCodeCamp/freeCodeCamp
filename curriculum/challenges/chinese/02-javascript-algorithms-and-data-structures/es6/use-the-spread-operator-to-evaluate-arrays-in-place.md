@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b48
-title: Use the Spread Operator to Evaluate Arrays In-Place
+title: 使用 spread 运算符展开数组项
 challengeType: 1
 forumTopicId: 301222
 dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
@@ -8,47 +8,51 @@ dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
 
 # --description--
 
-ES6 introduces the <dfn>spread operator</dfn>, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
+ES6 引入了<dfn>展开操作符</dfn>，可以展开数组以及需要多个参数或元素的表达式。
 
-The ES5 code below uses `apply()` to compute the maximum value in an array:
+下面的 ES5 代码使用了 `apply()` 来计算数组的最大值：
 
 ```js
 var arr = [6, 89, 3, 45];
-var maximus = Math.max.apply(null, arr); // returns 89
+var maximus = Math.max.apply(null, arr);
 ```
 
-We had to use `Math.max.apply(null, arr)` because `Math.max(arr)` returns `NaN`. `Math.max()` expects comma-separated arguments, but not an array. The spread operator makes this syntax much better to read and maintain.
+`maximus` 的值为 `89`。
+
+我们必须使用 `Math.max.apply(null, arr)`，因为 `Math.max(arr)` 返回 `NaN`。 `Math.max()` 函数中需要传入的是一系列由逗号分隔的参数，而不是一个数组。 展开操作符可以提升代码的可读性，使代码易于维护。
 
 ```js
 const arr = [6, 89, 3, 45];
-const maximus = Math.max(...arr); // returns 89
+const maximus = Math.max(...arr);
 ```
 
-`...arr` returns an unpacked array. In other words, it *spreads* the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:
+`maximus` 的值应该是 `89`。
+
+`...arr` 返回一个解压的数组。 也就是说，它*展开*数组。 然而，展开操作符只能够在函数的参数中或者数组中使用。 下面的代码将会报错：
 
 ```js
-const spreaded = ...arr; // will throw a syntax error
+const spreaded = ...arr;
 ```
 
 # --instructions--
 
-Copy all contents of `arr1` into another array `arr2` using the spread operator.
+使用展开操作符将 `arr1` 中的内容都复制到 `arr2` 中去。
 
 # --hints--
 
-`arr2` should be correct copy of `arr1`.
+`arr2` 应该是从 `arr1` 复制而来。
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-`...` spread operator should be used to duplicate `arr1`.
+应使用展开操作符 `...` 来复制 `arr1`。
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` should remain unchanged when `arr1` is changed.
+当 `arr1` 改变的时候，`arr2` 应保持不变。
 
 ```js
 assert((arr1, arr2) => {

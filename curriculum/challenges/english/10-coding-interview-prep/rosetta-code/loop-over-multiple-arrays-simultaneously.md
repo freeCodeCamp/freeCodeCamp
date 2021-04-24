@@ -12,11 +12,15 @@ Loop over multiple arrays and create a new array whose $i^{th}$ element is the c
 
 For this example, if you are given this array of arrays:
 
-`[ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]`
+```js
+[ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]
+```
 
 the output should be:
 
-`["aA1","bB2","cC3"]`
+```js
+["aA1","bB2","cC3"]
+```
 
 # --instructions--
 

@@ -51,9 +51,8 @@ exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {
     const file = readSync(filename);
     const tree = processor.parse(file);
-    processor.run(tree, file, function(err, node, file) {
+    processor.run(tree, file, function (err, node, file) {
       if (!err) {
-        delete file.contents;
         resolve(file.data);
       } else {
         err.message += ' in file ' + filename;
@@ -61,4 +60,16 @@ exports.parseMD = function parseMD(filename) {
       }
     });
   });
+};
+
+exports.parseMDSync = function parseMDSync(filename) {
+  const file = readSync(filename);
+  const tree = processor.parse(file);
+  try {
+    processor.runSync(tree, file);
+  } catch (err) {
+    err.message += ' in file ' + filename;
+    throw err;
+  }
+  return file.data;
 };

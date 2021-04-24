@@ -29,7 +29,7 @@ Usa la propiedad `grid-area` para ubicar el elemento con clase `item5` entre la 
 
 # --hints--
 
-La clase `item5` debe tener una propiedad `grid-area` para rellenar toda la área entre la tercera y cuarta línea horizontal, y la primera y cuarta línea vertical.
+La clase `item5` debe tener una propiedad `grid-area` para rellenar toda el área entre la tercera y cuarta línea horizontal, y la primera y cuarta línea vertical.
 
 ```js
 assert(

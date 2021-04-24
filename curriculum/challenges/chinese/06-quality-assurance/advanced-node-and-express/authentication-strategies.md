@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e68
-title: Authentication Strategies
+title: 身份验证策略
 challengeType: 2
 forumTopicId: 301547
 dashedName: authentication-strategies
@@ -8,11 +8,11 @@ dashedName: authentication-strategies
 
 # --description--
 
-A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project, we will set up a local strategy. To see a list of the hundreds of strategies, visit Passport's site [here](http://passportjs.org/).
+策略是认证用户的一种方式。 如果你让用户在注册时填写了用户信息，那你就可以基于这些信息进行验证。或者也可以引入第三方登录，如 Google 或者 Github。 对于这个项目的验证策略，我们会采用自己搭建的方式完成。 可以[点击这里](http://passportjs.org/)访问 Passport 网站，查看数以百计的策略。
 
-Add `passport-local` as a dependency and add it to your server as follows: `const LocalStrategy = require('passport-local');`
+引入 `passport-local` 作为依赖，然后将它添加到服务器，就像这样：`const LocalStrategy = require('passport-local');`。
 
-Now you will have to tell passport to **use** an instantiated LocalStrategy object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!
+然后，需要让 passport **使用**一个实例化的 LocalStrategy 对象，这个对象的一些设置已完成。 请注意，接下来的所有代码都应写在连接数据库的回调中，因为它们的执行都依赖数据库。
 
 ```js
 passport.use(new LocalStrategy(
@@ -28,17 +28,17 @@ passport.use(new LocalStrategy(
 ));
 ```
 
-This is defining the process to use when we try to authenticate someone locally. First, it tries to find a user in our database with the username entered, then it checks for the password to match, then finally, if no errors have popped up that we checked for, like an incorrect password, the `user`'s object is returned and they are authenticated.
+这就是我们的用户验证逻辑： 首先根据用户输入的用户名在数据库中寻找用户；然后检查密码是否匹配，最后如果没有发生错误（比如密码错误），那么就会返回 `user` 对象并通过验证。
 
-Many strategies are set up using different settings, but generally it is easy to set it up based on the README in that strategy's repository. A good example of this is the GitHub strategy where we don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate. As long as they are logged in and agree then GitHub returns their profile for us to use.
+很多策略的配置都不同，但是，一般来说，根据策略仓库中的 README 来进行配置就足够了。 一个很好的例子是 GitHub 策略。在该策略中，我们不需要写用户名或密码的相关验证逻辑，因为用户将被引导到 GitHub 页面进行验证。 只要用户登录并同意，GitHub 就会返回用户的个人信息供我们使用。
 
-In the next step, we will set up how to actually call the authentication strategy to validate a user based on form data!
+在下一个挑战中，我们会基于表单数据调用上面写好的验证策略。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+完成上述要求后，请提交你的页面链接。 如果你遇到任何问题，可以参考[这里](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b)的答案。
 
 # --hints--
 
-Passport-local should be a dependency.
+需要使用 passport-local 作为依赖。
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ Passport-local should be a dependency.
   );
 ```
 
-Passport-local should be correctly required and setup.
+应该正确地引入和配置 passport-local。
 
 ```js
 (getUserInput) =>

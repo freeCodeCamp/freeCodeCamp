@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c451eddfaeb5bdef
-title: Utilice la notación de corchete para encontrar el último carácter en una cadena
+title: Utiliza la notación de corchetes para encontrar el último carácter en una cadena
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQGcv'
 forumTopicId: 18342
@@ -9,7 +9,7 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 # --description--
 
-Con el fin de obtener la última letra de una cadena, puede restar uno a la longitud del texto.
+Con el fin de obtener la última letra de una cadena, puedes restar uno a la longitud del texto.
 
 Por ejemplo, si `var firstName = "Charles"`, puedes obtener el valor de la última letra de la cadena usando `firstName[firstName.length - 1]`.
 
@@ -17,8 +17,10 @@ Ejemplo:
 
 ```js
 var firstName = "Charles";
-var lastLetter = firstName[firstName.length - 1]; // lastLetter is "s"
+var lastLetter = firstName[firstName.length - 1];
 ```
+
+`lastLetter` tendrá una cadena con valor `s`.
 
 # --instructions--
 
@@ -28,7 +30,7 @@ Usa <dfn>notación de corchetes</dfn> para encontrar el último carácter en la 
 
 # --hints--
 
-`lastLetterOfLastName` debe ser "e".
+`lastLetterOfLastName` debe ser la letra `e`.
 
 ```js
 assert(lastLetterOfLastName === 'e');

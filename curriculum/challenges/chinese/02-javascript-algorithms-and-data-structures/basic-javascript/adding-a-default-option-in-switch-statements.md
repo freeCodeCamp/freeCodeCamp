@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244de
-title: Adding a Default Option in Switch Statements
+title: 在 switch 语句中添加默认选项
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
@@ -9,9 +9,9 @@ dashedName: adding-a-default-option-in-switch-statements
 
 # --description--
 
-In a `switch` statement you may not be able to specify all possible values as `case` statements. Instead, you can add the `default` statement which will be executed if no matching `case` statements are found. Think of it like the final `else` statement in an `if/else` chain.
+在 `switch` 语句中，你可能无法用 `case` 枚举出所有可能的值。 相反，你可以添加 `default` 语句，它会在找不到相匹配的 `case` 语句之后执行。 你可以把它看作是 `if/else` 链中最后的那个 `else` 语句。
 
-A `default` statement should be the last case.
+`default` 语句应该被放到最后。
 
 ```js
 switch (num) {
@@ -30,57 +30,57 @@ switch (num) {
 
 # --instructions--
 
-Write a switch statement to set `answer` for the following conditions:  
-`"a"` - "apple"  
-`"b"` - "bird"  
-`"c"` - "cat"  
-`default` - "stuff"
+写一个 switch 语句，设置以下条件设置 `answer`：  
+`a` - `apple`  
+`b` - `bird`  
+`c` - `cat`  
+`default` - `stuff`
 
 # --hints--
 
-`switchOfStuff("a")` should have a value of "apple"
+`switchOfStuff("a")` 应该返回字符串 `apple`
 
 ```js
 assert(switchOfStuff('a') === 'apple');
 ```
 
-`switchOfStuff("b")` should have a value of "bird"
+`switchOfStuff("b")` 应该返回字符串 `bird`
 
 ```js
 assert(switchOfStuff('b') === 'bird');
 ```
 
-`switchOfStuff("c")` should have a value of "cat"
+`switchOfStuff("c")` 应该返回字符串 `cat`
 
 ```js
 assert(switchOfStuff('c') === 'cat');
 ```
 
-`switchOfStuff("d")` should have a value of "stuff"
+`switchOfStuff("d")` 应该返回字符串 `stuff`
 
 ```js
 assert(switchOfStuff('d') === 'stuff');
 ```
 
-`switchOfStuff(4)` should have a value of "stuff"
+`switchOfStuff(4)` 应该返回字符串 `stuff`
 
 ```js
 assert(switchOfStuff(4) === 'stuff');
 ```
 
-You should not use any `if` or `else` statements
+不能使用 `if` 或 `else` 语句。
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-You should use a `default` statement
+你应该使用 `default` 语句。
 
 ```js
 assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 ```
 
-You should have at least 3 `break` statements
+你至少应该写 3 个 `break` 语句。
 
 ```js
 assert(code.match(/break/g).length > 2);

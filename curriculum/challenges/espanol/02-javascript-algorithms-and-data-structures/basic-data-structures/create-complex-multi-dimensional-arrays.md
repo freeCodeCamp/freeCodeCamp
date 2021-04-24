@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b16
-title: Crear arreglos complejos multidimensionales
+title: Crea arreglos complejos multidimensionales
 challengeType: 1
 forumTopicId: 301159
 dashedName: create-complex-multi-dimensional-arrays
@@ -13,43 +13,45 @@ dashedName: create-complex-multi-dimensional-arrays
 Una de las características más poderosas cuando se piensa en los arreglos como estructuras de datos, es que los arreglos pueden contener, o incluso estar completamente formados por otros arreglos. Hemos visto arreglos que contienen arreglos en desafíos anteriores, pero bastante simples. Sin embargo, los arreglos pueden contener una profundidad infinita de arreglos que pueden contener otros arreglos, cada uno con sus propios niveles arbitrarios de profundidad, y así sucesivamente. De esta manera, un arreglo puede convertirse rápidamente en una estructura de datos muy compleja, conocida como <dfn>multidimensional</dfn>, o arreglo anidado. Considera el siguiente ejemplo:
 
 ```js
-let nestedArray = [ // top, or first level - the outer most array
-  ['deep'], // an array within an array, 2 levels of depth
+let nestedArray = [
+  ['deep'],
   [
-    ['deeper'], ['deeper'] // 2 arrays nested 3 levels deep
+    ['deeper'], ['deeper'] 
   ],
   [
     [
-      ['deepest'], ['deepest'] // 2 arrays nested 4 levels deep
+      ['deepest'], ['deepest']
     ],
     [
       [
-        ['deepest-est?'] // an array nested 5 levels deep
+        ['deepest-est?']
       ]
     ]
   ]
 ];
 ```
 
-Aunque este ejemplo pueda parecer enrevesado, este nivel de complejidad no es inaudito, ni siquiera inusual, cuando se trata de grandes cantidades de datos. Sin embargo, podemos acceder muy fácilmente a los niveles más profundos de un arreglo tan complejo con la notación de corchetes:
+El arreglo `deep` está anidado a 2 niveles de profundidad. El arreglo `deeper` está a 3 niveles de profundidad. Los arreglos `deepest` están anidados a 4 niveles y el arreglo `deepest-est?` a 5.
+
+Si bien este ejemplo puede parecer complicado, este nivel de complejidad no es desconocido, ni siquiera inusual, cuando se trata de grandes cantidades de datos. Sin embargo, todavía podemos acceder muy fácilmente a los niveles más profundos de un arreglo tan complejo con notación de corchetes:
 
 ```js
 console.log(nestedArray[2][1][0][0][0]);
-// logs: deepest-est?
 ```
 
-Y ahora que sabemos dónde está ese dato, podemos restablecerlo si lo necesitamos:
+Esto registra la cadena `deepest-est?`. Y ahora que sabemos dónde está ese dato, podemos restablecerlo si es necesario:
 
 ```js
 nestedArray[2][1][0][0][0] = 'deeper still';
 
 console.log(nestedArray[2][1][0][0][0]);
-// now logs: deeper still
 ```
+
+Ahora registra `deeper still`.
 
 # --instructions--
 
-Hemos definido una variable, `myNestedArray`, como un arreglo. Modifica `myNestedArray`, utilizando cualquier combinación de <dfn>cadenas</dfn>, <dfn>números</dfn> y <dfn>booleanos</dfn> para los elementos de datos, de modo que tenga exactamente cinco niveles de profundidad (recuerda que el arreglo más externo es el nivel 1). En algún lugar del tercer nivel, incluye la cadena `'deep'`, en el cuarto nivel, incluye la cadena `'deeper'`, y en el quinto nivel, incluye la cadena `'deepest'`.
+Hemos definido una variable, `myNestedArray`, como un arreglo. Modifica `myNestedArray`, utilizando cualquier combinación de <dfn>cadenas</dfn>, <dfn>números</dfn> y <dfn>booleanos</dfn> para los elementos de datos, de modo que tenga exactamente cinco niveles de profundidad (recuerda que el arreglo más externo es el nivel 1). En algún lugar del tercer nivel, incluye la cadena `deep`, en el cuarto nivel, incluye la cadena `deeper` y en el quinto nivel, incluye la cadena `deepest`.
 
 # --hints--
 
@@ -100,7 +102,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` debe contener exactamente una aparición de la cadena `"deep"` en un arreglo anidado a 3 niveles de profundidad
+`myNestedArray` debe contener exactamente una aparición de la cadena `deep` en un arreglo anidado a 3 niveles de profundidad
 
 ```js
 assert(
@@ -129,7 +131,7 @@ assert(
 );
 ```
 
-`myNestedArray` debe contener exactamente una aparición de la cadena `"deeper"` en un arreglo anidado a 4 niveles de profundidad
+`myNestedArray` debe contener exactamente una aparición de la cadena `deeper` en un arreglo anidado a 4 niveles de profundidad
 
 ```js
 assert(
@@ -158,7 +160,7 @@ assert(
 );
 ```
 
-`myNestedArray` debe contener exactamente una aparición de la cadena `"deepest"` en un arreglo anidado a 5 niveles de profundidad
+`myNestedArray` debe contener exactamente una aparición de la cadena `deepest` en un arreglo anidado a 5 niveles de profundidad
 
 ```js
 assert(

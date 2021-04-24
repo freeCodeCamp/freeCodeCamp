@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ad
-title: Decrement a Number with JavaScript
+title: 数字递减
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
@@ -9,30 +9,33 @@ dashedName: decrement-a-number-with-javascript
 
 # --description--
 
-You can easily <dfn>decrement</dfn> or decrease a variable by one with the `--` operator.
+使用自减符号 `--`，你可以很方便地对一个变量执行<dfn>自减</dfn>或者 -1 运算。
 
-`i--;`
+```js
+i--;
+```
 
-is the equivalent of
+等效于：
 
-`i = i - 1;`
+```js
+i = i - 1;
+```
 
-**Note**  
-The entire line becomes `i--;`, eliminating the need for the equal sign.
+**注意：**`i--;` 这种写法省去了书写等号的必要。
 
 # --instructions--
 
-Change the code to use the `--` operator on `myVar`.
+修改代码，使用 `--` 符号对 `myVar` 执行自减操作。
 
 # --hints--
 
-`myVar` should equal `10`.
+`myVar` 应该等于`10`。
 
 ```js
 assert(myVar === 10);
 ```
 
-`myVar = myVar - 1;` should be changed.
+应该修改 `myVar = myVar - 1;`。
 
 ```js
 assert(
@@ -40,13 +43,13 @@ assert(
 );
 ```
 
-You should use the `--` operator on `myVar`.
+应该对 `myVar` 使用 `--` 运算符。
 
 ```js
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-You should not change code above the specified comment.
+不应修改注释上方的代码。
 
 ```js
 assert(/var myVar = 11;/.test(code));

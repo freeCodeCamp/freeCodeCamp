@@ -9,7 +9,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 
 # --description--
 
-¿Has notado que todos los desafíos de accesibilidad aplicados hasta ahora no han usado ningún CSS? Esto es para mostrar la importancia de un esquema de documento lógico, y el uso de etiquetas semánticamente significativas alrededor de tu contenido antes de introducir el aspecto de diseño visual.
+¿Has notado que todos los desafíos de accesibilidad aplicados hasta ahora no han usado ningún CSS? Esto muestra la importancia de utilizar un esquema de documento lógico y etiquetas semánticamente significativas alrededor de su contenido antes de introducir el aspecto de diseño visual.
 
 Sin embargo, la magia de CSS también puede mejorar la accesibilidad en tu página cuando deseas ocultar visualmente contenido destinado solo para lectores de pantalla. Esto sucede cuando la información está en un formato visual (como un gráfico), pero los usuarios del lector de pantalla necesitan una presentación alternativa (como una tabla) para acceder a los datos. CSS se utiliza para colocar los elementos exclusivos de lector de pantalla fuera del área visual de la ventana del navegador.
 

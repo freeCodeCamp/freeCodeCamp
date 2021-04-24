@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b21
-title: Use Multiple Conditional (Ternary) Operators
+title: 使用多个三元运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJBT4'
 forumTopicId: 301179
@@ -9,9 +9,9 @@ dashedName: use-multiple-conditional-ternary-operators
 
 # --description--
 
-In the previous challenge, you used a single conditional operator. You can also chain them together to check for multiple conditions.
+在之前的挑战中，你使用了一个条件运算符。 你也可以将多个运算符串联在一起以检查多种条件。
 
-The following function uses if, else if, and else statements to check multiple conditions:
+下面的函数使用 `if`，`else if` 和 `else` 语句来检查多个条件：
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -27,7 +27,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-The above function can be re-written using multiple conditional operators:
+以上函数可以使用多个三元运算符重写：
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -37,7 +37,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-It is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown above. Using multiple conditional operators without proper indentation may make your code hard to read. For example:
+如上文所示，对多个三元运算符进行每个条件都是单独一行的格式化被认为是最佳做法。 使用多个三元运算符而没有适当的缩进可能会使您的代码难以理解。 例如：
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -47,29 +47,29 @@ function findGreaterOrEqual(a, b) {
 
 # --instructions--
 
-In the `checkSign` function, use multiple conditional operators - following the recommended format used in `findGreaterOrEqual` - to check if a number is positive, negative or zero. The function should return `"positive"`, `"negative"` or `"zero"`.
+在 `checkSign` 函数中使用多个三元运算符来检查数字是正数 ("positive")、负数 ("negative") 或零 ("zero")，使用 `findGreaterOrEqual` 里面的建议缩进格式。 函数应返回 `positive`、`negative` 或 `zero`。
 
 # --hints--
 
-`checkSign` should use multiple conditional operators
+`checkSign` 应该使用多个三元运算符。
 
 ```js
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
 ```
 
-`checkSign(10)` should return "positive". Note that capitalization matters
+`checkSign(10)` 应该返回字符串 `positive`。 注意区分大写字母和小写字母。
 
 ```js
 assert(checkSign(10) === 'positive');
 ```
 
-`checkSign(-12)` should return "negative". Note that capitalization matters
+`checkSign(-12)` 应该返回字符串 `negative`。 注意区分大写字母和小写字母。
 
 ```js
 assert(checkSign(-12) === 'negative');
 ```
 
-`checkSign(0)` should return "zero". Note that capitalization matters
+`checkSign(0)` 应该返回字符串 `zero`. 注意区分大写字母和小写字母。
 
 ```js
 assert(checkSign(0) === 'zero');

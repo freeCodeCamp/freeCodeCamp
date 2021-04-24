@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b42
-title: Mutate an Array Declared with const
+title: Muta un arreglo declarado con const
 challengeType: 1
 forumTopicId: 301206
 dashedName: mutate-an-array-declared-with-const
@@ -8,40 +8,42 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-The `const` declaration has many use cases in modern JavaScript.
+La declaración `const` tiene muchos casos de uso, en el actual JavaScript.
 
-Some developers prefer to assign all their variables using `const` by default, unless they know they will need to reassign the value. Only in that case, they use `let`.
+Algunos desarrolladores, prefieren asignar todas sus variables utilizando `const` por defecto, salvo que sepan que necesitarán reasignar el valor. Sólo en ese caso, utilizan `let`.
 
-However, it is important to understand that objects (including arrays and functions) assigned to a variable using `const` are still mutable. Using the `const` declaration only prevents reassignment of the variable identifier.
+Sin embargo, es importante comprender que los objetos (incluyendo arreglos y funciones), asignados a una variable usando `const` siguen siendo mutables. Usar la declaración `const` sólo previene la reasignación del identificador de una variable.
 
 ```js
 const s = [5, 6, 7];
-s = [1, 2, 3]; // throws error, trying to assign a const
-s[2] = 45; // works just as it would with an array declared with var or let
-console.log(s); // returns [5, 6, 45]
+s = [1, 2, 3];
+s[2] = 45;
+console.log(s);
 ```
 
-As you can see, you can mutate the object `[5, 6, 7]` itself and the variable `s` will still point to the altered array `[5, 6, 45]`. Like all arrays, the array elements in `s` are mutable, but because `const` was used, you cannot use the variable identifier `s` to point to a different array using the assignment operator.
+`s = [1, 2, 3]` resultará en un error. El `console.log` mostrará el valor `[5, 6, 45]`.
+
+Como puedes ver, puedes mutar el objeto `[5, 6, 7]` en sí mismo y la variable `s` seguirá apuntado al arreglo alterado `[5, 6, 45]`. Como en todos los arreglos, los elementos del arreglo en `s` son mutables, pero debido a que se utilizó `const`, no puedes utilizar el identificador de la variable `s` para apuntar a un arreglo diferente usando el operador de asignación.
 
 # --instructions--
 
-An array is declared as `const s = [5, 7, 2]`. Change the array to `[2, 5, 7]` using various element assignments.
+Un arreglo es declarado como `const s = [5, 7, 2]`. Cambia el arreglo a `[2, 5, 7]` utilizando varias asignaciones de elementos.
 
 # --hints--
 
-You should not replace `const` keyword.
+No debes reemplazar la palabra clave `const`.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const/g));
 ```
 
-`s` should be a constant variable (by using `const`).
+`s` debe ser una variable constante (utilizando `const`).
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
 ```
 
-You should not change the original array declaration.
+No debes cambiar la declaración original del arreglo.
 
 ```js
 (getUserInput) =>
@@ -52,7 +54,7 @@ You should not change the original array declaration.
   );
 ```
 
-`s` should be equal to `[2, 5, 7]`.
+`s` debe ser igual a `[2, 5, 7]`.
 
 ```js
 assert.deepEqual(s, [2, 5, 7]);

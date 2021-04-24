@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9d
-title: Match Beginning String Patterns
+title: 匹配字符串的开头
 challengeType: 1
 forumTopicId: 301349
 dashedName: match-beginning-string-patterns
@@ -8,45 +8,45 @@ dashedName: match-beginning-string-patterns
 
 # --description--
 
-Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
+回顾一下之前的挑战，正则表达式可以用于查找多项匹配。 还可以查询字符串中符合指定匹配模式的字符。
 
-In an earlier challenge, you used the caret character (`^`) inside a character set to create a negated character set in the form `[^thingsThatWillNotBeMatched]`. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+在之前的挑战中，使用字符集中前插入符号（`^`）来创建一个否定字符集，形如 `[^thingsThatWillNotBeMatched]`。 除了在字符集中使用之外，脱字符还用于匹配字符串的开始位置。
 
 ```js
 let firstString = "Ricky is first and can be found.";
 let firstRegex = /^Ricky/;
 firstRegex.test(firstString);
-// Returns true
 let notFirst = "You can't find Ricky now.";
 firstRegex.test(notFirst);
-// Returns false
 ```
+
+第一次 `test` 调用将返回 `true`，而第二次调用将返回 `false`。
 
 # --instructions--
 
-Use the caret character in a regex to find `"Cal"` only in the beginning of the string `rickyAndCal`.
+在正则表达式中使用脱字符来找到 `Cal` 在字符串 `rickyAndCal` 中的开始位置。
 
 # --hints--
 
-Your regex should search for `"Cal"` with a capital letter.
+你的正则表达式应该搜寻首字母大写的 `Cal`。
 
 ```js
 assert(calRegex.source == '^Cal');
 ```
 
-Your regex should not use any flags.
+你的正则表达式不应该使用任何标志。
 
 ```js
 assert(calRegex.flags == '');
 ```
 
-Your regex should match `"Cal"` at the beginning of the string.
+你的正则表达式应该匹配字符串 `Cal` 的开始位置。
 
 ```js
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
-Your regex should not match `"Cal"` in the middle of a string.
+你的正则表达式不应该匹配中间包含 `Cal` 的字符串。
 
 ```js
 assert(!calRegex.test('Ricky and Cal both like racing.'));

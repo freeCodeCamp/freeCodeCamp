@@ -17,11 +17,13 @@ dashedName: set-the-id-of-an-element
 
 设置 `h2` 元素的 id 为 `cat-photo-app` 的代码如下：
 
-`<h2 id="cat-photo-app">`
+```html
+<h2 id="cat-photo-app">
+```
 
 # --instructions--
 
-请将 `form` 元素的 id 设置为 `cat-photo-form`。
+设置`form`元素的 id 为`cat-photo-form`。
 
 # --hints--
 

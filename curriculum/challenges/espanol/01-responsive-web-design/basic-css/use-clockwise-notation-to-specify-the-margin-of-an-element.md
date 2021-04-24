@@ -13,7 +13,9 @@ Intentemos de nuevo, pero esta vez con `margin`.
 
 En lugar de especificar las propiedades `margin-top`, `margin-right`, `margin-bottom`, y `margin-left` individualmente, puedes especificarlas todas en una sola línea, como se muestra a continuación:
 
-`margin: 10px 20px 10px 20px;`
+```css
+margin: 10px 20px 10px 20px;
+```
 
 Estos cuatro valores se leen en el sentido de las agujas del reloj: arriba, derecha, abajo, izquierda, (top, right, bottom, left) y producirán exactamente el mismo resultado que usar las instrucciones específicas de margen.
 

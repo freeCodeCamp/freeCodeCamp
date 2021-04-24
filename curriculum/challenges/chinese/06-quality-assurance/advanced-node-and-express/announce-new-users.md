@@ -1,6 +1,6 @@
 ---
 id: 589fc832f9fc0f352b528e78
-title: Announce New Users
+title: 用户公告
 challengeType: 2
 forumTopicId: 301546
 dashedName: announce-new-users
@@ -8,9 +8,9 @@ dashedName: announce-new-users
 
 # --description--
 
-Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such a feature. The most logical way of doing so is sending 3 pieces of data with the event: the name of the user who connected/disconnected, the current user count, and if that name connected or disconnected.
+许多聊天室都有这个功能：所有已连接到服务器的在线用户都会看到有人加入或退出的提醒。 我们已经写好了处理连接和断开事件的代码，只要对这个方法稍作修改就可以实现这个功能。 在事件中，我们需要发送这三条信息：连接或断开的用户名、当前用户数量、事件类型（即需要知道用户究竟是连接还是断开）。
 
-Change the event name to `'user'`, and pass an object along containing the fields 'name', 'currentUsers', and 'connected' (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both 'user count' events and set the disconnect one to send `false` for the field 'connected' instead of `true` like the event emitted on connect.
+请将事件名称更改为 `'user'`，其中应包含如下字段：'name'、'currentUsers'、'connected'（布尔值，连接上即为 `true`，断开则是 `false`）。 请务必更改两个 user count 事件，设置 disconnect 事件向 connected 字段发送 `false` ，而不是像 connect 事件一样发送 `true`。
 
 ```js
 io.emit('user', {
@@ -20,9 +20,9 @@ io.emit('user', {
 });
 ```
 
-Now your client will have all the necessary information to correctly display the current user count and announce when a user connects or disconnects! To handle this event on the client side we should listen for `'user'`, then update the current user count by using jQuery to change the text of `#num-users` to `'{NUMBER} users online'`, as well as append a `<li>` to the unordered list with id `messages` with `'{NAME} has {joined/left} the chat.'`.
+现在客户端已具备足够的信息，来显示当前用户数，并在用户连接或断开连接时通知！ 接下来我们需要在客户端监听 `'user'` 事件，然后用 jQuery 把 `#num-users` 节点的文本内容更新为 `'{NUMBER} users online'`。 同时，我们需要为无序列表添加一个 id 为 `messages` 且带有 `'{NAME} has {joined/left} the chat.'` 文本的 `<li>`。
 
-An implementation of this could look like the following:
+实现如下：
 
 ```js
 socket.on('user', data => {
@@ -34,11 +34,11 @@ socket.on('user', data => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286).
+完成上述要求后，你可以在下方提交你的页面链接。 如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286) 的答案。
 
 # --hints--
 
-Event `'user'` should be emitted with name, currentUsers, and connected.
+事件 `'user'` 应该包含，name、 currentUsers 和 connected。
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ Event `'user'` should be emitted with name, currentUsers, and connected.
   );
 ```
 
-Client should properly handle and display the new data from event `'user'`.
+客户端应处理和显示 `'user'` 中的新数据。
 
 ```js
 (getUserInput) =>

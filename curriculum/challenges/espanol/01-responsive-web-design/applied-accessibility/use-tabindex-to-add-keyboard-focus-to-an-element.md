@@ -13,13 +13,15 @@ El atributo HTML `tabindex` tiene tres funciones distintas relacionadas con el f
 
 Ciertos elementos, como los vínculos y los controles de formulario, reciben automáticamente el foco del teclado cuando un usuario pestañas a través de una página. Está en el mismo orden en que los elementos vienen en la fuente del lenguaje de marcado de HTML. Esta misma funcionalidad se puede dar a otros elementos, como `div`, `span` y `p`, colocando un atributo `tabindex="0"`. Aquí hay un ejemplo:
 
-`<div tabindex="0">I need keyboard focus!</div>`
+```html
+<div tabindex="0">I need keyboard focus!</div>
+```
 
 **Nota:** Un valor negativo de `tabindex` (normalmente -1) indica que un elemento es enfocable, pero no es accesible por el teclado. Este método generalmente se usa para enfocar el contenido mediante programación (como cuando se activa un `div` utilizando para una ventana emergente), y esta más allá del alcance de estos desafíos.
 
 # --instructions--
 
-Camper Cat creó una nueva encuesta para recopilar información sobre sus usuarios. Él sabe que los campos de entrada obtienen automáticamente el enfoque del teclado, pero quiere asegurarse de que los usuarios de su teclado hagan una pausa en las instrucciones mientras tabulan los elementos. Agrega un atributo `tabindex` a la etiqueta `p` y establezca su valor en `0`. Extra - el uso de `tabindex` también permite que la pseudo-clase CSS `:focus` funcione en la etiqueta `p`.
+Camper Cat creó una nueva encuesta para recopilar información sobre sus usuarios. Él sabe que los campos de entrada obtienen automáticamente el enfoque del teclado, pero quiere asegurarse de que los usuarios de su teclado hagan una pausa en las instrucciones mientras tabulan los elementos. Agrega un atributo `tabindex` a la etiqueta `p` y establece su valor en `0`. Extra: el uso de `tabindex` también permite que la pseudo-clase CSS `:focus` funcione en la etiqueta `p`.
 
 # --hints--
 

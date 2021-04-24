@@ -52,7 +52,7 @@ const completionHours = {
   [certTypes.machineLearningPyV7]: 300
 };
 
-const superBlockCertTypeMap = {
+const certSlugTypeMap = {
   // legacy
   'legacy-front-end': certTypes.frontEnd,
   'legacy-back-end': certTypes.backEnd,
@@ -73,6 +73,27 @@ const superBlockCertTypeMap = {
   'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
   'data-analysis-with-python-v7': certTypes.dataAnalysisPyV7,
   'machine-learning-with-python-v7': certTypes.machineLearningPyV7
+};
+
+const superBlockCertTypeMap = {
+  // legacy
+  'legacy-front-end': certTypes.frontEnd,
+  'legacy-back-end': certTypes.backEnd,
+  'legacy-data-visualization': certTypes.dataVis,
+  'information-security-and-quality-assurance': certTypes.infosecQa,
+  'full-stack': certTypes.fullStack,
+
+  // modern
+  'responsive-web-design': certTypes.respWebDesign,
+  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
+  'front-end-libraries': certTypes.frontEndLibs,
+  'data-visualization': certTypes.dataVis2018,
+  'apis-and-microservices': certTypes.apisMicroservices,
+  'quality-assurance': certTypes.qaV7,
+  'information-security': certTypes.infosecV7,
+  'scientific-computing-with-python': certTypes.sciCompPyV7,
+  'data-analysis-with-python': certTypes.dataAnalysisPyV7,
+  'machine-learning-with-python': certTypes.machineLearningPyV7
 };
 
 const certTypeIdMap = {
@@ -115,6 +136,7 @@ exports.oldDataVizId = '561add10cb82ac38a17513b3';
 exports.completionHours = completionHours;
 exports.certTypes = certTypes;
 exports.superBlockCertTypeMap = superBlockCertTypeMap;
+exports.certSlugTypeMap = certSlugTypeMap;
 exports.certIds = certIds;
 exports.certTypeIdMap = certTypeIdMap;
 exports.certTypeTitleMap = certTypeTitleMap;

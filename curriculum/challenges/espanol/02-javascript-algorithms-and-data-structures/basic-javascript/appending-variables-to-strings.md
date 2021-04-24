@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ed
-title: Appending Variables to Strings
+title: Agrega variables a cadenas
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
@@ -9,30 +9,31 @@ dashedName: appending-variables-to-strings
 
 # --description--
 
-Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (`+=`) operator.
+Al igual que podemos construir una cadena sobre múltiples líneas a partir de las cadenas <dfn>literales</dfn>, también podemos añadir variables a una cadena usando el operador "más igual" (`+=`).
 
-Example:
+Ejemplo:
 
 ```js
 var anAdjective = "awesome!";
 var ourStr = "freeCodeCamp is ";
 ourStr += anAdjective;
-// ourStr is now "freeCodeCamp is awesome!"
 ```
+
+`ourStr` tendrá el valor de `freeCodeCamp is awesome!`.
 
 # --instructions--
 
-Set `someAdjective` to a string of at least 3 characters and append it to `myStr` using the `+=` operator.
+Establece `someAdjective` a una cadena de al menos 3 caracteres y añádelo a `myStr` usando el operador `+=`.
 
 # --hints--
 
-`someAdjective` should be set to a string at least 3 characters long.
+`someAdjective` debe ser establecido a una cadena de al menos 3 caracteres.
 
 ```js
 assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
 ```
 
-You should append `someAdjective` to `myStr` using the `+=` operator.
+Debes añadir `someAdjective` a `myStr` usando el operador `+=`.
 
 ```js
 assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);

@@ -24,6 +24,7 @@ const statusRE = /^\/status\/ping$/;
 const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
 const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
+const createStripeSession = /^\/donate\/create-stripe-session/;
 
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
@@ -41,15 +42,19 @@ const _pathsAllowedREs = [
   unsubscribedRE,
   unsubscribeRE,
   updateHooksRE,
-  donateRE
+  donateRE,
+  createStripeSession
 ];
 
 export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
   return pathsAllowedREs.some(re => re.test(path));
 }
 
-export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
-  function requestAuthorisation(req, res, next) {
+export default function getRequestAuthorisation({
+  jwtSecret = _jwtSecret,
+  getUserById = _getUserById
+} = {}) {
+  return function requestAuthorisation(req, res, next) {
     const { origin } = getRedirectParams(req);
     const { path } = req;
     if (!isAllowedPath(path)) {
@@ -102,3 +107,4 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
     }
     return Promise.resolve(next());
   };
+}

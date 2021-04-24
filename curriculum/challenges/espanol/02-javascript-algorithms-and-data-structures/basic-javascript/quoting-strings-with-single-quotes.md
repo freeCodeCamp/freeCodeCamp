@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b4
-title: Cita cadenas con las comillas simples
+title: Cita cadenas con comillas simples
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260
@@ -22,16 +22,18 @@ La razón por la que puedes querer usar un tipo de comilla sobre otro es si quie
 conversation = 'Finn exclaims to Jake, "Algebraic!"';
 ```
 
-Sin embargo, esto se convierte en un problema cuando es necesario utilizar las comillas externas dentro de ella. Recuerda, una cadena tiene el mismo tipo de comillas al principio y al final. Pero si tienes esa misma comilla en algún lugar del medio, la cadena se detendrá temprano y arrojará un error.
+Sin embargo, esto se convierte en un problema cuando es necesario utilizar las comillas externas dentro de ella. Recuerda, una cadena tiene el mismo tipo de comillas al principio y al final. Pero si tienes esa misma comilla en algún lugar del medio, la cadena se detendrá antes de tiempo y arrojará un error.
 
 ```js
 goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
-badStr = 'Finn responds, "Let's go!"'; // Throws an error
+badStr = 'Finn responds, "Let's go!"';
 ```
 
-En la cadena <dfn>goodStr</dfn> anterior, puedes usar ambas comillas de forma segura usando la barra invertida <code>\\</code> como un carácter de escape.
+Aquí `badStr` arrojará un error.
 
-**Nota:** La barra invertida <code>\\</code> no debe confundirse con la barra diagonal `/`. No hacen lo mismo.
+En la cadena <dfn>goodStr</dfn> anterior, puedes usar ambas comillas de forma segura usando la barra invertida `\` como un carácter de escape.
+
+**Nota:** La barra invertida `\` no debe confundirse con la barra diagonal `/`. No hacen lo mismo.
 
 # --instructions--
 
@@ -41,7 +43,7 @@ Ahora mismo, la etiqueta `<a>` en la cadena usa comillas dobles en todas partes.
 
 # --hints--
 
-Deberías eliminar todas las barras invertidas `backslashes` (<code>\\</code>).
+Debes eliminar todas las barras invertidas (`\`).
 
 ```js
 assert(

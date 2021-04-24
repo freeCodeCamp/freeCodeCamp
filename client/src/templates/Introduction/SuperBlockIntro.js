@@ -19,10 +19,11 @@ import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/propTypes';
 
 import './intro.css';
 
@@ -47,7 +48,8 @@ const propTypes = {
   }),
   resetExpansion: PropTypes.func,
   t: PropTypes.func,
-  toggleBlock: PropTypes.func
+  toggleBlock: PropTypes.func,
+  user: User
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -57,10 +59,12 @@ const mapStateToProps = state => {
     currentChallengeIdSelector,
     isSignedInSelector,
     userFetchStateSelector,
-    (currentChallengeId, isSignedIn, fetchState) => ({
+    userSelector,
+    (currentChallengeId, isSignedIn, fetchState, user) => ({
       currentChallengeId,
       isSignedIn,
-      fetchState
+      fetchState,
+      user
     })
   )(state);
 };
@@ -71,7 +75,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export class SuperBlockIntroductionPage extends Component {
+class SuperBlockIntroductionPage extends Component {
   componentDidMount() {
     this.initializeExpandedState();
 
@@ -132,17 +136,17 @@ export class SuperBlockIntroductionPage extends Component {
     const {
       data: {
         markdownRemark: {
-          frontmatter: { superBlock }
+          frontmatter: { superBlock, title }
         },
         allChallengeNode: { edges }
       },
       isSignedIn,
-      t
+      t,
+      user
     } = this.props;
 
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
-
     const i18nSuperBlock = t(`intro:${superBlock}.title`);
 
     return (
@@ -168,14 +172,18 @@ export class SuperBlockIntroductionPage extends Component {
                       challenges={nodesForSuperBlock.filter(
                         node => node.block === blockDashedName
                       )}
-                      superBlockDashedName={superBlock}
+                      superBlock={superBlock}
                     />
                     {blockDashedName !== 'project-euler' ? <Spacer /> : null}
                   </Fragment>
                 ))}
                 {superBlock !== 'coding-interview-prep' && (
                   <div>
-                    <CertChallenge superBlock={superBlock} />
+                    <CertChallenge
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
                   </div>
                 )}
               </div>
@@ -216,6 +224,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         superBlock
+        title
       }
     }
     allChallengeNode(

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b56
-title: Use export to Share a Code Block
+title: 用 export 来重用代码块
 challengeType: 1
 forumTopicId: 301219
 dashedName: use-export-to-share-a-code-block
@@ -8,7 +8,7 @@ dashedName: use-export-to-share-a-code-block
 
 # --description--
 
-Imagine a file called `math_functions.js` that contains several functions related to mathematical operations. One of them is stored in a variable, `add`, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to `export` it.
+假设有一个文件 `math_functions.js`，该文件包含了数学运算相关的一些函数。 其中一个存储在变量 `add` 里，该函数接受两个数字作为参数返回它们的和。 你想在几个不同的 JavaScript 文件中使用这个函数。 要实现这个目的，就需要 `export` 它。
 
 ```js
 export const add = (x, y) => {
@@ -16,7 +16,7 @@ export const add = (x, y) => {
 }
 ```
 
-The above is a common way to export a single function, but you can achieve the same thing like this:
+上面是导出单个函数常用方法，还可以这样导出：
 
 ```js
 const add = (x, y) => {
@@ -26,7 +26,7 @@ const add = (x, y) => {
 export { add };
 ```
 
-When you export a variable or function, you can import it in another file and use it without having to rewrite the code. You can export multiple things by repeating the first example for each thing you want to export, or by placing them all in the export statement of the second example, like this:
+导出变量和函数后，就可以在其它文件里导入使用从而避免了代码冗余。 重复第一个例子的代码可以导出多个对象或函数，在第二个例子里面的导出语句中添加更多值也可以导出多项，例子如下：
 
 ```js
 export { add, subtract };
@@ -34,11 +34,11 @@ export { add, subtract };
 
 # --instructions--
 
-There are two string-related functions in the editor. Export both of them using the method of your choice.
+编辑框中有两个字符串相关的函数。 选用一种方法导出两个函数。
 
 # --hints--
 
-You should properly export `uppercaseString`.
+应该导出 `uppercaseString` 变量。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-You should properly export `lowercaseString`.
+应该导出 `lowercaseString` 变量。
 
 ```js
 assert(

@@ -6,16 +6,15 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { isSignedInSelector } from '../../../redux';
-import { apiLocation, homeLocation } from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
 
 import './login.css';
 
-const mapStateToProps = createSelector(
-  isSignedInSelector,
-  isSignedIn => ({
-    isSignedIn
-  })
-);
+const { apiLocation, homeLocation } = envData;
+
+const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
+  isSignedIn
+}));
 
 function Login(props) {
   const { t } = useTranslation();

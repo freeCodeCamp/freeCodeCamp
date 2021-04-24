@@ -11,7 +11,7 @@ dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 
 接下来的表单主题是关于单选按钮的可访问性。 在上一个挑战中，每个单选按钮都有一个包含 `for` 属性的 `label` 标签，这些属性值指向相关选项的 `id`。 然而单选按钮通常成组出现，而且用户必须选择其中一项。
 
-`fieldset` 标签包裹整组单选按钮，实现这个功能。 我们可以使用 `fieldset` 标签将单选按钮组包含在里面，通常还会使用 `legend` 标签来为单选按钮组提供文字说明。 屏幕阅读器也可以朗读这些文字。
+`fieldset` 标签包裹整组单选按钮，实现这个功能。 它经常使用 `legend` 标签来提供分组的描述，以便屏幕阅读器用户会阅读 `fieldset` 元素中的每个选项。
 
 当选项的含义很明确时，如“性别选择”，`fieldset` 与 `legend` 标签可以省略。 这时，使用包含 `for` 属性的 `label` 标签就足够了。
 

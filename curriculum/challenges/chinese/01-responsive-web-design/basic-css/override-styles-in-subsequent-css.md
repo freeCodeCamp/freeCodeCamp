@@ -21,7 +21,9 @@ dashedName: override-styles-in-subsequent-css
 
 HTML 同时应用多个 class 属性需以空格来间隔，例子如下:
 
-`class="class1 class2"`
+```html
+class="class1 class2"
+```
 
 **注意：**HTML 元素里应用的 class 的先后顺序无关紧要。
 

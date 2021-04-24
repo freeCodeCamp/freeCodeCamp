@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb1bdef
-title: Iterate with JavaScript While Loops
+title: Itera con el bucle "while" de JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c8QbnCM'
 forumTopicId: 18220
@@ -9,9 +9,9 @@ dashedName: iterate-with-javascript-while-loops
 
 # --description--
 
-You can run the same code multiple times by using a loop.
+Puedes ejecutar el mismo código múltiples veces usando un bucle.
 
-The first type of loop we will learn is called a `while` loop because it runs "while" a specified condition is true and stops once that condition is no longer true.
+El primer tipo de bucle que aprenderemos se llama bucle `while` porque ejecuta una condición específica mientras esta sea verdadera, y se detiene una vez que esa condición ya no sea verdadera.
 
 ```js
 var ourArray = [];
@@ -22,23 +22,23 @@ while(i < 5) {
 }
 ```
 
-In the code example above, the `while` loop will execute 5 times and append the numbers 0 through 4 to `ourArray`.
+En el ejemplo de código anterior, el bucle `while` se ejecutará 5 veces y añadirá los números de 0 a 4 a `ourArray`.
 
-Let's try getting a while loop to work by pushing values to an array.
+Intentemos construir un bucle while para que funcione empujando valores a un arreglo.
 
 # --instructions--
 
-Add the numbers 5 through 0 (inclusive) in descending order to `myArray` using a `while` loop.
+Agrega los números de 5 a 0 (inclusivo) en orden descendente a `myArray` usando un bucle `while`.
 
 # --hints--
 
-You should be using a `while` loop for this.
+Debes utilizar un bucle `while` para esto.
 
 ```js
 assert(code.match(/while/g));
 ```
 
-`myArray` should equal `[5,4,3,2,1,0]`.
+`myArray` debe ser igual a `[5,4,3,2,1,0]`.
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);

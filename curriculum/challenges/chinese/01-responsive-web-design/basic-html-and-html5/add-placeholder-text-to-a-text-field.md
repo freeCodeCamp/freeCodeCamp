@@ -13,7 +13,9 @@ dashedName: add-placeholder-text-to-a-text-field
 
 你可以像这样创建一个占位符：
 
-`<input type="text" placeholder="this is placeholder text">`
+```html
+<input type="text" placeholder="this is placeholder text">
+```
 
 **注意：**别忘了 `input` 元素是 "自闭和标签"，即不需要结束标签。
 

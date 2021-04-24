@@ -5,6 +5,7 @@ const introObject = require('./locales/english/intro.json');
 const metaObject = require('./locales/english/meta-tags.json');
 const motivationObject = require('./locales/english/motivation.json');
 const trendingObject = require('./locales/english/trending.json');
+const linksObject = require('./locales/english/links.json');
 
 /**
  * Function to flatten a nested object. Written specifically for
@@ -35,6 +36,7 @@ const metaKeys = Object.keys(flattenAnObject(metaObject));
 const motivationKeys = Object.keys(flattenAnObject(motivationObject));
 const introKeys = Object.keys(flattenAnObject(introObject));
 const trendingKeys = Object.keys(flattenAnObject(trendingObject));
+const linksKeys = Object.keys(flattenAnObject(linksObject));
 
 /**
  * Recursively read through the directory, grabbing .js files
@@ -87,5 +89,10 @@ for (const key of introKeys) {
 for (const key of trendingKeys) {
   if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
     console.warn(`The trending key '${key}' appears to be unused.`);
+  }
+}
+for (const key of linksKeys) {
+  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+    console.warn(`The links key '${key}' appears to be unused.`);
   }
 }

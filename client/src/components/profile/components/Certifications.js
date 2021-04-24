@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { certificatesByNameSelector } from '../../../redux';
 import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
+import { CurrentCertsType } from '../../../redux/propTypes';
 
 const mapStateToProps = (state, props) =>
   createSelector(
@@ -21,19 +22,11 @@ const mapStateToProps = (state, props) =>
     })
   )(state, props);
 
-const certArrayTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    show: PropTypes.bool,
-    title: PropTypes.string,
-    showURL: PropTypes.string
-  })
-);
-
 const propTypes = {
-  currentCerts: certArrayTypes,
+  currentCerts: CurrentCertsType,
   hasLegacyCert: PropTypes.bool,
   hasModernCert: PropTypes.bool,
-  legacyCerts: certArrayTypes,
+  legacyCerts: CurrentCertsType,
   username: PropTypes.string
 };
 
@@ -45,7 +38,7 @@ function renderCertShow(username, cert) {
           <Link
             className='btn btn-lg btn-primary btn-block'
             external={true}
-            to={`/certification/${username}/${cert.showURL}`}
+            to={`/certification/${username}/${cert.certSlug}`}
           >
             View {cert.title}
           </Link>

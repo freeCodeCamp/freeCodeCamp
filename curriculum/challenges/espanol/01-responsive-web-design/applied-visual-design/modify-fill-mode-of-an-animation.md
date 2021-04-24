@@ -13,11 +13,13 @@ Eso es genial, pero aún no funciona bien. Observa como la animación se restabl
 
 Esto se puede hacer estableciendo la propiedad `animation-fill-mode` en `forwards`. El `animation-fill-mode` especifica el estilo aplicado a un elemento cuando la animación ha finalizado. Puedes configurarlo así:
 
-`animation-fill-mode: forwards;`
+```css
+animation-fill-mode: forwards;
+```
 
 # --instructions--
 
-Establece la propiedad `animation-fill-mode` de `button:hover` en `forwards` para que botón permanezca resaltado cuando un usuario pase sobre el.
+Establece la propiedad `animation-fill-mode` de `button:hover` en `forwards` para que el botón permanezca resaltado cuando un usuario pase sobre el.
 
 # --hints--
 

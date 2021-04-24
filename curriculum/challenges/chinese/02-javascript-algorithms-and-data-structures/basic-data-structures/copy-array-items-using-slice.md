@@ -1,6 +1,6 @@
 ---
 id: 587d7b7a367417b2b2512b12
-title: Copy Array Items Using slice()
+title: 使用 slice() 复制数组元素
 challengeType: 1
 forumTopicId: 301158
 dashedName: copy-array-items-using-slice
@@ -8,25 +8,25 @@ dashedName: copy-array-items-using-slice
 
 # --description--
 
-The next method we will cover is `slice()`. Rather than modifying an array, `slice()` copies or *extracts* a given number of elements to a new array, leaving the array it is called upon untouched. `slice()` takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:
+接下来我们要介绍 `slice()` 方法。 `slice()` 不会修改数组，而是会复制，或者说*提取（extract）*给定数量的元素到一个新数组。 `slice()` 只接收 2 个输入参数：第一个是开始提取元素的位置（索引），第二个是提取元素的结束位置（索引）。 提取的元素中不包括第二个参数所对应的元素。 如下示例：
 
 ```js
 let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
 
 let todaysWeather = weatherConditions.slice(1, 3);
-// todaysWeather equals ['snow', 'sleet'];
-// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
 ```
 
-In effect, we have created a new array by extracting elements from an existing array.
+`todaysWeather` 值为 `['snow', 'sleet']`，`weatherConditions` 值仍然为 `['rain', 'snow', 'sleet', 'hail', 'clear']`。
+
+在上面的代码中，我们从一个数组中提取了一些元素，并用这些元素创建了一个新数组。
 
 # --instructions--
 
-We have defined a function, `forecast`, that takes an array as an argument. Modify the function using `slice()` to extract information from the argument array and return a new array that contains the elements `'warm'` and `'sunny'`.
+我们已经定义了一个 `forecast` 函数，它接受一个数组作为参数。 请修改这个函数，利用 `slice()` 从输入的数组中提取信息，最终返回一个包含元素 `warm` 和 `sunny` 的新数组。
 
 # --hints--
 
-`forecast` should return `["warm", "sunny"]`
+`forecast` 应返回 `["warm", "sunny"]`。
 
 ```js
 assert.deepEqual(
@@ -35,7 +35,7 @@ assert.deepEqual(
 );
 ```
 
-The `forecast` function should utilize the `slice()` method
+`forecast` 函数中应使用 `slice()` 方法。
 
 ```js
 assert(/\.slice\(/.test(code));

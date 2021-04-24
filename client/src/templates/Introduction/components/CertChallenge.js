@@ -7,27 +7,35 @@ import { withTranslation } from 'react-i18next';
 
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 import GreenPass from '../../../assets/icons/GreenPass';
-import { userSelector } from '../../../redux';
+import CertificationCard from './CertificationCard';
+
+import { certificatesByNameSelector } from '../../../redux';
 import { verifyCert } from '../../../redux/settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import { User } from '../../../redux/propTypes';
-import CertificationCard from './CertificationCard';
+import { CurrentCertsType, User } from '../../../redux/propTypes';
+import { certMap } from '../../../resources/certAndProjectMap';
+import {
+  certSlugTypeMap,
+  superBlockCertTypeMap
+} from '../../../../../config/certification-settings';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
+  currentCerts: CurrentCertsType,
   superBlock: PropTypes.string,
   t: PropTypes.func,
+  title: PropTypes.string,
   user: User,
   verifyCert: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, props) => {
   return createSelector(
-    userSelector,
-    user => ({
-      user
+    certificatesByNameSelector(props.user.username),
+    ({ currentCerts }) => ({
+      currentCerts
     })
-  )(state);
+  )(state, props);
 };
 
 const mapDispatchToProps = {
@@ -41,38 +49,18 @@ export class CertChallenge extends Component {
       createFlashMessage,
       superBlock,
       t,
-      user: {
-        is2018DataVisCert,
-        isApisMicroservicesCert,
-        isFrontEndLibsCert,
-        isQaCertV7,
-        isInfosecCertV7,
-        isJsAlgoDataStructCert,
-        isRespWebDesignCert,
-        isSciCompPyCertV7,
-        isDataAnalysisPyCertV7,
-        isMachineLearningPyCertV7,
-        isHonest,
-        username
-      },
-      verifyCert
+      verifyCert,
+      title,
+      user: { isHonest, username },
+      currentCerts
     } = this.props;
 
-    const userCertificates = {
-      'responsive-web-design': isRespWebDesignCert,
-      'javascript-algorithms-and-data-structures': isJsAlgoDataStructCert,
-      'front-end-libraries': isFrontEndLibsCert,
-      'data-visualization': is2018DataVisCert,
-      'apis-and-microservices': isApisMicroservicesCert,
-      'quality-assurance': isQaCertV7,
-      'information-security': isInfosecCertV7,
-      'scientific-computing-with-python': isSciCompPyCertV7,
-      'data-analysis-with-python': isDataAnalysisPyCertV7,
-      'machine-learning-with-python': isMachineLearningPyCertV7
-    };
-
-    const isCertified = userCertificates[superBlock];
-    const certLocation = `/certification/${username}/${superBlock}`;
+    const cert = certMap.find(x => x.title === title);
+    const isCertified = currentCerts.find(
+      cert =>
+        certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
+    ).show;
+    const certLocation = `/certification/${username}/${cert.certSlug}`;
     const certCheckmarkStyle = { height: '40px', width: '40px' };
     const i18nSuperBlock = t(`intro:${superBlock}.title`);
     const i18nCertText = t(`intro:misc-text.certification`, {

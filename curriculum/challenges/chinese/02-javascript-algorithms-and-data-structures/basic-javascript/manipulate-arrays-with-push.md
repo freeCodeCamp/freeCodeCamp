@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: Manipulate Arrays With push()
+title: 使用 push() 操作数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
@@ -9,29 +9,29 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-An easy way to append data to the end of an array is via the `push()` function.
+一个将数据添加到数组末尾的简单方法是 `push()` 函数。
 
-`.push()` takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
+`.push()` 接受一个或多个参数（<dfn>parameters</dfn>），并把它压入到数组的末尾。
 
-Examples:
+示例：
 
 ```js
 var arr1 = [1,2,3];
 arr1.push(4);
-// arr1 is now [1,2,3,4]
 
 var arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
-// arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
 ```
+
+`arr1` 现在值为 `[1, 2, 3, 4]`，`arr2` 值为 `["Stimpson", "J", "cat", ["happy", "joy"]]`。
 
 # --instructions--
 
-Push `["dog", 3]` onto the end of the `myArray` variable.
+把`["dog", 3]` 压入到 `myArray` 变量的末尾。
 
 # --hints--
 
-`myArray` should now equal `[["John", 23], ["cat", 2], ["dog", 3]]`.
+`myArray` 现在应该等于 `[["John", 23], ["cat", 2], ["dog", 3]]`。
 
 ```js
 assert(

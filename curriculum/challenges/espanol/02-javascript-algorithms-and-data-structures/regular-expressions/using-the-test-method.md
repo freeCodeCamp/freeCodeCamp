@@ -1,6 +1,6 @@
 ---
 id: 587d7db3367417b2b2512b8e
-title: Using the Test Method
+title: Usa el método "test"
 challengeType: 1
 forumTopicId: 301369
 dashedName: using-the-test-method
@@ -8,32 +8,33 @@ dashedName: using-the-test-method
 
 # --description--
 
-Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.
+Las expresiones regulares se utilizan en lenguajes de programación para coincidir con partes de cadenas. Creas patrones para ayudarte a hacer esa coincidencia.
 
-If you want to find the word `"the"` in the string `"The dog chased the cat"`, you could use the following regular expression: `/the/`. Notice that quote marks are not required within the regular expression.
+Si quieres encontrar la palabra `the` en la cadena `The dog chased the cat`, puedes utilizar la siguiente expresión regular: `/the/`. Ten en cuenta que las comillas no son requeridas dentro de la expresión regular.
 
-JavaScript has multiple ways to use regexes. One way to test a regex is using the `.test()` method. The `.test()` method takes the regex, applies it to a string (which is placed inside the parentheses), and returns `true` or `false` if your pattern finds something or not.
+JavaScript tiene múltiples formas de usar expresiones regulares. Una forma de probar una expresión regular es usando el método `.test()`. El método `.test()` toma la expresión regular, la aplica a una cadena (que se coloca dentro de los paréntesis), y devuelve `true` o `false` si tu patrón encuentra algo o no.
 
 ```js
 let testStr = "freeCodeCamp";
 let testRegex = /Code/;
 testRegex.test(testStr);
-// Returns true
 ```
+
+El método `test` aquí devuelve `true`.
 
 # --instructions--
 
-Apply the regex `myRegex` on the string `myString` using the `.test()` method.
+Aplica la expresión regular `myRegex` en la cadena `myString` usando el método `.test()`.
 
 # --hints--
 
-You should use `.test()` to test the regex.
+Debes usar `.test()` para probar la expresión regular.
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+Tu resultado debe devolver `true`.
 
 ```js
 assert(result === true);

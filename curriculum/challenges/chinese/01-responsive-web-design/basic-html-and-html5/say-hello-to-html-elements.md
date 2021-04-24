@@ -19,11 +19,15 @@ dashedName: say-hello-to-html-elements
 
 开始标签像这样：
 
-`<h1>`
+```html
+<h1>
+```
 
 结束标签像这样：
 
-`</h1>`
+```html
+</h1>
+```
 
 开始标签和结束标签的唯一区别就是结束标签多了一个斜杠。
 
@@ -35,7 +39,7 @@ dashedName: say-hello-to-html-elements
 
 # --hints--
 
-`h1` 元素应有文本 `Hello World`。
+`h1` 元素的内容文本应为 `Hello World`。
 
 ```js
 assert.isTrue(/hello(\s)+world/gi.test($('h1').text()));

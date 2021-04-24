@@ -43,7 +43,7 @@ Right now, the `<a>` tag in the string uses double quotes everywhere. You will n
 
 # --hints--
 
-You should remove all the `backslashes` (<code>\\</code>).
+You should remove all the backslashes (`\`).
 
 ```js
 assert(

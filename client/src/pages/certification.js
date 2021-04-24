@@ -12,7 +12,7 @@ class Certification extends Component {
     return (
       <Router>
         <ShowCertification
-          path={withPrefix('/certification/:username/:certName')}
+          path={withPrefix('/certification/:username/:certSlug')}
         />
         <RedirectHome default={true} />
       </Router>

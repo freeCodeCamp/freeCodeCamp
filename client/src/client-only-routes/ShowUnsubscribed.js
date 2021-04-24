@@ -4,11 +4,11 @@ import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import env from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 import { Spacer } from '../components/helpers';
 
-const { apiLocation } = env;
+const { apiLocation } = envData;
 
 function ShowUnsubscribed({ unsubscribeId }) {
   const { t } = useTranslation();

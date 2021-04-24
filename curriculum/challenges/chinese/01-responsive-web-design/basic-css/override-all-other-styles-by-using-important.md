@@ -23,17 +23,19 @@ dashedName: override-all-other-styles-by-using-important
 
 如下所示：
 
-`color: red !important;`
+```css
+color: red !important;
+```
 
 # --hints--
 
-`h1` 元素的应有一个 class 为 `pink-text`。
+`h1` 元素应包含 `pink-text` class。
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-`h1` 元素应该包含 `color: white` 的行内样式声明。
+`h1` 元素应包含 `blue-text` class。
 
 ```js
 assert($('h1').hasClass('blue-text'));
@@ -51,7 +53,7 @@ assert($('h1').attr('id') === 'orange-text');
 assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi));
 ```
 
-`pink-text` 类应有 `!important` 关键词 ，以覆盖其他声明。
+`pink-text` class 应有 `!important` 关键词 ，以覆盖其他声明。
 
 ```js
 assert(

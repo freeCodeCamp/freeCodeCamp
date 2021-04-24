@@ -19,9 +19,11 @@ dashedName: override-class-declarations-by-styling-id-attributes
 
 给 `h1` 元素添加 `id` 属性，属性值为 `orange-text`。 设置方式如下：
 
-`<h1 id="orange-text">`
+```html
+<h1 id="orange-text">
+```
 
-`h1` 元素应继续保留 `blue-text` 和 `pink-text` 这两个 class。
+`h1` 元素需继续保留 `blue-text` 和 `pink-text` 这两个 class。
 
 在 `style` 元素中创建名为 `orange-text` 的 id 选择器。 例子如下：
 
@@ -35,7 +37,7 @@ dashedName: override-class-declarations-by-styling-id-attributes
 
 # --hints--
 
-`h1` 元素应包含 `pink-text` class。
+`h1` 元素的应有一个 class 为 `pink-text`。
 
 ```js
 assert($('h1').hasClass('pink-text'));
@@ -47,7 +49,7 @@ assert($('h1').hasClass('pink-text'));
 assert($('h1').hasClass('blue-text'));
 ```
 
-`h1` 的 id 属性值应为 `orange-text`。
+`h1` 元素的 id 应为 `orange-text`。
 
 ```js
 assert($('h1').attr('id') === 'orange-text');

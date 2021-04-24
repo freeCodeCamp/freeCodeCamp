@@ -1,6 +1,6 @@
 ---
 id: 598e8944f009e646fc236146
-title: Understanding Undefined Value returned from a Function
+title: 函数也可以返回 undefined
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
 forumTopicId: 301177
@@ -9,45 +9,45 @@ dashedName: understanding-undefined-value-returned-from-a-function
 
 # --description--
 
-A function can include the `return` statement but it does not have to. In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`.
+函数一般用 `return` 语句来返回值，但这不是必须的。 在函数没有 `return` 语句的情况下，当你调用它时，该函数会执行内部代码，返回的值是 `undefined`。
 
-**Example**
+**示例**
 
 ```js
 var sum = 0;
 function addSum(num) {
   sum = sum + num;
 }
-addSum(3); // sum will be modified but returned value is undefined
+addSum(3);
 ```
 
-`addSum` is a function without a `return` statement. The function will change the global `sum` variable but the returned value of the function is `undefined`.
+`addSum` 是一个没有 `return` 语句的函数。 该函数将更改全局变量 `sum`，函数的返回值为 `undefined`。
 
 # --instructions--
 
-Create a function `addFive` without any arguments. This function adds 5 to the `sum` variable, but its returned value is `undefined`.
+创建一个没有任何参数的函数 `addFive`。 此函数使 `sum` 变量加 5，但其返回值是 `undefined`。
 
 # --hints--
 
-`addFive` should be a function.
+`addFive` 应该是一个函数。
 
 ```js
 assert(typeof addFive === 'function');
 ```
 
-Once both functions have ran, the `sum` should be equal to 8.
+两个函数运行后，`sum` 应该等于 `8`。
 
 ```js
 assert(sum === 8);
 ```
 
-Returned value from `addFive` should be `undefined`.
+`addFive` 的返回值应该是 `undefined`。
 
 ```js
 assert(addFive() === undefined);
 ```
 
-Inside the `addFive` function, you should add `5` to the `sum` variable.
+在 `addFive` 函数中，应该给 `sum` 变量增加 `5`。
 
 ```js
 assert(

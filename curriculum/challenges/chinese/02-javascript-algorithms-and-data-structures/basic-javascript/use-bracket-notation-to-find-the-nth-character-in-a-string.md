@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c450eddfaeb5bdef
-title: Use Bracket Notation to Find the Nth Character in a String
+title: 使用方括号查找字符串中的第 N 个字符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVJua'
 forumTopicId: 18343
@@ -9,32 +9,34 @@ dashedName: use-bracket-notation-to-find-the-nth-character-in-a-string
 
 # --description--
 
-You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.
+你也可以使用方括号（ <dfn>bracket notation</dfn>）来获得一个字符串中的其他位置的字符。
 
-Remember that computers start counting at `0`, so the first character is actually the zeroth character.
+请记住，程序是从 `0` 开始计数，所以获取第一个字符实际上是第零个字符串。
 
-Example:
+例如：
 
 ```js
 var firstName = "Ada";
-var secondLetterOfFirstName = firstName[1]; // secondLetterOfFirstName is "d"
+var secondLetterOfFirstName = firstName[1];
 ```
+
+`secondLetterOfFirstName` 值应该为字符串 `d`。
 
 # --instructions--
 
-Let's try to set `thirdLetterOfLastName` to equal the third letter of the `lastName` variable using bracket notation.
+让我们使用方括号，把 `lastName` 变量的第三个字符赋值给 `thirdLetterOfLastName`。
 
-**Hint:** Try looking at the example above if you get stuck.
+**提示：** 如果卡住了，请尝试查看上面的示例。
 
 # --hints--
 
-The `thirdLetterOfLastName` variable should have the value of `v`.
+`thirdLetterOfLastName` 变量值应该为 `v` 。
 
 ```js
 assert(thirdLetterOfLastName === 'v');
 ```
 
-You should use bracket notation.
+应该使用方括号表示法。
 
 ```js
 assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));

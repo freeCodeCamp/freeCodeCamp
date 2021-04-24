@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ce
-title: Manipulate Arrays With unshift()
+title: 使用 unshift() 操作数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
@@ -9,26 +9,27 @@ dashedName: manipulate-arrays-with-unshift
 
 # --description--
 
-Not only can you `shift` elements off of the beginning of an array, you can also `unshift` elements to the beginning of an array i.e. add elements in front of the array.
+不仅可以 `shift`（移出）数组中的第一个元素，也可以 `unshift`（移入）一个元素到数组的头部。
 
-`.unshift()` works exactly like `.push()`, but instead of adding the element at the end of the array, `unshift()` adds the element at the beginning of the array.
+`.unshift()` 函数用起来就像 `.push()` 函数一样，但不是在数组的末尾添加元素，`unshift()` 在数组的头部添加元素。
 
-Example:
+示例：
 
 ```js
 var ourArray = ["Stimpson", "J", "cat"];
-ourArray.shift(); // ourArray now equals ["J", "cat"]
+ourArray.shift();
 ourArray.unshift("Happy");
-// ourArray now equals ["Happy", "J", "cat"]
 ```
+
+在 `shift`、`ourArray` 后值为 `["J", "cat"]`。 在 `unshift`、`ourArray` 后值为 `["Happy", "J", "cat"]`。
 
 # --instructions--
 
-Add `["Paul",35]` to the beginning of the `myArray` variable using `unshift()`.
+使用 `unshift()` 函数把 `["Paul",35]` 加入到 `myArray` 的头部。
 
 # --hints--
 
-`myArray` should now have \[["Paul", 35], ["dog", 3]].
+`myArray` 现在应该等于 `[["Paul", 35], ["dog", 3]]`。
 
 ```js
 assert(

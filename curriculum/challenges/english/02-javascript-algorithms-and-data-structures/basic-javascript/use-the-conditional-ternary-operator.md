@@ -39,7 +39,7 @@ Use the conditional operator in the `checkEqual` function to check if two number
 
 # --hints--
 
-`checkEqual` should use the `conditional operator`
+`checkEqual` should use the conditional operator
 
 ```js
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));

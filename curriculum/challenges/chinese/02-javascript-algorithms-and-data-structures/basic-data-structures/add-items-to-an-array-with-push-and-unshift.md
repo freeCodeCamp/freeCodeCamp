@@ -1,6 +1,6 @@
 ---
 id: 587d78b2367417b2b2512b0e
-title: Add Items to an Array with push() and unshift()
+title: 使用 push() 和 unshift() 为数组添加元素
 challengeType: 1
 forumTopicId: 301151
 dashedName: add-items-to-an-array-with-push-and-unshift
@@ -8,28 +8,32 @@ dashedName: add-items-to-an-array-with-push-and-unshift
 
 # --description--
 
-An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time; in other words, arrays are <dfn>mutable</dfn>. In this challenge, we will look at two methods with which we can programmatically modify an array: `Array.push()` and `Array.unshift()`.
+数组的长度与数组能包含的数据类型一样，都是不固定的。 数组可以包含任意数量的元素，可以不限次数地往数组中添加元素或者从中移除元素。 总之，数组是可变的（<dfn>mutable</dfn>）。 在本挑战中，我们要学习两种修改数组的方法：`Array.push()` 和 `Array.unshift()`。
 
-Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the `push()` method adds elements to the end of an array, and `unshift()` adds elements to the beginning. Consider the following:
+这两个方法都接收一个或多个元素作为参数，并会将参数中的元素添加到该数组中。 `push()` 方法会将元素插入到数组的末尾，而 `unshift()` 方法会将元素插入到数组的开头。 请看以下例子：
 
 ```js
 let twentyThree = 'XXIII';
 let romanNumerals = ['XXI', 'XXII'];
 
 romanNumerals.unshift('XIX', 'XX');
-// now equals ['XIX', 'XX', 'XXI', 'XXII']
-
-romanNumerals.push(twentyThree);
-// now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']Notice that we can also pass variables, which allows us even greater flexibility in dynamically modifying our array's data.
 ```
+
+`romanNumerals` 的值就变成了 `['XIX', 'XX', 'XXI', 'XXII']`。
+
+```js
+romanNumerals.push(twentyThree);
+```
+
+`romanNumerals` 的值现在就变成了 `['XIX', 'XX', 'XXI', 'XXII', 'XXIII']`。 请注意这里，我们也可以使用变量作为参数，这让我们在动态修改数组数据时更加灵活。
 
 # --instructions--
 
-We have defined a function, `mixedNumbers`, which we are passing an array as an argument. Modify the function by using `push()` and `unshift()` to add `'I', 2, 'three'` to the beginning of the array and `7, 'VIII', 9` to the end so that the returned array contains representations of the numbers 1-9 in order.
+我们已经定义了一个 `mixedNumbers` 函数，它接收一个数组作为参数。 请修改这个函数，使用 `push()` 和 `unshift()` 来将 `'I', 2, 'three'` 插入到数组开头；将 `7, 'VIII', 9` 插入到数组的末尾。最终这个函数的返回值就会是一个依次包含不同形式的 1-9 的数组。
 
 # --hints--
 
-`mixedNumbers(["IV", 5, "six"])` should now return `["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]`
+`mixedNumbers(["IV", 5, "six"])` 应返回 `["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]`。
 
 ```js
 assert.deepEqual(mixedNumbers(['IV', 5, 'six']), [
@@ -45,13 +49,13 @@ assert.deepEqual(mixedNumbers(['IV', 5, 'six']), [
 ]);
 ```
 
-The `mixedNumbers` function should utilize the `push()` method
+`mixedNumbers` 函数中应调用 `push()` 方法。
 
 ```js
 assert(mixedNumbers.toString().match(/\.push/));
 ```
 
-The `mixedNumbers` function should utilize the `unshift()` method
+`mixedNumbers` 函数中应调用 `unshift()` 方法。
 
 ```js
 assert(mixedNumbers.toString().match(/\.unshift/));

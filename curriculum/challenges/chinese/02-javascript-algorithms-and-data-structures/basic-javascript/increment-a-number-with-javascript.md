@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ac
-title: Increment a Number with JavaScript
+title: 数字递增
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
@@ -9,30 +9,33 @@ dashedName: increment-a-number-with-javascript
 
 # --description--
 
-You can easily <dfn>increment</dfn> or add one to a variable with the `++` operator.
+使用 `++`，我们可以很容易地对变量进行<dfn>自增</dfn>或者 +1 运算。
 
-`i++;`
+```js
+i++;
+```
 
-is the equivalent of
+等效于：
 
-`i = i + 1;`
+```js
+i = i + 1;
+```
 
-**Note**  
-The entire line becomes `i++;`, eliminating the need for the equal sign.
+**注意：**`i++;` 这种写法省去了书写等号的必要。
 
 # --instructions--
 
-Change the code to use the `++` operator on `myVar`.
+修改代码，使用 `++` 来对变量 `myVar` 进行自增操作。
 
 # --hints--
 
-`myVar` should equal `88`.
+`myVar` 应该等于 `88`。
 
 ```js
 assert(myVar === 88);
 ```
 
-You should not use the assignment operator.
+不应该使用赋值运算符。
 
 ```js
 assert(
@@ -40,13 +43,13 @@ assert(
 );
 ```
 
-You should use the `++` operator.
+应该使用 `++` 运算符。
 
 ```js
 assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
 ```
 
-You should not change code above the specified comment.
+不应该修改注释上面的代码。
 
 ```js
 assert(/var myVar = 87;/.test(code));

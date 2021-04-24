@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b98
-title: Match Single Characters Not Specified
+title: 匹配单个未指定的字符
 challengeType: 1
 forumTopicId: 301358
 dashedName: match-single-characters-not-specified
@@ -8,31 +8,31 @@ dashedName: match-single-characters-not-specified
 
 # --description--
 
-So far, you have created a set of characters that you want to match, but you could also create a set of characters that you do not want to match. These types of character sets are called <dfn>negated character sets</dfn>.
+到目前为止，已经创建了一个想要匹配的字符集合，但也可以创建一个不想匹配的字符集合。 这些类型的字符集称为否定字符集（ <dfn>negated character sets</dfn>）。
 
-To create a negated character set, you place a caret character (`^`) after the opening bracket and before the characters you do not want to match.
+要创建否定字符集，需要在开始括号后面和不想匹配的字符前面放置脱字符（即`^`）。
 
-For example, `/[^aeiou]/gi` matches all characters that are not a vowel. Note that characters like `.`, `!`, `[`, `@`, `/` and white space are matched - the negated vowel character set only excludes the vowel characters.
+例如，`/[^aeiou]/gi` 匹配所有非元音字符。 注意，字符 `.`、`!`、`[`、`@`、`/` 和空白字符等也会被匹配，该否定字符集仅排除元音字符。
 
 # --instructions--
 
-Create a single regex that matches all characters that are not a number or a vowel. Remember to include the appropriate flags in the regex.
+创建一个匹配所有非数字或元音字符的正则表达式。 请记得在正则表达式中包含恰当的标志。
 
 # --hints--
 
-Your regex `myRegex` should match 9 items.
+你的正则表达式 `myRegex` 应该匹配 9 项。
 
 ```js
 assert(result.length == 9);
 ```
 
-Your regex `myRegex` should use the global flag.
+你的正则表达式 `myRegex` 应该使用全局标志。
 
 ```js
 assert(myRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `myRegex` should use the case insensitive flag.
+你的正则表达式 `myRegex` 应该使用忽略大小写标志。
 
 ```js
 assert(myRegex.flags.match(/i/).length == 1);

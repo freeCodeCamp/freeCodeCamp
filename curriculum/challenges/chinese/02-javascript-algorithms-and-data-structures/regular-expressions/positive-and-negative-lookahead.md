@@ -1,6 +1,6 @@
 ---
 id: 587d7dba367417b2b2512ba9
-title: Positive and Negative Lookahead
+title: 正向先行断言和负向先行断言
 challengeType: 1
 forumTopicId: 301360
 dashedName: positive-and-negative-lookahead
@@ -8,88 +8,90 @@ dashedName: positive-and-negative-lookahead
 
 # --description--
 
-<dfn>Lookaheads</dfn> are patterns that tell JavaScript to look-ahead in your string to check for patterns further along. This can be useful when you want to search for multiple patterns over the same string.
+先行断言 （<dfn>Lookaheads</dfn>）是告诉 JavaScript 在字符串中向前查找的匹配模式。 当想要在同一个字符串上搜寻多个匹配模式时，这可能非常有用。
 
-There are two kinds of lookaheads: <dfn>positive lookahead</dfn> and <dfn>negative lookahead</dfn>.
+有两种先行断言：正向先行断言（<dfn>positive lookahead</dfn>）和负向先行断言（<dfn>negative lookahead</dfn>）。
 
-A positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as `(?=...)` where the `...` is the required part that is not matched.
+正向先行断言会查看并确保搜索匹配模式中的元素存在，但实际上并不匹配。 正向先行断言的用法是 `(?=...)`，其中 `...` 就是需要存在但不会被匹配的部分。
 
-On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as `(?!...)` where the `...` is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+另一方面，负向先行断言会查看并确保搜索匹配模式中的元素不存在。 负向先行断言的用法是 `(?!...)`，其中 `...` 是希望不存在的匹配模式。 如果负向先行断言部分不存在，将返回匹配模式的其余部分。
 
-Lookaheads are a bit confusing but some examples will help.
+尽管先行断言有点儿令人困惑，但是这些示例会有所帮助。
 
 ```js
 let quit = "qu";
 let noquit = "qt";
 let quRegex= /q(?=u)/;
 let qRegex = /q(?!u)/;
-quit.match(quRegex); // Returns ["q"]
-noquit.match(qRegex); // Returns ["q"]
+quit.match(quRegex);
+noquit.match(qRegex);
 ```
 
-A more practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+这两次 `match` 调用都将返回 `["q"]`。
+
+先行断言的更实际用途是检查一个字符串中的两个或更多匹配模式。 这里有一个简单的密码检查器，密码规则是 3 到 6 个字符且至少包含一个数字：
 
 ```js
 let password = "abc123";
 let checkPass = /(?=\w{3,6})(?=\D*\d)/;
-checkPass.test(password); // Returns true
+checkPass.test(password);
 ```
 
 # --instructions--
 
-Use lookaheads in the `pwRegex` to match passwords that are greater than 5 characters long, and have two consecutive digits.
+在正则表达式 `pwRegex` 中使用先行断言以匹配大于 5 个字符且有两个连续数字的密码。
 
 # --hints--
 
-Your regex should use two positive `lookaheads`.
+你的正则表达式应该使用两个正向先行断言（ `lookaheads`）。
 
 ```js
 assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 ```
 
-Your regex should not match `"astronaut"`
+您的正则表达式不应匹配字符串 `astronaut`
 
 ```js
 assert(!pwRegex.test('astronaut'));
 ```
 
-Your regex should not match `"banan1"`
+你的正则表达式不应匹配字符串 `banan1`
 
 ```js
 assert(!pwRegex.test('banan1'));
 ```
 
-Your regex should match `"bana12"`
+你的正则表达式应该匹配字符串 `bana12`
 
 ```js
 assert(pwRegex.test('bana12'));
 ```
 
-Your regex should match `"abc123"`
+你的正则表达式应该匹配字符串 `abc123`
 
 ```js
 assert(pwRegex.test('abc123'));
 ```
 
-Your regex should not match `"12345"`
+你的正则表达式不应匹配字符串 `12345`
 
 ```js
 assert(!pwRegex.test('12345'));
 ```
 
-Your regex should match `"8pass99"`
+你的正则表达式应该匹配字符串 `8pass99`
 
 ```js
 assert(pwRegex.test('8pass99'));
 ```
 
-Your regex should not match `"1a2bcde"`
+你的正表达式不应匹配字符串 `1a2bcde`
 
 ```js
 assert(!pwRegex.test('1a2bcde'));
 ```
 
-Your regex should match `"astr1on11aut"`
+你的正则表达式应该匹配字符串 `astr1on11aut`
 
 ```js
 assert(pwRegex.test('astr1on11aut'));

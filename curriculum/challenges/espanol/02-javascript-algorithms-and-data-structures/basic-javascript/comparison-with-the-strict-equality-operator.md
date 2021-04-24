@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d1
-title: Comparison with the Strict Equality Operator
+title: Comparación con el operador de estricta igualdad
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87atr'
 forumTopicId: 16790
@@ -9,44 +9,46 @@ dashedName: comparison-with-the-strict-equality-operator
 
 # --description--
 
-Strict equality (`===`) is the counterpart to the equality operator (`==`). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
+La estricta igualdad (`===`) es la contraparte del operador de igualdad (`==`). Sin embargo, a diferencia del operador de igualdad, el cual intenta convertir ambos valores comparados a un tipo común, el operador de estricta igualdad no realiza una conversión de tipo.
 
-If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
+Si los valores que se comparan tienen diferentes tipos, se consideran desiguales, y el operador de estricta igualdad devolverá falso.
 
-**Examples**
+**Ejemplos**
 
 ```js
-3 ===  3   // true
-3 === '3'  // false
+3 ===  3
+3 === '3'
 ```
 
-In the second example, `3` is a `Number` type and `'3'` is a `String` type.
+Estas condiciones devuelven `true` y `false` respectivamente.
+
+En el segundo ejemplo, `3` es de tipo `Number` (número) y `'3'` es de tipo `String` (cadena).
 
 # --instructions--
 
-Use the strict equality operator in the `if` statement so the function will return "Equal" when `val` is strictly equal to `7`
+Usa el operador de estricta igualdad en la sentencia `if` para que la función devuelva la cadena `Equal` cuando `val` sea estrictamente igual a `7`
 
 # --hints--
 
-`testStrict(10)` should return "Not Equal"
+`testStrict(10)` debe devolver la cadena `Not Equal`
 
 ```js
 assert(testStrict(10) === 'Not Equal');
 ```
 
-`testStrict(7)` should return "Equal"
+`testStrict(7)` debe devolver la cadena `Equal`
 
 ```js
 assert(testStrict(7) === 'Equal');
 ```
 
-`testStrict("7")` should return "Not Equal"
+`testStrict("7")` debe devolver la cadena `Not Equal`
 
 ```js
 assert(testStrict('7') === 'Not Equal');
 ```
 
-You should use the `===` operator
+Debes usar el operador `===`
 
 ```js
 assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);

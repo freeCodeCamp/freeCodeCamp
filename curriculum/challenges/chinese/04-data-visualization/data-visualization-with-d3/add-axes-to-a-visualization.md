@@ -26,11 +26,11 @@ svg.append("g")
    .call(xAxis);
 ```
 
-上部分代码将 x 轴放置在 SVG 画布的底端。 然后 x 轴作为参数被传递给 `call()` 方法。 除了 `translate` 的参数变成 (x, 0) ，y 轴的定位也是一样的。 因为 `translate` 是 `attr()` 方法中的一个字符串，你可以在参数中使用字符串的连接将变量值包括进去。
+上部分代码将 x 轴放置在 SVG 画布的底端。 然后 x 轴作为参数被传递给 `call()` 方法。 y 轴的定位也是这样，只是 `translate` 参数的形式是 `(x, 0)`。 因为 `translate` 是 `attr()` 方法中的一个字符串，你可以在参数中使用字符串的连接将变量值包括进去。
 
 # --instructions--
 
-现在散点图有 x 轴了。 用 `axisLeft()` 方法创建 y 轴并赋值给 `yAxis` 变量， 然后通过 `g` 元素渲染 y 轴。 确保用 `transform` 属性将 y 轴向右平移 padding 个单位，向下平移 0 个单位。 记得对 y 轴调用 `call()` 方法。
+现在散点图有 x 轴了。 用 `axisLeft()` 方法创建 y 轴并赋值给 `yAxis` 变量， 然后通过 `g` 元素渲染 y 轴。 使用 `transform` 属性将 y 轴向右平移（平移的单位等于 paading 的值），向下平移 `0` 个单位。 记得对 y 轴调用 `call()` 方法。
 
 # --hints--
 
@@ -40,7 +40,7 @@ svg.append("g")
 assert(code.match(/\.axisLeft\(yScale\)/g));
 ```
 
-y 轴的 `g` 元素应该有一个 `transform` 属性来将 y 轴平移（60，0）。
+y 轴 `g` 元素应有一个 `transform` 属性，将 y 轴平移 `(60, 0)`。
 
 ```js
 assert(

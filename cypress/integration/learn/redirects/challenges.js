@@ -13,7 +13,7 @@ const locations = {
     '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
 };
 
-describe('challenges/superblock redirect', function() {
+describe('challenges/superblock redirect', function () {
   it('redirects to learn/superblock', () => {
     cy.visit(locations.chalSuper);
 
@@ -24,7 +24,7 @@ describe('challenges/superblock redirect', function() {
   });
 });
 
-describe('challenges/superblock/block redirect', function() {
+describe('challenges/superblock/block redirect', function () {
   it('redirects to learn/superblock/block', () => {
     cy.visit(locations.chalBlock);
 
@@ -35,7 +35,7 @@ describe('challenges/superblock/block redirect', function() {
   });
 });
 
-describe('challenges/superblock/block/challenge redirect', function() {
+describe('challenges/superblock/block/challenge redirect', function () {
   it('redirects to learn/superblock/block/challenge', () => {
     cy.visit(locations.chalChallenge);
 

@@ -1,6 +1,6 @@
 ---
 id: 58966a17f9fc0f352b528e6d
-title: Registration of New Users
+title: 注册新用户
 challengeType: 2
 forumTopicId: 301561
 dashedName: registration-of-new-users
@@ -8,11 +8,11 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now we need to allow a new user on our site to register an account. On the `res.render` for the home page add a new variable to the object passed along--`showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file! This form is set up to **POST** on `/register`, so this is where we should set up to accept the **POST** and create the user object in the database.
+现在我们需要为新用户添加注册帐号的功能。 首先我们需要在主页的 `res.render` 接收的变量对象中添加 `showRegistration: true`。 此时刷新页面，你会看到页面上已经显示了我们在 `index.pug` 文件中定义的注册表单。 这个表单设置了请求路径 `/register`，并将请求方法设置成 **POST**，所以我们需要在服务器接受 **POST** 请求，且在数据库中创建用户对象。
 
-The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
+用户注册的逻辑：注册新用户 > 认证新用户 > 重定向到 /profile。
 
-The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home *OR* if user is undefined and no error occurs then 'insertOne' into the database with the username and password, and, as long as no errors occur, call *next* to go to step 2, authenticating the new user, which we've already written the logic for in our POST */login* route.
+对于步骤一的注册新用户，详细逻辑是这样的：用 findOne 命令查询数据库 > 如果返回了用户对象，则表示用户存在，然后返回主页；*或者*如果用户未定义且没有报错，则会将包含用户名和密码的用户对象通过 “insertOne” 添加到数据库，只要没有报错则会继续*下一步*：认证新用户——我们已经在 */login* 路由的 POST 请求中写好了这部分逻辑。
 
 ```js
 app.route('/register')
@@ -47,13 +47,13 @@ app.route('/register')
   );
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
+完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e)的答案。
 
-**NOTE:** From this point onwards, issues can arise relating to the use of the *picture-in-picture* browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
+**注意：**接下来的挑战可能会在运行 *picture-in-picture*（画中画）模式的浏览器中出现问题。 如果你使用的线上 IDE 提供在 IDE 内预览 app 的功能，请考虑打开新的标签页预览。
 
 # --hints--
 
-You should register route and display on home.
+注册路由和显示主页。
 
 ```js
 (getUserInput) =>
@@ -76,7 +76,7 @@ You should register route and display on home.
   );
 ```
 
-Registering should work.
+注册功能应可以正常运行。
 
 ```js
 async (getUserInput) => {
@@ -104,7 +104,7 @@ async (getUserInput) => {
 };
 ```
 
-Login should work.
+登录功能应可以正常运行。
 
 ```js
 async (getUserInput) => {
@@ -153,7 +153,7 @@ async (getUserInput) => {
 };
 ```
 
-Logout should work.
+退出登录功能应可以正常运行。
 
 ```js
 (getUserInput) =>
@@ -171,7 +171,7 @@ Logout should work.
   );
 ```
 
-Profile should no longer work after logout.
+退出登录后，profile 页面应无法访问。
 
 ```js
 (getUserInput) =>

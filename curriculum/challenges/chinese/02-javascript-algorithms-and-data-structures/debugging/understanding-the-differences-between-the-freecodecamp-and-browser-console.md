@@ -1,6 +1,6 @@
 ---
 id: 587d7b83367417b2b2512b37
-title: Understanding the Differences between the freeCodeCamp and Browser Console
+title: 了解 freeCodeCamp 和浏览器控制台之间的差异
 challengeType: 1
 forumTopicId: 301193
 dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-console
@@ -8,27 +8,27 @@ dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-c
 
 # --description--
 
-You may have noticed that some freeCodeCamp JavaScript challenges include their own console. This console behaves a little differently than the browser console you used in the last challenge.
+你可能已经注意到一些 freeCodeCamp JavaScript 的挑战有自己的控制台。 这些控制台的行为与上一次挑战中使用的浏览器控制台略有不同。
 
-The following challenge is meant to highlight the main difference between the freeCodeCamp console and your browser console.
+以下挑战旨在强调 freeCodeCamp 控制台与浏览器控制台之间的一些差异。
 
-When you run ordinary JavaScript, the browser's console will display your `console.log()` statements the exact number of times it is called.
+当在浏览器中加载并运行 JavaScript 文件时，`console.log()` 语句会在控制台中按照调用的次数准确地打印出要求的内容。
 
-The freeCodeCamp console will print your `console.log()` statements a short time after the editor detects a change in the script, as well as during testing.
+在编辑器检测到脚本中的更改之后，以及测试期间，freeCodeCamp 控制台将打印 `console.log()` 语句。
 
-The freeCodeCamp console is cleared before the tests are run and, to avoid spam, only prints the logs during the first test (see the note below for exceptions).
+在运行测试之前，将清除 freeCodeCamp 控制台，为避免破坏，仅在第一次测试期间打印日志（请参见下面的注释）。
 
-If you would like to see every log for every test, run the tests, and open the browser console. If you prefer to use the browser console, and want it to mimic the freeCodeCamp console, place `console.clear()` before any other `console` calls, to clear the browser console.
+如果你想看到每次测试的日志，运行测试，并打开浏览器控制台。 如果你喜欢使用浏览器控制台，想要它模仿 freeCodeCamp 控制台，请在其他 `console` 调用前加上 `console.clear()`，以清除浏览器控制台。
 
-**Note:** `console.log`s inside functions are printed to the freeCodeCamp console whenever those functions are called, this can help debugging functions that are called during testing.
+**注意：** 每次调用函数时，函数内的 `console.log` 都会被打印到 freeCodeCamp 控制台。 这样可以帮助在测试期间调试函数。
 
 # --instructions--
 
-First, use `console.log` to log the `output` variable. Then, use `console.clear` to clear the browser console.
+首先，使用 `console.log` 打印 `output` 变量。 然后使用 `console.clear` 清除浏览器控制台。
 
 # --hints--
 
-You should use `console.clear()` to clear the browser console.
+应该使用 `console.clear()` 清除浏览器控制台。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-You should use `console.log()` to print the `output` variable.
+应该使用 `console.log()` 打印 `output` 变量。
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));

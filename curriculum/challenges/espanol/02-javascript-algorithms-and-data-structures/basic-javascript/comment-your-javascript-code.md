@@ -13,21 +13,20 @@ Los comentarios son líneas de código que JavaScript ignorará intencionalmente
 
 Hay dos maneras de escribir comentarios en JavaScript:
 
-Usar `//` le dirá a JavaScript que ignore el resto del texto en la línea actual:
+Usar `//` le dirá a JavaScript que ignore el resto del texto en la línea actual. Este es un comentario en línea:
 
 ```js
 // This is an in-line comment.
 ```
 
-Puedes hacer un comentario multi-línea comenzando con `/*` y terminando con `*/`:
+Puedes hacer un comentario multilínea comenzando con `/*` y terminando con `*/`. Este es un comentario multilínea:
 
 ```js
 /* This is a
 multi-line comment */
 ```
 
-**Buena práctica**  
-A medida que escribes código, deberías añadir comentarios regularmente para aclarar el funcionamiento de las partes de tu código. Un buen comentario puede ayudar a comunicar la intención de tu código, tanto para otros *como* para tu yo futuro.
+**Nota: ** A medida que programas, deberías añadir comentarios regularmente para aclarar el funcionamiento de las partes de tu código. Un buen comentario puede ayudar a comunicar la intención de tu código, tanto para otros *como* para tu yo futuro.
 
 # --instructions--
 
@@ -50,7 +49,9 @@ assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 # --seed--
 
 ## --seed-contents--
+
 ```js
+
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be3
-title: Get JSON with the JavaScript XMLHttpRequest Method
+title: 使用 XMLHttpRequest 方法获取 JSON
 challengeType: 6
 forumTopicId: 301502
 dashedName: get-json-with-the-javascript-xmlhttprequest-method
@@ -8,19 +8,19 @@ dashedName: get-json-with-the-javascript-xmlhttprequest-method
 
 # --description--
 
-You can also request data from an external source. This is where APIs come into play.
+你还可以从外部来源请求数据。 这就是 API 发挥作用的地方。
 
-Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another. You'll learn how to update HTML with the data we get from APIs using a technology called AJAX.
+请记住，API（或叫应用程序编程接口）是计算机用来互相通信的工具。 你将学习如何通过 AJAX技术 从 API 获得的数据来更新 HTML。
 
-Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.
+大部分 web APIs 以 JSON 格式传输数据。 JSON 是 JavaScript Object Notation 的简写。
 
-JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a `{` and a `}`.
+JSON 语法与 JavaScript 对象字面符号非常相似。 JSON 具有对象属性以及其当前值，夹在 `{` 和 `}`之间。
 
-These properties and their values are often referred to as "key-value pairs".
+这些属性及其值通常称为 "键值对"。
 
-However, JSON transmitted by APIs are sent as `bytes`, and your application receives it as a `string`. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The `JSON.parse` method parses the string and constructs the JavaScript object described by it.
+但是，JSON 是由 API 以`bytes` 形式传输的，你的程序以`string`接受它。 它们能转换成为 JavaScript 对象，但默认情况下它们不是 JavaScript 对象。 `JSON.parse`方法解析字符串并构造它描述的 JavaScript 对象。
 
-You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:
+你可以从 freeCodeCamp 的 Cat Photo API 请求 JSON。 以下是你可以在点击事件中添加的代码：
 
 ```js
 const req = new XMLHttpRequest();
@@ -32,21 +32,21 @@ req.onload = function(){
 };
 ```
 
-Here's a review of what each piece is doing. The JavaScript `XMLHttpRequest` object has a number of properties and methods that are used to transfer data. First, an instance of the `XMLHttpRequest` object is created and saved in the `req` variable. Next, the `open` method initializes a request - this example is requesting data from an API, therefore is a "GET" request. The second argument for `open` is the URL of the API you are requesting data from. The third argument is a Boolean value where `true` makes it an asynchronous request. The `send` method sends the request. Finally, the `onload` event handler parses the returned data and applies the `JSON.stringify` method to convert the JavaScript object into a string. This string is then inserted as the message text.
+这里介绍每行代码的作用。 JavaScript `XMLHttpRequest` 对象具有许多用于传输数据的属性和方法。 首先，创建一个`XMLHttpRequest`对象实例，并保存在`req`变量里 。 然后，`open` 方法初始化一个请求——这个例子是从 API 请求数据，因此它是一个 `GET` 请求。 第二个参数 `open` 是你要从中请求数据的 API 的 URL。 第三个参数是一个布尔值， `true` 使其成为异步请求。 `send` 方法发送请求。 最后，`onload` 事件处理程序解析返回的数据并应用该 `JSON.stringify` 方法将JavaScript对象转换为字符串， 然后将此字符串作为消息文本插入。
 
 # --instructions--
 
-Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. Then click the "Get Message" button. Your AJAX function will replace the "The message will go here" text with the raw JSON output from the API.
+更新代码，创建并向 freeCodeCamp Cat Photo API 发送 `GET` 请求。 然后单击 `Get Message` 按钮。 AJAX 函数将使用 API​​ 的原始 JSON 输出替换文本 `The message will go here`。
 
 # --hints--
 
-Your code should create a new `XMLHttpRequest`.
+应该创建一个新的 `XMLHttpRequest`。
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Your code should use the `open` method to initialize a "GET" request to the freeCodeCamp Cat Photo API.
+应该使用该 `open` 方法初始化对 freeCodeCamp Cat Photo API 的 `GET` 请求。
 
 ```js
 assert(
@@ -56,13 +56,13 @@ assert(
 );
 ```
 
-Your code should use the `send` method to send the request.
+应使用该 `send` 方法发送请求。
 
 ```js
 assert(code.match(/\.send\(\s*\)/g));
 ```
 
-Your code should have an `onload` event handler set to a function.
+应该有一个 `onload` 设置为函数的事件处理程序。
 
 ```js
 assert(
@@ -70,13 +70,13 @@ assert(
 );
 ```
 
-Your code should use the `JSON.parse` method to parse the `responseText`.
+应该使用该 `JSON.parse` 方法来解析 `responseText`。
 
 ```js
 assert(code.match(/JSON\s*\.parse\(\s*.*\.responseText\s*\)/g));
 ```
 
-Your code should get the element with class `message` and change its inner HTML to the string of JSON data.
+应该使用 `message` 获取元素，并将其内部 HTML 转换为 JSON 数据字符串。
 
 ```js
 assert(

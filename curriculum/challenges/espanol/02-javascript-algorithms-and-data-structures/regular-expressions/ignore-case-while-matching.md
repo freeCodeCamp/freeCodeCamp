@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b91
-title: Ignore Case While Matching
+title: Ignora la capitalización al coincidir
 challengeType: 1
 forumTopicId: 301344
 dashedName: ignore-case-while-matching
@@ -8,73 +8,73 @@ dashedName: ignore-case-while-matching
 
 # --description--
 
-Up until now, you've looked at regexes to do literal matches of strings. But sometimes, you might want to also match case differences.
+Hasta ahora, has visto expresiones regulares para hacer coincidir cadenas literales. Pero a veces, tal vez quieras hacer coincidir las diferencias de capitalización.
 
-Case (or sometimes letter case) is the difference between uppercase letters and lowercase letters. Examples of uppercase are `"A"`, `"B"`, and `"C"`. Examples of lowercase are `"a"`, `"b"`, and `"c"`.
+La capitalización (o también llamada capitalización de letra) es la diferencia entre mayúsculas y minúsculas. Ejemplos de mayúsculas son `A`, `B` y `C`. Ejemplos de minúsculas son `a`, `b` y `c`.
 
-You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case - the `i` flag. You can use it by appending it to the regex. An example of using this flag is `/ignorecase/i`. This regex can match the strings `"ignorecase"`, `"igNoreCase"`, and `"IgnoreCase"`.
+Puedes coincidir ambos casos utilizando algo llamado bandera. Existen otras banderas, pero aquí te centrarás en la que ignora la capitalización de las letras, la bandera `i`. Puedes usarla añadiéndola a la expresión regular. Un ejemplo de uso de esta bandera es `/ignorecase/i`. Esta expresión regular puede coincidir con las cadenas `ignorecase`, `igNoreCase` e `IgnoreCase`.
 
 # --instructions--
 
-Write a regex `fccRegex` to match `"freeCodeCamp"`, no matter its case. Your regex should not match any abbreviations or variations with spaces.
+Escribe una expresión regular `fccRegex` para que coincida con `freeCodeCamp` sin importar su capitalización. Tu expresión regular no debe coincidir con ninguna abreviatura o variación con espacios.
 
 # --hints--
 
-Your regex should match `freeCodeCamp`
+Tu expresión regular debe coincidir con la cadena `freeCodeCamp`
 
 ```js
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
-Your regex should match `FreeCodeCamp`
+Tu expresión regular debe coincidir con la cadena `FreeCodeCamp`
 
 ```js
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
-Your regex should match `FreecodeCamp`
+Tu expresión regular debe coincidir con la cadena `FreecodeCamp`
 
 ```js
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
-Your regex should match `FreeCodecamp`
+Tu expresión regular debe coincidir con la cadena `FreeCodecamp`
 
 ```js
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
-Your regex should not match `Free Code Camp`
+Tu expresión regular no debe coincidir con la cadena `Free Code Camp`
 
 ```js
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
-Your regex should match `FreeCOdeCamp`
+Tu expresión regular debe coincidir con la cadena `FreeCOdeCamp`
 
 ```js
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
-Your regex should not match `FCC`
+Tu expresión regular no debe coincidir con la cadena `FCC`
 
 ```js
 assert(!fccRegex.test('FCC'));
 ```
 
-Your regex should match `FrEeCoDeCamp`
+Tu expresión regular debe coincidir con la cadena `FrEeCoDeCamp`
 
 ```js
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
-Your regex should match `FrEeCodECamp`
+Tu expresión regular debe coincidir con la cadena `FrEeCodECamp`
 
 ```js
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
-Your regex should match `FReeCodeCAmp`
+Tu expresión regular debe coincidir con la cadena `FReeCodeCAmp`
 
 ```js
 assert(fccRegex.test('FReeCodeCAmp'));

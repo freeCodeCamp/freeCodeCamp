@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b8
-title: Concatenating Strings with the Plus Equals Operator
+title: 用 += 运算符连接字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmmC4'
 forumTopicId: 16803
@@ -9,32 +9,32 @@ dashedName: concatenating-strings-with-the-plus-equals-operator
 
 # --description--
 
-We can also use the `+=` operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.
+我们还可以使用 `+=` 运算符来<dfn>拼接</dfn>字符串到现有字符串变量的结尾。 对于那些被分割成几段的长的字符串来说，这一操作是非常有用的。
 
-**Note**  
-Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**提示：**注意空格。 拼接操作不会在两个字符串之间添加空格，所以，如果想要加上空格的话，你需要自己在字符串里面添加。
 
-Example:
+例如：
 
 ```js
 var ourStr = "I come first. ";
 ourStr += "I come second.";
-// ourStr is now "I come first. I come second."
 ```
+
+`ourStr` 现在内容为字符串 `I come first. I come second.`
 
 # --instructions--
 
-Build `myStr` over several lines by concatenating these two strings: `"This is the first sentence. "` and `"This is the second sentence."` using the `+=` operator. Use the `+=` operator similar to how it is shown in the editor. Start by assigning the first string to `myStr`, then add on the second string.
+使用 `+=` 操作符，多行合并字符串 `This is the first sentence.` 和 `This is the second sentence.` ，并赋值给 `myStr` 。 像编辑器里显示的那样使用 `+=` 操作符。 先把第一个字符串赋值给 `myStr`，然后拼接第二个字符串。
 
 # --hints--
 
-`myStr` should have a value of `This is the first sentence. This is the second sentence.`
+`myStr` 的值应该是 `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');
 ```
 
-You should use the `+=` operator to build `myStr`.
+应该使用 `+=` 操作符创建 `myStr` 变量。
 
 ```js
 assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));

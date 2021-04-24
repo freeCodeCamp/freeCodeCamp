@@ -28,11 +28,11 @@ You should provide your own project, not the example URL.
 };
 ```
 
-A request to `/api/timestamp/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds
+A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/timestamp/2016-12-25').then(
+  $.get(getUserInput('url') + '/api/2016-12-25').then(
     (data) => {
       assert.equal(
         data.unix,
@@ -46,11 +46,11 @@ A request to `/api/timestamp/:date?` with a valid date should return a JSON obje
   );
 ```
 
-A request to `/api/timestamp/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
+A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/timestamp/2016-12-25').then(
+  $.get(getUserInput('url') + '/api/2016-12-25').then(
     (data) => {
       assert.equal(
         data.utc,
@@ -64,11 +64,11 @@ A request to `/api/timestamp/:date?` with a valid date should return a JSON obje
   );
 ```
 
-A request to `/api/timestamp/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
+A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/timestamp/1451001600000').then(
+  $.get(getUserInput('url') + '/api/1451001600000').then(
     (data) => {
       assert(
         data.unix === 1451001600000 &&
@@ -85,7 +85,7 @@ Your project can handle dates that can be successfully parsed by `new Date(date_
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/timestamp/05 October 2011').then(
+  $.get(getUserInput('url') + '/api/05 October 2011').then(
     (data) => {
       assert(
         data.unix === 1317772800000 &&
@@ -102,7 +102,7 @@ If the input date string is invalid, the api returns an object having the struct
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/timestamp/this-is-not-a-date').then(
+  $.get(getUserInput('url') + '/api/this-is-not-a-date').then(
     (data) => {
       assert.equal(data.error.toLowerCase(), 'invalid date');
     },
@@ -116,7 +116,7 @@ An empty date parameter should return the current time in a JSON object with a `
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/timestamp').then(
+  $.get(getUserInput('url') + '/api').then(
     (data) => {
       var now = Date.now();
       assert.approximately(data.unix, now, 20000);
@@ -131,7 +131,7 @@ An empty date parameter should return the current time in a JSON object with a `
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/timestamp').then(
+  $.get(getUserInput('url') + '/api').then(
     (data) => {
       var now = Date.now();
       var serverTime = new Date(data.utc).getTime();

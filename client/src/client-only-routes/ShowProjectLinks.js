@@ -125,8 +125,8 @@ const ShowProjectLinks = props => {
       ];
       return legacyCerts.map((cert, ind) => {
         const mapToUse = projectMap[cert.title] || legacyProjectMap[cert.title];
-        const { superBlock } = first(mapToUse);
-        const certLocation = `/certification/${username}/${superBlock}`;
+        const { certSlug } = first(mapToUse);
+        const certLocation = `/certification/${username}/${certSlug}`;
         return (
           <li key={ind}>
             <a

@@ -32,7 +32,7 @@ Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();
 
 app.set('state namespace', '__fcc__');
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.API_PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.use(loopback.token());
 app.use(
@@ -64,9 +64,12 @@ boot(app, __dirname, err => {
 setupPassport(app);
 
 const { db } = app.datasources;
-db.on('connected', _.once(() => log('db connected')));
-app.start = _.once(function() {
-  const server = app.listen(app.get('port'), function() {
+db.on(
+  'connected',
+  _.once(() => log('db connected'))
+);
+app.start = _.once(function () {
+  const server = app.listen(app.get('port'), function () {
     app.emit('started');
     log(
       'freeCodeCamp server listening on port %d in %s',

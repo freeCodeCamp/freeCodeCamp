@@ -13,8 +13,10 @@ import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { isAuditedCert } from '../../../../../utils/is-audited';
-import { curriculumLocale } from '../../../../../config/env.json';
+import envData from '../../../../../config/env.json';
 import { Link } from '../../../components/helpers/';
+
+const { curriculumLocale } = envData;
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -38,7 +40,7 @@ const propTypes = {
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
   executeGA: PropTypes.func,
   isExpanded: PropTypes.bool,
-  superBlockDashedName: PropTypes.string,
+  superBlock: PropTypes.string,
   t: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired
 };
@@ -88,7 +90,7 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      superBlockDashedName,
+      superBlock,
       t
     } = this.props;
 
@@ -121,9 +123,7 @@ export class Block extends Component {
       );
     });
 
-    const blockIntroObj = t(
-      `intro:${superBlockDashedName}.blocks.${blockDashedName}`
-    );
+    const blockIntroObj = t(`intro:${superBlock}.blocks.${blockDashedName}`);
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
     const {
@@ -142,11 +142,11 @@ export class Block extends Component {
                 <span className='block-link-icon'>#</span>
               </h3>
             </a>
-            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                  to={t('links:help-translate-link-url')}
                 >
                   {t('misc.translation-pending')}
                 </Link>
@@ -170,11 +170,11 @@ export class Block extends Component {
                 <span className='block-link-icon'>#</span>
               </h3>
             </a>
-            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to='https://contribute.freecodecamp.org/#/how-to-translate-files'
+                  to={t('links:help-translate-link-url')}
                 >
                   {t('misc.translation-pending')}
                 </Link>

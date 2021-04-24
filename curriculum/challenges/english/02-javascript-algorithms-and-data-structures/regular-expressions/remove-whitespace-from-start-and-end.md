@@ -21,7 +21,7 @@ Write a regex and use the appropriate string methods to remove whitespace at the
 `result` should be equal to the string `Hello, World!`
 
 ```js
-assert(result == 'Hello, World!');
+assert(result === 'Hello, World!');
 ```
 
 Your solution should not use the `String.prototype.trim()` method.
@@ -30,10 +30,10 @@ Your solution should not use the `String.prototype.trim()` method.
 assert(!code.match(/\.?[\s\S]*?trim/));
 ```
 
-The `result` variable should not be set equal to a string.
+The `result` variable should not directly be set to a string
 
 ```js
-assert(!code.match(/result\s*=\s*".*?"/));
+assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
 # --seed--

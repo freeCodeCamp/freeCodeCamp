@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b46
-title: Set Default Parameters for Your Functions
+title: Establece parámetros por defecto para tus funciones
 challengeType: 1
 forumTopicId: 301209
 dashedName: set-default-parameters-for-your-functions
@@ -8,38 +8,40 @@ dashedName: set-default-parameters-for-your-functions
 
 # --description--
 
-In order to help us create more flexible functions, ES6 introduces <dfn>default parameters</dfn> for functions.
+Para ayudarnos a crear funciones más flexibles, ES6 introduce <dfn>parametros por defecto</dfn> para funciones.
 
-Check out this code:
+Echa un vistazo, al siguente código:
 
 ```js
 const greeting = (name = "Anonymous") => "Hello " + name;
 
-console.log(greeting("John")); // Hello John
-console.log(greeting()); // Hello Anonymous
+console.log(greeting("John"));
+console.log(greeting());
 ```
 
-The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter `name` will receive its default value `"Anonymous"` when you do not provide a value for the parameter. You can add default values for as many parameters as you want.
+La consola mostrará las cadenas `Hello John` y `Hello Anonymous`.
+
+El parámetro por defecto entra en juego cuando el argumento no es especificado (es indefinido). Como puedes ver en el ejemplo anterior, el parámetro `name` recibirá su valor por defecto `Anonymous` cuando no proveas un valor para el parámetro. Puede agregar valores por defecto para tantos parámetros como desees.
 
 # --instructions--
 
-Modify the function `increment` by adding default parameters so that it will add 1 to `number` if `value` is not specified.
+Modifica la función `increment` agregando parámetros por defecto para que sume 1 a `number` si `value` no se especifica.
 
 # --hints--
 
-The result of `increment(5, 2)` should be `7`.
+El resultado de `increment(5, 2)` debe ser `7`.
 
 ```js
 assert(increment(5, 2) === 7);
 ```
 
-The result of `increment(5)` should be `6`.
+El resultado de `increment(5)` debe ser `6`.
 
 ```js
 assert(increment(5) === 6);
 ```
 
-A default parameter value of `1` should be used for `value`.
+Un valor de parámetro por defecto de `1` debe utilizarse para `value`.
 
 ```js
 assert(code.match(/value\s*=\s*1/g));

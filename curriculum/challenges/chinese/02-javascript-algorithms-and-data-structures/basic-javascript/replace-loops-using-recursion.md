@@ -1,6 +1,6 @@
 ---
 id: 5cfa3679138e7d9595b9d9d4
-title: Replace Loops using Recursion
+title: 使用递归代替循环
 challengeType: 1
 videoUrl: >-
   https://www.freecodecamp.org/news/how-recursion-works-explained-with-flowcharts-and-a-video-de61f40cb7f9/
@@ -10,7 +10,7 @@ dashedName: replace-loops-using-recursion
 
 # --description--
 
-Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first `n` elements of an array to create the product of those elements. Using a `for` loop, you could do this:
+递归是函数调用自身的操作。 为了便于理解，有如下任务：计算数组内元素前 `n` 的元素乘积。 使用 `for` 循环， 可以这样做：
 
 ```js
   function multiply(arr, n) {
@@ -22,7 +22,7 @@ Recursion is the concept that a function can be expressed in terms of itself. To
   }
 ```
 
-However, notice that `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`. That means you can rewrite `multiply` in terms of itself and never need to use a loop.
+下面是递归写法，注意代码里的 `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`。 这意味着可以重写 `multiply` 以调用自身而无需依赖循环。
 
 ```js
   function multiply(arr, n) {
@@ -34,35 +34,35 @@ However, notice that `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`. Th
   }
 ```
 
-The recursive version of `multiply` breaks down like this. In the <dfn>base case</dfn>, where `n <= 0`, it returns 1. For larger values of `n`, it calls itself, but with `n - 1`. That function call is evaluated in the same way, calling `multiply` again until `n <= 0`. At this point, all the functions can return and the original `multiply` returns the answer.
+递归版本的 `multiply` 详述如下。 在 <dfn>base case</dfn> 里，也就是 `n <= 0` 时，返回 1。 在 `n` 比 0 大的情况里，函数会调用自身，参数 n 的值为 `n - 1`。 函数以相同的方式持续调用 `multiply`，直到 `n <= 0` 为止。 所以，所有函数都可以返回，原始的 `multiply` 返回结果。
 
-**Note:** Recursive functions must have a base case when they return without calling the function again (in this example, when `n <= 0`), otherwise they can never finish executing.
+**注意：** 递归函数在没有函数调用时（在这个例子是，是当 `n <= 0` 时）必需有一个跳出结构，否则永远不会执行完毕。
 
 # --instructions--
 
-Write a recursive function, `sum(arr, n)`, that returns the sum of the first `n` elements of an array `arr`.
+写一个递归函数，`sum(arr, n)`，返回递归调用数组 `arr` 从前 `n` 个元素和。
 
 # --hints--
 
-`sum([1], 0)` should equal 0.
+`sum([1], 0)` 应该返回 0 。
 
 ```js
 assert.equal(sum([1], 0), 0);
 ```
 
-`sum([2, 3, 4], 1)` should equal 2.
+`sum([2, 3, 4], 1)` 应该返回 2 。
 
 ```js
 assert.equal(sum([2, 3, 4], 1), 2);
 ```
 
-`sum([2, 3, 4, 5], 3)` should equal 9.
+`sum([2, 3, 4, 5], 3)` 应该等于 9。
 
 ```js
 assert.equal(sum([2, 3, 4, 5], 3), 9);
 ```
 
-Your code should not rely on any kind of loops (`for` or `while` or higher order functions such as `forEach`, `map`, `filter`, or `reduce`.).
+代码不能包含任意形式的循环（`for`、`while` 或者高阶函数如：`forEach`、`map`、`filter` 以及 `reduce`）。
 
 ```js
 assert(
@@ -72,7 +72,7 @@ assert(
 );
 ```
 
-You should use recursion to solve this problem.
+应该用递归解决这个问题。
 
 ```js
 assert(

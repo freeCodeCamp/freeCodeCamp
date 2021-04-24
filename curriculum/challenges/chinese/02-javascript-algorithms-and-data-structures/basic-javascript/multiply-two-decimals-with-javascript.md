@@ -25,7 +25,7 @@ dashedName: multiply-two-decimals-with-javascript
 assert(product === 5.0);
 ```
 
-要使用`*`运算符。
+要使用 `*` 运算符。
 
 ```js
 assert(/\*/.test(code));

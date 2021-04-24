@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b7f
-title: Change the Prototype to a New Object
+title: 将原型更改为新对象
 challengeType: 1
 forumTopicId: 301316
 dashedName: change-the-prototype-to-a-new-object
@@ -8,13 +8,13 @@ dashedName: change-the-prototype-to-a-new-object
 
 # --description--
 
-Up until now you have been adding properties to the `prototype` individually:
+到目前为止，你已经可以单独给 `prototype` 添加属性了：
 
 ```js
 Bird.prototype.numLegs = 2;
 ```
 
-This becomes tedious after more than a few properties.
+需要添加多个属性的，这未免会显得拖沓。
 
 ```js
 Bird.prototype.eat = function() {
@@ -26,7 +26,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-A more efficient way is to set the `prototype` to a new object that already contains the properties. This way, the properties are added all at once:
+一种更有效的方法就是给对象的 `prototype` 设置为一个已经包含了属性的新对象。 这样一来，所有属性都可以一次性添加进来：
 
 ```js
 Bird.prototype = {
@@ -42,29 +42,29 @@ Bird.prototype = {
 
 # --instructions--
 
-Add the property `numLegs` and the two methods `eat()` and `describe()` to the `prototype` of `Dog` by setting the `prototype` to a new object.
+通过给 `prototype` 设置一个对象，在 `Dog` 构造函数的 `prototype` 上添加一个属性 `numLegs` 以及两个方法：`eat()` 和 `describe()`。
 
 # --hints--
 
-`Dog.prototype` should be set to a new object.
+`Dog.prototype` 应该被设置为一个新对象。
 
 ```js
 assert(/Dog\.prototype\s*?=\s*?{/.test(code));
 ```
 
-`Dog.prototype` should have the property `numLegs`.
+`Dog.prototype` 应该拥有属性 `numLegs`。
 
 ```js
 assert(Dog.prototype.numLegs !== undefined);
 ```
 
-`Dog.prototype` should have the method `eat()`.
+`Dog.prototype` 应该拥有方法 `eat()`。
 
 ```js
 assert(typeof Dog.prototype.eat === 'function');
 ```
 
-`Dog.prototype` should have the method `describe()`.
+`Dog.prototype` 应该拥有方法 `describe()`。
 
 ```js
 assert(typeof Dog.prototype.describe === 'function');

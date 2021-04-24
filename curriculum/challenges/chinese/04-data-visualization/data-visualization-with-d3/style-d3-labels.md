@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd3
-title: Style D3 Labels
+title: 给 D3 标签添加样式
 challengeType: 6
 forumTopicId: 301492
 dashedName: style-d3-labels
@@ -8,21 +8,21 @@ dashedName: style-d3-labels
 
 # --description--
 
-D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as "font-family" or "font-size".
+D3 可以将样式添加到条形标签中。 `fill` 属性为 `text` 节点设置文本颜色， `style()` 方法设置其它样式的 CSS 规则，例如 `font-family` 或 `font-size`。
 
 # --instructions--
 
-Set the `font-size` of the `text` elements to 25px, and the color of the text to red.
+将 `text` 元素的 `font-size` 设置为 `25px`，文本颜色设置为红色（red）。
 
 # --hints--
 
-The labels should all have a `fill` color of red.
+所有标签的 `fill` 颜色应该是 red。
 
 ```js
 assert($('text').css('fill') == 'rgb(255, 0, 0)');
 ```
 
-The labels should all have a `font-size` of 25 pixels.
+所有标签的 `font-size` 应为 `25` 像素。
 
 ```js
 assert($('text').css('font-size') == '25px');

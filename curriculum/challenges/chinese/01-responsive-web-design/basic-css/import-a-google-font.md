@@ -17,10 +17,15 @@ dashedName: import-a-google-font
 
 要引入 Google Font，你需要从 Google Fonts 上复制字体的 URL，并粘贴到你的 HTML 里面。 在这个挑战中，我们需要引入 `Lobster` 字体。 因此，请复制以下代码段，并粘贴到代码编辑器顶部，即放到 `style` 标签之前。
 
-`<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+```
 
-现在你可以通过将下面例子中的 FAMILY_NAMEFAMILY_NAME 替换为 `Lobster`，来使用 `Lobster` 字体：  
-`font-family: FAMILY_NAME, GENERIC_NAME;`。
+现在可以在 CSS 中使用 `Lobster` 字体，并像下面一样使用 `Lobster` 作为 FAMILY_NAME：
+
+```css
+font-family: FAMILY_NAME, GENERIC_NAME;
+```
 
 GENERIC_NAME 是可选的，它用来指明在其他字体不可用时的后备字体。 我们会在下一个挑战中详细说明。
 
@@ -28,7 +33,7 @@ GENERIC_NAME 是可选的，它用来指明在其他字体不可用时的后备�
 
 # --instructions--
 
-给你的网页导入 `Lobster` 字体。 引入 Lobster 字体，然后使用元素选择器将 `h2` 元素的 `font-family` 设置为 `Lobster`。
+给你的网页导入 `Lobster` 字体。 然后使用元素选择器将 `h2` 元素的 `font-family` 设置为 `Lobster`。
 
 # --hints--
 

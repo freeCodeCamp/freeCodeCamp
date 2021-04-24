@@ -23,7 +23,9 @@ Añade la palabra clave `!important` a la declaración de color de pink-text par
 
 Aquí te mostramos un ejemplo de cómo hacerlo:
 
-`color: red !important;`
+```css
+color: red !important;
+```
 
 # --hints--
 
@@ -59,7 +61,7 @@ assert(
 );
 ```
 
-Tu elemento `h1` debe ser rosado.
+Tu elemento `h1` debe ser de color rosado ("pink").
 
 ```js
 assert($('h1').css('color') === 'rgb(255, 192, 203)');

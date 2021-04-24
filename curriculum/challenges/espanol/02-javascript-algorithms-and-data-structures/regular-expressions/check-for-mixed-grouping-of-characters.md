@@ -1,6 +1,6 @@
 ---
 id: 5c3dda8b4d8df89bea71600f
-title: Check For Mixed Grouping of Characters
+title: Comprueba agrupaciones mixtas de caracteres
 challengeType: 1
 forumTopicId: 301339
 dashedName: check-for-mixed-grouping-of-characters
@@ -8,62 +8,63 @@ dashedName: check-for-mixed-grouping-of-characters
 
 # --description--
 
-Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses `()`.
+A veces queremos comprobar grupos de caracteres utilizando una expresión regular y para conseguirlo usamos paréntesis `()`.
 
-If you want to find either `Penguin` or `Pumpkin` in a string, you can use the following Regular Expression: `/P(engu|umpk)in/g`
+Si deseas encontrar `Penguin` o `Pumpkin` en una cadena, puedes usar la siguiente expresión regular: `/P(engu|umpk)in/g`
 
-Then check whether the desired string groups are in the test string by using the `test()` method.
+Luego, comprueba si los grupos de cadena deseados están en la cadena de prueba usando el método `test()`.
 
 ```js
 let testStr = "Pumpkin";
 let testRegex = /P(engu|umpk)in/;
 testRegex.test(testStr);
-// Returns true
 ```
+
+El método `test` aquí devolverá `true`.
 
 # --instructions--
 
-Fix the regex so that it checks for the names of `Franklin Roosevelt` or `Eleanor Roosevelt` in a case sensitive manner and it should make concessions for middle names.
+Corrige la expresión regular para que compruebe los nombres de `Franklin Roosevelt` o `Eleanor Roosevelt` de una manera sensible a mayúsculas y minúsculas y haciendo concesiones para los segundos nombres.
 
-Then fix the code so that the regex that you have created is checked against `myString` and either `true` or `false` is returned depending on whether the regex matches.
+Luego, corrige el código para que la expresión regular que has creado se compruebe con `myString` y devuelva `true` o `false` dependiendo de si la expresión regular coincide.
 
 # --hints--
 
-Your regex `myRegex` should return `true` for the string `Franklin D. Roosevelt`
+Tu expresión regular `myRegex` debe devolver `true` para la cadena `Franklin D. Roosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(myRegex.test('Franklin D. Roosevelt'));
 ```
 
-Your regex `myRegex` should return `true` for the string `Eleanor Roosevelt`
+Tu expresión regular `myRegex` debe devolver `true` para la cadena `Eleanor Roosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(myRegex.test('Eleanor Roosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `Franklin Rosevelt`
+Tu expresión regular `myRegex` debe devolver `false` para la cadena `Franklin Rosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('Franklin Rosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `Frank Roosevelt`
+Tu expresión regular `myRegex` debe devolver `false` para la cadena `Frank Roosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
-You should use `.test()` to test the regex.
+Debes usar `.test()` para probar la expresión regular.
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+Tu resultado debe devolver `true`.
 
 ```js
 assert(result === true);

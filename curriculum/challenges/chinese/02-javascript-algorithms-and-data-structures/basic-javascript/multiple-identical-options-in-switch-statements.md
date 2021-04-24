@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244df
-title: Multiple Identical Options in Switch Statements
+title: 在 Switch 语句添加多个相同选项
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
@@ -9,7 +9,7 @@ dashedName: multiple-identical-options-in-switch-statements
 
 # --description--
 
-If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered. If you have multiple inputs with the same output, you can represent them in a `switch` statement like this:
+如果你忘了给 `switch` 的每一条 `case` 添加 `break`，那么后续的 `case` 会一直执行，直到遇见 `break` 为止。 如果你想为 `switch` 中的多个不同的输入设置相同的结果，可以这样写：
 
 ```js
 var result = "";
@@ -24,81 +24,80 @@ switch(val) {
 }
 ```
 
-Cases for 1, 2, and 3 will all produce the same result.
+这样，1、2、3 都会有相同的结果。
 
 # --instructions--
 
-Write a switch statement to set `answer` for the following ranges:  
-`1-3` - "Low"  
-`4-6` - "Mid"  
-`7-9` - "High"
+请写一个 switch 语句，按如下条件设置 `answer` ：  
+`1-3` - `Low`  
+`4-6` - `Mid`  
+`7-9` - `High`
 
-**Note**  
-You will need to have a `case` statement for each number in the range.
+**提示：** 你的 `case` 应写全范围中的每一个数字。
 
 # --hints--
 
-`sequentialSizes(1)` should return "Low"
+`sequentialSizes(1)` 应该返回字符串 `Low`
 
 ```js
 assert(sequentialSizes(1) === 'Low');
 ```
 
-`sequentialSizes(2)` should return "Low"
+`sequentialSizes(2)` 应该返回字符串 `Low`
 
 ```js
 assert(sequentialSizes(2) === 'Low');
 ```
 
-`sequentialSizes(3)` should return "Low"
+`sequentialSizes(3)` 应该返回字符串 `Low`
 
 ```js
 assert(sequentialSizes(3) === 'Low');
 ```
 
-`sequentialSizes(4)` should return "Mid"
+`sequentialSizes(4)` 应该返回字符串 `Mid`
 
 ```js
 assert(sequentialSizes(4) === 'Mid');
 ```
 
-`sequentialSizes(5)` should return "Mid"
+`sequentialSizes(5)` 应该返回字符串 `Mid`
 
 ```js
 assert(sequentialSizes(5) === 'Mid');
 ```
 
-`sequentialSizes(6)` should return "Mid"
+`sequentialSizes(6)` 应该返回字符串 `Mid`
 
 ```js
 assert(sequentialSizes(6) === 'Mid');
 ```
 
-`sequentialSizes(7)` should return "High"
+`sequentialSizes(7)` 应该返回字符串 `High`
 
 ```js
 assert(sequentialSizes(7) === 'High');
 ```
 
-`sequentialSizes(8)` should return "High"
+`sequentialSizes(8)` 应该返回字符串 `High`
 
 ```js
 assert(sequentialSizes(8) === 'High');
 ```
 
-`sequentialSizes(9)` should return "High"
+`sequentialSizes(9)` 应该返回字符串 `High`
 
 ```js
 assert(sequentialSizes(9) === 'High');
 ```
 
-You should not use any `if` or `else` statements
+你不应使用 `if` 或 `else` 语句。
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-You should have nine `case` statements
+你应该编写 9 个`case`语句。
 
 ```js
 assert(code.match(/case/g).length === 9);

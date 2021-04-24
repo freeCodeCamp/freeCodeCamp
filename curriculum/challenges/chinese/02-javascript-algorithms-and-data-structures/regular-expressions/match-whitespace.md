@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba3
-title: Match Whitespace
+title: 匹配空白字符
 challengeType: 1
 forumTopicId: 301359
 dashedName: match-whitespace
@@ -8,36 +8,36 @@ dashedName: match-whitespace
 
 # --description--
 
-The challenges so far have covered matching letters of the alphabet and numbers. You can also match the whitespace or spaces between letters.
+迄今为止的挑战包括匹配字母和数字。 还可以匹配字符之间的空格。
 
-You can search for whitespace using `\s`, which is a lowercase `s`. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it as similar to the character class `[ \r\t\f\n\v]`.
+可以使用 `\s` 搜寻空格，其中 `s` 是小写。 此匹配模式将匹配空格、回车符、制表符、换页符和换行符。 可以认为这类似于元字符 `[ \r\t\f\n\v]`。
 
 ```js
 let whiteSpace = "Whitespace. Whitespace everywhere!"
 let spaceRegex = /\s/g;
 whiteSpace.match(spaceRegex);
-// Returns [" ", " "]
 ```
 
+这个 `match` 调用将返回 `[" ", " "]`。
 # --instructions--
 
-Change the regex `countWhiteSpace` to look for multiple whitespace characters in a string.
+修改正则表达式 `countWhiteSpace` 查找字符串中的多个空白字符。
 
 # --hints--
 
-Your regex should use the global flag.
+你的正则表达式应该使用全局标识。
 
 ```js
 assert(countWhiteSpace.global);
 ```
 
-Your regex should use the shorthand character `\s` to match all whitespace characters.
+正则表达式应该使用元字符 `\s` 匹配所有的空白。
 
 ```js
 assert(/\\s/.test(countWhiteSpace.source));
 ```
 
-Your regex should find eight spaces in `"Men are from Mars and women are from Venus."`
+你的正则表达式应该在字符串 `Men are from Mars and women are from Venus.` 中找到 8 个非空格字符。
 
 ```js
 assert(
@@ -46,13 +46,13 @@ assert(
 );
 ```
 
-Your regex should find three spaces in `"Space: the final frontier."`
+你的正则表达式应该在 `Space: the final frontier.` 中匹配到 3 个非空白字符。
 
 ```js
 assert('Space: the final frontier.'.match(countWhiteSpace).length == 3);
 ```
 
-Your regex should find no spaces in `"MindYourPersonalSpace"`
+你的正则表达式在 `MindYourPersonalSpace` 中应该匹配不到空白字符。
 
 ```js
 assert('MindYourPersonalSpace'.match(countWhiteSpace) == null);

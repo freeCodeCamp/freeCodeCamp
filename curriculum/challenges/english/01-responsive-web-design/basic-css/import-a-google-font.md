@@ -17,10 +17,15 @@ So, let's go ahead and import and apply a Google font (note that if Google is bl
 
 To import a Google Font, you can copy the font's URL from the Google Fonts library and then paste it in your HTML. For this challenge, we'll import the `Lobster` font. To do this, copy the following code snippet and paste it into the top of your code editor (before the opening `style` element):
 
-`<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+```
 
-Now you can use the `Lobster` font in your CSS by using `Lobster` as the FAMILY_NAME as in the following example:  
-`font-family: FAMILY_NAME, GENERIC_NAME;`.
+Now you can use the `Lobster` font in your CSS by using `Lobster` as the FAMILY_NAME as in the following example:
+
+```css
+font-family: FAMILY_NAME, GENERIC_NAME;
+```
 
 The GENERIC_NAME is optional, and is a fallback font in case the other specified font is not available. This is covered in the next challenge.
 
@@ -52,7 +57,7 @@ You should only use an `h2` element selector to change the font.
 
 ```js
 assert(
-  /\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(
+  /\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi.test(
     code
   )
 );

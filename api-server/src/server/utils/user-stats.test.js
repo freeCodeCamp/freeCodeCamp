@@ -78,7 +78,7 @@ describe('user stats', () => {
     );
   });
 
-  describe('calcCurrentStreak', function() {
+  describe('calcCurrentStreak', function () {
     it('should return 1 day when today one challenge was completed', () => {
       expect(
         calcCurrentStreak(
@@ -291,7 +291,7 @@ describe('user stats', () => {
     );
   });
 
-  describe('calcLongestStreak', function() {
+  describe('calcLongestStreak', function () {
     it(
       'should return 1 when there is the only one one-day-long ' +
         'streak available',

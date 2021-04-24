@@ -22,9 +22,9 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 **需求 #4：** 散点图包含一些点，每个点都有一个值为 `dot` 的 class 属性，它代表了被绘制的数据。
 
-**需求 #5：** 每个点都应具有 `data-xvalue` 属性和 `data-yvalue` 属性，对应这个点的 x 和 y 值。
+**需求 #5：** 每个点都应具有 `data-xvalue` 属性和 `data-yvalue` 属性，具有相应的属性值 `x` 和 `y`。
 
-**需求 #6：** 每个点的 `data-xvalue` 属性和 `data-yvalue` 属性应该在实际数据的范围内，并且数据格式应该正确无误。 对于 `data-xvalue` 属性，可以接受整数（全年）或 Date 对象进行测试评估。 对于 `data-yvalue` 属性（分钟），请使用 Date 对象。
+**需求 #6：** 每个点的 `data-xvalue` 属性和 `data-yvalue` 属性应该在实际数据的范围内，并且数据格式应该正确无误。 对于`data-xvalue` ，可以接受整数（全年）或 `Date` 对象进行测试评估。 对于 `data-yvalue`（分钟），应使用 `Date` 对象。
 
 **需求 #7：** `data-xvalue` 属性和它对应的点应该和 x 轴上的点或值对齐。
 
@@ -46,9 +46,9 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 以下是完成此项目所需的数据：`https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
 
-你可以 fork [这个 CodePen 项目](https://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用这个 CodePen 模板</a>来创建你的项目，点击 `Save` 即可创建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-一旦你完成了本项目并且通过所有测试，请提交项目的 URL。
+当你完成了本项目，并且项目通过所有测试，请提交项目的 URL。
 
 # --solutions--
 

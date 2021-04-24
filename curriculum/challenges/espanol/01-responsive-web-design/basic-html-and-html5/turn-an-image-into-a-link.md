@@ -13,7 +13,9 @@ Puedes convertir elementos en enlaces, anidándolos dentro de un elemento `a`.
 
 Anida tu imagen dentro de un elemento `a`. A continuación, te presentamos un ejemplo:
 
-`<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>`
+```html
+<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>
+```
 
 Recuerda usar `#` como propiedad `href` de tu elemento `a` para convertirlo en un enlace muerto.
 

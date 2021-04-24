@@ -1,6 +1,6 @@
 ---
 id: aa7697ea2477d1316795783b
-title: Pig Latin
+title: 儿童黑话
 challengeType: 5
 forumTopicId: 16039
 dashedName: pig-latin
@@ -8,55 +8,55 @@ dashedName: pig-latin
 
 # --description--
 
-Pig Latin is a way of altering English Words. The rules are as follows:
+儿童黑话也叫 Pig Latin，是一种英语语言游戏。 规则如下：
 
-\- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+\- 如果单词以辅音开头，就把第一个辅音字母或第一组辅音簇移到单词的结尾，并在后面加上 `ay`。
 
-\- If a word begins with a vowel, just add "way" at the end.
+\- 如果单词以元音开头，只需要在结尾加上 `way`。
 
 # --instructions--
 
-Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
+请把传入的字符串根据上述规则翻译成儿童黑话并返回结果。 输入的字符串一定是一个小写的英文单词。
 
 # --hints--
 
-`translatePigLatin("california")` should return "aliforniacay".
+`translatePigLatin("california")` 应该返回字符串 `aliforniacay`。
 
 ```js
 assert.deepEqual(translatePigLatin('california'), 'aliforniacay');
 ```
 
-`translatePigLatin("paragraphs")` should return "aragraphspay".
+`translatePigLatin("paragraphs")` 应该返回字符串 `aragraphspay`。
 
 ```js
 assert.deepEqual(translatePigLatin('paragraphs'), 'aragraphspay');
 ```
 
-`translatePigLatin("glove")` should return "oveglay".
+`translatePigLatin("glove")` 应该返回字符串 `oveglay`。
 
 ```js
 assert.deepEqual(translatePigLatin('glove'), 'oveglay');
 ```
 
-`translatePigLatin("algorithm")` should return "algorithmway".
+`translatePigLatin("algorithm")` 应该返回字符串 `algorithmway`。
 
 ```js
 assert.deepEqual(translatePigLatin('algorithm'), 'algorithmway');
 ```
 
-`translatePigLatin("eight")` should return "eightway".
+`translatePigLatin("eight")` 应该返回字符串 `eightway`。
 
 ```js
 assert.deepEqual(translatePigLatin('eight'), 'eightway');
 ```
 
-Should handle words where the first vowel comes in the middle of the word.  `translatePigLatin("schwartz")` should return "artzschway".
+应该处理单词的第一个元音在单词中间的位置的情况。  `translatePigLatin("schwartz")` 应该返回字符串 `artzschway`。
 
 ```js
 assert.deepEqual(translatePigLatin('schwartz'), 'artzschway');
 ```
 
-Should handle words without vowels. `translatePigLatin("rhythm")` should return "rhythmay".
+应该处理不带元音的单词。 `translatePigLatin("rhythm")` 应该返回字符串 `rhythmay`。
 
 ```js
 assert.deepEqual(translatePigLatin('rhythm'), 'rhythmay');

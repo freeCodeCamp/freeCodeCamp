@@ -43,43 +43,28 @@ describe('Landing page', () => {
   });
 
   it('Has 5 brand logos', () => {
-    cy.get('.logo-row')
-      .children()
-      .its('length')
-      .should('eq', 5);
+    cy.get('.logo-row').children().its('length').should('eq', 5);
   });
 
   it('Has `as seens as` section', () => {
     cy.contains('Build projects.').should('be.visible');
-    cy.get('.big-heading')
-      .siblings()
-      .get('svg');
+    cy.get('.big-heading').siblings().get('svg');
   });
 
-  it('Has a visible large image on large viewports', function() {
-    cy.viewport(1200, 660)
-      .get(selectors.landingPageImage)
-      .should('be.visible');
+  it('Has a visible large image on large viewports', function () {
+    cy.viewport(1200, 660).get(selectors.landingPageImage).should('be.visible');
 
-    cy.viewport(1199, 660)
-      .get(selectors.landingPageImage)
-      .should('not.exist');
+    cy.viewport(1199, 660).get(selectors.landingPageImage).should('not.exist');
   });
 
-  it('Has links to all the certifications', function() {
-    cy.get(selectors.certifications)
-      .children()
-      .its('length')
-      .should('eq', 10);
+  it('Has links to all the certifications', function () {
+    cy.get(selectors.certifications).children().its('length').should('eq', 10);
     cy.wrap(certifications).each(cert => {
       cy.get(selectors.certifications).contains(cert);
     });
   });
 
-  it('Has 3 testimonial cards', function() {
-    cy.get(selectors.testimonials)
-      .children()
-      .its('length')
-      .should('eq', 3);
+  it('Has 3 testimonial cards', function () {
+    cy.get(selectors.testimonials).children().its('length').should('eq', 3);
   });
 });
