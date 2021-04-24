@@ -45,7 +45,7 @@ assert(
 `style` 结束标签后面的所有 HTML 元素都应该被嵌套在 `.container-fluid` 里面。
 
 ```js
-assert($('.container-fluid').children().length >= 8);
+assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').has("style").length && !$('.container-fluid').has("link").length);
 ```
 
 # --seed--

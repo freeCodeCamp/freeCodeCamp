@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aede08817
 title: Anida un elemento anchor dentro de un párrafo
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 forumTopicId: 18244
 dashedName: nest-an-anchor-element-within-a-paragraph
 ---

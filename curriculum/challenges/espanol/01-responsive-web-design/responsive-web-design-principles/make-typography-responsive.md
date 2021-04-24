@@ -30,13 +30,21 @@ Establece el ancho `width` de la etiqueta `h2` al 80% del ancho del viewport y e
 Tu etiqueta `h2` debe tener un `width` de 80vw.
 
 ```js
-assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g)
+);
 ```
 
 Tu etiqueta `p` debe tener un `width` de 75vmin.
 
 ```js
-assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g)
+);
 ```
 
 # --seed--
