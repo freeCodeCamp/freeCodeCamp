@@ -57,7 +57,7 @@ You should only use an `h2` element selector to change the font.
 
 ```js
 assert(
-  /\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(
+  /\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi.test(
     code
   )
 );
