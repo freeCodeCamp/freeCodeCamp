@@ -35,7 +35,7 @@ A one-off script that automatically adds a new step between two existing consecu
 1. Change to the directory of the project.
 2. Run the following npm command:
   ```bash
-  npm run create-step-between start=X end=Y # where X is the starting step number and Y is the following step number.
+  npm run create-step-between start=X # where X is the starting step number
   ```
 
 ## [delete-step.js](delete-step.js)
