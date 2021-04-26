@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import {
   FormGroup,
   ControlLabel,
-  FormControl
+  FormControl,
+  HelpBlock,
+  Alert
 } from '@freecodecamp/react-bootstrap';
 
 import { FullWidthRow, Spacer } from '../helpers';
@@ -39,7 +41,8 @@ class AboutSettings extends Component {
     this.state = {
       formValues: { ...values },
       originalValues: { ...values },
-      formClicked: false
+      formClicked: false,
+      isPictureUrlValid: true
     };
   }
 
@@ -69,18 +72,25 @@ class AboutSettings extends Component {
 
   isFormPristine = () => {
     const { formValues, originalValues } = this.state;
-    return Object.keys(originalValues)
-      .map(key => originalValues[key] === formValues[key])
-      .every(bool => bool);
+    return (
+      this.state.isPictureUrlValid === false ||
+      Object.keys(originalValues)
+        .map(key => originalValues[key] === formValues[key])
+        .every(bool => bool)
+    );
   };
 
   handleSubmit = e => {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
-    return this.setState({ formClicked: true }, () =>
-      submitNewAbout(formValues)
-    );
+    if (this.state.isPictureUrlValid === true) {
+      return this.setState({ formClicked: true }, () =>
+        submitNewAbout(formValues)
+      );
+    } else {
+      return false;
+    }
   };
 
   handleNameChange = e => {
@@ -105,12 +115,38 @@ class AboutSettings extends Component {
 
   handlePictureChange = e => {
     const value = e.target.value.slice(0);
+    let pictureImage = new Image();
+    pictureImage.src = value;
+    const loadEvent = () => {
+      this.setState({ isPictureUrlValid: true });
+      pictureImage.removeEventListener('error', errorEvent);
+    };
+    const errorEvent = () => {
+      this.setState({ isPictureUrlValid: false });
+      pictureImage.removeEventListener('load', loadEvent);
+    };
+
+    pictureImage.addEventListener('load', loadEvent);
+    pictureImage.addEventListener('error', errorEvent);
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
         picture: value
       }
     }));
+  };
+
+  showImageValidationWarning = () => {
+    const { t } = this.props;
+    if (this.state.isPictureUrlValid === false) {
+      return (
+        <HelpBlock>
+          <Alert bsStyle='info'>{t('validation.url-not-image')}</Alert>
+        </HelpBlock>
+      );
+    } else {
+      return true;
+    }
   };
 
   handleAboutChange = e => {
@@ -164,6 +200,7 @@ class AboutSettings extends Component {
                 type='url'
                 value={picture}
               />
+              {this.showImageValidationWarning()}
             </FormGroup>
             <FormGroup controlId='about-about'>
               <ControlLabel>
