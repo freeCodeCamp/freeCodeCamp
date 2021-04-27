@@ -1,6 +1,6 @@
 import { navigate } from 'gatsby';
 import { takeEvery, put } from 'redux-saga/effects';
-import { isError } from 'lodash';
+import { isError } from 'lodash-es';
 
 import { isHandledError, unwrapHandledError } from '../utils/handled-error';
 import { reportClientSideError } from '../utils/report-error';

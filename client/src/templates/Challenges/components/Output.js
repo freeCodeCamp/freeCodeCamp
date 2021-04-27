@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import sanitizeHtml from 'sanitize-html';
 
 import './output.css';
-import { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash-es';
 
 const propTypes = {
   defaultOutput: PropTypes.string,

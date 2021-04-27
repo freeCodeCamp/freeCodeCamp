@@ -1,5 +1,5 @@
 import React from 'react';
-import { kebabCase } from 'lodash';
+import { kebabCase } from 'lodash-es';
 import normalizeUrl from 'normalize-url';
 import PropTypes from 'prop-types';
 import {

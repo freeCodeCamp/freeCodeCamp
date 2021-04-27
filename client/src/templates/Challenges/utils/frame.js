@@ -1,4 +1,4 @@
-import { toString, flow } from 'lodash';
+import { toString, flow } from 'lodash-es';
 import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions

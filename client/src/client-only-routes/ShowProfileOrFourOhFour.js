@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash-es';
 
 import Loader from '../components/helpers/Loader';
 import {

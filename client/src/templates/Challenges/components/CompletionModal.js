@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import noop from 'lodash/noop';
+import { noop } from 'lodash-es';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';

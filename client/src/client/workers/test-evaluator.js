@@ -1,6 +1,6 @@
 import chai from 'chai';
 import '@babel/polyfill';
-import __toString from 'lodash/toString';
+import { toString as __toString } from 'lodash-es';
 import { format as __format } from '../../utils/format';
 import curriculumHelpers from '../../utils/curriculum-helpers';
 
