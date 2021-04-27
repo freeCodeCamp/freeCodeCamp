@@ -1,14 +1,21 @@
 /* global cy */
-
 describe('Visit APIs and Microservices', () => {
-  it(`should be possible to visit all of the challenges`, () => {
+  before(() => {
     cy.task('getCurriculum', 'english').then(curriculum => {
       cy.task('scopeCurriculum', {
         curriculum,
         superblock: 'apis-and-microservices'
-      }).then(challenges => {
+      }).as('challenges');
+    });
+  });
+
+  it(`has access to the text`, () => {
+    cy.get('@challenges').then(challenges => {
+      describe(`visit challenge`, () => {
         challenges.forEach(challenge => {
-          cy.visit(challenge);
+          it(`should work correctly`, () => {
+            cy.visit(challenge);
+          });
         });
       });
     });
