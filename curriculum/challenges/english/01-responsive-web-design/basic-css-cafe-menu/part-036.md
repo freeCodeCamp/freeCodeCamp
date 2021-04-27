@@ -20,7 +20,7 @@ assert(code.match(/\.price\s*{/i));
 Your `price` class selector should set the `text-align` property to `right`.
 
 ```js
-assert(code.match(/\.price\s*{\s*text-align:\s*right;/i));
+assert(code.match(/\.price\s*{\s*text-align:\s*right;?/i));
 ```
 
 Your `.price` element should be aligned to the right.

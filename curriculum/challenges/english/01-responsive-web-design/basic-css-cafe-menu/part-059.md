@@ -22,7 +22,7 @@ assert(code.match(/h1,\s*h2\s*{/i));
 You should set the `font-family` to `Impact`.
 
 ```js
-assert(code.match(/font-family:\s*impact;/i));
+assert(code.match(/font-family:\s*impact;?/i));
 ```
 
 Your `h1` element should have a `font-family` of `Impact`.

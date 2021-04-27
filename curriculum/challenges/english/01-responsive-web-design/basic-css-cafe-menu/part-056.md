@@ -38,7 +38,7 @@ assert(!code.match(/padding-bottom/i));
 You should set the `padding` property to `20px`.
 
 ```js
-assert(code.match(/padding:\s*20px;/i));
+assert(code.match(/padding:\s*20px;?/i));
 ```
 
 Your `.menu` element should have a `padding` value of `20px`.

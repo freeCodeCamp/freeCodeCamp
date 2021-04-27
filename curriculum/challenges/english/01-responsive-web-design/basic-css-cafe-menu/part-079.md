@@ -27,7 +27,7 @@ You should set the `font-size` property to `14px`.
 
 
 ```js
-assert(code.match(/font-size:\s*14px;/i));
+assert(code.match(/font-size:\s*14px;?/i));
 ```
 
 Your `footer` element should have a `font-size` of `14px`.

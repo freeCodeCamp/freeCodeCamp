@@ -26,7 +26,7 @@ assert(code.match(/\.item\s*p\s*{/i));
 Your `.item p` selector should set the `display` property to `inline-block`.
 
 ```js
-assert(code.match(/\.item\s*p\s*{\s*display:\sinline-block;/i));
+assert(code.match(/\.item\s*p\s*{\s*display:\sinline-block;?/i));
 ```
 
 Your `p` elements in your `.item` element should be `inline-block`.

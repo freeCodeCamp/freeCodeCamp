@@ -22,7 +22,7 @@ assert(code.match(/a:visited\s*{/i));
 You should set the `color` property to `grey`.
 
 ```js
-assert(code.match(/a:visited\s*{\s*color:\s*grey;/i));
+assert(code.match(/a:visited\s*{\s*color:\s*grey;?/i));
 ```
 
 # --seed--

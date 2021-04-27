@@ -20,7 +20,7 @@ assert(code.match(/body\s*{/i));
 You should set the `background-color` property to `brown`.
 
 ```js
-assert(code.match(/background-color:\s*brown;/i));
+assert(code.match(/background-color:\s*brown;?/i));
 ```
 
 Your body element should have a brown background.

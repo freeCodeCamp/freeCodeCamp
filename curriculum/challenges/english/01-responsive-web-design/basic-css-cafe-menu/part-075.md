@@ -14,7 +14,7 @@ Using the same style selector in the previous step, make the font size of the it
 You should set the `font-size` property to `18px`.
 
 ```js
-assert(code.match(/font-size:\s*18px;/i));
+assert(code.match(/font-size:\s*18px;?/i));
 ```
 
 You should use the existing `.item p` selector.

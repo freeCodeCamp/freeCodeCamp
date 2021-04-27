@@ -22,14 +22,14 @@ Your selector should set the `text-align` property to `center`.
 
 ```js
 const css = code.split('<!DOCTYPE html>')[0];
-assert(css.match(/text-align:\s*center;/));
+assert(css.match(/text-align:\s*center;?/));
 ```
 
 You should only have one selector.
 
 ```js
 const css = code.split('<!DOCTYPE html>')[0];
-assert(css.match(/text-align:\s*center;/).length === 1);
+assert(css.match(/text-align:\s*center;?/).length === 1);
 ```
 
 # --seed--

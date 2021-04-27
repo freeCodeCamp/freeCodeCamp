@@ -16,7 +16,7 @@ Change the top margin of the `h1` element to `0` to remove all the top margin.
 You should set the `margin-top` property to `0`.
 
 ```js
-assert(code.match(/margin-top:\s*0;/i));
+assert(code.match(/margin-top:\s*0;?/i));
 ```
 
 Your `h1` element should have a `margin-top` of `0`.

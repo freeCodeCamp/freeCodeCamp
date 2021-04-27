@@ -22,7 +22,7 @@ assert(code.match(/\.bottom-line\s*{/i));
 You should set the `margin-top` property to `25px`.
 
 ```js
-assert(code.match(/\.bottom-line\s*{\s*margin-top:\s*25px;/i));
+assert(code.match(/\.bottom-line\s*{\s*margin-top:\s*25px;?/i));
 ```
 
 # --seed--

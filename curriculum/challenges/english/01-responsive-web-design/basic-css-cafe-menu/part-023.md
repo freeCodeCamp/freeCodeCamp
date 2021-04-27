@@ -20,7 +20,7 @@ In your style sheet, comment out the the line containing the `background-color` 
 You should comment out the `background-color: burlywood;` line in your CSS.
 
 ```js
-assert(code.match(/\/\*\s*background-color:\s*burlywood;\s*\*\//i));
+assert(code.match(/\/\*\s*background-color:\s*burlywood;?\s*\*\//i));
 ```
 
 

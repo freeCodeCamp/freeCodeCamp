@@ -14,13 +14,13 @@ Now go ahead and change both the `flavor` and `price` class' widths to be `50%` 
 You should set the `width` property to `50%` in your `.flavor` selector.
 
 ```js
-assert(code.match(/\.flavor\s*{[:;\-\w\s]*width:\s50%;/i));
+assert(code.match(/\.flavor\s*{[:;\-\w\s]*width:\s50%;?/i));
 ```
 
 You should set the `width` property to `50%` in your `.price` selector.
 
 ```js
-assert(code.match(/\.price\s*{[\W\w\s]*width:\s50%;/i));
+assert(code.match(/\.price\s*{[\W\w\s]*width:\s50%;?/i));
 ```
 
 # --seed--

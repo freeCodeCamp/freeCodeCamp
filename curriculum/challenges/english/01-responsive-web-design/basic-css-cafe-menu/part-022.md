@@ -20,7 +20,7 @@ assert(code.match(/div\s*{/i));
 You should set the `width` property to `300px`.
 
 ```js
-assert(code.match(/div\s*{\s*width:\s*300px;/i));
+assert(code.match(/div\s*{\s*width:\s*300px;?/i));
 ```
 
 Your `div` should have a width of 300px.

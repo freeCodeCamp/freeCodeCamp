@@ -14,13 +14,13 @@ Next, you want to center the `div` horizontally. You can do this by setting its 
 You should set the `margin-left` property to `auto`.
 
 ```js
-assert(code.match(/margin-left:\s*auto;/i));
+assert(code.match(/margin-left:\s*auto;?/i));
 ```
 
 You should set the `margin-right` property to `auto`.
 
 ```js
-assert(code.match(/margin-right:\s*auto;/i));
+assert(code.match(/margin-right:\s*auto;?/i));
 ```
 
 Your `div` should be horizontally centered.

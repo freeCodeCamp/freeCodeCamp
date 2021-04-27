@@ -16,13 +16,13 @@ Target all the `p` elements nested in elements with the `class` named `item` and
 You should set the `margin-top` property to `5px`.
 
 ```js
-assert(code.match(/margin-top:\s*5px;/i));
+assert(code.match(/margin-top:\s*5px;?/i));
 ```
 
 You should set the `margin-bottom` property to `5px`.
 
 ```js
-assert(code.match(/margin-bottom:\s*5px;/i));
+assert(code.match(/margin-bottom:\s*5px;?/i));
 ```
 
 You should use the existing `.item p` selector.

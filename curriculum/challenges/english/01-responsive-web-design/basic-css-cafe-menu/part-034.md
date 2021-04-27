@@ -20,7 +20,7 @@ assert(code.match(/\.flavor\s*{/i));
 Your `flavor` class selector should set the `text-align` property to `left`.
 
 ```js
-assert(code.match(/\.flavor\s*{\s*text-align:\s*left;/i));
+assert(code.match(/\.flavor\s*{\s*text-align:\s*left;?/i));
 ```
 
 Your `.flavor` element should be aligned to the left.

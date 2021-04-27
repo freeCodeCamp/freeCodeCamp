@@ -22,7 +22,7 @@ assert(code.match(/hr\s*{/i));
 You should set the `height` property to `3px`.
 
 ```js
-assert(code.match(/height:\s*3px;/i));
+assert(code.match(/height:\s*3px;?/i));
 ```
 
 Your `hr` element should have a height of `3px`.

@@ -16,7 +16,7 @@ Change the `height` property of the `hr` to be `2px`, so the total height of it 
 You should set the `height` property to `2px`.
 
 ```js
-assert(code.match(/height:\s*2px;/i));
+assert(code.match(/height:\s*2px;?/i));
 ```
 
 Your `hr` element should have a `height` of `2px`.

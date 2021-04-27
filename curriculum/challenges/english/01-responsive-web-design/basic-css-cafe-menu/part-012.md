@@ -35,7 +35,7 @@ assert(code.match(/h1\s*{\s*text-align:/i));
 Your `text-align` property should set a value of `center`.
 
 ```js
-assert(code.match(/text-align:\s*center;/i));
+assert(code.match(/text-align:\s*center;?/i));
 ```
 
 # --seed--

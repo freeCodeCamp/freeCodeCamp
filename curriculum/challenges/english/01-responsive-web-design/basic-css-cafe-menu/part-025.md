@@ -14,13 +14,13 @@ Now it's easy to see that the text is centered inside the `div` element. Current
 You should set the `width` property to `80%`.
 
 ```js
-assert(code.match(/width:\s*80%;/i));
+assert(code.match(/width:\s*80%;?/i));
 ```
 
 You should not have a `width` property of `300px`.
 
 ```js
-assert(!code.match(/width:\s*300px;/i));
+assert(!code.match(/width:\s*300px;?/i));
 ```
 
 # --seed--

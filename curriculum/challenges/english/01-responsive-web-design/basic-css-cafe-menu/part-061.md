@@ -20,7 +20,7 @@ assert(code.match(/\.established\s*{/i));
 You should set the `font-style` property to `italic`.
 
 ```js
-assert(code.match(/\.established\s*{\s*font-style:\s*italic;/i));
+assert(code.match(/\.established\s*{\s*font-style:\s*italic;?/i));
 ```
 
 # --seed--

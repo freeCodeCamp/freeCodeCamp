@@ -14,7 +14,7 @@ That brown background makes it hard to read the text. Change the `body` element'
 You should set the `background-color` property to `burlywood`.
 
 ```js
-assert(code.match(/background-color:\s*burlywood;/i));
+assert(code.match(/background-color:\s*burlywood;?/i));
 ```
 
 Your body element should have a burlywood background.

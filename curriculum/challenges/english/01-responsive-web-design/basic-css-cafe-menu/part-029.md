@@ -16,7 +16,7 @@ Delete the comment and its contents inside the `body` type selector. Now add a `
 You should remove the commented out `background-color` property.
 
 ```js
-assert(!code.match(/\/\*\s*background-color:\s*burlywood;\s*\*\//i))
+assert(!code.match(/\/\*\s*background-color:\s*burlywood;?\s*\*\//i))
 ```
 
 Your `body` selector should not have any comments.

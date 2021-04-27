@@ -22,19 +22,19 @@ assert(code.match(/img\s*{/i));
 You should set the `display` property to `block`.
 
 ```js
-assert(code.match(/display:\s*block;/i));
+assert(code.match(/display:\s*block;?/i));
 ```
 
 You should set the `margin-left` property to `auto`.
 
 ```js
-assert(code.match(/margin-left:\s*auto;/i));
+assert(code.match(/margin-left:\s*auto;?/i));
 ```
 
 You should set the `margin-right` property to `auto`.
 
 ```js
-assert(code.match(/margin-right:\s*auto;/i));
+assert(code.match(/margin-right:\s*auto;?/i));
 ```
 
 Your `img` element should have a `display` of `block`.

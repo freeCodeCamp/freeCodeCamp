@@ -16,7 +16,7 @@ There is an easier way, simply add a negative top margin to the `img` elements t
 You should set the `margin-top` property to `-25px`.
 
 ```js
-assert(code.match(/margin-top:\s*-25px;/i));
+assert(code.match(/margin-top:\s*-25px;?/i));
 ```
 
 Your `img` elements should have a `margin-top` value of `-25px`.

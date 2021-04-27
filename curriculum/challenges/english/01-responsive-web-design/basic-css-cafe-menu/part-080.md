@@ -22,7 +22,7 @@ assert(code.match(/a\s*{/i));
 You should set the `color` property to `black`.
 
 ```js
-assert(code.match(/color:\s*black;/i));
+assert(code.match(/color:\s*black;?/i));
 ```
 
 Your `a` element should have a `color` of `black`.

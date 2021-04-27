@@ -22,7 +22,7 @@ assert(code.match(/a:active\s*{/i));
 You should set the `color` property to `white`.
 
 ```js
-assert(code.match(/a:active\s*{\s*color:\s*white;/i));
+assert(code.match(/a:active\s*{\s*color:\s*white;?/i));
 ```
 
 # --seed--

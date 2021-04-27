@@ -22,7 +22,7 @@ assert(code.match(/a:hover\s*{/i));
 You should set the `color` property to `brown`.
 
 ```js
-assert(code.match(/a:hover\s*{\s*color:\s*brown;/i));
+assert(code.match(/a:hover\s*{\s*color:\s*brown;?/i));
 ```
 
 # --seed--

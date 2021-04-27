@@ -14,7 +14,7 @@ Change the background color of the `hr` element to `brown` so it matches the col
 You should set the value of the `background-color` property to `brown`.
 
 ```js
-assert(code.match(/background-color:\s*brown;/));
+assert(code.match(/background-color:\s*brown;?/));
 ```
 
 Your `hr` element should have a `background-color` of `brown`.
