@@ -103,8 +103,6 @@ async (getUserInput) => {
       assert.isNotNull(parsed[0]._id);
       assert.equal(new Date(parsed[0].created_on).toDateString(), date.toDateString());
       assert.equal(parsed[0].bumped_on, parsed[0].created_on);
-      assert.isBoolean(parsed[0].reported);
-      assert.equal(parsed[0].delete_password, deletePassword);
       assert.isArray(parsed[0].replies);
     } catch (err) {
       throw new Error(err.responseText || err.message);
