@@ -8,7 +8,7 @@ dashedName: manage-a-book-trading-club
 
 # --description--
 
-**Objective:** Build a [Repl.it](https://repl.it/) app that is functionally similar to this: <https://manage-a-book-trading-club.freecodecamp.rocks/>.
+**Objective:** Build a [Replit.com](https://replit.com/) app that is functionally similar to this: <https://manage-a-book-trading-club.freecodecamp.rocks/>.
 
 Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
 

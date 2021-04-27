@@ -10,7 +10,7 @@ dashedName: sha-1-password-cracker
 
 For this project you will learn about the importance of good security by creating a password cracker to figure out passwords that were hashed using SHA-1.
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-SHA-1-password-cracker).
+You can access [the full project description and starter code on Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker).
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

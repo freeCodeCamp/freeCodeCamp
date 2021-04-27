@@ -22,7 +22,7 @@ will serve the string 'Response String'.
 
 # --instructions--
 
-Use the `app.get()` method to serve the string "Hello Express" to GET requests matching the `/` (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Repl.it.
+Use the `app.get()` method to serve the string "Hello Express" to GET requests matching the `/` (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Replit.com.
 
 **Note:** All the code for these lessons should be added in between the few lines of code we have started you off with.
 
