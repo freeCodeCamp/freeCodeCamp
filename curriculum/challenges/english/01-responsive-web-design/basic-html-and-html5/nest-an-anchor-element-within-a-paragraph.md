@@ -12,7 +12,7 @@ You can nest links within other text elements.
 
 ```html
 <p>
-  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
+  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to www.freecodecamp.org</a> for you to follow.
 </p>
 ```
 
@@ -34,7 +34,7 @@ Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):
 <a href="https://www.freecodecamp.org" target="_blank"> ... </a>
 ```
 
-The text, `link to freecodecamp.org`, within the `a` element is called <dfn>anchor text</dfn>, and will display the link to click:
+The text, `link to www.freecodecamp.org`, within the `a` element is called <dfn>anchor text</dfn>, and will display the link to click:
 
 ```html
 <a href=" ... " target="...">link to freecodecamp.org</a>
@@ -42,7 +42,7 @@ The text, `link to freecodecamp.org`, within the `a` element is called <dfn>anch
 
 The final output of the example will look like this:  
 
-Here's a <a href="https://www.freecodecamp.org" target="_blank">link to freecodecamp.org</a> for you to follow.
+Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a> for you to follow.
 
 # --instructions--
 
@@ -141,7 +141,7 @@ assert(
 
   <a href="https://www.freecatphotoapp.com" target="_blank">cat photos</a>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
@@ -155,7 +155,7 @@ assert(
 <main>
   <p>View more <a target="_blank" href="https://www.freecatphotoapp.com">cat photos</a></p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
