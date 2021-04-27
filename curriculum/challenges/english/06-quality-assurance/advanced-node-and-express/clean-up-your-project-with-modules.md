@@ -43,7 +43,7 @@ Modules should be present.
       );
       assert.match(
         data,
-        /client.db[^]*routes/gi,
+        /client\s*\.db[^]*routes/gi,
         'Your new modules should be called after your connection to the database'
       );
     },
