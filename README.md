@@ -175,6 +175,10 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
+#### Contributor over time
+
+![Contributor over time](https://contributor-graph-api.apiseven.com/contributors-svg?repo=freeCodeCamp/freeCodeCamp)
+
 ### Platform, Build, and Deployment Status
 
 The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
