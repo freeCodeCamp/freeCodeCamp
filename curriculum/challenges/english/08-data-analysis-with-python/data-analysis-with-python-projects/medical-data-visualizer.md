@@ -9,7 +9,7 @@ dashedName: medical-data-visualizer
 
 In this project, you will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas.
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-medical-data-visualizer).
+You can access [the full project description and starter code on Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer).
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 
