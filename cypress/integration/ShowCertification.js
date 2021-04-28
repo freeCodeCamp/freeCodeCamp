@@ -3,9 +3,8 @@
 describe('A certification,', function () {
   describe('while viewing your own,', function () {
     before(() => {
-      cy.visit('/');
-      cy.contains("Get started (it's free)").click({ force: true });
-      cy.contains('Update my account settings').click({ force: true });
+      cy.login();
+      cy.visit('/settings');
 
       // set user settings to public to claim a cert
       cy.get('label:contains(Public)>input').each(el => {
@@ -81,7 +80,8 @@ describe('A certification,', function () {
   describe("while viewing someone else's,", function () {
     before(() => {
       cy.go('back');
-      cy.contains('Sign me out of freeCodeCamp').click({ force: true });
+      cy.get('.toggle-button-nav').click();
+      cy.get('.nav-list').contains('Sign out').click();
       cy.visit('/certification/developmentuser/legacy-front-end');
     });
 
