@@ -2,6 +2,8 @@ const env = require('../config/env');
 const webpack = require('webpack');
 
 const { createFilePath } = require('gatsby-source-filesystem');
+// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
+// es modules here.
 const uniq = require('lodash/uniq');
 
 const { blockNameify } = require('../utils/block-nameify');
@@ -230,10 +232,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
     options: {
       '@freecodecamp/react-bootstrap': {
         transform: '@freecodecamp/react-bootstrap/lib/${member}',
-        preventFullImport: true
-      },
-      lodash: {
-        transform: 'lodash/${member}',
         preventFullImport: true
       }
     }

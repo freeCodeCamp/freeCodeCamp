@@ -6,7 +6,8 @@ module.exports = {
     '^(?!.*\\.module\\.css$).*\\.css$': '<rootDir>/src/__mocks__/styleMock.js',
     // CSS Modules - match files that end with 'module.css'
     '\\.module\\.css$': 'identity-obj-proxy',
-    'react-i18next': '<rootDir>/src/__mocks__/react-i18nextMock.js'
+    'react-i18next': '<rootDir>/src/__mocks__/react-i18nextMock.js',
+    '^lodash-es$': 'lodash'
   },
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.cache/'],
   globals: {

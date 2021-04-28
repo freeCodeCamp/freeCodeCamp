@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import { uniq } from 'lodash';
+import { uniq } from 'lodash-es';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';

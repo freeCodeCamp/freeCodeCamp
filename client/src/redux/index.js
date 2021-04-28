@@ -1,5 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
-import { uniqBy } from 'lodash';
+import { uniqBy } from 'lodash-es';
 import store from 'store';
 
 import { createTypes, createAsyncTypes } from '../utils/createTypes';

@@ -55,6 +55,7 @@
     "live-server": "1.2.1",
     "lodash": "4.17.21",
     "mocha": "8.3.2",
+    "mock-require": "3.0.3",
     "puppeteer": "8.0.0",
     "readdirp": "3.6.0",
     "rehype": "11.0.0",

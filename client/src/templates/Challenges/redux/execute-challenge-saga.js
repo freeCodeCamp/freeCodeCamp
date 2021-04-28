@@ -11,7 +11,7 @@ import {
   cancel
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
-import escape from 'lodash/escape';
+import { escape } from 'lodash-es';
 import i18next from 'i18next';
 
 import {
