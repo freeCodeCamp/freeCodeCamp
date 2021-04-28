@@ -12,7 +12,7 @@ Puedes anidar enlaces dentro de otros elementos de texto.
 
 ```html
 <p>
-  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
+  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to www.freecodecamp.org</a> for you to follow.
 </p>
 ```
 
@@ -34,7 +34,7 @@ A continuación está el elemento *anchor* `<a>` (que requiere una etiqueta de c
 <a href="https://www.freecodecamp.org" target="_blank"> ... </a>
 ```
 
-El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama <dfn>anchor text</dfn>, y mostrará el enlace para hacer clic:
+El texto, `link to www.freecodecamp.org`, dentro de un elemento `a` se llama <dfn>texto de anclaje</dfn>, y mostrará el enlace para hacer clic:
 
 ```html
 <a href=" ... " target="...">link to freecodecamp.org</a>
@@ -42,7 +42,7 @@ El texto, `link to freecodecamp.org`, dentro de un elemento `a` se llama <dfn>an
 
 El resultado final del ejemplo se verá así:
 
-Aquí hay un enlace <a href="https://www.freecodecamp.org" target="_blank">a freecodecamp.org</a> para que lo sigas.
+Aquí hay un enlace <a href="https://www.freecodecamp.org" target="_blank">a www.freecodecamp.org</a> para que lo sigas.
 
 # --instructions--
 
@@ -141,7 +141,7 @@ assert(
 
   <a href="https://www.freecatphotoapp.com" target="_blank">cat photos</a>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
@@ -155,7 +155,7 @@ assert(
 <main>
   <p>View more <a target="_blank" href="https://www.freecatphotoapp.com">cat photos</a></p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
