@@ -11,8 +11,7 @@ axios.defaults.withCredentials = true;
 // CSRF-Server-Token is passed to the client as a cookie. The client must send
 // this back as a header.
 function setCSRFTokens() {
-  const csrfToken =
-    typeof window !== 'undefined' && cookies.get('csrf_token');
+  const csrfToken = typeof window !== 'undefined' && cookies.get('csrf_token');
   if (!csrfToken) return;
   axios.defaults.headers.post['CSRF-Token'] = csrfToken;
   axios.defaults.headers.put['CSRF-Token'] = csrfToken;
