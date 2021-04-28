@@ -22,7 +22,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 -   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
 -   See the JavaScript files in `/components` for the different spelling and terms your application should translate
 -   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit.com console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
 Write the following tests in `tests/1_unit-tests.js`:
 
