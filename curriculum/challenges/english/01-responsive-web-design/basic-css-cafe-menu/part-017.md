@@ -34,21 +34,21 @@ Your `link` element should have a `rel` attribute with the value `stylesheet`.
 
 ```js
 const link = $('link')[1];
-assert(link.outerHTML.match(/rel=['"]stylesheet['"]/i));
+assert(link.outerHTML.match(/rel=('|")stylesheet\1/i));
 ```
 
 Your `link` element should have a `type` attribute with the value `text/css`.
 
 ```js
 const link = $('link')[1];
-assert(link.outerHTML.match(/type=['"]text\/css['"]/i));
+assert(link.outerHTML.match(/type=('|")text\/css\1/i));
 ```
 
 Your `link` element should have an `href` attribute with the value `styles.css`.
 
 ```js
 const link = $('link')[1];
-assert(link.outerHTML.match(/href=['"]styles.css['"]/i));
+assert(link.outerHTML.match(/href=('|")styles.css\1/i));
 ```
 
 # --seed--
@@ -83,4 +83,3 @@ h1, h2, p {
   text-align: center;
 }
 ```
-

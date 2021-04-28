@@ -29,7 +29,7 @@ You should have an opening `<title>` tag.
 assert(code.match(/<title>/i));
 ```
 
-You should have a closing `<title>` tag.
+You should have a closing `</title>` tag.
 
 ```js
 assert(code.match(/<\/title>/i));
@@ -53,4 +53,3 @@ assert(code.match(/<title>camper\scafe\smenu<\/title>/i));
 --fcc-editable-region--
 </html>
 ```
-

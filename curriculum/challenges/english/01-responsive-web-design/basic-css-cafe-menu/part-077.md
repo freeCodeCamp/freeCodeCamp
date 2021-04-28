@@ -14,7 +14,7 @@ Now add the `bottom-line` class to the second `hr` element so the styling is app
 You should apply the `class="bottom-line"` property.
 
 ```js
-assert(code.match(/class=['"]bottom-line['"]/i));
+assert(code.match(/class=('|")bottom-line\1/i));
 ```
 
 Your `bottom-line` class should be applied to your second `hr` element.
@@ -155,4 +155,3 @@ h1, h2 {
   width: 25%
 }
 ```
-

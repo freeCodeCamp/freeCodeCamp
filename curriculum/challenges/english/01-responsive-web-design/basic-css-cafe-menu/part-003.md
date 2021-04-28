@@ -28,7 +28,7 @@ assert(code.match(/<meta charset=/i));
 Your `charset` attribute should have a value of `utf-8`.
 
 ```js
-assert(code.match(/charset=['"]utf-8['"]/i));
+assert(code.match(/charset=('|")utf-8\1/i));
 ```
 
 # --seed--
@@ -45,4 +45,3 @@ assert(code.match(/charset=['"]utf-8['"]/i));
 --fcc-editable-region--
 <html>
 ```
-

@@ -16,7 +16,7 @@ Add the class name `flavor` to the `French Vanilla` `p` element.
 You should add the `flavor` class to your `p` element.
 
 ```js
-assert(code.match(/<p\s*class=['"]flavor['"]\s*>/i));
+assert(code.match(/<p\s*class=('|")flavor\1\s*>/i));
 ```
 
 You should only have one element with the `flavor` class.
@@ -98,4 +98,3 @@ h1, h2, p {
   margin-right: auto;
 }
 ```
-
