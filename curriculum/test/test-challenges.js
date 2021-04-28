@@ -17,6 +17,13 @@ require('@babel/register')({
   only: [clientPath]
 });
 
+const mockRequire = require('mock-require');
+const lodash = require('lodash');
+
+// lodash-es can't easily be used in node environments, so we just mock it out
+// for the original lodash in testing.
+mockRequire('lodash-es', lodash);
+
 const createPseudoWorker = require('./utils/pseudo-worker');
 const {
   default: createWorker
@@ -24,7 +31,8 @@ const {
 
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
-const { flatten, isEmpty, cloneDeep, isEqual } = require('lodash');
+
+const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 const { getLines } = require('../../utils/get-lines');
 
 const jsdom = require('jsdom');
