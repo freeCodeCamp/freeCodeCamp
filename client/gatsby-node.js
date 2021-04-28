@@ -2,7 +2,6 @@ const env = require('../config/env');
 const webpack = require('webpack');
 
 const { createFilePath } = require('gatsby-source-filesystem');
-const uniq = require('lodash/uniq');
 
 const { blockNameify } = require('../utils/block-nameify');
 const {
