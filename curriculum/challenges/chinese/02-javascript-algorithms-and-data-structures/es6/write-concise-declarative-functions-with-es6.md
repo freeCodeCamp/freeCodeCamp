@@ -39,7 +39,7 @@ const person = {
 不应使用传统的函数定义方法。
 
 ```js
-(getUserInput) => assert(!__helpers.removeJSComments(code).match(/function/));
+(getUserInput) => assert(!code.match(/function/));
 ```
 
 `setGear` 应是一个声明函数。

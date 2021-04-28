@@ -38,6 +38,7 @@ export const ChallengeNode = PropTypes.shape({
   helpCategory: PropTypes.string,
   instructions: PropTypes.string,
   isComingSoon: PropTypes.bool,
+  removeComments: PropTypes.bool,
   isLocked: PropTypes.bool,
   isPrivate: PropTypes.bool,
   order: PropTypes.number,

@@ -13,6 +13,7 @@ import {
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 // eslint-disable-next-line import/no-unresolved
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
+import { removeJSComments } from '../../../utils/curriculum-helpers';
 
 const { filename: runner } = frameRunnerData;
 const { filename: testEvaluator } = testEvaluatorData;
@@ -164,16 +165,27 @@ export function buildJSChallenge({ files }, options) {
     .map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
-    .then(files => ({
-      challengeType: challengeTypes.js,
-      build: files
+    .then(files => {
+      let build = files
         .reduce(
           (body, file) => [...body, file.head, file.contents, file.tail],
           []
         )
-        .join('\n'),
-      sources: buildSourceMap(files)
-    }));
+        .join('\n');
+      let sources = buildSourceMap(files);
+      if (options?.removeComments !== false) {
+        build = removeJSComments(build);
+        sources = {
+          ...sources,
+          index: removeJSComments(sources.index)
+        };
+      }
+      return {
+        challengeType: challengeTypes.js,
+        build,
+        sources
+      };
+    });
 }
 
 export function buildBackendChallenge({ url }) {

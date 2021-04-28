@@ -43,9 +43,7 @@ const { name, age } = user;
 
 ```js
 assert(
-  !__helpers
-    .removeJSComments(code)
-    .match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g)
+  !code.match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g)
 );
 ```
 
@@ -53,9 +51,7 @@ assert(
 
 ```js
 assert(
-  __helpers
-    .removeJSComments(code)
-    .match(
+  code.match(
       /(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
     )
 );
@@ -65,9 +61,7 @@ assert(
 
 ```js
 assert(
-  __helpers
-    .removeJSComments(code)
-    .match(
+  code.match(
       /(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
     )
 );

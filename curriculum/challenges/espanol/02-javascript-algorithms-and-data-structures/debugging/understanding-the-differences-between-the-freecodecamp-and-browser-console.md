@@ -33,7 +33,7 @@ Debes utilizar `console.clear()` para limpiar la consola del navegador.
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(__helpers.removeJSComments(code))
+    .removeWhiteSpace(code)
     .match(/console.clear\(\)/)
 );
 ```
