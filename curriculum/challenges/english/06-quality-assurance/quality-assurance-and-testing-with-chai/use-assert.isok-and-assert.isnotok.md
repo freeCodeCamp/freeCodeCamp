@@ -8,11 +8,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-<<<<<<< HEAD
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
-=======
-As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
->>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 `isOk()` will test for a truthy value, and `isNotOk()` will test for a falsy value.
 

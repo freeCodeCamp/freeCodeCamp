@@ -9,11 +9,7 @@ dashedName: budget-app
 
 Create a "Category" class that can be used to create different budget categories.
 
-<<<<<<< HEAD
 You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-budget-app).
-=======
-You can access [the full project description and starter code on Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-budget-app).
->>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

@@ -8,11 +8,7 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --description--
 
-<<<<<<< HEAD
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
-=======
-As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
->>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 `equal()` compares objects using `==`.
 
