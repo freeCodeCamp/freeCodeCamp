@@ -61,7 +61,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: './i18n/locales/english/'
+        path: './src/pages/learn/'
       }
     },
     {

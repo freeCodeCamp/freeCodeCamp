@@ -83,7 +83,7 @@ IntroductionPage.propTypes = propTypes;
 export default IntroductionPage;
 
 export const query = graphql`
-  query IntroPageBySlug($slug: String!, $block: String!) {
+  query IntroPageBySlug($block: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         block

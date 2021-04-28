@@ -18,6 +18,11 @@ export const MarkdownRemark = PropTypes.shape({
   })
 });
 
+export const introJson = PropTypes.shape({
+  title: PropTypes.string,
+  superBlock: PropTypes.string
+});
+
 export const ChallengeNode = PropTypes.shape({
   block: PropTypes.string,
   challengeOrder: PropTypes.number,

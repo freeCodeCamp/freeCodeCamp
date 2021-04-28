@@ -22,7 +22,11 @@ import {
   isSignedInSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
+import {
+  MarkdownRemark,
+  AllChallengeNode,
+  introJson
+} from '../../redux/propTypes';
 
 import './intro.css';
 
@@ -30,7 +34,8 @@ const propTypes = {
   currentChallengeId: PropTypes.string,
   data: PropTypes.shape({
     markdownRemark: MarkdownRemark,
-    allChallengeNode: AllChallengeNode
+    allChallengeNode: AllChallengeNode,
+    introJson: introJson
   }),
   expandedState: PropTypes.object,
   fetchState: PropTypes.shape({
@@ -131,9 +136,7 @@ class SuperBlockIntroductionPage extends Component {
   render() {
     const {
       data: {
-        markdownRemark: {
-          frontmatter: { superBlock, title }
-        },
+        introJson: { superBlock, title },
         allChallengeNode: { edges }
       },
       isSignedIn,
@@ -212,16 +215,14 @@ export default connect(
 )(withTranslation()(SuperBlockIntroductionPage));
 
 export const query = graphql`
-  query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        superBlock
-        title
-      }
+  query SuperBlockIntroPageBySlug($slug: String!) {
+    introJson(slug: { eq: $slug }) {
+      superBlock: slug
+      title
     }
     allChallengeNode(
       sort: { fields: [superOrder, order, challengeOrder] }
-      filter: { superBlock: { eq: $superBlock } }
+      filter: { superBlock: { eq: $slug } }
     ) {
       edges {
         node {

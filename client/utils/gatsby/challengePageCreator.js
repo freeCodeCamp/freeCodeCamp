@@ -97,17 +97,13 @@ exports.createBlockIntroPages = createPage => edge => {
 };
 
 exports.createSuperBlockIntroPages = createPage => edge => {
-  const {
-    fields: { slug },
-    frontmatter: { superBlock }
-  } = edge.node;
+  const { slug } = edge.node;
 
   return createPage({
-    path: slug,
+    path: `/learn/${slug}`,
     component: superBlockIntro,
     context: {
-      superBlock,
-      slug
+      slug: slug
     }
   });
 };

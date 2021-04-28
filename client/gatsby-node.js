@@ -36,6 +36,13 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
       createNodeField({ node, name: 'component', value: component });
     }
   }
+
+  if (node.internal.type === 'IntroJson') {
+    const slug = createFilePath({ node, getNode });
+    const component = '';
+    createNodeField({ node, name: 'slug', value: slug });
+    createNodeField({ node, name: 'component', value: component });
+  }
 };
 
 exports.createPages = function createPages({ graphql, actions, reporter }) {
@@ -109,10 +116,10 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
               }
             }
           }
-          allIntroTestsJson {
+          allIntroJson {
             edges {
               node {
-                id
+                slug
                 title
                 intro
               }
@@ -130,60 +137,12 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           createChallengePages(createPage)
         );
 
-        const blocks = uniq(
-          result.data.allChallengeNode.edges.map(({ node: { block } }) => block)
-        ).map(block => blockNameify(block));
-
-        const superBlocks = uniq(
-          result.data.allChallengeNode.edges.map(
-            ({ node: { superBlock } }) => superBlock
-          )
-        );
-
-        // We can access to IntroTests from here
-        result.data.allIntroTestsJson.edges.forEach(edge => {
-          console.log('IntroTestsJson: ', edge);
+        result.data.allIntroJson.edges.forEach(edge => {
+          const pageBuilder = createByIdentityMap['superBlockIntroMarkdown'](
+            createPage
+          );
+          return pageBuilder(edge);
         });
-
-        // Create intro pages
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-          const {
-            node: { frontmatter, fields }
-          } = edge;
-
-          if (!fields) {
-            return null;
-          }
-          const { slug, nodeIdentity } = fields;
-          if (slug.includes('LICENCE')) {
-            return null;
-          }
-          try {
-            if (nodeIdentity === 'blockIntroMarkdown') {
-              if (!blocks.some(block => block === frontmatter.block)) {
-                return null;
-              }
-            } else if (
-              !superBlocks.some(
-                superBlock => superBlock === frontmatter.superBlock
-              )
-            ) {
-              return null;
-            }
-            const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-            return pageBuilder(edge);
-          } catch (e) {
-            console.log(`
-            ident: ${nodeIdentity} does not belong to a function
-
-            ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
-
-
-            `);
-          }
-          return null;
-        });
-
         return null;
       })
     );
