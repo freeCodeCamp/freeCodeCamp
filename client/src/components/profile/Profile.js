@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import Link from '../helpers/Link';
 import { useTranslation } from 'react-i18next';
@@ -11,9 +11,6 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
-import envData from '../../../../config/env.json';
-
-const { apiLocation } = envData;
 
 const propTypes = {
   isSessionUser: PropTypes.bool,
@@ -166,22 +163,6 @@ function Profile({ user, isSessionUser }) {
       </Helmet>
       <Spacer />
       <Grid>
-        {isSessionUser ? (
-          <FullWidthRow className='button-group'>
-            <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-              {t('buttons.update-settings')}
-            </Link>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-              href={`${apiLocation}/signout`}
-            >
-              {t('buttons.sign-me-out')}
-            </Button>
-          </FullWidthRow>
-        ) : null}
         <Spacer />
         {isLocked ? renderMessage(isSessionUser, username, t) : null}
         {!isLocked || isSessionUser ? renderProfile(user) : null}

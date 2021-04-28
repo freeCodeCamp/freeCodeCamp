@@ -29,6 +29,8 @@ Aquí hay un ejemplo:
 
 Camper Cat tiene un campo de búsqueda en su página de Citas Inspiradoras que planea colocar en la esquina superior derecha con CSS. Él quiere que los controles de formulario de búsqueda `input` y envío `input` sean los dos primeros elementos en el orden de tabulación. Agrega un atributo `tabindex` establecido en `1` al `search` `input`, y un atributo `tabindex` establecido en `2` al `submit` `input`.
 
+Otra cosa a tener en cuenta es que algunos navegadores pueden colocarlo en el centro del orden de la pestaña cuando se hace clic en un elemento. Se ha añadido un elemento a la página que asegura que siempre comenzará al principio de su orden de pestañas.
+
 # --hints--
 
 Tu código debe agregar un atributo `tabindex` a la etiqueta `search` `input`.
@@ -61,6 +63,7 @@ assert($('#submit').attr('tabindex') == '2');
 
 ```html
 <body>
+  <div tabindex="1" class="overlay"></div>
   <header>
     <h1>Even Deeper Thoughts with Master Camper Cat</h1>
     <nav>
@@ -91,12 +94,26 @@ assert($('#submit').attr('tabindex') == '2');
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+<style>
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 8px;
+  }
+  .overlay {
+    margin: -8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 ```
 
 # --solutions--
 
 ```html
 <body>
+  <div tabindex="1" class="overlay"></div>
   <header>
     <h1>Even Deeper Thoughts with Master Camper Cat</h1>
     <nav>
@@ -127,4 +144,17 @@ assert($('#submit').attr('tabindex') == '2');
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+<style>
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 8px;
+  }
+  .overlay {
+    margin: -8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 ```

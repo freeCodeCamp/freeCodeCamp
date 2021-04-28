@@ -89,7 +89,6 @@ describe('Navbar', () => {
 
   it('Should have `Profile` link when user is signed in', () => {
     cy.login();
-    cy.get('a[href*="/settings"]').should('be.visible');
     cy.get(selectors.menuButton).click();
     cy.get(selectors.navigationLinks).contains('Profile').click();
     cy.url().should('include', '/developmentuser');
