@@ -14,7 +14,7 @@ Next, you want to align the price to the right. Add a class named `price` to you
 You should add the `price` class to your `p` element.
 
 ```js
-assert(code.match(/<p\s*class=['"]price['"]\s*>/i));
+assert(code.match(/<p\s*class=('|")price\1\s*>/i));
 ```
 
 You should only have one element with the `price` class.
@@ -100,4 +100,3 @@ h1, h2, p {
   text-align: left;
 }
 ```
-

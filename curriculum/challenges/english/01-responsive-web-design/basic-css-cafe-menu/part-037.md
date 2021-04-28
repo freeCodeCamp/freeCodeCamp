@@ -16,7 +16,7 @@ To get them on the same line, you need to apply some styling to the `p` elements
 You should apply the `item` class to your `article` element.
 
 ```js
-assert(code.match(/<article\s*class=['"]item['"]\s*>/i))
+assert(code.match(/<article\s*class=('|")item\1\s*>/i))
 ```
 
 You should only have one `item` class element.
@@ -106,4 +106,3 @@ h1, h2, p {
   text-align: right;
 }
 ```
-

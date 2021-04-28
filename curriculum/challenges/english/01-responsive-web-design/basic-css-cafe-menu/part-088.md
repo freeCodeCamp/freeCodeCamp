@@ -14,7 +14,7 @@ Now apply the `address` class to the `p` element containing the address.
 You should apply the `class="address"` attribute.
 
 ```js
-assert(code.match(/class=('|")address('|")/i));
+assert(code.match(/class=('|")address\1/i));
 ```
 
 Your `.address` element should be your `p` element.
