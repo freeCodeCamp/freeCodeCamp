@@ -1,5 +1,6 @@
 import { parse } from '@babel/parser';
 import generate from '@babel/generator';
+import cssTree from 'css-tree';
 
 const removeHtmlComments = str => str.replace(/<!--[\s\S]*?(-->|$)/g, '');
 
@@ -30,7 +31,8 @@ const removeWhiteSpace = (str = '') => {
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
-  removeWhiteSpace
+  removeWhiteSpace,
+  cssTree
 };
 
 export default curriculumHelpers;
