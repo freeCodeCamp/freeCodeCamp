@@ -12,7 +12,7 @@ axios.defaults.withCredentials = true;
 // this back as a header.
 function setCSRFTokens() {
   const csrfToken =
-    typeof window !== 'undefined' && cookies.get('CSRF-Server-Token');
+    typeof window !== 'undefined' && cookies.get('csrf_token');
   if (!csrfToken) return;
   axios.defaults.headers.post['CSRF-Token'] = csrfToken;
   axios.defaults.headers.put['CSRF-Token'] = csrfToken;
