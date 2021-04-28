@@ -97,7 +97,7 @@ export class SolutionForm extends Component {
           solutionLink +
           (description.includes('Colaboratory')
             ? 'https://colab.research.google.com/drive/1i5EmInTWi1RFvFr2_aRXky96YxY6sbWy'
-            : 'https://repl.it/@camperbot/hello');
+            : 'https://replit.com/@camperbot/hello');
         break;
 
       default:

@@ -8,7 +8,7 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the info returned by the call to the DOM. Here is an example of how to interact with this form:
 

@@ -11,7 +11,7 @@ dashedName: install-and-set-up-mongoose
 Working on these challenges will involve you writing your code using one of the following methods:
 
 - Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) and complete these challenges locally.
-- Use [our Replit.com starter project](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) to complete these challenges.
+- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) to complete these challenges.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
