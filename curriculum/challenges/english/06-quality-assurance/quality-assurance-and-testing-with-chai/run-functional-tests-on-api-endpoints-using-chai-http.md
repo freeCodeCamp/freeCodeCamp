@@ -8,7 +8,11 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
+<<<<<<< HEAD
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+=======
+As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+>>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 Mocha allows testing asyncronous operations. There is a small (BIG) difference. Can you spot it?
 

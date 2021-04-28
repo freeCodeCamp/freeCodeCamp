@@ -8,13 +8,21 @@ dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 
 # --description--
 
+<<<<<<< HEAD
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+=======
+As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+>>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 HTTP Strict Transport Security (HSTS) is a web security policy which helps to protect websites against protocol downgrade attacks and cookie hijacking. If your website can be accessed via HTTPS you can ask user’s browsers to avoid using insecure HTTP. By setting the header Strict-Transport-Security, you tell the browsers to use HTTPS for the future requests in a specified amount of time. This will work for the requests coming after the initial request.
 
 # --instructions--
 
+<<<<<<< HEAD
 Configure `helmet.hsts()` to use HTTPS for the next 90 days. Pass the config object `{maxAge: timeInSeconds, force: true}`. You can create a variable `ninetyDaysInSeconds = 90*24*60*60;` to use for the `timeInSeconds`. Replit already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Replit header, after inspecting it for testing.
+=======
+Configure `helmet.hsts()` to use HTTPS for the next 90 days. Pass the config object `{maxAge: timeInSeconds, force: true}`. You can create a variable `ninetyDaysInSeconds = 90*24*60*60;` to use for the `timeInSeconds`. Replit.com already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Replit.com header, after inspecting it for testing.
+>>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TLS Certificate.
 

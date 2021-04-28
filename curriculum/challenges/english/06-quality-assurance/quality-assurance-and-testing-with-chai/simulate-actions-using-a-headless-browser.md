@@ -7,13 +7,21 @@ dashedName: simulate-actions-using-a-headless-browser
 
 # --description--
 
+<<<<<<< HEAD
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+=======
+As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+>>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.
 
 A headless browser is a web browser without a graphical user interface. This kind of tool is particularly useful for testing web pages, as it is able to render and understand HTML, CSS, and JavaScript the same way a browser would.
 
+<<<<<<< HEAD
 For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Replit. There are many other (more powerful) options.
+=======
+For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Replit.com. There are many other (more powerful) options.
+>>>>>>> ebe8f9934580f453531829a265969283c76c7514
 
 Mocha allows you to prepare the ground running some code before the actual tests. This can be useful for example to create items in the database, which will be used in the successive tests.
 
