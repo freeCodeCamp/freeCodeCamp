@@ -18,7 +18,9 @@ describe('Email input field', () => {
   });
 
   it('Should be possible to save new email', () => {
-    cy.contains('Save').click({ force: true });
+    cy.get('[id=form-update-email]').within(() => {
+      cy.contains('Save').click();
+    });
   });
 
   it('Displays an error message when emails do not match', () => {
