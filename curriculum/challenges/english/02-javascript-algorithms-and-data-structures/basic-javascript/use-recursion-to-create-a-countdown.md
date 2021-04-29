@@ -59,9 +59,7 @@ Your code should not rely on any kind of loops (`for`, `while` or higher order f
 
 ```js
 assert(
-  !__helpers
-    .removeJSComments(code)
-    .match(/for|while|forEach|map|filter|reduce/g)
+  !code.match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 
@@ -69,7 +67,7 @@ You should use recursion to solve this problem.
 
 ```js
 assert(
-  __helpers.removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)/)
+  countdown.toString().match(/countdown\s*\(.+\)/)
 );
 ```
 

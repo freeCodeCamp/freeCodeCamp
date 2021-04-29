@@ -48,9 +48,6 @@ function Intro({
         </h1>
         <Spacer />
         <FullWidthRow>
-          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-            {t('buttons.update-settings')}
-          </Link>
           {completedChallengeCount > 0 ? (
             <CurrentChallengeLink isLargeBtn={true}>
               {t('buttons.current-challenge')}

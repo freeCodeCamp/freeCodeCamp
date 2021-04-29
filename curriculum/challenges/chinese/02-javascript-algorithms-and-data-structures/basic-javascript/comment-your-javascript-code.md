@@ -3,6 +3,7 @@ id: bd7123c9c441eddfaeb4bdef
 title: 给代码添加注释
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c7ynnTp'
+removeComments: false
 forumTopicId: 16783
 dashedName: comment-your-javascript-code
 ---

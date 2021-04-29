@@ -11,7 +11,7 @@ import {
   cancel
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
-import escape from 'lodash/escape';
+import { escape } from 'lodash-es';
 import i18next from 'i18next';
 
 import {
@@ -87,6 +87,7 @@ export function* executeChallengeSaga({
     const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
+      removeComments: challengeMeta.removeComments,
       protect
     });
     const document = yield getContext('document');
@@ -201,6 +202,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       const protect = isLoopProtected(challengeMeta);
       const buildData = yield buildChallengeData(challengeData, {
         preview: true,
+        removeComments: challengeMeta.removeComments,
         protect
       });
       // evaluate the user code in the preview frame or in the worker

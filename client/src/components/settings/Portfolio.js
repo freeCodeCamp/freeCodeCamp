@@ -8,7 +8,7 @@ import {
   FormControl,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import { findIndex, find, isEqual } from 'lodash';
+import { findIndex, find, isEqual } from 'lodash-es';
 import isURL from 'validator/lib/isURL';
 import { withTranslation } from 'react-i18next';
 

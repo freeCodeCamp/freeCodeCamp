@@ -8,10 +8,6 @@ const babelOptions = {
         '@freecodecamp/react-bootstrap': {
           transform: '@freecodecamp/react-bootstrap/lib/${member}',
           preventFullImport: true
-        },
-        lodash: {
-          transform: 'lodash/${member}',
-          preventFullImport: true
         }
       }
     ]

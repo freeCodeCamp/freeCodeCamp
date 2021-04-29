@@ -85,6 +85,7 @@ ${seedTails}`
 id: ${ObjectID.generate()}
 title: Part ${stepNum}
 challengeType: 0
+dashedName: part-${stepNum}
 ---
 
 # --description--
@@ -176,11 +177,13 @@ const reorderSteps = () => {
     const challengeID = frontMatter.data.id || ObjectID.generate();
     const title =
       newFileName === 'final.md' ? 'Final Prototype' : `Part ${newStepNum}`;
+    const dashedName = `part-${newStepNum}`;
     challengeOrder.push(['' + challengeID, title]);
     const newData = {
       ...frontMatter.data,
       id: challengeID,
-      title
+      title,
+      dashedName
     };
     fs.writeFileSync(filePath, frontMatter.stringify(newData));
   });

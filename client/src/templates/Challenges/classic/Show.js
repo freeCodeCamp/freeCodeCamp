@@ -160,6 +160,7 @@ class ShowClassic extends Component {
           files,
           fields: { tests },
           challengeType,
+          removeComments,
           helpCategory
         }
       },
@@ -171,6 +172,7 @@ class ShowClassic extends Component {
     updateChallengeMeta({
       ...challengeMeta,
       title,
+      removeComments,
       challengeType,
       helpCategory
     });
@@ -365,6 +367,7 @@ export const query = graphql`
       title
       description
       instructions
+      removeComments
       challengeType
       helpCategory
       videoUrl

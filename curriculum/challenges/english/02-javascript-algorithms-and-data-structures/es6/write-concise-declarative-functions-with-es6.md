@@ -39,7 +39,7 @@ Refactor the function `setGear` inside the object `bicycle` to use the shorthand
 Traditional function expression should not be used.
 
 ```js
-(getUserInput) => assert(!__helpers.removeJSComments(code).match(/function/));
+(getUserInput) => assert(!code.match(/function/));
 ```
 
 `setGear` should be a declarative function.

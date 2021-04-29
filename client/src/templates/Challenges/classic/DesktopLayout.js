@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
-import { first } from 'lodash';
+import { first } from 'lodash-es';
 import EditorTabs from './EditorTabs';
 import ActionRow from './ActionRow';
 import envData from '../../../../../config/env.json';
