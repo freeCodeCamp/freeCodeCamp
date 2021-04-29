@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908855
-title: Give Each Element a Unique id
+title: Dale a cada elemento un id único
 challengeType: 0
 forumTopicId: 18191
 dashedName: give-each-element-a-unique-id
@@ -8,15 +8,15 @@ dashedName: give-each-element-a-unique-id
 
 # --description--
 
-We will also want to be able to use jQuery to target each button by its unique id.
+También vamos a querer poder usar jQuery para apuntar a cada botón por su identificación única.
 
-Give each of your buttons a unique id, starting with `target1` and ending with `target6`.
+Da a cada uno de tus botones un id único, empezando con `target1` y terminando con `target6`.
 
-Make sure that `target1` to `target3` are in `#left-well`, and `target4` to `target6` are in `#right-well`.
+Asegúrate de que `target1` a `target3` estén en `#left-well`, y `target4` a `target6` están en `#right-well`.
 
 # --hints--
 
-One `button` element should have the id `target1`.
+Un elemento `button` debe tener el id `target1`.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target2`.
+Un elemento `button` debe tener el id `target2`.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target3`.
+Un elemento `button` debe tener el id `target3`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target4`.
+Un elemento `button` debe tener el id `target4`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target5`.
+Un elemento `button` debe tener el id `target5`.
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target6`.
+Un elemento `button` debe tener el id `target6`.
 
 ```js
 assert(
