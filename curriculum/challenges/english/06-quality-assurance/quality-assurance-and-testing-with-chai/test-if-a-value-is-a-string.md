@@ -8,7 +8,7 @@ dashedName: test-if-a-value-is-a-string
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 `isString` or `isNotString` asserts that the actual value is a string.
 

@@ -8,7 +8,7 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), or clone it from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), or clone it from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
 
 BCrypt hashes are very secure. A hash is basically a fingerprint of the original data- always unique. This is accomplished by feeding the original data into an algorithm and returning a fixed length result. To further complicate this process and make it more secure, you can also *salt* your hash. Salting your hash involves adding random data to the original data before the hashing process which makes it even harder to crack the hash.
 
