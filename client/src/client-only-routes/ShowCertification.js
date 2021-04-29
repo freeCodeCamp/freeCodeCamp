@@ -168,11 +168,7 @@ const ShowCertification = props => {
     setIsDonationClosed(true);
   };
 
-  const handleProcessing = (
-    duration,
-    amount,
-    action = 'stripe form submission'
-  ) => {
+  const handleProcessing = (duration, amount, action) => {
     props.executeGA({
       type: 'event',
       data: {

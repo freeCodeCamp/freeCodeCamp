@@ -82,8 +82,6 @@ export const types = createTypes(
     'updateDonationFormState',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('addDonation'),
-    ...createAsyncTypes('createStripeSession'),
-    ...createAsyncTypes('postChargeStripe'),
     ...createAsyncTypes('fetchProfileForUser'),
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
@@ -151,14 +149,6 @@ export const fetchUserError = createAction(types.fetchUserError);
 export const addDonation = createAction(types.addDonation);
 export const addDonationComplete = createAction(types.addDonationComplete);
 export const addDonationError = createAction(types.addDonationError);
-
-export const createStripeSession = createAction(types.createStripeSession);
-
-export const postChargeStripe = createAction(types.postChargeStripe);
-export const postChargeStripeComplete = createAction(
-  types.postChargeStripeComplete
-);
-export const postChargeStripeError = createAction(types.postChargeStripeError);
 
 export const fetchProfileForUser = createAction(types.fetchProfileForUser);
 export const fetchProfileForUserComplete = createAction(
@@ -404,10 +394,6 @@ export const reducer = handleActions(
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
     }),
-    [types.createStripeSession]: state => ({
-      ...state,
-      donationFormState: { ...defaultDonationFormState, redirecting: true }
-    }),
     [types.addDonation]: state => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, processing: true }
@@ -428,29 +414,6 @@ export const reducer = handleActions(
       };
     },
     [types.addDonationError]: (state, { payload }) => ({
-      ...state,
-      donationFormState: { ...defaultDonationFormState, error: payload }
-    }),
-    [types.postChargeStripe]: state => ({
-      ...state,
-      donationFormState: { ...defaultDonationFormState, processing: true }
-    }),
-    [types.postChargeStripeComplete]: state => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            isDonating: true
-          }
-        },
-
-        donationFormState: { ...defaultDonationFormState, success: true }
-      };
-    },
-    [types.postChargeStripeError]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
     }),
