@@ -40,6 +40,6 @@ describe('Email input field', () => {
   });
 
   it('Should be possible to get Quincys weekly email', () => {
-    cy.contains('Yes please').click({ force: true });
+    cy.contains('Yes please').click();
   });
 });
