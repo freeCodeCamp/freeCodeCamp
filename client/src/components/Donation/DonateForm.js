@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Elements } from '@stripe/react-stripe-js';
 import {
-  Button,
   Col,
   Row,
   Tab,
@@ -20,7 +18,6 @@ import {
   durationsConfig,
   defaultAmount,
   defaultDonation,
-  donationUrls,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
@@ -28,12 +25,10 @@ import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import Spacer from '../helpers/Spacer';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
-import StripeCardForm from './StripeCardForm';
 import {
   isSignedInSelector,
   signInLoadingSelector,
   donationFormStateSelector,
-  hardGoTo as navigate,
   addDonation,
   createStripeSession,
   postChargeStripe,
@@ -59,7 +54,6 @@ const propTypes = {
   isDonating: PropTypes.bool,
   isMinimalForm: PropTypes.bool,
   isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
   postChargeStripe: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
@@ -83,7 +77,6 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   addDonation,
-  navigate,
   postChargeStripe,
   updateDonationFormState,
   createStripeSession
@@ -153,12 +146,7 @@ class DonateForm extends Component {
   onDonationStateChange(donationState) {
     // scroll to top
     window.scrollTo(0, 0);
-
     this.props.updateDonationFormState(donationState);
-    // send donation made on the donate page to related news article
-    if (donationState.success && !this.props.isMinimalForm) {
-      this.props.navigate(donationUrls.successUrl);
-    }
   }
 
   getActiveDonationAmount(durationSelected, amountSelected) {
@@ -318,7 +306,14 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { handleProcessing, isSignedIn, addDonation, t } = this.props;
+    const {
+      handleProcessing,
+      isSignedIn,
+      addDonation,
+      t,
+      defaultTheme,
+      theme
+    } = this.props;
     const { donationAmount, donationDuration } = this.state;
 
     const isOneTime = donationDuration === 'onetime';
@@ -334,15 +329,6 @@ class DonateForm extends Component {
         )}
         <Spacer />
         <div className='donate-btn-group'>
-          <Button
-            block={true}
-            bsStyle='primary'
-            id='confirm-donation-btn'
-            onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
-          >
-            {}
-            <b>{t('donate.credit-card')} </b>
-          </Button>
           <PaypalButton
             addDonation={addDonation}
             donationAmount={donationAmount}
@@ -351,6 +337,7 @@ class DonateForm extends Component {
             isSubscription={isOneTime ? false : true}
             onDonationStateChange={this.onDonationStateChange}
             skipAddDonation={!isSignedIn}
+            theme={defaultTheme ? defaultTheme : theme}
           />
         </div>
       </div>
@@ -366,22 +353,13 @@ class DonateForm extends Component {
   }
 
   renderModalForm() {
-    const { donationAmount, donationDuration, stripe } = this.state;
-    const {
-      handleProcessing,
-      addDonation,
-      email,
-      theme,
-      t,
-      defaultTheme
-    } = this.props;
+    const { donationAmount, donationDuration } = this.state;
+    const { handleProcessing, addDonation, defaultTheme, theme } = this.props;
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>
-            {this.getDonationButtonLabel()} {t('donate.paypal')}
-          </b>
+          <b>{this.getDonationButtonLabel()}:</b>
           <Spacer />
           <PaypalButton
             addDonation={addDonation}
@@ -389,21 +367,8 @@ class DonateForm extends Component {
             donationDuration={donationDuration}
             handleProcessing={handleProcessing}
             onDonationStateChange={this.onDonationStateChange}
+            theme={defaultTheme ? defaultTheme : theme}
           />
-        </Col>
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer />
-          <b>{t('donate.credit-card-2')}</b>
-          <Spacer />
-          <Elements stripe={stripe}>
-            <StripeCardForm
-              getDonationButtonLabel={this.getDonationButtonLabel}
-              onDonationStateChange={this.onDonationStateChange}
-              postStripeDonation={this.postStripeDonation}
-              theme={defaultTheme ? defaultTheme : theme}
-              userEmail={email}
-            />
-          </Elements>
         </Col>
       </Row>
     );

@@ -48,6 +48,10 @@
   font-weight: 700;
 }
 
+.paypal-buttons-container {
+  min-height: 142px;
+}
+
 .donate-input-element {
   padding-top: 8px;
 }
@@ -383,7 +387,8 @@ button#confirm-donation-btn:hover {
 
 .donate-btn-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .donate-btn-group > * {
