@@ -46,7 +46,7 @@ assert(
 Your code should use the `filter` method.
 
 ```js
-assert(code.match(/\.filter/g));
+assert(code.match(/\s*\.\s*filter/g));
 ```
 
 Your code should not use a `for` loop.
