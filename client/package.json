@@ -62,6 +62,7 @@
     "buffer": "6.0.3",
     "chai": "4.3.4",
     "crypto-browserify": "3.12.0",
+    "csrf": "3.1.0",
     "date-fns": "2.21.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
