@@ -519,7 +519,7 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
-  const { required = [], template } = challenge;
+  const { required = [], template, removeComments } = challenge;
   // we should avoid modifying challenge, as it gets reused:
   const files = cloneDeep(challenge.files);
 
@@ -528,16 +528,11 @@ async function createTestRunner(
     files[key].editableContents = solution[key].editableContents;
   });
 
-  const { build, sources, loadEnzyme } = await buildChallenge(
-    {
-      files,
-      required,
-      template
-    },
-    {
-      removeComments: challenge.removeComments
-    }
-  );
+  const { build, sources, loadEnzyme } = await buildChallenge({
+    files,
+    required,
+    template
+  });
 
   const code = {
     contents: sources.index,
@@ -546,7 +541,7 @@ async function createTestRunner(
 
   const evaluator = await (buildChallenge === buildDOMChallenge
     ? getContextEvaluator(build, sources, code, loadEnzyme)
-    : getWorkerEvaluator(build, sources, code));
+    : getWorkerEvaluator(build, sources, code, removeComments));
 
   return async ({ text, testString }) => {
     try {
@@ -587,12 +582,14 @@ async function getContextEvaluator(build, sources, code, loadEnzyme) {
   };
 }
 
-async function getWorkerEvaluator(build, sources, code) {
+async function getWorkerEvaluator(build, sources, code, removeComments) {
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
-      await testWorker.execute({ testString, build, code, sources }, timeout)
-        .done
+      await testWorker.execute(
+        { testString, build, code, sources, removeComments },
+        timeout
+      ).done
   };
 }
 
