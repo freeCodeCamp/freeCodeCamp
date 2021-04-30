@@ -1,12 +1,14 @@
 import csurf from 'csurf';
 
+const opts = {
+  domain: process.env.COOKIE_DOMAIN || 'localhost',
+  sameSite: 'strict',
+  secure: process.env.FREECODECAMP_NODE_ENV === 'production'
+};
+
 export default function getCsurf() {
   const protection = csurf({
-    cookie: {
-      domain: process.env.COOKIE_DOMAIN || 'localhost',
-      sameSite: 'strict',
-      secure: process.env.FREECODECAMP_NODE_ENV === 'production'
-    }
+    cookie: opts
   });
   return function csrf(req, res, next) {
     const { path } = req;
@@ -16,8 +18,13 @@ export default function getCsurf() {
         path
       )
     ) {
-      return next();
+      next();
+    } else {
+      // add the middleware
+      protection(req, res, next);
+      // use the middleware to generate a token. The client sends this back via
+      // a header
+      res.cookie('csrf_token', req.csrfToken(), opts);
     }
-    return protection(req, res, next);
   };
 }
