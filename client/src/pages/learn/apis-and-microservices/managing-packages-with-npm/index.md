@@ -14,6 +14,6 @@ npm saves packages in a folder named <code>node\_modules</code>. These packages 
 2. locally within a project's own <code>node\_modules</code> folder, accessible only to that project.
 
 Most developers prefer to install packages local to each project to create a separation between the dependencies of different projects.
-Working on these challenges will involve you writing your code on Repl.it on our starter project. After completing each challenge you can copy your public Repl.it URL (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
+Working on these challenges will involve you writing your code on Replit on our starter project. After completing each challenge you can copy your public Replit URL (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 
-Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp/boilerplate-npm'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
+Start this project on Replit using <a href='https://replit.com/github/freeCodeCamp/boilerplate-npm'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use Replit, remember to save the link to your project somewhere safe!

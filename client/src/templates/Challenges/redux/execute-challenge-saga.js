@@ -87,14 +87,13 @@ export function* executeChallengeSaga({
     const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      removeComments: challengeMeta.removeComments,
       protect
     });
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
       buildData,
-      { proxyLogger },
+      { proxyLogger, removeComments: challengeMeta.removeComments },
       document
     );
     const testResults = yield executeTests(testRunner, tests);
@@ -202,7 +201,6 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       const protect = isLoopProtected(challengeMeta);
       const buildData = yield buildChallengeData(challengeData, {
         preview: true,
-        removeComments: challengeMeta.removeComments,
         protect
       });
       // evaluate the user code in the preview frame or in the worker
@@ -210,7 +208,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const document = yield getContext('document');
         yield call(updatePreview, buildData, document, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = getTestRunner(buildData, { proxyLogger });
+        const runUserCode = getTestRunner(buildData, {
+          proxyLogger,
+          removeComments: challengeMeta.removeComments
+        });
         // without a testString the testRunner just evaluates the user's code
         yield call(runUserCode, null, previewTimeout);
       }

@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
 
 As hashing is designed to be computationally intensive, it is recommended to do so asynchronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call
 

@@ -172,7 +172,7 @@ class ShowClassic extends Component {
     updateChallengeMeta({
       ...challengeMeta,
       title,
-      removeComments,
+      removeComments: removeComments !== false,
       challengeType,
       helpCategory
     });

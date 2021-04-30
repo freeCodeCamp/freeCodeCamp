@@ -13,7 +13,6 @@ import {
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 // eslint-disable-next-line import/no-unresolved
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import { removeJSComments } from '../../../utils/curriculum-helpers';
 
 const { filename: runner } = frameRunnerData;
 const { filename: testEvaluator } = testEvaluatorData;
@@ -107,16 +106,16 @@ const testRunners = {
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner
 };
-export function getTestRunner(buildData, { proxyLogger }, document) {
+export function getTestRunner(buildData, runnerConfig, document) {
   const { challengeType } = buildData;
   const testRunner = testRunners[challengeType];
   if (testRunner) {
-    return testRunner(buildData, proxyLogger, document);
+    return testRunner(buildData, runnerConfig, document);
   }
   throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
 }
 
-function getJSTestRunner({ build, sources }, proxyLogger) {
+function getJSTestRunner({ build, sources }, { proxyLogger, removeComments }) {
   const code = {
     contents: sources.index,
     editableContents: sources.editableContents
@@ -126,12 +125,15 @@ function getJSTestRunner({ build, sources }, proxyLogger) {
 
   return (testString, testTimeout, firstTest = true) => {
     return testWorker
-      .execute({ build, testString, code, sources, firstTest }, testTimeout)
+      .execute(
+        { build, testString, code, sources, firstTest, removeComments },
+        testTimeout
+      )
       .on('LOG', proxyLogger).done;
   };
 }
 
-async function getDOMTestRunner(buildData, proxyLogger, document) {
+async function getDOMTestRunner(buildData, { proxyLogger }, document) {
   await new Promise(resolve =>
     createTestFramer(document, resolve, proxyLogger)(buildData)
   );
@@ -165,27 +167,16 @@ export function buildJSChallenge({ files }, options) {
     .map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
-    .then(files => {
-      let build = files
+    .then(files => ({
+      challengeType: challengeTypes.js,
+      build: files
         .reduce(
           (body, file) => [...body, file.head, file.contents, file.tail],
           []
         )
-        .join('\n');
-      let sources = buildSourceMap(files);
-      if (options?.removeComments !== false) {
-        build = removeJSComments(build);
-        sources = {
-          ...sources,
-          index: removeJSComments(sources.index)
-        };
-      }
-      return {
-        challengeType: challengeTypes.js,
-        build,
-        sources
-      };
-    });
+        .join('\n'),
+      sources: buildSourceMap(files)
+    }));
 }
 
 export function buildBackendChallenge({ url }) {

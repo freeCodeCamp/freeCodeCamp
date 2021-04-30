@@ -2,7 +2,9 @@ import chai from 'chai';
 import '@babel/polyfill';
 import { toString as __toString } from 'lodash-es';
 import { format as __format } from '../../utils/format';
-import curriculumHelpers from '../../utils/curriculum-helpers';
+import curriculumHelpers, {
+  removeJSComments
+} from '../../utils/curriculum-helpers';
 
 const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
@@ -56,8 +58,12 @@ const __utils = (() => {
 /* Run the test if there is one.  If not just evaluate the user code */
 self.onmessage = async e => {
   /* eslint-disable no-unused-vars */
-  const code = (e.data?.code?.contents || '').slice();
-  const editableContents = (e.data?.code?.editableContents || '').slice();
+  let code = (e.data?.code?.contents || '').slice();
+  code = e.data?.removeComments ? removeJSComments(code) : code;
+  let editableContents = (e.data?.code?.editableContents || '').slice();
+  editableContents = e.data?.removeComments
+    ? removeJSComments(editableContents)
+    : editableContents;
 
   const assert = chai.assert;
   const __helpers = curriculumHelpers;
@@ -74,7 +80,9 @@ self.onmessage = async e => {
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = eval(`${e.data.build}
+      testResult = eval(`${
+        e.data?.removeComments ? removeJSComments(e.data.build) : e.data.build
+      }
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);

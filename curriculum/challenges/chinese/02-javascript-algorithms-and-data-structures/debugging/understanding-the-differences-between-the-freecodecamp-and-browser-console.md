@@ -32,7 +32,9 @@ dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-c
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/console.clear\(\)/)
+  __helpers
+    .removeWhiteSpace(code)
+    .match(/console.clear\(\)/)
 );
 ```
 

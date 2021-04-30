@@ -8,7 +8,7 @@ dashedName: test-if-an-array-contains-an-item
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit.com](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 
