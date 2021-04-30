@@ -1,3 +1,4 @@
+[![Node.js CI - Test Upcoming](https://github.com/freeCodeCamp/freeCodeCamp/actions/workflows/node.js-tests-upcoming.yml/badge.svg)](https://github.com/freeCodeCamp/freeCodeCamp/actions/workflows/node.js-tests-upcoming.yml)
 name: Node.js CI - Test Upcoming
 on:
   push:
