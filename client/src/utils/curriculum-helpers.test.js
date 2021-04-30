@@ -52,6 +52,11 @@ describe('removeJSComments', () => {
     );
   });
 
+  it('leaves malformed JS unchanged', () => {
+    const actual = '/ unclosed regex';
+    expect(removeJSComments(actual)).toBe(actual);
+  });
+
   it('does not remove a url found in JS code', () => {
     expect(removeJSComments(jsCodeWithUrl)).toBe(jsCodeWithUrlUnchanged);
   });
