@@ -10,7 +10,7 @@ import CertificationCard from './CertificationCard';
 import { stepsToClaimSelector } from '../../../redux';
 import { verifyCert } from '../../../redux/settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import { CurrentCertsType, User } from '../../../redux/propTypes';
+import { StepsType, User } from '../../../redux/propTypes';
 import { certMap } from '../../../resources/certAndProjectMap';
 import {
   certSlugTypeMap,
@@ -19,11 +19,9 @@ import {
 import { getVerifyCanClaimCert } from '../../../utils/ajax';
 import { navigate } from 'gatsby-link';
 
-// TODO: define steps
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
-  currentCerts: CurrentCertsType,
-  steps: PropTypes.object,
+  steps: StepsType,
   superBlock: PropTypes.string,
   t: PropTypes.func,
   title: PropTypes.string,
@@ -68,7 +66,6 @@ const CertChallenge = ({
     if (username) {
       (async () => {
         const response = await getVerifyCanClaimCert(username, superBlock);
-        console.log(response);
         if (response.status === 200) {
           setCanClaim(response.data?.response?.message === 'can-claim-cert');
         }
@@ -87,20 +84,16 @@ const CertChallenge = ({
       )?.show ?? false
     );
 
-    // TODO: Undo hardcoded values for testing, and decide
-    //       on best data structure to follow for stepsToClaim
-    let completedCount = Object.values(steps).filter(val => {
-      if (Array.isArray(val)) {
-        return val?.find(cert => cert.title === i18nCertText)?.show;
-      } else {
-        return val;
-      }
-    }).length;
+    const completedCount =
+      Object.values(steps).filter(
+        stepVal => typeof stepVal === 'boolean' && stepVal
+      ).length + canClaim;
+    console.log(steps, completedCount, canClaim);
     const numberOfSteps = Object.keys(steps).length;
     setCanViewCert(completedCount === numberOfSteps);
     setStepState({ numberOfSteps, completedCount });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [steps]);
+  }, [steps, canClaim]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
   const i18nSuperBlock = t(`intro:${superBlock}.title`);

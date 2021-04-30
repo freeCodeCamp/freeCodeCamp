@@ -5,11 +5,12 @@ import { withTranslation, useTranslation } from 'react-i18next';
 
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
+import { StepsType } from '../../../redux/propTypes';
 
 const propTypes = {
   canClaim: PropTypes.bool,
   i18nCertText: PropTypes.string,
-  steps: PropTypes.object,
+  steps: StepsType,
   superBlock: PropTypes.string
 };
 
@@ -27,7 +28,6 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
 
   const settingsLink = '/settings#privacy-settings';
   const honestyPolicyAnchor = '/settings#honesty-policy';
-  const certName = i18nCertText.replace(' Certification', '');
   const {
     // currentCerts,
     isHonest = false,
@@ -47,7 +47,7 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
         <a href={`#${superBlock}-projects`}>
           <span className='badge map-badge'>{renderCheckMark(canClaim)}</span>
           {t('certification-card.complete-project', {
-            certName
+            i18nCertText
           })}
         </a>
       </li>

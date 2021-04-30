@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import ClaimCertSteps from './ClaimCertSteps';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
+import { StepsType } from '../../../redux/propTypes';
 
 const propTypes = {
   canClaim: PropTypes.bool,
@@ -16,7 +17,7 @@ const propTypes = {
     numberOfSteps: PropTypes.number,
     completedCount: PropTypes.number
   }),
-  steps: PropTypes.object,
+  steps: StepsType,
   superBlock: PropTypes.string
 };
 

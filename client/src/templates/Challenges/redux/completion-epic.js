@@ -202,6 +202,5 @@ async function findPathToNavigateTo(
   } else {
     pathToNavigateTo = `/learn/${superBlock}/#${superBlock}-projects`;
   }
-  console.log(pathToNavigateTo);
   return pathToNavigateTo;
 }

@@ -132,3 +132,10 @@ export const CurrentCertsType = PropTypes.arrayOf(
     certSlug: PropTypes.string
   })
 );
+
+export const StepsType = PropTypes.shape({
+  currentCerts: CurrentCertsType,
+  isShowCerts: PropTypes.bool,
+  isShowName: PropTypes.bool,
+  isShowProfile: PropTypes.bool
+});
