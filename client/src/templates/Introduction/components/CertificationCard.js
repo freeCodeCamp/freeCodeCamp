@@ -11,9 +11,11 @@ import GreenPass from '../../../assets/icons/GreenPass';
 
 const propTypes = {
   canClaim: PropTypes.bool,
-  completedCount: PropTypes.number,
   i18nCertText: PropTypes.string,
-  numberOfSteps: PropTypes.number,
+  stepState: PropTypes.shape({
+    numberOfSteps: PropTypes.number,
+    completedCount: PropTypes.number
+  }),
   steps: PropTypes.object,
   superBlock: PropTypes.string
 };
@@ -24,8 +26,7 @@ const CertificationCard = ({
   canClaim,
   superBlock,
   i18nCertText,
-  completedCount,
-  numberOfSteps,
+  stepState: { completedCount, numberOfSteps },
   steps
 }) => {
   const { t } = useTranslation();

@@ -7,10 +7,7 @@ import { Button } from '@freecodecamp/react-bootstrap';
 
 import CertificationCard from './CertificationCard';
 
-import {
-  certificatesByNameSelector,
-  stepsToClaimSelector
-} from '../../../redux';
+import { stepsToClaimSelector } from '../../../redux';
 import { verifyCert } from '../../../redux/settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { CurrentCertsType, User } from '../../../redux/propTypes';
@@ -20,6 +17,7 @@ import {
   superBlockCertTypeMap
 } from '../../../../../config/certification-settings';
 import { getVerifyCanClaimCert } from '../../../utils/ajax';
+import { navigate } from 'gatsby-link';
 
 // TODO: define steps
 const propTypes = {
@@ -38,15 +36,10 @@ const honestyInfoMessage = {
   message: 'flash.honest-first'
 };
 
-const mapStateToProps = (state, props) => {
-  return createSelector(
-    certificatesByNameSelector(props.user.username),
-    stepsToClaimSelector,
-    ({ currentCerts, steps }) => ({
-      currentCerts,
-      steps
-    })
-  )(state);
+const mapStateToProps = state => {
+  return createSelector(stepsToClaimSelector, steps => ({
+    steps
+  }))(state);
 };
 
 const mapDispatchToProps = {
@@ -56,15 +49,20 @@ const mapDispatchToProps = {
 
 const CertChallenge = ({
   createFlashMessage,
-  steps,
+  steps = {},
   superBlock,
   t,
   verifyCert,
   title,
-  user: { isHonest, username },
-  currentCerts
+  user: { isHonest, username }
 }) => {
   const [canClaim, setCanClaim] = useState(false);
+  const [isCertified, setIsCertified] = useState(false);
+  const [stepState, setStepState] = useState({
+    numberOfSteps: 0,
+    completedCount: 0
+  });
+  const [canViewCert, setCanViewCert] = useState(false);
 
   useEffect(() => {
     if (username) {
@@ -78,51 +76,63 @@ const CertChallenge = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [username]);
-  const createClickHandler = certSlug => e => {
-    e.preventDefault();
-    return isHonest
-      ? verifyCert(certSlug)
-      : createFlashMessage(honestyInfoMessage);
-  };
 
   const { certSlug } = certMap.find(x => x.title === title);
-  const isCertified = currentCerts.find(
-    cert => certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
-  ).show;
+
+  useEffect(() => {
+    setIsCertified(
+      steps?.currentCerts?.find(
+        cert =>
+          certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
+      )?.show ?? false
+    );
+
+    // TODO: Undo hardcoded values for testing, and decide
+    //       on best data structure to follow for stepsToClaim
+    let completedCount = Object.values(steps).filter(val => {
+      if (Array.isArray(val)) {
+        return val?.find(cert => cert.title === i18nCertText)?.show;
+      } else {
+        return val;
+      }
+    }).length;
+    const numberOfSteps = Object.keys(steps).length;
+    setCanViewCert(completedCount === numberOfSteps);
+    setStepState({ numberOfSteps, completedCount });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [steps]);
+
   const certLocation = `/certification/${username}/${certSlug}`;
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nCertText = t(`intro:misc-text.certification`, {
     cert: i18nSuperBlock
   });
 
-  // TODO: Undo hardcoded values for testing, and decide
-  //       on best data structure to follow for stepsToClaim
-  let completedCount =
-    Object.values(steps ?? {}).filter(val => {
-      if (Array.isArray(val)) {
-        return val?.find(cert => cert.title === i18nCertText)?.show;
-      } else {
-        return val;
-      }
-    }).length + canClaim;
-  const numberOfSteps = Object.keys(steps ?? {}).length;
-  const canViewCert = completedCount === numberOfSteps;
+  const createClickHandler = certSlug => e => {
+    e.preventDefault();
+    if (isCertified) {
+      navigate(certLocation);
+    }
+    return isHonest
+      ? verifyCert(certSlug)
+      : createFlashMessage(honestyInfoMessage);
+  };
 
   return (
     <div className='block'>
-      {!isCertified ||
-        (!canViewCert && (
-          <CertificationCard
-            canClaim={canClaim}
-            i18nCertText={i18nCertText}
-            steps={steps}
-            superBlock={superBlock}
-          />
-        ))}
+      {(!isCertified || !canViewCert) && (
+        <CertificationCard
+          canClaim={canClaim}
+          i18nCertText={i18nCertText}
+          steps={steps}
+          stepState={stepState}
+          superBlock={superBlock}
+        />
+      )}
       <Button
         block={true}
         bsStyle='primary'
-        disabled={!canClaim}
+        disabled={!canClaim || (isCertified && !canViewCert)}
         href={certLocation}
         onClick={createClickHandler(certSlug)}
       >
