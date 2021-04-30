@@ -77,6 +77,7 @@ function* validateUsernameSaga({ payload }) {
 }
 
 function* verifyCertificationSaga({ payload }) {
+  console.log(payload);
   try {
     const {
       data: { response, isCertMap, completedChallenges }

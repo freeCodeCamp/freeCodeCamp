@@ -69,11 +69,11 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
-const superBlocks = Object.keys(superBlockCertTypeMap);
+const certSlugs = Object.keys(certSlugTypeMap);
 
 function ifNoSuperBlock404(req, res, next) {
-  const { superBlock } = req.body;
-  if (superBlock && superBlocks.includes(superBlock)) {
+  const { certSlug } = req.body;
+  if (certSlug && certSlugs.includes(certSlug)) {
     return next();
   }
   return res.status(404).end();
@@ -226,11 +226,11 @@ function createVerifyCert(certTypeIds, app) {
   const { Email } = app.models;
   return function verifyCert(req, res, next) {
     const {
-      body: { superBlock },
+      body: { certSlug },
       user
     } = req;
-    log(superBlock);
-    let certType = superBlockCertTypeMap[superBlock];
+    log(certSlug);
+    let certType = certSlugTypeMap[certSlug];
     log(certType);
     return Observable.of(certTypeIds[certType])
       .flatMap(challenge => {

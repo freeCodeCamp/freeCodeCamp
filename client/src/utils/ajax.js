@@ -120,8 +120,8 @@ export function putUserUpdateEmail(email) {
   return put('/update-my-email', { email });
 }
 
-export function putVerifyCert(superBlock) {
-  return put('/certificate/verify', { superBlock });
+export function putVerifyCert(certSlug) {
+  return put('/certificate/verify', { certSlug });
 }
 
 /** DELETE **/

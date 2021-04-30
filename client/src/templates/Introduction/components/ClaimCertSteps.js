@@ -30,13 +30,19 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
   const certName = i18nCertText.replace(' Certification', '');
   const {
     // currentCerts,
-    isHonest,
-    isShowName,
-    isShowCerts,
-    isShowProfile
+    isHonest = false,
+    isShowName = false,
+    isShowCerts = false,
+    isShowProfile = false
   } = steps;
   return (
     <ul className='map-challenges-ul'>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={honestyPolicyAnchor}>
+          <span className='badge map-badge'>{renderCheckMark(isHonest)}</span>
+          {t('certification-card.accept-honesty')}
+        </Link>
+      </li>
       <li className='map-challenge-title map-challenge-wrap'>
         <a href={`#${superBlock}-projects`}>
           <span className='badge map-badge'>{renderCheckMark(canClaim)}</span>
@@ -46,15 +52,11 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
         </a>
       </li>
       <li className='map-challenge-title map-challenge-wrap'>
-        <Link to={honestyPolicyAnchor}>
-          <span className='badge map-badge'>{renderCheckMark(isHonest)}</span>
-          {t('certification-card.accept-honesty')}
-        </Link>
-      </li>
-      <li className='map-challenge-title map-challenge-wrap'>
         <Link to={settingsLink}>
-          <span className='badge map-badge'>{renderCheckMark(isShowName)}</span>
-          {t('certification-card.set-name')}
+          <span className='badge map-badge'>
+            {renderCheckMark(isShowProfile)}
+          </span>
+          {t('certification-card.set-profile-public')}
         </Link>
       </li>
       <li className='map-challenge-title map-challenge-wrap'>
@@ -67,10 +69,8 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
       </li>
       <li className='map-challenge-title map-challenge-wrap'>
         <Link to={settingsLink}>
-          <span className='badge map-badge'>
-            {renderCheckMark(isShowProfile)}
-          </span>
-          {t('certification-card.set-profile-public')}
+          <span className='badge map-badge'>{renderCheckMark(isShowName)}</span>
+          {t('certification-card.set-name')}
         </Link>
       </li>
     </ul>
