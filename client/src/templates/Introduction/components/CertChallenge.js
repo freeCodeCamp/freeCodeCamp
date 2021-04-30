@@ -88,7 +88,6 @@ const CertChallenge = ({
       Object.values(steps).filter(
         stepVal => typeof stepVal === 'boolean' && stepVal
       ).length + canClaim;
-    console.log(steps, completedCount, canClaim);
     const numberOfSteps = Object.keys(steps).length;
     setCanViewCert(completedCount === numberOfSteps);
     setStepState({ numberOfSteps, completedCount });

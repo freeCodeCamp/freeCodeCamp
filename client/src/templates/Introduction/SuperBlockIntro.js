@@ -15,11 +15,13 @@ import Map from '../../components/Map';
 import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
 import Block from './components/Block';
+import DonateModal from '../../../../client/src/components/Donation/DonationModal';
 import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
   isSignedInSelector,
+  tryToShowDonationModal,
   userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
@@ -49,6 +51,7 @@ const propTypes = {
   resetExpansion: PropTypes.func,
   t: PropTypes.func,
   toggleBlock: PropTypes.func,
+  tryToShowDonationModal: PropTypes.func.isRequired,
   user: User
 };
 
@@ -71,13 +74,19 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { resetExpansion, toggleBlock: b => toggleBlock(b) },
+    {
+      tryToShowDonationModal,
+      resetExpansion,
+      toggleBlock: b => toggleBlock(b)
+    },
     dispatch
   );
 
 class SuperBlockIntroductionPage extends Component {
   componentDidMount() {
     this.initializeExpandedState();
+    console.log('SuperBlockIntro did mount');
+    this.props.tryToShowDonationModal();
 
     setTimeout(() => {
       configureAnchors({ offset: -40, scrollDuration: 400 });
@@ -206,6 +215,7 @@ class SuperBlockIntroductionPage extends Component {
             </Col>
           </Row>
         </Grid>
+        <DonateModal />
       </>
     );
   }

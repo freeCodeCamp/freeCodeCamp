@@ -29,7 +29,6 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
   const settingsLink = '/settings#privacy-settings';
   const honestyPolicyAnchor = '/settings#honesty-policy';
   const {
-    // currentCerts,
     isHonest = false,
     isShowName = false,
     isShowCerts = false,
