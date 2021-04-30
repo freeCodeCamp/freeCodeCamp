@@ -18,10 +18,6 @@ describe('The Document Metadata', () => {
   };
 
   const scripts = {
-    stripe: {
-      selector: 'body script[id="stripe-js"]',
-      src: 'https://js.stripe.com/v3/'
-    },
     mathjax: {
       selector: 'body script[id="mathjax"]',
       src:
@@ -63,10 +59,6 @@ describe('The Document Metadata', () => {
       social.description
     );
   });
-  it('landing page should not have stripe body script', () => {
-    cy.reload();
-    cy.get(scripts.stripe.selector).should('not.exist');
-  });
   it('landing page should not have mathjax body script', () => {
     cy.reload();
     cy.get(scripts.mathjax.selector).should('not.exist');
@@ -75,24 +67,6 @@ describe('The Document Metadata', () => {
     cy.visit(challengs.responsiveWebDesign);
     cy.reload();
     cy.get(scripts.mathjax.selector).should('not.exist');
-  });
-  it('donate page should have stripe body script', () => {
-    cy.visit('/donate');
-    cy.reload();
-    cy.get(scripts.stripe.selector).should(
-      'have.attr',
-      'src',
-      scripts.stripe.src
-    );
-  });
-  it('responsive webdesign challenges should have stripe body script', () => {
-    cy.visit(challengs.responsiveWebDesign);
-    cy.reload();
-    cy.get(scripts.stripe.selector).should(
-      'have.attr',
-      'src',
-      scripts.stripe.src
-    );
   });
   it('project euler challenges should have mathjax body script', () => {
     cy.visit(challengs.projectEuler);
