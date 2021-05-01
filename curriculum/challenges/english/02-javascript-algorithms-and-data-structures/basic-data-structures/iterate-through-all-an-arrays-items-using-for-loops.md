@@ -1,9 +1,9 @@
 ---
 id: 587d7b7b367417b2b2512b15
-title: Iterate Through All an Array's Items Using For Loops
+title: Iterate Through All Items of an Array Using For Loops
 challengeType: 1
 forumTopicId: 301161
-dashedName: iterate-through-all-an-arrays-items-using-for-loops
+dashedName: iterate-through-all-items-of-an-array-using-for-loops
 ---
 
 # --description--
