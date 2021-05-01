@@ -52,7 +52,7 @@ assert($('img').length);
 Your image should have a `src` attribute that points to the kitten image.
 
 ```js
-assert(/^https:\/\/www\.bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
+assert(/^https:\/\/(www\.)?bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
 ```
 
 Your image element's `alt` attribute should not be empty.
