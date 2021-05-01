@@ -52,3 +52,12 @@ Cypress.Commands.add('resetUsername', () => {
 
   cy.contains('Account Settings for developmentuser').should('be.visible');
 });
+
+Cypress.Commands.add('updatePaths', (superblock, lang = 'english') => {
+  cy.task('getCurriculum', lang).then(curriculum => {
+    cy.task('scopeCurriculum', {
+      curriculum,
+      superblock: superblock
+    });
+  });
+});

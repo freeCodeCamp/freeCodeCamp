@@ -1,22 +1,17 @@
 /* global cy */
-describe('Visit Front End Development', () => {
-  before(() => {
-    cy.task('getCurriculum', 'english').then(curriculum => {
-      cy.task('scopeCurriculum', {
-        curriculum,
-        superblock: 'front-end-libraries'
-      }).as('challenges');
-    });
-  });
+const superblockPathData = require('../../fixtures/pathData/front-end-libraries.json');
 
-  it(`has access to the text`, () => {
-    cy.get('@challenges').then(challenges => {
-      describe(`visit challenge`, () => {
-        challenges.forEach(challenge => {
-          it(`should work correctly`, () => {
-            cy.visit(challenge);
-          });
-        });
+const blocks = Object.keys(superblockPathData['blocks']);
+
+blocks.forEach(block => {
+  describe(`visit block ${block}`, () => {
+    let challengePaths = superblockPathData['blocks'][block];
+
+    challengePaths.forEach(challenge => {
+      let name = challenge.split('/');
+
+      it(`The challenge ${name[name.length - 1]} shoud work correctly`, () => {
+        cy.visit(challenge);
       });
     });
   });

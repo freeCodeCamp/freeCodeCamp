@@ -1,22 +1,17 @@
 /* global cy */
-describe('Visit APIs and Microservices', () => {
-  before(() => {
-    cy.task('getCurriculum', 'english').then(curriculum => {
-      cy.task('scopeCurriculum', {
-        curriculum,
-        superblock: 'apis-and-microservices'
-      }).as('challenges');
-    });
-  });
+const superblockPathData = require('../../fixtures/pathData/apis-and-microservices.json');
 
-  it(`has access to the text`, () => {
-    cy.get('@challenges').then(challenges => {
-      describe(`visit challenge`, () => {
-        challenges.forEach(challenge => {
-          it(`should work correctly`, () => {
-            cy.visit(challenge);
-          });
-        });
+const blocks = Object.keys(superblockPathData['blocks']);
+
+blocks.forEach(block => {
+  describe(`visit block ${block}`, () => {
+    let challengePaths = superblockPathData['blocks'][block];
+
+    challengePaths.forEach(challenge => {
+      let name = challenge.split('/');
+
+      it(`The challenge ${name[name.length - 1]} shoud work correctly`, () => {
+        cy.visit(challenge);
       });
     });
   });

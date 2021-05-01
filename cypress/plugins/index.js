@@ -1,14 +1,29 @@
 const getChallenge = require('../../curriculum/getChallenges');
-const env = require('../../config/env.json');
+// const env = require('../../config/env.json');
 const assert = require('assert');
+const { writeFileSync } = require('fs');
 
-function createPaths(curriculum, superblock, block) {
-  let challengeArr = curriculum[superblock]['blocks'][block]['challenges'];
+function createPaths(curriculum, superblock, blocks) {
+  let challengeObj = { blocks: {} };
 
-  return challengeArr.map(
-    challengePath =>
-      `/learn/${superblock}/${block}/${challengePath['dashedName']}`
+  blocks.forEach(block => {
+    let challengeArr = curriculum[superblock]['blocks'][block]['challenges'];
+
+    const challengePath = challengeArr.map(
+      challengePath =>
+        `/learn/${superblock}/${block}/${challengePath['dashedName']}`
+    );
+
+    challengeObj['blocks'][block] = challengePath;
+  });
+
+  let challengePathData = JSON.stringify(challengeObj, null, 4);
+  writeFileSync(
+    `.\\cypress\\fixtures\\pathData\\${superblock}.json`,
+    challengePathData
   );
+
+  return challengePathData;
 }
 
 module.exports = on => {
@@ -24,7 +39,7 @@ module.exports = on => {
       return curriculum;
     },
 
-    scopeCurriculum({ curriculum, superblock, blocks, challenges }) {
+    scopeCurriculum({ curriculum, superblock, blocks }) {
       let challengePaths = [];
 
       assert(superblock, 'superblock must be supplied to scopeCurriculum');
@@ -32,30 +47,9 @@ module.exports = on => {
       if (!blocks) {
         // Get blocks in superblock
         blocks = Object.keys(curriculum[superblock]['blocks']);
+        challengePaths = createPaths(curriculum, superblock, blocks);
       }
 
-      if (challenges) {
-        assert(
-          blocks.length === 1,
-          'Individual challenges must come from one block\n' +
-            "scopeCurriculum's arguments may be invalid"
-        );
-        challenges.forEach(challenge => {
-          challengePaths.push(`/learn/${superblock}/${blocks[0]}/${challenge}`);
-        });
-      } else {
-        blocks.forEach(block => {
-          const upcomingChange =
-            curriculum[superblock]['blocks'][block]['meta']['isUpcomingChange'];
-
-          // Upcoming changes should not be tested by default.
-          if (!upcomingChange || env.showUpcomingChanges) {
-            challengePaths = challengePaths.concat(
-              createPaths(curriculum, superblock, block)
-            );
-          }
-        });
-      }
       return challengePaths;
     }
   });
