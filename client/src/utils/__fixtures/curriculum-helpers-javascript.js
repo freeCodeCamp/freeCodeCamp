@@ -12,10 +12,7 @@ nonMutatingPush(first, second);`;
 
 const jsCodeWithSingleAndMultLineCommentsRemoved = `
 function nonMutatingPush(original, newItem) {
-
-
-
-  return original.push(newItem);
+    return original.push(newItem);
 }
 var first = [1, 2, 3];
 
@@ -30,7 +27,7 @@ function nonMutatingPush(original, newItem) {
 
 const jsCodeWithUrlUnchanged = `
 function nonMutatingPush(original, newItem) {
-  var url = 'https://freecodecamp.org';
+  var url = 'https://freecodecamp.org'; 
   return original.push(newItem);
 }`;
 
