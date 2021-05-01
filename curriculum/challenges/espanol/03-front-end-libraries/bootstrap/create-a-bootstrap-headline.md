@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908846
-title: Create a Bootstrap Headline
+title: Crear un encabezado de Bootstrap
 challengeType: 0
 forumTopicId: 16812
 dashedName: create-a-bootstrap-headline
@@ -8,23 +8,23 @@ dashedName: create-a-bootstrap-headline
 
 # --description--
 
-Now let's build something from scratch to practice our HTML, CSS and Bootstrap skills.
+Ahora construyamos algo desde cero para practicar nuestras habilidades de HTML, CSS y Bootstrap.
 
-We'll build a jQuery playground, which we'll soon put to use in our jQuery challenges.
+Construiremos una zona de juegos de jQuery, que pronto utilizaremos en nuestros desafíos de jQuery.
 
-To start with, create an `h3` element, with the text `jQuery Playground`.
+Para empezar, crea un elemento `h3`, con el texto `jQuery Playground`.
 
-Color your `h3` element with the `text-primary` Bootstrap class, and center it with the `text-center` Bootstrap class.
+Colorea tu elemento `h3` con la clase `text-primary` y céntralo con la clase `text-center` de Bootstrap.
 
 # --hints--
 
-You should add an `h3` element to your page.
+Debes agregar un elemento `h3` a tu página.
 
 ```js
 assert($('h3') && $('h3').length > 0);
 ```
 
-Your `h3` element should have a closing tag.
+Tu elemento `h3` debe tener una etiqueta de cierre.
 
 ```js
 assert(
@@ -34,19 +34,19 @@ assert(
 );
 ```
 
-Your `h3` element should be colored by applying the class `text-primary`
+Tu elemento `h3` debe estar coloreado al aplicar la clase `text-primary`
 
 ```js
 assert($('h3').hasClass('text-primary'));
 ```
 
-Your `h3` element should be centered by applying the class `text-center`
+Tu elemento `h3` debe estar centrado al aplicar la clase `text-center`
 
 ```js
 assert($('h3').hasClass('text-center'));
 ```
 
-Your `h3` element should have the text `jQuery Playground`.
+Tu elemento `h3` debe tener el texto `jQuery Playground`.
 
 ```js
 assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));
@@ -55,7 +55,9 @@ assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));
 # --seed--
 
 ## --seed-contents--
+
 ```html
+
 ```
 
 # --solutions--

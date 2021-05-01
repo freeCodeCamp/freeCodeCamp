@@ -1,11 +1,11 @@
 import { parse } from '@babel/parser';
 import generate from '@babel/generator';
 
-const removeHtmlComments = str => str.replace(/<!--.*?-->/gs, '');
+const removeHtmlComments = str => str.replace(/<!--[\s\S]*?(-->|$)/g, '');
 
 const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, '');
 
-const removeJSComments = codeStr => {
+export const removeJSComments = codeStr => {
   // Note: removes trailing new lines and tailing spaces at end of lines
   const options = {
     comments: false,
@@ -30,7 +30,6 @@ const removeWhiteSpace = (str = '') => {
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
-  removeJSComments,
   removeWhiteSpace
 };
 

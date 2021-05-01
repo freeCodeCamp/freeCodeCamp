@@ -35,7 +35,7 @@ describe('project submission', () => {
       cy.visit(url);
       cy.get('#dynamic-front-end-form')
         .get('#solution')
-        .type('https://repl.it/@camperbot/python-project#main.py');
+        .type('https://replit.com/@camperbot/python-project#main.py');
 
       cy.contains("I've completed this challenge").click();
       cy.contains('Go to next challenge');

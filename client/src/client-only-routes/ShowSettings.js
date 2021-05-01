@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Button } from '@freecodecamp/react-bootstrap';
+import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import envData from '../../../config/env.json';
@@ -16,7 +16,7 @@ import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
 import { useTranslation } from 'react-i18next';
 
-import { FullWidthRow, Loader, Spacer } from '../components/helpers';
+import { Loader, Spacer } from '../components/helpers';
 import About from '../components/settings/About';
 import Privacy from '../components/settings/Privacy';
 import Email from '../components/settings/Email';
@@ -132,18 +132,6 @@ export function ShowSettings(props) {
       <Grid>
         <main>
           <Spacer size={2} />
-          <FullWidthRow>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-              href={`${apiLocation}/signout`}
-            >
-              {t('buttons.sign-me-out')}
-            </Button>
-          </FullWidthRow>
-          <Spacer />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
             {t('settings.for', { username: username })}
           </h1>

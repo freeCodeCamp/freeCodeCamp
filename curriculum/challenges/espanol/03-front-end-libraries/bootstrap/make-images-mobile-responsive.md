@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Make Images Mobile Responsive
+title: Hacer que las imágenes se adapten a dispositivos móviles
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -8,39 +8,39 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-First, add a new image below the existing one. Set its `src` attribute to `https://bit.ly/fcc-running-cats`.
+Primero, agregue una nueva imagen debajo de la existente. Establezca su atributo `src` en `https://bit.ly/fcc-running-cats`.
 
-It would be great if this image could be exactly the width of our phone's screen.
+Sería genial si esta imagen pudiera tener exactamente el ancho de la pantalla de nuestro teléfono.
 
-Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class to your image. Do this, and the image should perfectly fit the width of your page.
+Afortunadamente, con Bootstrap, todo lo que tenemos que hacer es agregar la clase `img-responsive` a tus imágenes. Haga esto y la imagen debe ajustarse perfectamente al ancho de su página.
 
 # --hints--
 
-You should have a total of two images.
+Debe tener un total de dos imágenes.
 
 ```js
 assert($('img').length === 2);
 ```
 
-Your new image should be below your old one and have the class `img-responsive`.
+Tu nueva imagen debería estar debajo de la anterior y tener la clase `img-responsive`.
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Your new image should not have the class `smaller-image`.
+Tu nueva imagen no debería tener la clase `smaller-image`.
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Your new image should have a `src` of `https://bit.ly/fcc-running-cats`.
+Tu nueva imagen debe tener el atributo `src` en `https://bit.ly/fcc-running-cats`.
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
 ```
 
-Your new `img` element should have a closing angle bracket.
+Tu nuevo elemento `img` debe tener una etiqueta de cierre.
 
 ```js
 assert(

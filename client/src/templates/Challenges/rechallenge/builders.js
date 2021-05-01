@@ -6,7 +6,7 @@ import {
   partial,
   stubTrue,
   template as _template
-} from 'lodash';
+} from 'lodash-es';
 
 import {
   compileHeadTail,

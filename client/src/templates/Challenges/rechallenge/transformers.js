@@ -8,7 +8,7 @@ import {
   overSome,
   partial,
   stubTrue
-} from 'lodash';
+} from 'lodash-es';
 
 import protect from '@freecodecamp/loop-protect';
 
