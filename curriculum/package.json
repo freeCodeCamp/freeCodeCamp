@@ -31,9 +31,9 @@
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "7.13.16",
+    "@babel/core": "7.14.0",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.13.15",
+    "@babel/preset-env": "7.14.0",
     "@babel/register": "7.13.16",
     "acorn": "8.1.1",
     "acorn-jsx": "5.3.1",
