@@ -28,20 +28,38 @@ By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the followi
 
 Hence, by considering minimal solutions in `x` for D ≤ 7, the largest `x` is obtained when D=5.
 
-Find the value of D ≤ 1000 in minimal solutions of `x` for which the largest value of `x` is obtained.
+Find the value of D ≤ `n` in minimal solutions of `x` for which the largest value of `x` is obtained.
 
 # --hints--
 
-`diophantineEquation()` should return a number.
+`diophantineEquation(7)` should return a number.
 
 ```js
-assert(typeof diophantineEquation() === 'number');
+assert(typeof diophantineEquation(7) === 'number');
 ```
 
-`diophantineEquation()` should return 661.
+`diophantineEquation(7)` should return `5`.
+
+```
+assert.strictEqual(diophantineEquation(7), 5);
+```
+
+`diophantineEquation(100)` should return `61`.
+
+```
+assert.strictEqual(diophantineEquation(100), 61);
+```
+
+`diophantineEquation(500)` should return `421`.
+
+```
+assert.strictEqual(diophantineEquation(500), 421);
+```
+
+`diophantineEquation(1000)` should return `661`.
 
 ```js
-assert.strictEqual(diophantineEquation(), 661);
+assert.strictEqual(diophantineEquation(1000), 661);
 ```
 
 # --seed--
@@ -49,12 +67,12 @@ assert.strictEqual(diophantineEquation(), 661);
 ## --seed-contents--
 
 ```js
-function diophantineEquation() {
+function diophantineEquation(n) {
 
   return true;
 }
 
-diophantineEquation();
+diophantineEquation(7);
 ```
 
 # --solutions--
