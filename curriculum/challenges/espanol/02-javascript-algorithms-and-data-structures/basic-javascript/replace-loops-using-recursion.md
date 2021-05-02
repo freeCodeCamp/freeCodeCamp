@@ -66,9 +66,7 @@ Tu código no debe depender de ningún tipo de bluces (`for` o `while`) o funcio
 
 ```js
 assert(
-  !__helpers
-    .removeJSComments(code)
-    .match(/for|while|forEach|map|filter|reduce/g)
+  !code.match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 
@@ -76,7 +74,7 @@ Debes usar recursión para resolver este problema.
 
 ```js
 assert(
-  __helpers.removeJSComments(sum.toString()).match(/sum\(.*\)/g).length > 1
+  sum.toString().match(/sum\(.*\)/g).length > 1
 );
 ```
 

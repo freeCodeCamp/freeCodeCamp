@@ -16,7 +16,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import isEmail from 'validator/lib/isEmail';
-import { isString } from 'lodash';
+import { isString } from 'lodash-es';
 import { withTranslation } from 'react-i18next';
 
 import { Spacer } from '../components/helpers';

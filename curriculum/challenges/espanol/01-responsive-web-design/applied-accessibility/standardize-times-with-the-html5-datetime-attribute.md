@@ -19,7 +19,7 @@ Aquí hay un ejemplo:
 
 # --instructions--
 
-¡Ya tenemos los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelve una etiqueta `time` alrededor del texto `Thursday, September 15<sup>th<sup>` y agrega un atributo `datetime` establecido en `2016-09-15`.
+¡Ya tenemos los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelve una etiqueta `time` alrededor del texto `Thursday, September 15<sup>th</sup>` y agregua un atributo `datetime` establecido en `2016-09-15`.
 
 # --hints--
 

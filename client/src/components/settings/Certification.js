@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { find, first, values, isString } from 'lodash';
+import { find, first, values, isString } from 'lodash-es';
 import {
   Table,
   Button,

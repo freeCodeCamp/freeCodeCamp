@@ -32,7 +32,7 @@ import envData from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
-import { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash-es';
 import { User } from '../redux/propTypes';
 
 const { clientLocale } = envData;

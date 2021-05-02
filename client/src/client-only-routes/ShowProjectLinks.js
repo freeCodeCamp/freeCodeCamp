@@ -6,7 +6,7 @@ import { maybeUrlRE } from '../utils';
 import { Spacer, Link } from '../components/helpers';
 import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
-import { find, first } from 'lodash';
+import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';
 
 const propTypes = {

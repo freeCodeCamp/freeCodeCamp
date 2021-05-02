@@ -20,7 +20,7 @@ For example:
 
 # --instructions--
 
-Nest the existing `input` element inside a `form` element and assign `"https://freecatphotoapp.com/submit-cat-photo"` to the `action` attribute of the `form` element.
+Nest the existing `input` element inside a `form` element and assign `"https://www.freecatphotoapp.com/submit-cat-photo"` to the `action` attribute of the `form` element.
 
 # --hints--
 
@@ -34,11 +34,11 @@ assert(
 );
 ```
 
-Your `form` should have an `action` attribute which is set to `https://freecatphotoapp.com/submit-cat-photo`
+Your `form` should have an `action` attribute which is set to `https://www.freecatphotoapp.com/submit-cat-photo`
 
 ```js
 assert(
-  $('form').attr('action') === 'https://freecatphotoapp.com/submit-cat-photo'
+  $('form').attr('action') === 'https://www.freecatphotoapp.com/submit-cat-photo'
 );
 ```
 
@@ -61,7 +61,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -86,7 +86,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -100,7 +100,7 @@ assert(
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="https://freecatphotoapp.com/submit-cat-photo">
+  <form action="https://www.freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>

@@ -28,7 +28,7 @@ assert.typeOf(squareList, 'function'),
 不应该使用 `for`、`while` 或者 `forEach`。
 
 ```js
-assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
+assert(!code.match(/for|while|forEach/g));
 ```
 
 应该使用 `map`、`filter` 或者 `reduce`。
@@ -36,7 +36,7 @@ assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(__helpers.removeJSComments(code))
+    .removeWhiteSpace(code)
     .match(/\.(map|filter|reduce)\(/g)
 );
 ```

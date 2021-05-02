@@ -293,6 +293,11 @@ class Editor extends Component {
         });
       }
     });
+    // Overrides Intellisense suggestion box
+    editor.addCommand(
+      monaco.KeyMod.CtrlCmd | monaco.KeyCode.Space,
+      function () {}
+    );
     editor.onDidFocusEditorWidget(() => this.props.setEditorFocusability(true));
     // This is to persist changes caused by the accessibility tooltip.
     editor.onDidChangeConfiguration(event => {
