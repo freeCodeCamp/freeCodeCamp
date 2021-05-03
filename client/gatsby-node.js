@@ -53,15 +53,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
     }
   }
 
-  if (!env.stripePublicKey) {
-    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
-      throw new Error('Stripe public key is required to start the client!');
-    } else {
-      reporter.info(
-        'Stripe public key missing or invalid. Required for donations.'
-      );
-    }
-  }
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -186,8 +177,7 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
     plugins.define({
       HOME_PATH: JSON.stringify(
         process.env.HOME_PATH || 'http://localhost:3000'
-      ),
-      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
+      )
     }),
     // We add the shims of the node globals to the global scope
     new webpack.ProvidePlugin({

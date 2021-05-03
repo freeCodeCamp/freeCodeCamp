@@ -25,7 +25,7 @@
     "@actions/core": "1.2.7",
     "@actions/github": "4.0.0",
     "dotenv": "8.2.0",
-    "gray-matter": "4.0.2",
+    "gray-matter": "4.0.3",
     "node-fetch": "2.6.1",
     "readdirp": "3.6.0"
   }

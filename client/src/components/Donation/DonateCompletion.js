@@ -49,6 +49,7 @@ function DonateCompletion({
         {success && (
           <div>
             <p>{t('donate.free-tech')}</p>
+            <p>{t('donate.no-halo')}</p>
           </div>
         )}
         {error && <p>{error}</p>}
