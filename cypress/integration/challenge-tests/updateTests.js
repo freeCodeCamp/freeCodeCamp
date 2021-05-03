@@ -1,4 +1,4 @@
-/* global cy */
+// /* global cy */
 
 // Here you can update spec/path files when needed
 
@@ -9,7 +9,3 @@
 //     cy.createSpecFiles();
 //
 // })
-
-it('should update', () => {
-  cy.createSpecFiles();
-});
