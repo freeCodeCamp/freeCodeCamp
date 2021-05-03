@@ -1,7 +1,7 @@
 const getChallenge = require('../../curriculum/getChallenges');
 // const env = require('../../config/env.json');
 const assert = require('assert');
-const { writeFileSync } = require('fs');
+const { writeFileSync, readdirSync, readFileSync } = require('fs');
 
 function createPaths(curriculum, superblock, blocks) {
   let challengeObj = { blocks: {} };
@@ -24,6 +24,40 @@ function createPaths(curriculum, superblock, blocks) {
   );
 
   return challengePathData;
+}
+
+function createSpecFiles() {
+  const pathDataFiles = readdirSync('.\\cypress\\fixtures\\pathData');
+
+  pathDataFiles.forEach(file => {
+    let superblock = JSON.parse(
+      readFileSync(`.\\cypress\\fixtures\\pathData\\${file}`, 'utf-8')
+    );
+    let blocks = Object.keys(superblock['blocks']);
+
+    blocks.forEach(block => {
+      writeFileSync(
+        `.\\cypress\\integration\\challenge-tests\\blocks\\${block}.js`,
+        `
+        /* global cy */
+       const superblockPathData = require('../../../fixtures/pathData/${file}');
+       const challengePaths = superblockPathData['blocks']['${block}']
+
+       challengePaths.forEach(challenge => {
+        let challengeName = challenge.split('/');
+      
+        it('Challenge ' + challengeName[challengeName.length - 1] + ' should work correctly', () => {
+          cy.testChallenges(challenge)
+        })
+      
+      });
+      
+      `
+      );
+    });
+  });
+
+  return null;
 }
 
 module.exports = on => {
@@ -51,6 +85,10 @@ module.exports = on => {
       }
 
       return challengePaths;
+    },
+
+    updateSpecFiles() {
+      return createSpecFiles();
     }
   });
 };

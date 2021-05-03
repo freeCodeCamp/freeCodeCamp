@@ -61,3 +61,11 @@ Cypress.Commands.add('updatePaths', (superblock, lang = 'english') => {
     });
   });
 });
+
+Cypress.Commands.add('createSpecFiles', () => {
+  cy.task('updateSpecFiles');
+});
+
+Cypress.Commands.add('testChallenges', challenge => {
+  cy.visit(challenge);
+});
