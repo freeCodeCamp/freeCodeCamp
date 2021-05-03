@@ -28,20 +28,38 @@ Euler's Totient function, φ(`n`) \[sometimes called the phi function], is used 
 
 It can be seen that `n`=6 produces a maximum `n`/φ(`n`) for `n` ≤ 10.
 
-Find the value of `n` ≤ 1,000,000 for which n/φ(`n`) is a maximum.
+Find the value of `n` ≤ `limit` for which $\displaystyle\frac{n}{{\phi(n)}}$ is a maximum.
 
 # --hints--
 
-`totientMaximum()` should return a number.
+`totientMaximum(10)` should return a number.
 
 ```js
-assert(typeof totientMaximum() === 'number');
+assert(typeof totientMaximum(10) === 'number');
 ```
 
-`totientMaximum()` should return 510510.
+`totientMaximum(10)` should return `6`.
 
 ```js
-assert.strictEqual(totientMaximum(), 510510);
+assert.strictEqual(totientMaximum(10), 6);
+```
+
+`totientMaximum(10000)` should return `2310`.
+
+```js
+assert.strictEqual(totientMaximum(10000), 2310);
+```
+
+`totientMaximum(500000)` should return `30030`.
+
+```js
+assert.strictEqual(totientMaximum(500000), 30030);
+```
+
+`totientMaximum(1000000)` should return `510510`.
+
+```js
+assert.strictEqual(totientMaximum(1000000), 510510);
 ```
 
 # --seed--
@@ -49,12 +67,12 @@ assert.strictEqual(totientMaximum(), 510510);
 ## --seed-contents--
 
 ```js
-function totientMaximum() {
+function totientMaximum(limit) {
 
   return true;
 }
 
-totientMaximum();
+totientMaximum(10);
 ```
 
 # --solutions--
