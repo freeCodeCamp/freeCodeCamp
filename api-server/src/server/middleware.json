@@ -44,6 +44,7 @@
   "files": {},
   "final:after": {
     "./middlewares/sentry-error-handler": {},
+    "./middlewares/csurf-error-handler": {},
     "./middlewares/error-handlers": {},
     "strong-error-handler": {
       "params": {
