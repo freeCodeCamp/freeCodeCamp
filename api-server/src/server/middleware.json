@@ -35,6 +35,7 @@
     "helmet#noSniff": {},
     "helmet#frameguard": {},
     "./middlewares/csurf": {},
+    "./middlewares/csurf-set-cookie": {},
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/flash-cheaters": {},
