@@ -12,9 +12,7 @@ export default function getCsurf() {
     const { path } = req;
     if (
       // eslint-disable-next-line max-len
-      /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$|^\/donate\/charge-stripe$/.test(
-        path
-      )
+      /^\/hooks\/update-paypal$/.test(path)
     ) {
       return next();
     }

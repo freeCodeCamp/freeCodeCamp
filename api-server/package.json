@@ -69,7 +69,6 @@
     "passport-mock-strategy": "^2.0.0",
     "query-string": "^6.14.0",
     "rx": "^4.1.0",
-    "stripe": "^6.36.0",
     "uuid": "^3.4.0",
     "validator": "^9.4.1"
   },

@@ -109,23 +109,12 @@ export const injectConditionalTags = (tagsArray, homeLocation) => {
 
 export const getPostBodyComponents = pathname => {
   let scripts = [];
-  const challengesPathRE = new RegExp('/learn/[^/]+/[^/]+/[^/]+/?$');
-  const donatePathRE = new RegExp('/donate/?$');
   const mathJaxScriptElement = (
     <script
       async={false}
       id='mathjax'
       key='mathjax'
       src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
-      type='text/javascript'
-    />
-  );
-  const stripeScriptElement = (
-    <script
-      async={true}
-      id='stripe-js'
-      key='stripe-js'
-      src='https://js.stripe.com/v3/'
       type='text/javascript'
     />
   );
@@ -136,8 +125,6 @@ export const getPostBodyComponents = pathname => {
   ) {
     scripts.push(mathJaxScriptElement);
   }
-  if (challengesPathRE.test(pathname) || donatePathRE.test(pathname)) {
-    scripts.push(stripeScriptElement);
-  }
+
   return scripts.filter(Boolean);
 };
