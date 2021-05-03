@@ -4,8 +4,7 @@
 
 // Here you can introduce a new superblock as well
 
-// it('should update', () => {
-//     cy.updatePaths(superblock, lang)
+//  it('should update', () => {
+//     cy.updatePaths('scientific-computing-with-python')
 //     cy.createSpecFiles();
-//
-// })
+//  })
