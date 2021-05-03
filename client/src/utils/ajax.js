@@ -1,22 +1,20 @@
 import envData from '../../../config/env.json';
 import axios from 'axios';
-import Tokens from 'csrf';
 import cookies from 'browser-cookies';
 
 const { apiLocation } = envData;
 
 const base = apiLocation;
-const tokens = new Tokens();
 
 axios.defaults.withCredentials = true;
 
-// _csrf is passed to the client as a cookie. Tokens are sent back to the server
-// via headers:
+// CSRF-Server-Token is passed to the client as a cookie. The client must send
+// this back as a header.
 function setCSRFTokens() {
-  const _csrf = typeof window !== 'undefined' && cookies.get('_csrf');
-  if (!_csrf) return;
-  axios.defaults.headers.post['CSRF-Token'] = tokens.create(_csrf);
-  axios.defaults.headers.put['CSRF-Token'] = tokens.create(_csrf);
+  const csrfToken = typeof window !== 'undefined' && cookies.get('csrf_token');
+  if (!csrfToken) return;
+  axios.defaults.headers.post['CSRF-Token'] = csrfToken;
+  axios.defaults.headers.put['CSRF-Token'] = csrfToken;
 }
 
 function get(path) {
