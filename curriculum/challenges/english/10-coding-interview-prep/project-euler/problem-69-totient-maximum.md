@@ -8,11 +8,11 @@ dashedName: problem-69-totient-maximum
 
 # --description--
 
-Euler's Totient function, φ(`n`) \[sometimes called the phi function], is used to determine the number of numbers less than `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6.
+Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is used to determine the number of numbers less than `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, ${\phi}(9) = 6$.
 
 <div style='margin-left: 4em;'>
 
-| <var>n</var> | Relatively Prime | φ(<var>n</var>) | <var>n</var>/φ(<var>n</var>) |
+| $n$ | $\text{Relatively Prime}$ | $\displaystyle{\phi}(n)$ | $\displaystyle\frac{n}{{\phi}(n)}$ |
 | ------------ | ---------------- | --------------- | ---------------------------- |
 | 2            | 1                | 1               | 2                            |
 | 3            | 1,2              | 2               | 1.5                          |
@@ -26,7 +26,7 @@ Euler's Totient function, φ(`n`) \[sometimes called the phi function], is used 
 
 </div>
 
-It can be seen that `n`=6 produces a maximum `n`/φ(`n`) for `n` ≤ 10.
+It can be seen that `n` = 6 produces a maximum $\displaystyle\frac{n}{{\phi}(n)}$ for `n` ≤ 10.
 
 Find the value of `n` ≤ `limit` for which $\displaystyle\frac{n}{{\phi(n)}}$ is a maximum.
 
