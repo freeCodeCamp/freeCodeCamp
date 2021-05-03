@@ -24,6 +24,6 @@
   "devDependencies": {
     "bson-objectid": "1.3.1",
     "cross-env": "7.0.3",
-    "gray-matter": "4.0.2"
+    "gray-matter": "4.0.3"
   }
 }
