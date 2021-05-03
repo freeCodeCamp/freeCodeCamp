@@ -7,10 +7,10 @@ dashedName: part-32
 
 # --description--
 
-Starting below the existing coffee/price pair, add the following coffees and prices using an `article` element with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
+Starting below the existing coffee/price pair, add the following Coffee and prices using an `article` element with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
 
 ```bash
-Carmel Macchiato 3.75
+Caramel Macchiato 3.75
 Pumpkin Spice 3.50
 Hazelnut 4.00
 Mocha 4.50
@@ -43,11 +43,11 @@ assert(children[0].innerText.match(/French Vanilla/i));
 assert(children[1].innerText.match(/3.00/i));
 ```
 
-Your second `article` element should have `p` elements with the text `Carmel Macchiato` and `3.75`.
+Your second `article` element should have `p` elements with the text `Caramel Macchiato` and `3.75`.
 
 ```js
 const children = $('article')[1].children;
-assert(children[0].innerText.match(/Carmel Macchiato/i));
+assert(children[0].innerText.match(/Caramel Macchiato/i));
 assert(children[1].innerText.match(/3.75/i));
 ```
 
@@ -96,7 +96,7 @@ assert(children[1].innerText.match(/4.50/i));
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
 --fcc-editable-region--
           <article>
             <p>French Vanilla</p>

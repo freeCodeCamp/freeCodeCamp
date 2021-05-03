@@ -23,7 +23,7 @@ You should have five `.price` elements.
 assert($('.price').length === 5);
 ```
 
-Your `.flavor` elements should be your `p` elements with the text `French Vanilla`, `Carmel Macchiato`, `Pumpkin Spice`, `Hazelnut`, and `Mocha`.
+Your `.flavor` elements should be your `p` elements with the text `French Vanilla`, `Caramel Macchiato`, `Pumpkin Spice`, `Hazelnut`, and `Mocha`.
 
 ```js
 const p = $('p');
@@ -68,13 +68,13 @@ assert(p[10] === price[4]);
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
 --fcc-editable-region--
           <article class="item">
-            <p>Carmel Macchiato</p><p>3.75</p>
+            <p>Caramel Macchiato</p><p>3.75</p>
           </article>
           <article class="item">
             <p>Pumpkin Spice</p><p>3.50</p>

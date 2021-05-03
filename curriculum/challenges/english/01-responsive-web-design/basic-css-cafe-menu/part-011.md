@@ -48,7 +48,7 @@ assert(code.match(/<head>[\w\W\s]*<style>[\w\W\s]*<\/style>[\w\W\s]*<\/head>/i))
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

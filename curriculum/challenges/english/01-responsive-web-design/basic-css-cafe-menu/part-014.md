@@ -62,7 +62,7 @@ assert(code.match(/text-align/g).length === 1);
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

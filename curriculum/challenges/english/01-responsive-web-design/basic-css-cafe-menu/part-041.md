@@ -40,7 +40,7 @@ assert(code.match(/Vanilla<\/p><p/));
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
 --fcc-editable-region--
             <p class="flavor">French Vanilla</p>
@@ -48,7 +48,7 @@ assert(code.match(/Vanilla<\/p><p/));
 --fcc-editable-region--
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>

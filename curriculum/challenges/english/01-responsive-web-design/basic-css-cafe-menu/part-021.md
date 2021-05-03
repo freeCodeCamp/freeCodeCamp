@@ -57,7 +57,7 @@ assert(div.parentElement.tagName === 'BODY');
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

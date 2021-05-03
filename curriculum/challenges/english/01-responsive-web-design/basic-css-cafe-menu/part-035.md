@@ -50,7 +50,7 @@ assert($('.price')[0].innerText.match(/3.00/i));
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article>
             <p class="flavor">French Vanilla</p>
 --fcc-editable-region--
@@ -58,7 +58,7 @@ assert($('.price')[0].innerText.match(/3.00/i));
 --fcc-editable-region--
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>

@@ -58,7 +58,7 @@ assert(meta[0].outerHTML.match(/content=('|")width=device-width, initial-scale=1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

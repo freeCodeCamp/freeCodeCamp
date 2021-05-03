@@ -58,7 +58,7 @@ assert(secondP.innerText.match(/3.00/i));
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
 --fcc-editable-region--
           <article>
           </article>

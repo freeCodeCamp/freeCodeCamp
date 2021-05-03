@@ -50,7 +50,7 @@ assert(bodyBackground === 'rgb(165, 42, 42)');
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

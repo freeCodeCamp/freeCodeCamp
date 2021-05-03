@@ -7,7 +7,7 @@ dashedName: part-90
 
 # --description--
 
-The image you added is not centered horizontally like the `Coffees` heading above it. `img` elements are "like" inline elements.
+The image you added is not centered horizontally like the `Coffee` heading above it. `img` elements are "like" inline elements.
 
 To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
 
@@ -73,13 +73,13 @@ assert(parseInt(left) === parseInt(right));
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>

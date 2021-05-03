@@ -7,7 +7,7 @@ dashedName: part-10
 
 # --description--
 
-Create an `h2` element in the `section` element and give it the text `Coffees`.
+Create an `h2` element in the `section` element and give it the text `Coffee`.
 
 # --hints--
 
@@ -36,11 +36,11 @@ const h2 = document.querySelector('h2');
 assert(h2.parentElement.tagName === 'SECTION');
 ```
 
-Your `h2` element should have the text `Coffees`.
+Your `h2` element should have the text `Coffee`.
 
 ```js
 const h2 = document.querySelector('h2');
-assert(h2.innerText === 'Coffees');
+assert(h2.innerText === 'Coffee');
 ```
 
 # --seed--

@@ -35,6 +35,12 @@ You should have a closing `</title>` tag.
 assert(code.match(/<\/title>/i));
 ```
 
+Your `<title>` element should be nested in your `<head>` element.
+
+```js
+assert(code.match(/<head>\s*<title>.*<\/title>\s*<\/head>/i));
+```
+
 Your `<title>` element should have the text `Camper Cafe Menu`. You may need to check your spelling.
 
 ```js

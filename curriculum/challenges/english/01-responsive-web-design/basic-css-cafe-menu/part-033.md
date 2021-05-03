@@ -52,7 +52,7 @@ assert($('.flavor')[0].innerText.match(/French Vanilla/i));
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article>
 --fcc-editable-region--
             <p>French Vanilla</p>
@@ -60,7 +60,7 @@ assert($('.flavor')[0].innerText.match(/French Vanilla/i));
 --fcc-editable-region--
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>

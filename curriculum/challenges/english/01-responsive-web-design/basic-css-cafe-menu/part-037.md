@@ -9,7 +9,7 @@ dashedName: part-37
 
 That is kind of what you want, but now it would be nice if the flavor and price were on the same line. `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
 
-To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements. Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
+To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements. Add a `class` attribute with the value `item` to first `article` element under the `Coffee` heading.
 
 # --hints--
 
@@ -53,14 +53,14 @@ assert($('article')[0].className === 'item');
       <main>
         <section>
 --fcc-editable-region--
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article>
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
 --fcc-editable-region--
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>

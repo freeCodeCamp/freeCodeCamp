@@ -71,7 +71,7 @@ assert(link.outerHTML.match(/href=('|")styles.css\1/i));
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

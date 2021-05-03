@@ -9,7 +9,7 @@ dashedName: part-89
 
 The menu looks good, but other than the coffee beans background image, it is mainly just text.
 
-Under the `Coffees` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
+Under the `Coffee` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
 
 # --hints--
 
@@ -54,13 +54,13 @@ assert($('img').attr('alt').match(/coffee icon/i));
       <main>
         <section>
 --fcc-editable-region--
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
 --fcc-editable-region--
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>

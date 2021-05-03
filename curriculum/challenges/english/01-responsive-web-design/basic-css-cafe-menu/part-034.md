@@ -50,13 +50,13 @@ assert($('.flavor').css('text-align') === 'left');
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article>
             <p class="flavor">French Vanilla</p>
             <p>3.00</p>
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
