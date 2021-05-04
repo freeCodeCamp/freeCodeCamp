@@ -45,11 +45,11 @@ i18n.use(initReactI18next).init({
     `
     },
     en: {
-      translations: require('./locales/english/translations.json'),
-      trending: require('./locales/english/trending.json'),
-      intro: require('./locales/english/intro.json'),
-      metaTags: require('./locales/english/meta-tags.json'),
-      links: require('./locales/english/links.json')
+      translations: preval`module.exports = require('./locales/english/translations.json')`,
+      trending: preval`module.exports = require('./locales/english/trending.json')`,
+      intro: preval`module.exports = require('./locales/english/intro.json')`,
+      metaTags: preval`module.exports = require('./locales/english/meta-tags.json')`,
+      links: preval`module.exports = require('./locales/english/links.json')`
     }
   },
   ns: ['translations', 'trending', 'intro', 'metaTags', 'links'],
