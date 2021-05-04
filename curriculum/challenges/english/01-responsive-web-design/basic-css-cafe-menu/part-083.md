@@ -7,7 +7,7 @@ dashedName: part-83
 
 # --description--
 
-You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
+You change properties of a link when the link is actually being clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
 
 Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
 
@@ -178,4 +178,3 @@ a:hover {
 --fcc-editable-region--
 
 ```
-

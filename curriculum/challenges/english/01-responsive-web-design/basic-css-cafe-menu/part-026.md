@@ -28,7 +28,6 @@ Your `div` should be horizontally centered.
 ```js
 const divLeft = $('div').css('margin-left');
 const divRight = $('div').css('margin-right');
-console.log(parseInt(divLeft))
 assert(parseInt(divLeft) === parseInt(divRight));
 ```
 
@@ -79,4 +78,3 @@ div {
 }
 --fcc-editable-region--
 ```
-

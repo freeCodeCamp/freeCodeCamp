@@ -21,7 +21,6 @@ Your body element should have a burlywood background.
 
 ```js
 const bodyBackground = $('body').css('background-color');
-console.log(bodyBackground)
 assert(bodyBackground === 'rgb(222, 184, 135)');
 ```
 
@@ -62,4 +61,3 @@ h1, h2, p {
   text-align: center;
 }
 ```
-
