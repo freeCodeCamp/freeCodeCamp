@@ -121,7 +121,7 @@
     "jest": "24.9.0",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "10.5.4",
     "lodash": "4.17.21",
     "markdownlint": "0.21.0",
     "npm-run-all": "4.1.5",
