@@ -50,6 +50,12 @@ assert.strictEqual(diophantineEquation(7), 5);
 assert.strictEqual(diophantineEquation(100), 61);
 ```
 
+`diophantineEquation(409)` should return `409`.
+
+```
+assert.strictEqual(diophantineEquation(409), 409);
+```
+
 `diophantineEquation(500)` should return `421`.
 
 ```
