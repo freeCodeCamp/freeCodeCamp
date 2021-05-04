@@ -1,3 +1,5 @@
+/* global preval */
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -12,13 +14,35 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'en',
   lng: i18nextCode,
   // we only load one language since each language will have it's own server
+  // They need to be evaluated ahead of time, to prevent Webpack from bundling
+  // the entire locales directory.
   resources: {
     [i18nextCode]: {
-      translations: require(`./locales/${clientLocale}/translations.json`),
-      trending: require(`./locales/${clientLocale}/trending.json`),
-      intro: require(`./locales/${clientLocale}/intro.json`),
-      metaTags: require(`./locales/${clientLocale}/meta-tags.json`),
-      links: require(`./locales/${clientLocale}/links.json`)
+      translations: preval`
+      const envData = require('../../config/env.json');
+      const { clientLocale } = envData;
+      module.exports = require('./locales/' + clientLocale + '/translations.json');
+    `,
+      trending: preval`
+      const envData = require('../../config/env.json');
+      const { clientLocale } = envData;
+      module.exports = require('./locales/' + clientLocale + '/trending.json');
+    `,
+      intro: preval`
+      const envData = require('../../config/env.json');
+      const { clientLocale } = envData;
+      module.exports = require('./locales/' + clientLocale + '/intro.json');
+    `,
+      metaTags: preval`
+      const envData = require('../../config/env.json');
+      const { clientLocale } = envData;
+      module.exports = require('./locales/' + clientLocale + '/meta-tags.json');
+    `,
+      links: preval`
+      const envData = require('../../config/env.json');
+      const { clientLocale } = envData;
+      module.exports = require('./locales/' + clientLocale + '/links.json');
+    `
     },
     en: {
       translations: require('./locales/english/translations.json'),
