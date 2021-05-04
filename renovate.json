@@ -7,6 +7,9 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
+    },
+    {
+      "rebaseWhen": "behind-base-branch"
     }
   ],
   "ignorePaths": [
