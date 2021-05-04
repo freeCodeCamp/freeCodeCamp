@@ -66,8 +66,6 @@ Cypress.Commands.add('createSpecFiles', () => {
   cy.task('updateSpecFiles');
 });
 
-Cypress.Commands.add('testChallenges', challenge => {
-  cy.visit(challenge);
-
+Cypress.Commands.add('testChallenges', () => {
   cy.get('body').should('be.visible');
 });

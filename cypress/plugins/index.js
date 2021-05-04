@@ -67,15 +67,21 @@ function createSpecFiles() {
           
           challengePaths.forEach(challenge => {
             let challengeName = challenge.split('/');
+            describe('loading challenge', () => {
           
-            it(
-              'Challenge ' +
-                challengeName[challengeName.length - 1] +
-                ' should work correctly',
-              () => {
-                cy.testChallenges(challenge);
-              }
-            );
+              before(() => {
+                cy.visit(challenge)
+              })
+          
+              it(
+                'Challenge ' +
+                  challengeName[challengeName.length - 1] +
+                  ' should work correctly',
+                () => {
+                  cy.testChallenges(challenge);
+                }
+              );
+            })
           });`
         );
       }
