@@ -8,6 +8,11 @@
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
       "rebaseWhen": "behind-base-branch"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "rebaseWhen": "behind-base-branch"
     }
   ],
   "ignorePaths": [
