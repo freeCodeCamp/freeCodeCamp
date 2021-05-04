@@ -17,15 +17,6 @@ export const scriptRemover = id => {
   }
 };
 
-export const stripeScriptLoader = onload =>
-  scriptLoader(
-    'stripe-js',
-    'stripe-js',
-    false,
-    'https://js.stripe.com/v3/',
-    onload
-  );
-
 export const mathJaxScriptLoader = () =>
   scriptLoader(
     'mathjax',

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connectStateResults, connectHits } from 'react-instantsearch-dom';
-import isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 

@@ -55,11 +55,7 @@ function DonateModal({
 }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const { t } = useTranslation();
-  const handleProcessing = (
-    duration,
-    amount,
-    action = 'stripe form submission'
-  ) => {
+  const handleProcessing = (duration, amount, action) => {
     executeGA({
       type: 'event',
       data: {

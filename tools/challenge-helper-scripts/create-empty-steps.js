@@ -22,8 +22,8 @@ if (!num) {
 num = parseInt(num, 10);
 const stepStart = parseInt(start, 10);
 
-if (num < 1 || num > 20) {
-  throw `No steps created. arg 'num' must be between 1 and 20 inclusive`;
+if (num < 1 || num > 100) {
+  throw `No steps created. arg 'num' must be between 1 and 100 inclusive`;
 }
 
 const maxStepNum = stepStart + num - 1;

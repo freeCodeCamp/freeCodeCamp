@@ -1,6 +1,6 @@
 import React, { Component, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { reverse, sortBy } from 'lodash';
+import { reverse, sortBy } from 'lodash-es';
 import {
   Button,
   Modal,

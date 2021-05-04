@@ -11,7 +11,7 @@ import {
   cancel
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
-import escape from 'lodash/escape';
+import { escape } from 'lodash-es';
 import i18next from 'i18next';
 
 import {
@@ -93,7 +93,7 @@ export function* executeChallengeSaga({
     const testRunner = yield call(
       getTestRunner,
       buildData,
-      { proxyLogger },
+      { proxyLogger, removeComments: challengeMeta.removeComments },
       document
     );
     const testResults = yield executeTests(testRunner, tests);
@@ -208,7 +208,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const document = yield getContext('document');
         yield call(updatePreview, buildData, document, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = getTestRunner(buildData, { proxyLogger });
+        const runUserCode = getTestRunner(buildData, {
+          proxyLogger,
+          removeComments: challengeMeta.removeComments
+        });
         // without a testString the testRunner just evaluates the user's code
         yield call(runUserCode, null, previewTimeout);
       }

@@ -40,7 +40,7 @@ const propTypes = {
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
   executeGA: PropTypes.func,
   isExpanded: PropTypes.bool,
-  superBlockDashedName: PropTypes.string,
+  superBlock: PropTypes.string,
   t: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired
 };
@@ -90,7 +90,7 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      superBlockDashedName,
+      superBlock,
       t
     } = this.props;
 
@@ -123,9 +123,7 @@ export class Block extends Component {
       );
     });
 
-    const blockIntroObj = t(
-      `intro:${superBlockDashedName}.blocks.${blockDashedName}`
-    );
+    const blockIntroObj = t(`intro:${superBlock}.blocks.${blockDashedName}`);
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
     const {
@@ -144,7 +142,7 @@ export class Block extends Component {
                 <span className='block-link-icon'>#</span>
               </h3>
             </a>
-            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
@@ -172,7 +170,7 @@ export class Block extends Component {
                 <span className='block-link-icon'>#</span>
               </h3>
             </a>
-            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'

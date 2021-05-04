@@ -6,7 +6,7 @@ import { maybeUrlRE } from '../utils';
 import { Spacer, Link } from '../components/helpers';
 import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
-import { find, first } from 'lodash';
+import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';
 
 const propTypes = {
@@ -125,8 +125,8 @@ const ShowProjectLinks = props => {
       ];
       return legacyCerts.map((cert, ind) => {
         const mapToUse = projectMap[cert.title] || legacyProjectMap[cert.title];
-        const { superBlock } = first(mapToUse);
-        const certLocation = `/certification/${username}/${superBlock}`;
+        const { certSlug } = first(mapToUse);
+        const certLocation = `/certification/${username}/${certSlug}`;
         return (
           <li key={ind}>
             <a

@@ -9,7 +9,7 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --description--
 
-Continuing with the date theme, HTML5 also introduced the `time` element along with a `datetime` attribute to standardize times. The `datetime` attribute is an inline element that can wrap a date or time on a page. A `datetime` attribute holds a valid format of that date. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's informally or colloquially written in the text.
+Continuing with the date theme, HTML5 also introduced the `time` element along with a `datetime` attribute to standardize times. The `time` element is an inline element that can wrap a date or time on a page. A `datetime` attribute holds a valid format of that date. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's informally or colloquially written in the text.
 
 Here's an example:
 
@@ -19,7 +19,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the text `Thursday, September 15<sup>th<sup>` and add a `datetime` attribute to it set to `2016-09-15`.
+Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the text `Thursday, September 15<sup>th</sup>` and add a `datetime` attribute to it set to `2016-09-15`.
 
 # --hints--
 

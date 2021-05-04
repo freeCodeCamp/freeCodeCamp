@@ -65,7 +65,7 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 `copyMachine` 函数中应对 `arr` 使用展开运算符（`spread operator`）。
 
 ```js
-assert(__helpers.removeJSComments(code).match(/\.\.\.arr/));
+assert(code.match(/\.\.\.arr/));
 ```
 
 # --seed--

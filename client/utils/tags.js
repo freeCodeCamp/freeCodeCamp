@@ -1,12 +1,18 @@
 import React from 'react';
 import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
+import psl from 'psl';
+import env from '../../config/env.json';
+
+const { homeLocation } = env;
 
 export const getheadTagComponents = () => {
   const socialImage =
     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
+
   const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
-  return [
+
+  let headTags = [
     <link
       as='style'
       href={pathToBootstrap}
@@ -47,27 +53,68 @@ export const getheadTagComponents = () => {
       name='monetization'
     />
   ];
+  return injectConditionalTags(headTags, homeLocation);
+};
+
+// strips subpath and protocol
+
+export const injectConditionalTags = (tagsArray, homeLocation) => {
+  if (homeLocation.includes('localhost')) return tagsArray;
+
+  const parsedHomeUrl = psl.parse(new URL(homeLocation).host);
+
+  // inject gap all production languages except Chinese
+  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {
+    tagsArray.push(
+      <script
+        href={withPrefix('/misc/gap-org.js')}
+        id='gap-org'
+        key='gap-org'
+        rel='stylesheet'
+      />
+    );
+  }
+
+  // inject gap for staging
+  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'dev') {
+    tagsArray.push(
+      <script
+        href={withPrefix('/misc/gap-dev.js')}
+        id='gap-dev'
+        key='gap-dev'
+        rel='stylesheet'
+      />
+    );
+  }
+
+  // inject cap and Chinese gap for production Chinese
+  if (parsedHomeUrl.subdomain === 'chinese' && parsedHomeUrl.tld === 'org') {
+    tagsArray.push(
+      <scripts
+        href={withPrefix('/misc/cap.js')}
+        id='cap'
+        key='cap'
+        rel='stylesheet'
+      />,
+      <script
+        href={withPrefix('/misc/gap-org-chinese.js')}
+        id='gap-org-chinese'
+        key='gap-org-chinese'
+        rel='stylesheet'
+      />
+    );
+  }
+  return tagsArray;
 };
 
 export const getPostBodyComponents = pathname => {
   let scripts = [];
-  const challengesPathRE = new RegExp('/learn/[^/]+/[^/]+/[^/]+/?$');
-  const donatePathRE = new RegExp('/donate/?$');
   const mathJaxScriptElement = (
     <script
       async={false}
       id='mathjax'
       key='mathjax'
       src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
-      type='text/javascript'
-    />
-  );
-  const stripeScriptElement = (
-    <script
-      async={true}
-      id='stripe-js'
-      key='stripe-js'
-      src='https://js.stripe.com/v3/'
       type='text/javascript'
     />
   );
@@ -78,8 +125,6 @@ export const getPostBodyComponents = pathname => {
   ) {
     scripts.push(mathJaxScriptElement);
   }
-  if (challengesPathRE.test(pathname) || donatePathRE.test(pathname)) {
-    scripts.push(stripeScriptElement);
-  }
+
   return scripts.filter(Boolean);
 };

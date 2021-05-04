@@ -45,7 +45,7 @@ assert(
 All HTML elements after the closing `style` tag should be nested in `.container-fluid`.
 
 ```js
-assert($('.container-fluid').children().length >= 8);
+assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').has("style").length && !$('.container-fluid').has("link").length);
 ```
 
 # --seed--

@@ -14,7 +14,7 @@ import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { getTargetEditor } from '../utils/getTargetEditor';
 import { completedChallengesSelector } from '../../../redux';
-import { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash-es';
 
 export const ns = 'challenge';
 export const backendNS = 'backendChallenge';

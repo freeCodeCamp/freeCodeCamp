@@ -47,8 +47,8 @@ export function getUserProfile(username) {
   return get(`/api/users/get-public-profile?username=${username}`);
 }
 
-export function getShowCert(username, cert) {
-  return get(`/certificate/showCert/${username}/${cert}`);
+export function getShowCert(username, certSlug) {
+  return get(`/certificate/showCert/${username}/${certSlug}`);
 }
 
 export function getUsernameExists(username) {
@@ -60,16 +60,9 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
-export function postChargeStripe(body) {
-  return post('/donate/charge-stripe', body);
-}
 
 export function addDonation(body) {
   return post('/donate/add-donation', body);
-}
-
-export function postCreateStripeSession(body) {
-  return post('/donate/create-stripe-session', body);
 }
 
 export function putUpdateLegacyCert(body) {
@@ -114,8 +107,8 @@ export function putUserUpdateEmail(email) {
   return put('/update-my-email', { email });
 }
 
-export function putVerifyCert(superBlock) {
-  return put('/certificate/verify', { superBlock });
+export function putVerifyCert(certSlug) {
+  return put('/certificate/verify', { certSlug });
 }
 
 /** DELETE **/
