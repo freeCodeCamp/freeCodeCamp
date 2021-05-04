@@ -12,20 +12,38 @@ Euler's Totient function, φ(`n`) \[sometimes called the phi function], is used 
 
 Interestingly, φ(87109)=79180, and it can be seen that 87109 is a permutation of 79180.
 
-Find the value of `n`, 1 &lt; `n` &lt; 10<sup>7</sup>, for which φ(`n`) is a permutation of `n` and the ratio `n`/φ(`n`) produces a minimum.
+Find the value of `n`, 1 &lt; `n` &lt; `limit`, for which ${\phi}(n)$ is a permutation of `n` and the ratio $\displaystyle\frac{n}{{\phi}(n)}$ produces a minimum.
 
 # --hints--
 
-`totientPermutation()` should return a number.
+`totientPermutation(10000)` should return a number.
 
 ```js
-assert(typeof totientPermutation() === 'number');
+assert(typeof totientPermutation(10000) === 'number');
 ```
 
-`totientPermutation()` should return 8319823.
+`totientPermutation(10000)` should return `4435`.
 
 ```js
-assert.strictEqual(totientPermutation(), 8319823);
+assert.strictEqual(totientPermutation(10000), 4435);
+```
+
+`totientPermutation(100000)` should return `75841`.
+
+```js
+assert.strictEqual(totientPermutation(100000), 75841);
+```
+
+`totientPermutation(500000)` should return `474883`.
+
+```js
+assert.strictEqual(totientPermutation(500000), 474883);
+```
+
+`totientPermutation(10000000)` should return `8319823`.
+
+```js
+assert.strictEqual(totientPermutation(10000000), 8319823);
 ```
 
 # --seed--
@@ -33,12 +51,12 @@ assert.strictEqual(totientPermutation(), 8319823);
 ## --seed-contents--
 
 ```js
-function totientPermutation() {
+function totientPermutation(limit) {
 
   return true;
 }
 
-totientPermutation();
+totientPermutation(10000);
 ```
 
 # --solutions--
