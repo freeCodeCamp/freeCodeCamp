@@ -68,4 +68,6 @@ Cypress.Commands.add('createSpecFiles', () => {
 
 Cypress.Commands.add('testChallenges', challenge => {
   cy.visit(challenge);
+
+  cy.get('body').should('be.visible');
 });
