@@ -24,10 +24,16 @@ You should not change your existing `head` element. Make sure you did not delete
 assert($('head').length === 1);
 ```
 
+Your `link` element should be closed properly.
+
+```js
+assert(code.match(/<link[\w\W\s]\/>/i));
+```
+
 Your `link` element should be within your `head` element.
 
 ```js
-assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*>[\w\W\s]*<\/head>/i))
+assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/>[\w\W\s]*<\/head>/i))
 ```
 
 Your `link` element should have a `rel` attribute with the value `stylesheet`.

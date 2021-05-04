@@ -9,7 +9,7 @@ dashedName: part-67
 
 You can use an `hr` element to display a divider between sections of different content.
 
-First, add an `hr` element between the first `header` element and the `main` element.
+First, add an `hr` element between the first `header` element and the `main` element. Note that `hr` elements are self closing.
 
 # --hints--
 
@@ -17,6 +17,7 @@ You should add an `hr` element. `hr` elements are self-closing.
 
 ```js
 assert(code.match(/<hr\s?\/?>/i));
+assert(!code.match(/<\/hr>/i));
 ```
 
 You should not change your existing `header` element.
