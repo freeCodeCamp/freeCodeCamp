@@ -21,27 +21,52 @@ i18n.use(initReactI18next).init({
       translations: preval`
       const envData = require('../../config/env.json');
       const { clientLocale } = envData;
-      module.exports = require('./locales/' + clientLocale + '/translations.json');
+      // to avoid double imports, when the locale is english
+      if (clientLocale === 'english') {
+        module.exports = {};
+      } else {
+        module.exports = require('./locales/' + clientLocale + '/translations.json');
+      }
     `,
       trending: preval`
       const envData = require('../../config/env.json');
       const { clientLocale } = envData;
-      module.exports = require('./locales/' + clientLocale + '/trending.json');
+      // to avoid double imports, when the locale is english
+      if (clientLocale === 'english') {
+        module.exports = {};
+      } else {
+        module.exports = require('./locales/' + clientLocale + '/trending.json');
+      }
     `,
       intro: preval`
       const envData = require('../../config/env.json');
       const { clientLocale } = envData;
-      module.exports = require('./locales/' + clientLocale + '/intro.json');
+      // to avoid double imports, when the locale is english
+      if (clientLocale === 'english') {
+        module.exports = {};
+      } else {
+        module.exports = require('./locales/' + clientLocale + '/intro.json');
+      }
     `,
       metaTags: preval`
       const envData = require('../../config/env.json');
       const { clientLocale } = envData;
-      module.exports = require('./locales/' + clientLocale + '/meta-tags.json');
+      // to avoid double imports, when the locale is english
+      if (clientLocale === 'english') {
+        module.exports = {};
+      } else {
+        module.exports = require('./locales/' + clientLocale + '/meta-tags.json');
+      }
     `,
       links: preval`
       const envData = require('../../config/env.json');
       const { clientLocale } = envData;
-      module.exports = require('./locales/' + clientLocale + '/links.json');
+      // to avoid double imports, when the locale is english
+      if (clientLocale === 'english') {
+        module.exports = {};
+      } else {
+        module.exports = require('./locales/' + clientLocale + '/links.json');
+      }
     `
     },
     en: {
