@@ -100,7 +100,8 @@
     }
   },
   "dependencies": {
-    "dotenv": "8.2.0"
+    "dotenv": "8.2.0",
+    "invariant": "2.2.4"
   },
   "devDependencies": {
     "@testing-library/cypress": "7.0.6",
@@ -118,7 +119,7 @@
     "eslint-plugin-react-hooks": "2.5.1",
     "execa": "4.0.3",
     "husky": "3.1.0",
-    "jest": "24.9.0",
+    "jest": "26.6.3",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
     "lint-staged": "8.2.1",
