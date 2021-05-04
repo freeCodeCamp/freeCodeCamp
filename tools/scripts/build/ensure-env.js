@@ -45,7 +45,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'showUpcomingChanges'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
-  const donationKeys = ['stripePublicKey', 'paypalClientId'];
+  const donationKeys = ['paypalClientId'];
 
   const expectedVariables = locationKeys.concat(
     deploymentKeys,

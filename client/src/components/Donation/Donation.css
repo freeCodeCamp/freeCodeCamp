@@ -48,6 +48,10 @@
   font-weight: 700;
 }
 
+.paypal-buttons-container {
+  min-height: 142px;
+}
+
 .donate-input-element {
   padding-top: 8px;
 }
@@ -56,8 +60,7 @@
   color: #707070;
 }
 
-.donation-form .form-control:focus,
-.StripeElement--focus {
+.donation-form .form-control:focus {
   border-color: #66afe9;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
@@ -66,7 +69,7 @@
 
 .donation-form .email--invalid.form-control:focus,
 .donation-form .email--invalid,
-.donation-form .StripeElement--invalid {
+.donation-form {
   border-color: #eb1c26;
   color: #eb1c26;
 }
@@ -383,7 +386,8 @@ button#confirm-donation-btn:hover {
 
 .donate-btn-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .donate-btn-group > * {
