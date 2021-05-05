@@ -1,5 +1,9 @@
 name: Cypress
-on: [push, pull_request]
+on: 
+  push:
+    branches_ignore:
+      - 'renovate/**'
+  pull_request:
 
 jobs:
   cypress-run:
