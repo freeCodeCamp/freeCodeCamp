@@ -81,7 +81,7 @@
     "jquery": "3.6.0",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
-    "monaco-editor": "0.22.3",
+    "monaco-editor": "^0.23.0",
     "nanoid": "3.1.22",
     "path-browserify": "1.0.1",
     "prismjs": "1.23.0",
