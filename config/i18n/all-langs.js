@@ -16,15 +16,15 @@ const i18nextCodes = {
   english: 'en',
   espanol: 'es',
   chinese: 'zh',
-  'chinese-traditional': 'zh'
+  'chinese-traditional': 'zh-Hant'
 };
 
 // These are for the language selector dropdown menu in the footer
 const langDisplayNames = {
   english: 'English',
   espanol: 'Español',
-  chinese: '中文',
-  'chinese-traditional': '古文'
+  chinese: '中文（简体字）',
+  'chinese-traditional': '中文（繁體字）'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
