@@ -2,6 +2,8 @@ name: CodeQL
 
 on:
   push:
+    branches-ignore:
+      - 'renovate/**'
   pull_request:
   schedule:
     - cron: '0 20 * * 5'
