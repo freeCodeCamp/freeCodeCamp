@@ -1,7 +1,6 @@
 /* global expect */
 import {
   availableLangs,
-  i18nextCodes,
   langDisplayNames,
   langCodes
 } from '../../config/i18n/all-langs';
@@ -43,10 +42,6 @@ describe('Locale tests:', () => {
           const exists = fs.existsSync(`${path}/${lang}/${file.name}`);
           expect(exists).toBeTruthy();
         });
-      });
-
-      test(`has a two character entry in the i18nextCodes variable`, () => {
-        expect(i18nextCodes[lang].length).toBe(2);
       });
 
       test(`has an entry in the langDisplayNames variable`, () => {
