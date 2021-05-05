@@ -16,20 +16,44 @@ If we list the set of reduced proper fractions for `d` ≤ 8 in ascending order 
 
 It can be seen that 2/5 is the fraction immediately to the left of 3/7.
 
-By listing the set of reduced proper fractions for `d` ≤ 1,000,000 in ascending order of size, find the numerator of the fraction immediately to the left of 3/7.
+By listing the set of reduced proper fractions for `d` ≤ `limit` in ascending order of size, find the numerator of the fraction immediately to the left of $\frac{3}{7}$.
 
 # --hints--
 
-`orderedFractions()` should return a number.
+`orderedFractions(8)` should return a number.
 
 ```js
-assert(typeof orderedFractions() === 'number');
+assert(typeof orderedFractions(8) === 'number');
 ```
 
-`orderedFractions()` should return 428570.
+`orderedFractions(8)` should return `2`.
 
 ```js
-assert.strictEqual(orderedFractions(), 428570);
+assert.strictEqual(orderedFractions(8), 2);
+```
+
+`orderedFractions(10)` should return `2`.
+
+```js
+assert.strictEqual(orderedFractions(10), 2);
+```
+
+`orderedFractions(9994)` should return `4283`.
+
+```js
+assert.strictEqual(orderedFractions(9994), 4283);
+```
+
+`orderedFractions(500000)` should return `214283`.
+
+```js
+assert.strictEqual(orderedFractions(500000), 214283);
+```
+
+`orderedFractions(1000000)` should return `428570`.
+
+```js
+assert.strictEqual(orderedFractions(1000000), 428570);
 ```
 
 # --seed--
@@ -37,12 +61,12 @@ assert.strictEqual(orderedFractions(), 428570);
 ## --seed-contents--
 
 ```js
-function orderedFractions() {
+function orderedFractions(limit) {
 
   return true;
 }
 
-orderedFractions();
+orderedFractions(8);
 ```
 
 # --solutions--
