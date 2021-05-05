@@ -16,7 +16,7 @@ const i18nextCodes = {
   english: 'en',
   espanol: 'es',
   chinese: 'zh',
-  'chinese-traditional': 'zh'
+  'chinese-traditional': 'zh-Hant'
 };
 
 // These are for the language selector dropdown menu in the footer
