@@ -11,6 +11,7 @@
     },
     {
       "matchUpdateTypes": ["major"],
+      "baseBranches": ["renovate-major"],
       "automerge": false,
       "rebaseWhen": "behind-base-branch"
     }

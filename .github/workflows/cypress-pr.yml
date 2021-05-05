@@ -72,3 +72,9 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
+
+      - name: Upload Webpack stats
+        uses: actions/upload-artifact@v2
+        with:
+          name: webpack-stats
+          path: client/public/stats.json
