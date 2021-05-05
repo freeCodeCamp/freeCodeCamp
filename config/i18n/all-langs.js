@@ -23,8 +23,8 @@ const i18nextCodes = {
 const langDisplayNames = {
   english: 'English',
   espanol: 'Español',
-  chinese: '中文',
-  'chinese-traditional': '古文'
+  chinese: '中文（简体字）',
+  'chinese-traditional': '中文（繁體字）'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
