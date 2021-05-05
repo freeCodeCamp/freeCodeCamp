@@ -1,7 +1,7 @@
 name: Cypress
 on: 
   push:
-    branches_ignore:
+    branches-ignore:
       - 'renovate/**'
   pull_request:
 
