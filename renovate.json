@@ -6,7 +6,14 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchCurrentVersion": "!/^0/",
-      "automerge": true
+      "automerge": true,
+      "rebaseWhen": "behind-base-branch"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "baseBranches": ["renovate-major"],
+      "automerge": false,
+      "rebaseWhen": "behind-base-branch"
     }
   ],
   "ignorePaths": [

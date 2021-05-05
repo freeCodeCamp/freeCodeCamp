@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Line up Form Elements Responsively with Bootstrap
+title: Alinee elementos de formulario de forma responsiva con Bootstrap
 challengeType: 0
 forumTopicId: 18225
 required:
@@ -13,15 +13,15 @@ dashedName: line-up-form-elements-responsively-with-bootstrap
 
 # --description--
 
-Now let's get your form `input` and your submission `button` on the same line. We'll do this the same way we have previously: by using a `div` element with the class `row`, and other `div` elements within it using the `col-xs-*` class.
+Ahora coloquemos tu formulario `input` y tu `button`de envío en la misma línea. Lo haremos de la misma forma que lo hemos hecho anteriormente: usando un elemento `div` con la clase `row`, y otros elementos `div` dentro de el usando la clase `col-xs-*`.
 
-Nest both your form's text `input` and submit `button` within a `div` with the class `row`. Nest your form's text `input` within a div with the class of `col-xs-7`. Nest your form's submit `button` in a `div` with the class `col-xs-5`.
+Anida tanto el campo de texto `input` del formulario como el botón de envío `button` dentro de un `div` con la clase `row`. Incrusta tu campo de texto `input` del formulario dentro de un div con la clase `col-xs-7`. Incrusta tu botón de envió `button` del formulario dentro de un `div`con la clase `col-xs-5`.
 
-This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!
+Este es el ultimo desafío que haremos para nuestra aplicación de fotos de gatos por ahora. ¡Esperamos que hayas disfrutado aprendiendo Font Awesome, Bootstrap y diseño responsivo!
 
 # --hints--
 
-Your form submission button and text input should be nested in a div with class `row`.
+Tu botón de envío del formulario y la entrada de texto deben anidarse en un div con la clase `row`.
 
 ```js
 assert(
@@ -30,19 +30,19 @@ assert(
 );
 ```
 
-Your form text input should be nested in a div with the class `col-xs-7`.
+Tu entrada de texto del formulario debe estar anidada en un div con la clase `col-xs-7`.
 
 ```js
 assert($('div.col-xs-7:has(input[type="text"])').length > 0);
 ```
 
-Your form submission button should be nested in a div with the class `col-xs-5`.
+Tu botón de envío del formulario debe estar anidado en un div con la clase `col-xs-5`.
 
 ```js
 assert($('div.col-xs-5:has(button[type="submit"])').length > 0);
 ```
 
-All of your `div` elements should have closing tags.
+Todos sus elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(

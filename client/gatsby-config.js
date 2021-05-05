@@ -24,6 +24,13 @@ module.exports = {
   },
   pathPrefix: pathPrefix,
   plugins: [
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        analyzerMode: 'disabled',
+        generateStatsFile: true
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
