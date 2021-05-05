@@ -97,7 +97,7 @@
     "react-i18next": "11.8.15",
     "react-instantsearch-dom": "6.11.0",
     "react-lazy-load": "3.1.13",
-    "react-monaco-editor": "0.39.1",
+    "react-monaco-editor": "^0.43.0",
     "react-redux": "5.1.2",
     "react-reflex": "4.0.0",
     "react-responsive": "6.1.2",
