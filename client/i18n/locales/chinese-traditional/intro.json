@@ -1,0 +1,533 @@
+{
+  "responsive-web-design": {
+    "title": "响应式网页设计",
+    "intro": [
+      "在响应式网页设计认证中，你将学习开发者用来编写网页的语言：HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
+      "首先，你将通过编写一个展示猫咪图片的应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，以及通过构建网页表单来学习无障碍的最佳实践。",
+      "最后，你将学习使用 flexbox（弹性盒子）构建一个 Twitter 卡片，以及使用 CSS 网格构建复杂的博客布局，以此学习制作适应不同屏幕大小的网页。"
+    ],
+    "blocks": {
+      "basic-html-and-html5": {
+        "title": "基础 HTML 和 HTML5",
+        "intro": [
+          "HTML 是一种标记语言，使用特殊的语法或标记来向浏览器描述网页的结构。HTML 元素由开始和结束标签构成，标签之间是文本内容。 不同的标签可以让文本内容以标题、段落、列表等形式展现。",
+          "在这个课程中，你将通过编写一个展示猫咪图片的应用，学习最常见的 HTML 元素——它们可以用来构成任何网页。"
+        ]
+      },
+      "basic-css": {
+        "title": "基础 CSS",
+        "intro": [
+          "CSS（级联样式表）告诉浏览器如何显示你在 HTML 中写入的文本和其他内容。你可以使用 CSS 控制 HTML 元素的颜色、字体、大小、间距等许多\b属性。",
+          "现在你已经写好了猫图应用的基本结构，接下来我们用 CSS 给它加一些样式。"
+        ]
+      },
+      "applied-visual-design": {
+        "title": "应用视觉设计",
+        "intro": [
+          "视觉设计结合了排版、色彩理论、图形、动画、页面布局等，以表达独特的信息。",
+          "在这个课程中，你将学习如何将这些不同的视觉设计元素应用到网页上。"
+        ]
+      },
+      "applied-accessibility": {
+        "title": "应用无障碍",
+        "intro": [
+          "在网页开发中，可访问性是指网页内容和用户界面可以被用户理解、浏览并与之交互。这里的用户包括有视觉障碍、听觉障碍或认知障碍的用户。",
+          "在这个课程中，你将学习提升网站可访问性的最佳实践。"
+        ]
+      },
+      "responsive-web-design-principles": {
+        "title": "响应式网页设计原则",
+        "intro": [
+          "人们可能通过形状和大小不同的设备来访问网页。通过响应式网页设计，你可以设计出能灵活适应不同屏幕大小、方向和分辨率的网页。",
+          "在这个课程中，你将学习如何使用 CSS 让你的网页在不同设备上看起来都不错。"
+        ]
+      },
+      "css-flexbox": {
+        "title": "CSS 弹性盒子",
+        "intro": [
+          "Flexbox（弹性盒子）是最新版本的 CSS（即 CSS3）中引入的一种强大且兼容性好的布局方法。使用 flexbox，我们可以很容易地处理好页面上的元素布局，并创建可以自动缩小和放大的动态用户界面。",
+          "在这个课程中，你将通过构建一个 Twitter 卡片来学习 flexbox 和动态布局的基础知识。"
+        ]
+      },
+      "css-grid": {
+        "title": "CSS 网格",
+        "intro": [
+          "CSS 网格是一个较新的标准，用于构建复杂的响应布局。它通过把 HTML 元素转换为具有行和列的网格容器，以便将子元素放置在所需要的位置。",
+          "在这个课程中，你将通过构建不同的复杂布局（包括博客）来学习 CSS 网格的基础知识。"
+        ]
+      },
+      "responsive-web-design-projects": {
+        "title": "响应式网页设计项目",
+        "intro": [
+          "是时候使用你新学到的技能了。通过构建这些项目，你将有机会应用之前学到的所有技巧、原则和概念：HTML、CSS、视觉设计、无障碍等等。",
+          "完成下面的五个网页编程项目，获得响应式网页设计认证。"
+        ]
+      },
+      "basic-html-cat-photo-app": {
+        "title": "基础 HTML 猫图应用",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "basic-css-cafe-menu": {
+        "title": "基础 CSS 咖啡菜单",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-variables-skyline": {
+        "title": "CSS 变量 Skyline",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "javascript-algorithms-and-data-structures": {
+    "title": "JavaScript 算法和数据结构",
+    "intro": [
+      "HTML 和 CSS 控制页面的内容和样式，JavaScript 则用于页面交互。在 JavaScript 算法和数据结构认证中，你将学习 JavaScript 的基础知识，包括变量、 数组、 对象、 循环和函数。",
+      "打好基础之后，你将会通过创建算法来操作字符串、进行阶乘运算甚至计算国际空间站的轨道来应用这些知识。",
+      "在这个过程中，你还会学习两种重要的编程方式或模式：面向对象的编程（OOP）和函数式编程（FP）。"
+    ],
+    "blocks": {
+      "basic-javascript": {
+        "title": "基础 JavaScript",
+        "intro": [
+          "JavaScript 是一种用于网页交互的脚本语言。它和 HTML 和 CSS 一样，是网站的核心技术之一。所有现代浏览器都支持 JavaScript。",
+          "在这个课程中，你将学习JavaScript 中的基本编程概念。你将从数字和字符串等基本数据结构开始，然后学习使用数组、对象、函数、循环、if/else 语句等等。"
+        ]
+      },
+      "es6": {
+        "title": "ES6",
+        "intro": [
+          "ECMAScript（ES）是 JavaScript 的标准。因为所有主流浏览器都遵循此规范，所以 ECMAScript 和 JavaScript 是可以互换的。",
+          "截至目前你所学到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 编写程序。JavaScript 在不断迭代，每年都会发布新功能。",
+          "2015 年发布的 ES6 为该语言增加了许多强大的新功能。在这个课程中，你将学习这些新功能，包括 <code>let</code>、<code>const</code>、箭头函数、类、promises 和模块。"
+        ]
+      },
+      "regular-expressions": {
+        "title": "正则表达式",
+        "intro": [
+          "正则表达式，常常缩写为 “regex” 或 “regexp”，是帮助程序员匹配、搜索和替换文本的模式。正则表达式非常强大，但可能难以阅读，因为它们使用特殊字符来做更复杂更灵活的匹配。",
+          "在这个课程中，你将学习如何使用特殊字符、捕获组、正向或负向先行断言以及其他技巧来匹配你想要的文本。"
+        ]
+      },
+      "debugging": {
+        "title": "调试",
+        "intro": [
+          "调试是检查代码、发现并修复问题的过程。",
+          "代码中的问题通常有三种形式：1）语法错误导致程序停止运行， 2）代码无法执行或具有意外行为导致运行时错误，3）代码有语义（逻辑）错误，没有实现原来的意图。",
+          "在这个课程中，你将学习如何使用 JavaScript 控制台来调试程序，防止出现常见问题。"
+        ]
+      },
+      "basic-data-structures": {
+        "title": "基础数据结构",
+        "intro": [
+          "我们可以通过多种方式存储和访问数据。你已经知道数组和对象了，它们都是常见的 JavaScript 数据结构。",
+          "在基础数据结构课程中，你会更深入地了解数组和对象之间的差异，以及在不同情况下应该使用哪个。你还将学习到一些好用的 JS 方法，例如 <code>splice()</code>，以及使用 <code>Object.keys()</code> 来访问和操作数据。"
+        ]
+      },
+      "basic-algorithm-scripting": {
+        "title": "基础算法",
+        "intro": [
+          "算法是描述如何处理某个问题的一系列步骤。",
+          "要写一个有效的算法，你需要先将一个特定的问题分解为小的部分，并仔细思考如何用代码解决每个部分。",
+          "在这个课程中，你将通过编写算法来实现诸如转换温度、处理复杂的二维数组等，来学习算法思维的基础知识。"
+        ]
+      },
+      "object-oriented-programming": {
+        "title": "面向对象编程",
+        "intro": [
+          "OOP，即面向对象编程，是软件开发过程的主要方法之一。在 OOP 中，我们用对象和类来组织代码，以描述事物的特点以及它们可以做什么。",
+          "在这个课程中，你将会学习 JavaScript 中面向对象编程的基本原则，例如 <code>this</code> 关键词、原型链、构造器和继承。"
+        ]
+      },
+      "functional-programming": {
+        "title": "函数式编程",
+        "intro": [
+          "函数式编程是另一种软件开发方法。在函数式编程中，代码被组织成较小的基本的函数，可以结合起来构建复杂的程序。",
+          "在这个课程中，你将学习函数式编程的核心概念，包括纯函数，如何避免突变，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法编写更整洁的代码。"
+        ]
+      },
+      "intermediate-algorithm-scripting": {
+        "title": "中级算法",
+        "intro": [
+          "现在你了解了算法的基础知识、面向对象编程以及函数式编程。接下来我们将进入中级算法挑战来测试你的技能。"
+        ]
+      },
+      "javascript-algorithms-and-data-structures-projects": {
+        "title": "JavaScript 算法和数据结构项目",
+        "intro": [
+          "是时候用上你新学到的 JavaScript 技能了！接下来的项目和前面的算法挑战很相近，但是难度会更高。",
+          "完成这 5 个 JavaScript 项目，以获得 JavaScript 算法和数据结构认证。"
+        ]
+      },
+      "basic-javascript-rpg-game": {
+        "title": "基础 JavaScript RPG 游戏",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "intermediate-javascript-calorie-counter": {
+        "title": "中级 JavaScript 卡路里计算器",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "functional-programming-spreadsheet": {
+        "title": "函数式编程电子表格",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "front-end-libraries": {
+    "title": "前端开发库",
+    "intro": [
+      "你已经熟悉了 HTML、CSS 和 JavaScript。现在学习行业中一些流行的前端库来提升你的技能吧。",
+      "在前端库认证中，你将学习如何使用 Bootstrap 快速设置网站样式，以及如何在 CSS 样式中添加逻辑，并使用 Sass 对其进行扩展。",
+      "稍后，你将建立一个购物车和其他应用程序，学习如何使用 React 和 Redux 创建强大的单页应用程序（SPAs）。"
+    ],
+    "blocks": {
+      "bootstrap": {
+        "title": "Bootstrap",
+        "intro": [
+          "Bootstrap 一个是用于设计响应性网页和应用程序的前端框架。它对网页开发采用移动优先的方法，具有预定义的 CSS 样式和 class，以及一些 JavaScript 功能。",
+          "在这个课程中，你将学习如何使用 Bootstrap 来建立响应式网页，并使用它的 class 来设置按钮、图像、表格、导航和其他常见元素的样式。"
+        ]
+      },
+      "jquery": {
+        "title": "jQuery",
+        "intro": [
+          "jQuery 是开发者们最常用的 JavaScript 库之一。",
+          "在 jQuery 于 2006 年发布时，各种常用浏览器处理 JavaScript 的方式都略有不同。jQuery 简化了编写客户端 JavaScript 的过程，并确保代码在所有浏览器中以同样的方式运行。",
+          "在这个课程中，你将学习如何使用 jQuery 选择、移除、克隆和修改页面上的不同元素。"
+        ]
+      },
+      "sass": {
+        "title": "SASS",
+        "intro": [
+          "Sass，英文全称为 “Syntactically Awesome StyleSheets”，是对 CSS 的扩展。它添加了一些 CSS 语法不具有的新特性。Sass 简化了 CSS，这让维护样式表变得更容易。",
+          "在 Sass 课程中，你将学习如何将数据存储在变量中、嵌套 CSS、创建可重用的样式、为样式添加逻辑和循环等等。"
+        ]
+      },
+      "react": {
+        "title": "React",
+        "intro": [
+          "React 是一个流行的 JavaScript 库，用于为网页或应用程序构建可重用的组件驱动的用户界面。",
+          "React 将 HTML 与 JavaScript 结合在了一起，以此创建出一个新的标签语言 JSX。React 还使得管理整个应用程序的数据流变得更容易。",
+          "在这个课程中，你将学习如何创建不同的 React 组件，以 state props 管理数据，以及使用不同的生命周期方法（例如 <code>componentDidMount</code>）和更多内容。"
+        ]
+      },
+      "redux": {
+        "title": "Redux",
+        "intro": [
+          "随着应用程序规模和范围的扩大，管理共享数据变得更加困难。 Redux 被定义为 “JavaScript 应用的可预测状态容器”，它有助于确保你的应用能够可预测地运行，并且更容易测试。",
+          "虽然你可以使用任何视图库的 Redux，但我们在这里介绍 Redux，然后在下一组课程中与 React 结合起来。",
+          "在这个课程中，你将学习 Redux stores、actions、reducers 和中间件的基础知识，来管理应用程序的数据。"
+        ]
+      },
+      "react-and-redux": {
+        "title": "React 和 Redux",
+        "intro": [
+          "React 和 Redux 经常一起被提及，这是有充分理由的。创建 Redux 的开发人员是一个 React 开发者，他希望简化不同组件间的数据共享。",
+          "你已经知道了如何使用 Redux 管理共享数据流，是时候将这些知识与 React 结合起来了。在 React 和 Redux 课程中，你将构建一个 React 组件，并学习如何使用 Redux 在组件级别本地管理状态，以及在整个应用程序中管理状态。"
+        ]
+      },
+      "front-end-libraries-projects": {
+        "title": "前端开发库项目",
+        "intro": [
+          "现在是时候应用你的前端开发库技术进行测试。用 Bootstrap、jQuery、Sass、React、和 Redux 构建 5 个项目，测试你到现在所学到的知识。",
+          "完成全部 5 个项目，然后你会获得前端开发库认证。"
+        ]
+      }
+    }
+  },
+  "data-visualization": {
+    "title": "数据可视化",
+    "intro": [
+      "数据无处不在。但是，如果没有上下文，数据就没有多大意义。",
+      "在数据可视化认证中，你会用 D3.js 库来创建表格、图表和地图，以展示不同的数据。",
+      "你还会学习 JSON（JavaScript 对象），以及如何使用 API（应用程序接口）使用在线的数据。"
+    ],
+    "blocks": {
+      "data-visualization-with-d3": {
+        "title": "用 D3 实现数据可视化",
+        "intro": [
+          "D3 或 D3.js 表示数据驱动文档。它是一个用于在浏览器中创建动态和交互式数据视觉化的 JavaScript 库。",
+          "它基于 web 标准，即 HTML、CSS 和 SVG（可缩放矢量图形）技术。",
+          "D3 支持多种不同类型的输入数据格式。 然后，你可以使用它强大的内置方法将这些数据转换成不同的图表、和地图。",
+          "在用 D3 实现数据可视化课程中，你将学习如何使用数据来创建不同的图表、悬停元素及其他内容，用以创建动态和有吸引力的数据可视化。"
+        ]
+      },
+      "json-apis-and-ajax": {
+        "title": "JSON APIs 和 AJAX",
+        "intro": [
+          "类似于 UI 如何帮助人们使用程序，API（应用程序接口）帮助程序与其他程序互动。API 是计算机用来相互沟通的工具，部分用于发送和接收数据。",
+          "程序员在使用 API 的时候，通常会使用 AJAX（同步 JavaScript 和 XML）。AJAX 指的是一组技术，这些技术向服务器提出异步请求以传输数据，然后将任何返回的数据加载到页面。而且在浏览器和服务器之间传输的数据常常是一种 JSON（JavaScript 对象）格式。",
+          "此课程将教你如何在浏览器中使用 API 和不同的 AJAX 技术的基础知识。"
+        ]
+      },
+      "data-visualization-projects": {
+        "title": "数据可视化项目",
+        "intro": [
+          "现在你学习了如何使用 D3 、 APIs 和 AJAX 技术，构建这 5 个数据可视化项目来测试你的技术吧。",
+          "在这些项目中，你需要获取数据并解析数据集，然后使用 D3 创建不同的数据可视化。完成之后，你可以获得数据可视化认证。"
+        ]
+      },
+      "d3-dashboard": {
+        "title": "D3 面板",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "apis-and-microservices": {
+    "title": "APIs 和 微服务",
+    "intro": [
+      "在这之前，你只是在前端使用 JavaScript 来给页面添加交互、解决算法挑战，或构建一个 SP。但 JavaScript 也可以用于后端或者服务器来构建整个 web 应用程序。",
+      "今天，构建应用软件的广受欢迎的方法之一是微服务，这些微服务是一种小型模块化的应用，能够共同形成一个更大的整体。",
+      "在 API 和微服务认证中，你将学习如何使用 Node.js 和 npm（Node 包管理工具）来写后端。你还将使用 Express 框架构建 web 应用程序，并使用 MongoDB 和 Mongoose 库构建一个 People Finder 微服务。"
+    ],
+    "blocks": {
+      "managing-packages-with-npm": {
+        "title": "使用 NPM 管理软件包",
+        "intro": [
+          "npm（Node 包管理工具）是一个命令行工具，用于安装、创建和分享为 Node.js 编写的 JavaScript 代码包。在 npm 上有许多开放源码软件包，所以在项目启动之前，需要一些时间来探索，这样你就不会最后重新创建轮子来处理像日期或从 API 获取数据这样的事项。",
+          "在这个课程中，你将学习使用 npm 的基本知识，包括如何使用 <code>package.json</code> 和如何管理已安装的依赖项。"
+        ]
+      },
+      "basic-node-and-express": {
+        "title": "Node 和 Express 基础",
+        "intro": [
+          "Node.js 是一个 JavaScript 运行时，它允许开发人员在 JavaScript 中写入后端（服务器侧）程序。Node.js 有几个内置的模块——小型、独立的程序——来帮助实现这一点，一些核心模块包括像服务器一样运作的 HTTP 和文件系统，一个读取和修改文件的模块。",
+          "在上一组课程中你学到了怎么从 npm下载和管理软件包，这些软件包是较小模块的集合，可以帮助你打造更大更复杂的程序。",
+          "Express 是一个轻量级的网页应用框架，是最受欢迎的 npm 软件包之一。 Express 提供精简的基本 web 应用程序功能，包括应用的路由。路由在用户访问一个端点如 <pre>/blog</pre> 时将用户导向到相应的页面。",
+          "在这个课程中，你将学习 Node 和 Express 的基础知识，包括如何创建服务器， 处理不同的文件，及处理不同的浏览器请求。"
+        ]
+      },
+      "mongodb-and-mongoose": {
+        "title": "MongoDB 和 Mongose",
+        "intro": [
+          "MongoDB 是一个存储您可以在应用程序中使用的 JSON 文件(或记录)的数据库应用程序。 不同于SQL，另一种类型的数据库。Mongo是一个不相关的或“NoSQL”的数据库。 这意味着Mongo将所有相关数据存储在一个记录中，而不是像SQL数据库中那样在许多预设表中存储。",
+          "Mongoose 是一个受欢迎的 npm 包，通常和 Mongo 一起安装。通过 Mongoose，你可以使用 JavaScript 对象而不是 JSON ，这样就更容易与 Mongo 配合使用。 此外，它允许你为 schema 文件创建蓝图，所以你不会意外地保存错误的数据类型并出现错误。",
+          "在 MongoDB 和 Mongoose 课程中，你将学习使用的基本知识，包括如何建立模型，保存、删除并在数据库中查找文档。"
+        ]
+      },
+      "apis-and-microservices-projects": {
+        "title": "API 和微服务项目",
+        "intro": [
+          "你之前用过 API，但是现在你知道 npm、Node、Express、MongoDB 和 Mongoose，是时候创建应用 了。用你到现在所学的所有知识来创建 5 个不同的微服务，这些微服务是使用范围有限的小应用。",
+          "在创建这些微服务后，你会有 5 个很酷的微服务 API，你可以向朋友、家人和潜在的雇主展示。同时，你也会获得 API 和微服务认证。"
+        ]
+      }
+    }
+  },
+  "quality-assurance": {
+    "title": "质量保证",
+    "intro": [
+      "随着你的程序或网页应用程序变得更加复杂，你将想要测试它们，以确保新的更改不会破坏它们的原有功能。",
+      "在质量保证认证中， 你将学习如何通过 Chai 测试，以确保你的应用程序能够按照你的期望运行。",
+      "然后你将创建一个聊天应用程序来学习高级 Node 和 Express 概念。你还将使用 Pug 作为模板引擎，用于身份验证的 Passport 和 用于服务器和客户端之间实时通信的 Socket.io。"
+    ],
+    "blocks": {
+      "quality-assurance-and-testing-with-chai": {
+        "title": "使用 Chai 进行质量保证和测试",
+        "intro": [
+          "Chai 是一个JavaScript测试库，帮助你确保程序能够在你更改代码后按照你的期望运行。",
+          "使用 Chai，你可以写测试描述你的程序的要求，并查看你的程序是否符合这些要求。",
+          "在这个课程中，你会了解测试 JavaScript 应用程序的断言、测试 API 和其他测试 JavaScript 应用的基础知识。"
+        ]
+      },
+      "advanced-node-and-express": {
+        "title": "高级 Node 和 Express",
+        "intro": [
+          "现在是时候来使用高级 Node.js 和 Express.js 创建一个具有登录系统的聊天应用了。",
+          "为了创建一个安全的登录系统，你需要学习验证，这是一个验证个人身份或者过程的的操作。",
+          "在这个课程中，你将学习如何使用 Passport 管理身份验证，如何使用 Pug 创建可重用的模板以快速构建前端，以及如何使用 web sockets 在客户端和服务器之间进行实时通信。"
+        ]
+      },
+      "quality-assurance-projects": {
+        "title": "质量保证项目",
+        "intro": [
+          "现在你对前端和后端都非常精通，是时候应用你所学到的所有技能和概念了。你将构建 5 个不同的 web 应用程序，并为每个应用程序编写测试，以确保它们正常工作并可以处理不同的情况。",
+          "完成这 5 个质量保证项目后，你将获得一个新的认证，你可以在自己的作品集中展示这 5 个项目和认证。"
+        ]
+      }
+    }
+  },
+  "scientific-computing-with-python": {
+    "title": "Python 和科学计算",
+    "intro": [
+      "Python 是目前最火、最灵活的编程语言之一。你可以用它来做很多事，包括从基础算法到机器学习。",
+      "在这个认证中，你会学习 Python 基础知识，例如变量、循环、条件和函数。然后你会马上很快学习到复杂数据结构、网络，关系数据库和数据可视化。"
+    ],
+    "blocks": {
+      "python-for-everybody": {
+        "title": "通用 Python 课程",
+        "intro": [
+          "通用 Python 课程是一个讲解 Python 3 基础的系列免费视频课程。",
+          "这些课程是 Dr. Charles Severance（Dr. Chuck）创建的。他是密歇根信息大学的实践教授，他教授各种技术课程，包括编程、数据库设计和 web 开发。"
+        ]
+      },
+      "scientific-computing-with-python-projects": {
+        "title": "Python 与科学计算项目",
+        "intro": [
+          "是时候测试一下你的 Python 技术了。通过完成这些项目，你可以证明和展示自己已经掌握了 Python 基础知识，并能获得认证。"
+        ]
+      }
+    }
+  },
+  "data-analysis-with-python": {
+    "title": "Python 和数据分析",
+    "intro": [
+      "数据分析已经存在很长时间了。但是直到几年前，开发人员还是使用昂贵的闭源工具（如 Tableau）来做数据分析。如今，Python、SQL 和其他开放的库永远改变了数据分析领域。",
+      "在这个认证中，你会学习使用 Python 做数据分析的基础知识。然后，你会学习怎么从 CSV、SQL 等数据源读取数据，并且怎么使用 Numpy、Pandas、Matplotlib 和 Seaborn 等库来处理和可视化数据。"
+    ],
+    "blocks": {
+      "data-analysis-with-python-course": {
+        "title": "Python 和数据分析",
+        "intro": [
+          "在 Santiago Basulto 创建的这些综合视频课程中，你会学习整个数据分析的过程。你会从 CSV、SQL、Excel 读取数据，用 Numpy和 Pandas 来处理这些数据，以及使用 Matplotlib 和 Seaborn 来可视化数据。",
+          "此外，你还可以通过完整的 Jupyter Notebook 课程和 Python 资料来刷新自己的编程技能。"
+        ]
+      },
+      "numpy": {
+        "title": "Numpy",
+        "intro": [
+          "通过下方 Keith Galli 创建的视频课程学习 NumPy 库基础知识。",
+          "在这个课程中，你将学习如何使用 NumPy 以及它与 Python 内置列表的区别。你还将学习如何使用 NumPy 编程，以及索引、调整形状、应用统计信息等等知识。"
+        ]
+      },
+      "data-analysis-with-python-projects": {
+        "title": "Python 与数据分析",
+        "intro": [
+          "使用 Python 分析数据的方法很多。通过完成这些项目，你可以证明自己掌握了使用 Python 进行数据分析的基础知识。",
+          "完成所有项目，即可获得 Python 与数据分析认证。"
+        ]
+      }
+    }
+  },
+  "information-security": {
+    "title": "信息安全",
+    "intro": [
+      "通过我们在线上的一切行为，我们的电子邮件地址、密码、电话号码等等大量敏感信息处于风险之中。",
+      "通过信息安全认证，你将使用 HelmetJS 构建安全的 Web 应用程序，以学习信息安全的基础知识。",
+      "你还将使用 Python 构建一个 TCP 客户端以及一个 Nmap 和端口扫描程序，从而学习渗透测试的基础知识。渗透测试是良好信息安全的重要组成部分。"
+    ],
+    "blocks": {
+      "information-security-with-helmetjs": {
+        "title": "HelmetJS 与信息安全",
+        "intro": [
+          "这个课程的重点是 HelmetJS。HelmetJS 是一种用于基于 Express 的应用程序的中间件，可以自动设置 HTTP 标头。这样，它可以防止敏感信息被无意间在服务器和客户端之间传递。",
+          "以下课程将帮助你了解如何保护你的网站免遭恶意攻击。"
+        ]
+      },
+      "python-for-penetration-testing": {
+        "title": "Python 与渗透测试",
+        "intro": [
+          "这些视频课程教你使用 Python 进行渗透测试。渗透测试（penetration testing）也叫作 “pen test”，它是对系统的模拟攻击，以检查漏洞。",
+          "在这个课程中，你将学习套接字、创建 TCP 服务器和客户端、构建 Nmap 扫描仪以及渗透测试人员日常使用的其他工具和技术。"
+        ]
+      },
+      "information-security-projects": {
+        "title": "信息安全项目",
+        "intro": [
+          "现在是时候运用你的信息安全技能了。通过这些项目，你可以运用所学的信息安全技能、原理和概念。",
+          "完成后，您将拥有大量的信息安全项目，并获得认证，你可以向朋友、家人和雇主炫耀的证书。"
+        ]
+      }
+    }
+  },
+  "machine-learning-with-python": {
+    "title": "Python 与机器学习",
+    "intro": [
+      "机器学习有许多实际应用程序，你可以在项目中或工作中使用它们。",
+      "在这个认证中，你将使用 TensorFlow 框架构建多个神经网络，同时，你将探索更先进的技术，例如自然语言处理和强化学习。",
+      "你还将学习神经网络，并了解深度、递归和卷积神经网络背后的原理。"
+    ],
+    "blocks": {
+      "tensorflow": {
+        "title": "Tensorflow",
+        "intro": [
+          "TensorFlow 是一个开源框架，使机器学习和神经网络更易于使用。",
+          "以下视频课程是由 Tim Ruscica 创建的，也叫作 “Tech With Tim”。这个课程将帮助你了解 TensorFlow 及它的一些强大功能。"
+        ]
+      },
+      "how-neural-networks-work": {
+        "title": "神经网络如何工作",
+        "intro": [
+          "神经网络是如今我们所谓的人工智能的核心。但是从历史上看，它们一直很难理解，特别是对于机器学习领域的初学者来说。",
+          "即使你刚开始学习神经网络，Brandon Rohrer 的这些视频课程也可以帮助你熟悉它的概念和它背后的数学知识。"
+        ]
+      },
+      "machine-learning-with-python-projects": {
+        "title": "Python 与机器学习项目",
+        "intro": [
+          "机器学习有许多实际应用。通过完成这些免费且具有挑战性的编程项目，你可以证明自己掌握了机器学习基础知识，并获得认证。"
+        ]
+      }
+    }
+  },
+  "coding-interview-prep": {
+    "title": "面试攻略",
+    "intro": [
+      "如果你正在寻找免费的编程训练来帮你为下一个工作面试做准备，我们已经帮你准备好了。",
+      "这一部分包含了大量编程挑战，可以测试你的算法、数据结构和数学知识。这里还有一些你可以在家慢慢做的项目，用于提升你的技术，或者丰富你的作品集。"
+    ],
+    "blocks": {
+      "algorithms": {
+        "title": "算法",
+        "intro": [
+          "这些免费的编程练习将教你一些现实生活中可能会遇到的常见算法。它们是提高你的逻辑和编程技能的绝佳机会。",
+          "这些算法经常在工作面试中被用来测试候选人的技能。我们将为你提供简洁明了的解释，说明不同算法是如何运行的，以便你为每道算法题目编写解决方案。"
+        ]
+      },
+      "data-structures": {
+        "title": "数据结构",
+        "intro": [
+          "这些免费的编程课程旨在帮助你处理可能你还不太熟悉的大型的、复杂的数据结构。",
+          "通过下面的课程，你将学习不同类型的数据结构，并通过算法来增强你对它们的理解。"
+        ]
+      },
+      "take-home-projects": {
+        "title": "私人项目",
+        "intro": [
+          "人们在编程面试的时候通常都是很紧张的。有时求职者会拿到一个带回家的项目，在面试之外完成它。这种类型的面试通常需要求职者做大量工作，但对于雇主来说，这是查看你在工作中表现如何的好方法。",
+          "通过下方的额外的编程项目，进行更多练习。慢慢来，做得好一点，然后将它们放在你的简历或作品集中，以向潜在的雇主展示。"
+        ]
+      },
+      "rosetta-code": {
+        "title": "罗塞塔代码",
+        "intro": [
+          "通过完成经典的罗塞塔代码库中的这些免费编程任务来提升你的创造性问题解决能力。",
+          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。"
+        ]
+      },
+      "project-euler": {
+        "title": "欧拉计划",
+        "intro": [
+          "完成下方来自欧拉计划的编程挑战，这将强化你的算法和数学知识。",
+          "这些问题的难度很大，对于许多人来说，这是一个归纳性学习的过程。也就是说，通过解决一个问题，你将接触到一个新概念，然后你可以解决自己以前无法解决的问题。你能完成全部挑战吗？"
+        ]
+      }
+    }
+  },
+  "misc-text": {
+    "certification": "{{cert}} 认证",
+    "browse-other": "浏览我们的其他免费认证\n（我们建议你按顺序学习）",
+    "courses": "课程",
+    "expand": "展开",
+    "collapse": "折叠"
+  }
+}

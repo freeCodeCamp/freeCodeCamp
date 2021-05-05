@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Elements } from '@stripe/react-stripe-js';
 import {
-  Button,
   Col,
   Row,
   Tab,
@@ -20,23 +18,16 @@ import {
   durationsConfig,
   defaultAmount,
   defaultDonation,
-  donationUrls,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
-import envData from '../../../../config/env.json';
-import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import Spacer from '../helpers/Spacer';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
-import StripeCardForm from './StripeCardForm';
 import {
   isSignedInSelector,
   signInLoadingSelector,
   donationFormStateSelector,
-  hardGoTo as navigate,
   addDonation,
-  createStripeSession,
-  postChargeStripe,
   updateDonationFormState,
   defaultDonationFormState,
   userSelector
@@ -44,14 +35,11 @@ import {
 
 import './Donation.css';
 
-const { stripePublicKey } = envData;
-
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
   addDonation: PropTypes.func,
-  createStripeSession: PropTypes.func,
   defaultTheme: PropTypes.string,
   donationFormState: PropTypes.object,
   email: PropTypes.string,
@@ -59,8 +47,6 @@ const propTypes = {
   isDonating: PropTypes.bool,
   isMinimalForm: PropTypes.bool,
   isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
-  postChargeStripe: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
   theme: PropTypes.string,
@@ -83,10 +69,7 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   addDonation,
-  navigate,
-  postChargeStripe,
-  updateDonationFormState,
-  createStripeSession
+  updateDonationFormState
 };
 
 class DonateForm extends Component {
@@ -102,63 +85,26 @@ class DonateForm extends Component {
 
     this.state = {
       ...initialAmountAndDuration,
-      processing: false,
-      stripe: null
+      processing: false
     };
 
-    this.handleStripeLoad = this.handleStripeLoad.bind(this);
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.handleSelectDuration = this.handleSelectDuration.bind(this);
-    this.handleStripeCheckoutRedirect = this.handleStripeCheckoutRedirect.bind(
-      this
-    );
     this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
-    this.postStripeDonation = this.postStripeDonation.bind(this);
-  }
-
-  componentDidMount() {
-    if (window.Stripe) {
-      this.handleStripeLoad();
-    } else if (document.querySelector('#stripe-js')) {
-      document
-        .querySelector('#stripe-js')
-        .addEventListener('load', this.handleStripeLoad);
-    } else {
-      stripeScriptLoader(this.handleStripeLoad);
-    }
   }
 
   componentWillUnmount() {
-    const stripeMountPoint = document.querySelector('#stripe-js');
-    if (stripeMountPoint) {
-      stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
-    }
     this.resetDonation();
-  }
-
-  handleStripeLoad() {
-    // Create Stripe instance once Stripe.js loads
-    if (stripePublicKey) {
-      this.setState(state => ({
-        ...state,
-        stripe: window.Stripe(stripePublicKey)
-      }));
-    }
   }
 
   onDonationStateChange(donationState) {
     // scroll to top
     window.scrollTo(0, 0);
-
     this.props.updateDonationFormState(donationState);
-    // send donation made on the donate page to related news article
-    if (donationState.success && !this.props.isMinimalForm) {
-      this.props.navigate(donationUrls.successUrl);
-    }
   }
 
   getActiveDonationAmount(durationSelected, amountSelected) {
@@ -202,41 +148,6 @@ class DonateForm extends Component {
 
   handleSelectAmount(donationAmount) {
     this.setState({ donationAmount });
-  }
-
-  postStripeDonation(token) {
-    const { donationAmount: amount, donationDuration: duration } = this.state;
-    window.scrollTo(0, 0);
-
-    // change the donation modal button label to close
-    // or display the close button for the cert donation section
-    if (this.props.handleProcessing) {
-      this.props.handleProcessing(duration, amount);
-    }
-    this.props.postChargeStripe({ token, amount, duration });
-  }
-
-  async handleStripeCheckoutRedirect(e, paymentMethod) {
-    e.preventDefault();
-    const { stripe, donationAmount, donationDuration } = this.state;
-    const { handleProcessing, email } = this.props;
-
-    handleProcessing(
-      donationDuration,
-      donationAmount,
-      `stripe (${paymentMethod}) button click`
-    );
-
-    this.props.createStripeSession({
-      stripe,
-      data: {
-        donationAmount,
-        donationDuration,
-        clickedPaymentMethod: paymentMethod,
-        email,
-        context: 'donate page'
-      }
-    });
   }
 
   renderAmountButtons(duration) {
@@ -318,7 +229,14 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { handleProcessing, isSignedIn, addDonation, t } = this.props;
+    const {
+      handleProcessing,
+      isSignedIn,
+      addDonation,
+      t,
+      defaultTheme,
+      theme
+    } = this.props;
     const { donationAmount, donationDuration } = this.state;
 
     const isOneTime = donationDuration === 'onetime';
@@ -334,15 +252,6 @@ class DonateForm extends Component {
         )}
         <Spacer />
         <div className='donate-btn-group'>
-          <Button
-            block={true}
-            bsStyle='primary'
-            id='confirm-donation-btn'
-            onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
-          >
-            {}
-            <b>{t('donate.credit-card')} </b>
-          </Button>
           <PaypalButton
             addDonation={addDonation}
             donationAmount={donationAmount}
@@ -351,6 +260,7 @@ class DonateForm extends Component {
             isSubscription={isOneTime ? false : true}
             onDonationStateChange={this.onDonationStateChange}
             skipAddDonation={!isSignedIn}
+            theme={defaultTheme ? defaultTheme : theme}
           />
         </div>
       </div>
@@ -366,22 +276,13 @@ class DonateForm extends Component {
   }
 
   renderModalForm() {
-    const { donationAmount, donationDuration, stripe } = this.state;
-    const {
-      handleProcessing,
-      addDonation,
-      email,
-      theme,
-      t,
-      defaultTheme
-    } = this.props;
+    const { donationAmount, donationDuration } = this.state;
+    const { handleProcessing, addDonation, defaultTheme, theme } = this.props;
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>
-            {this.getDonationButtonLabel()} {t('donate.paypal')}
-          </b>
+          <b>{this.getDonationButtonLabel()}:</b>
           <Spacer />
           <PaypalButton
             addDonation={addDonation}
@@ -389,21 +290,8 @@ class DonateForm extends Component {
             donationDuration={donationDuration}
             handleProcessing={handleProcessing}
             onDonationStateChange={this.onDonationStateChange}
+            theme={defaultTheme ? defaultTheme : theme}
           />
-        </Col>
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer />
-          <b>{t('donate.credit-card-2')}</b>
-          <Spacer />
-          <Elements stripe={stripe}>
-            <StripeCardForm
-              getDonationButtonLabel={this.getDonationButtonLabel}
-              onDonationStateChange={this.onDonationStateChange}
-              postStripeDonation={this.postStripeDonation}
-              theme={defaultTheme ? defaultTheme : theme}
-              userEmail={email}
-            />
-          </Elements>
         </Col>
       </Row>
     );

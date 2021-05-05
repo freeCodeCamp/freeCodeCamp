@@ -62,7 +62,7 @@ class DonatePage extends Component {
     });
   }
 
-  handleProcessing(duration, amount, action = 'stripe button click') {
+  handleProcessing(duration, amount, action) {
     this.props.executeGA({
       type: 'event',
       data: {

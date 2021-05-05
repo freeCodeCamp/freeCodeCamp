@@ -21,6 +21,14 @@ const auditedCerts = {
     'data-visualization',
     'apis-and-microservices',
     'quality-assurance'
+  ],
+  'chinese-traditional': [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures',
+    'front-end-libraries',
+    'data-visualization',
+    'apis-and-microservices',
+    'quality-assurance'
   ]
 };
 
