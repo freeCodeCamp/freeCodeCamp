@@ -109,7 +109,7 @@ const CertChallenge = ({
   const createClickHandler = certSlug => e => {
     e.preventDefault();
     if (isCertified) {
-      navigate(certLocation);
+      return navigate(certLocation);
     }
     return isHonest
       ? verifyCert(certSlug)
