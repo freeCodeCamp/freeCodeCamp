@@ -66,7 +66,7 @@ class PrivacySettings extends Component {
     } = user.profileUI;
 
     return (
-      <div className='privacy-settings' id='privacy-settings'>
+      <div className='privacy-settings'>
         <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
         <FullWidthRow>
           <p>{t('settings.privacy')}</p>
