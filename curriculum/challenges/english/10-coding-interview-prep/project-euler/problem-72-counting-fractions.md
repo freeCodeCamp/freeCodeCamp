@@ -16,20 +16,38 @@ If we list the set of reduced proper fractions for `d` ≤ 8 in ascending order 
 
 It can be seen that there are 21 elements in this set.
 
-How many elements would be contained in the set of reduced proper fractions for `d` ≤ 1,000,000?
+How many elements would be contained in the set of reduced proper fractions for `d` ≤ `limit`?
 
 # --hints--
 
-`countingFractions()` should return a number.
+`countingFractions(8)` should return a number.
 
 ```js
-assert(typeof countingFractions() === 'number');
+assert(typeof countingFractions(8) === 'number');
 ```
 
-`countingFractions()` should return 303963552391.
+`countingFractions(8)` should return `21`.
 
 ```js
-assert.strictEqual(countingFractions(), 303963552391);
+assert.strictEqual(countingFractions(8), 21);
+```
+
+`countingFractions(20000)` should return `121590395`.
+
+```js
+assert.strictEqual(countingFractions(20000), 121590395);
+```
+
+`countingFractions(500000)` should return `75991039675`.
+
+```js
+assert.strictEqual(countingFractions(500000), 75991039675);
+```
+
+`countingFractions(1000000)` should return `303963552391`.
+
+```js
+assert.strictEqual(countingFractions(1000000), 303963552391);
 ```
 
 # --seed--
@@ -37,12 +55,12 @@ assert.strictEqual(countingFractions(), 303963552391);
 ## --seed-contents--
 
 ```js
-function countingFractions() {
+function countingFractions(limit) {
 
   return true;
 }
 
-countingFractions();
+countingFractions(8);
 ```
 
 # --solutions--
