@@ -89,17 +89,9 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "*.css": [
-        "prettier --write",
-        "git add"
-      ],
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
-    }
+    "*.css": "prettier --write",
+    "*.js": "eslint --fix",
+    "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
   },
   "dependencies": {
     "dotenv": "8.5.1",
@@ -124,7 +116,7 @@
     "jest": "26.6.3",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "10.5.4",
     "lodash": "4.17.21",
     "markdownlint": "0.21.0",
     "npm-run-all": "4.1.5",
