@@ -8,17 +8,17 @@ describe('createExternalRedirects', () => {
       clientLocale: 'english'
     };
 
-    const englishForumUrl = 'https://forum.freecodecamp.org/';
-    const englishNewsUrl = 'https://www.freecodecamp.org/news';
+    const forumURL = 'https://forum.freecodecamp.org/';
+    const newsURL = 'https://www.freecodecamp.org/news';
 
     it('should generate correct forum link', () => {
       const receivedUrl = createExternalRedirect('forum', { ...envVars });
-      expect(receivedUrl).toBe(englishForumUrl);
+      expect(receivedUrl).toBe(forumURL);
     });
 
     it('should generate correct news link', () => {
       const receivedUrl = createExternalRedirect('news', { ...envVars });
-      expect(receivedUrl).toBe(englishNewsUrl);
+      expect(receivedUrl).toBe(newsURL);
     });
   });
 
@@ -27,17 +27,17 @@ describe('createExternalRedirects', () => {
       clientLocale: 'chinese'
     };
 
-    const englishForumUrl = 'https://chinese.freecodecamp.org/forum';
-    const englishNewsUrl = 'https://chinese.freecodecamp.org/news';
+    const forumURL = 'https://chinese.freecodecamp.org/forum';
+    const newsURL = 'https://chinese.freecodecamp.org/news';
 
     it('should generate correct forum link', () => {
       const receivedUrl = createExternalRedirect('forum', { ...envVars });
-      expect(receivedUrl).toBe(englishForumUrl);
+      expect(receivedUrl).toBe(forumURL);
     });
 
     it('should generate correct news link', () => {
       const receivedUrl = createExternalRedirect('news', { ...envVars });
-      expect(receivedUrl).toBe(englishNewsUrl);
+      expect(receivedUrl).toBe(newsURL);
     });
   });
 
@@ -46,17 +46,17 @@ describe('createExternalRedirects', () => {
       clientLocale: 'espanol'
     };
 
-    const englishForumUrl = 'https://forum.freecodecamp.org/c/espanol/';
-    const englishNewsUrl = 'https://www.freecodecamp.org/espanol/news';
+    const forumURL = 'https://forum.freecodecamp.org/c/espanol/';
+    const newsURL = 'https://www.freecodecamp.org/espanol/news';
 
     it('should generate correct forum link', () => {
       const receivedUrl = createExternalRedirect('forum', { ...envVars });
-      expect(receivedUrl).toBe(englishForumUrl);
+      expect(receivedUrl).toBe(forumURL);
     });
 
     it('should generate correct news link', () => {
       const receivedUrl = createExternalRedirect('news', { ...envVars });
-      expect(receivedUrl).toBe(englishNewsUrl);
+      expect(receivedUrl).toBe(newsURL);
     });
   });
 
@@ -65,17 +65,36 @@ describe('createExternalRedirects', () => {
       clientLocale: 'francais'
     };
 
-    const englishForumUrl = 'https://forum.freecodecamp.org/c/francais/';
-    const englishNewsUrl = 'https://www.freecodecamp.org/francais/news';
+    const forumURL = 'https://forum.freecodecamp.org/c/francais/';
+    const newsURL = 'https://www.freecodecamp.org/francais/news';
 
     it('should generate correct forum link', () => {
       const receivedUrl = createExternalRedirect('forum', { ...envVars });
-      expect(receivedUrl).toBe(englishForumUrl);
+      expect(receivedUrl).toBe(forumURL);
     });
 
     it('should generate correct news link', () => {
       const receivedUrl = createExternalRedirect('news', { ...envVars });
-      expect(receivedUrl).toBe(englishNewsUrl);
+      expect(receivedUrl).toBe(newsURL);
+    });
+  });
+
+  describe('chinese-traditional redirects', () => {
+    const envVars = {
+      clientLocale: 'chinese-traditional'
+    };
+
+    const forumURL = 'https://chinese.freecodecamp.org/forum';
+    const newsURL = 'https://chinese.freecodecamp.org/news';
+
+    it('should generate correct forum link', () => {
+      const receivedUrl = createExternalRedirect('forum', { ...envVars });
+      expect(receivedUrl).toBe(forumURL);
+    });
+
+    it('should generate correct news link', () => {
+      const receivedUrl = createExternalRedirect('news', { ...envVars });
+      expect(receivedUrl).toBe(newsURL);
     });
   });
 });
