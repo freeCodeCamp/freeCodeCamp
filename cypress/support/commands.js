@@ -67,5 +67,19 @@ Cypress.Commands.add('createSpecFiles', () => {
 });
 
 Cypress.Commands.add('testChallenges', () => {
+  // Test Meta tags
+  cy.get('head meta[charset=utf-8]');
+  cy.get('head meta[name=description]').should('have.attr', 'content');
+
+  // Test breadcrumbs
+  cy.get('.breadcrumb-right').should('have.attr', 'href');
+  cy.get('.ellipsis').should('be.visible');
+  cy.get('.breadcrumb-left').should('have.attr', 'href');
+  cy.get('.breadcrumb-left').should('be.visible', 'href');
+
   cy.get('body').should('be.visible');
+
+  // Challenge content
+  cy.get('.challenge-title').should('be.visible');
+  cy.get('#description').should('be.visible');
 });
