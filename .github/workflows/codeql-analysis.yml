@@ -1,29 +1,26 @@
-name: CodeQL
+name: "CodeQL"
 
 on:
   push:
-    branches-ignore:
-      - 'renovate/**'
+    branches: [main]
   pull_request:
-  schedule:
-    - cron: '0 20 * * 5'
+    branches: [main]
 
 jobs:
-  CodeQL:
-    name: CodeQL Scan
-    runs-on: ubuntu-18.04
-    # Do not run the Workflow on dependabot
-    if: github.actor != 'dependabot[bot]'
+  analyse:
+    name: Analyse
+    runs-on: ubuntu-latest
+    if: github.actor != 'renovate[bot]'
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["javascript"]
     steps:
-      - name: Checkout Source Files
+      - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-      - run: git checkout HEAD^2
-        if: ${{ github.event_name == 'pull_request' }}
-      - name: Initialize CodeQL
+      - name: Setup CodeQL
         uses: github/codeql-action/init@v1
         with:
-          languages: javascript
-      - name: Perform CodeQL Analysis
+          languages: ${{ matrix.language }}
+      - name: Perform Analysis
         uses: github/codeql-action/analyze@v1
