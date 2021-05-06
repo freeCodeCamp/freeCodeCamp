@@ -1,0 +1,533 @@
+{
+  "responsive-web-design": {
+    "title": "響應式網頁設計",
+    "intro": [
+      "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
+      "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
+      "最後，你將學習使用 flexbox（彈性盒子）構建一個 Twitter 卡片，以及使用 CSS 網格構建複雜的博客佈局，以此學習製作適應不同屏幕大小的網頁。"
+    ],
+    "blocks": {
+      "basic-html-and-html5": {
+        "title": "基礎 HTML 和 HTML5",
+        "intro": [
+          "HTML 是一種標記語言，使用特殊的語法或標記來向瀏覽器描述網頁的結構。HTML 元素由開始和結束標籤構成，標籤之間是文本內容。 不同的標籤可以讓文本內容以標題、段落、列表等形式展現。",
+          "在這個課程中，你將通過編寫一個展示貓咪圖片的應用，學習最常見的 HTML 元素——它們可以用來構成任何網頁。"
+        ]
+      },
+      "basic-css": {
+        "title": "基礎 CSS",
+        "intro": [
+          "CSS（級聯樣式表）告訴瀏覽器如何顯示你在 HTML 中寫入的文本和其他內容。你可以使用 CSS 控制 HTML 元素的顏色、字體、大小、間距等許多\b屬性。",
+          "現在你已經寫好了貓圖應用的基本結構，接下來我們用 CSS 給它加一些樣式。"
+        ]
+      },
+      "applied-visual-design": {
+        "title": "應用視覺設計",
+        "intro": [
+          "視覺設計結合了排版、色彩理論、圖形、動畫、頁面佈局等，以表達獨特的信息。",
+          "在這個課程中，你將學習如何將這些不同的視覺設計元素應用到網頁上。"
+        ]
+      },
+      "applied-accessibility": {
+        "title": "應用無障礙",
+        "intro": [
+          "在網頁開發中，可訪問性是指網頁內容和用戶界面可以被用戶理解、瀏覽並與之交互。這裏的用戶包括有視覺障礙、聽覺障礙或認知障礙的用戶。",
+          "在這個課程中，你將學習提升網站可訪問性的最佳實踐。"
+        ]
+      },
+      "responsive-web-design-principles": {
+        "title": "響應式網頁設計原則",
+        "intro": [
+          "人們可能通過形狀和大小不同的設備來訪問網頁。通過響應式網頁設計，你可以設計出能靈活適應不同屏幕大小、方向和分辨率的網頁。",
+          "在這個課程中，你將學習如何使用 CSS 讓你的網頁在不同設備上看起來都不錯。"
+        ]
+      },
+      "css-flexbox": {
+        "title": "CSS 彈性盒子",
+        "intro": [
+          "Flexbox（彈性盒子）是最新版本的 CSS（即 CSS3）中引入的一種強大且兼容性好的佈局方法。使用 flexbox，我們可以很容易地處理好頁面上的元素佈局，並創建可以自動縮小和放大的動態用戶界面。",
+          "在這個課程中，你將通過構建一個 Twitter 卡片來學習 flexbox 和動態佈局的基礎知識。"
+        ]
+      },
+      "css-grid": {
+        "title": "CSS 網格",
+        "intro": [
+          "CSS 網格是一個較新的標準，用於構建複雜的響應佈局。它通過把 HTML 元素轉換爲具有行和列的網格容器，以便將子元素放置在所需要的位置。",
+          "在這個課程中，你將通過構建不同的複雜佈局（包括博客）來學習 CSS 網格的基礎知識。"
+        ]
+      },
+      "responsive-web-design-projects": {
+        "title": "響應式網頁設計項目",
+        "intro": [
+          "是時候使用你新學到的技能了。通過構建這些項目，你將有機會應用之前學到的所有技巧、原則和概念：HTML、CSS、視覺設計、無障礙等等。",
+          "完成下面的五個網頁編程項目，獲得響應式網頁設計認證。"
+        ]
+      },
+      "basic-html-cat-photo-app": {
+        "title": "基礎 HTML 貓圖應用",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "basic-css-cafe-menu": {
+        "title": "基礎 CSS 咖啡菜單",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-variables-skyline": {
+        "title": "CSS 變量 Skyline",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "javascript-algorithms-and-data-structures": {
+    "title": "JavaScript 算法和數據結構",
+    "intro": [
+      "HTML 和 CSS 控制頁面的內容和樣式，JavaScript 則用於頁面交互。在 JavaScript 算法和數據結構認證中，你將學習 JavaScript 的基礎知識，包括變量、 數組、 對象、 循環和函數。",
+      "打好基礎之後，你將會通過創建算法來操作字符串、進行階乘運算甚至計算國際空間站的軌道來應用這些知識。",
+      "在這個過程中，你還會學習兩種重要的編程方式或模式：面向對象的編程（OOP）和函數式編程（FP）。"
+    ],
+    "blocks": {
+      "basic-javascript": {
+        "title": "基礎 JavaScript",
+        "intro": [
+          "JavaScript 是一種用於網頁交互的腳本語言。它和 HTML 和 CSS 一樣，是網站的核心技術之一。所有現代瀏覽器都支持 JavaScript。",
+          "在這個課程中，你將學習JavaScript 中的基本編程概念。你將從數字和字符串等基本數據結構開始，然後學習使用數組、對象、函數、循環、if/else 語句等等。"
+        ]
+      },
+      "es6": {
+        "title": "ES6",
+        "intro": [
+          "ECMAScript（ES）是 JavaScript 的標準。因爲所有主流瀏覽器都遵循此規範，所以 ECMAScript 和 JavaScript 是可以互換的。",
+          "截至目前你所學到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 編寫程序。JavaScript 在不斷迭代，每年都會發布新功能。",
+          "2015 年發佈的 ES6 爲該語言增加了許多強大的新功能。在這個課程中，你將學習這些新功能，包括 <code>let</code>、<code>const</code>、箭頭函數、類、promises 和模塊。"
+        ]
+      },
+      "regular-expressions": {
+        "title": "正則表達式",
+        "intro": [
+          "正則表達式，常常縮寫爲 “regex” 或 “regexp”，是幫助程序員匹配、搜索和替換文本的模式。正則表達式非常強大，但可能難以閱讀，因爲它們使用特殊字符來做更復雜更靈活的匹配。",
+          "在這個課程中，你將學習如何使用特殊字符、捕獲組、正向或負向先行斷言以及其他技巧來匹配你想要的文本。"
+        ]
+      },
+      "debugging": {
+        "title": "調試",
+        "intro": [
+          "調試是檢查代碼、發現並修復問題的過程。",
+          "代碼中的問題通常有三種形式：1）語法錯誤導致程序停止運行， 2）代碼無法執行或具有意外行爲導致運行時錯誤，3）代碼有語義（邏輯）錯誤，沒有實現原來的意圖。",
+          "在這個課程中，你將學習如何使用 JavaScript 控制檯來調試程序，防止出現常見問題。"
+        ]
+      },
+      "basic-data-structures": {
+        "title": "基礎數據結構",
+        "intro": [
+          "我們可以通過多種方式存儲和訪問數據。你已經知道數組和對象了，它們都是常見的 JavaScript 數據結構。",
+          "在基礎數據結構課程中，你會更深入地瞭解數組和對象之間的差異，以及在不同情況下應該使用哪個。你還將學習到一些好用的 JS 方法，例如 <code>splice()</code>，以及使用 <code>Object.keys()</code> 來訪問和操作數據。"
+        ]
+      },
+      "basic-algorithm-scripting": {
+        "title": "基礎算法",
+        "intro": [
+          "算法是描述如何處理某個問題的一系列步驟。",
+          "要寫一個有效的算法，你需要先將一個特定的問題分解爲小的部分，並仔細思考如何用代碼解決每個部分。",
+          "在這個課程中，你將通過編寫算法來實現諸如轉換溫度、處理複雜的二維數組等，來學習算法思維的基礎知識。"
+        ]
+      },
+      "object-oriented-programming": {
+        "title": "面向對象編程",
+        "intro": [
+          "OOP，即面向對象編程，是軟件開發過程的主要方法之一。在 OOP 中，我們用對象和類來組織代碼，以描述事物的特點以及它們可以做什麼。",
+          "在這個課程中，你將會學習 JavaScript 中面向對象編程的基本原則，例如 <code>this</code> 關鍵詞、原型鏈、構造器和繼承。"
+        ]
+      },
+      "functional-programming": {
+        "title": "函數式編程",
+        "intro": [
+          "函數式編程是另一種軟件開發方法。在函數式編程中，代碼被組織成較小的基本的函數，可以結合起來構建複雜的程序。",
+          "在這個課程中，你將學習函數式編程的核心概念，包括純函數，如何避免突變，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法編寫更整潔的代碼。"
+        ]
+      },
+      "intermediate-algorithm-scripting": {
+        "title": "中級算法",
+        "intro": [
+          "現在你瞭解了算法的基礎知識、面向對象編程以及函數式編程。接下來我們將進入中級算法挑戰來測試你的技能。"
+        ]
+      },
+      "javascript-algorithms-and-data-structures-projects": {
+        "title": "JavaScript 算法和數據結構項目",
+        "intro": [
+          "是時候用上你新學到的 JavaScript 技能了！接下來的項目和前面的算法挑戰很相近，但是難度會更高。",
+          "完成這 5 個 JavaScript 項目，以獲得 JavaScript 算法和數據結構認證。"
+        ]
+      },
+      "basic-javascript-rpg-game": {
+        "title": "基礎 JavaScript RPG 遊戲",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "intermediate-javascript-calorie-counter": {
+        "title": "中級 JavaScript 卡路里計算器",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "functional-programming-spreadsheet": {
+        "title": "函數式編程電子表格",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "front-end-libraries": {
+    "title": "前端開發庫",
+    "intro": [
+      "你已經熟悉了 HTML、CSS 和 JavaScript。現在學習行業中一些流行的前端庫來提升你的技能吧。",
+      "在前端庫認證中，你將學習如何使用 Bootstrap 快速設置網站樣式，以及如何在 CSS 樣式中添加邏輯，並使用 Sass 對其進行擴展。",
+      "稍後，你將建立一個購物車和其他應用程序，學習如何使用 React 和 Redux 創建強大的單頁應用程序（SPAs）。"
+    ],
+    "blocks": {
+      "bootstrap": {
+        "title": "Bootstrap",
+        "intro": [
+          "Bootstrap 一個是用於設計響應性網頁和應用程序的前端框架。它對網頁開發採用移動優先的方法，具有預定義的 CSS 樣式和 class，以及一些 JavaScript 功能。",
+          "在這個課程中，你將學習如何使用 Bootstrap 來建立響應式網頁，並使用它的 class 來設置按鈕、圖像、表格、導航和其他常見元素的樣式。"
+        ]
+      },
+      "jquery": {
+        "title": "jQuery",
+        "intro": [
+          "jQuery 是開發者們最常用的 JavaScript 庫之一。",
+          "在 jQuery 於 2006 年發佈時，各種常用瀏覽器處理 JavaScript 的方式都略有不同。jQuery 簡化了編寫客戶端 JavaScript 的過程，並確保代碼在所有瀏覽器中以同樣的方式運行。",
+          "在這個課程中，你將學習如何使用 jQuery 選擇、移除、克隆和修改頁面上的不同元素。"
+        ]
+      },
+      "sass": {
+        "title": "SASS",
+        "intro": [
+          "Sass，英文全稱爲 “Syntactically Awesome StyleSheets”，是對 CSS 的擴展。它添加了一些 CSS 語法不具有的新特性。Sass 簡化了 CSS，這讓維護樣式表變得更容易。",
+          "在 Sass 課程中，你將學習如何將數據存儲在變量中、嵌套 CSS、創建可重用的樣式、爲樣式添加邏輯和循環等等。"
+        ]
+      },
+      "react": {
+        "title": "React",
+        "intro": [
+          "React 是一個流行的 JavaScript 庫，用於爲網頁或應用程序構建可重用的組件驅動的用戶界面。",
+          "React 將 HTML 與 JavaScript 結合在了一起，以此創建出一個新的標籤語言 JSX。React 還使得管理整個應用程序的數據流變得更容易。",
+          "在這個課程中，你將學習如何創建不同的 React 組件，以 state props 管理數據，以及使用不同的生命週期方法（例如 <code>componentDidMount</code>）和更多內容。"
+        ]
+      },
+      "redux": {
+        "title": "Redux",
+        "intro": [
+          "隨着應用程序規模和範圍的擴大，管理共享數據變得更加困難。 Redux 被定義爲 “JavaScript 應用的可預測狀態容器”，它有助於確保你的應用能夠可預測地運行，並且更容易測試。",
+          "雖然你可以使用任何視圖庫的 Redux，但我們在這裏介紹 Redux，然後在下一組課程中與 React 結合起來。",
+          "在這個課程中，你將學習 Redux stores、actions、reducers 和中間件的基礎知識，來管理應用程序的數據。"
+        ]
+      },
+      "react-and-redux": {
+        "title": "React 和 Redux",
+        "intro": [
+          "React 和 Redux 經常一起被提及，這是有充分理由的。創建 Redux 的開發人員是一個 React 開發者，他希望簡化不同組件間的數據共享。",
+          "你已經知道了如何使用 Redux 管理共享數據流，是時候將這些知識與 React 結合起來了。在 React 和 Redux 課程中，你將構建一個 React 組件，並學習如何使用 Redux 在組件級別本地管理狀態，以及在整個應用程序中管理狀態。"
+        ]
+      },
+      "front-end-libraries-projects": {
+        "title": "前端開發庫項目",
+        "intro": [
+          "現在是時候應用你的前端開發庫技術進行測試。用 Bootstrap、jQuery、Sass、React、和 Redux 構建 5 個項目，測試你到現在所學到的知識。",
+          "完成全部 5 個項目，然後你會獲得前端開發庫認證。"
+        ]
+      }
+    }
+  },
+  "data-visualization": {
+    "title": "數據可視化",
+    "intro": [
+      "數據無處不在。但是，如果沒有上下文，數據就沒有多大意義。",
+      "在數據可視化認證中，你會用 D3.js 庫來創建表格、圖表和地圖，以展示不同的數據。",
+      "你還會學習 JSON（JavaScript 對象），以及如何使用 API（應用程序接口）使用在線的數據。"
+    ],
+    "blocks": {
+      "data-visualization-with-d3": {
+        "title": "用 D3 實現數據可視化",
+        "intro": [
+          "D3 或 D3.js 表示數據驅動文檔。它是一個用於在瀏覽器中創建動態和交互式數據視覺化的 JavaScript 庫。",
+          "它基於 web 標準，即 HTML、CSS 和 SVG（可縮放矢量圖形）技術。",
+          "D3 支持多種不同類型的輸入數據格式。 然後，你可以使用它強大的內置方法將這些數據轉換成不同的圖表、和地圖。",
+          "在用 D3 實現數據可視化課程中，你將學習如何使用數據來創建不同的圖表、懸停元素及其他內容，用以創建動態和有吸引力的數據可視化。"
+        ]
+      },
+      "json-apis-and-ajax": {
+        "title": "JSON APIs 和 AJAX",
+        "intro": [
+          "類似於 UI 如何幫助人們使用程序，API（應用程序接口）幫助程序與其他程序互動。API 是計算機用來相互溝通的工具，部分用於發送和接收數據。",
+          "程序員在使用 API 的時候，通常會使用 AJAX（同步 JavaScript 和 XML）。AJAX 指的是一組技術，這些技術向服務器提出異步請求以傳輸數據，然後將任何返回的數據加載到頁面。而且在瀏覽器和服務器之間傳輸的數據常常是一種 JSON（JavaScript 對象）格式。",
+          "此課程將教你如何在瀏覽器中使用 API 和不同的 AJAX 技術的基礎知識。"
+        ]
+      },
+      "data-visualization-projects": {
+        "title": "數據可視化項目",
+        "intro": [
+          "現在你學習瞭如何使用 D3 、 APIs 和 AJAX 技術，構建這 5 個數據可視化項目來測試你的技術吧。",
+          "在這些項目中，你需要獲取數據並解析數據集，然後使用 D3 創建不同的數據可視化。完成之後，你可以獲得數據可視化認證。"
+        ]
+      },
+      "d3-dashboard": {
+        "title": "D3 面板",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "apis-and-microservices": {
+    "title": "APIs 和 微服務",
+    "intro": [
+      "在這之前，你只是在前端使用 JavaScript 來給頁面添加交互、解決算法挑戰，或構建一個 SP。但 JavaScript 也可以用於後端或者服務器來構建整個 web 應用程序。",
+      "今天，構建應用軟件的廣受歡迎的方法之一是微服務，這些微服務是一種小型模塊化的應用，能夠共同形成一個更大的整體。",
+      "在 API 和微服務認證中，你將學習如何使用 Node.js 和 npm（Node 包管理工具）來寫後端。你還將使用 Express 框架構建 web 應用程序，並使用 MongoDB 和 Mongoose 庫構建一個 People Finder 微服務。"
+    ],
+    "blocks": {
+      "managing-packages-with-npm": {
+        "title": "使用 NPM 管理軟件包",
+        "intro": [
+          "npm（Node 包管理工具）是一個命令行工具，用於安裝、創建和分享爲 Node.js 編寫的 JavaScript 代碼包。在 npm 上有許多開放源碼軟件包，所以在項目啓動之前，需要一些時間來探索，這樣你就不會最後重新創建輪子來處理像日期或從 API 獲取數據這樣的事項。",
+          "在這個課程中，你將學習使用 npm 的基本知識，包括如何使用 <code>package.json</code> 和如何管理已安裝的依賴項。"
+        ]
+      },
+      "basic-node-and-express": {
+        "title": "Node 和 Express 基礎",
+        "intro": [
+          "Node.js 是一個 JavaScript 運行時，它允許開發人員在 JavaScript 中寫入後端（服務器側）程序。Node.js 有幾個內置的模塊——小型、獨立的程序——來幫助實現這一點，一些核心模塊包括像服務器一樣運作的 HTTP 和文件系統，一個讀取和修改文件的模塊。",
+          "在上一組課程中你學到了怎麼從 npm下載和管理軟件包，這些軟件包是較小模塊的集合，可以幫助你打造更大更復雜的程序。",
+          "Express 是一個輕量級的網頁應用框架，是最受歡迎的 npm 軟件包之一。 Express 提供精簡的基本 web 應用程序功能，包括應用的路由。路由在用戶訪問一個端點如 <pre>/blog</pre> 時將用戶導向到相應的頁面。",
+          "在這個課程中，你將學習 Node 和 Express 的基礎知識，包括如何創建服務器， 處理不同的文件，及處理不同的瀏覽器請求。"
+        ]
+      },
+      "mongodb-and-mongoose": {
+        "title": "MongoDB 和 Mongose",
+        "intro": [
+          "MongoDB 是一個存儲您可以在應用程序中使用的 JSON 文件(或記錄)的數據庫應用程序。 不同於SQL，另一種類型的數據庫。Mongo是一個不相關的或“NoSQL”的數據庫。 這意味着Mongo將所有相關數據存儲在一個記錄中，而不是像SQL數據庫中那樣在許多預設表中存儲。",
+          "Mongoose 是一個受歡迎的 npm 包，通常和 Mongo 一起安裝。通過 Mongoose，你可以使用 JavaScript 對象而不是 JSON ，這樣就更容易與 Mongo 配合使用。 此外，它允許你爲 schema 文件創建藍圖，所以你不會意外地保存錯誤的數據類型並出現錯誤。",
+          "在 MongoDB 和 Mongoose 課程中，你將學習使用的基本知識，包括如何建立模型，保存、刪除並在數據庫中查找文檔。"
+        ]
+      },
+      "apis-and-microservices-projects": {
+        "title": "API 和微服務項目",
+        "intro": [
+          "你之前用過 API，但是現在你知道 npm、Node、Express、MongoDB 和 Mongoose，是時候創建應用 了。用你到現在所學的所有知識來創建 5 個不同的微服務，這些微服務是使用範圍有限的小應用。",
+          "在創建這些微服務後，你會有 5 個很酷的微服務 API，你可以向朋友、家人和潛在的僱主展示。同時，你也會獲得 API 和微服務認證。"
+        ]
+      }
+    }
+  },
+  "quality-assurance": {
+    "title": "質量保證",
+    "intro": [
+      "隨着你的程序或網頁應用程序變得更加複雜，你將想要測試它們，以確保新的更改不會破壞它們的原有功能。",
+      "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
+      "然後你將創建一個聊天應用程序來學習高級 Node 和 Express 概念。你還將使用 Pug 作爲模板引擎，用於身份驗證的 Passport 和 用於服務器和客戶端之間實時通信的 Socket.io。"
+    ],
+    "blocks": {
+      "quality-assurance-and-testing-with-chai": {
+        "title": "使用 Chai 進行質量保證和測試",
+        "intro": [
+          "Chai 是一個JavaScript測試庫，幫助你確保程序能夠在你更改代碼後按照你的期望運行。",
+          "使用 Chai，你可以寫測試描述你的程序的要求，並查看你的程序是否符合這些要求。",
+          "在這個課程中，你會了解測試 JavaScript 應用程序的斷言、測試 API 和其他測試 JavaScript 應用的基礎知識。"
+        ]
+      },
+      "advanced-node-and-express": {
+        "title": "高級 Node 和 Express",
+        "intro": [
+          "現在是時候來使用高級 Node.js 和 Express.js 創建一個具有登錄系統的聊天應用了。",
+          "爲了創建一個安全的登錄系統，你需要學習驗證，這是一個驗證個人身份或者過程的的操作。",
+          "在這個課程中，你將學習如何使用 Passport 管理身份驗證，如何使用 Pug 創建可重用的模板以快速構建前端，以及如何使用 web sockets 在客戶端和服務器之間進行實時通信。"
+        ]
+      },
+      "quality-assurance-projects": {
+        "title": "質量保證項目",
+        "intro": [
+          "現在你對前端和後端都非常精通，是時候應用你所學到的所有技能和概念了。你將構建 5 個不同的 web 應用程序，併爲每個應用程序編寫測試，以確保它們正常工作並可以處理不同的情況。",
+          "完成這 5 個質量保證項目後，你將獲得一個新的認證，你可以在自己的作品集中展示這 5 個項目和認證。"
+        ]
+      }
+    }
+  },
+  "scientific-computing-with-python": {
+    "title": "Python 和科學計算",
+    "intro": [
+      "Python 是目前最火、最靈活的編程語言之一。你可以用它來做很多事，包括從基礎算法到機器學習。",
+      "在這個認證中，你會學習 Python 基礎知識，例如變量、循環、條件和函數。然後你會馬上很快學習到複雜數據結構、網絡，關係數據庫和數據可視化。"
+    ],
+    "blocks": {
+      "python-for-everybody": {
+        "title": "通用 Python 課程",
+        "intro": [
+          "通用 Python 課程是一個講解 Python 3 基礎的系列免費視頻課程。",
+          "這些課程是 Dr. Charles Severance（Dr. Chuck）創建的。他是密歇根信息大學的實踐教授，他教授各種技術課程，包括編程、數據庫設計和 web 開發。"
+        ]
+      },
+      "scientific-computing-with-python-projects": {
+        "title": "Python 與科學計算項目",
+        "intro": [
+          "是時候測試一下你的 Python 技術了。通過完成這些項目，你可以證明和展示自己已經掌握了 Python 基礎知識，並能獲得認證。"
+        ]
+      }
+    }
+  },
+  "data-analysis-with-python": {
+    "title": "Python 和數據分析",
+    "intro": [
+      "數據分析已經存在很長時間了。但是直到幾年前，開發人員還是使用昂貴的閉源工具（如 Tableau）來做數據分析。如今，Python、SQL 和其他開放的庫永遠改變了數據分析領域。",
+      "在這個認證中，你會學習使用 Python 做數據分析的基礎知識。然後，你會學習怎麼從 CSV、SQL 等數據源讀取數據，並且怎麼使用 Numpy、Pandas、Matplotlib 和 Seaborn 等庫來處理和可視化數據。"
+    ],
+    "blocks": {
+      "data-analysis-with-python-course": {
+        "title": "Python 和數據分析",
+        "intro": [
+          "在 Santiago Basulto 創建的這些綜合視頻課程中，你會學習整個數據分析的過程。你會從 CSV、SQL、Excel 讀取數據，用 Numpy和 Pandas 來處理這些數據，以及使用 Matplotlib 和 Seaborn 來可視化數據。",
+          "此外，你還可以通過完整的 Jupyter Notebook 課程和 Python 資料來刷新自己的編程技能。"
+        ]
+      },
+      "numpy": {
+        "title": "Numpy",
+        "intro": [
+          "通過下方 Keith Galli 創建的視頻課程學習 NumPy 庫基礎知識。",
+          "在這個課程中，你將學習如何使用 NumPy 以及它與 Python 內置列表的區別。你還將學習如何使用 NumPy 編程，以及索引、調整形狀、應用統計信息等等知識。"
+        ]
+      },
+      "data-analysis-with-python-projects": {
+        "title": "Python 與數據分析",
+        "intro": [
+          "使用 Python 分析數據的方法很多。通過完成這些項目，你可以證明自己掌握了使用 Python 進行數據分析的基礎知識。",
+          "完成所有項目，即可獲得 Python 與數據分析認證。"
+        ]
+      }
+    }
+  },
+  "information-security": {
+    "title": "信息安全",
+    "intro": [
+      "通過我們在線上的一切行爲，我們的電子郵件地址、密碼、電話號碼等等大量敏感信息處於風險之中。",
+      "通過信息安全認證，你將使用 HelmetJS 構建安全的 Web 應用程序，以學習信息安全的基礎知識。",
+      "你還將使用 Python 構建一個 TCP 客戶端以及一個 Nmap 和端口掃描程序，從而學習滲透測試的基礎知識。滲透測試是良好信息安全的重要組成部分。"
+    ],
+    "blocks": {
+      "information-security-with-helmetjs": {
+        "title": "HelmetJS 與信息安全",
+        "intro": [
+          "這個課程的重點是 HelmetJS。HelmetJS 是一種用於基於 Express 的應用程序的中間件，可以自動設置 HTTP 標頭。這樣，它可以防止敏感信息被無意間在服務器和客戶端之間傳遞。",
+          "以下課程將幫助你瞭解如何保護你的網站免遭惡意攻擊。"
+        ]
+      },
+      "python-for-penetration-testing": {
+        "title": "Python 與滲透測試",
+        "intro": [
+          "這些視頻課程教你使用 Python 進行滲透測試。滲透測試（penetration testing）也叫作 “pen test”，它是對系統的模擬攻擊，以檢查漏洞。",
+          "在這個課程中，你將學習套接字、創建 TCP 服務器和客戶端、構建 Nmap 掃描儀以及滲透測試人員日常使用的其他工具和技術。"
+        ]
+      },
+      "information-security-projects": {
+        "title": "信息安全項目",
+        "intro": [
+          "現在是時候運用你的信息安全技能了。通過這些項目，你可以運用所學的信息安全技能、原理和概念。",
+          "完成後，您將擁有大量的信息安全項目，並獲得認證，你可以向朋友、家人和僱主炫耀的證書。"
+        ]
+      }
+    }
+  },
+  "machine-learning-with-python": {
+    "title": "Python 與機器學習",
+    "intro": [
+      "機器學習有許多實際應用程序，你可以在項目中或工作中使用它們。",
+      "在這個認證中，你將使用 TensorFlow 框架構建多個神經網絡，同時，你將探索更先進的技術，例如自然語言處理和強化學習。",
+      "你還將學習神經網絡，並瞭解深度、遞歸和卷積神經網絡背後的原理。"
+    ],
+    "blocks": {
+      "tensorflow": {
+        "title": "Tensorflow",
+        "intro": [
+          "TensorFlow 是一個開源框架，使機器學習和神經網絡更易於使用。",
+          "以下視頻課程是由 Tim Ruscica 創建的，也叫作 “Tech With Tim”。這個課程將幫助你瞭解 TensorFlow 及它的一些強大功能。"
+        ]
+      },
+      "how-neural-networks-work": {
+        "title": "神經網絡如何工作",
+        "intro": [
+          "神經網絡是如今我們所謂的人工智能的核心。但是從歷史上看，它們一直很難理解，特別是對於機器學習領域的初學者來說。",
+          "即使你剛開始學習神經網絡，Brandon Rohrer 的這些視頻課程也可以幫助你熟悉它的概念和它背後的數學知識。"
+        ]
+      },
+      "machine-learning-with-python-projects": {
+        "title": "Python 與機器學習項目",
+        "intro": [
+          "機器學習有許多實際應用。通過完成這些免費且具有挑戰性的編程項目，你可以證明自己掌握了機器學習基礎知識，並獲得認證。"
+        ]
+      }
+    }
+  },
+  "coding-interview-prep": {
+    "title": "面試攻略",
+    "intro": [
+      "如果你正在尋找免費的編程訓練來幫你爲下一個工作面試做準備，我們已經幫你準備好了。",
+      "這一部分包含了大量編程挑戰，可以測試你的算法、數據結構和數學知識。這裏還有一些你可以在家慢慢做的項目，用於提升你的技術，或者豐富你的作品集。"
+    ],
+    "blocks": {
+      "algorithms": {
+        "title": "算法",
+        "intro": [
+          "這些免費的編程練習將教你一些現實生活中可能會遇到的常見算法。它們是提高你的邏輯和編程技能的絕佳機會。",
+          "這些算法經常在工作面試中被用來測試候選人的技能。我們將爲你提供簡潔明瞭的解釋，說明不同算法是如何運行的，以便你爲每道算法題目編寫解決方案。"
+        ]
+      },
+      "data-structures": {
+        "title": "數據結構",
+        "intro": [
+          "這些免費的編程課程旨在幫助你處理可能你還不太熟悉的大型的、複雜的數據結構。",
+          "通過下面的課程，你將學習不同類型的數據結構，並通過算法來增強你對它們的理解。"
+        ]
+      },
+      "take-home-projects": {
+        "title": "私人項目",
+        "intro": [
+          "人們在編程面試的時候通常都是很緊張的。有時求職者會拿到一個帶回家的項目，在面試之外完成它。這種類型的面試通常需要求職者做大量工作，但對於僱主來說，這是查看你在工作中表現如何的好方法。",
+          "通過下方的額外的編程項目，進行更多練習。慢慢來，做得好一點，然後將它們放在你的簡歷或作品集中，以向潛在的僱主展示。"
+        ]
+      },
+      "rosetta-code": {
+        "title": "羅塞塔代碼",
+        "intro": [
+          "通過完成經典的羅塞塔代碼庫中的這些免費編程任務來提升你的創造性問題解決能力。",
+          "這些挑戰可能很困難，但是它們會將進一步提升你的算法邏輯。"
+        ]
+      },
+      "project-euler": {
+        "title": "歐拉計劃",
+        "intro": [
+          "完成下方來自歐拉計劃的編程挑戰，這將強化你的算法和數學知識。",
+          "這些問題的難度很大，對於許多人來說，這是一個歸納性學習的過程。也就是說，通過解決一個問題，你將接觸到一個新概念，然後你可以解決自己以前無法解決的問題。你能完成全部挑戰嗎？"
+        ]
+      }
+    }
+  },
+  "misc-text": {
+    "certification": "{{cert}} 認證",
+    "browse-other": "瀏覽我們的其他免費認證\n（我們建議你按順序學習）",
+    "courses": "課程",
+    "expand": "展開",
+    "collapse": "摺疊"
+  }
+}

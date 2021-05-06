@@ -1,5 +1,9 @@
 name: Node.js CI
-on: [push, pull_request]
+on:
+  push:
+    branches-ignore:
+      - 'renovate/**'
+  pull_request:
 
 jobs:
   lint:

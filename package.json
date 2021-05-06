@@ -81,28 +81,16 @@
     "test:curriculum-js": "jest --rootDir ./curriculum",
     "test:server": "cd ./api-server && npm test",
     "test:tools": "jest ./tools",
-    "test:utils": "jest --rootDir ./utils"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "test:utils": "jest --rootDir ./utils",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "linters": {
-      "*.css": [
-        "prettier --write",
-        "git add"
-      ],
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
-    }
+    "*.css": "prettier --write",
+    "*.js": "eslint --cache --fix",
+    "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
   },
   "dependencies": {
-    "dotenv": "8.5.1",
+    "dotenv": "8.6.0",
     "invariant": "2.2.4"
   },
   "devDependencies": {
@@ -120,11 +108,11 @@
     "eslint-plugin-react": "7.23.2",
     "eslint-plugin-react-hooks": "4.2.0",
     "execa": "5.0.0",
-    "husky": "3.1.0",
+    "husky": "6.0.0",
     "jest": "26.6.3",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "10.5.4",
     "lodash": "4.17.21",
     "markdownlint": "0.21.0",
     "npm-run-all": "4.1.5",
@@ -132,7 +120,7 @@
     "prettier": "2.2.1",
     "prismjs": "1.23.0",
     "shx": "0.3.3",
-    "sinon": "7.4.1",
+    "sinon": "10.0.0",
     "sinon-express-mock": "2.2.1",
     "start-server-and-test": "1.12.1",
     "webpack-bundle-analyzer": "4.4.1"
