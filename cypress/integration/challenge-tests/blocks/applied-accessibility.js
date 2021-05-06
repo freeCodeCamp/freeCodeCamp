@@ -8,6 +8,10 @@ challengePaths.forEach(challenge => {
   describe('loading challenge', () => {
     before(() => {
       cy.visit(challenge);
+      cy.waitForResource(
+        'node_modules_monaco-editor_esm_vs_language_html_htmlMode_js.js',
+        'script'
+      );
     });
 
     it(

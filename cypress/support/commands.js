@@ -62,6 +62,31 @@ Cypress.Commands.add('updatePaths', (superblock, lang = 'english') => {
   });
 });
 
+function waitForResourceToLoad(fileName, type) {
+  const resourceCheckInterval = 40;
+
+  return new Cypress.Promise(resolve => {
+    const checkResourceLoad = () => {
+      const resource = cy
+        .state('window')
+        .performance.getEntriesByType('resource')
+        .filter(entry => !type || entry.initiatorType === type)
+        .find(entry => entry.name.includes(fileName));
+
+      if (resource) {
+        resolve();
+        return;
+      }
+
+      setTimeout(checkResourceLoad, resourceCheckInterval);
+    };
+
+    checkResourceLoad();
+  });
+}
+
+Cypress.Commands.add('waitForResource', waitForResourceToLoad);
+
 Cypress.Commands.add('createSpecFiles', () => {
   cy.task('updateSpecFiles');
 });
