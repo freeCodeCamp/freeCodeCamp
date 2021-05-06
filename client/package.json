@@ -127,7 +127,7 @@
     "autoprefixer": "10.2.5",
     "babel-plugin-transform-imports": "1.5.1",
     "chokidar": "3.5.1",
-    "copy-webpack-plugin": "5.1.2",
+    "copy-webpack-plugin": "8.1.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.22",
     "jest": "26.6.3",
     "jest-json-schema-extended": "1.0.0",
