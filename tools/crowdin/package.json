@@ -25,7 +25,7 @@
     "@actions/core": "1.2.7",
     "@actions/github": "4.0.0",
     "dotenv": "9.0.0",
-    "fs-extra": "9.1.0",
+    "fs-extra": "10.0.0",
     "gray-matter": "4.0.3",
     "node-fetch": "2.6.1",
     "node-opencc": "2.0.1",
