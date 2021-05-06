@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ScrollableAnchor from 'react-scrollable-anchor';
-// import { navigate } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 import ClaimCertSteps from './ClaimCertSteps';
 import Caret from '../../../assets/icons/Caret';
@@ -50,7 +49,6 @@ const CertificationCard = ({ superBlock, i18nCertText }) => {
               isExpanded ? collapseText : expandText
             } ${coursesText.toLowerCase()}`}
           </h4>
-          {/* <div className='map-title-completed course-title'></div> */}
         </button>
         {isExpanded && (
           <ClaimCertSteps i18nCertText={i18nCertText} superBlock={superBlock} />
