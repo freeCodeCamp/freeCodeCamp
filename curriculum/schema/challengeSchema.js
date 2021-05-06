@@ -11,7 +11,7 @@ const fileJoi = Joi.object().keys({
   name: Joi.string(),
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
   path: Joi.string(),
-  error: Joi.empty(),
+  error: Joi.valid(null),
   head: Joi.string().allow(''),
   tail: Joi.string().allow(''),
   seed: Joi.string().allow(''),
@@ -33,7 +33,7 @@ const schema = Joi.object()
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
     description: Joi.when('challengeType', {
-      is: Joi.only([challengeTypes.step, challengeTypes.video]),
+      is: [challengeTypes.step, challengeTypes.video],
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
@@ -45,7 +45,7 @@ const schema = Joi.object()
       indexjsx: fileJoi
     }),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
-    helpCategory: Joi.only(['JavaScript', 'HTML-CSS', 'Python']),
+    helpCategory: Joi.valid('JavaScript', 'HTML-CSS', 'Python'),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
     helpRoom: Joi.string(),
@@ -106,5 +106,5 @@ const schema = Joi.object()
   .xor('helpCategory', 'isPrivate');
 
 exports.challengeSchemaValidator = () => {
-  return challenge => Joi.validate(challenge, schema);
+  return challenge => schema.validate(challenge);
 };

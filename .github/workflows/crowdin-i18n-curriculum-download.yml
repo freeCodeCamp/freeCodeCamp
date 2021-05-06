@@ -16,6 +16,12 @@ jobs:
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
+      - name: Install Dependencies
+        working-directory: ./tools
+        run: |
+          cd ./crowdin
+          npm ci
+
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
         uses: crowdin/github-action@master
@@ -49,6 +55,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+
+      # Convert Simplified Chinese to Traditional #
+      - name: Generate Translations
+        uses: ./tools/crowdin/actions/convert-chinese
 
       ##### Download Espanol #####
       - name: Crowdin Download Espanol Translations
@@ -95,12 +106,6 @@ jobs:
           git add .
           git diff-index --quiet HEAD || git commit -m "chore(i18n,curriculum): update translations"
           git push -u origin i18n-sync-curriculum -f
-
-      - name: Install Dependencies
-        working-directory: ./tools
-        run: |
-          cd ./crowdin
-          npm ci
 
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR

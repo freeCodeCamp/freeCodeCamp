@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908847
-title: Split Your Bootstrap Row
+title: Divide tu fila de Bootstrap
 challengeType: 0
 forumTopicId: 18306
 dashedName: split-your-bootstrap-row
@@ -8,19 +8,19 @@ dashedName: split-your-bootstrap-row
 
 # --description--
 
-Now that we have a Bootstrap Row, let's split it into two columns to house our elements.
+Ahora que tenemos una fila de Bootstrap, vamos a dividirla en dos columnas para albergar nuestros elementos.
 
-Create two `div` elements within your row, both with the class `col-xs-6`.
+Crea dos elementos `div` dentro de tu fila, ambos con la clase `col-xs-6`.
 
 # --hints--
 
-Two `div class="col-xs-6"` elements should be nested within your `div class="row"` element.
+Dos elementos `div class="col-xs-6"` deben estar anidados dentro de tu elemento `div class="row"`.
 
 ```js
 assert($('div.row > div.col-xs-6').length > 1);
 ```
 
-All your `div` elements should have closing tags.
+Todos tus elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(
