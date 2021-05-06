@@ -120,7 +120,7 @@
     "prettier": "2.2.1",
     "prismjs": "1.23.0",
     "shx": "0.3.3",
-    "sinon": "7.4.1",
+    "sinon": "10.0.0",
     "sinon-express-mock": "2.2.1",
     "start-server-and-test": "1.12.1",
     "webpack-bundle-analyzer": "4.4.1"
