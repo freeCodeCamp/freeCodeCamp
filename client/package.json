@@ -92,7 +92,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-final-form": "6.5.3",
-    "react-ga": "2.7.0",
+    "react-ga": "3.3.0",
     "react-helmet": "6.1.0",
     "react-hotkeys": "2.0.0",
     "react-i18next": "11.8.15",
