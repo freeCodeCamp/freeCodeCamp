@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
 import { openModal } from '../redux';
@@ -33,19 +33,19 @@ export class ToolPanel extends Component {
         {guideUrl && (
           <Button
             block={true}
-            bsStyle='primary'
             className='btn-invert'
             href={guideUrl}
             target='_blank'
+            variant='primary'
           >
             {t('buttons.get-hint')}
           </Button>
         )}
         <Button
           block={true}
-          bsStyle='primary'
           className='btn-invert'
           onClick={openHelpModal}
+          variant='primary'
         >
           {t('buttons.ask-for-help')}
         </Button>

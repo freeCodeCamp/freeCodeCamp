@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 function FullWidthRow({ children, className }) {
   return (

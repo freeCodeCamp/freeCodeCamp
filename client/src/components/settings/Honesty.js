@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Panel } from '@freecodecamp/react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow } from '../helpers';
@@ -19,17 +19,17 @@ const Honesty = ({ isHonest, updateIsHonest }) => {
   const button = isHonest ? (
     <Button
       block={true}
-      bsStyle='primary'
       className='disabled-agreed'
       disabled={true}
+      variant='primary'
     >
       <p>{t('buttons.accepted-honesty')}</p>
     </Button>
   ) : (
     <Button
       block={true}
-      bsStyle='primary'
       onClick={() => updateIsHonest({ isHonest: true })}
+      variant='primary'
     >
       {t('buttons.agree')}
     </Button>
@@ -38,9 +38,9 @@ const Honesty = ({ isHonest, updateIsHonest }) => {
     <section className='honesty-policy'>
       <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
       <FullWidthRow>
-        <Panel className='honesty-panel'>
+        <Card className='honesty-panel'>
           <HonestyPolicy />
-        </Panel>
+        </Card>
         <br />
         {button}
       </FullWidthRow>

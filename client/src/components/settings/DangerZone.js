@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Panel } from '@freecodecamp/react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
@@ -56,18 +56,18 @@ class DangerZone extends Component {
     return (
       <div className='danger-zone text-center'>
         <FullWidthRow>
-          <Panel bsStyle='danger'>
-            <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
+          <Card variant='danger'>
+            <Card.Heading>{t('settings.danger.heading')}</Card.Heading>
             <Spacer />
             <p>{t('settings.danger.be-careful')}</p>
             <FullWidthRow>
               <Button
                 block={true}
                 bsSize='lg'
-                bsStyle='danger'
                 className='btn-danger'
                 onClick={() => this.toggleResetModal()}
                 type='button'
+                variant='danger'
               >
                 {t('settings.danger.reset')}
               </Button>
@@ -75,16 +75,16 @@ class DangerZone extends Component {
               <Button
                 block={true}
                 bsSize='lg'
-                bsStyle='danger'
                 className='btn-danger'
                 onClick={() => this.toggleDeleteModal()}
                 type='button'
+                variant='danger'
               >
                 {t('settings.danger.delete')}
               </Button>
               <Spacer />
             </FullWidthRow>
-          </Panel>
+          </Card>
 
           <ResetModal
             onHide={() => this.toggleResetModal()}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { Trans, withTranslation } from 'react-i18next';
 
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
@@ -62,16 +62,16 @@ export class HelpModal extends Component {
           <Button
             block={true}
             bsSize='lg'
-            bsStyle='primary'
             onClick={createQuestion}
+            variant='primary'
           >
             {t('buttons.create-post')}
           </Button>
           <Button
             block={true}
             bsSize='lg'
-            bsStyle='primary'
             onClick={closeHelpModal}
+            variant='primary'
           >
             {t('buttons.cancel')}
           </Button>

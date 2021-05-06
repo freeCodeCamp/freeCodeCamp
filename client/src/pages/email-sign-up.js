@@ -6,7 +6,7 @@ import SectionHeader from '../components/settings/SectionHeader';
 import IntroDescription from '../components/Intro/components/IntroDescription';
 import { withTranslation } from 'react-i18next';
 
-import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
+import { Row, Col, Button, Container } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
 
@@ -60,7 +60,7 @@ class AcceptPrivacyTerms extends Component {
         <Helmet>
           <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
         </Helmet>
-        <Grid className='default-page-wrapper email-sign-up'>
+        <Container className='default-page-wrapper email-sign-up'>
           <SectionHeader>{t('misc.email-signup')}</SectionHeader>
           <Row>
             <IntroDescription />
@@ -75,9 +75,9 @@ class AcceptPrivacyTerms extends Component {
               <Button
                 block={true}
                 bsSize='lg'
-                bsStyle='primary'
                 className='big-cta-btn'
                 onClick={() => this.onClick(true)}
+                variant='primary'
               >
                 {t('buttons.yes-please')}
               </Button>
@@ -87,9 +87,9 @@ class AcceptPrivacyTerms extends Component {
               <Button
                 block={true}
                 bsSize='lg'
-                bsStyle='primary'
                 className='big-cta-btn'
                 onClick={() => this.onClick(false)}
+                variant='primary'
               >
                 {t('buttons.no-thanks')}
               </Button>
@@ -99,7 +99,7 @@ class AcceptPrivacyTerms extends Component {
               <Spacer />
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Fragment>
     );
   }

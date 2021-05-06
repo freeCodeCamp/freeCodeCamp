@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Modal, Button, Col, Row } from 'react-bootstrap';
 import { Spacer } from '../helpers';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
@@ -142,10 +142,10 @@ function DonateModal({
             <Button
               block={true}
               bsSize='sm'
-              bsStyle='primary'
               className='btn-link'
               onClick={closeDonationModal}
               tabIndex='0'
+              variant='primary'
             >
               {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
             </Button>

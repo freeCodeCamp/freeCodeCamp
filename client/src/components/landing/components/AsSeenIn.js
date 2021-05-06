@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { AsFeatureLogo } from '../../../assets/images/components';
 import { useTranslation } from 'react-i18next';
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
@@ -64,8 +64,8 @@ function ResetModal({ reset, close, isOpen }) {
         <Button
           block={true}
           bsSize='large'
-          bsStyle='danger'
           onClick={withActions(reset, close)}
+          variant='danger'
         >
           {t('buttons.reset-lesson')}
         </Button>

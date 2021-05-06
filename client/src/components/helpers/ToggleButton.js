@@ -1,9 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  ToggleButtonGroup as BSBG,
-  ToggleButton as TB
-} from '@freecodecamp/react-bootstrap';
+import { ToggleButtonGroup as BSBG, ToggleButton as TB } from 'react-bootstrap';
 
 import './toggle-button.css';
 import ToggleCheck from '../../assets/icons/ToggleCheck';
@@ -37,11 +34,11 @@ export default function ToggleButton({
       <BSBG name={name} onChange={onChange} type='radio'>
         <TB
           bsSize='sm'
-          bsStyle='primary'
           className={`toggle-${getActiveClass(value)}`}
           disabled={value}
           type='radio'
           value={1}
+          variant='primary'
         >
           {value ? (
             <ToggleCheck style={checkIconStyle} />
@@ -52,11 +49,11 @@ export default function ToggleButton({
         </TB>
         <TB
           bsSize='sm'
-          bsStyle='primary'
           className={`toggle-${getActiveClass(!value)}`}
           disabled={!value}
           type='radio'
           value={2}
+          variant='primary'
         >
           {offLabel}
           {!value ? (

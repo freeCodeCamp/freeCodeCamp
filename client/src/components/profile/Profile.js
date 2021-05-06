@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row } from '@freecodecamp/react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import Link from '../helpers/Link';
 import { useTranslation } from 'react-i18next';
@@ -162,7 +162,7 @@ function Profile({ user, isSessionUser }) {
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
       <Spacer />
-      <Grid>
+      <Container>
         <Spacer />
         {isLocked ? renderMessage(isSessionUser, username, t) : null}
         {!isLocked || isSessionUser ? renderProfile(user) : null}
@@ -174,7 +174,7 @@ function Profile({ user, isSessionUser }) {
           </Row>
         )}
         <Spacer />
-      </Grid>
+      </Container>
     </Fragment>
   );
 }

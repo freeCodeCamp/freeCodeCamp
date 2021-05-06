@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 function BlockSaveButton({ children, ...restProps }) {
@@ -10,8 +10,8 @@ function BlockSaveButton({ children, ...restProps }) {
     <Button
       block={true}
       bsSize='lg'
-      bsStyle='primary'
       type='submit'
+      variant='primary'
       {...restProps}
     >
       {children || t('buttons.save')}

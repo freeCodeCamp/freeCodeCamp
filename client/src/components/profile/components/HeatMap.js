@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
-import { Row } from '@freecodecamp/react-bootstrap';
+import { Row } from 'react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';

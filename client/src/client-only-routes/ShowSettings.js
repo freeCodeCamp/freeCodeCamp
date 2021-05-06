@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid } from '@freecodecamp/react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 
 import envData from '../../../config/env.json';
@@ -129,7 +129,7 @@ export function ShowSettings(props) {
   return (
     <Fragment>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Grid>
+      <Container>
         <main>
           <Spacer size={2} />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
@@ -193,7 +193,7 @@ export function ShowSettings(props) {
           <Spacer />
           <DangerZone />
         </main>
-      </Grid>
+      </Container>
     </Fragment>
   );
 }

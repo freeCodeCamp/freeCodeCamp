@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
 import { Spacer, Loader } from '../components/helpers';
@@ -84,7 +84,7 @@ class DonatePage extends Component {
     return (
       <Fragment>
         <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
-        <Grid className='donate-page-wrapper'>
+        <Container className='donate-page-wrapper'>
           <Spacer />
           <Row>
             <Fragment>
@@ -125,7 +125,7 @@ class DonatePage extends Component {
             </Fragment>
           </Row>
           <Spacer />
-        </Grid>
+        </Container>
       </Fragment>
     );
   }

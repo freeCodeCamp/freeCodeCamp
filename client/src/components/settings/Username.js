@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import {
-  ControlLabel,
-  FormControl,
-  Alert,
-  FormGroup
-} from '@freecodecamp/react-bootstrap';
+import { FormLabel, FormControl, Alert, FormGroup } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
 import {
@@ -124,7 +119,7 @@ class UsernameSettings extends Component {
       console.log(error);
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>
+          <Alert variant='danger'>
             {t(`settings.username.${error}`, {
               username: this.state.formValue
             })}
@@ -135,28 +130,28 @@ class UsernameSettings extends Component {
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>{t('settings.username.unavailable')}</Alert>
+          <Alert variant='warning'>{t('settings.username.unavailable')}</Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='info'>{t('settings.username.validating')}</Alert>
+          <Alert variant='info'>{t('settings.username.validating')}</Alert>
         </FullWidthRow>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
+          <Alert variant='success'>{t('settings.username.available')}</Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
-          <Alert bsStyle='info'>{t('settings.username.change')}</Alert>
+          <Alert variant='success'>{t('settings.username.available')}</Alert>
+          <Alert variant='info'>{t('settings.username.change')}</Alert>
         </FullWidthRow>
       );
     }
@@ -177,9 +172,9 @@ class UsernameSettings extends Component {
         <form id='usernameSettings' onSubmit={this.handleSubmit}>
           <FullWidthRow>
             <FormGroup>
-              <ControlLabel htmlFor='username-settings'>
+              <FormLabel htmlFor='username-settings'>
                 <strong>{t('settings.labels.username')}</strong>
-              </ControlLabel>
+              </FormLabel>
               <FormControl
                 name='username-settings'
                 onChange={this.handleChange}

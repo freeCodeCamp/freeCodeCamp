@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 import './danger-zone.css';
 
@@ -46,10 +46,10 @@ function DeleteModal(props) {
         <Button
           block={true}
           bsSize='lg'
-          bsStyle='primary'
           className='btn-invert'
           onClick={props.onHide}
           type='button'
+          variant='primary'
         >
           {t('settings.danger.nevermind')}
         </Button>
@@ -57,10 +57,10 @@ function DeleteModal(props) {
         <Button
           block={true}
           bsSize='lg'
-          bsStyle='danger'
           className='btn-danger'
           onClick={props.delete}
           type='button'
+          variant='danger'
         >
           {t('settings.danger.certain')}
         </Button>

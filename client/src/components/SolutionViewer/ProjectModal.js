@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SolutionViewer from './SolutionViewer';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 const propTypes = {

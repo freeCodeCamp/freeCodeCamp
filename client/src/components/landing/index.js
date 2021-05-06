@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Grid } from '@freecodecamp/react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
@@ -24,16 +24,16 @@ export const Landing = ({ page = 'landing' }) => {
         <title>{t('metaTags:title')}</title>
       </Helmet>
       <main className='landing-page'>
-        <Grid>
+        <Container>
           <LandingTop page={page} />
-        </Grid>
-        <Grid fluid={true}>
+        </Container>
+        <Container fluid={true}>
           <AsSeenIn />
-        </Grid>
-        <Grid>
+        </Container>
+        <Container>
           <Testimonials />
           <Certifications />
-        </Grid>
+        </Container>
       </main>
     </Fragment>
   );

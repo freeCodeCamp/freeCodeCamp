@@ -4,11 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import {
-  Button,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { Button, DropdownButton, DropdownItem } from 'react-bootstrap';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux';
@@ -52,50 +48,50 @@ function ToolPanel({
           isMobile ? 'tool-panel-group-mobile' : ''
         }`}
       >
-        <Button block={true} bsStyle='primary' onClick={executeChallenge}>
+        <Button block={true} onClick={executeChallenge} variant='primary'>
           {isMobile ? t('buttons.run') : t('buttons.run-test')}
         </Button>
         <Button
           block={true}
-          bsStyle='primary'
           className='btn-invert'
           onClick={openResetModal}
+          variant='primary'
         >
           {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
         </Button>
         <DropdownButton
           block={true}
-          bsStyle='primary'
           className='btn-invert'
           id='get-help-dropdown'
           title={isMobile ? t('buttons.help') : t('buttons.get-help')}
+          variant='primary'
         >
           {guideUrl ? (
-            <MenuItem
-              bsStyle='primary'
+            <DropdownItem
               className='btn-invert'
               href={guideUrl}
               target='_blank'
+              variant='primary'
             >
               {t('buttons.get-hint')}
-            </MenuItem>
+            </DropdownItem>
           ) : null}
           {videoUrl ? (
-            <MenuItem
-              bsStyle='primary'
+            <DropdownItem
               className='btn-invert'
               onClick={openVideoModal}
+              variant='primary'
             >
               {t('buttons.watch-video')}
-            </MenuItem>
+            </DropdownItem>
           ) : null}
-          <MenuItem
-            bsStyle='primary'
+          <DropdownItem
             className='btn-invert'
             onClick={openHelpModal}
+            variant='primary'
           >
             {t('buttons.ask-for-help')}
-          </MenuItem>
+          </DropdownItem>
         </DropdownButton>
       </div>
     </Fragment>

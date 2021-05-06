@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
+import { TabPane, Tabs } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 import ToolPanel from '../components/Tool-Panel';

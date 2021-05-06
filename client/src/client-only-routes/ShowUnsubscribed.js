@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
+import { Container, Card, Button } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
@@ -17,23 +17,23 @@ function ShowUnsubscribed({ unsubscribeId }) {
       <Helmet>
         <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         <main>
           <FullWidthRow>
             <Spacer size={2} />
-            <Panel bsStyle='primary' className='text-center'>
+            <Card className='text-center' variant='primary'>
               <Spacer />
               <h2>{t('misc.unsubscribed')}</h2>
               <p>{t('misc.keep-coding')}</p>
-            </Panel>
+            </Card>
           </FullWidthRow>
           {unsubscribeId ? (
             <FullWidthRow>
               <Button
                 block={true}
                 bsSize='lg'
-                bsStyle='primary'
                 href={`${apiLocation}/resubscribe/${unsubscribeId}`}
+                variant='primary'
               >
                 {t('buttons.resubscribe')}
               </Button>
@@ -41,7 +41,7 @@ function ShowUnsubscribed({ unsubscribeId }) {
           ) : null}
           <Spacer size={2} />
         </main>
-      </Grid>
+      </Container>
     </Fragment>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { isSignedInSelector } from '../../../redux';
@@ -27,10 +27,10 @@ function Login(props) {
   const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
   return (
     <Button
-      bsStyle='default'
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
       href={href}
+      variant='default'
     >
       {children || t('buttons.sign-in')}
     </Button>

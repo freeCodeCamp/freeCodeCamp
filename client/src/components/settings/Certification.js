@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { find, first, values, isString } from 'lodash-es';
-import {
-  Table,
-  Button,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { Table, Button, DropdownButton, DropdownItem } from 'react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 import { withTranslation } from 'react-i18next';
@@ -191,10 +186,10 @@ export class CertificationSettings extends Component {
       return (
         <Button
           block={true}
-          bsStyle='primary'
           className='btn-invert'
           id={`btn-for-${projectId}`}
           onClick={onClickHandler}
+          variant='primary'
         >
           {t('buttons.show-code')}
         </Button>
@@ -205,27 +200,27 @@ export class CertificationSettings extends Component {
         <div className='solutions-dropdown'>
           <DropdownButton
             block={true}
-            bsStyle='primary'
             className='btn-invert'
             id={`dropdown-for-${projectId}`}
             title='Show Solutions'
+            variant='primary'
           >
-            <MenuItem
-              bsStyle='primary'
+            <DropdownItem
               href={solution}
               rel='noopener noreferrer'
               target='_blank'
+              variant='primary'
             >
               {t('buttons.frontend')}
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
+            </DropdownItem>
+            <DropdownItem
               href={githubLink}
               rel='noopener noreferrer'
               target='_blank'
+              variant='primary'
             >
               {t('buttons.backend')}
-            </MenuItem>
+            </DropdownItem>
           </DropdownButton>
         </div>
       );
@@ -234,12 +229,12 @@ export class CertificationSettings extends Component {
       return (
         <Button
           block={true}
-          bsStyle='primary'
           className='btn-invert'
           href={solution}
           id={`btn-for-${projectId}`}
           rel='noopener noreferrer'
           target='_blank'
+          variant='primary'
         >
           {t('buttons.show-solution')}
         </Button>
@@ -248,10 +243,10 @@ export class CertificationSettings extends Component {
     return (
       <Button
         block={true}
-        bsStyle='primary'
         className='btn-invert'
         id={`btn-for-${projectId}`}
         onClick={onClickHandler}
+        variant='primary'
       >
         {t('buttons.show-code')}
       </Button>
@@ -316,9 +311,9 @@ export class CertificationSettings extends Component {
           <td colSpan={2}>
             <Button
               block={true}
-              bsStyle='primary'
               href={certLocation}
               onClick={createClickHandler(certSlug)}
+              variant='primary'
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
             </Button>
@@ -467,13 +462,13 @@ export class CertificationSettings extends Component {
           <div className={'col-xs-12'}>
             <Button
               bsSize='sm'
-              bsStyle='primary'
               className={'col-xs-12'}
               href={certLocation}
               id={'button-' + certSlug}
               onClick={createClickHandler(certLocation)}
               style={buttonStyle}
               target='_blank'
+              variant='primary'
             >
               {t('buttons.show-cert')}
             </Button>
@@ -551,13 +546,13 @@ export class CertificationSettings extends Component {
           {fullStackClaimable ? (
             <Button
               bsSize='sm'
-              bsStyle='primary'
               className={'col-xs-12'}
               href={certLocation}
               id={'button-' + certSlug}
               onClick={createClickHandler(certSlug)}
               style={buttonStyle}
               target='_blank'
+              variant='primary'
             >
               {isFullStackCert
                 ? t('buttons.show-cert')
@@ -566,12 +561,12 @@ export class CertificationSettings extends Component {
           ) : (
             <Button
               bsSize='sm'
-              bsStyle='primary'
               className={'col-xs-12'}
               disabled={true}
               id={'button-' + certSlug}
               style={buttonStyle}
               target='_blank'
+              variant='primary'
             >
               {t('buttons.claim-cert')}
             </Button>

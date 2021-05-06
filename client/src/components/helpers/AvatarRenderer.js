@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image } from '@freecodecamp/react-bootstrap';
+import { Image } from 'react-bootstrap';
 import DefaultAvatar from '../../assets/icons/DefaultAvatar';
 import { defaultUserImage } from '../../../../config/misc';
 import { borderColorPicker } from '../helpers';

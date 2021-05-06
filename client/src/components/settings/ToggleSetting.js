@@ -1,13 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  FormGroup,
-  ControlLabel,
-  HelpBlock
-} from '@freecodecamp/react-bootstrap';
+import { FormGroup, FormLabel } from 'react-bootstrap';
 
 import TB from '../helpers/ToggleButton';
-import { ButtonSpacer } from '../helpers';
+import { ButtonSpacer, HelpBlock } from '../helpers';
 
 import './toggle-setting.css';
 
@@ -31,14 +27,14 @@ export default function ToggleSetting({
     <Fragment>
       <div className='toggle-setting-container'>
         <FormGroup>
-          <ControlLabel className='toggle-label' htmlFor={flagName}>
+          <FormLabel className='toggle-label' htmlFor={flagName}>
             <strong>{action}</strong>
             {explain ? (
               <HelpBlock>
                 <em>{explain}</em>
               </HelpBlock>
             ) : null}
-          </ControlLabel>
+          </FormLabel>
           <TB
             name={flagName}
             onChange={toggleFlag}

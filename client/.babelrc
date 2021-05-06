@@ -9,7 +9,10 @@
         "corejs": 2,
         "shippedProposals": true,
         "targets": {
-          "browsers": [">0.25%", "not dead"]
+          "browsers": [
+            ">0.25%",
+            "not dead"
+          ]
         }
       }
     ],
@@ -41,7 +44,7 @@
       "babel-plugin-transform-imports",
       {
         "react-bootstrap": {
-          "transform": "react-bootstrap/lib/${member}",
+          "transform": "react-bootstrap/${member}",
           "preventFullImport": true
         }
       }
@@ -64,7 +67,9 @@
         ],
         "theme": "default",
         "css": true,
-        "plugins": ["line-numbers"]
+        "plugins": [
+          "line-numbers"
+        ]
       }
     ]
   ]

@@ -1,20 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
-import {
-  Button,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  HelpBlock
-} from '@freecodecamp/react-bootstrap';
+import { Button, FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import isURL from 'validator/lib/isURL';
 import { withTranslation } from 'react-i18next';
 
 import { hasProtocolRE } from '../../utils';
 
-import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
+import { FullWidthRow, ButtonSpacer, Spacer, HelpBlock } from '../helpers';
 import SectionHeader from './SectionHeader';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 
@@ -216,7 +210,7 @@ class PortfolioSettings extends Component {
                 pristine || (!pristine && !title) ? null : titleState
               }
             >
-              <ControlLabel>{t('settings.labels.title')}</ControlLabel>
+              <FormLabel>{t('settings.labels.title')}</FormLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'title')}
                 required={true}
@@ -231,7 +225,7 @@ class PortfolioSettings extends Component {
                 pristine || (!pristine && !url) ? null : urlState
               }
             >
-              <ControlLabel>{t('settings.labels.url')}</ControlLabel>
+              <FormLabel>{t('settings.labels.url')}</FormLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'url')}
                 required={true}
@@ -244,7 +238,7 @@ class PortfolioSettings extends Component {
               controlId={`${id}-image`}
               validationState={pristine ? null : imageState}
             >
-              <ControlLabel>{t('settings.labels.image')}</ControlLabel>
+              <FormLabel>{t('settings.labels.image')}</FormLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'image')}
                 type='url'
@@ -256,9 +250,9 @@ class PortfolioSettings extends Component {
               controlId={`${id}-description`}
               validationState={pristine ? null : descriptionState}
             >
-              <ControlLabel>{t('settings.labels.description')}</ControlLabel>
+              <FormLabel>{t('settings.labels.description')}</FormLabel>
               <FormControl
-                componentClass='textarea'
+                as='textarea'
                 onChange={this.createOnChangeHandler(id, 'description')}
                 value={description}
               />
@@ -285,9 +279,9 @@ class PortfolioSettings extends Component {
             <Button
               block={true}
               bsSize='lg'
-              bsStyle='danger'
               onClick={() => this.handleRemoveItem(id)}
               type='button'
+              variant='danger'
             >
               {t('buttons.remove-portfolio')}
             </Button>
@@ -320,9 +314,9 @@ class PortfolioSettings extends Component {
           <Button
             block={true}
             bsSize='lg'
-            bsStyle='primary'
             onClick={this.handleAdd}
             type='button'
+            variant='primary'
           >
             {t('buttons.add-portfolio')}
           </Button>

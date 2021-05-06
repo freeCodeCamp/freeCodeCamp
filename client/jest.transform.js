@@ -5,8 +5,8 @@ const babelOptions = {
     [
       'transform-imports',
       {
-        '@freecodecamp/react-bootstrap': {
-          transform: '@freecodecamp/react-bootstrap/lib/${member}',
+        'react-bootstrap': {
+          transform: 'react-bootstrap/${member}',
           preventFullImport: true
         }
       }

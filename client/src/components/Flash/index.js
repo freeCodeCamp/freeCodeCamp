@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Alert } from '@freecodecamp/react-bootstrap';
+import { Alert } from 'react-bootstrap';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useTranslation } from 'react-i18next';
 
@@ -30,11 +30,7 @@ function Flash({ flashMessage, onClose }) {
     <>
       <TransitionGroup>
         <CSSTransition classNames='flash-message' key={id} timeout={500}>
-          <Alert
-            bsStyle={type}
-            className='flash-message'
-            onDismiss={handleClose}
-          >
+          <Alert className='flash-message' onClose={handleClose} variant={type}>
             {t(message, variables)}
           </Alert>
         </CSSTransition>

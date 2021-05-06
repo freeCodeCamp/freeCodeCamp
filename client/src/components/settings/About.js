@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  FormGroup,
-  ControlLabel,
-  FormControl
-} from '@freecodecamp/react-bootstrap';
+import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 
 import { FullWidthRow, Spacer } from '../helpers';
 import ThemeSettings from './Theme';
@@ -135,9 +131,9 @@ class AboutSettings extends Component {
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
             <FormGroup controlId='about-name'>
-              <ControlLabel>
+              <FormLabel>
                 <strong>{t('settings.labels.name')}</strong>
-              </ControlLabel>
+              </FormLabel>
               <FormControl
                 onChange={this.handleNameChange}
                 type='text'
@@ -145,9 +141,9 @@ class AboutSettings extends Component {
               />
             </FormGroup>
             <FormGroup controlId='about-location'>
-              <ControlLabel>
+              <FormLabel>
                 <strong>{t('settings.labels.location')}</strong>
-              </ControlLabel>
+              </FormLabel>
               <FormControl
                 onChange={this.handleLocationChange}
                 type='text'
@@ -155,9 +151,9 @@ class AboutSettings extends Component {
               />
             </FormGroup>
             <FormGroup controlId='about-picture'>
-              <ControlLabel>
+              <FormLabel>
                 <strong>{t('settings.labels.picture')}</strong>
-              </ControlLabel>
+              </FormLabel>
               <FormControl
                 onChange={this.handlePictureChange}
                 required={true}
@@ -166,11 +162,11 @@ class AboutSettings extends Component {
               />
             </FormGroup>
             <FormGroup controlId='about-about'>
-              <ControlLabel>
+              <FormLabel>
                 <strong>{t('settings.labels.about')}</strong>
-              </ControlLabel>
+              </FormLabel>
               <FormControl
-                componentClass='textarea'
+                as='textarea'
                 onChange={this.handleAboutChange}
                 value={about}
               />

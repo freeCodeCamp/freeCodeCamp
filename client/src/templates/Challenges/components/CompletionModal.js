@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { noop } from 'lodash-es';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withTranslation } from 'react-i18next';
 
@@ -235,8 +235,8 @@ export class CompletionModalInner extends Component {
           <Button
             block={true}
             bsSize='large'
-            bsStyle='primary'
             onClick={this.handleSubmit}
+            variant='primary'
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
             <span className='hidden-xs'> (Ctrl + Enter)</span>
@@ -245,10 +245,10 @@ export class CompletionModalInner extends Component {
             <Button
               block={true}
               bsSize='lg'
-              bsStyle='primary'
               className='btn-invert'
               download={`${dashedName}.txt`}
               href={this.state.downloadURL}
+              variant='primary'
             >
               {t('learn.download-solution')}
             </Button>

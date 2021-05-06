@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { configureAnchors } from 'react-scrollable-anchor';
 
 import Login from '../../components/Header/components/Login';
@@ -154,7 +154,7 @@ class SuperBlockIntroductionPage extends Component {
         <Helmet>
           <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
-        <Grid>
+        <Container>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size={2} />
@@ -205,7 +205,7 @@ class SuperBlockIntroductionPage extends Component {
               <Spacer size={2} />
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </>
     );
   }

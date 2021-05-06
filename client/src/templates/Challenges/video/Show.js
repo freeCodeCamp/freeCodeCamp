@@ -1,7 +1,7 @@
 // Package Utilities
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Button, Container, Col, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
@@ -189,7 +189,7 @@ class Project extends Component {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               <Spacer />
               <ChallengeTitle
@@ -288,10 +288,10 @@ class Project extends Component {
                 <Button
                   block={true}
                   bsSize='large'
-                  bsStyle='primary'
                   onClick={() =>
                     this.handleSubmit(solution, openCompletionModal)
                   }
+                  variant='primary'
                 >
                   {t('buttons.check-answer')}
                 </Button>
@@ -303,7 +303,7 @@ class Project extends Component {
                 superBlock={superBlock}
               />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Media } from '@freecodecamp/react-bootstrap';
+import { Media } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow } from '../../helpers';

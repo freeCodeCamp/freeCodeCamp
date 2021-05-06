@@ -18,14 +18,14 @@ exports[`<Profile/> renders correctly 1`] = `
         class="row"
       >
         <div
-          class="avatar-container col-xs-12"
+          class="avatar-container col-12"
         >
           <div
             class="avatar-container default-border"
           >
             <img
               alt="profile.avatar"
-              class="avatar img-responsive"
+              class="avatar"
               src="string"
             />
           </div>
@@ -35,7 +35,8 @@ exports[`<Profile/> renders correctly 1`] = `
         class="row"
       >
         <div
-          class="text-center social-media-icons col-sm-6 col-sm-offset-3"
+          class="text-center social-media-icons col-sm-6"
+          smoffset="3"
         >
           <a
             aria-label="aria.linkedin"

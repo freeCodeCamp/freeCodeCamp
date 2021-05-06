@@ -220,8 +220,8 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: 'babel-plugin-transform-imports',
     options: {
-      '@freecodecamp/react-bootstrap': {
-        transform: '@freecodecamp/react-bootstrap/lib/${member}',
+      'react-bootstrap': {
+        transform: 'react-bootstrap/${member}',
         preventFullImport: true
       }
     }

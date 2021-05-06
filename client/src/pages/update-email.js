@@ -8,12 +8,12 @@ import {
   Form,
   FormGroup,
   FormControl,
-  ControlLabel,
-  Grid,
+  FormLabel,
+  Container,
   Row,
   Col,
   Button
-} from '@freecodecamp/react-bootstrap';
+} from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import isEmail from 'validator/lib/isEmail';
 import { isString } from 'lodash-es';
@@ -86,7 +86,7 @@ class UpdateEmail extends Component {
         </Helmet>
         <Spacer />
         <h2 className='text-center'>{t('misc.update-email-2')}</h2>
-        <Grid>
+        <Container>
           <Row>
             <Col sm={6} smOffset={3}>
               <Row>
@@ -95,11 +95,7 @@ class UpdateEmail extends Component {
                     controlId='emailInput'
                     validationState={this.getEmailValidationState()}
                   >
-                    <Col
-                      className='email-label'
-                      componentClass={ControlLabel}
-                      sm={2}
-                    >
+                    <Col as={FormLabel} className='email-label' sm={2}>
                       {t('misc.email')}
                     </Col>
                     <Col sm={10}>
@@ -114,9 +110,9 @@ class UpdateEmail extends Component {
                   <Button
                     block={true}
                     bsSize='lg'
-                    bsStyle='primary'
                     disabled={this.getEmailValidationState() !== 'success'}
                     type='submit'
+                    variant='primary'
                   >
                     {isNewEmail
                       ? t('buttons.update-email')
@@ -129,7 +125,7 @@ class UpdateEmail extends Component {
               </Row>
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Fragment>
     );
   }

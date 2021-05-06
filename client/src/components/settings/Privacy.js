@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Form } from '@freecodecamp/react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
 import { userSelector } from '../../redux';
@@ -161,11 +161,11 @@ class PrivacySettings extends Component {
           <Button
             block={true}
             bsSize='lg'
-            bsStyle='primary'
             download={`${user.username}.json`}
             href={`data:text/json;charset=utf-8,${encodeURIComponent(
               JSON.stringify(user)
             )}`}
+            variant='primary'
           >
             {t('buttons.download-data')}
           </Button>

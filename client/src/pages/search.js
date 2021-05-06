@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { Index } from 'react-instantsearch-dom';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
 import { updateSearchQuery } from '../components/search/redux';
@@ -28,7 +28,7 @@ class SearchPage extends Component {
       <Fragment>
         <Helmet title={`${t('search.label')} | freeCodeCamp.org`} />
         <Index indexName='news' />
-        <Grid>
+        <Container>
           <Row>
             <Col xs={12}>
               <main>
@@ -36,7 +36,7 @@ class SearchPage extends Component {
               </main>
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Fragment>
     );
   }

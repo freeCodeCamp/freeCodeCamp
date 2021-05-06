@@ -4,7 +4,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
 
 import Honesty from './Honesty';
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 describe('<Honesty />', () => {
   const renderer = new ShallowRenderer();

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 
 import ShowProjectLinks from './ShowProjectLinks';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCampLogo';
@@ -233,7 +233,7 @@ const ShowCertification = props => {
       <Button
         block={true}
         bsSize='sm'
-        bsStyle='primary'
+        variant='primary'
         onClick={hideDonationSection}
       >
         {t('buttons.close')}
@@ -274,7 +274,7 @@ const ShowCertification = props => {
         <Button
           block={true}
           bsSize='lg'
-          bsStyle='primary'
+          variant='primary'
           target='_blank'
           href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
@@ -286,7 +286,7 @@ const ShowCertification = props => {
         <Button
           block={true}
           bsSize='lg'
-          bsStyle='primary'
+          variant='primary'
           target='_blank'
           href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
             certTitle: certTitle,
@@ -301,7 +301,7 @@ const ShowCertification = props => {
   );
 
   return (
-    <Grid className='certificate-outer-wrapper'>
+    <Container className='certificate-outer-wrapper'>
       <Spacer size={2} />
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
       <Row className='certificate-wrapper certification-namespace'>
@@ -371,7 +371,7 @@ const ShowCertification = props => {
       <Spacer size={2} />
       <ShowProjectLinks user={user} name={displayName} certName={certTitle} />
       <Spacer size={2} />
-    </Grid>
+    </Container>
   );
 };
 

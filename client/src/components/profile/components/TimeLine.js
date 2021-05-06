@@ -6,8 +6,8 @@ import {
   Modal,
   Table,
   DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+  DropdownItem
+} from 'react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withTranslation } from 'react-i18next';
 
@@ -104,10 +104,10 @@ class TimelineInner extends Component {
       return (
         <Button
           block={true}
-          bsStyle='primary'
           className='btn-invert'
           id={`btn-for-${id}`}
           onClick={() => this.viewSolution(id, solution, files)}
+          variant='primary'
         >
           {t('buttons.show-code')}
         </Button>
@@ -117,27 +117,27 @@ class TimelineInner extends Component {
         <div className='solutions-dropdown'>
           <DropdownButton
             block={true}
-            bsStyle='primary'
             className='btn-invert'
             id={`dropdown-for-${id}`}
             title='View'
+            variant='primary'
           >
-            <MenuItem
-              bsStyle='primary'
+            <DropdownItem
               href={solution}
               rel='noopener noreferrer'
               target='_blank'
+              variant='primary'
             >
               {t('buttons.frontend')}
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
+            </DropdownItem>
+            <DropdownItem
               href={githubLink}
               rel='noopener noreferrer'
               target='_blank'
+              variant='primary'
             >
               {t('buttons.backend')}
-            </MenuItem>
+            </DropdownItem>
           </DropdownButton>
         </div>
       );
@@ -145,12 +145,12 @@ class TimelineInner extends Component {
       return (
         <Button
           block={true}
-          bsStyle='primary'
           className='btn-invert'
           href={solution}
           id={`btn-for-${id}`}
           rel='noopener noreferrer'
           target='_blank'
+          variant='primary'
         >
           {t('buttons.view')}
         </Button>

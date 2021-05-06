@@ -8,19 +8,19 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
     settings.headings.honesty
   </SectionHeader>
   <FullWidthRow>
-    <Uncontrolled(Panel)
+    <Card
+      body={false}
       className="honesty-panel"
     >
       <HonestyPolicy />
-    </Uncontrolled(Panel)>
+    </Card>
     <br />
     <Button
       active={false}
       block={true}
-      bsClass="btn"
-      bsStyle="primary"
       disabled={false}
       onClick={[Function]}
+      variant="primary"
     >
       buttons.agree
     </Button>
@@ -36,19 +36,19 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
     settings.headings.honesty
   </SectionHeader>
   <FullWidthRow>
-    <Uncontrolled(Panel)
+    <Card
+      body={false}
       className="honesty-panel"
     >
       <HonestyPolicy />
-    </Uncontrolled(Panel)>
+    </Card>
     <br />
     <Button
       active={false}
       block={true}
-      bsClass="btn"
-      bsStyle="primary"
       className="disabled-agreed"
       disabled={true}
+      variant="primary"
     >
       <p>
         buttons.accepted-honesty

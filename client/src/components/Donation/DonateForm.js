@@ -10,7 +10,7 @@ import {
   Tabs,
   ToggleButton,
   ToggleButtonGroup
-} from '@freecodecamp/react-bootstrap';
+} from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
 import {
@@ -190,10 +190,10 @@ class DonateForm extends Component {
         <Tabs
           activeKey={donationDuration}
           animation={false}
-          bsStyle='pills'
           className='donate-tabs'
           id='Duration'
           onSelect={this.handleSelectDuration}
+          variant='pills'
         >
           {Object.keys(this.durations).map(duration => (
             <Tab

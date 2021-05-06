@@ -4,13 +4,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'gatsby';
 import {
-  HelpBlock,
   Alert,
   FormGroup,
-  ControlLabel,
+  FormLabel,
   FormControl,
   Button
-} from '@freecodecamp/react-bootstrap';
+} from 'react-bootstrap';
 import isEmail from 'validator/lib/isEmail';
 import { Trans, withTranslation } from 'react-i18next';
 
@@ -18,6 +17,7 @@ import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
 
 import FullWidthRow from '../helpers/FullWidthRow';
+import HelpBlock from '../helpers/HelpBlock';
 import Spacer from '../helpers/Spacer';
 import SectionHeader from './SectionHeader';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
@@ -40,7 +40,7 @@ export function UpdateEmailButton() {
   const { t } = this.props;
   return (
     <Link style={{ textDecoration: 'none' }} to='/update-email'>
-      <Button block={true} bsSize='lg' bsStyle='primary'>
+      <Button block={true} bsSize='lg' variant='primary'>
         {t('buttons.edit')}
       </Button>
     </Link>
@@ -176,7 +176,7 @@ class EmailSettings extends Component {
         {isEmailVerified ? null : (
           <FullWidthRow>
             <HelpBlock>
-              <Alert bsStyle='info' className='text-center'>
+              <Alert className='text-center' variant='info'>
                 {t('settings.email.not-verified')}
                 <br />
                 <Trans i18nKey='settings.email.check'>
@@ -189,14 +189,14 @@ class EmailSettings extends Component {
         <FullWidthRow>
           <form id='form-update-email' onSubmit={this.handleSubmit}>
             <FormGroup controlId='current-email'>
-              <ControlLabel>{t('settings.email.current')}</ControlLabel>
+              <FormLabel>{t('settings.email.current')}</FormLabel>
               <FormControl.Static>{currentEmail}</FormControl.Static>
             </FormGroup>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
             >
-              <ControlLabel>{t('settings.email.new')}</ControlLabel>
+              <FormLabel>{t('settings.email.new')}</FormLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('newEmail')}
                 type='email'
@@ -210,7 +210,7 @@ class EmailSettings extends Component {
               controlId='confirm-email'
               validationState={confirmEmailValidation}
             >
-              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
+              <FormLabel>{t('settings.email.confirm')}</FormLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('confirmNewEmail')}
                 type='email'

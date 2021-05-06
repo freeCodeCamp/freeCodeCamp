@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
-  Panel,
+  Card,
   FormControl,
   FormGroup,
-  ControlLabel,
+  FormLabel,
   Button,
   Col,
   Row
-} from '@freecodecamp/react-bootstrap';
+} from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { Trans, withTranslation } from 'react-i18next';
 
@@ -89,20 +89,18 @@ class ShowUser extends Component {
         <main>
           <FullWidthRow>
             <Spacer size={2} />
-            <Panel bsStyle='info' className='text-center'>
-              <Panel.Heading>
-                <Panel.Title componentClass='h3'>
-                  {t('report.sign-in')}
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Body className='text-center'>
+            <Card className='text-center' variant='info'>
+              <Card.Heading>
+                <Card.Title as='h3'>{t('report.sign-in')}</Card.Title>
+              </Card.Heading>
+              <Card.Body className='text-center'>
                 <Spacer size={2} />
                 <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
                   <Login block={true}>{t('buttons.click-here')}</Login>
                 </Col>
                 <Spacer size={3} />
-              </Panel.Body>
-            </Panel>
+              </Card.Body>
+            </Card>
           </FullWidthRow>
         </main>
       );
@@ -131,15 +129,15 @@ class ShowUser extends Component {
             <p>{t('report.notify-2')}</p>
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId='report-user-textarea'>
-                <ControlLabel>{t('report.what')}</ControlLabel>
+                <FormLabel>{t('report.what')}</FormLabel>
                 <FormControl
-                  componentClass='textarea'
+                  as='textarea'
                   onChange={this.handleChange}
                   placeholder={placeholderText}
                   value={textarea}
                 />
               </FormGroup>
-              <Button block={true} bsStyle='primary' type='submit'>
+              <Button block={true} type='submit' variant='primary'>
                 {t('report.submit')}
               </Button>
               <Spacer />

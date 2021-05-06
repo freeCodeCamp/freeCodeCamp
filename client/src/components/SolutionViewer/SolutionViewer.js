@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Panel } from '@freecodecamp/react-bootstrap';
+import { Card } from 'react-bootstrap';
 import Prism from 'prismjs';
 
 const prismLang = {
@@ -16,9 +16,9 @@ const SolutionViewer = ({
 }) =>
   files && Array.isArray(files) && files.length ? (
     files.map(file => (
-      <Panel bsStyle='primary' className='solution-viewer' key={file.ext}>
-        <Panel.Heading>{file.ext.toUpperCase()}</Panel.Heading>
-        <Panel.Body>
+      <Card className='solution-viewer' key={file.ext} variant='primary'>
+        <Card.Heading>{file.ext.toUpperCase()}</Card.Heading>
+        <Card.Body>
           <pre>
             <code
               className={`language-${prismLang[file.ext]}`}
@@ -30,17 +30,17 @@ const SolutionViewer = ({
               }}
             />
           </pre>
-        </Panel.Body>
-      </Panel>
+        </Card.Body>
+      </Card>
     ))
   ) : (
-    <Panel
-      bsStyle='primary'
+    <Card
       className='solution-viewer'
       key={solution.slice(0, 10)}
+      variant='primary'
     >
-      <Panel.Heading>JS</Panel.Heading>
-      <Panel.Body>
+      <Card.Heading>JS</Card.Heading>
+      <Card.Body>
         <pre>
           <code
             className='language-markup'
@@ -53,8 +53,8 @@ const SolutionViewer = ({
             }}
           />
         </pre>
-      </Panel.Body>
-    </Panel>
+      </Card.Body>
+    </Card>
   );
 
 SolutionViewer.displayName = 'SolutionViewer';

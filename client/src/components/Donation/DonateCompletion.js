@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Button } from '@freecodecamp/react-bootstrap';
+import { Alert, Button } from 'react-bootstrap';
 import Spinner from 'react-spinkit';
 import { useTranslation } from 'react-i18next';
 
@@ -33,7 +33,7 @@ function DonateCompletion({
     ? `${t('donate.thank-you')}`
     : `${t('donate.error')}`;
   return (
-    <Alert bsStyle={style} className='donation-completion'>
+    <Alert className='donation-completion' variant={style}>
       <h4>
         <b>{heading}</b>
       </h4>
@@ -57,7 +57,7 @@ function DonateCompletion({
       <div className='donation-completion-buttons'>
         {error && (
           <div>
-            <Button bsStyle='primary' onClick={reset}>
+            <Button onClick={reset} variant='primary'>
               {t('buttons.try-again')}
             </Button>
           </div>

@@ -2,19 +2,14 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import {
-  HelpBlock,
-  FormControl,
-  FormGroup,
-  ControlLabel
-} from '@freecodecamp/react-bootstrap';
+import { FormControl, FormGroup, FormLabel } from 'react-bootstrap';
 import isURL from 'validator/lib/isURL';
 import { withTranslation } from 'react-i18next';
 
 import { maybeUrlRE } from '../../utils';
 
 import SectionHeader from './SectionHeader';
-import { FullWidthRow } from '../helpers';
+import { FullWidthRow, HelpBlock } from '../helpers';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 
 const propTypes = {
@@ -189,7 +184,7 @@ class InternetSettings extends Component {
               controlId='internet-github'
               validationState={githubProfileValidation}
             >
-              <ControlLabel>GitHub</ControlLabel>
+              <FormLabel>GitHub</FormLabel>
               <FormControl
                 onChange={this.createHandleChange('githubProfile')}
                 placeholder='https://github.com/user-name'
@@ -203,7 +198,7 @@ class InternetSettings extends Component {
               controlId='internet-linkedin'
               validationState={linkedinValidation}
             >
-              <ControlLabel>LinkedIn</ControlLabel>
+              <FormLabel>LinkedIn</FormLabel>
               <FormControl
                 onChange={this.createHandleChange('linkedin')}
                 placeholder='https://www.linkedin.com/in/user-name'
@@ -217,7 +212,7 @@ class InternetSettings extends Component {
               controlId='internet-picture'
               validationState={twitterValidation}
             >
-              <ControlLabel>Twitter</ControlLabel>
+              <FormLabel>Twitter</FormLabel>
               <FormControl
                 onChange={this.createHandleChange('twitter')}
                 placeholder='https://twitter.com/user-name'
@@ -231,7 +226,7 @@ class InternetSettings extends Component {
               controlId='internet-website'
               validationState={websiteValidation}
             >
-              <ControlLabel>{t('settings.labels.personal')}</ControlLabel>
+              <FormLabel>{t('settings.labels.personal')}</FormLabel>
               <FormControl
                 onChange={this.createHandleChange('website')}
                 placeholder='https://example.com'

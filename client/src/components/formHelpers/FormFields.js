@@ -2,15 +2,10 @@ import React from 'react';
 import { kebabCase } from 'lodash-es';
 import normalizeUrl from 'normalize-url';
 import PropTypes from 'prop-types';
-import {
-  Alert,
-  Col,
-  ControlLabel,
-  FormControl,
-  FormGroup,
-  HelpBlock
-} from '@freecodecamp/react-bootstrap';
+import { Alert, Col, FormLabel, FormControl, FormGroup } from 'react-bootstrap';
 import { Field } from 'react-final-form';
+
+import { HelpBlock } from '../helpers';
 import {
   editorValidator,
   localhostValidator,
@@ -62,7 +57,7 @@ function FormFields(props) {
     const message = error || validationError || validationWarning;
     return message ? (
       <HelpBlock>
-        <Alert bsStyle={error || validationError ? 'danger' : 'info'}>
+        <Alert variant={error || validationError ? 'danger' : 'info'}>
           {message}
         </Alert>
       </HelpBlock>
@@ -84,10 +79,10 @@ function FormFields(props) {
                 <Col key={key} xs={12}>
                   <FormGroup>
                     {type === 'hidden' ? null : (
-                      <ControlLabel htmlFor={key}>{label}</ControlLabel>
+                      <FormLabel htmlFor={key}>{label}</FormLabel>
                     )}
                     <FormControl
-                      componentClass={type === 'textarea' ? type : 'input'}
+                      as={type === 'textarea' ? type : 'input'}
                       id={key}
                       name={name}
                       onChange={onChange}

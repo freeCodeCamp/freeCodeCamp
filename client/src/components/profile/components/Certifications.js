@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { curry } from 'lodash-es';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { certificatesByNameSelector } from '../../../redux';

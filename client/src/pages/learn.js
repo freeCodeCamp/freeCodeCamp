@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { graphql } from 'gatsby';
@@ -62,7 +62,7 @@ const LearnPage = ({
   return (
     <LearnLayout>
       <Helmet title={t('metaTags:title')} />
-      <Grid>
+      <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Intro
@@ -77,7 +77,7 @@ const LearnPage = ({
             <Spacer size={2} />
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </LearnLayout>
   );
 };

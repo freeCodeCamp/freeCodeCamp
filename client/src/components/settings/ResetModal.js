@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 const propTypes = {
   onHide: PropTypes.func.isRequired,
@@ -37,10 +37,10 @@ function ResetModal(props) {
         <Button
           block={true}
           bsSize='lg'
-          bsStyle='primary'
           className='btn-invert'
           onClick={props.onHide}
           type='button'
+          variant='primary'
         >
           {t('settings.danger.nevermind-2')}
         </Button>
@@ -48,10 +48,10 @@ function ResetModal(props) {
         <Button
           block={true}
           bsSize='lg'
-          bsStyle='danger'
           className='btn-danger'
           onClick={props.reset}
           type='button'
+          variant='danger'
         >
           {t('settings.danger.reset-confirm')}
         </Button>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
 import { closeModal, isVideoModalOpenSelector } from '../redux';

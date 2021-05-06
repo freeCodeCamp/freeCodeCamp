@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { Spacer } from '../../helpers';
 import {
   AmazonLogo,
