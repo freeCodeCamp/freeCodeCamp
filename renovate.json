@@ -1,7 +1,6 @@
 {
   "labels": ["renovate"],
   "extends": ["config:base"],
-  "prCreation": "not-pending",
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
