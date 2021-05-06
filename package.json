@@ -90,7 +90,7 @@
     "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
   },
   "dependencies": {
-    "dotenv": "8.6.0",
+    "dotenv": "9.0.0",
     "invariant": "2.2.4"
   },
   "devDependencies": {
