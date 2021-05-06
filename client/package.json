@@ -135,6 +135,6 @@
     "react-test-renderer": "17.0.2",
     "redux-saga-test-plan": "4.0.1",
     "webpack": "5.36.2",
-    "webpack-cli": "4.5.0"
+    "webpack-cli": "4.7.0"
   }
 }
