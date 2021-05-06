@@ -66,5 +66,25 @@ countingFractions(8);
 # --solutions--
 
 ```js
-// solution required
+function countingFractions(limit) {
+  const phi = {};
+  let count = 0;
+
+  for (let i = 2; i <= limit; i++) {
+    if (!phi[i]) {
+      phi[i] = i;
+    }
+    if (phi[i] === i) {
+      for (let j = i; j <= limit; j += i) {
+        if (!phi[j]) {
+          phi[j] = j;
+        }
+        phi[j] = (phi[j] / i) * (i - 1);
+      }
+    }
+    count += phi[i];
+  }
+
+  return count;
+}
 ```
