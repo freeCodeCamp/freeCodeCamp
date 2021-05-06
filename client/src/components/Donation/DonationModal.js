@@ -20,7 +20,7 @@ import {
 } from '../../redux';
 
 import './Donation.css';
-import { navigate } from 'gatsby';
+import { navigate } from '@reach/router';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
@@ -110,8 +110,11 @@ function DonateModal({
 
   const handleModalHide = () => {
     if (location) {
+      // Might not be necessary, but still nothing wants to listen to me...
+      const to = location.pathname + location.hash;
       // TODO: Does not work...probably not the best approach.
-      navigate(location.pathname + location.hash);
+      console.log(to, location);
+      navigate('#claim-cert-block');
     }
   };
 
