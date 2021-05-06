@@ -20,6 +20,7 @@ import {
 } from '../../redux';
 
 import './Donation.css';
+import { navigate } from 'gatsby';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
@@ -43,6 +44,10 @@ const propTypes = {
   activeDonors: PropTypes.number,
   closeDonationModal: PropTypes.func.isRequired,
   executeGA: PropTypes.func,
+  location: PropTypes.shape({
+    hash: PropTypes.string,
+    pathname: PropTypes.string
+  }),
   recentlyClaimedBlock: PropTypes.string,
   show: PropTypes.bool
 };
@@ -51,6 +56,7 @@ function DonateModal({
   show,
   closeDonationModal,
   executeGA,
+  location,
   recentlyClaimedBlock
 }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
@@ -102,6 +108,13 @@ function DonateModal({
     }
   };
 
+  const handleModalHide = () => {
+    if (location) {
+      // TODO: Does not work...probably not the best approach.
+      navigate(location.pathname + location.hash);
+    }
+  };
+
   const blockDonationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
@@ -135,7 +148,12 @@ function DonateModal({
   );
 
   return (
-    <Modal bsSize='lg' className='donation-modal' show={show}>
+    <Modal
+      bsSize='lg'
+      className='donation-modal'
+      onExited={handleModalHide}
+      show={show}
+    >
       <Modal.Body>
         {recentlyClaimedBlock ? blockDonationText : progressDonationText}
         <Spacer />
