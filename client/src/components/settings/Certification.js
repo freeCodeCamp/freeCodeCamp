@@ -258,7 +258,7 @@ export class CertificationSettings extends Component {
     );
   };
 
-  renderCertifications = certName => {
+  renderCertifications = (certName, projectsMap) => {
     const { t } = this.props;
     const { certSlug } = first(projectMap[certName]);
     return (
@@ -277,14 +277,15 @@ export class CertificationSettings extends Component {
           <tbody>
             {this.renderProjectsFor(
               certName,
-              this.getUserIsCertMap()[certName]
+              this.getUserIsCertMap()[certName],
+              projectsMap
             )}
           </tbody>
         </Table>
       </FullWidthRow>
     );
   };
-  renderProjectsFor = (certName, isCert) => {
+  renderProjectsFor = (certName, isCert, projectsMap) => {
     const {
       username,
       isHonest,
@@ -292,7 +293,7 @@ export class CertificationSettings extends Component {
       t,
       verifyCert
     } = this.props;
-    const { certSlug } = first(projectMap[certName]);
+    const { certSlug } = first(projectsMap[certName]);
     const certLocation = `/certification/${username}/${certSlug}`;
     const createClickHandler = certSlug => e => {
       e.preventDefault();
@@ -303,7 +304,7 @@ export class CertificationSettings extends Component {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return projectMap[certName]
+    return projectsMap[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8'>
@@ -596,10 +597,14 @@ export class CertificationSettings extends Component {
     return (
       <section id='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certifications.map(this.renderCertifications)}
+        {certifications.map(certName =>
+          this.renderCertifications(certName, projectMap)
+        )}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         {this.renderLegacyFullStack()}
-        {legacyCertifications.map(this.renderLegacyCertifications)}
+        {legacyCertifications.map(certName =>
+          this.renderCertifications(certName, legacyProjectMap)
+        )}
         {isOpen ? (
           <ProjectModal
             files={files}
