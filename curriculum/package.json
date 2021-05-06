@@ -49,7 +49,7 @@
     "invariant": "2.2.4",
     "joi": "17.4.0",
     "joi-objectid": "3.0.1",
-    "js-yaml": "4.0.0",
+    "js-yaml": "4.1.0",
     "jsdom": "16.5.3",
     "live-server": "1.2.1",
     "lodash": "4.17.21",
