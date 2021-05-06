@@ -54,18 +54,16 @@ async function initTestFrame(e = { code: {} }) {
 
   let Enzyme;
   if (e.loadEnzyme) {
-    let Adapter;
+    let Adapter16;
     /* eslint-disable no-inline-comments */
 
-    [{ default: Enzyme }, { default: Adapter }] = await Promise.all([
+    [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
-      import(
-        /* webpackChunkName: "Adapter" */ '@wojtekmaj/enzyme-adapter-react-17'
-      )
+      import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
     ]);
     /* eslint-enable no-inline-comments */
 
-    Enzyme.configure({ adapter: new Adapter() });
+    Enzyme.configure({ adapter: new Adapter16() });
   }
 
   document.__runTest = async function runTests(testString) {
