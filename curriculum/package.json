@@ -60,6 +60,6 @@
     "rehype": "11.0.0",
     "string-similarity": "4.0.4",
     "unist-util-visit": "2.0.3",
-    "vfile": "4.2.1"
+    "vfile": "5.0.1"
   }
 }
