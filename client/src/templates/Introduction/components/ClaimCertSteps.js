@@ -8,15 +8,20 @@ import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { StepsType } from '../../../redux/propTypes';
 
 const propTypes = {
-  canClaim: PropTypes.bool,
   i18nCertText: PropTypes.string,
+  isProjectsCompleted: PropTypes.bool,
   steps: StepsType,
   superBlock: PropTypes.string
 };
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
+const ClaimCertSteps = ({
+  isProjectsCompleted,
+  i18nCertText,
+  steps,
+  superBlock
+}) => {
   const { t } = useTranslation();
   const renderCheckMark = isCompleted => {
     return isCompleted ? (
@@ -44,7 +49,9 @@ const ClaimCertSteps = ({ canClaim, i18nCertText, steps, superBlock }) => {
       </li>
       <li className='map-challenge-title map-challenge-wrap'>
         <a href={`#${superBlock}-projects`}>
-          <span className='badge map-badge'>{renderCheckMark(canClaim)}</span>
+          <span className='badge map-badge'>
+            {renderCheckMark(isProjectsCompleted)}
+          </span>
           {t('certification-card.complete-project', {
             i18nCertText
           })}

@@ -54,20 +54,22 @@ const CertChallenge = ({
   title,
   user: { isHonest, username }
 }) => {
-  const [canClaim, setCanClaim] = useState(false);
+  const [canClaim, setCanClaim] = useState({ status: false, result: '' });
   const [isCertified, setIsCertified] = useState(false);
   const [stepState, setStepState] = useState({
     numberOfSteps: 0,
     completedCount: 0
   });
   const [canViewCert, setCanViewCert] = useState(false);
+  const [isProjectsCompleted, setIsProjectsCompleted] = useState(false);
 
   useEffect(() => {
     if (username) {
       (async () => {
         const response = await getVerifyCanClaimCert(username, superBlock);
         if (response.status === 200) {
-          setCanClaim(response.data?.response?.message === 'can-claim-cert');
+          const { status, result } = response.data?.response?.message;
+          setCanClaim({ status, result });
         }
       })();
     }
@@ -84,13 +86,17 @@ const CertChallenge = ({
       )?.show ?? false
     );
 
+    const projectsCompleted =
+      canClaim.status || canClaim.result === 'projects-completed';
     const completedCount =
       Object.values(steps).filter(
         stepVal => typeof stepVal === 'boolean' && stepVal
-      ).length + canClaim;
+      ).length + projectsCompleted;
     const numberOfSteps = Object.keys(steps).length;
+
     setCanViewCert(completedCount === numberOfSteps);
     setStepState({ numberOfSteps, completedCount });
+    setIsProjectsCompleted(projectsCompleted);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [steps, canClaim]);
 
@@ -114,8 +120,8 @@ const CertChallenge = ({
     <div className='block'>
       {(!isCertified || !canViewCert) && (
         <CertificationCard
-          canClaim={canClaim}
           i18nCertText={i18nCertText}
+          isProjectsCompleted={isProjectsCompleted}
           steps={steps}
           stepState={stepState}
           superBlock={superBlock}
@@ -124,7 +130,7 @@ const CertChallenge = ({
       <Button
         block={true}
         bsStyle='primary'
-        disabled={!canClaim || (isCertified && !canViewCert)}
+        disabled={!canClaim.status || (isCertified && !canViewCert)}
         href={certLocation}
         onClick={createClickHandler(certSlug)}
       >

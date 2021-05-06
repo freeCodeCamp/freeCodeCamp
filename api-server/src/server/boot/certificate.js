@@ -531,22 +531,29 @@ function createVerifyCanClaim(certTypeIds, app) {
       isMachineLearningPyCertV7: true,
       username: true,
       name: true,
+      isHonest: true,
       completedChallenges: true
     }).subscribe(user => {
       return Observable.of(certTypeIds[certType])
         .flatMap(challenge => {
           const certName = certTypeTitleMap[certType];
           const { tests = [] } = challenge;
-          if (!canClaim(tests, user.completedChallenges)) {
-            return Observable.just({
-              type: 'success',
-              message: 'cannot-claim-cert',
-              variables: { name: certName }
-            });
+          const { isHonest, completedChallenges } = user;
+          const isProjectsCompleted = canClaim(tests, completedChallenges);
+          let result = 'incomplete-requirements';
+          let status = false;
+
+          if (isHonest && isProjectsCompleted) {
+            status = true;
+            result = 'requirements-met';
+          } else if (isProjectsCompleted) {
+            result = 'projects-completed';
+          } else if (isHonest) {
+            result = 'is-honest';
           }
           return Observable.just({
             type: 'success',
-            message: 'can-claim-cert',
+            message: { status, result },
             variables: { name: certName }
           });
         })

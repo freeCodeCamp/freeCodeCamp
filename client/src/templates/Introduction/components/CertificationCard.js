@@ -11,8 +11,8 @@ import GreenPass from '../../../assets/icons/GreenPass';
 import { StepsType } from '../../../redux/propTypes';
 
 const propTypes = {
-  canClaim: PropTypes.bool,
   i18nCertText: PropTypes.string,
+  isProjectsCompleted: PropTypes.bool,
   stepState: PropTypes.shape({
     numberOfSteps: PropTypes.number,
     completedCount: PropTypes.number
@@ -24,7 +24,7 @@ const propTypes = {
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 const CertificationCard = ({
-  canClaim,
+  isProjectsCompleted,
   superBlock,
   i18nCertText,
   stepState: { completedCount, numberOfSteps },
@@ -78,8 +78,8 @@ const CertificationCard = ({
         </button>
         {isExpanded && (
           <ClaimCertSteps
-            canClaim={canClaim}
             i18nCertText={i18nCertText}
+            isProjectsCompleted={isProjectsCompleted}
             steps={steps}
             superBlock={superBlock}
           />
