@@ -125,7 +125,7 @@
     "@testing-library/jest-dom": "5.12.0",
     "@testing-library/react": "11.2.6",
     "autoprefixer": "10.2.5",
-    "babel-plugin-transform-imports": "1.5.1",
+    "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.1",
     "copy-webpack-plugin": "5.1.2",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.22",
