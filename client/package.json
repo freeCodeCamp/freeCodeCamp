@@ -84,7 +84,7 @@
     "monaco-editor": "0.23.0",
     "nanoid": "3.1.22",
     "path-browserify": "1.0.1",
-    "postcss": "8.2.13",
+    "postcss": "8.2.14",
     "prismjs": "1.23.0",
     "process": "0.11.10",
     "psl": "1.8.0",
