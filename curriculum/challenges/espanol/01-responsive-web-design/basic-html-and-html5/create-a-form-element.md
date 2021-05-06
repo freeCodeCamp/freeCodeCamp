@@ -37,9 +37,8 @@ assert(
 Tu formulario `form` debe tener un atributo `action` que esté establecido como `https://www.freecatphotoapp.com/submit-cat-photo`
 
 ```js
-assert(
-  $('form').attr('action') === 'https://www.freecatphotoapp.com/submit-cat-photo'
-);
+const action = $('form').attr('action');
+assert(action.match(/^https:\/\/(www\.)?freecatphotoapp\.com\/submit-cat-photo$/i))
 ```
 
 Tu elemento `form` debe tener etiquetas correctamente abiertas y cerradas.
