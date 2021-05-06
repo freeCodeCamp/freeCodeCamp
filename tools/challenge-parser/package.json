@@ -24,7 +24,7 @@
   "dependencies": {
     "hast-util-to-html": "7.1.3",
     "js-yaml": "3.14.1",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "mdast-builder": "1.1.1",
     "mdast-util-gfm": "0.1.2",
     "mdast-util-to-hast": "9.1.2",
