@@ -29,20 +29,38 @@ It is not difficult to prove that EVERY starting number will eventually get stuc
 
 Starting with 69 produces a chain of five non-repeating terms, but the longest non-repeating chain with a starting number below one million is sixty terms.
 
-How many chains, with a starting number below one million, contain exactly sixty non-repeating terms?
+How many chains, with a starting number below `n`, contain exactly sixty non-repeating terms?
 
 # --hints--
 
-`digitFactorialChains()` should return a number.
+`digitFactorialChains(2000)` should return a number.
 
 ```js
-assert(typeof digitFactorialChains() === 'number');
+assert(typeof digitFactorialChains(2000) === 'number');
 ```
 
-`digitFactorialChains()` should return 402.
+`digitFactorialChains(2000)` should return `6`.
 
 ```js
-assert.strictEqual(digitFactorialChains(), 402);
+assert.strictEqual(digitFactorialChains(2000), 6);
+```
+
+`digitFactorialChains(100000)` should return `42`.
+
+```js
+assert.strictEqual(digitFactorialChains(100000), 42);
+```
+
+`digitFactorialChains(500000)` should return `282`.
+
+```js
+assert.strictEqual(digitFactorialChains(500000), 282);
+```
+
+`digitFactorialChains(1000000)` should return `402`.
+
+```js
+assert.strictEqual(digitFactorialChains(1000000), 402);
 ```
 
 # --seed--
@@ -50,12 +68,12 @@ assert.strictEqual(digitFactorialChains(), 402);
 ## --seed-contents--
 
 ```js
-function digitFactorialChains() {
+function digitFactorialChains(n) {
 
   return true;
 }
 
-digitFactorialChains();
+digitFactorialChains(2000);
 ```
 
 # --solutions--
