@@ -34,6 +34,7 @@ docker stop mailhog
 to stop it.
 
 When the installation completes, you can start [using MailHog](#using-mailhog).
+
 ### Installing MailHog on macOS
 
 Install MailHog on macOS with [Homebrew](https://brew.sh/):
