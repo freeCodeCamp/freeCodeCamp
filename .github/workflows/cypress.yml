@@ -1,5 +1,5 @@
 name: Cypress
-on: 
+on:
   push:
     branches-ignore:
       - 'renovate/**'
@@ -18,6 +18,11 @@ jobs:
         image: mongo:3.6.19
         ports:
           - 27017:27017
+      # We need mailhog to catch any emails the api tries to send.
+      mailhog:
+        image: mailhog/mailhog
+        ports:
+          - 1025:1025
 
     steps:
       # We use .npmrc to set the default version to 0, and prevents download during development.

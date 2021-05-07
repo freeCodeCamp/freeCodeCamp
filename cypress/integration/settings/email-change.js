@@ -1,6 +1,7 @@
 /* global cy */
 describe('Email input field', () => {
-  before(() => {
+  beforeEach(() => {
+    cy.exec('npm run seed');
     cy.login();
     cy.visit('/settings');
   });
@@ -17,6 +18,9 @@ describe('Email input field', () => {
     cy.get('[id=form-update-email]').within(() => {
       cy.contains('Save').click();
     });
+    cy.contains(
+      'Check your email and click the link we sent you to confirm your new email address.'
+    );
   });
 
   it('Displays an error message when there are problems with the submitted emails', () => {
