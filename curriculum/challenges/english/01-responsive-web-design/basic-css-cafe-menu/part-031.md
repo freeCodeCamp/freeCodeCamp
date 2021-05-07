@@ -34,7 +34,7 @@ Your second `p` element should have the text `3.00`.
 
 ```js
 const secondP = $('article').children('p')[1];
-assert(secondP.innerText.match(/3.00/i));
+assert(secondP.innerText.match(/3\.00/i));
 ```
 
 # --seed--
@@ -86,4 +86,3 @@ h1, h2, p {
   margin-right: auto;
 }
 ```
-

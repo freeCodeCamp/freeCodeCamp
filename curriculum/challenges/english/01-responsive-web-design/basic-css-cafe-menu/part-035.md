@@ -26,7 +26,7 @@ assert($('.price').length === 1);
 Your `price` class should be on the `p` element with the text `3.00`.
 
 ```js
-assert($('.price')[0].innerText.match(/3.00/i));
+assert($('.price')[0].innerText.match(/3\.00/i));
 ```
 
 # --seed--

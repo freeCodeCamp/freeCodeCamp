@@ -7,7 +7,7 @@ dashedName: part-32
 
 # --description--
 
-Starting below the existing coffee/price pair, add the following Coffee and prices using an `article` element with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
+Starting below the existing coffee/price pair, add the following coffee and prices using `article` elements with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
 
 ```bash
 Caramel Macchiato 3.75
@@ -40,7 +40,7 @@ Your first `article` element should have `p` elements with the text `French Vani
 ```js
 const children = $('article')[0].children;
 assert(children[0].innerText.match(/French Vanilla/i));
-assert(children[1].innerText.match(/3.00/i));
+assert(children[1].innerText.match(/3\.00/i));
 ```
 
 Your second `article` element should have `p` elements with the text `Caramel Macchiato` and `3.75`.
@@ -48,7 +48,7 @@ Your second `article` element should have `p` elements with the text `Caramel Ma
 ```js
 const children = $('article')[1].children;
 assert(children[0].innerText.match(/Caramel Macchiato/i));
-assert(children[1].innerText.match(/3.75/i));
+assert(children[1].innerText.match(/3\.75/i));
 ```
 
 Your third `article` element should have `p` elements with the text `Pumpkin Spice` and `3.50`.
@@ -56,7 +56,7 @@ Your third `article` element should have `p` elements with the text `Pumpkin Spi
 ```js
 const children = $('article')[2].children;
 assert(children[0].innerText.match(/Pumpkin Spice/i));
-assert(children[1].innerText.match(/3.50/i));
+assert(children[1].innerText.match(/3\.50/i));
 ```
 
 Your fourth `article` element should have `p` elements with the text `Hazelnut` and `4.00`.
@@ -64,7 +64,7 @@ Your fourth `article` element should have `p` elements with the text `Hazelnut` 
 ```js
 const children = $('article')[3].children;
 assert(children[0].innerText.match(/Hazelnut/i));
-assert(children[1].innerText.match(/4.00/i));
+assert(children[1].innerText.match(/4\.00/i));
 ```
 
 Your fifth `article` element should have `p` elements with the text `Mocha` and `4.50`.
@@ -72,7 +72,7 @@ Your fifth `article` element should have `p` elements with the text `Mocha` and 
 ```js
 const children = $('article')[4].children;
 assert(children[0].innerText.match(/Mocha/i));
-assert(children[1].innerText.match(/4.50/i));
+assert(children[1].innerText.match(/4\.50/i));
 ```
 
 # --seed--
@@ -126,4 +126,3 @@ h1, h2, p {
   margin-right: auto;
 }
 ```
-

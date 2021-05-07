@@ -7,7 +7,7 @@ dashedName: part-8
 
 # --description--
 
-It's time to add some menu content. Add a `main` element below the existing `header` element. It will eventually contain pricing information about Coffee and desserts offered by the cafe.
+It's time to add some menu content. Add a `main` element below the existing `header` element. It will eventually contain pricing information about coffee and desserts offered by the cafe.
 
 # --hints--
 
@@ -57,4 +57,3 @@ assert(main.previousElementSibling.tagName === 'HEADER');
   </body>
 <html>
 ```
-

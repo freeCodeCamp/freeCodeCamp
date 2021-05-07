@@ -15,7 +15,7 @@ Your `styles.css` file should have the `h1, h2, p` type selector.
 
 ```js
 const css = code.split('<!DOCTYPE html>')[0];
-assert(css.match(/(h1|h2|p), (h1|h2|p), (h1|h2|p) {/))
+assert(__helpers.removeWhiteSpace(css).match(/(h1|h2|p),(h1|h2|p),(h1|h2|p){/))
 ```
 
 Your selector should set the `text-align` property to `center`.
@@ -68,4 +68,3 @@ assert(css.match(/text-align:\s*center;?/).length === 1);
 --fcc-editable-region--
 
 ```
-

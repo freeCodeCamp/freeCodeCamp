@@ -24,10 +24,10 @@ You should not change your existing `head` element. Make sure you did not delete
 assert($('head').length === 1);
 ```
 
-Your `link` element should be closed properly.
+Your `link` element should be a self-closing element.
 
 ```js
-assert(code.match(/<link[\w\W\s]\/>/i));
+assert(code.match(/<link[\w\W\s]+\/>/i));
 ```
 
 Your `link` element should be within your `head` element.

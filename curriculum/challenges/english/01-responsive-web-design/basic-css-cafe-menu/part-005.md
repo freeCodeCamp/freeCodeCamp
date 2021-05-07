@@ -35,7 +35,7 @@ Your `h1` element should be nested in your `body` element.
 assert($('h1')[0].parentElement.tagName === "BODY");
 ```
 
-Your `h1` element should have the text `Camper Cafe` in capital letters.
+Your `h1` element should have the text `CAMPER CAFE`.
 
 ```js
 assert(code.match(/<h1>CAMPER CAFE<\/h1>/));
@@ -58,4 +58,3 @@ assert(code.match(/<h1>CAMPER CAFE<\/h1>/));
 --fcc-editable-region--
 <html>
 ```
-
