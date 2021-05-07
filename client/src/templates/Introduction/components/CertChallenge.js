@@ -15,9 +15,11 @@ import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../../config/certification-settings';
+import CertificationCard from './CertificationCard';
 
 const propTypes = {
   currentCerts: CurrentCertsType,
+  isSignedIn: PropTypes.bool.isRequired,
   superBlock: PropTypes.string,
   t: PropTypes.func,
   title: PropTypes.string,
@@ -36,6 +38,7 @@ const mapStateToProps = (state, props) => {
 export class CertChallenge extends Component {
   render() {
     const {
+      isSignedIn,
       superBlock,
       t,
       title,
@@ -54,9 +57,17 @@ export class CertChallenge extends Component {
     const i18nCertText = t(`intro:misc-text.certification`, {
       cert: i18nSuperBlock
     });
+    const { certSlug } = cert;
 
     return (
       <div className='block'>
+        {isSignedIn && !isCertified && (
+          <CertificationCard
+            certSlug={certSlug}
+            i18nCertText={i18nCertText}
+            superBlock={superBlock}
+          />
+        )}
         <button
           className={`map-cert-title ${
             isCertified ? 'map-is-cert' : 'no-cursor'

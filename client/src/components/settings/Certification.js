@@ -260,10 +260,13 @@ export class CertificationSettings extends Component {
 
   renderCertifications = certName => {
     const { t } = this.props;
+    const { certSlug } = first(projectMap[certName]);
     return (
       <FullWidthRow key={certName}>
         <Spacer />
-        <h3 className='text-center'>{certName}</h3>
+        <h3 className='text-center' id={`cert-${certSlug}`}>
+          {certName}
+        </h3>
         <Table>
           <thead>
             <tr>
@@ -448,7 +451,9 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={certSlug}>
         <Spacer />
-        <h3 className='text-center'>{certName}</h3>
+        <h3 className='text-center' id={`cert-${certSlug}`}>
+          {certName}
+        </h3>
         <Form
           buttonText={
             fullForm ? t('buttons.claim-cert') : t('buttons.save-progress')

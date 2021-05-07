@@ -35,7 +35,7 @@ const Honesty = ({ isHonest, updateIsHonest }) => {
     </Button>
   );
   return (
-    <section className='honesty-policy'>
+    <section className='honesty-policy' id='honesty-policy'>
       <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
       <FullWidthRow>
         <Panel className='honesty-panel'>
