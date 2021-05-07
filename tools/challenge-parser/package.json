@@ -50,6 +50,6 @@
     "unist-util-visit-children": "1.1.4"
   },
   "devDependencies": {
-    "unist-util-select": "3.0.1"
+    "unist-util-select": "3.0.4"
   }
 }
