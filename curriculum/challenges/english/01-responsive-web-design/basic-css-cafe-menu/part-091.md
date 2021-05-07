@@ -7,7 +7,7 @@ dashedName: part-91
 
 # --description--
 
-Add one last image under the `Desserts` heading using the url `https://tinyurl.com/cafe-pie-fcc`. Give the image an `alt` value of `pie icon`.
+Add one last image under the `Desserts` heading using the url `https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg`. Give the image an `alt` value of `pie icon`.
 
 # --hints--
 
@@ -17,10 +17,10 @@ You should add a second `img` element.
 assert($('img').length === 2);
 ```
 
-Your new `img` element should have a `src` of `https://tinyurl.com/cafe-pie-fcc`.
+Your new `img` element should have a `src` of `https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg`.
 
 ```js
-assert($('img').last().attr('src') === 'https://tinyurl.com/cafe-pie-fcc');
+assert($('img').last().attr('src') === 'https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg');
 ```
 
 Your new `img` element should have an `alt` of `pie icon`.
@@ -52,7 +52,7 @@ assert($('img').last().attr('alt').match(/pie icon/i));
       <main>
         <section>
           <h2>Coffee</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -101,7 +101,7 @@ assert($('img').last().attr('alt').match(/pie icon/i));
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

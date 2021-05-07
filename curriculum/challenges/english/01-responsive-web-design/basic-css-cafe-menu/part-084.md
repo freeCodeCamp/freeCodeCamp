@@ -92,7 +92,7 @@ assert(code.match(/a:active\s*{\s*color:\s*brown;?/i));
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

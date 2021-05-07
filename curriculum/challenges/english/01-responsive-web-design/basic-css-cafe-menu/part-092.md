@@ -48,7 +48,7 @@ assert($('img').css('margin-top') === '-25px');
       <main>
         <section>
           <h2>Coffee</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -67,7 +67,7 @@ assert($('img').css('margin-top') === '-25px');
         </section>
         <section>
           <h2>Desserts</h2>
-          <img src="https://tinyurl.com/cafe-pie-fcc" alt="pie icon"/>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon"/>
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -96,7 +96,7 @@ assert($('img').css('margin-top') === '-25px');
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -215,7 +215,7 @@ a:active {
       <main>
         <section>
           <h2>Coffee</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -234,7 +234,7 @@ a:active {
         </section>
         <section>
           <h2>Desserts</h2>
-          <img src="https://tinyurl.com/cafe-pie-fcc" alt="pie icon"/>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon"/>
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -265,7 +265,7 @@ a:active {
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

@@ -9,7 +9,7 @@ dashedName: part-89
 
 The menu looks good, but other than the coffee beans background image, it is mainly just text.
 
-Under the `Coffee` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
+Under the `Coffee` heading, add an image using the url `https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg`. Give the image an `alt` value of `coffee icon`.
 
 # --hints--
 
@@ -19,10 +19,10 @@ You should have an `<img>` tag. Remember that `img` elements are self-closing.
 assert($('img').length === 1);
 ```
 
-Your `img` element should have a `src` attribute of `https://tinyurl.com/cafe-coffee-fcc`.
+Your `img` element should have a `src` attribute of `https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg`.
 
 ```js
-assert($('img').attr('src') === 'https://tinyurl.com/cafe-coffee-fcc');
+assert($('img').attr('src') === 'https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg');
 ```
 
 Your `img` element should have an `alt` attribute of `coffee icon`.
@@ -102,7 +102,7 @@ assert($('img').attr('alt').match(/coffee icon/i));
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

@@ -9,7 +9,7 @@ dashedName: part-29
 
 Since the cafe's main product for sale is coffee, you could use an image of coffee beans for the background of the page.
 
-Delete the comment and its contents inside the `body` type selector. Now add a `background-image` property and set its value to `url(https://tinyurl.com/coffee-beans-fcc)`.
+Delete the comment and its contents inside the `body` type selector. Now add a `background-image` property and set its value to `url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)`.
 
 # --hints--
 
@@ -29,7 +29,7 @@ Your `body` element should have the coffee beans background image.
 
 ```js
 const background = $('body').css('background-image');
-assert(background === 'url("https://tinyurl.com/coffee-beans-fcc")');
+assert(background === 'url("https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg")');
 ```
 
 # --seed--

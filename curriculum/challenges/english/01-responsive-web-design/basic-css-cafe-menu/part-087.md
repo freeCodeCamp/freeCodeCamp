@@ -100,7 +100,7 @@ assert(code.match(/\.address\s*{\s*margin-bottom:\s*5px;?/i))
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

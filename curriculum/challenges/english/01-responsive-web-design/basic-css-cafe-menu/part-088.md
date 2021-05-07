@@ -100,7 +100,7 @@ assert($('.address')[0].innerText.match(/123 Free Code Camp Drive/i));
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

@@ -87,7 +87,7 @@ assert($('body').css('font-family') === 'sans-serif');
 ```css
 --fcc-editable-region--
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 --fcc-editable-region--
 

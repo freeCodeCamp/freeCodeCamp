@@ -94,7 +94,7 @@ assert(code.match(/\.bottom-line\s*{\s*margin-top:\s*25px;?/i));
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

@@ -71,7 +71,7 @@ assert(code.match(/\.price\s*{[\W\w\s]*width:\s25%;?/i));
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
