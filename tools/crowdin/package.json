@@ -30,6 +30,6 @@
     "node-fetch": "2.6.1",
     "node-opencc": "2.0.1",
     "path": "0.12.7",
-    "readdirp": "3.5.0"
+    "readdirp": "3.6.0"
   }
 }
