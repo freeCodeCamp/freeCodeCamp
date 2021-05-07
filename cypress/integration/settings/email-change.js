@@ -24,7 +24,8 @@ describe('Email input field', () => {
   });
 
   it('Displays an error message when there are problems with the submitted emails', () => {
-    cy.get('[id=confirm-email]').clear().type('foo@bar.com');
+    cy.get('[id=new-email]').type('bar@foo.com');
+    cy.get('[id=confirm-email]').type('foo@bar.com');
 
     cy.get('[class=help-block]').contains(
       'Both new email addresses must be the same'
