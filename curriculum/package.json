@@ -53,7 +53,7 @@
     "jsdom": "16.5.3",
     "live-server": "1.2.1",
     "lodash": "4.17.21",
-    "mocha": "8.3.2",
+    "mocha": "8.4.0",
     "mock-require": "3.0.3",
     "puppeteer": "9.1.1",
     "readdirp": "3.6.0",
