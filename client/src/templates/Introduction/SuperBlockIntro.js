@@ -180,6 +180,7 @@ class SuperBlockIntroductionPage extends Component {
                 {superBlock !== 'coding-interview-prep' && (
                   <div>
                     <CertChallenge
+                      isSignedIn={isSignedIn}
                       superBlock={superBlock}
                       title={title}
                       user={user}

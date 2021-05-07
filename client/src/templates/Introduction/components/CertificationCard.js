@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { useTranslation } from 'react-i18next';
+
 import ClaimCertSteps from './ClaimCertSteps';
 import Caret from '../../../assets/icons/Caret';
 
 const propTypes = {
+  certSlug: PropTypes.string,
   i18nCertText: PropTypes.string,
   superBlock: PropTypes.string
 };
 
-const CertificationCard = ({ superBlock, i18nCertText }) => {
+const CertificationCard = ({ certSlug, superBlock, i18nCertText }) => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -19,11 +20,9 @@ const CertificationCard = ({ superBlock, i18nCertText }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const {
-    expand: expandText,
-    collapse: collapseText,
-    courses: coursesText
-  } = t('intro:misc-text');
+  const { expand: expandText, collapse: collapseText, steps: stepsText } = t(
+    'intro:misc-text'
+  );
   return (
     <ScrollableAnchor id='claim-cert-block'>
       <div className={`block ${isExpanded ? 'open' : ''}`}>
@@ -47,11 +46,15 @@ const CertificationCard = ({ superBlock, i18nCertText }) => {
           <h4 className='course-title'>
             {`${
               isExpanded ? collapseText : expandText
-            } ${coursesText.toLowerCase()}`}
+            } ${stepsText.toLowerCase()}`}
           </h4>
         </button>
         {isExpanded && (
-          <ClaimCertSteps i18nCertText={i18nCertText} superBlock={superBlock} />
+          <ClaimCertSteps
+            certSlug={certSlug}
+            i18nCertText={i18nCertText}
+            superBlock={superBlock}
+          />
         )}
       </div>
     </ScrollableAnchor>
