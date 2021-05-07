@@ -1,10 +1,6 @@
 /* global cy */
 
 describe('Help Button', () => {
-  before(() => {
-    cy.visit('/');
-  });
-
   it('should be visible', () => {
     cy.visit(
       '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
@@ -13,18 +9,11 @@ describe('Help Button', () => {
   });
 
   it('should toggle the dropdown menu', () => {
-    cy.visit(
-      '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
-    );
     cy.get('#get-help-dropdown').scrollIntoView().click();
     cy.get('ul[role="menu"]').should('be.visible');
   });
 
   it('should render three links when video is available', () => {
-    cy.visit(
-      '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
-    );
-    cy.get('#get-help-dropdown').scrollIntoView().click();
     cy.get('ul[role="menu"]').within(() => {
       cy.get('a').should('have.length', 3);
       cy.get('a').eq(0).contains('Get a Hint');
