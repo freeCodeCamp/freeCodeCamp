@@ -10,11 +10,30 @@ MailHog can be installed on macOS, Windows and Linux.
 
 - [Introduction](#introduction)
 - [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog with Docker](#installing-mailhog-with-docker)
   - [Installing MailHog on macOS](#installing-mailhog-on-macos)
   - [Installing MailHog on Windows](#installing-mailhog-on-windows)
   - [Installing MailHog on Linux](#installing-mailhog-on-linux)
 - [Using MailHog](#using-mailhog)
 - [Useful Links](#useful-links)
+
+### Installing MailHog with Docker
+
+If you have Docker installed then you can use
+
+```bash
+docker run -d --name mailhog --rm mailhog/mailhog
+```
+
+to start MailHog in the background and
+
+```bash
+docker stop mailhog
+```
+
+to stop it.
+
+When the installation completes, you can start [using MailHog](#using-mailhog).
 
 ### Installing MailHog on macOS
 
