@@ -9,7 +9,6 @@ challengePaths.forEach(challenge => {
   describe('loading challenge', () => {
     before(() => {
       cy.visit(challenge);
-      cy.waitForResource('7717-13094a7bc5e246e66492.js', 'script');
     });
 
     it(

@@ -1,37 +1,4 @@
-/* global cy Cypress*/
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => {});
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add(
-//   'drag',
-//   { prevSubject: 'element' },
-//   (subject, options) => {}
-// );
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add(
-//   'dismiss',
-//   { prevSubject: 'optional' },
-//   (subject, options) => {}
-// );
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => {});
+/* global cy Cypress */
 
 Cypress.Commands.add('login', () => {
   cy.visit('/');
@@ -62,6 +29,7 @@ Cypress.Commands.add('updatePaths', (superblock, lang = 'english') => {
   });
 });
 
+// This function can be used if a chunk needs to be loaded before checking in Cypress (prevents chunkload errors)
 function waitForResourceToLoad(fileName, type) {
   const resourceCheckInterval = 40;
 
@@ -107,4 +75,13 @@ Cypress.Commands.add('testChallenges', () => {
   // Challenge content
   cy.get('.challenge-title').should('be.visible');
   cy.get('#description').should('be.visible');
+
+  // Check if Monaco editor exist
+  cy.get('div').then($div => {
+    if ($div.hasClass('react-monaco-editor-container')) {
+      cy.log('Monaco editor exists');
+    } else {
+      cy.log('Monaco editor does not exist');
+    }
+  });
 });
