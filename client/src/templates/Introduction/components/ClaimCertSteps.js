@@ -5,6 +5,7 @@ import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import IntroInformation from '../../../assets/icons/IntroInformation';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { userSelector } from '../../../redux';
@@ -84,10 +85,18 @@ const ClaimCertSteps = ({ certSlug, i18nCertText, superBlock, user }) => {
           {t('certification-card.complete-project', {
             i18nCertText
           })}
+          <span className='badge map-badge map-project-checkmark'>
+            <IntroInformation style={mapIconStyle} />
+          </span>
         </a>
       </li>
       <li className='map-challenge-title map-project-wrap'>
-        <Link to={certClaimLink}>{t('certification-card.set-claim')}</Link>
+        <Link to={certClaimLink}>
+          {t('certification-card.set-claim')}
+          <span className='badge map-badge map-project-checkmark'>
+            <IntroInformation style={mapIconStyle} />
+          </span>
+        </Link>
       </li>
     </ul>
   );
