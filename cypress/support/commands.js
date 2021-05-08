@@ -32,7 +32,7 @@ Cypress.Commands.add('updatePaths', (superblock, lang = 'english') => {
 // This function can be used if a chunk needs to be loaded before checking in Cypress (prevents chunkload errors)
 function waitForResourceToLoad(fileName, type) {
   const resourceCheckInterval = 40;
-
+  /* eslint-disable no-undef */
   return new Cypress.Promise(resolve => {
     const checkResourceLoad = () => {
       const resource = cy
