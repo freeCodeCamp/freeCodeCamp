@@ -55,6 +55,7 @@
     "algoliasearch": "4.9.1",
     "assert": "2.0.0",
     "axios": "0.21.1",
+    "babel-plugin-preval": "5.0.0",
     "babel-plugin-prismjs": "2.0.1",
     "bezier-easing": "2.1.0",
     "browser-cookies": "1.2.0",

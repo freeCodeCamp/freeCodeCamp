@@ -22,6 +22,7 @@
     ]
   ],
   "plugins": [
+    "preval",
     [
       "@babel/plugin-proposal-class-properties",
       {
