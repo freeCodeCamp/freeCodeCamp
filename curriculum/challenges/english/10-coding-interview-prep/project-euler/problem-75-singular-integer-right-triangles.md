@@ -25,20 +25,38 @@ In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer
   <strong>120 cm:</strong> (30,40,50), (20,48,52), (24,45,51)
 </div>
 
-Given that L is the length of the wire, for how many values of L ≤ 1,500,000 can exactly one integer sided right angle triangle be formed?
+Given that L is the length of the wire, for how many values of L ≤ `n` can exactly one, integer sided right angle, triangle be formed?
 
 # --hints--
 
-`singularIntRightTriangles()` should return a number.
+`singularIntRightTriangles(48)` should return a number.
 
 ```js
-assert(typeof singularIntRightTriangles() === 'number');
+assert(typeof singularIntRightTriangles(48) === 'number');
 ```
 
-`singularIntRightTriangles()` should return 161667.
+`singularIntRightTriangles(48)` should return `6`.
 
 ```js
-assert.strictEqual(singularIntRightTriangles(), 161667);
+assert.strictEqual(singularIntRightTriangles(48), 6);
+```
+
+`singularIntRightTriangles(700000)` should return `75783`.
+
+```js
+assert.strictEqual(singularIntRightTriangles(700000), 75783);
+```
+
+`singularIntRightTriangles(1000000)` should return `107876`.
+
+```js
+assert.strictEqual(singularIntRightTriangles(1000000), 107876);
+```
+
+`singularIntRightTriangles(1500000)` should return `161667`.
+
+```js
+assert.strictEqual(singularIntRightTriangles(1500000), 161667);
 ```
 
 # --seed--
@@ -46,12 +64,12 @@ assert.strictEqual(singularIntRightTriangles(), 161667);
 ## --seed-contents--
 
 ```js
-function singularIntRightTriangles() {
+function singularIntRightTriangles(n) {
 
   return true;
 }
 
-singularIntRightTriangles();
+singularIntRightTriangles(48);
 ```
 
 # --solutions--
