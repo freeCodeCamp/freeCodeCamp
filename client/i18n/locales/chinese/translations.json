@@ -554,5 +554,15 @@
         "Neural Network SMS Text Classifier": "神经网络短信分类器"
       }
     }
+  },
+  "certification-card": {
+    "title": "Claim Your Certification",
+    "intro": "Complete the following steps to claim and view your {{i18nCertText}}",
+    "complete-project": "Complete {{i18nCertText}} Projects",
+    "accept-honesty": "Accept our Academic Honesty Policy",
+    "set-name": "Set your name, and make it public",
+    "set-certs-public": "Set your certificication settings to public",
+    "set-profile-public": "Set your profile settings to public",
+    "set-claim": "Claim and view your certification"
   }
 }
