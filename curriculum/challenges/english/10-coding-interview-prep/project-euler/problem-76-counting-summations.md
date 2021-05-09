@@ -69,5 +69,15 @@ countingSummations(5);
 # --solutions--
 
 ```js
-// solution required
+function countingSummations(n) {
+  const combinations = new Array(n + 1).fill(0);
+  combinations[0] = 1;
+
+  for (let i = 1; i < n; i++) {
+    for (let j = i; j < n + 1; j++) {
+      combinations[j] += combinations[j - i];
+    }
+  }
+  return combinations[n];
+}
 ```
