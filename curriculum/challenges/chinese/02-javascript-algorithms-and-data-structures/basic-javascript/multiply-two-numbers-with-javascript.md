@@ -23,7 +23,7 @@ myVar = 13 * 13;
 
 # --instructions--
 
-改变数值 `0`来让变量 product 的值等于`80`。
+改变数值 `0` 来让变量 product 的值等于`80`。
 
 # --hints--
 

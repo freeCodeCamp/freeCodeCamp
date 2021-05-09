@@ -50,7 +50,7 @@ ourDog.bark = "bow-wow";
 assert(myDog.bark !== undefined);
 ```
 
-不應該在初始化部分添加 `bark`。
+不應該在 `myDog` 的初始化中添加 `bark`。
 
 ```js
 assert(!/bark[^\n]:/.test(code));
@@ -67,7 +67,6 @@ assert(!/bark[^\n]:/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myDog = {
   "name": "Happy Coder",
   "legs": 4,
@@ -75,7 +74,7 @@ var myDog = {
   "friends": ["freeCodeCamp Campers"]
 };
 
-// Only change code below this line
+
 ```
 
 # --solutions--

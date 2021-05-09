@@ -26,9 +26,9 @@ HTML5 引入了很多更具描述性的 HTML 元素， 包括 `main`、`header`�
 
 # --instructions--
 
-請在現有的 `p` 之後創建一個新的 `p` 元素，內容爲：`Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+創建一個新的 `p` 元素，內容爲：`Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
-然後，請添加一個 `main` 元素，作爲現有的兩個 `p` 元素的父級元素。
+然後，請添加一個 `main` 元素，將現有的兩個 `p` 元素嵌套在這個 `main` 元素裏。
 
 # --hints--
 

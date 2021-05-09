@@ -11,7 +11,7 @@ dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 
 方括號表示法（<dfn>Bracket notation</dfn>）是一種在字符串中的特定 index（索引）處獲取字符的方法。
 
-大多數現代編程語言，如JavaScript，不同於人類從 1 開始計數。 它們是從 0 開始計數。 這被稱爲基於零（<dfn>Zero-based</dfn>）的索引。
+大多數現代編程語言，如 JavaScript，不同於人類從 1 開始計數。 它們是從 0 開始計數。 這被稱爲基於零（<dfn>Zero-based</dfn>）的索引。
 
 例如，單詞 `Charles` 的索引 0 的字符是 `C`。 所以在 `var firstName = "Charles"` 中，你可以使用 `firstName[0]` 來獲得第一個位置上的字符。
 

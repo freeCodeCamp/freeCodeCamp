@@ -40,7 +40,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-使用對象的點號和數組的方括號從變量 `myPlants` 檢索出第二棵樹。
+使用點和方括號，將變量 `secondTree` 的值設置爲 `myPlants` 對象中 `trees` 列表的第二個項目。
 
 # --hints--
 
@@ -72,7 +72,6 @@ assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myPlants = [
   {
     type: "flowers",
@@ -92,9 +91,7 @@ var myPlants = [
   }
 ];
 
-// Only change code below this line
-
-var secondTree = ""; // Change this line
+var secondTree = "";
 ```
 
 # --solutions--
@@ -118,8 +115,6 @@ var myPlants = [
     ]
   }
 ];
-
-// Only change code below this line
 
 var secondTree = myPlants[1].list[1];
 ```
