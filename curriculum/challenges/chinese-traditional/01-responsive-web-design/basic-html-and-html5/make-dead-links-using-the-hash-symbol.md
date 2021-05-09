@@ -15,7 +15,7 @@ dashedName: make-dead-links-using-the-hash-symbol
 
 # --instructions--
 
-目前，`href` 的屬性值是 "`https://freecatphotoapp.com`"。 請將 `href` 屬性的值替換爲`#`，以此來創建鏈接佔位符。
+`href` 屬性的當前值是指向 “`https://www.freecatphotoapp.com`”。 請將 `href` 屬性的值替換爲`#`，以此來創建鏈接佔位符。
 
 例如: `href="#"`
 
@@ -34,9 +34,9 @@ assert($('a').attr('href') === '#');
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="https://www.freecatphotoapp.com" target="_blank">cat photos</a>.</p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
@@ -50,7 +50,7 @@ assert($('a').attr('href') === '#');
 <main>
   <p>Click here to view more <a href="#" target="_blank">cat photos</a>.</p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>

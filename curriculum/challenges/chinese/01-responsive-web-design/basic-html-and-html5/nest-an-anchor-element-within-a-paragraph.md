@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aede08817
 title: 将 a 嵌套在段落中
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 forumTopicId: 18244
 dashedName: nest-an-anchor-element-within-a-paragraph
 ---
@@ -13,7 +12,7 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 
 ```html
 <p>
-  Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
+  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to www.freecodecamp.org</a> for you to follow.
 </p>
 ```
 
@@ -32,18 +31,18 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 `target` 是锚点元素的一个属性，它用来指定链接的打开方式。 属性值 `_blank` 表示链接会在新标签页打开。 `href` 是锚点元素的另一个属性，它用来指定链接的 URL：
 
 ```html
-<a href="http://freecodecamp.org"> ... </a>
+<a href="https://www.freecodecamp.org" target="_blank"> ... </a>
 ```
 
-`a` 元素内的文本 `link to freecodecamp.org` 叫作<dfn>锚文本</dfn>，会显示为一个可以点击的链接：
+`a` 元素内的文本 `link to www.freecodecamp.org` 叫作<dfn>锚文本</dfn>，会显示为一个可以点击的链接：
 
 ```html
-<a href=" ... ">link to freecodecamp.org</a>
+<a href=" ... " target="...">link to freecodecamp.org</a>
 ```
 
 此示例的最终输出结果是这样：
 
-Here's a [link to freecodecamp.org](http://freecodecamp.org) for you to follow.
+你可以访问 <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a>。
 
 # --instructions--
 
@@ -59,11 +58,11 @@ assert(
 );
 ```
 
-`a` 元素应该链接到 “`https://freecatphotoapp.com`”。
+`a` 元素应该链接到 “`https://www.freecatphotoapp.com`”。
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').length  === 1 
+  $('a[href="https://www.freecatphotoapp.com"]').length  === 1 
 );
 ```
 
@@ -87,7 +86,7 @@ assert($('p') && $('p').length > 2);
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]').parent().is('p')
+  $('a[href="https://www.freecatphotoapp.com"]').parent().is('p')
 );
 ```
 
@@ -95,7 +94,7 @@ assert(
 
 ```js
 assert(
-  $('a[href="https://freecatphotoapp.com"]')
+  $('a[href="https://www.freecatphotoapp.com"]')
     .parent()
     .text()
     .match(/View\smore\s/gi)
@@ -140,9 +139,9 @@ assert(
 <h2>CatPhotoApp</h2>
 <main>
 
-  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://www.freecatphotoapp.com" target="_blank">cat photos</a>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
@@ -154,9 +153,9 @@ assert(
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>View more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a></p>
+  <p>View more <a target="_blank" href="https://www.freecatphotoapp.com">cat photos</a></p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
