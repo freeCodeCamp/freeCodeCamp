@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "debug": "4.3.1",
-    "dotenv": "9.0.0",
+    "dotenv": "9.0.1",
     "jest": "26.6.3",
     "lodash": "4.17.21",
     "mongodb": "3.6.6"
