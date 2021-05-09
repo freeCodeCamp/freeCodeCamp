@@ -68,7 +68,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
-   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 2. **Challenge Code Edits**
 
@@ -80,7 +80,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
-   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 3. **Platform Changes**
 
@@ -104,7 +104,7 @@ Depending on the type of pull request it is, follow the corresponding rules list
 
 ##### Ensure the CI checks are passing:
 
-Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull-requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the PR is merged? These checks are critical for the stability of the platform.
+Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the PR is merged? These checks are critical for the stability of the platform.
 
 > [!WARNING]
 > Merging a PR that fails CI/CD checks can cause difficulties for all stakeholders, including the dev-team and contributors.
@@ -539,7 +539,7 @@ List of files:
 
 Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in our chat room or the forum if you need help contributing, our moderators will guide you through this.
 
-Sometimes we may get more than one pull-requests. We typically accept the most quality contribution followed by the one that is made first.
+Sometimes we may get more than one pull requests. We typically accept the most quality contribution followed by the one that is made first.
 
 Happy contributing.
 ```
