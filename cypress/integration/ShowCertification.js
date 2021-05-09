@@ -21,33 +21,6 @@ describe('A certification,', function () {
           cy.wait(1000);
         }
       });
-
-      // fill in legacy front end form
-      cy.get('#dynamic-legacy-front-end input').each(el => {
-        cy.wrap(el)
-          .clear({ force: true })
-          .type('https://nhl.com', { force: true, delay: 0 });
-      });
-
-      // if "Save Progress" button exists
-      cy.get('#dynamic-legacy-front-end').then(form => {
-        if (form[0][10] && form[0][10].innerHTML === 'Save Progress') {
-          form[0][10].click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      // if "Claim Certification" button exists
-      cy.get('#dynamic-legacy-front-end').then(form => {
-        if (form[0][10] && form[0][10].innerHTML === 'Claim Certification') {
-          form[0][10].click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      cy.get('#button-legacy-front-end')
-        .contains('Show Certification')
-        .click({ force: true });
     });
 
     it('should render a LinkedIn button', function () {
