@@ -389,7 +389,7 @@ Hey @username
 
 We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
 
-Once you resolve these issues, We will be able to review your PR and merge it. 😊
+Once you resolve these issues, we will be able to review your PR and merge it. 😊
 
 ---
 
