@@ -1,26 +1,18 @@
 /* global cy */
-const superblockPathData = require('../../../fixtures/pathData/responsive-web-design.json');
+const superBlockPath = require('../../../fixtures/pathData/challenges/responsive-web-design.json');
 
-const challengePaths = superblockPathData['blocks']['applied-accessibility'];
+const blocks = Object.entries(
+  superBlockPath['blocks']['applied-accessibility']
+);
 
-challengePaths.forEach(challenge => {
-  let challengeName = challenge.split('/');
+for (const [challengeName, challengePath] of blocks) {
   describe('loading challenge', () => {
     before(() => {
-      cy.visit(challenge);
-      cy.waitForResource(
-        'node_modules_monaco-editor_esm_vs_language_html_htmlMode_js.js',
-        'script'
-      );
+      cy.visit(challengePath);
     });
 
-    it(
-      'Challenge ' +
-        challengeName[challengeName.length - 1] +
-        ' should work correctly',
-      () => {
-        cy.testChallenges(challenge);
-      }
-    );
+    it('Challenge' + challengeName + ' should work correctly', () => {
+      cy.testChallenges(challengePath);
+    });
   });
-});
+}

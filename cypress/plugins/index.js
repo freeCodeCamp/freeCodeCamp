@@ -5,32 +5,80 @@ const { writeFileSync, readdirSync, readFileSync } = require('fs');
 
 function createPaths(curriculum, superblock, blocks) {
   let challengeObj = { blocks: {} };
+  let challengeObj2 = { blocks: {} };
+
+  let challengePaths;
+
+  // Specifies which challenge type has an editor
+  let typeHasEditor = [0, 1, 5, 6];
 
   blocks.forEach(block => {
     let challengeArr = curriculum[superblock]['blocks'][block]['challenges'];
 
-    const challengePath = challengeArr.map(
-      challengePath =>
-        `/learn/${superblock}/${block}/${challengePath['dashedName']}`
-    );
+    challengePaths = challengeArr.map(challengePath => [
+      `/learn/${superblock}/${block}/${challengePath['dashedName']}`,
+      challengePath['challengeType']
+    ]);
 
-    challengeObj['blocks'][block] = challengePath;
+    // Make variables defined before accessing them when checking for challenge type
+
+    challengeObj['blocks'][block] = {};
+    challengeObj2['blocks'][block] = {};
+
+    challengePaths.forEach(challengePath => {
+      let challengeName = challengePath[0].split('/');
+
+      if (typeHasEditor.includes(challengePath[1])) {
+        challengeObj['blocks'][block][challengeName[challengeName.length - 1]] =
+          challengePath[0];
+      } else {
+        challengeObj2['blocks'][block][
+          challengeName[challengeName.length - 1]
+        ] = challengePath[0];
+      }
+    });
   });
 
-  let challengePathData = JSON.stringify(challengeObj, null, 4);
+  // Remove the objects if they are empty
+  function cleanEmptyObjects(obj) {
+    Object.size = function (obj) {
+      let size = 0,
+        key;
+      for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+      }
+      return size;
+    };
+
+    for (let block in obj['blocks']) {
+      if (Object.size(obj['blocks'][block]) === 0) {
+        delete obj['blocks'][block];
+      }
+    }
+
+    return JSON.stringify(obj, null, 4);
+  }
 
   writeFileSync(
-    `.\\cypress\\fixtures\\pathData\\${superblock}.json`,
-    challengePathData
+    `.\\cypress\\fixtures\\pathData\\challenges\\${superblock}.json`,
+    cleanEmptyObjects(challengeObj)
+  );
+  writeFileSync(
+    `.\\cypress\\fixtures\\pathData\\projectsAndBackChallenges\\${superblock}.json`,
+    cleanEmptyObjects(challengeObj2)
   );
 
-  return challengePathData;
+  return null;
 }
 
 function createSpecFiles() {
-  const pathDataFiles = readdirSync('.\\cypress\\fixtures\\pathData');
-
-  // Get the existing block in the directory
+  // Get blocks in directory
+  const challengesFiles = readdirSync(
+    '.\\cypress\\fixtures\\pathData\\challenges'
+  );
+  const projectsFiles = readdirSync(
+    '.\\cypress\\fixtures\\pathData\\projectsAndBackChallenges'
+  );
 
   let blockExist = readdirSync(
     `.\\cypress\\integration\\challenge-tests\\blocks`
@@ -43,52 +91,56 @@ function createSpecFiles() {
     blockInDir.push(block.split('.')[0]);
   });
 
-  // Search for block through every pathdata file
+  function devider(files, project) {
+    files.forEach(file => {
+      let files = JSON.parse(
+        readFileSync(
+          `.\\cypress\\fixtures\\pathData\\${
+            project ? 'projectsAndBackChallenges' : 'challenges'
+          }\\${file}`,
+          'utf-8'
+        )
+      );
 
-  pathDataFiles.forEach(file => {
-    let superblock = JSON.parse(
-      readFileSync(`.\\cypress\\fixtures\\pathData\\${file}`, 'utf-8')
-    );
+      let challengeBlocks = Object.keys(files['blocks']);
 
-    // Get the blocks in pathData file
-
-    let blocks = Object.keys(superblock['blocks']);
-
-    // Only apply if file does not exist
-
-    blocks.forEach(block => {
-      if (!blockInDir.includes(block)) {
-        writeFileSync(
-          `.\\cypress\\integration\\challenge-tests\\blocks\\${block}.js`,
-          `/* global cy */
-          const superblockPathData = require('../../../fixtures/pathData/${file}');
-          
-          const challengePaths = superblockPathData['blocks']['${block}'];
-          
-          challengePaths.forEach(challenge => {
-            let challengeName = challenge.split('/');
+      challengeBlocks.forEach(block => {
+        if (!blockInDir.includes(block)) {
+          writeFileSync(
+            `.\\cypress\\integration\\challenge-tests\\blocks\\${block}.js`,
+            `/* global cy */
+          const superBlockPath = require('../../../fixtures/pathData/${
+            project ? 'projectsAndBackChallenges' : 'challenges'
+          }/${file}');
+  
+          const blocks = Object.entries(superBlockPath['blocks']['${block}'])
+  
+          for(const [challengeName , challengePath] of blocks){
             describe('loading challenge', () => {
-          
               before(() => {
-                cy.visit(challenge)
+                cy.visit(challengePath)
               })
-          
-              it(
-                'Challenge ' +
-                  challengeName[challengeName.length - 1] +
-                  ' should work correctly',
-                () => {
-                  cy.testChallenges(challenge);
+  
+              it('Challenge' + challengeName + ' should work correctly', () => {
+                ${
+                  project
+                    ? 'cy.checkProjectsAndBackend(challengePath)'
+                    : 'cy.testChallenges(challengePath)'
                 }
-              );
-            })
-          });`
-        );
-      }
+              })
+            });
+          }
+          `
+          );
+        }
+      });
     });
-  });
+  }
 
-  return blockInDir;
+  devider(challengesFiles, false);
+  devider(projectsFiles, true);
+
+  return null;
 }
 
 module.exports = on => {

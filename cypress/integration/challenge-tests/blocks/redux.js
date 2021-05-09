@@ -1,22 +1,16 @@
 /* global cy */
-const superblockPathData = require('../../../fixtures/pathData/front-end-libraries.json');
+const superBlockPath = require('../../../fixtures/pathData/challenges/front-end-libraries.json');
 
-const challengePaths = superblockPathData['blocks']['redux'];
+const blocks = Object.entries(superBlockPath['blocks']['redux']);
 
-challengePaths.forEach(challenge => {
-  let challengeName = challenge.split('/');
+for (const [challengeName, challengePath] of blocks) {
   describe('loading challenge', () => {
     before(() => {
-      cy.visit(challenge);
+      cy.visit(challengePath);
     });
 
-    it(
-      'Challenge ' +
-        challengeName[challengeName.length - 1] +
-        ' should work correctly',
-      () => {
-        cy.testChallenges(challenge);
-      }
-    );
+    it('Challenge' + challengeName + ' should work correctly', () => {
+      cy.testChallenges(challengePath);
+    });
   });
-});
+}

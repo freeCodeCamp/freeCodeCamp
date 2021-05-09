@@ -1,22 +1,16 @@
 /* global cy */
-const superblockPathData = require('../../../fixtures/pathData/responsive-web-design.json');
+const superBlockPath = require('../../../fixtures/pathData/challenges/responsive-web-design.json');
 
-const challengePaths = superblockPathData['blocks']['basic-css'];
+const blocks = Object.entries(superBlockPath['blocks']['basic-css']);
 
-challengePaths.forEach(challenge => {
-  let challengeName = challenge.split('/');
+for (const [challengeName, challengePath] of blocks) {
   describe('loading challenge', () => {
     before(() => {
-      cy.visit(challenge);
+      cy.visit(challengePath);
     });
 
-    it(
-      'Challenge ' +
-        challengeName[challengeName.length - 1] +
-        ' should work correctly',
-      () => {
-        cy.testChallenges(challenge);
-      }
-    );
+    it('Challenge' + challengeName + ' should work correctly', () => {
+      cy.testChallenges(challengePath);
+    });
   });
-});
+}

@@ -76,12 +76,10 @@ Cypress.Commands.add('testChallenges', () => {
   cy.get('.challenge-title').should('be.visible');
   cy.get('#description').should('be.visible');
 
-  // Check if Monaco editor exist
-  cy.get('div').then($div => {
-    if ($div.hasClass('react-monaco-editor-container')) {
-      cy.log('Monaco editor exists');
-    } else {
-      cy.log('Monaco editor does not exist');
-    }
-  });
+  cy.get('.react-monaco-editor-container');
+});
+
+// This command can be used to test projects and back-end challenges
+Cypress.Commands.add('checkProjectsAndBackend', () => {
+  cy.visit('/');
 });
