@@ -64,7 +64,6 @@ export function removeCookies(req, res) {
   res.clearCookie('access_token', config);
   res.clearCookie('userId', config);
   res.clearCookie('_csrf', config);
-  res.clearCookie('csrf_token', config);
   return;
 }
 
