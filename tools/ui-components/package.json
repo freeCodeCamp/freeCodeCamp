@@ -23,13 +23,13 @@
     "react-dom": "16.14.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/react": "^6.2.9",
-    "babel-loader": "^8.2.2"
+    "@babel/core": "7.14.0",
+    "@storybook/addon-actions": "6.2.9",
+    "@storybook/addon-essentials": "6.2.9",
+    "@storybook/addon-links": "6.2.9",
+    "@storybook/addon-postcss": "2.0.0",
+    "@storybook/react": "6.2.9",
+    "babel-loader": "8.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
