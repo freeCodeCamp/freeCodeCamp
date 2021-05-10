@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { I18nextProvider } from 'react-i18next';
+import cookies from 'browser-cookies';
 
 import i18n from './i18n/config';
 import { createStore } from './src/redux/createStore';
@@ -27,3 +28,9 @@ wrapRootElement.propTypes = {
 export const wrapPageElement = layoutSelector;
 
 export const disableCorePrefetching = () => true;
+
+export const onClientEntry = () => {
+  // purge the _csrf cookie, rather than relying what the browser decides a
+  // Session duration is
+  cookies.erase('_csrf');
+};
