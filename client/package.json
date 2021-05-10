@@ -101,7 +101,7 @@
     "react-lazy-load": "3.1.13",
     "react-monaco-editor": "0.43.0",
     "react-redux": "5.1.2",
-    "react-reflex": "4.0.0",
+    "react-reflex": "4.0.1",
     "react-responsive": "6.1.2",
     "react-scrollable-anchor": "0.6.1",
     "react-spinkit": "3.0.0",
