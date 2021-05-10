@@ -196,6 +196,11 @@
   width: 31px;
 }
 
+.navatar .avatar-nav-link:hover,
+.navatar .avatar-nav-link:focus {
+  background-color: var(--theme-color);
+}
+
 .navatar .default-border {
   border: none;
 }
