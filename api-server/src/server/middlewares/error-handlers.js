@@ -48,22 +48,16 @@ export default function prodErrorHandler() {
       console.error(errTemplate(err, req));
     }
 
-    if (type === 'html') {
-      if (typeof req.flash === 'function') {
-        req.flash(handled.type || 'danger', message);
-      }
-      return res.redirectWithFlash(redirectTo);
-      // json
-    } else if (type === 'json') {
-      res.setHeader('Content-Type', 'application/json');
+    if (type === 'json') {
       return res.json({
         type: handled.type || 'errors',
         message
       });
-      // plain text
     } else {
-      res.setHeader('Content-Type', 'text/plain');
-      return res.send(message);
+      if (typeof req.flash === 'function') {
+        req.flash(handled.type || 'danger', message);
+      }
+      return res.redirectWithFlash(redirectTo);
     }
   };
 }

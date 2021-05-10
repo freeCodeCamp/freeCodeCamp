@@ -8,16 +8,11 @@ export default function fourOhFour(app) {
     const { path } = req;
     const { origin } = getRedirectParams(req);
 
-    if (type === 'html') {
+    if (type === 'json') {
+      return res.status('404').json({ error: 'path not found' });
+    } else {
       req.flash('danger', `We couldn't find path ${path}`);
       return res.redirectWithFlash(`${origin}/404`);
     }
-
-    if (type === 'json') {
-      return res.status('404').json({ error: 'path not found' });
-    }
-
-    res.setHeader('Content-Type', 'text/plain');
-    return res.send('404 path not found');
   });
 }
