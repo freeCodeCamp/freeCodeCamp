@@ -328,7 +328,7 @@ We assume contributors will read anything in this room that directly mentions th
 
 You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
-With proposals like this all the time and is in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
+We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
 ## Dealing with (mental) health inquiries
 
