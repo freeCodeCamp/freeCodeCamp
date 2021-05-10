@@ -67,22 +67,24 @@ const createFrame = (document, id) => ctx => {
 };
 
 const hiddenFrameClassName = 'hide-test-frame';
-const mountFrame = document => ({ element, ...rest }) => {
-  const oldFrame = document.getElementById(element.id);
-  if (oldFrame) {
-    element.className = oldFrame.className || hiddenFrameClassName;
-    oldFrame.parentNode.replaceChild(element, oldFrame);
-  } else {
-    element.className = hiddenFrameClassName;
-    document.body.appendChild(element);
-  }
-  return {
-    ...rest,
-    element,
-    document: element.contentDocument,
-    window: element.contentWindow
+const mountFrame =
+  document =>
+  ({ element, ...rest }) => {
+    const oldFrame = document.getElementById(element.id);
+    if (oldFrame) {
+      element.className = oldFrame.className || hiddenFrameClassName;
+      oldFrame.parentNode.replaceChild(element, oldFrame);
+    } else {
+      element.className = hiddenFrameClassName;
+      document.body.appendChild(element);
+    }
+    return {
+      ...rest,
+      element,
+      document: element.contentDocument,
+      window: element.contentWindow
+    };
   };
-};
 
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);

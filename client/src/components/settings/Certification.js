@@ -285,13 +285,8 @@ export class CertificationSettings extends Component {
     );
   };
   renderProjectsFor = (certName, isCert) => {
-    const {
-      username,
-      isHonest,
-      createFlashMessage,
-      t,
-      verifyCert
-    } = this.props;
+    const { username, isHonest, createFlashMessage, t, verifyCert } =
+      this.props;
     const { certSlug } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${certSlug}`;
     const createClickHandler = certSlug => e => {
@@ -332,12 +327,8 @@ export class CertificationSettings extends Component {
 
   // legacy projects rendering
   handleSubmitLegacy({ values: formChalObj }) {
-    const {
-      isHonest,
-      createFlashMessage,
-      verifyCert,
-      updateLegacyCert
-    } = this.props;
+    const { isHonest, createFlashMessage, verifyCert, updateLegacyCert } =
+      this.props;
     let legacyTitle;
     let certSlug;
     let certs = Object.keys(legacyProjectMap);

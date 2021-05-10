@@ -8,10 +8,8 @@ import htmlTestValues from './__fixtures/curriculum-helpers-html';
 import whiteSpaceTestValues from './__fixtures/curriculum-helpers-remove-white-space';
 /* eslint-enable max-len */
 
-const {
-  stringWithWhiteSpaceChars,
-  stringWithWhiteSpaceCharsRemoved
-} = whiteSpaceTestValues;
+const { stringWithWhiteSpaceChars, stringWithWhiteSpaceCharsRemoved } =
+  whiteSpaceTestValues;
 
 const { cssFullExample, cssCodeWithCommentsRemoved } = cssTestValues;
 

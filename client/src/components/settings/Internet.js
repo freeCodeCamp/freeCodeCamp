@@ -165,20 +165,14 @@ class InternetSettings extends Component {
       message: githubProfileValidationMessage
     } = this.getValidationStateFor(githubProfile);
 
-    const {
-      state: linkedinValidation,
-      message: linkedinValidationMessage
-    } = this.getValidationStateFor(linkedin);
+    const { state: linkedinValidation, message: linkedinValidationMessage } =
+      this.getValidationStateFor(linkedin);
 
-    const {
-      state: twitterValidation,
-      message: twitterValidationMessage
-    } = this.getValidationStateFor(twitter);
+    const { state: twitterValidation, message: twitterValidationMessage } =
+      this.getValidationStateFor(twitter);
 
-    const {
-      state: websiteValidation,
-      message: websiteValidationMessage
-    } = this.getValidationStateFor(website);
+    const { state: websiteValidation, message: websiteValidationMessage } =
+      this.getValidationStateFor(website);
 
     return (
       <Fragment>

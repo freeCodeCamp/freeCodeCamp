@@ -74,9 +74,9 @@ export function* executeChallengeSaga({
     yield put(initLogs());
     yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
-    const tests = (yield select(
-      challengeTestsSelector
-    )).map(({ text, testString }) => ({ text, testString }));
+    const tests = (yield select(challengeTestsSelector)).map(
+      ({ text, testString }) => ({ text, testString })
+    );
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);

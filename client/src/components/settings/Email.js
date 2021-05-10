@@ -141,17 +141,11 @@ class EmailSettings extends Component {
       emailForm: { newEmail, confirmNewEmail, currentEmail, isPristine }
     } = this.state;
 
-    const {
-      isEmailVerified,
-      updateQuincyEmail,
-      sendQuincyEmail,
-      t
-    } = this.props;
+    const { isEmailVerified, updateQuincyEmail, sendQuincyEmail, t } =
+      this.props;
 
-    const {
-      state: newEmailValidation,
-      message: newEmailValidationMessage
-    } = this.getValidationForNewEmail();
+    const { state: newEmailValidation, message: newEmailValidationMessage } =
+      this.getValidationForNewEmail();
 
     const {
       state: confirmEmailValidation,

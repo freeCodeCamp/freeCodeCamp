@@ -676,10 +676,8 @@ export default function initializeUser(User) {
     const updateData = { $set: {} };
     return this.getCompletedChallenges$()
       .flatMap(() => {
-        const {
-          updated,
-          isNewCompletionCount
-        } = buildCompletedChallengesUpdate(this.completedChallenges, project);
+        const { updated, isNewCompletionCount } =
+          buildCompletedChallengesUpdate(this.completedChallenges, project);
         updateData.$set.completedChallenges = updated;
         if (isNewCompletionCount) {
           let points = [];
@@ -830,12 +828,8 @@ export default function initializeUser(User) {
         if (!user) {
           return Observable.of({});
         }
-        const {
-          completedChallenges,
-          progressTimestamps,
-          timezone,
-          profileUI
-        } = user;
+        const { completedChallenges, progressTimestamps, timezone, profileUI } =
+          user;
         const allUser = {
           ..._.pick(user, publicUserProps),
           isGithub: !!user.githubProfile,
