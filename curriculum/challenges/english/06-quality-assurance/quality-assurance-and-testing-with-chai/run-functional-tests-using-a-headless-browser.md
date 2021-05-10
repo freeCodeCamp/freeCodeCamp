@@ -18,7 +18,7 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
     browser.assert.success();
     browser.assert.text('span#name', 'Marco');
     browser.assert.text('span#surname', 'Polo');
-    browser.assert.element('span#dates', 1);
+    browser.assert.elements('span#dates', 1);
     done();
   });
 }
@@ -119,7 +119,7 @@ You should assert that the element 'span#dates' exist and its count is 1.
 (getUserInput) =>
   $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
     (data) => {
-      assert.equal(data.assertions[3].method, 'browser.element');
+      assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);
       assert.equal(data.assertions[3].args[1], 1);
     },
