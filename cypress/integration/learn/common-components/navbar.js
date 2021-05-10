@@ -6,7 +6,8 @@ const selectors = {
   navigationLinks: '.nav-list',
   avatarContainer: '.avatar-container',
   defaultAvatar: '.avatar-container',
-  menuButton: '.toggle-button-nav'
+  menuButton: '.toggle-button-nav',
+  avatarImage: '.avatar-container .avatar'
 };
 
 let appHasStarted;
@@ -98,5 +99,11 @@ describe('Navbar', () => {
     cy.login();
     cy.get(selectors.avatarContainer).should('have.class', 'default-border');
     cy.get(selectors.defaultAvatar).should('exist');
+  });
+
+  it('Should have a profile image with dimensions that are <= 31px', () => {
+    cy.login();
+    cy.get(selectors.avatarImage).invoke('width').should('lte', 31);
+    cy.get(selectors.avatarImage).invoke('height').should('lte', 31);
   });
 });

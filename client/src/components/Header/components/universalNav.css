@@ -205,6 +205,10 @@
   background: var(--secondary-background);
 }
 
+.navatar .avatar-container {
+  height: 100%;
+}
+
 .navatar .avatar-container svg,
 .navatar .avatar-container img {
   object-fit: cover;
