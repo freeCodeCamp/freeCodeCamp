@@ -56,7 +56,7 @@ export default function prodErrorHandler() {
       // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');
-      return res.send({
+      return res.json({
         type: handled.type || 'errors',
         message
       });
