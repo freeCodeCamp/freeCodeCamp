@@ -18,20 +18,38 @@ It is possible to write ten as the sum of primes in exactly five different ways:
   2 + 2 + 2 + 2 + 2<br>
 </div>
 
-What is the first value which can be written as the sum of primes in over five thousand different ways?
+What is the first value which can be written as the sum of primes in over `n` ways?
 
 # --hints--
 
-`primeSummations()` should return a number.
+`primeSummations(5)` should return a number.
 
 ```js
-assert(typeof primeSummations() === 'number');
+assert(typeof primeSummations(5) === 'number');
 ```
 
-`primeSummations()` should return 71.
+`primeSummations(5)` should return `11`.
 
 ```js
-assert.strictEqual(primeSummations(), 71);
+assert.strictEqual(primeSummations(5), 11);
+```
+
+`primeSummations(100)` should return `31`.
+
+```js
+assert.strictEqual(primeSummations(100), 31);
+```
+
+`primeSummations(1000)` should return `53`.
+
+```js
+assert.strictEqual(primeSummations(1000), 53);
+```
+
+`primeSummations(5000)` should return `71`.
+
+```js
+assert.strictEqual(primeSummations(5000), 71);
 ```
 
 # --seed--
@@ -39,12 +57,12 @@ assert.strictEqual(primeSummations(), 71);
 ## --seed-contents--
 
 ```js
-function primeSummations() {
+function primeSummations(n) {
 
   return true;
 }
 
-primeSummations();
+primeSummations(5);
 ```
 
 # --solutions--
