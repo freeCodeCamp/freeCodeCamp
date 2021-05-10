@@ -260,7 +260,7 @@ export class CertificationSettings extends Component {
 
   renderCertifications = (certName, projectsMap) => {
     const { t } = this.props;
-    const { certSlug } = first(projectMap[certName]);
+    const { certSlug } = first(projectsMap[certName]);
     return (
       <FullWidthRow key={certName}>
         <Spacer />
