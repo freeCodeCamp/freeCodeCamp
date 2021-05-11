@@ -1,4 +1,5 @@
 /* global cy */
+const certificationUrl = '/certification/developmentuser/responsive-web-design';
 const projects = {
   superBlock: 'responsive-web-design',
   block: 'responsive-web-design-projects',
@@ -27,49 +28,52 @@ const projects = {
 };
 
 describe('A certification,', function () {
+  before(() => {
+    cy.exec('npm run seed');
+    cy.login();
+
+    // submit projects for certificate
+    const { superBlock, block, challenges } = projects;
+    challenges.forEach(({ slug, solution }) => {
+      const url = `/learn/${superBlock}/${block}/${slug}`;
+      cy.visit(url);
+      cy.get('#dynamic-front-end-form')
+        .get('#solution')
+        .type(solution, { force: true, delay: 0 });
+      cy.contains("I've completed this challenge")
+        .should('not.be.disabled')
+        .click();
+      cy.contains('Submit and go to next challenge').click().wait(1000);
+    });
+
+    cy.visit('/settings');
+
+    // set user settings to public to claim a cert
+    cy.get('label:contains(Public)>input').each(el => {
+      if (!/toggle-active/.test(el[0].parentElement.className)) {
+        cy.wrap(el).click({ force: true });
+        cy.wait(1000);
+      }
+    });
+
+    // if honest policy not accepted
+    cy.get('.honesty-policy button').then(btn => {
+      if (btn[0].innerText === 'Agree') {
+        btn[0].click({ force: true });
+        cy.wait(1000);
+      }
+    });
+
+    // claim certificate
+    cy.get('a[href*="developmentuser/responsive-web-design"]').click({
+      force: true
+    });
+  });
+
   describe('while viewing your own,', function () {
     before(() => {
-      cy.exec('npm run seed');
       cy.login();
-
-      // submit projects for certificate
-      const { superBlock, block, challenges } = projects;
-      challenges.forEach(({ slug, solution }) => {
-        const url = `/learn/${superBlock}/${block}/${slug}`;
-        cy.visit(url);
-        cy.get('#dynamic-front-end-form')
-          .get('#solution')
-          .type(solution, { force: true, delay: 0 });
-        cy.contains("I've completed this challenge")
-          .should('not.be.disabled')
-          .click();
-        cy.contains('Submit and go to next challenge').click();
-      });
-
-      cy.visit('/settings');
-
-      // set user settings to public to claim a cert
-      cy.get('label:contains(Public)>input').each(el => {
-        if (!/toggle-active/.test(el[0].parentElement.className)) {
-          cy.wrap(el).click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      // if honest policy not accepted
-      cy.get('.honesty-policy button').then(btn => {
-        if (btn[0].innerText === 'Agree') {
-          btn[0].click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      // claim certificate
-      cy.get('a[href*="developmentuser/responsive-web-design"]').click({
-        force: true
-      });
-
-      cy.visit('/certification/developmentuser/responsive-web-design');
+      cy.visit(certificationUrl);
     });
 
     it('should render a LinkedIn button', function () {
@@ -101,10 +105,7 @@ describe('A certification,', function () {
 
   describe("while viewing someone else's,", function () {
     before(() => {
-      cy.go('back');
-      cy.get('.toggle-button-nav').click();
-      cy.get('.nav-list').contains('Sign out').click();
-      cy.visit('/certification/developmentuser/responsive-web-design');
+      cy.visit(certificationUrl);
     });
 
     it('should display certificate', function () {
