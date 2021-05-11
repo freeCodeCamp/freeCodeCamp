@@ -21,11 +21,11 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 
 **Prerequisites:**
 
-| Prerequisite                  | Version | Notes                                                                |
-| ----------------------------- | ------- | -------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)  | `14.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)   |
-| npm (comes bundled with Node) | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x`   | [Release Notes](https://docs.mongodb.com/v4.0/release-notes/) |
+| Prerequisite                                                                                  | Version | Notes                                                                |
+| --------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `14.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)   |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | [Release Notes](https://docs.mongodb.com/v4.0/release-notes/)        |
 
 > [!DANGER]
 > If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
@@ -469,6 +469,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
 | `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm run storybook`                                            | Starts Storybook for component library development.                                 |
 | `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
 | `npm run test:client`                                          | Run the client test suite.                                                          |
 | `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
