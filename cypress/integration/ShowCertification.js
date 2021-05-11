@@ -1,9 +1,51 @@
 /* global cy */
+const projects = {
+  superBlock: 'responsive-web-design',
+  block: 'responsive-web-design-projects',
+  challenges: [
+    {
+      slug: 'build-a-tribute-page',
+      solution: 'https://codepen.io/moT01/pen/ZpJpKp'
+    },
+    {
+      slug: 'build-a-survey-form',
+      solution: 'https://codepen.io/moT01/pen/LrrjGz?editors=1010'
+    },
+    {
+      slug: 'build-a-product-landing-page',
+      solution: 'https://codepen.io/moT01/full/qKyKYL/'
+    },
+    {
+      slug: 'build-a-technical-documentation-page',
+      solution: 'https://codepen.io/moT01/full/JBvzNL/'
+    },
+    {
+      slug: 'build-a-personal-portfolio-webpage',
+      solution: 'https://codepen.io/moT01/pen/vgOaoJ'
+    }
+  ]
+};
 
 describe('A certification,', function () {
   describe('while viewing your own,', function () {
     before(() => {
+      cy.exec('npm run seed');
       cy.login();
+
+      // submit projects for certificate
+      const { superBlock, block, challenges } = projects;
+      challenges.forEach(({ slug, solution }) => {
+        const url = `/learn/${superBlock}/${block}/${slug}`;
+        cy.visit(url);
+        cy.get('#dynamic-front-end-form')
+          .get('#solution')
+          .type(solution, { force: true, delay: 0 });
+        cy.contains("I've completed this challenge")
+          .should('not.be.disabled')
+          .click();
+        cy.contains('Submit and go to next challenge').click();
+      });
+
       cy.visit('/settings');
 
       // set user settings to public to claim a cert
@@ -21,6 +63,13 @@ describe('A certification,', function () {
           cy.wait(1000);
         }
       });
+
+      // claim certificate
+      cy.get('a[href*="developmentuser/responsive-web-design"]').click({
+        force: true
+      });
+
+      cy.visit('/certification/developmentuser/responsive-web-design');
     });
 
     it('should render a LinkedIn button', function () {
@@ -29,7 +78,7 @@ describe('A certification,', function () {
         .and(
           'match',
           // eslint-disable-next-line max-len
-          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Legacy Front End&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=https:\/\/freecodecamp\.org\/certification\/developmentuser\/legacy-front-end/
+          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Responsive Web Design&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=https:\/\/freecodecamp\.org\/certification\/developmentuser\/responsive-web-design/
         );
     });
 
@@ -37,7 +86,7 @@ describe('A certification,', function () {
       cy.contains('Share this certification on Twitter').should(
         'have.attr',
         'href',
-        'https://twitter.com/intent/tweet?text=I just earned the Legacy Front End certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/developmentuser/legacy-front-end'
+        'https://twitter.com/intent/tweet?text=I just earned the Responsive Web Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/developmentuser/responsive-web-design'
       );
     });
 
@@ -55,7 +104,14 @@ describe('A certification,', function () {
       cy.go('back');
       cy.get('.toggle-button-nav').click();
       cy.get('.nav-list').contains('Sign out').click();
-      cy.visit('/certification/developmentuser/legacy-front-end');
+      cy.visit('/certification/developmentuser/responsive-web-design');
+    });
+
+    it('should display certificate', function () {
+      cy.contains('has successfully completed the freeCodeCamp.org').should(
+        'exist'
+      );
+      cy.contains('Responsive Web Design').should('exist');
     });
 
     it('should not render a LinkedIn button', function () {
