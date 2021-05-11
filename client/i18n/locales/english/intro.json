@@ -6,7 +6,7 @@
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
       "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
     ],
-    "info": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
     "blocks": {
       "basic-html-and-html5": {
         "title": "Basic HTML and HTML5",
@@ -85,7 +85,7 @@
       "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
       "Along the way, you'll also learn two important programing styles or paradigms: Object Oriented Programing (OOP), and Functional Programing (FP)."
     ],
-    "info": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block content of pages, while taking the course.",
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block content of pages, while taking the course.",
     "blocks": {
       "basic-javascript": {
         "title": "Basic JavaScript",
@@ -180,6 +180,7 @@
       "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
       "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
     ],
+    "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
@@ -242,6 +243,7 @@
       "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
       "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programing Interface)."
     ],
+    "note": "",
     "blocks": {
       "data-visualization-with-d3": {
         "title": "Data Visualization with D3",
@@ -280,6 +282,7 @@
       "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
       "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
+    "note": "",
     "blocks": {
       "managing-packages-with-npm": {
         "title": "Managing Packages with NPM",
@@ -321,6 +324,7 @@
       "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
       "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, and Socket.io for real-time communication between the server and connected clients."
     ],
+    "note": "",
     "blocks": {
       "quality-assurance-and-testing-with-chai": {
         "title": "Quality Assurance and Testing with Chai",
@@ -353,6 +357,7 @@
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
       "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
+    "note": "",
     "blocks": {
       "python-for-everybody": {
         "title": "Python for Everybody",
@@ -375,6 +380,7 @@
       "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
       "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
     ],
+    "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
         "title": "Data Analysis with Python",
@@ -406,6 +412,7 @@
       "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
       "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
     ],
+    "note": "",
     "blocks": {
       "information-security-with-helmetjs": {
         "title": "Information Security with HelmetJS",
@@ -437,6 +444,7 @@
       "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
+    "note": "",
     "blocks": {
       "tensorflow": {
         "title": "Tensorflow",
@@ -466,6 +474,7 @@
       "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
       "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
     ],
+    "note": "",
     "blocks": {
       "algorithms": {
         "title": "Algorithms",

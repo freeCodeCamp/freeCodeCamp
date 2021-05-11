@@ -17,7 +17,7 @@ function SuperBlockIntro(props) {
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,
-    info: superBlockInfoText
+    note: superBlockNoteText
   } = superBlockIntroObj;
 
   return (
@@ -29,9 +29,9 @@ function SuperBlockIntro(props) {
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>
       ))}
-      {superBlockInfoText && (
+      {superBlockNoteText && (
         <div className='alert alert-info' style={{ marginTop: '2rem' }}>
-          {superBlockInfoText}
+          {superBlockNoteText}
         </div>
       )}
     </>
