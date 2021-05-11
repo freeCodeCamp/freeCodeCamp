@@ -9,7 +9,7 @@ dashedName: passing-values-to-functions-with-arguments
 
 # --description--
 
-函数的参数 （<dfn>parameters</dfn>）在函数中充当调用函数时传入函数的输入占位符（也叫形参）的作用。 函数调用时，参数可以为一个或多个。 调用函数时输入（或传递 <dfn>"passed"</dfn>）的实际值被称为参数（<dfn>arguments</dfn>）。
+函数的参数 （<dfn>parameters</dfn>）在函数调用中充当传入函数的输入占位符（也叫形参）。 函数调用时，参数可以为一个或多个。 调用函数时输入（或传递 <dfn>"passed"</dfn>）的实际值被称为参数（<dfn>arguments</dfn>）。
 
 这是带有两个参数的函数，`param1` 和 `param2`：
 
@@ -19,7 +19,7 @@ function testFun(param1, param2) {
 }
 ```
 
-然后我们可以调用 `testFun`，就像这样： `testFun("Hello", "World");`。 我们传入了两个字符串参数， `Hello` 和`World`。 在函数中，`param1` 等于字符串 `Hello` 和 `param2` 等于字符串 `World`。 请注意，`testFun` 函数可以多次调用，每次调用时传递的参数会决定参数的实际值。
+然后我们可以调用 `testFun`，就像这样： `testFun("Hello", "World");`。 我们传入了两个字符串参数， `Hello` 和`World`。 在函数中，`param1` 等于字符串 `Hello` 以及 `param2` 等于字符串 `World`。 请注意，`testFun` 函数可以多次调用，每次调用时传递的参数会决定参数的实际值。
 
 # --instructions--
 

@@ -32,9 +32,8 @@ function createQuestionEpic(action$, state$, { window }) {
     tap(() => {
       const state = state$.value;
       const files = challengeFilesSelector(state);
-      const { title: challengeTitle, helpCategory } = challengeMetaSelector(
-        state
-      );
+      const { title: challengeTitle, helpCategory } =
+        challengeMetaSelector(state);
       const {
         navigator: { userAgent },
         location: { href }

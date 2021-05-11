@@ -23,7 +23,14 @@ function functionName() {
 
 # --instructions--
 
-<ol><li>先創建一個名爲 <code>reusableFunction</code> 的函數，這個函數可以打印 <code>"Hi World"</code> 到控制檯上。</li><li>然後調用這個函數。</li></ol>
+<ol>
+  <li>
+    先創建一個名爲 <code>reusableFunction</code> 的函數，這個函數打印 <code>Hi World</code> 到控制檯上。
+  </li>
+  <li>
+    然後調用這個函數。
+  </li>
+</ol>
 
 # --hints--
 

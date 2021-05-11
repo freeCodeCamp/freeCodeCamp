@@ -9,7 +9,7 @@ dashedName: passing-values-to-functions-with-arguments
 
 # --description--
 
-函數的參數 （<dfn>parameters</dfn>）在函數中充當調用函數時傳入函數的輸入佔位符（也叫形參）的作用。 函數調用時，參數可以爲一個或多個。 調用函數時輸入（或傳遞 <dfn>"passed"</dfn>）的實際值被稱爲參數（<dfn>arguments</dfn>）。
+函數的參數 （<dfn>parameters</dfn>）在函數調用中充當傳入函數的輸入佔位符（也叫形參）。 函數調用時，參數可以爲一個或多個。 調用函數時輸入（或傳遞 <dfn>"passed"</dfn>）的實際值被稱爲參數（<dfn>arguments</dfn>）。
 
 這是帶有兩個參數的函數，`param1` 和 `param2`：
 
@@ -19,7 +19,7 @@ function testFun(param1, param2) {
 }
 ```
 
-然後我們可以調用 `testFun`，就像這樣： `testFun("Hello", "World");`。 我們傳入了兩個字符串參數， `Hello` 和`World`。 在函數中，`param1` 等於字符串 `Hello` 和 `param2` 等於字符串 `World`。 請注意，`testFun` 函數可以多次調用，每次調用時傳遞的參數會決定參數的實際值。
+然後我們可以調用 `testFun`，就像這樣： `testFun("Hello", "World");`。 我們傳入了兩個字符串參數， `Hello` 和`World`。 在函數中，`param1` 等於字符串 `Hello` 以及 `param2` 等於字符串 `World`。 請注意，`testFun` 函數可以多次調用，每次調用時傳遞的參數會決定參數的實際值。
 
 # --instructions--
 

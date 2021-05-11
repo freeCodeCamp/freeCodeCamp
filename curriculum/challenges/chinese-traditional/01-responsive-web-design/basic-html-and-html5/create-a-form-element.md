@@ -20,7 +20,7 @@ dashedName: create-a-form-element
 
 # --instructions--
 
-把現有的 `input` 輸入框放到一個新建的表單 `form` 裏，然後設置 `form` 元素的 `action` 屬性值爲 `"https://freecatphotoapp.com/submit-cat-photo"`。
+把現有的 `input` 元素嵌套到一個表單 `form` 元素裏，然後設置 `form` 元素的 `action` 屬性值爲 `"https://www.freecatphotoapp.com/submit-cat-photo"`。
 
 # --hints--
 
@@ -34,12 +34,11 @@ assert(
 );
 ```
 
-`form` 的 `action` 屬性值應設置爲 `https://freecatphotoapp.com/submit-cat-photo`。
+`form` 的 `action` 屬性值應爲 `https://www.freecatphotoapp.com/submit-cat-photo`。
 
 ```js
-assert(
-  $('form').attr('action') === 'https://freecatphotoapp.com/submit-cat-photo'
-);
+const action = $('form').attr('action');
+assert(action.match(/^https:\/\/(www\.)?freecatphotoapp\.com\/submit-cat-photo$/i))
 ```
 
 `form` 元素應有開始標籤和結束標籤。
@@ -61,7 +60,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -86,7 +85,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -100,7 +99,7 @@ assert(
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="https://freecatphotoapp.com/submit-cat-photo">
+  <form action="https://www.freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>

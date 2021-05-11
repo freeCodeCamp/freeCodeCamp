@@ -15,9 +15,8 @@ const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { helpCategoryMap } = require('../client/utils/challengeTypes');
-const {
-  curriculum: curriculumLangs
-} = require('../config/i18n/all-langs').availableLangs;
+const { curriculum: curriculumLangs } =
+  require('../config/i18n/all-langs').availableLangs;
 
 const access = util.promisify(fs.access);
 

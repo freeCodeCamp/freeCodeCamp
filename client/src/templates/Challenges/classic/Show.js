@@ -206,13 +206,8 @@ class ShowClassic extends Component {
   }
 
   renderInstructionsPanel({ showToolPanel }) {
-    const {
-      block,
-      description,
-      instructions,
-      superBlock,
-      translationPending
-    } = this.getChallenge();
+    const { block, description, instructions, superBlock, translationPending } =
+      this.getChallenge();
 
     const { forumTopicId, title } = this.getChallenge();
     return (

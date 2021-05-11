@@ -8,21 +8,21 @@ dashedName: record-collection
 
 # --description--
 
-給定一個 JSON 對象，用來表示部分音樂專輯收藏。 每張專輯都有幾個屬性和一個唯一的 id 號作爲鍵值。 並非所有專輯都有完整的信息。
+給定一個對象，用來表示部分音樂專輯收藏。 每張專輯都有幾個屬性和一個唯一的 id 號作爲鍵值。 並非所有專輯都有完整的信息。
 
-以 `updateRecords` 函數開使，這個函數需要一個對象如 `collection`，一個 `id`，一個 `prop` (如 `artist` 或 `tracks`), 和 `value`。 使用下面的規則完成函數來修改傳遞給函數的對象。
+以 `updateRecords` 函數開始，這個函數需要一個對象 `records`，包含一個音樂專輯集合，一個 `id`，一個 `prop`（如 `artist` 或 `tracks`），和一個 `value`。 使用下面的規則完成函數來修改傳遞給函數的對象。
 
--   你的函數必須始終返回整個對象。
+-   函數必須始終返回整個音樂專輯集合對象。
 -   如果 `prop` 不是 `tracks` 並且 `value` 不是一個空字符串， 將相冊的 `prop` 更新或設置爲 `value`。
 -   如果 `prop` 是 `tracks` 但專輯沒有 `tracks` 屬性，則應創建空數組併爲其添加 `value`。
 -   如果 `prop` 是 `tracks` 並且 `value` 不是一個空字符串，將 `value` 添加到相冊現有 `tracks` 數組的末尾。
 -   如果 `value` 是空字符串，從專輯裏刪除指定的 `prop`。
 
-**注意：** 用 `collection` 對象做爲測試參數對象。
+**注意：** 用 `recordCollection` 對象做爲測試參數對象。
 
 # --hints--
 
-執行 `updateRecords(collection, 5439, "artist", "ABBA")` 後, `artist` 應該是字符串 `ABBA`
+執行 `updateRecords(recordCollection, 5439, "artist", "ABBA")` 後，`artist` 的值應該是字符串 `ABBA`。
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-執行 `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")` 後，`tracks` 的最後一個元素應該爲字符串 `Take a Chance on Me`。
+執行 `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` 後，`tracks` 的最後一個元素應該爲字符串 `Take a Chance on Me`。
 
 ```js
 assert(
@@ -41,14 +41,14 @@ assert(
 );
 ```
 
-執行 `updateRecords(collection, 2548, "artist", "")` 後， `artist` 不應被設置
+執行 `updateRecords(recordCollection, 2548, "artist", "")` 後， `artist` 不應被設置爲任何值。
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-執行 `updateRecords(collection, 1245, "tracks", "Addicted to Love")` 後，`tracks` 的最後一個元素應該爲字符串 `Addicted to Love`。
+執行 `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")` 後，`tracks` 的最後一個元素應該爲字符串 `Addicted to Love`。
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-執行 `updateRecords(collection, 2468, "tracks", "Free")` 後，`tracks` 的第一個元素應該爲字符串 `1999`。
+執行 `updateRecords(recordCollection, 2468, "tracks", "Free")` 後，`tracks` 的第一個元素應該爲字符串 `1999`。
 
 ```js
 assert(
@@ -68,14 +68,14 @@ assert(
 );
 ```
 
-執行 `updateRecords(collection, 2548, "tracks", "")` 後， `tracks` 不應被設置
+執行 `updateRecords(recordCollection, 2548, "tracks", "")` 後， `tracks` 不應被設置爲任何值。
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-執行 `updateRecords(collection, 1245, "albumTitle", "Riptide")` 後, `albumTitle` 應該是字符串 `Riptide`
+執行 `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")` 後，`albumTitle` 的值應該是字符串 `Riptide`。
 
 ```js
 assert(
@@ -115,7 +115,7 @@ const _recordCollection = {
 
 ```js
 // Setup
-var collection = {
+var recordCollection = {
   2548: {
     albumTitle: 'Slippery When Wet',
     artist: 'Bon Jovi',
@@ -136,17 +136,17 @@ var collection = {
 };
 
 // Only change code below this line
-function updateRecords(object, id, prop, value) {
-  return object;
+function updateRecords(records, id, prop, value) {
+  return records;
 }
 
-updateRecords(collection, 5439, 'artist', 'ABBA');
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 ```
 
 # --solutions--
 
 ```js
-var collection = {
+var recordCollection = {
   2548: {
     albumTitle: 'Slippery When Wet',
     artist: 'Bon Jovi',
@@ -167,15 +167,15 @@ var collection = {
 };
 
 // Only change code below this line
-function updateRecords(object, id, prop, value) {
-  if (value === '') delete object[id][prop];
+function updateRecords(records, id, prop, value) {
+  if (value === '') delete records[id][prop];
   else if (prop === 'tracks') {
-    object[id][prop] = object[id][prop] || [];
-    object[id][prop].push(value);
+    records[id][prop] = records[id][prop] || [];
+    records[id][prop].push(value);
   } else {
-    object[id][prop] = value;
+    records[id][prop] = value;
   }
 
-  return object;
+  return records;
 }
 ```

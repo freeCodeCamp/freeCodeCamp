@@ -14,10 +14,8 @@ function SuperBlockIntro(props) {
   const { superBlock } = props;
 
   const superBlockIntroObj = t(`intro:${superBlock}`);
-  const {
-    title: i18nSuperBlock,
-    intro: superBlockIntroText
-  } = superBlockIntroObj;
+  const { title: i18nSuperBlock, intro: superBlockIntroText } =
+    superBlockIntroObj;
 
   return (
     <>
