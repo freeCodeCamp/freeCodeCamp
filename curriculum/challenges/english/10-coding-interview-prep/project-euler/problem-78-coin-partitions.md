@@ -24,20 +24,38 @@ Let p(n) represent the number of different ways in which n coins can be separate
 
 </div>
 
-Find the least value of `n` for which p(`n`) is divisible by one million.
+Find the least value of `n` for which ${p}(n)$ is divisible by `divisor`.
 
 # --hints--
 
-`coinPartitions()` should return a number.
+`coinPartitions(7)` should return a number.
 
 ```js
-assert(typeof coinPartitions() === 'number');
+assert(typeof coinPartitions(7) === 'number');
 ```
 
-`coinPartitions()` should return 55374.
+`coinPartitions(7)` should return `5`.
 
 ```js
-assert.strictEqual(coinPartitions(), 55374);
+assert.strictEqual(coinPartitions(7), 5);
+```
+
+`coinPartitions(10000)` should return `599`.
+
+```js
+assert.strictEqual(coinPartitions(10000), 599);
+```
+
+`coinPartitions(100000)` should return `11224`.
+
+```js
+assert.strictEqual(coinPartitions(100000), 11224);
+```
+
+`coinPartitions(1000000)` should return `55374`.
+
+```js
+assert.strictEqual(coinPartitions(1000000), 55374);
 ```
 
 # --seed--
@@ -45,12 +63,12 @@ assert.strictEqual(coinPartitions(), 55374);
 ## --seed-contents--
 
 ```js
-function coinPartitions() {
+function coinPartitions(divisor) {
 
   return true;
 }
 
-coinPartitions();
+coinPartitions(7);
 ```
 
 # --solutions--
