@@ -191,7 +191,9 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   // involved in SSR. Also, if the plugin is used during the 'build-html' stage
   // it overwrites the minfied files with ordinary ones.
   if (stage !== 'build-html') {
-    newPlugins.push(new MonacoWebpackPlugin());
+    newPlugins.push(
+      new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
+    );
   }
   actions.setWebpackConfig({
     resolve: {
