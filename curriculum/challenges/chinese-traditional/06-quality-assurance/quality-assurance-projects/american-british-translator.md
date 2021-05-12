@@ -10,7 +10,7 @@ dashedName: american-british-translator
 構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://american-british-translator.freecodecamp.rocks/>。 可以採用下面的任意一種方式完成這個挑戰：
 
 -   克隆 [這個 GitHub 倉庫](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) 並在本地完成項目。
--   使用 [repl.it 上的初始化項目](https://repl.it/github/freeCodeCamp/boilerplate-project-american-british-english-translator) 來完成項目。
+-   使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator)來完成你的項目。
 -   使用您選擇的站點生成器來完成項目。 並確保包含了我們 GitHub 倉庫的所有文件。
 
 當完成本項目，請確認有一個可以公開訪問的正常運行 demo 。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
@@ -21,8 +21,8 @@ dashedName: american-british-translator
 -   在 `/routes/api.js` 中完成 `/api/translate` 路由
 -   在 `tests/1_unit-tests.js` 和 `tests/2_functional-tests.js` 中創建所有 unit/functional 測試
 -   查看 `/components` 中的 JavaScript 文件以獲取應用程序應該翻譯的條款以及不同的拼寫
--   在 `.env` 文件中將 `NODE_ENV` 設置爲 `test`（沒有引號），運行 Repl.it 上的測試。
--   使用 `npm run test` 命令，在 console 運行測試。 按 Ctrl+Shift+P (在 Mac 上是 Cmd+Shift+P) 並輸入"open shell"，打開 Repl.it 控制檯。
+-   在 `.env` 文件中將 `NODE_ENV` 設置爲 `test`（沒有引號），在 Replit 上運行測試。
+-   使用 `npm run test` 命令，在 console 運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯。
 
 在 `tests/1_unit-tests.js` 中寫下以下測試：
 

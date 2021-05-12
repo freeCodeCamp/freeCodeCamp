@@ -11,7 +11,7 @@ dashedName: set-up-a-template-engine
 你可以採用下面的任意一種方式完成這些挑戰：
 
 - 克隆[這個 GitHub 倉庫](https://github.com/freeCodeCamp/boilerplate-advancednode/)，在本地完成這些挑戰。
-- 使用[我們在 Repl.it 上的初始化項目](https://repl.it/github/freeCodeCamp/boilerplate-advancednode)來完成這些挑戰。
+- 使用[我們的 Replit 上的初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-advancednode)來完成項目。
 - 使用一個你選擇的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
 完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。

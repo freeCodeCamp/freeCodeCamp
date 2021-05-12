@@ -8,7 +8,7 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-請注意，本項目在 [這個 Repl.it 項目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基礎上進行開發。 你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 `deepEqual()` 斷言兩個對象是否深度相等。
 

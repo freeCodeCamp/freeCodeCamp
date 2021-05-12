@@ -11,7 +11,7 @@ dashedName: metric-imperial-converter
 構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://metric-imperial-converter.freecodecamp.rocks/>。 可以採用下面的任意一種方式完成這個挑戰：
 
 - 克隆 [GitHub 倉庫](https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/) 並在本地完成你的項目。
-- 使用 [repl.it 上的初始化項目](https://repl.it/github/freeCodeCamp/boilerplate-project-metricimpconverter) 來完成項目。
+- 使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter)來完成你的項目。
 - 使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
 完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
@@ -22,7 +22,7 @@ dashedName: metric-imperial-converter
 - 在 `/routes/api.js` 中完成必要的路由
 - 複製 `sample.env` 文件到 `.env` 並按需設置變量
 - 在 `.env` 文件中取消註釋 `NODE_ENV=test` 來運行測試
-- 使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P (在 Mac 上是 Cmd+Shift+P) 並輸入"open shell"，打開 Repl.it 控制檯。
+- 使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯。
 
 在 `tests/1_unit-tests.js` 中寫下以下測試：
 

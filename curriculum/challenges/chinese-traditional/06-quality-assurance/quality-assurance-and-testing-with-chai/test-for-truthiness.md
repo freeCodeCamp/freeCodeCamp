@@ -8,7 +8,7 @@ dashedName: test-for-truthiness
 
 # --description--
 
-請注意，本項目在[這個 Repl.it 項目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 `isTrue()` 僅當給出的值爲 Boolean 的 `true` 時可以通過測試；`isNotTrue()` 則會在給出除 `true` 以外的值時通過測試。
 
