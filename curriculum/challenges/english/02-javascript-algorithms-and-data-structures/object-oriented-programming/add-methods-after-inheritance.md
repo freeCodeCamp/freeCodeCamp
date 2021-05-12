@@ -58,7 +58,7 @@ assert(typeof Animal.prototype.bark == 'undefined');
 assert(typeof Dog.prototype.eat == 'function');
 ```
 
-`Dog` prototype should have a `bark()` method.
+The `Dog` prototype should have a `bark()` method.
 
 ```js
 assert('bark' in Dog.prototype);
