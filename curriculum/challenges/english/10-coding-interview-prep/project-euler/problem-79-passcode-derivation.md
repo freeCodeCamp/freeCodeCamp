@@ -76,5 +76,40 @@ passcodeDerivation(keylog1);
 # --solutions--
 
 ```js
-// solution required
+function passcodeDerivation(arr) {
+  const numbersInPasscode = [];
+  const relativePositions = new Array(10)
+    .fill()
+    .map(() => new Array(10).fill(0));
+
+  for (let i = 0; i < arr.length; i++) {
+    const curAttempt = arr[i]
+      .toString()
+      .split('')
+      .map(key => parseInt(key, 10));
+    for (let j = 0; j < curAttempt.length; j++) {
+      if (numbersInPasscode.indexOf(curAttempt[j]) === -1) {
+        numbersInPasscode.push(curAttempt[j]);
+      }
+      for (let k = j + 1; k < curAttempt.length; k++) {
+        relativePositions[curAttempt[j]][curAttempt[k]] += 1;
+      }
+    }
+  }
+
+  const ranks = {};
+  for (let i = 0; i < numbersInPasscode.length; i++) {
+    const curNumber = numbersInPasscode[i];
+    ranks[curNumber] = relativePositions[curNumber].filter(
+      count => count > 0
+    ).length;
+  }
+
+  const passcode = numbersInPasscode
+    .sort((i, j) => ranks[i] - ranks[j])
+    .reverse()
+    .join('');
+
+  return parseInt(passcode, 10);
+}
 ```
