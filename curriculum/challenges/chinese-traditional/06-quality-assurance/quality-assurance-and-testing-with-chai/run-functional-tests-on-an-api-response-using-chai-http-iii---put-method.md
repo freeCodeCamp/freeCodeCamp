@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-請注意，本項目在 [這個 Repl.it 項目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 接下來，我們將瞭解如何使用請求的 payload（body）發送數據。 我們需要測試一個 PUT 請求， `'/travellers'` 接收如下的 JSON 對象：
 

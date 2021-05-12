@@ -11,7 +11,7 @@ dashedName: install-and-set-up-mongoose
 可以採用下面的任意一種方式完成這些挑戰：
 
 - 克隆 [GitHub repo](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) 並在本地完成項目。
-- 使用 [Repl.it 上的初始化項目](https://repl.it/github/freeCodeCamp/boilerplate-mongomongoose)來完成項目。
+- 使用[我們的 Replit 上的初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose)來完成項目。
 - 使用你選擇的網站生成器來完成項目， 並確保包含了我們 GitHub 倉庫的所有文件。
 
 當完成本項目，請確認有一個正常運行的 demo 可以公開訪問。 然後將 URL 提交到 `Solution Link` 中。
