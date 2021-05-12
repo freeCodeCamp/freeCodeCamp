@@ -36,6 +36,7 @@
     "clean:root-deps": "shx rm -rf node_modules",
     "clean:server": "shx rm -rf ./api-server/lib",
     "precypress": "node ./cypress-install.js",
+    "precypress:gen:test": "node ./generate-spec-files.js",
     "cypress": "cypress",
     "cypress:dev:run": "npm run cypress -- run --spec \"cypress/integration/main-tests/**/*\"",
     "cypress:dev:run:full": "npm run cypress -- run --spec \"cypress/integration/**/*\"",

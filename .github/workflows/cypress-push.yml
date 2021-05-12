@@ -58,7 +58,10 @@ jobs:
 
       - name: Seed Database
         run: npm run seed
-
+        
+      - name: Generate Specfiles for challenges
+        run: npm run precypress:gen:test 
+          
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
