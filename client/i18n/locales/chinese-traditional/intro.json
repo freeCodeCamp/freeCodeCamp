@@ -6,6 +6,7 @@
       "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
       "最後，你將學習使用 flexbox（彈性盒子）構建一個 Twitter 卡片，以及使用 CSS 網格構建複雜的博客佈局，以此學習製作適應不同屏幕大小的網頁。"
     ],
+    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
     "blocks": {
       "basic-html-and-html5": {
         "title": "基礎 HTML 和 HTML5",
@@ -93,6 +94,7 @@
       "打好基礎之後，你將會通過創建算法來操作字符串、進行階乘運算甚至計算國際空間站的軌道來應用這些知識。",
       "在這個過程中，你還會學習兩種重要的編程方式或模式：面向對象的編程（OOP）和函數式編程（FP）。"
     ],
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block content of pages, while taking the course.",
     "blocks": {
       "basic-javascript": {
         "title": "基礎 JavaScript",
@@ -196,6 +198,7 @@
       "在前端庫認證中，你將學習如何使用 Bootstrap 快速設置網站樣式，以及如何在 CSS 樣式中添加邏輯，並使用 Sass 對其進行擴展。",
       "稍後，你將建立一個購物車和其他應用程序，學習如何使用 React 和 Redux 創建強大的單頁應用程序（SPAs）。"
     ],
+    "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
@@ -258,6 +261,7 @@
       "在數據可視化認證中，你會用 D3.js 庫來創建表格、圖表和地圖，以展示不同的數據。",
       "你還會學習 JSON（JavaScript 對象），以及如何使用 API（應用程序接口）使用在線的數據。"
     ],
+    "note": "",
     "blocks": {
       "data-visualization-with-d3": {
         "title": "用 D3 實現數據可視化",
@@ -299,6 +303,7 @@
       "今天，構建應用軟件的廣受歡迎的方法之一是微服務，這些微服務是一種小型模塊化的應用，能夠共同形成一個更大的整體。",
       "在 API 和微服務認證中，你將學習如何使用 Node.js 和 npm（Node 包管理工具）來寫後端。你還將使用 Express 框架構建 web 應用程序，並使用 MongoDB 和 Mongoose 庫構建一個 People Finder 微服務。"
     ],
+    "note": "",
     "blocks": {
       "managing-packages-with-npm": {
         "title": "使用 NPM 管理軟件包",
@@ -340,6 +345,7 @@
       "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
       "然後你將創建一個聊天應用程序來學習高級 Node 和 Express 概念。你還將使用 Pug 作爲模板引擎，用於身份驗證的 Passport 和 用於服務器和客戶端之間實時通信的 Socket.io。"
     ],
+    "note": "",
     "blocks": {
       "quality-assurance-and-testing-with-chai": {
         "title": "使用 Chai 進行質量保證和測試",
@@ -372,6 +378,7 @@
       "Python 是目前最火、最靈活的編程語言之一。你可以用它來做很多事，包括從基礎算法到機器學習。",
       "在這個認證中，你會學習 Python 基礎知識，例如變量、循環、條件和函數。然後你會馬上很快學習到複雜數據結構、網絡，關係數據庫和數據可視化。"
     ],
+    "note": "",
     "blocks": {
       "python-for-everybody": {
         "title": "通用 Python 課程",
@@ -394,6 +401,7 @@
       "數據分析已經存在很長時間了。但是直到幾年前，開發人員還是使用昂貴的閉源工具（如 Tableau）來做數據分析。如今，Python、SQL 和其他開放的庫永遠改變了數據分析領域。",
       "在這個認證中，你會學習使用 Python 做數據分析的基礎知識。然後，你會學習怎麼從 CSV、SQL 等數據源讀取數據，並且怎麼使用 Numpy、Pandas、Matplotlib 和 Seaborn 等庫來處理和可視化數據。"
     ],
+    "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
         "title": "Python 和數據分析",
@@ -425,6 +433,7 @@
       "通過信息安全認證，你將使用 HelmetJS 構建安全的 Web 應用程序，以學習信息安全的基礎知識。",
       "你還將使用 Python 構建一個 TCP 客戶端以及一個 Nmap 和端口掃描程序，從而學習滲透測試的基礎知識。滲透測試是良好信息安全的重要組成部分。"
     ],
+    "note": "",
     "blocks": {
       "information-security-with-helmetjs": {
         "title": "HelmetJS 與信息安全",
@@ -456,6 +465,7 @@
       "在這個認證中，你將使用 TensorFlow 框架構建多個神經網絡，同時，你將探索更先進的技術，例如自然語言處理和強化學習。",
       "你還將學習神經網絡，並瞭解深度、遞歸和卷積神經網絡背後的原理。"
     ],
+    "note": "",
     "blocks": {
       "tensorflow": {
         "title": "Tensorflow",
@@ -485,6 +495,7 @@
       "如果你正在尋找免費的編程訓練來幫你爲下一個工作面試做準備，我們已經幫你準備好了。",
       "這一部分包含了大量編程挑戰，可以測試你的算法、數據結構和數學知識。這裏還有一些你可以在家慢慢做的項目，用於提升你的技術，或者豐富你的作品集。"
     ],
+    "note": "",
     "blocks": {
       "algorithms": {
         "title": "算法",
