@@ -132,7 +132,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.22",
     "jest": "26.6.3",
     "jest-json-schema-extended": "1.0.0",
-    "monaco-editor-webpack-plugin": "3.0.1",
+    "monaco-editor-webpack-plugin": "3.1.0",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.1",
     "webpack": "5.37.0",
