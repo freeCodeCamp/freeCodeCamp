@@ -7,15 +7,15 @@ function createSpecFiles() {
   // Get blocks in directory
 
   const challengesFiles = readdirSync(
-    path.resolve('./cypress/fixtures/pathData/challenges')
+    path.resolve('/cypress/fixtures/pathData/challenges')
   );
 
   const projectsFiles = readdirSync(
-    path.resolve('./cypress/fixtures/pathData/projectsAndBackChallenges')
+    path.resolve('/cypress/fixtures/pathData/projectsAndBackChallenges')
   );
 
   const blockExist = readdirSync(
-    path.resolve('./cypress/integration/challenge-tests/blocks')
+    path.resolve('/cypress/integration/challenge-tests/blocks')
   );
 
   // Split the extensions
@@ -30,7 +30,7 @@ function createSpecFiles() {
       let files = JSON.parse(
         readFileSync(
           path.resolve(
-            `./cypress/fixtures/pathData/${
+            `/cypress/fixtures/pathData/${
               project ? 'projectsAndBackChallenges' : 'challenges'
             }/${file}`
           ),
@@ -44,11 +44,11 @@ function createSpecFiles() {
         if (!blockInDir.includes(block)) {
           writeFileSync(
             path.resolve(
-              `./cypress/integration/challenge-tests/blocks/${block}.js`
+              `/cypress/integration/challenge-tests/blocks/${block}.js`
             ),
             `/* global cy */
             const path = require('path')
-            const superBlockPath = require(path.resolve('./fixtures/pathData/${
+            const superBlockPath = require(path.resolve('/fixtures/pathData/${
               project ? 'projectsAndBackChallenges' : 'challenges'
             }/${file}'));
     
