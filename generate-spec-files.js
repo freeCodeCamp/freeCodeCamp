@@ -1,4 +1,5 @@
 const { readdirSync, readFileSync, writeFileSync } = require('fs');
+const path = require('path');
 
 console.log('Creating challenge specfiles...');
 
@@ -6,15 +7,15 @@ function createSpecFiles() {
   // Get blocks in directory
 
   const challengesFiles = readdirSync(
-    '.\\cypress\\fixtures\\pathData\\challenges'
+    path.resolve('.\\cypress\\fixtures\\pathData\\challenges')
   );
 
   const projectsFiles = readdirSync(
-    '.\\cypress\\fixtures\\pathData\\projectsAndBackChallenges'
+    path.resolve('.\\cypress\\fixtures\\pathData\\projectsAndBackChallenges')
   );
 
   const blockExist = readdirSync(
-    `.\\cypress\\integration\\challenge-tests\\blocks`
+    path.resolve('.\\cypress\\integration\\challenge-tests\\blocks')
   );
 
   // Split the extensions
@@ -28,9 +29,11 @@ function createSpecFiles() {
     files.forEach(file => {
       let files = JSON.parse(
         readFileSync(
-          `.\\cypress\\fixtures\\pathData\\${
-            project ? 'projectsAndBackChallenges' : 'challenges'
-          }\\${file}`,
+          path.resolve(
+            `.\\cypress\\fixtures\\pathData\\${
+              project ? 'projectsAndBackChallenges' : 'challenges'
+            }\\${file}`
+          ),
           'utf-8'
         )
       );
@@ -40,11 +43,14 @@ function createSpecFiles() {
       challengeBlocks.forEach(block => {
         if (!blockInDir.includes(block)) {
           writeFileSync(
-            `.\\cypress\\integration\\challenge-tests\\blocks\\${block}.js`,
+            path.resolve(
+              `.\\cypress\\integration\\challenge-tests\\blocks\\${block}.js`
+            ),
             `/* global cy */
-            const superBlockPath = require('../../../fixtures/pathData/${
+            const path = require('path')
+            const superBlockPath = require(path.resolve('./fixtures/pathData/${
               project ? 'projectsAndBackChallenges' : 'challenges'
-            }/${file}');
+            }/${file}'));
     
             const blocks = Object.entries(superBlockPath['blocks']['${block}'])
     
