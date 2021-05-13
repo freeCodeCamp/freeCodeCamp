@@ -117,7 +117,7 @@
     "lerna": "4.0.0",
     "lint-staged": "10.5.4",
     "lodash": "4.17.21",
-    "markdownlint": "0.21.0",
+    "markdownlint": "0.23.1",
     "npm-run-all": "4.1.5",
     "ora": "5.4.0",
     "prettier": "2.3.0",

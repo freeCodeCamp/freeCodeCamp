@@ -339,7 +339,7 @@
     "details": "請儘可能詳細地描述你所舉報的賬號或行爲。",
     "portfolio": "舉報一個用戶的作品集",
     "portfolio-2": "你想舉報 {{username}} 的作品集濫用行爲嗎？",
-    "notify-1": "我們將通知社區管理團隊，併發送舉報副本到你的郵箱：<strong>{{email}}</strong>",
+    "notify-1": "We will notify the community moderators' team, and send a copy of this report to your email: <strong>{{email}}</strong>",
     "notify-2": "如有需要，我們會聯繫你瞭解更多信息。",
     "what": "你想舉報什麼？",
     "submit": "提交舉報"
