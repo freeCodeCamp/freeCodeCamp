@@ -52,7 +52,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
       {flashMessage && (
         <div
           style={{
-            height: flashMessageHeight + 'px'
+            height: `${flashMessageHeight}px`
           }}
         />
       )}
