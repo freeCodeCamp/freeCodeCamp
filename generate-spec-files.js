@@ -50,9 +50,9 @@ function createSpecFiles() {
             ),
             `/* global cy */
             const path = require('path')
-            const superBlockPath = require(path.join( __dirname, '/fixtures/pathData/${
+            const superBlockPath = require('../../../fixtures/pathData/${
               project ? 'projectsAndBackChallenges' : 'challenges'
-            }/${file}'));
+            }/${file}');
 
             const blocks = Object.entries(superBlockPath['blocks']['${block}'])
 
