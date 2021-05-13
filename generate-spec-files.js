@@ -7,15 +7,15 @@ function createSpecFiles() {
   // Get blocks in directory
 
   const challengesFiles = readdirSync(
-    path.resolve('/cypress/fixtures/pathData/challenges')
+    path.join(__dirname, '/cypress/fixtures/pathData/challenges')
   );
 
   const projectsFiles = readdirSync(
-    path.resolve('/cypress/fixtures/pathData/projectsAndBackChallenges')
+    path.join(__dirname, '/cypress/fixtures/pathData/projectsAndBackChallenges')
   );
 
   const blockExist = readdirSync(
-    path.resolve('/cypress/integration/challenge-tests/blocks')
+    path.join(__dirname, '/cypress/integration/challenge-tests/blocks')
   );
 
   // Split the extensions
@@ -29,7 +29,8 @@ function createSpecFiles() {
     files.forEach(file => {
       let files = JSON.parse(
         readFileSync(
-          path.resolve(
+          path.join(
+            __dirname,
             `/cypress/fixtures/pathData/${
               project ? 'projectsAndBackChallenges' : 'challenges'
             }/${file}`
@@ -43,7 +44,8 @@ function createSpecFiles() {
       challengeBlocks.forEach(block => {
         if (!blockInDir.includes(block)) {
           writeFileSync(
-            path.resolve(
+            path.join(
+              __dirname,
               `/cypress/integration/challenge-tests/blocks/${block}.js`
             ),
             `/* global cy */
@@ -51,15 +53,15 @@ function createSpecFiles() {
             const superBlockPath = require(path.resolve('/fixtures/pathData/${
               project ? 'projectsAndBackChallenges' : 'challenges'
             }/${file}'));
-    
+
             const blocks = Object.entries(superBlockPath['blocks']['${block}'])
-    
+
             for(const [challengeName , challengePath] of blocks){
               describe('loading challenge', () => {
                 before(() => {
                   cy.visit(challengePath)
                 })
-    
+
                 it('Challenge' + challengeName + ' should work correctly', () => {
                   ${
                     project
