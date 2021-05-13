@@ -95,6 +95,7 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.13.0",
     "@testing-library/cypress": "7.0.6",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",

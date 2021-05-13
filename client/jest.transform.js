@@ -1,5 +1,13 @@
 const babelOptions = {
-  presets: ['@babel/preset-env', '@babel/react'],
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        loose: true
+      }
+    ],
+    '@babel/react'
+  ],
   plugins: [
     '@babel/plugin-proposal-function-bind',
     [
