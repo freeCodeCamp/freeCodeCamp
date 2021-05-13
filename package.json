@@ -96,11 +96,13 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "7.0.6",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
     "babel-eslint": "10.1.0",
     "cross-env": "7.0.3",
     "cypress": "7.3.0",
     "docsify-cli": "4.4.3",
-    "eslint": "7.26.0",
+    "eslint": "^7.26.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
@@ -124,6 +126,7 @@
     "sinon": "10.0.0",
     "sinon-express-mock": "2.2.1",
     "start-server-and-test": "1.12.1",
+    "typescript": "^4.2.4",
     "webpack-bundle-analyzer": "4.4.1"
   }
 }

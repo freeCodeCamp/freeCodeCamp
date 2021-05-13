@@ -5,11 +5,11 @@
     "mocha": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "root": true,
   "extends": [
     "./.eslintrc-base.json",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "react",
@@ -36,8 +36,18 @@
       ],
       "import/extensions": [
         ".js",
-        ".jsx"
+        ".jsx",
+        ".tsx"
       ]
     }
-  }
+  },
+  "overrides": [{
+    "files": ["**/*.@(tsx|ts)"],
+    "extends": [
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ]
+  }]
 }
