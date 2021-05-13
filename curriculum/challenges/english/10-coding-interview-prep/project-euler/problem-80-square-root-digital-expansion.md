@@ -10,22 +10,34 @@ dashedName: problem-80-square-root-digital-expansion
 
 It is well known that if the square root of a natural number is not an integer, then it is irrational. The decimal expansion of such square roots is infinite without any repeating pattern at all.
 
-The square root of two is 1.41421356237309504880..., and the digital sum of the first one hundred decimal digits is 475.
+The square root of two is `1.41421356237309504880...`, and the digital sum of the first one hundred decimal digits is `475`.
 
-For the first one hundred natural numbers, find the total of the digital sums of the first one hundred decimal digits for all the irrational square roots.
+For the first `n` natural numbers, find the total of the digital sums of the first one hundred decimal digits for all the irrational square roots.
 
 # --hints--
 
-`sqrtDigitalExpansion()` should return a number.
+`sqrtDigitalExpansion(2)` should return a number.
 
 ```js
-assert(typeof sqrtDigitalExpansion() === 'number');
+assert(typeof sqrtDigitalExpansion(2) === 'number');
 ```
 
-`sqrtDigitalExpansion()` should return 40886.
+`sqrtDigitalExpansion(2)` should return `475`.
 
 ```js
-assert.strictEqual(sqrtDigitalExpansion(), 40886);
+assert.strictEqual(sqrtDigitalExpansion(2), 475);
+```
+
+`sqrtDigitalExpansion(50)` should return `19543`.
+
+```js
+assert.strictEqual(sqrtDigitalExpansion(50), 19543);
+```
+
+`sqrtDigitalExpansion(100)` should return `40886`.
+
+```js
+assert.strictEqual(sqrtDigitalExpansion(100), 40886);
 ```
 
 # --seed--
@@ -33,12 +45,12 @@ assert.strictEqual(sqrtDigitalExpansion(), 40886);
 ## --seed-contents--
 
 ```js
-function sqrtDigitalExpansion() {
+function sqrtDigitalExpansion(n) {
 
   return true;
 }
 
-sqrtDigitalExpansion();
+sqrtDigitalExpansion(2);
 ```
 
 # --solutions--
