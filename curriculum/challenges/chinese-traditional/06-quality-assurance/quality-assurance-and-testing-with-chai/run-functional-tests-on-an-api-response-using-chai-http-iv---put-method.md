@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-請注意，本項目在 [這個 Repl.it 項目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。 這個練習與上一個類似， 我們詳細看看。
+請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。 這個練習與上一個類似， 我們詳細看看。
 
 你已經看到了它是如何完成的，現在你需要從零開始搭建。
 
