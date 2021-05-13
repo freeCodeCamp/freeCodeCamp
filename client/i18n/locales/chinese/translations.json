@@ -339,7 +339,7 @@
     "details": "请尽可能详细地描述你所举报的账号或行为。",
     "portfolio": "举报一个用户的作品集",
     "portfolio-2": "你想举报 {{username}} 的作品集滥用行为吗？",
-    "notify-1": "我们将通知社区管理团队，并发送举报副本到你的邮箱：<strong>{{email}}</strong>",
+    "notify-1": "We will notify the community moderators' team, and send a copy of this report to your email: <strong>{{email}}</strong>",
     "notify-2": "如有需要，我们会联系你了解更多信息。",
     "what": "你想举报什么？",
     "submit": "提交举报"

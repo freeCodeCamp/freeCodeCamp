@@ -339,7 +339,7 @@
     "details": "Proporciona tantos detalles como sea posible sobre la cuenta o el comportamiento que estás denunciando.",
     "portfolio": "Reportar un portafolio de usuario",
     "portfolio-2": "¿Quieres reportar el portafolio de {{username}} por abuso?",
-    "notify-1": "Notificaremos al equipo de moderadores de la comunidad y te enviaremos una copia de este informe a tu correo electrónico: <strong>{{email}}</strong>",
+    "notify-1": "We will notify the community moderators' team, and send a copy of this report to your email: <strong>{{email}}</strong>",
     "notify-2": "Es posible que nos comuniquemos contigo para obtener más información, si es necesario.",
     "what": "¿Qué te gustaría reportar?",
     "submit": "Enviar el reporte"
