@@ -43,8 +43,13 @@
   },
   "overrides": [{
     "files": ["**/*.@(tsx|ts)"],
+    "parserOptions": {
+      "tsconfigRootDir": "./client",
+      "project": ["./tsconfig.json"]
+     },
     "extends": [
-      "plugin:@typescript-eslint/recommended"
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "plugins": [
       "@typescript-eslint"

@@ -27,7 +27,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
     setFlashMessageHeight(flashMessageElem?.offsetHeight || 0);
     document.documentElement.style.setProperty(
       '--flash-message-height',
-      flashMessageHeight + 'px'
+      `${flashMessageHeight}px`
     );
   }, [flashMessageHeight]);
 
