@@ -80,7 +80,7 @@
     "test:client": "cd ./client && npm test",
     "test:curriculum": "cd ./curriculum && npm test",
     "test:curriculum-js": "jest --rootDir ./curriculum",
-    "test:server": "cd ./api-server && npm test",
+    "test:server": "jest --rootDir api-server",
     "test:tools": "jest ./tools",
     "test:utils": "jest --rootDir ./utils",
     "prepare": "husky install"
