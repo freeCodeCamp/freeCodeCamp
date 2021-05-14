@@ -123,7 +123,7 @@
     "shx": "0.3.3",
     "sinon": "10.0.0",
     "sinon-express-mock": "2.2.1",
-    "start-server-and-test": "1.12.1",
+    "start-server-and-test": "1.12.2",
     "webpack-bundle-analyzer": "4.4.1"
   }
 }
