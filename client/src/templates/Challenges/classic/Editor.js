@@ -253,6 +253,11 @@ class Editor extends Component {
       // TODO: only one Editor should be calling for focus at once.
       editor.focus();
     } else this.focusOnHotkeys();
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-editor.action.triggerSuggest',
+      null,
+      () => {}
+    );
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
