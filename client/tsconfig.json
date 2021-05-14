@@ -1,12 +1,10 @@
 {
   "include": ["./i18n/**/*", "./plugins/**/*","./src/**/*","./utils/**/*"],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es2020",
+    "module": "es2020",
     "moduleResolution": "node",
-    "lib": ["dom", "es2017"],
     "allowJs": true,
-    // "checkJs": true,
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,
