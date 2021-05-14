@@ -1,0 +1,11 @@
+{
+    "blocks": {
+        "responsive-web-design-projects": {
+            "build-a-personal-portfolio-webpage": "/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage",
+            "build-a-product-landing-page": "/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page",
+            "build-a-survey-form": "/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form",
+            "build-a-technical-documentation-page": "/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page",
+            "build-a-tribute-page": "/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page"
+        }
+    }
+}
