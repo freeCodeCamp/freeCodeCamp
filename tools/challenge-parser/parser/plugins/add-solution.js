@@ -1,4 +1,5 @@
-const visitChildren = require('unist-util-visit-children');
+import { visitChildren } from 'unist-util-visit-children';
+
 const { root } = require('mdast-builder');
 
 const { getFileVisitor } = require('./utils/get-file-visitor');

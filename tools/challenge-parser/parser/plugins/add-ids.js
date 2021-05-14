@@ -1,4 +1,4 @@
-const visitChildren = require('unist-util-visit-children');
+import { visitChildren } from 'unist-util-visit-children';
 
 function hasId(node, index, parent) {
   // image references should always be inside paragraphs.

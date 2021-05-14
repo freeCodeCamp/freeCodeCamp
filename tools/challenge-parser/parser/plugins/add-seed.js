@@ -1,6 +1,7 @@
-const getAllBetween = require('./utils/between-headings');
 // const visit = require('unist-util-visit');
-const visitChildren = require('unist-util-visit-children');
+import { visitChildren } from 'unist-util-visit-children';
+
+const getAllBetween = require('./utils/between-headings');
 const { root } = require('mdast-builder');
 const { getFileVisitor } = require('./utils/get-file-visitor');
 const { isEmpty } = require('lodash');
