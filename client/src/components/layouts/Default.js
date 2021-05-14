@@ -23,7 +23,7 @@ import { isBrowser } from '../../../utils';
 
 import WithInstantSearch from '../search/WithInstantSearch';
 import OfflineWarning from '../OfflineWarning';
-import Flash from '../Flash/index.tsx';
+import Flash from '../Flash';
 import Header from '../Header';
 import Footer from '../Footer';
 // preload common fonts
