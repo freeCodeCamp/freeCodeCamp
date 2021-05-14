@@ -18,7 +18,7 @@ In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom
   805 & 732 & 524 & \color{red}{37} & \color{red}{331}
   \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array representing matrix. Maximum matrix size used in the tests will be 80 by 80.
+Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in the tests will be 80 by 80.
 
 # --hints--
 
