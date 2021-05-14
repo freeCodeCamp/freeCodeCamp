@@ -77,12 +77,12 @@
     "storybook": "cd ./tools/ui-components && npm run storybook",
     "test": "run-s ensure-env build:curriculum build-workers test:*",
     "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
-    "test:client": "cd ./client && npm test",
+    "test:client": "jest client",
     "test:curriculum": "cd ./curriculum && npm test",
-    "test:curriculum-js": "jest --rootDir ./curriculum",
-    "test:server": "jest --rootDir api-server",
-    "test:tools": "jest ./tools",
-    "test:utils": "jest --rootDir ./utils",
+    "test:curriculum-js": "jest curriculum",
+    "test:server": "jest api-server",
+    "test:tools": "jest tools",
+    "test:utils": "jest utils",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -95,8 +95,13 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-function-bind": "^7.12.13",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
     "@testing-library/cypress": "7.0.6",
+    "@testing-library/jest-dom": "^5.12.0",
     "babel-eslint": "10.1.0",
+    "babel-plugin-transform-imports": "^2.0.0",
     "cross-env": "7.0.3",
     "cypress": "7.3.0",
     "docsify-cli": "4.4.3",
