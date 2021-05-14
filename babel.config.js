@@ -1,1 +1,1 @@
-module.exports = { babelrcRoots: ['.', './api-server', './client'] };
+module.exports = { babelrcRoots: ['./api-server', './client'] };
