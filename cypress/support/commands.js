@@ -76,10 +76,36 @@ Cypress.Commands.add('testChallenges', () => {
   cy.get('.challenge-title').should('be.visible');
   cy.get('#description').should('be.visible');
 
-  cy.get('.react-monaco-editor-container');
+  // Monaco editor
+  cy.get('.react-monaco-editor-container')
+    .click()
+    .focused()
+    .type('<h1> Hello world! </h1>')
+
+  // Ensure that there are test
+  cy.get('.challenge-test-suite').children().its('length').should('be.gt', 0)
+
+
 });
 
 // This command can be used to test projects and back-end challenges
 Cypress.Commands.add('checkProjectsAndBackend', () => {
-  cy.visit('/');
+
+  // Test breadcrumbs
+  cy.get('.breadcrumb-right').should('have.attr', 'href');
+  cy.get('.ellipsis').should('be.visible');
+  cy.get('.breadcrumb-left').should('have.attr', 'href');
+  cy.get('.breadcrumb-left').should('be.visible', 'href');
+
+  // Challenge content
+  cy.get('.challenge-title').should('be.visible');
+  cy.get('#description').should('be.visible');
+
+  // Shoud be possible to submit solution
+  cy.get("input[name=solution]")
+  .click()
+  .type('https://codepen.io/foobar/full/RKRbwL')
+
+  cy.get('button[type=submit]').first().click()
+
 });

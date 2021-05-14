@@ -62,7 +62,7 @@ function createSpecFiles() {
                   cy.visit(challengePath)
                 })
 
-                it('Challenge' + challengeName + ' should work correctly', () => {
+                it('Challenge ' + challengeName + ' should work correctly', () => {
                   ${
                     project
                       ? 'cy.checkProjectsAndBackend(challengePath)'
