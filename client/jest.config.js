@@ -15,7 +15,7 @@ module.exports = {
   },
   verbose: true,
   transform: {
-    '^.+\\.(js|tsx)$': '<rootDir>/jest.transform.js'
+    '^.+\\.[jt]sx?$': '<rootDir>/jest.transform.js'
   },
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   setupFilesAfterEnv: ['./jest.setup.js']
