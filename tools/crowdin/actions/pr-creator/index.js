@@ -23,7 +23,7 @@ const githubRoot = require('@actions/github');
 
     const github = githubRoot.getOctokit(token);
 
-    const branchExists = await github.repos
+    const branchExists = await github.rest.repos
       .getBranch({
         owner,
         repo,
@@ -35,7 +35,7 @@ const githubRoot = require('@actions/github');
     if (!branchExists || branchExists.status !== 200) {
       return;
     }
-    const pullRequestExists = await github.pulls.list({
+    const pullRequestExists = await github.rest.pulls.list({
       owner,
       repo,
       head: `${owner}:${branch}`
@@ -46,7 +46,7 @@ const githubRoot = require('@actions/github');
       );
       return;
     }
-    const PR = await github.pulls
+    const PR = await github.rest.pulls
       .create({
         owner,
         repo,
@@ -69,7 +69,7 @@ const githubRoot = require('@actions/github');
       `https://github.com/freeCodeCamp/freeCodeCamp/pull/${prNumber} created`
     );
     if (labels && labels.length) {
-      await github.issues.addLabels({
+      await github.rest.issues.addLabels({
         owner,
         repo,
         issue_number: prNumber,
@@ -78,7 +78,7 @@ const githubRoot = require('@actions/github');
       console.log(`Labels ${labels} added to PR`);
     }
     if (reviewers && reviewers.length) {
-      await github.pulls.requestReviewers({
+      await github.rest.pulls.requestReviewers({
         owner,
         repo,
         pull_number: prNumber,
@@ -87,7 +87,7 @@ const githubRoot = require('@actions/github');
       console.log(`Requested Reviewers ${reviewers} added to PR`);
     }
     if (team_reviewers && team_reviewers.length) {
-      await github.pulls.requestReviewers({
+      await github.rest.pulls.requestReviewers({
         owner,
         repo,
         pull_number: prNumber,

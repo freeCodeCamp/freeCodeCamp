@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed008826
-title: Target Even Elements Using jQuery
+title: Apunta a elementos pares utilizando jQuery
 challengeType: 6
 forumTopicId: 18318
 required:
@@ -11,19 +11,21 @@ dashedName: target-even-elements-using-jquery
 
 # --description--
 
-You can also target elements based on their positions using `:odd` or `:even` selectors.
+También puedes apuntar a elementos basado en sus posiciones, usando los selectores `:odd` o `:even`.
 
-Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, counter-intuitively, `:odd` selects the second element (position 1), fourth element (position 3), and so on.
+Ten en cuenta que jQuery es indexado desde el cero, lo que significa que el primer elemento de una selección tiene la posición 0. Esto puede ser un poco confuso, ya que contra-intuitivamente, `:odd` selecciona el segundo elemento (posición 1), cuarto elemento (posición 3), y así sucesivamente.
 
-Here's how you would target all the odd elements with class `target` and give them classes:
+Así es como apuntas a todos los elementos impares con la clase `target` y les das clases:
 
-`$(".target:odd").addClass("animated shake");`
+```js
+$(".target:odd").addClass("animated shake");
+```
 
-Try selecting all the even `target` elements and giving them the classes of `animated` and `shake`. Remember that **even** refers to the position of elements with a zero-based system in mind.
+Intenta seleccionar todos los elementos pares `target` y darle las clases de `animated` y `shake`. Recuerda que **even** se refiere a la posición de los elementos con un sistema de indexado desde cero en mente.
 
 # --hints--
 
-All of the `target` elements that jQuery considers to be even should shake.
+Todos los elementos `target` que jQuery considera que son pares deberían agitarse.
 
 ```js
 assert(
@@ -31,13 +33,13 @@ assert(
 );
 ```
 
-You should use the `:even` selector to modify these elements.
+Debes usar el selector `:even` para modificar estos elementos.
 
 ```js
 assert(code.match(/\:even/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+Solo debes usar jQuery para añadir estas clases al elemento.
 
 ```js
 assert(

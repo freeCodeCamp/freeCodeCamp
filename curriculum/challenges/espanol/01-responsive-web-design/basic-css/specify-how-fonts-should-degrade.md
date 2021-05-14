@@ -9,7 +9,7 @@ dashedName: specify-how-fonts-should-degrade
 
 # --description--
 
-Hay varias fuentes por defecto disponibles en todos los navegadores. Estas familias de fuentes genéricas incluyen a `monospace`, `serif` y `sans-serif`.
+Hay varias fuentes por defecto disponibles en todos los navegadores. Estas familias de fuentes genéricas incluyen `monospace`, `serif` y `sans-serif`.
 
 Cuando una fuente no está disponible en el sistema, puedes indicarle al navegador que "degrade" a otra fuente alternativa.
 
@@ -47,7 +47,7 @@ El elemento h2 debe degradarse a la fuente `monospace` cuando `Lobster` no está
 
 ```js
 assert(
-  /\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(
+  /\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi.test(
     code
   )
 );

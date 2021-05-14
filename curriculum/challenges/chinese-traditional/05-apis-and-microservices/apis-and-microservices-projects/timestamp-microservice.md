@@ -107,7 +107,7 @@ dashedName: timestamp-microservice
       assert.equal(data.error.toLowerCase(), 'invalid date');
     },
     (xhr) => {
-      throw new Error(xhr.responseText);
+      assert(xhr.responseJSON.error.toLowerCase() === 'invalid date');
     }
   );
 ```

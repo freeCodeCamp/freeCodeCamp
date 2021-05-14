@@ -10,7 +10,7 @@ dashedName: hashing-your-passwords
 
 回过头来看信息安全，你也许记得在数据库中存储明文密码是*绝对*禁止的。 现在，我们需要引入 BCrypt 来解决这个问题。
 
-添加 BCrypt 作为依赖，并在服务端请求它。 你需要在两个步骤中使用哈希运算：注册和保存新账户，以及登录时检查密码是否正确。
+添加 `bcrypt@~5.0.0` 作为依赖，并在服务端使用它。 你需要在两个步骤中使用哈希运算：注册和保存新账户，以及登录时检查密码是否正确。
 
 目前处理注册的路由中，我们是这样把密码添加到数据库的：`password: req.body.password`。 保存哈希值的一个简单方式是在数据库逻辑中添加 `const hash = bcrypt.hashSync(req.body.password, 12);`，然后把 `req.body.password` 替换为 `password: hash`。
 

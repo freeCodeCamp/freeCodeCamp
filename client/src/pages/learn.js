@@ -16,7 +16,7 @@ import {
   isSignedInSelector,
   userSelector
 } from '../redux';
-import { ChallengeNode } from '../redux/propTypes';
+import { ChallengeNode } from '../redux/prop-types';
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,

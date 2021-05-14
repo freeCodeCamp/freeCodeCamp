@@ -17,11 +17,6 @@ import { removeCookies } from '../utils/getSetAccessToken';
 import { decodeEmail } from '../../common/utils';
 import { getRedirectParams } from '../utils/redirection';
 
-const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
-if (isSignUpDisabled) {
-  console.log('fcc:boot:auth - Sign up is disabled');
-}
-
 const passwordlessGetValidators = [
   check('email')
     .isBase64()

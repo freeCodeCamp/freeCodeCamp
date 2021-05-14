@@ -185,7 +185,7 @@ function postResetProgress(req, res, next) {
       if (err) {
         return next(err);
       }
-      return res.sendStatus(200);
+      return res.status(200).json({});
     }
   );
 }
@@ -199,7 +199,7 @@ function createPostDeleteAccount(app) {
       }
       req.logout();
       removeCookies(req, res);
-      return res.sendStatus(200);
+      return res.status(200).json({});
     });
   };
 }

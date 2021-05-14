@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash-es';
 import store from 'store';
 
-import { createTypes, createAsyncTypes } from '../utils/createTypes';
+import { createTypes, createAsyncTypes } from '../utils/create-types';
 import { createFetchUserSaga } from './fetch-user-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { createAppMountSaga } from './app-mount-saga';
@@ -234,7 +234,8 @@ export const certificatesByNameSelector = username => state => {
     isFullStackCert,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7
+    isMachineLearningPyCertV7,
+    isRelationalDatabasesCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -248,7 +249,8 @@ export const certificatesByNameSelector = username => state => {
       isFullStackCert ||
       isSciCompPyCertV7 ||
       isDataAnalysisPyCertV7 ||
-      isMachineLearningPyCertV7,
+      isMachineLearningPyCertV7 ||
+      isRelationalDatabasesCertV8,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     isFullStackCert,
@@ -302,6 +304,11 @@ export const certificatesByNameSelector = username => state => {
         show: isMachineLearningPyCertV7,
         title: 'Machine Learning with Python Certification',
         certSlug: 'machine-learning-with-python-v7'
+      },
+      {
+        show: isRelationalDatabasesCertV8,
+        title: 'Relational Databases Certification',
+        certSlug: 'relational-databases-v8'
       }
     ],
     legacyCerts: [

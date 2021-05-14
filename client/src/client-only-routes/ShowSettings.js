@@ -25,7 +25,7 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
-import { User } from '../redux/propTypes';
+import { User } from '../redux/prop-types';
 
 const { apiLocation } = envData;
 

@@ -6,7 +6,7 @@
       "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
       "最後，你將學習使用 flexbox（彈性盒子）構建一個 Twitter 卡片，以及使用 CSS 網格構建複雜的博客佈局，以此學習製作適應不同屏幕大小的網頁。"
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "注意：某些瀏覽器擴展，例如廣告攔截器和深色模式擴展可能干擾測試。如果你遇到問題，我們建議你在參加學習時禁用修改頁面內容或佈局的擴展。",
     "blocks": {
       "basic-html-and-html5": {
         "title": "基礎 HTML 和 HTML5",
@@ -94,7 +94,7 @@
       "打好基礎之後，你將會通過創建算法來操作字符串、進行階乘運算甚至計算國際空間站的軌道來應用這些知識。",
       "在這個過程中，你還會學習兩種重要的編程方式或模式：面向對象的編程（OOP）和函數式編程（FP）。"
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block content of pages, while taking the course.",
+    "note": "注意：某些瀏覽器擴展，例如廣告攔截器和腳本攔截器，可能干擾測試。如果你遇到問題，我們建議你在學習時禁用修改或阻止頁面內容的擴展。",
     "blocks": {
       "basic-javascript": {
         "title": "基礎 JavaScript",
@@ -152,7 +152,7 @@
         "title": "函數式編程",
         "intro": [
           "函數式編程是另一種軟件開發方法。在函數式編程中，代碼被組織成較小的基本的函數，可以結合起來構建複雜的程序。",
-          "在這個課程中，你將學習函數式編程的核心概念，包括純函數，如何避免突變，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法編寫更整潔的代碼。"
+          "在這個課程中，你將學習函數式編程的核心概念，包括純函數、如何避免突變、如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法編寫更整潔的代碼。"
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -333,7 +333,7 @@
         "title": "API 和微服務項目",
         "intro": [
           "你之前用過 API，但是現在你知道 npm、Node、Express、MongoDB 和 Mongoose，是時候創建應用 了。用你到現在所學的所有知識來創建 5 個不同的微服務，這些微服務是使用範圍有限的小應用。",
-          "在創建這些微服務後，你會有 5 個很酷的微服務 API，你可以向朋友、家人和潛在的僱主展示。同時，你也會獲得 API 和微服務認證。"
+          "在創建這些項目後，你會有 5 個很酷的微服務 API，你可以向朋友、家人和潛在的僱主展示。同時，你也會獲得 API 和微服務認證。"
         ]
       }
     }
@@ -342,7 +342,7 @@
     "title": "質量保證",
     "intro": [
       "隨着你的程序或網頁應用程序變得更加複雜，你將想要測試它們，以確保新的更改不會破壞它們的原有功能。",
-      "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
+      "在質量保證認證中，你將學習如何使用 Chai 編寫測試，以確保你的應用程序按預期的方式工作。",
       "然後你將創建一個聊天應用程序來學習高級 Node 和 Express 概念。你還將使用 Pug 作爲模板引擎，用於身份驗證的 Passport 和 用於服務器和客戶端之間實時通信的 Socket.io。"
     ],
     "note": "",
@@ -538,7 +538,7 @@
     "certification": "{{cert}} 認證",
     "browse-other": "瀏覽我們的其他免費認證\n（我們建議你按順序學習）",
     "courses": "課程",
-    "steps": "Steps",
+    "steps": "步驟",
     "expand": "展開",
     "collapse": "摺疊"
   }

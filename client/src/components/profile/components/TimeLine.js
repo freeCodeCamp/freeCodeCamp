@@ -14,7 +14,8 @@ import { withTranslation } from 'react-i18next';
 import './timeline.css';
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow, Link } from '../../helpers';
-import SolutionViewer from '../../SolutionViewer/SolutionViewer';
+import Loadable from '@loadable/component';
+
 import {
   getCertIds,
   getPathFromID,
@@ -26,6 +27,10 @@ import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
 import envData from '../../../../../config/env.json';
+
+const SolutionViewer = Loadable(() =>
+  import('../../SolutionViewer/SolutionViewer')
+);
 
 const { clientLocale } = envData;
 

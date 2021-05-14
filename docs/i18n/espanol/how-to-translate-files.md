@@ -26,7 +26,7 @@ Solo te pedimos que entiendas lo siguiente:
 
    Traducir los recursos de freeCodeCamp es una de las experiencias más divertidas y gratificantes como colaborador, y funciona mejor si involucras a tus amigos y colegas que hablan el mismo idioma que tú.
 
-   Recomendamos unirte a [nuestro foro de la comunidad](https://forum.freecodecamp.org/c/contributors/3) y [sala de chat de traductores](https://chat.freecodecamp.org/channel/translators) con tus amigos y mostrando tu interés antes de comenzar con las traducciones. CrowdIn hace que sea fácil contribuir con traducciones, pero sigue siendo mucho trabajo.
+   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://chat.freecodecamp.org/channel/contributors) with your friends and showing your interest before starting off with translations. CrowdIn hace que sea fácil contribuir con traducciones, pero sigue siendo mucho trabajo.
 
    Queremos que disfrutes contribuyendo y no te canses o pierdas interés.
 
@@ -56,7 +56,7 @@ Solo te pedimos que entiendas lo siguiente:
 
 ## Empezando
 
-En primer lugar, asegúrate de venir a decir "Hola" en nuestro [Sala de chat de traductores](https://chat.freecodecamp.org/channel/translators). Publicamos actualizaciones regulares sobre los recursos de traducción y respondemos a muchas de tus consultas allí.
+First, make sure you come say "Hi" in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). Publicamos actualizaciones regulares sobre los recursos de traducción y respondemos a muchas de tus consultas allí.
 
 A continuación, dirígete a nuestro [plataforma de traducción](https://translate.freecodecamp.org/) e inicia sesión (si no has contribuido a traducciones anteriormente, deberás crear una cuenta).
 
@@ -103,7 +103,7 @@ Crowdin separa un documento en "cadenas" traducibles, normalmente oraciones. Cad
 9. Aquí puedes ver la ventana de comentarios. Si tienes preguntas o inquietudes sobre una cadena en particular, puedes dejar aquí un comentario sobre la cadena para que lo vean otros traductores.
 10. Estos dos botones de "panel" ocultarán las vistas izquierda (documento) y derecha (comentarios).
 
-> [!NOTE] Si ves una cadena oculta que incluye traducciones, notifícanos en la [ sala de chat de traductores ](https://chat.freecodecamp.org/channel/translators) para que podamos eliminar la traducción de la memoria.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors) so we can remove the translation from memory.
 
 Cuando hayas completado la traducción de una cadena, pulsa el botón `Save` (guardar) para almacenar tu traducción en Crowdin. Luego, otros contribuyentes podrán votar tu traducción y el equipo de revisores podrán aprobarla.
 
@@ -145,4 +145,4 @@ Sigue estas pautas para asegurarte de que nuestras traducciones sean lo más pre
 - No agregues contenido adicional. Si crees que un desafío requiere cambios en el contenido del texto o información adicional, debes proponer los cambios a través de un issue de GitHub o una pull request que modifique el archivo en inglés.
 - No cambies el orden del contenido.
 
-Si tienes alguna pregunta, no dudes en comunicarte con nosotros en nuestra [sala de chat de traductores](https://chat.freecodecamp.org/channel/translators) y estaremos encantados de ayudarte.
+If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors) and we will be happy to assist you.

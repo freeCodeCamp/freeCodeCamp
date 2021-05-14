@@ -8,7 +8,7 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-设置 GitHub 验证的最后一步是创建策略本身。 为此，你需要在项目中添加 “passport-github” 依赖，并在 `auth.js` 中 请求它，作为 `GithubStrategy`，像这样：`const GitHubStrategy = require('passport-github').Strategy;`。 别忘了请求和配置 `dotenv`，使用你的环境变量。
+设置 GitHub 验证的最后一步是创建策略本身。 为此，你需要在项目中添加 `passport-github@~1.1.0` 依赖，并在 `auth.js` 中请求它，作为 `GithubStrategy`，像这样：`const GitHubStrategy = require('passport-github').Strategy;`。 别忘了请求和配置 `dotenv`，使用你的环境变量。
 
 为了设置 GitHub 策略，我们需要在 Passport 中使用实例化的 `GitHubStrategy`，它可以接收两个参数：一个对象（包括 `clientID`、`clientSecret` 和 `callbackURL`），以及一个回调函数。在这个回调函数中，我们要处理验证成功时，判断用户是否已经在数据库中存在的逻辑，以及在用户数据库对象中最初保存哪些字段。 这种处理方式适用于绝大部分第三方验证策略，但有些策略会需要我们提供更多的信息，详情请参考相关策略的 GitHub README。 例如，Google 的验证策略会要求你提供一个 *scope*，用于标示用户成功登录后，你需要从返回的对象中获取那些信息。以及，这也需要经过用户同意，你才可以获取到。 你可以在[这里](https://github.com/jaredhanson/passport-github/)了解当前我们使用的验证策略的用法，不过我们也会在 freeCodeCamp 课程中进行详细讲解。
 

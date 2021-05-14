@@ -13,7 +13,7 @@ import { withTranslation } from 'react-i18next';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
-import { ChallengeNode } from '../../../redux/propTypes';
+import { ChallengeNode } from '../../../redux/prop-types';
 import LearnLayout from '../../../components/layouts/Learn';
 import ChallengeTitle from '../components/Challenge-Title';
 import ChallengeDescription from '../components/Challenge-Description';

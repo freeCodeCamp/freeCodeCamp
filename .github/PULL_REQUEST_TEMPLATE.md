@@ -5,7 +5,7 @@ Checklist:
 - [ ] I have read [freeCodeCamp's contribution guidelines](https://contribute.freecodecamp.org).
 - [ ] My pull request has a descriptive title (not a vague title like `Update index.md`)
 - [ ] My pull request targets the `main` branch of freeCodeCamp.
-- [ ] All the files I changed are in the same world language, for example: only English changes, or only Chinese changes, etc.
+- [ ] I have tested these changes either locally on my machine, or GitPod.
 
 <!--If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.-->
 

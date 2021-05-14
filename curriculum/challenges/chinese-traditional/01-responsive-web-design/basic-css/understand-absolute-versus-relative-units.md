@@ -37,7 +37,7 @@ assert(
 class 爲 `red-box` 的元素的 `padding` 屬性值應爲 1.5em。
 
 ```js
-assert(code.match(/\.red-box\s*?{[\s\S]*padding:\s*?1\.5em/gi));
+assert(code.match(/\.red-box\s*?{[\s\S]*padding\s*:\s*?1\.5em/gi));
 ```
 
 # --seed--

@@ -143,7 +143,7 @@
         "title": "Functional Programming",
         "intro": [
           "Functional Programming is another popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.",
-          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -275,12 +275,22 @@
       }
     }
   },
+  "relational-databases": {
+    "title": "Relational Databases",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-relational-databases": {
+        "title": "Learn Relational Databases",
+        "intro": ["placeholder"]
+      }
+    }
+  },
   "apis-and-microservices": {
-    "title": "APIs and Microservices",
+    "title": "Back End Development and APIs",
     "intro": [
       "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
       "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
-      "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "In the Back End Development and APIs Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -309,10 +319,10 @@
         ]
       },
       "apis-and-microservices-projects": {
-        "title": "APIs and Microservices Projects",
+        "title": "Back End Development and APIs Projects",
         "intro": [
           "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
         ]
       }
     }

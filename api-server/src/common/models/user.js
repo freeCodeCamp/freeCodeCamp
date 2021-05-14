@@ -15,7 +15,7 @@ import _ from 'lodash';
 import generate from 'nanoid/generate';
 import badwordFilter from 'bad-words';
 
-import { apiLocation } from '../../../../config/env';
+import { apiLocation } from '../../../../config/env.json';
 
 import {
   fixCompletedChallengeItem,

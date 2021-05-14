@@ -29,6 +29,9 @@ Antes de trabajar en el plan de estudios, necesitarás configurar algunas herram
 
 - Editar los archivos de la interfaz de GitHub haciendo clic en el icono del lápiz del archivo correspondiente. Aunque esta es la manera más rápida, **no se recomienda**, ya que no puedes probar tus cambios en GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
 
+### How to work on practice projects
+
+The practice projects have some additional tooling to help create new projects and steps.  To read more, see [these docs](how-to-work-on-practice-projects.md)
 ## Plantilla de desafío
 
 ````md
@@ -230,7 +233,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 - Node.js
 - El desarrollo de front-end (forma adjetiva con guiones) es cuando estás trabajando en la parte frontal (sin guiones). Lo mismo ocurre con el "back end", "full stack", y muchos otros términos compuestos.
 
-### La regla de los 2 minutos
+### The 2-minute rule
 
 Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
 
@@ -243,7 +246,7 @@ The 2-minute rule forces you, the challenge designer, to make your directions co
 
 We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
-### Modularidad
+### Modularity
 
 Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
@@ -251,7 +254,7 @@ We can reinforce previously covered concepts through repetition and variations -
 
 Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### Formateando el texto del desafío
+### Formatting challenge text
 
 Here are specific formatting guidelines for challenge text and examples:
 
@@ -359,7 +362,7 @@ class MyComponent extends React.Component {
 };
 ```
 
-### Traducción de comentarios de código de semilla
+### Translation of seed code comments
 
 There are separate comment dictionaries for each language. The [English version of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
@@ -378,7 +381,7 @@ Each challenge has a `Get a Hint` button, so a user can access any hints/solutio
 
 If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
-### Añadir nuevos temas de sugerencias/soluciones de Desafío
+### Adding new Challenge hints/solutions Topics
 
 Take the following steps when adding a new challenge hints/solutions related topic.
 
@@ -387,7 +390,7 @@ Take the following steps when adding a new challenge hints/solutions related top
 3. `camperbot` debe ser el dueño de estos temas/posts, así que necesitarás solicitar a un administrador que cambie la propiedad de la publicación principal a `camperbot`.
 4. Una vez creado el nuevo tema, se crea un identificador del tema del foro. Se encuentra al final de la URL del tema del foro. Este id debe añadirse a la parte frontal del archivo de desafío curriculum a través del proceso normal de pull request para el botón `Obtener una pista` para vincular al tema.
 
-### Orientaciones para el contenido de pistas y temas de soluciones
+### Guidelines for content of hints and solutions topics
 
 When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
