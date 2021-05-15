@@ -30,7 +30,7 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style></style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -38,21 +38,9 @@ assert(
 </html>
 ```
 
-# --solutions--
+```css
+--fcc-editable-region--
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-      }
-    </style>
-  </head>
+--fcc-editable-region--
 
-  <body>
-  </body>
-</html>
 ```

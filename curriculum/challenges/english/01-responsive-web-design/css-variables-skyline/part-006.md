@@ -26,11 +26,7 @@ assert($('#display-body').css('box-sizing') === 'border-box');
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-      }
-    </style>
+    
   </head>
 
   <body>
@@ -38,22 +34,11 @@ assert($('#display-body').css('box-sizing') === 'border-box');
 </html>
 ```
 
-# --solutions--
+```css
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
       * {
         border: 1px solid black;
-        box-sizing: border-box;
       }
-    </style>
-  </head>
-
-  <body>
-  </body>
-</html>
+    
 ```
+

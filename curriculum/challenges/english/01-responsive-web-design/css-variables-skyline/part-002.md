@@ -53,11 +53,3 @@ assert($('html').length === 1);
 
 ```
 
-# --solutions--
-
-```html
-<!DOCTYPE html>
-<html>
-  
-</html>
-```
