@@ -253,6 +253,7 @@ class Editor extends Component {
       // TODO: only one Editor should be calling for focus at once.
       editor.focus();
     } else this.focusOnHotkeys();
+    // Removes keybind for intellisense
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
       null,
@@ -298,11 +299,6 @@ class Editor extends Component {
         });
       }
     });
-    // Overrides Intellisense suggestion box
-    editor.addCommand(
-      monaco.KeyMod.CtrlCmd | monaco.KeyCode.Space,
-      function () {}
-    );
     editor.onDidFocusEditorWidget(() => this.props.setEditorFocusability(true));
     // This is to persist changes caused by the accessibility tooltip.
     editor.onDidChangeConfiguration(event => {
