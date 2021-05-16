@@ -96,13 +96,13 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-function-bind": "^7.12.13",
-    "@babel/preset-env": "^7.14.2",
-    "@babel/preset-react": "^7.13.13",
+    "@babel/plugin-proposal-function-bind": "7.12.13",
+    "@babel/preset-env": "7.14.2",
+    "@babel/preset-react": "7.13.13",
     "@testing-library/cypress": "7.0.6",
-    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/jest-dom": "5.12.0",
     "babel-eslint": "10.1.0",
-    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "7.3.0",
     "docsify-cli": "4.4.3",
