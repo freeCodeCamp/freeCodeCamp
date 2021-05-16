@@ -189,7 +189,8 @@ class Editor extends Component {
       lightbulb: {
         enabled: false
       },
-      quickSuggestions: false
+      quickSuggestions: false,
+      suggestOnTriggerCharacters: false
     };
 
     this._editor = null;
