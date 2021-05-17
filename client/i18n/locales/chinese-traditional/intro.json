@@ -333,7 +333,7 @@
         "title": "API 和微服務項目",
         "intro": [
           "你之前用過 API，但是現在你知道 npm、Node、Express、MongoDB 和 Mongoose，是時候創建應用 了。用你到現在所學的所有知識來創建 5 個不同的微服務，這些微服務是使用範圍有限的小應用。",
-          "在創建這些微服務後，你會有 5 個很酷的微服務 API，你可以向朋友、家人和潛在的僱主展示。同時，你也會獲得 API 和微服務認證。"
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
         ]
       }
     }
