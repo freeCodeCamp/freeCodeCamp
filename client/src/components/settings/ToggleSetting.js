@@ -6,7 +6,7 @@ import {
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
 
-import TB from '../helpers/ToggleButton';
+import tb from '../helpers/ToggleButton';
 import { ButtonSpacer } from '../helpers';
 
 import './toggle-setting.css';
@@ -39,7 +39,7 @@ export default function ToggleSetting({
               </HelpBlock>
             ) : null}
           </ControlLabel>
-          <TB
+          <tb
             name={flagName}
             onChange={toggleFlag}
             value={flag}
