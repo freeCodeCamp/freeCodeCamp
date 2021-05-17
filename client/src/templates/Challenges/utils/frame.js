@@ -17,7 +17,6 @@ const testId = 'fcc-test-frame';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 const createHeader = (id = mainId) => `
-  <base href=''/>
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg) {
@@ -41,9 +40,16 @@ const createHeader = (id = mainId) => `
       }
     }, false);
     document.addEventListener('submit', function(e) {
+
       e.preventDefault();
-      const form = e.target.target = '_blank';
-      e.target.submit();
+
+      const hasAction = e.target.hasAttribute('action');
+
+      if(hasAction){
+        e.target.target = '_blank';
+        e.target.submit()
+      }
+
     }, false);
   </script>
 `;
