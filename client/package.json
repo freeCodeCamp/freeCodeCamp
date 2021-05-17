@@ -34,7 +34,6 @@
     "serve": "gatsby serve -p 8000",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
-    "test": "jest",
     "validate-keys": "node ./i18n/validate-keys.js"
   },
   "dependencies": {
@@ -78,7 +77,7 @@
     "gatsby-remark-prismjs": "5.2.0",
     "gatsby-source-filesystem": "3.5.0",
     "gatsby-transformer-remark": "4.2.0",
-    "i18next": "20.2.2",
+    "i18next": "20.2.4",
     "jquery": "3.6.0",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
@@ -124,14 +123,13 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.12.0",
-    "@testing-library/react": "11.2.6",
+    "@testing-library/react": "11.2.7",
     "@types/react-transition-group": "^4.4.1",
     "autoprefixer": "10.2.5",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.1",
     "copy-webpack-plugin": "8.1.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.22",
-    "jest": "26.6.3",
     "jest-json-schema-extended": "1.0.0",
     "monaco-editor-webpack-plugin": "3.1.0",
     "react-test-renderer": "16.14.0",
