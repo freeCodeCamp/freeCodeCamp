@@ -120,22 +120,40 @@ The heart of this problem concerns the likelihood of visiting a particular squar
 
 By starting at GO and numbering the squares sequentially from 00 to 39 we can concatenate these two-digit numbers to produce strings that correspond with sets of squares.
 
-Statistically it can be shown that the three most popular squares, in order, are JAIL (6.24%) = Square 10, E3 (3.18%) = Square 24, and GO (3.09%) = Square 00. So these three most popular squares can be listed with the six-digit modal string: 102400.
+Statistically it can be shown that the three most popular squares, in order, are JAIL (6.24%) = Square 10, E3 (3.18%) = Square 24, and GO (3.09%) = Square 00. So these three most popular squares can be listed with the six-digit modal string `102400`.
 
-If, instead of using two 6-sided dice, two 4-sided dice are used, find the six-digit modal string.
+If, instead of using two 6-sided dice, two `n`-sided dice are used, find the six-digit modal string.
 
 # --hints--
 
-`monopolyOdds()` should return a number.
+`monopolyOdds(8)` should return a string.
 
 ```js
-assert(typeof monopolyOdds() === 'number');
+assert(typeof monopolyOdds(8) === 'string');
 ```
 
-`monopolyOdds()` should return 101524.
+`monopolyOdds(8)` should return string `102400`.
 
 ```js
-assert.strictEqual(monopolyOdds(), 101524);
+assert.strictEqual(monopolyOdds(8), '102400');
+```
+
+`monopolyOdds(10)` should return string `100024`.
+
+```js
+assert.strictEqual(monopolyOdds(10), '100024');
+```
+
+`monopolyOdds(20)` should return string `100005`.
+
+```js
+assert.strictEqual(monopolyOdds(20), '100005');
+```
+
+`monopolyOdds(4)` should return string `101524`.
+
+```js
+assert.strictEqual(monopolyOdds(4), '101524');
 ```
 
 # --seed--
@@ -143,12 +161,12 @@ assert.strictEqual(monopolyOdds(), 101524);
 ## --seed-contents--
 
 ```js
-function monopolyOdds() {
+function monopolyOdds(n) {
 
   return true;
 }
 
-monopolyOdds();
+monopolyOdds(8);
 ```
 
 # --solutions--
