@@ -39,7 +39,7 @@ Your h2 element should use the font `Lobster`.
 assert(
   $('h2')
     .css('font-family')
-    .match(/^"?lobster/i)
+    .match(/^"?lobster\b/i)
 );
 ```
 
@@ -47,7 +47,7 @@ Your h2 element should degrade to the font `monospace` when `Lobster` is not ava
 
 ```js
 assert(
-  /\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(
+  /\s*h2\s*\{\s*font-family\s*\:\s*(\'|")?Lobster(\'|")?\s*,\s*monospace\s*;\s*\}/gi.test(
     code
   )
 );

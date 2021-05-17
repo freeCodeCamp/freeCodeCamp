@@ -31,8 +31,7 @@ Your `img` element should have the class `smaller-image`.
 
 ```js
 assert(
-  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') ===
-    'smaller-image'
+  / *\bsmaller-image\b */.test($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class'))
 );
 ```
 
