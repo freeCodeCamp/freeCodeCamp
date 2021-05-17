@@ -18,7 +18,7 @@ module.exports = {
   },
   verbose: true,
   transform: {
-    '^.+\\.js$': '<rootDir>/jest.transform.js'
+    '^.+\\.[jt]sx?$': '<rootDir>/jest.transform.js'
   },
   roots: ['.', './client', './api-server'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
