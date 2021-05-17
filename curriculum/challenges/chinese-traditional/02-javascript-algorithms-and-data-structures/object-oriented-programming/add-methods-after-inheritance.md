@@ -58,10 +58,10 @@ assert(typeof Animal.prototype.bark == 'undefined');
 assert(typeof Dog.prototype.eat == 'function');
 ```
 
-`Dog` 應該有一個 `bark()` 方法作爲 `own` 屬性。
+`Dog` 原型應該有一個 `bark()` 方法。
 
 ```js
-assert(Dog.prototype.hasOwnProperty('bark'));
+assert('bark' in Dog.prototype);
 ```
 
 `beagle` 應該是 `Animal` 的一個 `instanceof`。
