@@ -33,5 +33,6 @@ module.exports = {
   validationSuccess,
   usernameTooShort,
   usernameIsHttpStatusCode,
-  invalidCharError
+  invalidCharError,
+  usernameUpperCase
 };
