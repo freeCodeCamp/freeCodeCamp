@@ -29,19 +29,55 @@ const removeWhiteSpace = (str = ''): string => {
   return str.replace(/\s/g, '');
 };
 
-const getStyles = (doc = {}, element = '') => {
-  return element
-    ? Object.values(doc?.styleSheets?.[1]?.cssRules)?.find(
-        ele => ele.selectorText === element
-      ).style
-    : doc?.styleSheets?.[1]?.cssRules;
+const CSSTypes = {
+  style: 1,
+  import: 3,
+  media: 4,
+  fontface: 5,
+  keyframes: 7
 };
+
+class CSSHelp {
+  doc: HTMLDocument;
+  constructor(doc: HTMLDocument) {
+    this.doc = doc;
+  }
+  getStyle = (element: string): CSSStyleDeclaration | undefined => {
+    const styleRule = [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
+      ele => ele.type === CSSTypes.style
+    ) as [CSSStyleRule] | undefined;
+    return styleRule?.find(ele => ele?.selectorText === element)?.style;
+  };
+  getCSSRules = (element?: string): CSSRule[] | undefined => {
+    switch (element) {
+      case 'media':
+        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
+          ele => ele.type === CSSTypes.media
+        );
+      case 'fontface':
+        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
+          ele => ele.type === CSSTypes.fontface
+        );
+      case 'import':
+        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
+          ele => ele.type === CSSTypes.import
+        );
+      case 'keyframes':
+        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
+          ele => ele.type === CSSTypes.keyframes
+        );
+      default:
+        return [...this.doc?.styleSheets?.[1]?.cssRules];
+    }
+  };
+}
 
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
   removeWhiteSpace,
-  getStyles
+  CSSHelp,
+  CSSTypes
 };
 
 export default curriculumHelpers;
