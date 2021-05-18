@@ -12,20 +12,44 @@ By counting carefully it can be seen that a rectangular grid measuring 3 by 2 co
 
 <img class="img-responsive center-block" alt="a diagram of the different rectangles found within a 3 by 2 rectangular grid" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;">
 
-Although there exists no rectangular grid that contains exactly two million rectangles, find the area of the grid with the nearest solution.
+Although there may not exists rectangular grid that contains exactly `n` rectangles, find the area of the grid with the nearest solution.
 
 # --hints--
 
-`countingRectangles()` should return a number.
+`countingRectangles(18)` should return a number.
 
 ```js
-assert(typeof countingRectangles() === 'number');
+assert(typeof countingRectangles(18) === 'number');
 ```
 
-`countingRectangles()` should return 2772.
+`countingRectangles(18)` should return `6`.
 
 ```js
-assert.strictEqual(countingRectangles(), 2772);
+assert.strictEqual(countingRectangles(18), 6);
+```
+
+`countingRectangles(250)` should return `22`.
+
+```js
+assert.strictEqual(countingRectangles(250), 22);
+```
+
+`countingRectangles(50000)` should return `364`.
+
+```js
+assert.strictEqual(countingRectangles(50000), 364);
+```
+
+`countingRectangles(1000000)` should return `1632`.
+
+```js
+assert.strictEqual(countingRectangles(1000000), 1632);
+```
+
+`countingRectangles(2000000)` should return `2772`.
+
+```js
+assert.strictEqual(countingRectangles(2000000), 2772);
 ```
 
 # --seed--
@@ -33,12 +57,12 @@ assert.strictEqual(countingRectangles(), 2772);
 ## --seed-contents--
 
 ```js
-function countingRectangles() {
+function countingRectangles(n) {
 
   return true;
 }
 
-countingRectangles();
+countingRectangles(18);
 ```
 
 # --solutions--
