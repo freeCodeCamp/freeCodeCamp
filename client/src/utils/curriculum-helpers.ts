@@ -42,34 +42,35 @@ class CSSHelp {
   constructor(doc: HTMLDocument) {
     this.doc = doc;
   }
-  getStyle = (element: string): CSSStyleDeclaration | undefined => {
-    const styleRule = [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
+  getStyle(element: string): CSSStyleDeclaration | undefined {
+    const styleElement = this.doc?.querySelector(
+      '#display-body > style:nth-child(1)'
+    ) as HTMLStyleElement;
+    const styleSheet = styleElement?.sheet as CSSStyleSheet;
+    const styleRule = [...styleSheet.cssRules]?.filter(
       ele => ele.type === CSSTypes.style
     ) as [CSSStyleRule] | undefined;
     return styleRule?.find(ele => ele?.selectorText === element)?.style;
-  };
-  getCSSRules = (element?: string): CSSRule[] | undefined => {
+  }
+  getCSSRules(element?: string): CSSRule[] | undefined {
+    const styleElement = this.doc?.querySelector(
+      '#display-body > style:nth-child(1)'
+    ) as HTMLStyleElement;
+    const styleSheet = styleElement?.sheet as CSSStyleSheet;
+    const cssRules = [...styleSheet.cssRules];
     switch (element) {
       case 'media':
-        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
-          ele => ele.type === CSSTypes.media
-        );
+        return cssRules?.filter(ele => ele.type === CSSTypes.media);
       case 'fontface':
-        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
-          ele => ele.type === CSSTypes.fontface
-        );
+        return cssRules?.filter(ele => ele.type === CSSTypes.fontface);
       case 'import':
-        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
-          ele => ele.type === CSSTypes.import
-        );
+        return cssRules?.filter(ele => ele.type === CSSTypes.import);
       case 'keyframes':
-        return [...this.doc?.styleSheets?.[1]?.cssRules]?.filter(
-          ele => ele.type === CSSTypes.keyframes
-        );
+        return cssRules?.filter(ele => ele.type === CSSTypes.keyframes);
       default:
-        return [...this.doc?.styleSheets?.[1]?.cssRules];
+        return cssRules;
     }
-  };
+  }
 }
 
 const curriculumHelpers = {
