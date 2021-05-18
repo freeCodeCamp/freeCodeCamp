@@ -29,10 +29,19 @@ const removeWhiteSpace = (str = ''): string => {
   return str.replace(/\s/g, '');
 };
 
+const getStyles = (doc = {}, element = '') => {
+  return element
+    ? Object.values(doc?.styleSheets?.[1]?.cssRules)?.find(
+        ele => ele.selectorText === element
+      ).style
+    : doc?.styleSheets?.[1]?.cssRules;
+};
+
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
-  removeWhiteSpace
+  removeWhiteSpace,
+  getStyles
 };
 
 export default curriculumHelpers;
