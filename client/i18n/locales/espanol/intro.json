@@ -152,7 +152,7 @@
         "title": "Programación funcional",
         "intro": [
           "La programación funcional es otro enfoque común en el desarrollo de software. En programación funcional, el código está organizado en funciones más pequeñas y básicas que se pueden combinar para construir programas de mayor complejidad.",
-          "En este curso, aprenderás los conceptos básicos de la programación funcional, incluyendo funciones puras, cómo evitar mutaciones, y cómo escribir código más limpio con métodos como <code>.map()</code> y <code>.filter()</code>."
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
