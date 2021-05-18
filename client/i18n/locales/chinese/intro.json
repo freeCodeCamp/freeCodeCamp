@@ -152,7 +152,7 @@
         "title": "函数式编程",
         "intro": [
           "函数式编程是另一种软件开发方法。在函数式编程中，代码被组织成较小的基本的函数，可以结合起来构建复杂的程序。",
-          "在这个课程中，你将学习函数式编程的核心概念，包括纯函数，如何避免突变，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法编写更整洁的代码。"
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
