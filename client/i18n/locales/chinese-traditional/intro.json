@@ -152,7 +152,7 @@
         "title": "函數式編程",
         "intro": [
           "函數式編程是另一種軟件開發方法。在函數式編程中，代碼被組織成較小的基本的函數，可以結合起來構建複雜的程序。",
-          "在這個課程中，你將學習函數式編程的核心概念，包括純函數，如何避免突變，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法編寫更整潔的代碼。"
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
