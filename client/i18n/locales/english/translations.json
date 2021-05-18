@@ -109,7 +109,7 @@
       "change": "Please note, changing your username will also change the URL to your profile and your certifications."
     },
     "labels": {
-      "username": "Username (lowercase only)",
+      "username": "Username",
       "name": "Name",
       "location": "Location",
       "picture": "Picture",
