@@ -43,13 +43,13 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the `users` object
+The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the object passed to it. 
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-The function `isEveryoneHere` should return `false` if `Alan` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Alan` is not a property on the object passed to it.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Jeff` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Jeff` is not a property on the object passed to it.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Sarah` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Sarah` is not a property on the object passed to it.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Ryan` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Ryan` is not a property on the object passed to it.
 
 ```js
 assert(
