@@ -11,7 +11,13 @@ Increase the `blur` of `.three` by 2 pixels.
 
 # --hints--
 
-Test 1
+You should set the `filter` property to `blur(2px)`.
+
+```js
+
+```
+
+Your `.three` element should have a `filter` value of `blur(2px)`.
 
 ```js
 

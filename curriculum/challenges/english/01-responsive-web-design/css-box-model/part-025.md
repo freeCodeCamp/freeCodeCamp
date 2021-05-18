@@ -11,7 +11,13 @@ Set the `height` of the `.two` to 200 pixels.
 
 # --hints--
 
-Test 1
+You should set the `height` property to `200px`.
+
+```js
+
+```
+
+Your `.two` element should have a `height` value of `200px`.
 
 ```js
 

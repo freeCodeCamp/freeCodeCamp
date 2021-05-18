@@ -9,11 +9,17 @@ dashedName: part-28
 
 Use margins to adjust the spacing between `one` and `two`.
 
-Change the `margin` of `.one` to "20px auto 20px" so the top margin is 20 pixels, it's centered horizontally, and the bottom margin is 20 pixels.
+Change the `margin` of `.one` to `20px auto 20px` so the top margin is 20 pixels, it's centered horizontally, and the bottom margin is 20 pixels.
 
 # --hints--
 
-Test 1
+You should set the `margin` property to `20px auto 20px`.
+
+```js
+
+```
+
+Your `.one` element should have a `margin` value of `20px auto 20px`.
 
 ```js
 

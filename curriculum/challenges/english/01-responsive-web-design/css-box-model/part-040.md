@@ -7,11 +7,17 @@ dashedName: part-40
 
 # --description--
 
-Add a `box-shadow` to `.three` with the values "0 0 5px 5px #b20403".
+Add a `box-shadow` to `.three` with the values `0 0 5px 5px #b20403`.
 
 # --hints--
 
-Test 1
+You should set the `box-shadow` property to `0 0 3px 3px #b20403`.
+
+```js
+
+```
+
+Your `.three` element should have a `box-shadow` value of `0 0 3px 3px #b20403`.
 
 ```js
 

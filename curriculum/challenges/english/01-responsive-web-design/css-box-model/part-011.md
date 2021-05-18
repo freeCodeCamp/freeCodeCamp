@@ -9,19 +9,22 @@ dashedName: part-11
 
 Every painting needs a frame.
 
-Wrap the "canvas" `<div>` in another `<div>` and give it the class "frame".
-
-Add `<div class="frame">` under the opening `<body>` tag, and `</div>` above the closing `</body>` tag.
-
+Wrap the `.canvas` element in another `div`. Give that `div` the `frame` class.
 # --hints--
 
-div around existing div
+You should wrap your `.canvas` element in a new `div` element.
 
 ```js
 
 ```
 
-new div have frame class
+Your new `div` should have a `class` with the value `frame`.
+
+```js
+
+```
+
+Your new `div` should be within your `body` element.
 
 ```js
 

@@ -7,19 +7,19 @@ dashedName: part-6
 
 # --description--
 
-Add div
+Add a `div` element in the `body`.
 
-In the opening `<div>` tag set the `class` attribute equal to "canvas". For example, `<div class="my-div">`.
+Set the `class` attribute equal to `canvas`. For example, `<div class="my-div">`.
 
 # --hints--
 
-Do an add 
+Your code should have a `div` element.
 
 ```js
 
 ```
 
-Give a class
+The `div` element should have a `class` with the value `canvas`.
 
 ```js
 

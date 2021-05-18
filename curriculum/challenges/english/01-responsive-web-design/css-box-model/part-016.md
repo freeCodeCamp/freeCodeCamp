@@ -7,19 +7,19 @@ dashedName: part-16
 
 # --description--
 
-Add a new `<div>` element inside of the "canvas" `<div>`.
+Add a new `div` element inside of your `.canvas` element.
 
-Give the new `<div>` the `class` "one".
+Give the new `div` the `class` attribute with a value of `one`.
 
 # --hints--
 
-New div inside canvas
+You should nest a new `div` element within your `.canvas` element.
 
 ```js
 
 ```
 
-Class is one
+Your new `div` should have a `class` attribute with a value `one`.
 
 ```js
 

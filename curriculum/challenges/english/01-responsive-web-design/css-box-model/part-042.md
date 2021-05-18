@@ -7,11 +7,17 @@ dashedName: part-42
 
 # --description--
 
-Set the `border-radius` of `two` to "8px 10px". This will round its top-left and bottom-right corners by 8 pixels, and top-right and bottom-left corners by 10 pixels.
+Set the `border-radius` of `.two` to `8px 10px`. This will round its top-left and bottom-right corners by 8 pixels, and top-right and bottom-left corners by 10 pixels.
 
 # --hints--
 
-Test 1
+You should set the `border-radius` property to `8px 10px`.
+
+```js
+
+```
+
+Your `.two` element should have a `border-radius` value of `8px 10px`.
 
 ```js
 

@@ -19,7 +19,25 @@ h1, p {
 
 # --hints--
 
-Test 1
+You should have a `.one, .two` selector.
+
+```js
+
+```
+
+You should set the `filter` property to `blur(1px)`.
+
+```js
+
+```
+
+Your `.one` element should have a `filter` value of `blur(1px)`.
+
+```js
+
+```
+
+Your `.two` element should have a filter value of `blur(1px)`.
 
 ```js
 

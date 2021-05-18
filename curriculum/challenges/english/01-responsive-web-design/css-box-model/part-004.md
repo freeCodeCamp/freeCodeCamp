@@ -11,11 +11,17 @@ The content is surrounded by a space called padding, similar to how bubble wrap 
 
 Think of the border like the cardboard box your item was shipped in.
 
-Change the `src` attribute to "pics/box-model-diagram-3.png".
+Change the `src` attribute to `https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png`
 
 # --hints--
 
-Do another src change
+The `img` element should have a `src` of `https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png`
+
+```js
+
+```
+
+The image should still render on the screen. Make sure you did not delete the closing tag.
 
 ```js
 

@@ -11,13 +11,19 @@ Write a new rule that targets `.one` and set its `width` to 425 pixels.
 
 # --hints--
 
-One rule
+You should have a `.one` selector.
 
 ```js
 
 ```
 
-Width is set
+You should set the `width` property to `425px`.
+
+```js
+
+```
+
+Your `.one` element should have a `width` value of `425px`.
 
 ```js
 

@@ -7,11 +7,17 @@ dashedName: part-33
 
 # --description--
 
-Center the `three` `<div>` on the canvas by setting its `margin` to "auto".
+Center the `.three` element on the canvas by setting its `margin` to `auto`.
 
 # --hints--
 
-Test 1
+You should set the `margin` property to `auto`.
+
+```js
+
+```
+
+Your `.three` element should have a `margin` value of `auto`.
 
 ```js
 

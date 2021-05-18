@@ -21,16 +21,22 @@ Here's a CSS rule that sets the width of the class `card` to 300 pixels:
 
 # --hints--
 
-canvas selector
+Your code should have a `.canvas` selector.
 
 ```js
 
 ```
 
-width 500
+You should set the `width` property to `300px`.
 
 ```js
 
+```
+
+Your `.canvas` element should have a `width` of `500px`.
+
+```js
+// YAY FOR SHAUN'S HELPER!
 ```
 
 # --seed--

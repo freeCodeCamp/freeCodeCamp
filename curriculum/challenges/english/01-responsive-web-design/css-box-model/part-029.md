@@ -7,11 +7,23 @@ dashedName: part-29
 
 # --description--
 
-Create a new `<div>` with the `class` "three" right under the `two` `<div>`.
+Create a new `div` with a `class` value of `three` right under the `.two` element.
 
 # --hints--
 
-Test 1
+Your existing `.one` and `.two` elements should not be changed.
+
+```js
+
+```
+
+Your new `div` should come after your `.two` element.
+
+```js
+
+```
+
+Your new `div` element should have a `class` with the value `three`.
 
 ```js
 

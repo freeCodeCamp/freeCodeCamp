@@ -11,7 +11,13 @@ Now set the `height` for `.one` to 150 pixels.
 
 # --hints--
 
-Do stuff
+You should set the `height` property to `150px`.
+
+```js
+
+```
+
+Your `.one` element should have a `height` value of `150px`.
 
 ```js
 

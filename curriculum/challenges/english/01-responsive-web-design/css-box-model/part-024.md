@@ -11,7 +11,19 @@ Create a new CSS rule using the `.two` selector and set its `width` to 475 pixel
 
 # --hints--
 
-Test 1
+You should have a `.two` selector.
+
+```js
+
+```
+
+You should set the `width` property to `475px`.
+
+```js
+
+```
+
+Your `.two` element should have a `width` value of `475px`.
 
 ```js
 

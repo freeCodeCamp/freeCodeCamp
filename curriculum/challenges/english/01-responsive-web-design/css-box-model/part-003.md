@@ -11,11 +11,17 @@ In the CSS box model, every HTML element is treated as a box with four areas.
 
 Imagine you receive a box from your favorite online retailer -- the content is the item in the box, or in our case, a header, paragraph, or image element.
 
-Change the `src` attribute in the `<img>` from "pics/box-model-diagram-1.png" to "pics/box-model-diagram-2.png".
+Change the `src` attribute in the `<img>` from `https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-1.png` to `https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-2.png`.
 
 # --hints--
 
-Do a src change.
+The `img` element should have a `src` of `https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-2.png`
+
+```js
+
+```
+
+The image should still render on the screen. Make sure you did not delete the closing tag.
 
 ```js
 

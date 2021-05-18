@@ -7,11 +7,17 @@ dashedName: part-19
 
 # --description--
 
-Set the `background-color` of `.one` to "#efb762".
+Set the `background-color` of `.one` to `#efb762`.
 
 # --hints--
 
-Test 1
+You should set the `background-color` property to `#efb762`.
+
+```js
+
+```
+
+Your `.one` element should have a `background-color` value of `#efb762`.
 
 ```js
 

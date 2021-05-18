@@ -7,11 +7,17 @@ dashedName: part-32
 
 # --description--
 
-Change the `background-color` of `.three` to "#b20403".
+Change the `background-color` of `.three` to `#b20403`.
 
 # --hints--
 
-Test 1
+You should set the `background-color` property to `#b20403`.
+
+```js
+
+```
+
+Your `.three` element should have a `background-color` value of `#b20403`.
 
 ```js
 

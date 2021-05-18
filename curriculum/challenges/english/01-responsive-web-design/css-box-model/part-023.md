@@ -7,11 +7,29 @@ dashedName: part-23
 
 # --description--
 
-Add another `<div>` with the `class` "two" just below your `one` `<div>` element.
+Add another `div` with a `class` value of `two` just below your `one` element.
 
 # --hints--
 
-Test 1
+You should not change the existing `.one` element.
+
+```js
+
+```
+
+You should have a second `div` element in your `.canvas` element.
+
+```js
+
+```
+
+Your second `div` element should have a `class` value of `two`.
+
+```js
+
+```
+
+Your `.two` element should come after your `.one` element.
 
 ```js
 

@@ -7,11 +7,17 @@ dashedName: part-10
 
 # --description--
 
-Change the `background-color` of the canvas to "#4d0f00".
+Change the `background-color` of the canvas to `#4d0f00`.
 
 # --hints--
 
-background color is that hex
+You should set the `background-color` property to `#4d0f00`.
+
+```js
+
+```
+
+Your `.canvas` element should have a `background-color` of `#4d0f00`.
 
 ```js
 

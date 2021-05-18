@@ -13,7 +13,19 @@ Replace `padding: 1px;` with `overflow: hidden;` to change the canvas back to it
 
 # --hints--
 
-Test 1
+You should remove the `padding` property from the `.one` selector.
+
+```js
+
+```
+
+You should set the `overflow` property to `hidden`.
+
+```js
+
+```
+
+Your `.one` element should have an `overflow` value of `hidden`.
 
 ```js
 

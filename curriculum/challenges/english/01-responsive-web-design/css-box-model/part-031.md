@@ -7,11 +7,17 @@ dashedName: part-31
 
 # --description--
 
-And set the `height` of `.three` to "28%".
+Set the `height` of `.three` to `28%`.
 
 # --hints--
 
-Test 1
+You should set the `height` property to `28%`.
+
+```js
+
+```
+
+Your `.three` element should have a `height` value of `28%`.
 
 ```js
 

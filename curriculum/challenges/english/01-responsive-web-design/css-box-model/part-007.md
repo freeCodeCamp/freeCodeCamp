@@ -7,29 +7,25 @@ dashedName: part-7
 
 # --description--
 
-Link the css file.
+Before you can start styling the `div` you added, you need to link your CSS to your HTML.
+
+Add a `link` element to link your `styles.css` file, and remember to set the `rel` attribute to `stylesheet`.
 
 # --hints--
 
-Make a link element
+Your code should have a `link` element.
 
 ```js
 
 ```
 
-Give a href
+The `link` element should have an `href` of `./styles.css`.
 
 ```js
 
 ```
 
-href `css/main.css`
-
-```js
-
-```
-
-rel `stylesheet`
+The `rel` attribute should have the value `stylesheet`.
 
 ```js
 

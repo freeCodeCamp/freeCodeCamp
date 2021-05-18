@@ -9,13 +9,19 @@ dashedName: part-34
 
 It's helpful to have your margins push in one direction.
 
-In this case, the bottom margin of the `one` `<div>` pushes `two` down 20 pixels.
+In this case, the bottom margin of the `.one` element pushes `.two` down 20 pixels.
 
-In `.two`, add `margin: 0 auto 20px;` to set its top margin to 0, center it horizontally, and its bottom margin is 20 pixels.
+In `.two`, add `margin: 0 auto 20px;` to set its top margin to 0, center it horizontally, and set its bottom margin to 20 pixels.
 
 # --hints--
 
-Test 1
+You should set the `margin` property to `0 auto 20px`.
+
+```js
+
+```
+
+Your `.two` element should have a `margin` value of `0 auto 20px`.
 
 ```js
 

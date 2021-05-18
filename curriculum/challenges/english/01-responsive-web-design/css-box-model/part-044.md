@@ -9,11 +9,17 @@ dashedName: part-44
 
 Rotate each rectangle to give them more of an imperfect, hand-painted look.
 
-Use the following to rotate `one` counterclockwise -0.6 degrees: `transform: rotate(-0.6deg);`
+Use the following to rotate `.one` counter clockwise -0.6 degrees: `transform: rotate(-0.6deg);`
 
 # --hints--
 
-Test 1
+You should set the `transform` property to `rotate(-0.6deg)`.
+
+```js
+
+```
+
+Your `.one` element should have a `transform` value of `rotate(-0.6deg)`.
 
 ```js
 

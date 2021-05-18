@@ -7,11 +7,17 @@ dashedName: part-45
 
 # --description--
 
-Rotate `two` clockwise slightly by adding the `transform` property with the value "rotate(0.4deg)".
+Rotate `.two` clockwise slightly by adding the `transform` property with the value `rotate(0.4deg)`.
 
 # --hints--
 
-Test 1
+You should set the `transform` property to `rotate(0.4deg)`.
+
+```js
+
+```
+
+Your `.two` element should have a `transform` value of `rotate(0.4deg)`.
 
 ```js
 

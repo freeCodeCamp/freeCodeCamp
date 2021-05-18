@@ -13,7 +13,13 @@ In `.frame`, set its `width` to 500 pixels.
 
 # --hints--
 
-Width set
+You should set the `width` property to `500px`.
+
+```js
+
+```
+
+Your `.frame` element should have a `width` of `500px`.
 
 ```js
 

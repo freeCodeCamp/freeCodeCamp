@@ -7,11 +7,17 @@ dashedName: part-46
 
 # --description--
 
-Rotate `three` counter clockwise by -0.2 degrees.
+Rotate `.three` counter clockwise by -0.2 degrees.
 
 # --hints--
 
-Test 1
+You should set the `transform` property to `rotate(-0.6deg)`.
+
+```js
+
+```
+
+Your `.three` element should have a `transform` value of `rotate(-0.2deg)`.
 
 ```js
 

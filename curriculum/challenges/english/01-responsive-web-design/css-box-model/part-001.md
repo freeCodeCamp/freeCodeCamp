@@ -7,33 +7,37 @@ dashedName: part-1
 
 # --description--
 
-Set boilerplate up.
+By now, you should be familiar with the basic elements an HTML page should have.
+
+Set up your code with a `DOCTYPE` declaration, an `html` element, a `head` element, and a `body` element.
 
 # --hints--
 
-Do DOCTYPE
+Your code should have a `<!DOCTYPE html>` declaration.
 
 ```js
 
 ```
 
-Do HTML tag
+Your code should have an `html` element.
 
 ```js
 
 ```
 
-Do head tags inside HTML tag
+Your code should have a `head` element within the `html` element.
 
 ```js
 
 ```
 
-Do body tags after HTML tag.
+Your code should have a `body` element within the `html` element.
 
 ```js
 
 ```
+
+Your `head` element should come before your `body` element.
 
 # --seed--
 

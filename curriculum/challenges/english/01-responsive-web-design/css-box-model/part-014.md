@@ -13,7 +13,13 @@ In `.frame`, use the shorthand `padding: 50px;` to increase the space between th
 
 # --hints--
 
-Do padding
+You should set the `padding` property to `50px`.
+
+```js
+
+```
+
+Your `.frame` element should have a `padding` value of `50px`.
 
 ```js
 

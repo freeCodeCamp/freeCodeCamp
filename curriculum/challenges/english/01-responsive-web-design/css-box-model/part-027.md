@@ -7,11 +7,17 @@ dashedName: part-27
 
 # --description--
 
-Center the `two` `<div>` by setting its `margin` to `auto`.
+Center the `.two` element by setting its `margin` to `auto`.
 
 # --hints--
 
-Test 1
+You should set the `margin` property to `auto`.
+
+```js
+
+```
+
+Your `.two` element should have a `margin` value of `auto`.
 
 ```js
 

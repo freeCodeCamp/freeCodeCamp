@@ -9,11 +9,23 @@ dashedName: part-30
 
 You don't always have to use pixels when sizing an element.
 
-Create a new rule, `.three`, and set its `width` to "91%".
+Create a new rule, `.three`, and set its `width` to `91%`.
 
 # --hints--
 
-Test 1
+You should use the `.three` selector.
+
+```js
+
+```
+
+You should set the `width` property to `91%`.
+
+```js
+
+```
+
+Your `.three` element should have a `width` value of `91%`.
 
 ```js
 

@@ -7,11 +7,17 @@ dashedName: part-9
 
 # --description--
 
-Add the `height` property with the value "600px" to your `.canvas` rule.
+Add the `height` property with the value `600px` to your `.canvas` rule.
 
 # --hints--
 
-do a height
+You should set the `height` property to `600px`.
+
+```js
+
+```
+
+Your `.canvas` element should have a `height` of `600px`.
 
 ```js
 

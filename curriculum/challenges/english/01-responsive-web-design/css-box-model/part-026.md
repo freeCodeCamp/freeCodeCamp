@@ -7,11 +7,17 @@ dashedName: part-26
 
 # --description--
 
-Set the `background-color` of the `.two` "#8f0401".
+Set the `background-color` of the `.two` element to `#8f0401`.
 
 # --hints--
 
-Test 1
+You should set the `background-color` property to `#8f0401`.
+
+```js
+
+```
+
+Your `.two` element should have a `background-color` value of `#8f0401`.
 
 ```js
 

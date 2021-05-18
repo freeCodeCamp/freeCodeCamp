@@ -17,7 +17,7 @@ Remove the `<img>` element.
 
 # --hints--
 
-Do a remove
+You should not have an `img` element in your code.
 
 ```js
 

@@ -9,17 +9,23 @@ dashedName: part-12
 
 Write a new rule using the `.frame` class selector.
 
-Give the frame a border with the shorthand `border: 50px solid black;` declaration.
+Give the `.frame` a border with the shorthand `border: 50px solid black;` declaration.
 
 # --hints--
 
-frame selector
+Your code should have a `.frame` selector.
 
 ```js
 
 ```
 
-border set
+You should set the `border` property to `50px solid black`.
+
+```js
+
+```
+
+Your `.frame` element should have a `50px solid black` `border`.
 
 ```js
 

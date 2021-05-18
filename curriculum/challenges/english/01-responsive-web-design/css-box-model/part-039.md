@@ -11,7 +11,13 @@ Use the same `box-shadow` declaration for `.two`, but change the color from `#ef
 
 # --hints--
 
-Test 1
+You should set the `box-shadow` property to `0 0 3px 3px #8f0401`.
+
+```js
+
+```
+
+Your `.two` element should have a `box-shadow` value of `0 0 3px 3px #8f0401`.
 
 ```js
 

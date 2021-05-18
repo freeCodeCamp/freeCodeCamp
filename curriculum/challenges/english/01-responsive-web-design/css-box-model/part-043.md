@@ -9,15 +9,17 @@ dashedName: part-43
 
 The `border-radius` property accepts up to four values to round the round the top-left, top-right, bottom-right, and bottom-left corners.
 
-Round the top-left corner of `three` by 30 pixels, the top-right by 25 pixels, the bottom-right by 60 pixels, and bottom-left by 12 pixels.
+Round the top-left corner of `.three` by 30 pixels, the top-right by 25 pixels, the bottom-right by 60 pixels, and bottom-left by 12 pixels.
 
 # --hints--
 
-Test 1
+You should set the `border-radius` property to `30px 25px 60px 12px`.
 
 ```js
 
 ```
+
+Your `.three` element should have a `border-radius` value of `30px 25px 60px 12px`.
 
 # --seed--
 

@@ -9,11 +9,17 @@ dashedName: part-41
 
 The corners of each rectangle are still too sharp.
 
-Round each corner of `one` by 9 pixels with `border-radius: 9px;`.
+Round each corner of `.one` by 9 pixels with `border-radius: 9px;`.
 
 # --hints--
 
-Test 1
+You should set the `border-radius` property to `9px`.
+
+```js
+
+```
+
+Your `.one` element should have a `border-radius` value of `9px`.
 
 ```js
 

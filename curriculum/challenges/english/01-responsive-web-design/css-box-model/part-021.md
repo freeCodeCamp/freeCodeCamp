@@ -7,13 +7,19 @@ dashedName: part-21
 
 # --description--
 
-Now `one` is centered horizontally, but its top margin is pushing past the canvas and onto the frame's border, shifting the entire canvas down 20 pixels.
+Now `.one` is centered horizontally, but its top margin is pushing past the canvas and onto the frame's border, shifting the entire canvas down 20 pixels.
 
-Add `padding: 1px;` to `.canvas` to give the `one` `<div>` something solid to push off of.
+Add `padding: 1px;` to `.canvas` to give the `.one` element something solid to push off of.
 
 # --hints--
 
-Test 1
+You should set the `padding` property to `1px`.
+
+```js
+
+```
+
+Your `.canvas` element should have a `padding` value of `1px`.
 
 ```js
 
