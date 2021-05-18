@@ -102,13 +102,14 @@
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
       "is a reserved error code": "Username \"{{username}}\" is a reserved error code",
+      "must be lowercase": "Username \"{{username}}\" must be lowercase",
       "unavailable": "Username not available",
       "validating": "Validating username...",
       "available": "Username is available",
       "change": "Please note, changing your username will also change the URL to your profile and your certifications."
     },
     "labels": {
-      "username": "Username",
+      "username": "Username (lowercase only)",
       "name": "Name",
       "location": "Location",
       "picture": "Picture",
