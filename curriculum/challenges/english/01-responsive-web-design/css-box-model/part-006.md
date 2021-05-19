@@ -16,13 +16,13 @@ Set the `class` attribute equal to `canvas`. For example, `<div class="my-div">`
 Your code should have a `div` element.
 
 ```js
-
+assert(document.querySelectorAll('div').length === 1)
 ```
 
 The `div` element should have a `class` with the value `canvas`.
 
 ```js
-
+assert(document.querySelector('div').className.split(' ').includes('canvas'))
 ```
 
 # --seed--

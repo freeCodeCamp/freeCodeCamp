@@ -16,19 +16,20 @@ Add a `link` element to link your `styles.css` file, and remember to set the `re
 Your code should have a `link` element.
 
 ```js
-
+console.log(document.querySelectorAll('link'));
+assert(document.querySelectorAll('link').length)
 ```
 
 The `link` element should have an `href` of `./styles.css`.
 
 ```js
-
+assert(document.querySelectorAll('link')[1].getAttribute('href') === './styles.css');
 ```
 
 The `rel` attribute should have the value `stylesheet`.
 
 ```js
-
+assert(document.querySelectorAll('link')[1].getAttribute('rel') === 'stylesheet');
 ```
 
 # --seed--

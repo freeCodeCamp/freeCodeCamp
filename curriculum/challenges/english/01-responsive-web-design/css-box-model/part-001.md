@@ -16,28 +16,32 @@ Set up your code with a `DOCTYPE` declaration, an `html` element, a `head` eleme
 Your code should have a `<!DOCTYPE html>` declaration.
 
 ```js
-
+assert(code.match(/<!DOCTYPE html>/i));
 ```
 
 Your code should have an `html` element.
 
 ```js
-
+assert(document.querySelectorAll('html').length === 1);
 ```
 
 Your code should have a `head` element within the `html` element.
 
 ```js
-
+assert(document.querySelectorAll('head').length === 1);
 ```
 
 Your code should have a `body` element within the `html` element.
 
 ```js
-
+assert(document.querySelectorAll('body').length === 1);
 ```
 
 Your `head` element should come before your `body` element.
+
+```js
+assert(document.querySelector('body').previousElementSibling.tagName === 'HEAD');
+```
 
 # --seed--
 

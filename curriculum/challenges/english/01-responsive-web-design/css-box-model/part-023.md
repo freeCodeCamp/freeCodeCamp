@@ -14,25 +14,25 @@ Add another `div` with a `class` value of `two` just below your `one` element.
 You should not change the existing `.one` element.
 
 ```js
-
+assert(document.querySelectorAll('.one').length === 1);
 ```
 
 You should have a second `div` element in your `.canvas` element.
 
 ```js
-
+assert(document.querySelector('.canvas').children[1].tagName === 'DIV');
 ```
 
 Your second `div` element should have a `class` value of `two`.
 
 ```js
-
+assert(document.querySelector('.canvas').children[1].className.split(' ').includes('two'));
 ```
 
 Your `.two` element should come after your `.one` element.
 
 ```js
-
+assert(document.querySelector('.two').previousElementSibling.className.split(' ').includes('one'));
 ```
 
 # --seed--

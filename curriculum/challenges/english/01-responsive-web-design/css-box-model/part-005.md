@@ -20,7 +20,7 @@ Remove the `<img>` element.
 You should not have an `img` element in your code.
 
 ```js
-
+assert(document.querySelector('img').length === 0);
 ```
 
 # --seed--
@@ -36,7 +36,7 @@ You should not have an `img` element in your code.
   </head>
   <body>
 --fcc-editable-region--
-    <img src="pics/box-model-diagram-3.png">
+    <img src="https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png">
 --fcc-editable-region--
   </body>
 </html>

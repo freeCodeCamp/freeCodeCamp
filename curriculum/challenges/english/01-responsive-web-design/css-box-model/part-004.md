@@ -18,13 +18,7 @@ Change the `src` attribute to `https://cdn.freecodecamp.org/curriculum/css-box-m
 The `img` element should have a `src` of `https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png`
 
 ```js
-
-```
-
-The image should still render on the screen. Make sure you did not delete the closing tag.
-
-```js
-
+assert(document.querySelector('img').getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-2.png');
 ```
 
 # --seed--
@@ -40,7 +34,7 @@ The image should still render on the screen. Make sure you did not delete the cl
   </head>
   <body>
 --fcc-editable-region--
-    <img src="pics/box-model-diagram-2.png">
+    <img src="https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-2.png">
 --fcc-editable-region--
   </body>
 </html>

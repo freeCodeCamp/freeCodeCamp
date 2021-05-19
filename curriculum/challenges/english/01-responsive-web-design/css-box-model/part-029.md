@@ -14,19 +14,26 @@ Create a new `div` with a `class` value of `three` right under the `.two` elemen
 Your existing `.one` and `.two` elements should not be changed.
 
 ```js
+assert(document.querySelectorAll('.one').length === 1);
+assert(document.querySelectorAll('.two').length === 1);
+```
 
+Your new `div` should be nested in your `.canvas` element.
+
+```js
+assert(document.querySelector('.canvas').children[2].tagName === 'DIV');
 ```
 
 Your new `div` should come after your `.two` element.
 
 ```js
-
+assert(document.querySelector('.two').nextElementSibling.tagName === 'DIV');
 ```
 
 Your new `div` element should have a `class` with the value `three`.
 
 ```js
-
+assert(document.querySelector('.canvas').children[2].className.split(' ').includes('three'));
 ```
 
 # --seed--
