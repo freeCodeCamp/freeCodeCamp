@@ -66,5 +66,29 @@ cuboidRoute(2000);
 # --solutions--
 
 ```js
-// solution required
+function cuboidRoute(n) {
+  // Based on https://www.mathblog.dk/project-euler-86-shortest-path-cuboid/
+  function getLength(a, b) {
+    return Math.sqrt(a ** 2 + b ** 2);
+  }
+
+  let M = 2;
+  let counter = 0;
+
+  while (counter < n) {
+    M++;
+    for (let baseHeightWidth = 3; baseHeightWidth <= 2 * M; baseHeightWidth++) {
+      const pathLength = getLength(M, baseHeightWidth);
+      if (Number.isInteger(pathLength)) {
+        if (baseHeightWidth <= M) {
+          counter += Math.floor(baseHeightWidth / 2);
+        } else {
+          counter += 1 + M - Math.floor((baseHeightWidth + 1) / 2);
+        }
+      }
+    }
+  }
+
+  return M;
+}
 ```
