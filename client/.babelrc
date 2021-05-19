@@ -19,7 +19,8 @@
         "useBuiltIns": true,
         "pragma": "React.createElement"
       }
-    ]
+    ],
+    "@babel/preset-typescript"
   ],
   "plugins": [
     "preval",

@@ -152,7 +152,7 @@
         "title": "函数式编程",
         "intro": [
           "函数式编程是另一种软件开发方法。在函数式编程中，代码被组织成较小的基本的函数，可以结合起来构建复杂的程序。",
-          "在这个课程中，你将学习函数式编程的核心概念，包括纯函数，如何避免突变，如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法编写更整洁的代码。"
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -333,7 +333,7 @@
         "title": "API 和微服务项目",
         "intro": [
           "你之前用过 API，但是现在你知道 npm、Node、Express、MongoDB 和 Mongoose，是时候创建应用 了。用你到现在所学的所有知识来创建 5 个不同的微服务，这些微服务是使用范围有限的小应用。",
-          "在创建这些微服务后，你会有 5 个很酷的微服务 API，你可以向朋友、家人和潜在的雇主展示。同时，你也会获得 API 和微服务认证。"
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
         ]
       }
     }

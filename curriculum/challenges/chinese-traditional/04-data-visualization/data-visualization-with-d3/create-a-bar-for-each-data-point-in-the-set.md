@@ -19,7 +19,7 @@ d3.select("body").selectAll("div")
   .append("div")
 ```
 
-操作 `rect` 元素和 `divs` 有一些不同。 `rects` 必須添加在 `svg` 元素內，而不能直接添加在 `body` 內。 同時，你需要告訴 D3 將 `rect` 放在 `svg` 區域的哪個位置。 條形的放置會在下一個挑戰中講到。
+操作 `rect` 元素和 `div` 元素有一些不同。 `rect` 元素必須添加在 `svg` 元素內，而不能直接添加在 `body` 內。 同時，你需要告訴 D3 將 `rect` 放在 `svg` 區域的哪個位置。 條形的放置會在下一個挑戰中講到。
 
 # --instructions--
 
