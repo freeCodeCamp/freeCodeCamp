@@ -135,7 +135,7 @@
     "monaco-editor-webpack-plugin": "3.1.0",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.1",
-    "webpack": "5.37.0",
+    "webpack": "5.37.1",
     "webpack-cli": "4.7.0"
   }
 }
