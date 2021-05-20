@@ -1,5 +1,8 @@
-name: Cypress - Push
-on: [push]
+name: Cypress - Push 
+on: push
+
+branches-ignore: 
+  - 'renovate/**'
 
 jobs:
   cypress-run:
@@ -16,6 +19,10 @@ jobs:
         image: mongo:3.6.19
         ports:
           - 27017:27017
+      mailhog:
+        image: mailhog/mailhog
+        ports:
+          - 1025:1025
 
     steps:
       # We use .npmrc to set the default version to 0, and prevents download during development.
@@ -59,6 +66,9 @@ jobs:
       - name: Seed Database
         run: npm run seed
         
+      - name: Generate fixture data
+        run: npm run precypress:gen:fixtures
+
       - name: Generate Specfiles for challenges
         run: npm run precypress:gen:test 
           

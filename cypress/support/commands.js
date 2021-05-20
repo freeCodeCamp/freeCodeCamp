@@ -55,10 +55,6 @@ function waitForResourceToLoad(fileName, type) {
 
 Cypress.Commands.add('waitForResource', waitForResourceToLoad);
 
-Cypress.Commands.add('createSpecFiles', () => {
-  cy.task('updateSpecFiles');
-});
-
 Cypress.Commands.add('testChallenges', () => {
   // Test Meta tags
   cy.get('head meta[charset=utf-8]');

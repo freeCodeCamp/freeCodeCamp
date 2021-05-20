@@ -39,6 +39,7 @@
     "clean:server": "shx rm -rf ./api-server/lib",
     "precypress": "node ./cypress-install.js",
     "precypress:gen:test": "node ./generate-spec-files.js",
+    "precypress:gen:fixtures": "node ./generate-fixture-data.js",
     "cypress": "cypress",
     "cypress:dev:run": "npm run cypress -- run --spec \"cypress/integration/main-tests/**/*\"",
     "cypress:dev:run:full": "npm run cypress -- run --spec \"cypress/integration/**/*\"",
