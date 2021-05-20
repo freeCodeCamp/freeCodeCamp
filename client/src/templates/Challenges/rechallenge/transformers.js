@@ -232,7 +232,7 @@ const addImportedFiles = async function (fileP) {
     partial(setImportedFiles, importedFiles),
     partial(transformContents, () => div.innerHTML)
   )(file);
-}
+};
 
 const transformHtml = async function (file) {
   // we use iframe here since file.contents is destined to be be inserted into
@@ -246,6 +246,8 @@ const transformHtml = async function (file) {
     document.body.appendChild(frame);
     // replace the root element with user code
     frame.contentDocument.documentElement.innerHTML = contents;
+    // grab the contents now, in case the transformation fails
+    contents = frame.contentDocument.documentElement.innerHTML;
     await Promise.all([
       transformSASS(frame.contentDocument),
       transformScript(frame.contentDocument)
@@ -257,35 +259,12 @@ const transformHtml = async function (file) {
   return transformContents(() => contents, file);
 };
 
-export const composeHTML = cond([
-  [
-    testHTML,
-    flow(
-      partial(transformHeadTailAndContents, source => {
-        // we use iframe here since file.contents is destined to be be inserted into
-        // the root of an iframe.
-        const frame = document.createElement('iframe');
-        frame.style = 'display: none';
-        let contents = source;
-        try {
-          // the frame needs to be inserted into the document to create the html
-          // element
-          document.body.appendChild(frame);
-          // replace the root element with user code
-          frame.contentDocument.documentElement.innerHTML = source;
-          contents = frame.contentDocument.documentElement.innerHTML;
-        } finally {
-          document.body.removeChild(frame);
-        }
-        return contents;
-      }),
-      partial(compileHeadTail, '')
-    )
-  ],
+const composeHTML = cond([
+  [testHTML, partial(compileHeadTail, '')],
   [stubTrue, identity]
 ]);
 
-export const htmlTransformer = cond([
+const htmlTransformer = cond([
   [testHTML, flow(transformHtml, addImportedFiles)],
   [stubTrue, identity]
 ]);
