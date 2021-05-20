@@ -180,10 +180,12 @@ function getBabelOptions({ preview = false, protect = true }) {
 }
 
 const sassWorker = createWorker(sassCompile);
-async function transformSASS(element) {
+async function transformSASS(contentDocument) {
   // we only teach scss syntax, not sass. Also the compiler does not seem to be
   // able to deal with sass.
-  const styleTags = element.querySelectorAll('style[type~="text/scss"]');
+  const styleTags = contentDocument.querySelectorAll(
+    'style[type~="text/scss"]'
+  );
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
@@ -192,10 +194,10 @@ async function transformSASS(element) {
   );
 }
 
-async function transformScript(element) {
+async function transformScript(contentDocument) {
   await loadBabel();
   await loadPresetEnv();
-  const scriptTags = element.querySelectorAll('script');
+  const scriptTags = contentDocument.querySelectorAll('script');
   scriptTags.forEach(script => {
     script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
       script.innerHTML
@@ -203,17 +205,10 @@ async function transformScript(element) {
   });
 }
 
-const transformHtml = async function (file) {
-  const div = document.createElement('div');
-  div.innerHTML = file.contents;
-  await Promise.all([transformSASS(div), transformScript(div)]);
-  return transformContents(() => div.innerHTML, file);
-};
-
 // Find if the base html refers to the css or js files and record if they do. If
 // the link or script exists we remove those elements since those files don't
 // exist on the site, only in the editor
-const transformIncludes = async function (fileP) {
+const addImportedFiles = async function (fileP) {
   const file = await fileP;
   const div = document.createElement('div');
   div.innerHTML = file.contents;
@@ -237,6 +232,29 @@ const transformIncludes = async function (fileP) {
     partial(setImportedFiles, importedFiles),
     partial(transformContents, () => div.innerHTML)
   )(file);
+}
+
+const transformHtml = async function (file) {
+  // we use iframe here since file.contents is destined to be be inserted into
+  // the root of an iframe.
+  const frame = document.createElement('iframe');
+  frame.style = 'display: none';
+  let contents = file.contents;
+  try {
+    // the frame needs to be inserted into the document to create the html
+    // element
+    document.body.appendChild(frame);
+    // replace the root element with user code
+    frame.contentDocument.documentElement.innerHTML = contents;
+    await Promise.all([
+      transformSASS(frame.contentDocument),
+      transformScript(frame.contentDocument)
+    ]);
+    contents = frame.contentDocument.documentElement.innerHTML;
+  } finally {
+    document.body.removeChild(frame);
+  }
+  return transformContents(() => contents, file);
 };
 
 export const composeHTML = cond([
@@ -244,9 +262,22 @@ export const composeHTML = cond([
     testHTML,
     flow(
       partial(transformHeadTailAndContents, source => {
-        const div = document.createElement('div');
-        div.innerHTML = source;
-        return div.innerHTML;
+        // we use iframe here since file.contents is destined to be be inserted into
+        // the root of an iframe.
+        const frame = document.createElement('iframe');
+        frame.style = 'display: none';
+        let contents = source;
+        try {
+          // the frame needs to be inserted into the document to create the html
+          // element
+          document.body.appendChild(frame);
+          // replace the root element with user code
+          frame.contentDocument.documentElement.innerHTML = source;
+          contents = frame.contentDocument.documentElement.innerHTML;
+        } finally {
+          document.body.removeChild(frame);
+        }
+        return contents;
       }),
       partial(compileHeadTail, '')
     )
@@ -255,7 +286,7 @@ export const composeHTML = cond([
 ]);
 
 export const htmlTransformer = cond([
-  [testHTML, flow(transformHtml, transformIncludes)],
+  [testHTML, flow(transformHtml, addImportedFiles)],
   [stubTrue, identity]
 ]);
 
