@@ -114,7 +114,7 @@
     "redux-saga": "1.1.3",
     "reselect": "4.0.0",
     "rxjs": "6.6.7",
-    "sanitize-html": "2.3.3",
+    "sanitize-html": "2.4.0",
     "sass.js": "0.11.1",
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
