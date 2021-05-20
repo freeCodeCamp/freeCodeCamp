@@ -5,7 +5,8 @@ const {
   usernameTooShort,
   validationSuccess,
   usernameIsHttpStatusCode,
-  invalidCharError
+  invalidCharError,
+  usernameUpperCase
 } = require('./validate');
 
 function inRange(num, range) {
@@ -38,6 +39,9 @@ describe('isValidUsername', () => {
     expect(isValidUsername('a-b')).toStrictEqual(validationSuccess);
     expect(isValidUsername('a_b')).toStrictEqual(validationSuccess);
   });
+  it('rejects uppercase characters', () => {
+    expect(isValidUsername('Quincy')).toStrictEqual(usernameUpperCase);
+  });
 
   it('rejects all other ASCII characters', () => {
     const allowedCharactersList = ['-', '_', '+'];
@@ -52,7 +56,7 @@ describe('isValidUsername', () => {
       let expected = invalidCharError;
       if (allowedCharactersList.includes(char)) expected = validationSuccess;
       if (inRange(code, numbers)) expected = validationSuccess;
-      if (inRange(code, upperCase)) expected = validationSuccess;
+      if (inRange(code, upperCase)) expected = usernameUpperCase;
       if (inRange(code, lowerCase)) expected = validationSuccess;
       expect(isValidUsername(base + char)).toStrictEqual(expected);
     }
