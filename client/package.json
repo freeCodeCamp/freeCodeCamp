@@ -66,7 +66,7 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "final-form": "4.20.2",
-    "gatsby": "3.5.0",
+    "gatsby": "3.5.1",
     "gatsby-cli": "3.5.0",
     "gatsby-plugin-advanced-sitemap": "1.6.0",
     "gatsby-plugin-create-client-paths": "3.5.0",
@@ -74,7 +74,7 @@
     "gatsby-plugin-postcss": "4.5.0",
     "gatsby-plugin-react-helmet": "4.5.0",
     "gatsby-plugin-remove-serviceworker": "1.0.0",
-    "gatsby-remark-prismjs": "5.2.0",
+    "gatsby-remark-prismjs": "5.2.1",
     "gatsby-source-filesystem": "3.5.0",
     "gatsby-transformer-remark": "4.2.0",
     "i18next": "20.2.4",
@@ -135,7 +135,7 @@
     "monaco-editor-webpack-plugin": "3.1.0",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.1",
-    "webpack": "5.37.0",
+    "webpack": "5.37.1",
     "webpack-cli": "4.7.0"
   }
 }
