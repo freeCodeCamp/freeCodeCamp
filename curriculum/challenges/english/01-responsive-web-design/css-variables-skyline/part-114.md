@@ -34,7 +34,7 @@ assert(/\@media\s*\(\s*max-width\s*:\s*1000px\s*\)\s*{\s*}/g.test(code));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

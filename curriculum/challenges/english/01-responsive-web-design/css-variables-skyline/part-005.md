@@ -7,11 +7,21 @@ dashedName: part-5
 
 # --description--
 
-In CSS, you can target everything with an asterisk. Add a border to everything by using the `*` selector in your style area and giving it a `border` of `1px solid black`. This is a trick I like to use to help visualize where elements are and their size. You will remove this later.
+In CSS, you can target everything with an asterisk. Add a border to everything by using the `*` selector, and giving it a `border` of `1px solid black`. This is a trick I like to use to help visualize where elements are and their size. You will remove this later.
 
 # --hints--
 
-test-text
+You should use the `*` selector.
+
+```js
+```
+
+You should use the `border` property to style all the elements.
+
+```js
+```
+
+All elements should have a `1px solid black` border.
 
 ```js
 const astStyles = __helpers.getStyles(document, '*');

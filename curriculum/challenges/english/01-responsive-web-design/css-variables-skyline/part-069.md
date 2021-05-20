@@ -26,7 +26,7 @@ assert($('.bb4c').children('div.bb4-window').length === 4);
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

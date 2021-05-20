@@ -29,7 +29,7 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -40,16 +40,20 @@ assert(
 
 ```css
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+--fcc-editable-region--
+
+
+--fcc-editable-region--
     
 ```
 

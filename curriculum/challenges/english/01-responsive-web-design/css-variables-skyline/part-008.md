@@ -26,26 +26,28 @@ assert($('#display-body')[0].contains($('div.background-buildings')[0]));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
-
+--fcc-editable-region--
   <body>
+
   </body>
+--fcc-editable-region--
 </html>
 ```
 
 ```css
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-    
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
 ```
 

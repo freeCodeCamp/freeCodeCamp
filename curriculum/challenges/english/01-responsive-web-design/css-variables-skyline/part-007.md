@@ -7,15 +7,26 @@ dashedName: part-7
 
 # --description--
 
-You can see the body, it's the horizontal line on your page; the box around it is the `html` element. Make your `body` fill the whole viewport by giving it a `height` of `100vh`. Remove the default `margin` from the `body` by setting the `margin` to `0`. Finally, set the `overflow` property to `hidden` to hide any scroll bars that appear when something extends past the viewport.
+You can see the `body` (it's the inner-most box on your page); the box around it is the `html` element. Make your `body` fill the whole viewport by giving it a `height` of `100vh`. Remove the default `margin` from the `body` by setting the `margin` to `0`. Finally, set the `overflow` property to `hidden` to hide any scroll bars that appear when something extends past the viewport.
 
 # --hints--
 
-test-text
+Your `body` should have a `height` of `100vh`.
 
 ```js
 const bodyStyles = __helpers.getStyles(document, 'body');
 assert.equal(bodyStyles.height, '100vh');
+```
+
+Your `body` should have a `margin` of `0`.
+
+```js
+// TODO: Editor adds margin as preferential style - 8px is always added.
+```
+
+Your `body` should have the `overflow` property set to `hidden`.
+
+```js
 ```
 
 # --seed--
@@ -27,7 +38,7 @@ assert.equal(bodyStyles.height, '100vh');
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>

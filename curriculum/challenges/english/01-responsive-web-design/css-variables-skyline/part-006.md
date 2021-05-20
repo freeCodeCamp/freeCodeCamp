@@ -11,7 +11,18 @@ Also add a `box-sizing` of `border-box` to the everything. This will make it so 
 
 # --hints--
 
-test-text
+You should use the `box-sizing` property to style all elements.
+
+```js
+```
+
+You should make use of the existing `*` selector.
+
+```js
+// Two selectors create two CSSStyleRule objects
+```
+
+All elements should have a `box-sizing` of `border-box`.
 
 ```js
 const astStyles = __helpers.getStyles(document, '*');
@@ -27,7 +38,7 @@ assert.equal(astStyles.boxSizing, 'border-box');
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>

@@ -27,7 +27,7 @@ assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

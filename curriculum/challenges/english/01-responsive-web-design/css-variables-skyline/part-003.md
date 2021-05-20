@@ -7,11 +7,41 @@ dashedName: part-3
 
 # --description--
 
-Next, add opening and closing `head` and `body` tags within the html element.
+Next, add opening and closing `head` and `body` tags within the `html` element.
 
 # --hints--
 
-test-text
+You should have an opening `head` tag.
+
+```js
+```
+
+You should have a closing `head` tag.
+
+```js
+```
+
+You should have an opening `body` tag.
+
+```js
+```
+
+You should have a closing `body` tag.
+
+```js
+```
+
+The `head` and `body` elements should be siblings.
+
+```js
+```
+
+The `head` element should be within the `html` element.
+
+```js
+```
+
+The `body` element should be within the `html` element.
 
 ```js
 assert(
@@ -32,5 +62,6 @@ assert(
   
 </html>
 --fcc-editable-region--
+
 ```
 

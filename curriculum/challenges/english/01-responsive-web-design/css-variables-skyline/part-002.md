@@ -38,7 +38,7 @@ assert(code.match(/<html\s*>\s*<\/html\s*>/));
 You should only have one `html` element.
 
 ```js
-assert($('html').length === 1);
+assert(document.querySelectorAll('html').length === 1);
 ```
 
 # --seed--

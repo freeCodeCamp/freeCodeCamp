@@ -26,7 +26,7 @@ assert(/\.building-wrap\s*{\s*}/g.test(code));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

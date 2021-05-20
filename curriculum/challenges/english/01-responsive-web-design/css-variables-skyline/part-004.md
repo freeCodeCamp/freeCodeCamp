@@ -11,6 +11,34 @@ Add a `title` element to the `head`, and give your project a title of `freeCodeC
 
 # --hints--
 
+Your code should have a `title` element.
+
+```js
+const title = document.querySelector('title');
+assert.exists(title);
+```
+
+The `title` element should be within the `head` element.
+
+```js
+const head = document.querySelector('head');
+// TODO: head does not contain title...body contains title
+```
+
+Your project should have a title of `freeCodeCamp Skyline Project`.
+
+```js
+const title = document.querySelector('title');
+assert.equal(title.text.toLowerCase(), 'freecodecamp skyline project')
+```
+
+Remember, the casing and spelling matters, for the title.
+
+```js
+const title = document.querySelector('title');
+assert.equal(title.text, 'freeCodeCamp Skyline Project');
+```
+
 Your code should have a `link` element.
 
 ```js
@@ -18,7 +46,7 @@ const link = document.querySelectorAll('link')?.[1];
 assert.exists(link);
 ```
 
-You should not change your existing `head` element. Make sure you did not delete the closing tag.
+You should not change your existing `head` tags. Make sure you did not delete the closing tag.
 
 ```js
 const heads = document.querySelectorAll('head');
@@ -41,21 +69,21 @@ Your `link` element should have a `rel` attribute with the value `stylesheet`.
 
 ```js
 const link = document.querySelectorAll('link')?.[1];
-assert.equal(link.rel, 'stylesheet');
+assert.equal(link?.rel, 'stylesheet');
 ```
 
 Your `link` element should have a `type` attribute with the value `text/css`.
 
 ```js
 const link = document.querySelectorAll('link')?.[1];
-assert.equal(link.type, 'text/css');
+assert.equal(link?.type, 'text/css');
 ```
 
 Your `link` element should have an `href` attribute with the value `styles.css`.
 
 ```js
 const link = document.querySelectorAll('link')?.[1];
-assert.include(link.href, 'styles.css');
+assert.include(link?.href, 'styles.css');
 ```
 
 # --seed--

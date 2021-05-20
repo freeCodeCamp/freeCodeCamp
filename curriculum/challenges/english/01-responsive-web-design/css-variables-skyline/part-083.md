@@ -26,7 +26,7 @@ assert($('.fb2b').children('div.fb2-window').length === 3);
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

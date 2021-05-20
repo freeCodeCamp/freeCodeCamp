@@ -26,7 +26,7 @@ assert($('.fb4b').children('div.fb4-window').length === 6);
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

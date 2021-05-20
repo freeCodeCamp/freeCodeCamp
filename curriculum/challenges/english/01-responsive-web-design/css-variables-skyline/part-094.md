@@ -26,7 +26,7 @@ assert($('.fb3 div.fb3a:first-child').hasClass('window-wrap'));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

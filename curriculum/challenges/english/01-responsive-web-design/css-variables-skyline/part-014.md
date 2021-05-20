@@ -27,7 +27,7 @@ assert(/--building-color1\s*:\s*#999\s*(;|\s*})/g.test(bb1style));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

@@ -26,7 +26,7 @@ assert($('.fb2b.window-wrap').length === 1);
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

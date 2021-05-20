@@ -27,7 +27,7 @@ assert(!/margin/g.test(bb2a) && !/border-top/g.test(bb2a));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

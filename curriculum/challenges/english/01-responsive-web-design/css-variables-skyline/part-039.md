@@ -27,7 +27,7 @@ assert(/--window-color1\s*:\s*black\s*(;|})/g.test(rootStyle));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>

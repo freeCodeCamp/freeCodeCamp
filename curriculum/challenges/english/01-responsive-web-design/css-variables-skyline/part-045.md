@@ -27,7 +27,7 @@ assert(!/background-color/g.test(bb1dStyle));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>
