@@ -15,7 +15,7 @@ The smallest number expressible as the sum of a prime square, prime cube, and pr
   33 = 3<sup>2</sup> + 2<sup>3</sup> + 2<sup>4</sup><br>
   49 = 5<sup>2</sup> + 2<sup>3</sup> + 2<sup>4</sup><br>
   47 = 2<sup>2</sup> + 3<sup>3</sup> + 2<sup>4</sup>
-</div>
+</div><br>
 
 How many numbers below `n` can be expressed as the sum of a prime square, prime cube, and prime fourth power?
 
