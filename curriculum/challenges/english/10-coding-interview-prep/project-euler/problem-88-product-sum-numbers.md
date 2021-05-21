@@ -8,7 +8,7 @@ dashedName: problem-88-product-sum-numbers
 
 # --description--
 
-A natural number, N, that can be written as the sum and product of a given set of at least two natural numbers, {`a`<sub>1</sub>, `a`<sub>2</sub>, ... , `a`<sub>k</sub>} is called a product-sum number: N = `a`<sub>1</sub> + `a`<sub>2</sub> + ... + `a`<sub>k</sub> = `a`<sub>1</sub> × `a`<sub>2</sub> × ... × `a`<sub>k</sub>.
+A natural number, `N`, that can be written as the sum and product of a given set of at least two natural numbers, $\\{a_1, a_2, \ldots , a_k\\}$ is called a product-sum number: $N = a_1 + a_2 + \cdots + a_k = a_1 × a_2 × \cdots × a_k$.
 
 For example, 6 = 1 + 2 + 3 = 1 × 2 × 3.
 
@@ -22,9 +22,9 @@ For a given set of size, `k`, we shall call the smallest N with this property a 
   <var>k</var>=6: 12 = 1 × 1 × 1 × 1 × 2 × 6 = 1 + 1 + 1 + 1 + 2 + 6
 </div>
 
-Hence for 2≤`k`≤6, the sum of all the minimal product-sum numbers is 4+6+8+12 = 30; note that 8 is only counted once in the sum.
+Hence for 2 ≤ `k` ≤ 6, the sum of all the minimal product-sum numbers is 4 + 6 + 8 + 12 = 30; note that `8` is only counted once in the sum.
 
-In fact, as the complete set of minimal product-sum numbers for 2≤`k`≤12 is {4, 6, 8, 12, 15, 16}, the sum is 61.
+In fact, as the complete set of minimal product-sum numbers for 2 ≤ `k` ≤ 12 is $\\{4, 6, 8, 12, 15, 16\\}$, the sum is `61`.
 
 What is the sum of all the minimal product-sum numbers for 2 ≤ `k` ≤ `limit`?
 
