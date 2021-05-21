@@ -20,7 +20,7 @@ For a given set of size, `k`, we shall call the smallest N with this property a 
   <var>k</var>=4: 8 = 1 × 1 × 2 × 4 = 1 + 1 + 2 + 4<br>
   <var>k</var>=5: 8 = 1 × 1 × 2 × 2 × 2  = 1 + 1 + 2 + 2 + 2<br>
   <var>k</var>=6: 12 = 1 × 1 × 1 × 1 × 2 × 6 = 1 + 1 + 1 + 1 + 2 + 6
-</div>
+</div><br>
 
 Hence for 2 ≤ `k` ≤ 6, the sum of all the minimal product-sum numbers is 4 + 6 + 8 + 12 = 30; note that `8` is only counted once in the sum.
 
