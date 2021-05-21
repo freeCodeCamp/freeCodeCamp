@@ -77,7 +77,7 @@ class CSSHelp {
       ele => ele.type === CSSTypes.style
     ) as CSSStyleRule[];
     // @ts-ignore
-    return cssStyleRules.some(ele => ele?.style?.[property]);
+    return cssStyleRules.some(ele => ele?.style?.getPropertyValue(property));
   }
   getRuleListsWithinMedia(conditionText: string): CSSStyleRule[] {
     const medias = this.getCSSRules('media') as CSSMediaRule[] | undefined;
