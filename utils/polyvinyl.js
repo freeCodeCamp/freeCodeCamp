@@ -147,6 +147,16 @@ function setName(name, poly) {
   return newPoly;
 }
 
+// setIncludes(includes: String[], poly: PolyVinyl) => PolyVinyl
+function setIncludes(includes, poly) {
+  checkPoly(poly);
+  const newPoly = {
+    ...poly,
+    includes: [...includes]
+  };
+  return newPoly;
+}
+
 // setError(error: Object, poly: PolyVinyl) => PolyVinyl
 function setError(error, poly) {
   invariant(
@@ -237,6 +247,7 @@ module.exports = {
   setContent,
   setExt,
   setName,
+  setIncludes,
   setError,
   clearHeadTail,
   appendToTail,

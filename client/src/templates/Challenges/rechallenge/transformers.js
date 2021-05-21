@@ -208,6 +208,19 @@ const transformHtml = async function (file) {
   return vinyl.transformContents(() => div.innerHTML, file);
 };
 
+// find if the base html refers to the css or js files and record if they do
+const findIncludes = async function (fileP) {
+  const file = await fileP;
+  const div = document.createElement('div');
+  div.innerHTML = file.contents;
+  const link = div.querySelector('link[href="styles.css"]');
+  const script = div.querySelector('script[src="script.js]');
+  const includes = [];
+  if (link) includes.push('index.css');
+  if (script) includes.push('index.js');
+  return vinyl.setIncludes(includes, file);
+};
+
 export const composeHTML = cond([
   [
     testHTML,
@@ -224,7 +237,7 @@ export const composeHTML = cond([
 ]);
 
 export const htmlTransformer = cond([
-  [testHTML, transformHtml],
+  [testHTML, flow(transformHtml, findIncludes)],
   [stubTrue, identity]
 ]);
 
