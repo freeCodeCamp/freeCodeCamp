@@ -26,20 +26,44 @@ Hence for 2≤`k`≤6, the sum of all the minimal product-sum numbers is 4+6+8+1
 
 In fact, as the complete set of minimal product-sum numbers for 2≤`k`≤12 is {4, 6, 8, 12, 15, 16}, the sum is 61.
 
-What is the sum of all the minimal product-sum numbers for 2≤`k`≤12000?
+What is the sum of all the minimal product-sum numbers for 2 ≤ `k` ≤ `limit`?
 
 # --hints--
 
-`productSumNumbers()` should return a number.
+`productSumNumbers(6)` should return a number.
 
 ```js
-assert(typeof productSumNumbers() === 'number');
+assert(typeof productSumNumbers(6) === 'number');
 ```
 
-`productSumNumbers()` should return 7587457.
+`productSumNumbers(6)` should return `30`.
 
 ```js
-assert.strictEqual(productSumNumbers(), 7587457);
+assert.strictEqual(productSumNumbers(6), 30);
+```
+
+`productSumNumbers(12)` should return `61`.
+
+```js
+assert.strictEqual(productSumNumbers(12), 61);
+```
+
+`productSumNumbers(300)` should return `12686`.
+
+```js
+assert.strictEqual(productSumNumbers(300), 12686);
+```
+
+`productSumNumbers(6000)` should return `2125990`.
+
+```js
+assert.strictEqual(productSumNumbers(6000), 2125990);
+```
+
+`productSumNumbers(12000)` should return `7587457`.
+
+```js
+assert.strictEqual(productSumNumbers(12000), 7587457);
 ```
 
 # --seed--
@@ -47,12 +71,12 @@ assert.strictEqual(productSumNumbers(), 7587457);
 ## --seed-contents--
 
 ```js
-function productSumNumbers() {
+function productSumNumbers(limit) {
 
   return true;
 }
 
-productSumNumbers();
+productSumNumbers(6);
 ```
 
 # --solutions--
