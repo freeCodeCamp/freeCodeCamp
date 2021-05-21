@@ -98,7 +98,7 @@ class UsernameSettings extends Component {
   handleChange(e) {
     e.preventDefault();
     const { username, validateUsername } = this.props;
-    const newValue = e.target.value.toLowerCase();
+    const newValue = e.target.value;
     return this.setState(
       {
         formValue: newValue,

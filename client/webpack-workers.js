@@ -37,8 +37,8 @@ module.exports = (env = {}) => {
     module: {
       rules: [
         {
-          test: /\.jsx?$/,
-          include: [path.join(__dirname, 'src/client/')],
+          test: /\.(js|ts)$/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
@@ -47,7 +47,8 @@ module.exports = (env = {}) => {
                 [
                   '@babel/preset-env',
                   { modules: false, targets: '> 0.25%, not dead' }
-                ]
+                ],
+                '@babel/preset-typescript'
               ],
               plugins: [
                 '@babel/plugin-transform-runtime',
@@ -59,9 +60,9 @@ module.exports = (env = {}) => {
       ]
     },
     plugins: [
-      new CopyWebpackPlugin([
-        { from: 'node_modules/sass.js/dist/sass.sync.js' }
-      ]),
+      new CopyWebpackPlugin({
+        patterns: ['node_modules/sass.js/dist/sass.sync.js']
+      }),
       new webpack.ProvidePlugin({
         process: 'process/browser'
       }),
@@ -75,7 +76,8 @@ module.exports = (env = {}) => {
         util: false,
         stream: false,
         process: require.resolve('process/browser')
-      }
+      },
+      extensions: ['.js', '.ts']
     }
   };
 };

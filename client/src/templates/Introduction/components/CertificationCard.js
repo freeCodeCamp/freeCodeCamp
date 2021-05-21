@@ -20,9 +20,11 @@ const CertificationCard = ({ certSlug, superBlock, i18nCertText }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const { expand: expandText, collapse: collapseText, steps: stepsText } = t(
-    'intro:misc-text'
-  );
+  const {
+    expand: expandText,
+    collapse: collapseText,
+    steps: stepsText
+  } = t('intro:misc-text');
   return (
     <ScrollableAnchor id='claim-cert-block'>
       <div className={`block ${isExpanded ? 'open' : ''}`}>

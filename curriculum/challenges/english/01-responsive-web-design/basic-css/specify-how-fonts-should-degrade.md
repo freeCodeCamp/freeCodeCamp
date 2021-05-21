@@ -47,7 +47,7 @@ Your h2 element should degrade to the font `monospace` when `Lobster` is not ava
 
 ```js
 assert(
-  /\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(
+  /\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi.test(
     code
   )
 );

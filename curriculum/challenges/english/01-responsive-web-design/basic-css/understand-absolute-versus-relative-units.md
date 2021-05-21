@@ -37,7 +37,7 @@ assert(
 Your `red-box` class should give elements 1.5em of `padding`.
 
 ```js
-assert(code.match(/\.red-box\s*?{[\s\S]*padding:\s*?1\.5em/gi));
+assert(code.match(/\.red-box\s*?{[\s\S]*padding\s*:\s*?1\.5em/gi));
 ```
 
 # --seed--

@@ -17,7 +17,7 @@ dashedName: concatenating-strings-with-plus-operator
 'My name is Alan,' + ' I concatenate.'
 ```
 
-**提示：**注意空格。 拼接操作不會在兩個字符串之間添加空格。所以，如果想加上空格的話，你需要自己在字符串裏面添加。
+**提示：** 注意空格。 拼接操作不會在兩個字符串之間添加空格。所以，如果想加上空格的話，你需要自己在字符串裏面添加。
 
 例如：
 

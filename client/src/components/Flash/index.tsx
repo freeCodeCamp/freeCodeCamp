@@ -6,18 +6,28 @@ import { useTranslation } from 'react-i18next';
 
 import './flash.css';
 
-function Flash({ flashMessage, onClose }) {
+type FlashProps = {
+  flashMessage: {
+    type: string;
+    message: string;
+    id: string;
+    variables: Record<string, unknown>;
+  };
+  onClose: () => void;
+};
+
+function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
   const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
-  const [flashMessageHeight, setFlashMessageHeight] = useState(null);
+  const [flashMessageHeight, setFlashMessageHeight] = useState(0);
 
   useEffect(() => {
-    setFlashMessageHeight(
-      document.querySelector('.flash-message').offsetHeight
-    );
+    const flashMessageElem: HTMLElement | null =
+      document.querySelector('.flash-message');
+    setFlashMessageHeight(flashMessageElem?.offsetHeight || 0);
     document.documentElement.style.setProperty(
       '--flash-message-height',
-      flashMessageHeight + 'px'
+      `${flashMessageHeight}px`
     );
   }, [flashMessageHeight]);
 
@@ -42,7 +52,7 @@ function Flash({ flashMessage, onClose }) {
       {flashMessage && (
         <div
           style={{
-            height: flashMessageHeight + 'px'
+            height: `${flashMessageHeight}px`
           }}
         />
       )}

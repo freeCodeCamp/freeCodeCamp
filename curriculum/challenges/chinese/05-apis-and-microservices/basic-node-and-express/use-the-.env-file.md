@@ -16,11 +16,15 @@ dashedName: use-the--env-file
 
 添加一个环境变量作为配置选项。
 
-在项目根目录创建一个 `.env` 文件，并存储变量 `MESSAGE_STYLE=uppercase`。 当向 `/json` 发 GET 请求时，如果 `process.env.MESSAGE_STYLE` 的值为 `uppercase`，那么上一次挑战中的路由处理程序返回的对象的消息则应该大写， 即响应对象应该是 `{"message": "HELLO JSON"}`。
+在项目根目录创建一个 `.env` 文件，并存储变量 `MESSAGE_STYLE=uppercase`。
+
+当向 `/json` 发 GET 请求时，如果 `process.env.MESSAGE_STYLE` 的值为 `uppercase`，那么上一次挑战中的路由处理程序返回的对象的消息则应该大写。 响应对象应该是 `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`，取决于 `MESSAGE_STYLE` 的值。
+
+**注意：**如果你正在使用 Replit，你无法创建一个 `.env` 文件。 相反，使用内置的 <dfn>SECRETS</dfn> 标签添加变量。
 
 # --hints--
 
-端口 `/json` 响应的值，应该随着环境变量 `MESSAGE_STYLE` 的变化而改变
+端口 `/json` 响应的值，应该随着环境变量 `MESSAGE_STYLE` 的变化而改变。
 
 ```js
 (getUserInput) =>

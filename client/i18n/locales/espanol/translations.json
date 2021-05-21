@@ -102,6 +102,7 @@
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
+      "must be lowercase": "Username \"{{username}}\" must be lowercase",
       "unavailable": "El nombre de usuario no está disponible",
       "validating": "Validando nombre de usuario...",
       "available": "El nombre de usuario está disponible",
@@ -339,7 +340,7 @@
     "details": "Proporciona tantos detalles como sea posible sobre la cuenta o el comportamiento que estás denunciando.",
     "portfolio": "Reportar un portafolio de usuario",
     "portfolio-2": "¿Quieres reportar el portafolio de {{username}} por abuso?",
-    "notify-1": "Notificaremos al equipo de moderadores de la comunidad y te enviaremos una copia de este informe a tu correo electrónico: <strong>{{email}}</strong>",
+    "notify-1": "We will notify the community moderators' team, and send a copy of this report to your email: <strong>{{email}}</strong>",
     "notify-2": "Es posible que nos comuniquemos contigo para obtener más información, si es necesario.",
     "what": "¿Qué te gustaría reportar?",
     "submit": "Enviar el reporte"
@@ -351,7 +352,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Buscar tutoriales",
+    "placeholder": "Buscar 200+ tutoriales",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -561,7 +562,7 @@
     "complete-project": "Complete {{i18nCertText}} Projects",
     "accept-honesty": "Accept our Academic Honesty Policy",
     "set-name": "Set your name, and make it public",
-    "set-certs-public": "Set your certificication settings to public",
+    "set-certs-public": "Set your certification settings to public",
     "set-profile-public": "Set your profile settings to public",
     "set-claim": "Claim and view your certification"
   }

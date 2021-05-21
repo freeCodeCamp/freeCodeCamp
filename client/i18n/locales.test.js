@@ -31,7 +31,7 @@ const filesThatShouldExist = [
   }
 ];
 
-const path = `${process.cwd()}/i18n/locales`;
+const path = `${__dirname}/locales`;
 
 describe('Locale tests:', () => {
   availableLangs.client.forEach(lang => {

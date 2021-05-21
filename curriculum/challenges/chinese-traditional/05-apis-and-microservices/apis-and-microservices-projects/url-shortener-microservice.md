@@ -11,7 +11,7 @@ dashedName: url-shortener-microservice
 構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://url-shortener-microservice.freecodecamp.rocks/>。 可以採用下面的任意一種方式完成這個挑戰：
 
 -   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) 並在本地完成項目。
--   使用 [repl.it 初始化項目](https://repl.it/github/freeCodeCamp/boilerplate-project-urlshortener) 來完成項目。
+-   使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener)來完成你的項目。
 -   使用你選擇的網站生成器來完成項目， 並確保包含了我們 GitHub 倉庫的所有文件。
 
 當完成本項目，請確認有一個正常運行的 demo 可以公開訪問。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
@@ -34,14 +34,14 @@ dashedName: url-shortener-microservice
 };
 ```
 
-可以通過 POST 請求給 `/api/shorturl/new` 發送一個 URL，並返回一個帶有 `original_url` 和 `short_url` 屬性的 JSON 響應， 例如：`{ original_url : 'https://freeCodeCamp.org', short_url : 1}`。
+可以通過 POST 請求給 `/api/shorturl` 發送一個 URL，並返回一個帶有 `original_url` 和 `short_url` 屬性的 JSON 響應。 例如：`{ original_url : 'https://freeCodeCamp.org', short_url : 1}`。
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
-  const res = await fetch(url + '/api/shorturl/new/', {
+  const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=${fullUrl}`
@@ -64,7 +64,7 @@ async (getUserInput) => {
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
   let shortenedUrlVariable;
-  const postResponse = await fetch(url + '/api/shorturl/new/', {
+  const postResponse = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=${fullUrl}`
@@ -93,7 +93,7 @@ async (getUserInput) => {
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/shorturl/new/', {
+  const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=ftp:/john-doe.org`

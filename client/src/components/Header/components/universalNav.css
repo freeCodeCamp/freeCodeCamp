@@ -196,6 +196,11 @@
   width: 31px;
 }
 
+.navatar .avatar-nav-link:hover,
+.navatar .avatar-nav-link:focus {
+  background-color: var(--theme-color);
+}
+
 .navatar .default-border {
   border: none;
 }
@@ -203,6 +208,10 @@
 .navatar .avatar-container svg {
   display: inline;
   background: var(--secondary-background);
+}
+
+.navatar .avatar-container {
+  height: 100%;
 }
 
 .navatar .avatar-container svg,

@@ -11,7 +11,7 @@ dashedName: exercise-tracker
 构建一个 JavaScript 的全栈应用，在功能上与这个应用相似： <https://exercise-tracker.freecodecamp.rocks/>。 可以采用下面的一种方式完成这个挑战：
 
 -   克隆 [GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) 并在本地完成你的项目。
--   使用 [repl.it 初始化项目](https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker) 来完成项目。
+-   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker)来完成你的项目。
 -   使用你选择的网站生成器来完成项目， 并确保包含了我们 GitHub 仓库的所有文件。
 
 当完成本项目，请确认有一个正常运行的 demo 可以公开访问。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
@@ -29,12 +29,12 @@ dashedName: exercise-tracker
 };
 ```
 
-可以将表单里的 `username` 通过 `POST` 请求发送到 `/api/exercise/new-user`，以创建一个新的用户。 返回的响应内容是一个带有 `username` 和 `_id` 的对象
+可以将表单里的 `username` 通过 `POST` 请求发送到 `/api/users`，以创建一个新的用户。 返回的响应内容是一个带有 `username` 和 `_id` 的对象
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/exercise/new-user', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
@@ -49,12 +49,12 @@ async (getUserInput) => {
 };
 ```
 
-可以发送 `GET` 请求到 `api/exercise/users`，以获取一个所有用户的数组， 数组里的每个元素都是一个包含 `username` 和 `_id` 的用户对象。
+可以发送 `GET` 请求到 `/api/users`，以获取一个所有用户的数组， 数组里的每个元素都是一个包含 `username` 和 `_id` 的用户对象。
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/exercise/users');
+  const res = await fetch(url + '/api/users');
   if (res.ok) {
     const data = await res.json();
     assert.isArray(data);
@@ -66,12 +66,12 @@ async (getUserInput) => {
 };
 ```
 
-你能用表单里的 `userId=_id`，`description`，`duration` 和 `date`（可选）发送 `POST` 请求到 `/api/exercise/add`。 如果没有传入 date，默认采用当前日期。 响应内容是包含 exercise 表单内容的 user 对象。
+你能用表单里的 `description`、`duration` 和 `date`（可选）发送 `POST` 请求到 `/api/users/:_id/exercises`。 如果没有传入 date，默认采用当前日期。 响应内容是包含 exercise 表单内容的 user 对象。
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/exercise/new-user', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
@@ -85,10 +85,10 @@ async (getUserInput) => {
       _id,
       date: 'Mon Jan 01 1990'
     };
-    const addRes = await fetch(url + '/api/exercise/add', {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
+      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
     if (addRes.ok) {
       const actual = await addRes.json();
@@ -102,12 +102,12 @@ async (getUserInput) => {
 };
 ```
 
-可以向 `/api/exercise/log` 发送参数为 `userId=_id` 的 `GET` 请求，并检索全部的 exercise 日志。 响应内容是一个 user 对象，它带有一个 `log` 属性，该属性的值是所有被添加的 exercises 表单记录组成的数组， 每一个 log 数组里的元素应该是一个含有 `description`、`duration` 和 `date` 等属性的对象。
+可以发送 `GET` 请求到 `/api/users/:_id/logs`，以获取任何用户的完整 exercise 日志。 响应内容是一个 user 对象，它带有一个 `log` 属性，该属性的值是所有被添加的 exercises 表单记录组成的数组， 每一个 log 数组里的元素应该是一个含有 `description`、`duration` 和 `date` 等属性的对象。
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/exercise/new-user', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
@@ -121,13 +121,13 @@ async (getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addRes = await fetch(url + '/api/exercise/add', {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}`
+      body: `description=${expected.description}&duration=${expected.duration}`
     });
     if (addRes.ok) {
-      const logRes = await fetch(url + `/api/exercise/log?userId=${_id}`);
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if (logRes.ok) {
         const { log } = await logRes.json();
         assert.isArray(log);
@@ -144,12 +144,12 @@ async (getUserInput) => {
 };
 ```
 
-用户日志请求 (`/api/exercise/log`) 返回一个带有 `count` 属性的对象，该属性反映 exercises 表单的成功提交次数（译者注：即 log 属性元素的个数）。
+用户日志请求（`/api/users/:_id/logs`）返回一个带有 `count` 属性的对象，该属性反映 exercises 表单的成功提交次数（译者注：即 log 属性元素的个数）。
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/exercise/new-user', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
@@ -163,13 +163,13 @@ async (getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addRes = await fetch(url + '/api/exercise/add', {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}`
+      body: `description=${expected.description}&duration=${expected.duration}`
     });
     if (addRes.ok) {
-      const logRes = await fetch(url + `/api/exercise/log?userId=${_id}`);
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if (logRes.ok) {
         const { count } = await logRes.json();
         assert(count);
@@ -185,12 +185,12 @@ async (getUserInput) => {
 };
 ```
 
-可以把 `from`、`to` 和 `limit` 等参数添加到 `/api/exercise/log` 的请求，以查询该用户的部分 exercise 表单提交记录， `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 数量。
+可以把 `from`、`to` 和 `limit` 参数添加到一个 `/api/users/:_id/logs` 请求，以查询该用户的部分 exercise 表单提交记录， `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 数量。
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/exercise/new-user', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
@@ -204,19 +204,19 @@ async (getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addExerciseRes = await fetch(url + '/api/exercise/add', {
+    const addExerciseRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
+      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
-    const addExerciseTwoRes = await fetch(url + '/api/exercise/add', {
+    const addExerciseTwoRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}&date=1990-01-02`
+      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-02`
     });
     if (addExerciseRes.ok && addExerciseTwoRes.ok) {
       const logRes = await fetch(
-        url + `/api/exercise/log?userId=${_id}&from=1989-12-31&to=1990-01-03`
+        url + `/api/users/${_id}/logs?from=1989-12-31&to=1990-01-03`
       );
       if (logRes.ok) {
         const { log } = await logRes.json();
@@ -226,7 +226,7 @@ async (getUserInput) => {
         throw new Error(`${logRes.status} ${logRes.statusText}`);
       }
       const limitRes = await fetch(
-        url + `/api/exercise/log?userId=${_id}&limit=1`
+        url + `/api/users/${_id}/logs?limit=1`
       );
       if (limitRes.ok) {
         const { log } = await limitRes.json();

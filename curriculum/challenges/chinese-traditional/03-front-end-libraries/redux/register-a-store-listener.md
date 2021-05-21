@@ -32,10 +32,16 @@ assert(
 應該有一個監聽函數 `store.subscribe` 訂閱 store。
 
 ```js
-(getUserInput) => assert(getUserInput('index').includes('store.subscribe('));
+(getUserInput) => assert(getUserInput('index').match(/store\s*\.\s*subscribe\(/gm));
 ```
 
-在更新 store 時，`store.subscribe` 應該在回調中使全局變量 `count` 增加。
+`store.subscribe` 應該收到一個函數。
+
+```js
+(getUserInput) => assert(getUserInput('index').match(/(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm)) 
+```
+
+在更新 store 時，`store.subscribe` 應該在回調中使全局變量 `count` 的值增加。
 
 ```js
 assert(store.getState() === count);

@@ -28,7 +28,7 @@ module.exports = {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'disabled',
-        generateStatsFile: true
+        generateStatsFile: process.env.CI
       }
     },
     'gatsby-plugin-react-helmet',

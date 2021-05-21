@@ -457,6 +457,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
 | `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm run storybook`                                            | Starts Storybook for component library development.                                 |
 | `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
 | `npm run test:client`                                          | Run the client test suite.                                                          |
 | `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |

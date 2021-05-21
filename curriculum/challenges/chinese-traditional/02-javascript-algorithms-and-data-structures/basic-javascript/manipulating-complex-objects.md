@@ -59,65 +59,69 @@ var ourMusic = [
 assert(Array.isArray(myMusic));
 ```
 
-`myMusic` 應該至少包含兩個元素
+`myMusic`應該有至少2個元素。
 
 ```js
 assert(myMusic.length > 1);
 ```
 
-`myMusic[1]` 應該是一個對象
+`myMusic`元素數組中應該是物體
 
 ```js
-assert(typeof myMusic[1] === 'object');
+myMusic.forEach(object => {assert.typeOf(object, 'object')})
 ```
 
-`myMusic[1]` 至少要包含四個屬性
+`myMusic` 中的對象應該至少有 4 個屬性。
 
 ```js
-assert(Object.keys(myMusic[1]).length > 3);
+myMusic.forEach(object => {assert(Object.keys(object).length > 3); });
 ```
 
-`myMusic[1]` 應該包含一個類型爲字符串的 `artist` 的屬性
+`myMusic` 中的對象應該包含一個類型爲字符串的屬性 `artist`。
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['artist']);
+  assert.typeOf(object.artist, 'string')
+})
 ```
 
-`myMusic[1]` 應該包含一個類型爲字符串的 `title` 屬性
+`myMusic` 中的對象應該包含一個類型爲字符串的屬性 `title`。
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['title']);
+  assert.typeOf(object.title, 'string')
+})
 ```
 
-`myMusic[1]` 應該包含一個類型爲數字的 `release_year` 屬性
+`myMusic` 中的對象應該包含一個類型爲數字的屬性 `release_year`。
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('release_year') &&
-    typeof myMusic[1].release_year === 'number'
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['release_year']);
+  assert.typeOf(object.release_year, 'number')
+})
 ```
 
-`myMusic[1]` 應該包含一個類型爲數組的 `formats` 屬性
+`myMusic` 中的對象應該包含一個類型爲數組的 `formats` 屬性。
 
 ```js
-assert(
-  myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats)
-);
+myMusic.forEach(object => {
+  assert.containsAllKeys(object, ['formats']);
+  assert.typeOf(object.formats, 'array')
+})
 ```
 
 `formats`應該是一個至少包含兩個字符串元素的數組
 
 ```js
-assert(
-  myMusic[1].formats.every(function (item) {
-    return typeof item === 'string';
-  }) && myMusic[1].formats.length > 1
-);
+myMusic.forEach(object => {
+  object.formats.forEach(format => {
+    assert.typeOf(format, 'string')
+  });
+  assert.isAtLeast(object.formats.length, 2)
+})
 ```
 
 # --seed--
@@ -143,7 +147,6 @@ var myMusic = [
     ],
     "gold": true
   }
-  // Add a record here
 ];
 ```
 

@@ -22,7 +22,7 @@ function(req, res) {
 
 # --instructions--
 
-當 GET 請求 `/`（根路由 ）時，使用 `app.get()` 方法響應一個“Hello Express”字符串。 通過查看日誌確保代碼正常運行，如果使用 Repl.it 可以在預覽中查看結果。
+當 GET 請求 `/`（根路由 ）時，使用 `app.get()` 方法響應一個“Hello Express”字符串。 通過查看日誌確保代碼正常運行，如果使用 Replit 可以在預覽中查看結果。
 
 **注意：** 這些課程的所有代碼應該放在開始給出的幾行代碼之間。
 

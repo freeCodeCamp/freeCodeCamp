@@ -276,14 +276,9 @@ export class CertificationSettings extends Component {
     );
   };
   renderProjectsFor = (certName, isCert, projectsMap) => {
-    const {
-      username,
-      isHonest,
-      createFlashMessage,
-      t,
-      verifyCert
-    } = this.props;
-    const { certSlug } = first(projectsMap[certName]);
+    const { username, isHonest, createFlashMessage, t, verifyCert } =
+      this.props;
+    const { certSlug } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${certSlug}`;
     const createClickHandler = certSlug => e => {
       e.preventDefault();

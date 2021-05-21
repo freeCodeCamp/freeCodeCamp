@@ -102,6 +102,7 @@
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
       "is a reserved error code": "Username \"{{username}}\" is a reserved error code",
+      "must be lowercase": "Username \"{{username}}\" must be lowercase",
       "unavailable": "Username not available",
       "validating": "Validating username...",
       "available": "Username is available",
@@ -339,7 +340,7 @@
     "details": "Please provide as much detail as possible about the account or behavior you are reporting.",
     "portfolio": "Report a users portfolio",
     "portfolio-2": "Do you want to report {{username}}'s portfolio for abuse?",
-    "notify-1": "We will notify the community moderators' team, and a send copy of this report to your email: <strong>{{email}}</strong>",
+    "notify-1": "We will notify the community moderators' team, and send a copy of this report to your email: <strong>{{email}}</strong>",
     "notify-2": "We may get back to you for more information, if required.",
     "what": "What would you like to report?",
     "submit": "Submit the report"
@@ -351,7 +352,7 @@
   },
   "search": {
     "label": "Search",
-    "placeholder": "Search 6,000+ tutorials",
+    "placeholder": "Search 7,000+ tutorials",
     "see-results": "See all results for {{searchQuery}}",
     "no-tutorials": "No tutorials found",
     "try": "Looking for something? Try the search bar on this page.",
@@ -561,7 +562,7 @@
     "complete-project": "Complete {{i18nCertText}} Projects",
     "accept-honesty": "Accept our Academic Honesty Policy",
     "set-name": "Set your name, and make it public",
-    "set-certs-public": "Set your certificication settings to public",
+    "set-certs-public": "Set your certification settings to public",
     "set-profile-public": "Set your profile settings to public",
     "set-claim": "Claim and view your certification"
   }

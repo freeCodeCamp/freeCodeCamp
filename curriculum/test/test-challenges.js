@@ -11,7 +11,7 @@ require('@babel/polyfill');
 require('@babel/register')({
   root: clientPath,
   babelrc: false,
-  presets: ['@babel/preset-env'],
+  presets: ['@babel/preset-env', '@babel/typescript'],
   plugins: ['dynamic-import-node'],
   ignore: [/node_modules/],
   only: [clientPath]
@@ -68,9 +68,10 @@ const TRANSLATABLE_COMMENTS = getTranslatableComments(
 );
 
 // the config files are created during the build, but not before linting
-// eslint-disable-next-line import/no-unresolved
-const testEvaluator = require('../../config/client/test-evaluator.json')
-  .filename;
+/* eslint-disable import/no-unresolved */
+const testEvaluator =
+  require('../../config/client/test-evaluator.json').filename;
+/* eslint-enable import/no-unresolved */
 const { inspect } = require('util');
 
 const commentExtractors = {
