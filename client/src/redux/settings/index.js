@@ -5,10 +5,6 @@ import { createDangerZoneSaga } from './danger-zone-saga';
 import { createSettingsSagas } from './settings-sagas';
 import { createUpdateMyEmailSaga } from './update-email-saga';
 
-// prettier-ignore
-import { createUpdateLegacyCertSaga } from
-'./update-legacy-certificate-saga';
-
 export const ns = 'settings';
 
 const defaultFetchState = {
@@ -31,7 +27,6 @@ export const types = createTypes(
     ...createAsyncTypes('submitNewAbout'),
     ...createAsyncTypes('submitNewUsername'),
     ...createAsyncTypes('updateMyEmail'),
-    ...createAsyncTypes('updateLegacyCert'),
     ...createAsyncTypes('updateUserFlag'),
     ...createAsyncTypes('submitProfileUI'),
     ...createAsyncTypes('verifyCert'),
@@ -44,8 +39,7 @@ export const types = createTypes(
 export const sagas = [
   ...createSettingsSagas(types),
   ...createUpdateMyEmailSaga(types),
-  ...createDangerZoneSaga(types),
-  ...createUpdateLegacyCertSaga(types)
+  ...createDangerZoneSaga(types)
 ];
 
 const checkForSuccessPayload = ({ type, payload }) =>
@@ -77,12 +71,6 @@ export const submitProfileUIError = createAction(types.submitProfileUIError);
 export const updateMyEmail = createAction(types.updateMyEmail);
 export const updateMyEmailComplete = createAction(types.updateMyEmailComplete);
 export const updateMyEmailError = createAction(types.updateMyEmailError);
-
-export const updateLegacyCert = createAction(types.updateLegacyCert);
-export const updateLegacyCertComplete = createAction(
-  types.updateLegacyCertComplete
-);
-export const updateLegacyCertError = createAction(types.updateLegacyCertError);
 
 export const updateUserFlag = createAction(types.updateUserFlag);
 export const updateUserFlagComplete = createAction(

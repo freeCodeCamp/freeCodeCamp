@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import { find, first } from 'lodash-es';
 import {
   Table,
@@ -25,10 +23,6 @@ import { FullWidthRow, Spacer } from '../helpers';
 import { maybeUrlRE } from '../../utils';
 
 import './certification.css';
-import { updateLegacyCert } from '../../redux/settings';
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ updateLegacyCert }, dispatch);
 
 const propTypes = {
   completedChallenges: PropTypes.arrayOf(
@@ -59,7 +53,6 @@ const propTypes = {
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
   t: PropTypes.func.isRequired,
-  updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
 };
@@ -462,7 +455,4 @@ export class CertificationSettings extends Component {
 CertificationSettings.displayName = 'CertificationSettings';
 CertificationSettings.propTypes = propTypes;
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(withTranslation()(CertificationSettings));
+export default withTranslation()(CertificationSettings);

@@ -248,7 +248,6 @@ const defaultTestProps = {
   isSciCompPyCertV7: false,
   isDataAnalysisPyCertV7: false,
   isMachineLearningPyCertV7: false,
-  updateLegacyCert: () => {},
   username: 'developmentuser',
   verifyCert: () => {},
   errors: {},
