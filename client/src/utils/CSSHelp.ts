@@ -117,13 +117,19 @@ class CSSHelp {
     const cssRules = cond?.cssRules;
     return Array.from(cssRules || []) as CSSStyleRule[];
   }
-  getStyleSheet(): CSSStyleSheet | null | undefined {
+  getStyleSheet(): CSSStyleSheet | null {
     // TODO: Change selector to match exactly 'styles.css'
-    const link = this.doc?.querySelector(
+    const link: HTMLLinkElement | null = this.doc?.querySelector(
       "link[href*='styles']"
-    ) as HTMLLinkElement | null;
-    const style = this.doc?.querySelector('style');
-    return link ? link?.sheet : style?.sheet;
+    );
+    const style: HTMLStyleElement | null = this.doc?.querySelector('style');
+    if (link) {
+      return link.sheet;
+    } else if (style) {
+      return style.sheet;
+    } else {
+      return null;
+    }
   }
   styleSheetToCssRulesArray(
     styleSheet: ReturnType<CSSHelp['getStyleSheet']>
