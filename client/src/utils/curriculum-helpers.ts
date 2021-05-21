@@ -1,5 +1,6 @@
 import { parse } from '@babel/parser';
 import generate from '@babel/generator';
+import CSSHelp from './CSSHelp';
 
 const removeHtmlComments = (str: string): string =>
   str.replace(/<!--[\s\S]*?(-->|$)/g, '');
@@ -18,6 +19,7 @@ export const removeJSComments = (codeStr: string): string => {
   };
   try {
     const ast = parse(codeStr);
+    // TODO: Sort out type error on ast
     const { code } = generate(ast, options, codeStr);
     return code;
   } catch (err) {
@@ -29,56 +31,11 @@ const removeWhiteSpace = (str = ''): string => {
   return str.replace(/\s/g, '');
 };
 
-const CSSTypes = {
-  style: 1,
-  import: 3,
-  media: 4,
-  fontface: 5,
-  keyframes: 7
-};
-
-class CSSHelp {
-  doc: HTMLDocument;
-  constructor(doc: HTMLDocument) {
-    this.doc = doc;
-  }
-  getStyle(element: string): CSSStyleDeclaration | undefined {
-    const styleElement = this.doc?.querySelector(
-      '#display-body > style:nth-child(1)'
-    ) as HTMLStyleElement;
-    const styleSheet = styleElement?.sheet as CSSStyleSheet;
-    const styleRule = [...styleSheet.cssRules]?.filter(
-      ele => ele.type === CSSTypes.style
-    ) as [CSSStyleRule] | undefined;
-    return styleRule?.find(ele => ele?.selectorText === element)?.style;
-  }
-  getCSSRules(element?: string): CSSRule[] | undefined {
-    const styleElement = this.doc?.querySelector(
-      '#display-body > style:nth-child(1)'
-    ) as HTMLStyleElement;
-    const styleSheet = styleElement?.sheet as CSSStyleSheet;
-    const cssRules = [...styleSheet.cssRules];
-    switch (element) {
-      case 'media':
-        return cssRules?.filter(ele => ele.type === CSSTypes.media);
-      case 'fontface':
-        return cssRules?.filter(ele => ele.type === CSSTypes.fontface);
-      case 'import':
-        return cssRules?.filter(ele => ele.type === CSSTypes.import);
-      case 'keyframes':
-        return cssRules?.filter(ele => ele.type === CSSTypes.keyframes);
-      default:
-        return cssRules;
-    }
-  }
-}
-
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
   removeWhiteSpace,
-  CSSHelp,
-  CSSTypes
+  CSSHelp
 };
 
 export default curriculumHelpers;

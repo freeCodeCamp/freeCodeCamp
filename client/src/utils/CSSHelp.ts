@@ -6,93 +6,122 @@ const CSSTypes = {
   keyframes: 7
 };
 
-// @ts-ignore - top-class coding...
-CSSStyleRule.prototype.isDeclaredAfter = function (selector: string) {
-  // Could use some clean up...
-  // @ts-ignore
-  const cssStyleRules = Array.from(this.parentStyleSheet.cssRules)?.filter(
-    ele => ele.type === CSSTypes.style
-  ) as CSSStyleRule[];
-  const previousStyleRule = cssStyleRules.find(
-    ele => ele?.selectorText === selector
-  );
-  // @ts-ignore
-  const currPosition = Array.from(this.parentStyleSheet.cssRules).indexOf(this);
-  // @ts-ignore
-  const prevPosition = Array.from(
-    // @ts-ignore
-    previousStyleRule?.parentStyleSheet?.cssRules
-    // @ts-ignore
-  ).indexOf(previousStyleRule);
-  return currPosition > prevPosition;
-};
+type Rule<T> = T[] | undefined;
+
+export interface ExtendedStyleRule extends CSSStyleRule {
+  isDeclaredAfter: (selector: string) => boolean;
+}
+
+// TODO: add position property to reduce logic in isDeclaredAfter
+Object.defineProperty(CSSStyleRule.prototype, 'position', {
+  set: function () {
+    const cssRules = this.parentStyleSheet?.cssRules as
+      | CSSStyleRule
+      | undefined;
+    const cssRulesArr = Array.from(cssRules);
+    return cssRulesArr?.indexOf(this);
+  }
+});
+
+Object.defineProperty(CSSStyleRule.prototype, 'isDeclaredAfter', {
+  value: function (selector: string) {
+    // Could use some clean up...
+    const cssStyleRules = Array.from(
+      (this as CSSStyleRule).parentStyleSheet?.cssRules || []
+    )?.filter(ele => ele.type === CSSTypes.style) as CSSStyleRule[];
+    const previousStyleRule = cssStyleRules.find(
+      ele => ele?.selectorText === selector
+    );
+    if (!previousStyleRule) return false;
+    const currPosition = Array.from(
+      (this as CSSStyleRule).parentStyleSheet?.cssRules || []
+    ).indexOf(this);
+    const prevPosition = Array.from(
+      previousStyleRule?.parentStyleSheet?.cssRules || []
+    ).indexOf(previousStyleRule);
+    return currPosition > prevPosition;
+  }
+});
 
 class CSSHelp {
   doc: HTMLDocument;
   constructor(doc: HTMLDocument) {
     this.doc = doc;
   }
-  getStyleDeclarations(element: string): CSSStyleDeclaration[] | undefined {
+  getStyleDeclarations(selector: string): CSSStyleDeclaration[] | undefined {
     const styleSheet = this.getStyleSheet();
-    const styleRule = Array.from(styleSheet.cssRules)?.filter(
+    const styleRule = this.styleSheetToCssRulesArray(styleSheet)?.filter(
       ele => ele.type === CSSTypes.style
     ) as CSSStyleRule[] | undefined;
     return styleRule
-      ?.filter(ele => ele?.selectorText === element)
+      ?.filter(ele => ele?.selectorText === selector)
       .map(x => x.style);
   }
-  getStyleDeclaration(element: string): CSSStyleDeclaration | undefined {
+  getStyleDeclaration(selector: string): CSSStyleDeclaration | undefined {
     const styleSheet = this.getStyleSheet();
-    const styleRule = Array.from(styleSheet.cssRules)?.filter(
+    const styleRule = this.styleSheetToCssRulesArray(styleSheet)?.filter(
       ele => ele.type === CSSTypes.style
     ) as CSSStyleRule[] | undefined;
-    return styleRule?.find(ele => ele?.selectorText === element)?.style;
+    return styleRule?.find(ele => ele?.selectorText === selector)?.style;
   }
   getStyleRule(selector: string): CSSStyleRule | undefined {
     const styleSheet = this.getStyleSheet();
-    const styleRule = Array.from(styleSheet.cssRules)?.filter(
+    const styleRule = this.styleSheetToCssRulesArray(styleSheet)?.filter(
       ele => ele.type === CSSTypes.style
     ) as CSSStyleRule[] | undefined;
     return styleRule?.find(ele => ele?.selectorText === selector);
   }
-  getCSSRules(element?: string): CSSRule[] | undefined {
+  getCSSRules(element?: string) {
     const styleSheet = this.getStyleSheet();
-    const cssRules = Array.from(styleSheet.cssRules);
+    const cssRules = this.styleSheetToCssRulesArray(styleSheet);
     switch (element) {
       case 'media':
-        return cssRules?.filter(ele => ele.type === CSSTypes.media);
+        return cssRules?.filter(
+          ele => ele.type === CSSTypes.media
+        ) as Rule<CSSMediaRule>;
       case 'fontface':
-        return cssRules?.filter(ele => ele.type === CSSTypes.fontface);
+        return cssRules?.filter(
+          ele => ele.type === CSSTypes.fontface
+        ) as Rule<CSSFontFaceRule>;
       case 'import':
-        return cssRules?.filter(ele => ele.type === CSSTypes.import);
+        return cssRules?.filter(
+          ele => ele.type === CSSTypes.import
+        ) as Rule<CSSImportRule>;
       case 'keyframes':
-        return cssRules?.filter(ele => ele.type === CSSTypes.keyframes);
+        return cssRules?.filter(
+          ele => ele.type === CSSTypes.keyframes
+        ) as Rule<CSSKeyframesRule>;
       default:
-        return cssRules;
+        return cssRules as Rule<CSSRule>;
     }
   }
   isPropertyUsed(property: string): boolean {
     const styleSheet = this.getStyleSheet();
-    const cssStyleRules = Array.from(styleSheet.cssRules).filter(
+    const cssStyleRules = this.styleSheetToCssRulesArray(styleSheet).filter(
       ele => ele.type === CSSTypes.style
-    ) as CSSStyleRule[];
-    // @ts-ignore
-    return cssStyleRules.some(ele => ele?.style?.getPropertyValue(property));
+    ) as CSSStyleRule[] | undefined;
+    return (
+      cssStyleRules?.some(ele => ele.style?.getPropertyValue(property)) ?? false
+    );
   }
   getRuleListsWithinMedia(conditionText: string): CSSStyleRule[] {
-    const medias = this.getCSSRules('media') as CSSMediaRule[] | undefined;
-    const cond = medias?.find(x => x.conditionText === conditionText) as
-      | CSSMediaRule
-      | undefined;
-    const cssRules = cond?.cssRules as CSSRuleList;
-    return Array.from(cssRules) as CSSStyleRule[];
+    const medias = this.getCSSRules('media') as Rule<CSSMediaRule>;
+    const cond = medias?.find(x => x.conditionText === conditionText);
+    const cssRules = cond?.cssRules;
+    return Array.from(cssRules || []) as CSSStyleRule[];
   }
-  getStyleSheet() {
+  getStyleSheet(): CSSStyleSheet | null | undefined {
     // TODO: Change selector to match exactly 'styles.css'
     const link = this.doc?.querySelector(
       "link[href*='styles']"
-    ) as HTMLLinkElement;
-    return link?.sheet as CSSStyleSheet;
+    ) as HTMLLinkElement | null;
+    const style = this.doc?.querySelector('style');
+    return link ? link?.sheet : style?.sheet;
+  }
+  styleSheetToCssRulesArray(
+    styleSheet: ReturnType<CSSHelp['getStyleSheet']>
+  ): CSSRule[] {
+    return Array.from(styleSheet?.cssRules || []);
   }
 }
 

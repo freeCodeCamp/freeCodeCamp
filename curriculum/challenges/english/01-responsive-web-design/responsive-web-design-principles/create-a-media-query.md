@@ -43,8 +43,8 @@ assert(media.some(x => x.conditionText?.includes('(max-height: 800px)')));
 Your `p` element should have a `font-size` of `10px` when the device `height` is less than or equal to `800px`.
 
 ```js
-const media = new __helpers.CSSHelp(document).getCSSRules('media');
-assert([...media?.find(x => x?.conditionText?.includes('(max-height: 800px)')).cssRules]?.find(x => x.selectorText === 'p')?.style.fontSize === "10px");
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-height: 800px)');
+assert(rules?.find(x => x.selectorText === 'p')?.style.fontSize === "10px");
 ```
 
 Your `p` element should have an initial `font-size` of `20px` when the device `height` is more than `800px`.
