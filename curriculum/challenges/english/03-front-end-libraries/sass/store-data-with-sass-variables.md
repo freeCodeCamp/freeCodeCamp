@@ -39,13 +39,13 @@ Create a variable `$text-color` and set it to `red`. Then change the value of th
 Your code should have a Sass variable declared for `$text-color` with a value of `red`.
 
 ```js
-assert(code.match(/\$text-color:\s*?red;/g));
+assert(code.match(/\$text-color\s*:\s*?red\s*;/g));
 ```
 
 Your code should use the `$text-color` variable to change the `color` for the `.blog-post` and `h2` items.
 
 ```js
-assert(code.match(/color:\s*?\$text-color;/g));
+assert(code.match(/color\s*:\s*\$text-color\s*;?/g));
 ```
 
 Your `.blog-post` element should have a `color` of red.
