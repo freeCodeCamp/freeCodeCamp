@@ -15,12 +15,12 @@
   --yellow-light: #ffc300;
   --yellow-dark: #4d3800;
   --blue-light: rgb(153, 201, 255);
-  --blue-light-translucent: rgb(153, 201, 255, 0.3);
+  --blue-light-translucent: rgba(153, 201, 255, 0.3);
   --blue-dark: rgb(0, 46, 173);
-  --blue-dark-translucent: rgb(0, 46, 173, 0.3);
+  --blue-dark-translucent: rgba(0, 46, 173, 0.3);
   --green-light: #acd157;
   --blue-mid: #198eee;
-  --purple-mid: darkviolet;
+  --purple-mid: #9400d3;
   --green-dark: #00471b;
   --red-light: #ffadad;
   --red-dark: #850000;
