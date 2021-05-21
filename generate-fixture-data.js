@@ -1,4 +1,4 @@
-const { writeFileSync } = require('fs');
+const { writeFileSync, mkdirSync } = require('fs');
 const getChallenge = require('./curriculum/getChallenges');
 const path = require('path');
 
@@ -28,6 +28,15 @@ function initCurriculum() {
   });
 }
 
+function createDirs() {
+  mkdirSync(path.join(__dirname, '/cypress/fixtures/pathData'));
+  mkdirSync(path.join(__dirname, '/cypress/fixtures/pathData/challenges'));
+  mkdirSync(
+    path.join(__dirname, '/cypress/fixtures/pathData/projectsAndBackChallenges')
+  );
+}
+
+createDirs();
 initCurriculum();
 
 function createPaths(curriculum, superblock, blocks) {

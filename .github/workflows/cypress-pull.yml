@@ -1,6 +1,6 @@
 name: Cypress - Pull-request
 on:
-  pull:
+  pull_request:
 
 jobs:
   cypress-run:
