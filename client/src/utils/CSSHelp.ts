@@ -13,35 +13,33 @@ export interface ExtendedStyleRule extends CSSStyleRule {
 }
 
 // TODO: add position property to reduce logic in isDeclaredAfter
-Object.defineProperty(CSSStyleRule.prototype, 'position', {
-  set: function () {
-    const cssRules = this.parentStyleSheet?.cssRules as
-      | CSSStyleRule
-      | undefined;
+const getPosition = (styleRule: CSSStyleRule) => {
+  const cssRules = styleRule?.parentStyleSheet?.cssRules;
+  if (cssRules && styleRule) {
     const cssRulesArr = Array.from(cssRules);
-    return cssRulesArr?.indexOf(this);
+    return cssRulesArr?.indexOf(styleRule);
+  } else {
+    return null;
   }
-});
+};
 
-Object.defineProperty(CSSStyleRule.prototype, 'isDeclaredAfter', {
-  value: function (selector: string) {
-    // Could use some clean up...
-    const cssStyleRules = Array.from(
-      (this as CSSStyleRule).parentStyleSheet?.cssRules || []
-    )?.filter(ele => ele.type === CSSTypes.style) as CSSStyleRule[];
-    const previousStyleRule = cssStyleRules.find(
-      ele => ele?.selectorText === selector
-    );
-    if (!previousStyleRule) return false;
-    const currPosition = Array.from(
-      (this as CSSStyleRule).parentStyleSheet?.cssRules || []
-    ).indexOf(this);
-    const prevPosition = Array.from(
-      previousStyleRule?.parentStyleSheet?.cssRules || []
-    ).indexOf(previousStyleRule);
-    return currPosition > prevPosition;
-  }
-});
+const getIsDeclaredAfter = (styleRule: CSSStyleRule) => (selector: string) => {
+  // Could use some clean up...
+  const cssStyleRules = Array.from(
+    styleRule.parentStyleSheet?.cssRules || []
+  )?.filter(ele => ele.type === CSSTypes.style) as CSSStyleRule[];
+  const previousStyleRule = cssStyleRules.find(
+    ele => ele?.selectorText === selector
+  );
+  if (!previousStyleRule) return false;
+  const currPosition = Array.from(
+    styleRule.parentStyleSheet?.cssRules || []
+  ).indexOf(styleRule);
+  const prevPosition = Array.from(
+    previousStyleRule?.parentStyleSheet?.cssRules || []
+  ).indexOf(previousStyleRule);
+  return currPosition > prevPosition;
+};
 
 class CSSHelp {
   doc: HTMLDocument;
@@ -64,12 +62,21 @@ class CSSHelp {
     ) as CSSStyleRule[] | undefined;
     return styleRule?.find(ele => ele?.selectorText === selector)?.style;
   }
-  getStyleRule(selector: string): CSSStyleRule | undefined {
+  getStyleRule(selector: string): ExtendedStyleRule | null {
     const styleSheet = this.getStyleSheet();
-    const styleRule = this.styleSheetToCssRulesArray(styleSheet)?.filter(
+    const styleRules = this.styleSheetToCssRulesArray(styleSheet)?.filter(
       ele => ele.type === CSSTypes.style
     ) as CSSStyleRule[] | undefined;
-    return styleRule?.find(ele => ele?.selectorText === selector);
+    const styleRule = styleRules?.find(ele => ele?.selectorText === selector);
+    if (styleRule) {
+      return {
+        ...styleRule,
+        isDeclaredAfter: (selector: string) =>
+          getIsDeclaredAfter(styleRule)(selector)
+      };
+    } else {
+      return null;
+    }
   }
   getCSSRules(element?: string) {
     const styleSheet = this.getStyleSheet();
