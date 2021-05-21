@@ -31,7 +31,7 @@
     "@storybook/react": "6.2.9",
     "autoprefixer": "10.2.5",
     "babel-loader": "8.2.2",
-    "postcss": "8.2.15",
+    "postcss": "8.3.0",
     "postcss-import": "14.0.2",
     "tailwindcss": "2.1.2"
   },
