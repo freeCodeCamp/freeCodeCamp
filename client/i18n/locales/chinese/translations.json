@@ -102,6 +102,7 @@
       "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
       "is too short": "用户名 \"{{username}}\" 太短",
       "is a reserved error code": "\"{{username}}\" 是错误代码，不可用作用户名",
+      "must be lowercase": "Username \"{{username}}\" must be lowercase",
       "unavailable": "用户名不可用",
       "validating": "验证用户名......",
       "available": "用户名可用",
