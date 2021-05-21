@@ -88,6 +88,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   const indexHtml = findIndexHtml(files);
 
   const source = files.reduce((source, file) => {
+    if (!indexHtml) return source.concat(file.contents, htmlCatch);
     if (
       indexHtml.includes.includes(file.history[0]) ||
       file.history[0] === 'index.html'
