@@ -8,7 +8,18 @@ dashedName: problem-89-roman-numerals
 
 # --description--
 
-For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a "best" way of writing a particular number.
+For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a *best* way of writing a particular number.
+
+- Numerals must be arranged in descending order of size.
+- M, C, and X cannot be equalled or exceeded by smaller denominations.
+- D, L, and V can each only appear once.
+
+In addition to the three rules given above, if subtractive combinations are used then the following four rules must be followed.
+
+- Only one I, X, and C can be used as the leading numeral in part of a subtractive pair.
+- I can only be placed before V and X.
+- X can only be placed before L and C.
+- C can only be placed before D and M.
 
 For example, it would appear that there are at least six ways of writing the number sixteen:
 
