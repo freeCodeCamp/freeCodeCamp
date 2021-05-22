@@ -30,7 +30,7 @@ const propTypes = {
 class AboutSettings extends Component {
   constructor(props) {
     super(props);
-
+    this.validationImage = new Image();
     const { name = '', location = '', picture = '', about = '' } = props;
     const values = {
       name,
@@ -113,21 +113,22 @@ class AboutSettings extends Component {
     }));
   };
 
+  componentDidMount() {
+    this.validationImage.addEventListener('error', this.errorEvent);
+    this.validationImage.addEventListener('load', this.loadEvent);
+  }
+
+  componentWillUnmount() {
+    this.validationImage.removeEventListener('load', this.loadEvent);
+    this.validationImage.removeEventListener('error', this.errorEvent);
+  }
+
+  loadEvent = () => this.setState({ isPictureUrlValid: true });
+  errorEvent = () => this.setState({ isPictureUrlValid: false });
+
   handlePictureChange = e => {
     const value = e.target.value.slice(0);
-    let pictureImage = new Image();
-    pictureImage.src = value;
-    const loadEvent = () => {
-      this.setState({ isPictureUrlValid: true });
-      pictureImage.removeEventListener('error', errorEvent);
-    };
-    const errorEvent = () => {
-      this.setState({ isPictureUrlValid: false });
-      pictureImage.removeEventListener('load', loadEvent);
-    };
-
-    pictureImage.addEventListener('load', loadEvent);
-    pictureImage.addEventListener('error', errorEvent);
+    this.validationImage.src = value;
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
