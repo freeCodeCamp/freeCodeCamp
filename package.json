@@ -85,6 +85,7 @@
     "test-server": "jest api-server",
     "test-tools": "jest tools",
     "test-utils": "jest utils",
+    "test:ui-components": "jest tools/ui-components",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -114,11 +115,13 @@
     "eslint": "7.27.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jest-dom": "3.9.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prefer-object-spread": "1.2.1",
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "2.5.1",
+    "eslint-plugin-testing-library": "4.5.1",
     "execa": "5.1.0",
     "husky": "6.0.0",
     "jest": "26.6.3",

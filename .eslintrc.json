@@ -10,7 +10,9 @@
   "extends": [
     "./.eslintrc-base.json",
     "plugin:prettier/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react"
   ],
   "plugins": [
     "react",
@@ -18,7 +20,9 @@
     "prefer-object-spread",
     "prettier",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
+    "jest-dom",
+    "testing-library"
   ],
   "globals": {
     "Promise": true,
