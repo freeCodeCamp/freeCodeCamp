@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     colors: {
       // Configure the color palette here
-      darkGreen: '#00471b'
+      darkGreen: '#00471b',
+      yellow: '#f1be32'
     }
   },
   variants: {
