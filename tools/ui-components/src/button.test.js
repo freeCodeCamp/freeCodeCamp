@@ -2,7 +2,9 @@
 /* global jest */
 
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { Button } from './button';
 
 describe('Button', () => {
@@ -20,7 +22,7 @@ describe('Button', () => {
 
     const button = screen.getByRole('button', { name: /hello world/i });
 
-    fireEvent.click(button);
+    userEvent.click(button);
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
