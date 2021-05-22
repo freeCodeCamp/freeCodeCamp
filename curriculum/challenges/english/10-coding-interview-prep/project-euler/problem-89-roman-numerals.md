@@ -18,7 +18,7 @@ For example, it would appear that there are at least six ways of writing the num
   VVIIIIII<br>
   XIIIIII<br>
   VVVI<br>
-  XVI<br>
+  XVI<br><br>
 </div>
 
 However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
