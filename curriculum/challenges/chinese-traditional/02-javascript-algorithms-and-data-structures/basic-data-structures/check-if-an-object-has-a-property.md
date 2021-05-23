@@ -19,11 +19,19 @@ users.hasOwnProperty('Alan');
 
 # --instructions--
 
-我們已經定義了一個包含若干用戶信息的 `users` 對象和一個 `isEveryoneHere` 函數，該函數接收 `users` 對象作爲參數。 請完成該函數使其在 `users` 對象中同時包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 四個屬性時才返回 `true`，否則返回 `false`。
+請完善這個函數，如果傳遞給它的對象包含四個名字 `Alan`、`Jeff`、`Sarah` 和 `Ryan`，函數返回 true，否則返回 false。
 
 # --hints--
 
-`users` 對象應該只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 個屬性。
+不應直接訪問 `users` 對象。
+
+```js 
+
+assert(code.match(/users/gm).length <= 2)
+
+```
+
+`users` 對象應該只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 個鍵。
 
 ```js
 assert(
@@ -35,13 +43,13 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函數在 `users` 對象包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 個屬性時應返回 `true`。
+如果 `Alan`、`Jeff`、`Sarah`、`Ryan` 是傳遞給函數 `isEveryoneHere` 對象的屬性，則函數應返回 `true`。
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-`isEveryoneHere` 函數在 `users` 對象不包含 `Alan` 時應返回 `false`。
+如果傳遞給函數 `isEveryoneHere` 對象的屬性中不包含 `Alan`，則函數返回 `false`。
 
 ```js
 assert(
@@ -52,7 +60,7 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函數在 `users` 對象不包含 `Jeff` 時應返回 `false`。
+如果傳遞給函數 `isEveryoneHere` 對象的屬性中不包含 `Jeff`，則函數返回 `false`。
 
 ```js
 assert(
@@ -63,7 +71,7 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函數在 `users` 對象不包含 `Sarah` 時應返回 `false`。
+如果傳遞給函數 `isEveryoneHere` 對象的屬性中不包含 `Sarah`，則函數返回 `false`。
 
 ```js
 assert(
@@ -74,7 +82,7 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函數在 `users` 對象不包含 `Ryan` 時應返回 `false`。
+如果傳遞給函數 `isEveryoneHere` 對象的屬性中不包含 `Ryan`，則函數返回 `false`。
 
 ```js
 assert(
@@ -109,7 +117,7 @@ let users = {
   }
 };
 
-function isEveryoneHere(obj) {
+function isEveryoneHere(userObj) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +148,13 @@ let users = {
   }
 };
 
-function isEveryoneHere(obj) {
+function isEveryoneHere(userObj) {
   return [
     'Alan',
     'Jeff',
     'Sarah',
     'Ryan'
-  ].every(i => obj.hasOwnProperty(i));
+  ].every(user => userObj.hasOwnProperty(user));
 }
 
 console.log(isEveryoneHere(users));

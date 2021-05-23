@@ -12,7 +12,7 @@ dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-p
 
 # --instructions--
 
-已經定義了一個函數 `squareList`。 你需要使用 `map()`，`filter()` 和 `reduce()` 的任意組合來完成 `squareList` 函數的代碼。當傳入一個實數數組時，返回一個*僅*包含正整數（小數不是整數）的平方的新數組。 僅包含實數字的數組示例是 `[-3, 4.8, 5, 3, -3.2]`。
+使用 `map()`、`filter()` 和 `reduce()` 的任何組合完成 `squareList` 函數的代碼。 傳遞一個包含實數的數組給函數時，函數應返回一個新的數組，*只*包含正整數（小數不是整數）的平方值， 例如 `[-3, 4.8, 5, 3, -3.2]` 這樣一個包含實數的數組。
 
 **注意：** 函數不應該包含任何形式的 `for` 或者 `while` 循環或者 `forEach()` 函數。
 

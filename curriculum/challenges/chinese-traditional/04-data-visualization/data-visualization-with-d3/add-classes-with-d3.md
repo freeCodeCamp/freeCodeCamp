@@ -27,7 +27,7 @@ selection.attr("class", "container");
 `div` 元素應該一個 `bar` class。
 
 ```js
-assert($('div').attr('class') == 'bar');
+assert($('div').attr('class').trim().split(/\s+/g).includes('bar'));
 ```
 
 應該使用 `attr()` 方法。
