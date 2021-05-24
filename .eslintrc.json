@@ -5,7 +5,7 @@
     "mocha": true,
     "node": true
   },
-  "parser": "@typescript-eslint/parser",
+  "parser": "babel-eslint",
   "root": true,
   "extends": [
     "./.eslintrc-base.json",
@@ -46,6 +46,7 @@
   },
   "overrides": [{
     "files": ["**/*.ts?(x)"],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "tsconfigRootDir": "./client",
       "project": ["./tsconfig.json"]
