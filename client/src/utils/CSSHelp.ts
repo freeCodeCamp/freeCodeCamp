@@ -12,19 +12,7 @@ export interface ExtendedStyleRule extends CSSStyleRule {
   isDeclaredAfter: (selector: string) => boolean;
 }
 
-// TODO: add position property to reduce logic in isDeclaredAfter
-const getPosition = (styleRule: CSSStyleRule) => {
-  const cssRules = styleRule?.parentStyleSheet?.cssRules;
-  if (cssRules && styleRule) {
-    const cssRulesArr = Array.from(cssRules);
-    return cssRulesArr?.indexOf(styleRule);
-  } else {
-    return null;
-  }
-};
-
 const getIsDeclaredAfter = (styleRule: CSSStyleRule) => (selector: string) => {
-  // Could use some clean up...
   const cssStyleRules = Array.from(
     styleRule.parentStyleSheet?.cssRules || []
   )?.filter(ele => ele.type === CSSTypes.style) as CSSStyleRule[];
@@ -139,19 +127,3 @@ class CSSHelp {
 }
 
 export default CSSHelp;
-
-/*
-Example usage
-const a = console.assert;
-
-const t = new CSSHelp(document);
-console.log(t.getStyleSheet());
-// You should use the * selector
-a(t.getStyleDeclarations("*")?.length === 1);
-
-// You should use the 'border' property to style all elements
-a(t.isPropertyUsed("height"));
-
-// You should declare the '.bb1a' style after the `.bb1` style declaration
-a(t.getStyleRule(".bb1a")?.isDeclaredAfter(".bb1"));
-*/

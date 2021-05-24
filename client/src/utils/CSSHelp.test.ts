@@ -52,7 +52,6 @@ describe('CSSHelp should pass all tests..', () => {
   it('should find a `.sky` selector within the `media` rule with condition `max-width: 1000px`', () => {
     const mediaRule = t.getCSSRules('media')?.[0] as CSSMediaRule;
     const conditionText = mediaRule.media[0];
-    console.log(conditionText);
     mediaRule.conditionText = conditionText;
     expect(
       t
