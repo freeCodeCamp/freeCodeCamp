@@ -78,7 +78,7 @@ class CSSHelp {
       return null;
     }
   }
-  getCSSRules(element?: string) {
+  getCSSRules(element?: string): Rule<CSSRule> {
     const styleSheet = this.getStyleSheet();
     const cssRules = this.styleSheetToCssRulesArray(styleSheet);
     switch (element) {

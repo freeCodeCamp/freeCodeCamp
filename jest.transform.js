@@ -5,7 +5,8 @@ const babelOptions = {
       {
         targets: {
           node: 14
-        }
+        },
+        loose: true
       }
     ],
     '@babel/react'
