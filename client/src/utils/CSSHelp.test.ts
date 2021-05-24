@@ -65,4 +65,8 @@ describe('CSSHelp should pass all tests..', () => {
       'radial-gradient(circle closest-corner at 15% 15%, rgb(255, 207, 51), rgb(255, 207, 51) 20%, rgb(255, 255, 102) 21%, rgb(187, 238, 255) 100%)'
     );
   });
+  afterAll(() => {
+    document.body.innerHTML = '';
+    document.head.innerHTML = '';
+  });
 });
