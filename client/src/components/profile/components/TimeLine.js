@@ -16,7 +16,6 @@ import TimelinePagination from './TimelinePagination';
 import { FullWidthRow, Link } from '../../helpers';
 import Loadable from '@loadable/component';
 
-// import SolutionViewer from '../../SolutionViewer/SolutionViewer';
 import {
   getCertIds,
   getPathFromID,
