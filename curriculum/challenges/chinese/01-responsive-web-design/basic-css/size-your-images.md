@@ -31,8 +31,8 @@ CSS 的 `width` 属性可以控制元素的宽度。 和设置文本字号一样
 
 ```js
 assert(
-  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') ===
-    'smaller-image'
+  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class')
+    .trim().split(/\s+/g).includes('smaller-image')
 );
 ```
 

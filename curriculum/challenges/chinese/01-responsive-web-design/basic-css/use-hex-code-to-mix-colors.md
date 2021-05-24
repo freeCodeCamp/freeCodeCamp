@@ -36,7 +36,7 @@ assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 应使用 `hex code` 替换 `red`。
 
 ```js
-assert(code.match(/\.red-text\s*?{\s*?color:\s*?(#FF0000|#F00)\s*?;\s*?}/gi));
+assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?(#FF0000|#F00)\s*?;?\s*?}/gi));
 ```
 
 文本内容为 `I am green!` 的 `h1` 元素的 `color` 值应该为绿色。
@@ -48,7 +48,7 @@ assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 应使用 `hex code` 替换 `green` 关键词。
 
 ```js
-assert(code.match(/\.green-text\s*?{\s*?color:\s*?(#00FF00|#0F0)\s*?;\s*?}/gi));
+assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?(#00FF00|#0F0)\s*?;?\s*?}/gi));
 ```
 
 文本内容为 `I am dodger blue!` 的 `h1` 元素的 `color` 值应该为道奇蓝色。
@@ -60,7 +60,7 @@ assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
 应使用 `hex code` 替换 `dodgerblue`。
 
 ```js
-assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
+assert(code.match(/\.dodger-blue-text\s*?{\s*?color\s*:\s*?#1E90FF\s*?;?\s*?}/gi));
 ```
 
 文本内容为 `I am orange!` 的 `h1` 元素的 `color` 值应该为橘色。
@@ -72,7 +72,7 @@ assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
 应使用 `hex code` 替换 `orange`。
 
 ```js
-assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
+assert(code.match(/\.orange-text\s*?{\s*?color\s*:\s*?#FFA500\s*?;?\s*?}/gi));
 ```
 
 # --seed--

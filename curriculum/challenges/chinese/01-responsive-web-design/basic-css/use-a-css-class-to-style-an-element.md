@@ -46,7 +46,7 @@ assert($('h2').hasClass('red-text'));
 样式表应该声明一个 `red-text` class，颜色为 `red`。
 
 ```js
-assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
+assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;?\s*\}/g));
 ```
 
 不应在 `h2` 元素里使用行内样式 `style="color: red"`。

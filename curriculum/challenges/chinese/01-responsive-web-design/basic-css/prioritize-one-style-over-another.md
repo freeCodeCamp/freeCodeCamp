@@ -32,7 +32,7 @@ assert($('h1').hasClass('pink-text'));
 `<style>` 标签应含有一个可以改变 `color` 的 `pink-text` class。
 
 ```js
-assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));
+assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;?\s*\}/g));
 ```
 
 `h1` 元素的字体颜色应为粉色。

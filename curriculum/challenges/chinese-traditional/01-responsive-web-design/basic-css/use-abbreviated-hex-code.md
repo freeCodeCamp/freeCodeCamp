@@ -32,7 +32,7 @@ assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 應使用紅色的 `hex code` 縮寫形式，不應使用 `#FF0000`。
 
 ```js
-assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi));
+assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
 ```
 
 文本內容爲 `I am green!` 的 `h1` 元素的字體顏色 `color` 應該爲綠色。
@@ -44,7 +44,7 @@ assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 應使用綠色的 `hex code` 縮寫形式，不應使用 `#00FF00`。
 
 ```js
-assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi));
+assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
 ```
 
 文本內容爲 `I am cyan!` 的 `h1` 元素的字體顏色 `color` 應該爲藍綠色。
@@ -56,7 +56,7 @@ assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 應使用藍綠色的 `hex code` 縮寫形式，不應使用 `#00FFFF`。
 
 ```js
-assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi));
+assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
 ```
 
 文本內容爲 `I am fuchsia!` 的 `h1` 元素的字體顏色 `color` 應該爲紫紅色。
@@ -68,7 +68,7 @@ assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 應使用紫紅色的 `hex code` 縮寫形式，不應使用 `#FF00FF`。
 
 ```js
-assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi));
+assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));
 ```
 
 # --seed--
