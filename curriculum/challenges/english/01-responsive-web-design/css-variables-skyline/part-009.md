@@ -7,11 +7,21 @@ dashedName: part-9
 
 # --description--
 
-Give your background buildings element a `width` and `height` of `100%` to make it the full width and height of its parent, the body.
+Give your background buildings element a `width` and `height` of `100%` to make it the full width and height of its parent, the `body`.
 
 # --hints--
 
-test-text
+You should use the `background-buildings` class to select the correct element.
+
+```js
+```
+
+Your `.background-buildings` element should have a `width` of `100%`.
+
+```js
+```
+
+Your `.background-buildings` element should have a `height` of `100%`.
 
 ```js
 const bb = code.match(/\.background-buildings\s*{[\s\S]+?[^}]}/g)[0];

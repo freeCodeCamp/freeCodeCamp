@@ -11,6 +11,11 @@ You can see the `body` (it's the inner-most box on your page); the box around it
 
 # --hints--
 
+You should use the `body` selector.
+
+```js
+```
+
 Your `body` should have a `height` of `100vh`.
 
 ```js

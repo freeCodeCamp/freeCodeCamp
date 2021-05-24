@@ -11,7 +11,27 @@ Nest a `div` with a class of `bb1` in the background buildings container. Give i
 
 # --hints--
 
-test-text
+You should create a new `div` element.
+
+```js
+```
+
+You should give the new `div` a class of `bb1`.
+
+```js
+```
+
+You should use a `.bb1` class selector to style the element.
+
+```js
+```
+
+You should give the `.bb1` element a `width` of `10%`.
+
+```js
+```
+
+You should give the `.bb1` element a `height` of `70%`.
 
 ```js
 const bb1 = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
@@ -35,28 +55,29 @@ assert(
   </head>
 
   <body>
+--fcc-editable-region--
     <div class="background-buildings"></div>
+--fcc-editable-region--
   </body>
 </html>
 ```
 
 ```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
     
 ```
 

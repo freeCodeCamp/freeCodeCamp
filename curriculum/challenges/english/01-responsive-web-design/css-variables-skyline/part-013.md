@@ -11,7 +11,22 @@ Give your `bb1` element these style properties: `display: flex;`, `flex-directio
 
 # --hints--
 
-test-text
+You should not change the `.bb1` `width` or `height` properties.
+
+```js
+```
+
+You should give the `.bb1` element a `display` of `flex`.
+
+```js
+```
+
+You should give the `.bb1` element a `flex-direction` of `column`.
+
+```js
+```
+
+You should give the `.bb1` element a `align-items` of `center`.
 
 ```js
 const bb1 = $('.bb1');
@@ -48,47 +63,46 @@ assert(
 ```
 
 ```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
+--fcc-editable-region--
+.bb1 {
+  width: 10%;
+  height: 70%;
+}
+--fcc-editable-region--
+.bb1a {
+  width: 70%;
+  height: 10%;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+}
     
 ```
 
