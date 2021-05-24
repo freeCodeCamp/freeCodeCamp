@@ -11,7 +11,7 @@ require('@babel/polyfill');
 require('@babel/register')({
   root: clientPath,
   babelrc: false,
-  presets: ['@babel/preset-env'],
+  presets: ['@babel/preset-env', '@babel/typescript'],
   plugins: ['dynamic-import-node'],
   ignore: [/node_modules/],
   only: [clientPath]

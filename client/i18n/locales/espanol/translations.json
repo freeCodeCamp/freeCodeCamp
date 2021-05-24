@@ -102,6 +102,7 @@
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
+      "must be lowercase": "Username \"{{username}}\" must be lowercase",
       "unavailable": "El nombre de usuario no está disponible",
       "validating": "Validando nombre de usuario...",
       "available": "El nombre de usuario está disponible",
@@ -351,7 +352,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Buscar tutoriales",
+    "placeholder": "Buscar 200+ tutoriales",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",

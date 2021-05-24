@@ -9,7 +9,8 @@
   "root": true,
   "extends": [
     "./.eslintrc-base.json",
-    "prettier"
+    "plugin:prettier/recommended",
+    "plugin:import/typescript"
   ],
   "plugins": [
     "react",
@@ -31,13 +32,31 @@
     "react": {
       "version": "16.4.2",
       "import/ignore": [
-        "node_modules",
         "\\.json$"
       ],
       "import/extensions": [
         ".js",
-        ".jsx"
+        ".jsx",
+        ".tsx"
       ]
-    }
-  }
+    },
+    "import/ignore": [
+      "node_modules"
+    ]
+  },
+  "overrides": [{
+    "files": ["**/*.ts?(x)"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "tsconfigRootDir": "./client",
+      "project": ["./tsconfig.json"]
+     },
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ]
+  }]
 }

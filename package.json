@@ -68,6 +68,7 @@
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:css": "npm run prettier -- --check",
     "lint:js": "eslint .",
+    "lint:ts": "tsc -p client",
     "lint:translations": "cd ./client && npm run lint",
     "postinstall": "npm run bootstrap",
     "prettier": "prettier \"**/*.css\"",
@@ -79,18 +80,19 @@
     "start:server": "cd ./api-server && npm start",
     "storybook": "cd ./tools/ui-components && npm run storybook",
     "test": "run-s ensure-env build:curriculum build-workers test:*",
-    "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
-    "test:client": "cd ./client && npm test",
+    "test:source": "jest",
     "test:curriculum": "cd ./curriculum && npm test",
-    "test:curriculum-js": "jest --rootDir ./curriculum",
-    "test:server": "cd ./api-server && npm test",
-    "test:tools": "jest ./tools",
-    "test:utils": "jest --rootDir ./utils",
+    "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
+    "test-client": "jest client",
+    "test-curriculum-js": "jest curriculum",
+    "test-server": "jest api-server",
+    "test-tools": "jest tools",
+    "test-utils": "jest utils",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.css": "prettier --write",
-    "*.js": "eslint --cache --fix",
+    "*.(js|ts|tsx)": "eslint --cache --fix",
     "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
   },
   "dependencies": {
@@ -98,14 +100,23 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.14.3",
+    "@babel/plugin-proposal-function-bind": "7.12.13",
+    "@babel/preset-env": "7.14.2",
+    "@babel/preset-react": "7.13.13",
+    "@babel/preset-typescript": "7.13.0",
     "@testing-library/cypress": "7.0.6",
+    "@testing-library/jest-dom": "5.12.0",
+    "@typescript-eslint/eslint-plugin": "4.24.0",
+    "@typescript-eslint/parser": "4.24.0",
     "babel-eslint": "10.1.0",
+    "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "7.3.0",
     "docsify-cli": "4.4.3",
-    "eslint": "7.26.0",
+    "eslint": "7.27.0",
     "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-import": "2.23.3",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prefer-object-spread": "1.2.1",
     "eslint-plugin-prettier": "3.4.0",
@@ -116,7 +127,7 @@
     "jest": "26.6.3",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
-    "lint-staged": "10.5.4",
+    "lint-staged": "11.0.0",
     "lodash": "4.17.21",
     "markdownlint": "0.23.1",
     "npm-run-all": "4.1.5",
@@ -127,6 +138,7 @@
     "sinon": "10.0.0",
     "sinon-express-mock": "2.2.1",
     "start-server-and-test": "1.12.2",
-    "webpack-bundle-analyzer": "4.4.1"
+    "typescript": "4.2.4",
+    "webpack-bundle-analyzer": "4.4.2"
   }
 }

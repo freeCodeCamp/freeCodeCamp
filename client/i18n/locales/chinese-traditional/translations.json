@@ -102,6 +102,7 @@
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
       "is a reserved error code": "\"{{username}}\" 是錯誤代碼，不可用作用戶名",
+      "must be lowercase": "Username \"{{username}}\" must be lowercase",
       "unavailable": "用戶名不可用",
       "validating": "驗證用戶名......",
       "available": "用戶名可用",
@@ -351,7 +352,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 300+ 篇教程",
+    "placeholder": "搜索 400+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",

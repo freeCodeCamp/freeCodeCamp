@@ -30,9 +30,10 @@
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "7.14.2",
+    "@babel/core": "7.14.3",
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.14.2",
+    "@babel/preset-typescript": "7.13.0",
     "@babel/register": "7.13.16",
     "acorn": "8.2.4",
     "acorn-jsx": "5.3.1",
@@ -50,7 +51,7 @@
     "joi": "17.4.0",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.0.0",
-    "jsdom": "16.5.3",
+    "jsdom": "16.6.0",
     "live-server": "1.2.1",
     "lodash": "4.17.21",
     "mocha": "8.4.0",

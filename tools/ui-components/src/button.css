@@ -1,3 +1,5 @@
+@import './global.css';
+
 .storybook-button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -27,4 +29,8 @@
 .storybook-button--large {
   font-size: 16px;
   padding: 12px 24px;
+}
+
+.fcc-style {
+  @apply bg-darkGreen;
 }

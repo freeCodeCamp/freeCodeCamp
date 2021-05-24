@@ -30,7 +30,7 @@ assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```js
 assert(
   code.match(
-    /\.red-text\s*?{\s*?color:\s*?rgb\(\s*?255\s*?,\s*?0\s*?,\s*?0\s*?\)\s*?;\s*?}/gi
+    /\.red-text\s*{\s*color\s*:\s*rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)\s*;?\s*}/gi
   )
 );
 ```
@@ -46,7 +46,7 @@ assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)');
 ```js
 assert(
   code.match(
-    /\.orchid-text\s*?{\s*?color:\s*?rgb\(\s*?218\s*?,\s*?112\s*?,\s*?214\s*?\)\s*?;\s*?}/gi
+    /\.orchid-text\s*{\s*color\s*:\s*rgb\(\s*218\s*,\s*112\s*,\s*214\s*\)\s*;?\s*}/gi
   )
 );
 ```
@@ -62,7 +62,7 @@ assert($('.blue-text').css('color') === 'rgb(0, 0, 255)');
 ```js
 assert(
   code.match(
-    /\.blue-text\s*?{\s*?color:\s*?rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\)\s*?;\s*?}/gi
+    /\.blue-text\s*{\s*color\s*:\s*rgb\(\s*0\s*,\s*0\s*,\s*255\s*\)\s*;?\s*}/gi
   )
 );
 ```
@@ -78,7 +78,7 @@ assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)');
 ```js
 assert(
   code.match(
-    /\.sienna-text\s*?{\s*?color:\s*?rgb\(\s*?160\s*?,\s*?82\s*?,\s*?45\s*?\)\s*?;\s*?}/gi
+    /\.sienna-text\s*{\s*color\s*:\s*rgb\(\s*160\s*,\s*82\s*,\s*45\s*\)\s*;?\s*}/gi
   )
 );
 ```
