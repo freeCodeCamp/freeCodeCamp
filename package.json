@@ -106,6 +106,7 @@
     "@testing-library/cypress": "7.0.6",
     "@testing-library/dom": "7.31.0",
     "@testing-library/jest-dom": "5.13.0",
+    "@testing-library/react": "11.2.7",
     "@testing-library/user-event": "13.1.9",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/parser": "4.26.0",
