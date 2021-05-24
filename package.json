@@ -85,7 +85,7 @@
     "test-server": "jest api-server",
     "test-tools": "jest tools",
     "test-utils": "jest utils",
-    "test:ui-components": "jest tools/ui-components",
+    "test-ui-components": "jest tools/ui-components",
     "prepare": "husky install"
   },
   "lint-staged": {
