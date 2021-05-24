@@ -50,6 +50,10 @@ describe('CSSHelp should pass all tests..', () => {
     expect(t.getCSSRules('media')?.length).toEqual(1);
   });
   it('should find a `.sky` selector within the `media` rule with condition `max-width: 1000px`', () => {
+    const mediaRule = t.getCSSRules('media')?.[0] as CSSMediaRule;
+    const conditionText = mediaRule.media[0];
+    console.log(conditionText);
+    mediaRule.conditionText = conditionText;
     expect(
       t
         .getRuleListsWithinMedia('(max-width: 1000px)')
@@ -62,7 +66,13 @@ describe('CSSHelp should pass all tests..', () => {
         .getRuleListsWithinMedia('(max-width: 1000px)')
         .find(x => x.selectorText === '.sky')?.style?.background
     ).toEqual(
-      'radial-gradient(circle closest-corner at 15% 15%, rgb(255, 207, 51), rgb(255, 207, 51) 20%, rgb(255, 255, 102) 21%, rgb(187, 238, 255) 100%)'
+      `radial-gradient(
+      closest-corner circle at 15% 15%,
+      #ffcf33,
+      #ffcf33 20%,
+      #ffff66 21%,
+      #bbeeff 100%
+    )`
     );
   });
   afterAll(() => {
