@@ -39,13 +39,13 @@ h1 {
 應該把 `$text-color` 聲明一個值爲 `red` 的 Sass 變量。
 
 ```js
-assert(code.match(/\$text-color:\s*?red;/g));
+assert(code.match(/\$text-color\s*:\s*?red\s*;/g));
 ```
 
 應使用 `$text-color` 變量來更改 `.blog-post` 和 `h2` 的 `color`。
 
 ```js
-assert(code.match(/color:\s*?\$text-color;/g));
+assert(code.match(/color\s*:\s*\$text-color\s*;?/g));
 ```
 
 `.blog-post` 元素 `color` 應爲紅色。

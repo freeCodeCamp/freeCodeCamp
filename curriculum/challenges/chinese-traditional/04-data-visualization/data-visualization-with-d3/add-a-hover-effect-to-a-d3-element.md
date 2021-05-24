@@ -21,7 +21,7 @@ dashedName: add-a-hover-effect-to-a-d3-element
 `rect` 元素應該有 `bar` class。
 
 ```js
-assert($('rect').attr('class') == 'bar');
+assert($('rect').attr('class').trim().split(/\s+/g).includes('bar'));
 ```
 
 # --seed--

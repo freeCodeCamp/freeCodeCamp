@@ -40,7 +40,7 @@ assert($('div').css('background-color') === 'rgb(192, 192, 192)');
 class 名 `silver-background` 应该定义在 `style` 元素内；`background-color` 的属性值应为 `silver`。
 
 ```js
-assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/));
+assert(code.match(/\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/));
 ```
 
 # --seed--

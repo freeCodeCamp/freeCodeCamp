@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed708826
-title: Remove an Element Using jQuery
+title: Remueve un elemento usando jQuery
 challengeType: 6
 forumTopicId: 18262
 dashedName: remove-an-element-using-jquery
@@ -8,15 +8,15 @@ dashedName: remove-an-element-using-jquery
 
 # --description--
 
-Now let's remove an HTML element from your page using jQuery.
+Ahora vamos a eliminar un elemento HTML de su página utilizando jQuery.
 
-jQuery has a function called `.remove()` that will remove an HTML element entirely
+jQuery tiene una función llamada `.remove()` que eliminará completamente un elemento HTML
 
-Remove element `target4` from the page by using the `.remove()` function.
+Remueve el elemento `#target4` de la página utilizando la función `.remove()`.
 
 # --hints--
 
-You should use jQuery to remove your `target4` element from your page.
+Debes utilizar jQuery para remover tu elemento `target4` de tu página.
 
 ```js
 assert(
@@ -24,7 +24,7 @@ assert(
 );
 ```
 
-You should only use jQuery to remove this element.
+Sólo debes utilizar jQuery para remover este elemento.
 
 ```js
 assert(

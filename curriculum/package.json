@@ -51,7 +51,7 @@
     "joi": "17.4.0",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.0.0",
-    "jsdom": "16.5.3",
+    "jsdom": "16.6.0",
     "live-server": "1.2.1",
     "lodash": "4.17.21",
     "mocha": "8.4.0",
