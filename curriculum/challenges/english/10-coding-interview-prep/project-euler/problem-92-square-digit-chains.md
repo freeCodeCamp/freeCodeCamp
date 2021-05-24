@@ -19,20 +19,38 @@ For example,
 
 Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
 
-How many starting numbers below ten million will arrive at 89?
+How many starting numbers below `limit` will arrive at 89?
 
 # --hints--
 
-`squareDigitChains()` should return a number.
+`squareDigitChains(100)` should return a number.
 
 ```js
-assert(typeof squareDigitChains() === 'number');
+assert(typeof squareDigitChains(100) === 'number');
 ```
 
-`squareDigitChains()` should return 8581146.
+`squareDigitChains(100)` should return `80`.
 
 ```js
-assert.strictEqual(squareDigitChains(), 8581146);
+assert.strictEqual(squareDigitChains(100), 80);
+```
+
+`squareDigitChains(1000)` should return `857`.
+
+```js
+assert.strictEqual(squareDigitChains(1000), 857);
+```
+
+`squareDigitChains(100000)` should return `85623`.
+
+```js
+assert.strictEqual(squareDigitChains(100000), 85623);
+```
+
+`squareDigitChains(10000000)` should return `8581146`.
+
+```js
+assert.strictEqual(squareDigitChains(10000000), 8581146);
 ```
 
 # --seed--
@@ -40,12 +58,12 @@ assert.strictEqual(squareDigitChains(), 8581146);
 ## --seed-contents--
 
 ```js
-function squareDigitChains() {
+function squareDigitChains(limit) {
 
   return true;
 }
 
-squareDigitChains();
+squareDigitChains(100);
 ```
 
 # --solutions--
