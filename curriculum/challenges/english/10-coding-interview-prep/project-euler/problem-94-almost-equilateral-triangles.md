@@ -12,20 +12,38 @@ It is easily proved that no equilateral triangle exists with integral length sid
 
 We shall define an <dfn>almost equilateral triangle</dfn> to be a triangle for which two sides are equal and the third differs by no more than one unit.
 
-Find the sum of the perimeters of all <dfn>almost equilateral triangle</dfn> with integral side lengths and area and whose perimeters do not exceed one billion (1,000,000,000).
+Find the sum of the perimeters of all <dfn>almost equilateral triangle</dfn> with integral side lengths and area and whose perimeters do not exceed `limit`.
 
 # --hints--
 
-`almostEquilateralTriangles()` should return a number.
+`almostEquilateralTriangles(50)` should return a number.
 
 ```js
-assert(typeof almostEquilateralTriangles() === 'number');
+assert(typeof almostEquilateralTriangles(50) === 'number');
 ```
 
-`almostEquilateralTriangles()` should return 518408346.
+`almostEquilateralTriangles(50)` should return `66`.
 
 ```js
-assert.strictEqual(almostEquilateralTriangles(), 518408346);
+assert.strictEqual(almostEquilateralTriangles(50), 66);
+```
+
+`almostEquilateralTriangles(10000)` should return `3688`.
+
+```js
+assert.strictEqual(almostEquilateralTriangles(10000), 3688);
+```
+
+`almostEquilateralTriangles(10000000)` should return `9973078`.
+
+```js
+assert.strictEqual(almostEquilateralTriangles(10000000), 9973078);
+```
+
+`almostEquilateralTriangles(1000000000)` should return `518408346`.
+
+```js
+assert.strictEqual(almostEquilateralTriangles(1000000000), 518408346);
 ```
 
 # --seed--
@@ -33,12 +51,12 @@ assert.strictEqual(almostEquilateralTriangles(), 518408346);
 ## --seed-contents--
 
 ```js
-function almostEquilateralTriangles() {
+function almostEquilateralTriangles(limit) {
 
   return true;
 }
 
-almostEquilateralTriangles();
+almostEquilateralTriangles(50);
 ```
 
 # --solutions--
