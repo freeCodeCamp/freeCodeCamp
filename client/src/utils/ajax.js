@@ -1,25 +1,19 @@
 import envData from '../../../config/env.json';
-import Tokens from 'csrf';
 import cookies from 'browser-cookies';
 
 const { apiLocation } = envData;
 
 const base = apiLocation;
-const tokens = new Tokens();
 
 const defaultOptions = {
   credentials: 'include'
 };
 
-// _csrf is passed to the client as a cookie. Tokens are sent back to the server
-// via headers:
+// csrf_token is passed to the client as a cookie. The client must send
+// this back as a header.
 function getCSRFToken() {
-  const _csrf = typeof window !== 'undefined' && cookies.get('_csrf');
-  if (!_csrf) {
-    return '';
-  } else {
-    return tokens.create(_csrf);
-  }
+  const token = typeof window !== 'undefined' && cookies.get('csrf_token');
+  return token ?? '';
 }
 
 function get(path) {
