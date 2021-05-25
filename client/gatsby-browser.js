@@ -30,7 +30,9 @@ export const wrapPageElement = layoutSelector;
 export const disableCorePrefetching = () => true;
 
 export const onClientEntry = () => {
-  // purge the _csrf cookie, rather than relying what the browser decides a
+  // purge the csrf cookies, rather than relying what the browser decides a
   // Session duration is
   cookies.erase('_csrf');
+  // the token must be erased since it is only valid for the old _csrf secret
+  cookies.erase('csrf_token');
 };
