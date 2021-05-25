@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
@@ -23,33 +22,37 @@ import {
   userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/propTypes';
+import {
+  UserType,
+  MarkdownRemarkType,
+  AllChallengeNodeType
+} from '../../redux/propTypes';
 
 import './intro.css';
 
-const propTypes = {
-  currentChallengeId: PropTypes.string,
-  data: PropTypes.shape({
-    markdownRemark: MarkdownRemark,
-    allChallengeNode: AllChallengeNode
-  }),
-  expandedState: PropTypes.object,
-  fetchState: PropTypes.shape({
-    pending: PropTypes.bool,
-    complete: PropTypes.bool,
-    errored: PropTypes.bool
-  }),
-  isSignedIn: PropTypes.bool,
-  location: PropTypes.shape({
-    hash: PropTypes.string,
-    state: PropTypes.shape({
-      breadcrumbBlockClick: PropTypes.string
-    })
-  }),
-  resetExpansion: PropTypes.func,
-  t: PropTypes.func,
-  toggleBlock: PropTypes.func,
-  user: User
+type PropTypes = {
+  currentChallengeId: string;
+  data: {
+    markdownRemark: MarkdownRemarkType;
+    allChallengeNode: AllChallengeNodeType;
+  };
+  expandedState: {};
+  fetchState: {
+    pending: boolean;
+    complete: boolean;
+    errored: boolean;
+  };
+  isSignedIn: boolean;
+  location: {
+    hash: string;
+    state: {
+      breadcrumbBlockClick: string;
+    };
+  };
+  resetExpansion: () => void;
+  t: () => void;
+  toggleBlock: () => void;
+  user: UserType;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -76,6 +79,9 @@ const mapDispatchToProps = dispatch =>
   );
 
 class SuperBlockIntroductionPage extends Component {
+  constructor(props: PropTypes) {
+    super(props);
+  }
   componentDidMount() {
     this.initializeExpandedState();
 
@@ -213,7 +219,6 @@ class SuperBlockIntroductionPage extends Component {
 }
 
 SuperBlockIntroductionPage.displayName = 'SuperBlockIntroductionPage';
-SuperBlockIntroductionPage.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

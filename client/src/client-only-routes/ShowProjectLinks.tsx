@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-sort-props */
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import '../components/layouts/project-links.css';
 import { maybeUrlRE } from '../utils';
 import { Spacer, Link } from '../components/helpers';
@@ -8,46 +7,29 @@ import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';
+import { UserType } from '../redux/propTypes';
 
-const propTypes = {
-  certName: PropTypes.string,
-  name: PropTypes.string,
-  user: PropTypes.shape({
-    completedChallenges: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        solution: PropTypes.string,
-        githubLink: PropTypes.string,
-        files: PropTypes.arrayOf(
-          PropTypes.shape({
-            contents: PropTypes.string,
-            ext: PropTypes.string,
-            key: PropTypes.string,
-            name: PropTypes.string,
-            path: PropTypes.string
-          })
-        )
-      })
-    ),
-    username: PropTypes.string
-  })
+type PropTypes = {
+  certName: string;
+  name: string;
+  user: UserType;
 };
 
 const initSolutionState = {
   projectTitle: '',
-  files: null,
-  solution: null,
+  files: [],
+  solution: '',
   isOpen: false
 };
 
-const ShowProjectLinks = props => {
+const ShowProjectLinks = (props: PropTypes): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);
 
   const { t } = useTranslation();
 
-  const getProjectSolution = (projectId, projectTitle) => {
+  const getProjectSolution = (projectId: string, projectTitle: string) => {
     const {
       user: { completedChallenges }
     } = props;
@@ -202,7 +184,6 @@ const ShowProjectLinks = props => {
   );
 };
 
-ShowProjectLinks.propTypes = propTypes;
 ShowProjectLinks.displayName = 'ShowProjectLinks';
 
 export default ShowProjectLinks;

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Panel } from '@freecodecamp/react-bootstrap';
 import Prism from 'prismjs';
+import { FileType } from '../../redux/propTypes';
 
 const prismLang = {
   css: 'css',
@@ -10,29 +11,36 @@ const prismLang = {
   html: 'markup'
 };
 
+type PropTypes = {
+  files: FileType[];
+  solution: string;
+};
+
 const SolutionViewer = ({
   files,
   solution = '// The solution is not available for this project'
-}) =>
+}: PropTypes): JSX.Element =>
   files && Array.isArray(files) && files.length ? (
-    files.map(file => (
-      <Panel bsStyle='primary' className='solution-viewer' key={file.ext}>
-        <Panel.Heading>{file.ext.toUpperCase()}</Panel.Heading>
-        <Panel.Body>
-          <pre>
-            <code
-              className={`language-${prismLang[file.ext]}`}
-              dangerouslySetInnerHTML={{
-                __html: Prism.highlight(
-                  file.contents.trim(),
-                  Prism.languages[prismLang[file.ext]]
-                )
-              }}
-            />
-          </pre>
-        </Panel.Body>
-      </Panel>
-    ))
+    <>
+      {files.map(file => (
+        <Panel bsStyle='primary' className='solution-viewer' key={file.ext}>
+          <Panel.Heading>{file.ext.toUpperCase()}</Panel.Heading>
+          <Panel.Body>
+            <pre>
+              <code
+                className={`language-${prismLang[file.ext]}`}
+                dangerouslySetInnerHTML={{
+                  __html: Prism.highlight(
+                    file.contents.trim(),
+                    Prism.languages[prismLang[file.ext]]
+                  )
+                }}
+              />
+            </pre>
+          </Panel.Body>
+        </Panel>
+      ))}
+    </>
   ) : (
     <Panel
       bsStyle='primary'
@@ -58,9 +66,5 @@ const SolutionViewer = ({
   );
 
 SolutionViewer.displayName = 'SolutionViewer';
-SolutionViewer.propTypes = {
-  files: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
-  solution: PropTypes.string
-};
 
 export default SolutionViewer;

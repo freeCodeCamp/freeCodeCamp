@@ -9,7 +9,10 @@ const initialState = {
   message: {}
 };
 
-const types = createTypes(['createFlashMessage', 'removeFlashMessage'], ns);
+export const types = createTypes(
+  ['createFlashMessage', 'removeFlashMessage'],
+  ns
+);
 
 export const sagas = [];
 

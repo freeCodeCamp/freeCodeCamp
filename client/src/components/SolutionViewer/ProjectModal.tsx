@@ -1,26 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import SolutionViewer from './SolutionViewer';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import { FileType } from '../../redux/propTypes';
 
-const propTypes = {
-  files: PropTypes.arrayOf(
-    PropTypes.shape({
-      contents: PropTypes.string,
-      ext: PropTypes.string,
-      key: PropTypes.string,
-      name: PropTypes.string,
-      path: PropTypes.string
-    })
-  ),
-  handleSolutionModalHide: PropTypes.func,
-  isOpen: PropTypes.bool,
-  projectTitle: PropTypes.string,
-  solution: PropTypes.string
+type PropTypes = {
+  files: FileType[];
+  handleSolutionModalHide: () => void;
+  isOpen: boolean;
+  projectTitle: string;
+  solution: string;
 };
 
-const ProjectModal = props => {
+const ProjectModal = (props: PropTypes): JSX.Element => {
   const { isOpen, projectTitle, files, solution, handleSolutionModalHide } =
     props;
   const { t } = useTranslation();
@@ -48,7 +40,6 @@ const ProjectModal = props => {
   );
 };
 
-ProjectModal.propTypes = propTypes;
 ProjectModal.displayName = 'ProjectModal';
 
 export default ProjectModal;

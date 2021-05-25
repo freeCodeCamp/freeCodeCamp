@@ -28,43 +28,25 @@ import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
 
 import './certification.css';
 import { updateLegacyCert } from '../../redux/settings';
+import {
+  ActionGenericType,
+  CompletedChallenge,
+  isCertifiedTypes,
+  FlashMessageType
+} from '../../redux/propTypes';
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ updateLegacyCert }, dispatch);
 
-const propTypes = {
-  completedChallenges: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      solution: PropTypes.string,
-      githubLink: PropTypes.string,
-      challengeType: PropTypes.number,
-      completedDate: PropTypes.number,
-      files: PropTypes.array
-    })
-  ),
-  createFlashMessage: PropTypes.func.isRequired,
-  is2018DataVisCert: PropTypes.bool,
-  isApisMicroservicesCert: PropTypes.bool,
-  isBackEndCert: PropTypes.bool,
-  isDataAnalysisPyCertV7: PropTypes.bool,
-  isDataVisCert: PropTypes.bool,
-  isFrontEndCert: PropTypes.bool,
-  isFrontEndLibsCert: PropTypes.bool,
-  isFullStackCert: PropTypes.bool,
-  isHonest: PropTypes.bool,
-  isInfosecCertV7: PropTypes.bool,
-  isInfosecQaCert: PropTypes.bool,
-  isJsAlgoDataStructCert: PropTypes.bool,
-  isMachineLearningPyCertV7: PropTypes.bool,
-  isQaCertV7: PropTypes.bool,
-  isRespWebDesignCert: PropTypes.bool,
-  isSciCompPyCertV7: PropTypes.bool,
-  t: PropTypes.func.isRequired,
-  updateLegacyCert: PropTypes.func.isRequired,
-  username: PropTypes.string,
-  verifyCert: PropTypes.func.isRequired
-};
+type PropTypes = {
+  completedChallenges: CompletedChallenge[];
+  createFlashMessage: ActionGenericType<FlashMessageType>;
+  isHonest: boolean;
+  t: () => void;
+  updateLegacyCert: () => void;
+  username: string;
+  verifyCert: () => void;
+} & isCertifiedTypes;
 
 const certifications = Object.keys(projectMap);
 const legacyCertifications = Object.keys(legacyProjectMap);
@@ -152,7 +134,7 @@ const initialState = {
 };
 
 export class CertificationSettings extends Component {
-  constructor(props) {
+  constructor(props: PropTypes) {
     super(props);
 
     this.state = { ...initialState };
@@ -607,7 +589,6 @@ export class CertificationSettings extends Component {
 }
 
 CertificationSettings.displayName = 'CertificationSettings';
-CertificationSettings.propTypes = propTypes;
 
 export default connect(
   null,

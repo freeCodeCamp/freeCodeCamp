@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid } from '@freecodecamp/react-bootstrap';
@@ -25,23 +27,27 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
-import { User } from '../redux/propTypes';
+import {
+  ActionGenericType,
+  FlashMessageType,
+  UserType
+} from '../redux/propTypes';
 
 const { apiLocation } = envData;
 
-const propTypes = {
-  createFlashMessage: PropTypes.func.isRequired,
-  isSignedIn: PropTypes.bool.isRequired,
-  navigate: PropTypes.func.isRequired,
-  showLoading: PropTypes.bool.isRequired,
-  submitNewAbout: PropTypes.func.isRequired,
-  toggleNightMode: PropTypes.func.isRequired,
-  updateInternetSettings: PropTypes.func.isRequired,
-  updateIsHonest: PropTypes.func.isRequired,
-  updatePortfolio: PropTypes.func.isRequired,
-  updateQuincyEmail: PropTypes.func.isRequired,
-  user: User,
-  verifyCert: PropTypes.func.isRequired
+type PropTypes = {
+  createFlashMessage: ActionGenericType<FlashMessageType>;
+  isSignedIn: boolean;
+  navigate: (loc: string) => void;
+  showLoading: boolean;
+  submitNewAbout: () => void;
+  toggleNightMode: () => void;
+  updateInternetSettings: () => void;
+  updateIsHonest: () => void;
+  updatePortfolio: () => void;
+  updateQuincyEmail: () => void;
+  user: UserType;
+  verifyCert: () => void;
 };
 
 const mapStateToProps = createSelector(
@@ -67,7 +73,7 @@ const mapDispatchToProps = {
   verifyCert
 };
 
-export function ShowSettings(props) {
+export function ShowSettings(props: PropTypes): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,
@@ -116,7 +122,7 @@ export function ShowSettings(props) {
     updateIsHonest,
     verifyCert
   } = props;
-
+  console.log('completedChallenges: ', completedChallenges);
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
@@ -199,6 +205,8 @@ export function ShowSettings(props) {
 }
 
 ShowSettings.displayName = 'ShowSettings';
-ShowSettings.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */

@@ -21,7 +21,7 @@ const intro = path.resolve(
 );
 const superBlockIntro = path.resolve(
   __dirname,
-  '../../src/templates/Introduction/SuperBlockIntro.js'
+  '../../src/templates/Introduction/SuperBlockIntro.tsx'
 );
 const video = path.resolve(
   __dirname,

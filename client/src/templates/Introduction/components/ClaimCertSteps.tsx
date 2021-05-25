@@ -9,10 +9,10 @@ import IntroInformation from '../../../assets/icons/IntroInformation';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { userSelector } from '../../../redux';
-import { User } from '../../../redux/propTypes';
+import { UserType } from '../../../redux/propTypes';
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
-const renderCheckMark = isCompleted => {
+const renderCheckMark = (isCompleted: boolean) => {
   return isCompleted ? (
     <GreenPass style={mapIconStyle} />
   ) : (
@@ -20,11 +20,11 @@ const renderCheckMark = isCompleted => {
   );
 };
 
-const propTypes = {
-  certSlug: PropTypes.string,
-  i18nCertText: PropTypes.string,
-  superBlock: PropTypes.string,
-  user: User
+type PropTypes = {
+  certSlug: string;
+  i18nCertText: string;
+  superBlock: string;
+  user: UserType;
 };
 
 const mapStateToProps = state => {
@@ -33,7 +33,12 @@ const mapStateToProps = state => {
   }))(state);
 };
 
-const ClaimCertSteps = ({ certSlug, i18nCertText, superBlock, user }) => {
+const ClaimCertSteps = ({
+  certSlug,
+  i18nCertText,
+  superBlock,
+  user
+}: PropTypes): JSX.Element => {
   const { t } = useTranslation();
 
   const settingsLink = '/settings#privacy-settings';
@@ -103,6 +108,5 @@ const ClaimCertSteps = ({ certSlug, i18nCertText, superBlock, user }) => {
 };
 
 ClaimCertSteps.displayName = 'ClaimCertSteps';
-ClaimCertSteps.propTypes = propTypes;
 
 export default connect(mapStateToProps)(withTranslation()(ClaimCertSteps));
