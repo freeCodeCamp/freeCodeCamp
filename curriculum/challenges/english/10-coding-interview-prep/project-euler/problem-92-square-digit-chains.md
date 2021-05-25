@@ -12,10 +12,10 @@ A number chain is created by continuously adding the square of the digits in a n
 
 For example,
 
-<div style='margin-left: 4em;'>
-  44 → 32 → 13 → 10 → <strong>1</strong> → <strong>1</strong><br>
-  85 → <strong>89</strong> → 145 → 42 → 20 → 4 → 16 → 37 → 58 → <strong>89</strong>
-</div><br>
+$$\begin{align}
+  & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
+  & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\
+\end{align}$$
 
 Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
 
