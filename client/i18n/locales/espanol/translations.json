@@ -565,5 +565,22 @@
     "set-certs-public": "Set your certification settings to public",
     "set-profile-public": "Set your profile settings to public",
     "set-claim": "Claim and view your certification"
+  },
+  "forum-help": {
+    "browser-info": "**Your browser information:**",
+    "user-agent": "User Agent is: <code>{{userAgent}}</code>",
+    "challenge": "**Challenge:** {{challengeTitle}}",
+    "challenge-link": "**Link to the challenge:**",
+    "whats-happening": "**Tell us what's happening:**",
+    "describe": "Describe your issue in detail here.",
+    "camper-project": "**Your project link(s)**",
+    "camper-code": "**Your code so far**",
+    "warning": "WARNING",
+    "too-long-one": "The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.",
+    "too-long-two": "You will need to take an additional step here so the code you wrote presents in an easy to read format.",
+    "too-long-three": "Please copy/paste all the editor code showing in the challenge from where you just linked.",
+    "add-code-one": "Replace these two sentences with your copied code.",
+    "add-code-two": "Please leave the ``` line above and the ``` line below,",
+    "add-code-three": "because they allow your code to properly format in the post."
   }
 }
