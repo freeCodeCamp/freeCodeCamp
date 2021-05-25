@@ -1,13 +1,3 @@
-const CSSTypes = {
-  style: 1,
-  import: 3,
-  media: 4,
-  fontface: 5,
-  keyframes: 7
-};
-
-type Rule<T> = T[] | undefined;
-
 export interface ExtendedStyleRule extends CSSStyleRule {
   isDeclaredAfter: (selector: string) => boolean;
 }
@@ -15,7 +5,7 @@ export interface ExtendedStyleRule extends CSSStyleRule {
 const getIsDeclaredAfter = (styleRule: CSSStyleRule) => (selector: string) => {
   const cssStyleRules = Array.from(
     styleRule.parentStyleSheet?.cssRules || []
-  )?.filter(ele => ele.type === CSSTypes.style) as CSSStyleRule[];
+  )?.filter(ele => ele.type === CSSRule.STYLE_RULE) as CSSStyleRule[];
   const previousStyleRule = cssStyleRules.find(
     ele => ele?.selectorText === selector
   );
@@ -34,28 +24,26 @@ class CSSHelp {
   constructor(doc: HTMLDocument) {
     this.doc = doc;
   }
-  getStyleDeclarations(selector: string): CSSStyleDeclaration[] | undefined {
+  private _getStyleRules() {
     const styleSheet = this.getStyleSheet();
-    const styleRule = this.styleSheetToCssRulesArray(styleSheet)?.filter(
-      ele => ele.type === CSSTypes.style
-    ) as CSSStyleRule[] | undefined;
-    return styleRule
+    return this.styleSheetToCssRulesArray(styleSheet).filter(
+      ele => ele.type === CSSRule.STYLE_RULE
+    ) as CSSStyleRule[];
+  }
+
+  getStyleDeclarations(selector: string): CSSStyleDeclaration[] {
+    return this._getStyleRules()
       ?.filter(ele => ele?.selectorText === selector)
       .map(x => x.style);
   }
   getStyleDeclaration(selector: string): CSSStyleDeclaration | undefined {
-    const styleSheet = this.getStyleSheet();
-    const styleRule = this.styleSheetToCssRulesArray(styleSheet)?.filter(
-      ele => ele.type === CSSTypes.style
-    ) as CSSStyleRule[] | undefined;
-    return styleRule?.find(ele => ele?.selectorText === selector)?.style;
+    return this._getStyleRules()?.find(ele => ele?.selectorText === selector)
+      ?.style;
   }
   getStyleRule(selector: string): ExtendedStyleRule | null {
-    const styleSheet = this.getStyleSheet();
-    const styleRules = this.styleSheetToCssRulesArray(styleSheet)?.filter(
-      ele => ele.type === CSSTypes.style
-    ) as CSSStyleRule[] | undefined;
-    const styleRule = styleRules?.find(ele => ele?.selectorText === selector);
+    const styleRule = this._getStyleRules()?.find(
+      ele => ele?.selectorText === selector
+    );
     if (styleRule) {
       return {
         ...styleRule,
@@ -66,41 +54,29 @@ class CSSHelp {
       return null;
     }
   }
-  getCSSRules(element?: string): Rule<CSSRule> {
+  getCSSRules(element?: string): CSSRule[] {
     const styleSheet = this.getStyleSheet();
     const cssRules = this.styleSheetToCssRulesArray(styleSheet);
     switch (element) {
       case 'media':
-        return cssRules?.filter(
-          ele => ele.type === CSSTypes.media
-        ) as Rule<CSSMediaRule>;
+        return cssRules.filter(ele => ele.type === CSSRule.MEDIA_RULE);
       case 'fontface':
-        return cssRules?.filter(
-          ele => ele.type === CSSTypes.fontface
-        ) as Rule<CSSFontFaceRule>;
+        return cssRules.filter(ele => ele.type === CSSRule.FONT_FACE_RULE);
       case 'import':
-        return cssRules?.filter(
-          ele => ele.type === CSSTypes.import
-        ) as Rule<CSSImportRule>;
+        return cssRules.filter(ele => ele.type === CSSRule.IMPORT_RULE);
       case 'keyframes':
-        return cssRules?.filter(
-          ele => ele.type === CSSTypes.keyframes
-        ) as Rule<CSSKeyframesRule>;
+        return cssRules.filter(ele => ele.type === CSSRule.KEYFRAMES_RULE);
       default:
-        return cssRules as Rule<CSSRule>;
+        return cssRules;
     }
   }
   isPropertyUsed(property: string): boolean {
-    const styleSheet = this.getStyleSheet();
-    const cssStyleRules = this.styleSheetToCssRulesArray(styleSheet).filter(
-      ele => ele.type === CSSTypes.style
-    ) as CSSStyleRule[] | undefined;
-    return (
-      cssStyleRules?.some(ele => ele.style?.getPropertyValue(property)) ?? false
+    return this._getStyleRules().some(ele =>
+      ele.style?.getPropertyValue(property)
     );
   }
   getRuleListsWithinMedia(conditionText: string): CSSStyleRule[] {
-    const medias = this.getCSSRules('media') as Rule<CSSMediaRule>;
+    const medias = this.getCSSRules('media') as CSSMediaRule[];
     const cond = medias?.find(x => x.conditionText === conditionText);
     const cssRules = cond?.cssRules;
     return Array.from(cssRules || []) as CSSStyleRule[];
