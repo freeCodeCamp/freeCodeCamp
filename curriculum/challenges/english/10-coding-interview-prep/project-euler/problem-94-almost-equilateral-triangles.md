@@ -62,5 +62,23 @@ almostEquilateralTriangles(50);
 # --solutions--
 
 ```js
-// solution required
+function almostEquilateralTriangles(limit) {
+  // Based on https://blog.dreamshire.com/project-euler-94-solution/
+  let perimetersSum = 0;
+
+  let sidesAB = 1;
+  let sideC = 1;
+  let perimeter = 0;
+  let perimeterOffset = 1;
+
+  while (perimeter <= limit) {
+    [sidesAB, sideC] = [4 * sidesAB - sideC + 2 * perimeterOffset, sidesAB];
+    perimeterOffset = -perimeterOffset;
+
+    perimetersSum += perimeter;
+    perimeter = 3 * sidesAB - perimeterOffset;
+  }
+
+  return perimetersSum;
+}
 ```
