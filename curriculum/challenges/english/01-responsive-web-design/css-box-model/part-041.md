@@ -16,13 +16,15 @@ Round each corner of `.one` by 9 pixels with `border-radius: 9px;`.
 You should set the `border-radius` property to `9px`.
 
 ```js
-
+const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '9px');
+assert(hasBorderRadius);
 ```
 
 Your `.one` element should have a `border-radius` value of `9px`.
 
 ```js
-
+const oneBorderRadius =new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('border-radius');
+assert(oneBorderRadius === '9px');
 ```
 
 # --seed--

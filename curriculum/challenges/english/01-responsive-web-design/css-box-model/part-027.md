@@ -14,13 +14,15 @@ Center the `.two` element by setting its `margin` to `auto`.
 You should set the `margin` property to `auto`.
 
 ```js
-
+const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.margin === 'auto');
+assert(hasMargin);
 ```
 
 Your `.two` element should have a `margin` value of `auto`.
 
 ```js
-
+const twoMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('margin');
+assert(twoMargin === 'auto');
 ```
 
 # --seed--

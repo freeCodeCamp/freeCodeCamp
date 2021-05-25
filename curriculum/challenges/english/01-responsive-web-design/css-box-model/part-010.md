@@ -14,13 +14,16 @@ Change the `background-color` of the canvas to `#4d0f00`.
 You should set the `background-color` property to `#4d0f00`.
 
 ```js
-
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'rgb(77, 15, 0)');
+// TODO: Why does it still do this?
+assert(hasBackground);
 ```
 
 Your `.canvas` element should have a `background-color` of `#4d0f00`.
 
 ```js
-
+const canvasBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('background-color');
+assert(canvasBackground === 'rgb(77, 15, 0)');
 ```
 
 # --seed--

@@ -14,13 +14,15 @@ Use the same `box-shadow` declaration for `.two`, but change the color from `#ef
 You should set the `box-shadow` property to `0 0 3px 3px #8f0401`.
 
 ```js
-
+const hasBoxShadow = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['box-shadow'] === 'rgb(143, 4, 1) 0px 0px 3px 3px');
+assert(hasBoxShadow);
 ```
 
 Your `.two` element should have a `box-shadow` value of `0 0 3px 3px #8f0401`.
 
 ```js
-
+const twoShadow = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('box-shadow');
+assert(twoShadow === 'rgb(143, 4, 1) 0px 0px 3px 3px');
 ```
 
 # --seed--

@@ -14,19 +14,22 @@ Write a new rule that targets `.one` and set its `width` to 425 pixels.
 You should have a `.one` selector.
 
 ```js
-
+const hasOne = new __helpers.CSSHelp(document).getStyleDeclaration('.one');
+assert(hasOne);
 ```
 
 You should set the `width` property to `425px`.
 
 ```js
-
+const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '425px');
+assert(hasWidth);
 ```
 
 Your `.one` element should have a `width` value of `425px`.
 
 ```js
-
+const oneWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('width');
+assert(oneWidth === '425px');
 ```
 
 # --seed--

@@ -14,13 +14,15 @@ Increase the `blur` of `.three` by 2 pixels.
 You should set the `filter` property to `blur(2px)`.
 
 ```js
-
+const filterFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.filter === 'blur(2px)');
+assert(filterFilter.length === 2);
 ```
 
 Your `.three` element should have a `filter` value of `blur(2px)`.
 
 ```js
-
+const threeFilter = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('filter');
+assert(threeFilter === 'blur(2px)');
 ```
 
 # --seed--

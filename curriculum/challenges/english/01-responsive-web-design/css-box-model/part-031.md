@@ -14,13 +14,15 @@ Set the `height` of `.three` to `28%`.
 You should set the `height` property to `28%`.
 
 ```js
-
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '28%');
+assert(hasHeight);
 ```
 
 Your `.three` element should have a `height` value of `28%`.
 
 ```js
-
+const threeHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('height');
+assert(threeHeight === '28%');
 ```
 
 # --seed--

@@ -22,25 +22,32 @@ h1, p {
 You should have a `.one, .two` selector.
 
 ```js
-
+const oneTwo = new __helpers.CSSHelp(document).getStyleDeclaration('.one, .two');
+assert(oneTwo);
 ```
 
 You should set the `filter` property to `blur(1px)`.
 
 ```js
-
+const hasFilter = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.filter === 'blur(1px)');
+assert(hasFilter)
 ```
 
 Your `.one` element should have a `filter` value of `blur(1px)`.
 
 ```js
-
+const one = document.querySelector('.one');
+const oneFilter = getComputedStyle(one).filter;
+console.log(oneFilter);
+assert(oneFilter === 'blur(1px)');
 ```
 
 Your `.two` element should have a filter value of `blur(1px)`.
 
 ```js
-
+const two = document.querySelector('.two');
+const twoFilter = getComputedStyle(two).filter;
+assert(twoFilter === 'blur(1px)');
 ```
 
 # --seed--

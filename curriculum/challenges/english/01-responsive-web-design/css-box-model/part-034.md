@@ -18,13 +18,16 @@ In `.two`, add `margin: 0 auto 20px;` to set its top margin to 0, center it hori
 You should set the `margin` property to `0 auto 20px`.
 
 ```js
-
+const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.margin === '0px auto 20px');
+assert(hasMargin);
 ```
 
 Your `.two` element should have a `margin` value of `0 auto 20px`.
 
 ```js
-
+const twoMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('margin');
+console.log(twoMargin)
+assert(twoMargin === '0px auto 20px');
 ```
 
 # --seed--

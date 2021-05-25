@@ -16,13 +16,15 @@ Use the following to rotate `.one` counter clockwise -0.6 degrees: `transform: r
 You should set the `transform` property to `rotate(-0.6deg)`.
 
 ```js
-
+const hasTransform = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.transform === 'rotate(-0.6deg)');
+assert(hasTransform);
 ```
 
 Your `.one` element should have a `transform` value of `rotate(-0.6deg)`.
 
 ```js
-
+const oneTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('transform');
+assert(oneTransform === 'rotate(-0.6deg)');
 ```
 
 # --seed--

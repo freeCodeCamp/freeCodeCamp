@@ -11,16 +11,18 @@ Add a `box-shadow` to `.three` with the values `0 0 5px 5px #b20403`.
 
 # --hints--
 
-You should set the `box-shadow` property to `0 0 3px 3px #b20403`.
+You should set the `box-shadow` property to `0 0 5px 5px #b20403`.
 
 ```js
-
+const hasBoxShadow = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['box-shadow'] === 'rgb(178, 4, 3) 0px 0px 5px 5px');
+assert(hasBoxShadow);
 ```
 
-Your `.three` element should have a `box-shadow` value of `0 0 3px 3px #b20403`.
+Your `.three` element should have a `box-shadow` value of `0 0 5px 5px #b20403`.
 
 ```js
-
+const threeShadow = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('box-shadow');
+assert(threeShadow === 'rgb(178, 4, 3) 0px 0px 5px 5px');
 ```
 
 # --seed--

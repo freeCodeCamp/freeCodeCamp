@@ -14,13 +14,15 @@ Center the `.three` element on the canvas by setting its `margin` to `auto`.
 You should set the `margin` property to `auto`.
 
 ```js
-
+const marginFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.margin === 'auto');
+assert(marginFilter.length === 2);
 ```
 
 Your `.three` element should have a `margin` value of `auto`.
 
 ```js
-
+const threeMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('margin');
+assert(threeMargin === 'auto');
 ```
 
 # --seed--

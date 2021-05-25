@@ -14,13 +14,15 @@ Set the `background-color` of `.one` to `#efb762`.
 You should set the `background-color` property to `#efb762`.
 
 ```js
-
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'rgb(239, 183, 98)');
+assert(hasBackground)
 ```
 
 Your `.one` element should have a `background-color` value of `#efb762`.
 
 ```js
-
+const oneBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('background-color');
+assert(oneBackground === 'rgb(239, 183, 98)');
 ```
 
 # --seed--

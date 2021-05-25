@@ -16,13 +16,15 @@ Round the top-left corner of `.three` by 30 pixels, the top-right by 25 pixels, 
 You should set the `border-radius` property to `30px 25px 60px 12px`.
 
 ```js
-
+const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '30px 25px 60px 12px');
+assert(hasBorderRadius);
 ```
 
 Your `.three` element should have a `border-radius` value of `30px 25px 60px 12px`.
 
 ```js
-
+const threeBorderRadius = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('border-radius');
+assert(threeBorderRadius === '30px 25px 60px 12px');
 ```
 
 # --seed--

@@ -14,13 +14,15 @@ Set the `border-radius` of `.two` to `8px 10px`. This will round its top-left an
 You should set the `border-radius` property to `8px 10px`.
 
 ```js
-
+const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '8px 10px');
+assert(hasBorderRadius);
 ```
 
 Your `.two` element should have a `border-radius` value of `8px 10px`.
 
 ```js
-
+const twoBorderRadius = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('border-radius');
+assert(twoBorderRadius === '8px 10px');
 ```
 
 # --seed--

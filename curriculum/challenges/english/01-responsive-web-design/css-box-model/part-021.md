@@ -16,13 +16,15 @@ Add `padding: 1px;` to `.canvas` to give the `.one` element something solid to p
 You should set the `padding` property to `1px`.
 
 ```js
-
+const hasPadding = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.padding === '1px');
+assert(hasPadding);
 ```
 
 Your `.canvas` element should have a `padding` value of `1px`.
 
 ```js
-
+const canvasPadding = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('padding');
+assert(canvasPadding === '1px');
 ```
 
 # --seed--

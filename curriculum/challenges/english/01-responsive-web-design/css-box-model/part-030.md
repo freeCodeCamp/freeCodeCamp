@@ -16,19 +16,22 @@ Create a new rule, `.three`, and set its `width` to `91%`.
 You should use the `.three` selector.
 
 ```js
-
+const hasThree = new __helpers.CSSHelp(document).getStyleDeclaration('.three');
+assert(hasThree);
 ```
 
 You should set the `width` property to `91%`.
 
 ```js
-
+const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '91%');
+assert(hasWidth);
 ```
 
 Your `.three` element should have a `width` value of `91%`.
 
 ```js
-
+const threeWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('width');
+assert(threeWidth === '91%');
 ```
 
 # --seed--

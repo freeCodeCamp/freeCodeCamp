@@ -16,13 +16,15 @@ Add the shorthand `margin: 20px auto;` to set the top and bottom margins to 20 p
 You should set the `margin` property to `20px auto`.
 
 ```js
-
+const marginFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.margin === '20px auto');
+assert(marginFilter.length === 2);
 ```
 
 Your `.one` element should have a `margin` value of `20px auto`.
 
 ```js
-
+const oneMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('margin');
+assert(oneMargin === '20px auto');
 ```
 
 # --seed--

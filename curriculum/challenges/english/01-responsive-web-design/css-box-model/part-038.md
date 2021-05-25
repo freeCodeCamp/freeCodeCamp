@@ -16,13 +16,15 @@ Increase the area and soften the edges of `.one` by setting its `box-shadow` to 
 You should set the `box-shadow` property to `0 0 3px 3px #efb762`.
 
 ```js
-
+const hasBoxShadow = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['box-shadow'] === 'rgb(239, 183, 98) 0px 0px 3px 3px');
+assert(hasBoxShadow);
 ```
 
 Your `.one` element should have a `box-shadow` value of `0 0 3px 3px #efb762`.
 
 ```js
-
+const oneShadow = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('box-shadow');
+assert(oneShadow === 'rgb(239, 183, 98) 0px 0px 3px 3px');
 ```
 
 # --seed--

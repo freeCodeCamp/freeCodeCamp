@@ -16,13 +16,15 @@ Add the `margin` property to `.frame` and set it to `20px auto` to move the fram
 You should set the `margin` property to `20px auto`.
 
 ```js
-
+const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.margin === '20px auto');
+assert(hasMargin);
 ```
 
 Your `.frame` element should have a `margin` value of `20px auto`.
 
 ```js
-
+const frameMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.frame').getPropertyValue('margin');
+assert(frameMargin === '20px auto');
 ```
 
 # --seed--

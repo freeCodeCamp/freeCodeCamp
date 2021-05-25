@@ -14,13 +14,15 @@ Set the `height` of the `.two` to 200 pixels.
 You should set the `height` property to `200px`.
 
 ```js
-
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '200px');
+assert(hasHeight);
 ```
 
 Your `.two` element should have a `height` value of `200px`.
 
 ```js
-
+const twoHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('height');
+assert(twoHeight === '200px');
 ```
 
 # --seed--

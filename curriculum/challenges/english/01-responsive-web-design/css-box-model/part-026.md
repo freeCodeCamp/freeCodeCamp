@@ -14,13 +14,15 @@ Set the `background-color` of the `.two` element to `#8f0401`.
 You should set the `background-color` property to `#8f0401`.
 
 ```js
-
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'rgb(143, 4, 1)');
+assert(hasBackground);
 ```
 
 Your `.two` element should have a `background-color` value of `#8f0401`.
 
 ```js
-
+const twoBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('background-color');
+assert(twoBackground === 'rgb(143, 4, 1)');
 ```
 
 # --seed--

@@ -14,13 +14,15 @@ Rotate `.two` clockwise slightly by adding the `transform` property with the val
 You should set the `transform` property to `rotate(0.4deg)`.
 
 ```js
-
+const hasTransform = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.transform === 'rotate(0.4deg)');
+assert(hasTransform);
 ```
 
 Your `.two` element should have a `transform` value of `rotate(0.4deg)`.
 
 ```js
-
+const twoTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('transform');
+assert(twoTransform === 'rotate(0.4deg)');
 ```
 
 # --seed--

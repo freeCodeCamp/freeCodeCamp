@@ -14,13 +14,15 @@ Add the `height` property with the value `600px` to your `.canvas` rule.
 You should set the `height` property to `600px`.
 
 ```js
-
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '600px');
+assert(hasHeight);
 ```
 
 Your `.canvas` element should have a `height` of `600px`.
 
 ```js
-
+const canvasHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('height');
+assert(canvasHeight === '600px');
 ```
 
 # --seed--

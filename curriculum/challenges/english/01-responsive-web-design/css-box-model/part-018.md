@@ -14,13 +14,15 @@ Now set the `height` for `.one` to 150 pixels.
 You should set the `height` property to `150px`.
 
 ```js
-
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '150px');
+assert(hasHeight);
 ```
 
 Your `.one` element should have a `height` value of `150px`.
 
 ```js
-
+const oneHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('height');
+assert(oneHeight === '150px');
 ```
 
 # --seed--

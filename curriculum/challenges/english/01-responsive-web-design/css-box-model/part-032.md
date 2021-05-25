@@ -14,13 +14,15 @@ Change the `background-color` of `.three` to `#b20403`.
 You should set the `background-color` property to `#b20403`.
 
 ```js
-
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'rgb(178, 4, 3)');
+assert(hasBackground);
 ```
 
 Your `.three` element should have a `background-color` value of `#b20403`.
 
 ```js
-
+const threeBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('background-color');
+assert(threeBackground === 'rgb(178, 4, 3)');
 ```
 
 # --seed--

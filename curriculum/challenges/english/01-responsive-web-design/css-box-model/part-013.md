@@ -16,13 +16,15 @@ In `.frame`, set its `width` to 500 pixels.
 You should set the `width` property to `500px`.
 
 ```js
-
+const widthFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.width === '500px');
+assert(widthFilter.length === 2);
 ```
 
 Your `.frame` element should have a `width` of `500px`.
 
 ```js
-
+const frameWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.frame').getPropertyValue('width');
+assert(frameWidth === '500px');
 ```
 
 # --seed--

@@ -16,13 +16,15 @@ In `.frame`, use the shorthand `padding: 50px;` to increase the space between th
 You should set the `padding` property to `50px`.
 
 ```js
-
+const hasPadding = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.padding === '50px');
+assert(hasPadding);
 ```
 
 Your `.frame` element should have a `padding` value of `50px`.
 
 ```js
-
+const framePadding = new __helpers.CSSHelp(document).getStyleDeclaration('.frame').getPropertyValue('padding');
+assert(framePadding === '50px');
 ```
 
 # --seed--

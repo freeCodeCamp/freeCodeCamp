@@ -16,13 +16,15 @@ Use the `filter` property with the value `blur(2px)` in the `.canvas`.
 You should set the `filter` property to `blur(2px)`.
 
 ```js
-
+const hasFilter = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.filter === 'blur(2px)');
+assert(hasFilter);
 ```
 
 Your `.canvas` element should have a `filter` value of `blur(2px)`.
 
 ```js
-
+const canvasFilter = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('filter');
+assert(canvasFilter === 'blur(2px)');
 ```
 
 # --seed--

@@ -11,16 +11,18 @@ Rotate `.three` counter clockwise by -0.2 degrees.
 
 # --hints--
 
-You should set the `transform` property to `rotate(-0.6deg)`.
+You should set the `transform` property to `rotate(-0.2deg)`.
 
 ```js
-
+const hasTransform = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.transform === 'rotate(-0.2deg)');
+assert(hasTransform);
 ```
 
 Your `.three` element should have a `transform` value of `rotate(-0.2deg)`.
 
 ```js
-
+const threeTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('transform');
+assert(threeTransform === 'rotate(-0.2deg)');
 ```
 
 # --seed--

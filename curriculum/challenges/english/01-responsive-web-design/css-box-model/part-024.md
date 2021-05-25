@@ -14,19 +14,22 @@ Create a new CSS rule using the `.two` selector and set its `width` to 475 pixel
 You should have a `.two` selector.
 
 ```js
-
+const hasTwo = new __helpers.CSSHelp(document).getStyleDeclaration('.two');
+assert(hasTwo);
 ```
 
 You should set the `width` property to `475px`.
 
 ```js
-
+const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '475px');
+assert(hasWidth);
 ```
 
 Your `.two` element should have a `width` value of `475px`.
 
 ```js
-
+const twoWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('width');
+assert(twoWidth === '475px');
 ```
 
 # --seed--
