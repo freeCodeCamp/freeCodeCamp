@@ -1,6 +1,6 @@
 /* global describe it expect */
 import { cssString } from './__fixtures/curriculum-helpers-css';
-import CSSHelp from './CSSHelp';
+import CSSHelp from './css-help';
 
 describe('css-help', () => {
   document.body.innerHTML = '';

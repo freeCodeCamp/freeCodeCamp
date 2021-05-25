@@ -1,6 +1,6 @@
 import { parse } from '@babel/parser';
 import generate from '@babel/generator';
-import CSSHelp from './CSSHelp';
+import CSSHelp from './css-help';
 
 const removeHtmlComments = (str: string): string =>
   str.replace(/<!--[\s\S]*?(-->|$)/g, '');
