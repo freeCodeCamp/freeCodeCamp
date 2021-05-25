@@ -3,8 +3,6 @@ import { cssString } from './__fixtures/curriculum-helpers-css';
 import CSSHelp from './css-help';
 
 describe('css-help', () => {
-  document.body.innerHTML = '';
-  document.head.innerHTML = '';
   const doc = document;
   let t: CSSHelp;
   beforeEach(() => {
