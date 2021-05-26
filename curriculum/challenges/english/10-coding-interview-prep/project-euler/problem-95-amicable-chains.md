@@ -14,9 +14,9 @@ Interestingly the sum of the proper divisors of 220 is 284 and the sum of the pr
 
 Perhaps less well known are longer chains. For example, starting with 12496, we form a chain of five numbers:
 
-<div style="text-align: center;">
-  12496 → 14288 → 15472 → 14536 → 14264 (→ 12496 → ...)
-</div>
+$$
+  12496 → 14288 → 15472 → 14536 → 14264 \\,(→ 12496 → \cdots)
+$$
 
 Since this chain returns to its starting point, it is called an amicable chain.
 
