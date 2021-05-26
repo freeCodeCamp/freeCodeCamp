@@ -7,82 +7,80 @@ dashedName: part-12
 
 # --description--
 
-Give the parts of your building `width` and `height` properties with these values: `70%` and `10%` to `bb1a`, `80%` and `10%` to `bb1b`, `90%` and `10%` to `bb1c`, and `100%` and `70%` to `bb1d`. Remember that these percentages are relative to the parent and note that the heights will add up to 100% to vertically fill the container.
+Give the parts of your building `width` and `height` properties with these values: `70%` and `10%` to `bb1a`, `80%` and `10%` to `bb1b`, `90%` and `10%` to `bb1c`, and `100%` and `70%` to `bb1d`. Remember that these percentages are relative to the parent and note that the heights will add up to 100% - vertically filling the container.
 
 # --hints--
 
 You should use a class selector to style `.bb1a`.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a'));
 ```
 
 You should give `.bb1a` a `width` of `70%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.width, '70%');
 ```
 
 You should give `.bb1a` a `height` of `10%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.height, '10%');
 ```
 
 You should use a class selector to style `.bb1b`.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b'));
 ```
 
 You should give `.bb1b` a `width` of `80%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.width, '80%');
 ```
 
 You should give `.bb1b` a `height` of `10%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.height, '10%');
 ```
 
 You should use a class selector to style `.bb1c`.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c'));
 ```
 
 You should give `.bb1c` a `width` of `90%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.width, '90%');
 ```
 
 You should give `.bb1c` a `height` of `10%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.height, '10%');
 ```
 
 You should use a class selector to style `.bb1d`.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d'));
 ```
 
 You should give `.bb1d` a `width` of `100%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.width, '100%');
 ```
 
 You should give `.bb1d` a `height` of `70%`.
 
 ```js
-const bb1a = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0];
-const bb1b = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0];
-const bb1c = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0];
-const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*70%\s*(;|})/g.test(bb1a) &&
-    /height\s*:\s*10%\s*(;|})/g.test(bb1a) &&
-    /width\s*:\s*80%\s*(;|})/g.test(bb1b) &&
-    /height\s*:\s*10%\s*(;|})/g.test(bb1b) &&
-    /width\s*:\s*90%\s*(;|})/g.test(bb1c) &&
-    /height\s*:\s*10%\s*(;|})/g.test(bb1c) &&
-    /width\s*:\s*100%\s*(;|})/g.test(bb1d) &&
-    /height\s*:\s*70%\s*(;|})/g.test(bb1d)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.height, '70%');
 ```
 
 # --seed--

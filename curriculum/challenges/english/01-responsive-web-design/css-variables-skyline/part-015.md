@@ -14,17 +14,13 @@ To use a variable, just put the variable name in parentheses with `var` in front
 The `background-color` of the `bb1a` element should be set.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.backgroundColor)
 ```
 
 You should use `var(--building-color1)` to set the `background-color` of the `.bb1a` element.
 
 ```js
-const bb1aStyle = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(
-    bb1aStyle
-  )
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.backgroundColor, 'var(--building-color1)');
 ```
 
 # --seed--

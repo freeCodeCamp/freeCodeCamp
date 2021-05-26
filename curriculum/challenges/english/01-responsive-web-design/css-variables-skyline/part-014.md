@@ -14,13 +14,19 @@ Now you have something that is starting to resemble a building. Lets get into yo
 You should create a new variable named `--building-color1`.
 
 ```js
+assert(new __helpers.CSSHelp(document).isPropertyUsed('--building-color1'));
+```
+
+You should define the `--building-color1` variable within `.bb1`.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1'));
 ```
 
 You should give `--building-color1` a value of `#999`.
 
 ```js
-const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
-assert(/--building-color1\s*:\s*#999\s*(;|\s*})/g.test(bb1style));
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1').trim(),'#999');
 ```
 
 # --seed--

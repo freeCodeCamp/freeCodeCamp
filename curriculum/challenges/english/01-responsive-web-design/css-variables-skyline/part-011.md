@@ -14,43 +14,46 @@ Nest four `div` elements in the `.bb1` container. Give them the classes `bb1a`, 
 You should create four new `div` elements.
 
 ```js
+assert.equal(document.querySelectorAll('div')?.length, 6);
 ```
 
 You should give one of the new `div` elements a class of `bb1a`.
 
 ```js
+assert.exists(document.querySelector('div.bb1a'));
 ```
 
 You should give one of the new `div` elements a class of `bb1b`.
 
 ```js
+assert.exists(document.querySelector('div.bb1b'));
 ```
 
 You should give one of the new `div` elements a class of `bb1c`.
 
 ```js
+assert.exists(document.querySelector('div.bb1c'));
 ```
 
 You should give one of the new `div` elements a class of `bb1d`.
 
 ```js
+assert.exists(document.querySelector('div.bb1d'));
 ```
 
 You should place the new `div` elements in the correct order.
 
 ```js
+function __t(a, b) {
+  return [...document.querySelector(a)?.nextElementSibling?.classList]?.includes(b);
+}
+assert(__t('div.bb1a','bb1b') && __t('div.bb1b','bb1c') & __t('div.bb1c','bb1d'));
 ```
 
 You should place the new `div` elements within the `.bb1` element.
 
 ```js
-const bb1 = $('.bb1')[0];
-assert(
-  bb1.contains($('div.bb1a')[0]) &&
-    bb1.contains($('div.bb1b')[0]) &&
-    bb1.contains($('div.bb1c')[0]) &&
-    bb1.contains($('div.bb1d')[0])
-);
+assert.equal(document.querySelectorAll('div.bb1 > div')?.length, 4);
 ```
 
 # --seed--

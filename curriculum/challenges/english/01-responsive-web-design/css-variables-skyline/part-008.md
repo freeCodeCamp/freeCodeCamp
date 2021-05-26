@@ -14,17 +14,19 @@ It's tough to see now, but there's a border at the edge of your preview, that's 
 You should create a `div` element.
 
 ```js
+assert.exists(document.querySelector('div'));
 ```
 
 Your `div` element should be within the `body`.
 
 ```js
+assert(document.querySelector('div')?.parentElement?.localName === 'body');
 ```
 
 Your `div` element should have a class of `background-buildings`
 
 ```js
-assert($('#display-body')[0].contains($('div.background-buildings')[0]));
+assert([...document.querySelector('div')?.classList]?.includes('background-buildings'));
 ```
 
 # --seed--

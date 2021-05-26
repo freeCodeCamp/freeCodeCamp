@@ -11,21 +11,23 @@ Also add a `box-sizing` of `border-box` to the everything. This will make it so 
 
 # --hints--
 
-You should use the `box-sizing` property to style all elements.
+You should use the `box-sizing` property.
 
 ```js
+assert(new __helpers.CSSHelp(document).isPropertyUsed('box-sizing'));
 ```
 
 You should make use of the existing `*` selector.
 
 ```js
 // Two selectors create two CSSStyleRule objects
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclarations('*').length, 1);
 ```
 
 All elements should have a `box-sizing` of `border-box`.
 
 ```js
-const astStyles = __helpers.getStyles(document, '*');
+const astStyles = new __helpers.CSSHelp(document).getStyleDeclaration('*');
 assert.equal(astStyles.boxSizing, 'border-box');
 ```
 
