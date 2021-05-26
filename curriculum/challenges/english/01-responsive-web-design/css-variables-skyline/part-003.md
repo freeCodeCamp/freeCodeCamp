@@ -27,8 +27,10 @@ assert(
 
 ```html
 <!DOCTYPE html>
+--fcc-editable-region--
 <html>
   
 </html>
+--fcc-editable-region--
 ```
 

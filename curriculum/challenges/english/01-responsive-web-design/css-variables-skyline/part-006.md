@@ -14,7 +14,8 @@ Also add a `box-sizing` of `border-box` to the everything. This will make it so 
 test-text
 
 ```js
-assert($('#display-body').css('box-sizing') === 'border-box');
+const astStyles = __helpers.getStyles(document, '*');
+assert.equal(astStyles.boxSizing, 'border-box');
 ```
 
 # --seed--
@@ -35,10 +36,11 @@ assert($('#display-body').css('box-sizing') === 'border-box');
 ```
 
 ```css
+--fcc-editable-region--
+* {
+  border: 1px solid black;
+}
 
-      * {
-        border: 1px solid black;
-      }
-    
+--fcc-editable-region--
 ```
 

@@ -14,9 +14,8 @@ You can see the body, it's the horizontal line on your page; the box around it i
 test-text
 
 ```js
-const doc = document;
-const bodySelector = doc.styleSheets[1]?.cssRules?.[1]?.style;
-assert.equal(bodySelector.height, '100vh')
+const bodyStyles = __helpers.getStyles(document, 'body');
+assert.equal(bodyStyles.height, '100vh');
 ```
 
 # --seed--
@@ -37,13 +36,13 @@ assert.equal(bodySelector.height, '100vh')
 ```
 
 ```css
-
 * {
   border: 1px solid black;
   box-sizing: border-box;
 }
 
 --fcc-editable-region--
+
 
 --fcc-editable-region--
     

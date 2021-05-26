@@ -14,11 +14,8 @@ In CSS, you can target everything with an asterisk. Add a border to everything b
 test-text
 
 ```js
-assert(
-  code.match(
-    /<style\s*>\s*\*\s*{\s*border\s*:\s*1px\s+solid\s+black\s*;?\s*}\s*<\/style\s*>/g
-  )
-);
+const astStyles = __helpers.getStyles(document, '*');
+assert.equal(astStyles.border, '1px solid black');
 ```
 
 # --seed--
