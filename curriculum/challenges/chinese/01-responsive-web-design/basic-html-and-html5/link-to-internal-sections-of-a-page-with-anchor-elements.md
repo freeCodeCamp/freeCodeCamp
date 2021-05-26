@@ -27,7 +27,7 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 
 通过修改 `href` 属性值为 `"#footer"`，同时修改文本 `cat photos` 为 `Jump to Bottom`，来更改外部链接为内部链接。
 
-然后添加一个 `<footer>` 元素，并将它的 `id` 属性值设置为 `footer`。
+从锚点标签中删除 `target="_blank"` 属性，因为这会导致链接文档在新窗口标签中打开。
 
 然后给页面底部的 `<footer>` 元素添加一个 `id` 属性，值为 `footer`。
 

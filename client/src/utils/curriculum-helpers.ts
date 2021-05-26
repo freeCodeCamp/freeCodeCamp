@@ -1,5 +1,6 @@
 import { parse } from '@babel/parser';
 import generate from '@babel/generator';
+import CSSHelp from './css-help';
 
 const removeHtmlComments = (str: string): string =>
   str.replace(/<!--[\s\S]*?(-->|$)/g, '');
@@ -18,6 +19,7 @@ export const removeJSComments = (codeStr: string): string => {
   };
   try {
     const ast = parse(codeStr);
+    // TODO: Sort out type error on ast
     const { code } = generate(ast, options, codeStr);
     return code;
   } catch (err) {
@@ -32,7 +34,8 @@ const removeWhiteSpace = (str = ''): string => {
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
-  removeWhiteSpace
+  removeWhiteSpace,
+  CSSHelp
 };
 
 export default curriculumHelpers;

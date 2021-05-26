@@ -26,7 +26,7 @@ We just ask that you understand the following:
 
    Translating freeCodeCamp's resources is one of the most fun and rewarding experiences as a contributor, and it works best if you involve your friends and colleagues who speak the same world language as you.
 
-   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [translators chat room](https://chat.freecodecamp.org/channel/translators) with your friends and showing your interest before starting off with translations. Crowdin makes it easy to contribute translations, but it's still a lot of work.
+   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://chat.freecodecamp.org/channel/contributors) with your friends and showing your interest before starting off with translations. Crowdin makes it easy to contribute translations, but it's still a lot of work.
 
    We want you to enjoy contributing and not burn out or lose interest.
 
@@ -56,7 +56,7 @@ We just ask that you understand the following:
 
 ## Getting started
 
-First, make sure you come say "Hi" in our [translators chat room](https://chat.freecodecamp.org/channel/translators). We post regular updates about translating resources and answer a lot of your queries in there.
+First, make sure you come say "Hi" in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We post regular updates about translating resources and answer a lot of your queries in there.
 
 Next, head to our [translation platform](https://translate.freecodecamp.org/) and login (if you have not contributed to translations before, you will need to create an account).
 
@@ -103,7 +103,7 @@ Crowdin separates a document into translatable "strings", usually sentences. Eac
 9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
 10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [translators chat room](https://chat.freecodecamp.org/channel/translators) so we can remove the translation from memory.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors) so we can remove the translation from memory.
 
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
 
@@ -145,4 +145,4 @@ Follow these guidelines to ensure our translations are as accurate as possible:
 - Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
 - Do not change the order of content.
 
-If you have any questions, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators) and we will be happy to assist you.
+If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors) and we will be happy to assist you.
