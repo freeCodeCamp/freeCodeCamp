@@ -16,13 +16,15 @@ There is an easier way, simply add a negative top margin to the `img` elements t
 You should set the `margin-top` property to `-25px`.
 
 ```js
-assert(code.match(/margin-top:\s*-25px;?/i));
+const hasMarginTop = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-top'] === '-25px');
+assert(hasMarginTop);
 ```
 
 Your `img` elements should have a `margin-top` value of `-25px`.
 
 ```js
-assert($('img').css('margin-top') === '-25px');
+const imgMarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('img').getPropertyValue('margin-top');
+assert(imgMarginTop === '-25px');
 ```
 
 # --seed--

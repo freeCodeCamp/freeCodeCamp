@@ -14,21 +14,24 @@ Next, you want to center the `div` horizontally. You can do this by setting its 
 You should set the `margin-left` property to `auto`.
 
 ```js
-assert(code.match(/margin-left:\s*auto;?/i));
+const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-left'] === 'auto');
+assert(hasMargin);
 ```
 
 You should set the `margin-right` property to `auto`.
 
 ```js
-assert(code.match(/margin-right:\s*auto;?/i));
+const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-right'] === 'auto');
+assert(hasMargin);
 ```
 
-Your `div` should be horizontally centered.
+You should set the `margin-left` and `margin-right` properties of your `div` to `auto`.
 
 ```js
-const divLeft = $('div').css('margin-left');
-const divRight = $('div').css('margin-right');
-assert(parseInt(divLeft) === parseInt(divRight));
+const divMarginRight = new __helpers.CSSHelp(document).getStyleDeclaration('div').getPropertyValue('margin-right');
+const divMarginLeft = new __helpers.CSSHelp(document).getStyleDeclaration('div').getPropertyValue('margin-left');
+assert(divMarginRight === 'auto');
+assert(divMarginLeft === 'auto');
 ```
 
 # --seed--

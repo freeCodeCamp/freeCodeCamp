@@ -16,39 +16,45 @@ To make the image behave like heading elements (which are block-level), create a
 You should use an `img` selector.
 
 ```js
-assert(code.match(/img\s*{/i));
+const hasImg = new __helpers.CSSHelp(document).getStyleDeclaration('img');
+assert(hasImg);
 ```
 
 You should set the `display` property to `block`.
 
 ```js
-assert(code.match(/display:\s*block;?/i));
+const hasDisplay = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.display === 'block');
+assert(hasDisplay);
 ```
 
 You should set the `margin-left` property to `auto`.
 
 ```js
-assert(code.match(/margin-left:\s*auto;?/i));
+const marginLeftFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style['margin-left'] === 'auto');
+assert(marginLeftFilter.length === 2);
 ```
 
 You should set the `margin-right` property to `auto`.
 
 ```js
-assert(code.match(/margin-right:\s*auto;?/i));
+const marginRightFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style['margin-right'] === 'auto');
+assert(marginRightFilter.length === 2);
 ```
 
 Your `img` element should have a `display` of `block`.
 
 ```js
-assert($('img').css('display') === 'block');
+const imgDisplay = new __helpers.CSSHelp(document).getStyleDeclaration('img').getPropertyValue('display');
+assert(imgDisplay === 'block');
 ```
 
 Your `img` element should have a `margin-left` and `margin-right` of `auto`.
 
 ```js
-const left = $('img').css('margin-left');
-const right = $('img').css('margin-right');
-assert(parseInt(left) === parseInt(right));
+const imgMarginLeft = new __helpers.CSSHelp(document).getStyleDeclaration('img').getPropertyValue('margin-left');
+assert(imgMarginLeft === 'auto');
+const imgMarginRight = new __helpers.CSSHelp(document).getStyleDeclaration('img').getPropertyValue('margin-right');
+assert(imgMarginRight === 'auto');
 ```
 
 # --seed--

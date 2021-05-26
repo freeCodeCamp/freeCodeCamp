@@ -16,19 +16,22 @@ Change the height the `hr` element to be `3px`.
 You should use the `hr` selector.
 
 ```js
-assert(code.match(/hr\s*{/i));
+const hasHr = new __helpers.CSSHelp(document).getStyleDeclaration('hr');
+assert(hasHr);
 ```
 
 You should set the `height` property to `3px`.
 
 ```js
-assert(code.match(/height:\s*3px;?/i));
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '3px');
+assert(hasHeight);
 ```
 
 Your `hr` element should have a height of `3px`.
 
 ```js
-assert($('hr').css('height') === '3px');
+const hrHeight = new __helpers.CSSHelp(document).getStyleDeclaration('hr').getPropertyValue('height');
+assert(hrHeight === '3px');
 ```
 
 # --seed--

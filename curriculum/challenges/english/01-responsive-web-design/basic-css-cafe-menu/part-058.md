@@ -16,13 +16,14 @@ Change all the text in your `body`, by adding a `font-family` property with the 
 You should set the `font-family` property to `sans-serif`.
 
 ```js
-assert(code.match(/font-family:\s*sans-serif;?/i));
+const hasFontFamily = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-family'] === 'sans-serif');
 ```
 
 Your `body` should have a `font-family` of `sans-serif`.
 
 ```js
-assert($('body').css('font-family') === 'sans-serif');
+const bodyFontFamily = new __helpers.CSSHelp(document).getStyleDeclaration('body').getPropertyValue('font-family');
+assert(bodyFontFamily === 'sans-serif');
 ```
 
 # --seed--

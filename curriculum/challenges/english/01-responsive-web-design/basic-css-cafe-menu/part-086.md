@@ -14,13 +14,15 @@ To remove some of the vertical space between the `h1` element and the text `Est.
 You should set the `margin-bottom` property to `15px`.
 
 ```js
-assert(code.match(/margin-bottom:\s*15px;?/i))
+const hasMarginBottom = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-bottom'] === '15px');
+assert(hasMarginBottom);
 ```
 
 Your `h1` element should have a `margin-bottom` of `15px`.
 
 ```js
-assert($('h1').css('margin-bottom') === '15px');
+const h1MarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('h1').getPropertyValue('margin-bottom');
+assert(h1MarginBottom === '15px');
 ```
 
 # --seed--

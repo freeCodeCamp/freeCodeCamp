@@ -16,19 +16,22 @@ To decrease the default margin space below the address `p` element, create a cla
 You should add an `.address` selector.
 
 ```js
-assert(code.match(/\.address\s*{/i));
+const hasAddress = new __helpers.CSSHelp(document).getStyleDeclaration('.address');
+assert(hasAddress);
 ```
 
 You should set the `margin-bottom` property to `5px`.
 
 ```js
-assert(code.match(/margin-bottom:\s*5px;?/i));
+const hasMarginBottom = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-bottom'] === '5px');
+assert(hasMarginBottom);
 ```
 
 Your `.address` selector should have the `margin-bottom` property set to `5px`.
 
 ```js
-assert(code.match(/\.address\s*{\s*margin-bottom:\s*5px;?/i))
+const addressMarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('.address').getPropertyValue('margin-bottom');
+assert(addressMarginBottom === '5px');
 ```
 
 # --seed--

@@ -14,13 +14,15 @@ That's closer, but the price didn't stay over on the right. This is because `inl
 You should set the `width` property to `50%` in your `.flavor` selector.
 
 ```js
-assert(code.match(/\.flavor\s*{[:;\-\w\s]*width:\s50%;?/i));
+const flavorWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.flavor').getPropertyValue('width');
+assert(flavorWidth === '50%');
 ```
 
 You should set the `width` property to `50%` in your `.price` selector.
 
 ```js
-assert(code.match(/\.price\s*{[\W\w\s]*width:\s50%;?/i));
+const priceWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.price').getPropertyValue('width');
+assert(priceWidth === '50%');
 ```
 
 # --seed--

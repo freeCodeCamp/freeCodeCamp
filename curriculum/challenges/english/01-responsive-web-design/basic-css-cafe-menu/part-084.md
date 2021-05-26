@@ -14,13 +14,15 @@ To keep with the same color theme you have already been using (black and brown),
 You should set the `color` property to `black` when the link is `visited`.
 
 ```js
-assert(code.match(/a:visited\s*{\s*color:\s*black;?/i));
+const aVisitedColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:visited').getPropertyValue('color');
+assert(aVisitedColor === 'black');
 ```
 
 You should set the `color` property to `brown` when the link is `active`.
 
 ```js
-assert(code.match(/a:active\s*{\s*color:\s*brown;?/i));
+const aActiveColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:active').getPropertyValue('color');
+assert(aActiveColor === 'brown');
 ```
 
 # --seed--

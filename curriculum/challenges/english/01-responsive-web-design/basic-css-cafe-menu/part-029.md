@@ -25,11 +25,19 @@ Your `body` selector should not have any comments.
 assert(!code.match(/body\s*{\s*\/\*/i));
 ```
 
+You should set the `background-image` property to `url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)`.
+
+```js
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-image'] === `url("https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg")`)
+assert(hasBackground)
+```
+
 Your `body` element should have the coffee beans background image.
 
 ```js
-const background = $('body').css('background-image');
-assert(background === 'url("https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg")');
+const bodyBackground = new __helpers.CSSHelp(document).getStyleDeclaration('body').getPropertyValue('background-image');
+console.log(bodyBackground);
+assert(bodyBackground === `url("https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg")`);
 ```
 
 # --seed--

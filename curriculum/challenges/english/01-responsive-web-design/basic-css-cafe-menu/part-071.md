@@ -16,13 +16,15 @@ Change the `height` property of the `hr` to be `2px`, so the total height of it 
 You should set the `height` property to `2px`.
 
 ```js
-assert(code.match(/height:\s*2px;?/i));
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '2px');
+assert(hasHeight);
 ```
 
 Your `hr` element should have a `height` of `2px`.
 
 ```js
-assert($('hr').css('height') === '2px');
+const hrHeight = new __helpers.CSSHelp(document).getStyleDeclaration('hr').getPropertyValue('height');
+assert(hrHeight === '2px');
 ```
 
 # --seed--

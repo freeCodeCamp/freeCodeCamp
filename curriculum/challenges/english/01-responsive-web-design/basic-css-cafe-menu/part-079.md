@@ -14,7 +14,8 @@ Moving down to the `footer` element, make all the text have a value of `14px` fo
 You should have a `footer` selector.
 
 ```js
-assert(code.match(/footer\s*{/i));
+const hasFooter = new __helpers.CSSHelp(document).getStyleDeclaration('footer');
+assert(hasFooter);
 ```
 
 Your `footer` selector should be below your comment.
@@ -27,13 +28,15 @@ You should set the `font-size` property to `14px`.
 
 
 ```js
-assert(code.match(/font-size:\s*14px;?/i));
+const hasFontSize = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-size'] === '14px');
+assert(hasFontSize);
 ```
 
 Your `footer` element should have a `font-size` of `14px`.
 
 ```js
-assert($('footer').css('font-size') === '14px');
+const footerFontSize = new __helpers.CSSHelp(document).getStyleDeclaration('footer').getPropertyValue('font-size');
+assert(footerFontSize === '14px');
 ```
 
 # --seed--

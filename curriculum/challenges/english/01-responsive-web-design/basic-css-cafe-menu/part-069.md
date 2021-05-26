@@ -14,13 +14,14 @@ Change the background color of the `hr` element to `brown` so it matches the col
 You should set the value of the `background-color` property to `brown`.
 
 ```js
-assert(code.match(/background-color:\s*brown;?/));
+const hasBackgroundColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'brown');
 ```
 
 Your `hr` element should have a `background-color` of `brown`.
 
 ```js
-assert($('hr').css('background-color') === 'rgb(165, 42, 42)');
+const hrBackgroundColor = new __helpers.CSSHelp(document).getStyleDeclaration('hr').getPropertyValue('background-color');
+assert(hrBackgroundColor === 'brown');
 ```
 
 # --seed--

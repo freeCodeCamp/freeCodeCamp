@@ -16,13 +16,15 @@ Change the `width` value to `49%` for each class to see what happens.
 You should set the `width` property to `49%` in your `.flavor` selector.
 
 ```js
-assert(code.match(/\.flavor\s*{[:;\-\w\s]*width:\s49%;?/i));
+const flavorWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.flavor').getPropertyValue('width');
+assert(flavorWidth === '49%');
 ```
 
 You should set the `width` property to `49%` in your `.price` selector.
 
 ```js
-assert(code.match(/\.price\s*{[\W\w\s]*width:\s49%;?/i));
+const priceWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.price').getPropertyValue('width');
+assert(priceWidth === '49%');
 ```
 
 # --seed--

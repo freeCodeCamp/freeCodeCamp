@@ -16,13 +16,15 @@ Add a `max-width` property to the `menu` class with a value of `500px` to preven
 You should set the `max-width` property to `500px`.
 
 ```js
-assert(code.match(/max-width:\s*500px;?/i));
+const hasMaxWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['max-width'] === '500px');
+assert(hasMaxWidth);
 ```
 
 Your `.menu` element should have a `max-width` of `500px`.
 
 ```js
-assert($('.menu').css('max-width') === '500px');
+const menuMaxWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.menu').getPropertyValue('max-width');
+assert(menuMaxWidth === '500px');
 ```
 
 # --seed--

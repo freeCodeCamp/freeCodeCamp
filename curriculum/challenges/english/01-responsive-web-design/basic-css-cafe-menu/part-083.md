@@ -16,13 +16,22 @@ Change the color of the footer `Visit our website` link to be `white` when a cli
 You should use the `a:active` pseudoselector.
 
 ```js
-assert(code.match(/a:active\s*{/i));
+const hasAActive = new __helpers.CSSHelp(document).getStyleDeclaration('a:active');
+assert(hasAActive);
 ```
 
 You should set the `color` property to `white`.
 
 ```js
-assert(code.match(/a:active\s*{\s*color:\s*white;?/i));
+const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.color === 'white');
+assert(hasColor);
+```
+
+Your `a:active` should have a `color` of `white`.
+
+```js
+const aActiveColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:active').getPropertyValue('color');
+assert(aActiveColor === 'white');
 ```
 
 # --seed--

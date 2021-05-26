@@ -14,14 +14,15 @@ That brown background makes it hard to read the text. Change the `body` element'
 You should set the `background-color` property to `burlywood`.
 
 ```js
-assert(code.match(/background-color:\s*burlywood;?/i));
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'burlywood');
+assert(hasBackground);
 ```
 
-Your body element should have a burlywood background.
+Your `body` element should have a `burlywood` background.
 
 ```js
-const bodyBackground = $('body').css('background-color');
-assert(bodyBackground === 'rgb(222, 184, 135)');
+const bodyBackground = new __helpers.CSSHelp(document).getStyleDeclaration('body').getPropertyValue('background-color');
+assert(bodyBackground === 'burlywood');
 ```
 
 # --seed--

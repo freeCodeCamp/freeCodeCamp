@@ -16,13 +16,15 @@ Style both the `h1` and the `h2` elements so that only these elements' text use 
 You should use an `h1, h2` selector.
 
 ```js
-assert(code.match(/h1,\s*h2\s*{/i));
+const h1h2Selector = new __helpers.CSSHelp(document).getStyleDeclaration('h1, h2');
+assert(h1h2Selector);
 ```
 
 You should set the `font-family` to `Impact`.
 
 ```js
-assert(code.match(/font-family:\s*impact;?/i));
+const hasFontFamily = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-family'] === 'Impact');
+assert(hasFontFamily);
 ```
 
 Your `h1` element should have a `font-family` of `Impact`.

@@ -16,31 +16,36 @@ Target all the `p` elements nested in elements with the `class` named `item` and
 You should set the `margin-top` property to `5px`.
 
 ```js
-assert(code.match(/margin-top:\s*5px;?/i));
+const hasMarginTop = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-top'] === '5px');
+assert(hasMarginTop);
 ```
 
 You should set the `margin-bottom` property to `5px`.
 
 ```js
-assert(code.match(/margin-bottom:\s*5px;?/i));
+const hasMarginBottom = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-bottom'] === '5px');
+assert(hasMarginBottom);
 ```
 
 You should use the existing `.item p` selector.
 
 ```js
-assert(code.match(/\.item\s*p/g).length === 1);
+const hasOneSelector = new __helpers.CSSHelp(document).getStyleDeclarations('.item p');
+assert(hasOneSelector.length === 1);
 ```
 
 Your `p` elements nested in your `.item` elements should have a `margin-top` of `5px`.
 
 ```js
-assert($('.item p').css('margin-top') === '5px');
+const itemPMarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('.item p').getPropertyValue('margin-top');
+assert(itemPMarginTop === '5px');
 ```
 
 Your `p` elements nested in your `.item` elements should have a `margin-bottom` of `5px`.
 
 ```js
-assert($('.item p').css('margin-bottom') === '5px');
+const itemPMarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('.item p').getPropertyValue('margin-bottom');
+assert(itemPMarginBottom === '5px');
 ```
 
 # --seed--

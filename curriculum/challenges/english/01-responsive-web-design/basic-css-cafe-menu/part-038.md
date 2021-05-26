@@ -20,19 +20,22 @@ Using the above selector, add a `display` property with value `inline-block` so 
 You should use the `.item p` selector.
 
 ```js
-assert(code.match(/\.item\s*p\s*{/i));
+const hasItemP = new __helpers.CSSHelp(document).getStyleDeclaration('.item p');
+assert(hasItemP);
+```
+
+You should set the `display` property to `inline-block`.
+
+```js
+const hasDisplay = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.display === 'inline-block');
+assert(hasDisplay);
 ```
 
 Your `.item p` selector should set the `display` property to `inline-block`.
 
 ```js
-assert(code.match(/\.item\s+p\s*{\s*display:\s*inline-block;?/i));
-```
-
-Your `p` elements in your `.item` element should be `inline-block`.
-
-```js
-assert($('.item').children('p').css('display') === 'inline-block');
+const itemPDisplay = new __helpers.CSSHelp(document).getStyleDeclaration('.item p').getPropertyValue('display');
+assert(itemPDisplay === 'inline-block');
 ```
 
 # --seed--

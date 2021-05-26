@@ -14,37 +14,43 @@ In the previous step, you used a <dfn>type selector</dfn> to style the `h1` elem
 You should not change the existing `h1` selector.
 
 ```js
-assert(code.match(/h1\s*{/i));
+const hasH1 = new __helpers.CSSHelp(document).getStyleDeclaration('h1');
+assert(hasH1);
 ```
 
 You should add a new `h2` selector.
 
 ```js
-assert(code.match(/h2\s*{/i));
+const hasH2 = new __helpers.CSSHelp(document).getStyleDeclaration('h2');
+assert(hasH2);
 ```
 
 You should add a new `p` selector.
 
 ```js
-assert(code.match(/p\s*{/i))
+const hasP = new __helpers.CSSHelp(document).getStyleDeclaration('p');
+assert(hasP);
 ```
 
 Your `h1` element should have a `text-align` of `center`.
 
 ```js
-assert($('h1').css('text-align') === 'center');
+const h1TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h1').getPropertyValue('text-align');
+assert(h1TextAlign === 'center');
 ```
 
 Your `h2` element should have a `text-align` of `center`.
 
 ```js
-assert($('h2').css('text-align') === 'center');
+const h2TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h2').getPropertyValue('text-align');
+assert(h2TextAlign === 'center');
 ```
 
 Your `p` element should have a `text-align` of `center`.
 
 ```js
-assert($('p').css('text-align') === 'center');
+const pTextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('p').getPropertyValue('text-align');
+assert(pTextAlign === 'center');
 ```
 
 # --seed--

@@ -19,16 +19,18 @@ Use a single type selector to center the `h1`, `h2` and `p` elements at the same
 
 # --hints--
 
-You should use a single type selector for all three elements.
+You should use a single type selector for all three elements, `h1, h2, p`. Be sure to use that order.
 
 ```js
-assert(code.match(/(h1|h2|p), (h1|h2|p), (h1|h2|p) {/))
+const hasSelector = new __helpers.CSSHelp(document).getStyleDeclaration('h1, h2, p');
+assert(hasSelector);
 ```
 
 You should only have one selector in your `style` element.
 
 ```js
-assert(code.match(/text-align/g).length === 1);
+const selectors = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.selectorText)
+assert(selectors.length === 1);
 ```
 
 # --seed--

@@ -16,13 +16,22 @@ Add some more space by creating a class named `bottom-line` using `25px` for the
 You should add a `.bottom-line` selector.
 
 ```js
-assert(code.match(/\.bottom-line\s*{/i));
+const hasBottomLine = new __helpers.CSSHelp(document).getStyleDeclaration('.bottom-line');
+assert(hasBottomLine);
 ```
 
 You should set the `margin-top` property to `25px`.
 
 ```js
-assert(code.match(/\.bottom-line\s*{\s*margin-top:\s*25px;?/i));
+const hasMarginTop = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-top'] === '25px');
+assert(hasMarginTop);
+```
+
+Your `.bottom-line` selector should have a `margin-top` of `25px`.
+
+```js
+const bottomLineMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.bottom-line').getPropertyValue('margin-top');
+assert(bottomLineMargin === '25px');
 ```
 
 # --seed--

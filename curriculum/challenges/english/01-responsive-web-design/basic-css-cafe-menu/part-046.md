@@ -16,13 +16,15 @@ Since you know the prices on the right have significantly fewer characters, chan
 You should set the `width` property to `75%` in your `.flavor` selector.
 
 ```js
-assert(code.match(/\.flavor\s*{[:;\-\w\s]*width:\s75%;?/i));
+const flavorWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.flavor').getPropertyValue('width');
+assert(flavorWidth === '75%');
 ```
 
 You should set the `width` property to `25%` in your `.price` selector.
 
 ```js
-assert(code.match(/\.price\s*{[\W\w\s]*width:\s25%;?/i));
+const priceWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.price').getPropertyValue('width');
+assert(priceWidth === '25%');
 ```
 
 # --seed--

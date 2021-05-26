@@ -16,13 +16,15 @@ Make all the edges of the `hr` element the same color as the background of it us
 You should set the `border-color` property to `brown`.
 
 ```js
-assert(code.match(/border-color:\s*brown/i));
+const hasBorderColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-color'] === 'brown');
+assert(hasBorderColor);
 ```
 
 Your `hr` element should have a `border-color` of `brown`.
 
 ```js
-assert($('hr').css('border-color') === 'rgb(165, 42, 42)');
+const hrBorderColor = new __helpers.CSSHelp(document).getStyleDeclaration('hr').getPropertyValue('border-color');
+assert(hrBorderColor === 'brown');
 ```
 
 # --seed--

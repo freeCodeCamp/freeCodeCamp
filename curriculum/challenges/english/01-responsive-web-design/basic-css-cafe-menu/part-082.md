@@ -16,13 +16,22 @@ Change the color of the footer `Visit our website` link to be `brown` when a use
 You should use the `a:hover` pseudoselector.
 
 ```js
-assert(code.match(/a:hover\s*{/i));
+const hasAHover = new __helpers.CSSHelp(document).getStyleDeclaration('a:hover');
+assert(hasAHover);
 ```
 
 You should set the `color` property to `brown`.
 
 ```js
-assert(code.match(/a:hover\s*{\s*color:\s*brown;?/i));
+const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.color === 'brown');
+assert(hasColor);
+```
+
+Your `a:hover` should have a `color` of `brown`.
+
+```js
+const aHoverColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:hover').getPropertyValue('color');
+assert(aHoverColor === 'brown');
 ```
 
 # --seed--

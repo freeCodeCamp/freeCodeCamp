@@ -16,25 +16,29 @@ Give the `menu` class a `padding-left` and a `padding-right` with the same value
 You should set the `padding-left` property to `20px`.
 
 ```js
-assert(code.match(/padding-left:\s*20px;?/i));
+const hasPaddingLeft = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['padding-left'] === '20px');
+assert(hasPaddingLeft);
 ```
 
 You should set the `padding-right` property to `20px`.
 
 ```js
-assert(code.match(/padding-right:\s*20px;?/i));
+const hasPaddingRight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['padding-right'] === '20px');
+assert(hasPaddingRight);
 ```
 
 Your `.menu` element should have a `padding-left` of `20px`.
 
 ```js
-assert($('.menu').css('padding-left') === '20px');
+const menuPaddingLeft = new __helpers.CSSHelp(document).getStyleDeclaration('.menu').getPropertyValue('padding-left');
+assert(menuPaddingLeft === '20px');
 ```
 
 Your `.menu` element should have a `padding-right` of `20px`.
 
 ```js
-assert($('.menu').css('padding-right') === '20px');
+const menuPaddingRight = new __helpers.CSSHelp(document).getStyleDeclaration('.menu').getPropertyValue('padding-right');
+assert(menuPaddingRight === '20px');
 ```
 
 # --seed--
