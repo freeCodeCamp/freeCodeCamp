@@ -88,7 +88,7 @@ assert(threeBorderRadius === '30px 25px 60px 12px');
   <head>
     <meta charset="UTF-8">
     <title>Rothko</title>
-    <link href="./css/style10.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
     <div class="frame">

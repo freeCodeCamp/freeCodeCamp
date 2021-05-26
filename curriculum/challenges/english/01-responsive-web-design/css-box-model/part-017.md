@@ -61,7 +61,7 @@ assert(oneWidth === '425px');
   <head>
     <meta charset="UTF-8">
     <title>Rothko</title>
-    <link href="./css/style10.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
     <div class="frame">

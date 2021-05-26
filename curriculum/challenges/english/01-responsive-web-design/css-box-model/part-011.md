@@ -54,7 +54,7 @@ assert(document.querySelector('div').parentElement.tagName === 'BODY');
   <head>
     <meta charset="UTF-8">
     <title>Rothko</title>
-    <link href="./css/style04.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
 --fcc-editable-region--

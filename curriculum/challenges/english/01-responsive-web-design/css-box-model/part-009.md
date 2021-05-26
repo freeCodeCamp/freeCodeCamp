@@ -44,7 +44,7 @@ assert(canvasHeight === '600px');
   <head>
     <meta charset="UTF-8">
     <title>Rothko</title>
-    <link href="./css/style01g.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
     <div class="canvas">

@@ -55,7 +55,7 @@ assert(frameBorder === '50px solid black');
   <head>
     <meta charset="UTF-8">
     <title>Rothko</title>
-    <link href="./css/style05.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
     <div class="frame">
