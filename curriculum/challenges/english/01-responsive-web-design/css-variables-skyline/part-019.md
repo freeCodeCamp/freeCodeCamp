@@ -11,20 +11,40 @@ Give the new buildings `width` and `height` properties of: `10%` and `50%` for `
 
 # --hints--
 
-test-text
+You should give `.bb2` a `width` of `10%`.
 
 ```js
-const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0];
-const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];
-const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*10%\s*(;|})/g.test(bb2) &&
-    /height\s*:\s*50%\s*(;|})/g.test(bb2) &&
-    /width\s*:\s*10%\s*(;|})/g.test(bb3) &&
-    /height\s*:\s*55%\s*(;|})/g.test(bb3) &&
-    /width\s*:\s*11%\s*(;|})/g.test(bb4) &&
-    /height\s*:\s*58%\s*(;|})/g.test(bb4)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.width, '10%');
+```
+
+You should give `.bb2` a `height` of `50%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.height, '50%');
+```
+
+You should give `.bb3` a `width` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb3')?.width, '10%');
+```
+
+You should give `.bb3` a `height` of `50%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb3')?.height, '55%');
+```
+
+You should give `.bb4` a `width` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb4')?.width, '11%');
+```
+
+You should give `.bb4` a `height` of `50%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb4')?.height, '58%');
 ```
 
 # --seed--
@@ -56,55 +76,58 @@ assert(
 ```
 
 ```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --building-color1: #aa80ff;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        --building-color1: #aa80ff;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-    
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
+
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 ```
 

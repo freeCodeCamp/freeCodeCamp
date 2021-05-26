@@ -14,7 +14,7 @@ In CSS, you can target everything with an asterisk. Add a border to everything b
 You should use the `*` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclartion('*'));
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('*'));
 ```
 
 You should use the `border` property to style all the elements.

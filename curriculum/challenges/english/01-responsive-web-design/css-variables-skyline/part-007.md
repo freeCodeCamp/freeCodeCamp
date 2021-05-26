@@ -21,14 +21,14 @@ Your `body` should have a `height` of `100vh`.
 
 ```js
 const bodyStyles = new __helpers.CSSHelp(document).getStyleDeclaration('body');
-assert.equal(bodyStyles.height, '100vh');
+assert.equal(bodyStyles?.height, '100vh');
 ```
 
 Your `body` should have a `margin` of `0`.
 
 ```js
 // TODO: Editor adds margin as preferential style - 8px is always added.
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('body')?.margin, 0);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('body')?.margin, '0px');
 ```
 
 Your `body` should have the `overflow` property set to `hidden`.
