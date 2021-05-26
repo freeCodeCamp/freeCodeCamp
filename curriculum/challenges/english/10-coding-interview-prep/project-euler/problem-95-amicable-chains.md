@@ -20,20 +20,38 @@ Perhaps less well known are longer chains. For example, starting with 12496, we 
 
 Since this chain returns to its starting point, it is called an amicable chain.
 
-Find the smallest member of the longest amicable chain with no element exceeding one million.
+Find the smallest member of the longest amicable chain with no element exceeding `limit`.
 
 # --hints--
 
-`amicableChains()` should return a number.
+`amicableChains(300)` should return a number.
 
 ```js
-assert(typeof amicableChains() === 'number');
+assert(typeof amicableChains(300) === 'number');
 ```
 
-`amicableChains()` should return 14316.
+`amicableChains(300)` should return `220`.
 
 ```js
-assert.strictEqual(amicableChains(), 14316);
+assert.strictEqual(amicableChains(300), 220);
+```
+
+`amicableChains(15000)` should return `220`.
+
+```js
+assert.strictEqual(amicableChains(15000), 220);
+```
+
+`amicableChains(100000)` should return `12496`.
+
+```js
+assert.strictEqual(amicableChains(100000), 12496);
+```
+
+`amicableChains(1000000)` should return `14316`.
+
+```js
+assert.strictEqual(amicableChains(1000000), 14316);
 ```
 
 # --seed--
@@ -41,12 +59,12 @@ assert.strictEqual(amicableChains(), 14316);
 ## --seed-contents--
 
 ```js
-function amicableChains() {
+function amicableChains(limit) {
 
   return true;
 }
 
-amicableChains();
+amicableChains(300);
 ```
 
 # --solutions--
