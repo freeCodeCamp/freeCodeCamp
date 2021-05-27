@@ -12,7 +12,7 @@ The first known prime found to exceed one million digits was discovered in 1999,
 
 However, in 2004 there was found a massive non-Mersenne prime which contains 2,357,207 digits: $28433 × 2^{7830457} + 1$.
 
-Find the last ten digits of non-Mersenne prime in the form $multiplier × 2^{power} + 1$.
+Find the last ten digits of that non-Mersenne prime in the form $multiplier × 2^{power} + 1$.
 
 # --hints--
 
@@ -22,25 +22,25 @@ Find the last ten digits of non-Mersenne prime in the form $multiplier × 2^{pow
 assert(typeof largeNonMersennePrime(19, 6833086) === 'string');
 ```
 
-`largeNonMersennePrime(19, 6833086)` should return string `3637590017`.
+`largeNonMersennePrime(19, 6833086)` should return the string `3637590017`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(19, 6833086), '3637590017');
 ```
 
-`largeNonMersennePrime(27, 7046834)` should return string `0130771969`.
+`largeNonMersennePrime(27, 7046834)` should return the string `0130771969`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(27, 7046834), '0130771969');
 ```
 
-`largeNonMersennePrime(6679881, 6679881)` should return string `4455386113`.
+`largeNonMersennePrime(6679881, 6679881)` should return the string `4455386113`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(6679881, 6679881), '4455386113');
 ```
 
-`largeNonMersennePrime(28433, 7830457)` should return string `8739992577`.
+`largeNonMersennePrime(28433, 7830457)` should return the string `8739992577`.
 
 ```js
 assert.strictEqual(largeNonMersennePrime(28433, 7830457), '8739992577');
