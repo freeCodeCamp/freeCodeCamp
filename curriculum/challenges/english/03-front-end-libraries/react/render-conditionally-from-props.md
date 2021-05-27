@@ -240,9 +240,11 @@ class GameOfChance extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    // Complete the setState updater function
     this.setState(prevState => {
-
+      // Complete the return statement:
+      return {
+        counter: prevState
+      }
     });
   }
   render() {
