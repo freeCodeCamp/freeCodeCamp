@@ -9,7 +9,7 @@ type Challenge = {
   instructions: string;
 };
 
-function ChallengeDescription(challenge: Challenge) {
+function ChallengeDescription(challenge: Challenge): JSX.Element {
   return (
     <div
       className={`challenge-instructions${
