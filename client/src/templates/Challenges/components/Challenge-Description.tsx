@@ -3,13 +3,13 @@ import React, { Fragment } from 'react';
 import PrismFormatted from './PrismFormatted';
 import './challenge-description.css';
 
-type Challenges = {
+type Challenge = {
   block: string;
   description: string;
   instructions: string;
 };
 
-function ChallengeDescription(challenge: Challenges) {
+function ChallengeDescription(challenge: Challenge) {
   return (
     <div
       className={`challenge-instructions${
