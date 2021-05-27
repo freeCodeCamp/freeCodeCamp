@@ -17,7 +17,7 @@ console.log("Alan Peter".length);
 
 The value `10` would be displayed in the console.
 
-For example, if we created a variable `var firstName = "Charles"`, we could find out how long the string `Charles` is by using the `firstName.length` property.
+For example, if we created a variable `var firstName = "Ada"`, we could find out how long the string `Ada` is by using the `firstName.length` property.
 
 # --instructions--
 
