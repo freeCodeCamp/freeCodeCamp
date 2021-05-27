@@ -215,8 +215,12 @@ const transformIncludes = async function (fileP) {
   const file = await fileP;
   const div = document.createElement('div');
   div.innerHTML = file.contents;
-  const link = div.querySelector('link[href="styles.css"]');
-  const script = div.querySelector('script[src="script.js"]');
+  const link =
+    div.querySelector('link[href="styles.css"]') ??
+    div.querySelector('link[href="./styles.css"]');
+  const script =
+    div.querySelector('script[src="script.js"]') ??
+    div.querySelector('script[src="./script.js"]');
   const importedFiles = [];
   if (link) {
     importedFiles.push('index.css');
