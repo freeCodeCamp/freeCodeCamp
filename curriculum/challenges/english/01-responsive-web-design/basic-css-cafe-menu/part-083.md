@@ -9,11 +9,11 @@ dashedName: part-83
 
 You change properties of a link when the link is actually being clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
 
-Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
+Change the color of the footer `Visit our website` link to be `white` when clicked on.
 
 # --hints--
 
-You should use the `a:active` pseudoselector.
+You should use the `a:active` pseudo-selector.
 
 ```js
 const hasAActive = new __helpers.CSSHelp(document).getStyleDeclaration('a:active');

@@ -7,7 +7,7 @@ dashedName: part-40
 
 # --description--
 
-Well that did not work. Styling the `p` elements as `inline-block` and placing them on a separate lines in the code, creates an extra space to the right of the first `p` element, causing the second one to shift to the next line. One way to fix this is to make each `p`'s width a little less than `50%`.
+Well that did not work. Styling the `p` elements as `inline-block` and placing them on separate lines in the code creates an extra space to the right of the first `p` element, causing the second one to shift to the next line. One way to fix this is to make each `p` element's width a little less than `50%`.
 
 Change the `width` value to `49%` for each class to see what happens.
 

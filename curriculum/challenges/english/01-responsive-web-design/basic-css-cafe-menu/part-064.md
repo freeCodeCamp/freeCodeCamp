@@ -7,7 +7,7 @@ dashedName: part-64
 
 # --description--
 
-Add a `footer` element below the `main` element, where you can some additional information.
+Add a `footer` element below the `main` element, where you can add some additional information.
 
 # --hints--
 

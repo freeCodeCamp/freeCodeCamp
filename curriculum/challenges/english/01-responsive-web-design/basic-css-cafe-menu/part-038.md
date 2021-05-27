@@ -7,7 +7,7 @@ dashedName: part-38
 
 # --description--
 
-The `p` elements are nested in an `article` elements with the class attribute of `item`. You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
+The `p` elements are nested in an `article` element with the class attribute of `item`. You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
 ```css
 .item p { }

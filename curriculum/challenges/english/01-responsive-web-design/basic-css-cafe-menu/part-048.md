@@ -7,7 +7,7 @@ dashedName: part-48
 
 # --description--
 
-Add an `h2` element in the new section add give it the text `Desserts`.
+Add an `h2` element in the new section and give it the text `Desserts`.
 
 # --hints--
 

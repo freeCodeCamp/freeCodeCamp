@@ -7,7 +7,7 @@ dashedName: part-16
 
 # --description--
 
-Now that you have the CSS in the `styles.css` file, go ahead and remove the `style` element and all its content. Once it is removed, the text that as centered, will shift back to the left.
+Now that you have the CSS in the `styles.css` file, go ahead and remove the `style` element and all its content. Once it is removed, the text that was centered will shift back to the left.
 
 # --hints--
 
