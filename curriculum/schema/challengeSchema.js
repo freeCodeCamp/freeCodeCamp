@@ -37,7 +37,6 @@ const schema = Joi.object()
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
-    fileName: Joi.string(),
     files: Joi.object().keys({
       indexcss: fileJoi,
       indexhtml: fileJoi,
@@ -48,7 +47,6 @@ const schema = Joi.object()
     helpCategory: Joi.valid('JavaScript', 'HTML-CSS', 'Python'),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
-    helpRoom: Joi.string(),
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),
     isComingSoon: Joi.bool(),
