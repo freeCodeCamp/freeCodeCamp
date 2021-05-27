@@ -217,18 +217,18 @@ const transformIncludes = async function (fileP) {
   div.innerHTML = file.contents;
   const link = div.querySelector('link[href="styles.css"]');
   const script = div.querySelector('script[src="script.js"]');
-  const includes = [];
+  const importedFiles = [];
   if (link) {
-    includes.push('index.css');
+    importedFiles.push('index.css');
     link.remove();
   }
   if (script) {
-    includes.push('index.js');
+    importedFiles.push('index.js');
     script.remove();
   }
 
   return flow(
-    partial(vinyl.setIncludes, includes),
+    partial(vinyl.setImportedFiles, importedFiles),
     partial(vinyl.transformContents, () => div.innerHTML)
   )(file);
 };

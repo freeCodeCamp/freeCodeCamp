@@ -147,12 +147,12 @@ function setName(name, poly) {
   return newPoly;
 }
 
-// setIncludes(includes: String[], poly: PolyVinyl) => PolyVinyl
-function setIncludes(includes, poly) {
+// setImportedFiles(importedFiles: String[], poly: PolyVinyl) => PolyVinyl
+function setImportedFiles(importedFiles, poly) {
   checkPoly(poly);
   const newPoly = {
     ...poly,
-    includes: [...includes]
+    importedFiles: [...importedFiles]
   };
   return newPoly;
 }
@@ -247,7 +247,7 @@ module.exports = {
   setContent,
   setExt,
   setName,
-  setIncludes,
+  setImportedFiles,
   setError,
   clearHeadTail,
   appendToTail,
