@@ -87,7 +87,7 @@ class CSSHelp {
       "link[href*='styles']"
     );
     const style: HTMLStyleElement | null = this.doc?.querySelector('style');
-    if (link) {
+    if (link?.sheet?.cssRules?.length) {
       return link.sheet;
     } else if (style) {
       return style.sheet;
