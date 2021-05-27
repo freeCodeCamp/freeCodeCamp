@@ -17,6 +17,9 @@ const tooMuchHTML = [
   { includes: [], contents: 'index html three' }
 ];
 
+// TODO: write tests for concatHtml instead, since findIndexHtml should not be
+// exported.
+
 describe('findIndexHtml', () => {
   it('should return the index.html file from an array', () => {
     expect.assertions(1);

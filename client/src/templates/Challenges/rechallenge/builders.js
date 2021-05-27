@@ -56,14 +56,16 @@ export const cssToHtml = cond([
   [stubTrue, identity]
 ]);
 
-// TODO(oliver): relying on includes is quite brittle. If we can keep the
-// original filename in the file or rely on history, that should be safer.
 export function findIndexHtml(files) {
-  const filtered = files.filter(({ includes }) => includes);
+  const filtered = files.filter(file => wasHtmlFile(file));
   if (filtered.length > 1) {
     throw new Error('Too many html blocks in the challenge seed');
   }
-  return filtered.length ? filtered[0] : null;
+  return filtered[0];
+}
+
+function wasHtmlFile(file) {
+  return file.history[0] === 'index.html';
 }
 
 export function concatHtml({ required = [], template, files = [] } = {}) {
@@ -89,10 +91,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
 
   const source = files.reduce((source, file) => {
     if (!indexHtml) return source.concat(file.contents, htmlCatch);
-    if (
-      indexHtml.includes.includes(file.history[0]) ||
-      file.history[0] === 'index.html'
-    ) {
+    if (indexHtml.includes.includes(file.history[0]) || wasHtmlFile(file)) {
       return source.concat(file.contents, htmlCatch);
     } else {
       return source;
