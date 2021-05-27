@@ -12,7 +12,10 @@ describe('Certificate intro page', () => {
   });
 
   it('Should render', () => {
-    cy.title().should('eq', 'Responsive Web Design | freeCodeCamp.org');
+    cy.title().should(
+      'eq',
+      'Responsive Web Design Certification | freeCodeCamp.org'
+    );
   });
 
   it('Should have certificate intro text', () => {

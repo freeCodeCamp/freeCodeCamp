@@ -17,7 +17,10 @@ describe('challenges/superblock redirect', function () {
   it('redirects to learn/superblock', () => {
     cy.visit(locations.chalSuper);
 
-    cy.title().should('eq', 'Responsive Web Design | freeCodeCamp.org');
+    cy.title().should(
+      'eq',
+      'Responsive Web Design Certification | freeCodeCamp.org'
+    );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(locations.learnSuper);
     });
