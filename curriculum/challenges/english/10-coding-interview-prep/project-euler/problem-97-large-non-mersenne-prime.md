@@ -62,5 +62,27 @@ largeNonMersennePrime(19, 6833086);
 # --solutions--
 
 ```js
-// solution required
+function largeNonMersennePrime(multiplier, power) {
+  function modStepsResults(number, other, mod, startValue, step) {
+    let result = startValue;
+    for (let i = 0; i < other; i++) {
+      result = step(number, result) % mod;
+    }
+    return result;
+  }
+
+  const numOfDigits = 10;
+  const mod = 10 ** numOfDigits;
+  const digitsAfterPower = modStepsResults(2, power, mod, 1, (a, b) => a * b);
+  const digitsAfterMultiply = modStepsResults(
+    digitsAfterPower,
+    multiplier,
+    mod,
+    0,
+    (a, b) => a + b
+  );
+  const lastDigits = (digitsAfterMultiply + 1) % mod;
+
+  return lastDigits.toString().padStart(10, '0');
+}
 ```
