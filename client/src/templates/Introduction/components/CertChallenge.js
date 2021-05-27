@@ -9,7 +9,7 @@ import CertificationIcon from '../../../assets/icons/CertificationIcon';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { certificatesByNameSelector } from '../../../redux';
-import { CurrentCertsType, User } from '../../../redux/propTypes';
+import { CurrentCertsType, User } from '../../../redux/prop-types';
 import { certMap } from '../../../resources/certAndProjectMap';
 import {
   certSlugTypeMap,
