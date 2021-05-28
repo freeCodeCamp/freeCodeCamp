@@ -10,7 +10,7 @@ dashedName: authentication-strategies
 
 A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project, we will set up a local strategy. To see a list of the hundreds of strategies, visit Passport's site [here](http://passportjs.org/).
 
-Add `passport-local` as a dependency and add it to your server as follows: `const LocalStrategy = require('passport-local');`
+Add `passport-local@~1.0.0` as a dependency and add it to your server as follows: `const LocalStrategy = require('passport-local');`
 
 Now you will have to tell passport to **use** an instantiated LocalStrategy object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!
 
