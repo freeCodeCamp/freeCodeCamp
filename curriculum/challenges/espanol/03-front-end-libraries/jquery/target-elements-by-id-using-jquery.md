@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08826
-title: Target Elements by id Using jQuery
+title: Apunta a elementos por clase usando jQuery
 challengeType: 6
 forumTopicId: 18317
 required:
@@ -11,27 +11,29 @@ dashedName: target-elements-by-id-using-jquery
 
 # --description--
 
-You can also target elements by their id attributes.
+También puedes apuntar a elementos por su atributo id.
 
-First target your `button` element with the id `target3` by using the `$("#target3")` selector.
+Primero apunta a tu elemento `button` con el id `target3` usando el selector `$("#target3")`.
 
-Note that, just like with CSS declarations, you type a `#` before the id's name.
+Ten en cuenta que, al igual que con las declaraciones CSS, escribes un `#` antes del nombre del id.
 
-Then use jQuery's `.addClass()` function to add the classes `animated` and `fadeOut`.
+Luego usa la función `.addClass()` de jQuery para añadir las clases `animated` y `fadeOut`.
 
-Here's how you'd make the `button` element with the id `target6` fade out:
+Así es como harás que el elemento `button` con el id `target6` se desvanezca:
 
-`$("#target6").addClass("animated fadeOut")`.
+```js
+$("#target6").addClass("animated fadeOut");
+```
 
 # --hints--
 
-You should select the `button` element with the `id` of `target3` and use the jQuery `addClass()` function to give it the class of `animated`.
+Debes seleccionar el elemento `button` con el `id` de `target3` y utilizar la función jQuery `addClass()` para darle la clase `animated`.
 
 ```js
 assert($('#target3').hasClass('animated'));
 ```
 
-You should target the element with the id `target3` and use the jQuery `addClass()` function to give it the class `fadeOut`.
+Debes seleccionar el elemento con el id `target3` y utilizar la función jQuery `addClass()` para darle la clase `fadeOut`.
 
 ```js
 assert(
@@ -40,7 +42,7 @@ assert(
 );
 ```
 
-You should only use jQuery to add these classes to the element.
+Solo debes usar jQuery para agregar estas clases al elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));
