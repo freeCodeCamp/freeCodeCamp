@@ -1,14 +1,6 @@
 // originally based off of https://github.com/gulpjs/vinyl
 const invariant = require('invariant');
 
-function isPromise(value) {
-  return (
-    value &&
-    typeof value.subscribe !== 'function' &&
-    typeof value.then === 'function'
-  );
-}
-
 // interface PolyVinyl {
 //   source: String,
 //   contents: String,
@@ -101,33 +93,6 @@ function setExt(ext, poly) {
   return newPoly;
 }
 
-// setName(name: String, poly: PolyVinyl) => PolyVinyl
-function setName(name, poly) {
-  checkPoly(poly);
-  const newPoly = {
-    ...poly,
-    name,
-    path: name + '.' + poly.ext,
-    key: name + poly.ext
-  };
-  newPoly.history = [...poly.history, newPoly.path];
-  return newPoly;
-}
-
-// setError(error: Object, poly: PolyVinyl) => PolyVinyl
-function setError(error, poly) {
-  invariant(
-    typeof error === 'object',
-    'error must be an object or null, but got %',
-    error
-  );
-  checkPoly(poly);
-  return {
-    ...poly,
-    error
-  };
-}
-
 // clearHeadTail(poly: PolyVinyl) => PolyVinyl
 function clearHeadTail(poly) {
   checkPoly(poly);
@@ -135,15 +100,6 @@ function clearHeadTail(poly) {
     ...poly,
     head: '',
     tail: ''
-  };
-}
-
-// appendToTail (tail: String, poly: PolyVinyl) => PolyVinyl
-function appendToTail(tail, poly) {
-  checkPoly(poly);
-  return {
-    ...poly,
-    tail: poly.tail.concat(tail)
   };
 }
 
@@ -184,29 +140,13 @@ function transformHeadTailAndContents(wrap, poly) {
   };
 }
 
-function testContents(predicate, poly) {
-  return !!predicate(poly.contents);
-}
-
-function updateFileFromSpec(spec, poly) {
-  return setContent(poly.contents, createPoly(spec));
-}
-
 module.exports = {
-  isPromise,
   createPoly,
   isPoly,
-  checkPoly,
   isEmpty,
   setContent,
   setExt,
-  setName,
-  setError,
-  clearHeadTail,
-  appendToTail,
   compileHeadTail,
   transformContents,
-  transformHeadTailAndContents,
-  testContents,
-  updateFileFromSpec
+  transformHeadTailAndContents
 };
