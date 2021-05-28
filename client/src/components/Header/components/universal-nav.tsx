@@ -1,20 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable react/prop-types */
+// @ts-nocheck
+import React, { Ref } from 'react';
 import { Link, SkeletonSprite } from '../../helpers';
-import NavLogo from './NavLogo';
-import MenuButton from './MenuButton';
-import NavLinks from './NavLinks';
-import './universalNav.css';
+import NavLogo from './nav-logo';
+import MenuButton from './menu-button';
+import NavLinks from './nav-links';
 import { isLanding } from '../../../utils/path-parsers';
-
 import Loadable from '@loadable/component';
 
+import './universal-nav.css';
+
 const SearchBar = Loadable(() => import('../../search/searchBar/SearchBar'));
-const SearchBarOptimized = Loadable(() =>
-  import('../../search/searchBar/search-bar-optimized')
+const SearchBarOptimized = Loadable(
+  () => import('../../search/searchBar/search-bar-optimized')
 );
 
+export interface UniversalNavProps {
+  displayMenu?: boolean;
+  fetchState?: { pending: boolean };
+  menuButtonRef?: Ref<HTMLButtonElement> | undefined;
+  searchBarRef?: unknown;
+  toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  user?: Record<string, unknown>;
+}
 export const UniversalNav = ({
   displayMenu,
   toggleDisplayMenu,
@@ -22,7 +33,7 @@ export const UniversalNav = ({
   searchBarRef,
   user,
   fetchState
-}) => {
+}: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
 
   const search =
@@ -77,12 +88,3 @@ export const UniversalNav = ({
 
 UniversalNav.displayName = 'UniversalNav';
 export default UniversalNav;
-
-UniversalNav.propTypes = {
-  displayMenu: PropTypes.bool,
-  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  menuButtonRef: PropTypes.object,
-  searchBarRef: PropTypes.object,
-  toggleDisplayMenu: PropTypes.func,
-  user: PropTypes.object
-};
