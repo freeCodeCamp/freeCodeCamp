@@ -16,20 +16,38 @@ If we list the set of reduced proper fractions for `d` ≤ 8 in ascending order 
 
 It can be seen that there are 3 fractions between 1/3 and 1/2.
 
-How many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper fractions for `d` ≤ 12,000?
+How many fractions lie between $\frac{1}{3}$ and $\frac{1}{2}$ in the sorted set of reduced proper fractions for `d` ≤ `limit`?
 
 # --hints--
 
-`countingFractionsInARange()` should return a number.
+`countingFractionsInARange(8)` should return a number.
 
 ```js
-assert(typeof countingFractionsInARange() === 'number');
+assert(typeof countingFractionsInARange(8) === 'number');
 ```
 
-`countingFractionsInARange()` should return 7295372.
+`countingFractionsInARange(8)` should return `3`.
 
 ```js
-assert.strictEqual(countingFractionsInARange(), 7295372);
+assert.strictEqual(countingFractionsInARange(8), 3);
+```
+
+`countingFractionsInARange(1000)` should return `50695`.
+
+```js
+assert.strictEqual(countingFractionsInARange(1000), 50695);
+```
+
+`countingFractionsInARange(6000)` should return `1823861`.
+
+```js
+assert.strictEqual(countingFractionsInARange(6000), 1823861);
+```
+
+`countingFractionsInARange(12000)` should return `7295372`.
+
+```js
+assert.strictEqual(countingFractionsInARange(12000), 7295372);
 ```
 
 # --seed--
@@ -37,12 +55,12 @@ assert.strictEqual(countingFractionsInARange(), 7295372);
 ## --seed-contents--
 
 ```js
-function countingFractionsInARange() {
+function countingFractionsInARange(limit) {
 
   return true;
 }
 
-countingFractionsInARange();
+countingFractionsInARange(8);
 ```
 
 # --solutions--
