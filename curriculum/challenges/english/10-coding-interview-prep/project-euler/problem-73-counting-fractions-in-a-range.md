@@ -66,5 +66,18 @@ countingFractionsInARange(8);
 # --solutions--
 
 ```js
-// solution required
+function countingFractionsInARange(limit) {
+  let result = 0;
+  const stack = [[3, 2]];
+  while (stack.length > 0) {
+    const [startDenominator, endDenominator] = stack.pop();
+    const curDenominator = startDenominator + endDenominator;
+    if (curDenominator <= limit) {
+      result++;
+      stack.push([startDenominator, curDenominator]);
+      stack.push([curDenominator, endDenominator]);
+    }
+  }
+  return result;
+}
 ```
