@@ -21,7 +21,7 @@ assert(hasBoxShadow);
 Your `.two` element should have a `box-shadow` value of `0 0 3px 3px #8f0401`.
 
 ```js
-const twoShadow = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('box-shadow');
+const twoShadow = new __helpers.CSSHelp(document).getStyleDeclaration('.two')?.getPropertyValue('box-shadow');
 assert(twoShadow === 'rgb(143, 4, 1) 0px 0px 3px 3px');
 ```
 

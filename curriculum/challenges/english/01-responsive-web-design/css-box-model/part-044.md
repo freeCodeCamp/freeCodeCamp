@@ -23,7 +23,7 @@ assert(hasTransform);
 Your `.one` element should have a `transform` value of `rotate(-0.6deg)`.
 
 ```js
-const oneTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('transform');
+const oneTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('transform');
 assert(oneTransform === 'rotate(-0.6deg)');
 ```
 

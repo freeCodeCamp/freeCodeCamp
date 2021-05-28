@@ -21,7 +21,7 @@ assert(hasHeight);
 Your `.canvas` element should have a `height` of `600px`.
 
 ```js
-const canvasHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('height');
+const canvasHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('height');
 assert(canvasHeight === '600px');
 ```
 

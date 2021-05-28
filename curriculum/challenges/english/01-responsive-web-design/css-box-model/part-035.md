@@ -23,7 +23,7 @@ assert(hasFilter);
 Your `.canvas` element should have a `filter` value of `blur(2px)`.
 
 ```js
-const canvasFilter = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('filter');
+const canvasFilter = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('filter');
 assert(canvasFilter === 'blur(2px)');
 ```
 

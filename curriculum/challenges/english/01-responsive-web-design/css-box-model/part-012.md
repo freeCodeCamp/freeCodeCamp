@@ -30,7 +30,7 @@ assert(hasBorder);
 Your `.frame` element should have a `50px solid black` `border`.
 
 ```js
-const frameBorder = new __helpers.CSSHelp(document).getStyleDeclaration('.frame').getPropertyValue('border');
+const frameBorder = new __helpers.CSSHelp(document).getStyleDeclaration('.frame')?.getPropertyValue('border');
 assert(frameBorder === '50px solid black');
 ```
 

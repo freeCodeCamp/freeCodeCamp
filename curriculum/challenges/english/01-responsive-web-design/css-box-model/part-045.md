@@ -21,7 +21,7 @@ assert(hasTransform);
 Your `.two` element should have a `transform` value of `rotate(0.4deg)`.
 
 ```js
-const twoTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('transform');
+const twoTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.two')?.getPropertyValue('transform');
 assert(twoTransform === 'rotate(0.4deg)');
 ```
 

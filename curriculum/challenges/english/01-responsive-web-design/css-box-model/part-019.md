@@ -21,7 +21,7 @@ assert(hasBackground)
 Your `.one` element should have a `background-color` value of `#efb762`.
 
 ```js
-const oneBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('background-color');
+const oneBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('background-color');
 assert(oneBackground === 'rgb(239, 183, 98)');
 ```
 

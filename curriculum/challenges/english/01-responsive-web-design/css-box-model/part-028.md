@@ -24,7 +24,7 @@ assert(hasMargin);
 Your `.one` element should have a `margin` value of `20px auto 20px`.
 
 ```js
-const oneMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('margin');
+const oneMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('margin');
 assert(oneMargin === '20px auto');
 // Should probably test for 20px auto 20px, but might need regex?
 ```

@@ -21,7 +21,7 @@ assert(hasBorderRadius);
 Your `.two` element should have a `border-radius` value of `8px 10px`.
 
 ```js
-const twoBorderRadius = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('border-radius');
+const twoBorderRadius = new __helpers.CSSHelp(document).getStyleDeclaration('.two')?.getPropertyValue('border-radius');
 assert(twoBorderRadius === '8px 10px');
 ```
 

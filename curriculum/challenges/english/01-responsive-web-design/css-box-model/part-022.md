@@ -30,7 +30,7 @@ assert(hasOverflow);
 Your `.canvas` element should have an `overflow` value of `hidden`.
 
 ```js
-const canvasOverflow = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('overflow');
+const canvasOverflow = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('overflow');
 assert(canvasOverflow === 'hidden')
 ```
 

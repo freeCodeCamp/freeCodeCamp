@@ -28,7 +28,7 @@ assert(hasWidth);
 Your `.two` element should have a `width` value of `475px`.
 
 ```js
-const twoWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('width');
+const twoWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.two')?.getPropertyValue('width');
 assert(twoWidth === '475px');
 ```
 

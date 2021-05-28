@@ -38,7 +38,7 @@ assert(hasWidth);
 Your `.canvas` element should have a `width` of `500px`.
 
 ```js
-const width = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('width');
+const width = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('width');
 assert(width === '500px');
 ```
 

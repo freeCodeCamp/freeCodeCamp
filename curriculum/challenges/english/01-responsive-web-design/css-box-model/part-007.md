@@ -16,7 +16,6 @@ Add a `link` element to link your `styles.css` file. Set the `href` to `./styles
 Your code should have a `link` element.
 
 ```js
-console.log(document.querySelectorAll('link'));
 assert(document.querySelectorAll('link').length)
 ```
 

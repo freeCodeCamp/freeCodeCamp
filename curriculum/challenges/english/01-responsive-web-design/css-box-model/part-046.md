@@ -21,7 +21,7 @@ assert(hasTransform);
 Your `.three` element should have a `transform` value of `rotate(-0.2deg)`.
 
 ```js
-const threeTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('transform');
+const threeTransform = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('transform');
 assert(threeTransform === 'rotate(-0.2deg)');
 ```
 

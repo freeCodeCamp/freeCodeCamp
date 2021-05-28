@@ -21,7 +21,7 @@ assert(hasHeight);
 Your `.two` element should have a `height` value of `200px`.
 
 ```js
-const twoHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.two').getPropertyValue('height');
+const twoHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.two')?.getPropertyValue('height');
 assert(twoHeight === '200px');
 ```
 

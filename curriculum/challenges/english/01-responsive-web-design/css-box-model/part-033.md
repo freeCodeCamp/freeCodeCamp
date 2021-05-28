@@ -21,7 +21,7 @@ assert(marginFilter.length === 2);
 Your `.three` element should have a `margin` value of `auto`.
 
 ```js
-const threeMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('margin');
+const threeMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('margin');
 assert(threeMargin === 'auto');
 ```
 

@@ -23,7 +23,7 @@ assert(marginFilter.length === 2);
 Your `.one` element should have a `margin` value of `20px auto`.
 
 ```js
-const oneMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('margin');
+const oneMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('margin');
 assert(oneMargin === '20px auto');
 ```
 

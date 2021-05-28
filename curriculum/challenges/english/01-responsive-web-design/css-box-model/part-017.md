@@ -28,7 +28,7 @@ assert(hasWidth);
 Your `.one` element should have a `width` value of `425px`.
 
 ```js
-const oneWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('width');
+const oneWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('width');
 assert(oneWidth === '425px');
 ```
 

@@ -23,7 +23,7 @@ assert(hasPadding);
 Your `.canvas` element should have a `padding` value of `1px`.
 
 ```js
-const canvasPadding = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas').getPropertyValue('padding');
+const canvasPadding = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('padding');
 assert(canvasPadding === '1px');
 ```
 

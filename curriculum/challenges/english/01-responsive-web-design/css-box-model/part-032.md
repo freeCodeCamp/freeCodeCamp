@@ -21,7 +21,7 @@ assert(hasBackground);
 Your `.three` element should have a `background-color` value of `#b20403`.
 
 ```js
-const threeBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('background-color');
+const threeBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('background-color');
 assert(threeBackground === 'rgb(178, 4, 3)');
 ```
 

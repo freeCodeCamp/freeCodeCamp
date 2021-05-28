@@ -30,7 +30,7 @@ assert(hasWidth);
 Your `.three` element should have a `width` value of `91%`.
 
 ```js
-const threeWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.three').getPropertyValue('width');
+const threeWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('width');
 assert(threeWidth === '91%');
 ```
 
