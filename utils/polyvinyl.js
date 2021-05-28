@@ -1,44 +1,11 @@
 // originally based off of https://github.com/gulpjs/vinyl
 const invariant = require('invariant');
-const { of, from, isObservable } = require('rxjs');
-const { map, switchMap } = require('rxjs/operators');
 
 function isPromise(value) {
   return (
     value &&
     typeof value.subscribe !== 'function' &&
     typeof value.then === 'function'
-  );
-}
-
-function castToObservable(maybe) {
-  if (isObservable(maybe)) {
-    return maybe;
-  }
-  if (isPromise(maybe)) {
-    return from(maybe);
-  }
-  return of(maybe);
-}
-
-// createFileStream(
-//   files: [...PolyVinyl]
-// ) => Observable[...Observable[...PolyVinyl]]
-function createFileStream(files = []) {
-  return of(from(files));
-}
-
-// Observable::pipe(
-//  project(
-//    file: PolyVinyl
-//  ) => PolyVinyl|Observable[PolyVinyl]|Promise[PolyVinyl]
-// ) => Observable[...Observable[...PolyVinyl]]
-function pipe(project) {
-  const source = this;
-  return source.pipe(
-    map(files => {
-      return files.pipe(switchMap(file => castToObservable(project(file))));
-    })
   );
 }
 
@@ -227,9 +194,6 @@ function updateFileFromSpec(spec, poly) {
 
 module.exports = {
   isPromise,
-  castToObservable,
-  createFileStream,
-  pipe,
   createPoly,
   isPoly,
   checkPoly,
