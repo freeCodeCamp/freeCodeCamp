@@ -97,9 +97,9 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.14.3",
+    "@babel/eslint-parser": "7.14.4",
     "@babel/plugin-proposal-function-bind": "7.12.13",
-    "@babel/preset-env": "7.14.2",
+    "@babel/preset-env": "7.14.4",
     "@babel/preset-react": "7.13.13",
     "@babel/preset-typescript": "7.13.0",
     "@testing-library/cypress": "7.0.6",
