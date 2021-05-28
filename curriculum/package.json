@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/core": "7.14.3",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.14.2",
+    "@babel/preset-env": "7.14.4",
     "@babel/preset-typescript": "7.13.0",
     "@babel/register": "7.13.16",
     "acorn": "8.2.4",

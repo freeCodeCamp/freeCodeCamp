@@ -40,7 +40,7 @@
     "@babel/plugin-proposal-export-default-from": "7.12.13",
     "@babel/plugin-proposal-function-bind": "7.12.13",
     "@babel/polyfill": "7.12.1",
-    "@babel/standalone": "7.14.3",
+    "@babel/standalone": "7.14.4",
     "@fortawesome/fontawesome": "1.1.8",
     "@fortawesome/fontawesome-svg-core": "1.2.35",
     "@fortawesome/free-brands-svg-icons": "5.15.3",
@@ -122,7 +122,7 @@
     "validator": "13.6.0"
   },
   "devDependencies": {
-    "@babel/types": "7.14.2",
+    "@babel/types": "7.14.4",
     "@testing-library/jest-dom": "5.12.0",
     "@testing-library/react": "11.2.7",
     "@types/react-transition-group": "4.4.1",
