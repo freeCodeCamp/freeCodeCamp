@@ -20,7 +20,7 @@ Remove the `<img>` element.
 You should not have an `img` element in your code.
 
 ```js
-assert(document.querySelector('img').length === 0);
+assert(document.querySelector('img') === null);
 ```
 
 # --seed--

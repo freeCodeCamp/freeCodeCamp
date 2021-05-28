@@ -18,7 +18,7 @@ Change the `src` attribute to `https://cdn.freecodecamp.org/curriculum/css-box-m
 The `img` element should have a `src` of `https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png`
 
 ```js
-assert(document.querySelector('img').getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-2.png');
+assert(document.querySelector('img').getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png');
 ```
 
 # --seed--
