@@ -1,5 +1,5 @@
+// @ts-ignore
 import React, { useState, useEffect, Suspense } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import Loadable from '@loadable/component';
@@ -18,37 +18,43 @@ import {
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
+import {
+  ChallengeFileType,
+  DimensionsType,
+  ExtTypes,
+  FileKeyTypes,
+  ResizePropsType,
+  TestType
+} from '../../../redux/prop-types';
 
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-const propTypes = {
-  canFocus: PropTypes.bool,
-  // TODO: use shape
-  challengeFiles: PropTypes.object,
-  containerRef: PropTypes.any.isRequired,
-  contents: PropTypes.string,
-  description: PropTypes.string,
-  dimensions: PropTypes.object,
-  executeChallenge: PropTypes.func.isRequired,
-  ext: PropTypes.string,
-  fileKey: PropTypes.string,
-  inAccessibilityMode: PropTypes.bool.isRequired,
-  initialEditorContent: PropTypes.string,
-  initialExt: PropTypes.string,
-  output: PropTypes.arrayOf(PropTypes.string),
-  resizeProps: PropTypes.shape({
-    onStopResize: PropTypes.func,
-    onResize: PropTypes.func
-  }),
-  saveEditorContent: PropTypes.func.isRequired,
-  setAccessibilityMode: PropTypes.func.isRequired,
-  setEditorFocusability: PropTypes.func,
-  submitChallenge: PropTypes.func,
-  tests: PropTypes.arrayOf(PropTypes.object),
-  theme: PropTypes.string,
-  updateFile: PropTypes.func.isRequired
+type PropTypes = {
+  canFocus: boolean;
+  challengeFiles: ChallengeFileType[];
+  containerRef: {
+    current: null;
+  };
+  contents: string;
+  description: string;
+  dimensions: DimensionsType;
+  executeChallenge: () => void;
+  ext: ExtTypes;
+  fileKey: FileKeyTypes;
+  inAccessibilityMode: boolean;
+  initialEditorContent: string;
+  initialExt: string;
+  output: string[];
+  resizeProps: ResizePropsType;
+  saveEditorContent: () => void;
+  setAccessibilityMode: () => void;
+  setEditorFocusability: () => void;
+  submitChallenge: () => void;
+  tests: TestType[];
+  theme: string;
+  updateFile: () => void;
 };
 
 const mapStateToProps = createSelector(
@@ -137,14 +143,14 @@ const initialData = {
   viewZoneHeight: null
 };
 
-const Editor = props => {
+const Editor = (props: PropTypes): JSX.Element => {
   // TODO: is there any point in initializing this? It should be fine with
   // data = {}
   const [data, setData] = useState(initialData);
   const [_editor, setEditor] = useState(null);
   const [_monaco, setMonaco] = useState(null);
-  const [_domNode, setDomNode] = useState(null);
-  const [_outputNode, setOutputNode] = null;
+  const [_domNode, setDomNode] = useState<HTMLDivElement | null>(null);
+  const [_outputNode, setOutputNode] = useState<HTMLDivElement | null>(null);
   const [_overlayWidget, setOverlayWidget] = useState();
   const [_outputWidget, setOutputWidget] = useState();
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
@@ -235,8 +241,8 @@ const Editor = props => {
     const { challengeFiles, fileKey } = props;
 
     const newContents = challengeFiles[fileKey].contents;
-    if (data.model.getValue() !== newContents) {
-      data.model.setValue(newContents);
+    if (data.model?.getValue() !== newContents) {
+      data.model?.setValue(newContents);
     }
   };
 
@@ -646,11 +652,11 @@ const Editor = props => {
     // editable region.
     if (!data.startEditDecId && !data.endEditDecId) return null;
     const firstRange = data.startEditDecId
-      ? model.getDecorationRange(data.startEditDecId)
+      ? model?.getDecorationRange(data.startEditDecId)
       : getStartOfEditor();
     // TODO: handle the case that the editable region reaches the bottom of the
     // editor
-    const secondRange = model.getDecorationRange(data.endEditDecId);
+    const secondRange = model?.getDecorationRange(data.endEditDecId);
     const { startLineNumber, endLineNumber } = getLinesBetweenRanges(
       firstRange,
       secondRange
@@ -659,7 +665,7 @@ const Editor = props => {
     // getValueInRange includes column x if
     // startColumnNumber <= x < endColumnNumber
     // so we add 1 here
-    const endColumn = model.getLineLength(endLineNumber) + 1;
+    const endColumn = model?.getLineLength(endLineNumber) + 1;
     return new _monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
   };
 
@@ -676,7 +682,7 @@ const Editor = props => {
     const model = data.model;
     const forbiddenRanges = [
       [0, editableRegion[0]],
-      [editableRegion[1], model.getLineCount()]
+      [editableRegion[1], model?.getLineCount()]
     ];
 
     const ranges = forbiddenRanges.map(positions => {
@@ -689,7 +695,7 @@ const Editor = props => {
     ]);
 
     data.insideEditDecId = highlightEditableLines(
-      _monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
+      _monaco?.editor?.TrackedRangeStickiness?.AlwaysGrowsWhenTypingAtEdges,
       model,
       editableRange
     );
@@ -699,13 +705,13 @@ const Editor = props => {
     if (forbiddenRanges[0][1] > 0) {
       // the first range should expand at the top
       data.startEditDecId = highlightLines(
-        _monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+        _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingBefore,
         model,
         ranges[0]
       );
 
       highlightText(
-        _monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+        _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingBefore,
         model,
         ranges[0]
       );
@@ -714,13 +720,13 @@ const Editor = props => {
     // TODO: handle the case the region covers the bottom of the editor
     // the second range should expand at the bottom
     data.endEditDecId = highlightLines(
-      _monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
+      _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingAfter,
       model,
       ranges[1]
     );
 
     highlightText(
-      _monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
+      _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingAfter,
       model,
       ranges[1]
     );
@@ -744,7 +750,7 @@ const Editor = props => {
 
     // TODO refactor this mess
     // TODO this listener needs to be replaced on reset.
-    model.onDidChangeContent(e => {
+    model?.onDidChangeContent(e => {
       // TODO: it would be nice if undoing could remove the warning, but
       // it's probably too hard to track. i.e. if they make two warned edits
       // and then ctrl + z twice, it would realise they've removed their
@@ -772,9 +778,9 @@ const Editor = props => {
       }
 
       const warnUser = id => {
-        const coveringRange = toStartOfLine(model.getDecorationRange(id));
+        const coveringRange = toStartOfLine(model?.getDecorationRange(id));
         e.changes.forEach(({ range }) => {
-          if (_monaco.Range.areIntersectingOrTouching(coveringRange, range)) {
+          if (_monaco?.Range?.areIntersectingOrTouching(coveringRange, range)) {
             console.log('OVERLAP!');
           }
         });
@@ -804,7 +810,7 @@ const Editor = props => {
         // comparison detects if any change has occurred on that line
         // NOTE: any change in the decoration has already happened by this point
         // so this covers the *new* decoration range.
-        const coveringRange = toStartOfLine(model.getDecorationRange(id));
+        const coveringRange = toStartOfLine(model?.getDecorationRange(id));
         const oldStartOfRange = translateRange(
           coveringRange.collapseToStart(),
           1
@@ -823,7 +829,7 @@ const Editor = props => {
         // Is there a way to tell these cases apart?
         // This means that if you delete the second line it actually removes the
         // grey background from the first line.
-        const touchingDeleted = _monaco.Range.areIntersectingOrTouching(
+        const touchingDeleted = _monaco?.Range?.areIntersectingOrTouching(
           deletedRange,
           oldStartOfRange
         );
@@ -850,7 +856,7 @@ const Editor = props => {
         ...data,
         endEditDecId: preventOverlap(
           data.endEditDecId,
-          _monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+          _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingBefore,
           highlightLines
         )
       });
@@ -859,7 +865,7 @@ const Editor = props => {
         ...data,
         insideEditDecId: preventOverlap(
           data.insideEditDecId,
-          _monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
+          _monaco?.editor?.TrackedRangeStickiness?.AlwaysGrowsWhenTypingAtEdges,
           highlightEditableLines
         )
       });
@@ -884,15 +890,17 @@ const Editor = props => {
     console.log('positionsToRange', start, end);
     // start and end should always be defined, but if not:
     start = start || 1;
-    end = end || model.getLineCount();
+    end = end || model?.getLineCount();
 
     // convert to [startLine, startColumn, endLine, endColumn]
-    const range = new _monaco.Range(start, 1, end, 1);
+    const range = _monaco
+      ? new _monaco()?.Range(start, 1, end, 1)
+      : [start, 1, end, 1];
 
     // Protect against ranges that extend outside the editor
     const startLineNumber = Math.max(1, range.startLineNumber);
-    const endLineNumber = Math.min(model.getLineCount(), range.endLineNumber);
-    const endColumnText = model.getLineContent(endLineNumber);
+    const endLineNumber = Math.min(model?.getLineCount(), range.endLineNumber);
+    const endColumnText = model?.getLineContent(endLineNumber);
     // NOTE: the end column is incremented by 2 so that the dangerous range
     // extends far enough to capture new text added to the end.
     // NOTE: according to the spec, it should only need to be +1, but in
@@ -1024,10 +1032,9 @@ const Editor = props => {
 };
 
 Editor.displayName = 'Editor';
-Editor.propTypes = propTypes;
 
 // NOTE: withRef gets replaced by forwardRef in react-redux 6,
 // https://github.com/reduxjs/react-redux/releases/tag/v6.0.0
 export default connect(mapStateToProps, mapDispatchToProps, null, {
-  withRef: true
+  forwardRef: true
 })(Editor);
