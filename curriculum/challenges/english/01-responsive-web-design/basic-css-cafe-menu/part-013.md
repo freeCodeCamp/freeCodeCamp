@@ -35,21 +35,21 @@ assert(hasP);
 Your `h1` element should have a `text-align` of `center`.
 
 ```js
-const h1TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h1').getPropertyValue('text-align');
+const h1TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h1')?.getPropertyValue('text-align');
 assert(h1TextAlign === 'center');
 ```
 
 Your `h2` element should have a `text-align` of `center`.
 
 ```js
-const h2TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h2').getPropertyValue('text-align');
+const h2TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h2')?.getPropertyValue('text-align');
 assert(h2TextAlign === 'center');
 ```
 
 Your `p` element should have a `text-align` of `center`.
 
 ```js
-const pTextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('p').getPropertyValue('text-align');
+const pTextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('p')?.getPropertyValue('text-align');
 assert(pTextAlign === 'center');
 ```
 

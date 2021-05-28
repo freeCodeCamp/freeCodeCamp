@@ -30,7 +30,7 @@ assert(hasMarginTop);
 Your `.bottom-line` selector should have a `margin-top` of `25px`.
 
 ```js
-const bottomLineMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.bottom-line').getPropertyValue('margin-top');
+const bottomLineMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.bottom-line')?.getPropertyValue('margin-top');
 assert(bottomLineMargin === '25px');
 ```
 

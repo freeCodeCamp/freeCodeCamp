@@ -37,14 +37,14 @@ assert(hasOneSelector.length === 1);
 Your `p` elements nested in your `.item` elements should have a `margin-top` of `5px`.
 
 ```js
-const itemPMarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('.item p').getPropertyValue('margin-top');
+const itemPMarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('.item p')?.getPropertyValue('margin-top');
 assert(itemPMarginTop === '5px');
 ```
 
 Your `p` elements nested in your `.item` elements should have a `margin-bottom` of `5px`.
 
 ```js
-const itemPMarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('.item p').getPropertyValue('margin-bottom');
+const itemPMarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('.item p')?.getPropertyValue('margin-bottom');
 assert(itemPMarginBottom === '5px');
 ```
 

@@ -30,7 +30,7 @@ assert(hasColor);
 Your `a:hover` should have a `color` of `brown`.
 
 ```js
-const aHoverColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:hover').getPropertyValue('color');
+const aHoverColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:hover')?.getPropertyValue('color');
 assert(aHoverColor === 'brown');
 ```
 

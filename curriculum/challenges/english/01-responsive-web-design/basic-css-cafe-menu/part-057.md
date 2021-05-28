@@ -23,7 +23,7 @@ assert(hasMaxWidth);
 Your `.menu` element should have a `max-width` of `500px`.
 
 ```js
-const menuMaxWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.menu').getPropertyValue('max-width');
+const menuMaxWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('max-width');
 assert(menuMaxWidth === '500px');
 ```
 

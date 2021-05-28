@@ -30,7 +30,7 @@ assert(hasColor);
 Your `a:visited` should have a `color` of `grey`.
 
 ```js
-const aVisitedColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:visited').getPropertyValue('color');
+const aVisitedColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:visited')?.getPropertyValue('color');
 assert(aVisitedColor === 'grey');
 ```
 

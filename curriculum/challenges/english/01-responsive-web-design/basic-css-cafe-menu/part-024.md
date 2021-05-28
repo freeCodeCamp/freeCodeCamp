@@ -21,7 +21,7 @@ assert(hasBackgroundColor);
 Your `div` should have a burlywood background.
 
 ```js
-const divBackground = new __helpers.CSSHelp(document).getStyleDeclaration('div').getPropertyValue('background-color');
+const divBackground = new __helpers.CSSHelp(document).getStyleDeclaration('div')?.getPropertyValue('background-color');
 assert(divBackground === 'burlywood');
 ```
 

@@ -23,7 +23,7 @@ assert(hasMarginTop);
 Your `img` elements should have a `margin-top` value of `-25px`.
 
 ```js
-const imgMarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('img').getPropertyValue('margin-top');
+const imgMarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('img')?.getPropertyValue('margin-top');
 assert(imgMarginTop === '-25px');
 ```
 

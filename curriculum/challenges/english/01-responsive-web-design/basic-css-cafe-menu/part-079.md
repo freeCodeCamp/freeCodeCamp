@@ -35,7 +35,7 @@ assert(hasFontSize);
 Your `footer` element should have a `font-size` of `14px`.
 
 ```js
-const footerFontSize = new __helpers.CSSHelp(document).getStyleDeclaration('footer').getPropertyValue('font-size');
+const footerFontSize = new __helpers.CSSHelp(document).getStyleDeclaration('footer')?.getPropertyValue('font-size');
 assert(footerFontSize === '14px');
 ```
 

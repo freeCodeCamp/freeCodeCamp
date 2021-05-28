@@ -34,7 +34,7 @@ assert(hasDisplay);
 Your `.item p` selector should set the `display` property to `inline-block`.
 
 ```js
-const itemPDisplay = new __helpers.CSSHelp(document).getStyleDeclaration('.item p').getPropertyValue('display');
+const itemPDisplay = new __helpers.CSSHelp(document).getStyleDeclaration('.item p')?.getPropertyValue('display');
 assert(itemPDisplay === 'inline-block');
 ```
 

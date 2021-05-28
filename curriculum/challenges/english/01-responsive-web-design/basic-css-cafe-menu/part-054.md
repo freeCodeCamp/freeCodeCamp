@@ -30,14 +30,14 @@ assert(hasPaddingRight);
 Your `.menu` element should have a `padding-left` of `20px`.
 
 ```js
-const menuPaddingLeft = new __helpers.CSSHelp(document).getStyleDeclaration('.menu').getPropertyValue('padding-left');
+const menuPaddingLeft = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('padding-left');
 assert(menuPaddingLeft === '20px');
 ```
 
 Your `.menu` element should have a `padding-right` of `20px`.
 
 ```js
-const menuPaddingRight = new __helpers.CSSHelp(document).getStyleDeclaration('.menu').getPropertyValue('padding-right');
+const menuPaddingRight = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('padding-right');
 assert(menuPaddingRight === '20px');
 ```
 

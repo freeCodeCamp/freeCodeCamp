@@ -29,7 +29,7 @@ const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style
 Your `a` element should have a `color` of `black`.
 
 ```js
-const aColor = new __helpers.CSSHelp(document).getStyleDeclaration('a').getPropertyValue('color');
+const aColor = new __helpers.CSSHelp(document).getStyleDeclaration('a')?.getPropertyValue('color');
 assert(aColor === 'black');
 ```
 

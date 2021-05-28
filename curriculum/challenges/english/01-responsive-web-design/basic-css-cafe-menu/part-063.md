@@ -30,14 +30,14 @@ assert(hasH2);
 Your `h1` element should have a `font-size` of `40px`.
 
 ```js
-const h1FontSize = new __helpers.CSSHelp(document).getStyleDeclaration('h1').getPropertyValue('font-size');
+const h1FontSize = new __helpers.CSSHelp(document).getStyleDeclaration('h1')?.getPropertyValue('font-size');
 assert(h1FontSize === '40px');
 ```
 
 Your `h2` element should have a `font-size` of `30px`.
 
 ```js
-const h2FontSize = new __helpers.CSSHelp(document).getStyleDeclaration('h2').getPropertyValue('font-size');
+const h2FontSize = new __helpers.CSSHelp(document).getStyleDeclaration('h2')?.getPropertyValue('font-size');
 assert(h2FontSize === '30px');
 ```
 

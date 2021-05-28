@@ -30,7 +30,7 @@ assert(hasMarginBottom);
 Your `.address` selector should have the `margin-bottom` property set to `5px`.
 
 ```js
-const addressMarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('.address').getPropertyValue('margin-bottom');
+const addressMarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('.address')?.getPropertyValue('margin-bottom');
 assert(addressMarginBottom === '5px');
 ```
 

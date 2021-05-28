@@ -35,7 +35,7 @@ assert(hasBackground)
 Your `body` element should have the coffee beans background image.
 
 ```js
-const bodyBackground = new __helpers.CSSHelp(document).getStyleDeclaration('body').getPropertyValue('background-image');
+const bodyBackground = new __helpers.CSSHelp(document).getStyleDeclaration('body')?.getPropertyValue('background-image');
 console.log(bodyBackground);
 assert(bodyBackground === `url("https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg")`);
 ```

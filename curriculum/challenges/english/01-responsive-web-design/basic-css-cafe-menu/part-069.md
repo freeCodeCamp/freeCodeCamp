@@ -20,7 +20,7 @@ const hasBackgroundColor = new __helpers.CSSHelp(document).getCSSRules().some(x 
 Your `hr` element should have a `background-color` of `brown`.
 
 ```js
-const hrBackgroundColor = new __helpers.CSSHelp(document).getStyleDeclaration('hr').getPropertyValue('background-color');
+const hrBackgroundColor = new __helpers.CSSHelp(document).getStyleDeclaration('hr')?.getPropertyValue('background-color');
 assert(hrBackgroundColor === 'brown');
 ```
 

@@ -30,7 +30,7 @@ assert(hasColor);
 Your `a:active` should have a `color` of `white`.
 
 ```js
-const aActiveColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:active').getPropertyValue('color');
+const aActiveColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:active')?.getPropertyValue('color');
 assert(aActiveColor === 'white');
 ```
 

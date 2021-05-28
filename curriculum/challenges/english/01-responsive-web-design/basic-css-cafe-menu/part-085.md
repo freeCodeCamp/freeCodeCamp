@@ -23,7 +23,7 @@ assert(hasMarginTop);
 Your `h1` element should have a `margin-top` of `0`.
 
 ```js
-const h1MarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('h1').getPropertyValue('margin-top');
+const h1MarginTop = new __helpers.CSSHelp(document).getStyleDeclaration('h1')?.getPropertyValue('margin-top');
 assert(h1MarginTop === '0px');
 ```
 

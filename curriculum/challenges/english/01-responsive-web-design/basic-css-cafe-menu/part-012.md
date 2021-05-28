@@ -36,7 +36,7 @@ assert(hasTextAlign);
 Your `h1` selector should set the `text-align` property to `center`.
 
 ```js
-const h1TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h1').getPropertyValue('text-align');
+const h1TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h1')?.getPropertyValue('text-align');
 assert(h1TextAlign === 'center');
 ```
 

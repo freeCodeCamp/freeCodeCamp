@@ -28,7 +28,7 @@ assert(hasWidth);
 Your `div` should have a width of 300px.
 
 ```js
-const divWidth = new __helpers.CSSHelp(document).getStyleDeclaration('div').getPropertyValue('width');
+const divWidth = new __helpers.CSSHelp(document).getStyleDeclaration('div')?.getPropertyValue('width');
 assert(divWidth === '300px');
 ```
 

@@ -21,7 +21,7 @@ assert(hasBackground);
 Your `body` element should have a `burlywood` background.
 
 ```js
-const bodyBackground = new __helpers.CSSHelp(document).getStyleDeclaration('body').getPropertyValue('background-color');
+const bodyBackground = new __helpers.CSSHelp(document).getStyleDeclaration('body')?.getPropertyValue('background-color');
 assert(bodyBackground === 'burlywood');
 ```
 
