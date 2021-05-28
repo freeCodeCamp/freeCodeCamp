@@ -11,7 +11,7 @@ dashedName: problem-89-roman-numerals
 For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a *best* way of writing a particular number.
 
 - Numerals must be arranged in descending order of size.
-- M, C, and X cannot be equalled or exceeded by smaller denominations.
+- M, C, and X cannot be equaled or exceeded by smaller denominations.
 - D, L, and V can each only appear once.
 
 In addition to the three rules given above, if subtractive combinations are used then the following four rules must be followed.
