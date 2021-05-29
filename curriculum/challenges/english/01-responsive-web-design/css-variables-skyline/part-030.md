@@ -7,23 +7,55 @@ dashedName: part-30
 
 # --description--
 
-Nest six `div` elements within `foreground-buildings` and give them the classes of `fb1` through `fb6` in that order. "fb" stands for "foreground building". These will be six more buildings for the foreground.
+Nest six `div` elements within `.foreground-buildings` and give them the classes of `fb1` through `fb6` in that order. "fb" stands for "foreground building". These will be six more buildings for the foreground.
 
 # --hints--
 
-test-text
+You should create a new `div` with a class of `fb1`.
 
 ```js
-const fb = $('.foreground-buildings').children('div');
-assert(
-  fb.length === 6 &&
-    fb[0] === $('div.fb1')[0] &&
-    fb[1] === $('div.fb2')[0] &&
-    fb[2] === $('div.fb3')[0] &&
-    fb[3] === $('div.fb4')[0] &&
-    fb[4] === $('div.fb5')[0] &&
-    fb[5] === $('div.fb6')[0]
-);
+assert.exists(document.querySelector('div.fb1'));
+```
+
+You should create a new `div` with a class of `fb2`.
+
+```js
+assert.exists(document.querySelector('div.fb2'));
+```
+
+You should create a new `div` with a class of `fb3`.
+
+```js
+assert.exists(document.querySelector('div.fb3'));
+```
+
+You should create a new `div` with a class of `fb4`.
+
+```js
+assert.exists(document.querySelector('div.fb4'));
+```
+
+You should create a new `div` with a class of `fb5`.
+
+```js
+assert.exists(document.querySelector('div.fb5'));
+```
+
+You should create a new `div` with a class of `fb6`.
+
+```js
+assert.exists(document.querySelector('div.fb6'));
+```
+
+You should place these new `div` elements within the `.foreground-buildings` element.
+
+```js
+assert.exists(document.querySelector('div.foreground-buildings > div.fb1'));
+assert.exists(document.querySelector('div.foreground-buildings > div.fb2'));
+assert.exists(document.querySelector('div.foreground-buildings > div.fb3'));
+assert.exists(document.querySelector('div.foreground-buildings > div.fb4'));
+assert.exists(document.querySelector('div.foreground-buildings > div.fb5'));
+assert.exists(document.querySelector('div.foreground-buildings > div.fb6'));
 ```
 
 # --seed--
@@ -55,96 +87,96 @@ assert(
       <div></div>
       <div></div>
     </div>
-
+--fcc-editable-region--
     <div class="foreground-buildings"></div>
+--fcc-editable-region--
   </body>
 </html>
 ```
 
 ```css
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+}
 
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
 
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-      }
-    
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
+
+.foreground-buildings {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
 ```
 

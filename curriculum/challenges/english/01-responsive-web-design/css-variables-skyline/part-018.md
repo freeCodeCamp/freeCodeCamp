@@ -7,7 +7,7 @@ dashedName: part-18
 
 # --description--
 
-Your first building looks pretty good now. Let's make some more! Nest three new `div` elements in the `background-buildings` container and give them the classes of `bb2`, `bb3`, and `bb4` in that order. These will be three more buildings for the background.
+Your first building looks pretty good now. Let's make some more! Nest three new `div` elements in the `background-buildings` container and give them the classes of `.bb2`, `.bb3`, and `.bb4` in that order. These will be three more buildings for the background.
 
 # --hints--
 
@@ -32,13 +32,13 @@ assert.exists(document.querySelector('div.bb4'));
 You should create 3 new `div` elements.
 
 ```js
-assert.equal(document.querySelectorAll('div').length, 9);
+assert.equal(document.querySelectorAll('div')?.length, 9);
 ```
 
 You should place these `div` elements within the `.background-buildings` element.
 
 ```js
-assert.equal(document.querySelector('div.background-buildings').children.length, 4);
+assert.equal(document.querySelector('div.background-buildings')?.children?.length, 4);
 ```
 
 You should place the elements in the correct order.

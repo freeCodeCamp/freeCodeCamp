@@ -7,7 +7,7 @@ dashedName: part-21
 
 # --description--
 
-I don't like how spaced out the buildings are. Squeeze them together by adding two empty `div` elements to the top of the `background-buildings` element, two more at the bottom of it, and one more in between `bb3` and `bb4`. These will be added as evenly-spaced elements across the container, effectively moving the buildings closer to the center.
+I don't like how spaced out the buildings are. Squeeze them together by adding two empty `div` elements to the top of the `background-buildings` element, two more at the bottom of it, and one more in between `.bb3` and `.bb4`. These will be added as evenly-spaced elements across the container, effectively moving the buildings closer to the center.
 
 # --hints--
 
@@ -22,7 +22,7 @@ assert([...!bBuildings?.[1]?.classList]?.includes('bb1'));
 You should add one new `div` element between the `.bb3` and `.bb4` element.
 
 ```js
-assert(document.querySelector('.bb3')?.nextElementSibling === document.querySelector('.bb4').previousElementSibling);
+assert(document.querySelector('.bb3')?.nextElementSibling === document.querySelector('.bb4')?.previousElementSibling);
 ```
 
 You should add two new `div` elements after the `.bb4` element.

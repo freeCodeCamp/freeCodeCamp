@@ -7,7 +7,7 @@ dashedName: part-12
 
 # --description--
 
-Give the parts of your building `width` and `height` properties with these values: `70%` and `10%` to `bb1a`, `80%` and `10%` to `bb1b`, `90%` and `10%` to `bb1c`, and `100%` and `70%` to `bb1d`. Remember that these percentages are relative to the parent and note that the heights will add up to 100% - vertically filling the container.
+Give the parts of your building `width` and `height` properties with these values: `70%` and `10%` to `.bb1a`, `80%` and `10%` to `.bb1b`, `90%` and `10%` to `.bb1c`, and `100%` and `70%` to `.bb1d`. Remember that these percentages are relative to the parent and note that the heights will add up to 100% - vertically filling the container.
 
 # --hints--
 

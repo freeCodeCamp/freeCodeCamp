@@ -7,21 +7,32 @@ dashedName: part-22
 
 # --description--
 
-Create a new variable by the other one called `--building-color2` and give it a value of `#66cc99`. Then set it as the `background-color` of `bb2`.
+Create a new variable by the other one called `--building-color2` and give it a value of `#66cc99`. Then set it as the `background-color` of `.bb2`.
 
 # --hints--
 
-test-text
+You should define a new property variable called `--building-color2`.
 
 ```js
-const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
-const bb2style = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(bb1style) &&
-    /background-color\s*:\s*var\(\s*--building-color2\s*\)\s*(;|\s*})/g.test(
-      bb2style
-    )
-);
+assert.exists(new __helpers.CSSHelp(document).isPropertyUsed('--building-color2'));
+```
+
+You should give `--building-color2` a value of `#66cc99`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color2').trim(), '#66cc99');
+```
+
+You should set the `background-color` of `.bb2`.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.backgroundColor);
+```
+
+You should set the `background-color` using the `--building-color2` variable.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.backgroundColor, 'var(--building-color2)');
 ```
 
 # --seed--
