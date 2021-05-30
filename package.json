@@ -132,7 +132,7 @@
     "prettier": "2.3.0",
     "prismjs": "1.23.0",
     "shx": "0.3.3",
-    "sinon": "10.0.0",
+    "sinon": "11.1.1",
     "sinon-express-mock": "2.2.1",
     "start-server-and-test": "1.12.3",
     "typescript": "4.3.2",
