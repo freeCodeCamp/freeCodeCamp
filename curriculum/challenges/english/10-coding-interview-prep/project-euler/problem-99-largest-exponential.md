@@ -8,9 +8,9 @@ dashedName: problem-99-largest-exponential
 
 # --description--
 
-Comparing two numbers written in index form like 2<sup>11</sup> and 3<sup>7</sup> is not difficult, as any calculator would confirm that 2<sup>11</sup> = 2048 &lt; 3<sup>7</sup> = 2187.
+Comparing two numbers written in index form like $2^{11}$ and $3^7$ is not difficult, as any calculator would confirm that $2^{11} = 2048 &lt; 3^7 = 2187$.
 
-However, confirming that 632382<sup>518061</sup> > 519432<sup>525806</sup> would be much more difficult, as both numbers contain over three million digits.
+However, confirming that $632382^{518061} &lt; 519432^{525806}$ would be much more difficult, as both numbers contain over three million digits.
 
 Using the 2D `baseExp` array of base/exponent pairs, determine pair with the greatest numerical value and return it.
 
