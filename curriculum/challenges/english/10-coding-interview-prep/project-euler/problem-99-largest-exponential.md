@@ -67,5 +67,17 @@ largestExponential(testArray1);
 # --solutions--
 
 ```js
-// solution required
+function largestExponential(baseExp) {
+  let maximum = 0;
+  let indexOfMaximum = 0;
+  for (let i = 1; i < baseExp.length; i++) {
+    const curValue = Math.log(baseExp[i][0]) * baseExp[i][1];
+    if (curValue > maximum) {
+      maximum = curValue;
+      indexOfMaximum = i;
+    }
+  }
+
+  return baseExp[indexOfMaximum];
+}
 ```
