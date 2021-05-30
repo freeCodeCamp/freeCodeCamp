@@ -20,6 +20,6 @@
   "main": "none",
   "devDependencies": {
     "debug": "4.3.1",
-    "dotenv": "9.0.2"
+    "dotenv": "10.0.0"
   }
 }
