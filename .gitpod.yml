@@ -51,8 +51,7 @@ tasks:
     init: >
       cd ./client &&
       gp sync-await npm-ci &&
-      npm run prebuild &&
-      npm run build:workers &&
+      npm run predevelop &&
       cd ..
     command: >
       gp await-port 3000 &&
