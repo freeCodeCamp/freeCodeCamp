@@ -8,6 +8,7 @@ module.exports = (env = {}) => {
   const staticPath = path.join(__dirname, './static/js');
   const configPath = path.join(__dirname, '../config/client');
   return {
+    cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
     entry: {
       'frame-runner': './src/client/frame-runner.js',
