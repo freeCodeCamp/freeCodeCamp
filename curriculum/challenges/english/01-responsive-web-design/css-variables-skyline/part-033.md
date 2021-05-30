@@ -7,20 +7,50 @@ dashedName: part-33
 
 # --description--
 
-I see some code that can be optimized. Move the `position` and `top` properties and values from `foreground-buildings` to `background-buildings`. Then select both `background-buildings` and `foreground-buildings` there, effectively applying those styles to both of the elements. You can use a comma (`,`) to separate selectors like this: `selector1, selector2`.
+I see some code that can be optimized. Move the `position` and `top` properties and values from `.foreground-buildings` to `.background-buildings`. Then select both `.background-buildings` and `.foreground-buildings` there, effectively applying those styles to both of the elements. You can use a comma (`,`) to separate selectors like this: `selector1, selector2`.
 
 # --hints--
 
-test-text
+You should remove the `position` property from `.foreground-buildings`.
 
 ```js
-assert(
-  $('.background-buildings').css('position') === 'absolute' &&
-    $('.background-buildings').css('top') === '0px' &&
-    /(\.background-buildings\s*,\s*\.foreground-buildings|\.foreground-buildings\s*,\s*\.background-buildings)/g.test(
-      code
-    )
-);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.position);
+```
+
+You should remove the `top` property from `.foreground-buildings`.
+
+```js
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.top);
+```
+
+You should add the `position` property of `absolute` to `.background-buildings, foreground-buildings`.
+
+```js
+function eitherOr() {
+  const a = new __helpers.CSSHelp(document)
+  return a.getStyleDeclaration('.background-buildings, .foreground-buildings') ?? a.getStyleDeclaration('.foreground-buildings, .background-buildings');
+}
+assert.equal(eitherOr()?.position, 'absolute');
+```
+
+You should add the `top` property of `0` to `.background-buildings, foreground-buildings`.
+
+```js
+function eitherOr() {
+  const a = new __helpers.CSSHelp(document)
+  return a.getStyleDeclaration('.background-buildings, .foreground-buildings') ?? a.getStyleDeclaration('.foreground-buildings, .background-buildings');
+}
+assert.equal(eitherOr()?.top, '0px');
+```
+
+You should use a comma to use both `.foreground-buildings` and `.background-buildings` selectors in the same style declaration.
+
+```js
+function eitherOr() {
+  const a = new __helpers.CSSHelp(document)
+  return a.getStyleDeclaration('.background-buildings, .foreground-buildings') ?? a.getStyleDeclaration('.foreground-buildings, .background-buildings');
+}
+assert.exists(eitherOr());
 ```
 
 # --seed--
@@ -66,122 +96,121 @@ assert(
 ```
 
 ```css
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+}
 
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+--fcc-editable-region--
+.background-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
 
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
 
-      .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-      }
+.foreground-buildings {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+--fcc-editable-region
+.fb1 {
+  width: 10%;
+  height: 60%;
+}
 
-      .fb1 {
-        width: 10%;
-        height: 60%;
-      }
+.fb2 {
+  width: 10%;
+  height: 40%;
+}
 
-      .fb2 {
-        width: 10%;
-        height: 40%;
-      }
+.fb3 {
+  width: 10%;
+  height: 35%;
+}
 
-      .fb3 {
-        width: 10%;
-        height: 35%;
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-      }
+.fb4 {
+  width: 8%;
+  height: 45%;
+}
 
-      .fb6 {
-        width: 9%;
-        height: 38%;
-      }
+.fb5 {
+  width: 10%;
+  height: 33%;
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+}
     
 ```
 

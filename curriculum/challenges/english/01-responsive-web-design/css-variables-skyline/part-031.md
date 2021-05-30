@@ -7,33 +7,116 @@ dashedName: part-31
 
 # --description--
 
-Give the six new elements these `width` and `height` values: `10%` and `60%` to `fb1`, `10%` and `40%` to `fb2`, `10%` and `35%` to `fb3`, `8%` and `45%` to `fb4`, `10%` and `33%` to `fb5`, and `9%` and `38%` to `fb6`.
+Give the six new elements these `width` and `height` values: `10%` and `60%` to `.fb1`, `10%` and `40%` to `.fb2`, `10%` and `35%` to `.fb3`, `8%` and `45%` to `.fb4`, `10%` and `33%` to `.fb5`, and `9%` and `38%` to `.fb6`.
 
 # --hints--
 
-test-text
+You should create a `.fb1` selector.
 
 ```js
-assert(
-  /\.fb1\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*60%\s*(;|})|height\s*:\s*60%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(
-    code
-  ) &&
-    /\.fb2\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*40%\s*(;|})|height\s*:\s*40%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(
-      code
-    ) &&
-    /\.fb3\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*35%\s*(;|})|height\s*:\s*35%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(
-      code
-    ) &&
-    /\.fb4\s*{\s*(width\s*:\s*8%\s*;\s*height\s*:\s*45%\s*(;|})|height\s*:\s*45%\s*;\s*width\s*:\s*8%\s*(;|}))/g.test(
-      code
-    ) &&
-    /\.fb5\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*33%\s*(;|})|height\s*:\s*33%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(
-      code
-    ) &&
-    /\.fb6\s*{\s*(width\s*:\s*9%\s*;\s*height\s*:\s*38%\s*(;|})|height\s*:\s*38%\s*;\s*width\s*:\s*9%\s*(;|}))/g.test(
-      code
-    )
-);
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb1'));
+```
+
+You should give the `.fb1` selector a `width` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb1')?.width, '10%');
+```
+
+You should give the `.fb1` selector a `height` of `60%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb1')?.height, '60%');
+```
+
+You should create a `.fb2` selector.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb2'));
+```
+
+You should give the `.fb2` selector a `width` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb2')?.width, '10%');
+```
+
+You should give the `.fb2` selector a `height` of `40%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb2')?.height, '40%');
+```
+
+You should create a `.fb3` selector.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb3'));
+```
+
+You should give the `.fb3` selector a `width` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb3')?.width, '10%');
+```
+
+You should give the `.fb3` selector a `height` of `35%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb3')?.height, '35%');
+```
+
+You should create a `.fb4` selector.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4'));
+```
+
+You should give the `.fb4` selector a `width` of `8%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.width, '8%');
+```
+
+You should give the `.fb4` selector a `height` of `45%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.height, '45%');
+```
+
+You should create a `.fb5` selector.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5'));
+```
+
+You should give the `.fb5` selector a `width` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.width, '10%');
+```
+
+You should give the `.fb5` selector a `height` of `33%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.height, '33%');
+```
+
+You should create a `.fb6` selector.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb6'));
+```
+
+You should give the `.fb6` selector a `width` of `9%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb6')?.width, '9%');
+```
+
+You should give the `.fb6` selector a `height` of `38%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb6')?.height, '38%');
 ```
 
 # --seed--

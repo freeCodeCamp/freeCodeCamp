@@ -7,14 +7,14 @@ dashedName: part-34
 
 # --description--
 
-Now that you did that, you can delete the old `foreground-buildings` class and all of its properties since they aren't needed anymore.
+Now that you did that, you can delete the old `.foreground-buildings` declaration and all of its properties since they aren't needed anymore.
 
 # --hints--
 
-test-text
+You should delete the whole `.foreground-buildings` style declaration.
 
 ```js
-assert(code.match(/\.foreground-buildings/g).length === 1);
+assert.notExists(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings'));
 ```
 
 # --seed--
@@ -60,122 +60,121 @@ assert(code.match(/\.foreground-buildings/g).length === 1);
 ```
 
 ```css
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+}
 
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings, .foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+}
 
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
 
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-      }
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
+--fcc-editable-region--
+.foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+--fcc-editable-region--
+.fb1 {
+  width: 10%;
+  height: 60%;
+}
 
-      .fb1 {
-        width: 10%;
-        height: 60%;
-      }
+.fb2 {
+  width: 10%;
+  height: 40%;
+}
 
-      .fb2 {
-        width: 10%;
-        height: 40%;
-      }
+.fb3 {
+  width: 10%;
+  height: 35%;
+}
 
-      .fb3 {
-        width: 10%;
-        height: 35%;
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-      }
+.fb4 {
+  width: 8%;
+  height: 45%;
+}
 
-      .fb6 {
-        width: 9%;
-        height: 38%;
-      }
+.fb5 {
+  width: 10%;
+  height: 33%;
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+}
     
 ```
 
