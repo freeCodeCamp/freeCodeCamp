@@ -1,7 +1,7 @@
 /* global expect jest */
 
 import React from 'react';
-import { render } from '@testing-library/react';
+import {render} from '@testing-library/react';
 
 import Profile from './Profile';
 
@@ -18,7 +18,8 @@ const userProps = {
       showName: false,
       showPoints: false,
       showPortfolio: false,
-      showTimeLine: false
+      showTimeLine: false,
+      showDonation: false
     },
     calendar: {},
     streak: {
@@ -42,8 +43,10 @@ const userProps = {
     twitter: 'string',
     username: 'string',
     website: 'string',
-    yearsTopContributor: []
+    yearsTopContributor: [],
+    isDonating: false
   },
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   navigate: () => {}
 };
 
@@ -56,6 +59,7 @@ describe('<Profile/>', () => {
   it('renders the report button on another persons profile', () => {
     const { getByText } = render(<Profile {...notMyProfileProps} />);
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     expect(getByText('buttons.flag-user')).toHaveAttribute(
       'href',
       '/user/string/report-user'

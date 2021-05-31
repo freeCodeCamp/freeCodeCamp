@@ -14,7 +14,8 @@
     "skipLibCheck": true,
     "types": [
       "node",
-      "jest"
+      "jest",
+      "@testing-library/jest-dom"
     ]
   }
 }
