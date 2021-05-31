@@ -13,13 +13,13 @@ dashedName: create-a-media-query
 
 媒体查询由媒体类型组成，如果媒体类型与展示网页的设备类型匹配，则应用对应的样式。 你可以在媒体查询中使用各种选择器和样式。
 
-下面是一个媒体查询的例子，当设备宽度小于或等于 100px 时返回内容：
+下面是一个媒体查询的例子，当设备宽度小于或等于 `100px` 时返回内容：
 
 ```css
 @media (max-width: 100px) { /* CSS Rules */ }
 ```
 
-以下定义的媒体查询，是当设备高度大于或等于 350px 时返回内容：
+以下定义的媒体查询，是当设备高度大于或等于 `350px` 时返回内容：
 
 ```css
 @media (min-height: 350px) { /* CSS Rules */ }
@@ -33,38 +33,25 @@ dashedName: create-a-media-query
 
 # --hints--
 
-应使用 `@media` 声明媒体查询，其中应包含 `height` 小于等于 800px 的规则。
+你应使用 `@media` 声明媒体查询，其中应包含 `height` 小于等于 `800px` 的规则。
 
 ```js
-assert(
-  $('style')
-    .text()
-    .replace(/\s/g, '')
-    .match(/@media\(max-height:800px\)/g)
-);
+const media = new __helpers.CSSHelp(document).getCSSRules('media');
+assert(media.some(x => x.conditionText?.includes('(max-height: 800px)')));
 ```
 
-当设备 `height` 小于等于 800px 时，`p` 元素 `font-size` 应为 10px。
+当设备 `height` 小于等于 `800px` 时，`p` 元素的 `font-size` 应为 `10px`。
 
 ```js
-assert(
-  $('style')
-    .text()
-    .replace(/\s/g, '')
-    .match(/@media\(max-height:800px\){p{font-size:10px;?}}/g)
-);
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-height: 800px)');
+assert(rules?.find(x => x.selectorText === 'p')?.style.fontSize === "10px");
 ```
 
-当设备的 `height` 大于 800px 时，`p` 元素的 `font-size` 应设置为其初始值 20px。
+当设备 `height` 大于 `800px` 时，`p` 元素的 `font-size` 应为 `20px`。
 
 ```js
-assert(
-  $('style')
-    .text()
-    .replace(/\s/g, '')
-    .replace(/@media.*}/g, '')
-    .match(/p{font-size:20px;?}/g)
-);
+const ifPFirst = new __helpers.CSSHelp(document).getCSSRules()?.find(x => x?.selectorText === 'p' || x?.media);
+assert(ifPFirst?.style?.fontSize === '20px');
 ```
 
 # --seed--
