@@ -11,11 +11,16 @@ Create a new variable in `:root` named `window-color2` with a value of `#8cd9b3`
 
 # --hints--
 
-test-text
+You should create a new property variable called `window-color2` within `:root`.
 
 ```js
-const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
-assert(/--window-color2\s*:\s*#8cd9b3\s*(;|})/g.test(rootStyle));
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--window-color2'));
+```
+
+You should give `window-color2` a value of `#8cd9b3`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--window-color2').trim(), '#8cd9b3');
 ```
 
 # --seed--
@@ -69,137 +74,137 @@ assert(/--window-color2\s*:\s*#8cd9b3\s*(;|})/g.test(rootStyle));
 ```
 
 ```css
+--fcc-editable-region--
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+  --window-color1: black;
+}
+--fcc-editable-region--
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-        --window-color1: black;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+.background-buildings, .foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+/* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
-      
-      /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.bb1a {
+  width: 70%;
+}
 
-      .bb1a {
-        width: 70%;
-      }
-  
-      .bb1b {
-        width: 80%;
-      }
-  
-      .bb1c {
-        width: 90%;
-      }
+.bb1b {
+  width: 80%;
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background: linear-gradient(
-            var(--building-color1) 50%,
-            var(--window-color1)
-          );
-      }
+.bb1c {
+  width: 90%;
+}
 
-      .bb1-window {
-        height: 10%;
-        background: linear-gradient(
-            var(--building-color1),
-            var(--window-color1)
-          );
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+      var(--building-color1) 50%,
+      var(--window-color1)
+    );
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb1-window {
+  height: 10%;
+  background: linear-gradient(
+      var(--building-color1),
+      var(--window-color1)
+    );
+}
 
-      .bb2b {
-        width: 100%;
-        height: 100%;
-      }
-      
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb2b {
+  width: 100%;
+  height: 100%;
+}
 
-      /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
-      .fb1 {
-        width: 10%;
-        height: 60%;
-        background-color: var(--building-color4);
-      }
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      .fb2 {
-        width: 10%;
-        height: 40%;
-        background-color: var(--building-color3);
-      }
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
 
-      .fb3 {
-        width: 10%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-        background-color: var(--building-color1);
-        position: relative;
-        left: 10%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-        background-color: var(--building-color2);
-        position: relative;
-        right: 10%;
-      }
+/* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+.fb1 {
+  width: 10%;
+  height: 60%;
+  background-color: var(--building-color4);
+}
 
-      .fb6 {
-        width: 9%;
-        height: 38%;
-        background-color: var(--building-color3);
-      }
+.fb2 {
+  width: 10%;
+  height: 40%;
+  background-color: var(--building-color3);
+}
+
+.fb3 {
+  width: 10%;
+  height: 35%;
+  background-color: var(--building-color1);
+}
+
+.fb4 {
+  width: 8%;
+  height: 45%;
+  background-color: var(--building-color1);
+  position: relative;
+  left: 10%;
+}
+
+.fb5 {
+  width: 10%;
+  height: 33%;
+  background-color: var(--building-color2);
+  position: relative;
+  right: 10%;
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+  background-color: var(--building-color3);
+}
     
 ```
 

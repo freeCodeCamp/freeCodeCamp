@@ -7,18 +7,20 @@ dashedName: part-49
 
 # --description--
 
-Give `bb2b` a `width` and `height` of `100%` to make it fill the building container. You will add something on the top a little later.
+Give `.bb2b` a `width` and `height` of `100%` to make it fill the building container. You will add something on the top a little later.
 
 # --hints--
 
-test-text
+You should give `.bb2b` a `width` of `100%`.
 
 ```js
-assert(
-  /\.bb2b\s*{\s*(width\s*:\s*100%\s*;\s*height\s*:\s*100%\s*(;|})|height\s*:\s*100%\s*;\s*width\s*:\s*100%\s*(;|}))/g.test(
-    code
-  )
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2b')?.width, '100%');
+```
+
+You should give `.bb2b` a `height` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2b')?.height, '100%');
 ```
 
 # --seed--
@@ -72,132 +74,133 @@ assert(
 ```
 
 ```css
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+  --window-color1: black;
+}
 
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-        --window-color1: black;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings, .foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+}
 
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
-      
-      /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+/* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .bb1a {
-        width: 70%;
-      }
-  
-      .bb1b {
-        width: 80%;
-      }
-  
-      .bb1c {
-        width: 90%;
-      }
+.bb1a {
+  width: 70%;
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background: linear-gradient(
-            var(--building-color1) 50%,
-            var(--window-color1)
-          );
-      }
+.bb1b {
+  width: 80%;
+}
 
-      .bb1-window {
-        height: 10%;
-        background: linear-gradient(
-            var(--building-color1),
-            var(--window-color1)
-          );
-      }
+.bb1c {
+  width: 90%;
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+      var(--building-color1) 50%,
+      var(--window-color1)
+    );
+}
 
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb1-window {
+  height: 10%;
+  background: linear-gradient(
+      var(--building-color1),
+      var(--window-color1)
+    );
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
+--fcc-editable-region--
 
-      /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
-      .fb1 {
-        width: 10%;
-        height: 60%;
-        background-color: var(--building-color4);
-      }
+--fcc-editable-region--
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      .fb2 {
-        width: 10%;
-        height: 40%;
-        background-color: var(--building-color3);
-      }
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
 
-      .fb3 {
-        width: 10%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-        background-color: var(--building-color1);
-        position: relative;
-        left: 10%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-        background-color: var(--building-color2);
-        position: relative;
-        right: 10%;
-      }
+/* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+.fb1 {
+  width: 10%;
+  height: 60%;
+  background-color: var(--building-color4);
+}
 
-      .fb6 {
-        width: 9%;
-        height: 38%;
-        background-color: var(--building-color3);
-      }
+.fb2 {
+  width: 10%;
+  height: 40%;
+  background-color: var(--building-color3);
+}
+
+.fb3 {
+  width: 10%;
+  height: 35%;
+  background-color: var(--building-color1);
+}
+
+.fb4 {
+  width: 8%;
+  height: 45%;
+  background-color: var(--building-color1);
+  position: relative;
+  left: 10%;
+}
+
+.fb5 {
+  width: 10%;
+  height: 33%;
+  background-color: var(--building-color2);
+  position: relative;
+  right: 10%;
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+  background-color: var(--building-color3);
+}
     
 ```
 
