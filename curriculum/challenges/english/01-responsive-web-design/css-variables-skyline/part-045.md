@@ -7,15 +7,14 @@ dashedName: part-45
 
 # --description--
 
-It's a little hidden behind the foreground buildings, but you can see the three color gradient there. Since you are using that now, remove the `background-color` property from `bb1d`.
+It's a little hidden behind the foreground buildings, but you can see the three color gradient there. Since you are using that now, remove the `background-color` property from `.bb1d`.
 
 # --hints--
 
-test-text
+You should remove the `background-color` property and value from `.bb1d`
 
 ```js
-const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
-assert(!/background-color/g.test(bb1dStyle));
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.backgroundColor);
 ```
 
 # --seed--
@@ -66,134 +65,133 @@ assert(!/background-color/g.test(bb1dStyle));
 ```
 
 ```css
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+  --window-color1: black;
+}
 
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-        --window-color1: black;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings, .foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+}
 
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
-      
-      /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+/* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .bb1a {
-        width: 70%;
-      }
-  
-      .bb1b {
-        width: 80%;
-      }
-  
-      .bb1c {
-        width: 90%;
-      }
+.bb1a {
+  width: 70%;
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-        background: linear-gradient(
-            orange,
-            var(--building-color1),
-            var(--window-color1)
-          );
-      }
+.bb1b {
+  width: 80%;
+}
 
-      .bb1-window {
-        height: 10%;
-        background: linear-gradient(
-            var(--building-color1),
-            var(--window-color1)
-          );
-      }
+.bb1c {
+  width: 90%;
+}
+--fcc-editable-region--
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+  background: linear-gradient(
+      orange,
+      var(--building-color1),
+      var(--window-color1)
+    );
+}
+--fcc-editable-region--
+.bb1-window {
+  height: 10%;
+  background: linear-gradient(
+      var(--building-color1),
+      var(--window-color1)
+    );
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
 
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
 
-      /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
-      .fb1 {
-        width: 10%;
-        height: 60%;
-        background-color: var(--building-color4);
-      }
+/* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+.fb1 {
+  width: 10%;
+  height: 60%;
+  background-color: var(--building-color4);
+}
 
-      .fb2 {
-        width: 10%;
-        height: 40%;
-        background-color: var(--building-color3);
-      }
+.fb2 {
+  width: 10%;
+  height: 40%;
+  background-color: var(--building-color3);
+}
 
-      .fb3 {
-        width: 10%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-        background-color: var(--building-color1);
-        position: relative;
-        left: 10%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-        background-color: var(--building-color2);
-        position: relative;
-        right: 10%;
-      }
+.fb3 {
+  width: 10%;
+  height: 35%;
+  background-color: var(--building-color1);
+}
 
-      .fb6 {
-        width: 9%;
-        height: 38%;
-        background-color: var(--building-color3);
-      }
+.fb4 {
+  width: 8%;
+  height: 45%;
+  background-color: var(--building-color1);
+  position: relative;
+  left: 10%;
+}
+
+.fb5 {
+  width: 10%;
+  height: 33%;
+  background-color: var(--building-color2);
+  position: relative;
+  right: 10%;
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+  background-color: var(--building-color3);
+}
     
 ```
 

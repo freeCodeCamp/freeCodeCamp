@@ -7,21 +7,44 @@ dashedName: part-35
 
 # --description--
 
-The skyline is coming together. Fill in the `background-color` property of the foreground buildings. Use your `--building-color1` variable to fill in `fb3` and `fb4`, `--building-color2` for `fb5`, `--building-color3` for `fb2` and `fb6`, and `--building-color4` for `fb1`.
+The skyline is coming together. Fill in the `background-color` property of the foreground buildings. Use your `--building-color1` variable to fill in `.fb3` and `.fb4`, `--building-color2` for `.fb5`, `--building-color3` for `.fb2` and `.fb6`, and `--building-color4` for `.fb1`.
 
 # --hints--
 
-test-text
+You should give `.fb1` a `background-color` using `--building-color4`.
 
 ```js
-assert(
-  $('.fb1').css('background-color') === 'rgb(83, 140, 198)' &&
-    $('.fb2').css('background-color') === 'rgb(204, 102, 153)' &&
-    $('.fb3').css('background-color') === 'rgb(170, 128, 255)' &&
-    $('.fb4').css('background-color') === 'rgb(170, 128, 255)' &&
-    $('.fb5').css('background-color') === 'rgb(102, 204, 153)' &&
-    $('.fb6').css('background-color') === 'rgb(204, 102, 153)'
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb1')?.backgroundColor, 'var(--building-color4)');
+```
+
+You should give `.fb2` a `background-color` using `--building-color3`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb2')?.backgroundColor, 'var(--building-color3)');
+```
+
+You should give `.fb3` a `background-color` using `--building-color1`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb3')?.backgroundColor, 'var(--building-color1)');
+```
+
+You should give `.fb4` a `background-color` using `--building-color1`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.backgroundColor, 'var(--building-color1)');
+```
+
+You should give `.fb5` a `background-color` using `--building-color2`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.backgroundColor, 'var(--building-color2)');
+```
+
+You should give `.fb6` a `background-color` using `--building-color3`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb6')?.backgroundColor, 'var(--building-color3)');
 ```
 
 # --seed--
@@ -144,7 +167,7 @@ body {
   height: 58%;
   background-color: var(--building-color4);
 }
-
+--fcc-editable-region--
 .fb1 {
   width: 10%;
   height: 60%;
@@ -174,6 +197,7 @@ body {
   width: 9%;
   height: 38%;
 }
-    
+--fcc-editable-region--
+
 ```
 
