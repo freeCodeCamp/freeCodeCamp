@@ -68,5 +68,18 @@ arrangedProbability(20);
 # --solutions--
 
 ```js
-// solution required
+function arrangedProbability(limit) {
+  // Based on https://www.mathblog.dk/project-euler-100-blue-discs-two-blue/
+  let blue = 15;
+  let discs = 21;
+
+  while (discs < limit) {
+    const nextBlue = 3 * blue + 2 * discs - 2;
+    const nextDiscs = 4 * blue + 3 * discs - 3;
+
+    blue = nextBlue;
+    discs = nextDiscs;
+  }
+  return blue;
+}
 ```
