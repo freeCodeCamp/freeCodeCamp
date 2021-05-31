@@ -15,8 +15,8 @@ You should add two new `div` elements before the `.bb1` element.
 
 ```js
 const bBuildings = document.querySelector('.background-buildings')?.children;
-assert([...!bBuildings?.[0]?.classList]?.includes('bb1'));
-assert([...!bBuildings?.[1]?.classList]?.includes('bb1'));
+assert(![...bBuildings?.[0]?.classList]?.includes('bb1'));
+assert(![...bBuildings?.[1]?.classList]?.includes('bb1'));
 ```
 
 You should add one new `div` element between the `.bb3` and `.bb4` element.
