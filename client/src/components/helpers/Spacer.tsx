@@ -1,22 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const styles = { padding: '15px 0', height: '1px' };
+interface ISpacerProps {
+  size?: number;
+}
 
-const Comp = props => <div className='spacer' style={styles} {...props} />;
+const styles = {padding: '15px 0', height: '1px'};
 
-const Spacer = ({ size = 1 }) =>
+const Comp = (props: any): JSX.Element => <div className='spacer' style={styles} {...props} />;
+
+const Spacer = ({size = 1}: ISpacerProps): JSX.Element => (
   size === 1 ? (
-    <Comp />
+    <Comp/>
   ) : (
-    '#'
-      .repeat(size)
-      .split('')
-      .map((_, i) => <Comp key={`spacer_${i}`} />)
-  );
-
-Spacer.propTypes = {
-  size: PropTypes.number
-};
+    <>
+      {
+        '#'
+          .repeat(size)
+          .split('')
+          .map((_, i) => <Comp key={`spacer_${i}`}/>)
+      }
+    </>
+  )
+);
 
 export default Spacer;
