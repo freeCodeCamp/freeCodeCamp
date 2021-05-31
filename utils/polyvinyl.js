@@ -1,46 +1,5 @@
 // originally based off of https://github.com/gulpjs/vinyl
 const invariant = require('invariant');
-const { of, from, isObservable } = require('rxjs');
-const { map, switchMap } = require('rxjs/operators');
-
-function isPromise(value) {
-  return (
-    value &&
-    typeof value.subscribe !== 'function' &&
-    typeof value.then === 'function'
-  );
-}
-
-function castToObservable(maybe) {
-  if (isObservable(maybe)) {
-    return maybe;
-  }
-  if (isPromise(maybe)) {
-    return from(maybe);
-  }
-  return of(maybe);
-}
-
-// createFileStream(
-//   files: [...PolyVinyl]
-// ) => Observable[...Observable[...PolyVinyl]]
-function createFileStream(files = []) {
-  return of(from(files));
-}
-
-// Observable::pipe(
-//  project(
-//    file: PolyVinyl
-//  ) => PolyVinyl|Observable[PolyVinyl]|Promise[PolyVinyl]
-// ) => Observable[...Observable[...PolyVinyl]]
-function pipe(project) {
-  const source = this;
-  return source.pipe(
-    map(files => {
-      return files.pipe(switchMap(file => castToObservable(project(file))));
-    })
-  );
-}
 
 // interface PolyVinyl {
 //   source: String,
@@ -104,12 +63,6 @@ function checkPoly(poly) {
   );
 }
 
-// isEmpty(poly: PolyVinyl) => Boolean, throws
-function isEmpty(poly) {
-  checkPoly(poly);
-  return !!poly.contents;
-}
-
 // setContent(contents: String, poly: PolyVinyl) => PolyVinyl
 // setContent will loose source if set
 function setContent(contents, poly) {
@@ -134,33 +87,6 @@ function setExt(ext, poly) {
   return newPoly;
 }
 
-// setName(name: String, poly: PolyVinyl) => PolyVinyl
-function setName(name, poly) {
-  checkPoly(poly);
-  const newPoly = {
-    ...poly,
-    name,
-    path: name + '.' + poly.ext,
-    key: name + poly.ext
-  };
-  newPoly.history = [...poly.history, newPoly.path];
-  return newPoly;
-}
-
-// setError(error: Object, poly: PolyVinyl) => PolyVinyl
-function setError(error, poly) {
-  invariant(
-    typeof error === 'object',
-    'error must be an object or null, but got %',
-    error
-  );
-  checkPoly(poly);
-  return {
-    ...poly,
-    error
-  };
-}
-
 // clearHeadTail(poly: PolyVinyl) => PolyVinyl
 function clearHeadTail(poly) {
   checkPoly(poly);
@@ -168,15 +94,6 @@ function clearHeadTail(poly) {
     ...poly,
     head: '',
     tail: ''
-  };
-}
-
-// appendToTail (tail: String, poly: PolyVinyl) => PolyVinyl
-function appendToTail(tail, poly) {
-  checkPoly(poly);
-  return {
-    ...poly,
-    tail: poly.tail.concat(tail)
   };
 }
 
@@ -217,32 +134,12 @@ function transformHeadTailAndContents(wrap, poly) {
   };
 }
 
-function testContents(predicate, poly) {
-  return !!predicate(poly.contents);
-}
-
-function updateFileFromSpec(spec, poly) {
-  return setContent(poly.contents, createPoly(spec));
-}
-
 module.exports = {
-  isPromise,
-  castToObservable,
-  createFileStream,
-  pipe,
   createPoly,
   isPoly,
-  checkPoly,
-  isEmpty,
   setContent,
   setExt,
-  setName,
-  setError,
-  clearHeadTail,
-  appendToTail,
   compileHeadTail,
   transformContents,
-  transformHeadTailAndContents,
-  testContents,
-  updateFileFromSpec
+  transformHeadTailAndContents
 };
