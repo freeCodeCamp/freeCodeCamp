@@ -28,7 +28,7 @@ function createSpecFiles() {
     blockInDir.push(block.split('.')[0]);
   });
 
-  function devider(files, project) {
+  function divider(files, project) {
     files.forEach(file => {
       let files = JSON.parse(
         readFileSync(
@@ -80,8 +80,8 @@ function createSpecFiles() {
     });
   }
 
-  devider(challengesFiles, false);
-  devider(projectsFiles, true);
+  divider(challengesFiles, false);
+  divider(projectsFiles, true);
 
   return null;
 }
