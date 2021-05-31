@@ -48,7 +48,6 @@ assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.background-bu
 ```
 
 ```css
-
 * {
   border: 1px solid black;
   box-sizing: border-box;

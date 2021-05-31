@@ -112,7 +112,6 @@ assert(
 ```
 
 ```css
-
 :root {
   --building-color1: #aa80ff;
   --building-color2: #66cc99;
@@ -158,11 +157,11 @@ body {
 
 .sky {
   background: radial-gradient(
-      closest-corner circle at 15% 15%,
-      #ffcf33,
-      #ffcf33 20%,
-      #ffff66 21%,
-      #bbeeff 100%
+closest-corner circle at 15% 15%,
+#ffcf33,
+#ffcf33 20%,
+#ffff66 21%,
+#bbeeff 100%
     );
 }
 
@@ -188,16 +187,16 @@ body {
   width: 100%;
   height: 70%;
   background: linear-gradient(
-      var(--building-color1) 50%,
-      var(--window-color1)
+var(--building-color1) 50%,
+var(--window-color1)
     );
 }
 
 .bb1-window {
   height: 10%;
   background: linear-gradient(
-      var(--building-color1),
-      var(--window-color1)
+var(--building-color1),
+var(--window-color1)
     );
 }
 
@@ -216,10 +215,10 @@ body {
   width: 100%;
   height: 100%;
   background: repeating-linear-gradient(
-      var(--building-color2),
-      var(--building-color2) 6%,
-      var(--window-color2) 6%,
-      var(--window-color2) 9%
+var(--building-color2),
+var(--building-color2) 6%,
+var(--window-color2) 6%,
+var(--window-color2) 9%
     );
 }
 
@@ -227,10 +226,10 @@ body {
   width: 10%;
   height: 55%;
   background: repeating-linear-gradient(
-      90deg,
-      var(--building-color3),
-      var(--building-color3),
-      var(--window-color3) 15%
+90deg,
+var(--building-color3),
+var(--building-color3),
+var(--window-color3) 15%
     );
 }
 
@@ -285,17 +284,17 @@ body {
   width: 100%;
   height: 80%;
   background: repeating-linear-gradient(
-      90deg,
-      var(--building-color4),
-      var(--building-color4) 10%,
-      transparent 10%,
-      transparent 15%
+90deg,
+var(--building-color4),
+var(--building-color4) 10%,
+transparent 10%,
+transparent 15%
     ),
     repeating-linear-gradient(
-      var(--building-color4),
-      var(--building-color4) 10%,
-      var(--window-color4) 10%,
-      var(--window-color4) 90%
+var(--building-color4),
+var(--building-color4) 10%,
+var(--window-color4) 10%,
+var(--window-color4) 90%
     );
 }
 
@@ -380,17 +379,17 @@ body {
   position: relative;
   right: 10%;
   background: repeating-linear-gradient(
-      var(--building-color2),
-      var(--building-color2) 5%,
-      transparent 5%,
-      transparent 10%
+var(--building-color2),
+var(--building-color2) 5%,
+transparent 5%,
+transparent 10%
     ),
     repeating-linear-gradient(
-      90deg,
-      var(--building-color2),
-      var(--building-color2) 12%,
-      var(--window-color2) 12%,
-      var(--window-color2) 44%
+90deg,
+var(--building-color2),
+var(--building-color2) 12%,
+var(--window-color2) 12%,
+var(--window-color2) 44%
     );
 }
 
@@ -398,29 +397,29 @@ body {
   width: 9%;
   height: 38%;
   background: repeating-linear-gradient(
-      90deg,
-      var(--building-color3),
-      var(--building-color3) 10%,
-      transparent 10%,
-      transparent 30%
+90deg,
+var(--building-color3),
+var(--building-color3) 10%,
+transparent 10%,
+transparent 30%
     ),
     repeating-linear-gradient(
-      var(--building-color3),
-      var(--building-color3) 10%,
-      var(--window-color3) 10%,
-      var(--window-color3) 30%
+var(--building-color3),
+var(--building-color3) 10%,
+var(--window-color3) 10%,
+var(--window-color3) 30%
     );
 }
 
 @media (max-width: 1000px) {
   .sky {
     background: radial-gradient(
-        closest-corner circle at 15% 15%,
-        #ffcf33,
-        #ffcf33 20%,
-        #ffff66 21%,
-        #bbeeff 100%
-      );
+  closest-corner circle at 15% 15%,
+  #ffcf33,
+  #ffcf33 20%,
+  #ffff66 21%,
+  #bbeeff 100%
+);
   }
 }
     

@@ -124,16 +124,16 @@ body {
   width: 100%;
   height: 70%;
   background: linear-gradient(
-      var(--building-color1) 50%,
-      var(--window-color1)
+var(--building-color1) 50%,
+var(--window-color1)
     );
 }
 
 .bb1-window {
   height: 10%;
   background: linear-gradient(
-      var(--building-color1),
-      var(--window-color1)
+var(--building-color1),
+var(--window-color1)
     );
 }
 
@@ -147,10 +147,10 @@ body {
   width: 100%;
   height: 100%;
   background: repeating-linear-gradient(
-      var(--building-color2),
-      var(--building-color2) 6%,
-      var(--window-color2) 6%,
-      var(--window-color2) 9%
+var(--building-color2),
+var(--building-color2) 6%,
+var(--window-color2) 6%,
+var(--window-color2) 9%
     );
 }
 
