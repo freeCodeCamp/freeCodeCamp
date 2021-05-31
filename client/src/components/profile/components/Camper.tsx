@@ -7,7 +7,7 @@ import {
   faHeart,
   faCalendar
 } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from 'react-i18next';
+import { TFunction, useTranslation } from 'react-i18next';
 
 import { AvatarRenderer } from '../../helpers';
 import SocialIcons from './SocialIcons';
@@ -16,32 +16,35 @@ import Link from '../../helpers/Link';
 import './camper.css';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env.json';
+import envData from '../../../../../config/env';
 
 const { clientLocale } = envData;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const localeCode = langCodes[clientLocale];
 
-const propTypes = {
-  about: PropTypes.string,
-  githubProfile: PropTypes.string,
-  isDonating: PropTypes.bool,
-  isGithub: PropTypes.bool,
-  isLinkedIn: PropTypes.bool,
-  isTwitter: PropTypes.bool,
-  isWebsite: PropTypes.bool,
-  joinDate: PropTypes.string,
-  linkedin: PropTypes.string,
-  location: PropTypes.string,
-  name: PropTypes.string,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  twitter: PropTypes.string,
-  username: PropTypes.string,
-  website: PropTypes.string,
-  yearsTopContributor: PropTypes.array
-};
+interface ICamperProps {
+  about: string | null;
+  githubProfile: string;
+  isDonating: boolean | null;
+  isGithub: boolean;
+  isLinkedIn: boolean;
+  isTwitter: boolean;
+  isWebsite: boolean;
+  joinDate: string | null;
+  linkedin: string;
+  location: string | null;
+  name: string | null;
+  picture: string;
+  points: number | null;
+  twitter: string;
+  username: string;
+  website: string;
+  yearsTopContributor: string[];
+}
 
-function joinArray(array, t) {
+function joinArray(array: string[], t: TFunction<'translation'>): string {
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
       if (index === array.length - 1) {
@@ -55,9 +58,9 @@ function joinArray(array, t) {
   });
 }
 
-function parseDate(joinDate, t) {
-  joinDate = new Date(joinDate);
-  const date = joinDate.toLocaleString([localeCode, 'en-US'], {
+function parseDate(joinDate: string, t: TFunction<'translation'>): string {
+  const convertedJoinDate = new Date(joinDate);
+  const date = convertedJoinDate.toLocaleString([localeCode, 'en-US'], {
     year: 'numeric',
     month: 'long'
   });
@@ -82,7 +85,7 @@ function Camper({
   linkedin,
   twitter,
   website
-}) {
+}: ICamperProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -144,6 +147,5 @@ function Camper({
 }
 
 Camper.displayName = 'Camper';
-Camper.propTypes = propTypes;
 
 export default Camper;
