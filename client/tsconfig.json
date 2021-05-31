@@ -13,7 +13,8 @@
     "noEmit": true,
     "skipLibCheck": true,
     "types": [
-      "node"
+      "node",
+      "jest"
     ]
   }
 }

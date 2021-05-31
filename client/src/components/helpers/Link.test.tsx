@@ -15,10 +15,14 @@ describe('<Link />', () => {
   });
 
   it('sets target for external links', () => {
+    /* eslint-disable */
+    // @ts-ignore
     expect(externalLink.props.target).toEqual('_blank');
   });
 
   it('does not specify target in gatsbyLink', () => {
+    /* eslint-disable */
+    // @ts-ignore
     expect(gatsbyLink.props.target).toBeFalsy();
   });
 });
