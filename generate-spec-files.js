@@ -7,11 +7,14 @@ function createSpecFiles() {
   // Get blocks in directory
 
   const challengesFiles = readdirSync(
-    path.join(__dirname, '/cypress/fixtures/pathData/challenges')
+    path.join(__dirname, '/cypress/fixtures/path-data/challenges')
   );
 
   const projectsFiles = readdirSync(
-    path.join(__dirname, '/cypress/fixtures/pathData/projectsAndBackChallenges')
+    path.join(
+      __dirname,
+      '/cypress/fixtures/path-data/projects-and-back-challenges'
+    )
   );
 
   const blockExist = readdirSync(
@@ -31,8 +34,8 @@ function createSpecFiles() {
         readFileSync(
           path.join(
             __dirname,
-            `/cypress/fixtures/pathData/${
-              project ? 'projectsAndBackChallenges' : 'challenges'
+            `/cypress/fixtures/path-data/${
+              project ? 'projects-and-back-challenges' : 'challenges'
             }/${file}`
           ),
           'utf-8'
@@ -49,9 +52,8 @@ function createSpecFiles() {
               `/cypress/integration/challenge-tests/blocks/${block}.js`
             ),
             `/* global cy */
-            const path = require('path')
-            const superBlockPath = require('../../../fixtures/pathData/${
-              project ? 'projectsAndBackChallenges' : 'challenges'
+            const superBlockPath = require('../../../fixtures/path-data/${
+              project ? 'projects-and-back-challenges' : 'challenges'
             }/${file}');
 
             const blocks = Object.entries(superBlockPath['blocks']['${block}'])
@@ -65,7 +67,7 @@ function createSpecFiles() {
                 it('Challenge ' + challengeName + ' should work correctly', () => {
                   ${
                     project
-                      ? 'cy.checkProjectsAndBackend(challengePath)'
+                      ? 'cy.testProjectsAndBackend(challengePath)'
                       : 'cy.testChallenges(challengePath)'
                   }
                 })

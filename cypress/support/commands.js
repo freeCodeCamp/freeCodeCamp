@@ -20,41 +20,6 @@ Cypress.Commands.add('resetUsername', () => {
   cy.contains('Account Settings for developmentuser').should('be.visible');
 });
 
-Cypress.Commands.add('updatePaths', (superblock, lang = 'english') => {
-  cy.task('getCurriculum', lang).then(curriculum => {
-    cy.task('scopeCurriculum', {
-      curriculum,
-      superblock: superblock
-    });
-  });
-});
-
-// This function can be used if a chunk needs to be loaded before checking in Cypress (prevents chunkload errors)
-function waitForResourceToLoad(fileName, type) {
-  const resourceCheckInterval = 40;
-  /* eslint-disable no-undef */
-  return new Cypress.Promise(resolve => {
-    const checkResourceLoad = () => {
-      const resource = cy
-        .state('window')
-        .performance.getEntriesByType('resource')
-        .filter(entry => !type || entry.initiatorType === type)
-        .find(entry => entry.name.includes(fileName));
-
-      if (resource) {
-        resolve();
-        return;
-      }
-
-      setTimeout(checkResourceLoad, resourceCheckInterval);
-    };
-
-    checkResourceLoad();
-  });
-}
-
-Cypress.Commands.add('waitForResource', waitForResourceToLoad);
-
 Cypress.Commands.add('testChallenges', () => {
   // Test Meta tags
   cy.get('head meta[charset=utf-8]');
@@ -83,7 +48,7 @@ Cypress.Commands.add('testChallenges', () => {
 });
 
 // This command can be used to test projects and back-end challenges
-Cypress.Commands.add('checkProjectsAndBackend', () => {
+Cypress.Commands.add('testProjectsAndBackend', () => {
   // Test breadcrumbs
   cy.get('.breadcrumb-right').should('have.attr', 'href');
   cy.get('.ellipsis').should('be.visible');
