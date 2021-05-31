@@ -63,12 +63,6 @@ function checkPoly(poly) {
   );
 }
 
-// isEmpty(poly: PolyVinyl) => Boolean, throws
-function isEmpty(poly) {
-  checkPoly(poly);
-  return !!poly.contents;
-}
-
 // setContent(contents: String, poly: PolyVinyl) => PolyVinyl
 // setContent will loose source if set
 function setContent(contents, poly) {
@@ -143,7 +137,6 @@ function transformHeadTailAndContents(wrap, poly) {
 module.exports = {
   createPoly,
   isPoly,
-  isEmpty,
   setContent,
   setExt,
   compileHeadTail,
