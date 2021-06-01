@@ -19,7 +19,7 @@ function testFun(param1, param2) {
 }
 ```
 
-然後我們可以調用 `testFun`，就像這樣： `testFun("Hello", "World");`。 我們傳入了兩個字符串參數， `Hello` 和`World`。 在函數中，`param1` 等於字符串 `Hello` 以及 `param2` 等於字符串 `World`。 請注意，`testFun` 函數可以多次調用，每次調用時傳遞的參數會決定參數的實際值。
+然後我們可以調用 `testFun`，就像這樣： `testFun("Hello", "World");`。 我們傳入了兩個字符串參數， `Hello` 和 `World`。 在函數中，`param1` 等於字符串 `Hello` 以及 `param2` 等於字符串 `World`。 請注意，`testFun` 函數可以多次調用，每次調用時傳遞的參數會決定參數的實際值。
 
 # --instructions--
 
