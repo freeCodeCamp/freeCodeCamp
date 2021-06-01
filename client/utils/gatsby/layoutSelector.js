@@ -26,11 +26,12 @@ export default function layoutSelector({ element, props }) {
   }
 
   const splitPath = pathname.split('/').filter(x => x);
-  const isSuperBlock =
-    (splitPath.length === 2 && splitPath[0]) === 'learn' ||
-    (splitPath.length === 3 && splitPath[1]) === 'learn';
 
-  if (/\/learn\//.test(pathname) && !isSuperBlock) {
+  const isChallenge =
+    (splitPath.length === 4 && splitPath[0]) === 'learn' ||
+    (splitPath.length === 5 && splitPath[1]) === 'learn';
+
+  if (isChallenge) {
     return (
       <DefaultLayout pathname={pathname} showFooter={false}>
         {element}

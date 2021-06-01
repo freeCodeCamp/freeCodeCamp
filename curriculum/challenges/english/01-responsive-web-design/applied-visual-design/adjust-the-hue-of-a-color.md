@@ -30,19 +30,19 @@ Change the `background-color` of each `div` element based on the class names (`g
 Your code should use the `hsl()` property to declare the color `green`.
 
 ```js
-assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi));
+assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
 Your code should use the `hsl()` property to declare the color `cyan`.
 
 ```js
-assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi));
+assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
 Your code should use the `hsl()` property to declare the color `blue`.
 
 ```js
-assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi));
+assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
 The `div` element with class `green` should have a `background-color` of green.

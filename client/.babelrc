@@ -24,12 +24,6 @@
   ],
   "plugins": [
     "preval",
-    [
-      "@babel/plugin-proposal-class-properties",
-      {
-        "loose": true
-      }
-    ],
     "@babel/plugin-syntax-dynamic-import",
     "babel-plugin-macros",
     [

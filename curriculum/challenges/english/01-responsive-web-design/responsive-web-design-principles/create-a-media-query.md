@@ -13,13 +13,13 @@ Media Queries are a new technique introduced in CSS3 that change the presentatio
 
 Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. You can have as many selectors and styles inside your media query as you want.
 
-Here's an example of a media query that returns the content when the device's width is less than or equal to 100px:
+Here's an example of a media query that returns the content when the device's width is less than or equal to `100px`:
 
 ```css
 @media (max-width: 100px) { /* CSS Rules */ }
 ```
 
-and the following media query returns the content when the device's height is more than or equal to 350px:
+and the following media query returns the content when the device's height is more than or equal to `350px`:
 
 ```css
 @media (min-height: 350px) { /* CSS Rules */ }
@@ -33,38 +33,25 @@ Add a media query, so that the `p` tag has a `font-size` of `10px` when the devi
 
 # --hints--
 
-You should declare a `@media` query for devices with a `height` less than or equal to 800px.
+You should declare a `@media` query for devices with a `height` less than or equal to `800px`.
 
 ```js
-assert(
-  $('style')
-    .text()
-    .replace(/\s/g, '')
-    .match(/@media\(max-height:800px\)/g)
-);
+const media = new __helpers.CSSHelp(document).getCSSRules('media');
+assert(media.some(x => x.conditionText?.includes('(max-height: 800px)')));
 ```
 
-Your `p` element should have a `font-size` of 10px when the device `height` is less than or equal to 800px.
+Your `p` element should have a `font-size` of `10px` when the device `height` is less than or equal to `800px`.
 
 ```js
-assert(
-  $('style')
-    .text()
-    .replace(/\s/g, '')
-    .match(/@media\(max-height:800px\){p{font-size:10px;?}}/g)
-);
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-height: 800px)');
+assert(rules?.find(x => x.selectorText === 'p')?.style.fontSize === "10px");
 ```
 
-Your `p` element should have an initial `font-size` of 20px when the device `height` is more than 800px.
+Your `p` element should have an initial `font-size` of `20px` when the device `height` is more than `800px`.
 
 ```js
-assert(
-  $('style')
-    .text()
-    .replace(/\s/g, '')
-    .replace(/@media.*}/g, '')
-    .match(/p{font-size:20px;?}/g)
-);
+const ifPFirst = new __helpers.CSSHelp(document).getCSSRules()?.find(x => x?.selectorText === 'p' || x?.media);
+assert(ifPFirst?.style?.fontSize === '20px');
 ```
 
 # --seed--

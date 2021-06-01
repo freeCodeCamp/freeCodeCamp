@@ -94,7 +94,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 (getUserInput) =>
   $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
-      assert.equal(data.assertions[3].method, 'browser.element');
+      assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);
       assert.equal(data.assertions[3].args[1], 1);
     },

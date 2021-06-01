@@ -21,7 +21,7 @@ app.use(helmet({
   },
   contentSecurityPolicy: {    // enable and configure
     directives: {
-      defaultSrc: ["self"],
+      defaultSrc: ["'self'"],
       styleSrc: ['style.com'],
     }
   },

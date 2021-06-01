@@ -27,7 +27,7 @@ Add the `attr()` method to the code in the editor and put a class of `bar` on th
 Your `div` elements should have a class of `bar`.
 
 ```js
-assert($('div').attr('class') == 'bar');
+assert($('div').attr('class').trim().split(/\s+/g).includes('bar'));
 ```
 
 Your code should use the `attr()` method.
