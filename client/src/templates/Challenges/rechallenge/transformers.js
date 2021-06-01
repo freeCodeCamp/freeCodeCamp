@@ -12,7 +12,12 @@ import {
 
 import protect from '@freecodecamp/loop-protect';
 
-import * as vinyl from '../../../../../utils/polyvinyl.js';
+import {
+  transformContents,
+  transformHeadTailAndContents,
+  setExt,
+  compileHeadTail
+} from '../../../../../utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
 
 // the config files are created during the build, but not before linting
@@ -114,7 +119,7 @@ export const testJS$JSX = overSome(testJS, testJSX);
 export const replaceNBSP = cond([
   [
     testHTML$JS$JSX,
-    partial(vinyl.transformContents, contents => contents.replace(NBSPReg, ' '))
+    partial(transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]
 ]);
@@ -142,7 +147,7 @@ const babelTransformer = options => {
         await loadPresetEnv();
         const babelOptions = getBabelOptions(options);
         return partial(
-          vinyl.transformHeadTailAndContents,
+          transformHeadTailAndContents,
           tryTransform(babelTransformCode(babelOptions))
         )(code);
       }
@@ -154,10 +159,10 @@ const babelTransformer = options => {
         await loadPresetReact();
         return flow(
           partial(
-            vinyl.transformHeadTailAndContents,
+            transformHeadTailAndContents,
             tryTransform(babelTransformCode(babelOptionsJSX))
           ),
-          partial(vinyl.setExt, 'js')
+          partial(setExt, 'js')
         )(code);
       }
     ],
@@ -205,19 +210,19 @@ const transformHtml = async function (file) {
   const div = document.createElement('div');
   div.innerHTML = file.contents;
   await Promise.all([transformSASS(div), transformScript(div)]);
-  return vinyl.transformContents(() => div.innerHTML, file);
+  return transformContents(() => div.innerHTML, file);
 };
 
 export const composeHTML = cond([
   [
     testHTML,
     flow(
-      partial(vinyl.transformHeadTailAndContents, source => {
+      partial(transformHeadTailAndContents, source => {
         const div = document.createElement('div');
         div.innerHTML = source;
         return div.innerHTML;
       }),
-      partial(vinyl.compileHeadTail, '')
+      partial(compileHeadTail, '')
     )
   ],
   [stubTrue, identity]
