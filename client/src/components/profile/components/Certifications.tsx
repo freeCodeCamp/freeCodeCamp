@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { curry } from 'lodash-es';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -9,28 +8,44 @@ import { useTranslation } from 'react-i18next';
 import { certificatesByNameSelector } from '../../../redux';
 import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
-import { CurrentCertsType } from '../../../redux/propTypes';
 
-const mapStateToProps = (state, props) =>
+const mapStateToProps = (state: any, props: ICertificationProps) =>
   createSelector(
     certificatesByNameSelector(props.username),
-    ({ hasModernCert, hasLegacyCert, currentCerts, legacyCerts }) => ({
+    ({
+      hasModernCert,
+      hasLegacyCert,
+      currentCerts,
+      legacyCerts
+    }: Pick<
+      ICertificationProps,
+      'hasModernCert' | 'hasLegacyCert' | 'currentCerts' | 'legacyCerts'
+    >) => ({
       hasModernCert,
       hasLegacyCert,
       currentCerts,
       legacyCerts
     })
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
   )(state, props);
 
-const propTypes = {
-  currentCerts: CurrentCertsType,
-  hasLegacyCert: PropTypes.bool,
-  hasModernCert: PropTypes.bool,
-  legacyCerts: CurrentCertsType,
-  username: PropTypes.string
-};
+interface ICert {
+  show: boolean;
+  title: string;
+  certSlug: string;
+}
 
-function renderCertShow(username, cert) {
+interface ICertificationProps {
+  currentCerts: ICert[];
+  hasLegacyCert: boolean;
+  hasModernCert: boolean;
+  legacyCerts: ICert[];
+  username: string;
+}
+
+function renderCertShow(username: string, cert: ICert): React.ReactNode {
   return cert.show ? (
     <Fragment key={cert.title}>
       <Row>
@@ -55,8 +70,9 @@ function Certificates({
   hasLegacyCert,
   hasModernCert,
   username
-}) {
+}: ICertificationProps): JSX.Element {
   const { t } = useTranslation();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
   const renderCertShowWithUsername = curry(renderCertShow)(username);
   return (
     <FullWidthRow className='certifications'>
@@ -81,7 +97,7 @@ function Certificates({
   );
 }
 
-Certificates.propTypes = propTypes;
 Certificates.displayName = 'Certifications';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default connect(mapStateToProps)(Certificates);

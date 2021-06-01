@@ -1,20 +1,21 @@
 import React from 'react';
-import {Link as GatsbyLink} from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 
 interface ILinkProps {
   children?: React.ReactNode;
   external?: boolean;
   sameTab?: boolean;
   to: string;
+  className?: string;
 }
 
 const Link = ({
-                children,
-                to,
-                external,
-                sameTab,
-                ...other
-              }: ILinkProps): JSX.Element => {
+  children,
+  to,
+  external,
+  sameTab,
+  ...other
+}: ILinkProps): JSX.Element => {
   if (!external && /^\/(?!\/)/.test(to)) {
     return (
       <GatsbyLink to={to} {...other}>
