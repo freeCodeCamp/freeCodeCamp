@@ -4,7 +4,8 @@ import { getRedirectParams } from '../utils/redirection';
 export default function fourOhFour(app) {
   app.all('*', function (req, res) {
     const accept = accepts(req);
-    const type = accept.type('html', 'json', 'text');
+    // prioritise returning json
+    const type = accept.type('json', 'html', 'text');
     const { path } = req;
     const { origin } = getRedirectParams(req);
 
