@@ -20,20 +20,26 @@ By concatenating each product we get the 1 to 9 pandigital, 192384576. We will c
 
 The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5).
 
-What is the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an integer with (1, 2, ... , `n`) where `n` > 1?
+What is the largest 1 to `k` pandigital `k`-digit number that can be formed as the concatenated product of an integer with (1, 2, ..., `n`) where `n` > 1?
 
 # --hints--
 
-`pandigitalMultiples()` should return a number.
+`pandigitalMultiples(8)` should return a number.
 
 ```js
-assert(typeof pandigitalMultiples() === 'number');
+assert(typeof pandigitalMultiples(8) === 'number');
 ```
 
-`pandigitalMultiples()` should return 932718654.
+`pandigitalMultiples(8)` should return `78156234`.
 
 ```js
-assert.strictEqual(pandigitalMultiples(), 932718654);
+assert.strictEqual(pandigitalMultiples(8), 78156234);
+```
+
+`pandigitalMultiples(9)` should return `932718654`.
+
+```js
+assert.strictEqual(pandigitalMultiples(9), 932718654);
 ```
 
 # --seed--
@@ -41,12 +47,12 @@ assert.strictEqual(pandigitalMultiples(), 932718654);
 ## --seed-contents--
 
 ```js
-function pandigitalMultiples() {
+function pandigitalMultiples(k) {
 
   return true;
 }
 
-pandigitalMultiples();
+pandigitalMultiples(8);
 ```
 
 # --solutions--
