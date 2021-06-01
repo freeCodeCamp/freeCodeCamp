@@ -107,7 +107,7 @@ If the input date string is invalid, the api returns an object having the struct
       assert.equal(data.error.toLowerCase(), 'invalid date');
     },
     (xhr) => {
-      assert(xhr.responseJSON.error.toLowerCase() === 'invalid date', 'received: ' + xhr.responseJSON.error);
+      assert(xhr.responseJSON.error.toLowerCase() === 'invalid date');
     }
   );
 ```
