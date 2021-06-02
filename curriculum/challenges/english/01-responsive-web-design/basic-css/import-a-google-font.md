@@ -40,11 +40,7 @@ Import the `Lobster` font to your web page. Then, use an element selector to set
 You should import the `Lobster` font.
 
 ```js
-assert(
-  $('link[href]')
-    .toArray()
-    .some((element) => new RegExp('googleapis', 'gi').test(element.href))
-);
+assert($('link[href*="googleapis" i]').length);
 ```
 
 Your `h2` element should use the font `Lobster`.
