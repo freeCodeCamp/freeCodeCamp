@@ -21,16 +21,17 @@ import {
   mockCompletedChallenges
 } from './fixtures';
 
-const mockReq = opts => {
+export const mockReq = opts => {
   const req = {};
   return { ...req, ...opts };
 };
 
-const mockRes = opts => {
+export const mockRes = opts => {
   const res = {};
   res.status = jest.fn().mockReturnValue(res);
   res.json = jest.fn().mockReturnValue(res);
   res.redirect = jest.fn().mockReturnValue(res);
+  res.set = jest.fn().mockReturnValue(res);
   return { ...res, ...opts };
 };
 
