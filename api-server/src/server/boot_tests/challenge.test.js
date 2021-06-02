@@ -32,6 +32,8 @@ export const mockRes = opts => {
   res.json = jest.fn().mockReturnValue(res);
   res.redirect = jest.fn().mockReturnValue(res);
   res.set = jest.fn().mockReturnValue(res);
+  res.clearCookie = jest.fn().mockReturnValue(res);
+  res.cookie = jest.fn().mockReturnValue(res);
   return { ...res, ...opts };
 };
 
