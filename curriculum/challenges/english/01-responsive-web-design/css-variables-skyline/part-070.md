@@ -11,17 +11,22 @@ Give the `bb4-window` class a `width` of `18%`, a `height` of `90%`, and add you
 
 # --hints--
 
-test-text
+You should give `.bb4-window` a `width` of `18%`.
 
 ```js
-const bb4Window = code.match(/\.bb4-window\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*18%\s*(;|})/g.test(bb4Window) &&
-    /height\s*:\s*90%\s*(;|})/g.test(bb4Window) &&
-    /background-color\s*:\s*var\(\s*--window-color4\s*\)\s*(;|})/g.test(
-bb4Window
-    )
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4-window")?.width, "18%");
+```
+
+You should give `.bb4-window` a `height` of `90%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4-window")?.height, "90%");
+```
+
+You should give `.bb4-window` a `background-color` of `--window-color4`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4-window")?.backgroundColor, "var(--window-color4)");
 ```
 
 # --seed--
@@ -212,7 +217,9 @@ body {
   height: 85%;
   background-color: var(--building-color4);
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
 .fb1 {
   width: 10%;

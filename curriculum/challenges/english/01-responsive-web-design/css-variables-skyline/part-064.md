@@ -7,20 +7,32 @@ dashedName: part-64
 
 # --description--
 
-Remove the `background-color` property and value from `bb4` and add it to the three new sections; `bb4a`, `bb4b`, and `bb4c`, so only the sections are filled.
+Remove the `background-color` property and value from `.bb4`, and add it to the three new sections; `.bb4a`, `.bb4b`, and `.bb4c`, so only the sections are filled.
 
 # --hints--
 
-test-text
+You should remove the `background-color` from `.bb4`.
 
 ```js
-const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  !/background-color/g.test(bb4) &&
-    $('.bb4a').css('background-color') === 'rgb(83, 140, 198)' &&
-    $('.bb4b').css('background-color') === 'rgb(83, 140, 198)' &&
-    $('.bb4c').css('background-color') === 'rgb(83, 140, 198)'
-);
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4")?.backgroundColor);
+```
+
+You should give `.bb4a` a `background-color` of `--building-color4`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4a")?.backgroundColor, "var(--building-color4)");
+```
+
+You should give `.bb4b` a `background-color` of `--building-color4`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4b")?.backgroundColor, "var(--building-color4)");
+```
+
+You should give `.bb4c` a `background-color` of `--building-color4`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4c")?.backgroundColor, "var(--building-color4)");
 ```
 
 # --seed--
@@ -179,7 +191,7 @@ body {
       var(--window-color3) 15%
     );
 }
-
+--fcc-editable-region--
 .bb4 {
   width: 11%;
   height: 58%;
@@ -200,7 +212,7 @@ body {
   width: 100%;
   height: 85%;
 }
-
+--fcc-editable-region--
 /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
 .fb1 {
   width: 10%;

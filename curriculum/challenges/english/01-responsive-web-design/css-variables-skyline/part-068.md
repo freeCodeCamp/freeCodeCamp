@@ -11,11 +11,16 @@ Create a new variable called `--window-color4` in `:root` and give it a value of
 
 # --hints--
 
-test-text
+You should define a new property variable `--window-color4`.
 
 ```js
-const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
-assert(/--window-color4\s*:\s*#8cb3d9\s*(;|})/g.test(rootStyle));
+assert(new __helpers.CSSHelp(document).isPropertyUsed("--window-color4"));
+```
+
+You should give `--window-color4` a value of `#8cb3d9`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(":root")?.getPropertyValue("--window-color4")?.trim(), "#8cb3d9");
 ```
 
 # --seed--
@@ -73,6 +78,7 @@ assert(/--window-color4\s*:\s*#8cb3d9\s*(;|})/g.test(rootStyle));
 ```
 
 ```css
+--fcc-editable-region--
 :root {
   --building-color1: #aa80ff;
   --building-color2: #66cc99;
@@ -82,7 +88,7 @@ assert(/--window-color4\s*:\s*#8cb3d9\s*(;|})/g.test(rootStyle));
   --window-color2: #8cd9b3;
   --window-color3: #d98cb3;
 }
-
+--fcc-editable-region--
 * {
   border: 1px solid black;
   box-sizing: border-box;

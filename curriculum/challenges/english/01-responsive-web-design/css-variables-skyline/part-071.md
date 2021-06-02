@@ -7,19 +7,34 @@ dashedName: part-71
 
 # --description--
 
-The windows are stacked on top of each other at the left of the section, behind the purple building. Add a new class below `building-wrap` called `window-wrap` and add these properties to it: `display: flex;`, `align-items: center;`, and `justify-content: space-evenly;`. This will be used in a few places to center window elements vertically and space them evenly in their parent.
+The windows are stacked on top of each other at the left of the section, behind the purple building. Add a new class below `.building-wrap` called `.window-wrap`, and add these properties to it:
+
+```css
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+```
+
+This will be used in a few places to center window elements vertically, and evenly space them in their parent.
 
 # --hints--
 
-test-text
+You should give `.window-wrap` a `display` of `flex`.
 
 ```js
-const wWrap = code.match(/\.window-wrap\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /display\s*:\s*flex\s*(;|})/g.test(wWrap) &&
-    /align-items\s*:\s*center\s*(;|})/g.test(wWrap) &&
-    /justify-content\s*:\s*space-evenly\s*(;|})/g.test(wWrap)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".window-wrap")?.display, "flex");
+```
+
+You should give `.window-wrap` an `align-items` of `center`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".window-wrap")?.alignItems, "center");
+```
+
+You should give `.window-wrap` a `justify-content` of `space-evenly`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".window-wrap")?.justifyContent, "space-evenly");
 ```
 
 # --seed--
@@ -119,7 +134,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
 .bb1 {
   width: 10%;

@@ -7,14 +7,20 @@ dashedName: part-69
 
 # --description--
 
-Nest four new `div` elements within `bb4c`, give them all the class of `bb4-window`. These will be windows for this building.
+Nest four new `div` elements within `.bb4c`, give them all the class of `bb4-window`. These will be windows for this building.
 
 # --hints--
 
-test-text
+You should add four `div` elements to `.bb4c`.
 
 ```js
-assert($('.bb4c').children('div.bb4-window').length === 4);
+assert.equal(document.querySelector(".bb4c")?.children?.length, 4);
+```
+
+You should give each new `div` a class of `bb4-window`.
+
+```js
+assert.equal(document.querySelectorAll("div.bb4c > div.bb4-window")?.length, 4);
 ```
 
 # --seed--
@@ -48,7 +54,9 @@ assert($('.bb4c').children('div.bb4-window').length === 4);
       <div class="bb4 building-wrap">
         <div class="bb4a"></div>
         <div class="bb4b"></div>
+--fcc-editable-region--
         <div class="bb4c"></div>
+--fcc-editable-region--
       </div>
       <div></div>
       <div></div>

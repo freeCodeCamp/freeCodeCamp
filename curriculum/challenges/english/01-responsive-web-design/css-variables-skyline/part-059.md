@@ -11,11 +11,16 @@ On to the next building! Create a new variable called `--window-color3` in `:roo
 
 # --hints--
 
-test-text
+You should define a new property variable `--window-color3`.
 
 ```js
-const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
-assert(/--window-color3\s*:\s*#d98cb3\s*(;|})/g.test(rootStyle));
+assert(new __helpers.CSSHelp(document).isPropertyUsed("--window-color3"));
+```
+
+You should give `--window-color3` a value of `#d98cb3`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(":root")?.getPropertyValue("--window-color3")?.trim(), "#d98cb3");
 ```
 
 # --seed--
@@ -69,6 +74,7 @@ assert(/--window-color3\s*:\s*#d98cb3\s*(;|})/g.test(rootStyle));
 ```
 
 ```css
+--fcc-editable-region--
 :root {
   --building-color1: #aa80ff;
   --building-color2: #66cc99;
@@ -77,7 +83,7 @@ assert(/--window-color3\s*:\s*#d98cb3\s*(;|})/g.test(rootStyle));
   --window-color1: black;
   --window-color2: #8cd9b3;
 }
-
+--fcc-editable-region--
 * {
   border: 1px solid black;
   box-sizing: border-box;

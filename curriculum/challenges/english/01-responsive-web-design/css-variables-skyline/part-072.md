@@ -7,14 +7,14 @@ dashedName: part-72
 
 # --description--
 
-Add the new `window-wrap` class to the `bb4c` element.
+Add the new `window-wrap` class to the `.bb4c` element.
 
 # --hints--
 
-test-text
+You should add a class of `window-wrap` to `.bb4c`.
 
 ```js
-assert($('.bb4c.window-wrap').length === 1);
+assert.exists(document.querySelector("div.bb4c.window-wrap"));
 ```
 
 # --seed--
@@ -48,12 +48,14 @@ assert($('.bb4c.window-wrap').length === 1);
       <div class="bb4 building-wrap">
         <div class="bb4a"></div>
         <div class="bb4b"></div>
+--fcc-editable-region--
         <div class="bb4c">
           <div class="bb4-window"></div>
           <div class="bb4-window"></div>
           <div class="bb4-window"></div>
           <div class="bb4-window"></div>
         </div>
+--fcc-editable-reigon--
       </div>
       <div></div>
       <div></div>

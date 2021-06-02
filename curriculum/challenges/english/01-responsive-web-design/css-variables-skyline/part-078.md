@@ -18,19 +18,26 @@ gradient2(
 );
 ```
 
-Add a `repeating-linear-gradient` to `fb1c` below the one that's there; use your `--building-color4` from `0%` to `10%` and `--window-color4` from `10%` and `90%`. This will fill in behind the gradient you added last.
+Add a `repeating-linear-gradient` to `.fb1c` below the one that's there; use your `--building-color4` from `0%` to `10%` and `--window-color4` from `10%` and `90%`. This will fill in behind the gradient you added last.
 
 # --hints--
 
-test-text
+You should not alter the first `repeating-linear-gradient`.
 
 ```js
-const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*15%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*90%\s*\)\s*(;|})/g.test(
-    fb1c
-  )
-);
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg, var(--building-color4), var(--building-color) 10%, transparent 10%, transparent 15%)");
+```
+
+You should add a `repeating-linear-gradient` with a first color of `--building-color4` from `0%` to `10%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(var(--building-color4), var(--building-color4) 10%");
+```
+
+You should use a second color of `--window-color4` from `10%` to `90%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg, var(--building-color4), var(--building-color) 10%, transparent 10%, transparent 15%), repeating-linear-gradient(var(--building-color4), var(--building-color4) 10%, var(--window-color4), var(--window-color4) 90%)");
 ```
 
 # --seed--
@@ -249,7 +256,7 @@ body {
   height: 10%;
   background-color: var(--building-color4);
 }
-  
+--fcc-editable-region--
 .fb1c {
   width: 100%;
   height: 80%;
@@ -261,7 +268,7 @@ body {
       transparent 15%
     )
 }
-
+--fcc-editable-region--
 .fb2 {
   width: 10%;
   height: 40%;

@@ -7,35 +7,62 @@ dashedName: part-54
 
 # --description--
 
-Add these properties to `bb2a`:
+Add these properties to `.bb2a`:
 
 ```css
-  margin: auto;
-  width: 5vw;
-  height: 5vw;
-  border-top: 1vw solid #000;
-  border-bottom: 1vw solid #000;
-  border-left: 1vw solid #999;
-  border-right: 1vw solid #999;
+margin: auto;
+width: 5vw;
+height: 5vw;
+border-top: 1vw solid #000;
+border-bottom: 1vw solid #000;
+border-left: 1vw solid #999;
+border-right: 1vw solid #999;
 ```
 
 After you add these, you can see how a thick border on an element gives you some angles where two sides meet. You are going to use that bottom border as the top of the building.
 
 # --hints--
 
-test-text
+You should give `.bb2a` a `margin` of `auto`.
 
 ```js
-const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /margin\s*:\s*auto\s*(;|})/g.test(bb2a) &&
-    /width\s*:\s*5vw\s*(;|})/g.test(bb2a) &&
-    /height\s*:\s*5vw\s*(;|})/g.test(bb2a) &&
-    /border-top\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) &&
-    /border-bottom\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) &&
-    /border-left\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a) &&
-    /border-right\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a)
-);
+assert.equal(new _helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.margin, "auto");
+```
+
+You should give `.bb2a` a `width` of `auto`.
+
+```js
+assert.equal(new _helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.width, "5vw");
+```
+
+You should give `.bb2a` a `height` of `5vw`.
+
+```js
+assert.equal(new _helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.height, "5vw");
+```
+
+You should give `.bb2a` a `border-top` of `1vw solid #000`.
+
+```js
+assert.equal(new _helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderTop, "1vw solid rgb(0, 0, 0)");
+```
+
+You should give `.bb2a` a `border-bottom` of `1vw solid #000`.
+
+```js
+assert.equal(new _helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderBottom, "1vw solid rgb(0, 0, 0)");
+```
+
+You should give `.bb2a` a `border-left` of `1vw solid #999`.
+
+```js
+assert.equal(new _helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderLeft, "1vw solid rgb(153, 153, 153)");
+```
+
+You should give `.bb2a` a `border-right` of `1vw solid #999`.
+
+```js
+assert.equal(new _helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderRight, "1vw solid rgb(153, 153, 153)");
 ```
 
 # --seed--
@@ -161,7 +188,9 @@ body {
   width: 10%;
   height: 50%;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .bb2b {
   width: 100%;
   height: 100%;

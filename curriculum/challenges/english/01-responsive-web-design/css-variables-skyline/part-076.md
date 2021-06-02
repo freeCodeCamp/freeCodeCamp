@@ -7,17 +7,20 @@ dashedName: part-76
 
 # --description--
 
-Move the `background-color` property and value from `fb1` to `fb1b`.
+Move the `background-color` property and value from `.fb1` to `.fb1b`.
 
 # --hints--
 
-test-text
+You should remove `background-color` from `.fb1`.
 
 ```js
-const fb1b = code.match(/\.fb1b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background-color\s*:\s*var\(\s*--building-color4\s*\)\s*(;|})/g.test(fb1b)
-);
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1")?.backgroundColor);
+```
+
+You should add a `background-color` of `--building-color4` to `.fb1b`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1b")?.backgroundColor, "var(--building-color4)");
 ```
 
 # --seed--
@@ -226,6 +229,7 @@ body {
 }
 
 /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+--fcc-editable-region--
 .fb1 {
   width: 10%;
   height: 60%;
@@ -236,7 +240,7 @@ body {
   width: 60%;
   height: 10%;
 }
-  
+--fcc-editable-region--
 .fb1c {
   width: 100%;
   height: 80%;

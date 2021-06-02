@@ -17,19 +17,32 @@ gradient-type(
 );
 ```
 
-Fill in `bb3` with a `repeating-linear-gradient`. Use `90deg` for the direction, your `building-color3` for the first two colors, and `window-color3` at `15%` for the third. When you don't specify a distance for a color, it will use the values that makes sense. In this case, the first two colors will default to `0%` and `7.5%` because it starts at `0%`, and `7.5%` is half of the `15%`.
+Fill in `.bb3` with a `repeating-linear-gradient`. Use `90deg` for the direction, your `building-color3` for the first two colors, and `window-color3` at `15%` for the third. When you don't specify a distance for a color, it will use the values that makes sense. In this case, the first two colors will default to `0%` and `7.5%` because it starts at `0%`, and `7.5%` is half of the `15%`.
 
 # --hints--
 
-test-text
+You should give `.bb3` a `background` using `repeating-linear-gradient`.
 
 ```js
-const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*(7\.5%\s*,|,)\s*var\(\s*--window-color3\s*\)\s*15%\s*\)\s*(;|})/g.test(
-    bb3
-  )
-);
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient");
+```
+
+You should use `90deg` for the direction in the first argument of `repeating-linear-gradient`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient(90deg");
+```
+
+You should use `--building-color3` for the first two colors.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient(90deg, var(--building-color3), var(--building-color3)");
+```
+
+You should use `--window-color3` at `15%` for the third color.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient(90deg, var(--building-color3), var(--building-color3), var(--window-color3) 15%)");
 ```
 
 # --seed--
@@ -173,13 +186,13 @@ body {
       var(--window-color2) 9%
     );
 }
-
+--fcc-editable-region--
 .bb3 {
   width: 10%;
   height: 55%;
   background-color: var(--building-color3);
 }
-
+--fcc-editable-region--
 .bb4 {
   width: 11%;
   height: 58%;

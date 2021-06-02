@@ -18,19 +18,38 @@ gradient-type(
 );
 ```
 
-Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`.
+Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `.bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`.
 
 # --hints--
 
-test-text
+You should give `.bb2b` a `background` property.
 
 ```js
-const bb2b = code.match(/\.bb2b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*9%\s*\)\s*(;|})/g.test(
-    bb2b
-  )
-);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background);
+```
+
+You should use a `linear-gradient` on the `background`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, "linear-gradient");
+```
+
+You should use `--building-color2` from `0%` to `6%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, "var(--building-color2), var(--building-color2) 6%,");
+```
+
+You should use `--window-color2` from `6%` to `9%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, "var(--window-color2) 6%, var(--window-color2) 9%");
+```
+
+`.bb2b` should have a `linear-gradient` transitioning from `--building-color2` at `0%` to `6%`, and `--window-color2` at `6%` to `9%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, "linear-gradient(var(--building-color2), var(--building-color2) 6%, var(--window-color2) 6%, var(--window-color2) 9%)");
 ```
 
 # --seed--
@@ -157,12 +176,12 @@ body {
   height: 50%;
   background-color: var(--building-color2);
 }
-
+--fcc-editable-region--
 .bb2b {
   width: 100%;
   height: 100%;
 }
-
+--fcc-editable-region--
 .bb3 {
   width: 10%;
   height: 55%;

@@ -7,19 +7,26 @@ dashedName: part-58
 
 # --description--
 
-Finally, on the `border-bottom` property of `bb2a`, change the `1vw` to `5vh` and change the `#000` color to your `--building-color2` variable. There you go, now it looks good! At any time throughout this project, you can comment out or remove the `border` property you added to everything at the beginning to see what the buildings will look like when that gets removed at the end.
+Finally, on the `border-bottom` property of `.bb2a`, change the `1vw` to `5vh` and change the `#000` color to your `--building-color2` variable. There you go, now it looks good! At any time throughout this project, you can comment out or remove the `border` property you added to everything at the beginning to see what the buildings will look like when that gets removed at the end.
 
 # --hints--
 
-test-text
+You should change `border-bottom` to use `5vh`.
 
 ```js
-const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /border-bottom\s*:\s*5vh\s+solid\s+var\(\s*--building-color2\s*\)\s*(;|})/g.test(
-    bb2a
-  )
-);
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderBottom, "5vh");
+```
+
+You should change `border-bottom` to use `--building-color2`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderBottom, "var(--building-color2)");
+```
+
+`border-bottom` should be `5vh solid var(--building-color2)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderBottom, "5vh solid var(--building-color2)");
 ```
 
 # --seed--
@@ -145,13 +152,13 @@ body {
   width: 10%;
   height: 50%;
 }
-
+--fcc-editable-region--
 .bb2a {
   border-bottom: 1vw solid #000;
   border-left: 5vw solid transparent;
   border-right: 5vw solid transparent;
 }
-
+--fcc-editable-region--
 .bb2b {
   width: 100%;
   height: 100%;

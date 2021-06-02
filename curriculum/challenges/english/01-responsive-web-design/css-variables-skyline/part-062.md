@@ -7,20 +7,39 @@ dashedName: part-62
 
 # --description--
 
-The next building will have three sections. Nest three `div` elements within `bb4`. Give them the classes of `bb4a`, `bb4b` and `bb4c` in that order.
+The next building will have three sections. Nest three `div` elements within `.bb4`. Give them the classes of `bb4a`, `bb4b` and `bb4c` in that order.
 
 # --hints--
 
-test-text
+You should add three `div` elements within `.bb4`.
 
 ```js
-const bb4 = $('.bb4').children('div');
-assert(
-  bb4.length === 3 &&
-    bb4[0] === $('.bb4a')[0] &&
-    bb4[1] === $('.bb4b')[0] &&
-    bb4[2] === $('.bb4c')[0]
-);
+assert.equal(document.querySelector("div.bb4")?.children?.length, 3);
+```
+
+You should give the first new `div` a class of `bb4a`.
+
+```js
+assert.exists(document.querySelector("div.bb4 > div.bb4a"));
+```
+
+You should give the second new `div` a class of `bb4b`.
+
+```js
+assert.exists(document.querySelector("div.bb4 > div.bb4a"));
+```
+
+You should give the third new `div` a class of `bb4c`.
+
+```js
+assert.exists(document.querySelector("div.bb4 > div.bb4a"));
+```
+
+You should place the new `div` elements in this order `.bb4a + .bb4b + .bb4c`.
+
+```js
+assert.exists(document.querySelector("div.bb4a + div.bb4b"));
+assert.exists(document.querySelector("div.bb4b + div.bb4c"));
 ```
 
 # --seed--
@@ -51,7 +70,9 @@ assert(
       </div>
       <div class="bb3"></div>
       <div></div>
+--fcc-editable-region--
       <div class="bb4"></div>
+--fcc-editable-region--
       <div></div>
       <div></div>
     </div>

@@ -11,15 +11,10 @@ You can see the hard color change at the top of the section. Change the gradient
 
 # --hints--
 
-test-text
+You should change the `background` property of `.bb2b` from using `linear-gradient` to using `repeating-linear-gradient`.
 
 ```js
-const bb2b = code.match(/\.bb2b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*9%\s*\)\s*(;|})/g.test(
-    bb2b
-  )
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 6%, var(--window-color2) 6%, var(--window-color2) 9%)");
 ```
 
 # --seed--
@@ -146,7 +141,7 @@ body {
   height: 50%;
   background-color: var(--building-color2);
 }
-
+--fcc-editable-region--
 .bb2b {
   width: 100%;
   height: 100%;
@@ -157,7 +152,7 @@ body {
       var(--window-color2) 9%
     );
 }
-
+--fcc-editable-region--
 .bb3 {
   width: 10%;
   height: 55%;

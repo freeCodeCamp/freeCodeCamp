@@ -7,14 +7,14 @@ dashedName: part-65
 
 # --description--
 
-You want `bb4` to share the properties of `bb1` that center the sections. Instead of duplicating that code, create a new class above the background building comment called `building-wrap`. Leave it empty for now; this class will be used in a few places to save you some coding.
+You want `.bb4` to share the properties of `.bb1` that center the sections. Instead of duplicating that code, create a new class above the background building comment called `building-wrap`. Leave it empty for now; this class will be used in a few places to save you some coding.
 
 # --hints--
 
-test-text
+You should create a new class declaration called `building-wrap`.
 
 ```js
-assert(/\.building-wrap\s*{\s*}/g.test(code));
+assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration(".building-wrap"));
 ```
 
 # --seed--
@@ -102,7 +102,9 @@ body {
   position: absolute;
   top: 0;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
 .bb1 {
   width: 10%;

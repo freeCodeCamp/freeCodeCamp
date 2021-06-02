@@ -7,18 +7,20 @@ dashedName: part-56
 
 # --description--
 
-Next, change the two `#999` of `bb2a` to `transparent`. This will make the left and right borders invisible.
+Next, change the two `#999` of `.bb2a` to `transparent`. This will make the left and right borders invisible.
 
 # --hints--
 
-test-text
+You should change the `border-left` to use `transparent`.
 
 ```js
-const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /border-left\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a) &&
-    /border-right\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderLeft, "5vw solid transparent");
+```
+
+You should change the `border-right` to use `transparent`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderRight, "5vw solid transparent");
 ```
 
 # --seed--
@@ -144,7 +146,7 @@ body {
   width: 10%;
   height: 50%;
 }
-
+--fcc-editable-region--
 .bb2a {
   margin: auto;
   border-top: 1vw solid #000;
@@ -152,7 +154,7 @@ body {
   border-left: 5vw solid #999;
   border-right: 5vw solid #999;
 }
-
+--fcc-editable-region--
 .bb2b {
   width: 100%;
   height: 100%;

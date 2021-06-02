@@ -7,19 +7,44 @@ dashedName: part-66
 
 # --description--
 
-Move the `display`, `flex-direction`, and `align-items` properties and values from `bb1` to the new `building-wrap` class.
+Move the `display`, `flex-direction`, and `align-items` properties and values from `.bb1` to the new `building-wrap` class.
 
 # --hints--
 
-test-text
+You should remove `display` from `.bb1`.
 
 ```js
-const bWrap = code.match(/\.building-wrap\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /display\s*:\s*flex\s*(;|})/g.test(bWrap) &&
-    /flex-direction\s*:\s*column\s*(;|})/g.test(bWrap) &&
-    /align-items\s*:\s*center\s*(;|})/g.test(bWrap)
-);
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.display);
+```
+
+You should move `display` with a value of `flex` to `.building-wrap`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".building-wrap")?.display, "flex");
+```
+
+You should remove `flex-direction` from `.bb1`.
+
+```js
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.flexDirection);
+```
+
+You should move `flex-direction` with a value of `column` to `.building-wrap`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".building-wrap")?.flexDirection, "column");
+```
+
+You should remove `align-items` from `.bb1`.
+
+```js
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.alignItems);
+```
+
+You should move `align-items` with a value of `center` to `.building-wrap`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".building-wrap")?.alignItems, "center");
 ```
 
 # --seed--
@@ -107,7 +132,7 @@ body {
   position: absolute;
   top: 0;
 }
-
+--fcc-editable-region--
 .building-wrap {
 
 }
@@ -120,7 +145,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+--fcc-editable-region--
 .bb1a {
   width: 70%;
 }

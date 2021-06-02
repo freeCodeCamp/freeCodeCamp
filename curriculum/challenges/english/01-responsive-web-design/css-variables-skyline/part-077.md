@@ -9,19 +9,32 @@ dashedName: part-77
 
 Don't worry about the space at the bottom, everything will get moved down later when you add some height to the element at the top of the building.
 
-Add a `repeating-linear-gradient` to `fb1c` with a `90deg` angle, your `--building-color4` from `0%` to `10%` and `transparent` from `10%` to `15%`.
+Add a `repeating-linear-gradient` to `.fb1c` with a `90deg` angle, your `--building-color4` from `0%` to `10%` and `transparent` from `10%` to `15%`.
 
 # --hints--
 
-test-text
+You should give `.fb1c` a `background` with a `repeating-linear-gradient`.
 
 ```js
-const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*15%\s*\)\s*(;|})/g.test(
-    fb1c
-  )
-);
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient");
+```
+
+You should use a direction of `90deg`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg");
+```
+
+You should use a first color of `--building-color4` from `0%` to `10%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg, var(--building-color4), var(--building-color) 10%");
+```
+
+You should use a second color of `transparent` from `10%` to `15%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg, var(--building-color4), var(--building-color) 10%, transparent 10%, transparent 15%)");
 ```
 
 # --seed--
@@ -240,12 +253,12 @@ body {
   height: 10%;
   background-color: var(--building-color4);
 }
-  
+--fcc-editable-region--
 .fb1c {
   width: 100%;
   height: 80%;
 }
-
+--fcc-editable-region--
 .fb2 {
   width: 10%;
   height: 40%;

@@ -7,15 +7,20 @@ dashedName: part-57
 
 # --description--
 
-Remove the `margin` and `border-top` properties and values from `bb2a` to turn it into a triangle for the top of the building.
+Remove the `margin` and `border-top` properties and values from `.bb2a` to turn it into a triangle for the top of the building.
 
 # --hints--
 
-test-text
+You should remove the `margin` from `.bb2a`.
 
 ```js
-const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
-assert(!/margin/g.test(bb2a) && !/border-top/g.test(bb2a));
+asser.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.margin);
+```
+
+You should remove the `border-top` from `.bb2a`.
+
+```js
+asser.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderTop);
 ```
 
 # --seed--
@@ -141,7 +146,7 @@ body {
   width: 10%;
   height: 50%;
 }
-
+--fcc-editable-region--
 .bb2a {
   margin: auto;
   border-top: 1vw solid #000;
@@ -149,7 +154,7 @@ body {
   border-left: 5vw solid transparent;
   border-right: 5vw solid transparent;
 }
-
+--fcc-editable-region--
 .bb2b {
   width: 100%;
   height: 100%;

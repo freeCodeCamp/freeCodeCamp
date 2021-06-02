@@ -7,21 +7,32 @@ dashedName: part-74
 
 # --description--
 
-Give `fb1b` a `width` of `60%` and `height` of `10%`, and `fb1c` a `width` of `100%` and `height` of `80%`.
+Give `.fb1b` a `width` of `60%` and `height` of `10%`, and `.fb1c` a `width` of `100%` and `height` of `80%`.
 
 # --hints--
 
-test-text
+You should give `.fb1b` a `width` of `60%`.
 
 ```js
-const fb1b = code.match(/\.fb1b\s*{[\s\S]+?[^}]}/g)[0];
-const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*60%\s*(;|})/g.test(fb1b) &&
-    /height\s*:\s*10%\s*(;|})/g.test(fb1b) &&
-    /width\s*:\s*100%\s*(;|})/g.test(fb1c) &&
-    /height\s*:\s*80%\s*(;|})/g.test(fb1c)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1b")?.width, "60%");
+```
+
+You should give `.fb1b` a `height` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1b")?.height, "10%");
+```
+
+You should give `.fb1c` a `width` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.width, "100%");
+```
+
+You should give `.fb1c` a `width` of `80%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.height, "80%");
 ```
 
 # --seed--
@@ -235,7 +246,9 @@ body {
   height: 60%;
   background-color: var(--building-color4);
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .fb2 {
   width: 10%;
   height: 40%;

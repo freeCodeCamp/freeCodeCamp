@@ -7,15 +7,14 @@ dashedName: part-53
 
 # --description--
 
-In the next few steps, you are going to use some tricks with CSS borders to turn the `bb2a` section into a triangle at the top of the building. First, remove the `background-color` from `bb2` since you don't need it anymore.
+In the next few steps, you are going to use some tricks with CSS borders to turn the `.bb2a` section into a triangle at the top of the building. First, remove the `background-color` from `.bb2` since you don't need it anymore.
 
 # --hints--
 
-test-text
+You shoudl remove the `background-color` from `.bb2`.
 
 ```js
-const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0];
-assert(!/background-color/g.test(bb2));
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2")?.backgroundColor);
 ```
 
 # --seed--
@@ -136,13 +135,13 @@ var(--building-color1),
 var(--window-color1)
     );
 }
-
+--fcc-editable-region--
 .bb2 {
   width: 10%;
   height: 50%;
   background-color: var(--building-color2);
 }
-
+--fcc-editable-region--
 .bb2b {
   width: 100%;
   height: 100%;

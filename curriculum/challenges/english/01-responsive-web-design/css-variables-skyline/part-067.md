@@ -7,16 +7,20 @@ dashedName: part-67
 
 # --description--
 
-Add the new `building-wrap` class to the `bb1` and `bb4` elements. This will apply the centering properties to the buildings that need it.
+Add the new `building-wrap` class to the `.bb1` and `.bb4` elements. This will apply the centering properties to the buildings that need it.
 
 # --hints--
 
-test-text
+You should add `building-wrap` to the `.bb1` element.
 
 ```js
-assert(
-  $('.bb1.building-wrap').length === 1 && $('.bb4.building-wrap').length === 1
-);
+assert.exists(document.querySelector("div.bb1.building-wrap"));
+```
+
+You should add `building-wrap` to the `.bb4` element.
+
+```js
+assert.exists(document.querySelector("div.bb4.building-wrap"));
 ```
 
 # --seed--
@@ -35,6 +39,7 @@ assert(
     <div class="background-buildings">
       <div></div>
       <div></div>
+--fcc-editable-region--
       <div class="bb1">
         <div class="bb1a bb1-window"></div>
         <div class="bb1b bb1-window"></div>
@@ -48,6 +53,7 @@ assert(
       <div class="bb3"></div>
       <div></div>
       <div class="bb4">
+--fcc-editable-region--
         <div class="bb4a"></div>
         <div class="bb4b"></div>
         <div class="bb4c"></div>

@@ -7,15 +7,14 @@ dashedName: part-61
 
 # --description--
 
-Remove the `background-color` property and value from `bb3` since you are using the gradient as the background now.
+Remove the `background-color` property and value from `.bb3` since you are using the gradient as the background now.
 
 # --hints--
 
-test-text
+You should remove the `background-color` from `.bb3`.
 
 ```js
-const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];
-assert(!/background-color/g.test(bb3));
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.backgroundColor);
 ```
 
 # --seed--
@@ -159,7 +158,7 @@ body {
       var(--window-color2) 9%
     );
 }
-
+--fcc-editable-region--
 .bb3 {
   width: 10%;
   height: 55%;
@@ -171,7 +170,7 @@ body {
       var(--window-color3) 15%
     );
 }
-
+--fcc-editable-region--
 .bb4 {
   width: 11%;
   height: 58%;

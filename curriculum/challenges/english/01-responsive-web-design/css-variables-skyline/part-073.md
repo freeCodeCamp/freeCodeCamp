@@ -7,20 +7,39 @@ dashedName: part-73
 
 # --description--
 
-Looks good! On to the foreground buildings! Turn the `fb1` building into three sections by nesting three new `div` elements within it. Give them the classes of `fb1a`, `fb1b` and `fb1c`, in that order.
+Looks good! On to the foreground buildings! Turn the `.fb1` building into three sections by nesting three new `div` elements within it. Give them the classes of `fb1a`, `fb1b` and `fb1c`, in that order.
 
 # --hints--
 
-test-text
+You should add three `div` elements within `.fb1`.
 
 ```js
-const fb1 = $('.fb1').children('div');
-assert(
-  fb1.length === 3 &&
-    fb1[0] === $('div.fb1a')[0] &&
-    fb1[1] === $('div.fb1b')[0] &&
-    fb1[2] === $('div.fb1c')[0]
-);
+assert.equal(document.querySelector("div.fb1")?.children?.length, 3);
+```
+
+You should give the first new `div` a class of `fb1a`.
+
+```js
+assert.exists(document.querySelector("div.fb1 > div.fb1a"));
+```
+
+You should give the second new `div` a class of `bb4b`.
+
+```js
+assert.exists(document.querySelector("div.fb1 > div.fb1a"));
+```
+
+You should give the third new `div` a class of `bb4c`.
+
+```js
+assert.exists(document.querySelector("div.fb1 > div.fb1a"));
+```
+
+You should place the new `div` elements in this order `.fb1a + .fb1b + .fb1c`.
+
+```js
+assert.exists(document.querySelector("div.fb1a + div.fb1b"));
+assert.exists(document.querySelector("div.fb1b + div.fb1c"));
 ```
 
 # --seed--
@@ -68,7 +87,9 @@ assert(
     <div class="foreground-buildings">
       <div></div>
       <div></div>
+--fcc-editable-region--
       <div class="fb1"></div>
+--fcc-editable-region--
       <div class="fb2"></div>
       <div></div>
       <div class="fb3"></div>
