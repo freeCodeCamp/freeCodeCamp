@@ -70,11 +70,10 @@ pandigitalProducts(4);
 # --solutions--
 
 ```js
-function pandigitalProducts() {
-  function is1to9Pandigital(...numbers) {
-    const digitStr = concatenateNums(...numbers);
-    // check if length is 9
-    if (digitStr.length !== 9) {
+function pandigitalProducts(n) {
+  function is1toNPandigital(n, digitStr) {
+    // check if length is n
+    if (digitStr.length !== n) {
       return false;
     }
     // check if pandigital
@@ -94,15 +93,24 @@ function pandigitalProducts() {
   }
 
   const pandigitalNums = [];
+  const limit = 10 ** Math.floor(n / 2) - 1;
   let sum = 0;
-  for (let mult1 = 2; mult1 < 9876; mult1++) {
-    let mult2 = 123;
-    while (concatenateNums(mult1, mult2, mult1 * mult2).length < 10) {
-      if (is1to9Pandigital(mult1, mult2, mult1 * mult2) && !pandigitalNums.includes(mult1 * mult2)) {
-        pandigitalNums.push(mult1 * mult2);
-        sum += mult1 * mult2;
+  for (let mult1 = 2; mult1 < limit; mult1++) {
+    for (let mult2 = 2; mult2 < limit; mult2++) {
+      const product = mult1 * mult2;
+      const concatenated = concatenateNums(mult1, mult2, product);
+      if (concatenated.length > n) {
+        break;
+      } else if (concatenated.length < n) {
+        continue;
       }
-      mult2++;
+      if (
+        is1toNPandigital(n, concatenated) &&
+        !pandigitalNums.includes(product)
+      ) {
+        pandigitalNums.push(product);
+        sum += product;
+      }
     }
   }
   return sum;
