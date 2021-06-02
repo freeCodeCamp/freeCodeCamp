@@ -12,22 +12,46 @@ We shall say that an `n`-digit number is pandigital if it makes use of all the d
 
 The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
 
-Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.
+Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through `n` pandigital.
 
 **Hint:** Some products can be obtained in more than one way so be sure to only include it once in your sum.
 
 # --hints--
 
-`pandigitalProducts()` should return a number.
+`pandigitalProducts(4)` should return a number.
 
 ```js
-assert(typeof pandigitalProducts() === 'number');
+assert(typeof pandigitalProducts(4) === 'number');
 ```
 
-`pandigitalProducts()` should return 45228.
+`pandigitalProducts(4)` should return `12`.
 
 ```js
-assert.strictEqual(pandigitalProducts(), 45228);
+assert.strictEqual(pandigitalProducts(4), 12);
+```
+
+`pandigitalProducts(6)` should return `162`.
+
+```js
+assert.strictEqual(pandigitalProducts(6), 162);
+```
+
+`pandigitalProducts(7)` should return `0`.
+
+```js
+assert.strictEqual(pandigitalProducts(7), 0);
+```
+
+`pandigitalProducts(8)` should return `13458`.
+
+```js
+assert.strictEqual(pandigitalProducts(8), 13458);
+```
+
+`pandigitalProducts(9)` should return `45228`.
+
+```js
+assert.strictEqual(pandigitalProducts(9), 45228);
 ```
 
 # --seed--
@@ -35,12 +59,12 @@ assert.strictEqual(pandigitalProducts(), 45228);
 ## --seed-contents--
 
 ```js
-function pandigitalProducts() {
+function pandigitalProducts(n) {
 
   return true;
 }
 
-pandigitalProducts();
+pandigitalProducts(4);
 ```
 
 # --solutions--
