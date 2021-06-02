@@ -9,7 +9,7 @@ import {
 } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 import store from 'store';
-import uuid from 'uuid/v4';
+import { v4 as uuid } from 'uuid';
 
 import {
   types,
