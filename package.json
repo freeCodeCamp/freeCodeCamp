@@ -131,6 +131,7 @@
     "ora": "5.4.0",
     "prettier": "2.3.0",
     "prismjs": "1.23.0",
+    "process": "^0.11.10",
     "shx": "0.3.3",
     "sinon": "10.0.0",
     "sinon-express-mock": "2.2.1",
