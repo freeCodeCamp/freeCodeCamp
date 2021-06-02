@@ -1,4 +1,4 @@
-import React, { Component, } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -23,6 +23,7 @@ import SearchHits from './search-hits';
 import './searchbar-base.css';
 import './searchbar.css';
 
+const searchUrl: string = searchPageUrl as string;
 const mapStateToProps = createSelector(
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
@@ -69,15 +70,15 @@ export class SearchBar extends Component<searchBarPropType, classState> {
     };
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     document.addEventListener('click', this.handleFocus);
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('click',this.handleFocus);
+  componentWillUnmount(): void {
+    document.removeEventListener('click', this.handleFocus);
   }
 
-  handleChange=()=> {
+  handleChange = (): void => {
     const { isSearchFocused, toggleSearchFocused } = this.props;
     if (!isSearchFocused) {
       toggleSearchFocused(true);
@@ -86,20 +87,25 @@ export class SearchBar extends Component<searchBarPropType, classState> {
     this.setState({
       index: -1
     });
-  }
+  };
 
-  handleFocus=(e: React.FocusEvent<Node> | Event)=>{
+  handleFocus = (e: React.FocusEvent<Node> | Event): AnyAction | void => {
     const { toggleSearchFocused } = this.props;
-    const isSearchFocused = this.props.innerRef?.current?.contains(e.target as HTMLElement);
+    const isSearchFocused = this.props.innerRef?.current?.contains(
+      e.target as HTMLElement
+    );
     if (!isSearchFocused) {
       // Reset if user clicks outside of
       // search bar / closes dropdown
       this.setState({ index: -1 });
     }
     return toggleSearchFocused(isSearchFocused);
-  }
+  };
 
-  handleSearch=(e: React.SyntheticEvent<HTMLFormElement, Event>, query?: any) => {
+  handleSearch = (
+    e: React.SyntheticEvent<HTMLFormElement, Event>,
+    query?: any
+  ): boolean | void => {
     e.preventDefault();
     const { toggleSearchDropdown, updateSearchQuery } = this.props;
     const { index, hits } = this.state;
@@ -124,12 +130,12 @@ export class SearchBar extends Component<searchBarPropType, classState> {
     // are hits besides the footer
     return query && hits.length > 1
       ? window.location.assign(
-          `${searchPageUrl}?query=${encodeURIComponent(query)}`
+          `${searchUrl}?query=${encodeURIComponent(query)}`
         )
       : false;
-  }
+  };
 
-  handleMouseEnter = (e: React.SyntheticEvent<HTMLElement,Event>) => {
+  handleMouseEnter = (e: React.SyntheticEvent<HTMLElement, Event>): void => {
     e.persist();
     const hoveredText = e.currentTarget.innerText;
 
@@ -139,15 +145,15 @@ export class SearchBar extends Component<searchBarPropType, classState> {
 
       return { index: hoveredIndex };
     });
-  }
+  };
 
-  handleMouseLeave = () => {
+  handleMouseLeave = (): void => {
     this.setState({
       index: -1
     });
-  }
+  };
 
-  handleHits = (currHits: Array<Hit>) => {
+  handleHits = (currHits: Array<Hit>): void => {
     const { hits } = this.state;
 
     if (!isEqual(hits, currHits)) {
@@ -156,7 +162,7 @@ export class SearchBar extends Component<searchBarPropType, classState> {
         hits: currHits
       });
     }
-  }
+  };
 
   keyMap = {
     INDEX_UP: ['up'],
@@ -164,13 +170,13 @@ export class SearchBar extends Component<searchBarPropType, classState> {
   };
 
   keyHandlers = {
-    INDEX_UP: (e: KeyboardEvent | undefined) => {
+    INDEX_UP: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
       this.setState(({ index, hits }) => ({
         index: index === -1 ? hits.length - 1 : index - 1
       }));
     },
-    INDEX_DOWN: (e: KeyboardEvent | undefined) => {
+    INDEX_DOWN: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
       this.setState(({ index, hits }) => ({
         index: index === hits.length - 1 ? -1 : index + 1
@@ -226,7 +232,7 @@ export class SearchBar extends Component<searchBarPropType, classState> {
               {t ? t('search.label') : ''}
             </label>
             <ObserveKeys except={['Space']}>
-              <div onFocus={this.handleFocus}>
+              <div onFocus={this.handleFocus} role='textbox'>
                 <SearchBox
                   focusShortcuts={['83', '191']}
                   onChange={this.handleChange}

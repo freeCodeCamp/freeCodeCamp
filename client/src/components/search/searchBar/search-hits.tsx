@@ -7,18 +7,19 @@ import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 import Suggestion from './search-suggestion';
 import NoHitsSuggestion from './no-hits-suggestion';
 
+const searchUrl = searchPageUrl as string;
 interface customHitsPropTypes {
   hits: Array<any>;
   searchQuery: string;
-  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement,Event>) => void;
-  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement,Event>) => void;
+  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
   selectedIndex: number;
   handleHits: (currHits: Array<Hit>) => void;
 }
 interface searchHitsPropTypes {
   searchState: SearchState;
-  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement,Event>) => void;
-  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement,Event>) => void;
+  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
   selectedIndex: number;
   handleHits: (currHits: Array<Hit>) => void;
 }
@@ -40,7 +41,7 @@ const CustomHits = connectHits(
         query: searchQuery,
         url: noHits
           ? null
-          : `${searchPageUrl}?query=${encodeURIComponent(searchQuery)}`,
+          : `${searchUrl}?query=${encodeURIComponent(searchQuery)}`,
         title: t('search.see-results', { searchQuery: searchQuery }),
         _highlightResult: {
           query: {
@@ -53,7 +54,7 @@ const CustomHits = connectHits(
         }
       }
     ];
-    const allHits : Array<Hit> = hits.slice(0, 8).concat(footer);
+    const allHits = hits.slice(0, 8).concat(footer);
     useEffect(() => {
       handleHits(allHits);
     });

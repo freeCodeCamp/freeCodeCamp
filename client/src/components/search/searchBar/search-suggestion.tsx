@@ -4,8 +4,8 @@ import { Hit } from 'react-instantsearch-core';
 
 interface suggestionPropTypes {
   hit: Hit;
-  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement,Event>) => void;
-  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement,Event>) => void;
+  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
 }
 
 const Suggestion = ({

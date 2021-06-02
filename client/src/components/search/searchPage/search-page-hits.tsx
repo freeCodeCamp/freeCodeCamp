@@ -1,19 +1,22 @@
-import React from 'react';
-
+import React, { EventHandler, SyntheticEvent } from 'react';
+import { AutocompleteExposed, SearchState } from 'react-instantsearch-core';
 import {
   Highlight,
   connectStateResults,
   connectAutoComplete
 } from 'react-instantsearch-dom';
 import { isEmpty } from 'lodash-es';
-import {SearchState} from 'react-instantsearch-core'
 import EmptySearch from './empty-search';
 import NoResults from './no-results';
 
 import './search-page-hits.css';
 
-const AllHits: React.ComponentClass<any, any> = connectAutoComplete(
-  ({ hits, currentRefinement }) => {
+type allHitType = {
+  handleClick?: EventHandler<SyntheticEvent>;
+};
+
+const AllHits: React.ComponentClass<AutocompleteExposed & allHitType, any> =
+  connectAutoComplete(({ hits, currentRefinement }) => {
     const isHitsEmpty = !hits.length;
 
     return currentRefinement && !isHitsEmpty ? (
@@ -38,13 +41,18 @@ const AllHits: React.ComponentClass<any, any> = connectAutoComplete(
     ) : (
       <NoResults query={currentRefinement} />
     );
-  }
-);
+  });
 
 AllHits.displayName = 'AllHits';
 
 const SearchHits = connectStateResults(
-  ({ handleClick, searchState }: { handleClick: any; searchState: SearchState }) => {
+  ({
+    handleClick,
+    searchState
+  }: {
+    handleClick: EventHandler<SyntheticEvent>;
+    searchState: SearchState;
+  }) => {
     const isSearchEmpty = isEmpty(searchState) || isEmpty(searchState.query);
 
     return isSearchEmpty ? (
