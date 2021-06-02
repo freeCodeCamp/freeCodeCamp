@@ -65,6 +65,7 @@
     "crypto-browserify": "3.12.0",
     "csrf": "3.1.0",
     "date-fns": "2.22.1",
+    "dedent": "^0.7.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "final-form": "4.20.2",
