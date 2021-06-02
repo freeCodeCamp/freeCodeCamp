@@ -77,6 +77,7 @@ The `peek` method should return the top element of the stack
 assert(
   (function () {
     var test = new Stack();
+    test.push('PSY44');
     test.push('CS50');
     return test.peek() === 'CS50';
   })()
