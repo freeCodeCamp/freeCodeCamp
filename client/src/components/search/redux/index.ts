@@ -1,17 +1,26 @@
 import { createAction, handleActions } from 'redux-actions';
-
-import { createTypes } from '../../../utils/create-types';
-
-export const ns = 'search';
-
+import { createTypes } from '../../../utils/createTypes';
+export const ns:string = 'search';
+interface IHomeReducer {
+  query: string;
+  indexName: string;
+  isSearchDropdownEnabled: boolean;
+  isSearchBarFocused: boolean;
+}
 const initialState = {
   query: '',
   indexName: 'news',
   isSearchDropdownEnabled: true,
   isSearchBarFocused: false
 };
+type actionType = {
+  toggleSearchDropdown: string;
+  toggleSearchFocused: string;
+  updateSearchIndexName: string;
+  updateSearchQuery: string;
+};
 
-const types = createTypes(
+export const types: actionType = createTypes(
   [
     'toggleSearchDropdown',
     'toggleSearchFocused',
@@ -26,13 +35,14 @@ export const toggleSearchFocused = createAction(types.toggleSearchFocused);
 export const updateSearchIndexName = createAction(types.updateSearchIndexName);
 export const updateSearchQuery = createAction(types.updateSearchQuery);
 
-export const isSearchDropdownEnabledSelector = state =>
+export const isSearchDropdownEnabledSelector = (state: { [x: string]: IHomeReducer; }) =>
   state[ns].isSearchDropdownEnabled;
-export const isSearchBarFocusedSelector = state => state[ns].isSearchBarFocused;
-export const searchIndexNameSelector = state => state[ns].indexName;
-export const searchQuerySelector = state => state[ns].query;
+export const isSearchBarFocusedSelector = (state: { [x: string]: IHomeReducer; }) =>
+  state[ns].isSearchBarFocused;
+export const searchIndexNameSelector = (state: { [x: string]: IHomeReducer; }) => state[ns].indexName;
+export const searchQuerySelector = (state: { [x: string]: IHomeReducer; }) => state[ns].query;
 
-export const reducer = handleActions(
+export const reducer = handleActions<IHomeReducer, any>(
   {
     [types.toggleSearchDropdown]: (state, { payload }) => ({
       ...state,

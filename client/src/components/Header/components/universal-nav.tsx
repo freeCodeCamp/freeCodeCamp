@@ -8,6 +8,7 @@ import { Link, SkeletonSprite } from '../../helpers';
 import NavLogo from './nav-logo';
 import MenuButton from './menu-button';
 import NavLinks from './nav-links';
+import './universalNav.css';
 import { isLanding } from '../../../utils/path-parsers';
 import Loadable from '@loadable/component';
 

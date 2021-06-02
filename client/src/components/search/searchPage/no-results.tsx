@@ -1,16 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Trans } from 'react-i18next';
 
-const propTypes = {
-  query: PropTypes.string
-};
-
-function NoResults({ query }) {
+function NoResults({ query }: { query: string }) {
   return (
     <div className='no-results-wrapper'>
       <p>
-        <Trans i18nKey='search.no-results' query={query}>
+        <Trans i18nKey='search.no-results' {...{ query: query }}>
           <em>{{ query }}</em>
         </Trans>
       </p>
@@ -19,6 +14,5 @@ function NoResults({ query }) {
 }
 
 NoResults.displayName = 'NoResults';
-NoResults.propTypes = propTypes;
 
 export default NoResults;
