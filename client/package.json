@@ -83,6 +83,7 @@
     "lodash-es": "4.17.21",
     "monaco-editor": "0.24.0",
     "nanoid": "3.1.23",
+    "normalize-url": "^6.0.1",
     "path-browserify": "1.0.1",
     "postcss": "8.3.0",
     "prismjs": "1.23.0",
