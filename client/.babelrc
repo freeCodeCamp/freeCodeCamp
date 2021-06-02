@@ -66,7 +66,9 @@
   ],
   "env": {
     "development": {
-      "plugins": ["@codesee/instrument"]
+      "plugins": [
+        ["@codesee/instrument", { "hosted": true }]
+      ]
     }
-  }
+  },
 }
