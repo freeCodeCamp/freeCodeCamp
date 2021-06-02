@@ -92,7 +92,7 @@ assert(
     var test = new Stack();
     test.push('CS61');
     test.push('CS50');
-    return test.pop() === 'CS50' && test.pop() == 'CS61';
+    return test.pop() === 'CS50' && test.pop() === 'CS61';
   })()
 );
 ```
