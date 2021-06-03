@@ -23,7 +23,7 @@ import {
   userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/propTypes';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 
 import './intro.css';
 

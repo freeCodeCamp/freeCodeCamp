@@ -8,7 +8,7 @@ import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 
-import { ChallengeNode } from '../../../../redux/propTypes';
+import { ChallengeNode } from '../../../../redux/prop-types';
 import {
   challengeMounted,
   isChallengeCompletedSelector,

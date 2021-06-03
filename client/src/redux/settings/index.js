@@ -1,6 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 
-import { createTypes, createAsyncTypes } from '../../utils/createTypes';
+import { createTypes, createAsyncTypes } from '../../utils/create-types';
 import { createDangerZoneSaga } from './danger-zone-saga';
 import { createSettingsSagas } from './settings-sagas';
 import { createUpdateMyEmailSaga } from './update-email-saga';

@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { certificatesByNameSelector } from '../../../redux';
 import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
-import { CurrentCertsType } from '../../../redux/propTypes';
+import { CurrentCertsType } from '../../../redux/prop-types';
 
 const mapStateToProps = (state, props) =>
   createSelector(
