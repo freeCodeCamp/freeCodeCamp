@@ -4,6 +4,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import HeatMap from './HeatMap';
+import MockInstance = jest.MockInstance;
 
 // offset is used to shift the dates so that the calendar renders (for testing
 // purposes only) the same way in each timezone.
@@ -12,7 +13,7 @@ const date1 = 1580497504 + offset;
 const date2 = 1580597504 + offset;
 const date3 = 1580729769 + offset;
 
-const props = {
+const props: { calendar: { [key: number]: number } } = {
   calendar: {}
 };
 
@@ -20,7 +21,7 @@ props.calendar[date1] = 1;
 props.calendar[date2] = 1;
 props.calendar[date3] = 1;
 
-let dateNowMockFn;
+let dateNowMockFn: MockInstance<any, any>;
 
 beforeEach(() => {
   dateNowMockFn = jest
