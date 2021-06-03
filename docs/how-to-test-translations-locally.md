@@ -11,7 +11,7 @@ There are a few steps to take in order to allow the codebase to build in your de
 
 First, visit the `config/i18n/all-langs.js` file to add the language to the available languages list and configure the values. There are four objects here.
 
-- `availableLangs`: For both the `client` and `curriculm` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
+- `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
 - `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
 - `langDisplayNames`: These are the display names for the language selector in the navigation menu.
 - `langCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
