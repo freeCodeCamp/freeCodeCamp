@@ -74,5 +74,55 @@ substringDivisibility(5);
 # --solutions--
 
 ```js
-// solution required
+function substringDivisibility(n) {
+  function isSubDivisable(digits) {
+    const factors = [2, 3, 5, 7, 11, 13, 17];
+
+    for (let i = 1; i < digits.length - 2; i++) {
+      const subNumber = digits[i] * 100 + digits[i + 1] * 10 + digits[i + 2];
+      if (subNumber % factors[i - 1] !== 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function heapsPermutations(k, digits, conditionCheck, results) {
+    if (k === 1) {
+      if (conditionCheck(digits)) {
+        const number = parseInt(digits.join(''), 10);
+        results.push(number);
+      }
+      return;
+    }
+
+    heapsPermutations(k - 1, digits, conditionCheck, results);
+
+    for (let i = 0; i < k - 1; i++) {
+      if (k % 2 === 0) {
+        [digits[i], digits[k - 1]] = [digits[k - 1], digits[i]];
+      } else {
+        [digits[0], digits[k - 1]] = [digits[k - 1], digits[0]];
+      }
+      heapsPermutations(k - 1, digits, conditionCheck, results);
+    }
+    return;
+  }
+
+  const allowedDigits = [...new Array(n + 1).keys()];
+  const divisablePandigitals = [];
+  heapsPermutations(
+    allowedDigits.length,
+    allowedDigits,
+    isSubDivisable,
+    divisablePandigitals
+  );
+
+  let sum = 0;
+  for (let i = 0; i < divisablePandigitals.length; i++) {
+    sum += divisablePandigitals[i];
+  }
+
+  return sum;
+}
 ```
