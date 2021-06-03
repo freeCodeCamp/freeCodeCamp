@@ -7,17 +7,26 @@ dashedName: part-96
 
 # --description--
 
-Only three more building to go. Nest two new `div` elements within the `fb4` element and give them the classes of `fb4a` and `fb4b`, in that order. Remember that you sort of flipped the location of `fb4` and `fb5`, so it's the rightmost purple building you are working on now.
+Only three more building to go. Nest two new `div` elements within the `.fb4` element and give them the classes of `fb4a` and `fb4b`, in that order. Remember that you sort of flipped the location of `.fb4` and `.fb5`, so it's the rightmost purple building you are working on now.
 
 # --hints--
 
-test-text
+You should add two `div` elements within `.fb4`.
 
 ```js
-const fb4 = $('.fb4').children('div');
-assert(
-  fb4.length === 2 && fb4[0] === $('div.fb4a')[0] && fb4[1] === $('div.fb4b')[0]
-);
+assert.equal(document.querySelectorAll("div.fb4 > div")?.length, 2);
+```
+
+You should give the first new `div` a class of `fb4a`.
+
+```js
+assert.exists(document.querySelector("div.fb4a"));
+```
+
+You should give the second new `div` a class of `fb4b`.
+
+```js
+assert.exists(document.querySelector("div.fb4b"));
 ```
 
 # --seed--
@@ -89,7 +98,9 @@ assert(
         <div class="fb3a"></div>
         <div class="fb3b"></div>
       </div>
+--fcc-editable-region--
       <div class="fb4"></div>
+--fcc-editable-region--
       <div class="fb5"></div>
       <div class="fb6"></div>
       <div></div>

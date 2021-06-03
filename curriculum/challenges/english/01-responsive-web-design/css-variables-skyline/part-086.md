@@ -7,19 +7,20 @@ dashedName: part-86
 
 # --description--
 
-Move the `background-color` property and value from `fb2` to `fb2b` to just color the section and not the container.
+Move the `background-color` property and value from `.fb2` to `.fb2b` to just color the section and not the container.
 
 # --hints--
 
-test-text
+You should remove the `background-color` property from `.fb2`.
 
 ```js
-const fb2 = code.match(/\.fb2\s*{[\s\S]+?[^}]}/g)[0];
-const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  !/background-color/g.test(fb2) &&
-    /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2b)
-);
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2")?.backgroundColor);
+```
+
+You should give `.fb2b` a `background-color` of `--building-color3`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2b")?.backgroundColor, "var(--building-color3)");
 ```
 
 # --seed--
@@ -269,7 +270,7 @@ body {
       var(--window-color4) 90%
     );
 }
-
+--fcc-editable-region--
 .fb2 {
   width: 10%;
   height: 40%;
@@ -284,7 +285,7 @@ body {
   width: 100%;
   height: 75%;
 }
-
+--fcc-editable-region--
 .fb2-window {
   width: 22%;
   height: 100%;

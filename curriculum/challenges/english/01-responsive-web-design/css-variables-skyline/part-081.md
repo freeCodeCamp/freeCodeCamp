@@ -7,17 +7,27 @@ dashedName: part-81
 
 # --description--
 
-On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b`, in that order.
+On to the next building! Nest two `div` elements within `.fb2` and give them classes of `fb2a` and `fb2b`, in that order.
 
 # --hints--
 
-test-text
+You should add two `div` elements within `.fb2`.
 
 ```js
-const fb2 = $('.fb2').children('div');
-assert(
-  fb2.length === 2 && fb2[0] === $('div.fb2a')[0] && fb2[1] === $('div.fb2b')[0]
-);
+assert.equal(document.querySelectorAll("div.fb2 > div")?.length, 2);
+```
+
+You should give the first new `div` a class of `fb2a`.
+
+```js
+assert.exists(document.querySelector("div.fb2 > div.fb2a"));
+assert.equal(document.querySelector("div.fb2 > div.fb2a"), document.querySelector("div.fb2:nth-child(1)"));
+```
+
+You should give the second new `div` a class of `fb2b`.
+
+```js
+assert.exists(document.querySelector("div.fb2 > div.fb2b"));
 ```
 
 # --seed--
@@ -70,7 +80,9 @@ assert(
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
+--fcc-editable-region--
       <div class="fb2"></div>
+--fcc-editable-region--
       <div></div>
       <div class="fb3"></div>
       <div class="fb4"></div>

@@ -11,14 +11,16 @@ Fill in the windows with your secondary color for this building. Also add a `mar
 
 # --hints--
 
-test-text
+You should give `.fb4-window` a `background-color` of `--window-color1`.
 
 ```js
-const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb4w) &&
-    /margin\s*:\s*10%\s*(;|})/g.test(fb4w)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.backgroundColor, "var(--window-color1)");
+```
+
+You should give `.fb4-window` a `margin` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.margin, "10%");
 ```
 
 # --seed--
@@ -347,13 +349,13 @@ body {
   height: 89%;
   background-color: var(--building-color1);
 }
-
+--fcc-editable-region--
 .fb4-window {
   width: 30%;
   height: 10%;
   border-radius: 50%;
 }
-
+--fcc-editable-region--
 .fb5 {
   width: 10%;
   height: 33%;

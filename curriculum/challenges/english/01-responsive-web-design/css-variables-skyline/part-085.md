@@ -7,19 +7,26 @@ dashedName: part-85
 
 # --description--
 
-Give the `fb2-window` elements a `width` of `22%`, `height` of `100%`, and a `background-color` of your `--window-color3` variable.
+Give the `.fb2-window` elements a `width` of `22%`, `height` of `100%`, and a `background-color` of your `--window-color3` variable.
 
 # --hints--
 
-test-text
+You should give the `.fb2-window` elements a `width` of `22%`.
 
 ```js
-const fb2w = code.match(/\.fb2-window\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*22%\s*(;|})/g.test(fb2w) &&
-    /height\s*:\s*100%\s*(;|})/g.test(fb2w) &&
-    /background-color\s*:\s*var\(\s*--window-color3\s*\)\s*(;|})/g.test(fb2w)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2-window")?.width, "22%");
+```
+
+You should give the `.fb2-window` elements a `height` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2-window")?.height, "100%");
+```
+
+You should give the `.fb2-window` elements a `background-color` of `--window-color3`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2-window")?.backgroundColor, "var(--window-color3)");
 ```
 
 # --seed--
@@ -284,7 +291,9 @@ body {
   width: 100%;
   height: 75%;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .fb3 {
   width: 10%;
   height: 35%;

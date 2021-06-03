@@ -7,14 +7,20 @@ dashedName: part-92
 
 # --description--
 
-Nest three new `div` elements in the first `fb3a` element. Give them each a class of `fb3-window`. These will be windows for this section.
+Nest three new `div` elements in the first `.fb3a` element. Give them each a class of `fb3-window`. These will be windows for this section.
 
 # --hints--
 
-test-text
+You should add three `div` elements within the first `.fb3a` element.
 
 ```js
-assert($('.fb3 div.fb3a:first-child').children('div.fb3-window').length === 3);
+assert.equal(document.querySelectorAll("div.fb3a > div")?.length, 3);
+```
+
+You should give each new `div` a class of `fb3-window`.
+
+```js
+assert.equal(document.querySelectorAll("div.fb3-window")?.length, 3)
 ```
 
 # --seed--
@@ -77,7 +83,9 @@ assert($('.fb3 div.fb3a:first-child').children('div.fb3-window').length === 3);
       </div>
       <div></div>
       <div class="fb3 building-wrap">
+--fcc-editable-region--
         <div class="fb3a"></div>
+--fcc-editable-region--
         <div class="fb3b"></div>
         <div class="fb3a"></div>
         <div class="fb3b"></div>

@@ -7,14 +7,14 @@ dashedName: part-94
 
 # --description--
 
-Add your `window-wrap` class to the `fb3a` element to center and space the windows.
+Add your `window-wrap` class to the `.fb3a` element to center and space the windows.
 
 # --hints--
 
-test-text
+You should give `.fb3a` a class of `window-wrap`.
 
 ```js
-assert($('.fb3 div.fb3a:first-child').hasClass('window-wrap'));
+assert.exists(document.querySelector("div.fb3a.window-wrap"));
 ```
 
 # --seed--
@@ -77,11 +77,13 @@ assert($('.fb3 div.fb3a:first-child').hasClass('window-wrap'));
       </div>
       <div></div>
       <div class="fb3 building-wrap">
+--fcc-editable-region--
         <div class="fb3a">
           <div class="fb3-window"></div>
           <div class="fb3-window"></div>
           <div class="fb3-window"></div>
         </div>
+--fcc-editable-region--
         <div class="fb3b"></div>
         <div class="fb3a"></div>
         <div class="fb3b"></div>

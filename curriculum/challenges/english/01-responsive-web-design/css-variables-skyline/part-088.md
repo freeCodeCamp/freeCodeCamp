@@ -7,22 +7,38 @@ dashedName: part-88
 
 # --description--
 
-For the next building, nest four `div` elements within `fb3` with classes of `fb3a`, `fb3b`, `fb3a` again, and `fb3b` again, in that order. This building will have four sections and the top two will be almost the same as the bottom two.
+For the next building, nest four `div` elements within `.fb3` with classes of `fb3a`, `fb3b`, `fb3a` again, and `fb3b` again, in that order. This building will have four sections, and the top two will be almost the same as the bottom two.
 
 # --hints--
 
-test-text
+You should add four `div` elements within `.fb3`.
 
 ```js
-const fb3 = $('.fb3').children('div');
-console.log(fb3);
-assert(
-  fb3.length === 4 &&
-    fb3[0] === $('div.fb3a')[0] &&
-    fb3[1] === $('div.fb3b')[0] &&
-    fb3[2] === $('div.fb3a')[1] &&
-    fb3[3] === $('div.fb3b')[1]
-);
+assert.equal(document.querySelectorAll("div.fb3 > div")?.length, 4);
+```
+
+You should give the first new `div` a class of `fb3a`.
+
+```js
+assert.equal(document.querySelector("div.fb3:nth-child(1)"), document.querySelector("div.fb3a"));
+```
+
+You should give the second new `div` a class of `fb3b`.
+
+```js
+assert.equal(document.querySelector("div.fb3:nth-child(2)"), document.querySelector("div.fb3b"));
+```
+
+You should give the third new `div` a class of `fb3a`.
+
+```js
+assert.equal(document.querySelector("div.fb3:nth-child(3)"), document.querySelector("div.fb3b + div.fb3a"));
+```
+
+You should give the fourth new `div` a class of `fb3b`.
+
+```js
+assert.include(document.querySelector("div.fb3:nth-child(4)")?.classList, "fb3b");
 ```
 
 # --seed--
@@ -84,7 +100,9 @@ assert(
         </div>
       </div>
       <div></div>
+--fcc-editable-region--
       <div class="fb3"></div>
+--fcc-editable-region--
       <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>

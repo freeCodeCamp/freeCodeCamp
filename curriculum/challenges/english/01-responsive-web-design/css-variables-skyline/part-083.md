@@ -7,14 +7,20 @@ dashedName: part-83
 
 # --description--
 
-Nest three `div` elements within `fb2b` and give them a class of `fb2-window`. These will be windows for this section of the building.
+Nest three `div` elements within `.fb2b` and give them a class of `fb2-window`. These will be windows for this section of the building.
 
 # --hints--
 
-test-text
+You should add three `div` elements within `.fb2b`.
 
 ```js
-assert($('.fb2b').children('div.fb2-window').length === 3);
+assert.equal(document.querySelectorAll("div.fb2b > div")?length, 3);
+```
+
+You should give the three new `div` elements each a class of `fb2-window`.
+
+```js
+assert.equal(document.querySelectorAll("div.fb2-window")?.length, 3);
 ```
 
 # --seed--
@@ -69,7 +75,9 @@ assert($('.fb2b').children('div.fb2-window').length === 3);
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
+--fcc-editable-region--
         <div class="fb2b"></div>
+--fcc-editable-region--
       </div>
       <div></div>
       <div class="fb3"></div>

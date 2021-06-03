@@ -7,21 +7,26 @@ dashedName: part-87
 
 # --description--
 
-For `fb2a`, add a `border-bottom` of `10vh solid var(--building-color3)` and a `border-left` and `border-right` of `1vw solid transparent`. This time the border trick will create a trapezoid shape.
+For `.fb2a`, add a `border-bottom` of `10vh solid var(--building-color3)`, and a `border-left` and `border-right` of `1vw solid transparent`. This time the border trick will create a trapezoid shape.
 
 # --hints--
 
-test-text
+You should give `.fb2a` a `border-bottom` of `10vh solid var(--building-color3)`.
 
 ```js
-const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /border-bottom\s*:\s*10vh\s+solid\s+var\(\s*--building-color3\s*\)\s*(;|})/g.test(
-    fb2a
-  ) &&
-    /border-left\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a) &&
-    /border-right\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2a")?.borderBottom, "10vh solid var(--building-color3)");
+```
+
+You should give `.fb2a` a `border-left` of `1vw solid transparent`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2a")?.borderLeft, "1vw solid transparent");
+```
+
+You should give `.fb2a` a `border-right` of `1vw solid transparent`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2a")?.borderRight, "1vw solid transparent");
 ```
 
 # --seed--
@@ -276,11 +281,11 @@ body {
   width: 10%;
   height: 40%;
 }
-
+--fcc-editable-region--
 .fb2a {
   width: 100%;
 }
-
+--fcc-editable-region--
 .fb2b {
   width: 100%;
   height: 75%;

@@ -7,16 +7,20 @@ dashedName: part-102
 
 # --description--
 
-Add `display: flex;` and `flex-wrap: wrap;` to the window container. This will put your windows side by side and then push them down to a new row when they don't fit.
+Add `display: flex` and `flex-wrap: wrap` to the window container. This will put your windows side by side, and then push them down to a new row when they don't fit.
 
 # --hints--
 
-test-text
+You should give `.fb4b` a `display` of `flex`.
 
 ```js
-assert(
-  $('.fb4b').css('display') === 'flex' && $('.fb4b').css('flex-wrap') === 'wrap'
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.display, "flex");
+```
+
+You should give `.fb4b` a `flex-wrap` of `wrap`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.flexWrap, "wrap");
 ```
 
 # --seed--
@@ -339,13 +343,13 @@ body {
   position: relative;
   left: 10%;
 }
-
+--fcc-editable-region--
 .fb4b {
   width: 100%;
   height: 89%;
   background-color: var(--building-color1);
 }
-
+--fcc-editable-region--
 .fb4-window {
   width: 30%;
   height: 10%;

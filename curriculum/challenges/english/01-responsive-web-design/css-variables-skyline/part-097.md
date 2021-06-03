@@ -7,18 +7,20 @@ dashedName: part-97
 
 # --description--
 
-Give `fb4b` a `width` of `100%` and `height` of `89%`.
+Give `.fb4b` a `width` of `100%` and `height` of `89%`.
 
 # --hints--
 
-test-text
+You should give `.fb4b` a `width` of `100%`.
 
 ```js
-const fb4b = code.match(/\.fb4b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*100%\s*(;|})/g.test(fb4b) &&
-    /height\s*:\s*89%\s*(;|})/g.test(fb4b)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.width, "100%");
+```
+
+You should give `.fb4b` a `height` of `89%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.height, "89%");
 ```
 
 # --seed--
@@ -335,7 +337,9 @@ body {
   position: relative;
   left: 10%;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .fb5 {
   width: 10%;
   height: 33%;

@@ -7,20 +7,26 @@ dashedName: part-82
 
 # --description--
 
-Give `fb2a` a `width` of `100%` and `fb2b` a `width` of `100%` and `height` of `75%`.
+Give `.fb2a` a `width` of `100%` and `.fb2b` a `width` of `100%` and `height` of `75%`.
 
 # --hints--
 
-test-text
+You should give `.fb2a` a `width` of `100%`.
 
 ```js
-const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0];
-const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*100%\s*(;|})/g.test(fb2a) &&
-    /width\s*:\s*100%\s*(;|})/g.test(fb2b) &&
-    /height\s*:\s*75%\s*(;|})/g.test(fb2b)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2a")?.width, "100%");
+```
+
+You should give `.fb2b` a `width` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2b")?.width, "100%");
+```
+
+You should give `.fb2b` a `height` of `75%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2b")?.height, "75%");
 ```
 
 # --seed--
@@ -272,7 +278,9 @@ body {
   height: 40%;
   background-color: var(--building-color3);
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .fb3 {
   width: 10%;
   height: 35%;

@@ -7,23 +7,26 @@ dashedName: part-90
 
 # --description--
 
-Remove the `background-color` property and value from `fb3` and add them to `fb3a` and `fb3b`.
+Remove the `background-color` property and value from `.fb3`, and add them to `.fb3a` and `.fb3b`.
 
 # --hints--
 
-test-text
+You should remove the `background-color` from `.fb3`.
 
 ```js
-const fb3 = code.match(/\.fb3\s*{[\s\S]+?[^}]}/g)[0];
-const fb3a = code.match(/\.fb3a\s*{[\s\S]+?[^}]}/g)[0];
-const fb3b = code.match(/\.fb3b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  !/background-color/g.test(fb3) &&
-    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(
-fb3a
-    ) &&
-    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb3b)
-);
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3")?.backgroundColor);
+```
+
+You should give `.fb3a` a `background-color` of `--building-color1`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3a")?.backgroundColor, "var(--building-color1)");
+```
+
+You should give `.fb3b` a `background-color` of `--building-color1`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3b")?.backgroundColor, "var(--building-color1)");
 ```
 
 # --seed--
@@ -302,7 +305,7 @@ body {
   height: 100%;
   background-color: var(--window-color3);
 }
-
+--fcc-editable-region--
 .fb3 {
   width: 10%;
   height: 35%;
@@ -318,7 +321,7 @@ body {
   width: 100%;
   height: 35%;
 }
-  
+--fcc-editable-region--
 .fb4 {
   width: 8%;
   height: 45%;

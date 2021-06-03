@@ -7,19 +7,20 @@ dashedName: part-79
 
 # --description--
 
-You're going to use some more border tricks for top section. Add a `border-bottom` with a value of `7vh solid var(--building-color4)` to `fb1a`. This will put a `7vh` height border on the bottom. But since the element has zero size, it only shows up as a 2px wide line from the 1px border that is on all the elements.
+You're going to use some more border tricks for top section. Add a `border-bottom` with a value of `7vh solid var(--building-color4)` to `.fb1a`. This will put a `7vh` height border on the bottom. But since the element has zero size, it only shows up as a 2px wide line from the 1px border that is on all the elements.
 
 # --hints--
 
-test-text
+You should give `.fb1a` a `border-bottom`.
 
 ```js
-const fb1a = code.match(/\.fb1a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /border-bottom\s*:\s*7vh\s+solid\s+var\(\s*--building-color4\s*\)\s*(;|})/g.test(
-    fb1a
-  )
-);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1a")?.borderBottom);
+```
+
+You should use a `border-bottom` of `7vh solid var(--building-color4)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1a")?.borderBottom, "7vh solid var(--building-color4)");
 ```
 
 # --seed--
@@ -232,7 +233,9 @@ body {
   width: 10%;
   height: 60%;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .fb1b {
   width: 60%;
   height: 10%;

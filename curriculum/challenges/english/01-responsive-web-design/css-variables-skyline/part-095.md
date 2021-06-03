@@ -11,11 +11,10 @@ I'm not thrilled about that black for the windows anymore. Change the `--window-
 
 # --hints--
 
-test-text
+You should change the value of `--window-color1` to `#bb99ff`.
 
 ```js
-const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
-assert(/--window-color1\s*:\s*#bb99ff\s*(;|})/g.test(root));
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(":root")?.getPropertyValue("--window-color1")?.trim(), "#bb99ff");
 ```
 
 # --seed--
@@ -98,6 +97,7 @@ assert(/--window-color1\s*:\s*#bb99ff\s*(;|})/g.test(root));
 ```
 
 ```css
+--fcc-editable-region--
 :root {
   --building-color1: #aa80ff;
   --building-color2: #66cc99;
@@ -108,7 +108,7 @@ assert(/--window-color1\s*:\s*#bb99ff\s*(;|})/g.test(root));
   --window-color3: #d98cb3;
   --window-color4: #8cb3d9;
 }
-
+--fcc-editable-region--
 * {
   border: 1px solid black;
   box-sizing: border-box;

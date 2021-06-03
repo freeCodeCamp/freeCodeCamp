@@ -7,19 +7,26 @@ dashedName: part-100
 
 # --description--
 
-Give the `fb4-window` elements a `width` of `30%`, `height` of `10%`, and `border-radius` of `50%`. These will make some circular windows for this building.
+Give the `.fb4-window` elements a `width` of `30%`, `height` of `10%`, and `border-radius` of `50%`. These will make some circular windows for this building.
 
 # --hints--
 
-test-text
+You should give `.fb4-window` a `width` of `30%`.
 
 ```js
-const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*30%\s*(;|})/g.test(fb4w) &&
-    /height\s*:\s*10%\s*(;|})/g.test(fb4w) &&
-    /border-radius\s*:\s*50%\s*(;|})/g.test(fb4w)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.width, "30%");
+```
+
+You should give `.fb4-window` a `height` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.height, "10%");
+```
+
+You should give `.fb4-window` a `border-radius` of `50%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.borderRadius, "50%");
 ```
 
 # --seed--
@@ -348,7 +355,9 @@ body {
   height: 89%;
   background-color: var(--building-color1);
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .fb5 {
   width: 10%;
   height: 33%;

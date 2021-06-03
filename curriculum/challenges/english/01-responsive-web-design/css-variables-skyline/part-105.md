@@ -11,15 +11,28 @@ Add another `repeating-linear-gradient` below the one you just added. Give it a 
 
 # --hints--
 
-test-text
+You should give `.fb5` a second `repeating-linear-gradient` in the `background` property.
 
 ```js
-const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*5%\s*,\s*transparent\s*5%\s*,\s*transparent\s*10%\s*\)\s*,\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*12%\s*,\s*var\(\s*--window-color2\s*\)\s*12%\s*,\s*var\(\s*--window-color2\s*\)\s*44%\s*\)\s*(;|})/g.test(
-    fb5
-  )
-);
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient");
+```
+
+You should give the second `repeating-linear-gradient` a direction of `90deg`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient(90deg");
+```
+
+You should give the second `repeating-linear-gradient` a first color of `--building-color2` from `0%` to `12%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient(90deg, var(--building-color2), var(--building-color2) 12%");
+```
+
+You should give the second `repeating-linear-gradient` a second color of `--window-color2` from `12%` to `44%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient(90deg, var(--building-color2), var(--building-color2) 12%, var(--window-color2) 12%, var(--window-color2) 44%)");
 ```
 
 # --seed--
@@ -363,7 +376,7 @@ body {
   background-color: var(--window-color1);
   margin: 10%;
 }
-
+--fcc-editable-region--
 .fb5 {
   width: 10%;
   height: 33%;
@@ -377,7 +390,7 @@ body {
       transparent 10%
     )
 }
-
+--fcc-editable-region--
 .fb6 {
   width: 9%;
   height: 38%;

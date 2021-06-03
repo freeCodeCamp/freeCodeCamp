@@ -7,19 +7,32 @@ dashedName: part-104
 
 # --description--
 
-On to the next building! It's the green one in the foreground. Give it a `repeating-linear-gradient` with your building color from `0%` to `5%` and `transparent` from `5%` to `10%`.
+On to the next building! It's the green one in the foreground. Give it a `repeating-linear-gradient` with your building color from `0%` to `5%`, and `transparent` from `5%` to `10%`.
 
 # --hints--
 
-test-text
+You should give `.fb5` a `background` property.
 
 ```js
-const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*5%\s*,\s*transparent\s*5%\s*,\s*transparent\s*10%\s*\)\s*(;|})/g.test(
-    fb5
-  )
-);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background);
+```
+
+You should give the `background` a `repeating-linear-gradient`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient");
+```
+
+You should give the `repeating-linear-gradient` a first color of `--building-color2` from `0%` to `5%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%");
+```
+
+You should give the `repeating-linear-gradient` a second color of `transparent` from `5%` to `10%`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%)");
 ```
 
 # --seed--
@@ -363,7 +376,7 @@ body {
   background-color: var(--window-color1);
   margin: 10%;
 }
-
+--fcc-editable-region--
 .fb5 {
   width: 10%;
   height: 33%;
@@ -371,7 +384,7 @@ body {
   position: relative;
   right: 10%;
 }
-
+--fcc-editable-region--
 .fb6 {
   width: 9%;
   height: 38%;

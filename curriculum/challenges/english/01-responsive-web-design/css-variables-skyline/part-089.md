@@ -7,21 +7,32 @@ dashedName: part-89
 
 # --description--
 
-Give the `fb3a` element a `width` of `80%` and `height` of `15%`. Then give the `fb3b` element a `width` of `100%` and `height` of `35%`.
+Give the `.fb3a` element a `width` of `80%` and `height` of `15%`. Then give the `.fb3b` element a `width` of `100%` and `height` of `35%`.
 
 # --hints--
 
-test-text
+You should give `.fb3a` a `width` of `80%`.
 
 ```js
-const fb3a = code.match(/\.fb3a\s*{[\s\S]+?[^}]}/g)[0];
-const fb3b = code.match(/\.fb3b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*80%\s*(;|})/g.test(fb3a) &&
-    /height\s*:\s*15%\s*(;|})/g.test(fb3a) &&
-    /width\s*:\s*100%\s*(;|})/g.test(fb3b) &&
-    /height\s*:\s*35%\s*(;|})/g.test(fb3b)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3a")?.width, "80%");
+```
+
+You should give `.fb3a` a `height` of `15%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3a")?.height, "15%");
+```
+
+You should give `.fb3b` a `width` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3b")?.width, "100%");
+```
+
+You should give `.fb3b` a `height` of `35%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3b")?.height, "35%");
 ```
 
 # --seed--
@@ -306,7 +317,9 @@ body {
   height: 35%;
   background-color: var(--building-color1);
 }
-  
+--fcc-editable-region--
+
+--fcc-editable-region--  
 .fb4 {
   width: 8%;
   height: 45%;

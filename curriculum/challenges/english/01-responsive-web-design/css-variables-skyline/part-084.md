@@ -7,14 +7,14 @@ dashedName: part-84
 
 # --description--
 
-Add your `window-wrap` class to `fb2b` to position the new window elements.
+Add your `window-wrap` class to `.fb2b` to position the new window elements.
 
 # --hints--
 
-test-text
+You should add the class `window-wrap` to `.fb2b`.
 
 ```js
-assert($('.fb2b.window-wrap').length === 1);
+assert.exists(document.querySelector("div.fb2b.window-wrap"));
 ```
 
 # --seed--
@@ -69,11 +69,13 @@ assert($('.fb2b.window-wrap').length === 1);
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
+--fcc-editable-region--
         <div class="fb2b">
           <div class="fb2-window"></div>
           <div class="fb2-window"></div>
           <div class="fb2-window"></div>
         </div>
+--fcc-editable-region--
       </div>
       <div></div>
       <div class="fb3"></div>

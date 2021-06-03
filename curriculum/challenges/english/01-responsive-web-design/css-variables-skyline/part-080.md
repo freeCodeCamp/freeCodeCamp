@@ -7,18 +7,20 @@ dashedName: part-80
 
 # --description--
 
-When you make the left and right borders bigger, the border on the bottom will expand to be the width of the combined left and right border widths. Add `2vw solid transparent;` as the value of the `border-left` and `border-right` properties of `fb1a`. They will be invisible, but it will make the border on the bottom `4vw` wide.
+When you make the left and right borders bigger, the border on the bottom will expand to be the width of the combined left and right border widths. Add `2vw solid transparent` as the value of the `border-left` and `border-right` properties of `.fb1a`. They will be invisible, but it will make the border on the bottom `4vw` wide.
 
 # --hints--
 
-test-text
+You should give `.fb1a` a `border-left` of `2vw solid transparent`.
 
 ```js
-const fb1a = code.match(/\.fb1a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /border-left\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a) &&
-    /border-right\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a)
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1a")?.borderLeft, "2vw solid transparent");
+```
+
+You should give `.fb1a` a `border-right` of `2vw solid transparent`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1a")?.borderRight, "2vw solid transparent");
 ```
 
 # --seed--
@@ -231,11 +233,11 @@ body {
   width: 10%;
   height: 60%;
 }
-
+--fcc-editable-region--
 .fb1a {
   border-bottom: 7vh solid var(--building-color4);
 }
-
+--fcc-editable-region--
 .fb1b {
   width: 60%;
   height: 10%;

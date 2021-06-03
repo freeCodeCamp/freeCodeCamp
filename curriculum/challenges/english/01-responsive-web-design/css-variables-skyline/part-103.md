@@ -7,20 +7,20 @@ dashedName: part-103
 
 # --description--
 
-This building is going to have another triangle on top. Give the top section a `border-top` of `5vh solid transparent` and a `border-left` that is `8vw`, `solid`, and uses your building color variable as the color.
+This building is going to have another triangle on top. Give the top section a `border-top` of `5vh solid transparent`, and a `border-left` that is `8vw`, `solid`, and uses your building color variable as the color.
 
 # --hints--
 
-test-text
+You should give `.fb4a` a `border-top` of `5vh solid transparent`.
 
 ```js
-const fb4a = code.match(/\.fb4a\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /border-top\s*:\s*5vh\s+solid\s+transparent\s*(;|})/g.test(fb4a) &&
-    /border-left\s*:\s*8vw\s+solid\s+var\(\s*--building-color1\s*\)\s*(;|})/g.test(
-fb4a
-    )
-);
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4a")?.borderTop, "5vh solid transparent")
+```
+
+You should give `.fb4a` a `border-left` of `8vw solid var(--building-color1)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4a")?.borderLeft, "8vw solid var(--building-color1)")
 ```
 
 # --seed--
@@ -343,7 +343,9 @@ body {
   position: relative;
   left: 10%;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 .fb4b {
   width: 100%;
   height: 89%;

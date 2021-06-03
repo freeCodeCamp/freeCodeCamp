@@ -7,14 +7,20 @@ dashedName: part-99
 
 # --description--
 
-Nest six `div` elements within `fb4b` and give them all a class of `fb4-window`.
+Nest six `div` elements within `.fb4b` and give them all a class of `fb4-window`.
 
 # --hints--
 
-test-text
+You should add six `div` elements within `.fb4b`.
 
 ```js
-assert($('.fb4b').children('div.fb4-window').length === 6);
+assert.equal(document.querySelectorAll("div.fb4b > div")?.length, 6);
+```
+
+You should give each new `div` a class of `fb4-window`.
+
+```js
+assert.equal(document.querySelectorAll("div.fb4-window")?.length, 6);
 ```
 
 # --seed--
@@ -88,7 +94,9 @@ assert($('.fb4b').children('div.fb4-window').length === 6);
       </div>
       <div class="fb4">
         <div class="fb4a"></div>
+--fcc-editable-region--
         <div class="fb4b"></div>
+--fcc-editable-region--
       </div>
       <div class="fb5"></div>
       <div class="fb6"></div>

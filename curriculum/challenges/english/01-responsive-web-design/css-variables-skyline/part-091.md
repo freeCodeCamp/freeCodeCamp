@@ -7,14 +7,14 @@ dashedName: part-91
 
 # --description--
 
-Add your `building-wrap` class to the `fb3` element to center the sections.
+Add your `building-wrap` class to the `.fb3` element to center the sections.
 
 # --hints--
 
-test-text
+You should add the class `building-wrap` to `.fb3`.
 
 ```js
-assert($('.fb3.building-wrap').length === 1);
+assert.exists(document.querySelector("div.fb3.building-wrap"));
 ```
 
 # --seed--
@@ -76,12 +76,14 @@ assert($('.fb3.building-wrap').length === 1);
         </div>
       </div>
       <div></div>
+--fcc-editable-region--
       <div class="fb3">
         <div class="fb3a"></div>
         <div class="fb3b"></div>
         <div class="fb3a"></div>
         <div class="fb3b"></div>
       </div>
+--fcc-editable-region--
       <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>

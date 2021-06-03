@@ -7,19 +7,20 @@ dashedName: part-98
 
 # --description--
 
-Add your `--building-color1` variable as value of the `background-color` property of `fb4b`. Then, remove the `background-color` from `fb4`.
+Add your `--building-color1` variable as value of the `background-color` property of `.fb4b`. Then, remove the `background-color` from `.fb4`.
 
 # --hints--
 
-test-text
+You should remove the `background-color` from `.fb4`.
 
 ```js
-const fb4 = code.match(/\.fb4\s*{[\s\S]+?[^}]}/g)[0];
-const fb4b = code.match(/\.fb4b\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  !/background-color/g.test(fb4) &&
-    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb4b)
-);
+assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4")?.backgroundColor);
+```
+
+You should give `.fb4b` a `background-color` of `--building-color1`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.backgroundColor, "var(--building-color1)");
 ```
 
 # --seed--
@@ -328,7 +329,7 @@ body {
   height: 80%;
   background-color: var(--window-color1);
 }
-
+--fcc-editable-region--
 .fb4 {
   width: 8%;
   height: 45%;
@@ -341,7 +342,7 @@ body {
   width: 100%;
   height: 89%;
 }
-
+--fcc-editable-region--
 .fb5 {
   width: 10%;
   height: 33%;
