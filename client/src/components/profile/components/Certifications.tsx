@@ -38,10 +38,10 @@ interface ICert {
 }
 
 interface ICertificationProps {
-  currentCerts: ICert[];
-  hasLegacyCert: boolean;
-  hasModernCert: boolean;
-  legacyCerts: ICert[];
+  currentCerts?: ICert[];
+  hasLegacyCert?: boolean;
+  hasModernCert?: boolean;
+  legacyCerts?: ICert[];
   username: string;
 }
 
@@ -78,7 +78,7 @@ function Certificates({
     <FullWidthRow className='certifications'>
       <h2 className='text-center'>{t('profile.fcc-certs')}</h2>
       <br />
-      {hasModernCert ? (
+      {hasModernCert && currentCerts ? (
         currentCerts.map(renderCertShowWithUsername)
       ) : (
         <p className='text-center'>{t('profile.no-certs')}</p>
@@ -88,7 +88,7 @@ function Certificates({
           <br />
           <h3 className='text-center'>{t('settings.headings.legacy-certs')}</h3>
           <br />
-          {legacyCerts.map(renderCertShowWithUsername)}
+          {legacyCerts && legacyCerts.map(renderCertShowWithUsername)}
           <Spacer size={2} />
         </div>
       ) : null}
