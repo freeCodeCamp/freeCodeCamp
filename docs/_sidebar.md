@@ -11,6 +11,7 @@
 - **Translation Contribution**
   - [Work on translating resources](how-to-translate-files.md)
   - [Work on proofreading translations](how-to-proofread-files.md)
+  - [Test translations locally](how-to-test-translations-locally.md)
 - **Optional Guides**
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [Add Cypress tests](how-to-add-cypress-tests.md)
