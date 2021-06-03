@@ -1,6 +1,5 @@
-/* global describe beforeEach expect it */
+/* global describe beforeEach expect it jest */
 import inMemoryCache from './in-memory-cache';
-import sinon from 'sinon';
 
 describe('InMemoryCache', () => {
   let reportErrorStub;
@@ -10,7 +9,7 @@ describe('InMemoryCache', () => {
   const emptyCacheValue = null;
 
   beforeEach(() => {
-    reportErrorStub = sinon.spy();
+    reportErrorStub = jest.fn();
   });
 
   it('throws if no report function is passed as a second argument', () => {
@@ -43,7 +42,6 @@ describe('InMemoryCache', () => {
     });
 
     it('reports errors thrown from the update function', () => {
-      const reportErrorStub = sinon.spy();
       const cache = inMemoryCache(before, reportErrorStub);
 
       const updateError = new Error('An update error');
@@ -52,7 +50,7 @@ describe('InMemoryCache', () => {
       };
 
       cache.update(updateThatThrows);
-      expect(reportErrorStub.calledWith(updateError)).toBe(true);
+      expect(reportErrorStub).toHaveBeenCalledWith(updateError);
     });
   });
 

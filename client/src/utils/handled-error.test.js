@@ -1,6 +1,5 @@
-/* global expect */
+/* global expect jest */
 import { isObject } from 'lodash-es';
-import sinon from 'sinon';
 import {
   isHandledError,
   wrapHandledError,
@@ -75,7 +74,7 @@ describe('client/src utilities', () => {
     describe('handleAPIError', () => {
       let reportMock;
       beforeEach(() => {
-        reportMock = sinon.spy();
+        reportMock = jest.fn();
       });
 
       it('returns handled error data', () => {
@@ -105,7 +104,7 @@ describe('client/src utilities', () => {
           };
           handleAPIError(axiosErrorMock, { redirectTo: '/' }, reportMock);
         }
-        expect(reportMock.called).toBe(false);
+        expect(reportMock).not.toHaveBeenCalled();
       });
 
       it('reports on 5** errors', () => {
@@ -115,7 +114,7 @@ describe('client/src utilities', () => {
           }
         };
         handleAPIError(axiosErrorMock, { redirectTo: '/' }, reportMock);
-        expect(reportMock.calledOnce).toBe(true);
+        expect(reportMock).toHaveBeenCalledTimes(1);
       });
 
       it('returns a `reportedErrorMessage` for a 5** error', () => {
