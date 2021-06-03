@@ -80,7 +80,7 @@ const algoliaIndices = {
 };
 ```
 
-Finally, you will need to tell the client which certifications are translated, and which are still in English. Open the `utils/is-audited.js` file. Within the `auditedCerts`, add a new key with your language's `availableLangs` value. Assign the value of that key to an array containing the *dashed names* for the certifications that have been translated. Refer to the existing data for those dashed names.
+Next, you will need to tell the client which certifications are translated, and which are still in English. Open the `utils/is-audited.js` file. Within the `auditedCerts`, add a new key with your language's `availableLangs` value. Assign the value of that key to an array containing the *dashed names* for the certifications that have been translated. Refer to the existing data for those dashed names.
 
 Continuing the work to enable Dothraki - we have translated the first three certifications:
 
