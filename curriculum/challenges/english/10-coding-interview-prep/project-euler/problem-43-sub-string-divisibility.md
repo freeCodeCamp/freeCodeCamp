@@ -22,35 +22,40 @@ Let d<sub>1</sub> be the 1<sup>st</sup> digit, d<sub>2</sub> be the 2<sup>nd</su
   <li>d<sub>8</sub>d<sub>9</sub>d<sub>10</sub> = 289 is divisible by 17</li>
 </ul>
 
-Find the numbers of all 0 to 9 pandigital numbers with this property.
+Find sum of the all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+
+**Note:** Pandigital numbers starting with `0` are to be considered in the result.
 
 # --hints--
 
-`substringDivisibility()` should return an array.
+`substringDivisibility(5)` should return a number.
 
 ```js
-assert(Array.isArray(substringDivisibility()));
+assert(typeof substringDivisibility(5) === 'number');
 ```
 
-`substringDivisibility()` should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].
+`substringDivisibility(5)` should return `12444480`.
 
 ```js
-assert.sameMembers(substringDivisibility(), [
-  1430952867,
-  1460357289,
-  1406357289,
-  4130952867,
-  4160357289,
-  4106357289
-]);
+assert.strictEqual(substringDivisibility(5), 12444480)
 ```
 
-You should not copy and return the array.
+`substringDivisibility(7)` should return `1099210170`.
 
 ```js
-assert(
-  !code.match(/(1430952867)|(1460357289)|(1406357289)|(4130952867)|(4160357289)|(4106357289)/)
-);
+assert.strictEqual(substringDivisibility(7), 1099210170)
+```
+
+`substringDivisibility(8)` should return `1113342912`.
+
+```js
+assert.strictEqual(substringDivisibility(8), 1113342912)
+```
+
+`substringDivisibility(9)` should return `16695334890`.
+
+```js
+assert.strictEqual(substringDivisibility(9), 16695334890)
 ```
 
 # --seed--
@@ -58,12 +63,12 @@ assert(
 ## --seed-contents--
 
 ```js
-function substringDivisibility() {
+function substringDivisibility(n) {
 
-  return [];
+  return true;
 }
 
-substringDivisibility();
+substringDivisibility(5);
 ```
 
 # --solutions--
