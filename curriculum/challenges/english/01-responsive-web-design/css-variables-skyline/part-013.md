@@ -23,7 +23,7 @@ You should give the `.bb1` element a `display` of `flex`.
 
 ```js
 const bb1Style = new __helpers.CSSHelp(document).getStyleDeclaration('.bb1');
-assert.equal(bb1Stlye?.display, 'flex');
+assert.equal(bb1Style?.display, 'flex');
 ```
 
 You should give the `.bb1` element a `flex-direction` of `column`.
