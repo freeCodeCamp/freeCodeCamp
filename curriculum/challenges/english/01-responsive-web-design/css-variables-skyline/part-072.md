@@ -55,7 +55,7 @@ assert.exists(document.querySelector("div.bb4c.window-wrap"));
           <div class="bb4-window"></div>
           <div class="bb4-window"></div>
         </div>
---fcc-editable-reigon--
+--fcc-editable-region--
       </div>
       <div></div>
       <div></div>

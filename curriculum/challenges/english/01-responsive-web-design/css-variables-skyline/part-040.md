@@ -135,7 +135,7 @@ body {
   height: 10%;
   background-color: var(--building-color1);
 }
---fcc-editable-reigon--
+--fcc-editable-region--
 .bb1b {
   width: 80%;
   height: 10%;

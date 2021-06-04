@@ -181,7 +181,7 @@ body {
   align-items: flex-end;
   justify-content: space-evenly;
 }
---fcc-editable-region
+--fcc-editable-region--
 .fb1 {
   width: 10%;
   height: 60%;

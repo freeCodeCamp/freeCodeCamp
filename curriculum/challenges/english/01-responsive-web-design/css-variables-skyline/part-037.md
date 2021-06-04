@@ -178,7 +178,7 @@ body {
   height: 35%;
   background-color: var(--building-color1);
 }
----fcc-editable-region--
+--fcc-editable-region--
 .fb4 {
   width: 8%;
   height: 45%;
