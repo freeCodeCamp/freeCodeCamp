@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
@@ -12,7 +17,7 @@ export const getheadTagComponents = () => {
 
   const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
 
-  let headTags = [
+  const headTags = [
     <link
       as='style'
       href={pathToBootstrap}
@@ -58,7 +63,10 @@ export const getheadTagComponents = () => {
 
 // strips subpath and protocol
 
-export const injectConditionalTags = (tagsArray, homeLocation) => {
+export const injectConditionalTags = (
+  tagsArray: JSX.Element[],
+  homeLocation: string | string[]
+): never => {
   if (homeLocation.includes('localhost')) return tagsArray;
 
   const parsedHomeUrl = psl.parse(new URL(homeLocation).host);
@@ -79,10 +87,10 @@ export const injectConditionalTags = (tagsArray, homeLocation) => {
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'dev') {
     tagsArray.push(
       <script
-        href={withPrefix('/misc/gap-dev.js')}
         id='gap-dev'
         key='gap-dev'
         rel='stylesheet'
+        src={withPrefix('/misc/gap-dev.js')}
       />
     );
   }
@@ -107,8 +115,8 @@ export const injectConditionalTags = (tagsArray, homeLocation) => {
   return tagsArray;
 };
 
-export const getPostBodyComponents = pathname => {
-  let scripts = [];
+export const getPostBodyComponents = (pathname: string | string[]) => {
+  const scripts = [];
   const mathJaxScriptElement = (
     <script
       async={false}

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable import/unambiguous */
 const html = 0;
 const js = 1;
 const backend = 2;

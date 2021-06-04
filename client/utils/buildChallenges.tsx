@@ -1,19 +1,24 @@
-const _ = require('lodash');
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-const {
+import _ from 'lodash';
+
+import {
   getChallengesForLang,
   createChallenge,
   challengesDir,
   getChallengesDirForLang
-} = require('../../curriculum/getChallenges');
-const envData = require('../../config/env.json');
+} from '../../curriculum/getChallenges';
+import envData from '../../config/env.json';
 
 const { curriculumLocale } = envData;
 
 exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 
 exports.replaceChallengeNode = () => {
-  return async function replaceChallengeNode(filePath) {
+  return async function replaceChallengeNode(filePath: unknown) {
     return await createChallenge(challengesDir, filePath, curriculumLocale);
   };
 };
@@ -29,8 +34,11 @@ exports.buildChallenges = async function buildChallenges() {
     }, []);
 
   const builtChallenges = blocks
-    .filter(block => !block.isPrivate)
-    .map(({ challenges }) => challenges)
-    .reduce((accu, current) => accu.concat(current), []);
+    .filter((block: { isPrivate: unknown }) => !block.isPrivate)
+    .map((challenges: unknown) => challenges)
+    .reduce(
+      (accu: string | never[], current: never) => accu.concat(current),
+      []
+    );
   return builtChallenges;
 };
