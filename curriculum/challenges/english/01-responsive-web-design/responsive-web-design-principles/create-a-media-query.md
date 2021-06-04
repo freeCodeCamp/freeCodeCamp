@@ -37,7 +37,7 @@ You should declare a `@media` query for devices with a `height` less than or equ
 
 ```js
 const media = new __helpers.CSSHelp(document).getCSSRules('media');
-assert(media.some(x => x.conditionText?.includes('(max-height: 800px)')));
+assert(media?.some(x => x.conditionText?.includes('(max-height: 800px)') || x.media?.mediaText?.includes('(max-height: 800px)')));
 ```
 
 Your `p` element should have a `font-size` of `10px` when the device `height` is less than or equal to `800px`.

@@ -77,6 +77,12 @@ class CSSHelp {
   }
   getRuleListsWithinMedia(conditionText: string): CSSStyleRule[] {
     const medias = this.getCSSRules('media') as CSSMediaRule[];
+    if (!medias?.[0]?.conditionText) {
+      // Safari does not have conditionText.
+      return Array.from(
+        medias?.find(x => x?.media?.mediaText === conditionText)?.cssRules || []
+      ) as CSSStyleRule[];
+    }
     const cond = medias?.find(x => x.conditionText === conditionText);
     const cssRules = cond?.cssRules;
     return Array.from(cssRules || []) as CSSStyleRule[];
