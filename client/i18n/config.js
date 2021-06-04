@@ -3,7 +3,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const envData = require('../../config/env.json');
+const envData = require('../../config/env-data.json');
 const { i18nextCodes } = require('../../config/i18n/all-langs');
 
 const { clientLocale } = envData;
@@ -20,35 +20,35 @@ i18n.use(initReactI18next).init({
   resources: {
     [i18nextCode]: {
       translations: preval`
-      const envData = require('../../config/env.json');
+      const envData = require('../../config/env-data.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/translations.json');
       }
     `,
       trending: preval`
-      const envData = require('../../config/env.json');
+      const envData = require('../../config/env-data.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/trending.json');
       }
     `,
       intro: preval`
-      const envData = require('../../config/env.json');
+      const envData = require('../../config/env-data.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/intro.json');
       }
     `,
       metaTags: preval`
-      const envData = require('../../config/env.json');
+      const envData = require('../../config/env-data.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/meta-tags.json');
       }
     `,
       links: preval`
-      const envData = require('../../config/env.json');
+      const envData = require('../../config/env-data.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/links.json');

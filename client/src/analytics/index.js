@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga';
-import envData from '../../../config/env.json';
+import envData from '../../../config/env-data.json';
 import {
   devAnalyticsId,
   prodAnalyticsId

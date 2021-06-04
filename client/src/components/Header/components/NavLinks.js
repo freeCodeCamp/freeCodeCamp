@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
-import envData from '../../../../../config/env.json';
+import envData from '../../../../../config/env-data.json';
 import createLanguageRedirect from '../../createLanguageRedirect';
 import createExternalRedirect from '../../createExternalRedirects';
 

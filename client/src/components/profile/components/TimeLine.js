@@ -26,7 +26,7 @@ import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env.json';
+import envData from '../../../../../config/env-data.json';
 
 const SolutionViewer = Loadable(() =>
   import('../../SolutionViewer/SolutionViewer')
