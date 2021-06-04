@@ -48,6 +48,10 @@ We highly recommend installing [Visual Studio Code](https://code.visualstudio.co
 
 Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
+If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and Npm package manager to what is installed on your WSL distro.
+
+You can check these settings by going to Settings > Languages & Frameworks > Node.js and NPM.
+
 ## Installing Docker Desktop
 
 **Docker Desktop for Windows** allows you to install and run database and services like MongoDB, NGINX, etc. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.

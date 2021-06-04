@@ -48,23 +48,27 @@ Recomendamos encarecidamente instalar [Visual Studio Code](https://code.visualst
 
 Esencialmente, editará y almacenará su código en Ubuntu-18.04 con el VS Code instalado en Windows.
 
+If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and Npm package manager to what is installed on your WSL distro.
+
+You can check these settings by going to Settings > Languages & Frameworks > Node.js and NPM.
+
 ## Instalando Docker Desktop
 
-**Docker Desktop para Windows** le permite instalar y ejecutar bases de datos y servicios como MongoDB, NGINX, etc. Esto es útil para evitar problemas comunes con la instalación de MongoDB u otros servicios directamente en Windows o WSL2.
+**Docker Desktop for Windows** allows you to install and run database and services like MongoDB, NGINX, etc. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
 
-Siga las instrucciones de la [documentación oficial](https://docs.docker.com/docker-for-windows/install) e instale Docker Desktop para su distribución de Windows.
+Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
-Hay algunos requisitos mínimos de hardware para una mejor experiencia.
+There are some minimum hardware requirements for the best experience.
 
 ## Configurar Docker Desktop para WSL
 
-Una vez que Docker Desktop está instalado, [sigue estas instrucciones](https://docs.docker.com/docker-for-windows/wsl) y configúralo para usar la instalación de Ubuntu-18.04 como un backend.
+Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
 
-Esto hace que los contenedores se ejecuten en WSL en lugar de ejecutarse en Windows. Podrás acceder a los servicios a través de `http://localhost` tanto en Windows como en Ubuntu.
+This makes it so that the containers run on WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
 
 ## Instalar MongoDB desde Docker Hub
 
-Una vez que haya configurado Docker Desktop para trabajar con WSL2, siga estos pasos para iniciar un servicio de MongoDB:
+Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
 
 1. Iniciar una nueva terminal Ubuntu-18.04
 
@@ -89,9 +93,9 @@ Una vez que haya configurado Docker Desktop para trabajar con WSL2, siga estos p
 
 ## Instalando Node.js y npm
 
-Le recomendamos que instale la versión LTS para Node.js con un gestor de versiones de node - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-Una vez instalado, use estos comandos para instalar y usar la versión de Node.js según sea necesario
+Once installed use these commands to install and use the Node.js version as needed
 
 ```console
 nvm install --lts
@@ -107,7 +111,7 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js viene empaquetado con `npm`, puedes actualizar a las últimas versiones de `npm` con:
+Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
 
 ```console
 npm install -g npm@latest
@@ -115,7 +119,7 @@ npm install -g npm@latest
 
 ## Configurar freeCodeCamp localmente
 
-Ahora que ha instalado los requisitos previos, siga [nuestra guía de configuración local](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) para clonar, instalar y configurar freeCodeCamp localmente en su máquina.
+Now that you have installed the pre-requisites, follow [our local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to clone, install and setup freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 
