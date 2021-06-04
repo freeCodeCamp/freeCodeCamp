@@ -19,6 +19,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
 - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
 - [Contributing - for developers](#contributing)
+- [How to Guides - for developers](#how-to-guides)
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
@@ -180,6 +181,23 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 - See the [issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) for a list of proposed features (and known issues).
 
 > #### [For more details, please follow these steps to contribute](https://contribute.freecodecamp.org).
+
+### How to Guides
+
+If you would like to contribute, please use the following links as reference:
+- [How to add Cypress tests](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-add-cypress-tests.md)
+- [How to catch outgoing emails locally](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-catch-outgoing-emails-locally.md)
+- [How to help with video challenges](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-help-with-video-challenges.md)
+- [How to open a Pull Request (PR)](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md)
+- [How to Proofread Translations](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-proofread-files.md)
+- [How to setup freecodecamp locally](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-setup-freecodecamp-locally.md)
+- [How to set up freeCodeCamp on Windows Subsystem for Linux (WSL)](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-setup-wsl.md)
+- [How to Translate freeCodeCamp's resources](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-translate-files.md)
+- [How to use Docker on Windows Home](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-use-docker-on-windows-home.md)
+- [How to work on coding challenges](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-work-on-coding-challenges.md)
+- [How to work on localized client webapp](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-work-on-localized-client-webapp.md)
+- [How to work on the docs theme](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-work-on-the-docs-theme.md)
+- [How to work on freeCodeCamp.org's developer news theme](https://github.com/LilyYin17/freeCodeCamp/blob/main/docs/how-to-work-on-the-news-theme.md)
 
 ### Platform, Build, and Deployment Status
 
