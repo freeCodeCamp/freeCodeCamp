@@ -19,10 +19,10 @@ Add an empty media query at the bottom of your stylesheet with a condition of `m
 
 # --hints--
 
-test-text
+You should add an empty media query with `max-width: 1000px`.
 
 ```js
-assert(/\@media\s*\(\s*max-width\s*:\s*1000px\s*\)\s*{\s*}/g.test(code));
+assert.exists(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)"));
 ```
 
 # --seed--
@@ -413,6 +413,9 @@ body {
       var(--window-color3) 30%
     );
 }
-    
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 ```
 

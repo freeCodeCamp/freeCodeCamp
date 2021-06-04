@@ -7,19 +7,14 @@ dashedName: part-113
 
 # --description--
 
-At the top of the sky gradient color list, where you would put a direction for the gradient; add `closest-corner circle at 15% 15%,`. This will move the start of the gradient to `15%` from the top and left. It will make it end at the `closest-corner` and it will maintain a `circle` shape. These are some keywords built into gradients to describe how it behaves.
+At the top of the sky gradient color list, where you would put a direction for the gradient; add `circle closest-corner at 15% 15%,`. This will move the start of the gradient to `15%` from the top and left. It will make it end at the `closest-corner` and it will maintain a `circle` shape. These are some keywords built into gradients to describe how it behaves.
 
 # --hints--
 
-test-text
+You should give the `.sky` `radial-gradient` a direction of `circle closest-corner at 15% 15%`.
 
 ```js
-const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(
-    sky
-  )
-);
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(circle closest-corner at 15% 15%, rgb\(255, 207, 51\)|( 0%), rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
 ```
 
 # --seed--
@@ -154,7 +149,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
 }
-
+--fcc-editable-region--
 .sky {
   background: radial-gradient(
       #ffcf33,
@@ -163,7 +158,7 @@ body {
       #bbeeff 100%
     );
 }
-
+--fcc-editable-region--
 /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
 .bb1 {
   width: 10%;

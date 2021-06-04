@@ -14,25 +14,25 @@ Add another `repeating-linear-gradient` below the one you just added. Give it a 
 You should give `.fb5` a second `repeating-linear-gradient` in the `background` property.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient");
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, /repeating-linear-gradient\(var\(--building-color2\)( 0%)?, var\(--building-color2\) 5%, transparent 5%, transparent 10%\), repeating-linear-gradient/);
 ```
 
 You should give the second `repeating-linear-gradient` a direction of `90deg`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient(90deg");
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, /repeating-linear-gradient\(var\(--building-color2\)( 0%)?, var\(--building-color2\) 5%, transparent 5%, transparent 10%\), repeating-linear-gradient\(90deg/);
 ```
 
 You should give the second `repeating-linear-gradient` a first color of `--building-color2` from `0%` to `12%`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient(90deg, var(--building-color2), var(--building-color2) 12%");
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, /repeating-linear-gradient\(var\(--building-color2\)( 0%)?, var\(--building-color2\) 5%, transparent 5%, transparent 10%\), repeating-linear-gradient\(90deg, var\(--building-color2\)( 0%)?, var\(--building-color2\) 12%/);
 ```
 
 You should give the second `repeating-linear-gradient` a second color of `--window-color2` from `12%` to `44%`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient(90deg, var(--building-color2), var(--building-color2) 12%, var(--window-color2) 12%, var(--window-color2) 44%)");
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, /repeating-linear-gradient\(var\(--building-color2\)( 0%)?, var\(--building-color2\) 5%, transparent 5%, transparent 10%\), repeating-linear-gradient\(90deg, var\(--building-color2\)( 0%)?, var\(--building-color2\) 12%, var\(--window-color2\) 12%, var\(--window-color2\) 44%\)/);
 ```
 
 # --seed--

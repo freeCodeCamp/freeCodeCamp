@@ -7,14 +7,14 @@ dashedName: part-111
 
 # --description--
 
-Add `sky` as a second class to the `background-buildings` element. You are going to make a background for the skyline.
+Add `sky` as a second class to the `.background-buildings` element. You are going to make a background for the skyline.
 
 # --hints--
 
-test-text
+You should add a class of `sky` to `.background-buildings`.
 
 ```js
-assert($('.background-buildings.sky').length === 1);
+assert.exists(document.querySelector("div.background-buildings.sky"));
 ```
 
 # --seed--
@@ -30,6 +30,7 @@ assert($('.background-buildings.sky').length === 1);
   </head>
 
   <body>
+--fcc-editable-region--
     <div class="background-buildings">
       <div></div>
       <div></div>
@@ -58,6 +59,7 @@ assert($('.background-buildings.sky').length === 1);
       <div></div>
       <div></div>
     </div>
+--fcc-editable-region--
 
     <div class="foreground-buildings">
       <div></div>

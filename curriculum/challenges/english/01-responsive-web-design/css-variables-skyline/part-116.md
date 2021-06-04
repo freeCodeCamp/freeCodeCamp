@@ -11,15 +11,22 @@ In the `sky` class of the media query, change the two `#ffcf33` color values to 
 
 # --hints--
 
-test-text
+You should change the first color values from `#ffcf33` to `#ccc`.
 
 ```js
-const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1];
-assert(
-  /background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ccc\s*(0%\s*,|,)\s*#ccc\s*20%\s*,\s*#445\s*21%\s*,\s*#223\s*100%\s*\)\s*(;|})/g.test(
-    sky
-  )
-);
+assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(rgb\(204, 204, 204\)|( 0%), rgb\(204, 204, 204\) 20%/);
+```
+
+You should change the second color value from `#ffff66` to `#445`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(circle closest-corner at 15% 15%, rgb\(204, 204, 204\)( 0%), rgb\(204, 204, 204\) 20%, rgb\(68, 68, 85\) 21%/);
+```
+
+You should change the third color value from `#bbeeff` to `#223`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(circle closest-corner at 15% 15%, rgb\(204, 204, 204\)( 0%), rgb\(204, 204, 204\) 20%, rgb\(68, 68, 85\) 21%, rgb\(34, 34, 51\) 100%\)/);
 ```
 
 # --seed--
@@ -412,6 +419,7 @@ var(--window-color3) 30%
 }
 
 @media (max-width: 1000px) {
+--fcc-editable-region--
   .sky {
     background: radial-gradient(
   closest-corner circle at 15% 15%,
@@ -421,6 +429,7 @@ var(--window-color3) 30%
   #bbeeff 100%
 );
   }
+--fcc-editable-region--
 }
     
 ```

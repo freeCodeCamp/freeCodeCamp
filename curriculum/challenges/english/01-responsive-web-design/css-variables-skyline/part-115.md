@@ -9,17 +9,20 @@ dashedName: part-115
 
 Copy and paste your whole `sky` class along with all of its properties and values into the media query. You are going to make another color scheme for the skyline that changes it from day to night.
 
+Note: You are going to need to scroll past the editable region to copy the class.
+
 # --hints--
 
-test-text
+You should not delete the existing `.sky` declaration.
 
 ```js
-const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1];
-assert(
-  /background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(
-    sky
-  )
-);
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)|( 0%), rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
+```
+
+You should copy the existing `.sky` declaration into the media query.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)|( 0%), rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
 ```
 
 # --seed--
@@ -410,10 +413,11 @@ body {
       var(--window-color3) 30%
     );
 }
-
+--fcc-editable-region--
 @media (max-width: 1000px) {
   
 }
-    
+--fcc-editable-region--
+
 ```
 

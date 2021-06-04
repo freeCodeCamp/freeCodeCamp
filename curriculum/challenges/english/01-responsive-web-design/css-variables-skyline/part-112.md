@@ -11,15 +11,28 @@ Give the `sky` class a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ff
 
 # --hints--
 
-test-text
+You should give `.sky` a `radial-gradient` in the `background` property.
 
 ```js
-const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*radial-gradient\(\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(
-    sky
-  )
-);
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, "radial-gradient");
+```
+
+You should give the `radial-gradient` a first color of `#ffcf33`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%/);
+```
+
+You should give the `radial-gradient` a second color of `#ffff66` at `21%`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%/);
+```
+
+You should give the `radial-gradient` a third color of `#bbeeff` at `100%`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
 ```
 
 # --seed--
@@ -154,7 +167,9 @@ body {
   align-items: center;
   justify-content: space-evenly;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
 .bb1 {
   width: 10%;

@@ -7,15 +7,14 @@ dashedName: part-110
 
 # --description--
 
-Okay, the buildings are done. Go back to the `*` selector and remove the border you applied to everything at the beginning and the buildings will come together.
+Okay, the buildings are done. Go back to the `*` selector and remove the `border` you applied to everything at the beginning and the buildings will come together.
 
 # --hints--
 
-test-text
+You should remove the `border` from the `*` selector.
 
 ```js
-const all = code.match(/\*\s*{[\s\S]+?[^}]}/g)[0];
-assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration("*")?.border);
 ```
 
 # --seed--
@@ -118,12 +117,12 @@ assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
   --window-color3: #d98cb3;
   --window-color4: #8cb3d9;
 }
-
+--fcc-editable-region--
 * {
   border: 1px solid black;
   box-sizing: border-box;
 }
-
+--fcc-editable-region--
 body {
   height: 100vh;
   margin: 0;

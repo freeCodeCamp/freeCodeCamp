@@ -11,16 +11,33 @@ Add a `:root` selector to the top of your media query. Then redefine all four of
 
 # --hints--
 
-test-text
+You should add a `:root` selector to the media query.
 
 ```js
-const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1];
-assert(
-  /--building-color1\s*:\s*#000\s*(;|})/g.test(root) &&
-    /--building-color2\s*:\s*#000\s*(;|})/g.test(root) &&
-    /--building-color3\s*:\s*#000\s*(;|})/g.test(root) &&
-    /--building-color4\s*:\s*#000\s*(;|})/g.test(root)
-);
+```
+
+You should add `--building-color1` with a value of `#000`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color1"), "#000");
+```
+
+You should add `--building-color2` with a value of `#000`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color2"), "#000");
+```
+
+You should add `--building-color3` with a value of `#000`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color3"), "#000");
+```
+
+You should add `--building-color4` with a value of `#000`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color4"), "#000");
 ```
 
 # --seed--
@@ -413,6 +430,9 @@ body {
 }
 
 @media (max-width: 1000px) {
+--fcc-editable-region--
+
+--fcc-editable-region--
   .sky {
     background: radial-gradient(
         closest-corner circle at 15% 15%,

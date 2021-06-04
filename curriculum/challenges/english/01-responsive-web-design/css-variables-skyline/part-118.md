@@ -13,16 +13,28 @@ Variables are primarily used with colors, and that's how you used them here. But
 
 # --hints--
 
-test-text
+You should add `--window-color1` with a value of `#777`.
 
 ```js
-const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1];
-assert(
-  /--window-color1\s*:\s*#777\s*(;|})/g.test(root) &&
-    /--window-color2\s*:\s*#777\s*(;|})/g.test(root) &&
-    /--window-color3\s*:\s*#777\s*(;|})/g.test(root) &&
-    /--window-color4\s*:\s*#777\s*(;|})/g.test(root)
-);
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color1"), "#777");
+```
+
+You should add `--window-color2` with a value of `#777`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color2"), "#777");
+```
+
+You should add `--window-color3` with a value of `#777`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color3"), "#777");
+```
+
+You should add `--window-color4` with a value of `#777`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color4"), "#777");
 ```
 
 # --seed--
@@ -415,13 +427,14 @@ body {
 }
 
 @media (max-width: 1000px) {
+--fcc-editable-region--
   :root {
     --building-color1: #000;
     --building-color2: #000;
     --building-color3: #000;
     --building-color4: #000;
   }
-
+--fcc-editable-region--
   .sky {
     background: radial-gradient(
         closest-corner circle at 15% 15%,

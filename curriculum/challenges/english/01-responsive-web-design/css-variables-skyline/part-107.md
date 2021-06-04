@@ -11,15 +11,28 @@ Finally! You made it to the last building! Add a repeating gradient to it with a
 
 # --hints--
 
-test-text
+You should add a `repeating-linear-gradient` to `.fb6` in the `background` property.
 
 ```js
-const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*(;|})/g.test(
-    fb6
-  )
-);
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, "repeating-linear-gradient");
+```
+
+You should give the `repeating-linear-gradient` a direction of `90deg`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, "repeating-linear-gradient(90deg");
+```
+
+You should give the `repeating-linear-gradient` a first color of `--building-color3` from `0%` to `10%`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, /repeating-linear-gradient\(90deg, var\(--building-color3\)( 0%)?, var\(--building-color3\) 10%/);
+```
+
+You should give the `repeating-linear-gradient` a second color of `transparent` from `10%` to `30%`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, /repeating-linear-gradient\(90deg, var\(--building-color3\)( 0%)?, var\(--building-color3\) 10%, transparent 10%, transparent 30%\)/);
 ```
 
 # --seed--
@@ -383,12 +396,13 @@ body {
       var(--window-color2) 44%
     );
 }
-
+--fcc-editable-region--
 .fb6 {
   width: 9%;
   height: 38%;
   background-color: var(--building-color3);
 }
-    
+--fcc-editable-region--
+
 ```
 

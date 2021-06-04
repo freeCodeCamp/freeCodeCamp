@@ -11,11 +11,10 @@ You don't need the `background-color` for this building anymore so you can remov
 
 # --hints--
 
-test-text
+You should remove the `background-color` of `.fb5`.
 
 ```js
-const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0];
-assert(!/background-color/g.test(fb5));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.backgroundColor);
 ```
 
 # --seed--
@@ -359,7 +358,7 @@ body {
   background-color: var(--window-color1);
   margin: 10%;
 }
-
+--fcc-editable-region--
 .fb5 {
   width: 10%;
   height: 33%;
@@ -380,7 +379,7 @@ body {
       var(--window-color2) 44%
     );
 }
-
+--fcc-editable-region--
 .fb6 {
   width: 9%;
   height: 38%;

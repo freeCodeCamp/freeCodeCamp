@@ -11,15 +11,22 @@ Add another repeating gradient to this building; make it the same as the one you
 
 # --hints--
 
-test-text
+You should give `.fb6` a second `repeating-linear-gradient` in the `background` property.
 
 ```js
-const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*30%\s*\)\s*(;|})/g.test(
-    fb6
-  )
-);
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, /repeating-linear-gradient\(90deg, var\(--building-color3\)( 0%)?, var\(--building-color3\) 10%, transparent 10%, transparent 30%\), repeating-linear-gradient/);
+```
+
+You should give the second `repeating-linear-gradient` a first color of `--window-color3` from `0%` to `10%`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, /repeating-linear-gradient\(90deg, var\(--building-color3\)( 0%), var\(--building-color3\) 10%, transparent 10%, transparent 30%\), repeating-linear-gradient\(var\(--window-color3\)( 0%)?, var\(--window-color3\) 10%/);
+```
+
+You should give the second `repeating-linear-gradient` a second color of `transparent` from `10%` to `30%`.
+
+```js
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, /repeating-linear-gradient\(90deg, var\(--building-color3\)( 0%)?, var\(--building-color3\) 10%, transparent 10%, transparent 30%\), repeating-linear-gradient\(var\(--window-color3\)( 0%)?, var\(--window-color3\) 10%, transparent 10%, transparent 30%\)/);
 ```
 
 # --seed--
@@ -383,7 +390,7 @@ body {
       var(--window-color2) 44%
     );
 }
-
+--fcc-editable-region--
 .fb6 {
   width: 9%;
   height: 38%;
@@ -396,6 +403,7 @@ body {
     transparent 30%
   )
 }
-    
+--fcc-editable-region--
+
 ```
 
