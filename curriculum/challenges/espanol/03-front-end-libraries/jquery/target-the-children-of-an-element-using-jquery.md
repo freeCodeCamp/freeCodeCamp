@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed208826
-title: Target the Children of an Element Using jQuery
+title: Apunta al hijo de un elemento usando jQuery
 challengeType: 6
 forumTopicId: 18320
 dashedName: target-the-children-of-an-element-using-jquery
@@ -8,33 +8,35 @@ dashedName: target-the-children-of-an-element-using-jquery
 
 # --description--
 
-When HTML elements are placed one level below another they are called <dfn>children</dfn> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all children of the `<div class="well" id="left-well">` element.
+Cuando los elementos HTML se colocan un nivel por debajo de otro, se denominan <dfn>hijos</dfn> de ese elemento. Por ejemplo, los elementos botón en este desafío con el texto `#target1`, `#target2`, y `#target3` son todos hijos del elemento `<div class="well" id="left-well">`.
 
-jQuery has a function called `children()` that allows you to access the children of whichever element you've selected.
+jQuery tiene una función llamada `children()` que te permite acceder a los hijos del elemento que hayas seleccionado.
 
-Here's an example of how you would use the `children()` function to give the children of your `left-well` element the color `blue`:
+Aquí hay un ejemplo de cómo usarías la función `children()` para dar a los hijos de tu elemento `left-well` el color `blue`:
 
-`$("#left-well").children().css("color", "blue")`
+```js
+$("#left-well").children().css("color", "blue")
+```
 
 # --instructions--
 
-Give all the children of your `right-well` element the color orange.
+Dale a todos los hijos de tu elemento `right-well` el color naranja.
 
 # --hints--
 
-All children of `#right-well` should have orange text.
+Todos los hijos de `#right-well` deben tener texto naranja.
 
 ```js
 assert($('#right-well').children().css('color') === 'rgb(255, 165, 0)');
 ```
 
-You should use the `children()` function to modify these elements.
+Debes usar la función `children()` para modificar estos elementos.
 
 ```js
 assert(code.match(/\.children\(\)\.css/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+Solo debes usar jQuery para agregar estas clases al elemento.
 
 ```js
 assert(code.match(/<div class="well" id="right-well">/g));
