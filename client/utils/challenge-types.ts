@@ -1,27 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable import/unambiguous */
 const html = 0;
 const js = 1;
-const backend = 2;
+export const backend = 2;
 const zipline = 3;
-const frontEndProject = 3;
-const backEndProject = 4;
+export const frontEndProject = 3;
+export const backEndProject = 4;
 const bonfire = 5;
 const modern = 6;
 const step = 7;
 const quiz = 8;
 const invalid = 9;
-const pythonProject = 10;
+export const pythonProject = 10;
 const video = 11;
 const codeally = 12;
 
-// individual exports
-exports.backend = backend;
-exports.frontEndProject = frontEndProject;
-exports.backEndProject = backEndProject;
-exports.pythonProject = pythonProject;
-
-exports.challengeTypes = {
+export const challengeTypes = {
   html,
   js,
   backend,
@@ -39,13 +32,13 @@ exports.challengeTypes = {
 };
 
 // turn challengeType to file ext
-exports.pathsMap = {
+export const pathsMap = {
   [html]: 'html',
   [js]: 'js',
   [bonfire]: 'js'
 };
 // determine the component to view for each challenge
-exports.viewTypes = {
+export const viewTypes = {
   [html]: 'classic',
   [js]: 'classic',
   [bonfire]: 'classic',
@@ -61,7 +54,7 @@ exports.viewTypes = {
 };
 
 // determine the type of submit function to use for the challenge on completion
-exports.submitTypes = {
+export const submitTypes = {
   [html]: 'tests',
   [js]: 'tests',
   [bonfire]: 'tests',

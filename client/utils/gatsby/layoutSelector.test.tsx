@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* global expect jest */
 import React from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
@@ -11,7 +15,10 @@ import Certification from '../../src/pages/certification';
 jest.mock('../../src/analytics');
 
 const store = createStore();
-function getComponentNameAndProps(elementType, pathname) {
+function getComponentNameAndProps(
+  elementType: typeof FourOhFourPage,
+  pathname: string
+) {
   const shallow = new ShallowRenderer();
   const LayoutReactComponent = layoutSelector({
     element: { type: elementType },
