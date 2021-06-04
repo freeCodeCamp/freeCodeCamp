@@ -172,9 +172,14 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard. Here is an overview of what you can contribute:
+- Answering coding questions on our community forum.
+- Give feedback on coding projects.
+- Translate freeCodeCamp.org's resources.
+- Contribute to our open source codebase on GitHub.
+- See the [issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) for a list of proposed features (and known issues).
 
-> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
+> #### [For more details, please follow these steps to contribute](https://contribute.freecodecamp.org).
 
 ### Platform, Build, and Deployment Status
 
