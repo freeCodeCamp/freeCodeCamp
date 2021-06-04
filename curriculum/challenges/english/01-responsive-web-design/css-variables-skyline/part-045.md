@@ -14,7 +14,7 @@ It's a little hidden behind the foreground buildings, but you can see the three 
 You should remove the `background-color` property and value from `.bb1d`
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.backgroundColor);
 ```
 
 # --seed--

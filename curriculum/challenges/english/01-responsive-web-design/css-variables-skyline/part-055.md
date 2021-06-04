@@ -14,13 +14,13 @@ Next, remove the `width` and `height` from `.bb2a`, and change the `border-left`
 You should remove the `width` from `.bb2a`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.width);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.width);
 ```
 
 You should remove the `height` from `.bb2a`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.height);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.height);
 ```
 
 You should change the `border-left` to use `5vw`.

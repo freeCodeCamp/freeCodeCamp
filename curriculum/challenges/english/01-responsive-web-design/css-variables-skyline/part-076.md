@@ -14,7 +14,7 @@ Move the `background-color` property and value from `.fb1` to `.fb1b`.
 You should remove `background-color` from `.fb1`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1")?.backgroundColor);
 ```
 
 You should add a `background-color` of `--building-color4` to `.fb1b`.

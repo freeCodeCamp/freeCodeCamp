@@ -14,7 +14,7 @@ Remove the `background-color` property and value from `.fb3`, and add them to `.
 You should remove the `background-color` from `.fb3`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3")?.backgroundColor);
 ```
 
 You should give `.fb3a` a `background-color` of `--building-color1`.

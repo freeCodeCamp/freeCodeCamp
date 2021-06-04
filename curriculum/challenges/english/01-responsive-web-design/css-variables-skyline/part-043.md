@@ -14,31 +14,31 @@ You don't need the `height` or `background-color` properties in `.bb1a`, `.bb1b`
 You should remove the `background-color` from `.bb1a`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.backgroundColor);
 ```
 
 You should remove the `height` property from `.bb1b`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.height);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.height);
 ```
 
 You should remove the `background-color` property from `.bb1b`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.backgroundColor);
 ```
 
 You should remove the `height` property from `.bb1c`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.height);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.height);
 ```
 
 You should remove the `background-color` property from `.bb1c`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.backgroundColor);
 ```
 
 # --seed--

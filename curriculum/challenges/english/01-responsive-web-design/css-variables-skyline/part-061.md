@@ -14,7 +14,7 @@ Remove the `background-color` property and value from `.bb3` since you are using
 You should remove the `background-color` from `.bb3`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.backgroundColor);
 ```
 
 # --seed--

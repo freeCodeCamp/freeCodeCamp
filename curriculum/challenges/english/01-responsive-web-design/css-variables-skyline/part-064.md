@@ -14,7 +14,7 @@ Remove the `background-color` property and value from `.bb4`, and add it to the 
 You should remove the `background-color` from `.bb4`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4")?.backgroundColor);
 ```
 
 You should give `.bb4a` a `background-color` of `--building-color4`.

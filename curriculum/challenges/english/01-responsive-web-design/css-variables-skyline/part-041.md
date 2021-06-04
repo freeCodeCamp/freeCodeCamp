@@ -20,14 +20,14 @@ assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window')
 You should move the `height` property and value from `.bb1a` to `.bb1-window`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.height);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.height);
 assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window')?.height, '10%');
 ```
 
 You should move the `background` property and value from `.bb1a` to `.bb1-window`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background);
 assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window')?.background, 'linear-gradient(var(--building-color1), var(--window-color1))');
 ```
 

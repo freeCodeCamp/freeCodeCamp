@@ -14,7 +14,7 @@ Move the `display`, `flex-direction`, and `align-items` properties and values fr
 You should remove `display` from `.bb1`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.display);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.display);
 ```
 
 You should move `display` with a value of `flex` to `.building-wrap`.
@@ -26,7 +26,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".building-wrap
 You should remove `flex-direction` from `.bb1`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.flexDirection);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.flexDirection);
 ```
 
 You should move `flex-direction` with a value of `column` to `.building-wrap`.
@@ -38,7 +38,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".building-wrap
 You should remove `align-items` from `.bb1`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.alignItems);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb1")?.alignItems);
 ```
 
 You should move `align-items` with a value of `center` to `.building-wrap`.

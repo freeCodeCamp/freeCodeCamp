@@ -14,7 +14,7 @@ In the next few steps, you are going to use some tricks with CSS borders to turn
 You shoudl remove the `background-color` from `.bb2`.
 
 ```js
-assert.empty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2")?.backgroundColor);
 ```
 
 # --seed--

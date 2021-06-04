@@ -24,7 +24,7 @@ Add a `linear-gradient` to `.bb1d` with `orange` as the first color, `--building
 You should use the `background` on `.bb1d`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background);
 ```
 
 You should give the `background` property a `linear-gradient`.
