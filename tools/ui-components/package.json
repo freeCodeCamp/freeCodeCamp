@@ -33,7 +33,7 @@
     "babel-loader": "8.2.2",
     "postcss": "8.3.0",
     "postcss-import": "14.0.2",
-    "tailwindcss": "2.1.3"
+    "tailwindcss": "2.1.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

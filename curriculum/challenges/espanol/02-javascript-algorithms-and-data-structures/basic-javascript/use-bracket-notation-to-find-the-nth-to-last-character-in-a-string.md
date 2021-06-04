@@ -11,16 +11,16 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 Puedes usar el mismo principio que acabamos de usar para recuperar el último carácter de una cadena para recuperar el carácter enésimo final.
 
-Por ejemplo, puedes obtener el valor de la antepenúltima letra de la cadena `var firstName = "Charles"` usando `firstName[firstName.length - 3]`
+Por ejemplo, puedes obtener el valor de la antepenúltima letra de la cadena `var firstName = "Augusta"` usando `firstName[firstName.length - 3]`
 
 Ejemplo:
 
 ```js
-var firstName = "Charles";
+var firstName = "Augusta";
 var thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
-`thirdToLastLetter` tendrá una cadena con valor `l`.
+`thirdToLastLetter` tendrá una cadena con valor `s`.
 
 # --instructions--
 

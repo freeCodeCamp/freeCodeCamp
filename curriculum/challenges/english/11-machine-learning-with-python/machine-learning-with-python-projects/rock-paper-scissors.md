@@ -2,6 +2,7 @@
 id: 5e46f8d6ac417301a38fb92d
 title: Rock Paper Scissors
 challengeType: 10
+forumTopicId: 462376
 dashedName: rock-paper-scissors
 ---
 

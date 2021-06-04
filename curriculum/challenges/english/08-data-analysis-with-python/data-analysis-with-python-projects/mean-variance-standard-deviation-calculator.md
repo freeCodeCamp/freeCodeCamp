@@ -2,6 +2,7 @@
 id: 5e46f7e5ac417301a38fb928
 title: Mean-Variance-Standard Deviation Calculator
 challengeType: 10
+forumTopicId: 462366
 dashedName: mean-variance-standard-deviation-calculator
 ---
 
