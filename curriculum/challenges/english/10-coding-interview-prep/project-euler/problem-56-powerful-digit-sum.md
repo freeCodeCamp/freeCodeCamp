@@ -66,5 +66,36 @@ powerfulDigitSum(3);
 # --solutions--
 
 ```js
-// solution required
+function powerfulDigitSum(n) {
+  function sumDigitsOfPower(numA, numB) {
+    let digitsSum = 0;
+    let number = power(numA, numB);
+    while (number > 0n) {
+      const digit = number % 10n;
+      digitsSum += parseInt(digit, 10);
+      number = number / 10n;
+    }
+    return digitsSum;
+  }
+
+  function power(numA, numB) {
+    let sum = 1n;
+    for (let b = 0; b < numB; b++) {
+      sum = sum * BigInt(numA);
+    }
+    return sum;
+  }
+
+  const limit = n - 1;
+  let maxDigitsSum = 0;
+  for (let a = limit; a > 0; a--) {
+    for (let b = limit; b > 0; b--) {
+      const curDigitSum = sumDigitsOfPower(a, b);
+      if (curDigitSum > maxDigitsSum) {
+        maxDigitsSum = curDigitSum;
+      }
+    }
+  }
+  return maxDigitsSum;
+}
 ```
