@@ -4,7 +4,7 @@ const selectors = {
   firstBlock: '.block-ui > .block:nth-child(1) > .map-title'
 };
 
-describe('Certificate intro page', () => {
+describe('Certification intro page', () => {
   before(() => {
     cy.clearCookies();
     cy.login();
@@ -12,10 +12,13 @@ describe('Certificate intro page', () => {
   });
 
   it('Should render', () => {
-    cy.title().should('eq', 'Responsive Web Design | freeCodeCamp.org');
+    cy.title().should(
+      'eq',
+      'Responsive Web Design Certification | freeCodeCamp.org'
+    );
   });
 
-  it('Should have certificate intro text', () => {
+  it('Should have certification intro text', () => {
     cy.contains(
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages"
     ).should('be.visible');

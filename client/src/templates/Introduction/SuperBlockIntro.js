@@ -148,11 +148,17 @@ class SuperBlockIntroductionPage extends Component {
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
     const i18nSuperBlock = t(`intro:${superBlock}.title`);
+    const i18nTitle =
+      superBlock === 'coding-interview-prep'
+        ? i18nSuperBlock
+        : t(`intro:misc-text.certification`, {
+            cert: i18nSuperBlock
+          });
 
     return (
       <>
         <Helmet>
-          <title>{i18nSuperBlock} | freeCodeCamp.org</title>
+          <title>{i18nTitle} | freeCodeCamp.org</title>
         </Helmet>
         <Grid>
           <Row className='super-block-intro-page'>
