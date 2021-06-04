@@ -6,7 +6,7 @@
 > 
 > **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow the our local setup guide to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
+This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow [this local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
 
 ## Enable WSL
 
@@ -32,7 +32,7 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
 
 ## Set up Git
 
-Git comes pre-installed with Ubuntu 18.04, verify that your Git version with `git --version`.
+Git comes pre-installed with Ubuntu 18.04, verify your Git version with `git --version`.
 
 ```output
 ~
@@ -54,7 +54,7 @@ You can check these settings by going to Settings > Languages & Frameworks > Nod
 
 ## Installing Docker Desktop
 
-**Docker Desktop for Windows** allows you to install and run database and services like MongoDB, NGINX, etc. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
+**Docker Desktop for Windows** allows you to install and run databases like MongoDB and other services like NGINX and more. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
 
 Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
@@ -64,7 +64,7 @@ There are some minimum hardware requirements for the best experience.
 
 Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
 
-This makes it so that the containers run on WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
+This makes it so that the containers run on the WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
 
 ## Install MongoDB from Docker Hub
 
