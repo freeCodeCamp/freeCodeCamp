@@ -20,7 +20,7 @@ Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In this
 - ${d_7}{d_8}{d_9} = 728$ is divisible by 13
 - ${d_8}{d_9}{d_{10}} = 289$ is divisible by 17
 
-Find sum of the all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
 
 **Note:** Pandigital numbers starting with `0` are to be considered in the result.
 
