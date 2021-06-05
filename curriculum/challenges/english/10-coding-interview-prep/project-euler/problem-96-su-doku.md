@@ -102,49 +102,42 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
 
 A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
 
-The `puzzlesArr` array contains fifty different Su Doku puzzle strings ranging in difficulty, but all with unique solutions (the first puzzle in the array is the example in the challenge description).
+The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
 
-By solving all fifty puzzles find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+By solving puzzles find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
 
 # --hints--
 
-`suDoku(testPuzzles)` should return a number.
+`suDoku(testPuzzles1)` should return a number.
 
 ```js
-assert(typeof suDoku(testPuzzles) === 'number');
+assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles)` should return 1190.
+`suDoku(testPuzzles1)` should return `1190`.
 
 ```js
-assert.strictEqual(suDoku(testPuzzles), 1190);
+assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(puzzlesArr)` should return 24702.
+`suDoku(testPuzzles2)` should return `24702`.
 
 ```js
-assert.strictEqual(suDoku(puzzlesArr), 24702);
+assert.strictEqual(suDoku(_testPuzzles2), 24702);
 ```
 
 # --seed--
 
-## --seed-contents--
+## --after-user-code--
 
 ```js
-function suDoku(arr) {
-
-  return true;
-}
-
-// Only change code above this line
-
-const testPuzzles = [
+const _testPuzzles1 = [
   '003020600900305001001806400008102900700000008006708200002609500800203009005010300',
   '200080300060070084030500209000105408000000000402706000301007040720040060004010003',
   '000000907000420180000705026100904000050000040000507009920108000034059000507000000'
 ];
 
-const puzzlesArr = [
+const _testPuzzles2 = [
   '003020600900305001001806400008102900700000008006708200002609500800203009005010300',
   '200080300060070084030500209000105408000000000402706000301007040720040060004010003',
   '000000907000420180000705026100904000050000040000507009920108000034059000507000000',
@@ -196,8 +189,25 @@ const puzzlesArr = [
   '000003017015009008060000000100007000009000200000500004000000020500600340340200000',
   '300200000000107000706030500070009080900020004010800050009040301000702000000008006'
 ];
+```
 
-suDoku(testPuzzles);
+## --seed-contents--
+
+```js
+function suDoku(puzzlesArr) {
+
+  return true;
+}
+
+// Only change code above this line
+
+const testPuzzles1 = [
+  '003020600900305001001806400008102900700000008006708200002609500800203009005010300',
+  '200080300060070084030500209000105408000000000402706000301007040720040060004010003',
+  '000000907000420180000705026100904000050000040000507009920108000034059000507000000'
+];
+
+suDoku(testPuzzles1);
 ```
 
 # --solutions--
