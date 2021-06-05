@@ -15,10 +15,10 @@ Our full-stack web development and machine learning curriculum is completely fre
 ## Table of Contents
 
 - [Certifications](#certifications)
-- [The Learning Platform - for users](#the-learning-platform)
+- [The Learning Platform](#the-learning-platform)
 - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
 - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing - for developers](#contributing)
+- [Contributing](#contributing)
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
@@ -172,14 +172,14 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard. Here is an overview of what you can contribute:
-- Answering coding questions on our community forum.
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard. Here is an overview of what you can do to help:
+- Answer coding questions on our community forum.
 - Give feedback on coding projects.
 - Translate freeCodeCamp.org's resources.
 - Contribute to our open source codebase on GitHub.
 - See the [issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) for a list of proposed features (and known issues).
 
-> #### [For more details, please follow these steps to contribute](https://contribute.freecodecamp.org).
+> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
 ### Platform, Build, and Deployment Status
 
