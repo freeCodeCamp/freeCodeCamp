@@ -1,7 +1,7 @@
 /* global expect jest */
 
 import React from 'react';
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Profile from './Profile';
 
@@ -59,11 +59,8 @@ describe('<Profile/>', () => {
   it('renders the report button on another persons profile', () => {
     const { getByText } = render(<Profile {...notMyProfileProps} />);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    expect(getByText('buttons.flag-user')).toHaveAttribute(
-      'href',
-      '/user/string/report-user'
-    );
+    const reportButton: HTMLElement = getByText('buttons.flag-user');
+    expect(reportButton).toHaveAttribute('href', '/user/string/report-user');
   });
 
   it('renders correctly', () => {

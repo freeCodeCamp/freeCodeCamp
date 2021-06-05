@@ -2,13 +2,14 @@ import React, { Fragment } from 'react';
 import { curry } from 'lodash-es';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { certificatesByNameSelector } from '../../../redux';
 import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const mapStateToProps = (state: any, props: ICertificationProps) =>
   createSelector(
     certificatesByNameSelector(props.username),
@@ -72,7 +73,6 @@ function Certificates({
   username
 }: ICertificationProps): JSX.Element {
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
   const renderCertShowWithUsername = curry(renderCertShow)(username);
   return (
     <FullWidthRow className='certifications'>
@@ -99,5 +99,4 @@ function Certificates({
 
 Certificates.displayName = 'Certifications';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default connect(mapStateToProps)(Certificates);

@@ -18,7 +18,7 @@ interface IPortfolioProps {
   portfolio: IPortfolioData[];
 }
 
-function Portfolio({ portfolio = [] }: IPortfolioProps): React.ReactNode {
+function Portfolio({ portfolio = [] }: IPortfolioProps): JSX.Element | null {
   const { t } = useTranslation();
   if (!portfolio.length) {
     return null;

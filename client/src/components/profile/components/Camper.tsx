@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAward,
-  faHeart,
-  faCalendar
+  faCalendar,
+  faHeart
 } from '@fortawesome/free-solid-svg-icons';
 import { TFunction, useTranslation } from 'react-i18next';
 
@@ -25,17 +24,17 @@ const { clientLocale } = envData;
 const localeCode = langCodes[clientLocale];
 
 interface ICamperProps {
-  about: string | null;
+  about: string;
   githubProfile: string;
-  isDonating: boolean | null;
+  isDonating: boolean;
   isGithub: boolean;
   isLinkedIn: boolean;
   isTwitter: boolean;
   isWebsite: boolean;
-  joinDate: string | null;
+  joinDate: string;
   linkedin: string;
-  location: string | null;
-  name: string | null;
+  location: string;
+  name: string;
   picture: string;
   points: number | null;
   twitter: string;

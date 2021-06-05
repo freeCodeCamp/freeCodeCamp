@@ -30,6 +30,7 @@ const { clientLocale } = envData;
 const localeCode = langCodes[clientLocale];
 
 interface IHeatMapProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   calendar: any;
 }
 
@@ -97,7 +98,6 @@ class HeatMapInner extends Component<IHeatMapInnerProps, IHeatMapInnerState> {
       month: 'short'
     })}`;
     const dataToDisplay = calendarData.filter(
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       data => data.date >= startOfCalendar && data.date <= endOfCalendar
     );
 
@@ -131,6 +131,7 @@ class HeatMapInner extends Component<IHeatMapInnerProps, IHeatMapInnerState> {
         <Spacer />
 
         <CalendarHeatMap
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           classForValue={(value: any) => {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             if (!value || value.count < 1) return 'color-empty';
@@ -195,6 +196,7 @@ const HeatMap = (props: IHeatMapProps): JSX.Element => {
    */
 
   // create array of timestamps and turn into milliseconds
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timestamps = Object.keys(calendar).map((stamp: any) => stamp * 1000);
   const startOfTimestamps = startOfDay(new Date(timestamps[0]));
   let endOfCalendar = startOfDay(Date.now());

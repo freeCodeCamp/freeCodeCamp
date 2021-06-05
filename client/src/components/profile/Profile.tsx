@@ -3,7 +3,7 @@ import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { TFunction, useTranslation } from 'react-i18next';
 
-import { CurrentChallengeLink, FullWidthRow, Spacer, Link } from '../helpers';
+import { CurrentChallengeLink, FullWidthRow, Link, Spacer } from '../helpers';
 import Camper from './components/Camper';
 import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
@@ -25,8 +25,11 @@ interface IProfileProps {
       showPortfolio: boolean;
       showTimeLine: boolean;
     };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     calendar: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     completedChallenges: any[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     portfolio: any[];
     about: string;
     githubProfile: string;
@@ -43,6 +46,7 @@ interface IProfileProps {
     twitter: string;
     username: string;
     website: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     yearsTopContributor: any[];
     isDonating: boolean;
   };
@@ -119,21 +123,20 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
     yearsTopContributor,
     isDonating
   } = user;
-
   return (
     <Fragment>
       <Camper
-        about={showAbout ? about : null}
+        about={about}
         githubProfile={githubProfile}
-        isDonating={showDonation ? isDonating : null}
+        isDonating={showDonation ? isDonating : false}
         isGithub={isGithub}
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}
         isWebsite={isWebsite}
-        joinDate={showAbout ? joinDate : null}
+        joinDate={showAbout ? joinDate : ''}
         linkedin={linkedin}
-        location={showLocation ? location : null}
-        name={showName ? name : null}
+        location={showLocation ? location : ''}
+        name={showName ? name : ''}
         picture={picture}
         points={showPoints ? points : null}
         twitter={twitter}
