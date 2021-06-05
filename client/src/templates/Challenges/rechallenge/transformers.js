@@ -16,6 +16,7 @@ import {
   transformContents,
   transformHeadTailAndContents,
   setExt,
+  setImportedFiles,
   compileHeadTail
 } from '../../../../../utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
@@ -213,6 +214,35 @@ const transformHtml = async function (file) {
   return transformContents(() => div.innerHTML, file);
 };
 
+// Find if the base html refers to the css or js files and record if they do. If
+// the link or script exists we remove those elements since those files don't
+// exist on the site, only in the editor
+const transformIncludes = async function (fileP) {
+  const file = await fileP;
+  const div = document.createElement('div');
+  div.innerHTML = file.contents;
+  const link =
+    div.querySelector('link[href="styles.css"]') ??
+    div.querySelector('link[href="./styles.css"]');
+  const script =
+    div.querySelector('script[src="script.js"]') ??
+    div.querySelector('script[src="./script.js"]');
+  const importedFiles = [];
+  if (link) {
+    importedFiles.push('index.css');
+    link.remove();
+  }
+  if (script) {
+    importedFiles.push('index.js');
+    script.remove();
+  }
+
+  return flow(
+    partial(setImportedFiles, importedFiles),
+    partial(transformContents, () => div.innerHTML)
+  )(file);
+};
+
 export const composeHTML = cond([
   [
     testHTML,
@@ -229,7 +259,7 @@ export const composeHTML = cond([
 ]);
 
 export const htmlTransformer = cond([
-  [testHTML, transformHtml],
+  [testHTML, flow(transformHtml, transformIncludes)],
   [stubTrue, identity]
 ]);
 
