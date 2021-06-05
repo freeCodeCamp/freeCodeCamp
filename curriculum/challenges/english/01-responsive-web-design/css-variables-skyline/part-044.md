@@ -36,6 +36,7 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.bac
 You should use `orange` as the first color in the `linear-gradient`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient(orange');
 ```
 

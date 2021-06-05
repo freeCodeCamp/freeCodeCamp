@@ -26,6 +26,7 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.back
 You should give the `repeating-linear-gradient` a first color of `--building-color2` from `0%` to `5%`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, /repeating-linear-gradient\(var\(--building-color2\)( 0%)?, var\(--building-color2\) 5%/);
 ```
 

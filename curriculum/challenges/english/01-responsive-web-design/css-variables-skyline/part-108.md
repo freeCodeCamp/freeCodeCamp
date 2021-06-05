@@ -14,6 +14,7 @@ Add another repeating gradient to this building; make it the same as the one you
 You should give `.fb6` a second `repeating-linear-gradient` in the `background` property.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, /repeating-linear-gradient\(90deg, var\(--building-color3\)( 0%)?, var\(--building-color3\) 10%, transparent 10%, transparent 30%\), repeating-linear-gradient/);
 ```
 

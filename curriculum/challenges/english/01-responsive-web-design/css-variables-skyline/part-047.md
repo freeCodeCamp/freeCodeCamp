@@ -14,12 +14,13 @@ Remove `orange` from the `.bb1d` gradient and change the `80%` to `50%`. This wi
 You should remove `orange` from the `linear-gradient`.
 
 ```js
-assert.notIncludes(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'orange');
+assert.notInclude(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'orange');
 ```
 
 You should change the now first `linear-gradient` color to transition at `50%`.
 
 ```js
+// TODO: handle whitespace in calcualted values
 assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient(var(--building-color1) 50%, var(--window-color1))');
 ```
 

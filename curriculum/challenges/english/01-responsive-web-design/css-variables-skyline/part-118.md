@@ -16,25 +16,25 @@ Variables are primarily used with colors, and that's how you used them here. But
 You should add `--window-color1` with a value of `#777`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color1"), "#777");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--window-color1")?.trim(), "#777");
 ```
 
 You should add `--window-color2` with a value of `#777`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color2"), "#777");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--window-color2")?.trim(), "#777");
 ```
 
 You should add `--window-color3` with a value of `#777`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color3"), "#777");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--window-color3")?.trim(), "#777");
 ```
 
 You should add `--window-color4` with a value of `#777`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--window-color4"), "#777");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--window-color4")?.trim(), "#777");
 ```
 
 # --seed--

@@ -37,6 +37,7 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.bac
 You should use `--building-color2` from `0%` to `6%`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, /var\(--building-color2\)( 0%)?, var\(--building-color2\) 6%/);
 ```
 

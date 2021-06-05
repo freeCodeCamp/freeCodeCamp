@@ -20,7 +20,7 @@ assert.exists(document.querySelector('div.bb1a'));
 You should add the `bb1-window` class to the `.bb1a` element.
 
 ```js
-assert.include(document.querySelector('div.bb1a')?.classList, 'bb1-window');
+assert.exists(document.querySelector('div.bb1a.bb1-window'));
 ```
 
 You should not remove the `bb1b` class.
@@ -32,7 +32,7 @@ assert.exists(document.querySelector('div.bb1b'));
 You should add the `bb1-window` class to the `.bb1b` element.
 
 ```js
-assert.include(document.querySelector('div.bb1b')?.classList, 'bb1-window');
+assert.exists(document.querySelector('div.bb1b.bb1-window'));
 ```
 
 You should not remove the `bb1c` class.
@@ -44,14 +44,14 @@ assert.exists(document.querySelector('div.bb1c'));
 You should add the `bb1-window` class to the `.bb1c` element.
 
 ```js
-assert.include(document.querySelector('div.bb1c')?.classList, 'bb1-window');
+assert.exists(document.querySelector('div.bb1c.bb1-window'));
 ```
 
 You should not change the `.bb1d` element.
 
 ```js
 assert.exists(document.querySelector('div.bb1d'));
-assert.notInclude(document.querySelector('div.bb1d')?.classList, 'bb1-window');
+assert.notExists(document.querySelector('div.bb1d.bb1-window'));
 ```
 
 # --seed--

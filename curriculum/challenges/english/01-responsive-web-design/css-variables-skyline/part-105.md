@@ -14,6 +14,7 @@ Add another `repeating-linear-gradient` below the one you just added. Give it a 
 You should give `.fb5` a second `repeating-linear-gradient` in the `background` property.
 
 ```js
+// TODO: handle whitespace in caluclated values
 assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb5")?.background, /repeating-linear-gradient\(var\(--building-color2\)( 0%)?, var\(--building-color2\) 5%, transparent 5%, transparent 10%\), repeating-linear-gradient/);
 ```
 

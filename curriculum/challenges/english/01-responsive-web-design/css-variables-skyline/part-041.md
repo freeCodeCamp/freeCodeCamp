@@ -27,6 +27,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window')?
 You should move the `background` property and value from `.bb1a` to `.bb1-window`.
 
 ```js
+// TODO: handle whitespace on calculated values
 assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background);
 assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window')?.background, 'linear-gradient(var(--building-color1), var(--window-color1))');
 ```

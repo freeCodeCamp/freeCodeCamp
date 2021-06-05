@@ -35,6 +35,7 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.bac
 You should give the `background` a `linear-gradient` starting from `--building-color1`.
 
 ```js
+// TODO: fix whitespace on calculated values
 assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background, 'linear-gradient(var(--building-color1');
 ```
 

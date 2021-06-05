@@ -20,6 +20,7 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.back
 You should give the `repeating-linear-gradient` a direction of `90deg`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, "repeating-linear-gradient(90deg");
 ```
 

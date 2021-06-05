@@ -20,25 +20,25 @@ assert.equal(document.querySelectorAll("div.fb3 > div")?.length, 4);
 You should give the first new `div` a class of `fb3a`.
 
 ```js
-assert.equal(document.querySelector("div.fb3:nth-child(1)"), document.querySelector("div.fb3a"));
+assert.equal(document.querySelector("div.fb3").firstElementChild, document.querySelector("div.fb3a"));
 ```
 
 You should give the second new `div` a class of `fb3b`.
 
 ```js
-assert.equal(document.querySelector("div.fb3:nth-child(2)"), document.querySelector("div.fb3b"));
+assert.equal(document.querySelector("div.fb3 :nth-child(2)"), document.querySelector("div.fb3b"));
 ```
 
 You should give the third new `div` a class of `fb3a`.
 
 ```js
-assert.equal(document.querySelector("div.fb3:nth-child(3)"), document.querySelector("div.fb3b + div.fb3a"));
+assert.equal(document.querySelector("div.fb3 :nth-child(3)"), document.querySelector("div.fb3b + div.fb3a"));
 ```
 
 You should give the fourth new `div` a class of `fb3b`.
 
 ```js
-assert.include(document.querySelector("div.fb3:nth-child(4)")?.classList, "fb3b");
+assert.exists(document.querySelector("div.fb3 :nth-child(4).fb3b"));
 ```
 
 # --seed--

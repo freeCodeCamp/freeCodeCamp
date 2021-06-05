@@ -14,6 +14,7 @@ In the `sky` class of the media query, change the two `#ffcf33` color values to 
 You should change the first color values from `#ffcf33` to `#ccc`.
 
 ```js
+// TODO: handle whitespace
 assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(rgb\(204, 204, 204\)|( 0%), rgb\(204, 204, 204\) 20%/);
 ```
 

@@ -22,6 +22,7 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.bac
 You should use a direction of `90deg`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg");
 ```
 

@@ -30,6 +30,7 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.back
 You should use `90deg` for the direction in the first argument of `repeating-linear-gradient`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient(90deg");
 ```
 

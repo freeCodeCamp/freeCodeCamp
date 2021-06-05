@@ -38,9 +38,9 @@ assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPr
 You should remove the custom property variables from `.bb1`.
 
 ```js
-assert.notExists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1'));
-assert.notExists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color2'));
-assert.notExists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color3'));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1'));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color2'));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color3'));
 ```
 
 # --seed--

@@ -19,25 +19,25 @@ You should add a `:root` selector to the media query.
 You should add `--building-color1` with a value of `#000`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color1"), "#000");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--building-color1")?.trim(), "#000");
 ```
 
 You should add `--building-color2` with a value of `#000`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color2"), "#000");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--building-color2")?.trim(), "#000");
 ```
 
 You should add `--building-color3` with a value of `#000`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color3"), "#000");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--building-color3")?.trim(), "#000");
 ```
 
 You should add `--building-color4` with a value of `#000`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.getPropertyValue("--building-color4"), "#000");
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x=>x.selectorText === ":root")?.style?.getPropertyValue("--building-color4")?.trim(), "#000");
 ```
 
 # --seed--

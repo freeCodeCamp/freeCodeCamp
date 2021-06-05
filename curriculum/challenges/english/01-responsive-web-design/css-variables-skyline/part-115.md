@@ -16,6 +16,7 @@ Note: You are going to need to scroll past the editable region to copy the class
 You should not delete the existing `.sky` declaration.
 
 ```js
+// TODO: handle whitespace in caluclated values
 assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)|( 0%), rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
 ```
 

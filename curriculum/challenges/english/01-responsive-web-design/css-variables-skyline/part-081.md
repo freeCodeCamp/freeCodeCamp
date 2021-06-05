@@ -21,7 +21,7 @@ You should give the first new `div` a class of `fb2a`.
 
 ```js
 assert.exists(document.querySelector("div.fb2 > div.fb2a"));
-assert.equal(document.querySelector("div.fb2 > div.fb2a"), document.querySelector("div.fb2:nth-child(1)"));
+assert(document.querySelector("div.fb2 > div.fb2a") === document.querySelector("div.fb2")?.firstElementChild);
 ```
 
 You should give the second new `div` a class of `fb2b`.

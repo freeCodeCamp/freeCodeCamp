@@ -25,6 +25,7 @@ Add a `repeating-linear-gradient` to `.fb1c` below the one that's there; use you
 You should not alter the first `repeating-linear-gradient`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg, var(--building-color4), var(--building-color) 10%, transparent 10%, transparent 15%)");
 ```
 

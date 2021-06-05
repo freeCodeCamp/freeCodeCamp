@@ -22,16 +22,16 @@ assert(![...bBuildings?.[1]?.classList]?.includes('fb1'));
 You should add one `div` element between `.fb2` and `.fb3`.
 
 ```js
-assert(document.querySelector('.fb2')?.nextElementSibling === document.querySelector('.fb4')?.previousElementSibling);
+assert(document.querySelector('.fb2')?.nextElementSibling === document.querySelector('.fb3')?.previousElementSibling);
 ```
 
 
 You should add two `div` elements as the last children of `.foreground-buildings`.
 
 ```js
-const bb4 = document.querySelector('.bb6');
-assert.exists(bb4?.nextElementSibling);
-assert.exists(bb4?.nextElementSibling?.nextElementSibling);
+const fb6 = document.querySelector('.fb6');
+assert.exists(fb6?.nextElementSibling);
+assert.exists(fb6?.nextElementSibling?.nextElementSibling);
 ```
 
 You should have added 5 new `div` elements.

@@ -26,13 +26,13 @@ assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.left, 
 You should give `.fb5` a `position` of `relative`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.position, 'relative');
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.position, 'relative');
 ```
 
 You should give `.fb5` a `right` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.right, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.right, '10%');
 ```
 
 # --seed--

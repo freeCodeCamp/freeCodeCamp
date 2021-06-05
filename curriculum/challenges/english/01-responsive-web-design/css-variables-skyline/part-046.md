@@ -24,6 +24,7 @@ Here, it will transition from `color1` to `color2` between `0%` and `20%` of the
 You should add a value of `80%` to the `--building-color1` color in the `linear-gradient` of `.bb1d`.
 
 ```js
+// TODO: handle whitespace in calculated values
 assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient(orange, var(--building-color1) 80%, var(--window-color1))');
 ```
 
