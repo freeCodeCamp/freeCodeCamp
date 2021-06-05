@@ -28,8 +28,12 @@ import {
 } from '../../../redux/prop-types';
 
 import './editor.css';
+import * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+// import MonacoEditor from 'react-monaco-editor';
 
-const MonacoEditor = Loadable(() => import('react-monaco-editor'));
+const MonacoEditor = Loadable<typeof monacoEditor>(
+  () => import('react-monaco-editor')
+);
 
 type PropTypes = {
   canFocus: boolean;
@@ -97,7 +101,7 @@ const modeMap = {
 };
 
 let monacoThemesDefined = false;
-const defineMonacoThemes = monaco => {
+const defineMonacoThemes = (monaco: typeof monacoEditor) => {
   if (monacoThemesDefined) {
     return;
   }
@@ -147,8 +151,9 @@ const Editor = (props: PropTypes): JSX.Element => {
   // TODO: is there any point in initializing this? It should be fine with
   // data = {}
   const [data, setData] = useState(initialData);
-  const [_editor, setEditor] = useState(null);
-  const [_monaco, setMonaco] = useState(null);
+  const [_editor, setEditor] =
+    useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null);
+  const [_monaco, setMonaco] = useState<typeof monacoEditor | null>(null);
   const [_domNode, setDomNode] = useState<HTMLDivElement | null>(null);
   const [_outputNode, setOutputNode] = useState<HTMLDivElement | null>(null);
   const [_overlayWidget, setOverlayWidget] = useState();
@@ -209,7 +214,7 @@ const Editor = (props: PropTypes): JSX.Element => {
       : [];
   };
 
-  const editorWillMount = monaco => {
+  const editorWillMount = (monaco: typeof monacoEditor) => {
     setMonaco(monaco);
     const { challengeFiles, fileKey } = props;
     defineMonacoThemes(monaco);
@@ -246,7 +251,10 @@ const Editor = (props: PropTypes): JSX.Element => {
     }
   };
 
-  const editorDidMount = (editor, monaco) => {
+  const editorDidMount = (
+    editor: monacoEditor.editor.IEditor,
+    monaco: typeof monacoEditor
+  ) => {
     setEditor(editor);
     editor.updateOptions({
       accessibilitySupport: props.inAccessibilityMode ? 'on' : 'auto'
