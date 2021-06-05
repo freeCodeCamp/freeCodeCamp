@@ -8,7 +8,7 @@ import {
   backEndProject,
   frontEndProject,
   pythonProject
-} from '../../../../utils/challengeTypes';
+} from '../../../../challenge-types';
 
 const propTypes = {
   challengeType: PropTypes.number,
