@@ -39,11 +39,6 @@ const localeCode = langCodes[clientLocale];
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;
 
-interface IFile {
-  ext: string;
-  contents: string;
-}
-
 interface ICompletedMap {
   id: string;
   completedDate: number;
