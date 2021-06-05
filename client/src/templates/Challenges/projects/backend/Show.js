@@ -30,7 +30,7 @@ import HelpModal from '../../components/HelpModal';
 import ProjectToolPanel from '../Tool-Panel';
 import SolutionForm from '../SolutionForm';
 import Spacer from '../../../../components/helpers/Spacer';
-import { ChallengeNode } from '../../../../redux/propTypes';
+import { ChallengeNode } from '../../../../redux/prop-types';
 import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
 

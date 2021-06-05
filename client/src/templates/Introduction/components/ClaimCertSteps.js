@@ -9,7 +9,7 @@ import IntroInformation from '../../../assets/icons/IntroInformation';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { userSelector } from '../../../redux';
-import { User } from '../../../redux/propTypes';
+import { User } from '../../../redux/prop-types';
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 const renderCheckMark = isCompleted => {

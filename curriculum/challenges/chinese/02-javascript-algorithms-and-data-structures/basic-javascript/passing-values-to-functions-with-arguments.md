@@ -19,7 +19,7 @@ function testFun(param1, param2) {
 }
 ```
 
-然后我们可以调用 `testFun`，就像这样： `testFun("Hello", "World");`。 我们传入了两个字符串参数， `Hello` 和`World`。 在函数中，`param1` 等于字符串 `Hello` 以及 `param2` 等于字符串 `World`。 请注意，`testFun` 函数可以多次调用，每次调用时传递的参数会决定参数的实际值。
+然后我们可以调用 `testFun`，就像这样： `testFun("Hello", "World");`。 我们传入了两个字符串参数， `Hello` 和 `World`。 在函数中，`param1` 等于字符串 `Hello` 以及 `param2` 等于字符串 `World`。 请注意，`testFun` 函数可以多次调用，每次调用时传递的参数会决定参数的实际值。
 
 # --instructions--
 
