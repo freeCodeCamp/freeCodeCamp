@@ -193,7 +193,7 @@ module.exports = function (app) {
               pulls === parseInt(pulls, 10) && issues
                 ? Object.keys(JSON.parse(issues)).length - pulls
                 : "Can't connect to GitHub";
-            return res.send({
+            return res.json({
               issues: issues,
               pulls: pulls
             });
