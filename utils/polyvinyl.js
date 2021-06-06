@@ -87,6 +87,16 @@ function setExt(ext, poly) {
   return newPoly;
 }
 
+// setImportedFiles(importedFiles: String[], poly: PolyVinyl) => PolyVinyl
+function setImportedFiles(importedFiles, poly) {
+  checkPoly(poly);
+  const newPoly = {
+    ...poly,
+    importedFiles: [...importedFiles]
+  };
+  return newPoly;
+}
+
 // clearHeadTail(poly: PolyVinyl) => PolyVinyl
 function clearHeadTail(poly) {
   checkPoly(poly);
@@ -139,6 +149,7 @@ module.exports = {
   isPoly,
   setContent,
   setExt,
+  setImportedFiles,
   compileHeadTail,
   transformContents,
   transformHeadTailAndContents

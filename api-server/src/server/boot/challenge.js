@@ -286,7 +286,7 @@ function projectCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.send({
+        return res.json({
           alreadyCompleted,
           points: alreadyCompleted ? user.points : user.points + 1,
           completedDate: completedChallenge.completedDate
@@ -320,7 +320,7 @@ function backendChallengeCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.send({
+        return res.json({
           alreadyCompleted,
           points: alreadyCompleted ? user.points : user.points + 1,
           completedDate: completedChallenge.completedDate
