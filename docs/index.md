@@ -1,4 +1,4 @@
-The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
+The #[freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
 > [!NOTE]
 > Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
