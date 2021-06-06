@@ -65,7 +65,7 @@ A better algorithm is based on the recursive divide and conquer approach, which 
 <strong>endif</strong>
 </pre>
 
-For the input, expect the argument to be an array of objects (points) with `x` and `y` members set to numbers. For the output, return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
 
 **References and further readings:**
 
