@@ -369,7 +369,7 @@ const closestPair = function _closestPair(Px, Py) {
 
     return {
         distance: minDelta,
-        pair: closestPair
+        pair: closestPair.sort((pointA, pointB) => pointA.x - pointB.x)
     };
 };
 
