@@ -169,14 +169,6 @@ const points1 = [
     new Point(1.45428,  0.087596)
 ];
 
-const points2 = [
-  new Point(37100, 13118),
-  new Point(37134, 1963),
-  new Point(37181, 2008),
-  new Point(37276, 21611),
-  new Point(37307, 9320)
-];
-
 const answer1 = {
   distance: 0.0894096443343775,
   pair: [
@@ -190,6 +182,14 @@ const answer1 = {
     }
   ]
 };
+
+const points2 = [
+  new Point(37100, 13118),
+  new Point(37134, 1963),
+  new Point(37181, 2008),
+  new Point(37276, 21611),
+  new Point(37307, 9320)
+];
 
 const answer2 = {
   distance: 65.06919393998976,
