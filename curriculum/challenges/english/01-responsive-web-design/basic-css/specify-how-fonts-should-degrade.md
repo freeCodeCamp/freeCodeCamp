@@ -9,7 +9,7 @@ dashedName: specify-how-fonts-should-degrade
 
 # --description--
 
-There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`
+There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`.
 
 When one font isn't available, you can tell the browser to "degrade" to another font.
 

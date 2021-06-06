@@ -13,7 +13,8 @@ import { TFunction, withTranslation } from 'react-i18next';
 import './timeline.css';
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow, Link } from '../../helpers';
-import SolutionViewer from '../../SolutionViewer/SolutionViewer';
+import Loadable from '@loadable/component';
+
 import {
   getCertIds,
   getPathFromID,
@@ -27,6 +28,13 @@ import { langCodes } from '../../../../../config/i18n/all-langs';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import envData from '../../../../../config/env.json';
+
+const SolutionViewer = Loadable(
+  () =>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    import('../../SolutionViewer/SolutionViewer')
+);
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
@@ -349,7 +357,7 @@ function useIdToNameMap(): Map<string, string> {
     }
   `);
   const idToNameMap = new Map();
-  for (let id of getCertIds()) {
+  for (const id of getCertIds()) {
     idToNameMap.set(id, {
       challengeTitle: `${getTitleFromId(id)} Certification`,
       certPath: getPathFromID(id)

@@ -75,7 +75,7 @@ assert(
 );
 ```
 
-`date` prop 应由调用 `Date()` 生成。
+`date` 属性应该通过调用 `Date()` 生成。
 
 ```js
 assert(/<CurrentDatedate={Date\(\)}\/>/.test(__helpers.removeWhiteSpace(code)));
