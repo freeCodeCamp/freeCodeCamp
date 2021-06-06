@@ -8,7 +8,7 @@ dashedName: closest-pair-problem
 
 # --description--
 
-Provide a function to find the closest two points among a set of given points in two dimensions, i.e. to solve the [Closest pair of points problem](<https://en.wikipedia.org/wiki/Closest pair of points problem> "wp: Closest pair of points problem") in the *planar* case.
+Provide a function to find the closest two points among a set of given points in two dimensions.
 
 The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
 
@@ -30,7 +30,7 @@ The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call 
 <strong>endif</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, as explained also at [Wikipedia's Closest pair of points problem](<https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case> "wp: Closest pair of points problem#Planar_case"), which is `O(nlog(n))` a pseudo-code could be:
+A better algorithm is based on the recursive divide and conquer approach, which is `O(nlog(n))` a pseudo-code could be:
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -69,12 +69,6 @@ For the input, expect the argument to be an array of objects (points) with `x` a
 
 **References and further readings:**
 
-<ul>
-  <li><a href='https://en.wikipedia.org/wiki/Closest pair of points problem' title='wp: Closest pair of points problem' target='_blank'>Closest pair of points problem</a></li>
-  <li><a href='https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html' target='_blank'>Closest Pair (McGill)</a></li>
-  <li><a href='https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf' target='_blank'>Closest Pair (UCSB)</a></li>
-  <li><a href='https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf' target='_blank'>Closest pair (WUStL)</a></li>
- </ul>
 
 # --hints--
 
