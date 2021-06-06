@@ -190,8 +190,8 @@ const answer2 = {
   ]
 };
 
-const benchmarkPoints = [
-  new Point(16909, 54699),
+const points3 = [
+  new Point(16910, 54699),
   new Point(14773, 61107),
   new Point(95547, 45344),
   new Point(95951, 17573),
@@ -218,7 +218,7 @@ const benchmarkPoints = [
   new Point(70721, 66707),
   new Point(31863, 9837),
   new Point(49358, 30795),
-  new Point(13041, 39745),
+  new Point(13041, 39744),
   new Point(59635, 26523),
   new Point(25859, 1292),
   new Point(1551, 53890),
