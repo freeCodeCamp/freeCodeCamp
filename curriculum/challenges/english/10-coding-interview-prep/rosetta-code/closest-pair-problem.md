@@ -67,7 +67,35 @@ A better algorithm is based on the recursive divide and conquer approach, which 
 
 For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
 
-**References and further readings:**
+For example `getClosestPair` with input array `points`:
+
+```js
+const points = [
+  new Point(1, 2),
+  new Point(3, 3),
+  new Point(2, 2)
+];
+```
+
+Would return:
+
+```js
+{
+  distance: 1,
+  pair: [
+    {
+      x: 1,
+      y: 2
+    },
+    {
+      x: 2,
+      y: 2
+    }
+  ]
+}
+```
+
+**Note:** In the `pair` array, sort poinits by the `x` coordinate, incrementing.
 
 
 # --hints--
