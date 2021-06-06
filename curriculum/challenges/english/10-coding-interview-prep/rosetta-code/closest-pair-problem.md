@@ -10,7 +10,7 @@ dashedName: closest-pair-problem
 
 Provide a function to find the closest two points among a set of given points in two dimensions.
 
-The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
 
 <pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
@@ -30,7 +30,7 @@ The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call 
 <strong>endif</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, which is `O(nlog(n))` a pseudo-code could be:
+A better algorithm is based on the recursive divide and conquer approach, which is $O(n\log n)$ a pseudo-code could be:
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
