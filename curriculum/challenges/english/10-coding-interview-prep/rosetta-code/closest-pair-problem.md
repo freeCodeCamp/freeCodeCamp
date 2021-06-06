@@ -136,6 +136,21 @@ assert.deepEqual(
 );
 ```
 
+`getClosestPair(points3).distance` should be `6754.625082119658`.
+
+```js
+assert.equal(getClosestPair(points3).distance, answer3.distance);
+```
+
+`getClosestPair(points3).pair` should be `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
+
+```js
+assert.deepEqual(
+  JSON.parse(JSON.stringify(getClosestPair(points3))).pair,
+  answer3.pair
+);
+```
+
 # --seed--
 
 ## --after-user-code--
@@ -242,6 +257,20 @@ const points3 = [
   new Point(51090, 52158),
   new Point(48953, 58567)
 ];
+
+const answer3 = {
+  distance: 6754.625082119658,
+  pair: [
+    {
+      x: 46817,
+      y: 64975
+    },
+    {
+      x: 48953,
+      y: 58567
+    }
+  ]
+}
 ```
 
 ## --seed-contents--
