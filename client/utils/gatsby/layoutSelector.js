@@ -23,8 +23,7 @@ export default function layoutSelector({ element, props }) {
     return (
       <CertificationLayout pathname={pathname}>{element}</CertificationLayout>
     );
-  }
-  if (isChallenge) {
+  } else if (isChallenge) {
     return (
       <DefaultLayout pathname={pathname} showFooter={false}>
         {element}

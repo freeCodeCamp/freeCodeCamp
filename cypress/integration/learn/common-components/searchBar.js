@@ -16,7 +16,7 @@ const clear = () => {
 
 describe('Search bar', () => {
   before(() => {
-    cy.visit('/');
+    cy.visit('/learn');
   });
 
   beforeEach(() => {
