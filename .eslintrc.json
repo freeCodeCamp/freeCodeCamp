@@ -18,7 +18,9 @@
     "prefer-object-spread",
     "prettier",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
+    "jest-dom",
+    "testing-library"
   ],
   "globals": {
     "Promise": true,
@@ -31,18 +33,10 @@
   "settings": {
     "react": {
       "version": "16.4.2",
-      "import/ignore": [
-        "\\.json$"
-      ],
-      "import/extensions": [
-        ".js",
-        ".jsx",
-        ".tsx"
-      ]
+      "import/ignore": ["\\.json$"],
+      "import/extensions": [".js", ".jsx", ".tsx"]
     },
-    "import/ignore": [
-      "node_modules"
-    ]
+    "import/ignore": ["node_modules"]
   },
   "overrides": [{
     "files": ["**/*.ts?(x)"],
@@ -55,8 +49,10 @@
       "plugin:@typescript-eslint/recommended",
       "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
-    "plugins": [
-      "@typescript-eslint"
-    ]
+    "plugins": ["@typescript-eslint"]
+  },
+  {
+    "files": ["./tools/ui-components/**/*.test.[jt]s?(x)"],
+    "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
   }]
 }
