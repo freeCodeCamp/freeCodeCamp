@@ -70,51 +70,67 @@ class DesktopLayout extends Component {
 
     return (
       <Fragment>
-        {projectBasedChallenge && (
-          <ActionRow switchDisplayTab={this.switchDisplayTab} {...this.state} />
-        )}
-        <ReflexContainer className='desktop-layout' orientation='vertical'>
-          {!projectBasedChallenge && (
-            <ReflexElement flex={1} {...resizeProps}>
-              {instructions}
+        <ReflexContainer className='desktop-layout' orientation='horizontal'>
+          {projectBasedChallenge && (
+            <ReflexElement flex={1}>
+              <ActionRow
+                switchDisplayTab={this.switchDisplayTab}
+                {...this.state}
+              />
             </ReflexElement>
           )}
-          {!projectBasedChallenge && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-
-          <ReflexElement flex={1} {...resizeProps}>
-            {challengeFile && (
-              <ReflexContainer key={challengeFile.key} orientation='horizontal'>
-                <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
-                  {
-                    <Fragment>
-                      {showUpcomingChanges && !hasEditableBoundries && (
-                        <EditorTabs />
-                      )}
-                      {editor}
-                    </Fragment>
-                  }
+          <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
+            <ReflexContainer orientation='vertical'>
+              {!projectBasedChallenge && (
+                <ReflexElement flex={1} {...resizeProps}>
+                  {instructions}
                 </ReflexElement>
-                {isConsoleDisplayable && (
-                  <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+              {!projectBasedChallenge && (
+                <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+
+              <ReflexElement flex={1} {...resizeProps}>
+                {challengeFile && (
+                  <ReflexContainer
+                    key={challengeFile.key}
+                    orientation='horizontal'
+                  >
+                    <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
+                      {
+                        <Fragment>
+                          {showUpcomingChanges && !hasEditableBoundries && (
+                            <EditorTabs />
+                          )}
+                          {editor}
+                        </Fragment>
+                      }
+                    </ReflexElement>
+                    {isConsoleDisplayable && (
+                      <ReflexSplitter propagate={true} {...resizeProps} />
+                    )}
+                    {isConsoleDisplayable && (
+                      <ReflexElement
+                        flex={0.25}
+                        {...reflexProps}
+                        {...resizeProps}
+                      >
+                        {testOutput}
+                      </ReflexElement>
+                    )}
+                  </ReflexContainer>
                 )}
-                {isConsoleDisplayable && (
-                  <ReflexElement flex={0.25} {...reflexProps} {...resizeProps}>
-                    {testOutput}
-                  </ReflexElement>
-                )}
-              </ReflexContainer>
-            )}
+              </ReflexElement>
+              {isPreviewDisplayable && (
+                <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+              {isPreviewDisplayable && (
+                <ReflexElement flex={0.7} {...resizeProps}>
+                  {preview}
+                </ReflexElement>
+              )}
+            </ReflexContainer>
           </ReflexElement>
-          {isPreviewDisplayable && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-          {isPreviewDisplayable && (
-            <ReflexElement flex={0.7} {...resizeProps}>
-              {preview}
-            </ReflexElement>
-          )}
         </ReflexContainer>
       </Fragment>
     );
