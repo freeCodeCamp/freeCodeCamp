@@ -27,20 +27,38 @@ The ordered set of three 4-digit numbers: 8128, 2882, 8281, has three interestin
   <li>This is the only set of 4-digit numbers with this property.</li>
 </ol>
 
-Find the sum of the only ordered set of six cyclic 4-digit numbers for which each polygonal type: triangle, square, pentagonal, hexagonal, heptagonal, and octagonal, is represented by a different number in the set.
+Find the sum of all numbers in ordered sets of `n` cyclic 4-digit numbers for which each of the $P_3$ to $P_{n + 2}$ polygonal types, is represented by a different number in the set.
 
 # --hints--
 
-`cyclicalFigurateNums()` should return a number.
+`cyclicalFigurateNums(3)` should return a number.
 
 ```js
-assert(typeof cyclicalFigurateNums() === 'number');
+assert(typeof cyclicalFigurateNums(3) === 'number');
 ```
 
-`cyclicalFigurateNums()` should return 28684.
+`cyclicalFigurateNums(3)` should return `19291`.
 
 ```js
-assert.strictEqual(cyclicalFigurateNums(), 28684);
+assert.strictEqual(cyclicalFigurateNums(3), 19291);
+```
+
+`cyclicalFigurateNums(4)` should return `28684`.
+
+```js
+assert.strictEqual(cyclicalFigurateNums(4), 28684);
+```
+
+`cyclicalFigurateNums(5)` should return `76255`.
+
+```js
+assert.strictEqual(cyclicalFigurateNums(5), 76255);
+```
+
+`cyclicalFigurateNums(6)` should return `28684`.
+
+```js
+assert.strictEqual(cyclicalFigurateNums(6), 28684);
 ```
 
 # --seed--
@@ -48,12 +66,12 @@ assert.strictEqual(cyclicalFigurateNums(), 28684);
 ## --seed-contents--
 
 ```js
-function cyclicalFigurateNums() {
+function cyclicalFigurateNums(n) {
 
   return true;
 }
 
-cyclicalFigurateNums();
+cyclicalFigurateNums(3);
 ```
 
 # --solutions--
