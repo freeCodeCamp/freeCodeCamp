@@ -1,8 +1,9 @@
 export interface ExtendedStyleRule extends CSSStyleRule {
   isDeclaredAfter: (selector: string) => boolean;
 }
-interface ExtendedStyleDeclaration extends Object {
+interface ExtendedStyleDeclaration extends CSSStyleDeclaration {
   getPropertyValue: (prop: string) => string;
+  length: number;
 }
 
 const getIsDeclaredAfter = (styleRule: CSSStyleRule) => (selector: string) => {
@@ -40,19 +41,25 @@ class CSSHelp {
       .map(x => x.style);
   }
   getStyle(selector: string): ExtendedStyleDeclaration {
+    let len = 0;
     const newStyle = Object.entries(
       this._getStyleRules()?.find(ele => ele?.selectorText === selector)
         ?.style || {}
-    )?.reduce<Record<string, string>>(
-      (prev, curr) => ({
+    )?.reduce((prev, curr) => {
+      if (Number.isInteger(Number(curr[0]))) len++;
+      // console.log(curr);
+      const _curr =
+        typeof curr[1] === 'string' ? curr[1].replace(/\s+/g, '') : curr[1];
+      return {
         ...prev,
-        [curr[0]]: curr[1].replace(/\s+/g, '')
-      }),
-      {}
-    );
+        [curr[0]]: _curr
+      };
+    }, {}) as CSSStyleDeclaration;
     return {
       ...newStyle,
-      getPropertyValue: (prop: string) => newStyle?.[prop] ?? ''
+      getPropertyValue: (prop: string): string =>
+        (newStyle?.[prop] as string) ?? '',
+      length: len
     };
   }
   getStyleRule(selector: string): ExtendedStyleRule | null {

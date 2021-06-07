@@ -17,12 +17,17 @@ describe('css-help', () => {
     const conditionText = mediaRule.media[0];
     mediaRule.conditionText = conditionText;
   });
-  describe('getStyleDeclaration', () => {
-    it('should return a CSSStyleDeclartion array of length 1', () => {
-      expect(t.getStyleDeclarations('*')?.length).toEqual(1);
+  describe('getStyle', () => {
+    it('should return an ExtendedCSSStyleDeclartion object of length 1', () => {
+      expect(t.getStyle('*')?.length).toEqual(1);
     });
-    it('should return a non-empty CSSStyleDeclaration array', () => {
-      expect(t.getStyleDeclaration('.bb1')).toBeTruthy();
+    it('should return a non-empty ExtendedCSSStyleDeclaration object', () => {
+      expect(t.getStyle('.bb1')).toBeTruthy();
+    });
+    it('should return a whitespaceless string', () => {
+      expect(t.getStyle('.bb1d')?.background).toEqual(
+        'linear-gradient(var(--building-color1)50%,var(--window-color1))'
+      );
     });
   });
   describe('isPropertyUsed', () => {
@@ -41,21 +46,18 @@ describe('css-help', () => {
   describe('getPropertyValue', () => {
     it('should return custom property value needing trim', () => {
       expect(
-        t
-          .getStyleDeclaration(':root')
-          ?.getPropertyValue('--building-color1')
-          .trim()
+        t.getStyle(':root')?.getPropertyValue('--building-color1')?.trim()
       ).toEqual('#aa80ff');
     });
     it('should return value to existing property', () => {
       expect(
-        t.getStyleDeclaration('.bb4a')?.getPropertyValue('background-color')
+        t.getStyle('.bb4a')?.getPropertyValue('background-color')
       ).toBeTruthy();
     });
     it('should return property value without evaluating result', () => {
-      expect(
-        t.getStyleDeclaration('.bb4a')?.getPropertyValue('background-color')
-      ).toEqual('var(--building-color4)');
+      expect(t.getStyle('.bb4a')?.getPropertyValue('background-color')).toEqual(
+        'var(--building-color4)'
+      );
     });
   });
   describe('getCSSRules', () => {
