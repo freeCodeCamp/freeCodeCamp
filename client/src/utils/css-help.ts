@@ -88,7 +88,7 @@ class CSSHelp {
     );
     // Most* browser extensions inject styles with class/media attributes
     const style: HTMLStyleElement | null = this.doc?.querySelector(
-      'style:not([class][media])'
+      'style:not([class]):not([media])'
     );
     if (link?.sheet?.cssRules?.length) {
       return link.sheet;
