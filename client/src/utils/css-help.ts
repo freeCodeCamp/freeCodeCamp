@@ -40,19 +40,16 @@ class CSSHelp {
       .map(x => x.style);
   }
   getStyle(selector: string): ExtendedStyleDeclaration | null {
-    const oldStyle = this._getStyleRules().find(
+    const style = this._getStyleRules().find(
       ele => ele?.selectorText === selector
-    )?.style;
-    if (!oldStyle) return null;
-    const getPropertyValue = oldStyle.getPropertyValue.bind(oldStyle);
-    return {
-      ...oldStyle,
-      getPropVal(prop: string, strip = false) {
-        return strip
-          ? getPropertyValue(prop).replace(/\s+/g, '')
-          : getPropertyValue(prop);
-      }
+    )?.style as ExtendedStyleDeclaration | undefined;
+    if (!style) return null;
+    style.getPropVal = (prop: string, strip = false) => {
+      return strip
+        ? style.getPropertyValue(prop).replace(/\s+/g, '')
+        : style.getPropertyValue(prop);
     };
+    return style;
   }
   getStyleRule(selector: string): ExtendedStyleRule | null {
     const styleRule = this._getStyleRules()?.find(
