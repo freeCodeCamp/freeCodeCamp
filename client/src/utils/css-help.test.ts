@@ -25,7 +25,7 @@ describe('css-help', () => {
       expect(t.getStyle('.bb1')).toBeTruthy();
     });
     it('should return a whitespaceless string', () => {
-      expect(t.getStyle('.bb1d')?.background).toEqual(
+      expect(t.getStyle('.bb1d')?.getPropVal('background', true)).toEqual(
         'linear-gradient(var(--building-color1)50%,var(--window-color1))'
       );
     });
