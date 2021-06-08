@@ -111,26 +111,17 @@ const libsVHDL =
   std_cell_lib     ieee std_cell_lib
   synopsys`;
 
-const solutionVHDL = [
-  'ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06',
-  'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys',
-  'dw03', 'des_system_lib'
-];
-
 const libsCustom =
   `a b c d
   b c d
   d c
   c base
   base`;
-const solutionCustom = ['base', 'c', 'd', 'b', 'a'];
 
 const libsUnorderable =
   `TestLib Base MainLib
   MainLib TestLib
   Base`;
-
-const solutionUnorderable = ['Base'];
 ```
 
 ## --seed-contents--
