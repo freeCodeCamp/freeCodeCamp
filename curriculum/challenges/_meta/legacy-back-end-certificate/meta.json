@@ -14,6 +14,5 @@
       "Legacy Back End Certificate"
     ]
   ],
-  "isPrivate": true,
-  "fileName": "12-certificates/legacy-back-end-certificate.json"
+  "isPrivate": true
 }

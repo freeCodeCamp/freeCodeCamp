@@ -37,14 +37,14 @@ dashedName: create-a-media-query
 
 ```js
 const media = new __helpers.CSSHelp(document).getCSSRules('media');
-assert(media.some(x => x.conditionText?.includes('(max-height: 800px)')));
+assert(media.some(x => x.media?.mediaText?.includes('(max-height: 800px)')));
 ```
 
 当设备 `height` 小于等于 `800px` 时，`p` 元素的 `font-size` 应为 `10px`。
 
 ```js
 const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-height: 800px)');
-assert(rules?.find(x => x.selectorText === 'p')?.style.fontSize === "10px");
+assert(rules?.find(x => x.selectorText === 'p')?.style?.fontSize === "10px");
 ```
 
 当设备 `height` 大于 `800px` 时，`p` 元素的 `font-size` 应为 `20px`。

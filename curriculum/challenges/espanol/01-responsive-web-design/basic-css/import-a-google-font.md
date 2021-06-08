@@ -40,7 +40,7 @@ Importa la fuente `Lobster` a tu página web. Luego, usa un selector de elemento
 Debes importar la fuente `Lobster`.
 
 ```js
-assert(new RegExp('googleapis', 'gi').test(code));
+assert($('link[href*="googleapis" i]').length);
 ```
 
 Tu elemento `h2` debe usar la fuente `Lobster`.

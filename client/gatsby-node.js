@@ -1,4 +1,4 @@
-const env = require('../config/env');
+const env = require('../config/env.json');
 const webpack = require('webpack');
 
 const { createFilePath } = require('gatsby-source-filesystem');

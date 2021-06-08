@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Landing from '../components/landing';
-import { AllChallengeNode } from '../redux/propTypes';
+import { AllChallengeNode } from '../redux/prop-types';
 
 const IndexPage = () => {
   return <Landing />;
