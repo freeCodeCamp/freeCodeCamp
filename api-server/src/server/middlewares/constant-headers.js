@@ -1,4 +1,4 @@
-import { homeLocation } from '../../../../config/env';
+import { homeLocation } from '../../../../config/env.json';
 import { allowedOrigins } from '../../../../config/cors-settings';
 
 export default function constantHeaders() {
