@@ -103,4 +103,4 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   checkCurriculumLocale();
 }
 
-fs.writeFileSync(`${globalConfigPath}/env-data.json`, JSON.stringify(env));
+fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));

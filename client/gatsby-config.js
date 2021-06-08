@@ -1,5 +1,5 @@
 const path = require('path');
-const envData = require('../config/env-data.json');
+const envData = require('../config/env.json');
 const {
   buildChallenges,
   replaceChallengeNode,

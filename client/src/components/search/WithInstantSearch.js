@@ -15,7 +15,7 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
-import envData from '../../../../config/env-data.json';
+import envData from '../../../../config/env.json';
 
 import { createSelector } from 'reselect';
 

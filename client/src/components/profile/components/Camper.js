@@ -16,7 +16,7 @@ import Link from '../../helpers/Link';
 import './camper.css';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env-data.json';
+import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 const localeCode = langCodes[clientLocale];

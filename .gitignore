@@ -158,7 +158,7 @@ jspm_packages/
 .netlify
 
 ### Generated config files ###
-config/env-data.json
+config/env.json
 config/client/sass-compile.json
 config/client/frame-runner.json
 config/client/test-evaluator.json

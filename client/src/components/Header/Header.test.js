@@ -6,7 +6,7 @@ import { UniversalNav } from './components/UniversalNav';
 import { NavLinks } from './components/NavLinks';
 import AuthOrProfile from './components/AuthOrProfile';
 
-import envData from '../../../../config/env-data.json';
+import envData from '../../../../config/env.json';
 
 const { apiLocation, clientLocale } = envData;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import envData from '../../../../config/env-data.json';
+import envData from '../../../../config/env.json';
 
 const { apiLocation } = envData;
 

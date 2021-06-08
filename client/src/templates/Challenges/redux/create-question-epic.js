@@ -9,7 +9,7 @@ import {
 } from '../redux';
 import { tap, mapTo } from 'rxjs/operators';
 import { transformEditorLink } from '../utils';
-import envData from '../../../../../config/env-data.json';
+import envData from '../../../../../config/env.json';
 import i18next from 'i18next';
 
 const { forumLocation } = envData;

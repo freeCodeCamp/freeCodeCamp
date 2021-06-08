@@ -4,7 +4,7 @@
 // that Webpack will never try to include locales that we know are not used.
 
 const words = preval`
-  const config = require('../../../config/env-data.json');
+  const config = require('../../../config/env.json');
   const { clientLocale } = config;
   const target = '../../i18n/locales/' + clientLocale + '/motivation.json';
   const words = require(target);
