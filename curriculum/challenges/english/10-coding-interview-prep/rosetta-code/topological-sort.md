@@ -57,28 +57,34 @@ There are two popular algorithms for topological sorting:
 assert(typeof topologicalSort === 'function');
 ```
 
-`topologicalSort` should return correct library order.
+`topologicalSort(libsSimple)` should return an array.
+
+```js
+assert(Array.isArray(topologicalSort(libsSimple)));
+```
+
+`topologicalSort(libsSimple)` should return `['bbb', 'aaa']`.
 
 ```js
 assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
 ```
 
-`topologicalSort` should return correct library order.
+`topologicalSort(libsVHDL)` should return `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`.
 
 ```js
-assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
+assert.deepEqual(topologicalSort(libsVHDL), ['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']);
 ```
 
-`topologicalSort` should return correct library order.
+`topologicalSort(libsCustom)` should return `['base', 'c', 'd', 'b', 'a']`.
 
 ```js
-assert.deepEqual(topologicalSort(libsCustom), solutionCustom);
+assert.deepEqual(topologicalSort(libsCustom), ['base', 'c', 'd', 'b', 'a']);
 ```
 
 `topologicalSort` should ignore unorderable dependencies.
 
 ```js
-assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable);
+assert.deepEqual(topologicalSort(libsUnorderable), ['Base']);
 ```
 
 # --seed--
