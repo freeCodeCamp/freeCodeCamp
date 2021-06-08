@@ -137,7 +137,7 @@
     "prettier": "2.3.0",
     "prismjs": "1.23.0",
     "shx": "0.3.3",
-    "start-server-and-test": "1.12.3",
+    "start-server-and-test": "1.12.5",
     "typescript": "4.3.2",
     "webpack-bundle-analyzer": "4.4.2"
   }
