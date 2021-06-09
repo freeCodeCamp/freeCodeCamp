@@ -100,7 +100,7 @@ class DesktopLayout extends Component {
                     orientation='horizontal'
                   >
                     <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
-                      {<Fragment>{editor}</Fragment>}
+                      <Fragment>{editor}</Fragment>
                     </ReflexElement>
                     {isConsoleDisplayable && (
                       <ReflexSplitter propagate={true} {...resizeProps} />
