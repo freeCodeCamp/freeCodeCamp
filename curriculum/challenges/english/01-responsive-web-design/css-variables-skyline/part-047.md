@@ -20,8 +20,7 @@ assert.notInclude(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.
 You should change the now first `linear-gradient` color to transition at `50%`.
 
 ```js
-// TODO: handle whitespace in calcualted values
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient(var(--building-color1) 50%, var(--window-color1))');
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(var(--building-color1)50%,var(--window-color1))');
 ```
 
 # --seed--

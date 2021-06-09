@@ -35,14 +35,13 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.bac
 You should give the `background` a `linear-gradient` starting from `--building-color1`.
 
 ```js
-// TODO: fix whitespace on calculated values
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background, 'linear-gradient(var(--building-color1');
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.getPropVal('background', true), 'linear-gradient(var(--building-color1');
 ```
 
 You should give the `background` a `linear-gradient` ending at `--window-color1`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background, 'linear-gradient(var(--building-color1), var(--window-color1))');
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.getPropVal('background', true), 'linear-gradient(var(--building-color1),var(--window-color1))');
 ```
 
 # --seed--

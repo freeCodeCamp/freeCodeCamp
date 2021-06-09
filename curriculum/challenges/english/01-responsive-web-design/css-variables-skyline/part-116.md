@@ -14,20 +14,19 @@ In the `sky` class of the media query, change the two `#ffcf33` color values to 
 You should change the first color values from `#ffcf33` to `#ccc`.
 
 ```js
-// TODO: handle whitespace
-assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(rgb\(204, 204, 204\)|( 0%), rgb\(204, 204, 204\) 20%/);
+assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.getPropVal('background', true), /radial-gradient\(rgb\(204,204,204\)|(0%),rgb\(204,204,204\)20%/);
 ```
 
 You should change the second color value from `#ffff66` to `#445`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(circle closest-corner at 15% 15%, rgb\(204, 204, 204\)( 0%), rgb\(204, 204, 204\) 20%, rgb\(68, 68, 85\) 21%/);
+assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.getPropVal('background', true), /radial-gradient\(circleclosest-cornerat15%15%,rgb\(204,204,204\)(0%),rgb\(204,204,204\)20%,rgb\(68,68,85\)21%/);
 ```
 
 You should change the third color value from `#bbeeff` to `#223`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.background, /radial-gradient\(circle closest-corner at 15% 15%, rgb\(204, 204, 204\)( 0%), rgb\(204, 204, 204\) 20%, rgb\(68, 68, 85\) 21%, rgb\(34, 34, 51\) 100%\)/);
+assert.match(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)")?.find(x => x.selectorText===".sky")?.getPropVal('background', true), /radial-gradient\(circleclosest-cornerat15%15%,rgb\(204,204,204\)(0%),rgb\(204,204,204\)20%,rgb\(68,68,85\)21%,rgb\(34,34,51\)100%\)/);
 ```
 
 # --seed--

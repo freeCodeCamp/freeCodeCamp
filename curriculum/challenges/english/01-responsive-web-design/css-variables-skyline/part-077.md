@@ -22,20 +22,19 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.bac
 You should use a direction of `90deg`.
 
 ```js
-// TODO: handle whitespace in calculated values
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, "repeating-linear-gradient(90deg");
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.getPropVal('background', true), "repeating-linear-gradient(90deg");
 ```
 
 You should use a first color of `--building-color4` from `0%` to `10%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, /repeating-linear-gradient\(90deg, var\(--building-color4\)( 0%)?, var\(--building-color\) 10%/);
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color4\)(0%)?,var\(--building-color\)10%/);
 ```
 
 You should use a second color of `transparent` from `10%` to `15%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.background, /repeating-linear-gradient\(90deg, var\(--building-color4\)( 0%)?, var\(--building-color\) 10%, transparent 10%, transparent 15%\)/);
+assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color4\)(0%)?,var\(--building-color\)10%,transparent10%,transparent15%\)/);
 ```
 
 # --seed--

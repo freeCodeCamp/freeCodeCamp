@@ -14,8 +14,7 @@ You can see the hard color change at the top of the section. Change the gradient
 You should change the `background` property of `.bb2b` from using `linear-gradient` to using `repeating-linear-gradient`.
 
 ```js
-// TODO: handle whitespace in calcualted values
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, "repeating-linear-gradient(var(--building-color2), var(--building-color2) 6%, var(--window-color2) 6%, var(--window-color2) 9%)");
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.getPropVal('background', true), "repeating-linear-gradient(var(--building-color2),var(--building-color2)6%,var(--window-color2)6%,var(--window-color2)9%)");
 ```
 
 # --seed--

@@ -30,20 +30,19 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.back
 You should use `90deg` for the direction in the first argument of `repeating-linear-gradient`.
 
 ```js
-// TODO: handle whitespace in calculated values
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient(90deg");
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.getPropVal('background', true), "repeating-linear-gradient(90deg");
 ```
 
 You should use `--building-color3` for the first two colors.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient(90deg, var(--building-color3), var(--building-color3)");
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.getPropVal('background', true), "repeating-linear-gradient(90deg,var(--building-color3),var(--building-color3)");
 ```
 
 You should use `--window-color3` at `15%` for the third color.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.background, "repeating-linear-gradient(90deg, var(--building-color3), var(--building-color3), var(--window-color3) 15%)");
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb3")?.getPropVal('background', true), "repeating-linear-gradient(90deg,var(--building-color3),var(--building-color3),var(--window-color3)15%)");
 ```
 
 # --seed--

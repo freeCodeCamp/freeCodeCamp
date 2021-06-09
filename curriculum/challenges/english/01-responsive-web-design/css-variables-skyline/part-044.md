@@ -36,20 +36,19 @@ assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.bac
 You should use `orange` as the first color in the `linear-gradient`.
 
 ```js
-// TODO: handle whitespace in calculated values
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient(orange');
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange');
 ```
 
 You should use `--building-color1` as the second color in the `linear-gradient`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient(orange, var(--building-color1)');
+assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1)');
 ```
 
 You should use `--window-color1` as the third color in the `linear-gradient`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient(orange, var(--building-color1), var(--window-color1))');
+assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1),var(--window-color1))');
 ```
 
 # --seed--
