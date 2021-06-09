@@ -136,7 +136,7 @@
     "ora": "5.4.1",
     "prettier": "2.3.1",
     "prismjs": "1.23.0",
-    "process": "^0.11.10",
+    "process": "0.11.10",
     "shx": "0.3.3",
     "start-server-and-test": "1.12.5",
     "typescript": "4.3.2",
