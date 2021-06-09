@@ -14,13 +14,13 @@ Create a new variable in `:root` named `window-color2` with a value of `#8cd9b3`
 You should create a new property variable called `window-color2` within `:root`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--window-color2'));
+assert.exists(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--window-color2'));
 ```
 
 You should give `window-color2` a value of `#8cd9b3`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--window-color2').trim(), '#8cd9b3');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--window-color2').trim(), '#8cd9b3');
 ```
 
 # --seed--

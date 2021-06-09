@@ -14,13 +14,13 @@ You can see the `body` (it's the inner-most box on your page); the box around it
 You should use the `body` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('body'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('body'));
 ```
 
 Your `body` should have a `height` of `100vh`.
 
 ```js
-const bodyStyles = new __helpers.CSSHelp(document).getStyleDeclaration('body');
+const bodyStyles = new __helpers.CSSHelp(document).getStyle('body');
 assert.equal(bodyStyles?.height, '100vh');
 ```
 
@@ -28,13 +28,13 @@ Your `body` should have a `margin` of `0`.
 
 ```js
 // TODO: Editor adds margin as preferential style - 8px is always added.
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('body')?.margin, '0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.margin, '0px');
 ```
 
 Your `body` should have the `overflow` property set to `hidden`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('body')?.overflow, 'hidden');
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.overflow, 'hidden');
 ```
 
 # --seed--

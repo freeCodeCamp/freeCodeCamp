@@ -22,19 +22,19 @@ This will be used in a few places to center window elements vertically, and even
 You should give `.window-wrap` a `display` of `flex`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".window-wrap")?.display, "flex");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".window-wrap")?.display, "flex");
 ```
 
 You should give `.window-wrap` an `align-items` of `center`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".window-wrap")?.alignItems, "center");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".window-wrap")?.alignItems, "center");
 ```
 
 You should give `.window-wrap` a `justify-content` of `space-evenly`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".window-wrap")?.justifyContent, "space-evenly");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".window-wrap")?.justifyContent, "space-evenly");
 ```
 
 # --seed--

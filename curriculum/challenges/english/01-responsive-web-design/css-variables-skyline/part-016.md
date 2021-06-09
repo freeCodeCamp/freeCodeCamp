@@ -14,37 +14,37 @@ It's that simple. Use the same variable as the `background-color` of the `.bb1b`
 The `background-color` of the `bb1b` element should be set.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.backgroundColor)
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1b')?.backgroundColor)
 ```
 
 You should use `var(--building-color1)` to set the `background-color` of the `.bb1b` element.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.backgroundColor, 'var(--building-color1)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1b')?.backgroundColor, 'var(--building-color1)');
 ```
 
 The `background-color` of the `bb1c` element should be set.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.backgroundColor)
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1c')?.backgroundColor)
 ```
 
 You should use `var(--building-color1)` to set the `background-color` of the `.bb1c` element.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.backgroundColor, 'var(--building-color1)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1c')?.backgroundColor, 'var(--building-color1)');
 ```
 
 The `background-color` of the `bb1d` element should be set.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.backgroundColor)
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1d')?.backgroundColor)
 ```
 
 You should use `var(--building-color1)` to set the `background-color` of the `.bb1d` element.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.backgroundColor, 'var(--building-color1)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.backgroundColor, 'var(--building-color1)');
 ```
 
 # --seed--

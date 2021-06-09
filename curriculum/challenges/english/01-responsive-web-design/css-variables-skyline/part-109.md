@@ -14,7 +14,7 @@ You can remove the `background-color` for this building now, since it isn't need
 You should remove the `background-color` of `.fb6`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".fb6")?.backgroundColor);
 ```
 
 # --seed--

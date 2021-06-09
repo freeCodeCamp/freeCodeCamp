@@ -14,19 +14,19 @@ Add the same `display`, `align-items`, and `justify-content` properties and valu
 You should give `.foreground-buildings` a `display` property of `flex`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.display, 'flex');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.display, 'flex');
 ```
 
 You should give `.foreground-buildings` an `align-items` property of `flex-end`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.alignItems, 'flex-end');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.alignItems, 'flex-end');
 ```
 
 You should give `.foreground-buildings` a `justify-content` property of `space-evenly`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.justifyContent, 'space-evenly');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.justifyContent, 'space-evenly');
 ```
 
 # --seed--

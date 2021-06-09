@@ -14,25 +14,25 @@ Move the position of `.fb4` relative to where it is now by adding a `position` o
 You should give `.fb4` a `position` of `relative`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.position, 'relative');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb4')?.position, 'relative');
 ```
 
 You should give `.fb4` a `left` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.left, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb4')?.left, '10%');
 ```
 
 You should give `.fb5` a `position` of `relative`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.position, 'relative');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb5')?.position, 'relative');
 ```
 
 You should give `.fb5` a `right` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.right, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb5')?.right, '10%');
 ```
 
 # --seed--

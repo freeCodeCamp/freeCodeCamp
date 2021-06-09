@@ -20,7 +20,7 @@ assert.exists(new __helpers.CSSHelp(document).isPropertyUsed('--building-color4'
 You should give `--building-color4` a value of `#538cc6` in the `:root` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--building-color4').trim(), '#538cc6');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--building-color4').trim(), '#538cc6');
 ```
 
 # --seed--

@@ -14,25 +14,25 @@ Give the `sky` class a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ff
 You should give `.sky` a `radial-gradient` in the `background` property.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, "radial-gradient");
+assert.include(new __helpers.CSSHelp(document).getStyle(".sky")?.background, "radial-gradient");
 ```
 
 You should give the `radial-gradient` a first color of `#ffcf33`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%/);
 ```
 
 You should give the `radial-gradient` a second color of `#ffff66` at `21%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%/);
 ```
 
 You should give the `radial-gradient` a third color of `#bbeeff` at `100%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".sky")?.background, /radial-gradient\(rgb\(255, 207, 51\)( 0%)?, rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
 ```
 
 # --seed--

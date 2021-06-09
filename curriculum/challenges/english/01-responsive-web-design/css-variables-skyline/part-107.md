@@ -14,25 +14,25 @@ Finally! You made it to the last building! Add a repeating gradient to it with a
 You should add a `repeating-linear-gradient` to `.fb6` in the `background` property.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.background, "repeating-linear-gradient");
+assert.include(new __helpers.CSSHelp(document).getStyle(".fb6")?.background, "repeating-linear-gradient");
 ```
 
 You should give the `repeating-linear-gradient` a direction of `90deg`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.getPropVal('background', true), "repeating-linear-gradient(90deg");
+assert.include(new __helpers.CSSHelp(document).getStyle(".fb6")?.getPropVal('background', true), "repeating-linear-gradient(90deg");
 ```
 
 You should give the `repeating-linear-gradient` a first color of `--building-color3` from `0%` to `10%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color3\)(0%)?,var\(--building-color3\)10%/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".fb6")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color3\)(0%)?,var\(--building-color3\)10%/);
 ```
 
 You should give the `repeating-linear-gradient` a second color of `transparent` from `10%` to `30%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".fb6")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color3\)(0%)?,var\(--building-color3\)10%,transparent10%,transparent30%\)/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".fb6")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color3\)(0%)?,var\(--building-color3\)10%,transparent10%,transparent30%\)/);
 ```
 
 # --seed--

@@ -14,7 +14,7 @@ I don't really like that color. Change the value of your variable from `#999` to
 You should change the value of the `--building-color1` property variable from `#999` to `#aa80ff`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1').trim(),'#aa80ff');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color1').trim(),'#aa80ff');
 ```
 
 # --seed--

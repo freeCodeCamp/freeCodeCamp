@@ -23,25 +23,25 @@ In the example, `color1` is solid at the top, `color2` is solid at the bottom, a
 You should apply a `background` to `.bb1a`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background);
+assert(new __helpers.CSSHelp(document).getStyle('.bb1a')?.background);
 ```
 
 You should give the `background` a `linear-gradient`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background, 'linear-gradient');
+assert.include(new __helpers.CSSHelp(document).getStyle('.bb1a')?.background, 'linear-gradient');
 ```
 
 You should give the `background` a `linear-gradient` starting from `--building-color1`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.getPropVal('background', true), 'linear-gradient(var(--building-color1');
+assert.include(new __helpers.CSSHelp(document).getStyle('.bb1a')?.getPropVal('background', true), 'linear-gradient(var(--building-color1');
 ```
 
 You should give the `background` a `linear-gradient` ending at `--window-color1`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.getPropVal('background', true), 'linear-gradient(var(--building-color1),var(--window-color1))');
+assert.include(new __helpers.CSSHelp(document).getStyle('.bb1a')?.getPropVal('background', true), 'linear-gradient(var(--building-color1),var(--window-color1))');
 ```
 
 # --seed--

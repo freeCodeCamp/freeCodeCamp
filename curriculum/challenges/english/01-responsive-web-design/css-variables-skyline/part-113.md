@@ -14,7 +14,7 @@ At the top of the sky gradient color list, where you would put a direction for t
 You should give the `.sky` `radial-gradient` a direction of `circle closest-corner at 15% 15%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(".sky")?.background, /radial-gradient\(circle closest-corner at 15% 15%, rgb\(255, 207, 51\)|( 0%), rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".sky")?.background, /radial-gradient\(circle closest-corner at 15% 15%, rgb\(255, 207, 51\)|( 0%), rgb\(255, 207, 51\) 20%, rgb\(255, 255, 102\) 21%, rgb\(187, 238, 255\) 100%\)/);
 ```
 
 # --seed--

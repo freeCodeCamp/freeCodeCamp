@@ -14,19 +14,19 @@ Give `.fb2a` a `width` of `100%` and `.fb2b` a `width` of `100%` and `height` of
 You should give `.fb2a` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2a")?.width, "100%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2a")?.width, "100%");
 ```
 
 You should give `.fb2b` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2b")?.width, "100%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2b")?.width, "100%");
 ```
 
 You should give `.fb2b` a `height` of `75%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2b")?.height, "75%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2b")?.height, "75%");
 ```
 
 # --seed--

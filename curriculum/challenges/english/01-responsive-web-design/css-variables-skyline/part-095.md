@@ -14,7 +14,7 @@ I'm not thrilled about that black for the windows anymore. Change the `--window-
 You should change the value of `--window-color1` to `#bb99ff`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(":root")?.getPropertyValue("--window-color1")?.trim(), "#bb99ff");
+assert.equal(new __helpers.CSSHelp(document).getStyle(":root")?.getPropertyValue("--window-color1")?.trim(), "#bb99ff");
 ```
 
 # --seed--

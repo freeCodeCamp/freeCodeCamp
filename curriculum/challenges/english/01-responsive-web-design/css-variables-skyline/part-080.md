@@ -14,13 +14,13 @@ When you make the left and right borders bigger, the border on the bottom will e
 You should give `.fb1a` a `border-left` of `2vw solid transparent`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1a")?.borderLeft, "2vw solid transparent");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1a")?.borderLeft, "2vw solid transparent");
 ```
 
 You should give `.fb1a` a `border-right` of `2vw solid transparent`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1a")?.borderRight, "2vw solid transparent");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1a")?.borderRight, "2vw solid transparent");
 ```
 
 # --seed--

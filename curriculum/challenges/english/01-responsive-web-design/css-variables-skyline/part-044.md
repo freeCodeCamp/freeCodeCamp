@@ -24,31 +24,31 @@ Add a `linear-gradient` to `.bb1d` with `orange` as the first color, `--building
 You should use the `background` on `.bb1d`.
 
 ```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.bb1d')?.background);
 ```
 
 You should give the `background` property a `linear-gradient`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.background, 'linear-gradient');
+assert.include(new __helpers.CSSHelp(document).getStyle('.bb1d')?.background, 'linear-gradient');
 ```
 
 You should use `orange` as the first color in the `linear-gradient`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange');
+assert.include(new __helpers.CSSHelp(document).getStyle('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange');
 ```
 
 You should use `--building-color1` as the second color in the `linear-gradient`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1)');
+assert.include(new __helpers.CSSHelp(document).getStyle('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1)');
 ```
 
 You should use `--window-color1` as the third color in the `linear-gradient`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1),var(--window-color1))');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1),var(--window-color1))');
 ```
 
 # --seed--

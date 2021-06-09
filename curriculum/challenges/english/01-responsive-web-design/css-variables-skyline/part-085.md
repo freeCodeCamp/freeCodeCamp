@@ -14,19 +14,19 @@ Give the `.fb2-window` elements a `width` of `22%`, `height` of `100%`, and a `b
 You should give the `.fb2-window` elements a `width` of `22%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2-window")?.width, "22%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2-window")?.width, "22%");
 ```
 
 You should give the `.fb2-window` elements a `height` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2-window")?.height, "100%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2-window")?.height, "100%");
 ```
 
 You should give the `.fb2-window` elements a `background-color` of `--window-color3`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2-window")?.backgroundColor, "var(--window-color3)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2-window")?.backgroundColor, "var(--window-color3)");
 ```
 
 # --seed--

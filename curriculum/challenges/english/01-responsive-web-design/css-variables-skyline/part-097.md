@@ -14,13 +14,13 @@ Give `.fb4b` a `width` of `100%` and `height` of `89%`.
 You should give `.fb4b` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.width, "100%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4b")?.width, "100%");
 ```
 
 You should give `.fb4b` a `height` of `89%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.height, "89%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4b")?.height, "89%");
 ```
 
 # --seed--

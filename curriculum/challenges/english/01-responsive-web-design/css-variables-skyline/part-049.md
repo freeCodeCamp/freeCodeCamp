@@ -14,13 +14,13 @@ Give `.bb2b` a `width` and `height` of `100%` to make it fill the building conta
 You should give `.bb2b` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2b')?.width, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2b')?.width, '100%');
 ```
 
 You should give `.bb2b` a `height` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2b')?.height, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2b')?.height, '100%');
 ```
 
 # --seed--

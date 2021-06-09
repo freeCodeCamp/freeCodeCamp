@@ -14,31 +14,31 @@ You want the foreground buildings container to sit directly on top of the backgr
 You should use a `.foreground-buildings` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.foreground-buildings'));
 ```
 
 You should give the `.foreground-buildings` element a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.width, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.width, '100%');
 ```
 
 You should give the `.foreground-buildings` element a `height` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.height, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.height, '100%');
 ```
 
 You should give the `.foreground-buildings` element a `position` of `absolute`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.position, 'absolute');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.position, 'absolute');
 ```
 
 You should give the `.foreground-buildings` element a `top` of `0`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.top, '0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.top, '0px');
 ```
 
 # --seed--

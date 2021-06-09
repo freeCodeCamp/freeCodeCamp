@@ -25,31 +25,31 @@ Here, the top half of the element will be `color1` and the bottom half will be `
 You should give `.bb2b` a `background` property.
 
 ```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle(`.bb2b`)?.background);
 ```
 
 You should use a `linear-gradient` on the `background`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.background, "linear-gradient");
+assert.include(new __helpers.CSSHelp(document).getStyle(`.bb2b`)?.background, "linear-gradient");
 ```
 
 You should use `--building-color2` from `0%` to `6%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.getPropVal('background', true), /var\(--building-color2\)(0%)?,var\(--building-color2\)6%/);
+assert.match(new __helpers.CSSHelp(document).getStyle(`.bb2b`)?.getPropVal('background', true), /var\(--building-color2\)(0%)?,var\(--building-color2\)6%/);
 ```
 
 You should use `--window-color2` from `6%` to `9%`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.getPropVal('background', true), "var(--window-color2)6%,var(--window-color2)9%");
+assert.include(new __helpers.CSSHelp(document).getStyle(`.bb2b`)?.getPropVal('background', true), "var(--window-color2)6%,var(--window-color2)9%");
 ```
 
 `.bb2b` should have a `linear-gradient` transitioning from `--building-color2` at `0%` to `6%`, and `--window-color2` at `6%` to `9%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyleDeclaration(`.bb2b`)?.getPropVal('background', true), /linear-gradient\(var\(--building-color2\)(0%)?,var\(--building-color2\)6%,var\(--window-color2\)6%,var\(--window-color2\)9%\)/);
+assert.match(new __helpers.CSSHelp(document).getStyle(`.bb2b`)?.getPropVal('background', true), /linear-gradient\(var\(--building-color2\)(0%)?,var\(--building-color2\)6%,var\(--window-color2\)6%,var\(--window-color2\)9%\)/);
 ```
 
 # --seed--

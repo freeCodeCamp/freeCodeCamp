@@ -14,19 +14,19 @@ Give the `.fb3-window` elements a `width` of `25%`, a `height` of `80%`, and use
 You should give `.fb3-window` a `width` of `25%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3-window")?.width, "25%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3-window")?.width, "25%");
 ```
 
 You should give `.fb3-window` a `height` of `80%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3-window")?.height, "80%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3-window")?.height, "80%");
 ```
 
 You should give `.fb3-window` a `background-color` of `--window-color1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3-window")?.backgroundColor, "var(--window-color1)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3-window")?.backgroundColor, "var(--window-color1)");
 ```
 
 # --seed--

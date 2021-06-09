@@ -14,7 +14,7 @@ Okay, the buildings are done. Go back to the `*` selector and remove the `border
 You should remove the `border` from the `*` selector.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration("*")?.border);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle("*")?.border);
 ```
 
 # --seed--

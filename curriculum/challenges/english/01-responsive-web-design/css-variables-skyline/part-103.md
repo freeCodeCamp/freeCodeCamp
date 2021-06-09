@@ -14,13 +14,13 @@ This building is going to have another triangle on top. Give the top section a `
 You should give `.fb4a` a `border-top` of `5vh solid transparent`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4a")?.borderTop, "5vh solid transparent")
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4a")?.borderTop, "5vh solid transparent")
 ```
 
 You should give `.fb4a` a `border-left` of `8vw solid var(--building-color1)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4a")?.borderLeft, "8vw solid var(--building-color1)")
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4a")?.borderLeft, "8vw solid var(--building-color1)")
 ```
 
 # --seed--

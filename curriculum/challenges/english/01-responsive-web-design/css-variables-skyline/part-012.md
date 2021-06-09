@@ -14,73 +14,73 @@ Give the parts of your building `width` and `height` properties with these value
 You should use a class selector to style `.bb1a`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1a'));
 ```
 
 You should give `.bb1a` a `width` of `70%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.width, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1a')?.width, '70%');
 ```
 
 You should give `.bb1a` a `height` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.height, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1a')?.height, '10%');
 ```
 
 You should use a class selector to style `.bb1b`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1b'));
 ```
 
 You should give `.bb1b` a `width` of `80%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.width, '80%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1b')?.width, '80%');
 ```
 
 You should give `.bb1b` a `height` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1b')?.height, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1b')?.height, '10%');
 ```
 
 You should use a class selector to style `.bb1c`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1c'));
 ```
 
 You should give `.bb1c` a `width` of `90%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.width, '90%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1c')?.width, '90%');
 ```
 
 You should give `.bb1c` a `height` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1c')?.height, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1c')?.height, '10%');
 ```
 
 You should use a class selector to style `.bb1d`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1d'));
 ```
 
 You should give `.bb1d` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.width, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.width, '100%');
 ```
 
 You should give `.bb1d` a `height` of `70%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.height, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.height, '70%');
 ```
 
 # --seed--

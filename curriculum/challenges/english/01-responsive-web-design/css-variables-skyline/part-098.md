@@ -14,13 +14,13 @@ Add your `--building-color1` variable as value of the `background-color` propert
 You should remove the `background-color` from `.fb4`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".fb4")?.backgroundColor);
 ```
 
 You should give `.fb4b` a `background-color` of `--building-color1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.backgroundColor, "var(--building-color1)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4b")?.backgroundColor, "var(--building-color1)");
 ```
 
 # --seed--

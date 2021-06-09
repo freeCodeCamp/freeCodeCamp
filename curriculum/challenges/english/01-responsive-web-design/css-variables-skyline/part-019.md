@@ -14,37 +14,37 @@ Give the new buildings `width` and `height` properties of: `10%` and `50%` for `
 You should give `.bb2` a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.width, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2')?.width, '10%');
 ```
 
 You should give `.bb2` a `height` of `50%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.height, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2')?.height, '50%');
 ```
 
 You should give `.bb3` a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb3')?.width, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb3')?.width, '10%');
 ```
 
 You should give `.bb3` a `height` of `50%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb3')?.height, '55%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb3')?.height, '55%');
 ```
 
 You should give `.bb4` a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb4')?.width, '11%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb4')?.width, '11%');
 ```
 
 You should give `.bb4` a `height` of `50%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb4')?.height, '58%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb4')?.height, '58%');
 ```
 
 # --seed--

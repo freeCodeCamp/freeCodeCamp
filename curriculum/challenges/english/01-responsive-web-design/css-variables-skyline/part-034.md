@@ -14,7 +14,7 @@ Now that you did that, you can delete the old `.foreground-buildings` declaratio
 You should delete the whole `.foreground-buildings` style declaration.
 
 ```js
-assert.notExists(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings'));
+assert.notExists(new __helpers.CSSHelp(document).getStyle('.foreground-buildings'));
 ```
 
 # --seed--

@@ -14,33 +14,33 @@ That one used the fallback value as well? I see the problem now! The variables y
 You should declare a `:root` selector at the top of the stylesheet.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration(':root'));
+assert.exists(new __helpers.CSSHelp(document).getStyle(':root'));
 ```
 
 You should define `--building-color1` with a value of `#aa80ff` in the `:root` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--building-color1')?.trim(), '#aa80ff');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--building-color1')?.trim(), '#aa80ff');
 ```
 
 You should define `--building-color2` with a value of `#66cc99` in the `:root` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--building-color2')?.trim(), '#66cc99');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--building-color2')?.trim(), '#66cc99');
 ```
 
 You should define `--building-color3` with a value of `#cc6699` in the `:root` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--building-color3')?.trim(), '#cc6699');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--building-color3')?.trim(), '#cc6699');
 ```
 
 You should remove the custom property variables from `.bb1`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1'));
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color2'));
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color3'));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color1'));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color2'));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color3'));
 ```
 
 # --seed--

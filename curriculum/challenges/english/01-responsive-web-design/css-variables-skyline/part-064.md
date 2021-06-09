@@ -14,25 +14,25 @@ Remove the `background-color` property and value from `.bb4`, and add it to the 
 You should remove the `background-color` from `.bb4`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".bb4")?.backgroundColor);
 ```
 
 You should give `.bb4a` a `background-color` of `--building-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4a")?.backgroundColor, "var(--building-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4a")?.backgroundColor, "var(--building-color4)");
 ```
 
 You should give `.bb4b` a `background-color` of `--building-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4b")?.backgroundColor, "var(--building-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4b")?.backgroundColor, "var(--building-color4)");
 ```
 
 You should give `.bb4c` a `background-color` of `--building-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4c")?.backgroundColor, "var(--building-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4c")?.backgroundColor, "var(--building-color4)");
 ```
 
 # --seed--

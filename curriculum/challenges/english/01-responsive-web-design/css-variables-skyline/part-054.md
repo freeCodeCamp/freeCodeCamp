@@ -26,43 +26,43 @@ After you add these, you can see how a thick border on an element gives you some
 You should give `.bb2a` a `margin` of `auto`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.margin, "auto");
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2a')?.margin, "auto");
 ```
 
 You should give `.bb2a` a `width` of `auto`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.width, "5vw");
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2a')?.width, "5vw");
 ```
 
 You should give `.bb2a` a `height` of `5vw`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.height, "5vw");
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2a')?.height, "5vw");
 ```
 
 You should give `.bb2a` a `border-top` of `1vw solid #000`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderTop, "1vw solid rgb(0, 0, 0)");
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2a')?.borderTop, "1vw solid rgb(0, 0, 0)");
 ```
 
 You should give `.bb2a` a `border-bottom` of `1vw solid #000`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderBottom, "1vw solid rgb(0, 0, 0)");
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2a')?.borderBottom, "1vw solid rgb(0, 0, 0)");
 ```
 
 You should give `.bb2a` a `border-left` of `1vw solid #999`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderLeft, "1vw solid rgb(153, 153, 153)");
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2a')?.borderLeft, "1vw solid rgb(153, 153, 153)");
 ```
 
 You should give `.bb2a` a `border-right` of `1vw solid #999`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2a')?.borderRight, "1vw solid rgb(153, 153, 153)");
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2a')?.borderRight, "1vw solid rgb(153, 153, 153)");
 ```
 
 # --seed--

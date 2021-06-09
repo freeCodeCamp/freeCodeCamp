@@ -14,19 +14,19 @@ Finally, on the `border-bottom` property of `.bb2a`, change the `1vw` to `5vh` a
 You should change `border-bottom` to use `5vh`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderBottom, "5vh");
+assert.include(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom, "5vh");
 ```
 
 You should change `border-bottom` to use `--building-color2`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderBottom, "var(--building-color2)");
+assert.include(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom, "var(--building-color2)");
 ```
 
 `border-bottom` should be `5vh solid var(--building-color2)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderBottom, "5vh solid var(--building-color2)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom, "5vh solid var(--building-color2)");
 ```
 
 # --seed--

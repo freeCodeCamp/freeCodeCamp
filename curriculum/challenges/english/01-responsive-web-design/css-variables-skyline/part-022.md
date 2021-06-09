@@ -20,19 +20,19 @@ assert.exists(new __helpers.CSSHelp(document).isPropertyUsed('--building-color2'
 You should give `--building-color2` a value of `#66cc99`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color2').trim(), '#66cc99');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color2').trim(), '#66cc99');
 ```
 
 You should set the `background-color` of `.bb2`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.backgroundColor);
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb2')?.backgroundColor);
 ```
 
 You should set the `background-color` using the `--building-color2` variable.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb2')?.backgroundColor, 'var(--building-color2)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2')?.backgroundColor, 'var(--building-color2)');
 ```
 
 # --seed--

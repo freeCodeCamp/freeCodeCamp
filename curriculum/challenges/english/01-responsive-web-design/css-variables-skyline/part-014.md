@@ -20,13 +20,13 @@ assert(new __helpers.CSSHelp(document).isPropertyUsed('--building-color1'));
 You should define the `--building-color1` variable within `.bb1`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color1'));
 ```
 
 You should give `--building-color1` a value of `#999`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.getPropertyValue('--building-color1').trim(),'#999');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color1').trim(),'#999');
 ```
 
 # --seed--

@@ -14,25 +14,25 @@ Give `.fb1b` a `width` of `60%` and `height` of `10%`, and `.fb1c` a `width` of 
 You should give `.fb1b` a `width` of `60%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1b")?.width, "60%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1b")?.width, "60%");
 ```
 
 You should give `.fb1b` a `height` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1b")?.height, "10%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1b")?.height, "10%");
 ```
 
 You should give `.fb1c` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.width, "100%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1c")?.width, "100%");
 ```
 
 You should give `.fb1c` a `width` of `80%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb1c")?.height, "80%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1c")?.height, "80%");
 ```
 
 # --seed--

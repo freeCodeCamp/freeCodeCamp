@@ -14,37 +14,37 @@ Give the new `div` elements these `width` and `height` values: `3%` and `10%` to
 You should give `.bb4a` a `width` of `3%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4a")?.width, "3%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4a")?.width, "3%");
 ```
 
 You should give `.bb4a` a `height` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4a")?.height, "10%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4a")?.height, "10%");
 ```
 
 You should give `.bb4b` a `width` of `80%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4b")?.width, "80%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4b")?.width, "80%");
 ```
 
 You should give `.bb4b` a `height` of `5%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4b")?.height, "5%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4b")?.height, "5%");
 ```
 
 You should give `.bb4c` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4c")?.width, "100%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4c")?.width, "100%");
 ```
 
 You should give `.bb4c` a `height` of `85%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4c")?.height, "85%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4c")?.height, "85%");
 ```
 
 # --seed--

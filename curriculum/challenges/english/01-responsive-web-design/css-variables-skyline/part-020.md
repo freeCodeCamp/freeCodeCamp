@@ -14,19 +14,19 @@ The buildings are stacked on top of each other and running off the screen. Let's
 You should add a `display` of `flex` to the `background-buildings` class.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.background-buildings')?.display, 'flex');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.background-buildings')?.display, 'flex');
 ```
 
 You should add an `align-items` of `flex-end` to the `background-buildings` class.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.background-buildings')?.alignItems, 'flex-end');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.background-buildings')?.alignItems, 'flex-end');
 ```
 
 You should add a `justify-content` of `space-evenly` to the `background-buildings` class.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.background-buildings')?.justifyContent, 'space-evenly');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.background-buildings')?.justifyContent, 'space-evenly');
 ```
 
 # --seed--

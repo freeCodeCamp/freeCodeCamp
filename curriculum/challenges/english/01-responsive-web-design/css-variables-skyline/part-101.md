@@ -14,13 +14,13 @@ Fill in the windows with your secondary color for this building. Also add a `mar
 You should give `.fb4-window` a `background-color` of `--window-color1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.backgroundColor, "var(--window-color1)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4-window")?.backgroundColor, "var(--window-color1)");
 ```
 
 You should give `.fb4-window` a `margin` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.margin, "10%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4-window")?.margin, "10%");
 ```
 
 # --seed--

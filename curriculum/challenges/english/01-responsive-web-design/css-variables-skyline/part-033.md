@@ -14,13 +14,13 @@ I see some code that can be optimized. Move the `position` and `top` properties 
 You should remove the `position` property from `.foreground-buildings`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.position);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.position);
 ```
 
 You should remove the `top` property from `.foreground-buildings`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.foreground-buildings')?.top);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.foreground-buildings')?.top);
 ```
 
 You should add the `position` property of `absolute` to `.background-buildings, foreground-buildings`.
@@ -28,7 +28,7 @@ You should add the `position` property of `absolute` to `.background-buildings, 
 ```js
 function eitherOr() {
   const a = new __helpers.CSSHelp(document)
-  return a.getStyleDeclaration('.background-buildings, .foreground-buildings') ?? a.getStyleDeclaration('.foreground-buildings, .background-buildings');
+  return a.getStyle('.background-buildings, .foreground-buildings') ?? a.getStyle('.foreground-buildings, .background-buildings');
 }
 assert.equal(eitherOr()?.position, 'absolute');
 ```
@@ -38,7 +38,7 @@ You should add the `top` property of `0` to `.background-buildings, foreground-b
 ```js
 function eitherOr() {
   const a = new __helpers.CSSHelp(document)
-  return a.getStyleDeclaration('.background-buildings, .foreground-buildings') ?? a.getStyleDeclaration('.foreground-buildings, .background-buildings');
+  return a.getStyle('.background-buildings, .foreground-buildings') ?? a.getStyle('.foreground-buildings, .background-buildings');
 }
 assert.equal(eitherOr()?.top, '0px');
 ```
@@ -48,7 +48,7 @@ You should use a comma to use both `.foreground-buildings` and `.background-buil
 ```js
 function eitherOr() {
   const a = new __helpers.CSSHelp(document)
-  return a.getStyleDeclaration('.background-buildings, .foreground-buildings') ?? a.getStyleDeclaration('.foreground-buildings, .background-buildings');
+  return a.getStyle('.background-buildings, .foreground-buildings') ?? a.getStyle('.foreground-buildings, .background-buildings');
 }
 assert.exists(eitherOr());
 ```

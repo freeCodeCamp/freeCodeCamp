@@ -26,19 +26,19 @@ assert.exists(document.querySelector('div.bb1'));
 You should use a `.bb1` class selector to style the element.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1'));
 ```
 
 You should give the `.bb1` element a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.width, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.width, '10%');
 ```
 
 You should give the `.bb1` element a `height` of `70%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1')?.height, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.height, '70%');
 ```
 
 # --seed--

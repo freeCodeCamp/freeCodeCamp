@@ -14,13 +14,13 @@ Add `display: flex` and `flex-wrap: wrap` to the window container. This will put
 You should give `.fb4b` a `display` of `flex`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.display, "flex");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4b")?.display, "flex");
 ```
 
 You should give `.fb4b` a `flex-wrap` of `wrap`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4b")?.flexWrap, "wrap");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4b")?.flexWrap, "wrap");
 ```
 
 # --seed--

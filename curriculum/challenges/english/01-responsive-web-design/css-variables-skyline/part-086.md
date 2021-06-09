@@ -14,13 +14,13 @@ Move the `background-color` property and value from `.fb2` to `.fb2b` to just co
 You should remove the `background-color` property from `.fb2`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".fb2")?.backgroundColor);
 ```
 
 You should give `.fb2b` a `background-color` of `--building-color3`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb2b")?.backgroundColor, "var(--building-color3)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2b")?.backgroundColor, "var(--building-color3)");
 ```
 
 # --seed--

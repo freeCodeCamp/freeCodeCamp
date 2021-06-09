@@ -14,13 +14,13 @@ Next, change the two `#999` of `.bb2a` to `transparent`. This will make the left
 You should change the `border-left` to use `transparent`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderLeft, "5vw solid transparent");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderLeft, "5vw solid transparent");
 ```
 
 You should change the `border-right` to use `transparent`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderRight, "5vw solid transparent");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderRight, "5vw solid transparent");
 ```
 
 # --seed--

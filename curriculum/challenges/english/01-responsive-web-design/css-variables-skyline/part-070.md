@@ -14,19 +14,19 @@ Give the `bb4-window` class a `width` of `18%`, a `height` of `90%`, and add you
 You should give `.bb4-window` a `width` of `18%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4-window")?.width, "18%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4-window")?.width, "18%");
 ```
 
 You should give `.bb4-window` a `height` of `90%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4-window")?.height, "90%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4-window")?.height, "90%");
 ```
 
 You should give `.bb4-window` a `background-color` of `--window-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb4-window")?.backgroundColor, "var(--window-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4-window")?.backgroundColor, "var(--window-color4)");
 ```
 
 # --seed--

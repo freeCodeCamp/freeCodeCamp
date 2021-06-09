@@ -14,7 +14,7 @@ Give your `.bb1` element these style properties: `display: flex;`, `flex-directi
 You should not change the `.bb1` `width` or `height` properties.
 
 ```js
-const bb1Style = new __helpers.CSSHelp(document).getStyleDeclaration('.bb1');
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
 assert.equal(bb1Style?.width, '10%');
 assert.equal(bb1Style?.height, '70%');
 ```
@@ -22,21 +22,21 @@ assert.equal(bb1Style?.height, '70%');
 You should give the `.bb1` element a `display` of `flex`.
 
 ```js
-const bb1Style = new __helpers.CSSHelp(document).getStyleDeclaration('.bb1');
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
 assert.equal(bb1Style?.display, 'flex');
 ```
 
 You should give the `.bb1` element a `flex-direction` of `column`.
 
 ```js
-const bb1Style = new __helpers.CSSHelp(document).getStyleDeclaration('.bb1');
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
 assert.equal(bb1Style?.flexDirection, 'column');
 ```
 
 You should give the `.bb1` element a `align-items` of `center`.
 
 ```js
-const bb1Style = new __helpers.CSSHelp(document).getStyleDeclaration('.bb1');
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
 assert.equal(bb1Style?.alignItems, 'center');
 ```
 

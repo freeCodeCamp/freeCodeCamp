@@ -14,19 +14,19 @@ Give the `.fb4-window` elements a `width` of `30%`, `height` of `10%`, and `bord
 You should give `.fb4-window` a `width` of `30%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.width, "30%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4-window")?.width, "30%");
 ```
 
 You should give `.fb4-window` a `height` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.height, "10%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4-window")?.height, "10%");
 ```
 
 You should give `.fb4-window` a `border-radius` of `50%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb4-window")?.borderRadius, "50%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb4-window")?.borderRadius, "50%");
 ```
 
 # --seed--

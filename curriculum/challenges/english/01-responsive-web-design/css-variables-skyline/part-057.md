@@ -14,13 +14,13 @@ Remove the `margin` and `border-top` properties and values from `.bb2a` to turn 
 You should remove the `margin` from `.bb2a`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.margin);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".bb2a")?.margin);
 ```
 
 You should remove the `border-top` from `.bb2a`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderTop);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderTop);
 ```
 
 # --seed--

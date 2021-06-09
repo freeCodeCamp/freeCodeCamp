@@ -27,7 +27,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyleDeclarations('*').length, 1
 All elements should have a `box-sizing` of `border-box`.
 
 ```js
-const astStyles = new __helpers.CSSHelp(document).getStyleDeclaration('*');
+const astStyles = new __helpers.CSSHelp(document).getStyle('*');
 assert.equal(astStyles.boxSizing, 'border-box');
 ```
 

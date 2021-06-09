@@ -14,19 +14,19 @@ Remove the `background-color` property and value from `.fb3`, and add them to `.
 You should remove the `background-color` from `.fb3`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3")?.backgroundColor);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".fb3")?.backgroundColor);
 ```
 
 You should give `.fb3a` a `background-color` of `--building-color1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3a")?.backgroundColor, "var(--building-color1)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3a")?.backgroundColor, "var(--building-color1)");
 ```
 
 You should give `.fb3b` a `background-color` of `--building-color1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3b")?.backgroundColor, "var(--building-color1)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3b")?.backgroundColor, "var(--building-color1)");
 ```
 
 # --seed--

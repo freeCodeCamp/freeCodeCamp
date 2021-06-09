@@ -14,19 +14,19 @@ Give your background buildings element a `width` and `height` of `100%` to make 
 You should use the `background-buildings` class to select the correct element.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.background-buildings'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.background-buildings'));
 ```
 
 Your `.background-buildings` element should have a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.background-buildings')?.width, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.background-buildings')?.width, '100%');
 ```
 
 Your `.background-buildings` element should have a `height` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.background-buildings')?.height, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.background-buildings')?.height, '100%');
 ```
 
 # --seed--

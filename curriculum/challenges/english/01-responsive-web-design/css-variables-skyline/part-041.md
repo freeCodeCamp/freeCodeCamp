@@ -14,21 +14,21 @@ You want to add the same gradient to the next two sections. But instead of doing
 You should create a new class declaration called `bb1-window`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1-window'));
 ```
 
 You should move the `height` property and value from `.bb1a` to `.bb1-window`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.height);
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window')?.height, '10%');
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.bb1a')?.height);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1-window')?.height, '10%');
 ```
 
 You should move the `background` property and value from `.bb1a` to `.bb1-window`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1a')?.background);
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1-window')?.getPropVal('background', true), 'linear-gradient(var(--building-color1),var(--window-color1))');
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.bb1a')?.background);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1-window')?.getPropVal('background', true), 'linear-gradient(var(--building-color1),var(--window-color1))');
 ```
 
 # --seed--

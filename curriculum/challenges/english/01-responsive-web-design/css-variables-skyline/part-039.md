@@ -20,7 +20,7 @@ assert(new __helpers.CSSHelp(document).isPropertyUsed('--window-color1'));
 You should give the property variable `--window-color1` a value of `black`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(':root')?.getPropertyValue('--window-color1').trim(), 'black');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--window-color1').trim(), 'black');
 ```
 
 # --seed--

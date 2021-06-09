@@ -14,25 +14,25 @@ Give the `.fb3a` element a `width` of `80%` and `height` of `15%`. Then give the
 You should give `.fb3a` a `width` of `80%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3a")?.width, "80%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3a")?.width, "80%");
 ```
 
 You should give `.fb3a` a `height` of `15%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3a")?.height, "15%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3a")?.height, "15%");
 ```
 
 You should give `.fb3b` a `width` of `100%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3b")?.width, "100%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3b")?.width, "100%");
 ```
 
 You should give `.fb3b` a `height` of `35%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".fb3b")?.height, "35%");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3b")?.height, "35%");
 ```
 
 # --seed--

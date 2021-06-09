@@ -14,25 +14,25 @@ Next, remove the `width` and `height` from `.bb2a`, and change the `border-left`
 You should remove the `width` from `.bb2a`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.width);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".bb2a")?.width);
 ```
 
 You should remove the `height` from `.bb2a`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.height);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".bb2a")?.height);
 ```
 
 You should change the `border-left` to use `5vw`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderLeft, "5vw solid rgb(153, 153, 153)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderLeft, "5vw solid rgb(153, 153, 153)");
 ```
 
 You should change the `border-right` to use `5vw`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration(".bb2a")?.borderRight, "5vw solid rgb(153, 153, 153)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderRight, "5vw solid rgb(153, 153, 153)");
 ```
 
 # --seed--

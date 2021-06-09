@@ -14,109 +14,109 @@ Give the six new elements these `width` and `height` values: `10%` and `60%` to 
 You should create a `.fb1` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb1'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.fb1'));
 ```
 
 You should give the `.fb1` selector a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb1')?.width, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb1')?.width, '10%');
 ```
 
 You should give the `.fb1` selector a `height` of `60%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb1')?.height, '60%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb1')?.height, '60%');
 ```
 
 You should create a `.fb2` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb2'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.fb2'));
 ```
 
 You should give the `.fb2` selector a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb2')?.width, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb2')?.width, '10%');
 ```
 
 You should give the `.fb2` selector a `height` of `40%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb2')?.height, '40%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb2')?.height, '40%');
 ```
 
 You should create a `.fb3` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb3'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.fb3'));
 ```
 
 You should give the `.fb3` selector a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb3')?.width, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb3')?.width, '10%');
 ```
 
 You should give the `.fb3` selector a `height` of `35%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb3')?.height, '35%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb3')?.height, '35%');
 ```
 
 You should create a `.fb4` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.fb4'));
 ```
 
 You should give the `.fb4` selector a `width` of `8%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.width, '8%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb4')?.width, '8%');
 ```
 
 You should give the `.fb4` selector a `height` of `45%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb4')?.height, '45%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb4')?.height, '45%');
 ```
 
 You should create a `.fb5` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.fb5'));
 ```
 
 You should give the `.fb5` selector a `width` of `10%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.width, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb5')?.width, '10%');
 ```
 
 You should give the `.fb5` selector a `height` of `33%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb5')?.height, '33%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb5')?.height, '33%');
 ```
 
 You should create a `.fb6` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration('.fb6'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.fb6'));
 ```
 
 You should give the `.fb6` selector a `width` of `9%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb6')?.width, '9%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb6')?.width, '9%');
 ```
 
 You should give the `.fb6` selector a `height` of `38%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.fb6')?.height, '38%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb6')?.height, '38%');
 ```
 
 # --seed--

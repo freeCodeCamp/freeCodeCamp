@@ -14,7 +14,7 @@ You want `.bb4` to share the properties of `.bb1` that center the sections. Inst
 You should create a new class declaration called `building-wrap`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyleDeclaration(".building-wrap"));
+assert.exists(new __helpers.CSSHelp(document).getStyle(".building-wrap"));
 ```
 
 # --seed--

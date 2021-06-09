@@ -24,7 +24,7 @@ Here, it will transition from `color1` to `color2` between `0%` and `20%` of the
 You should add a value of `80%` to the `--building-color1` color in the `linear-gradient` of `.bb1d`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyleDeclaration('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1)80%,var(--window-color1))');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.getPropVal('background', true), 'linear-gradient(orange,var(--building-color1)80%,var(--window-color1))');
 ```
 
 # --seed--
