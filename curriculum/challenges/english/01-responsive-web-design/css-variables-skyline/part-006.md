@@ -7,7 +7,7 @@ dashedName: part-6
 
 # --description--
 
-Also add a `box-sizing` of `border-box` to the everything. This will make it so the border you added doesn't add any size to your elements.
+Also add a `box-sizing` of `border-box` to everything. This will make it so the border you added doesn't add any size to your elements.
 
 # --hints--
 
@@ -55,5 +55,6 @@ assert.equal(astStyles.boxSizing, 'border-box');
 }
 
 --fcc-editable-region--
+
 ```
 
