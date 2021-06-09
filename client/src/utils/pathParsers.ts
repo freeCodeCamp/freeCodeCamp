@@ -11,12 +11,15 @@ export const isChallenge = (pathname: string): boolean => {
   );
 };
 
-export const isLanding = (): boolean => {
-  if (window) {
-    const pathArray = splitPath(window.location.pathname);
-    const isEnglishLanding = pathArray.length === 0;
-    const isI18Landing =
-      pathArray.length === 1 && i18nConstants.includes(pathArray[0]);
-    return isEnglishLanding || isI18Landing;
-  } else return false;
+export const isLanding = (pathname: string): boolean => {
+  const pathArray = splitPath(pathname);
+  const isEnglishLanding = pathArray.length === 0;
+  const isI18Landing =
+    pathArray.length === 1 && i18nConstants.includes(pathArray[0]);
+
+  if (isEnglishLanding || isI18Landing) return true;
+  else return false;
 };
+
+const pathParsers = { isLanding, isChallenge };
+export default pathParsers;

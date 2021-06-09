@@ -24,11 +24,14 @@ export const UniversalNav = ({
   fetchState
 }) => {
   const { pending } = fetchState;
-  const search = isLanding() ? (
-    <SearchBar innerRef={searchBarRef} />
-  ) : (
-    <SearchBarOptimized />
-  );
+
+  const search =
+    window && isLanding(window.location.pathname) ? (
+      <SearchBarOptimized />
+    ) : (
+      <SearchBar innerRef={searchBarRef} />
+    );
+
   return (
     <nav
       className={'universal-nav' + (displayMenu ? ' expand-nav' : '')}

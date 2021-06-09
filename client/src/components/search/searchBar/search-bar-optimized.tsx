@@ -12,7 +12,6 @@ const SearchBarOptimized = (): JSX.Element => {
     setValue(event.target.value);
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(value);
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
     }
