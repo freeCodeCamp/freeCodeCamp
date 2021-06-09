@@ -111,7 +111,7 @@ part-005.md renames to part-006.md and title changes to "Part 6"
 part-006.md renames to part-007.md and title changes to "Part 7"
 ```
 
-Along with the above changes, the `challengeOrder` key in the project's `meta.json` file needs to reflect the new step order. This is needed because each step below a step deletion and/or step addtion changes the `title` assoiciated with each of the affected step's challenge `id`.
+Along with the above changes, the `challengeOrder` key in the project's `meta.json` file needs to reflect the new step order. This is needed because each step below a step deletion and/or step addition changes the `title` associated with each of the affected step's challenge `id`.
 
 ### How to run script
 
