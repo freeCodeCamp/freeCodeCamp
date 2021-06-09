@@ -43,6 +43,10 @@ If you want to help us improve our codebase...
 
 **you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
+**Here is a Gitpod [Guide](Gitpod.md).**
+
+**Here is a How to Fix Bugs [Guide](Bugs.md).**
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
 Or you can...
