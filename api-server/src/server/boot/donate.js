@@ -20,7 +20,7 @@ export default function donateBoot(app, done) {
     if (!user || !body) {
       return res
         .status(500)
-        .send({ error: 'User must be signed in for this request.' });
+        .json({ error: 'User must be signed in for this request.' });
     }
     return Promise.resolve(req)
       .then(
@@ -31,7 +31,7 @@ export default function donateBoot(app, done) {
       .then(() => res.status(200).json({ isDonating: true }))
       .catch(err => {
         log(err.message);
-        return res.status(500).send({
+        return res.status(500).json({
           type: 'danger',
           message: 'Something went wrong.'
         });

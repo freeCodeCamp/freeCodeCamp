@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const env = require('../../../config/env');
+const env = require('../../../config/read-env');
 const { availableLangs } = require('../../../config/i18n/all-langs');
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');

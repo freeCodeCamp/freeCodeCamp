@@ -1,6 +1,5 @@
-/* global describe it expect afterAll  */
+/* global describe it expect jest  */
 import moment from 'moment-timezone';
-import sinon from 'sinon';
 
 import {
   prepUniqueDaysByHours,
@@ -10,13 +9,13 @@ import {
 } from './user-stats';
 import { mockUserID, mockApp, mockUser } from '../boot_tests/fixtures';
 
-// setting now to 2016-02-03T11:00:00 (PST)
-const clock = sinon.useFakeTimers(1454526000000);
+jest.useFakeTimers('modern');
 const PST = 'America/Los_Angeles';
 
 describe('user stats', () => {
-  afterAll(() => {
-    clock.restore();
+  beforeEach(() => {
+    // setting now to 2016-02-03T11:00:00 (PST)
+    jest.setSystemTime(1454526000000);
   });
 
   describe('prepUniqueDaysByHours', () => {

@@ -84,17 +84,13 @@ class DesktopLayout extends Component {
           )}
 
           <ReflexElement flex={1} {...resizeProps}>
+            {challengeFile && showUpcomingChanges && !hasEditableBoundries && (
+              <EditorTabs />
+            )}
             {challengeFile && (
               <ReflexContainer key={challengeFile.key} orientation='horizontal'>
                 <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
-                  {
-                    <Fragment>
-                      {showUpcomingChanges && !hasEditableBoundries && (
-                        <EditorTabs />
-                      )}
-                      {editor}
-                    </Fragment>
-                  }
+                  {<Fragment>{editor}</Fragment>}
                 </ReflexElement>
                 {isConsoleDisplayable && (
                   <ReflexSplitter propagate={true} {...resizeProps} />
