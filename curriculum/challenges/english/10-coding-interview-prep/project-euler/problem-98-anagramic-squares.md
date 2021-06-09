@@ -74,5 +74,132 @@ anagramicSquares(testWords1);
 # --solutions--
 
 ```js
-// solution required
+function anagramicSquares(words) {
+  // Based on https://www.mathblog.dk/project-euler-98-anagrams-square-numbers/
+  function findMaximumSquare(squares, word1, word2) {
+    let maximumSquare = 0;
+
+    for (let i = 0; i < squares.length; i++) {
+      const length = squares[i].toString().length;
+
+      if (length < word1.length) {
+        continue;
+      }
+      if (length > word1.length) {
+        break;
+      }
+
+      const word1Square = squares[i];
+      const letterToDigit = mapLettersToDigits(word1, word1Square);
+
+      const noProperMappingExist = Object.keys(letterToDigit).length === 0;
+      if (noProperMappingExist) {
+        continue;
+      }
+
+      const word2Square = getNumberFromMapping(word2, letterToDigit);
+      if (word2Square === 0) {
+        continue;
+      }
+
+      const doesWord2SquareExist = squares.indexOf(word2Square) !== -1;
+      if (doesWord2SquareExist) {
+        const pairMaximum = Math.max(word1Square, word2Square);
+        maximumSquare = Math.max(maximumSquare, pairMaximum);
+      }
+    }
+    return maximumSquare;
+  }
+
+  function getNumberFromMapping(word, letterToDigit) {
+    const wouldNumberHaveLeadingZero = letterToDigit[word[0]] === 0;
+    if (wouldNumberHaveLeadingZero) {
+      return 0;
+    }
+
+    let number = 0;
+    for (let i = 0; i < word.length; i++) {
+      number = number * 10 + letterToDigit[word[i]];
+    }
+    return number;
+  }
+
+  function mapLettersToDigits(word, square) {
+    const letterToDigit = {};
+    for (let j = word.length - 1; j >= 0; j--) {
+      const curDigit = square % 10;
+      square = Math.floor(square / 10);
+
+      const curLetter = word[j];
+
+      const isLetterRepeated = letterToDigit.hasOwnProperty(curLetter);
+      if (isLetterRepeated) {
+        const isLetterUsedForTheSameDigit =
+          letterToDigit[curLetter] === curDigit;
+        if (isLetterUsedForTheSameDigit) {
+          continue;
+        }
+
+        return {};
+      }
+
+      const isDigitUsed = Object.values(letterToDigit).indexOf(curDigit) !== -1;
+      if (isDigitUsed) {
+        return {};
+      }
+
+      letterToDigit[curLetter] = curDigit;
+    }
+    return letterToDigit;
+  }
+
+  function groupWordsWithSameLetters(words) {
+    const lettersToWords = {};
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+      const sortedLetters = word.split('').sort().join('');
+      if (!lettersToWords.hasOwnProperty(sortedLetters)) {
+        lettersToWords[sortedLetters] = [];
+      }
+      lettersToWords[sortedLetters].push(word);
+    }
+    return lettersToWords;
+  }
+
+  const lettersToWords = groupWordsWithSameLetters(words);
+
+  const anagrams = Object.keys(lettersToWords).filter(
+    letters => lettersToWords[letters].length > 1
+  );
+  const lengthOfLongestAnagram = anagrams
+    .map(anagram => anagram.length)
+    .sort((a, b) => b - a)[0];
+
+  const squares = [];
+  const numberLimit = (10 ** lengthOfLongestAnagram) ** 0.5;
+  for (let number = 2; number < numberLimit; number++) {
+    const square = number ** 2;
+    squares.push(square);
+  }
+
+  let largestSquare = 0;
+  for (let i = 0; i < anagrams.length; i++) {
+    const curWords = lettersToWords[anagrams[i]];
+
+    for (let j = 0; j < curWords.length; j++) {
+      for (let k = j + 1; k < curWords.length; k++) {
+        const squareValue = findMaximumSquare(
+          squares,
+          curWords[j],
+          curWords[k]
+        );
+        if (squareValue > largestSquare) {
+          largestSquare = squareValue;
+        }
+      }
+    }
+  }
+
+  return largestSquare;
+}
 ```
