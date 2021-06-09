@@ -93,7 +93,7 @@ p {
 }
 
 ::selection {
-  background-color: var(--selection-color);
+  background-color: var(--selection-color) !important;
 }
 
 @media (max-width: 500px) {
