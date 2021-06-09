@@ -1,6 +1,6 @@
 # How to Work on Practice Projects
 
-The tools/challenge-helper-scripts folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
 
 ## Create a new project
 
