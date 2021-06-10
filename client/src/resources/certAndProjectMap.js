@@ -75,8 +75,8 @@ const certMap = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd18',
-        title: 'Stylize Stories on Camper News',
-        link: `${legacyFrontEndBase}/stylize-stories-on-camper-news`,
+        title: 'Build a Tribute Page',
+        link: `${legacyFrontEndResponsiveBase}/build-a-tribute-page`,
         certSlug: 'legacy-front-end'
       },
       {
@@ -189,7 +189,7 @@ const certMap = [
       },
       {
         id: 'bd7156d8c242eddfaeb5bd13',
-        title: 'Build a Camper Leaderboard',
+        title: 'Build a freeCodeCamp Forum Homepage',
         link: `${legacyDataVisTakeHomeBase}/build-a-freecodecamp-forum-homepage`,
         certSlug: 'legacy-data-visualization'
       },
