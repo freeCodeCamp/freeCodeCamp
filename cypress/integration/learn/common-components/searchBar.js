@@ -14,6 +14,38 @@ const clear = () => {
   });
 };
 
+describe('Search bar optimized', () => {
+  before(() => {
+    cy.visit('/');
+  });
+
+  beforeEach(() => {
+    clear();
+  });
+
+  it('Should render properly', () => {
+    cy.get('.ais-SearchBox').should('be.visible');
+  });
+
+  it('Should not display hits', () => {
+    search('freeCodeCamp');
+    cy.get('.ais-Hits-list').should('not.exist');
+  });
+
+  it('Should open a new tab ', () => {
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        cy.stub(win, 'open').as('open');
+      }
+    });
+    search('freeCodeCamp');
+    cy.get('.ais-SearchBox-form').submit();
+    const queryUrl =
+      'https://www.freecodecamp.org/news/search/?query=freeCodeCamp';
+    cy.get('@open').should('have.been.calledOnceWith', queryUrl);
+  });
+});
+
 describe('Search bar', () => {
   before(() => {
     cy.visit('/learn');

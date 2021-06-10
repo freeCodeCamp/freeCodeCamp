@@ -26,7 +26,7 @@ export const UniversalNav = ({
   const { pending } = fetchState;
 
   const search =
-    window && isLanding(window.location.pathname) ? (
+    typeof window !== `undefined` && isLanding(window.location.pathname) ? (
       <SearchBarOptimized />
     ) : (
       <SearchBar innerRef={searchBarRef} />
