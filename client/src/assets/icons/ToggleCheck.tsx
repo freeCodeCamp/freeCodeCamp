@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function ToggleCheck(props) {
+function ToggleCheck(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (
@@ -21,8 +21,6 @@ function ToggleCheck(props) {
             fill='white'
             height='60'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             transform='rotate(-45, 66.75, 123.75)'
             width='148.85878'
             x='65.57059'
@@ -32,8 +30,6 @@ function ToggleCheck(props) {
             fill='white'
             height='60'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             transform='rotate(45, 66.75, 123.75)'
             width='120.66548'
             x='-42.41726'
@@ -43,8 +39,6 @@ function ToggleCheck(props) {
             fill='black'
             height='30'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             transform='rotate(-45, 66.75, 123.75)'
             width='128.85878'
             x='65.57059'
@@ -54,8 +48,6 @@ function ToggleCheck(props) {
             fill='black'
             height='30'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             transform='rotate(-135, 66.75, 123.75)'
             width='88.85878'
             x='68.57059'

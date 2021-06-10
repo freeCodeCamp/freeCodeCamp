@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 const propTypes = {};
 
-function DonateWithPayPal(props) {
+function DonateWithPayPal(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 const propTypes = {};
 
-function Cup(props) {
+function Cup(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (

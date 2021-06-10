@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const propTypes = {};
 
-function IntroInformation(props) {
+function IntroInformation(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (
@@ -25,8 +25,6 @@ function IntroInformation(props) {
             r='95'
             stroke='var(--primary-color)'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             strokeWidth='10'
           />
           <circle
@@ -36,8 +34,6 @@ function IntroInformation(props) {
             r='45'
             stroke='var(--primary-color)'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             strokeWidth='10'
           />
         </g>

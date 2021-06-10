@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function LinkButton(props) {
+export default function LinkButton(props: any & React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden='true'

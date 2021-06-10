@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function ReactIcon(props) {
+function ReactIcon(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const propTypes = {};
 
-function Heart(props) {
+function Heart(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (

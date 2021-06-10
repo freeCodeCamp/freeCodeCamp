@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function DefaultAvatar(props) {
+function DefaultAvatar(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (

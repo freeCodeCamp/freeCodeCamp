@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Analytics(props) {
+function Analytics(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
   return (
