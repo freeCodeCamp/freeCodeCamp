@@ -577,11 +577,6 @@ Provisioning VMs with the Code
    cd client
    ```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/client-config.git client
-   cd client
-   ```
-
    Start placeholder instances for the web client, these will be updated with
    artifacts from the Azure pipeline.
 

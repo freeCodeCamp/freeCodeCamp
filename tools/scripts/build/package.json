@@ -18,12 +18,8 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
-  "scripts": {
-    "test": "jest"
-  },
   "devDependencies": {
     "debug": "4.3.1",
-    "dotenv": "8.2.0",
-    "jest": "26.0.0"
+    "dotenv": "10.0.0"
   }
 }

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { curry } from 'lodash';
+import { curry } from 'lodash-es';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { certificatesByNameSelector } from '../../../redux';
 import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
-import { CurrentCertsType } from '../../../redux/propTypes';
+import { CurrentCertsType } from '../../../redux/prop-types';
 
 const mapStateToProps = (state, props) =>
   createSelector(

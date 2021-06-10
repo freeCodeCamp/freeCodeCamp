@@ -58,58 +58,61 @@ export class PaypalButton extends Component {
 
   render() {
     const { duration, planId, amount } = this.state;
-    const { t } = this.props;
+    const { t, theme } = this.props;
     const isSubscription = duration !== 'onetime';
-
+    const buttonColor = theme === 'night' ? 'white' : 'gold';
     if (!paypalClientId) {
       return null;
     }
 
     return (
-      <PayPalButtonScriptLoader
-        amount={amount}
-        clientId={paypalClientId}
-        createOrder={(data, actions) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                amount: {
-                  currency_code: 'USD',
-                  value: (amount / 100).toString()
+      <div className={'paypal-buttons-container'}>
+        <PayPalButtonScriptLoader
+          amount={amount}
+          clientId={paypalClientId}
+          createOrder={(data, actions) => {
+            return actions.order.create({
+              purchase_units: [
+                {
+                  amount: {
+                    currency_code: 'USD',
+                    value: (amount / 100).toString()
+                  }
                 }
-              }
-            ]
-          });
-        }}
-        createSubscription={(data, actions) => {
-          return actions.subscription.create({
-            plan_id: planId
-          });
-        }}
-        isSubscription={isSubscription}
-        onApprove={data => {
-          this.handleApproval(data, isSubscription);
-        }}
-        onCancel={() => {
-          this.props.onDonationStateChange({
-            processing: false,
-            success: false,
-            error: t('donate.failed-pay')
-          });
-        }}
-        onError={() =>
-          this.props.onDonationStateChange({
-            processing: false,
-            success: false,
-            error: t('donate.try-again')
-          })
-        }
-        plantId={planId}
-        style={{
-          tagline: false,
-          height: 43
-        }}
-      />
+              ]
+            });
+          }}
+          createSubscription={(data, actions) => {
+            return actions.subscription.create({
+              plan_id: planId
+            });
+          }}
+          isSubscription={isSubscription}
+          onApprove={data => {
+            this.handleApproval(data, isSubscription);
+          }}
+          onCancel={() => {
+            this.props.onDonationStateChange({
+              processing: false,
+              success: false,
+              error: t('donate.failed-pay')
+            });
+          }}
+          onError={() =>
+            this.props.onDonationStateChange({
+              processing: false,
+              success: false,
+              error: t('donate.try-again')
+            })
+          }
+          plantId={planId}
+          style={{
+            tagline: false,
+            height: 43,
+            color: buttonColor
+          }}
+        />
+      </div>
     );
   }
 }
@@ -122,7 +125,8 @@ const propTypes = {
   isDonating: PropTypes.bool,
   onDonationStateChange: PropTypes.func,
   skipAddDonation: PropTypes.bool,
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
+  theme: PropTypes.string
 };
 
 const mapStateToProps = createSelector(

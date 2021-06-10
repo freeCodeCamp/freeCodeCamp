@@ -11,11 +11,18 @@ require('@babel/polyfill');
 require('@babel/register')({
   root: clientPath,
   babelrc: false,
-  presets: ['@babel/preset-env'],
+  presets: ['@babel/preset-env', '@babel/typescript'],
   plugins: ['dynamic-import-node'],
   ignore: [/node_modules/],
   only: [clientPath]
 });
+
+const mockRequire = require('mock-require');
+const lodash = require('lodash');
+
+// lodash-es can't easily be used in node environments, so we just mock it out
+// for the original lodash in testing.
+mockRequire('lodash-es', lodash);
 
 const createPseudoWorker = require('./utils/pseudo-worker');
 const {
@@ -24,7 +31,8 @@ const {
 
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
-const { flatten, isEmpty, cloneDeep, isEqual } = require('lodash');
+
+const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 const { getLines } = require('../../utils/get-lines');
 
 const jsdom = require('jsdom');
@@ -60,9 +68,10 @@ const TRANSLATABLE_COMMENTS = getTranslatableComments(
 );
 
 // the config files are created during the build, but not before linting
-// eslint-disable-next-line import/no-unresolved
-const testEvaluator = require('../../config/client/test-evaluator.json')
-  .filename;
+/* eslint-disable import/no-unresolved */
+const testEvaluator =
+  require('../../config/client/test-evaluator.json').filename;
+/* eslint-enable import/no-unresolved */
 const { inspect } = require('util');
 
 const commentExtractors = {
@@ -511,7 +520,7 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
-  const { required = [], template } = challenge;
+  const { required = [], template, removeComments } = challenge;
   // we should avoid modifying challenge, as it gets reused:
   const files = cloneDeep(challenge.files);
 
@@ -525,6 +534,7 @@ async function createTestRunner(
     required,
     template
   });
+
   const code = {
     contents: sources.index,
     editableContents: sources.editableContents
@@ -532,7 +542,7 @@ async function createTestRunner(
 
   const evaluator = await (buildChallenge === buildDOMChallenge
     ? getContextEvaluator(build, sources, code, loadEnzyme)
-    : getWorkerEvaluator(build, sources, code));
+    : getWorkerEvaluator(build, sources, code, removeComments));
 
   return async ({ text, testString }) => {
     try {
@@ -573,12 +583,14 @@ async function getContextEvaluator(build, sources, code, loadEnzyme) {
   };
 }
 
-async function getWorkerEvaluator(build, sources, code) {
+async function getWorkerEvaluator(build, sources, code, removeComments) {
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
-      await testWorker.execute({ testString, build, code, sources }, timeout)
-        .done
+      await testWorker.execute(
+        { testString, build, code, sources, removeComments },
+        timeout
+      ).done
   };
 }
 

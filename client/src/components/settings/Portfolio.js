@@ -8,7 +8,7 @@ import {
   FormControl,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import { findIndex, find, isEqual } from 'lodash';
+import { findIndex, find, isEqual } from 'lodash-es';
 import isURL from 'validator/lib/isURL';
 import { withTranslation } from 'react-i18next';
 
@@ -123,9 +123,8 @@ class PortfolioSettings extends Component {
     const { state: titleState } = this.getTitleValidation(title);
     const { state: urlState } = this.getUrlValidation(url);
     const { state: imageState } = this.getUrlValidation(image, true);
-    const { state: descriptionState } = this.getDescriptionValidation(
-      description
-    );
+    const { state: descriptionState } =
+      this.getDescriptionValidation(description);
     return [titleState, imageState, urlState, descriptionState]
       .filter(Boolean)
       .every(state => state === 'success');
@@ -192,19 +191,15 @@ class PortfolioSettings extends Component {
     const { t } = this.props;
     const { id, title, description, url, image } = portfolio;
     const pristine = this.isFormPristine(id);
-    const {
-      state: titleState,
-      message: titleMessage
-    } = this.getTitleValidation(title);
+    const { state: titleState, message: titleMessage } =
+      this.getTitleValidation(title);
     const { state: urlState, message: urlMessage } = this.getUrlValidation(url);
     const { state: imageState, message: imageMessage } = this.getUrlValidation(
       image,
       true
     );
-    const {
-      state: descriptionState,
-      message: descriptionMessage
-    } = this.getDescriptionValidation(description);
+    const { state: descriptionState, message: descriptionMessage } =
+      this.getDescriptionValidation(description);
 
     return (
       <div key={id}>

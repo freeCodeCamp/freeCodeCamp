@@ -29,7 +29,7 @@
     "dotenv": "6.2.0",
     "form-data": "2.5.1",
     "gray-matter": "4.0.2",
-    "lodash": "4.17.20",
+    "lodash": "^4.17.21",
     "path": "0.12.7",
     "readdirp-walk": "1.7.0",
     "travis-ci": "2.2.0",

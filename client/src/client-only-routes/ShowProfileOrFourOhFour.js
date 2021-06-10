@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash-es';
 
 import Loader from '../components/helpers/Loader';
 import {
@@ -25,10 +25,14 @@ const propTypes = {
   showLoading: PropTypes.bool
 };
 
-const createRequestedUserSelector = () => (state, { maybeUser = '' }) =>
-  userByNameSelector(maybeUser.toLowerCase())(state);
-const createIsSessionUserSelector = () => (state, { maybeUser = '' }) =>
-  maybeUser.toLowerCase() === usernameSelector(state);
+const createRequestedUserSelector =
+  () =>
+  (state, { maybeUser = '' }) =>
+    userByNameSelector(maybeUser.toLowerCase())(state);
+const createIsSessionUserSelector =
+  () =>
+  (state, { maybeUser = '' }) =>
+    maybeUser.toLowerCase() === usernameSelector(state);
 
 const makeMapStateToProps = () => (state, props) => {
   const requestedUserSelector = createRequestedUserSelector();

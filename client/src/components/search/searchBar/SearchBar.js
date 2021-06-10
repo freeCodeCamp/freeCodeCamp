@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 import { withTranslation } from 'react-i18next';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 

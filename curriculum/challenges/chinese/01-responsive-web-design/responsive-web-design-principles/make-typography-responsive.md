@@ -30,13 +30,21 @@ body { width: 30vw; }
 `h2` 元素的 `width` 应为 80vw。
 
 ```js
-assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g)
+);
 ```
 
 `p` 元素的 `width` 应为 75vmin。
 
 ```js
-assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g)
+);
 ```
 
 # --seed--

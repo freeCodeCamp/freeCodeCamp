@@ -30,19 +30,19 @@ dashedName: adjust-the-hue-of-a-color
 应使用 `hsl()` 属性来设置颜色为 `green`。
 
 ```js
-assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi));
+assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
 应使用 `hsl()` 属性来设置颜色为 `cyan`。
 
 ```js
-assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi));
+assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
 应使用 `hsl()` 属性来设置颜色为 `blue`。
 
 ```js
-assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi));
+assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
 class 为 `green` 的 `div` 元素的 `background-color` 属性值应为绿色。

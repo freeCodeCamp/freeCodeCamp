@@ -23,7 +23,7 @@ import Hotkeys from '../components/Hotkeys';
 
 import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
-import { ChallengeNode } from '../../../redux/propTypes';
+import { ChallengeNode } from '../../../redux/prop-types';
 import {
   createFiles,
   challengeFilesSelector,
@@ -160,6 +160,7 @@ class ShowClassic extends Component {
           files,
           fields: { tests },
           challengeType,
+          removeComments,
           helpCategory
         }
       },
@@ -171,6 +172,7 @@ class ShowClassic extends Component {
     updateChallengeMeta({
       ...challengeMeta,
       title,
+      removeComments: removeComments !== false,
       challengeType,
       helpCategory
     });
@@ -204,13 +206,8 @@ class ShowClassic extends Component {
   }
 
   renderInstructionsPanel({ showToolPanel }) {
-    const {
-      block,
-      description,
-      instructions,
-      superBlock,
-      translationPending
-    } = this.getChallenge();
+    const { block, description, instructions, superBlock, translationPending } =
+      this.getChallenge();
 
     const { forumTopicId, title } = this.getChallenge();
     return (
@@ -365,6 +362,7 @@ export const query = graphql`
       title
       description
       instructions
+      removeComments
       challengeType
       helpCategory
       videoUrl

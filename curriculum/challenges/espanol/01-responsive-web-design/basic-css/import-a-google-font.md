@@ -40,7 +40,7 @@ Importa la fuente `Lobster` a tu página web. Luego, usa un selector de elemento
 Debes importar la fuente `Lobster`.
 
 ```js
-assert(new RegExp('googleapis', 'gi').test(code));
+assert($('link[href*="googleapis" i]').length);
 ```
 
 Tu elemento `h2` debe usar la fuente `Lobster`.
@@ -57,7 +57,7 @@ Solo debes utilizar un selector de elementos `h2` para cambiar la fuente.
 
 ```js
 assert(
-  /\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(
+  /\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi.test(
     code
   )
 );

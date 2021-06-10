@@ -4,6 +4,7 @@
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
+[![Rocket.Chat](https://chat.freecodecamp.org/api/v1/shield.svg?type=online&icon=false&name=Chat)](https://chat.freecodecamp.org/)
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 

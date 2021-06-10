@@ -66,16 +66,9 @@ export function getVerifyCanClaimCert(username, superBlock) {
 }
 
 /** POST **/
-export function postChargeStripe(body) {
-  return post('/donate/charge-stripe', body);
-}
 
 export function addDonation(body) {
   return post('/donate/add-donation', body);
-}
-
-export function postCreateStripeSession(body) {
-  return post('/donate/create-stripe-session', body);
 }
 
 export function putUpdateLegacyCert(body) {

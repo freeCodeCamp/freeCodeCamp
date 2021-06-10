@@ -40,7 +40,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-使用对象的点号和数组的方括号从变量 `myPlants` 检索出第二棵树。
+使用点和方括号，将变量 `secondTree` 的值设置为 `myPlants` 对象中 `trees` 列表的第二个项目。
 
 # --hints--
 
@@ -72,7 +72,6 @@ assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ## --seed-contents--
 
 ```js
-// Setup
 var myPlants = [
   {
     type: "flowers",
@@ -92,9 +91,7 @@ var myPlants = [
   }
 ];
 
-// Only change code below this line
-
-var secondTree = ""; // Change this line
+var secondTree = "";
 ```
 
 # --solutions--
@@ -118,8 +115,6 @@ var myPlants = [
     ]
   }
 ];
-
-// Only change code below this line
 
 var secondTree = myPlants[1].list[1];
 ```

@@ -21,13 +21,8 @@ const propTypes = {
 };
 
 const ProjectModal = props => {
-  const {
-    isOpen,
-    projectTitle,
-    files,
-    solution,
-    handleSolutionModalHide
-  } = props;
+  const { isOpen, projectTitle, files, solution, handleSolutionModalHide } =
+    props;
   const { t } = useTranslation();
   return (
     <Modal

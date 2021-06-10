@@ -14,8 +14,10 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       'https://chinese.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const espanolPageURL =
       'https://www.freecodecamp.org/espanol/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
-    const francaisPageURL =
-      'https://www.freecodecamp.org/francais/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+    const chineseTraditionalPageURL =
+      'https://www.freecodecamp.org/chinese-traditional/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+    const dothrakiPageURL =
+      'https://www.freecodecamp.org/dothraki/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
 
     const originalLocation = window.location;
 
@@ -52,12 +54,20 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       expect(receivedPageURL).toBe(espanolPageURL);
     });
 
-    it('should redirect to francais version of page', () => {
+    it('should redirect to chinese-traditional version of page', () => {
       const receivedPageURL = createLanguageRedirect({
         ...envVars,
-        lang: 'francais'
+        lang: 'chinese-traditional'
       });
-      expect(receivedPageURL).toBe(francaisPageURL);
+      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
+    });
+
+    it('should redirect to dothraki version of page', () => {
+      const receivedPageURL = createLanguageRedirect({
+        ...envVars,
+        lang: 'dothraki'
+      });
+      expect(receivedPageURL).toBe(dothrakiPageURL);
     });
   });
 
@@ -65,7 +75,9 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     const currentPageURL = 'https://www.freecodecamp.org/settings';
     const chinesePageURL = 'https://chinese.freecodecamp.org/settings';
     const espanolPageURL = 'https://www.freecodecamp.org/espanol/settings';
-    const francaisPageURL = 'https://www.freecodecamp.org/francais/settings';
+    const chineseTraditionalPageURL =
+      'https://www.freecodecamp.org/chinese-traditional/settings';
+    const dothrakiPageURL = 'https://www.freecodecamp.org/dothraki/settings';
 
     const originalLocation = window.location;
 
@@ -102,12 +114,20 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       expect(receivedPageURL).toBe(espanolPageURL);
     });
 
-    it('should redirect to francais version of page', () => {
+    it('should redirect to chinese-traditional version of page', () => {
       const receivedPageURL = createLanguageRedirect({
         ...envVars,
-        lang: 'francais'
+        lang: 'chinese-traditional'
       });
-      expect(receivedPageURL).toBe(francaisPageURL);
+      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
+    });
+
+    it('should redirect to dothraki version of page', () => {
+      const receivedPageURL = createLanguageRedirect({
+        ...envVars,
+        lang: 'dothraki'
+      });
+      expect(receivedPageURL).toBe(dothrakiPageURL);
     });
   });
 });
@@ -124,8 +144,10 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       'https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const espanolPageURL =
       'https://www.freecodecamp.org/espanol/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
-    const francaisPageURL =
-      'https://www.freecodecamp.org/francais/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+    const chineseTraditionalPageURL =
+      'https://www.freecodecamp.org/chinese-traditional/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+    const dothrakiPageURL =
+      'https://www.freecodecamp.org/dothraki/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
 
     const originalLocation = window.location;
 
@@ -162,12 +184,20 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       expect(receivedPageURL).toBe(espanolPageURL);
     });
 
-    it('should redirect to francais version of page', () => {
+    it('should redirect to chinese-traditional version of page', () => {
       const receivedPageURL = createLanguageRedirect({
         ...envVars,
-        lang: 'francais'
+        lang: 'chinese-traditional'
       });
-      expect(receivedPageURL).toBe(francaisPageURL);
+      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
+    });
+
+    it('should redirect to dothraki version of page', () => {
+      const receivedPageURL = createLanguageRedirect({
+        ...envVars,
+        lang: 'dothraki'
+      });
+      expect(receivedPageURL).toBe(dothrakiPageURL);
     });
   });
 
@@ -175,7 +205,9 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
     const currentPageURL = 'https://chinese.freecodecamp.org/settings';
     const englishPageURL = 'https://www.freecodecamp.org/settings';
     const espanolPageURL = 'https://www.freecodecamp.org/espanol/settings';
-    const francaisPageURL = 'https://www.freecodecamp.org/francais/settings';
+    const chineseTraditionalPageURL =
+      'https://www.freecodecamp.org/chinese-traditional/settings';
+    const dothrakiPageURL = 'https://www.freecodecamp.org/dothraki/settings';
 
     const originalLocation = window.location;
 
@@ -212,12 +244,20 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       expect(receivedPageURL).toBe(espanolPageURL);
     });
 
-    it('should redirect to francais version of page', () => {
+    it('should redirect to chinese-traditional version of page', () => {
       const receivedPageURL = createLanguageRedirect({
         ...envVars,
-        lang: 'francais'
+        lang: 'chinese-traditional'
       });
-      expect(receivedPageURL).toBe(francaisPageURL);
+      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
+    });
+
+    it('should redirect to dothraki version of page', () => {
+      const receivedPageURL = createLanguageRedirect({
+        ...envVars,
+        lang: 'dothraki'
+      });
+      expect(receivedPageURL).toBe(dothrakiPageURL);
     });
   });
 });

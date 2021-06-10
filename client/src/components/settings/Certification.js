@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { find, first, values, isString } from 'lodash';
+import { find, first, values, isString } from 'lodash-es';
 import {
   Table,
   Button,
@@ -260,14 +260,11 @@ export class CertificationSettings extends Component {
 
   renderCertifications = certName => {
     const { t } = this.props;
-    const { superBlock } = first(
-      projectMap[certName],
-      legacyProjectMap[certName]
-    );
+    const { certSlug } = first(projectMap[certName]);
     return (
       <FullWidthRow key={certName}>
         <Spacer />
-        <h3 className='text-center' id={superBlock}>
+        <h3 className='text-center' id={`cert-${certSlug}`}>
           {certName}
         </h3>
         <Table>
@@ -288,13 +285,8 @@ export class CertificationSettings extends Component {
     );
   };
   renderProjectsFor = (certName, isCert) => {
-    const {
-      username,
-      isHonest,
-      createFlashMessage,
-      t,
-      verifyCert
-    } = this.props;
+    const { username, isHonest, createFlashMessage, t, verifyCert } =
+      this.props;
     const { certSlug } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${certSlug}`;
     const createClickHandler = certSlug => e => {
@@ -335,12 +327,8 @@ export class CertificationSettings extends Component {
 
   // legacy projects rendering
   handleSubmitLegacy({ values: formChalObj }) {
-    const {
-      isHonest,
-      createFlashMessage,
-      verifyCert,
-      updateLegacyCert
-    } = this.props;
+    const { isHonest, createFlashMessage, verifyCert, updateLegacyCert } =
+      this.props;
     let legacyTitle;
     let certSlug;
     let certs = Object.keys(legacyProjectMap);
@@ -454,7 +442,9 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={certSlug}>
         <Spacer />
-        <h3 className='text-center'>{certName}</h3>
+        <h3 className='text-center' id={`cert-${certSlug}`}>
+          {certName}
+        </h3>
         <Form
           buttonText={
             fullForm ? t('buttons.claim-cert') : t('buttons.save-progress')

@@ -32,8 +32,8 @@ import envData from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
-import { isEmpty } from 'lodash';
-import { User } from '../redux/propTypes';
+import { isEmpty } from 'lodash-es';
+import { User } from '../redux/prop-types';
 
 const { clientLocale } = envData;
 
@@ -168,11 +168,7 @@ const ShowCertification = props => {
     setIsDonationClosed(true);
   };
 
-  const handleProcessing = (
-    duration,
-    amount,
-    action = 'stripe form submission'
-  ) => {
+  const handleProcessing = (duration, amount, action) => {
     props.executeGA({
       type: 'event',
       data: {

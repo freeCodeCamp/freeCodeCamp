@@ -19,23 +19,23 @@ var sandwich = ["peanut butter", "jelly", "bread"]
 
 # --instructions--
 
-Modify the new array `myArray` so that it contains both a `string` and a `number` (in that order).
+Modify the new array `myArray` so that it contains both a string and a number (in that order).
 
 # --hints--
 
-`myArray` should be an `array`.
+`myArray` should be an array.
 
 ```js
 assert(typeof myArray == 'object');
 ```
 
-The first item in `myArray` should be a `string`.
+The first item in `myArray` should be a string.
 
 ```js
 assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
 ```
 
-The second item in `myArray` should be a `number`.
+The second item in `myArray` should be a number.
 
 ```js
 assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');

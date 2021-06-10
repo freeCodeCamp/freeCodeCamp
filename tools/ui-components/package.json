@@ -1,0 +1,44 @@
+{
+  "name": "@freecodecamp/ui",
+  "version": "0.0.1",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "BSD-3-Clause",
+  "description": "The freeCodeCamp.org open-source UI components",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "dependencies": {
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.14.5",
+    "@storybook/addon-actions": "6.2.9",
+    "@storybook/addon-essentials": "6.2.9",
+    "@storybook/addon-links": "6.2.9",
+    "@storybook/addon-postcss": "2.0.0",
+    "@storybook/react": "6.2.9",
+    "@testing-library/react": "11.2.7",
+    "autoprefixer": "10.2.6",
+    "babel-loader": "8.2.2",
+    "postcss": "8.3.1",
+    "postcss-import": "14.0.2",
+    "tailwindcss": "2.1.4"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "storybook:theming": "npm run storybook --no-manager-cache",
+    "build-storybook": "build-storybook"
+  }
+}

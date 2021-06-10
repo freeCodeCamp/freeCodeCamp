@@ -49,36 +49,38 @@ const getPrevChallengePath = (node, index, nodeArray) => {
 
 const getTemplateComponent = challengeType => views[viewTypes[challengeType]];
 
-exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
-  const {
-    superBlock,
-    block,
-    fields: { slug },
-    required = [],
-    template,
-    challengeType,
-    id
-  } = node;
-  // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
-  // should remove one of them.
+exports.createChallengePages =
+  createPage =>
+  ({ node }, index, thisArray) => {
+    const {
+      superBlock,
+      block,
+      fields: { slug },
+      required = [],
+      template,
+      challengeType,
+      id
+    } = node;
+    // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
+    // should remove one of them.
 
-  return createPage({
-    path: slug,
-    component: getTemplateComponent(challengeType),
-    context: {
-      challengeMeta: {
-        superBlock,
-        block,
-        template,
-        required,
-        nextChallengePath: getNextChallengePath(node, index, thisArray),
-        prevChallengePath: getPrevChallengePath(node, index, thisArray),
-        id
-      },
-      slug
-    }
-  });
-};
+    return createPage({
+      path: slug,
+      component: getTemplateComponent(challengeType),
+      context: {
+        challengeMeta: {
+          superBlock,
+          block,
+          template,
+          required,
+          nextChallengePath: getNextChallengePath(node, index, thisArray),
+          prevChallengePath: getPrevChallengePath(node, index, thisArray),
+          id
+        },
+        slug
+      }
+    });
+  };
 
 exports.createBlockIntroPages = createPage => edge => {
   const {

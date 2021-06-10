@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Use Responsive Design with Bootstrap Fluid Containers
+title: Utiliza diseño responsivo con contenedores de fluido Bootstrap
 challengeType: 0
 forumTopicId: 18362
 dashedName: use-responsive-design-with-bootstrap-fluid-containers
@@ -8,29 +8,31 @@ dashedName: use-responsive-design-with-bootstrap-fluid-containers
 
 # --description--
 
-In the HTML5 and CSS section of freeCodeCamp we built a Cat Photo App. Now let's go back to it. This time, we'll style it using the popular Bootstrap responsive CSS framework.
+En la sección de freeCodeCamp de HTML5 y CSS, creamos una aplicación de fotos de gatito. Ahora vamos de vuelta a la aplicación. Esta vez, lo estilizaremos usando el popular framework CSS responsivo de Bootstrap.
 
-Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <dfn>responsive design</dfn>.
+Bootstap averiguará la anchura de tu pantalla y responderá redimensionando los elementos HTML, de aquí el nombre <dfn>diseño responsivo</dfn>.
 
-With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.
+Con diseño responsivo, no hay necesidad de diseñar una versión móvil de tu sitio web. Se verá bien en dispositivos con pantallas de cualquier anchura.
 
-You can add Bootstrap to any app by adding the following code to the top of your HTML:
+Puedes añadir Bootstrap a cualquier aplicación al agregar el siguiente código encima de tu HTML:
 
-`<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>`
+```html
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+```
 
-In this case, we've already added it for you to this page behind the scenes. Note that using either `>` or `/>` to close the `link` tag is acceptable.
+En este caso, ya lo añadimos a esta página. Ten en cuenta que para cerrar la etiqueta `link` puedes utilizar `>` o `/>`.
 
-To get started, we should nest all of our HTML (except the `link` tag and the `style` element) in a `div` element with the class `container-fluid`.
+Para comenzar, debemos anidar todo nuestro HTML (menos la etiqueta `link` y el elemento `style`) en un elemento `div` con la clase `container-fluid`.
 
 # --hints--
 
-Your `div` element should have the class `container-fluid`.
+Tu elemento `div` debe tener la clase `container-fluid`.
 
 ```js
 assert($('div').hasClass('container-fluid'));
 ```
 
-Your `div` element should have a closing tag.
+Tu elemento `div` debe tener una etiqueta de cierre.
 
 ```js
 assert(
@@ -40,10 +42,10 @@ assert(
 );
 ```
 
-All HTML elements after the closing `style` tag should be nested in `.container-fluid`.
+Todos los elementos HTML después de la etiqueta de cierre `style` deben anidarse en `.container-fluid`.
 
 ```js
-assert($('.container-fluid').children().length >= 8);
+assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').has("style").length && !$('.container-fluid').has("link").length);
 ```
 
 # --seed--

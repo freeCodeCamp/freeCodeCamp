@@ -5,7 +5,7 @@ import {
   connectStateResults,
   connectAutoComplete
 } from 'react-instantsearch-dom';
-import { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash-es';
 
 import EmptySearch from './EmptySearch';
 import NoResults from './NoResults';

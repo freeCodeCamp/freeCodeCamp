@@ -2,6 +2,7 @@
 id: bd7123c9c441eddfaeb4bdef
 title: 给代码添加注释
 challengeType: 1
+removeComments: false
 videoUrl: 'https://scrimba.com/c/c7ynnTp'
 forumTopicId: 16783
 dashedName: comment-your-javascript-code
@@ -19,7 +20,7 @@ JavaScript有两种写注释的方法。
 // This is an in-line comment.
 ```
 
-你也可以使用多行注释来注释你的代码，使用 `/*` 开始， `*/` 结束. 这是一个多行注释：
+你也可以使用多行注释来注释你的代码，使用 `/*` 开始， `*/` 结束。 这是一个多行注释：
 
 ```js
 /* This is a

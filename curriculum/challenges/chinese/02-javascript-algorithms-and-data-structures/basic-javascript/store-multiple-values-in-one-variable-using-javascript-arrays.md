@@ -19,7 +19,7 @@ var sandwich = ["peanut butter", "jelly", "bread"]
 
 # --instructions--
 
-创建一个包含字符串（`string`）和数字（ `number`）（按照字符串和数字的顺序）的数组`myArray`。
+创建一个包含字符串（`string`）和数字（ `number`）（按照字符串数字的顺序）的数组 `myArray`。
 
 # --hints--
 

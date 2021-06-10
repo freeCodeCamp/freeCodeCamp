@@ -20,7 +20,7 @@ Por ejemplo:
 
 # --instructions--
 
-Anida el elemento `input` existente dentro de un elemento `form` y asigna `"https://freecatphotoapp.com/submit-cat-photo"` al atributo `action` del elemento `form`.
+Anida el elemento `input` existente dentro de un elemento `form` y asigna `"https://www.freecatphotoapp.com/submit-cat-photo"` al atributo `action` del elemento `form`.
 
 # --hints--
 
@@ -34,12 +34,11 @@ assert(
 );
 ```
 
-Tu formulario `form` debe tener un atributo `action` que esté establecido como `https://freecatphotoapp.com/submit-cat-photo`
+Tu formulario `form` debe tener un atributo `action` que esté establecido como `https://www.freecatphotoapp.com/submit-cat-photo`
 
 ```js
-assert(
-  $('form').attr('action') === 'https://freecatphotoapp.com/submit-cat-photo'
-);
+const action = $('form').attr('action');
+assert(action.match(/^https:\/\/(www\.)?freecatphotoapp\.com\/submit-cat-photo$/i))
 ```
 
 Tu elemento `form` debe tener etiquetas correctamente abiertas y cerradas.
@@ -61,7 +60,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -86,7 +85,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -100,7 +99,7 @@ assert(
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="https://freecatphotoapp.com/submit-cat-photo">
+  <form action="https://www.freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>

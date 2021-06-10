@@ -6,6 +6,7 @@
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderá técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
       "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
     ],
+    "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "basic-html-and-html5": {
         "title": "HTML y HTML 5 básico",
@@ -93,6 +94,7 @@
       "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para manipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
       "A lo largo del camino, también aprenderás dos estilos o paradigmas importantes de programación: la Programación Orientada a Objetos (OOP), y la Programación Funcional (FP)."
     ],
+    "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o bloqueadores de scripts pueden interferir con las pruebas. Si se te presentan problemas, te recomendamos deshabilitar las extensiones que modifiquen o bloqueen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "basic-javascript": {
         "title": "JavaScript básico",
@@ -150,7 +152,7 @@
         "title": "Programación funcional",
         "intro": [
           "La programación funcional es otro enfoque común en el desarrollo de software. En programación funcional, el código está organizado en funciones más pequeñas y básicas que se pueden combinar para construir programas de mayor complejidad.",
-          "En este curso, aprenderás los conceptos básicos de la programación funcional, incluyendo funciones puras, cómo evitar mutaciones, y cómo escribir código más limpio con métodos como <code>.map()</code> y <code>.filter()</code>."
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -196,6 +198,7 @@
       "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
       "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
     ],
+    "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
@@ -254,24 +257,25 @@
   "data-visualization": {
     "title": "Visualización de Datos",
     "intro": [
-      "Data is all around us, but it doesn't mean much without shape or context.",
-      "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
-      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programing Interface)."
+      "Los datos están a nuestro alrededor, pero no significan mucho si no tienen forma o contexto.",
+      "En la certificación Visualización de Datos, construirás diagramas, gráficos, y mapas para presentar diferentes tipos de datos utilizando la biblioteca D3.js.",
+      "También aprenderás acerca de JSON (JavaScript Object Notation), y cómo trabajar con datos en línea usando una API (Application Programing Interface)."
     ],
+    "note": "",
     "blocks": {
       "data-visualization-with-d3": {
-        "title": "Data Visualization with D3",
+        "title": "Visualización de datos con D3",
         "intro": [
-          "D3, or D3.js, stands for Data Driven Documents. It's a JavaScript library for creating dynamic and interactive data visualizations in the browser.",
-          "D3 is built to work with common web standards – namely HTML, CSS, and Scalable Vector Graphics (SVG).",
-          "D3 supports many different kinds of input data formats. Then, using its powerful built-in methods, you can transform those data into different charts, graphs, and maps.",
-          "In the Data Visualization with D3 courses, you'll learn how to work with data to create different charts, graphs, hover elements, and other ingredients to create dynamic and attractive data visualizations."
+          "D3, o D3.js, significa documentos basados en datos. Es una biblioteca JavaScript para crear visualizaciones de datos dinámicas e interactivas en el navegador.",
+          "D3 está construido para trabajar con estándares web comunes – a saber, HTML, CSS y gráficos vectoriales escalables (SVG).",
+          "D3 soporta muchos tipos diferentes de formatos de datos de entrada. Luego, usando sus potentes métodos incorporados, puedes transformar esos datos en diferentes diagramas, gráficos y mapas.",
+          "En los cursos de Visualización de Datos con D3, aprenderás a trabajar con datos para crear diferentes tablas, gráficos, elementos flotantes y otros elementos para crear visualizaciones de datos dinámicas y atractivas."
         ]
       },
       "json-apis-and-ajax": {
-        "title": "JSON APIs and AJAX",
+        "title": "APIs JSON y AJAX",
         "intro": [
-          "Similar to how UIs help people use programs, APIs (Application Programming Interfaces) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.",
+          "De forma similar a la que las interfaces de usuario \"UI\" ayudan a la gente a usar programas, las APIs (Interfaces de Programación de Aplicación) ayudan a los programas a interactuar con otros programas. Las APIs son herramientas que los ordenadores utilizan para comunicarse entre sí, en parte para enviar y recibir datos.",
           "Programmers often use AJAX (Asynchronous JavaScript and XML) when working with APIs. AJAX refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. And the data transferred between the browser and server is often in a format called JSON (JavaScript Object Notation).",
           "This course will teach you the basics about working with APIs and different AJAX technologies in the browser."
         ]
@@ -299,6 +303,7 @@
       "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
       "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
+    "note": "",
     "blocks": {
       "managing-packages-with-npm": {
         "title": "Managing Packages with NPM",
@@ -328,7 +333,7 @@
         "title": "APIs and Microservices Projects",
         "intro": [
           "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show of to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
         ]
       }
     }
@@ -340,6 +345,7 @@
       "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
       "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, and Socket.io for real-time communication between the server and connected clients."
     ],
+    "note": "",
     "blocks": {
       "quality-assurance-and-testing-with-chai": {
         "title": "Quality Assurance and Testing with Chai",
@@ -372,6 +378,7 @@
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
       "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
+    "note": "",
     "blocks": {
       "python-for-everybody": {
         "title": "Python for Everybody",
@@ -394,6 +401,7 @@
       "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
       "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
     ],
+    "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
         "title": "Data Analysis with Python",
@@ -425,6 +433,7 @@
       "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
       "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
     ],
+    "note": "",
     "blocks": {
       "information-security-with-helmetjs": {
         "title": "Information Security with HelmetJS",
@@ -456,6 +465,7 @@
       "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
+    "note": "",
     "blocks": {
       "tensorflow": {
         "title": "Tensorflow",
@@ -485,6 +495,7 @@
       "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
       "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
     ],
+    "note": "",
     "blocks": {
       "algorithms": {
         "title": "Algorithms",
@@ -527,6 +538,7 @@
     "certification": "Certificación de {{cert}}",
     "browse-other": "Navega por nuestras otras certificaciones gratuitas\n(recomendamos hacerlo en orden)",
     "courses": "Cursos",
+    "steps": "Steps",
     "expand": "Expandir",
     "collapse": "Contraer"
   }

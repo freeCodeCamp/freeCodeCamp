@@ -12,7 +12,7 @@ dashedName: remove-an-element-using-jquery
 
 jQuery 有一个 `.remove()` 方法，能完全移除 HTML 标签。
 
-用 `.remove()` 方法从页面移除 `target4` 标签。
+用 `.remove()` 方法从页面移除 `#target4` 元素。
 
 # --hints--
 

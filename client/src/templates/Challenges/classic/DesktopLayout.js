@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
-import { first } from 'lodash';
+import { first } from 'lodash-es';
 import EditorTabs from './EditorTabs';
 import ActionRow from './ActionRow';
 import envData from '../../../../../config/env.json';
@@ -84,17 +84,13 @@ class DesktopLayout extends Component {
           )}
 
           <ReflexElement flex={1} {...resizeProps}>
+            {challengeFile && showUpcomingChanges && !hasEditableBoundries && (
+              <EditorTabs />
+            )}
             {challengeFile && (
               <ReflexContainer key={challengeFile.key} orientation='horizontal'>
                 <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
-                  {
-                    <Fragment>
-                      {showUpcomingChanges && !hasEditableBoundries && (
-                        <EditorTabs />
-                      )}
-                      {editor}
-                    </Fragment>
-                  }
+                  {<Fragment>{editor}</Fragment>}
                 </ReflexElement>
                 {isConsoleDisplayable && (
                   <ReflexSplitter propagate={true} {...resizeProps} />

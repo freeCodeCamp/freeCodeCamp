@@ -102,6 +102,7 @@
       "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
       "is too short": "用户名 \"{{username}}\" 太短",
       "is a reserved error code": "\"{{username}}\" 是错误代码，不可用作用户名",
+      "must be lowercase": "用户名 \"{{username}}\" 必须是小写的",
       "unavailable": "用户名不可用",
       "validating": "验证用户名......",
       "available": "用户名可用",
@@ -289,7 +290,7 @@
   "donate": {
     "title": "支持我们的非营利组织",
     "processing": "我们正在处理你的捐款。",
-    "redirecting": "Redirecting...",
+    "redirecting": "重新引导中...",
     "thanks": "谢谢捐款",
     "thank-you": "谢谢你成为我们的支持者。",
     "thank-you-2": "谢谢你成为 freeCodeCamp 的支持者。现在你已设置定期捐款。",
@@ -297,6 +298,7 @@
     "help-more": "帮助我们做更多",
     "error": "你的捐款处理有点问题。",
     "free-tech": "你的捐款将支持世界各地的人们获得免费的技术教育。",
+    "no-halo": "如果你在你的个人图片周围看不到金色光环，请联系 donors@freecodecamp.org。",
     "gift-frequency": "选择捐赠的频率：",
     "gift-amount": "选择捐赠的额度：",
     "confirm": "确认你的捐款",
@@ -338,7 +340,7 @@
     "details": "请尽可能详细地描述你所举报的账号或行为。",
     "portfolio": "举报一个用户的作品集",
     "portfolio-2": "你想举报 {{username}} 的作品集滥用行为吗？",
-    "notify-1": "我们将通知社区管理团队，并发送举报副本到你的邮箱：<strong>{{email}}</strong>",
+    "notify-1": "我们将通知社区管理团队，并将此举报的副本发送到你的邮箱：<strong>{{email}}</strong>",
     "notify-2": "如有需要，我们会联系你了解更多信息。",
     "what": "你想举报什么？",
     "submit": "提交举报"
@@ -350,7 +352,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 300+ 篇教程",
+    "placeholder": "搜索 400+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
@@ -553,5 +555,32 @@
         "Neural Network SMS Text Classifier": "神经网络短信分类器"
       }
     }
+  },
+  "certification-card": {
+    "title": "领取你的认证",
+    "intro": "完成以下步骤来领取并查看你的 {{i18nCertText}}",
+    "complete-project": "完成 {{i18nCertText}} 项目",
+    "accept-honesty": "接受我们的学术诚信政策",
+    "set-name": "设置你的名字，并将它设置为公开",
+    "set-certs-public": "将你的认证设置为公开",
+    "set-profile-public": "将你的个人资料设置为公开",
+    "set-claim": "领取并查看你的认证"
+  },
+  "forum-help": {
+    "browser-info": "**你的浏览器信息：**",
+    "user-agent": "用户代理是： <code>{{userAgent}}</code>",
+    "challenge": "**挑战：** {{challengeTitle}}",
+    "challenge-link": "**挑战的链接：**",
+    "whats-happening": "**告诉我们发生了什么：**",
+    "describe": "在此详细描述你的问题。",
+    "camper-project": "**你的项目链接**",
+    "camper-code": "**你目前的代码**",
+    "warning": "警告",
+    "too-long-one": "挑战的种子代码和/或你的解决方案超过了我们从挑战传送的最大长度。",
+    "too-long-two": "你需要在此采取额外步骤，以确保你写的代码可以轻松地被阅读。",
+    "too-long-three": "请复制/粘贴所有在挑战中编辑器所显示的代码。",
+    "add-code-one": "用你的复制代码替换这两句。",
+    "add-code-two": "请保留上方的 ``` 行和下方的 ``` 行",
+    "add-code-three": "因为它们允许你的代码在帖子中被正确格式化。"
   }
 }

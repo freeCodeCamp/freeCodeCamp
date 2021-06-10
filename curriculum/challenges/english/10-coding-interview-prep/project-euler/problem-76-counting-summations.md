@@ -16,23 +16,41 @@ It is possible to write five as a sum in exactly six different ways:
   3 + 1 + 1<br>
   2 + 2 + 1<br>
   2 + 1 + 1 + 1<br>
-  1 + 1 + 1 + 1 + 1<br>
+  1 + 1 + 1 + 1 + 1<br><br>
 </div>
 
-How many different ways can one hundred be written as a sum of at least two positive integers?
+How many different ways can `n` be written as a sum of at least two positive integers?
 
 # --hints--
 
-`countingSummations()` should return a number.
+`countingSummations(5)` should return a number.
 
 ```js
-assert(typeof countingSummations() === 'number');
+assert(typeof countingSummations(5) === 'number');
 ```
 
-`countingSummations()` should return 190569291.
+`countingSummations(5)` should return `6`.
 
 ```js
-assert.strictEqual(countingSummations(), 190569291);
+assert.strictEqual(countingSummations(5), 6);
+```
+
+`countingSummations(20)` should return `626`.
+
+```js
+assert.strictEqual(countingSummations(20), 626);
+```
+
+`countingSummations(50)` should return `204225`.
+
+```js
+assert.strictEqual(countingSummations(50), 204225);
+```
+
+`countingSummations(100)` should return `190569291`.
+
+```js
+assert.strictEqual(countingSummations(100), 190569291);
 ```
 
 # --seed--
@@ -40,16 +58,26 @@ assert.strictEqual(countingSummations(), 190569291);
 ## --seed-contents--
 
 ```js
-function countingSummations() {
+function countingSummations(n) {
 
   return true;
 }
 
-countingSummations();
+countingSummations(5);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function countingSummations(n) {
+  const combinations = new Array(n + 1).fill(0);
+  combinations[0] = 1;
+
+  for (let i = 1; i < n; i++) {
+    for (let j = i; j < n + 1; j++) {
+      combinations[j] += combinations[j - i];
+    }
+  }
+  return combinations[n];
+}
 ```

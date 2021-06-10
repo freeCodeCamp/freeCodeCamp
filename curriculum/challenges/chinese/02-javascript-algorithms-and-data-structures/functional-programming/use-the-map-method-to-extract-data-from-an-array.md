@@ -52,7 +52,7 @@ assert(
 不能使用 `for` 循环。
 
 ```js
-assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
+assert(!code.match(/for\s*?\([\s\S]*?\)/));
 ```
 
 你的代码应使用 `map` 方法。

@@ -1,6 +1,6 @@
 /* global describe it expect */
 
-import __testHelpers from './curriculum-helpers';
+import __testHelpers, { removeJSComments } from './curriculum-helpers';
 import jsTestValues from './__fixtures/curriculum-helpers-javascript';
 import cssTestValues from './__fixtures/curriculum-helpers-css';
 import htmlTestValues from './__fixtures/curriculum-helpers-html';
@@ -8,10 +8,8 @@ import htmlTestValues from './__fixtures/curriculum-helpers-html';
 import whiteSpaceTestValues from './__fixtures/curriculum-helpers-remove-white-space';
 /* eslint-enable max-len */
 
-const {
-  stringWithWhiteSpaceChars,
-  stringWithWhiteSpaceCharsRemoved
-} = whiteSpaceTestValues;
+const { stringWithWhiteSpaceChars, stringWithWhiteSpaceCharsRemoved } =
+  whiteSpaceTestValues;
 
 const { cssFullExample, cssCodeWithCommentsRemoved } = cssTestValues;
 
@@ -40,7 +38,6 @@ describe('removeWhiteSpace', () => {
 });
 
 describe('removeJSComments', () => {
-  const { removeJSComments } = __testHelpers;
   it('returns a string', () => {
     expect(typeof removeJSComments('const should = "return a string"')).toBe(
       'string'
@@ -51,6 +48,11 @@ describe('removeJSComments', () => {
     expect(removeJSComments(jsCodeWithSingleAndMultLineComments)).toBe(
       jsCodeWithSingleAndMultLineCommentsRemoved
     );
+  });
+
+  it('leaves malformed JS unchanged', () => {
+    const actual = '/ unclosed regex';
+    expect(removeJSComments(actual)).toBe(actual);
   });
 
   it('does not remove a url found in JS code', () => {

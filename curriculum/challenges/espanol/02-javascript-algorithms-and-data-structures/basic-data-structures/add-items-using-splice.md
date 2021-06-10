@@ -19,7 +19,7 @@ numbers.splice(startIndex, amountToDelete, 13, 14);
 console.log(numbers);
 ```
 
-La segunda entrada de `12` es removida, y agregamos `13` y `14` en el mismo índice. El arreglo `numbers` ahora será `[ 10, 11, 12, 13, 14, 15 ]`.
+La segunda ocurrencia de `12` es removida, y agregamos `13` y `14` en el mismo índice. El arreglo `numbers` ahora será `[ 10, 11, 12, 13, 14, 15 ]`.
 
 Aquí, comenzamos con un arreglo de números. A continuación, pasamos lo siguiente a `splice()`: El índice en el que empezar a borrar elementos (3), el número de elementos a borrar (1), y el resto de argumentos (13, 14) se insertarán a partir de ese mismo índice. Ten en cuenta que puede haber cualquier número de elementos (separados por comas) después de `amountToDelete`, cada uno de los cuales es insertado.
 

@@ -19,11 +19,13 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "audit": "npm audit & lerna exec --no-bail 'echo $LERNA_PACKAGE_NAME & npm audit'",
-    "audit:fix": "npm audit fix & lerna exec 'echo $LERNA_PACKAGE_NAME & npm audit fix'",
+    "analyze-bundle": "webpack-bundle-analyzer",
+    "audit": "npm audit & npx lerna exec --no-bail --concurrency 1 --stream -- npm audit",
+    "audit:fix": "npm audit fix & npx lerna exec --no-bail --concurrency 1 --stream -- npm audit fix",
     "bootstrap": "lerna bootstrap --ci",
     "prebuild": "npm run ensure-env",
     "build": "npm-run-all -p build:*",
+    "build-workers": "cd ./client && npm run prebuild",
     "build:client": "cd ./client && npm run build",
     "build:curriculum": "cd ./curriculum && npm run build",
     "build:server": "cd ./api-server && npm run build",
@@ -63,6 +65,7 @@
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:css": "npm run prettier -- --check",
     "lint:js": "eslint .",
+    "lint:ts": "tsc -p client",
     "lint:translations": "cd ./client && npm run lint",
     "postinstall": "npm run bootstrap",
     "prettier": "prettier \"**/*.css\"",
@@ -72,65 +75,71 @@
     "start": "npm-run-all ensure-env -p develop:server serve:client",
     "start-ci": "npm-run-all ensure-env -p start:server serve:client",
     "start:server": "cd ./api-server && npm start",
-    "test": "npm-run-all ensure-env build:curriculum -p test:*",
-    "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
-    "test:client": "cd ./client && npm test",
+    "storybook": "cd ./tools/ui-components && npm run storybook",
+    "test": "run-s ensure-env build:curriculum build-workers test:*",
+    "test:source": "jest",
     "test:curriculum": "cd ./curriculum && npm test",
-    "test:curriculum-js": "jest --rootDir ./curriculum",
-    "test:server": "cd ./api-server && npm test",
-    "test:tools": "jest ./tools",
-    "test:utils": "jest --rootDir ./utils"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
+    "test-client": "jest client",
+    "test-curriculum-js": "jest curriculum",
+    "test-server": "jest api-server",
+    "test-tools": "jest tools",
+    "test-utils": "jest utils",
+    "test-ui-components": "jest tools/ui-components",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "linters": {
-      "*.css": [
-        "prettier --write",
-        "git add"
-      ],
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
-    }
+    "*.css": "prettier --write",
+    "*.(js|ts|tsx)": "eslint --cache --fix",
+    "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
   },
   "dependencies": {
-    "dotenv": "8.2.0"
+    "dotenv": "10.0.0",
+    "invariant": "2.2.4"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.14.5",
+    "@babel/plugin-proposal-function-bind": "7.14.5",
+    "@babel/preset-env": "7.14.5",
+    "@babel/preset-react": "7.14.5",
+    "@babel/preset-typescript": "7.14.5",
     "@testing-library/cypress": "7.0.6",
+    "@testing-library/dom": "7.31.2",
+    "@testing-library/jest-dom": "5.13.0",
+    "@testing-library/user-event": "13.1.9",
+    "@typescript-eslint/eslint-plugin": "4.26.1",
+    "@typescript-eslint/parser": "4.26.1",
     "babel-eslint": "10.1.0",
+    "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
-    "cypress": "7.1.0",
+    "cypress": "7.5.0",
     "docsify-cli": "4.4.3",
-    "eslint": "7.24.0",
-    "eslint-config-prettier": "8.2.0",
-    "eslint-plugin-import": "2.22.1",
+    "eslint": "7.28.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jest-dom": "3.9.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prefer-object-spread": "1.2.1",
     "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-react": "7.23.2",
+    "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "2.5.1",
-    "execa": "4.0.3",
-    "husky": "3.1.0",
-    "jest": "24.9.0",
+    "eslint-plugin-testing-library": "4.6.0",
+    "execa": "5.1.1",
+    "husky": "6.0.0",
+    "jest": "26.6.3",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "11.0.0",
     "lodash": "4.17.21",
-    "markdownlint": "0.21.0",
+    "markdownlint": "0.23.1",
     "npm-run-all": "4.1.5",
-    "ora": "5.4.0",
-    "prettier": "2.2.1",
+    "ora": "5.4.1",
+    "prettier": "2.3.1",
     "prismjs": "1.23.0",
+    "process": "0.11.10",
     "shx": "0.3.3",
-    "sinon": "7.4.1",
-    "sinon-express-mock": "2.2.1",
-    "start-server-and-test": "1.12.1"
+    "start-server-and-test": "1.12.5",
+    "typescript": "4.3.2",
+    "webpack-bundle-analyzer": "4.4.2"
   }
 }

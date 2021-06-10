@@ -550,25 +550,20 @@ Provisioning VMs with the Code
    cd client
    ```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/client-config.git client
-   cd client
-   ```
-
    Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
    > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 
    > ```console
-   echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
-   chmod +x client-start-primary.sh
-   pm2 delete client-primary
-   pm2 start  ./client-start-primary.sh --name client-primary
-   echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
-   chmod +x client-start-secondary.sh
-   pm2 delete client-secondary
-   pm2 start  ./client-start-secondary.sh --name client-secondary
-```
+   >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   >    chmod +x client-start-primary.sh
+   >    pm2 delete client-primary
+   >    pm2 start  ./client-start-primary.sh --name client-primary
+   >    echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   >    chmod +x client-start-secondary.sh
+   >    pm2 delete client-secondary
+   >    pm2 start  ./client-start-secondary.sh --name client-secondary
+   > ```
 
 ### Logging and Monitoring
 

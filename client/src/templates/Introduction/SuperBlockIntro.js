@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import { uniq } from 'lodash';
+import { uniq } from 'lodash-es';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
@@ -25,7 +25,7 @@ import {
   userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/propTypes';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 
 import './intro.css';
 

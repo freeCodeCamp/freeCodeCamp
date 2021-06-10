@@ -20,10 +20,9 @@
   "main": "none",
   "scripts": {
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
-    "build": "babel src --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
+    "build": "babel src --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files --no-copy-ignored",
     "develop": "cross-env DEBUG=fcc* node src/development-start.js",
-    "start": "cross-env DEBUG=fcc* node lib/production-start.js",
-    "test": "jest"
+    "start": "cross-env DEBUG=fcc* node lib/production-start.js"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
@@ -48,7 +47,7 @@
     "dotenv": "^6.2.0",
     "express-flash": "~0.0.2",
     "express-session": "^1.17.1",
-    "express-validator": "^6.10.0",
+    "express-validator": "^6.11.1",
     "helmet": "^3.23.3",
     "helmet-csp": "^2.10.0",
     "jsonwebtoken": "^8.5.1",
@@ -69,24 +68,21 @@
     "passport-mock-strategy": "^2.0.0",
     "query-string": "^6.14.0",
     "rx": "^4.1.0",
-    "stripe": "^6.36.0",
     "uuid": "^3.4.0",
     "validator": "^9.4.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.14",
-    "@babel/core": "^7.13.15",
-    "@babel/node": "^7.13.13",
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
-    "@babel/plugin-proposal-optional-chaining": "^7.13.12",
-    "@babel/preset-env": "^7.13.15",
-    "@babel/register": "^7.13.14",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/register": "^7.13.16",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.9.0",
     "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-plugin-transform-imports": "^1.5.1",
-    "jest": "^26.6.3",
     "loopback-component-explorer": "^6.4.0",
     "nodemon": "^2.0.7",
     "smee-client": "^1.2.2"

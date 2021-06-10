@@ -10,6 +10,7 @@ import {
 import { tap, mapTo } from 'rxjs/operators';
 import { transformEditorLink } from '../utils';
 import envData from '../../../../../config/env.json';
+import i18next from 'i18next';
 
 const { forumLocation } = envData;
 
@@ -32,9 +33,8 @@ function createQuestionEpic(action$, state$, { window }) {
     tap(() => {
       const state = state$.value;
       const files = challengeFilesSelector(state);
-      const { title: challengeTitle, helpCategory } = challengeMetaSelector(
-        state
-      );
+      const { title: challengeTitle, helpCategory } =
+        challengeMetaSelector(state);
       const {
         navigator: { userAgent },
         location: { href }
@@ -43,56 +43,41 @@ function createQuestionEpic(action$, state$, { window }) {
         projectFormValuesSelector(state)
       );
       const endingText = dedent(
-        `**Your browser information:**
-
-        User Agent is: <code>${userAgent}</code>.
-
-        **Challenge:** ${challengeTitle}
-
-        **Link to the challenge:**
-        ${href}`
+        `${i18next.t('forum-help.browser-info')}\n\n${i18next.t(
+          'forum-help.user-agent',
+          { userAgent }
+        )}\n\n${i18next.t(
+          'forum-help.challenge'
+        )} ${challengeTitle}\n\n${i18next.t(
+          'forum-help.challenge-link'
+        )}\n${href}`
       );
 
-      let textMessage = dedent(
-        `**Tell us what's happening:**
-        Describe your issue in detail here.
-
+      let textMessage = dedent(`${i18next.t(
+        'forum-help.whats-happening'
+      )}\n${i18next.t('forum-help.describe')}\n\n
         ${
           projectFormValues.length
-            ? `**Your project link(s)**\n`
-            : `**Your code so far**`
+            ? `${i18next.t('forum-help.camper-project')}\n`
+            : i18next.t('forum-help.camper-code')
         }
         ${
           projectFormValues
             ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n`)
             ?.join('') || filesToMarkdown(files)
-        }
-
-        ${endingText}`
-      );
+        }\n\n
+        ${endingText}`);
 
       const altTextMessage = dedent(
-        `**Tell us what's happening:**
-
-
-
-        **Your code so far**
-
-        WARNING
-
-        The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.
-
-        You will need to take an additional step here so the code you wrote presents in an easy to read format.
-
-        Please copy/paste all the editor code showing in the challenge from where you just linked.
-
-        \`\`\`
-
-        Replace these two sentences with your copied code.
-        Please leave the \`\`\` line above and the \`\`\` line below,
-        because they allow your code to properly format in the post.
-
-        \`\`\`\n${endingText}`
+        `${i18next.t('forum-help.whats-happening')}\n\n\n\n${i18next.t(
+          'forum-help.camper-code'
+        )}\n\n${i18next.t('forum-help.warning')}\n\n${i18next.t(
+          'forum-help.too-long-one'
+        )}\n\n${i18next.t('forum-help.too-long-two')}\n\n${i18next.t(
+          'forum-help.too-long-three'
+        )}\n\n\`\`\`\n${i18next.t('forum-help.add-code-one')}\n${i18next.t(
+          'forum-help.add-code-two'
+        )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
       const category = window.encodeURIComponent(helpCategory || 'Help');

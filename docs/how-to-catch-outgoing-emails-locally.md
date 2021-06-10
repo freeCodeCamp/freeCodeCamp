@@ -1,22 +1,38 @@
 > **Note:** This is an **optional** step and is required only when working with email workflows
 
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
+
 ## Introduction
 
 Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
 ## Installing MailHog
 
-MailHog can be installed on macOS, Windows and Linux.
+MailHog can be installed on macOS, Windows and Linux or used via Docker
 
-- [Introduction](#introduction)
-- [Installing MailHog](#installing-mailhog)
-  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
-  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
-  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
-- [Using MailHog](#using-mailhog)
-- [Useful Links](#useful-links)
+<details><summary>Installing MailHog with Docker</summary>
 
-### Installing MailHog on macOS
+If you have Docker installed then you can use
+
+```bash
+docker run -d --name mailhog --rm mailhog/mailhog
+```
+
+to start MailHog in the background and
+
+```bash
+docker stop mailhog
+```
+
+to stop it.
+
+When the installation completes, you can start [using MailHog](#using-mailhog).
+</details>
+
+<details><summary>Installing MailHog on macOS</summary>
 
 Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
@@ -28,8 +44,9 @@ brew services start mailhog
 The above commands will start a mailhog service in the background.
 
 When the installation completes, you can start [using MailHog](#using-mailhog).
+</details>
 
-### Installing MailHog on Windows
+<details><summary>Installing MailHog on Windows</summary>
 
 Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
@@ -38,8 +55,9 @@ When the download completes, click to open the file. A Windows firewall notifica
 Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
 Start [using MailHog](#using-mailhog).
+</details>
 
-### Installing MailHog on Linux
+<details><summary>Installing MailHog on Linux</summary>
 
 First, install [Go](https://golang.org).
 
@@ -78,6 +96,7 @@ mailhog
 ```
 
 Start [using MailHog](#using-mailhog).
+</details>
 
 ## Using MailHog
 
