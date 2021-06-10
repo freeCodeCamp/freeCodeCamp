@@ -10,20 +10,26 @@ dashedName: problem-52-permuted-multiples
 
 It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order.
 
-Find the smallest positive integer, `x`, such that `2x`, `3x`, `4x`, `5x`, and `6x`, contain the same digits.
+Find the smallest positive integer, such that multiplied by integers $\\{2, 3, \ldots, n\\}$, contain the same digits.
 
 # --hints--
 
-`permutedMultiples()` should return a number.
+`permutedMultiples(2)` should return a number.
 
 ```js
-assert(typeof permutedMultiples() === 'number');
+assert(typeof permutedMultiples(2) === 'number');
 ```
 
-`permutedMultiples()` should return 142857.
+`permutedMultiples(2)` should return `125874`.
 
 ```js
-assert.strictEqual(permutedMultiples(), 142857);
+assert.strictEqual(permutedMultiples(2), 125874);
+```
+
+`permutedMultiples(6)` should return `142857`.
+
+```js
+assert.strictEqual(permutedMultiples(6), 142857);
 ```
 
 # --seed--
@@ -31,12 +37,12 @@ assert.strictEqual(permutedMultiples(), 142857);
 ## --seed-contents--
 
 ```js
-function permutedMultiples() {
+function permutedMultiples(n) {
 
   return true;
 }
 
-permutedMultiples();
+permutedMultiples(2);
 ```
 
 # --solutions--
