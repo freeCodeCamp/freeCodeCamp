@@ -7,7 +7,7 @@ dashedName: part-5
 
 # --description--
 
-The name of the cafe is `Camper Cafe`. Add an `h1` element with the name of the cafe in capitalized letters to make it stand out.
+The name of the cafe is `CAMPER CAFE`. Add an `h1` element within your `body` element. Give it the name of the cafe in capitalized letters to make it stand out.
 
 # --hints--
 
