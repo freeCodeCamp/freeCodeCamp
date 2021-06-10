@@ -16,7 +16,7 @@ More resources:
 
 ## --text--
 
-Which of the following is not part of Data Analysis?
+Which of the following is **not** part of Data Analysis?
 
 ## --answers--
 
@@ -37,4 +37,3 @@ Transforming data into an appropriate data structure.
 ## --video-solution--
 
 2
-
