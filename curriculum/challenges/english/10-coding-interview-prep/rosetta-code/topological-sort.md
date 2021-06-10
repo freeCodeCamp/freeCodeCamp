@@ -12,7 +12,7 @@ Given a mapping between items, and items they depend on, a topological sort orde
 
 # --instructions--
 
-Write a function that will return list with valid compile order of libraries from their dependencies.
+Write a function that will return a list with valid compile order of libraries from their dependencies.
 
 - Assume library names are single words.
 - Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.
@@ -41,7 +41,7 @@ synopsys
 
 The compiling of a library in the VHDL language has the constraint that a library must be compiled after any library it depends on. The above data would be un-orderable if, for example, `dw04` is added to the list of dependencies of `dw01`.
 
-Input of the function will be a multiline string, each line will consist of name of the library, followed by it dependencies (if exist).
+The input of the function will be a multiline string, each line will consist of the name of the library, followed by its dependencies (if exist).
 
 For example:
 
