@@ -48,7 +48,7 @@ permutedMultiples(2);
 # --solutions--
 
 ```js
-function permutedMultiples() {
+function permutedMultiples(n) {
     const isPermutation = (a, b) =>
         a.length !== b.length
             ? false
@@ -61,9 +61,9 @@ function permutedMultiples() {
 
     while (!found) {
         start *= 10;
-        for (let i = start; i < start * 10 / 6; i++) {
+        for (let i = start; i < start * 10 / n; i++) {
             found = true;
-            for (let j = 2; j <= 6; j++) {
+            for (let j = 2; j <= n; j++) {
                 if (!isPermutation(i + '', j * i + '')) {
                     found = false;
                     break;
