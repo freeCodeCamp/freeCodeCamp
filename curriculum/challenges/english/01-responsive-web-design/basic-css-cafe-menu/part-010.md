@@ -14,13 +14,13 @@ Create an `h2` element in the `section` element and give it the text `Coffee`.
 You should have an opening `<h2>` tag.
 
 ```js
-assert(code.match(/<h2>/i));
+assert(code.match(/<h2\s*>/i));
 ```
 
 You should have a closing `</h2>` tag.
 
 ```js
-assert(code.match(/<\/h2>/i));
+assert(code.match(/<\/h2\s*>/i));
 ```
 
 You should not change your existing `section` element. Make sure you did not delete the closing tag.
@@ -68,4 +68,3 @@ assert(h2.innerText === 'Coffee');
   </body>
 <html>
 ```
-

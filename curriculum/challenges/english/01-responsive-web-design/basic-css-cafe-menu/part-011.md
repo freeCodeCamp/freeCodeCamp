@@ -14,19 +14,19 @@ Up until now, you have been limited regarding the presentation and appearance of
 Your code should have an opening `<style>` tag.
 
 ```js
-assert(code.match(/<style>/i));
+assert(code.match(/<style\s*>/i));
 ```
 
 Your code should have a closing `</style>` tag.
 
 ```js
-assert(code.match(/<\/style>/));
+assert(code.match(/<\/style\s*>/));
 ```
 
 Your `style` element should be nested in your `head` element.
 
 ```js
-assert(code.match(/<head>[\w\W\s]*<style>[\w\W\s]*<\/style>[\w\W\s]*<\/head>/i))
+assert(code.match(/<head\s*>[\w\W\s]*<style\s*>[\w\W\s]*<\/style\s*>[\w\W\s]*<\/head\s*>/i))
 ```
 
 # --seed--
@@ -55,4 +55,3 @@ assert(code.match(/<head>[\w\W\s]*<style>[\w\W\s]*<\/style>[\w\W\s]*<\/head>/i))
 --fcc-editable-region--
 <html>
 ```
-
