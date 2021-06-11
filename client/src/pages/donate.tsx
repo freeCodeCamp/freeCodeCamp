@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
@@ -18,41 +18,44 @@ import {
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import CampersImage from '../components/landing/components/CampersImage';
 
-const propTypes = {
-  executeGA: PropTypes.func,
-  isDonating: PropTypes.bool,
-  showLoading: PropTypes.bool.isRequired,
-  t: PropTypes.func.isRequired
-};
+interface ExecuteGaArg {
+  type: string;
+  data: {
+    category: string;
+    action: string;
+    nonInteraction?: boolean;
+    label?: string;
+    value?: number;
+  };
+}
+interface DonatePageProps {
+  executeGA: (arg: ExecuteGaArg) => void;
+  isDonating?: boolean;
+  showLoading: boolean;
+  t: (s: string) => string;
+}
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ isDonating }, showLoading) => ({
+  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
     isDonating,
     showLoading
   })
 );
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      executeGA
-    },
-    dispatch
-  );
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({ executeGA }, dispatch);
 
-class DonatePage extends Component {
-  constructor(...props) {
-    super(...props);
-    this.state = {
-      enableSettings: false
-    };
-    this.handleProcessing = this.handleProcessing.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.executeGA({
+function DonatePage({
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  executeGA = () => {},
+  isDonating = false,
+  showLoading,
+  t
+}: DonatePageProps) {
+  useEffect(() => {
+    executeGA({
       type: 'event',
       data: {
         category: 'Donation View',
@@ -60,10 +63,11 @@ class DonatePage extends Component {
         nonInteraction: true
       }
     });
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  handleProcessing(duration, amount, action) {
-    this.props.executeGA({
+  function handleProcessing(duration: string, amount: number, action: string) {
+    executeGA({
       type: 'event',
       data: {
         category: 'Donation',
@@ -74,65 +78,63 @@ class DonatePage extends Component {
     });
   }
 
-  render() {
-    const { showLoading, isDonating, t } = this.props;
-
-    if (showLoading) {
-      return <Loader fullScreen={true} />;
-    }
-
-    return (
-      <Fragment>
-        <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
-        <Grid className='donate-page-wrapper'>
-          <Spacer />
-          <Row>
-            <Fragment>
-              <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-                <Row>
-                  <Col className={'text-center'} xs={12}>
-                    {isDonating ? (
-                      <h2>{t('donate.thank-you')}</h2>
-                    ) : (
-                      <h2>{t('donate.help-more')}</h2>
-                    )}
-                    <Spacer />
-                  </Col>
-                </Row>
-                {isDonating ? (
-                  <Alert>
-                    <p>{t('donate.thank-you-2')}</p>
-                    <br />
-                    <DonationOptionsAlertText />
-                  </Alert>
-                ) : null}
-                <DonationText />
-                <DonateForm
-                  enableDonationSettingsPage={this.enableDonationSettingsPage}
-                  handleProcessing={this.handleProcessing}
-                />
-                <Row className='donate-support'>
-                  <Col xs={12}>
-                    <hr />
-                    <DonationOptionsText />
-                    <DonationSupportText />
-                  </Col>
-                </Row>
-              </Col>
-              <Col lg={6}>
-                <CampersImage page='donate' />
-              </Col>
-            </Fragment>
-          </Row>
-          <Spacer />
-        </Grid>
-      </Fragment>
-    );
-  }
+  return showLoading ? (
+    <Loader fullScreen={true} />
+  ) : (
+    <>
+      <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
+      <Grid className='donate-page-wrapper'>
+        {/* 'Spacer' cannot be used as a JSX component. */}
+        {/* Its return type 'Element | Element[]' is not a valid JSX element. */}
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
+        <Spacer />
+        <Row>
+          <>
+            <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
+              <Row>
+                <Col className={'text-center'} xs={12}>
+                  {isDonating ? (
+                    <h2>{t('donate.thank-you')}</h2>
+                  ) : (
+                    <h2>{t('donate.help-more')}</h2>
+                  )}
+                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                  {/* @ts-ignore */}
+                  <Spacer />
+                </Col>
+              </Row>
+              {isDonating ? (
+                <Alert>
+                  <p>{t('donate.thank-you-2')}</p>
+                  <br />
+                  <DonationOptionsAlertText />
+                </Alert>
+              ) : null}
+              <DonationText />
+              <DonateForm handleProcessing={handleProcessing} />
+              <Row className='donate-support'>
+                <Col xs={12}>
+                  <hr />
+                  <DonationOptionsText />
+                  <DonationSupportText />
+                </Col>
+              </Row>
+            </Col>
+            <Col lg={6}>
+              <CampersImage page='donate' />
+            </Col>
+          </>
+        </Row>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
+        <Spacer />
+      </Grid>
+    </>
+  );
 }
 
 DonatePage.displayName = 'DonatePage';
-DonatePage.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
