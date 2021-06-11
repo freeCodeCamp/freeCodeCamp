@@ -84,5 +84,73 @@ triangleContainment(testTriangles1);
 # --solutions--
 
 ```js
-// solution required
+function triangleContainment(triangles) {
+  function isInTriangle(triangle, point) {
+    // Based on https://stackoverflow.com/a/14382692
+    const area = triangleArea(triangle);
+    const s = getS(area, point, triangle);
+    const t = getT(area, point, triangle);
+
+    if (s > 0 && t > 0 && 1 - s - t > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  function getS(area, point, triangle) {
+    return (
+      (1 / (2 * area)) *
+      (triangle.A.y * triangle.C.x -
+        triangle.A.x * triangle.C.y +
+        point.x * (triangle.C.y - triangle.A.y) +
+        point.y * (triangle.A.x - triangle.C.x))
+    );
+  }
+
+  function getT(area, point, triangle) {
+    return (
+      (1 / (2 * area)) *
+      (triangle.A.x * triangle.B.y -
+        triangle.A.y * triangle.B.x +
+        point.x * (triangle.A.y - triangle.B.y) +
+        point.y * (triangle.B.x - triangle.A.x))
+    );
+  }
+
+  function triangleArea(triangle) {
+    return (
+      0.5 *
+      (-triangle.B.y * triangle.C.x +
+        triangle.A.y * (-triangle.B.x + triangle.C.x) +
+        triangle.A.x * (triangle.B.y - triangle.C.y) +
+        triangle.B.x * triangle.C.y)
+    );
+  }
+
+  function parseTriangle(triangle) {
+    const points = [];
+    for (let i = 0; i < triangle.length; i++) {
+      const [coordinateX, coordinateY] = triangle[i];
+      points.push({ x: coordinateX, y: coordinateY });
+    }
+    const [pointA, pointB, pointC] = points;
+    return {
+      A: pointA,
+      B: pointB,
+      C: pointC
+    };
+  }
+
+  const origin = { x: 0, y: 0 };
+
+  let trianglesInside = 0;
+  for (let i = 0; i < triangles.length; i++) {
+    const triangle = parseTriangle(triangles[i]);
+
+    if (isInTriangle(triangle, origin)) {
+      trianglesInside++;
+    }
+  }
+  return trianglesInside;
+}
 ```
