@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import type { FormEvent, ChangeEvent } from 'react';
 import { Link } from 'gatsby';
 import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -25,118 +26,105 @@ import { userSelector } from '../redux';
 import { updateMyEmail } from '../redux/settings';
 import { maybeEmailRE } from '../utils';
 
-const propTypes = {
-  isNewEmail: PropTypes.bool,
-  t: PropTypes.func.isRequired,
-  updateMyEmail: PropTypes.func.isRequired
-};
+interface UpdateEmailProps {
+  isNewEmail: boolean;
+  t: (s: string) => string;
+  updateMyEmail: (e: string) => void;
+}
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ email, emailVerified }) => ({
+  ({ email, emailVerified }: { email: string; emailVerified: boolean }) => ({
     isNewEmail: !email || emailVerified
   })
 );
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ updateMyEmail }, dispatch);
 
-class UpdateEmail extends Component {
-  constructor(props) {
-    super(props);
+function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
+  const [emailValue, setEmailValue] = useState('');
 
-    this.state = {
-      emailValue: ''
-    };
-
-    this.onChange = this.onChange.bind(this);
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    updateMyEmail(emailValue);
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { emailValue } = this.state;
-    const { updateMyEmail } = this.props;
-    return updateMyEmail(emailValue);
-  };
-
-  onChange(e) {
-    const change = e.target.value;
+  function onChange(event: ChangeEvent) {
+    const change = (event.target as HTMLInputElement).value;
     if (!isString(change)) {
       return null;
     }
-    return this.setState({
-      emailValue: change
-    });
+    setEmailValue(change);
+    return null;
   }
 
-  getEmailValidationState() {
-    const { emailValue } = this.state;
+  function getEmailValidationState() {
     if (maybeEmailRE.test(emailValue)) {
       return isEmail(emailValue) ? 'success' : 'error';
     }
     return null;
   }
 
-  render() {
-    const { isNewEmail, t } = this.props;
-    return (
-      <Fragment>
-        <Helmet>
-          <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
-        </Helmet>
-        <Spacer />
-        <h2 className='text-center'>{t('misc.update-email-2')}</h2>
-        <Grid>
-          <Row>
-            <Col sm={6} smOffset={3}>
-              <Row>
-                <Form horizontal={true} onSubmit={this.handleSubmit}>
-                  <FormGroup
-                    controlId='emailInput'
-                    validationState={this.getEmailValidationState()}
+  return (
+    <>
+      <Helmet>
+        <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
+      </Helmet>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      <Spacer />
+      <h2 className='text-center'>{t('misc.update-email-2')}</h2>
+      <Grid>
+        <Row>
+          <Col sm={6} smOffset={3}>
+            <Row>
+              <Form horizontal={true} onSubmit={handleSubmit}>
+                <FormGroup
+                  controlId='emailInput'
+                  validationState={getEmailValidationState()}
+                >
+                  <Col
+                    className='email-label'
+                    // TODO
+                    componentClass={ControlLabel as unknown}
+                    sm={2}
                   >
-                    <Col
-                      className='email-label'
-                      componentClass={ControlLabel}
-                      sm={2}
-                    >
-                      {t('misc.email')}
-                    </Col>
-                    <Col sm={10}>
-                      <FormControl
-                        onChange={this.onChange}
-                        placeholder='camperbot@example.com'
-                        required={true}
-                        type='email'
-                      />
-                    </Col>
-                  </FormGroup>
-                  <Button
-                    block={true}
-                    bsSize='lg'
-                    bsStyle='primary'
-                    disabled={this.getEmailValidationState() !== 'success'}
-                    type='submit'
-                  >
-                    {isNewEmail
-                      ? t('buttons.update-email')
-                      : t('buttons.verify-email')}
-                  </Button>
-                </Form>
-                <p className='text-center'>
-                  <Link to='/signout'>{t('buttons.sign-out')}</Link>
-                </p>
-              </Row>
-            </Col>
-          </Row>
-        </Grid>
-      </Fragment>
-    );
-  }
+                    {t('misc.email')}
+                  </Col>
+                  <Col sm={10}>
+                    <FormControl
+                      onChange={onChange}
+                      placeholder='camperbot@example.com'
+                      required={true}
+                      type='email'
+                    />
+                  </Col>
+                </FormGroup>
+                <Button
+                  block={true}
+                  bsSize='lg'
+                  bsStyle='primary'
+                  disabled={getEmailValidationState() !== 'success'}
+                  type='submit'
+                >
+                  {isNewEmail
+                    ? t('buttons.update-email')
+                    : t('buttons.verify-email')}
+                </Button>
+              </Form>
+              <p className='text-center'>
+                <Link to='/signout'>{t('buttons.sign-out')}</Link>
+              </p>
+            </Row>
+          </Col>
+        </Row>
+      </Grid>
+    </>
+  );
 }
 
 UpdateEmail.displayName = 'Update-Email';
-UpdateEmail.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
