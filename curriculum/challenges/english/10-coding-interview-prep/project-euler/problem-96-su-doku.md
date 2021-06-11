@@ -104,7 +104,7 @@ A well constructed Su Doku puzzle has a unique solution and can be solved by log
 
 The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
 
-By solving puzzles find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
 
 # --hints--
 
