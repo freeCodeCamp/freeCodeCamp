@@ -1,53 +1,79 @@
 /* global cy */
+const certificationUrl = '/certification/developmentuser/responsive-web-design';
+const projects = {
+  superBlock: 'responsive-web-design',
+  block: 'responsive-web-design-projects',
+  challenges: [
+    {
+      slug: 'build-a-tribute-page',
+      solution: 'https://codepen.io/moT01/pen/ZpJpKp'
+    },
+    {
+      slug: 'build-a-survey-form',
+      solution: 'https://codepen.io/moT01/pen/LrrjGz?editors=1010'
+    },
+    {
+      slug: 'build-a-product-landing-page',
+      solution: 'https://codepen.io/moT01/full/qKyKYL/'
+    },
+    {
+      slug: 'build-a-technical-documentation-page',
+      solution: 'https://codepen.io/moT01/full/JBvzNL/'
+    },
+    {
+      slug: 'build-a-personal-portfolio-webpage',
+      solution: 'https://codepen.io/moT01/pen/vgOaoJ'
+    }
+  ]
+};
 
 describe('A certification,', function () {
+  before(() => {
+    cy.exec('npm run seed');
+    cy.login();
+
+    // submit projects for certificate
+    const { superBlock, block, challenges } = projects;
+    challenges.forEach(({ slug, solution }) => {
+      const url = `/learn/${superBlock}/${block}/${slug}`;
+      cy.visit(url);
+      cy.get('#dynamic-front-end-form')
+        .get('#solution')
+        .type(solution, { force: true, delay: 0 });
+      cy.contains("I've completed this challenge")
+        .should('not.be.disabled')
+        .click();
+      cy.contains('Submit and go to next challenge').click().wait(1000);
+    });
+
+    cy.visit('/settings');
+
+    // set user settings to public to claim a cert
+    cy.get('label:contains(Public)>input').each(el => {
+      if (!/toggle-active/.test(el[0].parentElement.className)) {
+        cy.wrap(el).click({ force: true });
+        cy.wait(1000);
+      }
+    });
+
+    // if honest policy not accepted
+    cy.get('.honesty-policy button').then(btn => {
+      if (btn[0].innerText === 'Agree') {
+        btn[0].click({ force: true });
+        cy.wait(1000);
+      }
+    });
+
+    // claim certificate
+    cy.get('a[href*="developmentuser/responsive-web-design"]').click({
+      force: true
+    });
+  });
+
   describe('while viewing your own,', function () {
     before(() => {
       cy.login();
-      cy.visit('/settings');
-
-      // set user settings to public to claim a cert
-      cy.get('label:contains(Public)>input').each(el => {
-        if (!/toggle-active/.test(el[0].parentElement.className)) {
-          cy.wrap(el).click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      // if honest policy not accepted
-      cy.get('.honesty-policy button').then(btn => {
-        if (btn[0].innerText === 'Agree') {
-          btn[0].click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      // fill in legacy front end form
-      cy.get('#dynamic-legacy-front-end input').each(el => {
-        cy.wrap(el)
-          .clear({ force: true })
-          .type('https://nhl.com', { force: true, delay: 0 });
-      });
-
-      // if "Save Progress" button exists
-      cy.get('#dynamic-legacy-front-end').then(form => {
-        if (form[0][10] && form[0][10].innerHTML === 'Save Progress') {
-          form[0][10].click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      // if "Claim Certification" button exists
-      cy.get('#dynamic-legacy-front-end').then(form => {
-        if (form[0][10] && form[0][10].innerHTML === 'Claim Certification') {
-          form[0][10].click({ force: true });
-          cy.wait(1000);
-        }
-      });
-
-      cy.get('#button-legacy-front-end')
-        .contains('Show Certification')
-        .click({ force: true });
+      cy.visit(certificationUrl);
     });
 
     it('should render a LinkedIn button', function () {
@@ -56,7 +82,7 @@ describe('A certification,', function () {
         .and(
           'match',
           // eslint-disable-next-line max-len
-          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Legacy Front End&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=https:\/\/freecodecamp\.org\/certification\/developmentuser\/legacy-front-end/
+          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Responsive Web Design&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=https:\/\/freecodecamp\.org\/certification\/developmentuser\/responsive-web-design/
         );
     });
 
@@ -64,7 +90,7 @@ describe('A certification,', function () {
       cy.contains('Share this certification on Twitter').should(
         'have.attr',
         'href',
-        'https://twitter.com/intent/tweet?text=I just earned the Legacy Front End certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/developmentuser/legacy-front-end'
+        'https://twitter.com/intent/tweet?text=I just earned the Responsive Web Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/developmentuser/responsive-web-design'
       );
     });
 
@@ -79,10 +105,14 @@ describe('A certification,', function () {
 
   describe("while viewing someone else's,", function () {
     before(() => {
-      cy.go('back');
-      cy.get('.toggle-button-nav').click();
-      cy.get('.nav-list').contains('Sign out').click();
-      cy.visit('/certification/developmentuser/legacy-front-end');
+      cy.visit(certificationUrl);
+    });
+
+    it('should display certificate', function () {
+      cy.contains('has successfully completed the freeCodeCamp.org').should(
+        'exist'
+      );
+      cy.contains('Responsive Web Design').should('exist');
     });
 
     it('should not render a LinkedIn button', function () {
