@@ -16,17 +16,16 @@ Change the `margin` of `.one` to `20px auto 20px` so the top margin is 20 pixels
 You should set the `margin` property to `20px auto 20px`.
 
 ```js
-const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.margin === '20px auto');
+const hasMarginRegex = /20px\s*auto\s*20px/;
 // TODO: Why is this stripped? Because margins are the same?
-assert(hasMargin);
+assert(hasMarginRegex.test(code));
 ```
 
 Your `.one` element should have a `margin` value of `20px auto 20px`.
 
 ```js
-const oneMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('margin');
-assert(oneMargin === '20px auto');
-// Should probably test for 20px auto 20px, but might need regex?
+const oneMarginRegex = /\.one\s*{[^}]*margin:\s*20px\s*auto\s*20px;?\s*}/
+assert(oneMarginRegex.test(code));
 ```
 
 # --seed--

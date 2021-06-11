@@ -23,7 +23,7 @@ assert(hasPadding);
 Your `.frame` element should have a `padding` value of `50px`.
 
 ```js
-const framePadding = new __helpers.CSSHelp(document).getStyleDeclaration('.frame')?.getPropertyValue('padding');
+const framePadding = new __helpers.CSSHelp(document).getStyle('.frame')?.getPropertyValue('padding');
 assert(framePadding === '50px');
 ```
 

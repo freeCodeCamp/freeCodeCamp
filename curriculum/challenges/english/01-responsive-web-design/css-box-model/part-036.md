@@ -22,7 +22,7 @@ h1, p {
 You should have a `.one, .two` selector.
 
 ```js
-const oneTwo = new __helpers.CSSHelp(document).getStyleDeclaration('.one, .two');
+const oneTwo = new __helpers.CSSHelp(document).getStyle('.one, .two');
 assert(oneTwo);
 ```
 

@@ -21,7 +21,7 @@ assert(hasMargin);
 Your `.two` element should have a `margin` value of `auto`.
 
 ```js
-const twoMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.two')?.getPropertyValue('margin');
+const twoMargin = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('margin');
 assert(twoMargin === 'auto');
 ```
 

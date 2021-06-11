@@ -23,7 +23,7 @@ assert(hasBoxShadow);
 Your `.one` element should have a `box-shadow` value of `0 0 3px 3px #efb762`.
 
 ```js
-const oneShadow = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('box-shadow');
+const oneShadow = new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('box-shadow');
 assert(oneShadow === 'rgb(239, 183, 98) 0px 0px 3px 3px');
 ```
 

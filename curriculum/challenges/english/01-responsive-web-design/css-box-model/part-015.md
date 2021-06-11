@@ -23,7 +23,7 @@ assert(hasMargin);
 Your `.frame` element should have a `margin` value of `20px auto`.
 
 ```js
-const frameMargin = new __helpers.CSSHelp(document).getStyleDeclaration('.frame')?.getPropertyValue('margin');
+const frameMargin = new __helpers.CSSHelp(document).getStyle('.frame')?.getPropertyValue('margin');
 assert(frameMargin === '20px auto');
 ```
 

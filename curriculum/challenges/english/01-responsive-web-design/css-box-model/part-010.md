@@ -22,7 +22,7 @@ assert(hasBackground);
 Your `.canvas` element should have a `background-color` of `#4d0f00`.
 
 ```js
-const canvasBackground = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('background-color');
+const canvasBackground = new __helpers.CSSHelp(document).getStyle('.canvas')?.getPropertyValue('background-color');
 assert(canvasBackground === 'rgb(77, 15, 0)');
 ```
 

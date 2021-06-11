@@ -21,7 +21,7 @@ assert(hasHeight);
 Your `.three` element should have a `height` value of `28%`.
 
 ```js
-const threeHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('height');
+const threeHeight = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('height');
 assert(threeHeight === '28%');
 ```
 

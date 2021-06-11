@@ -24,7 +24,7 @@ Here's a CSS rule that sets the width of the class `card` to 300 pixels:
 Your code should have a `.canvas` selector.
 
 ```js
-const hasCanvas = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas');
+const hasCanvas = new __helpers.CSSHelp(document).getStyle('.canvas');
 assert(hasCanvas)
 ```
 
@@ -38,7 +38,7 @@ assert(hasWidth);
 Your `.canvas` element should have a `width` of `500px`.
 
 ```js
-const width = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('width');
+const width = new __helpers.CSSHelp(document).getStyle('.canvas')?.getPropertyValue('width');
 assert(width === '500px');
 ```
 

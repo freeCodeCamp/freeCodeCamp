@@ -23,7 +23,7 @@ assert(hasBorderRadius);
 Your `.three` element should have a `border-radius` value of `30px 25px 60px 12px`.
 
 ```js
-const threeBorderRadius = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('border-radius');
+const threeBorderRadius = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('border-radius');
 assert(threeBorderRadius === '30px 25px 60px 12px');
 ```
 

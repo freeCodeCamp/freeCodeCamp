@@ -21,7 +21,7 @@ assert(hasHeight);
 Your `.one` element should have a `height` value of `150px`.
 
 ```js
-const oneHeight = new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('height');
+const oneHeight = new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('height');
 assert(oneHeight === '150px');
 ```
 

@@ -21,7 +21,7 @@ assert(filterFilter.length === 2);
 Your `.three` element should have a `filter` value of `blur(2px)`.
 
 ```js
-const threeFilter = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('filter');
+const threeFilter = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('filter');
 assert(threeFilter === 'blur(2px)');
 ```
 

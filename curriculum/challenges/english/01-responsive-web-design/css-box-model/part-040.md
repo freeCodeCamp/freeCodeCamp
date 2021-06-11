@@ -21,7 +21,7 @@ assert(hasBoxShadow);
 Your `.three` element should have a `box-shadow` value of `0 0 5px 5px #b20403`.
 
 ```js
-const threeShadow = new __helpers.CSSHelp(document).getStyleDeclaration('.three')?.getPropertyValue('box-shadow');
+const threeShadow = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('box-shadow');
 assert(threeShadow === 'rgb(178, 4, 3) 0px 0px 5px 5px');
 ```
 

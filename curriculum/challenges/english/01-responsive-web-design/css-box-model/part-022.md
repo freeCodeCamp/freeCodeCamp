@@ -16,7 +16,7 @@ Replace `padding: 1px;` with `overflow: hidden;` to change the canvas back to it
 You should remove the `padding` property from the `.one` selector.
 
 ```js
-const onePadding = new __helpers.CSSHelp(document).getStyleDeclaration('.one').getPropertyValue('padding');
+const onePadding = new __helpers.CSSHelp(document).getStyle('.one').getPropertyValue('padding');
 assert(!onePadding);
 ```
 
@@ -30,7 +30,7 @@ assert(hasOverflow);
 Your `.canvas` element should have an `overflow` value of `hidden`.
 
 ```js
-const canvasOverflow = new __helpers.CSSHelp(document).getStyleDeclaration('.canvas')?.getPropertyValue('overflow');
+const canvasOverflow = new __helpers.CSSHelp(document).getStyle('.canvas')?.getPropertyValue('overflow');
 assert(canvasOverflow === 'hidden')
 ```
 

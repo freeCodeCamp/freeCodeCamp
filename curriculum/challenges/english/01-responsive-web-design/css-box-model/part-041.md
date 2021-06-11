@@ -23,7 +23,7 @@ assert(hasBorderRadius);
 Your `.one` element should have a `border-radius` value of `9px`.
 
 ```js
-const oneBorderRadius =new __helpers.CSSHelp(document).getStyleDeclaration('.one')?.getPropertyValue('border-radius');
+const oneBorderRadius =new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('border-radius');
 assert(oneBorderRadius === '9px');
 ```
 

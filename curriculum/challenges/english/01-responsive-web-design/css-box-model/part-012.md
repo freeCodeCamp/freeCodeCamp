@@ -16,7 +16,7 @@ Give the `.frame` a border with the shorthand `border: 50px solid black;` declar
 Your code should have a `.frame` selector.
 
 ```js
-const hasFrame = new __helpers.CSSHelp(document).getStyleDeclaration('.frame');
+const hasFrame = new __helpers.CSSHelp(document).getStyle('.frame');
 assert(hasFrame);
 ```
 
@@ -30,7 +30,7 @@ assert(hasBorder);
 Your `.frame` element should have a `50px solid black` `border`.
 
 ```js
-const frameBorder = new __helpers.CSSHelp(document).getStyleDeclaration('.frame')?.getPropertyValue('border');
+const frameBorder = new __helpers.CSSHelp(document).getStyle('.frame')?.getPropertyValue('border');
 assert(frameBorder === '50px solid black');
 ```
 
