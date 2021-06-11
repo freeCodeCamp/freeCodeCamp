@@ -836,7 +836,6 @@ body {
 }
 
 @media (max-width: 1000px) {
---fcc-editable-region--
   :root {
     --building-color1: #000;
     --building-color2: #000;
@@ -847,7 +846,6 @@ body {
     --window-color3: #777;
     --window-color4: #777;
   }
---fcc-editable-region--
   .sky {
     background: radial-gradient(
         closest-corner circle at 15% 15%,
