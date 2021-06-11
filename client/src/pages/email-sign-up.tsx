@@ -48,8 +48,7 @@ function AcceptPrivacyTerms({
         acceptTerms(null);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [acceptTerms, acceptedPrivacyTerms]);
 
   function onClick(isWeeklyEmailAccepted: boolean) {
     acceptTerms(isWeeklyEmailAccepted);

@@ -22,8 +22,7 @@ function SearchPage({ t, updateSearchQuery }: SearchPageProps) {
     return () => {
       updateSearchQuery('');
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [updateSearchQuery]);
 
   return (
     <>
