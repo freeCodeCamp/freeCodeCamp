@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
@@ -16,38 +15,47 @@ import {
   isSignedInSelector,
   userSelector
 } from '../redux';
-import { ChallengeNode } from '../redux/prop-types';
+
+interface FetchState {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+}
+
+interface User {
+  name: string;
+  username: string;
+  completedChallengeCount: number;
+}
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState, isSignedIn, user) => ({
+  (fetchState: FetchState, isSignedIn: boolean, user: User) => ({
     fetchState,
     isSignedIn,
     user
   })
 );
 
-const propTypes = {
-  data: PropTypes.shape({
-    challengeNode: ChallengeNode
-  }),
-  fetchState: PropTypes.shape({
-    pending: PropTypes.bool,
-    complete: PropTypes.bool,
-    errored: PropTypes.bool
-  }),
-  isSignedIn: PropTypes.bool,
-  state: PropTypes.object,
-  user: PropTypes.shape({
-    name: PropTypes.string,
-    username: PropTypes.string,
-    completedChallengeCount: PropTypes.number
-  })
-};
+interface Slug {
+  slug: string;
+}
 
-const LearnPage = ({
+interface LearnPageProps {
+  isSignedIn: boolean;
+  fetchState: FetchState;
+  state: Record<string, unknown>;
+  user: User;
+  data: {
+    challengeNode: {
+      fields: Slug;
+    };
+  };
+}
+
+function LearnPage({
   isSignedIn,
   fetchState: { pending, complete },
   user: { name = '', completedChallengeCount = 0 },
@@ -56,7 +64,7 @@ const LearnPage = ({
       fields: { slug }
     }
   }
-}) => {
+}: LearnPageProps) {
   const { t } = useTranslation();
 
   return (
@@ -74,16 +82,17 @@ const LearnPage = ({
               slug={slug}
             />
             <Map />
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore */}
             <Spacer size={2} />
           </Col>
         </Row>
       </Grid>
     </LearnLayout>
   );
-};
+}
 
 LearnPage.displayName = 'LearnPage';
-LearnPage.propTypes = propTypes;
 
 export default connect(mapStateToProps)(LearnPage);
 
