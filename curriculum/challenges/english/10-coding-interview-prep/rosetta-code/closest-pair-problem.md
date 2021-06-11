@@ -95,7 +95,7 @@ Would return:
 }
 ```
 
-**Note:** In the `pair` array, sort poinits by the `x` coordinate, incrementing.
+**Note:** Sort the `pair` array by their `x` values in incrementing order.
 
 
 # --hints--
