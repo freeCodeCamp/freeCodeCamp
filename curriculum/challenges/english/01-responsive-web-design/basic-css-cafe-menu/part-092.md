@@ -263,8 +263,6 @@ a:active {
 <html>
 ```
 
----
-
 ```css
 body {
   background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
