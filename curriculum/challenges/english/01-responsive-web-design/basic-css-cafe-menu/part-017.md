@@ -14,7 +14,8 @@ Now you need to link the `styles.css` file so the styles will be applied again. 
 Your code should have a `link` element.
 
 ```js
-const link = $('link')[1];
+// link is removed -> if exists, replaced with style
+const link = document.querySelector('body > style');
 assert(link);
 ```
 
@@ -39,22 +40,19 @@ assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/>[\w\W\s]*<\/head>/i))
 Your `link` element should have a `rel` attribute with the value `stylesheet`.
 
 ```js
-const link = $('link')[1];
-assert(link.outerHTML.match(/rel=('|")stylesheet\1/i));
+assert(code.match(/rel=('|")stylesheet\1/i));
 ```
 
 Your `link` element should have a `type` attribute with the value `text/css`.
 
 ```js
-const link = $('link')[1];
-assert(link.outerHTML.match(/type=('|")text\/css\1/i));
+assert(code.match(/type=('|")text\/css\1/i));
 ```
 
 Your `link` element should have an `href` attribute with the value `styles.css`.
 
 ```js
-const link = $('link')[1];
-assert(link.outerHTML.match(/href=('|")styles.css\1/i));
+assert(code.match(/href=('|")styles.css\1/i));
 ```
 
 # --seed--
