@@ -10,6 +10,9 @@ import ShowProfileOrFourOhFour from '../client-only-routes/show-profile-or-four-
 function FourOhFourPage(): JSX.Element {
   return (
     <Router>
+      {/* Error from installing @types/react-helmet and @types/react-redux */}
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
       <ShowProfileOrFourOhFour path={withPrefix('/:maybeUser')} />
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
