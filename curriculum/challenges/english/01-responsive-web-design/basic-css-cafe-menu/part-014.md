@@ -22,7 +22,7 @@ Use a single type selector to center the `h1`, `h2` and `p` elements at the same
 You should use a single type selector for all three elements, `h1, h2, p`. Be sure to use that order.
 
 ```js
-const hasSelector = new __helpers.CSSHelp(document).getStyleDeclaration('h1, h2, p');
+const hasSelector = new __helpers.CSSHelp(document).getStyle('h1, h2, p');
 assert(hasSelector);
 ```
 

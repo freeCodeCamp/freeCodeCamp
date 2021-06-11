@@ -16,7 +16,7 @@ Change the color of the footer `Visit our website` link to be `grey` when a user
 You should use the `a:visited` pseudoselector.
 
 ```js
-const hasAVisited = new __helpers.CSSHelp(document).getStyleDeclaration('a:visited');
+const hasAVisited = new __helpers.CSSHelp(document).getStyle('a:visited');
 assert(hasAVisited);
 ```
 
@@ -30,7 +30,7 @@ assert(hasColor);
 Your `a:visited` should have a `color` of `grey`.
 
 ```js
-const aVisitedColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:visited')?.getPropertyValue('color');
+const aVisitedColor = new __helpers.CSSHelp(document).getStyle('a:visited')?.getPropertyValue('color');
 assert(aVisitedColor === 'grey');
 ```
 

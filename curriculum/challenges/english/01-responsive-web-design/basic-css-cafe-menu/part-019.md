@@ -14,7 +14,7 @@ The text is centered again so the link to the CSS file is working. Add another s
 You should use a `body` selector.
 
 ```js
-const hasBody = new __helpers.CSSHelp(document).getStyleDeclaration('body');
+const hasBody = new __helpers.CSSHelp(document).getStyle('body');
 assert(hasBody);
 ```
 
@@ -28,7 +28,7 @@ assert(hasBackground);
 Your `body` element should have a `brown` background.
 
 ```js
-const bodyBackground = new __helpers.CSSHelp(document).getStyleDeclaration('body')?.getPropertyValue('background-color');
+const bodyBackground = new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('background-color');
 assert(bodyBackground === 'brown');
 ```
 

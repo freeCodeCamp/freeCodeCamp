@@ -22,14 +22,14 @@ Change the existing `div` selector into a class selector by replacing `div` with
 You should have a `.menu` type selector.
 
 ```js
-const hasMenu = new __helpers.CSSHelp(document).getStyleDeclaration('.menu');
+const hasMenu = new __helpers.CSSHelp(document).getStyle('.menu');
 assert(hasMenu);
 ```
 
 You should not have a `div` selector.
 
 ```js
-const hasDiv = new __helpers.CSSHelp(document).getStyleDeclaration('div');
+const hasDiv = new __helpers.CSSHelp(document).getStyle('div');
 assert(!hasDiv);
 ```
 

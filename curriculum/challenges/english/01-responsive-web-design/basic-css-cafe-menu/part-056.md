@@ -45,7 +45,7 @@ assert(hasPadding);
 Your `.menu` element should have a `padding` value of `20px`.
 
 ```js
-const menuPadding = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('padding');
+const menuPadding = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding');
 assert(menuPadding === '20px');
 ```
 

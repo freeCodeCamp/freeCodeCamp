@@ -21,7 +21,7 @@ assert(hasMarginBottom);
 Your `h1` element should have a `margin-bottom` of `15px`.
 
 ```js
-const h1MarginBottom = new __helpers.CSSHelp(document).getStyleDeclaration('h1')?.getPropertyValue('margin-bottom');
+const h1MarginBottom = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('margin-bottom');
 assert(h1MarginBottom === '15px');
 ```
 

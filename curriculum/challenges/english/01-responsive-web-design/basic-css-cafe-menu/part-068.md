@@ -16,7 +16,7 @@ Change the height the `hr` element to be `3px`.
 You should use the `hr` selector.
 
 ```js
-const hasHr = new __helpers.CSSHelp(document).getStyleDeclaration('hr');
+const hasHr = new __helpers.CSSHelp(document).getStyle('hr');
 assert(hasHr);
 ```
 
@@ -30,7 +30,7 @@ assert(hasHeight);
 Your `hr` element should have a height of `3px`.
 
 ```js
-const hrHeight = new __helpers.CSSHelp(document).getStyleDeclaration('hr')?.getPropertyValue('height');
+const hrHeight = new __helpers.CSSHelp(document).getStyle('hr')?.getPropertyValue('height');
 assert(hrHeight === '3px');
 ```
 

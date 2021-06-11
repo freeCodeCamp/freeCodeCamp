@@ -16,7 +16,7 @@ Change the color of the footer `Visit our website` link to be `white` when click
 You should use the `a:active` pseudo-selector.
 
 ```js
-const hasAActive = new __helpers.CSSHelp(document).getStyleDeclaration('a:active');
+const hasAActive = new __helpers.CSSHelp(document).getStyle('a:active');
 assert(hasAActive);
 ```
 
@@ -30,7 +30,7 @@ assert(hasColor);
 Your `a:active` should have a `color` of `white`.
 
 ```js
-const aActiveColor = new __helpers.CSSHelp(document).getStyleDeclaration('a:active')?.getPropertyValue('color');
+const aActiveColor = new __helpers.CSSHelp(document).getStyle('a:active')?.getPropertyValue('color');
 assert(aActiveColor === 'white');
 ```
 

@@ -16,7 +16,7 @@ To make the `footer` links the same color regardless if a link has been visited,
 You should use an `a` selector.
 
 ```js
-const hasASelector = new __helpers.CSSHelp(document).getStyleDeclaration('a');
+const hasASelector = new __helpers.CSSHelp(document).getStyle('a');
 assert(hasASelector);
 ```
 
@@ -29,7 +29,7 @@ const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style
 Your `a` element should have a `color` of `black`.
 
 ```js
-const aColor = new __helpers.CSSHelp(document).getStyleDeclaration('a')?.getPropertyValue('color');
+const aColor = new __helpers.CSSHelp(document).getStyle('a')?.getPropertyValue('color');
 assert(aColor === 'black');
 ```
 

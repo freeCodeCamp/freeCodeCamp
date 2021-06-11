@@ -22,7 +22,7 @@ Center your `h1` element by setting its `text-align` property to the value `cent
 You should have an `h1` selector in your `style` element.
 
 ```js
-const hasSelector = new __helpers.CSSHelp(document).getStyleDeclaration('h1');
+const hasSelector = new __helpers.CSSHelp(document).getStyle('h1');
 assert(hasSelector);
 ```
 
@@ -36,7 +36,7 @@ assert(hasTextAlign);
 Your `h1` selector should set the `text-align` property to `center`.
 
 ```js
-const h1TextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('h1')?.getPropertyValue('text-align');
+const h1TextAlign = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('text-align');
 assert(h1TextAlign === 'center');
 ```
 

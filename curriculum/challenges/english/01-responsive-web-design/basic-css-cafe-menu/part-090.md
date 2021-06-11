@@ -16,7 +16,7 @@ To make the image behave like heading elements (which are block-level), create a
 You should use an `img` selector.
 
 ```js
-const hasImg = new __helpers.CSSHelp(document).getStyleDeclaration('img');
+const hasImg = new __helpers.CSSHelp(document).getStyle('img');
 assert(hasImg);
 ```
 
@@ -44,16 +44,16 @@ assert(marginRightFilter.length === 2);
 Your `img` element should have a `display` of `block`.
 
 ```js
-const imgDisplay = new __helpers.CSSHelp(document).getStyleDeclaration('img')?.getPropertyValue('display');
+const imgDisplay = new __helpers.CSSHelp(document).getStyle('img')?.getPropertyValue('display');
 assert(imgDisplay === 'block');
 ```
 
 Your `img` element should have a `margin-left` and `margin-right` of `auto`.
 
 ```js
-const imgMarginLeft = new __helpers.CSSHelp(document).getStyleDeclaration('img')?.getPropertyValue('margin-left');
+const imgMarginLeft = new __helpers.CSSHelp(document).getStyle('img')?.getPropertyValue('margin-left');
 assert(imgMarginLeft === 'auto');
-const imgMarginRight = new __helpers.CSSHelp(document).getStyleDeclaration('img')?.getPropertyValue('margin-right');
+const imgMarginRight = new __helpers.CSSHelp(document).getStyle('img')?.getPropertyValue('margin-right');
 assert(imgMarginRight === 'auto');
 ```
 

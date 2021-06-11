@@ -16,7 +16,7 @@ Style both the `h1` and the `h2` elements so that only these elements' text use 
 You should use an `h1, h2` selector.
 
 ```js
-const h1h2Selector = new __helpers.CSSHelp(document).getStyleDeclaration('h1, h2');
+const h1h2Selector = new __helpers.CSSHelp(document).getStyle('h1, h2');
 assert(h1h2Selector);
 ```
 

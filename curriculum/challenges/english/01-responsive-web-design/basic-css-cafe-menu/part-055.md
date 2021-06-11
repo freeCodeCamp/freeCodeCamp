@@ -14,9 +14,9 @@ That looks better. Now try to add the same `20px` padding to the top and bottom 
 You should not remove the `padding-left` or `padding-right` properties.
 
 ```js
-const paddingLeft = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('padding-left');
+const paddingLeft = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-left');
 assert(paddingLeft === '20px');
-const paddingRight = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('padding-right');
+const paddingRight = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-right');
 assert(paddingRight === '20px');
 ```
 
@@ -37,14 +37,14 @@ assert(hasPaddingBottom);
 Your `.menu` element should have a `padding-top` of `20px`.
 
 ```js
-const menuPaddingTop = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('padding-top');
+const menuPaddingTop = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-top');
 assert(menuPaddingTop === '20px');
 ```
 
 Your `.menu` element should have a `padding-bottom` of `20px`.
 
 ```js
-const menuPaddingBottom = new __helpers.CSSHelp(document).getStyleDeclaration('.menu')?.getPropertyValue('padding-bottom');
+const menuPaddingBottom = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-bottom');
 assert(menuPaddingBottom === '20px');
 ```
 

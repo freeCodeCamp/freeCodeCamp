@@ -16,7 +16,7 @@ Since the `flavor` class selector already has the properties you want, just add 
 You should add the `.dessert` selector to your `.flavor` selector. 
 
 ```js
-const selector = new __helpers.CSSHelp(document).getStyleDeclaration('.flavor, .dessert') || new __helpers.CSSHelp(document).getStyleDeclaration('.dessert, .flavor');
+const selector = new __helpers.CSSHelp(document).getStyle('.flavor, .dessert') || new __helpers.CSSHelp(document).getStyle('.dessert, .flavor');
 assert(selector)
 ```
 

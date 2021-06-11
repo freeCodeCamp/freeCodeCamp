@@ -14,7 +14,7 @@ Make the `Est. 2020` text italicized by creating an `established` class selector
 You should have an `.established` selector.
 
 ```js
-const hasEstablished = new __helpers.CSSHelp(document).getStyleDeclaration('.established');
+const hasEstablished = new __helpers.CSSHelp(document).getStyle('.established');
 assert(hasEstablished);
 ```
 
@@ -28,7 +28,7 @@ assert(hasFontStyle);
 Your `.established` selector should set the `font-style` property to `italic`.
 
 ```js
-const establishedFontStyle = new __helpers.CSSHelp(document).getStyleDeclaration('.established')?.getPropertyValue('font-style');
+const establishedFontStyle = new __helpers.CSSHelp(document).getStyle('.established')?.getPropertyValue('font-style');
 assert(establishedFontStyle === 'italic');
 ```
 

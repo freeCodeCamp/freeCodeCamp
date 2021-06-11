@@ -28,7 +28,7 @@ assert(hasOneSelector.length === 1);
 Your `p` elements nested in your `.item` elements should have a `font-size` of `18px`.
 
 ```js
-const itemPFontSize = new __helpers.CSSHelp(document).getStyleDeclaration('.item p')?.getPropertyValue('font-size');
+const itemPFontSize = new __helpers.CSSHelp(document).getStyle('.item p')?.getPropertyValue('font-size');
 assert(itemPFontSize === '18px');
 ```
 

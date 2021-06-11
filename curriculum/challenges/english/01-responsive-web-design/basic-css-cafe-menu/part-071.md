@@ -23,7 +23,7 @@ assert(hasHeight);
 Your `hr` element should have a `height` of `2px`.
 
 ```js
-const hrHeight = new __helpers.CSSHelp(document).getStyleDeclaration('hr')?.getPropertyValue('height');
+const hrHeight = new __helpers.CSSHelp(document).getStyle('hr')?.getPropertyValue('height');
 assert(hrHeight === '2px');
 ```
 

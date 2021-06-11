@@ -23,7 +23,7 @@ assert(hasBorderColor);
 Your `hr` element should have a `border-color` of `brown`.
 
 ```js
-const hrBorderColor = new __helpers.CSSHelp(document).getStyleDeclaration('hr')?.getPropertyValue('border-color');
+const hrBorderColor = new __helpers.CSSHelp(document).getStyle('hr')?.getPropertyValue('border-color');
 assert(hrBorderColor === 'brown');
 ```
 

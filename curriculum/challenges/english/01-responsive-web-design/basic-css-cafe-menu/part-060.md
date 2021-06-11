@@ -16,7 +16,7 @@ Add the fallback font `serif` after the `Impact` font.
 You should add `serif` as a fallback for the `Impact` font.
 
 ```js
-const fontFamily = new __helpers.CSSHelp(document).getStyleDeclaration('h1, h2')?.getPropertyValue('font-family');
+const fontFamily = new __helpers.CSSHelp(document).getStyle('h1, h2')?.getPropertyValue('font-family');
 assert(fontFamily === 'Impact, serif');
 ```
 

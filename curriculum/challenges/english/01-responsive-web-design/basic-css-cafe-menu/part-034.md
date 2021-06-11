@@ -14,7 +14,7 @@ Using your new `flavor` class as a selector, set the `text-align` property's val
 You should have a `flavor` class selector.
 
 ```js
-const hasFlavor = new __helpers.CSSHelp(document).getStyleDeclaration('.flavor');
+const hasFlavor = new __helpers.CSSHelp(document).getStyle('.flavor');
 assert(hasFlavor);
 ```
 
@@ -28,7 +28,7 @@ assert(hasTextAlign);
 Your `flavor` class selector should set the `text-align` property to `left`.
 
 ```js
-const flavorTextAlign = new __helpers.CSSHelp(document).getStyleDeclaration('.flavor')?.getPropertyValue('text-align');
+const flavorTextAlign = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('text-align');
 assert(flavorTextAlign === 'left');
 ```
 

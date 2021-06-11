@@ -14,7 +14,7 @@ The goal now is to make the `div` not take up the entire width of the page. The 
 You should have a `div` type selector.
 
 ```js
-const hasDiv = new __helpers.CSSHelp(document).getStyleDeclaration('div');
+const hasDiv = new __helpers.CSSHelp(document).getStyle('div');
 assert(hasDiv);
 ```
 
@@ -28,7 +28,7 @@ assert(hasWidth);
 Your `div` should have a width of 300px.
 
 ```js
-const divWidth = new __helpers.CSSHelp(document).getStyleDeclaration('div')?.getPropertyValue('width');
+const divWidth = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('width');
 assert(divWidth === '300px');
 ```
 

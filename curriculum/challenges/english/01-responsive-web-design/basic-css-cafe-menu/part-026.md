@@ -28,8 +28,8 @@ assert(hasMargin);
 You should set the `margin-left` and `margin-right` properties of your `div` to `auto`.
 
 ```js
-const divMarginRight = new __helpers.CSSHelp(document).getStyleDeclaration('div')?.getPropertyValue('margin-right');
-const divMarginLeft = new __helpers.CSSHelp(document).getStyleDeclaration('div')?.getPropertyValue('margin-left');
+const divMarginRight = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('margin-right');
+const divMarginLeft = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('margin-left');
 assert(divMarginRight === 'auto');
 assert(divMarginLeft === 'auto');
 ```

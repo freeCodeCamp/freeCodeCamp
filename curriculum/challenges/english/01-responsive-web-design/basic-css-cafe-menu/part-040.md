@@ -16,14 +16,14 @@ Change the `width` value to `49%` for each class to see what happens.
 You should set the `width` property to `49%` in your `.flavor` selector.
 
 ```js
-const flavorWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.flavor')?.getPropertyValue('width');
+const flavorWidth = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('width');
 assert(flavorWidth === '49%');
 ```
 
 You should set the `width` property to `49%` in your `.price` selector.
 
 ```js
-const priceWidth = new __helpers.CSSHelp(document).getStyleDeclaration('.price')?.getPropertyValue('width');
+const priceWidth = new __helpers.CSSHelp(document).getStyle('.price')?.getPropertyValue('width');
 assert(priceWidth === '49%');
 ```
 

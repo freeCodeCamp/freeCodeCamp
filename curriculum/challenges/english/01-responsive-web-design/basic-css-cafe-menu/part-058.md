@@ -22,7 +22,7 @@ const hasFontFamily = new __helpers.CSSHelp(document).getCSSRules().some(x => x.
 Your `body` should have a `font-family` of `sans-serif`.
 
 ```js
-const bodyFontFamily = new __helpers.CSSHelp(document).getStyleDeclaration('body')?.getPropertyValue('font-family');
+const bodyFontFamily = new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('font-family');
 assert(bodyFontFamily === 'sans-serif');
 ```
 
