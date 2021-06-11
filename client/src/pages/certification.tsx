@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Router } from '@reach/router';
 import { withPrefix } from 'gatsby';
 
@@ -7,17 +7,17 @@ import ShowCertification from '../client-only-routes/show-certification';
 
 import './certification.css';
 
-class Certification extends Component {
-  render() {
-    return (
-      <Router>
-        <ShowCertification
-          path={withPrefix('/certification/:username/:certSlug')}
-        />
-        <RedirectHome default={true} />
-      </Router>
-    );
-  }
+function Certification(): JSX.Element {
+  return (
+    <Router>
+      <ShowCertification
+        path={withPrefix('/certification/:username/:certSlug')}
+      />
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      <RedirectHome default={true} />
+    </Router>
+  );
 }
 
 export default Certification;
