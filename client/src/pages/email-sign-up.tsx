@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import SectionHeader from '../components/settings/SectionHeader';
 import IntroDescription from '../components/Intro/components/IntroDescription';
@@ -16,97 +16,101 @@ import createRedirect from '../components/createRedirect';
 
 import './email-sign-up.css';
 
-const propTypes = {
-  acceptTerms: PropTypes.func.isRequired,
-  acceptedPrivacyTerms: PropTypes.bool,
-  isSignedIn: PropTypes.bool,
-  t: PropTypes.func.isRequired
-};
+interface AcceptPrivacyTermsProps {
+  acceptTerms: (accept: boolean | null) => void;
+  acceptedPrivacyTerms: boolean;
+  t: (s: string) => string;
+}
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ acceptedPrivacyTerms }) => ({
+  ({ acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean }) => ({
     acceptedPrivacyTerms
   })
 );
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ acceptTerms }, dispatch);
 const RedirectToLearn = createRedirect('/learn');
 
-class AcceptPrivacyTerms extends Component {
-  componentWillUnmount() {
-    // if a user navigates away from here we should set acceptedPrivacyTerms
-    // to true (so they do not get pulled back) without changing their email
-    // preferences (hence the null payload)
-    // This ensures the user has to click the checkbox and then click the
-    // 'Continue...' button to sign up.
-    if (!this.props.acceptedPrivacyTerms) {
-      this.props.acceptTerms(null);
-    }
+function AcceptPrivacyTerms({
+  acceptTerms,
+  acceptedPrivacyTerms,
+  t
+}: AcceptPrivacyTermsProps) {
+  // if a user navigates away from here we should set acceptedPrivacyTerms
+  // to true (so they do not get pulled back) without changing their email
+  // preferences (hence the null payload)
+  // This ensures the user has to click the checkbox and then click the
+  // 'Continue...' button to sign up.
+  useEffect(() => {
+    return () => {
+      if (!acceptedPrivacyTerms) {
+        acceptTerms(null);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function onClick(isWeeklyEmailAccepted: boolean) {
+    acceptTerms(isWeeklyEmailAccepted);
   }
 
-  onClick(isWeeklyEmailAccepted) {
-    this.props.acceptTerms(isWeeklyEmailAccepted);
-  }
+  return acceptedPrivacyTerms ? (
+    <RedirectToLearn />
+  ) : (
+    <>
+      <Helmet>
+        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
+      </Helmet>
+      <Grid className='default-page-wrapper email-sign-up'>
+        <SectionHeader>{t('misc.email-signup')}</SectionHeader>
+        <Row>
+          <IntroDescription />
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <strong>{t('misc.quincy')}</strong>
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore */}
+            <Spacer />
+            <p>{t('misc.email-blast')}</p>
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore */}
+            <Spacer />
+          </Col>
 
-  render() {
-    const { acceptedPrivacyTerms, t } = this.props;
-    if (acceptedPrivacyTerms) {
-      return <RedirectToLearn />;
-    }
-
-    return (
-      <Fragment>
-        <Helmet>
-          <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
-        </Helmet>
-        <Grid className='default-page-wrapper email-sign-up'>
-          <Spacer />
-          <SectionHeader>{t('misc.email-signup')}</SectionHeader>
-          <Row>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <IntroDescription />
-              <strong>{t('misc.quincy')}</strong>
-              <Spacer />
-              <p>{t('misc.email-blast')}</p>
-              <Spacer />
-            </Col>
-
-            <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
-              <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='primary'
-                className='big-cta-btn'
-                onClick={() => this.onClick(true)}
-              >
-                {t('buttons.yes-please')}
-              </Button>
-              <ButtonSpacer />
-            </Col>
-            <Col md={4} sm={5} xs={12}>
-              <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='primary'
-                className='big-cta-btn'
-                onClick={() => this.onClick(false)}
-              >
-                {t('buttons.no-thanks')}
-              </Button>
-              <ButtonSpacer />
-            </Col>
-            <Col xs={12}>
-              <Spacer />
-            </Col>
-          </Row>
-        </Grid>
-      </Fragment>
-    );
-  }
+          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='big-cta-btn'
+              onClick={() => onClick(true)}
+            >
+              {t('buttons.yes-please')}
+            </Button>
+            <ButtonSpacer />
+          </Col>
+          <Col md={4} sm={5} xs={12}>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='big-cta-btn'
+              onClick={() => onClick(false)}
+            >
+              {t('buttons.no-thanks')}
+            </Button>
+            <ButtonSpacer />
+          </Col>
+          <Col xs={12}>
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore */}
+            <Spacer />
+          </Col>
+        </Row>
+      </Grid>
+    </>
+  );
 }
-
-AcceptPrivacyTerms.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
