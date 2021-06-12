@@ -308,6 +308,7 @@ ${getFullPath('english')}
 }
 
 // TODO: tests and more descriptive name.
+// Is this already an object now?
 function filesToObject(files) {
   return reduce(
     files,
@@ -326,17 +327,17 @@ function filesToObject(files) {
 
 // gets the challenge ready for sourcing into Gatsby
 function prepareChallenge(challenge) {
-  if (challenge.files) {
-    challenge.files = filesToObject(challenge.files);
-    challenge.files = Object.keys(challenge.files)
-      .filter(key => challenge.files[key])
-      .map(key => challenge.files[key])
+  if (challenge.challengeFiles) {
+    challenge.challengeFiles = filesToObject(challenge.challengeFiles);
+    challenge.challengeFiles = Object.keys(challenge.challengeFiles)
+      .filter(key => challenge.challengeFiles[key])
+      .map(key => challenge.challengeFiles[key])
       .reduce(
-        (files, file) => ({
-          ...files,
-          [file.key]: {
-            ...createPoly(file),
-            seed: file.contents.slice(0)
+        (challengeFiles, challengeFile) => ({
+          ...challengeFiles,
+          [challengeFile.key]: {
+            ...createPoly(challengeFile),
+            seed: challengeFile.contents.slice(0)
           }
         }),
         {}
