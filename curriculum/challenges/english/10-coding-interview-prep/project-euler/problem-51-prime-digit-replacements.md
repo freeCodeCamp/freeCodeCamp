@@ -56,5 +56,70 @@ primeDigitReplacements(6);
 # --solutions--
 
 ```js
-// solution required
+function primeDigitReplacements(n) {
+  function isNFamily(number, primesMap, n) {
+    const prime = number.toString();
+    const lastDigit = prime[prime.length - 1];
+    return (
+      doesReplacingMakeFamily(prime, '0', primesMap, n) ||
+      (lastDigit !== '1' &&
+        doesReplacingMakeFamily(prime, '1', primesMap, n)) ||
+      doesReplacingMakeFamily(prime, '2', primesMap, n)
+    );
+  }
+
+  function doesReplacingMakeFamily(prime, digitToReplace, primesMap, family) {
+    let count = 0;
+    const replaceWith = '0123456789';
+
+    for (let i = 0; i < replaceWith.length; i++) {
+      const nextNumber = parseInt(
+        prime.replace(new RegExp(digitToReplace, 'g'), replaceWith[i]),
+        10
+      );
+
+      if (isPartOfFamily(nextNumber, prime, primesMap)) {
+        count++;
+      }
+    }
+    return count === family;
+  }
+
+  function isPartOfFamily(number, prime, primesMap) {
+    return (
+      isPrime(number, primesMap) && number.toString().length === prime.length
+    );
+  }
+
+  function getSievePrimes(max) {
+    const primesMap = new Array(max).fill(true);
+    primesMap[0] = false;
+    primesMap[1] = false;
+
+    for (let i = 2; i < max; i++) {
+      if (primesMap[i]) {
+        let j = i * i;
+        for (j; j < max; j += i) {
+          primesMap[j] = false;
+        }
+      }
+    }
+    return primesMap;
+  }
+
+  function isPrime(num, primesMap) {
+    return primesMap[num];
+  }
+
+  const primesMap = getSievePrimes(1000000);
+
+  for (let number = 1; number < 300000; number++) {
+    if (primesMap[number]) {
+      if (isNFamily(number, primesMap, n)) {
+        return number;
+      }
+    }
+  }
+  return -1;
+}
 ```
