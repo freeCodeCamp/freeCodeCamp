@@ -1,8 +1,7 @@
-// @ts-ignore
 import React, { useState, useEffect, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import Loadable from '@loadable/component';
+// import Loadable from '@loadable/component';
 
 import {
   canFocusEditorSelector,
@@ -28,16 +27,17 @@ import {
 } from '../../../redux/prop-types';
 
 import './editor.css';
-import * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-// import MonacoEditor from 'react-monaco-editor';
+// import * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import MonacoEditor from 'react-monaco-editor';
 
-const MonacoEditor = Loadable<typeof monacoEditor>(
-  () => import('react-monaco-editor')
-);
+// const MonacoEditor = Loadable<typeof monacoEditor>(
+//   () => import('react-monaco-editor')
+// );
 
 type PropTypes = {
   canFocus: boolean;
-  challengeFiles: ChallengeFileType[];
+  challengeFiles: ChallengeFileType;
   containerRef: {
     current: null;
   };
@@ -53,12 +53,23 @@ type PropTypes = {
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
-  setAccessibilityMode: () => void;
-  setEditorFocusability: () => void;
+  setAccessibilityMode: (isAccessible: boolean) => void;
+  setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   tests: TestType[];
   theme: string;
   updateFile: () => void;
+};
+
+type DataType = {
+  model: null | monacoEditor.editor.ITextModel;
+  state: null;
+  viewZoneId: string | null;
+  startEditDecId: string | null;
+  endEditDecId: string | null;
+  insideEditDecId: string | null;
+  viewZoneHeight: number | null;
+  outputZoneHeight: number;
 };
 
 const mapStateToProps = createSelector(
@@ -125,6 +136,10 @@ const defineMonacoThemes = (monaco: typeof monacoEditor) => {
   monaco.editor.defineTheme('vs-custom', {
     base: 'vs',
     inherit: true,
+    // TODO: Use actual color from style-guide
+    colors: {
+      'editor.background': '#000'
+    },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
 };
@@ -137,7 +152,7 @@ const toLastLine = range => {
   return range.setStartPosition(range.endLineNumber, 1);
 };
 
-const initialData = {
+const initialData: DataType = {
   model: null,
   state: null,
   viewZoneId: null,
@@ -156,8 +171,10 @@ const Editor = (props: PropTypes): JSX.Element => {
   const [_monaco, setMonaco] = useState<typeof monacoEditor | null>(null);
   const [_domNode, setDomNode] = useState<HTMLDivElement | null>(null);
   const [_outputNode, setOutputNode] = useState<HTMLDivElement | null>(null);
-  const [_overlayWidget, setOverlayWidget] = useState();
-  const [_outputWidget, setOutputWidget] = useState();
+  const [_overlayWidget, setOverlayWidget] =
+    useState<monacoEditor.editor.IOverlayWidget | null>(null);
+  const [_outputWidget, setOutputWidget] =
+    useState<monacoEditor.editor.IOverlayWidget | null>(null);
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
   // automatically be first, but  if there's jsx and js (for some reason) it
@@ -209,9 +226,8 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   const getEditableRegion = () => {
     const { challengeFiles, fileKey } = props;
-    return challengeFiles[fileKey].editableRegionBoundaries
-      ? [...challengeFiles[fileKey].editableRegionBoundaries]
-      : [];
+    const edRegBounds = challengeFiles[fileKey]?.editableRegionBoundaries;
+    return edRegBounds ? [...edRegBounds] : [];
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
@@ -228,8 +244,8 @@ const Editor = (props: PropTypes): JSX.Element => {
     const model =
       data.model ||
       monaco.editor.createModel(
-        challengeFiles[fileKey].contents,
-        modeMap[challengeFiles[fileKey].ext]
+        challengeFiles[fileKey]?.contents ?? '',
+        modeMap[challengeFiles[fileKey]?.ext ?? 'html']
       );
     setData({ ...data, model });
 
@@ -245,14 +261,14 @@ const Editor = (props: PropTypes): JSX.Element => {
   const updateEditorValues = () => {
     const { challengeFiles, fileKey } = props;
 
-    const newContents = challengeFiles[fileKey].contents;
+    const newContents = challengeFiles[fileKey]?.contents;
     if (data.model?.getValue() !== newContents) {
-      data.model?.setValue(newContents);
+      data.model?.setValue(newContents ?? '');
     }
   };
 
   const editorDidMount = (
-    editor: monacoEditor.editor.IEditor,
+    editor: monacoEditor.editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
     setEditor(editor);
@@ -276,6 +292,7 @@ const Editor = (props: PropTypes): JSX.Element => {
       label: 'Run tests',
       keybindings: [
         /* eslint-disable no-bitwise */
+        // TODO: No idea what to put in 'chord'
         monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter)
       ],
       run: props.executeChallenge
@@ -326,11 +343,15 @@ const Editor = (props: PropTypes): JSX.Element => {
     const editableBoundaries = getEditableRegion();
 
     if (editableBoundaries.length === 2) {
-      const createWidget = (id, domNode, getTop) => {
+      const createWidget = (
+        id: string,
+        domNode: HTMLDivElement,
+        getTop: () => string
+      ) => {
         const getId = () => id;
         const getDomNode = () => domNode;
         const getPosition = () => {
-          domNode.style.width = editor.getLayoutInfo().contentWidth + 'px';
+          domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
           domNode.style.top = getTop();
 
           // must return null, so that Monaco knows the widget will position
@@ -347,19 +368,24 @@ const Editor = (props: PropTypes): JSX.Element => {
       setDomNode(createDescription());
 
       setOutputNode(createOutputNode());
-
-      setOverlayWidget(
-        createWidget('my.overlay.widget', _domNode, getViewZoneTop)
-      );
-
-      setOutputWidget(
-        createWidget('my.output.widget', _outputNode, getOutputZoneTop)
-      );
-
-      _editor.addOverlayWidget(_overlayWidget);
+      if (_domNode) {
+        setOverlayWidget(
+          createWidget('my.overlay.widget', _domNode, getViewZoneTop)
+        );
+      }
+      if (_outputNode) {
+        setOutputWidget(
+          createWidget('my.output.widget', _outputNode, getOutputZoneTop)
+        );
+      }
+      if (_overlayWidget) {
+        _editor.addOverlayWidget(_overlayWidget);
+      }
       // TODO: order of insertion into the DOM probably matters, revisit once
       // the tabs have been fixed!
-      _editor.addOverlayWidget(_outputWidget);
+      if (_outputWidget) {
+        _editor.addOverlayWidget(_outputWidget);
+      }
       // TODO: if we keep using a single editor and switching content (rather
       // than having multiple open editors), this view zone needs to be
       // preserved when the tab changes.
@@ -368,25 +394,31 @@ const Editor = (props: PropTypes): JSX.Element => {
       editor.changeViewZones(outputZoneCallback);
 
       editor.onDidScrollChange(() => {
-        editor.layoutOverlayWidget(_overlayWidget);
-        editor.layoutOverlayWidget(_outputWidget);
+        if (_overlayWidget) {
+          editor.layoutOverlayWidget(_overlayWidget);
+        }
+        if (_outputWidget) {
+          editor.layoutOverlayWidget(_outputWidget);
+        }
       });
       showEditableRegion(editableBoundaries);
     }
   };
 
-  const viewZoneCallback = changeAccessor => {
+  const viewZoneCallback = (
+    changeAccessor: monacoEditor.editor.IViewZoneChangeAccessor
+  ) => {
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
     const domNode = createDescription();
 
     // make sure the overlayWidget has resized before using it to set the height
-    domNode.style.width = _editor.getLayoutInfo().contentWidth + 'px';
+    domNode.style.width = `${_editor.getLayoutInfo().contentWidth}px`;
 
     // TODO: set via onComputedHeight?
     data.viewZoneHeight = domNode.offsetHeight;
 
-    var background = document.createElement('div');
+    const background = document.createElement('div');
     // background.style.background = 'lightgreen';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
@@ -396,7 +428,7 @@ const Editor = (props: PropTypes): JSX.Element => {
       afterLineNumber: getLineAfterViewZone() - 1,
       heightInPx: domNode.offsetHeight,
       domNode: background,
-      onComputedHeight: () => _editor.layoutOverlayWidget(_overlayWidget)
+      onComputedHeight: () => _editor?.layoutOverlayWidget(_overlayWidget)
     };
 
     data.viewZoneId = changeAccessor.addZone(viewZone);
@@ -414,7 +446,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     // TODO: set via onComputedHeight?
     data.outputZoneHeight = outputNode.offsetHeight;
 
-    var background = document.createElement('div');
+    const background = document.createElement('div');
     // background.style.background = 'lightpink';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
@@ -454,8 +486,8 @@ const Editor = (props: PropTypes): JSX.Element => {
     domNode.setAttribute('aria-hidden', 'true');
 
     // domNode.style.background = 'lightYellow';
-    domNode.style.left = _editor.getLayoutInfo().contentLeft + 'px';
-    domNode.style.width = _editor.getLayoutInfo().contentWidth + 'px';
+    domNode.style.left = `${_editor.getLayoutInfo().contentLeft}px`;
+    domNode.style.width = `${_editor.getLayoutInfo().contentWidth}px`;
     domNode.style.top = getViewZoneTop();
     setDomNode(domNode);
     return domNode;
@@ -489,8 +521,8 @@ const Editor = (props: PropTypes): JSX.Element => {
     outputNode.style.zIndex = '10';
 
     outputNode.setAttribute('aria-hidden', true);
-    outputNode.style.left = _editor.getLayoutInfo().contentLeft + 'px';
-    outputNode.style.width = _editor.getLayoutInfo().contentWidth + 'px';
+    outputNode.style.left = `${_editor.getLayoutInfo().contentLeft}px`;
+    outputNode.style.width = `${_editor.getLayoutInfo().contentWidth}px`;
     outputNode.style.top = getOutputZoneTop();
 
     setOutputNode(outputNode);
@@ -526,7 +558,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     updateFile({ key, editorValue, editableRegionBoundaries });
   };
 
-  function showEditableRegion(editableBoundaries) {
+  function showEditableRegion(editableBoundaries: number[]) {
     if (editableBoundaries.length !== 2) return;
     // TODO: The heuristic has been commented out for now because the cursor
     // position is not saved at the moment, so it's redundant. I'm leaving it
@@ -638,7 +670,10 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   // TODO: TESTS!
   // Make 100% sure this is inclusive.
-  const getLinesBetweenRanges = (firstRange, secondRange) => {
+  const getLinesBetweenRanges = (
+    firstRange: monacoEditor.Range,
+    secondRange: monacoEditor.Range
+  ) => {
     const startRange = translateRange(toLastLine(firstRange), 1);
     const endRange = translateRange(
       toStartOfLine(secondRange),
@@ -658,23 +693,26 @@ const Editor = (props: PropTypes): JSX.Element => {
     // NOTE: if a decoration is missing, there is still an editable region - it
     // just extends to the edge of the editor. However, no decorations means no
     // editable region.
-    if (!data.startEditDecId && !data.endEditDecId) return null;
-    const firstRange = data.startEditDecId
-      ? model?.getDecorationRange(data.startEditDecId)
-      : getStartOfEditor();
-    // TODO: handle the case that the editable region reaches the bottom of the
-    // editor
-    const secondRange = model?.getDecorationRange(data.endEditDecId);
-    const { startLineNumber, endLineNumber } = getLinesBetweenRanges(
-      firstRange,
-      secondRange
-    );
+    if (!data.startEditDecId && !data.endEditDecId) {
+      return null;
+    } else {
+      const firstRange = data.startEditDecId
+        ? model?.getDecorationRange(data.startEditDecId)
+        : getStartOfEditor();
+      // TODO: handle the case that the editable region reaches the bottom of the
+      // editor
+      const secondRange = model.getDecorationRange(data.endEditDecId ?? '');
+      const { startLineNumber, endLineNumber } = getLinesBetweenRanges(
+        firstRange,
+        secondRange
+      );
 
-    // getValueInRange includes column x if
-    // startColumnNumber <= x < endColumnNumber
-    // so we add 1 here
-    const endColumn = model?.getLineLength(endLineNumber) + 1;
-    return new _monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
+      // getValueInRange includes column x if
+      // startColumnNumber <= x < endColumnNumber
+      // so we add 1 here
+      const endColumn = model?.getLineLength(endLineNumber) + 1;
+      return new _monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
+    }
   };
 
   // TODO: do this once after _monaco has been created.
