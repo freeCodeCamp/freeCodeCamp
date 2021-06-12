@@ -1,9 +1,9 @@
-import AppleLogo from './AppleLogo.js';
-import AmazonLogo from './AmazonLogo.js';
-import MicrosoftLogo from './MicrosoftLogo.js';
-import SpotifyLogo from './SpotifyLogo.js';
-import GoogleLogo from './GoogleLogo.js';
-import AsFeatureLogo from './AsFeatureLogo.js';
+import AppleLogo from './AppleLogo';
+import AmazonLogo from './AmazonLogo';
+import MicrosoftLogo from './MicrosoftLogo';
+import SpotifyLogo from './SpotifyLogo';
+import GoogleLogo from './GoogleLogo';
+import AsFeatureLogo from './AsFeatureLogo';
 
 export {
   AmazonLogo,

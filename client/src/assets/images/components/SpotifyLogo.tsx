@@ -1,9 +1,6 @@
-/* eslint-disable max-len */
 import React from 'react';
 
-const propTypes = {};
-
-function SpotifyLogo(props) {
+function SpotifyLogo(props: any & React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       id='spotify-logo'
@@ -19,6 +16,5 @@ function SpotifyLogo(props) {
 }
 
 SpotifyLogo.displayName = 'SpotifyLogo';
-SpotifyLogo.propTypes = propTypes;
 
 export default SpotifyLogo;

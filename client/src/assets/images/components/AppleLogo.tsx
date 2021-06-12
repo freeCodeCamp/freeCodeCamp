@@ -1,9 +1,6 @@
-/* eslint-disable max-len */
 import React from 'react';
 
-const propTypes = {};
-
-function AppleLogo(props) {
+function AppleLogo(props: any & React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       id='apple-logo'
@@ -22,6 +19,5 @@ function AppleLogo(props) {
 }
 
 AppleLogo.displayName = 'AppleLogo';
-AppleLogo.propTypes = propTypes;
 
 export default AppleLogo;
