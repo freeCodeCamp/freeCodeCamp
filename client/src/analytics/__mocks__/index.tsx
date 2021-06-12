@@ -1,5 +1,7 @@
 const analytics = {
-  event: () => {}
+  event: function () {
+    // comment necessary for linting.
+  }
 };
 
 export default analytics;
