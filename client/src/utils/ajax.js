@@ -65,10 +65,6 @@ export function addDonation(body) {
   return post('/donate/add-donation', body);
 }
 
-export function putUpdateLegacyCert(body) {
-  return post('/update-my-projects', body);
-}
-
 export function postReportUser(body) {
   return post('/user/report-user', body);
 }
