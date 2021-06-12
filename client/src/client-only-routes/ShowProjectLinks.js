@@ -18,15 +18,14 @@ const propTypes = {
         id: PropTypes.string,
         solution: PropTypes.string,
         githubLink: PropTypes.string,
-        files: PropTypes.arrayOf(
-          PropTypes.shape({
-            contents: PropTypes.string,
-            ext: PropTypes.string,
-            key: PropTypes.string,
-            name: PropTypes.string,
-            path: PropTypes.string
-          })
-        )
+        challengeFiles: PropTypes.object
+        // PropTypes.shape({
+        //   contents: PropTypes.string,
+        //   ext: PropTypes.string,
+        //   key: PropTypes.string,
+        //   name: PropTypes.string,
+        //   path: PropTypes.string
+        // })
       })
     ),
     username: PropTypes.string
@@ -35,7 +34,7 @@ const propTypes = {
 
 const initSolutionState = {
   projectTitle: '',
-  files: null,
+  challengeFiles: null,
   solution: null,
   isOpen: false
 };
@@ -61,16 +60,16 @@ const ShowProjectLinks = props => {
       return null;
     }
 
-    const { solution, githubLink, files } = completedProject;
+    const { solution, githubLink, challengeFiles } = completedProject;
     const onClickHandler = () =>
       setSolutionState({
         projectTitle,
-        files,
+        challengeFiles,
         solution,
         isOpen: true
       });
 
-    if (files && files.length) {
+    if (challengeFiles && Object.entries(challengeFiles).length) {
       return (
         <button
           onClick={onClickHandler}
@@ -158,7 +157,7 @@ const ShowProjectLinks = props => {
     name,
     user: { username }
   } = props;
-  const { files, isOpen, projectTitle, solution } = solutionState;
+  const { challengeFiles, isOpen, projectTitle, solution } = solutionState;
   return (
     <div>
       {t(
@@ -172,7 +171,7 @@ const ShowProjectLinks = props => {
       <Spacer />
       {isOpen ? (
         <ProjectModal
-          files={files}
+          challengeFiles={challengeFiles}
           handleSolutionModalHide={handleSolutionModalHide}
           isOpen={isOpen}
           projectTitle={projectTitle}

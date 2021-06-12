@@ -57,7 +57,7 @@ function addSeeds() {
     visitForTail(tailTree);
     file.data = {
       ...file.data,
-      files: seeds
+      challengeFiles: seeds
     };
 
     // process region markers - remove them from content and add them to data

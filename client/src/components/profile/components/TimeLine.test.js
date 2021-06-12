@@ -99,15 +99,15 @@ const propsForOnlySolution = {
     {
       id: '5e46f7f8ac417301a38fb92a',
       completedDate: 1604043678032,
-      files: [
-        {
+      challengeFiles: {
+        indexhtml: {
           contents,
           ext,
           key,
           name,
           path
         }
-      ]
+      }
     }
   ],
   username: 'developmentuser'

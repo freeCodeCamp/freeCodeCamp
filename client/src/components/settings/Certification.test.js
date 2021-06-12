@@ -270,15 +270,15 @@ const propsForOnlySolution = {
     },
     {
       id: '5e46f7f8ac417301a38fb92a',
-      files: [
-        {
+      challengeFiles: {
+        indexhtml: {
           contents,
           ext,
           key,
           name,
           path
         }
-      ]
+      }
     }
   ]
 };

@@ -319,14 +319,14 @@ function populateTestsForLang({ lang, challenges, meta }) {
             }
 
             // If no .files, then no seed:
-            if (!challenge.files) return;
+            if (!challenge.challengeFiles) return;
 
             // - None of the translatable comments should appear in the
             //   translations. While this is a crude check, no challenges
             //   currently have the text of a comment elsewhere. If that happens
             //   we can handle that challenge separately.
             TRANSLATABLE_COMMENTS.forEach(comment => {
-              Object.values(challenge.files).forEach(file => {
+              Object.values(challenge.challengeFiles).forEach(file => {
                 if (file.contents.includes(comment))
                   throw Error(
                     `English comment '${comment}' should be replaced with its translation`
@@ -336,7 +336,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
             // - None of the translated comment texts should appear *outside* a
             //   comment
-            Object.values(challenge.files).forEach(file => {
+            Object.values(challenge.challengeFiles).forEach(file => {
               let comments = {};
 
               // We get all the actual comments using the appropriate parsers
@@ -459,12 +459,12 @@ ${inspect(commentMap)}
             // TODO: can this be dried out, ideally by removing the redux
             // handler?
             if (nextChallenge) {
-              const solutionFiles = cloneDeep(nextChallenge.files);
+              const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
               Object.keys(solutionFiles).forEach(key => {
-                const file = solutionFiles[key];
-                file.editableContents = getLines(
-                  file.contents,
-                  challenge.files[key].editableRegionBoundaries
+                const challengeFile = solutionFiles[key];
+                challengeFile.editableContents = getLines(
+                  challengeFile.contents,
+                  challenge.challengeFiles[key].editableRegionBoundaries
                 );
               });
               solutions = [solutionFiles];
@@ -481,7 +481,9 @@ ${inspect(commentMap)}
 
           const filteredSolutions = solutionsAsArrays.filter(solution => {
             return !isEmpty(
-              solution.filter(file => !noSolution.test(file.contents))
+              solution.filter(
+                challengeFile => !noSolution.test(challengeFile.contents)
+              )
             );
           });
 
@@ -522,15 +524,15 @@ async function createTestRunner(
 ) {
   const { required = [], template, removeComments } = challenge;
   // we should avoid modifying challenge, as it gets reused:
-  const files = cloneDeep(challenge.files);
+  const challengeFiles = cloneDeep(challenge.challengeFiles);
 
   Object.keys(solution).forEach(key => {
-    files[key].contents = solution[key].contents;
-    files[key].editableContents = solution[key].editableContents;
+    challengeFiles[key].contents = solution[key].contents;
+    challengeFiles[key].editableContents = solution[key].editableContents;
   });
 
   const { build, sources, loadEnzyme } = await buildChallenge({
-    files,
+    challengeFiles,
     required,
     template
   });
