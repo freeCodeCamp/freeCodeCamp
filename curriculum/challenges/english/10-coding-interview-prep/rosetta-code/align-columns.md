@@ -46,22 +46,22 @@ or$center$justified$within$its$column.
 assert(typeof formatText === 'function');
 ```
 
-`formatText` with the above input and "right" justification should produce the following:
+`formatText(testText, 'right')` should produce text with columns justified to the right.
 
 ```js
-assert.strictEqual(formatText(testInput, 'right'), rightAligned);
+assert.strictEqual(formatText(_testText, 'right'), rightAligned);
 ```
 
-`formatText` with the above input and "left" justification should produce the following:
+`formatText(testText, 'left')` should produce text with columns justified to the left.
 
 ```js
-assert.strictEqual(formatText(testInput, 'left'), leftAligned);
+assert.strictEqual(formatText(_testText, 'left'), leftAligned);
 ```
 
-`formatText` with the above input and "center" justification should produce the following:
+`formatText(testText, 'center')` should produce text with columns justified to the center.
 
 ```js
-assert.strictEqual(formatText(testInput, 'center'), centerAligned);
+assert.strictEqual(formatText(_testText, 'center'), centerAligned);
 ```
 
 # --seed--
@@ -69,10 +69,10 @@ assert.strictEqual(formatText(testInput, 'center'), centerAligned);
 ## --after-user-code--
 
 ```js
-const testInput = [
+const _testText = [
   'Given$a$text$file$of$many$lines',
   'where$fields$within$a$line$',
-  'are$delineated$by$a$single$\"dollar\"$character',
+  'are$delineated$by$a$single$"dollar"$character',
   'write$a$program',
   'that$aligns$each$column$of$fields$',
   'by$ensuring$that$words$in$each$',
@@ -119,7 +119,11 @@ const centerAligned = '  Given        a        text     file    of     many     
 ## --seed-contents--
 
 ```js
-const testArr = [
+function formatText(input, justification) {
+
+}
+
+const testText = [
   'Given$a$text$file$of$many$lines',
   'where$fields$within$a$line$',
   'are$delineated$by$a$single$"dollar"$character',
@@ -131,28 +135,11 @@ const testArr = [
   'justified,$right$justified',
   'or$center$justified$within$its$column.'
 ];
-
-function formatText(input, justification) {
-
-}
 ```
 
 # --solutions--
 
 ```js
-const testArr = [
-  'Given$a$text$file$of$many$lines',
-  'where$fields$within$a$line$',
-  'are$delineated$by$a$single$"dollar"$character',
-  'write$a$program',
-  'that$aligns$each$column$of$fields$',
-  'by$ensuring$that$words$in$each$',
-  'column$are$separated$by$at$least$one$space.',
-  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',
-  'justified,$right$justified',
-  'or$center$justified$within$its$column.'
-];
-
 String.prototype.repeat = function (n) { return new Array(1 + parseInt(n)).join(this); };
 
 function formatText(input, justification) {
