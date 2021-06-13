@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
 function IntroInformation(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
@@ -43,6 +41,5 @@ function IntroInformation(props: any & React.SVGProps<SVGSVGElement>) {
 }
 
 IntroInformation.displayName = 'IntroInformation';
-IntroInformation.propTypes = propTypes;
 
 export default IntroInformation;

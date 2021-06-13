@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
 function Heart(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
@@ -36,6 +34,5 @@ function Heart(props: any & React.SVGProps<SVGSVGElement>) {
 }
 
 Heart.displayName = 'Heart';
-Heart.propTypes = propTypes;
 
 export default Heart;

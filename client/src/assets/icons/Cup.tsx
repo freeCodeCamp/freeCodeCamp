@@ -2,8 +2,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
 function Cup(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
@@ -57,6 +55,5 @@ function Cup(props: any & React.SVGProps<SVGSVGElement>) {
 }
 
 Cup.displayName = 'Cup';
-Cup.propTypes = propTypes;
 
 export default Cup;

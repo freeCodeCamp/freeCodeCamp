@@ -2,8 +2,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
 function DonateWithPayPal(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
@@ -56,6 +54,5 @@ function DonateWithPayPal(props: any & React.SVGProps<SVGSVGElement>) {
 }
 
 DonateWithPayPal.displayName = 'DonateWithPayPal';
-DonateWithPayPal.propTypes = propTypes;
 
 export default DonateWithPayPal;

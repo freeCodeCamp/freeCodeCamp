@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
 function GreenNotCompleted(props: any & React.SVGProps<SVGSVGElement>) {
   const { t } = useTranslation();
 
@@ -34,6 +32,5 @@ function GreenNotCompleted(props: any & React.SVGProps<SVGSVGElement>) {
 }
 
 GreenNotCompleted.displayName = 'GreenNotCompleted';
-GreenNotCompleted.propTypes = propTypes;
 
 export default GreenNotCompleted;
