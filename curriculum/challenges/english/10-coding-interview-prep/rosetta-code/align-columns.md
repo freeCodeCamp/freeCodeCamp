@@ -8,24 +8,26 @@ dashedName: align-columns
 
 # --description--
 
-Given a text file of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+Given an array of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
 
 # --instructions--
 
 Use the following text to test your programs:
 
-<pre>
-Given$a$text$file$of$many$lines
-where$fields$within$a$line$
-are$delineated$by$a$single$'dollar'$character
-write$a$program
-that$aligns$each$column$of$fields
-by$ensuring$that$words$in$each$
-column$are$separated$by$at$least$one$space.
-Further,$allow$for$each$word$in$a$column$to$be$either$left$
-justified,$right$justified
-or$center$justified$within$its$column.
-</pre>
+```js
+const testText = [
+  'Given$a$text$file$of$many$lines',
+  'where$fields$within$a$line$',
+  'are$delineated$by$a$single$"dollar"$character',
+  'write$a$program',
+  'that$aligns$each$column$of$fields',
+  'by$ensuring$that$words$in$each$',
+  'column$are$separated$by$at$least$one$space.',
+  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',
+  'justified,$right$justified',
+  'or$center$justified$within$its$column.'
+];
+```
 
 **Note that:**
 
