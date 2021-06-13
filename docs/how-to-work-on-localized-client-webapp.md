@@ -78,7 +78,7 @@ Some of these files are translated on our translation platform (Crowdin), some a
 
 - The `meta-tags.json` file contains the information for our website's meta tag information.
 
-  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [translators chat room](https://chat.freecodecamp.org/channel/translators).
+  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
 ## Testing the client app in a world language
 

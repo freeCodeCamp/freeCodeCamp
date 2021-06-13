@@ -3,7 +3,7 @@ const { availableLangs } = require('../../../../config/i18n/all-langs');
 const { allowedOrigins } = require('../../../../config/cors-settings');
 // homeLocation is being used as a fallback here. If the one provided by the
 // client is invalid we default to this.
-const { homeLocation } = require('../../../../config/env');
+const { homeLocation } = require('../../../../config/env.json');
 
 function getReturnTo(encryptedParams, secret, _homeLocation = homeLocation) {
   let params;

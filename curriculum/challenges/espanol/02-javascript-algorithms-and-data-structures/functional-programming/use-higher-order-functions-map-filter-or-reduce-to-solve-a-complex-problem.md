@@ -12,7 +12,7 @@ Ahora que has superado algunos desafíos usando funciones de orden superior como
 
 # --instructions--
 
-Hemos definido una función llamada `squareList`. Necesitas completar el código para la función `squareList` usando cualquier combinación de `map()`, `filter()`, y `reduce()` para que devuelva un nuevo arreglo que contenga *sólo* el cuadrado de los enteros positivos (los números decimales no son enteros) cuando se le pase un arreglo de números reales. Un ejemplo de un arreglo que contiene sólo números reales es `[-3, 4.8, 5, 3, -3.2]`.
+Completa el código para la función `squareList` usando cualquier combinación de `map()`, `filter()`, y `reduce()`. La función debe devolver un nuevo arreglo que contenga los cuadrados de *solamente* los enteros positivos (números decimales no son enteros) cuando se le pasa un arreglo de números reales. Un ejemplo de un arreglo que contiene números reales es `[-3, 4.8, 5, 3, -3.2]`.
 
 **Nota:** Tu función no debe usar ningún tipo de bucle `for` o `while` o la función `forEach()`.
 

@@ -40,7 +40,7 @@ assert($('div').css('background-color') === 'rgb(192, 192, 192)');
 A class named `silver-background` should be defined within the `style` element and the value of `silver` should be assigned to the `background-color` property.
 
 ```js
-assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/));
+assert(code.match(/\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/));
 ```
 
 # --seed--

@@ -2,6 +2,7 @@
 id: 5e44412c903586ffb414c94c
 title: Arithmetic Formatter
 challengeType: 10
+forumTopicId: 462359
 dashedName: arithmetic-formatter
 ---
 

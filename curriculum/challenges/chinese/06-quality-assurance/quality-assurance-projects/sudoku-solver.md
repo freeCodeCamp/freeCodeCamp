@@ -2,6 +2,7 @@
 id: 5e601bf95ac9d0ecd8b94afd
 title: 数独求解器
 challengeType: 4
+forumTopicId: 462357
 dashedName: sudoku-solver
 ---
 

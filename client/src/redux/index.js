@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash-es';
 import store from 'store';
 
-import { createTypes, createAsyncTypes } from '../utils/createTypes';
+import { createTypes, createAsyncTypes } from '../utils/create-types';
 import { createFetchUserSaga } from './fetch-user-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { createAppMountSaga } from './app-mount-saga';

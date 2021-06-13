@@ -102,6 +102,7 @@
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
       "is a reserved error code": "\"{{username}}\" 是錯誤代碼，不可用作用戶名",
+      "must be lowercase": "用戶名 \"{{username}}\" 必須是小寫的",
       "unavailable": "用戶名不可用",
       "validating": "驗證用戶名......",
       "available": "用戶名可用",
@@ -289,7 +290,7 @@
   "donate": {
     "title": "支持我們的非營利組織",
     "processing": "我們正在處理你的捐款。",
-    "redirecting": "Redirecting...",
+    "redirecting": "重新引導中...",
     "thanks": "謝謝捐款",
     "thank-you": "謝謝你成爲我們的支持者。",
     "thank-you-2": "謝謝你成爲 freeCodeCamp 的支持者。現在你已設置定期捐款。",
@@ -297,7 +298,7 @@
     "help-more": "幫助我們做更多",
     "error": "你的捐款處理有點問題。",
     "free-tech": "你的捐款將支持世界各地的人們獲得免費的技術教育。",
-    "no-halo": "If you don't see a gold halo around your profile picture, contact donors@freecodecamp.org.",
+    "no-halo": "如果你在你的個人圖片周圍看不到金色光環，請聯繫 donors@freecodecamp.org。",
     "gift-frequency": "選擇捐贈的頻率：",
     "gift-amount": "選擇捐贈的額度：",
     "confirm": "確認你的捐款",
@@ -339,7 +340,7 @@
     "details": "請儘可能詳細地描述你所舉報的賬號或行爲。",
     "portfolio": "舉報一個用戶的作品集",
     "portfolio-2": "你想舉報 {{username}} 的作品集濫用行爲嗎？",
-    "notify-1": "We will notify the community moderators' team, and send a copy of this report to your email: <strong>{{email}}</strong>",
+    "notify-1": "我們將通知社區管理團隊，並將此舉報的副本發送到你的郵箱：<strong>{{email}}</strong>",
     "notify-2": "如有需要，我們會聯繫你瞭解更多信息。",
     "what": "你想舉報什麼？",
     "submit": "提交舉報"
@@ -351,7 +352,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 300+ 篇教程",
+    "placeholder": "搜索 400+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -556,13 +557,30 @@
     }
   },
   "certification-card": {
-    "title": "Claim Your Certification",
-    "intro": "Complete the following steps to claim and view your {{i18nCertText}}",
-    "complete-project": "Complete {{i18nCertText}} Projects",
-    "accept-honesty": "Accept our Academic Honesty Policy",
-    "set-name": "Set your name, and make it public",
-    "set-certs-public": "Set your certification settings to public",
-    "set-profile-public": "Set your profile settings to public",
-    "set-claim": "Claim and view your certification"
+    "title": "領取你的認證",
+    "intro": "完成以下步驟來領取並查看你的 {{i18nCertText}}",
+    "complete-project": "完成 {{i18nCertText}} 項目",
+    "accept-honesty": "接受我們的學術誠信政策",
+    "set-name": "設置你的名字，並將它設置爲公開",
+    "set-certs-public": "將你的認證設置爲公開",
+    "set-profile-public": "將你的個人資料設置爲公開",
+    "set-claim": "領取並查看你的認證"
+  },
+  "forum-help": {
+    "browser-info": "**你的瀏覽器信息：**",
+    "user-agent": "用戶代理是： <code>{{userAgent}}</code>",
+    "challenge": "**挑戰：** {{challengeTitle}}",
+    "challenge-link": "**挑戰的鏈接：**",
+    "whats-happening": "**告訴我們發生了什麼：**",
+    "describe": "在此詳細描述你的問題。",
+    "camper-project": "**你的項目鏈接**",
+    "camper-code": "**你目前的代碼**",
+    "warning": "警告",
+    "too-long-one": "挑戰的種子代碼和/或你的解決方案超過了我們從挑戰傳送的最大長度。",
+    "too-long-two": "你需要在此採取額外步驟，以確保你寫的代碼可以輕鬆地被閱讀。",
+    "too-long-three": "請複製/粘貼所有在挑戰中編輯器所顯示的代碼。",
+    "add-code-one": "用你的複製代碼替換這兩句。",
+    "add-code-two": "請保留上方的 ``` 行和下方的 ``` 行",
+    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。"
   }
 }

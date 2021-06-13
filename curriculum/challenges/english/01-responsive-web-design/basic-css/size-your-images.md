@@ -31,8 +31,8 @@ Your `img` element should have the class `smaller-image`.
 
 ```js
 assert(
-  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') ===
-    'smaller-image'
+  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class')
+    .trim().split(/\s+/g).includes('smaller-image')
 );
 ```
 

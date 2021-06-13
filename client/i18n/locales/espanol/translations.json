@@ -102,6 +102,7 @@
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
+      "must be lowercase": "El nombre de usuario \"{{username}}\" debe estar en minúscula",
       "unavailable": "El nombre de usuario no está disponible",
       "validating": "Validando nombre de usuario...",
       "available": "El nombre de usuario está disponible",
@@ -297,7 +298,7 @@
     "help-more": "Ayúdanos a hacer más",
     "error": "Algo salió mal con tu donación.",
     "free-tech": "Tus donaciones apoyarán la educación tecnológica gratuita para personas de todo el mundo.",
-    "no-halo": "If you don't see a gold halo around your profile picture, contact donors@freecodecamp.org.",
+    "no-halo": "Si no ves un aro dorado alrededor de tu foto de perfil, contacta a donors@freecodecamp.org.",
     "gift-frequency": "Selecciona la frecuencia de los obsequios:",
     "gift-amount": "Selecciona el monto del regalo:",
     "confirm": "Confirma tu donación",
@@ -339,7 +340,7 @@
     "details": "Proporciona tantos detalles como sea posible sobre la cuenta o el comportamiento que estás denunciando.",
     "portfolio": "Reportar un portafolio de usuario",
     "portfolio-2": "¿Quieres reportar el portafolio de {{username}} por abuso?",
-    "notify-1": "We will notify the community moderators' team, and send a copy of this report to your email: <strong>{{email}}</strong>",
+    "notify-1": "Notificaremos al equipo de moderadores de la comunidad y te enviaremos una copia de este informe a tu correo electrónico: <strong>{{email}}</strong>",
     "notify-2": "Es posible que nos comuniquemos contigo para obtener más información, si es necesario.",
     "what": "¿Qué te gustaría reportar?",
     "submit": "Enviar el reporte"
@@ -351,7 +352,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Buscar tutoriales",
+    "placeholder": "Buscar 200+ tutoriales",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -556,13 +557,30 @@
     }
   },
   "certification-card": {
-    "title": "Claim Your Certification",
+    "title": "Reclamar tu certificación",
     "intro": "Complete the following steps to claim and view your {{i18nCertText}}",
-    "complete-project": "Complete {{i18nCertText}} Projects",
-    "accept-honesty": "Accept our Academic Honesty Policy",
-    "set-name": "Set your name, and make it public",
-    "set-certs-public": "Set your certification settings to public",
-    "set-profile-public": "Set your profile settings to public",
-    "set-claim": "Claim and view your certification"
+    "complete-project": "Completa {{i18nCertText}} proyectos",
+    "accept-honesty": "Acepta nuestra política de honestidad académica",
+    "set-name": "Establece tu nombre, y hazlo público",
+    "set-certs-public": "Establezca la configuración de tu certificación al público",
+    "set-profile-public": "Establezca la configuración de tu perfil público",
+    "set-claim": "Reclama y mira tu certificado"
+  },
+  "forum-help": {
+    "browser-info": "**Información de tu navegador:**",
+    "user-agent": "El agente de usuario es: <code>{{userAgent}}</code>",
+    "challenge": "**Desafío:** {{challengeTitle}}",
+    "challenge-link": "**Enlaza al desafío:**",
+    "whats-happening": "**Cuéntanos qué está pasando:**",
+    "describe": "Describe tu problema en detalle aquí.",
+    "camper-project": "**Enlace(s) de tu proyecto**",
+    "camper-code": "**Tu código hasta el momento**",
+    "warning": "ADVERTENCIA",
+    "too-long-one": "El código semilla del desafío y/o tu solución excedió la longitud máxima que podemos transferir del desafío.",
+    "too-long-two": "Tendrás que dar un paso adicional aquí para que el código que escribiste se presente en un formato fácil de leer.",
+    "too-long-three": "Por favor, copia/pega todo el código del editor que se muestra en el desafío desde el que acabas de enlazar.",
+    "add-code-one": "Reemplaza estas dos oraciones con tu código copiado.",
+    "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
+    "add-code-three": "porque permiten que tu código formatee correctamente en el post."
   }
 }

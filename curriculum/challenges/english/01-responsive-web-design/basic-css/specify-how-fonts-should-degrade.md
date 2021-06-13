@@ -9,7 +9,7 @@ dashedName: specify-how-fonts-should-degrade
 
 # --description--
 
-There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`
+There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`.
 
 When one font isn't available, you can tell the browser to "degrade" to another font.
 
@@ -47,7 +47,7 @@ Your h2 element should degrade to the font `monospace` when `Lobster` is not ava
 
 ```js
 assert(
-  /\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(
+  /\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi.test(
     code
   )
 );

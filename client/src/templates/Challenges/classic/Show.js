@@ -23,7 +23,7 @@ import Hotkeys from '../components/Hotkeys';
 
 import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
-import { ChallengeNode } from '../../../redux/propTypes';
+import { ChallengeNode } from '../../../redux/prop-types';
 import {
   createFiles,
   challengeFilesSelector,

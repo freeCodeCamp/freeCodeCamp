@@ -6,7 +6,7 @@
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderá técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
       "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "basic-html-and-html5": {
         "title": "HTML y HTML 5 básico",
@@ -94,7 +94,7 @@
       "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para manipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
       "A lo largo del camino, también aprenderás dos estilos o paradigmas importantes de programación: la Programación Orientada a Objetos (OOP), y la Programación Funcional (FP)."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block content of pages, while taking the course.",
+    "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o bloqueadores de scripts pueden interferir con las pruebas. Si se te presentan problemas, te recomendamos deshabilitar las extensiones que modifiquen o bloqueen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "basic-javascript": {
         "title": "JavaScript básico",
@@ -152,7 +152,7 @@
         "title": "Programación funcional",
         "intro": [
           "La programación funcional es otro enfoque común en el desarrollo de software. En programación funcional, el código está organizado en funciones más pequeñas y básicas que se pueden combinar para construir programas de mayor complejidad.",
-          "En este curso, aprenderás los conceptos básicos de la programación funcional, incluyendo funciones puras, cómo evitar mutaciones, y cómo escribir código más limpio con métodos como <code>.map()</code> y <code>.filter()</code>."
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -257,25 +257,25 @@
   "data-visualization": {
     "title": "Visualización de Datos",
     "intro": [
-      "Data is all around us, but it doesn't mean much without shape or context.",
-      "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
-      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programing Interface)."
+      "Los datos están a nuestro alrededor, pero no significan mucho si no tienen forma o contexto.",
+      "En la certificación Visualización de Datos, construirás diagramas, gráficos, y mapas para presentar diferentes tipos de datos utilizando la biblioteca D3.js.",
+      "También aprenderás acerca de JSON (JavaScript Object Notation), y cómo trabajar con datos en línea usando una API (Application Programing Interface)."
     ],
     "note": "",
     "blocks": {
       "data-visualization-with-d3": {
-        "title": "Data Visualization with D3",
+        "title": "Visualización de datos con D3",
         "intro": [
-          "D3, or D3.js, stands for Data Driven Documents. It's a JavaScript library for creating dynamic and interactive data visualizations in the browser.",
-          "D3 is built to work with common web standards – namely HTML, CSS, and Scalable Vector Graphics (SVG).",
-          "D3 supports many different kinds of input data formats. Then, using its powerful built-in methods, you can transform those data into different charts, graphs, and maps.",
-          "In the Data Visualization with D3 courses, you'll learn how to work with data to create different charts, graphs, hover elements, and other ingredients to create dynamic and attractive data visualizations."
+          "D3, o D3.js, significa documentos basados en datos. Es una biblioteca JavaScript para crear visualizaciones de datos dinámicas e interactivas en el navegador.",
+          "D3 está construido para trabajar con estándares web comunes – a saber, HTML, CSS y gráficos vectoriales escalables (SVG).",
+          "D3 soporta muchos tipos diferentes de formatos de datos de entrada. Luego, usando sus potentes métodos incorporados, puedes transformar esos datos en diferentes diagramas, gráficos y mapas.",
+          "En los cursos de Visualización de Datos con D3, aprenderás a trabajar con datos para crear diferentes tablas, gráficos, elementos flotantes y otros elementos para crear visualizaciones de datos dinámicas y atractivas."
         ]
       },
       "json-apis-and-ajax": {
-        "title": "JSON APIs and AJAX",
+        "title": "APIs JSON y AJAX",
         "intro": [
-          "Similar to how UIs help people use programs, APIs (Application Programming Interfaces) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.",
+          "De forma similar a la que las interfaces de usuario \"UI\" ayudan a la gente a usar programas, las APIs (Interfaces de Programación de Aplicación) ayudan a los programas a interactuar con otros programas. Las APIs son herramientas que los ordenadores utilizan para comunicarse entre sí, en parte para enviar y recibir datos.",
           "Programmers often use AJAX (Asynchronous JavaScript and XML) when working with APIs. AJAX refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. And the data transferred between the browser and server is often in a format called JSON (JavaScript Object Notation).",
           "This course will teach you the basics about working with APIs and different AJAX technologies in the browser."
         ]
@@ -333,7 +333,7 @@
         "title": "APIs and Microservices Projects",
         "intro": [
           "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show of to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
         ]
       }
     }
