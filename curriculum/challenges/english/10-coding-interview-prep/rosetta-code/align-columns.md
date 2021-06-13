@@ -31,14 +31,20 @@ const testText = [
 
 **Note that:**
 
-<ul>
-  <li>The example input texts lines may, or may not, have trailing dollar characters.</li>
-  <li>All columns should share the same alignment.</li>
-  <li>Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.</li>
-  <li>Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal.</li>
-  <li>The minimum space between columns should be computed from the text and not hard-coded.</li>
-  <li>It is not a requirement to add separating characters between or around columns.</li>
-</ul>
+- The example input texts lines may, or may not, have trailing dollar characters.
+- All columns should share the same alignment.
+- Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
+- Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal. Lines in it should be joined using new line character (`\n`).
+- The minimum space between columns should be computed from the text and not hard-coded.
+- It is not a requirement to add separating characters between or around columns.
+
+For example, one of the lines from the `testText`, after jusitifing to the right, left and center respectivelly:
+
+```js
+'    column        are separated     by     at    least       one space.\n'
+'column     are        separated by     at     least    one       space.\n'
+'  column      are     separated   by     at    least      one    space.\n'
+```
 
 # --hints--
 
