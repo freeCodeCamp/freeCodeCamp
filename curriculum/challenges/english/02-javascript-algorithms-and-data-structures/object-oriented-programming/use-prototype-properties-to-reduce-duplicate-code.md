@@ -45,7 +45,7 @@ assert(beagle.numLegs !== undefined);
 assert(typeof beagle.numLegs === 'number');
 ```
 
-`numLegs` should be a `prototype` property not an `own` property.
+`numLegs` should be a `prototype` property not an own property.
 
 ```js
 assert(beagle.hasOwnProperty('numLegs') === false);
