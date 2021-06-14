@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-function BlockSaveButton({ children, ...restProps }) {
+function BlockSaveButton({
+  children,
+  ...restProps
+}: {
+  children: React.ReactNode;
+}) {
   const { t } = useTranslation();
 
   return (
@@ -20,8 +24,5 @@ function BlockSaveButton({ children, ...restProps }) {
 }
 
 BlockSaveButton.displayName = 'BlockSaveButton';
-BlockSaveButton.propTypes = {
-  children: PropTypes.any
-};
 
 export default BlockSaveButton;
