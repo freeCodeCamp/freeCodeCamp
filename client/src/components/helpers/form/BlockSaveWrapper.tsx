@@ -8,7 +8,7 @@ function BlockSaveWrapper({
   children,
   ...restProps
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }) {
   return (
     <div style={style} {...restProps}>
