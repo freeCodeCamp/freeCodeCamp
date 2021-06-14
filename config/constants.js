@@ -116,7 +116,6 @@ let blocklist = [
   'unsubscribed',
   'update-my-portfolio',
   'update-my-profile-ui',
-  'update-my-projects',
   'update-my-theme',
   'update-my-username',
   'user',

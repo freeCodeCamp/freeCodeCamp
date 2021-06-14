@@ -19,7 +19,7 @@ let duck = new Bird();
 duck.constructor
 ```
 
-But `duck` and all instances of `Bird` should show that they were constructed by `Bird` and not `Animal`. To do so, you can manually set `Bird's` constructor property to the `Bird` object:
+But `duck` and all instances of `Bird` should show that they were constructed by `Bird` and not `Animal`. To do so, you can manually set the constructor property of `Bird` to the `Bird` object:
 
 ```js
 Bird.prototype.constructor = Bird;
