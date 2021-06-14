@@ -11,16 +11,16 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 要获取字符串的最后一个字符，可以用字符串的长度减 1 的索引值。
 
-例如，在 `var firstName = "Charles"` 中，可以用 `firstName[firstName.length - 1]` 来得到字符串的最后的一个字符。
+例如，如果 `var firstName = "Ada"` 中，那么你可以通过 `firstName[firstName.length - 1]` 来得到字符串的最后的一个字符。
 
 示例：
 
 ```js
-var firstName = "Charles";
+var firstName = "Ada";
 var lastLetter = firstName[firstName.length - 1];
 ```
 
-`lastLetter` 值为字符串 `s`。
+`lastLetter` 值为字符串 `a`。
 
 # --instructions--
 
