@@ -36,7 +36,7 @@ Bird.prototype.eat = function() {
 };
 ```
 
-If you have an instance `let duck = new Bird();` and you call `duck.eat()`, this is how JavaScript looks for the method on `duck’s` `prototype` chain:
+If you have an instance `let duck = new Bird();` and you call `duck.eat()`, this is how JavaScript looks for the method on the `prototype` chain of `duck`:
 
 1.  `duck` => Is `eat()` defined here? No.
 2.  `Bird` => Is `eat()` defined here? => Yes. Execute it and stop searching.
