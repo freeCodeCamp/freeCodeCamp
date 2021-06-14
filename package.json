@@ -105,7 +105,7 @@
     "@babel/preset-typescript": "7.14.5",
     "@testing-library/cypress": "7.0.6",
     "@testing-library/dom": "7.31.2",
-    "@testing-library/jest-dom": "5.13.0",
+    "@testing-library/jest-dom": "5.14.1",
     "@testing-library/user-event": "13.1.9",
     "@typescript-eslint/eslint-plugin": "4.26.1",
     "@typescript-eslint/parser": "4.26.1",
