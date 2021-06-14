@@ -18,6 +18,8 @@ const { helpCategoryMap } = require('../client/utils/challengeTypes');
 const { curriculum: curriculumLangs } =
   require('../config/i18n/all-langs').availableLangs;
 
+const { showUpcomingChanges } = require('../config/env.json');
+
 const access = util.promisify(fs.access);
 
 const challengesDir = path.resolve(__dirname, './challenges');
@@ -183,7 +185,7 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
     );
   }
 
-  if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
+  if (!isUpcomingChange || showUpcomingChanges) {
     // add the block to the superBlock
     const blockInfo = { meta: blockMeta, challenges: [] };
     curriculum[superBlock].blocks[blockName] = blockInfo;
