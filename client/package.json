@@ -133,6 +133,7 @@
     "@codesee/tracker": "0.33.4",
     "@testing-library/jest-dom": "5.13.0",
     "@testing-library/react": "11.2.7",
+    "@types/react-spinkit": "^3.0.6",
     "@types/react-transition-group": "4.4.1",
     "@types/redux-actions": "2.6.1",
     "autoprefixer": "10.2.6",
