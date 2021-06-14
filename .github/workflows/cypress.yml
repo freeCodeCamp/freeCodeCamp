@@ -1,5 +1,8 @@
-name: Cypress - Pull-request
+name: Cypress
 on:
+  push:
+    branches-ignore:
+      - 'renovate/**'
   pull_request:
 
 jobs:
