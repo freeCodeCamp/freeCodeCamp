@@ -11,16 +11,16 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 Con el fin de obtener la última letra de una cadena, puedes restar uno a la longitud del texto.
 
-Por ejemplo, si `var firstName = "Charles"`, puedes obtener el valor de la última letra de la cadena usando `firstName[firstName.length - 1]`.
+Por ejemplo, sí `var firstName = "Ada"`, puedes obtener el valor de la última letra de la cadena usando `firstName[firstName.length - 1]`.
 
 Ejemplo:
 
 ```js
-var firstName = "Charles";
+var firstName = "Ada";
 var lastLetter = firstName[firstName.length - 1];
 ```
 
-`lastLetter` tendrá una cadena con valor `s`.
+`lastLetter` tendrá una cadena con valor `a`.
 
 # --instructions--
 

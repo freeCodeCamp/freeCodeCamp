@@ -16,10 +16,17 @@ const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
 const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
-const legacyFrontEndBase = '';
-const legacyBackEndBase = '';
-const legacyDataVisBase = '';
-const legacyInfosecQaBase = '';
+const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
+const legacyFrontEndBase = feLibsBase;
+const legacyFrontEndResponsiveBase = responsiveWebBase;
+const legacyFrontEndTakeHomeBase = takeHomeBase;
+const legacyBackEndBase = apiMicroBase;
+const legacyBackEndTakeHomeBase = takeHomeBase;
+const legacyDataVisBase = dataVisBase;
+const legacyDataVisFrontEndBase = feLibsBase;
+const legacyDataVisTakeHomeBase = takeHomeBase;
+const legacyInfosecQaQaBase = qaBase;
+const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
@@ -33,7 +40,7 @@ const certMap = [
       {
         id: 'bd7158d8c242eddfaeb5bd13',
         title: 'Build a Personal Portfolio Webpage',
-        link: `${legacyFrontEndBase}/build-a-personal-portfolio-webpage`,
+        link: `${legacyFrontEndResponsiveBase}/build-a-personal-portfolio-webpage`,
         certSlug: 'legacy-front-end'
       },
       {
@@ -57,37 +64,37 @@ const certMap = [
       {
         id: 'bd7158d8c442eddfaeb5bd10',
         title: 'Show the Local Weather',
-        link: `${legacyFrontEndBase}/show-the-local-weather`,
+        link: `${legacyFrontEndTakeHomeBase}/show-the-local-weather`,
         certSlug: 'legacy-front-end'
       },
       {
         id: 'bd7158d8c442eddfaeb5bd1f',
         title: 'Use the TwitchTV JSON API',
-        link: `${legacyFrontEndBase}/use-the-twitchtv-json-api`,
+        link: `${legacyFrontEndTakeHomeBase}/use-the-twitch-json-api`,
         certSlug: 'legacy-front-end'
       },
       {
         id: 'bd7158d8c442eddfaeb5bd18',
-        title: 'Stylize Stories on Camper News',
-        link: `${legacyFrontEndBase}/stylize-stories-on-camper-news`,
+        title: 'Build a Tribute Page',
+        link: `${legacyFrontEndResponsiveBase}/build-a-tribute-page`,
         certSlug: 'legacy-front-end'
       },
       {
         id: 'bd7158d8c442eddfaeb5bd19',
         title: 'Build a Wikipedia Viewer',
-        link: `${legacyFrontEndBase}/build-a-wikipedia-viewer`,
+        link: `${legacyFrontEndTakeHomeBase}/build-a-wikipedia-viewer`,
         certSlug: 'legacy-front-end'
       },
       {
         id: 'bd7158d8c442eedfaeb5bd1c',
         title: 'Build a Tic Tac Toe Game',
-        link: `${legacyFrontEndBase}/build-a-tic-tac-toe-game`,
+        link: `${legacyFrontEndTakeHomeBase}/build-a-tic-tac-toe-game`,
         certSlug: 'legacy-front-end'
       },
       {
         id: 'bd7158d8c442eddfaeb5bd1c',
         title: 'Build a Simon Game',
-        link: `${legacyFrontEndBase}/build-a-simon-game`,
+        link: `${legacyFrontEndTakeHomeBase}/build-a-simon-game`,
         certSlug: 'legacy-front-end'
       }
     ]
@@ -119,7 +126,7 @@ const certMap = [
       {
         id: 'bd7158d8c443edefaeb5bdee',
         title: 'Image Search Abstraction Layer',
-        link: `${legacyBackEndBase}/image-search-abstraction-layer`,
+        link: `${legacyBackEndTakeHomeBase}/build-an-image-search-abstraction-layer`,
         certSlug: 'legacy-back-end'
       },
       {
@@ -131,31 +138,31 @@ const certMap = [
       {
         id: 'bd7158d8c443eddfaeb5bdef',
         title: 'Build a Voting App',
-        link: `${legacyBackEndBase}/build-a-voting-app`,
+        link: `${legacyBackEndTakeHomeBase}/build-a-voting-app`,
         certSlug: 'legacy-back-end'
       },
       {
         id: 'bd7158d8c443eddfaeb5bdff',
         title: 'Build a Nightlife Coordination App',
-        link: `${legacyBackEndBase}/build-a-nightlife-coordination-app`,
+        link: `${legacyBackEndTakeHomeBase}/build-a-nightlife-coordination-app`,
         certSlug: 'legacy-back-end'
       },
       {
         id: 'bd7158d8c443eddfaeb5bd0e',
         title: 'Chart the Stock Market',
-        link: `${legacyBackEndBase}/chart-the-stock-market`,
+        link: `${legacyBackEndTakeHomeBase}/chart-the-stock-market`,
         certSlug: 'legacy-back-end'
       },
       {
         id: 'bd7158d8c443eddfaeb5bd0f',
         title: 'Manage a Book Trading Club',
-        link: `${legacyBackEndBase}/manage-a-book-trading-club`,
+        link: `${legacyBackEndTakeHomeBase}/manage-a-book-trading-club`,
         certSlug: 'legacy-back-end'
       },
       {
         id: 'bd7158d8c443eddfaeb5bdee',
         title: 'Build a Pinterest Clone',
-        link: `${legacyBackEndBase}/build-a-pinterest-clone`,
+        link: `${legacyBackEndTakeHomeBase}/build-a-pinterest-clone`,
         certSlug: 'legacy-back-end'
       }
     ]
@@ -177,31 +184,31 @@ const certMap = [
       {
         id: 'bd7157d8c242eddfaeb5bd13',
         title: 'Build a Markdown Previewer',
-        link: `${legacyDataVisBase}/build-a-markdown-previewer`,
+        link: `${legacyDataVisFrontEndBase}/build-a-markdown-previewer`,
         certSlug: 'legacy-data-visualization'
       },
       {
         id: 'bd7156d8c242eddfaeb5bd13',
-        title: 'Build a Camper Leaderboard',
-        link: `${legacyDataVisBase}/build-a-camper-leaderboard`,
+        title: 'Build a freeCodeCamp Forum Homepage',
+        link: `${legacyDataVisTakeHomeBase}/build-a-freecodecamp-forum-homepage`,
         certSlug: 'legacy-data-visualization'
       },
       {
         id: 'bd7155d8c242eddfaeb5bd13',
         title: 'Build a Recipe Box',
-        link: `${legacyDataVisBase}/build-a-recipe-box`,
+        link: `${legacyDataVisTakeHomeBase}/build-a-recipe-box`,
         certSlug: 'legacy-data-visualization'
       },
       {
         id: 'bd7154d8c242eddfaeb5bd13',
         title: 'Build the Game of Life',
-        link: `${legacyDataVisBase}/build-the-game-of-life`,
+        link: `${legacyDataVisTakeHomeBase}/build-the-game-of-life`,
         certSlug: 'legacy-data-visualization'
       },
       {
         id: 'bd7153d8c242eddfaeb5bd13',
         title: 'Build a Roguelike Dungeon Crawler Game',
-        link: `${legacyDataVisBase}/build-a-roguelike-dungeon-crawler-game`,
+        link: `${legacyDataVisTakeHomeBase}/build-a-roguelike-dungeon-crawler-game`,
         certSlug: 'legacy-data-visualization'
       },
       {
@@ -225,13 +232,13 @@ const certMap = [
       {
         id: 'bd7198d8c242eddfaeb5bd13',
         title: 'Show National Contiguity with a Force Directed Graph',
-        link: `${legacyDataVisBase}/show-national-contiguity-with-a-force-directed-graph`,
+        link: `${legacyDataVisTakeHomeBase}/show-national-contiguity-with-a-force-directed-graph`,
         certSlug: 'legacy-data-visualization'
       },
       {
         id: 'bd7108d8c242eddfaeb5bd13',
         title: 'Map Data Across the Globe',
-        link: `${legacyDataVisBase}/map-data-across-the-globe`,
+        link: `${legacyDataVisTakeHomeBase}/map-data-across-the-globe`,
         certSlug: 'legacy-data-visualization'
       }
     ]
@@ -247,31 +254,31 @@ const certMap = [
       {
         id: '587d8249367417b2b2512c41',
         title: 'Metric-Imperial Converter',
-        link: `${legacyInfosecQaBase}/metric-imperial-converter`,
+        link: `${legacyInfosecQaQaBase}/metric-imperial-converter`,
         certSlug: 'information-security-and-quality-assurance'
       },
       {
         id: '587d8249367417b2b2512c42',
         title: 'Issue Tracker',
-        link: `${legacyInfosecQaBase}/issue-tracker`,
+        link: `${legacyInfosecQaQaBase}/issue-tracker`,
         certSlug: 'information-security-and-quality-assurance'
       },
       {
         id: '587d824a367417b2b2512c43',
         title: 'Personal Library',
-        link: `${legacyInfosecQaBase}/personal-library`,
+        link: `${legacyInfosecQaQaBase}/personal-library`,
         certSlug: 'information-security-and-quality-assurance'
       },
       {
         id: '587d824a367417b2b2512c44',
         title: 'Stock Price Checker',
-        link: `${legacyInfosecQaBase}/stock-price-checker`,
+        link: `${legacyInfosecQaInfosecBase}/stock-price-checker`,
         certSlug: 'information-security-and-quality-assurance'
       },
       {
         id: '587d824a367417b2b2512c45',
         title: 'Anonymous Message Board',
-        link: `${legacyInfosecQaBase}/anonymous-message-board`,
+        link: `${legacyInfosecQaInfosecBase}/anonymous-message-board`,
         certSlug: 'information-security-and-quality-assurance'
       }
     ]

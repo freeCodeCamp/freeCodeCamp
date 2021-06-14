@@ -10,9 +10,9 @@ describe('Settings certifications area', () => {
   });
 
   describe('initially', () => {
-    it('Should render 11 "Claim Certification" buttons', () => {
+    it('Should render 15 "Claim Certification" buttons', () => {
       cy.findAllByText('Claim Certification').should($btns => {
-        expect($btns).to.have.length(11);
+        expect($btns).to.have.length(15);
       });
     });
 
@@ -53,49 +53,6 @@ describe('Settings certifications area', () => {
         cy.contains(
           'It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification'
         ).should('exist');
-      });
-
-      it('Should show "Your projects have been updated." message after submitting projects', () => {
-        cy.get(
-          '#dynamic-information-security-and-quality-assurance input'
-        ).each(el => {
-          cy.wrap(el)
-            .clear({ force: true })
-            .type('https://nhl.com', { force: true, delay: 0 });
-        });
-
-        cy.get('#dynamic-information-security-and-quality-assurance').then(
-          form => {
-            if (form[0][5] && form[0][5].innerHTML === 'Save Progress') {
-              form[0][5].click({ force: true });
-              cy.wait(1000);
-            }
-          }
-        );
-
-        cy.contains('Your projects have been updated.').should('exist');
-      });
-
-      it('Should render 12 "Claim Certification" buttons after submitting legacy projects', () => {
-        cy.findAllByText('Claim Certification').should($btns => {
-          expect($btns).to.have.length(12);
-        });
-      });
-
-      it('Should show "congrats" message after claiming a cert', () => {
-        cy.get(
-          '#dynamic-information-security-and-quality-assurance button'
-        ).click();
-
-        cy.contains(
-          '@developmentuser, you have successfully claimed the Legacy Information Security and Quality Assurance Certification! Congratulations on behalf of the freeCodeCamp.org team!'
-        ).should('exist');
-      });
-
-      it('Should render a "Show Certification" button after submitting enough projects', () => {
-        cy.findAllByText('Show Certification').should($btns => {
-          expect($btns).to.have.length(1);
-        });
       });
     });
   });

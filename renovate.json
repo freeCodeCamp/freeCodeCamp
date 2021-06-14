@@ -11,6 +11,10 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
+    },
+    {
+      "groupName": "Monaco Editor",
+      "matchPackageNames": ["monaco-editor", "monaco-editor-webpack-plugin"]
     }
   ],
   "ignorePaths": [

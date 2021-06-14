@@ -1,6 +1,9 @@
 export interface ExtendedStyleRule extends CSSStyleRule {
   isDeclaredAfter: (selector: string) => boolean;
 }
+interface ExtendedStyleDeclaration extends CSSStyleDeclaration {
+  getPropVal: (prop: string, strip?: boolean) => string;
+}
 
 const getIsDeclaredAfter = (styleRule: CSSStyleRule) => (selector: string) => {
   const cssStyleRules = Array.from(
@@ -36,9 +39,17 @@ class CSSHelp {
       ?.filter(ele => ele?.selectorText === selector)
       .map(x => x.style);
   }
-  getStyleDeclaration(selector: string): CSSStyleDeclaration | undefined {
-    return this._getStyleRules()?.find(ele => ele?.selectorText === selector)
-      ?.style;
+  getStyle(selector: string): ExtendedStyleDeclaration | null {
+    const style = this._getStyleRules().find(
+      ele => ele?.selectorText === selector
+    )?.style as ExtendedStyleDeclaration | undefined;
+    if (!style) return null;
+    style.getPropVal = (prop: string, strip = false) => {
+      return strip
+        ? style.getPropertyValue(prop).replace(/\s+/g, '')
+        : style.getPropertyValue(prop);
+    };
+    return style;
   }
   getStyleRule(selector: string): ExtendedStyleRule | null {
     const styleRule = this._getStyleRules()?.find(
@@ -75,9 +86,9 @@ class CSSHelp {
       ele.style?.getPropertyValue(property)
     );
   }
-  getRuleListsWithinMedia(conditionText: string): CSSStyleRule[] {
+  getRuleListsWithinMedia(mediaText: string): CSSStyleRule[] {
     const medias = this.getCSSRules('media') as CSSMediaRule[];
-    const cond = medias?.find(x => x.conditionText === conditionText);
+    const cond = medias?.find(x => x?.media?.mediaText === mediaText);
     const cssRules = cond?.cssRules;
     return Array.from(cssRules || []) as CSSStyleRule[];
   }
@@ -86,7 +97,10 @@ class CSSHelp {
     const link: HTMLLinkElement | null = this.doc?.querySelector(
       "link[href*='styles']"
     );
-    const style: HTMLStyleElement | null = this.doc?.querySelector('style');
+    // Most* browser extensions inject styles with class/media attributes
+    const style: HTMLStyleElement | null = this.doc?.querySelector(
+      'style:not([class]):not([media])'
+    );
     if (link?.sheet?.cssRules?.length) {
       return link.sheet;
     } else if (style) {

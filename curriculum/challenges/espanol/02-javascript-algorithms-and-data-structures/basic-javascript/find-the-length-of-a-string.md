@@ -17,7 +17,7 @@ console.log("Alan Peter".length);
 
 El valor `10` se mostrará en la consola.
 
-Por ejemplo, si creamos una variable `var firstName = "Charles"`, podríamos averiguar la longitud de la cadena `Charles` usando la propiedad `firstName.length`.
+Por ejemplo, si creamos una variable `var firstName = "Ada"`, podríamos averiguar la longitud de la cadena `Ada` usando la propiedad `firstName.length`.
 
 # --instructions--
 

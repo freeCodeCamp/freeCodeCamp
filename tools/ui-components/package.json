@@ -23,20 +23,20 @@
     "react-dom": "16.14.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.3",
+    "@babel/core": "7.14.5",
     "@storybook/addon-actions": "6.2.9",
     "@storybook/addon-essentials": "6.2.9",
     "@storybook/addon-links": "6.2.9",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.2.9",
+    "@testing-library/react": "11.2.7",
     "autoprefixer": "10.2.6",
     "babel-loader": "8.2.2",
-    "postcss": "8.3.0",
+    "postcss": "8.3.2",
     "postcss-import": "14.0.2",
     "tailwindcss": "2.1.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "storybook:theming": "npm run storybook --no-manager-cache",
     "build-storybook": "build-storybook"
