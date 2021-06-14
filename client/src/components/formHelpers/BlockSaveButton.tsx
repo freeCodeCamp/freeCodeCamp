@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-function BlockSaveButton(props: any) {
+function BlockSaveButton(props: Record<any, unknown>) {
   const { t } = useTranslation();
   return (
     <Button block={true} bsStyle='primary' {...props} type='submit'>
