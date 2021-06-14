@@ -14,7 +14,7 @@ You don't need the `background-color` for this building anymore so you can remov
 You should remove the `background-color` of `.fb5`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".fb5")?.backgroundColor);
+assert.notMatch(code, /\.fb5\s*\{\s*[^}]*?background-color[^}]*?\}/);
 ```
 
 # --seed--

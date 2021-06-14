@@ -22,7 +22,7 @@ Add an empty media query at the bottom of your stylesheet with a condition of `m
 You should add an empty media query with `max-width: 1000px`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getRuleListsWithinMedia("(max-width: 1000px)"));
+assert.equal(new __helpers.CSSHelp(document).getCSSRules("media")?.[0]?.media?.mediaText, '(max-width: 1000px)');
 ```
 
 # --seed--

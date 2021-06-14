@@ -14,7 +14,7 @@ Remove the `background-color` property and value from `.bb3` since you are using
 You should remove the `background-color` from `.bb3`.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".bb3")?.backgroundColor);
+assert.notMatch(code, /\.bb3\s*\{\s*[^}]*?background-color[^}]*?\}/);
 ```
 
 # --seed--
