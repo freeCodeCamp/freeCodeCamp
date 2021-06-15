@@ -1,7 +1,6 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, RefObject } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-// import Loadable from '@loadable/component';
 
 import {
   canFocusEditorSelector,
@@ -25,22 +24,23 @@ import {
   ResizePropsType,
   TestType
 } from '../../../redux/prop-types';
+import { Range } from 'monaco-editor/esm/vs/editor/editor.api';
+import MonacoEditor from 'react-monaco-editor';
+// eslint-disable-next-line import/no-duplicates
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type {
+  IRange,
+  editor,
+  Range as RangeType
+  // eslint-disable-next-line import/no-duplicates
+} from 'monaco-editor/esm/vs/editor/editor.api';
 
 import './editor.css';
-// import * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import MonacoEditor from 'react-monaco-editor';
-
-// const MonacoEditor = Loadable<typeof monacoEditor>(
-//   () => import('react-monaco-editor')
-// );
 
 type PropTypes = {
   canFocus: boolean;
   challengeFiles: ChallengeFileType;
-  containerRef: {
-    current: null;
-  };
+  containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
   dimensions: DimensionsType;
@@ -58,11 +58,15 @@ type PropTypes = {
   submitChallenge: () => void;
   tests: TestType[];
   theme: string;
-  updateFile: () => void;
+  updateFile: (objest: {
+    key: FileKeyTypes;
+    editorValue: string;
+    editableRegionBoundaries: number[] | null;
+  }) => void;
 };
 
 type DataType = {
-  model: null | monacoEditor.editor.ITextModel;
+  model: null | editor.ITextModel;
   state: null;
   viewZoneId: string | null;
   startEditDecId: string | null;
@@ -81,12 +85,12 @@ const mapStateToProps = createSelector(
   userSelector,
   challengeTestsSelector,
   (
-    canFocus,
-    output,
-    accessibilityMode,
+    canFocus: boolean,
+    output: string,
+    accessibilityMode: boolean,
     open,
-    { theme = 'default' },
-    tests
+    { theme = 'default' }: { theme: string },
+    tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
     output,
@@ -95,6 +99,8 @@ const mapStateToProps = createSelector(
     tests
   })
 );
+
+// type ActionDispatchGeneric<P, T> = (payload: P) => ({type: T, payload: P});
 
 const mapDispatchToProps = {
   executeChallenge,
@@ -145,11 +151,11 @@ const defineMonacoThemes = (monaco: typeof monacoEditor) => {
   });
 };
 
-const toStartOfLine = (range: monacoEditor.Range) => {
+const toStartOfLine = (range: RangeType) => {
   return range.setStartPosition(range.startLineNumber, 1);
 };
 
-const toLastLine = (range: monacoEditor.Range) => {
+const toLastLine = (range: RangeType) => {
   return range.setStartPosition(range.endLineNumber, 1);
 };
 
@@ -170,15 +176,16 @@ const Editor = (props: PropTypes): JSX.Element => {
   // TODO: is there any point in initializing this? It should be fine with
   // data = {}
   const [data, setData] = useState(initialData);
-  const [_editor, setEditor] =
-    useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null);
+  const [_editor, setEditor] = useState<editor.IStandaloneCodeEditor | null>(
+    null
+  );
   const [_monaco, setMonaco] = useState<typeof monacoEditor | null>(null);
   const [_domNode, setDomNode] = useState<HTMLDivElement | null>(null);
   const [_outputNode, setOutputNode] = useState<HTMLDivElement | null>(null);
   const [_overlayWidget, setOverlayWidget] =
-    useState<monacoEditor.editor.IOverlayWidget | null>(null);
+    useState<editor.IOverlayWidget | null>(null);
   const [_outputWidget, setOutputWidget] =
-    useState<monacoEditor.editor.IOverlayWidget | null>(null);
+    useState<editor.IOverlayWidget | null>(null);
 
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
@@ -196,7 +203,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   // NOTE: the ARIA state is controlled by fileKey, so changes to it must
   // trigger a re-render.  Hence state:
-  const options: monacoEditor.editor.IStandaloneEditorConstructionOptions = {
+  const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
     scrollBeyondLastLine: false,
     selectionHighlight: false,
@@ -271,10 +278,10 @@ const Editor = (props: PropTypes): JSX.Element => {
   };
 
   const editorDidMount = (
-    editor: monacoEditor.editor.IStandaloneCodeEditor,
+    editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
-    // TODO: Why do we have two editors: 'editor' and '_editor'?
+    // TODO: Why do we have two editors: 'editor' and '_editor'? - probably not necessary
     setEditor(editor);
     editor.updateOptions({
       accessibilitySupport: props.inAccessibilityMode ? 'on' : 'auto'
@@ -286,6 +293,9 @@ const Editor = (props: PropTypes): JSX.Element => {
       editor.focus();
     } else focusOnHotkeys();
     // Removes keybind for intellisense
+    // Private method - hopefully changes with future version
+    // ref: https://github.com/microsoft/monaco-editor/issues/102
+    // eslint-disable-next-line
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
       null,
@@ -299,7 +309,7 @@ const Editor = (props: PropTypes): JSX.Element => {
         // TODO: No idea what to put in 'chord'
         monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter)
       ],
-      // TODO: Changed from - run: props.executeChallenge
+      // TODO: Discuss with Ahmad what should pop-up when a challenge is completed
       run: () => props.executeChallenge()
     });
     editor.addAction({
@@ -391,9 +401,6 @@ const Editor = (props: PropTypes): JSX.Element => {
       if (_outputWidget) {
         _editor?.addOverlayWidget(_outputWidget);
       }
-      // TODO: if we keep using a single editor and switching content (rather
-      // than having multiple open editors), this view zone needs to be
-      // preserved when the tab changes.
 
       editor.changeViewZones(viewZoneCallback);
       editor.changeViewZones(outputZoneCallback);
@@ -410,9 +417,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     }
   };
 
-  const viewZoneCallback = (
-    changeAccessor: monacoEditor.editor.IViewZoneChangeAccessor
-  ) => {
+  const viewZoneCallback = (changeAccessor: editor.IViewZoneChangeAccessor) => {
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
     const domNode = createDescription();
@@ -444,7 +449,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   // TODO: this is basically the same as viewZoneCallback, so DRY them out.
   const outputZoneCallback = (
-    changeAccessor: monacoEditor.editor.IViewZoneChangeAccessor
+    changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
@@ -555,12 +560,12 @@ const Editor = (props: PropTypes): JSX.Element => {
     }
   }
 
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function focusOnEditor() {
     _editor?.focus();
   }
 
-  const onChange = editorValue => {
+  const onChange = (editorValue: string) => {
     const { updateFile } = props;
     // TODO: use fileKey everywhere?
     const { fileKey: key } = props;
@@ -598,8 +603,8 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   function highlightLines(
     stickiness: number,
-    target: monacoEditor.editor.ITextModel,
-    range: monacoEditor.IRange,
+    target: editor.ITextModel,
+    range: IRange,
     oldIds: string[] = []
   ) {
     const lineDecoration = {
@@ -616,8 +621,8 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   function highlightEditableLines(
     stickiness: number,
-    target: monacoEditor.editor.ITextModel,
-    range: monacoEditor.IRange,
+    target: editor.ITextModel,
+    range: IRange,
     oldIds: string[] = []
   ) {
     const lineDecoration = {
@@ -634,8 +639,8 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   function highlightText(
     stickiness: number,
-    target: monacoEditor.editor.ITextModel,
-    range: monacoEditor.IRange,
+    target: editor.ITextModel,
+    range: IRange,
     oldIds: string[] = []
   ) {
     const inlineDecoration = {
@@ -700,7 +705,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     );
   }
 
-  const translateRange = (range: monacoEditor.IRange, lineDelta: number) => {
+  const translateRange = (range: IRange, lineDelta: number) => {
     const iRange = {
       ...range,
       startLineNumber: range.startLineNumber + lineDelta,
@@ -712,8 +717,8 @@ const Editor = (props: PropTypes): JSX.Element => {
   // TODO: TESTS!
   // Make 100% sure this is inclusive.
   const getLinesBetweenRanges = (
-    firstRange: monacoEditor.Range,
-    secondRange: monacoEditor.Range
+    firstRange: RangeType,
+    secondRange: RangeType
   ) => {
     const startRange = translateRange(toLastLine(firstRange), 1);
     const endRange = translateRange(
@@ -790,18 +795,18 @@ const Editor = (props: PropTypes): JSX.Element => {
         0,
       model,
       editableRange
-    );
+    )[0];
 
     // if the forbidden range includes the top of the editor
     // we simply don't add those decorations
     if (forbiddenRanges[0][1] > 0) {
       // the first range should expand at the top
-      // TODO: Unsure what this should be...
+      // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
       data.startEditDecId = highlightLines(
         _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingBefore ?? 2,
         model,
         ranges[0]
-      );
+      )[0];
 
       highlightText(
         _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingBefore ?? 2,
@@ -816,7 +821,7 @@ const Editor = (props: PropTypes): JSX.Element => {
       _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingAfter ?? 3,
       model,
       ranges[1]
-    );
+    )[0];
 
     highlightText(
       _monaco?.editor?.TrackedRangeStickiness?.GrowsOnlyWhenTypingAfter ?? 3,
@@ -828,17 +833,13 @@ const Editor = (props: PropTypes): JSX.Element => {
     // - if the user deletes at the end of line 5, line 6 is deleted and
     // - if the user backspaces at the start of line 6, line 6 is deleted
     // TODO: handle multiple simultaneous changes (multicursors do this)
-    function getDeletedLine(
-      event: monacoEditor.editor.IModelContentChangedEvent
-    ) {
+    function getDeletedLine(event: editor.IModelContentChangedEvent) {
       const isDeleted =
         event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
       return isDeleted ? event.changes[0].range.endLineNumber : 0;
     }
 
-    function getNewLineRanges(
-      event: monacoEditor.editor.IModelContentChangedEvent
-    ) {
+    function getNewLineRanges(event: editor.IModelContentChangedEvent) {
       const newLines = event.changes.filter(
         ({ text }) => text[0] === event.eol
       );
@@ -854,9 +855,8 @@ const Editor = (props: PropTypes): JSX.Element => {
       // edits. However, what if they made a warned edit, then a normal
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
-      // TODO: Issue with types IRange and Range
       const newLineRanges = getNewLineRanges(e).map(range =>
-        toStartOfLine(range)
+        toStartOfLine(Range.lift(range))
       );
       const deletedLine = getDeletedLine(e);
 
@@ -1005,7 +1005,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   // creates a range covering all the lines in 'positions'
   // NOTE: positions is an array of [startLine, endLine]
   function positionsToRange(
-    model: monacoEditor.editor.ITextModel,
+    model: editor.ITextModel,
     [start, end]: [number, number]
   ) {
     console.log('positionsToRange', start, end);
@@ -1016,7 +1016,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     // convert to [startLine, startColumn, endLine, endColumn]
     const range = _monaco
       ? new _monaco.Range(start, 1, end, 1)
-      : ([start, 1, end, 1] as unknown as monacoEditor.Range);
+      : ([start, 1, end, 1] as unknown as RangeType);
 
     // Protect against ranges that extend outside the editor
     const startLineNumber = Math.max(1, range.startLineNumber);
@@ -1042,6 +1042,7 @@ const Editor = (props: PropTypes): JSX.Element => {
       const { output, tests } = props;
       const editableRegion = getEditableRegion();
       if (editableRegion.length === 2) {
+        // /@ojeytonwilliams 'tests' shuold not have pass and err props?
         const challengeComplete = tests.every(test => test.pass && !test.err);
         const chellengeHasErrors = tests.some(test => test.err);
         const testOutput = document.getElementById('test-output');
