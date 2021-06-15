@@ -18,7 +18,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 # --instructions--
 
-1.  Add your MongoDB connection string to `.env` without quotes as `DB`  
+1.  Add your MongoDB connection string to `.env` without quotes as `DB`
     Example: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
 2.  In your `.env` file set `NODE_ENV` to `test`, without quotes
 3.  You need to create all routes within `routes/api.js`
@@ -66,7 +66,7 @@ async (getUserInput) => {
     let a = $.post(url, { title: 'Faux Book A' });
     let b = $.post(url, { title: 'Faux Book B' });
     let c = $.post(url, { title: 'Faux Book C' });
-    Promise.all([a, b, c]).then(async () => {
+    await Promise.all([a, b, c]).then(async () => {
       let data = await $.get(url);
       assert.isArray(data);
       assert.isAtLeast(data.length, 3);
@@ -214,8 +214,8 @@ async (getUserInput) => {
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
   Please check our contributing guidelines to learn more.
 */
 ```
