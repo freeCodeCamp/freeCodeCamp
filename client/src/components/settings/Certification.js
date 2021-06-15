@@ -375,7 +375,7 @@ export class CertificationSettings extends Component {
             <li>JavaScript Algorithms and Data Structures</li>
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
-            <li>APIs and Microservices</li>
+            <li>Back End Development and APIs</li>
             <li>Legacy Information Security and Quality Assurance</li>
           </ul>
         </div>
