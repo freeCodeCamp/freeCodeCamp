@@ -9,32 +9,7 @@
 // translated, but when they are they can be included by adding 'certificates'
 // to the arrays below
 
-const auditedCerts = {
-  espanol: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
-  ],
-  chinese: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
-    'data-visualization',
-    'apis-and-microservices',
-    'quality-assurance'
-  ],
-  'chinese-traditional': [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
-    'data-visualization',
-    'apis-and-microservices',
-    'quality-assurance'
-  ],
-  italian: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
-  ]
-};
+const { auditedCerts } = require('../config/i18n/all-langs');
 
 function isAuditedCert(lang, cert) {
   if (!lang || !cert)
