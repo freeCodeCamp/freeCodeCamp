@@ -24,7 +24,7 @@ ourStr += "I come second.";
 
 # --instructions--
 
-使用 `+=` 操作符，多行合併字符串 `This is the first sentence.` 和 `This is the second sentence.` ，並賦值給 `myStr` 。 像編輯器裏顯示的那樣使用 `+=` 操作符。 先把第一個字符串賦值給 `myStr`，然後拼接第二個字符串。
+使用 `+=` 操作符，多行合併字符串 `This is the first sentence.` 和 `This is the second sentence.` ，並賦值給 `myStr` 。 像示例那樣使用 `+=` 操作符。 先把第一個字符串賦值給 `myStr`，然後拼接第二個字符串。
 
 # --hints--
 

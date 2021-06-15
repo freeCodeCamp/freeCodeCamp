@@ -18,6 +18,15 @@ const algoliaIndices = {
   'chinese-traditional': {
     name: 'news-zh',
     searchPage: 'https://chinese.freecodecamp.org/news/search'
+  },
+  // TODO: Replace with i18n pages when shipped
+  italian: {
+    name: 'news',
+    searchPage: 'https://www.freecodecamp.org/news/search/'
+  },
+  portuguese: {
+    name: 'news',
+    searchPage: 'https://www.freecodecamp.org/news/search/'
   }
 };
 
