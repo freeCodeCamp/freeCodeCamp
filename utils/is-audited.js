@@ -29,7 +29,12 @@ const auditedCerts = {
     'data-visualization',
     'apis-and-microservices',
     'quality-assurance'
-  ]
+  ],
+  italian: [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures'
+  ],
+  portuguese: ['responsive-web-design']
 };
 
 function isAuditedCert(lang, cert) {
