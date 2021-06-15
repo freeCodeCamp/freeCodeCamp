@@ -304,11 +304,8 @@ const Editor = (props: PropTypes): JSX.Element => {
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
-      keybindings: [
-        /* eslint-disable no-bitwise */
-        // TODO: No idea what to put in 'chord'
-        monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter)
-      ],
+      /* eslint-disable no-bitwise */
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
       // TODO: Discuss with Ahmad what should pop-up when a challenge is completed
       run: () => props.executeChallenge()
     });
@@ -324,9 +321,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     editor.addAction({
       id: 'save-editor-content',
       label: 'Save editor content to localStorage',
-      keybindings: [
-        monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S)
-      ],
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run: props.saveEditorContent
     });
     editor.addAction({
