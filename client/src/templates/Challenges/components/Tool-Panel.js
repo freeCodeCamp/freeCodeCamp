@@ -20,7 +20,8 @@ const mapDispatchToProps = dispatch =>
       executeChallenge,
       openHelpModal: () => openModal('help'),
       openVideoModal: () => openModal('video'),
-      openResetModal: () => openModal('reset')
+      openResetModal: () => openModal('reset'),
+      openKeyboardShortcutsModal: () => openModal('keyboardShortcuts')
     },
     dispatch
   );
@@ -30,6 +31,7 @@ const propTypes = {
   guideUrl: PropTypes.string,
   isMobile: PropTypes.bool,
   openHelpModal: PropTypes.func.isRequired,
+  openKeyboardShortcutsModal: PropTypes.func.isRequired,
   openResetModal: PropTypes.func.isRequired,
   openVideoModal: PropTypes.func.isRequired,
   videoUrl: PropTypes.string
@@ -42,7 +44,8 @@ function ToolPanel({
   openVideoModal,
   openResetModal,
   guideUrl,
-  videoUrl
+  videoUrl,
+  openKeyboardShortcutsModal
 }) {
   const { t } = useTranslation();
   return (
@@ -95,6 +98,13 @@ function ToolPanel({
             onClick={openHelpModal}
           >
             {t('buttons.ask-for-help')}
+          </MenuItem>
+          <MenuItem
+            bsStyle='primary'
+            className='btn-invert'
+            onClick={openKeyboardShortcutsModal}
+          >
+            {t('buttons.keyboard-shortcuts')}
           </MenuItem>
         </DropdownButton>
       </div>

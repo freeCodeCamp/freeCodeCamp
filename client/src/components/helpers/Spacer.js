@@ -9,10 +9,14 @@ const Spacer = ({ size = 1 }) =>
   size === 1 ? (
     <Comp />
   ) : (
-    '#'
-      .repeat(size)
-      .split('')
-      .map((_, i) => <Comp key={`spacer_${i}`} />)
+    <>
+      {'#'
+        .repeat(size)
+        .split('')
+        .map((_, i) => (
+          <Comp key={`spacer_${i}`} />
+        ))}
+    </>
   );
 
 Spacer.propTypes = {

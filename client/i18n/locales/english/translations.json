@@ -52,6 +52,7 @@
     "reset-code": "Reset All Code",
     "help": "Help",
     "get-help": "Get Help",
+    "keyboard-shortcuts": "Keyboard Shortcuts",
     "watch-video": "Watch a Video",
     "resubscribe": "You can click here to resubscribe",
     "click-here": "Click here to sign in",
@@ -285,7 +286,11 @@
       "preview": "Preview"
     },
     "help-translate": "We are still translating the following certifications.",
-    "help-translate-link": "Help us translate."
+    "help-translate-link": "Help us translate.",
+    "keyboard-shortcuts-modal-header": "List of keyboard shortcuts",
+    "keyboard-shortcuts-run-tests": "<0>To run tests, press</0> <1>{{key1}}</1> <2>+</2> <3>{{key2}}</3>",
+    "keyboard-shortcuts-save-editor-content": "<0>To save editor content to local storage, press </0> <1>{{key1}}</1> <2>+</2> <3>{{key2}}</3>",
+    "keyboard-shortcuts-toggle-accessibility-support": "<0>To toggle accessibility support in the editor, place the focus on the editor and press</0> <1>{{key1}}</1> <2>+</2> <3>{{key2}}</3>"
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -454,7 +459,9 @@
     "no-account": "No {{website}} account associated",
     "unlink-success": "You've successfully unlinked your {{website}}",
     "provide-username": "Check if you have provided a username and a report",
-    "report-sent": "A report was sent to the team with {{email}} in copy"
+    "report-sent": "A report was sent to the team with {{email}} in copy",
+    "editor-accessibility-support-enabled": "Accessbility support is enabled for the editor",
+    "editor-accessibility-support-disabled": "Accessbility support is disabled for the editor"
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

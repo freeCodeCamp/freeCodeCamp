@@ -17,6 +17,7 @@ import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import VideoModal from '../components/VideoModal';
 import ResetModal from '../components/ResetModal';
+import KeyboardShortsModal from '../components/keyboard-shortcuts-modal';
 import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
 import Hotkeys from '../components/Hotkeys';
@@ -338,6 +339,7 @@ class ShowClassic extends Component {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
+          <KeyboardShortsModal />
         </LearnLayout>
       </Hotkeys>
     );

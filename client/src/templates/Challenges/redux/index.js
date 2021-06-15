@@ -42,7 +42,8 @@ const initialState = {
     completion: false,
     help: false,
     video: false,
-    reset: false
+    reset: false,
+    keyboardShortcuts: false
   },
   projectFormValues: {},
   successMessage: 'Happy Coding!'
@@ -187,6 +188,8 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+export const isKeyboardShortcutsModalOpenSelector = state =>
+  state[ns].modal.keyboardShortcuts;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;

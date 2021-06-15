@@ -17,6 +17,7 @@ import {
   submitChallenge
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import { createFlashMessage } from '../../../components/Flash/redux';
 import { Loader } from '../../../components/helpers';
 
 import './editor.css';
@@ -29,6 +30,7 @@ const propTypes = {
   challengeFiles: PropTypes.object,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
+  createFlashMessage: PropTypes.func.isRequired,
   description: PropTypes.string,
   dimensions: PropTypes.object,
   executeChallenge: PropTypes.func.isRequired,
@@ -80,7 +82,8 @@ const mapDispatchToProps = {
   setAccessibilityMode,
   setEditorFocusability,
   updateFile,
-  submitChallenge
+  submitChallenge,
+  createFlashMessage
 };
 
 const modeMap = {
@@ -295,6 +298,12 @@ class Editor extends Component {
         // The store needs to be updated first, as onDidChangeConfiguration is
         // called before updateOptions returns
         this.props.setAccessibilityMode(!currentAccessibility);
+        this.props.createFlashMessage({
+          type: 'success',
+          message: currentAccessibility
+            ? 'flash.editor-accessibility-support-disabled'
+            : 'flash.editor-accessibility-support-enabled'
+        });
         editor.updateOptions({
           accessibilitySupport: currentAccessibility ? 'auto' : 'on'
         });
