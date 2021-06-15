@@ -361,7 +361,7 @@ const certMap = [
   },
   {
     id: '561acd10cb82ac38a17513bc',
-    title: 'Front End Libraries',
+    title: 'Front End Development Libraries',
     certSlug: 'front-end-libraries',
     flag: 'isFrontEndLibsCert',
     projects: [
