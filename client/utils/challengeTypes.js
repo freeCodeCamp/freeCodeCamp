@@ -11,6 +11,7 @@ const quiz = 8;
 const invalid = 9;
 const pythonProject = 10;
 const video = 11;
+const codeally = 12;
 
 // individual exports
 exports.backend = backend;
@@ -31,7 +32,8 @@ exports.challengeTypes = {
   step,
   quiz,
   invalid,
-  video
+  video,
+  codeally
 };
 
 // turn challengeType to file ext
@@ -52,7 +54,8 @@ exports.viewTypes = {
   [step]: 'step',
   [quiz]: 'quiz',
   [backend]: 'backend',
-  [video]: 'video'
+  [video]: 'video',
+  [codeally]: 'codeally'
 };
 
 // determine the type of submit function to use for the challenge on completion

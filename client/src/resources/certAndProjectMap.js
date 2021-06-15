@@ -5,6 +5,8 @@ const jsAlgoBase =
   'javascript-algorithms-and-data-structures-projects';
 const feLibsBase = '/learn/front-end-libraries/front-end-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
+const relationalDatabasesBase =
+  '/learn/relational-databases/learn-relational-databases';
 const apiMicroBase =
   '/learn/apis-and-microservices/apis-and-microservices-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
@@ -436,6 +438,44 @@ const certMap = [
     ]
   },
   {
+    id: '606243f50267e718b1e755f4',
+    title: 'Relational Databases',
+    slug: 'relational-databases',
+    flag: 'isRelationalDatabasesCert',
+    projects: [
+      {
+        id: '5f1a4ef5d5d6b5ab580fc6ae',
+        title: 'Celestial Bodies Database',
+        link: `${relationalDatabasesBase}/celestial-bodies-database`,
+        superBlock: 'relational-databases'
+      },
+      {
+        id: '5f87ac112ae598023a42df1a',
+        title: 'Salon Appointment Scheduler',
+        link: `${relationalDatabasesBase}/salon-appointment-scheduler`,
+        superBlock: 'relational-databases'
+      },
+      {
+        id: '5f9771307d4d22b9d2b75a94',
+        title: 'World Cup Database',
+        link: `${relationalDatabasesBase}/world-cup-database`,
+        superBlock: 'relational-databases'
+      },
+      {
+        id: '602d9ff222201c65d2a019f2',
+        title: 'Periodic Table Database',
+        link: `${relationalDatabasesBase}/periodic-table-database`,
+        superBlock: 'relational-databases'
+      },
+      {
+        id: '602da04c22201c65d2a019f4',
+        title: 'Final Boss',
+        link: `${relationalDatabasesBase}/final-boss`,
+        superBlock: 'relational-databases'
+      }
+    ]
+  },
+  {
     id: '561add10cb82ac38a17523bc',
     title: 'APIs and Microservices',
     certSlug: 'apis-and-microservices',
@@ -675,7 +715,9 @@ certMap.forEach(cert => {
   if (cert.title !== 'Legacy Full Stack') {
     if (cert.title.startsWith('Legacy')) {
       legacyProjectMap[cert.title] = cert.projects;
-    } else {
+      // temporary hiding of RDBMS cert
+      // should do suggestion on line 33 and use front matter to hide it
+    } else if (!cert.title.startsWith('Relational')) {
       projectMap[cert.title] = cert.projects;
     }
   }

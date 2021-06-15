@@ -2,7 +2,7 @@
 const path = require('path');
 const liveServer = require('live-server');
 const stringSimilarity = require('string-similarity');
-const { isAuditedCert } = require('../../utils/is-audited');
+const { isAuditedCert } = require('../../config/is-audited');
 
 const spinner = require('ora')();
 

@@ -26,14 +26,14 @@ const schema = Joi.object()
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool(),
-    challengeType: Joi.number().min(0).max(11).required(),
+    challengeType: Joi.number().min(0).max(12).required(),
     checksum: Joi.number(),
     // __commentCounts is only used to test the comment replacement
     __commentCounts: Joi.object(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
     description: Joi.when('challengeType', {
-      is: [challengeTypes.step, challengeTypes.video],
+      is: [challengeTypes.step, challengeTypes.video, challengeTypes.codeally],
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
@@ -44,7 +44,12 @@ const schema = Joi.object()
       indexjsx: fileJoi
     }),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
-    helpCategory: Joi.valid('JavaScript', 'HTML-CSS', 'Python'),
+    helpCategory: Joi.valid(
+      'JavaScript',
+      'HTML-CSS',
+      'Python',
+      'Relational Databases'
+    ),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
     id: Joi.objectId().required(),
@@ -99,7 +104,11 @@ const schema = Joi.object()
     template: Joi.string().allow(''),
     time: Joi.string().allow(''),
     title: Joi.string().required(),
-    translationPending: Joi.bool().required()
+    translationPending: Joi.bool().required(),
+    url: Joi.when('challengeType', {
+      is: challengeTypes.codeally,
+      then: Joi.string().required()
+    })
   })
   .xor('helpCategory', 'isPrivate');
 
