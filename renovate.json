@@ -19,6 +19,13 @@
     {
       "matchPackageNames": ["normalize-url"],
       "allowedVersions": "<5.0.0"
+    },
+    {
+      "groupName": "CodeSee",
+      "matchPackagePrefixes": [
+        "@codesee/"
+      ],
+      "automerge": true
     }
   ],
   "ignorePaths": [
