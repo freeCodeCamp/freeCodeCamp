@@ -26,13 +26,13 @@ Adicione as regras de estilo à classe `responsive-img` para torná-la responsiv
 
 # --hints--
 
-A classe `responsive-img` deve ter a propriedade `max-width` com o valor de `100%`.
+O elemento de classe `responsive-img` deve ter a propriedade `max-width` com o valor de `100%`.
 
 ```js
 assert(getComputedStyle($('.responsive-img')[0]).maxWidth === '100%');
 ```
 
-A classe `responsive-img` deve ter a propriedade `height` com o valor de `auto`.
+O elemento de classe `responsive-img` deve ter a propriedade `height` com o valor de `auto`.
 
 ```js
 assert(code.match(/height:\s*?auto;/g));

@@ -38,7 +38,7 @@ Você pode usar HTML, JavaScript e CSS para completar este projeto. É recomenda
 
 Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e, logo após, clicar em `Save` para criar seu próprio projeto. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Quando tiver terminado, envie a URL do seu projeto depois de ele haver passado em todos os testes.
+Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 
 # --solutions--
 
