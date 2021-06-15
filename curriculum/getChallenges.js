@@ -11,7 +11,7 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedCert } = require('../config/is-audited');
+const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { helpCategoryMap } = require('../client/utils/challengeTypes');

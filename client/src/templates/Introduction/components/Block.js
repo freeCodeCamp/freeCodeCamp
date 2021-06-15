@@ -12,7 +12,7 @@ import Challenges from './Challenges';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { isAuditedCert } from '../../../../../config/is-audited';
+import { isAuditedCert } from '../../../../../utils/is-audited';
 import envData from '../../../../../config/env.json';
 import { Link } from '../../../components/helpers/';
 
