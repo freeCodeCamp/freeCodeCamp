@@ -26,7 +26,7 @@ import { createFlashMessage } from '../../components/Flash/redux';
 
 function* submitNewAboutSaga({ payload }) {
   try {
-    const { data: response } = yield call(putUpdateMyAbout, payload);
+    const response = yield call(putUpdateMyAbout, payload);
     yield put(submitNewAboutComplete({ ...response, payload }));
     yield put(createFlashMessage(response));
   } catch (e) {
@@ -36,7 +36,7 @@ function* submitNewAboutSaga({ payload }) {
 
 function* submitNewUsernameSaga({ payload: username }) {
   try {
-    const { data: response } = yield call(putUpdateMyUsername, username);
+    const response = yield call(putUpdateMyUsername, username);
     yield put(submitNewUsernameComplete({ ...response, username }));
     yield put(createFlashMessage(response));
   } catch (e) {
@@ -46,7 +46,7 @@ function* submitNewUsernameSaga({ payload: username }) {
 
 function* submitProfileUISaga({ payload }) {
   try {
-    const { data: response } = yield call(putUpdateMyProfileUI, payload);
+    const response = yield call(putUpdateMyProfileUI, payload);
     yield put(submitProfileUIComplete({ ...response, payload }));
     yield put(createFlashMessage(response));
   } catch (e) {
@@ -56,7 +56,7 @@ function* submitProfileUISaga({ payload }) {
 
 function* updateUserFlagSaga({ payload: update }) {
   try {
-    const { data: response } = yield call(putUpdateUserFlag, update);
+    const response = yield call(putUpdateUserFlag, update);
     yield put(updateUserFlagComplete({ ...response, payload: update }));
     yield put(createFlashMessage(response));
   } catch (e) {
@@ -67,9 +67,7 @@ function* updateUserFlagSaga({ payload: update }) {
 function* validateUsernameSaga({ payload }) {
   try {
     yield delay(500);
-    const {
-      data: { exists }
-    } = yield call(getUsernameExists, payload);
+    const { exists } = yield call(getUsernameExists, payload);
     yield put(validateUsernameComplete(exists));
   } catch (e) {
     yield put(validateUsernameError(e));
@@ -78,9 +76,10 @@ function* validateUsernameSaga({ payload }) {
 
 function* verifyCertificationSaga({ payload }) {
   try {
-    const {
-      data: { response, isCertMap, completedChallenges }
-    } = yield call(putVerifyCert, payload);
+    const { response, isCertMap, completedChallenges } = yield call(
+      putVerifyCert,
+      payload
+    );
     yield put(
       verifyCertComplete({
         ...response,
