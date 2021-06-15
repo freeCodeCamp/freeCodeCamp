@@ -7,7 +7,7 @@ import { generateIconComponent } from '../../assets/icons';
 import { Link, Spacer } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import './map.css';
-import { isAuditedCert } from '../../../../config/is-audited';
+import { isAuditedCert } from '../../../../utils/is-audited';
 import envData from '../../../../config/env.json';
 
 const { curriculumLocale } = envData;

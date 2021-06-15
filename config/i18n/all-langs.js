@@ -1,4 +1,11 @@
-/* An error will be thrown if the CLIENT_LOCALE and CURRICULUM_LOCALE variables
+// ---------------------------------------------------------------------------
+
+/*
+ * List of languages with localizations enabled for builds.
+ *
+ * Client is the UI, and Curriculum is the Challenge Content.
+ *
+ * An error will be thrown if the CLIENT_LOCALE and CURRICULUM_LOCALE variables
  * from the .env file aren't found in their respective arrays below
  */
 const availableLangs = {
@@ -12,6 +19,44 @@ const availableLangs = {
     'portuguese'
   ]
 };
+
+/*
+ * List of certifications with localization enabled in their world language.
+ *
+ * These certifications have been approved 100% on Crowdin at least during
+ * their launch, and hence meet the QA standard to be published live. Other
+ * certifications which have not been audited & approved will fallback to
+ * English equivalent.
+ */
+const auditedCerts = {
+  espanol: [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures'
+  ],
+  chinese: [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures',
+    'front-end-libraries',
+    'data-visualization',
+    'apis-and-microservices',
+    'quality-assurance'
+  ],
+  'chinese-traditional': [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures',
+    'front-end-libraries',
+    'data-visualization',
+    'apis-and-microservices',
+    'quality-assurance'
+  ],
+  italian: [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures'
+  ],
+  portuguese: ['responsive-web-design']
+};
+
+// ---------------------------------------------------------------------------
 
 // Each client language needs an entry in the rest of the variables below
 
@@ -55,3 +100,4 @@ exports.availableLangs = availableLangs;
 exports.i18nextCodes = i18nextCodes;
 exports.langDisplayNames = langDisplayNames;
 exports.langCodes = langCodes;
+exports.auditedCerts = auditedCerts;
