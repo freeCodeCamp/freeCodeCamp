@@ -2,21 +2,13 @@
  * from the .env file aren't found in their respective arrays below
  */
 const availableLangs = {
-  client: [
-    'english',
-    'espanol',
-    'chinese',
-    'chinese-traditional',
-    'italian',
-    'portuguese'
-  ],
+  client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'italian'],
   curriculum: [
     'english',
     'espanol',
     'chinese',
     'chinese-traditional',
-    'italian',
-    'portuguese'
+    'italian'
   ]
 };
 

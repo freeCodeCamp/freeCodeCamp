@@ -33,8 +33,7 @@ const auditedCerts = {
   italian: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures'
-  ],
-  portuguese: ['responsive-web-design']
+  ]
 };
 
 function isAuditedCert(lang, cert) {
