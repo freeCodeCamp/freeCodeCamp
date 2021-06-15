@@ -8,7 +8,8 @@ const availableLangs = {
     'espanol',
     'chinese',
     'chinese-traditional',
-    'italian'
+    'italian',
+    'portuguese'
   ]
 };
 
