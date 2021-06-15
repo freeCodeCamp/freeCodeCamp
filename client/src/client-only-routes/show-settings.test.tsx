@@ -37,7 +37,6 @@ describe('<ShowSettings />', () => {
 const navigate = jest.fn();
 const loggedInProps = {
   createFlashMessage: jest.fn(),
-  hardGoTo: jest.fn(),
   isSignedIn: true,
   navigate: navigate,
   showLoading: false,
