@@ -1,6 +1,9 @@
 export interface ExtendedStyleRule extends CSSStyleRule {
   isDeclaredAfter: (selector: string) => boolean;
 }
+interface ExtendedStyleDeclaration extends CSSStyleDeclaration {
+  getPropVal: (prop: string, strip?: boolean) => string;
+}
 
 const getIsDeclaredAfter = (styleRule: CSSStyleRule) => (selector: string) => {
   const cssStyleRules = Array.from(
@@ -36,9 +39,17 @@ class CSSHelp {
       ?.filter(ele => ele?.selectorText === selector)
       .map(x => x.style);
   }
-  getStyleDeclaration(selector: string): CSSStyleDeclaration | undefined {
-    return this._getStyleRules()?.find(ele => ele?.selectorText === selector)
-      ?.style;
+  getStyle(selector: string): ExtendedStyleDeclaration | null {
+    const style = this._getStyleRules().find(
+      ele => ele?.selectorText === selector
+    )?.style as ExtendedStyleDeclaration | undefined;
+    if (!style) return null;
+    style.getPropVal = (prop: string, strip = false) => {
+      return strip
+        ? style.getPropertyValue(prop).replace(/\s+/g, '')
+        : style.getPropertyValue(prop);
+    };
+    return style;
   }
   getStyleRule(selector: string): ExtendedStyleRule | null {
     const styleRule = this._getStyleRules()?.find(

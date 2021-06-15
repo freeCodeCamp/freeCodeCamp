@@ -8,6 +8,7 @@
   - [Trabajar en los desafíos de video](how-to-help-with-video-challenges.md)
   - [ Trabajar en el tema de noticias](how-to-work-on-the-news-theme.md)
   - [Trabajar en el tema de docs](how-to-work-on-the-docs-theme.md)
+  - [Work on practice projects](how-to-work-on-practice-projects.md)
 - **Contribución a Traducción**
   - [Work on translating resources](how-to-translate-files.md)
   - [Work on proofreading translations](how-to-proofread-files.md)

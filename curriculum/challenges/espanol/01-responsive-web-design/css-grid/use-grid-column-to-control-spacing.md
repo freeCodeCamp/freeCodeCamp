@@ -13,7 +13,7 @@ Hasta este punto, todas las propiedades que hemos discutido son para los contene
 
 Las líneas horizontales y verticales hipotéticas que crean la cuadrícula son referidas como <dfn>líneas</dfn>. Estas líneas son enumeradas empezando con el 1 desde la esquina superior izquierda de la cuadrícula y se desplaza hacia la derecha para las columnas y hacia abajo para las filas, contando hacia arriba.
 
-Así es como se ven las líneas para una grid de 3x3:
+Así es como se ven las líneas para una cuadrícula de 3x3:
 
 <div style='position:relative;margin:auto;background:Gainsboro;display:block;margin-top:100px;margin-bottom:50px;width:200px;height:200px;'><p style='left:25%;top:-30%;font-size:130%;position:absolute;color:RoyalBlue;'>columnas</p><p style='left:0%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;'>1</p><p style='left:30%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;'>2</p><p style='left:63%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;'>3</p><p style='left:95%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;'>4</p><p style='left:-40%;top:45%;font-size:130%;transform:rotateZ(-90deg);position:absolute;'>filas</p><p style='left:-10%;top:-10%;font-size:130%;position:absolute;'>1</p><p style='left:-10%;top:21%;font-size:130%;position:absolute;'>2</p><p style='left:-10%;top:53%;font-size:130%;position:absolute;'>3</p><p style='left:-10%;top:85%;font-size:130%;position:absolute;'>4</p><div style='left:0%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;'></div><div style='left:31%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;'></div><div style='left:63%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;'></div><div style='left:95%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;'></div><div style='left:0%;top:0%;width:100%;height:5%;background:black;position:absolute;'></div><div style='left:0%;top:31%;width:100%;height:5%;background:black;position:absolute;'></div><div style='left:0%;top:63%;width:100%;height:5%;background:black;position:absolute;'></div><div style='left:0%;top:95%;width:100%;height:5%;background:black;position:absolute;'></div></div>
 
@@ -25,7 +25,7 @@ Aquí un ejemplo:
 grid-column: 1 / 3;
 ```
 
-Esto hará que el elemento empiece en la primera línea vertical de la grid a la izquierda y se extienda a la 3ra línea de la grid, ocupando dos columnas.
+Esto hará que el elemento empiece en la primera línea vertical de la cuadrícula a la izquierda y se extienda a la 3ra línea de la cuadrícula, ocupando dos columnas.
 
 # --instructions--
 

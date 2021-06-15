@@ -28,7 +28,6 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
-  api.post('/update-my-projects', ifNoUser401, updateMyProjects);
   api.post(
     '/update-my-theme',
     ifNoUser401,
@@ -157,16 +156,6 @@ function updateMyProfileUI(req, res, next) {
     profileUI,
     createStandardHandler(req, res, next)
   );
-}
-
-function updateMyProjects(req, res, next) {
-  const {
-    user,
-    body: { projects: project }
-  } = req;
-  return user
-    .updateMyProjects(project)
-    .subscribe(message => res.json({ message }), next);
 }
 
 function updateMyAbout(req, res, next) {
