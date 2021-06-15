@@ -46,12 +46,12 @@ const propTypes = {
       completedDate: PropTypes.number,
       challengeType: PropTypes.number,
       solution: PropTypes.string,
-      challengeFiles: PropTypes.object
-      //   PropTypes.shape({
-      //     ext: PropTypes.string,
-      //     contents: PropTypes.string
-      //   })
-      // )
+      files: PropTypes.arrayOf(
+        PropTypes.shape({
+          ext: PropTypes.string,
+          contents: PropTypes.string
+        })
+      )
     })
   ),
   t: PropTypes.func.isRequired,
@@ -70,12 +70,12 @@ const innerPropTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       completedDate: PropTypes.number,
-      challengeFiles: PropTypes.object
-      //   PropTypes.shape({
-      //     ext: PropTypes.string,
-      //     contents: PropTypes.string
-      //   })
-      // )
+      files: PropTypes.arrayOf(
+        PropTypes.shape({
+          ext: PropTypes.string,
+          contents: PropTypes.string
+        })
+      )
     })
   ).isRequired,
   totalPages: PropTypes.number.isRequired
@@ -90,7 +90,7 @@ class TimelineInner extends Component {
       solutionOpen: false,
       pageNo: 1,
       solution: null,
-      challengeFiles: null
+      files: null
     };
 
     this.closeSolution = this.closeSolution.bind(this);
@@ -103,16 +103,16 @@ class TimelineInner extends Component {
     this.renderViewButton = this.renderViewButton.bind(this);
   }
 
-  renderViewButton(id, challengeFiles, githubLink, solution) {
+  renderViewButton(id, files, githubLink, solution) {
     const { t } = this.props;
-    if (challengeFiles && Object.entries(challengeFiles).length) {
+    if (files && files.length) {
       return (
         <Button
           block={true}
           bsStyle='primary'
           className='btn-invert'
           id={`btn-for-${id}`}
-          onClick={() => this.viewSolution(id, solution, challengeFiles)}
+          onClick={() => this.viewSolution(id, solution, files)}
         >
           {t('buttons.show-code')}
         </Button>
@@ -167,7 +167,7 @@ class TimelineInner extends Component {
 
   renderCompletion(completed) {
     const { idToNameMap, username } = this.props;
-    const { id, challengeFiles, githubLink, solution } = completed;
+    const { id, files, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
@@ -186,9 +186,7 @@ class TimelineInner extends Component {
             <Link to={challengePath}>{challengeTitle}</Link>
           )}
         </td>
-        <td>
-          {this.renderViewButton(id, challengeFiles, githubLink, solution)}
-        </td>
+        <td>{this.renderViewButton(id, files, githubLink, solution)}</td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
             {completedDate.toLocaleString([localeCode, 'en-US'], {
@@ -201,13 +199,13 @@ class TimelineInner extends Component {
       </tr>
     );
   }
-  viewSolution(id, solution, challengeFiles) {
+  viewSolution(id, solution, files) {
     this.setState(state => ({
       ...state,
       solutionToView: id,
       solutionOpen: true,
       solution,
-      challengeFiles
+      files
     }));
   }
 
@@ -217,7 +215,7 @@ class TimelineInner extends Component {
       solutionToView: null,
       solutionOpen: false,
       solution: null,
-      challengeFiles: null
+      files: null
     }));
   }
 
@@ -294,7 +292,7 @@ class TimelineInner extends Component {
             </Modal.Header>
             <Modal.Body>
               <SolutionViewer
-                challengeFiles={this.state.challengeFiles}
+                files={this.state.files}
                 solution={this.state.solution}
               />
             </Modal.Body>

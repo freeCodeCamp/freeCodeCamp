@@ -37,7 +37,7 @@ const schema = Joi.object()
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
-    challengeFiles: Joi.object().keys({
+    files: Joi.object().keys({
       indexcss: fileJoi,
       indexhtml: fileJoi,
       indexjs: fileJoi,

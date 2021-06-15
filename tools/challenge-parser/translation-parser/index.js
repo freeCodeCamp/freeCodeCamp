@@ -17,19 +17,19 @@ exports.translateComments = (text, lang, dict, codeLang) => {
 
 exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   const challClone = cloneDeep(challenge);
-  if (!challClone.challengeFiles) {
+  if (!challClone.files) {
     console.warn(`Challenge ${challClone.title} has no seed to translate`);
   } else {
-    Object.keys(challClone.challengeFiles).forEach(key => {
-      if (challClone.challengeFiles[key].contents) {
+    Object.keys(challClone.files).forEach(key => {
+      if (challClone.files[key].contents) {
         let { text, commentCounts } = this.translateComments(
-          challenge.challengeFiles[key].contents,
+          challenge.files[key].contents,
           lang,
           dict,
-          challClone.challengeFiles[key].ext
+          challClone.files[key].ext
         );
         challClone.__commentCounts = commentCounts;
-        challClone.challengeFiles[key].contents = text;
+        challClone.files[key].contents = text;
       }
     });
   }

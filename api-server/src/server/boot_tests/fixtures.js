@@ -25,15 +25,15 @@ export const mockFirstChallenge = {
 export const mockCompletedChallenge = {
   id: '890xyz',
   challengeType: 0,
-  challengeFiles: {
-    indexhtml: {
+  files: [
+    {
       contents: 'file contents',
       key: 'indexfile',
       name: 'index',
       path: 'index.file',
       ext: 'file'
     }
-  },
+  ],
   completedDate: Date.now()
 };
 
@@ -45,13 +45,13 @@ export const mockCompletedChallenges = [
   {
     id: '587d7dbd367417b2b2512bb4',
     completedDate: 1547472893032.0,
-    challengeFiles: {}
+    files: []
   },
   {
     id: 'aaa48de84e1ecc7c742e1124',
     completedDate: 1541678430790.0,
-    challengeFiles: {
-      indexjs: {
+    files: [
+      {
         contents:
           // eslint-disable-next-line max-len
           "function palindrome(str) {\n  const clean = str.replace(/[\\W_]/g, '').toLowerCase()\n  const revStr = clean.split('').reverse().join('');\n  return clean === revStr;\n}\n\n\n\npalindrome(\"eye\");\n",
@@ -60,12 +60,12 @@ export const mockCompletedChallenges = [
         name: 'index',
         key: 'indexjs'
       }
-    }
+    ]
   },
   {
     id: '5a24c314108439a4d4036164',
     completedDate: 1543845124143.0,
-    challengeFiles: {}
+    files: []
   }
 ];
 export const mockUserID = '5c7d892aff9777c8b1c1a95e';
@@ -174,36 +174,36 @@ export const fullStackChallenges = [
     completedDate: 1585210952511,
     id: '5a553ca864b52e1d8bceea14',
     challengeType: 7,
-    challengeFiles: {}
+    files: []
   },
   {
     completedDate: 1585210952511,
     id: '561add10cb82ac38a17513bc',
     challengeType: 7,
-    challengeFiles: {}
+    files: []
   },
   {
     completedDate: 1588665778679,
     id: '561acd10cb82ac38a17513bc',
     challengeType: 7,
-    challengeFiles: {}
+    files: []
   },
   {
     completedDate: 1685210952511,
     id: '561abd10cb81ac38a17513bc',
     challengeType: 7,
-    challengeFiles: {}
+    files: []
   },
   {
     completedDate: 1585210952511,
     id: '561add10cb82ac38a17523bc',
     challengeType: 7,
-    challengeFiles: {}
+    files: []
   },
   {
     completedDate: 1588665778679,
     id: '561add10cb82ac38a17213bc',
     challengeType: 7,
-    challengeFiles: {}
+    files: []
   }
 ];

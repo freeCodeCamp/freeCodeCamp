@@ -205,7 +205,7 @@
           "solution": "string",
           "githubLink": "string",
           "challengeType": "number",
-          "challengeFiles": {
+          "files": {
             "type": [
               {
                 "contents": {
@@ -276,7 +276,9 @@
       "default": {}
     },
     "donationEmails": {
-      "type": ["string"]
+      "type": [
+        "string"
+      ]
     },
     "isDonating": {
       "type": "boolean",

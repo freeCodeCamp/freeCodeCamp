@@ -41,7 +41,7 @@ import './classic.css';
 import '../components/test-frame.css';
 
 const mapStateToProps = createStructuredSelector({
-  challengeFiles: challengeFilesSelector,
+  files: challengeFilesSelector,
   tests: challengeTestsSelector,
   output: consoleOutputSelector
 });
@@ -62,15 +62,15 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   cancelTests: PropTypes.func.isRequired,
-  challengeFiles: PropTypes.shape({
-    key: PropTypes.string
-  }),
   challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
   executeChallenge: PropTypes.func.isRequired,
+  files: PropTypes.shape({
+    key: PropTypes.string
+  }),
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
   output: PropTypes.arrayOf(PropTypes.string),
@@ -157,7 +157,7 @@ class ShowClassic extends Component {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          challengeFiles,
+          files,
           fields: { tests },
           challengeType,
           removeComments,
@@ -167,7 +167,7 @@ class ShowClassic extends Component {
       pageContext: { challengeMeta }
     } = this.props;
     initConsole('');
-    createFiles(challengeFiles);
+    createFiles(files);
     initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
@@ -227,12 +227,12 @@ class ShowClassic extends Component {
   }
 
   renderEditor() {
-    const { challengeFiles } = this.props;
+    const { files } = this.props;
     const { description } = this.getChallenge();
     return (
-      challengeFiles && (
+      files && (
         <MultifileEditor
-          challengeFiles={challengeFiles}
+          challengeFiles={files}
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
@@ -264,8 +264,8 @@ class ShowClassic extends Component {
   }
 
   hasEditableBoundries() {
-    const { challengeFiles } = this.props;
-    return Object.values(challengeFiles).some(
+    const { files } = this.props;
+    return Object.values(files).some(
       file =>
         file.editableRegionBoundaries &&
         file.editableRegionBoundaries.length === 2
@@ -285,7 +285,7 @@ class ShowClassic extends Component {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      challengeFiles,
+      files,
       t
     } = this.props;
 
@@ -318,7 +318,7 @@ class ShowClassic extends Component {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
-              challengeFiles={challengeFiles}
+              challengeFiles={files}
               editor={this.renderEditor()}
               hasEditableBoundries={this.hasEditableBoundries()}
               hasPreview={this.hasPreview()}
@@ -381,7 +381,7 @@ export const query = graphql`
         link
         src
       }
-      challengeFiles {
+      files {
         indexcss {
           key
           ext

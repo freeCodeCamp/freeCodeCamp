@@ -40,7 +40,7 @@ const propTypes = {
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
       completedDate: PropTypes.number,
-      challengeFiles: PropTypes.object
+      files: PropTypes.array
     })
   ),
   createFlashMessage: PropTypes.func.isRequired,
@@ -145,7 +145,7 @@ const honestyInfoMessage = {
 const initialState = {
   solutionViewer: {
     projectTitle: '',
-    challengeFiles: null,
+    files: null,
     solution: null,
     isOpen: false
   }
@@ -177,17 +177,17 @@ export class CertificationSettings extends Component {
     if (!completedProject) {
       return null;
     }
-    const { solution, githubLink, challengeFiles } = completedProject;
+    const { solution, githubLink, files } = completedProject;
     const onClickHandler = () =>
       this.setState({
         solutionViewer: {
           projectTitle,
-          challengeFiles,
+          files,
           solution,
           isOpen: true
         }
       });
-    if (challengeFiles && Object.entries(challengeFiles).length) {
+    if (files && files.length) {
       return (
         <Button
           block={true}
@@ -580,7 +580,7 @@ export class CertificationSettings extends Component {
 
   render() {
     const {
-      solutionViewer: { challengeFiles, solution, isOpen, projectTitle }
+      solutionViewer: { files, solution, isOpen, projectTitle }
     } = this.state;
 
     const { t } = this.props;
@@ -593,7 +593,7 @@ export class CertificationSettings extends Component {
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
           <ProjectModal
-            challengeFiles={challengeFiles}
+            files={files}
             handleSolutionModalHide={this.handleSolutionModalHide}
             isOpen={isOpen}
             projectTitle={projectTitle}

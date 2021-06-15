@@ -111,17 +111,16 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
     .filter(key => challengeFiles[key])
     .map(key => challengeFiles[key])
     .reduce(
-      (challengeFiles, challengeFile) => ({
+      (challengeFiles, file) => ({
         ...challengeFiles,
-        [challengeFile.key]: {
-          ...createPoly(challengeFile),
-          seed: challengeFile.contents.slice(),
+        [file.key]: {
+          ...createPoly(file),
+          seed: file.contents.slice(),
           editableContents: getLines(
-            challengeFile.contents,
-            challengeFile.editableRegionBoundaries
+            file.contents,
+            file.editableRegionBoundaries
           ),
-          seedEditableRegionBoundaries:
-            challengeFile.editableRegionBoundaries.slice()
+          seedEditableRegionBoundaries: file.editableRegionBoundaries.slice()
         }
       }),
       {}
@@ -204,7 +203,7 @@ export const challengeDataSelector = state => {
   ) {
     challengeData = {
       ...challengeData,
-      challengeFiles: challengeFilesSelector(state)
+      files: challengeFilesSelector(state)
     };
   } else if (challengeType === challengeTypes.backend) {
     const { solution: url = {} } = projectFormValuesSelector(state);
@@ -235,7 +234,7 @@ export const challengeDataSelector = state => {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {
       ...challengeData,
-      challengeFiles: challengeFilesSelector(state),
+      files: challengeFilesSelector(state),
       required,
       template
     };
@@ -318,17 +317,16 @@ export const reducer = handleActions(
         ...Object.keys(state.challengeFiles)
           .map(key => state.challengeFiles[key])
           .reduce(
-            (challengeFiles, challengeFile) => ({
-              ...challengeFiles,
-              [challengeFile.key]: {
-                ...challengeFile,
-                contents: challengeFile.seed.slice(),
+            (files, file) => ({
+              ...files,
+              [file.key]: {
+                ...file,
+                contents: file.seed.slice(),
                 editableContents: getLines(
-                  challengeFile.seed,
-                  challengeFile.seedEditableRegionBoundaries
+                  file.seed,
+                  file.seedEditableRegionBoundaries
                 ),
-                editableRegionBoundaries:
-                  challengeFile.seedEditableRegionBoundaries
+                editableRegionBoundaries: file.seedEditableRegionBoundaries
               }
             }),
             {}

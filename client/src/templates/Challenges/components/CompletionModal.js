@@ -37,14 +37,14 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   successMessageSelector,
   (
-    challengeFiles,
+    files,
     { title, id },
     completedChallengesIds,
     isOpen,
     isSignedIn,
     message
   ) => ({
-    challengeFiles,
+    files,
     title,
     id,
     completedChallengesIds,
@@ -72,11 +72,11 @@ const propTypes = {
   allowBlockDonationRequests: PropTypes.func,
   block: PropTypes.string,
   blockName: PropTypes.string,
-  challengeFiles: PropTypes.object.isRequired,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
   currentBlockIds: PropTypes.array,
   executeGA: PropTypes.func,
+  files: PropTypes.object.isRequired,
   id: PropTypes.string,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
@@ -120,7 +120,7 @@ export class CompletionModalInner extends Component {
   };
 
   static getDerivedStateFromProps(props, state) {
-    const { challengeFiles, isOpen } = props;
+    const { files, isOpen } = props;
     if (!isOpen) {
       return null;
     }
@@ -129,16 +129,14 @@ export class CompletionModalInner extends Component {
       URL.revokeObjectURL(downloadURL);
     }
     let newURL = null;
-    if (Object.keys(challengeFiles).length) {
-      const filesForDownload = Object.keys(challengeFiles)
-        .map(key => challengeFiles[key])
+    if (Object.keys(files).length) {
+      const filesForDownload = Object.keys(files)
+        .map(key => files[key])
         .reduce((allFiles, { path, contents }) => {
           const beforeText = `** start of ${path} **\n\n`;
           const afterText = `\n\n** end of ${path} **\n\n`;
           allFiles +=
-            challengeFiles.length > 1
-              ? beforeText + contents + afterText
-              : contents;
+            files.length > 1 ? beforeText + contents + afterText : contents;
           return allFiles;
         }, '');
       const blob = new Blob([filesForDownload], {

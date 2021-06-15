@@ -50,7 +50,7 @@ const applyFunction = fn =>
 const composeFunctions = (...fns) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-function buildSourceMap(challengeFiles) {
+function buildSourceMap(files) {
   // TODO: concatenating the source/contents is a quick hack for multi-file
   // editing. It is used because all the files (js, html and css) end up with
   // the same name 'index'. This made the last file the only file to  appear in
@@ -58,11 +58,10 @@ function buildSourceMap(challengeFiles) {
   // A better solution is to store and handle them separately. Perhaps never
   // setting the name to 'index'. Use 'contents' instead?
   // TODO: is file.source ever defined?
-  return challengeFiles.reduce(
-    (sources, challengeFile) => {
-      sources[challengeFile.name] +=
-        challengeFile.source || challengeFile.contents;
-      sources.editableContents += challengeFile.editableContents || '';
+  return files.reduce(
+    (sources, file) => {
+      sources[file.name] += file.source || file.contents;
+      sources.editableContents += file.editableContents || '';
       return sources;
     },
     { index: '', editableContents: '' }
@@ -160,11 +159,11 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
     }));
 }
 
-export function buildJSChallenge({ challengeFiles }, options) {
+export function buildJSChallenge({ files }, options) {
   const pipeLine = composeFunctions(...getTransformers(options));
 
-  const finalFiles = Object.keys(challengeFiles)
-    .map(key => challengeFiles[key])
+  const finalFiles = Object.keys(files)
+    .map(key => files[key])
     .map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)

@@ -24,7 +24,7 @@ export const ChallengeNode = PropTypes.shape({
   challengeType: PropTypes.number,
   dashedName: PropTypes.string,
   description: PropTypes.string,
-  challengeFiles: PropTypes.shape({
+  files: PropTypes.shape({
     indexhtml: FileType,
     indexjs: FileType
   }),
@@ -83,7 +83,7 @@ export const User = PropTypes.shape({
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
       completedDate: PropTypes.number,
-      challengeFiles: PropTypes.object
+      files: PropTypes.array
     })
   ),
   email: PropTypes.string,

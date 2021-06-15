@@ -47,9 +47,9 @@ describe('add-seed plugin', () => {
     expect.assertions(17);
     plugin(simpleAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const testObject = challengeFiles.indexjs;
+    const testObject = files.indexjs;
     expect(Object.keys(testObject).length).toEqual(8);
     expect(testObject).toHaveProperty('key');
     expect(typeof testObject['key']).toBe('string');
@@ -73,9 +73,9 @@ describe('add-seed plugin', () => {
     expect.assertions(6);
     plugin(simpleAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = files;
 
     expect(indexjs.contents).toBe(`var x = 'y';`);
     expect(indexjs.key).toBe(`indexjs`);
@@ -94,9 +94,9 @@ describe('add-seed plugin', () => {
     expect.assertions(2);
     plugin(withEditableAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexcss } = challengeFiles;
+    const { indexcss } = files;
 
     expect(indexcss.contents).not.toMatch('--fcc-editable-region--');
     expect(indexcss.editableRegionBoundaries).toEqual([1, 4]);
@@ -108,9 +108,9 @@ describe('add-seed plugin', () => {
     expect.assertions(3);
     plugin(withSeedKeysAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexhtml, indexcss, indexjs } = challengeFiles;
+    const { indexhtml, indexcss, indexjs } = files;
 
     expect(indexhtml.id).toBe('');
     expect(indexcss.id).toBe('key-for-css');
@@ -139,9 +139,9 @@ describe('add-seed plugin', () => {
     expect.assertions(3);
     plugin(withBeforeAfterAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = files;
 
     expect(indexjs.head).toBe('');
     expect(indexhtml.head).toBe(`<!-- comment -->`);
@@ -154,9 +154,9 @@ describe('add-seed plugin', () => {
     expect.assertions(3);
     plugin(withBeforeAfterAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = files;
 
     expect(indexjs.tail).toBe(`function teardown(params) {
   // after
@@ -189,9 +189,9 @@ describe('add-seed plugin', () => {
     expect.assertions(6);
     plugin(emptyBeforeAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = files;
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('function teardown(params) {\n  // after\n}');
@@ -205,9 +205,9 @@ describe('add-seed plugin', () => {
     expect.assertions(6);
     plugin(emptyAfterAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = files;
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('');
@@ -235,9 +235,9 @@ describe('add-seed plugin', () => {
     expect.assertions(4);
     plugin(jsxSeedAST, file);
     const {
-      data: { challengeFiles }
+      data: { files }
     } = file;
-    const { indexjsx } = challengeFiles;
+    const { indexjsx } = files;
 
     expect(indexjsx.head).toBe(`function setup() {}`);
     expect(indexjsx.tail).toBe(`function teardown(params) {
