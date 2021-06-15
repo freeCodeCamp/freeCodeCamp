@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-O elemento `a` deve ter um atributo `href` com o valor de uma string vazia `""`.
+O elemento `a` deve ter o atributo `href` com o valor de uma string vazia `""`.
 
 ```js
 assert($('a').attr('href') === '');
