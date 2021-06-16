@@ -235,6 +235,8 @@ export type DimensionsType = {
 export type TestType = {
   text: string;
   testString: string;
+  pass?: boolean;
+  err?: string;
 };
 
 export type UserType = {

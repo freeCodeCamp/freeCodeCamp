@@ -263,7 +263,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
     if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
 
-    return { model: data.model };
+    return { model };
   };
 
   // Updates the model if the contents has changed. This is only necessary for
@@ -299,6 +299,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
       null,
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       () => {}
     );
     editor.addAction({
@@ -569,7 +570,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     // those imply that the positions have changed (i.e. if the content height
     // has changed or if content is dragged between regions)
 
-    const editableRegion = getCurrentEditableRegion(key);
+    const editableRegion = getCurrentEditableRegion();
     const editableRegionBoundaries = editableRegion && [
       editableRegion.startLineNumber - 1,
       editableRegion.endLineNumber + 1
@@ -653,7 +654,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   // currently is. (see getLineAfterViewZone)
   // TODO: DRY this and getOutputZoneTop out.
   function getViewZoneTop() {
-    const heightDelta = data.viewZoneHeight || 0;
+    const heightDelta = data.viewZoneHeight ?? 0;
     if (_editor) {
       const top = `${
         _editor.getTopForLineNumber(getLineAfterViewZone()) -
@@ -722,8 +723,8 @@ const Editor = (props: PropTypes): JSX.Element => {
     )?.collapseToStart();
 
     return {
-      startLineNumber: startRange?.startLineNumber ?? 0,
-      endLineNumber: endRange?.endLineNumber ?? 1
+      startLineNumber: startRange?.startLineNumber ?? 1,
+      endLineNumber: endRange?.endLineNumber ?? 2
     };
   };
 
@@ -1037,7 +1038,6 @@ const Editor = (props: PropTypes): JSX.Element => {
       const { output, tests } = props;
       const editableRegion = getEditableRegion();
       if (editableRegion.length === 2) {
-        // /@ojeytonwilliams 'tests' shuold not have pass and err props?
         const challengeComplete = tests.every(test => test.pass && !test.err);
         const chellengeHasErrors = tests.some(test => test.err);
         const testOutput = document.getElementById('test-output');
