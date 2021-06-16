@@ -22,6 +22,7 @@ import DesktopLayout from './DesktopLayout';
 import Hotkeys from '../components/Hotkeys';
 
 import { getGuideUrl } from '../utils';
+import { isBrowser } from '../../../../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { isContained } from '../../../utils/is-contained';
 import { ChallengeNode } from '../../../redux/prop-types';
@@ -132,7 +133,7 @@ class ShowClassic extends Component {
   }
 
   getLayoutState() {
-    const item = window.localStorage.getItem(REFLEX_LAYOUT);
+    const item = isBrowser() && window.localStorage.getItem(REFLEX_LAYOUT);
 
     // Validate if user has not done any resize of the panes
     if (!item) return BASE_LAYOUT;
