@@ -8,7 +8,7 @@ import { postReportUser } from '../utils/ajax';
 
 function* reportUserSaga({ payload }) {
   try {
-    const { data: response } = yield call(postReportUser, payload);
+    const response = yield call(postReportUser, payload);
 
     yield put(reportUserComplete());
     yield put(createFlashMessage(response));

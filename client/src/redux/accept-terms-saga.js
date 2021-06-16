@@ -8,7 +8,7 @@ import { putUserAcceptsTerms } from '../utils/ajax';
 
 function* acceptTermsSaga({ payload: quincyEmails }) {
   try {
-    const { data: response } = yield call(putUserAcceptsTerms, quincyEmails);
+    const response = yield call(putUserAcceptsTerms, quincyEmails);
 
     yield put(acceptTermsComplete(quincyEmails));
     yield put(createFlashMessage(response));

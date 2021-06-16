@@ -37,7 +37,7 @@ O elemento ao qual você precisa aplicar a sombra tem um id de `thumbnail`. Com 
 
 # --hints--
 
-O código deve adicionar uma propriedade `box-shadow` no elemento de id `thumbnail`.
+O código deve adicionar a propriedade `box-shadow` no elemento de id `thumbnail`.
 
 ```js
 assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
