@@ -7,7 +7,7 @@ import { showCertComplete, showCertError } from '.';
 
 function* getShowCertSaga({ payload: { username, certSlug } }) {
   try {
-    const response = yield call(getShowCert, username, certSlug);
+    const { data: response } = yield call(getShowCert, username, certSlug);
     const { messages } = response;
     if (messages && messages.length) {
       for (let i = 0; i < messages.length; i++) {

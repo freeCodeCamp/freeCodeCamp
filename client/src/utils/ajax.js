@@ -1,52 +1,41 @@
 import envData from '../../../config/env.json';
+import axios from 'axios';
 import Tokens from 'csrf';
 import cookies from 'browser-cookies';
 
-const { apiLocation, environment } = envData;
+const { apiLocation } = envData;
 
 const base = apiLocation;
 const tokens = new Tokens();
 
-// TODO: test on staging.  Do we need 'include' everywhere?
-const defaultOptions = {
-  credentials: environment === 'development' ? 'include' : 'same-site'
-};
+axios.defaults.withCredentials = true;
 
 // _csrf is passed to the client as a cookie. Tokens are sent back to the server
 // via headers:
-function getCSRFToken() {
+function setCSRFTokens() {
   const _csrf = typeof window !== 'undefined' && cookies.get('_csrf');
-  if (!_csrf) {
-    return '';
-  } else {
-    return tokens.create(_csrf);
-  }
+  if (!_csrf) return;
+  axios.defaults.headers.post['CSRF-Token'] = tokens.create(_csrf);
+  axios.defaults.headers.put['CSRF-Token'] = tokens.create(_csrf);
 }
 
 function get(path) {
-  return fetch(`${base}${path}`, defaultOptions).then(res => res.json());
+  return axios.get(`${base}${path}`);
 }
 
 export function post(path, body) {
-  return request('POST', path, body);
+  setCSRFTokens();
+  return axios.post(`${base}${path}`, body);
 }
 
 function put(path, body) {
-  return request('PUT', path, body);
+  setCSRFTokens();
+  return axios.put(`${base}${path}`, body);
 }
 
-function request(method, path, body) {
-  const options = {
-    ...defaultOptions,
-    method,
-    headers: {
-      'CSRF-Token': getCSRFToken(),
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  };
-  return fetch(`${base}${path}`, options).then(res => res.json());
-}
+// function del(path) {
+//   return axios.delete(`${base}${path}`);
+// }
 
 /** GET **/
 
@@ -117,3 +106,5 @@ export function putUserUpdateEmail(email) {
 export function putVerifyCert(certSlug) {
   return put('/certificate/verify', { certSlug });
 }
+
+/** DELETE **/
