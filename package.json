@@ -95,7 +95,8 @@
   },
   "dependencies": {
     "dotenv": "10.0.0",
-    "invariant": "2.2.4"
+    "invariant": "2.2.4",
+    "xvfb": "^0.4.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.14.5",
@@ -112,7 +113,7 @@
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
-    "cypress": "7.5.0",
+    "cypress": "^7.5.0",
     "docsify-cli": "4.4.3",
     "eslint": "7.28.0",
     "eslint-config-prettier": "8.3.0",
