@@ -19,23 +19,23 @@ var sandwich = ["peanut butter", "jelly", "bread"]
 
 # --instructions--
 
-創建一個包含字符串（`string`）和數字（ `number`）（按照字符串數字的順序）的數組 `myArray`。
+創建一個包含字符串和數字（按照字符串和數字的順序）的數組 `myArray`。
 
 # --hints--
 
-`myArray` 應該是一個數組（`array`）。
+`myArray` 應爲數組。
 
 ```js
 assert(typeof myArray == 'object');
 ```
 
-`myArray` 數組的第一個元素應該是一個字符串（`string`）。
+`myArray` 數組的第一個元素應該是一個字符串。
 
 ```js
 assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
 ```
 
-`myArray` 數組的第二個元素應該是一個數字（`number`）。
+`myArray` 數組的第二個元素應該是一個數字。
 
 ```js
 assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');

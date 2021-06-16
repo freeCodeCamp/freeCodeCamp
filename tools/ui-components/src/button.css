@@ -32,5 +32,5 @@
 }
 
 .fcc-style {
-  @apply bg-darkGreen;
+  @apply bg-fccSecondary;
 }

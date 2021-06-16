@@ -15,6 +15,10 @@ const frontend = path.resolve(
   __dirname,
   '../../src/templates/Challenges/projects/frontend/Show.js'
 );
+const codeally = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/codeally/show.js'
+);
 const intro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/Intro.js'
@@ -33,7 +37,8 @@ const views = {
   classic,
   modern: classic,
   frontend,
-  video
+  video,
+  codeally
   // quiz: Quiz
 };
 
