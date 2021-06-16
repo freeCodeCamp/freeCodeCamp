@@ -296,6 +296,20 @@
       }
     }
   },
+  "relational-databases": {
+    "title": "Relational Databases",
+    "intro": [
+      "placeholder"
+    ],
+    "blocks": {
+      "learn-relational-databases": {
+        "title": "Learn Relational Databases",
+        "intro": [
+          "placeholder"
+        ]
+      }
+    }
+  },
   "apis-and-microservices": {
     "title": "API e Microservizi",
     "intro": [
@@ -459,7 +473,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "L'apprendimento automatico (Machine Learning), ha molte applicazioni pratiche che potrai utilizzare nei tuoi progetti o al lavoro.",
+    "title": "L'apprendimento automatico (Machine Learning) con Python",
     "intro": [
       "L'apprendimento automatico (Machine Learning), ha molte applicazioni pratiche che potrai utilizzare nei tuoi progetti o al lavoro.",
       "Nella Certificazione Machine Learning con Python, userai il framework TensorFlow per costruire diverse reti neurali ed esplorare tecniche più avanzate come l'elaborazione del linguaggio naturale e l'apprendimento rinforzato.",

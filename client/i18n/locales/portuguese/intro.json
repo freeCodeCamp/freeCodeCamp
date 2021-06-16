@@ -296,6 +296,20 @@
       }
     }
   },
+  "relational-databases": {
+    "title": "Relational Databases",
+    "intro": [
+      "placeholder"
+    ],
+    "blocks": {
+      "learn-relational-databases": {
+        "title": "Learn Relational Databases",
+        "intro": [
+          "placeholder"
+        ]
+      }
+    }
+  },
   "apis-and-microservices": {
     "title": "APIs and Microservices",
     "intro": [
