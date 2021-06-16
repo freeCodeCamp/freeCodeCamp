@@ -178,8 +178,9 @@ export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const stepsToClaimSelector = state => {
   const user = userSelector(state);
-  const currentCerts = certificatesByNameSelector(user.username)(state)
-    .currentCerts;
+  const currentCerts = certificatesByNameSelector(user.username)(
+    state
+  ).currentCerts;
   return {
     currentCerts: currentCerts,
     isHonest: user?.isHonest,

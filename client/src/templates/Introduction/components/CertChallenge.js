@@ -10,7 +10,7 @@ import CertificationCard from './CertificationCard';
 import { stepsToClaimSelector } from '../../../redux';
 import { verifyCert } from '../../../redux/settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import { StepsType, User } from '../../../redux/propTypes';
+import { StepsType, User } from '../../../redux/prop-types';
 import { certMap } from '../../../resources/certAndProjectMap';
 import {
   certSlugTypeMap,

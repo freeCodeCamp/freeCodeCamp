@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import ClaimCertSteps from './ClaimCertSteps';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
-import { StepsType } from '../../../redux/propTypes';
+import { StepsType } from '../../../redux/prop-types';
 
 const propTypes = {
   i18nCertText: PropTypes.string,

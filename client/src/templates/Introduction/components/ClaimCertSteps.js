@@ -5,7 +5,7 @@ import { withTranslation, useTranslation } from 'react-i18next';
 
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { StepsType } from '../../../redux/propTypes';
+import { StepsType } from '../../../redux/prop-types';
 
 const propTypes = {
   i18nCertText: PropTypes.string,
