@@ -101,11 +101,14 @@ Submitting the form should run `handleSubmit` which should set the `submit` prop
 `handleSubmit` should call `event.preventDefault`
 
 ```js
+const handleSubmit = MyForm.prototype.handleSubmit.toString();
 assert(
-  MyForm.prototype.handleSubmit.toString()
-    .match(/(?<!\/\*\s*?)(?<!\/\/ *?)\bevent\.preventDefault\(\s*?\)/gs)
-    // First negative lookbehind checks for block comment start /*
-    // Second negative lookbehind checks for line comment start //
+  // Method call exists
+  // And is not block commented out /* */
+  // And is not line commented out //
+  handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g)
+  && !handleSubmit.match(/\/\*.*?\bevent\.preventDefault\(\s*?\).*?\*\//gs)
+  && !handleSubmit.match(/\/\/.*?\bevent\.preventDefault\(\s*?\)/g)
 );
 ```
 
