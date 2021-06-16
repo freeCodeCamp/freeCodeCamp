@@ -9,7 +9,7 @@ const tokens = new Tokens();
 
 // TODO: test on staging.  Do we need 'include' everywhere?
 const defaultOptions = {
-  credentials: environment === 'development' ? 'include' : 'same-origin'
+  credentials: environment === 'development' ? 'include' : 'same-site'
 };
 
 // _csrf is passed to the client as a cookie. Tokens are sent back to the server
