@@ -1,7 +1,7 @@
 {
-  "name": "Front End Libraries Certificate",
+  "name": "Front End Development Libraries Certificate",
   "isUpcomingChange": false,
-  "dashedName": "front-end-libraries-certificate",
+  "dashedName": "front-end-development-libraries-certificate",
   "order": 3,
   "time": "",
   "template": "",
@@ -11,7 +11,7 @@
   "challengeOrder": [
     [
       "561acd10cb82ac38a17513bc",
-      "Front End Libraries Certificate"
+      "Front End Development Libraries Certificate"
     ]
   ],
   "isPrivate": true
