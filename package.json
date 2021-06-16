@@ -95,8 +95,7 @@
   },
   "dependencies": {
     "dotenv": "10.0.0",
-    "invariant": "2.2.4",
-    "xvfb": "^0.4.0"
+    "invariant": "2.2.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.14.5",
