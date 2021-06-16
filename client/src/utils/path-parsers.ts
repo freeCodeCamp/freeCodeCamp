@@ -16,9 +16,7 @@ export const isLanding = (pathname: string): boolean => {
   const isEnglishLanding = pathArray.length === 0;
   const isI18Landing =
     pathArray.length === 1 && i18nConstants.includes(pathArray[0]);
-
-  if (isEnglishLanding || isI18Landing) return true;
-  else return false;
+  return isEnglishLanding || isI18Landing;
 };
 
 const pathParsers = { isLanding, isChallenge };

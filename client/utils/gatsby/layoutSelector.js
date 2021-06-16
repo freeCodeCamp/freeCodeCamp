@@ -6,7 +6,7 @@ import {
   DefaultLayout
 } from '../../src/components/layouts';
 import FourOhFourPage from '../../src/pages/404';
-import { isChallenge } from '../../src/utils/pathParsers';
+import { isChallenge } from '../../src/utils/path-parsers';
 
 export default function layoutSelector({ element, props }) {
   const {

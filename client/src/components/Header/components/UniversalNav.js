@@ -6,7 +6,7 @@ import NavLogo from './NavLogo';
 import MenuButton from './MenuButton';
 import NavLinks from './NavLinks';
 import './universalNav.css';
-import { isLanding } from '../../../utils/pathParsers';
+import { isLanding } from '../../../utils/path-parsers';
 
 import Loadable from '@loadable/component';
 

@@ -1,6 +1,6 @@
 /* global describe it expect */
 
-import { isChallenge, isLanding } from './pathParsers';
+import { isChallenge, isLanding } from './path-parsers';
 
 const pathnames = {
   english: {
