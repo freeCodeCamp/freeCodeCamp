@@ -10,7 +10,7 @@ dashedName: authentication-strategies
 
 策略是认证用户的一种方式。 如果你让用户在注册时填写了用户信息，那你就可以基于这些信息进行验证。或者也可以引入第三方登录，如 Google 或者 Github。 对于这个项目的验证策略，我们会采用自己搭建的方式完成。 可以[点击这里](http://passportjs.org/)访问 Passport 网站，查看数以百计的策略。
 
-引入 `passport-local` 作为依赖，然后将它添加到服务器，就像这样：`const LocalStrategy = require('passport-local');`。
+引入 `passport-local@~1.0.0` 作为依赖，然后将它添加到服务器，就像这样：`const LocalStrategy = require('passport-local');`
 
 然后，需要让 passport **使用**一个实例化的 LocalStrategy 对象，这个对象的一些设置已完成。 请注意，接下来的所有代码都应写在连接数据库的回调中，因为它们的执行都依赖数据库。
 

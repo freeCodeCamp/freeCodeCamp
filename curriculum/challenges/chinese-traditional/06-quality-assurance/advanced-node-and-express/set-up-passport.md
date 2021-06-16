@@ -10,9 +10,9 @@ dashedName: set-up-passport
 
 現在我們來創建 *Passport*，最終我們需要用它來實現用戶註冊和登錄。 除了 Passport，我們還會用 Express-session 來處理 session（會話）。 在客戶端，我們可以用這個中間件把 session id 儲存到 cookie。同時，我們可以在服務器上通過這個 id 訪問 session 數據。 通過這種方式，我們無需把用戶的個人賬號信息存到 cookie，來完成用戶的驗證。只需要用這個 id 作爲 *key* 來訪問服務器上用戶的數據即可。
 
-爲了在你的項目中使用 Passport，首先你需要在 package.json 文件中添加依賴： `"passport": "^0.3.2"`。
+爲了在你的項目中使用 Passport，首先你需要在 package.json 文件中添加依賴： `passport@~0.4.1`
 
-此外，還需要添加 Express-session 作爲依賴。 Express-session 有許多高級特性，但我們暫時只需要瞭解其基礎功能。 `"express-session": "^1.15.0"`
+此外，還需要添加 Express-session 作爲依賴。 Express-session 有許多高級特性，但我們暫時只需要瞭解其基礎功能。 `express-session@~1.17.1`
 
 現在，我們需要配置 session 並初始化 Passport。 請先創建變量 “session” 和 “passport” 來分別引入 “express-session” 和 “passport”。
 

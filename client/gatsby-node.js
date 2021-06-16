@@ -1,4 +1,4 @@
-const env = require('../config/env');
+const env = require('../config/env.json');
 const webpack = require('webpack');
 
 const { createFilePath } = require('gatsby-source-filesystem');
@@ -247,6 +247,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type ChallengeNode implements Node {
       files: ChallengeFile
+      url: String
     }
     type ChallengeFile {
       indexcss: FileContents

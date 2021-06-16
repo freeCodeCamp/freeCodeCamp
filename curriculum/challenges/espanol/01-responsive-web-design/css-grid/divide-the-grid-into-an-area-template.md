@@ -9,7 +9,7 @@ dashedName: divide-the-grid-into-an-area-template
 
 # --description--
 
-Puedes agrupar las celdas de tu grid en una <dfn>área</dfn> y darle a esa área un nombre personalizado. Haz esto usando `grid-template-areas` en el contenedor de la siguiente manera:
+Puedes agrupar las celdas de tu cuadrícula en una <dfn>área</dfn> y darle a esa área un nombre personalizado. Haz esto usando `grid-template-areas` en el contenedor de la siguiente manera:
 
 ```css
 grid-template-areas:
@@ -18,7 +18,7 @@ grid-template-areas:
   "footer footer footer";
 ```
 
-El código anterior fusiona las tres celdas superiores en una área llamada `header`, las tres celdas inferiores en una área `footer` y hace dos áreas en la fila del medio; `advert` y `content`. **Nota:** cada palabra en el código representa una celda y cada par de comillas representa una fila. Además de los nombres personalizados, puedes usar un punto (`.`) para designar una celda vacía en la grid.
+El código anterior fusiona las tres celdas superiores en una área llamada `header`, las tres celdas inferiores en una área `footer` y hace dos áreas en la fila del medio; `advert` y `content`. **Nota:** cada palabra en el código representa una celda y cada par de comillas representa una fila. Además de los nombres personalizados, puedes usar un punto (`.`) para designar una celda vacía en la cuadrícula.
 
 # --instructions--
 
