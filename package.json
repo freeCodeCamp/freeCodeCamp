@@ -64,7 +64,7 @@
     "lint": "npm-run-all ensure-env -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:css": "npm run prettier -- --check",
-    "lint:js": "eslint .",
+    "lint:js": "eslint --max-warnings 0 .",
     "lint:ts": "tsc -p client",
     "lint:translations": "cd ./client && npm run lint",
     "postinstall": "npm run bootstrap",
@@ -90,7 +90,7 @@
   },
   "lint-staged": {
     "*.css": "prettier --write",
-    "*.(js|ts|tsx)": "eslint --cache --fix",
+    "*.(js|ts|tsx)": "eslint --max-warnings 0 --cache --fix",
     "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
   },
   "dependencies": {
