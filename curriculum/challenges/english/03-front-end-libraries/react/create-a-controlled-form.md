@@ -107,8 +107,8 @@ assert(
   // And is not block commented out /* */
   // And is not line commented out //
   handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g)
-  && !handleSubmit.match(/\/\*\s*?\bevent\.preventDefault\(\s*?\)\s*?\*\//g)
-  && !handleSubmit.match(/\/\/\s*?\bevent\.preventDefault\(\s*?\)/g)
+  && !handleSubmit.match(/\/\*\s*?\bevent\.preventDefault\(\s*?\);?\s*?\*\//g)
+  && !handleSubmit.match(/\/\/\s*?\bevent\.preventDefault\(\s*?\);?/g)
 );
 ```
 
