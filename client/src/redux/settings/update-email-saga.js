@@ -13,7 +13,7 @@ function* updateMyEmailSaga({ payload: email = '' }) {
     return;
   }
   try {
-    const response = yield call(putUserUpdateEmail, email);
+    const { data: response } = yield call(putUserUpdateEmail, email);
     yield put(
       updateMyEmailComplete({
         ...response,
