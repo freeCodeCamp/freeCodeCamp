@@ -1,6 +1,6 @@
 ---
-title: Introduction to the Front End c Libraries Projects
-block: Front End v Libraries Projects
+title: Introduction to the Front End Development Libraries Projects
+block: Front End Development Libraries Projects
 superBlock: Front End Development Libraries
 ---
 ## Introduction to the Front End Development Libraries Projects
