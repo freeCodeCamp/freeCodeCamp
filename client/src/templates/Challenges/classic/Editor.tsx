@@ -86,7 +86,7 @@ const mapStateToProps = createSelector(
   challengeTestsSelector,
   (
     canFocus: boolean,
-    output: string,
+    output: string[],
     accessibilityMode: boolean,
     open,
     { theme = 'default' }: { theme: string },
@@ -295,13 +295,14 @@ const Editor = (props: PropTypes): JSX.Element => {
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
     // ref: https://github.com/microsoft/monaco-editor/issues/102
-    // eslint-disable-next-line
+    /* eslint-disable */
+    // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
       null,
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
       () => {}
     );
+    /* eslint-disable */
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
