@@ -102,13 +102,18 @@ Submitting the form should run `handleSubmit` which should set the `submit` prop
 
 ```js
 const handleSubmit = MyForm.prototype.handleSubmit.toString();
+const allMatches = handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g) ?? [];
+const blockCommented = handleSubmit.match(
+  /\/\*.*?\bevent\.preventDefault\(\s*?\).*?\*\//gs
+);
+const lineCommented = handleSubmit.match(
+  /\/\/.*?\bevent\.preventDefault\(\s*?\)/g
+);
+const commentedMatches = [...(blockCommented ?? []), ...(lineCommented ?? [])];
+
 assert(
-  // Method call exists
-  // And is not block commented out /* */
-  // And is not line commented out //
-  handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g)
-  && !handleSubmit.match(/\/\*\s*?\bevent\.preventDefault\(\s*?\);?\s*?\*\//g)
-  && !handleSubmit.match(/\/\/\s*?\bevent\.preventDefault\(\s*?\);?\s*?\n/g)
+  // At least one event.preventDefault() call exists and is not commented out
+  allMatches.length && (allMatches.length > commentedMatches.length)
 );
 ```
 
