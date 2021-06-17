@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { navigate } from 'gatsby';
 import { connect } from 'react-redux';
@@ -10,7 +11,7 @@ import './hotkeys.css';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
-  canFocusEditor => ({
+  (canFocusEditor: boolean) => ({
     canFocusEditor
   })
 );
@@ -25,16 +26,17 @@ const keyMap = {
   NAVIGATE_NEXT: ['n']
 };
 
-const propTypes = {
-  canFocusEditor: PropTypes.bool,
-  children: PropTypes.any,
-  editorRef: PropTypes.object,
-  executeChallenge: PropTypes.func,
-  innerRef: PropTypes.any,
-  nextChallengePath: PropTypes.string,
-  prevChallengePath: PropTypes.string,
-  setEditorFocusability: PropTypes.func.isRequired
-};
+interface HotkeysProps {
+  canFocusEditor: boolean;
+  children: React.ReactElement;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  editorRef?: React.Ref<HTMLElement> | any;
+  executeChallenge?: () => void;
+  innerRef: React.Ref<HTMLElement> | unknown;
+  nextChallengePath: string;
+  prevChallengePath: string;
+  setEditorFocusability: (arg0: boolean) => void;
+}
 
 function Hotkeys({
   canFocusEditor,
@@ -45,9 +47,9 @@ function Hotkeys({
   nextChallengePath,
   prevChallengePath,
   setEditorFocusability
-}) {
+}: HotkeysProps): JSX.Element {
   const handlers = {
-    EXECUTE_CHALLENGE: e => {
+    EXECUTE_CHALLENGE: (e: React.KeyboardEvent<HTMLButtonElement>) => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
       // needs to be prevented.
       // TODO: 'enter' on its own also disables HotKeys, but default behaviour
@@ -55,7 +57,7 @@ function Hotkeys({
       e.preventDefault();
       if (executeChallenge) executeChallenge();
     },
-    FOCUS_EDITOR: e => {
+    FOCUS_EDITOR: (e: React.KeyboardEvent) => {
       e.preventDefault();
       if (editorRef && editorRef.current) {
         editorRef.current.getWrappedInstance().focusOnEditor();
@@ -63,10 +65,10 @@ function Hotkeys({
     },
     NAVIGATION_MODE: () => setEditorFocusability(false),
     NAVIGATE_PREV: () => {
-      if (!canFocusEditor) navigate(prevChallengePath);
+      if (!canFocusEditor) void navigate(prevChallengePath);
     },
     NAVIGATE_NEXT: () => {
-      if (!canFocusEditor) navigate(nextChallengePath);
+      if (!canFocusEditor) void navigate(nextChallengePath);
     }
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
@@ -75,19 +77,22 @@ function Hotkeys({
   // allowChanges is necessary if the handlers depend on props (in this case
   // canFocusEditor)
   return (
-    <HotKeys
-      allowChanges={true}
-      handlers={handlers}
-      innerRef={innerRef}
-      keyMap={keyMap}
-    >
-      {children}
-      <GlobalHotKeys />
-    </HotKeys>
+    <>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      <HotKeys
+        allowChanges={true}
+        handlers={handlers}
+        innerRef={innerRef}
+        keyMap={keyMap}
+      >
+        {children}
+        <GlobalHotKeys />
+      </HotKeys>
+    </>
   );
 }
 
 Hotkeys.displayName = 'Hotkeys';
-Hotkeys.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(Hotkeys);

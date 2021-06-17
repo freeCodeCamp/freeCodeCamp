@@ -160,7 +160,9 @@ export type ChallengeNodeType = {
   fields: {
     slug: string;
     blockName: string;
+    tests: TestType[];
   };
+  files: ChallengeFilesType;
   forumTopicId: number;
   guideUrl: string;
   head: string[];
@@ -171,6 +173,11 @@ export type ChallengeNodeType = {
   isLocked: boolean;
   isPrivate: boolean;
   order: number;
+  question: {
+    text: string;
+    answers: string[];
+    solution: number;
+  };
   required: [
     {
       link: string;
@@ -184,6 +191,8 @@ export type ChallengeNodeType = {
   time: string;
   title: string;
   translationPending: boolean;
+  url: string;
+  videoId: string;
   videoUrl: string;
 };
 
@@ -204,7 +213,7 @@ export type AllMarkdownRemarkType = {
 };
 
 export type ResizePropsType = {
-  onStopResize: () => void;
+  onStopResize: (arg0: React.ChangeEvent) => void;
   onResize: () => void;
 };
 
@@ -289,6 +298,28 @@ export type ChallengeFileType = {
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
 export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
 
+export type ChallengeFilesType =
+  | {
+      indexcss: ChallengeFileType;
+      indexhtml: ChallengeFileType;
+      indexjs: ChallengeFileType;
+      indexjsx: ChallengeFileType;
+    }
+  | Record<string, never>;
+
+export type ChallengeMetaType = {
+  block: string;
+  id: string;
+  introPath: string;
+  nextChallengePath: string;
+  prevChallengePath: string;
+  removeComments: boolean;
+  superBlock: string;
+  title?: string;
+  challengeType?: number;
+  helpCategory: string;
+};
+
 export type PortfolioType = {
   id: string;
   title?: string;
@@ -297,6 +328,7 @@ export type PortfolioType = {
   description?: string;
 };
 
+// This looks redundant - same as ChallengeNodeType above?
 export type ChallengeNode = {
   block: string;
   challengeOrder: number;

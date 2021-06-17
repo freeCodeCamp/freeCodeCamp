@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+// Package Utilities
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -7,6 +9,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 
+// Local Utilities
 import {
   executeChallenge,
   challengeMounted,
@@ -19,7 +22,6 @@ import {
   updateSolutionFormValues
 } from '../../redux';
 import { getGuideUrl } from '../../utils';
-
 import LearnLayout from '../../../../components/layouts/Learn';
 import ChallengeTitle from '../../components/Challenge-Title';
 import ChallengeDescription from '../../components/Challenge-Description';
@@ -30,42 +32,29 @@ import HelpModal from '../../components/HelpModal';
 import ProjectToolPanel from '../Tool-Panel';
 import SolutionForm from '../SolutionForm';
 import Spacer from '../../../../components/helpers/spacer';
-import { ChallengeNode } from '../../../../redux/prop-types';
+import {
+  ChallengeNodeType,
+  ChallengeMetaType,
+  TestType
+} from '../../../../redux/prop-types';
 import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
 
+// Styles
 import '../../components/test-frame.css';
 
-const propTypes = {
-  challengeMounted: PropTypes.func.isRequired,
-  data: PropTypes.shape({
-    challengeNode: ChallengeNode
-  }),
-  description: PropTypes.string,
-  executeChallenge: PropTypes.func.isRequired,
-  forumTopicId: PropTypes.number,
-  id: PropTypes.string,
-  initConsole: PropTypes.func.isRequired,
-  initTests: PropTypes.func.isRequired,
-  isChallengeCompleted: PropTypes.bool,
-  isSignedIn: PropTypes.bool,
-  output: PropTypes.arrayOf(PropTypes.string),
-  pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
-  }),
-  t: PropTypes.func.isRequired,
-  tests: PropTypes.array,
-  title: PropTypes.string,
-  updateChallengeMeta: PropTypes.func.isRequired,
-  updateSolutionFormValues: PropTypes.func.isRequired
-};
-
+// Redux Setup
 const mapStateToProps = createSelector(
   consoleOutputSelector,
   challengeTestsSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
-  (output, tests, isChallengeCompleted, isSignedIn) => ({
+  (
+    output: string[],
+    tests: TestType[],
+    isChallengeCompleted: boolean,
+    isSignedIn: boolean
+  ) => ({
     tests,
     output,
     isChallengeCompleted,
@@ -82,8 +71,35 @@ const mapDispatchToActions = {
   updateSolutionFormValues
 };
 
-class BackEnd extends Component {
-  constructor(props) {
+// Types
+interface BackEndProps {
+  challengeMounted: (arg0: string) => void;
+  data: { challengeNode: ChallengeNodeType };
+  description: string;
+  executeChallenge: (arg0: boolean) => void;
+  forumTopicId: number;
+  id: string;
+  initConsole: () => void;
+  initTests: (tests: TestType[]) => void;
+  isChallengeCompleted: boolean;
+  isSignedIn: boolean;
+  output: string[];
+  pageContext: {
+    challengeMeta: ChallengeMetaType;
+  };
+  t: (arg0: string) => string;
+  tests: TestType[];
+  title: string;
+  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateSolutionFormValues: () => void;
+}
+
+// Component
+class BackEnd extends Component<BackEndProps> {
+  static displayName: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private _container: any;
+  constructor(props: BackEndProps) {
     super(props);
     this.state = {};
     this.updateDimensions = this.updateDimensions.bind(this);
@@ -92,7 +108,7 @@ class BackEnd extends Component {
 
   componentDidMount() {
     this.initializeComponent();
-    window.addEventListener('resize', this.updateDimensions);
+    window.addEventListener('resize', () => this.updateDimensions());
     this._container.focus();
   }
 
@@ -101,10 +117,10 @@ class BackEnd extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions);
+    window.removeEventListener('resize', () => this.updateDimensions());
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: BackEndProps) {
     const {
       data: {
         challengeNode: {
@@ -122,7 +138,7 @@ class BackEnd extends Component {
       }
     } = this.props;
     if (prevTitle !== currentTitle || prevTests !== currTests) {
-      this.initializeComponent(currentTitle);
+      this.initializeComponent();
     }
   }
 
@@ -153,7 +169,11 @@ class BackEnd extends Component {
     challengeMounted(challengeMeta.id);
   }
 
-  handleSubmit({ isShouldCompletionModalOpen }) {
+  handleSubmit({
+    isShouldCompletionModalOpen
+  }: {
+    isShouldCompletionModalOpen: boolean;
+  }): void {
     this.props.executeChallenge(isShouldCompletionModalOpen);
   }
 
@@ -186,7 +206,7 @@ class BackEnd extends Component {
 
     return (
       <Hotkeys
-        innerRef={c => (this._container = c)}
+        innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -197,6 +217,8 @@ class BackEnd extends Component {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer />
                 <ChallengeTitle
                   block={block}
@@ -212,6 +234,7 @@ class BackEnd extends Component {
                 />
                 <SolutionForm
                   challengeType={challengeType}
+                  // eslint-disable-next-line @typescript-eslint/unbound-method
                   onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
                 />
@@ -231,6 +254,8 @@ class BackEnd extends Component {
                   output={output}
                 />
                 <TestSuite tests={tests} />
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer />
               </Col>
               <CompletionModal
@@ -248,7 +273,6 @@ class BackEnd extends Component {
 }
 
 BackEnd.displayName = 'BackEnd';
-BackEnd.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

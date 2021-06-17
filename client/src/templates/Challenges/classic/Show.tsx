@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+// Package Utilities
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -8,6 +11,7 @@ import { graphql } from 'gatsby';
 import Media from 'react-responsive';
 import { withTranslation } from 'react-i18next';
 
+// Local Utilities
 import LearnLayout from '../../../components/layouts/Learn';
 import MultifileEditor from './MultifileEditor';
 import Preview from '../components/Preview';
@@ -20,12 +24,17 @@ import ResetModal from '../components/ResetModal';
 import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
 import Hotkeys from '../components/Hotkeys';
-
 import { getGuideUrl } from '../utils';
 import store from 'store';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { isContained } from '../../../utils/is-contained';
-import { ChallengeNode } from '../../../redux/prop-types';
+import {
+  ChallengeNodeType,
+  ChallengeFilesType,
+  ChallengeMetaType,
+  TestType,
+  ResizePropsType
+} from '../../../redux/prop-types';
 import {
   createFiles,
   challengeFilesSelector,
@@ -39,16 +48,18 @@ import {
   cancelTests
 } from '../redux';
 
+// Styles
 import './classic.css';
 import '../components/test-frame.css';
 
+// Redux Setup
 const mapStateToProps = createStructuredSelector({
   files: challengeFilesSelector,
   tests: challengeTestsSelector,
   output: consoleOutputSelector
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       createFiles,
@@ -62,60 +73,58 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const propTypes = {
-  cancelTests: PropTypes.func.isRequired,
-  challengeMounted: PropTypes.func.isRequired,
-  createFiles: PropTypes.func.isRequired,
-  data: PropTypes.shape({
-    challengeNode: ChallengeNode
-  }),
-  executeChallenge: PropTypes.func.isRequired,
-  files: PropTypes.shape({
-    key: PropTypes.string
-  }),
-  initConsole: PropTypes.func.isRequired,
-  initTests: PropTypes.func.isRequired,
-  output: PropTypes.arrayOf(PropTypes.string),
-  pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.shape({
-      id: PropTypes.string,
-      nextChallengePath: PropTypes.string,
-      prevChallengePath: PropTypes.string
-    })
-  }),
-  t: PropTypes.func.isRequired,
-  tests: PropTypes.arrayOf(
-    PropTypes.shape({
-      text: PropTypes.string,
-      testString: PropTypes.string
-    })
-  ),
-  updateChallengeMeta: PropTypes.func.isRequired
-};
+// Types
+interface ShowClassicProps {
+  cancelTests: () => void;
+  challengeMounted: (arg0: string) => void;
+  createFiles: (arg0: ChallengeFilesType) => void;
+  data: { challengeNode: ChallengeNodeType };
+  executeChallenge: () => void;
+  files: ChallengeFilesType;
+  initConsole: (arg0: string) => void;
+  initTests: (tests: TestType[]) => void;
+  output: string[];
+  pageContext: {
+    challengeMeta: ChallengeMetaType;
+  };
+  t: (arg0: string) => string;
+  tests: TestType[];
+  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+}
+
+interface ShowClassicState {
+  resizing: boolean;
+}
+
+interface IReflexLayout {
+  codePane: { flex: number };
+  editorPane: { flex: number };
+  instructionPane: { flex: number };
+  previewPane: { flex: number };
+  testsPane: { flex: number };
+}
 
 const MAX_MOBILE_WIDTH = 767;
 const REFLEX_LAYOUT = 'challenge-layout';
 const BASE_LAYOUT = {
-  codePane: {
-    flex: 1
-  },
-  editorPane: {
-    flex: 1
-  },
-  instructionPane: {
-    flex: 1
-  },
-  previewPane: {
-    flex: 0.7
-  },
-  testsPane: {
-    flex: 0.25
-  }
+  codePane: { flex: 1 },
+  editorPane: { flex: 1 },
+  instructionPane: { flex: 1 },
+  previewPane: { flex: 0.7 },
+  testsPane: { flex: 0.25 }
 };
 
-class ShowClassic extends Component {
-  constructor() {
-    super();
+// Component
+class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
+  static displayName: string;
+  containerRef: React.RefObject<unknown>;
+  editorRef: React.RefObject<unknown>;
+  resizeProps: ResizePropsType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  layoutState: any;
+
+  constructor(props: ShowClassicProps) {
+    super(props);
 
     this.resizeProps = {
       onStopResize: this.onStopResize.bind(this),
@@ -132,8 +141,8 @@ class ShowClassic extends Component {
     this.layoutState = this.getLayoutState();
   }
 
-  getLayoutState() {
-    const reflexLayout = store.get(REFLEX_LAYOUT);
+  getLayoutState(): IReflexLayout | string {
+    const reflexLayout: IReflexLayout | string = store.get(REFLEX_LAYOUT);
 
     // Validate if user has not done any resize of the panes
     if (!reflexLayout) return BASE_LAYOUT;
@@ -153,7 +162,8 @@ class ShowClassic extends Component {
     this.setState({ resizing: true });
   }
 
-  onStopResize(event) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onStopResize(event: any) {
     const { name, flex } = event.component.props;
 
     this.setState({ resizing: false });
@@ -177,7 +187,7 @@ class ShowClassic extends Component {
     this.initializeComponent(title);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: ShowClassicProps) {
     const {
       data: {
         challengeNode: {
@@ -199,7 +209,7 @@ class ShowClassic extends Component {
     }
   }
 
-  initializeComponent(title) {
+  initializeComponent(title: string) {
     const {
       challengeMounted,
       createFiles,
@@ -256,7 +266,7 @@ class ShowClassic extends Component {
     );
   }
 
-  renderInstructionsPanel({ showToolPanel }) {
+  renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
     const { block, description, instructions, superBlock, translationPending } =
       this.getChallenge();
 
@@ -397,7 +407,6 @@ class ShowClassic extends Component {
 }
 
 ShowClassic.displayName = 'ShowClassic';
-ShowClassic.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
