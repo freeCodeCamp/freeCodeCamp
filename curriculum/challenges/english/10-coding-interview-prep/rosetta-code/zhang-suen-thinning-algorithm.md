@@ -86,7 +86,7 @@ If any pixels were set in this round of either step 1 or step 2 then all steps a
 
 # --instructions--
 
-Write a routine to perform Zhang-Suen thinning on the provided image matrix.
+Write a routine to perform Zhang-Suen thinning on the provided `image`, an array of strings, where each string represents single line of the image. In the string, `#` represents black pixel, and whitespace represents white pixel. Function should return thinned image, using the same representation.
 
 # --hints--
 
