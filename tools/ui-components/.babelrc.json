@@ -9,5 +9,6 @@
       }
     ],
     "@babel/preset-react"
-  ]
+  ],
+  "plugins": [["transform-react-remove-prop-types", { "removeImport": true }]]
 }
