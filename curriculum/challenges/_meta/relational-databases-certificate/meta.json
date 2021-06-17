@@ -1,0 +1,20 @@
+{
+    "name": "Relational Databases Certificate",
+    "isUpcomingChange": true,
+    "dashedName": "relational-databases-v8-certificate",
+    "order": 11,
+    "time": "",
+    "template": "",
+    "required": [],
+    "superBlock": "certificates",
+    "superOrder": 12,
+    "challengeOrder": [
+      [
+        "606243f50267e718b1e755f4",
+        "Relational Databases Certificate"
+      ]
+    ],
+    "isPrivate": true,
+    "fileName": "12-certificates/relational-databases-v8-certificate.json"
+  }
+  

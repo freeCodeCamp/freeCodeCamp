@@ -59,5 +59,21 @@
   "basic-javascript-rpg-game": "JavaScript",
   "functional-programming-spreadsheet": "JavaScript",
   "intermediate-javascript-calorie-counter": "JavaScript",
-  "d3-dashboard": "JavaScript"
+  "d3-dashboard": "JavaScript",
+  "learn-bash-by-building-a-boilerplate": "Relational Databases",
+  "learn-relational-databases-by-building-a-mario-database":
+    "Relational Databases",
+  "celestial-bodies-database": "Relational Databases",
+  "learn-bash-scripting-by-building-five-programs": "Relational Databases",
+  "learn-bash-and-sql-by-building-a-bike-rental-shop": "Relational Databases",
+  "salon-appointment-scheduler": "Relational Databases",
+  "learn-sql-by-building-a-student-database": "Relational Databases",
+  "learn-advanced-bash-by-building": "Relational Databases",
+  "world-cup-database": "Relational Databases",
+  "learn-nano-by-building-a-castle": "Relational Databases",
+  "learn-git-by-building-an-sql-reference-object": "Relational Databases",
+  "periodic-table-database": "Relational Databases",
+  "learn-github-by-building-a-list-of-inspirational-quotes":
+    "Relational Databases",
+  "final-boss": "Relational Databases"
 }

@@ -23,7 +23,7 @@
     "react-dom": "16.14.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.5",
+    "@babel/core": "7.14.6",
     "@storybook/addon-actions": "6.2.9",
     "@storybook/addon-essentials": "6.2.9",
     "@storybook/addon-links": "6.2.9",
@@ -32,7 +32,7 @@
     "@testing-library/react": "11.2.7",
     "autoprefixer": "10.2.6",
     "babel-loader": "8.2.2",
-    "postcss": "8.3.2",
+    "postcss": "8.3.5",
     "postcss-import": "14.0.2",
     "tailwindcss": "2.1.4"
   },

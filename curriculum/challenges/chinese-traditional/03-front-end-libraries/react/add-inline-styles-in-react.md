@@ -14,7 +14,7 @@ dashedName: add-inline-styles-in-react
 
 # --instructions--
 
-如果你有大量樣式，你可以將樣式 `object`（對象）分配給一個常量，以保持代碼的組織有序。 定義一個 `styles` 常量，並將其聲明爲具有三個樣式屬性及對應值的 `object`（對象）。 使 `div` 的文字顏色爲 `purple`、字號爲 `40`、邊框爲 `2px solid purple`。 然後設置 `style` 屬性，使其等於 `styles` 常量。
+如果你有大量樣式，你可以將樣式 `object`（對象）分配給一個常量，以保持代碼的組織有序。 在文件頂部將你的樣式聲明爲全局變量。 定義一個 `styles` 常量，並將其聲明爲具有三個樣式屬性及對應值的 `object`（對象）。 使 `div` 的文字顏色爲 `purple`、字號爲 `40`、邊框爲 `2px solid purple`。 然後設置 `style` 屬性，使其等於 `styles` 常量。
 
 # --hints--
 
