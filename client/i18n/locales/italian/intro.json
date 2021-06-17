@@ -2,7 +2,7 @@
   "responsive-web-design": {
     "title": "Web Design Responsivo",
     "intro": [
-      "In questo corso di Web Design Responsivo imparerete i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
+      "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi, imparerai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
       "Infine imparerai a fare pagine web adattabili a diverse misure di schermo costruendo una card Twitter con Flexbox, e un complesso layout per blog in CSS Grid."
     ],
@@ -121,7 +121,7 @@
       "debugging": {
         "title": "Debugging",
         "intro": [
-          "Il debugging è il processo di rivedere il tuo codice, trovando i problemi e sistemandoli.",
+          "Il debugging è il processo di revisione del tuo codice, utile a trovare i problemi e a sistemarli.",
           "I problemi col codice in generale si manifestano in tre forme: errori di sintassi che impediscono al tuo programma di avviarsi, errori di runtime quando il tuo codice si comporta in modo inaspettato, o errori di logica quando il tuo codice non funziona come desideravi.",
           "In questo corso, imparerai ad usare la console di JavaScript per fare il debugging dei programmi e prevenire problemi comuni prima che avvengano."
         ]
@@ -297,15 +297,15 @@
     }
   },
   "relational-databases": {
-    "title": "Relational Databases",
+    "title": "Database relazionali",
     "intro": [
-      "placeholder"
+      "segnaposto"
     ],
     "blocks": {
       "learn-relational-databases": {
-        "title": "Learn Relational Databases",
+        "title": "Conosci i Database Relazionali",
         "intro": [
-          "placeholder"
+          "segnaposto"
         ]
       }
     }
@@ -473,7 +473,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "L'apprendimento automatico (Machine Learning) con Python",
+    "title": "Machine Learning con Python",
     "intro": [
       "L'apprendimento automatico (Machine Learning), ha molte applicazioni pratiche che potrai utilizzare nei tuoi progetti o al lavoro.",
       "Nella Certificazione Machine Learning con Python, userai il framework TensorFlow per costruire diverse reti neurali ed esplorare tecniche più avanzate come l'elaborazione del linguaggio naturale e l'apprendimento rinforzato.",
