@@ -66,7 +66,7 @@ function getRedirectParams(req, _normalizeParams = normalizeParams) {
   const origin = returnUrl.origin;
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.
-  const pathPrefix = returnUrl.pathname.split('/')[0];
+  const pathPrefix = returnUrl.pathname.split('/')[1];
   return _normalizeParams({ returnTo: returnUrl.href, origin, pathPrefix });
 }
 
