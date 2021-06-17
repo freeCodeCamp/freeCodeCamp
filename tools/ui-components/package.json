@@ -41,12 +41,14 @@
     "postcss-import": "14.0.2",
     "tailwindcss": "2.2.0",
     "rollup": "^2.52.1",
-    "rollup-plugin-postcss": "^4.0.0"
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "storybook:theming": "npm run storybook --no-manager-cache",
     "build-storybook": "build-storybook",
-    "build": "cross-env NODE_ENV=production rollup -c"
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "dev": "cross-env NODE_ENV=development rollup -c -w"
   }
 }

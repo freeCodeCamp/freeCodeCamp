@@ -2,6 +2,9 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
+import { terser } from 'rollup-plugin-terser';
+
+const production = process.env.NODE_ENV !== 'development';
 
 const config = {
   input: 'src/index.js',
@@ -25,7 +28,8 @@ const config = {
     nodeResolve(),
     postcss(),
     babel({ babelHelpers: 'bundled' }),
-    commonjs()
+    commonjs(),
+    production && terser()
   ],
   external: ['react']
 };
