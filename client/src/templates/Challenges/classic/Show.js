@@ -106,7 +106,7 @@ const BASE_LAYOUT = {
     flex: 1
   },
   previewPane: {
-    flex: 0.5
+    flex: 0.7
   },
   testsPane: {
     flex: 0.25
