@@ -25,7 +25,6 @@ import {
   ResizePropsType,
   TestType
 } from '../../../redux/prop-types';
-import { Range } from 'monaco-editor/esm/vs/editor/editor.api';
 
 // eslint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
@@ -855,9 +854,11 @@ const Editor = (props: PropTypes): JSX.Element => {
       // edits. However, what if they made a warned edit, then a normal
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
-      const newLineRanges = getNewLineRanges(e).map(range =>
-        toStartOfLine(Range.lift(range))
-      );
+      const newLineRanges = getNewLineRanges(e).map(range => {
+        if (_monaco) {
+          return toStartOfLine(_monaco.Range.lift(range));
+        }
+      });
       const deletedLine = getDeletedLine(e);
 
       const deletedRange = {
