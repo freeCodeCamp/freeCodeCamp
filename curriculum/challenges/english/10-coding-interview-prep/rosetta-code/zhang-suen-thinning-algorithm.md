@@ -99,19 +99,25 @@ assert.equal(typeof thinImage, 'function');
 `thinImage` should return an array.
 
 ```js
-assert(Array.isArray(result));
+assert(Array.isArray(thinImage(_testImage1)));
 ```
 
 `thinImage` should return an array of strings.
 
 ```js
-assert.equal(typeof result[0], 'string');
+assert.equal(typeof thinImage(_testImage1)[0], 'string');
 ```
 
-`thinImage` should return an array of strings.
+`thinImage(testImage1)` should return thinned image as in example.
 
 ```js
-assert.deepEqual(result, expected);
+assert.deepEqual(thinImage(_testImage1), expected1);
+```
+
+`thinImage(testImage2)` should return thinned image.
+
+```js
+assert.deepEqual(thinImage(_testImage2), expected2);
 ```
 
 # --seed--
@@ -119,7 +125,31 @@ assert.deepEqual(result, expected);
 ## --after-user-code--
 
 ```js
-const imageForTests = [
+const _testImage1 = [
+  '                               ',
+  '#########       ########       ',
+  '###   ####     ####  ####      ',
+  '###    ###     ###    ###      ',
+  '###   ####     ###             ',
+  '#########      ###             ',
+  '### ####       ###    ###      ',
+  '###  ####  ### ####  #### ###  ',
+  '###   #### ###  ########  ###  ',
+  '                               '
+];
+const expected1 = [
+  '                               ',
+  '########         ######        ',
+  '#      #        ##             ',
+  '#       #       #              ',
+  '#      #        #              ',
+  '###### #        #              ',
+  '#     ##        #              ',
+  '#      #    #   ##    ##   #   ',
+  '#       #         ####         ',
+  '                               '
+];
+const _testImage2 = [
   '                                                          ',
   ' #################                   #############        ',
   ' ##################               ################        ',
@@ -138,7 +168,7 @@ const imageForTests = [
   ' ########     ####### ######      ################ ###### ',
   ' ########     ####### ######         ############# ###### ',
   '                                                          '];
-const expected = [
+const expected2 = [
   '                                                          ',
   '                                                          ',
   '    # ##########                       #######            ',
