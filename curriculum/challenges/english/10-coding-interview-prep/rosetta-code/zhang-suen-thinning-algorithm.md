@@ -53,7 +53,7 @@ It produces the thinned output:
 
 </pre>
 
-## Algorithm ##
+## Algorithm
 
 Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
 
@@ -67,7 +67,7 @@ $$\begin{array}{|c|c|c|}
 Obviously the boundary pixels of the image cannot have the full eight neighbours.
 
 - Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
- - Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
+- Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
 
 **Step 1:**
 
