@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BlockSaveButton from './BlockSaveButton';
+import BlockSaveButton from './block-save-button';
 
 test('<BlockSaveButton /> snapshot', () => {
   const { container } = render(<BlockSaveButton />);

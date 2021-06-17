@@ -11,7 +11,7 @@ import {
 import { FullWidthRow, Spacer } from '../helpers';
 import ThemeSettings from './Theme';
 import UsernameSettings from './Username';
-import BlockSaveButton from '../helpers/form/BlockSaveButton';
+import BlockSaveButton from '../helpers/form/block-save-button';
 import { withTranslation } from 'react-i18next';
 
 const propTypes = {

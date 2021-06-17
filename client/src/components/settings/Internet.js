@@ -15,7 +15,7 @@ import { maybeUrlRE } from '../../utils';
 
 import SectionHeader from './SectionHeader';
 import { FullWidthRow } from '../helpers';
-import BlockSaveButton from '../helpers/form/BlockSaveButton';
+import BlockSaveButton from '../helpers/form/block-save-button';
 
 const propTypes = {
   githubProfile: PropTypes.string,

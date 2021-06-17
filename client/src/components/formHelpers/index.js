@@ -7,8 +7,8 @@ import {
   httpValidator
 } from './FormValidators';
 
-export { default as BlockSaveButton } from './BlockSaveButton';
-export { default as BlockSaveWrapper } from './BlockSaveWrapper';
+export { default as BlockSaveButton } from './block-save-button';
+export { default as BlockSaveWrapper } from './block-save-wrapper';
 export { default as Form } from './Form.js';
 export { default as FormFields } from './FormFields.js';
 
