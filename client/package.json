@@ -87,7 +87,7 @@
     "nanoid": "3.1.23",
     "normalize-url": "4.5.1",
     "path-browserify": "1.0.1",
-    "postcss": "8.3.4",
+    "postcss": "8.3.5",
     "prismjs": "1.23.0",
     "process": "0.11.10",
     "prop-types": "15.7.2",
@@ -122,7 +122,7 @@
     "sass.js": "0.11.1",
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
-    "typescript": "4.3.2",
+    "typescript": "4.3.3",
     "uuid": "8.3.2",
     "validator": "13.6.0"
   },
@@ -143,7 +143,7 @@
     "monaco-editor-webpack-plugin": "4.0.0",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.1",
-    "webpack": "5.39.0",
+    "webpack": "5.39.1",
     "webpack-cli": "4.7.2"
   }
 }
