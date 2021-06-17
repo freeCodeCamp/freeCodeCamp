@@ -17,5 +17,5 @@ export const fixCompletedChallengeItem = obj =>
     'solution',
     'githubLink',
     'challengeType',
-    'challengeFiles'
+    'files'
   ]);
