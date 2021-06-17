@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AsSeenLogo(
+function AsSeenIn(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ) {
   const fill = props.fill === 'dark' ? 'var(--gray-75)' : 'var(--gray-15)';
@@ -118,6 +118,6 @@ function AsSeenLogo(
   );
 }
 
-AsSeenLogo.displayName = 'AsSeenLogo';
+AsSeenIn.displayName = 'AsSeenIn';
 
-export default AsSeenLogo;
+export default AsSeenIn;
