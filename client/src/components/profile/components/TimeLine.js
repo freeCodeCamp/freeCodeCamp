@@ -23,7 +23,7 @@ import {
 } from '../../../../../utils';
 
 import { maybeUrlRE } from '../../../utils';
-import CertificationIcon from '../../../assets/icons/CertificationIcon';
+import CertificationIcon from '../../../assets/icons/certification-icon';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
 import envData from '../../../../../config/env.json';

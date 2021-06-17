@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Image } from '@freecodecamp/react-bootstrap';
-import DefaultAvatar from '../../assets/icons/DefaultAvatar';
+import DefaultAvatar from '../../assets/icons/default-avatar';
 import { defaultUserImage } from '../../../../config/misc';
 import { borderColorPicker } from '../helpers';
 import { useTranslation } from 'react-i18next';

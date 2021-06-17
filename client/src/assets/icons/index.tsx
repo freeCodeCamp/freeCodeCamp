@@ -1,15 +1,15 @@
 import React from 'react';
-import ResponsiveDesign from './ResponsiveDesign';
-import JavaScriptIcon from './JavaScriptIcon';
-import ReactIcon from './ReactIcon';
-import D3Icon from './D3Icon';
-import APIIcon from './APIIcon';
-import Clipboard from './Clipboard';
-import PythonIcon from './PythonIcon';
-import Analytics from './Analytics';
-import Shield from './Shield';
-import TensorflowIcon from './TensorflowIcon';
-import Algorithm from './Algorithm';
+import ResponsiveDesign from './responsive-design';
+import JavaScriptIcon from './JavaScript-icon';
+import ReactIcon from './React-icon';
+import D3Icon from './D3-icon';
+import APIIcon from './API-icon';
+import Clipboard from './clipboard';
+import PythonIcon from './python-icon';
+import Analytics from './analytics';
+import Shield from './shield';
+import TensorflowIcon from './Tensorflow-icon';
+import Algorithm from './algorithm';
 
 const iconMap = {
   'responsive-web-design': ResponsiveDesign,
