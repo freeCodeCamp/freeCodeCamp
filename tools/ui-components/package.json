@@ -41,6 +41,7 @@
     "postcss": "8.3.5",
     "postcss-import": "14.0.2",
     "tailwindcss": "2.2.0",
+    "rimraf": "^3.0.2",
     "rollup": "^2.52.1",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2"
@@ -50,6 +51,7 @@
     "storybook:theming": "npm run storybook --no-manager-cache",
     "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production rollup -c",
-    "dev": "cross-env NODE_ENV=development rollup -c -w"
+    "dev": "cross-env NODE_ENV=development rollup -c -w",
+    "clean": "rimraf dist/*"
   }
 }
