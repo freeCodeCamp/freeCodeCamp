@@ -36,6 +36,7 @@
     "@testing-library/react": "11.2.7",
     "autoprefixer": "10.2.6",
     "babel-loader": "8.2.2",
+    "cross-env": "^7.0.3",
     "postcss": "8.3.5",
     "postcss-import": "14.0.2",
     "tailwindcss": "2.2.0",
@@ -45,6 +46,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "storybook:theming": "npm run storybook --no-manager-cache",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "cross-env NODE_ENV=production rollup -c"
   }
 }
