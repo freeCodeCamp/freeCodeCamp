@@ -22,7 +22,7 @@ import DesktopLayout from './DesktopLayout';
 import Hotkeys from '../components/Hotkeys';
 
 import { getGuideUrl } from '../utils';
-import { isBrowser } from '../../../../utils';
+import store from 'store';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { isContained } from '../../../utils/is-contained';
 import { ChallengeNode } from '../../../redux/prop-types';
@@ -133,21 +133,20 @@ class ShowClassic extends Component {
   }
 
   getLayoutState() {
-    const item = isBrowser() && window.localStorage.getItem(REFLEX_LAYOUT);
+    const reflexLayout = store.get(REFLEX_LAYOUT);
 
     // Validate if user has not done any resize of the panes
-    if (!item) return BASE_LAYOUT;
+    if (!reflexLayout) return BASE_LAYOUT;
 
-    const itemJson = JSON.parse(item);
     // Check that the layout values stored are valid (exist in base layout). If
     // not valid, it will fallback to the base layout values and be set on next
     // user resize.
-    const itemIsContained = isContained(
+    const isValidLayout = isContained(
       Object.keys(BASE_LAYOUT),
-      Object.keys(itemJson)
+      Object.keys(reflexLayout)
     );
 
-    return itemIsContained ? itemJson : BASE_LAYOUT;
+    return isValidLayout ? reflexLayout : BASE_LAYOUT;
   }
 
   onResize() {
@@ -166,10 +165,7 @@ class ShowClassic extends Component {
 
     this.layoutState[name].flex = flex;
 
-    window.localStorage.setItem(
-      REFLEX_LAYOUT,
-      JSON.stringify(this.layoutState)
-    );
+    store.set(REFLEX_LAYOUT, this.layoutState);
   }
 
   componentDidMount() {
