@@ -62,9 +62,7 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   cancelTests: PropTypes.func.isRequired,
-  challengeFiles: PropTypes.shape({
-    key: PropTypes.string
-  }),
+  challengeFiles: PropTypes.array,
   challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
@@ -265,7 +263,7 @@ class ShowClassic extends Component {
 
   hasEditableBoundries() {
     const { challengeFiles } = this.props;
-    return Object.values(challengeFiles).some(
+    return challengeFiles.some(
       file =>
         file.editableRegionBoundaries &&
         file.editableRegionBoundaries.length === 2
@@ -382,7 +380,7 @@ export const query = graphql`
         src
       }
       challengeFiles {
-        indexcss {
+        [{
           key
           ext
           name
@@ -390,34 +388,7 @@ export const query = graphql`
           head
           tail
           editableRegionBoundaries
-        }
-        indexhtml {
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }
-        indexjs {
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }
-        indexjsx {
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }
+        }]
       }
     }
   }

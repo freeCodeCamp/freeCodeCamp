@@ -20,16 +20,17 @@ exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   if (!challClone.challengeFiles) {
     console.warn(`Challenge ${challClone.title} has no seed to translate`);
   } else {
-    Object.keys(challClone.challengeFiles).forEach(key => {
-      if (challClone.challengeFiles[key].contents) {
+    // TODO: Does not look correct @ShaunSHamilton
+    challClone.challengeFiles.forEach(challengeFile => {
+      if (challengeFile.contents) {
         let { text, commentCounts } = this.translateComments(
-          challenge.challengeFiles[key].contents,
+          challengeFile.contents,
           lang,
           dict,
-          challClone.challengeFiles[key].ext
+          challengeFile.ext
         );
         challClone.__commentCounts = commentCounts;
-        challClone.challengeFiles[key].contents = text;
+        challengeFile.contents = text;
       }
     });
   }

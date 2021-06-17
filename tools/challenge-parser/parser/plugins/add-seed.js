@@ -41,7 +41,7 @@ function addSeeds() {
     const contentsTree = root(getAllBetween(seedTree, `--seed-contents--`));
     const headTree = root(getAllBetween(seedTree, `--before-user-code--`));
     const tailTree = root(getAllBetween(seedTree, `--after-user-code--`));
-    const seeds = {};
+    const seeds = [];
 
     // While before and after code are optional, the contents are not
     if (isEmpty(contentsTree.children))
@@ -61,20 +61,22 @@ function addSeeds() {
     };
 
     // process region markers - remove them from content and add them to data
-    Object.keys(seeds).forEach(key => {
-      const fileData = seeds[key];
-      const editRegionMarkers = findRegionMarkers(fileData);
-      if (editRegionMarkers) {
-        fileData.contents = removeLines(fileData.contents, editRegionMarkers);
+    seeds
+      .map(x => x.fileKey)
+      .forEach(key => {
+        const fileData = seeds.find(x => x.fileKey === key);
+        const editRegionMarkers = findRegionMarkers(fileData);
+        if (editRegionMarkers) {
+          fileData.contents = removeLines(fileData.contents, editRegionMarkers);
 
-        if (editRegionMarkers[1] <= editRegionMarkers[0]) {
-          throw Error('Editable region must be non zero');
+          if (editRegionMarkers[1] <= editRegionMarkers[0]) {
+            throw Error('Editable region must be non zero');
+          }
+          fileData.editableRegionBoundaries = editRegionMarkers;
+        } else {
+          fileData.editableRegionBoundaries = [];
         }
-        fileData.editableRegionBoundaries = editRegionMarkers;
-      } else {
-        fileData.editableRegionBoundaries = [];
-      }
-    });
+      });
   }
 
   return transformer;

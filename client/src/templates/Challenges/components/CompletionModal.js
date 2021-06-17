@@ -72,7 +72,7 @@ const propTypes = {
   allowBlockDonationRequests: PropTypes.func,
   block: PropTypes.string,
   blockName: PropTypes.string,
-  challengeFiles: PropTypes.object.isRequired,
+  challengeFiles: PropTypes.array.isRequired,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
   currentBlockIds: PropTypes.array,
@@ -129,10 +129,10 @@ export class CompletionModalInner extends Component {
       URL.revokeObjectURL(downloadURL);
     }
     let newURL = null;
-    if (Object.keys(challengeFiles).length) {
-      const filesForDownload = Object.keys(challengeFiles)
-        .map(key => challengeFiles[key])
-        .reduce((allFiles, { path, contents }) => {
+    // TODO: Complete this @ShaunSHamilton
+    if (challengeFiles?.length) {
+      const filesForDownload = challengeFiles.reduce(
+        (allFiles, { path, contents }) => {
           const beforeText = `** start of ${path} **\n\n`;
           const afterText = `\n\n** end of ${path} **\n\n`;
           allFiles +=
@@ -140,7 +140,9 @@ export class CompletionModalInner extends Component {
               ? beforeText + contents + afterText
               : contents;
           return allFiles;
-        }, '');
+        },
+        ''
+      );
       const blob = new Blob([filesForDownload], {
         type: 'text/json'
       });

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const FileType = PropTypes.shape({
+export const FileType = PropTypes.shape({
   key: PropTypes.string,
   ext: PropTypes.string,
   name: PropTypes.string,
@@ -24,10 +24,7 @@ export const ChallengeNode = PropTypes.shape({
   challengeType: PropTypes.number,
   dashedName: PropTypes.string,
   description: PropTypes.string,
-  challengeFiles: PropTypes.shape({
-    indexhtml: FileType,
-    indexjs: FileType
-  }),
+  challengeFiles: PropTypes.array,
   fields: PropTypes.shape({
     slug: PropTypes.string,
     blockName: PropTypes.string
@@ -83,7 +80,7 @@ export const User = PropTypes.shape({
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
       completedDate: PropTypes.number,
-      challengeFiles: PropTypes.object
+      challengeFiles: PropTypes.array
     })
   ),
   email: PropTypes.string,

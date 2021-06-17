@@ -22,7 +22,7 @@ export const backendNS = 'backendChallenge';
 const initialState = {
   canFocusEditor: true,
   visibleEditors: {},
-  challengeFiles: {},
+  challengeFiles: [],
   challengeMeta: {
     superBlock: '',
     block: '',
@@ -107,25 +107,22 @@ export const sagas = [
 
 // TODO: can createPoly handle editable region, rather than separating it?
 export const createFiles = createAction(types.createFiles, challengeFiles =>
-  Object.keys(challengeFiles)
-    .filter(key => challengeFiles[key])
-    .map(key => challengeFiles[key])
-    .reduce(
-      (challengeFiles, challengeFile) => ({
-        ...challengeFiles,
-        [challengeFile.key]: {
-          ...createPoly(challengeFile),
-          seed: challengeFile.contents.slice(),
-          editableContents: getLines(
-            challengeFile.contents,
-            challengeFile.editableRegionBoundaries
-          ),
-          seedEditableRegionBoundaries:
-            challengeFile.editableRegionBoundaries.slice()
-        }
-      }),
-      {}
-    )
+  challengeFiles.reduce(
+    (challengeFiles, challengeFile) => ({
+      ...challengeFiles,
+      [challengeFile.key]: {
+        ...createPoly(challengeFile),
+        seed: challengeFile.contents.slice(),
+        editableContents: getLines(
+          challengeFile.contents,
+          challengeFile.editableRegionBoundaries
+        ),
+        seedEditableRegionBoundaries:
+          challengeFile.editableRegionBoundaries.slice()
+      }
+    }),
+    {}
+  )
 );
 
 export const createQuestion = createAction(types.createQuestion);
@@ -256,20 +253,21 @@ export const reducer = handleActions(
       challengeFiles: payload,
       visibleEditors: { [getTargetEditor(payload)]: true }
     }),
+    // TODO: Complete this @ShaunSHamilton
     [types.updateFile]: (
       state,
       { payload: { key, editorValue, editableRegionBoundaries } }
     ) => ({
       ...state,
-      challengeFiles: {
+      challengeFiles: [
         ...state.challengeFiles,
-        [key]: {
-          ...state.challengeFiles[key],
+        {
+          ...state.challengeFiles.find(x => x.fileKey === key),
           contents: editorValue,
           editableContents: getLines(editorValue, editableRegionBoundaries),
           editableRegionBoundaries
         }
-      }
+      ]
     }),
     [types.storedCodeFound]: (state, { payload }) => ({
       ...state,
@@ -310,17 +308,16 @@ export const reducer = handleActions(
       ...state,
       challengeMeta: { ...payload }
     }),
-
+    // TODO: Complete this @ShaunSHamilton
     [types.resetChallenge]: state => ({
       ...state,
       currentTab: 2,
-      challengeFiles: {
-        ...Object.keys(state.challengeFiles)
-          .map(key => state.challengeFiles[key])
+      challengeFiles: [
+        ...state.challengeFiles
           .reduce(
             (challengeFiles, challengeFile) => ({
               ...challengeFiles,
-              [challengeFile.key]: {
+              {
                 ...challengeFile,
                 contents: challengeFile.seed.slice(),
                 editableContents: getLines(
@@ -333,7 +330,7 @@ export const reducer = handleActions(
             }),
             {}
           )
-      },
+          ],
       challengeTests: state.challengeTests.map(({ text, testString }) => ({
         text,
         testString

@@ -32,7 +32,7 @@ const propTypes = {
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
       completedDate: PropTypes.number,
-      challengeFiles: PropTypes.object
+      challengeFiles: PropTypes.array
     })
   ),
   createFlashMessage: PropTypes.func.isRequired,
@@ -177,7 +177,7 @@ export class CertificationSettings extends Component {
           isOpen: true
         }
       });
-    if (challengeFiles && Object.entries(challengeFiles).length) {
+    if (challengeFiles?.length) {
       return (
         <Button
           block={true}

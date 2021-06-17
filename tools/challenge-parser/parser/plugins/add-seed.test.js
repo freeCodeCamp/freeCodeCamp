@@ -49,7 +49,7 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const testObject = challengeFiles.indexjs;
+    const testObject = challengeFiles.find(x => x.fileKey === 'indexjs');
     expect(Object.keys(testObject).length).toEqual(8);
     expect(testObject).toHaveProperty('key');
     expect(typeof testObject['key']).toBe('string');
@@ -75,7 +75,17 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
+      (challengeObjs, challengeObj) => {
+        return {
+          ...challengeObjs,
+          [challengeObj.fileKey]: {
+            ...challengeObj
+          }
+        };
+      },
+      {}
+    );
 
     expect(indexjs.contents).toBe(`var x = 'y';`);
     expect(indexjs.key).toBe(`indexjs`);
@@ -96,7 +106,7 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexcss } = challengeFiles;
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexcss.contents).not.toMatch('--fcc-editable-region--');
     expect(indexcss.editableRegionBoundaries).toEqual([1, 4]);
@@ -110,7 +120,17 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexhtml, indexcss, indexjs } = challengeFiles;
+    const { indexhtml, indexcss, indexjs } = challengeFiles.reduce(
+      (challengeObjs, challengeObj) => {
+        return {
+          ...challengeObjs,
+          [challengeObj.fileKey]: {
+            ...challengeObj
+          }
+        };
+      },
+      {}
+    );
 
     expect(indexhtml.id).toBe('');
     expect(indexcss.id).toBe('key-for-css');
@@ -141,7 +161,17 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
+      (challengeObjs, challengeObj) => {
+        return {
+          ...challengeObjs,
+          [challengeObj.fileKey]: {
+            ...challengeObj
+          }
+        };
+      },
+      {}
+    );
 
     expect(indexjs.head).toBe('');
     expect(indexhtml.head).toBe(`<!-- comment -->`);
@@ -156,7 +186,17 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
+      (challengeObjs, challengeObj) => {
+        return {
+          ...challengeObjs,
+          [challengeObj.fileKey]: {
+            ...challengeObj
+          }
+        };
+      },
+      {}
+    );
 
     expect(indexjs.tail).toBe(`function teardown(params) {
   // after
@@ -191,7 +231,17 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
+      (challengeObjs, challengeObj) => {
+        return {
+          ...challengeObjs,
+          [challengeObj.fileKey]: {
+            ...challengeObj
+          }
+        };
+      },
+      {}
+    );
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('function teardown(params) {\n  // after\n}');
@@ -207,7 +257,17 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles;
+    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
+      (challengeObjs, challengeObj) => {
+        return {
+          ...challengeObjs,
+          [challengeObj.fileKey]: {
+            ...challengeObj
+          }
+        };
+      },
+      {}
+    );
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('');
@@ -237,7 +297,7 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjsx } = challengeFiles;
+    const indexjsx = challengeFiles.find(x => x.fileKey === 'indexjsx');
 
     expect(indexjsx.head).toBe(`function setup() {}`);
     expect(indexjsx.tail).toBe(`function teardown(params) {

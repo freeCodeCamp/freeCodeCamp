@@ -1,5 +1,5 @@
-exports.challengeFiles = {
-  indexcss: {
+exports.challengeFiles = [
+  {
     contents: 'some css',
     error: null,
     ext: 'css',
@@ -11,7 +11,7 @@ exports.challengeFiles = {
     seed: 'some css',
     tail: ''
   },
-  indexhtml: {
+  {
     contents: 'some html',
     error: null,
     ext: 'html',
@@ -23,7 +23,7 @@ exports.challengeFiles = {
     seed: 'some html',
     tail: ''
   },
-  indexjs: {
+  {
     contents: 'some js',
     error: null,
     ext: 'js',
@@ -35,7 +35,7 @@ exports.challengeFiles = {
     seed: 'some js',
     tail: ''
   },
-  indexjsx: {
+  {
     contents: 'some jsx',
     error: null,
     ext: 'jsx',
@@ -47,4 +47,4 @@ exports.challengeFiles = {
     seed: 'some jsx',
     tail: ''
   }
-};
+];

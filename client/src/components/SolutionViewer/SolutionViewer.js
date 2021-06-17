@@ -14,8 +14,8 @@ const SolutionViewer = ({
   challengeFiles,
   solution = '// The solution is not available for this project'
 }) =>
-  challengeFiles && Object.entries(challengeFiles).length ? (
-    challengeFiles['indexhtml'].map(file => (
+  challengeFiles?.length ? (
+    challengeFiles.map(file => (
       <Panel bsStyle='primary' className='solution-viewer' key={file.ext}>
         <Panel.Heading>{file.ext.toUpperCase()}</Panel.Heading>
         <Panel.Body>

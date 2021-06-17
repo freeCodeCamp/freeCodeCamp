@@ -9,7 +9,7 @@ import envData from '../../../../../config/env.json';
 const { showUpcomingChanges } = envData;
 
 const propTypes = {
-  challengeFiles: PropTypes.object,
+  challengeFiles: PropTypes.array,
   editor: PropTypes.element,
   hasEditableBoundries: PropTypes.bool,
   hasPreview: PropTypes.bool,
@@ -45,7 +45,7 @@ class DesktopLayout extends Component {
 
   getChallengeFile() {
     const { challengeFiles } = this.props;
-    return first(Object.keys(challengeFiles).map(key => challengeFiles[key]));
+    return first(challengeFiles);
   }
 
   render() {

@@ -18,7 +18,7 @@ const propTypes = {
         id: PropTypes.string,
         solution: PropTypes.string,
         githubLink: PropTypes.string,
-        challengeFiles: PropTypes.object
+        challengeFiles: PropTypes.array
         // PropTypes.shape({
         //   contents: PropTypes.string,
         //   ext: PropTypes.string,
@@ -69,7 +69,7 @@ const ShowProjectLinks = props => {
         isOpen: true
       });
 
-    if (challengeFiles && Object.entries(challengeFiles).length) {
+    if (challengeFiles && challengeFiles.length) {
       return (
         <button
           onClick={onClickHandler}

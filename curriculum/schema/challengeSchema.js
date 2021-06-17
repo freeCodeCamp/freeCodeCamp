@@ -37,12 +37,7 @@ const schema = Joi.object()
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
-    challengeFiles: Joi.object().keys({
-      indexcss: fileJoi,
-      indexhtml: fileJoi,
-      indexjs: fileJoi,
-      indexjsx: fileJoi
-    }),
+    challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     helpCategory: Joi.valid('JavaScript', 'HTML-CSS', 'Python'),
     videoUrl: Joi.string().allow(''),

@@ -99,15 +99,7 @@ const propsForOnlySolution = {
     {
       id: '5e46f7f8ac417301a38fb92a',
       completedDate: 1604043678032,
-      challengeFiles: {
-        indexhtml: {
-          contents,
-          ext,
-          key,
-          name,
-          path
-        }
-      }
+      challengeFiles: [{ contents, ext, key, name, path }]
     }
   ],
   username: 'developmentuser'

@@ -46,7 +46,7 @@ const propTypes = {
       completedDate: PropTypes.number,
       challengeType: PropTypes.number,
       solution: PropTypes.string,
-      challengeFiles: PropTypes.object
+      challengeFiles: PropTypes.array
       //   PropTypes.shape({
       //     ext: PropTypes.string,
       //     contents: PropTypes.string
@@ -70,7 +70,7 @@ const innerPropTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       completedDate: PropTypes.number,
-      challengeFiles: PropTypes.object
+      challengeFiles: PropTypes.array
       //   PropTypes.shape({
       //     ext: PropTypes.string,
       //     contents: PropTypes.string
@@ -105,7 +105,7 @@ class TimelineInner extends Component {
 
   renderViewButton(id, challengeFiles, githubLink, solution) {
     const { t } = this.props;
-    if (challengeFiles && Object.entries(challengeFiles).length) {
+    if (challengeFiles?.length) {
       return (
         <Button
           block={true}

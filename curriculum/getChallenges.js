@@ -326,6 +326,7 @@ function filesToObject(files) {
 }
 
 // gets the challenge ready for sourcing into Gatsby
+// TODO: Complete this @ShaunSHamilton
 function prepareChallenge(challenge) {
   if (challenge.challengeFiles) {
     challenge.challengeFiles = filesToObject(challenge.challengeFiles);

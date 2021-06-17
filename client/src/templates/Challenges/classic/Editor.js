@@ -26,7 +26,7 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 const propTypes = {
   canFocus: PropTypes.bool,
   // TODO: use shape
-  challengeFiles: PropTypes.object,
+  challengeFiles: PropTypes.array,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   description: PropTypes.string,
@@ -200,8 +200,12 @@ class Editor extends Component {
 
   getEditableRegion = () => {
     const { challengeFiles, fileKey } = this.props;
-    return challengeFiles[fileKey].editableRegionBoundaries
-      ? [...challengeFiles[fileKey].editableRegionBoundaries]
+    return challengeFiles.find(x => x.fileKey === fileKey)
+      .editableRegionBoundaries
+      ? [
+          ...challengeFiles.find(x => x.fileKey === fileKey)
+            .editableRegionBoundaries
+        ]
       : [];
   };
 
@@ -219,8 +223,8 @@ class Editor extends Component {
     const model =
       this.data.model ||
       monaco.editor.createModel(
-        challengeFiles[fileKey].contents,
-        modeMap[challengeFiles[fileKey].ext]
+        challengeFiles.find(x => x.fileKey === fileKey).contents,
+        modeMap[challengeFiles.find(x => x.fileKey === fileKey).ext]
       );
     this.data.model = model;
 
@@ -237,7 +241,9 @@ class Editor extends Component {
   updateEditorValues = () => {
     const { challengeFiles, fileKey } = this.props;
 
-    const newContents = challengeFiles[fileKey].contents;
+    const newContents = challengeFiles.find(
+      x => x.fileKey === fileKey
+    )?.contents;
     if (this.data.model.getValue() !== newContents) {
       this.data.model.setValue(newContents);
     }

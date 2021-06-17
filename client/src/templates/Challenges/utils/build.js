@@ -58,6 +58,8 @@ function buildSourceMap(challengeFiles) {
   // A better solution is to store and handle them separately. Perhaps never
   // setting the name to 'index'. Use 'contents' instead?
   // TODO: is file.source ever defined?
+
+  // TODO: Does not look correct @ShaunSHamilton
   return challengeFiles.reduce(
     (sources, challengeFile) => {
       sources[challengeFile.name] +=
@@ -163,9 +165,7 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
 export function buildJSChallenge({ challengeFiles }, options) {
   const pipeLine = composeFunctions(...getTransformers(options));
 
-  const finalFiles = Object.keys(challengeFiles)
-    .map(key => challengeFiles[key])
-    .map(pipeLine);
+  const finalFiles = challengeFiles.map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
     .then(files => ({

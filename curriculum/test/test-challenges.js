@@ -326,7 +326,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
             //   currently have the text of a comment elsewhere. If that happens
             //   we can handle that challenge separately.
             TRANSLATABLE_COMMENTS.forEach(comment => {
-              Object.values(challenge.challengeFiles).forEach(file => {
+              challenge.challengeFiles.forEach(file => {
                 if (file.contents.includes(comment))
                   throw Error(
                     `English comment '${comment}' should be replaced with its translation`
@@ -336,7 +336,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
             // - None of the translated comment texts should appear *outside* a
             //   comment
-            Object.values(challenge.challengeFiles).forEach(file => {
+            // TODO: Does not look correct @ShaunSHamilton
+            challenge.challengeFiles.forEach(file => {
               let comments = {};
 
               // We get all the actual comments using the appropriate parsers
@@ -464,7 +465,8 @@ ${inspect(commentMap)}
                 const challengeFile = solutionFiles[key];
                 challengeFile.editableContents = getLines(
                   challengeFile.contents,
-                  challenge.challengeFiles[key].editableRegionBoundaries
+                  challenge.challengeFiles.find(x => x.fileKey === key)
+                    .editableRegionBoundaries
                 );
               });
               solutions = [solutionFiles];
@@ -527,8 +529,10 @@ async function createTestRunner(
   const challengeFiles = cloneDeep(challenge.challengeFiles);
 
   Object.keys(solution).forEach(key => {
-    challengeFiles[key].contents = solution[key].contents;
-    challengeFiles[key].editableContents = solution[key].editableContents;
+    challengeFiles.find(x => x.fileKey === key).contents =
+      solution[key].contents;
+    challengeFiles.find(x => x.fileKey === key).editableContents =
+      solution[key].editableContents;
   });
 
   const { build, sources, loadEnzyme } = await buildChallenge({

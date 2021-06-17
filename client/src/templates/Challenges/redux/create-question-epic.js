@@ -15,9 +15,8 @@ import i18next from 'i18next';
 const { forumLocation } = envData;
 
 function filesToMarkdown(challengeFiles = {}) {
-  const moreThenOneFile = Object.keys(challengeFiles).length > 1;
-  return Object.keys(challengeFiles).reduce((fileString, key) => {
-    const challengeFile = challengeFiles[key];
+  const moreThenOneFile = challengeFiles?.length > 1;
+  return challengeFiles.reduce((fileString, challengeFile) => {
     if (!challengeFile) {
       return fileString;
     }

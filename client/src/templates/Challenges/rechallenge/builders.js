@@ -57,7 +57,7 @@ export const cssToHtml = cond([
 ]);
 
 export function findIndexHtml(challengeFiles) {
-  const filtered = Object.values(challengeFiles).filter(challengeFile =>
+  const filtered = challengeFiles.filter(challengeFile =>
     wasHtmlFile(challengeFile)
   );
   if (filtered.length > 1) {
@@ -73,7 +73,7 @@ function wasHtmlFile(challengeFile) {
 export function concatHtml({
   required = [],
   template,
-  challengeFiles = {}
+  challengeFiles = []
 } = {}) {
   const createBody = template ? _template(template) : defaultTemplate;
   const head = required
@@ -95,20 +95,17 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
 
   const indexHtml = findIndexHtml(challengeFiles);
 
-  const source = Object.values(challengeFiles).reduce(
-    (source, challengeFile) => {
-      if (!indexHtml) return source.concat(challengeFile.contents, htmlCatch);
-      if (
-        indexHtml.importedFiles.includes(challengeFile.history[0]) ||
-        wasHtmlFile(challengeFile)
-      ) {
-        return source.concat(challengeFile.contents, htmlCatch);
-      } else {
-        return source;
-      }
-    },
-    ''
-  );
+  const source = challengeFiles.reduce((source, challengeFile) => {
+    if (!indexHtml) return source.concat(challengeFile.contents, htmlCatch);
+    if (
+      indexHtml.importedFiles.includes(challengeFile.history[0]) ||
+      wasHtmlFile(challengeFile)
+    ) {
+      return source.concat(challengeFile.contents, htmlCatch);
+    } else {
+      return source;
+    }
+  }, '');
 
   return `<head>${head}</head>${createBody({ source })}`;
 }

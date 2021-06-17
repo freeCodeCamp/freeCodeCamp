@@ -51,15 +51,18 @@ function getLegacyCode(legacy) {
 
 function legacyToFile(code, challengeFiles, key) {
   if (isFilesAllPoly(challengeFiles)) {
-    return { [key]: setContent(code, challengeFiles[key]) };
+    return {
+      [key]: setContent(
+        code,
+        challengeFiles.find(x => x.fileKey === key)
+      )
+    };
   }
   return false;
 }
 
 function isFilesAllPoly(challengeFiles) {
-  return Object.keys(challengeFiles)
-    .map(key => challengeFiles[key])
-    .every(file => isPoly(file));
+  return challengeFiles.every(file => isPoly(file));
 }
 
 function clearCodeEpic(action$, state$) {
@@ -86,7 +89,8 @@ function saveCodeEpic(action$, state$) {
         store.set(id, challengeFiles);
         // Possible fileType values: indexhtml indexjs indexjsx
         // The files Object always has one of these as the first/only attribute
-        const fileType = Object.keys(challengeFiles)[0];
+        // TODO: Complete this @ShaunSHamilton
+        const fileType = challengeFiles[0];
         if (
           store.get(id)[fileType].contents !== challengeFiles[fileType].contents
         ) {
@@ -117,40 +121,38 @@ function loadCodeEpic(action$, state$) {
     ofType(types.challengeMounted),
     filter(() => {
       const challengeFiles = challengeFilesSelector(state$.value);
-      return Object.keys(challengeFiles).length > 0;
+      return challengeFiles?.length > 0;
     }),
     switchMap(({ payload: id }) => {
       let finalFiles;
       const state = state$.value;
       const challenge = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
-      const fileKeys = Object.keys(challengeFiles);
+      const fileKeys = challengeFiles.map(x => x.fileKey);
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
 
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = {
-          ...fileKeys
-            .map(key => challengeFiles[key])
-            .reduce(
-              (challengeFiles, challengeFile) => ({
-                ...challengeFiles,
-                [challengeFile.key]: {
-                  ...challengeFile,
-                  contents: codeFound[challengeFile.key]
-                    ? codeFound[challengeFile.key].contents
-                    : challengeFile.contents,
-                  editableContents: codeFound[challengeFile.key]
-                    ? codeFound[challengeFile.key].editableContents
-                    : challengeFile.editableContents,
-                  editableRegionBoundaries: codeFound[challengeFile.key]
-                    ? codeFound[challengeFile.key].editableRegionBoundaries
-                    : challengeFile.editableRegionBoundaries
-                }
-              }),
-              {}
-            )
+          ...challengeFiles.reduce(
+            (challengeFiles, challengeFile) => ({
+              ...challengeFiles,
+              [challengeFile.fileKey]: {
+                ...challengeFile,
+                contents: codeFound[challengeFile.fileKey]
+                  ? codeFound[challengeFile.fileKey].contents
+                  : challengeFile.contents,
+                editableContents: codeFound[challengeFile.fileKey]
+                  ? codeFound[challengeFile.fileKey].editableContents
+                  : challengeFile.editableContents,
+                editableRegionBoundaries: codeFound[challengeFile.fileKey]
+                  ? codeFound[challengeFile.fileKey].editableRegionBoundaries
+                  : challengeFile.editableRegionBoundaries
+              }
+            }),
+            {}
+          )
         };
       } else {
         const legacyCode = getLegacyCode(legacyKey);
