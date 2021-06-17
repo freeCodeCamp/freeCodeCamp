@@ -5,10 +5,22 @@ import commonjs from '@rollup/plugin-commonjs';
 
 const config = {
   input: 'src/index.js',
-  output: {
-    file: 'dist/bundle.js',
-    format: 'cjs'
-  },
+  output: [
+    {
+      file: 'dist/bundle.js',
+      format: 'cjs'
+    },
+    {
+      file: 'dist/bundle.esm.js',
+      format: 'es'
+    },
+    {
+      file: 'dist/bundle.iife.js',
+      format: 'iife',
+      globals: { react: 'React' },
+      name: 'uiComponents'
+    }
+  ],
   plugins: [
     nodeResolve(),
     postcss(),
