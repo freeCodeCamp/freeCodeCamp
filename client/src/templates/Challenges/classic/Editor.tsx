@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense, RefObject } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import Loadable from '@loadable/component';
 
 import {
   canFocusEditorSelector,
@@ -25,7 +26,7 @@ import {
   TestType
 } from '../../../redux/prop-types';
 import { Range } from 'monaco-editor/esm/vs/editor/editor.api';
-import MonacoEditor from 'react-monaco-editor';
+
 // eslint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
 import type {
@@ -36,6 +37,8 @@ import type {
 } from 'monaco-editor/esm/vs/editor/editor.api';
 
 import './editor.css';
+
+const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 type PropTypes = {
   canFocus: boolean;
