@@ -40,7 +40,7 @@ assert(
 `nonMutatingSort(globalArray)` 不应被硬编码。
 
 ```js
-assert(!nonMutatingSort.toString().match(/[23569]/g));
+assert(!nonMutatingSort.toString().match(/\[.*?[23569].*?\]/gs));
 ```
 
 函数应该返回一个新数组，而不是传递给它的数组。

@@ -105,10 +105,10 @@
     "@babel/preset-typescript": "7.14.5",
     "@testing-library/cypress": "7.0.6",
     "@testing-library/dom": "7.31.2",
-    "@testing-library/jest-dom": "5.13.0",
+    "@testing-library/jest-dom": "5.14.1",
     "@testing-library/user-event": "13.1.9",
-    "@typescript-eslint/eslint-plugin": "4.26.1",
-    "@typescript-eslint/parser": "4.26.1",
+    "@typescript-eslint/eslint-plugin": "4.27.0",
+    "@typescript-eslint/parser": "4.27.0",
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
@@ -139,7 +139,7 @@
     "process": "0.11.10",
     "shx": "0.3.3",
     "start-server-and-test": "1.12.5",
-    "typescript": "4.3.2",
+    "typescript": "4.3.3",
     "webpack-bundle-analyzer": "4.4.2"
   }
 }

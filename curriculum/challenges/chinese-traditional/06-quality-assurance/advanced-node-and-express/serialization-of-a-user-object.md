@@ -12,7 +12,7 @@ dashedName: serialization-of-a-user-object
 
 我們需要用到序列化和反序列化的方法來進行配置。 passport 爲我們提供了 `passport.serializeUser( OURFUNCTION )` 和 `passport.deserializeUser( OURFUNCTION )` 兩個方法。
 
-`serializeUser` 方法接收兩個參數，分別是表示用戶的對象和一個回調函數。 其中，回調函數的返回值應爲這個用戶的唯一標識符：最簡單的寫法就是讓它返回用戶的 `_id`。 這個屬性是 MongoDB 爲用戶創建的唯一字段。 類似地，`deserializeUser` 也接收兩個參數，分別是在序列化時生成的標識符以及一個回調函數。在回調函數裏，我們需要根據根據傳入的標識符（比如 \_id）返回表示用戶的對象。 爲了在 MongoDB 中通過 query（查詢語句）獲取 `_id` 字段，首先我們需要創建 `const ObjectID = require('mongodb').ObjectID;`；然後調用它：`new ObjectID(THE_ID)`。 當然，這一切的前提都是先引入 MongoDB 作爲依賴。 你可以在下面的例子中看到：
+`serializeUser` 方法接收兩個參數，分別是表示用戶的對象和一個回調函數。 其中，回調函數的返回值應爲這個用戶的唯一標識符：最簡單的寫法就是讓它返回用戶的 `_id`。 它應當是唯一的，是由 MongoDB 產生的。 類似地，`deserializeUser` 也接收兩個參數，分別是在序列化時生成的標識符以及一個回調函數。在回調函數裏，我們需要根據根據傳入的標識符（比如 \_id）返回表示用戶的對象。 爲了在 MongoDB 中通過 query（查詢語句）獲取 `_id` 字段，首先我們需要創建 `const ObjectID = require('mongodb').ObjectID;`；然後調用它：`new ObjectID(THE_ID)`。 確保添加 `mongodb@~3.6.0` 作爲依賴項。 你可以在下面的例子中看到：
 
 ```js
 passport.serializeUser((user, done) => {
