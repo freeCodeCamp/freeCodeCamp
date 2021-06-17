@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-Il tuo `form` dovrebbe avere un attributo `action` impostato su `https://www.freecatphotoapp.com/submit-cat-photo`
+Il tuo `form` dovrebbe avere un attributo `action` impostato su `https://www.freecatphotoapp.com/submit-cat-photo`.
 
 ```js
 const action = $('form').attr('action');
