@@ -1,6 +1,8 @@
 import React from 'react';
 
-function SpotifyLogo(props: any & React.SVGProps<SVGSVGElement>) {
+function SpotifyLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): React.ReactNode {
   return (
     <svg
       id='spotify-logo'

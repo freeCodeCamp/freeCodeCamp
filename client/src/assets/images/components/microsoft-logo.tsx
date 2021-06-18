@@ -1,6 +1,8 @@
 import React from 'react';
 
-function MicrosoftLogo(props: any & React.SVGProps<SVGSVGElement>) {
+function MicrosoftLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): React.ReactNode {
   return (
     <svg
       id='microsoft-logo'

@@ -1,6 +1,8 @@
 import React from 'react';
 
-function AppleLogo(props: any & React.SVGProps<SVGSVGElement>) {
+function AppleLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): React.ReactNode {
   return (
     <svg
       id='apple-logo'

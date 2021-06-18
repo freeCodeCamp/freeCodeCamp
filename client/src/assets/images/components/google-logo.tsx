@@ -1,6 +1,8 @@
 import React from 'react';
 
-function GoogleLogo(props: any & React.SVGProps<SVGSVGElement>) {
+function GoogleLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): React.ReactNode {
   return (
     <svg
       id='google-logo'

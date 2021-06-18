@@ -2,7 +2,7 @@ import React from 'react';
 
 function AsSeenIn(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-) {
+): React.ReactNode {
   const fill = props.fill === 'dark' ? 'var(--gray-75)' : 'var(--gray-15)';
   return (
     <svg
