@@ -20,7 +20,7 @@ assert.match(new __helpers.CSSHelp(document).getStyle(".fb6")?.getPropVal('backg
 You should give the second `repeating-linear-gradient` a first color of `--window-color3` from `0%` to `10%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyle(".fb6")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color3\)(0%),var\(--building-color3\)10%,transparent10%,transparent30%\),repeating-linear-gradient\(var\(--window-color3\)(0%)?,var\(--window-color3\)10%/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".fb6")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color3\)(0%)?,var\(--building-color3\)10%,transparent10%,transparent30%\),repeating-linear-gradient\(var\(--window-color3\)(0%)?,var\(--window-color3\)10%/);
 ```
 
 You should give the second `repeating-linear-gradient` a second color of `transparent` from `10%` to `30%`.
@@ -406,4 +406,3 @@ body {
 --fcc-editable-region--
 
 ```
-
