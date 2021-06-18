@@ -9,7 +9,7 @@ function BlockSaveWrapper({
   ...restProps
 }: {
   children?: React.ReactNode;
-}) {
+}): JSX.Element {
   return (
     <div style={style} {...restProps}>
       {children}

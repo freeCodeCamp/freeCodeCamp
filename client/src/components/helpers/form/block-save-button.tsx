@@ -7,7 +7,7 @@ function BlockSaveButton({
   ...restProps
 }: {
   children?: React.ReactNode;
-}) {
+}): JSX.Element {
   const { t } = useTranslation();
 
   return (
