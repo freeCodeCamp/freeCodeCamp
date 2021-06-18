@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
@@ -9,12 +10,12 @@ import HonestyPolicy from '../../resources/honesty-policy';
 
 import './honesty.css';
 
-const propTypes = {
-  isHonest: PropTypes.bool,
-  updateIsHonest: PropTypes.func.isRequired
+type HonestyProps = {
+  isHonest?: boolean;
+  updateIsHonest: (obj: { isHonest: boolean }) => void;
 };
 
-const Honesty = ({ isHonest, updateIsHonest }) => {
+const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
   const { t } = useTranslation();
   const button = isHonest ? (
     <Button
@@ -49,6 +50,5 @@ const Honesty = ({ isHonest, updateIsHonest }) => {
 };
 
 Honesty.displayName = 'Honesty';
-Honesty.propTypes = propTypes;
 
 export default Honesty;
