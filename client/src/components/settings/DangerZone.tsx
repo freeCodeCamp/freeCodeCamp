@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
+import type { Dispatch } from 'redux';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import { deleteAccount, resetProgress } from '../../redux/settings';
@@ -12,14 +14,19 @@ import ResetModal from './ResetModal';
 
 import './danger-zone.css';
 
-const propTypes = {
-  deleteAccount: PropTypes.func.isRequired,
-  resetProgress: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired
+type DangerZoneProps = {
+  deleteAccount: () => void;
+  resetProgress: () => void;
+  t: (str: string) => JSX.Element;
+};
+
+type DangerZoneState = {
+  reset: boolean;
+  delete: boolean;
 };
 
 const mapStateToProps = () => ({});
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       deleteAccount,
@@ -28,7 +35,8 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-class DangerZone extends Component {
+class DangerZone extends Component<DangerZoneProps, DangerZoneState> {
+  static displayName: string;
   constructor(props) {
     super(props);
     this.state = {
@@ -103,7 +111,6 @@ class DangerZone extends Component {
 }
 
 DangerZone.displayName = 'DangerZone';
-DangerZone.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
