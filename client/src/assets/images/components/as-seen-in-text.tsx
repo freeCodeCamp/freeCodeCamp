@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AsSeenIn(
+function AsSeenInText(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): React.ReactNode {
   const fill = props.fill === 'dark' ? 'var(--gray-75)' : 'var(--gray-15)';
@@ -118,6 +118,6 @@ function AsSeenIn(
   );
 }
 
-AsSeenIn.displayName = 'AsSeenIn';
+AsSeenInText.displayName = 'AsSeenInText';
 
-export default AsSeenIn;
+export default AsSeenInText;
