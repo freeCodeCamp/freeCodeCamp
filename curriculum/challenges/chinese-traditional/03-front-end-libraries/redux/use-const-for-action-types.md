@@ -88,8 +88,9 @@ assert(
 ```js
 const noWhiteSpace = __helpers.removeWhiteSpace(code);
 assert(
-  /constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) &&
-    /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace)
+  (/constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) &&
+    /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace)) ||
+      /const(LOGIN|LOGOUT)=(['"`])\1\2,(?!\1)(LOGIN|LOGOUT)=(['"`])\3\4/.test(noWhiteSpace)
 );
 ```
 
