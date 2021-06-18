@@ -96,7 +96,11 @@ class DesktopLayout extends Component {
           <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
             <ReflexContainer orientation='vertical'>
               {!projectBasedChallenge && (
-                <ReflexElement flex={1} {...resizeProps}>
+                <ReflexElement
+                  flex={instructionPane.flex}
+                  name='instructionPane'
+                  {...resizeProps}
+                >
                   {instructions}
                 </ReflexElement>
               )}
@@ -104,7 +108,11 @@ class DesktopLayout extends Component {
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}
 
-              <ReflexElement flex={1} {...resizeProps}>
+              <ReflexElement
+                flex={editorPane.flex}
+                name='editorPane'
+                {...resizeProps}
+              >
                 {challengeFile &&
                   showUpcomingChanges &&
                   !hasEditableBoundries && <EditorTabs />}
@@ -113,7 +121,12 @@ class DesktopLayout extends Component {
                     key={challengeFile.key}
                     orientation='horizontal'
                   >
-                    <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
+                    <ReflexElement
+                      flex={codePane.flex}
+                      name='codePane'
+                      {...reflexProps}
+                      {...resizeProps}
+                    >
                       <Fragment>{editor}</Fragment>
                     </ReflexElement>
                     {isConsoleDisplayable && (
@@ -121,7 +134,8 @@ class DesktopLayout extends Component {
                     )}
                     {isConsoleDisplayable && (
                       <ReflexElement
-                        flex={0.25}
+                        flex={testsPane.flex}
+                        name='testsPane'
                         {...reflexProps}
                         {...resizeProps}
                       >
@@ -135,7 +149,11 @@ class DesktopLayout extends Component {
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}
               {isPreviewDisplayable && (
-                <ReflexElement flex={0.7} {...resizeProps}>
+                <ReflexElement
+                  flex={previewPane.flex}
+                  name='previewPane'
+                  {...resizeProps}
+                >
                   {preview}
                 </ReflexElement>
               )}
