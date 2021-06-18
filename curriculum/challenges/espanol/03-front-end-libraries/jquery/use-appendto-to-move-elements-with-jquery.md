@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed608826
-title: Use appendTo to Move Elements with jQuery
+title: Usa appendTo para mover elementos con jQuery
 challengeType: 6
 forumTopicId: 18340
 dashedName: use-appendto-to-move-elements-with-jquery
@@ -8,31 +8,33 @@ dashedName: use-appendto-to-move-elements-with-jquery
 
 # --description--
 
-Now let's try moving elements from one `div` to another.
+Ahora intentemos mover elementos de un `div` a otro.
 
-jQuery has a function called `appendTo()` that allows you to select HTML elements and append them to another element.
+jQuery tiene una función llamada `appendTo()` que te permite seleccionar elementos HTML y añadirlos a otro elemento.
 
-For example, if we wanted to move `target4` from our right well to our left well, we would use:
+Por ejemplo, si quisiéramos mover `target4` desde nuestro "right well" a nuestro "left well", usaríamos:
 
-`$("#target4").appendTo("#left-well");`
+```js
+$("#target4").appendTo("#left-well");
+```
 
-Move your `target2` element from your `left-well` to your `right-well`.
+Mueve tu elemento `target2` desde tu `left-well` a tu `right-well`.
 
 # --hints--
 
-Your `target2` element should not be inside your `left-well`.
+Tu elemento `target2` debe estar dentro de `left-well`.
 
 ```js
 assert($('#left-well').children('#target2').length === 0);
 ```
 
-Your `target2` element should be inside your `right-well`.
+Tu elemento `target2` debe estar dentro de `right-well`.
 
 ```js
 assert($('#right-well').children('#target2').length > 0);
 ```
 
-You should only use jQuery to move these elements.
+Sólo debes usar jQuery para mover estos elementos.
 
 ```js
 assert(!code.match(/class.*animated/g));

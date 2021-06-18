@@ -8,12 +8,23 @@ import envData from '../../../../../config/env.json';
 
 const { showUpcomingChanges } = envData;
 
+const paneType = {
+  flex: PropTypes.number
+};
+
 const propTypes = {
   challengeFiles: PropTypes.object,
   editor: PropTypes.element,
   hasEditableBoundries: PropTypes.bool,
   hasPreview: PropTypes.bool,
   instructions: PropTypes.element,
+  layoutState: PropTypes.shape({
+    codePane: paneType,
+    editorPane: paneType,
+    instructionPane: paneType,
+    previewPane: paneType,
+    testsPane: paneType
+  }),
   preview: PropTypes.element,
   resizeProps: PropTypes.shape({
     onStopResize: PropTypes.func,
@@ -55,6 +66,7 @@ class DesktopLayout extends Component {
       editor,
       testOutput,
       hasPreview,
+      layoutState,
       preview,
       hasEditableBoundries
     } = this.props;
@@ -67,6 +79,8 @@ class DesktopLayout extends Component {
       ? showPreview && hasPreview
       : hasPreview;
     const isConsoleDisplayable = projectBasedChallenge ? showConsole : true;
+    const { codePane, editorPane, instructionPane, previewPane, testsPane } =
+      layoutState;
 
     return (
       <Fragment>

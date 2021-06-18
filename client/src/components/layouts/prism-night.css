@@ -51,6 +51,13 @@ padding in night mode */
   background: var(--primary-background);
 }
 
+.night pre[class*='language-']::selection,
+.night pre[class*='language-'] ::selection,
+.night code[class*='language-']::selection,
+.night code[class*='language-'] ::selection {
+  background: var(--selection-color);
+}
+
 /* Inline code */
 .night :not(pre) > code[class*='language-'] {
   padding: 0.1em;

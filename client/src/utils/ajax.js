@@ -1,5 +1,4 @@
 import envData from '../../../config/env.json';
-import axios from 'axios';
 import Tokens from 'csrf';
 import cookies from 'browser-cookies';
 
@@ -8,34 +7,45 @@ const { apiLocation } = envData;
 const base = apiLocation;
 const tokens = new Tokens();
 
-axios.defaults.withCredentials = true;
+const defaultOptions = {
+  credentials: 'include'
+};
 
 // _csrf is passed to the client as a cookie. Tokens are sent back to the server
 // via headers:
-function setCSRFTokens() {
+function getCSRFToken() {
   const _csrf = typeof window !== 'undefined' && cookies.get('_csrf');
-  if (!_csrf) return;
-  axios.defaults.headers.post['CSRF-Token'] = tokens.create(_csrf);
-  axios.defaults.headers.put['CSRF-Token'] = tokens.create(_csrf);
+  if (!_csrf) {
+    return '';
+  } else {
+    return tokens.create(_csrf);
+  }
 }
 
 function get(path) {
-  return axios.get(`${base}${path}`);
+  return fetch(`${base}${path}`, defaultOptions).then(res => res.json());
 }
 
 export function post(path, body) {
-  setCSRFTokens();
-  return axios.post(`${base}${path}`, body);
+  return request('POST', path, body);
 }
 
 function put(path, body) {
-  setCSRFTokens();
-  return axios.put(`${base}${path}`, body);
+  return request('PUT', path, body);
 }
 
-// function del(path) {
-//   return axios.delete(`${base}${path}`);
-// }
+function request(method, path, body) {
+  const options = {
+    ...defaultOptions,
+    method,
+    headers: {
+      'CSRF-Token': getCSRFToken(),
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  };
+  return fetch(`${base}${path}`, options).then(res => res.json());
+}
 
 /** GET **/
 
@@ -63,10 +73,6 @@ export function getArticleById(shortId) {
 
 export function addDonation(body) {
   return post('/donate/add-donation', body);
-}
-
-export function putUpdateLegacyCert(body) {
-  return post('/update-my-projects', body);
 }
 
 export function postReportUser(body) {
@@ -110,5 +116,3 @@ export function putUserUpdateEmail(email) {
 export function putVerifyCert(certSlug) {
   return put('/certificate/verify', { certSlug });
 }
-
-/** DELETE **/
