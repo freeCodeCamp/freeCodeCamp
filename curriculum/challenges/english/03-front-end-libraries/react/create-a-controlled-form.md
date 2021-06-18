@@ -113,7 +113,7 @@ const commentedMatches = [...(blockCommented ?? []), ...(lineCommented ?? [])];
 
 assert(
   // At least one event.preventDefault() call exists and is not commented out
-  allMatches.length && (allMatches.length > commentedMatches.length)
+  allMatches.length > commentedMatches.length
 );
 ```
 
