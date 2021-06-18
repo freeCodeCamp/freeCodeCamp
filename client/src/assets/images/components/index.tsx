@@ -3,7 +3,7 @@ import AmazonLogo from './amazon-logo';
 import MicrosoftLogo from './microsoft-logo';
 import SpotifyLogo from './spotify-logo';
 import GoogleLogo from './google-logo';
-import AsSeenIn from './as-seen-in-text';
+import AsSeenInText from './as-seen-in-text';
 
 export {
   AmazonLogo,
@@ -11,5 +11,5 @@ export {
   MicrosoftLogo,
   SpotifyLogo,
   GoogleLogo,
-  AsSeenIn
+  AsSeenInText
 };
