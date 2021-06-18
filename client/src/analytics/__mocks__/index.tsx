@@ -1,5 +1,5 @@
 const analytics = {
-  event: function () {
+  event: function (): void {
     // comment necessary for linting.
   }
 };
