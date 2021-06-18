@@ -66,15 +66,24 @@
       },
       "basic-html-cat-photo-app": {
         "title": "Basic HTML Cat Photo App",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "basic-css-cafe-menu": {
         "title": "Basic CSS Cafe Menu",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "css-variables-skyline": {
         "title": "CSS Variables Skyline",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -161,15 +170,24 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -271,21 +289,28 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
   "relational-databases": {
     "title": "Relational Databases",
-    "intro": ["placeholder"],
+    "intro": [
+      "placeholder"
+    ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Learn Relational Databases",
-        "intro": ["placeholder"]
+        "intro": [
+          "placeholder"
+        ]
       }
     }
   },
-  "apis-and-microservices": {
+  "back-end-development-and-apis": {
     "title": "Back End Development and APIs",
     "intro": [
       "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
@@ -318,7 +343,7 @@
           "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
         ]
       },
-      "apis-and-microservices-projects": {
+      "back-end-development-and-apis-projects": {
         "title": "Back End Development and APIs Projects",
         "intro": [
           "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",

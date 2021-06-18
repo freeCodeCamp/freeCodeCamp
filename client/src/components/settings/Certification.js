@@ -115,7 +115,7 @@ const isCertMapSelector = createSelector(
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
-    'APIs and Microservices': isApisMicroservicesCert,
+    'Back End Development and APIs': isApisMicroservicesCert,
     'Quality Assurance': isQaCertV7,
     'Information Security': isInfosecCertV7,
     'Scientific Computing with Python': isSciCompPyCertV7,
