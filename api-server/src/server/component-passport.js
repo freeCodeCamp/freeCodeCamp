@@ -16,6 +16,7 @@ import {
   isRootPath
 } from './utils/redirection';
 import { jwtSecret } from '../../../config/secrets';
+import { availableLangs } from '../../../config/i18n/all-langs';
 
 const passportOptions = {
   emailOptional: true,
@@ -85,13 +86,22 @@ export const devSaveResponseAuthCookies = () => {
 
 export const devLoginRedirect = () => {
   return (req, res) => {
-    // this mirrors the production approach, but without any validation
+    // this mirrors the production approach, but only validates the prefix
     let { returnTo, origin, pathPrefix } = getRedirectParams(
       req,
-      params => params
+      ({ returnTo, origin, pathPrefix }) => {
+        pathPrefix = availableLangs.client.includes(pathPrefix)
+          ? pathPrefix
+          : '';
+        return {
+          returnTo,
+          origin,
+          pathPrefix
+        };
+      }
     );
     returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
-      ? 'learn'
+      ? '/learn'
       : '';
     return res.redirect(returnTo);
   };
