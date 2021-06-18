@@ -11,6 +11,12 @@ I see some code that can be optimized. Move the `position` and `top` properties 
 
 # --hints--
 
+You should not remove the `.foreground-buildings` declaration.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('.foreground-buildings'));
+```
+
 You should remove the `position` property from `.foreground-buildings`.
 
 ```js

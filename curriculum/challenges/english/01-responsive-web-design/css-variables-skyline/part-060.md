@@ -11,7 +11,7 @@ So far, all the gradients you created have gone from top to bottom, that's the d
 
 ```css
 gradient-type(
-  direction
+  direction,
   color1,
   color2
 );

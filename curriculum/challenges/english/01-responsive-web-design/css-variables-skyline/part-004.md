@@ -42,8 +42,7 @@ assert.equal(title.text, 'freeCodeCamp Skyline Project');
 Your code should have a `link` element.
 
 ```js
-const link = document.querySelectorAll('link')?.[1];
-assert.exists(link);
+assert.match(code, /<link/)
 ```
 
 You should not change your existing `head` tags. Make sure you did not delete the closing tag.
@@ -68,22 +67,20 @@ assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/>[\w\W\s]*<\/head>/i))
 Your `link` element should have a `rel` attribute with the value `stylesheet`.
 
 ```js
-const link = document.querySelectorAll('link')?.[1];
-assert.equal(link?.rel, 'stylesheet');
+assert.match(code, /<link[\s\S]*?rel=('|"|`)stylesheet\1/)
 ```
 
 Your `link` element should have a `type` attribute with the value `text/css`.
 
 ```js
-const link = document.querySelectorAll('link')?.[1];
-assert.equal(link?.type, 'text/css');
+assert.match(code, /<link[\s\S]*?type=('|"|`)text\/css\1/)
+
 ```
 
 Your `link` element should have an `href` attribute with the value `styles.css`.
 
 ```js
-const link = document.querySelectorAll('link')?.[1];
-assert.include(link?.href, 'styles.css');
+assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
 ```
 
 # --seed--
