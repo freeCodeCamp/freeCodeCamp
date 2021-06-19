@@ -21,6 +21,23 @@ const removeWhiteSpace = (str = ''): string => {
   return str.replace(/\s/g, '');
 };
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#escaping
+function escapeRegExp(exp: string): string {
+  return exp.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function isCalledWithNoArgs(
+  calledFuncName: string,
+  callingCode: string
+): boolean {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const noCommentsCallingCode = strip(callingCode) as string;
+  const funcExp = `\b${escapeRegExp(calledFuncName)}\\(\s*?\\)`;
+  const matches = new RegExp(funcExp, 'g').exec(noCommentsCallingCode) ?? [];
+
+  return !!matches.length;
+}
+
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
