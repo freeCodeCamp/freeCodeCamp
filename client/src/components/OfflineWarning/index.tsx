@@ -1,1 +1,1 @@
-export { default } from './OfflineWarning';
+export { default } from './offline-warning';
