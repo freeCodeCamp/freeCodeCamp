@@ -42,11 +42,11 @@ Il testo, `link to www.freecodecamp.org` all'interno dell'elemento `a` si chiama
 
 L'output finale dell'esempio sarà simile a questo:
 
-Ecco un <a href="https://www.freecodecamp.org" target="_blank">link a www.freecodecamp.org</a> da seguire.
+Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a> for you to follow.
 
 # --instructions--
 
-Annida l'elemento `a` all'interno del nuovo elemento `p`. Il nuovo paragrafo dovrebbe contenere un testo che dice `View more cat photos`, dove `cat photos` è un collegamento, e il resto è testo semplice.
+Annida l'elemento `a` esistente all'interno di un nuovo elemento `p`. Il nuovo paragrafo dovrebbe contenere un testo che dice `View more cat photos`, dove `cat photos` è un collegamento, e il resto è testo semplice.
 
 # --hints--
 

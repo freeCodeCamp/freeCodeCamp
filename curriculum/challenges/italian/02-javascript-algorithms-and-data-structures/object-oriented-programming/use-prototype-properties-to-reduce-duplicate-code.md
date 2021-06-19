@@ -12,7 +12,7 @@ Poiché `numLegs` avrà probabilmente lo stesso valore per tutte le istanze di `
 
 Può non essere un problema se ci sono solo due istanze, ma immagina se ce ne fossero milioni! Sarebbe un sacco di variabili duplicate.
 
-Un modo migliore è quello di utilizzare il `prototype` di `Bird’s`. Le proprietà del `prototype` sono condivise tra TUTTE le istanze di `Bird`. Ecco come aggiungere `numLegs` al `Bird prototype`:
+Un modo migliore è quello di utilizzare il `prototype` di `Bird`. Le proprietà del `prototype` sono condivise tra TUTTE le istanze di `Bird`. Ecco come aggiungere `numLegs` al `Bird prototype`:
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -45,7 +45,7 @@ assert(beagle.numLegs !== undefined);
 assert(typeof beagle.numLegs === 'number');
 ```
 
-`numLegs` dovrebbe essere una proprietà `prototype`, non una proprietà propria (`own`).
+`numLegs` dovrebbe essere una proprietà del `prototype`, non una proprietà propria.
 
 ```js
 assert(beagle.hasOwnProperty('numLegs') === false);

@@ -19,7 +19,7 @@ let duck = new Bird();
 duck.constructor
 ```
 
-Ma `duck` e tutte le istanze di `Bird` dovrebbero mostrare che sono stati costruiti da `Bird` e non da `Animal`. Per farlo, puoi impostare manualmente la proprietà constructor di `Bird's` all'oggetto `Bird`:
+Ma `duck` e tutte le istanze di `Bird` dovrebbero mostrare che sono stati costruiti da `Bird` e non da `Animal`. Per farlo, puoi impostare manualmente la proprietà costruttore di `Bird` all'oggetto `Bird`:
 
 ```js
 Bird.prototype.constructor = Bird;
