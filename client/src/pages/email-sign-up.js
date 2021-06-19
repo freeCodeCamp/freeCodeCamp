@@ -61,10 +61,11 @@ class AcceptPrivacyTerms extends Component {
           <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
         </Helmet>
         <Grid className='default-page-wrapper email-sign-up'>
+          <Spacer />
           <SectionHeader>{t('misc.email-signup')}</SectionHeader>
           <Row>
-            <IntroDescription />
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <IntroDescription />
               <strong>{t('misc.quincy')}</strong>
               <Spacer />
               <p>{t('misc.email-blast')}</p>
