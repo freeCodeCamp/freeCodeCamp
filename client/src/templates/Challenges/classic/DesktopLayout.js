@@ -86,12 +86,10 @@ class DesktopLayout extends Component {
       <Fragment>
         <ReflexContainer className='desktop-layout' orientation='horizontal'>
           {projectBasedChallenge && (
-            <ReflexElement flex={1}>
-              <ActionRow
-                switchDisplayTab={this.switchDisplayTab}
-                {...this.state}
-              />
-            </ReflexElement>
+            <ActionRow
+              switchDisplayTab={this.switchDisplayTab}
+              {...this.state}
+            />
           )}
           <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
             <ReflexContainer orientation='vertical'>
