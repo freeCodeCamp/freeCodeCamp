@@ -1,5 +1,3 @@
-/* global expect jest */
-
 import { getCompletedPercent } from './CompletionModal';
 
 jest.mock('../../../analytics');

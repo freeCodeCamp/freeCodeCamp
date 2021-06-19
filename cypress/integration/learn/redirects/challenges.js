@@ -1,4 +1,4 @@
-/* global cy expect */
+/* global cy */
 
 const locations = {
   chalSuper: '/challenges/responsive-web-design/',

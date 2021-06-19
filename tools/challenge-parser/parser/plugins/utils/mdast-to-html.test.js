@@ -1,4 +1,3 @@
-/* global expect*/
 const mdastToHTML = require('./mdast-to-html');
 const mdastMixedNodes = require('./__fixtures__/mdast-mixed-nodes.json');
 const mdastWithEmNode = require('./__fixtures__/mdast-with-em.json');

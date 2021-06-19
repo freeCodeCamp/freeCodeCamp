@@ -1,4 +1,3 @@
-/* global expect */
 const extractScriptJSComments = require('./extract-script-js-comments');
 
 const inlineComments = `<body>

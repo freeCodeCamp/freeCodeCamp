@@ -1,4 +1,3 @@
-/* global expect */
 const { sortChallenges } = require('./sort-challenges');
 
 const challenges = [

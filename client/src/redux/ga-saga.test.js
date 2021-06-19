@@ -1,5 +1,3 @@
-/* global jest */
-
 import { types } from '.';
 import { createGaSaga } from './ga-saga';
 import ga from '../analytics';

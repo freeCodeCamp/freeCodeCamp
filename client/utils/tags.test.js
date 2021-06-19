@@ -1,5 +1,3 @@
-/* global expect */
-
 import { injectConditionalTags } from './tags';
 
 describe('Tags', () => {
