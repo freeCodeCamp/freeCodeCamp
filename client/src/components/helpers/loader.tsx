@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
 
 import './loader.css';
 
-function Loader({ fullScreen, timeout }) {
+interface LoaderProps {
+  fullScreen?: boolean;
+  timeout?: number;
+}
+function Loader({ fullScreen, timeout }: LoaderProps): JSX.Element {
   const [showSpinner, setShowSpinner] = useState(!timeout);
   useEffect(() => {
-    let timerId;
+    let timerId: ReturnType<typeof setTimeout>;
     if (!showSpinner) {
       timerId = setTimeout(() => setShowSpinner(true), timeout);
     }
@@ -21,9 +24,5 @@ function Loader({ fullScreen, timeout }) {
 }
 
 Loader.displayName = 'Loader';
-Loader.propTypes = {
-  fullScreen: PropTypes.bool,
-  timeout: PropTypes.number
-};
 
 export default Loader;

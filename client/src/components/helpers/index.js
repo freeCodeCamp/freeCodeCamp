@@ -1,7 +1,7 @@
 export { default as ButtonSpacer } from './ButtonSpacer';
 export { default as FullWidthRow } from './FullWidthRow';
 export { default as SlimWidthRow } from './slim-width-row';
-export { default as Loader } from './Loader';
+export { default as Loader } from './loader';
 export { default as SkeletonSprite } from './skeleton-sprite';
 export { default as Spacer } from './spacer';
 export { default as Link } from './Link';

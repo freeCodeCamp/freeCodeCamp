@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
-import Loader from './Loader';
+import Loader from './loader';
 
 describe('<Loader />', () => {
   afterEach(cleanup);
