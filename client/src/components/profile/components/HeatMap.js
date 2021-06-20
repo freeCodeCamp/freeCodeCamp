@@ -10,7 +10,7 @@ import isEqual from 'date-fns/isEqual';
 import { useTranslation } from 'react-i18next';
 
 import FullWidthRow from '../../helpers/FullWidthRow';
-import Spacer from '../../helpers/Spacer';
+import Spacer from '../../helpers/spacer';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
