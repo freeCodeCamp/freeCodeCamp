@@ -28,7 +28,8 @@ In the code editor, `MyComponent` is already stateful. Define an `h1` tag in the
 
 ```js
 assert(
-  Enzyme.mount(React.createElement(MyComponent)).state('name').indexOf('freeCodeCamp') > -1
+  Enzyme.mount(React.createElement(MyComponent)).state('name') ===
+    'freeCodeCamp'
 );
 ```
 
@@ -42,7 +43,7 @@ assert(
 );
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+The rendered `h1` header should only contain text rendered from the component's state.
 
 ```js
 async () => {
