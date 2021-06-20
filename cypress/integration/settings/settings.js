@@ -1,4 +1,4 @@
-/* global cy expect */
+/* global cy */
 
 describe('Settings', () => {
   it('should be possible to reset your progress', () => {

@@ -1,5 +1,3 @@
-/* global expect */
-
 import createLanguageRedirect from './createLanguageRedirect';
 
 describe('createLanguageRedirect for clientLocale === english', () => {

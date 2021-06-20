@@ -1,4 +1,4 @@
-/* global cy expect */
+/* global cy */
 
 const selectors = {
   challengeMap: "[data-test-label='learn-curriculum-map']"

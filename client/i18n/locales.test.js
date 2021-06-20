@@ -1,4 +1,3 @@
-/* global expect */
 import {
   availableLangs,
   langDisplayNames,

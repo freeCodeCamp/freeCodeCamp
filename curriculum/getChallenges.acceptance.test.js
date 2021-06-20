@@ -1,4 +1,3 @@
-/* global expect */
 // TODO: reinstate these tests
 
 // // TODO: update these to use the new parser

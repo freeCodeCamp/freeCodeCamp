@@ -1,4 +1,3 @@
-/* global describe it expect */
 const mockAST = require('../__fixtures__/ast-simple.json');
 // eslint-disable-next-line max-len
 const incorrectMarkersAST = require('../__fixtures__/ast-incorrect-markers.json');

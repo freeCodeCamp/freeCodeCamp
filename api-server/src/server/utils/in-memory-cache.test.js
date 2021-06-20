@@ -1,4 +1,3 @@
-/* global describe beforeEach expect it jest */
 import inMemoryCache from './in-memory-cache';
 
 describe('InMemoryCache', () => {
