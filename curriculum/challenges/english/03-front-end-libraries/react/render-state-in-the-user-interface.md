@@ -28,8 +28,7 @@ In the code editor, `MyComponent` is already stateful. Define an `h1` tag in the
 
 ```js
 assert(
-  Enzyme.mount(React.createElement(MyComponent)).state('name') ===
-    'freeCodeCamp'
+  Enzyme.mount(React.createElement(MyComponent)).state('name').indexOf('freeCodeCamp') > -1
 );
 ```
 
