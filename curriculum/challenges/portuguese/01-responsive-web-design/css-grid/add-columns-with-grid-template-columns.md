@@ -1,6 +1,6 @@
 ---
 id: 5a9036d038fddaf9a66b5d32
-title: Add Columns with grid-template-columns
+title: Criar colunas com grid-template-columns
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c7NzDHv'
 forumTopicId: 301117
@@ -9,7 +9,7 @@ dashedName: add-columns-with-grid-template-columns
 
 # --description--
 
-Simply creating a grid element doesn't get you very far. You need to define the structure of the grid as well. To add some columns to the grid, use the `grid-template-columns` property on a grid container as demonstrated below:
+Só criar um elemento grid não faz muita coisa. Você também precisa definir a estrutura do grid. Para adicionar colunas ao grid, use a propriedade `grid-template-columns` em um grid container, como demonstrado abaixo:
 
 ```css
 .container {
@@ -18,15 +18,15 @@ Simply creating a grid element doesn't get you very far. You need to define the 
 }
 ```
 
-This will give your grid two columns that are each 50px wide. The number of parameters given to the `grid-template-columns` property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column.
+Isso vai dar ao grid duas colunas, cada uma com 50px de largura. O número dos parâmetros dados à propriedade `grid-template-columns` indica o número de colunas no grid. O valor de cada parâmetro indica a largura de cada coluna.
 
 # --instructions--
 
-Give the grid container three columns that are each `100px` wide.
+Dê ao grid container três colunas com `100px` de largura.
 
 # --hints--
 
-`container` class should have a `grid-template-columns` property with three units of `100px`.
+O elemento de classe `container` deve ter a propriedade `grid-template-columns` com três parâmetros de `100px`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
     display: grid;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

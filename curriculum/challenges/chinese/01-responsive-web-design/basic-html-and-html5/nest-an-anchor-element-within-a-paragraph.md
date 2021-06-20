@@ -42,7 +42,7 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 
 此示例的最终输出结果是这样：
 
-你可以访问 <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a>。
+Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a> for you to follow.
 
 # --instructions--
 
