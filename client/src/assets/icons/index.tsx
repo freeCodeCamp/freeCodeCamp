@@ -27,7 +27,10 @@ const iconMap = {
 
 type SuperBlock = keyof typeof iconMap;
 
-const generateIconComponent = (superBlock: SuperBlock, className: string) => {
+const generateIconComponent = (
+  superBlock: SuperBlock,
+  className: string
+): JSX.Element => {
   // fallback in case super block doesn't exist and for tests
   const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function FreeCodeCampLogo() {
+function FreeCodeCampLogo(): JSX.Element {
   const { t } = useTranslation();
 
   return (

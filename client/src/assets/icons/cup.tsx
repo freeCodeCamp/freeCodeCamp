@@ -1,8 +1,9 @@
-/* eslint-disable max-len */
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Cup(props: any & React.SVGProps<SVGSVGElement>) {
+function Cup(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   const { t } = useTranslation();
 
   return (

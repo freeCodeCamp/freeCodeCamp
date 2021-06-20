@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-function CertificationIcon() {
+function CertificationIcon(): JSX.Element {
   return (
     <svg
       height='248.21'

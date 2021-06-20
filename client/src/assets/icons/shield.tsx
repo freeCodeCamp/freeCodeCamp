@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Shield(props: any & React.SVGProps<SVGSVGElement>) {
+function Shield(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   const { t } = useTranslation();
 
   return (

@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Spacer(props: any & React.SVGProps<SVGSVGElement>) {
+// eslint-disable-next-line
+function Spacer(props: any): JSX.Element {
   const { t } = useTranslation();
 
   return (

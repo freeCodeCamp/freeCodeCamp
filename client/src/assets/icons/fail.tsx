@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function RedFail() {
+function RedFail(): JSX.Element {
   const { t } = useTranslation();
 
   return (
