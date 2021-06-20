@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './skeletonStyles';
+import styles from './skeleton-styles';
 
 function SkeletonSprite() {
   return (
