@@ -1,4 +1,3 @@
-/* global jest*/
 import { isEqual } from 'lodash';
 import { isEmail } from 'validator';
 

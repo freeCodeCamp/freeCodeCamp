@@ -1,5 +1,3 @@
-/* global describe it expect */
-
 import __testHelpers, { removeJSComments } from './curriculum-helpers';
 import jsTestValues from './__fixtures/curriculum-helpers-javascript';
 import cssTestValues from './__fixtures/curriculum-helpers-css';

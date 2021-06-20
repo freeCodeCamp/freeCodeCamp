@@ -1,4 +1,3 @@
-/* global expect jest */
 import { isObject } from 'lodash-es';
 import {
   isHandledError,

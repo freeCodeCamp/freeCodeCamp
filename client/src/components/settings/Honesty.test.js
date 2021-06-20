@@ -1,4 +1,3 @@
-/* global expect jest */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';

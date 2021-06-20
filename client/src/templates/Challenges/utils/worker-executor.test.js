@@ -1,5 +1,3 @@
-/* global expect, jest */
-
 import createWorker from './worker-executor';
 
 function mockWorker({ init, postMessage, terminate } = {}) {
