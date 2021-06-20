@@ -9,7 +9,7 @@ dashedName: global-vs--local-scope-in-functions
 
 # --description--
 
-Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando haces esto, la variable `local` tiene precedencia sobre la variable `global`.
+Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando haces esto, la variable local tiene precedencia sobre la variable global.
 
 En este ejemplo:
 
@@ -21,7 +21,7 @@ function myFun() {
 }
 ```
 
-La función `myFun` devolverá la cadena `Head` porque está presente la versión `local` de la variable.
+La función `myFun` devolverá la cadena `Head` porque está presente la versión local de la variable.
 
 # --instructions--
 

@@ -12,7 +12,7 @@ Dado que `numLegs` probablemente tendrán el mismo valor para todas las instanci
 
 Esto puede que no sea un problema cuando sólo hay dos instancias, pero imagina si hay millones de instancias. Eso sería un montón de variables duplicadas.
 
-Una mejor manera es usar `Bird’s` `prototype`. Las propiedades del `prototype` se comparten entre TODAS las instancias de `Bird`. A continuación se explica cómo añadir `numLegs` al prototipo `Bird prototype`:
+Una mejor forma es utilizar el `prototype` de `Bird`. Las propiedades del `prototype` se comparten entre TODAS las instancias de `Bird`. A continuación se explica cómo añadir `numLegs` al prototipo `Bird prototype`:
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -45,7 +45,7 @@ assert(beagle.numLegs !== undefined);
 assert(typeof beagle.numLegs === 'number');
 ```
 
-`numLegs` debe ser una propiedad `prototype`, no una propiedad `own`.
+`numLegs` debe ser una propiedad `prototype`, no una propiedad directa.
 
 ```js
 assert(beagle.hasOwnProperty('numLegs') === false);
