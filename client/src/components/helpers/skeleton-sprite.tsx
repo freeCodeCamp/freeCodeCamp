@@ -2,7 +2,9 @@ import React from 'react';
 
 import styles from './skeleton-styles';
 
-function SkeletonSprite() {
+function SkeletonSprite({}: React.FC<
+  React.ComponentPropsWithoutRef<'svg'>
+>): JSX.Element {
   return (
     <div className='sprite-container'>
       <style dangerouslySetInnerHTML={{ __html: styles }} />
