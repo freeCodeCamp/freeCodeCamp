@@ -1,5 +1,3 @@
-/* global describe expect it jest */
-
 const jwt = require('jsonwebtoken');
 
 const { getReturnTo, normalizeParams } = require('./redirection');

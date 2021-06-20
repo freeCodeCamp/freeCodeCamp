@@ -2,7 +2,6 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
 const _ = require('lodash');
-const Rx = require('rx');
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 const createDebugger = require('debug');
@@ -28,7 +27,6 @@ if (sentry.dns === 'dsn_from_sentry_dashboard') {
   log('Sentry initialized');
 }
 
-Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();
 
 app.set('state namespace', '__fcc__');

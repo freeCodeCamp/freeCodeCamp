@@ -1,4 +1,3 @@
-/* global expect */
 const path = require('path');
 
 const {

@@ -1,5 +1,3 @@
-/* global expect */
-
 import { transformEditorLink } from '../utils';
 
 describe('create-question-epic', () => {

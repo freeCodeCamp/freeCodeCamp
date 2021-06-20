@@ -1,4 +1,4 @@
-/* global cy expect */
+/* global cy */
 
 import '@testing-library/cypress/add-commands';
 

@@ -1,5 +1,3 @@
-/* global expect */
-
 const path = require('path');
 
 const { parseMD } = require('.');

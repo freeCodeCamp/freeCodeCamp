@@ -1,5 +1,3 @@
-/* global expect jest */
-
 import React from 'react';
 import { useStaticQuery } from 'gatsby';
 import { render } from '@testing-library/react';
