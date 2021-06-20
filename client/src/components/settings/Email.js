@@ -18,7 +18,7 @@ import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
 
 import FullWidthRow from '../helpers/FullWidthRow';
-import Spacer from '../helpers/Spacer';
+import Spacer from '../helpers/spacer';
 import SectionHeader from './SectionHeader';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 import ToggleSetting from './ToggleSetting';

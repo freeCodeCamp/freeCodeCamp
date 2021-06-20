@@ -10,7 +10,7 @@ import { userSelector } from '../../redux';
 import { submitProfileUI } from '../../redux/settings';
 
 import FullWidthRow from '../helpers/FullWidthRow';
-import Spacer from '../helpers/Spacer';
+import Spacer from '../helpers/spacer';
 import ToggleSetting from './ToggleSetting';
 import SectionHeader from './SectionHeader';
 
