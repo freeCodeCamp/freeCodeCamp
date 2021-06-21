@@ -17,7 +17,7 @@ Animal.prototype.eat = function() {
 };
 ```
 
-在這一節以及下一節挑戰中我們將學習如何在 `Bird` 和 `Dog` 中重用 `Animal's` 中的方法，而無需重新定義它們。 這裏我們會用到構造函數的繼承特性。 這一節挑戰中我們學習第一步：創建一個超類 `supertype`（或者叫父類）的實例。 你已經學會了一種創建 `Animal` 實例的方法，即使用 `new` 操作符：
+在這一節以及下一節挑戰中我們將學習如何在 `Bird` 和 `Dog` 中重用 `Animal` 中的方法，而無需重新定義它們。 這裏我們會用到構造函數的繼承特性。 這一節挑戰中我們學習第一步：創建一個超類 `supertype`（或者叫父類）的實例。 你已經學會了一種創建 `Animal` 實例的方法，即使用 `new` 操作符：
 
 ```js
 let animal = new Animal();
@@ -29,7 +29,7 @@ let animal = new Animal();
 let animal = Object.create(Animal.prototype);
 ```
 
-`Object.create(obj)` 創建了一個新對象，並指定了 `obj` 作爲新對象的 `prototype`。 回憶一下，我們之前說過 `prototype` 就像是創建對象的“配方”。 如果我們把 `animal` 的 `prototype` 設置爲與 `Animal's` 構造函數的 `prototype` 一樣，那麼就相當於讓 `animal` 這個實例的配方與 `Animal` 其他實例的配方一樣了。
+`Object.create(obj)` 創建了一個新對象，並指定了 `obj` 作爲新對象的 `prototype`。 回憶一下，我們之前說過 `prototype` 就像是創建對象的“配方”。 如果我們把 `animal` 的 `prototype` 設置爲與 `Animal` 構造函數的 `prototype` 一樣，那麼就相當於讓 `animal` 這個實例具有與 `Animal` 的其他實例相同的“配方”了。
 
 ```js
 animal.eat();
