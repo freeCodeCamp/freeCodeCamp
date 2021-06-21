@@ -1,4 +1,4 @@
-export { default as ButtonSpacer } from './ButtonSpacer';
+export { default as ButtonSpacer } from './button-spacer';
 export { default as FullWidthRow } from './full-width-row';
 export { default as SlimWidthRow } from './slim-width-row';
 export { default as Loader } from './loader';

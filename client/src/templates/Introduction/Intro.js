@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 import LearnLayout from '../../components/layouts/Learn';
 import FullWidthRow from '../../components/helpers/full-width-row';
-import ButtonSpacer from '../../components/helpers/ButtonSpacer';
+import ButtonSpacer from '../../components/helpers/button-spacer';
 import { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';
