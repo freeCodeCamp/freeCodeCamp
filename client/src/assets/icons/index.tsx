@@ -16,7 +16,7 @@ const iconMap = {
   'javascript-algorithms-and-data-structures': JavaScriptIcon,
   'front-end-libraries': ReactIcon,
   'data-visualization': D3Icon,
-  'apis-and-microservices': APIIcon,
+  'back-end-development-and-apis': APIIcon,
   'quality-assurance': Clipboard,
   'scientific-computing-with-python': PythonIcon,
   'data-analysis-with-python': Analytics,

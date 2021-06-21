@@ -1,10 +1,10 @@
 {
-  "name": "APIs and Microservices Projects",
+  "name": "Back End Development and APIs Projects",
   "isUpcomingChange": false,
-  "dashedName": "apis-and-microservices-projects",
+  "dashedName": "back-end-development-and-apis-projects",
   "order": 4,
   "time": "150 hours",
-  "superBlock": "apis-and-microservices",
+  "superBlock": "back-end-development-and-apis",
   "superOrder": 5,
   "challengeOrder": [
     [

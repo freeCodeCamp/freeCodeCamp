@@ -84,7 +84,7 @@ Here are our ten core certifications:
   <br />
   **Projects**:  [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
 
-#### 5. APIs and Microservices Certification
+#### 5. Back End Development and APIs Certification
 
 - [Managing Packages with Npm](https://www.freecodecamp.org/learn/apis-and-microservices/)
 - [Basic Node and Express](https://www.freecodecamp.org/learn/apis-and-microservices/)
@@ -134,7 +134,7 @@ Here are our ten core certifications:
 
 #### Legacy Full Stack Development Certification
 
-Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Libraries, Data Visualization, APIs and Microservices, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
+Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Libraries, Data Visualization, Back End Development and APIs, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
 
 #### Legacy Certifications
 

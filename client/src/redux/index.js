@@ -278,7 +278,7 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isApisMicroservicesCert,
-        title: 'APIs and Microservices Certification',
+        title: 'Back End Development and APIs Certification',
         certSlug: 'apis-and-microservices'
       },
       {

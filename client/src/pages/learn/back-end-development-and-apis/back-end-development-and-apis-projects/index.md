@@ -1,9 +1,9 @@
 ---
-title: Introduction to the APIs and Microservices Projects
-block: APIs and Microservices Projects
-superBlock: APIs and Microservices
+title: Introduction to the Back End Development and APIs Projects
+block: Back End Development and APIs Projects
+superBlock: Back End Development and APIs
 ---
-## Introduction to the APIs and Microservices Projects
+## Introduction to the Back End Development and APIs Projects
 
 Time to put your newly learnt skills to work! By working on projects you would have the opportunity of applying all the skills, principles and concepts you have learnt so far including npm packages, basic Node, basic Express, MongoDB, and Mongoose.
 

@@ -38,7 +38,7 @@ const auditedCerts = {
     'javascript-algorithms-and-data-structures',
     'front-end-libraries',
     'data-visualization',
-    'apis-and-microservices',
+    'back-end-development-and-apis',
     'quality-assurance'
   ],
   'chinese-traditional': [
@@ -46,7 +46,7 @@ const auditedCerts = {
     'javascript-algorithms-and-data-structures',
     'front-end-libraries',
     'data-visualization',
-    'apis-and-microservices',
+    'back-end-development-and-apis',
     'quality-assurance'
   ],
   italian: [

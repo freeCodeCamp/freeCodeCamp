@@ -8,7 +8,7 @@ const dataVisBase = '/learn/data-visualization/data-visualization-projects';
 const relationalDatabasesBase =
   '/learn/relational-databases/learn-relational-databases';
 const apiMicroBase =
-  '/learn/apis-and-microservices/apis-and-microservices-projects';
+  '/learn/back-end-development-and-apis/back-end-development-and-apis-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
 const sciCompPyBase =
@@ -477,7 +477,7 @@ const certMap = [
   },
   {
     id: '561add10cb82ac38a17523bc',
-    title: 'APIs and Microservices',
+    title: 'Back End Development and APIs',
     certSlug: 'apis-and-microservices',
     flag: 'isApisMicroservicesCert',
     projects: [

@@ -115,7 +115,7 @@ const isCertMapSelector = createSelector(
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
-    'APIs and Microservices': isApisMicroservicesCert,
+    'Back End Development and APIs': isApisMicroservicesCert,
     'Quality Assurance': isQaCertV7,
     'Information Security': isInfosecCertV7,
     'Scientific Computing with Python': isSciCompPyCertV7,
@@ -375,7 +375,7 @@ export class CertificationSettings extends Component {
             <li>JavaScript Algorithms and Data Structures</li>
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
-            <li>APIs and Microservices</li>
+            <li>Back End Development and APIs</li>
             <li>Legacy Information Security and Quality Assurance</li>
           </ul>
         </div>

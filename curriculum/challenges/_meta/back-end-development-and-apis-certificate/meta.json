@@ -1,7 +1,7 @@
 {
-  "name": "APIs and Microservices Certificate",
+  "name": "Back End Development and APIs Certificate",
   "isUpcomingChange": false,
-  "dashedName": "apis-and-microservices-certificate",
+  "dashedName": "back-end-development-and-apis-certificate",
   "order": 5,
   "time": "",
   "template": "",
@@ -11,7 +11,7 @@
   "challengeOrder": [
     [
       "561add10cb82ac38a17523bc",
-      "APIs and Microservices Certificate"
+      "Back End Development and APIs Certificate"
     ]
   ],
   "isPrivate": true
