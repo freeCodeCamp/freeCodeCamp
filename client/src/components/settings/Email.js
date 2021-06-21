@@ -17,7 +17,7 @@ import { Trans, withTranslation } from 'react-i18next';
 import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
 
-import FullWidthRow from '../helpers/FullWidthRow';
+import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/Spacer';
 import SectionHeader from './SectionHeader';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';

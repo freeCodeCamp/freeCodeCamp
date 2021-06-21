@@ -1,43 +1,38 @@
 import React, { useState } from 'react';
 
 import './image-loader.css';
-import LazyLoad from 'react-lazy-load';
-import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
-const propTypes = {
-  alt: PropTypes.string,
-  className: PropTypes.string,
-  height: PropTypes.number,
-  loadedClassName: PropTypes.string,
-  loadingClassName: PropTypes.string,
-  offsetVertical: PropTypes.number,
-  src: PropTypes.string,
-  style: PropTypes.object,
-  width: PropTypes.number
-};
+interface ImageLoaderProps {
+  alt?: string;
+  className?: string;
+  height?: number;
+  loadedClassName?: string;
+  loadingClassName?: string;
+  offset?: number;
+  src?: string;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  style?: Record<any, unknown>;
+  width?: number;
+}
 
 const ImageLoader = ({
   className = '',
   loadedClassName = 'img-loaded',
   loadingClassName = 'img-loading',
-  offsetVertical = 100,
+  offset = 100,
   alt,
   src,
   style,
   width,
   height
-}) => {
+}: ImageLoaderProps): JSX.Element => {
   const [loaded, setLoaded] = useState(false);
   const fullClassName = `${className} ${
     loaded ? loadedClassName : loadingClassName
   }`;
   return (
-    <LazyLoad
-      debounce={false}
-      height={height}
-      offsetVertical={offsetVertical}
-      width={width}
-    >
+    <LazyLoad debounce={false} height={height} offset={offset}>
       {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
       <img
         alt={alt}
@@ -45,9 +40,10 @@ const ImageLoader = ({
         onLoad={() => setLoaded(true)}
         src={src}
         style={style}
+        width={width}
       />
     </LazyLoad>
   );
 };
-ImageLoader.propTypes = propTypes;
+
 export default ImageLoader;

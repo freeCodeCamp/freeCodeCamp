@@ -132,6 +132,8 @@
     "@codesee/tracker": "0.39.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.7",
+    "@types/react-lazyload": "^3.1.0",
+    "@types/react-spinkit": "^3.0.6",
     "@types/react-transition-group": "4.4.1",
     "@types/redux-actions": "2.6.1",
     "autoprefixer": "10.2.6",

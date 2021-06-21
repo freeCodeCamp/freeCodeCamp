@@ -20,7 +20,7 @@ import ChallengeDescription from '../components/Challenge-Description';
 import Spacer from '../../../components/helpers/Spacer';
 import CompletionModal from '../components/CompletionModal';
 import Hotkeys from '../components/Hotkeys';
-import Loader from '../../../components/helpers/Loader';
+import Loader from '../../../components/helpers/loader';
 import {
   isChallengeCompletedSelector,
   challengeMounted,

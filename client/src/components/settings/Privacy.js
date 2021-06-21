@@ -9,7 +9,7 @@ import { withTranslation } from 'react-i18next';
 import { userSelector } from '../../redux';
 import { submitProfileUI } from '../../redux/settings';
 
-import FullWidthRow from '../helpers/FullWidthRow';
+import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/Spacer';
 import ToggleSetting from './ToggleSetting';
 import SectionHeader from './SectionHeader';
