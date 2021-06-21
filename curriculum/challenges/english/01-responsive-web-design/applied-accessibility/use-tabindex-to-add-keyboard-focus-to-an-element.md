@@ -67,7 +67,7 @@ assert($('input#hiddenInput').attr('tabindex') == '-1');
       <input type="text" id="username" name="username"><br>
 
 
-      <input type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" placeholder="Don't fill this in!">
+      <input type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" aria-hidden="true" placeholder="Don't fill this in!">
 
 
       <fieldset>
@@ -127,7 +127,7 @@ assert($('input#hiddenInput').attr('tabindex') == '-1');
       <input type="text" id="username" name="username"><br>
 
 
-      <input tabindex="-1" type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" placeholder="Don't fill this in!">
+      <input tabindex="-1" type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" aria-hidden="true" placeholder="Don't fill this in!">
 
 
       <label for="username">Username:</label>
