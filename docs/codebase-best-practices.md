@@ -2,7 +2,7 @@
 
 ## General JavaScript
 
-In most cases, our [linter](how-to-setup-freecodecamp-locally?id=follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preffered practice.
+In most cases, our [linter](how-to-setup-freecodecamp-locally?id=follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
 
 ## Specific TypeScript
 
@@ -20,6 +20,44 @@ The best bet at achieving this is to:
 
 > [!NOTE]
 > Editors like VSCode are still likely to show you the file has been deleted and a new one created. If you use the CLI to `git add .`, then VSCode will show the file as renamed in stage
+
+### Naming Conventions
+
+#### Types
+
+React Component Props
+
+```typescript
+type MyComponentProps = {};
+const MyComponent = (props: MyComponentProps) => {};
+```
+
+Default
+
+```typescript
+type MyObjectType = {};
+const myObject: MyObjectType = {};
+```
+
+#### Interfaces
+
+React Component Props
+
+```typescript
+interface IMyComponentProps {}
+const MyComponent = (props: IMyComponentProps) => {};
+```
+
+Default
+
+```typescript
+interface IMyObjectType {}
+const myObject: IMyObject = {};
+```
+
+#### Namespaces
+
+#### Redux Actions
 
 ## Further Literature
 
