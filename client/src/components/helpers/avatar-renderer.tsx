@@ -1,26 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Image } from '@freecodecamp/react-bootstrap';
 import DefaultAvatar from '../../assets/icons/DefaultAvatar';
 import { defaultUserImage } from '../../../../config/misc';
-import { borderColorPicker } from '../helpers';
+import { borderColorPicker } from '.';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {
-  isDonating: PropTypes.bool,
-  isTopContributor: PropTypes.bool,
-  picture: PropTypes.any.isRequired,
-  userName: PropTypes.string.isRequired
-};
+interface AvatarRendererProps {
+  isDonating: boolean;
+  isTopContributor: boolean;
+  picture: unknown;
+  userName: string;
+}
 
-function AvatarRenderer({ picture, userName, isDonating, isTopContributor }) {
+function AvatarRenderer({
+  picture,
+  userName,
+  isDonating,
+  isTopContributor
+}: AvatarRendererProps): JSX.Element {
   const { t } = useTranslation();
-  let borderColor = borderColorPicker(isDonating, isTopContributor);
-  let isPlaceHolderImage =
-    /example.com|identicon.org/.test(picture) || picture === defaultUserImage;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const borderColor: unknown = borderColorPicker(isDonating, isTopContributor);
+  const isPlaceHolderImage =
+    /example.com|identicon.org/.test(picture as string) ||
+    picture === defaultUserImage;
 
   return (
-    <div className={`avatar-container ${borderColor}`}>
+    <div className={`avatar-container ${borderColor as string}`}>
       {isPlaceHolderImage ? (
         <DefaultAvatar className='avatar default-avatar' />
       ) : (
@@ -35,6 +41,5 @@ function AvatarRenderer({ picture, userName, isDonating, isTopContributor }) {
   );
 }
 
-AvatarRenderer.propTypes = propTypes;
 AvatarRenderer.displayName = 'AvatarRenderer';
 export default AvatarRenderer;
