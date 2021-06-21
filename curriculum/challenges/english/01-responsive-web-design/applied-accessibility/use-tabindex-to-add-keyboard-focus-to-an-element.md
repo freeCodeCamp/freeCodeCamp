@@ -21,20 +21,20 @@ Certain elements, such as links and form controls, automatically receive keyboar
 
 # --instructions--
 
-Camper Cat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a `tabindex` attribute to the `p` tag and set its value to `0`. Bonus - using `tabindex` also enables the CSS pseudo-class `:focus` to work on the `p` tag.
+Camper Cat created a new survey to collect information about his users. He created a hidden field that only spam bots will fill in. He knows input fields automatically get keyboard focus, so he wants to prevent his keyboard users from focusing to that hidden field. Add a `tabindex` attribute to the hidden `input` tag and set its value to `-1`. Bonus - using `tabindex` also enables the CSS pseudo-class `:focus` to work on the tag you applied `tabindex` to.
 
 # --hints--
 
-Your code should add a `tabindex` attribute to the `p` tag that holds the form instructions.
+Your code should add a `tabindex` attribute to the hidden `input` tag that only spam bots should access.
 
 ```js
-assert($('p').attr('tabindex'));
+assert($('input#hiddenInput').attr('tabindex'));
 ```
 
-Your code should set the `tabindex` attribute on the `p` tag to a value of 0.
+Your code should set the `tabindex` attribute on the hidden `input` tag to a value of -1.
 
 ```js
-assert($('p').attr('tabindex') == '0');
+assert($('input#hiddenInput').attr('tabindex') == '-1');
 ```
 
 # --seed--
@@ -47,6 +47,13 @@ assert($('p').attr('tabindex') == '0');
   p:focus {
     background-color: yellow;
   }
+  #hiddenInput {
+    position: absolute;
+    left: -100%;
+  }
+  #hiddenInput:focus {
+    left: 0;
+  }
   </style>
 </head>
 <body>
@@ -55,13 +62,14 @@ assert($('p').attr('tabindex') == '0');
   </header>
   <section>
     <form>
-
-
       <p>Instructions: Fill in ALL your information then click <b>Submit</b></p>
-
-
       <label for="username">Username:</label>
       <input type="text" id="username" name="username"><br>
+
+
+      <input type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" placeholder="Don't fill this in!">
+
+
       <fieldset>
         <legend>What level ninja are you?</legend>
         <input id="newbie" type="radio" name="levels" value="newbie">
@@ -99,6 +107,13 @@ assert($('p').attr('tabindex') == '0');
   p:focus {
     background-color: yellow;
   }
+  #hiddenInput {
+    position: absolute;
+    left: -100%;
+  }
+  #hiddenInput:focus {
+    left: 0;
+  }
   </style>
 </head>
 <body>
@@ -107,9 +122,12 @@ assert($('p').attr('tabindex') == '0');
   </header>
   <section>
     <form>
+      <p>Instructions: Fill in ALL your information then click <b>Submit</b></p>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br>
 
 
-      <p tabindex="0">Instructions: Fill in ALL your information then click <b>Submit</b></p>
+      <input tabindex="-1" type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" placeholder="Don't fill this in!">
 
 
       <label for="username">Username:</label>
