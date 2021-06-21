@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import CompletionModalBody from './CompletionModalBody';
+import CompletionModalBody from './completion-modal-body';
 
 const props = {
   block: 'basic-html-and-html5',
@@ -33,7 +33,7 @@ describe('<CompletionModalBody />', () => {
       const { container } = render(<CompletionModalBody {...props} />);
 
       fireEvent.animationEnd(
-        container.querySelector('.completion-success-icon')
+        container.querySelector('.completion-success-icon') as HTMLElement
       );
 
       jest.runAllTimers();
