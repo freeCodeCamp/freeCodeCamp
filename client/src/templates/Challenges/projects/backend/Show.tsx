@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // Package Utilities
@@ -26,7 +27,7 @@ import LearnLayout from '../../../../components/layouts/Learn';
 import ChallengeTitle from '../../components/challenge-title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import TestSuite from '../../components/Test-Suite';
-import Output from '../../components/Output';
+import Output from '../../components/output';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/HelpModal';
 import ProjectToolPanel from '../Tool-Panel';
@@ -249,8 +250,6 @@ class BackEnd extends Component<BackEndProps> {
 *
 *
 */`}
-                  dimensions={this.state}
-                  height={150}
                   output={output}
                 />
                 <TestSuite tests={tests} />
