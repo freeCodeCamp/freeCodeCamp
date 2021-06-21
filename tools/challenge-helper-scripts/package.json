@@ -23,7 +23,7 @@
     "create-project": "ts-node create-project"
   },
   "devDependencies": {
-    "@types/inquirer": "7.3.1",
+    "@types/inquirer": "7.3.2",
     "bson-objectid": "2.0.1",
     "cross-env": "7.0.3",
     "gray-matter": "4.0.3",
