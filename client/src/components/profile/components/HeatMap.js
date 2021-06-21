@@ -9,7 +9,7 @@ import startOfDay from 'date-fns/startOfDay';
 import isEqual from 'date-fns/isEqual';
 import { useTranslation } from 'react-i18next';
 
-import FullWidthRow from '../../helpers/FullWidthRow';
+import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
