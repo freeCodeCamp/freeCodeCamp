@@ -1,15 +1,21 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
+import { Component, ReactNode } from 'react';
+import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
 import { appMount } from '../redux';
 
 const mapStateToProps = () => ({});
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators({ appMount }, dispatch);
 
-class AppMountNotifier extends Component {
+type AppMountNotifierProps = {
+  appMount: () => void;
+  render: () => ReactNode;
+};
+
+class AppMountNotifier extends Component<AppMountNotifierProps> {
+  static displayName = 'AppMountNotifier';
+
   componentDidMount() {
     return this.props.appMount();
   }
@@ -17,11 +23,5 @@ class AppMountNotifier extends Component {
     return this.props.render();
   }
 }
-
-AppMountNotifier.displayName = 'AppMountNotifier';
-AppMountNotifier.propTypes = {
-  appMount: PropTypes.func.isRequired,
-  render: PropTypes.func.isRequired
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppMountNotifier);
