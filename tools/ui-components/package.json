@@ -34,7 +34,7 @@
     "babel-loader": "8.2.2",
     "postcss": "8.3.5",
     "postcss-import": "14.0.2",
-    "tailwindcss": "2.2.0"
+    "tailwindcss": "2.2.2"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
