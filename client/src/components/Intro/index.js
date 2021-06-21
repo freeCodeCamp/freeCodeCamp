@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { randomQuote } from '../../utils/get-words';
-import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
+import CurrentChallengeLink from '../helpers/current-challenge-link';
 import IntroDescription from './components/IntroDescription';
 import { Trans, useTranslation } from 'react-i18next';
 
