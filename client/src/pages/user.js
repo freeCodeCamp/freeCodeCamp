@@ -3,7 +3,7 @@ import { Router } from '@reach/router';
 import { withPrefix } from 'gatsby';
 
 import RedirectHome from '../components/RedirectHome';
-import ShowUser from '../client-only-routes/ShowUser';
+import ShowUser from '../client-only-routes/show-user';
 
 function User() {
   return (

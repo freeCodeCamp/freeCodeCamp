@@ -3,7 +3,7 @@ import { Router } from '@reach/router';
 import { withPrefix } from 'gatsby';
 
 import RedirectHome from '../components/RedirectHome';
-import ShowCertification from '../client-only-routes/ShowCertification';
+import ShowCertification from '../client-only-routes/show-certification';
 
 import './certification.css';
 
