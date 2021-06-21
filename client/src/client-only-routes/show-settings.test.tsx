@@ -4,7 +4,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import envData from '../../../config/env.json';
 
-import { ShowSettings } from './ShowSettings';
+import { ShowSettings } from './show-settings';
 
 const { apiLocation } = envData as Record<string, string>;
 

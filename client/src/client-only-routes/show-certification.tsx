@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 
-import ShowProjectLinks from './ShowProjectLinks';
+import ShowProjectLinks from './show-project-links';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCampLogo';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
