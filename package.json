@@ -114,7 +114,7 @@
     "cross-env": "7.0.3",
     "cypress": "7.5.0",
     "docsify-cli": "4.4.3",
-    "eslint": "7.28.0",
+    "eslint": "7.29.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.23.4",
     "eslint-plugin-jest-dom": "3.9.0",
