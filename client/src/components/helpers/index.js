@@ -8,4 +8,4 @@ export { default as Link } from './link';
 export { default as CurrentChallengeLink } from './current-challenge-link';
 export { default as ImageLoader } from './image-loader';
 export { default as AvatarRenderer } from './AvatarRenderer';
-export { default as borderColorPicker } from './borderColorPicker';
+export { default as borderColorPicker } from './border-color-picker';
