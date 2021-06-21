@@ -36,7 +36,7 @@ Bird.prototype.eat = function() {
 };
 ```
 
-如果你有一個實例：`let duck = new Bird();`，然後你調用了 `duck.eat()`，以下就是 JavaScript 在 `duck’s` 的 `prototype` 鏈上尋找方法的過程：
+如果你有一個實例：`let duck = new Bird();`，然後你調用了 `duck.eat()`，以下就是 JavaScript 在 `duck` 的 `prototype` 鏈上尋找方法的過程：
 
 1.  `duck` => `eat()` 是定義在這裏嗎？ 不是。
 2.  `Bird` => `eat()` 是定義在這裏嗎？ => 是的。 執行它並停止往上搜索。
