@@ -128,8 +128,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.14.5",
-    "@codesee/babel-plugin-instrument": "0.38.0",
-    "@codesee/tracker": "0.38.0",
+    "@codesee/babel-plugin-instrument": "0.39.0",
+    "@codesee/tracker": "0.39.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.7",
     "@types/react-transition-group": "4.4.1",
