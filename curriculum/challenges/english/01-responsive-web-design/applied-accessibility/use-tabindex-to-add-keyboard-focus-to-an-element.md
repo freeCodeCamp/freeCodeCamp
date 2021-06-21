@@ -28,13 +28,13 @@ Camper Cat created a new survey to collect information about his users. He creat
 Your code should add a `tabindex` attribute to the hidden `input` tag that only spam bots should access.
 
 ```js
-assert($('input#hiddenInput').attr('tabindex'));
+assert($('input#hidden-input').attr('tabindex'));
 ```
 
 Your code should set the `tabindex` attribute on the hidden `input` tag to a value of -1.
 
 ```js
-assert($('input#hiddenInput').attr('tabindex') == '-1');
+assert($('input#hidden-input').attr('tabindex') == '-1');
 ```
 
 # --seed--
@@ -47,11 +47,11 @@ assert($('input#hiddenInput').attr('tabindex') == '-1');
   p:focus {
     background-color: yellow;
   }
-  #hiddenInput {
+  #hidden-input {
     position: absolute;
     left: -100%;
   }
-  #hiddenInput:focus {
+  #hidden-input:focus {
     left: 0;
   }
   </style>
@@ -67,7 +67,7 @@ assert($('input#hiddenInput').attr('tabindex') == '-1');
       <input type="text" id="username" name="username"><br>
 
 
-      <input type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" aria-hidden="true" placeholder="Don't fill this in!">
+      <input type="text" id="hidden-input" aria-label="hidden input to catch spam bots" aria-hidden="true" placeholder="Don't fill this in!">
 
 
       <fieldset>
@@ -107,11 +107,11 @@ assert($('input#hiddenInput').attr('tabindex') == '-1');
   p:focus {
     background-color: yellow;
   }
-  #hiddenInput {
+  #hidden-input {
     position: absolute;
     left: -100%;
   }
-  #hiddenInput:focus {
+  #hidden-input:focus {
     left: 0;
   }
   </style>
@@ -127,7 +127,7 @@ assert($('input#hiddenInput').attr('tabindex') == '-1');
       <input type="text" id="username" name="username"><br>
 
 
-      <input tabindex="-1" type="text" id="hiddenInput" aria-label="hidden input to catch spam bots" aria-hidden="true" placeholder="Don't fill this in!">
+      <input tabindex="-1" type="text" id="hidden-input" aria-label="hidden input to catch spam bots" aria-hidden="true" placeholder="Don't fill this in!">
 
 
       <label for="username">Username:</label>
