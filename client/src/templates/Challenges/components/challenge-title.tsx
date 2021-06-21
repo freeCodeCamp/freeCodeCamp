@@ -1,19 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from '../../../components/helpers/index';
 import i18next from 'i18next';
 
 import './challenge-title.css';
-import GreenPass from '../../../assets/icons/green-pass';
-import BreadCrumb from './BreadCrumb';
 
-const propTypes = {
-  block: PropTypes.string,
-  children: PropTypes.string,
-  isCompleted: PropTypes.bool,
-  superBlock: PropTypes.string,
-  translationPending: PropTypes.bool.isRequired
-};
+import GreenPass from '../../../assets/icons/green-pass';
+import BreadCrumb from './bread-crumb';
+
+interface ChallengeTitleProps {
+  block: string;
+  children: string;
+  isCompleted: boolean;
+  superBlock: string;
+  translationPending: boolean;
+}
 
 function ChallengeTitle({
   block,
@@ -21,16 +21,21 @@ function ChallengeTitle({
   isCompleted,
   superBlock,
   translationPending
-}) {
+}: ChallengeTitleProps): JSX.Element {
   return (
     <div className='challenge-title-wrap'>
       {translationPending && (
-        <Link
-          className='title-translation-cta'
-          to={i18next.t('links:help-translate-link-url')}
-        >
-          {i18next.t('misc.translation-pending')}
-        </Link>
+        <>
+          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+          {/* @ts-ignore */}
+          <Link
+            className='title-translation-cta'
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            to={i18next.t('links:help-translate-link-url')}
+          >
+            {i18next.t('misc.translation-pending')}
+          </Link>
+        </>
       )}
       <BreadCrumb block={block} superBlock={superBlock} />
       <div className='challenge-title'>
@@ -48,6 +53,5 @@ function ChallengeTitle({
 }
 
 ChallengeTitle.displayName = 'ChallengeTitle';
-ChallengeTitle.propTypes = propTypes;
 
 export default ChallengeTitle;

@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ChallengeTitle from './Challenge-Title';
+import ChallengeTitle from './challenge-title';
 
 const baseProps = {
   block: 'fake-block',
