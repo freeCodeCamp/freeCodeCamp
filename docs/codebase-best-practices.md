@@ -2,6 +2,8 @@
 
 ## General JavaScript
 
+In most cases, our [linter](how-to-setup-freecodecamp-locally?id=follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preffered practice.
+
 ## Specific TypeScript
 
 ### Migrating a JavaScript File to TypeScript
@@ -10,7 +12,7 @@
 
 Sometimes changing the file from `<filename>.js` -> `<filename>.tsx?` causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
 
-The best bet at achieving this is by:
+The best bet at achieving this is to:
 
 1. Rename the file
 2. Commit with the flag `--no-verify` to prevent Husky from complaining about the lint errors
