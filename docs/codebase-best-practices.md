@@ -4,6 +4,8 @@
 
 In most cases, our [linter](how-to-setup-freecodecamp-locally?id=follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
 
+It is encouraged to use functional components over class-based components.
+
 ## Specific TypeScript
 
 ### Migrating a JavaScript File to TypeScript
