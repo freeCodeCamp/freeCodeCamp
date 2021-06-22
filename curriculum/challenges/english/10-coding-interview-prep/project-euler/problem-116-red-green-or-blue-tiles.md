@@ -12,18 +12,26 @@ A row of five black square tiles is to have a number of its tiles replaced with 
 
 If red tiles are chosen there are exactly seven ways this can be done.
 
+p116_1.png
+
 If green tiles are chosen there are three ways.
+
+p116_2.png
 
 And if blue tiles are chosen there are two ways.
 
-Assuming that colours cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How many different ways can the black tiles in a row measuring fifty units in length be replaced if colours cannot be mixed and at least one coloured tile must be used? NOTE: This is related to Problem 117.
+p116_3.png
+
+Assuming that colours cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How many different ways can the black tiles in a row measuring fifty units in length be replaced if colours cannot be mixed and at least one coloured tile must be used?
+
+**Note:** This is related to Problem 117.
 
 # --hints--
 
-`euler116()` should return 20492570929.
+`redGreenBlueOne()` should return `20492570929`.
 
 ```js
-assert.strictEqual(euler116(), 20492570929);
+assert.strictEqual(redGreenBlueOne(), 20492570929);
 ```
 
 # --seed--
@@ -31,12 +39,12 @@ assert.strictEqual(euler116(), 20492570929);
 ## --seed-contents--
 
 ```js
-function euler116() {
+function redGreenBlueOne() {
 
   return true;
 }
 
-euler116();
+redGreenBlueOne();
 ```
 
 # --solutions--
