@@ -6,8 +6,8 @@ import { borderColorPicker } from '.';
 import { useTranslation } from 'react-i18next';
 
 interface AvatarRendererProps {
-  isDonating: boolean;
-  isTopContributor: boolean;
+  isDonating?: boolean;
+  isTopContributor?: boolean;
   picture: unknown;
   userName: string;
 }

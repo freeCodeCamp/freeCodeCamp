@@ -1,13 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 
-// const propTypes = {
-//   children: PropTypes.any,
-//   external: PropTypes.bool,
-//   sameTab: PropTypes.bool,
-//   to: PropTypes.string.isRequired
-// };
-
 interface LinkProps {
   children?: ReactNode;
   external?: boolean;
