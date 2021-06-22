@@ -23,39 +23,25 @@ The best bet at achieving this is to:
 
 ### Naming Conventions
 
-#### Types
+#### Interfaces and Types
 
-React Component Props
+For the most part, it is encouraged to use interface over type declarations.
+
+React Component Props - suffix with `Props`
 
 ```typescript
-type MyComponentProps = {};
+interface MyComponentProps {}
+// type MyComponentProps = {};
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-Default
+Default - object name in PascalCase
 
 ```typescript
-type MyObjectType = {};
-const myObject: MyObjectType = {};
+interface MyObject {}
+// type MyObject = {};
+const myObject: MyObject = {};
 ```
-
-#### Interfaces
-
-React Component Props
-
-```typescript
-interface IMyComponentProps {}
-const MyComponent = (props: IMyComponentProps) => {};
-```
-
-Default
-
-```typescript
-interface IMyObjectType {}
-const myObject: IMyObject = {};
-```
-
-#### Namespaces
 
 #### Redux Actions
 
