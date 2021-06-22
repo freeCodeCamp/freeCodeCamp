@@ -35,6 +35,14 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
+React Stateful Components - suffix with `State`
+
+```typescript
+interface MyComponentState {}
+// type MyComponentState = {};
+class MyComponent extends Component<MyComponentProps, MyComponentState> {}
+```
+
 Default - object name in PascalCase
 
 ```typescript
