@@ -108,13 +108,13 @@ assert(Array.isArray(thinImage(_testImage1)));
 assert.equal(typeof thinImage(_testImage1)[0], 'string');
 ```
 
-`thinImage(testImage1)` should return thinned image as in example.
+`thinImage(testImage1)` should return a thinned image as in the example.
 
 ```js
 assert.deepEqual(thinImage(_testImage1), expected1);
 ```
 
-`thinImage(testImage2)` should return thinned image.
+`thinImage(testImage2)` should return a thinned image.
 
 ```js
 assert.deepEqual(thinImage(_testImage2), expected2);
