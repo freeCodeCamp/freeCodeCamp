@@ -297,15 +297,15 @@
     }
   },
   "relational-databases": {
-    "title": "Relational Databases",
+    "title": "关系型数据库",
     "intro": [
-      "placeholder"
+      "占位符"
     ],
     "blocks": {
       "learn-relational-databases": {
-        "title": "Learn Relational Databases",
+        "title": "学习关系型数据库",
         "intro": [
-          "placeholder"
+          "占位符"
         ]
       }
     }
