@@ -1,6 +1,6 @@
 export default function borderColorPicker(
-  isDonating: boolean | undefined,
-  isTopContributor: boolean | undefined
+  isDonating?: boolean,
+  isTopContributor?: boolean
 ): string {
   if (isDonating && isTopContributor) return 'purple-border';
   else if (isTopContributor) return 'blue-border';
