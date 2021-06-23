@@ -19,7 +19,7 @@ let duck = new Bird();
 duck.constructor
 ```
 
-但是 `duck` 和其他所有 `Bird` 的實例都應該表明它們是由 `Bird` 創建的，而不是由 `Animal` 創建的。 爲此，你可以手動把 `Bird's` 的 constructor 屬性設置爲 `Bird` 對象：
+但是 `duck` 和其他所有 `Bird` 的實例都應該表明它們是由 `Bird` 創建的，而不是由 `Animal` 創建的。 爲此，你可以手動將 `Bird` 的構造函數屬性設置爲 `Bird` 對象：
 
 ```js
 Bird.prototype.constructor = Bird;

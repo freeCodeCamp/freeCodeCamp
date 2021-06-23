@@ -39,9 +39,9 @@
     "@babel/plugin-proposal-export-default-from": "7.14.5",
     "@babel/plugin-proposal-function-bind": "7.14.5",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.14.5",
+    "@babel/preset-env": "7.14.7",
     "@babel/preset-react": "7.14.5",
-    "@babel/standalone": "7.14.6",
+    "@babel/standalone": "7.14.7",
     "@fortawesome/fontawesome": "1.1.8",
     "@fortawesome/fontawesome-svg-core": "1.2.35",
     "@fortawesome/free-brands-svg-icons": "5.15.3",
@@ -92,7 +92,7 @@
     "process": "0.11.10",
     "prop-types": "15.7.2",
     "psl": "1.8.0",
-    "query-string": "7.0.0",
+    "query-string": "7.0.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-final-form": "6.5.3",
@@ -128,8 +128,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.14.5",
-    "@codesee/babel-plugin-instrument": "0.38.0",
-    "@codesee/tracker": "0.38.0",
+    "@codesee/babel-plugin-instrument": "0.39.0",
+    "@codesee/tracker": "0.39.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.7",
     "@types/react-transition-group": "4.4.1",
@@ -143,7 +143,7 @@
     "monaco-editor-webpack-plugin": "4.0.0",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.1",
-    "webpack": "5.39.1",
+    "webpack": "5.40.0",
     "webpack-cli": "4.7.2"
   }
 }
