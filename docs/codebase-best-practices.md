@@ -12,7 +12,7 @@ It is encouraged to use functional components over class-based components.
 
 #### Retaining Git File History
 
-Sometimes changing the file from `<filename>.js` -> `<filename>.tsx?` causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
+Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
 
 The best bet at achieving this is to:
 
