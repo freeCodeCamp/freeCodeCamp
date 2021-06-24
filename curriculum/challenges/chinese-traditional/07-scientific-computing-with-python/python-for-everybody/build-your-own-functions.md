@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05b
-title: Build your own Functions
+title: 編寫你自己的函數
 challengeType: 11
 videoId: nLDychdBwUg
 dashedName: build-your-own-functions
@@ -8,15 +8,15 @@ dashedName: build-your-own-functions
 
 # --description--
 
-More resources:
+更多資源
 
-\- [Exercise](https://www.youtube.com/watch?v=ksvGhDsjtpw)
+\- [練習](https://www.youtube.com/watch?v=ksvGhDsjtpw)
 
 # --question--
 
 ## --text--
 
-What will the following Python program print out?:
+下面這個 Python 程序會打印什麼？：
 
 ```python
 def fred():

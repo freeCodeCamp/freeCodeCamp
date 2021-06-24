@@ -2,8 +2,7 @@
 
 describe('Settings', () => {
   it('should be possible to reset your progress', () => {
-    cy.visit('/');
-    cy.contains("Get started (it's free)").click();
+    cy.login();
     cy.visit('/settings');
     cy.contains('Reset all of my progress').click();
     cy.contains('Reset everything. I want to start from the beginning').click();
