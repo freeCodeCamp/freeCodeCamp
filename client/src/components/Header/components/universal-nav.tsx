@@ -12,11 +12,9 @@ import './universalNav.css';
 import { isLanding } from '../../../utils/path-parsers';
 import Loadable from '@loadable/component';
 
-import './universal-nav.css';
-
-const SearchBar = Loadable(() => import('../../search/searchBar/SearchBar'));
-const SearchBarOptimized = Loadable(
-  () => import('../../search/searchBar/search-bar-optimized')
+const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
+const SearchBarOptimized = Loadable(() =>
+  import('../../search/searchBar/search-bar-optimized')
 );
 
 export interface UniversalNavProps {

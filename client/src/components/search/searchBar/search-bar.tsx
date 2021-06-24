@@ -104,7 +104,7 @@ export class SearchBar extends Component<searchBarPropType, classState> {
 
   handleSearch = (
     e: React.SyntheticEvent<HTMLFormElement, Event>,
-    query?: any
+    query?: string
   ): boolean | void => {
     e.preventDefault();
     const { toggleSearchDropdown, updateSearchQuery } = this.props;
@@ -190,7 +190,6 @@ export class SearchBar extends Component<searchBarPropType, classState> {
     const placeholder = t ? t('search.placeholder') : '';
 
     return (
-<<<<<<< HEAD:client/src/components/search/searchBar/SearchBar.js
       <WithInstantSearch>
         <div
           className='fcc_searchBar'
@@ -200,17 +199,20 @@ export class SearchBar extends Component<searchBarPropType, classState> {
           <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
             <div className='fcc_search_wrapper'>
               <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
-                {t('search.label')}
+                {t ? t('search.label') : ''}
               </label>
               <ObserveKeys except={['Space']}>
-                <SearchBox
-                  focusShortcuts={[83, 191]}
-                  onChange={this.handleChange}
-                  onFocus={this.handleFocus}
-                  onSubmit={this.handleSearch}
-                  showLoadingIndicator={false}
-                  translations={{ placeholder }}
-                />
+                <div onFocus={this.handleFocus} role='textbox'>
+                  <SearchBox
+                    focusShortcuts={['83', '191']}
+                    onChange={this.handleChange}
+                    onSubmit={e => {
+                      this.handleSearch(e);
+                    }}
+                    showLoadingIndicator={false}
+                    translations={{ placeholder }}
+                  />
+                </div>
               </ObserveKeys>
               {isDropdownEnabled && isSearchFocused && (
                 <SearchHits
@@ -224,38 +226,6 @@ export class SearchBar extends Component<searchBarPropType, classState> {
           </HotKeys>
         </div>
       </WithInstantSearch>
-=======
-      <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
-        <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
-          <div className='fcc_search_wrapper'>
-            <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
-              {t ? t('search.label') : ''}
-            </label>
-            <ObserveKeys except={['Space']}>
-              <div onFocus={this.handleFocus} role='textbox'>
-                <SearchBox
-                  focusShortcuts={['83', '191']}
-                  onChange={this.handleChange}
-                  onSubmit={e => {
-                    this.handleSearch(e);
-                  }}
-                  showLoadingIndicator={false}
-                  translations={{ placeholder }}
-                />
-              </div>
-            </ObserveKeys>
-            {isDropdownEnabled && isSearchFocused && (
-              <SearchHits
-                handleHits={this.handleHits}
-                handleMouseEnter={this.handleMouseEnter}
-                handleMouseLeave={this.handleMouseLeave}
-                selectedIndex={index}
-              />
-            )}
-          </div>
-        </HotKeys>
-      </div>
->>>>>>> 918483ed0c (typescript migration for files under search folder):client/src/components/search/searchBar/search-bar.tsx
     );
   }
 }
