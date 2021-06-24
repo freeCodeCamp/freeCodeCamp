@@ -6,18 +6,19 @@ interface SpacerProps {
 
 const styles = { padding: '15px 0', height: '1px' };
 
-const Comp: React.FC = ({ ...props }) => (
+const Comp = ({ ...props }): JSX.Element => (
   <div className='spacer' style={styles} {...props} />
 );
 
-const Spacer = ({ size = 1 }: SpacerProps): React.ReactNode =>
+const Spacer = ({ size = 1 }: SpacerProps): JSX.Element =>
   size === 1 ? (
     <Comp />
   ) : (
-    '#'
-      .repeat(size)
-      .split('')
-      .map((_, i) => <Comp key={`spacer_${i}`} />)
+    <>
+      {Array.from(Array(size), (_, i) => (
+        <Comp key={`spacer_${i}`} />
+      ))}
+    </>
   );
 
 export default Spacer;

@@ -3,7 +3,7 @@ import React from 'react';
 import envData from '../../../../config/env.json';
 
 interface EnvData {
-  apiLocation?: string;
+  apiLocation: string;
 }
 
 const { apiLocation } = envData as EnvData;
@@ -14,7 +14,7 @@ function CurrentChallengeLink({
   children,
   isLargeBtn
 }: {
-  children?: React.ReactNode;
+  children?: JSX.ElementChildrenAttribute;
   isLargeBtn?: boolean;
 }): JSX.Element {
   let classNames;
@@ -24,10 +24,7 @@ function CurrentChallengeLink({
     classNames = 'btn btn-primary btn-block';
   }
   return (
-    <a
-      className={classNames}
-      href={`${apiLocation as string}${currentChallengeApi}`}
-    >
+    <a className={classNames} href={`${apiLocation}${currentChallengeApi}`}>
       {children}
     </a>
   );

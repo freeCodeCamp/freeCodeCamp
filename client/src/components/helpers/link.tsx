@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 
 interface LinkProps {
-  children?: ReactNode;
+  children?: JSX.ElementChildrenAttribute;
   external?: boolean;
   sameTab?: boolean;
   to: string;

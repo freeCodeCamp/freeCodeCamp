@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 interface SlimWidthRowProps {
-  children: ReactNode;
+  children: JSX.ElementChildrenAttribute;
 }
 function SlimWidthRow({
   children,

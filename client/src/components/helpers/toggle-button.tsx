@@ -29,7 +29,7 @@ export default function ToggleButton({
   value,
   onLabel = 'On',
   offLabel = 'Off'
-}: ButtonProps): React.ReactNode {
+}: ButtonProps): JSX.Element {
   const checkIconStyle = {
     height: '15px',
     width: '20px'

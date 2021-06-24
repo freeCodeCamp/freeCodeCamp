@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 interface AvatarRendererProps {
   isDonating?: boolean;
   isTopContributor?: boolean;
-  picture: unknown;
+  picture: string;
   userName: string;
 }
 
@@ -19,14 +19,12 @@ function AvatarRenderer({
   isTopContributor
 }: AvatarRendererProps): JSX.Element {
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const borderColor: unknown = borderColorPicker(isDonating, isTopContributor);
+  const borderColor: string = borderColorPicker(isDonating, isTopContributor);
   const isPlaceHolderImage =
-    /example.com|identicon.org/.test(picture as string) ||
-    picture === defaultUserImage;
+    /example.com|identicon.org/.test(picture) || picture === defaultUserImage;
 
   return (
-    <div className={`avatar-container ${borderColor as string}`}>
+    <div className={`avatar-container ${borderColor}`}>
       {isPlaceHolderImage ? (
         <DefaultAvatar className='avatar default-avatar' />
       ) : (

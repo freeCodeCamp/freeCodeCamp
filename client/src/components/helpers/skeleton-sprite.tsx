@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './skeleton-styles';
 
+// TODO: unsure about parameter typing
 function SkeletonSprite({}: React.FC<
   React.ComponentPropsWithoutRef<'svg'>
 >): JSX.Element {
