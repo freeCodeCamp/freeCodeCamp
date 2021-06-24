@@ -7,7 +7,7 @@ dashedName: part-64
 
 # --description--
 
-Remove the `background-color` property and value from `.bb4`, and add it to the three new sections; `.bb4a`, `.bb4b`, and `.bb4c`, so only the sections are filled.
+Remove the `background-color` property and value from `.bb4`, and add it to the three new sections `.bb4a`, `.bb4b`, and `.bb4c`, so only the sections are filled.
 
 # --hints--
 
@@ -255,4 +255,3 @@ body {
 }
     
 ```
-
