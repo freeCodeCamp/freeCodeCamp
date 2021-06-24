@@ -112,7 +112,7 @@
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
-    "cypress": "7.5.0",
+    "cypress": "7.6.0",
     "docsify-cli": "4.4.3",
     "eslint": "7.29.0",
     "eslint-config-prettier": "8.3.0",
