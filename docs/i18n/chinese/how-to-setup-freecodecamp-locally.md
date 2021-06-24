@@ -26,7 +26,7 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 | npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | [Release Notes](https://docs.mongodb.com/v4.0/release-notes/)        |
 
-> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+> [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
