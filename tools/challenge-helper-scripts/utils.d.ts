@@ -1,10 +1,10 @@
 type CreateStepOptions = {
-  projectPath: string;
-  stepNum: number;
   challengeSeeds: Record<string, unknown>;
+  projectPath: string;
   stepBetween: boolean;
+  stepNum: number;
 };
 
 export declare function createStepFile(options: CreateStepOptions): string;
-
-// TODO: the rest of the functions
+export declare function reorderSteps(): void;
+export declare function getChallengeSeeds(string): Record<string, unknown>;
