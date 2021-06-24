@@ -11,7 +11,7 @@ In the next few steps, you are going to use some tricks with CSS borders to turn
 
 # --hints--
 
-You shoudl remove the `background-color` from `.bb2`.
+You should remove the `background-color` from `.bb2`.
 
 ```js
 assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".bb2")?.backgroundColor);
