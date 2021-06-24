@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './offline-warning.css';
 
 const delayInMilliSeconds = 5000;
-let id: NodeJS.Timeout;
+let id: ReturnType<typeof setTimeout>;
 
 interface OfflineWarningProps {
   isOnline: boolean;
