@@ -1,4 +1,3 @@
-/* global describe it expect */
 const cloneDeep = require('lodash/cloneDeep');
 const { selectAll } = require('unist-util-select');
 const find = require('unist-util-find');

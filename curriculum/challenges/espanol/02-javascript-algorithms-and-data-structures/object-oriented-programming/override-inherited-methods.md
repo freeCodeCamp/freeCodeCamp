@@ -36,10 +36,10 @@ Bird.prototype.eat = function() {
 };
 ```
 
-Si tienes una instancia de `let duck = new Bird();` y llamas a `duck.eat()`, de esta manera es como JavaScript busca el método en la cadena de `duck’s` `prototype`:
+Si tienes una instancia de `let duck = new Bird();` y llamas a `duck.eat()`, así es como JavaScript busca el método en la cadena `prototype` de `duck`:
 
 1.  `duck` => ¿Está `eat()` definido aquí? No.
-2.  `Bird` => ¿Está `eat()` definido aquí? => Sí. Ejecutala y detén la búsqueda.
+2.  `Bird` => ¿Está `eat()` definido aquí? => Sí. Ejecútala y detén la búsqueda.
 3.  `Animal` => `eat()` también está definido, pero JavaScript dejó de buscar antes de llegar a este nivel.
 4.  Object => JavaScript dejó de buscar antes de llegar a este nivel.
 

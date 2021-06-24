@@ -1,4 +1,3 @@
-/* global expect */
 import { findIndexHtml } from './builders.js';
 
 const withHTML = [

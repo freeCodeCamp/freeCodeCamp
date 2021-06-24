@@ -1,4 +1,3 @@
-/* global describe it expect jest */
 const path = require('path');
 const cloneDeep = require('lodash/cloneDeep');
 const toVfile = require('to-vfile');

@@ -19,23 +19,23 @@ var sandwich = ["peanut butter", "jelly", "bread"]
 
 # --instructions--
 
-Modifica el nuevo arreglo `myArray` para que contenga tanto una `string` como un `number` (en ese orden).
+Modifica el nuevo arreglo `myArray` para que contenga tanto una cadena como un número (en ese orden).
 
 # --hints--
 
-`myArray` debe ser un arreglo (`array`).
+`myArray` debe ser un arreglo.
 
 ```js
 assert(typeof myArray == 'object');
 ```
 
-El primer elemento en `myArray` debe ser una cadena (`string`).
+El primer elemento en `myArray` debe ser una cadena.
 
 ```js
 assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
 ```
 
-El segundo elemento en `myArray` debe ser un número (`number`).
+El segundo elemento en `myArray` debe ser un número.
 
 ```js
 assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');

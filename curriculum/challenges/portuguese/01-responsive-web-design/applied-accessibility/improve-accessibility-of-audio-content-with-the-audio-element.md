@@ -26,7 +26,7 @@ Um exemplo:
 
 # --instructions--
 
-É hora de fazer uma pausa com o Camper Cat e conhecer o colega Zersiax (@zersiax), um campeão de acessibilidade e também usuário de leitor de tela. Para ouvir um clipe de seu leitor de tela em ação, adicione um elemento `audio` após o elemento `p`. Inclua o atributo `controls`. Em seguida, coloque uma tag `source` dentro da tag `audio` com o atributo `src` definido como `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` e o atributo `type` definido como `"audio/mpeg"`.
+É hora de fazer uma pausa com o Camper Cat e conhecer o colega Zersiax (@zersiax), um campeão de acessibilidade e também usuário de leitor de tela. Para ouvir um clipe de seu leitor de tela em ação, adicione o elemento `audio` após o elemento `p`. Inclua o atributo `controls`. Em seguida, coloque uma tag `source` dentro da tag `audio` com o atributo `src` definido como `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` e o atributo `type` definido como `"audio/mpeg"`.
 
 **Observação:** o clipe de áudio pode parecer rápido e difícil de entender, mas é uma velocidade normal para usuários de leitores de tela.
 
