@@ -395,7 +395,8 @@
     "analytics": "Un grafico a barre e un grafico a linea",
     "shield": "Uno scudo con un segno di spunta",
     "tensorflow": "Icona di Tensorflow",
-    "algorithm": "Nodi con rami"
+    "algorithm": "Nodi con rami",
+    "magnifier": "magnifier"
   },
   "aria": {
     "fcc-logo": "Logo freeCodeCamp",
