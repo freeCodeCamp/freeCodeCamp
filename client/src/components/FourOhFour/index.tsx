@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Spacer } from '../../components/helpers';
+import { Spacer } from '../helpers';
 import { Link } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 
@@ -11,7 +11,8 @@ import './404.css';
 
 const FourOhFour = () => {
   const { t } = useTranslation();
-  const quote = randomQuote();
+  // TODO: Remove this type coercion when get-words.js is migrated
+  const quote = randomQuote() as { quote: string; author: string };
   return (
     <div className='notfound-page-wrapper'>
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
