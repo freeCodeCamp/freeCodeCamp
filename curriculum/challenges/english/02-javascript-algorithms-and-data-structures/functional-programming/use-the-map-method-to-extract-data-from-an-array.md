@@ -61,15 +61,15 @@ Your code should use the `map` method.
 assert(code.match(/\.map/g));
 ```
 
-`ratings` should equal `[{"Title":"Inception","imdbRating":"8.8"},{"Title":"Interstellar","imdbRating":"8.6"},{"Title":"The Dark Knight","imdbRating":"9.0"},{"Title":"Batman Begins","imdbRating":"8.3"},{"Title":"Avatar","imdbRating":"7.9"}]`.
+`ratings` should equal `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
 
 ```js
 assert.deepEqual(ratings, [
-  { Title: 'Inception', imdbRating: '8.8' },
-  { Title: 'Interstellar', imdbRating: '8.6' },
-  { Title: 'The Dark Knight', imdbRating: '9.0' },
-  { Title: 'Batman Begins', imdbRating: '8.3' },
-  { Title: 'Avatar', imdbRating: '7.9' }
+  { title: 'Inception', rating: '8.8' },
+  { title: 'Interstellar', rating: '8.6' },
+  { title: 'The Dark Knight', rating: '9.0' },
+  { title: 'Batman Begins', rating: '8.3' },
+  { title: 'Avatar', rating: '7.9' }
 ]);
 ```
 
@@ -196,7 +196,7 @@ var watchList = [
 
 var ratings = [];
 for(var i=0; i < watchList.length; i++){
-  ratings.push({Title: watchList[i]["Title"],  imdbRating: watchList[i]["imdbRating"]});
+  ratings.push({title: watchList[i]["Title"],  rating: watchList[i]["imdbRating"]});
 }
 
 // Only change code above this line
@@ -323,8 +323,8 @@ var watchList = [
 
 var ratings = watchList.map(function(movie) {
   return {
-    Title: movie["Title"],
-    imdbRating: movie["imdbRating"]
+    title: movie["Title"],
+    rating: movie["imdbRating"]
   }
 });
 ```
