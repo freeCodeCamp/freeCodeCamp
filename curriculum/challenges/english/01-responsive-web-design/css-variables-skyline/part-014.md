@@ -7,7 +7,7 @@ dashedName: part-14
 
 # --description--
 
-Now you have something that is starting to resemble a building. Lets get into your first variable. Variable declarations begin with two dashes (`-`) and are given a name and a value like this: `--variable-name: value;`. In the `.bb1` class, create a variable named `--building-color1` and give it a value of `#999`.
+Now you have something that is starting to resemble a building. Let's get into your first variable. Variable declarations begin with two dashes (`-`) and are given a name and a value like this: `--variable-name: value;`. In the `.bb1` class, create a variable named `--building-color1` and give it a value of `#999`.
 
 # --hints--
 
@@ -100,4 +100,3 @@ body {
 }
     
 ```
-

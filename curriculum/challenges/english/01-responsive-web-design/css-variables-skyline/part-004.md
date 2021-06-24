@@ -32,7 +32,7 @@ const title = document.querySelector('title');
 assert.equal(title.text.toLowerCase(), 'freecodecamp skyline project')
 ```
 
-Remember, the casing and spelling matters, for the title.
+Remember, the casing and spelling matters for the title.
 
 ```js
 const title = document.querySelector('title');
@@ -99,4 +99,3 @@ assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
   </body>
 </html>
 ```
-
