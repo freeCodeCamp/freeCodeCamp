@@ -1,5 +1,3 @@
-/* global describe expect it */
-
 const { getLines } = require('./get-lines');
 
 const content = 'one\ntwo\nthree';

@@ -11,6 +11,7 @@ const quiz = 8;
 const invalid = 9;
 const pythonProject = 10;
 const video = 11;
+const codeally = 12;
 
 // individual exports
 exports.backend = backend;
@@ -31,7 +32,8 @@ exports.challengeTypes = {
   step,
   quiz,
   invalid,
-  video
+  video,
+  codeally
 };
 
 // turn challengeType to file ext
@@ -52,7 +54,8 @@ exports.viewTypes = {
   [step]: 'step',
   [quiz]: 'quiz',
   [backend]: 'backend',
-  [video]: 'video'
+  [video]: 'video',
+  [codeally]: 'codeally'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -76,66 +79,4 @@ exports.submitTypes = {
 };
 
 // determine which help forum questions should be posted to
-exports.helpCategoryMap = {
-  'basic-html-and-html5': 'HTML-CSS',
-  'basic-css': 'HTML-CSS',
-  'applied-visual-design': 'HTML-CSS',
-  'applied-accessibility': 'HTML-CSS',
-  'responsive-web-design-principles': 'HTML-CSS',
-  'css-flexbox': 'HTML-CSS',
-  'css-grid': 'HTML-CSS',
-  'responsive-web-design-projects': 'HTML-CSS',
-  'basic-javascript': 'JavaScript',
-  es6: 'JavaScript',
-  'regular-expressions': 'JavaScript',
-  debugging: 'JavaScript',
-  'basic-data-structures': 'JavaScript',
-  'basic-algorithm-scripting': 'JavaScript',
-  'object-oriented-programming': 'JavaScript',
-  'functional-programming': 'JavaScript',
-  'intermediate-algorithm-scripting': 'JavaScript',
-  'javascript-algorithms-and-data-structures-projects': 'JavaScript',
-  bootstrap: 'HTML-CSS',
-  jquery: 'JavaScript',
-  sass: 'HTML-CSS',
-  react: 'JavaScript',
-  redux: 'JavaScript',
-  'react-and-redux': 'JavaScript',
-  'front-end-libraries-projects': 'JavaScript',
-  'data-visualization-with-d3': 'JavaScript',
-  'json-apis-and-ajax': 'JavaScript',
-  'data-visualization-projects': 'JavaScript',
-  'managing-packages-with-npm': 'JavaScript',
-  'basic-node-and-express': 'JavaScript',
-  'mongodb-and-mongoose': 'JavaScript',
-  'apis-and-microservices-projects': 'JavaScript',
-  'information-security-with-helmetjs': 'JavaScript',
-  'quality-assurance-and-testing-with-chai': 'JavaScript',
-  'advanced-node-and-express': 'JavaScript',
-  'quality-assurance-projects': 'JavaScript',
-  'information-security-projects': 'JavaScript',
-  algorithms: 'JavaScript',
-  'data-structures': 'JavaScript',
-  'take-home-projects': 'JavaScript',
-  'rosetta-code': 'JavaScript',
-  'project-euler': 'JavaScript',
-  'scientific-computing-with-python': 'Python',
-  'scientific-computing-with-python-projects': 'Python',
-  'data-analysis-with-python': 'Python',
-  'data-analysis-with-python-projects': 'Python',
-  'machine-learning-with-python': 'Python',
-  'machine-learning-with-python-projects': 'Python',
-  'python-for-everybody': 'Python',
-  tensorflow: 'Python',
-  'how-neural-networks-work': 'Python',
-  numpy: 'Python',
-  'data-analysis-with-python-course': 'Python',
-  'python-for-penetration-testing': 'Python',
-  'basic-html-cat-photo-app': 'HTML-CSS',
-  'basic-css-cafe-menu': 'HTML-CSS',
-  'css-variables-skyline': 'HTML-CSS',
-  'basic-javascript-rpg-game': 'JavaScript',
-  'functional-programming-spreadsheet': 'JavaScript',
-  'intermediate-javascript-calorie-counter': 'JavaScript',
-  'd3-dashboard': 'JavaScript'
-};
+exports.helpCategoryMap = require('./help-category-map.json');

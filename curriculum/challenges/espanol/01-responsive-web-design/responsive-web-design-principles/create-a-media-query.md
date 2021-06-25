@@ -37,14 +37,14 @@ Debes declarar una consulta `@media` para dispositivos con un `height` menor o i
 
 ```js
 const media = new __helpers.CSSHelp(document).getCSSRules('media');
-assert(media.some(x => x.conditionText?.includes('(max-height: 800px)')));
+assert(media.some(x => x.media?.mediaText?.includes('(max-height: 800px)')));
 ```
 
 Tu elemento `p` debe tener un `font-size` de `10px` cuando el `height` del dispositivo sea menor o igual a `800px`.
 
 ```js
 const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-height: 800px)');
-assert(rules?.find(x => x.selectorText === 'p')?.style.fontSize === "10px");
+assert(rules?.find(x => x.selectorText === 'p')?.style?.fontSize === "10px");
 ```
 
 Tu elemento `p` debe tener un `font-size` inicial de `20px` cuando el dispositivo `height` sea superior a `800px`.

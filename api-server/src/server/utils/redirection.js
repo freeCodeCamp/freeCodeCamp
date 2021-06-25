@@ -3,7 +3,7 @@ const { availableLangs } = require('../../../../config/i18n/all-langs');
 const { allowedOrigins } = require('../../../../config/cors-settings');
 // homeLocation is being used as a fallback here. If the one provided by the
 // client is invalid we default to this.
-const { homeLocation } = require('../../../../config/env');
+const { homeLocation } = require('../../../../config/env.json');
 
 function getReturnTo(encryptedParams, secret, _homeLocation = homeLocation) {
   let params;
@@ -66,7 +66,7 @@ function getRedirectParams(req, _normalizeParams = normalizeParams) {
   const origin = returnUrl.origin;
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.
-  const pathPrefix = returnUrl.pathname.split('/')[0];
+  const pathPrefix = returnUrl.pathname.split('/')[1];
   return _normalizeParams({ returnTo: returnUrl.href, origin, pathPrefix });
 }
 

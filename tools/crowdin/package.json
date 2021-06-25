@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@actions/core": "1.3.0",
+    "@actions/core": "1.4.0",
     "@actions/github": "5.0.0",
     "dotenv": "10.0.0",
     "fs-extra": "10.0.0",

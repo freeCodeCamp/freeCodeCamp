@@ -6,7 +6,7 @@ import {
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
 
-import TB from '../helpers/ToggleButton';
+import TB from '../helpers/toggle-button';
 import { ButtonSpacer } from '../helpers';
 
 import './toggle-setting.css';

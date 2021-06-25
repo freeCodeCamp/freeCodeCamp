@@ -11,6 +11,21 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
+    },
+    {
+      "groupName": "Monaco Editor",
+      "matchPackageNames": ["monaco-editor", "monaco-editor-webpack-plugin"]
+    },
+    {
+      "matchPackageNames": ["normalize-url"],
+      "allowedVersions": "<5.0.0"
+    },
+    {
+      "groupName": "CodeSee",
+      "matchPackagePrefixes": [
+        "@codesee/"
+      ],
+      "automerge": true
     }
   ],
   "ignorePaths": [

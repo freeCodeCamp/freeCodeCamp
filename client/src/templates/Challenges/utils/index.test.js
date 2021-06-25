@@ -1,5 +1,3 @@
-/* global expect */
-
 import envData from '../../../../../config/env.json';
 
 const { forumLocation } = envData;

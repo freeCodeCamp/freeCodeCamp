@@ -1,8 +1,7 @@
-/* global describe it expect jest */
 import { mockReq as mockRequest, mockRes } from '../boot_tests/challenge.test';
 import jwt from 'jsonwebtoken';
 
-import { homeLocation } from '../../../../config/env';
+import { homeLocation } from '../../../../config/env.json';
 import createRequestAuthorization, {
   isAllowedPath
 } from './request-authorization';

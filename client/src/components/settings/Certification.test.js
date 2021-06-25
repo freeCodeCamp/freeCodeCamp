@@ -1,5 +1,3 @@
-/* global expect jest */
-
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
@@ -22,7 +20,9 @@ describe('<certification />', () => {
     );
 
     expect(
-      container.querySelector('#button-legacy-data-visualization')
+      container.querySelector(
+        'a[href="/certification/developmentuser/legacy-data-visualization"]'
+      )
     ).toHaveTextContent('buttons.show-cert');
   });
 
@@ -32,33 +32,36 @@ describe('<certification />', () => {
     );
 
     expect(
-      container.querySelector('#button-legacy-data-visualization')
-    ).toHaveAttribute(
-      'href',
-      '/certification/developmentuser/legacy-data-visualization'
-    );
+      container.querySelector(
+        'a[href="/certification/developmentuser/legacy-data-visualization"]'
+      )
+    ).toBeInTheDocument();
   });
 
-  // full forms with unclaimed certs should should not shallow render button
-  it('Should not render show cert button for unclaimed full form', () => {
+  // full forms with unclaimed certs should not shallow render show cert button
+  it('Should not render show cert button for unclaimed cert with completed projects', () => {
     const { container } = renderWithRedux(
       <CertificationSettings {...defaultTestProps} />
     );
 
     expect(
-      container.querySelector('#button-legacy-back-end')
-    ).not.toBeInTheDocument();
+      container.querySelector(
+        'a[href="/certification/developmentuser/legacy-back-end"]'
+      )
+    ).not.toHaveTextContent('buttons.show-cert');
   });
 
-  // empty forms with unclaimed certs should should not shallow render button
-  it('Should not render show cert button for empty form', () => {
+  // empty forms with unclaimed certs should not shallow render show cert button
+  it('Should not render show cert button for cert with no completed projects', () => {
     const { container } = renderWithRedux(
       <CertificationSettings {...defaultTestProps} />
     );
 
     expect(
-      container.querySelector('#button-legacy-front-end')
-    ).not.toBeInTheDocument();
+      container.querySelector(
+        'a[href="/certification/developmentuser/legacy-front-end"]'
+      )
+    ).not.toHaveTextContent('buttons.show-cert');
   });
 
   it('Render button when only solution is present', () => {
@@ -243,7 +246,6 @@ const defaultTestProps = {
   isSciCompPyCertV7: false,
   isDataAnalysisPyCertV7: false,
   isMachineLearningPyCertV7: false,
-  updateLegacyCert: () => {},
   username: 'developmentuser',
   verifyCert: () => {},
   errors: {},

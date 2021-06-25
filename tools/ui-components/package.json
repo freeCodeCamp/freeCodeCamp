@@ -23,22 +23,35 @@
     "react-dom": "16.14.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.3",
-    "@storybook/addon-actions": "6.2.9",
-    "@storybook/addon-essentials": "6.2.9",
-    "@storybook/addon-links": "6.2.9",
+    "@babel/core": "7.14.6",
+    "@babel/preset-env": "7.14.7",
+    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-commonjs": "19.0.0",
+    "@rollup/plugin-node-resolve": "13.0.0",
+    "@storybook/addon-actions": "6.3.0",
+    "@storybook/addon-essentials": "6.3.0",
+    "@storybook/addon-links": "6.3.0",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/react": "6.2.9",
+    "@storybook/react": "6.3.0",
+    "@testing-library/react": "11.2.7",
     "autoprefixer": "10.2.6",
     "babel-loader": "8.2.2",
-    "postcss": "8.3.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.24",
+    "cross-env": "7.0.3",
+    "postcss": "8.3.5",
     "postcss-import": "14.0.2",
-    "tailwindcss": "2.1.4"
+    "tailwindcss": "2.2.4",
+    "rimraf": "3.0.2",
+    "rollup": "2.52.2",
+    "rollup-plugin-postcss": "4.0.0",
+    "rollup-plugin-terser": "7.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "storybook:theming": "npm run storybook --no-manager-cache",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "dev": "cross-env NODE_ENV=development rollup -c -w",
+    "clean": "rimraf dist/*"
   }
 }

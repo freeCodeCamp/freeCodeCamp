@@ -21,7 +21,6 @@ import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
 import { isBrowser } from '../../../utils';
 
-import WithInstantSearch from '../search/WithInstantSearch';
 import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
@@ -201,17 +200,15 @@ class DefaultLayout extends Component {
           />
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <WithInstantSearch>
-          <div className={`default-layout`}>
-            <Header fetchState={fetchState} user={user} />
-            <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
-            {hasMessage && flashMessage ? (
-              <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
-            ) : null}
-            {children}
-          </div>
-          {showFooter && <Footer />}
-        </WithInstantSearch>
+        <div className={`default-layout`}>
+          <Header fetchState={fetchState} user={user} />
+          <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
+          {hasMessage && flashMessage ? (
+            <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
+          ) : null}
+          {children}
+        </div>
+        {showFooter && <Footer />}
       </div>
     );
   }

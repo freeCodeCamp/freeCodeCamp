@@ -79,10 +79,11 @@ ${seedHeads}`
 
 ${seedTails}`
     : '';
+  const challengeId = ObjectID();
 
   const template =
     `---
-id: ${ObjectID()}
+id: ${challengeId}
 title: Part ${stepNum}
 challengeType: 0
 dashedName: part-${stepNum}
@@ -107,6 +108,7 @@ Test 1
   let finalStepNum = padWithLeadingZeros(stepNum);
   finalStepNum += stepBetween ? 'a' : '';
   fs.writeFileSync(`${projectPath}part-${finalStepNum}.md`, template);
+  return challengeId;
 };
 
 const reorderSteps = () => {

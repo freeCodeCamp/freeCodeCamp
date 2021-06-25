@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import Link from '../helpers/Link';
+import Link from '../helpers/link';
 import './footer.css';
 
 const propTypes = {

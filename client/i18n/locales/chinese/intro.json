@@ -296,6 +296,20 @@
       }
     }
   },
+  "relational-databases": {
+    "title": "关系型数据库",
+    "intro": [
+      "占位符"
+    ],
+    "blocks": {
+      "learn-relational-databases": {
+        "title": "学习关系型数据库",
+        "intro": [
+          "占位符"
+        ]
+      }
+    }
+  },
   "apis-and-microservices": {
     "title": "APIs 和 微服务",
     "intro": [

@@ -1,0 +1,71 @@
+{
+  "name": "Learn Relational Databases",
+  "isUpcomingChange": true,
+  "dashedName": "learn-relational-databases",
+  "order": 2,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-databases",
+  "superOrder": 12,
+  "challengeOrder": [
+    [
+      "5ea8adfab628f68d805bfc5e",
+      "Learn Bash by Building a Boilerplate"
+    ],
+    [
+      "5f2c289f164c29556da632fd",
+      "Learn Relational Databases by Building a Mario Database"
+    ],
+    [
+      "5f1a4ef5d5d6b5ab580fc6ae",
+      "Celestial Bodies Database"
+    ],
+    [
+      "5f5904ac738bc2fa9efecf5a",
+      "Learn Bash Scripting by Building Five Programs"
+    ],
+    [
+      "602da0c222201c65d2a019f5",
+      "Learn SQL by Building a Student Database"
+    ],
+    [
+      "5f9771307d4d22b9d2b75a94",
+      "World Cup Database"
+    ],
+    [
+      "602da0de22201c65d2a019f6",
+      "Learn Advanced Bash by Building"
+    ],
+    [
+      "5f5b969a05380d2179fe6e18",
+      "Learn Bash and SQL by Building a Bike Rental Shop"
+    ],
+    [
+      "5f87ac112ae598023a42df1a",
+      "Salon Appointment Scheduler"
+    ],
+    [
+      "5f32db63eb37f7e17323f459",
+      "Learn Nano by Building a Castle"
+    ],
+    [
+      "5fa323cdaf6a73463d590659",
+      "Learn Git by Building an SQL Reference Object"
+    ],
+    [
+      "602d9ff222201c65d2a019f2",
+      "Periodic Table Database"
+    ],
+    [
+      "602da04222201c65d2a019f3",
+      "Learn GitHub by Building a List of Inspirational Quotes"
+    ],
+    [
+      "602da04c22201c65d2a019f4",
+      "Final Boss"
+    ]
+  ],
+  "helpRoom": "HelpBackend",
+  "fileName": "13-relational-databases/learn-relational-databases.json"
+}

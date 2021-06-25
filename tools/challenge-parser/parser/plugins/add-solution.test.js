@@ -1,4 +1,3 @@
-/* global describe it expect beforeEach */
 const mockAST = require('../__fixtures__/ast-simple.json');
 const editableSolutionAST = require('../__fixtures__/ast-erm-in-solution.json');
 const multiSolnsAST = require('../__fixtures__/ast-multiple-solutions.json');

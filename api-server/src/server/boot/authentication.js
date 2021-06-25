@@ -17,11 +17,6 @@ import { removeCookies } from '../utils/getSetAccessToken';
 import { decodeEmail } from '../../common/utils';
 import { getRedirectParams } from '../utils/redirection';
 
-const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
-if (isSignUpDisabled) {
-  console.log('fcc:boot:auth - Sign up is disabled');
-}
-
 const passwordlessGetValidators = [
   check('email')
     .isBase64()
@@ -68,7 +63,7 @@ module.exports = function enableAuthentication(app) {
   }
 
   api.get('/signout', (req, res) => {
-    const { origin } = getRedirectParams(req);
+    const { origin, returnTo } = getRedirectParams(req);
     req.logout();
     req.session.destroy(err => {
       if (err) {
@@ -79,7 +74,7 @@ module.exports = function enableAuthentication(app) {
         });
       }
       removeCookies(req, res);
-      res.redirect(origin);
+      res.redirect(returnTo);
     });
   });
 

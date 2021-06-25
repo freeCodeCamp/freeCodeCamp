@@ -3,7 +3,8 @@
     "es6": true,
     "browser": true,
     "mocha": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "parser": "babel-eslint",
   "root": true,
@@ -18,7 +19,9 @@
     "prefer-object-spread",
     "prettier",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
+    "jest-dom",
+    "testing-library"
   ],
   "globals": {
     "Promise": true,
@@ -31,32 +34,25 @@
   "settings": {
     "react": {
       "version": "16.4.2",
-      "import/ignore": [
-        "\\.json$"
-      ],
-      "import/extensions": [
-        ".js",
-        ".jsx",
-        ".tsx"
-      ]
+      "import/ignore": ["\\.json$"],
+      "import/extensions": [".js", ".jsx", ".tsx"]
     },
-    "import/ignore": [
-      "node_modules"
-    ]
+    "import/ignore": ["node_modules"]
   },
   "overrides": [{
     "files": ["**/*.ts?(x)"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "tsconfigRootDir": "./client",
-      "project": ["./tsconfig.json"]
+      "project": ["./client/tsconfig.json", "./tools/challenge-helper-scripts/tsconfig.json"]
      },
     "extends": [
       "plugin:@typescript-eslint/recommended",
       "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
-    "plugins": [
-      "@typescript-eslint"
-    ]
+    "plugins": ["@typescript-eslint"]
+  },
+  {
+    "files": ["./tools/ui-components/**/*.test.[jt]s?(x)"],
+    "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
   }]
 }

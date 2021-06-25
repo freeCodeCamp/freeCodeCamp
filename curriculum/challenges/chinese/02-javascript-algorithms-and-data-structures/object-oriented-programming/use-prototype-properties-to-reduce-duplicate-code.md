@@ -12,7 +12,7 @@ dashedName: use-prototype-properties-to-reduce-duplicate-code
 
 当只有两个实例时可能并不是什么问题，但想象一下如果有数百万个实例。 这将会产生许许多多重复的变量。
 
-这里有一个更好的方法可以解决上述问题，那就是使用 `Bird’s` 的 `prototype`。 `prototype` 是一个可以在所有 `Bird` 实例之间共享的对象。 以下是一个在 `Bird prototype` 中添加 `numLegs` 属性的示例：
+更好的方法是使用 `Bird` 的 `prototype`。 `prototype` 是一个可以在所有 `Bird` 实例之间共享的对象。 以下是一个在 `Bird prototype` 中添加 `numLegs` 属性的示例：
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -45,7 +45,7 @@ assert(beagle.numLegs !== undefined);
 assert(typeof beagle.numLegs === 'number');
 ```
 
-`numLegs` 应该是一个 `prototype` 属性而不是一个 `own` 属性。
+`numLegs` 应该是一个 `prototype` 属性，而不是一个自身属性。
 
 ```js
 assert(beagle.hasOwnProperty('numLegs') === false);

@@ -1,4 +1,4 @@
-/* global expect BigInt */
+/* global BigInt */
 
 const { format } = require('./format');
 

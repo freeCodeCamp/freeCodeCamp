@@ -233,5 +233,6 @@ module.exports = {
   addTranslation,
   deleteTranslation,
   getLanguageTranslations,
-  deleteLanguageTranslations
+  deleteLanguageTranslations,
+  changeHiddenStatus
 };
