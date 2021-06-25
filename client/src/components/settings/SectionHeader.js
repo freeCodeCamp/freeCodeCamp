@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FullWidthRow from '../helpers/FullWidthRow';
+import FullWidthRow from '../helpers/full-width-row';
 
 const propTypes = {
   children: PropTypes.oneOfType([

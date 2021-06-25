@@ -1,18 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import envData from '../../../../config/env.json';
 
-const { apiLocation } = envData;
+interface EnvData {
+  apiLocation: string;
+}
+
+const { apiLocation } = envData as EnvData;
 
 const currentChallengeApi = '/challenges/current-challenge';
 
-const propTypes = {
-  children: PropTypes.any,
-  isLargeBtn: PropTypes.bool
-};
-
-function CurrentChallengeLink({ children, isLargeBtn }) {
+function CurrentChallengeLink({
+  children,
+  isLargeBtn
+}: {
+  children?: JSX.ElementChildrenAttribute;
+  isLargeBtn?: boolean;
+}): JSX.Element {
   let classNames;
   if (isLargeBtn) {
     classNames = 'btn btn-lg btn-primary btn-block';
@@ -27,6 +31,5 @@ function CurrentChallengeLink({ children, isLargeBtn }) {
 }
 
 CurrentChallengeLink.displayName = 'CurrentChallengeLink';
-CurrentChallengeLink.propTypes = propTypes;
 
 export default CurrentChallengeLink;

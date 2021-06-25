@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 
-function FullWidthRow({ children, className }) {
+function FullWidthRow({
+  children,
+  className
+}: {
+  children?: JSX.ElementChildrenAttribute;
+  className?: string;
+}): JSX.Element {
   return (
     <Row className={className}>
       <Col sm={8} smOffset={2} xs={12}>
@@ -13,9 +18,5 @@ function FullWidthRow({ children, className }) {
 }
 
 FullWidthRow.displayName = 'FullWidthRow';
-FullWidthRow.propTypes = {
-  children: PropTypes.any,
-  className: PropTypes.string
-};
 
 export default FullWidthRow;

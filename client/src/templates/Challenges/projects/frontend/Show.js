@@ -22,7 +22,7 @@ import { getGuideUrl } from '../../utils';
 import LearnLayout from '../../../../components/layouts/Learn';
 import ChallengeTitle from '../../components/Challenge-Title';
 import ChallengeDescription from '../../components/Challenge-Description';
-import Spacer from '../../../../components/helpers/Spacer';
+import Spacer from '../../../../components/helpers/spacer';
 import SolutionForm from '../SolutionForm';
 import ProjectToolPanel from '../Tool-Panel';
 import CompletionModal from '../../components/CompletionModal';

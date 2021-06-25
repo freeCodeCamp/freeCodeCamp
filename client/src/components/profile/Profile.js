@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import Link from '../helpers/Link';
+import Link from '../helpers/link';
 import { useTranslation } from 'react-i18next';
 
 import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';

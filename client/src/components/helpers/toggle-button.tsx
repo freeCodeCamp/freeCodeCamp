@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import {
   ToggleButtonGroup as BSBG,
   ToggleButton as TB
@@ -9,15 +8,18 @@ import './toggle-button.css';
 import ToggleCheck from '../../assets/icons/ToggleCheck';
 import Spacer from '../../assets/icons/Spacer';
 
-const propTypes = {
-  name: PropTypes.string.isRequired,
-  offLabel: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  onLabel: PropTypes.string,
-  value: PropTypes.bool.isRequired
-};
+interface ButtonProps {
+  name: string;
+  offLabel: string;
+  onChange: (value: string) => void;
+  onLabel: string;
+  value: boolean;
+  condition: boolean;
+}
 
-function getActiveClass(condition) {
+type ActiveClass = Pick<ButtonProps, 'condition'>;
+
+function getActiveClass(condition: ActiveClass | unknown) {
   return condition ? 'active' : 'not-active';
 }
 
@@ -27,7 +29,7 @@ export default function ToggleButton({
   value,
   onLabel = 'On',
   offLabel = 'Off'
-}) {
+}: ButtonProps): JSX.Element {
   const checkIconStyle = {
     height: '15px',
     width: '20px'
@@ -71,4 +73,3 @@ export default function ToggleButton({
 }
 
 ToggleButton.displayName = 'ToggleButton';
-ToggleButton.propTypes = propTypes;

@@ -1,15 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 
-const propTypes = {
-  children: PropTypes.any,
-  external: PropTypes.bool,
-  sameTab: PropTypes.bool,
-  to: PropTypes.string.isRequired
-};
+interface LinkProps {
+  children?: JSX.ElementChildrenAttribute;
+  external?: boolean;
+  sameTab?: boolean;
+  to: string;
+}
 
-const Link = ({ children, to, external, sameTab, ...other }) => {
+const Link = ({
+  children,
+  to,
+  external,
+  sameTab,
+  ...other
+}: LinkProps): JSX.Element => {
   if (!external && /^\/(?!\/)/.test(to)) {
     return (
       <GatsbyLink to={to} {...other}>
@@ -30,6 +35,5 @@ const Link = ({ children, to, external, sameTab, ...other }) => {
     </a>
   );
 };
-Link.propTypes = propTypes;
 
 export default Link;
