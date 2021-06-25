@@ -9,8 +9,8 @@ import type { Dispatch } from 'redux';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import { deleteAccount, resetProgress } from '../../redux/settings';
-import DeleteModal from './DeleteModal';
-import ResetModal from './ResetModal';
+import DeleteModal from './delete-modal';
+import ResetModal from './reset-modal';
 
 import './danger-zone.css';
 
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 class DangerZone extends Component<DangerZoneProps, DangerZoneState> {
   static displayName: string;
-  constructor(props) {
+  constructor(props: DangerZoneProps) {
     super(props);
     this.state = {
       reset: false,

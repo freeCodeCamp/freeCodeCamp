@@ -10,8 +10,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 
 import { FullWidthRow, Spacer } from '../helpers';
-import ThemeSettings from './Theme';
-import UsernameSettings from './Username';
+import ThemeSettings from './theme_temp';
+import UsernameSettings from './username_temp';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import { withTranslation } from 'react-i18next';
 

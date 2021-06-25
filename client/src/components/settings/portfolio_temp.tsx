@@ -16,7 +16,7 @@ import { withTranslation } from 'react-i18next';
 import { hasProtocolRE } from '../../utils';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
 
 type PortfolioValues = {

@@ -21,9 +21,9 @@ import { maybeEmailRE } from '../../utils';
 
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import ToggleSetting from './ToggleSetting';
+import ToggleSetting from './toggle-setting';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>

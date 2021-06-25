@@ -5,7 +5,7 @@ import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow } from '../helpers';
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import HonestyPolicy from '../../resources/honesty-policy';
 
 import './honesty.css';

@@ -13,8 +13,8 @@ import { submitProfileUI } from '../../redux/settings';
 
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
-import ToggleSetting from './ToggleSetting';
-import SectionHeader from './SectionHeader';
+import ToggleSetting from './toggle-setting';
+import SectionHeader from './section-header';
 
 const mapStateToProps = createSelector(userSelector, user => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

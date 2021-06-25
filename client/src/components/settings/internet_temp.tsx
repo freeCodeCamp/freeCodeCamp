@@ -14,7 +14,7 @@ import { withTranslation } from 'react-i18next';
 
 import { maybeUrlRE } from '../../utils';
 
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import { FullWidthRow } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 

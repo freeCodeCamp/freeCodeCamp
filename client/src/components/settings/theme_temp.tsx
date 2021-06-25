@@ -1,14 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { Form } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import ToggleSetting from './ToggleSetting';
+import ToggleSetting from './toggle-setting';
 
 type ThemeProps = {
   currentTheme: string;

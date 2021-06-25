@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/unbound-method */
 import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
@@ -47,7 +45,18 @@ type UsernameState = {
 
 const mapStateToProps = createSelector(
   usernameValidationSelector,
-  ({ isValidUsername, fetchState }) => ({
+  ({
+    isValidUsername,
+    fetchState
+  }: {
+    isValidUsername: boolean;
+    fetchState: {
+      pending: boolean;
+      complete: boolean;
+      errored: boolean;
+      error: boolean | null;
+    };
+  }) => ({
     isValidUsername,
     validating: fetchState.pending
   })
@@ -67,7 +76,7 @@ const tempUserRegex = new RegExp(`^fcc${hex}{8}-(${hex}{4}-){3}${hex}{12}$`);
 
 class UsernameSettings extends Component<UsernameProps, UsernameState> {
   static displayName: string;
-  constructor(props) {
+  constructor(props: UsernameProps) {
     super(props);
 
     this.state = {
