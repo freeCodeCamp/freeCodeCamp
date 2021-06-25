@@ -6,7 +6,7 @@ interface noHitsSuggestionPropType {
   title: string;
 }
 
-const NoHitsSuggestion = ({ title }: noHitsSuggestionPropType) => {
+const NoHitsSuggestion = ({ title }: noHitsSuggestionPropType): JSX.Element => {
   return (
     <div className={'no-hits-footer fcc_suggestion_item'} role='region'>
       <span className='hit-name'>{title}</span>
