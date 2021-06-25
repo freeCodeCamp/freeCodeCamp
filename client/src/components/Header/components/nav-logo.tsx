@@ -1,9 +1,9 @@
 import React from 'react';
 import FreeCodeCampLogo from '../../../assets/icons/FreeCodeCamp-logo';
 
-function NavLogo() {
+const NavLogo = (): JSX.Element => {
   return <FreeCodeCampLogo />;
-}
+};
 
 NavLogo.displayName = 'NavLogo';
 export default NavLogo;

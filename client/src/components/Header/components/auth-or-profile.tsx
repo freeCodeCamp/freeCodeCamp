@@ -1,16 +1,18 @@
-/* eslint-disable react/sort-prop-types */
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+// @ts-nocheck
 import React from 'react';
 import { Link, borderColorPicker, AvatarRenderer } from '../../helpers';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import Login from './Login';
 
-import Login from '../components/Login';
-
-const propTypes = {
-  user: PropTypes.object
-};
-
-export function AuthOrProfile({ user }) {
+export interface AuthOrProfileProps {
+  user?: Object;
+}
+const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
   const { t } = useTranslation();
   const isUserDonating = user && user.isDonating;
   const isUserSignedIn = user && user.username;
@@ -39,8 +41,7 @@ export function AuthOrProfile({ user }) {
       </>
     );
   }
-}
+};
 
-AuthOrProfile.propTypes = propTypes;
 AuthOrProfile.displayName = 'AuthOrProfile';
 export default AuthOrProfile;
