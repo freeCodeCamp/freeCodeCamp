@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AvatarRenderer } from '../../helpers';
 import SocialIcons from './SocialIcons';
-import Link from '../../helpers/Link';
+import Link from '../../helpers/link';
 
 import './camper.css';
 

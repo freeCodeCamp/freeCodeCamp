@@ -4,7 +4,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { useTranslation } from 'react-i18next';
 
 import ClaimCertSteps from './ClaimCertSteps';
-import Caret from '../../../assets/icons/Caret';
+import Caret from '../../../assets/icons/caret';
 
 const propTypes = {
   certSlug: PropTypes.string,
