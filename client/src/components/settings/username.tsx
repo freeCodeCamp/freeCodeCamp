@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -8,8 +8,11 @@ import {
   FormControl,
   Alert,
   FormGroup
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
+import type { Dispatch } from 'redux';
 
 import {
   validateUsername,
@@ -20,24 +23,46 @@ import FullWidthRow from '../helpers/full-width-row';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import { isValidUsername } from '../../../../utils/validate';
 
-const propTypes = {
-  isValidUsername: PropTypes.bool,
-  submitNewUsername: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired,
-  username: PropTypes.string,
-  validateUsername: PropTypes.func.isRequired,
-  validating: PropTypes.bool
+type UsernameProps = {
+  isValidUsername: boolean;
+  submitNewUsername: (name: string) => void;
+  t: (str: string, obj?: { username: string }) => string;
+  username: string;
+  validateUsername: (name: string) => void;
+  validating: boolean;
+};
+
+type UsernameState = {
+  isFormPristine: boolean;
+  formValue: string;
+  characterValidation: {
+    valid: boolean;
+    error: null | string;
+  };
+  submitClicked: boolean;
+  isUserNew: boolean;
 };
 
 const mapStateToProps = createSelector(
   usernameValidationSelector,
-  ({ isValidUsername, fetchState }) => ({
+  ({
+    isValidUsername,
+    fetchState
+  }: {
+    isValidUsername: boolean;
+    fetchState: {
+      pending: boolean;
+      complete: boolean;
+      errored: boolean;
+      error: boolean | null;
+    };
+  }) => ({
     isValidUsername,
     validating: fetchState.pending
   })
 );
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       submitNewUsername,
@@ -49,8 +74,9 @@ const mapDispatchToProps = dispatch =>
 const hex = '[0-9a-f]';
 const tempUserRegex = new RegExp(`^fcc${hex}{8}-(${hex}{4}-){3}${hex}{12}$`);
 
-class UsernameSettings extends Component {
-  constructor(props) {
+class UsernameSettings extends Component<UsernameProps, UsernameState> {
+  static displayName: string;
+  constructor(props: UsernameProps) {
     super(props);
 
     this.state = {
@@ -66,13 +92,13 @@ class UsernameSettings extends Component {
     this.validateFormInput = this.validateFormInput.bind(this);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: UsernameProps, prevState: UsernameState) {
     const { username: prevUsername } = prevProps;
     const { formValue: prevFormValue } = prevState;
     const { username } = this.props;
     const { formValue } = this.state;
     if (prevUsername !== username && prevFormValue === formValue) {
-      /* eslint-disable-next-line react/no-did-update-set-state */
+      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         isFormPristine: username === formValue,
         submitClicked: false,
@@ -82,7 +108,7 @@ class UsernameSettings extends Component {
     return null;
   }
 
-  handleSubmit(e) {
+  handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const { submitNewUsername } = this.props;
     const {
@@ -95,10 +121,10 @@ class UsernameSettings extends Component {
     );
   }
 
-  handleChange(e) {
+  handleChange(e: React.FormEvent<HTMLInputElement>) {
     e.preventDefault();
     const { username, validateUsername } = this.props;
-    const newValue = e.target.value;
+    const newValue = (e.target as HTMLInputElement).value;
     return this.setState(
       {
         formValue: newValue,
@@ -113,11 +139,15 @@ class UsernameSettings extends Component {
     );
   }
 
-  validateFormInput(formValue) {
+  validateFormInput(formValue: string) {
     return isValidUsername(formValue);
   }
 
-  renderAlerts(validating, error, isValidUsername) {
+  renderAlerts(
+    validating: boolean,
+    error: string | null,
+    isValidUsername: boolean
+  ) {
     const { t } = this.props;
 
     if (!validating && error) {
@@ -203,7 +233,6 @@ class UsernameSettings extends Component {
 }
 
 UsernameSettings.displayName = 'UsernameSettings';
-UsernameSettings.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

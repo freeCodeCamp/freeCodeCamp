@@ -1,17 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import FullWidthRow from '../helpers/full-width-row';
 
-const propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.node
-  ])
+type SectionHeaderProps = {
+  children: string | React.ReactNode | React.ReactElement;
 };
 
-function SectionHeader({ children }) {
+function SectionHeader({ children }: SectionHeaderProps): JSX.Element {
   return (
     <FullWidthRow>
       <h2 className='text-center'>{children}</h2>
@@ -21,6 +16,5 @@ function SectionHeader({ children }) {
 }
 
 SectionHeader.displayName = 'SectionHeader';
-SectionHeader.propTypes = propTypes;
 
 export default SectionHeader;

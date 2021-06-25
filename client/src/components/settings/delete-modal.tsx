@@ -1,19 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import './danger-zone.css';
 
-const propTypes = {
-  delete: PropTypes.func.isRequired,
-  onHide: PropTypes.func.isRequired,
-  show: PropTypes.bool
+type DeleteModalProps = {
+  delete: () => void;
+  onHide: () => void;
+  show: boolean;
 };
 
-function DeleteModal(props) {
+function DeleteModal(props: DeleteModalProps): JSX.Element {
   const { show, onHide } = props;
   const email = 'team@freecodecamp.org';
   const { t } = useTranslation();
@@ -36,7 +37,7 @@ function DeleteModal(props) {
         <p>{t('settings.danger.delete-p1')}</p>
         <p>{t('settings.danger.delete-p2')}</p>
         <p>
-          <Trans email={email} i18nKey='settings.danger.delete-p3'>
+          <Trans i18nKey='settings.danger.delete-p3'>
             <a href={`mailto:${email}`} title={email}>
               {{ email }}
             </a>
@@ -73,6 +74,5 @@ function DeleteModal(props) {
 }
 
 DeleteModal.displayName = 'DeleteModal';
-DeleteModal.propTypes = propTypes;
 
 export default DeleteModal;

@@ -1,34 +1,51 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   FormGroup,
   ControlLabel,
   FormControl,
   HelpBlock,
   Alert
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 
 import { FullWidthRow, Spacer } from '../helpers';
-import ThemeSettings from './Theme';
-import UsernameSettings from './Username';
+import ThemeSettings from './theme';
+import UsernameSettings from './username';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import { withTranslation } from 'react-i18next';
 
-const propTypes = {
-  about: PropTypes.string,
-  currentTheme: PropTypes.string,
-  location: PropTypes.string,
-  name: PropTypes.string,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  submitNewAbout: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired,
-  toggleNightMode: PropTypes.func.isRequired,
-  username: PropTypes.string
+type FormValues = {
+  name: string;
+  location: string;
+  picture: string;
+  about: string;
 };
 
-class AboutSettings extends Component {
-  constructor(props) {
+type AboutProps = {
+  about: string;
+  currentTheme: string;
+  location: string;
+  name: string;
+  picture: string;
+  points: number;
+  submitNewAbout: (formValues: FormValues) => void;
+  t: (str: string) => string;
+  toggleNightMode: () => void;
+  username: string;
+};
+
+type AboutState = {
+  formValues: FormValues;
+  originalValues: FormValues;
+  formClicked: boolean;
+  isPictureUrlValid: boolean;
+};
+
+class AboutSettings extends Component<AboutProps, AboutState> {
+  validationImage: HTMLImageElement;
+  static displayName: string;
+  constructor(props: AboutProps) {
     super(props);
     this.validationImage = new Image();
     const { name = '', location = '', picture = '', about = '' } = props;
@@ -56,7 +73,7 @@ class AboutSettings extends Component {
       picture === formValues.picture &&
       about === formValues.about
     ) {
-      /* eslint-disable-next-line react/no-did-update-set-state */
+      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
@@ -74,13 +91,13 @@ class AboutSettings extends Component {
     const { formValues, originalValues } = this.state;
     return (
       this.state.isPictureUrlValid === false ||
-      Object.keys(originalValues)
+      (Object.keys(originalValues) as Array<keyof FormValues>)
         .map(key => originalValues[key] === formValues[key])
         .every(bool => bool)
     );
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
@@ -93,8 +110,8 @@ class AboutSettings extends Component {
     }
   };
 
-  handleNameChange = e => {
-    const value = e.target.value.slice(0);
+  handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
@@ -103,8 +120,8 @@ class AboutSettings extends Component {
     }));
   };
 
-  handleLocationChange = e => {
-    const value = e.target.value.slice(0);
+  handleLocationChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
@@ -126,8 +143,8 @@ class AboutSettings extends Component {
   loadEvent = () => this.setState({ isPictureUrlValid: true });
   errorEvent = () => this.setState({ isPictureUrlValid: false });
 
-  handlePictureChange = e => {
-    const value = e.target.value.slice(0);
+  handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const value = (e.target as HTMLInputElement).value.slice(0);
     this.validationImage.src = value;
     return this.setState(state => ({
       formValues: {
@@ -150,8 +167,8 @@ class AboutSettings extends Component {
     }
   };
 
-  handleAboutChange = e => {
-    const value = e.target.value.slice(0);
+  handleAboutChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
@@ -229,6 +246,5 @@ class AboutSettings extends Component {
 }
 
 AboutSettings.displayName = 'AboutSettings';
-AboutSettings.propTypes = propTypes;
 
 export default withTranslation()(AboutSettings);
