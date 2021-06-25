@@ -2,11 +2,11 @@ import React from 'react';
 import { Button } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-function BlockSaveButton(props: Record<string, unknown>): JSX.Element {
+function BlockSaveButton(props?: Record<string, unknown>): JSX.Element {
   const { t } = useTranslation();
   return (
     <Button block={true} bsStyle='primary' {...props} type='submit'>
-      {props.children || t('buttons.save')}
+      {props?.children || t('buttons.save')}
     </Button>
   );
 }
