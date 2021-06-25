@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
@@ -12,7 +11,7 @@ import './danger-zone.css';
 type DeleteModalProps = {
   delete: () => void;
   onHide: () => void;
-  show?: boolean;
+  show: boolean;
 };
 
 function DeleteModal(props: DeleteModalProps): JSX.Element {
@@ -38,9 +37,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         <p>{t('settings.danger.delete-p1')}</p>
         <p>{t('settings.danger.delete-p2')}</p>
         <p>
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore */}
-          <Trans email={email} i18nKey='settings.danger.delete-p3'>
+          <Trans i18nKey='settings.danger.delete-p3'>
             <a href={`mailto:${email}`} title={email}>
               {{ email }}
             </a>
@@ -77,6 +74,5 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
 }
 
 DeleteModal.displayName = 'DeleteModal';
-// DeleteModal.propTypes = propTypes;
 
 export default DeleteModal;

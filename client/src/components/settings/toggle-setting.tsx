@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { Fragment } from 'react';
 import {
   FormGroup,
   ControlLabel,
   HelpBlock
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 
@@ -18,8 +18,8 @@ type ToggleSettingProps = {
   flag: boolean;
   flagName: string;
   toggleFlag: () => void;
-  offLabel?: string;
-  onLabel?: string;
+  offLabel: string;
+  onLabel: string;
 };
 
 export default function ToggleSetting({
@@ -56,4 +56,3 @@ export default function ToggleSetting({
 }
 
 ToggleSetting.displayName = 'ToggleSetting';
-// ToggleSetting.propTypes = propTypes;

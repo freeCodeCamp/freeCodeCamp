@@ -37,4 +37,3 @@ export default function ThemeSettings({
 }
 
 ThemeSettings.displayName = 'ThemeSettings';
-// ThemeSettings.propTypes = propTypes;

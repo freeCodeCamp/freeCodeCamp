@@ -11,7 +11,7 @@ import HonestyPolicy from '../../resources/honesty-policy';
 import './honesty.css';
 
 type HonestyProps = {
-  isHonest?: boolean;
+  isHonest: boolean;
   updateIsHonest: (obj: { isHonest: boolean }) => void;
 };
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';

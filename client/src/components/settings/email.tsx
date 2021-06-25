@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 type EmailProps = {
   email: string;
-  isEmailVerified?: boolean;
+  isEmailVerified: boolean;
   sendQuincyEmail: boolean;
   t: (str: string) => string;
   updateMyEmail: (email: string) => void;

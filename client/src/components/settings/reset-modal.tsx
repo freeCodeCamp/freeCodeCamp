@@ -9,7 +9,7 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 type ResetModalProps = {
   onHide: () => void;
   reset: () => void;
-  show?: boolean;
+  show: boolean;
 };
 
 function ResetModal(props: ResetModalProps): JSX.Element {
@@ -65,6 +65,5 @@ function ResetModal(props: ResetModalProps): JSX.Element {
 }
 
 ResetModal.displayName = 'ResetModal';
-// ResetModal.propTypes = propTypes;
 
 export default ResetModal;

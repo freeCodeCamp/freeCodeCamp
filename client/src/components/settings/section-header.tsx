@@ -1,10 +1,9 @@
-/* eslint-disable */
 import React from 'react';
 
 import FullWidthRow from '../helpers/full-width-row';
 
 type SectionHeaderProps = {
-  children: string | React.ReactNode | React.ReactElement
+  children: string | React.ReactNode | React.ReactElement;
 };
 
 function SectionHeader({ children }: SectionHeaderProps): JSX.Element {
@@ -17,6 +16,5 @@ function SectionHeader({ children }: SectionHeaderProps): JSX.Element {
 }
 
 SectionHeader.displayName = 'SectionHeader';
-// SectionHeader.propTypes = propTypes;
 
 export default SectionHeader;

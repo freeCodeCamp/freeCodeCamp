@@ -98,7 +98,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { username } = this.props;
     const { formValue } = this.state;
     if (prevUsername !== username && prevFormValue === formValue) {
-      /* eslint-disable-next-line react/no-did-update-set-state */
+      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         isFormPristine: username === formValue,
         submitClicked: false,
