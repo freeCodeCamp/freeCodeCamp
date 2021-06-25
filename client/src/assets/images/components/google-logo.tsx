@@ -1,9 +1,8 @@
-/* eslint-disable max-len */
 import React from 'react';
 
-const propTypes = {};
-
-function GoogleLogo(props) {
+function GoogleLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): React.ReactNode {
   return (
     <svg
       id='google-logo'
@@ -26,6 +25,5 @@ function GoogleLogo(props) {
 }
 
 GoogleLogo.displayName = 'GoogleLogo';
-GoogleLogo.propTypes = propTypes;
 
 export default GoogleLogo;
