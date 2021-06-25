@@ -4,3 +4,4 @@ declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';
 declare module '@types/validator';
 declare module '@types/lodash-es';
+declare module 'react-lazy-load';

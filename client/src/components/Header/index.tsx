@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/unbound-method */
-/* eslint-disable @typescript-eslint/ban-types */
 import React from 'react';
 import Helmet from 'react-helmet';
 
@@ -41,7 +39,7 @@ export class Header extends React.Component<
     document.removeEventListener('click', this.handleClickOutside);
   }
 
-  handleClickOutside(event: any): void {
+  handleClickOutside(event: globalThis.MouseEvent): void {
     if (
       this.state.displayMenu &&
       this.menuButtonRef.current &&

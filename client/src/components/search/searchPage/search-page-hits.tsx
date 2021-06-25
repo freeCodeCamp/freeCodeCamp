@@ -15,6 +15,7 @@ type allHitType = {
   handleClick?: EventHandler<SyntheticEvent>;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const AllHits: React.ComponentClass<AutocompleteExposed & allHitType, any> =
   connectAutoComplete(({ hits, currentRefinement }) => {
     const isHitsEmpty = !hits.length;

@@ -1,8 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';

@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState } from 'react';
 
 import './image-loader.css';
-// @ts-ignore
 import LazyLoad from 'react-lazy-load';
 
 interface ImageLoaderProps {

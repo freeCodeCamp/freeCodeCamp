@@ -27,7 +27,7 @@ const searchUrl: string = searchPageUrl as string;
 const mapStateToProps = createSelector(
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
-  (isDropdownEnabled, isSearchFocused) => ({
+  (isDropdownEnabled: boolean, isSearchFocused: boolean) => ({
     isDropdownEnabled,
     isSearchFocused
   })
@@ -184,7 +184,7 @@ export class SearchBar extends Component<searchBarPropType, classState> {
     }
   };
 
-  render() {
+  render(): JSX.Element {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
     const placeholder = t ? t('search.placeholder') : '';

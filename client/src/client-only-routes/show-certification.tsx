@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-sort-props */
 import React, { useEffect, useState } from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
@@ -7,7 +6,6 @@ import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 
 import ShowProjectLinks from './show-project-links';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
-// eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
 import { Trans, useTranslation } from 'react-i18next';
 
@@ -27,8 +25,6 @@ import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 import { langCodes } from '../../../config/i18n/all-langs';
-// eslint-disable-next-line
-// @ts-ignore
 import envData from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
@@ -145,7 +141,6 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
     } = props;
 
     if (!signedInUserName || signedInUserName !== username) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       if (isEmpty(user) && username) {
         fetchProfileForUser(username);
       }
@@ -272,8 +267,8 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
       <Row>
         <Col md={8} mdOffset={2} xs={12}>
           <DonateForm
-            handleProcessing={handleProcessing}
             defaultTheme='default'
+            handleProcessing={handleProcessing}
             isMinimalForm={true}
           />
         </Col>
@@ -294,10 +289,10 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
           block={true}
           bsSize='lg'
           bsStyle='primary'
-          target='_blank'
           href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
           }&certUrl=${certURL}`}
+          target='_blank'
         >
           {t('profile.add-linkedin')}
         </Button>
@@ -306,11 +301,11 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
           block={true}
           bsSize='lg'
           bsStyle='primary'
-          target='_blank'
           href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
             certTitle: certTitle,
             certURL: certURL
           })}`}
+          target='_blank'
         >
           {t('profile.add-twitter')}
         </Button>
@@ -331,7 +326,7 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
             </div>
           </Col>
           <Col md={7} sm={12}>
-            <div data-cy='issue-date' className='issue-date'>
+            <div className='issue-date' data-cy='issue-date'>
               {t('certification.issued')}&nbsp;
               <strong>
                 {certDate.toLocaleString([localeCode, 'en-US'], {
@@ -346,7 +341,7 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
 
         <main className='information'>
           <div className='information-container'>
-            <Trans title={certTitle} i18nKey='certification.fulltext'>
+            <Trans i18nKey='certification.fulltext' title={certTitle}>
               <h3>placeholder</h3>
               <h1>
                 <strong>{{ user: displayName }}</strong>
@@ -383,7 +378,7 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
       <Spacer size={2} />
       {signedInUserName === username ? shareCertBtns : ''}
       <Spacer size={2} />
-      <ShowProjectLinks user={user} name={displayName} certName={certTitle} />
+      <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
       <Spacer size={2} />
     </Grid>
   );
@@ -391,4 +386,8 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
 
 ShowCertification.displayName = 'ShowCertification';
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowCertification);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+)(ShowCertification as any);

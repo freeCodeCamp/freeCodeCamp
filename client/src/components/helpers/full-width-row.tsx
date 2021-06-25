@@ -5,7 +5,7 @@ function FullWidthRow({
   children,
   className
 }: {
-  children?: JSX.Element[];
+  children?: React.ReactNode;
   className?: string;
 }): JSX.Element {
   return (

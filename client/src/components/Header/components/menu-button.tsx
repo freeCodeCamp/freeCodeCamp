@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable react/prop-types */
 import React, { RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import AuthOrProfile from './auth-or-profile';
@@ -9,7 +7,7 @@ export interface MenuButtonProps {
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  user?: Object;
+  user?: Record<string, unknown>;
 }
 
 const MenuButton = ({
