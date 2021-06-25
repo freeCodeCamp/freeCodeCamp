@@ -113,7 +113,8 @@ export class PayPalButtonScriptLoader extends Component<
       'paypal-sdk',
       true,
       `https://www.paypal.com/sdk/js${queries}`,
-      this.onScriptLoad
+      this.onScriptLoad,
+      'paypal'
     );
   }
 
