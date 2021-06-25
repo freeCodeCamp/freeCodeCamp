@@ -25,7 +25,7 @@ import {
 } from '../../redux';
 import { getGuideUrl } from '../../utils';
 import LearnLayout from '../../../../components/layouts/Learn';
-import ChallengeTitle from '../../components/Challenge-Title';
+import ChallengeTitle from '../../components/challenge-title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Spacer from '../../../../components/helpers/spacer';
 import SolutionForm from '../SolutionForm';
