@@ -1,20 +1,27 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Form } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import ToggleSetting from './ToggleSetting';
+import ToggleSetting from './toggle-setting';
 
-const propTypes = {
-  currentTheme: PropTypes.string.isRequired,
-  toggleNightMode: PropTypes.func.isRequired
+type ThemeProps = {
+  currentTheme: string;
+  toggleNightMode: (theme: 'default' | 'night') => void;
 };
 
-export default function ThemeSettings({ currentTheme, toggleNightMode }) {
+export default function ThemeSettings({
+  currentTheme,
+  toggleNightMode
+}: ThemeProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Form inline={true} onSubmit={e => e.preventDefault()}>
+    <Form
+      inline={true}
+      onSubmit={(e: React.FormEvent): void => e.preventDefault()}
+    >
       <ToggleSetting
         action={t('settings.labels.night-mode')}
         flag={currentTheme === 'night'}
@@ -30,4 +37,3 @@ export default function ThemeSettings({ currentTheme, toggleNightMode }) {
 }
 
 ThemeSettings.displayName = 'ThemeSettings';
-ThemeSettings.propTypes = propTypes;

@@ -16,15 +16,15 @@ import { createFlashMessage } from '../components/Flash/redux';
 import { useTranslation } from 'react-i18next';
 
 import { Loader, Spacer } from '../components/helpers';
-import About from '../components/settings/About';
-import Privacy from '../components/settings/Privacy';
-import Email from '../components/settings/Email';
-import Internet from '../components/settings/Internet';
-import Portfolio from '../components/settings/Portfolio';
-import Honesty from '../components/settings/Honesty';
+import About from '../components/settings/about';
+import Privacy from '../components/settings/privacy';
+import Email from '../components/settings/email';
+import Internet from '../components/settings/internet';
+import Portfolio from '../components/settings/portfolio';
+import Honesty from '../components/settings/honesty';
 import Certification from '../components/settings/Certification';
-import DangerZone from '../components/settings/DangerZone';
 import { UserType } from '../redux/prop-types';
+import DangerZone from '../components/settings/danger-zone';
 
 const { apiLocation } = envData as Record<string, string>;
 

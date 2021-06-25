@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import {
   FormGroup,
   ControlLabel,
   HelpBlock
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 
 import TB from '../helpers/toggle-button';
@@ -11,12 +12,14 @@ import { ButtonSpacer } from '../helpers';
 
 import './toggle-setting.css';
 
-const propTypes = {
-  action: PropTypes.string.isRequired,
-  explain: PropTypes.string,
-  flag: PropTypes.bool.isRequired,
-  flagName: PropTypes.string.isRequired,
-  toggleFlag: PropTypes.func.isRequired
+type ToggleSettingProps = {
+  action: string;
+  explain?: string;
+  flag: boolean;
+  flagName: string;
+  toggleFlag: () => void;
+  offLabel: string;
+  onLabel: string;
 };
 
 export default function ToggleSetting({
@@ -26,7 +29,7 @@ export default function ToggleSetting({
   flagName,
   toggleFlag,
   ...restProps
-}) {
+}: ToggleSettingProps): JSX.Element {
   return (
     <Fragment>
       <div className='toggle-setting-container'>
@@ -53,4 +56,3 @@ export default function ToggleSetting({
 }
 
 ToggleSetting.displayName = 'ToggleSetting';
-ToggleSetting.propTypes = propTypes;

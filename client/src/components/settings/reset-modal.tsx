@@ -1,17 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
-const propTypes = {
-  onHide: PropTypes.func.isRequired,
-  reset: PropTypes.func.isRequired,
-  show: PropTypes.bool
+type ResetModalProps = {
+  onHide: () => void;
+  reset: () => void;
+  show: boolean;
 };
 
-function ResetModal(props) {
+function ResetModal(props: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   const { show, onHide } = props;
 
@@ -64,6 +65,5 @@ function ResetModal(props) {
 }
 
 ResetModal.displayName = 'ResetModal';
-ResetModal.propTypes = propTypes;
 
 export default ResetModal;

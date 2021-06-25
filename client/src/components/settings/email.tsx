@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'gatsby';
@@ -10,33 +9,45 @@ import {
   ControlLabel,
   FormControl,
   Button
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import isEmail from 'validator/lib/isEmail';
 import { Trans, withTranslation } from 'react-i18next';
+import type { Dispatch } from 'redux';
 
 import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
 
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import ToggleSetting from './ToggleSetting';
+import ToggleSetting from './toggle-setting';
 
 const mapStateToProps = () => ({});
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ updateMyEmail }, dispatch);
 
-const propTypes = {
-  email: PropTypes.string,
-  isEmailVerified: PropTypes.bool,
-  sendQuincyEmail: PropTypes.bool,
-  t: PropTypes.func.isRequired,
-  updateMyEmail: PropTypes.func.isRequired,
-  updateQuincyEmail: PropTypes.func.isRequired
+type EmailProps = {
+  email: string;
+  isEmailVerified: boolean;
+  sendQuincyEmail: boolean;
+  t: (str: string) => string;
+  updateMyEmail: (email: string) => void;
+  updateQuincyEmail: (sendQuincyEmail: boolean) => void;
 };
 
-export function UpdateEmailButton() {
+type EmailState = {
+  emailForm: {
+    currentEmail: string;
+    newEmail: string;
+    confirmNewEmail: string;
+    isPristine: boolean;
+  };
+};
+
+export function UpdateEmailButton(this: EmailSettings): JSX.Element {
   const { t } = this.props;
   return (
     <Link style={{ textDecoration: 'none' }} to='/update-email'>
@@ -47,8 +58,9 @@ export function UpdateEmailButton() {
   );
 }
 
-class EmailSettings extends Component {
-  constructor(props) {
+class EmailSettings extends Component<EmailProps, EmailState> {
+  static displayName: string;
+  constructor(props: EmailProps) {
     super(props);
 
     this.state = {
@@ -61,7 +73,7 @@ class EmailSettings extends Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const {
       emailForm: { newEmail }
@@ -70,17 +82,19 @@ class EmailSettings extends Component {
     return updateMyEmail(newEmail);
   };
 
-  createHandleEmailFormChange = key => e => {
-    e.preventDefault();
-    const userInput = e.target.value.slice();
-    return this.setState(state => ({
-      emailForm: {
-        ...state.emailForm,
-        [key]: userInput,
-        isPristine: userInput === state.emailForm.currentEmail
-      }
-    }));
-  };
+  createHandleEmailFormChange =
+    (key: 'newEmail' | 'confirmNewEmail') =>
+    (e: React.FormEvent<HTMLInputElement>) => {
+      e.preventDefault();
+      const userInput = (e.target as HTMLInputElement).value.slice();
+      return this.setState(state => ({
+        emailForm: {
+          ...state.emailForm,
+          [key]: userInput,
+          isPristine: userInput === state.emailForm.currentEmail
+        }
+      }));
+    };
 
   getValidationForNewEmail = () => {
     const {
@@ -242,7 +256,6 @@ class EmailSettings extends Component {
 }
 
 EmailSettings.displayName = 'EmailSettings';
-EmailSettings.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

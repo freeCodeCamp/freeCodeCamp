@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -7,27 +6,38 @@ import {
   FormControl,
   FormGroup,
   ControlLabel
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import isURL from 'validator/lib/isURL';
 import { withTranslation } from 'react-i18next';
 
 import { maybeUrlRE } from '../../utils';
 
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import { FullWidthRow } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 
-const propTypes = {
-  githubProfile: PropTypes.string,
-  linkedin: PropTypes.string,
-  t: PropTypes.func.isRequired,
-  twitter: PropTypes.string,
-  updateInternetSettings: PropTypes.func.isRequired,
-  website: PropTypes.string
+interface InternetFormValues {
+  githubProfile: string;
+  linkedin: string;
+  twitter: string;
+  website: string;
+}
+
+interface InternetProps extends InternetFormValues {
+  t: (str: string) => string;
+  updateInternetSettings: (formValues: InternetFormValues) => void;
+}
+
+type InternetState = {
+  formValues: InternetFormValues;
+  originalValues: InternetFormValues;
 };
 
-class InternetSettings extends Component {
-  constructor(props) {
+class InternetSettings extends Component<InternetProps, InternetState> {
+  static displayName: string;
+  constructor(props: InternetProps) {
     super(props);
     const {
       githubProfile = '',
@@ -58,7 +68,7 @@ class InternetSettings extends Component {
       twitter !== originalValues.twitter ||
       website !== originalValues.website
     ) {
-      /* eslint-disable-next-line react/no-did-update-set-state */
+      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: { githubProfile, linkedin, twitter, website }
       });
@@ -86,45 +96,50 @@ class InternetSettings extends Component {
     };
   }
 
-  createHandleChange = key => e => {
-    const value = e.target.value.slice(0);
-    return this.setState(state => ({
-      formValues: {
-        ...state.formValues,
-        [key]: value
-      }
-    }));
-  };
+  createHandleChange =
+    (key: keyof InternetFormValues) =>
+    (e: React.FormEvent<HTMLInputElement>) => {
+      const value = (e.target as HTMLInputElement).value.slice(0);
+      return this.setState(state => ({
+        formValues: {
+          ...state.formValues,
+          [key]: value
+        }
+      }));
+    };
 
   isFormPristine = () => {
     const { formValues, originalValues } = this.state;
-    return Object.keys(originalValues)
+    return (Object.keys(originalValues) as Array<keyof InternetFormValues>)
       .map(key => originalValues[key] === formValues[key])
       .every(bool => bool);
   };
 
-  isFormValid = () => {
+  isFormValid = (): boolean => {
     const { formValues, originalValues } = this.state;
-    const valueReducer = obj => {
+    const valueReducer = (obj: InternetFormValues) => {
       return Object.values(obj).reduce(
-        (acc, cur) => (acc ? acc : cur !== ''),
+        (acc, cur): boolean => (acc ? acc : cur !== ''),
         false
-      );
+      ) as boolean;
     };
 
-    let formHasValues = valueReducer(formValues);
-    let OriginalHasValues = valueReducer(originalValues);
+    const formHasValues = valueReducer(formValues);
+    const OriginalHasValues = valueReducer(originalValues);
 
     // check if user had values but wants to delete them all
     if (OriginalHasValues && !formHasValues) return true;
 
-    return Object.keys(formValues).reduce((bool, key) => {
-      const maybeUrl = formValues[key];
-      return maybeUrl ? isURL(maybeUrl) : bool;
-    }, false);
+    return (Object.keys(formValues) as Array<keyof InternetFormValues>).reduce(
+      (bool: boolean, key: keyof InternetFormValues): boolean => {
+        const maybeUrl = formValues[key];
+        return maybeUrl ? isURL(maybeUrl) : bool;
+      },
+      false
+    );
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!this.isFormPristine() && this.isFormValid()) {
       // // Only submit the form if is has changed, and if it is valid
@@ -142,10 +157,10 @@ class InternetSettings extends Component {
     return null;
   };
 
-  renderHelpBlock = validationMessage =>
+  renderHelpBlock = (validationMessage: string) =>
     validationMessage ? <HelpBlock>{validationMessage}</HelpBlock> : null;
 
-  renderCheck = (url, validation) =>
+  renderCheck = (url: string, validation: string | null) =>
     url && validation === 'success' ? (
       <FormControl.Feedback>
         <span>
@@ -246,6 +261,5 @@ class InternetSettings extends Component {
 }
 
 InternetSettings.displayName = 'InternetSettings';
-InternetSettings.propTypes = propTypes;
 
 export default withTranslation()(InternetSettings);

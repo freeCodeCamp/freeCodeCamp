@@ -1,52 +1,60 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Button, Form } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
+import type { Dispatch } from 'redux';
 
 import { userSelector } from '../../redux';
 import { submitProfileUI } from '../../redux/settings';
 
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
-import ToggleSetting from './ToggleSetting';
-import SectionHeader from './SectionHeader';
+import ToggleSetting from './toggle-setting';
+import SectionHeader from './section-header';
 
 const mapStateToProps = createSelector(userSelector, user => ({
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   user
 }));
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ submitProfileUI }, dispatch);
 
-const propTypes = {
-  submitProfileUI: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired,
-  user: PropTypes.shape({
-    profileUI: PropTypes.shape({
-      isLocked: PropTypes.bool,
-      showAbout: PropTypes.bool,
-      showCerts: PropTypes.bool,
-      showDonation: PropTypes.bool,
-      showHeatMap: PropTypes.bool,
-      showLocation: PropTypes.bool,
-      showName: PropTypes.bool,
-      showPoints: PropTypes.bool,
-      showPortfolio: PropTypes.bool,
-      showTimeLine: PropTypes.bool
-    }),
-    username: PropTypes.String
-  })
+type ProfileUIType = {
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showTimeLine: boolean;
 };
 
-class PrivacySettings extends Component {
-  handleSubmit = e => e.preventDefault();
+type PrivacyProps = {
+  submitProfileUI: (profileUI: ProfileUIType) => void;
+  t: (str: string) => string;
+  user: {
+    profileUI: ProfileUIType;
+    username: string;
+  };
+};
 
-  toggleFlag = flag => () => {
+class PrivacySettings extends Component<PrivacyProps> {
+  static displayName: string;
+
+  handleSubmit = (e: React.FormEvent) => e.preventDefault();
+
+  toggleFlag = (flag: string) => () => {
     const privacyValues = { ...this.props.user.profileUI };
-    privacyValues[flag] = !privacyValues[flag];
+    privacyValues[flag as keyof ProfileUIType] =
+      !privacyValues[flag as keyof ProfileUIType];
     this.props.submitProfileUI(privacyValues);
   };
 
@@ -176,7 +184,6 @@ class PrivacySettings extends Component {
 }
 
 PrivacySettings.displayName = 'PrivacySettings';
-PrivacySettings.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

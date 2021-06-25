@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import {
   Button,
@@ -7,6 +6,8 @@ import {
   ControlLabel,
   FormControl,
   HelpBlock
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import isURL from 'validator/lib/isURL';
@@ -15,22 +16,27 @@ import { withTranslation } from 'react-i18next';
 import { hasProtocolRE } from '../../utils';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
 
-const propTypes = {
-  picture: PropTypes.string,
-  portfolio: PropTypes.arrayOf(
-    PropTypes.shape({
-      description: PropTypes.string,
-      image: PropTypes.string,
-      title: PropTypes.string,
-      url: PropTypes.string
-    })
-  ),
-  t: PropTypes.func.isRequired,
-  updatePortfolio: PropTypes.func.isRequired,
-  username: PropTypes.string
+type PortfolioValues = {
+  id: string;
+  description: string;
+  image: string;
+  title: string;
+  url: string;
+};
+
+type PortfolioProps = {
+  picture?: string;
+  portfolio: PortfolioValues[];
+  t: (str: string, obj?: { charsLeft: number }) => string;
+  updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
+  username?: string;
+};
+
+type PortfolioState = {
+  portfolio: PortfolioValues[];
 };
 
 function createEmptyPortfolio() {
@@ -43,16 +49,18 @@ function createEmptyPortfolio() {
   };
 }
 
-function createFindById(id) {
-  return p => p.id === id;
+function createFindById(id: string) {
+  return (p: PortfolioValues) => p.id === id;
 }
 
 const mockEvent = {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   preventDefault() {}
 };
 
-class PortfolioSettings extends Component {
-  constructor(props) {
+class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
+  static displayName: string;
+  constructor(props: PortfolioProps) {
     super(props);
 
     const { portfolio = [] } = props;
@@ -62,24 +70,26 @@ class PortfolioSettings extends Component {
     };
   }
 
-  createOnChangeHandler = (id, key) => e => {
-    e.preventDefault();
-    const userInput = e.target.value.slice();
-    return this.setState(state => {
-      const { portfolio: currentPortfolio } = state;
-      const mutablePortfolio = currentPortfolio.slice(0);
-      const index = findIndex(currentPortfolio, p => p.id === id);
+  createOnChangeHandler =
+    (id: string, key: 'description' | 'image' | 'title' | 'url') =>
+    (e: React.FormEvent<HTMLInputElement>) => {
+      e.preventDefault();
+      const userInput = (e.target as HTMLInputElement).value.slice();
+      return this.setState(state => {
+        const { portfolio: currentPortfolio } = state;
+        const mutablePortfolio = currentPortfolio.slice(0);
+        const index = findIndex(currentPortfolio, p => p.id === id);
 
-      mutablePortfolio[index] = {
-        ...mutablePortfolio[index],
-        [key]: userInput
-      };
+        mutablePortfolio[index] = {
+          ...mutablePortfolio[index],
+          [key]: userInput
+        };
 
-      return { portfolio: mutablePortfolio };
-    });
-  };
+        return { portfolio: mutablePortfolio };
+      });
+    };
 
-  handleSubmit = e => {
+  handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { updatePortfolio } = this.props;
     const { portfolio } = this.state;
@@ -92,7 +102,7 @@ class PortfolioSettings extends Component {
     }));
   };
 
-  handleRemoveItem = id => {
+  handleRemoveItem = (id: string) => {
     return this.setState(
       state => ({
         portfolio: state.portfolio.filter(p => p.id !== id)
@@ -101,7 +111,7 @@ class PortfolioSettings extends Component {
     );
   };
 
-  isFormPristine = id => {
+  isFormPristine = (id: string) => {
     const { portfolio } = this.state;
     const { portfolio: originalPortfolio } = this.props;
     const original = find(originalPortfolio, createFindById(id));
@@ -112,25 +122,26 @@ class PortfolioSettings extends Component {
     return isEqual(original, edited);
   };
 
-  isFormValid = id => {
-    const { portfolio } = this.state;
-    const toValidate = find(portfolio, createFindById(id));
-    if (!toValidate) {
-      return false;
-    }
-    const { title, url, image, description } = toValidate;
+  // TODO: Check if this function is required or not
+  // isFormValid = id => {
+  //   const { portfolio } = this.state;
+  //   const toValidate = find(portfolio, createFindById(id));
+  //   if (!toValidate) {
+  //     return false;
+  //   }
+  //   const { title, url, image, description } = toValidate;
 
-    const { state: titleState } = this.getTitleValidation(title);
-    const { state: urlState } = this.getUrlValidation(url);
-    const { state: imageState } = this.getUrlValidation(image, true);
-    const { state: descriptionState } =
-      this.getDescriptionValidation(description);
-    return [titleState, imageState, urlState, descriptionState]
-      .filter(Boolean)
-      .every(state => state === 'success');
-  };
+  //   const { state: titleState } = this.getTitleValidation(title);
+  //   const { state: urlState } = this.getUrlValidation(url);
+  //   const { state: imageState } = this.getUrlValidation(image, true);
+  //   const { state: descriptionState } =
+  //     this.getDescriptionValidation(description);
+  //   return [titleState, imageState, urlState, descriptionState]
+  //     .filter(Boolean)
+  //     .every(state => state === 'success');
+  // };
 
-  getDescriptionValidation(description) {
+  getDescriptionValidation(description: string) {
     const { t } = this.props;
     const len = description.length;
     const charsLeft = 288 - len;
@@ -152,7 +163,7 @@ class PortfolioSettings extends Component {
     return { state: 'success', message: '' };
   }
 
-  getTitleValidation(title) {
+  getTitleValidation(title: string) {
     const { t } = this.props;
     if (!title) {
       return { state: 'error', message: t('validation.title-required') };
@@ -167,7 +178,7 @@ class PortfolioSettings extends Component {
     return { state: 'success', message: '' };
   }
 
-  getUrlValidation(maybeUrl, isImage) {
+  getUrlValidation(maybeUrl: string, isImage?: boolean) {
     const { t } = this.props;
     const len = maybeUrl.length;
     if (len >= 4 && !hasProtocolRE.test(maybeUrl)) {
@@ -187,7 +198,11 @@ class PortfolioSettings extends Component {
       : { state: 'warning', message: t('validation.use-valid-url') };
   }
 
-  renderPortfolio = (portfolio, index, arr) => {
+  renderPortfolio = (
+    portfolio: PortfolioValues,
+    index: number,
+    arr: PortfolioValues[]
+  ) => {
     const { t } = this.props;
     const { id, title, description, url, image } = portfolio;
     const pristine = this.isFormPristine(id);
@@ -330,6 +345,5 @@ class PortfolioSettings extends Component {
 }
 
 PortfolioSettings.displayName = 'PortfolioSettings';
-PortfolioSettings.propTypes = propTypes;
 
 export default withTranslation()(PortfolioSettings);
