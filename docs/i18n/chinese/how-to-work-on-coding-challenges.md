@@ -39,7 +39,7 @@ The practice projects have some additional tooling to help create new projects a
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
 title: 'Challenge Title'
-challengeType: Integer, defined in `client/challenge-types.js`
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
@@ -50,10 +50,6 @@ Challenge description text, in markdown
 
 ```html
 <div>example code</div>
-<<<<<<< HEAD
-=======
-```
->>>>>>> fix file names
 ````
 
 # --instructions--
@@ -156,10 +152,6 @@ More answers
 ## --video-solution--
 
 The number for the correct answer goes here.
-<<<<<<< HEAD
-=======
-
->>>>>>> fix file names
 ````
 
 > [!NOTE]
@@ -279,9 +271,8 @@ The following is an example of code:
 ```{language}
 
 [YOUR CODE HERE]
-```
-````
 
+````
 ````
 
 - Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
@@ -379,7 +370,7 @@ Declare the myGlobal variable below this line
 ```
 
 > [!NOTE]
->
+> 
 > We are working on an integration to make it possible to work on i18n for the comment dictionary.
 
 ## Hints and Solutions
@@ -437,7 +428,6 @@ Hint goes here
 function myFunc() {
   console.log('Hello World!');
 }
-```
 ````
 
 #### Code Explanation
@@ -489,14 +479,13 @@ You are also able to test one challenge individually by performing the following
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
 
 > [!TIP] You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
->
+> 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
 ### Useful Links
 
 Creating and Editing Challenges:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
 
 2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
-````
