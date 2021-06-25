@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -10,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import Login from './Login';
 
 export interface AuthOrProfileProps {
-  user?: Object;
+  user?: Record<string, unknown>;
 }
 const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
   const { t } = useTranslation();
@@ -30,7 +28,7 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
       <>
         <Link
           className={`avatar-nav-link ${badgeColorClass}`}
-          to={`/${user.username}`}
+          to={`/${user.username as string}`}
         >
           <AvatarRenderer
             picture={user.picture}

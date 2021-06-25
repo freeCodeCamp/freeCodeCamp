@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
 
-function NoResults({ query }: { query: string }) {
+function NoResults({ query }: { query: string }): JSX.Element {
   return (
     <div className='no-results-wrapper'>
       <p>

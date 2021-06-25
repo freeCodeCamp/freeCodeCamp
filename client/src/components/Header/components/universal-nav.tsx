@@ -8,13 +8,13 @@ import { Link, SkeletonSprite } from '../../helpers';
 import NavLogo from './nav-logo';
 import MenuButton from './menu-button';
 import NavLinks from './nav-links';
-import './universalNav.css';
+import './universal-nav.css';
 import { isLanding } from '../../../utils/path-parsers';
 import Loadable from '@loadable/component';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
-const SearchBarOptimized = Loadable(() =>
-  import('../../search/searchBar/search-bar-optimized')
+const SearchBarOptimized = Loadable(
+  () => import('../../search/searchBar/search-bar-optimized')
 );
 
 export interface UniversalNavProps {

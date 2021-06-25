@@ -31,7 +31,7 @@ type AboutProps = {
   points: number;
   submitNewAbout: (formValues: FormValues) => void;
   t: (str: string) => string;
-  toggleNightMode: () => void;
+  toggleNightMode: (theme: string) => void;
   username: string;
 };
 

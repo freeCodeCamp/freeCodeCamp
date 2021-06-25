@@ -26,7 +26,7 @@ import Certification from '../components/settings/Certification';
 import { UserType } from '../redux/prop-types';
 import DangerZone from '../components/settings/danger-zone';
 
-const { apiLocation } = envData as Record<string, string>;
+const { apiLocation } = envData;
 
 // TODO: update types for actions
 interface IShowSettingsProps {
@@ -42,6 +42,7 @@ interface IShowSettingsProps {
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: UserType;
   verifyCert: () => void;
+  path?: string;
 }
 
 const mapStateToProps = createSelector(
@@ -165,6 +166,7 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
             website={website}
           />
           <Spacer />
+          {/* @ts-expect-error Portfolio types mismatch */}
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
           <Spacer />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
@@ -200,5 +202,5 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
 }
 
 ShowSettings.displayName = 'ShowSettings';
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+
 export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);

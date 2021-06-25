@@ -1,3 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/unbound-method */
 import React, { Component, useMemo } from 'react';
 import { reverse, sortBy } from 'lodash-es';
 import {
@@ -304,17 +310,15 @@ class TimelineInner extends Component<
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
                 {`${username}'s Solution to ${
-                  // @ts-ignore
+                  // @ts-expect-error Need better TypeDef for this
                   idToNameMap.get(id).challengeTitle
                 }`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              {/* @ts-ignore */}
               <SolutionViewer
-                // @ts-ignore
+                // @ts-expect-error Need Better TypeDef
                 files={this.state.files}
-                // @ts-ignore
                 solution={this.state.solution}
               />
             </Modal.Body>
@@ -377,6 +381,7 @@ function useIdToNameMap(): Map<string, string> {
       idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
     }
   );
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return idToNameMap;
 }
 

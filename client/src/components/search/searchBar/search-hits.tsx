@@ -9,6 +9,7 @@ import NoHitsSuggestion from './no-hits-suggestion';
 
 const searchUrl = searchPageUrl as string;
 interface customHitsPropTypes {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hits: Array<any>;
   searchQuery: string;
   handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;

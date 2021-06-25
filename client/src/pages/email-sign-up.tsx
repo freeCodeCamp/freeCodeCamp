@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import SectionHeader from '../components/settings/SectionHeader';
+import SectionHeader from '../components/settings/section-header';
 import IntroDescription from '../components/Intro/components/IntroDescription';
 import { withTranslation } from 'react-i18next';
 

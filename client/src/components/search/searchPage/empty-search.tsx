@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import './empty-search.css';
 
-function EmptySearch() {
+function EmptySearch(): JSX.Element {
   const { t } = useTranslation();
 
   return <div className='empty-search-wrapper'>{t('search.try')}</div>;
