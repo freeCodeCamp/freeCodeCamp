@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface SpacerProps {
-  size: number;
+  size?: number;
 }
 
 const styles = { padding: '15px 0', height: '1px' };
