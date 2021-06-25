@@ -6,6 +6,8 @@ interface LinkProps {
   external?: boolean;
   sameTab?: boolean;
   to: string;
+  // TODO: figure out what these actually should be
+  other?: any[];
 }
 
 const Link = ({
