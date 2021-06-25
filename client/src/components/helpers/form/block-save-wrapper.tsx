@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-const propTypes = {
-  children: PropTypes.node
-};
 
 const style = {
   padding: '0 15px'
 };
 
-function BlockSaveWrapper({ children, ...restProps }) {
+function BlockSaveWrapper({
+  children,
+  ...restProps
+}: {
+  children?: React.ReactNode;
+}): JSX.Element {
   return (
     <div style={style} {...restProps}>
       {children}
@@ -18,6 +18,5 @@ function BlockSaveWrapper({ children, ...restProps }) {
 }
 
 BlockSaveWrapper.displayName = 'BlockSaveWrapper';
-BlockSaveWrapper.propTypes = propTypes;
 
 export default BlockSaveWrapper;

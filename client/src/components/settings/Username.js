@@ -16,8 +16,8 @@ import {
   usernameValidationSelector,
   submitNewUsername
 } from '../../redux/settings';
-import BlockSaveButton from '../helpers/form/BlockSaveButton';
 import FullWidthRow from '../helpers/full-width-row';
+import BlockSaveButton from '../helpers/form/block-save-button';
 import { isValidUsername } from '../../../../utils/validate';
 
 const propTypes = {

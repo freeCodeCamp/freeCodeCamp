@@ -16,7 +16,7 @@ import { hasProtocolRE } from '../../utils';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import SectionHeader from './SectionHeader';
-import BlockSaveButton from '../helpers/form/BlockSaveButton';
+import BlockSaveButton from '../helpers/form/block-save-button';
 
 const propTypes = {
   picture: PropTypes.string,
