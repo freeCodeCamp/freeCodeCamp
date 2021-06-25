@@ -1,8 +1,11 @@
 import React from 'react';
 
-import styles from './skeletonStyles';
+import styles from './skeleton-styles';
 
-function SkeletonSprite() {
+// TODO: unsure about parameter typing
+function SkeletonSprite({}: React.FC<
+  React.ComponentPropsWithoutRef<'svg'>
+>): JSX.Element {
   return (
     <div className='sprite-container'>
       <style dangerouslySetInnerHTML={{ __html: styles }} />

@@ -1,20 +1,21 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState } from 'react';
 
 import './image-loader.css';
+// @ts-ignore
 import LazyLoad from 'react-lazy-load';
-import PropTypes from 'prop-types';
 
-const propTypes = {
-  alt: PropTypes.string,
-  className: PropTypes.string,
-  height: PropTypes.number,
-  loadedClassName: PropTypes.string,
-  loadingClassName: PropTypes.string,
-  offsetVertical: PropTypes.number,
-  src: PropTypes.string,
-  style: PropTypes.object,
-  width: PropTypes.number
-};
+interface ImageLoaderProps {
+  alt?: string;
+  className?: string;
+  height?: number;
+  loadedClassName?: string;
+  loadingClassName?: string;
+  offsetVertical?: number;
+  src?: string;
+  style?: React.CSSProperties;
+  width?: number;
+}
 
 const ImageLoader = ({
   className = '',
@@ -26,7 +27,7 @@ const ImageLoader = ({
   style,
   width,
   height
-}) => {
+}: ImageLoaderProps): JSX.Element => {
   const [loaded, setLoaded] = useState(false);
   const fullClassName = `${className} ${
     loaded ? loadedClassName : loadingClassName
@@ -49,5 +50,5 @@ const ImageLoader = ({
     </LazyLoad>
   );
 };
-ImageLoader.propTypes = propTypes;
+
 export default ImageLoader;
