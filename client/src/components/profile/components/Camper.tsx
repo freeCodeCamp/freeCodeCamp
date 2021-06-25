@@ -15,7 +15,7 @@ import Link from '../../helpers/link';
 import './camper.css';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env';
+import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
