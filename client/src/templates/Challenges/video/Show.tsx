@@ -1,6 +1,5 @@
 // Package Utilities
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -10,10 +9,14 @@ import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
 import { ObserveKeys } from 'react-hotkeys';
 import { withTranslation } from 'react-i18next';
+import type { Dispatch } from 'redux';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
-import { ChallengeNode } from '../../../redux/prop-types';
+import {
+  ChallengeNodeType,
+  ChallengeMetaType
+} from '../../../redux/prop-types';
 import LearnLayout from '../../../components/layouts/Learn';
 import ChallengeTitle from '../components/Challenge-Title';
 import ChallengeDescription from '../components/Challenge-Description';
@@ -35,11 +38,11 @@ import './show.css';
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  isChallengeCompleted => ({
+  (isChallengeCompleted: boolean) => ({
     isChallengeCompleted
   })
 );
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       updateChallengeMeta,
@@ -50,26 +53,36 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-// Proptypes
-const propTypes = {
-  challengeMounted: PropTypes.func.isRequired,
-  data: PropTypes.shape({
-    challengeNode: ChallengeNode
-  }),
-  description: PropTypes.string,
-  isChallengeCompleted: PropTypes.bool,
-  openCompletionModal: PropTypes.func.isRequired,
-  pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
-  }),
-  t: PropTypes.func.isRequired,
-  updateChallengeMeta: PropTypes.func.isRequired,
-  updateSolutionFormValues: PropTypes.func.isRequired
-};
+// Types
+interface ShowVideoProps {
+  challengeMounted: (arg0: string) => void;
+  data: { challengeNode: ChallengeNodeType };
+  description: string;
+  isChallengeCompleted: boolean;
+  openCompletionModal: () => void;
+  pageContext: {
+    challengeMeta: ChallengeMetaType;
+  };
+  t: (arg0: string) => string;
+  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateSolutionFormValues: () => void;
+}
+
+interface ShowVideoState {
+  subtitles: string;
+  downloadURL: string | null;
+  selectedOption: number | null;
+  answer: number;
+  showWrong: boolean;
+  videoIsLoaded: boolean;
+}
 
 // Component
-class Project extends Component {
-  constructor(props) {
+class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
+  static displayName: string;
+  private _container: HTMLElement | null | undefined;
+
+  constructor(props: ShowVideoProps) {
     super(props);
     this.state = {
       subtitles: '',
@@ -83,7 +96,7 @@ class Project extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     const {
       challengeMounted,
       data: {
@@ -99,10 +112,9 @@ class Project extends Component {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container.focus();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: ShowVideoProps): void {
     const {
       data: {
         challengeNode: { title: prevTitle }
@@ -127,7 +139,7 @@ class Project extends Component {
     }
   }
 
-  handleSubmit(solution, openCompletionModal) {
+  handleSubmit(solution: number, openCompletionModal: () => void) {
     if (solution - 1 === this.state.selectedOption) {
       this.setState({
         showWrong: false
@@ -140,7 +152,9 @@ class Project extends Component {
     }
   }
 
-  handleOptionChange = changeEvent => {
+  handleOptionChange = (
+    changeEvent: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     this.setState({
       showWrong: false,
       selectedOption: parseInt(changeEvent.target.value, 10)
@@ -181,7 +195,7 @@ class Project extends Component {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal);
         }}
-        innerRef={c => (this._container = c)}
+        innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -191,6 +205,8 @@ class Project extends Component {
           />
           <Grid>
             <Row>
+              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+              {/* @ts-ignore */}
               <Spacer />
               <ChallengeTitle
                 block={block}
@@ -222,6 +238,7 @@ class Project extends Component {
                       width: 'auto',
                       height: 'auto'
                     }}
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     videoId={videoId}
                   />
                   <i>
@@ -243,6 +260,8 @@ class Project extends Component {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
@@ -272,6 +291,8 @@ class Project extends Component {
                     ))}
                   </div>
                 </ObserveKeys>
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer />
                 <div
                   style={{
@@ -284,6 +305,8 @@ class Project extends Component {
                     <span>{t('learn.check-answer')}</span>
                   )}
                 </div>
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer />
                 <Button
                   block={true}
@@ -295,6 +318,8 @@ class Project extends Component {
                 >
                   {t('buttons.check-answer')}
                 </Button>
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer size={2} />
               </Col>
               <CompletionModal
@@ -310,13 +335,12 @@ class Project extends Component {
   }
 }
 
-Project.displayName = 'Project';
-Project.propTypes = propTypes;
+ShowVideo.displayName = 'ShowVideo';
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withTranslation()(Project));
+)(withTranslation()(ShowVideo));
 
 export const query = graphql`
   query VideoChallenge($slug: String!) {
