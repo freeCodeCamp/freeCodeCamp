@@ -1,28 +1,35 @@
+// Package Utilities
 import React from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
+// Local Utilities
 import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
 import { executeGA } from '../../../redux';
 
+// Styles
 import './reset-modal.css';
 
-const propTypes = {
-  close: PropTypes.func.isRequired,
-  executeGA: PropTypes.func,
-  isOpen: PropTypes.bool.isRequired,
-  reset: PropTypes.func.isRequired
-};
+// Types
+interface ResetModalProps {
+  close: () => void;
+  executeGA: () => void;
+  isOpen: boolean;
+  reset: () => void;
+}
 
-const mapStateToProps = createSelector(isResetModalOpenSelector, isOpen => ({
-  isOpen
-}));
+// Redux Setup
+const mapStateToProps = createSelector(
+  isResetModalOpenSelector,
+  (isOpen: boolean) => ({
+    isOpen
+  })
+);
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       close: () => closeModal('reset'),
@@ -32,11 +39,12 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-function withActions(...fns) {
+function withActions(...fns: Array<() => void>) {
   return () => fns.forEach(fn => fn());
 }
 
-function ResetModal({ reset, close, isOpen }) {
+// Component
+function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   if (isOpen) {
     executeGA({ type: 'modal', data: '/reset-modal' });
@@ -75,6 +83,5 @@ function ResetModal({ reset, close, isOpen }) {
 }
 
 ResetModal.displayName = 'ResetModal';
-ResetModal.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResetModal);

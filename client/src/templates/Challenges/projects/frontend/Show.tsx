@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+// Package Utilities
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -7,8 +9,13 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
+import type { Dispatch } from 'redux';
 
-import { ChallengeNode } from '../../../../redux/prop-types';
+// Local Utilities
+import {
+  ChallengeNodeType,
+  ChallengeMetaType
+} from '../../../../redux/prop-types';
 import {
   challengeMounted,
   isChallengeCompletedSelector,
@@ -16,9 +23,7 @@ import {
   openModal,
   updateSolutionFormValues
 } from '../../redux';
-
 import { getGuideUrl } from '../../utils';
-
 import LearnLayout from '../../../../components/layouts/Learn';
 import ChallengeTitle from '../../components/Challenge-Title';
 import ChallengeDescription from '../../components/Challenge-Description';
@@ -29,14 +34,15 @@ import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
 import Hotkeys from '../../components/Hotkeys';
 
+// Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  isChallengeCompleted => ({
+  (isChallengeCompleted: boolean) => ({
     isChallengeCompleted
   })
 );
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       updateChallengeMeta,
@@ -47,24 +53,28 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const propTypes = {
-  challengeMounted: PropTypes.func.isRequired,
-  data: PropTypes.shape({
-    challengeNode: ChallengeNode
-  }),
-  isChallengeCompleted: PropTypes.bool,
-  openCompletionModal: PropTypes.func.isRequired,
-  pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
-  }),
-  t: PropTypes.func.isRequired,
-  updateChallengeMeta: PropTypes.func.isRequired,
-  updateSolutionFormValues: PropTypes.func.isRequired
-};
+// Types
+interface ProjectProps {
+  challengeMounted: (arg0: string) => void;
+  data: { challengeNode: ChallengeNodeType };
+  isChallengeCompleted: boolean;
+  openCompletionModal: () => void;
+  pageContext: {
+    challengeMeta: ChallengeMetaType;
+  };
+  t: (arg0: string) => string;
+  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateSolutionFormValues: () => void;
+}
 
-class Project extends Component {
-  constructor() {
-    super();
+// Component
+class Project extends Component<ProjectProps> {
+  static displayName: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private _container: any;
+
+  constructor(props: ProjectProps) {
+    super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
@@ -86,7 +96,7 @@ class Project extends Component {
     this._container.focus();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: ProjectProps): void {
     const {
       data: {
         challengeNode: { title: prevTitle }
@@ -111,7 +121,11 @@ class Project extends Component {
     }
   }
 
-  handleSubmit({ isShouldCompletionModalOpen }) {
+  handleSubmit({
+    isShouldCompletionModalOpen
+  }: {
+    isShouldCompletionModalOpen: boolean;
+  }): void {
     if (isShouldCompletionModalOpen) {
       this.props.openCompletionModal();
     }
@@ -143,7 +157,7 @@ class Project extends Component {
 
     return (
       <Hotkeys
-        innerRef={c => (this._container = c)}
+        innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -154,6 +168,8 @@ class Project extends Component {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer />
                 <ChallengeTitle
                   block={block}
@@ -167,6 +183,7 @@ class Project extends Component {
                 <SolutionForm
                   challengeType={challengeType}
                   description={description}
+                  // eslint-disable-next-line @typescript-eslint/unbound-method
                   onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
                 />
@@ -174,6 +191,8 @@ class Project extends Component {
                   guideUrl={getGuideUrl({ forumTopicId, title })}
                 />
                 <br />
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
                 <Spacer />
               </Col>
               <CompletionModal
@@ -191,7 +210,6 @@ class Project extends Component {
 }
 
 Project.displayName = 'Project';
-Project.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
