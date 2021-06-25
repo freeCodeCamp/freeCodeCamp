@@ -3,7 +3,16 @@ import PropTypes from 'prop-types';
 
 import { useTranslation } from 'react-i18next';
 
-const TimelinePagination = props => {
+interface ITimelinePaginationProps {
+  firstPage: () => void;
+  lastPage: () => void;
+  nextPage: () => void;
+  pageNo: number;
+  prevPage: () => void;
+  totalPages: number;
+}
+
+const TimelinePagination = (props: ITimelinePaginationProps): JSX.Element => {
   const { pageNo, totalPages, firstPage, prevPage, nextPage, lastPage } = props;
   const { t } = useTranslation();
 
@@ -79,15 +88,6 @@ const TimelinePagination = props => {
       </ul>
     </nav>
   );
-};
-
-TimelinePagination.propTypes = {
-  firstPage: PropTypes.func.isRequired,
-  lastPage: PropTypes.func.isRequired,
-  nextPage: PropTypes.func.isRequired,
-  pageNo: PropTypes.number.isRequired,
-  prevPage: PropTypes.func.isRequired,
-  totalPages: PropTypes.number.isRequired
 };
 
 export default TimelinePagination;

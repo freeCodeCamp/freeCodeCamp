@@ -1,56 +1,62 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import Link from '../helpers/link';
-import { useTranslation } from 'react-i18next';
+import { TFunction, useTranslation } from 'react-i18next';
 
-import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
+import { CurrentChallengeLink, FullWidthRow, Link, Spacer } from '../helpers';
 import Camper from './components/Camper';
 import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
 
-const propTypes = {
-  isSessionUser: PropTypes.bool,
-  user: PropTypes.shape({
-    profileUI: PropTypes.shape({
-      isLocked: PropTypes.bool,
-      showAbout: PropTypes.bool,
-      showCerts: PropTypes.bool,
-      showDonation: PropTypes.bool,
-      showHeatMap: PropTypes.bool,
-      showLocation: PropTypes.bool,
-      showName: PropTypes.bool,
-      showPoints: PropTypes.bool,
-      showPortfolio: PropTypes.bool,
-      showTimeLine: PropTypes.bool
-    }),
-    calendar: PropTypes.object,
-    completedChallenges: PropTypes.array,
-    portfolio: PropTypes.array,
-    about: PropTypes.string,
-    githubProfile: PropTypes.string,
-    isGithub: PropTypes.bool,
-    isLinkedIn: PropTypes.bool,
-    isTwitter: PropTypes.bool,
-    isWebsite: PropTypes.bool,
-    joinDate: PropTypes.string,
-    linkedin: PropTypes.string,
-    location: PropTypes.string,
-    name: PropTypes.string,
-    picture: PropTypes.string,
-    points: PropTypes.number,
-    twitter: PropTypes.string,
-    username: PropTypes.string,
-    website: PropTypes.string,
-    yearsTopContributor: PropTypes.array,
-    isDonating: PropTypes.bool
-  })
-};
+interface IProfileProps {
+  isSessionUser: boolean;
+  user: {
+    profileUI: {
+      isLocked: boolean;
+      showAbout: boolean;
+      showCerts: boolean;
+      showDonation: boolean;
+      showHeatMap: boolean;
+      showLocation: boolean;
+      showName: boolean;
+      showPoints: boolean;
+      showPortfolio: boolean;
+      showTimeLine: boolean;
+    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    calendar: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    completedChallenges: any[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    portfolio: any[];
+    about: string;
+    githubProfile: string;
+    isGithub: boolean;
+    isLinkedIn: boolean;
+    isTwitter: boolean;
+    isWebsite: boolean;
+    joinDate: string;
+    linkedin: string;
+    location: string;
+    name: string;
+    picture: string;
+    points: number;
+    twitter: string;
+    username: string;
+    website: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    yearsTopContributor: any[];
+    isDonating: boolean;
+  };
+}
 
-function renderMessage(isSessionUser, username, t) {
+function renderMessage(
+  isSessionUser: boolean,
+  username: string,
+  t: TFunction<'translation'>
+): JSX.Element {
   return isSessionUser ? (
     <Fragment>
       <FullWidthRow>
@@ -82,7 +88,7 @@ function renderMessage(isSessionUser, username, t) {
   );
 }
 
-function renderProfile(user) {
+function renderProfile(user: IProfileProps['user']): JSX.Element {
   const {
     profileUI: {
       showAbout = false,
@@ -95,6 +101,7 @@ function renderProfile(user) {
       showPortfolio = false,
       showTimeLine = false
     },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     calendar,
     completedChallenges,
     githubProfile,
@@ -116,21 +123,20 @@ function renderProfile(user) {
     yearsTopContributor,
     isDonating
   } = user;
-
   return (
     <Fragment>
       <Camper
-        about={showAbout ? about : null}
+        about={about}
         githubProfile={githubProfile}
-        isDonating={showDonation ? isDonating : null}
+        isDonating={showDonation ? isDonating : false}
         isGithub={isGithub}
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}
         isWebsite={isWebsite}
-        joinDate={showAbout ? joinDate : null}
+        joinDate={showAbout ? joinDate : ''}
         linkedin={linkedin}
-        location={showLocation ? location : null}
-        name={showName ? name : null}
+        location={showLocation ? location : ''}
+        name={showName ? name : ''}
         picture={picture}
         points={showPoints ? points : null}
         twitter={twitter}
@@ -138,6 +144,7 @@ function renderProfile(user) {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
+      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
@@ -149,7 +156,7 @@ function renderProfile(user) {
   );
 }
 
-function Profile({ user, isSessionUser }) {
+function Profile({ user, isSessionUser }: IProfileProps): JSX.Element {
   const { t } = useTranslation();
   const {
     profileUI: { isLocked = true },
@@ -180,6 +187,5 @@ function Profile({ user, isSessionUser }) {
 }
 
 Profile.displayName = 'Profile';
-Profile.propTypes = propTypes;
 
 export default Profile;

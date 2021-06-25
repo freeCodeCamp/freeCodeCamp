@@ -11,21 +11,21 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import './social-icons.css';
 
-const propTypes = {
-  email: PropTypes.string,
-  githubProfile: PropTypes.string,
-  isGithub: PropTypes.bool,
-  isLinkedIn: PropTypes.bool,
-  isTwitter: PropTypes.bool,
-  isWebsite: PropTypes.bool,
-  linkedin: PropTypes.string,
-  show: PropTypes.bool,
-  twitter: PropTypes.string,
-  username: PropTypes.string,
-  website: PropTypes.string
-};
+interface ISocialIconsProps {
+  email?: string;
+  githubProfile: string;
+  isGithub: boolean;
+  isLinkedIn: boolean;
+  isTwitter: boolean;
+  isWebsite: boolean;
+  linkedin: string;
+  show?: boolean;
+  twitter: string;
+  username: string;
+  website: string;
+}
 
-function LinkedInIcon(linkedIn, username) {
+function LinkedInIcon(linkedIn: string, username: string): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
@@ -39,7 +39,7 @@ function LinkedInIcon(linkedIn, username) {
   );
 }
 
-function GithubIcon(ghURL, username) {
+function GithubIcon(ghURL: string, username: string): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
@@ -53,7 +53,7 @@ function GithubIcon(ghURL, username) {
   );
 }
 
-function WebsiteIcon(website, username) {
+function WebsiteIcon(website: string, username: string): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
@@ -67,7 +67,7 @@ function WebsiteIcon(website, username) {
   );
 }
 
-function TwitterIcon(handle, username) {
+function TwitterIcon(handle: string, username: string): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
@@ -81,7 +81,7 @@ function TwitterIcon(handle, username) {
   );
 }
 
-function SocialIcons(props) {
+function SocialIcons(props: ISocialIconsProps): JSX.Element | null {
   const {
     githubProfile,
     isLinkedIn,
@@ -111,6 +111,5 @@ function SocialIcons(props) {
 }
 
 SocialIcons.displayName = 'SocialIcons';
-SocialIcons.propTypes = propTypes;
 
 export default SocialIcons;

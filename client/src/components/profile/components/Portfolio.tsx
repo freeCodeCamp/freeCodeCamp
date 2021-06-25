@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Media } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
@@ -7,19 +6,19 @@ import { FullWidthRow } from '../../helpers';
 
 import './portfolio.css';
 
-const propTypes = {
-  portfolio: PropTypes.arrayOf(
-    PropTypes.shape({
-      description: PropTypes.string,
-      id: PropTypes.string,
-      image: PropTypes.string,
-      title: PropTypes.string,
-      url: PropTypes.string
-    })
-  )
-};
+interface IPortfolioData {
+  description: string;
+  id: string;
+  image: string;
+  title: string;
+  url: string;
+}
 
-function Portfolio({ portfolio = [] }) {
+interface IPortfolioProps {
+  portfolio: IPortfolioData[];
+}
+
+function Portfolio({ portfolio = [] }: IPortfolioProps): JSX.Element | null {
   const { t } = useTranslation();
   if (!portfolio.length) {
     return null;
@@ -54,6 +53,5 @@ function Portfolio({ portfolio = [] }) {
 }
 
 Portfolio.displayName = 'Portfolio';
-Portfolio.propTypes = propTypes;
 
 export default Portfolio;
