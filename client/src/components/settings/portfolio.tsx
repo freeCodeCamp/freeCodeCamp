@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, FormEvent, Fragment } from 'react';
 import { nanoid } from 'nanoid';
 import {
   Button,
@@ -107,7 +107,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       state => ({
         portfolio: state.portfolio.filter(p => p.id !== id)
       }),
-      () => this.handleSubmit(mockEvent)
+      () => this.handleSubmit(mockEvent as FormEvent<Element>)
     );
   };
 

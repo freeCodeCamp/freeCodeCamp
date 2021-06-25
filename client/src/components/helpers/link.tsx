@@ -2,9 +2,11 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 
 interface LinkProps {
-  children?: JSX.ElementChildrenAttribute;
+  children?: React.ReactNode;
+  className?: string;
   external?: boolean;
   sameTab?: boolean;
+  state?: Record<string, unknown>;
   to: string;
   // TODO: figure out what these actually should be
   other?: unknown[];

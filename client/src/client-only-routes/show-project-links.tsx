@@ -141,7 +141,6 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       // @ts-expect-error Error expected until projectMap is typed
       ({ link, title, id }) => (
         <li key={id}>
-          {/* @ts-expect-error Link needs to be typed */}
           <Link className='project-link' to={link}>
             {t(`certification.project.title.${title as string}`, title)}
           </Link>

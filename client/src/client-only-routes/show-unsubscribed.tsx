@@ -7,7 +7,7 @@ import envData from '../../../config/env.json';
 import FullWidthRow from '../components/helpers/full-width-row';
 import { Spacer } from '../components/helpers';
 
-const { apiLocation } = envData as Record<string, string>;
+const { apiLocation } = envData;
 
 function ShowUnsubscribed({
   unsubscribeId

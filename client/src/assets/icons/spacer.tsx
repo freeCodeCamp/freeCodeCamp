@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Spacer(props: unknown): JSX.Element {
+interface SpacerPropTypes {
+  style: Record<string, unknown>;
+}
+
+function Spacer(props: SpacerPropTypes): JSX.Element {
   const { t } = useTranslation();
 
-  const svgStyle = {
-    paddingTop: '5'
-  };
+  props.style = { paddingTop: '5', ...props.style };
 
   return (
     <Fragment>
@@ -14,7 +16,6 @@ function Spacer(props: unknown): JSX.Element {
       <svg
         className='tick'
         height='50'
-        style={svgStyle}
         viewBox='-10 -45 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
