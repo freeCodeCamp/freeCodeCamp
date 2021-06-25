@@ -167,6 +167,7 @@ export type ChallengeNodeType = {
   guideUrl: string;
   head: string[];
   helpCategory: string;
+  id: string;
   instructions: string;
   isComingSoon: boolean;
   removeComments: boolean;

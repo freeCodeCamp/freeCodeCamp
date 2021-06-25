@@ -17,7 +17,7 @@ import MultifileEditor from './MultifileEditor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
 import Output from '../components/Output';
-import CompletionModal from '../components/CompletionModal';
+import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/HelpModal';
 import VideoModal from '../components/VideoModal';
 import ResetModal from '../components/ResetModal';

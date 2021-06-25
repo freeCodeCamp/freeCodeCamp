@@ -1,15 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { noop } from 'lodash-es';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withTranslation } from 'react-i18next';
+import { Dispatch } from 'redux';
 
 import Login from '../../../components/Header/components/Login';
-import CompletionModalBody from './CompletionModalBody';
+import CompletionModalBody from './completion-modal-body';
 import { dasherize } from '../../../../../utils/slugs';
+import { AllChallengeNodeType } from '../../../redux/prop-types';
 
 import './completion-modal.css';
 
@@ -37,12 +40,12 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   successMessageSelector,
   (
-    files,
-    { title, id },
-    completedChallengesIds,
-    isOpen,
-    isSignedIn,
-    message
+    files: Record<string, unknown>,
+    { title, id }: { title: string; id: string },
+    completedChallengesIds: string[],
+    isOpen: boolean,
+    isSignedIn: boolean,
+    message: string
   ) => ({
     files,
     title,
@@ -54,13 +57,13 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = function (dispatch) {
+const mapDispatchToProps = function (dispatch: Dispatch) {
   const dispatchers = {
     close: () => dispatch(closeModal('completion')),
     submitChallenge: () => {
       dispatch(submitChallenge());
     },
-    allowBlockDonationRequests: block => {
+    allowBlockDonationRequests: (block: string) => {
       dispatch(allowBlockDonationRequests(block));
     },
     executeGA
@@ -68,30 +71,11 @@ const mapDispatchToProps = function (dispatch) {
   return () => dispatchers;
 };
 
-const propTypes = {
-  allowBlockDonationRequests: PropTypes.func,
-  block: PropTypes.string,
-  blockName: PropTypes.string,
-  close: PropTypes.func.isRequired,
-  completedChallengesIds: PropTypes.array,
-  currentBlockIds: PropTypes.array,
-  executeGA: PropTypes.func,
-  files: PropTypes.object.isRequired,
-  id: PropTypes.string,
-  isOpen: PropTypes.bool,
-  isSignedIn: PropTypes.bool.isRequired,
-  message: PropTypes.string,
-  submitChallenge: PropTypes.func.isRequired,
-  superBlock: PropTypes.string,
-  t: PropTypes.func.isRequired,
-  title: PropTypes.string
-};
-
 export function getCompletedPercent(
-  completedChallengesIds = [],
-  currentBlockIds = [],
-  currentChallengeId
-) {
+  completedChallengesIds: string[] = [],
+  currentBlockIds: string[] = [],
+  currentChallengeId: string
+): number {
   completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
     ? completedChallengesIds
     : [...completedChallengesIds, currentChallengeId];
@@ -107,36 +91,70 @@ export function getCompletedPercent(
   return completedPercent > 100 ? 100 : completedPercent;
 }
 
-export class CompletionModalInner extends Component {
-  constructor(props) {
+interface CompletionModalsProps {
+  allowBlockDonationRequests: (arg0: string) => void;
+  block: string;
+  blockName: string;
+  close: () => void;
+  completedChallengesIds: string[];
+  currentBlockIds?: string[];
+  executeGA: () => void;
+  files: Record<string, unknown>;
+  id: string;
+  isOpen: boolean;
+  isSignedIn: boolean;
+  message: string;
+  submitChallenge: () => void;
+  superBlock: string;
+  t: (arg0: string) => string;
+  title: string;
+}
+
+interface CompletionModalInnerState {
+  downloadURL: null | string;
+  completedPercent: number;
+}
+
+export class CompletionModalInner extends Component<
+  CompletionModalsProps,
+  CompletionModalInnerState
+> {
+  constructor(props: CompletionModalsProps) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeypress = this.handleKeypress.bind(this);
+
+    this.state = {
+      downloadURL: null,
+      completedPercent: 0
+    };
   }
 
-  state = {
-    downloadURL: null,
-    completedPercent: 0
-  };
-
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(
+    props: CompletionModalsProps,
+    state: CompletionModalInnerState
+  ): CompletionModalInnerState {
     const { files, isOpen } = props;
     if (!isOpen) {
-      return null;
+      return { downloadURL: null, completedPercent: 0 };
     }
     const { downloadURL } = state;
     if (downloadURL) {
       URL.revokeObjectURL(downloadURL);
     }
     let newURL = null;
-    if (Object.keys(files).length) {
-      const filesForDownload = Object.keys(files)
+    const fileKeys = Object.keys(files);
+    if (fileKeys.length) {
+      const filesForDownload = fileKeys
         .map(key => files[key])
-        .reduce((allFiles, { path, contents }) => {
-          const beforeText = `** start of ${path} **\n\n`;
-          const afterText = `\n\n** end of ${path} **\n\n`;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .reduce<string>((allFiles, currentFile: any) => {
+          const beforeText = `** start of ${currentFile.path} **\n\n`;
+          const afterText = `\n\n** end of ${currentFile.path} **\n\n`;
           allFiles +=
-            files.length > 1 ? beforeText + contents + afterText : contents;
+            fileKeys.length > 1
+              ? `${beforeText}${currentFile.contents}${afterText}`
+              : currentFile.contents;
           return allFiles;
         }, '');
       const blob = new Blob([filesForDownload], {
@@ -146,13 +164,13 @@ export class CompletionModalInner extends Component {
     }
 
     const { completedChallengesIds, currentBlockIds, id, isSignedIn } = props;
-    let completedPercent = isSignedIn
+    const completedPercent = isSignedIn
       ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
       : 0;
     return { downloadURL: newURL, completedPercent: completedPercent };
   }
 
-  handleKeypress(e) {
+  handleKeypress(e: React.KeyboardEvent): void {
     if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
@@ -162,13 +180,13 @@ export class CompletionModalInner extends Component {
     }
   }
 
-  handleSubmit() {
+  handleSubmit(): void {
     this.props.submitChallenge();
     this.checkBlockCompletion();
   }
 
   // check block completion for donation
-  checkBlockCompletion() {
+  checkBlockCompletion(): void {
     if (
       this.state.completedPercent === 100 &&
       !this.props.completedChallengesIds.includes(this.props.id)
@@ -177,14 +195,14 @@ export class CompletionModalInner extends Component {
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     if (this.state.downloadURL) {
       URL.revokeObjectURL(this.state.downloadURL);
     }
     this.props.close();
   }
 
-  render() {
+  render(): JSX.Element {
     const {
       block,
       close,
@@ -212,6 +230,7 @@ export class CompletionModalInner extends Component {
         dialogClassName='challenge-success-modal'
         keyboard={true}
         onHide={close}
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         onKeyDown={isOpen ? this.handleKeypress : noop}
         show={isOpen}
       >
@@ -236,7 +255,7 @@ export class CompletionModalInner extends Component {
             block={true}
             bsSize='large'
             bsStyle='primary'
-            onClick={this.handleSubmit}
+            onClick={() => this.handleSubmit()}
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
             <span className='hidden-xs'> (Ctrl + Enter)</span>
@@ -259,12 +278,10 @@ export class CompletionModalInner extends Component {
   }
 }
 
-CompletionModalInner.propTypes = propTypes;
-
-const useCurrentBlockIds = blockName => {
+const useCurrentBlockIds = (blockName: string) => {
   const {
     allChallengeNode: { edges }
-  } = useStaticQuery(graphql`
+  }: { allChallengeNode: AllChallengeNodeType } = useStaticQuery(graphql`
     query getCurrentBlockNodes {
       allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
         edges {
@@ -281,17 +298,18 @@ const useCurrentBlockIds = blockName => {
 
   const currentBlockIds = edges
     .filter(edge => edge.node.fields.blockName === blockName)
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     .map(edge => edge.node.id);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return currentBlockIds;
 };
 
-const CompletionModal = props => {
+const CompletionModal = (props: CompletionModalsProps) => {
   const currentBlockIds = useCurrentBlockIds(props.blockName || '');
   return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
 };
 
 CompletionModal.displayName = 'CompletionModal';
-CompletionModal.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

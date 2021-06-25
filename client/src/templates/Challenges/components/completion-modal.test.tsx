@@ -1,4 +1,4 @@
-import { getCompletedPercent } from './CompletionModal';
+import { getCompletedPercent } from './completion-modal';
 
 jest.mock('../../../analytics');
 
