@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import ChallengeTitle from './Challenge-Title';
+import ChallengeTitle from './challenge-title';
 import ChallengeDescription from './Challenge-Description';
 import ToolPanel from './Tool-Panel';
 import TestSuite from './Test-Suite';
