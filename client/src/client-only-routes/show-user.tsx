@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -24,24 +23,31 @@ import {
 } from '../redux';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
-const propTypes = {
-  email: PropTypes.string,
-  isSignedIn: PropTypes.bool,
-  reportUser: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired,
-  userFetchState: PropTypes.shape({
-    pending: PropTypes.bool,
-    complete: PropTypes.bool,
-    errored: PropTypes.bool
-  }),
-  username: PropTypes.string
-};
+interface IShowUserProps {
+  email: string;
+  isSignedIn: boolean;
+  reportUser: (payload: {
+    username: string;
+    reportDescription: string;
+  }) => void;
+  t: (payload: unknown, ops?: Record<string, unknown>) => string;
+  userFetchState: {
+    pending: boolean;
+    complete: boolean;
+    errored: boolean;
+  };
+  username: string;
+}
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   userFetchStateSelector,
   userSelector,
-  (isSignedIn, userFetchState, { email }) => ({
+  (
+    isSignedIn,
+    userFetchState: IShowUserProps['userFetchState'],
+    { email }: { email: string }
+  ) => ({
     isSignedIn,
     userFetchState,
     email
@@ -52,8 +58,11 @@ const mapDispatchToProps = {
   reportUser
 };
 
-class ShowUser extends Component {
-  constructor(props) {
+class ShowUser extends Component<IShowUserProps> {
+  state: {
+    textarea: string;
+  };
+  constructor(props: IShowUserProps) {
     super(props);
 
     this.state = {
@@ -63,14 +72,14 @@ class ShowUser extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     const textarea = e.target.value.slice();
     return this.setState({
       textarea
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const { textarea: reportDescription } = this.state;
     const { username, reportUser } = this.props;
@@ -124,11 +133,12 @@ class ShowUser extends Component {
         <Row className='overflow-fix'>
           <Col sm={6} smOffset={3} xs={12}>
             <p>
-              <Trans email={email} i18nKey='report.notify-1'>
+              <Trans i18nKey='report.notify-1'>
                 <strong>{{ email }}</strong>
               </Trans>
             </p>
             <p>{t('report.notify-2')}</p>
+            {/* eslint-disable @typescript-eslint/unbound-method */}
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId='report-user-textarea'>
                 <ControlLabel>{t('report.what')}</ControlLabel>
@@ -144,6 +154,7 @@ class ShowUser extends Component {
               </Button>
               <Spacer />
             </form>
+            {/* eslint-disable @typescript-eslint/unbound-method */}
           </Col>
         </Row>
       </Fragment>
@@ -151,9 +162,10 @@ class ShowUser extends Component {
   }
 }
 
+// @ts-expect-error Config might need to be remedied, or component transformed into F.C.
 ShowUser.displayName = 'ShowUser';
-ShowUser.propTypes = propTypes;
 
 export default withTranslation()(
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   connect(mapStateToProps, mapDispatchToProps)(ShowUser)
 );

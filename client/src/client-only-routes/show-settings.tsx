@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid } from '@freecodecamp/react-bootstrap';
@@ -25,30 +24,31 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
-import { User } from '../redux/prop-types';
+import { UserType } from '../redux/prop-types';
 
-const { apiLocation } = envData;
+const { apiLocation } = envData as Record<string, string>;
 
-const propTypes = {
-  createFlashMessage: PropTypes.func.isRequired,
-  isSignedIn: PropTypes.bool.isRequired,
-  navigate: PropTypes.func.isRequired,
-  showLoading: PropTypes.bool.isRequired,
-  submitNewAbout: PropTypes.func.isRequired,
-  toggleNightMode: PropTypes.func.isRequired,
-  updateInternetSettings: PropTypes.func.isRequired,
-  updateIsHonest: PropTypes.func.isRequired,
-  updatePortfolio: PropTypes.func.isRequired,
-  updateQuincyEmail: PropTypes.func.isRequired,
-  user: User,
-  verifyCert: PropTypes.func.isRequired
-};
+// TODO: update types for actions
+interface IShowSettingsProps {
+  createFlashMessage: (paylaod: string[]) => void;
+  isSignedIn: boolean;
+  navigate: (location: string) => void;
+  showLoading: boolean;
+  submitNewAbout: () => void;
+  toggleNightMode: (theme: string) => void;
+  updateInternetSettings: () => void;
+  updateIsHonest: () => void;
+  updatePortfolio: () => void;
+  updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
+  user: UserType;
+  verifyCert: () => void;
+}
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  (showLoading, user, isSignedIn) => ({
+  (showLoading: boolean, user: UserType, isSignedIn) => ({
     showLoading,
     user,
     isSignedIn
@@ -59,15 +59,16 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: theme => updateUserFlag({ theme }),
+  toggleNightMode: (theme: string) => updateUserFlag({ theme }),
   updateInternetSettings: updateUserFlag,
   updateIsHonest: updateUserFlag,
   updatePortfolio: updateUserFlag,
-  updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail }),
+  updateQuincyEmail: (sendQuincyEmail: boolean) =>
+    updateUserFlag({ sendQuincyEmail }),
   verifyCert
 };
 
-export function ShowSettings(props) {
+export function ShowSettings(props: IShowSettingsProps): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,
@@ -199,6 +200,5 @@ export function ShowSettings(props) {
 }
 
 ShowSettings.displayName = 'ShowSettings';
-ShowSettings.propTypes = propTypes;
-
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);
