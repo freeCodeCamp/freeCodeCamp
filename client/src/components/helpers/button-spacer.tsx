@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ButtonSpacer() {
+function ButtonSpacer(): JSX.Element {
   return <div className='button-spacer' style={{ padding: '5px 0' }} />;
 }
 

@@ -42,7 +42,7 @@ El texto, `link to www.freecodecamp.org`, dentro de un elemento `a` se llama <df
 
 El resultado final del ejemplo se verá así:
 
-Aquí hay un enlace <a href="https://www.freecodecamp.org" target="_blank">a www.freecodecamp.org</a> para que lo sigas.
+Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a> for you to follow.
 
 # --instructions--
 

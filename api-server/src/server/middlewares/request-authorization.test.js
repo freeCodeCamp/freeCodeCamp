@@ -1,4 +1,3 @@
-/* global describe it expect jest */
 import { mockReq as mockRequest, mockRes } from '../boot_tests/challenge.test';
 import jwt from 'jsonwebtoken';
 

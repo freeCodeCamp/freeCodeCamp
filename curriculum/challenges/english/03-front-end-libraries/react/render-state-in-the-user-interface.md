@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+The rendered `h1` header should only contain text rendered from the component's state.
 
 ```js
 async () => {

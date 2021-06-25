@@ -1,4 +1,3 @@
-/* global expect jest */
 const {
   translateComments,
   translateCommentsInChallenge,

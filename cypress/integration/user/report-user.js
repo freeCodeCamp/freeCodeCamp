@@ -1,4 +1,4 @@
-/* global cy expect */
+/* global cy */
 
 describe('Report User', () => {
   beforeEach(() => {

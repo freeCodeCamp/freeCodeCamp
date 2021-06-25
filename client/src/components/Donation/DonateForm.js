@@ -20,7 +20,7 @@ import {
   defaultDonation,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
-import Spacer from '../helpers/Spacer';
+import Spacer from '../helpers/spacer';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
 import {

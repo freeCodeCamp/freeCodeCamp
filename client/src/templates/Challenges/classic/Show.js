@@ -22,7 +22,9 @@ import DesktopLayout from './DesktopLayout';
 import Hotkeys from '../components/Hotkeys';
 
 import { getGuideUrl } from '../utils';
+import store from 'store';
 import { challengeTypes } from '../../../../utils/challengeTypes';
+import { isContained } from '../../../utils/is-contained';
 import { ChallengeNode } from '../../../redux/prop-types';
 import {
   createFiles,
@@ -92,6 +94,24 @@ const propTypes = {
 };
 
 const MAX_MOBILE_WIDTH = 767;
+const REFLEX_LAYOUT = 'challenge-layout';
+const BASE_LAYOUT = {
+  codePane: {
+    flex: 1
+  },
+  editorPane: {
+    flex: 1
+  },
+  instructionPane: {
+    flex: 1
+  },
+  previewPane: {
+    flex: 0.7
+  },
+  testsPane: {
+    flex: 0.25
+  }
+};
 
 class ShowClassic extends Component {
   constructor() {
@@ -108,13 +128,44 @@ class ShowClassic extends Component {
 
     this.containerRef = React.createRef();
     this.editorRef = React.createRef();
+    // Holds the information of the panes sizes for desktop view
+    this.layoutState = this.getLayoutState();
   }
+
+  getLayoutState() {
+    const reflexLayout = store.get(REFLEX_LAYOUT);
+
+    // Validate if user has not done any resize of the panes
+    if (!reflexLayout) return BASE_LAYOUT;
+
+    // Check that the layout values stored are valid (exist in base layout). If
+    // not valid, it will fallback to the base layout values and be set on next
+    // user resize.
+    const isValidLayout = isContained(
+      Object.keys(BASE_LAYOUT),
+      Object.keys(reflexLayout)
+    );
+
+    return isValidLayout ? reflexLayout : BASE_LAYOUT;
+  }
+
   onResize() {
     this.setState({ resizing: true });
   }
 
-  onStopResize() {
+  onStopResize(event) {
+    const { name, flex } = event.component.props;
+
     this.setState({ resizing: false });
+
+    // Only interested in tracking layout updates for ReflexElement's
+    if (!name) {
+      return;
+    }
+
+    this.layoutState[name].flex = flex;
+
+    store.set(REFLEX_LAYOUT, this.layoutState);
   }
 
   componentDidMount() {
@@ -325,6 +376,7 @@ class ShowClassic extends Component {
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
               })}
+              layoutState={this.layoutState}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
               testOutput={this.renderTestOutput()}

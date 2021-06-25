@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 
 import { Link, SkeletonSprite } from '../../helpers';
 import NavLogo from './NavLogo';
-import SearchBar from '../../search/searchBar/SearchBar';
 import MenuButton from './MenuButton';
 import NavLinks from './NavLinks';
 import './universalNav.css';
+import { isLanding } from '../../../utils/path-parsers';
+
+import Loadable from '@loadable/component';
+
+const SearchBar = Loadable(() => import('../../search/searchBar/SearchBar'));
+const SearchBarOptimized = Loadable(() =>
+  import('../../search/searchBar/search-bar-optimized')
+);
 
 export const UniversalNav = ({
   displayMenu,
@@ -17,6 +24,14 @@ export const UniversalNav = ({
   fetchState
 }) => {
   const { pending } = fetchState;
+
+  const search =
+    typeof window !== `undefined` && isLanding(window.location.pathname) ? (
+      <SearchBarOptimized />
+    ) : (
+      <SearchBar innerRef={searchBarRef} />
+    );
+
   return (
     <nav
       className={'universal-nav' + (displayMenu ? ' expand-nav' : '')}
@@ -27,7 +42,7 @@ export const UniversalNav = ({
           'universal-nav-left' + (displayMenu ? ' display-search' : '')
         }
       >
-        <SearchBar innerRef={searchBarRef} />
+        {search}
       </div>
       <div className='universal-nav-middle'>
         <Link id='universal-nav-logo' to='/learn'>

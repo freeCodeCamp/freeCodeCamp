@@ -13,7 +13,7 @@ Benvenuto nelle sfide di programmazione HTML di freeCodeCamp. Queste ti guideran
 
 Innanzitutto, inizierai costruendo una semplice pagina web usando HTML. Puoi modificare il codice nel tuo editor di codice, che è integrato in questa pagina web.
 
-Vedi il codice nel tuo editor di codici che dice `<h1>Hello</h1>`? Questo è un elemento HTML.
+Vedi il codice nel tuo editor che dice `<h1>Hello</h1>`? Questo è un elemento HTML.
 
 La maggior parte degli elementi HTML hanno un tag di apertura e un tag di chiusura.
 

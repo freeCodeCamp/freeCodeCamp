@@ -6,6 +6,7 @@ import {
   DefaultLayout
 } from '../../src/components/layouts';
 import FourOhFourPage from '../../src/pages/404';
+import { isChallenge } from '../../src/utils/path-parsers';
 
 export default function layoutSelector({ element, props }) {
   const {
@@ -18,32 +19,23 @@ export default function layoutSelector({ element, props }) {
         {element}
       </DefaultLayout>
     );
-  }
-  if (/\/certification\//.test(pathname)) {
+  } else if (/\/certification\//.test(pathname)) {
     return (
       <CertificationLayout pathname={pathname}>{element}</CertificationLayout>
     );
-  }
-
-  const splitPath = pathname.split('/').filter(x => x);
-
-  const isChallenge =
-    (splitPath.length === 4 && splitPath[0]) === 'learn' ||
-    (splitPath.length === 5 && splitPath[1]) === 'learn';
-
-  if (isChallenge) {
+  } else if (isChallenge(pathname)) {
     return (
       <DefaultLayout pathname={pathname} showFooter={false}>
         {element}
       </DefaultLayout>
     );
+  } else {
+    return (
+      <DefaultLayout pathname={pathname} showFooter={true}>
+        {element}
+      </DefaultLayout>
+    );
   }
-
-  return (
-    <DefaultLayout pathname={pathname} showFooter={true}>
-      {element}
-    </DefaultLayout>
-  );
 }
 
 layoutSelector.propTypes = {

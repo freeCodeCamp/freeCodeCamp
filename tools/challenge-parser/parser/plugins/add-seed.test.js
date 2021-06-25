@@ -1,4 +1,3 @@
-/* global describe it expect beforeEach */
 const isArray = require('lodash/isArray');
 
 const simpleAST = require('../__fixtures__/ast-simple.json');

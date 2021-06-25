@@ -4,8 +4,44 @@ for (let i = 0; i < 26; i++) {
   alphabet = alphabet.concat(String.fromCharCode(97 + i));
 }
 
+const i18nConstants = [
+  // reserved paths for localizations
+  'afrikaans',
+  'arabic',
+  'bengali',
+  'catalan',
+  'chinese',
+  'czech',
+  'danish',
+  'dutch',
+  'espanol',
+  'finnish',
+  'french',
+  'german',
+  'greek',
+  'hebrew',
+  'hindi',
+  'hungarian',
+  'italian',
+  'japanese',
+  'korean',
+  'norwegian',
+  'polish',
+  'portuguese',
+  'romanian',
+  'russian',
+  'serbian',
+  'spanish',
+  'swahili',
+  'swedish',
+  'turkish',
+  'ukrainian',
+  'vietnamese'
+];
+
 let blocklist = [
   ...alphabet.split(''),
+  ...i18nConstants,
   'about',
   'academic-honesty',
   'account',
@@ -85,40 +121,6 @@ let blocklist = [
   'user',
   'username',
   'wiki',
-
-  // reserved paths for localizations
-  'afrikaans',
-  'arabic',
-  'bengali',
-  'catalan',
-  'chinese',
-  'czech',
-  'danish',
-  'dutch',
-  'espanol',
-  'finnish',
-  'french',
-  'german',
-  'greek',
-  'hebrew',
-  'hindi',
-  'hungarian',
-  'italian',
-  'japanese',
-  'korean',
-  'norwegian',
-  'polish',
-  'portuguese',
-  'romanian',
-  'russian',
-  'serbian',
-  'spanish',
-  'swahili',
-  'swedish',
-  'turkish',
-  'ukrainian',
-  'vietnamese',
-
   // some more names from https://github.com/marteinn/The-Big-Username-Blacklist-JS/blob/master/src/list.js
   '.htaccess',
   '.htpasswd',
@@ -647,4 +649,5 @@ let blocklist = [
   'zlib'
 ];
 
-export const blocklistedUsernames = [...new Set(blocklist)];
+exports.blocklistedUsernames = [...new Set(blocklist)];
+exports.i18nConstants = i18nConstants;
