@@ -11,7 +11,6 @@ const getPRs = async () => {
   const methodProps = {
     owner,
     repo: freeCodeCampRepo,
-    base: defaultBase,
     state: 'open',
     sort: 'created',
     direction: 'asc',
