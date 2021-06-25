@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
 import { Row } from '@freecodecamp/react-bootstrap';
 import ReactTooltip from 'react-tooltip';
@@ -7,7 +8,7 @@ import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
 import startOfDay from 'date-fns/startOfDay';
 import isEqual from 'date-fns/isEqual';
-import { useTranslation } from 'react-i18next';
+import { TFunction, useTranslation } from 'react-i18next';
 
 import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';
@@ -16,27 +17,48 @@ import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import envData from '../../../../../config/env.json';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
 const localeCode = langCodes[clientLocale];
 
-const propTypes = {
-  calendar: PropTypes.object
-};
+interface IHeatMapProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  calendar: any;
+}
 
-const innerPropTypes = {
-  calendarData: PropTypes.array,
-  currentStreak: PropTypes.number,
-  longestStreak: PropTypes.number,
-  pages: PropTypes.array,
-  points: PropTypes.number,
-  t: PropTypes.func.isRequired
-};
+interface IPageData {
+  startOfCalendar: Date;
+  endOfCalendar: Date;
+}
 
-class HeatMapInner extends Component {
-  constructor(props) {
+interface ICalendarData {
+  date: Date;
+  count: number;
+}
+
+interface IHeatMapInnerProps {
+  calendarData: ICalendarData[];
+  currentStreak: number;
+  longestStreak: number;
+  pages: IPageData[];
+  points?: number;
+  t: TFunction<'translation'>;
+}
+
+interface IHeatMapInnerState {
+  pageIndex: number;
+}
+
+class HeatMapInner extends Component<IHeatMapInnerProps, IHeatMapInnerState> {
+  constructor(props: IHeatMapInnerProps) {
     super(props);
 
     this.state = {
@@ -85,6 +107,7 @@ class HeatMapInner extends Component {
           <button
             className='heatmap-nav-btn'
             disabled={!pages[this.state.pageIndex - 1]}
+            // eslint-disable-next-line @typescript-eslint/unbound-method
             onClick={this.prevPage}
             style={{
               visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
@@ -96,6 +119,7 @@ class HeatMapInner extends Component {
           <button
             className='heatmap-nav-btn'
             disabled={!pages[this.state.pageIndex + 1]}
+            // eslint-disable-next-line @typescript-eslint/unbound-method
             onClick={this.nextPage}
             style={{
               visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
@@ -107,17 +131,22 @@ class HeatMapInner extends Component {
         <Spacer />
 
         <CalendarHeatMap
-          classForValue={value => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          classForValue={(value: any) => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             if (!value || value.count < 1) return 'color-empty';
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             if (value.count < 4) return 'color-scale-1';
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             if (value.count < 8) return 'color-scale-2';
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             if (value.count >= 8) return 'color-scale-a-lot';
             return 'color-empty';
           }}
           endDate={endOfCalendar}
           startDate={startOfCalendar}
-          tooltipDataAttrs={value => {
-            const dateFormatted =
+          tooltipDataAttrs={(value: { count: number; date: Date }) => {
+            const dateFormatted: string =
               value && value.date
                 ? value.date.toLocaleDateString([localeCode, 'en-US'], {
                     year: 'numeric',
@@ -156,10 +185,9 @@ class HeatMapInner extends Component {
   }
 }
 
-HeatMapInner.propTypes = innerPropTypes;
-
-const HeatMap = props => {
+const HeatMap = (props: IHeatMapProps): JSX.Element => {
   const { t } = useTranslation();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { calendar } = props;
 
   /**
@@ -168,13 +196,14 @@ const HeatMap = props => {
    */
 
   // create array of timestamps and turn into milliseconds
-  const timestamps = Object.keys(calendar).map(stamp => stamp * 1000);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const timestamps = Object.keys(calendar).map((stamp: any) => stamp * 1000);
   const startOfTimestamps = startOfDay(new Date(timestamps[0]));
   let endOfCalendar = startOfDay(Date.now());
   let startOfCalendar;
 
   // creates pages for heatmap
-  let pages = [];
+  const pages: IPageData[] = [];
 
   do {
     startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
@@ -191,7 +220,7 @@ const HeatMap = props => {
 
   pages.reverse();
 
-  let calendarData = [];
+  const calendarData: ICalendarData[] = [];
   let dayCounter = pages[0].startOfCalendar;
 
   // create an object for each day of the calendar period
@@ -258,6 +287,5 @@ const HeatMap = props => {
 };
 
 HeatMap.displayName = 'HeatMap';
-HeatMap.propTypes = propTypes;
 
 export default HeatMap;

@@ -1,5 +1,4 @@
 import React, { Component, useMemo } from 'react';
-import PropTypes from 'prop-types';
 import { reverse, sortBy } from 'lodash-es';
 import {
   Button,
@@ -9,7 +8,7 @@ import {
   MenuItem
 } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import './timeline.css';
 import TimelinePagination from './TimelinePagination';
@@ -26,63 +25,75 @@ import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import envData from '../../../../../config/env.json';
 
-const SolutionViewer = Loadable(() =>
-  import('../../SolutionViewer/SolutionViewer')
+const SolutionViewer = Loadable(
+  () =>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    import('../../SolutionViewer/SolutionViewer')
 );
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
 const localeCode = langCodes[clientLocale];
 
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;
 
-const propTypes = {
-  completedMap: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      completedDate: PropTypes.number,
-      challengeType: PropTypes.number,
-      solution: PropTypes.string,
-      files: PropTypes.arrayOf(
-        PropTypes.shape({
-          ext: PropTypes.string,
-          contents: PropTypes.string
-        })
-      )
-    })
-  ),
-  t: PropTypes.func.isRequired,
-  username: PropTypes.string
-};
+interface ICompletedMap {
+  id: string;
+  completedDate: number;
+  challengeType: number;
+  solution: string;
+  files: IFile[];
+  githubLink: string;
+}
 
-const innerPropTypes = {
-  ...propTypes,
-  idToNameMap: PropTypes.objectOf(
-    PropTypes.shape({
-      challengePath: PropTypes.string,
-      challengeTitle: PropTypes.string
-    })
-  ).isRequired,
-  sortedTimeline: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      completedDate: PropTypes.number,
-      files: PropTypes.arrayOf(
-        PropTypes.shape({
-          ext: PropTypes.string,
-          contents: PropTypes.string
-        })
-      )
-    })
-  ).isRequired,
-  totalPages: PropTypes.number.isRequired
-};
+interface ITimelineProps {
+  completedMap: ICompletedMap[];
+  t: TFunction<'translation'>;
+  username: string;
+}
 
-class TimelineInner extends Component {
-  constructor(props) {
+interface IFile {
+  ext: string;
+  contents: string;
+}
+
+interface ISortedTimeline {
+  id: string;
+  completedDate: number;
+  files: IFile[];
+  githubLink: string;
+  solution: string;
+}
+
+interface ITimelineInnerProps extends ITimelineProps {
+  idToNameMap: Map<string, string>;
+  sortedTimeline: ISortedTimeline[];
+  totalPages: number;
+}
+
+interface ITimeLineInnerState {
+  solutionToView: string | null;
+  solutionOpen: boolean;
+  pageNo: number;
+  solution: string | null;
+  files: IFile[] | null;
+}
+
+class TimelineInner extends Component<
+  ITimelineInnerProps,
+  ITimeLineInnerState
+> {
+  constructor(props: ITimelineInnerProps) {
     super(props);
 
     this.state = {
@@ -103,7 +114,12 @@ class TimelineInner extends Component {
     this.renderViewButton = this.renderViewButton.bind(this);
   }
 
-  renderViewButton(id, files, githubLink, solution) {
+  renderViewButton(
+    id: string,
+    files: IFile[],
+    githubLink: string,
+    solution: string
+  ): React.ReactNode {
     const { t } = this.props;
     if (files && files.length) {
       return (
@@ -165,10 +181,12 @@ class TimelineInner extends Component {
     }
   }
 
-  renderCompletion(completed) {
+  renderCompletion(completed: ISortedTimeline): JSX.Element {
     const { idToNameMap, username } = this.props;
     const { id, files, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
@@ -199,7 +217,7 @@ class TimelineInner extends Component {
       </tr>
     );
   }
-  viewSolution(id, solution, files) {
+  viewSolution(id: string, solution: string, files: IFile[]): void {
     this.setState(state => ({
       ...state,
       solutionToView: id,
@@ -286,13 +304,17 @@ class TimelineInner extends Component {
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
                 {`${username}'s Solution to ${
+                  // @ts-ignore
                   idToNameMap.get(id).challengeTitle
                 }`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
+              {/* @ts-ignore */}
               <SolutionViewer
+                // @ts-ignore
                 files={this.state.files}
+                // @ts-ignore
                 solution={this.state.solution}
               />
             </Modal.Body>
@@ -316,9 +338,7 @@ class TimelineInner extends Component {
   }
 }
 
-TimelineInner.propTypes = innerPropTypes;
-
-function useIdToNameMap() {
+function useIdToNameMap(): Map<string, string> {
   const {
     allChallengeNode: { edges }
   } = useStaticQuery(graphql`
@@ -337,7 +357,7 @@ function useIdToNameMap() {
     }
   `);
   const idToNameMap = new Map();
-  for (let id of getCertIds()) {
+  for (const id of getCertIds()) {
     idToNameMap.set(id, {
       challengeTitle: `${getTitleFromId(id)} Certification`,
       certPath: getPathFromID(id)
@@ -346,8 +366,11 @@ function useIdToNameMap() {
   edges.forEach(
     ({
       node: {
+        // @ts-ignore
         id,
+        // @ts-ignore
         title,
+        // @ts-ignore
         fields: { slug }
       }
     }) => {
@@ -357,7 +380,7 @@ function useIdToNameMap() {
   return idToNameMap;
 }
 
-const Timeline = props => {
+const Timeline = (props: ITimelineProps): JSX.Element => {
   const idToNameMap = useIdToNameMap();
   const { completedMap } = props;
   // Get the sorted timeline along with total page count.
@@ -379,8 +402,6 @@ const Timeline = props => {
     />
   );
 };
-
-Timeline.propTypes = propTypes;
 
 Timeline.displayName = 'Timeline';
 

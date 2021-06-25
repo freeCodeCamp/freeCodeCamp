@@ -16,7 +16,8 @@ const userProps = {
       showName: false,
       showPoints: false,
       showPortfolio: false,
-      showTimeLine: false
+      showTimeLine: false,
+      showDonation: false
     },
     calendar: {},
     streak: {
@@ -40,8 +41,10 @@ const userProps = {
     twitter: 'string',
     username: 'string',
     website: 'string',
-    yearsTopContributor: []
+    yearsTopContributor: [],
+    isDonating: false
   },
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   navigate: () => {}
 };
 
@@ -54,10 +57,8 @@ describe('<Profile/>', () => {
   it('renders the report button on another persons profile', () => {
     const { getByText } = render(<Profile {...notMyProfileProps} />);
 
-    expect(getByText('buttons.flag-user')).toHaveAttribute(
-      'href',
-      '/user/string/report-user'
-    );
+    const reportButton: HTMLElement = getByText('buttons.flag-user');
+    expect(reportButton).toHaveAttribute('href', '/user/string/report-user');
   });
 
   it('renders correctly', () => {

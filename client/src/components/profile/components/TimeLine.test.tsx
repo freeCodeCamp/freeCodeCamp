@@ -4,6 +4,7 @@ import TimeLine from './TimeLine';
 import { useStaticQuery } from 'gatsby';
 
 beforeEach(() => {
+  // @ts-ignore
   useStaticQuery.mockImplementationOnce(() => ({
     allChallengeNode: {
       edges: [
@@ -41,6 +42,7 @@ beforeEach(() => {
 
 describe('<TimeLine />', () => {
   it('Render button when only solution is present', () => {
+    // @ts-ignore
     const { container } = render(<TimeLine {...propsForOnlySolution} />);
 
     expect(
@@ -49,11 +51,13 @@ describe('<TimeLine />', () => {
   });
 
   it('Render button when both githubLink and solution is present', () => {
+    // @ts-ignore
     const { container } = render(<TimeLine {...propsForOnlySolution} />);
 
     const linkList = container.querySelector(
       '#dropdown-for-5e4f5c4b570f7e3a4949899f + ul'
     );
+    // @ts-ignore
     const links = linkList.querySelectorAll('a');
 
     expect(links[0]).toHaveAttribute(
@@ -68,6 +72,7 @@ describe('<TimeLine />', () => {
   });
 
   it('rendering the correct button when files is present', () => {
+    // @ts-ignore
     const { getByText } = render(<TimeLine {...propsForOnlySolution} />);
 
     const button = getByText('buttons.show-code');
