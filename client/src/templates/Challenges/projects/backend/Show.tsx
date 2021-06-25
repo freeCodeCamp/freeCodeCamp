@@ -27,7 +27,7 @@ import ChallengeTitle from '../../components/challenge-title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import TestSuite from '../../components/Test-Suite';
 import Output from '../../components/Output';
-import CompletionModal from '../../components/CompletionModal';
+import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/HelpModal';
 import ProjectToolPanel from '../Tool-Panel';
 import SolutionForm from '../SolutionForm';

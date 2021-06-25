@@ -1,18 +1,28 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import BezierEasing from 'bezier-easing';
 import GreenPass from '../../../assets/icons/green-pass';
 import { withTranslation } from 'react-i18next';
 
-const propTypes = {
-  block: PropTypes.string,
-  completedPercent: PropTypes.number,
-  superBlock: PropTypes.string,
-  t: PropTypes.func.isRequired
-};
+interface CompletionModalBodyProps {
+  block: string;
+  completedPercent: number;
+  superBlock: string;
+  t: (arg0: string, arg1?: { percent: number }) => string;
+}
 
-export class CompletionModalBody extends PureComponent {
-  constructor(props) {
+interface CompletionModalBodyState {
+  // This type was driving me nuts - seems like `NodeJS.Timeout | null;` should work
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  progressInterval: any;
+  shownPercent: number;
+}
+
+export class CompletionModalBody extends PureComponent<
+  CompletionModalBodyProps,
+  CompletionModalBodyState
+> {
+  static displayName: string;
+  constructor(props: CompletionModalBodyProps) {
     super(props);
 
     this.state = {
@@ -23,7 +33,7 @@ export class CompletionModalBody extends PureComponent {
     this.animateProgressBar = this.animateProgressBar.bind(this);
   }
 
-  animateProgressBar(completedPercent) {
+  animateProgressBar(completedPercent: number): void {
     const easing = BezierEasing(0.2, 0.5, 0.4, 1);
 
     if (completedPercent > 100) completedPercent = 100;
@@ -54,11 +64,11 @@ export class CompletionModalBody extends PureComponent {
     });
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     clearInterval(this.state.progressInterval);
   }
 
-  render() {
+  render(): JSX.Element {
     const { block, completedPercent, superBlock, t } = this.props;
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
 
@@ -84,7 +94,7 @@ export class CompletionModalBody extends PureComponent {
             </div>
             <div
               className='progress-bar-percent'
-              style={{ width: this.state.shownPercent + '%' }}
+              style={{ width: `${this.state.shownPercent}%` }}
             >
               <div className='progress-bar-foreground'>
                 {t('learn.percent-complete', {
@@ -100,6 +110,5 @@ export class CompletionModalBody extends PureComponent {
 }
 
 CompletionModalBody.displayName = 'CompletionModalBody';
-CompletionModalBody.propTypes = propTypes;
 
 export default withTranslation()(CompletionModalBody);

@@ -21,7 +21,7 @@ import LearnLayout from '../../../components/layouts/Learn';
 import ChallengeTitle from '../components/challenge-title';
 import ChallengeDescription from '../components/Challenge-Description';
 import Spacer from '../../../components/helpers/spacer';
-import CompletionModal from '../components/CompletionModal';
+import CompletionModal from '../components/completion-modal';
 import Hotkeys from '../components/Hotkeys';
 import Loader from '../../../components/helpers/loader';
 import {
