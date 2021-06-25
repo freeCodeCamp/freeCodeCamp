@@ -1,18 +1,28 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/unbound-method */
+/* eslint-disable @typescript-eslint/ban-types */
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 
-import UniversalNav from './components/UniversalNav';
+import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
-const propTypes = {
-  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  user: PropTypes.object
-};
-
-export class Header extends React.Component {
-  constructor(props) {
+export interface HeaderProps {
+  fetchState: { pending: boolean };
+  user: Record<string, any>;
+}
+export class Header extends React.Component<
+  HeaderProps,
+  { displayMenu: boolean }
+> {
+  menuButtonRef: React.RefObject<any>;
+  searchBarRef: React.RefObject<any>;
+  static displayName: string;
+  constructor(props: HeaderProps) {
     super(props);
     this.state = {
       displayMenu: false
@@ -23,15 +33,15 @@ export class Header extends React.Component {
     this.toggleDisplayMenu = this.toggleDisplayMenu.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     document.addEventListener('click', this.handleClickOutside);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     document.removeEventListener('click', this.handleClickOutside);
   }
 
-  handleClickOutside(event) {
+  handleClickOutside(event: any): void {
     if (
       this.state.displayMenu &&
       this.menuButtonRef.current &&
@@ -43,10 +53,12 @@ export class Header extends React.Component {
     }
   }
 
-  toggleDisplayMenu() {
-    this.setState(({ displayMenu }) => ({ displayMenu: !displayMenu }));
+  toggleDisplayMenu(): void {
+    this.setState(({ displayMenu }: { displayMenu: boolean }) => ({
+      displayMenu: !displayMenu
+    }));
   }
-  render() {
+  render(): JSX.Element {
     const { displayMenu } = this.state;
     const { fetchState, user } = this.props;
     return (
@@ -69,7 +81,6 @@ export class Header extends React.Component {
   }
 }
 
-Header.propTypes = propTypes;
 Header.displayName = 'Header';
 
 export default Header;

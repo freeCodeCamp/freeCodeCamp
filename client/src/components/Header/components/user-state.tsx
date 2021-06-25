@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Link } from 'gatsby';
@@ -12,21 +15,20 @@ import Login from './Login';
 const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
-  (fetchState, isSignedIn) => ({
+  (fetchState: any, isSignedIn: any) => ({
     isSignedIn,
     showLoading: fetchState.pending
   })
 );
 
-const propTypes = {
-  disableSettings: PropTypes.bool,
-  email: PropTypes.string,
-  isSignedIn: PropTypes.bool,
-  name: PropTypes.string,
-  showLoading: PropTypes.bool
-};
-
-function UserState(props) {
+export interface UserStateProps {
+  disableSettings?: boolean;
+  email?: string;
+  isSignedIn?: boolean;
+  name?: string;
+  showLoading?: boolean;
+}
+const UserState = (props: UserStateProps): JSX.Element => {
   const { isSignedIn, showLoading, disableSettings } = props;
   const { t } = useTranslation();
 
@@ -39,7 +41,6 @@ function UserState(props) {
         className='user-state-spinner'
         color='white'
         fadeIn='none'
-        height='38px'
         name='line-scale'
       />
     );
@@ -51,9 +52,8 @@ function UserState(props) {
   ) : (
     <Login />
   );
-}
+};
 
 UserState.displayName = 'UserState';
-UserState.propTypes = propTypes;
 
 export default connect(mapStateToProps)(UserState);
