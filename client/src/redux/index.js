@@ -215,6 +215,7 @@ export const shouldRequestDonationSelector = state => {
 
 export const userByNameSelector = username => state => {
   const { user } = state[ns];
+  // TODO: Why return a string or empty objet literal?
   return username in user ? user[username] : {};
 };
 

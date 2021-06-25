@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-sort-props */
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import '../components/layouts/project-links.css';
 import { maybeUrlRE } from '../utils';
 import { Spacer, Link } from '../components/helpers';
@@ -8,69 +7,63 @@ import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';
+import {
+  ChallengeFileType,
+  CompletedChallenge,
+  UserType
+} from '../redux/prop-types';
 
-const propTypes = {
-  certName: PropTypes.string,
-  name: PropTypes.string,
-  user: PropTypes.shape({
-    completedChallenges: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        solution: PropTypes.string,
-        githubLink: PropTypes.string,
-        files: PropTypes.arrayOf(
-          PropTypes.shape({
-            contents: PropTypes.string,
-            ext: PropTypes.string,
-            key: PropTypes.string,
-            name: PropTypes.string,
-            path: PropTypes.string
-          })
-        )
-      })
-    ),
-    username: PropTypes.string
-  })
+interface IShowProjectLinksProps {
+  certName: string;
+  name: string;
+  user: UserType;
+}
+
+type SolutionStateType = {
+  projectTitle: string;
+  challengeFiles: ChallengeFileType[] | null;
+  solution: null | string;
+  isOpen: boolean;
 };
 
-const initSolutionState = {
+const initSolutionState: SolutionStateType = {
   projectTitle: '',
-  files: null,
+  challengeFiles: null,
   solution: null,
   isOpen: false
 };
 
-const ShowProjectLinks = props => {
+const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);
 
   const { t } = useTranslation();
 
-  const getProjectSolution = (projectId, projectTitle) => {
+  const getProjectSolution = (projectId: string, projectTitle: string) => {
     const {
       user: { completedChallenges }
     } = props;
-
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
-    );
+    ) as CompletedChallenge;
 
     if (!completedProject) {
       return null;
     }
 
-    const { solution, githubLink, files } = completedProject;
+    const { solution, githubLink, challengeFiles } = completedProject;
     const onClickHandler = () =>
       setSolutionState({
         projectTitle,
-        files,
+        challengeFiles,
         solution,
         isOpen: true
       });
 
-    if (files && files.length) {
+    if (challengeFiles) {
       return (
         <button
           onClick={onClickHandler}
@@ -96,7 +89,6 @@ const ShowProjectLinks = props => {
     if (maybeUrlRE.test(solution)) {
       return (
         <a
-          block={'true'}
           className='btn-invert'
           href={solution}
           rel='noopener noreferrer'
@@ -113,7 +105,7 @@ const ShowProjectLinks = props => {
     );
   };
 
-  const renderProjectsFor = certName => {
+  const renderProjectsFor = (certName: string) => {
     if (certName === 'Legacy Full Stack') {
       const legacyCerts = [
         { title: 'Responsive Web Design' },
@@ -124,8 +116,13 @@ const ShowProjectLinks = props => {
         { title: 'Legacy Information Security and Quality Assurance' }
       ];
       return legacyCerts.map((cert, ind) => {
+        /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+        /* eslint-disable @typescript-eslint/no-unsafe-call */
+        /* eslint-disable @typescript-eslint/no-unsafe-return */
+        /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+        // @ts-expect-error Error expected until projectMap is typed
         const mapToUse = projectMap[cert.title] || legacyProjectMap[cert.title];
-        const { certSlug } = first(mapToUse);
+        const { certSlug } = first(mapToUse) as { certSlug: string };
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
           <li key={ind}>
@@ -141,16 +138,23 @@ const ShowProjectLinks = props => {
         );
       });
     }
+    // @ts-expect-error Error expected until projectMap is typed
     return (projectMap[certName] || legacyProjectMap[certName]).map(
+      // @ts-expect-error Error expected until projectMap is typed
       ({ link, title, id }) => (
         <li key={id}>
+          {/* @ts-expect-error Link needs to be typed */}
           <Link to={link} className='project-link'>
-            {t(`certification.project.title.${title}`, title)}
+            {t(`certification.project.title.${title as string}`, title)}
           </Link>
           : {getProjectSolution(id, title)}
         </li>
       )
     );
+    /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+    /* eslint-disable @typescript-eslint/no-unsafe-call */
+    /* eslint-disable @typescript-eslint/no-unsafe-return */
+    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
   };
 
   const {
@@ -158,7 +162,7 @@ const ShowProjectLinks = props => {
     name,
     user: { username }
   } = props;
-  const { files, isOpen, projectTitle, solution } = solutionState;
+  const { challengeFiles, isOpen, projectTitle, solution } = solutionState;
   return (
     <div>
       {t(
@@ -172,7 +176,7 @@ const ShowProjectLinks = props => {
       <Spacer />
       {isOpen ? (
         <ProjectModal
-          files={files}
+          files={challengeFiles}
           handleSolutionModalHide={handleSolutionModalHide}
           isOpen={isOpen}
           projectTitle={projectTitle}
@@ -202,7 +206,6 @@ const ShowProjectLinks = props => {
   );
 };
 
-ShowProjectLinks.propTypes = propTypes;
 ShowProjectLinks.displayName = 'ShowProjectLinks';
 
 export default ShowProjectLinks;

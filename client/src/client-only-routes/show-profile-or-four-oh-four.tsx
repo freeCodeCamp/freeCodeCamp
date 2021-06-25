@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { isEmpty } from 'lodash-es';
 
@@ -13,46 +12,58 @@ import {
 import FourOhFour from '../components/FourOhFour';
 import Profile from '../components/profile/Profile';
 import { isBrowser } from '../../utils/index';
+import { UserType } from '../redux/prop-types';
 
-const propTypes = {
-  fetchProfileForUser: PropTypes.func.isRequired,
-  isSessionUser: PropTypes.bool,
-  maybeUser: PropTypes.string,
-  requestedUser: PropTypes.shape({
-    username: PropTypes.string,
-    profileUI: PropTypes.object
-  }),
-  showLoading: PropTypes.bool
-};
+interface IShowProfileOrFourOhFourProps {
+  fetchProfileForUser: (username: string) => void;
+  fetchState: {
+    pending: boolean;
+    complete: boolean;
+    errored: boolean;
+  };
+  isSessionUser: boolean;
+  maybeUser: string;
+  requestedUser: UserType;
+  showLoading: boolean;
+}
 
 const createRequestedUserSelector =
   () =>
-  (state, { maybeUser = '' }) =>
-    userByNameSelector(maybeUser.toLowerCase())(state);
+  (state: unknown, { maybeUser = '' }) =>
+    userByNameSelector(maybeUser.toLowerCase())(state) as string;
 const createIsSessionUserSelector =
   () =>
-  (state, { maybeUser = '' }) =>
+  (state: unknown, { maybeUser = '' }) =>
     maybeUser.toLowerCase() === usernameSelector(state);
 
-const makeMapStateToProps = () => (state, props) => {
-  const requestedUserSelector = createRequestedUserSelector();
-  const isSessionUserSelector = createIsSessionUserSelector();
-  const fetchState = userProfileFetchStateSelector(state, props);
-  return {
-    requestedUser: requestedUserSelector(state, props),
-    isSessionUser: isSessionUserSelector(state, props),
-    showLoading: fetchState.pending,
-    fetchState
+const makeMapStateToProps =
+  () => (state: unknown, props: IShowProfileOrFourOhFourProps) => {
+    const requestedUserSelector = createRequestedUserSelector();
+    const isSessionUserSelector = createIsSessionUserSelector();
+    const fetchState = userProfileFetchStateSelector(
+      state
+    ) as IShowProfileOrFourOhFourProps['fetchState'];
+    return {
+      requestedUser: requestedUserSelector(
+        state,
+        props
+      ) as IShowProfileOrFourOhFourProps['requestedUser'],
+      isSessionUser: isSessionUserSelector(state, props),
+      showLoading: fetchState.pending,
+      fetchState
+    };
   };
-};
 
-const mapDispatchToProps = {
+const mapDispatchToProps: {
+  fetchProfileForUser: IShowProfileOrFourOhFourProps['fetchProfileForUser'];
+} = {
   fetchProfileForUser
 };
 
-class ShowProfileOrFourOhFour extends Component {
+class ShowProfileOrFourOhFour extends Component<IShowProfileOrFourOhFourProps> {
   componentDidMount() {
     const { requestedUser, maybeUser, fetchProfileForUser } = this.props;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     if (isEmpty(requestedUser)) {
       fetchProfileForUser(maybeUser);
     }
@@ -64,6 +75,7 @@ class ShowProfileOrFourOhFour extends Component {
     }
 
     const { isSessionUser, requestedUser, showLoading } = this.props;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     if (isEmpty(requestedUser)) {
       if (showLoading) {
         // We don't know if /:maybeUser is a user or not, we will show
@@ -78,13 +90,17 @@ class ShowProfileOrFourOhFour extends Component {
 
     // We have a response from the API, and we have some state in the
     // store for /:maybeUser, we now handover rendering to the Profile component
+    // eslint-disable-next-line
+    // @ts-ignore TODO: sort out whether user.portfolio is an array or obj. lit.
     return <Profile isSessionUser={isSessionUser} user={requestedUser} />;
   }
 }
 
+// eslint-disable-next-line
+// @ts-ignore
 ShowProfileOrFourOhFour.displayName = 'ShowProfileOrFourOhFour';
-ShowProfileOrFourOhFour.propTypes = propTypes;
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default connect(
   makeMapStateToProps,
   mapDispatchToProps

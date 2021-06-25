@@ -1,10 +1,12 @@
+/* eslint-disable */
+// @ts-nocheck Likely need to not use ShallowRenderer
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import envData from '../../../config/env.json';
 
-import { ShowSettings } from './ShowSettings';
+import { ShowSettings } from './show-settings';
 
-const { apiLocation } = envData;
+const { apiLocation } = envData as Record<string, string>;
 
 jest.mock('../analytics');
 
@@ -53,3 +55,4 @@ const loggedInProps = {
 };
 const loggedOutProps = { ...loggedInProps };
 loggedOutProps.isSignedIn = false;
+/* eslint-disable */

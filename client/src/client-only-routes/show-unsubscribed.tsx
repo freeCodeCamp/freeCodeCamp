@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -8,9 +7,13 @@ import envData from '../../../config/env.json';
 import FullWidthRow from '../components/helpers/full-width-row';
 import { Spacer } from '../components/helpers';
 
-const { apiLocation } = envData;
+const { apiLocation } = envData as Record<string, string>;
 
-function ShowUnsubscribed({ unsubscribeId }) {
+function ShowUnsubscribed({
+  unsubscribeId
+}: {
+  unsubscribeId: string;
+}): JSX.Element {
   const { t } = useTranslation();
   return (
     <Fragment>
@@ -47,8 +50,5 @@ function ShowUnsubscribed({ unsubscribeId }) {
 }
 
 ShowUnsubscribed.displayName = 'ShowUnsubscribed';
-ShowUnsubscribed.propTypes = {
-  unsubscribeId: PropTypes.string
-};
 
 export default ShowUnsubscribed;

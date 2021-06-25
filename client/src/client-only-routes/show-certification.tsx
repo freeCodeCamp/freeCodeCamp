@@ -1,12 +1,11 @@
 /* eslint-disable react/jsx-sort-props */
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 
-import ShowProjectLinks from './ShowProjectLinks';
+import ShowProjectLinks from './show-project-links';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
@@ -23,62 +22,70 @@ import {
   userByNameSelector,
   fetchProfileForUser
 } from '../redux';
-import { certMap } from '../../src/resources/certAndProjectMap';
+import { certMap } from '../resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 import { langCodes } from '../../../config/i18n/all-langs';
+// eslint-disable-next-line
+// @ts-ignore
 import envData from '../../../config/env.json';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
 import { isEmpty } from 'lodash-es';
-import { User } from '../redux/prop-types';
+import { UserType } from '../redux/prop-types';
 
-const { clientLocale } = envData;
+const { clientLocale } = envData as { clientLocale: keyof typeof langCodes };
 
 const localeCode = langCodes[clientLocale];
-
-const propTypes = {
-  cert: PropTypes.shape({
-    username: PropTypes.string,
-    name: PropTypes.string,
-    certName: PropTypes.string,
-    certTitle: PropTypes.string,
-    completionTime: PropTypes.number,
-    date: PropTypes.number
-  }),
-  certDashedName: PropTypes.string,
-  certSlug: PropTypes.string,
-  createFlashMessage: PropTypes.func.isRequired,
-  executeGA: PropTypes.func,
-  fetchProfileForUser: PropTypes.func,
-  fetchState: PropTypes.shape({
-    pending: PropTypes.bool,
-    complete: PropTypes.bool,
-    errored: PropTypes.bool
-  }),
-  isDonating: PropTypes.bool,
-  isValidCert: PropTypes.bool,
-  location: PropTypes.shape({
-    pathname: PropTypes.string
-  }),
-  showCert: PropTypes.func.isRequired,
-  signedInUserName: PropTypes.string,
-  user: User,
-  userFetchState: PropTypes.shape({
-    complete: PropTypes.bool
-  }),
-  userFullName: PropTypes.string,
-  username: PropTypes.string
+type CertType = {
+  username: string;
+  name: string;
+  certName: string;
+  certTitle: string;
+  completionTime: number;
+  date: number;
 };
+interface IShowCertificationProps {
+  cert: CertType;
+  certDashedName: string;
+  certSlug: string;
+  createFlashMessage: (payload: typeof standardErrorMessage) => void;
+  executeGA: (payload: Record<string, unknown>) => void;
+  fetchProfileForUser: (username: string) => void;
+  fetchState: {
+    pending: boolean;
+    complete: boolean;
+    errored: boolean;
+  };
+  isDonating: boolean;
+  isValidCert: boolean;
+  location: {
+    pathname: string;
+  };
+  showCert: ({
+    username,
+    certSlug
+  }: {
+    username: string;
+    certSlug: string;
+  }) => void;
+  signedInUserName: string;
+  user: UserType;
+  userFetchState: {
+    complete: boolean;
+  };
+  userFullName: string;
+  username: string;
+}
 
-const requestedUserSelector = (state, { username = '' }) =>
-  userByNameSelector(username.toLowerCase())(state);
+const requestedUserSelector = (state: unknown, { username = '' }) =>
+  userByNameSelector(username.toLowerCase())(state) as UserType;
 
 const validCertSlugs = certMap.map(cert => cert.certSlug);
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state: unknown, props: IShowCertificationProps) => {
   const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
   return createSelector(
     showCertSelector,
@@ -87,7 +94,14 @@ const mapStateToProps = (state, props) => {
     userFetchStateSelector,
     isDonatingSelector,
     requestedUserSelector,
-    (cert, fetchState, signedInUserName, userFetchState, isDonating, user) => ({
+    (
+      cert: CertType,
+      fetchState: IShowCertificationProps['fetchState'],
+      signedInUserName: string,
+      userFetchState: IShowCertificationProps['userFetchState'],
+      isDonating: boolean,
+      user
+    ) => ({
       cert,
       fetchState,
       isValidCert,
@@ -99,13 +113,13 @@ const mapStateToProps = (state, props) => {
   );
 };
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     { createFlashMessage, showCert, fetchProfileForUser, executeGA },
     dispatch
   );
 
-const ShowCertification = props => {
+const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
   const { t } = useTranslation();
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
@@ -131,6 +145,7 @@ const ShowCertification = props => {
     } = props;
 
     if (!signedInUserName || signedInUserName !== username) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       if (isEmpty(user) && username) {
         fetchProfileForUser(username);
       }
@@ -168,7 +183,11 @@ const ShowCertification = props => {
     setIsDonationClosed(true);
   };
 
-  const handleProcessing = (duration, amount, action) => {
+  const handleProcessing = (
+    duration: string,
+    amount: number,
+    action: string
+  ) => {
     props.executeGA({
       type: 'event',
       data: {
@@ -241,7 +260,7 @@ const ShowCertification = props => {
     </div>
   );
 
-  let donationSection = (
+  const donationSection = (
     <div className='donation-section'>
       {!isDonationSubmitted && (
         <Row>
@@ -327,12 +346,7 @@ const ShowCertification = props => {
 
         <main className='information'>
           <div className='information-container'>
-            <Trans
-              user={displayName}
-              title={certTitle}
-              time={completionTime}
-              i18nKey='certification.fulltext'
-            >
+            <Trans title={certTitle} i18nKey='certification.fulltext'>
               <h3>placeholder</h3>
               <h1>
                 <strong>{{ user: displayName }}</strong>
@@ -376,6 +390,5 @@ const ShowCertification = props => {
 };
 
 ShowCertification.displayName = 'ShowCertification';
-ShowCertification.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowCertification);
