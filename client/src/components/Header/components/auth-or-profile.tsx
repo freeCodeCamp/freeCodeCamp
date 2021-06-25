@@ -1,8 +1,6 @@
-/*  @typescript-eslint/ban-types */
-/*  @typescript-eslint/restrict-template-expressions */
-/*  @typescript-eslint/ban-ts-comment */
-/*  @typescript-eslint/no-unsafe-member-access */
-/*  @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // @ts-nocheck
 import React from 'react';
 import { Link, borderColorPicker, AvatarRenderer } from '../../helpers';
@@ -10,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import Login from './Login';
 
 export interface AuthOrProfileProps {
-  user?: Object;
+  user?: Record<string, unknown>;
 }
 const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
   const { t } = useTranslation();
@@ -30,7 +28,7 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
       <>
         <Link
           className={`avatar-nav-link ${badgeColorClass}`}
-          to={`/${user.username}`}
+          to={`/${user.username as string}`}
         >
           <AvatarRenderer
             picture={user.picture}
