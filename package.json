@@ -107,7 +107,6 @@
     "@testing-library/dom": "7.31.2",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/user-event": "13.1.9",
-    "@types/react-redux": "7.1.16",
     "@typescript-eslint/eslint-plugin": "4.28.0",
     "@typescript-eslint/parser": "4.28.0",
     "babel-eslint": "10.1.0",
