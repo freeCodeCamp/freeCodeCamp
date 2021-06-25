@@ -1,9 +1,8 @@
-/* eslint-disable max-len */
 import React from 'react';
 
-const propTypes = {};
-
-function MicrosoftLogo(props) {
+function MicrosoftLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): React.ReactNode {
   return (
     <svg
       id='microsoft-logo'
@@ -25,6 +24,5 @@ function MicrosoftLogo(props) {
 }
 
 MicrosoftLogo.displayName = 'MicrosoftLogo';
-MicrosoftLogo.propTypes = propTypes;
 
 export default MicrosoftLogo;

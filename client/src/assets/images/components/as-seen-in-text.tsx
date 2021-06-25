@@ -1,10 +1,8 @@
-/* eslint-disable max-len */
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const propTypes = { fill: PropTypes.string };
-
-function AsSeenLogo(props) {
+function AsSeenInText(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): React.ReactNode {
   const fill = props.fill === 'dark' ? 'var(--gray-75)' : 'var(--gray-15)';
   return (
     <svg
@@ -120,7 +118,6 @@ function AsSeenLogo(props) {
   );
 }
 
-AsSeenLogo.displayName = 'AsSeenLogo';
-AsSeenLogo.propTypes = propTypes;
+AsSeenInText.displayName = 'AsSeenInText';
 
-export default AsSeenLogo;
+export default AsSeenInText;
