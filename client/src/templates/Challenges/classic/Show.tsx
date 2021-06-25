@@ -16,7 +16,7 @@ import LearnLayout from '../../../components/layouts/Learn';
 import MultifileEditor from './MultifileEditor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
-import Output from '../components/Output';
+import Output from '../components/output';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/HelpModal';
 import VideoModal from '../components/VideoModal';
@@ -290,6 +290,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   renderEditor() {
     const { files } = this.props;
     const { description } = this.getChallenge();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
       files && (
         <MultifileEditor

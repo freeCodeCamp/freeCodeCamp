@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import sanitizeHtml from 'sanitize-html';
 
 import './output.css';
 import { isEmpty } from 'lodash-es';
 
-const propTypes = {
-  defaultOutput: PropTypes.string,
-  output: PropTypes.arrayOf(PropTypes.string)
-};
+interface OutputProps {
+  defaultOutput: string;
+  output: string[];
+}
 
-class Output extends Component {
-  render() {
+class Output extends Component<OutputProps> {
+  render(): JSX.Element {
     const { output, defaultOutput } = this.props;
     const message = sanitizeHtml(
       !isEmpty(output) ? output.join('\n') : defaultOutput,
@@ -27,8 +26,5 @@ class Output extends Component {
     );
   }
 }
-
-Output.displayName = 'Output';
-Output.propTypes = propTypes;
 
 export default Output;
