@@ -200,5 +200,5 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
 }
 
 ShowSettings.displayName = 'ShowSettings';
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+
 export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);

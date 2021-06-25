@@ -63,7 +63,6 @@ const mapDispatchToProps: {
 class ShowProfileOrFourOhFour extends Component<IShowProfileOrFourOhFourProps> {
   componentDidMount() {
     const { requestedUser, maybeUser, fetchProfileForUser } = this.props;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     if (isEmpty(requestedUser)) {
       fetchProfileForUser(maybeUser);
     }
@@ -75,7 +74,6 @@ class ShowProfileOrFourOhFour extends Component<IShowProfileOrFourOhFourProps> {
     }
 
     const { isSessionUser, requestedUser, showLoading } = this.props;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     if (isEmpty(requestedUser)) {
       if (showLoading) {
         // We don't know if /:maybeUser is a user or not, we will show
@@ -100,7 +98,6 @@ class ShowProfileOrFourOhFour extends Component<IShowProfileOrFourOhFourProps> {
 // @ts-ignore
 ShowProfileOrFourOhFour.displayName = 'ShowProfileOrFourOhFour';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default connect(
   makeMapStateToProps,
   mapDispatchToProps

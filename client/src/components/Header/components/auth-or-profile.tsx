@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/*  @typescript-eslint/ban-types */
+/*  @typescript-eslint/restrict-template-expressions */
+/*  @typescript-eslint/ban-ts-comment */
+/*  @typescript-eslint/no-unsafe-member-access */
+/*  @typescript-eslint/no-unsafe-assignment */
 // @ts-nocheck
 import React from 'react';
 import { Link, borderColorPicker, AvatarRenderer } from '../../helpers';

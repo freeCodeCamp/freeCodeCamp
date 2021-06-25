@@ -166,6 +166,5 @@ class ShowUser extends Component<IShowUserProps> {
 ShowUser.displayName = 'ShowUser';
 
 export default withTranslation()(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   connect(mapStateToProps, mapDispatchToProps)(ShowUser)
 );
