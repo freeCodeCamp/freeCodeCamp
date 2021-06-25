@@ -1,21 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import Link from '../helpers/link';
 import './footer.css';
 
-const propTypes = {
-  children: PropTypes.any
-};
-
-const ColHeader = ({ children, ...other }) => (
-  <div className='col-header' {...other}>
-    {children}
-  </div>
-);
-ColHeader.propTypes = propTypes;
-
-function Footer() {
+function Footer(): JSX.Element {
   const { t } = useTranslation();
 
   return (
