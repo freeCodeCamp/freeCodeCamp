@@ -20,6 +20,10 @@ const frontend = path.resolve(
   __dirname,
   '../../src/templates/Challenges/projects/frontend/Show.js'
 );
+const codeally = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/codeally/show.js'
+);
 const intro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/Intro.js'
@@ -38,28 +42,25 @@ const views = {
   classic,
   modern: classic,
   frontend,
-  video
+  video,
+  codeally
   // quiz: Quiz
 };
 
-const getNextChallengePath = (
-  _node: any,
-  index: number,
-  nodeArray: { [x: string]: any }
-) => {
+const getNextChallengePath = (node: any, index: number, nodeArray: []) => {
   const next = nodeArray[index + 1];
   return next ? next.node.fields.slug : '/learn';
 };
 
-const getPrevChallengePath = (_node: any, index: number, nodeArray: any[]) => {
+const getPrevChallengePath = (node: any, index: number, nodeArray: []) => {
   const prev = nodeArray[index - 1];
   return prev ? prev.node.fields.slug : '/learn';
 };
 
-const getTemplateComponent = (challengeType: string | number) =>
+const getTemplateComponent = (challengeType: any) =>
   views[viewTypes[challengeType]];
 
-export const createChallengePages =
+exports.createChallengePages =
   (
     createPage: (arg0: {
       path: any;
@@ -74,11 +75,11 @@ export const createChallengePages =
           prevChallengePath: any;
           id: any;
         };
-        slug: any;
+        slug: /* eslint-disable @typescript-eslint/no-unsafe-return */ any;
       };
     }) => any
   ) =>
-  ({ node }: any, index: any, thisArray: any) => {
+  ({ node }: any, index: number, thisArray: []) => {
     const {
       superBlock,
       block,
@@ -109,7 +110,7 @@ export const createChallengePages =
     });
   };
 
-export const createBlockIntroPages =
+exports.createBlockIntroPages =
   (
     createPage: (arg0: {
       path: any;
@@ -133,7 +134,7 @@ export const createBlockIntroPages =
     });
   };
 
-export const createSuperBlockIntroPages =
+exports.createSuperBlockIntroPages =
   (
     createPage: (arg0: {
       path: any;

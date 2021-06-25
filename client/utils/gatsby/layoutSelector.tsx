@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -40,6 +44,9 @@ export default function layoutSelector({ element, props }) {
 
 layoutSelector.propTypes = {
   element: PropTypes.any,
-  location: PropTypes.objectOf({ pathname: PropTypes.string }),
+  location: PropTypes.objectOf({
+    pathname: PropTypes.string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any),
   props: PropTypes.any
 };

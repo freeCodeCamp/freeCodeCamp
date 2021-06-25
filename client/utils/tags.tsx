@@ -65,8 +65,8 @@ export const getheadTagComponents = () => {
 
 export const injectConditionalTags = (
   tagsArray: JSX.Element[],
-  homeLocation: string | string[]
-): never => {
+  homeLocation: string
+): any => {
   if (homeLocation.includes('localhost')) return tagsArray;
 
   const parsedHomeUrl = psl.parse(new URL(homeLocation).host);

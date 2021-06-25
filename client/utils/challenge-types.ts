@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+// eslint-disable-next-line import/unambiguous
 const html = 0;
 const js = 1;
 export const backend = 2;

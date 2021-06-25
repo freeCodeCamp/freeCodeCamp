@@ -12,6 +12,8 @@ import FourOhFourPage from '../../src/pages/404';
 import Learn from '../../src/pages/learn';
 import Certification from '../../src/pages/certification';
 
+const certification: any = Certification;
+
 jest.mock('../../src/analytics');
 
 const store = createStore();
@@ -77,6 +79,6 @@ test('404 page should have DefaultLayout and footer', () => {
 test('Certification path should have CertificationLayout', () => {
   const challengePath =
     '/certification/mot01/javascript-algorithms-and-data-structures/';
-  const compnentObj = getComponentNameAndProps(Certification, challengePath);
+  const compnentObj = getComponentNameAndProps(certification, challengePath);
   expect(compnentObj.name).toEqual('CertificationLayout');
 });
