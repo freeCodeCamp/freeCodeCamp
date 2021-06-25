@@ -1,8 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Highlight } from 'react-instantsearch-dom';
+import { Hit } from 'react-instantsearch-core';
 
-const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
+interface suggestionPropTypes {
+  hit: Hit;
+  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+}
+
+const Suggestion = ({
+  hit,
+  handleMouseEnter,
+  handleMouseLeave
+}: suggestionPropTypes) => {
   const dropdownFooter = hit.objectID.includes('footer-');
   return (
     <a
@@ -26,12 +36,6 @@ const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
       </span>
     </a>
   );
-};
-
-Suggestion.propTypes = {
-  handleMouseEnter: PropTypes.func.isRequired,
-  handleMouseLeave: PropTypes.func.isRequired,
-  hit: PropTypes.object
 };
 
 export default Suggestion;

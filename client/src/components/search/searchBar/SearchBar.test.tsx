@@ -1,11 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import { SearchBar } from './SearchBar';
+import { SearchBar } from './search-bar';
 
 describe('<SearchBar />', () => {
   it('renders to the DOM', () => {
-    const shallow = new ShallowRenderer();
+    const shallow = ShallowRenderer.createRenderer();
     shallow.render(<SearchBar {...searchBarProps} />);
     const result = shallow.getRenderOutput();
     expect(result).toBeTruthy();
