@@ -4,7 +4,7 @@ import { Link } from '../../../components/helpers/index';
 import i18next from 'i18next';
 
 import './challenge-title.css';
-import GreenPass from '../../../assets/icons/GreenPass';
+import GreenPass from '../../../assets/icons/green-pass';
 import BreadCrumb from './BreadCrumb';
 
 const propTypes = {

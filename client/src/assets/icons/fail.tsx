@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function RedFail() {
+function RedFail(): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -20,16 +20,12 @@ function RedFail() {
           r='95'
           stroke='(var--primary-color)'
           strokeDasharray='null'
-          strokeLinecap='null'
-          strokeLinejoin='null'
         />
         <rect
           fill='var(--primary-background)'
           height='30'
           stroke='var(--primary-background)'
           strokeDasharray='null'
-          strokeLinecap='null'
-          strokeLinejoin='null'
           transform='rotate(-45, 100, 103.321)'
           width='128.85878'
           x='35'
@@ -40,8 +36,6 @@ function RedFail() {
           height='30'
           stroke='var(--primary-background)'
           strokeDasharray='null'
-          strokeLinecap='null'
-          strokeLinejoin='null'
           transform='rotate(45, 99.5, 104)'
           width='128.85878'
           x='35'

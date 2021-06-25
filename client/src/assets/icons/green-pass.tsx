@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function GreenPass(props) {
+function GreenPass(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -23,16 +25,12 @@ function GreenPass(props) {
             r='95'
             stroke='var(--primary-color)'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
           />
           <rect
             fill='var(--primary-background)'
             height='30'
             stroke='var(--primary-background)'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             transform='rotate(-45, 120, 106.321)'
             width='128.85878'
             x='55.57059'
@@ -43,8 +41,6 @@ function GreenPass(props) {
             height='30'
             stroke='var(--primary-background)'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             transform='rotate(45, 66.75, 123.75)'
             width='80.66548'
             x='26.41726'

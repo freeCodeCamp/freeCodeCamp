@@ -5,8 +5,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 
 import './toggle-button.css';
-import ToggleCheck from '../../assets/icons/ToggleCheck';
-import Spacer from '../../assets/icons/Spacer';
+import ToggleCheck from '../../assets/icons/toggle-check';
+import Spacer from '../../assets/icons/spacer';
 
 interface ButtonProps {
   name: string;
