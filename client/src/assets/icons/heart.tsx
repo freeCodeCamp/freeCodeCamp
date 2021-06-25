@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
-function Heart(props) {
+function Heart(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -36,6 +36,5 @@ function Heart(props) {
 }
 
 Heart.displayName = 'Heart';
-Heart.propTypes = propTypes;
 
 export default Heart;

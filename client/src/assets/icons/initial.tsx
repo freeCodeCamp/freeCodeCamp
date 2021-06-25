@@ -1,7 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Initial(props) {
+function Initial(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -21,8 +23,6 @@ function Initial(props) {
           r='95'
           stroke='var(--primary-color)'
           strokeDasharray='null'
-          strokeLinecap='null'
-          strokeLinejoin='null'
         />
         <svg
           height='200'

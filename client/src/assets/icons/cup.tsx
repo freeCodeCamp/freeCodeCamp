@@ -1,10 +1,9 @@
-/* eslint-disable max-len */
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
-function Cup(props) {
+function Cup(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -57,6 +56,5 @@ function Cup(props) {
 }
 
 Cup.displayName = 'Cup';
-Cup.propTypes = propTypes;
 
 export default Cup;

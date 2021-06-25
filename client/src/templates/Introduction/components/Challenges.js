@@ -7,8 +7,8 @@ import { Link } from 'gatsby';
 import { withTranslation } from 'react-i18next';
 
 import { completedChallengesSelector, executeGA } from '../../../redux';
-import GreenPass from '../../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
+import GreenPass from '../../../assets/icons/green-pass';
+import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 
 const mapStateToProps = state => {
   return createSelector(completedChallengesSelector, completedChallenges => ({

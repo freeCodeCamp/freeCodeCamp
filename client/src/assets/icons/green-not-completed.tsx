@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const propTypes = {};
-
-function GreenNotCompleted(props) {
+function GreenNotCompleted(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -25,8 +25,6 @@ function GreenNotCompleted(props) {
             r='95'
             stroke='var(--primary-color)'
             strokeDasharray='null'
-            strokeLinecap='null'
-            strokeLinejoin='null'
             strokeWidth='10'
           />
         </g>
@@ -36,6 +34,5 @@ function GreenNotCompleted(props) {
 }
 
 GreenNotCompleted.displayName = 'GreenNotCompleted';
-GreenNotCompleted.propTypes = propTypes;
 
 export default GreenNotCompleted;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from '@freecodecamp/react-bootstrap';
-import DefaultAvatar from '../../assets/icons/DefaultAvatar';
+import DefaultAvatar from '../../assets/icons/default-avatar';
 import { defaultUserImage } from '../../../../config/misc';
 import { borderColorPicker } from '.';
 import { useTranslation } from 'react-i18next';

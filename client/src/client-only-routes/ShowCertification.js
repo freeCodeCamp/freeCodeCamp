@@ -7,7 +7,7 @@ import { createSelector } from 'reselect';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 
 import ShowProjectLinks from './ShowProjectLinks';
-import FreeCodeCampLogo from '../assets/icons/FreeCodeCampLogo';
+import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
 import { Trans, useTranslation } from 'react-i18next';
