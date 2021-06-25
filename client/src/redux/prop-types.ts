@@ -179,17 +179,25 @@ export type ChallengeNodeType = {
   fields: {
     slug: string;
     blockName: string;
+    tests: TestType[];
   };
+  files: ChallengeFilesType;
   forumTopicId: number;
   guideUrl: string;
   head: string[];
   helpCategory: string;
+  id: string;
   instructions: string;
   isComingSoon: boolean;
   removeComments: boolean;
   isLocked: boolean;
   isPrivate: boolean;
   order: number;
+  question: {
+    text: string;
+    answers: string[];
+    solution: number;
+  };
   required: [
     {
       link: string;
@@ -203,6 +211,8 @@ export type ChallengeNodeType = {
   time: string;
   title: string;
   translationPending: boolean;
+  url: string;
+  videoId: string;
   videoUrl: string;
 };
 
@@ -223,7 +233,7 @@ export type AllMarkdownRemarkType = {
 };
 
 export type ResizePropsType = {
-  onStopResize: () => void;
+  onStopResize: (arg0: React.ChangeEvent) => void;
   onResize: () => void;
 };
 
@@ -293,20 +303,42 @@ export type CompletedChallenge = {
 // TODO: renames: files => challengeFiles; key => fileKey;
 export type ChallengeFileType = {
   [T in FileKeyTypes]:
-    | ({
-        editableContents: string;
-        editableRegionBoundaries: number[];
-        error?: string | null;
-        history: string[];
-        path: string;
-        seed: string;
-        seedEditableRegionBoundaries?: number[];
-      } & FileKeyChallengeType)
-    | null;
+  | ({
+    editableContents: string;
+    editableRegionBoundaries: number[];
+    error?: string | null;
+    history: string[];
+    path: string;
+    seed: string;
+    seedEditableRegionBoundaries?: number[];
+  } & FileKeyChallengeType)
+  | null;
 };
 
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
 export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
+
+export type ChallengeFilesType =
+  | {
+    indexcss: ChallengeFileType;
+    indexhtml: ChallengeFileType;
+    indexjs: ChallengeFileType;
+    indexjsx: ChallengeFileType;
+  }
+  | Record<string, never>;
+
+export type ChallengeMetaType = {
+  block: string;
+  id: string;
+  introPath: string;
+  nextChallengePath: string;
+  prevChallengePath: string;
+  removeComments: boolean;
+  superBlock: string;
+  title?: string;
+  challengeType?: number;
+  helpCategory: string;
+};
 
 export type PortfolioType = {
   id: string;
@@ -326,6 +358,12 @@ export type FileKeyChallengeType = {
   tail: string;
 };
 
+// This looks redundant - same as ChallengeNodeType above?
+// TODO: @moT01 Yes, it is an almost duplicate because @ojeytonwilliams
+// does not allow us to add 'Type' at the end...
+// The below is more accurate, because it was built based on graphql's
+// interpretation of what we have. The props commented out are what we
+// think are on the node, but actually do not exist.
 export type ChallengeNode = {
   block: string;
   challengeFiles: ChallengeFileType;

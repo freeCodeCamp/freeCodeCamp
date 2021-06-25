@@ -395,7 +395,8 @@
     "analytics": "A bar chart and line graph",
     "shield": "A shield with a checkmark",
     "tensorflow": "Tensorflow icon",
-    "algorithm": "Branching nodes"
+    "algorithm": "Branching nodes",
+    "magnifier": "magnifier"
   },
   "aria": {
     "fcc-logo": "freeCodeCamp Logo",

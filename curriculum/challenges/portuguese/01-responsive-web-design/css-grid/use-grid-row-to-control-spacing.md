@@ -1,6 +1,6 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use grid-row to Control Spacing
+title: Usar grid-row para controlar a posição das linhas
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
@@ -9,15 +9,15 @@ dashedName: use-grid-row-to-control-spacing
 
 # --description--
 
-Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the `grid-row` property on a grid item.
+Obviamente, você pode fazer com que os itens ocupem várias linhas, assim como fez com as colunas. Basta definir as divisões horizontais nas quais deseja que um item comece e pare usando a propriedade `grid-row` em um grid item.
 
 # --instructions--
 
-Make the element with the `item5` class consume the last two rows.
+Faça com que o elemento de classe `item5` ocupe as duas últimas linhas.
 
 # --hints--
 
-`item5` class should have a `grid-row` property.
+O elemento de classe `item5` deve ter a propriedade `grid-row`.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-`item5` class should have a `grid-row` property which results in it consuming the last two rows of the grid.
+A classe `item5` deve ter a propriedade `grid-row` definida para que o elemento ocupe as duas últimas linhas do grid.
 
 ```js
 const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;

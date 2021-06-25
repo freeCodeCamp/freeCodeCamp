@@ -16,7 +16,9 @@ function* fetchSessionUser() {
   }
   try {
     const {
-      data: { user = {}, result = '', sessionMeta = {} }
+      user = {},
+      result = '',
+      sessionMeta = {}
     } = yield call(getSessionUser);
     const appUser = user[result] || {};
     yield put(
@@ -30,9 +32,11 @@ function* fetchSessionUser() {
 function* fetchOtherUser({ payload: maybeUser = '' }) {
   try {
     const maybeUserLC = maybeUser.toLowerCase();
-    const { data } = yield call(getUserProfile, maybeUserLC);
 
-    const { entities: { user = {} } = {}, result = '' } = data;
+    const { entities: { user = {} } = {}, result = '' } = yield call(
+      getUserProfile,
+      maybeUserLC
+    );
     const otherUser = user[result] || {};
     yield put(
       fetchProfileForUserComplete({ user: otherUser, username: result })

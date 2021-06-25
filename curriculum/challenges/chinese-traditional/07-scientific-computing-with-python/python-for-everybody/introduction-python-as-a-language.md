@@ -1,6 +1,6 @@
 ---
 id: 5e6a54ba58d3af90110a60a2
-title: 'Introduction: Python as a Language'
+title: '導言：Python 這門編程語言'
 challengeType: 11
 videoId: 0QeGbZNS_bY
 dashedName: introduction-python-as-a-language
@@ -10,7 +10,7 @@ dashedName: introduction-python-as-a-language
 
 ## --text--
 
-What will print out after running these two lines of code:
+運行這兩行代碼後打印出什麼樣的內容：
 
 ```python
 x = 6

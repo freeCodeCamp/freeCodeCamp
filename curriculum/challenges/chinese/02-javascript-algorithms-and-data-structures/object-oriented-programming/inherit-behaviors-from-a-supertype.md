@@ -17,7 +17,7 @@ Animal.prototype.eat = function() {
 };
 ```
 
-在这一节以及下一节挑战中我们将学习如何在 `Bird` 和 `Dog` 中重用 `Animal's` 中的方法，而无需重新定义它们。 这里我们会用到构造函数的继承特性。 这一节挑战中我们学习第一步：创建一个超类 `supertype`（或者叫父类）的实例。 你已经学会了一种创建 `Animal` 实例的方法，即使用 `new` 操作符：
+在这一节以及下一节挑战中我们将学习如何在 `Bird` 和 `Dog` 中重用 `Animal` 中的方法，而无需重新定义它们。 这里我们会用到构造函数的继承特性。 这一节挑战中我们学习第一步：创建一个超类 `supertype`（或者叫父类）的实例。 你已经学会了一种创建 `Animal` 实例的方法，即使用 `new` 操作符：
 
 ```js
 let animal = new Animal();
@@ -29,7 +29,7 @@ let animal = new Animal();
 let animal = Object.create(Animal.prototype);
 ```
 
-`Object.create(obj)` 创建了一个新对象，并指定了 `obj` 作为新对象的 `prototype`。 回忆一下，我们之前说过 `prototype` 就像是创建对象的“配方”。 如果我们把 `animal` 的 `prototype` 设置为与 `Animal's` 构造函数的 `prototype` 一样，那么就相当于让 `animal` 这个实例的配方与 `Animal` 其他实例的配方一样了。
+`Object.create(obj)` 创建了一个新对象，并指定了 `obj` 作为新对象的 `prototype`。 回忆一下，我们之前说过 `prototype` 就像是创建对象的“配方”。 如果我们把 `animal` 的 `prototype` 设置为与 `Animal` 构造函数的 `prototype` 一样，那么就相当于让 `animal` 这个实例具有与 `Animal` 的其他实例相同的“配方”了。
 
 ```js
 animal.eat();

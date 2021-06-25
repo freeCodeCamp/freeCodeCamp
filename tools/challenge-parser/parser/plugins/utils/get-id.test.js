@@ -1,4 +1,3 @@
-/* global expect*/
 const getId = require('./get-id');
 const idNode = require('./__fixtures__/id-node.json');
 const imageNode = require('./__fixtures__/image-node.json');

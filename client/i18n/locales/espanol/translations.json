@@ -395,7 +395,8 @@
     "analytics": "Un gráfico de barras y un gráfico de líneas",
     "shield": "Un escudo con una marca de verificación",
     "tensorflow": "Icono de Tensorflow",
-    "algorithm": "Nodos ramificados"
+    "algorithm": "Nodos ramificados",
+    "magnifier": "magnifier"
   },
   "aria": {
     "fcc-logo": "Logo de freeCodeCamp",

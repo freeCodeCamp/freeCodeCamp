@@ -1,5 +1,3 @@
-/* global expect jest */
-
 import { Subject } from 'rxjs';
 import { ActionsObservable, StateObservable } from 'redux-observable';
 import failedUpdatesEpic from './failed-updates-epic';

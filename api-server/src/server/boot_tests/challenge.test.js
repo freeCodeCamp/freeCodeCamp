@@ -1,4 +1,3 @@
-/* global describe xdescribe it expect jest */
 import { first, find } from 'lodash';
 
 import {

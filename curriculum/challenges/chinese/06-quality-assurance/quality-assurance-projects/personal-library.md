@@ -18,8 +18,7 @@ dashedName: personal-library
 
 # --instructions--
 
-1.  将的 MongoDB 连接字符串添加到 `.env` 中（没有引号），`DB`  
-   示例： `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
+1.  将你的 MongoDB 连接字符串添加到 `.env` 中，作为 `DB` 示例：`DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
 2.  在 `.env` 文件中设置 `NODE_ENV` 为 `test`中，没有引号
 3.  需要在 `routes/api.js` 中创建所有路由
 4.  在 `tests/2_functional-tests.js` 中创建所有的功能测试
@@ -66,7 +65,7 @@ async (getUserInput) => {
     let a = $.post(url, { title: 'Faux Book A' });
     let b = $.post(url, { title: 'Faux Book B' });
     let c = $.post(url, { title: 'Faux Book C' });
-    Promise.all([a, b, c]).then(async () => {
+    await Promise.all([a, b, c]).then(async () => {
       let data = await $.get(url);
       assert.isArray(data);
       assert.isAtLeast(data.length, 3);
@@ -214,8 +213,8 @@ async (getUserInput) => {
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
   Please check our contributing guidelines to learn more.
 */
 ```

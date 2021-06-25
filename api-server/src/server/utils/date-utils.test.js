@@ -1,4 +1,3 @@
-/* global describe expect it */
 import moment from 'moment-timezone';
 
 import { dayCount } from './date-utils';

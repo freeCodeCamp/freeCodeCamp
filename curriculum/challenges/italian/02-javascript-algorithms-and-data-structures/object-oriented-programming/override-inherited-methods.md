@@ -36,7 +36,7 @@ Bird.prototype.eat = function() {
 };
 ```
 
-Se hai un'istanza `let duck = new Bird();` e chiami `duck.eat()`, ecco come JavaScript cerca il metodo nella catena di `prototype` di `duck’s`:
+Se hai un'istanza `let duck = new Bird();` e chiami `duck.eat()`, ecco come JavaScript cerca il metodo nella catena del `prototype` di `duck`:
 
 1.  `duck` => `eat()` è definito qui? No.
 2.  `Bird` => `eat()` è definito qui? => Sì. Eseguilo e smetti di cercare.

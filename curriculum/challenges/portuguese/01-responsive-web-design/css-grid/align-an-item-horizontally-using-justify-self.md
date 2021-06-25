@@ -1,6 +1,6 @@
 ---
 id: 5a90374338fddaf9a66b5d3a
-title: Align an Item Horizontally using justify-self
+title: Alinhar um item horizontalmente usando justify-self
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpKHq'
 forumTopicId: 301122
@@ -9,21 +9,21 @@ dashedName: align-an-item-horizontally-using-justify-self
 
 # --description--
 
-In CSS Grid, the content of each item is located in a box which is referred to as a <dfn>cell</dfn>. You can align the content's position within its cell horizontally using the `justify-self` property on a grid item. By default, this property has a value of `stretch`, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:
+No CSS Grid, o conteúdo de cada item está localizado em uma caixa que chamamos de <dfn>célula</dfn>. Você pode alinhar a posição do conteúdo dentro da célula horizontalmente usando a propriedade `justify-self` em um grid item. Por padrão, esta propriedade possui um valor de `stretch`, que fará com que o conteúdo preencha toda a largura da célula. Esta propriedade do CSS Grid também aceita outros valores:
 
-`start`: aligns the content at the left of the cell,
+`start`: alinha o conteúdo à esquerda da célula,
 
-`center`: aligns the content in the center of the cell,
+`center`: alinha o conteúdo no centro da célula,
 
-`end`: aligns the content at the right of the cell.
+`end`: alinha o conteúdo à direita da célula.
 
 # --instructions--
 
-Use the `justify-self` property to center the item with the class `item2`.
+Use a propriedade `justify-self` para centralizar o item que possui a classe `item2`.
 
 # --hints--
 
-`item2` class should have a `justify-self` property that has the value of `center`.
+O elemento de classe `item2` deve ter a propriedade `justify-self` com o valor de `center`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
     background: LightSalmon;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f6a0b6c005b0e76f096
-title: 'Data Visualization: Page Rank'
+title: '數據可視化：頁面排名'
 challengeType: 11
 videoId: 6-w_qIUwaxU
 dashedName: data-visualization-page-rank
@@ -10,19 +10,19 @@ dashedName: data-visualization-page-rank
 
 ## --text--
 
-How does the PageRank algorithm work?
+頁面排名算法是如何工作的？
 
 ## --answers--
 
-It determines which pages are most highly connected.
+它決定哪些頁面之間的連接程度最高。
 
 ---
 
-It ranks pages based on view counts.
+它用瀏覽量來決定排名
 
 ---
 
-It figures out which pages contain the most important content.
+它能判斷出哪些頁面包含最重要的內容。
 
 ## --video-solution--
 

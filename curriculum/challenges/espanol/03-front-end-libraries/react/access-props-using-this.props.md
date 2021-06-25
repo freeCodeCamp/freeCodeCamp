@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616e
-title: Access Props Using this.props
+title: Accede a propiedades "props" usando this.props
 challengeType: 6
 forumTopicId: 301375
 dashedName: access-props-using-this-props
@@ -8,17 +8,17 @@ dashedName: access-props-using-this-props
 
 # --description--
 
-The last several challenges covered the basic ways to pass props to child components. But what if the child component that you're passing a prop to is an ES6 class component, rather than a stateless functional component? The ES6 class component uses a slightly different convention to access props.
+Los últimos desafíos cubrieron las formas básicas de pasar propiedades a un componente hijo. Pero, ¿qué pasa si el componente hijo al que se le pasa una propiedad es un componente de clase ES6, en lugar de un componente funcional sin estado? Los componentes de clase ES6 usan una convención un poco diferente para acceder a las propiedades.
 
-Anytime you refer to a class component within itself, you use the `this` keyword. To access props within a class component, you preface the code that you use to access it with `this`. For example, if an ES6 class component has a prop called `data`, you write `{this.props.data}` in JSX.
+Cada vez que se hace referencia a un componente de clase en sí mismo, se utiliza la palabra clave `this`. Para acceder a las propiedades dentro de un componente de clase, se antepone al código que se utiliza para acceder a él con `this`. Por ejemplo, si un componente de clase de ES6 tiene una propiedad llamada `data`, se escribirá `{this.props.data}` en JSX.
 
 # --instructions--
 
-Render an instance of the `ReturnTempPassword` component in the parent component `ResetPassword`. Here, give `ReturnTempPassword` a prop of `tempPassword` and assign it a value of a string that is at least 8 characters long. Within the child, `ReturnTempPassword`, access the `tempPassword` prop within the `strong` tags to make sure the user sees the temporary password.
+Renderiza una instancia del componente `ReturnTempPassword` en el componente padre `ResetPassword`. Aquí, dale a `ReturnTempPassword` una propiedad de `tempPassword` y asígnale un valor de una cadena que tenga al menos 8 caracteres. Dentro del componente hijo, `ReturnTempPassword`, accede a la propiedad `tempPassword` dentro de las etiquetas `strong` para asegurarte que el usuario vea una contraseña temporal.
 
 # --hints--
 
-The `ResetPassword` component should return a single `div` element.
+El componente `ResetPassword` debe devolver un único elemento `div`.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The fourth child of `ResetPassword` should be the `ReturnTempPassword` component.
+El cuarto componente hijo de `ResetPassword` debe ser el componente `ReturnTempPassword`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `ReturnTempPassword` component should have a prop called `tempPassword`.
+El componente `ReturnTempPassword` debe tener una propiedad llamada `tempPassword`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The `tempPassword` prop of `ReturnTempPassword` should be equal to a string of at least `8` characters.
+La propiedad `tempPassword` de `ReturnTempPassword` debe ser igual a una cadena de al menos 8 caracteres.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The `ReturnTempPassword` component should display the password you create as the `tempPassword` prop within `strong` tags.
+El componente `ReturnTempPassword` debe mostrar la contraseña creada en la propiedad `tempPassword` dentro de las etiquetas `strong`.
 
 ```js
 assert(

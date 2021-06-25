@@ -16,7 +16,7 @@ import {
   legacyProjectMap
 } from '../../resources/certAndProjectMap';
 
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
 

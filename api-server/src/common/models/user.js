@@ -26,7 +26,7 @@ import {
   renderSignInEmail
 } from '../utils';
 
-import { blocklistedUsernames } from '../../server/utils/constants.js';
+import { blocklistedUsernames } from '../../../../config/constants';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { getEmailSender } from '../../server/utils/url-utils';
