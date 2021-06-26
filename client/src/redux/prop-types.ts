@@ -230,21 +230,27 @@ export type TestType = {
 
 export type UserType = {
   about: string;
+  acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  currentChallengeId: string;
   email: string;
+  emailVerified: boolean;
   githubProfile: string;
+  isBanned: boolean;
+  isCheater: boolean;
   isHonest: boolean;
   linkedin: string;
   location: string;
   name: string;
   picture: string;
   points: number;
-  portfolio: PortfolioType;
+  portfolio: PortfolioType[];
   profileUI: {
     isLocked: boolean;
     showCerts: boolean;
     showName: boolean;
   };
+  progressTimestamps: Array<unknown>;
   sendQuincyEmail: boolean;
   theme: string;
   twitter: string;
@@ -273,13 +279,13 @@ export type isCertifiedTypes = {
 
 export type CompletedChallenge = {
   id: string;
-  solution: string;
-  githubLink: string;
-  challengeType: number;
+  solution?: string | null;
+  githubLink?: string;
+  challengeType?: number;
   completedDate: number;
   challengeFiles: ChallengeFileType[];
 };
-// TODO: renames: files => challengeFiles; key => fileKey;
+// TODO: renames: files => challengeFiles; key => fileKey; #42489
 export type ChallengeFileType = {
   contents: string;
   editableContents?: string;
