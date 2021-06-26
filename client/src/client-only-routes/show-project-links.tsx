@@ -21,7 +21,7 @@ interface IShowProjectLinksProps {
 type SolutionStateType = {
   projectTitle: string;
   challengeFiles: ChallengeFileType[] | null;
-  solution: null | string;
+  solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
 
@@ -74,7 +74,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
     if (githubLink) {
       return (
         <>
-          <a href={solution} rel='noopener noreferrer' target='_blank'>
+          <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
             {t('certification.project.solution')}
           </a>
           ,{' '}
@@ -84,11 +84,11 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
         </>
       );
     }
-    if (maybeUrlRE.test(solution)) {
+    if (maybeUrlRE.test(solution ?? '')) {
       return (
         <a
           className='btn-invert'
-          href={solution}
+          href={solution ?? ''}
           rel='noopener noreferrer'
           target='_blank'
         >
