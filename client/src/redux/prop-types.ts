@@ -181,7 +181,7 @@ export type ChallengeNodeType = {
     blockName: string;
     tests: TestType[];
   };
-  files: ChallengeFilesType;
+  files: ChallengeFileType;
   forumTopicId: number;
   guideUrl: string;
   head: string[];
@@ -304,22 +304,24 @@ export type CompletedChallenge = {
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
-  challengeFiles: ChallengeFileType | null;
+  challengeFiles: ChallengeFileType[] | null;
 };
 // TODO: renames: files => challengeFiles; key => fileKey; #42489
-export type ChallengeFileType = {
-  [T in FileKeyTypes]:
-    | ({
-        editableContents: string;
-        editableRegionBoundaries: number[];
-        error?: string | null;
-        history: string[];
-        path: string;
-        seed: string;
-        seedEditableRegionBoundaries?: number[];
-      } & FileKeyChallengeType)
-    | null;
-};
+export type ChallengeFileType =
+  | {
+      [T in FileKeyTypes]:
+        | ({
+            editableContents: string;
+            editableRegionBoundaries: number[];
+            error?: string | null;
+            history: string[];
+            path: string;
+            seed: string;
+            seedEditableRegionBoundaries?: number[];
+          } & FileKeyChallengeType)
+        | null;
+    }
+  | Record<string, never>;
 
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
 export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
