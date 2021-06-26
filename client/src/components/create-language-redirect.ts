@@ -4,9 +4,9 @@ const createLanguageRedirect = ({
 }: {
   clientLocale: string;
   lang: string;
-}): Location | string => {
+}): string => {
   // return early if requesting the same page
-  if (clientLocale === lang) return window?.location;
+  if (clientLocale === lang) return window?.location.toString();
 
   const pathArray = window?.location?.pathname?.split('/');
   const path = pathArray
