@@ -11,8 +11,7 @@ import { graphql } from 'gatsby';
 import Media from 'react-responsive';
 import { withTranslation } from 'react-i18next';
 
-// Local Utilities
-import LearnLayout from '../../../components/layouts/Learn';
+import LearnLayout from '../../../components/layouts/learn';
 import MultifileEditor from './MultifileEditor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
