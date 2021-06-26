@@ -51,7 +51,8 @@ const auditedCerts = {
   ],
   italian: [
     'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
+    'javascript-algorithms-and-data-structures',
+    'front-end-libraries'
   ],
   portuguese: ['responsive-web-design']
 };
