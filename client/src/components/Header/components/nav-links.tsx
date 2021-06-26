@@ -22,8 +22,8 @@ import {
 import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import envData from '../../../../../config/env.json';
-import createLanguageRedirect from '../../createLanguageRedirect';
-import createExternalRedirect from '../../createExternalRedirects';
+import createLanguageRedirect from '../../create-language-redirect';
+import createExternalRedirect from '../../create-external-redirects';
 import {
   availableLangs,
   i18nextCodes,
