@@ -1,47 +1,48 @@
 ---
 id: bad87fee1348bd9aedd08845
-title: Add Font Awesome Icons to our Buttons
+title: Aggiungere le icone Font Awesome ai bottoni
 challengeType: 0
 forumTopicId: 16638
 required:
-  - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
+  - 
+    link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 dashedName: add-font-awesome-icons-to-our-buttons
 ---
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be webfonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome è una comoda libreria di icone. Queste icone possono essere font web o grafica vettoriale. Queste icone sono trattate proprio come i caratteri. Puoi specificare la loro dimensione usando i pixel, e assumeranno la dimensione del carattere degli elementi HTML genitori.
 
-You can include Font Awesome in any app by adding the following code to the top of your HTML:
+Puoi includere Font Awesome in qualsiasi app aggiungendo il seguente codice alla parte superiore del tuo HTML:
 
 ```html
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 ```
 
-In this case, we've already added it for you to this page behind the scenes.
+In questo caso, lo abbiamo già aggiunto per te a questa pagina dietro le quinte.
 
-The `i` element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the `i` element to turn it into an icon, for example:
+L'elemento `i` era originariamente utilizzato per rendere corsivi altri elementi, ma ora è comunemente usato per le icone. Puoi aggiungere le classi Font Awesome all'elemento `i` per trasformarlo in un'icona, ad esempio:
 
 ```html
 <i class="fas fa-info-circle"></i>
 ```
 
-Note that the `span` element is also acceptable for use with icons.
+Nota che anche l'elemento `span` è accettabile per l'uso con le icone.
 
 # --instructions--
 
-Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `i` element with the classes `fas` and `fa-thumbs-up`. Make sure to keep the text `Like` next to the icon.
+Usa Font Awesome per aggiungere un'icona `thumbs-up` al tuo pulsante like inserendo un elemento `i` con le classi `fas` e `fa-thumbs-up`. Assicurati di mantenere il testo `Like` accanto all'icona.
 
 # --hints--
 
-You should add an `i` element with the classes `fas` and `fa-thumbs-up`.
+Dovresti aggiungere un elemento `i` con le classi `fas` e `fa-thumbs-up`.
 
 ```js
 assert($('i').is('.fas.fa-thumbs-up') || $('span').is('.fas.fa-thumbs-up'));
 ```
 
-Your `fa-thumbs-up` icon should be located within the Like button.
+L'icona `fa-thumbs-up` dovrebbe essere posizionata all'interno del pulsante Like.
 
 ```js
 assert(
@@ -52,7 +53,7 @@ assert(
 );
 ```
 
-Your `i` element should be nested within your `button` element.
+Il tuo elemento `i` dovrebbe essere annidato all'interno dell'elemento `button`.
 
 ```js
 assert(
@@ -61,7 +62,7 @@ assert(
 );
 ```
 
-Your icon element should have a closing tag.
+Il tuo elemento icon dovrebbe avere un tag di chiusura.
 
 ```js
 assert(code.match(/<\/i>|<\/span>/g));

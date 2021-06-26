@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348ce8acef08815
-title: Use the Bootstrap Grid to Put Elements Side By Side
+title: Usare la griglia di Bootstrap per affiancare gli elementi
 challengeType: 0
 forumTopicId: 18371
 dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
@@ -8,33 +8,33 @@ dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 
 # --description--
 
-Bootstrap uses a responsive 12-column grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
+Bootstrap utilizza una griglia responsiva a 12 colonne, che rende facile mettere gli elementi dentro a delle righe specificando la larghezza relativa di ognuno. La maggior parte delle classi di Bootstrap può essere applicata a un elemento `div`.
 
-Bootstrap has different column width attributes that it uses depending on how wide the user's screen is. For example, phones have narrow screens, and laptops have wider screens.
+Bootstrap ha diversi attributi di larghezza della colonna che usa a seconda dell'ampiezza dello schermo dell'utente. Ad esempio, i telefoni hanno schermi stretti, e i computer portatili hanno schermi più ampi.
 
-Take for example Bootstrap's `col-md-*` class. Here, `md` means medium, and `*` is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
+Prendiamo ad esempio la classe `col-md-*` di Bootstrap. Qui, `md` significa medio, e `*` è un numero che specifica su quante colonne dovrebbe estendersi l'elemento. In questo caso, viene specificata la larghezza della colonna di un elemento su uno schermo di medie dimensioni, come un computer portatile.
 
-In the Cat Photo App that we're building, we'll use `col-xs-*`, where `xs` means extra small (like an extra-small mobile phone screen), and `*` is the number of columns specifying how many columns wide the element should be.
+Nella Cat Photo App che stiamo costruendo, useremo `col-xs-*`, dove `xs` significa extra piccolo (come uno schermo del telefono cellulare extra-piccolo), e `*` è il numero di colonne che specifica su quante colonne dovrebbe estendersi l'elemento.
 
-Put the `Like`, `Info` and `Delete` buttons side-by-side by nesting all three of them within one `<div class="row">` element, then each of them within a `<div class="col-xs-4">` element.
+Affianca i bottoni `Like`, `Info` e `Delete` annidandoli tutti e tre in un elemento `<div class="row">`, poi ognuno di essi all'interno di un elemento `<div class="col-xs-4">`.
 
-The `row` class is applied to a `div`, and the buttons themselves can be nested within it.
+La classe `row` viene applicata a un `div`, e i bottoni stessi possono essere annidati al suo interno.
 
 # --hints--
 
-Your buttons should all be nested within the same `div` element with the class `row`.
+I tuoi bottoni dovrebbero essere tutti annidati all'interno dello stesso elemento `div` di classe `row`.
 
 ```js
 assert($('div.row:has(button)').length > 0);
 ```
 
-Each of your Bootstrap buttons should be nested within its own `div` element with the class `col-xs-4`.
+Ognuno dei tuoi bottoni Bootstrap dovrebbe essere annidato all'interno del suo elemento `div` di classe `col-xs-4`.
 
 ```js
 assert($('div.col-xs-4:has(button)').length > 2);
 ```
 
-Each of your `button` elements should have a closing tag.
+Ognuno dei tuoi elementi `button` dovrebbe avere un tag di chiusura.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-Each of your `div` elements should have a closing tag.
+Ognuno dei tuoi elementi `div` dovrebbe avere un tag di chiusura.
 
 ```js
 assert(
@@ -170,7 +170,7 @@ assert(
       <button class="btn btn-block btn-danger">Delete</button>
     </div>
   </div>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

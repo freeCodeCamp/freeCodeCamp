@@ -1,6 +1,6 @@
 ---
 id: 587d78ac367417b2b2512af7
-title: Use the justify-content Property in the Tweet Embed
+title: Usar a propriedade justify-content no Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
 forumTopicId: 301115
@@ -9,21 +9,21 @@ dashedName: use-the-justify-content-property-in-the-tweet-embed
 
 # --description--
 
-The last challenge showed an example of the `justify-content` property. For the tweet embed, this property can be applied to align the items in the `.profile-name` element.
+O último desafio mostrou um exemplo da propriedade `justify-content`. No tweet, essa propriedade pode ser utilizada para se alinhar os itens dentro do elemento de classe `.profile-name`.
 
 # --instructions--
 
-Add the CSS property `justify-content` to the header's `.profile-name` element and set the value to any of the options from the last challenge.
+No elemento de classe `.profile-name` adicione a propriedade CSS `justify-content` e defina seu valor para qualquer uma das opções do último desafio.
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+O elemento de classe `.follow-btn` deve aparecer na página. Lembre-se de desativar as extensões que bloqueiam anúncios.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `.profile-name` element should have the `justify-content` property set to any of these values: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`, or `space-evenly`.
+O elemento de classe `.profile-name` deve ter a propriedade `justify-content` com alguns desses valores: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`, ou `space-evenly`.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036163
-title: Create a React Component
+title: Creare un componente React
 challengeType: 6
 forumTopicId: 301386
 dashedName: create-a-react-component
@@ -8,7 +8,7 @@ dashedName: create-a-react-component
 
 # --description--
 
-The other way to define a React component is with the ES6 `class` syntax. In the following example, `Kitten` extends `React.Component`:
+L'altro modo per definire un componente React è con la sintassi ES6 `class`. Nell'esempio seguente, `Kitten` estende `React.Component`:
 
 ```jsx
 class Kitten extends React.Component {
@@ -24,21 +24,21 @@ class Kitten extends React.Component {
 }
 ```
 
-This creates an ES6 class `Kitten` which extends the `React.Component` class. So the `Kitten` class now has access to many useful React features, such as local state and lifecycle hooks. Don't worry if you aren't familiar with these terms yet, they will be covered in greater detail in later challenges. Also notice the `Kitten` class has a `constructor` defined within it that calls `super()`. It uses `super()` to call the constructor of the parent class, in this case `React.Component`. The constructor is a special method used during the initialization of objects that are created with the `class` keyword. It is best practice to call a component's `constructor` with `super`, and pass `props` to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as `props`.
+Questo crea una classe ES6 `Kitten` che estende la classe `React.Component`. Così la classe `Kitten` ora ha accesso a molte funzionalità React utili, come lo stato locale e gli agganci del ciclo di vita. Non preoccuparti se non hai ancora familiarità con questi termini, saranno coperti in maggior dettaglio nelle sfide successive. Nota anche che la classe `Kitten` ha un `constructor` definito al suo interno che chiama `super()`. Esso usa `super()` per chiamare il costruttore della classe padre, in questo caso `React.Component`. Il costruttore è un metodo speciale usato durante l'inizializzazione degli oggetti creati con la parola chiave `class`. È buona pratica chiamare il `constructor` di un componente con `super` e passare le `props` ad entrambi. Questo assicura che il componente sia inizializzato correttamente. Per adesso, sappi che è uno standard includere questo codice. Presto vedrai altri usi per il costruttore e le `props`.
 
 # --instructions--
 
-`MyComponent` is defined in the code editor using class syntax. Finish writing the `render` method so it returns a `div` element that contains an `h1` with the text `Hello React!`.
+`MyComponent` è definito nell'editor di codice usando la sintassi di classe. Termina la scrittura del metodo `render` in modo che restituisca un elemento `div` che contiene un `h1` con il testo `Hello React!`.
 
 # --hints--
 
-The React component should return a `div` element.
+Il componente React dovrebbe restituire un elemento `div`.
 
 ```js
 assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
 ```
 
-The returned `div` should render an `h1` header within it.
+Il `div` restituito dovrebbe fare il render di un header `h1` al suo interno.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The `h1` header should contain the string `Hello React!`.
+L'intestazione `h1` dovrebbe contenere la stringa `Hello React!`.
 
 ```js
 assert(

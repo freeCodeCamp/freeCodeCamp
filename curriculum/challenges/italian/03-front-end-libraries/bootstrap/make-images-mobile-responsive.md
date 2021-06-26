@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Make Images Mobile Responsive
+title: Rendi le immagini responsive sui dispositivi mobili
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -8,39 +8,39 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-First, add a new image below the existing one. Set its `src` attribute to `https://bit.ly/fcc-running-cats`.
+Innanzitutto, aggiungi una nuova immagine sotto quella esistente. Imposta l'attributo `src` su `https://bit.ly/fcc-running-cats`.
 
-It would be great if this image could be exactly the width of our phone's screen.
+Sarebbe bello se questa immagine potesse essere larga esattamente come lo schermo del nostro telefono.
 
-Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class to your image. Do this, and the image should perfectly fit the width of your page.
+Fortunatamente, con Bootstrap, tutto quello che dobbiamo fare è aggiungere la classe `img-responsive` alla tua immagine. Fai questo, e l'immagine dovrebbe adattarsi perfettamente alla larghezza della pagina.
 
 # --hints--
 
-You should have a total of two images.
+Dovresti avere un totale di due immagini.
 
 ```js
 assert($('img').length === 2);
 ```
 
-Your new image should be below your old one and have the class `img-responsive`.
+La tua nuova immagine dovrebbe essere sotto la vecchia e avere la classe `img-responsive`.
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Your new image should not have the class `smaller-image`.
+La tua nuova immagine non dovrebbe avere la classe `smaller-image`.
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Your new image should have a `src` of `https://bit.ly/fcc-running-cats`.
+La tua nuova immagine dovrebbe avere un `src` di `https://bit.ly/fcc-running-cats`.
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
 ```
 
-Your new `img` element should have a closing angle bracket.
+Il tuo nuovo elemento `img` dovrebbe avere una parentesi angolare di chiusura.
 
 ```js
 assert(

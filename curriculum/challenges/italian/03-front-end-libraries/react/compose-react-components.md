@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036166
-title: Compose React Components
+title: Creare componenti React
 challengeType: 6
 forumTopicId: 301381
 dashedName: compose-react-components
@@ -8,17 +8,17 @@ dashedName: compose-react-components
 
 # --description--
 
-As the challenges continue to use more complex compositions with React components and JSX, there is one important point to note. Rendering ES6 style class components within other components is no different than rendering the simple components you used in the last few challenges. You can render JSX elements, stateless functional components, and ES6 class components within other components.
+Dato che le sfide continuano a utilizzare composizioni più complesse di componenti React e JSX, c'è un punto importante da osservare. Il rendering di componenti di classe stile ES6 all'interno di altri componenti non è diverso dal render dei componenti semplici che hai usato nelle ultime sfide. All'interno di altri componenti puoi fare il render di elementi JSX, componenti funzionali senza stato, e componenti di classe ES6.
 
 # --instructions--
 
-In the code editor, the `TypesOfFood` component is already rendering a component called `Vegetables`. Also, there is the `Fruits` component from the last challenge.
+Nell'editor di codice, il componente `TypesOfFood` sta già mostrando un componente chiamato `Vegetables`. Inoltre, c'è il componente `Fruits` preso dall'ultima sfida.
 
-Nest two components inside of `Fruits` — first `NonCitrus`, and then `Citrus`. Both of these components are provided for you behind the scenes. Next, nest the `Fruits` class component into the `TypesOfFood` component, below the `h1` header and above `Vegetables`. The result should be a series of nested components, which uses two different component types.
+Annida due componenti all'interno di `Fruits` — prima `NonCitrus`, e poi `Citrus`. Entrambi questi componenti ti sono forniti dietro le quinte. Successivamente, annida il componente di classe `Fruits` nel componente `TypesOfFood`, sotto l'intestazione `h1` e sopra `Vegetables`. Il risultato dovrebbe essere una serie di componenti annidati, che utilizza due tipi di componenti diversi.
 
 # --hints--
 
-The `TypesOfFood` component should return a single `div` element.
+Il componente `TypesOfFood` dovrebbe restituire un singolo elemento `div`.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The `TypesOfFood` component should return the `Fruits` component.
+Il componente `TypesOfFood` dovrebbe restituire il componente `Fruits`.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `Fruits` component should return the `NonCitrus` component and the `Citrus` component.
+Il componente `Fruits` dovrebbe restituire il componente `NonCitrus` e il componente `Citrus`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-The `TypesOfFood` component should return the `Vegetables` component below the `Fruits` component.
+Il componente `TypesOfFood` dovrebbe restituire il componente `Vegetables` sotto il componente `Fruits`.
 
 ```js
 assert(

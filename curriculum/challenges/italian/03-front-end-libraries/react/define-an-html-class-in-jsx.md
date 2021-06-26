@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036160
-title: Define an HTML Class in JSX
+title: Definire una classe HTML in JSX
 challengeType: 6
 forumTopicId: 301393
 dashedName: define-an-html-class-in-jsx
@@ -8,27 +8,27 @@ dashedName: define-an-html-class-in-jsx
 
 # --description--
 
-Now that you're getting comfortable writing JSX, you may be wondering how it differs from HTML.
+Ora che sei a tuo agio con la scrittura in JSX, potresti chiederti come questo differisca dall'HTML.
 
-So far, it may seem that HTML and JSX are exactly the same.
+Finora, può sembrare che HTML e JSX siano esattamente la stessa cosa.
 
-One key difference in JSX is that you can no longer use the word `class` to define HTML classes. This is because `class` is a reserved word in JavaScript. Instead, JSX uses `className`.
+Una differenza chiave in JSX è che non puoi più usare la parola `class` per definire le classi HTML. Questo perché `class` è una parola riservata in JavaScript. JSX utilizza invece `className`.
 
-In fact, the naming convention for all HTML attributes and event references in JSX become camelCase. For example, a click event in JSX is `onClick`, instead of `onclick`. Likewise, `onchange` becomes `onChange`. While this is a subtle difference, it is an important one to keep in mind moving forward.
+Infatti, la convenzione di denominazione per tutti gli attributi HTML e riferimenti a eventi in JSX diventa camelCase. Ad esempio, un evento di click in JSX è `onClick`, invece di `onclick`. Allo stesso modo, `onchange` diventa `onChange`. Anche se questa è una differenza sottile, è importante tenerla a mente andando avanti.
 
 # --instructions--
 
-Apply a class of `myDiv` to the `div` provided in the JSX code.
+Applica una classe `myDiv` al `div` fornito nel codice JSX.
 
 # --hints--
 
-The constant `JSX` should return a `div` element.
+La costante `JSX` dovrebbe restituire un elemento `div`.
 
 ```js
 assert.strictEqual(JSX.type, 'div');
 ```
 
-The `div` should have a class of `myDiv`.
+Il `div` dovrebbe essere di classe `myDiv`.
 
 ```js
 assert.strictEqual(JSX.props.className, 'myDiv');

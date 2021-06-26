@@ -1,6 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bba
-title: Use @each to Map Over Items in a List
+title: Usare @each per iterare sugli elementi in una lista
 challengeType: 0
 forumTopicId: 301461
 dashedName: use-each-to-map-over-items-in-a-list
@@ -8,7 +8,7 @@ dashedName: use-each-to-map-over-items-in-a-list
 
 # --description--
 
-The last challenge showed how the `@for` directive uses a starting and ending value to loop a certain number of times. Sass also offers the `@each` directive which loops over each item in a list or map. On each iteration, the variable gets assigned to the current value from the list or map.
+L'ultima sfida ha mostrato come la direttiva `@for` utilizzi un valore iniziale e finale per ripetere un ciclo per un determinato numero di volte. Sass offre anche la direttiva `@each` che ripete il ciclo per ogni elemento in una lista o mappa. Ad ogni iterazione, la variabile viene assegnata al valore corrente preso dalla lista o dalla mappa.
 
 ```scss
 @each $color in blue, red, green {
@@ -16,7 +16,7 @@ The last challenge showed how the `@for` directive uses a starting and ending va
 }
 ```
 
-A map has slightly different syntax. Here's an example:
+Una mappa ha una sintassi leggermente diversa. Ecco un esempio:
 
 ```scss
 $colors: (color1: blue, color2: red, color3: green);
@@ -26,7 +26,7 @@ $colors: (color1: blue, color2: red, color3: green);
 }
 ```
 
-Note that the `$key` variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have `color1`, `color2`... in it. Both of the above code examples are converted into the following CSS:
+Nota che la variabile `$key` è necessaria per fare riferimento alle chiavi nella mappa. Altrimenti, il CSS compilato avrebbe `color1`, `color2`... al suo interno. Entrambi gli esempi del codice qui sopra sono convertiti nel seguente CSS:
 
 ```scss
 .blue-text {
@@ -44,29 +44,29 @@ Note that the `$key` variable is needed to reference the keys in the map. Otherw
 
 # --instructions--
 
-Write an `@each` directive that goes through a list: `blue, black, red` and assigns each variable to a `.color-bg` class, where the `color` part changes for each item. Each class should set the `background-color` the respective color.
+Scrivi una direttiva `@each` che itera attraverso una lista: `blue, black, red` e assegna ogni variabile a una classe `.color-bg`, dove la parte `color` cambia per ogni elemento. Ogni classe dovrebbe impostare il `background-color` al rispettivo colore.
 
 # --hints--
 
-Your code should use the `@each` directive.
+Il tuo codice dovrebbe utilizzare la direttiva `@each`.
 
 ```js
 assert(code.match(/@each /g));
 ```
 
-Your `.blue-bg` class should have a `background-color` of blue.
+La tua classe `.blue-bg` dovrebbe avere un `background-color` blu.
 
 ```js
 assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)');
 ```
 
-Your `.black-bg` class should have a `background-color` of black.
+La classe `.black-bg` dovrebbe avere un `background-color` nero.
 
 ```js
 assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
 ```
 
-Your `.red-bg` class should have a `background-color` of red.
+La classe `.red-bg` dovrebbe avere un `background-color` rosso.
 
 ```js
 assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');

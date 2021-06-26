@@ -1,26 +1,27 @@
 ---
 id: bad87fee1348bd9aedc08826
-title: Target Elements by Class Using jQuery
+title: Individuare elementi per classe usando jQuery
 challengeType: 6
 forumTopicId: 18316
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-elements-by-class-using-jquery
 ---
 
 # --description--
 
-You see how we made all of your `button` elements bounce? We selected them with `$("button")`, then we added some CSS classes to them with `.addClass("animated bounce");`.
+Vedi come abbiamo fatto rimbalzare tutti gli elementi del tuo `button`? Li abbiamo selezionati con `$("button")`, poi abbiamo aggiunto alcune classi CSS con `.addClass("animated bounce");`.
 
-You just used jQuery's `.addClass()` function, which allows you to add classes to elements.
+Hai appena usato la funzione `.addClass()` di jQuery, che ti permette di aggiungere classi agli elementi.
 
-First, let's target your `div` elements with the class `well` by using the `$(".well")` selector.
+Innanzitutto, individuiamo bene gli elementi `div` con la classe `well` utilizzando il selettore `$(".well")`.
 
-Note that, just like with CSS declarations, you type a `.` before the class's name.
+Nota che, proprio come con le dichiarazioni CSS, devi digitare un `.` prima del nome della classe.
 
-Then use jQuery's `.addClass()` function to add the classes `animated` and `shake`.
+Quindi usa la funzione `.addClass()` di jQuery per aggiungere le classi `animated` e `shake`.
 
-For example, you could make all the elements with the class `text-primary` shake by adding the following to your `document ready function`:
+Ad esempio, potresti scuotere tutti gli elementi di classe `text-primary` aggiungendo quanto segue alla tua `document ready function`:
 
 ```js
 $(".text-primary").addClass("animated shake");
@@ -28,13 +29,13 @@ $(".text-primary").addClass("animated shake");
 
 # --hints--
 
-You should use the jQuery `addClass()` function to give the classes `animated` and `shake` to all your elements with the class `well`.
+Dovresti usare la funzione jQuery `addClass()` per dare le classi `animated` e `shake` a tutti i tuoi elementi di classe `well`.
 
 ```js
 assert($('.well').hasClass('animated') && $('.well').hasClass('shake'));
 ```
 
-You should only use jQuery to add these classes to the element.
+Dovresti usare solo jQuery per aggiungere queste classi all'elemento.
 
 ```js
 assert(!code.match(/class\.\*animated/g));

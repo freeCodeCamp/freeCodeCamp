@@ -1,10 +1,11 @@
 ---
 id: bad87fee1348bd9aed908845
-title: Style Text Inputs as Form Controls
+title: Stilizzare gli input di testo come controlli del modulo
 challengeType: 0
 forumTopicId: 18312
 required:
-  - link: >-
+  - 
+    link: >-
       https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css
     raw: true
 dashedName: style-text-inputs-as-form-controls
@@ -12,33 +13,33 @@ dashedName: style-text-inputs-as-form-controls
 
 # --description--
 
-You can add the `fa-paper-plane` Font Awesome icon by adding `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
+Puoi inserire l'icona `fa-paper-plane` di Font Awesome aggiungendo `<i class="fa fa-paper-plane"></i>` all'interno del tuo `button` di invio.
 
-Give your form's text input field a class of `form-control`. Give your form's submit button the classes `btn btn-primary`. Also give this button the Font Awesome icon of `fa-paper-plane`.
+Dai al campo di input testo del tuo modulo una classe `form-control`. Dai al pulsante di invio del tuo modulo le classi `btn btn-primary`. Dai a questo bottone anche l'icona `fa-paper-plane` di Font Awesome.
 
-All textual `<input>`, `<textarea>`, and `<select>` elements with the class `.form-control` have a width of 100%.
+Tutti gli elementi testuali `<input>`, `<textarea>`, e `<select>` di classe `.form-control` hanno una larghezza del 100%.
 
 # --hints--
 
-The submit button in your form should have the classes `btn btn-primary`.
+Il bottone di invio nel tuo modulo dovrebbe avere le classi `btn btn-primary`.
 
 ```js
 assert($('button[type="submit"]').hasClass('btn btn-primary'));
 ```
 
-You should add a `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
+Dovresti aggiungere un elemento `<i class="fa fa-paper-plane"></i>` all'interno del tuo `button` di invio.
 
 ```js
 assert($('button[type="submit"]:has(i.fa.fa-paper-plane)').length > 0);
 ```
 
-The text `input` in your form should have the class `form-control`.
+L'`input` di testo nel tuo modulo dovrebbe avere la classe `form-control`.
 
 ```js
 assert($('input[type="text"]').hasClass('form-control'));
 ```
 
-Each of your `i` elements should have a closing tag.
+Ognuno dei tuoi elementi `i` dovrebbe avere un tag di chiusura.
 
 ```js
 assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);

@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb5
-title: Nest CSS with Sass
+title: Nidifica il CSS con Sass
 challengeType: 0
 forumTopicId: 301457
 dashedName: nest-css-with-sass
@@ -8,9 +8,9 @@ dashedName: nest-css-with-sass
 
 # --description--
 
-Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+Sass permette di annidare le regole CSS, e questo è utile per organizzare un foglio di stile.
 
-Normally, each element is targeted on a different line to style it, like so:
+Normalmente, ogni elemento è l'oggetto di una linea diversa che lo stilizza, in questo modo:
 
 ```scss
 nav {
@@ -26,7 +26,7 @@ nav ul li {
 }
 ```
 
-For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
+Per un grande progetto però, il file CSS avrà molte linee e regole. Questo è dove la nidificazione può aiutare a organizzare il codice inserendo le regole di stile figlie all'interno dei rispettivi elementi genitori:
 
 ```scss
 nav {
@@ -45,11 +45,11 @@ nav {
 
 # --instructions--
 
-Use the nesting technique shown above to re-organize the CSS rules for both children of `.blog-post` element. For testing purposes, the `h1` should come before the `p` element.
+Utilizzare la tecnica di nidificazione mostrata sopra per riorganizzare le regole CSS per entrambi i figli dell'elemento `.blog-post`. Ai fini dei test, l'elemento `h1` dovrebbe venire prima dell'elemento `p`.
 
 # --hints--
 
-Your code should re-organize the CSS rules so the `h1` and `p` are nested in the `.blog-post` parent element.
+Il tuo codice dovrebbe riorganizzare le regole CSS in modo che gli `h1` e i `p` siano annidati nell'elemento padre `.blog-post`.
 
 ```js
 assert(

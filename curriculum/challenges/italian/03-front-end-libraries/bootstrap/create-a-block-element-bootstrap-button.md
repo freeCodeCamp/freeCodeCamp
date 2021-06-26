@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08812
-title: Create a Block Element Bootstrap Button
+title: Creare un pulsante Bootstrap di tipo blocco
 challengeType: 0
 forumTopicId: 16810
 dashedName: create-a-block-element-bootstrap-button
@@ -8,45 +8,45 @@ dashedName: create-a-block-element-bootstrap-button
 
 # --description--
 
-Normally, your `button` elements with the `btn` and `btn-default` classes are only as wide as the text that they contain. For example:
+Normalmente, i tuoi elementi `button` con le classi `btn` e `btn-default` sono larghi solo quanto il testo che contengono. Per esempio:
 
 ```html
 <button class="btn btn-default">Submit</button>
 ```
 
-This button would only be as wide as the word `Submit`.
+Questo pulsante sarà ampio solo quanto la parola `Submit`.
 
 <button class='btn btn-default'>Submit</button>
 
-By making them block elements with the additional class of `btn-block`, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
+Rendendolo elemento di blocco con la classe aggiuntiva `btn-block`, il tuo pulsante si estenderà per riempire l'intero spazio orizzontale della tua pagina e tutti gli elementi che seguiranno scorreranno su una "nuova linea" sotto il blocco.
 
 ```html
 <button class="btn btn-default btn-block">Submit</button>
 ```
 
-This button would take up 100% of the available width.
+Questo pulsante prenderà il 100% della larghezza disponibile.
 
 <button class='btn btn-default btn-block'>Submit</button>
 
-Note that these buttons still need the `btn` class.
+Nota che questi bottoni hanno ancora bisogno della classe `btn`.
 
-Add Bootstrap's `btn-block` class to your Bootstrap button.
+Aggiungi la classe `btn-block` di Bootstrap al tuo pulsante.
 
 # --hints--
 
-Your button should still have the `btn` and `btn-default` classes.
+Il tuo pulsante dovrebbe avere ancora le classi `btn` e `btn-default`.
 
 ```js
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-Your button should have the class `btn-block`.
+Il tuo pulsante dovrebbe avere la classe `btn-block`.
 
 ```js
 assert($('button').hasClass('btn-block'));
 ```
 
-All of your `button` elements should have closing tags.
+Tutti i tuoi elementi `button` dovrebbero avere dei tag di chiusura.
 
 ```js
 assert(

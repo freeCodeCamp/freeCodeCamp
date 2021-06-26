@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908853
-title: Add id Attributes to Bootstrap Elements
+title: Aggiungere attributi id agli elementi di Bootstrap
 challengeType: 0
 forumTopicId: 16639
 dashedName: add-id-attributes-to-bootstrap-elements
@@ -8,23 +8,23 @@ dashedName: add-id-attributes-to-bootstrap-elements
 
 # --description--
 
-Recall that in addition to class attributes, you can give each of your elements an `id` attribute.
+Ricorda che oltre agli attributi di classe, puoi dare a ciascuno dei tuoi elementi un attributo `id`.
 
-Each id must be unique to a specific element and used only once per page.
+Ogni id deve essere unico per uno specifico elemento e dev'essere usato una sola volta per pagina.
 
-Let's give a unique id to each of our `div` elements of class `well`.
+Diamo un id unico a ciascuno dei nostri elementi `div` di classe `well`.
 
-Remember that you can give an element an id like this:
+Ricorda che puoi dare ad un elemento un id come questo:
 
 ```html
 <div class="well" id="center-well">
 ```
 
-Give the well on the left the id of `left-well`. Give the well on the right the id of `right-well`.
+Dai all'elemento well sulla sinistra l'id di `left-well`. Dai all'elemento well sulla destra l'id di `right-well`.
 
 # --hints--
 
-Your left `well` should have the id of `left-well`.
+Il tuo `well` di sinistra dovrebbe avere l'id di `left-well`.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-Your right `well` should have the id of `right-well`.
+Il tuo `well` di destra dovrebbe avere l'id di `right-well`.
 
 ```js
 assert(
