@@ -14,7 +14,7 @@ interface ButtonProps {
   onChange: (value: string) => void;
   onLabel: string;
   value: boolean;
-  condition: boolean;
+  condition?: boolean;
 }
 
 type ActiveClass = Pick<ButtonProps, 'condition'>;

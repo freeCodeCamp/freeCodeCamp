@@ -55,4 +55,3 @@ const loggedInProps = {
 };
 const loggedOutProps = { ...loggedInProps };
 loggedOutProps.isSignedIn = false;
-/* eslint-disable */

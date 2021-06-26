@@ -12,7 +12,7 @@ const Suggestion = ({
   hit,
   handleMouseEnter,
   handleMouseLeave
-}: suggestionPropTypes) => {
+}: suggestionPropTypes): JSX.Element => {
   const dropdownFooter = hit.objectID.includes('footer-');
   return (
     <a

@@ -5,7 +5,6 @@ import { create } from 'react-test-renderer';
 import Link from './link';
 
 describe('<Link />', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const externalLink = create(<Link external={true} to='/home' />).toJSON();
   const gatsbyLink = create(<Link to='/home' />).toJSON();
 

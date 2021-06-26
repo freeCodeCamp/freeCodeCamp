@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-sort-props */
 import React, { useState } from 'react';
 import '../components/layouts/project-links.css';
 import { maybeUrlRE } from '../utils';
@@ -44,7 +43,6 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
     const {
       user: { completedChallenges }
     } = props;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -66,8 +64,8 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
     if (challengeFiles) {
       return (
         <button
-          onClick={onClickHandler}
           className='project-link-button-override'
+          onClick={onClickHandler}
         >
           {t('certification.project.solution')}
         </button>
@@ -127,8 +125,8 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
         return (
           <li key={ind}>
             <a
-              href={certLocation}
               className='btn-invert project-link'
+              href={certLocation}
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -143,8 +141,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       // @ts-expect-error Error expected until projectMap is typed
       ({ link, title, id }) => (
         <li key={id}>
-          {/* @ts-expect-error Link needs to be typed */}
-          <Link to={link} className='project-link'>
+          <Link className='project-link' to={link}>
             {t(`certification.project.title.${title as string}`, title)}
           </Link>
           : {getProjectSolution(id, title)}
@@ -187,16 +184,16 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
         If you suspect that any of these projects violate the{' '}
         <a
           href='https://www.freecodecamp.org/news/academic-honesty-policy/'
-          target='_blank'
           rel='noreferrer'
+          target='_blank'
         >
           academic honesty policy
         </a>
         , please{' '}
         <a
           href={`/user/${username}/report-user`}
-          target='_blank'
           rel='noreferrer'
+          target='_blank'
         >
           report this to our team
         </a>

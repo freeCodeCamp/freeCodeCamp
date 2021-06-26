@@ -1,3 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+/**
+ * TODO:
+ * Passing incomplete objects here is causing TS to be angry.
+ * We should either make the expected properties optional, or reevaluate
+ * these tests.
+ */
 import toLearnPath from '../utils/to-learn-path';
 import { withPrefix } from 'gatsby';
 
