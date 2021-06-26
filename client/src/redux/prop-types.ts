@@ -309,16 +309,16 @@ export type CompletedChallenge = {
 // TODO: renames: files => challengeFiles; key => fileKey; #42489
 export type ChallengeFileType = {
   [T in FileKeyTypes]:
-  | ({
-    editableContents: string;
-    editableRegionBoundaries: number[];
-    error?: string | null;
-    history: string[];
-    path: string;
-    seed: string;
-    seedEditableRegionBoundaries?: number[];
-  } & FileKeyChallengeType)
-  | null;
+    | ({
+        editableContents: string;
+        editableRegionBoundaries: number[];
+        error?: string | null;
+        history: string[];
+        path: string;
+        seed: string;
+        seedEditableRegionBoundaries?: number[];
+      } & FileKeyChallengeType)
+    | null;
 };
 
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
@@ -326,11 +326,11 @@ export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
 
 export type ChallengeFilesType =
   | {
-    indexcss: ChallengeFileType;
-    indexhtml: ChallengeFileType;
-    indexjs: ChallengeFileType;
-    indexjsx: ChallengeFileType;
-  }
+      indexcss: ChallengeFileType;
+      indexhtml: ChallengeFileType;
+      indexjs: ChallengeFileType;
+      indexjsx: ChallengeFileType;
+    }
   | Record<string, never>;
 
 export type ChallengeMetaType = {
