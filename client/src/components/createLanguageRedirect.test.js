@@ -1,4 +1,4 @@
-import createLanguageRedirect from './createLanguageRedirect';
+import createLanguageRedirect from './create-language-redirect';
 
 describe('createLanguageRedirect for clientLocale === english', () => {
   const envVars = {
