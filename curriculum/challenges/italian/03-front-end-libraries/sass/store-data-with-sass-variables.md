@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb4
-title: Store Data with Sass Variables
+title: Memorizzare dati con le variabili Sass
 challengeType: 0
 forumTopicId: 301460
 dashedName: store-data-with-sass-variables
@@ -8,18 +8,18 @@ dashedName: store-data-with-sass-variables
 
 # --description--
 
-One feature of Sass that's different than CSS is it uses variables. They are declared and set to store data, similar to JavaScript.
+Una caratteristica di Sass che è diversa da CSS è che utilizza le variabili. Esse sono dichiarate e impostate per memorizzare i dati, come in JavaScript.
 
-In JavaScript, variables are defined using the `let` and `const` keywords. In Sass, variables start with a `$` followed by the variable name.
+In JavaScript, le variabili sono definite utilizzando le parole chiave `let` e `const`. In Sass, le variabili iniziano con un `$` seguito dal nome della variabile.
 
-Here are a couple examples:
+Ecco alcuni esempi:
 
 ```scss
 $main-fonts: Arial, sans-serif;
 $headings-color: green;
 ```
 
-And to use the variables:
+E per usare le variabili:
 
 ```scss
 h1 {
@@ -28,33 +28,33 @@ h1 {
 }
 ```
 
-One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.
+Un esempio in cui le variabili sono utili è quando un certo numero di elementi deve avere lo stesso colore. Se quel colore viene cambiato, l'unico punto da modificare nel codice è il valore della variabile.
 
 # --instructions--
 
-Create a variable `$text-color` and set it to `red`. Then change the value of the `color` property for the `.blog-post` and `h2` to the `$text-color` variable.
+Crea una variabile `$text-color` e impostala su `red`. Quindi cambiare il valore della proprietà `color` per il `.blog-post` e per `h2` impostandoli alla variabile `$text-color`.
 
 # --hints--
 
-Your code should have a Sass variable declared for `$text-color` with a value of `red`.
+Il tuo codice dovrebbe avere una variabile Sass dichiarata per `$text-color` con un valore di `red`.
 
 ```js
 assert(code.match(/\$text-color\s*:\s*?red\s*;/g));
 ```
 
-Your code should use the `$text-color` variable to change the `color` for the `.blog-post` and `h2` items.
+Il tuo codice dovrebbe utilizzare la variabile `$text-color` per cambiare il `color` per gli elementi `.blog-post` e `h2`.
 
 ```js
 assert(code.match(/color\s*:\s*\$text-color\s*;?/g));
 ```
 
-Your `.blog-post` element should have a `color` of red.
+Il tuo elemento `.blog-post` dovrebbe avere un `color` rosso.
 
 ```js
 assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
 ```
 
-Your `h2` elements should have a `color` of red.
+I tuoi elementi `h2` dovrebbero avere un `color` rosso.
 
 ```js
 assert($('h2').css('color') == 'rgb(255, 0, 0)');

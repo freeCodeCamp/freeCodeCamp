@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08845
-title: Use a span to Target Inline Elements
+title: Usare un intervallo per selezionare gli elementi in linea
 challengeType: 0
 forumTopicId: 18370
 dashedName: use-a-span-to-target-inline-elements
@@ -8,19 +8,19 @@ dashedName: use-a-span-to-target-inline-elements
 
 # --description--
 
-You can use spans to create inline elements. Remember when we used the `btn-block` class to make the button fill the entire row?
+È possibile utilizzare gli intervalli (span) per creare degli elementi in linea. Ricordi quando abbiamo usato la classe `btn-block` per fare in modo che il bottone riempisse l'intera riga?
 
-<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>normal button</button>
+<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>bottone normale</button>
 
-<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>btn-block button</button>
+<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>bottone btn-block</button>
 
-That illustrates the difference between an "inline" element and a "block" element.
+Questo mostra la differenza tra un elemento "inline" e un elemento "block".
 
-By using the inline `span` element, you can put several elements on the same line, and even style different parts of the same line differently.
+Utilizzando l'elemento inline `span`, puoi inserire diversi elementi sulla stessa linea, e anche stilizzare diverse parti della stessa linea in modo diverso.
 
-Using a `span` element, nest the word `love` inside the `p` element that currently has the text `Things cats love`. Then give the `span` the class `text-danger` to make the text red.
+Usando un elemento `span`, annida la parola `love` all'interno dell'elemento `p` che al momento ha il testo `Things cats love`. Quindi dai allo `span` la classe `text-danger` per rendere il testo rosso.
 
-Here's how you would do this for the `p` element that has the text `Top 3 things cats hate`:
+Ecco come faresti questo per l'elemento `p` che ha il testo `Top 3 things cats hate`:
 
 ```html
 <p>Top 3 things cats <span class="text-danger">hate:</span></p>
@@ -28,13 +28,13 @@ Here's how you would do this for the `p` element that has the text `Top 3 things
 
 # --hints--
 
-Your `span` element should be inside your `p` element.
+Il tuo elemento `span` dovrebbe essere all'interno dell'elemento `p`.
 
 ```js
 assert($('p span') && $('p span').length > 0);
 ```
 
-Your `span` element should have just the text `love`.
+Il tuo elemento `span` dovrebbe avere solo il testo `love`.
 
 ```js
 assert(
@@ -46,13 +46,13 @@ assert(
 );
 ```
 
-Your `span` element should have class `text-danger`.
+Il tuo elemento `span` dovrebbe essere di classe `text-danger`.
 
 ```js
 assert($('span').hasClass('text-danger'));
 ```
 
-Your `span` element should have a closing tag.
+Il tuo elemento `span` dovrebbe avere un tag di chiusura.
 
 ```js
 assert(

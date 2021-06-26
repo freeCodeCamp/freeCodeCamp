@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed508826
-title: Clone an Element Using jQuery
+title: Clonare un elemento usando jQuery
 challengeType: 6
 forumTopicId: 16780
 dashedName: clone-an-element-using-jquery
@@ -8,35 +8,35 @@ dashedName: clone-an-element-using-jquery
 
 # --description--
 
-In addition to moving elements, you can also copy them from one place to another.
+Oltre a spostare gli elementi, è anche possibile copiarli da una posizione all'altra.
 
-jQuery has a function called `clone()` that makes a copy of an element.
+jQuery ha una funzione chiamata `clone()` che fa la copia di un elemento.
 
-For example, if we wanted to copy `target2` from our `left-well` to our `right-well`, we would use:
+Ad esempio, se volessimo copiare `target2` dal nostro `left-well` al nostro `right-well` potremmo utilizzare:
 
 ```js
 $("#target2").clone().appendTo("#right-well");
 ```
 
-Did you notice this involves sticking two jQuery functions together? This is called <dfn>function chaining</dfn> and it's a convenient way to get things done with jQuery.
+Hai notato che abbiamo attaccato insieme due funzioni jQuery? Questo si chiama <dfn>concatenazione di funzioni</dfn> ed è un modo conveniente per fare le cose con jQuery.
 
-Clone your `target5` element and append it to your `left-well`.
+Clona il tuo elemento `target5` e aggiungilo al tuo `left-well`.
 
 # --hints--
 
-Your `target5` element should be inside your `right-well`.
+Il tuo elemento `target5` dovrebbe essere all'interno del `right-well`.
 
 ```js
 assert($('#right-well').children('#target5').length > 0);
 ```
 
-A copy of your `target5` element should also be inside your `left-well`.
+Una copia del tuo elemento `target5` dovrebbe essere all'interno del `left-well`.
 
 ```js
 assert($('#left-well').children('#target5').length > 0);
 ```
 
-You should only use jQuery to move these elements.
+Dovresti usare solo jQuery per spostare questi elementi.
 
 ```js
 assert(!code.match(/class.*animated/g));

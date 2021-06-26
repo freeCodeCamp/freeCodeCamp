@@ -1,6 +1,6 @@
 ---
 id: 5a94fe4469fb03452672e460
-title: Limit Item Size Using the minmax Function
+title: Limitar o tamanho do item usando a função minmax
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cD97RTv'
 forumTopicId: 301131
@@ -9,21 +9,21 @@ dashedName: limit-item-size-using-the-minmax-function
 
 # --description--
 
-There's another built-in function to use with `grid-template-columns` and `grid-template-rows` called `minmax`. It's used to limit the size of items when the grid container changes size. To do this you need to specify the acceptable size range for your item. Here is an example:
+Existe uma outra função que pode ser usada com as propriedades `grid-template-columns` e `grid-template-rows` chamada `minmax`. Ela é usada para limitar o tamanho dos grid items quando o grid container muda de tamanho. Para fazer isso, você precisa especificar um limite de tamanho aceitável para o seu grid item. Um exemplo:
 
 ```css
 grid-template-columns: 100px minmax(50px, 200px);
 ```
 
-In the code above, `grid-template-columns` is set to create two columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.
+No código acima, `grid-template-columns` é definido para criar duas colunas; a primeira tem 100px de largura e a segunda tem a largura mínima de 50px e a largura máxima de 200px.
 
 # --instructions--
 
-Using the `minmax` function, replace the `1fr` in the `repeat` function with a column size that has the minimum width of `90px` and the maximum width of `1fr`, and resize the preview panel to see the effect.
+Usando a função `minmax`, substitua `1fr` na função `repeat` por um tamanho de coluna que tenha a largura mínima de `90px` e a largura máxima de `1fr`, e redimensione a janela do navegador para ver o efeito.
 
 # --hints--
 
-`container` class should have a `grid-template-columns` property that is set to repeat 3 columns with the minimum width of `90px` and maximum width of `1fr`.
+O elemento de classe `container` deve ter a propriedade `grid-template-columns` configurada para repetir 3 colunas com largura mínima de `90px` e largura máxima de `1fr`.
 
 ```js
 assert(

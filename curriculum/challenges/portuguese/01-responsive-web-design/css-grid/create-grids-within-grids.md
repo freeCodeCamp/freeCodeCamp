@@ -1,6 +1,6 @@
 ---
 id: 5a94fe8569fb03452672e464
-title: Create Grids within Grids
+title: Criar grids dentro de grids
 challengeType: 0
 forumTopicId: 301128
 dashedName: create-grids-within-grids
@@ -8,17 +8,17 @@ dashedName: create-grids-within-grids
 
 # --description--
 
-Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you have a grid within a grid.
+Transformar um elemento em um grid afeta apenas o comportamento de seus elementos filhos diretos. Portanto, ao transformar um elemento filho em um grid, você tem um grid dentro de um grid.
 
-For example, by setting the `display` and `grid-template-columns` properties of the element with the `item3` class, you create a grid within your grid.
+Por exemplo, ao definir as propriedades `display` e `grid-template-columns` do elemento com a classe `item3`, você cria um grid dentro de um grid.
 
 # --instructions--
 
-Turn the element with the `item3` class into a grid with two columns with a width of `auto` and `1fr` using `display` and `grid-template-columns`.
+Transforme o elemento com a classe `item3` em um grid de duas colunas com uma largura de `auto` e `1fr` usando as propriedades `display` e `grid-template-columns`.
 
 # --hints--
 
-`item3` class should have a `grid-template-columns` property with `auto` and `1fr` as values.
+O elemento de classe `item3` deve ter a propriedade `grid-template-columns` com os valores de `auto` e `1fr`.
 
 ```js
 assert(
@@ -28,7 +28,7 @@ assert(
 );
 ```
 
-`item3` class should have a `display` property with the value of `grid`.
+O elemento de classe `item3` deve ter a propriedade `display` com o valor de `grid`.
 
 ```js
 assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
