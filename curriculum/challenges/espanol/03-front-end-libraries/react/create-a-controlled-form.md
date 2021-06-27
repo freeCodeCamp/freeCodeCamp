@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036179
-title: Create a Controlled Form
+title: Crea un formulario controlado
 challengeType: 6
 forumTopicId: 301384
 dashedName: create-a-controlled-form
@@ -8,21 +8,21 @@ dashedName: create-a-controlled-form
 
 # --description--
 
-The last challenge showed that React can control the internal state for certain elements like `input` and `textarea`, which makes them controlled components. This applies to other form elements as well, including the regular HTML `form` element.
+El último desafío mostró que React puede controlar el estado interno de ciertos elementos como `input` y `textarea`, lo que los hace componentes controlados. Esto también se aplica a otros elementos del formulario, incluyendo el elemento regular HTML `form`.
 
 # --instructions--
 
-The `MyForm` component is set up with an empty `form` with a submit handler. The submit handler will be called when the form is submitted.
+El componente `MyForm` está configurado con un `form` vacío, con un manejador de envío. El manejador de envío será llamado cuando se envíe el formulario.
 
-We've added a button which submits the form. You can see it has the `type` set to `submit` indicating it is the button controlling the form. Add the `input` element in the `form` and set its `value` and `onChange()` attributes like the last challenge. You should then complete the `handleSubmit` method so that it sets the component state property `submit` to the current input value in the local `state`.
+Hemos añadido un botón que envía el formulario. Puedes ver que tiene el `type` establecido en `submit` indicando que es el botón que controla el formulario. Añade el elemento `input` en el formulario `form` y establece sus atributos `value` y `onChange()` como el último desafío. A continuación, debes completar el método `handleSubmit` para que establezca la propiedad de estado del componente `submit` al valor de entrada actual en el `state` local.
 
-**Note:** You also must call `event.preventDefault()` in the submit handler, to prevent the default form submit behavior which will refresh the web page.
+**Nota:** También debes llamar a `event.preventDefault()` en el controlador de envío, para evitar el comportamiento predeterminado de envío de formulario que actualizará la página web. Para la comodidad de los campistas, el comportamiento predeterminado se ha desactivado aquí para evitar que las actualizaciones restablezcan el código de desafío.
 
-Finally, create an `h1` tag after the `form` which renders the `submit` value from the component's `state`. You can then type in the form and click the button (or press enter), and you should see your input rendered to the page.
+Por último, crea una etiqueta `h1` después del `form` que renderiza el valor de `submit` del `state` del componente. A continuación, puedes escribir en el formulario y hacer clic en el botón (o pulsar intro), y deberías ver tu entrada renderizada en la página.
 
 # --hints--
 
-`MyForm` should return a `div` element which contains a `form` and an `h1` tag. The form should include an `input` and a `button`.
+`MyForm` debe retornar un elemento `div` que contiene un `form` y una etiqueta `h1`. El formulario debe incluir un `input` y un `button`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-The state of `MyForm` should initialize with `input` and `submit` properties, both set to empty strings.
+El estado de `MyForm` debe inicializar con propiedades `input` y `submit`, ambos establecidos a cadenas vacías.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-Typing in the `input` element should update the `input` property of the component's state.
+Escribir en el elemento `input` debe actualizar la propiedad `input` del estado del componente.
 
 ```js
 (() => {
@@ -75,7 +75,7 @@ Typing in the `input` element should update the `input` property of the componen
 })();
 ```
 
-Submitting the form should run `handleSubmit` which should set the `submit` property in state equal to the current input.
+El envío del formulario debe ejecutar `handleSubmit`, el cual debe establecer la propiedad `submit` en estado igual a la entrada actual.
 
 ```js
 (() => {
@@ -98,7 +98,26 @@ Submitting the form should run `handleSubmit` which should set the `submit` prop
 })();
 ```
 
-The `h1` header should render the value of the `submit` field from the component's state.
+`handleSubmit` debe llamar a `event.preventDefault`
+
+```js
+const handleSubmit = MyForm.prototype.handleSubmit.toString();
+const allMatches = handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g) ?? [];
+const blockCommented = handleSubmit.match(
+  /\/\*.*?\bevent\.preventDefault\(\s*?\).*?\*\//gs
+);
+const lineCommented = handleSubmit.match(
+  /\/\/.*?\bevent\.preventDefault\(\s*?\)/g
+);
+const commentedMatches = [...(blockCommented ?? []), ...(lineCommented ?? [])];
+
+assert(
+  // At least one event.preventDefault() call exists and is not commented out
+  allMatches.length > commentedMatches.length
+);
+```
+
+El encabezado `h1` debe renderizar el valor del campo `submit` del estado del componente.
 
 ```js
 (() => {

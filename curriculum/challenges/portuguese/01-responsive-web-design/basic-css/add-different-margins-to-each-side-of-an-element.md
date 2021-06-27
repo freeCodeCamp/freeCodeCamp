@@ -1,6 +1,6 @@
 ---
 id: bad87fee1248bd9aedf08824
-title: Add Different Margins to Each Side of an Element
+title: Adicionar diferentes margens a cada lado de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4RWh4'
 forumTopicId: 16633
@@ -9,35 +9,35 @@ dashedName: add-different-margins-to-each-side-of-an-element
 
 # --description--
 
-Sometimes you will want to customize an element so that it has a different `margin` on each of its sides.
+Às vezes, você pode querer personalizar um elemento para que ele tenha a propriedade `margin` diferente em cada um de seus lados.
 
-CSS allows you to control the `margin` of all four individual sides of an element with the `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` properties.
+O CSS permite que você controle a propriedade `margin` de todos os quatro lados de um elemento com as seguintes propriedades: `margin-top`, `margin-right`, `margin-left` e `margin-bottom`.
 
 # --instructions--
 
-Give the blue box a `margin` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+No elemento de classe "blue-box", adicione a propriedade `margin` com um valor de `40px` em cima e no lado esquerdo. E apenas `20px` em baixo e no lado direito.
 
 # --hints--
 
-Your `blue-box` class should give the top of elements `40px` of `margin`.
+A classe `blue-box` deve criar uma margem (`margin`) de `40px` acima do elemento.
 
 ```js
 assert($('.blue-box').css('margin-top') === '40px');
 ```
 
-Your `blue-box` class should give the right of elements `20px` of `margin`.
+A classe `blue-box` deve criar uma margem (`margin`) de `20px` à direita do elemento.
 
 ```js
 assert($('.blue-box').css('margin-right') === '20px');
 ```
 
-Your `blue-box` class should give the bottom of elements `20px` of `margin`.
+A classe `blue-box` deve criar uma margem (`margin`) de `20px` abaixo do elemento.
 
 ```js
 assert($('.blue-box').css('margin-bottom') === '20px');
 ```
 
-Your `blue-box` class should give the left of elements `40px` of `margin`.
+A classe `blue-box` deve criar uma margem (`margin` de `40px` à esquerda do elemento.
 
 ```js
 assert($('.blue-box').css('margin-left') === '40px');

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616c
-title: Override Default Props
+title: Sovrascrivere le proprietà predefinite
 challengeType: 6
 forumTopicId: 301399
 dashedName: override-default-props
@@ -8,17 +8,17 @@ dashedName: override-default-props
 
 # --description--
 
-The ability to set default props is a useful feature in React. The way to override the default props is to explicitly set the prop values for a component.
+La possibilità di impostare delle proprietà predefinite è una caratteristica utile in React. Per sovrascrivere gli elementi predefiniti si devono impostare esplicitamente i valori delle proprietà per un componente.
 
 # --instructions--
 
-The `ShoppingCart` component now renders a child component `Items`. This `Items` component has a default prop `quantity` set to the integer `0`. Override the default prop by passing in a value of `10` for `quantity`.
+Il componente `ShoppingCart` ora presenta un componente figlio `Items`. Questo componente `Items` ha una proprietà di default `quantity` impostata all'intero `0`. Sovrascrivi la proprietà predefinita passando un valore di `10` per `quantity`.
 
-**Note:** Remember that the syntax to add a prop to a component looks similar to how you add HTML attributes. However, since the value for `quantity` is an integer, it won't go in quotes but it should be wrapped in curly braces. For example, `{100}`. This syntax tells JSX to interpret the value within the braces directly as JavaScript.
+**Nota:** Ricorda che la sintassi per aggiungere una proprietà a un componente è simile a quella degli attributi HTML. Tuttavia, poiché il valore per la `quantity` è un numero intero, non andrà tra virgolette ma dovrebbe essere racchiusa tra parentesi graffe. Ad esempio, `{100}`. Questa sintassi dice a JSX di interpretare il valore all'interno delle parentesi graffe direttamente come JavaScript.
 
 # --hints--
 
-The component `ShoppingCart` should render.
+Il componente `ShoppingCart` dovrebbe effettuare il render.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The component `Items` should render.
+Il componente `Items` dovrebbe effettuare il render.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `Items` component should have a prop of `{ quantity: 10 }` passed from the `ShoppingCart` component.
+Il componente `Items` dovrebbe avere una proprietà di `{ quantity: 10 }` passata dal componente `ShoppingCart`.
 
 ```js
 (getUserInput) =>
