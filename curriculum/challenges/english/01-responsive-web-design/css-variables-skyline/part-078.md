@@ -25,7 +25,7 @@ Add a `repeating-linear-gradient` to `.fb1c` below the one that's there; use you
 You should not alter the first `repeating-linear-gradient`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyle(".fb1c")?.getPropVal('background', true), "repeating-linear-gradient(90deg,var(--building-color4),var(--building-color)10%,transparent10%,transparent15%)");
+assert.match(new __helpers.CSSHelp(document).getStyle(".fb1c")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color4\)(0%)?,var\(--building-color4\)10%,transparent10%,transparent15%\)/);
 ```
 
 You should add a `repeating-linear-gradient` with a first color of `--building-color4` from `0%` to `10%`.

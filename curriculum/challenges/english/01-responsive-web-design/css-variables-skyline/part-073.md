@@ -23,16 +23,16 @@ You should give the first new `div` a class of `fb1a`.
 assert.exists(document.querySelector("div.fb1 > div.fb1a"));
 ```
 
-You should give the second new `div` a class of `bb4b`.
+You should give the second new `div` a class of `fbab`.
 
 ```js
-assert.exists(document.querySelector("div.fb1 > div.fb1a"));
+assert.exists(document.querySelector("div.fb1 > div.fb1b"));
 ```
 
-You should give the third new `div` a class of `bb4c`.
+You should give the third new `div` a class of `fb1c`.
 
 ```js
-assert.exists(document.querySelector("div.fb1 > div.fb1a"));
+assert.exists(document.querySelector("div.fb1 > div.fb1c"));
 ```
 
 You should place the new `div` elements in this order `.fb1a + .fb1b + .fb1c`.

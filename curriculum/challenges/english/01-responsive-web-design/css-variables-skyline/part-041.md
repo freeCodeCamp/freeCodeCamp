@@ -7,7 +7,7 @@ dashedName: part-41
 
 # --description--
 
-You want to add the same gradient to the next two sections. But instead of doing that, create a new class called `bb1-window` and move the `height` and `background` properties and values from `.bb1a` to the new class.
+You want to add the same gradient to the next two sections. Instead of doing that, create a new class called `bb1-window`, and move the `height` and `background` properties and values from `.bb1a` to the new class.
 
 # --hints--
 
@@ -29,6 +29,18 @@ You should move the `background` property and value from `.bb1a` to `.bb1-window
 ```js
 assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.bb1a')?.background);
 assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1-window')?.getPropVal('background', true), 'linear-gradient(var(--building-color1),var(--window-color1))');
+```
+
+You should not move the `background-color` property from `.bb1a`.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document.getStyle('.bb1a')?.backgroundColor));
+```
+
+You should not move the `width` property from `.bb1a`.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document.getStyle('.bb1a')?.width));
 ```
 
 # --seed--

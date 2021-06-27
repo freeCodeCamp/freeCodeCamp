@@ -19,6 +19,12 @@ This will be used in a few places to center window elements vertically, and even
 
 # --hints--
 
+You should create a `.window-wrap` selector.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyle(".window-wrap"));
+```
+
 You should give `.window-wrap` a `display` of `flex`.
 
 ```js

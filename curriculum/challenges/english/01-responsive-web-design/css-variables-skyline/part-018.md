@@ -47,7 +47,7 @@ You should place the elements in the correct order.
 function __t(a, b) {
   return [...document.querySelector(a)?.nextElementSibling?.classList]?.includes(b);
 }
-assert(__t('div.bb1','bb2') && __t('div.bb2','bb3') & __t('div.bb3','bb4'));
+assert(__t('div.bb1','bb2') && __t('div.bb2','bb3') && __t('div.bb3','bb4'));
 ```
 
 # --seed--

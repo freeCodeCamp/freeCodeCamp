@@ -58,6 +58,15 @@ assert.exists(document.querySelector('div.foreground-buildings > div.fb5'));
 assert.exists(document.querySelector('div.foreground-buildings > div.fb6'));
 ```
 
+You should place the new `div` elements in the correct order.
+
+```js
+function __t(a, b) {
+  return [...document.querySelector(a)?.nextElementSibling?.classList]?.includes(b);
+}
+assert(__t('div.fb1','fb2') && __t('div.fb2','fb3') && __t('div.fb3','fb4') && __t('div.fb4', 'fb5') && __t('div.fb5', 'fb6'));
+```
+
 # --seed--
 
 ## --seed-contents--
