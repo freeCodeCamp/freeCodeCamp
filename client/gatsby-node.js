@@ -247,7 +247,6 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type ChallengeNode implements Node {
       challengeFiles: [FileContents]
-      files: ChallengeFile
       url: String
     }
     type FileContents {
