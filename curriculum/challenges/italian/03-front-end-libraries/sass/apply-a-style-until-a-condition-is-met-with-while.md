@@ -1,6 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbb
-title: Apply a Style Until a Condition is Met with @while
+title: Applicare uno stile finché una condizione è soddisfatta con @while
 challengeType: 0
 forumTopicId: 301454
 dashedName: apply-a-style-until-a-condition-is-met-with-while
@@ -8,9 +8,9 @@ dashedName: apply-a-style-until-a-condition-is-met-with-while
 
 # --description--
 
-The `@while` directive is an option with similar functionality to the JavaScript `while` loop. It creates CSS rules until a condition is met.
+La direttiva `@while` è un'opzione con funzionalità simili al ciclo `while` di JavaScript. Essa crea delle regole CSS finché una condizione è soddisfatta.
 
-The `@for` challenge gave an example to create a simple grid system. This can also work with `@while`.
+La sfida `@for` ha mostrato un esempio che creava un semplice sistema di griglia. Questo si può fare anche con `@while`.
 
 ```scss
 $x: 1;
@@ -20,59 +20,59 @@ $x: 1;
 }
 ```
 
-First, define a variable `$x` and set it to 1. Next, use the `@while` directive to create the grid system *while* `$x` is less than 13. After setting the CSS rule for `width`, `$x` is incremented by 1 to avoid an infinite loop.
+Innanzitutto, definisci una variabile `$x` e impostala a 1. Successivamente, utilizzare la direttiva `@while` per creare il sistema di griglia finché (*while*) `$x` è minore di 13. Dopo aver impostato la regola CSS per `width`, `$x` viene incrementata di 1 per evitare un ciclo infinito.
 
 # --instructions--
 
-Use `@while` to create a series of classes with different `font-sizes`.
+Usa `@while` per creare una serie di classi con diversi `font-sizes` (dimensioni dei caratteri).
 
-There should be 5 different classes from `text-1` to `text-5`. Then set `font-size` to `15px` multiplied by the current index number. Make sure to avoid an infinite loop!
+Ci dovrebbero essere 5 classi diverse da `text-1` a `text-5`. Quindi imposta `font-size` a `15px` moltiplicato per il numero index corrente. Assicurati di evitare un ciclo infinito!
 
 # --hints--
 
-Your code should use the `@while` directive.
+Il tuo codice dovrebbe utilizzare la direttiva `@while`.
 
 ```js
 assert(code.match(/@while /g));
 ```
 
-Your code should use an index variable which starts at an index of 1.
+Il tuo codice dovrebbe usare una variabile index che inizia da un indice di 1.
 
 ```js
 assert(code.match(/\$.*:\s*?1;/gi));
 ```
 
-Your code should increment the counter variable.
+Il tuo codice dovrebbe incrementare la variabile del contatore.
 
 ```js
 assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi));
 ```
 
-Your `.text-1` class should have a `font-size` of `15px`.
+La tua classe `.text-1` dovrebbe avere un `font-size` di `15px`.
 
 ```js
 assert($('.text-1').css('font-size') == '15px');
 ```
 
-Your `.text-2` class should have a `font-size` of `30px`.
+La tua classe `.text-2` dovrebbe avere un `font-size` di `30px`.
 
 ```js
 assert($('.text-2').css('font-size') == '30px');
 ```
 
-Your `.text-3` class should have a `font-size` of `45px`.
+La tua classe `.text-3` dovrebbe avere un `font-size` di `45px`.
 
 ```js
 assert($('.text-3').css('font-size') == '45px');
 ```
 
-Your `.text-4` class should have a `font-size` of `60px`.
+La tua classe `.text-4` dovrebbe avere un `font-size` di `60px`.
 
 ```js
 assert($('.text-4').css('font-size') == '60px');
 ```
 
-Your `.text-5` class should have a `font-size` of `75px`.
+La tua classe `.text-5` dovrebbe avere un `font-size` di `75px`.
 
 ```js
 assert($('.text-5').css('font-size') == '75px');

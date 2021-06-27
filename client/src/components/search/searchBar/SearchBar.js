@@ -9,6 +9,8 @@ import { isEqual } from 'lodash-es';
 import { withTranslation } from 'react-i18next';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
+import WithInstantSearch from '../WithInstantSearch';
+
 import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
@@ -177,33 +179,39 @@ export class SearchBar extends Component {
     const placeholder = t('search.placeholder');
 
     return (
-      <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
-        <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
-          <div className='fcc_search_wrapper'>
-            <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
-              {t('search.label')}
-            </label>
-            <ObserveKeys except={['Space']}>
-              <SearchBox
-                focusShortcuts={[83, 191]}
-                onChange={this.handleChange}
-                onFocus={this.handleFocus}
-                onSubmit={this.handleSearch}
-                showLoadingIndicator={false}
-                translations={{ placeholder }}
-              />
-            </ObserveKeys>
-            {isDropdownEnabled && isSearchFocused && (
-              <SearchHits
-                handleHits={this.handleHits}
-                handleMouseEnter={this.handleMouseEnter}
-                handleMouseLeave={this.handleMouseLeave}
-                selectedIndex={index}
-              />
-            )}
-          </div>
-        </HotKeys>
-      </div>
+      <WithInstantSearch>
+        <div
+          className='fcc_searchBar'
+          data-testid='fcc_searchBar'
+          ref={innerRef}
+        >
+          <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
+            <div className='fcc_search_wrapper'>
+              <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
+                {t('search.label')}
+              </label>
+              <ObserveKeys except={['Space']}>
+                <SearchBox
+                  focusShortcuts={[83, 191]}
+                  onChange={this.handleChange}
+                  onFocus={this.handleFocus}
+                  onSubmit={this.handleSearch}
+                  showLoadingIndicator={false}
+                  translations={{ placeholder }}
+                />
+              </ObserveKeys>
+              {isDropdownEnabled && isSearchFocused && (
+                <SearchHits
+                  handleHits={this.handleHits}
+                  handleMouseEnter={this.handleMouseEnter}
+                  handleMouseLeave={this.handleMouseLeave}
+                  selectedIndex={index}
+                />
+              )}
+            </div>
+          </HotKeys>
+        </div>
+      </WithInstantSearch>
     );
   }
 }

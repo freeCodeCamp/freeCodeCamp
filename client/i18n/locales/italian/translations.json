@@ -395,7 +395,8 @@
     "analytics": "Un grafico a barre e un grafico a linea",
     "shield": "Uno scudo con un segno di spunta",
     "tensorflow": "Icona di Tensorflow",
-    "algorithm": "Nodi con rami"
+    "algorithm": "Nodi con rami",
+    "magnifier": "lente d'ingrandimento"
   },
   "aria": {
     "fcc-logo": "Logo freeCodeCamp",
@@ -529,7 +530,7 @@
         "Caesars Cipher": "Cifrario di Cesare",
         "Telephone Number Validator": "Validatore Numero Di Telefono",
         "Cash Register": "Registro dei Contanti",
-        "Build a Drum Machine": "Costruisci una macchina a tamburo",
+        "Build a Drum Machine": "Costruisci una batteria",
         "Visualize Data with a Choropleth Map": "Visualizza i dati con una mappa a colori Coropletica",
         "Visualize Data with a Treemap Diagram": "Visualizza i dati con una mappa ad albero",
         "Exercise Tracker": "Monitor degli esercizi",

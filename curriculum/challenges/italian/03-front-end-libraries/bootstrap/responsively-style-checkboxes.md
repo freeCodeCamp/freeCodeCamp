@@ -1,10 +1,11 @@
 ---
 id: bad87fee1348bd9aeda08845
-title: Responsively Style Checkboxes
+title: Stilizzare responsivamente le caselle di spunta
 challengeType: 0
 forumTopicId: 18269
 required:
-  - link: >-
+  - 
+    link: >-
       https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css
     raw: true
 dashedName: responsively-style-checkboxes
@@ -12,27 +13,27 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Since Bootstrap's `col-xs-*` classes are applicable to all `form` elements, you can use them on your checkboxes too! This way, the checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.
+Dal momento che le classi `col-xs-*` di Bootstrap sono applicabili a tutti gli elementi dei `form`, puoi usarle anche nelle tue caselle di spunta! In questo modo, le caselle di spunta saranno distribuite uniformemente su tutta la pagina, indipendentemente dalla risoluzione dello schermo.
 
 # --instructions--
 
-Nest all three of your checkboxes in a `<div class="row">` element. Then nest each of them in a `<div class="col-xs-4">` element.
+Annida tutte e tre le caselle di spunta in un elemento `<div class="row">`. Poi annida ciascuna di esse in un elemento `<div class="col-xs-4">`.
 
 # --hints--
 
-All of your checkboxes should be nested inside one `div` with the class `row`.
+Tutte le caselle di spunta dovrebbero essere annidate in un `div` di classe `row`.
 
 ```js
 assert($('div.row:has(input[type="checkbox"])').length > 0);
 ```
 
-Each of your checkboxes should be nested inside its own `div` with the class `col-xs-4`.
+Ognuna delle tue caselle di spunta dovrebbe essere annidata all'interno del suo `div` di classe `col-xs-4`.
 
 ```js
 assert($('div.col-xs-4:has(input[type="checkbox"])').length > 2);
 ```
 
-All of your `div` elements should have closing tags.
+Tutti i tuoi elementi `div` dovrebbero avere dei tag di chiusura.
 
 ```js
 assert(

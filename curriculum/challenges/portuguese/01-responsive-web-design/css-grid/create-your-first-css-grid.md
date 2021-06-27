@@ -1,6 +1,6 @@
 ---
 id: 5a858944d96184f06fd60d61
-title: Create Your First CSS Grid
+title: Criar seu primeiro grid
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cqwREC4'
 forumTopicId: 301129
@@ -9,17 +9,17 @@ dashedName: create-your-first-css-grid
 
 # --description--
 
-Turn any HTML element into a grid container by setting its `display` property to `grid`. This gives you the ability to use all the other properties associated with CSS Grid.
+Transforme qualquer elemento HTML em um grid container, definindo sua propriedade `display` com o valor de `grid`. Isso permite que você use todas as outras propriedades associadas ao CSS Grid.
 
-**Note:** In CSS Grid, the parent element is referred to as the <dfn>container</dfn> and its children are called <dfn>items</dfn>.
+**Observação:** no CSS Grid, o elemento pai é conhecido como <dfn>contêiner</dfn> (grid container, no inglês) e seus filhos são chamados de <dfn>itens</dfn> (grid items, no inglês).
 
 # --instructions--
 
-Change the display of the div with the `container` class to `grid`.
+Altere a exibição da div com a classe `container` para `grid`.
 
 # --hints--
 
-`container` class should have a `display` property with a value of `grid`.
+O elemento de classe `container` deve ter a propriedade `display` com o valor de `grid`.
 
 ```js
 assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
@@ -43,7 +43,7 @@ assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
     background: LightGray;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

@@ -35,7 +35,8 @@
 
 Cypress.Commands.add('login', () => {
   cy.visit('/');
-  cy.contains("Get started (it's free)").click({ force: true });
+  cy.contains("Get started (it's free)").click();
+  cy.contains('Welcome back');
 });
 
 Cypress.Commands.add('resetUsername', () => {

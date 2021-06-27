@@ -1,46 +1,47 @@
 ---
 id: bad87fee1348bd9aeda08726
-title: Delete Your jQuery Functions
+title: Eliminare le funzioni jQuery
 challengeType: 6
 forumTopicId: 17561
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: delete-your-jquery-functions
 ---
 
 # --description--
 
-These animations were cool at first, but now they're getting kind of distracting.
+Queste animazioni erano interessanti in un primo momento, ma ora stanno diventando una distrazione.
 
-Delete all three of these jQuery functions from your `document ready function`, but leave your `document ready function` itself intact.
+Elimina tutte e tre queste funzioni jQuery dalla tua `document ready function`, ma lascia intatta la `document ready function` stessa.
 
 # --hints--
 
-All three of your jQuery functions should be deleted from your `document ready function`.
+Tutte e tre le funzioni jQuery dovrebbero essere eliminate dalla `document ready function`.
 
 ```js
 assert(code.match(/\{\s*\}\);/g));
 ```
 
-You should leave your `script` element intact.
+Dovresti lasciare intatto l'elemento `script`.
 
 ```js
 assert(code.match(/<script>/g));
 ```
 
-You should leave your `$(document).ready(function() {` at the beginning of your `script` element.
+Dovresti lasciare l'elemento `$(document).ready(function() {` all'inizio del tuo `script`.
 
 ```js
 assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
 ```
 
-You should leave the `document.ready` function's closing `})` intact.
+Dovresti lasciare intatte le parentesi `})` della funzione `document.ready`.
 
 ```js
 assert(code.match(/.*\s*\}\);/g));
 ```
 
-You should leave your `script` element closing tag intact.
+Dovresti lasciare intatto il tag di chiusura dell'elemento `script`.
 
 ```js
 assert(

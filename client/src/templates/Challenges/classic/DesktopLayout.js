@@ -84,69 +84,79 @@ class DesktopLayout extends Component {
 
     return (
       <Fragment>
-        {projectBasedChallenge && (
-          <ActionRow switchDisplayTab={this.switchDisplayTab} {...this.state} />
-        )}
-        <ReflexContainer className='desktop-layout' orientation='vertical'>
-          {!projectBasedChallenge && (
-            <ReflexElement
-              flex={instructionPane.flex}
-              name='instructionPane'
-              {...resizeProps}
-            >
-              {instructions}
-            </ReflexElement>
+        <ReflexContainer className='desktop-layout' orientation='horizontal'>
+          {projectBasedChallenge && (
+            <ActionRow
+              switchDisplayTab={this.switchDisplayTab}
+              {...this.state}
+            />
           )}
-          {!projectBasedChallenge && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-
-          <ReflexElement
-            flex={editorPane.flex}
-            name='editorPane'
-            {...resizeProps}
-          >
-            {challengeFile && showUpcomingChanges && !hasEditableBoundries && (
-              <EditorTabs />
-            )}
-            {challengeFile && (
-              <ReflexContainer key={challengeFile.key} orientation='horizontal'>
+          <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
+            <ReflexContainer orientation='vertical'>
+              {!projectBasedChallenge && (
                 <ReflexElement
-                  flex={codePane.flex}
-                  name='codePane'
-                  {...reflexProps}
+                  flex={instructionPane.flex}
+                  name='instructionPane'
                   {...resizeProps}
                 >
-                  {<Fragment>{editor}</Fragment>}
+                  {instructions}
                 </ReflexElement>
-                {isConsoleDisplayable && (
-                  <ReflexSplitter propagate={true} {...resizeProps} />
-                )}
-                {isConsoleDisplayable && (
-                  <ReflexElement
-                    flex={testsPane.flex}
-                    name='testsPane'
-                    {...reflexProps}
-                    {...resizeProps}
+              )}
+              {!projectBasedChallenge && (
+                <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+
+              <ReflexElement
+                flex={editorPane.flex}
+                name='editorPane'
+                {...resizeProps}
+              >
+                {challengeFile &&
+                  showUpcomingChanges &&
+                  !hasEditableBoundries && <EditorTabs />}
+                {challengeFile && (
+                  <ReflexContainer
+                    key={challengeFile.key}
+                    orientation='horizontal'
                   >
-                    {testOutput}
-                  </ReflexElement>
+                    <ReflexElement
+                      flex={codePane.flex}
+                      name='codePane'
+                      {...reflexProps}
+                      {...resizeProps}
+                    >
+                      <Fragment>{editor}</Fragment>
+                    </ReflexElement>
+                    {isConsoleDisplayable && (
+                      <ReflexSplitter propagate={true} {...resizeProps} />
+                    )}
+                    {isConsoleDisplayable && (
+                      <ReflexElement
+                        flex={testsPane.flex}
+                        name='testsPane'
+                        {...reflexProps}
+                        {...resizeProps}
+                      >
+                        {testOutput}
+                      </ReflexElement>
+                    )}
+                  </ReflexContainer>
                 )}
-              </ReflexContainer>
-            )}
+              </ReflexElement>
+              {isPreviewDisplayable && (
+                <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+              {isPreviewDisplayable && (
+                <ReflexElement
+                  flex={previewPane.flex}
+                  name='previewPane'
+                  {...resizeProps}
+                >
+                  {preview}
+                </ReflexElement>
+              )}
+            </ReflexContainer>
           </ReflexElement>
-          {isPreviewDisplayable && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-          {isPreviewDisplayable && (
-            <ReflexElement
-              flex={previewPane.flex}
-              name='previewPane'
-              {...resizeProps}
-            >
-              {preview}
-            </ReflexElement>
-          )}
         </ReflexContainer>
       </Fragment>
     );

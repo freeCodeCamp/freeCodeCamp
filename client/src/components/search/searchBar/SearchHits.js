@@ -46,7 +46,7 @@ const CustomHits = connectHits(
 
     return (
       <div className='ais-Hits'>
-        <ul className='ais-Hits-list'>
+        <ul className='ais-Hits-list' data-cy='ais-Hits-list'>
           {allHits.map((hit, i) => (
             <li
               className={

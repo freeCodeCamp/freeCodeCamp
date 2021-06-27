@@ -508,7 +508,7 @@ Code changes need to be deployed to the API instances from time to time. It can
 be a rolling update or a manual update. The later is essential when changing
 dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the
 > minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
@@ -609,7 +609,7 @@ Code changes need to be deployed to the API instances from time to time. It can
 be a rolling update or a manual update. The later is essential when changing
 dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the
 > minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
@@ -872,7 +872,7 @@ pm2 save
 pm2 logs
 ```
 
-> [!DANGER]
+> [!ATTENTION]
 > For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents

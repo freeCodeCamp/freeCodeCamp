@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036182
-title: Add Inline Styles in React
+title: Aggiungere stili in linea in React
 challengeType: 6
 forumTopicId: 301378
 dashedName: add-inline-styles-in-react
@@ -8,41 +8,41 @@ dashedName: add-inline-styles-in-react
 
 # --description--
 
-You may have noticed in the last challenge that there were several other syntax differences from HTML inline styles in addition to the `style` attribute set to a JavaScript object. First, the names of certain CSS style properties use camel case. For example, the last challenge set the size of the font with `fontSize` instead of `font-size`. Hyphenated words like `font-size` are invalid syntax for JavaScript object properties, so React uses camel case. As a rule, any hyphenated style properties are written using camel case in JSX.
+Nell'ultima sfida potresti aver notato che ci sono state diverse altre differenze di sintassi dagli stili HTML inline in aggiunta all'attributo `style` impostato su un oggetto JavaScript. In primo luogo, i nomi di alcune proprietà di stile CSS usano il camel case. Ad esempio, l'ultima sfida imposta la dimensione del carattere con `fontSize` invece di `font-size`. Le parole tratteggiate come `font-size` sono una sintassi non valida per le proprietà dell'oggetto JavaScript, quindi React usa il camel case. Di regola, tutte le proprietà di stile tratteggiate sono scritte utilizzando il camel case in JSX.
 
-All property value length units (like `height`, `width`, and `fontSize`) are assumed to be in `px` unless otherwise specified. If you want to use `em`, for example, you wrap the value and the units in quotes, like `{fontSize: "4em"}`. Other than the length values that default to `px`, all other property values should be wrapped in quotes.
+Si assume che tutti i valori di lunghezza delle proprietà (come `height`, `width`, e `fontSize`) siano in `px` se non diversamente specificato. Se si desidera utilizzare `em`, ad esempio, dovrai inserire il valore e l'unità di misura tra virgolette, come ad esempio `{fontSize: "4em"}`. Oltre ai valori di lunghezza che hanno un'unità predefinita in `px`, tutti gli altri valori delle proprietà dovrebbero essere inseriti tra virgolette.
 
 # --instructions--
 
-If you have a large set of styles, you can assign a style `object` to a constant to keep your code organized. Declare your styles constant as a global variable at the top of the file. Initialize `styles` constant and assign an `object` with three style properties and their values to it. Give the `div` a color of `purple`, a font-size of `40`, and a border of `2px solid purple`. Then set the `style` attribute equal to the `styles` constant.
+Se hai molti stili, puoi assegnare un `object` style a una costante per mantenere il codice ordinato. Dichiara la tua costante di stile come variabile globale nella parte superiore del file. Inizializza la costante `styles` e assegna un `object` con tre proprietà di stile e i relativi valori ad essa. Dai al `div` un colore `purple`, un font-size di `40`, e un bordo di `2px solid purple`. Quindi imposta l'attributo `style` sulla costante `styles`.
 
 # --hints--
 
-The `styles` variable should be an `object` with three properties.
+La variabile `styles` dovrebbe essere un `object` con tre proprietà.
 
 ```js
 assert(Object.keys(styles).length === 3);
 ```
 
-The `styles` variable should have a `color` property set to a value of `purple`.
+La variabile `styles` dovrebbe avere una proprietà `color` impostata su un valore `purple`.
 
 ```js
 assert(styles.color === 'purple');
 ```
 
-The `styles` variable should have a `fontSize` property set to a value of `40`.
+La variabile `styles` dovrebbe avere una proprietà `fontSize` impostata su un valore di `40`.
 
 ```js
 assert(styles.fontSize === 40);
 ```
 
-The `styles` variable should have a `border` property set to a value of `2px solid purple`.
+La variabile `styles` dovrebbe avere una proprietà `border` impostata su un valore di `2px solid purple`.
 
 ```js
 assert(styles.border === '2px solid purple');
 ```
 
-The component should render a `div` element.
+Il componente dovrebbe presentare un elemento `div`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The `div` element should have its styles defined by the `styles` object.
+L'elemento `div` dovrebbe avere i suoi stili definiti dall'oggetto `styles`.
 
 ```js
 assert(

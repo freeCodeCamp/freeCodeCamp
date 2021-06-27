@@ -1,40 +1,41 @@
 ---
 id: bad87fee1348bd9aed908826
-title: Change the CSS of an Element Using jQuery
+title: Cambiare il CSS di un elemento usando jQuery
 challengeType: 6
 forumTopicId: 16776
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: change-the-css-of-an-element-using-jquery
 ---
 
 # --description--
 
-We can also change the CSS of an HTML element directly with jQuery.
+Possiamo anche cambiare direttamente il CSS di un elemento HTML con jQuery.
 
-jQuery has a function called `.css()` that allows you to change the CSS of an element.
+jQuery ha una funzione chiamata `.css()` che consente di cambiare il CSS di un elemento.
 
-Here's how we would change its color to blue:
+Ecco come potremmo cambiare il suo colore in blu:
 
 ```js
 $("#target1").css("color", "blue");
 ```
 
-This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon.
+Questo è leggermente diverso da una normale dichiarazione CSS, perché la proprietà CSS e il suo valore sono tra virgolette e separati da una virgola invece che dai due punti.
 
-Delete your jQuery selectors, leaving an empty `document ready function`.
+Elimina i tuoi selettori jQuery, lasciando una `document ready function` vuota.
 
-Select `target1` and change its color to red.
+Seleziona `target1` e cambia il suo colore in rosso.
 
 # --hints--
 
-Your `target1` element should have red text.
+Il tuo elemento `target1` dovrebbe avere un testo rosso.
 
 ```js
 assert($('#target1').css('color') === 'rgb(255, 0, 0)');
 ```
 
-You should only use jQuery to add these classes to the element.
+Dovresti usare solo jQuery per aggiungere queste classi all'elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));

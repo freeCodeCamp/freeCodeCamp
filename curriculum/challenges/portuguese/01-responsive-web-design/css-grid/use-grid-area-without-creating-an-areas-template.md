@@ -1,6 +1,6 @@
 ---
 id: 5a94fe2669fb03452672e45e
-title: Use grid-area Without Creating an Areas Template
+title: Usar grid-area sem criar um modelo de áreas
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
 forumTopicId: 301135
@@ -9,27 +9,27 @@ dashedName: use-grid-area-without-creating-an-areas-template
 
 # --description--
 
-The `grid-area` property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, you can create an area on the fly for an item to be placed like this:
+A propriedade `grid-area` que você aprendeu no último desafio pode ser usada de outra maneira. Se o seu grid não possuir um modelo de áreas para fazer referência, você pode rapidamente definir uma área para um item assim:
 
 ```css
 item1 { grid-area: 1/1/2/4; }
 ```
 
-This is using the line numbers you learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:
+Esta abordagem usa os números de linha que você aprendeu anteriormente para definir onde ficará a área deste item. Os números no exemplo acima podem ser lidos assim:
 
 ```css
 grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
 ```
 
-So the item in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.
+Portanto, o item no exemplo permanecerá entre as linhas 1 e 2 e entre as colunas 1 e 4.
 
 # --instructions--
 
-Using the `grid-area` property, place the element with `item5` class between the third and fourth horizontal lines and between the first and fourth vertical lines.
+Usando a propriedade `grid-area`, coloque o elemento com a classe `item5` entre a terceira e a quarta linha e entre a primeira e a quarta coluna.
 
 # --hints--
 
-The `item5` class should have a `grid-area` property to make it fill the whole area between the third and fourth horizontal lines, and first and fourth vertical lines.
+O elemento de classe `item5` deve ter a propriedade `grid-area` definida para ocupar toda a área entre a terceira e a quarta linha e a primeira e a quarta coluna.
 
 ```js
 assert(

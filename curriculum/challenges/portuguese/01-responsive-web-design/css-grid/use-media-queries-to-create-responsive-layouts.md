@@ -1,6 +1,6 @@
 ---
 id: 5a94fe7769fb03452672e463
-title: Use Media Queries to Create Responsive Layouts
+title: Usar media queries para criar layouts responsivos
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cMbqeHk'
 forumTopicId: 301138
@@ -9,17 +9,17 @@ dashedName: use-media-queries-to-create-responsive-layouts
 
 # --description--
 
-CSS Grid can be an easy way to make your site more responsive by using media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items.
+O CSS Grid pode tornar ainda mais fácil a tarefa de criar um site responsivo ao usar media queries para reorganizar as áreas do grid, alterar as dimensões do grid e reorganizar a posição dos itens.
 
-In the preview, when the viewport width is 300px or more, the number of columns changes from 1 to 2. The advertisement area then occupies the left column completely.
+Na visualização ao lado, quando a largura da janela for 300px ou mais, o número de colunas muda de 1 para 2. A área do anúncio então ocupa a coluna da esquerda completamente.
 
 # --instructions--
 
-When the viewport width is `400px` or more, make the header area occupy the top row completely and the footer area occupy the bottom row completely.
+Quando a largura da janela de visualização for de `400px` ou mais, faça com que a área do cabeçalho (header) ocupe completamente a linha superior e a área do rodapé (footer) ocupe completamente a linha inferior.
 
 # --hints--
 
-When the viewport is `400px` or more, `container` class should have a `grid-template-areas` property in which the header and footer areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.
+Quando a janela de visualização for maior que `400px`, o elemento de classe `container` deve ter a propriedade `grid-template-areas` na qual as áreas de cabeçalho e rodapé ocupam o topo e as linhas inferiores, respectivamente, e o anúncio e o conteúdo ocupam as colunas esquerda e direita da linha do meio.
 
 ```js
 assert(

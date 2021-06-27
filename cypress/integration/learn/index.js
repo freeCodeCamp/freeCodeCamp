@@ -54,8 +54,7 @@ describe('Learn Landing page (not logged in)', () => {
 
 describe('Quotes', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.contains("Get started (it's free)").click();
+    cy.login();
   });
 
   it('Should show a quote', () => {
@@ -73,8 +72,7 @@ describe('Quotes', () => {
 
 describe('Superblocks and Blocks', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.contains("Get started (it's free)").click();
+    cy.login();
   });
 
   it('Has all superblocks visible', () => {

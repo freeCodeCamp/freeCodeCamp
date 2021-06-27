@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f069
-title: Dictionaries and Loops
+title: 字典和循環
 challengeType: 11
 videoId: EEmekKiKG70
 dashedName: dictionaries-and-loops
@@ -8,15 +8,15 @@ dashedName: dictionaries-and-loops
 
 # --description--
 
-More resources:
+更多資源：
 
-\- [Exercise](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
+\- [練習](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
 
 # --question--
 
 ## --text--
 
-What will the following code print?:
+以下代碼將打印什麼?
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -42,7 +42,7 @@ jan 100</pre>
 
 ---
 
-<pre>[Error]</pre>
+<pre>[Error]（錯誤）</pre>
 
 ## --video-solution--
 
