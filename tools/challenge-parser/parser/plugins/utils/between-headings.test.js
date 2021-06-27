@@ -1,4 +1,3 @@
-/* global expect*/
 const isArray = require('lodash/isArray');
 const find = require('unist-util-find');
 const { root } = require('mdast-builder');

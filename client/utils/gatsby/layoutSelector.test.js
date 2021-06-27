@@ -1,4 +1,3 @@
-/* global expect jest */
 import React from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';

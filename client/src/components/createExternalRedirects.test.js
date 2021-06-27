@@ -1,5 +1,3 @@
-/* global expect */
-
 import createExternalRedirect from './createExternalRedirects';
 
 describe('createExternalRedirects', () => {

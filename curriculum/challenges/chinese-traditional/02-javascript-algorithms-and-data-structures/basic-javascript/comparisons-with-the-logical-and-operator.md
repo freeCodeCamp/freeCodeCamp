@@ -9,7 +9,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 # --description--
 
-有時你需要在一次判斷中做多個操作。 當且僅當<dfn>運算符</dfn>的左邊和右邊都是 true，<dfn>邏輯與</dfn>運算符（`&&`）纔會返回`true`。
+有時你需要在一次判斷中做多個操作。 當且僅當<dfn>運算符</dfn>的左邊和右邊都是 true，<dfn>邏輯與</dfn>運算符（`&&`）纔會返回 `true`。
 
 同樣的效果可以通過 if 語句的嵌套來實現：
 
@@ -33,7 +33,7 @@ return "No";
 
 # --instructions--
 
-請使用 `&&` 運算符把兩個 if 語句合併爲一個 if 語句，如果 `val` 小於或等於`50` 並且大於或等於 `25` 時，返回 `Yes`。 否則，將返回`No`。
+請使用 `&&` 運算符把兩個 if 語句合併爲一個 if 語句，如果 `val` 小於或等於 `50` 並且大於或等於 `25` 時，返回 `Yes`。 否則，將返回 `No`。
 
 # --hints--
 

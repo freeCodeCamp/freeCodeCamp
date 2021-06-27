@@ -31,11 +31,11 @@ Antes de trabajar en el plan de estudios, necesitarás configurar algunas herram
 
 ### How to work on practice projects
 
-The practice projects have some additional tooling to help create new projects and steps.  To read more, see [these docs](how-to-work-on-practice-projects.md)
+The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+
 ## Plantilla de desafío
 
 ````md
-
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
 title: 'Challenge Title'
@@ -49,9 +49,7 @@ forumTopicId: 12345
 Challenge description text, in markdown
 
 ```html
-<div>
-  example code
-</div>
+<div>example code</div>
 ````
 
 # --instructions--
@@ -92,9 +90,7 @@ Boilerplate code to render to the editor. This section should only contain code 
 
 ```html
 <body>
-  <p class="main-text">
-    Hello world!
-  </p>
+  <p class="main-text">Hello world!</p>
 </body>
 ```
 
@@ -156,17 +152,15 @@ More answers
 ## --video-solution--
 
 The number for the correct answer goes here.
-
-
 ````
 
 > [!NOTE]
 >
 > 1. In the above sections, examples of `lang` are:
 >
->   - `html` - HTML/CSS
->   - `js` - JavaScript
->   - `jsx` - JSX
+> - `html` - HTML/CSS
+> - `js` - JavaScript
+> - `jsx` - JSX
 
 ## Numbering Challenges
 
@@ -231,7 +225,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 - JavaScript (mayúsculas en "J" y "S" y sin abreviaturas)
 - Node.js
-- El desarrollo de front-end (forma adjetiva con guiones) es cuando estás trabajando en la parte frontal (sin guiones). Lo mismo ocurre con el "back end", "full stack", y muchos otros términos compuestos.
+- Although sometimes inaccurate, non-hyphenated forms of 'back end' and 'front end' should be used, as they are more widely used.
 
 ### The 2-minute rule
 
@@ -260,9 +254,11 @@ Here are specific formatting guidelines for challenge text and examples:
 
 - Language keywords go in `` \` `` backticks. For example, HTML tag names or CSS property names.
 - References to code parts (i.e. function, method, or variable names) should be wrapped in `` \` `` backticks. See example below:
+
 ```md
 Use `parseInt` to convert the variable `realNumber` into an integer.
 ```
+
 - References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `` \` `` backticks.
 - Los bloques de código de múltiples líneas **deben estar precedidos por una línea vacía**. La siguiente línea debe comenzar con tres backticks seguidos inmediatamente por uno de los [idiomas soportados](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. Ver el ejemplo a continuación:
 - Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
@@ -270,6 +266,7 @@ Use `parseInt` to convert the variable `realNumber` into an integer.
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 The following is an example of code:
+
 ````md
 ```{language}
 
@@ -304,7 +301,7 @@ Here are specific formatting guidelines for the challenge seed code:
 
 We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
-Comments used should have a space between the comment characters and the comment themselves.  In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
+Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
 Example of valid single line JavaScript comment:
 
@@ -338,7 +335,7 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "Hello"
+      text: 'Hello'
     };
     // Change code below this line
 
@@ -346,31 +343,32 @@ class MyComponent extends React.Component {
   }
   handleClick() {
     this.setState({
-      text: "You clicked!"
+      text: 'You clicked!'
     });
   }
   render() {
     return (
       <div>
-        { /* Change code below this line */ }
+        {/* Change code below this line */}
         <button>Click Me</button>
-        { /* Change code above this line */ }
+        {/* Change code above this line */}
         <h1>{this.state.text}</h1>
       </div>
     );
   }
-};
+}
 ```
 
 ### Translation of seed code comments
 
-There are separate comment dictionaries for each language. The [English version of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+There are separate comment dictionaries for each language. The [English version of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
-Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated. See the comment below as an example. The word `myGlobal` should not be translated.
 
 ```text
 Declare the myGlobal variable below this line
 ```
+
 > [!NOTE]
 > 
 > Estamos trabajando en una integración que permita trabajar en i18n para el diccionario de comentarios.
@@ -447,13 +445,13 @@ function myFunc() {
 
 ## Testing Challenges
 
-Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge.
 
 1. To test all challenges run the below command from the root directory
 
 ````
 npm run test:curriculum
-``` 
+```
 
 2. You can also test a block or a superblock of challenges with these commands
 

@@ -10,7 +10,7 @@ dashedName: authentication-with-socket-io
 
 目前，你还无法确定连接到服务器的用户身份。 虽然 `req.user` 包含用户信息，但这个只在用户直接与服务器交互时产生。当用户通过 web socket 与服务器连接时，由于不存在 `req` 对象，我们就无法获取用户数据。 解决这个问题的方法之一是通过读取和解析请求中包含 passport session 的 cookie，然后反序列化，进而获取用户信息对象。 幸运的是，NPM 上有可以让这个复杂的流程简单化的库。
 
-添加 `passport.socketio`、`connect-mongo@~3.2.0`、`cookie-parser` 作为依赖，把它们分别赋值给 `passportSocketIo`、`MongoStore`、`cookieParser`。 同时，我们需要从之前引入的 `express-session` 中开辟新的内存空间， 就像这样：
+添加 `passport.socketio@~3.7.0`、`connect-mongo@~3.2.0`、`cookie-parser@~1.4.5` 作为依赖，把它们分别赋值给 `passportSocketIo`、`MongoStore`、`cookieParser`。 同时，我们需要从之前引入的 `express-session` 中开辟新的内存空间， 就像这样：
 
 ```js
 const MongoStore = require('connect-mongo')(session);

@@ -110,16 +110,14 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
   challengeFiles.reduce(
     (challengeFiles, challengeFile) => ({
       ...challengeFiles,
-      [challengeFile.key]: {
-        ...createPoly(challengeFile),
-        seed: challengeFile.contents.slice(),
-        editableContents: getLines(
-          challengeFile.contents,
-          challengeFile.editableRegionBoundaries
-        ),
-        seedEditableRegionBoundaries:
-          challengeFile.editableRegionBoundaries.slice()
-      }
+      ...createPoly(challengeFile),
+      seed: challengeFile.contents.slice(),
+      editableContents: getLines(
+        challengeFile.contents,
+        challengeFile.editableRegionBoundaries
+      ),
+      seedEditableRegionBoundaries:
+        challengeFile.editableRegionBoundaries.slice()
     }),
     {}
   )
@@ -313,24 +311,20 @@ export const reducer = handleActions(
       ...state,
       currentTab: 2,
       challengeFiles: [
-        ...state.challengeFiles
-          .reduce(
-            (challengeFiles, challengeFile) => ({
-              ...challengeFiles,
-              {
-                ...challengeFile,
-                contents: challengeFile.seed.slice(),
-                editableContents: getLines(
-                  challengeFile.seed,
-                  challengeFile.seedEditableRegionBoundaries
-                ),
-                editableRegionBoundaries:
-                  challengeFile.seedEditableRegionBoundaries
-              }
-            }),
-            {}
-          )
-          ],
+        ...state.challengeFiles.reduce(
+          (challengeFiles, challengeFile) => ({
+            ...challengeFiles,
+            ...challengeFile,
+            contents: challengeFile.seed.slice(),
+            editableContents: getLines(
+              challengeFile.seed,
+              challengeFile.seedEditableRegionBoundaries
+            ),
+            editableRegionBoundaries: challengeFile.seedEditableRegionBoundaries
+          }),
+          {}
+        )
+      ],
       challengeTests: state.challengeTests.map(({ text, testString }) => ({
         text,
         testString

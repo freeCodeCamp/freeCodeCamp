@@ -61,3 +61,13 @@ jobs:
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+
+      - name: Hide Example Link in Nest an Anchor Element challenge
+        uses: ./tools/crowdin/actions/hide-specific-string
+        with:
+          filename: 'basic-html-and-html5/nest-an-anchor-element-within-a-paragraph.md'
+          string-content: Here's a <a href="https://www.freecodecamp.org" target="_blank" mark="crwd-mark">link to www.freecodecamp.org</a> for you to follow.
+        env:
+          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}

@@ -1,7 +1,4 @@
 /* eslint-disable camelcase */
-/* global describe it expect */
-/* global jest*/
-
 import axios from 'axios';
 import keys from '../../../../config/secrets';
 import {

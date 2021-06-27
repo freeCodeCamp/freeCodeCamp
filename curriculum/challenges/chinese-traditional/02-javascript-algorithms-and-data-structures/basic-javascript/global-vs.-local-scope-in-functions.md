@@ -9,7 +9,7 @@ dashedName: global-vs--local-scope-in-functions
 
 # --description--
 
-一個程序中有可能具有相同名稱的<dfn>局部</dfn>變量 和<dfn>全局</dfn>變量。 在這種情況下，`local` 變量將會優先於`global`變量。
+一個程序中有可能具有相同名稱的<dfn>局部</dfn>變量 和<dfn>全局</dfn>變量。 在這種情況下，局部變量將會優先於全局變量。
 
 下面爲例：
 
@@ -21,7 +21,7 @@ function myFun() {
 }
 ```
 
-函數 `myFun` 將會返回 `Head`，因爲 `local` 變量優先級更高。
+函數 `myFun` 將會返回字符串 `Head`，因爲局部變量的優先級更高。
 
 # --instructions--
 

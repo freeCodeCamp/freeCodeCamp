@@ -395,7 +395,8 @@
     "analytics": "条形图和折线图",
     "shield": "带有复选标记的盾牌",
     "tensorflow": "Tensorflow 图标",
-    "algorithm": "分支节点"
+    "algorithm": "分支节点",
+    "magnifier": "magnifier"
   },
   "aria": {
     "fcc-logo": "freeCodeCamp 徽标",

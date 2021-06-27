@@ -1,6 +1,6 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5e
-title: Add Comments in JSX
+title: Agrega comentarios en JSX
 challengeType: 6
 forumTopicId: 301376
 dashedName: add-comments-in-jsx
@@ -8,35 +8,35 @@ dashedName: add-comments-in-jsx
 
 # --description--
 
-JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.
+JSX es una sintaxis que se compila en JavaScript válido. A veces, para facilitar la lectura, es necesario añadir comentarios al código. Como la mayoría de los lenguajes de programación, JSX tiene su propia manera de hacerlo.
 
-To put comments inside JSX, you use the syntax `{/* */}` to wrap around the comment text.
+Para agregar comentarios dentro de JSX, se utiliza la sintaxis `{/* */}` para envolver el texto del comentario.
 
 # --instructions--
 
-The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided `div` element, without modifying the existing `h1` or `p` elements.
+El editor de código tiene un elemento JSX similar al que creaste en el último desafío. Agrega un comentario en algún lugar dentro del elemento `div`, sin modificar los elementos `h1` o `p`.
 
 # --hints--
 
-The constant `JSX` should return a `div` element.
+La constante `JSX` debe devolver un elemento `div`.
 
 ```js
 assert(JSX.type === 'div');
 ```
 
-The `div` should contain an `h1` tag as the first element.
+El elemento `div` debe contener una etiqueta `h1` como primer elemento.
 
 ```js
 assert(JSX.props.children[0].type === 'h1');
 ```
 
-The `div` should contain a `p` tag as the second element.
+El elemento `div` debe contener una etiqueta `p` como segundo elemento.
 
 ```js
 assert(JSX.props.children[1].type === 'p');
 ```
 
-The existing `h1` and `p` elements should not be modified.
+Los elementos `h1` y `p` existentes no deben ser modificados.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `JSX` should use valid comment syntax.
+El elemento`JSX` debe usar una sintaxis de comentario válida.
 
 ```js
 assert(/<div>[\s\S]*{\s*\/\*[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code));

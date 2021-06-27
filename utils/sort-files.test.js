@@ -1,5 +1,3 @@
-/* global expect */
-
 const { toSortedArray } = require('./sort-files');
 const { challengeFiles } = require('./__fixtures__/challenges');
 

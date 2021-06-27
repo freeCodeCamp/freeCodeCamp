@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { HandlerProps } from 'react-reflex';
 
 export const FileType = PropTypes.shape({
   key: PropTypes.string,
@@ -157,17 +158,25 @@ export type ChallengeNodeType = {
   fields: {
     slug: string;
     blockName: string;
+    tests: TestType[];
   };
+  files: ChallengeFilesType;
   forumTopicId: number;
   guideUrl: string;
   head: string[];
   helpCategory: string;
+  id: string;
   instructions: string;
   isComingSoon: boolean;
   removeComments: boolean;
   isLocked: boolean;
   isPrivate: boolean;
   order: number;
+  question: {
+    text: string;
+    answers: string[];
+    solution: number;
+  };
   required: [
     {
       link: string;
@@ -181,6 +190,8 @@ export type ChallengeNodeType = {
   time: string;
   title: string;
   translationPending: boolean;
+  url: string;
+  videoId: string;
   videoUrl: string;
 };
 
@@ -201,7 +212,7 @@ export type AllMarkdownRemarkType = {
 };
 
 export type ResizePropsType = {
-  onStopResize: () => void;
+  onStopResize: (arg0: HandlerProps) => void;
   onResize: () => void;
 };
 
@@ -217,21 +228,27 @@ export type TestType = {
 
 export type UserType = {
   about: string;
+  acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  currentChallengeId: string;
   email: string;
+  emailVerified: boolean;
   githubProfile: string;
+  isBanned: boolean;
+  isCheater: boolean;
   isHonest: boolean;
   linkedin: string;
   location: string;
   name: string;
   picture: string;
   points: number;
-  portfolio: PortfolioType;
+  portfolio: PortfolioType[];
   profileUI: {
     isLocked: boolean;
     showCerts: boolean;
     showName: boolean;
   };
+  progressTimestamps: Array<unknown>;
   sendQuincyEmail: boolean;
   theme: string;
   twitter: string;
@@ -260,13 +277,13 @@ export type isCertifiedTypes = {
 
 export type CompletedChallenge = {
   id: string;
-  solution: string;
-  githubLink: string;
-  challengeType: number;
+  solution?: string | null;
+  githubLink?: string;
+  challengeType?: number;
   completedDate: number;
   challengeFiles: ChallengeFileType[];
 };
-// TODO: renames: files => challengeFiles; key => fileKey;
+// TODO: renames: files => challengeFiles; key => fileKey; #42489
 export type ChallengeFileType = {
   contents: string;
   editableContents?: string;
@@ -286,6 +303,28 @@ export type ChallengeFileType = {
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
 export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
 
+export type ChallengeFilesType =
+  | {
+      indexcss: ChallengeFileType;
+      indexhtml: ChallengeFileType;
+      indexjs: ChallengeFileType;
+      indexjsx: ChallengeFileType;
+    }
+  | Record<string, never>;
+
+export type ChallengeMetaType = {
+  block: string;
+  id: string;
+  introPath: string;
+  nextChallengePath: string;
+  prevChallengePath: string;
+  removeComments: boolean;
+  superBlock: string;
+  title?: string;
+  challengeType?: number;
+  helpCategory: string;
+};
+
 export type PortfolioType = {
   id: string;
   title?: string;
@@ -294,6 +333,7 @@ export type PortfolioType = {
   description?: string;
 };
 
+// This looks redundant - same as ChallengeNodeType above?
 export type ChallengeNode = {
   block: string;
   challengeOrder: number;

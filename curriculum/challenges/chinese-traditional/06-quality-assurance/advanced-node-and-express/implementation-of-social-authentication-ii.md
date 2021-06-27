@@ -8,7 +8,7 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-設置 GitHub 驗證的最後一步是創建策略本身。 爲此，你需要在項目中添加 “passport-github” 依賴，並在 `auth.js` 中 請求它，作爲 `GithubStrategy`，像這樣：`const GitHubStrategy = require('passport-github').Strategy;`。 別忘了請求和配置 `dotenv`，使用你的環境變量。
+設置 GitHub 驗證的最後一步是創建策略本身。 爲此，你需要在項目中添加 `passport-github@~1.1.0` 依賴，並在 `auth.js` 中請求它，作爲 `GithubStrategy`，像這樣：`const GitHubStrategy = require('passport-github').Strategy;`。 別忘了請求和配置 `dotenv`，使用你的環境變量。
 
 爲了設置 GitHub 策略，我們需要在 Passport 中使用實例化的 `GitHubStrategy`，它可以接收兩個參數：一個對象（包括 `clientID`、`clientSecret` 和 `callbackURL`），以及一個回調函數。在這個回調函數中，我們要處理驗證成功時，判斷用戶是否已經在數據庫中存在的邏輯，以及在用戶數據庫對象中最初保存哪些字段。 這種處理方式適用於絕大部分第三方驗證策略，但有些策略會需要我們提供更多的信息，詳情請參考相關策略的 GitHub README。 例如，Google 的驗證策略會要求你提供一個 *scope*，用於標示用戶成功登錄後，你需要從返回的對象中獲取那些信息。以及，這也需要經過用戶同意，你纔可以獲取到。 你可以在[這裏](https://github.com/jaredhanson/passport-github/)瞭解當前我們使用的驗證策略的用法，不過我們也會在 freeCodeCamp 課程中進行詳細講解。
 
