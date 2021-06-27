@@ -27,7 +27,7 @@ The best bet at achieving this is to:
 
 #### Interfaces and Types
 
-For the most part, it is encouraged to use interface over type declarations.
+For the most part, it is encouraged to use interface declarations over type declarations.
 
 React Component Props - suffix with `Props`
 
@@ -53,7 +53,16 @@ interface MyObject {}
 const myObject: MyObject = {};
 ```
 
-#### Redux Actions
+<!-- #### Redux Actions -->
+
+<!-- TODO: Once refactored to TS, showcase naming convention for Reducers/Actions and how to type dispatch funcs -->
+
+<!-- ## Redux -->
+
+<!-- TODO: Once refactored to TS, showcase typical style of: -->
+<!-- ### Action Definitions -->
+<!-- ### How to Reduce -->
+<!-- ### How to dispatch -->
 
 ## Further Literature
 
