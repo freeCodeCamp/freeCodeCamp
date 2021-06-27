@@ -20,7 +20,7 @@ import {
   userByNameSelector,
   fetchProfileForUser
 } from '../redux';
-import { certMap } from '../resources/certAndProjectMap';
+import { certMap } from '../resources/cert-and-project-map';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
