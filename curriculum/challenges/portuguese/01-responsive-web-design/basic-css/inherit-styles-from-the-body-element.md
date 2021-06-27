@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08746
-title: Inherit Styles from the Body Element
+title: Herdar estilos do elemento body
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bmdtR'
 forumTopicId: 18204
@@ -9,27 +9,27 @@ dashedName: inherit-styles-from-the-body-element
 
 # --description--
 
-Now we've proven that every HTML page has a `body` element, and that its `body` element can also be styled with CSS.
+No desafio anterior, provamos que cada página HTML tem um elemento `body`, e que o elemento `body` também pode ser estilizado com CSS.
 
-Remember, you can style your `body` element just like any other HTML element, and all your other elements will inherit your `body` element's styles.
+Lembre-se de que você pode definir o estilo do elemento `body` como qualquer outro elemento HTML, e todos os outros elementos herdarão os estilos do elemento `body`.
 
 # --instructions--
 
-First, create a `h1` element with the text `Hello World`
+Primeiro, crie um elemento `h1` com o texto `Hello World`
 
-Then, let's give all elements on your page the color of `green` by adding `color: green;` to your `body` element's style declaration.
+Então, vamos dar a todos os elementos da página a cor `green` adicionando `color: green;` à declaração de estilo do elemento `body`.
 
-Finally, give your `body` element the font-family of `monospace` by adding `font-family: monospace;` to your `body` element's style declaration.
+Por fim, dê ao elemento `body` a tipografia `monospace` adicionando `font-family: monospace;` à declaração de estilo do elemento `body`.
 
 # --hints--
 
-You should create an `h1` element.
+Você deve criar um elemento `h1`.
 
 ```js
 assert($('h1').length > 0);
 ```
 
-Your `h1` element should have the text `Hello World`.
+O elemento `h1` deve conter o texto `Hello World`.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Your `h1` element should have a closing tag.
+O elemento `h1` deve ter uma tag de fechamento.
 
 ```js
 assert(
@@ -50,13 +50,13 @@ assert(
 );
 ```
 
-Your `body` element should have the `color` property of `green`.
+O elemento `body` deve ter a propriedade `color` com o valor `green`.
 
 ```js
 assert($('body').css('color') === 'rgb(0, 128, 0)');
 ```
 
-Your `body` element should have the `font-family` property of `monospace`.
+O elemento `body` deve ter a propriedade `font-family` com o valor `monospace`.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-Your `h1` element should inherit the font `monospace` from your `body` element.
+O elemento `h1` deve herdar a fonte `monospace` do elemento `body`.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-Your `h1` element should inherit the color green from your `body` element.
+O elemento `h1` deve herdar a cor verde do elemento `body`.
 
 ```js
 assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');

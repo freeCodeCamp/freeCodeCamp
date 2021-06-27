@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036172
-title: Render State in the User Interface Another Way
+title: Presentare lo stato nell'interfaccia utente in un altro modo
 challengeType: 6
 forumTopicId: 301408
 dashedName: render-state-in-the-user-interface-another-way
@@ -8,17 +8,17 @@ dashedName: render-state-in-the-user-interface-another-way
 
 # --description--
 
-There is another way to access `state` in a component. In the `render()` method, before the `return` statement, you can write JavaScript directly. For example, you could declare functions, access data from `state` or `props`, perform computations on this data, and so on. Then, you can assign any data to variables, which you have access to in the `return` statement.
+C'è un altro modo per accedere allo `state` in un componente. Nel metodo `render()`, prima dell'istruzione `return`, è possibile scrivere direttamente del JavaScript. Ad esempio, è possibile dichiarare funzioni, accedere ai dati da `state` o `props`, eseguire calcoli su questi dati, e così via. Poi, puoi assegnare qualsiasi dato alle variabili a cui hai accesso nell'istruzione `return`.
 
 # --instructions--
 
-In the `MyComponent` render method, define a `const` called `name` and set it equal to the name value in the component's `state`. Because you can write JavaScript directly in this part of the code, you don't have to enclose this reference in curly braces.
+Nel metodo di rendering `MyComponent`, definisci una `const` chiamata `name` e impostala al valore di name nello `state` del componente. Poiché in questa parte del codice è possibile scrivere direttamente in JavaScript, non è necessario racchiudere questo riferimento tra parentesi graffe.
 
-Next, in the return statement, render this value in an `h1` tag using the variable `name`. Remember, you need to use the JSX syntax (curly braces for JavaScript) in the return statement.
+Successivamente, nell'istruzione return, presenta questo valore in un tag `h1` utilizzando la variabile `name`. Ricorda però che nell'istruzione return dovrai utilizzare la sintassi JSX (parentesi graffe per il JavaScript).
 
 # --hints--
 
-`MyComponent` should have a key `name` with value `freeCodeCamp` stored in its state.
+`MyComponent` dovrebbe avere una chiave `name` con valore `freeCodeCamp` memorizzato nel suo stato.
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header enclosed in a single `div`.
+`MyComponent` dovrebbe presentare un'intestazione `h1` racchiusa in un singolo `div`.
 
 ```js
 assert(
@@ -37,14 +37,14 @@ assert(
 );
 ```
 
-The rendered `h1` tag should include a reference to `{name}`.
+Il tag `h1` presentato dovrebbe includere un riferimento a `{name}`.
 
 ```js
 (getUserInput) =>
   assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')));
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+L'intestazione `h1` dovrebbe contenere testo presentato dallo stato del componente.
 
 ```js
 async () => {

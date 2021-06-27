@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036171
-title: Render State in the User Interface
+title: Presentare lo stato nell'interfaccia utente
 challengeType: 6
 forumTopicId: 301409
 dashedName: render-state-in-the-user-interface
@@ -8,23 +8,23 @@ dashedName: render-state-in-the-user-interface
 
 # --description--
 
-Once you define a component's initial state, you can display any part of it in the UI that is rendered. If a component is stateful, it will always have access to the data in `state` in its `render()` method. You can access the data with `this.state`.
+Una volta definito lo stato iniziale di un componente, è possibile visualizzarne qualsiasi parte nell'interfaccia utente che viene presentata. Se un componente è stateful, avrà sempre accesso ai dati dello `state` nel suo metodo `render()`. È possibile accedere ai dati con `this.state`.
 
-If you want to access a state value within the `return` of the render method, you have to enclose the value in curly braces.
+Se desideri accedere a un valore di stato all'interno del `return` del metodo render, devi racchiudere il valore in parentesi graffe.
 
-`state` is one of the most powerful features of components in React. It allows you to track important data in your app and render a UI in response to changes in this data. If your data changes, your UI will change. React uses what is called a virtual DOM, to keep track of changes behind the scenes. When state data updates, it triggers a re-render of the components using that data - including child components that received the data as a prop. React updates the actual DOM, but only where necessary. This means you don't have to worry about changing the DOM. You simply declare what the UI should look like.
+`state` è una delle caratteristiche più potenti dei componenti di React. Ti permette di tracciare dati importanti nella tua app e presentare un'interfaccia utente in risposta alle modifiche di questi dati. Se i tuoi dati cambiano, la tua interfaccia utente cambierà. React utilizza quello che viene chiamato un DOM (Document Object Model) virtuale, per tenere traccia dei cambiamenti dietro le quinte. Quando lo stato dei dati si aggiorna, si attiva un re-render dei componenti che utilizzano tali dati - compresi i componenti figli che hanno ricevuto i dati come proprietà. React aggiorna il DOM, ma solo se necessario. Questo significa che non devi preoccuparti di cambiare il DOM. Semplicemente dichiari come dovrebbe apparire l'interfaccia utente.
 
-Note that if you make a component stateful, no other components are aware of its `state`. Its `state` is completely encapsulated, or local to that component, unless you pass state data to a child component as `props`. This notion of encapsulated `state` is very important because it allows you to write certain logic, then have that logic contained and isolated in one place in your code.
+Nota che se fai un componente stateful, nessun altro componente è a conoscenza del suo `state`. Il suo `state` è completamente incapsulato, o locale a quel componente, a meno che non passi i dati di stato a un componente figlio come `props`. Questa nozione di `state` incapsulato è molto importante perché permette di scrivere una certa logica, e poi di avere quella logica contenuta e isolata in un unico punto del tuo codice.
 
 # --instructions--
 
-In the code editor, `MyComponent` is already stateful. Define an `h1` tag in the component's render method which renders the value of `name` from the component's state.
+Nell'editor di codice, `MyComponent` è già stateful. Definisci un tag `h1` nel metodo render del componente che presenta il valore di `name` prendendolo dallo stato del componente.
 
-**Note:** The `h1` should only render the value from `state` and nothing else. In JSX, any code you write with curly braces `{ }` will be treated as JavaScript. So to access the value from `state` just enclose the reference in curly braces.
+**Nota:** L'elemento `h1` dovrebbe presentare solo il valore dallo `state` e nient'altro. In JSX, qualsiasi codice che scrivi tra parentesi graffe `{ }` sarà trattato come JavaScript. Quindi, per accedere al valore dallo `state` basta racchiudere il riferimento nelle parentesi graffe.
 
 # --hints--
 
-`MyComponent` should have a key `name` with value `freeCodeCamp` stored in its state.
+`MyComponent` dovrebbe avere una chiave `name` con valore `freeCodeCamp` memorizzato nel suo stato.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header enclosed in a single `div`.
+`MyComponent` dovrebbe presentare un'intestazione `h1` racchiusa in un singolo `div`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+L'intestazione `h1` dovrebbe contenere solo testo presentato dallo stato del componente.
 
 ```js
 async () => {

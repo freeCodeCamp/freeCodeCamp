@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08805
-title: Use CSS Selectors to Style Elements
+title: Usar seletores CSS para definir o estilo de elementos
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKMBT2'
 forumTopicId: 18349
@@ -9,20 +9,20 @@ dashedName: use-css-selectors-to-style-elements
 
 # --description--
 
-With CSS, there are hundreds of CSS properties that you can use to change the way an element looks on your page.
+Com CSS, existem centenas de propriedades que você pode usar para alterar a aparência de um elemento na página.
 
-When you entered `<h2 style="color: red;">CatPhotoApp</h2>`, you were styling that individual `h2` element with inline CSS, which stands for Cascading Style Sheets.
+Quando você digitou `<h2 style="color: red;">CatPhotoApp</h2>`, você estava estilizando individualmente esse elemento `h2` de forma inline.
 
-That's one way to specify the style of an element, but there's a better way to apply CSS.
+Essa é uma maneira de especificar o estilo de um elemento, mas há uma maneira melhor de aplicar o CSS.
 
-At the top of your code, create a `style` block like this:
+Na parte superior do seu código, crie uma tag `style`:
 
 ```html
 <style>
 </style>
 ```
 
-Inside that style block, you can create a <dfn>CSS selector</dfn> for all `h2` elements. For example, if you wanted all `h2` elements to be red, you would add a style rule that looks like this:
+Dentro desse bloco de estilo, você pode criar um <dfn>seletor CSS</dfn> para todos os elementos de `h2`. Por exemplo, se quisesse que todos os elementos `h2` fossem vermelhos, você adicionaria uma regra de estilo semelhante a esta:
 
 ```html
 <style>
@@ -32,39 +32,39 @@ Inside that style block, you can create a <dfn>CSS selector</dfn> for all `h2` e
 </style>
 ```
 
-Note that it's important to have both opening and closing curly braces (`{` and `}`) around each element's style rule(s). You also need to make sure that your element's style definition is between the opening and closing style tags. Finally, be sure to add a semicolon to the end of each of your element's style rules.
+Observe que é importante ter abertura e fechamento de chaves (`{` e `}`) em torno das regras de estilo de cada elemento. Você também precisa se certificar de que a definição de estilo do seu elemento está entre a abertura e o fechamento das tags. Finalmente, certifique-se de adicionar um ponto e vírgula ao final das regras de estilo de cada um dos seus elementos.
 
 # --instructions--
 
-Delete your `h2` element's style attribute, and instead create a CSS `style` block. Add the necessary CSS to turn all `h2` elements blue.
+Exclua o atributo de estilo `h2` e, em vez disso, crie uma tag `style`. Adicione o CSS necessário para transformar a cor de todos os elementos `h2` em azul.
 
 # --hints--
 
-The `style` attribute should be removed from your `h2` element.
+O atributo `style` deve ser removido do elemento `h2`.
 
 ```js
 assert(!$('h2').attr('style'));
 ```
 
-You should create a `style` element.
+Você deve criar um elemento `style`.
 
 ```js
 assert($('style') && $('style').length >= 1);
 ```
 
-Your `h2` element should be blue.
+O elemento `h2` deve ser azul.
 
 ```js
 assert($('h2').css('color') === 'rgb(0, 0, 255)');
 ```
 
-Your stylesheet `h2` declaration should be valid with a semicolon and closing brace.
+O código referente ao `h2` deve ter abertura e fechamento com chaves e cada propriedade deve terminar com ponto e vírgula.
 
 ```js
 assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));
 ```
 
-All your `style` elements should be valid and have closing tags.
+Os elementos `style` devem ser válidos e ter tags de fechamento.
 
 ```js
 assert(

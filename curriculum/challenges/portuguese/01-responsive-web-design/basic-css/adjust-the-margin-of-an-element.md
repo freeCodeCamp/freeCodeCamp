@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08822
-title: Adjust the Margin of an Element
+title: Ajustar a margem de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJarHW'
 forumTopicId: 16654
@@ -9,19 +9,19 @@ dashedName: adjust-the-margin-of-an-element
 
 # --description--
 
-An element's `margin` controls the amount of space between an element's `border` and surrounding elements.
+A propriedade `margin` controla a quantidade de espaço entre a borda (`border`) de um elemento e os elementos ao redor.
 
-Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger `margin` than the blue box, making it appear smaller.
+Aqui, podemos ver que a caixa azul e a caixa vermelha estão aninhadas dentro da caixa amarela. Observe que a caixa vermelha tem uma `margin` maior do que a caixa azul, fazendo com que ela pareça menor.
 
-When you increase the blue box's `margin`, it will increase the distance between its border and surrounding elements.
+Se você aumentar o valor da propriedade `margin` da caixa azul, a distância entre a borda e os elementos ao redor será maior.
 
 # --instructions--
 
-Change the `margin` of the blue box to match that of the red box.
+Altere a `margin` da caixa azul para que combine com a da caixa vermelha.
 
 # --hints--
 
-Your `blue-box` class should give elements `20px` of `margin`.
+A classe `blue-box` deve dar `20px` de `margin` aos elementos.
 
 ```js
 assert($('.blue-box').css('margin-top') === '20px');
