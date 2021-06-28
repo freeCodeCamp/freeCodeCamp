@@ -461,12 +461,12 @@ ${inspect(commentMap)}
             // handler?
             if (nextChallenge) {
               const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
-              Object.keys(solutionFiles).forEach(key => {
-                const challengeFile = solutionFiles[key];
+              solutionFiles.forEach(challengeFile => {
                 challengeFile.editableContents = getLines(
                   challengeFile.contents,
-                  challenge.challengeFiles.find(x => x.fileKey === key)
-                    .editableRegionBoundaries
+                  challenge.challengeFiles.find(
+                    x => x.fileKey === challengeFile.fileKey
+                  ).editableRegionBoundaries
                 );
               });
               solutions = [solutionFiles];

@@ -18,7 +18,6 @@ const explodedMarkerAST = require('../__fixtures__/ast-exploded-marker.json');
 const emptyContentAST = require('../__fixtures__/ast-empty-contents.json');
 
 const addSeed = require('./add-seed');
-const { isObject } = require('lodash');
 
 describe('add-seed plugin', () => {
   const plugin = addSeed();
@@ -32,17 +31,17 @@ describe('add-seed plugin', () => {
     expect(typeof plugin).toEqual('function');
   });
 
-  it('adds a `files` property to `file.data`', () => {
+  it('adds a `challengeFiles` property to `file.data`', () => {
     plugin(simpleAST, file);
-    expect('files' in file.data).toBe(true);
+    expect('challengeFiles' in file.data).toBe(true);
   });
 
-  it('ensures that the `files` property is an object', () => {
+  it('ensures that the `challengeFiles` property is an object', () => {
     plugin(simpleAST, file);
-    expect(isObject(file.data.files)).toBe(true);
+    expect(isArray(file.data.challengeFiles)).toBe(true);
   });
 
-  it('adds test objects to the files array following a schema', () => {
+  it('adds test objects to the challengeFiles array following a schema', () => {
     expect.assertions(17);
     plugin(simpleAST, file);
     const {
@@ -50,8 +49,8 @@ describe('add-seed plugin', () => {
     } = file;
     const testObject = challengeFiles.find(x => x.fileKey === 'indexjs');
     expect(Object.keys(testObject).length).toEqual(8);
-    expect(testObject).toHaveProperty('key');
-    expect(typeof testObject['key']).toBe('string');
+    expect(testObject).toHaveProperty('fileKey');
+    expect(typeof testObject['fileKey']).toBe('string');
     expect(testObject).toHaveProperty('ext');
     expect(typeof testObject['ext']).toBe('string');
     expect(testObject).toHaveProperty('name');
@@ -87,16 +86,16 @@ describe('add-seed plugin', () => {
     );
 
     expect(indexjs.contents).toBe(`var x = 'y';`);
-    expect(indexjs.key).toBe(`indexjs`);
+    expect(indexjs.fileKey).toBe(`indexjs`);
     expect(indexhtml.contents).toBe(`<html>
   <body>
   </body>
 </html>`);
-    expect(indexhtml.key).toBe(`indexhtml`);
+    expect(indexhtml.fileKey).toBe(`indexhtml`);
     expect(indexcss.contents).toBe(`body {
   background: green;
 }`);
-    expect(indexcss.key).toBe(`indexcss`);
+    expect(indexcss.fileKey).toBe(`indexcss`);
   });
 
   it('removes region markers from contents', () => {
@@ -308,7 +307,7 @@ describe('add-seed plugin', () => {
 const Button = () => {
   return <button> {/* another comment! */} text </button>;
 };`);
-    expect(indexjsx.key).toBe(`indexjsx`);
+    expect(indexjsx.fileKey).toBe(`indexjsx`);
   });
 
   it('combines all the code of a specific language into a single file', () => {

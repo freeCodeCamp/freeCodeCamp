@@ -7,8 +7,8 @@ const { isEmpty } = require('lodash');
 
 const editableRegionMarker = '--fcc-editable-region--';
 
-function findRegionMarkers(file) {
-  const lines = file.contents.split('\n');
+function findRegionMarkers(challengeFile) {
+  const lines = challengeFile.contents.split('\n');
   const editableLines = lines
     .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
     .filter(id => id >= 0);
@@ -55,16 +55,17 @@ function addSeeds() {
     visitForContents(contentsTree);
     visitForHead(headTree);
     visitForTail(tailTree);
+    const seedVals = Object.values(seeds);
     file.data = {
       ...file.data,
-      challengeFiles: seeds
+      challengeFiles: seedVals
     };
 
     // process region markers - remove them from content and add them to data
-    seeds
+    seedVals
       .map(x => x.fileKey)
       .forEach(key => {
-        const fileData = seeds.find(x => x.fileKey === key);
+        const fileData = seedVals.find(x => x.fileKey === key);
         const editRegionMarkers = findRegionMarkers(fileData);
         if (editRegionMarkers) {
           fileData.contents = removeLines(fileData.contents, editRegionMarkers);
