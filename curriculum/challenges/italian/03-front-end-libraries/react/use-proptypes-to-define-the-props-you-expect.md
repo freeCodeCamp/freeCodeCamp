@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616d
-title: Use PropTypes to Define the Props You Expect
+title: Usare i PropTypes per definire le Prop attese
 challengeType: 6
 forumTopicId: 301419
 dashedName: use-proptypes-to-define-the-props-you-expect
@@ -8,25 +8,25 @@ dashedName: use-proptypes-to-define-the-props-you-expect
 
 # --description--
 
-React provides useful type-checking features to verify that components receive props of the correct type. For example, your application makes an API call to retrieve data that you expect to be in an array, which is then passed to a component as a prop. You can set `propTypes` on your component to require the data to be of type `array`. This will throw a useful warning when the data is of any other type.
+React fornisce utili funzioni di verifica del tipo per verificare che i componenti ricevano proprietà del tipo corretto. Ad esempio, la tua applicazione effettua una chiamata API per recuperare dei dati che ti aspetti essere in un array, che viene poi passato a un componente come proprietà. Puoi impostare `propTypes` sul tuo componente per richiedere che i dati siano di tipo `array`. Questo generà un avviso utile quando i dati saranno di qualsiasi altro tipo.
 
-It's considered a best practice to set `propTypes` when you know the type of a prop ahead of time. You can define a `propTypes` property for a component in the same way you defined `defaultProps`. Doing this will check that props of a given key are present with a given type. Here's an example to require the type `function` for a prop called `handleClick`:
+È considerata una buona pratica impostare `propTypes` quando si conosce il tipo di una prop in anticipo. Puoi definire una proprietà `propTypes` per un componente nello stesso modo in cui hai definito `defaultProps`. In questo modo si verificherà che la prop con una data chiave sia presenti con un dato tipo. Ecco un esempio per richiedere il tipo `function` per una prop chiamata `handleClick`:
 
 ```js
 MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
 ```
 
-In the example above, the `PropTypes.func` part checks that `handleClick` is a function. Adding `isRequired` tells React that `handleClick` is a required property for that component. You will see a warning if that prop isn't provided. Also notice that `func` represents `function`. Among the seven JavaScript primitive types, `function` and `boolean` (written as `bool`) are the only two that use unusual spelling. In addition to the primitive types, there are other types available. For example, you can check that a prop is a React element. Please refer to the [documentation](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type) for all of the options.
+Nell'esempio sopra, la parte `PropTypes.func` controlla che `handleClick` sia una funzione. Aggiungendo `isRequired` si dice a React che `handleClick` è una proprietà richiesta per quel componente. Se quella prop non è fornita vedrai un avviso. Nota anche che `func` rappresenta `function`. Tra i sette tipi primitivi JavaScript, `function` e `boolean` (scritto come `bool`) sono gli unici che usano un'ortografia insolita. Oltre ai tipi primitivi, ci sono altri tipi disponibili. Ad esempio, puoi controllare che una prop sia un elemento React. Fai riferimento alla [documentazione](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type) per tutte le opzioni.
 
-**Note:** As of React v15.5.0, `PropTypes` is imported independently from React, like this: `import PropTypes from 'prop-types';`
+**Nota:** A partire da React v15.5.0, `PropTypes` viene importato indipendentemente da React, in questo modo: `import PropTypes from 'prop-types';`
 
 # --instructions--
 
-Define `propTypes` for the `Items` component to require `quantity` as a prop and verify that it is of type `number`.
+Definisci `propTypes` in modo che il componente `Items` richieda `quantity` come prop e verifica che sia di tipo `number`.
 
 # --hints--
 
-The `ShoppingCart` component should render.
+Il componente `ShoppingCart` dovrebbe essere presentato.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-The `Items` component should render.
+Il componente `Items` dovrebbe essere presentato.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The `Items` component should include a `propTypes` check to require a value for `quantity` and ensure that its value is a number.
+Il componente `Items` dovrebbe includere un controllo di `propTypes` per richiedere un valore per `quantity` e assicurarsi che il suo valore sia un numero.
 
 ```js
 (getUserInput) =>

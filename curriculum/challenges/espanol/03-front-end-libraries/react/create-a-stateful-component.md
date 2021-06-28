@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036170
-title: Create a Stateful Component
+title: Crea un componente de estado
 challengeType: 6
 forumTopicId: 301391
 dashedName: create-a-stateful-component
@@ -8,25 +8,25 @@ dashedName: create-a-stateful-component
 
 # --description--
 
-One of the most important topics in React is `state`. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.
+Uno de los temas más importantes en React es `state`. El estado consiste en cualquier dato que tu aplicación necesite conocer y que pueda cambiar con el tiempo. Quieres que tus aplicaciones respondan a los cambios de estado y presenten una interfaz de usuario actualizada cuando sea necesario. React ofrece una buena solución para el manejo de estado de aplicaciones web modernas.
 
-You create state in a React component by declaring a `state` property on the component class in its `constructor`. This initializes the component with `state` when it is created. The `state` property must be set to a JavaScript `object`. Declaring it looks like this:
+Creas un estado en un componente de React declarando una propiedad `state` en la clase del componente en su `constructor`. Esto inicializa el componente con `state` cuando se crea. La propiedad `state` debe establecerse en un `object` de JavaScript. Declararlo se ve así:
 
 ```jsx
 this.state = {
-  // describe your state here
+
 }
 ```
 
-You have access to the `state` object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The `state` object can be as complex or as simple as you need it to be. Note that you must create a class component by extending `React.Component` in order to create `state` like this.
+Tienes acceso al objeto `state` a lo largo de la vida de tu componente. Puedes actualizarlo, renderizarlo en tu interfaz de usuario y pasarlo como propiedades a componentes hijos. El objeto `state` puede ser tan complejo o simple como lo necesites. Ten en cuenta que debes crear un componente de clase heredando `React.Component` para crear un `state` como este.
 
 # --instructions--
 
-There is a component in the code editor that is trying to render a `name` property from its `state`. However, there is no `state` defined. Initialize the component with `state` in the `constructor` and assign your name to a property of `name`.
+Hay un componente en el editor de código que está intentando renderizar una propiedad `name` desde su `state`. Sin embargo, no hay ningún `state` definido. Inicializa el componente con `state` en el `constructor` y asigna tu nombre a una propiedad de `name`.
 
 # --hints--
 
-`StatefulComponent` should exist and render.
+`StatefulComponent` debe existir y renderizar.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-`StatefulComponent` should render a `div` and an `h1` element.
+`StatefulComponent` debe renderizar un `div` y un elemento `h1`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-The state of `StatefulComponent` should be initialized with a property `name` set to a string.
+El estado de `StatefulComponent` debe inicializarse con una propiedad `name` establecida a una cadena.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-The property `name` in the state of `StatefulComponent` should render in the `h1` element.
+La propiedad `name` en el estado de `StatefulComponent` debe renderizarse en el elemento `h1`.
 
 ```js
 assert(

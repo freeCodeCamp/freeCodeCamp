@@ -1,6 +1,6 @@
 ---
 id: 587d78a4367417b2b2512ad3
-title: Adjust the Color of Various Elements to Complementary Colors
+title: Ajustar a cor de vários elementos para cores complementares
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmPpud'
 forumTopicId: 301033
@@ -9,33 +9,33 @@ dashedName: adjust-the-color-of-various-elements-to-complementary-colors
 
 # --description--
 
-The Complementary Colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.
+O desafio das Cores Complementares mostrou que cores opostas no círculo cromático podem fazer as demais cores parecerem mais vibrantes quando colocadas lado a lado. No entanto, o forte contraste visual pode ser chocante se for usado demais em um site e, às vezes, pode tornar o texto mais difícil de ler se for colocado em um fundo de cores complementares. Na prática, uma das cores geralmente é dominante e o complemento é usado para chamar a atenção visual para determinado conteúdo da página.
 
 # --instructions--
 
-This page will use a shade of teal (`#09A7A1`) as the dominant color, and its orange (`#FF790E`) complement to visually highlight the sign-up buttons. Change the `background-color` of both the `header` and `footer` from black to the teal color. Then change the `h2` text `color` to teal as well. Finally, change the `background-color` of the `button` to the orange color.
+Esta página usará um tom de azul-petróleo (`#09A7A1`) como cor dominante Seu complemento laranja (`#FF790E`) será usado para destacar visualmente os botões de inscrição. Altere a propriedade `background-color` do `header` e do `footer` de preto para azul-petróleo. Em seguida, altere a propriedade `color` do `h2` para azul-petróleo também. Finalmente, mude a propriedade `background-color` do `button` para a cor laranja.
 
 # --hints--
 
-The `header` element should have a `background-color` of #09A7A1.
+O elemento `header` deve ter uma propriedade `background-color` com o valor de #09A7A1.
 
 ```js
 assert($('header').css('background-color') == 'rgb(9, 167, 161)');
 ```
 
-The `footer` element should have a `background-color` of #09A7A1.
+O elemento `footer` deve ter uma propriedade `background-color` com o valor de #09A7A1.
 
 ```js
 assert($('footer').css('background-color') == 'rgb(9, 167, 161)');
 ```
 
-The `h2` element should have a `color` of #09A7A1.
+O elemento `h2` deve ter uma propriedade `color` com o valor de #09A7A1.
 
 ```js
 assert($('h2').css('color') == 'rgb(9, 167, 161)');
 ```
 
-The `button` element should have a `background-color` of #FF790E.
+O elemento `button` deve ter uma propriedade `background-color` com o valor de #FF790E.
 
 ```js
 assert($('button').css('background-color') == 'rgb(255, 121, 14)');

@@ -78,7 +78,7 @@ passport.use(new GitHubStrategy({
     (data) => {
       assert.match(
         data,
-        /passport\.use.*new GitHubStrategy/gi,
+        /passport\.use.*new GitHubStrategy/gis,
         'Passport should use a new GitHubStrategy'
       );
       assert.match(
