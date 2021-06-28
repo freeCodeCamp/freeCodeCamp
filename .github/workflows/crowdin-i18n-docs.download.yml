@@ -129,7 +129,7 @@ jobs:
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
       ##### Download Italian #####
-      - name: Crowdin Download Italian  Translations
+      - name: Crowdin Download Italian Translations
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
