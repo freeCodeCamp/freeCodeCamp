@@ -30,24 +30,9 @@ const legacyDataVisTakeHomeBase = takeHomeBase;
 const legacyInfosecQaQaBase = qaBase;
 const legacyInfosecQaInfosecBase = infoSecBase;
 
-type certMapTypes = {
-  id: string;
-  title: keyof typeof projectMap | keyof typeof legacyProjectMap | string;
-  certSlug?: string;
-  flag: string;
-  slug?: string;
-  projects?: {
-    id: string;
-    title: string;
-    link: string;
-    certSlug?: string;
-    superBlock?: string;
-  }[];
-}[];
-
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const certMap: certMapTypes = [
+const certMap = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -719,24 +704,22 @@ const certMap: certMapTypes = [
       }
     ]
   }
-];
+] as const;
 
-const legacyProjectMap = {};
-const projectMap = {};
+const titles = certMap.map(({ title }) => title);
+type Title = typeof titles[number];
+const legacyProjectMap: Partial<Record<Title, unknown>> = {};
+const projectMap: Partial<Record<Title, unknown>> = {};
 
 certMap.forEach(cert => {
   // Filter out Legacy Full Stack so inputs for project
   // URLs aren't rendered on the settings page
   if (cert.title !== 'Legacy Full Stack') {
     if (cert.title.startsWith('Legacy')) {
-      // eslint-disable-next-line
-      // @ts-ignore
       legacyProjectMap[cert.title] = cert.projects;
       // temporary hiding of RDBMS cert
-      // should do suggestion on line 48 and use front matter to hide it
+      // should do suggestion on line 33 and use front matter to hide it
     } else if (!cert.title.startsWith('Relational')) {
-      // eslint-disable-next-line
-      // @ts-ignore
       projectMap[cert.title] = cert.projects;
     }
   }
