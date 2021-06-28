@@ -445,15 +445,13 @@ export const query = graphql`
         src
       }
       challengeFiles {
-        [{
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }]
+        key
+        ext
+        name
+        contents
+        head
+        tail
+        editableRegionBoundaries
       }
     }
   }
