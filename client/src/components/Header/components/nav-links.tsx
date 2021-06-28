@@ -19,7 +19,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import store from 'store';
+import * as Tone from 'tone';
 import envData from '../../../../../config/env.json';
+
 import {
   availableLangs,
   i18nextCodes,
@@ -49,7 +52,22 @@ const mapDispatchToProps = {
 
 export class NavLinks extends Component<NavLinksProps, {}> {
   static displayName: string;
-  toggleTheme(currentTheme = 'default', toggleNightMode: any) {
+  async toggleTheme(currentTheme = 'default', toggleNightMode: any) {
+    const playSound = store.get('fcc-sound') as boolean;
+    if (playSound) {
+      const player = new Tone.Player().toDestination();
+      if (Tone.context.state !== 'running') await Tone.context.resume();
+      if (currentTheme === 'night') {
+        await player.load(
+          'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
+        );
+      } else {
+        await player.load(
+          'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
+        );
+      }
+      player.start(1);
+    }
     toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
   }
 

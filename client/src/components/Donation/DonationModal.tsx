@@ -6,9 +6,12 @@ import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
+import store from 'store';
+import * as Tone from 'tone';
 import { modalDefaultDonation } from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
+
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
@@ -76,6 +79,12 @@ function DonateModal({
 
   useEffect(() => {
     if (show) {
+      const playSound = store.get('fcc-sound');
+      const player = new Tone.Player(
+        'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/donate.mp3'
+      ).toDestination();
+      if (Tone.context.state !== 'running') Tone.context.resume();
+      player.autostart = playSound;
       executeGA({ type: 'modal', data: '/donation-modal' });
       executeGA({
         type: 'event',

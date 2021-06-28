@@ -1,6 +1,8 @@
 import { nanoid } from 'nanoid';
 import { createAction, handleActions } from 'redux-actions';
 
+import store from 'store';
+import * as Tone from 'tone';
 import { createTypes } from '../../../utils/create-types';
 
 export const ns = 'flash';
@@ -18,7 +20,25 @@ export const sagas = [];
 
 export const createFlashMessage = createAction(
   types.createFlashMessage,
-  (msg: string[]) => ({ id: nanoid(), ...msg })
+  (msg: { type: string; message: string }) => {
+    const playSound = store.get('fcc-sound') as boolean;
+    if (Tone.context.state !== 'running') {
+      void Tone.context.resume();
+    }
+    if (msg.message === 'flash.incomplete-steps') {
+      const player = new Tone.Player(
+        'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
+      ).toDestination();
+      player.autostart = playSound;
+    }
+    if (msg.message === 'flash.cert-claim-success') {
+      const player = new Tone.Player(
+        'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/cert.mp3'
+      ).toDestination();
+      player.autostart = playSound;
+    }
+    return { id: nanoid(), ...msg };
+  }
 );
 export const removeFlashMessage = createAction(types.removeFlashMessage);
 

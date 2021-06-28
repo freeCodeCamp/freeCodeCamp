@@ -2,6 +2,7 @@ import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import * as Tone from 'tone';
 import ToggleSetting from './toggle-setting';
 
 type ThemeProps = {
@@ -15,6 +16,13 @@ export default function ThemeSettings({
 }: ThemeProps): JSX.Element {
   const { t } = useTranslation();
 
+  const nightToDayPlayer = new Tone.Player(
+    'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
+  ).toDestination();
+  const dayToNightPlayer = new Tone.Player(
+    'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
+  ).toDestination();
+
   return (
     <Form
       inline={true}
@@ -26,9 +34,15 @@ export default function ThemeSettings({
         flagName='currentTheme'
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
-        toggleFlag={() =>
-          toggleNightMode(currentTheme === 'night' ? 'default' : 'night')
-        }
+        toggleFlag={async () => {
+          if (Tone.context.state === 'running') await Tone.context.resume();
+          if (currentTheme === 'night') {
+            nightToDayPlayer.start(1);
+          } else {
+            dayToNightPlayer.start(1);
+          }
+          toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
+        }}
       />
     </Form>
   );
