@@ -27,7 +27,7 @@ import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 import { langCodes } from '../../../config/i18n/all-langs';
 import envData from '../../../config/env.json';
 
-import RedirectHome from '../components/RedirectHome';
+import RedirectHome from '../components/redirect-home';
 import { Loader, Spacer } from '../components/helpers';
 import { isEmpty } from 'lodash-es';
 import { UserType } from '../redux/prop-types';

@@ -1,9 +1,15 @@
-const createLanguageRedirect = ({ clientLocale, lang }) => {
+const createLanguageRedirect = ({
+  clientLocale,
+  lang
+}: {
+  clientLocale: string;
+  lang: string;
+}): string => {
   // return early if requesting the same page
-  if (clientLocale === lang) return `${window?.location}`;
+  if (clientLocale === lang) return window?.location.toString();
 
-  let path = window?.location?.pathname?.split('/');
-  path = path
+  const pathArray = window?.location?.pathname?.split('/');
+  const path = pathArray
     .filter(item => (item !== clientLocale && item !== lang ? item : ''))
     .join('/');
 

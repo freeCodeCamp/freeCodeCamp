@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from '@reach/router';
 import { withPrefix } from 'gatsby';
 
-import RedirectHome from '../components/RedirectHome';
+import RedirectHome from '../components/redirect-home';
 import ShowSettings from '../client-only-routes/show-settings';
 
 function Settings(): JSX.Element {
