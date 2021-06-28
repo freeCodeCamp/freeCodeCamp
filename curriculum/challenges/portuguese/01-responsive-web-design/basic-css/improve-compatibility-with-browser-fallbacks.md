@@ -1,6 +1,6 @@
 ---
 id: 5b7d72c338cd7e35b63f3e14
-title: Improve Compatibility with Browser Fallbacks
+title: Melhorar a compatibilidade do CSS com navegadores antigos
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301087
@@ -9,19 +9,19 @@ dashedName: improve-compatibility-with-browser-fallbacks
 
 # --description--
 
-When working with CSS you will likely run into browser compatibility issues at some point. This is why it's important to provide browser fallbacks to avoid potential problems.
+Ao trabalhar com CSS, você provavelmente terá problemas de compatibilidade entre navegadores em algum momento. É por isso que é importante pensar em um plano B para evitar possíveis problemas.
 
-When your browser parses the CSS of a webpage, it ignores any properties that it doesn't recognize or support. For example, if you use a CSS variable to assign a background color on a site, Internet Explorer will ignore the background color because it does not support CSS variables. In that case, the browser will use whatever value it has for that property. If it can't find any other value set for that property, it will revert to the default value, which is typically not ideal.
+Quando o navegador analisa o CSS de uma página web, ele ignora todas as propriedades que não reconhece ou suporta. Por exemplo, se você usar uma variável CSS para atribuir uma cor de fundo em um site, o Internet Explorer irá ignorar a cor de fundo porque não oferece suporte a variáveis CSS. Nesse caso, o navegador usará qualquer outro valor que ele encontrar para essa propriedade. Se ele não conseguir encontrar nenhum outro valor definido para essa propriedade, ele reverterá para o valor padrão, que normalmente não é o ideal.
 
-This means that if you do want to provide a browser fallback, it's as easy as providing another more widely supported value immediately before your declaration. That way an older browser will have something to fall back on, while a newer browser will just interpret whatever declaration comes later in the cascade.
+Para evitar esse comportamento, você pode criar um plano B. E isso é tão fácil quanto fornecer outro valor que possua um suporte mais amplo. Dessa forma, um navegador mais antigo terá algo em que se apoiar, enquanto que um navegador mais recente interpretará qualquer estilo declarado posteriormente.
 
 # --instructions--
 
-It looks like a variable is being used to set the background color of the `.red-box` class. Let's improve our browser compatibility by adding another `background` declaration right before the existing declaration and set its value to `red`.
+Parece que uma variável está sendo usada para definir a cor de fundo da classe `.red-box`. Vamos melhorar a compatibilidade do nosso código com os navegadores mais antigos adicionando outra propriedade, `background`, logo antes da propriedade que já existe e definir seu valor para `red`.
 
 # --hints--
 
-Your `.red-box` rule should include a fallback with the `background` set to `red` immediately before the existing `background` declaration.
+O seletor `.red-box` deve possuir uma propriedade reserva para a propriedade `background` existente. Crie outra propriedade `background` com o valor `red` imediatamente antes da propriedade de "background" existente.
 
 ```js
 assert(

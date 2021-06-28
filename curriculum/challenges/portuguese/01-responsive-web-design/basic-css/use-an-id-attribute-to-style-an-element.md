@@ -1,6 +1,6 @@
 ---
 id: bad87dee1348bd9aede07836
-title: Use an id Attribute to Style an Element
+title: Usar um atributo id para definir o estilo de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
@@ -9,11 +9,11 @@ dashedName: use-an-id-attribute-to-style-an-element
 
 # --description--
 
-One cool thing about `id` attributes is that, like classes, you can style them using CSS.
+Uma coisa interessante sobre os atributos `id` é que, assim como as classes, você pode estilizá-los usando CSS.
 
-However, an `id` is not reusable and should only be applied to one element. An `id` also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the `id` will be applied.
+No entanto, um `id` não é reutilizável e deve ser aplicado apenas a um elemento. Um `id` também tem uma especificidade (importância) mais alta do que uma classe, portanto, se ambos forem aplicados ao mesmo elemento e tiverem estilos conflitantes, os estilos do `id` serão aplicados.
 
-Here's an example of how you can take your element with the `id` attribute of `cat-photo-element` and give it the background color of green. In your `style` element:
+Aqui está um exemplo de como você pode pegar seu elemento com o atributo `id` de `cat-photo-element` e dar a ele a cor de fundo verde. No elemento `style`:
 
 ```css
 #cat-photo-element {
@@ -21,27 +21,27 @@ Here's an example of how you can take your element with the `id` attribute of `c
 }
 ```
 
-Note that inside your `style` element, you always reference classes by putting a `.` in front of their names. You always reference ids by putting a `#` in front of their names.
+Observe que, dentro do elemento `style`, você sempre faz referência às classes colocando um `.` na frente de seus nomes. Você sempre faz referência aos ids colocando um `#` na frente de seus nomes.
 
 # --instructions--
 
-Try giving your form, which now has the `id` attribute of `cat-photo-form`, a green background.
+Tente dar ao seu formulário, que agora tem o atributo `id` de `cat-photo-form`, um fundo verde.
 
 # --hints--
 
-Your `form` element should have the id of `cat-photo-form`.
+O elemento `form` deve ter o id de `cat-photo-form`.
 
 ```js
 assert($('form').attr('id') === 'cat-photo-form');
 ```
 
-Your `form` element should have the `background-color` of green.
+O elemento `form` deve ter a propriedade `background-color` com o valor green (verde).
 
 ```js
 assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)');
 ```
 
-Your `form` element should have an `id` attribute.
+O elemento `form` deve ter um atributo `id`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-You should not give your `form` any `class` or `style` attributes.
+Você não deve fornecer ao `form` os atributos `class` ou `style`.
 
 ```js
 assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
@@ -166,9 +166,9 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -183,7 +183,7 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

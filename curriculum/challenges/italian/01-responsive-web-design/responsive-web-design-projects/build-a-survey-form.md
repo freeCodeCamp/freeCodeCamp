@@ -10,7 +10,7 @@ dashedName: build-a-survey-form
 
 **Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/VPaoNP>.
 
-Compila le [user stories qui sotto](https://en.wikipedia.org/wiki/User_story) e ottieni tutti i test da passare. Dalle il tuo stile personale.
+Compila le [user stories](https://en.wikipedia.org/wiki/User_story) qui sotto e fai passare tutti i test. Dalle il tuo stile personale.
 
 Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è raccomandato perché è l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per esempio jQuery, React, Angular, o Vue) non sono raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con diversi stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
 
@@ -48,7 +48,7 @@ Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è r
 
 Puoi costruire il tuo progetto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando questo modello CodePen</a> e facendo clic su `Save` per creare il tuo pen. Oppure puoi usare questo link CDN per eseguire i test in qualsiasi ambiente tu voglia: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Una volta fatto, invia l'URL al tuo progetto di lavoro con tutti i suoi test passati.
+Una volta fatto, invia l'URL del tuo progetto di lavoro con tutti i suoi test passati.
 
 # --solutions--
 

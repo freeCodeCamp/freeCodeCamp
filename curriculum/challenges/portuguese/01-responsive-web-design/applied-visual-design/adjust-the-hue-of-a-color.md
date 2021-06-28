@@ -1,6 +1,6 @@
 ---
 id: 587d78a4367417b2b2512ad4
-title: Adjust the Hue of a Color
+title: Ajustar a tonalidade de uma cor
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp38TZ'
 forumTopicId: 301036
@@ -9,55 +9,55 @@ dashedName: adjust-the-hue-of-a-color
 
 # --description--
 
-Colors have several characteristics including hue, saturation, and lightness. CSS3 introduced the `hsl()` property as an alternative way to pick a color by directly stating these characteristics.
+As cores têm várias características, incluindo tonalidade, saturação e luminosidade. CSS3 introduziu a função `hsl()` como uma forma alternativa de escolher uma cor informando diretamente essas características.
 
-**Hue** is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In `hsl()`, hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.
+**Tonalidade** é o que as pessoas geralmente chamam de 'cor'. Se você imaginar um espectro de cores começando com o vermelho à esquerda, passando pelo verde no meio e pelo azul à direita, a tonalidade é qualquer cor que esteja dentro deste espectro. No `hsl()`, a tonalidade é definida usando o conceito de círculo cromático em vez de um espectro, onde o ângulo da cor no círculo é um valor entre 0 e 360.
 
-**Saturation** is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.
+**Saturação** é a quantidade de cinza em uma cor. Uma cor totalmente saturada não contém cinza e uma cor minimamente saturada é quase totalmente cinza. Essa característica é definida usando porcentagem, onde 100% é totalmente saturado.
 
-**Lightness** is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.
+**Luminosidade** é a quantidade de branco ou preto em uma cor. Um valor válido, em porcentagem, varia de 0% (preto) a 100% (branco), onde 50% é a cor normal.
 
-Here are a few examples of using `hsl()` with fully-saturated, normal lightness colors:
+Aqui estão alguns exemplos de uso do `hsl()` com cores totalmente saturadas e luminosidade normal:
 
-<table class='table table-striped'><thead><tr><th>Color</th><th>HSL</th></tr></thead><tbody><tr><td>red</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>yellow</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>green</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>cyan</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>blue</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Cor</th><th>HSL</th></tr></thead><tbody><tr><td>vermelho</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>amarelo</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>verde</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>ciano</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>azul</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
 
 # --instructions--
 
-Change the `background-color` of each `div` element based on the class names (`green`, `cyan`, or `blue`) using `hsl()`. All three should have full saturation and normal lightness.
+Altere a propriedade `background-color` de cada elemento `div` com base nos nomes das classes (`green`, `cyan` ou `blue`) usando `hsl()`. Todos as três devem estar totalmente saturadas e ter luminosidade normal.
 
 # --hints--
 
-Your code should use the `hsl()` property to declare the color `green`.
+Você deve usar a função `hsl()` para declarar a cor `green` (verde).
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Your code should use the `hsl()` property to declare the color `cyan`.
+Você deve usar a função `hsl()` para declarar a cor `cyan` (ciano).
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Your code should use the `hsl()` property to declare the color `blue`.
+Você deve usar a função `hsl()` para declarar a cor `blue` (blue).
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-The `div` element with class `green` should have a `background-color` of green.
+O elemento `div` com a classe `green` deve ter apropriedade `background-color` com o valor green (verde).
 
 ```js
 assert($('.green').css('background-color') == 'rgb(0, 255, 0)');
 ```
 
-The `div` element with class `cyan` should have a `background-color` of cyan.
+O elemento `div` com a classe `cyan` deve ter apropriedade `background-color` com o valor cyan (ciano).
 
 ```js
 assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
 ```
 
-The `div` element with class `blue` should have a `background-color` of blue.
+O elemento `div` com a classe `blue` deve ter apropriedade `background-color` com o valor blue (azul).
 
 ```js
 assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');

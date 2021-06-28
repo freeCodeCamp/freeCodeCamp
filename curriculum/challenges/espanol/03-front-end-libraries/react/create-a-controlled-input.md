@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036178
-title: Create a Controlled Input
+title: Crea una entrada controlada
 challengeType: 6
 forumTopicId: 301385
 dashedName: create-a-controlled-input
@@ -8,23 +8,23 @@ dashedName: create-a-controlled-input
 
 # --description--
 
-Your application may have more complex interactions between `state` and the rendered UI. For example, form control elements for text input, such as `input` and `textarea`, maintain their own state in the DOM as the user types. With React, you can move this mutable state into a React component's `state`. The user's input becomes part of the application `state`, so React controls the value of that input field. Typically, if you have React components with input fields the user can type into, it will be a controlled input form.
+Tu aplicación puede tener interacciones más complejas entre `state` y la interfaz de usuario renderizada. Por ejemplo, elementos de control de formulario para la entrada de texto, tales como `input` y `textarea`, mantienen su propio estado en el DOM como los tipos de usuario. Con React, puedes mover este estado mutable hacia el `state` de un componente de React. La entrada del usuario se convierte en parte del `state` de la aplicación, así que React controla el valor de ese campo de entrada. Por lo general, si tienes componentes de React con campos de entrada en los que el usuario puede escribir, será un formulario de entrada controlado.
 
 # --instructions--
 
-The code editor has the skeleton of a component called `ControlledInput` to create a controlled `input` element. The component's `state` is already initialized with an `input` property that holds an empty string. This value represents the text a user types into the `input` field.
+El editor de código tiene el esqueleto de un componente llamado `ControlledInput` para crear un elemento `input` controlado. El `state` del componente ya está inicializado con una propiedad `input` que contiene una cadena vacía. Este valor representa el texto que un usuario escribe en el campo `input`.
 
-First, create a method called `handleChange()` that has a parameter called `event`. When the method is called, it receives an `event` object that contains a string of text from the `input` element. You can access this string with `event.target.value` inside the method. Update the `input` property of the component's `state` with this new string.
+Primero, crea un método llamado `handleChange()` que tiene un parámetro llamado `event`. Cuando el método es llamado, este recibe un objeto `event` que contiene una cadena de texto del elemento `input`. Puedes acceder a esta cadena con `event.target.value` dentro del método. Actualiza la propiedad `input` del `state` del componente con esta nueva cadena.
 
-In the render method, create the `input` element above the `h4` tag. Add a `value` attribute which is equal to the `input` property of the component's `state`. Then add an `onChange()` event handler set to the `handleChange()` method.
+En el método `render`, crea el elemento `input` encima de la etiqueta `h4`. Añade un atributo `value` que es igual a la propiedad `input` del `state` del componente. Luego añade un manejador de eventos `onChange()` establecido al método `handleChange()`.
 
-When you type in the input box, that text is processed by the `handleChange()` method, set as the `input` property in the local `state`, and rendered as the value in the `input` box on the page. The component `state` is the single source of truth regarding the input data.
+Cuando escribes en el cuadro de entrada, ese texto es procesado por el método `handleChange()`, establecido como la propiedad `input` en el `state` local, y renderizado como el valor en el cuadro `input` de la página. El `state` del componente es la única fuente de verdad con respecto a los datos de entrada.
 
-Last but not least, don't forget to add the necessary bindings in the constructor.
+Por último, pero no menos importante, no olvides añadir los enlaces necesarios en el constructor.
 
 # --hints--
 
-`ControlledInput` should return a `div` element which contains an `input` and a `p` tag.
+`ControlledInput` debe devolver un elemento `div` que contiene un `input` y una etiqueta `p`.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-The state of `ControlledInput` should initialize with an `input` property set to an empty string.
+El estado de `ControlledInput` debe inicializarse con una propiedad `input` establecida a una cadena vacía.
 
 ```js
 assert.strictEqual(
@@ -48,7 +48,7 @@ assert.strictEqual(
 );
 ```
 
-Typing in the input element should update the state and the value of the input, and the `p` element should render this state as you type.
+Escribir en el elemento de entrada debe actualizar el estado y el valor de la entrada, y el elemento `p` debe renderizar este estado a medida que escribas.
 
 ```js
 async () => {

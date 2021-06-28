@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aefe08806
-title: Style Multiple Elements with a CSS Class
+title: Estilizar vários elementos com apenas uma classe CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkVbsQ'
 forumTopicId: 18311
@@ -9,29 +9,29 @@ dashedName: style-multiple-elements-with-a-css-class
 
 # --description--
 
-Classes allow you to use the same CSS styles on multiple HTML elements. You can see this by applying your `red-text` class to the first `p` element.
+As classes permitem que você use os mesmos estilos CSS em diferentes elementos HTML. Você pode ver isso aplicando a classe `red-text` ao primeiro elemento `p`.
 
 # --hints--
 
-Your `h2` element should be red.
+O elemento `h2` deve ser vermelho.
 
 ```js
 assert($('h2').css('color') === 'rgb(255, 0, 0)');
 ```
 
-Your `h2` element should have the class `red-text`.
+O elemento `h2` deve ter a classe `red-text`.
 
 ```js
 assert($('h2').hasClass('red-text'));
 ```
 
-Your first `p` element should be red.
+O primeiro elemento `p` deve ser vermelho.
 
 ```js
 assert($('p:eq(0)').css('color') === 'rgb(255, 0, 0)');
 ```
 
-Your second and third `p` elements should not be red.
+O segundo e terceiro elementos `p` não devem ser vermelhos.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Your first `p` element should have the class `red-text`.
+O primeiro elemento `p` deve ter a classe `red-text`.
 
 ```js
 assert($('p:eq(0)').hasClass('red-text'));
@@ -102,9 +102,9 @@ assert($('p:eq(0)').hasClass('red-text'));
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -119,7 +119,7 @@ assert($('p:eq(0)').hasClass('red-text'));
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acdf08812
-title: Size Your Images
+title: Alterar o tamanho de imagens
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
@@ -9,9 +9,9 @@ dashedName: size-your-images
 
 # --description--
 
-CSS has a property called `width` that controls an element's width. Just like with fonts, we'll use `px` (pixels) to specify the image's width.
+O CSS tem uma propriedade chamada `width` que controla a largura de um elemento. Assim como com as fontes, usaremos `px` (pixels) para especificar a largura da imagem.
 
-For example, if we wanted to create a CSS class called `larger-image` that gave HTML elements a width of 500 pixels, we'd use:
+Por exemplo, se quiséssemos criar uma classe CSS chamada `larger-image` que desse aos elementos HTML uma largura de 500 pixels, escreveríamos:
 
 ```html
 <style>
@@ -23,11 +23,11 @@ For example, if we wanted to create a CSS class called `larger-image` that gave 
 
 # --instructions--
 
-Create a class called `smaller-image` and use it to resize the image so that it's only 100 pixels wide.
+Crie uma classe chamada `smaller-image` e use-a para redimensionar a imagem para que tenha apenas 100 pixels de largura.
 
 # --hints--
 
-Your `img` element should have the class `smaller-image`.
+O elemento `img` deve ter a classe `smaller-image`.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-Your image should be 100 pixels wide.
+A imagem deve ter 100 pixels de largura.
 
 ```js
 assert(
@@ -125,9 +125,9 @@ assert(
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -142,7 +142,7 @@ assert(
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

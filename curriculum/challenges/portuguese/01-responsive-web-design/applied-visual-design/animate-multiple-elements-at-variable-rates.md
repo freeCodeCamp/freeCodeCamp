@@ -1,6 +1,6 @@
 ---
 id: 587d78a8367417b2b2512ae6
-title: Animate Multiple Elements at Variable Rates
+title: Animar múltiplos elementos em diferentes momentos
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpWZc9'
 forumTopicId: 301042
@@ -9,29 +9,29 @@ dashedName: animate-multiple-elements-at-variable-rates
 
 # --description--
 
-In the previous challenge, you changed the animation rates for two similarly animated elements by altering their `@keyframes` rules. You can achieve the same goal by manipulating the `animation-duration` of multiple elements.
+No desafio anterior, você mudou o momento da animação de dois elementos com a mesma animação ao alterar a regra `@keyframes`. Você pode alcançar o mesmo resultado manipulando a propriedade `animation-duration` de vários elementos.
 
-In the animation running in the code editor, there are three stars in the sky that twinkle at the same rate on a continuous loop. To make them twinkle at different rates, you can set the `animation-duration` property to different values for each element.
+Na animação sendo executada no editor de código, há três estrelas no céu que cintilam ao mesmo instante infinitamente. Para fazê-las brilhar com ritmos diferentes, você pode definir a propriedade `animation-duration` com valores diferentes para cada elemento.
 
 # --instructions--
 
-Set the `animation-duration` of the elements with the classes `star-1`, `star-2`, and `star-3` to 1s, 0.9s, and 1.1s, respectively.
+Defina a propriedade `animation-duration` dos elementos com as classes `star-1`, `star-2`, e `star-3` para 1s, 0.9s, e 1.1s, respectivamente.
 
 # --hints--
 
-The `animation-duration` property for the star with class `star-1` should remain at 1s.
+O valor da propriedade `animation-duration` da estrela com a classe `star-1` deve permanecer em 1s.
 
 ```js
 assert($('.star-1').css('animation-duration') == '1s');
 ```
 
-The `animation-duration` property for the star with class `star-2` should be 0.9s.
+O valor da propriedade `animation-duration` da estrela com a classe `star-2` deve ser 0.9s.
 
 ```js
 assert($('.star-2').css('animation-duration') == '0.9s');
 ```
 
-The `animation-duration` property for the star with class `star-3` should be 1.1s.
+O valor da propriedade `animation-duration` da estrela com a classe `star-3` deve ser 1.1s.
 
 ```js
 assert($('.star-3').css('animation-duration') == '1.1s');

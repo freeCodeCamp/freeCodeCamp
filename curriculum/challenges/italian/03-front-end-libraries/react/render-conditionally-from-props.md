@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036188
-title: Render Conditionally from Props
+title: Presentare condizionalmente dalle Props
 challengeType: 6
 forumTopicId: 301405
 dashedName: render-conditionally-from-props
@@ -8,21 +8,21 @@ dashedName: render-conditionally-from-props
 
 # --description--
 
-So far, you've seen how to use `if/else`, `&&`, and the ternary operator (`condition ? expressionIfTrue : expressionIfFalse`) to make conditional decisions about what to render and when. However, there's one important topic left to discuss that lets you combine any or all of these concepts with another powerful React feature: props. Using props to conditionally render code is very common with React developers — that is, they use the value of a given prop to automatically make decisions about what to render.
+Finora, hai visto come usare `if/else`, `&&`, e l'operatore ternario (`condition ? expressionIfTrue : expressionIfFalse`) per prendere decisioni condizionali su cosa presentare e quando. Tuttavia, c'è ancora un argomento importante da discutere che consente di combinare uno o tutti questi concetti con un'altra potente funzionalità di React: le props. Usare le proprietà (props) per presentare il codice condizionalmente è molto comune tra gli sviluppatori di React — cioè essi usano il valore di una determinata proprietà per prendere automaticamente delle decisioni su cosa presentare.
 
-In this challenge, you'll set up a child component to make rendering decisions based on props. You'll also use the ternary operator, but you can see how several of the other concepts that were covered in the last few challenges might be just as useful in this context.
+In questa sfida, configurerai un componente figlio per prendere decisioni di rendering basate sulle props. Utilizzerai anche l'operatore ternario, ma puoi vedere come molti degli altri concetti che sono stati trattati nelle ultime sfide potrebbero essere altrettanto utili in questo contesto.
 
 # --instructions--
 
-The code editor has two components that are partially defined for you: a parent called `GameOfChance`, and a child called `Results`. They are used to create a simple game where the user presses a button to see if they win or lose.
+L'editor di codice ha due componenti che sono parzialmente definiti per te: un genitore chiamato `GameOfChance`, e un figlio chiamato `Results`. Essi sono utilizzati per creare un semplice gioco in cui l'utente preme un bottone per vedere se vince o perde.
 
-First, you'll need a simple expression that randomly returns a different value every time it is run. You can use `Math.random()`. This method returns a value between `0` (inclusive) and `1` (exclusive) each time it is called. So for 50/50 odds, use `Math.random() >= .5` in your expression. Statistically speaking, this expression will return `true` 50% of the time, and `false` the other 50%. In the render method, replace `null` with the above expression to complete the variable declaration.
+In primo luogo, avrai bisogno di una semplice espressione che restituisca casualmente un valore diverso ogni volta che viene eseguita. Puoi usare `Math.random()`. Questo metodo restituisce un valore compreso tra `0` (incluso) e `1` (escluso) ogni volta che viene chiamato. Quindi, per avere delle quote 50/50, usa `Math.random() >= .5` nella tua espressione. Statisticamente parlando, questa espressione restituirà `true` il 50% delle volte, e `false` l'altro 50%. Nel metodo render, sostituisci `null` con l'espressione vista sopra per completare la dichiarazione della variabile.
 
-Now you have an expression that you can use to make a randomized decision in the code. Next you need to implement this. Render the `Results` component as a child of `GameOfChance`, and pass in `expression` as a prop called `fiftyFifty`. In the `Results` component, write a ternary expression to render the `h1` element with the text `You Win!` or `You Lose!` based on the `fiftyFifty` prop that's being passed in from `GameOfChance`. Finally, make sure the `handleClick()` method is correctly counting each turn so the user knows how many times they've played. This also serves to let the user know the component has actually updated in case they win or lose twice in a row.
+Ora hai un'espressione che puoi usare per prendere una decisione casuale nel codice. Successivamente dovrai implementarla. Presenta il componente `Results` come figlio di `GameOfChance`, e passagli `expression` come una proprietà chiamata `fiftyFifty`. Nel componente `Results`, scrivi un'espressione ternaria per presentare l'elemento `h1` con il testo `You Win!` o `You Lose!` basato sulla proprietà `fiftyFifty` che viene passata da `GameOfChance`. Infine, assicurati che il metodo `handleClick()` stia contando correttamente ogni turno in modo che l'utente sappia quante volte ha giocato. Questo serve anche a far sapere all'utente che il componente è stato effettivamente aggiornato nel caso in cui vinca o perda due volte di fila.
 
 # --hints--
 
-The `GameOfChance` component should exist and render to the page.
+Il componente `GameOfChance` dovrebbe esistere e essere presentato nella pagina.
 
 ```js
 assert.strictEqual(
@@ -31,7 +31,7 @@ assert.strictEqual(
 );
 ```
 
-`GameOfChance` should return a single `button` element.
+`GameOfChance` dovrebbe restituire un singolo elemento `button`.
 
 ```js
 assert.strictEqual(
@@ -40,7 +40,7 @@ assert.strictEqual(
 );
 ```
 
-`GameOfChance` should return a single instance of the `Results` component, which has a prop called `fiftyFifty`.
+`GameOfChance` dovrebbe restituire una singola istanza del componente `Results`, che ha una proprietà chiamata `fiftyFifty`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`GameOfChance` state should be initialized with a property of `counter` set to a value of `1`.
+Lo stato di `GameOfChance` dovrebbe essere inizializzato con una proprietà `counter` impostata su un valore di `1`.
 
 ```js
 assert.strictEqual(
@@ -62,7 +62,7 @@ assert.strictEqual(
 );
 ```
 
-When the `GameOfChance` component is first rendered to the DOM, a `p` element should be returned with the inner text of `Turn: 1`.
+Quando il componente `GameOfChance` viene presentato per la prima volta nel DOM, dovrebbe essere restituito un elemento `p` con il testo interno di `Turn: 1`.
 
 ```js
 assert.strictEqual(
@@ -71,7 +71,7 @@ assert.strictEqual(
 );
 ```
 
-Each time the button is clicked, the counter state should be incremented by a value of 1, and a single `p` element should be rendered to the DOM that contains the text `Turn: N`, where `N` is the value of the counter state.
+Ogni volta che viene fatto click sul pulsante, lo stato del contatore deve essere incrementato di un valore di 1, e nel DOM dovrebbe essere presentato un singolo elemento `p` che contiene il testo `Turn: N`, dove `N` è il valore dello stato del contatore.
 
 ```js
 (() => {
@@ -123,7 +123,7 @@ Each time the button is clicked, the counter state should be incremented by a va
 })();
 ```
 
-When the `GameOfChance` component is first mounted to the DOM and each time the button is clicked thereafter, a single `h1` element should be returned that randomly renders either `You Win!` or `You Lose!`.
+Quando il componente `GameOfChance` viene montato per la prima volta nel DOM e ogni volta che il bottone viene cliccato successivamente, dovrebbe essere restituito un singolo elemento `h1` che scrive casualmente `You Win!` o `You Lose!`.
 
 ```js
 (() => {

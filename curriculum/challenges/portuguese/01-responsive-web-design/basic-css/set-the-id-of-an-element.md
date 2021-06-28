@@ -1,6 +1,6 @@
 ---
 id: bad87eee1348bd9aede07836
-title: Set the id of an Element
+title: Definir o id de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6MEc2'
 forumTopicId: 18279
@@ -9,13 +9,13 @@ dashedName: set-the-id-of-an-element
 
 # --description--
 
-In addition to classes, each HTML element can also have an `id` attribute.
+Além das classes, cada elemento HTML também pode ter um atributo `id`.
 
-There are several benefits to using `id` attributes: You can use an `id` to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.
+Existem vários benefícios em usar atributos `id`: você pode usar um `id` para estilizar um único elemento como também pode selecionar e modificar elementos específicos com JavaScript (você aprenderá mais sobre isso depois).
 
-`id` attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same `id` attribute.
+Os atributos `id` devem possuir valores únicos. Os navegadores não exigem que você faça isso, mas é uma prática recomendada e amplamente aceita. Portanto, não dê a mais de um elemento o mesmo atributo `id`.
 
-Here's an example of how you give your `h2` element the id of `cat-photo-app`:
+Aqui está um exemplo de como você dá a um elemento `h2` o id de `cat-photo-app`:
 
 ```html
 <h2 id="cat-photo-app">
@@ -23,11 +23,11 @@ Here's an example of how you give your `h2` element the id of `cat-photo-app`:
 
 # --instructions--
 
-Give your `form` element the id `cat-photo-form`.
+Dê ao elemento `form` o id `cat-photo-form`.
 
 # --hints--
 
-Your `form` element should have the id of `cat-photo-form`.
+O elemento `form` deve ter o atributo id com o valor `cat-photo-form`.
 
 ```js
 assert($('form').attr('id') === 'cat-photo-form');
@@ -139,9 +139,9 @@ assert($('form').attr('id') === 'cat-photo-form');
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -156,7 +156,7 @@ assert($('form').attr('id') === 'cat-photo-form');
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

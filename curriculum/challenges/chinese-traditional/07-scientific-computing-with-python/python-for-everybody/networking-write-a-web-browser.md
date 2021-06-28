@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f073
-title: 'Networking: Write a Web Browser'
+title: '聯網：編寫一個 Web 瀏覽器'
 challengeType: 11
 videoId: zjyT9DaAjx4
 dashedName: networking-write-a-web-browser
@@ -10,7 +10,7 @@ dashedName: networking-write-a-web-browser
 
 ## --text--
 
-What does the following code create?:
+以下代碼創建了什麼？
 
 ```py
 import socket
@@ -30,19 +30,19 @@ mysock.close()
 
 ## --answers--
 
-A simple web server.
+一個簡單的 web 服務器
 
 ---
 
-A simple email client.
+一個簡單的 email 客戶端
 
 ---
 
-A simple todo list.
+一個簡單的待辦事項列表
 
 ---
 
-A simple web browser.
+一個簡單的 web 瀏覽器
 
 ## --video-solution--
 

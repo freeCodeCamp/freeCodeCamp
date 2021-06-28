@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf06756
-title: Override Class Declarations with Inline Styles
+title: Sobrescrever estilos de classe com estilos inline
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
@@ -9,47 +9,47 @@ dashedName: override-class-declarations-with-inline-styles
 
 # --description--
 
-So we've proven that id declarations override class declarations, regardless of where they are declared in your `style` element CSS.
+No desafio anterior, vimos que os estilos declarados com id sobrescrevem as declarações feitas com classes, independente de onde as classes foram declaradas no elemento `style`.
 
-There are other ways that you can override CSS. Do you remember inline styles?
+Mas existem outras maneiras de sobrescrever o CSS. Você se lembra dos estilos inline?
 
 # --instructions--
 
-Use an inline style to try to make our `h1` element white. Remember, inline styles look like this:
+Use um estilo inline para tentar tornar o elemento `h1` branco. Lembre-se, estilos inline são declarados dessa forma:
 
 ```html
 <h1 style="color: green;">
 ```
 
-Leave the `blue-text` and `pink-text` classes on your `h1` element.
+Não apague as classes `blue-text` e `pink-text` do elemento `h1`.
 
 # --hints--
 
-Your `h1` element should have the class `pink-text`.
+O elemento `h1` deve ter a classe `pink-text`.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-Your `h1` element should have the class `blue-text`.
+O elemento `h1` deve ter a classe `blue-text`.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-Your `h1` element should have the id of `orange-text`.
+O elemento `h1` deve ter o id `orange-text`.
 
 ```js
 assert($('h1').attr('id') === 'orange-text');
 ```
 
-Your `h1` element should have an inline style.
+O elemento `h1` deve ter um estilo inline.
 
 ```js
 assert(document.querySelector('h1[style]'));
 ```
 
-Your `h1` element should be white.
+O elemento `h1` deve ser branco.
 
 ```js
 assert($('h1').css('color') === 'rgb(255, 255, 255)');

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08807
-title: Import a Google Font
+title: Importar uma tipografia do Google
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MRsJ'
 forumTopicId: 18200
@@ -9,41 +9,41 @@ dashedName: import-a-google-font
 
 # --description--
 
-In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts for use on our website. There are many sources for web fonts on the Internet. For this example we will focus on the Google Fonts library.
+Além de definir tipografias comuns que são encontradas na maioria dos sistemas operacionais, podemos também definir tipografias não padronizadas e customizadas para serem usadas em nosso site. Na Internet, existem muitos lugares onde podemos encontrar tipografias. Neste desafio, vamos usar a biblioteca do Google Fonts.
 
-[Google Fonts](https://fonts.google.com/) is a free library of web fonts that you can use in your CSS by referencing the font's URL.
+[Google Fonts](https://fonts.google.com/) é uma biblioteca gratuita de tipografias que você pode usar em seu CSS ao referenciar a URL da tipografia.
 
-So, let's go ahead and import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).
+Então, vamos importar e aplicar uma tipografia a partir do Google.
 
-To import a Google Font, you can copy the font's URL from the Google Fonts library and then paste it in your HTML. For this challenge, we'll import the `Lobster` font. To do this, copy the following code snippet and paste it into the top of your code editor (before the opening `style` element):
+Para importar uma tipografia, você pode copiar a URL da tipografia a partir da biblioteca do Google Fonts e colá-la em seu HTML. Para esse desafio, vamos importar a tipografia `Lobster`. Para fazer isso, copie o seguinte fragmento de código e cole-o no começo de seu editor de código-fonte (antes da tag de abertura do elemento `style`):
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 ```
 
-Now you can use the `Lobster` font in your CSS by using `Lobster` as the FAMILY_NAME as in the following example:
+Agora você pode usar a fonte `Lobster` em seu CSS ao substituir FAMILY_NAME no código abaixo por `Lobster`:
 
 ```css
 font-family: FAMILY_NAME, GENERIC_NAME;
 ```
 
-The GENERIC_NAME is optional, and is a fallback font in case the other specified font is not available. This is covered in the next challenge.
+O GENERIC_NAME é opcional e é uma tipografia alternativa caso a tipografia anterior não esteja disponível. Essa questão será abordada no próximo desafio.
 
-Family names are case-sensitive and need to be wrapped in quotes if there is a space in the name. For example, you need quotes to use the `"Open Sans"` font, but not to use the `Lobster` font.
+O nome da família de uma tipografia diferencia maiúsculas de minúsculas e deve estar entre aspas caso possua mais de uma palavra. Por exemplo, você precisa de aspas para usar a fonte `"Open Sans"`, mas não para usar a fonte `Lobster`.
 
 # --instructions--
 
-Import the `Lobster` font to your web page. Then, use an element selector to set `Lobster` as the `font-family` for your `h2` element.
+Importe a tipografia `Lobster` na sua página web. Então, crie um seletor para o elemento `h2` e defina a propriedade `font-family` com o valor de `Lobster`.
 
 # --hints--
 
-You should import the `Lobster` font.
+Você deve importar a tipografia `Lobster`.
 
 ```js
 assert($('link[href*="googleapis" i]').length);
 ```
 
-Your `h2` element should use the font `Lobster`.
+O elemento `h2` deve usar a tipografia `Lobster`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-You should only use an `h2` element selector to change the font.
+Você deve usar apenas um seletor para referenciar o elemento `h2` para alterar a tipografia.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Your `p` element should still use the font `monospace`.
+O elemento `p` ainda deve usar a tipografia `monospace`.
 
 ```js
 assert(
