@@ -10,7 +10,7 @@ import {
   isSignedInSelector,
   tryToShowDonationModal
 } from '../../redux';
-import createRedirect from '../../components/createRedirect';
+import createRedirect from '../create-redirect';
 import DonateModal from '../Donation/DonationModal';
 
 import './prism.css';
