@@ -148,6 +148,16 @@ export type MarkdownRemarkType = {
     superBlock: string;
   };
 };
+
+type Question = { text: string; answers: string[]; solution: number };
+type Fields = { slug: string; blockName: string; tests: Tests[] };
+type Required = {
+  link: string;
+  raw: boolean;
+  src: string;
+  crossDomain?: boolean;
+};
+
 export type ChallengeNodeType = {
   block: string;
   challengeOrder: number;
@@ -155,11 +165,7 @@ export type ChallengeNodeType = {
   dashedName: string;
   description: string;
   challengeFiles: ChallengeFileType[];
-  fields: {
-    slug: string;
-    blockName: string;
-    tests: TestType[];
-  };
+  fields: Fields;
   files: ChallengeFilesType;
   forumTopicId: number;
   guideUrl: string;
@@ -172,18 +178,8 @@ export type ChallengeNodeType = {
   isLocked: boolean;
   isPrivate: boolean;
   order: number;
-  question: {
-    text: string;
-    answers: string[];
-    solution: number;
-  };
-  required: [
-    {
-      link: string;
-      raw: string;
-      src: string;
-    }
-  ];
+  question: Question;
+  required: Required[];
   superOrder: number;
   superBlock: string;
   tail: string[];
@@ -221,9 +217,13 @@ export type DimensionsType = {
   width: number;
 };
 
-export type TestType = {
+export type Tests = {
   text: string;
   testString: string;
+  // challengeSchema suggests this exists. GraphQL disagrees
+  id?: string;
+  // for certificate verification
+  title?: string;
 };
 
 export type UserType = {
@@ -370,3 +370,59 @@ export type ChallengeNode = {
   translationPending: boolean;
   videoUrl?: string;
 };
+
+// Extra types built from challengeSchema
+
+interface challengeFile {
+  fileKey: string;
+  ext: string;
+  name: string;
+  editableRegionBoundaries: number[];
+  path: string;
+  error: null | string;
+  head: string;
+  tail: string;
+  seed: string;
+  contents: string;
+  id: string;
+  history: [[string], string];
+}
+
+export interface challengeSchema {
+  block: string;
+  blockId: string;
+  challengeOrder: number;
+  removeComments: boolean;
+  // TODO: should be typed with possible values
+  challengeType: number;
+  checksum: number;
+  __commentCounts: Record<string, unknown>;
+  dashedName: string;
+  description: string;
+  challengeFiles: challengeFile[];
+  guideUrl: string;
+  // TODO: should be typed with possible values
+  helpCategory: string;
+  videoUrl: string;
+  forumTopicId: number;
+  id: string;
+  instructions: string;
+  isComingSoon: boolean;
+  // TODO: Do we still use this
+  isLocked: boolean;
+  isPrivate: boolean;
+  order: number;
+  videoId?: string;
+  question: Question;
+  required: Required[];
+  solutions: challengeFile[][];
+  superBlock: string;
+  superOrder: number;
+  suborder: number;
+  tests: Tests[];
+  template: string;
+  time: string;
+  title: string;
+  translationPending: boolean;
+  url?: string;
+}
