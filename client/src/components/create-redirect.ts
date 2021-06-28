@@ -1,10 +1,10 @@
 import { navigate } from 'gatsby';
 
 const createRedirect =
-  (to = '/') =>
+  (to = '/'): (() => JSX.Element | null) =>
   () => {
     if (typeof window !== 'undefined') {
-      navigate(to);
+      void navigate(to);
     }
     return null;
   };

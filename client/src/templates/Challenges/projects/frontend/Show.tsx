@@ -29,7 +29,7 @@ import ChallengeTitle from '../../components/challenge-title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Spacer from '../../../../components/helpers/spacer';
 import SolutionForm from '../SolutionForm';
-import ProjectToolPanel from '../Tool-Panel';
+import ProjectToolPanel from '../tool-panel';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/HelpModal';
 import Hotkeys from '../../components/Hotkeys';
