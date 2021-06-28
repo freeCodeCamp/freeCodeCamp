@@ -107,20 +107,21 @@ export const sagas = [
 
 // TODO: can createPoly handle editable region, rather than separating it?
 export const createFiles = createAction(types.createFiles, challengeFiles =>
-  challengeFiles.reduce(
-    (challengeFiles, challengeFile) => ({
+  challengeFiles.reduce((challengeFiles, challengeFile) => {
+    return [
       ...challengeFiles,
-      ...createPoly(challengeFile),
-      seed: challengeFile.contents.slice(),
-      editableContents: getLines(
-        challengeFile.contents,
-        challengeFile.editableRegionBoundaries
-      ),
-      seedEditableRegionBoundaries:
-        challengeFile.editableRegionBoundaries.slice()
-    }),
-    {}
-  )
+      {
+        ...createPoly(challengeFile),
+        seed: challengeFile.contents.slice(),
+        editableContents: getLines(
+          challengeFile.contents,
+          challengeFile.editableRegionBoundaries
+        ),
+        seedEditableRegionBoundaries:
+          challengeFile.editableRegionBoundaries.slice()
+      }
+    ];
+  }, [])
 );
 
 export const createQuestion = createAction(types.createQuestion);
