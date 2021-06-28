@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
@@ -11,7 +10,7 @@ import './tool-panel.css';
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       openHelpModal: () => openModal('help')
@@ -19,14 +18,15 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const propTypes = {
-  guideUrl: PropTypes.string,
-  openHelpModal: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired
-};
+interface ToolPanelProps {
+  guideUrl?: string;
+  openHelpModal: () => void;
+  t: (args: string) => void;
+}
 
-export class ToolPanel extends Component {
-  render() {
+export class ToolPanel extends Component<ToolPanelProps> {
+  static displayName: string;
+  render(): JSX.Element {
     const { guideUrl, openHelpModal, t } = this.props;
     return (
       <div className='tool-panel-group project-tool-panel'>
@@ -55,7 +55,6 @@ export class ToolPanel extends Component {
 }
 
 ToolPanel.displayName = 'ProjectToolPanel';
-ToolPanel.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
