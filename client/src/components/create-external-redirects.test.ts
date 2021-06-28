@@ -1,4 +1,4 @@
-import createExternalRedirect from './createExternalRedirects';
+import createExternalRedirect from './create-external-redirects';
 
 describe('createExternalRedirects', () => {
   describe('english redirects', () => {

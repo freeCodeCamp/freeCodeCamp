@@ -2,7 +2,10 @@ import envData from '../../../config/env.json';
 
 const { forumLocation } = envData;
 
-const createExternalRedirect = (page, { clientLocale }) => {
+const createExternalRedirect = (
+  page: string,
+  { clientLocale }: { clientLocale: string }
+): string => {
   // Handle Chinese
   if (clientLocale === 'chinese' || clientLocale === 'chinese-traditional') {
     return `https://chinese.freecodecamp.org/${page}`;

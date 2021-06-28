@@ -12,7 +12,7 @@ import { createSelector } from 'reselect';
 
 import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
-import createRedirect from '../components/createRedirect';
+import createRedirect from '../components/create-redirect';
 
 import './email-sign-up.css';
 
