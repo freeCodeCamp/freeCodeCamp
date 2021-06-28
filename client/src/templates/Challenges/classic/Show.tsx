@@ -29,7 +29,7 @@ import {
   ChallengeNodeType,
   ChallengeFileType,
   ChallengeMetaType,
-  TestType,
+  Tests,
   ResizePropsType
 } from '../../../redux/prop-types';
 import {
@@ -79,13 +79,13 @@ interface ShowClassicProps {
   executeChallenge: () => void;
   challengeFiles: ChallengeFileType[];
   initConsole: (arg0: string) => void;
-  initTests: (tests: TestType[]) => void;
+  initTests: (tests: Tests[]) => void;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
   t: (arg0: string) => string;
-  tests: TestType[];
+  tests: Tests[];
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
 }
 
