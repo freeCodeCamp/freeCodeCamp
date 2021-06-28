@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
+import SoundSettings from './sound';
 import ThemeSettings from './theme';
 import UsernameSettings from './username';
 
@@ -27,9 +28,11 @@ type AboutProps = {
   name: string;
   picture: string;
   points: number;
+  sound: boolean;
   submitNewAbout: (formValues: FormValues) => void;
   t: TFunction;
   toggleNightMode: (theme: string) => void;
+  toggleSoundMode: (sound: boolean) => void;
   username: string;
 };
 
@@ -184,7 +187,14 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    const { currentTheme, username, t, toggleNightMode } = this.props;
+    const {
+      currentTheme,
+      sound,
+      username,
+      t,
+      toggleNightMode,
+      toggleSoundMode
+    } = this.props;
     return (
       <div className='about-settings'>
         <UsernameSettings username={username} />
@@ -241,6 +251,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             currentTheme={currentTheme}
             toggleNightMode={toggleNightMode}
           />
+          <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         </FullWidthRow>
       </div>
     );
