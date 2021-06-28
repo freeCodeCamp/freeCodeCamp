@@ -8,8 +8,6 @@ interface LinkProps {
   sameTab?: boolean;
   state?: Record<string, unknown>;
   to: string;
-  // TODO: figure out what these actually should be
-  other?: unknown[];
 }
 
 const Link = ({
