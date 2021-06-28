@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617c
-title: Use the Lifecycle Method componentWillMount
+title: Usare il metodo del ciclo di vita componentWillMount
 challengeType: 6
 forumTopicId: 301423
 dashedName: use-the-lifecycle-method-componentwillmount
@@ -8,17 +8,17 @@ dashedName: use-the-lifecycle-method-componentwillmount
 
 # --description--
 
-React components have several special methods that provide opportunities to perform actions at specific points in the lifecycle of a component. These are called lifecycle methods, or lifecycle hooks, and allow you to catch components at certain points in time. This can be before they are rendered, before they update, before they receive props, before they unmount, and so on. Here is a list of some of the main lifecycle methods: `componentWillMount()` `componentDidMount()` `shouldComponentUpdate()` `componentDidUpdate()` `componentWillUnmount()` The next several lessons will cover some of the basic use cases for these lifecycle methods.
+I componenti React hanno diversi metodi speciali che offrono l'opportunità di eseguire azioni in punti specifici del ciclo di vita di un componente. Questi sono chiamati metodi del ciclo di vita, o hooks (ganci) del ciclo di vita, e consentono di intercettare i componenti in determinati istanti. Ad esempio prima che sia fatto il render del componente, prima di aggiornarlo, prima di ricevere le prop, prima di smontarlo, e così via. Ecco un elenco di alcuni dei principali metodi del ciclo di vita: `componentWillMount()` `componentDidMount()` `shouldComponentUpdate()` `componentDidUpdate()` `componentWillUnmount()` Le prossime lezioni copriranno alcuni dei casi di base per questi metodi del ciclo di vita.
 
-**Note:** The `componentWillMount` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+**Nota:** Il metodo del ciclo di vita `componentWillMount` sarà deprecato in una versione futura di 16.X e rimosso nella versione 17. [(Fonte)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 
 # --instructions--
 
-The `componentWillMount()` method is called before the `render()` method when a component is being mounted to the DOM. Log something to the console within `componentWillMount()` - you may want to have your browser console open to see the output.
+Il metodo `componentWillMount()` viene chiamato prima del metodo `render()` quando un componente viene montato sul DOM. Scrivi qualcosa nella console all'interno di `componentWillMount()` - potresti aprire la console del browser per vedere l'output.
 
 # --hints--
 
-`MyComponent` should render a `div` element.
+`MyComponent` dovrebbe presentare un elemento `div`.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-`console.log` should be called in `componentWillMount`.
+`console.log` dovrebbe essere chiamato in `componentWillMount`.
 
 ```js
 assert(

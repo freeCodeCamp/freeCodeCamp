@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f08a
-title: Relational Databases and SQLite
+title: 關係數據庫和 SQLite
 challengeType: 11
 videoId: QlNod5-kFpA
 dashedName: relational-databases-and-sqlite
@@ -10,23 +10,23 @@ dashedName: relational-databases-and-sqlite
 
 ## --text--
 
-Which is NOT a primary data structure in a database?
+哪個不是數據庫中主要的數據結構？
 
 ## --answers--
 
-index
+指數
 
 ---
 
-table
+表格
 
 ---
 
-row
+一行
 
 ---
 
-column
+一列
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5a9d72ad424fe3d0e10cad16
-title: Use a media query to change a variable
+title: Usar media queries para mudar o valor de uma variável
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
@@ -9,17 +9,17 @@ dashedName: use-a-media-query-to-change-a-variable
 
 # --description--
 
-CSS Variables can simplify the way you use media queries.
+As variáveis CSS podem simplificar o modo como você usa media queries.
 
-For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.
+Por exemplo, quando sua tela for menor ou maior do que o media query definido, você pode alterar o valor de uma variável e ela aplicará o estilo atribuído a ela onde quer que ela seja usada.
 
 # --instructions--
 
-In the `:root` selector of the `media query`, change it so `--penguin-size` is redefined and given a value of `200px`. Also, redefine `--penguin-skin` and give it a value of `black`. Then resize the preview to see this change in action.
+Dentro da `media query` existe um seletor `:root`. Mude-o de forma que a variável `--penguin-size` seja redefinida e receba o valor de `200px`. Além disso, redefina a variável `--penguin-skin` e atribua a ela o valor `black`. Em seguida, redimensione a tela de visualização para ver a mudança.
 
 # --hints--
 
-`:root` should reassign the `--penguin-size` variable to `200px`.
+`:root` deve reatribuir o valor da variável `--penguin-size` para `200px`.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-`:root` should reassign the `--penguin-skin` variable to `black`.
+`:root` deve reatribuir o valor da variável `--penguin-skin` para `black`.
 
 ```js
 assert(
