@@ -56,7 +56,7 @@
     "lodash": "4.17.21",
     "mocha": "8.4.0",
     "mock-require": "3.0.3",
-    "puppeteer": "9.1.1",
+    "puppeteer": "10.1.0",
     "readdirp": "3.6.0",
     "rehype": "11.0.0",
     "string-similarity": "4.0.4",
