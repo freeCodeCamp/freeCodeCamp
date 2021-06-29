@@ -30,7 +30,7 @@ import { challengeTypes } from '../../../../utils/challengeTypes';
 import { isContained } from '../../../utils/is-contained';
 import {
   ChallengeNodeType,
-  ChallengeFilesType,
+  ChallengeFileType,
   ChallengeMetaType,
   TestType,
   ResizePropsType
@@ -77,10 +77,10 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
-  createFiles: (arg0: ChallengeFilesType) => void;
+  createFiles: (arg0: ChallengeFileType) => void;
   data: { challengeNode: ChallengeNodeType };
   executeChallenge: () => void;
-  files: ChallengeFilesType;
+  files: ChallengeFileType;
   initConsole: (arg0: string) => void;
   initTests: (tests: TestType[]) => void;
   output: string[];
@@ -329,7 +329,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { files } = this.props;
     return Object.values(files).some(
       file =>
-        file.editableRegionBoundaries &&
+        file?.editableRegionBoundaries &&
         file.editableRegionBoundaries.length === 2
     );
   }
