@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036145
-title: Map State to Props
+title: Mappare lo stato sulle props
 challengeType: 6
 forumTopicId: 301433
 dashedName: map-state-to-props
@@ -8,37 +8,37 @@ dashedName: map-state-to-props
 
 # --description--
 
-The `Provider` component allows you to provide `state` and `dispatch` to your React components, but you must specify exactly what state and actions you want. This way, you make sure that each component only has access to the state it needs. You accomplish this by creating two functions: `mapStateToProps()` and `mapDispatchToProps()`.
+Il componente `Provider` consente di fornire `state` e `dispatch` ai componenti React, ma devi specificare esattamente quale stato e azioni desideri. In questo modo, ti assicuri che ogni componente abbia accesso solo allo stato di cui ha bisogno. Lo si ottiene creando due funzioni: `mapStateToProps()` e `mapDispatchToProps()`.
 
-In these functions, you declare what pieces of state you want to have access to and which action creators you need to be able to dispatch. Once these functions are in place, you'll see how to use the React Redux `connect` method to connect them to your components in another challenge.
+In queste funzioni, dichiari a quali parti dello stato vuoi avere accesso e quali creatori di azione devi essere in grado di inviare. Una volta che queste funzioni saranno pronte, vedrai come utilizzare il metodo React Redux `connect` per collegarli ai tuoi componenti in un'altra sfida.
 
-**Note:** Behind the scenes, React Redux uses the `store.subscribe()` method to implement `mapStateToProps()`.
+**Nota:** Dietro le quinte, React Redux utilizza il metodo `store.subscribe()` per implementare `mapStateToProps()`.
 
 # --instructions--
 
-Create a function `mapStateToProps()`. This function should take `state` as an argument, then return an object which maps that state to specific property names. These properties will become accessible to your component via `props`. Since this example keeps the entire state of the app in a single array, you can pass that entire state to your component. Create a property `messages` in the object that's being returned, and set it to `state`.
+Crea una funzione `mapStateToProps()`. Questa funzione dovrebbe prendere `state` come argomento, quindi restituire un oggetto che mappa quello stato a specifici nomi di proprietà. Queste proprietà diventeranno accessibili al tuo componente tramite `props`. Dal momento che questo esempio mantiene l'intero stato dell'app in un unico array, è possibile passare l'intero stato al tuo componente. Crea una proprietà `messages` nell'oggetto che viene restituito e impostala a `state`.
 
 # --hints--
 
-The const `state` should be an empty array.
+La costante `state` dovrebbe essere un array vuoto.
 
 ```js
 assert(Array.isArray(state) && state.length === 0);
 ```
 
-`mapStateToProps` should be a function.
+`mapStateToProps` dovrebbe essere una funzione.
 
 ```js
 assert(typeof mapStateToProps === 'function');
 ```
 
-`mapStateToProps` should return an object.
+`mapStateToProps` dovrebbe restituire un oggetto.
 
 ```js
 assert(typeof mapStateToProps() === 'object');
 ```
 
-Passing an array as state to `mapStateToProps` should return this array assigned to a key of `messages`.
+Passare un array come stato a `mapStateToProps` dovrebbe restituire questo array associato a una chiave `messages`.
 
 ```js
 assert(mapStateToProps(['messages']).messages.pop() === 'messages');

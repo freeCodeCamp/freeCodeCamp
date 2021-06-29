@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036162
-title: Create a Stateless Functional Component
+title: Crear un componente funcional sin estado
 challengeType: 6
 forumTopicId: 301392
 dashedName: create-a-stateless-functional-component
@@ -8,14 +8,13 @@ dashedName: create-a-stateless-functional-component
 
 # --description--
 
-Components are the core of React. Everything in React is a component and here you will learn how to create one.
+Los componentes son el núcleo de React. Todo en React es un componente y aquí aprenderás a crear uno.
 
-There are two ways to create a React component. The first way is to use a JavaScript function. Defining a component in this way creates a *stateless functional component*. The concept of state in an application will be covered in later challenges. For now, think of a stateless component as one that can receive data and render it, but does not manage or track changes to that data. (We'll cover the second way to create a React component in the next challenge.)
+Hay dos maneras de crear un componente React. La primera forma es utilizar una función JavaScript. Definir un componente de esta manera crea un *componente funcional sin estado*. El concepto de estado en una solicitud se abordará en retos posteriores. Por ahora, piensa en un componente sin estado como uno que puede recibir datos y renderizarlos, pero no administra o rastrea los cambios en esos datos. (Cubriremos la segunda manera de crear un componente React en el siguiente desafío.)
 
-To create a component with a function, you simply write a JavaScript function that returns either JSX or `null`. One important thing to note is that React requires your function name to begin with a capital letter. Here's an example of a stateless functional component that assigns an HTML class in JSX:
+Para crear un componente con una función, simplemente escribe una función JavaScript que devuelva ya sea JSX o `null`. Una cosa importante a tener en cuenta es que React requiere que tu nombre de función comience con una letra mayúscula. Aquí hay un ejemplo de un componente funcional sin estado que asigna una clase HTML en JSX:
 
 ```jsx
-// After being transpiled, the <div> will have a CSS class of 'customClass'
 const DemoComponent = function() {
   return (
     <div className='customClass' />
@@ -23,17 +22,19 @@ const DemoComponent = function() {
 };
 ```
 
-Because a JSX component represents HTML, you could put several components together to create a more complex HTML page. This is one of the key advantages of the component architecture React provides. It allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.
+Después de ser transpilado, el `<div>` tendrá una clase CSS de `customClass`.
+
+Debido a que un componente JSX representa HTML, podrías poner varios componentes juntos para crear una página HTML más compleja. Esta es una de las ventajas clave de la arquitectura de componentes que React proporciona. Te permite componer tu interfaz de usuario de muchos componentes separados y aislados. Esto hace más fácil construir y mantener complejas interfaces de usuario.
 
 # --instructions--
 
-The code editor has a function called `MyComponent`. Complete this function so it returns a single `div` element which contains some string of text.
+El editor de código tiene una función llamada `MyComponent`. Completa esta función para que retorne un único elemento `div` que contiene alguna cadena de texto.
 
-**Note:** The text is considered a child of the `div` element, so you will not be able to use a self-closing tag.
+**Nota:** El texto se considera hijo del elemento `div`, por lo que no podrás utilizar una etiqueta de autocierre.
 
 # --hints--
 
-`MyComponent` should return JSX.
+`MyComponent` debe retornar JSX.
 
 ```js
 assert(
@@ -44,7 +45,7 @@ assert(
 );
 ```
 
-`MyComponent` should return a `div` element.
+`MyComponent` debe renderizar un elemento `div`.
 
 ```js
 assert(
@@ -55,7 +56,7 @@ assert(
 );
 ```
 
-The `div` element should contain a string of text.
+El elemento `div` debe contener una cadena de texto.
 
 ```js
 assert(
