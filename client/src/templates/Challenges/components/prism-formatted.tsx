@@ -7,6 +7,8 @@ interface PrismFormattedProps {
 }
 
 class PrismFormatted extends Component<PrismFormattedProps> {
+  static displayName: string;
+  
   instructionsRef: React.RefObject<HTMLInputElement>;
   componentDidMount(): void {
     // Just in case 'current' has not been created, though it should have been.
