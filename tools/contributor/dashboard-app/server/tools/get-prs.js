@@ -1,7 +1,7 @@
 const { Octokit } = require('@octokit/rest');
 
 const {
-  github: { owner, secret, freeCodeCampRepo, defaultBase }
+  github: { owner, secret, freeCodeCampRepo }
 } = require('../../../lib/config');
 
 const getPRs = async () => {
