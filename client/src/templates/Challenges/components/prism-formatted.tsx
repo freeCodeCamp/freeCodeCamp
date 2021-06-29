@@ -32,4 +32,6 @@ class PrismFormatted extends Component<PrismFormattedProps> {
   }
 }
 
+PrismFormatted.displayName = 'PrismFormatted';
+
 export default PrismFormatted;
