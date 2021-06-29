@@ -250,7 +250,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       url: String
     }
     type FileContents {
-      key: String
+      fileKey: String
       ext: String
       name: String
       contents: String

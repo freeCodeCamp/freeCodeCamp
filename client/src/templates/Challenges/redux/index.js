@@ -255,13 +255,13 @@ export const reducer = handleActions(
     // TODO: Complete this @ShaunSHamilton
     [types.updateFile]: (
       state,
-      { payload: { key, editorValue, editableRegionBoundaries } }
+      { payload: { fileKey, editorValue, editableRegionBoundaries } }
     ) => ({
       ...state,
       challengeFiles: [
         ...state.challengeFiles,
         {
-          ...state.challengeFiles.find(x => x.fileKey === key),
+          ...state.challengeFiles.find(x => x.fileKey === fileKey),
           contents: editorValue,
           editableContents: getLines(editorValue, editableRegionBoundaries),
           editableRegionBoundaries

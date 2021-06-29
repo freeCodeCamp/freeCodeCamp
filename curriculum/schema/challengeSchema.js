@@ -6,7 +6,7 @@ const { challengeTypes } = require('../../client/utils/challengeTypes');
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
 const fileJoi = Joi.object().keys({
-  key: Joi.string(),
+  fileKey: Joi.string(),
   ext: Joi.string(),
   name: Joi.string(),
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
@@ -71,15 +71,7 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
-    solutions: Joi.array().items(
-      Joi.object().keys({
-        indexcss: fileJoi,
-        indexhtml: fileJoi,
-        indexjs: fileJoi,
-        indexjsx: fileJoi,
-        indexpy: fileJoi
-      })
-    ),
+    solutions: Joi.array().items(Joi.array().items(fileJoi)),
     superBlock: Joi.string().regex(slugRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),

@@ -254,7 +254,7 @@ const defaultTestProps = {
 
 const contents = 'This is not JS';
 const ext = 'js';
-const key = 'indexjs';
+const fileKey = 'indexjs';
 const name = 'index';
 const path = 'index.js';
 
@@ -276,7 +276,7 @@ const propsForOnlySolution = {
         {
           contents,
           ext,
-          key,
+          fileKey,
           name,
           path
         }

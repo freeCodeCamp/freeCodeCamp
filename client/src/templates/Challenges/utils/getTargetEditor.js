@@ -6,9 +6,9 @@ export function getTargetEditor(challengeFiles) {
   else {
     let targetEditor = challengeFiles.find(
       ({ editableRegionBoundaries }) => !isEmpty(editableRegionBoundaries)
-    )?.key;
+    )?.fileKey;
 
     // fallback for when there is no editable region.
-    return targetEditor || toSortedArray(challengeFiles)[0].key;
+    return targetEditor || toSortedArray(challengeFiles)[0].fileKey;
   }
 }

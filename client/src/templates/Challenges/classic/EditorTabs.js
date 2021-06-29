@@ -42,6 +42,7 @@ class EditorTabs extends Component {
           <button
             aria-selected={visibleEditors[challengeFile.fileKey]}
             className='monaco-editor-tab'
+            key={challengeFile.fileKey}
             onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             role='tab'
           >

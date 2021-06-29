@@ -445,7 +445,7 @@ export const query = graphql`
         src
       }
       challengeFiles {
-        key
+        fileKey
         ext
         name
         contents

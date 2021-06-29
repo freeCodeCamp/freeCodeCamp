@@ -116,7 +116,7 @@ class DesktopLayout extends Component {
                   !hasEditableBoundries && <EditorTabs />}
                 {challengeFile && (
                   <ReflexContainer
-                    key={challengeFile.key}
+                    key={challengeFile.fileKey}
                     orientation='horizontal'
                   >
                     <ReflexElement
