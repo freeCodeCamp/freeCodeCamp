@@ -32,6 +32,7 @@ export default function ToggleButton({
 }: ButtonProps): JSX.Element {
   const checkIconStyle = {
     height: '15px',
+    paddingTop: '5',
     width: '20px'
   };
   return (

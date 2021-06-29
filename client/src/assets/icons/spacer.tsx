@@ -8,8 +8,6 @@ interface SpacerPropTypes {
 function Spacer(props: SpacerPropTypes): JSX.Element {
   const { t } = useTranslation();
 
-  props.style = { paddingTop: '5', ...props.style };
-
   return (
     <Fragment>
       <span className='sr-only'>{t('icons.spacer')}</span>
