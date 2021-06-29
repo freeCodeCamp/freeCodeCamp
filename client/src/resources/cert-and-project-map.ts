@@ -440,7 +440,7 @@ const certMap = [
   {
     id: '606243f50267e718b1e755f4',
     title: 'Relational Databases',
-    slug: 'relational-databases',
+    certSlug: 'relational-databases',
     flag: 'isRelationalDatabasesCert',
     projects: [
       {
@@ -704,10 +704,12 @@ const certMap = [
       }
     ]
   }
-];
+] as const;
 
-const legacyProjectMap = {};
-const projectMap = {};
+const titles = certMap.map(({ title }) => title);
+type Title = typeof titles[number];
+const legacyProjectMap: Partial<Record<Title, unknown>> = {};
+const projectMap: Partial<Record<Title, unknown>> = {};
 
 certMap.forEach(cert => {
   // Filter out Legacy Full Stack so inputs for project

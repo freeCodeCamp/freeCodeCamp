@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import '../components/layouts/project-links.css';
 import { maybeUrlRE } from '../utils';
 import { Spacer, Link } from '../components/helpers';
-import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
+import {
+  projectMap,
+  legacyProjectMap
+} from '../resources/cert-and-project-map';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';

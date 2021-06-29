@@ -1,4 +1,4 @@
-import createLanguageRedirect from './createLanguageRedirect';
+import createLanguageRedirect from './create-language-redirect';
 
 describe('createLanguageRedirect for clientLocale === english', () => {
   const envVars = {
@@ -20,8 +20,10 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     const originalLocation = window.location;
 
     beforeEach(() => {
-      delete window.location;
-      window.location = new URL(currentPageURL);
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: new URL(currentPageURL)
+      });
     });
 
     afterEach(() => {
@@ -80,8 +82,10 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     const originalLocation = window.location;
 
     beforeEach(() => {
-      delete window.location;
-      window.location = new URL(currentPageURL);
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: new URL(currentPageURL)
+      });
     });
 
     afterEach(() => {
@@ -150,8 +154,10 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
     const originalLocation = window.location;
 
     beforeEach(() => {
-      delete window.location;
-      window.location = new URL(currentPageURL);
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: new URL(currentPageURL)
+      });
     });
 
     afterEach(() => {
@@ -210,8 +216,10 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
     const originalLocation = window.location;
 
     beforeEach(() => {
-      delete window.location;
-      window.location = new URL(currentPageURL);
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: new URL(currentPageURL)
+      });
     });
 
     afterEach(() => {

@@ -1,21 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import Link from '../helpers/link';
 import './footer.css';
 
-const propTypes = {
-  children: PropTypes.any
+type ColHeaderProps = {
+  children: string | React.ReactNode | React.ReactElement;
 };
 
-const ColHeader = ({ children, ...other }) => (
+// TODO: Figure out what ColHeader does: 'ColHeader' is declared but its value is never read.
+// eslint-disable-next-line
+const ColHeader = ({ children, ...other }: ColHeaderProps): JSX.Element => (
   <div className='col-header' {...other}>
     {children}
   </div>
 );
-ColHeader.propTypes = propTypes;
 
-function Footer() {
+function Footer(): JSX.Element {
   const { t } = useTranslation();
 
   return (

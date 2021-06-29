@@ -5,3 +5,7 @@ declare module '@types/react-redux';
 declare module '@types/validator';
 declare module '@types/lodash-es';
 declare module 'react-lazy-load';
+declare module '*.svg' {
+  const content: string;
+  export default content;
+}
