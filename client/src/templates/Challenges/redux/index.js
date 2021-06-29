@@ -259,8 +259,8 @@ export const reducer = handleActions(
     ) => ({
       ...state,
       challengeFiles: [
-        ...state.challengeFiles,
         {
+          ...state.challengeFiles,
           ...state.challengeFiles.find(x => x.fileKey === fileKey),
           contents: editorValue,
           editableContents: getLines(editorValue, editableRegionBoundaries),

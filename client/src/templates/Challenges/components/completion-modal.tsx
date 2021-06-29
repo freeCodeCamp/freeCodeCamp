@@ -146,16 +146,14 @@ export class CompletionModalInner extends Component<
       URL.revokeObjectURL(downloadURL);
     }
     let newURL = null;
-    const fileKeys = Object.keys(challengeFiles);
-    if (fileKeys.length) {
-      const filesForDownload = fileKeys
-        .map(key => challengeFiles.find(x => x.fileKey === key))
+    if (challengeFiles.length) {
+      const filesForDownload = challengeFiles
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .reduce<string>((allFiles, currentFile: any) => {
           const beforeText = `** start of ${currentFile.path} **\n\n`;
           const afterText = `\n\n** end of ${currentFile.path} **\n\n`;
           allFiles +=
-            fileKeys.length > 1
+            challengeFiles.length > 1
               ? `${beforeText}${currentFile.contents}${afterText}`
               : currentFile.contents;
           return allFiles;

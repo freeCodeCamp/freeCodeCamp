@@ -327,10 +327,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   hasEditableBoundries() {
     const { challengeFiles } = this.props;
-    return challengeFiles.some(
-      file =>
-        file.editableRegionBoundaries &&
-        file.editableRegionBoundaries.length === 2
+    return (
+      challengeFiles?.some(
+        challengeFile => challengeFile.editableRegionBoundaries?.length === 2
+      ) ?? false
     );
   }
 

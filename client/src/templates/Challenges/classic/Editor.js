@@ -519,18 +519,18 @@ class Editor extends Component {
   onChange = editorValue => {
     const { updateFile } = this.props;
     // TODO: use fileKey everywhere?
-    const { fileKey: key } = this.props;
+    const { fileKey } = this.props;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height
     // has changed or if content is dragged between regions)
 
-    const editableRegion = this.getCurrentEditableRegion(key);
+    const editableRegion = this.getCurrentEditableRegion(fileKey);
     const editableRegionBoundaries = editableRegion && [
       editableRegion.startLineNumber - 1,
       editableRegion.endLineNumber + 1
     ];
-    updateFile({ key, editorValue, editableRegionBoundaries });
+    updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
   showEditableRegion(editableBoundaries) {
