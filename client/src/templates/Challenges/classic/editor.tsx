@@ -147,7 +147,7 @@ const defineMonacoThemes = (monaco: typeof monacoEditor) => {
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': '#000'
+      'editor.background': '#fff'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
