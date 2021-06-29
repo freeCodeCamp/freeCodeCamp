@@ -23,7 +23,7 @@ import {
   updateSolutionFormValues
 } from '../../redux';
 import { getGuideUrl } from '../../utils';
-import LearnLayout from '../../../../components/layouts/Learn';
+import LearnLayout from '../../../../components/layouts/learn';
 import ChallengeTitle from '../../components/challenge-title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import TestSuite from '../../components/Test-Suite';

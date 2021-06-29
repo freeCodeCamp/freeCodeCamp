@@ -9,7 +9,7 @@ import { graphql } from 'gatsby';
 import type { Dispatch } from 'redux';
 
 // Local Utilities
-import LearnLayout from '../../../components/layouts/Learn';
+import LearnLayout from '../../../components/layouts/learn';
 import {
   ChallengeNodeType,
   ChallengeMetaType
