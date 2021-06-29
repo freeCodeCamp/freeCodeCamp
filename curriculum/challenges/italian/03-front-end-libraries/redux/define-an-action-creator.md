@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614e
-title: Define an Action Creator
+title: Definire un creatore di azione
 challengeType: 6
 forumTopicId: 301441
 dashedName: define-an-action-creator
@@ -8,27 +8,27 @@ dashedName: define-an-action-creator
 
 # --description--
 
-After creating an action, the next step is sending the action to the Redux store so it can update its state. In Redux, you define action creators to accomplish this. An action creator is simply a JavaScript function that returns an action. In other words, action creators create objects that represent action events.
+Dopo aver creato un'azione, il passo successivo è l'invio dell'azione allo store di Redux in modo che possa aggiornare il suo stato. Per farlo, in Redux si definiscono i creatori di azione. Un creatore di azione è semplicemente una funzione JavaScript che restituisce un'azione. In altre parole, i creatori di azione creano oggetti che rappresentano gli eventi di azione.
 
 # --instructions--
 
-Define a function named `actionCreator()` that returns the `action` object when called.
+Definisci una funzione `actionCreator()` che restituisce l'oggetto `action` quando chiamata.
 
 # --hints--
 
-The function `actionCreator` should exist.
+La funzione `actionCreator` dovrebbe esistere.
 
 ```js
 assert(typeof actionCreator === 'function');
 ```
 
-Running the `actionCreator` function should return the `action` object.
+L'esecuzione della funzione `actionCreator` dovrebbe restituire l'oggetto `action`.
 
 ```js
 assert(typeof action === 'object');
 ```
 
-The returned `action` should have a key property `type` with value `LOGIN`.
+L'`action` restituita dovrebbe avere una proprietà di chiave `type` con valore `LOGIN`.
 
 ```js
 assert(action.type === 'LOGIN');

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036159
-title: Use the Spread Operator on Arrays
+title: Usare l'operatore di propagazione sugli array
 challengeType: 6
 forumTopicId: 301452
 dashedName: use-the-spread-operator-on-arrays
@@ -8,21 +8,21 @@ dashedName: use-the-spread-operator-on-arrays
 
 # --description--
 
-One solution from ES6 to help enforce state immutability in Redux is the spread operator: `...`. The spread operator has a variety of applications, one of which is well-suited to the previous challenge of producing a new array from an existing array. This is relatively new, but commonly used syntax. For example, if you have an array `myArray` and write:
+Una soluzione di ES6 per contribuire a far rispettare l'immutabilità dello stato in Redux è l'operatore di propagazione (spred): `...`. L'operatore di propagazione ha una varietà di applicazioni, una delle quali si adatta bene alla precedente sfida di produrre un nuovo array da un array esistente. Si tratta di una sintassi relativamente nuova, ma comunemente usata. Ad esempio, se hai un array `myArray` e scrivi:
 
 ```js
 let newArray = [...myArray];
 ```
 
-`newArray` is now a clone of `myArray`. Both arrays still exist separately in memory. If you perform a mutation like `newArray.push(5)`, `myArray` doesn't change. The `...` effectively *spreads* out the values in `myArray` into a new array. To clone an array but add additional values in the new array, you could write `[...myArray, 'new value']`. This would return a new array composed of the values in `myArray` and the string `new value` as the last value. The spread syntax can be used multiple times in array composition like this, but it's important to note that it only makes a shallow copy of the array. That is to say, it only provides immutable array operations for one-dimensional arrays.
+`newArray` è ora un clone di `myArray`. Entrambi gli array esistono ancora separatamente in memoria. Se esegui una mutazione come `newArray.push(5)`, `myArray` non cambia. L'operatore `...` effettivamente *propaga* i valori di `myArray` a un nuovo array. Per clonare un array con dei valori aggiuntivi nel nuovo array, potresti scrivere `[...myArray, 'new value']`. Questo restituirebbe un nuovo array composto dai valori in `myArray` e la stringa `new value` come ultimo valore. La sintassi di propagazione può essere usata più volte in una composizione di array come questa, ma è importante notare che fa solo una copia superficiale dell'array. Vale a dire, fornisce operazioni di array immutabili solo per array unidimensionali.
 
 # --instructions--
 
-Use the spread operator to return a new copy of state when a to-do is added.
+Usa l'operatore di propagazione per restituire una nuova copia dello stato quando viene aggiunta una cosa da fare.
 
 # --hints--
 
-The Redux store should exist and initialize with a state equal to `["Do not mutate state!"]`.
+Lo store Redux dovrebbe esistere ed essere inizializzato con uno stato uguale a `["Do not mutate state!"]`.
 
 ```js
 assert(
@@ -36,13 +36,13 @@ assert(
 );
 ```
 
-`addToDo` and `immutableReducer` both should be functions.
+`addToDo` e `immutableReducer` dovrebbero essere entrambe funzioni.
 
 ```js
 assert(typeof addToDo === 'function' && typeof immutableReducer === 'function');
 ```
 
-Dispatching an action of type `ADD_TO_DO` on the Redux store should add a `todo` item and should NOT mutate state.
+L'invio di un'azione di tipo `ADD_TO_DO` allo store di Redux dovrebbe aggiungere un elemento `todo` e NON dovrebbe mutare lo stato.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-The spread operator should be used to return new state.
+L'operatore di propagazione deve essere utilizzato per restituire il nuovo stato.
 
 ```js
 (getUserInput) => assert(getUserInput('index').includes('...state'));
