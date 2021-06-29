@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 import { Form } from '../../../components/formHelpers';
@@ -10,25 +9,26 @@ import {
   pythonProject
 } from '../../../../utils/challengeTypes';
 
-const propTypes = {
-  challengeType: PropTypes.number,
-  description: PropTypes.string,
-  isSubmitting: PropTypes.bool,
-  onSubmit: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired,
-  updateSolutionForm: PropTypes.func.isRequired
+interface FormProps {
+  challengeType: number,
+  description: string,
+  isSubmitting: boolean,
+  onSubmit: (arg0: object) => void,
+  t: (arg0: string) => void,
+  updateSolutionForm: (arg0: object) => void
 };
 
-export class SolutionForm extends Component {
-  constructor(props) {
+export class SolutionForm extends Component<FormProps> {
+  constructor(props: FormProps) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   componentDidMount() {
     this.props.updateSolutionForm({});
   }
 
-  handleSubmit(validatedValues) {
+  handleSubmit(validatedValues: any) {
     // Do not execute challenge, if errors
     if (validatedValues.errors.length === 0) {
       // updates values on store
@@ -68,8 +68,8 @@ export class SolutionForm extends Component {
       : t('learn.i-completed');
 
     let formFields = solutionField;
-    let solutionLink = 'ex: ';
-    let solutionFormID = 'front-end-form';
+    let solutionLink: string = 'ex: ';
+    let solutionFormID: string = 'front-end-form';
 
     switch (challengeType) {
       case frontEndProject:
@@ -123,7 +123,5 @@ export class SolutionForm extends Component {
     );
   }
 }
-
-SolutionForm.propTypes = propTypes;
 
 export default withTranslation()(SolutionForm);
