@@ -2,12 +2,12 @@ import envData from '../../../config/env.json';
 import Tokens from 'csrf';
 import cookies from 'browser-cookies';
 
-const { apiLocation } = envData;
+const { apiLocation } = envData as { apiLocation: string };
 
 const base = apiLocation;
 const tokens = new Tokens();
 
-const defaultOptions = {
+const defaultOptions: RequestInit = {
   credentials: 'include'
 };
 
@@ -22,20 +22,25 @@ function getCSRFToken() {
   }
 }
 
-function get(path) {
-  return fetch(`${base}${path}`, defaultOptions).then(res => res.json());
+async function get<T>(path: string): Promise<T> {
+  const res = await fetch(`${base}${path}`, defaultOptions);
+  return (await res.json()) as Promise<T>;
 }
 
-export function post(path, body) {
+export function post<T = void>(path: string, body: unknown): Promise<T> {
   return request('POST', path, body);
 }
 
-function put(path, body) {
+function put<T = void>(path: string, body: unknown): Promise<T> {
   return request('PUT', path, body);
 }
 
-function request(method, path, body) {
-  const options = {
+async function request<T>(
+  method: 'POST' | 'PUT',
+  path: string,
+  body: unknown
+): Promise<T> {
+  const options: RequestInit = {
     ...defaultOptions,
     method,
     headers: {
@@ -44,7 +49,8 @@ function request(method, path, body) {
     },
     body: JSON.stringify(body)
   };
-  return fetch(`${base}${path}`, options).then(res => res.json());
+  const res = await fetch(`${base}${path}`, options);
+  return (await res.json()) as Promise<T>;
 }
 
 /** GET **/
@@ -53,66 +59,66 @@ export function getSessionUser() {
   return get('/user/get-session-user');
 }
 
-export function getUserProfile(username) {
+export function getUserProfile(username: string) {
   return get(`/api/users/get-public-profile?username=${username}`);
 }
 
-export function getShowCert(username, certSlug) {
+export function getShowCert(username: string, certSlug: string) {
   return get(`/certificate/showCert/${username}/${certSlug}`);
 }
 
-export function getUsernameExists(username) {
+export function getUsernameExists(username: string): Promise<boolean> {
   return get(`/api/users/exists?username=${username}`);
 }
 
-export function getArticleById(shortId) {
+export function getArticleById(shortId: string) {
   return get(`/n/${shortId}`);
 }
 
 /** POST **/
 
-export function addDonation(body) {
+export function addDonation(body): Promise<void> {
   return post('/donate/add-donation', body);
 }
 
-export function postReportUser(body) {
+export function postReportUser(body): Promise<void> {
   return post('/user/report-user', body);
 }
 
-export function postDeleteAccount(body) {
+export function postDeleteAccount(body): Promise<void> {
   return post('/account/delete', body);
 }
 
-export function postResetProgress(body) {
+export function postResetProgress(body): Promise<void> {
   return post('/account/reset-progress', body);
 }
 
 /** PUT **/
 
-export function putUpdateMyAbout(values) {
+export function putUpdateMyAbout(values): Promise<void> {
   return put('/update-my-about', { ...values });
 }
 
-export function putUpdateMyUsername(username) {
+export function putUpdateMyUsername(username: string): Promise<void> {
   return put('/update-my-username', { username });
 }
 
-export function putUpdateMyProfileUI(profileUI) {
+export function putUpdateMyProfileUI(profileUI): Promise<void> {
   return put('/update-my-profileui', { profileUI });
 }
 
-export function putUpdateUserFlag(update) {
+export function putUpdateUserFlag(update): Promise<void> {
   return put('/update-user-flag', update);
 }
 
-export function putUserAcceptsTerms(quincyEmails) {
+export function putUserAcceptsTerms(quincyEmails): Promise<void> {
   return put('/update-privacy-terms', { quincyEmails });
 }
 
-export function putUserUpdateEmail(email) {
+export function putUserUpdateEmail(email: string): Promise<void> {
   return put('/update-my-email', { email });
 }
 
-export function putVerifyCert(certSlug) {
+export function putVerifyCert(certSlug: string): Promise<void> {
   return put('/certificate/verify', { certSlug });
 }
