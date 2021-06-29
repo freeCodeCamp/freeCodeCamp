@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
 
-p107_1.png
+<img class="img-responsive center-block" alt="Network with seven vertices and twelve edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;">
 
 The same network can be represented by the matrix below.
 
@@ -27,7 +27,7 @@ The same network can be represented by the matrix below.
 
 However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
 
-p107_2.png
+<img class="img-responsive center-block" alt="Network wtih seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;">
 
 Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
 
