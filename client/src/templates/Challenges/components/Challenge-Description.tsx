@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import PrismFormatted from './PrismFormatted';
+import PrismFormatted from './prism-formatted';
 import './challenge-description.css';
 
 type Challenge = {

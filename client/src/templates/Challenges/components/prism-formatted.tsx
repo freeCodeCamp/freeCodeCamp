@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import Prism from 'prismjs';
-import PropTypes from 'prop-types';
 
-const propTypes = {
-  className: PropTypes.string,
-  text: PropTypes.string.isRequired
-};
+interface PrismFormattedProps {
+  className?: string;
+  text: string;
+}
 
-class PrismFormatted extends Component {
-  componentDidMount() {
+class PrismFormatted extends Component<PrismFormattedProps> {
+  instructionsRef: React.RefObject<HTMLInputElement>;
+  componentDidMount(): void {
     // Just in case 'current' has not been created, though it should have been.
     if (this.instructionsRef.current) {
       Prism.highlightAllUnder(this.instructionsRef.current);
     }
   }
 
-  constructor(props) {
+  constructor(props: PrismFormattedProps | Readonly<PrismFormattedProps>) {
     super(props);
     this.instructionsRef = React.createRef();
   }
 
-  render() {
+  render(): JSX.Element {
     const { text, className } = this.props;
     return (
       <div
@@ -31,8 +31,5 @@ class PrismFormatted extends Component {
     );
   }
 }
-
-PrismFormatted.displayName = 'PrismFormatted';
-PrismFormatted.propTypes = propTypes;
 
 export default PrismFormatted;
