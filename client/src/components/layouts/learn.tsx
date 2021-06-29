@@ -17,13 +17,13 @@ import './prism-night.css';
 import 'react-reflex/styles.css';
 import './learn.css';
 
-type fetchState = {
+type FetchState = {
   pending: boolean;
   complete: boolean;
   errored: boolean;
 };
 
-type user = {
+type User = {
   acceptedPrivacyTerms: boolean;
 };
 
@@ -31,7 +31,7 @@ const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState: fetchState, isSignedIn, user: user) => ({
+  (fetchState: FetchState, isSignedIn, user: User) => ({
     fetchState,
     isSignedIn,
     user
@@ -46,8 +46,8 @@ const RedirectEmailSignUp = createRedirect('/email-sign-up');
 
 type LearnLayoutProps = {
   isSignedIn?: boolean;
-  fetchState: fetchState;
-  user: user;
+  fetchState: FetchState;
+  user: User;
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
 };
