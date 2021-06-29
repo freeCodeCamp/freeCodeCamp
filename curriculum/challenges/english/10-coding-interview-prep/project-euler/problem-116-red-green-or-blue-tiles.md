@@ -22,7 +22,7 @@ And if blue tiles are chosen there are two ways.
 
 p116_3.png
 
-Assuming that colours cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How many different ways can the black tiles in a row measuring fifty units in length be replaced if colours cannot be mixed and at least one coloured tile must be used?
+Assuming that colors cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How many different ways can the black tiles in a row measuring fifty units in length be replaced if colors cannot be mixed and at least one colored tile must be used?
 
 **Note:** This is related to Problem 117.
 
