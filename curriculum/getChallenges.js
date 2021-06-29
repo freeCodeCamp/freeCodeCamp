@@ -312,12 +312,12 @@ ${getFullPath('english')}
 function filesToObject(challengeFiles) {
   return reduce(
     challengeFiles,
-    (map, file) => {
-      map[file.key] = {
-        ...file,
-        head: arrToString(file.head),
-        contents: arrToString(file.contents),
-        tail: arrToString(file.tail)
+    (map, challengeFile) => {
+      map[challengeFile.fileKey] = {
+        ...challengeFile,
+        head: arrToString(challengeFile.head),
+        contents: arrToString(challengeFile.contents),
+        tail: arrToString(challengeFile.tail)
       };
       return map;
     },
