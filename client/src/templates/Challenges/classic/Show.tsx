@@ -9,7 +9,7 @@ import Media from 'react-responsive';
 import { withTranslation } from 'react-i18next';
 
 // Local Utilities
-import LearnLayout from '../../../components/layouts/Learn';
+import LearnLayout from '../../../components/layouts/learn';
 import MultifileEditor from './MultifileEditor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
@@ -27,7 +27,7 @@ import { challengeTypes } from '../../../../utils/challengeTypes';
 import { isContained } from '../../../utils/is-contained';
 import {
   ChallengeNodeType,
-  ChallengeFileType,
+  ChallengeFile,
   ChallengeMetaType,
   Tests,
   ResizePropsType
@@ -74,10 +74,10 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
-  createFiles: (arg0: ChallengeFileType[]) => void;
+  createFiles: (arg0: ChallengeFile[]) => void;
   data: { challengeNode: ChallengeNodeType };
   executeChallenge: () => void;
-  challengeFiles: ChallengeFileType[];
+  challengeFiles: ChallengeFile[];
   initConsole: (arg0: string) => void;
   initTests: (tests: Tests[]) => void;
   output: string[];
@@ -228,7 +228,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       pageContext: { challengeMeta }
     } = this.props;
     initConsole('');
-    createFiles(challengeFiles);
+    createFiles(challengeFiles ?? []);
     initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
@@ -329,7 +329,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { challengeFiles } = this.props;
     return (
       challengeFiles?.some(
-        challengeFile => challengeFile.editableRegionBoundaries?.length === 2
+        challengeFile => challengeFile?.editableRegionBoundaries?.length === 2
       ) ?? false
     );
   }

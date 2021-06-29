@@ -12,10 +12,7 @@ import { Dispatch } from 'redux';
 import Login from '../../../components/Header/components/Login';
 import CompletionModalBody from './completion-modal-body';
 import { dasherize } from '../../../../../utils/slugs';
-import {
-  AllChallengeNodeType,
-  ChallengeFileType
-} from '../../../redux/prop-types';
+import { AllChallengeNodeType, ChallengeFile } from '../../../redux/prop-types';
 
 import {
   closeModal,
@@ -43,7 +40,7 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   successMessageSelector,
   (
-    challengeFiles: ChallengeFileType[],
+    challengeFiles: ChallengeFile[],
     { title, id }: { title: string; id: string },
     completedChallengesIds: string[],
     isOpen: boolean,
@@ -102,7 +99,7 @@ interface CompletionModalsProps {
   completedChallengesIds: string[];
   currentBlockIds?: string[];
   executeGA: () => void;
-  challengeFiles: ChallengeFileType[];
+  challengeFiles: ChallengeFile[];
   id: string;
   isOpen: boolean;
   isSignedIn: boolean;

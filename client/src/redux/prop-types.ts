@@ -141,11 +141,30 @@ export type CurrentCertType = {
 };
 
 export type MarkdownRemarkType = {
-  html: string;
+  fields: [{ component: string; nodeIdentity: string; slug: string }];
+  fileAbsolutePath: string;
   frontmatter: {
-    title: string;
     block: string;
+    isBeta: boolean;
     superBlock: string;
+    title: string;
+  };
+  headings: [
+    {
+      depth: number;
+      value: string;
+      id: string;
+    }
+  ];
+  html: string;
+  htmlAst: Record<string, unknown>;
+  id: string;
+  rawMarkdownBody: string;
+  timeToRead: number;
+  wordCount: {
+    paragraphs: number;
+    sentences: number;
+    words: number;
   };
 };
 
@@ -164,9 +183,8 @@ export type ChallengeNodeType = {
   challengeType: number;
   dashedName: string;
   description: string;
-  challengeFiles: ChallengeFileType[];
+  challengeFiles: ChallengeFile[] | null;
   fields: Fields;
-  files: ChallengeFilesType;
   forumTopicId: number;
   guideUrl: string;
   head: string[];
@@ -224,6 +242,8 @@ export type Tests = {
   id?: string;
   // for certificate verification
   title?: string;
+  pass?: boolean;
+  err?: string;
 };
 
 export type UserType = {
@@ -281,36 +301,11 @@ export type CompletedChallenge = {
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
-  challengeFiles: ChallengeFileType[];
-};
-// TODO: renames: files => challengeFiles; key => fileKey; #42489
-export type ChallengeFileType = {
-  contents: string;
-  editableContents?: string;
-  editableRegionBoundaries?: number[] | null;
-  error?: string | null;
-  ext: ExtTypes;
-  head?: string[];
-  history?: string[];
-  fileKey: FileKeyTypes;
-  name: string;
-  path: string;
-  seed?: string;
-  seedEditableRegionBoundaries?: number[];
-  tail?: string;
+  challengeFiles: ChallengeFile[];
 };
 
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
 export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
-
-export type ChallengeFilesType =
-  | {
-      indexcss: ChallengeFileType;
-      indexhtml: ChallengeFileType;
-      indexjs: ChallengeFileType;
-      indexjsx: ChallengeFileType;
-    }
-  | Record<string, never>;
 
 export type ChallengeMetaType = {
   block: string;
@@ -333,28 +328,57 @@ export type PortfolioType = {
   description?: string;
 };
 
+export type FileKeyChallengeType = {
+  contents: string;
+  ext: ExtTypes;
+  head: string;
+  id: string;
+  key: FileKeyTypes;
+  name: string;
+  tail: string;
+};
+
 // This looks redundant - same as ChallengeNodeType above?
+// TODO: @moT01 Yes, it is an almost duplicate because @ojeytonwilliams
+// does not allow us to add 'Type' at the end...
+// The below is more accurate, because it was built based on graphql's
+// interpretation of what we have. The props commented out are what we
+// think are on the node, but actually do not exist.
 export type ChallengeNode = {
   block: string;
+  challengeFiles: ChallengeFile[];
   challengeOrder: number;
   challengeType: number;
   dashedName: string;
   description: string;
-  challengeFiles: ChallengeFileType;
   fields: {
     slug: string;
     blockName: string;
+    tests: Tests[];
   };
   forumTopicId: number;
-  guideUrl: string;
-  head: string[];
+  // guideUrl: string;
+  // head: string[];
   helpCategory: string;
+  id: string;
   instructions: string;
-  isComingSoon: boolean;
-  removeComments: boolean;
-  isLocked: boolean;
-  isPrivate: boolean;
+  internal?: {
+    content: string;
+    contentDigest: string;
+    description: string;
+    fieldOwners: string[];
+    ignoreType: boolean | null;
+    mediaType: string;
+    owner: string;
+    type: string;
+  };
   order: number;
+  question: {
+    answers: string[];
+    solution: number;
+    text: string;
+  } | null;
+  removeComments: boolean;
   required: [
     {
       link: string;
@@ -362,20 +386,30 @@ export type ChallengeNode = {
       src: string;
     }
   ];
-  superOrder: number;
+  solutions: {
+    [T in FileKeyTypes]: FileKeyChallengeType;
+  };
+  sourceInstanceName: string;
   superBlock: string;
-  tail: string[];
+  superOrder: number;
+  template: string;
+  tests: Tests[];
   time: string;
   title: string;
   translationPending: boolean;
+  videoId?: string;
   videoUrl?: string;
+  // isComingSoon: boolean;
+  // isLocked: boolean;
+  // isPrivate: boolean;
+  // tail: string[];
 };
 
 // Extra types built from challengeSchema
 
-interface challengeFile {
+export type ChallengeFile = {
   fileKey: string;
-  ext: string;
+  ext: ExtTypes;
   name: string;
   editableRegionBoundaries: number[];
   path: string;
@@ -386,9 +420,9 @@ interface challengeFile {
   contents: string;
   id: string;
   history: [[string], string];
-}
+} | null;
 
-export interface challengeSchema {
+export interface ChallengeSchema {
   block: string;
   blockId: string;
   challengeOrder: number;
@@ -399,7 +433,7 @@ export interface challengeSchema {
   __commentCounts: Record<string, unknown>;
   dashedName: string;
   description: string;
-  challengeFiles: challengeFile[];
+  challengeFiles: ChallengeFile[];
   guideUrl: string;
   // TODO: should be typed with possible values
   helpCategory: string;
@@ -415,7 +449,7 @@ export interface challengeSchema {
   videoId?: string;
   question: Question;
   required: Required[];
-  solutions: challengeFile[][];
+  solutions: ChallengeFile[][];
   superBlock: string;
   superOrder: number;
   suborder: number;
