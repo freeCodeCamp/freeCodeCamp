@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from 'react';
-import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -18,11 +17,21 @@ import './prism-night.css';
 import 'react-reflex/styles.css';
 import './learn.css';
 
+type FetchState = {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+};
+
+type User = {
+  acceptedPrivacyTerms: boolean;
+};
+
 const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState, isSignedIn, user) => ({
+  (fetchState: FetchState, isSignedIn, user: User) => ({
     fetchState,
     isSignedIn,
     user
@@ -35,7 +44,17 @@ const mapDispatchToProps = {
 
 const RedirectEmailSignUp = createRedirect('/email-sign-up');
 
-class LearnLayout extends Component {
+type LearnLayoutProps = {
+  isSignedIn?: boolean;
+  fetchState: FetchState;
+  user: User;
+  tryToShowDonationModal: () => void;
+  children?: React.ReactNode;
+};
+
+class LearnLayout extends Component<LearnLayoutProps> {
+  static displayName = 'LearnLayout';
+
   componentDidMount() {
     this.props.tryToShowDonationModal();
   }
@@ -69,25 +88,12 @@ class LearnLayout extends Component {
           <meta content='noindex' name='robots' />
         </Helmet>
         <main id='learn-app-wrapper'>{children}</main>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+        /* @ts-ignore  */}
         <DonateModal />
       </Fragment>
     );
   }
 }
-
-LearnLayout.displayName = 'LearnLayout';
-LearnLayout.propTypes = {
-  children: PropTypes.any,
-  fetchState: PropTypes.shape({
-    pending: PropTypes.bool,
-    complete: PropTypes.bool,
-    errored: PropTypes.bool
-  }),
-  isSignedIn: PropTypes.bool,
-  tryToShowDonationModal: PropTypes.func.isRequired,
-  user: PropTypes.shape({
-    acceptedPrivacyTerms: PropTypes.bool
-  })
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(LearnLayout);
