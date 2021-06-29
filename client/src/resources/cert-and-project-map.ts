@@ -440,7 +440,7 @@ const certMap = [
   {
     id: '606243f50267e718b1e755f4',
     title: 'Relational Databases',
-    slug: 'relational-databases',
+    certSlug: 'relational-databases',
     flag: 'isRelationalDatabasesCert',
     projects: [
       {
