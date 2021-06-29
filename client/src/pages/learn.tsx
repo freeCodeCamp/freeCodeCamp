@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { Spacer } from '../components/helpers';
-import LearnLayout from '../components/layouts/Learn';
+import LearnLayout from '../components/layouts/learn';
 import Map from '../components/Map';
 import Intro from '../components/Intro';
 import {
