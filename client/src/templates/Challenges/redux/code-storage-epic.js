@@ -49,12 +49,12 @@ function getLegacyCode(legacy) {
   }, null);
 }
 
-function legacyToFile(code, challengeFiles, key) {
+function legacyToFile(code, challengeFiles, fileKey) {
   if (isFilesAllPoly(challengeFiles)) {
     return {
-      [key]: setContent(
+      ...setContent(
         code,
-        challengeFiles.find(x => x.fileKey === key)
+        challengeFiles.find(x => x.fileKey === fileKey)
       )
     };
   }
@@ -134,26 +134,23 @@ function loadCodeEpic(action$, state$) {
 
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
-        finalFiles = {
-          ...challengeFiles.reduce(
-            (challengeFiles, challengeFile) => ({
-              ...challengeFiles,
-              [challengeFile.fileKey]: {
-                ...challengeFile,
-                contents: codeFound[challengeFile.fileKey]
-                  ? codeFound[challengeFile.fileKey].contents
-                  : challengeFile.contents,
-                editableContents: codeFound[challengeFile.fileKey]
-                  ? codeFound[challengeFile.fileKey].editableContents
-                  : challengeFile.editableContents,
-                editableRegionBoundaries: codeFound[challengeFile.fileKey]
-                  ? codeFound[challengeFile.fileKey].editableRegionBoundaries
-                  : challengeFile.editableRegionBoundaries
-              }
-            }),
-            {}
-          )
-        };
+        finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
+          return [
+            ...challengeFiles,
+            {
+              ...challengeFile,
+              contents: codeFound[challengeFile.fileKey]
+                ? codeFound[challengeFile.fileKey].contents
+                : challengeFile.contents,
+              editableContents: codeFound[challengeFile.fileKey]
+                ? codeFound[challengeFile.fileKey].editableContents
+                : challengeFile.editableContents,
+              editableRegionBoundaries: codeFound[challengeFile.fileKey]
+                ? codeFound[challengeFile.fileKey].editableRegionBoundaries
+                : challengeFile.editableRegionBoundaries
+            }
+          ];
+        }, []);
       } else {
         const legacyCode = getLegacyCode(legacyKey);
         if (legacyCode && !invalidForLegacy) {
