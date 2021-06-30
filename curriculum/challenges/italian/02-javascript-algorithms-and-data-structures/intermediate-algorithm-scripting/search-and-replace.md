@@ -47,7 +47,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("This has a spellngi error", "spellngi", "spelling")` should return the string `This has a spelling error`.
+`myReplace("This has a spellngi error", "spellngi", "spelling")` dovrebbe restituire `This has a spelling error`.
 
 ```js
 assert.deepEqual(
