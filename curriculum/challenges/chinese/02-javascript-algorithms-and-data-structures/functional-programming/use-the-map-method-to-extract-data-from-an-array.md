@@ -37,7 +37,7 @@ console.log(names);
 
 # --instructions--
 
-`watchList` 数组保存了包含一些电影信息的对象。 使用 `map` 从 `watchList` 中提取标题（`title`）和评分（`rating`），并将新数组保存在 `ratings` 变量里。 目前编辑器中的代码是使用 `for` 循环实现，使用 `map` 表达式替换循环功能。
+`watchList` 数组保存了包含一些电影信息的对象。 在 `watchList` 上使用 `map`，将一个新的对象数组赋值给 `ratings` 变量。 新数组中的每个电影都只能有一个值为电影名称的 `title` 键，和一个值为 IMDB 评级的 `rating` 键。 目前编辑器中的代码是使用 `for` 循环实现，你应该使用 `map` 表达式替换循环功能。
 
 # --hints--
 
