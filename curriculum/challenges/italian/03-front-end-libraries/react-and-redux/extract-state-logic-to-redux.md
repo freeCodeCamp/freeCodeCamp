@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036143
-title: Extract State Logic to Redux
+title: Estrarre la logica dello stato in Redux
 challengeType: 6
 forumTopicId: 301429
 dashedName: extract-state-logic-to-redux
@@ -8,23 +8,23 @@ dashedName: extract-state-logic-to-redux
 
 # --description--
 
-Now that you finished the React component, you need to move the logic it's performing locally in its `state` into Redux. This is the first step to connect the simple React app to Redux. The only functionality your app has is to add new messages from the user to an unordered list. The example is simple in order to demonstrate how React and Redux work together.
+Ora che hai finito il componente React, devi spostare la logica che esegue localmente nel suo `state` in Redux. Questo è il primo passo per collegare la semplice applicazione React a Redux. L'unica funzionalità che la tua app ha è di aggiungere nuovi messaggi dall'utente a un elenco puntato. L'esempio è semplice e serve a dimostrare come React e Redux lavorano insieme.
 
 # --instructions--
 
-First, define an action type `ADD` and set it to a const `ADD`. Next, define an action creator `addMessage()` which creates the action to add a message. You'll need to pass a `message` to this action creator and include the message in the returned `action`.
+In primo luogo, definisci un tipo di azione `ADD` e impostalo a una const `ADD`. Quindi, definisci un creatore di azioni `addMessage()` che crea l'azione per aggiungere un messaggio. Dovrai passare un `message` a questo creatore di azioni e includere il messaggio nell'`action` restituita.
 
-Then create a reducer called `messageReducer()` that handles the state for the messages. The initial state should equal an empty array. This reducer should add a message to the array of messages held in state, or return the current state. Finally, create your Redux store and pass it the reducer.
+Quindi crea un reducer chiamato `messageReducer()` che gestisca lo stato dei messaggi. Lo stato iniziale dovrebbe essere un array vuoto. Questo reducer dovrebbe aggiungere un messaggio all'array di messaggi tenuti nello stato o restituire lo stato attuale. Infine, crea il tuo store di Redux e passagli il reducer.
 
 # --hints--
 
-The const `ADD` should exist and hold a value equal to the string `ADD`
+La costante `ADD` dovrebbe esistere e contenere un valore uguale alla stringa `ADD`
 
 ```js
 assert(ADD === 'ADD');
 ```
 
-The action creator `addMessage` should return an object with `type` equal to `ADD` and `message` equal to the message that is passed in.
+Il creatore di azioni `addMessage` dovrebbe restituire un oggetto con `type` uguale a `ADD` e `message` uguale al messaggio che gli viene passato.
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-`messageReducer` should be a function.
+`messageReducer` dovrebbe essere una funzione.
 
 ```js
 assert(typeof messageReducer === 'function');
 ```
 
-The store should exist and have an initial state set to an empty array.
+Lo store dovrebbe esistere e avere uno stato iniziale impostato su un array vuoto.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-Dispatching `addMessage` against the store should immutably add a new message to the array of messages held in state.
+Inviare `addMessage` allo store dovrebbe sempre aggiungere un nuovo messaggio all'array di messaggi tenuti nello stato.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The `messageReducer` should return the current state if called with any other actions.
+Il `messageReducer` dovrebbe restituire lo stato corrente se chiamato con altre azioni.
 
 ```js
 assert(

@@ -37,7 +37,7 @@ La console visualizzerà il valore `[ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 
-L'array `watchList` contiene oggetti con informazioni su diversi film. Usa `map` su `watchList` per assegnare un nuovo array di oggetti con le sole chiavi `title` e `rating` alla variabile `ratings`. Il codice nell'editor al momento utilizza un ciclo `for` per farlo, quindi dovresti sostituire il ciclo con la tua espressione `map`.
+L'array `watchList` contiene oggetti con informazioni su diversi film. Usa `map` su `watchList` per assegnare un nuovo array di oggetti alla variabile `ratings`. Ogni film nel nuovo array dovrebbe avere una key `title` con il nome del fil, e una key `rating` con il voto da IMDB. Il codice nell'editor al momento utilizza un ciclo `for` per farlo, quindi dovresti sostituire il ciclo con la tua espressione `map`.
 
 # --hints--
 

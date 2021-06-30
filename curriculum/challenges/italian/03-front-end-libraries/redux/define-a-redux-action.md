@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614d
-title: Define a Redux Action
+title: Definire un'azione Redux
 challengeType: 6
 forumTopicId: 301440
 dashedName: define-a-redux-action
@@ -8,17 +8,17 @@ dashedName: define-a-redux-action
 
 # --description--
 
-Since Redux is a state management framework, updating state is one of its core tasks. In Redux, all state updates are triggered by dispatching actions. An action is simply a JavaScript object that contains information about an action event that has occurred. The Redux store receives these action objects, then updates its state accordingly. Sometimes a Redux action also carries some data. For example, the action carries a username after a user logs in. While the data is optional, actions must carry a `type` property that specifies the 'type' of action that occurred.
+Dal momento che Redux è un framework di gestione dello stato, l'aggiornamento dello stato è uno dei suoi compiti fondamentali. In Redux, tutti gli aggiornamenti di stato vengono attivati dalle azioni di dispatching (invio). Un'azione è semplicemente un oggetto JavaScript che contiene informazioni su un evento di azione che si è verificato. Lo store Redux riceve questi oggetti di azione, quindi aggiorna il suo stato di conseguenza. A volte un'azione Redux contiene anche dei dati. Ad esempio, l'azione contiene uno username dopo il login di un utente. Mentre i dati sono facoltativi, le azioni devono contenere una proprietà `type` che specifica il 'tipo' di azione che si è verificato.
 
-Think of Redux actions as messengers that deliver information about events happening in your app to the Redux store. The store then conducts the business of updating state based on the action that occurred.
+Pensa alle azioni Redux come a messaggeri che portano informazioni sugli eventi che accadono nella tua app allo store di Redux. Lo store conduce poi l'attività di aggiornamento dello stato in base all'azione che si è verificata.
 
 # --instructions--
 
-Writing a Redux action is as simple as declaring an object with a type property. Declare an object `action` and give it a property `type` set to the string `'LOGIN'`.
+Scrivere un'azione Redux è semplice come dichiarare un oggetto con una proprietà type. Dichiara un oggetto `action` e dagli una proprietà `type` impostata alla stringa `'LOGIN'`.
 
 # --hints--
 
-An `action` object should exist.
+Dovrebbe esistere un oggetto `action`.
 
 ```js
 assert(
@@ -28,7 +28,7 @@ assert(
 );
 ```
 
-The `action` object should have a key property `type` with value `LOGIN`.
+L'oggetto `action` dovrebbe avere una proprietà `type` con valore `LOGIN`.
 
 ```js
 assert(

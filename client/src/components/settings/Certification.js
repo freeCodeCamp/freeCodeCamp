@@ -14,9 +14,9 @@ import { withTranslation } from 'react-i18next';
 import {
   projectMap,
   legacyProjectMap
-} from '../../resources/certAndProjectMap';
+} from '../../resources/cert-and-project-map';
 
-import SectionHeader from './SectionHeader';
+import SectionHeader from './section-header';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
 

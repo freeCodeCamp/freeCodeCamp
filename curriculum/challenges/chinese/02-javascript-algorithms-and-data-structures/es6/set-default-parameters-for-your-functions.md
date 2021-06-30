@@ -25,7 +25,7 @@ console.log(greeting());
 
 # --instructions--
 
-给函数 `increment` 加上默认参数，使得在 `value` 没有被赋值的时候，默认给 `number` 加上 1。
+给函数 `increment` 传入默认参数，使得在 `value` 没有被赋值的时候，默认给 `number` 加上 1。
 
 # --hints--
 

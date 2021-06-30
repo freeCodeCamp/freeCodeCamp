@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { withTranslation } from 'react-i18next';
 
-import CertificationIcon from '../../../assets/icons/CertificationIcon';
-import GreenPass from '../../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
+import CertificationIcon from '../../../assets/icons/certification-icon';
+import GreenPass from '../../../assets/icons/green-pass';
+import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import { certificatesByNameSelector } from '../../../redux';
 import { CurrentCertsType, User } from '../../../redux/prop-types';
-import { certMap } from '../../../resources/certAndProjectMap';
+import { certMap } from '../../../resources/cert-and-project-map';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap

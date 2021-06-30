@@ -37,7 +37,7 @@ console.log(names);
 
 # --instructions--
 
-`watchList` 數組保存了包含一些電影信息的對象。 使用 `map` 從 `watchList` 中提取標題（`title`）和評分（`rating`），並將新數組保存在 `ratings` 變量裏。 目前編輯器中的代碼是使用 `for` 循環實現，使用 `map` 表達式替換循環功能。
+`watchList` 數組保存了包含一些電影信息的對象。 在 `watchList` 上使用 `map`，將一個新的對象數組賦值給 `ratings` 變量。 新數組中的每個電影都只能有一個值爲電影名稱的 `title` 鍵，和一個值爲 IMDB 評級的 `rating` 鍵。 目前編輯器中的代碼是使用 `for` 循環實現，你應該使用 `map` 表達式替換循環功能。
 
 # --hints--
 

@@ -5,9 +5,9 @@ import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import IntroInformation from '../../../assets/icons/IntroInformation';
-import GreenPass from '../../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
+import IntroInformation from '../../../assets/icons/intro-information';
+import GreenPass from '../../../assets/icons/green-pass';
+import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import { userSelector } from '../../../redux';
 import { User } from '../../../redux/prop-types';
 
