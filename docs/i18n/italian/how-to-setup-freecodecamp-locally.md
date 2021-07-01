@@ -20,11 +20,11 @@ Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git
 
 **Prerequisiti:**
 
-| Prerequisito                                                                                  | Versione | Note                                                               |
-| --------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------ |
-| [Node.js](http://nodejs.org)                                                                  | `14.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
-| npm (viene fornito in bundle con node)                                                        | `6.x`    | Non ha LTS rilasci, utilizziamo la versione in bundle con Node LTS |
-| [Server Community MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x`  | [Note di rilascio](https://docs.mongodb.com/v4.0/release-notes/)   |
+| Prerequisito                                                                                  | Versione | Note                                                                                        |
+| --------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `14.x`   | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| npm (viene fornito in bundle con node)                                                        | `6.x`    | `npm` does not have LTS releases, we use the version bundled with Node.js Active LTS.       |
+| [Server Community MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x`  | -                                                                                           |
 
 > [!ATTENTION] Se hai una versione diversa, per favore installa la versione raccomandata. Possiamo supportare solo i problemi di installazione per le versioni consigliate. Vedi [risoluzione dei problemi](#troubleshooting) per i dettagli.
 
