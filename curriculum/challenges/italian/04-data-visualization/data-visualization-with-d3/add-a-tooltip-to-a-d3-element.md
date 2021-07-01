@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd6
-title: Add a Tooltip to a D3 Element
+title: Aggiungere un suggerimento a un elemento D3
 challengeType: 6
 forumTopicId: 301470
 dashedName: add-a-tooltip-to-a-d3-element
@@ -8,71 +8,71 @@ dashedName: add-a-tooltip-to-a-d3-element
 
 # --description--
 
-A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG `title` element.
+Un suggerimento (tooltip) mostra maggiori informazioni su un elemento in una pagina quando l'utente passa sopra di esso. Ci sono diversi modi per aggiungere un suggerimento a una visualizzazione, questa sfida utilizza l'elemento SVG `title`.
 
-`title` pairs with the `text()` method to dynamically add data to the bars.
+`title` va in coppia con il metodo `text()` per aggiungere dinamicamente dati alle barre.
 
 # --instructions--
 
-Append a `title` element under each `rect` node. Then call the `text()` method with a callback function so the text displays the data value.
+Aggiungi un elemento `title` sotto ogni nodo `rect`. Quindi chiama il metodo `text()` con una funzione di callback in modo che il testo mostri il valore dei dati.
 
 # --hints--
 
-Your code should have 9 `title` elements.
+Il tuo codice dovrebbe avere 9 elementi `title`.
 
 ```js
 assert($('title').length == 9);
 ```
 
-The first `title` element should have tooltip text of `12`.
+Il primo elemento `title` dovrebbe avere un testo tooltip di `12`.
 
 ```js
 assert($('title').eq(0).text() == '12');
 ```
 
-The second `title` element should have tooltip text of `31`.
+Il secondo elemento `title` dovrebbe avere un testo tooltip di `31`.
 
 ```js
 assert($('title').eq(1).text() == '31');
 ```
 
-The third `title` element should have tooltip text of `22`.
+Il terzo elemento `title` dovrebbe avere un testo tooltip di `22`.
 
 ```js
 assert($('title').eq(2).text() == '22');
 ```
 
-The fourth `title` element should have tooltip text of `17`.
+Il quarto elemento `title` dovrebbe avere un testo tooltip di `17`.
 
 ```js
 assert($('title').eq(3).text() == '17');
 ```
 
-The fifth `title` element should have tooltip text of `25`.
+Il quinto elemento `title` dovrebbe avere un testo tooltip di `25`.
 
 ```js
 assert($('title').eq(4).text() == '25');
 ```
 
-The sixth `title` element should have tooltip text of `18`.
+Il sesto elemento `title` dovrebbe avere un testo tooltip di `18`.
 
 ```js
 assert($('title').eq(5).text() == '18');
 ```
 
-The seventh `title` element should have tooltip text of `29`.
+Il settimo elemento `title` dovrebbe avere un testo tooltip di `29`.
 
 ```js
 assert($('title').eq(6).text() == '29');
 ```
 
-The eighth `title` element should have tooltip text of `14`.
+L'ottavo elemento `title` dovrebbe avere un testo tooltip di `14`.
 
 ```js
 assert($('title').eq(7).text() == '14');
 ```
 
-The ninth `title` element should have tooltip text of `9`.
+Il nono elemento `title` dovrebbe avere un testo tooltip di `9`.
 
 ```js
 assert($('title').eq(8).text() == '9');
@@ -160,7 +160,7 @@ assert($('title').eq(8).text() == '9');
        .attr("class", "bar")
        .append("title")
        .text((d) => d)
-       
+
 
     svg.selectAll("text")
        .data(dataset)
