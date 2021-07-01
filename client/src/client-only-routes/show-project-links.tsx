@@ -10,7 +10,7 @@ import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';
 import {
-  ChallengeFileType,
+  ChallengeFile,
   CompletedChallenge,
   UserType
 } from '../redux/prop-types';
@@ -23,7 +23,7 @@ interface IShowProjectLinksProps {
 
 type SolutionStateType = {
   projectTitle: string;
-  challengeFiles: ChallengeFileType[] | null;
+  challengeFiles: ChallengeFile[] | null;
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
@@ -176,7 +176,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       <Spacer />
       {isOpen ? (
         <ProjectModal
-          files={challengeFiles}
+          challengeFiles={challengeFiles}
           handleSolutionModalHide={handleSolutionModalHide}
           isOpen={isOpen}
           projectTitle={projectTitle}

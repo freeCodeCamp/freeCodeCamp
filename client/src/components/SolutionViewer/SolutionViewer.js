@@ -11,11 +11,11 @@ const prismLang = {
 };
 
 const SolutionViewer = ({
-  files,
+  challengeFiles,
   solution = '// The solution is not available for this project'
 }) =>
-  files && Array.isArray(files) && files.length ? (
-    files.map(file => (
+  challengeFiles?.length ? (
+    challengeFiles.map(file => (
       <Panel bsStyle='primary' className='solution-viewer' key={file.ext}>
         <Panel.Heading>{file.ext.toUpperCase()}</Panel.Heading>
         <Panel.Body>
@@ -59,7 +59,7 @@ const SolutionViewer = ({
 
 SolutionViewer.displayName = 'SolutionViewer';
 SolutionViewer.propTypes = {
-  files: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  challengeFiles: PropTypes.object,
   solution: PropTypes.string
 };
 
