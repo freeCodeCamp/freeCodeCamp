@@ -4,10 +4,12 @@ ports:
     onOpen: ignore
   - port: 8000 # client
     onOpen: open-preview
+    visibility: public
   - port: 9228 # node debug
     onOpen: ignore
   - port: 3000 # api
     onOpen: ignore
+    visibility: public
   - port: 9229 # node debug
     onOpen: ignore
   - port: 9230 # client node debug
