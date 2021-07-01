@@ -22,6 +22,7 @@ const keyMap = {
   NAVIGATION_MODE: 'escape',
   EXECUTE_CHALLENGE: ['ctrl+enter', 'command+enter'],
   FOCUS_EDITOR: 'e',
+  FOCUS_INSTRUCTIONS_PANEL: 'r',
   NAVIGATE_PREV: ['p'],
   NAVIGATE_NEXT: ['n']
 };
@@ -33,6 +34,8 @@ interface HotkeysProps {
   editorRef?: React.Ref<HTMLElement> | any;
   executeChallenge?: () => void;
   innerRef: React.Ref<HTMLElement> | unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  instructionsPanelRef?: React.Ref<HTMLElement> | any;
   nextChallengePath: string;
   prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
@@ -41,6 +44,7 @@ interface HotkeysProps {
 function Hotkeys({
   canFocusEditor,
   children,
+  instructionsPanelRef,
   editorRef,
   executeChallenge,
   innerRef,
@@ -61,6 +65,11 @@ function Hotkeys({
       e.preventDefault();
       if (editorRef && editorRef.current) {
         editorRef.current.getWrappedInstance().focusOnEditor();
+      }
+    },
+    FOCUS_INSTRUCTIONS_PANEL: () => {
+      if (instructionsPanelRef && instructionsPanelRef.current) {
+        instructionsPanelRef.current.focus();
       }
     },
     NAVIGATION_MODE: () => setEditorFocusability(false),
