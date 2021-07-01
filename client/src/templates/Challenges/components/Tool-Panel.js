@@ -44,6 +44,9 @@ function ToolPanel({
   guideUrl,
   videoUrl
 }) {
+  const handleRunTests = () => {
+    executeChallenge(true);
+  };
   const { t } = useTranslation();
   return (
     <Fragment>
@@ -52,7 +55,7 @@ function ToolPanel({
           isMobile ? 'tool-panel-group-mobile' : ''
         }`}
       >
-        <Button block={true} bsStyle='primary' onClick={executeChallenge}>
+        <Button block={true} bsStyle='primary' onClick={handleRunTests}>
           {isMobile ? t('buttons.run') : t('buttons.run-test')}
         </Button>
         <Button

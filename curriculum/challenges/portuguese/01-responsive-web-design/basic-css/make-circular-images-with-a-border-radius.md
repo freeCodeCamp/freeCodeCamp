@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08815
-title: Make Circular Images with a border-radius
+title: Criar imagens redondas com border-radius
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvrcB'
 forumTopicId: 18229
@@ -9,21 +9,21 @@ dashedName: make-circular-images-with-a-border-radius
 
 # --description--
 
-In addition to pixels, you can also specify the `border-radius` using a percentage.
+Além dos pixels, você também pode definir o valor da propriedade `border-radius` usando porcentagem.
 
 # --instructions--
 
-Give your cat photo a `border-radius` of `50%`.
+Dê à foto do gato a propriedade `border-radius` com valor de `50%`.
 
 # --hints--
 
-Your image should have a border radius of `50%`, making it perfectly circular.
+A imagem deve ter a propriedade border-radius com valor de `50%`, tornando-a perfeitamente redonda.
 
 ```js
 assert(parseInt($('img').css('border-top-left-radius')) > 48);
 ```
 
-The `border-radius` value should use a percentage value of `50%`.
+O valor da propriedade `border-radius` deve ser `50%`.
 
 ```js
 assert(code.match(/50%/g));

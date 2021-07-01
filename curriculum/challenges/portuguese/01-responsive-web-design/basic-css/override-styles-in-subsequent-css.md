@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf04756
-title: Override Styles in Subsequent CSS
+title: Substituir estilos no CSS baseado na ordem de aparição
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDQug'
 forumTopicId: 18253
@@ -9,47 +9,47 @@ dashedName: override-styles-in-subsequent-css
 
 # --description--
 
-Our `pink-text` class overrode our `body` element's CSS declaration!
+A classe `pink-text` sobrescreveu a declaração de estilo do elemento `body`!
 
-We just proved that our classes will override the `body` element's CSS. So the next logical question is, what can we do to override our `pink-text` class?
+Com isso, podemos perceber que classes sobrescrevem os estilos declarados no elemento `body`. Isso nos leva à pergunta: o que podemos fazer para substituir a classe `pink-text`?
 
 # --instructions--
 
-Create an additional CSS class called `blue-text` that gives an element the color blue. Make sure it's below your `pink-text` class declaration.
+Crie uma classe CSS adicional chamada `blue-text` que dá a um elemento a cor azul. Certifique-se de que esta nova classe esteja abaixo da classe `pink-text`.
 
-Apply the `blue-text` class to your `h1` element in addition to your `pink-text` class, and let's see which one wins.
+Além de classe `pink-text`, aplique a classe `blue-text` ao elemento `h1`, e vamos ver qual tem maior prioridade.
 
-Applying multiple class attributes to a HTML element is done with a space between them like this:
+A aplicação de várias classes a um mesmo elemento HTML é feita com um espaço entre cada uma, assim:
 
 ```html
 class="class1 class2"
 ```
 
-**Note:** It doesn't matter which order the classes are listed in the HTML element.
+**Observação:** a ordem das classes dentro do atributo "class" não é importante.
 
-However, the order of the `class` declarations in the `<style>` section is what is important. The second declaration will always take precedence over the first. Because `.blue-text` is declared second, it overrides the attributes of `.pink-text`
+O importante é a ordem em que as classes (`class`) são declaradas dentro da tag `<style>`. A última declaração sempre terá prioridade sobre a anterior. Como a classe `.blue-text` é declarada por último, ela sobrescreve os estilos que foram declarados na classe `.pink-text`
 
 # --hints--
 
-Your `h1` element should have the class `pink-text`.
+O elemento `h1` deve ter a classe `pink-text`.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-Your `h1` element should have the class `blue-text`.
+O elemento `h1` deve ter a classe `blue-text`.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-Both `blue-text` and `pink-text` should belong to the same `h1` element.
+Tanto a classe `blue-text` quanto a classe `pink-text` devem pertencer ao mesmo elemento `h1`.
 
 ```js
 assert($('.pink-text').hasClass('blue-text'));
 ```
 
-Your `h1` element should be blue.
+O texto do elemento `h1` deve ser azul.
 
 ```js
 assert($('h1').css('color') === 'rgb(0, 0, 255)');

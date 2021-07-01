@@ -1,30 +1,31 @@
 ---
 id: bad87fee1348bd9aed008826
-title: Target Even Elements Using jQuery
+title: Identificare gli elementi pari usando jQuery
 challengeType: 6
 forumTopicId: 18318
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-even-elements-using-jquery
 ---
 
 # --description--
 
-You can also target elements based on their positions using `:odd` or `:even` selectors.
+Puoi anche selezionare gli elementi in base alle loro posizioni utilizzando i selettori `:odd` (dispari) o `:even` (pari).
 
-Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, counter-intuitively, `:odd` selects the second element (position 1), fourth element (position 3), and so on.
+Nota che jQuery è indicizzato a zero, il che significa che il primo elemento di una selezione ha una posizione di 0. Questo può confondere un po' perché, contro-intuitivamente, `:odd` seleziona il secondo elemento (posizione 1), il quarto elemento (posizione 3), e così via.
 
-Here's how you would target all the odd elements with class `target` and give them classes:
+Ecco come fare riferimento a tutti gli elementi dispari di classe `target` e assegnare loro delle classi:
 
 ```js
 $(".target:odd").addClass("animated shake");
 ```
 
-Try selecting all the even `target` elements and giving them the classes of `animated` and `shake`. Remember that **even** refers to the position of elements with a zero-based system in mind.
+Prova a selezionare tutti gli elementi `target` e a dare loro le classi di `animated` e `shake`. Ricorda che **even** si riferisce alla posizione degli elementi con un sistema a base zero.
 
 # --hints--
 
-All of the `target` elements that jQuery considers to be even should shake.
+Tutti gli elementi `target` che jQuery considera essere pari dovrebbero scuotersi.
 
 ```js
 assert(
@@ -32,13 +33,13 @@ assert(
 );
 ```
 
-You should use the `:even` selector to modify these elements.
+Dovresti usare il selettore `:even` per modificare questi elementi.
 
 ```js
 assert(code.match(/\:even/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+Dovresti usare solo jQuery per aggiungere queste classi all'elemento.
 
 ```js
 assert(

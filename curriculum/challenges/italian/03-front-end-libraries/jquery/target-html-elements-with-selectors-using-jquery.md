@@ -1,44 +1,45 @@
 ---
 id: bad87fee1348bd9bedc08826
-title: Target HTML Elements with Selectors Using jQuery
+title: Identificare gli elementi HTML con i selettori usando jQuery
 challengeType: 6
 forumTopicId: 18319
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-html-elements-with-selectors-using-jquery
 ---
 
 # --description--
 
-Now we have a `document ready function`.
+Ora abbiamo una `document ready function`.
 
-Now let's write our first jQuery statement. All jQuery functions start with a `$`, usually referred to as a dollar sign operator, or as bling.
+Ora scriviamo la nostra prima istruzione jQuery. Tutte le funzioni di jQuery iniziano con un `$`, di solito indicato come operatore di segno del dollaro, o "bling".
 
-jQuery often selects an HTML element with a <dfn>selector</dfn>, then does something to that element.
+jQuery identifica spesso un elemento HTML con un <dfn>selettore</dfn>, quindi fa qualcosa a quell'elemento.
 
-For example, let's make all of your `button` elements bounce. Just add this code inside your document ready function:
+Ad esempio, facciamo rimbalzare tutti gli elementi `button`. Basta aggiungere questo codice all'interno della document ready function:
 
 ```js
 $("button").addClass("animated bounce");
 ```
 
-Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css `bounce` class to your `button` elements.
+Nota che abbiamo già incluso sia la libreria jQuery che la libreria Animate.css in background in modo che tu possa usarle nell'editor. Quindi stai usando jQuery per applicare la classe Animate.css `bounce` ai tuoi elementi `button`.
 
 # --hints--
 
-You should use the jQuery `addClass()` function to give the classes `animated` and `bounce` to your `button` elements.
+Dovresti usare la funzione jQuery `addClass()` per dare alle classi `animated` e `bounce` ai tuoi elementi `button`.
 
 ```js
 assert($('button').hasClass('animated') && $('button').hasClass('bounce'));
 ```
 
-You should only use jQuery to add these classes to the element.
+Dovresti usare solo jQuery per aggiungere queste classi all'elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));
 ```
 
-Your jQuery code should be within the `$(document).ready();` function.
+Il tuo codice jQuery dovrebbe essere all'interno della funzione `$(document).ready();`.
 
 ```js
 assert(

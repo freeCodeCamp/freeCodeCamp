@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Adjust the Size of a Header Versus a Paragraph Tag
+title: Contrastar o tamanho de um título com o de um parágrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
@@ -9,15 +9,15 @@ dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
 
 # --description--
 
-The font size of header tags (`h1` through `h6`) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the `font-size` property to adjust the size of the text in an element.
+O tamanho da tipografia das tags de títulos (`h1` a `h6`) geralmente deve ser maior do que o tamanho da tipografia das tags de parágrafo. Isso torna mais fácil para o usuário entender visualmente o layout e o nível de importância de tudo na página. Você pode usar a propriedade `font-size` para ajustar o tamanho do texto de um elemento.
 
 # --instructions--
 
-To make the heading significantly larger than the paragraph, change the `font-size` of the `h4` tag to 27 pixels.
+Para tornar o título significativamente maior do que o parágrafo, altere a propriedade `font-size` da tag `h4` para 27 pixels.
 
 # --hints--
 
-Your code should add a `font-size` property to the `h4` element set to 27 pixels.
+Adicione ao elemento `h4` a propriedade `font-size` com o valor de 27 pixels.
 
 ```js
 assert($('h4').css('font-size') == '27px');

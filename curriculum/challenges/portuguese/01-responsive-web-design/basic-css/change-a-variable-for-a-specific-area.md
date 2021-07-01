@@ -1,6 +1,6 @@
 ---
 id: 5a9d72a1424fe3d0e10cad15
-title: Change a variable for a specific area
+title: Alterar uma variável em uma área específica
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRwbuW'
 forumTopicId: 301085
@@ -9,17 +9,17 @@ dashedName: change-a-variable-for-a-specific-area
 
 # --description--
 
-When you create your variables in `:root` they will set the value of that variable for the whole page.
+Quando você cria suas variáveis em `:root`, elas ficam disponíveis para uso em toda a página.
 
-You can then over-write these variables by setting them again within a specific element.
+Mas nada impede que você redefina os valores dessas variáveis dentro de qualquer outro seletor CSS.
 
 # --instructions--
 
-Change the value of `--penguin-belly` to `white` in the `penguin` class.
+Na classe `penguin`, altere o valor da variável `--penguin-belly` para `white`.
 
 # --hints--
 
-The `penguin` class should reassign the `--penguin-belly` variable to `white`.
+A classe `penguin` deve redefinir o valor da variável `--penguin-belly` para `white`.
 
 ```js
 assert(
@@ -27,13 +27,13 @@ assert(
 );
 ```
 
-The `penguin` class should not contain the `background-color` property
+A classe `penguin` não deve conter a propriedade `background-color`
 
 ```js
 assert(
   code.match(/^((?!background-color\s*?:\s*?)[\s\S])*$/g)
 );
-``` 
+```
 
 
 # --seed--

@@ -1,6 +1,6 @@
 ---
 id: 587d781d367417b2b2512ac8
-title: Adjust the Hover State of an Anchor Tag
+title: Mudar o estilo de um link ao passar o mouse
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
@@ -9,9 +9,9 @@ dashedName: adjust-the-hover-state-of-an-anchor-tag
 
 # --description--
 
-This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.
+Este desafio abordará o uso de pseudo-classes. Uma pseudo-classe é uma palavra-chave que pode ser adicionada a seletores, a fim de selecionar um estado específico do elemento.
 
-For example, the styling of an anchor tag can be changed for its hover state using the `:hover` pseudo-class selector. Here's the CSS to change the `color` of the anchor tag to red during its hover state:
+Por exemplo, o estilo de um link pode ser alterado quando o cursor do mouse está sobre ele usando o seletor de pseudo-classe `:hover`. O código CSS para alterar a propriedade `color` de um link para vermelho quando o mouse está sobre ele é este:
 
 ```css
 a:hover {
@@ -21,17 +21,17 @@ a:hover {
 
 # --instructions--
 
-The code editor has a CSS rule to style all `a` tags black. Add a rule so that when the user hovers over the `a` tag, the `color` is blue.
+O editor de código tem uma declaração de estilo CSS que estiliza todas as tags `a` com a cor preta. Adicione uma declaração de estilo para que, quando o usuário passar o mouse sobre a tag `a`, a propriedade `color` mude para azul.
 
 # --hints--
 
-The anchor tag `color` should remain black, only add CSS rules for the `:hover` state.
+A propriedade `color` do link deve permanecer preta. A cor do texto deve mudar apenas no estado `:hover`.
 
 ```js
 assert($('a').css('color') == 'rgb(0, 0, 0)');
 ```
 
-The anchor tag should have a `color` of blue on hover.
+O link deve ter a propriedade `color` de valor azul ao passar o mouse sobre ele.
 
 ```js
 assert(

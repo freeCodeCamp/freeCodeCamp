@@ -1,6 +1,6 @@
 ---
 id: bad87fed1348bd9aede07836
-title: Give a Background Color to a div Element
+title: Criar uma cor de fundo em um elemento div
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
@@ -9,9 +9,9 @@ dashedName: give-a-background-color-to-a-div-element
 
 # --description--
 
-You can set an element's background color with the `background-color` property.
+Você pode definir a cor de fundo de um elemento com a propriedade `background-color`.
 
-For example, if you wanted an element's background color to be `green`, you'd put this within your `style` element:
+Por exemplo, se você quiser que a cor de fundo de um elemento seja `green` (verde), você deve colocar o seguinte código dentro do elemento `style`:
 
 ```css
 .green-background {
@@ -21,23 +21,23 @@ For example, if you wanted an element's background color to be `green`, you'd pu
 
 # --instructions--
 
-Create a class called `silver-background` with the `background-color` of `silver`. Assign this class to your `div` element.
+Crie uma classe chamada `silver-background` com a `background-color` de `silver`. Atribua esta classe ao elemento `div`.
 
 # --hints--
 
-Your`div` element should have the class `silver-background`.
+O elemento `div` deve ter a classe `silver-background`.
 
 ```js
 assert($('div').hasClass('silver-background'));
 ```
 
-Your `div` element should have a silver background.
+O elemento `div` deve ter um fundo de cor prata (silver).
 
 ```js
 assert($('div').css('background-color') === 'rgb(192, 192, 192)');
 ```
 
-A class named `silver-background` should be defined within the `style` element and the value of `silver` should be assigned to the `background-color` property.
+Uma classe chamada `silver-background` deve ser definida dentro do elemento `style` e o valor `silver` deve ser atribuído à propriedade `background-color`.
 
 ```js
 assert(code.match(/\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/));

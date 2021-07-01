@@ -40,7 +40,7 @@ dashedName: sudoku-solver
 -   逻辑处理一个无效的区域 (3x3 网格)
 -   有效解谜字符串通过 solver
 -   无效解谜字符串无法通过 solver
--   solver 返回一个不完整谜题的的预期解决方案
+-   Solver 返回一个不完整谜题的的预期解决方案
 
 在 `tests/2_functional-tests.js` 中编写下以下测试：
 

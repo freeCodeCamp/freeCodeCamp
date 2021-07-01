@@ -26,6 +26,8 @@ import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import envData from '../../../../../config/env.json';
 import { ChallengeFile } from '../../../redux/prop-types';
 
@@ -363,6 +365,7 @@ function useIdToNameMap(): Map<string, string> {
       idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
     }
   );
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return idToNameMap;
   /* eslint-enable */
 }

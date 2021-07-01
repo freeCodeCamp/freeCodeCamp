@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036150
-title: Handle an Action in the Store
+title: Gestire un'azione nello store
 challengeType: 6
 forumTopicId: 301444
 dashedName: handle-an-action-in-the-store
@@ -8,29 +8,29 @@ dashedName: handle-an-action-in-the-store
 
 # --description--
 
-After an action is created and dispatched, the Redux store needs to know how to respond to that action. This is the job of a `reducer` function. Reducers in Redux are responsible for the state modifications that take place in response to actions. A `reducer` takes `state` and `action` as arguments, and it always returns a new `state`. It is important to see that this is the **only** role of the reducer. It has no side effects — it never calls an API endpoint and it never has any hidden surprises. The reducer is simply a pure function that takes state and action, then returns new state.
+Dopo che un'azione è stata creata e spedita, lo store di Redux deve sapere come rispondere a quell'azione. Questo è il lavoro di una funzione `reducer` (riduttore). I reducer in Redux sono responsabili delle modifiche allo stato che si verificano in risposta alle azioni. Un `reducer` prende `state` e `action` come argomenti, e restituisce sempre un nuovo `state`. È importante capire che questo è l'**unico** ruolo del reducer. Questo non ha effetti collaterali - non chiama mai un endpoint API e non ha mai sorprese nascoste. Il reducer è semplicemente una funzione pura che prende uno stato e un'azione, e restituisce un nuovo stato.
 
-Another key principle in Redux is that `state` is read-only. In other words, the `reducer` function must **always** return a new copy of `state` and never modify state directly. Redux does not enforce state immutability, however, you are responsible for enforcing it in the code of your reducer functions. You'll practice this in later challenges.
+Un altro principio chiave in Redux è che lo `state` è di sola lettura. In altre parole, la funzione `reducer` deve **sempre** restituire una nuova copia dello `state` e non modificare mai direttamente lo state. Redux non applica l'immutabilità dello stato, tuttavia sei responsabile di applicarlo nel codice delle tue funzioni reducer. Nelle prossime sfide farai pratica con questo.
 
 # --instructions--
 
-The code editor has the previous example as well as the start of a `reducer` function for you. Fill in the body of the `reducer` function so that if it receives an action of type `'LOGIN'` it returns a state object with `login` set to `true`. Otherwise, it returns the current `state`. Note that the current `state` and the dispatched `action` are passed to the reducer, so you can access the action's type directly with `action.type`.
+L'editor di codice contiene l'esempio precedente e l'inizio di una funzione `reducer` pronti per te. Compila il corpo della funzione `reducer` in modo che se riceve un'azione di tipo `'LOGIN'` restituisca un oggetto stato con `login` impostato a `true`. Altrimenti, restituisce lo `state` attuale. Nota che lo `state` corrente e l'`action` inviata sono passati al reducer, in modo da poter accedere direttamente al tipo di azione con `action.type`.
 
 # --hints--
 
-Calling the function `loginAction` should return an object with type property set to the string `LOGIN`.
+Chiamare la funzione `loginAction` dovrebbe restituire un oggetto con proprietà type impostata sulla stringa `LOGIN`.
 
 ```js
 assert(loginAction().type === 'LOGIN');
 ```
 
-The store should be initialized with an object with property `login` set to `false`.
+Lo store dovrebbe essere inizializzato con un oggetto con proprietà `login` impostata su `false`.
 
 ```js
 assert(store.getState().login === false);
 ```
 
-Dispatching `loginAction` should update the `login` property in the store state to `true`.
+Inviare `loginAction` dovrebbe aggiornare la proprietà `login` nello stato dello store a `true`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-If the action is not of type `LOGIN`, the store should return the current state.
+Se l'azione non è di tipo `LOGIN`, lo store dovrebbe restituire lo stato corrente.
 
 ```js
 assert(

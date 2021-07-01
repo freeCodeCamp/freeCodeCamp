@@ -1,6 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb9
-title: Use @for to Create a Sass Loop
+title: Usare @for per creare un ciclo in Sass
 challengeType: 0
 forumTopicId: 301462
 dashedName: use-for-to-create-a-sass-loop
@@ -8,11 +8,11 @@ dashedName: use-for-to-create-a-sass-loop
 
 # --description--
 
-The `@for` directive adds styles in a loop, very similar to a `for` loop in JavaScript.
+La direttiva `@for` aggiunge stili in un ciclo, in modo molto simile a un ciclo `for` di JavaScript.
 
-`@for` is used in two ways: "start through end" or "start to end". The main difference is that the "start **to** end" *excludes* the end number as part of the count, and "start **through** end" *includes* the end number as part of the count.
+`@for` è usato in due modi: "start through end" o "start to end". La differenza principale è che "start **to** end" *esclude* il numero finale dal conteggio, mentre "start **through** end" *include* il numero finale nel conteggio.
 
-Here's a start **through** end example:
+Ecco un esempio di start **through** end:
 
 ```scss
 @for $i from 1 through 12 {
@@ -20,7 +20,7 @@ Here's a start **through** end example:
 }
 ```
 
-The `#{$i}` part is the syntax to combine a variable (`i`) with text to make a string. When the Sass file is converted to CSS, it looks like this:
+La parte `#{$i}` è la sintassi che combina una variabile (`i`) con il testo per formare una stringa. Quando il file Sass viene convertito in CSS, appare così:
 
 ```scss
 .col-1 {
@@ -38,47 +38,47 @@ The `#{$i}` part is the syntax to combine a variable (`i`) with text to make a s
 }
 ```
 
-This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.
+Questo è un modo potente per creare un layout griglia. Ora hai dodici opzioni per le larghezze delle colonne disponibili come classi CSS.
 
 # --instructions--
 
-Write a `@for` directive that takes a variable `$j` that goes from 1 **to** 6.
+Scrivi una direttiva `@for` che usa una variabile `$j` che va da 1 **a** 6.
 
-It should create 5 classes called `.text-1` to `.text-5` where each has a `font-size` set to 15px multiplied by the index.
+Dovrebbe creare 5 classi chiamate da `.text-1` a `.text-5` dove ognuna ha una `font-size` impostata a 15px moltiplicata per l'indice.
 
 # --hints--
 
-Your code should use the `@for` directive.
+Il tuo codice dovrebbe utilizzare la direttiva `@for`.
 
 ```js
 assert(code.match(/@for /g));
 ```
 
-Your `.text-1` class should have a `font-size` of 15px.
+La tua classe `.text-1` dovrebbe avere un `font-size` di 15px.
 
 ```js
 assert($('.text-1').css('font-size') == '15px');
 ```
 
-Your `.text-2` class should have a `font-size` of 30px.
+La tua classe `.text-2` dovrebbe avere un `font-size` di 30px.
 
 ```js
 assert($('.text-2').css('font-size') == '30px');
 ```
 
-Your `.text-3` class should have a `font-size` of 45px.
+La tua classe `.text-3` dovrebbe avere un `font-size` di 45px.
 
 ```js
 assert($('.text-3').css('font-size') == '45px');
 ```
 
-Your `.text-4` class should have a `font-size` of 60px.
+La tua classe `.text-4` dovrebbe avere un `font-size` di 60px.
 
 ```js
 assert($('.text-4').css('font-size') == '60px');
 ```
 
-Your `.text-5` class should have a `font-size` of 75px.
+La tua classe `.text-5` dovrebbe avere un `font-size` di 75px.
 
 ```js
 assert($('.text-5').css('font-size') == '75px');

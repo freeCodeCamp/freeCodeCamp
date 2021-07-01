@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617a
-title: Pass State as Props to Child Components
+title: Passare State come Props ai componenti figli
 challengeType: 6
 forumTopicId: 301403
 dashedName: pass-state-as-props-to-child-components
@@ -8,19 +8,19 @@ dashedName: pass-state-as-props-to-child-components
 
 # --description--
 
-You saw a lot of examples that passed props to child JSX elements and child React components in previous challenges. You may be wondering where those props come from. A common pattern is to have a stateful component containing the `state` important to your app, that then renders child components. You want these components to have access to some pieces of that `state`, which are passed in as props.
+Hai visto un sacco di esempi che hanno passato le proprietà a elementi JSX figli e a componenti React figli nelle sfide precedenti. Potresti chiederti da dove provengono quelle proprietà. Un modello comune è quello di avere un componente stateful contenente lo `state` importante per la tua app, che poi presenta i componenti figli. Vuoi che questi componenti abbiano accesso ad alcune parti di quello `state`che viene passato come props (proprietà).
 
-For example, maybe you have an `App` component that renders a `Navbar`, among other components. In your `App`, you have `state` that contains a lot of user information, but the `Navbar` only needs access to the user's username so it can display it. You pass that piece of `state` to the `Navbar` component as a prop.
+Ad esempio, forse hai un componente `App` che presenta una `Navbar`, tra gli altri componenti. Nella tua `App` hai `state` che contiene molte informazioni dell'utente, ma la `Navbar` ha solo bisogno di accedere al nome utente dell'utente in modo da visualizzarlo. Passa quel pezzo di `state` al componente `Navbar` come una prop.
 
-This pattern illustrates some important paradigms in React. The first is *unidirectional data flow*. State flows in one direction down the tree of your application's components, from the stateful parent component to child components. The child components only receive the state data they need. The second is that complex stateful apps can be broken down into just a few, or maybe a single, stateful component. The rest of your components simply receive state from the parent as props, and render a UI from that state. It begins to create a separation where state management is handled in one part of code and UI rendering in another. This principle of separating state logic from UI logic is one of React's key principles. When it's used correctly, it makes the design of complex, stateful applications much easier to manage.
+Questo modello illustra alcuni paradigmi importanti in React. Il primo è il *flusso di dati unidirezionale*. Lo stato scorre in una direzione lungo l'albero dei componenti della tua applicazione, dal componente genitore stateful ai componenti figli. I componenti figlio ricevono solo i dati di stato di cui hanno bisogno. Il secondo è che complesse app stateful possono essere suddivise in alcuni, o anche un singolo componente stateful. Il resto dei tuoi componenti semplicemente riceve lo stato dal genitore come props, e presenta un'interfaccia utente da quello stato. Si comincia col creare una separazione in cui la gestione dello stato viene gestita in una parte del codice e il rendering dell'interfaccia utente in un'altra. Questo principio di separazione della logica dello stato dalla logica dell'interfaccia utente è uno dei principi chiave di React. Quando viene utilizzato correttamente, rende la progettazione di applicazioni stateful complesse molto più facile da gestire.
 
 # --instructions--
 
-The `MyApp` component is stateful and renders a `Navbar` component as a child. Pass the `name` property in its `state` down to the child component, then show the `name` in the `h1` tag that's part of the `Navbar` render method. `name` should appear after the text `Hello, my name is:`.
+Il componente `MyApp` è stateful e presenta un componente `Navbar` come figlio. Passa la proprietà `name` del suo `state` al componente figlio, poi mostra il `name` nel tag `h1` che fa parte del metodo render di `Navbar`. `name` dovrebbe apparire dopo il testo `Hello, my name is:`.
 
 # --hints--
 
-The `MyApp` component should render with a `Navbar` component inside.
+Il componente `MyApp` dovrebbe eseguire il render con un componente `Navbar` al suo interno.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-The `Navbar` component should receive the `MyApp` state property `name` as props.
+Il componente `Navbar` dovrebbe ricevere la proprietà `name` dello stato di `MyApp` come proprietà.
 
 ```js
 async () => {
@@ -50,7 +50,7 @@ async () => {
 };
 ```
 
-The `h1` element in `Navbar` should render the `name` prop.
+L'elemento `h1` in `Navbar` dovrebbe presentare la proprietà `name`.
 
 ```js
 async () => {

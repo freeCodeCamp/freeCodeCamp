@@ -1,32 +1,33 @@
 ---
 id: bad87fee1348bd9aed108826
-title: Target a Specific Child of an Element Using jQuery
+title: Individuare il figlio specifico di un elemento usando jQuery
 challengeType: 6
 forumTopicId: 18315
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-a-specific-child-of-an-element-using-jquery
 ---
 
 # --description--
 
-You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.
+Hai già visto che gli attributi id sono molto convenienti per selezionare degli elementi con jQuery. Ma non avrai sempre degli id puliti con cui lavorare.
 
-Fortunately, jQuery has some other tricks for targeting the right elements.
+Fortunatamente, jQuery ha degli altri trucchi per la selezione degli elementi desiderati.
 
-jQuery uses CSS Selectors to target elements. The `target:nth-child(n)` CSS selector allows you to select all the nth elements with the target class or element type.
+jQuery utilizza i selettori CSS per identificare gli elementi. Il selettore CSS `target:nth-child(n)` consente di selezionare tutti gli ennesimi elementi di una certa classe o tipo.
 
-Here's how you would give the third element in each well the bounce class:
+Ecco come potresti dare al terzo elemento in ogni well la classe bounce:
 
 ```js
 $(".target:nth-child(3)").addClass("animated bounce");
 ```
 
-Make the second child in each of your well elements bounce. You must select the elements' children with the `target` class.
+Fai rimbalzare il secondo figlio in ciascuno dei tuoi elementi well. Devi selezionare i figli degli elementi con la classe `target`.
 
 # --hints--
 
-The second element in your `target` elements should bounce.
+Il secondo elemento negli elementi `target` dovrebbe rimbalzare.
 
 ```js
 assert(
@@ -35,19 +36,19 @@ assert(
 );
 ```
 
-Only two elements should bounce.
+Solo due elementi dovrebbero rimbalzare.
 
 ```js
 assert($('.animated.bounce').length === 2);
 ```
 
-You should use the `:nth-child()` selector to modify these elements.
+Dovresti usare il selettore `:nth-child()` per modificare questi elementi.
 
 ```js
 assert(code.match(/\:nth-child\(/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+Dovresti usare solo jQuery per aggiungere queste classi all'elemento.
 
 ```js
 assert(

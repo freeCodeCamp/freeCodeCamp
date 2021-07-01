@@ -1,50 +1,51 @@
 ---
 id: bad87fee1348bd9aed908626
-title: Target the Same Element with Multiple jQuery Selectors
+title: Identificare lo stesso elemento con diversi selettori jQuery
 challengeType: 6
 forumTopicId: 18322
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-the-same-element-with-multiple-jquery-selectors
 ---
 
 # --description--
 
-Now you know three ways of targeting elements: by type: `$("button")`, by class: `$(".btn")`, and by id `$("#target1")`.
+Ora conosci tre modi per identificare gli elementi: per tipo: `$("button")`, per classe: `$(".btn")`, e per id `$("#target1")`.
 
-Although it is possible to add multiple classes in a single `.addClass()` call, let's add them to the same element in *three separate ways*.
+Anche se è possibile aggiungere più classi in una singola chiamata di `.addClass()`, aggiungiamole allo stesso elemento in *tre modi diversi*.
 
-Using `.addClass()`, add only one class at a time to the same element, three different ways:
+Usando `.addClass()`, aggiungi una sola classe alla volta allo stesso elemento, in tre modi diversi:
 
-Add the `animated` class to all elements with type `button`.
+Aggiungi la classe `animated` a tutti gli elementi di tipo `button`.
 
-Add the `shake` class to all the buttons with class `.btn`.
+Aggiungi la classe `shake` a tutti i pulsanti di classe `.btn`.
 
-Add the `btn-primary` class to the button with id `#target1`.
+Aggiungi la classe `btn-primary` al pulsante con id `#target1`.
 
-**Note:** You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes `shake`, `animated`, and `btn-primary` to `#target1`.
+**Nota:** Dovresti identificare un elemento e aggiungere una sola classe alla volta. Complessivamente, i tuoi tre selettori individuali finiranno per aggiungere le tre classi `shake`, `animated`e `btn-primary` a `#target1`.
 
 # --hints--
 
-Your code should use the `$("button")` selector.
+Il tuo codice dovrebbe utilizzare il selettore `$("button")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?button\s*?(?:'|")/gi));
 ```
 
-Your code should use the `$(".btn")` selector.
+Il tuo codice dovrebbe utilizzare il selettore `$(".btn")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?\.btn\s*?(?:'|")/gi));
 ```
 
-Your code should use the `$("#target1")` selector.
+Il tuo codice dovrebbe utilizzare il selettore `$("#target1")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
 ```
 
-You should only add one class with each of your three selectors.
+Dovresti aggiungere una sola classe con ognuno dei tre selettori.
 
 ```js
 assert(
@@ -53,7 +54,7 @@ assert(
 );
 ```
 
-Your `#target1` element should have the classes `animated`‚ `shake` and `btn-primary`.
+Il tuo elemento `#target1` dovrebbe avere le classi `animated`‚ `shake` e `btn-primary`.
 
 ```js
 assert(
@@ -63,7 +64,7 @@ assert(
 );
 ```
 
-You should only use jQuery to add these classes to the element.
+Dovresti usare solo jQuery per aggiungere queste classi all'elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));
