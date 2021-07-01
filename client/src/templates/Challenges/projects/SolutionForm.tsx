@@ -10,13 +10,13 @@ import {
 } from '../../../../utils/challengeTypes';
 
 interface FormProps {
-  challengeType: number,
-  description: string,
-  isSubmitting: boolean,
-  onSubmit: (arg0: object) => void,
-  t: (arg0: string) => void,
-  updateSolutionForm: (arg0: object) => void
-};
+  challengeType: number;
+  description: string;
+  isSubmitting: boolean;
+  onSubmit: (arg0: Record<string, unknown>) => void;
+  t: (arg0: string) => string;
+  updateSolutionForm: (arg0: Record<string, unknown>) => void;
+}
 
 export class SolutionForm extends Component<FormProps> {
   constructor(props: FormProps) {
@@ -24,11 +24,11 @@ export class SolutionForm extends Component<FormProps> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.props.updateSolutionForm({});
   }
 
-  handleSubmit(validatedValues: any) {
+  handleSubmit(validatedValues: Record<string, any>): void {
     // Do not execute challenge, if errors
     if (validatedValues.errors.length === 0) {
       // updates values on store
@@ -41,7 +41,7 @@ export class SolutionForm extends Component<FormProps> {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     const { isSubmitting, challengeType, description, t } = this.props;
 
     // back end challenges and front end projects use a single form field
@@ -68,8 +68,8 @@ export class SolutionForm extends Component<FormProps> {
       : t('learn.i-completed');
 
     let formFields = solutionField;
-    let solutionLink: string = 'ex: ';
-    let solutionFormID: string = 'front-end-form';
+    let solutionLink = 'ex: ';
+    let solutionFormID = 'front-end-form';
 
     switch (challengeType) {
       case frontEndProject:
