@@ -80,5 +80,5 @@ github:
 
 vscode:
   extensions:
-    - dbaeumer.vscode-eslint@2.1.5:9Wg0Glx/TwD8ElFBg+FKcQ==
-    - esbenp.prettier-vscode@4.7.0:kgoYSh1LwTixKtJtQWtodQ==
+    - dbaeumer.vscode-eslint@2.1.8
+    - esbenp.prettier-vscode@6.4.0
