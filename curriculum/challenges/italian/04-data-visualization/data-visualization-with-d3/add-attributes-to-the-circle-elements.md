@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd8
-title: Add Attributes to the Circle Elements
+title: Aggiungere attributi agli elementi cerchio
 challengeType: 6
 forumTopicId: 301471
 dashedName: add-attributes-to-the-circle-elements
@@ -8,27 +8,27 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-The last challenge created the `circle` elements for each point in the `dataset`, and appended them to the SVG canvas. But D3 needs more information about the position and size of each `circle` to display them correctly.
+L'ultima sfida ha creato gli elementi `circle` per ogni punto nel `dataset` e li ha aggiunti alla tela SVG. Ma D3 ha bisogno di ulteriori informazioni sulla posizione e la dimensione di ogni `circle` per visualizzarli correttamente.
 
-A `circle` in SVG has three main attributes. The `cx` and `cy` attributes are the coordinates. They tell D3 where to position the *center* of the shape on the SVG canvas. The radius (`r` attribute) gives the size of the `circle`.
+Un `circle` in SVG ha tre attributi principali. Gli attributi `cx` e `cy` sono le coordinate. Essi dicono a D3 dove posizionare il *centro* della forma sulla tela SVG. Il raggio (attributo`r`) dà la dimensione del `circle`.
 
-Just like the `rect` `y` coordinate, the `cy` attribute for a `circle` is measured from the top of the SVG canvas, not from the bottom.
+Proprio come la coordinata `y` del `rect`, l'attributo `cy` per un `circle` è misurato dalla parte superiore della tela SVG, non dal basso.
 
-All three attributes can use a callback function to set their values dynamically. Remember that all methods chained after `data(dataset)` run once per item in `dataset`. The `d` parameter in the callback function refers to the current item in `dataset`, which is an array for each point. You use bracket notation, like `d[0]`, to access the values in that array.
+Tutti e tre gli attributi possono usare una funzione callback per impostare dinamicamente i loro valori. Ricorda che tutti i metodi concatenati dopo `data(dataset)` vengono eseguiti una volta per ogni elemento del `dataset`. Il parametro `d` nella funzione callback si riferisce all'elemento corrente del `dataset`, che è un array per ogni punto. Si utilizza la notazione parentesi, come `d[0]`, per accedere ai valori in quell'array.
 
 # --instructions--
 
-Add `cx`, `cy`, and `r` attributes to the `circle` elements. The `cx` value should be the first number in the array for each item in `dataset`. The `cy` value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The `r` value should be `5` for all circles.
+Aggiungi gli attributi `cx`, `cy`e `r` agli elementi `circle`. Il valore `cx` dovrebbe essere il primo numero nell'array per ogni elemento del `dataset`. Il valore `cy` dovrebbe essere basato sul secondo numero nell'array, ma assicurati di mostrare il grafico a destra e non invertito. Il valore `r` dovrebbe essere `5` per tutti i cerchi.
 
 # --hints--
 
-Your code should have 10 `circle` elements.
+Il tuo codice dovrebbe avere 10 elementi `circle`.
 
 ```js
 assert($('circle').length == 10);
 ```
 
-The first `circle` element should have a `cx` value of `34`, a `cy` value of `422`, and an `r` value of `5`.
+Il primo elemento `circle` dovrebbe avere un valore `cx` di `34`, un valore `cy` di `422`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-The second `circle` element should have a `cx` value of `109`, a `cy` value of `220`, and an `r` value of `5`.
+Il secondo elemento `circle` dovrebbe avere un valore `cx` di `109`, un valore `cy` di `220`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The third `circle` element should have a `cx` value of `310`, a `cy` value of `380`, and an `r` value of `5`.
+Il terzo elemento `circle` dovrebbe avere un valore `cx` di `310`, un valore `cy` di `380`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The fourth `circle` element should have a `cx` value of `79`, a `cy` value of `89`, and an `r` value of `5`.
+Il quarto elemento `circle` dovrebbe avere un valore `cx` di `79`, un valore `cy` di `89`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-The fifth `circle` element should have a `cx` value of `420`, a `cy` value of `280`, and an `r` value of `5`.
+Il quinto elemento `circle` dovrebbe avere un valore `cx` di `420`, un valore `cy` di `280`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-The sixth `circle` element should have a `cx` value of `233`, a `cy` value of `355`, and an `r` value of `5`.
+Il sesto elemento `circle` dovrebbe avere un valore `cx` di `233`, un valore `cy` di `355`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The seventh `circle` element should have a `cx` value of `333`, a `cy` value of `404`, and an `r` value of `5`.
+Il settimo elemento `circle` dovrebbe avere un valore `cx` di `333`, un valore `cy` di `404`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -98,7 +98,7 @@ assert(
 );
 ```
 
-The eighth `circle` element should have a `cx` value of `222`, a `cy` value of `167`, and an `r` value of `5`.
+L'ottavo elemento `circle` dovrebbe avere un valore `cx` di `222`, un valore `cy` di `167`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -108,7 +108,7 @@ assert(
 );
 ```
 
-The ninth `circle` element should have a `cx` value of `78`, a `cy` value of `180`, and an `r` value of `5`.
+Il nono elemento `circle` dovrebbe avere un valore `cx` di `78`, un valore `cy` di `180`, e un valore `r` di `5`.
 
 ```js
 assert(
@@ -118,7 +118,7 @@ assert(
 );
 ```
 
-The tenth `circle` element should have a `cx` value of `21`, a `cy` value of `377`, and an `r` value of `5`.
+Il decimo elemento `circle` dovrebbe avere un valore `cx` di `21`, un valore `cy` di `377`, e un valore `r` di `5`.
 
 ```js
 assert(
