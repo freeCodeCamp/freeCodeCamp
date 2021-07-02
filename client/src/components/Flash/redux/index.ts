@@ -1,8 +1,5 @@
-// import { createAction, handleActions } from 'redux-actions';
 import { nanoid } from 'nanoid';
-import { State } from '../../../redux/types';
-// import { createTypes } from '../../../utils/create-types';
-// import { TypedUseSelectorHook } from 'react-redux';
+import { FlashState, State } from '../../../redux/types';
 
 export const FlashApp = 'flash';
 
@@ -12,9 +9,8 @@ const initialState = {
 
 export const sagas = [];
 
-// TODO: Once state is typed, add here, remove disable.
-// eslint-disable-next-line
-export const flashMessageSelector = (state: State) => state[FlashApp].message;
+export const flashMessageSelector = (state: State): FlashState['message'] =>
+  state[FlashApp].message;
 
 // ACTION DEFINITIONS
 
@@ -23,7 +19,7 @@ enum FlashActionTypes {
   removeFlashMessage = 'removeFlashMessage'
 }
 
-type FlashMessageArg = { type: string; message: string };
+export type FlashMessageArg = { type: string; message: string };
 
 export const createFlashMessage = (
   flash: FlashMessageArg
