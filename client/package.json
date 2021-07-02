@@ -131,7 +131,7 @@
     "@codesee/babel-plugin-instrument": "0.45.1",
     "@codesee/tracker": "0.45.1",
     "@testing-library/jest-dom": "5.14.1",
-    "@testing-library/react": "11.2.7",
+    "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.23",
     "@types/loadable__component": "5.13.3",
     "@types/lodash-es": "4.17.4",
