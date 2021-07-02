@@ -9,11 +9,15 @@ import {
   pythonProject
 } from '../../../../utils/challengeTypes';
 
+interface SubmitProps {
+  isShouldCompletionModalOpen: boolean;
+}
+
 interface FormProps {
   challengeType: number;
   description: string;
   isSubmitting: boolean;
-  onSubmit: (arg0: Record<string, unknown>) => void;
+  onSubmit: (arg0: SubmitProps) => void;
   t: (arg0: string) => string;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
   placeholders: (arg0: Record<string, unknown>) => void;
