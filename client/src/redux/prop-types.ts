@@ -303,22 +303,6 @@ export type CompletedChallenge = {
   completedDate: number;
   challengeFiles: ChallengeFile[];
 };
-// TODO: renames: files => challengeFiles; key => fileKey; #42489
-export type ChallengeFileType =
-  | {
-      [T in FileKeyTypes]:
-        | ({
-            editableContents: string;
-            editableRegionBoundaries: number[];
-            error?: string | null;
-            history: string[];
-            path: string;
-            seed: string;
-            seedEditableRegionBoundaries?: number[];
-          } & FileKeyChallengeType)
-        | null;
-    }
-  | Record<string, never>;
 
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
 export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
