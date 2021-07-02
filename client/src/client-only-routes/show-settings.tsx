@@ -32,7 +32,6 @@ const { apiLocation } = envData;
 interface IShowSettingsProps {
   createFlashMessage: (paylaod: string[]) => void;
   isSignedIn: boolean;
-  navigate: (location: string) => void;
   showLoading: boolean;
   submitNewAbout: () => void;
   toggleNightMode: (theme: string) => void;
@@ -122,7 +121,7 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
   }
 
   if (!isSignedIn) {
-    navigate(`${apiLocation}/signin`);
+    void navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
 
