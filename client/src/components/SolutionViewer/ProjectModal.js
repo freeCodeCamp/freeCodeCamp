@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 const propTypes = {
   challengeFiles: PropTypes.array,
+  // TODO: removed once refactored to TS
   //   PropTypes.shape({
   //     contents: PropTypes.string,
   //     ext: PropTypes.string,
