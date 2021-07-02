@@ -136,11 +136,7 @@ exports[`<Profile/> renders correctly 1`] = `
       </h2>
       
       
-      <p
-        class="bio text-center"
-      >
-        string
-      </p>
+      
       
       <br />
     </div>
