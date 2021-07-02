@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f056
-title: 'Variables, Expressions, and Statements'
+title: '變量、表達式和語句'
 challengeType: 11
 videoId: nELR-uyyrok
 dashedName: variables-expressions-and-statements
@@ -10,7 +10,7 @@ dashedName: variables-expressions-and-statements
 
 ## --text--
 
-What is the symbol used in an assignment statement?
+賦值語句中使用的符號是什麼？
 
 ## --answers--
 
