@@ -16,6 +16,13 @@ interface FormProps {
   onSubmit: (arg0: Record<string, unknown>) => void;
   t: (arg0: string) => string;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
+  placeholders: (arg0: Record<string, unknown>) => void;
+}
+
+interface ValidatedValues {
+  errors: string[];
+  invalidValues: string[];
+  values: Record<string, unknown>;
 }
 
 export class SolutionForm extends Component<FormProps> {
@@ -28,7 +35,7 @@ export class SolutionForm extends Component<FormProps> {
     this.props.updateSolutionForm({});
   }
 
-  handleSubmit(validatedValues: Record<string, any>): void {
+  handleSubmit = (validatedValues: ValidatedValues): void => {
     // Do not execute challenge, if errors
     if (validatedValues.errors.length === 0) {
       // updates values on store
@@ -39,7 +46,7 @@ export class SolutionForm extends Component<FormProps> {
         this.props.onSubmit({ isShouldCompletionModalOpen: false });
       }
     }
-  }
+  };
 
   render(): JSX.Element {
     const { isSubmitting, challengeType, description, t } = this.props;
