@@ -16,8 +16,12 @@ exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 exports.replaceChallengeNode = () => {
   return async function replaceChallengeNode(filePath) {
     // get the meta so that challengeOrder is accurate
-    const blockNameRe = /\d\d-[-\w]+([\/\\])([^/]+)\1/;
-    const blockName = filePath.match(blockNameRe)[2];
+    const blockNameRe = /\d\d-[-\w]+\/([^/]+)\//;
+    const posix = path
+      .normalize(filePath)
+      .split(path.sep)
+      .join(path.posix.sep);
+    const blockName = posix.match(blockNameRe)[1];
     const metaPath = path.resolve(
       __dirname,
       `../../curriculum/challenges/_meta/${blockName}/meta.json`
