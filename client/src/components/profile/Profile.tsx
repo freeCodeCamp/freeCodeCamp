@@ -126,7 +126,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
   return (
     <Fragment>
       <Camper
-        about={about}
+        about={showAbout ? about : ''}
         githubProfile={githubProfile}
         isDonating={showDonation ? isDonating : false}
         isGithub={isGithub}
