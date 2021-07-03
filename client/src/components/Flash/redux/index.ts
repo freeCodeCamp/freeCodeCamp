@@ -38,12 +38,13 @@ type ReducerBase<T> = { type: T };
 type ReducerPayload<T extends FlashActionTypes> =
   T extends FlashActionTypes.createFlashMessage
     ? ReducerBase<T> & {
-        payload: State[typeof FlashApp]['message'];
+        payload: FlashState['message'];
       }
     : ReducerBase<T>;
 
+// Does reducer return FlashState or AppState (whole app)?
 export const reducer = (
-  state: State[typeof FlashApp] = initialState,
+  state: FlashState = initialState,
   action: ReducerPayload<FlashActionTypes>
 ): State[typeof FlashApp] => {
   switch (action.type) {
