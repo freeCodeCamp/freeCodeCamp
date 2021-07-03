@@ -1,31 +1,52 @@
 import { has } from 'lodash-es';
+import { AxiosError, AxiosResponse } from 'axios';
 
-import standardErrorMessage from './standardErrorMessage';
-import reportedErrorMessage from './reportedErrorMessage';
+import standardErrorMessage from './standard-error-message';
+import reportedErrorMessage from './reported-error-message';
 
 import { reportClientSideError } from './report-error';
 
+interface ErrorData {
+  type?: string;
+  message?: string;
+  redirectTo?: string | null;
+}
+
 export const handledErrorSymbol = Symbol('handledError');
 
-export function isHandledError(err) {
+export type HandledError = Error & {
+  [handledErrorSymbol]: ErrorData;
+};
+
+export function isHandledError(err: unknown): err is HandledError {
   return has(err, handledErrorSymbol);
 }
 
-export function unwrapHandledError(err) {
+export function unwrapHandledError(
+  err: HandledError
+): ErrorData | Record<string, never> {
   return handledErrorSymbol in err ? err[handledErrorSymbol] : {};
 }
 
-export function wrapHandledError(err, { type, message, redirectTo }) {
-  err[handledErrorSymbol] = { type, message, redirectTo };
-  return err;
+export function wrapHandledError(
+  err: Error,
+  { type, message, redirectTo }: ErrorData
+): HandledError {
+  (err as HandledError)[handledErrorSymbol] = {
+    type,
+    message,
+    redirectTo
+  };
+  return err as HandledError;
 }
 
-export function handle400Error(e, options = { redirectTo: '/' }) {
-  const {
-    response: { status }
-  } = e;
-  let { redirectTo } = options;
-  let flash = { ...standardErrorMessage, redirectTo };
+export function handle400Error(
+  e: AxiosError,
+  options: ErrorData = { redirectTo: '/' }
+): ErrorData {
+  const { status } = e.response as AxiosResponse;
+  const { redirectTo } = options;
+  const flash = { ...standardErrorMessage, redirectTo };
 
   switch (status) {
     case 401:
@@ -50,22 +71,28 @@ export function handle400Error(e, options = { redirectTo: '/' }) {
 }
 
 export function handle500Error(
-  e,
-  options = {
+  e: AxiosError,
+  options: ErrorData = {
     redirectTo: '/'
   },
-  _reportClientSideError = reportClientSideError
-) {
+  _reportClientSideError: (
+    e: Error,
+    message: string
+  ) => void = reportClientSideError
+): ErrorData {
   const { redirectTo } = options;
   _reportClientSideError(e, 'We just handled a 5** error on the client');
   return { ...reportedErrorMessage, redirectTo };
 }
 
 export function handleAPIError(
-  e,
-  options,
-  _reportClientSideError = reportClientSideError
-) {
+  e: AxiosError,
+  options: ErrorData,
+  _reportClientSideError: (
+    e: Error,
+    message: string
+  ) => void = reportClientSideError
+): ErrorData {
   const { response: { status = 0 } = {} } = e;
   if (status >= 400 && status < 500) {
     return handle400Error(e, options);
