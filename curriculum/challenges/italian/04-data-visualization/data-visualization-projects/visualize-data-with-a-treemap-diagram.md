@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc0
-title: Visualize Data with a Treemap Diagram
+title: Visualizza i dati con una mappa ad albero
 challengeType: 3
 forumTopicId: 301468
 dashedName: visualize-data-with-a-treemap-diagram
@@ -8,43 +8,43 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/KaNGNR>.
+**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/KaNGNR>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story) e fai passare tutti i test. Dalle il tuo stile personale.
 
-You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg D3. I test richiedono la generazione degli assi con la proprietà axis di D3, che crea automaticamente le tacche sugli assi. Queste tacche sono richieste per superare i test perché la loro posizione è usata per determinale l'allineamento degli elementi del grafico. Puoi trovare informazioni su come generare gli assi su <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Gli elementi del DOM (non-virtuale) richiesti sono selezionati al momento di ogni test. Se usi un framework frontend (come Vue per esempio) i risultati dei test potrebbero essere inaccurati per il contenuto dinamico. Speriamo di supportarli prima o poi, ma questi framework non sono supportati al momento per i progetti D3.
 
-**User Story #1:** My tree map should have a title with a corresponding `id="title"`.
+**User Story #1:** La mia mappa ad albero dovrebbe avere un titolo con corrispondente `id="title"`.
 
-**User Story #2:** My tree map should have a description with a corresponding `id="description"`.
+**User Story #2:** La mia mappa ad albero dovrebbe avere una descrizione con corrispondente `id="description"`.
 
-**User Story #3:** My tree map should have `rect` elements with a corresponding `class="tile"` that represent the data.
+**User Story #3:** La mia mappa ad albero dovrebbe avere elementi `rect` con una `class="tile"` (piastrella) che rappresenta i dati.
 
-**User Story #4:** There should be at least 2 different fill colors used for the tiles.
+**User Story #4:** Dovrebbero essere usati almeno 4 colori di riempimento diversi per le piastrelle.
 
-**User Story #5:** Each tile should have the properties `data-name`, `data-category`, and `data-value` containing their corresponding `name`, `category`, and `value`.
+**User Story #5:** Ogni piastrella avrà le proprietà `data-name`, `data-category`, `data-value` contenenti i corrispondenti valori di nome `name`, categoria `category` e valore `value`.
 
-**User Story #6:** The area of each tile should correspond to the `data-value` amount: tiles with a larger `data-value` should have a bigger area.
+**User Story #6:** L'area di ogni piastrella dovrebbe corrispondere alla quantità `data-value`: le caselle con un `data-value` più grande dovrebbero avere un'area più grande.
 
-**User Story #7:** My tree map should have a legend with corresponding `id="legend"`.
+**User Story #7:** La mia mappa ad albero dovrebbe avere una legenda con una corrispondente `id="legend"`.
 
-**User Story #8:** My legend should have `rect` elements with a corresponding `class="legend-item"`.
+**User Story #8:** La mia legenda dovrebbe avere elementi `rect` con una corrispondente `class="legend-item"`.
 
-**User Story #9:** The `rect` elements in the legend should use at least 2 different fill colors.
+**User Story #9:** Gli elementi `rect` nella legenda dovrebbero utilizzare almeno 2 colori di riempimento diversi.
 
-**User Story #10:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**User Story #10:** Posso passare con il mouse su un'area e vedere un tooltip con un corrispondente `id="tooltip"` che mostra maggiori informazioni sull'area.
 
-**User Story #11:** My tooltip should have a `data-value` property that corresponds to the `data-value` of the active area.
+**User Story #11:** Il mio tooltip dovrebbe avere una proprietà `data-value` che corrisponde al `data-value` dell'area attiva.
 
-For this project you can use any of the following datasets:  
+Per questo progetto puoi utilizzare uno dei seguenti set di dati:
 
--   **Kickstarter Pledges:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json`
--   **Movie Sales:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`
--   **Video Game Sales:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json`
+-   **Finanziamenti di KickStarter:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json`
+-   **Vendite di film:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`
+-   **Vendite di videogiochi:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json`
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Puoi costruire il tuo progetto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando questo modello CodePen</a> e facendo click su `Save` per creare il tuo pen. Oppure puoi usare questo link CDN per eseguire i test in qualsiasi ambiente tu voglia: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Una volta fatto, invia l'URL del tuo progetto di lavoro con tutti i suoi test superati.
 
 # --solutions--
 
