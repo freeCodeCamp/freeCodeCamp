@@ -57,12 +57,77 @@ const myObject: MyObject = {};
 
 <!-- TODO: Once refactored to TS, showcase naming convention for Reducers/Actions and how to type dispatch funcs -->
 
-<!-- ## Redux -->
+## Redux
 
-<!-- TODO: Once refactored to TS, showcase typical style of: -->
-<!-- ### Action Definitions -->
-<!-- ### How to Reduce -->
-<!-- ### How to dispatch -->
+### Action Definitions
+
+```typescript
+enum AppActionTypes = {
+  actionFunction = 'actionFunction'
+}
+
+export const actionFunction = (
+  arg: Arg
+): ReducerPayload<AppActionTypes.actionFunction> => ({
+  type: AppActionTypes.actionFunction,
+  payload: arg
+});
+```
+
+### How to Reduce
+
+```typescript
+// Base reducer action without payload
+type ReducerBase<T> = { type: T };
+// Logic for handling optional payloads
+type ReducerPayload<T extends AppActionTypes> =
+  T extends AppActionTypes.actionFunction
+    ? ReducerBase<T> & {
+        payload: AppState['property'];
+      }
+    : ReducerBase<T>;
+
+// Switch reducer exported to Redux combineReducers
+export const reducer = (
+  state: AppState = initialState,
+  action: ReducerPayload<AppActionTypes>
+): AppState => {
+  switch (action.type) {
+    case AppActionTypes.actionFunction:
+      return { ...state, property: action.payload };
+    default:
+      return state;
+  }
+};
+```
+
+### How to Dispatch
+
+Within a component, import the actions and selectors needed.
+
+```tsx
+// Add type definition
+interface MyComponentProps {
+  actionFunction: typeof actionFunction;
+}
+// Connect to Redux store
+const mapDispatchToProps = {
+  actionFunction
+};
+// Example React Component connected to store
+const MyComponent = ({ actionFunction }: MyComponentProps): JSX.Element => {
+  const handleClick = () => {
+    // Dispatch function
+    actionFunction();
+  };
+  return <button onClick={handleClick}>freeCodeCamp is awesome!</button>;
+};
+
+export default connect(null, mapDispatchToProps)(MyComponent);
+```
+
+<!-- ### Redux Types File -->
+<!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
 ## Further Literature
 
