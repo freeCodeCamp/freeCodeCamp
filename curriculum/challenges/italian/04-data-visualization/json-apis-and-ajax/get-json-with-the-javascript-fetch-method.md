@@ -1,6 +1,6 @@
 ---
 id: 5ccfad82bb2dc6c965a848e5
-title: Get JSON with the JavaScript fetch method
+title: Otterenere JSON col metodo fetch di JavaScript
 challengeType: 6
 forumTopicId: 301501
 dashedName: get-json-with-the-javascript-fetch-method
@@ -8,43 +8,43 @@ dashedName: get-json-with-the-javascript-fetch-method
 
 # --description--
 
-Another way to request external data is to use the JavaScript `fetch()` method. It is equivalent to `XMLHttpRequest`, but the syntax is considered easier to understand.
+Un altro metodo per richiedere dati esterni è usare il metodo JavaScript `fetch()`. È equivalente a `XMLHttpRequest`, ma la sintassi è considerata più facile da capire.
 
-Here is the code for making a GET request to `/json/cats.json`
+Ecco il codice per fare una richiesta GET a `/json/cats.json`
 
 ```js
 
 fetch('/json/cats.json')
-	.then(response => response.json())
-	.then(data => {
-		document.getElementById('message').innerHTML = JSON.stringify(data);
-	})
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('message').innerHTML = JSON.stringify(data);
+    })
 
 ```
 
-Take a look at each piece of this code.
+Dai un'occhiata ad ogni parte di questo codice.
 
-The first line is the one that makes the request. So, `fetch(URL)` makes a `GET` request to the URL specified. The method returns a Promise.
+La prima linea è quella che fa la richiesta. Così, `fetch(URL)` fa una richiesta `GET` all'URL specificato. Il metodo restituisce una Promise.
 
-After a Promise is returned, if the request was successful, the `then` method is executed, which takes the response and converts it to JSON format.
+Dopo che una Promise è restituita, se la richiesta ha avuto successo, il metodo `then` viene eseguito, ed esso converte la risposta in un formato JSON.
 
-The `then` method also returns a Promise, which is handled by the next `then` method. The argument in the second `then` is the JSON object you are looking for!
+Anche il metodo `then` restituisce una Promise, gestita dal metodo `then` successivo. L'argomento nel secondo metodo `then` è l'oggetto JSON che stai cercando!
 
-Now, it selects the element that will receive the data by using `document.getElementById()`. Then it modifies the HTML code of the element by inserting a string created from the JSON object returned from the request.
+Ora, l'elemento che riceverà i dati è selezionato usando `document.getElementById()`. Quindi il codice HTML dell'elemento è modificato inserendo una stringa creata dall'oggetto JSON restituito dalla richiesta.
 
 # --instructions--
 
-Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo API. But this time, using the `fetch` method instead of `XMLHttpRequest`.
+Modifica il codice per creare e usare una richiesta `GET` all'API Cat Photo di freeCodeCamp. Ma questa volta, usando il metodo `fetch` invece di `XMLHttpRequest`.
 
 # --hints--
 
-Your code should make a `GET` request with `fetch`.
+Il tuo codice dobrebbe fare una richiesta `GET` usando `fetch`.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Your code should use `then` to convert the response to JSON.
+Il tuo codice dovrebbe usare `then` per convertire la risposta in JSON.
 
 ```js
 assert(
@@ -54,13 +54,13 @@ assert(
 );
 ```
 
-Your code should use `then` to handle the data converted to JSON by the other `then`.
+Il tuo codice dovrebbe usare `then` per gestire i dati convertiti a JSON dall'altro `then`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
+Il tuo codice dovrebbe selezionare l'elemento con id `message` e cambiare il suo innerHTML con la stringa di dati JSON.
 
 ```js
 assert(

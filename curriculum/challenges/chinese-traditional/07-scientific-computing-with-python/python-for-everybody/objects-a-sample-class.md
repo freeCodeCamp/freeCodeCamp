@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f086
-title: 'Objects: A Sample Class'
+title: '對象：一個示例類'
 challengeType: 11
 videoId: FiABKEuaSJ8
 dashedName: objects-a-sample-class
@@ -10,7 +10,7 @@ dashedName: objects-a-sample-class
 
 ## --text--
 
-What will the following program print?:
+以下程序將打印什麼？
 
 ```python
 class PartyAnimal:
