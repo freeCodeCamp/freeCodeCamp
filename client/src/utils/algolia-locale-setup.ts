@@ -1,8 +1,12 @@
 import envData from '../../../config/env.json';
 
-const { clientLocale } = envData;
+const { clientLocale } = envData as { clientLocale: string };
 
-const algoliaIndices = {
+interface AlgoliaIndex {
+  name: string;
+  searchPage: string;
+}
+const algoliaIndices: { [lang: string]: AlgoliaIndex } = {
   english: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
