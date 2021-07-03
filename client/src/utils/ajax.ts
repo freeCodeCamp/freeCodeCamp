@@ -55,15 +55,89 @@ async function request<T>(
 
 /** GET **/
 
-export function getSessionUser() {
+interface ProfileUI {
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showTimeLine: boolean;
+}
+
+interface File {
+  contents: string;
+  ext: string;
+  path: string;
+  name: string;
+  key: string;
+}
+
+interface Challenge {
+  completedDate: number;
+  id: string;
+  solution: string;
+  githubLink: string;
+  challengeType: number;
+  files: File[];
+}
+
+interface Portfolio {
+  description: string;
+  id: string;
+  image: string;
+  title: string;
+  url: string;
+}
+
+interface User {
+  profileUI: ProfileUI;
+  calendar: { [key: number]: number };
+  streak: { current: number; longest: number };
+  completedChallenges: Challenge[];
+  portfolio: Portfolio[];
+  about: string;
+  githubProfile: string;
+  isDonating: boolean;
+  isGithub: boolean;
+  isLinkedIn: boolean;
+  isTwitter: boolean;
+  isWebsite: boolean;
+  joinDate: string;
+  linkedin: string;
+  location: string;
+  name: string;
+  picture: string;
+  points: number | null;
+  twitter: string;
+  username: string;
+  website: string;
+  yearsTopContributor: string[];
+}
+
+interface SessionUser {
+  user: User;
+  sessionMeta: { activeDonations: number };
+  result: string;
+}
+export function getSessionUser(): Promise<SessionUser> {
   return get('/user/get-session-user');
 }
 
-export function getUserProfile(username: string) {
+export function getUserProfile(username: string): Promise<User> {
   return get(`/api/users/get-public-profile?username=${username}`);
 }
 
-export function getShowCert(username: string, certSlug: string) {
+interface Cert {
+  certTitle: string;
+  username: string;
+  date: Date;
+  completionTime: string;
+}
+export function getShowCert(username: string, certSlug: string): Promise<Cert> {
   return get(`/certificate/showCert/${username}/${certSlug}`);
 }
 
@@ -71,31 +145,52 @@ export function getUsernameExists(username: string): Promise<boolean> {
   return get(`/api/users/exists?username=${username}`);
 }
 
-export function getArticleById(shortId: string) {
-  return get(`/n/${shortId}`);
-}
+// Doesn't appear to ever be used in other files
+// export function getArticleById(shortId: string) {
+//   return get(`/n/${shortId}`);
+// }
 
 /** POST **/
 
-export function addDonation(body): Promise<void> {
+interface Donation {
+  email: string;
+  amount: number;
+  duration: string;
+  provider: string;
+  subscriptionId: string;
+  customerId: string;
+  startDate: Date;
+}
+export function addDonation(body: Donation): Promise<void> {
   return post('/donate/add-donation', body);
 }
 
-export function postReportUser(body): Promise<void> {
+interface Report {
+  username: string;
+  reportDescription: string;
+}
+export function postReportUser(body: Report): Promise<void> {
   return post('/user/report-user', body);
 }
 
-export function postDeleteAccount(body): Promise<void> {
-  return post('/account/delete', body);
+// Both are called without a payload in danger-zone-saga,
+// which suggests both are sent without any body
+export function postDeleteAccount(): Promise<void> {
+  return post('/account/delete', {});
 }
 
-export function postResetProgress(body): Promise<void> {
-  return post('/account/reset-progress', body);
+export function postResetProgress(): Promise<void> {
+  return post('/account/reset-progress', {});
 }
 
 /** PUT **/
-
-export function putUpdateMyAbout(values): Promise<void> {
+interface MyAbout {
+  name: string;
+  location: string;
+  about: string;
+  picture: string;
+}
+export function putUpdateMyAbout(values: MyAbout): Promise<void> {
   return put('/update-my-about', { ...values });
 }
 
@@ -103,15 +198,19 @@ export function putUpdateMyUsername(username: string): Promise<void> {
   return put('/update-my-username', { username });
 }
 
-export function putUpdateMyProfileUI(profileUI): Promise<void> {
+export function putUpdateMyProfileUI(profileUI: ProfileUI): Promise<void> {
   return put('/update-my-profileui', { profileUI });
 }
 
-export function putUpdateUserFlag(update): Promise<void> {
+// Update should contain only one flag and one new value
+interface Update {
+  [flag: string]: string;
+}
+export function putUpdateUserFlag(update: Update): Promise<void> {
   return put('/update-user-flag', update);
 }
 
-export function putUserAcceptsTerms(quincyEmails): Promise<void> {
+export function putUserAcceptsTerms(quincyEmails: boolean): Promise<void> {
   return put('/update-privacy-terms', { quincyEmails });
 }
 
