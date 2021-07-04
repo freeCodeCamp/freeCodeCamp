@@ -23,8 +23,9 @@ function getCSRFToken() {
 }
 
 async function get<T>(path: string): Promise<T> {
-  const res = await fetch(`${base}${path}`, defaultOptions);
-  return (await res.json()) as Promise<T>;
+  return fetch(`${base}${path}`, defaultOptions).then(res =>
+    res.json()
+  ) as Promise<T>;
 }
 
 export function post<T = void>(path: string, body: unknown): Promise<T> {
@@ -49,8 +50,7 @@ async function request<T>(
     },
     body: JSON.stringify(body)
   };
-  const res = await fetch(`${base}${path}`, options);
-  return (await res.json()) as Promise<T>;
+  return fetch(`${base}${path}`, options).then(res => res.json()) as Promise<T>;
 }
 
 /** GET **/
