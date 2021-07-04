@@ -28,7 +28,9 @@ As you can see, the body is encoded like the query string. This is the default f
 
 Install the `body-parser` module in your `package.json`. Then, `require` it at the top of the file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: true})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
 
-**Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing. When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default Javascript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
+**Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing. 
+
+When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default Javascript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
 
 # --hints--
 
