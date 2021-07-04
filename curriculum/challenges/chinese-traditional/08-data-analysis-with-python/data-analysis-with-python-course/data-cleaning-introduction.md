@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15d
-title: Data Cleaning Introduction
+title: 數據清理簡介
 challengeType: 11
 videoId: ovYNhnltVxY
 dashedName: data-cleaning-introduction
@@ -8,18 +8,18 @@ dashedName: data-cleaning-introduction
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*您可以使用 Google Colab，而不是像視頻中顯示的那樣使用 notebooks.ai。*
 
-More resources:
+以下有更多的資料：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What will the following code print out?
+以下代碼會打印出什麼？
 
 ```py
 import pandas as pd

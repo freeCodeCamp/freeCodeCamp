@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f190b6c005b0e76f090
-title: 'Relational Databases: Many-to-many Relationships'
+title: '关系型数据库：多对多关系'
 challengeType: 11
 videoId: z-SBYcvEQOc
 dashedName: relational-databases-many-to-many-relationships
@@ -8,39 +8,39 @@ dashedName: relational-databases-many-to-many-relationships
 
 # --description--
 
-More resources:
+更多资料：
 
-\- [Exercise: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+\- [练习：电子邮件](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
 
-\- [Exercise: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+\- [练习：名册](https://www.youtube.com/watch?v=qEkUEAz8j3o)
 
-\- [Exercise: Tracks](https://www.youtube.com/watch?v=I-E7avcPeSE)
+\- [练习：曲目](https://www.youtube.com/watch?v=I-E7avcPeSE)
 
-\- [Exercise: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+\- [练习：推特好友](https://www.youtube.com/watch?v=RZRAoBFIH6A)
 
-\- [Exercise: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+\- [练习：推特爬虫](https://www.youtube.com/watch?v=xBaJddvJL4A)
 
 # --question--
 
 ## --text--
 
-Which is an example of a many-to-many relationship?
+哪个是多对多关系的示例？
 
 ## --answers--
 
-teacher to student
+老师与学生
 
 ---
 
-customer to order
+客户与订单
 
 ---
 
-book to pages
+书与内页
 
 ---
 
-city to country
+城市与国家
 
 ## --video-solution--
 

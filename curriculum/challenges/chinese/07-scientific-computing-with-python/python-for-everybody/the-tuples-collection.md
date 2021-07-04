@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f06c
-title: The Tuples Collection
+title: 元组集合
 challengeType: 11
 videoId: 3Lxpladfh2k
 dashedName: the-tuples-collection
@@ -10,7 +10,7 @@ dashedName: the-tuples-collection
 
 ## --text--
 
-What will the following code print?:
+这些代码会打印出什么？
 
 ```python
 d = dict()
