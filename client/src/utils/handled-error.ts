@@ -1,5 +1,5 @@
 import { has } from 'lodash-es';
-import { AxiosError, AxiosResponse } from 'axios';
+import type { AxiosError, AxiosResponse } from 'axios';
 
 import standardErrorMessage from './standard-error-message';
 import reportedErrorMessage from './reported-error-message';

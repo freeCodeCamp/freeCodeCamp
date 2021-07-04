@@ -1,5 +1,5 @@
 import { isObject } from 'lodash-es';
-import { AxiosError } from 'axios';
+import type { AxiosError } from 'axios';
 
 import {
   isHandledError,
