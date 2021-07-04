@@ -2,6 +2,8 @@ import envData from '../../../config/env.json';
 import Tokens from 'csrf';
 import cookies from 'browser-cookies';
 
+import type { UserType } from '../redux/prop-types';
+
 const { apiLocation } = envData as { apiLocation: string };
 
 const base = apiLocation;
@@ -55,71 +57,8 @@ async function request<T>(
 
 /** GET **/
 
-interface ProfileUI {
-  isLocked: boolean;
-  showAbout: boolean;
-  showCerts: boolean;
-  showDonation: boolean;
-  showHeatMap: boolean;
-  showLocation: boolean;
-  showName: boolean;
-  showPoints: boolean;
-  showPortfolio: boolean;
-  showTimeLine: boolean;
-}
-
-interface File {
-  contents: string;
-  ext: string;
-  path: string;
-  name: string;
-  key: string;
-}
-
-interface Challenge {
-  completedDate: number;
-  id: string;
-  solution: string;
-  githubLink: string;
-  challengeType: number;
-  files: File[];
-}
-
-interface Portfolio {
-  description: string;
-  id: string;
-  image: string;
-  title: string;
-  url: string;
-}
-
-interface User {
-  profileUI: ProfileUI;
-  calendar: { [key: number]: number };
-  streak: { current: number; longest: number };
-  completedChallenges: Challenge[];
-  portfolio: Portfolio[];
-  about: string;
-  githubProfile: string;
-  isDonating: boolean;
-  isGithub: boolean;
-  isLinkedIn: boolean;
-  isTwitter: boolean;
-  isWebsite: boolean;
-  joinDate: string;
-  linkedin: string;
-  location: string;
-  name: string;
-  picture: string;
-  points: number | null;
-  twitter: string;
-  username: string;
-  website: string;
-  yearsTopContributor: string[];
-}
-
 interface SessionUser {
-  user: User;
+  user: UserType;
   sessionMeta: { activeDonations: number };
   result: string;
 }
@@ -127,7 +66,7 @@ export function getSessionUser(): Promise<SessionUser> {
   return get('/user/get-session-user');
 }
 
-export function getUserProfile(username: string): Promise<User> {
+export function getUserProfile(username: string): Promise<UserType> {
   return get(`/api/users/get-public-profile?username=${username}`);
 }
 
@@ -198,7 +137,9 @@ export function putUpdateMyUsername(username: string): Promise<void> {
   return put('/update-my-username', { username });
 }
 
-export function putUpdateMyProfileUI(profileUI: ProfileUI): Promise<void> {
+export function putUpdateMyProfileUI(
+  profileUI: UserType['profileUI']
+): Promise<void> {
   return put('/update-my-profileui', { profileUI });
 }
 
