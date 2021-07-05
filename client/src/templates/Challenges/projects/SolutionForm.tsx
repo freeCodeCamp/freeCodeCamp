@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
+import type { WithTranslation } from 'react-i18next';
 
 import { Form } from '../../../components/formHelpers';
 import {
@@ -13,14 +14,12 @@ interface SubmitProps {
   isShouldCompletionModalOpen: boolean;
 }
 
-interface FormProps {
+interface FormProps extends WithTranslation {
   challengeType: number;
   description: string;
   isSubmitting: boolean;
   onSubmit: (arg0: SubmitProps) => void;
-  t: (arg0: string) => string;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
-  placeholders: (arg0: Record<string, unknown>) => void;
 }
 
 interface ValidatedValues {
@@ -53,7 +52,7 @@ export class SolutionForm extends Component<FormProps> {
   };
 
   render(): JSX.Element {
-    const { isSubmitting, challengeType, description, t } = this.props;
+    const { challengeType, description, t } = this.props;
 
     // back end challenges and front end projects use a single form field
     const solutionField = [
