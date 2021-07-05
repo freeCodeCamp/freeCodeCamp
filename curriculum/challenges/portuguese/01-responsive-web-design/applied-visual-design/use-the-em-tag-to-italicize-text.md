@@ -1,6 +1,6 @@
 ---
 id: 587d781a367417b2b2512ab9
-title: Use the em Tag to Italicize Text
+title: Use a tag em para colocar o texto em itálico
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJRBtp'
 forumTopicId: 301078
@@ -9,21 +9,21 @@ dashedName: use-the-em-tag-to-italicize-text
 
 # --description--
 
-To emphasize text, you can use the `em` tag. This displays text as italicized, as the browser applies the CSS of `font-style: italic;` to the element.
+Para enfatizar o texto, você pode usar a tag `em`. Essa tag exibe o texto em itálico, pois o navegador, através do CSS, aplica a propriedade e valor `font-style: italic;` ao elemento.
 
 # --instructions--
 
-Wrap an `em` tag around the contents of the paragraph tag to give it emphasis.
+Envolva o conteúdo da tag de parágrafo com uma tag `em` para dar ênfase.
 
 # --hints--
 
-Your code should add an `em` tag to the markup.
+O código deve adicionar uma tag `em` ao html.
 
 ```js
 assert($('em').length == 1);
 ```
 
-The `em` tag should wrap around the contents of the `p` tag but not the `p` tag itself.
+A tag `em` deve envolver o conteúdo da tag `p`, mas não a tag `p` em si.
 
 ```js
 assert($('p').children().length == 1 && $('em').children().length == 2);
