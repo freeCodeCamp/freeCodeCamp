@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512ae2
-title: Create Visual Direction by Fading an Element from Left to Right
+title: Criar uma direção visual ao esmaecer um elemento da esquerda para a direita
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJqqAE'
 forumTopicId: 301054
@@ -9,17 +9,17 @@ dashedName: create-visual-direction-by-fading-an-element-from-left-to-right
 
 # --description--
 
-For this challenge, you'll change the `opacity` of an animated element so it gradually fades as it reaches the right side of the screen.
+Neste desafio, você irá alterar a propriedade `opacity` (opacidade) de um elemento animado para que ele desapareça gradualmente ao atingir o lado direito da tela.
 
-In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the `@keyframes` rule.
+Na animação exibida, o elemento redondo com o fundo gradiente se move para a direita na marca de 50% da animação na regra `@keyframes`.
 
 # --instructions--
 
-Target the element with the id of `ball` and add the `opacity` property set to 0.1 at `50%`, so the element fades as it moves to the right.
+Selecione o elemento com o id de `ball` e adicione a propriedade `opacity` com o valor de 0.1 em `50%`, para que o elemento desapareça conforme ele se move para a direita.
 
 # --hints--
 
-The `keyframes` rule for fade should set the `opacity` property to 0.1 at 50%.
+A regra `keyframes` para esmaecimento deve definir a propriedade `opacity` para 0.1 em 50%.
 
 ```js
 assert(

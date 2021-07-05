@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036167
-title: Render a Class Component to the DOM
+title: Renderiza un componente de clase al DOM
 challengeType: 6
 forumTopicId: 301404
 dashedName: render-a-class-component-to-the-dom
@@ -8,19 +8,19 @@ dashedName: render-a-class-component-to-the-dom
 
 # --description--
 
-You may remember using the ReactDOM API in an earlier challenge to render JSX elements to the DOM. The process for rendering React components will look very similar. The past few challenges focused on components and composition, so the rendering was done for you behind the scenes. However, none of the React code you write will render to the DOM without making a call to the ReactDOM API.
+Puede que recuerdes haber usado la API ReactDOM en un desafío anterior para renderizar elementos JSX al DOM. El proceso para renderizar los componentes de React será muy similar. Los últimos desafíos se centraron en los componentes y la composición, por lo que el renderizado se ha realizado tras bambalinas. Sin embargo, ninguna parte de código de React que escribas se procesará en el DOM sin realizar una llamada a la API de ReactDOM.
 
-Here's a refresher on the syntax: `ReactDOM.render(componentToRender, targetNode)`. The first argument is the React component that you want to render. The second argument is the DOM node that you want to render that component within.
+Aquí va un recordatorio de la sintaxis: `ReactDOM.render(componentToRender, targetNode)`. El primer argumento es el componente de React que deseas renderizar. El segundo argumento es el nodo del DOM en el que deseas renderizar ese componente.
 
-React components are passed into `ReactDOM.render()` a little differently than JSX elements. For JSX elements, you pass in the name of the element that you want to render. However, for React components, you need to use the same syntax as if you were rendering a nested component, for example `ReactDOM.render(<ComponentToRender />, targetNode)`. You use this syntax for both ES6 class components and functional components.
+Los componentes de React se pasan a `ReactDOM.render()` de manera un poco diferente a como se hace con los elementos JSX. Para los elementos JSX, pasas el nombre del elemento que deseas representar. Sin embargo, para los componentes de React, debes usar la misma sintaxis que si estuvieras renderizando un componente anidado, por ejemplo, `ReactDOM.render(<ComponentToRender />, targetNode)`. Se utiliza esta sintaxis tanto para los componentes de clase ES6 como para los componentes funcionales.
 
 # --instructions--
 
-Both the `Fruits` and `Vegetables` components are defined for you behind the scenes. Render both components as children of the `TypesOfFood` component, then render `TypesOfFood` to the DOM. There is a `div` with `id='challenge-node'` available for you to use.
+Los componentes `Fruits` y `Vegetables` se definen por ti tras bambalinas. Renderiza ambos componentes como hijos del componente `TypesOfFood`, y luego renderiza `TypesOfFood` al DOM. Hay un `div` con `id='challenge-node'` disponible para que lo uses.
 
 # --hints--
 
-The `TypesOfFood` component should return a single `div` element.
+El componente `TypesOfFood` debe devolver un solo elemento `div`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The `TypesOfFood` component should render the `Fruits` component after the `h1` element.
+El componente `TypesOfFood` debe renderizar el componente `Fruits` después del elemento `h1`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `TypesOfFood` component should render the `Vegetables` component after `Fruits`.
+El componente `TypesOfFood` debe renderizar el componente `Vegetables` después de `Fruits`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The `TypesOfFood` component should render to the DOM within the `div` with the id `challenge-node`.
+El componente `TypesOfFood` debe renderizarse al DOM dentro del `div` con el id `challenge-node`.
 
 ```js
 assert(
