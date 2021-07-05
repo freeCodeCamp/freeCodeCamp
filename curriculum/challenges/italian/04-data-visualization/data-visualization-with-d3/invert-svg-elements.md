@@ -26,7 +26,7 @@ Cambia la funzione callback per l'attributo `y` per raddrizzare le barre. Ricord
 
 # --hints--
 
-Il primo `rect` dovrebbe avere `y` di `64`.
+Il primo `rect` dovrebbe avere un valore `y` di `64`.
 
 ```js
 assert($('rect').eq(0).attr('y') == h - dataset[0] * 3);
