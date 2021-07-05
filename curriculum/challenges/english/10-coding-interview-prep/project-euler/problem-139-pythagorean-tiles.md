@@ -14,9 +14,9 @@ For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square 
 
 <img class="img-responsive center-block" alt="two 5 x 5 squares: one with four 3x4x5 triangles placed to create 1x1 hole in the middle; second with twenty-five 1x1 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;">
 
-However, if (5, 12, 13) triangles were used then the hole would measure 7 by 7 and these could not be used to tile the 13 by 13 square.
+However, if (5, 12, 13) triangles were used, the hole would measure 7 by 7, these could not be used to tile the 13 by 13 square.
 
-Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to take place?
+Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to occur?
 
 # --hints--
 
