@@ -11,7 +11,8 @@ import { stepsToClaimSelector } from '../../../redux';
 import { verifyCert } from '../../../redux/settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { StepsType, User } from '../../../redux/prop-types';
-import { certMap } from '../../../resources/certAndProjectMap';
+
+import { certMap } from '../../../resources/cert-and-project-map';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap

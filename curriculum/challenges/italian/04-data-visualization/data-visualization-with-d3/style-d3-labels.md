@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd3
-title: Style D3 Labels
+title: Aggiungere stili alle etichette D3
 challengeType: 6
 forumTopicId: 301492
 dashedName: style-d3-labels
@@ -8,21 +8,21 @@ dashedName: style-d3-labels
 
 # --description--
 
-D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as `font-family` or `font-size`.
+I metodi D3 possono aggiungere stili alle etichette delle barre. L'attributo `fill` (riempimento) imposta il colore del testo per un nodo `text`. Il metodo `style()` imposta regole CSS per altri stili, come `font-family` o `font-size`.
 
 # --instructions--
 
-Set the `font-size` of the `text` elements to `25px`, and the color of the text to red.
+Imposta la dimensione `font-size` degli elementi `text` a `25px` e il colore del testo a rosso.
 
 # --hints--
 
-The labels should all have a `fill` color of red.
+Le barre dovrebbero avere tutte un colore di riempimento (`fill`) rosso.
 
 ```js
 assert($('text').css('fill') == 'rgb(255, 0, 0)');
 ```
 
-The labels should all have a `font-size` of `25` pixels.
+Le etichette dovrebbero avere tutte un `font-size` di `25` pixel.
 
 ```js
 assert($('text').css('font-size') == '25px');

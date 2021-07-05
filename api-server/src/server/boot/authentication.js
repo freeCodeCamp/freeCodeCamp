@@ -63,7 +63,7 @@ module.exports = function enableAuthentication(app) {
   }
 
   api.get('/signout', (req, res) => {
-    const { origin } = getRedirectParams(req);
+    const { origin, returnTo } = getRedirectParams(req);
     req.logout();
     req.session.destroy(err => {
       if (err) {
@@ -74,7 +74,7 @@ module.exports = function enableAuthentication(app) {
         });
       }
       removeCookies(req, res);
-      res.redirect(origin);
+      res.redirect(returnTo);
     });
   });
 

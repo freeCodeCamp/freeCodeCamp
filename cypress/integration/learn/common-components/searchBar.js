@@ -14,9 +14,41 @@ const clear = () => {
   });
 };
 
-describe('Search bar', () => {
+describe('Search bar optimized', () => {
   before(() => {
     cy.visit('/');
+  });
+
+  beforeEach(() => {
+    clear();
+  });
+
+  it('Should render properly', () => {
+    cy.get('[data-cy=ais-SearchBox]').should('be.visible');
+  });
+
+  it('Should not display hits', () => {
+    search('freeCodeCamp');
+    cy.get('[data-cy=ais-Hits-list]').should('not.exist');
+  });
+
+  it('Should open a new tab ', () => {
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        cy.stub(win, 'open').as('open');
+      }
+    });
+    search('freeCodeCamp');
+    cy.get('[data-cy=ais-SearchBox-form]').submit();
+    const queryUrl =
+      'https://www.freecodecamp.org/news/search/?query=freeCodeCamp';
+    cy.get('@open').should('have.been.calledOnceWith', queryUrl);
+  });
+});
+
+describe('Search bar', () => {
+  before(() => {
+    cy.visit('/learn');
   });
 
   beforeEach(() => {
@@ -30,13 +62,17 @@ describe('Search bar', () => {
   it('Should accept input and display hits', () => {
     search('freeCodeCamp');
 
-    cy.get('.ais-Hits-list').children().should('to.have.length.of.at.least', 1);
+    cy.get('[data-cy=ais-Hits-list]')
+      .children()
+      .should('to.have.length.of.at.least', 1);
   });
 
   it('Should clear hits when input is cleared', () => {
     search('freeCodeCamp');
 
-    cy.get('.ais-Hits-list').children().should('to.have.length.of.at.least', 1);
+    cy.get('[data-cy=ais-Hits-list]')
+      .children()
+      .should('to.have.length.of.at.least', 1);
 
     clear();
 
@@ -48,7 +84,7 @@ describe('Search bar', () => {
 
     search('freeCodeCamp');
 
-    cy.get('.ais-Hits-list').children().should('to.have.length.of', 8);
+    cy.get('[data-cy=ais-Hits-list]').children().should('to.have.length.of', 8);
   });
 
   it('Should show up to 5 hits when height < 768px', () => {
@@ -56,13 +92,13 @@ describe('Search bar', () => {
 
     search('freeCodeCamp');
 
-    cy.get('.ais-Hits-list').children().should('to.have.length.of', 5);
+    cy.get('[data-cy=ais-Hits-list]').children().should('to.have.length.of', 5);
   });
 
   it('Should show no hits for queries that do not exist in the Algolia index', () => {
     search('testtttt');
 
-    cy.get('.ais-Hits-list').children().should('to.have.length.of', 0);
+    cy.get('[data-cy=ais-Hits-list]').children().should('to.have.length.of', 0);
 
     cy.contains('No tutorials found');
   });

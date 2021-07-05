@@ -1,6 +1,6 @@
 ---
 id: 587d78ae367417b2b2512aff
-title: Use the order Property to Rearrange Items
+title: Usar a propriedade order para reorganizar os itens
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
 forumTopicId: 301116
@@ -9,21 +9,21 @@ dashedName: use-the-order-property-to-rearrange-items
 
 # --description--
 
-The `order` property is used to tell CSS the order of how flex items appear in the flex container. By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.
+A propriedade `order` é usada para informar ao CSS a ordem de aparição dos flex items dentro do flex container. Por padrão, os itens aparecerão na mesma ordem em que foram escritos no HTML. A propriedade aceita números como valor. Números negativos podem ser usados.
 
 # --instructions--
 
-Add the CSS property `order` to both `#box-1` and `#box-2`. Give `#box-1` a value of `2` and give `#box-2` a value of `1`.
+Adicione a propriedade CSS `order` aos elementos de id `#box-1` e `#box-2`. Dê a `#box-1` um valor de `2` e dê a `#box-2` um valor de `1`.
 
 # --hints--
 
-The `#box-1` element should have the `order` property set to a value of `2`.
+O elemento de id `#box-1` deve ter a propriedade `order` com o valor de `2`.
 
 ```js
 assert($('#box-1').css('order') == '2');
 ```
 
-The `#box-2` element should have the `order` property set to a value of `1`.
+O elemento de id `#box-2` deve ter a propriedade `order` com o valor de `1`.
 
 ```js
 assert($('#box-2').css('order') == '1');

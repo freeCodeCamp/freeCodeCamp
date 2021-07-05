@@ -1,6 +1,6 @@
 ---
 id: 5a94fe0569fb03452672e45c
-title: Divide the Grid Into an Area Template
+title: Dividir o grid em áreas
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
@@ -9,7 +9,7 @@ dashedName: divide-the-grid-into-an-area-template
 
 # --description--
 
-You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using `grid-template-areas` on the container like this:
+Você pode agrupar as células do grid em uma <dfn>área</dfn> e dar a esta um nome personalizado. Faça isso usando a propriedade `grid-template-areas` no grid container:
 
 ```css
 grid-template-areas:
@@ -18,15 +18,15 @@ grid-template-areas:
   "footer footer footer";
 ```
 
-The code above merges the top three cells together into an area named `header`, the bottom three cells into a `footer` area, and it makes two areas in the middle row; `advert` and `content`. **Note:** Every word in the code represents a cell and every pair of quotation marks represent a row. In addition to custom labels, you can use a period (`.`) to designate an empty cell in the grid.
+O código acima mescla as três células superiores em uma área chamada `header`, as três células inferiores em uma área chamada `footer` e faz duas áreas na linha do meio, `advert` e `content`. **Observação:** cada palavra no código representa uma célula e cada par de aspas representa uma linha. Além de nomes personalizados, você pode usar um ponto (`.`) para criar uma célula vazia no grid.
 
 # --instructions--
 
-Place the area template so that the cell labeled `advert` becomes an empty cell.
+Crie um modelo de área de forma que a célula com o nome `advert` se torne uma célula vazia.
 
 # --hints--
 
-`container` class should have a `grid-template-areas` property similar to the preview but with`.` instead of the `advert` area.
+O elemento de classe `container` deve ter a propriedade `grid-template-areas` semelhante ao do exemplo, mas com um `.` (ponto final) em vez do nome `advert`.
 
 ```js
 assert(

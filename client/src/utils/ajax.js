@@ -2,14 +2,13 @@ import envData from '../../../config/env.json';
 import Tokens from 'csrf';
 import cookies from 'browser-cookies';
 
-const { apiLocation, environment } = envData;
+const { apiLocation } = envData;
 
 const base = apiLocation;
 const tokens = new Tokens();
 
-// TODO: test on staging.  Do we need 'include' everywhere?
 const defaultOptions = {
-  credentials: environment === 'development' ? 'include' : 'same-site'
+  credentials: 'include'
 };
 
 // _csrf is passed to the client as a cookie. Tokens are sent back to the server

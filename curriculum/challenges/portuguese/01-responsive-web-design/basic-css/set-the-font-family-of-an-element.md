@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08807
-title: Set the Font Family of an Element
+title: Definir a família tipográfica de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
@@ -9,9 +9,9 @@ dashedName: set-the-font-family-of-an-element
 
 # --description--
 
-You can set which font an element should use, by using the `font-family` property.
+Você pode definir qual tipografia um elemento deve usar utilizando a propriedade `font-family`.
 
-For example, if you wanted to set your `h2` element's font to `sans-serif`, you would use the following CSS:
+Por exemplo, se você quiser definir a tipografia do elemento `h2` como `sans-serif`, deverá usar o seguinte CSS:
 
 ```css
 h2 {
@@ -21,11 +21,11 @@ h2 {
 
 # --instructions--
 
-Make all of your `p` elements use the `monospace` font.
+Faça com que todos os elementos `p` usem a fonte `monospace`.
 
 # --hints--
 
-Your `p` elements should use the font `monospace`.
+Os elementos `p` devem usar a tipografia `monospace`.
 
 ```js
 assert(
@@ -101,9 +101,9 @@ assert(
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -118,7 +118,7 @@ assert(
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08806
-title: Change the Font Size of an Element
+title: Altere o Tamanho da Fonte de um Elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvDc8'
 forumTopicId: 16777
@@ -9,7 +9,7 @@ dashedName: change-the-font-size-of-an-element
 
 # --description--
 
-Font size is controlled by the `font-size` CSS property, like this:
+O tamanho da fonte é controlado pela propriedade CSS `font-size`, assim:
 
 ```css
 h1 {
@@ -19,11 +19,11 @@ h1 {
 
 # --instructions--
 
-Inside the same `<style>` tag that contains your `red-text` class, create an entry for `p` elements and set the `font-size` to 16 pixels (`16px`).
+Dentro da tag `<style>` que contém a classe `red-text`, crie um seletor de elementos `p` e defina a propriedade `font-size` com o valor de `16px`.
 
 # --hints--
 
-Between the `style` tags, give the `p` elements `font-size` of `16px`. Browser and Text zoom should be at 100%.
+Entre as tags `style`, defina a propriedade `font-size` com o valor de `16px` no seletor CSS `p` que você criou. O zoom do navegador e do texto devem estar em 100%.
 
 ```js
 assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));

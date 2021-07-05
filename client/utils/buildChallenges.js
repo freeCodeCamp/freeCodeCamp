@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const path = require('path');
 
 const {
   getChallengesForLang,
@@ -14,7 +15,21 @@ exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 
 exports.replaceChallengeNode = () => {
   return async function replaceChallengeNode(filePath) {
-    return await createChallenge(challengesDir, filePath, curriculumLocale);
+    // get the meta so that challengeOrder is accurate
+    const blockNameRe = /\d\d-[-\w]+\/([^/]+)\//;
+    const blockName = filePath.match(blockNameRe)[1];
+    const metaPath = path.resolve(
+      __dirname,
+      `../../curriculum/challenges/_meta/${blockName}/meta.json`
+    );
+    delete require.cache[require.resolve(metaPath)];
+    const meta = require(metaPath);
+    return await createChallenge(
+      challengesDir,
+      filePath,
+      curriculumLocale,
+      meta
+    );
   };
 };
 

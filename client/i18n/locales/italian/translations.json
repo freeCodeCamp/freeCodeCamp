@@ -1,6 +1,6 @@
 {
   "buttons": {
-    "logged-in-cta-btn": "Per iniziare (è gratuito)",
+    "logged-in-cta-btn": "Inizia ora (è gratuito)",
     "logged-out-cta-btn": "Accedi per salvare il tuo avanzamento (è gratuito)",
     "view-curriculum": "Visualizza il Curriculum",
     "first-lesson": "Vai alla prima lezione",
@@ -57,7 +57,7 @@
     "click-here": "Clicca qui per accedere",
     "save": "Salva",
     "no-thanks": "No, grazie",
-    "yes-please": "Si, prego",
+    "yes-please": "Sì, volentieri",
     "update-email": "Aggiorna la mia Email",
     "verify-email": "Verifica Email",
     "submit-and-go": "Invia e vai alla prossima sfida",
@@ -68,9 +68,9 @@
     "big-heading-1": "Impara a programmare — gratis.",
     "big-heading-2": "Costruisci progetti.",
     "big-heading-3": "Ottieni certificazioni.",
-    "h2-heading": "Dal 2014, più di 40.000 laureati con freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
-    "hero-img-description": "studenti freeCodeCamp di un gruppo di studio locale in Corea del Sud.",
-    "as-seen-in": "Come visto in:",
+    "h2-heading": "Dal 2014, più di 40.000 laureati di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
+    "hero-img-description": "Studenti di un gruppo di studio locale di freeCodeCamp in Corea del Sud.",
+    "as-seen-in": "Hanno parlato di noi:",
     "testimonials": {
       "heading": "Ecco cosa dicono i nostri allievi su freeCodeCamp:",
       "shawn": {
@@ -92,10 +92,10 @@
     "certification-heading": "Ottieni certificazioni verificate gratuite in:"
   },
   "settings": {
-    "share-projects": "Condividi i tuoi progetti non-freeCodeCamp, articoli o richieste di pull accettate.",
-    "privacy": "Le impostazioni di questa sezione ti permettono di controllare ciò che viene mostrato sul tuo portfolio pubblico di freeCodeCamp.",
+    "share-projects": "Condividi i tuoi progetti non-freeCodeCamp, articoli o pull request accettate.",
+    "privacy": "Le impostazioni di questa sezione ti permettono di controllare quello che viene mostrato sul tuo portfolio pubblico di freeCodeCamp.",
     "data": "Per vedere quali dati teniamo nel tuo account, clicca sul pulsante \"Scarica i tuoi dati\" qui sotto",
-    "disabled": "Le tue certificazioni saranno disabilitate, se impostate su private.",
+    "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
     "for": "Impostazioni Account per {{username}}",
     "username": {
@@ -139,8 +139,8 @@
       "legacy-certs": "Vecchie certificazioni",
       "honesty": "Politica di Onestà Accademica",
       "internet": "La Tua presenza su Internet",
-      "portfolio": "Impostazioni del Portfolio",
-      "privacy": "Impostazioni della Privacy"
+      "portfolio": "Impostazioni Portfolio",
+      "privacy": "Impostazioni Privacy"
     },
     "danger": {
       "heading": "Zona di Pericolo",
@@ -170,11 +170,11 @@
       "weekly": "Inviami l'email settimanale di Quincy"
     },
     "honesty": {
-      "p1": "Prima di poter richiedere una certificazione verificata, è necessario accettare la nostra Academic Onesty Pledge, che recita:",
+      "p1": "Prima di poter richiedere una certificazione verificata, è necessario accettare la nostra Politica di Onestà Accademica, che recita:",
       "p2": "\"Capisco che il plagio significa copiare il lavoro di qualcun altro e presentare il lavoro come se fosse mio, senza attribuirlo chiaramente all'autore originale.\"",
-      "p3": "\"Capisco che il plagio è un atto di disonestà intellettuale, e che le persone di solito vengono cacciate dall'università o licenziati dal loro lavoro se vengono catturati a plagiariare il lavoro altrui.\"",
-      "p4": "\"Oltre a utilizzare librerie open source come jQuery e Bootstrap, e brevi frammenti di codice che sono chiaramente attribuiti al loro autore originale, il 100% del codice nei miei progetti è stato scritto da me, o insieme ad un'altra persona che passa attraverso i corsi freeCodeCamp con cui ho fatto pair programming in tempo reale.\"",
-      "p5": "\"Mi impegno a non plagiare in nessuno dei miei lavori freeCodeCamp.org. Capisco che il team di freeCodeCamp.org controllerà i miei progetti per confermarlo.\"",
+      "p3": "\"Capisco che il plagio è un atto di disonestà intellettuale, e che le persone di solito vengono cacciate dall'Università o licenziate dal loro lavoro se vengono sorprese a plagiare il lavoro altrui.\"",
+      "p4": "\"Oltre a utilizzare librerie open source come jQuery e Bootstrap, e brevi frammenti di codice che sono chiaramente attribuiti al loro autore originale, il 100% del codice nei miei progetti è stato scritto da me, o insieme ad un altro membro di freeCodeCamp con cui ho fatto pair programming in tempo reale.\"",
+      "p5": "\"Mi impegno a non plagiare in nessuno dei miei lavori freeCodeCamp.org. Sono informato che il team di freeCodeCamp.org controllerà i miei progetti per confermarlo.\"",
       "p6": "Nelle situazioni in cui si scoprono casi di plagio inequivocabile, sostituiremo la certificazione della persona in questione con un messaggio \"Al momento della revisione, questo account è stato contrassegnato per disonestà accademica.\"",
       "p7": "Come istituzione accademica che concede certificazioni basate sui risultati, prendiamo molto sul serio l'onestà accademica. Se hai domande su questa politica, o sospetti che qualcuno la abbia violata, puoi inviare un'email a <0>{{email}}</0> e indagheremo."
     }
@@ -182,7 +182,7 @@
   "profile": {
     "you-not-public": "Non hai reso pubblico il tuo portfolio.",
     "username-not-public": "{{username}} non ha reso pubblico il suo portfolio.",
-    "you-change-privacy": "È necessario modificare le tue impostazioni sulla privacy affinché il tuo portfolio sia visibile da altri. Questa è un'anteprima di come il tuo portfolio apparirà quando reso pubblico.",
+    "you-change-privacy": "Se desideri rendere visibile il tuo portfolio a tutti dovrai prima modificare le tue impostazioni sulla privacy. Questa è un'anteprima di come il tuo portfolio apparirà quando sarà reso pubblico.",
     "username-change-privacy": "{{username}} devono modificare la loro impostazione di privacy affinché tu possa visualizzare il loro portfolio.",
     "supporter": "Sostenitore",
     "contributor": "Miglior Contributore",
@@ -200,7 +200,7 @@
     "add-twitter": "Condividi questa certificazione su Twitter",
     "tweet": "Ho appena ottenuto la {{certTitle}} @freeCodeCamp! Guarda qui: {{certURL}}",
     "avatar": "avatar di {{username}}",
-    "joined": "Iscritto il {{date}}",
+    "joined": "Iscritto da {{date}}",
     "total-points": "{{count}} punto totale",
     "total-points_plural": "{{count}} punti totali",
     "points": "{{count}} punto il {{date}}",
@@ -246,13 +246,13 @@
       "p6": "Se ti senti sopraffatto, è normale. La programmazione è difficile.",
       "p7": "La pratica è la chiave. Pratica, pratica, pratica.",
       "p8": "E questo curriculum ti darà migliaia di ore di pratica di programmazione.",
-      "p9": "E se vuoi imparare matematica e teoria dell'informatica, abbiamo anche migliaia di ore di corsi video sul canale YouTube di <0>freeCodeCamp</0>.",
+      "p9": "E se vuoi apprendere la matematica e la teoria dell'informatica, abbiamo anche migliaia di ore di corsi video sul canale YouTube di <0>freeCodeCamp</0>.",
       "p10": "Se desideri trovare un lavoro di sviluppatore o come freelance, le competenze di programmazione saranno solo una parte del puzzle. Dovrai anche costruire la tua rete personale e la tua reputazione come sviluppatore.",
       "p11": "Puoi farlo su Twitter e GitHub, e anche sul <0>forum freeCodeCamp</0>.",
       "p12": "Happy coding!"
     },
     "upcoming-lessons": "Prossime Lezioni",
-    "learn": "Impara",
+    "learn": "Apprendi",
     "add-subtitles": "Aiuta a migliorare o aggiungi sottotitoli",
     "wrong-answer": "Siamo spiacenti, non è la risposta giusta. Vuoi riprovare?",
     "check-answer": "Fai clic sul pulsante qui sotto per controllare la tua risposta.",
@@ -285,7 +285,7 @@
       "preview": "Anteprima"
     },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
-    "help-translate-link": "Aiutaci a tradurre."
+    "help-translate-link": "Aiutaci con le traduzioni..."
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -307,7 +307,7 @@
     "confirm-4": "Conferma la tua donazione di ${{usd}} all’anno",
     "your-donation": "La tua donazione di ${{usd}} fornirà {{hours}} ore di apprendimento alle persone di tutto il mondo.",
     "your-donation-2": "La tua donazione ${{usd}} fornirà {{hours}} ore di apprendimento alle persone di tutto il mondo ogni mese.",
-    "your-donation-3": "La tua donazione ${{usd}} fornirà {{hours}} ore di apprendimento a persone di tutto il mondo ogni anno.",
+    "your-donation-3": "La tua donazione di ${{usd}} fornirà {{hours}} ore di apprendimento a persone di tutto il mondo ogni anno.",
     "duration": "Diventa un sostenitore una tantum del nostro non-profit.",
     "duration-2": "Diventa un sostenitore mensile del nostro non-profit.",
     "duration-3": "Diventa un sostenitore annuale del nostro no profit",
@@ -325,10 +325,10 @@
     "need-help": "Hai bisogno di aiuto con le tue donazioni attuali o passate?",
     "forward-receipt": "Inoltra una copia della tua ricevuta di donazione a donors@freecodecamp.org e dicci come possiamo aiutarti.",
     "efficiency": "freeCodeCamp è una non-profit dell'educazione altamente efficiente.",
-    "why-donate-1": "Quando doni a freeCodeCamp, aiuterai le persone a imparare nuove competenze e a provvedere alle loro famiglie.",
+    "why-donate-1": "Quando doni a freeCodeCamp, aiuti tante persone a fare proprie nuove competenze e a prendersi cura delle loro famiglie.",
     "why-donate-2": "Ci aiuterai anche a creare nuove risorse per te da utilizzare per espandere le tue abilità tecnologiche.",
-    "bigger-donation": "Vuoi fare una donazione una tantum più grande, inviarci un assegno o vuoi donare in altri modi?",
-    "other-ways": "Qui ci sono molti <0>altri modi per supportare la nostra missione non-profit. </0>.",
+    "bigger-donation": "Vuoi fare una donazione una tantum più sostanziosa, inviarci un assegno o donare in altri modi?",
+    "other-ways": "Qui ci sono molti <0>altri modi per supportare la nostra mission non-profit. </0>.",
     "failed-pay": "Uh - oh. Sembra che la tua transazione non sia passata. Potresti riprovare?",
     "try-again": "Per favore riprova.",
     "card-number": "Numero della tua Carta:",
@@ -370,7 +370,7 @@
     "email": "Email",
     "and": "e",
     "change-theme": "Accedi per modificare il tema.",
-    "translation-pending": "Aiutaci a tradurre"
+    "translation-pending": "Aiutaci a tradurlo"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -395,7 +395,8 @@
     "analytics": "Un grafico a barre e un grafico a linea",
     "shield": "Uno scudo con un segno di spunta",
     "tensorflow": "Icona di Tensorflow",
-    "algorithm": "Nodi con rami"
+    "algorithm": "Nodi con rami",
+    "magnifier": "lente d'ingrandimento"
   },
   "aria": {
     "fcc-logo": "Logo freeCodeCamp",
@@ -529,7 +530,7 @@
         "Caesars Cipher": "Cifrario di Cesare",
         "Telephone Number Validator": "Validatore Numero Di Telefono",
         "Cash Register": "Registro dei Contanti",
-        "Build a Drum Machine": "Costruisci una macchina a tamburo",
+        "Build a Drum Machine": "Costruisci una batteria",
         "Visualize Data with a Choropleth Map": "Visualizza i dati con una mappa a colori Coropletica",
         "Visualize Data with a Treemap Diagram": "Visualizza i dati con una mappa ad albero",
         "Exercise Tracker": "Monitor degli esercizi",

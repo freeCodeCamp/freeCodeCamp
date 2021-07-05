@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036165
-title: Use React to Render Nested Components
+title: Usare React per presentare i componenti annidati
 challengeType: 6
 forumTopicId: 301420
 dashedName: use-react-to-render-nested-components
@@ -8,23 +8,23 @@ dashedName: use-react-to-render-nested-components
 
 # --description--
 
-The last challenge showed a simple way to compose two components, but there are many different ways you can compose components with React.
+L'ultima sfida ha mostrato un modo semplice per comporre due componenti, ma ci sono molti modi diversi per comporre componenti con React.
 
-Component composition is one of React's powerful features. When you work with React, it is important to start thinking about your user interface in terms of components like the App example in the last challenge. You break down your UI into its basic building blocks, and those pieces become the components. This helps to separate the code responsible for the UI from the code responsible for handling your application logic. It can greatly simplify the development and maintenance of complex projects.
+La composizione dei componenti è una delle potenti caratteristiche di React. Quando si lavora con React, è importante iniziare a pensare alla tua interfaccia utente in termini di componenti come abbiamo visto nell'App di esempio dell'ultima sfida. Scomponi la tua interfaccia utente nei suoi blocchi di base e quei pezzi diventeranno i componenti. Questo aiuta a separare il codice responsabile dell'interfaccia utente dal codice responsabile della gestione della logica dell'applicazione. Questo può semplificare notevolmente lo sviluppo e il mantenimento di progetti complessi.
 
 # --instructions--
 
-There are two functional components defined in the code editor, called `TypesOfFruit` and `Fruits`. Take the `TypesOfFruit` component and compose it, or *nest* it, within the `Fruits` component. Then take the `Fruits` component and nest it within the `TypesOfFood` component. The result should be a child component, nested within a parent component, which is nested within a parent component of its own!
+Ci sono due componenti funzionali definiti nell'editor di codice, chiamati `TypesOfFruit` e `Fruits`. Prendi il componente `TypesOfFruit` e componilo o *annidalo* all'interno del componente `Fruits`. Quindi prendi il componente `Fruits` e annidalo all'interno del componente `TypesOfFood`. Il risultato dovrebbe essere un componente figlio, annidato all'interno di un componente genitore, che è annidato all'interno di un componente genitore proprio!
 
 # --hints--
 
-The `TypesOfFood` component should return a single `div` element.
+Il componente `TypesOfFood` dovrebbe restituire un singolo elemento `div`.
 
 ```js
 assert(Enzyme.shallow(React.createElement(TypesOfFood)).type() === 'div');
 ```
 
-The `TypesOfFood` component should return the `Fruits` component.
+Il componente `TypesOfFood` dovrebbe restituire il componente `Fruits`.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The `Fruits` component should return the `TypesOfFruit` component.
+Il componente `Fruits` dovrebbe restituire il componente `TypesOfFruit`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `TypesOfFruit` component should return the `h2` and `ul` elements.
+Il componente `TypesOfFruit` dovrebbe restituire gli elementi `h2` e `ul`.
 
 ```js
 assert(

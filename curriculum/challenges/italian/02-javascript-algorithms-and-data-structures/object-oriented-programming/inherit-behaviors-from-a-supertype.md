@@ -17,7 +17,7 @@ Animal.prototype.eat = function() {
 };
 ```
 
-Questa sfida e la prossima mostreranno come riutilizzare i metodi degli `Animal's` all'interno di `Bird` e `Dog` senza doverli ridefinire. Useremo una tecnica chiamata ereditarietà (inheritance). Questa sfida riguarda il primo passo: creare un'istanza del `supertype` (o genitore). Conosci già un modo per creare un'istanza di `Animal` utilizzando l'operatore `new`:
+Questa e la prossima sfida mostreranno come riutilizzare i metodi di `Animal` all'interno di `Bird` e `Dog` senza definirli nuovamente. Useremo una tecnica chiamata ereditarietà (inheritance). Questa sfida riguarda il primo passo: creare un'istanza del `supertype` (o genitore). Conosci già un modo per creare un'istanza di `Animal` utilizzando l'operatore `new`:
 
 ```js
 let animal = new Animal();
@@ -29,7 +29,7 @@ Ci sono alcuni svantaggi quando si utilizza questa sintassi per l'ereditarietà,
 let animal = Object.create(Animal.prototype);
 ```
 
-`Object.create(obj)` crea un nuovo oggetto e imposta `obj` come suo `prototype`. Ricorda che il `prototype` è come la "ricetta" per creare un oggetto. Impostando il `prototype` di `animal` in modo che sia il `prototype` di `Animal's` di fatto stai dando all'istanza `animal` la stessa "ricetta" di tutte le altre istanze di `Animal`.
+`Object.create(obj)` crea un nuovo oggetto e imposta `obj` come suo `prototype`. Ricorda che il `prototype` è come la "ricetta" per creare un oggetto. Impostando il `prototype` di `animal` al `prototype` di `Animal`, stai di fatto dando all'istanza `animal` la stessa "ricetta" di qualsiasi altra istanza di `Animal`.
 
 ```js
 animal.eat();

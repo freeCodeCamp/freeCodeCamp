@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aecf08806
-title: Use a CSS Class to Style an Element
+title: Usar uma classe para definir o estilo de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvDtV'
 forumTopicId: 18337
@@ -9,9 +9,9 @@ dashedName: use-a-css-class-to-style-an-element
 
 # --description--
 
-Classes are reusable styles that can be added to HTML elements.
+As classes são declarações de estilos que podem ser reutilizadas em elementos HTML.
 
-Here's an example CSS class declaration:
+Aqui está um exemplo de como criar uma classe CSS:
 
 ```html
 <style>
@@ -21,35 +21,35 @@ Here's an example CSS class declaration:
 </style>
 ```
 
-You can see that we've created a CSS class called `blue-text` within the `<style>` tag. You can apply a class to an HTML element like this: `<h2 class="blue-text">CatPhotoApp</h2>`. Note that in your CSS `style` element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
+Você pode ver que criamos uma classe CSS chamada `blue-text` dentro da tag `<style>`. Você pode aplicar uma classe a um elemento HTML da seguinte forma: `<h2 class="blue-text">CatPhotoApp</h2>`. Observe que no elemento `style` o nome da classe começa com um ponto. Já no atributo de classe do elemento HTML, o nome da classe não inclui o ponto.
 
 # --instructions--
 
-Inside your `style` element, change the `h2` selector to `.red-text` and update the color's value from `blue` to `red`.
+Dentro do elemento `style`, altere o seletor `h2` para `.red-text` e atualize o valor da cor de `blue` para `red`.
 
-Give your `h2` element the `class` attribute with a value of `red-text`.
+Dê ao elemento `h2` o atributo `class` com o valor de `red-text`.
 
 # --hints--
 
-Your `h2` element should be red.
+O elemento `h2` deve ser vermelho.
 
 ```js
 assert($('h2').css('color') === 'rgb(255, 0, 0)');
 ```
 
-Your `h2` element should have the class `red-text`.
+O elemento `h2` deve ter a classe `red-text`.
 
 ```js
 assert($('h2').hasClass('red-text'));
 ```
 
-Your stylesheet should declare a `red-text` class and have its color set to `red`.
+No código CSS, declare uma classe `red-text` e defina a cor como `red`.
 
 ```js
 assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;?\s*\}/g));
 ```
 
-You should not use inline style declarations like `style="color: red"` in your `h2` element.
+Você não deve usar declarações de estilo inline como, por exemplo, `style="color: red"` no elemento `h2`.
 
 ```js
 assert($('h2').attr('style') === undefined);
@@ -111,9 +111,9 @@ assert($('h2').attr('style') === undefined);
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -128,7 +128,7 @@ assert($('h2').attr('style') === undefined);
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

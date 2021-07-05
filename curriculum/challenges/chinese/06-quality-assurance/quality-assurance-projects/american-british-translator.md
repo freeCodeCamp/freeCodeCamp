@@ -130,7 +130,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/translate` 路由也应该处理美式英语和英式英语中头衔/尊称的缩写方式。 例如，Doctor Wright 在英式英语中缩写为 “Dr Wright”，在美式英语中缩写为 “Dr. Wright"”。 查看 `/public/american-to-british-titles.js` 了应用程序应该处理的不同的头衔。
+`/api/translate` 路由也应该处理美式英语和英式英语中头衔/尊称的缩写方式。 例如，Doctor Wright 在英式英语中缩写为 “Dr Wright”，在美式英语中缩写为 “Dr. Wright"”。 请参阅 `/components/american-to-british-titles.js`，了解程序应当处理的不同标题。
 
 ```js
 async (getUserInput) => {

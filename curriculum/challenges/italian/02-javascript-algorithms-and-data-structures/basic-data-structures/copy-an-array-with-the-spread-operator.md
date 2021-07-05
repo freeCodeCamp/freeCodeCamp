@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b13
-title: Copiare un array con l'operatore di espansione
+title: Copiare un array con l'operatore di propagazione
 challengeType: 1
 forumTopicId: 301157
 dashedName: copy-an-array-with-the-spread-operator
@@ -8,9 +8,9 @@ dashedName: copy-an-array-with-the-spread-operator
 
 # --description--
 
-Mentre `slice()` ci permette di essere selettivi su quali elementi di un array copiare, tra diverse altre attività utili, il nuovo <dfn>operatore di espansione</dfn> di ES6 ci permette di copiare facilmente *tutti* gli elementi di un array, in ordine, con una sintassi semplice e molto leggibile. La sintassi a espansione è semplicemente questa: `...`
+Mentre `slice()` ci permette di essere selettivi su quali elementi di un array copiare, tra diverse altre attività utili, il nuovo <dfn>operatore di propagazione</dfn> di ES6 ci permette di copiare facilmente *tutti* gli elementi di un array, in ordine, con una sintassi semplice e molto leggibile. La sintassi di propagazione è semplicemente questa: `...`
 
-In pratica, possiamo usare l'operatore di espansione per copiare un array in questo modo:
+In pratica, possiamo usare l'operatore di propagazione per copiare un array in questo modo:
 
 ```js
 let thisArray = [true, true, undefined, false, null];
@@ -21,7 +21,7 @@ let thatArray = [...thisArray];
 
 # --instructions--
 
-Abbiamo definito una funzione, `copyMachine` che prende `arr` (un array) e `num` (un numero) come argomenti. La funzione dovrebbe restituire un nuovo array composto da `num` copie di `arr`. Abbiamo fatto la maggior parte del lavoro per te, ma non funziona ancora abbastanza bene. Modifica la funzione utilizzando la sintassi di espansione in modo che funzioni correttamente (suggerimento: un altro metodo che abbiamo già trattato potrebbe essere utile qui!).
+Abbiamo definito una funzione, `copyMachine` che prende `arr` (un array) e `num` (un numero) come argomenti. La funzione dovrebbe restituire un nuovo array composto da `num` copie di `arr`. Abbiamo fatto la maggior parte del lavoro per te, ma non funziona ancora abbastanza bene. Modifica la funzione utilizzando la sintassi di propagazione in modo che funzioni correttamente (suggerimento: un altro metodo che abbiamo già trattato potrebbe essere utile qui!).
 
 # --hints--
 
@@ -62,7 +62,7 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 ]);
 ```
 
-La funzione `copyMachine` dovrebbe utilizzare lo `spread operator` (operatore di espansione) con l'array `arr`
+La funzione `copyMachine` dovrebbe utilizzare lo `spread operator` (operatore di propagazione) con l'array `arr`
 
 ```js
 assert(code.match(/\.\.\.arr/));

@@ -1,6 +1,6 @@
 ---
 id: 5a94fe1369fb03452672e45d
-title: Place Items in Grid Areas Using the grid-area Property
+title: Definir a posição dos itens usando a propriedade grid-area
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
 forumTopicId: 301132
@@ -9,7 +9,7 @@ dashedName: place-items-in-grid-areas-using-the-grid-area-property
 
 # --description--
 
-After creating an area template for your grid container, as shown in the previous challenge, you can place an item in your custom area by referencing the name you gave it. To do this, you use the `grid-area` property on an item like this:
+Depois de criar um modelo de área para o seu grid container, como mostrado no desafio anterior, você pode definir a posição de um item em uma área referenciando o nome que você deu a ele. Para fazer isso, você deve usar a propriedade `grid-area` em um item:
 
 ```css
 .item1 {
@@ -17,15 +17,15 @@ After creating an area template for your grid container, as shown in the previou
 }
 ```
 
-This lets the grid know that you want the `item1` class to go in the area named `header`. In this case, the item will use the entire top row because that whole row is named as the header area.
+Isso informa ao grid que você deseja que a classe `item1` vá para a área chamada `header`. Nesse caso, o item usará toda a linha superior porque essa linha inteira foi nomeada como a área do cabeçalho (header).
 
 # --instructions--
 
-Place an element with the `item5` class in the `footer` area using the `grid-area` property.
+Coloque o elemento com a classe `item5` na área `footer` usando a propriedade `grid-area`.
 
 # --hints--
 
-`item5` class should have a `grid-area` property that has the value of `footer`.
+O elemento de classe `item5` deve ter a propriedade `grid-area` com o valor de `footer`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
     background: PaleGreen;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 

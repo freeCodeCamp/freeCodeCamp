@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f061
-title: Intermediate Strings
+title: 中間字符串
 challengeType: 11
 videoId: KgT_fYLXnyk
 dashedName: intermediate-strings
@@ -8,15 +8,15 @@ dashedName: intermediate-strings
 
 # --description--
 
-More resources:
+更多資料：
 
-\- [Exercise](https://www.youtube.com/watch?v=1bSqHot-KwE)
+[練習](https://www.youtube.com/watch?v=1bSqHot-KwE)
 
 # --question--
 
 ## --text--
 
-What is the value of i in the following code?
+下面的代碼中 i 的值是什麼？
 
 ```python
 word = "bananana"
@@ -37,7 +37,7 @@ nanana
 
 ---
 
-True
+True（真）
 
 ---
 

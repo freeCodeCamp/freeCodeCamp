@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08814
-title: Add Rounded Corners with border-radius
+title: Criar cantos arredondados em um elemento com border-radius
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
@@ -9,23 +9,23 @@ dashedName: add-rounded-corners-with-border-radius
 
 # --description--
 
-Your cat photo currently has sharp corners. We can round out those corners with a CSS property called `border-radius`.
+Atualmente, a foto do gato possui bordas pontiagudas. Podemos arredondar essas bordas com uma propriedade do CSS chamada `border-radius`.
 
 # --instructions--
 
-You can specify a `border-radius` with pixels. Give your cat photo a `border-radius` of `10px`.
+Você pode definir o valor da propriedade `border-radius` em pixels. Faça com com que a foto do gato tenha uma borda. Defina a propriedade `border-radius` com o valor de `10px`.
 
-**Note:** This challenge allows for multiple possible solutions. For example, you may add `border-radius` to either the `.thick-green-border` class or the `.smaller-image` class.
+**Observação:** este desafio aceita mais de uma solução. Por exemplo, você pode adicionar `border-radius` tanto à classe `.thick-green-border` quanto à classe `.smaller-image`.
 
 # --hints--
 
-Your image element should have the class `thick-green-border`.
+A imagem deve ter a classe `thick-green-border`.
 
 ```js
 assert($('img').hasClass('thick-green-border'));
 ```
 
-Your image should have a border radius of `10px`.
+A imagem deve ter a propriedade border-radius com o valor de `10px`.
 
 ```js
 assert(

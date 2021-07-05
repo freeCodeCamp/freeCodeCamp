@@ -19,7 +19,7 @@ let duck = new Bird();
 duck.constructor
 ```
 
-Pero `duck` y todas las instancias de `Bird` deberían mostrar que fueron construidas por `Bird` y no `Animal`. Para hacer esto, puedes establecer de forma manual la propiedad constructor `Bird's` al objeto `Bird`:
+Pero `duck` y todas las instancias de `Bird` deberían mostrar que fueron construidas por `Bird` y no `Animal`. Para ello, puedes establecer manualmente la propiedad del constructor de `Bird` al objeto `Bird`:
 
 ```js
 Bird.prototype.constructor = Bird;

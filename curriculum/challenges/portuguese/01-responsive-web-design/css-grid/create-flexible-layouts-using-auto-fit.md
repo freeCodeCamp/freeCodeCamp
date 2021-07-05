@@ -1,6 +1,6 @@
 ---
 id: 5a94fe6269fb03452672e462
-title: Create Flexible Layouts Using auto-fit
+title: Criar layouts flexíveis usando auto-fit
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127
@@ -9,17 +9,17 @@ dashedName: create-flexible-layouts-using-auto-fit
 
 # --description--
 
-`auto-fit` works almost identically to `auto-fill`. The only difference is that when the container's size exceeds the size of all the items combined, `auto-fill` keeps inserting empty rows or columns and pushes your items to the side, while `auto-fit` collapses those empty rows or columns and stretches your items to fit the size of the container.
+`auto-fit` funciona quase de forma idêntica ao `auto-fill`. A única diferença é que, quando o tamanho do grid container for maior que a soma da largura de todos os grid items, o `auto-fill` continua inserindo linhas ou colunas vazias e empurra os grid items para o lado, enquanto o `auto-fit` estica os grid items para caber no tamanho do grid container.
 
-**Note:** If your container can't fit all your items on one row, it will move them down to a new one.
+**Observação:** se não for possível ajustar todos os itens em uma linha, eles serão movidos para uma nova linha.
 
 # --instructions--
 
-In the second grid, use `auto-fit` with `repeat` to fill the grid with columns that have a minimum width of `60px` and maximum of `1fr`. Then resize the preview to see the difference.
+No segundo grid, use `auto-fit` com `repeat` para preencher o grid com colunas que tenham uma largura mínima de `60px` e máxima de `1fr`. Em seguida, redimensione a janela do navegador para ver o auto-fit em ação.
 
 # --hints--
 
-`container2` class should have a `grid-template-columns` property with `repeat` and `auto-fit` that will fill the grid with columns that have a minimum width of `60px` and a maximum of `1fr`.
+A classe `container2` deve ter a propriedade `grid-template-columns` com os valores `repeat` e `auto-fit` que devem preencher o grid com colunas de largura mínima de `60px` e máxima de `1fr`.
 
 ```js
 assert(

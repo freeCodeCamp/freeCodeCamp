@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b00
-title: Use the align-self Property
+title: Usar a propriedade align-self
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvzfv'
 forumTopicId: 301107
@@ -9,23 +9,23 @@ dashedName: use-the-align-self-property
 
 # --description--
 
-The final property for flex items is `align-self`. This property allows you to adjust each item's alignment individually, instead of setting them all at once. This is useful since other common adjustment techniques using the CSS properties `float`, `clear`, and `vertical-align` do not work on flex items.
+A última propriedade relacionada aos flex items é `align-self`. Esta propriedade permite que você ajuste o alinhamento de cada item individualmente, ao invés de configurar todos de uma vez. Isso acaba sendo útil, uma vez que outras técnicas comuns de ajuste utilizando as propriedades CSS `float`, `clear` e `vertical-align` não funcionam em flex items.
 
-`align-self` accepts the same values as `align-items` and will override any value set by the `align-items` property.
+`align-self` aceita os mesmos valores que `align-items`, com a diferença que vai substituir qualquer valor anteriormente definido pela propriedade `align-items`.
 
 # --instructions--
 
-Add the CSS property `align-self` to both `#box-1` and `#box-2`. Give `#box-1` a value of `center` and give `#box-2` a value of `flex-end`.
+Adicione a propriedade CSS `align-self` aos elementos com id de `#box-1` e `#box-2`. Dê para `#box-1` o valor de `center` e para `#box-2` o valor de `flex-end`.
 
 # --hints--
 
-The `#box-1` element should have the `align-self` property set to a value of `center`.
+O elemento de id `#box-1` deve ter a propriedade `align-self` com o valor de `center`.
 
 ```js
 assert($('#box-1').css('align-self') == 'center');
 ```
 
-The `#box-2` element should have the `align-self` property set to a value of `flex-end`.
+O elemento de id `#box-2` deve ter a propriedade `align-self` com o valor de `flex-end`.
 
 ```js
 assert($('#box-2').css('align-self') == 'flex-end');

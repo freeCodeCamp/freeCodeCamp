@@ -1,6 +1,6 @@
 ---
 id: bad87fee1347bd9aedf08845
-title: Ditch Custom CSS for Bootstrap
+title: Sostituire il CSS personalizzato con quello di Bootstrap
 challengeType: 0
 forumTopicId: 17565
 dashedName: ditch-custom-css-for-bootstrap
@@ -8,31 +8,31 @@ dashedName: ditch-custom-css-for-bootstrap
 
 # --description--
 
-We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.
+Possiamo ripulire il nostro codice e rendere la nostra Cat Photo App guardare più convenzionale utilizzando gli stili incorporati di Bootstrap invece degli stili personalizzati che abbiamo creato in precedenza.
 
-Don't worry - there will be plenty of time to customize our CSS later.
+Non preoccuparti - ci sarà un sacco di tempo per personalizzare il nostro CSS successivamente.
 
-Delete the `.red-text`, `p`, and `.smaller-image` CSS declarations from your `style` element so that the only declarations left in your `style` element are `h2` and `thick-green-border`.
+Elimina le dichiarazioni CSS `.red-text`, `p`, e `.smaller-image` dal tuo elemento `style` in modo che le uniche dichiarazioni rimanenti in `style` siano `h2` e `thick-green-border`.
 
-Then delete the `p` element that contains a dead link. Then remove the `red-text` class from your `h2` element and replace it with the `text-primary` Bootstrap class.
+Quindi elimina l'elemento `p` che contiene un link a vuoto. Quindi rimuovi la classe `red-text` dal tuo elemento `h2` e sostituiscila con la classe `text-primary` di Bootstrap.
 
-Finally, remove the `smaller-image` class from your first `img` element and replace it with the `img-responsive` class.
+Infine, rimuovi la classe `smaller-image` dal tuo primo elemento `img` e sostituiscila con la classe `img-responsive`.
 
 # --hints--
 
-Your `h2` element should no longer have the class `red-text`.
+Il tuo elemento `h2` non dovrebbe più avere la classe `red-text`.
 
 ```js
 assert(!$('h2').hasClass('red-text'));
 ```
 
-Your `h2` element should now have the class `text-primary`.
+Il tuo elemento `h2` dovrebbe ora avere la classe `text-primary`.
 
 ```js
 assert($('h2').hasClass('text-primary'));
 ```
 
-Your paragraph elements should no longer use the font `Monospace`.
+I tuoi elementi di paragrafo non dovrebbero più usare il carattere `Monospace`.
 
 ```js
 assert(
@@ -42,13 +42,13 @@ assert(
 );
 ```
 
-The `smaller-image` class should be removed from your top image.
+La classe `smaller-image` dovrebbe essere rimossa dalla tua immagine in alto.
 
 ```js
 assert(!$('img').hasClass('smaller-image'));
 ```
 
-You should add the `img-responsive` class to your top image.
+Dovresti aggiungere la classe `img-responsive` alla tua immagine più in alto.
 
 ```js
 assert($('.img-responsive').length > 1);

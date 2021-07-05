@@ -7,10 +7,6 @@
   min-width: 150px;
 }
 
-.media {
-  word-break: break-all;
-}
-
 /* Timeline pagination */
 .timeline-pagination_list {
   list-style: none;

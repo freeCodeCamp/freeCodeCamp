@@ -1,4 +1,3 @@
-/* global describe it expect jest  */
 import moment from 'moment-timezone';
 
 import {

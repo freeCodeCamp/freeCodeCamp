@@ -5,7 +5,7 @@ import i18next from 'i18next';
 import { generateIconComponent } from '../../assets/icons';
 
 import { Link, Spacer } from '../helpers';
-import LinkButton from '../../assets/icons/LinkButton';
+import LinkButton from '../../assets/icons/link-button';
 import './map.css';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import envData from '../../../../config/env.json';

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08c
-title: Relational Database Design
+title: 關係數據庫設計
 challengeType: 11
 videoId: AqdfbrpkbHk
 dashedName: relational-database-design
@@ -10,7 +10,7 @@ dashedName: relational-database-design
 
 ## --text--
 
-What is the best practice for how many times a piece of string data should be stored in a database?
+對於一個字符串數據應該被保存在一個數據庫裏多少次，最佳實踐是什麼？
 
 ## --answers--
 

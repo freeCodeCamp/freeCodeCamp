@@ -1,5 +1,3 @@
-/* global describe it expect beforeEach */
-
 const { isObject } = require('lodash');
 
 const mockAST = require('../__fixtures__/ast-yaml-challenge.json');

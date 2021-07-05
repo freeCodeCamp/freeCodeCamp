@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08808
-title: Specify How Fonts Should Degrade
+title: O que fazer quando uma tipografia não estiver disponível
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
@@ -9,11 +9,11 @@ dashedName: specify-how-fonts-should-degrade
 
 # --description--
 
-There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`.
+Por padrão, existem várias tipografias disponíveis em todos os navegadores. As tipografias padrão são: `monospace`, `serif` e `sans-serif`.
 
-When one font isn't available, you can tell the browser to "degrade" to another font.
+Quando uma tipografia não estiver disponível, você pode dizer ao navegador para usar outra tipografia.
 
-For example, if you wanted an element to use the `Helvetica` font, but degrade to the `sans-serif` font when `Helvetica` isn't available, you will specify it as follows:
+Por exemplo, se um elemento usa a tipografia `Helvetica`, mas você quer que ele use `sans-serif` quando a `Helvetica` não estiver disponível, você pode fazer assim:
 
 ```css
 p {
@@ -21,19 +21,19 @@ p {
 }
 ```
 
-Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.
+O nome dessas tipografias não diferenciam maiúsculas de minúsculas. Além disso, eles não precisam de aspas porque são palavras-chave do CSS.
 
 # --instructions--
 
-To begin, apply the `monospace` font to the `h2` element, so that it now has two fonts - `Lobster` and `monospace`.
+Para começar, aplique a tipografia `monospace` ao elemento `h2`, fazendo com que o elemento tenha duas tipografias - `Lobster` e `monospace`.
 
-In the last challenge, you imported the `Lobster` font using the `link` tag. Now comment out that import of the `Lobster` font (using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your `h2` element degrades to the `monospace` font.
+No desafio anterior, você importou a tipografia `Lobster` usando a tag `link`. Comente a importação da tipografia `Lobster` (usando os comentários HTML que você aprendeu antes) do Google Fonts para que ela não esteja mais disponível. Note como o elemento `h2` muda para a tipografia `monospace`.
 
-**Note:** If you have the `Lobster` font installed on your computer, you won't see the degradation because your browser is able to find the font.
+**Observação:** se você tiver a tipografia `Lobster` instalada em seu computador, não verá a mudança porque seu navegador é capaz de encontrá-la.
 
 # --hints--
 
-Your h2 element should use the font `Lobster`.
+O elemento h2 deve usar a tipografia `Lobster`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Your h2 element should degrade to the font `monospace` when `Lobster` is not available.
+O elemento h2 deve mudar para a tipografia `monospace` quando `Lobster` não estiver disponível.
 
 ```js
 assert(
@@ -53,13 +53,13 @@ assert(
 );
 ```
 
-You should comment out your call to Google for the `Lobster` font by putting `<!--` in front of it.
+Você deve comentar a importação da tipografia `Lobster` usando `<!--`.
 
 ```js
 assert(new RegExp('<!--[^fc]', 'gi').test(code));
 ```
 
-You should close your comment by adding `-->`.
+Você deve fechar o comentário usando `-->`.
 
 ```js
 assert(new RegExp('[^fc]-->', 'gi').test(code));
@@ -141,9 +141,9 @@ assert(new RegExp('[^fc]-->', 'gi').test(code));
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -158,7 +158,7 @@ assert(new RegExp('[^fc]-->', 'gi').test(code));
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

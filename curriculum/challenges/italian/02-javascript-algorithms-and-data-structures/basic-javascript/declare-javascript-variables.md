@@ -11,7 +11,7 @@ dashedName: declare-javascript-variables
 
 In informatica, <dfn>i dati</dfn> sono tutto ciò che è significativo per il computer. JavaScript fornisce otto diversi <dfn>tipi di dati</dfn> che sono `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number` e `object`.
 
-Per esempio, i computer distinguono tra numeri, come il numero `12`e `strings`, come `"12"`, `"dog"`, o `"123 cats"`, che sono sequenze di caratteri. I computer possono eseguire operazioni matematiche su un numero, ma non su una stringa.
+Per esempio, i computer distinguono tra numeri (come il numero `12`) e `strings` (come `"12"`, `"dog"`, o `"123 cats"`), che sono sequenze di caratteri. I computer possono eseguire operazioni matematiche su un numero, ma non su una stringa.
 
 Le <dfn>variabili</dfn> consentono ai computer di archiviare e manipolare i dati in modo dinamico. Lo fanno utilizzando una "etichetta" per puntare ai dati piuttosto che usare i dati stessi. Ognuno degli otto tipi di dati può essere conservato in una variabile.
 

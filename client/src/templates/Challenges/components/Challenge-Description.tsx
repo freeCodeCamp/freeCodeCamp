@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-import PrismFormatted from './PrismFormatted';
+import PrismFormatted from './prism-formatted';
 import './challenge-description.css';
 
 type Challenge = {
-  block: string;
-  description: string;
-  instructions: string;
+  block?: string;
+  description?: string;
+  instructions?: string;
 };
 
 function ChallengeDescription(challenge: Challenge): JSX.Element {

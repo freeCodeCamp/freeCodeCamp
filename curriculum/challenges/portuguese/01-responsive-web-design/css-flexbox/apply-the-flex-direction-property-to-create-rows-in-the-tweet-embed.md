@@ -1,6 +1,6 @@
 ---
 id: 587d78ab367417b2b2512af3
-title: Apply the flex-direction Property to Create Rows in the Tweet Embed
+title: Usar a propriedade flex-direction para criar linhas no Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
 forumTopicId: 301104
@@ -9,27 +9,27 @@ dashedName: apply-the-flex-direction-property-to-create-rows-in-the-tweet-embed
 
 # --description--
 
-The `header` and `footer` in the tweet embed example have child items that could be arranged as rows using the `flex-direction` property. This tells CSS to align the children horizontally.
+Os elementos `header` e `footer` no exemplo do tweet possuem itens filhos que podem ser posicionados em linhas usando a propriedade `flex-direction`. Você vai usar essa propriedade para dizer ao CSS para alinhar os flex items horizontalmente.
 
 # --instructions--
 
-Add the CSS property `flex-direction` to both the `header` and `footer` and set the value to `row`.
+Adicione a propriedade `flex-direction` com o valor de `row` em ambos os elementos `header` e `footer`.
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+O elemento de classe `.follow-btn` deve ser renderizado na página. Lembre-se de desativar as extensões que bloqueiam anúncios.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `header` should have a `flex-direction` property set to `row`.
+O elemento `header` deve possuir a propriedade `flex-direction` com o valor de `row`.
 
 ```js
 assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
 ```
 
-The `footer` should have a `flex-direction` property set to `row`.
+O elemento `footer` deve possuir a propriedade `flex-direction` com o valor de `row`.
 
 ```js
 assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));

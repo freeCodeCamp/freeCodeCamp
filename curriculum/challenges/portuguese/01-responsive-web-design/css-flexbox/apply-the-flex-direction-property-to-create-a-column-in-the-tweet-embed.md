@@ -1,6 +1,6 @@
 ---
 id: 587d78ac367417b2b2512af5
-title: Apply the flex-direction Property to Create a Column in the Tweet Embed
+title: Usar a propriedade flex-direction para criar uma coluna no Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103
@@ -9,21 +9,21 @@ dashedName: apply-the-flex-direction-property-to-create-a-column-in-the-tweet-em
 
 # --description--
 
-The tweet embed `header` and `footer` used the `flex-direction` property earlier with a row value. Similarly, the items inside the `.profile-name` element would work well stacked as a column.
+Anteriormente, os elementos `header` e `footer` do tweet usaram a propriedade `flex-direction` para posicionar os flex items horizontalmente. Da mesma forma, os itens dentro do elemento de classe `.profile-name` funcionariam bem empilhados como uma coluna.
 
 # --instructions--
 
-Add the CSS property `flex-direction` to the header's `.profile-name` element and set the value to `column`.
+Adicione a propriedade `flex-direction` com o valor de `column` no elemento de classe `.profile-name`.
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+O elemento de classe `.follow-btn` deve ser renderizado na página. Lembre-se de desativar as extensões que bloqueiam anúncios.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `.profile-name` element should have a `flex-direction` property set to `column`.
+O elemento de classe `.profile-name` deve possuir a propriedade `flex-direction` com o valor de `column`.
 
 ```js
 assert($('.profile-name').css('flex-direction') == 'column');

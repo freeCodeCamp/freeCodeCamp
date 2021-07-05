@@ -1,6 +1,6 @@
 ---
 id: 5a9d725e424fe3d0e10cad10
-title: Use CSS Variables to change several elements at once
+title: Usar variáveis CSS para alterar vários elementos de uma só vez
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDECm'
 forumTopicId: 301093
@@ -9,17 +9,17 @@ dashedName: use-css-variables-to-change-several-elements-at-once
 
 # --description--
 
-<dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by changing only one value.
+As <dfn>variáveis CSS</dfn> são uma maneira poderosa de alterar várias propriedades no CSS ao mesmo tempo alterando apenas um valor.
 
-Follow the instructions below to see how changing just three values can change the styling of many elements.
+Siga as instruções abaixo para ver como a alteração de apenas três valores podem alterar o estilo de muitos elementos.
 
 # --instructions--
 
-In the `penguin` class, change the `black` value to `gray`, the `gray` value to `white`, and the `yellow` value to `orange`.
+Na classe `penguin`, altere o valor `black` para `gray`, o valor `gray` para `white` e o valor `yellow` para `orange`.
 
 # --hints--
 
-`penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
+A classe `penguin` deve declarar a variável `--penguin-skin` e atribuí-la ao valor `gray`.
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`penguin` class should declare the `--penguin-belly` variable and assign it to `white`.
+A classe `penguin` deve declarar a variável `--penguin-belly` e atribuí-la ao valor `white`.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-`penguin` class should declare the `--penguin-beak` variable and assign it to `orange`.
+A classe `penguin` deve declarar a variável `--penguin-beak` e atribuí-la ao valor `orange`.
 
 ```js
 assert(

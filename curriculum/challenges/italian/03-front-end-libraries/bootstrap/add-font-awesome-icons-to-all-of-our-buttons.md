@@ -1,27 +1,28 @@
 ---
 id: bad87fee1348bd9aedc08845
-title: Add Font Awesome Icons to all of our Buttons
+title: Aggiungere le icone di Font Awesome a tutti i bottoni
 challengeType: 0
 forumTopicId: 16637
 required:
-  - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
+  - 
+    link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 dashedName: add-font-awesome-icons-to-all-of-our-buttons
 ---
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome è una comoda libreria di icone. Queste icone possono essere font web o grafica vettoriale. Queste icone sono trattate proprio come i caratteri. Puoi specificare la loro dimensione usando i pixel, e assumeranno la dimensione del carattere degli elementi HTML genitori.
 
 # --instructions--
 
-Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
+Usa Font Awesome per aggiungere un'icona `info-circle` al tuo pulsante info e un'icona `trash` al tuo pulsante di eliminazione.
 
-**Note:** The `span` element is an acceptable alternative to the `i` element for the directions below.
+**Nota:** L'elemento `span` è un'alternativa accettabile all'elemento `i` per le istruzioni sottostanti.
 
 # --hints--
 
-You should add a `<i class="fas fa-info-circle"></i>` within your `info` button element.
+Dovresti aggiungere un pulsante `<i class="fas fa-info-circle"></i>` all'interno dell'elemento `info`.
 
 ```js
 assert(
@@ -30,7 +31,7 @@ assert(
 );
 ```
 
-You should add a `<i class="fas fa-trash"></i>` within your `delete` button element.
+Dovresti aggiungere un `<i class="fas fa-trash"></i>` all'interno del tuo bottone `delete`.
 
 ```js
 assert(
@@ -39,7 +40,7 @@ assert(
 );
 ```
 
-Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your `like` button element.
+Ognuno dei tuoi elementi `i` dovrebbe avere un tag di chiusura e `<i class="fas fa-thumbs-up"></i>` dovrebbe essere presente nel tuo bottone `like`.
 
 ```js
 assert(

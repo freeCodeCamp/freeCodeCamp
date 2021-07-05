@@ -16,7 +16,7 @@ dashedName: create-a-controlled-form
 
 我们增加了一个提交表单的按钮。 可以看到它的 `type` 被设置为 `submit`，表明它是控制表单提交的按钮。 在 `form` 中添加 `input` 元素，并像上个挑战一样设置其 `value` 和 `onChange()` 属性。 然后，应该完成 `handleSubmit` 方法，以便将组件 state 属性 `submit` 设置为本地 `state` 下的当前输入值。
 
-**注意：** 还必须在提交处理程序中调用 `event.preventDefault()`，以防止默认的表单提交行为刷新网页。
+**注意：** 还必须在提交处理程序中调用 `event.preventDefault()`，以防止将会刷新网页的默认的表单提交行为。 为了便于学员操作，默认行为在这里被禁用，以防止重置挑战的代码。
 
 最后，在 `form` 元素之后创建一个 `h1` 标签，该标签从组件的 `state` 渲染 `submit` 的值。 然后，可以在表单中键入任何内容，然后单击按钮（或按 enter 键），输入会渲染到页面上。
 
@@ -98,7 +98,26 @@ assert(
 })();
 ```
 
-`h1` 标题应该从组件的 state 渲染 `submit` 字段的值。
+`handleSubmit` 应该调用 `event.preventDefault`。
+
+```js
+const handleSubmit = MyForm.prototype.handleSubmit.toString();
+const allMatches = handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g) ?? [];
+const blockCommented = handleSubmit.match(
+  /\/\*.*?\bevent\.preventDefault\(\s*?\).*?\*\//gs
+);
+const lineCommented = handleSubmit.match(
+  /\/\/.*?\bevent\.preventDefault\(\s*?\)/g
+);
+const commentedMatches = [...(blockCommented ?? []), ...(lineCommented ?? [])];
+
+assert(
+  // At least one event.preventDefault() call exists and is not commented out
+  allMatches.length > commentedMatches.length
+);
+```
+
+`h1` 标头应该从组件的 state 渲染 `submit` 字段的值。
 
 ```js
 (() => {

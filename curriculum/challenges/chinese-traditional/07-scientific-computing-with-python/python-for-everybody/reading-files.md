@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f062
-title: Reading Files
+title: 閱讀文件中
 challengeType: 11
 videoId: Fo1tW09KIwo
 dashedName: reading-files
@@ -10,7 +10,7 @@ dashedName: reading-files
 
 ## --text--
 
-What is used to indicate a new line in a string?
+在字符串中，用什麼來代表新的一行？
 
 ## --answers--
 

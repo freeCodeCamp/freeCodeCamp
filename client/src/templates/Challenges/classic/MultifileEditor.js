@@ -17,7 +17,7 @@ import {
   updateFile
 } from '../redux';
 import './editor.css';
-import Editor from './Editor';
+import Editor from './editor';
 
 const propTypes = {
   canFocus: PropTypes.bool,

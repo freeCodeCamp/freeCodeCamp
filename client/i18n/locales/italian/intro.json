@@ -2,8 +2,8 @@
   "responsive-web-design": {
     "title": "Web Design Responsivo",
     "intro": [
-      "In questo corso di Web Design Responsivo imparerete i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
-      "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi, imparerai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
+      "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
+      "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
       "Infine imparerai a fare pagine web adattabili a diverse misure di schermo costruendo una card Twitter con Flexbox, e un complesso layout per blog in CSS Grid."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
@@ -107,7 +107,7 @@
         "title": "ES6",
         "intro": [
           "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
-          "La maggior parte del JavaScript che hai imparato finora era in ES5 (ECMAScript 5), che fu definitonel 2009. Mentre puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
+          "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
           "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi <code>let</code> e <code>const</code>, funzioni freccia, classi, promise e moduli."
         ]
       },
@@ -121,7 +121,7 @@
       "debugging": {
         "title": "Debugging",
         "intro": [
-          "Il debugging è il processo di rivedere il tuo codice, trovando i problemi e sistemandoli.",
+          "Il debugging è il processo di revisione del tuo codice, utile a trovare i problemi e a sistemarli.",
           "I problemi col codice in generale si manifestano in tre forme: errori di sintassi che impediscono al tuo programma di avviarsi, errori di runtime quando il tuo codice si comporta in modo inaspettato, o errori di logica quando il tuo codice non funziona come desideravi.",
           "In questo corso, imparerai ad usare la console di JavaScript per fare il debugging dei programmi e prevenire problemi comuni prima che avvengano."
         ]
@@ -194,7 +194,7 @@
   "front-end-libraries": {
     "title": "Librerie di sviluppo Front End",
     "intro": [
-      "Ora che hai familiarità con HTML, CSS, e JavaScript, aumenta le tue competenze imparando alcune delle più popolari librerie di front-end del settore.",
+      "Ora che hai familiarità con HTML, CSS, e JavaScript, aumenta le tue competenze conoscendo alcune delle più popolari librerie di front-end del settore.",
       "Nella Certificazione Librerie di Front End imparerai come stilizzare rapidamente il tuo sito con Bootstrap. Imparerai anche come aggiungere la logica ai tuoi stili CSS e ad estenderli con Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
@@ -296,6 +296,20 @@
       }
     }
   },
+  "relational-databases": {
+    "title": "Database relazionali",
+    "intro": [
+      "segnaposto"
+    ],
+    "blocks": {
+      "learn-relational-databases": {
+        "title": "Conosci i Database Relazionali",
+        "intro": [
+          "segnaposto"
+        ]
+      }
+    }
+  },
   "apis-and-microservices": {
     "title": "API e Microservizi",
     "intro": [
@@ -332,7 +346,7 @@
       "apis-and-microservices-projects": {
         "title": "Progetti di API e Microservizi",
         "intro": [
-          "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Disegna su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
+          "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
           "Dopo averli creati, avrai 5 belle API di microservizi che potrai mostrare a amici, familiari e potenziali datori di lavoro. Oh, e avrai anche una certificazione nuova di zecca su API e Microservizi."
         ]
       }
@@ -343,7 +357,7 @@
     "intro": [
       "Mano a mano che i tuoi programmi o applicazioni web diventeranno più complessi, vorrai testarli per assicurarti che le nuove modifiche non compromettano la loro funzionalità originaria.",
       "Nella Certificazione Garanzia di Qualità imparerai a scrivere i test con Chai per garantire che le tue applicazioni funzionino nel modo in cui ti aspetti.",
-      "Poi costruirai un'applicazione di chat per imparare concetti avanzati Node e Express. Utilizzerai anche Pug come motore di modelli, Passport per l'autenticazione e Socket.io per la comunicazione in tempo reale tra il server e i client connessi."
+      "Poi costruirai un'applicazione di chat per apprendere concetti avanzati Node e Express. Utilizzerai anche Pug come motore di modelli, Passport per l'autenticazione e Socket.io per la comunicazione in tempo reale tra il server e i client connessi."
     ],
     "note": "",
     "blocks": {
@@ -413,7 +427,7 @@
       "numpy": {
         "title": "Numpy",
         "intro": [
-          "Impara le basi della libreria NumPy nel seguente videocorso creato da Keith Galli.",
+          "Apprendi le basi della libreria NumPy nel seguente videocorso creato da Keith Galli.",
           "In questo corso, imparerai come funziona NumPy e come si confronta con le liste integrate di Python. Imparerai anche a scrivere codice con NumPy, indicizzazione, riformulazione, statistiche applicate, e molto altro."
         ]
       },
@@ -430,7 +444,7 @@
     "title": "Sicurezza dell'Informazione",
     "intro": [
       "Con tutto quello che facciamo online, c'è una grande quantità di informazioni sensibili a rischio: indirizzi e-mail, password, numeri di telefono e molto altro.",
-      "Con la Certificazione Sicurezza dell'Informazione, costruirai una web app sicura con HelmetJS per imparare i fondamenti della protezione delle informazioni delle persone online.",
+      "Con la Certificazione Sicurezza dell'Informazione, costruirai una web app sicura con HelmetJS per apprendere i fondamenti della protezione delle informazioni delle persone online.",
       "Costruirai anche un client TCP e uno scanner Nmap e un port scanner in Python. Questo ti aiuterà a imparare le basi del penetration testing — una componente importante di una buona sicurezza dell'informazione."
     ],
     "note": "",
@@ -459,7 +473,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "L'apprendimento automatico (Machine Learning), ha molte applicazioni pratiche che potrai utilizzare nei tuoi progetti o al lavoro.",
+    "title": "Machine Learning con Python",
     "intro": [
       "L'apprendimento automatico (Machine Learning), ha molte applicazioni pratiche che potrai utilizzare nei tuoi progetti o al lavoro.",
       "Nella Certificazione Machine Learning con Python, userai il framework TensorFlow per costruire diverse reti neurali ed esplorare tecniche più avanzate come l'elaborazione del linguaggio naturale e l'apprendimento rinforzato.",

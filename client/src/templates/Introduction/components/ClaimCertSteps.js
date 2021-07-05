@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { withTranslation, useTranslation } from 'react-i18next';
 
-import GreenPass from '../../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import { StepsType } from '../../../redux/prop-types';
+import GreenPass from '../../../assets/icons/green-pass';
+import GreenNotCompleted from '../../../assets/icons/green-not-completed';
+
+const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 const propTypes = {
   i18nCertText: PropTypes.string,
@@ -13,8 +15,6 @@ const propTypes = {
   steps: StepsType,
   superBlock: PropTypes.string
 };
-
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 const ClaimCertSteps = ({
   isProjectsCompleted,

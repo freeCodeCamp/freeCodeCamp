@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618b
-title: Give Sibling Elements a Unique Key Attribute
+title: Dare agli elementi fratelli un attributo chiave univoco
 challengeType: 6
 forumTopicId: 301394
 dashedName: give-sibling-elements-a-unique-key-attribute
@@ -8,19 +8,19 @@ dashedName: give-sibling-elements-a-unique-key-attribute
 
 # --description--
 
-The last challenge showed how the `map` method is used to dynamically render a number of elements based on user input. However, there was an important piece missing from that example. When you create an array of elements, each one needs a `key` attribute set to a unique value. React uses these keys to keep track of which items are added, changed, or removed. This helps make the re-rendering process more efficient when the list is modified in any way.  
+L'ultima sfida ha mostrato come viene utilizzato il metodo `map` per rendere dinamicamente un certo numero di elementi basati sull'input dell'utente. Tuttavia in quell'esempio mancava una parte importante. Quando crei un array di elementi, ognuno ha bisogno di un attributo `key` impostato su un valore univoco. React utilizza queste chiavi per tenere traccia degli elementi aggiunti, modificati o rimossi. Questo aiuta a rendere il processo di ri-rendering più efficiente quando l'elenco viene modificato in qualsiasi modo.
 
-**Note:** Keys only need to be unique between sibling elements, they don't need to be globally unique in your application.
+**Nota:** Le chiavi devono essere uniche solo tra gli elementi fratelli: non c'è bisogno che siano uniche a livello globale nella tua applicazione.
 
 # --instructions--
 
-The code editor has an array with some front end frameworks and a stateless functional component named `Frameworks()`. `Frameworks()` needs to map the array to an unordered list, much like in the last challenge. Finish writing the `map` callback to return an `li` element for each framework in the `frontEndFrameworks` array. This time, make sure to give each `li` a `key` attribute, set to a unique value. The `li` elements should also contain text from `frontEndFrameworks`.
+L'editor di codice ha un array con alcuni framework di front-end e un componente funzionale senza stato chiamato `Frameworks()`. `Frameworks()` ha bisogno di mappare l'array in una lista non ordinata, molto simile a quella dell'ultima sfida. Termina la scrittura della callback di `map` per restituire un elemento `li` per ogni framework nell'array `frontEndFrameworks`. Questa volta, assicurati di dare ad ogni attributo `li` un attributo `key` impostato su un valore univoco. Gli elementi `li` dovrebbero contenere anche del testo preso da `frontEndFrameworks`.
 
-Normally, you want to make the key something that uniquely identifies the element being rendered. As a last resort the array index may be used, but typically you should try to use a unique identification.
+Normalmente, si desidera costruire la chiave con qualcosa che identifica univocamente l'elemento che viene presentato. Come ultima risorsa può essere utilizzato l'indice dell'array, ma in generale dovresti provare a usare un'identificazione univoca.
 
 # --hints--
 
-The `Frameworks` component should exist and render to the page.
+Il componente `Frameworks` dovrebbe esistere ed essere presentato nella pagina.
 
 ```js
 assert(
@@ -28,19 +28,19 @@ assert(
 );
 ```
 
-`Frameworks` should render an `h1` element.
+`Frameworks` dovrebbe effetturare il rendering di un elemento `h1`.
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('h1').length === 1);
 ```
 
-`Frameworks` should render a `ul` element.
+`Frameworks` dovrebbe effetturare il rendering di un elemento `ul`.
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').length === 1);
 ```
 
-The `ul` tag should render 6 child `li` elements.
+Il tag `ul` dovrebbe fare il rendering di 6 elementi figli `li`.
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-Each list item element should have a unique `key` attribute.
+Ogni elemento della lista dovrebbe avere un attributo `key` univoco.
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-Each list item element should contain text from `frontEndFrameworks`.
+Ogni elemento della lista dovrebbe contenere del testo preso da `frontEndFrameworks`.
 
 ```js
 assert(

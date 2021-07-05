@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036153
-title: Register a Store Listener
+title: Registrare un listener dello store
 challengeType: 6
 forumTopicId: 301446
 dashedName: register-a-store-listener
@@ -8,15 +8,15 @@ dashedName: register-a-store-listener
 
 # --description--
 
-Another method you have access to on the Redux `store` object is `store.subscribe()`. This allows you to subscribe listener functions to the store, which are called whenever an action is dispatched against the store. One simple use for this method is to subscribe a function to your store that simply logs a message every time an action is received and the store is updated.
+Un altro metodo a cui hai accesso dall'oggetto `store` di Redux è `store.subscribe()`. Questo ti permette di iscrivere delle funzioni listener (di ascolto) nello store, che vengono chiamate ogni volta che un'azione viene spedita allo store. Un semplice utilizzo per questo metodo è quello di iscrivere una funzione al tuo store, in modo che registri semplicemente un messaggio ogni volta che un'azione viene ricevuta e lo store viene aggiornato.
 
 # --instructions--
 
-Write a callback function that increments the global variable `count` every time the store receives an action, and pass this function in to the `store.subscribe()` method. You'll see that `store.dispatch()` is called three times in a row, each time directly passing in an action object. Watch the console output between the action dispatches to see the updates take place.
+Scrivi una funzione di callback che incrementa la variabile globale `count` ogni volta che lo store riceve un'azione, e passa questa funzione al metodo `store.subscribe()`. Vedrai che `store.dispatch()` è chiamato tre volte di fila, ogni volta che passa direttamente in un oggetto azione. Guarda l'output della console tra le azioni inviate per vedere gli aggiornamenti effettuati.
 
 # --hints--
 
-Dispatching the `ADD` action on the store should increment the state by `1`.
+La spedizione dell'azione `ADD` allo store dovrebbe aumentare lo stato di `1`.
 
 ```js
 assert(
@@ -29,19 +29,19 @@ assert(
 );
 ```
 
-There should be a listener function subscribed to the store using `store.subscribe`.
+Dovrebbe esserci una funzione listener iscritta allo store usando `store.subscribe`.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/store\s*\.\s*subscribe\(/gm));
 ```
 
-The `store.subscribe` should receive a function.
+`store.subscribe` dovrebbe ricevere una funzione.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm)) 
 ```
 
-The callback to `store.subscribe` should also increment the global `count` variable as the store is updated.
+La callback `store.subscribe` dovrebbe anche aumentare la variabile globale `count` quando lo store viene aggiornato.
 
 ```js
 assert(store.getState() === count);

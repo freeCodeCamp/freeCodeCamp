@@ -9,7 +9,7 @@ dashedName: uncomment-html
 
 # --description--
 
-I commenti sono un modo per lasciare nel tuo codice commenti per altri sviluppatori senza modificare l'output mostrato all'utente finale.
+I commenti sono un modo per lasciare nel tuo codice informazioni per altri sviluppatori senza modificare l'output mostrato all'utente finale.
 
 Commentare è anche un modo conveniente per rendere inattivo il codice senza doverlo eliminare completamente.
 
