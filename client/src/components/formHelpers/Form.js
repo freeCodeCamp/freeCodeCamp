@@ -25,7 +25,7 @@ const propTypes = {
     required: PropTypes.arrayOf(PropTypes.string),
     types: PropTypes.objectOf(PropTypes.string),
     placeholders: PropTypes.shape({
-      solution: propTypes.string,
+      solution: PropTypes.string,
       githubLink: PropTypes.string
     })
   }),
