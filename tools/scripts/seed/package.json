@@ -19,7 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
-    "debug": "4.3.1",
+    "debug": "4.3.2",
     "dotenv": "10.0.0",
     "lodash": "4.17.21",
     "mongodb": "3.6.9"

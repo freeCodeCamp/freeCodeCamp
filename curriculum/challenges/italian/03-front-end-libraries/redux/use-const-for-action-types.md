@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036152
-title: Use const for Action Types
+title: Usare const per i tipi di azione
 challengeType: 6
 forumTopicId: 301450
 dashedName: use-const-for-action-types
@@ -8,35 +8,35 @@ dashedName: use-const-for-action-types
 
 # --description--
 
-A common practice when working with Redux is to assign action types as read-only constants, then reference these constants wherever they are used. You can refactor the code you're working with to write the action types as `const` declarations.
+Una pratica comune quando si lavora con Redux è quella di assegnare i tipi di azione come costanti di sola lettura, quindi fare riferimento a queste costanti ovunque siano usate. Puoi rivedere il codice con cui stai lavorando per scrivere i tipi di azione come dichiarazioni `const`.
 
 # --instructions--
 
-Declare `LOGIN` and `LOGOUT` as `const` values and assign them to the strings `'LOGIN'` and `'LOGOUT'`, respectively. Then, edit the `authReducer()` and the action creators to reference these constants instead of string values.
+Dichiara `LOGIN` e `LOGOUT` come valori `const` e assegnali rispettivamente alle stringhe `'LOGIN'` e `'LOGOUT'`. Quindi, modifica `authReducer()` e i creatori di azione in modo che facciano riferimento a queste costanti invece che ai valori stringa.
 
-**Note:** It's generally a convention to write constants in all uppercase, and this is standard practice in Redux as well.
+**Nota:** È una convenzione generale scrivere le costanti tutte in maiuscolo e questa è la pratica standard anche in Redux.
 
 # --hints--
 
-Calling the function `loginUser` should return an object with `type` property set to the string `LOGIN`.
+Chiamando la funzione `loginUser` dovrebbe essere restituito un oggetto con la proprietà `type` impostata alla stringa `LOGIN`.
 
 ```js
 assert(loginUser().type === 'LOGIN');
 ```
 
-Calling the function `logoutUser` should return an object with `type` property set to the string `LOGOUT`.
+Chiamando la funzione `logoutUser` dovrebbe essere restituito un oggetto con la proprietà `type` impostata alla stringa `LOGOUT`.
 
 ```js
 assert(logoutUser().type === 'LOGOUT');
 ```
 
-The store should be initialized with an object with property `login` set to `false`.
+Lo store dovrebbe essere inizializzato con un oggetto con proprietà `login` impostata su `false`.
 
 ```js
 assert(store.getState().authenticated === false);
 ```
 
-Dispatching `loginUser` should update the `login` property in the store state to `true`.
+Il dispatch di `loginUser` dovrebbe impostare a `true` la proprietà `login` nello stato dello store.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Dispatching `logoutUser` should update the `login` property in the store state to `false`.
+Il dispatch di `logoutUser` dovrebbe impostare a `false` la proprietà `login` nello stato dello store.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The `authReducer` function should handle multiple action types with a switch statement.
+La funzione `authReducer` dovrebbe gestire più tipi di azione con un'istruzione switch.
 
 ```js
 (getUserInput) =>
@@ -83,17 +83,18 @@ The `authReducer` function should handle multiple action types with a switch sta
   );
 ```
 
-`LOGIN` and `LOGOUT` should be declared as `const` values and should be assigned strings of `LOGIN`and `LOGOUT`.
+`LOGIN` e `LOGOUT` dovrebbero essere dichiarati come valori `const` e dovrebbero essere assegnate loro le stringhe `LOGIN` e `LOGOUT`.
 
 ```js
 const noWhiteSpace = __helpers.removeWhiteSpace(code);
 assert(
-  /constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) &&
-    /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace)
+  (/constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) &&
+    /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace)) ||
+      /const(LOGIN|LOGOUT)=(['"`])\1\2,(?!\1)(LOGIN|LOGOUT)=(['"`])\3\4/.test(noWhiteSpace)
 );
 ```
 
-The action creators and the reducer should reference the `LOGIN` and `LOGOUT` constants.
+I creatori di azioni e il reducer dovrebbero fare riferimento alle costanti `LOGIN` e `LOGOUT`.
 
 ```js
 (getUserInput) =>

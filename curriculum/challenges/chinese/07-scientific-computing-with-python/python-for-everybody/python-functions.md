@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05a
-title: Python Functions
+title: Python 函数
 challengeType: 11
 videoId: 3JGF-n3tDPU
 dashedName: python-functions
@@ -10,27 +10,27 @@ dashedName: python-functions
 
 ## --text--
 
-What is the purpose of the "def" keyword in Python?
+在 Python 中，关键词 “def” 有什么作用？
 
 ## --answers--
 
-It is slang that means "The following code is really cool."
+这是一个俚语，代表“这些代码真的酷毙了”。
 
 ---
 
-It indicates the start of a function.
+它表示一个函数的开始。
 
 ---
 
-It indicates that the following indented section of code is to be stored for later.
+它表示以下的缩进代码段将被储存起来以后再用。
 
 ---
 
-It indicates the start of a function, and the following indented section of code is to be stored for later.
+它代表一个函数的开始，然后接下来的代码会被储存到以后使用。
 
 ---
 
-None of the above.
+以上全都不对。
 
 ## --video-solution--
 

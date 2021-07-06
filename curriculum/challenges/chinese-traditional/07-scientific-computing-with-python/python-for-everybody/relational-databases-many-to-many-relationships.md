@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f190b6c005b0e76f090
-title: 'Relational Databases: Many-to-many Relationships'
+title: '關係型數據庫：多對多關係'
 challengeType: 11
 videoId: z-SBYcvEQOc
 dashedName: relational-databases-many-to-many-relationships
@@ -8,39 +8,39 @@ dashedName: relational-databases-many-to-many-relationships
 
 # --description--
 
-More resources:
+更多資料：
 
-\- [Exercise: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+\- [練習：電子郵件](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
 
-\- [Exercise: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+\- [練習：名冊](https://www.youtube.com/watch?v=qEkUEAz8j3o)
 
-\- [Exercise: Tracks](https://www.youtube.com/watch?v=I-E7avcPeSE)
+\- [練習：曲目](https://www.youtube.com/watch?v=I-E7avcPeSE)
 
-\- [Exercise: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+\- [練習：推特好友](https://www.youtube.com/watch?v=RZRAoBFIH6A)
 
-\- [Exercise: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+\- [練習：推特爬蟲](https://www.youtube.com/watch?v=xBaJddvJL4A)
 
 # --question--
 
 ## --text--
 
-Which is an example of a many-to-many relationship?
+哪個是多對多關係的示例？
 
 ## --answers--
 
-teacher to student
+老師與學生
 
 ---
 
-customer to order
+客戶與訂單
 
 ---
 
-book to pages
+書與內頁
 
 ---
 
-city to country
+城市與國家
 
 ## --video-solution--
 

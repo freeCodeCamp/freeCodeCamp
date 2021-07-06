@@ -5,19 +5,19 @@ const { viewTypes } = require('../challengeTypes');
 
 const backend = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/projects/backend/Show.js'
+  '../../src/templates/Challenges/projects/backend/Show.tsx'
 );
 const classic = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/classic/Show.js'
+  '../../src/templates/Challenges/classic/Show.tsx'
 );
 const frontend = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/projects/frontend/Show.js'
+  '../../src/templates/Challenges/projects/frontend/Show.tsx'
 );
 const codeally = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/codeally/show.js'
+  '../../src/templates/Challenges/codeally/show.tsx'
 );
 const intro = path.resolve(
   __dirname,
@@ -29,7 +29,7 @@ const superBlockIntro = path.resolve(
 );
 const video = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/video/Show.js'
+  '../../src/templates/Challenges/video/Show.tsx'
 );
 
 const views = {

@@ -1,9 +1,9 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import { UniversalNav } from './components/UniversalNav';
-import { NavLinks } from './components/NavLinks';
-import AuthOrProfile from './components/AuthOrProfile';
+import { UniversalNav } from './components/universal-nav';
+import { NavLinks } from './components/nav-links';
+import AuthOrProfile from './components/auth-or-profile';
 
 import envData from '../../../../config/env.json';
 

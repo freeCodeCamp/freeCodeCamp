@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc5
-title: Work with Dynamic Data in D3
+title: Lavorare con i dati dinamici in D3
 challengeType: 6
 forumTopicId: 301498
 dashedName: work-with-dynamic-data-in-d3
@@ -8,75 +8,75 @@ dashedName: work-with-dynamic-data-in-d3
 
 # --description--
 
-The last two challenges cover the basics of displaying data dynamically with D3 using the `data()` and `enter()` methods. These methods take a data set and, together with the `append()` method, create a new DOM element for each entry in the data set.
+Le ultime due sfide riguardano le basi della visualizzazione dinamica dei dati con D3 tramite l'utilizzo dei metodi `data()` e `enter()`. Questi metodi prendono un set di dati e, insieme al metodo `append()`, creano un nuovo elemento DOM per ogni voce nel set di dati.
 
-In the previous challenge, you created a new `h2` element for each item in the `dataset` array, but they all contained the same text, `New Title`. This is because you have not made use of the data that is bound to each of the `h2` elements.
+Nella sfida precedente, hai creato un nuovo elemento `h2` per ogni elemento nell'array `dataset`, ma tutti contenevano lo stesso testo, `New Title`. Questo perché non hai fatto uso dei dati che sono legati a ciascuno degli elementi `h2`.
 
-The D3 `text()` method can take a string or a callback function as an argument:
+Il metodo D3 `text()` può prendere una stringa o una funzione di callback come argomento:
 
 ```js
 selection.text((d) => d)
 ```
 
-In the example above, the parameter `d` refers to a single entry in the dataset that a selection is bound to.
+Nell'esempio precedente, il parametro `d` si riferisce a una singola voce nel set di dati a cui è associata una selezione.
 
-Using the current example as context, the first `h2` element is bound to 12, the second `h2` element is bound to 31, the third `h2` element is bound to 22, and so on.
+Utilizzando l'esempio attuale come contesto, il primo elemento `h2` è legato a 12, il secondo elemento `h2` è legato a 31, il terzo elemento `h2` è legato a 22, e così via.
 
 # --instructions--
 
-Change the `text()` method so that each `h2` element displays the corresponding value from the `dataset` array with a single space and the string `USD`. For example, the first heading should be `12 USD`.
+Modifica il metodo `text()` in modo che ogni elemento `h2` mostri il valore corrispondente dall'array `dataset` con uno spazio e la stringa `USD`. Ad esempio, la prima intestazione dovrebbe essere `12 USD`.
 
 # --hints--
 
-The first `h2` should have the text `12 USD`.
+Il primo `h2` dovrebbe avere il testo `12 USD`.
 
 ```js
 assert($('h2').eq(0).text() == '12 USD');
 ```
 
-The second `h2` should have the text `31 USD`.
+Il secondo `h2` dovrebbe avere il testo `31 USD`.
 
 ```js
 assert($('h2').eq(1).text() == '31 USD');
 ```
 
-The third `h2` should have the text `22 USD`.
+Il terzo `h2` dovrebbe avere il testo `22 USD`.
 
 ```js
 assert($('h2').eq(2).text() == '22 USD');
 ```
 
-The fourth `h2` should have the text `17 USD`.
+Il quarto `h2` dovrebbe avere il testo `17 USD`.
 
 ```js
 assert($('h2').eq(3).text() == '17 USD');
 ```
 
-The fifth `h2` should have the text `25 USD`.
+Il quinto `h2` dovrebbe avere il testo `25 USD`.
 
 ```js
 assert($('h2').eq(4).text() == '25 USD');
 ```
 
-The sixth `h2` should have the text `18 USD`.
+Il sesto `h2` dovrebbe avere il testo `18 USD`.
 
 ```js
 assert($('h2').eq(5).text() == '18 USD');
 ```
 
-The seventh `h2` should have the text `29 USD`.
+Il settimo `h2` dovrebbe avere il testo `29 USD`.
 
 ```js
 assert($('h2').eq(6).text() == '29 USD');
 ```
 
-The eighth `h2` should have the text `14 USD`.
+L'ottavo `h2` dovrebbe avere il testo `14 USD`.
 
 ```js
 assert($('h2').eq(7).text() == '14 USD');
 ```
 
-The ninth `h2` should have the text `9 USD`.
+Il nono `h2` dovrebbe avere il testo `9 USD`.
 
 ```js
 assert($('h2').eq(8).text() == '9 USD');

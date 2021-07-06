@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036151
-title: Use a Switch Statement to Handle Multiple Actions
+title: Usare un'istruzione switch per gestire più azioni
 challengeType: 6
 forumTopicId: 301449
 dashedName: use-a-switch-statement-to-handle-multiple-actions
@@ -8,35 +8,35 @@ dashedName: use-a-switch-statement-to-handle-multiple-actions
 
 # --description--
 
-You can tell the Redux store how to handle multiple action types. Say you are managing user authentication in your Redux store. You want to have a state representation for when users are logged in and when they are logged out. You represent this with a single state object with the property `authenticated`. You also need action creators that create actions corresponding to user login and user logout, along with the action objects themselves.
+È possibile dire allo store di Redux come gestire diversi tipi di azione. Diciamo che tu debba gestire l'autenticazione dell'utente nel tuo store di Redux. Vuoi avere una rappresentazione dello stato per quando gli utenti sono connessi e per quando sono disconnessi. Lo rappresenti con un singolo oggetto di stato con la proprietà `authenticated`. Hai anche bisogno di creatori di azione che creino azioni corrispondenti al login e al logout dell'utente, insieme agli oggetti azione stessi.
 
 # --instructions--
 
-The code editor has a store, actions, and action creators set up for you. Fill in the `reducer` function to handle multiple authentication actions. Use a JavaScript `switch` statement in the `reducer` to respond to different action events. This is a standard pattern in writing Redux reducers. The switch statement should switch over `action.type` and return the appropriate authentication state.
+L'editor di codice ha già uno store, delle azioni e dei creatori di azioni configurati per te. Completa la funzione `reducer` perché gestisca più azioni di autenticazione. Usa un'istruzione JavaScript `switch` nel `reducer` per rispondere a diversi eventi di azione. Questo è un modello standard nella scrittura di reducer Redux. L'istruzione switch dovrebbe smistare in base a `action.type` e restituire lo stato di autenticazione appropriato.
 
-**Note:** At this point, don't worry about state immutability, since it is small and simple in this example. For each action, you can return a new object — for example, `{authenticated: true}`. Also, don't forget to write a `default` case in your switch statement that returns the current `state`. This is important because once your app has multiple reducers, they are all run any time an action dispatch is made, even when the action isn't related to that reducer. In such a case, you want to make sure that you return the current `state`.
+**Nota:** Non preoccuparti per l'immutabilità dello stato, dato che è piccolo e semplice in questo esempio. Per ogni azione, puoi restituire un nuovo oggetto — per esempio, `{authenticated: true}`. Inoltre, non dimenticare di scrivere un caso di `default` nella tua istruzione switch che restituisca lo `state` corrente. Questo è importante perché una volta che l'app ha più reducer, essi vengono eseguiti tutti ogni volta che viene spedita un'azione, anche quando l'azione non è correlata a quel reducer. In questo caso, vuoi assicurarti di restituire lo `state` corrente.
 
 # --hints--
 
-Calling the function `loginUser` should return an object with type property set to the string `LOGIN`.
+Chiamando la funzione `loginUser` dovrebbe essere restituito un oggetto con proprietà type impostata alla stringa `LOGIN`.
 
 ```js
 assert(loginUser().type === 'LOGIN');
 ```
 
-Calling the function `logoutUser` should return an object with type property set to the string `LOGOUT`.
+Chiamando la funzione `logoutUser` dovrebbe essere restituito un oggetto con proprietà type impostata alla stringa `LOGOUT`.
 
 ```js
 assert(logoutUser().type === 'LOGOUT');
 ```
 
-The store should be initialized with an object with an `authenticated` property set to `false`.
+Lo store dovrebbe essere inizializzato con un oggetto con una proprietà `authenticated` impostata a `false`.
 
 ```js
 assert(store.getState().authenticated === false);
 ```
 
-Dispatching `loginUser` should update the `authenticated` property in the store state to `true`.
+L'invio di `loginUser` dovrebbe impostare a `true` la proprietà `authenticated` nello stato dello store.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Dispatching `logoutUser` should update the `authenticated` property in the store state to `false`.
+La spedizione di `logoutUser` dovrebbe impostare a `false` la proprietà `authenticated` nello stato dello store.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The `authReducer` function should handle multiple action types with a `switch` statement.
+La funzione `authReducer` dovrebbe gestire più tipi di azione con un'istruzione `switch`.
 
 ```js
 (getUserInput) =>

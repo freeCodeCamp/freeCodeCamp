@@ -20,11 +20,11 @@ Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente 
 
 **Requisitos previos:**
 
-| Prerrequisito                                                                                         | Versión | Notas                                                                 |
-| ----------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                          | `14.x`  | [Calendario LTS](https://github.com/nodejs/Release#release-schedule)  |
-| npm (viene empaquetado con Node)                                                                      | `6.x`   | No tiene lanzamientos LTS, usamos la versión empaquetada con Node LTS |
-| [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | [Release Notes](https://docs.mongodb.com/v4.0/release-notes/)         |
+| Prerrequisito                                                                                         | Versión | Notas                                                                                       |
+| ----------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                          | `14.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| npm (viene empaquetado con Node)                                                                      | `6.x`   | `npm` does not have LTS releases, we use the version bundled with Node.js Active LTS.       |
+| [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                           |
 
 > [!ATTENTION] If you have a different version, please install the recommended version. Sólo podemos soportar problemas de instalación para las versiones recomendadas. Ver [resolución de problemas](#troubleshooting) para más detalles.
 

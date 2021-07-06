@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f085
-title: Python Objects
+title: Python 對象
 challengeType: 11
 videoId: uJxGeTYy0us
 dashedName: python-objects
@@ -10,23 +10,23 @@ dashedName: python-objects
 
 ## --text--
 
-Which is NOT true about objects in Python?
+關於 Python 對象的說法，哪一個是不正確的？
 
 ## --answers--
 
-Objects get created and used.
+對象被創建和使用
 
 ---
 
-Objects are bits of code and data.
+對象是代碼和數據的一部分
 
 ---
 
-Objects hide detail.
+對象隱藏細節
 
 ---
 
-Objects are one of the five standard data types.
+對象是五個標準數據類型之一
 
 ## --video-solution--
 

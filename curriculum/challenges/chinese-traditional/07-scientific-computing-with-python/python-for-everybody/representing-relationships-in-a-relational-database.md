@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08d
-title: Representing Relationships in a Relational Database
+title: 在關係型數據庫中表示關係
 challengeType: 11
 videoId: '-orenCNdC2Q'
 dashedName: representing-relationships-in-a-relational-database
@@ -10,23 +10,23 @@ dashedName: representing-relationships-in-a-relational-database
 
 ## --text--
 
-What is a foreign key?
+什麼是外鍵？
 
 ## --answers--
 
-A key that is not supposed to be there.
+一個不應存在於這裏的鍵
 
 ---
 
-A key that uses non-latin characters.
+一個使用非拉丁字符的鍵
 
 ---
 
-A number that points to the primary key of an associated row in a different table.
+一個指向不同表中關聯行的主鍵的數字
 
 ---
 
-A key that the "real world" might use to look up a row.
+一個在“現實世界”中可能用於查找行的鍵
 
 ## --video-solution--
 

@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
-  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "homepage": "https://tools.freecodecamp.org",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {

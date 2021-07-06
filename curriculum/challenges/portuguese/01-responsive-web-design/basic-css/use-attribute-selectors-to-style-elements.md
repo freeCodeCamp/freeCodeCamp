@@ -1,6 +1,6 @@
 ---
 id: 58c383d33e2e3259241f3076
-title: Use Attribute Selectors to Style Elements
+title: Usar seletores de atributo para estilizar elementos
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092
@@ -9,11 +9,11 @@ dashedName: use-attribute-selectors-to-style-elements
 
 # --description--
 
-You have been adding `id` or `class` attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.
+Você tem adicionado atributos de `id` ou `class` aos elementos que você deseja especificamente estilizar. Eles são conhecidos como ID e seletores de classe. Existem outros seletores CSS que você pode usar para selecionar grupos de elementos para estilizar.
 
-Let's bring out CatPhotoApp again to practice using CSS Selectors.
+Vamos usar o CatPhotoApp novamente para praticar o uso de seletores CSS.
 
-For this challenge, you will use the `[attr=value]` attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute `type` and a corresponding value of `radio`:
+Para este desafio, você usará o seletor de atributo `[attr=value]` para estilizar as caixas de seleção (checkboxes) no CatPhotoApp. Este seletor busca e estiliza elementos que possuam um atributo e valor específico. Por exemplo, o código abaixo altera as margens de todos os elementos com o atributo `type` que possua o valor `radio`:
 
 ```css
 [type='radio'] {
@@ -23,11 +23,11 @@ For this challenge, you will use the `[attr=value]` attribute selector to style 
 
 # --instructions--
 
-Using the `type` attribute selector, try to give the checkboxes in CatPhotoApp a top margin of 10px and a bottom margin of 15px.
+Selecione todo elemento que possua o atributo `type` e tente dar às caixas de seleção no CatPhotoApp uma margem superior de 10px e uma margem inferior de 15px.
 
 # --hints--
 
-The `type` attribute selector should be used to select the checkboxes.
+Você deve selecionar as caixas de seleção (checkboxes) usando o seletor de atributo do tipo `type`.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-The top margins of the checkboxes should be 10px.
+As margens superiores das caixas de seleção devem ter 10px.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The bottom margins of the checkboxes should be 15px.
+As margens inferiores das caixas de seleção devem ter 15px.
 
 ```js
 assert(
@@ -179,9 +179,9 @@ assert(
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -196,7 +196,7 @@ assert(
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

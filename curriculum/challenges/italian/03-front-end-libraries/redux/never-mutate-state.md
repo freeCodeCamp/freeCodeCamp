@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036158
-title: Never Mutate State
+title: Mai mutare lo stato
 challengeType: 6
 forumTopicId: 301445
 dashedName: never-mutate-state
@@ -8,19 +8,19 @@ dashedName: never-mutate-state
 
 # --description--
 
-These final challenges describe several methods of enforcing the key principle of state immutability in Redux. Immutable state means that you never modify state directly, instead, you return a new copy of state.
+Queste ultime sfide descrivono diversi metodi per far rispettare il principio fondamentale dell'immutabilità dello stato in Redux. Immutabilità dello stato significa che non si modifica mai direttamente lo stato, ma si restituisce una nuova copia di esso.
 
-If you took a snapshot of the state of a Redux app over time, you would see something like `state 1`, `state 2`, `state 3`,`state 4`, `...` and so on where each state may be similar to the last, but each is a distinct piece of data. This immutability, in fact, is what provides such features as time-travel debugging that you may have heard about.
+Se scattassi un'istantanea dello stato di un'applicazione Redux nel tempo, vedresti qualcosa come `state 1`, `state 2`, `state 3`,`state 4`, `...` e così via dove ogni stato può essere simile al precedente, ma ognuno è un dato distinto. Questa immutabilità, infatti, è ciò che fornisce caratteristiche come il debugging time-travel (viaggio nel tempo) di cui potresti aver sentito parlare.
 
-Redux does not actively enforce state immutability in its store or reducers, that responsibility falls on the programmer. Fortunately, JavaScript (especially ES6) provides several useful tools you can use to enforce the immutability of your state, whether it is a `string`, `number`, `array`, or `object`. Note that strings and numbers are primitive values and are immutable by nature. In other words, 3 is always 3. You cannot change the value of the number 3. An `array` or `object`, however, is mutable. In practice, your state will probably consist of an `array` or `object`, as these are useful data structures for representing many types of information.
+Redux non applica attivamente l'immutabilità dello stato nel suo store o nei reducer: questa responsabilità ricade sul programmatore. Fortunatamente, JavaScript (specialmente ES6) fornisce diversi strumenti utili che puoi usare per far rispettare l'immutabilità del tuo stato, che si tratti di una `string`, `number`, `array` o `object`. Nota che le stringhe e i numeri sono valori primitivi e sono immutabili per natura. In altre parole, 3 è sempre 3. Non è possibile modificare il valore del numero 3. Un `array` o `object`, invece, è mutabile. In pratica, il tuo stato sarà probabilmente costituito da un `array` o da un `object`, trattandosi di strutture di dati utili per rappresentare molti tipi di informazioni.
 
 # --instructions--
 
-There is a `store` and `reducer` in the code editor for managing to-do items. Finish writing the `ADD_TO_DO` case in the reducer to append a new to-do to the state. There are a few ways to accomplish this with standard JavaScript or ES6. See if you can find a way to return a new array with the item from `action.todo` appended to the end.
+Nell'editor di codice ci sono uno `store` e un `reducer` per gestire gli elementi della lista to-do. Termina la scrittura del caso `ADD_TO_DO` nel reducer per aggiungere una nuova cosa da fare allo stato. Ci sono alcuni modi per realizzarlo con standard JavaScript o ES6. Vedi se puoi trovare un modo per restituire un nuovo array con l'elemento preso da `action.todo` aggiunto alla fine.
 
 # --hints--
 
-The Redux store should exist and initialize with a state equal to the `todos` array in the code editor.
+Lo store Redux dovrebbe esistere ed essere inizializzato con uno stato uguale all'array `todos` nell'editor di codice.
 
 ```js
 assert(
@@ -39,13 +39,13 @@ assert(
 );
 ```
 
-`addToDo` and `immutableReducer` both should be functions.
+`addToDo` e `immutableReducer` dovrebbero essere entrambe funzioni.
 
 ```js
 assert(typeof addToDo === 'function' && typeof immutableReducer === 'function');
 ```
 
-Dispatching an action of type `ADD_TO_DO` on the Redux store should add a `todo` item and should NOT mutate state.
+L'invio di un'azione di tipo `ADD_TO_DO` allo store di Redux dovrebbe aggiungere un elemento `todo` e NON dovrebbe mutare lo stato.
 
 ```js
 assert(

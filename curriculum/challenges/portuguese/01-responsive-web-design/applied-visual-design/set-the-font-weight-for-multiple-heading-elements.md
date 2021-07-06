@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac3
-title: Set the font-weight for Multiple Heading Elements
+title: Defina a espessura da tipografia para vários elementos de cabeçalho
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVWRHq'
 forumTopicId: 301069
@@ -9,47 +9,47 @@ dashedName: set-the-font-weight-for-multiple-heading-elements
 
 # --description--
 
-You set the `font-size` of each heading tag in the last challenge, here you'll adjust the `font-weight`.
+Você definiu a propriedade `font-size` de cada tag de título no último desafio. neste desafio você irá usar a propriedade `font-weight`.
 
-The `font-weight` property sets how thick or thin characters are in a section of text.
+A propriedade `font-weight` define a grossura ou finura dos caracteres de um texto.
 
 # --instructions--
 
-<ul><li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li><li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li><li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li><li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li><li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li><li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li></ul>
+<ul><li>No seletor <code>h1</code>, defina a propriedade <code>font-weight</code> com o valor de 800.</li><li>No seletor <code>h2</code>, defina a propriedade <code>font-weight</code> com o valor de 600.</li><li>No seletor <code>h3</code>, defina a propriedade <code>font-weight</code> com o valor de 500.</li><li>No seletor <code>h4</code>, defina a propriedade <code>font-weight</code> com o valor de 400.</li><li>No seletor <code>h5</code>, defina a propriedade <code>font-weight</code> com o valor de 300.</li><li>No seletor <code>h6</code>, defina a propriedade <code>font-weight</code> com o valor de 200.</li></ul>
 
 # --hints--
 
-Your code should set the `font-weight` property for the `h1` tag to 800.
+No seletor `h1`, você deve definir a propriedade `font-weight` com o valor de 800.
 
 ```js
 assert($('h1').css('font-weight') == '800');
 ```
 
-Your code should set the `font-weight` property for the `h2` tag to 600.
+No seletor `h2`, você deve definir a propriedade `font-weight` com o valor de 600.
 
 ```js
 assert($('h2').css('font-weight') == '600');
 ```
 
-Your code should set the `font-weight` property for the `h3` tag to 500.
+No seletor `h3`, você deve definir a propriedade `font-weight` com o valor de 500.
 
 ```js
 assert($('h3').css('font-weight') == '500');
 ```
 
-Your code should set the `font-weight` property for the `h4` tag to 400.
+No seletor `h4`, você deve definir a propriedade `font-weight` com o valor de 400.
 
 ```js
 assert($('h4').css('font-weight') == '400');
 ```
 
-Your code should set the `font-weight` property for the `h5` tag to 300.
+No seletor `h5`, você deve definir a propriedade `font-weight` com o valor de 300.
 
 ```js
 assert($('h5').css('font-weight') == '300');
 ```
 
-Your code should set the `font-weight` property for the `h6` tag to 200.
+No seletor `h6`, você deve definir a propriedade `font-weight` com o valor de 200.
 
 ```js
 assert($('h6').css('font-weight') == '200');
