@@ -146,7 +146,7 @@
     "@types/react-test-renderer": "17.0.1",
     "@types/react-transition-group": "4.4.1",
     "@types/redux-actions": "2.6.1",
-    "@types/sanitize-html": "2.3.1",
+    "@types/sanitize-html": "2.3.2",
     "@types/store": "2.0.2",
     "@types/validator": "13.6.2",
     "autoprefixer": "10.2.6",
