@@ -67,10 +67,12 @@ const CertChallenge = ({
   useEffect(() => {
     if (username) {
       (async () => {
-        const response = await getVerifyCanClaimCert(username, superBlock);
-        if (response.status === 200) {
-          const { status, result } = response.data?.response?.message;
+        try {
+          const data = await getVerifyCanClaimCert(username, superBlock);
+          const { status, result } = data?.response?.message;
           setCanClaim({ status, result });
+        } catch (e) {
+          // TODO: How do we handle errors...?
         }
       })();
     }
