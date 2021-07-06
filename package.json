@@ -123,7 +123,7 @@
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "2.5.1",
-    "eslint-plugin-testing-library": "4.7.0",
+    "eslint-plugin-testing-library": "4.8.0",
     "execa": "5.1.1",
     "husky": "6.0.0",
     "jest": "26.6.3",
