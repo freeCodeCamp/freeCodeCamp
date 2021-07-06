@@ -1,3 +1,4 @@
+import { WindowLocation } from '@reach/router';
 import { i18nConstants } from '../../../config/constants';
 
 const splitPath = (pathname: string): string[] =>
@@ -20,9 +21,9 @@ export const isLanding = (pathname: string): boolean => {
 };
 
 export const isLocationSuperBlock = (
-  location: Window['location'] | undefined
+  location: WindowLocation | undefined
 ): boolean => {
-  return /^\/learn\/\w+\/$/.test(location?.pathname ?? '');
+  return /^\/learn\/[\w-]+\/$/.test(location?.pathname ?? '');
 };
 
 const pathParsers = { isLanding, isChallenge };
