@@ -63,6 +63,8 @@ export class SolutionForm extends Component<FormProps> {
       { name: 'githubLink', label: t('learn.github-link') }
     ];
 
+    const buttonCopy = t('learn.i-completed');
+
     const options = {
       types: {
         solution: 'url',
@@ -72,10 +74,6 @@ export class SolutionForm extends Component<FormProps> {
       isEditorLinkAllowed: false,
       isLocalLinkAllowed: false
     };
-
-    const buttonCopy = isSubmitting
-      ? t('learn.submit-and-go')
-      : t('learn.i-completed');
 
     let formFields = solutionField;
     let solutionLink = 'ex: ';
