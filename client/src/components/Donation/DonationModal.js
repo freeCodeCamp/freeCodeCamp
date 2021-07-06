@@ -11,6 +11,8 @@ import Cup from '../../assets/icons/cup';
 import DonateForm from './DonateForm';
 import { modalDefaultDonation } from '../../../../config/donation-settings';
 import { useTranslation } from 'react-i18next';
+import { goToAnchor } from 'react-scrollable-anchor';
+import { isLocationSuperBlock } from '../../utils/path-parsers';
 
 import {
   closeDonationModal,
@@ -20,7 +22,6 @@ import {
 } from '../../redux';
 
 import './Donation.css';
-import { navigate } from '@reach/router';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
@@ -105,12 +106,9 @@ function DonateModal({
   };
 
   const handleModalHide = () => {
-    if (location) {
-      // Might not be necessary, but still nothing wants to listen to me...
-      const to = location.pathname + location.hash;
-      // TODO: Does not work...probably not the best approach.
-      console.log(to, location);
-      navigate('#claim-cert-block');
+    // If modal is open on a SuperBlock page
+    if (isLocationSuperBlock(location)) {
+      goToAnchor('claim-cert-block');
     }
   };
 
