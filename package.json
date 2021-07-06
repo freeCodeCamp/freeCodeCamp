@@ -126,7 +126,7 @@
     "eslint-plugin-testing-library": "4.8.0",
     "execa": "5.1.1",
     "husky": "7.0.1",
-    "jest": "26.6.3",
+    "jest": "27.0.6",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
     "lint-staged": "11.0.0",
