@@ -17,7 +17,6 @@ interface SubmitProps {
 interface FormProps extends WithTranslation {
   challengeType: number;
   description?: string;
-  isSubmitting?: boolean;
   onSubmit: (arg0: SubmitProps) => void;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
 }
@@ -101,14 +100,11 @@ export class SolutionForm extends Component<FormProps> {
       case pythonProject:
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
-        if (description) {
-          solutionLink =
-            solutionLink +
-            (description.includes('Colaboratory')
-              ? 'https://colab.research.google.com/drive/1i5EmInTWi1RFvFr2_aRXky96YxY6sbWy'
-              : 'https://replit.com/@camperbot/hello');
-          break;
-        }
+        solutionLink =
+          solutionLink +
+          (description?.includes('Colaboratory')
+            ? 'https://colab.research.google.com/drive/1i5EmInTWi1RFvFr2_aRXky96YxY6sbWy'
+            : 'https://replit.com/@camperbot/hello');
         break;
 
       default:
