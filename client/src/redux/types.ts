@@ -26,7 +26,7 @@ export interface State {
 }
 
 export interface FlashState {
-  message: { message: FlashMessageArg; id: string } | Record<string, never>;
+  message: ({ id: string } & FlashMessageArg) | Record<string, never>;
 }
 
 export interface DefaultFetchState {

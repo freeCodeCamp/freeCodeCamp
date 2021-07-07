@@ -25,7 +25,7 @@ export const createFlashMessage = (
   flash: FlashMessageArg
 ): ReducerPayload<FlashActionTypes.createFlashMessage> => ({
   type: FlashActionTypes.createFlashMessage,
-  payload: { message: flash, id: nanoid() }
+  payload: { ...flash, id: nanoid() }
 });
 
 export const removeFlashMessage =
