@@ -70,7 +70,7 @@ const certSlugTypeMap = {
   'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
   'front-end-development-libraries': certTypes.frontEndDevLibs,
   'data-visualization': certTypes.dataVis2018,
-  'apis-and-microservices': certTypes.apisMicroservices,
+  'back-end-development-and-apis': certTypes.apisMicroservices,
   'quality-assurance-v7': certTypes.qaV7,
   'information-security-v7': certTypes.infosecV7,
   'scientific-computing-with-python-v7': certTypes.sciCompPyV7,

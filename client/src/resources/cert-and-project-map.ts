@@ -479,38 +479,38 @@ const certMap = [
   {
     id: '561add10cb82ac38a17523bc',
     title: 'Back End Development and APIs',
-    certSlug: 'apis-and-microservices',
+    certSlug: 'back-end-development-and-apis',
     flag: 'isApisMicroservicesCert',
     projects: [
       {
         id: 'bd7158d8c443edefaeb5bdef',
         title: 'Timestamp Microservice',
         link: `${apiMicroBase}/timestamp-microservice`,
-        certSlug: 'apis-and-microservices'
+        certSlug: 'back-end-development-and-apis'
       },
       {
         id: 'bd7158d8c443edefaeb5bdff',
         title: 'Request Header Parser Microservice',
         link: `${apiMicroBase}/request-header-parser-microservice`,
-        certSlug: 'apis-and-microservices'
+        certSlug: 'back-end-development-and-apis'
       },
       {
         id: 'bd7158d8c443edefaeb5bd0e',
         title: 'URL Shortener Microservice',
         link: `${apiMicroBase}/url-shortener-microservice`,
-        certSlug: 'apis-and-microservices'
+        certSlug: 'back-end-development-and-apis'
       },
       {
         id: '5a8b073d06fa14fcfde687aa',
         title: 'Exercise Tracker',
         link: `${apiMicroBase}/exercise-tracker`,
-        certSlug: 'apis-and-microservices'
+        certSlug: 'back-end-development-and-apis'
       },
       {
         id: 'bd7158d8c443edefaeb5bd0f',
         title: 'File Metadata Microservice',
         link: `${apiMicroBase}/file-metadata-microservice`,
-        certSlug: 'apis-and-microservices'
+        certSlug: 'back-end-development-and-apis'
       }
     ]
   },

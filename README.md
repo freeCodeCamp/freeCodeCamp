@@ -86,12 +86,12 @@ Here are our ten core certifications:
 
 #### 5. Back End Development and APIs Certification
 
-- [Managing Packages with Npm](https://www.freecodecamp.org/learn/apis-and-microservices/)
-- [Basic Node and Express](https://www.freecodecamp.org/learn/apis-and-microservices/)
-- [MongoDB and Mongoose](https://www.freecodecamp.org/learn/apis-and-microservices/)
+- [Managing Packages with Npm](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
+- [Basic Node and Express](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
+- [MongoDB and Mongoose](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
   <br />
   <br />
-  **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/file-metadata-microservice)
+  **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice)
 
 #### 6. Quality Assurance Certification
 
