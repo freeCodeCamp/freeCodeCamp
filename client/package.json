@@ -136,7 +136,7 @@
     "@types/loadable__component": "5.13.4",
     "@types/lodash-es": "4.17.4",
     "@types/prismjs": "1.16.6",
-    "@types/react-dom": "17.0.8",
+    "@types/react-dom": "17.0.9",
     "@types/react-helmet": "6.1.1",
     "@types/react-instantsearch-dom": "6.10.1",
     "@types/react-monaco-editor": "0.16.0",
