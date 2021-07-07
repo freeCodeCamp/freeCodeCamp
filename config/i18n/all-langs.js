@@ -53,7 +53,8 @@ const auditedCerts = {
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
     'front-end-libraries',
-    'data-visualization'
+    'data-visualization',
+    'apis-and-microservices'
   ],
   portuguese: ['responsive-web-design']
 };
