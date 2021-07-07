@@ -259,7 +259,7 @@
     "intro": [
       "Los datos están a nuestro alrededor, pero no significan mucho si no tienen forma o contexto.",
       "En la certificación Visualización de Datos, construirás diagramas, gráficos, y mapas para presentar diferentes tipos de datos utilizando la biblioteca D3.js.",
-      "También aprenderás acerca de JSON (JavaScript Object Notation), y cómo trabajar con datos en línea usando una API (Application Programing Interface)."
+      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {

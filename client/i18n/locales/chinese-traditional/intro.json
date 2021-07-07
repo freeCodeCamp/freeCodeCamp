@@ -259,7 +259,7 @@
     "intro": [
       "數據無處不在。但是，如果沒有上下文，數據就沒有多大意義。",
       "在數據可視化認證中，你會用 D3.js 庫來創建表格、圖表和地圖，以展示不同的數據。",
-      "你還會學習 JSON（JavaScript 對象），以及如何使用 API（應用程序接口）使用在線的數據。"
+      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {
