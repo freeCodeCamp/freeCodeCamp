@@ -14,7 +14,7 @@ import Algorithm from './algorithm';
 const iconMap = {
   'responsive-web-design': ResponsiveDesign,
   'javascript-algorithms-and-data-structures': JavaScriptIcon,
-  'front-end-libraries': ReactIcon,
+  'front-end-development-libraries': ReactIcon,
   'data-visualization': D3Icon,
   'back-end-development-and-apis': APIIcon,
   'quality-assurance': Clipboard,

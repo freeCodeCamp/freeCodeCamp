@@ -36,7 +36,7 @@ const auditedCerts = {
   chinese: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
+    'front-end-development-libraries',
     'data-visualization',
     'back-end-development-and-apis',
     'quality-assurance'
@@ -44,7 +44,7 @@ const auditedCerts = {
   'chinese-traditional': [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
+    'front-end-development-libraries',
     'data-visualization',
     'back-end-development-and-apis',
     'quality-assurance'
@@ -52,7 +52,7 @@ const auditedCerts = {
   italian: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
+    'front-end-development-libraries',
     'data-visualization',
     'apis-and-microservices'
   ],

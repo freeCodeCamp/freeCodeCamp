@@ -268,8 +268,8 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Libraries Certification',
-        certSlug: 'front-end-libraries'
+        title: 'Front End Development Libraries Certification',
+        certSlug: 'front-end-development-libraries'
       },
       {
         show: is2018DataVisCert,

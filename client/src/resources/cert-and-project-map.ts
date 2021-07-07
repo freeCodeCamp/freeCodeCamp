@@ -3,7 +3,8 @@ const responsiveWebBase =
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
-const feLibsBase = '/learn/front-end-libraries/front-end-libraries-projects';
+const feLibsBase =
+  '/learn/front-end-development-libraries/front-end-development-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
 const relationalDatabasesBase =
   '/learn/relational-databases/learn-relational-databases';
@@ -364,38 +365,38 @@ const certMap = [
   {
     id: '561acd10cb82ac38a17513bc',
     title: 'Front End Development Libraries',
-    certSlug: 'front-end-libraries',
+    certSlug: 'front-end-development-libraries',
     flag: 'isFrontEndLibsCert',
     projects: [
       {
         id: 'bd7158d8c442eddfaeb5bd13',
         title: 'Build a Random Quote Machine',
         link: `${feLibsBase}/build-a-random-quote-machine`,
-        certSlug: 'front-end-libraries'
+        certSlug: 'front-end-development-libraries'
       },
       {
         id: 'bd7157d8c242eddfaeb5bd13',
         title: 'Build a Markdown Previewer',
         link: `${feLibsBase}/build-a-markdown-previewer`,
-        certSlug: 'front-end-libraries'
+        certSlug: 'front-end-development-libraries'
       },
       {
         id: '587d7dbc367417b2b2512bae',
         title: 'Build a Drum Machine',
         link: `${feLibsBase}/build-a-drum-machine`,
-        certSlug: 'front-end-libraries'
+        certSlug: 'front-end-development-libraries'
       },
       {
         id: 'bd7158d8c442eddfaeb5bd17',
         title: 'Build a JavaScript Calculator',
         link: `${feLibsBase}/build-a-javascript-calculator`,
-        certSlug: 'front-end-libraries'
+        certSlug: 'front-end-development-libraries'
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
         title: 'Build a 25 + 5 Clock',
         link: `${feLibsBase}/build-a-25--5-clock`,
-        certSlug: 'front-end-libraries'
+        certSlug: 'front-end-development-libraries'
       }
     ]
   },

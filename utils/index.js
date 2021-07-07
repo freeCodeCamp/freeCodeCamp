@@ -4,7 +4,7 @@ const idToTitle = new Map(
   Object.entries({
     '561add10cb82ac38a17523bc': 'APIs and Microservices',
     '5a553ca864b52e1d8bceea14': 'Data Visualization',
-    '561acd10cb82ac38a17513bc': 'Front End Libraries',
+    '561acd10cb82ac38a17513bc': 'Front End Development Libraries',
     '5e611829481575a52dc59c0e': 'Quality Assurance',
     '5e6021435ac9d0ecd8b94b00': 'Information Security',
     '561abd10cb81ac38a17513bc': 'JavaScript Algorithms and Data Structures',

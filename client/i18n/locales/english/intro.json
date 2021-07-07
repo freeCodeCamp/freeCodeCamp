@@ -66,24 +66,15 @@
       },
       "basic-html-cat-photo-app": {
         "title": "Basic HTML Cat Photo App",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "basic-css-cafe-menu": {
         "title": "Basic CSS Cafe Menu",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "css-variables-skyline": {
         "title": "CSS Variables Skyline",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -170,32 +161,23 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
-  "front-end-libraries": {
+  "front-end-development-libraries": {
     "title": "Front End Development Libraries",
     "intro": [
       "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
-      "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
       "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
     ],
     "note": "",
@@ -245,7 +227,7 @@
           "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
         ]
       },
-      "front-end-libraries-projects": {
+      "front-end-development-libraries-projects": {
         "title": "Front End Development Libraries Projects",
         "intro": [
           "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
@@ -289,24 +271,17 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
   "relational-databases": {
     "title": "Relational Databases",
-    "intro": [
-      "placeholder"
-    ],
+    "intro": ["placeholder"],
     "blocks": {
       "learn-relational-databases": {
         "title": "Learn Relational Databases",
-        "intro": [
-          "placeholder"
-        ]
+        "intro": ["placeholder"]
       }
     }
   },
