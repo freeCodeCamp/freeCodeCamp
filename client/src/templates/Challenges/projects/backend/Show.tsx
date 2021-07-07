@@ -31,7 +31,7 @@ import Output from '../../components/output';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/HelpModal';
 import ProjectToolPanel from '../tool-panel';
-import SolutionForm from '../SolutionForm';
+import SolutionForm from '../solution-form';
 import Spacer from '../../../../components/helpers/spacer';
 import {
   ChallengeNodeType,

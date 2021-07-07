@@ -28,7 +28,7 @@ import LearnLayout from '../../../../components/layouts/learn';
 import ChallengeTitle from '../../components/challenge-title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Spacer from '../../../../components/helpers/spacer';
-import SolutionForm from '../SolutionForm';
+import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/HelpModal';
