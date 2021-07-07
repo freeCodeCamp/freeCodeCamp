@@ -133,7 +133,7 @@
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
-    "@types/loadable__component": "5.13.3",
+    "@types/loadable__component": "5.13.4",
     "@types/lodash-es": "4.17.4",
     "@types/prismjs": "1.16.5",
     "@types/react-dom": "17.0.8",
