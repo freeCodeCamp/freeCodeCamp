@@ -10,7 +10,8 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchCurrentVersion": "!/^0/",
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     },
     {
       "groupName": "Monaco Editor",
@@ -22,10 +23,9 @@
     },
     {
       "groupName": "CodeSee",
-      "matchPackagePrefixes": [
-        "@codesee/"
-      ],
-      "automerge": true
+      "matchPackagePrefixes": ["@codesee/"],
+      "automerge": true,
+      "automergeType": "branch"
     }
   ],
   "ignorePaths": [
