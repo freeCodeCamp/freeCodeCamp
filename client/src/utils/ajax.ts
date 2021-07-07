@@ -82,11 +82,6 @@ export function getUsernameExists(username: string): Promise<boolean> {
   return get(`/api/users/exists?username=${username}`);
 }
 
-// Doesn't appear to ever be used in other files
-// export function getArticleById(shortId: string) {
-//   return get(`/n/${shortId}`);
-// }
-
 /** POST **/
 
 interface Donation {
@@ -112,6 +107,7 @@ export function postReportUser(body: Report): Promise<void> {
 
 // Both are called without a payload in danger-zone-saga,
 // which suggests both are sent without any body
+// TODO: Convert to DELETE
 export function postDeleteAccount(): Promise<void> {
   return post('/account/delete', {});
 }
@@ -121,6 +117,7 @@ export function postResetProgress(): Promise<void> {
 }
 
 /** PUT **/
+
 interface MyAbout {
   name: string;
   location: string;
