@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import type { WithTranslation } from 'react-i18next';
 
 import { Form } from '../../../components/formHelpers';
 import {
@@ -10,25 +10,34 @@ import {
   pythonProject
 } from '../../../../utils/challengeTypes';
 
-const propTypes = {
-  challengeType: PropTypes.number,
-  description: PropTypes.string,
-  isSubmitting: PropTypes.bool,
-  onSubmit: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired,
-  updateSolutionForm: PropTypes.func.isRequired
-};
+interface SubmitProps {
+  isShouldCompletionModalOpen: boolean;
+}
 
-export class SolutionForm extends Component {
-  constructor(props) {
+interface FormProps extends WithTranslation {
+  challengeType: number;
+  description?: string;
+  onSubmit: (arg0: SubmitProps) => void;
+  updateSolutionForm: (arg0: Record<string, unknown>) => void;
+}
+
+interface ValidatedValues {
+  errors: string[];
+  invalidValues: string[];
+  values: Record<string, unknown>;
+}
+
+export class SolutionForm extends Component<FormProps> {
+  constructor(props: FormProps) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {
+
+  componentDidMount(): void {
     this.props.updateSolutionForm({});
   }
 
-  handleSubmit(validatedValues) {
+  handleSubmit = (validatedValues: ValidatedValues): void => {
     // Do not execute challenge, if errors
     if (validatedValues.errors.length === 0) {
       // updates values on store
@@ -39,10 +48,10 @@ export class SolutionForm extends Component {
         this.props.onSubmit({ isShouldCompletionModalOpen: false });
       }
     }
-  }
+  };
 
-  render() {
-    const { isSubmitting, challengeType, description, t } = this.props;
+  render(): JSX.Element {
+    const { challengeType, description, t } = this.props;
 
     // back end challenges and front end projects use a single form field
     const solutionField = [
@@ -53,6 +62,8 @@ export class SolutionForm extends Component {
       { name: 'githubLink', label: t('learn.github-link') }
     ];
 
+    const buttonCopy = t('learn.i-completed');
+
     const options = {
       types: {
         solution: 'url',
@@ -62,10 +73,6 @@ export class SolutionForm extends Component {
       isEditorLinkAllowed: false,
       isLocalLinkAllowed: false
     };
-
-    const buttonCopy = isSubmitting
-      ? t('learn.submit-and-go')
-      : t('learn.i-completed');
 
     let formFields = solutionField;
     let solutionLink = 'ex: ';
@@ -95,7 +102,7 @@ export class SolutionForm extends Component {
         options.isEditorLinkAllowed = true;
         solutionLink =
           solutionLink +
-          (description.includes('Colaboratory')
+          (description?.includes('Colaboratory')
             ? 'https://colab.research.google.com/drive/1i5EmInTWi1RFvFr2_aRXky96YxY6sbWy'
             : 'https://replit.com/@camperbot/hello');
         break;
@@ -123,7 +130,5 @@ export class SolutionForm extends Component {
     );
   }
 }
-
-SolutionForm.propTypes = propTypes;
 
 export default withTranslation()(SolutionForm);
