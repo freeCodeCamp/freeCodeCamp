@@ -259,7 +259,7 @@
     "intro": [
       "I dati ci circondano, ma non ci dicono molto senza forma o contesto.",
       "Nella Certificazione Visualizzazione dei Dati, costruirai diagrammi, grafici e mappe per presentare diversi tipi di dati con la libreria D3.js.",
-      "Imparerai anche JSON (JavaScript Object Notation), e come lavorare con i dati online utilizzando un'API (Application Programing Interface)."
+      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {
