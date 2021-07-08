@@ -33,8 +33,8 @@ function isCalledWithNoArgs(
 ): boolean {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const noCommentsCallingCode = strip(callingCode) as string;
-  const funcExp = `\\b${escapeRegExp(calledFuncName)}\\(\\s*?\\)`;
-  const matches = new RegExp(funcExp, 'g').exec(noCommentsCallingCode) ?? [];
+  const funcExp = `^\\s*?${escapeRegExp(calledFuncName)}\\(\\s*?\\)`;
+  const matches = new RegExp(funcExp, 'gm').exec(noCommentsCallingCode) ?? [];
 
   return !!matches.length;
 }
