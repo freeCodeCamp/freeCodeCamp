@@ -20,7 +20,7 @@ assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle(".fb1a")?.borderBotto
 You should use a `border-bottom` of `7vh solid var(--building-color4)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1a")?.borderBottom, "7vh solid var(--building-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1a")?.borderBottom.trim(), "7vh solid var(--building-color4)");
 ```
 
 # --seed--
