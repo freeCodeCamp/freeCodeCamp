@@ -20,7 +20,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".fb1")?.backgroundColor
 You should add a `background-color` of `--building-color4` to `.fb1b`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1b")?.backgroundColor, "var(--building-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1b")?.backgroundColor.trim(), "var(--building-color4)");
 ```
 
 # --seed--
@@ -281,4 +281,3 @@ body {
 }
     
 ```
-
