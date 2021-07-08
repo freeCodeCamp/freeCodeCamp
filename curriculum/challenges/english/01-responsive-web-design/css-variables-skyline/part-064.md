@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4b")?.backgroundColor.
 You should give `.bb4c` a `background-color` of `--building-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4c")?.backgroundColor, "var(--building-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4c")?.backgroundColor.trim(), "var(--building-color4)");
 ```
 
 # --seed--
