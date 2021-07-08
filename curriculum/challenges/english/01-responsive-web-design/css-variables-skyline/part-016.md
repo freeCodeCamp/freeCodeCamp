@@ -20,7 +20,7 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1b')?.backgroundColor
 You should use `var(--building-color1)` to set the `background-color` of the `.bb1b` element.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1b')?.backgroundColor, 'var(--building-color1)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1b')?.backgroundColor.trim(), 'var(--building-color1)');
 ```
 
 The `background-color` of the `bb1c` element should be set.
