@@ -26,13 +26,14 @@ function escapeRegExp(exp: string): string {
   return exp.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function isCalledWithNoArgs(
   calledFuncName: string,
   callingCode: string
 ): boolean {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const noCommentsCallingCode = strip(callingCode) as string;
-  const funcExp = `\b${escapeRegExp(calledFuncName)}\\(\s*?\\)`;
+  const funcExp = `\\b${escapeRegExp(calledFuncName)}\\(\\s*?\\)`;
   const matches = new RegExp(funcExp, 'g').exec(noCommentsCallingCode) ?? [];
 
   return !!matches.length;
