@@ -32,7 +32,7 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('.bb3')?.backgroundColor)
 You should set the `background-color` using the `--building-color3` variable with a fallback of `pink`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.bb3')?.backgroundColor, 'var(--building-color3, pink)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb3')?.backgroundColor.trim(), 'var(--building-color3, pink)');
 ```
 
 # --seed--
@@ -139,4 +139,3 @@ body {
 }
 
 ```
-
