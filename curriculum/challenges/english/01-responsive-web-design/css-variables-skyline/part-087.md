@@ -14,7 +14,7 @@ For `.fb2a`, add a `border-bottom` of `10vh solid var(--building-color3)`, and a
 You should give `.fb2a` a `border-bottom` of `10vh solid var(--building-color3)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2a")?.borderBottom, "10vh solid var(--building-color3)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2a")?.borderBottom.trim(), "10vh solid var(--building-color3)");
 ```
 
 You should give `.fb2a` a `border-left` of `1vw solid transparent`.
@@ -327,4 +327,3 @@ body {
 }
     
 ```
-
