@@ -26,7 +26,7 @@ assert.include(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom.t
 `border-bottom` should be `5vh solid var(--building-color2)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom, "5vh solid var(--building-color2)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom.trim(), "5vh solid var(--building-color2)");
 ```
 
 # --seed--
