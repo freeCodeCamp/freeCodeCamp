@@ -8,8 +8,6 @@ export function scriptLoader(
   const s = document.createElement('script');
   s.type = 'text/javascript';
   s.id = id;
-  // s.key = key;
-  // Invalid key property?
   s.async = async;
   s.onload = onload;
   s.src = src;
@@ -27,7 +25,6 @@ export function scriptRemover(id: string): void {
 export function mathJaxScriptLoader(): void {
   scriptLoader(
     'mathjax',
-    // 'mathjax',
     false,
     'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
       '2.7.4/MathJax.js?config=TeX-AMS_HTML',
