@@ -34,8 +34,7 @@ interface HotkeysProps {
   editorRef?: React.Ref<HTMLElement> | any;
   executeChallenge?: () => void;
   innerRef: React.Ref<HTMLElement> | unknown;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  instructionsPanelRef?: React.Ref<HTMLElement> | any;
+  instructionsPanelRef?: React.RefObject<HTMLElement>;
   nextChallengePath: string;
   prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
