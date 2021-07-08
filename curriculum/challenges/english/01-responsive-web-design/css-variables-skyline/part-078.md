@@ -37,7 +37,7 @@ assert.match(new __helpers.CSSHelp(document).getStyle(".fb1c")?.getPropVal('back
 You should use a second color of `--window-color4` from `10%` to `90%`.
 
 ```js
-assert.match(new __helpers.CSSHelp(document).getStyle(".fb1c")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color4\)(0%)?,var\(--building-color4\)10%,transparent10%,transparent15%\),repeating-linear-gradient\(var\(--building-color4\)(0%)?,var\(--building-color4\)10%,var\(--window-color4\),var\(--window-color4\)90%\)/);
+assert.match(new __helpers.CSSHelp(document).getStyle(".fb1c")?.getPropVal('background', true), /repeating-linear-gradient\(90deg,var\(--building-color4\)(0%)?,var\(--building-color4\)10%,transparent10%,transparent15%\),repeating-linear-gradient\(var\(--building-color4\)(0%)?,var\(--building-color4\)10%,var\(--window-color4\)10%,var\(--window-color4\)90%\)/);
 ```
 
 # --seed--
