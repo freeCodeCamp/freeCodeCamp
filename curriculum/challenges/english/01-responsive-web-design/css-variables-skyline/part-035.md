@@ -14,7 +14,7 @@ The skyline is coming together. Fill in the `background-color` property of the f
 You should give `.fb1` a `background-color` using `--building-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.fb1')?.backgroundColor, 'var(--building-color4)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.fb1')?.backgroundColor.trim(), 'var(--building-color4)');
 ```
 
 You should give `.fb2` a `background-color` using `--building-color3`.
@@ -200,4 +200,3 @@ body {
 --fcc-editable-region--
 
 ```
-
