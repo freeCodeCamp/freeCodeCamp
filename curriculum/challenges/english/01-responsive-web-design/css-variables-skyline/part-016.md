@@ -44,7 +44,7 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1d')?.backgroundColor
 You should use `var(--building-color1)` to set the `background-color` of the `.bb1d` element.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.backgroundColor, 'var(--building-color1)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.backgroundColor.trim(), 'var(--building-color1)');
 ```
 
 # --seed--
