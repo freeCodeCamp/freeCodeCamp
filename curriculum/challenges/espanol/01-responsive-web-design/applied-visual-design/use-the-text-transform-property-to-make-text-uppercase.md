@@ -13,7 +13,7 @@ La propiedad `text-transform` en CSS se utiliza para cambiar la apariencia del t
 
 La siguiente tabla muestra como los diferentes valores de `text-transform` cambian el texto de ejemplo "Transformame".
 
-<table class='table table-striped'><thead><tr><th>Valor</th><th>Resultado</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"Transformame"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORMAME"</td></tr><tr><td><code>capitalize</code></td><td>"Transformame"</td></tr><tr><td><code>initial</code></td><td>Usa el valor predeterminado</td></tr><tr><td><code>inherit</code></td><td>Utiliza el valor <code>text-transform</code> del elemento principal</td></tr><tr><td><code>none</code></td><td><strong>Predeterminado:</strong> Usa el texto original</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Valor</th><th>Resultado</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transformame"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORMAME"</td></tr><tr><td><code>capitalize</code></td><td>"Transformame"</td></tr><tr><td><code>initial</code></td><td>Usa el valor predeterminado</td></tr><tr><td><code>inherit</code></td><td>Utiliza el valor <code>text-transform</code> del elemento principal</td></tr><tr><td><code>none</code></td><td><strong>Predeterminado:</strong> Usa el texto original</td></tr></tbody></table>
 
 # --instructions--
 
