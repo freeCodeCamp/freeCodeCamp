@@ -41,7 +41,7 @@ You should give `.bb4` a `width` of `10%`.
 assert.equal(new __helpers.CSSHelp(document).getStyle('.bb4')?.width, '11%');
 ```
 
-You should give `.bb4` a `height` of `50%`.
+You should give `.bb4` a `height` of `58%`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.bb4')?.height, '58%');
