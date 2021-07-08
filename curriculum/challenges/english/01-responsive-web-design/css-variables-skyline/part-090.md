@@ -20,7 +20,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle(".fb3")?.backgroundColor
 You should give `.fb3a` a `background-color` of `--building-color1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3a")?.backgroundColor, "var(--building-color1)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb3a")?.backgroundColor.trim(), "var(--building-color1)");
 ```
 
 You should give `.fb3b` a `background-color` of `--building-color1`.
