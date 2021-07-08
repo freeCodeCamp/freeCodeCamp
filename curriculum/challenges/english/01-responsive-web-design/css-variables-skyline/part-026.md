@@ -20,7 +20,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.bb2')?.backgroundColor, 
 You should remove the fallback in the `background-color` from `.bb3`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.bb3')?.backgroundColor, 'var(--building-color3)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb3')?.backgroundColor.trim(), 'var(--building-color3)');
 ```
 
 # --seed--
@@ -132,4 +132,3 @@ body {
 }
     
 ```
-
