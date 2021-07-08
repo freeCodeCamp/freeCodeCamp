@@ -4,7 +4,7 @@ import cookies from 'browser-cookies';
 
 import type { UserType } from '../redux/prop-types';
 
-const { apiLocation } = envData as { apiLocation: string };
+const { apiLocation } = envData;
 
 const base = apiLocation;
 const tokens = new Tokens();
