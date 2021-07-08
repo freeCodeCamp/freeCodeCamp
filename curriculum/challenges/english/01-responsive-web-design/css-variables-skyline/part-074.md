@@ -29,7 +29,7 @@ You should give `.fb1c` a `width` of `100%`.
 assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1c")?.width, "100%");
 ```
 
-You should give `.fb1c` a `width` of `80%`.
+You should give `.fb1c` a `height` of `80%`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle(".fb1c")?.height, "80%");
@@ -284,4 +284,3 @@ body {
 }
     
 ```
-
