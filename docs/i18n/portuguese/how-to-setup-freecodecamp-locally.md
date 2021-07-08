@@ -18,7 +18,7 @@ We also support Windows 10 via WSL2, which you can prepare by [reading this guid
 
 Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**Prerequisites:**
+#### Prerequisites:
 
 | Prerequisite                                                                                  | Version | Notes                                                                                       |
 | --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
@@ -39,7 +39,7 @@ npm -v
 
 Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**Follow these steps to get your development environment ready:**
+##### Follow these steps to get your development environment ready:
 
 1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
