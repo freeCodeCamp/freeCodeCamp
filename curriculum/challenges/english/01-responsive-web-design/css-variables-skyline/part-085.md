@@ -26,7 +26,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2-window")?.height, "1
 You should give the `.fb2-window` elements a `background-color` of `--window-color3`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2-window")?.backgroundColor, "var(--window-color3)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".fb2-window")?.backgroundColor.trim(), "var(--window-color3)");
 ```
 
 # --seed--
@@ -323,4 +323,3 @@ body {
 }
     
 ```
-
