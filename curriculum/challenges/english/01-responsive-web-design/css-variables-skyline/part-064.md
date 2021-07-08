@@ -26,7 +26,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4a")?.backgroundColor.
 You should give `.bb4b` a `background-color` of `--building-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4b")?.backgroundColor, "var(--building-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4b")?.backgroundColor.trim(), "var(--building-color4)");
 ```
 
 You should give `.bb4c` a `background-color` of `--building-color4`.
