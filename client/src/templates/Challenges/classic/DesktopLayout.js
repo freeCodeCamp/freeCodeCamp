@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
 import { first } from 'lodash-es';
@@ -83,7 +83,7 @@ class DesktopLayout extends Component {
       layoutState;
 
     return (
-      <Fragment>
+      <>
         <ReflexContainer className='desktop-layout' orientation='horizontal'>
           {projectBasedChallenge && (
             <ActionRow
@@ -125,7 +125,7 @@ class DesktopLayout extends Component {
                       {...reflexProps}
                       {...resizeProps}
                     >
-                      <Fragment>{editor}</Fragment>
+                      <>{editor}</>
                     </ReflexElement>
                     {isConsoleDisplayable && (
                       <ReflexSplitter propagate={true} {...resizeProps} />
@@ -158,7 +158,7 @@ class DesktopLayout extends Component {
             </ReflexContainer>
           </ReflexElement>
         </ReflexContainer>
-      </Fragment>
+      </>
     );
   }
 }

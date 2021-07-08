@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -49,7 +49,7 @@ function ToolPanel({
   };
   const { t } = useTranslation();
   return (
-    <Fragment>
+    <>
       <div
         className={`tool-panel-group button-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
@@ -101,7 +101,7 @@ function ToolPanel({
           </MenuItem>
         </DropdownButton>
       </div>
-    </Fragment>
+    </>
   );
 }
 

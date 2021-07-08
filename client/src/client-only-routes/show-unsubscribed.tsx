@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +16,7 @@ function ShowUnsubscribed({
 }): JSX.Element {
   const { t } = useTranslation();
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
       </Helmet>
@@ -45,7 +45,7 @@ function ShowUnsubscribed({
           <Spacer size={2} />
         </main>
       </Grid>
-    </Fragment>
+    </>
   );
 }
 

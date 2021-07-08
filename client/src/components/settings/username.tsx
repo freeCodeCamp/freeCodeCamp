@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -203,7 +203,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { isValidUsername, t, validating } = this.props;
 
     return (
-      <Fragment>
+      <>
         <form id='usernameSettings' onSubmit={this.handleSubmit}>
           <FullWidthRow>
             <FormGroup>
@@ -227,7 +227,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
             />
           </FullWidthRow>
         </form>
-      </Fragment>
+      </>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   ToggleButtonGroup as BSBG,
   ToggleButton as TB
@@ -36,7 +36,7 @@ export default function ToggleButton({
     width: '20px'
   };
   return (
-    <Fragment>
+    <>
       <BSBG name={name} onChange={onChange} type='radio'>
         <TB
           bsSize='sm'
@@ -69,7 +69,7 @@ export default function ToggleButton({
           )}
         </TB>
       </BSBG>
-    </Fragment>
+    </>
   );
 }
 
