@@ -73,7 +73,7 @@
     "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser certUser",
     "serve:client": "cd ./client && npm run serve",
     "start": "npm-run-all ensure-env -p develop:server serve:client",
-    "start-ci": "npm-run-all ensure-env -p start:server serve:client",
+    "start-ci": "npm-run-all ensure-env -p start:server serve:client-ci",
     "start:server": "cd ./api-server && npm start",
     "storybook": "cd ./tools/ui-components && npm run storybook",
     "test": "run-s ensure-env build:curriculum build-workers test:*",
