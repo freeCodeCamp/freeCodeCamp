@@ -26,7 +26,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4-window")?.height, "9
 You should give `.bb4-window` a `background-color` of `--window-color4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4-window")?.backgroundColor, "var(--window-color4)");
+assert.equal(new __helpers.CSSHelp(document).getStyle(".bb4-window")?.backgroundColor.trim(), "var(--window-color4)");
 ```
 
 # --seed--
@@ -262,4 +262,3 @@ body {
 }
     
 ```
-
