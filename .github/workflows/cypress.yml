@@ -58,7 +58,9 @@ jobs:
           npm run build:curriculum
 
       - name: Move serve.json to client
-        run: cp client-config/serve.json client/public/serve.json
+        run: |
+          mkdir -p client/public
+          cp client-config/serve.json client/public/serve.json
 
       - name: Seed Database
         run: npm run seed
