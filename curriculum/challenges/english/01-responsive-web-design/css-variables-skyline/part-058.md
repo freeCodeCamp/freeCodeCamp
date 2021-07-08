@@ -20,7 +20,7 @@ assert.include(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom, 
 You should change `border-bottom` to use `--building-color2`.
 
 ```js
-assert.include(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom, "var(--building-color2)");
+assert.include(new __helpers.CSSHelp(document).getStyle(".bb2a")?.borderBottom.trim(), "var(--building-color2)");
 ```
 
 `border-bottom` should be `5vh solid var(--building-color2)`.
@@ -224,4 +224,3 @@ body {
 }
     
 ```
-
