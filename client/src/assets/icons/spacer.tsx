@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface SpacerPropTypes {
@@ -9,7 +9,7 @@ function Spacer(props: SpacerPropTypes): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.spacer')}</span>
       <svg
         className='tick'
@@ -24,7 +24,7 @@ function Spacer(props: SpacerPropTypes): JSX.Element {
           <rect fillOpacity='0' height='200' width='200' />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

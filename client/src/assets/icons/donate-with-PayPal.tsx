@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function DonateWithPayPal(
@@ -7,7 +7,7 @@ function DonateWithPayPal(
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.donate')}</span>
       <svg
         height={31}
@@ -50,7 +50,7 @@ function DonateWithPayPal(
           </text>
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 
