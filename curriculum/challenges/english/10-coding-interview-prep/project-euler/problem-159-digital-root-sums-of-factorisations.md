@@ -22,7 +22,7 @@ $$\begin{align}
   & 24 = 24
 \end{align}$$
 
-Recall that the digital root of a number, in base 10, is found by adding together the digits of that number, and repeating that process until a number is arrived at that is less than 10. Thus the digital root of 467 is 8.
+Recall that the digital root of a number, in base 10, is found by adding together the digits of that number, and repeating that process until a number arrives at less than 10. Thus the digital root of 467 is 8.
 
 We shall call a Digital Root Sum (DRS) the sum of the digital roots of the individual factors of our number. The chart below demonstrates all of the DRS values for 24.
 
