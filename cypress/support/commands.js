@@ -39,6 +39,24 @@ Cypress.Commands.add('login', () => {
   cy.contains('Welcome back');
 });
 
+Cypress.Commands.add('toggleAll', () => {
+  cy.login();
+  cy.visit('/settings');
+  // cy.get('input[name="isLocked"]').click();
+  // cy.get('input[name="name"]').click();
+  cy.get('#privacy-settings')
+    .find('.toggle-not-active')
+    .each(element => {
+      return new Cypress.Promise(resolve => {
+        element.click();
+        setTimeout(() => {
+          resolve();
+        }, 300);
+      });
+    });
+  cy.get('#honesty-policy').find('button').click().wait(300);
+});
+
 Cypress.Commands.add('resetUsername', () => {
   cy.login();
   cy.visit('/settings');
