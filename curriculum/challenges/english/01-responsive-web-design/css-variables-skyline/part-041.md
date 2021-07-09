@@ -34,13 +34,13 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1-window')?.getPropVal
 You should not move the `background-color` property from `.bb1a`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document.getStyle('.bb1a')?.backgroundColor));
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.bb1a')?.backgroundColor);
 ```
 
 You should not move the `width` property from `.bb1a`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document.getStyle('.bb1a')?.width));
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.bb1a')?.width);
 ```
 
 # --seed--
