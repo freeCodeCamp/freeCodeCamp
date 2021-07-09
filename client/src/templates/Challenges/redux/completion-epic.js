@@ -10,7 +10,7 @@ import {
   finalize
 } from 'rxjs/operators';
 
-import { challengeTypes, submitTypes } from '../../../../utils/challengeTypes';
+import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import {
   userSelector,
   isSignedInSelector,

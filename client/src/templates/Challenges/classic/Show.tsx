@@ -13,7 +13,7 @@ import { createStructuredSelector } from 'reselect';
 
 // Local Utilities
 import store from 'store';
-import { challengeTypes } from '../../../../utils/challengeTypes';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import {
   ChallengeNodeType,
