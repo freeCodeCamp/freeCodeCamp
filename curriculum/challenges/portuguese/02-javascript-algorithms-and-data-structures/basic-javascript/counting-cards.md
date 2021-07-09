@@ -1,6 +1,6 @@
 ---
 id: 565bbe00e9cc8ac0725390f4
-title: Counting Cards
+title: Contando cartas
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KE7ty'
 forumTopicId: 16809
@@ -9,24 +9,23 @@ dashedName: counting-cards
 
 # --description--
 
-In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called [Card Counting](https://en.wikipedia.org/wiki/Card_counting).
+No jogo de casino Blackjack, um jogador pode ganhar vantagem sobre a casa, mantendo o número relativo de cartas altas e baixas restantes no deck. Isso se chama [Contagem de Cartas](https://en.wikipedia.org/wiki/Card_counting).
 
-Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.
+Ter cartas mais altas restantes no deck favorece o jogador. A cada carta é atribuído um valor de acordo com a tabela abaixo. Quando o contador for positivo, o jogador deve apostar alto. Quando a contagem for zero ou negativa, o jogador deverá apostar baixo.
 
-<table class='table table-striped'><thead><tr><th>Count Change</th><th>Cards</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Contagem de mudança</th><th>Cartas</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
 
-You will write a card counting function. It will receive a `card` parameter, which can be a number or a string, and increment or decrement the global `count` variable according to the card's value (see table). The function will then return a string with the current count and the string `Bet` if the count is positive, or `Hold` if the count is zero or negative. The current count and the player's decision (`Bet` or `Hold`) should be separated by a single space.
+Você vai escrever uma função de contagem de cartas. A função receberá um parâmetro `card`, a qual pode ser um número ou uma string e incrementar ou decrementar a variável global `count` de acordo com o valor da carta (veja a tabela). Em seguida, a função retornará a string com o valor atual de contagem (variável count) e a string `Bet` se a contagem for positiva, ou `Hold` se a contagem for zero ou negativa. A contagem atual e a decisão do jogador (`Bet` ou `Hold`) deve ser separado por um único espaço.
 
-**Example Outputs:** `-3 Hold` or `5 Bet`
+**Exemplo de Saída:** `-3 Hold` ou `5 Bet`
 
-**Hint**  
-Do NOT reset `count` to 0 when value is 7, 8, or 9.  
-Do NOT return an array.  
-Do NOT include quotes (single or double) in the output.
+**Dica**  
+Não redefina o valor de `count` para 0 quando o valor for 7, 8, or 9. Não retorne um array.  
+Não inclua aspas (simples ou duplas) na saída.
 
 # --hints--
 
-Cards Sequence 2, 3, 4, 5, 6 should return `5 Bet`
+Sequências de cartas 2, 3, 4, 5, 6 deve retornar `5 Bet`
 
 ```js
 assert(
@@ -45,7 +44,7 @@ assert(
 );
 ```
 
-Cards Sequence 7, 8, 9 should return the string `0 Hold`
+Sequência de cartas 7, 8, 9 deve retornar a string `0 Hold`
 
 ```js
 assert(
@@ -62,7 +61,7 @@ assert(
 );
 ```
 
-Cards Sequence 10, J, Q, K, A should return the string `-5 Hold`
+Sequência de cartas 10, J, Q, K, A deve retornar a string `-5 Hold`
 
 ```js
 assert(
@@ -81,7 +80,7 @@ assert(
 );
 ```
 
-Cards Sequence 3, 7, Q, 8, A should return the string `-1 Hold`
+Sequência de cartas 3, 7, Q, 8, A deve retornar a string `-1 Hold`
 
 ```js
 assert(
@@ -100,7 +99,7 @@ assert(
 );
 ```
 
-Cards Sequence 2, J, 9, 2, 7 should return the string `1 Bet`
+Sequência de cartas 2, J, 9, 2, 7 deve retornar a string `1 Bet`
 
 ```js
 assert(
@@ -119,7 +118,7 @@ assert(
 );
 ```
 
-Cards Sequence 2, 2, 10 should return the string `1 Bet`
+Sequência de cartas 2, 2, 10 deve retornar a string `1 Bet`
 
 ```js
 assert(
@@ -136,7 +135,7 @@ assert(
 );
 ```
 
-Cards Sequence 3, 2, A, 10, K should return the string `-1 Hold`
+Sequência de cartas 3, 2, A, 10, K deve retornar a string `-1 Hold`
 
 ```js
 assert(

@@ -28,20 +28,44 @@ By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the followi
 
 Hence, by considering minimal solutions in `x` for D ≤ 7, the largest `x` is obtained when D=5.
 
-Find the value of D ≤ 1000 in minimal solutions of `x` for which the largest value of `x` is obtained.
+Find the value of D ≤ `n` in minimal solutions of `x` for which the largest value of `x` is obtained.
 
 # --hints--
 
-`diophantineEquation()` should return a number.
+`diophantineEquation(7)` should return a number.
 
 ```js
-assert(typeof diophantineEquation() === 'number');
+assert(typeof diophantineEquation(7) === 'number');
 ```
 
-`diophantineEquation()` should return 661.
+`diophantineEquation(7)` should return `5`.
+
+```
+assert.strictEqual(diophantineEquation(7), 5);
+```
+
+`diophantineEquation(100)` should return `61`.
+
+```
+assert.strictEqual(diophantineEquation(100), 61);
+```
+
+`diophantineEquation(409)` should return `409`.
+
+```
+assert.strictEqual(diophantineEquation(409), 409);
+```
+
+`diophantineEquation(500)` should return `421`.
+
+```
+assert.strictEqual(diophantineEquation(500), 421);
+```
+
+`diophantineEquation(1000)` should return `661`.
 
 ```js
-assert.strictEqual(diophantineEquation(), 661);
+assert.strictEqual(diophantineEquation(1000), 661);
 ```
 
 # --seed--
@@ -49,16 +73,57 @@ assert.strictEqual(diophantineEquation(), 661);
 ## --seed-contents--
 
 ```js
-function diophantineEquation() {
+function diophantineEquation(n) {
 
   return true;
 }
 
-diophantineEquation();
+diophantineEquation(7);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function diophantineEquation(n) {
+  // Based on https://www.mathblog.dk/project-euler-66-diophantine-equation/
+  function isSolution(D, numerator, denominator) {
+    return numerator * numerator - BigInt(D) * denominator * denominator === 1n;
+  }
+
+  let result = 0;
+  let biggestX = 0;
+
+  for (let D = 2; D <= n; D++) {
+    let boundary = Math.floor(Math.sqrt(D));
+    if (boundary ** 2 === D) {
+      continue;
+    }
+
+    let m = 0n;
+    let d = 1n;
+    let a = BigInt(boundary);
+
+    let [numerator, prevNumerator] = [a, 1n];
+
+    let [denominator, prevDenominator] = [1n, 0n];
+
+    while (!isSolution(D, numerator, denominator)) {
+      m = d * a - m;
+      d = (BigInt(D) - m * m) / d;
+      a = (BigInt(boundary) + m) / d;
+
+      [numerator, prevNumerator] = [a * numerator + prevNumerator, numerator];
+      [denominator, prevDenominator] = [
+        a * denominator + prevDenominator,
+        denominator
+      ];
+    }
+
+    if (numerator > biggestX) {
+      biggestX = numerator;
+      result = D;
+    }
+  }
+  return result;
+}
 ```

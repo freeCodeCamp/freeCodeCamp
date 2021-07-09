@@ -10,18 +10,18 @@ dashedName: problem-104-pandigital-fibonacci-ends
 
 The Fibonacci sequence is defined by the recurrence relation:
 
-Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1.
+$F_n = F_{n − 1} + F_{n − 2}$, where $F_1 = 1$ and $F_2 = 1$
 
-It turns out that F541, which contains 113 digits, is the first Fibonacci number for which the last nine digits are 1-9 pandigital (contain all the digits 1 to 9, but not necessarily in order). And F2749, which contains 575 digits, is the first Fibonacci number for which the first nine digits are 1-9 pandigital.
+It turns out that $F_{541}$, which contains 113 digits, is the first Fibonacci number for which the last nine digits are 1 - 9 pandigital (contain all the digits 1 to 9, but not necessarily in order). And $F_{2749}$, which contains 575 digits, is the first Fibonacci number for which the first nine digits are 1 - 9 pandigital.
 
-Given that Fk is the first Fibonacci number for which the first nine digits AND the last nine digits are 1-9 pandigital, find k.
+Given that $F_k$ is the first Fibonacci number for which the first nine digits AND the last nine digits are 1 - 9 pandigital, find `k`.
 
 # --hints--
 
-`euler104()` should return 329468.
+`pandigitalFibonacciEnds()` should return `329468`.
 
 ```js
-assert.strictEqual(euler104(), 329468);
+assert.strictEqual(pandigitalFibonacciEnds(), 329468);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler104(), 329468);
 ## --seed-contents--
 
 ```js
-function euler104() {
+function pandigitalFibonacciEnds() {
 
   return true;
 }
 
-euler104();
+pandigitalFibonacciEnds();
 ```
 
 # --solutions--

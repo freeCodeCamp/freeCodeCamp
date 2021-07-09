@@ -1,8 +1,7 @@
 ---
 id: 587d7db2367417b2b2512b8a
 title: >-
-  Use Closure to Protect Properties Within an Object from Being Modified
-  Externally
+  Use Closure to Protect Properties Within an Object from Being Modified Externally
 challengeType: 1
 forumTopicId: 18234
 dashedName: >-

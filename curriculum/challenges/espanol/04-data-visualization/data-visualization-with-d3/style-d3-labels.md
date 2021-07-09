@@ -8,11 +8,11 @@ dashedName: style-d3-labels
 
 # --description--
 
-D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as "font-family" or "font-size".
+D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as `font-family` or `font-size`.
 
 # --instructions--
 
-Set the `font-size` of the `text` elements to 25px, and the color of the text to red.
+Set the `font-size` of the `text` elements to `25px`, and the color of the text to red.
 
 # --hints--
 
@@ -22,7 +22,7 @@ The labels should all have a `fill` color of red.
 assert($('text').css('fill') == 'rgb(255, 0, 0)');
 ```
 
-The labels should all have a `font-size` of 25 pixels.
+The labels should all have a `font-size` of `25` pixels.
 
 ```js
 assert($('text').css('font-size') == '25px');

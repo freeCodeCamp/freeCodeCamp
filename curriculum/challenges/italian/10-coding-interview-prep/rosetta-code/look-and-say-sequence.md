@@ -8,7 +8,7 @@ dashedName: look-and-say-sequence
 
 # --description--
 
-The [Look and say sequence](<https://en.wikipedia.org/wiki/Look and say sequence>) is a recursively defined sequence of numbers.
+The [Look and say sequence](https://en.wikipedia.org/wiki/Look and say sequence) is a recursively defined sequence of numbers.
 
 Sequence Definition
 

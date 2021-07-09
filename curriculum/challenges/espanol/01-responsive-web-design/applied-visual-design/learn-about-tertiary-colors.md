@@ -36,7 +36,7 @@ El elemento `div` con clase `cyan` debe tener un `background-color` cian.
 assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
 ```
 
-El elemento `div` con clase `raspberry` debe tener un `background-color` naranja.
+El elemento `div` con clase `raspberry` debe tener un `background-color` frambuesa.
 
 ```js
 assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');

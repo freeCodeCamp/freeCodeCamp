@@ -1,6 +1,6 @@
 ---
 id: acda2fb1324d9b0fa741e6b5
-title: Confirm the Ending
+title: Confirme o final
 challengeType: 5
 forumTopicId: 16006
 dashedName: confirm-the-ending
@@ -8,31 +8,31 @@ dashedName: confirm-the-ending
 
 # --description--
 
-Check if a string (first argument, `str`) ends with the given target string (second argument, `target`).
+Verifique se uma string (primeiro argumento, `str`) termina com a sequência de caracteres de destino fornecida (segundo argumento, `target`).
 
-This challenge *can* be solved with the `.endsWith()` method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+Este desafio *pode ser resolvido* com o método `.endsWith()`, que foi introduzido na ES2015. Mas para a finalidade deste desafio, gostaríamos que você usasse um dos métodos de substring JavaScript.
 
 # --hints--
 
-`confirmEnding("Bastian", "n")` should return `true`.
+`confirmEnding("Bastian","n")` deve retornar `true`.
 
 ```js
 assert(confirmEnding('Bastian', 'n') === true);
 ```
 
-`confirmEnding("Congratulation", "on")` should return `true`.
+`confirmEnding("Congratulation","on")` deve retornar `true`.
 
 ```js
 assert(confirmEnding('Congratulation', 'on') === true);
 ```
 
-`confirmEnding("Connor", "n")` should return `false`.
+`confirmEnding("Connor","n")` deve retornar `false`.
 
 ```js
 assert(confirmEnding('Connor', 'n') === false);
 ```
 
-`confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")` should return `false`.
+`confirmEnding("Walking on water and developing software from a specifaction are easy if both are frozen","specification")` deve retornar `false`.
 
 ```js
 assert(
@@ -43,31 +43,31 @@ assert(
 );
 ```
 
-`confirmEnding("He has to give me a new name", "name")` should return `true`.
+`confirmEnding("He has to give me a new name","name")` deve retornar `true`.
 
 ```js
 assert(confirmEnding('He has to give me a new name', 'name') === true);
 ```
 
-`confirmEnding("Open sesame", "same")` should return `true`.
+`confirmEnding("Open sesame","same")` deve retornar `true`.
 
 ```js
 assert(confirmEnding('Open sesame', 'same') === true);
 ```
 
-`confirmEnding("Open sesame", "sage")` should return `false`.
+`confirmEnding("Open sesame", "sage")` deve retornar `false`.
 
 ```js
 assert(confirmEnding('Open sesame', 'sage') === false);
 ```
 
-`confirmEnding("Open sesame", "game")` should return `false`.
+`confirmEnding("Open sesame","game")` deve retornar `false`.
 
 ```js
 assert(confirmEnding('Open sesame', 'game') === false);
 ```
 
-`confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")` should return `false`.
+`confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")` deve retornar `false`.
 
 ```js
 assert(
@@ -78,13 +78,13 @@ assert(
 );
 ```
 
-`confirmEnding("Abstraction", "action")` should return `true`.
+`confirmEnding("Abstraction", "action")` deve retornar `true`.
 
 ```js
 assert(confirmEnding('Abstraction', 'action') === true);
 ```
 
-Your code should not use the built-in method `.endsWith()` to solve the challenge.
+Seu código não deve usar o método embutido `.endsWith()` para resolver o desafio.
 
 ```js
 assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));

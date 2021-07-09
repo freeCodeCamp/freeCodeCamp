@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cd
-title: Accessing Nested Arrays
+title: Acessando Arrays Aninhados
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
@@ -9,9 +9,9 @@ dashedName: accessing-nested-arrays
 
 # --description--
 
-As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
+Como vimos em exemplos anteriores, objetos podem conter tanto objetos aninhados quanto arrays aninhados. Semelhante ao acesso de objetos aninhados, a notação de colchetes pode ser encadeada para se acessar arrays aninhados.
 
-Here is an example of how to access a nested array:
+Aqui está um exemplo de como se acessar um array aninhado:
 
 ```js
 var ourPets = [
@@ -36,21 +36,21 @@ ourPets[0].names[1];
 ourPets[1].names[0];
 ```
 
-`ourPets[0].names[1]` would be the string `Fluffy`, and `ourPets[1].names[0]` would be the string `Spot`.
+`ourPets[0].names[1]` seria a string `Fluffy` e `ourPets[1].names[0]` seria a string `Spot`.
 
 # --instructions--
 
-Using dot and bracket notation, set the variable `secondTree` to the second item in the `trees` list from the `myPlants` object.
+Usando a notação de ponto e de colchetes, defina a variável `secondTree` para o segundo item na lista de `trees` do objeto `myPlants`.
 
 # --hints--
 
-`secondTree` should equal the string `pine`.
+`secondTree` deve ser igual à string `pine`.
 
 ```js
 assert(secondTree === 'pine');
 ```
 
-Your code should use dot and bracket notation to access `myPlants`.
+Seu código deve usar notação de ponto e colchetes para acessar `myPlants`.
 
 ```js
 assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
