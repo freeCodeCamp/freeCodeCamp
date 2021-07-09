@@ -36,40 +36,38 @@ export default function ToggleButton({
     width: '20px'
   };
   return (
-    <>
-      <BSBG name={name} onChange={onChange} type='radio'>
-        <TB
-          bsSize='sm'
-          bsStyle='primary'
-          className={`toggle-${getActiveClass(value)}`}
-          disabled={value}
-          type='radio'
-          value={1}
-        >
-          {value ? (
-            <ToggleCheck style={checkIconStyle} />
-          ) : (
-            <Spacer style={checkIconStyle} />
-          )}
-          {onLabel}
-        </TB>
-        <TB
-          bsSize='sm'
-          bsStyle='primary'
-          className={`toggle-${getActiveClass(!value)}`}
-          disabled={!value}
-          type='radio'
-          value={2}
-        >
-          {offLabel}
-          {!value ? (
-            <ToggleCheck style={checkIconStyle} />
-          ) : (
-            <Spacer style={checkIconStyle} />
-          )}
-        </TB>
-      </BSBG>
-    </>
+    <BSBG name={name} onChange={onChange} type='radio'>
+      <TB
+        bsSize='sm'
+        bsStyle='primary'
+        className={`toggle-${getActiveClass(value)}`}
+        disabled={value}
+        type='radio'
+        value={1}
+      >
+        {value ? (
+          <ToggleCheck style={checkIconStyle} />
+        ) : (
+          <Spacer style={checkIconStyle} />
+        )}
+        {onLabel}
+      </TB>
+      <TB
+        bsSize='sm'
+        bsStyle='primary'
+        className={`toggle-${getActiveClass(!value)}`}
+        disabled={!value}
+        type='radio'
+        value={2}
+      >
+        {offLabel}
+        {!value ? (
+          <ToggleCheck style={checkIconStyle} />
+        ) : (
+          <Spacer style={checkIconStyle} />
+        )}
+      </TB>
+    </BSBG>
   );
 }
 
