@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
 import { first } from 'lodash-es';
@@ -83,82 +83,77 @@ class DesktopLayout extends Component {
       layoutState;
 
     return (
-      <Fragment>
-        <ReflexContainer className='desktop-layout' orientation='horizontal'>
-          {projectBasedChallenge && (
-            <ActionRow
-              switchDisplayTab={this.switchDisplayTab}
-              {...this.state}
-            />
-          )}
-          <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
-            <ReflexContainer orientation='vertical'>
-              {!projectBasedChallenge && (
-                <ReflexElement
-                  flex={instructionPane.flex}
-                  name='instructionPane'
-                  {...resizeProps}
-                >
-                  {instructions}
-                </ReflexElement>
-              )}
-              {!projectBasedChallenge && (
-                <ReflexSplitter propagate={true} {...resizeProps} />
-              )}
-
+      <ReflexContainer className='desktop-layout' orientation='horizontal'>
+        {projectBasedChallenge && (
+          <ActionRow switchDisplayTab={this.switchDisplayTab} {...this.state} />
+        )}
+        <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
+          <ReflexContainer orientation='vertical'>
+            {!projectBasedChallenge && (
               <ReflexElement
-                flex={editorPane.flex}
-                name='editorPane'
+                flex={instructionPane.flex}
+                name='instructionPane'
                 {...resizeProps}
               >
-                {challengeFile &&
-                  showUpcomingChanges &&
-                  !hasEditableBoundries && <EditorTabs />}
-                {challengeFile && (
-                  <ReflexContainer
-                    key={challengeFile.key}
-                    orientation='horizontal'
+                {instructions}
+              </ReflexElement>
+            )}
+            {!projectBasedChallenge && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
+
+            <ReflexElement
+              flex={editorPane.flex}
+              name='editorPane'
+              {...resizeProps}
+            >
+              {challengeFile &&
+                showUpcomingChanges &&
+                !hasEditableBoundries && <EditorTabs />}
+              {challengeFile && (
+                <ReflexContainer
+                  key={challengeFile.key}
+                  orientation='horizontal'
+                >
+                  <ReflexElement
+                    flex={codePane.flex}
+                    name='codePane'
+                    {...reflexProps}
+                    {...resizeProps}
                   >
+                    {editor}
+                  </ReflexElement>
+                  {isConsoleDisplayable && (
+                    <ReflexSplitter propagate={true} {...resizeProps} />
+                  )}
+                  {isConsoleDisplayable && (
                     <ReflexElement
-                      flex={codePane.flex}
-                      name='codePane'
+                      flex={testsPane.flex}
+                      name='testsPane'
                       {...reflexProps}
                       {...resizeProps}
                     >
-                      <Fragment>{editor}</Fragment>
+                      {testOutput}
                     </ReflexElement>
-                    {isConsoleDisplayable && (
-                      <ReflexSplitter propagate={true} {...resizeProps} />
-                    )}
-                    {isConsoleDisplayable && (
-                      <ReflexElement
-                        flex={testsPane.flex}
-                        name='testsPane'
-                        {...reflexProps}
-                        {...resizeProps}
-                      >
-                        {testOutput}
-                      </ReflexElement>
-                    )}
-                  </ReflexContainer>
-                )}
+                  )}
+                </ReflexContainer>
+              )}
+            </ReflexElement>
+            {isPreviewDisplayable && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
+            {isPreviewDisplayable && (
+              <ReflexElement
+                flex={previewPane.flex}
+                name='previewPane'
+                {...resizeProps}
+              >
+                {preview}
               </ReflexElement>
-              {isPreviewDisplayable && (
-                <ReflexSplitter propagate={true} {...resizeProps} />
-              )}
-              {isPreviewDisplayable && (
-                <ReflexElement
-                  flex={previewPane.flex}
-                  name='previewPane'
-                  {...resizeProps}
-                >
-                  {preview}
-                </ReflexElement>
-              )}
-            </ReflexContainer>
-          </ReflexElement>
-        </ReflexContainer>
-      </Fragment>
+            )}
+          </ReflexContainer>
+        </ReflexElement>
+      </ReflexContainer>
     );
   }
 }

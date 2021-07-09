@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -203,31 +203,29 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { isValidUsername, t, validating } = this.props;
 
     return (
-      <Fragment>
-        <form id='usernameSettings' onSubmit={this.handleSubmit}>
-          <FullWidthRow>
-            <FormGroup>
-              <ControlLabel htmlFor='username-settings'>
-                <strong>{t('settings.labels.username')}</strong>
-              </ControlLabel>
-              <FormControl
-                name='username-settings'
-                onChange={this.handleChange}
-                value={formValue}
-              />
-            </FormGroup>
-          </FullWidthRow>
-          {!isFormPristine &&
-            this.renderAlerts(validating, error, isValidUsername)}
-          <FullWidthRow>
-            <BlockSaveButton
-              disabled={
-                !(isValidUsername && valid && !isFormPristine) || submitClicked
-              }
+      <form id='usernameSettings' onSubmit={this.handleSubmit}>
+        <FullWidthRow>
+          <FormGroup>
+            <ControlLabel htmlFor='username-settings'>
+              <strong>{t('settings.labels.username')}</strong>
+            </ControlLabel>
+            <FormControl
+              name='username-settings'
+              onChange={this.handleChange}
+              value={formValue}
             />
-          </FullWidthRow>
-        </form>
-      </Fragment>
+          </FormGroup>
+        </FullWidthRow>
+        {!isFormPristine &&
+          this.renderAlerts(validating, error, isValidUsername)}
+        <FullWidthRow>
+          <BlockSaveButton
+            disabled={
+              !(isValidUsername && valid && !isFormPristine) || submitClicked
+            }
+          />
+        </FullWidthRow>
+      </form>
     );
   }
 }
