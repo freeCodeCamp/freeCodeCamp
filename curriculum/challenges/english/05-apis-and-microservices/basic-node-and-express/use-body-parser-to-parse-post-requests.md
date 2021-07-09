@@ -26,7 +26,7 @@ As you can see, the body is encoded like the query string. This is the default f
 
 # --instructions--
 
-Install the `body-parser` module in your `package.json`. Then, `require` it at the top of the file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: true})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
+Install the `body-parser` module in your `package.json`. Then, `require` it at the top of the file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass the function returned by the previous method call to `app.use()`. As usual, the middleware must be mounted before all the routes that depend on it.
 
 **Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing. 
 
