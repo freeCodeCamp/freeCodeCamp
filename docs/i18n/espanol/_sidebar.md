@@ -3,11 +3,12 @@
   - [Preguntas más frecuentes](FAQ.md)
 - **Contribución de Código**
   - [Configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
-  - [Abrir una pull request](how-to-open-a-pull-request.md)
-  - [Trabajar en los desafíos de código](how-to-work-on-coding-challenges.md)
-  - [Trabajar en los desafíos de video](how-to-help-with-video-challenges.md)
-  - [ Trabajar en el tema de noticias](how-to-work-on-the-news-theme.md)
-  - [Trabajar en el tema de docs](how-to-work-on-the-docs-theme.md)
+  - [Codebase best practices](codebase-best-practices.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
+  - [Work on the news theme](how-to-work-on-the-news-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
   - [Work on practice projects](how-to-work-on-practice-projects.md)
 - **Contribución a Traducción**
   - [Work on translating resources](how-to-translate-files.md)

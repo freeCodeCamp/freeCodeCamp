@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
@@ -19,7 +19,7 @@ export const Landing = ({ page = 'landing' }) => {
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>{t('metaTags:title')}</title>
       </Helmet>
@@ -35,7 +35,7 @@ export const Landing = ({ page = 'landing' }) => {
           <Certifications />
         </Grid>
       </main>
-    </Fragment>
+    </>
   );
 };
 
