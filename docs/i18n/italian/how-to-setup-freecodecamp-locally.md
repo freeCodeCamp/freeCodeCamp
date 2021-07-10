@@ -28,7 +28,7 @@ Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git
 
 > [!ATTENTION] Se hai una versione diversa, per favore installa la versione raccomandata. Possiamo supportare solo i problemi di installazione per le versioni consigliate. Vedi [risoluzione dei problemi](#troubleshooting) per i dettagli.
 
-If Node.js is already installed on your machine, run the following commands to validate the versions:
+Se Node.js è già installato sulla macchina, esegui i seguenti comandi per convalidare le versioni:
 
 ```console
 node -v
@@ -57,7 +57,7 @@ Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente 
 
 ## Esegui il fork del repository su GitHub
 
-[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
+Il [Forking](https://help.github.com/articles/about-forks/) è un passaggio nel quale fai una copia del repository principale di freeCodeCamp (noto anche come _repo_) su GitHub.
 
 Questo è essenziale, in quanto consente di lavorare sulla propria copia di freeCodeCamp su GitHub, o di scaricare (clonare) il tuo repository per lavorare localmente. Più tardi, potrai richiedere che le tue modifiche siano integrate (pull) nel repository principale dal tuo fork tramite una pull request (PR).
 
@@ -79,7 +79,7 @@ Questo è essenziale, in quanto consente di lavorare sulla propria copia di free
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Come fare il fork di freeCodeCamp su GitHub" />
 </details>
 
 ## Clona il tuo fork da GitHub
@@ -110,7 +110,7 @@ Nota: `--depth=1` crea un clone superficiale del fork, con la sola cronologia de
 
 Ora che hai scaricato una copia del fork, dovrai configurare un remote `upstream` che punti al repository genitore.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+[Come accennato poc'anzi](#fork-the-repository-on-github), il repository principale è chiamato repository `upstream`. Il tuo fork è chiamato repository `origin`.
 
 Hai bisogno di un riferimento dal tuo clone locale al repository `upstream` oltre che al repository `origin`. In questo modo potrai sincronizzare le modifiche dal repository principale senza bisogno di fare ripetuti fork e clonazioni.
 
@@ -248,14 +248,14 @@ Basta cliccare sul pulsante **"Preview Custom 404 Page"** per passare alla pagin
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Come accedere quando si lavora localmente" />
 </details>
 
 ## Apportare modifiche a livello locale
 
-You can now make changes to files and commit your changes to your local clone of your fork.
+Ora puoi apportare modifiche ai file e inviare le modifiche al clone locale del tuo fork.
 
-Follow these steps:
+Segui questi passaggi:
 
 1. Controlla di essere sul ramo `main`:
 
@@ -446,11 +446,11 @@ Follow these steps:
 
 ## Proporre una Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Dopo aver effettuato le modifiche, controlla qui [come aprire una Pull Request](how-to-open-a-pull-request.md).
 
 ## Comandi rapidi
 
-A quick reference to the commands that you will need when working locally.
+Un rapido riferimento ai comandi di cui avrai bisogno quando lavorerai localmente.
 
 | comando                                                        | descrizione                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -459,12 +459,12 @@ A quick reference to the commands that you will need when working locally.
 | `npm run develop`                                              | Avvia il server API freeCodeCamp e le applicazioni client.                          |
 | `npm run storybook`                                            | Esegui Storybook per sviluppo dei componenti di library.                            |
 | `npm test`                                                     | Esegui tutti i test JS del sistema inclusi client, server, link e test delle sfide. |
-| `npm run test:client`                                          | Esegui la test suite del client.                                                    |
+| `npm run test-client`                                          | Esegui la test suite del client.                                                    |
 | `npm run test:curriculum`                                      | Esegui la test suite del curriculum.                                                |
 | `npm run test:curriculum --block='Basic HTML and HTML5'`       | Esegui i test di uno specifico blocco.                                              |
 | `npm run test:curriculum --superblock='responsive-web-design'` | Esegui i test di uno specifico superblocco.                                         |
 | `npm run test-curriculum-full-output`                          | Esegui la suite di test del curriculum, senza arrestarsi dopo il primo errore       |
-| `npm run test:server`                                          | Esegui la suite di test del server.                                                 |
+| `npm run test-server`                                          | Esegui la suite di test del server.                                                 |
 | `npm run e2e`                                                  | Esegui i test di Cypress end to end.                                                |
 | `npm run clean`                                                | Disistalla tutte le dipendenze e pulisce la cache.                                  |
 
@@ -472,11 +472,11 @@ A quick reference to the commands that you will need when working locally.
 
 ### Problemi con l'installazione dei prerequisiti raccomandati
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
+Sviluppiamo regolarmente sui sistemi operativi più recenti o più popolari come macOS 10.15 o successivi, Ubuntu 18.04, e Windows 10 con WSL2.
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+Ti raccomandiamo di fare ricerche sui tuoi problemi specifici usando risorse come Google, Stack Overflow, e Stack Exchange. C'è una buona probabilità che qualcuno abbia incontrato lo stesso problema e ci sia già una risposta alla tua domanda specifica.
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+Se sei su un sistema operativo diverso e/o continui ad avere dei problemi, visita [ottenere aiuto](#getting-help).
 
 > [!WARNING]
 > 
@@ -484,7 +484,7 @@ If you are on a different OS and/or are still running into issues, see [getting 
 
 ### Problemi con UI, Font, errori di build, ecc.
 
-If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
+Se incontri problemi con l'interfaccia utente, i caratteri o vedi errori di compilazione, potrebbe essere utile una pulizia:
 
 ```console
 npm run clean
@@ -493,17 +493,17 @@ npm run seed
 npm run develop
 ```
 
-OR
+O
 
-Use the shortcut
+Usa il collegamento
 
 ```
 npm run clean-and-develop
 ```
 
-If you continue to face issues with the build, cleaning up the workspace is recommend.
+Se continui ad incontrare problemi con la compilazione, ti consigliamo di ripulire lo spazio di lavoro.
 
-Use `git clean` in interactive mode:
+Usa `git clean` in modalità interattiva:
 
 ```
 git clean -ifdX
@@ -511,18 +511,18 @@ git clean -ifdX
 
 <details>
    <summary>
-      How to clean git untracked files (screenshot)
+      Come pulire i file git non tracciati (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Come pulire i file git non tracciati" />
 </details>
 
 ### Problemi con API, logic, invio delle sfide, ecc.
 
-If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
+Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che il problema sarà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia usata da un programma diverso.
 
-**On Linux / macOS / WSL on Windows - From Terminal:**
+**Su Linux / macOS / WSL su Windows - dal terminale:**
 
 ```console
 netstat -a | grep "3000"
@@ -530,7 +530,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**On Windows - From Elevated PowerShell:**
+**Su Windows - da PowerShell con privilegi elevati:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -540,12 +540,12 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ### Problemi nell'installazione delle dipendenze
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscono di accedere alle risorse.
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
+La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
 
 ## Ottenere Aiuto
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+Potrebbe esserci un errore nella console del browser o in Bash / Terminal / Linea di comando che ti aiuterà a identificare il problema. Fornisci questo messaggio di errore nella descrizione del problema in modo che gli altri possano identificalo più facilmente e aiutarti a risolverlo.
