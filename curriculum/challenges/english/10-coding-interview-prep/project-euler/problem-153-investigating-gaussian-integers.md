@@ -54,7 +54,7 @@ For divisors with positive real parts, then, we have: $\displaystyle\sum_{n=1}^5
 
 For $1 ≤ n ≤ {10}^5$, $\displaystyle\sum_{n = 1}^{{10}^5} s(n) = 17924657155$.
 
-What is $\displaystyle\sum s(n)$ for $1 ≤ n ≤ {10}^8$?
+What is $\displaystyle\sum_{n=1}^{{10}^8} s(n)$?
 
 # --hints--
 
