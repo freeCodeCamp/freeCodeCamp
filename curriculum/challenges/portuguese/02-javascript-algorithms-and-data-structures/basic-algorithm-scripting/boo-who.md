@@ -1,6 +1,6 @@
 ---
 id: a77dbc43c33f39daa4429b4f
-title: Boo who
+title: Verdadeiro ou falso
 challengeType: 5
 forumTopicId: 16000
 dashedName: boo-who
@@ -8,67 +8,67 @@ dashedName: boo-who
 
 # --description--
 
-Check if a value is classified as a boolean primitive. Return `true` or `false`.
+Verifica se um valor é classificado como booleano primitivo. Retorna `true` ou `false`.
 
-Boolean primitives are `true` and `false`.
+Primitivas booleanas são `true` e `false`.
 
 # --hints--
 
-`booWho(true)` should return `true`.
+`booWho(true)` deve retornar `true`.
 
 ```js
 assert.strictEqual(booWho(true), true);
 ```
 
-`booWho(false)` should return `true`.
+`booWho(false)` deve retornar `true`.
 
 ```js
 assert.strictEqual(booWho(false), true);
 ```
 
-`booWho([1, 2, 3])` should return `false`.
+`booWho([1,2,3])` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho([1, 2, 3]), false);
 ```
 
-`booWho([].slice)` should return `false`.
+`booWho([].slice)` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho([].slice), false);
 ```
 
-`booWho({ "a": 1 })` should return `false`.
+`booWho({"a": 1})` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho({ a: 1 }), false);
 ```
 
-`booWho(1)` should return `false`.
+`booWho(1)` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho(1), false);
 ```
 
-`booWho(NaN)` should return `false`.
+`booWho(NaN)` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho(NaN), false);
 ```
 
-`booWho("a")` should return `false`.
+`booWho("a")` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho('a'), false);
 ```
 
-`booWho("true")` should return `false`.
+`booWho("true")` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho('true'), false);
 ```
 
-`booWho("false")` should return `false`.
+`booWho("false")` deve retornar `false`.
 
 ```js
 assert.strictEqual(booWho('false'), false);

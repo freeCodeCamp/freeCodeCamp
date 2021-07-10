@@ -8,7 +8,7 @@ dashedName: gamma-function
 
 # --description--
 
-Implement one algorithm (or more) to compute the [Gamma](<https://en.wikipedia.org/wiki/Gamma function>) ($\\Gamma$) function (in the real field only).
+Implement one algorithm (or more) to compute the [Gamma](https://en.wikipedia.org/wiki/Gamma function) ($\\Gamma$) function (in the real field only).
 
 The Gamma function can be defined as:
 

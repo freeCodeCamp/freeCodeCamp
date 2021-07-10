@@ -20,6 +20,8 @@ Let's create the basic functionality of a hash table. We've created a naive hash
 
 Be sure to write your code to account for collisions!
 
+**Note:** The `remove` method tests won't pass until the `add` and `lookup` methods are correctly implemented.
+
 # --hints--
 
 The HashTable data structure should exist.
@@ -50,20 +52,6 @@ assert(
 );
 ```
 
-The HashTable should have a remove method.
-
-```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    return typeof test.remove === 'function';
-  })()
-);
-```
-
 The HashTable should have a lookup method.
 
 ```js
@@ -74,6 +62,20 @@ assert(
       test = new HashTable();
     }
     return typeof test.lookup === 'function';
+  })()
+);
+```
+
+The HashTable should have a remove method.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof HashTable !== 'undefined') {
+      test = new HashTable();
+    }
+    return typeof test.remove === 'function';
   })()
 );
 ```
@@ -103,10 +105,36 @@ assert(
     if (typeof HashTable !== 'undefined') {
       test = new HashTable();
     }
-    test.add = addMethodSolution;
     test.add('key', 'value');
+
     test.remove('key');
     return !test.collection.hasOwnProperty(hashValue);
+  })()
+);
+```
+
+The remove method should only remove the correct key value pair.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    var hashValue = hash('key');
+    if (typeof HashTable !== 'undefined') {
+      test = new HashTable();
+    }
+    test.add('key', 'value');
+    test.add('yek', 'value');
+    test.add('altKey', 'value');
+
+    test.remove('yek');
+    if (test.lookup('yek') || !test.lookup('key') || !test.lookup('altKey')) {
+      return false;
+    }
+
+    test.remove('key');
+
+    return !test.collection.hasOwnProperty(hashValue) && test.lookup('altKey');
   })()
 );
 ```
@@ -165,14 +193,6 @@ var hash = string => {
   }
   return hash;
 };
-
-var addMethodSolution = function(key, val) {
-    var theHash = hash(key);
-    if (!this.collection.hasOwnProperty(theHash)) {
-      this.collection[theHash] = {};
-    }
-    this.collection[theHash][key] = val;
-}
 ```
 
 ## --seed-contents--

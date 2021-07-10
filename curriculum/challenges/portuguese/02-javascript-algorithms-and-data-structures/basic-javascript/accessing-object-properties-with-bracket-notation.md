@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: Accessing Object Properties with Bracket Notation
+title: Acessando Propriedades de Objeto com Notação de Colchetes
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
@@ -9,11 +9,11 @@ dashedName: accessing-object-properties-with-bracket-notation
 
 # --description--
 
-The second way to access the properties of an object is bracket notation (`[]`). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+A segunda forma para acessar as propriedades de um objeto é a notação de colchetes (`[]`). Se a propriedade do objeto que você está tentando acessar possui um espaço no seu nome, você irá precisar usar a notação de colchetes.
 
-However, you can still use bracket notation on object properties without spaces.
+No entanto, você ainda pode usar a notação de colchetes nas propriedades dos objetos sem espaços.
 
-Here is a sample of using bracket notation to read an object's property:
+Aqui está um exemplo usando a notação de colchetes para ler uma propriedade de um objeto:
 
 ```js
 var myObj = {
@@ -26,41 +26,41 @@ myObj['More Space'];
 myObj["NoSpace"];
 ```
 
-`myObj["Space Name"]` would be the string `Kirk`, `myObj['More Space']` would be the string `Spock`, and `myObj["NoSpace"]` would be the string `USS Enterprise`.
+`myObj["Space Name"]` seria a string `Kirk`, `myObj['More Space']` seria a string `Spock` e `myObj["NoSpace"]` seria a string `USS Enterprise`.
 
-Note that property names with spaces in them must be in quotes (single or double).
+Note que os nomes das propriedades com espaços neles precisam estar entre aspas (simples ou duplas).
 
 # --instructions--
 
-Read the values of the properties `an entree` and `the drink` of `testObj` using bracket notation and assign them to `entreeValue` and `drinkValue` respectively.
+Leia os valores das propriedades `an entree` e `the drink` de `testObj` usando notação de colchetes e atribua-os a `entreeValue` e `drinkValue` respectivamente.
 
 # --hints--
 
-`entreeValue` should be a string
+`entreeValue` devem ser uma string
 
 ```js
 assert(typeof entreeValue === 'string');
 ```
 
-The value of `entreeValue` should be the string `hamburger`
+O valor de `entreeValue` deve ser a string `hamburger`
 
 ```js
 assert(entreeValue === 'hamburger');
 ```
 
-`drinkValue` should be a string
+`drinkValue` deve ser uma string
 
 ```js
 assert(typeof drinkValue === 'string');
 ```
 
-The value of `drinkValue` should be the string `water`
+O valor de `drinkValue` deve ser a string `water`
 
 ```js
 assert(drinkValue === 'water');
 ```
 
-You should use bracket notation twice
+Você deve usar a notação de colchetes duas vezes
 
 ```js
 assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);

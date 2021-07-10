@@ -16,7 +16,7 @@ The `MyForm` component is set up with an empty `form` with a submit handler. The
 
 We've added a button which submits the form. You can see it has the `type` set to `submit` indicating it is the button controlling the form. Add the `input` element in the `form` and set its `value` and `onChange()` attributes like the last challenge. You should then complete the `handleSubmit` method so that it sets the component state property `submit` to the current input value in the local `state`.
 
-**Note:** You also must call `event.preventDefault()` in the submit handler, to prevent the default form submit behavior which will refresh the web page.
+**Note:** You also must call `event.preventDefault()` in the submit handler, to prevent the default form submit behavior which will refresh the web page. For camper convenience, the default behavior has been disabled here to prevent refreshes from resetting challenge code.
 
 Finally, create an `h1` tag after the `form` which renders the `submit` value from the component's `state`. You can then type in the form and click the button (or press enter), and you should see your input rendered to the page.
 
@@ -98,6 +98,25 @@ Submitting the form should run `handleSubmit` which should set the `submit` prop
 })();
 ```
 
+`handleSubmit` should call `event.preventDefault`
+
+```js
+const handleSubmit = MyForm.prototype.handleSubmit.toString();
+const allMatches = handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g) ?? [];
+const blockCommented = handleSubmit.match(
+  /\/\*.*?\bevent\.preventDefault\(\s*?\).*?\*\//gs
+);
+const lineCommented = handleSubmit.match(
+  /\/\/.*?\bevent\.preventDefault\(\s*?\)/g
+);
+const commentedMatches = [...(blockCommented ?? []), ...(lineCommented ?? [])];
+
+assert(
+  // At least one event.preventDefault() call exists and is not commented out
+  allMatches.length > commentedMatches.length
+);
+```
+
 The `h1` header should render the value of the `submit` field from the component's state.
 
 ```js
@@ -149,7 +168,7 @@ class MyForm extends React.Component {
   }
   handleSubmit(event) {
     // Change code below this line
-    
+
     // Change code above this line
   }
   render() {

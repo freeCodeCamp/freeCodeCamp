@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b1
-title: Compound Assignment With Augmented Multiplication
+title: Atribuição Composta Com Multiplicação Aumentada
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
@@ -9,13 +9,13 @@ dashedName: compound-assignment-with-augmented-multiplication
 
 # --description--
 
-The `*=` operator multiplies a variable by a number.
+O operador `*=` multiplica uma variável por um número.
 
 ```js
 myVar = myVar * 5;
 ```
 
-will multiply `myVar` by `5`. This can be rewritten as:
+irá multiplicar `myVar` por `5`. Isto pode ser reescrito como:
 
 ```js
 myVar *= 5;
@@ -23,35 +23,35 @@ myVar *= 5;
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `*=` operator.
+Converta as atribuições para `a`, `b` e `c` para usar o operador `*=`.
 
 # --hints--
 
-`a` should equal `25`.
+`a` deve ser igual a `25`.
 
 ```js
 assert(a === 25);
 ```
 
-`b` should equal `36`.
+`b` deve ser igual a `36`.
 
 ```js
 assert(b === 36);
 ```
 
-`c` should equal `46`.
+`c` deve ser igual a `46`.
 
 ```js
 assert(c === 46);
 ```
 
-You should use the `*=` operator for each variable.
+Você deve usar o operador `*=` para cada variável.
 
 ```js
 assert(code.match(/\*=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+Você não deve modificar o código acima do comentário especificado.
 
 ```js
 assert(

@@ -8,7 +8,7 @@ dashedName: fractran
 
 # --description--
 
-[FRACTRAN](https://en.wikipedia.org/wiki/FRACTRAN "wp: FRACTRAN") is a Turing-complete esoteric programming language invented by the mathematician [John Horton Conway](<https://en.wikipedia.org/wiki/John Horton Conway> "wp: John Horton Conway").
+[FRACTRAN](https://en.wikipedia.org/wiki/FRACTRAN "wp: FRACTRAN") is a Turing-complete esoteric programming language invented by the mathematician [John Horton Conway](https://en.wikipedia.org/wiki/John Horton Conway "wp: John Horton Conway").
 
 A FRACTRAN program is an ordered list of positive fractions $P = (f_1, f_2, \\ldots, f_m)$, together with an initial positive integer input $n$.
 

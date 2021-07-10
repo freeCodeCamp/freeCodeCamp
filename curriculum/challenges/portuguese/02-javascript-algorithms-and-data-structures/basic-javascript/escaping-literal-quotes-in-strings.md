@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b5
-title: Escaping Literal Quotes in Strings
+title: Escapando Aspas Literais em Strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvgSr'
 forumTopicId: 17568
@@ -9,15 +9,15 @@ dashedName: escaping-literal-quotes-in-strings
 
 # --description--
 
-When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: `"` or `'` inside of your string?
+Quando você estiver definindo uma sequência de caracteres você deve iniciar e terminar com uma aspa simples ou dupla. O que acontece quando você precisa de uma cotação literal: `"` ou `'` dentro de sua string?
 
-In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (`\`) in front of the quote.
+Em JavaScript, você pode <dfn>escapar</dfn> uma aspas para não ser considerada como o fim de uma string ao colocar a <dfn>barra invertida</dfn> (`\`) na frente da aspa.
 
 ```js
 var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
 ```
 
-This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:
+Isso sinaliza ao JavaScript que a seguinte aspa não é o fim de uma string, mas ao invés disso, deve aparecer dentro da string. Então, se você fosse imprimir isso no console, você obteria:
 
 ```js
 Alan said, "Peter is learning JavaScript".
@@ -25,7 +25,7 @@ Alan said, "Peter is learning JavaScript".
 
 # --instructions--
 
-Use <dfn>backslashes</dfn> to assign a string to the `myStr` variable so that if you were to print it to the console, you would see:
+Use <dfn>barras invertidas</dfn> para atribuir a string à variável `myStr` para que se você fosse imprimi-la no console, você veria:
 
 ```js
 I am a "double quoted" string inside "double quotes".
@@ -33,13 +33,13 @@ I am a "double quoted" string inside "double quotes".
 
 # --hints--
 
-You should use two double quotes (`"`) and four escaped double quotes (`\"`).
+Você deve usar aspas duplas (`"`) e quatro aspas duplas escapadas (`\"`).
 
 ```js
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-Variable myStr should contain the string: `I am a "double quoted" string inside "double quotes".`
+Variável myStr deve conter a string: `I am a "double quoted" string inside "double quotes".`
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));

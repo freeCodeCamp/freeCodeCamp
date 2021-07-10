@@ -22,60 +22,59 @@ The `y` coordinate that is `y = heightOfSVG - heightOfBar` would place the bars 
 
 Change the callback function for the `y` attribute to set the bars right-side-up. Remember that the `height` of the bar is 3 times the data value `d`.
 
-**Note**  
-In general, the relationship is `y = h - m * d`, where `m` is the constant that scales the data points.
+**Note:** In general, the relationship is `y = h - m * d`, where `m` is the constant that scales the data points.
 
 # --hints--
 
-The first `rect` should have a `y` value of 64.
+The first `rect` should have a `y` value of `64`.
 
 ```js
 assert($('rect').eq(0).attr('y') == h - dataset[0] * 3);
 ```
 
-The second `rect` should have a `y` value of 7.
+The second `rect` should have a `y` value of `7`.
 
 ```js
 assert($('rect').eq(1).attr('y') == h - dataset[1] * 3);
 ```
 
-The third `rect` should have a `y` value of 34.
+The third `rect` should have a `y` value of `34`.
 
 ```js
 assert($('rect').eq(2).attr('y') == h - dataset[2] * 3);
 ```
 
-The fourth `rect` should have a `y` value of 49.
+The fourth `rect` should have a `y` value of `49`.
 
 ```js
 assert($('rect').eq(3).attr('y') == h - dataset[3] * 3);
 ```
 
-The fifth `rect` should have a `y` value of 25.
+The fifth `rect` should have a `y` value of `25`.
 
 ```js
 assert($('rect').eq(4).attr('y') == h - dataset[4] * 3);
 ```
 
-The sixth `rect` should have a `y` value of 46.
+The sixth `rect` should have a `y` value of `46`.
 
 ```js
 assert($('rect').eq(5).attr('y') == h - dataset[5] * 3);
 ```
 
-The seventh `rect` should have a `y` value of 13.
+The seventh `rect` should have a `y` value of `13`.
 
 ```js
 assert($('rect').eq(6).attr('y') == h - dataset[6] * 3);
 ```
 
-The eighth `rect` should have a `y` value of 58.
+The eighth `rect` should have a `y` value of `58`.
 
 ```js
 assert($('rect').eq(7).attr('y') == h - dataset[7] * 3);
 ```
 
-The ninth `rect` should have a `y` value of 73.
+The ninth `rect` should have a `y` value of `73`.
 
 ```js
 assert($('rect').eq(8).attr('y') == h - dataset[8] * 3);

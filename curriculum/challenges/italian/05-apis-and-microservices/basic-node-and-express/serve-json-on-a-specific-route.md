@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf1
-title: Serve JSON on a Specific Route
+title: Servire un JSON su una rotta specifica
 challengeType: 2
 forumTopicId: 301517
 dashedName: serve-json-on-a-specific-route
@@ -8,17 +8,17 @@ dashedName: serve-json-on-a-specific-route
 
 # --description--
 
-While an HTML server serves HTML, an API serves data. A <dfn>REST</dfn> (REpresentational State Transfer) API allows data exchange in a simple way, without the need for clients to know any detail about the server. The client only needs to know where the resource is (the URL), and the action it wants to perform on it (the verb). The GET verb is used when you are fetching some information, without modifying anything. These days, the preferred data format for moving information around the web is JSON. Simply put, JSON is a convenient way to represent a JavaScript object as a string, so it can be easily transmitted.
+Mentre un server HTML serve HTML, un'API serve dati. Un'API <dfn>REST</dfn> (REpresentational State Transfer) consente lo scambio di dati in modo semplice, senza la necessità per i client di conoscere alcun dettaglio sul server. Il client deve solo sapere dove è la risorsa (l'URL), e l'azione che vuole eseguire su di essa (il verbo). Il verbo GET viene utilizzato quando stai recuperando alcune informazioni, senza modificare nulla. Al giorno d'oggi, il formato dati preferito per trasferire informazioni sul Web è JSON. In poche parole, JSON è un modo conveniente per rappresentare un oggetto JavaScript come una stringa, in modo che possa essere facilmente trasmesso.
 
-Let's create a simple API by creating a route that responds with JSON at the path `/json`. You can do it as usual, with the `app.get()` method. Inside the route handler, use the method `res.json()`, passing in an object as an argument. This method closes the request-response loop, returning the data. Behind the scenes, it converts a valid JavaScript object into a string, then sets the appropriate headers to tell your browser that you are serving JSON, and sends the data back. A valid object has the usual structure `{key: data}`. `data` can be a number, a string, a nested object or an array. `data` can also be a variable or the result of a function call, in which case it will be evaluated before being converted into a string.
+Creiamo una semplice API creando una rotta (route) che risponda con JSON al percorso `/json`. Puoi farlo come al solito, con il metodo `app.get()`. All'interno del gestore della rotta, usa il metodo `res.json()`, passandogli un oggetto come argomento. Questo metodo chiude il ciclo richiesta-risposta, restituendo i dati. Dietro le quinte, converte un oggetto JavaScript valido in una stringa, poi imposta le intestazioni appropriate per dire al tuo browser che stai servendo JSON, e restituisce i dati. Un oggetto valido ha la solita struttura `{key: data}`. `data` può essere un numero, una stringa, un oggetto annidato o un array. `data` può anche essere una variabile o il risultato di una chiamata di funzione, nel qual caso sarà valutato prima di essere convertito in una stringa.
 
 # --instructions--
 
-Serve the object `{"message": "Hello json"}` as a response, in JSON format, to GET requests to the `/json` route. Then point your browser to `your-app-url/json`, you should see the message on the screen.
+Servi l'oggetto `{"message": "Hello json"}` come risposta, in formato JSON, alle richieste GET per il percorso `/json`. Quindi punta il tuo browser a `your-app-url/json`, dovresti vedere il messaggio sullo schermo.
 
 # --hints--
 
-The endpoint `/json` should serve the json object `{"message": "Hello json"}`
+L'endpoint `/json` dovrebbe servire l'oggetto json `{"message": "Hello json"}`
 
 ```js
 (getUserInput) =>

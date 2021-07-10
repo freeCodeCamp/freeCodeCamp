@@ -36,7 +36,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 **User Story #11:** My tooltip should have a `data-value` property that corresponds to the `data-value` of the active area.
 
-For this project you can use any of the following datasets:  
+For this project you can use any of the following datasets:
 
 -   **Kickstarter Pledges:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json`
 -   **Movie Sales:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`

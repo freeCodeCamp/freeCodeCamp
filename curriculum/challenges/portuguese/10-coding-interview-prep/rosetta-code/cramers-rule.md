@@ -8,7 +8,7 @@ dashedName: cramers-rule
 
 # --description--
 
-In [linear algebra](<https://en.wikipedia.org/wiki/linear algebra> "wp: linear algebra"), [Cramer's rule](<https://en.wikipedia.org/wiki/Cramer's rule> "wp: Cramer's rule") is an explicit formula for the solution of a [system of linear equations](<https://en.wikipedia.org/wiki/system of linear equations> "wp: system of linear equations") with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.
+In [linear algebra](https://en.wikipedia.org/wiki/linear algebra "wp: linear algebra"), [Cramer's rule](https://en.wikipedia.org/wiki/Cramer's rule "wp: Cramer's rule") is an explicit formula for the solution of a [system of linear equations](https://en.wikipedia.org/wiki/system of linear equations "wp: system of linear equations") with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.
 
 Given
 
