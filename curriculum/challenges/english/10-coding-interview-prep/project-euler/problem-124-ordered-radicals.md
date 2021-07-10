@@ -112,7 +112,7 @@ If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and s
   </table>
 </div><br>
 
-Let $E(k)$ be the $k$th element in the sorted n column; for example, $E(4) = 8$ and $E(6) = 9$. If $rad(n)$ is sorted for $1 ≤ n ≤ 100000$, find $E(10000)$.
+Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8$ and $E(6) = 9$. If $rad(n)$ is sorted for $1 ≤ n ≤ 100000$, find $E(10000)$.
 
 # --hints--
 

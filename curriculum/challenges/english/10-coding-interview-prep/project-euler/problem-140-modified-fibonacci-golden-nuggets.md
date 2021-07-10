@@ -12,7 +12,7 @@ Consider the infinite polynomial series $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdot
 
 For this problem we shall be concerned with values of $x$ for which $A_G(x)$ is a positive integer.
 
-The corresponding values of x for the first five natural numbers are shown below.
+The corresponding values of $x$ for the first five natural numbers are shown below.
 
 | $x$                         | $A_G(x)$ |
 |-----------------------------|----------|
