@@ -32,9 +32,9 @@ $$\begin{align}
   & t_n = s_n (\text{modulo}\\; 500) \\\\
 \end{align}$$
 
-To create each line segment, we use four consecutive numbers tn. That is, the first line segment is given by:
+To create each line segment, we use four consecutive numbers $t_n$. That is, the first line segment is given by:
 
-(t1, t2) to (t3, t4)
+($_t$1, $t_2$) to ($t_3$, $t_4$)
 
 The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27, 144) to (12, 232).
 

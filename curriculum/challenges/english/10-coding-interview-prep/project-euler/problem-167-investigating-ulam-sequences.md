@@ -8,7 +8,7 @@ dashedName: problem-167-investigating-ulam-sequences
 
 # --description--
 
-For two positive integers a and b, the Ulam sequence $U(a,b)$ is defined by ${U{(a,b)}\_1} = a$, ${U{(a,b)}\_2} = b$ and for $k > 2$, ${U{(a,b)}\_k}$ is the smallest integer greater than ${U{(a,b)}\_{(k-1)}}$ which can be written in exactly one way as the sum of two distinct previous members of $U(a,b)$.
+For two positive integers $a$ and $b$, the Ulam sequence $U(a,b)$ is defined by ${U{(a,b)}\_1} = a$, ${U{(a,b)}\_2} = b$ and for $k > 2$, ${U{(a,b)}\_k}$ is the smallest integer greater than ${U{(a,b)}\_{(k-1)}}$ which can be written in exactly one way as the sum of two distinct previous members of $U(a,b)$.
 
 For example, the sequence $U(1,2)$ begins with
 

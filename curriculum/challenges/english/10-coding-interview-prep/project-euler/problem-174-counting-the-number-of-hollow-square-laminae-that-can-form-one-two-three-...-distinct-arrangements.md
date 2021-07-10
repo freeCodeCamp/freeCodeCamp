@@ -17,7 +17,7 @@ Given eight tiles it is possible to form a lamina in only one way: 3x3 square wi
 
 <img class="img-responsive center-block" alt="two square lamina with holes 2x2 and 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;">
 
-If t represents the number of tiles used, we shall say that $t = 8$ is type $L(1)$ and $t = 32$ is type $L(2)$.
+If $t$ represents the number of tiles used, we shall say that $t = 8$ is type $L(1)$ and $t = 32$ is type $L(2)$.
 
 Let $N(n)$ be the number of $t ≤ 1000000$ such that $t$ is type $L(n)$; for example, $N(15) = 832$.
 
