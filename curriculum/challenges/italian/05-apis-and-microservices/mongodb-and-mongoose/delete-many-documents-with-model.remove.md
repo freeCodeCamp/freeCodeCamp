@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c11
-title: Delete Many Documents with model.remove()
+title: Eliminare molti documenti con model.remove()
 challengeType: 2
 forumTopicId: 301538
 dashedName: delete-many-documents-with-model-remove
@@ -8,17 +8,17 @@ dashedName: delete-many-documents-with-model-remove
 
 # --description--
 
-`Model.remove()` is useful to delete all the documents matching given criteria.
+`Model.remove()` è utile per eliminare tutti i documenti corrispondenti ai criteri indicati.
 
 # --instructions--
 
-Modify the `removeManyPeople` function to delete all the people whose name is within the variable `nameToRemove`, using `Model.remove()`. Pass it to a query document with the `name` field set, and a callback.
+Modifica la funzione `removeManyPeople` per eliminare tutte le persone il cui nome è all'interno della variabile `nameToRemove`, usando `Model.remove()`. Passalo a un documento di query con il campo `name` impostato e una callback.
 
-**Note:** The `Model.remove()` doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the `done()` callback, since we use it in tests.
+**Nota:** `Model.remove()` non restituisce il documento eliminato, ma un oggetto JSON contenente l'esito dell'operazione e il numero di elementi interessati. Non dimenticate di passarlo alla callback `done()`, dal momento che lo utilizzeremo nei test.
 
 # --hints--
 
-Deleting many items at once should succeed
+L'eliminazione di molti oggetti contemporaneamente dovrebbe avere successo
 
 ```js
 (getUserInput) =>

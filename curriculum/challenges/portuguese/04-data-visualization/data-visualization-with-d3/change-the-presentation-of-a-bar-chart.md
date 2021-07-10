@@ -114,7 +114,7 @@ assert(
     height: 100px;
     /* Add your code below this line */
 
-    
+
     /* Add your code above this line */
     display: inline-block;
     background-color: blue;

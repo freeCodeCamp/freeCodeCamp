@@ -42,7 +42,7 @@ Currently, there is no way of updating the `visibility` property in the componen
 
 Finally, click the button to see the conditional rendering of the component based on its `state`.
 
-**Hint:** Don't forget to bind the `this` keyword to the method in the constructor!
+**Hint:** Don't forget to bind the `this` keyword to the method in the `constructor`!
 
 # --hints--
 

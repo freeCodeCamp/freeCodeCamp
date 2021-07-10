@@ -10,7 +10,7 @@ dashedName: create-reusable-css-with-mixins
 
 In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet.
 
-Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider "box-shadow":
+Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider `box-shadow`:
 
 ```scss
 div {
@@ -42,7 +42,7 @@ div {
 
 # --instructions--
 
-Write a mixin for `border-radius` and give it a `$radius` parameter. It should use all the vendor prefixes from the example. Then use the `border-radius` mixin to give the `#awesome` element a border radius of 15px.
+Write a mixin for `border-radius` and give it a `$radius` parameter. It should use all the vendor prefixes from the example. Then use the `border-radius` mixin to give the `#awesome` element a border radius of `15px`.
 
 # --hints--
 
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-Your code should call the `border-radius mixin` using the `@include` keyword, setting it to 15px.
+Your code should call the `border-radius mixin` using the `@include` keyword, setting it to `15px`.
 
 ```js
 assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));

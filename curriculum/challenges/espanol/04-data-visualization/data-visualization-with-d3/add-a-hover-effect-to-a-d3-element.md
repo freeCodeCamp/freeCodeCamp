@@ -21,7 +21,7 @@ Use the `attr()` method to add a class of `bar` to all the `rect` elements. This
 Your `rect` elements should have a class of `bar`.
 
 ```js
-assert($('rect').attr('class') == 'bar');
+assert($('rect').attr('class').trim().split(/\s+/g).includes('bar'));
 ```
 
 # --seed--

@@ -40,7 +40,7 @@ assert(receivedData('data').type === RECEIVED_DATA);
 assert(typeof asyncDataReducer === 'function');
 ```
 
-Dispatching the requestingData action creator should update the store `state` property of fetching to `true`.
+Dispatching the `requestingData` action creator should update the store `state` property of fetching to `true`.
 
 ```js
 assert(

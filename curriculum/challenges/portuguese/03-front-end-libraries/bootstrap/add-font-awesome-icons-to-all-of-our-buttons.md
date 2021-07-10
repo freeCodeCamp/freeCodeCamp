@@ -4,7 +4,8 @@ title: Add Font Awesome Icons to all of our Buttons
 challengeType: 0
 forumTopicId: 16637
 required:
-  - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
+  - 
+    link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 dashedName: add-font-awesome-icons-to-all-of-our-buttons
 ---

@@ -12,7 +12,7 @@ Promises are most useful when you have a process that takes an unknown amount of
 
 ```js
 myPromise.then(result => {
-  
+
 });
 ```
 
@@ -63,7 +63,7 @@ const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.te
 const makeServerRequest = new Promise((resolve, reject) => {
   // responseFromServer is set to true to represent a successful response from a server
   let responseFromServer = true;
-    
+
   if(responseFromServer) {
     resolve("We got the data");
   } else {  
@@ -78,7 +78,7 @@ const makeServerRequest = new Promise((resolve, reject) => {
 const makeServerRequest = new Promise((resolve, reject) => {
   // responseFromServer is set to true to represent a successful response from a server
   let responseFromServer = true;
-    
+
   if(responseFromServer) {
     resolve("We got the data");
   } else {  

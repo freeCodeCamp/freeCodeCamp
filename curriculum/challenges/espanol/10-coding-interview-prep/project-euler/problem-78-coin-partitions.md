@@ -8,7 +8,7 @@ dashedName: problem-78-coin-partitions
 
 # --description--
 
-Let p(n) represent the number of different ways in which n coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so p(5)=7.
+Let ${p}(n)$ represent the number of different ways in which `n` coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so ${p}(5) = 7$.
 
 <div style='text-align: center;'>
 
@@ -22,22 +22,40 @@ Let p(n) represent the number of different ways in which n coins can be separate
 | OO   O   O   O    |
 | O   O   O   O   O |
 
-</div>
+</div><br>
 
-Find the least value of `n` for which p(`n`) is divisible by one million.
+Find the least value of `n` for which ${p}(n)$ is divisible by `divisor`.
 
 # --hints--
 
-`coinPartitions()` should return a number.
+`coinPartitions(7)` should return a number.
 
 ```js
-assert(typeof coinPartitions() === 'number');
+assert(typeof coinPartitions(7) === 'number');
 ```
 
-`coinPartitions()` should return 55374.
+`coinPartitions(7)` should return `5`.
 
 ```js
-assert.strictEqual(coinPartitions(), 55374);
+assert.strictEqual(coinPartitions(7), 5);
+```
+
+`coinPartitions(10000)` should return `599`.
+
+```js
+assert.strictEqual(coinPartitions(10000), 599);
+```
+
+`coinPartitions(100000)` should return `11224`.
+
+```js
+assert.strictEqual(coinPartitions(100000), 11224);
+```
+
+`coinPartitions(1000000)` should return `55374`.
+
+```js
+assert.strictEqual(coinPartitions(1000000), 55374);
 ```
 
 # --seed--
@@ -45,16 +63,41 @@ assert.strictEqual(coinPartitions(), 55374);
 ## --seed-contents--
 
 ```js
-function coinPartitions() {
+function coinPartitions(divisor) {
 
   return true;
 }
 
-coinPartitions();
+coinPartitions(7);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function coinPartitions(divisor) {
+  const partitions = [1];
+
+  let n = 0;
+  while (partitions[n] !== 0) {
+    n++;
+    partitions.push(0);
+
+    let i = 0;
+    let pentagonal = 1;
+    while (pentagonal <= n) {
+      const sign = i % 4 > 1 ? -1 : 1;
+      partitions[n] += sign * partitions[n - pentagonal];
+      partitions[n] = partitions[n] % divisor;
+
+      i++;
+
+      let k = Math.floor(i / 2) + 1;
+      if (i % 2 !== 0) {
+        k *= -1;
+      }
+      pentagonal = Math.floor((k * (3 * k - 1)) / 2);
+    }
+  }
+  return n;
+}
 ```

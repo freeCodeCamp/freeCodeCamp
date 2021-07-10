@@ -1,6 +1,6 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
-title: Falsy Bouncer
+title: Removendo falsos
 challengeType: 5
 forumTopicId: 16014
 dashedName: falsy-bouncer
@@ -8,33 +8,33 @@ dashedName: falsy-bouncer
 
 # --description--
 
-Remove all falsy values from an array.
+Remover todos os valores falsos de um array.
 
-Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
+Valores falsos (falsy) em JavaScript são `false`, `null`, `0`, `""`, `undefined`, e `NaN`.
 
-Hint: Try converting each value to a Boolean.
+Dica: tente converter cada valor para um booleano.
 
 # --hints--
 
-`bouncer([7, "ate", "", false, 9])` should return `[7, "ate", 9]`.
+`bouncer([7, "ate", "", false, 9])` deve retornar `[7, "ate", 9]`.
 
 ```js
 assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9]);
 ```
 
-`bouncer(["a", "b", "c"])` should return `["a", "b", "c"]`.
+`bouncer(["a", "b", "c"])` deve retornar `["a", "b", "c"]`.
 
 ```js
 assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c']);
 ```
 
-`bouncer([false, null, 0, NaN, undefined, ""])` should return `[]`.
+`bouncer([false, null, 0, NaN, undefined, ""])` deve retornar `[]`.
 
 ```js
 assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 ```
 
-`bouncer([null, NaN, 1, 2, undefined])` should return `[1, 2]`.
+`bouncer([null, NaN, 1, 2, undefined])` deve retornar `[1, 2]`.
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
