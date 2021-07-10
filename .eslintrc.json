@@ -11,7 +11,9 @@
   "extends": [
     "./.eslintrc-base.json",
     "plugin:prettier/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
   ],
   "plugins": [
     "react",
