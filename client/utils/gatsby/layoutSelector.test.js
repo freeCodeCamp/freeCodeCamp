@@ -22,10 +22,10 @@ function getComponentNameAndProps(elementType, pathname) {
     }
   });
   shallow.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
-  const renderedComponent = shallow.getRenderOutput();
+  const view = shallow.getRenderOutput();
   return {
-    props: renderedComponent.props,
-    name: renderedComponent.type.WrappedComponent.displayName
+    props: view.props,
+    name: view.type.WrappedComponent.displayName
   };
 }
 

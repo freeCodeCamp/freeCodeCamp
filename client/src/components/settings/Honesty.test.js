@@ -13,24 +13,25 @@ describe('<Honesty />', () => {
     const componentToRender = (
       <Honesty isHonest={false} updateIsHonest={updateIsHonestMock} />
     );
-    const component = renderer.render(componentToRender);
-    expect(component).toMatchSnapshot('Honesty');
+    const view = renderer.render(componentToRender);
+    expect(view).toMatchSnapshot('Honesty');
   });
 
   test('<Honesty /> snapshot when isHonest is true', () => {
     const componentToRender = (
       <Honesty isHonest={true} updateIsHonest={updateIsHonestMock} />
     );
-    const component = renderer.render(componentToRender);
-    expect(component).toMatchSnapshot('HonestyAccepted');
+    const view = renderer.render(componentToRender);
+    expect(view).toMatchSnapshot('HonestyAccepted');
   });
 
-  test('should call updateIsHonest method on clicking agree button', () => {
+  test('should call updateIsHonest method on clicking agree button', async () => {
     const root = TestRenderer.create(
       <Honesty isHonest={false} updateIsHonest={updateIsHonestMock} />
     ).root;
 
-    root.findByType(Button).props.onClick();
+    const button = await root.findByType(Button);
+    button.props.onClick();
     expect(updateIsHonestMock).toHaveBeenCalledWith({ isHonest: true });
   });
 });
