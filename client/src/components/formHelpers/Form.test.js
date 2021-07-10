@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import Form from './Form';
 
@@ -21,17 +21,17 @@ const defaultTestProps = {
 };
 
 test('should render', () => {
-  const { getByLabelText, getByText } = render(<Form {...defaultTestProps} />);
+  render(<Form {...defaultTestProps} />);
 
-  const nameInput = getByLabelText(/name Label/);
+  const nameInput = screen.getByLabelText(/name Label/);
   expect(nameInput).not.toBeRequired();
   expect(nameInput).toHaveAttribute('type', 'text');
 
-  const websiteInput = getByLabelText(/WebSite label/);
+  const websiteInput = screen.getByLabelText(/WebSite label/);
   expect(websiteInput).toBeRequired();
   expect(websiteInput).toHaveAttribute('type', 'url');
 
-  const button = getByText(/submit/i);
+  const button = screen.getByText(/submit/i);
   expect(button).toHaveAttribute('type', 'submit');
   expect(button).toBeDisabled();
 });
@@ -40,7 +40,7 @@ test('should render with default values', () => {
   const websiteValue = 'http://mysite.com';
   const nameValue = 'John';
 
-  const { getByLabelText, getByText } = render(
+  render(
     <Form
       {...defaultTestProps}
       enableSubmit={true}
@@ -48,13 +48,13 @@ test('should render with default values', () => {
     />
   );
 
-  const nameInput = getByLabelText(/name Label/);
+  const nameInput = screen.getByLabelText(/name Label/);
   expect(nameInput).toHaveValue(nameValue);
 
-  const websiteInput = getByLabelText(/WebSite label/);
+  const websiteInput = screen.getByLabelText(/WebSite label/);
   expect(websiteInput).toHaveValue(websiteValue);
 
-  const button = getByText(/submit/i);
+  const button = screen.getByText(/submit/i);
   expect(button).toBeEnabled();
 });
 
@@ -66,13 +66,13 @@ test('should submit', () => {
   };
   const websiteValue = 'http://mysite.com';
 
-  const { getByLabelText, getByText } = render(<Form {...props} />);
+  render(<Form {...props} />);
 
-  const websiteInput = getByLabelText(/WebSite label/);
+  const websiteInput = screen.getByLabelText(/WebSite label/);
   fireEvent.change(websiteInput, { target: { value: websiteValue } });
   expect(websiteInput).toHaveValue(websiteValue);
 
-  const button = getByText(/submit/i);
+  const button = screen.getByText(/submit/i);
   expect(button).toBeEnabled();
 
   fireEvent.click(button);
