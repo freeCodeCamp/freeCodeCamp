@@ -8,7 +8,7 @@ dashedName: problem-157-solving-the-diophantine-equation
 
 # --description--
 
-Consider the diophantine equation $\frac{1}{a} + \frac{1}{b} = \frac{p}{{10}^n}$ with a, b, p, n positive integers and $a ≤ b$.
+Consider the diophantine equation $\frac{1}{a} + \frac{1}{b} = \frac{p}{{10}^n}$ with $a$, $b$, $p$, $n$ positive integers and $a ≤ b$.
 
 For $n = 1$ this equation has 20 solutions that are listed below:
 

@@ -23,7 +23,7 @@ In all there are 10400 strings of length 3 for which exactly one character comes
 
 We now consider strings of $n ≤ 26$ different characters from the alphabet.
 
-For every $n$, $p(n)$ is the number of strings of length n for which exactly one character comes lexicographically after its neighbour to the left.
+For every $n$, $p(n)$ is the number of strings of length $n$ for which exactly one character comes lexicographically after its neighbour to the left.
 
 What is the maximum value of $p(n)$?
 

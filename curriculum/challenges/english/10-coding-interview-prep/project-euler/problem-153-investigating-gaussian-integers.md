@@ -10,7 +10,7 @@ dashedName: problem-153-investigating-gaussian-integers
 
 As we all know the equation $x^2 = -1$ has no solutions for real $x$.
 
-If we however introduce the imaginary number i this equation has two solutions: $x = i$ and $x = -i$.
+If we however introduce the imaginary number $i$ this equation has two solutions: $x = i$ and $x = -i$.
 
 If we go a step further the equation ${(x - 3)}^2 = -4$ has two complex solutions: $x = 3 + 2i$ and $x = 3 - 2i$, which are called each others' complex conjugate.
 
@@ -22,7 +22,7 @@ The regular integers are also Gaussian integers (with $b = 0$).
 
 To distinguish them from Gaussian integers with $b ≠ 0$ we call such integers "rational integers."
 
-A Gaussian integer is called a divisor of a rational integer n if the result is also a Gaussian integer.
+A Gaussian integer is called a divisor of a rational integer $n$ if the result is also a Gaussian integer.
 
 If for example we divide 5 by $1 + 2i$ we can simplify in the following manner:
 
