@@ -12,6 +12,7 @@ exports[`<CompletionModalBody /> matches snapshot 1`] = `
     </span>
     <svg
       class="completion-success-icon"
+      data-testid="fcc-completion-success-icon"
       height="50"
       viewBox="0 0 200 200"
       width="50"
@@ -70,6 +71,7 @@ exports[`<CompletionModalBody /> matches snapshot 1`] = `
       </div>
       <div
         class="progress-bar-percent"
+        data-testid="fcc-progress-bar-percent"
         style="width: 0%;"
       >
         <div

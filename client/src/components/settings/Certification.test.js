@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createStore } from '../../redux/createStore';
 
@@ -15,75 +15,62 @@ describe('<certification />', () => {
   // shallow rendering does not render children component
   // form buttons are not included in shallow render
   it('Should render show cert button for claimed legacy cert', () => {
-    const { container } = renderWithRedux(
-      <CertificationSettings {...defaultTestProps} />
-    );
+    renderWithRedux(<CertificationSettings {...defaultTestProps} />);
 
     expect(
-      container.querySelector(
-        'a[href="/certification/developmentuser/legacy-data-visualization"]'
-      )
-    ).toHaveTextContent('buttons.show-cert');
-  });
-
-  it('Should link show cert button to the claimed legacy cert', () => {
-    const { container } = renderWithRedux(
-      <CertificationSettings {...defaultTestProps} />
+      screen.getByRole('link', {
+        name: 'buttons.show-cert'
+      })
+    ).toHaveAttribute(
+      'href',
+      '/certification/developmentuser/legacy-data-visualization'
     );
-
-    expect(
-      container.querySelector(
-        'a[href="/certification/developmentuser/legacy-data-visualization"]'
-      )
-    ).toBeInTheDocument();
   });
 
   // full forms with unclaimed certs should not shallow render show cert button
   it('Should not render show cert button for unclaimed cert with completed projects', () => {
-    const { container } = renderWithRedux(
-      <CertificationSettings {...defaultTestProps} />
-    );
+    renderWithRedux(<CertificationSettings {...defaultTestProps} />);
 
-    expect(
-      container.querySelector(
-        'a[href="/certification/developmentuser/legacy-back-end"]'
-      )
-    ).not.toHaveTextContent('buttons.show-cert');
+    const allUnclaimedCerts = screen.getAllByRole('link', {
+      name: 'buttons.claim-cert'
+    });
+    const unclaimedCompletedProject = allUnclaimedCerts.filter(
+      element =>
+        element.getAttribute('href') ===
+        '/certification/developmentuser/legacy-back-end'
+    );
+    expect(unclaimedCompletedProject).toHaveLength(1);
   });
 
   // empty forms with unclaimed certs should not shallow render show cert button
   it('Should not render show cert button for cert with no completed projects', () => {
-    const { container } = renderWithRedux(
-      <CertificationSettings {...defaultTestProps} />
-    );
+    renderWithRedux(<CertificationSettings {...defaultTestProps} />);
 
-    expect(
-      container.querySelector(
-        'a[href="/certification/developmentuser/legacy-front-end"]'
-      )
-    ).not.toHaveTextContent('buttons.show-cert');
+    const allUnclaimedCerts = screen.getAllByRole('link', {
+      name: 'buttons.claim-cert'
+    });
+    const unclaimedIncompleteProject = allUnclaimedCerts.filter(
+      element =>
+        element.getAttribute('href') ===
+        '/certification/developmentuser/legacy-front-end'
+    );
+    expect(unclaimedIncompleteProject).toHaveLength(1);
   });
 
   it('Render button when only solution is present', () => {
-    const { container } = renderWithRedux(
-      <CertificationSettings {...propsForOnlySolution} />
-    );
+    renderWithRedux(<CertificationSettings {...propsForOnlySolution} />);
 
     expect(
-      container.querySelector('#btn-for-5e46f802ac417301a38fb92b')
+      screen.getByRole('link', {
+        name: 'buttons.show-solution'
+      })
     ).toHaveAttribute('href', 'https://github.com/freeCodeCamp/freeCodeCamp');
   });
 
   it('Render button when both githubLink and solution is present', () => {
-    const { container } = renderWithRedux(
-      <CertificationSettings {...propsForOnlySolution} />
-    );
+    renderWithRedux(<CertificationSettings {...propsForOnlySolution} />);
 
-    const linkList = container.querySelector(
-      '#dropdown-for-5e4f5c4b570f7e3a4949899f + ul'
-    );
-    const links = linkList.querySelectorAll('a');
-
+    const links = screen.getAllByRole('menuitem');
     expect(links[0]).toHaveAttribute(
       'href',
       'https://github.com/freeCodeCamp/freeCodeCamp1'
@@ -96,11 +83,9 @@ describe('<certification />', () => {
   });
 
   it('rendering the correct button when files is present', () => {
-    const { getByText } = renderWithRedux(
-      <CertificationSettings {...propsForOnlySolution} />
-    );
+    renderWithRedux(<CertificationSettings {...propsForOnlySolution} />);
 
-    const button = getByText('buttons.show-code');
+    const button = screen.getByText('buttons.show-code');
     expect(button).toBeInTheDocument();
   });
 });
