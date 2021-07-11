@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import TimeLine from './TimeLine';
 import { useStaticQuery } from 'gatsby';
 
@@ -45,29 +45,25 @@ beforeEach(() => {
 describe('<TimeLine />', () => {
   it('Render button when only solution is present', () => {
     // @ts-ignore
-    const { container } = render(<TimeLine {...propsForOnlySolution} />);
-
-    expect(
-      container.querySelector('#btn-for-5e46f802ac417301a38fb92b')
-    ).toHaveAttribute('href', 'https://github.com/freeCodeCamp/freeCodeCamp');
+    render(<TimeLine {...propsForOnlySolution} />);
+    const showViewButton = screen.getByRole('link', { name: 'buttons.view' });
+    expect(showViewButton).toHaveAttribute(
+      'href',
+      'https://github.com/freeCodeCamp/freeCodeCamp'
+    );
   });
 
   it('Render button when both githubLink and solution is present', () => {
     // @ts-ignore
-    const { container } = render(<TimeLine {...propsForOnlySolution} />);
+    render(<TimeLine {...propsForOnlySolution} />);
 
-    const linkList = container.querySelector(
-      '#dropdown-for-5e4f5c4b570f7e3a4949899f + ul'
-    );
-    // @ts-ignore
-    const links = linkList.querySelectorAll('a');
-
-    expect(links[0]).toHaveAttribute(
+    const menuItems = screen.getAllByRole('menuitem');
+    expect(menuItems).toHaveLength(2);
+    expect(menuItems[0]).toHaveAttribute(
       'href',
       'https://github.com/freeCodeCamp/freeCodeCamp1'
     );
-
-    expect(links[1]).toHaveAttribute(
+    expect(menuItems[1]).toHaveAttribute(
       'href',
       'https://github.com/freeCodeCamp/freeCodeCamp2'
     );
@@ -75,9 +71,9 @@ describe('<TimeLine />', () => {
 
   it('rendering the correct button when files is present', () => {
     // @ts-ignore
-    const { getByText } = render(<TimeLine {...propsForOnlySolution} />);
+    render(<TimeLine {...propsForOnlySolution} />);
 
-    const button = getByText('buttons.show-code');
+    const button = screen.getByText('buttons.show-code');
     expect(button).toBeInTheDocument();
   });
 });
