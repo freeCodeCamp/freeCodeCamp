@@ -30,7 +30,7 @@ Install the `body-parser` module in your `package.json`. Then, `require` it at t
 
 **Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing. 
 
-When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default Javascript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
+When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default JavaScript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
 
 # --hints--
 
