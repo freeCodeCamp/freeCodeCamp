@@ -18,10 +18,10 @@ What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer 
 
 # --hints--
 
-`euler205()` should return 0.5731441.
+`diceGame()` should return `0.5731441`.
 
 ```js
-assert.strictEqual(euler205(), 0.5731441);
+assert.strictEqual(diceGame(), 0.5731441);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler205(), 0.5731441);
 ## --seed-contents--
 
 ```js
-function euler205() {
+function diceGame() {
 
   return true;
 }
 
-euler205();
+diceGame();
 ```
 
 # --solutions--

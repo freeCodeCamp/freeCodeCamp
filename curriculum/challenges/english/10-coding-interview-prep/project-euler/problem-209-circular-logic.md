@@ -8,20 +8,34 @@ dashedName: problem-209-circular-logic
 
 # --description--
 
-A k-input binary truth table is a map from k input bits
+A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [false] or 1 [true]) to 1 output bit. For example, the $2$-input binary truth tables for the logical $AND$ and $XOR$ functions are:
 
-(binary digits, 0 \[false] or 1 \[true]) to 1 output bit. For example, the 2-input binary truth tables for the logical AND and XOR functions are:
+| x | y | x AND y |
+|---|---|---------|
+| 0 | 0 |    0    |
+| 0 | 1 |    0    |
+| 1 | 0 |    0    |
+| 1 | 1 |    1    |
 
-x y x AND y000010100111x y x XOR y000011101110How many 6-input binary truth tables, τ, satisfy the formula
+| x | y | x XOR y |
+|---|---|---------|
+| 0 | 0 |    0    |
+| 0 | 1 |    1    |
+| 1 | 0 |    1    |
+| 1 | 1 |    0    |
 
-τ(a, b, c, d, e, f) AND τ(b, c, d, e, f, a XOR (b AND c)) = 0 for all 6-bit inputs (a, b, c, d, e, f)?
+How many $6$-input binary truth tables, $τ$, satisfy the formula
+
+$$τ(a, b, c, d, e, f) \\; AND \\; τ(b, c, d, e, f, a \\; XOR \\; (b \\; AND \\; c)) = 0$$
+
+for all $6$-bit inputs ($a$, $b$, $c$, $d$, $e$, $f$)?
 
 # --hints--
 
-`euler209()` should return 15964587728784.
+`circularLogic()` should return `15964587728784`.
 
 ```js
-assert.strictEqual(euler209(), 15964587728784);
+assert.strictEqual(circularLogic(), 15964587728784);
 ```
 
 # --seed--
@@ -29,12 +43,12 @@ assert.strictEqual(euler209(), 15964587728784);
 ## --seed-contents--
 
 ```js
-function euler209() {
+function circularLogic() {
 
   return true;
 }
 
-euler209();
+circularLogic();
 ```
 
 # --solutions--
