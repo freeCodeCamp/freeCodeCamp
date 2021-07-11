@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f060
-title: Strings in Python
+title: Python 字符串
 challengeType: 11
 videoId: LYZj207fKpQ
 dashedName: strings-in-python
@@ -10,7 +10,7 @@ dashedName: strings-in-python
 
 ## --text--
 
-What will the following code print?:
+这些代码会打印出什么？
 
 ```python
 for n in "banana":

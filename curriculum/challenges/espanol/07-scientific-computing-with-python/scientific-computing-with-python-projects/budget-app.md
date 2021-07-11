@@ -2,6 +2,7 @@
 id: 5e44413e903586ffb414c94e
 title: Budget App
 challengeType: 10
+forumTopicId: 462361
 dashedName: budget-app
 ---
 
@@ -9,7 +10,7 @@ dashedName: budget-app
 
 Create a "Category" class that can be used to create different budget categories.
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-budget-app).
+You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-budget-app).
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

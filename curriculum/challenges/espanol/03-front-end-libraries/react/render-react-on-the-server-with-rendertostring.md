@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618d
-title: Render React on the Server with renderToString
+title: Renderiza React en el servidor con renderToString
 challengeType: 6
 forumTopicId: 301407
 dashedName: render-react-on-the-server-with-rendertostring
@@ -8,17 +8,17 @@ dashedName: render-react-on-the-server-with-rendertostring
 
 # --description--
 
-So far, you have been rendering React components on the client. Normally, this is what you will always do. However, there are some use cases where it makes sense to render a React component on the server. Since React is a JavaScript view library and you can run JavaScript on the server with Node, this is possible. In fact, React provides a `renderToString()` method you can use for this purpose.
+Hasta ahora, has estado renderizando componentes React en el cliente. Normalmente, esto es lo que siempre harás. Sin embargo, hay algunos casos de uso donde tiene sentido renderizar un componente React en el servidor. Dado que React es una biblioteca de vistas de JavaScript y se puede ejecutar JavaScript en el servidor con Node, esto es posible. De hecho, React proporciona un método `renderToString()` que puedes usar para este propósito.
 
-There are two key reasons why rendering on the server may be used in a real world app. First, without doing this, your React apps would consist of a relatively empty HTML file and a large bundle of JavaScript when it's initially loaded to the browser. This may not be ideal for search engines that are trying to index the content of your pages so people can find you. If you render the initial HTML markup on the server and send this to the client, the initial page load contains all of the page's markup which can be crawled by search engines. Second, this creates a faster initial page load experience because the rendered HTML is smaller than the JavaScript code of the entire app. React will still be able to recognize your app and manage it after the initial load.
+Hay dos razones clave por las que el renderizado en el servidor puede ser usado en una aplicación del mundo real. Primero, sin hacer esto, tus aplicaciones de React consistirían en un archivo HTML relativamente vacío y un gran paquete de JavaScript cuando se carga inicialmente en el navegador. Esto puede no ser ideal para motores de búsqueda que intentan indexar el contenido de tus páginas para que la gente pueda encontrarte. Si renderizas el código HTML inicial en el servidor y lo envía al cliente, la carga de la página inicial contiene todo el código de la página que los motores de búsqueda pueden rastrear. Segundo, esto crea una experiencia de carga de página inicial más rápida porque el HTML renderizado es más pequeño que el código JavaScript de toda la aplicación. React aún podrá reconocer tu aplicación y administrarla después de la carga inicial.
 
 # --instructions--
 
-The `renderToString()` method is provided on `ReactDOMServer`, which is available here as a global object. The method takes one argument which is a React element. Use this to render `App` to a string.
+El método `renderToString()` se proporciona en `ReactDOMServer`, el cual está disponible aquí como un objeto global. El método toma un argumento que es un elemento React. Usa esto para renderizar `App` a una cadena.
 
 # --hints--
 
-The `App` component should render to a string using `ReactDOMServer.renderToString`.
+El componente `App` debe renderizar a una cadena usando `ReactDOMServer.renderToString`.
 
 ```js
 (getUserInput) =>

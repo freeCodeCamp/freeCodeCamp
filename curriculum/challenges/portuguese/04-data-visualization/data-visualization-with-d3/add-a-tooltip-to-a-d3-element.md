@@ -160,7 +160,7 @@ assert($('title').eq(8).text() == '9');
        .attr("class", "bar")
        .append("title")
        .text((d) => d)
-       
+
 
     svg.selectAll("text")
        .data(dataset)

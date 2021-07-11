@@ -60,7 +60,7 @@ function Hotkeys({
     FOCUS_EDITOR: (e: React.KeyboardEvent) => {
       e.preventDefault();
       if (editorRef && editorRef.current) {
-        editorRef.current.getWrappedInstance().focusOnEditor();
+        editorRef.current.getWrappedInstance().editor.focus();
       }
     },
     NAVIGATION_MODE: () => setEditorFocusability(false),

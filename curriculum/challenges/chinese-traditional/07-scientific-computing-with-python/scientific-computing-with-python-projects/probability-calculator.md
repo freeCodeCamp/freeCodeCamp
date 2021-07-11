@@ -1,30 +1,31 @@
 ---
 id: 5e44414f903586ffb414c950
-title: Probability Calculator
+title: 概率計算器
 challengeType: 10
+forumTopicId: 462364
 dashedName: probability-calculator
 ---
 
 # --description--
 
-Write a program to determine the approximate probability of drawing certain balls randomly from a hat.
+寫一個程序來確定從帽子中隨機拿取特定球的大致概率。
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-probability-calculator). After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+你可以在 [Replit](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator) 上查看整個項目的具體描述和初始代碼。 訪問此鏈接後，fork 這個項目。 當你根據 “README.md” 中的說明完成了項目，請在下方提交你的項目鏈接。
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+我們仍在開發 Python 課程的交互式教學部分。 目前，freeCodeCamp.org YouTube 頻道上的一些視頻將會教授你這個項目需要的所有技能。
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody 視頻課程</a>（14 小時）
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python 視頻課程</a>（2 小時）
   </li>
 </ul>
 
 # --hints--
 
-It should correctly calculate probabilities and pass all tests.
+它應該能正確地計算概率並通過所有測試。
 
 ```js
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bca
-title: Change the Presentation of a Bar Chart
+title: Cambiare la presentazione di un grafico a barre
 challengeType: 6
 forumTopicId: 301481
 dashedName: change-the-presentation-of-a-bar-chart
@@ -8,21 +8,21 @@ dashedName: change-the-presentation-of-a-bar-chart
 
 # --description--
 
-The last challenge created a bar chart, but there are a couple of formatting changes that could improve it:
+L'ultima sfida ha creato un grafico a barre, ma ci sono un paio di tocchi nella formattazione che potrebbero migliorarlo:
 
-1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the `bar` class
+1) Aggiungere spazio tra ogni barra per separarle visivamente, cosa che viene fatta aggiungendo un margine al CSS della classe `bar`
 
-2) Increase the height of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the height
+2) Aumentare l'altezza delle barre per mostrare meglio la differenza tra i valori: questo si può fare moltiplicando il valore per un numero in modo da scalare l'altezza
 
 # --instructions--
 
-First, add a `margin` of `2px` to the `bar` class in the `style` tag. Next, change the callback function in the `style()` method so it returns a value `10` times the original data value (plus the `px`).
+Innanzitutto, aggiungi un `margin` di `2px` alla classe `bar` nel tag `style`. Successivamente, cambia la funzione callback nel metodo `style()` in modo che restituisca un valore `10` volte il valore originale dei dati (più `px`).
 
-**Note:** Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
+**Nota:** Moltiplicare ogni punto dati per la *stessa* costante modifica solo la scala. È come fare lo zoom, e non cambia il significato dei dati sottostanti.
 
 # --hints--
 
-The first `div` should have a `height` of `120` pixels and a `margin` of `2` pixels.
+Il primo `div` dovrebbe avere un'`height` di `120` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The second `div` should have a `height` of `310` pixels and a `margin` of `2` pixels.
+Il secondo `div` dovrebbe avere un'`height` di `310` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The third `div` should have a `height` of `220` pixels and a `margin` of `2` pixels.
+Il terzo `div` dovrebbe avere un'`height` di `220` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-The fourth `div` should have a `height` of `170` pixels and a `margin` of `2` pixels.
+Il quarto `div` dovrebbe avere un'`height` di `170` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The fifth `div` should have a `height` of `250` pixels and a `margin` of `2` pixels.
+Il quinto `div` dovrebbe avere un'`height` di `250` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The sixth `div` should have a `height` of `180` pixels and a `margin` of `2` pixels.
+Il sesto `div` dovrebbe avere un'`height` di `180` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -76,7 +76,7 @@ assert(
 );
 ```
 
-The seventh `div` should have a `height` of `290` pixels and a `margin` of `2` pixels.
+Il settimo `div` dovrebbe avere un'`height` di `290` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -85,7 +85,7 @@ assert(
 );
 ```
 
-The eighth `div` should have a `height` of `140` pixels and a `margin` of `2` pixels.
+L'ottavo `div` dovrebbe avere un'`height` di `140` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The ninth `div` should have a `height` of `90` pixels and a `margin` of `2` pixels.
+Il nono `div` dovrebbe avere un'`height` di `90` pixel e un `margin` di `2` pixel.
 
 ```js
 assert(
@@ -114,7 +114,7 @@ assert(
     height: 100px;
     /* Add your code below this line */
 
-    
+
     /* Add your code above this line */
     display: inline-block;
     background-color: blue;

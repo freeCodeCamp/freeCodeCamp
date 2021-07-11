@@ -8,7 +8,7 @@ dashedName: taxicab-numbers
 
 # --description--
 
-A [taxicab number](<https://en.wikipedia.org/wiki/Hardy–Ramanujan number> "wp: Hardy–Ramanujan number") (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+A [taxicab number](https://en.wikipedia.org/wiki/Hardy–Ramanujan number "wp: Hardy–Ramanujan number") (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
 
 The first taxicab number is `1729`, which is:
 

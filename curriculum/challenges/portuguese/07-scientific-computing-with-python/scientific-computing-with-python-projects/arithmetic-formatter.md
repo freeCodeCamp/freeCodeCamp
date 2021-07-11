@@ -16,8 +16,7 @@ After going to that link, fork the project. Once you complete the project based 
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
-<ul>
-  <li>
+<ul> <li>
     <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
   </li>
   <li>

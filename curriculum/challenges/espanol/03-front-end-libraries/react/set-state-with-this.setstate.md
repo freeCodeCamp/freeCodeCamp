@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036173
-title: Set State with this.setState
+title: Define el estado con this.setState
 challengeType: 6
 forumTopicId: 301412
 dashedName: set-state-with-this-setstate
@@ -8,7 +8,7 @@ dashedName: set-state-with-this-setstate
 
 # --description--
 
-The previous challenges covered component `state` and how to initialize state in the `constructor`. There is also a way to change the component's `state`. React provides a method for updating component `state` called `setState`. You call the `setState` method within your component class like so: `this.setState()`, passing in an object with key-value pairs. The keys are your state properties and the values are the updated state data. For instance, if we were storing a `username` in state and wanted to update it, it would look like this:
+Los desafíos anteriores cubrieron el componente `state` y cómo inicializar el state en el `constructor`. También hay una forma de cambiar el `state` del componente. React proporciona un método para actualizar el componente `state` llamado `setState`. El método `setState` dentro de tu clase de componente se llama así: `this.setState()`, pasando un objeto con pares clave-valor. Las claves son tus propiedades de estado y los valores son datos de estado actualizados. Por ejemplo, si estuviéramos almacenando un `username` en estado y quisiéramos actualizarlo, se vería así:
 
 ```jsx
 this.setState({
@@ -16,17 +16,17 @@ this.setState({
 });
 ```
 
-React expects you to never modify `state` directly, instead always use `this.setState()` when state changes occur. Also, you should note that React may batch multiple state updates in order to improve performance. What this means is that state updates through the `setState` method can be asynchronous. There is an alternative syntax for the `setState` method which provides a way around this problem. This is rarely needed but it's good to keep it in mind! Please consult the [React documentation](https://facebook.github.io/react/docs/state-and-lifecycle.html) for further details.
+React espera que nunca modifiques `state` directamente. En su lugar, siempre usa `this.setState()` cuando ocurran cambios de estado. Además, ten en cuenta que React puede agrupar múltiples actualizaciones de estado con el fin de mejorar el rendimiento. Esto significa que las actualizaciones de estado a través del método `setState` pueden ser asíncronas. Existe una sintaxis alternativa para el método `setState` que proporciona una forma de evitar ese problema. Esto es raramente necesario, ¡pero es bueno tenerlo en cuenta! Por favor, consulte la [documentación de React](https://facebook.github.io/react/docs/state-and-lifecycle.html) para más información.
 
 # --instructions--
 
-There is a `button` element in the code editor which has an `onClick()` handler. This handler is triggered when the `button` receives a click event in the browser, and runs the `handleClick` method defined on `MyComponent`. Within the `handleClick` method, update the component `state` using `this.setState()`. Set the `name` property in `state` to equal the string `React Rocks!`.
+Hay un elemento `button` en el editor de código que tiene un controlador `onClick()`. Este controlador es activado cuando el `button` recibe un evento clic en el navegador, y ejecuta el método `handleClick` definido en `MyComponent`. Dentro del método `handleClick`, actualiza el componente `state` usando `this.setState()`. Establece la propiedad `name` en el `state` para igualar la cadena `React Rocks!`.
 
-Click the button and watch the rendered state update. Don't worry if you don't fully understand how the click handler code works at this point. It's covered in upcoming challenges.
+Haz clic en el botón y observa la actualización de estado renderizada. No te preocupes si no entiendes completamente cómo funciona el código del controlador de clics hasta ahora. Será cubierto en los siguientes desafíos.
 
 # --hints--
 
-The state of `MyComponent` should initialize with the key value pair `{ name: Initial State }`.
+El estado de `MyComponent` debe inicializarse con el par de valores clave `{ name: Initial State }`.
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header.
+`MyComponent` debe renderizar un encabezado `h1`.
 
 ```js
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+El encabezado `h1` renderizado debe contener texto renderizado desde el estado del componente.
 
 ```js
 async () => {
@@ -57,7 +57,7 @@ async () => {
 };
 ```
 
-Calling the `handleClick` method on `MyComponent` should set the name property in state to equal `React Rocks!`.
+Llamar al método `handleClick` en `MyComponent` debe establecer la propiedad de nombre en estado igual a `React Rocks!`.
 
 ```js
 async () => {

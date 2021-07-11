@@ -8,11 +8,10 @@ dashedName: problem-106-special-subset-sums-meta-testing
 
 # --description--
 
-Let S(A) represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
 
-S(B) ≠ S(C); that is, sums of subsets cannot be equal.
-
-If B contains more elements than C then S(B) > S(C).
+1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
+2. If B contains more elements than C then $S(B) > S(C)$.
 
 For this problem we shall assume that a given set contains n strictly increasing elements and it already satisfies the second rule.
 
@@ -20,14 +19,14 @@ Surprisingly, out of the 25 possible subset pairs that can be obtained from a se
 
 For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
 
-NOTE: This problem is related to Problem 103 and Problem 105.
+**Note:** This problem is related to Problem 103 and Problem 105.
 
 # --hints--
 
-`euler106()` should return 21384.
+`subsetSumsMetaTesting()` should return `21384`.
 
 ```js
-assert.strictEqual(euler106(), 21384);
+assert.strictEqual(subsetSumsMetaTesting(), 21384);
 ```
 
 # --seed--
@@ -35,12 +34,12 @@ assert.strictEqual(euler106(), 21384);
 ## --seed-contents--
 
 ```js
-function euler106() {
+function subsetSumsMetaTesting() {
 
   return true;
 }
 
-euler106();
+subsetSumsMetaTesting();
 ```
 
 # --solutions--

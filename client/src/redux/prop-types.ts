@@ -305,6 +305,8 @@ export type CompletedChallenge = {
   challengeType?: number;
   completedDate: number;
   challengeFiles: ChallengeFileType[] | null;
+  // TODO: remove once files->challengeFiles is refactored
+  files?: ChallengeFileType[] | null;
 };
 // TODO: renames: files => challengeFiles; key => fileKey; #42489
 export type ChallengeFileType =

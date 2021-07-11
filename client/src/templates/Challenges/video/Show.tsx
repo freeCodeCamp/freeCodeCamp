@@ -12,7 +12,7 @@ import { withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 // Local Utilities
-import PrismFormatted from '../components/PrismFormatted';
+import PrismFormatted from '../components/prism-formatted';
 import {
   ChallengeNodeType,
   ChallengeMetaType

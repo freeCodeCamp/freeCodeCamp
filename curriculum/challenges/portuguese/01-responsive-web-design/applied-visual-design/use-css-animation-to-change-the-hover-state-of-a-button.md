@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512ae0
-title: Use CSS Animation to Change the Hover State of a Button
+title: Use animações CSS para alterar o estado de foco de um botão
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4vZAa'
 forumTopicId: 301073
@@ -9,9 +9,9 @@ dashedName: use-css-animation-to-change-the-hover-state-of-a-button
 
 # --description--
 
-You can use CSS `@keyframes` to change the color of a button in its hover state.
+Você pode usar a regra CSS `@keyframes` para alterar a cor de um botão em seu estado de foco.
 
-Here's an example of changing the width of an image on hover:
+Aqui está um exemplo de alteração da largura de uma imagem ao passar o cursor do mouse por cima:
 
 ```html
 <style>
@@ -32,19 +32,19 @@ Here's an example of changing the width of an image on hover:
 
 # --instructions--
 
-Note that `ms` stands for milliseconds, where 1000ms is equal to 1s.
+Observe que `ms` representa milissegundos, onde 1000ms é igual a 1s.
 
-Use CSS `@keyframes` to change the `background-color` of the `button` element so it becomes `#4791d0` when a user hovers over it. The `@keyframes` rule should only have an entry for `100%`.
+Use a regra CSS `@keyframes` para alterar a propriedade `background-color` do elemento `button` para que se torne `#4791d0` quando um usuário passar o cursor do mouse sobre ele. A regra `@keyframes` deve ter apenas um frame de `100%`.
 
 # --hints--
 
-The @keyframes rule should use the `animation-name` background-color.
+A regra @keyframes deve usar como nome o valor da propriedade `animation-name`, que é background-color.
 
 ```js
 assert(code.match(/@keyframes\s+?background-color\s*?{/g));
 ```
 
-There should be one rule under `@keyframes` that changes the `background-color` to `#4791d0` at 100%.
+Deve haver uma regra no `@keyframes` que altera a propriedade `background-color` para `#4791d0` quando a animação estiver em 100%.
 
 ```js
 assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));

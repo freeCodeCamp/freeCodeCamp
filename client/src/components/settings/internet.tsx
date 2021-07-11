@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -190,7 +190,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       this.getValidationStateFor(website);
 
     return (
-      <Fragment>
+      <>
         <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
         <FullWidthRow>
           <form id='internet-presence' onSubmit={this.handleSubmit}>
@@ -255,7 +255,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
             />
           </form>
         </FullWidthRow>
-      </Fragment>
+      </>
     );
   }
 }

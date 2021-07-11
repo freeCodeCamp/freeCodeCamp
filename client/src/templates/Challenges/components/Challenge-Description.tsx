@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import PrismFormatted from './PrismFormatted';
+import PrismFormatted from './prism-formatted';
 import './challenge-description.css';
 
 type Challenge = {
@@ -18,10 +18,10 @@ function ChallengeDescription(challenge: Challenge): JSX.Element {
     >
       {challenge.description && <PrismFormatted text={challenge.description} />}
       {challenge.instructions && (
-        <Fragment>
+        <>
           <hr />
           <PrismFormatted text={challenge.instructions} />
-        </Fragment>
+        </>
       )}
       <hr />
     </div>

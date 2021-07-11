@@ -86,7 +86,7 @@ In the game, *Monopoly*, the standard board is set up in the following way:
       </tr>
     </tbody>
   </table>
-</div>
+</div><br>
 
 A player starts on the GO square and adds the scores on two 6-sided dice to determine the number of squares they advance in a clockwise direction. Without any further rules we would expect to visit each square with equal probability: 2.5%. However, landing on G2J (Go To Jail), CC (community chest), and CH (chance) changes this distribution.
 
@@ -120,22 +120,40 @@ The heart of this problem concerns the likelihood of visiting a particular squar
 
 By starting at GO and numbering the squares sequentially from 00 to 39 we can concatenate these two-digit numbers to produce strings that correspond with sets of squares.
 
-Statistically it can be shown that the three most popular squares, in order, are JAIL (6.24%) = Square 10, E3 (3.18%) = Square 24, and GO (3.09%) = Square 00. So these three most popular squares can be listed with the six-digit modal string: 102400.
+Statistically it can be shown that the three most popular squares, in order, are JAIL (6.24%) = Square 10, E3 (3.18%) = Square 24, and GO (3.09%) = Square 00. So these three most popular squares can be listed with the six-digit modal string `102400`.
 
-If, instead of using two 6-sided dice, two 4-sided dice are used, find the six-digit modal string.
+If, instead of using two 6-sided dice, two `n`-sided dice are used, find the six-digit modal string.
 
 # --hints--
 
-`monopolyOdds()` should return a number.
+`monopolyOdds(8)` should return a string.
 
 ```js
-assert(typeof monopolyOdds() === 'number');
+assert(typeof monopolyOdds(8) === 'string');
 ```
 
-`monopolyOdds()` should return 101524.
+`monopolyOdds(8)` should return string `102400`.
 
 ```js
-assert.strictEqual(monopolyOdds(), 101524);
+assert.strictEqual(monopolyOdds(8), '102400');
+```
+
+`monopolyOdds(10)` should return string `100024`.
+
+```js
+assert.strictEqual(monopolyOdds(10), '100024');
+```
+
+`monopolyOdds(20)` should return string `100005`.
+
+```js
+assert.strictEqual(monopolyOdds(20), '100005');
+```
+
+`monopolyOdds(4)` should return string `101524`.
+
+```js
+assert.strictEqual(monopolyOdds(4), '101524');
 ```
 
 # --seed--
@@ -143,16 +161,108 @@ assert.strictEqual(monopolyOdds(), 101524);
 ## --seed-contents--
 
 ```js
-function monopolyOdds() {
+function monopolyOdds(n) {
 
   return true;
 }
 
-monopolyOdds();
+monopolyOdds(8);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function monopolyOdds(n) {
+  function chanceCard(position, chanceCardPosition) {
+    chanceCardPosition = (chanceCardPosition + 1) % 16;
+    if (chanceCardPosition < 6) {
+      position = chanceCardsMoves[chanceCardPosition];
+    } else if (chanceCardPosition === 6 || chanceCardPosition === 7) {
+      position = nextMovesFromR[position];
+    } else if (chanceCardPosition === 8) {
+      position = nextMovesFromU[position];
+    } else if (chanceCardPosition === 9) {
+      position -= 3;
+    }
+    return [position, chanceCardPosition];
+  }
+
+  function chestCard(position, chestPosition) {
+    chestPosition = (chestPosition + 1) % 16;
+    if (chestPosition < 2) {
+      position = chestCardsMoves[chestPosition];
+    }
+    return [position, chestPosition];
+  }
+
+  function isChest(position) {
+    return position === 2 || position === 17 || position === 33;
+  }
+
+  function isChance(position) {
+    return position === 7 || position === 22 || position === 36;
+  }
+
+  function isJail(position) {
+    return position === 30;
+  }
+
+  function roll(dice) {
+    return Math.floor(Math.random() * dice) + 1;
+  }
+
+  function getTopThree(board) {
+    return sortByVisits(board)
+      .slice(0, 3)
+      .map(elem => elem[0].toString().padStart(2, '0'))
+      .join('');
+  }
+
+  function sortByVisits(board) {
+    return board
+      .map((element, index) => [index, element])
+      .sort((a, b) => a[1] - b[1])
+      .reverse();
+  }
+
+  const rounds = 2000000;
+  const chestCardsMoves = [0, 10];
+  const chanceCardsMoves = [0, 10, 11, 24, 39, 5];
+  const nextMovesFromR = { 7: 15, 22: 25, 36: 5 };
+  const nextMovesFromU = { 7: 12, 36: 12, 22: 28 };
+
+  const board = new Array(40).fill(0);
+  let doubleCount = 0;
+  let curPosition = 0;
+  let curChestCard = 0;
+  let curChanceCard = 0;
+
+  for (let i = 0; i < rounds; i++) {
+    const dice1 = roll(n);
+    const dice2 = roll(n);
+
+    if (dice1 === dice2) {
+      doubleCount++;
+    } else {
+      doubleCount = 0;
+    }
+
+    if (doubleCount > 2) {
+      curPosition = 10;
+      doubleCount = 0;
+    } else {
+      curPosition = (curPosition + dice1 + dice2) % 40;
+
+      if (isChance(curPosition)) {
+        [curPosition, curChanceCard] = chanceCard(curPosition, curChanceCard);
+      } else if (isChest(curPosition)) {
+        [curPosition, curChestCard] = chestCard(curPosition, curChestCard);
+      } else if (isJail(curPosition)) {
+        curPosition = 10;
+      }
+    }
+    board[curPosition]++;
+  }
+  return getTopThree(board);
+}
 ```

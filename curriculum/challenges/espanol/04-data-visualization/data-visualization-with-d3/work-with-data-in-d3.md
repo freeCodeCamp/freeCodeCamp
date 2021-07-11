@@ -32,11 +32,11 @@ Here is an example that selects a `ul` element and creates a new list item based
 </body>
 ```
 
-It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the `ul` on the page. Next, select all list items, which returns an empty selection. Then the `data()` method reviews the dataset and runs the following code three times, once for each item in the array. The `enter()` method sees there are no `li` elements on the page, but it needs 3 (one for each piece of data in `dataset`). New `li` elements are appended to the `ul` and have the text "New item".
+It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the `ul` on the page. Next, select all list items, which returns an empty selection. Then the `data()` method reviews the dataset and runs the following code three times, once for each item in the array. The `enter()` method sees there are no `li` elements on the page, but it needs 3 (one for each piece of data in `dataset`). New `li` elements are appended to the `ul` and have the text `New item`.
 
 # --instructions--
 
-Select the `body` node, then select all `h2` elements. Have D3 create and append an `h2` tag for each item in the `dataset` array. The text in the `h2` should say "New Title". Your code should use the `data()` and `enter()` methods.
+Select the `body` node, then select all `h2` elements. Have D3 create and append an `h2` tag for each item in the `dataset` array. The text in the `h2` should say `New Title`. Your code should use the `data()` and `enter()` methods.
 
 # --hints--
 
@@ -46,7 +46,7 @@ Your document should have 9 `h2` elements.
 assert($('h2').length == 9);
 ```
 
-The text in the `h2` elements should say "New Title". The capitalization and spacing should match exactly.
+The text in the `h2` elements should say `New Title`. The capitalization and spacing should match exactly.
 
 ```js
 assert(
