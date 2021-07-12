@@ -50,7 +50,7 @@ describe('<HeatMap/>', () => {
   it('calculates the correct current streak', () => {
     render(<HeatMap {...props} />);
     expect(screen.getByTestId('current-streak')).toHaveTextContent(
-      /profile\.current\-streak/
+      'profile.current-streak'
     );
   });
 });
