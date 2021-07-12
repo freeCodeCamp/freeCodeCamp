@@ -23,7 +23,7 @@ import SearchHits from './search-hits';
 import './searchbar-base.css';
 import './searchbar.css';
 
-const searchUrl: string = searchPageUrl as string;
+const searchUrl = searchPageUrl;
 const mapStateToProps = createSelector(
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
