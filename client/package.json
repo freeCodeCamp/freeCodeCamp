@@ -149,7 +149,7 @@
     "@types/sanitize-html": "2.3.2",
     "@types/store": "2.0.2",
     "@types/validator": "13.6.3",
-    "autoprefixer": "10.3.0",
+    "autoprefixer": "10.3.1",
     "axios": "0.21.1",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.2",
