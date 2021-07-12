@@ -150,7 +150,7 @@
     "@types/store": "2.0.2",
     "@types/validator": "13.6.3",
     "autoprefixer": "10.3.0",
-    "axios": "^0.21.1",
+    "axios": "0.21.1",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.2",
     "copy-webpack-plugin": "9.0.1",
