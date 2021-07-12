@@ -31,30 +31,32 @@ describe('<certification />', () => {
   it('Should not render show cert button for unclaimed cert with completed projects', () => {
     renderWithRedux(<CertificationSettings {...defaultTestProps} />);
 
-    const allUnclaimedCerts = screen.getAllByRole('link', {
-      name: 'buttons.claim-cert'
+    const allClaimedCerts = screen.getAllByRole('link', {
+      name: 'buttons.show-cert'
     });
-    const unclaimedCompletedProject = allUnclaimedCerts.filter(
-      element =>
-        element.getAttribute('href') ===
+
+    allClaimedCerts.forEach(cert => {
+      expect(cert).not.toHaveAttribute(
+        'href',
         '/certification/developmentuser/legacy-back-end'
-    );
-    expect(unclaimedCompletedProject).toHaveLength(1);
+      );
+    });
   });
 
   // empty forms with unclaimed certs should not shallow render show cert button
   it('Should not render show cert button for cert with no completed projects', () => {
     renderWithRedux(<CertificationSettings {...defaultTestProps} />);
 
-    const allUnclaimedCerts = screen.getAllByRole('link', {
-      name: 'buttons.claim-cert'
+    const allClaimedCerts = screen.getAllByRole('link', {
+      name: 'buttons.show-cert'
     });
-    const unclaimedIncompleteProject = allUnclaimedCerts.filter(
-      element =>
-        element.getAttribute('href') ===
+
+    allClaimedCerts.forEach(cert => {
+      expect(cert).not.toHaveAttribute(
+        'href',
         '/certification/developmentuser/legacy-front-end'
-    );
-    expect(unclaimedIncompleteProject).toHaveLength(1);
+      );
+    });
   });
 
   it('Render button when only solution is present', () => {

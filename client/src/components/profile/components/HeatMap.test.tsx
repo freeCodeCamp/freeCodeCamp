@@ -43,7 +43,7 @@ describe('<HeatMap/>', () => {
   it('calculates the correct longest streak', () => {
     render(<HeatMap {...props} />);
     expect(screen.getByTestId('longest-streak')).toHaveTextContent(
-      /profile\.longest\-streak/
+      'profile.longest-streak'
     );
   });
 
