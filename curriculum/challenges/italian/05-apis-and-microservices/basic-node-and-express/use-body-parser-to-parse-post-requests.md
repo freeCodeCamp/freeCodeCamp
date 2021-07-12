@@ -26,13 +26,15 @@ Come puoi vedere, il corpo è codificato come la query string. Questo è il form
 
 # --instructions--
 
-Installa il modulo `body-parser` nel tuo `package.json`. Poi, richiedilo con `require` all'inizio del file. Memorizzalo in una variabile chiamata `bodyParser`. Il middleware per gestire i dati urlencoded viene restituito da `bodyParser.urlencoded({extended: false})`. Passa a `app.use()` la funzione restituita dalla precedente chiamata del metodo. Come al solito, il middleware deve essere montato prima di tutte le rotte che ne hanno bisogno.
+Installa il modulo `body-parser` nel tuo `package.json`. Poi, richiedilo con `require` all'inizio del file. Memorizzalo in una variabile chiamata `bodyParser`. Il middleware per gestire i dati urlencoded viene restituito da `bodyParser.urlencoded({extended: false})`. Pass the function returned by the previous method call to `app.use()`. As usual, the middleware must be mounted before all the routes that depend on it.
 
-**Nota:** `extended=false` è un'opzione di configurazione che dice al parser di usare la codifica classica. Quando lo si utilizza, i valori possono essere solo stringhe o array. La versione estesa consente una maggiore flessibilità dei dati, ma è superata da JSON.
+**Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing.
+
+When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default JavaScript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
 
 # --hints--
 
-Il middleware 'body-parser' dovrebbe essere montato
+The 'body-parser' middleware should be mounted
 
 ```js
 (getUserInput) =>

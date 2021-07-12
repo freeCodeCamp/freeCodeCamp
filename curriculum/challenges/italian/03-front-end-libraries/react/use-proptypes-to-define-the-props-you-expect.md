@@ -8,9 +8,9 @@ dashedName: use-proptypes-to-define-the-props-you-expect
 
 # --description--
 
-React fornisce utili funzioni di verifica del tipo per verificare che i componenti ricevano proprietà del tipo corretto. Ad esempio, la tua applicazione effettua una chiamata API per recuperare dei dati che ti aspetti essere in un array, che viene poi passato a un componente come proprietà. Puoi impostare `propTypes` sul tuo componente per richiedere che i dati siano di tipo `array`. Questo generà un avviso utile quando i dati saranno di qualsiasi altro tipo.
+React fornisce utili funzioni di verifica del tipo per verificare che i componenti ricevano proprietà del tipo corretto. Ad esempio, la tua applicazione effettua una chiamata API per recuperare dei dati che ti aspetti essere in un array, che viene poi passato a un componente come proprietà. Puoi impostare `propTypes` sul tuo componente per richiedere che i dati siano di tipo `array`. Questo genera un avviso utile quando i dati saranno di qualsiasi altro tipo.
 
-È considerata una buona pratica impostare `propTypes` quando si conosce il tipo di una prop in anticipo. Puoi definire una proprietà `propTypes` per un componente nello stesso modo in cui hai definito `defaultProps`. In questo modo si verificherà che la prop con una data chiave sia presenti con un dato tipo. Ecco un esempio per richiedere il tipo `function` per una prop chiamata `handleClick`:
+È considerata una buona pratica impostare `propTypes` quando si conosce il tipo di una prop in anticipo. Puoi definire una proprietà `propTypes` per un componente nello stesso modo in cui hai definito `defaultProps`. In questo modo verrà verificato che la prop con una data chiave sia presente con un dato tipo. Ecco un esempio per richiedere il tipo `function` per una prop chiamata `handleClick`:
 
 ```js
 MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
