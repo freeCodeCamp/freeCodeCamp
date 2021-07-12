@@ -1,6 +1,5 @@
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
-
 import path from 'path';
 import { format } from 'prettier';
 import { prompt } from 'inquirer';
