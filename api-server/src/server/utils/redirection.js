@@ -50,10 +50,7 @@ function normalizeParams(
   return { returnTo, origin, pathPrefix };
 }
 
-// TODO: tests!
-// TODO: ensure origin and pathPrefix validation happens first
-// (it needs a dedicated function that can be called from here and getReturnTo)
-function getRedirectBase(origin, pathPrefix) {
+function getPrefixedLandingPath(origin, pathPrefix) {
   const redirectPathSegment = pathPrefix ? `/${pathPrefix}` : '';
   return `${origin}${redirectPathSegment}`;
 }
@@ -70,14 +67,14 @@ function getRedirectParams(req, _normalizeParams = normalizeParams) {
   return _normalizeParams({ returnTo: returnUrl.href, origin, pathPrefix });
 }
 
-function isRootPath(redirectBase, returnUrl) {
+function haveSamePath(redirectBase, returnUrl) {
   const base = new URL(redirectBase);
   const url = new URL(returnUrl);
   return base.pathname === url.pathname;
 }
 
 module.exports.getReturnTo = getReturnTo;
-module.exports.getRedirectBase = getRedirectBase;
+module.exports.getPrefixedLandingPath = getPrefixedLandingPath;
 module.exports.normalizeParams = normalizeParams;
 module.exports.getRedirectParams = getRedirectParams;
-module.exports.isRootPath = isRootPath;
+module.exports.haveSamePath = haveSamePath;
