@@ -1,6 +1,6 @@
 ---
 id: 5679ceb97cbaa8c51670a16b
-title: Returning Boolean Values from Functions
+title: Retornando Valores Booleanos das Funções
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
@@ -9,9 +9,9 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-You may recall from [Comparison with the Equality Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator) that all comparison operators return a boolean `true` or `false` value.
+Você pode se lembrar de [Comparação com o Operador de Igualdade](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator) que todas os operadores de comparação retornam um valor booleano `true` ou `false`.
 
-Sometimes people use an `if/else` statement to do a comparison, like this:
+As vezes as pessoas usam uma instrução `if/else` para fazer uma comparação, dessa forma:
 
 ```js
 function isEqual(a,b) {
@@ -23,7 +23,7 @@ function isEqual(a,b) {
 }
 ```
 
-But there's a better way to do this. Since `===` returns `true` or `false`, we can return the result of the comparison:
+Mas há uma forma melhor de fazer isso. Já que `===` retorna `true` ou `false`, podemos retornar o resultado da comparação:
 
 ```js
 function isEqual(a,b) {
@@ -33,23 +33,23 @@ function isEqual(a,b) {
 
 # --instructions--
 
-Fix the function `isLess` to remove the `if/else` statements.
+Corrija a função `isLess` para remover as instruções `if/else`.
 
 # --hints--
 
-`isLess(10,15)` should return `true`
+`isLess(10,15)` deve retornar `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-`isLess(15,10)` should return `false`
+`isLess(15,10)` deve retornar `false`
 
 ```js
 assert(isLess(15, 10) === false);
 ```
 
-You should not use any `if` or `else` statements
+Você não deve usar nenhuma das instruções `if` ou `else`
 
 ```js
 assert(!/if|else/g.test(code));

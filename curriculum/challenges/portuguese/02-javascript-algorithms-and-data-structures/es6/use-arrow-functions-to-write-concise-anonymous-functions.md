@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b43
-title: Use Arrow Functions to Write Concise Anonymous Functions
+title: Criar funções anônimas com arrow functions
 challengeType: 1
 forumTopicId: 301211
 dashedName: use-arrow-functions-to-write-concise-anonymous-functions
@@ -8,9 +8,9 @@ dashedName: use-arrow-functions-to-write-concise-anonymous-functions
 
 # --description--
 
-In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.
+No JavaScript, muitas vezes não precisamos nomear nossas funções, especialmente quando passamos uma função como argumento para outra função. Em vez disso, criamos funções anônimas. Como não iremos reutilizar essas funções posteriormente, não precisamos nomeá-las.
 
-To achieve this, we often use the following syntax:
+Para fazer isso, geralmente usamos a seguinte sintaxe:
 
 ```js
 const myFunc = function() {
@@ -19,7 +19,7 @@ const myFunc = function() {
 }
 ```
 
-ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use **arrow function syntax**:
+ES6 nos fornece um <dfn>syntatical sugar</dfn> onde não precisamos escrever funções anônimas como no exemplo acima. Ao invés disso, você pode usar a sintaxe **arrow function**:
 
 ```js
 const myFunc = () => {
@@ -28,45 +28,45 @@ const myFunc = () => {
 }
 ```
 
-When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
+Quando a função executa apenas uma linha de código ou retorna apenas um valor, a sintaxe de arrow function nos permite omitir a palavra-chave `return` assim como as chaves ao redor do código. Essa abordagem ajuda a criar funções menores em instruções de uma linha:
 
 ```js
 const myFunc = () => "value";
 ```
 
-This code will still return the string `value` by default.
+Esse código ainda retornará a string `value` por padrão.
 
 # --instructions--
 
-Rewrite the function assigned to the variable `magic` which returns a `new Date()` to use arrow function syntax. Also, make sure nothing is defined using the keyword `var`.
+Rescreva a função atribuída à variável `magic` usando a sintaxe de arrow function. A função deve retornar `new Date()`. Além disso, garanta que nada seja definido usando a palavra-chave `var`.
 
 # --hints--
 
-You should replace the `var` keyword.
+Você deve substituir a palavra-chave `var`.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`magic` should be a constant variable (by using `const`).
+A variável `magic` deve ser uma variável constante (use `const`).
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
 ```
 
-`magic` should be a `function`.
+A variável `magic` deve ser uma `function`.
 
 ```js
 assert(typeof magic === 'function');
 ```
 
-`magic()` should return the correct date.
+Ao invocar `magic()`, uma data deve ser retornada.
 
 ```js
 assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 ```
 
-The `function` keyword should not be used.
+A palavra-chave `function` não deve ser usada.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/function/g));

@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b40
-title: Compare Scopes of the var and let Keywords
+title: Compare Escopos das Palavras-Chaves var e let
 challengeType: 1
 forumTopicId: 301195
 dashedName: compare-scopes-of-the-var-and-let-keywords
@@ -8,11 +8,11 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-When you declare a variable with the `var` keyword, it is declared globally, or locally if declared inside a function.
+Quando você declara uma variável com a palavra-chave `var`, ela é declarada globalmente, ou localmente se declarada dentro de uma função.
 
-The `let` keyword behaves similarly, but with some extra features. When you declare a variable with the `let` keyword inside a block, statement, or expression, its scope is limited to that block, statement, or expression.
+A palvara-chave `let` se comporta de forma similar, mas com alguns recursos extras. Quando você declara a variável com a palavra-chave `let` dentro de um bloco, declaração, ou expressão, seu escopo é limitado ao bloco, declaração, ou expressão.
 
-For example:
+Por exemplo:
 
 ```js
 var numArray = [];
@@ -23,9 +23,9 @@ console.log(numArray);
 console.log(i);
 ```
 
-Here the console will display the values `[0, 1, 2]` and `3`.
+Aqui o console irá exibir os valores `[0, 1, 2]` e `3`.
 
-With the `var` keyword, `i` is declared globally. So when `i++` is executed, it updates the global variable. This code is similar to the following:
+Com a palavra-chave `var`, `i` é declarado globalmente. Então quando `i++` é executado, ele atualiza a variável global. Esse código é semelhante ao seguinte:
 
 ```js
 var numArray = [];
@@ -37,9 +37,9 @@ console.log(numArray);
 console.log(i);
 ```
 
-Here the console will display the values `[0, 1, 2]` and `3`.
+Aqui o console irá exibir os valores `[0, 1, 2]` e `3`.
 
-This behavior will cause problems if you were to create a function and store it for later use inside a `for` loop that uses the `i` variable. This is because the stored function will always refer to the value of the updated global `i` variable.
+Este comportamento causará problemas se você criasse uma função e armazená-la para depois utilizar dentro de um laço `for` que utiliza a variável `i`. Isso se deve ao fato da função armazenada sempre irá se referir ao valor da variável global `i` atualizada.
 
 ```js
 var printNumTwo;
@@ -53,9 +53,9 @@ for (var i = 0; i < 3; i++) {
 console.log(printNumTwo());
 ```
 
-Here the console will display the value `3`.
+Aqui o console irá exibir o valor `3`.
 
-As you can see, `printNumTwo()` prints 3 and not 2. This is because the value assigned to `i` was updated and the `printNumTwo()` returns the global `i` and not the value `i` had when the function was created in the for loop. The `let` keyword does not follow this behavior:
+Como você pode ver, `printNumTwo()` exibe 3 e não 2. Isso se deve ao fato do valor atribuído a `i` foi atualizado e `printNumTwo()` retorna a variável global `i` e não o valor que `i` tinha quando a função foi criada dentro do laço for. A palavra-chave `let` não segue este comportamento:
 
 ```js
 let printNumTwo;
@@ -70,25 +70,25 @@ console.log(printNumTwo());
 console.log(i);
 ```
 
-Here the console will display the value `2`, and an error that `i is not defined`.
+Aqui o console irá exibir o valor `2`, e um erro que `i is not defined (i não foi definido)`.
 
-`i` is not defined because it was not declared in the global scope. It is only declared within the `for` loop statement. `printNumTwo()` returned the correct value because three different `i` variables with unique values (0, 1, and 2) were created by the `let` keyword within the loop statement.
+`i` não foi definido porque não foi declarado no escopo global. É declarado apenas dentro da declaração do laço `for`. `printNumTwo()` retornou o valor correto porque três variáveis `i` distintas com valores únicos (0, 1 e 2) foram criados com a palavra-chave `let` dentro da declaração do laço.
 
 # --instructions--
 
-Fix the code so that `i` declared in the `if` statement is a separate variable than `i` declared in the first line of the function. Be certain not to use the `var` keyword anywhere in your code.
+Corrija o código para que `i` declarado dentro do comando `if` seja uma variável diferente de `i` declarada na primeira linha da função. Tenha certeza de não usar a palavra-chave `var` em nenhum lugar do seu código.
 
-This exercise is designed to illustrate the difference between how `var` and `let` keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion.
+Este exercício foi projetado para ilustrar a diferença ente como as palavras-chaves `var` e `let` definem o escopo para a variável declarada. Quando programamos uma função semelhar a aquelas utilizadas no exercício, geralmente é melhor utilizar variáveis distintas para evitar confusão.
 
 # --hints--
 
-`var` should not exist in code.
+`var` não deve existir no código.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-The variable `i` declared in the `if` statement should equal the string `block scope`.
+A variável `i` declarada dentro do corpo do comando `if` deve ser igual a string `block scope`.
 
 ```js
 (getUserInput) =>
@@ -97,7 +97,7 @@ The variable `i` declared in the `if` statement should equal the string `block s
   );
 ```
 
-`checkScope()` should return the string `function scope`
+`checkScope()` deve retornar a string `function scope`
 
 ```js
 assert(checkScope() === 'function scope');

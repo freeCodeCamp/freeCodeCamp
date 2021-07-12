@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b58
-title: Create an Export Fallback with export default
+title: Exportar apenas um valor com export default
 challengeType: 1
 forumTopicId: 301199
 dashedName: create-an-export-fallback-with-export-default
@@ -8,11 +8,11 @@ dashedName: create-an-export-fallback-with-export-default
 
 # --description--
 
-In the `export` lesson, you learned about the syntax referred to as a <dfn>named export</dfn>. This allowed you to make multiple functions and variables available for use in other files.
+Na lição de `export` você aprendeu sobre a sintaxe que chamamos de <dfn>exportação nomeada</dfn>. Naquela lição você exportou múltiplas funções e variáveis que ficaram disponíveis para utilização em outros arquivos.
 
-There is another `export` syntax you need to know, known as <dfn>export default</dfn>. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.
+Há outra sintaxe para `export` que você precisa saber, conhecida como <dfn>exportação padrão</dfn>. Você usará essa sintaxe quando apenas um valor estiver sendo exportado de um arquivo ou módulo. Essa sintaxe também é usada para exportar um valor substituto caso o valor original não possa ser exportado.
 
-Below are examples using `export default`:
+Abaixo estão exemplos utilizando a sintaxe `export default`:
 
 ```js
 export default function add(x, y) {
@@ -24,17 +24,17 @@ export default function(x, y) {
 }
 ```
 
-The first is a named function, and the second is an anonymous function.
+O primeiro exemplo é uma função nomeada e o segundo é uma função anônima.
 
-Since `export default` is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use `export default` with `var`, `let`, or `const`
+A sintaxe `export default` é usada para exportar um único valor de um arquivo ou módulo. Tenha em mente que você não pode usar o `export default` com `var`, `let` ou `const`
 
 # --instructions--
 
-The following function should be the fallback value for the module. Please add the necessary code to do so.
+A função a seguir deve ser o único valor a ser exportado. Adicione o código necessário para que apenas um valor seja exportado.
 
 # --hints--
 
-Your code should use an `export` fallback.
+Você deve usar a sintaxe alternativa ao `export`.
 
 ```js
 assert(
