@@ -241,7 +241,6 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
     const { challengeFiles, fileKey } = props;
-    const data = dataRef.current;
     monacoRef.current = monaco;
     defineMonacoThemes(monaco);
     // If a model is not provided, then the editor 'owns' the model it creates
@@ -252,7 +251,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     // TODO: For now, I'm keeping the 'data' machinery, but it'll probably go
 
     const model =
-      data.model ||
+      dataRef.current.model ||
       monaco.editor.createModel(
         challengeFiles[fileKey]?.contents ?? '',
         modeMap[challengeFiles[fileKey]?.ext ?? 'html']
@@ -270,12 +269,12 @@ const Editor = (props: PropTypes): JSX.Element => {
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
   const updateEditorValues = () => {
-    const data = dataRef.current;
+    const { model } = dataRef.current;
     const { challengeFiles, fileKey } = props;
 
     const newContents = challengeFiles[fileKey]?.contents;
-    if (data.model?.getValue() !== newContents) {
-      data.model?.setValue(newContents ?? '');
+    if (model?.getValue() !== newContents) {
+      model?.setValue(newContents ?? '');
     }
   };
 
@@ -415,7 +414,6 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   const viewZoneCallback = (changeAccessor: editor.IViewZoneChangeAccessor) => {
     const editor = editorRef.current;
-    const data = dataRef.current;
     if (!editor) return;
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
@@ -426,7 +424,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     // TODO: set via onComputedHeight?
-    data.viewZoneHeight = domNode.offsetHeight;
+    dataRef.current.viewZoneHeight = domNode.offsetHeight;
 
     const background = document.createElement('div');
     // background.style.background = 'lightgreen';
@@ -443,7 +441,7 @@ const Editor = (props: PropTypes): JSX.Element => {
         editor.layoutOverlayWidget(overlayWidgetRef.current)
     };
 
-    data.viewZoneId = changeAccessor.addZone(viewZone);
+    dataRef.current.viewZoneId = changeAccessor.addZone(viewZone);
   };
 
   // TODO: this is basically the same as viewZoneCallback, so DRY them out.
@@ -451,7 +449,6 @@ const Editor = (props: PropTypes): JSX.Element => {
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
     const editor = editorRef.current;
-    const data = dataRef.current;
     if (!editor) return;
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
@@ -462,7 +459,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     // TODO: set via onComputedHeight?
-    data.outputZoneHeight = outputNode.offsetHeight;
+    dataRef.current.outputZoneHeight = outputNode.offsetHeight;
 
     const background = document.createElement('div');
     // background.style.background = 'lightpink';
