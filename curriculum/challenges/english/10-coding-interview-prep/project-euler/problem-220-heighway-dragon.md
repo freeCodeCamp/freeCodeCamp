@@ -17,7 +17,7 @@ Thus, $D_0$ = "Fa", $D_1$ = "FaRbFR", $D_2$ = "FaRbFRRLFaLbFR", and so on.
 
 These strings can be interpreted as instructions to a computer graphics program, with "F" meaning "draw forward one unit", "L" meaning "turn left 90 degrees", "R" meaning "turn right 90 degrees", and "a" and "b" being ignored. The initial position of the computer cursor is (0,0), pointing up towards (0,1).
 
-Then $D_n$ is an exotic drawing known as the Heighway Dragon of order n. For example, $D_{10}$ is shown below; counting each "F" as one step, the highlighted spot at (18,16) is the position reached after 500 steps.
+Then $D_n$ is an exotic drawing known as the Heighway Dragon of order $n$. For example, $D_{10}$ is shown below; counting each "F" as one step, the highlighted spot at (18,16) is the position reached after 500 steps.
 
 <img class="img-responsive center-block" alt="drawing of the Heighway Dragon after 500 steps" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;">
 

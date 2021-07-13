@@ -12,7 +12,7 @@ A positive integer with $k$ (decimal) digits is called balanced if its first $‚å
 
 So, for example, all palindromes are balanced, as is 13722.
 
-Let $T(n)$ be the sum of all balanced numbers less than $10n$.
+Let $T(n)$ be the sum of all balanced numbers less than $10^n$.
 
 Thus: $T(1) = 45$, $T(2) = 540$ and $T(5) = 334\\,795\\,890$.
 
