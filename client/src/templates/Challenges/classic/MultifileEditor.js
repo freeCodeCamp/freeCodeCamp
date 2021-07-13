@@ -221,9 +221,9 @@ class MultifileEditor extends Component {
                   challengeFiles={challengeFiles}
                   containerRef={containerRef}
                   description={targetEditor === 'indexjsx' ? description : null}
+                  editorRef={editorRef}
                   fileKey='indexjsx'
                   key='indexjsx'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -240,9 +240,9 @@ class MultifileEditor extends Component {
                   description={
                     targetEditor === 'indexhtml' ? description : null
                   }
+                  editorRef={editorRef}
                   fileKey='indexhtml'
                   key='indexhtml'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -257,9 +257,9 @@ class MultifileEditor extends Component {
                   challengeFiles={challengeFiles}
                   containerRef={containerRef}
                   description={targetEditor === 'indexcss' ? description : null}
+                  editorRef={editorRef}
                   fileKey='indexcss'
                   key='indexcss'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -275,9 +275,9 @@ class MultifileEditor extends Component {
                   challengeFiles={challengeFiles}
                   containerRef={containerRef}
                   description={targetEditor === 'indexjs' ? description : null}
+                  editorRef={editorRef}
                   fileKey='indexjs'
                   key='indexjs'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
