@@ -10,7 +10,7 @@ dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degr
 
 Let's call an integer sided triangle with exactly one angle of 60° a 60° triangle.
 
-Let r be the radius of the inscribed circle of such a 60° triangle.
+Let $r$ be the radius of the inscribed circle of such a 60° triangle.
 
 There are 1234 60° triangles for which $r ≤ 100$.
 
