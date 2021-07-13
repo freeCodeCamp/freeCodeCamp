@@ -71,29 +71,27 @@ describe('Responsive Web Design Superblock', () => {
         cy.contains("I've completed this challenge")
           .should('not.be.disabled')
           .click();
-        cy.contains('Submit and go to next challenge').click().wait(1000);
+        cy.contains('Submit and go to next challenge').click();
+        cy.location().should(loc => {
+          expect(loc.pathname).to.not.eq(url);
+        });
       });
     });
-    it('should redirect to the Superblock page', () => {
-      cy.url().should('include', `/learn/${projects.superBlock}`);
-    });
-    it('should open the donation modal on the Superblock page', () => {
-      cy.contains('Ask me later').should('be.visible').click().wait(300);
-    });
-    it('should have the hash "claim-cert-block" in the url', () => {
+    it('should be possible to claim and view certifications from the superBlock page', () => {
+      cy.location().should(loc => {
+        expect(loc.pathname).to.eq(`/learn/${projects.superBlock}`);
+      });
+      cy.get('.donation-modal').should('be.visible');
+      cy.contains('Ask me later').click();
+      cy.get('.donation-modal').should('not.be.visible');
+      // directed to claim-cert-block section
       cy.url().should('include', '#claim-cert-block');
-    });
-    it('should be able to claim certification', () => {
-      cy.get('[href="/certification/developmentuser/responsive-web-design"]')
-        .should('not.be.disabled')
-        .click();
-    });
-    it('should be able to view the certification', () => {
+      cy.contains('Claim Certification').should('not.be.disabled').click();
       cy.contains('Show Certification').click();
-      cy.url().should(
-        'contain',
-        'certification/developmentuser/responsive-web-design'
-      );
-    });
+      cy.location().should(loc => {
+        expect(loc.pathname).to.eq(
+          '/certification/developmentuser/responsive-web-design'
+        );
+      });
   });
 });
