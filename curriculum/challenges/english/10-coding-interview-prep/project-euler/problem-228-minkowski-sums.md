@@ -8,7 +8,7 @@ dashedName: problem-228-minkowski-sums
 
 # --description--
 
-Let $Sn$ be the regular $n$-sided polygon – or shape – whose vertices $v_k (k = 1, 2, \ldots, n)$ have coordinates:
+Let $S_n$ be the regular $n$-sided polygon – or shape – whose vertices $v_k (k = 1, 2, \ldots, n)$ have coordinates:
 
 $$\begin{align}
   & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\

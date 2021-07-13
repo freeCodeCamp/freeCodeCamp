@@ -19,7 +19,7 @@ $$\begin{align}
 
 Similarly, we find that $88201 = {99}^2 + {280}^2 = {287}^2 + 2 × {54}^2 = {283}^2 + 3 × {52}^2 = {197}^2 + 7 × {84}^2$.
 
-In 1747, Euler proved which numbers are representable as a sum of two squares. We are interested in the numbers n which admit representations of all of the following four types:
+In 1747, Euler proved which numbers are representable as a sum of two squares. We are interested in the numbers $n$ which admit representations of all of the following four types:
 
 $$\begin{align}
   & n = {a_1}^2 + {b_1}^2  \\\\
