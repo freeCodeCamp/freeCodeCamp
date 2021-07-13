@@ -1,6 +1,6 @@
 ---
 id: 56105e7b514f539506016a5e
-title: Count Backwards With a For Loop
+title: Conte para Trás com um Laço For
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
@@ -9,11 +9,11 @@ dashedName: count-backwards-with-a-for-loop
 
 # --description--
 
-A for loop can also count backwards, so long as we can define the right conditions.
+Um laço for também pode contar pra trás, contanto que possamos definir as condições certas.
 
-In order to decrement by two each iteration, we'll need to change our initialization, condition, and final expression.
+Para decrementar em dois cada iteração, nós precisamos alterar nossa inicialização, condição e expressão final.
 
-We'll start at `i = 10` and loop while `i > 0`. We'll decrement `i` by 2 each loop with `i -= 2`.
+Nós começaremos em `i = 10` e iterar enquanto `i > 0`. Nós decrementamos `i` por dois em cada iteração com `i -= 2`.
 
 ```js
 var ourArray = [];
@@ -22,27 +22,27 @@ for (var i = 10; i > 0; i -= 2) {
 }
 ```
 
-`ourArray` will now contain `[10,8,6,4,2]`. Let's change our initialization and final expression so we can count backwards by twos to create an array of descending odd numbers.
+`ourArray` agora vai conter `[10,8, 6,4,2]`. Vamos mudar nossa inicialização e expressão final para que possamos contar para trás em dois para criar um array de números ímpares decrescentes.
 
 # --instructions--
 
-Push the odd numbers from 9 through 1 to `myArray` using a `for` loop.
+Adicione (push) os números ímpares de 9 até 1 para `myArray` usando um laço `for`.
 
 # --hints--
 
-You should be using a `for` loop for this.
+Você deve estar usando um laço `for` para isso.
 
 ```js
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-You should be using the array method `push`.
+Você deve usar o método de array `push`.
 
 ```js
 assert(code.match(/myArray.push/));
 ```
 
-`myArray` should equal `[9,7,5,3,1]`.
+`myArray` deve ser igual a `[9,7,5,3,1]`.
 
 ```js
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);

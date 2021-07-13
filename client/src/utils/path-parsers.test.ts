@@ -1,5 +1,3 @@
-/* global describe it expect */
-
 import { isChallenge, isLanding } from './path-parsers';
 
 const pathnames = {

@@ -4,7 +4,8 @@ title: Remove Classes from an Element with jQuery
 challengeType: 6
 forumTopicId: 18264
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: remove-classes-from-an-element-with-jquery
 ---
 

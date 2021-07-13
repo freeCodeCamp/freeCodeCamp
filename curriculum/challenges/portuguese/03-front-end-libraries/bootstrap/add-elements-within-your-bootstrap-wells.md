@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908849
-title: Add Elements within Your Bootstrap Wells
+title: Adicione elementos em seus Bootstrap Wells
 challengeType: 0
 forumTopicId: 16636
 dashedName: add-elements-within-your-bootstrap-wells
@@ -8,9 +8,9 @@ dashedName: add-elements-within-your-bootstrap-wells
 
 # --description--
 
-Now we're several `div` elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our `button` elements.
+Agora estamos na profundidade de diversos elementos `div` em cada coluna da nossa linha. Isso é tão profundo quanto precisamos ir. Agora podemos adicionar nossos elementos `button`.
 
-Nest three `button` elements within each of your `div` elements having the class name `well`.
+Aninhe três elementos `button` dentro de cada um de seus elementos `div` contendo o nome de classe `well`.
 
 # --hints--
 

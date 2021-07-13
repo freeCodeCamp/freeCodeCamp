@@ -19,10 +19,10 @@ Demonstrate that it passes the following three test-cases:
 
 <div style='font-size:115%; font-weight: bold;'>Test Cases</div>
 
-| Input number | Output number                         |
-| ------------ | ------------------------------------- |
-| 7259         | <code>2 hr, 59 sec</code>             |
-| 86400        | <code>1 d</code>                      |
+| Input number | Output number             |
+| ------------ | ------------------------- |
+| 7259         | <code>2 hr, 59 sec</code> |
+| 86400        | <code>1 d</code> |
 | 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
 <div style="font-size:115%; font-weight: bold;">Details</div>
@@ -32,11 +32,11 @@ Demonstrate that it passes the following three test-cases:
 
 | Unit   | Suffix used in Output | Conversion            |
 | ------ | --------------------- | --------------------- |
-| week   | <code>wk</code>       | 1 week = 7 days       |
-| day    | <code>d</code>        | 1 day = 24 hours      |
-| hour   | <code>hr</code>       | 1 hour = 60 minutes   |
-| minute | <code>min</code>      | 1 minute = 60 seconds |
-| second | <code>sec</code>      | ---                   |
+| week   |!!crwdBlockTags_18_sgaTkcolBdwrc!!       | 1 week = 7 days       |
+| day    |!!crwdBlockTags_19_sgaTkcolBdwrc!!        | 1 day = 24 hours      |
+| hour   |!!crwdBlockTags_20_sgaTkcolBdwrc!!       | 1 hour = 60 minutes   |
+| minute |!!crwdBlockTags_21_sgaTkcolBdwrc!!      | 1 minute = 60 seconds |
+| second |!!crwdBlockTags_22_sgaTkcolBdwrc!!      | ---                   |
 
   </li>
   <li>

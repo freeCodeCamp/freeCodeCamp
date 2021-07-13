@@ -396,7 +396,7 @@
     "shield": "Un escudo con una marca de verificación",
     "tensorflow": "Icono de Tensorflow",
     "algorithm": "Nodos ramificados",
-    "magnifier": "magnifier"
+    "magnifier": "lupa"
   },
   "aria": {
     "fcc-logo": "Logo de freeCodeCamp",
@@ -559,7 +559,7 @@
   },
   "certification-card": {
     "title": "Reclamar tu certificación",
-    "intro": "Complete the following steps to claim and view your {{i18nCertText}}",
+    "intro": "Completa los siguientes pasos para reclamar y ver tu {{i18nCertText}}",
     "complete-project": "Completa {{i18nCertText}} proyectos",
     "accept-honesty": "Acepta nuestra política de honestidad académica",
     "set-name": "Establece tu nombre, y hazlo público",

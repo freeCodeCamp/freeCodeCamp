@@ -8,14 +8,14 @@ dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 
 # --description--
 
-How many 18-digit numbers n (without leading zeros) are there such that no digit occurs more than three times in n?
+How many 18-digit numbers $n$ (without leading zeros) are there such that no digit occurs more than three times in $n$?
 
 # --hints--
 
-`euler172()` should return 227485267000992000.
+`numbersWithRepeatedDigits()` should return `227485267000992000`.
 
 ```js
-assert.strictEqual(euler172(), 227485267000992000);
+assert.strictEqual(numbersWithRepeatedDigits(), 227485267000992000);
 ```
 
 # --seed--
@@ -23,12 +23,12 @@ assert.strictEqual(euler172(), 227485267000992000);
 ## --seed-contents--
 
 ```js
-function euler172() {
+function numbersWithRepeatedDigits() {
 
   return true;
 }
 
-euler172();
+numbersWithRepeatedDigits();
 ```
 
 # --solutions--

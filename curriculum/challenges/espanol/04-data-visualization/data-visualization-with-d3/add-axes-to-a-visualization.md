@@ -26,11 +26,11 @@ svg.append("g")
    .call(xAxis);
 ```
 
-The above code places the x-axis at the bottom of the SVG canvas. Then it's passed as an argument to the `call()` method. The y-axis works in the same way, except the `translate` argument is in the form (x, 0). Because `translate` is a string in the `attr()` method above, you can use concatenation to include variable values for its arguments.
+The above code places the x-axis at the bottom of the SVG canvas. Then it's passed as an argument to the `call()` method. The y-axis works in the same way, except the `translate` argument is in the form `(x, 0)`. Because `translate` is a string in the `attr()` method above, you can use concatenation to include variable values for its arguments.
 
 # --instructions--
 
-The scatter plot now has an x-axis. Create a y-axis in a variable named `yAxis` using the `axisLeft()` method. Then render the axis using a `g` element. Make sure to use a `transform` attribute to translate the axis by the amount of padding units right, and 0 units down. Remember to `call()` the axis.
+The scatter plot now has an x-axis. Create a y-axis in a variable named `yAxis` using the `axisLeft()` method. Then render the axis using a `g` element. Make sure to use a `transform` attribute to translate the axis by the amount of padding units right, and `0` units down. Remember to `call()` the axis.
 
 # --hints--
 
@@ -40,7 +40,7 @@ Your code should use the `axisLeft()` method with `yScale` passed as the argumen
 assert(code.match(/\.axisLeft\(yScale\)/g));
 ```
 
-The y-axis `g` element should have a `transform` attribute to translate the axis by (60, 0).
+The y-axis `g` element should have a `transform` attribute to translate the axis by `(60, 0)`.
 
 ```js
 assert(

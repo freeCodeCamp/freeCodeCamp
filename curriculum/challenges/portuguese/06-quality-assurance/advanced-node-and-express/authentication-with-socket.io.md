@@ -35,7 +35,7 @@ io.use(
 
 Be sure to add the `key` and `store` to the `session` middleware mounted on the app. This is necessary to tell *SocketIO* which session to relate to.
 
-<hr>
+<hr />
 
 Now, define the `success`, and `fail` callback functions:
 

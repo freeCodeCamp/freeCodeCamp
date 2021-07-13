@@ -12,7 +12,7 @@ dashedName: deal-cards-for-freecell
 
 As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
 
-The algorithm uses this [linear congruential generator](<https://rosettacode.org/wiki/linear congruential generator> "linear congruential generator") from Microsoft C:
+The algorithm uses this [linear congruential generator](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") from Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>

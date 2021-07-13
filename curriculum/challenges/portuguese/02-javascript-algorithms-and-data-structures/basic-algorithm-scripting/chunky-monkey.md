@@ -1,6 +1,6 @@
 ---
 id: a9bd25c716030ec90084d8a1
-title: Chunky Monkey
+title: Macaco Robusto
 challengeType: 5
 forumTopicId: 16005
 dashedName: chunky-monkey
@@ -8,11 +8,11 @@ dashedName: chunky-monkey
 
 # --description--
 
-Write a function that splits an array (first argument) into groups the length of `size` (second argument) and returns them as a two-dimensional array.
+Escreva uma função que divida um array (primeiro argumento) em grupos de comprimento `size` (segundo argumento) e os retorne como um array bidimensional.
 
 # --hints--
 
-`chunkArrayInGroups(["a", "b", "c", "d"], 2)` should return `[["a", "b"], ["c", "d"]]`.
+`chunkArrayInGroups(["a", "b", "c", "d"], 2)` deve retornar `[["a", "b"], ["c", "d"]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2), [
@@ -21,7 +21,7 @@ assert.deepEqual(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)` should return `[[0, 1, 2], [3, 4, 5]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)` deve retornar `[[0, 1, 2], [3, 4, 5]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [
@@ -30,7 +30,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)` should return `[[0, 1], [2, 3], [4, 5]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)` deve retornar `[[0, 1], [2, 3], [4, 5]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [
@@ -40,7 +40,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)` should return `[[0, 1, 2, 3], [4, 5]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)` deve retornar `[[0, 1, 2, 3], [4, 5]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [
@@ -49,7 +49,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)` should return `[[0, 1, 2], [3, 4, 5], [6]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)` deve retornar `[[0, 1, 2], [3, 4, 5], [6]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [
@@ -59,7 +59,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)` should return `[[0, 1, 2, 3], [4, 5, 6, 7], [8]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)` deve retornar `[[0, 1, 2, 3], [4, 5, 6, 7], [8]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [
@@ -69,7 +69,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)` should return `[[0, 1], [2, 3], [4, 5], [6, 7], [8]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)` deve retornar `[[0, 1], [2, 3], [4, 5], [6, 7], [8]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [

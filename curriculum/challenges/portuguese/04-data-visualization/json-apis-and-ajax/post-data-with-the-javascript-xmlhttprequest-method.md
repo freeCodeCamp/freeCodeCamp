@@ -30,7 +30,7 @@ You've seen several of these methods before. Here the `open` method initializes 
 
 # --instructions--
 
-Update the code so it makes a `POST` request to the API endpoint. Then type your name in the input field and click `Send Message`. Your AJAX function should replace `Reply from Server will be here.` with data from the server. Format the response to display your name appended with the text ` loves cats`.
+Update the code so it makes a `POST` request to the API endpoint. Then type your name in the input field and click `Send Message`. Your AJAX function should replace `Reply from Server will be here.` with data from the server. Format the response to display your name appended with the text `loves cats`.
 
 # --hints--
 

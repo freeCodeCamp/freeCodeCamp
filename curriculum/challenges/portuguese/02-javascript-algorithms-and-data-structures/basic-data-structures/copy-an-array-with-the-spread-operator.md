@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b13
-title: Copy an Array with the Spread Operator
+title: Copiar um Array com o Operador Spread
 challengeType: 1
 forumTopicId: 301157
 dashedName: copy-an-array-with-the-spread-operator
@@ -8,24 +8,24 @@ dashedName: copy-an-array-with-the-spread-operator
 
 # --description--
 
-While `slice()` allows us to be selective about what elements of an array to copy, among several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy *all* of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: `...`
+Enquanto `slice()` nos permite ser seletivo sobre quais elementos de um array copiar, entre várias outras tarefas úteis, o novo operador <dfn>do spread</dfn> da ES6 nos permite facilmente copiar *todos* os elementos de um array, em ordem, com uma sintaxe simples e altamente legível. A sintaxe de spread simplesmente se parece com isso: `...`
 
-In practice, we can use the spread operator to copy an array like so:
+Na prática, podemos usar o operador "spread" para copiar um array assim:
 
 ```js
 let thisArray = [true, true, undefined, false, null];
 let thatArray = [...thisArray];
 ```
 
-`thatArray` equals `[true, true, undefined, false, null]`. `thisArray` remains unchanged and `thatArray` contains the same elements as `thisArray`.
+`thatArray` é igual a `[true, true, undefined, false, null]`. `thisArray` permanece inalterado e `thatArray` contém os mesmos elementos que `thisArray`.
 
 # --instructions--
 
-We have defined a function, `copyMachine` which takes `arr` (an array) and `num` (a number) as arguments. The function is supposed to return a new array made up of `num` copies of `arr`. We have done most of the work for you, but it doesn't work quite right yet. Modify the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!).
+Definimos uma função, `copyMachine` que recebe `arr` (um array) e `num` (um número) como argumentos. A função deve retornar um novo array composto de `num` cópias de `arr`. Fizemos a maior parte do trabalho para você, mas ainda não funciona muito bem. Modifique a função usando a sintaxe spread para que ela funcione corretamente (dica: outro método já mencionado pode ser útil aqui!).
 
 # --hints--
 
-`copyMachine([true, false, true], 2)` should return `[[true, false, true], [true, false, true]]`
+`copyMachine([true, false, true], 2)` deve retornar `[[true, false, true], [true, false, true]]`
 
 ```js
 assert.deepEqual(copyMachine([true, false, true], 2), [
@@ -34,7 +34,7 @@ assert.deepEqual(copyMachine([true, false, true], 2), [
 ]);
 ```
 
-`copyMachine([1, 2, 3], 5)` should return `[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]`
+`copyMachine([1, 2, 3], 5)` deve retornar `[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]`
 
 ```js
 assert.deepEqual(copyMachine([1, 2, 3], 5), [
@@ -46,13 +46,13 @@ assert.deepEqual(copyMachine([1, 2, 3], 5), [
 ]);
 ```
 
-`copyMachine([true, true, null], 1)` should return `[[true, true, null]]`
+`copyMachine([true, true, null], 1)` deve retornar `[[true, true, null]]`
 
 ```js
 assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]]);
 ```
 
-`copyMachine(["it works"], 3)` should return `[["it works"], ["it works"], ["it works"]]`
+`copyMachine(["it works"], 3)` deve retornar `[["it works"], ["it works"], ["it works"]]`
 
 ```js
 assert.deepEqual(copyMachine(['it works'], 3), [
@@ -62,7 +62,7 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 ]);
 ```
 
-The `copyMachine` function should utilize the `spread operator` with array `arr`
+A função `copyMachine` deve utilizar o operador `spread` com array `arr`
 
 ```js
 assert(code.match(/\.\.\.arr/));

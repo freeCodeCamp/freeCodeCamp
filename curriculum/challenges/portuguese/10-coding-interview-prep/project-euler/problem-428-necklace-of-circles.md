@@ -20,7 +20,7 @@ The triplet (`a`, `b`, `c`) is called a *necklace triplet* if you can place `k` 
 
 <ul><li>C<sub><var>i</var></sub> has no common interior points with any C<sub><var>j</var></sub> for 1 ≤ <var>i</var>, <var>j</var> ≤ <var>k</var> and <var>i</var> ≠ <var>j</var>,</li><li>C<sub><var>i</var></sub> is tangent to both C<sub>in</sub> and C<sub>out</sub> for 1 ≤ <var>i</var> ≤ <var>k</var>,</li><li>C<sub><var>i</var></sub> is tangent to C<sub><var>i</var>+1</sub> for 1 ≤ <var>i</var> &lt; <var>k</var>, and</li><li>C<sub><var>k</var></sub> is tangent to C<sub>1</sub>.</li></ul>
 For example, (5, 5, 5) and (4, 3, 21) are necklace triplets, while it can be shown that (2, 2, 5) is not.
-<img src="https://projecteuler.net/project/images/p428_necklace.png" alt="a visual representation of a necklace triplet">
+<img src="https://projecteuler.net/project/images/p428_necklace.png" alt="a visual representation of a necklace triplet" />
 
 Let T(`n`) be the number of necklace triplets (`a`, `b`, `c`) such that `a`, `b` and `c` are positive integers, and `b` ≤ `n`. For example, T(1) = 9, T(20) = 732 and T(3000) = 438106.
 

@@ -6,7 +6,7 @@ import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 const SearchBarOptimized = (): JSX.Element => {
   const { t } = useTranslation();
   const placeholder = t('search.placeholder');
-  const searchUrl: string = searchPageUrl as string;
+  const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);

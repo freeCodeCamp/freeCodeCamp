@@ -10,7 +10,7 @@ import TestSuite from './Test-Suite';
 import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
-import { mathJaxScriptLoader } from '../../../utils/scriptLoaders';
+import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
@@ -26,6 +26,7 @@ const propTypes = {
   description: PropTypes.string,
   guideUrl: PropTypes.string,
   instructions: PropTypes.string,
+  instructionsPanelRef: PropTypes.any.isRequired,
   isChallengeCompleted: PropTypes.bool,
   showToolPanel: PropTypes.bool,
   superBlock: PropTypes.string,
@@ -72,6 +73,7 @@ export class SidePanel extends Component {
       title,
       description,
       instructions,
+      instructionsPanelRef,
       isChallengeCompleted,
       guideUrl,
       tests,
@@ -81,7 +83,12 @@ export class SidePanel extends Component {
       videoUrl
     } = this.props;
     return (
-      <div className='instructions-panel' role='complementary' tabIndex='-1'>
+      <div
+        className='instructions-panel'
+        ref={instructionsPanelRef}
+        role='complementary'
+        tabIndex='-1'
+      >
         <div>
           <ChallengeTitle
             block={block}

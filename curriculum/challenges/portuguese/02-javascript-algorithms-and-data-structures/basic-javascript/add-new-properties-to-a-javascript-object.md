@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d2
-title: Add New Properties to a JavaScript Object
+title: Adicione Novas Propriedades para um Objeto JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
@@ -9,23 +9,23 @@ dashedName: add-new-properties-to-a-javascript-object
 
 # --description--
 
-You can add new properties to existing JavaScript objects the same way you would modify them.
+Você pode adicionar novas propriedades para um objeto JavaScript existente da mesma forma que você iria modificá-los.
 
-Here's how we would add a `bark` property to `ourDog`:
+Aqui está como adicionaríamos uma propriedade `bark` para `ourDog`:
 
 ```js
 ourDog.bark = "bow-wow";
 ```
 
-or
+ou
 
 ```js
 ourDog["bark"] = "bow-wow";
 ```
 
-Now when we evaluate `ourDog.bark`, we'll get his bark, `bow-wow`.
+Agora, quando acessamos `ourDog.bark`, nós teremos o seu latido, `bow-wow`.
 
-Example:
+Exemplo:
 
 ```js
 var ourDog = {
@@ -40,17 +40,17 @@ ourDog.bark = "bow-wow";
 
 # --instructions--
 
-Add a `bark` property to `myDog` and set it to a dog sound, such as "woof". You may use either dot or bracket notation.
+Adicione a propriedade `bark` para `myDog` e defina-a para um som de um cachorro, como "woof". Você pode usar tanto notação de ponto quando de colchetes.
 
 # --hints--
 
-You should add the property `bark` to `myDog`.
+Você deve adicionar a propriedade `bark` para `myDog`.
 
 ```js
 assert(myDog.bark !== undefined);
 ```
 
-You should not add `bark` to the initialization of `myDog`.
+Você não deve adicionar `bark` na inicialização de `myDog`.
 
 ```js
 assert(!/bark[^\n]:/.test(code));

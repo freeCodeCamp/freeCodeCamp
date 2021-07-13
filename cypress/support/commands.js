@@ -36,6 +36,7 @@
 Cypress.Commands.add('login', () => {
   cy.visit('/');
   cy.contains("Get started (it's free)").click();
+  cy.url().should('eq', Cypress.config().baseUrl + '/learn/');
   cy.contains('Welcome back');
 });
 
