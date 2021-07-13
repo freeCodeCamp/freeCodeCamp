@@ -473,10 +473,10 @@ const Editor = (props: PropTypes): JSX.Element => {
       domNode: background,
       onComputedHeight: () =>
         outputWidgetRef.current &&
-        editor?.layoutOverlayWidget(outputWidgetRef.current)
+        editor.layoutOverlayWidget(outputWidgetRef.current)
     };
 
-    dataRef.current.viewZoneId = changeAccessor.addZone(viewZone);
+    dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
   };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
