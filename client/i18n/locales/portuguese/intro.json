@@ -1,18 +1,18 @@
 {
   "responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Web Design Responsivo",
     "intro": [
-      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "Nesta certificação de Web Design Responsivo, você irá aprender as linguagem que os desenvolvedores utilizam para construir páginas WEB: HTML (Hypertext Markup Language) para o conteúdo, e CSS (Cascading Style Sheets) para o design.",
+      "Primeiro, você criará um app para foto de gatos para aprender o básico de HTML e CSS. Depois, você irá aprender técnicas modernas, como variáveis CSS, criando um pinguim, e as melhores práticas para acessibilidade criando um formulário web",
+      "Finamlmente, você irá aprender como fazer páginas web que responda a diferentes tamanhos de telas construindo um Twitter Card com Flexbox, e um layout complexo de blog com CSS Grid."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Nota: Algumas extensões de navegadores, como ad-blockers e extensões de modo escuro podem interferir com os testes. Se você estiver enfrentando qualquer problema,nós recomendamos desabilitar as extensões que modificam o conteúdo ou o layout das páginas, enquanto estiver fazendo o curso.",
     "blocks": {
       "basic-html-and-html5": {
-        "title": "Basic HTML and HTML5",
+        "title": "HTML e HTML5 básico",
         "intro": [
-          "HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a heading, paragraph, or list item.",
-          "In this course, you'll build a cat photo app to learn some of the most common HTML elements — the building blocks of any webpage."
+          "HTML é uma linguagem de marcação que usa uma sintaxe especial ou notação para descrever a estrutura da página web para o navegador. Elementos HTML geralmente possuem tags de abertura e de fechamento que cercam e dão sentido ao conteúdo. Por exemplo, diferentes elementos podem descrever texto como um cabeçalho, paragráfo ou um item de lista.",
+          "Neste curso, você criará um app para fotos de gato para aprender alguns dos mais comuns elementos HTML — os blocos de construção de qualquer página web."
         ]
       },
       "basic-css": {
