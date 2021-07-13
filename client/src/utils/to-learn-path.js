@@ -1,15 +1,6 @@
 import { withPrefix } from 'gatsby';
 
-interface ToLearnPathKwargs {
-  superBlock: string;
-  block: string;
-  challenge: string;
-}
-export default function toLearnPath({
-  superBlock,
-  block,
-  challenge
-}: ToLearnPathKwargs): string {
+export default function toLearnPath({ superBlock, block, challenge }) {
   let path = withPrefix('/learn');
   if (superBlock) path += `/${superBlock}`;
   if (block) path += `/${block}`;

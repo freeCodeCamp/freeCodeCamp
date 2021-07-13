@@ -10,7 +10,7 @@ import TestSuite from './Test-Suite';
 import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
-import { mathJaxScriptLoader } from '../../../utils/script-loaders';
+import { mathJaxScriptLoader } from '../../../utils/scriptLoaders';
 
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,

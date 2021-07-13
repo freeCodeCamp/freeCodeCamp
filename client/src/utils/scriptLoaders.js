@@ -1,29 +1,25 @@
-export function scriptLoader(
-  id: string,
-  async: boolean,
-  src: string,
-  onload: (() => void) | null,
-  text: string
-): void {
-  const s = document.createElement('script');
+export const scriptLoader = (id, key, async, src, onload, text) => {
+  let s = document.createElement('script');
   s.type = 'text/javascript';
   s.id = id;
+  s.key = key;
   s.async = async;
   s.onload = onload;
   s.src = src;
   s.text = text;
   document.getElementsByTagName('head')[0].appendChild(s);
-}
+};
 
-export function scriptRemover(id: string): void {
-  const script = document.getElementById(id);
+export const scriptRemover = id => {
+  let script = document.getElementById(id);
   if (script) {
     script.remove();
   }
-}
+};
 
-export function mathJaxScriptLoader(): void {
+export const mathJaxScriptLoader = () =>
   scriptLoader(
+    'mathjax',
     'mathjax',
     false,
     'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
@@ -43,4 +39,3 @@ export function mathJaxScriptLoader(): void {
       document.querySelector('.project-euler')
     ]);`
   );
-}

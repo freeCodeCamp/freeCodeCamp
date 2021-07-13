@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
+import { scriptLoader, scriptRemover } from '../../utils/scriptLoaders';
 import { Loader } from '../../components/helpers';
 
 export class PayPalButtonScriptLoader extends Component {
