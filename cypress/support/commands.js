@@ -48,10 +48,8 @@ Cypress.Commands.add('toggleAll', () => {
     .find('.toggle-not-active')
     .each(element => {
       return new Cypress.Promise(resolve => {
-        element.click();
-        setTimeout(() => {
-          resolve();
-        }, 300);
+        cy.wrap(element).click().should('have.class', 'toggle-active');
+        resolve();
       });
     });
   cy.get('#honesty-policy').find('button').click().wait(300);

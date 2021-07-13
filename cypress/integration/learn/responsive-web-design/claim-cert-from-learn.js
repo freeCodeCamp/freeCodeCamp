@@ -45,17 +45,8 @@ describe('Responsive Web Design Superblock', () => {
     });
 
     it('should have an unordered list with class "map-challenges-ul" containing 5 items', () => {
-      cy.get('a[href="#claim-cert-block"]')
-        .parent()
-        .parent()
-        .find('ul.map-challenges-ul')
-        .should('be.visible');
-      cy.get('a[href="#claim-cert-block"]')
-        .parent()
-        .parent()
-        .find('ul.map-challenges-ul')
-        .children()
-        .should('have.length', 5);
+      cy.get('[data-cy=claim-cert-steps]').should('be.visible');
+      cy.get('[data-cy=claim-cert-steps]').children().should('have.length', 5);
     });
   });
   describe('After submitting all 5 projects', () => {
@@ -79,7 +70,7 @@ describe('Responsive Web Design Superblock', () => {
     });
     it('should be possible to claim and view certifications from the superBlock page', () => {
       cy.location().should(loc => {
-        expect(loc.pathname).to.eq(`/learn/${projects.superBlock}`);
+        expect(loc.pathname).to.eq(`/learn/${projects.superBlock}/`);
       });
       cy.get('.donation-modal').should('be.visible');
       cy.contains('Ask me later').click();
@@ -93,5 +84,6 @@ describe('Responsive Web Design Superblock', () => {
           '/certification/developmentuser/responsive-web-design'
         );
       });
+    });
   });
 });

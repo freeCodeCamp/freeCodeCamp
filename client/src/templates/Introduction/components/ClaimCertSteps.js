@@ -40,7 +40,7 @@ const ClaimCertSteps = ({
     isShowProfile = false
   } = steps;
   return (
-    <ul className='map-challenges-ul'>
+    <ul className='map-challenges-ul' data-cy='claim-cert-steps'>
       <li className='map-challenge-title map-challenge-wrap'>
         <Link to={honestyPolicyAnchor}>
           <span className='badge map-badge'>{renderCheckMark(isHonest)}</span>
