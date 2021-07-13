@@ -1,5 +1,4 @@
 import React, {
-  useState,
   useEffect,
   Suspense,
   RefObject,
@@ -184,32 +183,22 @@ const initialData: DataType = {
 
 const Editor = (props: PropTypes): JSX.Element => {
   const { editorRef } = props;
+  // These refs are used during initialisation of the editor as well as by
+  // callbacks.  Since they have to be initialised before editorWillMount and
+  // editorDidMount are called, we cannot use useState.  Reason being that will
+  // only take effect during the next render, which is too late.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<DataType>(initialData);
-
-  // TODO: do any of these need to be useState? useRef is probably better
-  // or just lazily create them.
-  const [_domNode, setDomNode] = useState<HTMLDivElement | null>(null);
-  const [_outputNode, setOutputNode] = useState<HTMLDivElement | null>(null);
-  const [_overlayWidget, setOverlayWidget] =
-    useState<editor.IOverlayWidget | null>(null);
-  const [_outputWidget, setOutputWidget] =
-    useState<editor.IOverlayWidget | null>(null);
+  const domNodeRef = useRef<HTMLDivElement | null>(null);
+  const outputNodeRef = useRef<HTMLDivElement | null>(null);
+  const overlayWidgetRef = useRef<editor.IOverlayWidget | null>(null);
+  const outputWidgetRef = useRef<editor.IOverlayWidget | null>(null);
 
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
   // automatically be first, but  if there's jsx and js (for some reason) it
   //  will be [jsx, js].
-
-  // NOTE: This looks like it should be react state. However we need
-  // to access monaco.editor to create the models and store the state and that
-  // is only available in the react-monaco-editor component's lifecycle hooks
-  // and not react's lifecyle hooks.
-  // As a result it was unclear how to link up the editor's lifecycle with
-  // react's lifecycle. Simply storing the models and state here and letting
-  // the editor control them seems to be the best solution.
-  // TODO: IS THIS STILL TRUE NOW EACH EDITOR IS AN ISLAND, ENTIRE OF ITSELF?
 
   // NOTE: the ARIA state is controlled by fileKey, so changes to it must
   // trigger a re-render.  Hence state:
@@ -398,13 +387,13 @@ const Editor = (props: PropTypes): JSX.Element => {
         domNode,
         getViewZoneTop
       );
-      setOverlayWidget(overlayWidget);
+      overlayWidgetRef.current = overlayWidget;
       const outputWidget = createWidget(
         'my.output.widget',
         outputNode,
         getOutputZoneTop
       );
-      setOutputWidget(outputWidget);
+      outputWidgetRef.current = outputWidget;
 
       editor.addOverlayWidget(overlayWidget);
 
@@ -450,7 +439,8 @@ const Editor = (props: PropTypes): JSX.Element => {
       heightInPx: domNode.offsetHeight,
       domNode: background,
       onComputedHeight: () =>
-        _overlayWidget && editor.layoutOverlayWidget(_overlayWidget)
+        overlayWidgetRef.current &&
+        editor.layoutOverlayWidget(overlayWidgetRef.current)
     };
 
     data.viewZoneId = changeAccessor.addZone(viewZone);
@@ -485,14 +475,15 @@ const Editor = (props: PropTypes): JSX.Element => {
       heightInPx: outputNode.offsetHeight,
       domNode: background,
       onComputedHeight: () =>
-        _outputWidget && editor?.layoutOverlayWidget(_outputWidget)
+        outputWidgetRef.current &&
+        editor?.layoutOverlayWidget(outputWidgetRef.current)
     };
 
     dataRef.current.viewZoneId = changeAccessor.addZone(viewZone);
   };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
-    if (_domNode) return _domNode;
+    if (domNodeRef.current) return domNodeRef.current;
     const { description } = props;
     // TODO: var was used here. Should it?
     const domNode = document.createElement('div');
@@ -520,12 +511,12 @@ const Editor = (props: PropTypes): JSX.Element => {
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     domNode.style.top = getViewZoneTop();
-    setDomNode(domNode);
+    domNodeRef.current = domNode;
     return domNode;
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
-    if (_outputNode) return _outputNode;
+    if (outputNodeRef.current) return outputNodeRef.current;
     const outputNode = document.createElement('div');
     const statusNode = document.createElement('div');
     const hintNode = document.createElement('div');
@@ -558,7 +549,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
     outputNode.style.top = getOutputZoneTop();
 
-    setOutputNode(outputNode);
+    outputNodeRef.current = outputNode;
 
     return outputNode;
   }
@@ -1087,7 +1078,8 @@ const Editor = (props: PropTypes): JSX.Element => {
   }, [props.tests]);
   useEffect(() => {
     const { output } = props;
-    if (_outputNode) {
+    // TODO: do we need this condition?  What happens if the ref is empty?
+    if (outputNodeRef.current) {
       // TODO: output gets wiped when the preview gets updated, keeping the
       // display is an anti-pattern (the render should not ignore props!).
       // The correct solution is probably to create a new redux variable
