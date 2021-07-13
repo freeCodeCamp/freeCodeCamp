@@ -175,18 +175,22 @@ export const updateCurrentChallengeId = createAction(
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[MainApp].completionCount;
-export const currentChallengeIdSelector = state => state[MainApp].currentChallengeId;
+export const currentChallengeIdSelector = state =>
+  state[MainApp].currentChallengeId;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isSignedInSelector = state => !!state[MainApp].appUsername;
-export const isDonationModalOpenSelector = state => state[MainApp].showDonationModal;
+export const isDonationModalOpenSelector = state =>
+  state[MainApp].showDonationModal;
 export const recentlyClaimedBlockSelector = state =>
   state[MainApp].recentlyClaimedBlock;
-export const donationFormStateSelector = state => state[MainApp].donationFormState;
+export const donationFormStateSelector = state =>
+  state[MainApp].donationFormState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[MainApp].showCert;
-export const showCertFetchStateSelector = state => state[MainApp].showCertFetchState;
+export const showCertFetchStateSelector = state =>
+  state[MainApp].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completionCount = completionCountSelector(state);
