@@ -190,7 +190,7 @@ const initialData: DataType = {
 };
 
 const Editor = (props: PropTypes): JSX.Element => {
-  const { editorRef } = props;
+  const { editorRef, fileKey } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -207,6 +207,8 @@ const Editor = (props: PropTypes): JSX.Element => {
   const outputNodeRef = useRef<HTMLDivElement | null>(null);
   const overlayWidgetRef = useRef<editor.IOverlayWidget | null>(null);
   const outputWidgetRef = useRef<editor.IOverlayWidget | null>(null);
+
+  const data = dataRef.current[fileKey];
 
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
@@ -254,7 +256,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
     const { challengeFiles, fileKey } = props;
-    const data = dataRef.current[fileKey];
+
     monacoRef.current = monaco;
     defineMonacoThemes(monaco);
     // If a model is not provided, then the editor 'owns' the model it creates
@@ -426,8 +428,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   };
 
   const viewZoneCallback = (changeAccessor: editor.IViewZoneChangeAccessor) => {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const editor = editorRef.current;
     if (!editor) return;
     // TODO: is there any point creating this here? I know it's cached, but
@@ -463,8 +463,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   const outputZoneCallback = (
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const editor = editorRef.current;
     if (!editor) return;
     // TODO: is there any point creating this here? I know it's cached, but
@@ -670,8 +668,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   // currently is. (see getLineAfterViewZone)
   // TODO: DRY this and getOutputZoneTop out.
   function getViewZoneTop() {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const editor = editorRef.current;
     const heightDelta = data.viewZoneHeight ?? 0;
     if (editor) {
@@ -687,8 +683,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   }
 
   function getOutputZoneTop() {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const editor = editorRef.current;
     const heightDelta = data.outputZoneHeight || 0;
     if (editor) {
@@ -706,8 +700,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   // the region it should cover instead.
   // TODO: DRY
   function getLineAfterViewZone() {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     // TODO: abstract away the data, ids etc.
     const range = data.model?.getDecorationRange(data.startEditDecId ?? '');
     // if the first decoration is missing, this implies the region reaches the
@@ -716,8 +708,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   }
 
   function getLineAfterEditableRegion() {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     // TODO: handle the case that the editable region reaches the bottom of the
     // editor
     return (
@@ -755,8 +745,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   };
 
   const getCurrentEditableRegion = () => {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const monaco = monacoRef.current;
     const { model, startEditDecId, endEditDecId } = data;
     // TODO: this is a little low-level, but we should bail if there is no
@@ -799,8 +787,6 @@ const Editor = (props: PropTypes): JSX.Element => {
     });
 
   function decorateForbiddenRanges(editableRegion: number[]) {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const { model } = data;
     const monaco = monacoRef.current;
     if (!model || !monaco) return;
@@ -1100,8 +1086,6 @@ const Editor = (props: PropTypes): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
   useEffect(() => {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const { output } = props;
     // TODO: do we need this condition?  What happens if the ref is empty?
     if (outputNodeRef.current) {
@@ -1122,8 +1106,6 @@ const Editor = (props: PropTypes): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.output]);
   useEffect(() => {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const editor = editorRef.current;
     editor?.layout();
     if (data.startEditDecId) {
@@ -1135,8 +1117,6 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   // TODO: DRY (there's going to be a lot of that)
   function updateOutputZone() {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const editor = editorRef.current;
     editor?.changeViewZones(changeAccessor => {
       changeAccessor.removeZone(data.outputZoneId);
@@ -1145,8 +1125,6 @@ const Editor = (props: PropTypes): JSX.Element => {
   }
 
   function updateViewZone() {
-    const { fileKey } = props;
-    const data = dataRef.current[fileKey];
     const editor = editorRef.current;
     editor?.changeViewZones(changeAccessor => {
       changeAccessor.removeZone(data.viewZoneId);
