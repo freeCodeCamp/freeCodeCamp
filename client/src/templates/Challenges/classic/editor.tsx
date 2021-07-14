@@ -195,7 +195,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
-  // only take effect during the next render, which is too late.
+  // only take effect during the next render, which is too late. We could use
+  // plain objects here, but useRef is shared between instances, so avoids
+  // unecessary object creation.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorPropertyStore>({
@@ -260,8 +262,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
-
-    // TODO: For now, I'm keeping the 'data' machinery, but it'll probably go
 
     const model =
       data.model ||
@@ -1129,12 +1129,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  // TODO: do we need to reset the data on unmount?  Presumably not.
-  // useEffect(() => {
-  //   return () => {
-  //     setData(initialData);
-  //   };
-  // }, []);
   const { theme } = props;
   const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
   return (
