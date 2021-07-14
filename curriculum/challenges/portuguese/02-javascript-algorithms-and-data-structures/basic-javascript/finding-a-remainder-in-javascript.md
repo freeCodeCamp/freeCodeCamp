@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ae
-title: Finding a Remainder in JavaScript
+title: Descobrindo o Resto em JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWP24Ub'
 forumTopicId: 18184
@@ -9,38 +9,38 @@ dashedName: finding-a-remainder-in-javascript
 
 # --description--
 
-The <dfn>remainder</dfn> operator `%` gives the remainder of the division of two numbers.
+O operador de <dfn>resto</dfn> `%` retorna o resto da divisão de dois números.
 
-**Example**
+**Exemplo**
 
-<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>
+<blockquote>5 % 2 = 1 porque<br>Math.floor(5 / 2) = 2 (Quociente)<br> 2 * 2 = 4<br>5 - 4 = 1 (Resto)</blockquote>
 
-**Usage**  
-In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`.
+**Uso**  
+Na matemática, um número pode ser verificado para ser par ou ímpar ao verificar o resto da divisão de um número por `2`.
 
-<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>
+<blockquote>17 % 2 = 1 (17 é Ímpar)<br>48 % 2 = 0 (48 é Par)</blockquote>
 
-**Note:** The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as the modulus operator. It is very similar to modulus, but does not work properly with negative numbers.
+**Nota:** O operador de <dfn>resto</dfn> às vezes é referido incorretamente como o operador de módulo. É muito semelhante ao módulo, mas não funciona adequadamente com números negativos.
 
 # --instructions--
 
-Set `remainder` equal to the remainder of `11` divided by `3` using the <dfn>remainder</dfn> (`%`) operator.
+Define o `resto` igual ao restante de `11` dividido por `3` usando o operador de <dfn>restante</dfn> (`%`).
 
 # --hints--
 
-The variable `remainder` should be initialized
+A variável `remainder` deve ser inicializada
 
 ```js
 assert(/var\s+?remainder/.test(code));
 ```
 
-The value of `remainder` should be `2`
+O valor de `remainder` deve ser `2`
 
 ```js
 assert(remainder === 2);
 ```
 
-You should use the `%` operator
+Você deve usar o operador `%`
 
 ```js
 assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));

@@ -20,7 +20,7 @@ An SVG `rect` has four attributes. There are the `x` and `y` coordinates for whe
 
 # --instructions--
 
-Add a `rect` shape to the `svg` using `append()`, and give it a `width` attribute of 25 and `height` attribute of 100. Also, give the `rect` `x` and `y` attributes each set to 0.
+Add a `rect` shape to the `svg` using `append()`, and give it a `width` attribute of `25` and `height` attribute of `100`. Also, give the `rect` `x` and `y` attributes each set to `0`.
 
 # --hints--
 
@@ -30,25 +30,25 @@ Your document should have 1 `rect` element.
 assert($('rect').length == 1);
 ```
 
-The `rect` element should have a `width` attribute set to 25.
+The `rect` element should have a `width` attribute set to `25`.
 
 ```js
 assert($('rect').attr('width') == '25');
 ```
 
-The `rect` element should have a `height` attribute set to 100.
+The `rect` element should have a `height` attribute set to `100`.
 
 ```js
 assert($('rect').attr('height') == '100');
 ```
 
-The `rect` element should have an `x` attribute set to 0.
+The `rect` element should have an `x` attribute set to `0`.
 
 ```js
 assert($('rect').attr('x') == '0');
 ```
 
-The `rect` element should have a `y` attribute set to 0.
+The `rect` element should have a `y` attribute set to `0`.
 
 ```js
 assert($('rect').attr('y') == '0');

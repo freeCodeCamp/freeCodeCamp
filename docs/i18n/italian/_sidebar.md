@@ -3,6 +3,7 @@
   - [Domande frequenti](FAQ.md)
 - **Contribuire al codice**
   - [Imposta freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
+  - [Buone pratiche per il codebase](codebase-best-practices.md)
   - [Aprire una pull request](how-to-open-a-pull-request.md)
   - [Lavorare sulle sfide di programmazione](how-to-work-on-coding-challenges.md)
   - [Lavorare sulle sfide video](how-to-help-with-video-challenges.md)

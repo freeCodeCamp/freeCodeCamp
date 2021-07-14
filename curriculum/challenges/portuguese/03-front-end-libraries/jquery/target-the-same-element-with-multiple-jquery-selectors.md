@@ -4,7 +4,8 @@ title: Target the Same Element with Multiple jQuery Selectors
 challengeType: 6
 forumTopicId: 18322
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-the-same-element-with-multiple-jquery-selectors
 ---
 

@@ -8,7 +8,7 @@ dashedName: luhn-test-of-credit-card-numbers
 
 # --description--
 
-The [Luhn test](<https://en.wikipedia.org/wiki/Luhn algorithm>) is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
+The [Luhn test](https://en.wikipedia.org/wiki/Luhn algorithm) is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
 
 Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:
 

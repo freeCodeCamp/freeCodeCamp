@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e1
-title: Nesting For Loops
+title: Aninhando Laços For
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
@@ -9,7 +9,7 @@ dashedName: nesting-for-loops
 
 # --description--
 
-If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:
+Se você possui um array multidimensional, você pode usar a mesma lógica no ponto de passagem anterior para iterar através ambos os arrays e qualquer sub-arrays. Aqui está um exemplo:
 
 ```js
 var arr = [
@@ -22,21 +22,21 @@ for (var i=0; i < arr.length; i++) {
 }
 ```
 
-This outputs each sub-element in `arr` one at a time. Note that for the inner loop, we are checking the `.length` of `arr[i]`, since `arr[i]` is itself an array.
+Isso exibi no console cada sub elemento dentro de `arr`, um de cada vez. Note que para o laço interno, nós estamos verificando a propriedade `.length` de `arr[i]`, desde que `arr[i]` também é um array.
 
 # --instructions--
 
-Modify function `multiplyAll` so that it returns the product of all the numbers in the sub-arrays of `arr`.
+Modifique a função `multiplyAll` para que retorne o produto de todos os números nos sub arrays de `arr`.
 
 # --hints--
 
-`multiplyAll([[1],[2],[3]])` should return `6`
+`multiplyAll([[1],[2],[3]])` deve retornar `6`
 
 ```js
 assert(multiplyAll([[1], [2], [3]]) === 6);
 ```
 
-`multiplyAll([[1,2],[3,4],[5,6,7]])` should return `5040`
+`multiplyAll([[1,2],[3,4],[5,6,7]])` deve retornar `5040`
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` should return `54`
+`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` deve retornar `54`
 
 ```js
 assert(

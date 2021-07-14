@@ -1,6 +1,6 @@
 ---
 id: 56592a60ddddeae28f7aa8e1
-title: Access Multi-Dimensional Arrays With Indexes
+title: Acessar Arrays Multidimensionais com Índices
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckND4Cq'
 forumTopicId: 16159
@@ -9,9 +9,9 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-One way to think of a <dfn>multi-dimensional</dfn> array, is as an *array of arrays*. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+Uma maneira de pensar em um array <dfn>multi-dimensional</dfn> é como um *array de arrays*. Quando você usa colchetes para acessar seu array, o primeiro conjunto de colchetes se refere às entradas no array mais exterior (o primeiro nível), e cada par adicional de colchetes refere-se ao próximo nível de entradas interno.
 
-**Example**
+**Exemplo**
 
 ```js
 var arr = [
@@ -25,23 +25,23 @@ arr[3][0];
 arr[3][0][1];
 ```
 
-`arr[3]` is `[[10, 11, 12], 13, 14]`, `arr[3][0]` is `[10, 11, 12]`, and `arr[3][0][1]` is `11`.
+`arr[3]` é `[[10, 11, 12], 13, 14]`, `arr[3][0]` é `[10, 11, 12]`, e `arr[3][0][1]` é `11`.
 
-**Note:** There shouldn't be any spaces between the array name and the square brackets, like `array [0][0]` and even this `array [0] [0]` is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+**Nota:** Não deve haver nenhum espaço entre o nome do array e os colchetes como `array [0][0]` e até mesmo `array [0] [0]` não é permitido. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
 
 # --instructions--
 
-Using bracket notation select an element from `myArray` such that `myData` is equal to `8`.
+Utilizando notação de colchetes selecione um elemento de `myArray` de forma que `myData` seja igual a `8`.
 
 # --hints--
 
-`myData` should be equal to `8`.
+`myData` deve ser igual a `8`.
 
 ```js
 assert(myData === 8);
 ```
 
-You should be using bracket notation to read the correct value from `myArray`.
+Você deve usar notação de colchetes para ler o valor correto de `myArray`.
 
 ```js
 assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));

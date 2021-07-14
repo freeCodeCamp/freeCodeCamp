@@ -16,16 +16,16 @@ Below are links to each of the versions of RCBF.
 
 An implementation need only properly implement the following instructions:
 
-| Command           | Description                                                                        |
-| ----------------- | ---------------------------------------------------------------------------------- |
-| <code>></code>    | Move the pointer to the right                                                      |
-| <code>&lt;</code> | Move the pointer to the left                                                       |
-| <code>+</code>    | Increment the memory cell under the pointer                                        |
-| <code>-</code>    | Decrement the memory cell under the pointer                                        |
-| <code>.</code>    | Output the character signified by the cell at the pointer                          |
-| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
-| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
-| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
+| Command                   | Description                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------ |
+| <code>></code> | Move the pointer to the right                                                              |
+| <code>&lt;</code> | Move the pointer to the left                                                               |
+| <code>+</code> | Increment the memory cell under the pointer                                                |
+| <code>-</code> | Decrement the memory cell under the pointer                                                |
+| <code>.</code> | Output the character signified by the cell at the pointer                                  |
+| <code>,</code> | Input a character and store it in the cell at the pointer                                  |
+| <code>\[</code> | Jump past the matching <code>]</code> if the cell under the pointer is 0          |
+| <code>]</code> | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
 Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -139,14 +139,14 @@ class InstantSearchRoot extends Component {
         {this.isSearchPage() ? (
           <Configure hitsPerPage={15} />
         ) : (
-          <Fragment>
+          <>
             <Media maxHeight={MAX_MOBILE_HEIGHT}>
               <Configure hitsPerPage={5} />
             </Media>
             <Media minHeight={MAX_MOBILE_HEIGHT + 1}>
               <Configure hitsPerPage={8} />
             </Media>
-          </Fragment>
+          </>
         )}
         {this.props.children}
       </InstantSearch>

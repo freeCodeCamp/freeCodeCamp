@@ -23,7 +23,11 @@ const propTypes = {
     ignored: PropTypes.arrayOf(PropTypes.string),
     isEditorLinkAllowed: PropTypes.bool,
     required: PropTypes.arrayOf(PropTypes.string),
-    types: PropTypes.objectOf(PropTypes.string)
+    types: PropTypes.objectOf(PropTypes.string),
+    placeholders: PropTypes.shape({
+      solution: PropTypes.string,
+      githubLink: PropTypes.string
+    })
   }),
   submit: PropTypes.func.isRequired
 };

@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -83,7 +83,7 @@ class LearnLayout extends Component<LearnLayoutProps> {
     }
 
     return (
-      <Fragment>
+      <>
         <Helmet>
           <meta content='noindex' name='robots' />
         </Helmet>
@@ -91,7 +91,7 @@ class LearnLayout extends Component<LearnLayoutProps> {
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
         /* @ts-ignore  */}
         <DonateModal />
-      </Fragment>
+      </>
     );
   }
 }

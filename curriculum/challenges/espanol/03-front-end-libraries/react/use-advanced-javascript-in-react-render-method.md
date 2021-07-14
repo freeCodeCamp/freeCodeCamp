@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036183
-title: Use Advanced JavaScript in React Render Method
+title: Usa JavaScript avanzado en el método render de React
 challengeType: 6
 forumTopicId: 301415
 dashedName: use-advanced-javascript-in-react-render-method
@@ -8,17 +8,17 @@ dashedName: use-advanced-javascript-in-react-render-method
 
 # --description--
 
-In previous challenges, you learned how to inject JavaScript code into JSX code using curly braces, `{ }`, for tasks like accessing props, passing props, accessing state, inserting comments into your code, and most recently, styling your components. These are all common use cases to put JavaScript in JSX, but they aren't the only way that you can utilize JavaScript code in your React components.
+En desafíos anteriores, aprendiste cómo inyectar código JavaScript en código JSX usando llaves, `{ }`, para tareas como acceder a props, pasar props, acceder al state, insertar comentarios en tu código y, más recientemente, diseñar tus componentes. Todos estos son casos de uso común para poner JavaScript en JSX, pero no son la única manera de utilizar código JavaScript en tus componentes React.
 
-You can also write JavaScript directly in your `render` methods, before the `return` statement, ***without*** inserting it inside of curly braces. This is because it is not yet within the JSX code. When you want to use a variable later in the JSX code *inside* the `return` statement, you place the variable name inside curly braces.
+También puedes escribir JavaScript directamente en los métodos `render`, antes de la sentencia `return`, ***sin*** insertarlo dentro de llaves. Esto es porque aún no está dentro del código JSX. Cuando quieras utilizar una variable en el código JSX *dentro* de la sentencia `return`, colocas el nombre de la variable dentro de llaves.
 
 # --instructions--
 
-In the code provided, the `render` method has an array that contains 20 phrases to represent the answers found in the classic 1980's Magic Eight Ball toy. The button click event is bound to the `ask` method, so each time the button is clicked a random number will be generated and stored as the `randomIndex` in state. On line 52, delete the string `"change me!"` and reassign the `answer` const so your code randomly accesses a different index of the `possibleAnswers` array each time the component updates. Finally, insert the `answer` const inside the `p` tags.
+En el código proporcionado, el método `render` tiene un arreglo que contiene 20 frases para representar las respuestas encontradas en el clásico juego "Magic Eight Ball" de los años ochenta. El evento clic del botón está vinculado al método `ask`, por lo que cada vez que se haga clic en el botón se generará un número aleatorio y se almacenará como el `randomIndex` en el state. En la línea 52, elimina la cadena `change me!` y reasigna la constante `answer` para que tu código acceda aleatoriamente a un índice diferente del arreglo `possibleAnswers` cada vez que se actualiza el componente. Finalmente, inserta la constante `answer` dentro de las etiquetas `p`.
 
 # --hints--
 
-The `MagicEightBall` component should exist and should render to the page.
+El componente `MagicEightBall` debe existir y renderizarse en la página.
 
 ```js
 assert.strictEqual(
@@ -28,7 +28,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s first child should be an `input` element.
+El primer elemento hijo de `MagicEightBall` debe ser un elemento `input`.
 
 ```js
 assert.strictEqual(
@@ -40,7 +40,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s third child should be a `button` element.
+El tercer elemento hijo de `MagicEightBall` debe ser un elemento `button`.
 
 ```js
 assert.strictEqual(
@@ -52,7 +52,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s state should be initialized with a property of `userInput` and a property of `randomIndex` both set to a value of an empty string.
+El estado de `MagicEightBall` debe inicializarse con una propiedad de `userInput` y una propiedad de `randomIndex` juntas establecidas como cadenas de texto vacías.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-When `MagicEightBall` is first mounted to the DOM, it should return an empty `p` element.
+Cuando `MagicEightBall` se monte por primera vez en el DOM, debe devolver un elemento `p` vacío.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-When text is entered into the `input` element and the button is clicked, the `MagicEightBall` component should return a `p` element that contains a random element from the `possibleAnswers` array.
+Cuando se introduce texto en el elemento `input` y se hace clic en el botón, el componente `MagicEightBall` debe devolver un elemento `p` que contiene un elemento aleatorio del arreglo `possibleAnswers`.
 
 ```js
 (() => {

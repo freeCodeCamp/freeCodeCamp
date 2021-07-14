@@ -169,7 +169,7 @@ export class CompletionModalInner extends Component<
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
-    if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
       // getting to it.

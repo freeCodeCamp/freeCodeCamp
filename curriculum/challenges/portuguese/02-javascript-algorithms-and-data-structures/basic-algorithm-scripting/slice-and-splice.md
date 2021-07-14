@@ -1,6 +1,6 @@
 ---
 id: 579e2a2c335b9d72dd32e05c
-title: Slice and Splice
+title: Fatiar e Emendar
 challengeType: 5
 forumTopicId: 301148
 dashedName: slice-and-splice
@@ -8,29 +8,29 @@ dashedName: slice-and-splice
 
 # --description--
 
-You are given two arrays and an index.
+Você está recebendo dois arrays e um índice.
 
-Copy each element of the first array into the second array, in order.
+Copie cada elemento da primeira matriz para a segunda matriz, em ordem.
 
-Begin inserting elements at index `n` of the second array.
+Comece inserindo elementos no índice `n` do segundo array.
 
-Return the resulting array. The input arrays should remain the same after the function runs.
+Retorne o array resultante. Os arrays recebidos devem permanecer os mesmos após a função ser executada.
 
 # --hints--
 
-`frankenSplice([1, 2, 3], [4, 5], 1)` should return `[4, 1, 2, 3, 5]`.
+`frankenSplice([1, 2, 3], [4, 5], 1)` deve retornar `[4, 1, 2, 3, 5]`.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5]);
 ```
 
-`frankenSplice([1, 2], ["a", "b"], 1)` should return `["a", 1, 2, "b"]`.
+`frankenSplice([1, 2], ["a", "b"], 1)` deve retornar `["a", 1, 2, "b"]`.
 
 ```js
 assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ['a', 1, 2, 'b']);
 ```
 
-`frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)` should return `["head", "shoulders", "claw", "tentacle", "knees", "toes"]`.
+`frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)` deve retornar `["head", "shoulders", "claw", "tentacle", "knees", "toes"]`.
 
 ```js
 assert.deepEqual(
@@ -43,20 +43,20 @@ assert.deepEqual(
 );
 ```
 
-All elements from the first array should be added to the second array in their original order.
+Todos os elementos do primeiro array devem ser adicionados no segundo array em suas ordens originais.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);
 ```
 
-The first array should remain the same after the function runs.
+O primeiro array deve permanecer o mesmo após a função ser executada.
 
 ```js
 frankenSplice(testArr1, testArr2, 1);
 assert.deepEqual(testArr1, [1, 2]);
 ```
 
-The second array should remain the same after the function runs.
+O segundo array deve permanecer o mesmo após a função ser executada.
 
 ```js
 frankenSplice(testArr1, testArr2, 1);
