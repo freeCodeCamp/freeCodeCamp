@@ -45,7 +45,7 @@ import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-type PropTypes = {
+interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFileType;
   containerRef: RefObject<HTMLElement>;
@@ -72,32 +72,29 @@ type PropTypes = {
     editorValue: string;
     editableRegionBoundaries: number[] | null;
   }) => void;
-};
+}
 
-// TODO: narrow these types (including model -> have specific keys)
-// also, 'data' is a bad name.  Editor properties?
-type DataType = {
+interface EditorProperties {
   editor?: editor.IStandaloneCodeEditor;
-  model: editor.ITextModel | null;
-  state: null;
+  model?: editor.ITextModel;
   viewZoneId: string;
-  startEditDecId: string | null;
-  endEditDecId: string | null;
-  insideEditDecId: string | null;
-  viewZoneHeight: number | null;
-  outputZoneHeight: number | null;
+  startEditDecId: string;
+  endEditDecId: string;
+  insideEditDecId: string;
+  viewZoneHeight: number;
+  outputZoneHeight: number;
   outputZoneId: string;
   descriptionNode?: HTMLDivElement;
   outputNode?: HTMLDivElement;
   overlayWidget?: editor.IOverlayWidget;
   outputWidget?: editor.IOverlayWidget;
-};
+}
 
-interface EditorDataStore {
-  indexcss: DataType;
-  indexhtml: DataType;
-  indexjs: DataType;
-  indexjsx: DataType;
+interface EditorPropertyStore {
+  indexcss: EditorProperties;
+  indexhtml: EditorProperties;
+  indexjs: EditorProperties;
+  indexjsx: EditorProperties;
 }
 
 const mapStateToProps = createSelector(
@@ -183,19 +180,17 @@ const toLastLine = (range: RangeType) => {
 };
 
 // TODO: properly initialise data with values not null
-const initialData: DataType = {
-  model: null,
-  state: null,
+const initialData: EditorProperties = {
   viewZoneId: '',
-  startEditDecId: null,
-  endEditDecId: null,
-  insideEditDecId: null,
-  viewZoneHeight: null,
+  startEditDecId: '',
+  endEditDecId: '',
+  insideEditDecId: '',
+  viewZoneHeight: 0,
   outputZoneId: '',
-  outputZoneHeight: null
+  outputZoneHeight: 0
 };
 
-const Editor = (props: PropTypes): JSX.Element => {
+const Editor = (props: EditorProps): JSX.Element => {
   const { editorRef, fileKey } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
@@ -203,7 +198,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   // only take effect during the next render, which is too late.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
-  const dataRef = useRef<EditorDataStore>({
+  const dataRef = useRef<EditorPropertyStore>({
     indexcss: { ...initialData },
     indexhtml: { ...initialData },
     indexjs: { ...initialData },
@@ -671,7 +666,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   // TODO: DRY this and getOutputZoneTop out.
   function getViewZoneTop() {
     const editor = data.editor;
-    const heightDelta = data.viewZoneHeight ?? 0;
+    const heightDelta = data.viewZoneHeight;
     if (editor) {
       const top = `${
         editor.getTopForLineNumber(getLineAfterViewZone()) -
@@ -686,7 +681,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   function getOutputZoneTop() {
     const editor = data.editor;
-    const heightDelta = data.outputZoneHeight || 0;
+    const heightDelta = data.outputZoneHeight;
     if (editor) {
       const top = `${
         editor.getTopForLineNumber(getLineAfterEditableRegion()) -
@@ -703,7 +698,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   // TODO: DRY
   function getLineAfterViewZone() {
     // TODO: abstract away the data, ids etc.
-    const range = data.model?.getDecorationRange(data.startEditDecId ?? '');
+    const range = data.model?.getDecorationRange(data.startEditDecId);
     // if the first decoration is missing, this implies the region reaches the
     // start of the editor.
     return range ? range.endLineNumber + 1 : 1;
@@ -713,7 +708,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     // TODO: handle the case that the editable region reaches the bottom of the
     // editor
     return (
-      data.model?.getDecorationRange(data.endEditDecId ?? '')
+      data.model?.getDecorationRange(data.endEditDecId)
         ?.startLineNumber ?? 1
     );
   }
@@ -762,7 +757,7 @@ const Editor = (props: PropTypes): JSX.Element => {
         : getStartOfEditor();
       // TODO: handle the case that the editable region reaches the bottom of the
       // editor
-      const secondRange = model.getDecorationRange(endEditDecId ?? '');
+      const secondRange = model.getDecorationRange(endEditDecId);
       if (firstRange && secondRange) {
         const { startLineNumber, endLineNumber } = getLinesBetweenRanges(
           firstRange,
@@ -983,13 +978,13 @@ const Editor = (props: PropTypes): JSX.Element => {
       // pulled up, the first region already behaves correctly.
 
       data.endEditDecId = preventOverlap(
-        data.endEditDecId ?? '',
+        data.endEditDecId,
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
         highlightLines
       );
 
       data.insideEditDecId = preventOverlap(
-        data.insideEditDecId ?? '',
+        data.insideEditDecId,
         monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
         highlightEditableLines
       );
