@@ -20,8 +20,7 @@ CSS can be scalable when styles use relative units (such as `vh`, `vw`, or perce
 
 Add an `svg` node to the `body` using `append()`. Give it a `width` attribute set to the provided `w` constant and a `height` attribute set to the provided `h` constant using the `attr()` or `style()` methods for each. You'll see it in the output because there's a `background-color` of pink applied to it in the `style` tag.
 
-**Note**  
-When using `attr()` width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is.
+**Note:** When using `attr()` width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is.
 
 # --hints--
 
@@ -31,13 +30,13 @@ Your document should have 1 `svg` element.
 assert($('svg').length == 1);
 ```
 
-The `svg` element should have a `width` attribute set to 500 or styled to have a width of 500px.
+The `svg` element should have a `width` attribute set to `500` or styled to have a width of `500px`.
 
 ```js
 assert($('svg').attr('width') == '500' || $('svg').css('width') == '500px');
 ```
 
-The `svg` element should have a `height` attribute set to 100 or styled to have a height of 100px.
+The `svg` element should have a `height` attribute set to `100` or styled to have a height of `100px`.
 
 ```js
 assert($('svg').attr('height') == '100' || $('svg').css('height') == '100px');

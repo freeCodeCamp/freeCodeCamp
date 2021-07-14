@@ -1,30 +1,31 @@
 ---
 id: 5e444136903586ffb414c94d
-title: Time Calculator
+title: 时间计算器
 challengeType: 10
+forumTopicId: 462360
 dashedName: time-calculator
 ---
 
 # --description--
 
-Write a function named "add_time" that can add a duration to a start time and return the result.
+编写一个名为 “add_time” 的函数，该函数可以将一段时间添加到一个开始时间中，并返回结果。
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-time-calculator). After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+你可以 [在 Replit 上查看整个项目的具体描述和初始代码](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator)。 访问此链接后，fork 这个项目。 当你根据 “README.md” 中的说明完成了项目，请在下方提交你的项目链接。
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+我们仍在开发 Python 课程的交互式教学部分。 目前，freeCodeCamp.org YouTube 频道上的一些视频将会教授你这个项目需要的所有技能。
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody 视频课程</a>（14 小时）
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python 视频课程</a>（2 小时）
   </li>
 </ul>
 
 # --hints--
 
-It should correctly add times and pass all tests.
+它应该能正确地添加时间并通过所有测试。
 
 ```js
 

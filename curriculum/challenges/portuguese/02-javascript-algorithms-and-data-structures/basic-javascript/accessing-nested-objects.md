@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cc
-title: Accessing Nested Objects
+title: Acessando Objetos Aninhados
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
@@ -9,9 +9,9 @@ dashedName: accessing-nested-objects
 
 # --description--
 
-The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+As sub propriedades de objetos podem ser acessadas ao encadear a notação de ponto e de colchetes.
 
-Here is a nested object:
+Aqui está um objeto aninhado:
 
 ```js
 var ourStorage = {
@@ -30,21 +30,21 @@ ourStorage.cabinet["top drawer"].folder2;
 ourStorage.desk.drawer;
 ```
 
-`ourStorage.cabinet["top drawer"].folder2` would be the string `secrets`, and `ourStorage.desk.drawer` would be the string `stapler`.
+`ourStorage.cabinet["top drawer"].folder2` seria a string `secrets` e `ourStorage.desk.drawer` seria a string `stapler`.
 
 # --instructions--
 
-Access the `myStorage` object and assign the contents of the `glove box` property to the `gloveBoxContents` variable. Use dot notation for all properties where possible, otherwise use bracket notation.
+Acesse o objeto `myStorage` e atribua o conteúdo da propriedade `glove box` para a variável `gloveBoxContents`. Use notação de ponto para todas as propriedades sempre que possível, caso contrário, use a notação de colchetes.
 
 # --hints--
 
-`gloveBoxContents` should equal the string `maps`.
+`gloveBoxContents` deveria ser igual à string `maps`.
 
 ```js
 assert(gloveBoxContents === 'maps');
 ```
 
-Your code should use dot and bracket notation to access `myStorage`.
+Seu código deve usar notação de ponto e de colchetes para acessar `myStorage`.
 
 ```js
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));

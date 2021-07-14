@@ -8,7 +8,7 @@ dashedName: hash-join
 
 # --description--
 
-An [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [nested loop join](<https://en.wikipedia.org/wiki/Nested loop join> "wp: Nested loop join") algorithm, but a more scalable alternative is the [hash join](<https://en.wikipedia.org/wiki/hash join> "wp: hash join") algorithm.
+An [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [nested loop join](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join") algorithm, but a more scalable alternative is the [hash join](https://en.wikipedia.org/wiki/hash join "wp: hash join") algorithm.
 
 The "hash join" algorithm consists of two steps:
 

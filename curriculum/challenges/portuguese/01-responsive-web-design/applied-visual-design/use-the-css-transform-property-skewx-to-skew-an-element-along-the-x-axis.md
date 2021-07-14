@@ -1,6 +1,6 @@
 ---
 id: 587d78a6367417b2b2512adb
-title: Use the CSS Transform Property skewX to Skew an Element Along the X-Axis
+title: Use a propriedade skewX de transformação do CSS para distorcer um elemento ao longo do eixo X
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLP8Sr'
 forumTopicId: 301074
@@ -9,9 +9,9 @@ dashedName: use-the-css-transform-property-skewx-to-skew-an-element-along-the-x-
 
 # --description--
 
-The next function of the `transform` property is `skewX()`, which skews the selected element along its X (horizontal) axis by a given degree.
+A próxima função da propriedade `transform` é `skewX()`, que inclina o elemento selecionado ao longo de seu eixo X (horizontal) em um determinado grau.
 
-The following code skews the paragraph element by -32 degrees along the X-axis.
+O código a seguir inclina o elemento de parágrafo em -32 graus ao longo do eixo X.
 
 ```css
 p {
@@ -21,11 +21,11 @@ p {
 
 # --instructions--
 
-Skew the element with the id of `bottom` by 24 degrees along the X-axis by using the `transform` property.
+Incline o elemento com o id `bottom` em 24 graus ao longo do eixo X usando a propriedade `transform`.
 
 # --hints--
 
-The element with id `bottom` should be skewed by 24 degrees along its X-axis.
+O elemento com id `bottom` deve ser inclinado em 24 graus ao longo de seu eixo X.
 
 ```js
 assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));

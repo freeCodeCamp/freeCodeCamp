@@ -7,7 +7,7 @@ import cookies from 'browser-cookies';
 import i18n from './i18n/config';
 import { createStore } from './src/redux/createStore';
 import AppMountNotifier from './src/components/app-mount-notifier';
-import layoutSelector from './utils/gatsby/layoutSelector';
+import layoutSelector from './utils/gatsby/layout-selector';
 
 const store = createStore();
 

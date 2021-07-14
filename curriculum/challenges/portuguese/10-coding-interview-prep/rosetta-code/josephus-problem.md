@@ -8,7 +8,7 @@ dashedName: josephus-problem
 
 # --description--
 
-[Josephus problem](<https://en.wikipedia.org/wiki/Josephus problem>) is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
+[Josephus problem](https://en.wikipedia.org/wiki/Josephus problem) is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
 An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
 

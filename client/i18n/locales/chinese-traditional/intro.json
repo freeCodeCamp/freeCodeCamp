@@ -92,9 +92,9 @@
     "intro": [
       "HTML 和 CSS 控制頁面的內容和樣式，JavaScript 則用於頁面交互。在 JavaScript 算法和數據結構認證中，你將學習 JavaScript 的基礎知識，包括變量、 數組、 對象、 循環和函數。",
       "打好基礎之後，你將會通過創建算法來操作字符串、進行階乘運算甚至計算國際空間站的軌道來應用這些知識。",
-      "在這個過程中，你還會學習兩種重要的編程方式或模式：面向對象的編程（OOP）和函數式編程（FP）。"
+      "Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP)."
     ],
-    "note": "注意：某些瀏覽器擴展，例如廣告攔截器和腳本攔截器，可能干擾測試。如果你遇到問題，我們建議你在學習時禁用修改或阻止頁面內容的擴展。",
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
       "basic-javascript": {
         "title": "基礎 JavaScript",
@@ -107,7 +107,7 @@
         "title": "ES6",
         "intro": [
           "ECMAScript（ES）是 JavaScript 的標準。因爲所有主流瀏覽器都遵循此規範，所以 ECMAScript 和 JavaScript 是可以互換的。",
-          "截至目前你所學到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 編寫程序。JavaScript 在不斷迭代，每年都會發布新功能。",
+          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
           "2015 年發佈的 ES6 爲該語言增加了許多強大的新功能。在這個課程中，你將學習這些新功能，包括 <code>let</code>、<code>const</code>、箭頭函數、類、promises 和模塊。"
         ]
       },
@@ -137,15 +137,15 @@
         "title": "基礎算法",
         "intro": [
           "算法是描述如何處理某個問題的一系列步驟。",
-          "要寫一個有效的算法，你需要先將一個特定的問題分解爲小的部分，並仔細思考如何用代碼解決每個部分。",
+          "To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
           "在這個課程中，你將通過編寫算法來實現諸如轉換溫度、處理複雜的二維數組等，來學習算法思維的基礎知識。"
         ]
       },
       "object-oriented-programming": {
         "title": "面向對象編程",
         "intro": [
-          "OOP，即面向對象編程，是軟件開發過程的主要方法之一。在 OOP 中，我們用對象和類來組織代碼，以描述事物的特點以及它們可以做什麼。",
-          "在這個課程中，你將會學習 JavaScript 中面向對象編程的基本原則，例如 <code>this</code> 關鍵詞、原型鏈、構造器和繼承。"
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
+          "In this course, you'll learn the basic principles of OOP in JavaScript, including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
         ]
       },
       "functional-programming": {
@@ -259,7 +259,7 @@
     "intro": [
       "數據無處不在。但是，如果沒有上下文，數據就沒有多大意義。",
       "在數據可視化認證中，你會用 D3.js 庫來創建表格、圖表和地圖，以展示不同的數據。",
-      "你還會學習 JSON（JavaScript 對象），以及如何使用 API（應用程序接口）使用在線的數據。"
+      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {

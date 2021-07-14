@@ -22,8 +22,8 @@ import {
 } from '../redux';
 import { certMap } from '../resources/cert-and-project-map';
 import { createFlashMessage } from '../components/Flash/redux';
-import standardErrorMessage from '../utils/standardErrorMessage';
-import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
+import standardErrorMessage from '../utils/standard-error-message';
+import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import { langCodes } from '../../../config/i18n/all-langs';
 import envData from '../../../config/env.json';
 

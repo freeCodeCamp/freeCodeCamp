@@ -22,9 +22,9 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 **User Story #4:** I can see dots, that each have a class of `dot`, which represent the data being plotted.
 
-**User Story #5:** Each dot should have the properties `data-xvalue` and `data-yvalue` containing their corresponding x and y values.
+**User Story #5:** Each dot should have the properties `data-xvalue` and `data-yvalue` containing their corresponding `x` and `y` values.
 
-**User Story #6:** The `data-xvalue` and `data-yvalue` of each dot should be within the range of the actual data and in the correct data format. For `data-xvalue`, integers (full years) or Date objects are acceptable for test evaluation. For `data-yvalue` (minutes), use Date objects.
+**User Story #6:** The `data-xvalue` and `data-yvalue` of each dot should be within the range of the actual data and in the correct data format. For `data-xvalue`, integers (full years) or `Date` objects are acceptable for test evaluation. For `data-yvalue` (minutes), use `Date` objects.
 
 **User Story #7:** The `data-xvalue` and its corresponding dot should align with the corresponding point/value on the x-axis.
 
@@ -46,7 +46,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 Here is the dataset you will need to complete this project: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
 
-You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Once you're done, submit the URL to your working project with all its tests passing.
 

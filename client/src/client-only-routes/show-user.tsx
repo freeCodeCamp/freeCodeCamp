@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -120,7 +120,7 @@ class ShowUser extends Component<IShowUserProps> {
     const { textarea } = this.state;
     const placeholderText = t('report.details');
     return (
-      <Fragment>
+      <>
         <Helmet>
           <title>{t('report.portfolio')} | freeCodeCamp.org</title>
         </Helmet>
@@ -157,7 +157,7 @@ class ShowUser extends Component<IShowUserProps> {
             {/* eslint-disable @typescript-eslint/unbound-method */}
           </Col>
         </Row>
-      </Fragment>
+      </>
     );
   }
 }

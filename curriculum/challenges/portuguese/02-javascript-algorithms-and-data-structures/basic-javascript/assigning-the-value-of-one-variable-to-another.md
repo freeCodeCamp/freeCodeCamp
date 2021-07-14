@@ -1,6 +1,6 @@
 ---
 id: 5ee127a03c3b35dd45426493
-title: Assigning the Value of One Variable to Another
+title: Atribua o Valor de Uma Variável para Outra
 challengeType: 1
 videoUrl: ''
 forumTopicId: 418265
@@ -9,7 +9,7 @@ dashedName: assigning-the-value-of-one-variable-to-another
 
 # --description--
 
-After a value is assigned to a variable using the <dfn>assignment</dfn> operator, you can assign the value of that variable to another variable using the <dfn>assignment</dfn> operator.
+Após um valor ser atribuído para uma variável usando o operador de <dfn>atribuição</dfn>, você pode atribuir o valor daquela variável para outra variável usando o operador de <dfn>atribuição</dfn>.
 
 ```js
 var myVar;
@@ -18,27 +18,27 @@ var myNum;
 myNum = myVar;
 ```
 
-The above declares a `myVar` variable with no value, then assigns it the value `5`. Next, a variable named `myNum` is declared with no value. Then, the contents of `myVar` (which is `5`) is assigned to the variable `myNum`. Now, `myNum` also has the value of `5`.
+O código acima declara uma variável `myVar` sem valor, e então atribui a ela o valor `5`. Em seguida, uma variável chamada `myNum` é declarada sem valor. Em seguida, o conteúdo de `myVar` (o qual é `5`) é atribuído para a variável `myNum`. Agora, `myNum` também possui o valor de `5`.
 
 # --instructions--
 
-Assign the contents of `a` to variable `b`.
+Atribua o conteúdo de `a` para a variável `b`.
 
 # --hints--
 
-You should not change code above the specified comment.
+Você não deve alterar o código acima do comentário especificado.
 
 ```js
 assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
 ```
 
-`b` should have a value of `7`.
+`b` deve ter um valor de `7`.
 
 ```js
 assert(typeof b === 'number' && b === 7);
 ```
 
-`a` should be assigned to `b` with `=`.
+`a` deve ser atribuído para `b` com `=`.
 
 ```js
 assert(/b\s*=\s*a\s*/g.test(code));

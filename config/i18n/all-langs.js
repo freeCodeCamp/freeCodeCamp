@@ -39,7 +39,10 @@ const auditedCerts = {
     'front-end-libraries',
     'data-visualization',
     'apis-and-microservices',
-    'quality-assurance'
+    'quality-assurance',
+    'scientific-computing-with-python',
+    'data-analysis-with-python',
+    'information-security'
   ],
   'chinese-traditional': [
     'responsive-web-design',
@@ -47,12 +50,17 @@ const auditedCerts = {
     'front-end-libraries',
     'data-visualization',
     'apis-and-microservices',
-    'quality-assurance'
+    'quality-assurance',
+    'scientific-computing-with-python',
+    'data-analysis-with-python',
+    'information-security'
   ],
   italian: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries'
+    'front-end-libraries',
+    'data-visualization',
+    'apis-and-microservices'
   ],
   portuguese: ['responsive-web-design']
 };

@@ -1,6 +1,6 @@
 ---
 id: 587d7b7a367417b2b2512b12
-title: Copy Array Items Using slice()
+title: Copiar Itens de um Array Usando slice()
 challengeType: 1
 forumTopicId: 301158
 dashedName: copy-array-items-using-slice
@@ -8,7 +8,7 @@ dashedName: copy-array-items-using-slice
 
 # --description--
 
-The next method we will cover is `slice()`. Rather than modifying an array, `slice()` copies or *extracts* a given number of elements to a new array, leaving the array it is called upon untouched. `slice()` takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:
+O próximo método que abordaremos é `slice()`. Em vez de modificar um array, `slice()` copia ou *extrai* um determinado número de elementos para um novo array, deixando o array em que o método é chamado inalterado. `slice()` recebe apenas 2 parâmetros — o primeiro é o índice aonde começar a extração e o segundo é o índice no qual parar a extração (extração ocorrerá até, mas não incluso, esse índice). Considere isto:
 
 ```js
 let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
@@ -16,17 +16,17 @@ let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
 let todaysWeather = weatherConditions.slice(1, 3);
 ```
 
-`todaysWeather` would have the value `['snow', 'sleet']`, while `weatherConditions` would still have `['rain', 'snow', 'sleet', 'hail', 'clear']`.
+`todaysWeather` teria o valor `['snow', 'sleet']`, enquanto `weatherConditions` ainda teria `['rain', 'snow', 'sleet', 'hail', 'clear']`.
 
-In effect, we have created a new array by extracting elements from an existing array.
+Assim, criamos um novo array extraindo elementos de um array existente.
 
 # --instructions--
 
-We have defined a function, `forecast`, that takes an array as an argument. Modify the function using `slice()` to extract information from the argument array and return a new array that contains the string elements `warm` and `sunny`.
+Definimos uma função, `forecast`, que recebe um array como argumento. Modifique a função usando `slice()` para extrair a informação do array passado como argumento e retorne um novo array contendo os elementos strings `warm` e `sunny`.
 
 # --hints--
 
-`forecast` should return `["warm", "sunny"]`
+`forecast` deve retornar `["warm", "sunny"]`
 
 ```js
 assert.deepEqual(
@@ -35,7 +35,7 @@ assert.deepEqual(
 );
 ```
 
-The `forecast` function should utilize the `slice()` method
+A função `forecast` deve usar o método `slice()`
 
 ```js
 assert(/\.slice\(/.test(code));

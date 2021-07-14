@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bef
-title: Serve an HTML File
+title: Servire un file HTML
 challengeType: 2
 forumTopicId: 301516
 dashedName: serve-an-html-file
@@ -8,7 +8,7 @@ dashedName: serve-an-html-file
 
 # --description--
 
-You can respond to requests with a file using the `res.sendFile(path)` method. You can put it inside the `app.get('/', ...)` route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file. This method needs an absolute file path. We recommend you to use the Node global variable `__dirname` to calculate the path like this:
+È possibile rispondere alle richieste con un file utilizzando il metodo `res.sendFile(path)`. Puoi inserirlo all'interno del gestore della rotta `app.get('/', ...)`. Dietro le quinte, questo metodo imposterà le intestazioni appropriate per istruire il browser su come gestire il file che si desidera inviare, in base al suo tipo. Quindi leggerà e invierà il file. Questo metodo necessita di un percorso di file assoluto. Ti consigliamo di utilizzare la variabile globale Node `__dirname` per calcolare il percorso in questo modo:
 
 ```js
 absolutePath = __dirname + relativePath/file.ext
@@ -16,13 +16,13 @@ absolutePath = __dirname + relativePath/file.ext
 
 # --instructions--
 
-Send the `/views/index.html` file as a response to GET requests to the `/` path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
+Invia il file `/views/index.html` come risposta alle richieste GET al percorso `/`. Guardando la tua app live, dovresti vedere una grossa intestazione HTML (e un modulo, che useremo successivamente...) senza alcuno stile applicato.
 
-**Note:** You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string.
+**Nota:** Puoi modificare la soluzione della sfida precedente o crearne una nuova. Se crei una nuova soluzione, tieni presente che Express valuta i percorsi dall'alto verso il basso ed esegue il gestore alla prima corrispondenza. Dovrai commentare la soluzione precedente, o il server continuerà a rispondere con una stringa.
 
 # --hints--
 
-Your app should serve the file views/index.html
+La tua app dovrebbe servire il file views/index.html
 
 ```js
 (getUserInput) =>

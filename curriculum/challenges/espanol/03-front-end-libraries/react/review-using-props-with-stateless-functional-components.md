@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616f
-title: Review Using Props with Stateless Functional Components
+title: Revisa el uso de props con componentes funcionales sin estado
 challengeType: 6
 forumTopicId: 301411
 dashedName: review-using-props-with-stateless-functional-components
@@ -8,19 +8,19 @@ dashedName: review-using-props-with-stateless-functional-components
 
 # --description--
 
-Except for the last challenge, you've been passing props to stateless functional components. These components act like pure functions. They accept props as input and return the same view every time they are passed the same props. You may be wondering what state is, and the next challenge will cover it in more detail. Before that, here's a review of the terminology for components.
+Excepto por el último desafío, has estado pasando props a componentes funcionales sin estado. Estos componentes actúan como funciones puras. Aceptan props como entrada y devuelven la misma vista cada vez que se les pasa el mismo props. Tal vez te estes preguntando que es estado, y el próximo desafío lo cubrirá con más detalle. Antes de eso, aquí hay una revisión de la terminología de los componentes.
 
-A *stateless functional component* is any function you write which accepts props and returns JSX. A *stateless component*, on the other hand, is a class that extends `React.Component`, but does not use internal state (covered in the next challenge). Finally, a *stateful component* is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.
+Un *componente funcional sin estado*, es cualquier función que escribas que acepte props y devuelva JSX. Un *componente sin estado*, por otra parte, es una clase que extiende `React.Component`, pero no usa el estado interno (que será cubierto en el siguiente desafío). Finalmente, un *componente con estado* es un componente de clase que mantiene su propio estado interno. Puedes ver componentes con estado referidos simplemente como componentes de React.
 
-A common pattern is to try to minimize statefulness and to create stateless functional components wherever possible. This helps contain your state management to a specific area of your application. In turn, this improves development and maintenance of your app by making it easier to follow how changes to state affect its behavior.
+Un patrón común es intentar minimizar el estado y crear componentes funcionales sin estado siempre que sea posible. Esto ayuda a contener tu administración de estado a un área específica de tu aplicación. A su vez, esto mejora el desarrollo y el mantenimiento de tu aplicación, haciendo más fácil seguir cómo los cambios en el estado afectan su comportamiento.
 
 # --instructions--
 
-The code editor has a `CampSite` component that renders a `Camper` component as a child. Define the `Camper` component and assign it default props of `{ name: 'CamperBot' }`. Inside the `Camper` component, render any code that you want, but make sure to have one `p` element that includes only the `name` value that is passed in as a `prop`. Finally, define `propTypes` on the `Camper` component to require `name` to be provided as a prop and verify that it is of type `string`.
+El editor de código tiene un componente `CampSite` que renderiza un componente `Camper` como un componente hijo. Define el componente `Camper` y asigna los props predeterminados de `{ name: 'CamperBot' }`. Dentro del componente `Camper`, renderiza el código que quieras, pero asegúrate de tener un elemento `p` que incluya sólo el valor `name` que se pasa como un `prop`. Por último, define `propTypes` en el componente `Camper` para requerir que `name` sea proporcionado como un prop y verifique que sea de tipo `string`.
 
 # --hints--
 
-The `CampSite` component should render.
+El `CampSite` debe renderizarse.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The `Camper` component should render.
+El componente `Camper` debe renderizarse.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `Camper` component should include default props which assign the string `CamperBot` to the key `name`.
+El componente `Camper` debe incluir props predeterminados que asignen la cadena `CamperBot` a la clave `name`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-The `Camper` component should include prop types which require the `name` prop to be of type `string`.
+El componente `Camper` debe incluir tipos de prop que requieran que el prop `name` sea del tipo `string`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The `Camper` component should contain a `p` element with only the text from the `name` prop.
+El componente `Camper` debe contener un elemento `p` que contenga únicamente el texto del prop `name`.
 
 ```js
 assert(

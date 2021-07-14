@@ -1,10 +1,7 @@
-const {
-  reorderSteps,
-  createStepFile,
-  getExistingStepNums,
-  getProjectPath,
-  getArgValues
-} = require('./utils');
+const { getArgValues } = require('./helpers/get-arg-values');
+const { getExistingStepNums } = require('./helpers/get-existing-step-nums');
+const { getProjectPath } = require('./helpers/get-project-path');
+const { createStepFile, reorderSteps } = require('./utils');
 
 const anyStepExists = (steps, stepsToFind) =>
   stepsToFind.some(num => steps.includes(num));

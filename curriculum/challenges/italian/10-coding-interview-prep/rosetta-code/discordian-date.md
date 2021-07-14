@@ -8,7 +8,7 @@ dashedName: discordian-date
 
 # --description--
 
-Convert a given date from the [Gregorian calendar](<https://en.wikipedia.org/wiki/Gregorian calendar> "wp: Gregorian calendar") to the [Discordian calendar](<https://en.wikipedia.org/wiki/Discordian calendar> "wp: Discordian calendar").
+Convert a given date from the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian calendar "wp: Gregorian calendar") to the [Discordian calendar](https://en.wikipedia.org/wiki/Discordian calendar "wp: Discordian calendar").
 
 # --hints--
 

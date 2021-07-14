@@ -12,7 +12,9 @@ Now that you've written both the `mapStateToProps()` and the `mapDispatchToProps
 
 To use this method, pass in the functions as arguments, and immediately call the result with your component. This syntax is a little unusual and looks like:
 
-`connect(mapStateToProps, mapDispatchToProps)(MyComponent)`
+```js
+connect(mapStateToProps, mapDispatchToProps)(MyComponent)
+```
 
 **Note:** If you want to omit one of the arguments to the `connect` method, you pass `null` in its place.
 

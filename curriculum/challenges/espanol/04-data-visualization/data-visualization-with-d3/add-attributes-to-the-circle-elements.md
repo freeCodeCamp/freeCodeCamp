@@ -18,7 +18,7 @@ All three attributes can use a callback function to set their values dynamically
 
 # --instructions--
 
-Add `cx`, `cy`, and `r` attributes to the `circle` elements. The `cx` value should be the first number in the array for each item in `dataset`. The `cy` value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The `r` value should be 5 for all circles.
+Add `cx`, `cy`, and `r` attributes to the `circle` elements. The `cx` value should be the first number in the array for each item in `dataset`. The `cy` value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The `r` value should be `5` for all circles.
 
 # --hints--
 
@@ -28,7 +28,7 @@ Your code should have 10 `circle` elements.
 assert($('circle').length == 10);
 ```
 
-The first `circle` element should have a `cx` value of 34, a `cy` value of 422, and an `r` value of 5.
+The first `circle` element should have a `cx` value of `34`, a `cy` value of `422`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-The second `circle` element should have a `cx` value of 109, a `cy` value of 220, and an `r` value of 5.
+The second `circle` element should have a `cx` value of `109`, a `cy` value of `220`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The third `circle` element should have a `cx` value of 310, a `cy` value of 380, and an `r` value of 5.
+The third `circle` element should have a `cx` value of `310`, a `cy` value of `380`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The fourth `circle` element should have a `cx` value of 79, a `cy` value of 89, and an `r` value of 5.
+The fourth `circle` element should have a `cx` value of `79`, a `cy` value of `89`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-The fifth `circle` element should have a `cx` value of 420, a `cy` value of 280, and an `r` value of 5.
+The fifth `circle` element should have a `cx` value of `420`, a `cy` value of `280`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-The sixth `circle` element should have a `cx` value of 233, a `cy` value of 355, and an `r` value of 5.
+The sixth `circle` element should have a `cx` value of `233`, a `cy` value of `355`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The seventh `circle` element should have a `cx` value of 333, a `cy` value of 404, and an `r` value of 5.
+The seventh `circle` element should have a `cx` value of `333`, a `cy` value of `404`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -98,7 +98,7 @@ assert(
 );
 ```
 
-The eighth `circle` element should have a `cx` value of 222, a `cy` value of 167, and an `r` value of 5.
+The eighth `circle` element should have a `cx` value of `222`, a `cy` value of `167`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -108,7 +108,7 @@ assert(
 );
 ```
 
-The ninth `circle` element should have a `cx` value of 78, a `cy` value of 180, and an `r` value of 5.
+The ninth `circle` element should have a `cx` value of `78`, a `cy` value of `180`, and an `r` value of `5`.
 
 ```js
 assert(
@@ -118,7 +118,7 @@ assert(
 );
 ```
 
-The tenth `circle` element should have a `cx` value of 21, a `cy` value of 377, and an `r` value of 5.
+The tenth `circle` element should have a `cx` value of `21`, a `cy` value of `377`, and an `r` value of `5`.
 
 ```js
 assert(

@@ -14,7 +14,7 @@ These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.
 
 Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
 
-Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.  
+Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.
 
 ```js
 class Book {

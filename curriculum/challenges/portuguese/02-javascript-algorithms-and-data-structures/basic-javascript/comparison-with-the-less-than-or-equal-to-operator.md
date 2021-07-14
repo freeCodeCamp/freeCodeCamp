@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d7
-title: Comparison with the Less Than Or Equal To Operator
+title: Comparação com o Operador Menor ou Igual
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVR7Am'
 forumTopicId: 16788
@@ -9,9 +9,9 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --description--
 
-The less than or equal to operator (`<=`) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns `true`. If the number on the left is greater than the number on the right, it returns `false`. Like the equality operator, the less than or equal to operator converts data types.
+O operador menor ou igual (`<=`) compara os valores de dois números. Se o número à esquerda for menor ou igual ao número à direita, retornará `true`. Se o número a esquerda for maior que o número a direita, retornará `false`. Assim como o operador de igualdade, o operador de menor ou igual que converte os tipos de dados.
 
-**Examples**
+**Exemplos**
 
 ```js
 4   <= 5
@@ -21,57 +21,57 @@ The less than or equal to operator (`<=`) compares the values of two numbers. If
 '8' <= 4
 ```
 
-In order, these expressions would evaluate to `true`, `true`, `true`, `false`, and `false`.
+Em ordem, essas expressões seriam iguais à `true`, `true`, `true`, `false` e `false`.
 
 # --instructions--
 
-Add the less than or equal to operator to the indicated lines so that the return statements make sense.
+Adicione o operador menor ou igual que para indicar as linhas para que as instruções de retorno façam sentido.
 
 # --hints--
 
-`testLessOrEqual(0)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(0)` deve retornar a string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(11)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(11)` deve retornar a string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(12)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(12)` deve retornar a string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(23)` should return the string `Smaller Than or Equal to 24`
+`testLessOrEqual(23)` deve retornar a string `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(24)` should return the string `Smaller Than or Equal to 24`
+`testLessOrEqual(24)` deve retornar a string `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` should return the string `More Than 24`
+`testLessOrEqual(25)` deve retornar a string `More than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` should return the string `More Than 24`
+`testLessOrEqual(55)` deve retornar a string `More than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');
 ```
 
-You should use the `<=` operator at least twice
+Você deve usar o operador `<=` pelo menos duas vezes
 
 ```js
 assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);

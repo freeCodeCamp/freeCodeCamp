@@ -12,7 +12,7 @@ dashedName: handle-a-rejected-promise-with-catch
 
 ```js
 myPromise.catch(error => {
-  
+
 });
 ```
 
@@ -63,7 +63,7 @@ const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(
 const makeServerRequest = new Promise((resolve, reject) => {
   // responseFromServer is set to false to represent an unsuccessful response from a server
   let responseFromServer = false;
-    
+
   if(responseFromServer) {
     resolve("We got the data");
   } else {  
@@ -82,7 +82,7 @@ makeServerRequest.then(result => {
 const makeServerRequest = new Promise((resolve, reject) => {
   // responseFromServer is set to false to represent an unsuccessful response from a server
   let responseFromServer = false;
-    
+
   if(responseFromServer) {
     resolve("We got the data");
   } else {  

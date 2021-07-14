@@ -13,7 +13,7 @@ Build a full stack JavaScript app that is functionally similar to this: <https:/
 Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-messageboard) to complete your project.
+-   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard) to complete your project.
 -   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
@@ -33,8 +33,8 @@ Write the following tests in `tests/2_functional-tests.js`:
 -   Reporting a thread: PUT request to `/api/threads/{board}`
 -   Creating a new reply: POST request to `/api/replies/{board}`
 -   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
--   Deleting a reply with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
--   Deleting a reply with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+-   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
+-   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
 -   Reporting a reply: PUT request to `/api/replies/{board}`
 
 # --hints--
@@ -84,7 +84,33 @@ async (getUserInput) => {
 You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
 
 ```js
-
+async (getUserInput) => {
+  const date = new Date();
+  const text = `fcc_test_${date}`;
+  const deletePassword = 'delete_me';
+  const data = { text, delete_password: deletePassword };
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/threads/fcc_test', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (res.ok) {
+    const checkData = await fetch(url + '/api/threads/fcc_test');
+    const parsed = await checkData.json();
+    try {
+      assert.equal(parsed[0].text, text);
+      assert.isNotNull(parsed[0]._id);
+      assert.equal(new Date(parsed[0].created_on).toDateString(), date.toDateString());
+      assert.equal(parsed[0].bumped_on, parsed[0].created_on);
+      assert.isArray(parsed[0].replies);
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
 You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.

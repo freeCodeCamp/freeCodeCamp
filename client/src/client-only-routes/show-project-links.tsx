@@ -23,14 +23,14 @@ interface IShowProjectLinksProps {
 
 type SolutionStateType = {
   projectTitle: string;
-  challengeFiles: ChallengeFileType[] | null;
+  files?: ChallengeFileType[] | null;
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
 
 const initSolutionState: SolutionStateType = {
   projectTitle: '',
-  challengeFiles: null,
+  files: null,
   solution: null,
   isOpen: false
 };
@@ -55,16 +55,16 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       return null;
     }
 
-    const { solution, githubLink, challengeFiles } = completedProject;
+    const { solution, githubLink, files } = completedProject;
     const onClickHandler = () =>
       setSolutionState({
         projectTitle,
-        challengeFiles,
+        files,
         solution,
         isOpen: true
       });
 
-    if (challengeFiles) {
+    if (files) {
       return (
         <button
           className='project-link-button-override'
@@ -162,7 +162,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
     name,
     user: { username }
   } = props;
-  const { challengeFiles, isOpen, projectTitle, solution } = solutionState;
+  const { files, isOpen, projectTitle, solution } = solutionState;
   return (
     <div>
       {t(
@@ -176,7 +176,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       <Spacer />
       {isOpen ? (
         <ProjectModal
-          files={challengeFiles}
+          files={files}
           handleSolutionModalHide={handleSolutionModalHide}
           isOpen={isOpen}
           projectTitle={projectTitle}

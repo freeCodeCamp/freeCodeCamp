@@ -1,6 +1,6 @@
 ---
 id: 587d7fb7367417b2b2512c0b
-title: Use model.find() to Search Your Database
+title: Usare model.find() per fare ricerche nel database
 challengeType: 2
 forumTopicId: 301543
 dashedName: use-model-find-to-search-your-database
@@ -8,17 +8,17 @@ dashedName: use-model-find-to-search-your-database
 
 # --description--
 
-In its simplest usage, `Model.find()` accepts a query document (a JSON object) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Read more in the docs.
+Nel suo uso più semplice, `Model.find()` accetta un documento di query (un oggetto JSON) come primo argomento, quindi una callback. Restituisce un array di corrispondenze. Supporta una gamma estremamente ampia di opzioni di ricerca. Per approfondimenti leggi la documentazione.
 
 # --instructions--
 
-Modify the `findPeopleByName` function to find all the people having a given name, using <code>Model.find() -\> [Person]</code>
+Modifica la funzione `findPeopleByName` per trovare tutte le persone che hanno un dato nome, usando <code>Model.find() -\> [Person]</code>
 
-Use the function argument `personName` as the search key.
+Usa l'argomento `personName` della funzione come chiave di ricerca.
 
 # --hints--
 
-Find all items corresponding to a criteria should succeed
+La ricerca di tutti gli elementi corrispondenti a un criterio dovrebbe avere successo
 
 ```js
 (getUserInput) =>

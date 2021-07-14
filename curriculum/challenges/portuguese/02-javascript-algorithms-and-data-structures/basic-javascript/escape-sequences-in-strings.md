@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b6
-title: Escape Sequences in Strings
+title: Escape Sequências em Strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqRh6'
 forumTopicId: 17567
@@ -9,36 +9,36 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. There are two reasons to use escaping characters:
+Aspas não são os únicos caracteres que podem ser <dfn>escapadas</dfn> dentro de uma string. Há dois motivos para usar caracteres de escapamento:
 
-1.  To allow you to use characters you may not otherwise be able to type out, such as a carriage return.
-2.  To allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean.
+1.  Para permitir que você use caracteres, você pode não ser capaz de digitar caso contrário, como um retorno de carro.
+2.  Para permiti-lo representar várias aspas em uma string sem o JavaScript entender erroneamente o que você quis dizer.
 
-We learned this in the previous challenge.
+Aprendemos isso no desafio anterior.
 
-<table class='table table-striped'><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Código</th><th>Saída</th></tr></thead><tbody><tr><td><code>\'</code></td><td>aspas simples</td></tr><tr><td><code>\"</code></td><td>aspas duplas</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>nova linha</td></tr><tr><td><code>\r</code></td><td>retorno de carro</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>limite de palavra</td></tr><tr><td><code>\f</code></td><td>quebra de página</td></tr></tbody></table>
 
-*Note that the backslash itself must be escaped in order to display as a backslash.*
+*Note que a própria barra invertida deve ser escapada para ser exibida como uma barra invertida.*
 
 # --instructions--
 
-Assign the following three lines of text into the single variable `myStr` using escape sequences.
+Atribua as três linhas de texto a seguir em uma única variável `myStr` usando sequências de escapamento.
 
 <blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
 
-You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
+Você precisará usar sequências de escapamento para inserir corretamente os caracteres especiais. Você também precisará seguir os espaçamentos assim como se parece acima, sem espaços entre sequências de escapamento ou palavras.
 
-**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
+**Nota:** A identação para `SecondLine` é alcançada com o caracter de espaçamento tab, e não espaços.
 
 # --hints--
 
-`myStr` should not contain any spaces
+`myStr` não deve conter espaços
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
+`myStr` deve conter as strings `FirstLine`, `SecondLine` e `ThirdLine` (lembre-se da sensibilidade de maiúsculas e minúsculas 'case sensitivity')
 
 ```js
 assert(
@@ -46,31 +46,31 @@ assert(
 );
 ```
 
-`FirstLine` should be followed by the newline character `\n`
+`FirstLine` deve ser seguido pelo caractere de nova linha `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` should contain a tab character `\t` which follows a newline character
+`myStr` deve conter o caracter tab `\t` a qual está logo após o caractere de nova linha `\n`
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` should be preceded by the backslash character `\`
+`SecondLine` deve ser precedida pelo caractere de barra invertida `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-There should be a newline character between `SecondLine` and `ThirdLine`
+Deve ter um caractere de nova linha entre `SecondLine` e `ThirdLine`
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` should only contain characters shown in the instructions
+`myStr` deve conter apenas caracteres mostrados nas instruções
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

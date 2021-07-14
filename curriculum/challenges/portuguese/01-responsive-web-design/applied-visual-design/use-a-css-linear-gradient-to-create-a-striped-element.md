@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad7
-title: Use a CSS Linear Gradient to Create a Striped Element
+title: Use um gradiente linear com CSS para criar um elemento listrado
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bmQh2'
 forumTopicId: 301072
@@ -9,57 +9,57 @@ dashedName: use-a-css-linear-gradient-to-create-a-striped-element
 
 # --description--
 
-The `repeating-linear-gradient()` function is very similar to `linear-gradient()` with the major difference that it repeats the specified gradient pattern. `repeating-linear-gradient()` accepts a variety of values, but for simplicity, you'll work with an angle value and color stop values in this challenge.
+A função `repeating-linear-gradient()` é muito semelhante a `linear-gradient()`, com a principal diferença de que repete o padrão de gradiente especificado. `repeating-linear-gradient()` aceita uma variedade de valores, mas, para simplificar, você vai trabalhar com um valor de ângulo e valores de interrupção de cor neste desafio.
 
-The angle value is the direction of the gradient. Color stops are like width values that mark where a transition takes place, and are given with a percentage or a number of pixels.
+O valor do ângulo é a direção do gradiente. As interrupções de cor são como valores de largura que marcam onde ocorre uma transição e são fornecidas com uma porcentagem ou um número de pixels.
 
-In the example demonstrated in the code editor, the gradient starts with the color `yellow` at 0 pixels which blends into the second color `blue` at 40 pixels away from the start. Since the next color stop is also at 40 pixels, the gradient immediately changes to the third color `green`, which itself blends into the fourth color value `red` as that is 80 pixels away from the beginning of the gradient.
+No exemplo demonstrado no editor de código, o gradiente começa com a cor amarela (`yellow`) em 0 pixels, que se mistura com a segunda cor (`blue`) a 40 pixels de distância do início. Como a próxima interrupção de cor também está em 40 pixels, o gradiente muda imediatamente para a terceira cor (`green`), que se mistura com o valor da quarta cor (`red`), pois está a 80 pixels de distância desde o início do gradiente.
 
-For this example, it helps to think about the color stops as pairs where every two colors blend together.
+Para este exemplo, ajuda pensar nas interrupções de cor como pares onde cada duas cores se misturam.
 
 ```css
 0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
 ```
 
-If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, so you end up with stripes.
+Se cada dois valores finais de cores forem da mesma cor, a mistura não será perceptível porque está entre a mesma cor, seguida por uma transição brusca para a próxima cor. Assim, ao final, você terá listras.
 
 # --instructions--
 
-Make stripes by changing the `repeating-linear-gradient()` to use a gradient angle of `45deg`, then set the first two color stops to `yellow`, and finally the second two color stops to `black`.
+Faça listras alterando o `repeating-linear-gradient()` para usar um ângulo de gradiente de `45deg` e, em seguida, defina as duas primeiras interrupções de cor para `yellow` e, finalmente, as duas interrupções de cor posteriores como `black`.
 
 # --hints--
 
-The angle of the `repeating-linear-gradient()` should be 45deg.
+O ângulo do `repeating-linear-gradient()` deve ser de 45 graus.
 
 ```js
 assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi));
 ```
 
-The angle of the `repeating-linear-gradient()` should no longer be 90deg
+O ângulo do `repeating-linear-gradient()` não deve mais ser de 90 graus.
 
 ```js
 assert(!code.match(/90deg/gi));
 ```
 
-The color stop at 0 pixels should be `yellow`.
+A interrupção de cor em 0 pixels deve ser `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-One color stop at 40 pixels should be `yellow`.
+A interrupção de cor em 40 pixels deve ser `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));
 ```
 
-The second color stop at 40 pixels should be `black`.
+A segunda interrupção de cor em 40 pixels deve ser `black`.
 
 ```js
 assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi));
 ```
 
-The last color stop at 80 pixels should be `black`.
+A última interrupção de cor em 80 pixels deve ser `black`.
 
 ```js
 assert(code.match(/black\s+?80px/gi));
