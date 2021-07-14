@@ -92,9 +92,9 @@
     "intro": [
       "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, incluse variabili, array, oggetti, cicli e funzioni.",
       "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
-      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e Programmazione Funzionale (Functional Programming, FP)."
+      "Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP)."
     ],
-    "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare durante il corso le estensioni che modificano o bloccano il contenuto delle pagine.",
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
       "basic-javascript": {
         "title": "JavaScript Base",
@@ -107,7 +107,7 @@
         "title": "ES6",
         "intro": [
           "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
-          "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
+          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
           "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi <code>let</code> e <code>const</code>, funzioni freccia, classi, promise e moduli."
         ]
       },
@@ -137,15 +137,15 @@
         "title": "Scrittura di Algoritmi Base",
         "intro": [
           "Un algoritmo è una serie di istruzioni passo-passo che descrivono come fare qualcosa.",
-          "Per scrivere un algoritmo efficace, aiuta spezzare un problema in parti più piccole, e pensare attentamente a come risolvere ogni parte con il codice.",
+          "To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
           "In questo corso, imparerai i fondamenti del pensiero algoritmico scrivendo algoritmi che fanno di tutto, dalla conversione delle temperature alla gestione di complessi array 2D."
         ]
       },
       "object-oriented-programming": {
         "title": "Programmazione Orientata agli Oggetti",
         "intro": [
-          "La Programmazione Orientata agli Oggetti (OOP, o Object Oriented Programming), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli oggetti e le classi sono utilizzati per organizzare il codice per descrivere le cose e cosa possono fare.",
-          "In questo corso, imparerai i principi di base di OOP in JavaScript includendo la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
+          "In this course, you'll learn the basic principles of OOP in JavaScript, including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
         ]
       },
       "functional-programming": {
