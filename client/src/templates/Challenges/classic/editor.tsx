@@ -75,6 +75,7 @@ type PropTypes = {
 };
 
 // TODO: narrow these types (including model -> have specific keys)
+// also, 'data' is a bad name.  Editor properties?
 type DataType = {
   model: editor.ITextModel | null;
   state: null;
@@ -85,6 +86,10 @@ type DataType = {
   viewZoneHeight: number | null;
   outputZoneHeight: number | null;
   outputZoneId: string;
+  descriptionNode?: HTMLDivElement;
+  outputNode?: HTMLDivElement;
+  overlayWidget?: editor.IOverlayWidget;
+  outputWidget?: editor.IOverlayWidget;
 };
 
 interface EditorDataStore {
@@ -203,10 +208,6 @@ const Editor = (props: PropTypes): JSX.Element => {
     indexjs: { ...initialData },
     indexjsx: { ...initialData }
   });
-  const domNodeRef = useRef<HTMLDivElement | null>(null);
-  const outputNodeRef = useRef<HTMLDivElement | null>(null);
-  const overlayWidgetRef = useRef<editor.IOverlayWidget | null>(null);
-  const outputWidgetRef = useRef<editor.IOverlayWidget | null>(null);
 
   const data = dataRef.current[fileKey];
 
@@ -401,13 +402,13 @@ const Editor = (props: PropTypes): JSX.Element => {
         domNode,
         getViewZoneTop
       );
-      overlayWidgetRef.current = overlayWidget;
+      data.overlayWidget = overlayWidget;
       const outputWidget = createWidget(
         'my.output.widget',
         outputNode,
         getOutputZoneTop
       );
-      outputWidgetRef.current = outputWidget;
+      data.outputWidget = outputWidget;
 
       editor.addOverlayWidget(overlayWidget);
 
@@ -452,8 +453,7 @@ const Editor = (props: PropTypes): JSX.Element => {
       heightInPx: domNode.offsetHeight,
       domNode: background,
       onComputedHeight: () =>
-        overlayWidgetRef.current &&
-        editor.layoutOverlayWidget(overlayWidgetRef.current)
+        data.overlayWidget && editor.layoutOverlayWidget(data.overlayWidget)
     };
 
     data.viewZoneId = changeAccessor.addZone(viewZone);
@@ -487,15 +487,14 @@ const Editor = (props: PropTypes): JSX.Element => {
       heightInPx: outputNode.offsetHeight,
       domNode: background,
       onComputedHeight: () =>
-        outputWidgetRef.current &&
-        editor.layoutOverlayWidget(outputWidgetRef.current)
+        data.outputWidget && editor.layoutOverlayWidget(data.outputWidget)
     };
 
     data.outputZoneId = changeAccessor.addZone(viewZone);
   };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
-    if (domNodeRef.current) return domNodeRef.current;
+    if (data.descriptionNode) return data.descriptionNode;
     const { description } = props;
     // TODO: var was used here. Should it?
     const domNode = document.createElement('div');
@@ -523,12 +522,12 @@ const Editor = (props: PropTypes): JSX.Element => {
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     domNode.style.top = getViewZoneTop();
-    domNodeRef.current = domNode;
+    data.descriptionNode = domNode;
     return domNode;
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
-    if (outputNodeRef.current) return outputNodeRef.current;
+    if (data.outputNode) return data.outputNode;
     const outputNode = document.createElement('div');
     const statusNode = document.createElement('div');
     const hintNode = document.createElement('div');
@@ -561,7 +560,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
     outputNode.style.top = getOutputZoneTop();
 
-    outputNodeRef.current = outputNode;
+    data.outputNode = outputNode;
 
     return outputNode;
   }
@@ -1088,7 +1087,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   useEffect(() => {
     const { output } = props;
     // TODO: do we need this condition?  What happens if the ref is empty?
-    if (outputNodeRef.current) {
+    if (data.outputNode) {
       // TODO: output gets wiped when the preview gets updated, keeping the
       // display is an anti-pattern (the render should not ignore props!).
       // The correct solution is probably to create a new redux variable
