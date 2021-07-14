@@ -45,7 +45,7 @@ describe('A certification,', function () {
         .click();
       cy.contains('Submit and go to next challenge').click().wait(1000);
     });
-    cy.get('.react-monaco-editor-container', { timeout: 60000 });
+    cy.get('.donation-modal').should('be.visible');
     cy.visit('/settings');
 
     // set user settings to public to claim a cert
