@@ -1,0 +1,13 @@
+{
+  "name": "Registration Form",
+  "isUpcomingChange": true,
+  "dashedName": "registration-form",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [["60eebd07ea685b0e777b5583", "Part 1"]]
+}
