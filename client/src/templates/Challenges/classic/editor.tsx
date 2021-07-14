@@ -74,8 +74,9 @@ type PropTypes = {
   }) => void;
 };
 
+// TODO: narrow these types (including model -> have specific keys)
 type DataType = {
-  model: null | editor.ITextModel;
+  model: Record<string, editor.ITextModel>;
   state: null;
   viewZoneId: string;
   startEditDecId: string | null;
@@ -170,7 +171,7 @@ const toLastLine = (range: RangeType) => {
 
 // TODO: properly initialise data with values not null
 const initialData: DataType = {
-  model: null,
+  model: {},
   state: null,
   viewZoneId: '',
   startEditDecId: null,
@@ -251,12 +252,12 @@ const Editor = (props: PropTypes): JSX.Element => {
     // TODO: For now, I'm keeping the 'data' machinery, but it'll probably go
 
     const model =
-      dataRef.current.model ||
+      dataRef.current.model[fileKey] ||
       monaco.editor.createModel(
         challengeFiles[fileKey]?.contents ?? '',
         modeMap[challengeFiles[fileKey]?.ext ?? 'html']
       );
-    dataRef.current.model = model;
+    dataRef.current.model[fileKey] = model;
 
     const editableRegion = getEditableRegion();
 
@@ -273,8 +274,8 @@ const Editor = (props: PropTypes): JSX.Element => {
     const { challengeFiles, fileKey } = props;
 
     const newContents = challengeFiles[fileKey]?.contents;
-    if (model?.getValue() !== newContents) {
-      model?.setValue(newContents ?? '');
+    if (model[fileKey]?.getValue() !== newContents) {
+      model[fileKey]?.setValue(newContents ?? '');
     }
   };
 
@@ -686,7 +687,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   // TODO: DRY
   function getLineAfterViewZone() {
     // TODO: abstract away the data, ids etc.
-    const range = dataRef.current.model?.getDecorationRange(
+    const range = dataRef.current.model[props.fileKey]?.getDecorationRange(
       dataRef.current.startEditDecId ?? ''
     );
     // if the first decoration is missing, this implies the region reaches the
@@ -698,7 +699,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     // TODO: handle the case that the editable region reaches the bottom of the
     // editor
     return (
-      dataRef.current.model?.getDecorationRange(
+      dataRef.current.model[props.fileKey]?.getDecorationRange(
         dataRef.current.endEditDecId ?? ''
       )?.startLineNumber ?? 1
     );
@@ -744,11 +745,13 @@ const Editor = (props: PropTypes): JSX.Element => {
       return null;
     } else {
       const firstRange = startEditDecId
-        ? model.getDecorationRange(startEditDecId)
+        ? model[props.fileKey].getDecorationRange(startEditDecId)
         : getStartOfEditor();
       // TODO: handle the case that the editable region reaches the bottom of the
       // editor
-      const secondRange = model.getDecorationRange(endEditDecId ?? '');
+      const secondRange = model[props.fileKey].getDecorationRange(
+        endEditDecId ?? ''
+      );
       if (firstRange && secondRange) {
         const { startLineNumber, endLineNumber } = getLinesBetweenRanges(
           firstRange,
@@ -758,7 +761,7 @@ const Editor = (props: PropTypes): JSX.Element => {
         // getValueInRange includes column x if
         // startColumnNumber <= x < endColumnNumber
         // so we add 1 here
-        const endColumn = model.getLineLength(endLineNumber) + 1;
+        const endColumn = model[props.fileKey].getLineLength(endLineNumber) + 1;
         return new monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
       }
       return null;
@@ -780,21 +783,21 @@ const Editor = (props: PropTypes): JSX.Element => {
     if (!model || !monaco) return;
     const forbiddenRanges: [number, number][] = [
       [0, editableRegion[0]],
-      [editableRegion[1], model.getLineCount()]
+      [editableRegion[1], model[props.fileKey].getLineCount()]
     ];
 
     const ranges = forbiddenRanges.map(positions => {
-      return positionsToRange(model, monaco, positions);
+      return positionsToRange(model[props.fileKey], monaco, positions);
     });
 
-    const editableRange = positionsToRange(model, monaco, [
+    const editableRange = positionsToRange(model[props.fileKey], monaco, [
       editableRegion[0] + 1,
       editableRegion[1] - 1
     ]);
 
     dataRef.current.insideEditDecId = highlightEditableLines(
       monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-      model,
+      model[props.fileKey],
       editableRange
     )[0];
 
@@ -805,13 +808,13 @@ const Editor = (props: PropTypes): JSX.Element => {
       // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
       dataRef.current.startEditDecId = highlightLines(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        model,
+        model[props.fileKey],
         ranges[0]
       )[0];
 
       highlightText(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        model,
+        model[props.fileKey],
         ranges[0]
       );
     }
@@ -820,13 +823,13 @@ const Editor = (props: PropTypes): JSX.Element => {
     // the second range should expand at the bottom
     dataRef.current.endEditDecId = highlightLines(
       monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-      model,
+      model[props.fileKey],
       ranges[1]
     )[0];
 
     highlightText(
       monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-      model,
+      model[props.fileKey],
       ranges[1]
     );
 
@@ -849,7 +852,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
     // TODO refactor this mess
     // TODO this listener needs to be replaced on reset.
-    model.onDidChangeContent(e => {
+    model[props.fileKey].onDidChangeContent(e => {
       // TODO: it would be nice if undoing could remove the warning, but
       // it's probably too hard to track. i.e. if they make two warned edits
       // and then ctrl + z twice, it would realise they've removed their
@@ -879,7 +882,7 @@ const Editor = (props: PropTypes): JSX.Element => {
       }
 
       const warnUser = (id: string) => {
-        const range = model.getDecorationRange(id);
+        const range = model[props.fileKey].getDecorationRange(id);
         if (range) {
           const coveringRange = toStartOfLine(range);
           e.changes.forEach(({ range }) => {
@@ -918,7 +921,7 @@ const Editor = (props: PropTypes): JSX.Element => {
         // comparison detects if any change has occurred on that line
         // NOTE: any change in the decoration has already happened by this point
         // so this covers the *new* decoration range.
-        const range = model.getDecorationRange(id);
+        const range = model[props.fileKey].getDecorationRange(id);
         if (!range) {
           return id;
         }
@@ -951,7 +954,7 @@ const Editor = (props: PropTypes): JSX.Element => {
             // TODO: if they undo this should be reversed
             const decorations = highlightFunction(
               stickiness,
-              model,
+              model[props.fileKey],
               newCoveringRange,
               [id]
             );
