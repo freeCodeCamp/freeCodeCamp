@@ -84,10 +84,6 @@ const mapDispatchToProps = {
 };
 
 class MultifileEditor extends Component {
-  constructor(...props) {
-    super(...props);
-  }
-
   focusOnHotkeys() {
     if (this.props.containerRef.current) {
       this.props.containerRef.current.focus();
