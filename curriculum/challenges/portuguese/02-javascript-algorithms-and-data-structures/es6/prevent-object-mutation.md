@@ -1,6 +1,6 @@
 ---
 id: 598f48a36c8c40764b4e52b3
-title: Prevent Object Mutation
+title: Impedir a modificação de um objeto
 challengeType: 1
 forumTopicId: 301207
 dashedName: prevent-object-mutation
@@ -8,9 +8,9 @@ dashedName: prevent-object-mutation
 
 # --description--
 
-As seen in the previous challenge, `const` declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function `Object.freeze` to prevent data mutation.
+Como visto no desafio anterior, a declaração `const` sozinha, na verdade, não protege a mutação de seus dados. Para garantir que seus dados não mudem, o JavaScript fornece a função `Object.freeze` que previne os dados de serem modificados.
 
-Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.
+Uma vez congelado, você não pode mais adicionar, atualizar ou deletar as propriedades deste objeto. Qualquer tentativa de mudar o objeto será rejeitada. Observe que nenhum erro é lançado.
 
 ```js
 let obj = {
@@ -23,28 +23,28 @@ obj.newProp = "Test";
 console.log(obj); 
 ```
 
-The `obj.review` and `obj.newProp` assignments will result in errors, and the console will display the value `{ name: "FreeCodeCamp", review: "Awesome" }`.
+As atribuições `obj.review` e `obj.newProp` não irão funcionar e o console irá exibir o valor `{ name: "FreeCodeCamp", review: "Awesome" }`.
 
 # --instructions--
 
-In this challenge you are going to use `Object.freeze` to prevent mathematical constants from changing. You need to freeze the `MATH_CONSTANTS` object so that no one is able to alter the value of `PI`, add, or delete properties.
+Nesse desafio, você usará o método `Object.freeze` para prevenir a mudança de constantes matemáticas. Você precisa congelar o objeto `MATH_CONSTANTS` para que ninguém possa alterar o valor de `PI`, adicionar ou deletar propriedades.
 
 # --hints--
 
-You should not replace the `const` keyword.
+Você não deve substituir a palavra-chave `const`.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const/g));
 ```
 
-`MATH_CONSTANTS` should be a constant variable (by using `const`).
+`MATH_CONSTANTS` deve ser uma variável constante (use `const`).
 
 ```js
 (getUserInput) =>
   assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
 ```
 
-You should not change the original declaration of `MATH_CONSTANTS`.
+Você não deve alterar a declaração original de `MATH_CONSTANTS`.
 
 ```js
 (getUserInput) =>
@@ -55,7 +55,7 @@ You should not change the original declaration of `MATH_CONSTANTS`.
   );
 ```
 
-`PI` should equal `3.14`.
+A variável `PI` deve ser igual a `3.14`.
 
 ```js
 assert(PI === 3.14);

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c450eddfaeb5bdef
-title: Use Bracket Notation to Find the Nth Character in a String
+title: Use Notação de Colchetes para Encontrar o Nº Caractere em uma String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVJua'
 forumTopicId: 18343
@@ -9,34 +9,34 @@ dashedName: use-bracket-notation-to-find-the-nth-character-in-a-string
 
 # --description--
 
-You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.
+Você também pode usar <dfn>notação de colchetes</dfn> para pegar caracteres em outras posições em uma string.
 
-Remember that computers start counting at `0`, so the first character is actually the zeroth character.
+Lembre-se que computadores começam contando do `0`, então o primeiro caractere é na verdade o caractere na posição 0.
 
-Example:
+Exemplo:
 
 ```js
 var firstName = "Ada";
 var secondLetterOfFirstName = firstName[1];
 ```
 
-`secondLetterOfFirstName` would have a value of the string `d`.
+`secondLetterOfFirstName` teria o valor da string `d`.
 
 # --instructions--
 
-Let's try to set `thirdLetterOfLastName` to equal the third letter of the `lastName` variable using bracket notation.
+Vamos tentar definir `thirdLetterOfLastName` para ser igual a terceira letra da variável `lastName` usando notação de colchetes.
 
-**Hint:** Try looking at the example above if you get stuck.
+**Dica:** Tente olhar o exemplo acima se você ficar travado.
 
 # --hints--
 
-The `thirdLetterOfLastName` variable should have the value of `v`.
+A variável `thirdLetterOfLastName` deve ter o valor de `v`.
 
 ```js
 assert(thirdLetterOfLastName === 'v');
 ```
 
-You should use bracket notation.
+Você deve usar notação de colchetes.
 
 ```js
 assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
