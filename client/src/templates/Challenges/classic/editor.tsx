@@ -77,6 +77,7 @@ type PropTypes = {
 // TODO: narrow these types (including model -> have specific keys)
 // also, 'data' is a bad name.  Editor properties?
 type DataType = {
+  editor?: editor.IStandaloneCodeEditor;
   model: editor.ITextModel | null;
   state: null;
   viewZoneId: string;
@@ -298,7 +299,9 @@ const Editor = (props: PropTypes): JSX.Element => {
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
+    // TODO this should *probably* be set on focus
     editorRef.current = editor;
+    data.editor = editor;
     editor.updateOptions({
       accessibilitySupport: props.inAccessibilityMode ? 'on' : 'auto'
     });
@@ -429,7 +432,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   };
 
   const viewZoneCallback = (changeAccessor: editor.IViewZoneChangeAccessor) => {
-    const editor = editorRef.current;
+    const editor = data.editor;
     if (!editor) return;
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
@@ -463,7 +466,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   const outputZoneCallback = (
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
-    const editor = editorRef.current;
+    const editor = data.editor;
     if (!editor) return;
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
@@ -591,7 +594,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   function showEditableRegion(editableBoundaries: number[]) {
     if (editableBoundaries.length !== 2) return;
-    const editor = editorRef.current;
+    const editor = data.editor;
     if (!editor) return;
     // TODO: The heuristic has been commented out for now because the cursor
     // position is not saved at the moment, so it's redundant. I'm leaving it
@@ -667,7 +670,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   // currently is. (see getLineAfterViewZone)
   // TODO: DRY this and getOutputZoneTop out.
   function getViewZoneTop() {
-    const editor = editorRef.current;
+    const editor = data.editor;
     const heightDelta = data.viewZoneHeight ?? 0;
     if (editor) {
       const top = `${
@@ -682,7 +685,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   }
 
   function getOutputZoneTop() {
-    const editor = editorRef.current;
+    const editor = data.editor;
     const heightDelta = data.outputZoneHeight || 0;
     if (editor) {
       const top = `${
@@ -1105,7 +1108,7 @@ const Editor = (props: PropTypes): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.output]);
   useEffect(() => {
-    const editor = editorRef.current;
+    const editor = data.editor;
     editor?.layout();
     if (data.startEditDecId) {
       updateViewZone();
@@ -1116,7 +1119,7 @@ const Editor = (props: PropTypes): JSX.Element => {
 
   // TODO: DRY (there's going to be a lot of that)
   function updateOutputZone() {
-    const editor = editorRef.current;
+    const editor = data.editor;
     editor?.changeViewZones(changeAccessor => {
       changeAccessor.removeZone(data.outputZoneId);
       outputZoneCallback(changeAccessor);
@@ -1124,7 +1127,7 @@ const Editor = (props: PropTypes): JSX.Element => {
   }
 
   function updateViewZone() {
-    const editor = editorRef.current;
+    const editor = data.editor;
     editor?.changeViewZones(changeAccessor => {
       changeAccessor.removeZone(data.viewZoneId);
       viewZoneCallback(changeAccessor);
