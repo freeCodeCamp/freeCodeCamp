@@ -4,7 +4,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable import/unambiguous */
-const path = require('path');
+import * as path from 'path';
+
 const { availableLangs } = require('../../config/i18n/all-langs');
 const translationsSchema = require('./locales/english/translations.json');
 const trendingSchema = require('./locales/english/trending.json');
