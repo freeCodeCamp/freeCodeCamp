@@ -11,6 +11,8 @@ import Cup from '../../assets/icons/cup';
 import DonateForm from './DonateForm';
 import { modalDefaultDonation } from '../../../../config/donation-settings';
 import { useTranslation } from 'react-i18next';
+import { goToAnchor } from 'react-scrollable-anchor';
+import { isLocationSuperBlock } from '../../utils/path-parsers';
 
 import {
   closeDonationModal,
@@ -43,6 +45,10 @@ const propTypes = {
   activeDonors: PropTypes.number,
   closeDonationModal: PropTypes.func.isRequired,
   executeGA: PropTypes.func,
+  location: PropTypes.shape({
+    hash: PropTypes.string,
+    pathname: PropTypes.string
+  }),
   recentlyClaimedBlock: PropTypes.string,
   show: PropTypes.bool
 };
@@ -51,6 +57,7 @@ function DonateModal({
   show,
   closeDonationModal,
   executeGA,
+  location,
   recentlyClaimedBlock
 }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
@@ -98,6 +105,13 @@ function DonateModal({
     }
   };
 
+  const handleModalHide = () => {
+    // If modal is open on a SuperBlock page
+    if (isLocationSuperBlock(location)) {
+      goToAnchor('claim-cert-block');
+    }
+  };
+
   const blockDonationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
@@ -131,7 +145,12 @@ function DonateModal({
   );
 
   return (
-    <Modal bsSize='lg' className='donation-modal' show={show}>
+    <Modal
+      bsSize='lg'
+      className='donation-modal'
+      onExited={handleModalHide}
+      show={show}
+    >
       <Modal.Body>
         {recentlyClaimedBlock ? blockDonationText : progressDonationText}
         <Spacer />

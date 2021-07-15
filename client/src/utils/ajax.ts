@@ -82,6 +82,16 @@ export function getUsernameExists(username: string): Promise<boolean> {
   return get(`/api/users/exists?username=${username}`);
 }
 
+// TODO: Does a GET return a bolean?
+export function getVerifyCanClaimCert(
+  username: string,
+  superBlock: string
+): Promise<boolean> {
+  return get(
+    `/certificate/verify-can-claim-cert?username=${username}&superBlock=${superBlock}`
+  );
+}
+
 /** POST **/
 
 interface Donation {

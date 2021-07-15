@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
@@ -15,11 +15,13 @@ import Map from '../../components/Map';
 import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
 import Block from './components/Block';
+import DonateModal from '../../../../client/src/components/Donation/DonationModal';
 import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
   isSignedInSelector,
+  tryToShowDonationModal,
   userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
@@ -42,6 +44,7 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   location: PropTypes.shape({
     hash: PropTypes.string,
+    // TODO: state is sometimes a string
     state: PropTypes.shape({
       breadcrumbBlockClick: PropTypes.string
     })
@@ -49,6 +52,7 @@ const propTypes = {
   resetExpansion: PropTypes.func,
   t: PropTypes.func,
   toggleBlock: PropTypes.func,
+  tryToShowDonationModal: PropTypes.func.isRequired,
   user: User
 };
 
@@ -71,24 +75,30 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { resetExpansion, toggleBlock: b => toggleBlock(b) },
+    {
+      tryToShowDonationModal,
+      resetExpansion,
+      toggleBlock: b => toggleBlock(b)
+    },
     dispatch
   );
 
-class SuperBlockIntroductionPage extends Component {
-  componentDidMount() {
-    this.initializeExpandedState();
+const SuperBlockIntroductionPage = props => {
+  useEffect(() => {
+    initializeExpandedState();
+    props.tryToShowDonationModal();
 
     setTimeout(() => {
       configureAnchors({ offset: -40, scrollDuration: 400 });
     }, 0);
-  }
 
-  componentWillUnmount() {
-    configureAnchors({ offset: -40, scrollDuration: 0 });
-  }
+    return () => {
+      configureAnchors({ offset: -40, scrollDuration: 0 });
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  getChosenBlock() {
+  const getChosenBlock = () => {
     const {
       data: {
         allChallengeNode: { edges }
@@ -96,7 +106,7 @@ class SuperBlockIntroductionPage extends Component {
       isSignedIn,
       currentChallengeId,
       location
-    } = this.props;
+    } = props;
 
     // if coming from breadcrumb click
     if (location.state && location.state.breadcrumbBlockClick) {
@@ -123,100 +133,98 @@ class SuperBlockIntroductionPage extends Component {
     }
 
     return edge.node.block;
-  }
+  };
 
-  initializeExpandedState() {
-    const { resetExpansion, toggleBlock } = this.props;
+  const initializeExpandedState = () => {
+    const { resetExpansion, toggleBlock } = props;
 
     resetExpansion();
-    return toggleBlock(this.getChosenBlock());
-  }
+    return toggleBlock(getChosenBlock());
+  };
 
-  render() {
-    const {
-      data: {
-        markdownRemark: {
-          frontmatter: { superBlock, title }
-        },
-        allChallengeNode: { edges }
+  const {
+    data: {
+      markdownRemark: {
+        frontmatter: { superBlock, title }
       },
-      isSignedIn,
-      t,
-      user
-    } = this.props;
+      allChallengeNode: { edges }
+    },
+    isSignedIn,
+    t,
+    user
+  } = props;
 
-    const nodesForSuperBlock = edges.map(({ node }) => node);
-    const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
-    const i18nSuperBlock = t(`intro:${superBlock}.title`);
-    const i18nTitle =
-      superBlock === 'coding-interview-prep'
-        ? i18nSuperBlock
-        : t(`intro:misc-text.certification`, {
-            cert: i18nSuperBlock
-          });
+  const nodesForSuperBlock = edges.map(({ node }) => node);
+  const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
+  const i18nSuperBlock = t(`intro:${superBlock}.title`);
+  const i18nTitle =
+    superBlock === 'coding-interview-prep'
+      ? i18nSuperBlock
+      : t(`intro:misc-text.certification`, {
+          cert: i18nSuperBlock
+        });
 
-    return (
-      <>
-        <Helmet>
-          <title>{i18nTitle} | freeCodeCamp.org</title>
-        </Helmet>
-        <Grid>
-          <Row className='super-block-intro-page'>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size={2} />
-              <SuperBlockIntro superBlock={superBlock} />
-              <Spacer size={2} />
-              <h2 className='text-center big-subheading'>
-                {t(`intro:misc-text.courses`)}
-              </h2>
-              <Spacer />
-              <div className='block-ui'>
-                {blockDashedNames.map(blockDashedName => (
-                  <Fragment key={blockDashedName}>
-                    <Block
-                      blockDashedName={blockDashedName}
-                      challenges={nodesForSuperBlock.filter(
-                        node => node.block === blockDashedName
-                      )}
-                      superBlock={superBlock}
-                    />
-                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
-                  </Fragment>
-                ))}
-                {superBlock !== 'coding-interview-prep' && (
-                  <div>
-                    <CertChallenge
-                      isSignedIn={isSignedIn}
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
-                )}
-              </div>
-              {!isSignedIn && (
+  return (
+    <>
+      <Helmet>
+        <title>{i18nTitle} | freeCodeCamp.org</title>
+      </Helmet>
+      <Grid>
+        <Row className='super-block-intro-page'>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <Spacer size={2} />
+            <SuperBlockIntro superBlock={superBlock} />
+            <Spacer size={2} />
+            <h2 className='text-center big-subheading'>
+              {t(`intro:misc-text.courses`)}
+            </h2>
+            <Spacer />
+            <div className='block-ui'>
+              {blockDashedNames.map(blockDashedName => (
+                <Fragment key={blockDashedName}>
+                  <Block
+                    blockDashedName={blockDashedName}
+                    challenges={nodesForSuperBlock.filter(
+                      node => node.block === blockDashedName
+                    )}
+                    superBlock={superBlock}
+                  />
+                  {blockDashedName !== 'project-euler' ? <Spacer /> : null}
+                </Fragment>
+              ))}
+              {superBlock !== 'coding-interview-prep' && (
                 <div>
-                  <Spacer size={2} />
-                  <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+                  <CertChallenge
+                    superBlock={superBlock}
+                    title={title}
+                    user={user}
+                  />
                 </div>
               )}
-              <Spacer size={2} />
-              <h3
-                className='text-center big-block-title'
-                style={{ whiteSpace: 'pre-line' }}
-              >
-                {t(`intro:misc-text.browse-other`)}
-              </h3>
-              <Spacer />
-              <Map currentSuperBlock={superBlock} />
-              <Spacer size={2} />
-            </Col>
-          </Row>
-        </Grid>
-      </>
-    );
-  }
-}
+            </div>
+            {!isSignedIn && (
+              <div>
+                <Spacer size={2} />
+                <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+              </div>
+            )}
+            <Spacer size={2} />
+            <h3
+              className='text-center big-block-title'
+              style={{ whiteSpace: 'pre-line' }}
+            >
+              {t(`intro:misc-text.browse-other`)}
+            </h3>
+            <Spacer />
+            <Map currentSuperBlock={superBlock} />
+            <Spacer size={2} />
+          </Col>
+        </Row>
+      </Grid>
+      <DonateModal location={props.location} />
+    </>
+  );
+};
 
 SuperBlockIntroductionPage.displayName = 'SuperBlockIntroductionPage';
 SuperBlockIntroductionPage.propTypes = propTypes;
@@ -224,7 +232,7 @@ SuperBlockIntroductionPage.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withTranslation()(SuperBlockIntroductionPage));
+)(withTranslation()(memo(SuperBlockIntroductionPage)));
 
 export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
