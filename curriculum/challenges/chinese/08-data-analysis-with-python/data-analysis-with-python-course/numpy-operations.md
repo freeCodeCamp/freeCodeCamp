@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c155
-title: Numpy Operations
+title: Numpy 的运算
 challengeType: 11
 videoId: eqSVcJbaPdk
 dashedName: numpy-operations
@@ -8,18 +8,18 @@ dashedName: numpy-operations
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-More resources:
+更多资源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What is the value of `a` after you run the following code?
+运行以下代码后， `a` 的值是多少？
 
 ```py
 a = np.arange(5)

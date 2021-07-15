@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Disable Client-Side Caching with helmet.noCache()
+title: 使用 helment.noCache() 禁用客户端缓存
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -8,17 +8,17 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+请注意，本项目在[这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基础上进行开发。 你也可以从[GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/)上克隆。
 
-If you are releasing an update for your website, and you want the users to always download the newer version, you can (try to) disable caching on client’s browser. It can be useful in development too. Caching has performance benefits, which you will lose, so only use this option when there is a real need.
+如果你正在为你的网站发布更新，而你希望用户总是下载较新的版本，你可以（尝试）在客户的浏览器上禁用缓存。 它在开发中也很有用。 缓存具有性能优势，你将失去这些优势，因此只有在真正需要时才使用此选项。
 
 # --instructions--
 
-Use the `helmet.noCache()` method on your server.
+在你的服务器上使用 `helmet.noCache()` 方法。
 
 # --hints--
 
-helmet.noCache() middleware should be mounted correctly
+应正确加载 helmet.noCache() 中间件
 
 ```js
 (getUserInput) =>

@@ -1,33 +1,34 @@
 ---
 id: 5e46f979ac417301a38fb932
-title: Port Scanner
+title: 端口扫描器
 challengeType: 10
+forumTopicId: 462372
 helpCategory: Python
 dashedName: port-scanner
 ---
 
 # --description--
 
-Create a port scanner using Python.
+使用 Python 创建一个端口扫描器。
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-port-scanner).
+你可以访问 [Replit 上的完整项目描述和启动代码](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner)。
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+在打开链接之后 fork 该项目。 根据 “README.md” 中的指示完成整个项目，然后在下面提交你的项目链接。
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you some of the Python skills required for this project:
+Python 课程的交互式教学部分仍在开发当中。 目前，freeCodeCamp YouTube 频道上的一些视频将会教授你这个项目要求的一些 Python 技能。
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody 视频课程</a>（14 小时）
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python 视频课程</a>（2 小时）
   </li>
 </ul>
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

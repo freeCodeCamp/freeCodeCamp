@@ -1,23 +1,24 @@
 ---
 id: 5e46f802ac417301a38fb92b
-title: Page View Time Series Visualizer
+title: 页面访问量的时间序列可视化工具
 challengeType: 10
+forumTopicId: 462369
 dashedName: page-view-time-series-visualizer
 ---
 
 # --description--
 
-For this project you will visualize time series data using a line chart, bar chart, and box plots. You will use Pandas, matplotlib, and seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will help you understand the patterns in visits and identify yearly and monthly growth.
+对于这个项目，你将使用线图、条形图和箱形图对时间序列数据进行可视化。 你将要使用 Pandas、matplotlib 和 seaborn 来对数据集进行可视化，这个数据集包含从 2016-05-09 到 2019-12-03 每一天在 freeCodeCamp.org 论坛的页面访问量。 这个数据可视化将帮助你了解访问的模式，并且显示年增长和月增长情况。
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer).
+你可以 [在 Replit 上查看整个项目的具体描述和初始代码](https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer)。
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+点击此链接，fork 这个项目。 一旦你根据 “README.md” 中的说明完成项目，请提交你的项目到下面的链接。
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+我们仍在开发 Python 数据分析课程的交互式课程部分。 现在，你将需要使用其他资源来学习如何通过这一挑战。
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

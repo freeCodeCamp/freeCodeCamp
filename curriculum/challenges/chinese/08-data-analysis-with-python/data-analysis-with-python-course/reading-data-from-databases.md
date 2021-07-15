@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c163
-title: Reading Data from Databases
+title: 从数据库中读取数据
 challengeType: 11
 videoId: MtgXS1MofRw
 dashedName: reading-data-from-databases
@@ -8,30 +8,30 @@ dashedName: reading-data-from-databases
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-More resources:
+以下有更多的资料
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-11-reading-data-from-relational-databases/files)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What method does a `Cursor` instance have and what does it allow?
+`Cursor` 实例中都有什么方法，这些方法能用来做什么？
 
 ## --answers--
 
-The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
+`Cursor` 实例中有方法 `.run()` ，它允许你运行 SQL 查询语句。
 
 ---
 
-The `Cursor` instance has a `.select()` method which allows you to select records.
+`Cursor` 实例中有方法 `.select()` ，它允许你选择记录。
 
 ---
 
-The `Cursor` instance has an `.execute()` method which will receive SQL parameters to run against the database.
+`Cursor` 实例有方法 `.execute()` ， 它能够接收在数据库中运行的 SQL 参数。
 
 ## --video-solution--
 

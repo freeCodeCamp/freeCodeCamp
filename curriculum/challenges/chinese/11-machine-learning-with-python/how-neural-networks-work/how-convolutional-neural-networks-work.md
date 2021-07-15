@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610cd
-title: How Convolutional Neural Networks work
+title: 卷积神经网络的工作原理
 challengeType: 11
 videoId: Y5M7KH4A4n4
 dashedName: how-convolutional-neural-networks-work
@@ -10,19 +10,19 @@ dashedName: how-convolutional-neural-networks-work
 
 ## --text--
 
-When are Convolutional Neural Networks not useful?
+卷积神经网络在什么时候是没有用的？
 
 ## --answers--
 
-If your data can't be made to look like an image, or if you can rearrange elements of your data and it's still just as useful.
+当数据的组成形式不能像图片存储的数据格式一样，或者说你的数据可以重新排列，它仍然可以被运用到卷积神经网络中。
 
 ---
 
-If your data is made up of different 2D or 3D images.
+如果你的数据是由 2D 或者 3D 图片组成的。
 
 ---
 
-If your data is text or sound based.
+如果你的数据是基于文本或者音频的形式。
 
 ## --video-solution--
 
