@@ -5,7 +5,7 @@ import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
@@ -17,7 +17,6 @@ import {
 } from '../components/Donation/DonationTextComponents';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import CampersImage from '../components/landing/components/CampersImage';
-import { TFunc } from '../redux/prop-types';
 
 interface ExecuteGaArg {
   type: string;
@@ -33,7 +32,7 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
-  t: TFunc;
+  t: TFunction<'translation'>;
 }
 
 const mapStateToProps = createSelector(

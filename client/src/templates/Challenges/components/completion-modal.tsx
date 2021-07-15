@@ -6,13 +6,13 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { Dispatch } from 'redux';
 
 import Login from '../../../components/Header/components/Login';
 import CompletionModalBody from './completion-modal-body';
 import { dasherize } from '../../../../../utils/slugs';
-import { AllChallengeNodeType, TFunc } from '../../../redux/prop-types';
+import { AllChallengeNodeType } from '../../../redux/prop-types';
 
 import './completion-modal.css';
 
@@ -106,7 +106,7 @@ interface CompletionModalsProps {
   message: string;
   submitChallenge: () => void;
   superBlock: string;
-  t: TFunc;
+  t: TFunction<'translation'>;
   title: string;
 }
 

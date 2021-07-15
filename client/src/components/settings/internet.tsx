@@ -10,14 +10,13 @@ import {
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import isURL from 'validator/lib/isURL';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { maybeUrlRE } from '../../utils';
 
 import SectionHeader from './section-header';
 import { FullWidthRow } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import { TFunc } from '../../redux/prop-types';
 
 interface InternetFormValues {
   githubProfile: string;
@@ -27,7 +26,7 @@ interface InternetFormValues {
 }
 
 interface InternetProps extends InternetFormValues {
-  t: TFunc;
+  t: TFunction<'translation'>;
   updateInternetSettings: (formValues: InternetFormValues) => void;
 }
 

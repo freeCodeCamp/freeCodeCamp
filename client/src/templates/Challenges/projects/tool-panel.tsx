@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { openModal } from '../redux';
 
 import './tool-panel.css';
-import { TFunc } from '../../../redux/prop-types';
 
 const mapStateToProps = () => ({});
 
@@ -22,7 +21,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ToolPanelProps {
   guideUrl?: string;
   openHelpModal: () => void;
-  t: TFunc;
+  t: TFunction<'translation'>;
 }
 
 export class ToolPanel extends Component<ToolPanelProps> {

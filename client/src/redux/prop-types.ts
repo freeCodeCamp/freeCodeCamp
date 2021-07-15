@@ -1,7 +1,4 @@
 import PropTypes from 'prop-types';
-import { TFunction } from 'react-i18next';
-
-export type TFunc = TFunction<'translation'>;
 
 const FileType = PropTypes.shape({
   key: PropTypes.string,

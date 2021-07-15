@@ -11,7 +11,7 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import {
@@ -22,12 +22,11 @@ import {
 import FullWidthRow from '../helpers/full-width-row';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import { isValidUsername } from '../../../../utils/validate';
-import { TFunc } from '../../redux/prop-types';
 
 type UsernameProps = {
   isValidUsername: boolean;
   submitNewUsername: (name: string) => void;
-  t: TFunc;
+  t: TFunction<'translation'>;
   username: string;
   validateUsername: (name: string) => void;
   validating: boolean;

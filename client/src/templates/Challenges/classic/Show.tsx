@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Media from 'react-responsive';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -33,8 +33,7 @@ import {
   ChallengeFileType,
   ChallengeMetaType,
   TestType,
-  ResizePropsType,
-  TFunc
+  ResizePropsType
 } from '../../../redux/prop-types';
 import {
   createFiles,
@@ -88,7 +87,7 @@ interface ShowClassicProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: TFunc;
+  t: TFunction<'translation'>;
   tests: TestType[];
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
 }

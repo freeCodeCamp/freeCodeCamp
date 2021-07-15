@@ -13,7 +13,7 @@ import {
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import isEmail from 'validator/lib/isEmail';
-import { Trans, withTranslation } from 'react-i18next';
+import { TFunction, Trans, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import { updateMyEmail } from '../../redux/settings';
@@ -24,7 +24,6 @@ import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import ToggleSetting from './toggle-setting';
-import { TFunc } from '../../redux/prop-types';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -34,7 +33,7 @@ type EmailProps = {
   email: string;
   isEmailVerified: boolean;
   sendQuincyEmail: boolean;
-  t: TFunc;
+  t: TFunction<'translation'>;
   updateMyEmail: (email: string) => void;
   updateQuincyEmail: (sendQuincyEmail: boolean) => void;
 };

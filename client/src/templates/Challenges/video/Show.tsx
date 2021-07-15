@@ -8,15 +8,14 @@ import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
 import { ObserveKeys } from 'react-hotkeys';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 // Local Utilities
 import PrismFormatted from '../components/prism-formatted';
 import {
   ChallengeNodeType,
-  ChallengeMetaType,
-  TFunc
+  ChallengeMetaType
 } from '../../../redux/prop-types';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
@@ -64,7 +63,7 @@ interface ShowVideoProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: TFunc;
+  t: TFunction<'translation'>;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
 }

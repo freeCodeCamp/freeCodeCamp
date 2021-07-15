@@ -7,15 +7,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import type { Dispatch } from 'redux';
 
 // Local Utilities
 import {
   ChallengeNodeType,
-  ChallengeMetaType,
-  TFunc
+  ChallengeMetaType
 } from '../../../../redux/prop-types';
 import {
   challengeMounted,
@@ -63,7 +62,7 @@ interface ProjectProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: TFunc;
+  t: TFunction<'translation'>;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
 }

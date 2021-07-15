@@ -11,14 +11,13 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import isURL from 'validator/lib/isURL';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { hasProtocolRE } from '../../utils';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import { TFunc } from '../../redux/prop-types';
 
 type PortfolioValues = {
   id: string;
@@ -31,7 +30,7 @@ type PortfolioValues = {
 type PortfolioProps = {
   picture?: string;
   portfolio: PortfolioValues[];
-  t: TFunc;
+  t: TFunction<'translation'>;
   updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
   username?: string;
 };

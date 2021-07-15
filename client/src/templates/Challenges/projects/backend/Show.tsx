@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 // Local Utilities
 import {
@@ -36,8 +36,7 @@ import Spacer from '../../../../components/helpers/spacer';
 import {
   ChallengeNodeType,
   ChallengeMetaType,
-  TestType,
-  TFunc
+  TestType
 } from '../../../../redux/prop-types';
 import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
@@ -89,7 +88,7 @@ interface BackEndProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: TFunc;
+  t: TFunction<'translation'>;
   tests: TestType[];
   title: string;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;

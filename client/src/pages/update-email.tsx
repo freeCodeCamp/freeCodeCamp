@@ -18,18 +18,17 @@ import {
 import Helmet from 'react-helmet';
 import isEmail from 'validator/lib/isEmail';
 import { isString } from 'lodash-es';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux';
 import { updateMyEmail } from '../redux/settings';
 import { maybeEmailRE } from '../utils';
-import { TFunc } from '../redux/prop-types';
 
 interface UpdateEmailProps {
   isNewEmail: boolean;
-  t: TFunc;
+  t: TFunction<'translation'>;
   updateMyEmail: (e: string) => void;
 }
 

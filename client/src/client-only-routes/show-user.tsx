@@ -11,7 +11,7 @@ import {
   Row
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Trans, withTranslation } from 'react-i18next';
+import { TFunction, Trans, withTranslation } from 'react-i18next';
 
 import Login from '../components/Header/components/Login';
 
@@ -22,7 +22,6 @@ import {
   reportUser
 } from '../redux';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
-import { TFunc } from '../redux/prop-types';
 
 interface IShowUserProps {
   email: string;
@@ -31,7 +30,7 @@ interface IShowUserProps {
     username: string;
     reportDescription: string;
   }) => void;
-  t: TFunc;
+  t: TFunction<'translation'>;
   userFetchState: {
     pending: boolean;
     complete: boolean;

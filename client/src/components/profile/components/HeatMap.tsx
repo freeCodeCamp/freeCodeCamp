@@ -8,7 +8,7 @@ import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
 import startOfDay from 'date-fns/startOfDay';
 import isEqual from 'date-fns/isEqual';
-import { useTranslation } from 'react-i18next';
+import { TFunction, useTranslation } from 'react-i18next';
 
 import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';
@@ -20,7 +20,6 @@ import { langCodes } from '../../../../../config/i18n/all-langs';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import envData from '../../../../../config/env.json';
-import { TFunc } from '../../../redux/prop-types';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
@@ -51,7 +50,7 @@ interface IHeatMapInnerProps {
   longestStreak: number;
   pages: IPageData[];
   points?: number;
-  t: TFunc;
+  t: TFunction<'translation'>;
 }
 
 interface IHeatMapInnerState {

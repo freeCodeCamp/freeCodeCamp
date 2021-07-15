@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import { userSelector } from '../../redux';
@@ -15,7 +15,6 @@ import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
 import ToggleSetting from './toggle-setting';
 import SectionHeader from './section-header';
-import { TFunc } from '../../redux/prop-types';
 
 const mapStateToProps = createSelector(userSelector, user => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -40,7 +39,7 @@ type ProfileUIType = {
 
 type PrivacyProps = {
   submitProfileUI: (profileUI: ProfileUIType) => void;
-  t: TFunc;
+  t: TFunction<'translation'>;
   user: {
     profileUI: ProfileUIType;
     username: string;

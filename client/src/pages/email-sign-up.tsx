@@ -4,7 +4,7 @@ import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import SectionHeader from '../components/settings/section-header';
 import IntroDescription from '../components/Intro/components/IntroDescription';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
@@ -15,12 +15,11 @@ import { acceptTerms, userSelector } from '../redux';
 import createRedirect from '../components/create-redirect';
 
 import './email-sign-up.css';
-import { TFunc } from '../redux/prop-types';
 
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
-  t: TFunc;
+  t: TFunction<'translation'>;
 }
 
 const mapStateToProps = createSelector(

@@ -10,7 +10,7 @@
 // @ts-nocheck
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
@@ -29,7 +29,6 @@ import {
   i18nextCodes,
   langDisplayNames
 } from '../../../../../config/i18n/all-langs';
-import { TFunc } from '../../../redux/prop-types';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 
@@ -39,7 +38,7 @@ export interface NavLinksProps {
   displayMenu?: boolean;
   fetchState?: { pending: boolean };
   i18n: Object;
-  t: TFunc;
+  t: TFunction<'translation'>;
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
@@ -13,12 +13,11 @@ import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
 
 import './danger-zone.css';
-import { TFunc } from '../../redux/prop-types';
 
 type DangerZoneProps = {
   deleteAccount: () => void;
   resetProgress: () => void;
-  t: TFunc;
+  t: TFunction<'translation'>;
 };
 
 type DangerZoneState = {
