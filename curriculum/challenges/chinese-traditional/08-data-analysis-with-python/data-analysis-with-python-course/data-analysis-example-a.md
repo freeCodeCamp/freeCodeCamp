@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14d
-title: Data Analysis Example A
+title: 數據分析 案例 A
 challengeType: 11
 videoId: nVAaxZ34khk
 dashedName: data-analysis-example-a
@@ -8,34 +8,34 @@ dashedName: data-analysis-example-a
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
-More resources:
+更多資料：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What does the shape of our dataframe tell us?
+數據框架的形狀表示了什麼意義？從中我們又能夠了解到什麼？
 
 ## --answers--
 
-The size in gigabytes the dataframe we loaded into memory is.
+我們加載到內存中的數據幀大小爲千兆字節。
 
 ---
 
-How many rows and columns our dataframe has.
+我們的數據框架有多少行和多少列？
 
 ---
 
-How many rows the source data had before loading.
+在加載數據前，源數據中有多少行？
 
 ---
 
-How many columns the source data had before loading.
+在加載數據前，源數據中有多少列？
 
 ## --video-solution--
 

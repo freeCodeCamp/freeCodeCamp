@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da6
-title: Conclusion
+title: 結論
 challengeType: 11
 videoId: LMNub5frQi4
 dashedName: conclusion
@@ -10,19 +10,19 @@ dashedName: conclusion
 
 ## --text--
 
-Most people that are experts in AI or machine learning usually...:
+大多數人工智能或機器學習專家通常......
 
 ## --answers--
 
-have one specialization.
+有一個專業。
 
 ---
 
-have many specializations.
+有很多專業。
 
 ---
 
-have a deep understanding of many different frameworks.
+對許多不同的框架有深入的瞭解。
 
 ## --video-solution--
 
