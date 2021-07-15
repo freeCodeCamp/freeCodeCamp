@@ -8,26 +8,25 @@ dashedName: problem-237-tours-on-a-4-x-n-playing-board
 
 # --description--
 
-Let T(n) be the number of tours over a 4 × n playing board such that:
+Let $T(n)$ be the number of tours over a 4 × $n$ playing board such that:
 
-The tour starts in the top left corner.
-
-The tour consists of moves that are up, down, left, or right one square.
-
-The tour visits each square exactly once.
-
-The tour ends in the bottom left corner.
+- The tour starts in the top left corner.
+- The tour consists of moves that are up, down, left, or right one square.
+- The tour visits each square exactly once.
+- The tour ends in the bottom left corner.
 
 The diagram shows one tour over a 4 × 10 board:
 
-T(10) is 2329. What is T(1012) modulo 108?
+<img class="img-responsive center-block" alt="one tour over 4 x 10 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;">
+
+$T(10)$ is 2329. What is $T({10}^{12})$ modulo ${10}^8$?
 
 # --hints--
 
-`euler237()` should return 15836928.
+`toursOnPlayingBoard()` should return `15836928`.
 
 ```js
-assert.strictEqual(euler237(), 15836928);
+assert.strictEqual(toursOnPlayingBoard(), 15836928);
 ```
 
 # --seed--
@@ -35,12 +34,12 @@ assert.strictEqual(euler237(), 15836928);
 ## --seed-contents--
 
 ```js
-function euler237() {
+function toursOnPlayingBoard() {
 
   return true;
 }
 
-euler237();
+toursOnPlayingBoard();
 ```
 
 # --solutions--
