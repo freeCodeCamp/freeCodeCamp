@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b90
-title: Match a Literal String with Different Possibilities
+title: Busque uma String Literal com Diferentes Possibilidades
 challengeType: 1
 forumTopicId: 301345
 dashedName: match-a-literal-string-with-different-possibilities
@@ -8,57 +8,57 @@ dashedName: match-a-literal-string-with-different-possibilities
 
 # --description--
 
-Using regexes like `/coding/`, you can look for the pattern `coding` in another string.
+Ao usar regexes como `/coding/`, você pode procurar pelo padrão `coding` em strings.
 
-This is powerful to search single strings, but it's limited to only one pattern. You can search for multiple patterns using the `alternation` or `OR` operator: `|`.
+Isso funciona com strings únicas, mas é limitado a apenas um padrão. Você pode procurar por múltiplos padrões usando o operador de `alternação`, ou `OU`: `|`.
 
-This operator matches patterns either before or after it. For example, if you wanted to match the strings `yes` or `no`, the regex you want is `/yes|no/`.
+Este operador funciona para buscar padrões à esquerda e à direita dele. Por exemplo, se você quiser encontrar as strings `yes` ou `no`, a regex que você quer é `/yes|no/`.
 
-You can also search for more than just two patterns. You can do this by adding more patterns with more `OR` operators separating them, like `/yes|no|maybe/`.
+Você pode também procurar por mais de dois padrões com este operador. É possível fazer isso ao adicionar mais instâncias do operador seguido do padrão desejado: `/yes|no|maybe/`.
 
 # --instructions--
 
-Complete the regex `petRegex` to match the pets `dog`, `cat`, `bird`, or `fish`.
+Complete a regex `petRegex` para encontrar os pets `dog`, `cat`, `bird`, ou `fish`.
 
 # --hints--
 
-Your regex `petRegex` should return `true` for the string `John has a pet dog.`
+Sua regex `petRegex` deve retornar `true` para a string `John has a pet dog.`
 
 ```js
 assert(petRegex.test('John has a pet dog.'));
 ```
 
-Your regex `petRegex` should return `false` for the string `Emma has a pet rock.`
+Sua regex `petRegex` deve retornar `false` para a string `Emma has a pet rock.`
 
 ```js
 assert(!petRegex.test('Emma has a pet rock.'));
 ```
 
-Your regex `petRegex` should return `true` for the string `Emma has a pet bird.`
+Sua regex `petRegex` deve retornar `true` para a string `Emma has a pet bird.`
 
 ```js
 assert(petRegex.test('Emma has a pet bird.'));
 ```
 
-Your regex `petRegex` should return `true` for the string `Liz has a pet cat.`
+Sua regex `petRegex` deve retornar `true` para a string `Liz has a pet cat.`
 
 ```js
 assert(petRegex.test('Liz has a pet cat.'));
 ```
 
-Your regex `petRegex` should return `false` for the string `Kara has a pet dolphin.`
+Sua regex `petRegex` deve retornar `false` para a string `Kara has a pet dolphin.`
 
 ```js
 assert(!petRegex.test('Kara has a pet dolphin.'));
 ```
 
-Your regex `petRegex` should return `true` for the string `Alice has a pet fish.`
+Sua regex `petRegex` deve retornar `true` para a string `Alice has a pet fish.`
 
 ```js
 assert(petRegex.test('Alice has a pet fish.'));
 ```
 
-Your regex `petRegex` should return `false` for the string `Jimmy has a pet computer.`
+Sua regex `petRegex` deve retornar `false` para a string `Jimmy has a pet computer.`
 
 ```js
 assert(!petRegex.test('Jimmy has a pet computer.'));

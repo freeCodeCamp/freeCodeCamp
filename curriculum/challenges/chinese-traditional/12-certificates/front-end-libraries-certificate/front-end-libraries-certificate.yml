@@ -1,21 +1,21 @@
 ---
 id: 561acd10cb82ac38a17513bc
-title: Front End Libraries Certificate
+title: 前端庫證書
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: bd7158d8c442eddfaeb5bd13
-    title: Build a Random Quote Machine
+    title: 創建一個隨機引語生成器
   - 
     id: bd7157d8c242eddfaeb5bd13
-    title: Build a Markdown Previewer
+    title: 創建一個 Markdown 文件預覽器
   - 
     id: 587d7dbc367417b2b2512bae
-    title: Build a Drum Machine
+    title: 創建一臺鼓式機器
   - 
     id: bd7158d8c442eddfaeb5bd17
-    title: Build a JavaScript Calculator
+    title: 創建一個 JavaScript 計算器
   - 
     id: bd7158d8c442eddfaeb5bd0f
-    title: Build a 25 + 5 Clock
+    title: 創建一個番茄時鐘

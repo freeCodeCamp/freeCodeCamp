@@ -1,6 +1,6 @@
 ---
 id: 587d7dba367417b2b2512ba8
-title: Check for All or None
+title: Verificando existência
 challengeType: 1
 forumTopicId: 301338
 dashedName: check-for-all-or-none
@@ -8,11 +8,11 @@ dashedName: check-for-all-or-none
 
 # --description--
 
-Sometimes the patterns you want to search for may have parts of it that may or may not exist. However, it may be important to check for them nonetheless.
+Haverá vezes em que você procurará padrões que podem ou não existir na string. Pode ser relevante validá-los dependendo da situação.
 
-You can specify the possible existence of an element with a question mark, `?`. This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is optional.
+Você pode fazer com que um padrão seja opcional ao usar uma interrogação, `?`, depois dele. Ela valida se há uma ou nenhuma ocorrência do padrão. Pode-se dizer que a interrogação torna o elemento à esquerda dela opcional.
 
-For example, there are slight differences in American and British English and you can use the question mark to match both spellings.
+Por exemplo, com a interrogação você pode capturar palavras em inglês escritas com a ortografia americana ou britânica.
 
 ```js
 let american = "color";
@@ -22,36 +22,36 @@ rainbowRegex.test(american);
 rainbowRegex.test(british);
 ```
 
-Both uses of the `test` method would return `true`.
+Ambas as chamadas ao método `test` retornam `true`.
 
 # --instructions--
 
-Change the regex `favRegex` to match both the American English (`favorite`) and the British English (`favourite`) version of the word.
+Altere a regex `favRegex` para encontrar as versões americana (`favorite`) e britânica (`favourite`) da palavra.
 
 # --hints--
 
-Your regex should use the optional symbol, `?`.
+Sua regex deve usar a interrogação (`?`) para validação opcional.
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.source.match(/\?/).length > 0);
 ```
 
-Your regex should match the string `favorite`
+Sua regex deve encontrar a string `favorite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favorite'));
 ```
 
-Your regex should match the string `favourite`
+Sua regex deve encontrar a string `favourite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favourite'));
 ```
 
-Your regex should not match the string `fav`
+Sua regex não deve encontrar a string `fav`
 
 ```js
 favRegex.lastIndex = 0;

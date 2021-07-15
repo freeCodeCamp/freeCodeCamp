@@ -1,6 +1,6 @@
 ---
 id: 5f8884f4c46685731aabfc41
-title: Run Functional Tests Using a Headless Browser II
+title: Eseguire test funzionali usando un headless browser II
 challengeType: 2
 forumTopicId: 301594
 dashedName: run-functional-tests-using-a-headless-browser-ii
@@ -8,27 +8,27 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto viene costruito a partire dal seguente progetto iniziale su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Vespucci" - write your e2e test...'` test (`// #6`), automate filling-in and submitting the form from scratch:
+All'interno di `tests/2_functional-tests.js`, nel test `'submit "surname" : "Vespucci" - write your e2e test...'` (`// #6`), automatizza la compilazione e invia il modulo:
 
-1.  Fill in the form with the `surname` of `Vespucci`
-2.  Submit it pressing `'submit'` button
+1.  Compila il modulo con il `surname` di `Vespucci`
+2.  Invia premendo il pulsante `'submit'`
 
-Within the callback:
+All'interno della callback:
 
-1.  assert that status is `200`
-2.  assert that the text inside the element `span#name` is `'Amerigo'`
-3.  assert that the text inside the element `span#surname` is `'Vespucci'`
-4.  assert that the element(s) `span#dates` exist and their count is `1`
+1.  asserisci che lo stato è `200`
+2.  asserisci che il testo all'interno dell'elemento `span#name` è `'Amerigo'`
+3.  asserisci che il testo all'interno dell'elemento `span#surname` è `'Vespucci'`
+4.  asserisci che gli elementi `span#dates` esistono e il loro conteggio è `1`
 
-Do not forget to to remove the `assert.fail()` call.
+Non dimenticare di rimuovere la chiamata `assert.fail()`.
 
 # --hints--
 
-All tests should pass.
+Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
@@ -42,7 +42,7 @@ All tests should pass.
   );
 ```
 
-You should assert that the headless browser request succeeded.
+Dovresti asserire che la richiesta dell'headless browser sia riuscita.
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ You should assert that the headless browser request succeeded.
   );
 ```
 
-You should assert that the text inside the element 'span#name' is 'Amerigo'.
+Dovresti asserire che il testo all'interno dell'elemento 'span#name' sia 'Amerigo'.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ You should assert that the text inside the element 'span#name' is 'Amerigo'.
   );
 ```
 
-You should assert that the text inside the element 'span#surname' is 'Vespucci'.
+Dovresti asserire che il testo all'interno dell'elemento 'span#surname' sia 'Vespucci'.
 
 ```js
 (getUserInput) =>
@@ -88,7 +88,7 @@ You should assert that the text inside the element 'span#surname' is 'Vespucci'.
   );
 ```
 
-You should assert that the element 'span#dates' exist and its count is 1.
+Dovresti asserire che l'elemento 'span#dates' esista e il suo conteggio sia 1.
 
 ```js
 (getUserInput) =>

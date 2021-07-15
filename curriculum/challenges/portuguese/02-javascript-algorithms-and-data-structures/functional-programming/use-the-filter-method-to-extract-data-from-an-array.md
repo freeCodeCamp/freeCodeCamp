@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b63
-title: Use the filter Method to Extract Data from an Array
+title: Use o Método filter para Extrair Dados de um Array
 challengeType: 1
 forumTopicId: 18179
 dashedName: use-the-filter-method-to-extract-data-from-an-array
@@ -8,13 +8,13 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 # --description--
 
-Another useful array function is `Array.prototype.filter()`, or simply `filter()`.
+Outra função útil de array é `Array.prototype.filter()`, ou simplesmente `filter()`.
 
-`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns `true`. In other words, it filters the array, based on the function passed to it. Like `map`, it does this without needing to modify the original array.
+O `filter` chama uma função para cada elemento de um array e constrói um novo array contendo apenas os elementos para os quais a função retorna `true`. Em outras palavras, ele filtra o array de acordo com a função passada a ele. Ele o faz sem alterar o array original assim como `map`.
 
-The callback function accepts three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `filter` method was called.
+A função callback toma três argumentos. O primeiro argumento é o elemento que está a ser processado. O segundo é o índice deste elemento e o terceiro é o array do qual `filter` foi chamado.
 
-See below for an example using the `filter` method on the `users` array to return a new array containing only the users under the age of 30. For simplicity, the example only uses the first argument of the callback.
+Abaixo você vê um exemplo do `filter` sendo usado do array `users` para retornar um novo array apenas com os usuários cuja idade é menor que 30. O exemplo usa apenas o primeiro argumento do callback por simplicidade.
 
 ```js
 const users = [
@@ -27,15 +27,15 @@ const usersUnder30 = users.filter(user => user.age < 30);
 console.log(usersUnder30); 
 ```
 
-The console would display the value `[ { name: 'Amy', age: 20 }, { name: 'camperCat', age: 10 } ]`.
+O console mostraria o valor `[ { name: 'Amy', age: 20 }, { name: 'camperCat', age: 10 } ]`.
 
 # --instructions--
 
-The variable `watchList` holds an array of objects with information on several movies. Use a combination of `filter` and `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys. The new array should only include objects where `imdbRating` is greater than or equal to 8.0. Note that the `rating` values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
+A variável `watchList` armazena um array de objetos com informações de diversos filmes. Use uma combinação de `filter` e `map` em `watchList` para criar um novo array de objetos apenas com as chaves `title` e `rating`. O novo array deve incluir apenas os objetos cujo `imdbRating` é maior que ou igual a 8. Observe que os valores de `rating` são salvos como strings nos objetos, então você pode precisar convertê-los para números antes de realizar operações matemáticas com eles.
 
 # --hints--
 
-The `watchList` variable should not change.
+A variável `watchList` não deve ser alterada.
 
 ```js
 assert(
@@ -43,19 +43,19 @@ assert(
 );
 ```
 
-Your code should use the `filter` method.
+Você deve usar o método `filter`.
 
 ```js
 assert(code.match(/\s*\.\s*filter/g));
 ```
 
-Your code should not use a `for` loop.
+Você não deve usar loops `for`.
 
 ```js
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-`filteredList` should equal `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`.
+`filteredList` deve ser igual a `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`.
 
 ```js
 assert.deepEqual(filteredList, [

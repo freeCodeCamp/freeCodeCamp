@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9e
-title: Match Ending String Patterns
+title: Padrões de Fim de String
 challengeType: 1
 forumTopicId: 301352
 dashedName: match-ending-string-patterns
@@ -8,9 +8,9 @@ dashedName: match-ending-string-patterns
 
 # --description--
 
-In the last challenge, you learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
+No desafio anterior, você aprendeu a usar o circunflexo para capturar padrões no início de strings. Há também uma maneira de buscar padrões no fim de strings.
 
-You can search the end of strings using the dollar sign character `$` at the end of the regex.
+Se você colocar um cifrão, `$`, no fim da regex, você pode buscar no fim de strings.
 
 ```js
 let theEnding = "This is a never ending story";
@@ -20,27 +20,27 @@ let noEnding = "Sometimes a story will have to end";
 storyRegex.test(noEnding);
 ```
 
-The first `test` call would return `true`, while the second would return `false`.
+A primeira chamada a `test` retorna `true` enquanto a segunda retorna `false`.
 
 # --instructions--
 
-Use the anchor character (`$`) to match the string `caboose` at the end of the string `caboose`.
+Use o cifrão (`$`) para capturar a string `caboose` no fim da string `caboose`.
 
 # --hints--
 
-You should search for `caboose` with the dollar sign `$` anchor in your regex.
+Você deve usar o cifrão `$` na sua regex para buscar a string `caboose`.
 
 ```js
 assert(lastRegex.source == 'caboose$');
 ```
 
-Your regex should not use any flags.
+Sua regex não deve usar nenhuma flag.
 
 ```js
 assert(lastRegex.flags == '');
 ```
 
-You should match `caboose` at the end of the string `The last car on a train is the caboose`
+Você deve capturar `caboose` no fim da string `The last car on a train is the caboose`
 
 ```js
 assert(lastRegex.test('The last car on a train is the caboose'));
