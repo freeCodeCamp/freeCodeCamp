@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d90
-title: 'Core Learning Algorithms: Hidden Markov Models'
+title: '核心學習算法：隱馬爾可夫模型'
 challengeType: 11
 videoId: IZg24y4wEPY
 dashedName: core-learning-algorithms-hidden-markov-models
@@ -10,19 +10,19 @@ dashedName: core-learning-algorithms-hidden-markov-models
 
 ## --text--
 
-What makes a Hidden Markov model different than linear regression or classification?
+隱馬爾科夫模型與線性迴歸或分類有何不同？
 
 ## --answers--
 
-It uses probability distributions to predict future events or states.
+它使用概率分佈來預測未來的事件或狀態。
 
 ---
 
-It analyzes the relationship between independent and dependent variables to make predictions.
+它分析自變量和因變量之間的關係以進行預測。
 
 ---
 
-It separates data points into separate categories.
+它將數據點分成不同的類別。
 
 ## --video-solution--
 

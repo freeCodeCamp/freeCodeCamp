@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da1
-title: 'Natural Language Processing With RNNs: Building the Model'
+title: '使用 RNN 處理自然語言：構建模型'
 challengeType: 11
 videoId: 32WBFS7lfsw
 dashedName: natural-language-processing-with-rnns-building-the-model
@@ -10,7 +10,7 @@ dashedName: natural-language-processing-with-rnns-building-the-model
 
 ## --text--
 
-Fill in the blanks below to complete the `build_model` function:
+填寫下面的空白以完成 `build_model` 函數：
 
 ```py
 def build_mode(vocab_size, embedding_dim, rnn_units, batch_size):

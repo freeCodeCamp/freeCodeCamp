@@ -64,20 +64,38 @@ $\\quad \\quad \\sqrt{13}=\[3;(1,1,1,1,6)]$, period = 5
 
 Exactly four continued fractions, for $N \\le 13$, have an odd period.
 
-How many continued fractions for $N \\le 10\\,000$ have an odd period?
+How many continued fractions for $N \\le n$ have an odd period?
 
 # --hints--
 
-`oddPeriodSqrts()` should return a number.
+`oddPeriodSqrts(13)` should return a number.
 
 ```js
-assert(typeof oddPeriodSqrts() === 'number');
+assert(typeof oddPeriodSqrts(13) === 'number');
 ```
 
-`oddPeriodSqrts()` should return 1322.
+`oddPeriodSqrts(500)` should return `83`.
 
 ```js
-assert.strictEqual(oddPeriodSqrts(), 1322);
+assert.strictEqual(oddPeriodSqrts(500), 83);
+```
+
+`oddPeriodSqrts(1000)` should return `152`.
+
+```js
+assert.strictEqual(oddPeriodSqrts(1000), 152);
+```
+
+`oddPeriodSqrts(5000)` should return `690`.
+
+```js
+assert.strictEqual(oddPeriodSqrts(5000), 690);
+```
+
+`oddPeriodSqrts(10000)` should return `1322`.
+
+```js
+assert.strictEqual(oddPeriodSqrts(10000), 1322);
 ```
 
 # --seed--
@@ -85,16 +103,46 @@ assert.strictEqual(oddPeriodSqrts(), 1322);
 ## --seed-contents--
 
 ```js
-function oddPeriodSqrts() {
+function oddPeriodSqrts(n) {
 
   return true;
 }
 
-oddPeriodSqrts();
+oddPeriodSqrts(13);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function oddPeriodSqrts(n) {
+  // Based on https://www.mathblog.dk/project-euler-continued-fractions-odd-period/
+  function getPeriod(num) {
+    let period = 0;
+    let m = 0;
+    let d = 1;
+    let a = Math.floor(Math.sqrt(num));
+    const a0 = a;
+    while (2 * a0 !== a) {
+      m = d * a - m;
+      d = Math.floor((num - m ** 2) / d);
+      a = Math.floor((Math.sqrt(num) + m) / d);
+      period++;
+    }
+    return period;
+  }
+
+  function isPerfectSquare(num) {
+    return Number.isInteger(Math.sqrt(num));
+  }
+
+  let counter = 0;
+  for (let i = 2; i <= n; i++) {
+    if (!isPerfectSquare(i)) {
+      if (getPeriod(i) % 2 !== 0) {
+        counter++;
+      }
+    }
+  }
+  return counter;
+}
 ```

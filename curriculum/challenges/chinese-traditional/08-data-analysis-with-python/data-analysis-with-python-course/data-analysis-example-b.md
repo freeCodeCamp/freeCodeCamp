@@ -8,7 +8,7 @@ dashedName: data-analysis-example-b
 
 # --description--
 
-*您可以使用 Google Colab，而不是像視頻中顯示的那樣使用 notebooks.ai。*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
 更多資源：
 

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d97
-title: 'Convolutional Neural Networks: The Convolutional Layer'
+title: '卷積神經網絡：卷積層'
 challengeType: 11
 videoId: LrdmcQpTyLw
 dashedName: convolutional-neural-networks-the-convolutional-layer
@@ -10,19 +10,19 @@ dashedName: convolutional-neural-networks-the-convolutional-layer
 
 ## --text--
 
-What are the three main properties of each convolutional layer?
+每個卷積層的三個主要屬性是什麼？
 
 ## --answers--
 
-Input size, the number of filters, and the sample size of the filters.
+輸入大小、過濾器數量和過濾器的樣本大小。
 
 ---
 
-Input size, input dimensions, and the color values of the input.
+輸入大小、輸入尺寸和輸入的顏色值。
 
 ---
 
-Input size, input padding, and stride.
+輸入大小、輸入填充和步長。
 
 ## --video-solution--
 

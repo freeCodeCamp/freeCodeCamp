@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d92
-title: Neural Networks with TensorFlow
+title: 使用 TensorFlow 的神經網絡
 challengeType: 11
 videoId: uisdfrNrZW4
 dashedName: neural-networks-with-tensorflow
@@ -10,19 +10,19 @@ dashedName: neural-networks-with-tensorflow
 
 ## --text--
 
-A densely connected neural network is one in which...:
+一個密集連接的神經網絡是這樣一種網絡：
 
 ## --answers--
 
-all the neurons in the current layer are connected to one neuron in the previous layer.
+當前層中的所有神經元都連接到前一層中的一個神經元。
 
 ---
 
-all the neurons in each layer are connected randomly.
+每層的所有神經元都是隨機連接的。
 
 ---
 
-all the neurons in the current layer are connected to every neuron in the previous layer.
+當前層中的所有神經元都連接到前一層中的每個神經元。
 
 ## --video-solution--
 

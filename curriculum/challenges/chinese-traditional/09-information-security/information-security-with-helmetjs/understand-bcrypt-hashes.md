@@ -1,6 +1,6 @@
 ---
 id: 58a25bcef9fc0f352b528e7c
-title: Understand BCrypt Hashes
+title: 瞭解 BCrypt 的哈希加密
 challengeType: 2
 forumTopicId: 301586
 dashedName: understand-bcrypt-hashes
@@ -8,23 +8,23 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-bcrypt), or clone it from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+在下面的挑戰中，你將啓動一個新的項目，這個項目與之前的項目不同。 你可以在 [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt)上找到新的啓動項目，或者從 [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/) 上克隆它。
 
-BCrypt hashes are very secure. A hash is basically a fingerprint of the original data- always unique. This is accomplished by feeding the original data into an algorithm and returning a fixed length result. To further complicate this process and make it more secure, you can also *salt* your hash. Salting your hash involves adding random data to the original data before the hashing process which makes it even harder to crack the hash.
+BCrypt 哈希值是非常安全的。 哈希值基本上是原始數據的指紋，總是唯一的。 這是通過將原始數據輸入一個算法並返回一個固定長度的結果來實現的。 爲了使這一過程更加複雜和安全，你還可以向你的哈希值 *加鹽*。 對你的散列加鹽處理包含了在散列過程之前向原始數據添加隨機數據，這使得破解散列更加困難。
 
-BCrypt hashes will always looks like `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` which does have a structure. The first small bit of data `$2a` is defining what kind of hash algorithm was used. The next portion `$13` defines the *cost*. Cost is about how much power it takes to compute the hash. It is on a logarithmic scale of 2^cost and determines how many times the data is put through the hashing algorithm. For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would takes multiple days to complete a hash. A cost of 12 is considered very secure at this time. The last portion of your hash `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm`, looks like one large string of numbers, periods, and letters but it is actually two separate pieces of information. The first 22 characters is the salt in plain text, and the rest is the hashed password!
+BCrypt 哈希值總是看起來有像`$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` 的結構。 它遵循固定的結構，第一小節 `$2a` 說明了該哈希採用什麼算法。 接下來的部分 `$13` 定義了 *成本*。 成本是指計算哈希值需要多少能量。 它在 2^cost 的對數尺度上，決定了數據要通過散列算法計算多少次。 例如，當 cost 爲 10 時，你能夠在普通計算機上每秒散列 10 個密碼，然而當 cost 爲 15 時，每次散列需要 3 秒...... 進一步說，當 cost 爲 31 時，完成一次散列需要好幾天。 通常 cost 爲 12 的哈希運算就已經足夠安全。 哈希結果的最後一部分 `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` 看起來像是由隨機數字、點和字母組成的字符串，但實際上它有兩部分內容。 前面 22 個字符是加入的鹽，剩下的就是加密過的密碼！
 
 # --instructions--
 
-To begin using BCrypt, add it as a dependency in your project and require it as 'bcrypt' in your server.
+要開始使用 BCrypt，只需將它添加到你的依賴列表，然後在你的服務器引入 “bcrypt”。
 
-Add all your code for these lessons in the `server.js` file between the code we have started you off with. Do not change or delete the code we have added for you.
+在 `server.js` 文件中加入這些課程的所有代碼，放在我們提供的代碼之間。 不要改變或刪除我們爲你添加的代碼。
 
-Submit your page when you think you've got it right.
+請在完成挑戰後提交你的頁面。
 
 # --hints--
 
-BCrypt should be a dependency.
+BCrypt 應該是一個依賴項。
 
 ```js
 (getUserInput) =>
@@ -43,7 +43,7 @@ BCrypt should be a dependency.
   );
 ```
 
-BCrypt should be properly required.
+應正確引入 BCrypt。
 
 ```js
 (getUserInput) =>

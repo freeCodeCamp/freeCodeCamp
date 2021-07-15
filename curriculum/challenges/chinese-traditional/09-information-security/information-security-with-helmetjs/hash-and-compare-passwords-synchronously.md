@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7e
-title: Hash and Compare Passwords Synchronously
+title: 哈希和同步比較密碼
 challengeType: 2
 forumTopicId: 301579
 dashedName: hash-and-compare-passwords-synchronously
@@ -8,31 +8,31 @@ dashedName: hash-and-compare-passwords-synchronously
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-bcrypt), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+請注意，本項目在 [這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt) 的基礎上進行開發。 你也可以從 [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/) 上克隆。
 
-Hashing synchronously is just as easy to do but can cause lag if using it server side with a high cost or with hashing done very often. Hashing with this method is as easy as calling
+同步執行哈希運算是非常簡單的，但這會在哈希計算量大並且次數多的情況下造成延遲。 用這個方法哈希就像調用函數一樣簡單。
 
 ```js
 var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 ```
 
-Add this method of hashing to your code and then log the result to the console. Again, the variables used are already defined in the server so you won't need to adjust them. You may notice even though you are hashing the same password as in the async function, the result in the console is different- this is due to the salt being randomly generated each time as seen by the first 22 characters in the third string of the hash. Now to compare a password input with the new sync hash, you would use the compareSync method:
+把同步哈希的方法添加到你的代碼，並在控制檯輸出。 和之前一樣，我們已經爲你定義好了你需要使用的變量，你不需要做任何改動。 你可能會注意到即使你使用與異步函數相同的密碼進行哈希處理，控制檯中的結果也不同，這是由於每次哈希值隨機生成，如第三個哈希字符串中的前 22 個字符所示。 現在，爲了比較一個密碼輸入和新的同步哈希值，你將使用 compareSync 方法。
 
 ```js
 var result = bcrypt.compareSync(myPlaintextPassword, hash);
 ```
 
-with the result being a boolean true or false.
+返回的結果爲 true 或 false。
 
 # --instructions--
 
-Add the function in and log the result to the console to see it working.
+請添加這個方法，並把結果輸出到控制檯，以此來驗證同步哈希操作是否成功。
 
-Submit your page when you think you've got it right.
+請在完成挑戰後提交你的頁面。
 
 # --hints--
 
-Sync hash should be generated and correctly compared.
+應同步地進行哈希並正確地執行對比
 
 ```js
 (getUserInput) =>
