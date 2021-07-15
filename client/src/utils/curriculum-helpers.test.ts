@@ -2,9 +2,7 @@ import __testHelpers, { removeJSComments } from './curriculum-helpers';
 import jsTestValues from './__fixtures/curriculum-helpers-javascript';
 import cssTestValues from './__fixtures/curriculum-helpers-css';
 import htmlTestValues from './__fixtures/curriculum-helpers-html';
-/* eslint-disable max-len */
 import whiteSpaceTestValues from './__fixtures/curriculum-helpers-remove-white-space';
-/* eslint-enable max-len */
 
 const { stringWithWhiteSpaceChars, stringWithWhiteSpaceCharsRemoved } =
   whiteSpaceTestValues;

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da0
-title: 'Natural Language Processing With RNNs: Create a Play Generator'
+title: '使用 RNN 进行自然语言处理：创建戏剧生成器'
 challengeType: 11
 videoId: j5xsxjq_Xk8
 dashedName: natural-language-processing-with-rnns-create-a-play-generator
@@ -10,7 +10,7 @@ dashedName: natural-language-processing-with-rnns-create-a-play-generator
 
 ## --text--
 
-Fill in the blanks below to create the training examples for the RNN:
+填写下面的空白以创建 RNN 的训练示例：
 
 ```py
 char_dataset = tf.data.__A__.__B__(text_as_int)
@@ -18,7 +18,7 @@ char_dataset = tf.data.__A__.__B__(text_as_int)
 
 ## --answers--
 
-A: `DataSet`
+A: `Dataset`
 
 B: `from_tensor_slices`
 

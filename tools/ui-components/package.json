@@ -34,7 +34,7 @@
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.3.4",
     "@testing-library/react": "12.0.0",
-    "autoprefixer": "10.3.0",
+    "autoprefixer": "10.3.1",
     "babel-loader": "8.2.2",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
@@ -42,7 +42,7 @@
     "postcss-import": "14.0.2",
     "tailwindcss": "2.2.4",
     "rimraf": "3.0.2",
-    "rollup": "2.53.0",
+    "rollup": "2.53.2",
     "rollup-plugin-postcss": "4.0.0",
     "rollup-plugin-terser": "7.0.2"
   },

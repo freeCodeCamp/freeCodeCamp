@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b4a
-title: Use Destructuring Assignment to Assign Variables from Nested Objects
+title: Use Atribuição de Desestruturação para Atribuir Variáveis de Objetos Aninhados
 challengeType: 1
 forumTopicId: 301214
 dashedName: use-destructuring-assignment-to-assign-variables-from-nested-objects
@@ -8,9 +8,9 @@ dashedName: use-destructuring-assignment-to-assign-variables-from-nested-objects
 
 # --description--
 
-You can use the same principles from the previous two lessons to destructure values from nested objects.
+Você pode usar os mesmos princípios das últimas duas lições para desestruturar valores de objetos aninhados.
 
-Using an object similar to previous examples:
+Usando um objeto similar aos exemplos anteriores:
 
 ```js
 const user = {
@@ -21,13 +21,13 @@ const user = {
 };
 ```
 
-Here's how to extract the values of object properties and assign them to variables with the same name:
+Aqui está como extrair valores de propriedades de objetos e atribuí-los a variáveis com o mesmo nome:
 
 ```js
 const { johnDoe: { age, email }} = user;
 ```
 
-And here's how you can assign an object properties' values to variables with different names:
+E aqui está como você pode atribuir o valor de uma propriedade de um objeto para variáveis com nomes diferentes:
 
 ```js
 const { johnDoe: { age: userAge, email: userEmail }} = user;
@@ -35,11 +35,11 @@ const { johnDoe: { age: userAge, email: userEmail }} = user;
 
 # --instructions--
 
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `lowToday` and `highToday` the values of `today.low` and `today.high` from the `LOCAL_FORECAST` object.
+Substitua as duas atribuições com uma atribuição de desestruturação equivalente. Ainda deve ser atribuído às variáveis `lowToday` e `highToday` os valores de `today.low` e `today.high` do objeto `LOCAL_FORECAST`.
 
 # --hints--
 
-You should remove the ES5 assignment syntax.
+Você deve remover a sintaxe de atribuição do ES5.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `lowToday` variable.
+Você deve usar desestruturação para criar a variável `lowToday`.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `highToday` variable.
+Você deve usar desestruturação para criar a variável `highToday`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-`lowToday` should be equal to `64` and `highToday` should be equal to `77`.
+`lowToday` deve ser igual a `64` e `highToday` deve ser igual a `77`.
 
 ```js
 assert(lowToday === 64 && highToday === 77);

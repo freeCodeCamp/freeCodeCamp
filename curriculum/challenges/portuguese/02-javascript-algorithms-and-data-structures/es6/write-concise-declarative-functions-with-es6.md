@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b50
-title: Write Concise Declarative Functions with ES6
+title: Escreva Declaração de Funções Concisas com ES6
 challengeType: 1
 forumTopicId: 301224
 dashedName: write-concise-declarative-functions-with-es6
@@ -8,7 +8,7 @@ dashedName: write-concise-declarative-functions-with-es6
 
 # --description--
 
-When defining functions within objects in ES5, we have to use the keyword `function` as follows:
+Ao definir funções dentro de objetos em ES5, nós temos de usar a palavra-chave `function` como se segue:
 
 ```js
 const person = {
@@ -19,7 +19,7 @@ const person = {
 };
 ```
 
-With ES6, you can remove the `function` keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
+Com ES6, você pode remover a palavra-chave `function` e dois pontos ao definir funções em objetos. Aqui está um exemplo dessa sintaxe:
 
 ```js
 const person = {
@@ -32,17 +32,17 @@ const person = {
 
 # --instructions--
 
-Refactor the function `setGear` inside the object `bicycle` to use the shorthand syntax described above.
+Refatore a função `setGear` dentro do objeto `bicycle` para usar a sintaxe curta descrita acima.
 
 # --hints--
 
-Traditional function expression should not be used.
+Expressão tradicional de função não deve ser usado.
 
 ```js
 (getUserInput) => assert(!code.match(/function/));
 ```
 
-`setGear` should be a declarative function.
+`setGear` deve ser uma função declarativa.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-`bicycle.setGear(48)` should change the `gear` value to 48.
+`bicycle.setGear(48)` deve alterar o valor de `gear` para 48.
 
 ```js
 assert(new bicycle.setGear(48).gear === 48);

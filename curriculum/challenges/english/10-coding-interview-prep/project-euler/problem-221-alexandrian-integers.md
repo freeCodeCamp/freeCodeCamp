@@ -8,20 +8,25 @@ dashedName: problem-221-alexandrian-integers
 
 # --description--
 
-We shall call a positive integer A an "Alexandrian integer", if there exist integers p, q, r such that: A = p · q · r and 1/A = 1/p + 1/q + 1/r
+We shall call a positive integer $A$ an "Alexandrian integer", if there exist integers $p$, $q$, $r$ such that:
 
-<!-- TODO Use MathJax -->
+$$A = p \times q \times r$$
 
-For example, 630 is an Alexandrian integer (p = 5, q = −7, r = −18). In fact, 630 is the 6th Alexandrian integer, the first 6 Alexandrian integers being: 6, 42, 120, 156, 420 and 630.
+and
+
+$$\frac{1}{A} = \frac{1}{p} + \frac{1}{q} + \frac{1}{r}$$
+
+
+For example, 630 is an Alexandrian integer ($p = 5$, $q = −7$, $r = −18$). In fact, 630 is the 6th Alexandrian integer, the first 6 Alexandrian integers being: 6, 42, 120, 156, 420 and 630.
 
 Find the 150000th Alexandrian integer.
 
 # --hints--
 
-`euler221()` should return 1884161251122450.
+`alexandrianIntegers()` should return `1884161251122450`.
 
 ```js
-assert.strictEqual(euler221(), 1884161251122450);
+assert.strictEqual(alexandrianIntegers(), 1884161251122450);
 ```
 
 # --seed--
@@ -29,12 +34,12 @@ assert.strictEqual(euler221(), 1884161251122450);
 ## --seed-contents--
 
 ```js
-function euler221() {
+function alexandrianIntegers() {
 
   return true;
 }
 
-euler221();
+alexandrianIntegers();
 ```
 
 # --solutions--

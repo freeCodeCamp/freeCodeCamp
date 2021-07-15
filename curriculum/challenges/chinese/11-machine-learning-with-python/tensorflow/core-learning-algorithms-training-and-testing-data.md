@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8b
-title: 'Core Learning Algorithms: Training and Testing Data'
+title: '核心学习算法：训练和测试数据'
 challengeType: 11
 videoId: wz9J1slsi7I
 dashedName: core-learning-algorithms-training-and-testing-data
@@ -10,19 +10,19 @@ dashedName: core-learning-algorithms-training-and-testing-data
 
 ## --text--
 
-What is categorical data?
+什么是分类数据？
 
 ## --answers--
 
-Another term for one-hot encoding.
+独热编码的另一个术语。
 
 ---
 
-Any data that is not numeric.
+任何非数字的数据。
 
 ---
 
-Any data that is represented numerically.
+任何以数字表示的数据。
 
 ## --video-solution--
 

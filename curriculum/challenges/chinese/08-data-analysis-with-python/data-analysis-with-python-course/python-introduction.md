@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c165
-title: Python Introduction
+title: Python 简介
 challengeType: 11
 videoId: PrQV9JkLhb4
 dashedName: python-introduction
@@ -8,34 +8,34 @@ dashedName: python-introduction
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-More resources:
+更多资源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-How do we define blocks of code in the body of functions in Python?
+我们如何在 Python 函数中定义代码块？
 
 ## --answers--
 
-We use a set of curly braces, one on either side of each new block of our code.
+我们可以在代码的每个新区块的两侧使用一组大括号。
 
 ---
 
-We use indentation, usually right-aligned 4 spaces.
+我们使用缩进，通常是右对齐的 4 个空格。
 
 ---
 
-We do not denote blocks of code.
+我们不用指示出代码块。
 
 ---
 
-We could use curly braces or indentation to denote blocks of code.
+我们可以使用大括号或缩进来指示出代码块。
 
 ## --video-solution--
 

@@ -24,13 +24,13 @@ Infine, trasferisci tutte le rotte presenti nel tuo server e incollale nei nuovi
 
 Continua ad aggiungere percorsi fino a quando non ci saranno più errori e il tuo file server non avrà più neanche una rotta (**ad eccezione della rotta nel blocco catch**)!
 
-Now do the same thing in your auth.js file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Be sure to add the dependencies in and call `auth(app, myDataBase)` in the server in the same spot.
+Ora fai la stessa cosa nel tuo file auth.js con tutte le cose relative all'autenticazione come la serializzazione e l'impostazione della strategia locale e cancellali dal file del server. Assicurati di aggiungere le dipendenze e invocare `auth(app, myDataBase)` nel server nello stesso punto.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out an example of the completed project [here](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se dovessi incontrare degli errori, puoi controllare il progetto completato [qui](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
 
 # --hints--
 
-Modules should be present.
+Dovrebbero essere presenti dei moduli.
 
 ```js
 (getUserInput) =>
