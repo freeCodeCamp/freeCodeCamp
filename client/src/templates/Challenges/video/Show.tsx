@@ -6,7 +6,6 @@ import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import YouTube from 'react-youtube';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -21,6 +20,7 @@ import {
 } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/Challenge-Description';
 import Hotkeys from '../components/Hotkeys';
+import VideoPlayer from '../components/VideoPlayer';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import PrismFormatted from '../components/prism-formatted';
@@ -162,7 +162,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     });
   };
 
-  videoIsReady = () => {
+  onVideoLoad = () => {
     this.setState({
       videoIsLoaded: true
     });
@@ -223,22 +223,10 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                       <Loader />
                     </div>
                   ) : null}
-                  <YouTube
-                    className={
-                      this.state.videoIsLoaded
-                        ? 'display-youtube-video'
-                        : 'hide-youtube-video'
-                    }
-                    onReady={this.videoIsReady}
-                    opts={{
-                      playerVars: {
-                        rel: 0
-                      },
-                      width: 'auto',
-                      height: 'auto'
-                    }}
-                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                  <VideoPlayer
+                    onVideoLoad={this.onVideoLoad}
                     videoId={videoId}
+                    videoIsLoaded={this.state.videoIsLoaded}
                   />
                 </div>
               </Col>
