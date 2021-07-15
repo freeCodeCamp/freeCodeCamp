@@ -1,8 +1,10 @@
 ---
-id: 
-title: Final
+id:
+  _bsontype: ObjectID
+  id: "`ð'\t\x9A\x15°\x04\NV=Ó"
+title: Final Prototype
 challengeType: 0
-dashedName: final
+dashedName: part-7
 ---
 
 # --description--
@@ -34,9 +36,9 @@ Test 1
 <html>
 
 <head>
-	<meta charset="UTF-8" />
-	<title>Registration Form</title>
-	<link rel="stylesheet" href="styles.css" />
+	<!-- <meta charset="UTF-8" /> -->
+	<title>freeCodeCamp Registration Form Project</title>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>

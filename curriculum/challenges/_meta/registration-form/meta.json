@@ -9,5 +9,34 @@
   "superBlock": "responsive-web-design",
   "superOrder": 1,
   "isBeta": true,
-  "challengeOrder": [["60eebd07ea685b0e777b5583", "Part 1"]]
+  "challengeOrder": [
+    [
+      "60eebd07ea685b0e777b5583",
+      "Part 1"
+    ],
+    [
+      "60f027099a15b00485563dd2",
+      "Part 2"
+    ],
+    [
+      "60f027c87bc98f050395c139",
+      "Part 3"
+    ],
+    [
+      "60f0286404aefb0562a4fdf9",
+      "Part 4"
+    ],
+    [
+      "60f02e7361b68405e27b62a5",
+      "Part 5"
+    ],
+    [
+      "60f030d388cb74067cf291c3",
+      "Part 6"
+    ],
+    [
+      "[object Object]",
+      "Final Prototype"
+    ]
+  ]
 }
