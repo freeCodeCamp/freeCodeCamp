@@ -21,7 +21,7 @@ const superBlocks = [
   'coding-interview-prep'
 ] as const;
 
-export type SuperBlock = typeof superBlocks[number];
+type SuperBlock = typeof superBlocks[number];
 
 const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
 
@@ -36,7 +36,7 @@ type SuperBlockInfo = {
 
 type IntroJson = Record<SuperBlock, SuperBlockInfo>;
 
-export type Meta = {
+type Meta = {
   name: string;
   isUpcomingChange: boolean;
   dashedName: string;
