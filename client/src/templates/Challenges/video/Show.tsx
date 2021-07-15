@@ -15,7 +15,8 @@ import type { Dispatch } from 'redux';
 import PrismFormatted from '../components/prism-formatted';
 import {
   ChallengeNodeType,
-  ChallengeMetaType
+  ChallengeMetaType,
+  TFunc
 } from '../../../redux/prop-types';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
@@ -63,7 +64,7 @@ interface ShowVideoProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunc;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
 }

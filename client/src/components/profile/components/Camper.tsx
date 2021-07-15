@@ -6,7 +6,7 @@ import {
   faCalendar,
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
-import { TFunction, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import { AvatarRenderer } from '../../helpers';
 import SocialIcons from './SocialIcons';
@@ -16,6 +16,7 @@ import './camper.css';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
 import envData from '../../../../../config/env.json';
+import { TFunc } from '../../../redux/prop-types';
 
 const { clientLocale } = envData;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -43,7 +44,7 @@ interface ICamperProps {
   yearsTopContributor: string[];
 }
 
-function joinArray(array: string[], t: TFunction<'translation'>): string {
+function joinArray(array: string[], t: TFunc): string {
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
       if (index === array.length - 1) {
@@ -57,7 +58,7 @@ function joinArray(array: string[], t: TFunction<'translation'>): string {
   });
 }
 
-function parseDate(joinDate: string, t: TFunction<'translation'>): string {
+function parseDate(joinDate: string, t: TFunc): string {
   const convertedJoinDate = new Date(joinDate);
   const date = convertedJoinDate.toLocaleString([localeCode, 'en-US'], {
     year: 'numeric',

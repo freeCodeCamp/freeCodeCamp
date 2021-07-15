@@ -14,6 +14,7 @@ import ThemeSettings from './theme';
 import UsernameSettings from './username';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import { withTranslation } from 'react-i18next';
+import { TFunc } from '../../redux/prop-types';
 
 type FormValues = {
   name: string;
@@ -30,7 +31,7 @@ type AboutProps = {
   picture: string;
   points: number;
   submitNewAbout: (formValues: FormValues) => void;
-  t: (str: string) => string;
+  t: TFunc;
   toggleNightMode: (theme: string) => void;
   username: string;
 };

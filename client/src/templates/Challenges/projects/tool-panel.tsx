@@ -7,6 +7,7 @@ import { withTranslation } from 'react-i18next';
 import { openModal } from '../redux';
 
 import './tool-panel.css';
+import { TFunc } from '../../../redux/prop-types';
 
 const mapStateToProps = () => ({});
 
@@ -21,7 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ToolPanelProps {
   guideUrl?: string;
   openHelpModal: () => void;
-  t: (args: string) => void;
+  t: TFunc;
 }
 
 export class ToolPanel extends Component<ToolPanelProps> {

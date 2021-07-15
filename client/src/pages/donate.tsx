@@ -17,6 +17,7 @@ import {
 } from '../components/Donation/DonationTextComponents';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import CampersImage from '../components/landing/components/CampersImage';
+import { TFunc } from '../redux/prop-types';
 
 interface ExecuteGaArg {
   type: string;
@@ -32,7 +33,7 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
-  t: (s: string) => string;
+  t: TFunc;
 }
 
 const mapStateToProps = createSelector(

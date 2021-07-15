@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react';
 import BezierEasing from 'bezier-easing';
 import GreenPass from '../../../assets/icons/green-pass';
 import { withTranslation } from 'react-i18next';
+import { TFunc } from '../../../redux/prop-types';
 
 interface CompletionModalBodyProps {
   block: string;
   completedPercent: number;
   superBlock: string;
-  t: (arg0: string, arg1?: { percent: number }) => string;
+  t: TFunc;
 }
 
 interface CompletionModalBodyState {

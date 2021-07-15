@@ -29,6 +29,7 @@ import {
   i18nextCodes,
   langDisplayNames
 } from '../../../../../config/i18n/all-langs';
+import { TFunc } from '../../../redux/prop-types';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 
@@ -38,7 +39,7 @@ export interface NavLinksProps {
   displayMenu?: boolean;
   fetchState?: { pending: boolean };
   i18n: Object;
-  t: (x: any) => any;
+  t: TFunc;
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;

@@ -22,6 +22,7 @@ import {
   reportUser
 } from '../redux';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
+import { TFunc } from '../redux/prop-types';
 
 interface IShowUserProps {
   email: string;
@@ -30,7 +31,7 @@ interface IShowUserProps {
     username: string;
     reportDescription: string;
   }) => void;
-  t: (payload: unknown, ops?: Record<string, unknown>) => string;
+  t: TFunc;
   userFetchState: {
     pending: boolean;
     complete: boolean;

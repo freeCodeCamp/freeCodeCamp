@@ -17,6 +17,7 @@ import { maybeUrlRE } from '../../utils';
 import SectionHeader from './section-header';
 import { FullWidthRow } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
+import { TFunc } from '../../redux/prop-types';
 
 interface InternetFormValues {
   githubProfile: string;
@@ -26,7 +27,7 @@ interface InternetFormValues {
 }
 
 interface InternetProps extends InternetFormValues {
-  t: (str: string) => string;
+  t: TFunc;
   updateInternetSettings: (formValues: InternetFormValues) => void;
 }
 

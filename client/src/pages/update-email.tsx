@@ -25,10 +25,11 @@ import './update-email.css';
 import { userSelector } from '../redux';
 import { updateMyEmail } from '../redux/settings';
 import { maybeEmailRE } from '../utils';
+import { TFunc } from '../redux/prop-types';
 
 interface UpdateEmailProps {
   isNewEmail: boolean;
-  t: (s: string) => string;
+  t: TFunc;
   updateMyEmail: (e: string) => void;
 }
 

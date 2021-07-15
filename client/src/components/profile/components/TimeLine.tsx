@@ -14,7 +14,7 @@ import {
   MenuItem
 } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
-import { TFunction, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 import './timeline.css';
 import TimelinePagination from './TimelinePagination';
@@ -34,6 +34,7 @@ import { langCodes } from '../../../../../config/i18n/all-langs';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import envData from '../../../../../config/env.json';
+import { TFunc } from '../../../redux/prop-types';
 
 const SolutionViewer = Loadable(
   () =>
@@ -64,7 +65,7 @@ interface ICompletedMap {
 
 interface ITimelineProps {
   completedMap: ICompletedMap[];
-  t: TFunction<'translation'>;
+  t: TFunc;
   username: string;
 }
 

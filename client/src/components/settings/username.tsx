@@ -22,11 +22,12 @@ import {
 import FullWidthRow from '../helpers/full-width-row';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import { isValidUsername } from '../../../../utils/validate';
+import { TFunc } from '../../redux/prop-types';
 
 type UsernameProps = {
   isValidUsername: boolean;
   submitNewUsername: (name: string) => void;
-  t: (str: string, obj?: { username: string }) => string;
+  t: TFunc;
   username: string;
   validateUsername: (name: string) => void;
   validating: boolean;

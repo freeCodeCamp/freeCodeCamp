@@ -13,11 +13,12 @@ import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
 
 import './danger-zone.css';
+import { TFunc } from '../../redux/prop-types';
 
 type DangerZoneProps = {
   deleteAccount: () => void;
   resetProgress: () => void;
-  t: (str: string) => JSX.Element;
+  t: TFunc;
 };
 
 type DangerZoneState = {

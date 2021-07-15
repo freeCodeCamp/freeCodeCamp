@@ -36,7 +36,8 @@ import Spacer from '../../../../components/helpers/spacer';
 import {
   ChallengeNodeType,
   ChallengeMetaType,
-  TestType
+  TestType,
+  TFunc
 } from '../../../../redux/prop-types';
 import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
@@ -88,7 +89,7 @@ interface BackEndProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunc;
   tests: TestType[];
   title: string;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;

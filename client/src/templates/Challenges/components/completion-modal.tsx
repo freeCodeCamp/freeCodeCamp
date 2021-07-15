@@ -12,7 +12,7 @@ import { Dispatch } from 'redux';
 import Login from '../../../components/Header/components/Login';
 import CompletionModalBody from './completion-modal-body';
 import { dasherize } from '../../../../../utils/slugs';
-import { AllChallengeNodeType } from '../../../redux/prop-types';
+import { AllChallengeNodeType, TFunc } from '../../../redux/prop-types';
 
 import './completion-modal.css';
 
@@ -106,7 +106,7 @@ interface CompletionModalsProps {
   message: string;
   submitChallenge: () => void;
   superBlock: string;
-  t: (arg0: string) => string;
+  t: TFunc;
   title: string;
 }
 

@@ -15,11 +15,12 @@ import { acceptTerms, userSelector } from '../redux';
 import createRedirect from '../components/create-redirect';
 
 import './email-sign-up.css';
+import { TFunc } from '../redux/prop-types';
 
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
-  t: (s: string) => string;
+  t: TFunc;
 }
 
 const mapStateToProps = createSelector(

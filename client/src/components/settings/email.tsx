@@ -24,6 +24,7 @@ import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import ToggleSetting from './toggle-setting';
+import { TFunc } from '../../redux/prop-types';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -33,7 +34,7 @@ type EmailProps = {
   email: string;
   isEmailVerified: boolean;
   sendQuincyEmail: boolean;
-  t: (str: string) => string;
+  t: TFunc;
   updateMyEmail: (email: string) => void;
   updateQuincyEmail: (sendQuincyEmail: boolean) => void;
 };

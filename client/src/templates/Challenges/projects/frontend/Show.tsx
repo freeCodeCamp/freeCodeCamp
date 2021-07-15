@@ -14,7 +14,8 @@ import type { Dispatch } from 'redux';
 // Local Utilities
 import {
   ChallengeNodeType,
-  ChallengeMetaType
+  ChallengeMetaType,
+  TFunc
 } from '../../../../redux/prop-types';
 import {
   challengeMounted,
@@ -62,7 +63,7 @@ interface ProjectProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunc;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
 }

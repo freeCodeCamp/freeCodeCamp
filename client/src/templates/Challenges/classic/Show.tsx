@@ -33,7 +33,8 @@ import {
   ChallengeFileType,
   ChallengeMetaType,
   TestType,
-  ResizePropsType
+  ResizePropsType,
+  TFunc
 } from '../../../redux/prop-types';
 import {
   createFiles,
@@ -87,7 +88,7 @@ interface ShowClassicProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunc;
   tests: TestType[];
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
 }

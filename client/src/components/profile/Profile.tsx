@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { TFunction, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import { CurrentChallengeLink, FullWidthRow, Link, Spacer } from '../helpers';
 import Camper from './components/Camper';
@@ -9,6 +9,7 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
+import { TFunc } from '../../redux/prop-types';
 
 interface IProfileProps {
   isSessionUser: boolean;
@@ -55,7 +56,7 @@ interface IProfileProps {
 function renderMessage(
   isSessionUser: boolean,
   username: string,
-  t: TFunction<'translation'>
+  t: TFunc
 ): JSX.Element {
   return isSessionUser ? (
     <>

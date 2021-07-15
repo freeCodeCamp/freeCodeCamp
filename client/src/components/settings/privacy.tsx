@@ -15,6 +15,7 @@ import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
 import ToggleSetting from './toggle-setting';
 import SectionHeader from './section-header';
+import { TFunc } from '../../redux/prop-types';
 
 const mapStateToProps = createSelector(userSelector, user => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -39,7 +40,7 @@ type ProfileUIType = {
 
 type PrivacyProps = {
   submitProfileUI: (profileUI: ProfileUIType) => void;
-  t: (str: string) => string;
+  t: TFunc;
   user: {
     profileUI: ProfileUIType;
     username: string;

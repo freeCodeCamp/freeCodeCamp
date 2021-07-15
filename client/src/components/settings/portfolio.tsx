@@ -18,6 +18,7 @@ import { hasProtocolRE } from '../../utils';
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
+import { TFunc } from '../../redux/prop-types';
 
 type PortfolioValues = {
   id: string;
@@ -30,7 +31,7 @@ type PortfolioValues = {
 type PortfolioProps = {
   picture?: string;
   portfolio: PortfolioValues[];
-  t: (str: string, obj?: { charsLeft: number }) => string;
+  t: TFunc;
   updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
   username?: string;
 };
