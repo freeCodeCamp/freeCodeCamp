@@ -7,14 +7,14 @@ dashedName: part-34
 
 # --description--
 
-Now that you did that, you can delete the old `foreground-buildings` class and all of its properties since they aren't needed anymore.
+Now that you did that, you can delete the old `.foreground-buildings` declaration and all of its properties since they aren't needed anymore.
 
 # --hints--
 
-test-text
+You should delete the whole `.foreground-buildings` style declaration.
 
 ```js
-assert(code.match(/\.foreground-buildings/g).length === 1);
+assert.notExists(new __helpers.CSSHelp(document).getStyle('.foreground-buildings'));
 ```
 
 # --seed--
@@ -26,123 +26,7 @@ assert(code.match(/\.foreground-buildings/g).length === 1);
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-      }
-
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
-
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
-
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
-
-      .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-      }
-
-      .fb1 {
-        width: 10%;
-        height: 60%;
-      }
-
-      .fb2 {
-        width: 10%;
-        height: 40%;
-      }
-
-      .fb3 {
-        width: 10%;
-        height: 35%;
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-      }
-
-      .fb6 {
-        width: 9%;
-        height: 38%;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>
@@ -175,150 +59,122 @@ assert(code.match(/\.foreground-buildings/g).length === 1);
 </html>
 ```
 
-# --solutions--
+```css
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-      }
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings, .foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+}
 
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
 
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      .fb1 {
-        width: 10%;
-        height: 60%;
-      }
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
+--fcc-editable-region--
+.foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+--fcc-editable-region--
+.fb1 {
+  width: 10%;
+  height: 60%;
+}
 
-      .fb2 {
-        width: 10%;
-        height: 40%;
-      }
+.fb2 {
+  width: 10%;
+  height: 40%;
+}
 
-      .fb3 {
-        width: 10%;
-        height: 35%;
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-      }
+.fb3 {
+  width: 10%;
+  height: 35%;
+}
 
-      .fb6 {
-        width: 9%;
-        height: 38%;
-      }
-    </style>
-  </head>
+.fb4 {
+  width: 8%;
+  height: 45%;
+}
 
-  <body>
-    <div class="background-buildings">
-      <div></div>
-      <div></div>
-      <div class="bb1">
-        <div class="bb1a"></div>
-        <div class="bb1b"></div>
-        <div class="bb1c"></div>
-        <div class="bb1d"></div>
-      </div>
-      <div class="bb2"></div>
-      <div class="bb3"></div>
-      <div></div>
-      <div class="bb4"></div>
-      <div></div>
-      <div></div>
-    </div>
+.fb5 {
+  width: 10%;
+  height: 33%;
+}
 
-    <div class="foreground-buildings">
-      <div class="fb1"></div>
-      <div class="fb2"></div>
-      <div class="fb3"></div>
-      <div class="fb4"></div>
-      <div class="fb5"></div>
-      <div class="fb6"></div>
-    </div>
-  </body>
-</html>
+.fb6 {
+  width: 9%;
+  height: 38%;
+}
+    
 ```
+

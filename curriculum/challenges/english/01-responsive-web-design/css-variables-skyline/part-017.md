@@ -11,11 +11,10 @@ I don't really like that color. Change the value of your variable from `#999` to
 
 # --hints--
 
-test-text
+You should change the value of the `--building-color1` property variable from `#999` to `#aa80ff`.
 
 ```js
-const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
-assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.getPropertyValue('--building-color1').trim(),'#aa80ff');
 ```
 
 # --seed--
@@ -27,56 +26,7 @@ assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        --building-color1: #999;
-      }
-
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>
@@ -92,74 +42,57 @@ assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style));
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+--fcc-editable-region--
+  --building-color1: #999;
+--fcc-editable-region--
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        --building-color1: #aa80ff;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-    </style>
-  </head>
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-  <body>
-    <div class="background-buildings">
-      <div class="bb1">
-        <div class="bb1a"></div>
-        <div class="bb1b"></div>
-        <div class="bb1c"></div>
-        <div class="bb1d"></div>
-      </div>
-    </div>
-  </body>
-</html>
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
+
 ```
+

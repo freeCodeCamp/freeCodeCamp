@@ -11,15 +11,43 @@ Your first building looks pretty good now. Let's make some more! Nest three new 
 
 # --hints--
 
-test-text
+You should create a `div` with a class of `bb2`.
 
 ```js
-const bb = $('.background-buildings');
-assert(
-  bb.children('.bb2').length === 1 &&
-    bb.children('.bb3').length === 1 &&
-    bb.children('.bb4').length === 1
-);
+assert.exists(document.querySelector('div.bb2'));
+```
+
+You should create a `div` with a class of `bb3`.
+
+```js
+assert.exists(document.querySelector('div.bb3'));
+```
+
+You should create a `div` with a class of `bb4`.
+
+```js
+assert.exists(document.querySelector('div.bb4'));
+```
+
+You should create 3 new `div` elements.
+
+```js
+assert.equal(document.querySelectorAll('div')?.length, 9);
+```
+
+You should place these `div` elements within the `.background-buildings` element.
+
+```js
+assert.equal(document.querySelector('div.background-buildings')?.children?.length, 4);
+```
+
+You should place the elements in the correct order.
+
+```js
+function __t(a, b) {
+  return [...document.querySelector(a)?.nextElementSibling?.classList]?.includes(b);
+}
+assert(__t('div.bb1','bb2') && __t('div.bb2','bb3') && __t('div.bb3','bb4'));
 ```
 
 # --seed--
@@ -31,56 +59,7 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        --building-color1: #aa80ff;
-      }
-
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>
@@ -91,82 +70,63 @@ assert(
         <div class="bb1c"></div>
         <div class="bb1d"></div>
       </div>
+--fcc-editable-region--
+
+--fcc-editable-region--
     </div>
   </body>
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --building-color1: #aa80ff;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        --building-color1: #aa80ff;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-    </style>
-  </head>
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-  <body>
-    <div class="background-buildings">
-      <div class="bb1">
-        <div class="bb1a"></div>
-        <div class="bb1b"></div>
-        <div class="bb1c"></div>
-        <div class="bb1d"></div>
-      </div>
-      <div class="bb2"></div>
-      <div class="bb3"></div>
-      <div class="bb4"></div>
-    </div>
-  </body>
-</html>
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
+    
 ```
+

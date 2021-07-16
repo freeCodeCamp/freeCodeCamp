@@ -7,27 +7,44 @@ dashedName: part-16
 
 # --description--
 
-It's that simple. Use the same variable as the `background-color` of the `bb1b`, `bb1c`, and `bb1d` classes to fill in the rest of the building.
+Use the same variable as the `background-color` of the `.bb1b`, `.bb1c`, and `.bb1d` classes to fill in the rest of the building.
 
 # --hints--
 
-test-text
+The `background-color` of the `bb1b` element should be set.
 
 ```js
-const bb1bStyle = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0];
-const bb1cStyle = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0];
-const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(
-    bb1bStyle
-  ) &&
-    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(
-      bb1cStyle
-    ) &&
-    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(
-      bb1dStyle
-    )
-);
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1b')?.backgroundColor)
+```
+
+You should use `var(--building-color1)` to set the `background-color` of the `.bb1b` element.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1b')?.backgroundColor.trim(), 'var(--building-color1)');
+```
+
+The `background-color` of the `bb1c` element should be set.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1c')?.backgroundColor)
+```
+
+You should use `var(--building-color1)` to set the `background-color` of the `.bb1c` element.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1c')?.backgroundColor.trim(), 'var(--building-color1)');
+```
+
+The `background-color` of the `bb1d` element should be set.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1d')?.backgroundColor)
+```
+
+You should use `var(--building-color1)` to set the `background-color` of the `.bb1d` element.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1d')?.backgroundColor.trim(), 'var(--building-color1)');
 ```
 
 # --seed--
@@ -39,53 +56,7 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        --building-color1: #999;
-      }
-
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>
@@ -101,74 +72,52 @@ assert(
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --building-color1: #999;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        --building-color1: #999;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
+--fcc-editable-region--
+.bb1b {
+  width: 80%;
+  height: 10%;
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-    </style>
-  </head>
+.bb1d {
+  width: 100%;
+  height: 70%;
+}
+--fcc-editable-region--
 
-  <body>
-    <div class="background-buildings">
-      <div class="bb1">
-        <div class="bb1a"></div>
-        <div class="bb1b"></div>
-        <div class="bb1c"></div>
-        <div class="bb1d"></div>
-      </div>
-    </div>
-  </body>
-</html>
 ```
