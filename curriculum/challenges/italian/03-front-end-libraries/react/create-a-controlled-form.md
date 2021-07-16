@@ -101,19 +101,11 @@ L'invio del modulo dovrebbe eseguire `handleSubmit` che dovrebbe impostare la pr
 `handleSubmit` dovrebbe chiamare `event.preventDefault`
 
 ```js
-const handleSubmit = MyForm.prototype.handleSubmit.toString();
-const allMatches = handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g) ?? [];
-const blockCommented = handleSubmit.match(
-  /\/\*.*?\bevent\.preventDefault\(\s*?\).*?\*\//gs
-);
-const lineCommented = handleSubmit.match(
-  /\/\/.*?\bevent\.preventDefault\(\s*?\)/g
-);
-const commentedMatches = [...(blockCommented ?? []), ...(lineCommented ?? [])];
-
 assert(
-  // At least one event.preventDefault() call exists and is not commented out
-  allMatches.length > commentedMatches.length
+  __helpers.isCalledWithNoArgs(
+    'event.preventDefault',
+    MyForm.prototype.handleSubmit.toString()
+  )
 );
 ```
 

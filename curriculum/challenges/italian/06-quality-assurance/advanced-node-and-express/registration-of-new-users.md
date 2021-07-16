@@ -1,6 +1,6 @@
 ---
 id: 58966a17f9fc0f352b528e6d
-title: Registration of New Users
+title: Registrazione di nuovi utenti
 challengeType: 2
 forumTopicId: 301561
 dashedName: registration-of-new-users
@@ -8,11 +8,11 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now we need to allow a new user on our site to register an account. On the `res.render` for the home page add a new variable to the object passed along--`showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file! This form is set up to **POST** on `/register`, so this is where we should set up to accept the **POST** and create the user object in the database.
+Ora dobbiamo permettere ad un nuovo utente di creare un account sul nostro sito. In `res.render` per l'home page aggiungi una nuova variabile all'oggetto passato `showRegistration: true`. Quando aggiorni la pagina, dovresti vedere un modulo di registrazione che era già stato creato nel file `index.pug`! Questo modulo è impostato in modo da mandare una richiesta **POST** su `/register`, quindi è qui che dovremmo accettare le richieste **POST** e creare l'oggetto dell'utente nel database.
 
-The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
+La logica della rotta di registrazione dovrebbe essere come segue: Registrare il nuovo utente > Autenticare il nuovo utente > Reindirizzamento a /profile
 
-The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home *OR* if user is undefined and no error occurs then 'insertOne' into the database with the username and password, and, as long as no errors occur, call *next* to go to step 2, authenticating the new user, which we've already written the logic for in our POST */login* route.
+La logica dello step 1, registrare un nuovo utente, dovrebbe essere come segue: Fare la richiesta al database con un comando findOne > se l'utente è ritornato allora esiste, e reindirizzare all'home *O* se l'utente non è definito e nessun errore occorre allora inserire l'utente con 'insertOne' nel database con nome utente e password, e finché nessun errore occorre, invocare *next* per andare allo step 2, autenticare il nuovo utente, per cui abbiamo già scritto la logica nella rotta POST */logic*.
 
 ```js
 app.route('/register')
@@ -47,13 +47,13 @@ app.route('/register')
   );
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
 
-**NOTE:** From this point onwards, issues can arise relating to the use of the *picture-in-picture* browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
+**NOTA:** Da questo punto in poi, possono sorgere problemi relativi all'uso del browser *picture-in-picture*. Se stai utilizzando un IDE online che offre una preview dell'app nell'editor, è raccomandato aprire la preview in una nuova scheda.
 
 # --hints--
 
-You should register route and display on home.
+Dovresti registrare il percorso e visualizzare nella home.
 
 ```js
 (getUserInput) =>
@@ -76,7 +76,7 @@ You should register route and display on home.
   );
 ```
 
-Registering should work.
+Deve essere possibile registrarsi.
 
 ```js
 async (getUserInput) => {
@@ -104,7 +104,7 @@ async (getUserInput) => {
 };
 ```
 
-Login should work.
+Deve essere possibile autenticarsi.
 
 ```js
 async (getUserInput) => {
@@ -153,7 +153,7 @@ async (getUserInput) => {
 };
 ```
 
-Logout should work.
+Deve essere possibile fare logout.
 
 ```js
 (getUserInput) =>
@@ -171,7 +171,7 @@ Logout should work.
   );
 ```
 
-Profile should no longer work after logout.
+Il profilo non deve più essere accessibile dopo aver fatto logout.
 
 ```js
 (getUserInput) =>

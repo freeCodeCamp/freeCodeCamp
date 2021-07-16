@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617b
-title: Pass a Callback as Props
+title: Passe um Callback como Props
 challengeType: 6
 forumTopicId: 301400
 dashedName: pass-a-callback-as-props
@@ -8,17 +8,17 @@ dashedName: pass-a-callback-as-props
 
 # --description--
 
-You can pass `state` as props to child components, but you're not limited to passing data. You can also pass handler functions or any method that's defined on a React component to a child component. This is how you allow child components to interact with their parent components. You pass methods to a child just like a regular prop. It's assigned a name and you have access to that method name under `this.props` in the child component.
+Você pode passar `state` como "props" para componentes filho, mas você não se limita a passar os dados. Você também pode passar funções manipuladoras ou qualquer método definido em um componente React para um componente filho. É assim que você permite que componentes filhos interajam com seus componentes pai. Você passa métodos para uma criança como uma propriedade regular. Tem um nome atribuído e você tem acesso a esse nome de método sob `this.props` no componente filho.
 
 # --instructions--
 
-There are three components outlined in the code editor. The `MyApp` component is the parent that will render the `GetInput` and `RenderInput` child components. Add the `GetInput` component to the render method in `MyApp`, then pass it a prop called `input` assigned to `inputValue` from `MyApp`'s `state`. Also create a prop called `handleChange` and pass the input handler `handleChange` to it.
+Existem três componentes delineados no editor de código. O componente `MyApp` é o pai que irá renderizar os componentes filhos `GetInput` e `RenderInput`. Adicione o componente `GetInput` ao método de renderização no `MyApp`, então passe uma propriedade chamada `input` atribuída a `inputValue` do `state` do `MyApp`. Também crie uma propriedade chamada `handleChange` e passe o manipulador de evento `handleChange` para ele.
 
-Next, add `RenderInput` to the render method in `MyApp`, then create a prop called `input` and pass the `inputValue` from `state` to it. Once you are finished you will be able to type in the `input` field in the `GetInput` component, which then calls the handler method in its parent via props. This updates the input in the `state` of the parent, which is passed as props to both children. Observe how the data flows between the components and how the single source of truth remains the `state` of the parent component. Admittedly, this example is a bit contrived, but should serve to illustrate how data and callbacks can be passed between React components.
+Em seguida, adicione `RenderInput` para o método render em `MyApp`, em seguida crie uma propriedade chamada `input` e passe o `inputValue` de `state` para ela. Depois de terminar, você será capaz de digitar no campo `input` no componente `GetInput`, que então chama o método manipulador em seu pai via props. Isso atualiza a entrada no `state` do pai, que é passado como "props" para ambos os filhos. Observe como os dados fluem entre os componentes e como a única fonte da verdade permanece o `state` do componente pai. Reconheço que esse exemplo é um pouco inventado, mas deve servir para ilustrar como dados e callbacks podem ser passados entre componentes React.
 
 # --hints--
 
-The `MyApp` component should render.
+O componente `MyApp` deve ser renderizado.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The `GetInput` component should render.
+O componente `GetInput` deve renderizar.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `RenderInput` component should render.
+O componente `RenderInput` deve renderizar.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-The `GetInput` component should receive the `MyApp` state property `inputValue` as props and contain an `input` element which modifies `MyApp` state.
+O componente `GetInput` deve receber a propriedade state `inputValue` de `MyApp` como props e conter um elemento `input` que modifique o state de `MyApp`.
 
 ```js
 async () => {
@@ -74,7 +74,7 @@ async () => {
 };
 ```
 
-The `RenderInput` component should receive the `MyApp` state property `inputValue` as props.
+O componente `RenderInput` deve receber a propriedade state `inputValue` de `MyApp` como props.
 
 ```js
 async () => {
