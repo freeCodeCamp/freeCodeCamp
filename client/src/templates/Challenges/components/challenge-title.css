@@ -30,7 +30,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 25px;
-  word-wrap: none;
   white-space: nowrap;
   flex-grow: 1;
   flex-shrink: 2;
@@ -38,7 +37,7 @@
   padding: 0px 3px;
 }
 
-.breadcrumb-center {
+.breadcrumb-arrow {
   width: 0;
   height: 0;
   border-top: calc(25px / 2) solid transparent;
@@ -46,6 +45,24 @@
   border-left: calc(23px / 2) solid var(--quaternary-background);
   flex-grow: 0;
   flex-shrink: 0;
+}
+
+.breadcrumb-center {
+  text-decoration: none;
+  min-width: 25px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 25px;
+  flex-grow: 1;
+  flex-shrink: 2;
+  background-color: var(--quaternary-background);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0px 3px;
 }
 
 .breadcrumb-right {
@@ -57,7 +74,6 @@
   min-width: 50px;
   flex-grow: 2;
   flex-shrink: 1;
-  word-wrap: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -68,7 +84,8 @@
   margin: 5px -10px;
 }
 
-.breadcrumb-left:hover {
+.breadcrumb-left:hover,
+.breadcrumb-center:hover {
   text-decoration: underline;
   background-color: var(--quaternary-background);
 }
@@ -86,7 +103,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: fit-content;
-  word-wrap: none;
   white-space: pre-line;
   flex-grow: 1;
   flex-shrink: 1;

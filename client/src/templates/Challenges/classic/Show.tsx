@@ -384,6 +384,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
+              block={block}
               challengeFiles={files}
               editor={this.renderEditor()}
               hasEditableBoundries={this.hasEditableBoundries()}
@@ -394,7 +395,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               layoutState={this.layoutState}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
+              superBlock={superBlock}
               testOutput={this.renderTestOutput()}
+              title={title}
             />
           </Media>
           <CompletionModal
