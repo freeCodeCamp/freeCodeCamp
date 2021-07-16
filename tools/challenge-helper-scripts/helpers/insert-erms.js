@@ -1,30 +1,13 @@
 // Update given value with markers (labels)
 const insertErms = (seedCode, erms) => {
-  if (!erms || erms.length <= 1) {
-    throw `erms should be provided`;
+  const lines = seedCode.split('\n');
+  if (Number.isInteger(erms[0])) {
+    lines.splice(erms[0], 0, '--fcc-editable-region--');
   }
-
-  if (erms.length <= 1) {
-    throw `erms should contain 2 elements`;
+  if (Number.isInteger(erms[1])) {
+    lines.splice(erms[1], 0, '--fcc-editable-region--');
   }
-
-  const separator = '\n';
-  const lines = seedCode.split(separator);
-  const markerLabel = '--fcc-editable-region--';
-
-  // Generate a version of seed code with the erm markers
-  const newSeedCode = erms
-    .slice(0, 2)
-    .reduce((acc, erm) => {
-      if (Number.isInteger(erm)) {
-        acc.splice(erm, 0, markerLabel);
-      }
-
-      return acc;
-    }, lines)
-    .join(separator);
-
-  return newSeedCode;
+  return lines.join('\n');
 };
 
 exports.insertErms = insertErms;
