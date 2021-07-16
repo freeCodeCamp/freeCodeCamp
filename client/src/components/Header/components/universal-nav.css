@@ -187,11 +187,8 @@
   outline-offset: -3px;
 }
 
-.navatar {
-  display: contents;
-}
-
 .navatar .avatar-nav-link {
+  display: block;
   height: 31px;
   width: 31px;
 }
