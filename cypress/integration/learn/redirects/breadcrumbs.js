@@ -23,7 +23,7 @@ describe('The breadcumbs should work corectly', () => {
 
   it('Should redirect to the right url', () => {
     cy.visit(challengeUrl);
-    cy.get('.breadcrumb-left', { timeout: 10000 }).click();
+    cy.get('.breadcrumb-left').click();
     cy.url().should('include', '/responsive-web-design');
     cy.visit(challengeUrl);
     cy.get('.breadcrumb-right').click();
