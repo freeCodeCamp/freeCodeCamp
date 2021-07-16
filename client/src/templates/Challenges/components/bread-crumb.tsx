@@ -7,7 +7,7 @@ import i18next from 'i18next';
 interface BreadCrumbProps {
   block: string;
   superBlock: string;
-  title: string;
+  title?: string;
 }
 
 const BreadCrumb = ({
