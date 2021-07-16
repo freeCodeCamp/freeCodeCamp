@@ -188,7 +188,7 @@
 }
 
 .navatar {
-  display: contents;
+  display: flex;
 }
 
 .navatar .avatar-nav-link {
