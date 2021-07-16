@@ -287,23 +287,23 @@ Le sfide dovrebbero avere il numero minimo di test per verificare che un camper 
 
 Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di insegnare, e testare che abbiano capito il punto.
 
-I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`.
+I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`.  In addition, the `__helpers` object exposes several functions that simplify the process of writing tests.  The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
 
-## Formattare codice di seed
+## Formatting seed code
 
-Ecco linee guida specifiche di formattazione per il codice seed delle sfide:
+Here are specific formatting guidelines for the challenge seed code:
 
-- Usa due spazi per indentare
-- Le istruzioni JavaScript finiscono con un punto e virgola
-- Usa virgolette doppie dove possibile
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-### Commenti del codice seed
+### Seed code comments
 
-Abbiamo un [dizionario dei commenti](/curriculum/dictionaries/english/comments.js) che contiene gli unici commenti che possono essere usati nel codice seed. I commenti devono essere usati esattamente in quel modo, ricopiando maiuscole, minuscole, e spazi. Il dizionario dei commenti non deve essere allargato senza previa discussione con il team di sviluppo.
+We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
-I commenti dovrebbero avere uno spazio tra il carattere del commento e il testo del commento. In generale, i commenti dovrebbero essere usati raramente. Considera sempre la possibilità di riscrivere la descrizione o le istruzioni di una sfida se ti permetterebbe di evitare di usare un commento nel codice seed.
+Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-Esempio di un commento a linea singola in JavaScript:
+Example of valid single line JavaScript comment:
 
 ```js
 // Only change code below this line
