@@ -31,11 +31,40 @@ function nonMutatingPush(original, newItem) {
   return original.push(newItem);
 }`;
 
+const jsCodeWithNoCall = `function myFunc() {
+  return Math.random();
+}
+`;
+
+const jsCodeWithNoArgCall = `function myFunc() {
+  return Math.random();
+}
+myFunc();
+`;
+
+const jsCodeWithArgCall = `function myFunc() {
+  return Math.random();
+}
+myFunc('this shouldn't be here');
+`;
+
+const jsCodeWithCommentedCall = `function myFunc() {
+  return Math.random();
+}
+/*
+myFunc();
+*/
+`;
+
 const testValues = {
   jsCodeWithSingleAndMultLineComments,
   jsCodeWithSingleAndMultLineCommentsRemoved,
   jsCodeWithUrl,
-  jsCodeWithUrlUnchanged
+  jsCodeWithUrlUnchanged,
+  jsCodeWithNoCall,
+  jsCodeWithNoArgCall,
+  jsCodeWithArgCall,
+  jsCodeWithCommentedCall
 };
 
 export default testValues;
