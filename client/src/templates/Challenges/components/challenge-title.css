@@ -59,8 +59,6 @@
   flex-grow: 1;
   flex-shrink: 2;
   background-color: var(--quaternary-background);
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
   padding: 0px 3px;
 }
