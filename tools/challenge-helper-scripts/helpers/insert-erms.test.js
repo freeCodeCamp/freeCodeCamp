@@ -15,16 +15,6 @@ describe('insertErms helper', () => {
     }).toThrow();
   });
 
-  it('should throw error if erm length is less than 2', () => {
-    const items = [[], [1]];
-
-    items.forEach(item => {
-      expect(() => {
-        insertErms(code, item);
-      }).toThrow();
-    });
-  });
-
   it('should update code with markers if provided', () => {
     const newCode = `--fcc-editable-region--
 <h1>Hello World</h1>
