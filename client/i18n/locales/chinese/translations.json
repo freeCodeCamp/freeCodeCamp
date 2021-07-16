@@ -96,6 +96,7 @@
     "privacy": "你可以通过在本节设置来管理你展示在 freeCodeCamp 公开作品集中的内容。",
     "data": "请点击下面的 \"下载你的数据\" 按钮，查看我们在你的账号上保存的数据",
     "disabled": "如果设置为仅自己可见，其他人将无法访问你的认证。",
+    "private-name": "Your name will not appear on your certifications, if this is set to private.",
     "claim-legacy": "当你获得下列 freeCodeCamp 认证之后，你可以申请 {{cert}}:",
     "for": "{{username}} 账号设置",
     "username": {

@@ -90,7 +90,7 @@ class PrivacySettings extends Component<PrivacyProps> {
             />
             <ToggleSetting
               action={t('settings.labels.my-name')}
-              explain={t('settings.disabled')}
+              explain={t('settings.private-name')}
               flag={!showName}
               flagName='name'
               offLabel={t('buttons.public')}
