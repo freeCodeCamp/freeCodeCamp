@@ -8,7 +8,7 @@ dashedName: problem-255-rounded-square-roots
 
 # --description--
 
-We define the rounded-square-root of a positive integer n as the square root of n rounded to the nearest integer.
+We define the rounded-square-root of a positive integer $n$ as the square root of $n$ rounded to the nearest integer.
 
 The following procedure (essentially Heron's method adapted to integer arithmetic) finds the rounded-square-root of $n$:
 
