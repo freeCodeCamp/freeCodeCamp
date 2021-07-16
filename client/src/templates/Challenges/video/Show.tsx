@@ -63,7 +63,7 @@ interface ShowVideoProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: TFunction<'translation'>;
+  t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
 }

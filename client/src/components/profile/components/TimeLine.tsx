@@ -64,7 +64,7 @@ interface ICompletedMap {
 
 interface ITimelineProps {
   completedMap: ICompletedMap[];
-  t: TFunction<'translation'>;
+  t: TFunction;
   username: string;
 }
 

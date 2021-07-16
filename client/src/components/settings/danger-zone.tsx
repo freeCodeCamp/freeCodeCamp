@@ -17,7 +17,7 @@ import './danger-zone.css';
 type DangerZoneProps = {
   deleteAccount: () => void;
   resetProgress: () => void;
-  t: TFunction<'translation'>;
+  t: TFunction;
 };
 
 type DangerZoneState = {

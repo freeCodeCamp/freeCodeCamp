@@ -32,7 +32,7 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
-  t: TFunction<'translation'>;
+  t: TFunction;
 }
 
 const mapStateToProps = createSelector(

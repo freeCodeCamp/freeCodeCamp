@@ -88,7 +88,7 @@ interface BackEndProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: TFunction<'translation'>;
+  t: TFunction;
   tests: TestType[];
   title: string;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;

@@ -26,7 +26,7 @@ import { isValidUsername } from '../../../../utils/validate';
 type UsernameProps = {
   isValidUsername: boolean;
   submitNewUsername: (name: string) => void;
-  t: TFunction<'translation'>;
+  t: TFunction;
   username: string;
   validateUsername: (name: string) => void;
   validating: boolean;

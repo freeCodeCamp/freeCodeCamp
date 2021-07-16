@@ -106,7 +106,7 @@ interface CompletionModalsProps {
   message: string;
   submitChallenge: () => void;
   superBlock: string;
-  t: TFunction<'translation'>;
+  t: TFunction;
   title: string;
 }
 

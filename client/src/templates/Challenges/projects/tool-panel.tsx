@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ToolPanelProps {
   guideUrl?: string;
   openHelpModal: () => void;
-  t: TFunction<'translation'>;
+  t: TFunction;
 }
 
 export class ToolPanel extends Component<ToolPanelProps> {

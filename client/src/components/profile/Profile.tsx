@@ -55,7 +55,7 @@ interface IProfileProps {
 function renderMessage(
   isSessionUser: boolean,
   username: string,
-  t: TFunction<'translation'>
+  t: TFunction
 ): JSX.Element {
   return isSessionUser ? (
     <>

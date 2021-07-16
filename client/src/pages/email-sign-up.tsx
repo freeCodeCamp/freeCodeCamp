@@ -19,7 +19,7 @@ import './email-sign-up.css';
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
-  t: TFunction<'translation'>;
+  t: TFunction;
 }
 
 const mapStateToProps = createSelector(

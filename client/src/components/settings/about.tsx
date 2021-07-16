@@ -30,7 +30,7 @@ type AboutProps = {
   picture: string;
   points: number;
   submitNewAbout: (formValues: FormValues) => void;
-  t: TFunction<'translation'>;
+  t: TFunction;
   toggleNightMode: (theme: string) => void;
   username: string;
 };

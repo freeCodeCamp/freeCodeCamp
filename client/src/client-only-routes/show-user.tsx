@@ -30,7 +30,7 @@ interface IShowUserProps {
     username: string;
     reportDescription: string;
   }) => void;
-  t: TFunction<'translation'>;
+  t: TFunction;
   userFetchState: {
     pending: boolean;
     complete: boolean;

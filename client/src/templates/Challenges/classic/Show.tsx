@@ -87,7 +87,7 @@ interface ShowClassicProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: TFunction<'translation'>;
+  t: TFunction;
   tests: TestType[];
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
 }

@@ -33,7 +33,7 @@ type EmailProps = {
   email: string;
   isEmailVerified: boolean;
   sendQuincyEmail: boolean;
-  t: TFunction<'translation'>;
+  t: TFunction;
   updateMyEmail: (email: string) => void;
   updateQuincyEmail: (sendQuincyEmail: boolean) => void;
 };

@@ -39,7 +39,7 @@ type ProfileUIType = {
 
 type PrivacyProps = {
   submitProfileUI: (profileUI: ProfileUIType) => void;
-  t: TFunction<'translation'>;
+  t: TFunction;
   user: {
     profileUI: ProfileUIType;
     username: string;

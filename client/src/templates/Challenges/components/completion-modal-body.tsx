@@ -7,7 +7,7 @@ interface CompletionModalBodyProps {
   block: string;
   completedPercent: number;
   superBlock: string;
-  t: TFunction<'translation'>;
+  t: TFunction;
 }
 
 interface CompletionModalBodyState {

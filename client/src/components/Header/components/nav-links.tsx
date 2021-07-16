@@ -38,7 +38,7 @@ export interface NavLinksProps {
   displayMenu?: boolean;
   fetchState?: { pending: boolean };
   i18n: Object;
-  t: TFunction<'translation'>;
+  t: TFunction;
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;

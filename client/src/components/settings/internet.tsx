@@ -26,7 +26,7 @@ interface InternetFormValues {
 }
 
 interface InternetProps extends InternetFormValues {
-  t: TFunction<'translation'>;
+  t: TFunction;
   updateInternetSettings: (formValues: InternetFormValues) => void;
 }
 

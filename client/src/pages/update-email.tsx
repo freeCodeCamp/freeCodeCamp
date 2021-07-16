@@ -28,7 +28,7 @@ import { maybeEmailRE } from '../utils';
 
 interface UpdateEmailProps {
   isNewEmail: boolean;
-  t: TFunction<'translation'>;
+  t: TFunction;
   updateMyEmail: (e: string) => void;
 }
 
