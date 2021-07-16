@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9f
-title: Match All Letters and Numbers
+title: Capture Todas as Letras e Números
 challengeType: 1
 forumTopicId: 301346
 dashedName: match-all-letters-and-numbers
@@ -8,9 +8,9 @@ dashedName: match-all-letters-and-numbers
 
 # --description--
 
-Using character classes, you were able to search for all letters of the alphabet with `[a-z]`. This kind of character class is common enough that there is a shortcut for it, although it includes a few extra characters as well.
+Ao escrever `[a-z]` você foi capaz de capturar todas as letras do alfabeto. Essa classe de caracteres é tão comum que existe uma forma reduzida de escrevê-la. Mas essa forma inclui alguns caracteres a mais.
 
-The closest character class in JavaScript to match the alphabet is `\w`. This shortcut is equal to `[A-Za-z0-9_]`. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (`_`).
+Em JavaScript, você pode usar `\w` para capturar todas as letras do alfabeto. Isso é equivalente à classe de caracteres `[A-Za-z0-9_]`. Ela captura números e letras, tanto maiúsculas quanto minúsculas. Note que o underline (`_`) também é incluído nela.
 
 ```js
 let longHand = /[A-Za-z0-9_]+/;
@@ -23,29 +23,29 @@ longHand.test(varNames);
 shortHand.test(varNames);
 ```
 
-All four of these `test` calls would return `true`.
+As quatro chamadas a `test` retornam `true`.
 
-These shortcut character classes are also known as <dfn>shorthand character classes</dfn>.
+Essas formas reduzidas de classes de caracteres podem ser chamadas de <dfn>atalhos</dfn>.
 
 # --instructions--
 
-Use the shorthand character class `\w` to count the number of alphanumeric characters in various quotes and strings.
+Use o atalho `\w` para contar o número de caracteres alfanuméricos em várias strings.
 
 # --hints--
 
-Your regex should use the global flag.
+Sua regex deve usar a flag global.
 
 ```js
 assert(alphabetRegexV2.global);
 ```
 
-Your regex should use the shorthand character `\w` to match all characters which are alphanumeric.
+Sua regex deve usar o atalho `\w` para capturar todos os caracteres alfanuméricos.
 
 ```js
 assert(/\\w/.test(alphabetRegexV2.source));
 ```
 
-Your regex should find 31 alphanumeric characters in the string `The five boxing wizards jump quickly.`
+Sua regex deve encontrar 31 caracteres alfanuméricos na string `The five boxing wizards jump quickly.`
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Your regex should find 32 alphanumeric characters in the string `Pack my box with five dozen liquor jugs.`
+Sua regex deve encontrar 32 caracteres alfanuméricos na string `Pack my box with five dozen liquor jugs.`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Your regex should find 30 alphanumeric characters in the string `How vexingly quick daft zebras jump!`
+Sua regex deve encontrar 30 caracteres alfanuméricos na string `How vexingly quick daft zebras jump!`
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-Your regex should find 36 alphanumeric characters in the string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
+Sua regex deve encontrar 36 caracteres alfanuméricos na string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
 
 ```js
 assert(

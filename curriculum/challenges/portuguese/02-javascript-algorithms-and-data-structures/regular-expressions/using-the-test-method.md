@@ -1,6 +1,6 @@
 ---
 id: 587d7db3367417b2b2512b8e
-title: Using the Test Method
+title: Usando o Método Test
 challengeType: 1
 forumTopicId: 301369
 dashedName: using-the-test-method
@@ -8,11 +8,11 @@ dashedName: using-the-test-method
 
 # --description--
 
-Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.
+Expressões regulares são usadas em linguagens de programação para encontrar e extrair partes de strings. Cria-se padrões que ajudam a encontrar tais partes.
 
-If you want to find the word `the` in the string `The dog chased the cat`, you could use the following regular expression: `/the/`. Notice that quote marks are not required within the regular expression.
+Se você quiser encontrar a palavra `the` na string `The dog chased the cat`, você poderia usar a seguinte expressão regular: `/the/`. Note que aspas não são necessárias ao redor da expressão regular.
 
-JavaScript has multiple ways to use regexes. One way to test a regex is using the `.test()` method. The `.test()` method takes the regex, applies it to a string (which is placed inside the parentheses), and returns `true` or `false` if your pattern finds something or not.
+O JavaScript oferece múltiplas maneiras de usar <dfn>regexes</dfn>. Uma dessas maneiras é com o método `.test()`. O método `.test()` aplica a regex à string dentro dos parênteses e retorna `true` caso encontre o padrão ou `false` caso contrário.
 
 ```js
 let testStr = "freeCodeCamp";
@@ -20,21 +20,21 @@ let testRegex = /Code/;
 testRegex.test(testStr);
 ```
 
-The `test` method here returns `true`.
+O método `test` retorna `true` aqui.
 
 # --instructions--
 
-Apply the regex `myRegex` on the string `myString` using the `.test()` method.
+Aplique a regex `myRegex` na string `myString` usando o método `.test()`.
 
 # --hints--
 
-You should use `.test()` to test the regex.
+Você deve usar `.test()` para testar a regex.
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+O resultado deve ser `true`.
 
 ```js
 assert(result === true);

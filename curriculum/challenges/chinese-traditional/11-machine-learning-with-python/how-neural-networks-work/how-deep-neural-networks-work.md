@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610ca
-title: How Deep Neural Networks Work
+title: 深度神經網絡的工作原理
 challengeType: 11
 videoId: zvalnHWGtx4
 dashedName: how-deep-neural-networks-work
@@ -10,19 +10,19 @@ dashedName: how-deep-neural-networks-work
 
 ## --text--
 
-Why is it better to calculate the gradient (slope) directly rather than numerically?
+相比較數字的計算，爲什麼深度神經網絡可以更好地計算梯度（斜率）？
 
 ## --answers--
 
-It is computationally expensive to go back through the entire neural network and adjust the weights for each layer of the neural network.
+通過回溯整個神經網絡來更改每一層神經網絡的權重，在計算上來說是非常耗時的。
 
 ---
 
-It is more accurate.
+它更加準確。
 
 ---
 
-There is no difference between the two methods.
+這兩種方法之間沒有區別。
 
 ## --video-solution--
 

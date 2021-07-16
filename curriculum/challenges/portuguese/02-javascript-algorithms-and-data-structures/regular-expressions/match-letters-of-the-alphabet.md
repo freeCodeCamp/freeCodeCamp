@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b96
-title: Match Letters of the Alphabet
+title: Capture Letras do Alfabeto
 challengeType: 1
 forumTopicId: 301354
 dashedName: match-letters-of-the-alphabet
@@ -8,11 +8,11 @@ dashedName: match-letters-of-the-alphabet
 
 # --description--
 
-You saw how you can use <dfn>character sets</dfn> to specify a group of characters to match, but that's a lot of typing when you need to match a large range of characters (for example, every letter in the alphabet). Fortunately, there is a built-in feature that makes this short and simple.
+Você viu como pode usar <dfn>classes de caracteres</dfn> para especificar um grupo de caracteres para capturar. Mas você precisaria escrever muito para definir uma classe larga como, por exemplo, para capturar todas as letras do alfabeto. Felizmente há uma maneira de fazer com que elas fiquem pequenas e simples.
 
-Inside a character set, you can define a range of characters to match using a hyphen character: `-`.
+Você pode usar um hífen (`-`) para definir um intervalo de caracteres para capturar dentro de uma classe.
 
-For example, to match lowercase letters `a` through `e` you would use `[a-e]`.
+Por exemplo, para encontrar letras minúsculas de `a` a `e`, você pode escrever `[a-e]`.
 
 ```js
 let catStr = "cat";
@@ -24,29 +24,29 @@ batStr.match(bgRegex);
 matStr.match(bgRegex);
 ```
 
-In order, the three `match` calls would return the values `["cat"]`, `["bat"]`, and `null`.
+As três chamadas a `match` retornam, na ordem, os valores: `["cat"]`, `["bat"]` e `null`.
 
 # --instructions--
 
-Match all the letters in the string `quoteSample`.
+Capture todas as letras na string `quoteSample`.
 
-**Note**: Be sure to match both uppercase and lowercase letters.
+**Nota:** Você quer encontrar tanto maiúsculas quanto minúsculas.
 
 # --hints--
 
-Your regex `alphabetRegex` should match 35 items.
+Sua regex `alphabetRegex` deve encontrar 35 itens.
 
 ```js
 assert(result.length == 35);
 ```
 
-Your regex `alphabetRegex` should use the global flag.
+Você deve usar a flag global na sua regex `alphabetRegex`.
 
 ```js
 assert(alphabetRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `alphabetRegex` should use the case insensitive flag.
+Você deve usar a flag de ignorar caixa na sua regex `alphabetRegex`.
 
 ```js
 assert(alphabetRegex.flags.match(/i/).length == 1);

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b53
-title: Use class Syntax to Define a Constructor Function
+title: Use a sintaxe de classe para criar uma função construtora
 challengeType: 1
 forumTopicId: 301212
 dashedName: use-class-syntax-to-define-a-constructor-function
@@ -8,11 +8,11 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 # --description--
 
-ES6 provides a new syntax to create objects, using the <dfn>class</dfn> keyword.
+ES6 fornece uma nova sintaxe para criar objetos, usando a palavra-chave <dfn>class</dfn>.
 
-It should be noted that the `class` syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
+Deve ser notado que a sintaxe `class` é apenas sintaxe, um <dfn>syntatical sugar</dfn>. JavaScript ainda não oferece suporte completo ao paradigma orientado a objetos, ao contrário do que acontece em linguagens como Java, Python, Ruby, etc.
 
-In ES5, we usually define a `constructor` function and use the `new` keyword to instantiate an object.
+No ES5, geralmente definimos uma função construtora (`constructor` function) e usamos a palavra-chave `new` para instanciar um objeto.
 
 ```js
 var SpaceShuttle = function(targetPlanet){
@@ -21,7 +21,7 @@ var SpaceShuttle = function(targetPlanet){
 var zeus = new SpaceShuttle('Jupiter');
 ```
 
-The `class` syntax simply replaces the `constructor` function creation:
+A sintaxe `class` simplesmente substitui a criação da função construtora (`constructor`):
 
 ```js
 class SpaceShuttle {
@@ -32,21 +32,21 @@ class SpaceShuttle {
 const zeus = new SpaceShuttle('Jupiter');
 ```
 
-It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
+Deve ser notado que a palavra-chave `class` declara uma nova função, para qual um construtor é adicionado. Esse construtor é invocado quando `new` é chamado na criação de um novo objeto.
 
-**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
+**Observação:** UpperCamelCase (observe a primeira letra de cada palavra em maiúsculo) deve ser usado por convenção para nomes de classe no ES6, como em `SpaceShuttle` usado acima.
 
-The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
+O método `constructor` é um método especial usado para inicializar um objeto criado com uma classe. Você aprenderá mais sobre isso na seção Programação Orientada a Objetos da Certificação de Algoritmos e Estruturas de Dados JavaScript.
 
 # --instructions--
 
-Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
+Use a palavra-chave `class` e declare o método `constructor` para criar a classe `Vegetable`.
 
-The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
+A classe `Vegetable` permite criar um objeto vegetal com a propriedade `name` que é passada ao `constructor`.
 
 # --hints--
 
-`Vegetable` should be a `class` with a defined `constructor` method.
+`Vegetable` deve ser uma `class` com um método `constructor` definido.
 
 ```js
 assert(
@@ -54,13 +54,13 @@ assert(
 );
 ```
 
-The `class` keyword should be used.
+A palavra-chave `class` deve ser usada.
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` should be able to be instantiated.
+A classe `Vegetable` deve poder ser instanciada.
 
 ```js
 assert(() => {
@@ -69,7 +69,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` should return `carrot`.
+`carrot.name` deve retornar a string `carrot`.
 
 ```js
 assert(carrot.name == 'carrot');

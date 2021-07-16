@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c549eddfaeb5bdef
-title: Use Bracket Notation to Find the First Character in a String
+title: Use Notação de Colchetes para Encontrar o Primeiro Caractere em uma String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8JwhW'
 forumTopicId: 18341
@@ -9,36 +9,36 @@ dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 
 # --description--
 
-<dfn>Bracket notation</dfn> is a way to get a character at a specific index within a string.
+<dfn>Notação de Colchetes</dfn> é uma forma de pegar um caractere no índice especificado dentro de uma string.
 
-Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.
+A maioria das linguagens de programações modernas, como JavaScript, não começa contando do 1 como humanos fazem. Eles começam no 0. Isso é referido como indexação <dfn>baseada em zero</dfn>.
 
-For example, the character at index 0 in the word `Charles` is `C`. So if `var firstName = "Charles"`, you can get the value of the first letter of the string by using `firstName[0]`.
+Por exemplo, o caractere no índice 0 da palavra `Charles` é `C`. Então se `var firstName = "Charles"`, você pode pegar o valor da primeira letra da string usando `firstName[0]`.
 
-Example:
+Exemplo:
 
 ```js
 var firstName = "Charles";
 var firstLetter = firstName[0];
 ```
 
-`firstLetter` would have a value of the string `C`.
+`firstLetter` teria o valor da string `C`.
 
 # --instructions--
 
-Use bracket notation to find the first character in the `lastName` variable and assign it to `firstLetterOfLastName`.
+Use notação de colchetes para encontrar o primeiro caractere na variável `lastName` e atribua a letra para a variável `firstLetterOfLastName`.
 
-**Hint:** Try looking at the example above if you get stuck.
+**Dica:** Tente olhar o exemplo acima se você ficar travado.
 
 # --hints--
 
-The `firstLetterOfLastName` variable should have the value of `L`.
+A variável `firstLetterOfLastName` deve ter o valor de `L`.
 
 ```js
 assert(firstLetterOfLastName === 'L');
 ```
 
-You should use bracket notation.
+Você deve usar a notação de colchetes.
 
 ```js
 assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));

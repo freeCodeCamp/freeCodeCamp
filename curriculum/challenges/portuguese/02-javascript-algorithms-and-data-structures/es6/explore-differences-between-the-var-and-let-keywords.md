@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b3f
-title: Explore Differences Between the var and let Keywords
+title: Diferenças entre as palavras-chave var e let
 challengeType: 1
 forumTopicId: 301202
 dashedName: explore-differences-between-the-var-and-let-keywords
@@ -8,7 +8,7 @@ dashedName: explore-differences-between-the-var-and-let-keywords
 
 # --description--
 
-One of the biggest problems with declaring variables with the `var` keyword is that you can overwrite variable declarations without an error.
+Um dos maiores problemas ao declarar variáveis com a palavra-chave `var` é que você pode sobrescrever a declaração da variável sem perceber.
 
 ```js
 var camper = 'James';
@@ -16,44 +16,44 @@ var camper = 'David';
 console.log(camper);
 ```
 
-Here the console will display the string `David`.
+Aqui o console irá exibir a string `David`.
 
-As you can see in the code above, the `camper` variable is originally declared as `James` and then overridden to be `David`. In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite. Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.  
-A new keyword called `let` was introduced in ES6 to solve this potential issue with the `var` keyword. If you were to replace `var` with `let` in the variable declarations of the code above, the result would be an error.
+Como você pode ver no código acima, a variável `camper` é originalmente declarada com o valor `James` e então substituída pelo valor `David`. Em uma aplicação pequena, você pode não encontrar esse tipo de problema, mas quando seu código se tornar maior, você pode acidentalmente sobrescrever uma variável que você não tinha a intenção. Como esse comportamente não lança nenhum erro, procurar e corrigir bugs se torna mais difícil.  
+Para resolver esse potencial problema com a palavra-chave `var`, uma nova palavra-chave chamada `let` foi introduzida no ES6. Se você tentar substituir `var` por `let` nas declarações de variável do código acima, o resultado será um erro.
 
 ```js
 let camper = 'James';
 let camper = 'David';
 ```
 
-This error can be seen in the console of your browser. So unlike `var`, when using `let`, a variable with the same name can only be declared once. Note the `"use strict"`. This enables Strict Mode, which catches common coding mistakes and "unsafe" actions. For instance:
+Esse erro pode ser visto no console do seu navegador. Então, diferente de `var`, ao usar `let`, uma variável com o mesmo nome só pode ser declarada uma única vez. Note o `"use strict"`. Isso habilita o Modo Estrito, o qual captura erros de codificação comum e ações "não seguras". Por exemplo:
 
 ```js
 "use strict";
 x = 3.14;
 ```
 
-This will display an error that `x is not defined`.
+O ´codigo acima irá exibir o erro: `x is not defined`.
 
 # --instructions--
 
-Update the code so it only uses the `let` keyword.
+Atualize o código para que apenas a palavra-chave `let` seja usada.
 
 # --hints--
 
-`var` should not exist in the code.
+A palavra-chave `var` não deve existir no código.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`catName` should be the string `Oliver`.
+A variável `catName` deve ser uma string de valor `Oliver`.
 
 ```js
 assert(catName === 'Oliver');
 ```
 
-`quote` should be the string `Oliver says Meow!`
+A variável `quote` deve ser uma string de valor `Oliver says Meow!`
 
 ```js
 assert(quote === 'Oliver says Meow!');

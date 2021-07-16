@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15f
-title: Data Cleaning Duplicates
+title: 數據 清理重複項
 challengeType: 11
 videoId: kj7QqjXhH6A
 dashedName: data-cleaning-duplicates
@@ -8,30 +8,30 @@ dashedName: data-cleaning-duplicates
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
-More resources:
+以下有更多的資料：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
+Python 方法 `.duplicated()` 將針對你的 DataFrame 返回一個儲存着布爾值的 Series。 `True` 是行的返回值：
 
 ## --answers--
 
-contain a duplicate, where the value for the row contains the first occurrence of that value.
+包含一個重複值，並且它表示了在這一行這一重複值第一次出現。
 
 ---
 
-contain a duplicate, where the value for the row is at least the second occurrence of that value.
+包含一個重複值，並且它表示了在這一行這一重複值至少第二次出現。
 
 ---
 
-contain a duplicate, where the value for the row contains either the first or second occurrence.
+包含一個重複值，並且它表示了在這一行這一重複值第一次或第二次出現。
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b98
-title: Match Single Characters Not Specified
+title: Capture Caracteres Não Especificados
 challengeType: 1
 forumTopicId: 301358
 dashedName: match-single-characters-not-specified
@@ -8,31 +8,31 @@ dashedName: match-single-characters-not-specified
 
 # --description--
 
-So far, you have created a set of characters that you want to match, but you could also create a set of characters that you do not want to match. These types of character sets are called <dfn>negated character sets</dfn>.
+Até agora você aprendeu a criar classes de caracteres para capturar caracteres específicos, mas você também pode usá-las para capturar caracteres ausentes nelas. Esse tipo de classe de caracteres é chamada <dfn>classe de caracteres negada</dfn>.
 
-To create a negated character set, you place a caret character (`^`) after the opening bracket and before the characters you do not want to match.
+Para criar uma classe de caracteres negada, você só precisa colocar um acento circunflexo (`^`) depois do colchete de abertura e à esquerda dos caracteres que você quer evitar.
 
-For example, `/[^aeiou]/gi` matches all characters that are not a vowel. Note that characters like `.`, `!`, `[`, `@`, `/` and white space are matched - the negated vowel character set only excludes the vowel characters.
+Por exemplo, `/[^aeiou]/gi` encontra todos os caracteres que não são vogais. Observe que caracteres como `.`, `!`, `[`, `@`, `/` e espaços em branco são capturados - a classe de vogais negada apenas exclui os caracteres que são vogais.
 
 # --instructions--
 
-Create a single regex that matches all characters that are not a number or a vowel. Remember to include the appropriate flags in the regex.
+Crie uma única regex que captura todos os caracteres que não são números ou vogais. Lembre-se de incluir as flags necessárias na regex.
 
 # --hints--
 
-Your regex `myRegex` should match 9 items.
+Sua regex `myRegex` deve encontrar 9 itens.
 
 ```js
 assert(result.length == 9);
 ```
 
-Your regex `myRegex` should use the global flag.
+Você deve usar a flag global na sua regex `myRegex`.
 
 ```js
 assert(myRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `myRegex` should use the case insensitive flag.
+Você deve usar a flag de ignorar caixa na sua regex `myRegex`.
 
 ```js
 assert(myRegex.flags.match(/i/).length == 1);

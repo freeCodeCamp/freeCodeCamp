@@ -35,6 +35,7 @@
     "helmet#noSniff": {},
     "helmet#frameguard": {},
     "./middlewares/csurf": {},
+    "./middlewares/csurf-set-cookie": {},
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/flash-cheaters": {},
@@ -43,6 +44,7 @@
   "files": {},
   "final:after": {
     "./middlewares/sentry-error-handler": {},
+    "./middlewares/csurf-error-handler": {},
     "./middlewares/error-handlers": {},
     "strong-error-handler": {
       "params": {

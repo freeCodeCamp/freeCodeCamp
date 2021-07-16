@@ -10,7 +10,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 We can easily verify that none of the entries in the first seven rows of Pascal's triangle are divisible by 7:
 
-<pre>
+```
             1
           1   1
         1   2   1
@@ -18,20 +18,20 @@ We can easily verify that none of the entries in the first seven rows of Pascal'
     1   4   6   4   1
   1   5   10  10  5   1
 1   6   15  20  15  6   1
-</pre>
+```
 
 However, if we check the first one hundred rows, we will find that only 2361 of the 5050 entries are not divisible by 7.
 
 # --instructions--
 
-Find the number of entries which are not divisible by 7 in the first one billion (10<sup>9</sup>) rows of Pascal's triangle.
+Find the number of entries which are not divisible by 7 in the first one billion (${10}^9$) rows of Pascal's triangle.
 
 # --hints--
 
-`euler148()` should return 2129970655314432.
+`entriesOfPascalsTriangle()` should return `2129970655314432`.
 
 ```js
-assert.strictEqual(euler148(), 2129970655314432);
+assert.strictEqual(entriesOfPascalsTriangle(), 2129970655314432);
 ```
 
 # --seed--
@@ -39,12 +39,12 @@ assert.strictEqual(euler148(), 2129970655314432);
 ## --seed-contents--
 
 ```js
-function euler148() {
+function entriesOfPascalsTriangle() {
 
   return true;
 }
 
-euler148();
+entriesOfPascalsTriangle();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b83
-title: Use Inheritance So You Don't Repeat Yourself
+title: Utilize Herança Para Que Você Não Repita Código Você Mesmo
 challengeType: 1
 forumTopicId: 301334
 dashedName: use-inheritance-so-you-dont-repeat-yourself
@@ -8,9 +8,9 @@ dashedName: use-inheritance-so-you-dont-repeat-yourself
 
 # --description--
 
-There's a principle in programming called <dfn>Don't Repeat Yourself (DRY)</dfn>. The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
+Tem um princípio da programação chamado <dfn>Don't Repeat Yourself (DRY) (Não Repita Você Mesmo)</dfn>. O motivo pelo qual código repetido é um problema se deve ao fato de qualquer alteração exige correção de código em vários locais. Geralmente isso significa mais trabalho para os programadores e mais espaço para erros.
 
-Notice in the example below that the `describe` method is shared by `Bird` and `Dog`:
+Note que o exemplo abaixo que `descreve` o método é compartilhado por `Bird` e `Dog`:
 
 ```js
 Bird.prototype = {
@@ -28,7 +28,7 @@ Dog.prototype = {
 };
 ```
 
-The `describe` method is repeated in two places. The code can be edited to follow the DRY principle by creating a `supertype` (or parent) called `Animal`:
+O método `describe` é repetido em dois locais. O código pode ser editado para seguir o princípio DRY (Não Repita Você Mesmo) ao criar um `supertipo` (ou parente) chamado `Animal`:
 
 ```js
 function Animal() { };
@@ -41,7 +41,7 @@ Animal.prototype = {
 };
 ```
 
-Since `Animal` includes the `describe` method, you can remove it from `Bird` and `Dog`:
+Desde que `Animal` inclui o método `describe`, você pode remover ele de `Bird` e `Dog`:
 
 ```js
 Bird.prototype = {
@@ -55,23 +55,23 @@ Dog.prototype = {
 
 # --instructions--
 
-The `eat` method is repeated in both `Cat` and `Bear`. Edit the code in the spirit of DRY by moving the `eat` method to the `Animal` `supertype`.
+O método `eat` é repetido em `Cat` e `Bear`. Edite o código no espírito do princípio DRY ao mover o método `eat` do `supertipo` de `Animal`.
 
 # --hints--
 
-`Animal.prototype` should have the `eat` property.
+`Animal.prototype` deve ter a propriedade `eat`.
 
 ```js
 assert(Animal.prototype.hasOwnProperty('eat'));
 ```
 
-`Bear.prototype` should not have the `eat` property.
+`Bear.prototype` não deve ter a propriedade `eat`.
 
 ```js
 assert(!Bear.prototype.hasOwnProperty('eat'));
 ```
 
-`Cat.prototype` should not have the `eat` property.
+`Cat.propotype` não deve ter a propriedade `eat`.
 
 ```js
 assert(!Cat.prototype.hasOwnProperty('eat'));

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d93
-title: 'Neural Networks: Activation Functions'
+title: '神经网络：激活函数'
 challengeType: 11
 videoId: S45tqW6BqRs
 dashedName: neural-networks-activation-functions
@@ -10,15 +10,15 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
-Which activation function switches values between -1 and 1?
+哪个激活函数在 -1 和 1 之间切换值？
 
 ## --answers--
 
-ReLU (Rectified Linear Unit)
+ReLU（线性整流函数）
 
 ---
 
-Tanh (Hyperbolic Tangent)
+Tanh（双曲函数）
 
 ---
 

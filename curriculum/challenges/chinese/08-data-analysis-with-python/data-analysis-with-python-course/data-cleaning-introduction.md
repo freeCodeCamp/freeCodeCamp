@@ -8,7 +8,7 @@ dashedName: data-cleaning-introduction
 
 # --description--
 
-*您可以使用 Google Colab，而不是像视频中显示的那样使用 notebooks.ai。*
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
 以下有更多的资料：
 

@@ -8,7 +8,7 @@ dashedName: build-a-simon-game
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/Em-Ant/full/QbRyqq/).
+**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
 
 Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
 

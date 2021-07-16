@@ -14,7 +14,7 @@ Aninhe três elementos `button` dentro de cada um de seus elementos `div` conten
 
 # --hints--
 
-Three `button` elements should be nested within each of your `div` elements with class `well`.
+Três elementos `button` devem ser aninhados dentro de cada um de seus elementos `div` com a classe `well`.
 
 ```js
 assert(
@@ -23,13 +23,13 @@ assert(
 );
 ```
 
-You should have a total of 6 `button` elements.
+Você deve ter o total de 6 elementos `button`.
 
 ```js
 assert($('button') && $('button').length > 5);
 ```
 
-All of your `button` elements should have closing tags.
+Todos os seus elementos `button` deve conter tag de fechamento.
 
 ```js
 assert(

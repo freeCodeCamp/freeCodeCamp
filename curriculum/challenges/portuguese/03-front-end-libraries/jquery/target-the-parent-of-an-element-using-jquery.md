@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed308826
-title: Target the Parent of an Element Using jQuery
+title: Mire o Filho de um Elemento Usando jQuery
 challengeType: 6
 forumTopicId: 18321
 dashedName: target-the-parent-of-an-element-using-jquery
@@ -8,23 +8,23 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 # --description--
 
-Every HTML element has a `parent` element from which it `inherits` properties.
+Todo elemento HTML possui um elemento `parent` do qual `inherits (herda)` propriedades.
 
-For example, your `jQuery Playground` `h3` element has the parent element of `<div class="container-fluid">`, which itself has the parent `body`.
+Por exemplo, seu elemento `jQuery Playground` `h3` tem o elemento parente de `<div class="container-fluid">`, o qual ele mesmo possui o parente `body`.
 
-jQuery has a function called `parent()` that allows you to access the parent of whichever element you've selected.
+jQuery possui uma função chamada `parent()` que o permite acessar o parente de qualquer elemento que você selecionou.
 
-Here's an example of how you would use the `parent()` function if you wanted to give the parent element of the `left-well` element a background color of blue:
+Aqui está um exemplo de como você usaria a função `parent()` se você quisesse dar ao elemento parente do elemento `left-well` uma cor de fundo azul:
 
 ```js
 $("#left-well").parent().css("background-color", "blue")
 ```
 
-Give the parent of the `#target1` element a background-color of red.
+Dê ao parente do elemento `#target1` uma cor de fundo (background-color) vermelha.
 
 # --hints--
 
-Your `left-well` element should have a red background.
+Seu elemento `left-well` deve ter um fundo vermelho.
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-You should use the `.parent()` function to modify this element.
+Você deve usar a função `.parent()` para modificar esse elemento.
 
 ```js
 assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
 ```
 
-The `.parent()` method should be called on the `#target1` element.
+O método `.parent()` deve ser chamado no elemento `#target1`.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-You should only use jQuery to add these classes to the element.
+Você deve usar apenas jQuery para adicionar essas classes ao elemento.
 
 ```js
 assert(code.match(/<div class="well" id="left-well">/g));

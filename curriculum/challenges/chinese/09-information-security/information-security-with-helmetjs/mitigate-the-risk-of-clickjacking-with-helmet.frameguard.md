@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c38
-title: Mitigate the Risk of Clickjacking with helmet.frameguard()
+title: 使用 helmet.frameguard() 降低点击劫持的风险
 challengeType: 2
 forumTopicId: 301582
 dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
@@ -8,19 +8,19 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+请注意，本项目在 [这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec) 的基础上进行开发。 你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
 
-Your page could be put in a `<frame>` or `<iframe>` without your consent. This can result in clickjacking attacks, among other things. Clickjacking is a technique of tricking a user into interacting with a page different from what the user thinks it is. This can be obtained executing your page in a malicious context, by mean of iframing. In that context a hacker can put a hidden layer over your page. Hidden buttons can be used to run bad scripts. This middleware sets the X-Frame-Options header. It restricts who can put your site in a frame. It has three modes: DENY, SAMEORIGIN, and ALLOW-FROM.
+你的网页可能在未经你同意的情况下被放在 `<frame>` 或 `<iframe>` 中。 这可能会导致点击劫持攻击等情况。 点击劫持是一种欺骗用户的技术，使其与用户认为不同的页面进行互动。 这可以通过使用 iframe 的方式，在一个恶意的环境中执行你的页面而获得。 在这种情况下，黑客可以在你的页面上设置一个隐藏层。 隐藏的按钮可以被用来运行坏的脚本。 该中间件设置 X-Frame-Options 头。 它限制了谁可以把你的网站放在一个框架里。 它有三种模式：DENY、SAMEORIGIN 和 ALLOW-FROM。
 
-We don’t need our app to be framed.
+我们不需要让我们的应用程序可以被嵌入。
 
 # --instructions--
 
-Use `helmet.frameguard()` passing with the configuration object `{action: 'deny'}`.
+使用 `helmet.frameguard()` 时应传递配置对象 `{action: 'deny'}`。
 
 # --hints--
 
-helmet.frameguard() middleware should be mounted correctly
+应正确加载 helmet.frameguard() 中间件
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ helmet.frameguard() middleware should be mounted correctly
   );
 ```
 
-helmet.frameguard() 'action' should be set to 'DENY'
+helmet.frameguard() 'action' 应该设置为 “DENY”
 
 ```js
 (getUserInput) =>
