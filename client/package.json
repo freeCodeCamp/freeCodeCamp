@@ -138,7 +138,7 @@
     "@types/reach__router": "1.3.9",
     "@types/react-dom": "17.0.9",
     "@types/react-helmet": "6.1.2",
-    "@types/react-instantsearch-dom": "6.10.2",
+    "@types/react-instantsearch-dom": "6.12.0",
     "@types/react-monaco-editor": "0.16.0",
     "@types/react-redux": "7.1.16",
     "@types/react-responsive": "8.0.2",
