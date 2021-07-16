@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b45
-title: 'Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem'
+title: 'Use as Funções de Ordem Superior map, filter ou reduce para Solucionar um Problema Complexo'
 challengeType: 1
 forumTopicId: 301311
 dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem
@@ -8,30 +8,30 @@ dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-p
 
 # --description--
 
-Now that you have worked through a few challenges using higher-order functions like `map()`, `filter()`, and `reduce()`, you now get to apply them to solve a more complex challenge.
+Agora que você já realizou alguns desafios usando funções de ordem superior como `map()`, `filter()` e `reduce()`, você pode usá-las para resolver um desafio mais complexo.
 
 # --instructions--
 
-Complete the code for the `squareList` function using any combination of `map()`, `filter()`, and `reduce()`. The function should return a new array containing the squares of *only* the positive integers (decimal numbers are not integers) when an array of real numbers is passed to it. An example of an array of real numbers is `[-3, 4.8, 5, 3, -3.2]`.
+Complete o código para a função `squareList` usando qualquer combinação de `map()`, `filter()` e `reduce()`. A função deve retornar uma nova matriz contendo *apenas* os inteiros positivos (números decimais não são inteiros) elevados ao quadrado quando uma matriz de números reais é passada para ela. Um exemplo de array de números reais é `[-3, 4.8, 5, 3, -3.2]`.
 
-**Note:** Your function should not use any kind of `for` or `while` loops or the `forEach()` function.
+**Obs:** Você não deve usar os loops `for` ou `while` ou a função `forEach()` na sua função.
 
 # --hints--
 
-`squareList` should be a `function`.
+`squareList` deve ser uma <dfn>função</dfn>.
 
 ```js
 assert.typeOf(squareList, 'function'),
   '<code>squareList</code> should be a <code>function</code>';
 ```
 
-`for`, `while`, and `forEach` should not be used.
+Loops `for`, `while`e a função `forEach` não devem ser usados.
 
 ```js
 assert(!code.match(/for|while|forEach/g));
 ```
 
-`map`, `filter`, or `reduce` should be used.
+`map`, `filter` ou `reduce` deve ser usado.
 
 ```js
 assert(
@@ -41,13 +41,13 @@ assert(
 );
 ```
 
-The function should return an `array`.
+A função deve retornar um `array`.
 
 ```js
 assert(Array.isArray(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])));
 ```
 
-`squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])` should return `[16, 1764, 36]`.
+`squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])` deve retornar `[16, 1764, 36]`.
 
 ```js
 assert.deepStrictEqual(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]), [
@@ -57,7 +57,7 @@ assert.deepStrictEqual(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]), [
 ]);
 ```
 
-`squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3])` should return `[9, 100, 49]`.
+`squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3])` deve retornar `[9, 100, 49]`.
 
 ```js
 assert.deepStrictEqual(squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]), [

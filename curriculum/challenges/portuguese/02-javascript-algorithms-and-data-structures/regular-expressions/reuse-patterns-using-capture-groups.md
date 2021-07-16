@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512baa
-title: Reuse Patterns Using Capture Groups
+title: Reusando Padrões com Grupos de Captura
 challengeType: 1
 forumTopicId: 301364
 dashedName: reuse-patterns-using-capture-groups
@@ -8,13 +8,13 @@ dashedName: reuse-patterns-using-capture-groups
 
 # --description--
 
-Some patterns you search for will occur multiple times in a string. It is wasteful to manually repeat that regex. There is a better way to specify when you have multiple repeat substrings in your string.
+Por vezes você procurará padrões que ocorrem várias vezes em uma string. Não faz sentido repetir a regex manualmente. Existe uma forma muito melhor de especificar quando a string possui múltiplas ocorrências do padrão buscado.
 
-You can search for repeat substrings using <dfn>capture groups</dfn>. Parentheses, `(` and `)`, are used to find repeat substrings. You put the regex of the pattern that will repeat in between the parentheses.
+Você pode usar <dfn>grupos de captura</dfn> para buscar substrings repetidas. Usamos parênteses (`(` e `)`) para criar grupos de captura. Só precisamos escrever a regex do padrão que se repete dentro deles.
 
-To specify where that repeat string will appear, you use a backslash (`\`) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be `\1` to match the first group.
+E, para especificar que a string capturada pelo grupo se repetirá, você escreve uma barra invertida (`\`) seguida de um número. Esse número começa por 1 e aumenta em um para cada grupo de captura que você usa. Por exemplo, `\1` captura o primeiro grupo.
 
-The example below matches any word that occurs twice separated by a space:
+No exemplo abaixo, é capturada qualquer palavra que se repita depois de um espaço:
 
 ```js
 let repeatStr = "regex regex";
@@ -23,65 +23,65 @@ repeatRegex.test(repeatStr);
 repeatStr.match(repeatRegex);
 ```
 
-The `test` call would return `true`, and the `match` call would return `["regex regex", "regex"]`.
+Nele, `test` retorna `true` e `match` retorna `["regex regex", "regex"]`.
 
-Using the `.match()` method on a string will return an array with the string it matches, along with its capture group.
+O método `.match()` de uma string retorna um array com a string capturada e cada grupo capturado.
 
 # --instructions--
 
-Use capture groups in `reRegex` to match a string that consists of only the same number repeated exactly three times separated by single spaces.
+Use grupos de captura na regex `reRegex` para capturar em uma string um número que aparece exatamente três vezes, separados por espaços.
 
 # --hints--
 
-Your regex should use the shorthand character class for digits.
+Sua regex deve usar o atalho de classe de caracteres para dígitos.
 
 ```js
 assert(reRegex.source.match(/\\d/));
 ```
 
-Your regex should reuse a capture group twice.
+Sua regex deve reusar um grupo de captura duas vezes.
 
 ```js
 assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 ```
 
-Your regex should match the string `42 42 42`.
+Sua regex deve encontrar a string `42 42 42`.
 
 ```js
 assert(reRegex.test('42 42 42'));
 ```
 
-Your regex should match the string `100 100 100`.
+Sua regex deve encontrar a string `100 100 100`.
 
 ```js
 assert(reRegex.test('100 100 100'));
 ```
 
-Your regex should not match the string `42 42 42 42`.
+Sua regex não deve encontrar a string `42 42 42 42`.
 
 ```js
 assert.equal('42 42 42 42'.match(reRegex.source), null);
 ```
 
-Your regex should not match the string `42 42`.
+Sua regex não deve encontrar a string `42 42`.
 
 ```js
 assert.equal('42 42'.match(reRegex.source), null);
 ```
 
-Your regex should not match the string `101 102 103`.
+Sua regex não deve encontrar a string `101 102 103`.
 
 ```js
 assert(!reRegex.test('101 102 103'));
 ```
 
-Your regex should not match the string `1 2 3`.
+Sua regex não deve encontrar a string `1 2 3`.
 
 ```js
 assert(!reRegex.test('1 2 3'));
 ```
 
-Your regex should match the string `10 10 10`.
+Sua regex deve encontrar a string `10 10 10`.
 
 ```js
 assert(reRegex.test('10 10 10'));

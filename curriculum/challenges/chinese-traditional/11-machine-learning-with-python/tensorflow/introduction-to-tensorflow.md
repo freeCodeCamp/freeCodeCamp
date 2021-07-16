@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d88
-title: Introduction to TensorFlow
+title: TensorFlow 簡介
 challengeType: 11
 videoId: r9hRyGGjOgQ
 dashedName: introduction-to-tensorflow
@@ -10,11 +10,11 @@ dashedName: introduction-to-tensorflow
 
 ## --text--
 
-Which of the following is **not** a type of tensor?
+以下哪個 **不是** 張量的類型？
 
 ## --answers--
 
-Variable
+變量
 
 ---
 
@@ -22,15 +22,15 @@ Flowing
 
 ---
 
-Placeholder
+佔位符
 
 ---
 
-SparseTensor
+稀疏張量
 
 ---
 
-Constant
+常量
 
 ## --video-solution--
 

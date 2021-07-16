@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b61
-title: Use the map Method to Extract Data from an Array
+title: Use o Método map para Extrair Dados de um Array
 challengeType: 1
 forumTopicId: 18214
 dashedName: use-the-map-method-to-extract-data-from-an-array
@@ -8,19 +8,19 @@ dashedName: use-the-map-method-to-extract-data-from-an-array
 
 # --description--
 
-So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.
+Até então nós aprendemos a usar funções puras para evitar efeitos colaterais em um programa. Vimos também que há valor em fazer funções dependerem apenas de suas entradas.
 
-This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.
+Este é apenas o começo. Como o nome sugere, programação funcional orbita uma teoria de funções.
 
-It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered <dfn>first class objects</dfn> in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
+Faz sentido conseguir passar funções como argumento a outras funções e retorná-las de outras funções. Funções são consideradas <dfn>objetos de primeira classe</dfn> em JavaScript e podem ser usadas como qualquer outro objeto. Elas podem ser salvas em variáveis, objetos ou passadas como argumento a funções.
 
-Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at `Array.prototype.map()`, or more simply `map`.
+Vamos começar com algumas funções simples de array. Alguns métodos no protótipo de objetos array. Neste exercício estamos de olho em `Array.prototype.map()`, ou simplesmente `map`.
 
-The `map` method iterates over each item in an array and returns a new array containing the results of calling the callback function on each element. It does this without mutating the original array.
+O método `map` percorre cada item de um array e retorna um novo array cujos elementos são os resultados da chamada do callback para cada item. Isso tudo acontece sem modificar o array original.
 
-When the callback is used, it is passed three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `map` method was called.
+A função callback é chamada com três argumentos. O primeiro argumento é o elemento que está a ser processado. O segundo é o índice deste elemento e o terceiro é o array do qual `map` foi chamado.
 
-See below for an example using the `map` method on the `users` array to return a new array containing only the names of the users as elements. For simplicity, the example only uses the first argument of the callback.
+Abaixo você vê um exemplo do `map` sendo usado do array `users` para retornar um novo array apenas com os nomes dos usuários. O exemplo usa apenas o primeiro argumento do callback por simplicidade.
 
 ```js
 const users = [
@@ -33,15 +33,15 @@ const names = users.map(user => user.name);
 console.log(names);
 ```
 
-The console would display the value `[ 'John', 'Amy', 'camperCat' ]`.
+O console mostraria o valor `[ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 
-The `watchList` array holds objects with information on several movies. Use `map` on `watchList` to assign a new array of objects to the `ratings` variable. Each movie in the new array should have only a `title` key with the name of the film, and a `rating` key with the IMDB rating. The code in the editor currently uses a `for` loop to do this, so you should replace the loop functionality with your `map` expression.
+A variável `watchList` armazena um array de objetos com informações de diversos filmes. Use o `map` na `watchList` para atribuir uma nova matriz de objetos à variável</code>ratins`. Cada filme no novo array deve ter apenas um <code>title` com o nome do filme, e uma chave `rating` com a classificação do IMDB. O código atual no editor usa um loop `for` para fazer isso, então você deve substituir o laço com sua expressão `map`.
 
 # --hints--
 
-The `watchList` variable should not change.
+A variável `watchList` não deve ser alterada.
 
 ```js
 assert(
@@ -49,19 +49,19 @@ assert(
 );
 ```
 
-Your code should not use a `for` loop.
+Você não deve usar loops `for`.
 
 ```js
 assert(!code.match(/for\s*?\([\s\S]*?\)/));
 ```
 
-Your code should use the `map` method.
+Você deve usar o método `map`.
 
 ```js
 assert(code.match(/\.map/g));
 ```
 
-`ratings` should equal `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
+`ratings` deve ser igual a `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
 
 ```js
 assert.deepEqual(ratings, [

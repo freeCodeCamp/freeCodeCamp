@@ -26,15 +26,15 @@ Come puoi vedere, il corpo è codificato come la query string. Questo è il form
 
 # --instructions--
 
-Installa il modulo `body-parser` nel tuo `package.json`. Poi, richiedilo con `require` all'inizio del file. Memorizzalo in una variabile chiamata `bodyParser`. Il middleware per gestire i dati urlencoded viene restituito da `bodyParser.urlencoded({extended: false})`. Pass the function returned by the previous method call to `app.use()`. As usual, the middleware must be mounted before all the routes that depend on it.
+Installa il modulo `body-parser` nel tuo `package.json`. Poi, richiedilo con `require` all'inizio del file. Memorizzalo in una variabile chiamata `bodyParser`. Il middleware per gestire i dati urlencoded viene restituito da `bodyParser.urlencoded({extended: false})`. Passa ad `app.use()` la funzione restituita dal metodo invocato prima. Come al solito, il middleware deve essere montato prima di tutte le rotte che dipendono da esso.
 
-**Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing.
+**Nota:** `extended` è un'opzione di configurazione che dice al `body-parser` quale analisi deve essere utilizzata. Quando `extended=false` viene utilizzata la libreria di codifica classica `querystring`. Quando `extended=true` viene usata per il parsing la libreria `qs`.
 
-When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default JavaScript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
+Quando si utilizza `extended=false`, i valori possono essere solo stringhe o array. L'oggetto restituito quando si utilizza `querystring` non eredita prototipalmente da `Object`, predefinito in JavaScript, quindi funzioni come `hasOwnProperty` e `toString` non saranno disponibili. La versione estesa consente una maggiore flessibilità dei dati, ma è superata da JSON.
 
 # --hints--
 
-The 'body-parser' middleware should be mounted
+Il middleware 'body-parser' dovrebbe essere montato
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9d
-title: Match Beginning String Patterns
+title: Padrões de Início de String
 challengeType: 1
 forumTopicId: 301349
 dashedName: match-beginning-string-patterns
@@ -8,9 +8,9 @@ dashedName: match-beginning-string-patterns
 
 # --description--
 
-Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
+Desafios anteriores mostraram que expressões regulares podem ser usadas para capturar um número de resultados. Elas também podem ser usadas para procurar em posições específicas de strings.
 
-In an earlier challenge, you used the caret character (`^`) inside a character set to create a negated character set in the form `[^thingsThatWillNotBeMatched]`. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+Mais cedo você usou o circunflexo (`^`) em classes de caracteres para procurar caracteres que não devem ser capturados, como em `[^caracteresQueNãoQueremos]`. Quando usados fora de classes de caracteres, o circunflexo serve para buscar a partir do começo de strings.
 
 ```js
 let firstString = "Ricky is first and can be found.";
@@ -20,33 +20,33 @@ let notFirst = "You can't find Ricky now.";
 firstRegex.test(notFirst);
 ```
 
-The first `test` call would return `true`, while the second would return `false`.
+A primeira chamada a `test` retorna `true` enquanto a segunda retorna `false`.
 
 # --instructions--
 
-Use the caret character in a regex to find `Cal` only in the beginning of the string `rickyAndCal`.
+Use o circunflexo em uma regex para encontrar `Cal`, mas apenas no começo da string `rickyAndCal`.
 
 # --hints--
 
-Your regex should search for the string `Cal` with a capital letter.
+Sua regex deve buscar a string `Cal` com uma maiúscula.
 
 ```js
 assert(calRegex.source == '^Cal');
 ```
 
-Your regex should not use any flags.
+Sua regex não deve usar nenhuma flag.
 
 ```js
 assert(calRegex.flags == '');
 ```
 
-Your regex should match the string `Cal` at the beginning of the string.
+Sua regex deve capturar a string `Cal` no começo de uma string.
 
 ```js
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
-Your regex should not match the string `Cal` in the middle of a string.
+Sua regex não deve capturar a string `Cal` no meio de uma string.
 
 ```js
 assert(!calRegex.test('Ricky and Cal both like racing.'));
