@@ -96,6 +96,7 @@
     "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu portafolio público de freeCodeCamp.",
     "data": "Para ver qué datos tenemos en tu cuenta, haz clic en el botón \"Descarga tus datos\" a continuación",
     "disabled": "Tus certificaciones se deshabilitarán si se configuran como privadas.",
+    "private-name": "Your name will not appear on your certifications, if this is set to private.",
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes de cuenta de {{username}}",
     "username": {

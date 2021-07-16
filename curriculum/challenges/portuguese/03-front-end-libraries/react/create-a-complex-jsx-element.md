@@ -1,6 +1,6 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5d
-title: Create a Complex JSX Element
+title: Criar um Elemento JSX Complexo
 challengeType: 6
 forumTopicId: 301382
 dashedName: create-a-complex-jsx-element
@@ -8,17 +8,17 @@ dashedName: create-a-complex-jsx-element
 
 # --description--
 
-The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.
+O último desafio foi um exemplo simples de JSX, mas JSX também pode representar HTML mais complexo.
 
-One important thing to know about nested JSX is that it must return a single element.
+Uma coisa importante a saber sobre JSX aninhado é que ele deve retornar um único elemento.
 
-This one parent element would wrap all of the other levels of nested elements.
+Este único elemento pai envolveria todos os outros níveis de elementos aninhados.
 
-For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.
+Por exemplo, vários elementos JSX escritos como irmãos sem elemento encapsulador pai não vai transpilar.
 
-Here's an example:
+Aqui está um exemplo:
 
-**Valid JSX:**
+**JSX válido:**
 
 ```jsx
 <div>
@@ -28,7 +28,7 @@ Here's an example:
 </div>
 ```
 
-**Invalid JSX:**
+**JSX inválido:**
 
 ```jsx
 <p>Paragraph One</p>
@@ -38,39 +38,39 @@ Here's an example:
 
 # --instructions--
 
-Define a new constant `JSX` that renders a `div` which contains the following elements in order:
+Defina uma nova constante `JSX` que renderiza uma `div` a qual contém os elementos a seguir em ordem:
 
-An `h1`, a `p`, and an unordered list that contains three `li` items. You can include any text you want within each element.
+Um `h1`, um `p`, e uma lista não ordenada que contém três itens `li`. Você pode incluir qualquer texto que você quiser dentro de cada elemento.
 
-**Note:** When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a `div` tag to wrap all the child elements within a single parent element. If you remove the `div`, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.
+**Nota:** Ao renderizar vários elementos como este, você pode envolver todos entre parênteses, mas não é estritamente necessário. Note também que este desafio usa uma tag `div` para encapsular todos os elementos filhos dentro de um único elemento pai. Se você remover a `div`, o JSX não será mais transpilável. Tenha isso em mente, uma vez que ele também será aplicado quando você retornar elementos JSX em componentes React.
 
 # --hints--
 
-The constant `JSX` should return a `div` element.
+A constante `JSX` deve retornar um elemento `div`.
 
 ```js
 assert(JSX.type === 'div');
 ```
 
-The `div` should contain an `h1` tag as the first element.
+O `div` deve conter uma tag `h1` como o primeiro elemento.
 
 ```js
 assert(JSX.props.children[0].type === 'h1');
 ```
 
-The `div` should contain a `p` tag as the second element.
+A `div` deve conter uma tag `p` como o segundo elemento.
 
 ```js
 assert(JSX.props.children[1].type === 'p');
 ```
 
-The `div` should contain a `ul` tag as the third element.
+O `div` deve conter uma tag `ul` como o terceiro elemento.
 
 ```js
 assert(JSX.props.children[2].type === 'ul');
 ```
 
-The `ul` should contain three `li` elements.
+O `ul` deve conter três elementos `li`.
 
 ```js
 assert(

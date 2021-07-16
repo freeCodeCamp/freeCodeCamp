@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b35
-title: Catch Misspelled Variable and Function Names
+title: Capture Nomes de Variáveis e Funções Com Erros Ortográficos
 challengeType: 1
 forumTopicId: 301186
 dashedName: catch-misspelled-variable-and-function-names
@@ -8,41 +8,41 @@ dashedName: catch-misspelled-variable-and-function-names
 
 # --description--
 
-The `console.log()` and `typeof` methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.
+Os métodos `console.log()` e `typeof` são duas formas primárias para verificar valores intermediários e tipos de saída do programa. Agora é hora entrar nas formas comuns que um bug assume. Um problema de nível de sintaxe que digitadores rápidos podem ter passado é o humilde erro de digitação incorreta.
 
-Transposed, missing, or mis-capitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript variable and function names are case-sensitive.
+Caracteres deslocados, faltando ou capitalizado erroneamente em um nome de variável ou função fará com que o navegador procure por um objeto que não existe - e reclamará na forma de um erro de referência. Variáveis e funções JavaScript são sensíveis a caracteres maiúsculos e minúsculos.
 
 # --instructions--
 
-Fix the two spelling errors in the code so the `netWorkingCapital` calculation works.
+Corrija os dois erros de ortografia no código para que o cálculo `netWorkingCapital` funcione.
 
 # --hints--
 
-Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".
+Verifique a ortografia das duas variáveis usadas no cálculo de netWorkingCapital, a saída do console deve mostrar que "Net working capital is: 2".
 
 ```js
 assert(netWorkingCapital === 2);
 ```
 
-There should be no instances of mis-spelled variables in the code.
+Não deve haver instâncias de variáveis com ortografia incorretas no código.
 
 ```js
 assert(!code.match(/recievables/g));
 ```
 
-The `receivables` variable should be declared and used properly in the code.
+A variável `receivables` deve ser declarada e usada corretamente no código.
 
 ```js
 assert(code.match(/receivables/g).length == 2);
 ```
 
-There should be no instances of mis-spelled variables in the code.
+Não deve haver instâncias de variáveis com ortografia incorretas no código.
 
 ```js
 assert(!code.match(/payable;/g));
 ```
 
-The `payables` variable should be declared and used properly in the code.
+A variável `payables` deve ser declarada e usada corretamente no código.
 
 ```js
 assert(code.match(/payables/g).length == 2);

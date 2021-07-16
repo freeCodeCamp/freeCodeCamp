@@ -7,19 +7,34 @@ dashedName: part-7
 
 # --description--
 
-You can see the body, it's the horizontal line on your page; the box around it is the html element. Make your body fill the whole viewport by giving it a `height` of `100vh`. Remove the default margin from the body by setting the `margin` to `0`. Finally, set the `overflow` property to `hidden` to hide any scroll bars that appear when something extends past the viewport.
+You can see the `body` (it's the inner-most box on your page); the box around it is the `html` element. Make your `body` fill the whole viewport by giving it a `height` of `100vh`. Remove the default `margin` from the `body` by setting the `margin` to `0`. Finally, set the `overflow` property to `hidden` to hide any scroll bars that appear when something extends past the viewport.
 
 # --hints--
 
-test-text
+You should use the `body` selector.
 
 ```js
-const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /height\s*:\s*100vh\s*(;|})/g.test(body) &&
-    /margin\s*:\s*(0|0px)\s*(;|})/g.test(body) &&
-    /overflow\s*:\s*hidden\s*(;|})/g.test(body)
-);
+assert.exists(new __helpers.CSSHelp(document).getStyle('body'));
+```
+
+Your `body` should have a `height` of `100vh`.
+
+```js
+const bodyStyles = new __helpers.CSSHelp(document).getStyle('body');
+assert.equal(bodyStyles?.height, '100vh');
+```
+
+Your `body` should have a `margin` of `0`.
+
+```js
+// TODO: Editor adds margin as preferential style - 8px is always added.
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.margin, '0px');
+```
+
+Your `body` should have the `overflow` property set to `hidden`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.overflow, 'hidden');
 ```
 
 # --seed--
@@ -31,12 +46,7 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -44,28 +54,16 @@ assert(
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+--fcc-editable-region--
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
-  </head>
 
-  <body>
-  </body>
-</html>
+--fcc-editable-region--
+    
 ```
+

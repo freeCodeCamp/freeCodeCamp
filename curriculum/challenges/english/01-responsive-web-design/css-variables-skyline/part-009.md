@@ -7,17 +7,26 @@ dashedName: part-9
 
 # --description--
 
-Give your background buildings element a `width` and `height` of `100%` to make it the full width and height of its parent, the body.
+Give your background buildings element a `width` and `height` of `100%` to make it the full width and height of its parent, the `body`.
 
 # --hints--
 
-test-text
+You should use the `background-buildings` class to select the correct element.
 
 ```js
-const bb = code.match(/\.background-buildings\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  /width\s*:\s*100%\s*(;|})/g.test(bb) && /height\s*:\s*100%\s*(;|})/g.test(bb)
-);
+assert.exists(new __helpers.CSSHelp(document).getStyle('.background-buildings'));
+```
+
+Your `.background-buildings` element should have a `width` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.background-buildings')?.width, '100%');
+```
+
+Your `.background-buildings` element should have a `height` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.background-buildings')?.height, '100%');
 ```
 
 # --seed--
@@ -29,18 +38,7 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -49,34 +47,21 @@ assert(
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+--fcc-editable-region--
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="background-buildings"></div>
-  </body>
-</html>
+--fcc-editable-region--
+    
 ```
+

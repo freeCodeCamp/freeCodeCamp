@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db4
-title: Developing a Port Scanner
+title: 開發一個端口掃描器
 challengeType: 11
 videoId: z_qkqZS7KZ4
 dashedName: developing-a-port-scanner
@@ -10,19 +10,19 @@ dashedName: developing-a-port-scanner
 
 ## --text--
 
-What is the main difference between the `.connect()` and `.connect_ex()` methods?
+`.connect()` 和 `.connect_ex()` 方法的主要區別是什麼？
 
 ## --answers--
 
-There is no difference between the two methods.
+這兩種方法之間沒有區別。
 
 ---
 
-If there is an error or if no host is found, `.connect()` returns an error code while `.connect_ex()` raises an exception.
+如果有錯誤或沒有找到主機，`.connect()` 返回一個錯誤代碼，而 `.connect_ex()` 則引發一個異常。
 
 ---
 
-If there is an error or if no host is found, `.connect()` raises an exception while `.connect_ex()` returns an error code.
+如果有錯誤或沒有找到主機，`.connect()` 會引發一個異常，而 `.connect_ex()` 會返回一個錯誤代碼。
 
 ## --video-solution--
 

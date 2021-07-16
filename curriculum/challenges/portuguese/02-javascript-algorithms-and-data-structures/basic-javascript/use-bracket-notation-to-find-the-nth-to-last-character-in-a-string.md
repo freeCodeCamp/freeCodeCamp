@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c452eddfaeb5bdef
-title: Use Bracket Notation to Find the Nth-to-Last Character in a String
+title: Use Notação de Colchetes para Descobrir o Nº Antes do Ultimo em uma String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344
@@ -9,34 +9,34 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 # --description--
 
-You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.
+Você pode usar o mesmo princípio que nós acabamos de usar para recuperar o último caractere em uma string, para recuperar o Nº antes do último caractere.
 
-For example, you can get the value of the third-to-last letter of the `var firstName = "Augusta"` string by using `firstName[firstName.length - 3]`
+Por exemplo, você pode pegar o valor da antepenúltima letra da string `var fistName = "Augusta` usando `firstName[firstName.length -3]`
 
-Example:
+Exemplo:
 
 ```js
 var firstName = "Augusta";
 var thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
-`thirdToLastLetter` would have a value of the string `s`.
+`thirdToLastLetter` teria o valor da string `s`.
 
 # --instructions--
 
-Use <dfn>bracket notation</dfn> to find the second-to-last character in the `lastName` string.
+Use <dfn>notação de colchetes</dfn> para descobrir o penúltimo caractere na string `lastName`.
 
-**Hint:** Try looking at the example above if you get stuck.
+**Dica:** Tente olhar o exemplo acima se você ficar travado.
 
 # --hints--
 
-`secondToLastLetterOfLastName` should be the letter `c`.
+`secondToLastLetterOfLastName` deve ser a letra `c`.
 
 ```js
 assert(secondToLastLetterOfLastName === 'c');
 ```
 
-You should use `.length` to get the second last letter.
+Você deve usar `.length` para pegar a penúltima letra.
 
 ```js
 assert(code.match(/\.length/g).length > 0);

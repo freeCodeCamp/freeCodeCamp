@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d94
-title: 'Neural Networks: Optimizers'
+title: '神經網絡：優化'
 challengeType: 11
 videoId: hdOtRPQe1o4
 dashedName: neural-networks-optimizers
@@ -10,19 +10,19 @@ dashedName: neural-networks-optimizers
 
 ## --text--
 
-What is an optimizer function?
+什麼是優化函數？
 
 ## --answers--
 
-A function that increases the accuracy of a model's predictions.
+一種提高模型預測準確性的函數。
 
 ---
 
-A function that implements the gradient descent and backpropagation algorithms for you.
+一個爲你實現梯度下降和反向傳播算法的函數。
 
 ---
 
-A function that reduces the time a model needs to train.
+一個可以減少模型訓練時間的函數。
 
 ## --video-solution--
 

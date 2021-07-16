@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610cb
-title: Recurrent Neural Networks RNN and Long Short Term Memory LSTM
+title: 循环神经网络 RNN 和长短期记忆 LSTM
 challengeType: 11
 videoId: UVimlsy9eW0
 dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
@@ -10,19 +10,19 @@ dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 ## --text--
 
-What are the main neural network components that make up a Long Short Term Memory network?
+构成长短期记忆网络的主要神经网络组件是什么？
 
 ## --answers--
 
-New information and prediction.
+新的信息和预测
 
 ---
 
-Prediction, collected possibilities, and selection.
+预测、收集的可能性和选择
 
 ---
 
-Prediction, ignoring, forgetting, and selection.
+预测、忽视、遗忘和选择
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5a
-title: Run Functional Tests on an API Response using Chai-HTTP III - PUT method
+title: Eseguire test funzionali su una risposta API utilizzando il metodo Chai-HTTP III - PUT
 challengeType: 2
 forumTopicId: 301590
 dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-method
@@ -8,9 +8,9 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto viene costruito a partire dal seguente progetto iniziale su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-In the next example we'll see how to send data in a request payload (body). We are going to test a PUT request. The `'/travellers'` endpoint accepts a JSON object taking the structure:
+Nel prossimo esempio vedremo come inviare i dati in nel corpo di un payload di richiesta. Stiamo per testare una richiesta PUT. L'endpoint `'/travellers'` accetta un oggetto JSON che prende la struttura:
 
 ```json
 {
@@ -18,7 +18,7 @@ In the next example we'll see how to send data in a request payload (body). We a
 }
 ```
 
-The route responds with :
+La rotta risponde con:
 
 ```json
 {
@@ -26,13 +26,13 @@ The route responds with :
 }
 ```
 
-See the server code for more details.
+Vedi il codice del server per maggiori dettagli.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "Colombo"}'` test (`// #3`):
+All'interno di `tests/2_functional-tests.js`, modifica il test `'send {surname: "Colombo"}'` (`// #3`):
 
-Send the following JSON response as a payload:
+Invia la seguente risposta JSON come payload:
 
 ```json
 {
@@ -40,18 +40,18 @@ Send the following JSON response as a payload:
 }
 ```
 
-Check for the following, within the `request.end` callback:
+Controlla quanto segue, all'interno della callback `request.end`:
 
 1.  `status`
 2.  `type`
 3.  `body.name`
 4.  `body.surname`
 
-Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+Segui l'ordine di asserzione indicato sopra - facciamo affidamento su di esso. Assicurati di rimuovere `assert.fail()`, una volta finito.
 
 # --hints--
 
-All tests should pass.
+Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
@@ -65,7 +65,7 @@ All tests should pass.
   );
 ```
 
-You should test for 'res.status' to be 200.
+Dovresti verificare che 'res.status' sia 200.
 
 ```js
 (getUserInput) =>
@@ -81,7 +81,7 @@ You should test for 'res.status' to be 200.
   );
 ```
 
-You should test for 'res.type' to be 'application/json'.
+Dovresti verificare che 'res.type' sia 'application/json'.
 
 ```js
 (getUserInput) =>
@@ -97,7 +97,7 @@ You should test for 'res.type' to be 'application/json'.
   );
 ```
 
-You should test for 'res.body.name' to be 'Cristoforo'.
+Dovresti verificare che 'res.body.name' sia 'Cristoforo''.
 
 ```js
 (getUserInput) =>
@@ -113,7 +113,7 @@ You should test for 'res.body.name' to be 'Cristoforo'.
   );
 ```
 
-You should test for 'res.body.surname' to be 'Colombo'.
+Dovresti verificare che 'res.body.surname' sia 'Colombo''.
 
 ```js
 (getUserInput) =>

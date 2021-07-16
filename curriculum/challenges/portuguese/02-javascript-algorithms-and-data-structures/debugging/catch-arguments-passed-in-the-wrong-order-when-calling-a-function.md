@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b3a
-title: Catch Arguments Passed in the Wrong Order When Calling a Function
+title: Capture Argumentos Passados na Ordem Errada Quando Chamando uma Função
 challengeType: 1
 forumTopicId: 301184
 dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
@@ -8,21 +8,21 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --description--
 
-Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.
+Continuando a discussão sobre chamada de funções, o próximo bug para prestar atenção é quando os argumentos de uma função são fornecidos na ordem incorreta. Se os argumentos forem de diferentes tipos, tal como uma função esperando um array e um inteiro, isso irá provavelmente lançar um erro de tempo de execução. Se os argumentos são do mesmo tipo (todos os inteiros, por exemplo), então a lógica do código não fará sentido. Certifique-se de fornecer todos os argumentos exigidos, na ordem adequada para evitar esses problemas.
 
 # --instructions--
 
-The function `raiseToPower` raises a base to an exponent. Unfortunately, it's not called properly - fix the code so the value of `power` is the expected 8.
+A função `raiseToPower` eleva uma base para um expoente. Infelizmente, não é chamada corretamente - corrija o código para que o valor de `power` seja o esperado 8.
 
 # --hints--
 
-Your code should fix the variable `power` so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.
+Seu código deve corrigir a variável `power` para que seja igual a 2 elevado a 3ª potência, e não 3 elevado a 2ª potência.
 
 ```js
 assert(power == 8);
 ```
 
-Your code should use the correct order of the arguments for the `raiseToPower` function call.
+Seu código deve usar a ordem correta dos argumentos para a chamada da função `raiseToPower`.
 
 ```js
 assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));

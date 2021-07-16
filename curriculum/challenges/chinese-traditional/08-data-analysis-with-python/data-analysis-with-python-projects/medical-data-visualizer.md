@@ -1,23 +1,24 @@
 ---
 id: 5e46f7f8ac417301a38fb92a
-title: Medical Data Visualizer
+title: 醫療數據可視化工具
 challengeType: 10
+forumTopicId: 462368
 dashedName: medical-data-visualizer
 ---
 
 # --description--
 
-In this project, you will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas.
+在這個項目中，你將要使用 matplotlib，seaborn 和 pandas 來對健康檢查數據進行數據可視化和計算。
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-medical-data-visualizer).
+你可以[在 Replit 上查看整個項目的具體描述和初始代碼](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer)。
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+打開此鏈接後，fork 這個項目。 一旦你根據 “README.md” 中的說明完成項目，請提交你的項目到下面的鏈接。
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+我們仍在開發 Python 數據分析課程的交互式課程部分。 現在，你需要使用其他資源來學習如何通過這一挑戰。
 
 # --hints--
 
-It should pass all Python tests.
+它應該通過所有的 Python 測試。
 
 ```js
 

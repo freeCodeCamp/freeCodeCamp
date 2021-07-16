@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b76
-title: Make Code More Reusable with the this Keyword
+title: Faça Código Mais Reutilizável com a Palavra-Chave this
 challengeType: 1
 forumTopicId: 301321
 dashedName: make-code-more-reusable-with-the-this-keyword
@@ -8,15 +8,15 @@ dashedName: make-code-more-reusable-with-the-this-keyword
 
 # --description--
 
-The last challenge introduced a method to the `duck` object. It used `duck.name` dot notation to access the value for the `name` property within the return statement:
+O último desafio introduziu um método ao objeto `duck`. Ele utiliza ponto notação (`duck.name`) para acessar o valor da propriedade `name` dentro da declaração de retorno:
 
 ```js
 sayName: function() {return "The name of this duck is " + duck.name + ".";}
 ```
 
-While this is a valid way to access the object's property, there is a pitfall here. If the variable name changes, any code referencing the original name would need to be updated as well. In a short object definition, it isn't a problem, but if an object has many references to its properties there is a greater chance for error.
+Enquanto isso é uma forma válida de acessar a propriedade do objeto, tem uma armadilha aqui. Se o nome da variável mudar, qualquer código referenciando o nome original seria necessário ser atualizado também. Em uma definição curta de objeto, isso não é um problema, mas se um objeto possui muitas referencias para suas propriedades, há uma chance maior de erro.
 
-A way to avoid these issues is with the `this` keyword:
+Uma forma para evitar estes problemas é utilizar a palavra-chave `this`:
 
 ```js
 let duck = {
@@ -26,21 +26,21 @@ let duck = {
 };
 ```
 
-`this` is a deep topic, and the above example is only one way to use it. In the current context, `this` refers to the object that the method is associated with: `duck`. If the object's name is changed to `mallard`, it is not necessary to find all the references to `duck` in the code. It makes the code reusable and easier to read.
+`this` é um tópico bem extenso e o exemplo acima é apenas uma forma de utilizá-lo. No contexto atual, `this` refere-se ao objeto que o método está associado à: `duck`. Se o nome do objeto é alterado para `mallard`, não é necessariamente para encontrar todas as referencias para `duck` no código. Isso torna o código reutilizável e legível.
 
 # --instructions--
 
-Modify the `dog.sayLegs` method to remove any references to `dog`. Use the `duck` example for guidance.
+Modifique o método `dog.sayLegs` para remover qualquer referencia para `dog`. Utilize o exemplo `duck` como guia.
 
 # --hints--
 
-`dog.sayLegs()` should return the given string.
+`dog.sayLegs()` deve retornar a string definida.
 
 ```js
 assert(dog.sayLegs() === 'This dog has 4 legs.');
 ```
 
-Your code should use the `this` keyword to access the `numLegs` property of `dog`.
+Seu código deve utilizar a palavra-chave `this` para acessar a propriedade `numLegs` de `dog`.
 
 ```js
 assert(code.match(/this\.numLegs/g));

@@ -84,81 +84,10 @@ const mapDispatchToProps = {
 };
 
 class MultifileEditor extends Component {
-  constructor(...props) {
-    super(...props);
-
-    // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
-    // available files into that order.  i.e. if it's just one file it will
-    // automatically be first, but  if there's jsx and js (for some reason) it
-    //  will be [jsx, js].
-    // this.state = {
-    //   fileKey: 'indexhtml'
-    // };
-
-    // NOTE: This looks like it should be react state. However we need
-    // to access monaco.editor to create the models and store the state and that
-    // is only available in the react-monaco-editor component's lifecycle hooks
-    // and not react's lifecyle hooks.
-    // As a result it was unclear how to link up the editor's lifecycle with
-    // react's lifecycle. Simply storing the models and state here and letting
-    // the editor control them seems to be the best solution.
-
-    // TODO: is there any point in initializing this? It should be fine with
-    // this.data = {indexjs:{}, indexcss:{}, indexhtml:{}, indexjsx: {}}
-
-    this.data = {
-      indexjs: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      },
-      indexcss: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      },
-      indexhtml: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      },
-      indexjsx: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      }
-    };
-
-    // TODO: we might want to store the current editor here
-    this.focusOnEditor = this.focusOnEditor.bind(this);
-  }
-
   focusOnHotkeys() {
     if (this.props.containerRef.current) {
       this.props.containerRef.current.focus();
     }
-  }
-
-  focusOnEditor() {
-    // TODO: it should focus one of the editors
-    // this._editor.focus();
-  }
-
-  componentWillUnmount() {
-    // this.setState({ fileKey: null });
-    this.data = null;
   }
 
   render() {
@@ -221,9 +150,9 @@ class MultifileEditor extends Component {
                   challengeFiles={challengeFiles}
                   containerRef={containerRef}
                   description={targetEditor === 'indexjsx' ? description : null}
+                  editorRef={editorRef}
                   fileKey='indexjsx'
                   key='indexjsx'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -240,9 +169,9 @@ class MultifileEditor extends Component {
                   description={
                     targetEditor === 'indexhtml' ? description : null
                   }
+                  editorRef={editorRef}
                   fileKey='indexhtml'
                   key='indexhtml'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -257,9 +186,9 @@ class MultifileEditor extends Component {
                   challengeFiles={challengeFiles}
                   containerRef={containerRef}
                   description={targetEditor === 'indexcss' ? description : null}
+                  editorRef={editorRef}
                   fileKey='indexcss'
                   key='indexcss'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />
@@ -275,9 +204,9 @@ class MultifileEditor extends Component {
                   challengeFiles={challengeFiles}
                   containerRef={containerRef}
                   description={targetEditor === 'indexjs' ? description : null}
+                  editorRef={editorRef}
                   fileKey='indexjs'
                   key='indexjs'
-                  ref={editorRef}
                   resizeProps={resizeProps}
                   theme={editorTheme}
                 />

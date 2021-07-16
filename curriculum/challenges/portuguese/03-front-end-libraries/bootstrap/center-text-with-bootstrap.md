@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd8acde08812
-title: Center Text with Bootstrap
+title: Centralize Texto com Bootstrap
 challengeType: 0
 forumTopicId: 16771
 dashedName: center-text-with-bootstrap
@@ -8,9 +8,9 @@ dashedName: center-text-with-bootstrap
 
 # --description--
 
-Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class `text-center` to our `h2` element.
+Agora que estamos usando Bootstrap, podemos centralizar nossos elementos de cabeçalho para deixá-los com melhor aparência. Tudo que precisamos fazer é adicionar a classe `text-center` para o nosso elemento `h2`.
 
-Remember that you can add several classes to the same element by separating each of them with a space, like this:
+Lembre-se que você pode adicionar diversas classes para o mesmo elemento ao separar cada classe com um espaço, dessa forma:
 
 ```html
 <h2 class="red-text text-center">your text</h2>
@@ -18,13 +18,13 @@ Remember that you can add several classes to the same element by separating each
 
 # --hints--
 
-Your `h2` element should be centered by applying the class `text-center`
+Seu elemento `h2` deve estar centralizado ao aplicar a classe `text-center`
 
 ```js
 assert($('h2').hasClass('text-center'));
 ```
 
-Your `h2` element should still have the class `red-text`
+Seu elemento `h2` ainda deve ter a classe `red-text`
 
 ```js
 assert($('h2').hasClass('red-text'));

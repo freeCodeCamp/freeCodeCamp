@@ -7,14 +7,32 @@ dashedName: part-1
 
 # --description--
 
-Welcome to the CSS Variables skyline project! Start by adding the `!DOCTYPE html` declaration at the top of the document so the browser knows what type of document it's reading.
+Welcome to the CSS Variables Skyline project! Start by adding the `!DOCTYPE html` declaration at the top of the document so the browser knows what type of document it's reading.
 
 # --hints--
 
-test-text
+Your code should contain the `DOCTYPE` reference.
 
 ```js
-assert(code.match(/<!DOCTYPE\s+html\s*>/gi));
+assert(code.match(/<!DOCTYPE/gi));
+```
+
+You should include a space after the `DOCTYPE` reference.
+
+```js
+assert(code.match(/<!DOCTYPE\s+/gi));
+```
+
+You should define the document type to be `html`.
+
+```js
+assert(code.match(/html/gi));
+```
+
+You should close the `DOCTYPE` declaration with a `>` after the type.
+
+```js
+assert(code.match(/html\s*>/gi));
 ```
 
 # --seed--
@@ -22,10 +40,8 @@ assert(code.match(/<!DOCTYPE\s+html\s*>/gi));
 ## --seed-contents--
 
 ```html
-```
+--fcc-editable-region--
 
-# --solutions--
+--fcc-editable-region--
 
-```html
-<!DOCTYPE html>
 ```

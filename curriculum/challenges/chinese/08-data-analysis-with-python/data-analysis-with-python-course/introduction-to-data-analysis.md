@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14c
-title: Introduction to Data Analysis
+title: 数据分析简介
 challengeType: 11
 videoId: VJrP2FUzKP0
 dashedName: introduction-to-data-analysis
@@ -8,33 +8,32 @@ dashedName: introduction-to-data-analysis
 
 # --description--
 
-More resources:
+以下有更多的资料：
 
-\- [Slides](https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk)
+\- [幻灯片](https://docs.google.com/presentation/d/1cUIt8b2ySz-85_ykfeuuWsurccwTAuFPn782pZBzFsU/edit?usp=sharing)
 
 # --question--
 
 ## --text--
 
-Why should you choose R over Python for data analysis?
+以下哪一项 **不是** 数据分析的一部分？
 
 ## --answers--
 
-It's simple to learn.
+建立统计模型和数据可视化。
 
 ---
 
-It's better at dealing with advanced statistical methods.
+为分析选择所需的结论。
 
 ---
 
-There are many powerful libraries that support R.
+修复不正确的值并删除无效数据。
 
 ---
 
-It's free and open source.
+将数据转换为适当的数据结构。
 
 ## --video-solution--
 
 2
-

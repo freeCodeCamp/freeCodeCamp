@@ -7,14 +7,38 @@ dashedName: part-2
 
 # --description--
 
-Add opening and closing `html` tags below the doctype so you have a place to start putting some code.
+Add opening and closing `html` tags below the `DOCTYPE` so you have a place to start putting some code.
 
 # --hints--
 
-test-text
+Your `html` element should be below the `DOCTYPE` declaration.
 
 ```js
-assert(code.match(/<!DOCTYPE\s+html\s*>\s*<html\s*>\s*<\/html\s*>/gi));
+assert(code.match(/(?<!<html\s*>)<!DOCTYPE\s+html\s*>/gi));
+```
+
+Your `html` element should have an opening tag.
+
+```js
+assert(code.match(/<html\s*>/gi));
+```
+
+Your `html` element should have a closing tag.
+
+```js
+assert(code.match(/<\/html\s*>/));
+```
+
+Your `html` tags should be in the correct order.
+
+```js
+assert(code.match(/<html\s*>\s*<\/html\s*>/));
+```
+
+You should only have one `html` element.
+
+```js
+assert(document.querySelectorAll('html').length === 1);
 ```
 
 # --seed--
@@ -23,13 +47,8 @@ assert(code.match(/<!DOCTYPE\s+html\s*>\s*<html\s*>\s*<\/html\s*>/gi));
 
 ```html
 <!DOCTYPE html>
-```
+--fcc-editable-region--
 
-# --solutions--
+--fcc-editable-region--
 
-```html
-<!DOCTYPE html>
-<html>
-  
-</html>
 ```

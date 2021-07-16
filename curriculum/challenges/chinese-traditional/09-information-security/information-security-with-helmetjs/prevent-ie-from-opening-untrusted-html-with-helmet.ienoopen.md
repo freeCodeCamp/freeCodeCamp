@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
+title: 使用 helment.ieNoOpen() 防止 IE 打開不受信任的 HTML
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -8,17 +8,17 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+請注意，本項目在[這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基礎上進行開發。 你也可以從[GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/)上克隆。
 
-Some web applications will serve untrusted HTML for download. Some versions of Internet Explorer by default open those HTML files in the context of your site. This means that an untrusted HTML page could start doing bad things in the context of your pages. This middleware sets the X-Download-Options header to noopen. This will prevent IE users from executing downloads in the trusted site’s context.
+有些網站會下載不安全的 HTML 文件。 某些版本的 IE 默認情況下還會在你網站的作用域下打開這些 HTML 文件。 換句話說，這些不安全的 HTML 頁面可以在你的網站做惡意行爲。 我們可以通過中間件來設置 header 中的 X-Download-Options 字段，讓它的值爲 noopen。 這樣就可以防止 IE 在不信任的網站下執行下載的文件。
 
 # --instructions--
 
-Use the `helmet.ieNoOpen()` method on your server.
+應正確加載 `helmet.ieNoOpen()` 中間件
 
 # --hints--
 
-helmet.ieNoOpen() middleware should be mounted correctly
+helmet.ieNoOpen() 中間件應正確安裝。
 
 ```js
 (getUserInput) =>

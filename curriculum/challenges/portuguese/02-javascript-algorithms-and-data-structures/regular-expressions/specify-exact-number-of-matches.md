@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba7
-title: Specify Exact Number of Matches
+title: Especificando o Número Exato de Capturas
 challengeType: 1
 forumTopicId: 301365
 dashedName: specify-exact-number-of-matches
@@ -8,11 +8,11 @@ dashedName: specify-exact-number-of-matches
 
 # --description--
 
-You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want a specific number of matches.
+Você pode especificar um número mínimo e um máximo de capturas com chaves. Às vezes, você só quer um número específico de capturas.
 
-To specify a certain number of patterns, just have that one number between the curly brackets.
+Para especificar este número, apenas escreva-o dentro das chaves.
 
-For example, to match only the word `hah` with the letter `a` `3` times, your regex would be `/ha{3}h/`.
+Por exemplo, você pode escrever a regex `/ha{3}h/` para capturar a letra `a` `3` vezes na string `hah`.
 
 ```js
 let A4 = "haaaah";
@@ -24,49 +24,49 @@ multipleHA.test(A3);
 multipleHA.test(A100);
 ```
 
-In order, the three `test` calls would return `false`, `true`, and `false`.
+As três chamadas a `test` acima retornam, na ordem, os valores: `false`, `true` e `false`.
 
 # --instructions--
 
-Change the regex `timRegex` to match the word `Timber` only when it has four letter `m`'s.
+Modifique a regex `timRegex` para que capture quatro `m`s na string `Timber`.
 
 # --hints--
 
-Your regex should use curly brackets.
+Sua regex deve conter chaves.
 
 ```js
 assert(timRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match the string `Timber`
+Sua regex não deve encontrar a string `Timber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timber'));
 ```
 
-Your regex should not match the string `Timmber`
+Sua regex não deve encontrar a string `Timmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmber'));
 ```
 
-Your regex should not match the string `Timmmber`
+Sua regex não deve encontrar a string `Timmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmmber'));
 ```
 
-Your regex should match the string `Timmmmber`
+Sua regex deve encontrar a string `Timmmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(timRegex.test('Timmmmber'));
 ```
 
-Your regex should not match the string `Timber` with 30 `m`'s in it.
+Sua regex não deve encontrar a string `Timber` se nela houver 30 `m`s.
 
 ```js
 timRegex.lastIndex = 0;

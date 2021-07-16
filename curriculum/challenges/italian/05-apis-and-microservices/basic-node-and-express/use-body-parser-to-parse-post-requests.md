@@ -26,9 +26,11 @@ Come puoi vedere, il corpo è codificato come la query string. Questo è il form
 
 # --instructions--
 
-Installa il modulo `body-parser` nel tuo `package.json`. Poi, richiedilo con `require` all'inizio del file. Memorizzalo in una variabile chiamata `bodyParser`. Il middleware per gestire i dati urlencoded viene restituito da `bodyParser.urlencoded({extended: false})`. Passa a `app.use()` la funzione restituita dalla precedente chiamata del metodo. Come al solito, il middleware deve essere montato prima di tutte le rotte che ne hanno bisogno.
+Installa il modulo `body-parser` nel tuo `package.json`. Poi, richiedilo con `require` all'inizio del file. Memorizzalo in una variabile chiamata `bodyParser`. Il middleware per gestire i dati urlencoded viene restituito da `bodyParser.urlencoded({extended: false})`. Passa ad `app.use()` la funzione restituita dal metodo invocato prima. Come al solito, il middleware deve essere montato prima di tutte le rotte che dipendono da esso.
 
-**Nota:** `extended=false` è un'opzione di configurazione che dice al parser di usare la codifica classica. Quando lo si utilizza, i valori possono essere solo stringhe o array. La versione estesa consente una maggiore flessibilità dei dati, ma è superata da JSON.
+**Nota:** `extended` è un'opzione di configurazione che dice al `body-parser` quale analisi deve essere utilizzata. Quando `extended=false` viene utilizzata la libreria di codifica classica `querystring`. Quando `extended=true` viene usata per il parsing la libreria `qs`.
+
+Quando si utilizza `extended=false`, i valori possono essere solo stringhe o array. L'oggetto restituito quando si utilizza `querystring` non eredita prototipalmente da `Object`, predefinito in JavaScript, quindi funzioni come `hasOwnProperty` e `toString` non saranno disponibili. La versione estesa consente una maggiore flessibilità dei dati, ma è superata da JSON.
 
 # --hints--
 

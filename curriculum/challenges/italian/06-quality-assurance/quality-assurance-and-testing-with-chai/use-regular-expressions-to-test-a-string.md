@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c54
-title: Use Regular Expressions to Test a String
+title: Usare espressioni regolari per testare una stringa
 challengeType: 2
 forumTopicId: 301608
 dashedName: use-regular-expressions-to-test-a-string
@@ -8,17 +8,17 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto viene costruito a partire dal seguente progetto iniziale su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`match()` asserts that the actual value matches the second argument regular expression.
+`match()` afferma che il valore effettivo corrisponde al secondo argomento espressione regolare.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#15`, nella suite `Strings`, cambia ogni asserzione `assert` in `assert.match` o `assert.notMatch` per far passare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
 
 # --hints--
 
-All tests should pass.
+Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `match` vs. `notMatch`.
+Dovresti scegliere il metodo corretto per la prima asserzione - `match` oppure `notMatch`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `match` vs. `notM
   );
 ```
 
-You should choose the correct method for the second assertion - `match` vs. `notMatch`.
+Dovresti scegliere il metodo corretto per la seconda asserzione - `match` oppure `notMatch`.
 
 ```js
 (getUserInput) =>

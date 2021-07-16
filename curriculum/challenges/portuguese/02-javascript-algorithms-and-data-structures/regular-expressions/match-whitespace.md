@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba3
-title: Match Whitespace
+title: Capture Espaço em Branco
 challengeType: 1
 forumTopicId: 301359
 dashedName: match-whitespace
@@ -8,9 +8,9 @@ dashedName: match-whitespace
 
 # --description--
 
-The challenges so far have covered matching letters of the alphabet and numbers. You can also match the whitespace or spaces between letters.
+Os desafios até agora cobriram a captura de letras do alfabeto e números. Você também pode capturar espaços em branco e os espaços entre as letras.
 
-You can search for whitespace using `\s`, which is a lowercase `s`. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it as similar to the character class `[ \r\t\f\n\v]`.
+Você pode usar o atalho `\s` com um `s` minúsculo para capturar espaços em branco. Este atalho não captura apenas espaços em branco como também retorno de carro, tabulações, feeds de formulário e quebras de linha. O atalho é equivalente à classe de caracteres `[ \r\t\f\n\v]`.
 
 ```js
 let whiteSpace = "Whitespace. Whitespace everywhere!"
@@ -18,26 +18,26 @@ let spaceRegex = /\s/g;
 whiteSpace.match(spaceRegex);
 ```
 
-This `match` call would return `[" ", " "]`.
+`match` retorna `[" ", " "]` aqui.
 # --instructions--
 
-Change the regex `countWhiteSpace` to look for multiple whitespace characters in a string.
+Mude a regex `countWhiteSpace` para que capture múltiplos espaços em branco em strings.
 
 # --hints--
 
-Your regex should use the global flag.
+Sua regex deve usar a flag global.
 
 ```js
 assert(countWhiteSpace.global);
 ```
 
-Your regex should use the shorthand character `\s` to match all whitespace characters.
+Sua regex deve usar o atalho `\s` para capturar todos os espaços em branco.
 
 ```js
 assert(/\\s/.test(countWhiteSpace.source));
 ```
 
-Your regex should find eight spaces in the string `Men are from Mars and women are from Venus.`
+Sua regex deve encontrar oito espaços na string `Men are from Mars and women are from Venus.`
 
 ```js
 assert(
@@ -46,13 +46,13 @@ assert(
 );
 ```
 
-Your regex should find three spaces in the string `Space: the final frontier.`
+Sua regex deve encontrar três espaços na string `Space: the final frontier.`
 
 ```js
 assert('Space: the final frontier.'.match(countWhiteSpace).length == 3);
 ```
 
-Your regex should find no spaces in the string `MindYourPersonalSpace`
+Sua regex não deve encontrar espaços na string `MindYourPersonalSpace`
 
 ```js
 assert('MindYourPersonalSpace'.match(countWhiteSpace) == null);

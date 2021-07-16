@@ -7,20 +7,53 @@ dashedName: part-11
 
 # --description--
 
-Nest four `div` elements in the `bb1` container. Give them the classes `bb1a`, `bb1b`, `bb1c`, and `bb1d` in that order. This building will have four sections.
+Nest four `div` elements in the `.bb1` container. Give them the classes `bb1a`, `bb1b`, `bb1c`, and `bb1d` in that order. This building will have four sections.
 
 # --hints--
 
-test-text
+You should create four new `div` elements.
 
 ```js
-const bb1 = $('.bb1')[0];
-assert(
-  bb1.contains($('div.bb1a')[0]) &&
-    bb1.contains($('div.bb1b')[0]) &&
-    bb1.contains($('div.bb1c')[0]) &&
-    bb1.contains($('div.bb1d')[0])
-);
+assert.equal(document.querySelectorAll('div')?.length, 6);
+```
+
+You should give one of the new `div` elements a class of `bb1a`.
+
+```js
+assert.exists(document.querySelector('div.bb1a'));
+```
+
+You should give one of the new `div` elements a class of `bb1b`.
+
+```js
+assert.exists(document.querySelector('div.bb1b'));
+```
+
+You should give one of the new `div` elements a class of `bb1c`.
+
+```js
+assert.exists(document.querySelector('div.bb1c'));
+```
+
+You should give one of the new `div` elements a class of `bb1d`.
+
+```js
+assert.exists(document.querySelector('div.bb1d'));
+```
+
+You should place the new `div` elements in the correct order.
+
+```js
+function __t(a, b) {
+  return [...document.querySelector(a)?.nextElementSibling?.classList]?.includes(b);
+}
+assert(__t('div.bb1a','bb1b') && __t('div.bb1b','bb1c') && __t('div.bb1c','bb1d'));
+```
+
+You should place the new `div` elements within the `.bb1` element.
+
+```js
+assert.equal(document.querySelectorAll('div.bb1 > div')?.length, 4);
 ```
 
 # --seed--
@@ -32,78 +65,40 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
     <div class="background-buildings">
+--fcc-editable-region--
       <div class="bb1"></div>
+--fcc-editable-region--
     </div>
   </body>
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="background-buildings">
-      <div class="bb1">
-        <div class="bb1a"></div>
-        <div class="bb1b"></div>
-        <div class="bb1c"></div>
-        <div class="bb1d"></div>
-      </div>
-    </div>
-  </body>
-</html>
+.bb1 {
+  width: 10%;
+  height: 70%;
+}
+    
 ```
+

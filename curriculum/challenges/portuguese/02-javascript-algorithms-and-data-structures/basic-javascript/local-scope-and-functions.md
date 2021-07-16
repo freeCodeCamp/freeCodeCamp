@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bf
-title: Local Scope and Functions
+title: Escopo Local e Funções
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd62NhM'
 forumTopicId: 18227
@@ -9,9 +9,9 @@ dashedName: local-scope-and-functions
 
 # --description--
 
-Variables which are declared within a function, as well as the function parameters, have <dfn>local</dfn> scope. That means they are only visible within that function.
+Variáveis que são declaradas dentro de uma função, assim como parâmetros de funções, possuem escopo <dfn>local</dfn>. Isso significa que eles são visíveis apenas dentro da função.
 
-Here is a function `myTest` with a local variable called `loc`.
+Aqui está uma função `myTest` com uma variável local chamada `loc`.
 
 ```js
 function myTest() {
@@ -22,17 +22,17 @@ myTest();
 console.log(loc);
 ```
 
-The `myTest()` function call will display the string `foo` in the console. The `console.log(loc)` line will throw an error, as `loc` is not defined outside of the function.
+A chamada da função `myTest()` irá exibir a string `foo` no console. A linha `console.log(loc)` irá lançar um erro, já que `loc` não foi definido fora da função.
 
 # --instructions--
 
-The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes. Declare a local variable `myVar` inside `myLocalScope` and run the tests.
+O editor possui dois `console.log` para te ajudar a ver o que está acontecendo. Verifique o console enquanto codifica para ver como muda. Declare uma variável local `myVar` dentro de `myLocalScope` e rode os testes.
 
-**Note:** The console will still display `ReferenceError: myVar is not defined`, but this will not cause the tests to fail.
+**Nota:** O console ainda exibirá `ReferenceError: myVar is not defined`, mas isso não causará falha nos testes.
 
 # --hints--
 
-The code should not contain a global `myVar` variable.
+O código não deve conter uma variável global `myVar`.
 
 ```js
 function declared() {
@@ -41,7 +41,7 @@ function declared() {
 assert.throws(declared, ReferenceError);
 ```
 
-You should add a local `myVar` variable.
+Você deve adicionar a variável local `myVar`.
 
 ```js
 assert(

@@ -1,23 +1,24 @@
 ---
 id: 5e4f5c4b570f7e3a4949899f
-title: Sea Level Predictor
+title: 海平面预报器
 challengeType: 10
+forumTopicId: 462370
 dashedName: sea-level-predictor
 ---
 
 # --description--
 
-In this project, you will analyze a dataset of the global average sea level change since 1880. You will use the data to predict the sea level change through year 2050.
+在本项目中，您将分析自 1880 年以来全球平均海平面变化的数据集。 您将使用这些数据来预测到 2050 年的海平面变化。
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-sea-level-predictor).
+你可以在 [Replit 上查看整个项目的具体描述和初始代码](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor)。
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+打开此链接后，fork 这个项目。 一旦你根据 “README.md” 中的说明完成项目，请提交你的项目到下面的链接。
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+我们仍在开发 Python 数据分析课程的交互式课程部分。 现在，你需要使用其他资源来学习如何通过这一挑战。
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

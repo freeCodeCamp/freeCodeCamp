@@ -1,6 +1,6 @@
 ---
 id: 589a8eb3f9fc0f352b528e72
-title: Implementation of Social Authentication III
+title: Implementazione dell'autenticazione con i social III
 challengeType: 2
 forumTopicId: 301558
 dashedName: implementation-of-social-authentication-iii
@@ -8,7 +8,7 @@ dashedName: implementation-of-social-authentication-iii
 
 # --description--
 
-The final part of the strategy is handling the profile returned from GitHub. We need to load the user's database object if it exists, or create one if it doesn't, and populate the fields from the profile, then return the user's object. GitHub supplies us a unique *id* within each profile which we can use to search with to serialize the user with (already implemented). Below is an example implementation you can use in your project--it goes within the function that is the second argument for the new strategy, right below where `console.log(profile);` currently is:
+La parte finale della strategia è gestire il profilo restituito da GitHub. Dobbiamo caricare l'oggetto del database relativo all'uutente se esiste, o crearne uno se non esiste, e popolare i campi dal profilo, quindi restituire l'oggetto dell'utente. GitHub ci fornisce un *id* unico per ogni profilo che possiamo usare per cercare e serializzare l'utente (già implementato). Di seguito è riportato un esempio di implementazione che puoi usare nel tuo progetto: va all'interno della funzione che è il secondo argomento per la nuova strategia, proprio sotto all'attuale posizione di `console.log(profile);`:
 
 ```js
 myDataBase.findOneAndUpdate(
@@ -38,15 +38,15 @@ myDataBase.findOneAndUpdate(
 );
 ```
 
-`findOneAndUpdate` allows you to search for an object and update it. If the object doesn't exist, it will be inserted and made available to the callback function. In this example, we always set `last_login`, increment the `login_count` by `1`, and only populate the majority of the fields when a new object (new user) is inserted. Notice the use of default values. Sometimes a profile returned won't have all the information filled out or the user will keep it private. In this case, you handle it to prevent an error.
+`findOneAndUpdate` ti permette di cercare un oggetto e aggiornarlo. Se l'oggetto non esiste, verrà inserito e reso disponibile alla funzione di callback. In questo esempio, abbiamo sempre impostato `last_login`, incrementato il `login_count` di `1`, e popolato la maggior parte dei campi solo quando viene inserito un nuovo oggetto (nuovo utente). Nota l'uso dei valori predefiniti. A volte un profilo restituito non avrà tutte le informazioni compilate o l'utente lo manterrà privato. Dovrai gestire questo caso per evitare un errore.
 
-You should be able to login to your app now--try it!
+Ora dovresti essere in grado di accedere alla tua app, provala!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
 
 # --hints--
 
-GitHub strategy setup should be complete.
+La configurazione della strategia GitHub dovrebbe essere completa.
 
 ```js
 (getUserInput) =>

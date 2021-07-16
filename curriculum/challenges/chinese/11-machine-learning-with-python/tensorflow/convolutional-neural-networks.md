@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d96
-title: Convolutional Neural Networks
+title: 卷积神经网络
 challengeType: 11
 videoId: _1kTP7uoU9E
 dashedName: convolutional-neural-networks
@@ -10,19 +10,19 @@ dashedName: convolutional-neural-networks
 
 ## --text--
 
-Dense neural networks analyze input on a global scale and recognize patterns in specific areas. Convolutional neural networks...:
+密集神经网络在全局范围内分析输入，并识别特定区域的模式。 卷积神经网络......：
 
 ## --answers--
 
-also analyze input globally and extract features from specific areas.
+也在全局分析输入并从特定区域提取特征。
 
 ---
 
-do not work well for image classification or object detection.
+在图像分类或物体检测方面效果不佳。
 
 ---
 
-scan through the entire input a little at a time and learn local patterns.
+每次一点点地扫描整个输入，并学习局部模式。
 
 ## --video-solution--
 

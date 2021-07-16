@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9a
-title: 'Convolutional Neural Networks: Picking a Pretrained Model'
+title: '卷積神經網絡：選擇預訓練模型'
 challengeType: 11
 videoId: h1XUt1AgIOI
 dashedName: convolutional-neural-networks-picking-a-pretrained-model
@@ -10,7 +10,7 @@ dashedName: convolutional-neural-networks-picking-a-pretrained-model
 
 ## --text--
 
-Fill in the blanks below to use Google's pre-trained MobileNet V2 model as a base for a convolutional neural network:
+填寫下面的空白，使用谷歌預訓練的 MobileNet V2 模型作爲卷積神經網絡的基礎：
 
 ```py
 base_model = tf.__A__.applications.__B__(input_shape=(160, 160, 3),

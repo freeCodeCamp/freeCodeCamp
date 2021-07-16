@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db1
-title: Developing an Nmap Scanner part 1
+title: 開發 Nmap 掃描器 第一部分
 challengeType: 11
 videoId: jYk9XaGoAnk
 dashedName: developing-an-nmap-scanner-part-1
@@ -10,7 +10,7 @@ dashedName: developing-an-nmap-scanner-part-1
 
 ## --text--
 
-What is the correct command to install the Python 3 version of the `python-nmap` library?
+安裝 Python 3 版本的 `python-nmap` 庫的正確命令是什麼？
 
 ## --answers--
 

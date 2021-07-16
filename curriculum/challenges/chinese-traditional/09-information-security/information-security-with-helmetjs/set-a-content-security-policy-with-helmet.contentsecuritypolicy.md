@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3f
-title: Set a Content Security Policy with helmet.contentSecurityPolicy()
+title: 使用 helment.contentSecurityPolicy() 設置內容安全策略
 challengeType: 2
 forumTopicId: 301585
 dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
@@ -8,21 +8,21 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+請注意，本項目在 [這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-infosec) 的基礎上進行開發。你也可以從 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
 
-This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect your app from XSS vulnerabilities, undesired tracking, malicious frames, and much more. CSP works by defining an allowed list of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP is unsupported by older browser.
+在這個挑戰中，我們要重點討論現代瀏覽器中一種能有效減輕安全風險和防禦很多種類型常見攻擊的安全防護。 通過設置和配置內容安全策略，你可以防止在頁面中無意中注入任何內容。 這會讓你的應用遠離 XSS 漏洞、惡意追蹤、惡意 frames 和很多其他攻擊。 CSP 通過配置資源白名單來避免這些問題。 你可以給任何一種類型的頁面資源（腳本、樣式文件、字體、frames、媒體文件等）做這個配置。 它支持很多指令，所以網站管理員可以做細緻的控制。 更多詳情請參考 HTML 5 Rocks 和 KeyCDN。 不幸的是，一些舊的瀏覽器不支持 CSP。
 
-By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives.
+默認的指令很容易受到攻擊, 所以設置 defaultSrc 指令作爲降級方案很重要。 Helmet 同時支持 defaultSrc 和 default-src 命名規範。 降級方案可以應用在大部分指令上。
 
 # --instructions--
 
-In this exercise, use `helmet.contentSecurityPolicy()`, and configure it setting the `defaultSrc directive` to `["self"]` (the list of allowed sources must be in an array), in order to trust only your website address by default. Set also the `scriptSrc` directive so that you will allow scripts to be downloaded from your website, and from the domain 'trusted-cdn.com'.
+在這個練習中，使用 `helmet.contentSecurityPolicy()`。 通過添加一個 `directives` 對象來配置它。 在該對象中，將 `defaultSrc` 設置爲 `["'self'"]`（允許的來源列表必須是一個數組），以便默認只信任你的網站地址。 同時設置 `scriptSrc` 指令，以便你只允許從你的網站（`'self'`）和域名 `'trusted-cdn.com'` 下載腳本。
 
-Hint: in the `self` keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working.
+提示：在 `'self'` 關鍵詞中，單引號也是關鍵詞的一部分，所以你應該用雙引號來包起它才能正常工作。
 
 # --hints--
 
-helmet.csp() middleware should be mounted correctly
+應正確安裝 helmet.contentSecurityPolicy() 中間件。
 
 ```js
 (getUserInput) =>
@@ -36,7 +36,7 @@ helmet.csp() middleware should be mounted correctly
   );
 ```
 
-Your csp config is not correct. defaultSrc should be ["'self'"] and scriptSrc should be ["'self'", 'trusted-cdn.com']
+你的 csp 配置不正確。 defaultSrc 應爲 ["'self'"]，並且 scriptSrc 應爲 ["'self'", 'trusted-cdn.com']
 
 ```js
 (getUserInput) =>

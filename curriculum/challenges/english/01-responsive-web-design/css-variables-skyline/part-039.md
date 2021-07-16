@@ -11,11 +11,16 @@ Create a new variable in `:root` called `--window-color1` and give it a value of
 
 # --hints--
 
-test-text
+You should create a new variable in `:root` called `--window-color1`.
 
 ```js
-const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
-assert(/--window-color1\s*:\s*black\s*(;|})/g.test(rootStyle));
+assert(new __helpers.CSSHelp(document).isPropertyUsed('--window-color1'));
+```
+
+You should give the property variable `--window-color1` a value of `black`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--window-color1').trim(), 'black');
 ```
 
 # --seed--
@@ -27,127 +32,7 @@ assert(/--window-color1\s*:\s*black\s*(;|})/g.test(rootStyle));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-      }
-
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
-      
-      /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
-
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
-
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
-
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
-
-      /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
-      .fb1 {
-        width: 10%;
-        height: 60%;
-        background-color: var(--building-color4);
-      }
-
-      .fb2 {
-        width: 10%;
-        height: 40%;
-        background-color: var(--building-color3);
-      }
-
-      .fb3 {
-        width: 10%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-        background-color: var(--building-color1);
-        position: relative;
-        left: 10%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-        background-color: var(--building-color2);
-        position: relative;
-        right: 10%;
-      }
-
-      .fb6 {
-        width: 9%;
-        height: 38%;
-        background-color: var(--building-color3);
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>
@@ -185,168 +70,127 @@ assert(/--window-color1\s*:\s*black\s*(;|})/g.test(rootStyle));
 </html>
 ```
 
-# --solutions--
+```css
+--fcc-editable-region--
+:root {
+  --building-color1: #aa80ff;
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+}
+--fcc-editable-region--
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      :root {
-        --building-color1: #aa80ff;
-        --building-color2: #66cc99;
-        --building-color3: #cc6699;
-        --building-color4: #538cc6;
-        --window-color1: black;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+.background-buildings, .foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+/* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      .background-buildings, .foreground-buildings {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        position: absolute;
-        top: 0;
-      }
-      
-      /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-        background-color: var(--building-color1);
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb1d {
-        width: 100%;
-        height: 70%;
-        background-color: var(--building-color1);
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+  background-color: var(--building-color1);
+}
 
-      .bb2 {
-        width: 10%;
-        height: 50%;
-        background-color: var(--building-color2);
-      }
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background-color: var(--building-color1);
+}
 
-      .bb3 {
-        width: 10%;
-        height: 55%;
-        background-color: var(--building-color3);
-      }
+.bb2 {
+  width: 10%;
+  height: 50%;
+  background-color: var(--building-color2);
+}
 
-      .bb4 {
-        width: 11%;
-        height: 58%;
-        background-color: var(--building-color4);
-      }
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background-color: var(--building-color3);
+}
 
-      /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
-      .fb1 {
-        width: 10%;
-        height: 60%;
-        background-color: var(--building-color4);
-      }
+.bb4 {
+  width: 11%;
+  height: 58%;
+  background-color: var(--building-color4);
+}
 
-      .fb2 {
-        width: 10%;
-        height: 40%;
-        background-color: var(--building-color3);
-      }
+/* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+.fb1 {
+  width: 10%;
+  height: 60%;
+  background-color: var(--building-color4);
+}
 
-      .fb3 {
-        width: 10%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-  
-      .fb4 {
-        width: 8%;
-        height: 45%;
-        background-color: var(--building-color1);
-        position: relative;
-        left: 10%;
-      }
-      
-      .fb5 {
-        width: 10%;
-        height: 33%;
-        background-color: var(--building-color2);
-        position: relative;
-        right: 10%;
-      }
+.fb2 {
+  width: 10%;
+  height: 40%;
+  background-color: var(--building-color3);
+}
 
-      .fb6 {
-        width: 9%;
-        height: 38%;
-        background-color: var(--building-color3);
-      }
-    </style>
-  </head>
+.fb3 {
+  width: 10%;
+  height: 35%;
+  background-color: var(--building-color1);
+}
 
-  <body>
-    <div class="background-buildings">
-      <div></div>
-      <div></div>
-      <div class="bb1">
-        <div class="bb1a"></div>
-        <div class="bb1b"></div>
-        <div class="bb1c"></div>
-        <div class="bb1d"></div>
-      </div>
-      <div class="bb2"></div>
-      <div class="bb3"></div>
-      <div></div>
-      <div class="bb4"></div>
-      <div></div>
-      <div></div>
-    </div>
+.fb4 {
+  width: 8%;
+  height: 45%;
+  background-color: var(--building-color1);
+  position: relative;
+  left: 10%;
+}
 
-    <div class="foreground-buildings">
-      <div></div>
-      <div></div>
-      <div class="fb1"></div>
-      <div class="fb2"></div>
-      <div></div>
-      <div class="fb3"></div>
-      <div class="fb4"></div>
-      <div class="fb5"></div>
-      <div class="fb6"></div>
-      <div></div>
-      <div></div>
-    </div>
-  </body>
-</html>
+.fb5 {
+  width: 10%;
+  height: 33%;
+  background-color: var(--building-color2);
+  position: relative;
+  right: 10%;
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+  background-color: var(--building-color3);
+}
+    
 ```
+

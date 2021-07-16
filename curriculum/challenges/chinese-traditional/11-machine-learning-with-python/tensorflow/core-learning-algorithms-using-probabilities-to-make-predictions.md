@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d91
-title: 'Core Learning Algorithms: Using Probabilities to make Predictions'
+title: '核心學習算法：使用概率進行預測'
 challengeType: 11
 videoId: fYAYvLUawnc
 dashedName: core-learning-algorithms-using-probabilities-to-make-predictions
@@ -10,7 +10,7 @@ dashedName: core-learning-algorithms-using-probabilities-to-make-predictions
 
 ## --text--
 
-What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
+你應該導入什麼 TensorFlow 模塊來實現 `.HiddenMarkovModel()`？
 
 ## --answers--
 
