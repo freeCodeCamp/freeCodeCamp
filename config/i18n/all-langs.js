@@ -60,7 +60,8 @@ const auditedCerts = {
     'javascript-algorithms-and-data-structures',
     'front-end-libraries',
     'data-visualization',
-    'apis-and-microservices'
+    'apis-and-microservices',
+    'quality-assurance'
   ],
   portuguese: ['responsive-web-design']
 };
