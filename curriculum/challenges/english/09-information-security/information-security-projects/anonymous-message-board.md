@@ -126,15 +126,16 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const checkData = await fetch(url + '/api/threads/fcc_test');
   const parsed = await checkData.json();
+  if(!Array.isArray(parsed)) throw new Error(`An array needs to be sent to the client got ${typeof parsed}.`);
   if(parsed.length !== 10) throw new Error(`There should exactly be 10 threads sent back to the client.`);
   for(let i = 0; i <= parsed.length -1; i++){
     // Checks if any object in the parsed array has these keys
     if ("delete_password" in parsed[i] || "reported" in parsed[i]){
-      throw new Error(`The field reported and delete_password should not be sent to the client. `)
+      throw new Error(`The field reported and delete_password should not be sent to the client. `);
     }
     // Should not be bigger than 3, could be less than 3
     if(parsed[i].replies.length > 3){
-      throw new Error(`Only the most 3 recent replies should be sent to the client.`)
+      throw new Error(`Only the most 3 recent replies should be sent to the client.`);
     }    
   }
 }
