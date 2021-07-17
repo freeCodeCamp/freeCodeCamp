@@ -45,10 +45,10 @@ Find all such triangles with a $\text{perimeter} ≤ {10}^5$. Enter as your answ
 
 # --hints--
 
-`triangleCenters()` should return `2816417.1055`.
+`triangleCentres()` should return `2816417.1055`.
 
 ```js
-assert.strictEqual(triangleCenters(), 2816417.1055);
+assert.strictEqual(triangleCentres(), 2816417.1055);
 ```
 
 # --seed--
@@ -56,12 +56,12 @@ assert.strictEqual(triangleCenters(), 2816417.1055);
 ## --seed-contents--
 
 ```js
-function triangleCenters() {
+function triangleCentres() {
 
   return true;
 }
 
-triangleCenters();
+triangleCentres();
 ```
 
 # --solutions--
