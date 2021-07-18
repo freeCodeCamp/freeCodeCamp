@@ -8,18 +8,18 @@ dashedName: problem-317-firecracker
 
 # --description--
 
-A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 m/s.
+A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 $\frac{\text{m}}{\text{s}}$.
 
-We assume that the fragments move without air resistance, in a uniform gravitational field with g=9.81 m/s2.
+We assume that the fragments move without air resistance, in a uniform gravitational field with $g=9.81 \frac{\text{m}}{\text{s}^2}$.
 
-Find the volume (in m3) of the region through which the fragments move before reaching the ground. Give your answer rounded to four decimal places.
+Find the volume (in $\text{m}^3$) of the region through which the fragments move before reaching the ground. Give your answer rounded to four decimal places.
 
 # --hints--
 
-`euler317()` should return 1856532.8455.
+`firecracker()` should return `1856532.8455`.
 
 ```js
-assert.strictEqual(euler317(), 1856532.8455);
+assert.strictEqual(firecracker(), 1856532.8455);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler317(), 1856532.8455);
 ## --seed-contents--
 
 ```js
-function euler317() {
+function firecracker() {
 
   return true;
 }
 
-euler317();
+firecracker();
 ```
 
 # --solutions--
