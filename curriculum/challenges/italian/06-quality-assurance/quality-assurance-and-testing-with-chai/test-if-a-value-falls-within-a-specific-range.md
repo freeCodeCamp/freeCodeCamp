@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4f
-title: Test if a Value Falls within a Specific Range
+title: Verificare se un valore cade all'interno di uno specifico intervallo
 challengeType: 2
 forumTopicId: 301598
 dashedName: test-if-a-value-falls-within-a-specific-range
@@ -8,23 +8,23 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 ```javascript
 .approximately(actual, expected, delta, [message])
 ```
 
-Asserts that the `actual` is equal to `expected`, to within a +/- `delta` range.
+Asserisce che `actual` sia uguale a `expected`, all'interno di un intervallo di +/- `delta`.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
+All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#10`, nella suite `Comparisons`, cambia ogni asserzione `assert` in `assert.approximately` per far passare il test (dovrebbe risultare `true`).
 
-Choose the minimum range (3rd parameter) to make the test always pass. It should be less than 1.
+Scegli l'intervallo minimo (terzo parametro) per far passare sempre il test. Dovrebbe essere inferiore a 1.
 
 # --hints--
 
-All tests should pass.
+Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct range for the first assertion - `approximately(actual, expected, range)`.
+Dovresti scegliere l'intervallo corretto per la prima asserzione - `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ You should choose the correct range for the first assertion - `approximately(act
   );
 ```
 
-You should choose the correct range for the second assertion - `approximately(actual, expected, range)`.
+Dovresti scegliere l'intervallo corretto per la seconda asserzione - `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>

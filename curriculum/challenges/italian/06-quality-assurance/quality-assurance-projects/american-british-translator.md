@@ -11,7 +11,7 @@ dashedName: american-british-translator
 Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://american-british-translator.freecodecamp.rocks/>. Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
 -   Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) e completare il tuo progetto localmente.
--   Usare [il nostro progetto di avvio Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator) per completare il tuo progetto.
+-   Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator) per completare il tuo progetto.
 -   Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.

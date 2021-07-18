@@ -1,6 +1,6 @@
 ---
 id: 5f1a4ef5d5d6b5ab580fc6ae
-title: Celestial Bodies Database
+title: Banco de dados de corpos celestiais
 challengeType: 12
 helpCategory: Relational Databases
 url: https://github.com/moT01/.celestial-bodies-database
