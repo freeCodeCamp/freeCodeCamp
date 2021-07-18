@@ -9,6 +9,7 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
+import Badges from './components/badges';
 
 interface IProfileProps {
   isSessionUser: boolean;
@@ -31,6 +32,7 @@ interface IProfileProps {
     completedChallenges: any[];
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     portfolio: any[];
+    email: string;
     about: string;
     githubProfile: string;
     isGithub: boolean;
@@ -104,6 +106,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     calendar,
     completedChallenges,
+    email,
     githubProfile,
     isLinkedIn,
     isGithub,
@@ -144,6 +147,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
+      {email ? <Badges email={email} /> : null}
       {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}

@@ -1,0 +1,81 @@
+.badges {
+  display: grid;
+  grid: auto-flow/repeat(3, 1fr);
+  grid-gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+.badge-contents {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.2;
+  direction: ltr;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #f4f5f6;
+  display: flex;
+  min-height: 8em;
+  padding: 0 1.5em;
+}
+
+.badge-icon {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.2;
+  direction: ltr;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #f4f5f6;
+  text-decoration-color: initial;
+  display: flex;
+  flex-shrink: 0;
+  margin-right: 1.5em;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+}
+
+.badge-info {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.2;
+  direction: ltr;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  padding: 1em 0;
+  color: #f4f5f6;
+}
+
+.badge-info-item {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.2;
+  direction: ltr;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #f4f5f6;
+}
+
+.badge-link {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.2;
+  direction: ltr;
+  font-family: var(--heading-font-family);
+  font-size: var(--font-up-1);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration-color: initial;
+  color: #f4f5f6;
+}
+
+.badge-summary {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.2;
+  direction: ltr;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #f4f5f6;
+}
