@@ -132,26 +132,26 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           } = edge;
 
           if (!fields) {
-            return null;
+            return;
           }
           const { slug, nodeIdentity } = fields;
           if (slug.includes('LICENCE')) {
-            return null;
+            return;
           }
           try {
             if (nodeIdentity === 'blockIntroMarkdown') {
               if (!blocks.some(block => block === frontmatter.block)) {
-                return null;
+                return;
               }
             } else if (
               !superBlocks.some(
                 superBlock => superBlock === frontmatter.superBlock
               )
             ) {
-              return null;
+              return;
             }
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-            return pageBuilder(edge);
+            pageBuilder(edge);
           } catch (e) {
             console.log(`
             ident: ${nodeIdentity} does not belong to a function
@@ -161,7 +161,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
 
             `);
           }
-          return null;
         });
 
         return null;
