@@ -544,7 +544,7 @@ Se incontri degli errori durante l'installazione delle dipendenze, assicurati di
 
 La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] Se stai usando un device Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
 
 ## Ottenere Aiuto
 
