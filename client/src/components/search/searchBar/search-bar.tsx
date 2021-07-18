@@ -9,7 +9,7 @@ import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
-import WithInstantSearch from '../WithInstantSearch';
+import WithInstantSearch from '../with-instant-search';
 
 import {
   isSearchDropdownEnabledSelector,
