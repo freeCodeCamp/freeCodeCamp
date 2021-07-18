@@ -140,14 +140,10 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           }
           try {
             if (nodeIdentity === 'blockIntroMarkdown') {
-              if (!blocks.some(block => block === frontmatter.block)) {
+              if (!blocks.includes(frontmatter.block)) {
                 return;
               }
-            } else if (
-              !superBlocks.some(
-                superBlock => superBlock === frontmatter.superBlock
-              )
-            ) {
+            } else if (!superBlocks.includes(frontmatter.superBlock)) {
               return;
             }
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
