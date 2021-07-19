@@ -68,7 +68,11 @@ const auditedCerts = {
     'front-end-libraries',
     'data-visualization',
     'apis-and-microservices',
-    'quality-assurance'
+    'quality-assurance',
+    'scientific-computing-with-python',
+    'data-analysis-with-python',
+    'information-security',
+    'machine-learning-with-python'
   ],
   portuguese: [
     'responsive-web-design',
