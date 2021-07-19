@@ -28,7 +28,7 @@ freeCodeCamp.org offers several free developer certifications. Each of these cer
 
 Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
-You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
+You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Replit - or even on your local computer's development environment.
 
 Once you’ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or résumé. And when your prospective employers or freelance clients click that link, they’ll see a verified certification specific to you.
 
@@ -74,7 +74,7 @@ Here are our ten core certifications:
 - [React and Redux](https://www.freecodecamp.org/learn/front-end-libraries/)
   <br />
   <br />
-  **Projects**:  [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock)
+  **Projects**: [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock)
 
 #### 4. Data Visualization Certification
 
@@ -82,7 +82,7 @@ Here are our ten core certifications:
 - [JSON APIs and Ajax](https://www.freecodecamp.org/learn/data-visualization/)
   <br />
   <br />
-  **Projects**:  [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
+  **Projects**: [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
 
 #### 5. APIs and Microservices Certification
 
@@ -99,7 +99,7 @@ Here are our ten core certifications:
 - [Advanced Node and Express](https://www.freecodecamp.org/learn/quality-assurance/)
   <br />
   <br />
-  **Projects**:  [Metric-Imperial Converter](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter), [Issue Tracker](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker), [Personal Library](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library), [Sudoku Solver](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver), [American British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
+  **Projects**: [Metric-Imperial Converter](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter), [Issue Tracker](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker), [Personal Library](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library), [Sudoku Solver](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver), [American British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
 
 #### 7. Scientific Computing with Python Certification
 
@@ -122,7 +122,7 @@ Here are our ten core certifications:
 - [Python for Penetration Testing](https://www.freecodecamp.org/learn/information-security/)
   <br />
   <br />
-  **Projects**:  [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
+  **Projects**: [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
 
 #### 10. Machine Learning with Python Certification
 

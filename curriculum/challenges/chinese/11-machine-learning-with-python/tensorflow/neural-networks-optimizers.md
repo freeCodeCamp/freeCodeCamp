@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d94
-title: 'Neural Networks: Optimizers'
+title: '神经网络：优化'
 challengeType: 11
 videoId: hdOtRPQe1o4
 dashedName: neural-networks-optimizers
@@ -10,19 +10,19 @@ dashedName: neural-networks-optimizers
 
 ## --text--
 
-What is an optimizer function?
+什么是优化函数？
 
 ## --answers--
 
-A function that increases the accuracy of a model's predictions.
+一种提高模型预测准确性的函数。
 
 ---
 
-A function that implements the gradient descent and backpropagation algorithms for you.
+一个为你实现梯度下降和反向传播算法的函数。
 
 ---
 
-A function that reduces the time a model needs to train.
+一个可以减少模型训练时间的函数。
 
 ## --video-solution--
 

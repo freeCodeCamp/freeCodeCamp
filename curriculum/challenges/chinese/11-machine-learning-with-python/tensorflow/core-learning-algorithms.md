@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d89
-title: Core Learning Algorithms
+title: 核心学习算法
 challengeType: 11
 videoId: u5lZURgcWnU
 dashedName: core-learning-algorithms
@@ -10,25 +10,25 @@ dashedName: core-learning-algorithms
 
 ## --text--
 
-Which type of analysis would be best suited for the following problem?:
+哪种类型的分析最适合以下问题？
 
-You have the average temperature in the month of March for the last 100 years. Using this data, you want to predict the average temperature in the month of March 5 years from now.
+你拥有过去 100 年三月份的平均温度。 使用此数据，你希望预测 5 年后 3 月的平均温度。
 
 ## --answers--
 
-Multiple regression
+多重回归
 
 ---
 
-Correlation
+关连
 
 ---
 
-Decision tree
+决策树
 
 ---
 
-Linear regression
+线性回归
 
 ## --video-solution--
 

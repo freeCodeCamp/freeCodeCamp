@@ -1,6 +1,6 @@
 ---
 id: bd7168d8c242eddfaeb5bd13
-title: Visualize Data with a Bar Chart
+title: Visualize dados com um gráfico de barras
 challengeType: 3
 forumTopicId: 301464
 dashedName: visualize-data-with-a-bar-chart
@@ -8,43 +8,43 @@ dashedName: visualize-data-with-a-bar-chart
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/GrZVaM>.
+**Objetivo:** criar um app do [CodePen.io](https://codepen.io) que possua uma funcionalidade similar a essa: <https://codepen.io/freeCodeCamp/full/GrZVaM>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+Atenda às [especificações de usuário](https://en.wikipedia.org/wiki/User_story) abaixo para passar em todos os testes. Dê a elas o seu próprio estilo pessoal.
 
-You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+Você pode usar HTML, JavaScript, CSS e a biblioteca de visualização D3, baseada em svg. Os testes requerem que os eixos sejam gerados usando a propriedade de eixos do D3, que geram automaticamente marcações ao longo do eixo. Essas marcações são exigidas para passar nos testes do D3 porque suas posições são usadas para determinar o alinhamento dos elementos do gráfico. Você vai encontrar informações sobre a geração de eixos em <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Os elementos DOM obrigatórios (não virtuais) são consultados no momento de cada teste. Se você usar um framework de front-end (como o Vue por exemplo), os resultados dos testes podem ser imprecisos para conteúdo dinâmico. Esperamos dar suporte a eles um dia, mas atualmente esses frameworks não são suportados para os projetos de D3.
 
-**User Story #1:** My chart should have a title with a corresponding `id="title"`.
+**Especificação de usuário nº 1:** Meu gráfico deve ter um título com um `id="title"` correspondente.
 
-**User Story #2:** My chart should have a `g` element x-axis with a corresponding `id="x-axis"`.
+**Especificação de usuário nº 2:** Meu gráfico deve ter um elemento `g` no eixo x com um `id="x-axis"` correspondente.
 
-**User Story #3:** My chart should have a `g` element y-axis with a corresponding `id="y-axis"`.
+**Especificação de usuário nº 3:** Meu gráfico deve ter um elemento `g` no eixo y com um `id="y-axis"` correspondente.
 
-**User Story #4:** Both axes should contain multiple tick labels, each with a corresponding `class="tick"`.
+**Especificação de usuário nº 4:** Ambos os eixos devem conter múltiplos rótulos (labels) de marcação, cada um com uma `class="tick"` correspondente.
 
-**User Story #5:** My chart should have a `rect` element for each data point with a corresponding `class="bar"` displaying the data.
+**Especificação de usuário nº 5:** Meu gráfico deve ter um elemento `rect` para cada ponto com uma classe `class="bar"` correspondente exibindo os dados.
 
-**User Story #6:** Each bar should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
+**Especificação de usuário nº 6:** Cada barra deve ter as propriedades `data-date` e `data-gdp`, contendo os valores `date` e `GDP`, respectivamente.
 
-**User Story #7:** The bar elements' `data-date` properties should match the order of the provided data.
+**Especificação de usuário nº 7:** As propriedades `data-date` das barras devem corresponder à ordem fornecida pelos dados.
 
-**User Story #8:** The bar elements' `data-gdp` properties should match the order of the provided data.
+**Especificação de usuário nº 8:** As propriedades `data-gdp` das barras devem corresponder à ordem fornecida pelos dados.
 
-**User Story #9:** Each bar element's height should accurately represent the data's corresponding `GDP`.
+**Especificação de usuário nº 9:** A altura de cada barra deve representar corretamente os dados de `GDP` correspondentes.
 
-**User Story #10:** The `data-date` attribute and its corresponding bar element should align with the corresponding value on the x-axis.
+**Especificação de usuário nº 10:** O atributo `data-date` e sua barra correspondente devem estar alinhados com o seu valor correspondente no eixo x.
 
-**User Story #11:** The `data-gdp` attribute and its corresponding bar element should align with the corresponding value on the y-axis.
+**Especificação de usuário nº 11:** O atributo `data-gdp` e sua barra correspondente devem estar alinhados com o seu valor correspondente no eixo y.
 
-**User Story #12:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**Especificação de usuário nº 12:** Eu posso passar o mouse sobre uma área e ver uma dica com uma `id="tooltip"` correspondente, que exibe mais informações sobre a área.
 
-**User Story #13:** My tooltip should have a `data-date` property that corresponds to the `data-date` of the active area.
+**Especificação de usuário nº 13:** Minha ferramenta de dica (tooltip) deve ter uma propriedade `data-date` que corresponda à `data-date` da área ativa, isto é, onde o mouse está em cima.
 
-Here is the dataset you will need to complete this project: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json`
+Aqui está o dataset de que você precisará para completar este projeto: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json`
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Ou você pode usar este link da CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 
 # --solutions--
 

@@ -1,6 +1,6 @@
 ---
 id: a8e512fbe388ac2f9198f0fa
-title: Wherefore art thou
+title: Onde está você
 challengeType: 5
 forumTopicId: 16092
 dashedName: wherefore-art-thou
@@ -8,13 +8,13 @@ dashedName: wherefore-art-thou
 
 # --description--
 
-Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument). Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
+Faça uma função que olha através de um array de objetos (primeiro argumento) e retorna um array de todos os objetos que têm pares de nome e valor correspondentes (segundo argumento). Cada par de nome e valor do objeto fonte tem que estar presente no objeto da coleção se ele for ser incluído no array retornado.
 
-For example, if the first argument is `[{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]`, and the second argument is `{ last: "Capulet" }`, then you must return the third object from the array (the first argument), because it contains the name and its value, that was passed on as the second argument.
+Por exemplo, se o primeiro argumento é `[{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]`, e o segundo argumento é `{ last: "Capulet" }`, em seguida, você deve retornar o terceiro objeto do array (o primeiro argumento), porque contém o nome e o seu valor, que foi passado como segundo argumento.
 
 # --hints--
 
-`whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })` should return `[{ first: "Tybalt", last: "Capulet" }]`.
+`whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })` deve retornar `[{ first: "Tybalt", last: "Capulet" }]`.
 
 ```js
 assert.deepEqual(
@@ -30,7 +30,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 })` should return `[{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }]`.
+`whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 })` deve retornar `[{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }]`.
 
 ```js
 assert.deepEqual(
@@ -41,7 +41,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })` should return `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]`.
+`whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })` deve retornar `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]`.
 
 ```js
 assert.deepEqual(
@@ -56,7 +56,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })` should return `[{ "apple": 1, "bat": 2, "cookie": 2 }]`.
+`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })` deve retornar `[{ "apple": 1, "bat": 2, "cookie": 2 }]`.
 
 ```js
 assert.deepEqual(
@@ -68,7 +68,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 })` should return `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }]`.
+`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 })` deve retornar `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }]`.
 
 ```js
 assert.deepEqual(
@@ -88,7 +88,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})` should return `[]`
+`whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})` deve retornar `[]`
 
 ```js
 assert.deepEqual(

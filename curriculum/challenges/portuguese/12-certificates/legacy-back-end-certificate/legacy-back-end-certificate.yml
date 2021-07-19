@@ -1,36 +1,36 @@
 ---
 id: 660add10cb82ac38a17513be
-title: Legacy Back End Certificate
+title: Certificado de back-end legado
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: bd7158d8c443edefaeb5bdef
-    title: Timestamp Microservice
+    title: Microsserviço de timestamp
   - 
     id: bd7158d8c443edefaeb5bdff
-    title: Request Header Parser Microservice
+    title: Microsserviço parseador de cabeçalho de requisição
   - 
     id: bd7158d8c443edefaeb5bd0e
-    title: URL Shortener Microservice
+    title: Microsserviço redutor de URL
   - 
     id: bd7158d8c443edefaeb5bdee
-    title: Image Search Abstraction Layer
+    title: Camada de abstração de pesquisa de imagens
   - 
     id: bd7158d8c443edefaeb5bd0f
-    title: File Metadata Microservice
+    title: Microserviço de metadados de arquivos
   - 
     id: bd7158d8c443eddfaeb5bdef
-    title: Build a Voting App
+    title: Crie um aplicativo de votação
   - 
     id: bd7158d8c443eddfaeb5bdff
-    title: Build a Nightlife Coordination App
+    title: Crie um aplicativo de coordenação da vida noturna
   - 
     id: bd7158d8c443eddfaeb5bd0e
-    title: Chart the Stock Market
+    title: Faça um gráfico do mercado de ações
   - 
     id: bd7158d8c443eddfaeb5bd0f
-    title: Manage a Book Trading Club
+    title: Gerencie um clube de negociações de livros
   - 
     id: bd7158d8c443eddfaeb5bdee
-    title: Build a Pinterest Clone
+    title: Crie um clone do Pinterest

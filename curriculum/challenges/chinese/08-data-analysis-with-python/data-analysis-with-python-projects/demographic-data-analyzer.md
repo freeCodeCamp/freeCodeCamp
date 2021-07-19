@@ -1,23 +1,24 @@
 ---
 id: 5e46f7e5ac417301a38fb929
-title: Demographic Data Analyzer
+title: 人口统计数据分析器
 challengeType: 10
+forumTopicId: 462367
 dashedName: demographic-data-analyzer
 ---
 
 # --description--
 
-In this challenge you must analyze demographic data using Pandas. You are given a dataset of demographic data that was extracted from the 1994 Census database.
+在这个挑战中，你必须使用 Pandas 对人口统计进行分析。 你将获得从 1994 年人口普查数据库中提取的人口统计数据数据集。
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
+你可以[在 Replit 上查看整个项目的具体描述和初始代码](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer)。
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+点击此链接，fork 这个项目。 一旦你根据 “README.md” 中的说明完成项目，请提交你的项目链接到下面。
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+我们仍在开发 Python 数据分析课程的交互式教学。 现在，你需要使用其他资源来学习如何通过这一挑战。
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

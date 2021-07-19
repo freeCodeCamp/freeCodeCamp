@@ -1,6 +1,6 @@
 ---
 id: bd7993c9c69feddfaeb8bdef
-title: Store Multiple Values in one Variable using JavaScript Arrays
+title: Armazene Múltiplos Valores em uma Variável usando Arrays JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQWAm'
 forumTopicId: 18309
@@ -9,9 +9,9 @@ dashedName: store-multiple-values-in-one-variable-using-javascript-arrays
 
 # --description--
 
-With JavaScript `array` variables, we can store several pieces of data in one place.
+Com as variáveis de `array` em JavaScript, podemos armazenar diversos pedaços de dados em um único lugar.
 
-You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:
+Você começa uma declaração de um array com a abertura de um colchetes, terminando com o fechamento do colchetes e colocando vírgula entre cada entrada, dessa forma:
 
 ```js
 var sandwich = ["peanut butter", "jelly", "bread"]
@@ -19,23 +19,23 @@ var sandwich = ["peanut butter", "jelly", "bread"]
 
 # --instructions--
 
-Modify the new array `myArray` so that it contains both a string and a number (in that order).
+Modifique o novo array `myArray` para que contenha ambos uma string e um número (nessa ordem).
 
 # --hints--
 
-`myArray` should be an array.
+`myArray` deve ser um array.
 
 ```js
 assert(typeof myArray == 'object');
 ```
 
-The first item in `myArray` should be a string.
+O primeiro item de `myArray` deve ser uma string.
 
 ```js
 assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
 ```
 
-The second item in `myArray` should be a number.
+O segundo item de `myArray` deve ser um número.
 
 ```js
 assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');

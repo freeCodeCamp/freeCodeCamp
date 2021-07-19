@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c4
-title: Return Early Pattern for Functions
+title: Retornar o Padrão Inicial para Funções
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
@@ -9,9 +9,9 @@ dashedName: return-early-pattern-for-functions
 
 # --description--
 
-When a `return` statement is reached, the execution of the current function stops and control returns to the calling location.
+Quando uma instrução `return` é alcançada, a execução da função atual para e retorna o código para o local da chamada da função.
 
-**Example**
+**Exemplo**
 
 ```js
 function myFun() {
@@ -22,54 +22,54 @@ function myFun() {
 myFun();
 ```
 
-The above will display the string `Hello` in the console, and return the string `World`. The string `byebye` will never display in the console, because the function exits at the `return` statement.
+O código acima exibirá no console a string `Hello`, e retorna a string `World`. A string `byebye` nunca irá ser exibida no console, porque a função termina na instrução `return`.
 
 # --instructions--
 
-Modify the function `abTest` so that if `a` or `b` are less than `0` the function will immediately exit with a value of `undefined`.
+Modifique a função `abTest` para que se `a` ou `b` forem menores que `0` a função irá imediatamente terminar retornando o valor de `undefined`.
 
-**Hint**  
-Remember that [`undefined` is a keyword](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), not a string.
+**Dica**  
+Lembre-se que [`undefined` é uma palavra-chave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables) e não uma string.
 
 # --hints--
 
-`abTest(2,2)` should return a number
+`abTest(2,2)` deve retornar um número
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2,2)` should return `8`
+`abTest(2,2)` deve retornar `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2,2)` should return `undefined`
+`abTest(-2,2)` deve retornar `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2,-2)` should return `undefined`
+`abTest(2,-2)` deve retornar `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2,8)` should return `18`
+`abTest(2,8)` deve retornar `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3,3)` should return `12`
+`abTest(3,3)` deve retornar `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0,0)` should return `0`
+`abTest(0,0)` deve retornar `0`
 
 ```js
 assert(abTest(0, 0) === 0);

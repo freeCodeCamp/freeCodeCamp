@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ba
-title: Understand String Immutability
+title: Entendendo a Imutabilidade das Strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
@@ -9,16 +9,16 @@ dashedName: understand-string-immutability
 
 # --description--
 
-In JavaScript, `String` values are <dfn>immutable</dfn>, which means that they cannot be altered once created.
+Em JavaScript, valores `String` são <dfn>imutáveis</dfn>, o que significa que elas não podem ser alteradas após serem criadas.
 
-For example, the following code:
+Por exemplo, o código a seguir:
 
 ```js
 var myStr = "Bob";
 myStr[0] = "J";
 ```
 
-cannot change the value of `myStr` to `Job`, because the contents of `myStr` cannot be altered. Note that this does *not* mean that `myStr` cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change `myStr` would be to assign it with a new string, like this:
+não é possível alterar o valor de `myStr` para `Job`, porque o conteúdo de `myStr` não pode ser alterado. Note que isso *não* significa que `myStr` não pode ser alterado, apenas que os caracteres individuais de uma <dfn>string literal</dfn> não pode ser alterado. A única forma de alterar `myStr` seria atribuindo-a com uma nova string, dessa forma:
 
 ```js
 var myStr = "Bob";
@@ -27,17 +27,17 @@ myStr = "Job";
 
 # --instructions--
 
-Correct the assignment to `myStr` so it contains the string value of `Hello World` using the approach shown in the example above.
+Corrija a atribuição para `myStr` para que contenha o valor `Hello World` (string) usando a abordagem mostrada no exemplo acima.
 
 # --hints--
 
-`myStr` should have a value of the string `Hello World`.
+`myStr` deve ter o valor da string `HelloWorld`.
 
 ```js
 assert(myStr === 'Hello World');
 ```
 
-You should not change the code above the specified comment.
+Você não deve alterar o código acima do comentário especificado.
 
 ```js
 assert(/myStr = "Jello World"/.test(code));

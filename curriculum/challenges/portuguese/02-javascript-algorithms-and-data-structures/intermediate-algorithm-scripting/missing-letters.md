@@ -1,6 +1,6 @@
 ---
 id: af7588ade1100bde429baf20
-title: Missing letters
+title: Letras faltando
 challengeType: 5
 forumTopicId: 16023
 dashedName: missing-letters
@@ -8,37 +8,37 @@ dashedName: missing-letters
 
 # --description--
 
-Find the missing letter in the passed letter range and return it.
+Encontre a letra que falta no intervalo de letras passado e devolva-a.
 
-If all letters are present in the range, return `undefined`.
+Se todas as letras estiverem presentes no intervalo, retorne `undefined`.
 
 # --hints--
 
-`fearNotLetter("abce")` should return the string `d`.
+`fearNotLetter("abce")` deve retornar a string `d`.
 
 ```js
 assert.deepEqual(fearNotLetter('abce'), 'd');
 ```
 
-`fearNotLetter("abcdefghjklmno")` should return the string `i`.
+`fearNotLetter("abcdefghjklmno")` deve retornar a string `i`.
 
 ```js
 assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
 ```
 
-`fearNotLetter("stvwx")` should return the string `u`.
+`fearNotLetter("stvwx")` deve retornar a string `u`.
 
 ```js
 assert.deepEqual(fearNotLetter('stvwx'), 'u');
 ```
 
-`fearNotLetter("bcdf")` should return the string `e`.
+`fearNotLetter("bcdf")` deve retornar a string `e`.
 
 ```js
 assert.deepEqual(fearNotLetter('bcdf'), 'e');
 ```
 
-`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` should return `undefined`.
+`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` deve retornar `undefined`.
 
 ```js
 assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));

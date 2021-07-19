@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acdd08826
-title: Learn How Script Tags and Document Ready Work
+title: Aprenda Como as Tags de Script e Document Ready Funcionam
 challengeType: 6
 forumTopicId: 18224
 dashedName: learn-how-script-tags-and-document-ready-work
@@ -8,23 +8,23 @@ dashedName: learn-how-script-tags-and-document-ready-work
 
 # --description--
 
-Now we're ready to learn jQuery, the most popular JavaScript tool of all time.
+Agora nós estamos prontos para aprender jQuery, a ferramenta mais popular de JavaScript de todos os tempos.
 
-Before we can start using jQuery, we need to add some things to our HTML.
+Antes que nós possamos começar usando jQuery, nós precisamos adicionar algumas coisas ao nosso HTML.
 
-First, add a `script` element at the top of your page. Be sure to close it on the following line.
+Primeiro, adicione um elemento `script` no topo da sua página. Certifique-se de fechá-la na próxima linha.
 
-Your browser will run any JavaScript inside a `script` element, including jQuery.
+Seu navegar irá rodar qualquer JavaScript dentro do elemento `script`, incluindo jQuery.
 
-Inside your `script` element, add this code: `$(document).ready(function() {` to your `script`. Then close it on the following line (still inside your `script` element) with: `});`
+Dentro do seu elemento `script`, adicione esse código: `$(document).ready(function() {` ao seu `script`. Em seguida, feche-o na próxima linha (ainda dentro do elemento `script`) com: `});`
 
-We'll learn more about `functions` later. The important thing to know is that code you put inside this `function` will run as soon as your browser has loaded your page.
+Aprenderemos mais sobre `functions` depois. O importante a saber é que o código que você colocar dentro de `function` executará assim que o seu navegador carregar a página.
 
-This is important because without your `document ready function`, your code may run before your HTML is rendered, which would cause bugs.
+Isso é importante porque sem o `$(document).ready(function() {`, seu código pode executar antes do HTML ser carregado, o que causaria bugs.
 
 # --hints--
 
-You should create a `script` element making sure it is valid and has a closing tag.
+Você deve criar um elemento `script` certificando-se que é válido e possui tag de fechamento.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-You should add `$(document).ready(function() {` to the beginning of your `script` element.
+Você deve adicionar `$(document).ready(function() {` ao início do seu eleemento `script`.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-You should close your `$(document).ready(function() {` function with `});`
+Você deve fechar sua função `$(document).ready(function() {` com `});`
 
 ```js
 assert(code.match(/\n*?\s*?\}\s*?\);/g));

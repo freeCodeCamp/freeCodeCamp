@@ -544,6 +544,8 @@ Se incontri degli errori durante l'installazione delle dipendenze, assicurati di
 
 La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
 
+> [!NOTE] Se stai usando un device Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
+
 ## Ottenere Aiuto
 
 Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).

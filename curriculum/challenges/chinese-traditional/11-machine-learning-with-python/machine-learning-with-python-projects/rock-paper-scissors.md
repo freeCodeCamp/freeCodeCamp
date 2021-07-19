@@ -1,23 +1,24 @@
 ---
 id: 5e46f8d6ac417301a38fb92d
-title: Rock Paper Scissors
+title: 剪刀石頭布
 challengeType: 10
+forumTopicId: 462376
 dashedName: rock-paper-scissors
 ---
 
 # --description--
 
-For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
+在這個挑戰中，你將創建一個程序來玩石頭、剪刀、布。 一個隨機選取的程序通常會有 50% 的時間獲勝。 要通過這一挑戰，你的程序必須與四個不同的機器人進行對戰，並達到至少 60% 勝率。
 
-You can access [the full project description and starter code on repl.it](https://repl.it/github/freeCodeCamp/boilerplate-rock-paper-scissors).
+你可以訪問 [Replit 上的完整項目描述和啓動代碼](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors)。
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+進入該鏈接後，fork 該項目。 一旦你根據 “README.md” 中的說明完成了項目，請在下面提交你的項目鏈接。
 
-We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+我們仍在開發機器學習課程的交互式課程部分。 現在，你需要使用其他資源來學習如何通過這一挑戰。
 
 # --hints--
 
-It should pass all Python tests.
+它應該通過所有的 Python 測試。
 
 ```js
 

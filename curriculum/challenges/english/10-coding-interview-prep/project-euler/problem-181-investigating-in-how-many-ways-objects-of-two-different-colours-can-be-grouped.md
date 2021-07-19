@@ -11,20 +11,18 @@ dashedName: >-
 
 # --description--
 
-Having three black objects B and one white object W they can be grouped in 7 ways like this:
+Having three black objects $B$ and one white object $W$ they can be grouped in 7 ways like this:
 
-(BBBW)(B,BBW)(B,B,BW)(B,B,B,W)
+$$(BBBW)\\;(B,BBW)\\;(B,B,BW)\\;(B,B,B,W)\\;(B,BB,W)\\;(BBB,W)\\;(BB,BW)$$
 
-(B,BB,W)(BBB,W)(BB,BW)
-
-In how many ways can sixty black objects B and forty white objects W be thus grouped?
+In how many ways can sixty black objects $B$ and forty white objects $W$ be thus grouped?
 
 # --hints--
 
-`euler181()` should return 83735848679360670.
+`colorsGrouping()` should return `83735848679360670`.
 
 ```js
-assert.strictEqual(euler181(), 83735848679360670);
+assert.strictEqual(colorsGrouping(), 83735848679360670);
 ```
 
 # --seed--
@@ -32,12 +30,12 @@ assert.strictEqual(euler181(), 83735848679360670);
 ## --seed-contents--
 
 ```js
-function euler181() {
+function colorsGrouping() {
 
   return true;
 }
 
-euler181();
+colorsGrouping();
 ```
 
 # --solutions--

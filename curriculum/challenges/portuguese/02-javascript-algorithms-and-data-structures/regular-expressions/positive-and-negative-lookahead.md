@@ -1,6 +1,6 @@
 ---
 id: 587d7dba367417b2b2512ba9
-title: Positive and Negative Lookahead
+title: Lookaheads positivos e negativos
 challengeType: 1
 forumTopicId: 301360
 dashedName: positive-and-negative-lookahead
@@ -8,15 +8,15 @@ dashedName: positive-and-negative-lookahead
 
 # --description--
 
-<dfn>Lookaheads</dfn> are patterns that tell JavaScript to look-ahead in your string to check for patterns further along. This can be useful when you want to search for multiple patterns over the same string.
+<dfn>Lookaheads</dfn> ("olhar à frente") são padrões que dizem ao JavaScript para procurar outros padrões ao longo da string sem capturá-los. Eles podem ser úteis quando é necessário fazer diversas verificações na mesma string.
 
-There are two kinds of lookaheads: <dfn>positive lookahead</dfn> and <dfn>negative lookahead</dfn>.
+Existem dois tipos de lookahead: o <dfn>lookahead positivo</dfn> e o <dfn>lookahead negativo</dfn>.
 
-A positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as `(?=...)` where the `...` is the required part that is not matched.
+Lookaheads positivos garantem que o padrão especificado se encontra à frente, mas não o capturam. Usa-se `(?=...)`, onde `...` é o padrão a ser procurado, para escrever lookaheads positivos.
 
-On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as `(?!...)` where the `...` is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+Lookaheads negativos, por outro lado, garantem que o padrão especificado não se encontra à sua frente na string. Para usar lookaheads negativos, escrevemos `(?!...)` onde `...` é o padrão que você quer ter certeza que não está lá. O restante do padrão é validado se o padrão do lookahead negativo estiver ausente.
 
-Lookaheads are a bit confusing but some examples will help.
+É fácil se confundir com lookaheads, mas uns exemplos podem ajudar.
 
 ```js
 let quit = "qu";
@@ -27,9 +27,9 @@ quit.match(quRegex);
 noquit.match(qRegex);
 ```
 
-Both of these `match` calls would return `["q"]`.
+As duas chamadas a `match` retornam `["q"]`.
 
-A more practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+Validar dois padrões diferentes em uma string é considerado um uso mais prático de lookaheads. Neste não-tão-aprimorado validador de senhas, os lookaheads procuram por 3 a 6 caracteres e pelo menos um número, respectivamente, na string:
 
 ```js
 let password = "abc123";
@@ -39,59 +39,59 @@ checkPass.test(password);
 
 # --instructions--
 
-Use lookaheads in the `pwRegex` to match passwords that are greater than 5 characters long, and have two consecutive digits.
+Faça com que `pwRegex` capture senhas que têm 5 ou mais caracteres e dois dígitos consecutivos usando lookaheads.
 
 # --hints--
 
-Your regex should use two positive `lookaheads`.
+Sua regex deve usar dois `lookaheads` positivos.
 
 ```js
 assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 ```
 
-Your regex should not match the string `astronaut`
+Sua regex não deve encontrar a string `astronaut`
 
 ```js
 assert(!pwRegex.test('astronaut'));
 ```
 
-Your regex should not match the string `banan1`
+Sua regex não deve encontrar a string `banan1`
 
 ```js
 assert(!pwRegex.test('banan1'));
 ```
 
-Your regex should match the string `bana12`
+Sua regex deve encontrar a string `bana12`
 
 ```js
 assert(pwRegex.test('bana12'));
 ```
 
-Your regex should match the string `abc123`
+Sua regex deve encontrar a string `abc123`
 
 ```js
 assert(pwRegex.test('abc123'));
 ```
 
-Your regex should not match the string `12345`
+Sua regex não deve encontrar a string `12345`
 
 ```js
 assert(!pwRegex.test('12345'));
 ```
 
-Your regex should match the string `8pass99`
+Sua regex deve encontrar a string `8pass99`
 
 ```js
 assert(pwRegex.test('8pass99'));
 ```
 
-Your regex should not match the string `1a2bcde`
+Sua regex não deve encontrar a string `1a2bcde`
 
 ```js
 assert(!pwRegex.test('1a2bcde'));
 ```
 
-Your regex should match the string `astr1on11aut`
+Sua regex deve encontrar a string `astr1on11aut`
 
 ```js
 assert(pwRegex.test('astr1on11aut'));

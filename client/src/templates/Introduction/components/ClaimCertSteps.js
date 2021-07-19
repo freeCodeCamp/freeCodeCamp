@@ -2,100 +2,81 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { withTranslation, useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 
-import IntroInformation from '../../../assets/icons/intro-information';
+import { StepsType } from '../../../redux/prop-types';
 import GreenPass from '../../../assets/icons/green-pass';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
-import { userSelector } from '../../../redux';
-import { User } from '../../../redux/prop-types';
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
-const renderCheckMark = isCompleted => {
-  return isCompleted ? (
-    <GreenPass style={mapIconStyle} />
-  ) : (
-    <GreenNotCompleted style={mapIconStyle} />
-  );
-};
 
 const propTypes = {
-  certSlug: PropTypes.string,
   i18nCertText: PropTypes.string,
-  superBlock: PropTypes.string,
-  user: User
+  isProjectsCompleted: PropTypes.bool,
+  steps: StepsType,
+  superBlock: PropTypes.string
 };
 
-const mapStateToProps = state => {
-  return createSelector(userSelector, user => ({
-    user
-  }))(state);
-};
-
-const ClaimCertSteps = ({ certSlug, i18nCertText, superBlock, user }) => {
+const ClaimCertSteps = ({
+  isProjectsCompleted,
+  i18nCertText,
+  steps,
+  superBlock
+}) => {
   const { t } = useTranslation();
+  const renderCheckMark = isCompleted => {
+    return isCompleted ? (
+      <GreenPass style={mapIconStyle} />
+    ) : (
+      <GreenNotCompleted style={mapIconStyle} />
+    );
+  };
 
   const settingsLink = '/settings#privacy-settings';
-  const certClaimLink = `/settings#cert-${certSlug}`;
   const honestyPolicyAnchor = '/settings#honesty-policy';
-
   const {
-    name,
-    isHonest,
-    profileUI: { isLocked, showCerts, showName }
-  } = user;
-
+    isHonest = false,
+    isShowName = false,
+    isShowCerts = false,
+    isShowProfile = false
+  } = steps;
   return (
-    <ul className='map-challenges-ul'>
-      <li className='map-challenge-title map-project-wrap'>
+    <ul className='map-challenges-ul' data-cy='claim-cert-steps'>
+      <li className='map-challenge-title map-challenge-wrap'>
         <Link to={honestyPolicyAnchor}>
+          <span className='badge map-badge'>{renderCheckMark(isHonest)}</span>
           {t('certification-card.accept-honesty')}
-          <span className='badge map-badge map-project-checkmark'>
-            {renderCheckMark(isHonest)}
-          </span>
         </Link>
       </li>
-      <li className='map-challenge-title map-project-wrap'>
-        <Link to={settingsLink}>
-          {t('certification-card.set-profile-public')}
-          <span className='badge map-badge map-project-checkmark'>
-            {renderCheckMark(!isLocked)}
-          </span>
-        </Link>
-      </li>
-      <li className='map-challenge-title map-project-wrap'>
-        <Link to={settingsLink}>
-          {t('certification-card.set-certs-public')}
-          <span className='badge map-badge map-project-checkmark'>
-            {renderCheckMark(showCerts)}
-          </span>
-        </Link>
-      </li>
-      <li className='map-challenge-title map-project-wrap'>
-        <Link to={settingsLink}>
-          {t('certification-card.set-name')}
-          <span className='badge map-badge map-project-checkmark'>
-            {renderCheckMark(name && name !== '' && showName)}
-          </span>
-        </Link>
-      </li>
-      <li className='map-challenge-title map-project-wrap'>
+      <li className='map-challenge-title map-challenge-wrap'>
         <a href={`#${superBlock}-projects`}>
+          <span className='badge map-badge'>
+            {renderCheckMark(isProjectsCompleted)}
+          </span>
           {t('certification-card.complete-project', {
             i18nCertText
           })}
-          <span className='badge map-badge map-project-checkmark'>
-            <IntroInformation style={mapIconStyle} />
-          </span>
         </a>
       </li>
-      <li className='map-challenge-title map-project-wrap'>
-        <Link to={certClaimLink}>
-          {t('certification-card.set-claim')}
-          <span className='badge map-badge map-project-checkmark'>
-            <IntroInformation style={mapIconStyle} />
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={settingsLink}>
+          <span className='badge map-badge'>
+            {renderCheckMark(isShowProfile)}
           </span>
+          {t('certification-card.set-profile-public')}
+        </Link>
+      </li>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={settingsLink}>
+          <span className='badge map-badge'>
+            {renderCheckMark(isShowCerts)}
+          </span>
+          {t('certification-card.set-certs-public')}
+        </Link>
+      </li>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={settingsLink}>
+          <span className='badge map-badge'>{renderCheckMark(isShowName)}</span>
+          {t('certification-card.set-name')}
         </Link>
       </li>
     </ul>
@@ -105,4 +86,4 @@ const ClaimCertSteps = ({ certSlug, i18nCertText, superBlock, user }) => {
 ClaimCertSteps.displayName = 'ClaimCertSteps';
 ClaimCertSteps.propTypes = propTypes;
 
-export default connect(mapStateToProps)(withTranslation()(ClaimCertSteps));
+export default withTranslation()(ClaimCertSteps);

@@ -16,14 +16,14 @@ A number for which every pair of consecutive digits has a difference of one is c
 
 A pandigital number contains every decimal digit from 0 to 9 at least once.
 
-How many pandigital step numbers less than 1040 are there?
+How many pandigital step numbers less than ${10}^{40}$ are there?
 
 # --hints--
 
-`euler178()` should return 126461847755.
+`stepNumbers()` should return `126461847755`.
 
 ```js
-assert.strictEqual(euler178(), 126461847755);
+assert.strictEqual(stepNumbers(), 126461847755);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler178(), 126461847755);
 ## --seed-contents--
 
 ```js
-function euler178() {
+function stepNumbers() {
 
   return true;
 }
 
-euler178();
+stepNumbers();
 ```
 
 # --solutions--

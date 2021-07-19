@@ -1,6 +1,6 @@
 ---
 id: 5cfa550e84205a357704ccb6
-title: Use Destructuring Assignment to Extract Values from Objects
+title: Use Atribuição de Desestruturação para Extrair Valores de Objetos
 challengeType: 1
 forumTopicId: 301216
 dashedName: use-destructuring-assignment-to-extract-values-from-objects
@@ -8,9 +8,9 @@ dashedName: use-destructuring-assignment-to-extract-values-from-objects
 
 # --description--
 
-<dfn>Destructuring assignment</dfn> is special syntax introduced in ES6, for neatly assigning values taken directly from an object.
+<dfn>Atribuição de Desestruturação</dfn> é uma sintaxe especial introduzida na ES6, para atribuir nitidamente valores retirados diretamente de um objeto.
 
-Consider the following ES5 code:
+Considere o seguinte código ES5:
 
 ```js
 const user = { name: 'John Doe', age: 34 };
@@ -19,27 +19,27 @@ const name = user.name;
 const age = user.age;
 ```
 
-`name` would have a value of the string `John Doe`, and `age` would have the number `34`.
+`name` teria o valor da string `John Doe` e `age` teria o número `34`.
 
-Here's an equivalent assignment statement using the ES6 destructuring syntax:
+Aqui está uma instrução de atribuição equivalente usando a sintaxe de desestruturação ES6:
 
 ```js
 const { name, age } = user;
 ```
 
-Again, `name` would have a value of the string `John Doe`, and `age` would have the number `34`.
+Novamente, `name` teria o valor da string `John Doe` e `age` teria o número `34`.
 
-Here, the `name` and `age` variables will be created and assigned the values of their respective values from the `user` object. You can see how much cleaner this is.
+Aqui, as variáveis `name` e `age` serão criadas e atribuídas a elas os valores de seus respectivos valores do objeto `user`. Você pode ver quão mais limpo é.
 
-You can extract as many or few values from the object as you want.
+Você pode extrair quantos valores do objeto quanto você quer.
 
 # --instructions--
 
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `today` and `tomorrow` the values of `today` and `tomorrow` from the `HIGH_TEMPERATURES` object.
+Substitua as duas atribuições com a atribuição de desestruturação equivalente. Ainda deve ser atribuído às valores `today` e `tomorrow` os valores de `today` e `tomorrow` do objeto `HIGH_TEMPERATURES`.
 
 # --hints--
 
-You should remove the ES5 assignment syntax.
+Você deve remover a sintaxe de atribuição do ES5.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `today` variable.
+Você deve usar desestruturação para criar a variável `today`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-You should use destructuring to create the `tomorrow` variable.
+Você deve usar desestruturação para criar a variável `tomorrow`.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-`today` should be equal to `77` and `tomorrow` should be equal to `80`.
+`today` deve ser igual a `77` e `tomorrow` deve ser igual a `80`.
 
 ```js
 assert(today === 77 && tomorrow === 80);

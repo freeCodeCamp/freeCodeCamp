@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b42
-title: Mutate an Array Declared with const
+title: Modificar um array declarado com const
 challengeType: 1
 forumTopicId: 301206
 dashedName: mutate-an-array-declared-with-const
@@ -8,11 +8,11 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-The `const` declaration has many use cases in modern JavaScript.
+Variáveis declaradas com `const` têm muitos casos de uso no JavaScript moderno.
 
-Some developers prefer to assign all their variables using `const` by default, unless they know they will need to reassign the value. Only in that case, they use `let`.
+Alguns desenvolvedores preferem criar todas suas variáveis usando `const`, a menos que eles saibam que irão precisar reatribuir o valor. Apenas nesse caso, eles usam `let`.
 
-However, it is important to understand that objects (including arrays and functions) assigned to a variable using `const` are still mutable. Using the `const` declaration only prevents reassignment of the variable identifier.
+No entanto, é importante entender que objetos (incluindo arrays e funções) atribuídos a uma variável usando `const` ainda são mutáveis. Usar a declaração `const` só impede a reatribuição do identificador (nome) da variável.
 
 ```js
 const s = [5, 6, 7];
@@ -21,29 +21,29 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` will result in an error. The `console.log` will display the value `[5, 6, 45]`.
+`s = [1, 2, 3]` resultará em um erro. `console.log` exibirá o valor `[5, 6, 45]`.
 
-As you can see, you can mutate the object `[5, 6, 7]` itself and the variable `s` will still point to the altered array `[5, 6, 45]`. Like all arrays, the array elements in `s` are mutable, but because `const` was used, you cannot use the variable identifier `s` to point to a different array using the assignment operator.
+Como você pode ver, você pode alterar o objeto `[5, 6, 7]` e a variável `s` ainda apontará para o array alterado `[5, 6, 45]`. Assim como em qualquer outro array, os elementos dentro de `s` também são mutáveis. Mas como `const` foi usado, você não pode usar o identificador da variável `s` para apontar para uma matriz diferente (ou qualquer outro valor) usando o operador de atribuição.
 
 # --instructions--
 
-An array is declared as `const s = [5, 7, 2]`. Change the array to `[2, 5, 7]` using various element assignments.
+Um array é declarado: `const s = [5, 7, 2]`. Modifique o array para `[2, 5, 7]` usando várias atribuições de elementos.
 
 # --hints--
 
-You should not replace `const` keyword.
+Você não deve substituir a palavra-chave `const`.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const/g));
 ```
 
-`s` should be a constant variable (by using `const`).
+`s` deve ser uma variável constante (use `const`).
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
 ```
 
-You should not change the original array declaration.
+Você não deve alterar modificar o array original manualmente.
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ You should not change the original array declaration.
   );
 ```
 
-`s` should be equal to `[2, 5, 7]`.
+A variável `s` deve ser igual a `[2, 5, 7]`.
 
 ```js
 assert.deepEqual(s, [2, 5, 7]);

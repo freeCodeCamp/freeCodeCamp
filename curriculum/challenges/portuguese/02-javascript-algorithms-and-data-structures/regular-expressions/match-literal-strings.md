@@ -1,6 +1,6 @@
 ---
 id: 587d7db3367417b2b2512b8f
-title: Match Literal Strings
+title: Correspondência de strings literais
 challengeType: 1
 forumTopicId: 301355
 dashedName: match-literal-strings
@@ -8,7 +8,7 @@ dashedName: match-literal-strings
 
 # --description--
 
-In the last challenge, you searched for the word `Hello` using the regular expression `/Hello/`. That regex searched for a literal match of the string `Hello`. Here's another example searching for a literal match of the string `Kevin`:
+No desafio anterior, você usou a expressão regular `/Hello/` para procurar a palavra `Hello`. Esta regex buscou a string `Hello` literalmente. No exemplo abaixo há outra busca literal, dessa vez pela string `Kevin`:
 
 ```js
 let testStr = "Hello, my name is Kevin.";
@@ -16,38 +16,38 @@ let testRegex = /Kevin/;
 testRegex.test(testStr);
 ```
 
-This `test` call will return `true`.
+Essa chamada a `test` retornará `true`.
 
-Any other forms of `Kevin` will not match. For example, the regex `/Kevin/` will not match `kevin` or `KEVIN`.
+Qualquer outra forma de escrever `Kevin` não funcionará. Por exemplo, a regex `/Kevin/` não encontrará nem `kevin` e nem `KEVIN`.
 
 ```js
 let wrongRegex = /kevin/;
 wrongRegex.test(testStr);
 ```
 
-This `test` call will return `false`.
+`test` retornará `false`.
 
-A future challenge will show how to match those other forms as well.
+Você verá como encontrar estas outras formas em alguns desafios futuros.
 
 # --instructions--
 
-Complete the regex `waldoRegex` to find `"Waldo"` in the string `waldoIsHiding` with a literal match.
+Complete a regex `waldoRegex` para encontrar `"Waldo"` na string `waldoIsHiding` de forma literal.
 
 # --hints--
 
-Your regex `waldoRegex` should find the string `Waldo`
+Sua regex `waldoRegex` deve encontrar a string `Waldo`
 
 ```js
 assert(waldoRegex.test(waldoIsHiding));
 ```
 
-Your regex `waldoRegex` should not search for anything else.
+Sua regex `waldoRegex` não deve buscar nada além disso.
 
 ```js
 assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 ```
 
-You should perform a literal string match with your regex.
+A busca com a regex deve ser por uma string literal.
 
 ```js
 assert(!/\/.*\/i/.test(code));

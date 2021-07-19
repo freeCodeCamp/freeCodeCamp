@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036162
-title: Create a Stateless Functional Component
+title: Criar um Componente Funcional Sem Estado
 challengeType: 6
 forumTopicId: 301392
 dashedName: create-a-stateless-functional-component
@@ -8,11 +8,11 @@ dashedName: create-a-stateless-functional-component
 
 # --description--
 
-Components are the core of React. Everything in React is a component and here you will learn how to create one.
+Componentes são o núcleo do React. Tudo em React é um componente e aqui você vai aprender como criar um.
 
-There are two ways to create a React component. The first way is to use a JavaScript function. Defining a component in this way creates a *stateless functional component*. The concept of state in an application will be covered in later challenges. For now, think of a stateless component as one that can receive data and render it, but does not manage or track changes to that data. (We'll cover the second way to create a React component in the next challenge.)
+Existem duas maneiras de criar um componente React. A primeira maneira é usar uma função JavaScript. Definir um componente dessa forma cria um *componente funcional sem estado*. O conceito de estado numa aplicação será abordado em desafios posteriores. Por enquanto, pense em um componente sem estado como um que pode receber dados e renderizá-lo, mas não gerencia ou rastreia as alterações desses dados. (Vamos cobrir a segunda maneira de criar um componente React no próximo desafio.)
 
-To create a component with a function, you simply write a JavaScript function that returns either JSX or `null`. One important thing to note is that React requires your function name to begin with a capital letter. Here's an example of a stateless functional component that assigns an HTML class in JSX:
+Para criar um componente com uma função, você simplesmente escreve uma função JavaScript que retorne JSX ou `null`. Uma coisa importante a notar é que React requer que o nome da sua função comece com uma letra maiúscula. Aqui está um exemplo de um componente funcional sem estado que atribui uma classe HTML em JSX:
 
 ```jsx
 const DemoComponent = function() {
@@ -22,19 +22,19 @@ const DemoComponent = function() {
 };
 ```
 
-After being transpiled, the `<div>` will have a CSS class of `customClass`.
+Depois de ser transpilado, o `<div>` terá uma classe CSS de `customClass`.
 
-Because a JSX component represents HTML, you could put several components together to create a more complex HTML page. This is one of the key advantages of the component architecture React provides. It allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.
+Como um componente JSX representa HTML, você pode juntar vários componentes para criar uma página HTML mais complexa. Esta é uma das principais vantagens da arquitetura do componente que React provê. Isso permite que você componha sua interface de usuário de vários componentes isolados e separados. Isso torna mais fácil construir e manter interfaces de usuário complexas.
 
 # --instructions--
 
-The code editor has a function called `MyComponent`. Complete this function so it returns a single `div` element which contains some string of text.
+O editor de código tem uma função chamada `MyComponent`. Complete essa função para que ela retorne um único elemento `div`, que contém alguma string de texto.
 
-**Note:** The text is considered a child of the `div` element, so you will not be able to use a self-closing tag.
+**Nota:** O texto é considerado filho do elemento `div`, portanto você não poderá usar uma tag de fechamento.
 
 # --hints--
 
-`MyComponent` should return JSX.
+`MyComponent` deve retornar JSX.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-`MyComponent` should return a `div` element.
+`MyComponent` deve retornar um elemento `div`.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-The `div` element should contain a string of text.
+O elemento `div` deve conter uma string de texto.
 
 ```js
 assert(

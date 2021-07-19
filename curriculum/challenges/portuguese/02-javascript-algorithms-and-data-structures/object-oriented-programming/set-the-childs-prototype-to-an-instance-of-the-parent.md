@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b85
-title: Set the Child's Prototype to an Instance of the Parent
+title: Defina o Protótipo de Child para ser uma Instância do Parent
 challengeType: 1
 forumTopicId: 301325
 dashedName: set-the-childs-prototype-to-an-instance-of-the-parent
@@ -8,30 +8,30 @@ dashedName: set-the-childs-prototype-to-an-instance-of-the-parent
 
 # --description--
 
-In the previous challenge you saw the first step for inheriting behavior from the supertype (or parent) `Animal`: making a new instance of `Animal`.
+No desafio anterior, você viu o primeiro passo para herdar comportamento do supertipo (ou parente) `Animal`: fazendo uma instância de `Animal`.
 
-This challenge covers the next step: set the `prototype` of the subtype (or child)—in this case, `Bird`—to be an instance of `Animal`.
+Este desafio cobre o próximo passo: definir o `prototype` do subtipo (ou filho) - neste caso, `Bird` - para ser uma instância de `Animal`.
 
 ```js
 Bird.prototype = Object.create(Animal.prototype);
 ```
 
-Remember that the `prototype` is like the "recipe" for creating an object. In a way, the recipe for `Bird` now includes all the key "ingredients" from `Animal`.
+Lembre-se que o `prototype` é como uma receita para criar um objeto. De certa forma, a receita para `Bird` agora inclui todos os "ingredientes" chave para `Animal`.
 
 ```js
 let duck = new Bird("Donald");
 duck.eat();
 ```
 
-`duck` inherits all of `Animal`'s properties, including the `eat` method.
+`duck` herda todas as propriedades de `Animal`, incluindo o método `eat`.
 
 # --instructions--
 
-Modify the code so that instances of `Dog` inherit from `Animal`.
+Modifique o código para que as instâncias de `Dog` herdem de `Animal`.
 
 # --hints--
 
-`Dog.prototype` should be an instance of `Animal`.
+`Dog.prototype` deve ser uma instância de `Animal`.
 
 ```js
 assert(Animal.prototype.isPrototypeOf(Dog.prototype));

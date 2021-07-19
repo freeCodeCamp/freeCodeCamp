@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5c
-title: Understand Functional Programming Terminology
+title: Entenda a Terminologia de Programação Funcional
 challengeType: 1
 forumTopicId: 301240
 dashedName: understand-functional-programming-terminology
@@ -8,47 +8,47 @@ dashedName: understand-functional-programming-terminology
 
 # --description--
 
-The FCC Team had a mood swing and now wants two types of tea: green tea and black tea. General Fact: Client mood swings are pretty common.
+Houve uma mudança de humor no time da FCC e os membros agora querem dois tipos de chá: verde e preto. Fato: clientes sofrem mudanças de humor e de opinião frequentemente.
 
-With that information, we'll need to revisit the `getTea` function from last challenge to handle various tea requests. We can modify `getTea` to accept a function as a parameter to be able to change the type of tea it prepares. This makes `getTea` more flexible, and gives the programmer more control when client requests change.
+Por causa disso, precisaremos rever a função `getTea` do último desafio para lidar com vários pedidos de chá. Podemos modificar a `getTea` para aceitar uma função como argumento e torná-la capaz de preparar outros tipos de chá. Isso faz com que `getTea` seja mais flexível e dá mais controle ao programador quando os requisitos do cliente mudam.
 
-But first, let's cover some functional terminology:
+Mas primeiro, vejamos um pouco de terminologia funcional:
 
-<dfn>Callbacks</dfn> are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in `filter`, the callback function tells JavaScript the criteria for how to filter an array.
+<dfn>Callbacks</dfn> são funções que são passadas a outras funções, que decidem quando e como são chamados. Você pode ter visto alguns sendo passados a outros métodos. Em `filter`, por exemplo, o callback diz ao JavaScript qual é o critério para filtrar um array.
 
-Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called <dfn>first class</dfn> functions. In JavaScript, all functions are first class functions.
+Funções que podem ser atribuídas a variáveis, passadas a outras funções ou retornadas de outra função como qualquer outro valor são chamadas de <dfn>funções de primeira classe</dfn>. Em JavaScript, todas as funções são funções de primeira classe.
 
-The functions that take a function as an argument, or return a function as a return value are called <dfn>higher order</dfn> functions.
+As funções que recebem funções como argumentos ou retornam outras funções como valores são chamadas de <dfn>funções de ordem superior</dfn>.
 
-When functions are passed in to or returned from another function, then those functions which were passed in or returned can be called a <dfn>lambda</dfn>.
+Funções podem ser chamadas de <dfn>lambda</dfn> quando passadas para outra função ou retornadas a partir dela.
 
 # --instructions--
 
-Prepare 27 cups of green tea and 13 cups of black tea and store them in `tea4GreenTeamFCC` and `tea4BlackTeamFCC` variables, respectively. Note that the `getTea` function has been modified so it now takes a function as the first argument.
+Prepare 27 xícaras de chá verde e 13 xícaras de chá preto; armazene-as nas variáveis `tea4GreenTeamFCC` e `tea4BlackTeamFCC`, respectivamente. Perceba que a função `getTea` foi alterada para receber uma função como primeiro argumento.
 
-Note: The data (the number of cups of tea) is supplied as the last argument. We'll discuss this more in later lessons.
+Obs: O número de xícaras de chá se tornou o último parâmetro da função. Discutiremos mais sobre isso nas próximas aulas.
 
 # --hints--
 
-The `tea4GreenTeamFCC` variable should hold 27 cups of green tea for the team.
+A variável `tea4GreenTeamFCC` deve conter 27 xícaras de chá verde para o time.
 
 ```js
 assert(tea4GreenTeamFCC.length === 27);
 ```
 
-The `tea4GreenTeamFCC` variable should hold cups of green tea.
+A variável `tea4GreenTeamFCC` deve conter xícaras de chá verde.
 
 ```js
 assert(tea4GreenTeamFCC[0] === 'greenTea');
 ```
 
-The `tea4BlackTeamFCC` variable should hold 13 cups of black tea.
+A variável `tea4BlackTeamFCC` deve conter 13 xícaras de chá preto.
 
 ```js
 assert(tea4BlackTeamFCC.length === 13);
 ```
 
-The `tea4BlackTeamFCC` variable should hold cups of black tea.
+A variável `tea4BlackTeamFCC` deve conter xícaras de chá preto.
 
 ```js
 assert(tea4BlackTeamFCC[0] === 'blackTea');

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b54
-title: Use getters and setters to Control Access to an Object
+title: Use getters e setter para Controlar Acesso a um Objeto
 challengeType: 1
 forumTopicId: 301220
 dashedName: use-getters-and-setters-to-control-access-to-an-object
@@ -8,13 +8,13 @@ dashedName: use-getters-and-setters-to-control-access-to-an-object
 
 # --description--
 
-You can obtain values from an object and set the value of a property within an object.
+Você pode obter valores de um objeto e definir o valor da propriedade dentro de um objeto.
 
-These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.
+Esses são classicamente chamados de <dfn>getters</dfn> e <dfn>setters</dfn>.
 
-Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
+Funções getter tem a finalidade de simplesmente retornar (get) o valor de uma variável privada de um objeto para o usuário sem que o usuário acesse diretamente a variável privada.
 
-Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.
+Funções setter tem a finalidade de modificar, ou definir (set), o valor de uma variável privada de um objeto baseado no valor passado dentro da função setter. Essa mudança poderia envolver cálculos, ou até sobrescrever completamente o valor anterior.
 
 ```js
 class Book {
@@ -36,29 +36,29 @@ novel.writer = 'newAuthor';
 console.log(novel.writer);
 ```
 
-The console would display the strings `anonymous` and `newAuthor`.
+O console exibirá as strings `anonymous` e `newAuthor`.
 
-Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details.
+Note a sintaxe usada para invocar o getter e setter. Eles nem sequer se parecem com funções. Getters e setters são importantes porque escondem os detalhes internos da implementação.
 
-**Note:** It is convention to precede the name of a private variable with an underscore (`_`). However, the practice itself does not make a variable private.
+**Nota:** É uma convenção preceder o nome de uma variável privada com um underscore (`_`). No entanto, essa prática por si só não torna uma variável privada.
 
 # --instructions--
 
-Use the `class` keyword to create a `Thermostat` class. The `constructor` accepts a Fahrenheit temperature.
+Use a palavra-chave `class` para criar a classe `Thermostat`. O `constructor` aceita uma temperatura Fahrenheit.
 
-In the class, create a `getter` to obtain the temperature in Celsius and a `setter` to set the temperature in Celsius.
+Na classe, crie um `getter` para obter a temperatura em Celsius e um `setter` para definir a temperatura em Celsius.
 
-Remember that `C = 5/9 * (F - 32)` and `F = C * 9.0 / 5 + 32`, where `F` is the value of temperature in Fahrenheit, and `C` is the value of the same temperature in Celsius.
+Lembre-se que `C = 5/9 * (F - 32)` e `F = C * 9.0 / 5 + 32`, aonde `F` é o valor da temperatura em Fahrenheit e `C` é o valor da mesma temperatura em Celsius.
 
-**Note:** When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+**Nota:** Quando você implementa isso, você irá rastrar a temperatura dentro da classe em uma escala, ou Fahrenheit ou Celsius.
 
-This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
+Esse é o poder de um getter e um setter. Você está criando uma API para outro uso, que pode pegar o resultado correto independente de qual está rastreando.
 
-In other words, you are abstracting implementation details from the user.
+Em outras palavras, você está abstraindo detalhes de implementação do usuário.
 
 # --hints--
 
-`Thermostat` should be a `class` with a defined `constructor` method.
+`Thermostat` deve ser uma `class` com um método `constructor` definido.
 
 ```js
 assert(
@@ -67,13 +67,13 @@ assert(
 );
 ```
 
-`class` keyword should be used.
+A palavra-chave `class` deve ser usado.
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Thermostat` should be able to be instantiated.
+`Thermostat` deve ser possível de ser instanciado.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-When instantiated with a Fahrenheit value, `Thermostat` should set the correct `temperature`.
+Quando instanciado com um valor Fahrenheit, `Thermostat` deve definir a `temperature` correta.
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-A `getter` should be defined.
+Um `getter` deve ser definido.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-A `setter` should  be defined.
+Um `setter` deve ser definido.
 
 ```js
 assert(
@@ -123,7 +123,7 @@ assert(
 );
 ```
 
-Calling the `setter` with a Celsius value should set the `temperature`.
+Chamando um `setter` com um valor Celsius deve definir a `temperature`.
 
 ```js
 assert(

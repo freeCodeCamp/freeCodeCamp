@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b4
-title: Quoting Strings with Single Quotes
+title: Cercando uma String com Aspas Simples
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260
@@ -9,41 +9,41 @@ dashedName: quoting-strings-with-single-quotes
 
 # --description--
 
-<dfn>String</dfn> values in JavaScript may be written with single or double quotes, as long as you start and end with the same type of quote. Unlike some other programming languages, single and double quotes work the same in JavaScript.
+Valores de <dfn>String</dfn> em JavaScript podem ser escritas com aspas simples ou duplas, desde que você comece e termine com o mesmo tipo de aspas. Diferente de outras linguagens de programação, aspas simples e duplas funcionam da mesma forma em JavaScript.
 
 ```js
 doubleQuoteStr = "This is a string"; 
 singleQuoteStr = 'This is also a string';
 ```
 
-The reason why you might want to use one type of quote over the other is if you want to use both in a string. This might happen if you want to save a conversation in a string and have the conversation in quotes. Another use for it would be saving an `<a>` tag with various attributes in quotes, all within a string.
+O motivo pelo qual você pode querer usar um tipo de aspas no lugar da outra, é se você vir a querer usar ambas em uma string. Isso pode acontecer se você quiser salvar uma conversa em uma string e ter a conversa entre aspas. Outro uso para isso seria salvar uma tag `<a>` com vários atributos em aspas, tudo dentro de uma string.
 
 ```js
 conversation = 'Finn exclaims to Jake, "Algebraic!"';
 ```
 
-However, this becomes a problem if you need to use the outermost quotes within it. Remember, a string has the same kind of quote at the beginning and end. But if you have that same quote somewhere in the middle, the string will stop early and throw an error.
+Porém, isso se torna um problema se você precisar usar as aspas mais extremas dentro dela. Lembre-se, uma string tem o mesmo tipo de aspas no início e no final. Mas se você tem aquela mesma aspa em algum lugar no meio, a string irá terminar mais cedo e lançará um erro.
 
 ```js
 goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
 badStr = 'Finn responds, "Let's go!"';
 ```
 
-Here `badStr` will throw an error.
+Aqui `badStr` lançará um erro.
 
-In the <dfn>goodStr</dfn> above, you can use both quotes safely by using the backslash `\` as an escape character.
+Na string <dfn>goodStr</dfn> acima, você pode usar ambas as aspas com segurança ao usar a barra invertida `\` como um caractere de escapamento.
 
-**Note:** The backslash `\` should not be confused with the forward slash `/`. They do not do the same thing.
+**Nota:** A barra invertida `\` não deve ser confundida com a barra comum `/`. Elas não fazem a mesma coisa.
 
 # --instructions--
 
-Change the provided string to a string with single quotes at the beginning and end and no escape characters.
+Altere a string fornecida para uma string com aspas simples no início e no final e sem caracteres de escapamento.
 
-Right now, the `<a>` tag in the string uses double quotes everywhere. You will need to change the outer quotes to single quotes so you can remove the escape characters.
+Nesse momento, a tag `<a>` na string usa aspas duplas em todo canto. Você precisará alterar as aspas mais externas em aspas simples, para que você possa remover os caracteres de escapamento.
 
 # --hints--
 
-You should remove all the backslashes (`\`).
+Você deve remover todas as barras invertidas (`\`).
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-You should have two single quotes `'` and four double quotes `"`.
+Você deve ter duas aspas simples `'` e quatro aspas duplas `"`.
 
 ```js
 assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);

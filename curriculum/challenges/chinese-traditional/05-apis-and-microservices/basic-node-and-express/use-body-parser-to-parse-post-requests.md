@@ -26,13 +26,15 @@ name=John+Doe&age=25
 
 # --instructions--
 
-在 `package.json` 中安裝 `body-parser` 模塊， 然後在文件頂部 `require` 進來， 用變量 `bodyParser` 保存它。 通過中間件的 `bodyParser.urlencoded({extended: false})` 方法處理 URL 編碼數據， 將調用上個方法返回的函數傳給 `app.use()`， 中間件通常掛載在所有需要它的路由之前。
+在 `package.json` 中安裝 `body-parser` 模塊， 然後在文件頂部 `require` 進來， 用變量 `bodyParser` 保存它。 通過中間件的 `bodyParser.urlencoded({extended: false})` 方法處理 URL 編碼數據， Pass the function returned by the previous method call to `app.use()`. As usual, the middleware must be mounted before all the routes that depend on it.
 
-**注意：**`extended=false` 是一個告訴解析器使用經典編碼的配置選項， 當使用它時，值只能是字符串或者數組， 拓展版本數據更加靈活，但稍遜於 JSON。
+**Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing.
+
+When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default JavaScript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
 
 # --hints--
 
-應該掛載“body-parser”中間件
+The 'body-parser' middleware should be mounted
 
 ```js
 (getUserInput) =>

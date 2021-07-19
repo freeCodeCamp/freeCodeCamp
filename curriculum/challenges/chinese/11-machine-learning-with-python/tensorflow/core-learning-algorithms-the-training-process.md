@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8c
-title: 'Core Learning Algorithms: The Training Process'
+title: '核心学习算法：训练过程'
 challengeType: 11
 videoId: _cEwvqVoBhI
 dashedName: core-learning-algorithms-the-training-process
@@ -10,19 +10,19 @@ dashedName: core-learning-algorithms-the-training-process
 
 ## --text--
 
-What are epochs?
+什么是 epoch？
 
 ## --answers--
 
-The number of times the model will see the same data.
+模型看到相同数据的次数。
 
 ---
 
-A type of graph.
+一种图。
 
 ---
 
-The number of elements you feed to the model at once.
+你一次提供给模型的元素数量。
 
 ## --video-solution--
 

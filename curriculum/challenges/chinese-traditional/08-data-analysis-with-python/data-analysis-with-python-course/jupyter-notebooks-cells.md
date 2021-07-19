@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c150
-title: Jupyter Notebooks Cells
+title: Jupyter Notebooks 單元格
 challengeType: 11
 videoId: 5PPegAs9aLA
 dashedName: jupyter-notebooks-cells
@@ -8,31 +8,30 @@ dashedName: jupyter-notebooks-cells
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
-More resources:
+更多資源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
--   [Twitter Cheat Sheet](https://twitter.com/rmotr_com/status/1122176794696847361)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What are the three main types of Jupyter Notebook Cell?
+Jupyter Notebook 單元格支持的三種主要類型是什麼？
 
 ## --answers--
 
-Code, Markdown, and Python
+Code、Markdown 和 Python
 
 ---
 
-Code, Markdown, and Raw
+Code、Markdown 和 Raw
 
 ---
 
-Markdown, Python, and Raw
+Markdown、Python 和 Raw
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908856
-title: Label Bootstrap Buttons
+title: Dê um Label a Botões Bootstrap
 challengeType: 0
 forumTopicId: 18222
 dashedName: label-bootstrap-buttons
@@ -8,43 +8,43 @@ dashedName: label-bootstrap-buttons
 
 # --description--
 
-Just like we labeled our wells, we want to label our buttons.
+Assim como nós rotulamos nossos wells, nós queremos rotular (label) nossos botões.
 
-Give each of your `button` elements text that corresponds to its id selector.
+Dê o texto a cada um de seus elementos `button` que corresponde ao seletor id.
 
 # --hints--
 
-Your `button` element with the id `target1` should have the text `#target1`.
+Seu elemento `button` com o id `target1` teve ter o texto `#target1`.
 
 ```js
 assert(new RegExp('#target1', 'gi').test($('#target1').text()));
 ```
 
-Your `button` element with the id `target2` should have the text `#target2`.
+Seu elemento `button` com o id `target2` deve ter o texto `#target2`.
 
 ```js
 assert(new RegExp('#target2', 'gi').test($('#target2').text()));
 ```
 
-Your `button` element with the id `target3` should have the text `#target3`.
+Seu elemento `button` com o id `target3` deve ter o texto `#target3`.
 
 ```js
 assert(new RegExp('#target3', 'gi').test($('#target3').text()));
 ```
 
-Your `button` element with the id `target4` should have the text `#target4`.
+Seu elemento `button` com o id `target4` deve ter o texto `#target4`.
 
 ```js
 assert(new RegExp('#target4', 'gi').test($('#target4').text()));
 ```
 
-Your `button` element with the id `target5` should have the text `#target5`.
+Seu elemento `button` com o id `target5` deve ter o texto `#target5`.
 
 ```js
 assert(new RegExp('#target5', 'gi').test($('#target5').text()));
 ```
 
-Your `button` element with the id `target6` should have the text `#target6`.
+Seu elemento `button` com o id `target6` deve ter o texto `#target6`.
 
 ```js
 assert(new RegExp('#target6', 'gi').test($('#target6').text()));

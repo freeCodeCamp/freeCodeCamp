@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4f
-title: Write Concise Object Literal Declarations Using Object Property Shorthand
+title: Escreva Declarações Literais de Objetos Concisas usando a Forma Abreviada de Propriedade de Objeto
 challengeType: 1
 forumTopicId: 301225
 dashedName: write-concise-object-literal-declarations-using-object-property-shorthand
@@ -8,9 +8,9 @@ dashedName: write-concise-object-literal-declarations-using-object-property-shor
 
 # --description--
 
-ES6 adds some nice support for easily defining object literals.
+ES6 adiciona alguns suportes legais para facilmente definir literais de objetos.
 
-Consider the following code:
+Considere o seguinte código:
 
 ```js
 const getMousePosition = (x, y) => ({
@@ -19,7 +19,7 @@ const getMousePosition = (x, y) => ({
 });
 ```
 
-`getMousePosition` is a simple function that returns an object containing two properties. ES6 provides the syntactic sugar to eliminate the redundancy of having to write `x: x`. You can simply write `x` once, and it will be converted to`x: x` (or something equivalent) under the hood. Here is the same function from above rewritten to use this new syntax:
+`getMousePosition` é uma função simples que retorna um objeto contendo duas propriedades. ES6 fornece o açúcar sintático para eliminar a redundância de ter de escrever `x: x`. Você pode simplesmente escrever `x` uma vez, e será convertido para `x: x` (ou algo equivalente). Aqui está a mesma função que acima rescrita para usar a nova sintaxe:
 
 ```js
 const getMousePosition = (x, y) => ({ x, y });
@@ -27,11 +27,11 @@ const getMousePosition = (x, y) => ({ x, y });
 
 # --instructions--
 
-Use object property shorthand with object literals to create and return an object with `name`, `age` and `gender` properties.
+Use a abreviação de propriedade de objeto com literais de objeto para criar e retornar um objeto com as propriedades `name`, `age` e `gender`.
 
 # --hints--
 
-`createPerson("Zodiac Hasbro", 56, "male")` should return `{name: "Zodiac Hasbro", age: 56, gender: "male"}`.
+`createPerson("Zodiac Hasbro", 56, "male")` deve retornar `{name: "Zodiac Hasbro", age: 56, gender: "male"}`.
 
 ```js
 assert.deepEqual(
@@ -40,7 +40,7 @@ assert.deepEqual(
 );
 ```
 
-Your code should not use `key:value`.
+Seu código deve usar `key:value`.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/:/g));

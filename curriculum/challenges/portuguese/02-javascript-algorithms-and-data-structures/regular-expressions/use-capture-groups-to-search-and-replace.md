@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512bab
-title: Use Capture Groups to Search and Replace
+title: Use Grupos de Captura para Buscar e Substituir
 challengeType: 1
 forumTopicId: 301368
 dashedName: use-capture-groups-to-search-and-replace
@@ -8,9 +8,9 @@ dashedName: use-capture-groups-to-search-and-replace
 
 # --description--
 
-Searching is useful. However, you can make searching even more powerful when it also changes (or replaces) the text you match.
+Buscar texto é útil. É ainda mais útil quando você consegue modificar (ou substituir) o texto que você busca.
 
-You can search and replace text in a string using `.replace()` on a string. The inputs for `.replace()` is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+Você pode buscar e substituir texto em uma string usando o método `.replace()`. O primeiro parâmetro do `.replace()` é o padrão regex que você quer procurar. O segundo parâmetro é a string que substituirá o resultado da busca ou uma função que fará algo com ele.
 
 ```js
 let wrongText = "The sky is silver.";
@@ -18,47 +18,47 @@ let silverRegex = /silver/;
 wrongText.replace(silverRegex, "blue");
 ```
 
-The `replace` call would return the string `The sky is blue.`.
+A chamada a `replace` aqui retorna a string `The sky is blue.`.
 
-You can also access capture groups in the replacement string with dollar signs (`$`).
+Você também pode acessar grupos de captura na string de substituição usando o cifrão (`$`).
 
 ```js
 "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
 ```
 
-The `replace` call would return the string `Camp Code`.
+A chamada a `replace` aqui retorna a string `Camp Code`.
 
 # --instructions--
 
-Write a regex `fixRegex` using three capture groups that will search for each word in the string `one two three`. Then update the `replaceText` variable to replace `one two three` with the string `three two one` and assign the result to the `result` variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (`$`) syntax.
+Escreva uma regex, `fixRegex`, que usa três grupos de captura para procurar cada palavra na string `one two three`. Depois atualize a variável `replaceText` para trocar de `one two three` para `three two one` e atribuir o resultado à variável `result`. Certifique-se de estar utilizando grupos de captura na string de substituição usando o cifrão (`$`).
 
 # --hints--
 
-You should use `.replace()` to search and replace.
+Você deve usar `.replace()` para buscar e substituir.
 
 ```js
 assert(code.match(/\.replace\(.*\)/));
 ```
 
-Your regex should change the string `one two three` to the string `three two one`
+Sua regex deve mudar a string `one two three` para `three two one`
 
 ```js
 assert(result === 'three two one');
 ```
 
-You should not change the last line.
+Você não deve alterar a última linha.
 
 ```js
 assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
-`fixRegex` should use at least three capture groups.
+`fixRegex` deve usar pelo menos três grupos de captura.
 
 ```js
 assert(new RegExp(fixRegex.source + '|').exec('').length - 1 >= 3);
 ```
 
-`replaceText` should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
+`replaceText` deve usar os grupos de captura por via da sintaxe $n onde n é o n-ésimo grupo capturado.
 
 ```js
 {

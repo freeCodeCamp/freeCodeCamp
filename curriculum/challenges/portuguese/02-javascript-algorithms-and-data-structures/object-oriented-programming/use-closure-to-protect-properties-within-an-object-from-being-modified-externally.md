@@ -1,7 +1,7 @@
 ---
 id: 587d7db2367417b2b2512b8a
 title: >-
-  Use Closure to Protect Properties Within an Object from Being Modified Externally
+  Use Fecho para Proteger Propriedades Dentro de um Objeto de Serem Modificados Externamente
 challengeType: 1
 forumTopicId: 18234
 dashedName: >-
@@ -10,15 +10,15 @@ dashedName: >-
 
 # --description--
 
-In the previous challenge, `bird` had a public property `name`. It is considered public because it can be accessed and changed outside of `bird`'s definition.
+No desafio anterior, `bird` possuía uma propriedade pública `name`. É considerado publico porque ele pode ser acessado e modificado fora da definição de `bird`.
 
 ```js
 bird.name = "Duffy";
 ```
 
-Therefore, any part of your code can easily change the name of `bird` to any value. Think about things like passwords and bank accounts being easily changeable by any part of your codebase. That could cause a lot of issues.
+Portanto, qualquer parte do seu código pode facilmente alterar o nome do `bird` para qualquer valor. Pense sobre coisas como senhas e contas de banco sendo facilmente modificáveis em qualquer parte do seu código. Isso poderia causar inúmeros problemas.
 
-The simplest way to make this public property private is by creating a variable within the constructor function. This changes the scope of that variable to be within the constructor function versus available globally. This way, the variable can only be accessed and changed by methods also within the constructor function.
+A forma mais simples para tornar essa propriedade pública em privada, seria criando uma variável dentro da função constructor. Isso alteraria o escopo daquela variável para ser apenas o escopo da função construtora ao invés de globalmente disponível. Dessa maneira, a variável pode ser acessada e modificada apenas pelos métodos dentro da função construtora.
 
 ```js
 function Bird() {
@@ -32,27 +32,27 @@ let ducky = new Bird();
 ducky.getHatchedEggCount();
 ```
 
-Here `getHatchedEggCount` is a privileged method, because it has access to the private variable `hatchedEgg`. This is possible because `hatchedEgg` is declared in the same context as `getHatchedEggCount`. In JavaScript, a function always has access to the context in which it was created. This is called `closure`.
+Aqui `getHatchedEggCount` é um método privilegiado, porque ele possui acesso à variável privada `hatchedEgg`. Isso é possível porque `hatchedEgg` é declarado no mesmo contexto que `getHatchedEggCount`. Em JavaScript, a função sempre possui acesso ao contexto na qual foi criada. Isso é chamado de `closure(fecho)`.
 
 # --instructions--
 
-Change how `weight` is declared in the `Bird` function so it is a private variable. Then, create a method `getWeight` that returns the value of `weight` 15.
+Modifique como `weight` é declarado na função `Bird` para que seja uma variável privada. Em seguida, crie o método `getWeight` que retorna o valor de `weight` 15.
 
 # --hints--
 
-The `weight` property should be a private variable and should be assigned the value of `15`.
+A propriedade `weight` deve ser uma variável privada e deve ser atribuída a ela o valor `15`.
 
 ```js
 assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
-Your code should create a method in `Bird` called `getWeight` that returns the value of the private variable `weight`.
+Seu código deve criar o método dentro de `Bird` chamado `getWeight` que retorna o valor da variável privada `weight`.
 
 ```js
 assert(new Bird().getWeight() === 15);
 ```
 
-Your `getWeight` function should return the private variable `weight`.
+Sua função `getWeight` deve retornar a variável privada `weight`.
 
 ```js
 assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));

@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b97
-title: Match Numbers and Letters of the Alphabet
+title: Capture Números e Letras do Alfabeto
 challengeType: 1
 forumTopicId: 301356
 dashedName: match-numbers-and-letters-of-the-alphabet
@@ -8,11 +8,11 @@ dashedName: match-numbers-and-letters-of-the-alphabet
 
 # --description--
 
-Using the hyphen (`-`) to match a range of characters is not limited to letters. It also works to match a range of numbers.
+O uso do hífen (`-`) para capturar um intervalo de caracteres não é limitado a letras. Ele também funciona para capturar intervalos de números.
 
-For example, `/[0-5]/` matches any number between `0` and `5`, including the `0` and `5`.
+Por exemplo, `/[0-5]/` encontra qualquer número entre `0` e `5`, incluindo ambos `0` e `5`.
 
-Also, it is possible to combine a range of letters and numbers in a single character set.
+E também é possível combinar intervalos de letras e números em uma única classe de caracteres.
 
 ```js
 let jennyStr = "Jenny8675309";
@@ -22,23 +22,23 @@ jennyStr.match(myRegex);
 
 # --instructions--
 
-Create a single regex that matches a range of letters between `h` and `s`, and a range of numbers between `2` and `6`. Remember to include the appropriate flags in the regex.
+Escreva uma única regex que encontra letras entre `h` e `s` e, também, números entre `2` e `6`. Lembre-se de incluir as flags necessárias na regex.
 
 # --hints--
 
-Your regex `myRegex` should match 17 items.
+Sua regex `myRegex` deve encontrar 17 itens.
 
 ```js
 assert(result.length == 17);
 ```
 
-Your regex `myRegex` should use the global flag.
+Você deve usar a flag global na sua regex `myRegex`.
 
 ```js
 assert(myRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `myRegex` should use the case insensitive flag.
+Você deve usar a flag de ignorar caixa na sua regex `myRegex`.
 
 ```js
 assert(myRegex.flags.match(/i/).length == 1);

@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b92
-title: Extract Matches
+title: Extraindo Resultados
 challengeType: 1
 forumTopicId: 301340
 dashedName: extract-matches
@@ -8,11 +8,11 @@ dashedName: extract-matches
 
 # --description--
 
-So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the `.match()` method.
+Até agora, você só tem verificado se existe ou não um padrão dentro de uma string. Você também pode extrair os resultados encontrados por meio do método `.match()`.
 
-To use the `.match()` method, apply the method on a string and pass in the regex inside the parentheses.
+Para usar o método `.match()`, aplique o método em uma string e passe a regex dentro dos parênteses.
 
-Here's an example:
+Um exemplo:
 
 ```js
 "Hello, World!".match(/Hello/);
@@ -21,9 +21,9 @@ let ourRegex = /expressions/;
 ourStr.match(ourRegex);
 ```
 
-Here the first `match` would return `["Hello"]` and the second would return `["expressions"]`.
+Aqui, o primeiro `match` retorna `["Hello"]` e, o segundo, `["expressions"]`.
 
-Note that the `.match` syntax is the "opposite" of the `.test` method you have been using thus far:
+Note que o método `.match` se usa de forma "contrária" ao método `.test` que você usou até então:
 
 ```js
 'string'.match(/regex/);
@@ -32,23 +32,23 @@ Note that the `.match` syntax is the "opposite" of the `.test` method you have b
 
 # --instructions--
 
-Apply the `.match()` method to extract the string `coding`.
+Aplique o método `.match()` para extrair a string `coding`.
 
 # --hints--
 
-The `result` should have the string `coding`
+O resultado, `result`, deve conter a string `coding`
 
 ```js
 assert(result.join() === 'coding');
 ```
 
-Your regex `codingRegex` should search for the string `coding`
+Sua regex `codingRegex` deve buscar a string `coding`
 
 ```js
 assert(codingRegex.source === 'coding');
 ```
 
-You should use the `.match()` method.
+Você deve usar o método `.match()`.
 
 ```js
 assert(code.match(/\.match\(.*\)/));

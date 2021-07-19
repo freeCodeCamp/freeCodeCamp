@@ -1,12 +1,9 @@
-/* global BigInt */
+import { format } from './format';
 
-const { format } = require('./format');
-
-/* eslint-disable no-unused-vars */
 function simpleFun() {
+  // eslint-disable-next-line no-var, @typescript-eslint/no-unused-vars
   var x = 'y';
 }
-/* eslint-enable no-unused-vars */
 
 /* format uses util.inspect to do almost everything, the tests are just there
 to warn us if util.inspect ever changes */

@@ -1,6 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb8
-title: Use @if and @else to Add Logic To Your Styles
+title: Use @if e @else para adicionar lógica a seus estilos
 challengeType: 0
 forumTopicId: 301463
 dashedName: use-if-and-else-to-add-logic-to-your-styles
@@ -8,7 +8,7 @@ dashedName: use-if-and-else-to-add-logic-to-your-styles
 
 # --description--
 
-The `@if` directive in Sass is useful to test for a specific case - it works just like the `if` statement in JavaScript.
+A diretiva `@if` no Sass é útil para testar um caso específico - funciona exatamente como a instrução `if` em JavaScript.
 
 ```scss
 @mixin make-bold($bool) {
@@ -18,7 +18,7 @@ The `@if` directive in Sass is useful to test for a specific case - it works jus
 }
 ```
 
-And just like in JavaScript, `@else if` and `@else` test for more conditions:
+E assim como em JavaScript, teste `@else if` e `@else` para mais condições:
 
 ```scss
 @mixin text-effect($val) {
@@ -39,7 +39,7 @@ And just like in JavaScript, `@else if` and `@else` test for more conditions:
 
 # --instructions--
 
-Create a mixin called `border-stroke` that takes a parameter `$val`. The mixin should check for the following conditions using `@if`, `@else if`, and `@else`:
+Crie um mixin chamado `border-stroke` que recebe o parâmetro `$val`. O mixin deve verificar as seguintes condições usando `@if`, `@else if`, e `@else`:
 
 ```scss
 light - 1px solid black
@@ -47,17 +47,17 @@ medium - 3px solid black
 heavy - 6px solid black
 ```
 
-If `$val` is not `light`, `medium`, or `heavy`, the border should be set to `none`.
+Se `$val` não for `light`, `medium`, ou `heavy`, a borda deve ser ajustada para `none`.
 
 # --hints--
 
-Your code should declare a mixin named `border-stroke` which has a parameter named `$val`.
+Seu código deve declarar um mixin nomeado `border-stroke` que tem um parâmetro chamado `$val`.
 
 ```js
 assert(code.match(/@mixin\s+?border-stroke\s*?\(\s*?\$val\s*?\)\s*?{/gi));
 ```
 
-Your mixin should have an `@if` statement to check if `$val` is `light`, and to set the `border` to `1px solid black`.
+Seu mixin deve ter uma instrução `@if` para verificar se `$val` é `light`, e definir a `border` como `1px solid black`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-Your mixin should have an `@else if` statement to check if `$val` is `medium`, and to set the `border` to `3px solid black`.
+Seu mixin deve ter uma instrução `@else if` para verificar se `$val` é `medium`, e definir a `border` como `3px solid black`.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-Your mixin should have an `@else if` statement to check if `$val` is `heavy`, and to set the `border` to `6px solid black`.
+Seu mixin deve ter uma instrução `@else if` para verificar se `$val` é `heavy`, e definir a `border` como `6px solid black`.
 
 ```js
 assert(
@@ -87,7 +87,7 @@ assert(
 );
 ```
 
-Your mixin should have an `@else` statement to set the `border` to `none`.
+Seu mixin deve ter um comando `@else` para definir `border` para `none`.
 
 ```js
 assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));

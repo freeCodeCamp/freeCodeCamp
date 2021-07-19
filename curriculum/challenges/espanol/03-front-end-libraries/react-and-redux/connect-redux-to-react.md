@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036147
-title: Connect Redux to React
+title: Conecta Redux a React
 challengeType: 6
 forumTopicId: 301426
 dashedName: connect-redux-to-react
@@ -8,23 +8,23 @@ dashedName: connect-redux-to-react
 
 # --description--
 
-Now that you've written both the `mapStateToProps()` and the `mapDispatchToProps()` functions, you can use them to map `state` and `dispatch` to the `props` of one of your React components. The `connect` method from React Redux can handle this task. This method takes two optional arguments, `mapStateToProps()` and `mapDispatchToProps()`. They are optional because you may have a component that only needs access to `state` but doesn't need to dispatch any actions, or vice versa.
+Ahora que has escrito tanto la función `mapStateToProps()` como la función `mapDispatchToProps()`, puedes usarlos para asignar `state` y `dispatch` a las `props` de uno de tus componentes React. El método `connect` de React Redux puede manejar esta tarea. Este método toma dos argumentos opcionales, `mapStateToProps()` y `mapDispatchToProps()`. Son opcionales porque puedes tener un componente que solo necesita acceso al `state` pero no necesita enviar ninguna acción, o viceversa.
 
-To use this method, pass in the functions as arguments, and immediately call the result with your component. This syntax is a little unusual and looks like:
+Para utilizar este método, pasa las funciones como argumentos, y llama inmediatamente al resultado con tu componente. Esta sintaxis es un poco inusual y se ve así:
 
 ```js
 connect(mapStateToProps, mapDispatchToProps)(MyComponent)
 ```
 
-**Note:** If you want to omit one of the arguments to the `connect` method, you pass `null` in its place.
+**Nota:** Si deseas omitir uno de los argumentos del método `connect`, pasa `null` en su lugar.
 
 # --instructions--
 
-The code editor has the `mapStateToProps()` and `mapDispatchToProps()` functions and a new React component called `Presentational`. Connect this component to Redux with the `connect` method from the `ReactRedux` global object, and call it immediately on the `Presentational` component. Assign the result to a new `const` called `ConnectedComponent` that represents the connected component. That's it, now you're connected to Redux! Try changing either of `connect`'s arguments to `null` and observe the test results.
+El editor de código tiene las funciones `mapStateToProps()` y `mapDispatchToProps()` y un nuevo componente React llamado `Presentational`. Conecta este componente a Redux con el método `connect` del objeto global `ReactRedux`, y llámalo inmediatamente en el componente `Presentational`. Asigna el resultado a una nueva `const` llamada `ConnectedComponent` que representa el componente conectado. Eso es todo, ¡ahora estás conectado a Redux! Intenta cambiar cualquiera de los argumentos de `connect` a `null` y observa los resultados de la prueba.
 
 # --hints--
 
-The `Presentational` component should render.
+El componente `Presentational` debe renderizarse.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive a prop `messages` via `connect`.
+El componente `Presentational` debe recibir una prop `messages` a través de `connect`.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive a prop `submitNewMessage` via `connect`.
+El componente `Presentational` debe recibir una prop `submitNewMessage` a través de `connect`.
 
 ```js
 assert(

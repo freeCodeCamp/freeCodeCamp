@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d87
-title: 'Introduction: Machine Learning Fundamentals'
+title: '簡介：機器學習基礎'
 challengeType: 11
 videoId: KwL1qTR5MT8
 dashedName: introduction-machine-learning-fundamentals
@@ -10,19 +10,19 @@ dashedName: introduction-machine-learning-fundamentals
 
 ## --text--
 
-Which statement below is **false**?
+以下哪個陳述是 **假的**？
 
 ## --answers--
 
-Neural networks are modeled after the way the human brain works.
+神經網絡以人腦的工作方式爲模型。
 
 ---
 
-Computer programs that play tic-tac-toe or chess against human players are examples of simple artificial intelligence.
+與人類玩家玩井字棋或國際象棋的計算機程序是簡單人工智能的例子。
 
 ---
 
-Machine learning is a subset of artificial intelligence.
+機器學習是人工智能的一個子集。
 
 ## --video-solution--
 

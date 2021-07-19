@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5f
-title: Pass Arguments to Avoid External Dependence in a Function
+title: Passe Argumentos para Evitar Dependências Externas em Funções
 challengeType: 1
 forumTopicId: 301234
 dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
@@ -8,39 +8,39 @@ dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
 
 # --description--
 
-The last challenge was a step closer to functional programming principles, but there is still something missing.
+No último desafio você deu um passo a mais nos princípios de programação funcional, mas ainda falta algo.
 
-We didn't alter the global variable value, but the function `incrementer` would not work without the global variable `fixedValue` being there.
+Nós não mudamos o valor dela, mas a função `incrementer` não funciona sem a variável global `fixedValue`.
 
-Another principle of functional programming is to always declare your dependencies explicitly. This means if a function depends on a variable or object being present, then pass that variable or object directly into the function as an argument.
+Outro princípio da programação funcional é que sempre devemos declarar nossas dependências explicitamente. Isso significa que, se uma função depende de uma variável ou objeto, então devemos passar esta variável ou objeto diretamente como argumento a ela.
 
-There are several good consequences from this principle. The function is easier to test, you know exactly what input it takes, and it won't depend on anything else in your program.
+Há muitas boas consequências nesse princípio: a função se torna mais fácil de testar, você sabe exatamente quais são as suas entradas e ela não depende de mais nada no seu programa.
 
-This can give you more confidence when you alter, remove, or add new code. You would know what you can or cannot change and you can see where the potential traps are.
+Isso faz com que você tenha mais confiança ao alterar, remover ou adicionar código, pois sabe o que pode ou não pode alterar e identifica armadilhas em potencial com mais facilidade.
 
-Finally, the function would always produce the same output for the same set of inputs, no matter what part of the code executes it.
+Finalmente, a função sempre produzirá a mesma saída para o mesmo conjunto de entradas, não importa de onde no código ela é chamada.
 
 # --instructions--
 
-Let's update the `incrementer` function to clearly declare its dependencies.
+Vamos atualizar a função `incrementer` e declarar explicitamente as suas dependências.
 
-Write the `incrementer` function so it takes an argument, and then returns a result after increasing the value by one.
+Escreva a função `incrementer` de forma que ela receba um argumento e retorne o valor incrementado em um.
 
 # --hints--
 
-Your function `incrementer` should not change the value of `fixedValue` (which is `4`).
+A função `incrementer` não deve alterar o valor de `fixedValue`, que é `4`.
 
 ```js
 assert(fixedValue === 4);
 ```
 
-Your `incrementer` function should take an argument.
+A função `incrementer` deve receber um argumento.
 
 ```js
 assert(incrementer.length === 1);
 ```
 
-Your `incrementer` function should return a value that is one larger than the `fixedValue` value.
+Sua função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
 
 ```js
 const __newValue = incrementer(fixedValue);

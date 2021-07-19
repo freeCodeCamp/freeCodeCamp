@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036189
-title: Change Inline CSS Conditionally Based on Component State
+title: Mudar CSS Emlinha Condicionalmente Baseado no Estado do Component
 challengeType: 6
 forumTopicId: 301380
 dashedName: change-inline-css-conditionally-based-on-component-state
@@ -8,17 +8,17 @@ dashedName: change-inline-css-conditionally-based-on-component-state
 
 # --description--
 
-At this point, you've seen several applications of conditional rendering and the use of inline styles. Here's one more example that combines both of these topics. You can also render CSS conditionally based on the state of a React component. To do this, you check for a condition, and if that condition is met, you modify the styles object that's assigned to the JSX elements in the render method.
+Nesse ponto, você já viu diversas aplicações de renderização condicional e o uso de estilos emlinha. Aqui está mais um exemplo que combina ambos esses tópicos. Você também pode renderizar CSS condicionalmente baseado no estado de um componente React. Para fazer isso, você verifica por uma condição, e se essa condição for atendida, você modifica o objeto styles que foi atribuido aos elementos JSX no método de renderização.
 
-This paradigm is important to understand because it is a dramatic shift from the more traditional approach of applying styles by modifying DOM elements directly (which is very common with jQuery, for example). In that approach, you must keep track of when elements change and also handle the actual manipulation directly. It can become difficult to keep track of changes, potentially making your UI unpredictable. When you set a style object based on a condition, you describe how the UI should look as a function of the application's state. There is a clear flow of information that only moves in one direction. This is the preferred method when writing applications with React.
+É importante entender esse paradigma porque é uma mudança dramática da abordagem mais tradicional de aplicar estilos ao modificar diretamente os elementos DOM (o que é muito comum com jQuery, por exemplo).  Nessa abordagem, você precisa monitorar quando um elemento mudar e também lidar com a manipulação diretamente. Pode se tornar difícil acompanhar as mudanças, tornando potencialmente a sua interface de usuário imprevisível. Quando você define um objeto estilo baseado em uma condição, você descreve como a interface deve se parecer com uma função do estado da aplicação. Há um fluxo claro de informação que só avança em uma direção. Esse é o método preferido ao escrever aplicações com React.
 
 # --instructions--
 
-The code editor has a simple controlled input component with a styled border. You want to style this border red if the user types more than 15 characters of text in the input box. Add a condition to check for this and, if the condition is valid, set the input border style to `3px solid red`. You can try it out by entering text in the input.
+O editor de código tem um simples componente de entrada controlado com uma borda estilizada. Você quer estilizar essa borda como vermelha se o usuário escrever um texto com mais de 15 caracteres na caixa de entrada. Adicione uma condição para verificar por isso e, se a condição for válida, defina o estilo da borda do input para `3px solid red`. Você pode experimentá-lo inserindo texto no input.
 
 # --hints--
 
-The `GateKeeper` component should render a `div` element.
+O componente `GateKeeper` deve renderizar um elemento `div`.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The `GateKeeper` component should be initialized with a state key `input` set to an empty string.
+O componente `GateKeeper` deve ser inicializado com a chave de estado `input` definida para uma string vazia.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `GateKeeper` component should render an `h3` tag and an `input` tag.
+O componente `GateKeeper` deve renderizar uma tag `h3` e uma tag `input`.
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-The `input` tag should initially have a style of `1px solid black` for the `border` property.
+A tag `input` deve inicialmente ter o estilo `1px solid black` para a propriedade `border`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The `input` tag should be styled with a border of `3px solid red` if the input value in state is longer than 15 characters.
+A tag `input` deve ser estilizada com a borda como `3px solid red` se o valor do input no estado tiver mais de 15 caracteres.
 
 ```js
 async () => {

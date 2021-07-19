@@ -1,4 +1,6 @@
 import { isObject } from 'lodash-es';
+import type { AxiosError } from 'axios';
+
 import {
   isHandledError,
   wrapHandledError,
@@ -6,8 +8,9 @@ import {
   handledErrorSymbol,
   handleAPIError
 } from './handled-error';
+import type { HandledError } from './handled-error';
 
-import reportedErrorMessage from './reportedErrorMessage';
+import reportedErrorMessage from './reported-error-message';
 
 describe('client/src utilities', () => {
   describe('handled-error.js', () => {
@@ -19,7 +22,7 @@ describe('client/src utilities', () => {
 
     describe('isHandledError', () => {
       it('returns a boolean', () => {
-        expect(typeof isHandledError({})).toEqual('boolean');
+        expect(typeof isHandledError({} as Error)).toEqual('boolean');
       });
 
       it('returns false for an unhandled error', () => {
@@ -27,7 +30,7 @@ describe('client/src utilities', () => {
       });
 
       it('returns true for a handled error', () => {
-        const handledError = new Error();
+        const handledError = new Error() as HandledError;
         handledError[handledErrorSymbol] = {};
 
         expect(isHandledError(handledError)).toEqual(true);
@@ -39,14 +42,14 @@ describe('client/src utilities', () => {
       // we need to make these tests more robust 💪
       it('returns an error with a handledError property', () => {
         const handledError = wrapHandledError(
-          new Error(),
+          new Error() as HandledError,
           mockHandledErrorData
         );
         expect(handledErrorSymbol in handledError).toEqual(true);
       });
       it('assigns error handling details to the handledError property', () => {
         const handledError = wrapHandledError(
-          new Error(),
+          new Error() as HandledError,
           mockHandledErrorData
         );
         expect(handledError[handledErrorSymbol]).toEqual(mockHandledErrorData);
@@ -57,13 +60,13 @@ describe('client/src utilities', () => {
       // this is testing implementation details 👎
       // we need to make these tests more robust 💪
       it('returns an object by default', () => {
-        const error = new Error();
+        const error = new Error() as HandledError;
         const unwrappedError = unwrapHandledError(error);
         expect(isObject(unwrappedError)).toBe(true);
       });
 
       it('returns the data that was wrapped in the error', () => {
-        const handledError = new Error();
+        const handledError = new Error() as HandledError;
         handledError[handledErrorSymbol] = mockHandledErrorData;
         const unwrapped = unwrapHandledError(handledError);
         expect(unwrapped).toEqual(mockHandledErrorData);
@@ -71,7 +74,7 @@ describe('client/src utilities', () => {
     });
 
     describe('handleAPIError', () => {
-      let reportMock;
+      let reportMock: () => void;
       beforeEach(() => {
         reportMock = jest.fn();
       });
@@ -82,7 +85,7 @@ describe('client/src utilities', () => {
           response: {
             status: 400
           }
-        };
+        } as AxiosError;
         const result = handleAPIError(
           axiosErrorMock,
           { redirectTo: '/' },
@@ -100,7 +103,7 @@ describe('client/src utilities', () => {
             response: {
               status: i
             }
-          };
+          } as AxiosError;
           handleAPIError(axiosErrorMock, { redirectTo: '/' }, reportMock);
         }
         expect(reportMock).not.toHaveBeenCalled();
@@ -111,7 +114,7 @@ describe('client/src utilities', () => {
           response: {
             status: 502
           }
-        };
+        } as AxiosError;
         handleAPIError(axiosErrorMock, { redirectTo: '/' }, reportMock);
         expect(reportMock).toHaveBeenCalledTimes(1);
       });
@@ -121,7 +124,7 @@ describe('client/src utilities', () => {
           response: {
             status: 502
           }
-        };
+        } as AxiosError;
         const result = handleAPIError(
           axiosErrorMock,
           { redirectTo: '/' },
@@ -135,7 +138,7 @@ describe('client/src utilities', () => {
           response: {
             status: 400
           }
-        };
+        } as AxiosError;
         const result = handleAPIError(
           axiosErrorMock,
           { redirectTo: null },

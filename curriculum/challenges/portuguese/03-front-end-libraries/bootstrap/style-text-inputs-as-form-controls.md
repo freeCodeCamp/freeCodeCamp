@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908845
-title: Style Text Inputs as Form Controls
+title: Inputs de Texto como Controles de Formulário
 challengeType: 0
 forumTopicId: 18312
 required:
@@ -13,33 +13,33 @@ dashedName: style-text-inputs-as-form-controls
 
 # --description--
 
-You can add the `fa-paper-plane` Font Awesome icon by adding `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
+Você pode adicionar o ícone Font Awesome `fa-paper-plane` adicionando `<i class="fa fa-paper-plane"></i>` dentro do seu elemento `button` de submissão.
 
-Give your form's text input field a class of `form-control`. Give your form's submit button the classes `btn btn-primary`. Also give this button the Font Awesome icon of `fa-paper-plane`.
+De ao seu campo input de texto do formulário a classe `form-control`. De ao seu botão de submissão do formulários as classes `btn btn-primary`. Também de a esse botão o ícone do Font Awesome `fa-paper-plane`.
 
-All textual `<input>`, `<textarea>`, and `<select>` elements with the class `.form-control` have a width of 100%.
+Todo texto dos elementos `<input>`, `<textarea>`, and `<select>` com a classe `.form-control` possuem largura de 100%.
 
 # --hints--
 
-The submit button in your form should have the classes `btn btn-primary`.
+O botão de submissão no seu formulário deve ter a classe `btn btn-primary`.
 
 ```js
 assert($('button[type="submit"]').hasClass('btn btn-primary'));
 ```
 
-You should add a `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
+Você deve adicionar um `<i class="fa fa-paper-plane"></i>` dentro do seu elemento `button` de submissão.
 
 ```js
 assert($('button[type="submit"]:has(i.fa.fa-paper-plane)').length > 0);
 ```
 
-The text `input` in your form should have the class `form-control`.
+O `input` de texto no seu formulário deve ter a classe `form-control`.
 
 ```js
 assert($('input[type="text"]').hasClass('form-control'));
 ```
 
-Each of your `i` elements should have a closing tag.
+Cada um de seus elementos `i` devem ter tags de fechamento.
 
 ```js
 assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);

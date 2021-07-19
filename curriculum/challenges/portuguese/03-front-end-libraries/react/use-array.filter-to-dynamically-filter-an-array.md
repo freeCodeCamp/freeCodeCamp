@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618c
-title: Use Array.filter() to Dynamically Filter an Array
+title: Use Array.filter() para Filtrar Dinamicamente um Array
 challengeType: 6
 forumTopicId: 301416
 dashedName: use-array-filter-to-dynamically-filter-an-array
@@ -8,7 +8,7 @@ dashedName: use-array-filter-to-dynamically-filter-an-array
 
 # --description--
 
-The `map` array method is a powerful tool that you will use often when working with React. Another method related to `map` is `filter`, which filters the contents of an array based on a condition, then returns a new array. For example, if you have an array of users that all have a property `online` which can be set to `true` or `false`, you can filter only those users that are online by writing:
+O método de array `map` é uma ferramenta poderosa que você usará muitas vezes ao trabalhar com React. Outro método relacionado a `map` é o `filter`, o qual filtra o conteúdo de um array baseado em uma condição, em seguida retorna um novo array. Por exemplo, se você tem um array de usuários que todo usuário têm a propriedade `online` que pode ser definida como `true` ou `false`, você pode filtrar apenas aqueles usuários que estão online escrevendo:
 
 ```js
 let onlineUsers = users.filter(user => user.online);
@@ -16,11 +16,11 @@ let onlineUsers = users.filter(user => user.online);
 
 # --instructions--
 
-In the code editor, `MyComponent`'s `state` is initialized with an array of users. Some users are online and some aren't. Filter the array so you see only the users who are online. To do this, first use `filter` to return a new array containing only the users whose `online` property is `true`. Then, in the `renderOnline` variable, map over the filtered array, and return a `li` element for each user that contains the text of their `username`. Be sure to include a unique `key` as well, like in the last challenges.
+No editor de código, o `state` de `MyComponent` é inicializado com um array de usuários. Alguns usuários estão online e outros não. Filtre o array para que você veja apenas os usuários que estão online. Para isso, primeiro use `filter` para retornar um novo array contendo apenas os usuários os quais possuem a propriedade `online` como `true`. Em seguida, na variável `renderOnline`, mapeie sobre o array filtrado e retorne um elemento `li` para cada usuário que contem o texto de seus `username`. Garante que você inclua uma `key` única, como nos últimos desafios.
 
 # --hints--
 
-`MyComponent` should exist and render to the page.
+`MyComponent` deve existir e ser rendizado na página.
 
 ```js
 assert.strictEqual(
@@ -29,7 +29,7 @@ assert.strictEqual(
 );
 ```
 
-`MyComponent`'s state should be initialized to an array of six users.
+O state de `MyComponent` deve ser inicializado com um array de seis usuários.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`MyComponent` should return a `div`, an `h1`, and then an unordered list containing `li` elements for every user whose online status is set to `true`.
+`MyComponent` deve retornar os elementos `div`, `h1` e em seguida uma lista não ordenada contendo elementos `li` para cada usuário que possui o status online como sendo `true (verdadeiro)`.
 
 ```js
 (() => {
@@ -83,7 +83,7 @@ assert(
 })();
 ```
 
-`MyComponent` should render `li` elements that contain the `username` of each online user.
+`MyComponent` deve renderizar elementos `li` que contêm o `username` de cada usuário online.
 
 ```js
 (() => {
@@ -109,7 +109,7 @@ assert(
 })();
 ```
 
-Each list item element should have a unique `key` attribute.
+Cada item de elemento da lista deve ter um atributo `key` único.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c6
-title: Stand in Line
+title: Fique na Linha
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8Q8tP'
 forumTopicId: 18307
@@ -9,41 +9,41 @@ dashedName: stand-in-line
 
 # --description--
 
-In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.
+Na Ciência da Computação uma <dfn>fila</dfn> é uma <dfn>estrutura de dados</dfn> abstrata onde itens são mantidos em ordem. Novos itens podem ser adicionados no final da fila e itens mais antigos são removidos do início da fila.
 
-Write a function `nextInLine` which takes an array (`arr`) and a number (`item`) as arguments.
+Escreva a função `nextInLine` a qual recebe um array (`arr`) e um número (`item`) como argumentos.
 
-Add the number to the end of the array, then remove the first element of the array.
+Adicione o número no final do array e então remova o primeiro elemento do array.
 
-The `nextInLine` function should then return the element that was removed.
+A função `nextInLine` deve, em seguida, retornar o elemento que foi removido.
 
 # --hints--
 
-`nextInLine([], 5)` should return a number.
+`nextInLine([], 5)` deve retornar um número.
 
 ```js
 assert.isNumber(nextInLine([], 5));
 ```
 
-`nextInLine([], 1)` should return `1`
+`nextInLine([], 1)` deve retonar `1`
 
 ```js
 assert(nextInLine([], 1) === 1);
 ```
 
-`nextInLine([2], 1)` should return `2`
+`nextInLine([2], 1)` deve retornar `2`
 
 ```js
 assert(nextInLine([2], 1) === 2);
 ```
 
-`nextInLine([5,6,7,8,9], 1)` should return `5`
+`nextInLine([5,6,7,8,9], 1)` deve retornar `5`
 
 ```js
 assert(nextInLine([5, 6, 7, 8, 9], 1) === 5);
 ```
 
-After `nextInLine(testArr, 10)`, `testArr[4]` should be `10`
+Após `nextInLine(testArr, 10)`, `testArr[4]` deve ser `10`
 
 ```js
 nextInLine(testArr, 10);

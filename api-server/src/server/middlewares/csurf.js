@@ -1,12 +1,14 @@
 import csurf from 'csurf';
 
+export const csrfOptions = {
+  domain: process.env.COOKIE_DOMAIN || 'localhost',
+  sameSite: 'strict',
+  secure: process.env.FREECODECAMP_NODE_ENV === 'production'
+};
+
 export default function getCsurf() {
   const protection = csurf({
-    cookie: {
-      domain: process.env.COOKIE_DOMAIN || 'localhost',
-      sameSite: 'strict',
-      secure: process.env.FREECODECAMP_NODE_ENV === 'production'
-    }
+    cookie: csrfOptions
   });
   return function csrf(req, res, next) {
     const { path } = req;
@@ -14,8 +16,10 @@ export default function getCsurf() {
       // eslint-disable-next-line max-len
       /^\/hooks\/update-paypal$/.test(path)
     ) {
-      return next();
+      next();
+    } else {
+      // add the middleware
+      protection(req, res, next);
     }
-    return protection(req, res, next);
   };
 }

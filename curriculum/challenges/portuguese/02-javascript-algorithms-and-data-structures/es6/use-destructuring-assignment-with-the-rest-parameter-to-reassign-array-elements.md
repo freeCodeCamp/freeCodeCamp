@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+  Use Atribuição de Desestruturação com o Parâmetro Rest para Reatribuir Elementos de Array
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -10,9 +10,9 @@ dashedName: >-
 
 # --description--
 
-In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.
+Em algumas situações envolvendo um array desestruturado, podemos querer coletar o resto dos elementos em um array separado.
 
-The result is similar to `Array.prototype.slice()`, as shown below:
+O resultado é similar a `Array.prototype.slice()`, como mostrado abaixo:
 
 ```js
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
@@ -20,35 +20,35 @@ console.log(a, b);
 console.log(arr);
 ```
 
-The console would display the values `1, 2` and `[3, 4, 5, 7]`.
+O console exibiria os valores `1, 2` e `[3, 4, 5, 7]`.
 
-Variables `a` and `b` take the first and second values from the array. After that, because of the rest parameter's presence, `arr` gets the rest of the values in the form of an array. The rest element only works correctly as the last variable in the list. As in, you cannot use the rest parameter to catch a subarray that leaves out the last element of the original array.
+As variáveis `a` e `b` pegam o primeiro e o segundo valores do array. Após isso, por causa da presença do parâmetro rest, `arr` pega o resto dos valores na forma de um array. O elemento rest só funciona corretamente como a última variável na lista. Como em, você não pode usar o parâmetro rest para capturar um subarray que deixa de fora o último elemento do array original.
 
 # --instructions--
 
-Use destructuring assignment with the rest parameter to perform an effective `Array.prototype.slice()` so that `arr` is a sub-array of the original array `source` with the first two elements omitted.
+Use atribuição de desestruturação com o parâmetro rest para executar `Array.prototype.slice()` de forma eficaz para que `arr` seja um sub array do array original `source` com os dois primeiros elementos omitidos.
 
 # --hints--
 
-`arr` should be `[3,4,5,6,7,8,9,10]`
+`arr` deve ser `[3,4,5,6,7,8,9,10]`
 
 ```js
 assert(arr.every((v, i) => v === i + 3) && arr.length === 8);
 ```
 
-`source` should be `[1,2,3,4,5,6,7,8,9,10]`
+`source` deve ser `[1,2,3,4,5,6,7,8,9,10]`
 
 ```js
 assert(source.every((v, i) => v === i + 1) && source.length === 10);
 ```
 
-`Array.slice()` should not be used.
+`Array.slice()` não deve ser usado.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/slice/g));
 ```
 
-Destructuring on `list` should be used.
+Desestruturação na `list` deve ser usada.
 
 ```js
 assert(

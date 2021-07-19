@@ -36,7 +36,24 @@
 Cypress.Commands.add('login', () => {
   cy.visit('/');
   cy.contains("Get started (it's free)").click();
+  cy.url().should('eq', Cypress.config().baseUrl + '/learn/');
   cy.contains('Welcome back');
+});
+
+Cypress.Commands.add('toggleAll', () => {
+  cy.login();
+  cy.visit('/settings');
+  // cy.get('input[name="isLocked"]').click();
+  // cy.get('input[name="name"]').click();
+  cy.get('#privacy-settings')
+    .find('.toggle-not-active')
+    .each(element => {
+      return new Cypress.Promise(resolve => {
+        cy.wrap(element).click().should('have.class', 'toggle-active');
+        resolve();
+      });
+    });
+  cy.get('#honesty-policy').find('button').click().wait(300);
 });
 
 Cypress.Commands.add('resetUsername', () => {
