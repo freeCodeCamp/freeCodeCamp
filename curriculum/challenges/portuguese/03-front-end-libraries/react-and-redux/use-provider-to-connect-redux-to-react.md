@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036144
-title: Use Provider to Connect Redux to React
+title: Use Provider para Conectar Redux ao React
 challengeType: 6
 forumTopicId: 301435
 dashedName: use-provider-to-connect-redux-to-react
@@ -8,9 +8,9 @@ dashedName: use-provider-to-connect-redux-to-react
 
 # --description--
 
-In the last challenge, you created a Redux store to handle the messages array and created an action for adding new messages. The next step is to provide React access to the Redux store and the actions it needs to dispatch updates. React Redux provides its `react-redux` package to help accomplish these tasks.
+No último desafio, você criou um store Redux para lidar com o array messages e criou uma ação para adicionar novas mensagens. O próximo passo é fornecer ao React o acesso ao store Redux e as ações que ele precise para despachar atualizações. React Redux fornece seu pacote `react-redux` para ajudar a realizar essas tarefas.
 
-React Redux provides a small API with two key features: `Provider` and `connect`. Another challenge covers `connect`. The `Provider` is a wrapper component from React Redux that wraps your React app. This wrapper then allows you to access the Redux `store` and `dispatch` functions throughout your component tree. `Provider` takes two props, the Redux store and the child components of your app. Defining the `Provider` for an App component might look like this:
+React Redux fornece uma pequena API com dois principais recursos: `Provider` e `connect`. Outro desafio cobre `connect`. O `Provider` é um componente encapsulador do Redux React que encapsula seu aplicativo React. Este wrapper permite então que você acesse o `store` Redux e funções de `dispatch` em toda a sua árvore de componentes. `Provider` usa duas props, o store do Redux e os componentes filhos do seu aplicativo. Definir o `Provider` para um componente do aplicativo pode se parecer com isto:
 
 ```jsx
 <Provider store={store}>
@@ -20,13 +20,13 @@ React Redux provides a small API with two key features: `Provider` and `connect`
 
 # --instructions--
 
-The code editor now shows all your Redux and React code from the past several challenges. It includes the Redux store, actions, and the `DisplayMessages` component. The only new piece is the `AppWrapper` component at the bottom. Use this top level component to render the `Provider` from `ReactRedux`, and pass the Redux store as a prop. Then render the `DisplayMessages` component as a child. Once you are finished, you should see your React component rendered to the page.
+O editor de código agora mostra todos os seus códigos Redux e React dos vários desafios passados. Inclui o store, actions e o componente `DisplayMessages`. O único novo pedaço é o componente `AppWrapper` na parte inferior. Use este componente de nível superior para renderizar o `Provider` de `ReactRedux`, e passar ao store do Redux como uma propriedade. Em seguida, renderize o componente `DisplayMessages` como filho. Quando você terminar, você deve usar seu componente React renderizado para a página.
 
-**Note:** React Redux is available as a global variable here, so you can access the Provider with dot notation. The code in the editor takes advantage of this and sets it to a constant `Provider` for you to use in the `AppWrapper` render method.
+**Nota:** Redux React está disponível como uma variável global aqui, então você pode acessar o Provider com notação de ponto. O código no editor aproveita isso e o define para uma constante `Provider` para você usar no método de renderização `AppWrapper`.
 
 # --hints--
 
-The `AppWrapper` should render.
+O `AppWrapper` deve renderizar.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-The `Provider` wrapper component should have a prop of `store` passed to it, equal to the Redux store.
+O componente wrapper do `Provider` deve ter uma propriedade `store` passada para ele, igual ao store do Redux.
 
 ```js
 (getUserInput) =>
@@ -51,7 +51,7 @@ The `Provider` wrapper component should have a prop of `store` passed to it, equ
   );
 ```
 
-`DisplayMessages` should render as a child of `AppWrapper`.
+`DisplayMessages` deve renderizar como filho de `AppWrapper`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-The `DisplayMessages` component should render an `h2`, `input`, `button`, and `ul` element.
+O componente `DisplayMessages` deve renderizar os elementos `h2`, `input`, `button`, e `ul`.
 
 ```js
 assert(

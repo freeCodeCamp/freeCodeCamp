@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614f
-title: Dispatch an Action Event
+title: Despachar um Evento de Ação
 challengeType: 6
 forumTopicId: 301442
 dashedName: dispatch-an-action-event
@@ -8,9 +8,9 @@ dashedName: dispatch-an-action-event
 
 # --description--
 
-`dispatch` method is what you use to dispatch actions to the Redux store. Calling `store.dispatch()` and passing the value returned from an action creator sends an action back to the store.
+O método `dispatch` é o que você usa para enviar ações para o store do Redux. Chamando `store.dispatch()` e passando o valor retornado de um criador de ação envia uma ação de volta para store.
 
-Recall that action creators return an object with a type property that specifies the action that has occurred. Then the method dispatches an action object to the Redux store. Based on the previous challenge's example, the following lines are equivalent, and both dispatch the action of type `LOGIN`:
+Lembre que os criadores de ações retornam um objeto com uma propriedade type que especifica a ação que ocorreu. Em seguida, o método despacha um objeto de ação para store do Redux. Com base no exemplo do desafio anterior, as linhas a seguir são equivalentes, e ambas enviam a ação do tipo `LOGIN`:
 
 ```js
 store.dispatch(actionCreator());
@@ -19,23 +19,23 @@ store.dispatch({ type: 'LOGIN' });
 
 # --instructions--
 
-The Redux store in the code editor has an initialized state that's an object containing a `login` property currently set to `false`. There's also an action creator called `loginAction()` which returns an action of type `LOGIN`. Dispatch the `LOGIN` action to the Redux store by calling the `dispatch` method, and pass in the action created by `loginAction()`.
+O store do Redux no editor de código tem um estado inicializado que contém um objeto que contém a propriedade `login` atualmente definida como `false`. Também há um criador de ação chamado `loginAction()` que retorna uma ação do tipo `LOGIN`. Despache a ação `LOGIN` para o store do Redux chamando o método `dispatch`, e passe na ação criada por `loginAction()`.
 
 # --hints--
 
-Calling the function `loginAction` should return an object with `type` property set to the string `LOGIN`.
+Chamando a função `loginAction` deve retornar um objeto com a propriedade `type` definida para a string `LOGIN`.
 
 ```js
 assert(loginAction().type === 'LOGIN');
 ```
 
-The store should be initialized with an object with property `login` set to `false`.
+Store deve ser inicializado com um objeto com a propriedade `login` definido como `false`.
 
 ```js
 assert(store.getState().login === false);
 ```
 
-The `store.dispatch()` method should be used to dispatch an action of type `LOGIN`.
+O método `store.dispatch()` deve ser usado para despachar uma ação do tipo `LOGIN`.
 
 ```js
 (getUserInput) =>

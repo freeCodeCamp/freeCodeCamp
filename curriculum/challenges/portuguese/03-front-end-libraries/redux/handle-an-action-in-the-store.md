@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036150
-title: Handle an Action in the Store
+title: Manipule uma Ação no Store
 challengeType: 6
 forumTopicId: 301444
 dashedName: handle-an-action-in-the-store
@@ -8,29 +8,29 @@ dashedName: handle-an-action-in-the-store
 
 # --description--
 
-After an action is created and dispatched, the Redux store needs to know how to respond to that action. This is the job of a `reducer` function. Reducers in Redux are responsible for the state modifications that take place in response to actions. A `reducer` takes `state` and `action` as arguments, and it always returns a new `state`. It is important to see that this is the **only** role of the reducer. It has no side effects — it never calls an API endpoint and it never has any hidden surprises. The reducer is simply a pure function that takes state and action, then returns new state.
+Depois que uma ação é criada e despachada, o store do Redux precisa saber como responder a essa ação. Esse é o trabalho de uma função `reducer`. Reducers em Redux são responsáveis pelas modificações de estado que ocorrem em resposta a ações. Um `reducer` recebe como argumentos `state` e `action`, e ele sempre retorna um novo `state`. É importante ver que esse é o **único** papel do reducer. Ele não tem efeitos colaterais — nunca chama uma rota de API e nunca tem nenhuma surpresa escondida. O reducer é simplesmente uma função pura que exige os parâmetros state e action, e depois retorna um novo state.
 
-Another key principle in Redux is that `state` is read-only. In other words, the `reducer` function must **always** return a new copy of `state` and never modify state directly. Redux does not enforce state immutability, however, you are responsible for enforcing it in the code of your reducer functions. You'll practice this in later challenges.
+Outro princípio chave em Redux é que o `state` é somente de leitura. Em outras palavras, a função `reducer` deve **sempre** retornar uma nova cópia do `state` e nunca modificar o estado diretamente. Redux não impõe imutabilidade do estado, no entanto, você é responsável por aplicá-lo no código de suas funções reducer. Você vai praticar isso em desafios futuros.
 
 # --instructions--
 
-The code editor has the previous example as well as the start of a `reducer` function for you. Fill in the body of the `reducer` function so that if it receives an action of type `'LOGIN'` it returns a state object with `login` set to `true`. Otherwise, it returns the current `state`. Note that the current `state` and the dispatched `action` are passed to the reducer, so you can access the action's type directly with `action.type`.
+O editor de código tem o exemplo anterior, bem como o início de uma função `reducer` para você. Preencha o corpo da função `reducer` para que se receber uma ação do tipo `'LOGIN'` ele retorna um objeto state com `login` definido como `true`. Caso contrário, retorna o `state` atual. Note que o `state` atual e a `action` despachada foram passados para o reducer, para que você possa acessar o tipo da ação diretamente com `action.type`.
 
 # --hints--
 
-Calling the function `loginAction` should return an object with type property set to the string `LOGIN`.
+Chamar a função `loginAction` deve retornar um objeto com a propriedade `type` definida para a string `LOGIN`.
 
 ```js
 assert(loginAction().type === 'LOGIN');
 ```
 
-The store should be initialized with an object with property `login` set to `false`.
+Store deve ser inicializado com um objeto com a propriedade `login` definido como `false`.
 
 ```js
 assert(store.getState().login === false);
 ```
 
-Dispatching `loginAction` should update the `login` property in the store state to `true`.
+Despachar `loginAction` deve atualizar a propriedade `login` no state do store para `true`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-If the action is not of type `LOGIN`, the store should return the current state.
+Se a ação não é do tipo `LOGIN`, o store deve retornar o estado atual.
 
 ```js
 assert(
