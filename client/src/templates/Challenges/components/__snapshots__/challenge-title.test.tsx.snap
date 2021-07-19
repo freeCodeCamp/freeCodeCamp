@@ -20,7 +20,6 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
         className="ellipsis"
       />
     </a>
-     
     <div
       className="breadcrumb-arrow"
     />
