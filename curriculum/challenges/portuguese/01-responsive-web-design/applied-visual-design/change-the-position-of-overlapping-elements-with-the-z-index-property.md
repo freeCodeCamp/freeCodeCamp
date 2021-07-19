@@ -1,6 +1,6 @@
 ---
 id: 587d78a3367417b2b2512acf
-title: Change the Position of Overlapping Elements with the z-index Property
+title: Alterar a ordem de aparição de elementos sobrepostos com a propriedade z-index
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM94aHk'
 forumTopicId: 301046
@@ -9,15 +9,15 @@ dashedName: change-the-position-of-overlapping-elements-with-the-z-index-propert
 
 # --description--
 
-When elements are positioned to overlap (i.e. using `position: absolute | relative | fixed | sticky`), the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the `z-index` property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the `z-index` property of an element move it higher in the stack than those with lower values.
+Quando os elementos são posicionados para se sobrepor (ou seja, usando `position: absolute | relative | fixed | sticky`), o elemento que vem por último no código HTML aparecerá, por padrão, por cima dos elementos anteriores. No entanto, a propriedade `z-index` pode modificar a ordem em que os elementos são empilhados (sobrepostos) uns sobre os outros. Essa propriedade deve receber um número inteiro (ou seja, um número do conjuntos dos inteiros e não decimal). Valores maiores para a propriedade `z-index` de um elemento movem-no para cima na pilha. Valores menores movem-no para baixo na pilha.
 
 # --instructions--
 
-Add a `z-index` property to the element with the class name of `first` (the red rectangle) and set it to a value of 2 so it covers the other element (blue rectangle).
+Na classe `first`, adicione a propriedade `z-index` com o valor de 2. Isso fará com que o retângulo vermelho cubra o retângulo azul.
 
 # --hints--
 
-The element with class `first` should have a `z-index` value of 2.
+O elemento com a classe `first` deve ter a propriedade `z-index` com o valor de 2.
 
 ```js
 assert($('.first').css('z-index') == '2');

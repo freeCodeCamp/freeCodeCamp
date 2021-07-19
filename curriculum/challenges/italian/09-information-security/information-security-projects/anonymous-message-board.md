@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c45
-title: Anonymous Message Board
+title: Bacheca anonima
 challengeType: 4
 forumTopicId: 301568
 dashedName: anonymous-message-board
@@ -8,38 +8,38 @@ dashedName: anonymous-message-board
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://anonymous-message-board.freecodecamp.rocks/>.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://anonymous-message-board.freecodecamp.rocks/>.
 
-Working on this project will involve you writing your code using one of the following methods:
+Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) e completare il tuo progetto localmente.
+-   Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard) per completare il tuo progetto.
+-   Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente dei tuoi progetti nel campo `GitHub Link`.
 
 # --instructions--
 
-1.  Set `NODE_ENV` to test without quotes when ready to write tests and DB to your databases connection string (in `.env`)
-2.  Recommended to create controllers/handlers and handle routing in `routes/api.js`
-3.  You will add any security features to `server.js`
+1.  Imposta `NODE_ENV` a test senza virgolette quando sei pronto a scrivere i test, e DB alla stringa di connessione ai database (in `.env`)
+2.  Consigliamo di creare i controllers/handlers e gestire il routing in `routes/api.js`
+3.  Aggiungerai tutte le funzionalità di sicurezza a `server.js`
 
-Write the following tests in `tests/2_functional-tests.js`:
+Scrivi i seguenti test in `tests/2_functional-tests.js`:
 
--   Creating a new thread: POST request to `/api/threads/{board}`
--   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
--   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
--   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
--   Reporting a thread: PUT request to `/api/threads/{board}`
--   Creating a new reply: POST request to `/api/replies/{board}`
--   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
--   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
--   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
--   Reporting a reply: PUT request to `/api/replies/{board}`
+-   Creazione di un nuovo thread: richiesta POST a `/api/threads/{board}`
+-   Visualizzazione delle 10 conversazioni più recenti con 3 risposte ciascuna: richiesta GET a `/api/threads/{board}`
+-   Eliminazione di una discussione con password errata: richiesta DELETE a `/api/threads/{board}` con una `delete_password` non valida
+-   Eliminazione di una discussione con password corretta: richiesta DELETE a `/api/threads/{board}` con una `delete_password` valida
+-   Segnalazione di un thread: richiesta PUT a `/api/threads/{board}`
+-   Creazione di una nuova risposta: richiesta POST a `/api/replies/{board}`
+-   Visualizzazione di un singolo thread con tutte le risposte: richiesta GET a `/api/replies/{board}`
+-   Eliminazione di una risposta con la password errata: richiesta DELETE a `/api/replies/{board}` con una `delete_password` non valida
+-   Eliminazione di una risposta con la password corretta: richiesta DELETE a `/api/replies/{board}` con una `delete_password` valida
+-   Segnalare una risposta: richiesta PUT a `/api/replies/{board}`
 
 # --hints--
 
-You can provide your own project, not the example URL.
+È necessario fornire il proprio progetto, non l'URL di esempio.
 
 ```js
 (getUserInput) => {
@@ -51,7 +51,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Only allow your site to be loaded in an iFrame on your own pages.
+Consenti solo al tuo sito di essere caricato in un iFrame sulle tue pagine.
 
 ```js
 async (getUserInput) => {
@@ -61,7 +61,7 @@ async (getUserInput) => {
 };
 ```
 
-Do not allow DNS prefetching.
+Non consentire il precaricamento DNS.
 
 ```js
 async (getUserInput) => {
@@ -71,7 +71,7 @@ async (getUserInput) => {
 };
 ```
 
-Only allow your site to send the referrer for your own pages.
+Permetti solo al tuo sito di inviare il referrer per le tue pagine.
 
 ```js
 async (getUserInput) => {
@@ -81,7 +81,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+Puoi inviare una richiesta POST a `/api/threads/{board}` con i dati del modulo che includono un `text` e una password `delete_password`. Il record salvato sul databse avrà almeno i campi `_id`, `text`, `created_on`(data & ora), `bumped_on` (data & ora, all'inizo sarà lo stesso valore di `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
 
 ```js
 async (getUserInput) => {
@@ -113,49 +113,49 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
+Puoi inviare una richiesta POST a `/api/replies/{board}` con i dati del modulo che includono un testo `text`, una password `delete_password`, & `thread_id`. Questo aggiornerà la data `bumped_on` alla data del commento. Nell'array `replies` del thread, sarà salvato un oggetto con almeno le proprietà `_id`, `text`, `created_on`, `delete_password`, & `reported`.
 
 ```js
 
 ```
 
-You can send a GET request to `/api/threads/{board}`. Returned will be an array of the most recent 10 bumped threads on the board with only the most recent 3 replies for each. The `reported` and `delete_password` fields will not be sent to the client.
+Puoi inviare una richiesta GET a `/api/threads/{board}`. Sarà restituito un array dei 10 thread modificati più di recente sulla piattaforma con le 3 risposte più recenti per ciascuno. I campi `reported` e `delete_password` non verranno inviati al client.
 
 ```js
 
 ```
 
-You can send a GET request to `/api/replies/{board}?thread_id={thread_id}`. Returned will be the entire thread with all its replies, also excluding the same fields from the client as the previous test.
+Puoi inviare una richiesta GET a `/api/replies/{board}?thread_id={thread_id}`. Sarà restituito l'intero thread con tutte le sue risposte, anche qui escludendo gli stessi campi dal client del test precedente.
 
 ```js
 
 ```
 
-You can send a DELETE request to `/api/threads/{board}` and pass along the `thread_id` & `delete_password` to delete the thread. Returned will be the string `incorrect password` or `success`.
+Puoi inviare una richiesta DELETE a `/api/threads/{board}` e passarle `thread_id` & `delete_password` per eliminare il thread. Sarà restituita la stringa `incorrect password` o `success`.
 
 ```js
 
 ```
 
-You can send a DELETE request to `/api/replies/{board}` and pass along the `thread_id`, `reply_id`, & `delete_password`. Returned will be the string `incorrect password` or `success`. On success, the text of the `reply_id` will be changed to `[deleted]`.
+Puoi inviare una richiesta DELETE a `/api/replies/{board}` e passarle `thread_id`, `reply_id`, & `delete_password`. Sarà restituita la stringa `incorrect password` o `success`. Al successo, il testo del `reply_id` sarà cambiato in `[deleted]`.
 
 ```js
 
 ```
 
-You can send a PUT request to `/api/threads/{board}` and pass along the `thread_id`. Returned will be the string `success`. The `reported` value of the `thread_id` will be changed to `true`.
+Puoi inviare una richiesta PUT a `/api/threads/{board}` e passarle il `thread_id`. Sarà restituita la stringa `success`. Il valore `reported` del `thread_id` sarà cambiato in `true`.
 
 ```js
 
 ```
 
-You can send a PUT request to `/api/replies/{board}` and pass along the `thread_id` & `reply_id`. Returned will be the string `success`. The `reported` value of the `reply_id` will be changed to `true`.
+Puoi inviare una richiesta PUT a `/api/replies/{board}` e passarle `thread_id`, `reply_id`. Sarà restituita la stringa `success`. Il valore `reported` di `reply_id` sarà cambiato in `true`.
 
 ```js
 
 ```
 
-All 10 functional tests are complete and passing.
+Tutti i 10 test funzionali sono completi e superati.
 
 ```js
 

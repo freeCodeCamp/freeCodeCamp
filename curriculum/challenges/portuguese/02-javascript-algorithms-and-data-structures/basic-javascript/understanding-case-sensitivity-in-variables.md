@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ab
-title: Understanding Case Sensitivity in Variables
+title: Entendendo a Sensibilidade a Caracteres Maiúsculos e Minúsculos em Variáveis
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
@@ -9,15 +9,15 @@ dashedName: understanding-case-sensitivity-in-variables
 
 # --description--
 
-In JavaScript all variables and function names are case sensitive. This means that capitalization matters.
+Em JavaScript todas os nomes de variáveis e funções são sensíveis a caracteres maiúsculos e minúsculos. Isso significa que a capitalização importa.
 
-`MYVAR` is not the same as `MyVar` nor `myvar`. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you *do not* use this language feature.
+`MYVAR` não é o mesmo que `MyVar` nem `myvar`. É possível ter diversas variáveis distintas com o mesmo nome mas com capitalização diferente. É extremamente recomendado pelo bem da clareza, que você *não* use esse recurso da linguagem.
 
-**Best Practice**
+**Melhores Práticas**
 
-Write variable names in JavaScript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.
+Escreva nomes de variáveis em JavaScript em <dfn>camelCase</dfn>. Em <dfn>camelCase</dfn>, nomes de variáveis com mais de uma palavra possuem a primeira palavra toda em minúscula e a primeira letra de cada palavra subsequente capitalizada.
 
-**Examples:**
+**Exemplos:**
 
 ```js
 var someVariable;
@@ -27,19 +27,19 @@ var thisVariableNameIsSoLong;
 
 # --instructions--
 
-Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.
+Modifique as declarações e atribuições existentes para que seus nomes usem <dfn>camelCase</dfn>.
 
-Do not create any new variables.
+Não crie nenhuma variável nova.
 
 # --hints--
 
-`studlyCapVar` should be defined and have a value of `10`.
+`studlyCapVar` deve ser definido e ter um valor de `10`.
 
 ```js
 assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-`properCamelCase` should be defined and have a value of the string `A String`.
+`properCamelCase` deve ser definida e ter o valor da string `A String`.
 
 ```js
 assert(
@@ -47,25 +47,25 @@ assert(
 );
 ```
 
-`titleCaseOver` should be defined and have a value of `9000`.
+`titleCaseOver` deve ser definida e ter o valor de `9000`.
 
 ```js
 assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 ```
 
-`studlyCapVar` should use camelCase in both declaration and assignment sections.
+`studlyCapVar` deve usar camelCase em ambas as seções de declaração e atribuição.
 
 ```js
 assert(code.match(/studlyCapVar/g).length === 2);
 ```
 
-`properCamelCase` should use camelCase in both declaration and assignment sections.
+`properCamelCase` deve usar camelCase em ambas as seções de declaração e atribuição.
 
 ```js
 assert(code.match(/properCamelCase/g).length === 2);
 ```
 
-`titleCaseOver` should use camelCase in both declaration and assignment sections.
+`titleCaseOver` deve usar camelCase em ambas as seções de declaração e atribuição.
 
 ```js
 assert(code.match(/titleCaseOver/g).length === 2);

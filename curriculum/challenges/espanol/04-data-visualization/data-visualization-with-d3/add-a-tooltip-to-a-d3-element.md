@@ -24,55 +24,55 @@ Your code should have 9 `title` elements.
 assert($('title').length == 9);
 ```
 
-The first `title` element should have tooltip text of 12.
+The first `title` element should have tooltip text of `12`.
 
 ```js
 assert($('title').eq(0).text() == '12');
 ```
 
-The second `title` element should have tooltip text of 31.
+The second `title` element should have tooltip text of `31`.
 
 ```js
 assert($('title').eq(1).text() == '31');
 ```
 
-The third `title` element should have tooltip text of 22.
+The third `title` element should have tooltip text of `22`.
 
 ```js
 assert($('title').eq(2).text() == '22');
 ```
 
-The fourth `title` element should have tooltip text of 17.
+The fourth `title` element should have tooltip text of `17`.
 
 ```js
 assert($('title').eq(3).text() == '17');
 ```
 
-The fifth `title` element should have tooltip text of 25.
+The fifth `title` element should have tooltip text of `25`.
 
 ```js
 assert($('title').eq(4).text() == '25');
 ```
 
-The sixth `title` element should have tooltip text of 18.
+The sixth `title` element should have tooltip text of `18`.
 
 ```js
 assert($('title').eq(5).text() == '18');
 ```
 
-The seventh `title` element should have tooltip text of 29.
+The seventh `title` element should have tooltip text of `29`.
 
 ```js
 assert($('title').eq(6).text() == '29');
 ```
 
-The eighth `title` element should have tooltip text of 14.
+The eighth `title` element should have tooltip text of `14`.
 
 ```js
 assert($('title').eq(7).text() == '14');
 ```
 
-The ninth `title` element should have tooltip text of 9.
+The ninth `title` element should have tooltip text of `9`.
 
 ```js
 assert($('title').eq(8).text() == '9');

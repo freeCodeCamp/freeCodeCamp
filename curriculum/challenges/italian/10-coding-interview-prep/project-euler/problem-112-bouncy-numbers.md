@@ -22,10 +22,10 @@ Find the least number for which the proportion of bouncy numbers is exactly 99%.
 
 # --hints--
 
-`euler112()` should return 1587000.
+`bouncyNumbers()` should return `1587000`.
 
 ```js
-assert.strictEqual(euler112(), 1587000);
+assert.strictEqual(bouncyNumbers(), 1587000);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler112(), 1587000);
 ## --seed-contents--
 
 ```js
-function euler112() {
+function bouncyNumbers() {
 
   return true;
 }
 
-euler112();
+bouncyNumbers();
 ```
 
 # --solutions--

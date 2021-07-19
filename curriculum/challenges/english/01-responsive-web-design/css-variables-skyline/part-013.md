@@ -7,19 +7,37 @@ dashedName: part-13
 
 # --description--
 
-Give your `bb1` element these style properties: `display: flex;`, `flex-direction: column;`, and `align-items: center;`. This will center the parts of the building using "flex" or "flexbox". You will learn about it in more detail on another project.
+Give your `.bb1` element these style properties: `display: flex;`, `flex-direction: column;`, and `align-items: center;`. This will center the parts of the building using "flex" or "flexbox". You will learn about it in more detail on another project.
 
 # --hints--
 
-test-text
+You should not change the `.bb1` `width` or `height` properties.
 
 ```js
-const bb1 = $('.bb1');
-assert(
-  bb1.css('display') === 'flex' &&
-    bb1.css('flex-direction') === 'column' &&
-    bb1.css('align-items') === 'center'
-);
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
+assert.equal(bb1Style?.width, '10%');
+assert.equal(bb1Style?.height, '70%');
+```
+
+You should give the `.bb1` element a `display` of `flex`.
+
+```js
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
+assert.equal(bb1Style?.display, 'flex');
+```
+
+You should give the `.bb1` element a `flex-direction` of `column`.
+
+```js
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
+assert.equal(bb1Style?.flexDirection, 'column');
+```
+
+You should give the `.bb1` element a `align-items` of `center`.
+
+```js
+const bb1Style = new __helpers.CSSHelp(document).getStyle('.bb1');
+assert.equal(bb1Style?.alignItems, 'center');
 ```
 
 # --seed--
@@ -31,48 +49,7 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-      }
-
-      .bb1a {
-        width: 70%;
-        height: 10%;
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />   
   </head>
 
   <body>
@@ -88,69 +65,47 @@ assert(
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
+--fcc-editable-region--
+.bb1 {
+  width: 10%;
+  height: 70%;
+}
+--fcc-editable-region--
+.bb1a {
+  width: 70%;
+  height: 10%;
+}
 
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
+.bb1b {
+  width: 80%;
+  height: 10%;
+}
 
-      .bb1 {
-        width: 10%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.bb1c {
+  width: 90%;
+  height: 10%;
+}
 
-      .bb1a {
-        width: 70%;
-        height: 10%;
-      }
-  
-      .bb1b {
-        width: 80%;
-        height: 10%;
-      }
-  
-      .bb1c {
-        width: 90%;
-        height: 10%;
-      }
-
-      .bb1d {
-        width: 100%;
-        height: 70%;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="background-buildings">
-      <div class="bb1">
-        <div class="bb1a"></div>
-        <div class="bb1b"></div>
-        <div class="bb1c"></div>
-        <div class="bb1d"></div>
-      </div>
-    </div>
-  </body>
-</html>
+.bb1d {
+  width: 100%;
+  height: 70%;
+}
+    
 ```
+

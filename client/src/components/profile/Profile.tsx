@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { TFunction, useTranslation } from 'react-i18next';
@@ -55,10 +55,10 @@ interface IProfileProps {
 function renderMessage(
   isSessionUser: boolean,
   username: string,
-  t: TFunction<'translation'>
+  t: TFunction
 ): JSX.Element {
   return isSessionUser ? (
-    <Fragment>
+    <>
       <FullWidthRow>
         <h2 className='text-center'>{t('profile.you-not-public')}</h2>
       </FullWidthRow>
@@ -66,9 +66,9 @@ function renderMessage(
         <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
       </FullWidthRow>
       <Spacer />
-    </Fragment>
+    </>
   ) : (
-    <Fragment>
+    <>
       <FullWidthRow>
         <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
           {t('profile.username-not-public', { username: username })}
@@ -84,7 +84,7 @@ function renderMessage(
         <CurrentChallengeLink>{t('buttons.take-me')}</CurrentChallengeLink>
       </FullWidthRow>
       <Spacer />
-    </Fragment>
+    </>
   );
 }
 
@@ -124,7 +124,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
     isDonating
   } = user;
   return (
-    <Fragment>
+    <>
       <Camper
         about={showAbout ? about : ''}
         githubProfile={githubProfile}
@@ -152,7 +152,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
       <Spacer />
-    </Fragment>
+    </>
   );
 }
 
@@ -164,7 +164,7 @@ function Profile({ user, isSessionUser }: IProfileProps): JSX.Element {
   } = user;
 
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
@@ -182,7 +182,7 @@ function Profile({ user, isSessionUser }: IProfileProps): JSX.Element {
         )}
         <Spacer />
       </Grid>
-    </Fragment>
+    </>
   );
 }
 

@@ -218,7 +218,7 @@ assert(
        .attr("x", (d) => d[0] + 5)
        .attr("y", (d) => h - d[1])
        .text((d) => (d[0] + ", " + d[1]))
-       
+
   </script>
 </body>
 ```

@@ -1,6 +1,6 @@
 ---
 id: 587d781e367417b2b2512ac9
-title: Change an Element's Relative Position
+title: Mudar a posição relativa de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVmMtZ'
 forumTopicId: 301044
@@ -9,9 +9,9 @@ dashedName: change-an-elements-relative-position
 
 # --description--
 
-CSS treats each HTML element as its own box, which is usually referred to as the <dfn>CSS Box Model</dfn>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <dfn>normal flow</dfn> of a document, but CSS offers the position property to override it.
+O CSS trata cada elemento HTML como uma caixa. Esse conceito é geralmente referido como <dfn>CSS Box Model</dfn>. Elementos de nível de bloco são empilhados um em cima do outro (pense nas divs, parágrafos e títulos) enquanto os elementos de linha são inseridos um lado do outro (como imagens ou spans). Essa é a organização padrão dos elementos no CSS e é chamada de <dfn>normal flow</dfn> (fluxo normal). Mas o CSS também oferece uma propriedade para posicionar os elementos de forma manual.
 
-When the position of an element is set to `relative`, it allows you to specify how CSS should move it *relative* to its current position in the normal flow of the page. It pairs with the CSS offset properties of `left` or `right`, and `top` or `bottom`. These say how many pixels, percentages, or ems to move the item *away* from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:
+Ao definir a posição de um elemento para `relative`, o CSS permite que você mova o elemento *relativamente* à sua posição atual. Ela trabalha em conjunto com as propriedades de deslocamento do CSS `left` (esquerda) ou `right` (direita) e `top` (superior) ou `bottom` (inferior). Estas propriedades definem quantos pixels, porcentagens ou ems deslocar o elemento *para longe* de onde ele inicialmente foi posicionado. O exemplo a seguir afasta o parágrafo em 10 pixels a partir da parte inferior:
 
 ```css
 p {
@@ -20,23 +20,23 @@ p {
 }
 ```
 
-Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position.
+Alterar a posição de um elemento para relativo não o remove do fluxo normal - outros elementos em torno dele ainda se comportam como se o item estivesse em sua posição padrão.
 
-**Note:** Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.
+**Observção:** o posicionamento dá a você muita flexibilidade e poder sobre o layout visual de uma página. É bom lembrar que a posição visual dos elementos não importa. O que importa é o código HTML final ser organizado e fazer sentido quando for lido de cima para baixo. É assim que os usuários com deficiências visuais (que dependem de dispositivos como leitores de tela) acessam seu conteúdo.
 
 # --instructions--
 
-Change the `position` of the `h2` to `relative`, and use a CSS offset to move it 15 pixels away from the `top` of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements.
+No elemento `h2`, altere a propriedade `position` para `relative` e use a propriedade `top` para mover o elemento a partir do topo. Observe que a posição dos elementos h1 e p não sofre nenhuma alteração.
 
 # --hints--
 
-The `h2` element should have a `position` property set to `relative`.
+O elemento `h2` deve ter a propriedade `position` com o valor de `relative`.
 
 ```js
 assert($('h2').css('position') == 'relative');
 ```
 
-Your code should use a CSS offset to relatively position the `h2` 15px away from the `top` of where it normally sits.
+Você deve utilizar a propriedade CSS de deslocamento `top` para afastar o elemento `h2` em 15 pixels.
 
 ```js
 assert($('h2').css('top') == '15px');

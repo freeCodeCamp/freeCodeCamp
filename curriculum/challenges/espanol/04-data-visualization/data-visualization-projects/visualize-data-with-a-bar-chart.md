@@ -20,17 +20,17 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 **User Story #3:** My chart should have a `g` element y-axis with a corresponding `id="y-axis"`.
 
-**User Story #4:** Both axes should contain multiple tick labels, each with the corresponding `class="tick"`.
+**User Story #4:** Both axes should contain multiple tick labels, each with a corresponding `class="tick"`.
 
 **User Story #5:** My chart should have a `rect` element for each data point with a corresponding `class="bar"` displaying the data.
 
-**User Story #6:** Each bar should have the properties `data-date` and `data-gdp` containing date and GDP values.
+**User Story #6:** Each bar should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 
 **User Story #7:** The bar elements' `data-date` properties should match the order of the provided data.
 
 **User Story #8:** The bar elements' `data-gdp` properties should match the order of the provided data.
 
-**User Story #9:** Each bar element's height should accurately represent the data's corresponding GDP.
+**User Story #9:** Each bar element's height should accurately represent the data's corresponding `GDP`.
 
 **User Story #10:** The `data-date` attribute and its corresponding bar element should align with the corresponding value on the x-axis.
 
@@ -42,7 +42,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 Here is the dataset you will need to complete this project: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json`
 
-You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
 Once you're done, submit the URL to your working project with all its tests passing.
 

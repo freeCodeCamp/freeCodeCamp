@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd4
-title: Add a Hover Effect to a D3 Element
+title: Adicionar um efeito de hover a um elemento D3
 challengeType: 6
 forumTopicId: 301469
 dashedName: add-a-hover-effect-to-a-d3-element
@@ -8,17 +8,17 @@ dashedName: add-a-hover-effect-to-a-d3-element
 
 # --description--
 
-It's possible to add effects that highlight a bar when the user hovers over it with the mouse. So far, the styling for the rectangles is applied with the built-in D3 and SVG methods, but you can use CSS as well.
+É possível adicionar efeitos que destacam uma barra quando o usuário passa o mouse sobre ela. Até agora, o estilo para os retângulos é aplicado com os métodos incorporados do D3 e SVG, mas você também pode usar CSS.
 
-You set the CSS class on the SVG elements with the `attr()` method. Then the `:hover` pseudo-class for your new class holds the style rules for any hover effects.
+Você definiu a classe CSS no elemento SVG com o método `attr()`. Então, a pseudoclasse `:hover` para a sua nova classe contém as regras do estilo para quaisquer efeitos de hover.
 
 # --instructions--
 
-Use the `attr()` method to add a class of `bar` to all the `rect` elements. This changes the `fill` color of the bar to brown when you mouse over it.
+Use o método `attr()` para adicionar uma classe de `bar` a todos os elementos `rect`. Isso altera a cor da barra para marrom quando você passar o mouse por cima dela.
 
 # --hints--
 
-Your `rect` elements should have a class of `bar`.
+Seus elementos `rect` devem ter uma classe `bar`.
 
 ```js
 assert($('rect').attr('class').trim().split(/\s+/g).includes('bar'));

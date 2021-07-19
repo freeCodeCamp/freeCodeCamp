@@ -1,6 +1,6 @@
 ---
 id: 587d78a3367417b2b2512ace
-title: Push Elements Left or Right with the float Property
+title: Empurre os elementos para a esquerda ou direita com a propriedade float
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDqu2'
 forumTopicId: 301066
@@ -9,21 +9,21 @@ dashedName: push-elements-left-or-right-with-the-float-property
 
 # --description--
 
-The next positioning tool does not actually use `position`, but sets the `float` property of an element. Floating elements are removed from the normal flow of a document and pushed to either the `left` or `right` of their containing parent element. It's commonly used with the `width` property to specify how much horizontal space the floated element requires.
+A próxima ferramenta de posicionamento não usa a propriedade `position`, mas define a propriedade `float` de um elemento. Os elementos flutuantes são removidos do fluxo normal de um documento e colocados à esquerda (`left`) ou direita (`right`) do elemento pai que os contém. Essa propriedade é comumente usada com a propriedade `width` para especificar quanto espaço horizontal o elemento flutuante precisa.
 
 # --instructions--
 
-The given markup would work well as a two-column layout, with the `section` and `aside` elements next to each other. Give the `#left` item a `float` of `left` and the `#right` item a `float` of `right`.
+O código fornecido funcionaria bem como um layout de duas colunas, com os elementos `section` e `aside` um ao lado do outro. Dê ao elemento `#left` a propriedade `float` com o valor `left` e ao elemento `#right` a propriedade `float` com o valor `right`.
 
 # --hints--
 
-The element with id `left` should have a `float` value of `left`.
+O elemento com id `left` deve ter a propriedade `float` com o valor `left`.
 
 ```js
 assert($('#left').css('float') == 'left');
 ```
 
-The element with id `right` should have a `float` value of `right`.
+O elemento com id `right` deve ter a propriedade`float` com o valor `right`.
 
 ```js
 assert($('#right').css('float') == 'right');

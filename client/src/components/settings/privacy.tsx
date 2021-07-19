@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import { userSelector } from '../../redux';
@@ -39,7 +39,7 @@ type ProfileUIType = {
 
 type PrivacyProps = {
   submitProfileUI: (profileUI: ProfileUIType) => void;
-  t: (str: string) => string;
+  t: TFunction;
   user: {
     profileUI: ProfileUIType;
     username: string;
@@ -90,6 +90,7 @@ class PrivacySettings extends Component<PrivacyProps> {
             />
             <ToggleSetting
               action={t('settings.labels.my-name')}
+              explain={t('settings.private-name')}
               flag={!showName}
               flagName='name'
               offLabel={t('buttons.public')}

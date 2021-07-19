@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036181
-title: Introducing Inline Styles
+title: Introducción a los estilos en línea
 challengeType: 6
 forumTopicId: 301395
 dashedName: introducing-inline-styles
@@ -8,29 +8,33 @@ dashedName: introducing-inline-styles
 
 # --description--
 
-There are other complex concepts that add powerful capabilities to your React code. But you may be wondering about the more simple problem of how to style those JSX elements you create in React. You likely know that it won't be exactly the same as working with HTML because of [the way you apply classes to JSX elements](/learn/front-end-libraries/react/define-an-html-class-in-jsx).
+Hay otros conceptos complejos que añaden poderosas capacidades a tu código de React. Pero tal vez te estés preguntando sobre el problema más sencillo de cómo dar estilo a esos elementos JSX que creas en React. Probablemente sepas que no será exactamente lo mismo que trabajar con HTML debido a [la manera en que aplicas clases a los elementos JSX](/learn/front-end-libraries/react/define-an-html-class-in-jsx).
 
-If you import styles from a stylesheet, it isn't much different at all. You apply a class to your JSX element using the `className` attribute, and apply styles to the class in your stylesheet. Another option is to apply inline styles, which are very common in ReactJS development.
+Si importas estilos desde una hoja de estilos, esto no es muy diferente. Aplica una clase a tu elemento JSX usando el atributo `className`, y aplica estilos a la clase en tu hoja de estilos. Otra opción es aplicar estilos en línea, los cuales son muy comunes en el desarrollo de ReactJS.
 
-You apply inline styles to JSX elements similar to how you do it in HTML, but with a few JSX differences. Here's an example of an inline style in HTML:
+Los estilos en línea se aplican a los elementos JSX de forma similar a como se hace en HTML, pero con algunas diferencias en JSX. Aquí hay un ejemplo de un estilo en línea en HTML:
 
-`<div style="color: yellow; font-size: 16px">Mellow Yellow</div>`
+```jsx
+<div style="color: yellow; font-size: 16px">Mellow Yellow</div>
+```
 
-JSX elements use the `style` attribute, but because of the way JSX is transpiled, you can't set the value to a `string`. Instead, you set it equal to a JavaScript `object`. Here's an example:
+Los elementos JSX usan el atributo `style`, pero debido a la forma en que JSX es transpilado, no puede establecer el valor a un `string`. Es su lugar, lo establece igual a un `object` de JavaScript. Aquí un ejemplo:
 
-`<div style={{color: "yellow", fontSize: 16}}>Mellow Yellow</div>`
+```jsx
+<div style={{color: "yellow", fontSize: 16}}>Mellow Yellow</div>
+```
 
-Notice how we camelCase the "fontSize" property? This is because React will not accept kebab-case keys in the style object. React will apply the correct property name for us in the HTML.
+¿Notas cómo ponemos en camelCase la propiedad `fontSize`? Esto es porque React no aceptará claves kebab-case en el objeto de estilo. React aplicará el nombre correcto de la propiedad por nosotros en el HTML.
 
 # --instructions--
 
-Add a `style` attribute to the `div` in the code editor to give the text a color of red and font size of 72px.
+Agrega un atributo `style` al `div` en el editor de código para darle al texto un color rojo y un tamaño de fuente de `72px`.
 
-Note that you can optionally set the font size to be a number, omitting the units "px", or write it as "72px".
+Ten en cuenta que puedes establecer opcionalmente el tamaño de la fuente para que sea un número, omitiendo las unidades `px`, o escribirlo como `72px`.
 
 # --hints--
 
-The component should render a `div` element.
+El componente debe renderizar un elemento `div`.
 
 ```js
 assert(
@@ -41,7 +45,7 @@ assert(
 );
 ```
 
-The `div` element should have a color of `red`.
+El elemento `div` debe tener un color de `red`.
 
 ```js
 assert(
@@ -52,7 +56,7 @@ assert(
 );
 ```
 
-The `div` element should have a font size of `72px`.
+El elemento `div` debe tener un tamaño de fuente de `72px`.
 
 ```js
 assert(

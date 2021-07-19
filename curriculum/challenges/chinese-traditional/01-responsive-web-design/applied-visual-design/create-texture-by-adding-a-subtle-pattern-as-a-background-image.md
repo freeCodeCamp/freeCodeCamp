@@ -22,7 +22,7 @@ dashedName: create-texture-by-adding-a-subtle-pattern-as-a-background-image
 ```js
 assert(
   code.match(
-    /background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi
+    /background(-image)?:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\2\s*\)/gi
   )
 );
 ```

@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b7f
-title: Change the Prototype to a New Object
+title: Mudar o Protótipo para um Novo Objeto
 challengeType: 1
 forumTopicId: 301316
 dashedName: change-the-prototype-to-a-new-object
@@ -8,13 +8,13 @@ dashedName: change-the-prototype-to-a-new-object
 
 # --description--
 
-Up until now you have been adding properties to the `prototype` individually:
+Até o momento, você tem adicionado propriedades para cada `protótipo` individualmente:
 
 ```js
 Bird.prototype.numLegs = 2;
 ```
 
-This becomes tedious after more than a few properties.
+Isto se torna entediante após mais do que algumas propriedades.
 
 ```js
 Bird.prototype.eat = function() {
@@ -26,7 +26,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-A more efficient way is to set the `prototype` to a new object that already contains the properties. This way, the properties are added all at once:
+Uma forma mais eficiente é definir o `protótipo` para um novo objeto que já possui as propriedades. Dessa maneira, as propriedades são adicionadas todas de uma vez:
 
 ```js
 Bird.prototype = {
@@ -42,29 +42,29 @@ Bird.prototype = {
 
 # --instructions--
 
-Add the property `numLegs` and the two methods `eat()` and `describe()` to the `prototype` of `Dog` by setting the `prototype` to a new object.
+Adiciona a propriedade `numLegs` e os dois métodos `eat()` e `describe()` para o `protótipo` de `Dog` definindo o `protótipo` para um novo objeto.
 
 # --hints--
 
-`Dog.prototype` should be set to a new object.
+`Dog.prototype` deve ser definido para um novo objeto.
 
 ```js
 assert(/Dog\.prototype\s*?=\s*?{/.test(code));
 ```
 
-`Dog.prototype` should have the property `numLegs`.
+`Dog.prototype` deve ter a propriedade `numLegs`.
 
 ```js
 assert(Dog.prototype.numLegs !== undefined);
 ```
 
-`Dog.prototype` should have the method `eat()`.
+`Dog.prototype` deve ter o método `eat()`.
 
 ```js
 assert(typeof Dog.prototype.eat === 'function');
 ```
 
-`Dog.prototype` should have the method `describe()`.
+`Dog.prototype` deve ter o método `describe()`.
 
 ```js
 assert(typeof Dog.prototype.describe === 'function');

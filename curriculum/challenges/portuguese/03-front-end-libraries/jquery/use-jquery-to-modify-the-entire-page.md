@@ -1,26 +1,27 @@
 ---
 id: bad87fee1348bd9aecb08826
-title: Use jQuery to Modify the Entire Page
+title: Use jQuery para Modificar a Página Inteira
 challengeType: 6
 forumTopicId: 18361
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: use-jquery-to-modify-the-entire-page
 ---
 
 # --description--
 
-We're done playing with our jQuery playground. Let's tear it down!
+Terminamos de brincar com nosso jQuery playground. Vamos despedaçar isso!
 
-jQuery can target the `body` element as well.
+jQuery também pode tomar como alvo o elemento `body`.
 
-Here's how we would make the entire body fade out: `$("body").addClass("animated fadeOut");`
+Aqui está como você faria para desaparecer todo o body:`$("body").addClass("animated fadeOut");`
 
-But let's do something more dramatic. Add the classes `animated` and `hinge` to your `body` element.
+Mas vamos fazer algo mais dramático. Adicione as classes `animated` e `hinge` ao seu elemento `body`.
 
 # --hints--
 
-You should add the classes `animated` and `hinge` to your `body` element.
+Você deve adicionar as classes `animated` e `hinge` ao seu elemento `body`.
 
 ```js
 assert($('body').hasClass('animated') && $('body').hasClass('hinge'));

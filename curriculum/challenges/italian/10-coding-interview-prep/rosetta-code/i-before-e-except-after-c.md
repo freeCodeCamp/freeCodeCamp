@@ -8,7 +8,7 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-The phrase ["I before E, except after C"](<https://en.wikipedia.org/wiki/I before E except after C>) is a widely known mnemonic which is supposed to help when spelling English words.
+The phrase ["I before E, except after C"](https://en.wikipedia.org/wiki/I before E except after C) is a widely known mnemonic which is supposed to help when spelling English words.
 
 Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
 

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c441eddfaeb5bdef
-title: Understanding Boolean Values
+title: Entendendo Valores Booleanos
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
@@ -9,23 +9,23 @@ dashedName: understanding-boolean-values
 
 # --description--
 
-Another data type is the <dfn>Boolean</dfn>. Booleans may only be one of two values: `true` or `false`. They are basically little on-off switches, where `true` is on and `false` is off. These two states are mutually exclusive.
+Outro tipo de dado é o <dfn>Boolean</dfn>. Booleanos podem ser apenas dois valores: `true` ou `false`. Eles basicamente são interruptores pequenos, onde `true` é ligado e `false` é desligado. Esses dois estados são mutuamente exclusivos.
 
-**Note:** Boolean values are never written with quotes. The strings `"true"` and `"false"` are not Boolean and have no special meaning in JavaScript.
+**Nota:** Valores booleanos nunca são escritos com aspas. As strings `"true"` e `"false"` não são Booleanos e não tem nenhum significado especial em JavaScript.
 
 # --instructions--
 
-Modify the `welcomeToBooleans` function so that it returns `true` instead of `false` when the run button is clicked.
+Modifique a função `welcomeToBooleans` para que retorne `true` ao invés de `false` quando o botão de correr for clicado.
 
 # --hints--
 
-The `welcomeToBooleans()` function should return a Boolean (`true` or `false`) value.
+A função `welcomeToBooleans()` deve retornar um valor Booleano (`true` ou `false`).
 
 ```js
 assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-`welcomeToBooleans()` should return `true`.
+`welcomeToBooleans()` deve retornar `true`.
 
 ```js
 assert(welcomeToBooleans() === true);

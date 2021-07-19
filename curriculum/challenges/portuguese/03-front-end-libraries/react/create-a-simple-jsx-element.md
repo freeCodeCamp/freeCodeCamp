@@ -1,6 +1,6 @@
 ---
 id: 587d7dbc367417b2b2512bb1
-title: Create a Simple JSX Element
+title: Crie um Elemento JSX Simples
 challengeType: 6
 forumTopicId: 301390
 dashedName: create-a-simple-jsx-element
@@ -8,29 +8,29 @@ dashedName: create-a-simple-jsx-element
 
 # --description--
 
-React is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.
+React é uma biblioteca de visualização de código aberto criado e mantido pelo Facebook. É uma ótima ferramenta para renderizar a interface do usuário (IU) de aplicações web modernas.
 
-React uses a syntax extension of JavaScript called JSX that allows you to write HTML directly within JavaScript. This has several benefits. It lets you use the full programmatic power of JavaScript within HTML, and helps to keep your code readable. For the most part, JSX is similar to the HTML that you have already learned, however there are a few key differences that will be covered throughout these challenges.
+React usa a sintaxe de extensão do JavaScript chamada JSX que o permite escrever HTML diretamente no JavaScript. Isso possui diversos benefícios. Ele permite a você usar todo o poder programático do JavaScript dentro do HTML, e ajuda a manter o seu código legível. Em grande parte, JSX é semelhante ao HTML que você já aprendeu, no entanto existem algumas diferenças chaves que cobriremos durante esses desafios.
 
-For instance, because JSX is a syntactic extension of JavaScript, you can actually write JavaScript directly within JSX. To do this, you simply include the code you want to be treated as JavaScript within curly braces: `{ 'this is treated as JavaScript code' }`. Keep this in mind, since it's used in several future challenges.
+Por exemplo, porque o JSX é uma extensão sintática de JavaScript, você realmente pode escrever JavaScript diretamente dentro do JSX. Para isso, você simplesmente inclui o código que você quer que seja tratado como JavaScript dentro de chaves: `{'this is treated as JavaScript code'}`. Mantenha isso em mente, já que é utilizado em diversos desafios futuros.
 
-However, because JSX is not valid JavaScript, JSX code must be compiled into JavaScript. The transpiler Babel is a popular tool for this process. For your convenience, it's already added behind the scenes for these challenges. If you happen to write syntactically invalid JSX, you will see the first test in these challenges fail.
+No entanto, porque JSX não é JavaScript válido, código JSX precisa ser compilado em JavaScript. O transpilador Babel é uma ferramenta popular para esse processo. Para sua conveniência, já está adicionado por trás dos panos para esses desafios. Se por acaso você escrever JSX inválido sintaticamente, você verá o primeiro teste nesses desafios falhar.
 
-It's worth noting that under the hood the challenges are calling `ReactDOM.render(JSX, document.getElementById('root'))`. This function call is what places your JSX into React's own lightweight representation of the DOM. React then uses snapshots of its own DOM to optimize updating only specific parts of the actual DOM.
+Vale a pena notar que por trás dos panos os desafios estão chamando `ReactDOM.render(JSX, document.getElementById('root'))`. Essa chamada de função é o que coloca seu JSX na representação leve do DOM própria do React. React então usa snapshots de seu próprio DOM para otimizar a atualização apenas de partes específicas do DOM.
 
 # --instructions--
 
-The current code uses JSX to assign a `div` element to the constant `JSX`. Replace the `div` with an `h1` element and add the text `Hello JSX!` inside it.
+O código atual usa JSX para atribuir um elemento `div` à constante `JSX`. Substitua o elemento `div` por um `h1` e adicione o texto `Hello JSX!` dentro dele.
 
 # --hints--
 
-The constant `JSX` should return an `h1` element.
+A constante `JSX` deve retornar um elemento `h1`.
 
 ```js
 assert(JSX.type === 'h1');
 ```
 
-The `h1` tag should include the text `Hello JSX!`
+A tag `h1` deve incluir o texto `Hello JSX!`
 
 ```js
 assert(Enzyme.shallow(JSX).contains('Hello JSX!'));

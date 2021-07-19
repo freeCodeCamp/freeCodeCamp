@@ -1,6 +1,6 @@
 ---
 id: 5cdafbb0291309899753167f
-title: Create a JavaScript Promise
+title: Criar uma Promessa em JavaScript
 challengeType: 1
 forumTopicId: 301197
 dashedName: create-a-javascript-promise
@@ -8,7 +8,7 @@ dashedName: create-a-javascript-promise
 
 # --description--
 
-A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. `Promise` is a constructor function, so you need to use the `new` keyword to create one. It takes a function, as its argument, with two parameters - `resolve` and `reject`. These are methods used to determine the outcome of the promise. The syntax looks like this:
+Uma promessa em JavaScript é exatamente o que parece - você faz a promessa de que irá fazer uma tarefa, geralmente de forma assíncrona. Quando a tarefa é finalizada, ou você cumpriu a promessa ou falhou ao tentar. Por ser uma função construtora, você precisa utilizar a palavra-chave `new` para criar uma `Promise`. Ele recebe uma função, como seu arguemento, com dois parâmetros - `resolve` e `reject`. Esses métodos são usados para determinar o resultado da promessa. A sintaxe se parecesse com isso:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -18,17 +18,17 @@ const myPromise = new Promise((resolve, reject) => {
 
 # --instructions--
 
-Create a new promise called `makeServerRequest`. Pass in a function with `resolve` and `reject` parameters to the constructor.
+Crie uma nova promessa chamada `makeServerRequest`. No construtor da promessa, passe uma função com os parâmetros `resolve` e `reject`.
 
 # --hints--
 
-You should assign a promise to a declared variable named `makeServerRequest`.
+Você deve atribuir a promessa a uma variável chamada `makeServerRequest`.
 
 ```js
 assert(makeServerRequest instanceof Promise);
 ```
 
-Your promise should receive a function with `resolve` and `reject` as parameters.
+A promessa deve receber uma função com os parâmetros `resolve` e `reject`.
 
 ```js
 assert(

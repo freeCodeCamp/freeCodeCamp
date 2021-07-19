@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512c00
-title: Expand Your Project with External Packages from npm
+title: Espandere il tuo progetto con pacchetti esterni di npm
 challengeType: 2
 forumTopicId: 301527
 dashedName: expand-your-project-with-external-packages-from-npm
@@ -8,9 +8,9 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --description--
 
-One of the biggest reasons to use a package manager, is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the `dependencies` section of your package.json file.
+Uno dei più grandi motivi per utilizzare un gestore di pacchetti, è la loro potente gestione delle dipendenze. Invece di dover fare manualmente in modo di ottenere tutte le dipendenze ogni volta che si imposta un progetto su un nuovo computer, npm installa tutto per te automaticamente. Ma come può npm sapere esattamente di cosa ha bisogno il tuo progetto? Vai a vedere la sezione `dependencies` del tuo file package.json.
 
-In this section, packages your project requires are stored using the following format:
+In questa sezione, i pacchetti richiesti dal progetto vengono memorizzati nel seguente formato:
 
 ```json
 "dependencies": {
@@ -22,13 +22,13 @@ In this section, packages your project requires are stored using the following f
 
 # --instructions--
 
-Add version "2.14.0" of the "moment" package to the `dependencies` field of your package.json file.
+Aggiungi la versione "2.14.0" del pacchetto "moment" al campo `dependencies` del tuo file package.json.
 
-**Note:** Moment is a handy library for working with time and dates.
+**Nota:** Moment è una comoda libreria per lavorare con l'ora e le date.
 
 # --hints--
 
-"dependencies" should include "moment"
+"dependencies" dovrebbe includere "moment"
 
 ```js
 (getUserInput) =>
@@ -47,7 +47,7 @@ Add version "2.14.0" of the "moment" package to the `dependencies` field of your
   );
 ```
 
-"moment" version should be "2.14.0"
+La versione di "moment" dovrebbe essere "2.14.0"
 
 ```js
 (getUserInput) =>

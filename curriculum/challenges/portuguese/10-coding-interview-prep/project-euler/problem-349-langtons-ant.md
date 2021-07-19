@@ -16,7 +16,7 @@ The ant is always oriented in one of the cardinal directions (left, right, up or
 
 \- if it is on a white square, it flips the color of the square to black, rotates 90 degrees clockwise and moves forward one square.
 
-Starting with a grid that is entirely white, how many squares are black after 1018 moves of the ant?
+Starting with a grid that is entirely white, how many squares are black after 10<sup>18</sup> moves of the ant?
 
 # --hints--
 

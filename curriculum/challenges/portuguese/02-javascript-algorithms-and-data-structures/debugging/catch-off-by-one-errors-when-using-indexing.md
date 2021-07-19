@@ -1,6 +1,6 @@
 ---
 id: 587d7b86367417b2b2512b3b
-title: Catch Off By One Errors When Using Indexing
+title: Capture Erros de Fora Por Um Quando Usando Indexação
 challengeType: 1
 forumTopicId: 301189
 dashedName: catch-off-by-one-errors-when-using-indexing
@@ -8,9 +8,9 @@ dashedName: catch-off-by-one-errors-when-using-indexing
 
 # --description--
 
-<dfn>Off by one errors</dfn> (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. JavaScript indexing starts at zero, not one, which means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an "index out of range" reference error or print `undefined`.
+<dfn>Off by one errors (erros de fora por um)</dfn> (as vezes chamado OBOE) surge quando você está tentando acessar um índice específico de uma string ou array (para fatiar ou acessar um segmento), ou quando você está iterando sobre seus índices. A indexação de JavaScript começa em zero e não um, o que significa que o último índice sempre será o tamanho do item menos 1 (array.length - 1). Se você estiver tentando acessar um índice igual ao tamanho, o programa pode lançar uma referência do erro "index out of range" ou imprimir `undefined`.
 
-When you use string or array methods that take index ranges as arguments, it helps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not. Here are some examples of off by one errors:
+Quando você usa métodos de string ou array que recebem intervalos de índices como argumentos, auxilia na leitura da documentação e compreender se eles são inclusivos (o item no índice especificado é parte do que é retornado) ou não. Aqui estão alguns exemplos de erros de fora por um:
 
 ```js
 let alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -26,33 +26,33 @@ for (let k = 0; k < len; k++) {
 }
 ```
 
-The first example here loops one too many times, and the second loops one too few times (missing the first index, 0). The third example is correct.
+O primeiro exemplo itera uma vez a mais (i <= len) e o segundo itera uma vez a menos por começar do índice 1 (let j = 1). O terceiro exemplo está certo.
 
 # --instructions--
 
-Fix the two indexing errors in the following function so all the numbers 1 through 5 are printed to the console.
+Corrija os dois erros de índices nas funções seguintes para que todos os números de 1 até 5 sejam exibidos no console.
 
 # --hints--
 
-Your code should set the initial condition of the loop so it starts at the first index.
+Seu código deve definir a condição inicial do laço para começar do primeiro índice.
 
 ```js
 assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
-Your code should fix the initial condition of the loop so that the index starts at 0.
+Seu código deve corrigir a condição inicial do laço para que o índice comece em 0.
 
 ```js
 assert(!code.match(/i\s?=\s*?1\s*?;/g));
 ```
 
-Your code should set the terminal condition of the loop so it stops at the last index.
+Seu código deve definir a condição de parada do laço, a fim de parar no último índice.
 
 ```js
 assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
 ```
 
-Your code should fix the terminal condition of the loop so that it stops at 1 before the length.
+Seu código deve corrigir a condição de parada do laço, a fim de parar no tamanho menos 1.
 
 ```js
 assert(!code.match(/i\s*?<=\s*?len;/g));

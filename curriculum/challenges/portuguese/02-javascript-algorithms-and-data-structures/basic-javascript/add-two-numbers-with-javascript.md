@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb3bdef
-title: Add Two Numbers with JavaScript
+title: Adicione Dois Números com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
@@ -9,33 +9,33 @@ dashedName: add-two-numbers-with-javascript
 
 # --description--
 
-`Number` is a data type in JavaScript which represents numeric data.
+`Number` é um tipo de dado em JavaScript o qual representa um dado numérico.
 
-Now let's try to add two numbers using JavaScript.
+Agora vamos tentar adicionar dois números usando JavaScript.
 
-JavaScript uses the `+` symbol as an addition operator when placed between two numbers.
+JavaScript utiliza o símbolo `+` como um operador de adição quando colocado entre dois números.
 
-**Example:**
+**Exemplo:**
 
 ```js
 myVar = 5 + 10;
 ```
 
-`myVar` now has the value `15`.
+`myVar` agora tem o valor de `15`.
 
 # --instructions--
 
-Change the `0` so that sum will equal `20`.
+Modifique o `0` para que a soma seja igual a `20`.
 
 # --hints--
 
-`sum` should equal `20`.
+`soma` deve ser igual a `20`.
 
 ```js
 assert(sum === 20);
 ```
 
-You should use the `+` operator.
+Você deve usar o operador `+`.
 
 ```js
 assert(/\+/.test(code));

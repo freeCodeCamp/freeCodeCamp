@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c38
-title: Mitigate the Risk of Clickjacking with helmet.frameguard()
+title: Mitigare il rischio di Clickjacking con helmet.frameguard()
 challengeType: 2
 forumTopicId: 301582
 dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
@@ -8,19 +8,19 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
-Your page could be put in a `<frame>` or `<iframe>` without your consent. This can result in clickjacking attacks, among other things. Clickjacking is a technique of tricking a user into interacting with a page different from what the user thinks it is. This can be obtained executing your page in a malicious context, by mean of iframing. In that context a hacker can put a hidden layer over your page. Hidden buttons can be used to run bad scripts. This middleware sets the X-Frame-Options header. It restricts who can put your site in a frame. It has three modes: DENY, SAMEORIGIN, and ALLOW-FROM.
+La tua pagina potrebbe essere inserita in un `<frame>` o `<iframe>` senza il tuo consenso. Questo tra le altre cose può portare ad attacchi di clickjacking ("dirottamento dei click"). Il clickjacking è una tecnica per indurre un utente a interagire con una pagina diversa da quella che l'utente pensa che sia. Questo può essere ottenuto eseguendo la tua pagina in un contesto dannoso, per mezzo di iframing. In questo contesto un hacker può mettere un livello nascosto sulla tua pagina. I pulsanti nascosti possono essere usati per eseguire script dannosi. Questo middleware imposta l'intestazione X-Frame-Options. Limita chi può mettere il tuo sito in un iframe. Ha tre modalità: DENY, SAMEORIGIN, e ALLOW-FROM.
 
-We don’t need our app to be framed.
+Non abbiamo bisogno che la nostra app sia in un iframe.
 
 # --instructions--
 
-Use `helmet.frameguard()` passing with the configuration object `{action: 'deny'}`.
+Usa `helmet.frameguard()` passando `{action: 'deny'}` con l'oggetto di configurazione.
 
 # --hints--
 
-helmet.frameguard() middleware should be mounted correctly
+Il middleware helmet.frameguard() deve essere montato correttamente
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ helmet.frameguard() middleware should be mounted correctly
   );
 ```
 
-helmet.frameguard() 'action' should be set to 'DENY'
+helmet.frameguard() 'action' dovrebbe essere impostato su 'DENY'
 
 ```js
 (getUserInput) =>

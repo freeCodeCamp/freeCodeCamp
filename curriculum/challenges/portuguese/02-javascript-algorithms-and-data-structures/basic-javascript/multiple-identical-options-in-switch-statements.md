@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244df
-title: Multiple Identical Options in Switch Statements
+title: Várias Opções Idênticas em Instruções Switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
@@ -9,7 +9,7 @@ dashedName: multiple-identical-options-in-switch-statements
 
 # --description--
 
-If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered. If you have multiple inputs with the same output, you can represent them in a `switch` statement like this:
+Se a instrução `break` for omitida de uma instrução `case` de um `switch`, as instruções seguintes `case` são executadas até que seja encontrado um `break`. Se você tem várias entradas com a mesma saída, você pode representá-los em uma instrução `switch` da seguinte forma:
 
 ```js
 var result = "";
@@ -24,80 +24,80 @@ switch(val) {
 }
 ```
 
-Cases for 1, 2, and 3 will all produce the same result.
+Todos os casos para 1, 2 e 3 irão produzir o mesmo resultado.
 
 # --instructions--
 
-Write a switch statement to set `answer` for the following ranges:  
+Escreva uma instrução para definir `answer` para os seguintes intervalos:  
 `1-3` - `Low`  
 `4-6` - `Mid`  
 `7-9` - `High`
 
-**Note:** You will need to have a `case` statement for each number in the range.
+**Nota:** Você precisará ter uma instrução `case` para cada número no intervalo.
 
 # --hints--
 
-`sequentialSizes(1)` should return the string `Low`
+`sequentialSizes(1)` deve retornar a string `Low`
 
 ```js
 assert(sequentialSizes(1) === 'Low');
 ```
 
-`sequentialSizes(2)` should return the string `Low`
+`sequentialSizes(2)` deve retornar a string `Low`
 
 ```js
 assert(sequentialSizes(2) === 'Low');
 ```
 
-`sequentialSizes(3)` should return the string `Low`
+`sequentialSizes(3)` deve retornar a string `Low`
 
 ```js
 assert(sequentialSizes(3) === 'Low');
 ```
 
-`sequentialSizes(4)` should return the string `Mid`
+`sequentialSizes(4)` deve retornar a string `Mid`
 
 ```js
 assert(sequentialSizes(4) === 'Mid');
 ```
 
-`sequentialSizes(5)` should return the string `Mid`
+`sequentialSizes(5)` deve retornar a string `Mid`
 
 ```js
 assert(sequentialSizes(5) === 'Mid');
 ```
 
-`sequentialSizes(6)` should return the string `Mid`
+`sequentialSizes(6)` deve retornar a string `Mid`
 
 ```js
 assert(sequentialSizes(6) === 'Mid');
 ```
 
-`sequentialSizes(7)` should return the string `High`
+`sequentialSizes(7)` deve retornar a string `High`
 
 ```js
 assert(sequentialSizes(7) === 'High');
 ```
 
-`sequentialSizes(8)` should return the string `High`
+`sequentialSizes(8)` deve retornar a string `High`
 
 ```js
 assert(sequentialSizes(8) === 'High');
 ```
 
-`sequentialSizes(9)` should return the string `High`
+`sequentialSizes(9)` deve retornar a string `High`
 
 ```js
 assert(sequentialSizes(9) === 'High');
 ```
 
-You should not use any `if` or `else` statements
+Você não deve usar nenhuma das instruções `if` ou `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-You should have nine `case` statements
+Você deve ter nove instruções `case`
 
 ```js
 assert(code.match(/case/g).length === 9);

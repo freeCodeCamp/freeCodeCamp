@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function ToggleCheck(
@@ -7,7 +7,7 @@ function ToggleCheck(
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.toggle')}</span>
       <svg
         className='tick'
@@ -57,7 +57,7 @@ function ToggleCheck(
           />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

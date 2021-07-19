@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c448eddfaeb5bdef
-title: Find the Length of a String
+title: Encontre o Tamanho de uma String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqEAd'
 forumTopicId: 18182
@@ -9,23 +9,23 @@ dashedName: find-the-length-of-a-string
 
 # --description--
 
-You can find the length of a `String` value by writing `.length` after the string variable or string literal.
+Você pode encontrar o tamanho de um valor de `String` ao escrever `.length` após a variável de string ou literal de string.
 
 ```js
 console.log("Alan Peter".length);
 ```
 
-The value `10` would be displayed in the console.
+O valor `10` seria exibido no console.
 
-For example, if we created a variable `var firstName = "Ada"`, we could find out how long the string `Ada` is by using the `firstName.length` property.
+Por exemplo, se nós criarmos uma variável `var firstName = "Ada"`, poderíamos descobrir qual o tamanho da string `Ada` ao usar a propriedade `firstName.length`.
 
 # --instructions--
 
-Use the `.length` property to count the number of characters in the `lastName` variable and assign it to `lastNameLength`.
+Use a propriedade `.length` para contar o número de caracteres na variável `lastName` e atribui-la a `lastNameLength`.
 
 # --hints--
 
-You should not change the variable declarations in the `// Setup` section.
+Você não deve alterar as declarações de variáveis a seção `// Setup`.
 
 ```js
 assert(
@@ -34,13 +34,13 @@ assert(
 );
 ```
 
-`lastNameLength` should be equal to eight.
+`lastNameLength` deve ser igual a oito.
 
 ```js
 assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8);
 ```
 
-You should be getting the length of `lastName` by using `.length` like this: `lastName.length`.
+Você deve estar recebendo o tamanho de `lastName` ao usar `.length` dessa forma: `lastName.length`.
 
 ```js
 assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));

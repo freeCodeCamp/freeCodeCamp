@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b9
-title: Constructing Strings with Variables
+title: Construindo Strings com Variáveis
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805
@@ -9,30 +9,30 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-Sometimes you will need to build a string, [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs) style. By using the concatenation operator (`+`), you can insert one or more variables into a string you're building.
+Às vezes você precisará construir uma string, no estilo [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs). Usando o operador de concatenação (`+`), você pode inserir uma ou mais variáveis em uma string que você está construindo.
 
-Example:
+Exemplo:
 
 ```js
 var ourName = "freeCodeCamp";
 var ourStr = "Hello, our name is " + ourName + ", how are you?";
 ```
 
-`ourStr` would have a value of the string `Hello, our name is freeCodeCamp, how are you?`.
+`ourStr` teria o valor da string `Hello, our name is freeCodeCamp, how are you?`.
 
 # --instructions--
 
-Set `myName` to a string equal to your name and build `myStr` with `myName` between the strings `My name is ` and ` and I am well!`
+Defina `myName` para uma string igual ao seu nome e construa `myStr` com `myName` em duas strings: `My name is` e `and I am well!`
 
 # --hints--
 
-`myName` should be set to a string at least 3 characters long.
+`myName` deve ser definido para uma string de pelo menos 3 caracteres.
 
 ```js
 assert(typeof myName !== 'undefined' && myName.length > 2);
 ```
 
-You should use two `+` operators to build `myStr` with `myName` inside it.
+Você deve usar dois operadores `+` para construir `myStr` com `myName` dentro dele.
 
 ```js
 assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);

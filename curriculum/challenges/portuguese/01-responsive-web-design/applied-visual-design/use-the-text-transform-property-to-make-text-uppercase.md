@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac0
-title: Use the text-transform Property to Make Text Uppercase
+title: Use a propriedade text-transform para deixar o texto em letras maiúsculas
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
@@ -9,25 +9,25 @@ dashedName: use-the-text-transform-property-to-make-text-uppercase
 
 # --description--
 
-The `text-transform` property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.
+A propriedade `text-transform` no CSS é usada para alterar a aparência do texto. É uma maneira conveniente de garantir que o texto em uma página da web seja exibido de forma consistente, sem precisar alterar o conteúdo do texto dos elementos dentro do HTML.
 
-The following table shows how the different `text-transform`values change the example text "Transform me".
+A tabela a seguir mostra como os diferentes valores de `text-transform` alteram o texto no exemplo "Me transforme".
 
-<table class='table table-striped'><thead><tr><th>Value</th><th>Result</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Use the default value</td></tr><tr><td><code>inherit</code></td><td>Use the <code>text-transform</code> value from the parent element</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong> Use the original text</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Valor</th><th>Resultado</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"me transforme"</td></tr><tr><td><code>uppercase</code></td><td>"ME TRANSFORME"</td></tr><tr><td><code>capitalize</code></td><td>"Me Transforme"</td></tr><tr><td><code>initial</code></td><td>Use o valor padrão</td></tr><tr><td><code>inherit</code></td><td>Use o valor <code>text-transform</code> do elemento pai</td></tr><tr><td><code>none</code></td><td><strong>Padrão:</strong> usa o texto original do HTML</td></tr></tbody></table>
 
 # --instructions--
 
-Transform the text of the `h4` to be uppercase using the `text-transform` property.
+Transforme o texto de `h4` em letras maiúsculas usando a propriedade `text-transform`.
 
 # --hints--
 
-The `h4` text should be `uppercase`.
+O texto `h4` deve ter todas as letras maiúsculas (`uppercase`).
 
 ```js
 assert($('h4').css('text-transform') === 'uppercase');
 ```
 
-The original text of the h4 should not be changed.
+O texto original do h4 não deve ser alterado.
 
 ```js
 assert($('h4').text() !== $('h4').text().toUpperCase());

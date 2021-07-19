@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad6
-title: Create a Gradual CSS Linear Gradient
+title: Criar um gradiente linear com CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4dpt9'
 forumTopicId: 301047
@@ -9,15 +9,15 @@ dashedName: create-a-gradual-css-linear-gradient
 
 # --description--
 
-Applying a color on HTML elements is not limited to one flat hue. CSS provides the ability to use color transitions, otherwise known as gradients, on elements. This is accessed through the `background` property's `linear-gradient()` function. Here is the general syntax:
+A aplicação de cores em elementos HTML não se limita a apenas uma única cor. O CSS oferece a possibilidade de utilizar transições de cor, também conhecidas como gradientes, nos elementos HTML. Isso pode ser feito por meio da função `linear-gradient()` da propriedade `background`. Aqui está a sintaxe padrão:
 
 ```css
 background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);
 ```
 
-The first argument specifies the direction from which color transition starts - it can be stated as a degree, where `90deg` makes a horizontal gradient (from left to right) and `45deg` makes a diagonal gradient (from bottom left to top right). The following arguments specify the order of colors used in the gradient.
+O primeiro argumento define a direção em que a transição da cor começa - pode ser declarado como um grau, onde `90deg` cria um gradiente horizontal (da esquerda para a direita) e `45deg` cria um gradiente diagonal (da esquerda inferior para a direita superior). Os argumentos seguintes especificam a ordem das cores utilizadas no gradiente.
 
-Example:
+Exemplo:
 
 ```css
 background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
@@ -25,11 +25,11 @@ background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
 
 # --instructions--
 
-Use a `linear-gradient()` for the `div` element's `background`, and set it from a direction of 35 degrees to change the color from `#CCFFFF` to `#FFCCCC`.
+No elemento `div`, use a função `linear-gradient()` na propriedade `background`. Defina a direção do gradiente para 35 graus e use as cores `#CCFFFF` e `#FFCCCC`.
 
 # --hints--
 
-The `div` element should have a `linear-gradient` `background` with the specified direction and colors.
+O elemento `div` deve ter uma cor gradiente (`linear-gradient`) de plano de fundo (`background`) com a direção e cores especificadas anteriormente.
 
 ```js
 assert(

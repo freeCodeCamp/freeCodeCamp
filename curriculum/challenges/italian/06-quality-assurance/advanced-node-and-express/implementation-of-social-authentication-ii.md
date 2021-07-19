@@ -1,6 +1,6 @@
 ---
 id: 589a69f5f9fc0f352b528e71
-title: Implementation of Social Authentication II
+title: Implementazione dell'autenticazione con i social II
 challengeType: 2
 forumTopicId: 301557
 dashedName: implementation-of-social-authentication-ii
@@ -8,11 +8,11 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-The last part of setting up your GitHub authentication is to create the strategy itself. For this, you will need to add the dependency of `passport-github@~1.1.0` to your project and require it in your `auth.js` as `GithubStrategy` like this: `const GitHubStrategy = require('passport-github').Strategy;`. Do not forget to require and configure `dotenv` to use your environment variables.
+L'ultima parte della configurazione dell'autenticazione con GitHub è creare la strategia stessa. Per questo, è necessario aggiungere la dipendenza di `passport-github@~1.1.0` al tuo progetto e richiederlo nel tuo `auth.js` come `GithubStrategy` così: `const GitHubStrategy = require('passport-github').Strategy;`. Non dimenticare di richiedere e configurare `dotenv` per utilizzare le variabili d'ambiente.
 
-To set up the GitHub strategy, you have to tell Passport to use an instantiated `GitHubStrategy`, which accepts 2 arguments: an object (containing `clientID`, `clientSecret`, and `callbackURL`) and a function to be called when a user is successfully authenticated, which will determine if the user is new and what fields to save initially in the user's database object. This is common across many strategies, but some may require more information as outlined in that specific strategy's GitHub README. For example, Google requires a *scope* as well which determines what kind of information your request is asking to be returned and asks the user to approve such access. The current strategy we are implementing has its usage outlined [here](https://github.com/jaredhanson/passport-github/), but we're going through it all right here on freeCodeCamp!
+Per impostare la strategia GitHub, devi dire al Passport di utilizzare un `GitHubStrategy` istantanziato, che accetta 2 argomenti: un oggetto (contenente `clientID`, `clientSecret`, e `callbackURL`) e una funzione da chiamare quando un utente viene autenticato con successo, che determinerà se l'utente è nuovo e quali campi salvare inizialmente nell'oggetto database dell'utente. Questo è comune in molte strategie, ma alcune possono richiedere ulteriori informazioni, come indicato nel README di quella specifica strategia GitHub. Ad esempio, Google richiede anche un *ambito* che determina il tipo di informazioni che la tua richiesta sta chiedendo di ricevere e chiede all'utente di approvare tale accesso. L'attuale strategia che stiamo implementando ha il suo utilizzo delineato [qui](https://github.com/jaredhanson/passport-github/), ma stiamo esaminando tutto qui su freeCodeCamp!
 
-Here's how your new strategy should look at this point:
+Ecco come la tua nuova strategia dovrebbe essere a questo punto:
 
 ```js
 passport.use(new GitHubStrategy({
@@ -27,13 +27,13 @@ passport.use(new GitHubStrategy({
 ));
 ```
 
-Your authentication won't be successful yet, and it will actually throw an error without the database logic and callback, but it should log your GitHub profile to your console if you try it!
+La tua autenticazione non avrà ancora successo, anzi lancerà un errore senza la logica del database e la chiamata, ma se provi dovrebbe registrare il tuo profilo GitHub sulla tua console!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se dovessi incontrare degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
 
 # --hints--
 
-passport-github dependency should be added.
+passport-github deve essere aggiunto come dipendenza.
 
 ```js
 (getUserInput) =>
@@ -52,7 +52,7 @@ passport-github dependency should be added.
   );
 ```
 
-passport-github should be required.
+passaporto-github deve essere richiesto.
 
 ```js
 (getUserInput) =>
@@ -70,7 +70,7 @@ passport-github should be required.
   );
 ```
 
-GitHub strategy should be setup correctly thus far.
+La strategia di GitHub dovrebbe essere impostata correttamente finora.
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ GitHub strategy should be setup correctly thus far.
     (data) => {
       assert.match(
         data,
-        /passport\.use.*new GitHubStrategy/gi,
+        /passport\.use.*new GitHubStrategy/gis,
         'Passport should use a new GitHubStrategy'
       );
       assert.match(

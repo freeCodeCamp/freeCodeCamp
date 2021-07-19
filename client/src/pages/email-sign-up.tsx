@@ -4,7 +4,7 @@ import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import SectionHeader from '../components/settings/section-header';
 import IntroDescription from '../components/Intro/components/IntroDescription';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
@@ -19,7 +19,7 @@ import './email-sign-up.css';
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
-  t: (s: string) => string;
+  t: TFunction;
 }
 
 const mapStateToProps = createSelector(

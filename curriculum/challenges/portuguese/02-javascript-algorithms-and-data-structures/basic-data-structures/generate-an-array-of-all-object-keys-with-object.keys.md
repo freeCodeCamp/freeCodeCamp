@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1e
-title: Generate an Array of All Object Keys with Object.keys()
+title: Gere um Array de Todas as Chaves de Objeto com Object.keys()
 challengeType: 1
 forumTopicId: 301160
 dashedName: generate-an-array-of-all-object-keys-with-object-keys
@@ -8,15 +8,15 @@ dashedName: generate-an-array-of-all-object-keys-with-object-keys
 
 # --description--
 
-We can also generate an array which contains all the keys stored in an object using the `Object.keys()` method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.
+Também podemos gerar um array o qual contém todas as chaves armazenadas em um objeto usando o método `Object.keys()` e passando um objeto como argumento. Isso retornará um array com strings representando cada propriedade do objeto. Novamente, não terá uma ordem específica para as entradas no array.
 
 # --instructions--
 
-Finish writing the `getArrayOfUsers` function so that it returns an array containing all the properties in the object it receives as an argument.
+Termine de escrever a função `getArrayOfUsers` para que retorne um array contendo todas as propriedades do objeto que receber como argumento.
 
 # --hints--
 
-The `users` object should only contain the keys `Alan`, `Jeff`, `Sarah`, and `Ryan`
+O objeto `users` deve conter apenas as chaves `Alan`, `Jeff`, `Sarah` e `Ryan`
 
 ```js
 assert(
@@ -28,7 +28,7 @@ assert(
 );
 ```
 
-The `getArrayOfUsers` function should return an array which contains all the keys in the `users` object
+A função `getArrayOfUsers` deve retornar um array o qual contém todas as chaves no objeto `users`
 
 ```js
 assert(

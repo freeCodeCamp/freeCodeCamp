@@ -36,7 +36,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. R
 
 **User Story #11:** My tooltip should have a `data-education` property that corresponds to the `data-education` of the active area.
 
-Here are the datasets you will need to complete this project:  
+Here are the datasets you will need to complete this project:
 
 -   **US Education Data:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json`
 -   **US County Data:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json`

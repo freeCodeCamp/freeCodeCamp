@@ -42,34 +42,34 @@ assert(typeof josephus == 'function');
 assert(typeof josephus(30, 3) == 'number');
 ```
 
-`josephus(30,3)` should return `29`.
+`josephus(30,3)` should return `28`.
 
 ```js
-assert.equal(josephus(30, 3), 29);
+assert.equal(josephus(30, 3), 28);
 ```
 
-`josephus(30,5)` should return `3`.
+`josephus(30,5)` should return `2`.
 
 ```js
-assert.equal(josephus(30, 5), 3);
+assert.equal(josephus(30, 5), 2);
 ```
 
-`josephus(20,2)` should return `9`.
+`josephus(20,2)` should return `8`.
 
 ```js
-assert.equal(josephus(20, 2), 9);
+assert.equal(josephus(20, 2), 8);
 ```
 
-`josephus(17,6)` should return `2`.
+`josephus(17,6)` should return `1`.
 
 ```js
-assert.equal(josephus(17, 6), 2);
+assert.equal(josephus(17, 6), 1);
 ```
 
-`josephus(29,4)` should return `2`.
+`josephus(29,4)` should return `1`.
 
 ```js
-assert.equal(josephus(29, 4), 2);
+assert.equal(josephus(29, 4), 1);
 ```
 
 # --seed--
@@ -86,36 +86,13 @@ function josephus(init, kill) {
 
 ```js
 function josephus(init, kill) {
-  var Josephus = {
-    init: function(n) {
-      this.head = {};
-      var current = this.head;
-      for (var i = 0; i < n - 1; i++) {
-        current.label = i + 1;
-        current.next = {
-          prev: current
-        };
-        current = current.next;
-      }
-      current.label = n;
-      current.next = this.head;
-      this.head.prev = current;
-      return this;
-    },
-    kill: function(spacing) {
-      var current = this.head;
-      while (current.next !== current) {
-        for (var i = 0; i < spacing - 1; i++) {
-          current = current.next;
-        }
-        current.prev.next = current.next;
-        current.next.prev = current.prev;
-        current = current.next;
-      }
-      return current.label;
-    }
+  const arr = Array.from(Array(init).keys());
+  let curr = -1
+  while (arr.length > 1) {
+    curr = (curr + kill) % arr.length;
+    arr.splice(curr, 1);
+    curr--;
   }
-
-  return Josephus.init(init).kill(kill)
+  return arr[0];
 }
 ```

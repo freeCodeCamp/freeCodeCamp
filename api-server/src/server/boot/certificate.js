@@ -19,7 +19,8 @@ import {
   certTypeTitleMap,
   certTypeIdMap,
   certIds,
-  oldDataVizId
+  oldDataVizId,
+  superBlockCertTypeMap
 } from '../../../../config/certification-settings';
 
 const {
@@ -49,9 +50,11 @@ export default function bootCertificate(app) {
   const certTypeIds = createCertTypeIds(getChallenges());
   const showCert = createShowCert(app);
   const verifyCert = createVerifyCert(certTypeIds, app);
+  const verifyCanClaimCert = createVerifyCanClaim(certTypeIds, app);
 
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:certSlug', showCert);
+  api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
 
   app.use(api);
 }
@@ -492,5 +495,78 @@ function createShowCert(app) {
         ]
       });
     }, next);
+  };
+}
+
+function createVerifyCanClaim(certTypeIds, app) {
+  const { User } = app.models;
+
+  function findUserByUsername$(username, fields) {
+    return observeQuery(User, 'findOne', {
+      where: { username },
+      fields
+    });
+  }
+  return function verifyCert(req, res, next) {
+    const { superBlock, username } = req.query;
+    log(superBlock);
+    let certType = superBlockCertTypeMap[superBlock];
+    log(certType);
+
+    return findUserByUsername$(username, {
+      isFrontEndCert: true,
+      isBackEndCert: true,
+      isFullStackCert: true,
+      isRespWebDesignCert: true,
+      isFrontEndLibsCert: true,
+      isJsAlgoDataStructCert: true,
+      isDataVisCert: true,
+      is2018DataVisCert: true,
+      isApisMicroservicesCert: true,
+      isInfosecQaCert: true,
+      isQaCertV7: true,
+      isInfosecCertV7: true,
+      isSciCompPyCertV7: true,
+      isDataAnalysisPyCertV7: true,
+      isMachineLearningPyCertV7: true,
+      username: true,
+      name: true,
+      isHonest: true,
+      completedChallenges: true
+    }).subscribe(user => {
+      return Observable.of(certTypeIds[certType])
+        .flatMap(challenge => {
+          const certName = certTypeTitleMap[certType];
+          const { tests = [] } = challenge;
+          const { isHonest, completedChallenges } = user;
+          const isProjectsCompleted = canClaim(tests, completedChallenges);
+          let result = 'incomplete-requirements';
+          let status = false;
+
+          if (isHonest && isProjectsCompleted) {
+            status = true;
+            result = 'requirements-met';
+          } else if (isProjectsCompleted) {
+            result = 'projects-completed';
+          } else if (isHonest) {
+            result = 'is-honest';
+          }
+          return Observable.just({
+            type: 'success',
+            message: { status, result },
+            variables: { name: certName }
+          });
+        })
+        .subscribe(message => {
+          return res.status(200).json({
+            response: message,
+            isCertMap: getUserIsCertMap(user),
+            // send back the completed challenges
+            // NOTE: we could just send back the latest challenge, but this
+            // ensures the challenges are synced.
+            completedChallenges: user.completedChallenges
+          });
+        }, next);
+    });
   };
 }

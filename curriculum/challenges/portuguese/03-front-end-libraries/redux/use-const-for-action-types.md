@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036152
-title: Use const for Action Types
+title: Usar const para Action Types
 challengeType: 6
 forumTopicId: 301450
 dashedName: use-const-for-action-types
@@ -8,35 +8,35 @@ dashedName: use-const-for-action-types
 
 # --description--
 
-A common practice when working with Redux is to assign action types as read-only constants, then reference these constants wherever they are used. You can refactor the code you're working with to write the action types as `const` declarations.
+Uma prática comum ao trabalhar com Redux é atribuir tipos de ação como constantes somente de leitura, fazendo referência a essas constantes onde quer que elas sejam usadas. Você pode refatorar o código com o qual você estava trabalhando para escrever os tipos de ação com declarações `const`.
 
 # --instructions--
 
-Declare `LOGIN` and `LOGOUT` as `const` values and assign them to the strings `'LOGIN'` and `'LOGOUT'`, respectively. Then, edit the `authReducer()` and the action creators to reference these constants instead of string values.
+Declare `LOGIN` e `LOGOUT` como valores `const` e os atribua às strings `'LOGIN'` e `'LOGOUT'`, respectivamente. Então, edite o `authReducer()` e os criadores de ação para fazer referência a essas constantes ao invés de valores string.
 
-**Note:** It's generally a convention to write constants in all uppercase, and this is standard practice in Redux as well.
+**Nota:** É uma convenção escrever constantes com todas as letras maiúsculas, e essa prática também é padrão no Redux.
 
 # --hints--
 
-Calling the function `loginUser` should return an object with `type` property set to the string `LOGIN`.
+Chamar a função `loginUser` deve retornar um objeto com a propriedade `type` definida para a string `LOGIN`.
 
 ```js
 assert(loginUser().type === 'LOGIN');
 ```
 
-Calling the function `logoutUser` should return an object with `type` property set to the string `LOGOUT`.
+Chamar a função `logoutUser` deve retornar um objeto com a propriedade `type` definida para a string `LOGOUT`.
 
 ```js
 assert(logoutUser().type === 'LOGOUT');
 ```
 
-The store should be initialized with an object with property `login` set to `false`.
+Store deve ser inicializado com um objeto com a propriedade `login` definido como `false`.
 
 ```js
 assert(store.getState().authenticated === false);
 ```
 
-Dispatching `loginUser` should update the `login` property in the store state to `true`.
+Despachar `loginUser` deve atualizar a propriedade `login` no state do store para `true`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Dispatching `logoutUser` should update the `login` property in the store state to `false`.
+Despachar `logoutUser` deve atualizar a propriedade `login` no state do store para `false`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The `authReducer` function should handle multiple action types with a switch statement.
+A função `authReducer` deve lidar com vários tipos de ação com um comando `switch`.
 
 ```js
 (getUserInput) =>
@@ -83,17 +83,18 @@ The `authReducer` function should handle multiple action types with a switch sta
   );
 ```
 
-`LOGIN` and `LOGOUT` should be declared as `const` values and should be assigned strings of `LOGIN`and `LOGOUT`.
+`LOGIN` e `LOGOUT` devem ser declarados como valores `const` e devem ser atribuídos as strings `LOGIN`e `LOGOUT`.
 
 ```js
 const noWhiteSpace = __helpers.removeWhiteSpace(code);
 assert(
-  /constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) &&
-    /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace)
+  (/constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) &&
+    /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace)) ||
+      /const(LOGIN|LOGOUT)=(['"`])\1\2,(?!\1)(LOGIN|LOGOUT)=(['"`])\3\4/.test(noWhiteSpace)
 );
 ```
 
-The action creators and the reducer should reference the `LOGIN` and `LOGOUT` constants.
+Os criadores de ação e o reducer devem fazer referência às constantes `LOGIN` e `LOGOUT`.
 
 ```js
 (getUserInput) =>

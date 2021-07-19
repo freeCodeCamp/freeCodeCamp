@@ -1,6 +1,6 @@
 ---
 id: 587d78a6367417b2b2512add
-title: Create a Graphic Using CSS
+title: Criar um desenho usando CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDWPs6'
 forumTopicId: 301048
@@ -9,33 +9,33 @@ dashedName: create-a-graphic-using-css
 
 # --description--
 
-By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the `box-shadow` property that sets the shadow of an element, along with the `border-radius` property that controls the roundness of the element's corners.
+Ao manipular diferentes seletores e propriedades, você pode criar formas interessantes. Uma das mais fáceis de criar é a forma de lua crescente. Neste desafio, você precisa trabalhar com a propriedade `box-shadow` que define a sombra de um elemento, junto da propriedade `border-radius` que controla o arredondamento dos cantos do elemento.
 
-You will create a round, transparent object with a crisp shadow that is slightly offset to the side - the shadow is actually going to be the moon shape you see.
+Você criará um objeto redondo e transparente com uma sombra nítida ligeiramente deslocada para o lado - a sombra será a forma de lua.
 
-In order to create a round object, the `border-radius` property should be set to a value of 50%.
+Para criar um objeto redondo, a propriedade `border-radius` deve ter um valor de 50%.
 
-You may recall from an earlier challenge that the `box-shadow` property takes values for `offset-x`, `offset-y`, `blur-radius`, `spread-radius` and a color value in that order. The `blur-radius` and `spread-radius` values are optional.
+Você deve se lembrar de um desafio anterior que a propriedade `box-shadow` recebe valores para o eixo horizontal (`offset-x`), eixo vertical (`offset-y`), `blur-radius`, `spread-radius` e um valor de cor, nessa ordem. Os valores `blur-radius` e `spread-radius` são opcionais.
 
 # --instructions--
 
-Manipulate the square element in the editor to create the moon shape. First, change the `background-color` to `transparent`, then set the `border-radius` property to 50% to make the circular shape. Finally, change the `box-shadow` property to set the `offset-x` to 25px, the `offset-y` to 10px, `blur-radius` to 0, `spread-radius` to 0, and color to `blue`.
+Manipule o elemento quadrado no editor para criar a forma da lua. Primeiro, altere a propriedade `background-color` para `transparent` e, em seguida, defina a propriedade `border-radius` para 50% para fazer a forma circular. Finalmente, altere a propriedade `box-shadow` e defina o `offset-x` para 25px, o `offset-y` para 10px, `blur-radius` para 0, `spread-radius` para 0 e cor para azul (`blue`).
 
 # --hints--
 
-The value of the `background-color` property should be set to `transparent`.
+A propriedade `background-color` deve ter o valor de `transparent`.
 
 ```js
 assert(code.match(/background-color:\s*?transparent;/gi));
 ```
 
-The value of the `border-radius` property should be set to `50%`.
+A propriedade `border-radius` deve ter o valor de `50%`.
 
 ```js
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-The value of the `box-shadow` property should be set to 25px for `offset-x`, 10px for `offset-y`, 0 for `blur-radius`, 0 for `spread-radius`, and finally `blue` for the color.
+A propriedade `box-shadow` deve receber 25px para o eixo horizontal (`offset-x`), 10px para o eixo vertical (`offset-y`), 0 para `blur-radius`, 0 para `spread-radius` e, finalmente, azul (`blue`) para a cor.
 
 ```js
 assert(

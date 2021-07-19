@@ -8,16 +8,16 @@ dashedName: problem-118-pandigital-prime-sets
 
 # --description--
 
-Using all of the digits 1 through 9 and concatenating them freely to form decimal integers, different sets can be formed. Interestingly with the set {2,5,47,89,631}, all of the elements belonging to it are prime.
+Using all of the digits 1 through 9 and concatenating them freely to form decimal integers, different sets can be formed. Interestingly with the set $\\{2, 5, 47, 89, 631\\}$, all of the elements belonging to it are prime.
 
 How many distinct sets containing each of the digits one through nine exactly once contain only prime elements?
 
 # --hints--
 
-`euler118()` should return 44680.
+`pandigitalPrimeSets()` should return `44680`.
 
 ```js
-assert.strictEqual(euler118(), 44680);
+assert.strictEqual(pandigitalPrimeSets(), 44680);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler118(), 44680);
 ## --seed-contents--
 
 ```js
-function euler118() {
+function pandigitalPrimeSets() {
 
   return true;
 }
 
-euler118();
+pandigitalPrimeSets();
 ```
 
 # --solutions--

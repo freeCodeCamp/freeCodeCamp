@@ -12,4 +12,6 @@ const babelOptions = {
   ]
 };
 
-module.exports = require('babel-jest').createTransformer(babelOptions);
+// TODO: is there a way to do this without a separate transform? i.e. can we
+// just use the existing config?
+module.exports = require('babel-jest').default.createTransformer(babelOptions);

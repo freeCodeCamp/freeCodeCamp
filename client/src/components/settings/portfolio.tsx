@@ -1,4 +1,4 @@
-import React, { Component, FormEvent, Fragment } from 'react';
+import React, { Component, FormEvent } from 'react';
 import { nanoid } from 'nanoid';
 import {
   Button,
@@ -11,7 +11,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import isURL from 'validator/lib/isURL';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { hasProtocolRE } from '../../utils';
 
@@ -30,7 +30,7 @@ type PortfolioValues = {
 type PortfolioProps = {
   picture?: string;
   portfolio: PortfolioValues[];
-  t: (str: string, obj?: { charsLeft: number }) => string;
+  t: TFunction;
   updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
   username?: string;
 };
@@ -303,11 +303,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             </Button>
           </form>
           {index + 1 !== arr.length && (
-            <Fragment>
+            <>
               <Spacer />
               <hr />
               <Spacer />
-            </Fragment>
+            </>
           )}
         </FullWidthRow>
       </div>

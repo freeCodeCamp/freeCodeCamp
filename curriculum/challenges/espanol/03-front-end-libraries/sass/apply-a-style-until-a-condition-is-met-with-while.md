@@ -48,31 +48,31 @@ Your code should increment the counter variable.
 assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi));
 ```
 
-Your `.text-1` class should have a `font-size` of 15px.
+Your `.text-1` class should have a `font-size` of `15px`.
 
 ```js
 assert($('.text-1').css('font-size') == '15px');
 ```
 
-Your `.text-2` class should have a `font-size` of 30px.
+Your `.text-2` class should have a `font-size` of `30px`.
 
 ```js
 assert($('.text-2').css('font-size') == '30px');
 ```
 
-Your `.text-3` class should have a `font-size` of 45px.
+Your `.text-3` class should have a `font-size` of `45px`.
 
 ```js
 assert($('.text-3').css('font-size') == '45px');
 ```
 
-Your `.text-4` class should have a `font-size` of 60px.
+Your `.text-4` class should have a `font-size` of `60px`.
 
 ```js
 assert($('.text-4').css('font-size') == '60px');
 ```
 
-Your `.text-5` class should have a `font-size` of 75px.
+Your `.text-5` class should have a `font-size` of `75px`.
 
 ```js
 assert($('.text-5').css('font-size') == '75px');

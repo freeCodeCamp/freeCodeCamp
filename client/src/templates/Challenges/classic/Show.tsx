@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Media from 'react-responsive';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -87,7 +87,7 @@ interface ShowClassicProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunction;
   tests: TestType[];
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
 }
@@ -119,6 +119,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
   containerRef: React.RefObject<unknown>;
   editorRef: React.RefObject<unknown>;
+  instructionsPanelRef: React.RefObject<HTMLElement>;
   resizeProps: ResizePropsType;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   layoutState: any;
@@ -137,6 +138,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
     this.containerRef = React.createRef();
     this.editorRef = React.createRef();
+    this.instructionsPanelRef = React.createRef();
     // Holds the information of the panes sizes for desktop view
     this.layoutState = this.getLayoutState();
   }
@@ -278,6 +280,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         description={description}
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructions={instructions}
+        instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
         superBlock={superBlock}
         title={title}
@@ -356,6 +359,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         editorRef={this.editorRef}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
+        instructionsPanelRef={this.instructionsPanelRef}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

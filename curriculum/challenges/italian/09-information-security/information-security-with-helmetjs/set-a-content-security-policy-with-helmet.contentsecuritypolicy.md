@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3f
-title: Set a Content Security Policy with helmet.contentSecurityPolicy()
+title: Impostare una politica di sicurezza dei contenuti con helmet.contentSecurityPolicy()
 challengeType: 2
 forumTopicId: 301585
 dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
@@ -8,21 +8,21 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
-This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect your app from XSS vulnerabilities, undesired tracking, malicious frames, and much more. CSP works by defining an allowed list of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP is unsupported by older browser.
+Questa sfida mette in evidenza una promettente nuova difesa che può ridurre significativamente il rischio e l'impatto di molti tipi di attacchi nei browser moderni. Impostando e configurando una Content Security Policy (CSP - Politica di Sicurezza dei Contenuti) puoi impedire l'iniezione di cose indesiderate nella tua pagina. Questo proteggerà la tua app da vulnerabilità XSS, tracciamento indesiderato, frame dannosi e molto altro ancora. La CSP funziona definendo un elenco di sorgenti di contenuto attendibili. Puoi configurarlo per ogni tipo di risorsa di cui una pagina web potrebbe aver bisogno (script, fogli di stile, stili di caratteri, frame, media così via…). Ci sono più direttive disponibili, quindi il proprietario di un sito web può avere un controllo granulare. Vedi HTML 5 Rocks, KeyCDN per maggiori dettagli. Purtroppo CSP non è supportata dai vecchi browser.
 
-By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives.
+Per impostazione predefinita, le direttive sono largamente aperte, quindi è importante impostare la direttiva defaultSrc come ripiego. Helmet supporta sia lo stile di denominazione defaultSrc che default-src. La direttiva di riserva si applica alla maggior parte delle direttive non specificate.
 
 # --instructions--
 
-In this exercise, use `helmet.contentSecurityPolicy()`. Configure it by adding a `directives` object. In the object, set the `defaultSrc` to `["'self'"]` (the list of allowed sources must be in an array), in order to trust only your website address by default. Also set the `scriptSrc` directive so that you only allow scripts to be downloaded from your website (`'self'`), and from the domain `'trusted-cdn.com'`.
+In questo esercizio, utilizza `helmet.contentSecurityPolicy()`. Configuralo aggiungendo un oggetto `directives`. Nell'oggetto, imposta `defaultSrc` a `["'self'"]` (la lista delle sorgenti consentite deve essere in un array), in modo da fidarsi solo dell'indirizzo del tuo sito web per impostazione predefinita. Imposta anche la direttiva `scriptSrc` in modo da consentire che gli script siano scaricati solo dal tuo sito web (`'self'`), e dal dominio `'trusted-cdn.com'`.
 
-Hint: in the `'self'` keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working.
+Suggerimento: nella parola chiave `'self'`, le virgolette singole fanno parte della parola chiave stessa, quindi deve essere racchiuso in doppie virgolette per funzionare.
 
 # --hints--
 
-helmet.contentSecurityPolicy() middleware should be mounted correctly
+Il middleware helmet.contentSecurityPolicy() deve essere montato correttamente
 
 ```js
 (getUserInput) =>
@@ -36,7 +36,7 @@ helmet.contentSecurityPolicy() middleware should be mounted correctly
   );
 ```
 
-Your csp config is not correct. defaultSrc should be ["'self'"] and scriptSrc should be ["'self'", 'trusted-cdn.com']
+La configurazione csp non è corretta. defaultSrc dovrebbe essere ["'self'"] e scriptSrc dovrebbe essere ["'self'", 'trusted-cdn.com']
 
 ```js
 (getUserInput) =>

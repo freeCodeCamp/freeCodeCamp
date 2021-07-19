@@ -1,25 +1,26 @@
 ---
 id: 5e46f8edac417301a38fb930
-title: Linear Regression Health Costs Calculator
+title: 线性回归健康成本计算器
 challengeType: 10
+forumTopicId: 462379
 dashedName: linear-regression-health-costs-calculator
 ---
 
 # --description--
 
-In this challenge, you will predict healthcare costs using a regression algorithm.
+在这个挑战中，你将使用回归算法预测医疗费用。
 
-You are given a dataset that contains information about different people including their healthcare costs. Use the data to predict healthcare costs based on new data.
+你会得到一个数据集，其中包含不同人的信息，包括他们的医疗费用。 用数据来预测基于新数据的医疗费用。
 
-You can access [the full project instructions and starter code on Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb).
+你可以访问 [Google Colaboratory 上的完整项目说明和启动代码](https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb)。
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+进入该链接后，在你自己的账户或本地创建一个笔记本的副本。 一旦你完成项目并通过链接中的测试，请在下面提交你的项目链接。 如果你提交的是 Google Colaboratory 的链接，请确保打开链接共享时选择 “anyone with the link”。
 
-We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+我们仍在开发机器学习课程的交互式课程部分。 现在，你可以通过这个认证中的视频挑战。 你可能还需要寻找额外的学习资源，类似于你在真实世界项目中的工作。
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

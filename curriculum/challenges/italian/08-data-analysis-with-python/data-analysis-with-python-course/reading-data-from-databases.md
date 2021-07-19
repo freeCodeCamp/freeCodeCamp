@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c163
-title: Reading Data from Databases
+title: Leggere i dati dal database
 challengeType: 11
 videoId: MtgXS1MofRw
 dashedName: reading-data-from-databases
@@ -8,30 +8,30 @@ dashedName: reading-data-from-databases
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-11-reading-data-from-relational-databases/files)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What method does a `Cursor` instance have and what does it allow?
+Che metodo ha un'istanza di `Cursor` e che cosa permette?
 
 ## --answers--
 
-The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
+L'istanza `Cursor` ha un metodo `.run()` che consente di eseguire query SQL.
 
 ---
 
-The `Cursor` instance has a `.select()` method which allows you to select records.
+L'istanza `Cursor` ha un metodo `.select()` che consente di selezionare un documento.
 
 ---
 
-The `Cursor` instance has an `.execute()` method which will receive SQL parameters to run against the database.
+L'istanza `Cursor` ha un metodo `.execute()` che riceverà i parametri SQL da eseguire sul database.
 
 ## --video-solution--
 

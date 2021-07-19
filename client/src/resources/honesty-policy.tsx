@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 const HonestyPolicy = (): JSX.Element => {
@@ -6,7 +6,7 @@ const HonestyPolicy = (): JSX.Element => {
   const email = 'team@freecodecamp.org';
 
   return (
-    <Fragment>
+    <>
       <p key={1}>{t('settings.honesty.p1')}</p>
       <p key={2}>{t('settings.honesty.p2')}</p>
       <p key={3}>{t('settings.honesty.p3')}</p>
@@ -19,7 +19,7 @@ const HonestyPolicy = (): JSX.Element => {
           <h1>test</h1>
         </Trans>
       </p>
-    </Fragment>
+    </>
   );
 };
 

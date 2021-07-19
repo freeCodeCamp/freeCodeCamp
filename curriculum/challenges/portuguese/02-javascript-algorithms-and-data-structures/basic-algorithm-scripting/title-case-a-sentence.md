@@ -1,6 +1,6 @@
 ---
 id: ab6137d4e35944e21037b769
-title: Title Case a Sentence
+title: Capitalização de Título de uma Frase
 challengeType: 5
 forumTopicId: 16088
 dashedName: title-case-a-sentence
@@ -8,31 +8,31 @@ dashedName: title-case-a-sentence
 
 # --description--
 
-Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+Retorne a string fornecida com a primeira letra de cada palavra em maiúscula. Certifique-se de que o resto da palavra esteja em minúsculo.
 
-For the purpose of this exercise, you should also capitalize connecting words like `the` and `of`.
+Para o propósito desse exercício, você também deve capitalizar as palavras conectoras como `the` e `of`.
 
 # --hints--
 
-`titleCase("I'm a little tea pot")` should return a string.
+`titleCase("I'm a little tea pot")` deve retornar uma string.
 
 ```js
 assert(typeof titleCase("I'm a little tea pot") === 'string');
 ```
 
-`titleCase("I'm a little tea pot")` should return the string `I'm A Little Tea Pot`.
+`titleCase("I'm a little tea pot")` deve retornar a string `I'm A Little Tea Pot`.
 
 ```js
 assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
 ```
 
-`titleCase("sHoRt AnD sToUt")` should return the string `Short And Stout`.
+`titleCase("sHoRt AnD sToUt")` deve retornar a string `Short And Stout`.
 
 ```js
 assert(titleCase('sHoRt AnD sToUt') === 'Short And Stout');
 ```
 
-`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` should return the string `Here Is My Handle Here Is My Spout`.
+`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` deve retornar a string `Here Is My Handle Here Is My Spout`.
 
 ```js
 assert(

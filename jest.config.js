@@ -10,7 +10,6 @@ module.exports = {
       '<rootDir>/client/src/__mocks__/styleMock.js',
     // CSS Modules - match files that end with 'module.css'
     '\\.module\\.css$': 'identity-obj-proxy',
-    'react-i18next': '<rootDir>/client/src/__mocks__/react-i18nextMock.js',
     '^lodash-es$': 'lodash'
   },
   globals: {
@@ -22,5 +21,6 @@ module.exports = {
   },
   roots: ['.', './client', './api-server'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
-  setupFilesAfterEnv: ['./jest.setup.js']
+  setupFilesAfterEnv: ['./jest.setup.js'],
+  testEnvironment: 'jsdom'
 };

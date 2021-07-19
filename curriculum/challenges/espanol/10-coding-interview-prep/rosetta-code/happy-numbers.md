@@ -30,67 +30,67 @@ assert(typeof happy === 'function');
 assert(typeof happy(1) === 'boolean');
 ```
 
-`happy(1)` should return true.
+`happy(1)` should return `true`.
 
 ```js
 assert(happy(1));
 ```
 
-`happy(2)` should return false.
+`happy(2)` should return `false`.
 
 ```js
 assert(!happy(2));
 ```
 
-`happy(7)` should return true.
+`happy(7)` should return `true`.
 
 ```js
 assert(happy(7));
 ```
 
-`happy(10)` should return true.
+`happy(10)` should return `true`.
 
 ```js
 assert(happy(10));
 ```
 
-`happy(13)` should return true.
+`happy(13)` should return `true`.
 
 ```js
 assert(happy(13));
 ```
 
-`happy(19)` should return true.
+`happy(19)` should return `true`.
 
 ```js
 assert(happy(19));
 ```
 
-`happy(23)` should return true.
+`happy(23)` should return `true`.
 
 ```js
 assert(happy(23));
 ```
 
-`happy(28)` should return true.
+`happy(28)` should return `true`.
 
 ```js
 assert(happy(28));
 ```
 
-`happy(31)` should return true.
+`happy(31)` should return `true`.
 
 ```js
 assert(happy(31));
 ```
 
-`happy(32)` should return true:.
+`happy(32)` should return `true`.
 
 ```js
 assert(happy(32));
 ```
 
-`happy(33)` should return false.
+`happy(33)` should return `false`.
 
 ```js
 assert(!happy(33));

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   ToggleButtonGroup as BSBG,
   ToggleButton as TB
@@ -36,40 +36,38 @@ export default function ToggleButton({
     width: '20px'
   };
   return (
-    <Fragment>
-      <BSBG name={name} onChange={onChange} type='radio'>
-        <TB
-          bsSize='sm'
-          bsStyle='primary'
-          className={`toggle-${getActiveClass(value)}`}
-          disabled={value}
-          type='radio'
-          value={1}
-        >
-          {value ? (
-            <ToggleCheck style={checkIconStyle} />
-          ) : (
-            <Spacer style={checkIconStyle} />
-          )}
-          {onLabel}
-        </TB>
-        <TB
-          bsSize='sm'
-          bsStyle='primary'
-          className={`toggle-${getActiveClass(!value)}`}
-          disabled={!value}
-          type='radio'
-          value={2}
-        >
-          {offLabel}
-          {!value ? (
-            <ToggleCheck style={checkIconStyle} />
-          ) : (
-            <Spacer style={checkIconStyle} />
-          )}
-        </TB>
-      </BSBG>
-    </Fragment>
+    <BSBG name={name} onChange={onChange} type='radio'>
+      <TB
+        bsSize='sm'
+        bsStyle='primary'
+        className={`toggle-${getActiveClass(value)}`}
+        disabled={value}
+        type='radio'
+        value={1}
+      >
+        {value ? (
+          <ToggleCheck style={checkIconStyle} />
+        ) : (
+          <Spacer style={checkIconStyle} />
+        )}
+        {onLabel}
+      </TB>
+      <TB
+        bsSize='sm'
+        bsStyle='primary'
+        className={`toggle-${getActiveClass(!value)}`}
+        disabled={!value}
+        type='radio'
+        value={2}
+      >
+        {offLabel}
+        {!value ? (
+          <ToggleCheck style={checkIconStyle} />
+        ) : (
+          <Spacer style={checkIconStyle} />
+        )}
+      </TB>
+    </BSBG>
   );
 }
 

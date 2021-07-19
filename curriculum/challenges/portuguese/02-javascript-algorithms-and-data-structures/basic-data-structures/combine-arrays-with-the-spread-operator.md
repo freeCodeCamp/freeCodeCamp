@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b17
-title: Combine Arrays with the Spread Operator
+title: Combinar Arrays com o Operador Spread
 challengeType: 1
 forumTopicId: 301156
 dashedName: combine-arrays-with-the-spread-operator
@@ -8,7 +8,7 @@ dashedName: combine-arrays-with-the-spread-operator
 
 # --description--
 
-Another huge advantage of the <dfn>spread</dfn> operator is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:
+Outra grande vantagem do operador <dfn>spread</dfn> é a capacidade de combinar arrays, ou para inserir todos os elementos de um array em outro, em qualquer índice. Com sintaxe mais tradicional, podemos concatenar arrays, mas isso só nos permite combinar arrays no final de um e no início de outro. A sintaxe do spread torna a seguinte operação extremamente simples:
 
 ```js
 let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
@@ -16,23 +16,23 @@ let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
 let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
 ```
 
-`thatArray` would have the value `['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']`.
+`thatArray` teria o valor `['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']`.
 
-Using spread syntax, we have just achieved an operation that would have been more complex and more verbose had we used traditional methods.
+Usando a sintaxe de spread, acabamos de conseguir uma operação que teria sido mais complexa e mais verbosa se tivéssemos utilizado métodos tradicionais.
 
 # --instructions--
 
-We have defined a function `spreadOut` that returns the variable `sentence`. Modify the function using the <dfn>spread</dfn> operator so that it returns the array `['learning', 'to', 'code', 'is', 'fun']`.
+Definimos uma função `spreadOut` que retorna a variável `sentença`. Modifique a função usando o operador <dfn>spread</dfn> para que ele retorne o array `['learning', 'to', 'code', 'is', 'fun']`.
 
 # --hints--
 
-`spreadOut` should return `["learning", "to", "code", "is", "fun"]`
+`spreadOut` deve retornar `["learning", "to", "code", "is", "fun"]`
 
 ```js
 assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun']);
 ```
 
-The `spreadOut` function should utilize spread syntax
+A função `spreadOut` deve utilizar a sintaxe spread
 
 ```js
 assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);

@@ -1,25 +1,36 @@
+---
 id: 561add10cb82ac39a17513bc
-title: Legacy Data Visualization Certificate
+title: Certificado de visualização de dados legado
 challengeType: 7
 isPrivate: true
 tests:
-  - id: bd7157d8c242eddfaeb5bd13
-    title: Build a Markdown Previewer
-  - id: bd7156d8c242eddfaeb5bd13
-    title: Build a Camper Leaderboard
-  - id: bd7155d8c242eddfaeb5bd13
-    title: Build a Recipe Box
-  - id: bd7154d8c242eddfaeb5bd13
-    title: Build the Game of Life
-  - id: bd7153d8c242eddfaeb5bd13
-    title: Build a Roguelike Dungeon Crawler Game
-  - id: bd7168d8c242eddfaeb5bd13
-    title: Visualize Data with a Bar Chart
-  - id: bd7178d8c242eddfaeb5bd13
-    title: Visualize Data with a Scatterplot Graph
-  - id: bd7188d8c242eddfaeb5bd13
-    title: Visualize Data with a Heat Map
-  - id: bd7198d8c242eddfaeb5bd13
-    title: Show National Contiguity with a Force Directed Graph
-  - id: bd7108d8c242eddfaeb5bd13
-    title: Map Data Across the Globe
+  - 
+    id: bd7157d8c242eddfaeb5bd13
+    title: Crie um pré-visualizador de markdown
+  - 
+    id: bd7156d8c242eddfaeb5bd13
+    title: Crie um painel de estatísticas dos campers
+  - 
+    id: bd7155d8c242eddfaeb5bd13
+    title: Crie uma caixa de receitas
+  - 
+    id: bd7154d8c242eddfaeb5bd13
+    title: Crie o Jogo da Vida
+  - 
+    id: bd7153d8c242eddfaeb5bd13
+    title: Crie um jogo de RPG do tipo Dungeon Crawler
+  - 
+    id: bd7168d8c242eddfaeb5bd13
+    title: Visualize dados com um gráfico de barras
+  - 
+    id: bd7178d8c242eddfaeb5bd13
+    title: Visualize dados com um gráfico de dispersão
+  - 
+    id: bd7188d8c242eddfaeb5bd13
+    title: Visualize dados com um mapa de calor
+  - 
+    id: bd7198d8c242eddfaeb5bd13
+    title: Mostrar contiguidade nacional com um gráfico direcionado de força
+  - 
+    id: bd7108d8c242eddfaeb5bd13
+    title: Mapeamento de dados através do mundo

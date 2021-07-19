@@ -12,7 +12,9 @@ D3 lets you add inline CSS styles on dynamic elements with the `style()` method.
 
 The `style()` method takes a comma-separated key-value pair as an argument. Here's an example to set the selection's text color to blue:
 
-`selection.style("color","blue");`
+```js
+selection.style("color","blue");
+```
 
 # --instructions--
 
@@ -20,7 +22,7 @@ Add the `style()` method to the code in the editor to make all the displayed tex
 
 # --hints--
 
-Your `h2` elements should have a `font-family` of verdana.
+Your `h2` elements should have a `font-family` of `verdana`.
 
 ```js
 assert($('h2').css('font-family') == 'verdana');

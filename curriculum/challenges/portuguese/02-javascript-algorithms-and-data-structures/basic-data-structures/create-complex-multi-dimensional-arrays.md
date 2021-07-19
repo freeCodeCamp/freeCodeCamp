@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b16
-title: Create complex multi-dimensional arrays
+title: Crie array complexo multidimensional
 challengeType: 1
 forumTopicId: 301159
 dashedName: create-complex-multi-dimensional-arrays
@@ -8,9 +8,9 @@ dashedName: create-complex-multi-dimensional-arrays
 
 # --description--
 
-Awesome! You have just learned a ton about arrays! This has been a fairly high level overview, and there is plenty more to learn about working with arrays, much of which you will see in later sections. But before moving on to looking at <dfn>Objects</dfn>, lets take one more look, and see how arrays can become a bit more complex than what we have seen in previous challenges.
+Excelente! Você acabou de aprender uma tonelada sobre arrays! Esta foi uma visão geral de nível bastante elevado, e há muito mais para aprender a trabalhar com arrays, muitas das quais você verá em sessões posteriores. Mas antes de passar para a visão de <dfn>objetos</dfn>, vamos dar mais uma olhada e ver como é que as matrizes podem tornar-se um pouco mais complexas do que aquilo que vimos em desafios anteriores.
 
-One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, known as a <dfn>multi-dimensional</dfn>, or nested array. Consider the following example:
+Uma das características mais poderosas ao pensar em arrays como estruturas de dados, é que arrays podem conter, ou mesmo ser completamente compostas por outros arrays. Vimos arrays que contêm arrays em desafios anteriores, mas que são bastante simples. No entanto, os arrays podem conter uma profundidade infinita de matrizes que podem conter outras matrizes, cada uma com seus próprios níveis arbitrários de profundidade, e assim por diante. Desta forma, um array pode muito rapidamente se tornar uma estrutura de dados muito complexa, conhecida como <dfn>array multi-dimensional</dfn>ou array aninhado. Considere o seguinte exemplo:
 
 ```js
 let nestedArray = [
@@ -31,15 +31,15 @@ let nestedArray = [
 ];
 ```
 
-The `deep` array is nested 2 levels deep. The `deeper` arrays are 3 levels deep. The `deepest` arrays are 4 levels, and the `deepest-est?` is 5.
+O array `deep` está aninhado com 2 níveis de profundidade. Os arrays `mais profundos` são de 3 níveis de profundidade. Os `arrays` mais profundos são de 4º níveis, e o ainda `mais profundos` é de 5º nível.
 
-While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data. However, we can still very easily access the deepest levels of an array this complex with bracket notation:
+Embora este exemplo possa parecer complicado, este nível de complexidade não é inédito, ou ainda fora do normal, quando tratando com grandes quantidades de dados. Entretanto, nós ainda podemos facilmente acessar os níveis mais profundos de um array complexo com a notação de colchetes:
 
 ```js
 console.log(nestedArray[2][1][0][0][0]);
 ```
 
-This logs the string `deepest-est?`. And now that we know where that piece of data is, we can reset it if we need to:
+Isso exibe no console a string `deepest-est?`. Agora que sabemos aonde esse pedaço de dado está, nós podemos redefini-lo se precisarmos:
 
 ```js
 nestedArray[2][1][0][0][0] = 'deeper still';
@@ -47,15 +47,15 @@ nestedArray[2][1][0][0][0] = 'deeper still';
 console.log(nestedArray[2][1][0][0][0]);
 ```
 
-Now it logs `deeper still`.
+Agora ele mostra no console `deeper still`.
 
 # --instructions--
 
-We have defined a variable, `myNestedArray`, set equal to an array. Modify `myNestedArray`, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string `deep`, on the fourth level, include the string `deeper`, and on the fifth level, include the string `deepest`.
+Definimos uma variável, `myNestedArray`, definida igual a um array. Modifique `myNestedArray`, usando qualquer combinação de <dfn>strings</dfn>, <dfn>numbers</dfn>, e <dfn>booleans</dfn> para elementos, para que tenha 5 níveis de profundidade (lembre-se, o array mais extremo é de nível 1). Em algum lugar no terceiro nível, inclua a string `deep`, no quarto nível, inclua a string `deeper`, e no quinto nível, inclua a string `deepest`.
 
 # --hints--
 
-`myNestedArray` should contain only numbers, booleans, and strings as data elements
+`myNestedArray` deve conter apenas números, booleans e strings como elementos
 
 ```js
 assert.strictEqual(
@@ -79,7 +79,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should have exactly 5 levels of depth
+`myNestedArray` deve ter exatamente 5 níveis de profundidade
 
 ```js
 assert.strictEqual(
@@ -102,7 +102,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `deep` on an array nested 3 levels deep
+`myNestedArray` deve conter exatamente uma ocorrência da string `deep` no array aninhado de 3 níveis de profundidade
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `deeper` on an array nested 4 levels deep
+`myNestedArray` deve conter exatamente uma ocorrência da string `deeper` no array aninhado de 4 níveis de profundidade
 
 ```js
 assert(
@@ -160,7 +160,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `deepest` on an array nested 5 levels deep
+`myNestedArray` deve conter exatamente uma ocorrência da string `deepest` no array aninhado de 5 níveis de profundidade
 
 ```js
 assert(

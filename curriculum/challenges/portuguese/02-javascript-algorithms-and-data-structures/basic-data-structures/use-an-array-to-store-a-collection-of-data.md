@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b20
-title: Use an Array to Store a Collection of Data
+title: Use um Array para Armazenar uma Coleção de Dados
 challengeType: 1
 forumTopicId: 301167
 dashedName: use-an-array-to-store-a-collection-of-data
@@ -8,16 +8,16 @@ dashedName: use-an-array-to-store-a-collection-of-data
 
 # --description--
 
-The below is an example of the simplest implementation of an array data structure. This is known as a <dfn>one-dimensional array</dfn>, meaning it only has one level, or that it does not have any other arrays nested within it. Notice it contains <dfn>booleans</dfn>, <dfn>strings</dfn>, and <dfn>numbers</dfn>, among other valid JavaScript data types:
+Abaixo está um exemplo da implementação mais simples de uma estrutura de dados array. Isso é conhecido como <dfn>array unidimensional</dfn>, significando que tem apenas 1 nível de profundidade, ou que não possui nenhum outro array aninhado dentro de si. Note que possui <dfn>booleans</dfn>, <dfn>strings</dfn> e <dfn>numbers</dfn>, entre outros tipos de dados do JavaScript válidos:
 
 ```js
 let simpleArray = ['one', 2, 'three', true, false, undefined, null];
 console.log(simpleArray.length);
 ```
 
-The `console.log` call displays `7`.
+A chamada a `console.log` exibe `7`.
 
-All arrays have a length property, which as shown above, can be very easily accessed with the syntax `Array.length`. A more complex implementation of an array can be seen below. This is known as a <dfn>multi-dimensional array</dfn>, or an array that contains other arrays. Notice that this array also contains JavaScript <dfn>objects</dfn>, which we will examine very closely in our next section, but for now, all you need to know is that arrays are also capable of storing complex objects.
+Todos os arrays possuem uma propriedade length, conforme mostrada acima, pode ser muito facilmente acessado com a sintaxe `Array.length`. Uma implementação mais complexa de um array pode ser vista abaixo. Isso é conhecido como um <dfn>array multidimensional</dfn>, ou um array que contém outros arrays. Note que esse array também contém <dfn>objetos</dfn> JavaScript, os quais examinaremos bem de perto na próxima seção, mas por agora, tudo que você precisa saber é que arrays também são capazes de armazenar objetos complexos.
 
 ```js
 let complexArray = [
@@ -46,35 +46,35 @@ let complexArray = [
 
 # --instructions--
 
-We have defined a variable called `yourArray`. Complete the statement by assigning an array of at least 5 elements in length to the `yourArray` variable. Your array should contain at least one <dfn>string</dfn>, one <dfn>number</dfn>, and one <dfn>boolean</dfn>.
+Definimos uma variável chamada `yourArray`. Complete a instrução atribuindo um array de pelo menos 5 elementos de comprimento à variável para a variável `yourArray`. Seu array deve conter pelo menos um <dfn>string</dfn>, um <dfn>number</dfn> e um <dfn>boolean</dfn>.
 
 # --hints--
 
-`yourArray` should be an array.
+`yourArray` deve ser um array.
 
 ```js
 assert.strictEqual(Array.isArray(yourArray), true);
 ```
 
-`yourArray` should be at least 5 elements long.
+`yourArray` deve ter pelo menos 5 elementos.
 
 ```js
 assert.isAtLeast(yourArray.length, 5);
 ```
 
-`yourArray` should contain at least one `boolean`.
+`yourArray` deve conter pelo menos um `boolean`.
 
 ```js
 assert(yourArray.filter((el) => typeof el === 'boolean').length >= 1);
 ```
 
-`yourArray` should contain at least one `number`.
+`yourArray` deve conter pelo menos um `number`.
 
 ```js
 assert(yourArray.filter((el) => typeof el === 'number').length >= 1);
 ```
 
-`yourArray` should contain at least one `string`.
+`yourArray` deve conter pelo menos um `string`.
 
 ```js
 assert(yourArray.filter((el) => typeof el === 'string').length >= 1);

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function IntroInformation(
@@ -7,7 +7,7 @@ function IntroInformation(
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.info')}</span>
       <svg
         height='50'
@@ -38,7 +38,7 @@ function IntroInformation(
           />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f08b
-title: Make a Relational Database
+title: Creare un database relazionale
 challengeType: 11
 videoId: MQ5z4bdF92U
 dashedName: make-a-relational-database
@@ -10,7 +10,7 @@ dashedName: make-a-relational-database
 
 ## --text--
 
-What SQL command would you use to retrieve all users that have the email address `quincy@freecodecamp.org`?
+Quale comando SQL utilizzeresti per recuperare tutti gli utenti che hanno l'indirizzo email `quincy@freecodecamp.org`?
 
 ## --answers--
 

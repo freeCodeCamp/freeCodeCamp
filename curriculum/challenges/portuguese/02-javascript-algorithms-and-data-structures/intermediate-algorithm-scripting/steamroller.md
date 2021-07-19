@@ -1,6 +1,6 @@
 ---
 id: ab306dbdcc907c7ddfc30830
-title: Steamroller
+title: Rolo compressor
 challengeType: 5
 forumTopicId: 16079
 dashedName: steamroller
@@ -8,35 +8,35 @@ dashedName: steamroller
 
 # --description--
 
-Flatten a nested array. You must account for varying levels of nesting.
+Achate um array aninhado. Você deve lidar com diferentes níveis de aninhamento.
 
 # --hints--
 
-`steamrollArray([[["a"]], [["b"]]])` should return `["a", "b"]`.
+`steamrollArray([[["a"]], [["b"]]])` deve retornar `["a", "b"]`.
 
 ```js
 assert.deepEqual(steamrollArray([[['a']], [['b']]]), ['a', 'b']);
 ```
 
-`steamrollArray([1, [2], [3, [[4]]]])` should return `[1, 2, 3, 4]`.
+`steamrollArray([1, [2], [3, [[4]]]])` deve retornar `[1, 2, 3, 4]`.
 
 ```js
 assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4]);
 ```
 
-`steamrollArray([1, [], [3, [[4]]]])` should return `[1, 3, 4]`.
+`steamrollArray([1, [], [3, [[4]]]])` deve retornar `[1, 3, 4]`.
 
 ```js
 assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
 ```
 
-`steamrollArray([1, {}, [3, [[4]]]])` should return `[1, {}, 3, 4]`.
+`steamrollArray([1, {}, [3, [[4]]]])` deve retornar `[1, {}, 3, 4]`.
 
 ```js
 assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 ```
 
-Your solution should not use the `Array.prototype.flat()` or `Array.prototype.flatMap()` methods.
+Sua solução não deve usar os métodos `Array.prototype.flat()` ou `Array.prototype.flatMap()`.
 
 ```js
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));

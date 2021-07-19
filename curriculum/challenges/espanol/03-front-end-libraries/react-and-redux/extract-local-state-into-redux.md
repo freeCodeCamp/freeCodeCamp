@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036149
-title: Extract Local State into Redux
+title: Extrae el estado local en Redux
 challengeType: 6
 forumTopicId: 301428
 dashedName: extract-local-state-into-redux
@@ -8,17 +8,17 @@ dashedName: extract-local-state-into-redux
 
 # --description--
 
-You're almost done! Recall that you wrote all the Redux code so that Redux could control the state management of your React messages app. Now that Redux is connected, you need to extract the state management out of the `Presentational` component and into Redux. Currently, you have Redux connected, but you are handling the state locally within the `Presentational` component.
+¡Ya casi terminas! Recuerda que escribiste todo el código Redux para que Redux pudiera controlar la gestión del estado de tu aplicación de mensajes React. Ahora que Redux está conectado, necesitas extraer la gestión del estado de `Presentational` y añadirlo a Redux. Actualmente, tienes Redux conectado, pero estás manejando el estado localmente dentro del componente `Presentational`.
 
 # --instructions--
 
-In the `Presentational` component, first, remove the `messages` property in the local `state`. These messages will be managed by Redux. Next, modify the `submitMessage()` method so that it dispatches `submitNewMessage()` from `this.props`, and pass in the current message input from local `state` as an argument. Because you removed `messages` from local state, remove the `messages` property from the call to `this.setState()` here as well. Finally, modify the `render()` method so that it maps over the messages received from `props` rather than `state`.
+En el componente `Presentational`, primero elimina la propiedad `messages` del local `state`. Estos mensajes serán gestionados por Redux. A continuación, modifica el método `submitMessage()` para que `submitNewMessage()` trabaje desde `this.props` y pase la entrada del mensaje actual desde el `state` local como un argumento. Ya que eliminaste `messages` desde el estado local, elimina también la propiedad `messages` de la llamada a `this.setState()`. Finalmente, modifica el método `render()` para que asigne los mensajes recibidos desde `props` en lugar de `state`.
 
-Once these changes are made, the app will continue to function the same, except Redux manages the state. This example also illustrates how a component may have local `state`: your component still tracks user input locally in its own `state`. You can see how Redux provides a useful state management framework on top of React. You achieved the same result using only React's local state at first, and this is usually possible with simple apps. However, as your apps become larger and more complex, so does your state management, and this is the problem Redux solves.
+Una vez realizados estos cambios, la aplicación seguirá funcionando igual, salvo que Redux gestiona el estado. Este ejemplo también ilustra cómo un componente puede tener un `state` local: tu componente aún registra la entrada del usuario localmente en su propio `state`. Puedes ver cómo Redux proporciona un framework útil de gestión de estados sobre React. Alcanzaste el mismo resultado usando solo el estado local de React al principio, y esto es generalmente posible con aplicaciones simples. Sin embargo, cuanto más complejas y grandes se vuelve tus aplicaciones, más lo hará la gestión del estado, y esto es el problema que Redux resuelve.
 
 # --hints--
 
-The `AppWrapper` should render to the page.
+`AppWrapper` debe renderizarse.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-The `Presentational` component should render to page.
+El componente `Presentational` debe renderizarse.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `Presentational` component should render an `h2`, `input`, `button`, and `ul` elements.
+El componente `Presentational` debe renderizar los siguientes elementos: `h2`, `input`, `button` y `ul`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive `messages` from the Redux store as a prop.
+El componente `Presentational` debe recibir `messages` desde el almacenamiento de Redux como una propiedad.
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-The `Presentational` component should receive the `submitMessage` action creator as a prop.
+El componente `Presentational` debe recibir `submitMessage` como una propiedad.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-The state of the `Presentational` component should contain one property, `input`, which is initialized to an empty string.
+El estado del componente `Presentational` debe contener una propiedad, `input`, que está inicializada a una cadena vacía.
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-Typing in the `input` element should update the state of the `Presentational` component.
+Escribir el elemento `input` debe actualizar el estado del componente `Presentational`.
 
 ```js
 async () => {
@@ -124,7 +124,7 @@ async () => {
 };
 ```
 
-Dispatching the `submitMessage` on the `Presentational` component should update Redux store and clear the input in local state.
+`submitMessage` del componente `Presentational` debe actualizar el almacenamiento de Redux y vaciar la entrada en el estado local.
 
 ```js
 async () => {
@@ -156,7 +156,7 @@ async () => {
 };
 ```
 
-The `Presentational` component should render the `messages` from the Redux store.
+El componente `Presentational` debe renderizar `messages` desde el almacenamiento de Redux.
 
 ```js
 async () => {

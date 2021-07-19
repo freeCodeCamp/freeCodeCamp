@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function Cup(
@@ -7,7 +7,7 @@ function Cup(
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.gold-cup')}</span>
       <svg
         height={200}
@@ -51,7 +51,7 @@ function Cup(
           </g>
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

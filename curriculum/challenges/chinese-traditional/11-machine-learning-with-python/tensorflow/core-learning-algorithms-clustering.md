@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8f
-title: 'Core Learning Algorithms: Clustering'
+title: '核心學習算法：聚類'
 challengeType: 11
 videoId: 8sqIaHc9Cz4
 dashedName: core-learning-algorithms-clustering
@@ -10,27 +10,27 @@ dashedName: core-learning-algorithms-clustering
 
 ## --text--
 
-Which of the following steps is **not** part of the K-Means algorithm?
+以下哪個步驟 **不是** K-Means 算法的一部分？
 
 ## --answers--
 
-Randomly pick K points to place K centeroids.
+隨機選取 K 個點放置 K 個質心。
 
 ---
 
-Assign each K point to the closest K centeroid.
+將每個 K 點分配給最近的 K 質心。
 
 ---
 
-Move each K centeroid into the middle of all of their data points.
+將每個 K 質心移動到其所有數據點的中間。
 
 ---
 
-Shuffle the K points so they're redistributed randomly.
+打亂 K 點，使它們隨機重新分配。
 
 ---
 
-Reassign each K point to the closest K centeroid.
+重新分配每個 K 點給最近的 K 質心。
 
 ## --video-solution--
 

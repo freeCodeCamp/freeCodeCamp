@@ -8,7 +8,7 @@ dashedName: averagesroot-mean-square
 
 # --description--
 
-Compute the [Root mean square](<https://en.wikipedia.org/wiki/Root mean square> "wp: Root mean square") of the numbers 1 through 10 inclusive.
+Compute the [Root mean square](https://en.wikipedia.org/wiki/Root mean square "wp: Root mean square") of the numbers 1 through 10 inclusive.
 
 The *root mean square* is also known by its initials RMS (or rms), and as the **quadratic mean**.
 

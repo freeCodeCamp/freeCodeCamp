@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -25,10 +25,10 @@ class CertificationLayout extends Component {
     const { children } = this.props;
 
     return (
-      <Fragment>
+      <>
         <Helmet bodyAttributes={{ class: 'light-palette' }} />
         {children}
-      </Fragment>
+      </>
     );
   }
 }

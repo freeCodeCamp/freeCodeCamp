@@ -1,6 +1,6 @@
 ---
 id: 5664820f61c48e80c9fa476c
-title: Golf Code
+title: Código de Golfe
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195
@@ -9,77 +9,77 @@ dashedName: golf-code
 
 # --description--
 
-In the game of [golf](https://en.wikipedia.org/wiki/Golf), each hole has a `par`, meaning, the average number of `strokes` a golfer is expected to make in order to sink the ball in the hole to complete the play. Depending on how far above or below `par` your `strokes` are, there is a different nickname.
+No jogo [golf](https://en.wikipedia.org/wiki/Golf), cada buraco tem um `par`, significando, o número médio de `strokes` que um golfista é esperado fazer afim de derrubar a bola no buraco para completar a jogada. Dependendo do quão distante acima ou abaixo de `par` suas `strokes` estiverem, há diferentes apelidos.
 
-Your function will be passed `par` and `strokes` arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):
+Sua função receberá os argumentos `par` e `strokes`. Retorna a string correta de acordo com esta tabela que lista os strokes em ordem de prioridade; superior (mais alta) para o final (mais baixo):
 
-<table class='table table-striped'><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Strokes</th><th>Retorno</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
-`par` and `strokes` will always be numeric and positive. We have added an array of all the names for your convenience.
+`par` e `strokes` sempre será um número e positivo. Nós adicionamos um array com todos os nomes para sua conveniência.
 
 # --hints--
 
-`golfScore(4, 1)` should return the string `Hole-in-one!`
+`golfScore(4, 1)` deve retornar a string `Hole-in-one!`
 
 ```js
 assert(golfScore(4, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(4, 2)` should return the string `Eagle`
+`golfScore(4, 2)` deve retornar a string `Eagle`
 
 ```js
 assert(golfScore(4, 2) === 'Eagle');
 ```
 
-`golfScore(5, 2)` should return the string `Eagle`
+`golfScore(5, 2)` deve retornar a string `Eagle`
 
 ```js
 assert(golfScore(5, 2) === 'Eagle');
 ```
 
-`golfScore(4, 3)` should return the string `Birdie`
+`golfScore(4, 3)` deve retornar a string `Birdie`
 
 ```js
 assert(golfScore(4, 3) === 'Birdie');
 ```
 
-`golfScore(4, 4)` should return the string `Par`
+`golfScore(4, 4)` deve retornar a string `Par`
 
 ```js
 assert(golfScore(4, 4) === 'Par');
 ```
 
-`golfScore(1, 1)` should return the string `Hole-in-one!`
+`golfScore(1, 1)` deve retornar a string `Hole-in-one!`
 
 ```js
 assert(golfScore(1, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(5, 5)` should return the string `Par`
+`golfScore(5, 5)` deve retornar a string `Par`
 
 ```js
 assert(golfScore(5, 5) === 'Par');
 ```
 
-`golfScore(4, 5)` should return the string `Bogey`
+`golfScore(4, 5)` deve retornar a string `Bogey`
 
 ```js
 assert(golfScore(4, 5) === 'Bogey');
 ```
 
-`golfScore(4, 6)` should return the string `Double Bogey`
+`golfScore(4, 6)` deve retornar a string `Double Bogey`
 
 ```js
 assert(golfScore(4, 6) === 'Double Bogey');
 ```
 
-`golfScore(4, 7)` should return the string `Go Home!`
+`golfScore(4, 7)` deve retornar a string `Go Home!`
 
 ```js
 assert(golfScore(4, 7) === 'Go Home!');
 ```
 
-`golfScore(5, 9)` should return the string `Go Home!`
+`golfScore(5, 9)` deve retornar a string `Go Home!`
 
 ```js
 assert(golfScore(5, 9) === 'Go Home!');

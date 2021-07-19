@@ -18,7 +18,7 @@ Supportiamo anche Windows 10 via WSL2, che puoi preparare [leggendo questa guida
 
 Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git per Windows (Git Bash) e altri strumenti installati su Windows. Al momento non disponiamo di un supporto ufficiale per una tale configurazione, consigliamo invece di utilizzare WSL2.
 
-**Prerequisiti:**
+#### Prerequisiti:
 
 | Prerequisito                                                                                  | Versione | Note                                                                                         |
 | --------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------- |
@@ -28,7 +28,7 @@ Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git
 
 > [!ATTENTION] Se hai una versione diversa, per favore installa la versione raccomandata. Possiamo supportare solo i problemi di installazione per le versioni consigliate. Vedi [risoluzione dei problemi](#troubleshooting) per i dettagli.
 
-Se Node.js è già installato sulla macchina, eseguire i seguenti comandi per convalidare le versioni:
+Se Node.js è già installato sulla macchina, esegui i seguenti comandi per convalidare le versioni:
 
 ```console
 node -v
@@ -39,7 +39,7 @@ npm -v
 
 Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente di sviluppo. Questo è comune a molti flussi di lavoro di sviluppo, e si dovrà fare solo una volta.
 
-**Segui questi passaggi per preparare il tuo ambiente di sviluppo:**
+##### Segui questi passaggi per preparare il tuo ambiente di sviluppo:
 
 1. Installa [Git](https://git-scm.com/) o il tuo client Git preferito, se non lo hai già. Aggiornamento alla versione più recente; la versione fornita con il tuo sistema operativo potrebbe essere obsoleta.
 
@@ -57,7 +57,7 @@ Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente 
 
 ## Esegui il fork del repository su GitHub
 
-Il [Forking](https://help.github.com/articles/about-forks/) è un passaggio nel quale fai una tua copia del repository principale di freeCodeCamp (noto anche come _repo_) su GitHub.
+Il [Forking](https://help.github.com/articles/about-forks/) è un passaggio nel quale fai una copia del repository principale di freeCodeCamp (noto anche come _repo_) su GitHub.
 
 Questo è essenziale, in quanto consente di lavorare sulla propria copia di freeCodeCamp su GitHub, o di scaricare (clonare) il tuo repository per lavorare localmente. Più tardi, potrai richiedere che le tue modifiche siano integrate (pull) nel repository principale dal tuo fork tramite una pull request (PR).
 
@@ -108,9 +108,9 @@ Nota: `--depth=1` crea un clone superficiale del fork, con la sola cronologia de
 
 ## Imposta la sincronizzazione dal genitore
 
-Ora che hai scaricato una copia del fork, dovrai configurare un remote `upstream` che punti al repository padre.
+Ora che hai scaricato una copia del fork, dovrai configurare un remote `upstream` che punti al repository genitore.
 
-[Come accennato poc'anzi](#fork-the-repository-on-github), il repository principale fa riferimento al repository `upstream`. Il tuo fork fa riferimento al repository `origin`.
+[Come accennato poc'anzi](#fork-the-repository-on-github), il repository principale è chiamato repository `upstream`. Il tuo fork è chiamato repository `origin`.
 
 Hai bisogno di un riferimento dal tuo clone locale al repository `upstream` oltre che al repository `origin`. In questo modo potrai sincronizzare le modifiche dal repository principale senza bisogno di fare ripetuti fork e clonazioni.
 
@@ -446,7 +446,7 @@ Segui questi passaggi:
 
 ## Proporre una Pull Request (PR)
 
-Dopo aver effettuato le modifiche, controlla qui per [come aprire una Pull Request](how-to-open-a-pull-request.md).
+Dopo aver effettuato le modifiche, controlla qui [come aprire una Pull Request](how-to-open-a-pull-request.md).
 
 ## Comandi rapidi
 
@@ -459,12 +459,12 @@ Un rapido riferimento ai comandi di cui avrai bisogno quando lavorerai localment
 | `npm run develop`                                              | Avvia il server API freeCodeCamp e le applicazioni client.                          |
 | `npm run storybook`                                            | Esegui Storybook per sviluppo dei componenti di library.                            |
 | `npm test`                                                     | Esegui tutti i test JS del sistema inclusi client, server, link e test delle sfide. |
-| `npm run test:client`                                          | Esegui la test suite del client.                                                    |
+| `npm run test-client`                                          | Esegui la test suite del client.                                                    |
 | `npm run test:curriculum`                                      | Esegui la test suite del curriculum.                                                |
 | `npm run test:curriculum --block='Basic HTML and HTML5'`       | Esegui i test di uno specifico blocco.                                              |
 | `npm run test:curriculum --superblock='responsive-web-design'` | Esegui i test di uno specifico superblocco.                                         |
 | `npm run test-curriculum-full-output`                          | Esegui la suite di test del curriculum, senza arrestarsi dopo il primo errore       |
-| `npm run test:server`                                          | Esegui la suite di test del server.                                                 |
+| `npm run test-server`                                          | Esegui la suite di test del server.                                                 |
 | `npm run e2e`                                                  | Esegui i test di Cypress end to end.                                                |
 | `npm run clean`                                                | Disistalla tutte le dipendenze e pulisce la cache.                                  |
 
@@ -472,7 +472,7 @@ Un rapido riferimento ai comandi di cui avrai bisogno quando lavorerai localment
 
 ### Problemi con l'installazione dei prerequisiti raccomandati
 
-Sviluppiamo regolarmente sui sistemi operativi più nuovi o più popolari come macOS 10.15 o successivi, Ubuntu 18.04, e Windows 10 con WSL2.
+Sviluppiamo regolarmente sui sistemi operativi più recenti o più popolari come macOS 10.15 o successivi, Ubuntu 18.04, e Windows 10 con WSL2.
 
 Ti raccomandiamo di fare ricerche sui tuoi problemi specifici usando risorse come Google, Stack Overflow, e Stack Exchange. C'è una buona probabilità che qualcuno abbia incontrato lo stesso problema e ci sia già una risposta alla tua domanda specifica.
 
@@ -484,7 +484,7 @@ Se sei su un sistema operativo diverso e/o continui ad avere dei problemi, visit
 
 ### Problemi con UI, Font, errori di build, ecc.
 
-Se si verificano problemi con l'interfaccia utente, i caratteri o vedi errori di compilazione, una pulizia potrebbe essere utile:
+Se incontri problemi con l'interfaccia utente, i caratteri o vedi errori di compilazione, potrebbe essere utile una pulizia:
 
 ```console
 npm run clean
@@ -520,9 +520,9 @@ git clean -ifdX
 
 ### Problemi con API, logic, invio delle sfide, ecc.
 
-Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che verrà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia in uso da un programma diverso.
+Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che il problema sarà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia usata da un programma diverso.
 
-**Su Linux / macOS / WSL su Windows - Dal terminale:**
+**Su Linux / macOS / WSL su Windows - dal terminale:**
 
 ```console
 netstat -a | grep "3000"
@@ -530,7 +530,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**Su Windows - d PowerShell con privilegi elevati:**
+**Su Windows - da PowerShell con privilegi elevati:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -544,8 +544,10 @@ Se incontri degli errori durante l'installazione delle dipendenze, assicurati di
 
 La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
 
+> [!NOTE] Se stai usando un device Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
+
 ## Ottenere Aiuto
 
 Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
 
-Potrebbe esserci un errore nella console del browser o in Bash / Terminal / Linea di comando che ti aiuterà a identificare il problema. Fornisci questo messaggio di errore nella descrizione del problema in modo che gli altri possano identificare più facilmente il problema e aiutarti a risolverlo.
+Potrebbe esserci un errore nella console del browser o in Bash / Terminal / Linea di comando che ti aiuterà a identificare il problema. Fornisci questo messaggio di errore nella descrizione del problema in modo che gli altri possano identificalo più facilmente e aiutarti a risolverlo.

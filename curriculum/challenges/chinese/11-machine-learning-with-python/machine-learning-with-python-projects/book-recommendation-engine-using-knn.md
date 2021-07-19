@@ -1,25 +1,26 @@
 ---
 id: 5e46f8e3ac417301a38fb92f
-title: Book Recommendation Engine using KNN
+title: 基于 KNN 的图书推荐引擎
 challengeType: 10
+forumTopicId: 462378
 dashedName: book-recommendation-engine-using-knn
 ---
 
 # --description--
 
-In this challenge, you will create a book recommendation algorithm using K-Nearest Neighbors.
+在这个挑战中，你将使用 K-近邻算法创建一个书籍推荐算法。
 
-You will use the Book-Crossings dataset. This dataset contains 1.1 million ratings (scale of 1-10) of 270,000 books by 90,000 users.
+你将使用 Book-Crossings 数据集。 该数据集包括 90,000 名用户对 270,000 册书籍的 110 万份评分（评分从 1至 10）。
 
-You can access [the full project instructions and starter code on Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb).
+你可以[在 Replit 上查看整个项目的具体描述和初始代码](https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb)。
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+进入该链接后，在你自己的账户或本地创建一个笔记本的副本。 一旦你完成项目并通过链接中的测试，请在下面提交你的项目链接。 如果你提交的是 Google Colaboratory 的链接，请确保打开链接共享时选择 “anyone with the link”。
 
-We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+我们仍在开发机器学习课程的交互式课程部分。 现在，你可以通过这个认证视频挑战。 你可能还需要寻找额外的学习资源，类似于你在现实世界项目上所做的工作。
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

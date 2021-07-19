@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad8
-title: Create Texture by Adding a Subtle Pattern as a Background Image
+title: Criar textura adicionando um padrão sutil como uma imagem de fundo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQdwJC8'
 forumTopicId: 301052
@@ -9,20 +9,20 @@ dashedName: create-texture-by-adding-a-subtle-pattern-as-a-background-image
 
 # --description--
 
-One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground. The `background` property supports the `url()` function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.
+Uma forma de adicionar textura e interesse a um plano de fundo e fazê-lo se destacar mais é adicionar um padrão sutil. O segredo é o equilíbrio, pois você não quer que o fundo se destaque muito e acabe se distanciando do primeiro plano. A propriedade `background` suporta a função `url()` que aponta para uma imagem que será a textura ou padrão escolhido. O endereço do imagem é colocado entre aspas dentro dos parênteses.
 
 # --instructions--
 
-Using the url of `https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png`, set the `background` of the whole page with the `body` selector.
+Usando o url `https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png`, defina a propriedade `background` de toda a página usando o seletor `body`.
 
 # --hints--
 
-Your `body` element should have a `background` property set to a `url()` with the given link.
+O elemento `body` deve ter a propriedade `background` com a função `url()` apontando para o link forncido anteriormente.
 
 ```js
 assert(
   code.match(
-    /background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi
+    /background(-image)?:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\2\s*\)/gi
   )
 );
 ```

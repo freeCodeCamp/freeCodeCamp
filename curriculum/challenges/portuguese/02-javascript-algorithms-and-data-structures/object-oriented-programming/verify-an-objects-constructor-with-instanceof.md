@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7a
-title: Verify an Object's Constructor with instanceof
+title: Verifique o Construtor de um Objeto com instanceof
 challengeType: 1
 forumTopicId: 301337
 dashedName: verify-an-objects-constructor-with-instanceof
@@ -8,7 +8,7 @@ dashedName: verify-an-objects-constructor-with-instanceof
 
 # --description--
 
-Anytime a constructor function creates a new object, that object is said to be an <dfn>instance</dfn> of its constructor. JavaScript gives a convenient way to verify this with the `instanceof` operator. `instanceof` allows you to compare an object to a constructor, returning `true` or `false` based on whether or not that object was created with the constructor. Here's an example:
+Toda vez que a função construtora cria um novo objeto, o objeto é definido como uma <dfn>instance</dfn> do seu construtor. JavaScript provê uma forma conveniente para verificar isso com o operador `instanceof`. `instanceof` permite que você compare um objeto a um construtor, retornando `true` ou `false` caso seja ou não um objeto criado pelo construtor, respectivamente. Aqui está um exemplo:
 
 ```js
 let Bird = function(name, color) {
@@ -22,9 +22,9 @@ let crow = new Bird("Alexis", "black");
 crow instanceof Bird;
 ```
 
-This `instanceof` method would return `true`.
+Este método `instanceof` irá retornar `true`.
 
-If an object is created without using a constructor, `instanceof` will verify that it is not an instance of that constructor:
+Se um objeto for criado sem usar um construtor, `instanceof` verificará que não é uma instância daquele construtor:
 
 ```js
 let canary = {
@@ -36,21 +36,21 @@ let canary = {
 canary instanceof Bird;
 ```
 
-This `instanceof` method would return `false`.
+Este método `instanceof` irá retornar `false`.
 
 # --instructions--
 
-Create a new instance of the `House` constructor, calling it `myHouse` and passing a number of bedrooms. Then, use `instanceof` to verify that it is an instance of `House`.
+Crie uma nova instância do construtor `House`, atribuindo à variável `myHouse` e passe o número de quartos. Então, utilize `instanceof` para verificar que é uma instância de `House`.
 
 # --hints--
 
-`myHouse` should have a `numBedrooms` attribute set to a number.
+`myHouse` deve ter o atributo `numBedrooms` definido para um número.
 
 ```js
 assert(typeof myHouse.numBedrooms === 'number');
 ```
 
-You should verify that `myHouse` is an instance of `House` using the `instanceof` operator.
+Você deve verificar que `myHouse` é uma instância de `House` utilizando o operador `instanceof`.
 
 ```js
 assert(/myHouse\s*instanceof\s*House/.test(code));

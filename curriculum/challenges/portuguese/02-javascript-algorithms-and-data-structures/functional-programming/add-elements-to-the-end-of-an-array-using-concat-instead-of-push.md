@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b67
-title: Add Elements to the End of an Array Using concat Instead of push
+title: Adicione Elementos ao Final de um Array usando concat em vez de push
 challengeType: 1
 forumTopicId: 301226
 dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
@@ -8,50 +8,50 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 # --description--
 
-Functional programming is all about creating and using non-mutating functions.
+Programação funcional é basicamente criar e utilizar funções que não modificam os seus argumentos.
 
-The last challenge introduced the `concat` method as a way to combine arrays into a new one without mutating the original arrays. Compare `concat` to the `push` method. `push` adds an item to the end of the same array it is called on, which mutates that array. Here's an example:
+O último desafio mostrou como usar o método `concat` para criar um novo array a partir da combinação de outros sem modificar os originais. Compare os métodos `concat` e `push`. O `push` adiciona um item ao final do array à esquerda do `.`. Ele modifica o array. Um exemplo:
 
 ```js
 var arr = [1, 2, 3];
 arr.push([4, 5, 6]);
 ```
 
-`arr` would have a modified value of `[1, 2, 3, [4, 5, 6]]`, which is not the functional programming way.
+Modificamos `arr` para acomodar o novo valor: `[1, 2, 3, [4, 5, 6]]`. Mas não é assim que se faz em programação funcional.
 
-`concat` offers a way to add new items to the end of an array without any mutating side effects.
+O `concat` nos oferece uma forma de adicionar novos itens ao final de um array sem alterá-lo.
 
 # --instructions--
 
-Change the `nonMutatingPush` function so it uses `concat` to add `newItem` to the end of `original` instead of `push`. The function should return an array.
+Modifique a função `nonMutatingPush` de forma que ela use `concat` para adicionar `newItem` ao final de `original` em vez de `push`. A função deve retornar um array.
 
 # --hints--
 
-Your code should use the `concat` method.
+O seu código deve usar o método `concat`.
 
 ```js
 assert(code.match(/\.concat/g));
 ```
 
-Your code should not use the `push` method.
+O seu código não deve usar o método `push`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?push/g));
 ```
 
-The `first` array should not change.
+O primeiro array, `first`, não deve ser modificado.
 
 ```js
 assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
 ```
 
-The `second` array should not change.
+O segundo array, `second`, não deve ser modificado.
 
 ```js
 assert(JSON.stringify(second) === JSON.stringify([4, 5]));
 ```
 
-`nonMutatingPush([1, 2, 3], [4, 5])` should return `[1, 2, 3, 4, 5]`.
+`nonMutatingPush([1, 2, 3], [4, 5])` deve retornar `[1, 2, 3, 4, 5]`.
 
 ```js
 assert(

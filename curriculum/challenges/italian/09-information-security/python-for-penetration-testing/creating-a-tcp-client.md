@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db0
-title: Creating a TCP Client
+title: Creare un client TCP
 challengeType: 11
 videoId: ugYfJNTawks
 dashedName: creating-a-tcp-client
@@ -10,7 +10,7 @@ dashedName: creating-a-tcp-client
 
 ## --text--
 
-Which socket object method lets you set the maximum amount of data your client accepts at once?
+Quale metodo di socket ti consente di impostare la quantità massima di dati che il tuo client accetta contemporaneamente?
 
 ## --answers--
 

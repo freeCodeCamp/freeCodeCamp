@@ -1,6 +1,6 @@
 ---
 id: a6b0bb188d873cb2c8729495
-title: Convert HTML Entities
+title: Converter Entidades HTML
 challengeType: 5
 forumTopicId: 16007
 dashedName: convert-html-entities
@@ -8,17 +8,17 @@ dashedName: convert-html-entities
 
 # --description--
 
-Convert the characters `&`, `<`, `>`, `"` (double quote), and `'` (apostrophe), in a string to their corresponding HTML entities.
+Converta os caracteres `&`, `<`, `>`, `"` (aspas duplas) e `'` (aspas simples), em uma string para suas entidades HTML correspondentes.
 
 # --hints--
 
-`convertHTML("Dolce & Gabbana")` should return the string `Dolce &amp; Gabbana`.
+`convertHTML("Dolce & Gabbana")` deve retorna a string `Dolce &amp; Gabbana`.
 
 ```js
 assert.match(convertHTML('Dolce & Gabbana'), /Dolce &amp; Gabbana/);
 ```
 
-`convertHTML("Hamburgers < Pizza < Tacos")` should return the string `Hamburgers &lt; Pizza &lt; Tacos`.
+`convertHTML("Hamburgers < Pizza < Tacos")` deve retornar a string `Hamburgers &lt; Pizza &lt; Tacos`.
 
 ```js
 assert.match(
@@ -27,13 +27,13 @@ assert.match(
 );
 ```
 
-`convertHTML("Sixty > twelve")` should return the string `Sixty &gt; twelve`.
+`convertHTML("Sixty > twelve")` deve retornar a string `Sixty &gt; twelve`.
 
 ```js
 assert.match(convertHTML('Sixty > twelve'), /Sixty &gt; twelve/);
 ```
 
-`convertHTML('Stuff in "quotation marks"')` should return the string `Stuff in &quot;quotation marks&quot;`.
+`convertHTML('Stuff in "quotation marks"')` deve retornar a string `Stuff in &quot;quotation marks&quot;`.
 
 ```js
 assert.match(
@@ -42,19 +42,19 @@ assert.match(
 );
 ```
 
-`convertHTML("Schindler's List")` should return the string `Schindler&apos;s List`.
+`convertHTML("Schindler's List")` deve retornar a string `Schindler&apos;s List`.
 
 ```js
 assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);
 ```
 
-`convertHTML("<>")` should return the string `&lt;&gt;`.
+`convertHTML("<>")` deve retornar a string `&lt;&gt;`.
 
 ```js
 assert.match(convertHTML('<>'), /&lt;&gt;/);
 ```
 
-`convertHTML("abc")` should return the string `abc`.
+`convertHTML("abc")` deve retornar a string `abc`.
 
 ```js
 assert.strictEqual(convertHTML('abc'), 'abc');

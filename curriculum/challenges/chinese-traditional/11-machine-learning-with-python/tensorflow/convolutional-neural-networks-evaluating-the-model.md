@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d99
-title: 'Convolutional Neural Networks: Evaluating the Model'
+title: '卷積神經網絡：評估模型'
 challengeType: 11
 videoId: eCATNvwraXg
 dashedName: convolutional-neural-networks-evaluating-the-model
@@ -10,19 +10,19 @@ dashedName: convolutional-neural-networks-evaluating-the-model
 
 ## --text--
 
-What is **not** a good way to increase the accuracy of a convolutional neural network?
+什麼 **不是** 提高卷積神經網絡準確性的好方法？
 
 ## --answers--
 
-Augmenting the data you already have.
+擴充你已有的數據。
 
 ---
 
-Using a pre-trained model.
+使用預先訓練的模型。
 
 ---
 
-Using your test data to retrain the model.
+使用你的測試數據重新訓練模型。
 
 ## --video-solution--
 

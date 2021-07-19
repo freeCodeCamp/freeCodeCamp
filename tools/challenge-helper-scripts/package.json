@@ -23,13 +23,13 @@
     "create-project": "ts-node create-project"
   },
   "devDependencies": {
-    "@types/inquirer": "7.3.2",
+    "@types/inquirer": "7.3.3",
     "bson-objectid": "2.0.1",
     "cross-env": "7.0.3",
     "gray-matter": "4.0.3",
-    "inquirer": "8.1.1",
+    "inquirer": "8.1.2",
     "prettier": "2.3.2",
-    "ts-node": "10.0.0",
+    "ts-node": "10.1.0",
     "typescript": "4.3.5"
   }
 }

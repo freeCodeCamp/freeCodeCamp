@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c167
-title: Python Iteration and Modules
+title: Python 迭代和模塊
 challengeType: 11
 videoId: XzosGWLafrY
 dashedName: python-iteration-and-modules
@@ -8,18 +8,18 @@ dashedName: python-iteration-and-modules
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
-More resources:
+更多資源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-How would you iterate over and print the keys and values of a dictionary named `user`?
+您將如何迭代並打印名爲 `user` 的字典的鍵和值？
 
 ## --answers--
 

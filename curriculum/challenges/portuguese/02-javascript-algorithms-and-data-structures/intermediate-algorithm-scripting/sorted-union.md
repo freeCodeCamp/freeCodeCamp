@@ -1,6 +1,6 @@
 ---
 id: a105e963526e7de52b219be9
-title: Sorted Union
+title: União ordenada
 challengeType: 5
 forumTopicId: 16077
 dashedName: sorted-union
@@ -8,29 +8,29 @@ dashedName: sorted-union
 
 # --description--
 
-Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+Escreva uma função que recebe dois ou mais arrays e retorne um novo array de calores únicos na ordem do array original fornecido.
 
-In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+Em outras palavras, todos os valores presentes de todos os arrays devem ser incluídos na sua ordem original, mas sem valores duplicados no array final.
 
-The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+Os números únicos devem ser ordenados pela sua ordem original, mas o array final não deve ser ordenado em ordem numérica.
 
-Check the assertion tests for examples.
+Verifique os testes de asserção para exemplos.
 
 # --hints--
 
-`uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])` should return `[1, 3, 2, 5, 4]`.
+`uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])` deve retornar `[1, 3, 2, 5, 4]`.
 
 ```js
 assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4]);
 ```
 
-`uniteUnique([1, 2, 3], [5, 2, 1])` should return `[1, 2, 3, 5]`.
+`uniteUnique([1, 2, 3], [5, 2, 1])` deve retornar `[1, 2, 3, 5]`.
 
 ```js
 assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5]);
 ```
 
-`uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])` should return `[1, 2, 3, 5, 4, 6, 7, 8]`.
+`uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])` deve retornar `[1, 2, 3, 5, 4, 6, 7, 8]`.
 
 ```js
 assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [

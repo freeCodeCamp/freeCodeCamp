@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244dc
-title: Chaining If Else Statements
+title: Encadeando Instruções If Else
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
@@ -9,7 +9,7 @@ dashedName: chaining-if-else-statements
 
 # --description--
 
-`if/else` statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained `if` / `else if` statements:
+`if/else` instruções podem ser encadeadas por uma lógica complexa. Aqui está o <dfn>pseudocódigo</dfn> de várias instruções encadeadas `if` / `else`:
 
 ```js
 if (condition1) {
@@ -26,89 +26,89 @@ if (condition1) {
 
 # --instructions--
 
-Write chained `if`/`else if` statements to fulfill the following conditions:
+Escreva instruções encadeadas `if`/`else` para atender as seguintes condições:
 
-`num < 5` - return `Tiny`  
-`num < 10` - return `Small`  
-`num < 15` - return `Medium`  
-`num < 20` - return `Large`  
-`num >= 20` - return `Huge`
+`num < 5` - retorna `Tiny`  
+`num < 10` - retorna `Small`  
+`num < 15` - retorna `Medium`  
+`num < 20` - retorna `Large`  
+`num >= 20` - retorna `Huge`
 
 # --hints--
 
-You should have at least four `else` statements
+Você deve ter pelo menos quatro instruções `else`
 
 ```js
 assert(code.match(/else/g).length > 3);
 ```
 
-You should have at least four `if` statements
+Você deve ter pelo menos quatro instruções `if`
 
 ```js
 assert(code.match(/if/g).length > 3);
 ```
 
-You should have at least one `return` statement
+Você deve ter pelo menos um comando `return`
 
 ```js
 assert(code.match(/return/g).length >= 1);
 ```
 
-`testSize(0)` should return the string `Tiny`
+`testSize(0)` deve retornar a string `Tiny`
 
 ```js
 assert(testSize(0) === 'Tiny');
 ```
 
-`testSize(4)` should return the string `Tiny`
+`testSize(4)` deve retornar a string `Tiny`
 
 ```js
 assert(testSize(4) === 'Tiny');
 ```
 
-`testSize(5)` should return the string `Small`
+`testSize(5)` deve retornar a string `Small`
 
 ```js
 assert(testSize(5) === 'Small');
 ```
 
-`testSize(8)` should return the string `Small`
+`testSize(8)` deve retornar a string `Small`
 
 ```js
 assert(testSize(8) === 'Small');
 ```
 
-`testSize(10)` should return the string `Medium`
+`testSize(10)` deve retornar a string `Medium`
 
 ```js
 assert(testSize(10) === 'Medium');
 ```
 
-`testSize(14)` should return the string `Medium`
+`testSize(14)` deve retornar a string `Medium`
 
 ```js
 assert(testSize(14) === 'Medium');
 ```
 
-`testSize(15)` should return the string `Large`
+`testSize(15)` deve retornar a string `Large`
 
 ```js
 assert(testSize(15) === 'Large');
 ```
 
-`testSize(17)` should return the string `Large`
+`testSize(17)` deve retornar a string `Large`
 
 ```js
 assert(testSize(17) === 'Large');
 ```
 
-`testSize(20)` should return the string `Huge`
+`testSize(20)` deve retornar a string `Huge`
 
 ```js
 assert(testSize(20) === 'Huge');
 ```
 
-`testSize(25)` should return the string `Huge`
+`testSize(25)` deve retornar a string `Huge`
 
 ```js
 assert(testSize(25) === 'Huge');

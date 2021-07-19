@@ -8,7 +8,7 @@ dashedName: fibonacci-n-step-number-sequences
 
 # --description--
 
-These number series are an expansion of the ordinary [Fibonacci sequence](<https://rosettacode.org/wiki/Fibonacci sequence> "Fibonacci sequence") where:
+These number series are an expansion of the ordinary [Fibonacci sequence](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") where:
 
 <ol>
   <li>For $n = 2$ we have the Fibonacci sequence; with initial values $[1, 1]$ and $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
@@ -17,7 +17,7 @@ These number series are an expansion of the ordinary [Fibonacci sequence](<https
   <li>For general $n>2$ we have the Fibonacci $n$-step sequence - $F_k^n$; with initial values of the first $n$ values of the $(n-1)$'th Fibonacci $n$-step sequence $F_k^{n-1}$; and $k$'th value of this $n$'th sequence being $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$</li>
 </ol>
 
-For small values of $n$, [Greek numeric prefixes](<https://en.wikipedia.org/wiki/Number prefix#Greek_series> "wp: Number prefix#Greek_series") are sometimes used to individually name each series.
+For small values of $n$, [Greek numeric prefixes](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") are sometimes used to individually name each series.
 
 Fibonacci $n$-step sequences:
 
@@ -33,7 +33,7 @@ Fibonacci $n$-step sequences:
 | 9   | nonanacci   | 1 1 2 4 8 16 32 64 128 256 511 1021 2040 4076 8144 ... |
 | 10  | decanacci   | 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 ... |
 
-Allied sequences can be generated where the initial values are changed: The [Lucas series](<https://en.wikipedia.org/wiki/Lucas number> "wp: Lucas number") sums the two preceding values like the fibonacci series for $n=2$ but uses $\[2, 1]$ as its initial values.
+Allied sequences can be generated where the initial values are changed: The [Lucas series](https://en.wikipedia.org/wiki/Lucas number "wp: Lucas number") sums the two preceding values like the fibonacci series for $n=2$ but uses $\[2, 1]$ as its initial values.
 
 # --instructions--
 

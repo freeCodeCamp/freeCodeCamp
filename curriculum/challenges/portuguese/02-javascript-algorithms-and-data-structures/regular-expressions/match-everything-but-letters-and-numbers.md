@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba0
-title: Match Everything But Letters and Numbers
+title: Capture Tudo Exceto Letras e Números
 challengeType: 1
 forumTopicId: 301353
 dashedName: match-everything-but-letters-and-numbers
@@ -8,9 +8,9 @@ dashedName: match-everything-but-letters-and-numbers
 
 # --description--
 
-You've learned that you can use a shortcut to match alphanumerics `[A-Za-z0-9_]` using `\w`. A natural pattern you might want to search for is the opposite of alphanumerics.
+Você aprendeu que você pode usar um atalho para capturar alfanuméricos `[A-Za-z0-9_]` usando `\w`. Você pode querer capturar exatamente o oposto disso.
 
-You can search for the opposite of the `\w` with `\W`. Note, the opposite pattern uses a capital letter. This shortcut is the same as `[^A-Za-z0-9_]`.
+Você pode capturar não-alfanuméricos usando `\W` ao invés de `\w`. Observe que o atalho usa uma maiúscula. Este atalho é o mesmo que escrever `[^A-Za-z0-9_]`.
 
 ```js
 let shortHand = /\W/;
@@ -20,21 +20,21 @@ numbers.match(shortHand);
 sentence.match(shortHand);
 ```
 
-The first `match` call would return the value `["%"]` and the second would return `["!"]`.
+A primeira chamada a `match` retorna `["%"]` enquanto o segundo retorna `["!"]`.
 
 # --instructions--
 
-Use the shorthand character class `\W` to count the number of non-alphanumeric characters in various quotes and strings.
+Use o atalho `\W` para contar o número de caracteres não-alfanuméricos em várias strings.
 
 # --hints--
 
-Your regex should use the global flag.
+Sua regex deve usar a flag global.
 
 ```js
 assert(nonAlphabetRegex.global);
 ```
 
-Your regex should find 6 non-alphanumeric characters in the string `The five boxing wizards jump quickly.`.
+Sua regex deve encontrar 6 caracteres não-alfanuméricos na string `The five boxing wizards jump quickly.`.
 
 ```js
 assert(
@@ -42,13 +42,13 @@ assert(
 );
 ```
 
-Your regex should use the shorthand character to match characters which are non-alphanumeric.
+Sua regex deve usar o atalho que captura os caracteres não-alfanuméricos.
 
 ```js
 assert(/\\W/.test(nonAlphabetRegex.source));
 ```
 
-Your regex should find 8 non-alphanumeric characters in the string `Pack my box with five dozen liquor jugs.`
+Sua regex deve encontrar 8 caracteres não-alfanuméricos na string `Pack my box with five dozen liquor jugs.`
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-Your regex should find 6 non-alphanumeric characters in the string `How vexingly quick daft zebras jump!`
+Sua regex deve encontrar 6 caracteres não-alfanuméricos na string `How vexingly quick daft zebras jump!`
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-Your regex should find 12 non-alphanumeric characters in the string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
+Sua regex deve encontrar 12 caracteres não-alfanuméricos na string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
 
 ```js
 assert(

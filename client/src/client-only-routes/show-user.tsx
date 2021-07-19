@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -11,7 +11,7 @@ import {
   Row
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Trans, withTranslation } from 'react-i18next';
+import { TFunction, Trans, withTranslation } from 'react-i18next';
 
 import Login from '../components/Header/components/Login';
 
@@ -30,7 +30,7 @@ interface IShowUserProps {
     username: string;
     reportDescription: string;
   }) => void;
-  t: (payload: unknown, ops?: Record<string, unknown>) => string;
+  t: TFunction;
   userFetchState: {
     pending: boolean;
     complete: boolean;
@@ -120,7 +120,7 @@ class ShowUser extends Component<IShowUserProps> {
     const { textarea } = this.state;
     const placeholderText = t('report.details');
     return (
-      <Fragment>
+      <>
         <Helmet>
           <title>{t('report.portfolio')} | freeCodeCamp.org</title>
         </Helmet>
@@ -157,7 +157,7 @@ class ShowUser extends Component<IShowUserProps> {
             {/* eslint-disable @typescript-eslint/unbound-method */}
           </Col>
         </Row>
-      </Fragment>
+      </>
     );
   }
 }

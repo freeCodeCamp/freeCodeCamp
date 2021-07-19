@@ -234,8 +234,10 @@ const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
   const localizedForums = {
     chinese: 'https://chinese.freecodecamp.org/forum',
+    'chinese-traditional': 'https://chinese.freecodecamp.org/forum',
     espanol: 'https://forum.freecodecamp.org/c/espanol/',
-    english: 'https://forum.freecodecamp.org/'
+    english: 'https://forum.freecodecamp.org/',
+    italian: 'https://forum.freecodecamp.org/c/italian/'
   };
   return (
     children[0].props.children === 'buttons.forum' &&
@@ -247,8 +249,10 @@ const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
   const localizedNews = {
     chinese: 'https://chinese.freecodecamp.org/news',
+    'chinese-traditional': 'https://chinese.freecodecamp.org/news',
     espanol: 'https://www.freecodecamp.org/espanol/news',
-    english: 'https://www.freecodecamp.org/news'
+    english: 'https://www.freecodecamp.org/news',
+    italian: 'https://www.freecodecamp.org/italian/news'
   };
   return (
     children[0].props.children === 'buttons.news' &&

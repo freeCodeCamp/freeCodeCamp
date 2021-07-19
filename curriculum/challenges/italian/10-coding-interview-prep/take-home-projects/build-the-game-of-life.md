@@ -26,7 +26,7 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **Hint:** Here's an explanation of Conway's Game of Life from John Conway himself: <https://www.youtube.com/watch?v=E8kUJL04ELA>
 
-**Hint:** Here's an overview of Conway's Game of Life with rules for your reference: <https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life>
+**Hint:** Here's an overview of Conway's Game of Life with rules for your reference: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 

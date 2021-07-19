@@ -1,6 +1,6 @@
 ---
 id: 9d7123c8c441eeafaeb5bdef
-title: Remove Elements from an Array Using slice Instead of splice
+title: Remova Elementos de um Array Usando slice em vez de splice
 challengeType: 1
 forumTopicId: 301236
 dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
@@ -8,38 +8,38 @@ dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
 
 # --description--
 
-A common pattern while working with arrays is when you want to remove items and keep the rest of the array. JavaScript offers the `splice` method for this, which takes arguments for the index of where to start removing items, then the number of items to remove. If the second argument is not provided, the default is to remove items through the end. However, the `splice` method mutates the original array it is called on. Here's an example:
+É comum precisar remover alguns itens de um array e manter o resto. O JavaScript oferece o método `splice`, que recebe uma posição de onde começar a remover e o número de elementos para remover como argumentos para isso. Se o segundo argumento for omitido, o padrão é remover todos os itens até o final. No entanto, o método `splice` modifica o array original em que é chamado. Um exemplo:
 
 ```js
 var cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 cities.splice(3, 1);
 ```
 
-Here `splice` returns the string `London` and deletes it from the cities array. `cities` will have the value `["Chicago", "Delhi", "Islamabad", "Berlin"]`.
+Aqui `splice` retorna a string `London` e a remove do array cities. `cities` terá o valor `["Chicago", "Delhi", "Islamabad", "Berlin"]`.
 
-As we saw in the last challenge, the `slice` method does not mutate the original array, but returns a new one which can be saved into a variable. Recall that the `slice` method takes two arguments for the indices to begin and end the slice (the end is non-inclusive), and returns those items in a new array. Using the `slice` method instead of `splice` helps to avoid any array-mutating side effects.
+Como vimos no último desafio, o método `slice` não altera o array original; ele retorna um novo array que pode ser armazenado em uma variável. Lembre-se que o método `slice` toma dois argumentos para os índices de início e fim e retorna um array com os elementos presentes entre esses índices (o índice de fim é não-inclusivo). Usar o método `slice` em vez do `splice` ajuda a evitar alterações em arrays e, portanto, efeitos colaterais.
 
 # --instructions--
 
-Rewrite the function `nonMutatingSplice` by using `slice` instead of `splice`. It should limit the provided `cities` array to a length of 3, and return a new array with only the first three items.
+Reescreva a função `nonMutatingSplice` com `slice` em vez de `splice`. Ela deve limitar o array `cities` providenciado ao tamanho 3 e retornar um novo array com apenas os três primeiros itens.
 
-Do not mutate the original array provided to the function.
+Não modifique o array original passado à função.
 
 # --hints--
 
-Your code should use the `slice` method.
+Você deve usar o método `slice`.
 
 ```js
 assert(code.match(/\.slice/g));
 ```
 
-Your code should not use the `splice` method.
+Você não deve usar o método `splice`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?splice/g));
 ```
 
-The `inputCities` array should not change.
+O array `inputCities` não deve ser alterado.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` should return `["Chicago", "Delhi", "Islamabad"]`.
+`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` deve retornar `["Chicago", "Delhi", "Islamabad"]`.
 
 ```js
 assert(

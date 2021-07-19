@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b91
-title: Ignore Case While Matching
+title: Ignore a Caixa ao Buscar
 challengeType: 1
 forumTopicId: 301344
 dashedName: ignore-case-while-matching
@@ -8,73 +8,73 @@ dashedName: ignore-case-while-matching
 
 # --description--
 
-Up until now, you've looked at regexes to do literal matches of strings. But sometimes, you might want to also match case differences.
+Até agora você escreveu regexes para encontrar strings literais. Mas, às vezes, você pode querer encontrar caixas diferentes.
 
-Case (or sometimes letter case) is the difference between uppercase letters and lowercase letters. Examples of uppercase are `A`, `B`, and `C`. Examples of lowercase are `a`, `b`, and `c`.
+Caixa (-alta ou -baixa) é a diferença entre letras maiúsculas e minúsculas. São exemplos de caixa alta: `A`, `B` e `C`. `a`, `b` e `c` são exemplos de caixa baixa.
 
-You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case - the `i` flag. You can use it by appending it to the regex. An example of using this flag is `/ignorecase/i`. This regex can match the strings `ignorecase`, `igNoreCase`, and `IgnoreCase`.
+Você pode encontrar ambas as caixas usando algo que chamamos de <dfn>flag</dfn>. Existem várias flags, mas agora nós queremos a flag que ignora a caixa - a flag `i`. Para usá-la é só colocar ao fim da regex. Por exemplo, escrever `/ignorecase/i` é uma forma. Essa regex pode encontrar as strings `ignorecase`, `igNoreCase` e `IgnoreCase` (e todas as outras combinações de maiúsculas e minúsculas).
 
 # --instructions--
 
-Write a regex `fccRegex` to match `freeCodeCamp`, no matter its case. Your regex should not match any abbreviations or variations with spaces.
+Escreva uma regex `fccRegex` que encontre `freeCodeCamp`, não importa em que caixa esteja. Sua regex não deve buscar abreviações ou variações com espaços.
 
 # --hints--
 
-Your regex should match the string `freeCodeCamp`
+Sua regex deve encontrar a string `freeCodeCamp`
 
 ```js
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
-Your regex should match the string `FreeCodeCamp`
+Sua regex deve encontrar a string `FreeCodeCamp`
 
 ```js
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
-Your regex should match the string `FreecodeCamp`
+Sua regex deve encontrar a string `FreecodeCamp`
 
 ```js
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
-Your regex should match the string `FreeCodecamp`
+Sua regex deve encontrar a string `FreeCodecamp`
 
 ```js
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
-Your regex should not match the string `Free Code Camp`
+Sua regex não deve encontrar a string `Free Code Camp`
 
 ```js
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
-Your regex should match the string `FreeCOdeCamp`
+Sua regex deve encontrar a string `FreeCOdeCamp`
 
 ```js
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
-Your regex should not match the string `FCC`
+Sua regex não deve encontrar a string `FCC`
 
 ```js
 assert(!fccRegex.test('FCC'));
 ```
 
-Your regex should match the string `FrEeCoDeCamp`
+Sua regex deve encontrar a string `FrEeCoDeCamp`
 
 ```js
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
-Your regex should match the string `FrEeCodECamp`
+Sua regex deve encontrar a string `FrEeCodECamp`
 
 ```js
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
-Your regex should match the string `FReeCodeCAmp`
+Sua regex deve encontrar a string `FReeCodeCAmp`
 
 ```js
 assert(fccRegex.test('FReeCodeCAmp'));

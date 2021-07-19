@@ -12,13 +12,7 @@ dashedName: problem-82-path-sum-three-ways
 
 The minimal path sum in the 5 by 5 matrix below, by starting in any cell in the left column and finishing in any cell in the right column, and only moving up, down, and right, is indicated in red and bold; the sum is equal to `994`.
 
-  $$\begin{pmatrix}
-  131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
-  \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\
-  630 & 803 & 746 & 422 & 111\\\\
-  537 & 699 & 497 & 121 & 956\\\\
-  805 & 732 & 524 & 37 & 331
-  \end{pmatrix}$$
+  $$\begin{pmatrix} 131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\ 630 & 803 & 746 & 422 & 111\\\\ 537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
 
 Find the minimal path sum from the left column to the right column in `matrix`, a 2D array representing a matrix. The maximum matrix size used in tests will be 80 by 80.
 

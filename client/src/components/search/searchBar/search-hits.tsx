@@ -7,7 +7,7 @@ import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 import Suggestion from './search-suggestion';
 import NoHitsSuggestion from './no-hits-suggestion';
 
-const searchUrl = searchPageUrl as string;
+const searchUrl = searchPageUrl;
 interface customHitsPropTypes {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hits: Array<any>;

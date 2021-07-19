@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9c
-title: 'Natural Language Processing With RNNs: Part 2'
+title: '使用 RNN 進行自然語言處理：第 2 部分'
 challengeType: 11
 videoId: mUU9YXOFbZg
 dashedName: natural-language-processing-with-rnns-part-2
@@ -10,19 +10,19 @@ dashedName: natural-language-processing-with-rnns-part-2
 
 ## --text--
 
-Word embeddings are...:
+詞嵌入是指...：
 
 ## --answers--
 
-an unordered group of encoded words that describes the frequency of words in a given document.
+一組無序的編碼詞，描述給定文檔中詞的頻率。
 
 ---
 
-a group of encoded words that preserves the original order of the words in a given document.
+一組編碼單詞，保留給定文檔中單詞的原始順序。
 
 ---
 
-a vectorized representation of words in a given document that places words with similar meanings near each other.
+給定文檔中單詞的矢量化表示，將具有相似含義的單詞彼此靠近。
 
 ## --video-solution--
 

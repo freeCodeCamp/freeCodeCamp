@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617d
-title: Use the Lifecycle Method componentDidMount
+title: Usa el método de ciclo de vida componentDidMount
 challengeType: 6
 forumTopicId: 301422
 dashedName: use-the-lifecycle-method-componentdidmount
@@ -8,17 +8,17 @@ dashedName: use-the-lifecycle-method-componentdidmount
 
 # --description--
 
-Most web developers, at some point, need to call an API endpoint to retrieve data. If you're working with React, it's important to know where to perform this action.
+La mayoría de los desarrolladores web, en algún momento, necesitan llamar al endpoint de un API para obtener datos. Si estás trabajando con React, es importante saber dónde realizar esta acción.
 
-The best practice with React is to place API calls or any calls to your server in the lifecycle method `componentDidMount()`. This method is called after a component is mounted to the DOM. Any calls to `setState()` here will trigger a re-rendering of your component. When you call an API in this method, and set your state with the data that the API returns, it will automatically trigger an update once you receive the data.
+La mejor práctica con React es ubicar las llamadas API o cualquier llamada a tu servidor en el método de ciclo de vida `componentDidMount()`. Este método se llama después de que un componente es montado (mounted) en el DOM. Cualquier llamada a `setState()` aquí desencadenará un re-renderizado de tu componente. Cuando se llame a una API en este método, y se modifique el estado con los datos que la API devuelve, automáticamente se ejecutará una actualización una vez que los datos sean recibidos.
 
 # --instructions--
 
-There is a mock API call in `componentDidMount()`. It sets state after 2.5 seconds to simulate calling a server to retrieve data. This example requests the current total active users for a site. In the render method, render the value of `activeUsers` in the `h1` after the text `Active Users:`. Watch what happens in the preview, and feel free to change the timeout to see the different effects.
+Hay una llamada simulada al API en `componentDidMount()`. Esta llamada modifica el estado después de 2.5 segundos para simular una llamada a un servidor para obtener datos. Este ejemplo consulta el total de usuarios activos actual para un sitio. En el método render, se renderiza el valor de `activeUsers` en el `h1` después del texto `Active Users:`. Mira lo que sucede en la vista previa, y siéntete libre de cambiar el tiempo de espera para ver los diferentes efectos.
 
 # --hints--
 
-`MyComponent` should render a `div` element which wraps an `h1` tag.
+`MyComponent` debe mostrar un elemento `div` el cual contiene una etiqueta `h1`.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-Component state should be updated with a timeout function in `componentDidMount`.
+El estado del componente debe actualizarse con una función timeout en `componentDidMount`.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `h1` tag should render the `activeUsers` value from `MyComponent`'s state.
+La etiqueta `h1` debe renderizar el valor `activeUsers` del estado de `MyComponent`.
 
 ```js
 (() => {

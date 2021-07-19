@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5e
-title: Avoid Mutations and Side Effects Using Functional Programming
+title: Evite Mutações e Efeitos Colaterais usando Programação Funcional
 challengeType: 1
 forumTopicId: 301228
 dashedName: avoid-mutations-and-side-effects-using-functional-programming
@@ -8,39 +8,39 @@ dashedName: avoid-mutations-and-side-effects-using-functional-programming
 
 # --description--
 
-If you haven't already figured it out, the issue in the previous challenge was with the `splice` call in the `tabClose()` function. Unfortunately, `splice` changes the original array it is called on, so the second call to it used a modified array, and gave unexpected results.
+Caso você ainda não tenha descoberto, o problema do desafio anterior é com a chamada a `splice` na função `tabClose()`. Infelizmente, `splice` modifica o array original no qual opera e, por isso, a segunda chamada usou o array alterado, nos dando resultados inesperados.
 
-This is a small example of a much larger pattern - you call a function on a variable, array, or an object, and the function changes the variable or something in the object.
+Este é apenas um pequeno exemplo - você chama uma função e passa uma variável, array ou objeto a ela; a função modifica a variável ou alguma coisa no objeto.
 
-One of the core principles of functional programming is to not change things. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
+Um dos principais princípios da programação funcional é que não devemos alterar coisas. Alterações levam a bugs. É mais fácil prever bugs quando se sabe que as funções não mudam nada. Incluindo os seus argumentos e as variáveis globais.
 
-The previous example didn't have any complicated operations but the `splice` method changed the original array, and resulted in a bug.
+No exemplo anterior não havia nenhuma operação complicada, mas o método `splice` modificou o array original e o resultado foi um bug.
 
-Recall that in functional programming, changing or altering things is called <dfn>mutation</dfn>, and the outcome is called a <dfn>side effect</dfn>. A function, ideally, should be a <dfn>pure function</dfn>, meaning that it does not cause any side effects.
+Lembre-se que, em programação funcional, modificar ou alterar coisas é chamado de <dfn>mutação</dfn> e a consequência é chamada de <dfn>efeito colateral</dfn>. Idealmente, uma função deveria ser uma <dfn>função pura</dfn>, que é uma função que não causa efeitos colaterais.
 
-Let's try to master this discipline and not alter any variable or object in our code.
+Vamos tentar dominar esta disciplina e não alterar nenhuma variável ou objeto em nosso código.
 
 # --instructions--
 
-Fill in the code for the function `incrementer` so it returns the value of the global variable `fixedValue` increased by one.
+Complete o código da função `incrementer` para que ela retorne o valor da variável global `fixedValue` acrescida em um.
 
 # --hints--
 
-Your function `incrementer` should not change the value of `fixedValue` (which is `4`).
+Sua função `incrementer` não deve alterar o valor de `fixedValue` (que é `4`).
 
 ```js
 incrementer();
 assert(fixedValue === 4);
 ```
 
-Your `incrementer` function should return a value that is one larger than the `fixedValue` value.
+Sua função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
 
 ```js
 const __newValue = incrementer();
 assert(__newValue === 5);
 ```
 
-Your `incrementer` function should return a value based on the global `fixedValue` variable value.
+Sua função `incrementer` deve retornar um valor baseado no valor da variável global `fixedValue`.
 
 ```js
 (function () {

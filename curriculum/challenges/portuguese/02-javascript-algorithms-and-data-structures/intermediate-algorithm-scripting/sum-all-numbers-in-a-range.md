@@ -1,6 +1,6 @@
 ---
 id: a3566b1109230028080c9345
-title: Sum All Numbers in a Range
+title: Soma Todos os Números em um intervalo
 challengeType: 5
 forumTopicId: 16083
 dashedName: sum-all-numbers-in-a-range
@@ -8,37 +8,37 @@ dashedName: sum-all-numbers-in-a-range
 
 # --description--
 
-We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.
+Vamos passar um array de dois números. Retorne a soma desses dois números mais a soma de todos os números entre eles. O menor número nem sempre chegará primeiro.
 
-For example, `sumAll([4,1])` should return `10` because sum of all the numbers between 1 and 4 (both inclusive) is `10`.
+Por exemplo, `somAll([4, 1])` deve retornar `10` porque a soma de todos os números entre 1 e 4 (ambos incluídos) é `10`.
 
 # --hints--
 
-`sumAll([1, 4])` should return a number.
+`sumAll([1, 4])` deve ser um número.
 
 ```js
 assert(typeof sumAll([1, 4]) === 'number');
 ```
 
-`sumAll([1, 4])` should return 10.
+`sumAll([1, 4])` deve retornar 10.
 
 ```js
 assert.deepEqual(sumAll([1, 4]), 10);
 ```
 
-`sumAll([4, 1])` should return 10.
+`sumAll([4, 1])` deve retornar 10.
 
 ```js
 assert.deepEqual(sumAll([4, 1]), 10);
 ```
 
-`sumAll([5, 10])` should return 45.
+`sumAll([5, 10])` deve retornar 45.
 
 ```js
 assert.deepEqual(sumAll([5, 10]), 45);
 ```
 
-`sumAll([10, 5])` should return 45.
+`sumAll([10, 5])` deve retornar 45.
 
 ```js
 assert.deepEqual(sumAll([10, 5]), 45);

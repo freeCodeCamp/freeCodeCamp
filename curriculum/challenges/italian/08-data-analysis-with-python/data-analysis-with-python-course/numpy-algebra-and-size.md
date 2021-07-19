@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c157
-title: Numpy Algebra and Size
+title: Algebra e dimensione con Numpy
 challengeType: 11
 videoId: XAT97YLOKD8
 dashedName: numpy-algebra-and-size
@@ -8,34 +8,34 @@ dashedName: numpy-algebra-and-size
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What is the relationship between size of objects (such as lists and datatypes) in memory in Python's standard library and the NumPy library? Knowing this, what are the implications for performance?
+Qual è la relazione tra le dimensioni degli oggetti (come liste e tipi di dati) nella memoria nella libreria standard di Python e nella libreria NumPy? Sapendo questo, quali sono le implicazioni per le prestazioni?
 
 ## --answers--
 
-Standard Python objects take up much more memory to store than NumPy objects; operations on comparable standard Python and NumPy objects complete in roughly the same time.
+Gli oggetti Python standard occupano molta più memoria degli oggetti NumPy; operazioni su oggetti Python e NumPy standard comparabili sono completate approssimativamente nello stesso tempo.
 
 ---
 
-NumPy objects take up much more memory than standard Python objects; operations on NumPy objects complete very quickly compared to comparable objects in standard Python.
+Gli oggetti NumPy occupano molta più memoria degli oggetti Python standard; le operazioni su oggetti NumPy sono completate molto più rapidamente rispetto agli oggetti comparabili presenti in Python standard.
 
 ---
 
-NumPy objects take up much less memory than Standard Python objects; operations on Standard Python objects complete very quickly compared to comparable objects on NumPy Object.
+Gli oggetti NumPy occupano molta meno memoria degli oggetti Python standard; le operazioni su oggetti Python standard sono completate molto più rapidamente rispetto agli oggetti comparabili su NumPy.
 
 ---
 
-Standard Python objects take up more memory than NumPy objects; operations on NumPy objects complete very quickly compared to comparable objects in standard Python.
+Gli oggetti Python standard occupano più memoria degli oggetti NumPy; le operazioni su oggetti NumPy sono completate molto più rapidamente rispetto agli oggetti comparabili presenti in Python standard.
 
 ## --video-solution--
 

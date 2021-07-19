@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function GreenPass(
@@ -7,7 +7,7 @@ function GreenPass(
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.passed')}</span>
       <svg
         height='50'
@@ -48,7 +48,7 @@ function GreenPass(
           />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

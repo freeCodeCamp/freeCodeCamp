@@ -1,8 +1,7 @@
 ---
 id: 587d8247367417b2b2512c39
 title: >-
-  Mitigate the Risk of Cross Site Scripting (XSS) Attacks with
-  helmet.xssFilter()
+  Mitigare il rischio di attacchi Cross-Site Scripting (XSS) con helmet.xssFilter()
 challengeType: 2
 forumTopicId: 301583
 dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xssfilter
@@ -10,23 +9,23 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
-Cross-site scripting (XSS) is a frequent type of attack where malicious scripts are injected into vulnerable pages, with the purpose of stealing sensitive data like session cookies, or passwords.
+Il cross-site scripting (XSS) è un tipo di attacco frequente in cui script dannosi vengono iniettati in pagine vulnerabili, con lo scopo di rubare dati sensibili come cookie di sessione, o password.
 
-The basic rule to lower the risk of an XSS attack is simple: “Never trust user’s input”. As a developer you should always sanitize all the input coming from the outside. This includes data coming from forms, GET query urls, and even from POST bodies. Sanitizing means that you should find and encode the characters that may be dangerous e.g. &lt;, >.
+La regola di base per ridurre il rischio di un attacco XSS è semplice: “Non fidarti mai dell’input dell’utente”. Come sviluppatore dovresti sempre sanificare tutti gli input provenienti dall'esterno. Questo include i dati provenienti da moduli, URL di query GET e persino dal corpo delle richieste POST. Sanificare significa che si dovrebbe trovare e codificare i caratteri che possono essere pericolosi, ad esempio &lt;, >.
 
-Modern browsers can help mitigating the risk by adopting better software strategies. Often these are configurable via http headers.
+I browser moderni possono aiutare a mitigare il rischio adottando strategie software migliori. Spesso sono configurabili tramite intestazioni http.
 
-The X-XSS-Protection HTTP header is a basic protection. The browser detects a potential injected script using a heuristic filter. If the header is enabled, the browser changes the script code, neutralizing it. It still has limited support.
+L'intestazione X-XSS-Protection HTTP è una protezione di base. Il browser rileva un potenziale script iniettato utilizzando un filtro euristico. Se l'intestazione è abilitata, il browser cambia il codice di script, neutralizzandolo. Ha ancora un supporto limitato.
 
 # --instructions--
 
-Use `helmet.xssFilter()` to sanitize input sent to your server.
+Usa `helmet.xssFilter()` per sanificare l'input inviato al tuo server.
 
 # --hints--
 
-helmet.xssFilter() middleware should be mounted correctly
+Il middleware helmet.xssFilter() deve essere montato correttamente
 
 ```js
 (getUserInput) =>

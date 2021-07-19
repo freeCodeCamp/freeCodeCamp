@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d9
-title: Comparisons with the Logical Or Operator
+title: Comparações com o Operador Lógico Ou
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEPrGTN'
 forumTopicId: 16800
@@ -9,11 +9,11 @@ dashedName: comparisons-with-the-logical-or-operator
 
 # --description--
 
-The <dfn>logical or</dfn> operator (`||`) returns `true` if either of the <dfn>operands</dfn> is `true`. Otherwise, it returns `false`.
+O <dfn>operador lógico ou</dfn> (`||`) retorna `true` se qualquer um dos <dfn>operandos</dfn> for `true`. Caso contrário, retorna `false`.
 
-The <dfn>logical or</dfn> operator is composed of two pipe symbols: (`||`). This can typically be found between your Backspace and Enter keys.
+O <dfn>operador lógico ou</dfn> é composto por dois símbolos de pipe: (`||`). Normalmente isso pode ser encontrado entre as teclas Backspace e Enter.
 
-The pattern below should look familiar from prior waypoints:
+O padrão abaixo deve parecer familiar aos pontos da passagens anteriores:
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-will return `Yes` only if `num` is between `5` and `10` (5 and 10 included). The same logic can be written as:
+retornará `Yes` apenas se `num` for entre `5` e `10` (5 e 10 incluídos). A mesma lógica pode ser escrita como:
 
 ```js
 if (num > 10 || num < 5) {
@@ -36,65 +36,65 @@ return "Yes";
 
 # --instructions--
 
-Combine the two `if` statements into one statement which returns the string `Outside` if `val` is not between `10` and `20`, inclusive. Otherwise, return the string `Inside`.
+Combine as duas instruções `if` em uma mesma instrução a qual retorna a string `Outside` se `val` não estiver entre `10` e `20`, inclusos 10 e 20. Caso contrário, retorna a string `Inside`.
 
 # --hints--
 
-You should use the `||` operator once
+Você deve usar o operador `||` uma vez
 
 ```js
 assert(code.match(/\|\|/g).length === 1);
 ```
 
-You should only have one `if` statement
+Você deve ter apenas uma instrução `if`
 
 ```js
 assert(code.match(/if/g).length === 1);
 ```
 
-`testLogicalOr(0)` should return the string `Outside`
+`testLogicalOr(0)` deve retornar a string `Outside`
 
 ```js
 assert(testLogicalOr(0) === 'Outside');
 ```
 
-`testLogicalOr(9)` should return the string `Outside`
+`testLogicalOr(9)` deve retornar a string `Outside`
 
 ```js
 assert(testLogicalOr(9) === 'Outside');
 ```
 
-`testLogicalOr(10)` should return the string `Inside`
+`testLogicalOr(10)` deve retornar a string `Inside`
 
 ```js
 assert(testLogicalOr(10) === 'Inside');
 ```
 
-`testLogicalOr(15)` should return the string `Inside`
+`testLogicalOr(15)` deve retornar a string `Inside`
 
 ```js
 assert(testLogicalOr(15) === 'Inside');
 ```
 
-`testLogicalOr(19)` should return the string `Inside`
+`testLogicalOr(19)` deve retornar a string `Inside`
 
 ```js
 assert(testLogicalOr(19) === 'Inside');
 ```
 
-`testLogicalOr(20)` should return the string `Inside`
+`testLogicalOr(20)` deve retornar a string `Inside`
 
 ```js
 assert(testLogicalOr(20) === 'Inside');
 ```
 
-`testLogicalOr(21)` should return the string `Outside`
+`testLogicalOr(21)` deve retornar a string `Outside`
 
 ```js
 assert(testLogicalOr(21) === 'Outside');
 ```
 
-`testLogicalOr(25)` should return the string `Outside`
+`testLogicalOr(25)` deve retornar a string `Outside`
 
 ```js
 assert(testLogicalOr(25) === 'Outside');

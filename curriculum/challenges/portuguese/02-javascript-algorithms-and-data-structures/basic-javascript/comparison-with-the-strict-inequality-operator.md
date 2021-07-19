@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d3
-title: Comparison with the Strict Inequality Operator
+title: Comparação com o Operador de Desigualdade Estrito
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKekkUy'
 forumTopicId: 16791
@@ -9,9 +9,9 @@ dashedName: comparison-with-the-strict-inequality-operator
 
 # --description--
 
-The strict inequality operator (`!==`) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns `false` where strict equality would return `true` and *vice versa*. The strict inequality operator will not convert data types.
+O operador de desigualdade estrito (`!=`) é o oposto lógico do operador de igualdade estrito. Significa que "não é estritamente igual" e retorna `false` onde a igualdade estrita retornaria `true` e *vice-versa*. O operador de desigualdade estrita não converterá tipos de dados.
 
-**Examples**
+**Exemplos**
 
 ```js
 3 !==  3
@@ -19,39 +19,39 @@ The strict inequality operator (`!==`) is the logical opposite of the strict equ
 4 !==  3
 ```
 
-In order, these expressions would evaluate to `false`, `true`, and `true`.
+Em ordem, essas expressões seriam iguais à `false`, `true` e `true`.
 
 # --instructions--
 
-Add the strict inequality operator to the `if` statement so the function will return the string `Not Equal` when `val` is not strictly equal to `17`
+Adicione o operador de desigualdade estrito ao comando `if` para que a função retorne a string `Not Equal` quando `val` não é estritamente igual a `17`
 
 # --hints--
 
-`testStrictNotEqual(17)` should return the string `Equal`
+`testStrictNotEqual(17)` deve retornar a string `Equal`
 
 ```js
 assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-`testStrictNotEqual("17")` should return the string `Not Equal`
+`testStrictNotEqual("17")` deve retornar a string `Not Equal`
 
 ```js
 assert(testStrictNotEqual('17') === 'Not Equal');
 ```
 
-`testStrictNotEqual(12)` should return the string `Not Equal`
+`testStrictNotEqual(12)` deve retornar a string `Not Equal`
 
 ```js
 assert(testStrictNotEqual(12) === 'Not Equal');
 ```
 
-`testStrictNotEqual("bob")` should return the string `Not Equal`
+`testStrictNotEqual("bob")` deve retornar a string `Not Equal`
 
 ```js
 assert(testStrictNotEqual('bob') === 'Not Equal');
 ```
 
-You should use the `!==` operator
+Você deve usar o operador `!==`
 
 ```js
 assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);

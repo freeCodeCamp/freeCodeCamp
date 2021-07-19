@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function Heart(
@@ -7,7 +7,7 @@ function Heart(
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.heart')}</span>
       <svg
         height={184}
@@ -31,7 +31,7 @@ function Heart(
           </g>
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

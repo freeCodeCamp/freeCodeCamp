@@ -14,16 +14,16 @@ Similarly if no digit is exceeded by the digit to its right it is called a decre
 
 We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
 
-As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below 1010.
+As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below ${10}^{10}$.
 
-How many numbers below a googol (10100) are not bouncy?
+How many numbers below a googol (${10}^{100}$) are not bouncy?
 
 # --hints--
 
-`euler113()` should return 51161058134250.
+`nonBouncyNumbers()` should return `51161058134250`.
 
 ```js
-assert.strictEqual(euler113(), 51161058134250);
+assert.strictEqual(nonBouncyNumbers(), 51161058134250);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler113(), 51161058134250);
 ## --seed-contents--
 
 ```js
-function euler113() {
+function nonBouncyNumbers() {
 
   return true;
 }
 
-euler113();
+nonBouncyNumbers();
 ```
 
 # --solutions--

@@ -24,13 +24,13 @@ Declare a `store` variable and assign it to the `createStore()` method, passing 
 
 # --hints--
 
-The redux store should exist.
+The Redux store should exist.
 
 ```js
 assert(typeof store.getState === 'function');
 ```
 
-The redux store should have a value of 5 for the state.
+The Redux store should have a value of 5 for the state.
 
 ```js
 assert(store.getState() === 5);

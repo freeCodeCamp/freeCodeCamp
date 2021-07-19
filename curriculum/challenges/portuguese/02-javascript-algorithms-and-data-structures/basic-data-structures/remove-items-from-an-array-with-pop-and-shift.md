@@ -1,6 +1,6 @@
 ---
 id: 587d78b2367417b2b2512b0f
-title: Remove Items from an Array with pop() and shift()
+title: Remova Itens de um Array com pop() e shift()
 challengeType: 1
 forumTopicId: 301165
 dashedName: remove-items-from-an-array-with-pop-and-shift
@@ -8,9 +8,9 @@ dashedName: remove-items-from-an-array-with-pop-and-shift
 
 # --description--
 
-Both `push()` and `unshift()` have corresponding methods that are nearly functional opposites: `pop()` and `shift()`. As you may have guessed by now, instead of adding, `pop()` *removes* an element from the end of an array, while `shift()` removes an element from the beginning. The key difference between `pop()` and `shift()` and their cousins `push()` and `unshift()`, is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.
+Tanto `push()` e `unshift()` possuem métodos correspondentes que são quase opostos funcionais: `pop()` e `shift()`. Como você já pode ter adivinhado, em vez de adicionar, `pop()` *remove* um elemento do fim de um array, enquanto `shift()` remove um elemento do início. A diferença chave entre `pop()` e `shift()` e seus primos `push()` e `unshift()`, é que nenhum dos métodos recebe parâmetros, e cada um só permite que seja modificado um elemento de cada vez de um array.
 
-Let's take a look:
+Vamos dar uma olhada:
 
 ```js
 let greetings = ['whats up?', 'hello', 'see ya!'];
@@ -18,29 +18,29 @@ let greetings = ['whats up?', 'hello', 'see ya!'];
 greetings.pop();
 ```
 
-`greetings` would have the value `['whats up?', 'hello']`.
+`greetings` teria o valor `['whats up?', 'hello']`.
 
 ```js
 greetings.shift();
 ```
 
-`greetings` would have the value `['hello']`.
+`greetings` teria o valor `['hello']`.
 
-We can also return the value of the removed element with either method like this:
+Nós também podemos retornar o valor do elemento removido com qualquer método dessa forma:
 
 ```js
 let popped = greetings.pop();
 ```
 
-`greetings` would have the value `[]`, and `popped` would have the value `hello`.
+`greetings` teria o valor `[]` e `popped` teria o valor `hello`.
 
 # --instructions--
 
-We have defined a function, `popShift`, which takes an array as an argument and returns a new array. Modify the function, using `pop()` and `shift()`, to remove the first and last elements of the argument array, and assign the removed elements to their corresponding variables, so that the returned array contains their values.
+Nós definimos uma função, `popShift`, a qual recebe um array como argumento e retorna um novo array. Modifique a função, usando `pop()` e `shift()`, para remover o primeiro e o último elemento do array passado como argumento, e atribua os valores removidos para suas variáveis correspondentes, para que o array retornado contenha seus valores.
 
 # --hints--
 
-`popShift(["challenge", "is", "not", "complete"])` should return `["challenge", "complete"]`
+`popShift(["challenge", "is", "not", "complete"])` deve retornar `["challenge", "complete"]`
 
 ```js
 assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), [
@@ -49,13 +49,13 @@ assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), [
 ]);
 ```
 
-The `popShift` function should utilize the `pop()` method
+A função `popShift` deve utilizar o método `pop()`
 
 ```js
 assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1);
 ```
 
-The `popShift` function should utilize the `shift()` method
+A função `popShift` deve utilizar o método `shift()`
 
 ```js
 assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1);

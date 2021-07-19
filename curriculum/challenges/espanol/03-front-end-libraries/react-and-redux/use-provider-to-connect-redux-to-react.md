@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-The `DisplayMessages` component should render an h2, input, button, and `ul` element.
+The `DisplayMessages` component should render an `h2`, `input`, `button`, and `ul` element.
 
 ```js
 assert(

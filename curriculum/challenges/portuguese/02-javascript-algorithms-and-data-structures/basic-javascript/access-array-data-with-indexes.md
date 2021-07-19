@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ca
-title: Access Array Data with Indexes
+title: Acessar Array de dados com índices
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158
@@ -9,13 +9,13 @@ dashedName: access-array-data-with-indexes
 
 # --description--
 
-We can access the data inside arrays using <dfn>indexes</dfn>.
+Podemos acessar os dados dentro de arrays usando <dfn>indexes</dfn>.
 
-Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of `0`.
+Os índices de um array são escritos na mesma notação com colchetes que as strings usam, exceto que em vez de especificar um caractere, eles estão especificando um item do array. Assim como com strings, arrays usam indexação <dfn>zero-based</dfn>, de forma que o primeiro elemento de um array possui índice `0`.
 
 <br>
 
-**Example**
+**Exemplo**
 
 ```js
 var array = [50,60,70];
@@ -23,17 +23,17 @@ array[0];
 var data = array[1];
 ```
 
-`array[0]` is now `50`, and `data` has the value `60`.
+`array[0]` agora é `50` e `data` tem o valor `60`.
 
-**Note:** There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+**Nota:** Não deve haver nenhum espaço entre o nome do array e os colchetes, como `array [0]`. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
 
 # --instructions--
 
-Create a variable called `myData` and set it to equal the first value of `myArray` using bracket notation.
+Crie uma variável chamada `myData` e defina-a como igual ao primeiro valor de `myArray` usando notação de colchetes.
 
 # --hints--
 
-The variable `myData` should equal the first value of `myArray`.
+A variável `myData` deve ser igual ao primeiro valor de `myArray`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-The data in variable `myArray` should be accessed using bracket notation.
+O dado na variável `myArray` deve ser acessado usando notação de colchetes.
 
 ```js
 assert(

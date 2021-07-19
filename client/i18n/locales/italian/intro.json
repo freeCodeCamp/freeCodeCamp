@@ -94,7 +94,7 @@
       "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
       "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e Programmazione Funzionale (Functional Programming, FP)."
     ],
-    "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare durante il corso le estensioni che modificano o bloccano il contenuto delle pagine.",
+    "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare le estensioni che modificano o bloccano il contenuto delle pagine durante il corso.",
     "blocks": {
       "basic-javascript": {
         "title": "JavaScript Base",
@@ -137,7 +137,7 @@
         "title": "Scrittura di Algoritmi Base",
         "intro": [
           "Un algoritmo è una serie di istruzioni passo-passo che descrivono come fare qualcosa.",
-          "Per scrivere un algoritmo efficace, aiuta spezzare un problema in parti più piccole, e pensare attentamente a come risolvere ogni parte con il codice.",
+          "Per scrivere un algoritmo efficace, aiuta spezzare un problema in parti più piccole e pensare attentamente a come risolvere ogni parte con il codice.",
           "In questo corso, imparerai i fondamenti del pensiero algoritmico scrivendo algoritmi che fanno di tutto, dalla conversione delle temperature alla gestione di complessi array 2D."
         ]
       },
@@ -259,7 +259,7 @@
     "intro": [
       "I dati ci circondano, ma non ci dicono molto senza forma o contesto.",
       "Nella Certificazione Visualizzazione dei Dati, costruirai diagrammi, grafici e mappe per presentare diversi tipi di dati con la libreria D3.js.",
-      "Imparerai anche JSON (JavaScript Object Notation), e come lavorare con i dati online utilizzando un'API (Application Programing Interface)."
+      "Imparerai anche JSON (JavaScript Object Notation), e come lavorare con i dati online utilizzando un'API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {

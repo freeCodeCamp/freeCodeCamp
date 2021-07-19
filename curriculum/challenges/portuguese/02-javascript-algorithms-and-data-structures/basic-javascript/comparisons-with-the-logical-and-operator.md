@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d8
-title: Comparisons with the Logical And Operator
+title: Comparações com o Operador lógico E
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvbRVtr'
 forumTopicId: 16799
@@ -9,9 +9,9 @@ dashedName: comparisons-with-the-logical-and-operator
 
 # --description--
 
-Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (`&&`) returns `true` if and only if the <dfn>operands</dfn> to the left and right of it are true.
+Às vezes você precisará testar mais de uma coisa de cada vez. O <dfn>operador lógico e</dfn>(`&&`) retornará `true` apenas se os <dfn>operadores</dfn> a esquerda e à direita são verdadeiros.
 
-The same effect could be achieved by nesting an if statement inside another if:
+O mesmo efeito pode ser alcançado aninhando uma instrução if dentro de outro if:
 
 ```js
 if (num > 5) {
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-will only return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written as:
+só retornará `Yes` se `num` é maior que `5` e menor que `10`. A mesma lógica pode ser escrita como:
 
 ```js
 if (num > 5 && num < 10) {
@@ -33,65 +33,65 @@ return "No";
 
 # --instructions--
 
-Replace the two if statements with one statement, using the `&&` operator, which will return the string `Yes` if `val` is less than or equal to `50` and greater than or equal to `25`. Otherwise, will return the string `No`.
+Substitua as duas instruções if por uma declaração, usando o operador `&&`, que irá retornar a string `Yes` se `val` for menor ou igual a `50` e maior ou igual a `25`. Caso contrário, retornará a string `No`.
 
 # --hints--
 
-You should use the `&&` operator once
+Você deve usar o operador `&&` uma vez
 
 ```js
 assert(code.match(/&&/g).length === 1);
 ```
 
-You should only have one `if` statement
+Você deve ter apenas um comando `if`
 
 ```js
 assert(code.match(/if/g).length === 1);
 ```
 
-`testLogicalAnd(0)` should return the string `No`
+`testLogicalAnd(0)` deve retornar a string `No`
 
 ```js
 assert(testLogicalAnd(0) === 'No');
 ```
 
-`testLogicalAnd(24)` should return the string `No`
+`testLogicalAnd(24)` deve retornar a string `No`
 
 ```js
 assert(testLogicalAnd(24) === 'No');
 ```
 
-`testLogicalAnd(25)` should return the string `Yes`
+`testLogicalAnd(25)` deve retornar a string `Yes`
 
 ```js
 assert(testLogicalAnd(25) === 'Yes');
 ```
 
-`testLogicalAnd(30)` should return the string `Yes`
+`testLogicalAnd(30)` deve retornar a string `Yes`
 
 ```js
 assert(testLogicalAnd(30) === 'Yes');
 ```
 
-`testLogicalAnd(50)` should return the string `Yes`
+`testLogicalAnd(50)` deve retornar a string `Yes`
 
 ```js
 assert(testLogicalAnd(50) === 'Yes');
 ```
 
-`testLogicalAnd(51)` should return the string `No`
+`testLogicalAnd(51)` deve retornar a string `No`
 
 ```js
 assert(testLogicalAnd(51) === 'No');
 ```
 
-`testLogicalAnd(75)` should return the string `No`
+`testLogicalAnd(75)` deve retornar a string `No`
 
 ```js
 assert(testLogicalAnd(75) === 'No');
 ```
 
-`testLogicalAnd(80)` should return the string `No`
+`testLogicalAnd(80)` deve retornar a string `No`
 
 ```js
 assert(testLogicalAnd(80) === 'No');

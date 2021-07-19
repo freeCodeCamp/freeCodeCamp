@@ -7,7 +7,7 @@ function GreenNotCompleted(
   const { t } = useTranslation();
 
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>{t('icons.not-passed')}</span>
       <svg
         height='50'
@@ -29,7 +29,7 @@ function GreenNotCompleted(
           />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

@@ -19,7 +19,7 @@ We also support Windows 10 via WSL2, which you can prepare by [reading this guid
 
 Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**Prerequisites:**
+#### Prerequisites:
 
 | Prerequisite                                                                                  | Version | Notes                                                                                       |
 | --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ npm -v
 
 Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**Follow these steps to get your development environment ready:**
+##### Follow these steps to get your development environment ready:
 
 1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
@@ -471,12 +471,12 @@ A quick reference to the commands that you will need when working locally.
 | `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
 | `npm run storybook`                                            | Starts Storybook for component library development.                                 |
 | `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test-client`                                          | Run the client test suite.                                                          |
 | `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
 | `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
 | `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
 | `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
-| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run test-server`                                          | Run the server test suite.                                                          |
 | `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
 | `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
@@ -554,6 +554,9 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
 The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
+
+> [!NOTE]
+> If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
 
 ## Getting Help
 

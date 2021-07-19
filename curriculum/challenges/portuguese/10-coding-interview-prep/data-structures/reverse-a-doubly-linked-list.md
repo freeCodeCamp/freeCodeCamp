@@ -165,7 +165,7 @@ var DoublyLinkedList = function() {
   this.head = null;
   this.tail = null;
   // Only change code below this line
-  
+
   // Only change code above this line
 };
 ```

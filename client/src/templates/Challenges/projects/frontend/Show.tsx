@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import type { Dispatch } from 'redux';
 
@@ -28,7 +28,7 @@ import LearnLayout from '../../../../components/layouts/learn';
 import ChallengeTitle from '../../components/challenge-title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Spacer from '../../../../components/helpers/spacer';
-import SolutionForm from '../SolutionForm';
+import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/HelpModal';
@@ -62,7 +62,7 @@ interface ProjectProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
 }

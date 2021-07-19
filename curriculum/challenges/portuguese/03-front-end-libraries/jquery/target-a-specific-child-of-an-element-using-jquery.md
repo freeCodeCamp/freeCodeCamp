@@ -1,32 +1,33 @@
 ---
 id: bad87fee1348bd9aed108826
-title: Target a Specific Child of an Element Using jQuery
+title: Mire um Filho Específico de um Elemento Usando jQuery
 challengeType: 6
 forumTopicId: 18315
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-a-specific-child-of-an-element-using-jquery
 ---
 
 # --description--
 
-You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.
+Você já viu o porque os atributos id são tão convenientes para mirar com seletores jQuery. Mas você nem sempre terá ids legais para trabalhar.
 
-Fortunately, jQuery has some other tricks for targeting the right elements.
+Felizmente, jQuery possui outros truques para apontar para os elementos certos.
 
-jQuery uses CSS Selectors to target elements. The `target:nth-child(n)` CSS selector allows you to select all the nth elements with the target class or element type.
+jQuery usa Seletores CSS para apontar elementos. O seletor CSS `target:nth-child(n)` o permite selecionar todos os elementos nth com a classe ou tipo de elemento alvos.
 
-Here's how you would give the third element in each well the bounce class:
+Aqui está como você daria ao terceiro elemento em cada well a classe bounce:
 
 ```js
 $(".target:nth-child(3)").addClass("animated bounce");
 ```
 
-Make the second child in each of your well elements bounce. You must select the elements' children with the `target` class.
+Faça o segundo filho em cada um dos seus elementos well quicar. Você deve selecionar os filhos do elemento com a classe `alvo`.
 
 # --hints--
 
-The second element in your `target` elements should bounce.
+O segundo elemento nos seus elementos `alvo` deve quicar.
 
 ```js
 assert(
@@ -35,19 +36,19 @@ assert(
 );
 ```
 
-Only two elements should bounce.
+Apenas dois elementos devem quicar.
 
 ```js
 assert($('.animated.bounce').length === 2);
 ```
 
-You should use the `:nth-child()` selector to modify these elements.
+Você deve usar o seletor `:nth-child()` para modificar esses elementos.
 
 ```js
 assert(code.match(/\:nth-child\(/g));
 ```
 
-You should only use jQuery to add these classes to the element.
+Você deve usar apenas jQuery para adicionar essas classes ao elemento.
 
 ```js
 assert(

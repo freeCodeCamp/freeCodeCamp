@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b93
-title: Find More Than the First Match
+title: Encontre Mais do que o Primeiro Resultado
 challengeType: 1
 forumTopicId: 301342
 dashedName: find-more-than-the-first-match
@@ -8,7 +8,7 @@ dashedName: find-more-than-the-first-match
 
 # --description--
 
-So far, you have only been able to extract or search a pattern once.
+Até agora você foi capaz apenas de extrair ou buscar um resultado de uma vez.
 
 ```js
 let testStr = "Repeat, Repeat, Repeat";
@@ -16,39 +16,39 @@ let ourRegex = /Repeat/;
 testStr.match(ourRegex);
 ```
 
-Here `match` would return `["Repeat"]`.
+`match` retorna `["Repeat"]` aqui.
 
-To search or extract a pattern more than once, you can use the `g` flag.
+Para buscar ou extrair um padrão além do primeiro resultado, você pode usar a flag `g` (de "global").
 
 ```js
 let repeatRegex = /Repeat/g;
 testStr.match(repeatRegex);
 ```
 
-And here `match` returns the value `["Repeat", "Repeat", "Repeat"]`
+Aqui, `match` retorna o valor `["Repeat", "Repeat", "Repeat"]`
 
 # --instructions--
 
-Using the regex `starRegex`, find and extract both `Twinkle` words from the string `twinkleStar`.
+Usando a regex `starRegex`, encontre e extraia ambas ocorrências da palavra `Twinkle` da string `twinkleStar`.
 
-**Note**  
-You can have multiple flags on your regex like `/search/gi`
+**Obs:**  
+Você pode usar múltiplas flags em uma regex: `/search/gi`
 
 # --hints--
 
-Your regex `starRegex` should use the global flag `g`
+Sua regex `starRegex` deve usar a flag `g`
 
 ```js
 assert(starRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `starRegex` should use the case insensitive flag `i`
+Sua regex `starRegex` deve usar a flag de ignorar caixa, `i`
 
 ```js
 assert(starRegex.flags.match(/i/).length == 1);
 ```
 
-Your match should match both occurrences of the word `Twinkle`
+Seu resultado deve conter ambas as ocorrências da palavra `Twinkle`
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-Your match `result` should have two elements in it.
+Seu resultado, `result`, deve conter dois elementos.
 
 ```js
 assert(result.length == 2);
