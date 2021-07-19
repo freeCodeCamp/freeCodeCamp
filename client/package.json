@@ -127,8 +127,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.14.5",
-    "@codesee/babel-plugin-instrument": "0.49.1",
-    "@codesee/tracker": "0.49.1",
+    "@codesee/babel-plugin-instrument": "0.50.0",
+    "@codesee/tracker": "0.50.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
