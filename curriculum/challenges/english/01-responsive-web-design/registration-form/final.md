@@ -4,7 +4,7 @@ id:
   id: "`ð'\t\x9A\x15°\x04\NV=Ó"
 title: Final Prototype
 challengeType: 0
-dashedName: part-10
+dashedName: part-14
 ---
 
 # --description--
@@ -44,14 +44,14 @@ Test 1
 <body>
 	<h1>Registration Form</h1>
 	<p>Please fill out this form with the required information</p>
-	<form>
+	<form action='https://fcc-registration-form.com'>
 		<fieldset>
 			<!-- <label for="email">Email: </label>
       <input type="email" name="email" /> -->
 			<label>Enter Your First Name: <input type="text" required /></label>
 			<label>Enter Your Last Name: <input type="text" required /></label>
 			<label>Enter Your Email: <input type="email" name="email" required /></label>
-			<label><span>Create a New Password:</span>
+			<label>Create a New Password: 
 				<input type="password" minlength="8" pattern="[a-z0-5]{8,}" required />
 			</label>
 		</fieldset>
