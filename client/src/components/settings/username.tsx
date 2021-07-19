@@ -11,7 +11,7 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import {
@@ -26,7 +26,7 @@ import { isValidUsername } from '../../../../utils/validate';
 type UsernameProps = {
   isValidUsername: boolean;
   submitNewUsername: (name: string) => void;
-  t: (str: string, obj?: { username: string }) => string;
+  t: TFunction;
   username: string;
   validateUsername: (name: string) => void;
   validating: boolean;

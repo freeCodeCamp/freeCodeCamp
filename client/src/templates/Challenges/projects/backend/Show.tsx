@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 // Local Utilities
 import {
@@ -88,7 +88,7 @@ interface BackEndProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunction;
   tests: TestType[];
   title: string;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
