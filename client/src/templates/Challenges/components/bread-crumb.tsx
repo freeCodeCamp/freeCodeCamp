@@ -25,7 +25,7 @@ const BreadCrumb = ({
         <span className='ellipsis'>
           {i18next.t(`intro:${superBlock}.title`)}
         </span>
-      </Link>{' '}
+      </Link>
       <div className='breadcrumb-arrow' />
       <Link
         className={`breadcrumb-${title ? 'center' : 'right'}`}
@@ -36,8 +36,8 @@ const BreadCrumb = ({
       </Link>
       {title && (
         <>
-          <div className='breadcrumb-arrow' />
-          <span className='breadcrumb-right'>{title}</span>
+          <div className='breadcrumb-arrow invert' />
+          <span className='breadcrumb-right no-interaction'>{title}</span>
         </>
       )}
     </div>
