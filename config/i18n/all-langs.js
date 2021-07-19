@@ -9,7 +9,14 @@
  * from the .env file aren't found in their respective arrays below
  */
 const availableLangs = {
-  client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'italian'],
+  client: [
+    'english',
+    'espanol',
+    'chinese',
+    'chinese-traditional',
+    'italian',
+    'portuguese'
+  ],
   curriculum: [
     'english',
     'espanol',
@@ -60,9 +67,13 @@ const auditedCerts = {
     'javascript-algorithms-and-data-structures',
     'front-end-libraries',
     'data-visualization',
-    'apis-and-microservices'
+    'apis-and-microservices',
+    'quality-assurance'
   ],
-  portuguese: ['responsive-web-design']
+  portuguese: [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures'
+  ]
 };
 
 // ---------------------------------------------------------------------------

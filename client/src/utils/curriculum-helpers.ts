@@ -31,7 +31,7 @@ This helper checks if a function/method is called with no arguments.
 
 Because Safari does not support lookbehinds (as of writing this on
 July 14 2021), avoiding false matches on function definitions is done by
-checking that only whitespace characters preceed the calling name on the line
+checking that only whitespace characters precede the calling name on the line
 it is found on. That makes this helper incompatible with
 removeWhiteSpace() above, which removes all whitespace characters.
 */
