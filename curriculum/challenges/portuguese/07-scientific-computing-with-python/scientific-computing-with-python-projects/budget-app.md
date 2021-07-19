@@ -1,6 +1,6 @@
 ---
 id: 5e44413e903586ffb414c94e
-title: Budget App
+title: Aplicativo de orçamento
 challengeType: 10
 forumTopicId: 462361
 dashedName: budget-app
@@ -8,26 +8,26 @@ dashedName: budget-app
 
 # --description--
 
-Create a "Category" class that can be used to create different budget categories.
+Crie uma classe Category que pode ser usada para criar diferentes categorias de orçamento.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-budget-app).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-budget-app).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com baseado nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Curso de Python em vídeo para todos</a> (14 horas)
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Curso em vídeo Aprenda Python</a> (2 horas)
   </li>
 </ul>
 
 # --hints--
 
-It should create a Category class and pass all tests.
+Ele deve criar uma classe Category e passar em todos os testes.
 
 ```js
 
