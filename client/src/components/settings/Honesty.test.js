@@ -25,13 +25,17 @@ describe('<Honesty />', () => {
     expect(view).toMatchSnapshot('HonestyAccepted');
   });
 
-  test('should call updateIsHonest method on clicking agree button', async () => {
+  test('should call updateIsHonest method on clicking agree button', () => {
     const root = TestRenderer.create(
       <Honesty isHonest={false} updateIsHonest={updateIsHonestMock} />
     ).root;
 
-    const button = await root.findByType(Button);
-    button.props.onClick();
+    /**
+     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * They were interpreting react-test-renderer functions as @testing-library/react functions.
+     */
+    // eslint-disable-next-line testing-library/await-async-query
+    root.findByType(Button).props.onClick();
     expect(updateIsHonestMock).toHaveBeenCalledWith({ isHonest: true });
   });
 });
