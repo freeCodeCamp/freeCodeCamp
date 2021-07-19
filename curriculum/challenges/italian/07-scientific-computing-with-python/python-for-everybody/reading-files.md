@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f062
-title: Reading Files
+title: Leggere i file
 challengeType: 11
 videoId: Fo1tW09KIwo
 dashedName: reading-files
@@ -10,7 +10,7 @@ dashedName: reading-files
 
 ## --text--
 
-What is used to indicate a new line in a string?
+Che cosa si usa per indicare una nuova linea in una stringa?
 
 ## --answers--
 

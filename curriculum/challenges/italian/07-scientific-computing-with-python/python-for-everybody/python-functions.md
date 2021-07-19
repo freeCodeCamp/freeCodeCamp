@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05a
-title: Python Functions
+title: Funzioni in Python
 challengeType: 11
 videoId: 3JGF-n3tDPU
 dashedName: python-functions
@@ -10,27 +10,27 @@ dashedName: python-functions
 
 ## --text--
 
-What is the purpose of the "def" keyword in Python?
+Qual è lo scopo della parola chiave "def" in Python?
 
 ## --answers--
 
-It is slang that means "The following code is really cool."
+È slang che significa "Il seguente codice è davvero cool."
 
 ---
 
-It indicates the start of a function.
+Indica l'inizio di una funzione.
 
 ---
 
-It indicates that the following indented section of code is to be stored for later.
+Indica che la seguente sezione di codice indentata deve essere memorizzata per essere usata in un secondo momento.
 
 ---
 
-It indicates the start of a function, and the following indented section of code is to be stored for later.
+Indica l'inizio di una funzione, e la seguente sezione di codice indentato deve essere memorizzata per un uso successivo successivo.
 
 ---
 
-None of the above.
+Niente di quanto sopra.
 
 ## --video-solution--
 

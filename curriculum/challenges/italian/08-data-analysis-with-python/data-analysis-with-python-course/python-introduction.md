@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c165
-title: Python Introduction
+title: Introduzione a Python
 challengeType: 11
 videoId: PrQV9JkLhb4
 dashedName: python-introduction
@@ -8,34 +8,34 @@ dashedName: python-introduction
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-How do we define blocks of code in the body of functions in Python?
+Come definiamo blocchi di codice nel corpo di una funzione in Python?
 
 ## --answers--
 
-We use a set of curly braces, one on either side of each new block of our code.
+Usiamo una coppia di parentesi graffe, una da ogni lato di un nuovo blocco di codice.
 
 ---
 
-We use indentation, usually right-aligned 4 spaces.
+Usiamo l'indentazione, in genere quattro spazi a sinistra della riga.
 
 ---
 
-We do not denote blocks of code.
+Non si possono definire blocchi di codice.
 
 ---
 
-We could use curly braces or indentation to denote blocks of code.
+Possiamo usare o le parentesi graffe o l'indentazione.
 
 ## --video-solution--
 

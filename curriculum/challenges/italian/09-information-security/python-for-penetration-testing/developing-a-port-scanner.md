@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db4
-title: Developing a Port Scanner
+title: Sviluppare uno scanner di porte
 challengeType: 11
 videoId: z_qkqZS7KZ4
 dashedName: developing-a-port-scanner
@@ -10,19 +10,19 @@ dashedName: developing-a-port-scanner
 
 ## --text--
 
-What is the main difference between the `.connect()` and `.connect_ex()` methods?
+Qual è la differenza principale tra i metodi `.connect()` e `.connect_ex()`?
 
 ## --answers--
 
-There is no difference between the two methods.
+Non vi è alcuna differenza tra i due metodi.
 
 ---
 
-If there is an error or if no host is found, `.connect()` returns an error code while `.connect_ex()` raises an exception.
+Se c'è un errore o se non si trova alcun host, `.connect()` restituisce un codice di errore mentre `.connect_ex()` solleva un'eccezione.
 
 ---
 
-If there is an error or if no host is found, `.connect()` raises an exception while `.connect_ex()` returns an error code.
+Se c'è un errore o se non si trova alcun host, `.connect()` solleva un'eccezione mentre `.connect_ex()` restituisce un codice di errore.
 
 ## --video-solution--
 
