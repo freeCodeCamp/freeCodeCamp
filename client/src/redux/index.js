@@ -578,6 +578,10 @@ export const reducer = handleActions(
         }
       };
     },
+    [types.updateFailed]: (state, { payload }) => {
+      console.log(payload);
+      return { ...state };
+    },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({
       ...state,
       currentChallengeId: payload
