@@ -37,18 +37,22 @@ function AcceptPrivacyTerms({
   acceptedPrivacyTerms,
   t
 }: AcceptPrivacyTermsProps) {
-  // if a user navigates away from here we should set acceptedPrivacyTerms
-  // to true (so they do not get pulled back) without changing their email
-  // preferences (hence the null payload)
-  // This ensures the user has to click the checkbox and then click the
-  // 'Continue...' button to sign up.
   useEffect(() => {
     return () => {
+      // if a user navigates away from here we should set acceptedPrivacyTerms
+      // to true (so they do not get pulled back) without changing their email
+      // preferences (hence the null payload)
+      // This makes sure that the user has to opt in to Quincy's emails and that
+      // they are only asked twice
       if (!acceptedPrivacyTerms) {
         acceptTerms(null);
       }
     };
-  }, [acceptTerms, acceptedPrivacyTerms]);
+    // We're ignoring all dependencies, since this effect must only run once
+    // (when the user leaves the page).
+    // TODO: figure out how to useCallback to only run this effect once.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function onClick(isWeeklyEmailAccepted: boolean) {
     acceptTerms(isWeeklyEmailAccepted);
