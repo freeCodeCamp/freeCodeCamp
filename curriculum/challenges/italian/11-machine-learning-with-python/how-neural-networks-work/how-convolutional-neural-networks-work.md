@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610cd
-title: How Convolutional Neural Networks work
+title: Come funzionano le reti neurali convoluzionali
 challengeType: 11
 videoId: Y5M7KH4A4n4
 dashedName: how-convolutional-neural-networks-work
@@ -10,19 +10,19 @@ dashedName: how-convolutional-neural-networks-work
 
 ## --text--
 
-When are Convolutional Neural Networks not useful?
+Quando le reti neurali convoluzionali non sono utili?
 
 ## --answers--
 
-If your data can't be made to look like an image, or if you can rearrange elements of your data and it's still just as useful.
+Se i tuoi dati non possono essere fatti sembrare un'immagine, o se è possibile riorganizzare elementi dei tuoi dati ed è ancora altrettanto utile.
 
 ---
 
-If your data is made up of different 2D or 3D images.
+Se i tuoi dati sono costituiti da diverse immagini 2D o 3D.
 
 ---
 
-If your data is text or sound based.
+Se i tuoi dati sono basati su testo o suono.
 
 ## --video-solution--
 

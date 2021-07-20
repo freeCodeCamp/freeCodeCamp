@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da2
-title: 'Natural Language Processing With RNNs: Training the Model'
+title: 'Elaborazione del linguaggio naturale con RNN: training del modello'
 challengeType: 11
 videoId: hEUiK7j9UI8
 dashedName: natural-language-processing-with-rnns-training-the-model
@@ -10,7 +10,7 @@ dashedName: natural-language-processing-with-rnns-training-the-model
 
 ## --text--
 
-Fill in the blanks below to save your model's checkpoints in the `./checkpoints` directory and call the latest checkpoint for training:
+Compila gli spazi vuoti qui sotto per salvare i punti di controllo del tuo modello nella directory `./checkpoints` e chiamare l'ultimo checkpoint per il training:
 
 ```py
 checkpoint_dir = __A__
