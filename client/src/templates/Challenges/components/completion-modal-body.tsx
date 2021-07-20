@@ -77,6 +77,7 @@ export class CompletionModalBody extends PureComponent<
         <div className='completion-challenge-details'>
           <GreenPass
             className='completion-success-icon'
+            data-testid='fcc-completion-success-icon'
             onAnimationEnd={() => {
               setTimeout(() => {
                 this.animateProgressBar(completedPercent);
@@ -94,6 +95,7 @@ export class CompletionModalBody extends PureComponent<
             </div>
             <div
               className='progress-bar-percent'
+              data-testid='fcc-progress-bar-percent'
               style={{ width: `${this.state.shownPercent}%` }}
             >
               <div className='progress-bar-foreground'>

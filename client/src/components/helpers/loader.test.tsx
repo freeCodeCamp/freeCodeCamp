@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, screen } from '@testing-library/react';
 
 import Loader from './loader';
 
@@ -12,8 +12,9 @@ describe('<Loader />', () => {
   });
 
   it('adds the correct class when given a fullScreen prop', () => {
-    const { container } = render(<Loader fullScreen={true} />);
-    expect(container.firstChild).toHaveClass('full-screen-wrapper');
+    render(<Loader fullScreen={true} />);
+    const fccLoader = screen.getByTestId('fcc-loader');
+    expect(fccLoader).toHaveClass('full-screen-wrapper');
   });
 
   /**
@@ -22,12 +23,14 @@ describe('<Loader />', () => {
    */
 
   it('matches to the default render snapshot', () => {
-    const { container } = render(<Loader />);
-    expect(container.firstChild).toMatchSnapshot();
+    render(<Loader />);
+    const fccLoader = screen.getByTestId('fcc-loader');
+    expect(fccLoader).toMatchSnapshot();
   });
 
   it('matches the fullScreen render snapshot', () => {
-    const { container } = render(<Loader fullScreen={true} />);
-    expect(container.firstChild).toMatchSnapshot();
+    render(<Loader fullScreen={true} />);
+    const fccLoader = screen.getByTestId('fcc-loader');
+    expect(fccLoader).toMatchSnapshot();
   });
 });

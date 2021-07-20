@@ -57,7 +57,7 @@
       "plugins": ["@typescript-eslint"]
     },
     {
-      "files": ["./tools/ui-components/**/*.test.[jt]s?(x)"],
+      "files": ["./tools/ui-components/**/*.test.[jt]s?(x)", "./client/**/*.test.[jt]s?(x)"],
       "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
     }
   ]
