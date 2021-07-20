@@ -78,7 +78,7 @@
     "gatsby-remark-prismjs": "5.6.0",
     "gatsby-source-filesystem": "3.9.0",
     "gatsby-transformer-remark": "4.6.0",
-    "i18next": "20.3.3",
+    "i18next": "20.3.4",
     "jquery": "3.6.0",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
