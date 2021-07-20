@@ -32,8 +32,7 @@ const propTypes = {
     onResize: PropTypes.func
   }),
   superBlock: PropTypes.string,
-  testOutput: PropTypes.element,
-  title: PropTypes.string
+  testOutput: PropTypes.element
 };
 
 const reflexProps = {
@@ -73,8 +72,7 @@ class DesktopLayout extends Component {
       preview,
       hasEditableBoundries,
       superBlock,
-      block,
-      title
+      block
     } = this.props;
 
     const { showPreview, showConsole } = this.state;
@@ -96,7 +94,6 @@ class DesktopLayout extends Component {
             switchDisplayTab={this.switchDisplayTab}
             {...this.state}
             superBlock={superBlock}
-            title={title}
           />
         )}
         <ReflexElement flex={8} {...reflexProps} {...resizeProps}>

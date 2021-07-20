@@ -292,7 +292,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   renderEditor() {
     const { files } = this.props;
-    const { description } = this.getChallenge();
+    const { description, title } = this.getChallenge();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
       files && (
@@ -303,6 +303,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           editorRef={this.editorRef}
           hasEditableBoundries={this.hasEditableBoundries()}
           resizeProps={this.resizeProps}
+          title={title}
         />
       )
     );
@@ -397,7 +398,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               resizeProps={this.resizeProps}
               superBlock={superBlock}
               testOutput={this.renderTestOutput()}
-              title={title}
             />
           </Media>
           <CompletionModal

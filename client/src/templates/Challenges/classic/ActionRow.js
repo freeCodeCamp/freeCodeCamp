@@ -9,8 +9,7 @@ const propTypes = {
   showNotes: PropTypes.bool,
   showPreview: PropTypes.bool,
   superBlock: PropTypes.string,
-  switchDisplayTab: PropTypes.func,
-  title: PropTypes.string
+  switchDisplayTab: PropTypes.func
 };
 
 const ActionRow = ({
@@ -18,8 +17,7 @@ const ActionRow = ({
   showPreview,
   showConsole,
   superBlock,
-  block,
-  title
+  block
 }) => {
   const restartStep = () => {
     console.log('restart');
@@ -27,7 +25,7 @@ const ActionRow = ({
   return (
     <div className='action-row'>
       <div className='breadcrumbs-demo'>
-        <BreadCrumb block={block} superBlock={superBlock} title={title} />
+        <BreadCrumb block={block} superBlock={superBlock} />
       </div>
       <div className='tabs-row'>
         <EditorTabs />
