@@ -19,6 +19,7 @@
   font-size: 16px;
   border: 1px solid var(--quaternary-background);
   height: 25px;
+  text-align: center;
 }
 
 .breadcrumb-left {

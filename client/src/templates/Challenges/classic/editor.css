@@ -19,10 +19,6 @@
   margin: 0 0 1.2rem;
 }
 
-.breadcrumbs-demo span {
-  font-weight: bold;
-}
-
 .tabs-row {
   display: flex;
   flex-direction: row;
